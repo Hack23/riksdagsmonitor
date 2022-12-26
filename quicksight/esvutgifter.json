@@ -1,0 +1,14 @@
+{
+    "fileLocations": [
+        {
+            "URIs": [
+                "https://amazon-cloudfront-secure-static-site-s3bucketroot-14oliw5cmta06.s3.amazonaws.com/esvutgifter.csv"
+            ]
+        }
+    ],
+  "globalUploadSettings": {
+        "format": "CSV",
+        "delimiter": ";",
+        "containsHeader": "true"
+    }
+ }
