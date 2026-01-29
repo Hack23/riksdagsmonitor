@@ -1,0 +1,16 @@
+{
+  "name": "HTML Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:alpine", // changed image for compatibility
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "github.vscode-github-actions",
+        "ritwickdey.LiveServer",
+        "ecmel.vscode-html-css" // Added to boost HTML and CSS IntelliSense
+      ]
+    }
+  }
+}
