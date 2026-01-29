@@ -97,7 +97,7 @@ Riksdagsmonitor has been successfully set up as a comprehensive Swedish Parliame
 - SHA-pinned GitHub Actions (supply chain security)
 - Branch protection rules (main/master)
 
-### 5. Configuration & Documentation ✅
+### 5. 📋 Configuration & Documentation ✅
 
 **Repository Configuration:**
 - `.github/copilot-mcp.json` - MCP server configuration
