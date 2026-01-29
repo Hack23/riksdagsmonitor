@@ -1,8 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
 <url>
   <loc>https://riksdagsmonitor.com/</loc>
-  <lastmod>2022-06-04T18:13:45+00:00</lastmod>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/index_sv.html"/>
+  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/index_da.html"/>
+  <xhtml:link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/index_no.html"/>
+  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/index_fi.html"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/index_de.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/index_fr.html"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/index_es.html"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/index_nl.html"/>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/index_ar.html"/>
+  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/index_he.html"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/index_ja.html"/>
+  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/index_ko.html"/>
+  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/index_zh.html"/>
 </url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_sv.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_da.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_no.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_fi.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_de.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_fr.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_es.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_nl.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_ar.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_he.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_ja.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_ko.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/index_zh.html</loc>
+  <lastmod>2026-01-29T04:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
 </urlset>
