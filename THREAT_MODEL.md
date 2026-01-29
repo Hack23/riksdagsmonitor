@@ -1,11 +1,11 @@
-# Threat Model - Riksdags Monitor
+# ⚠️ Riksdagsmonitor - Threat Model
 
 **Document Version:** 1.0  
 **Last Updated:** 2026-01-29  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
-## Executive Summary
+## 🎯 Executive Summary
 
 This threat model analyzes security risks for Riksdags Monitor using the STRIDE framework, attack trees, and MITRE ATT&CK mapping. The analysis identifies threats to the static website infrastructure, evaluates their likelihood and impact, and documents mitigations aligned with Hack23 AB's ISMS.
 
@@ -15,7 +15,7 @@ This threat model analyzes security risks for Riksdags Monitor using the STRIDE 
 - **Low-Risk Threats:** 8 (Accepted with controls)
 - **Residual Risk:** LOW (Acceptable for public static website)
 
-## 1. System Boundary and Assets
+## 1. 🏗️ System Boundary and Assets
 
 ### 1.1 System Components
 
@@ -60,7 +60,7 @@ graph TB
 2. **GitHub Actions → Repository:** Automated deployment pipeline
 3. **Internal → External:** Links to CIA platform (external trust)
 
-## 2. STRIDE Threat Analysis
+## 2. 🔍 STRIDE Threat Analysis
 
 ### 2.1 Spoofing Identity
 
@@ -230,7 +230,7 @@ graph TB
 - **Residual Risk:** VERY LOW (Strong access controls)
 - **MITRE ATT&CK:** T1078 (Valid Accounts)
 
-## 3. Attack Trees
+## 3. 🌳 Attack Trees
 
 ### 3.1 Attack Goal: Deface Riksdags Monitor Website
 
@@ -279,7 +279,7 @@ OVERALL RISK: LOW (Strong preventive controls)
 - Secrets management: 99% isolation
 - Combined: 99.9% risk reduction
 
-## 4. MITRE ATT&CK Mapping
+## 4. 🎯 MITRE ATT&CK Mapping
 
 ### 4.1 Attack Lifecycle Coverage
 
@@ -325,7 +325,7 @@ LAYER 4: Recovery Controls
 └── Backup via Git Clones
 ```
 
-## 5. Risk Quantification
+## 5. 📊 Risk Quantification
 
 ### 5.1 Risk Matrix
 
@@ -360,7 +360,7 @@ LAYER 4: Recovery Controls
 
 **Conclusion:** ✅ Acceptable risk level for public static website with comprehensive security controls.
 
-## 6. Threat Scenarios
+## 6. 🚨 Threat Scenarios
 
 ### 6.1 Scenario 1: Typosquatting Attack
 
@@ -423,7 +423,7 @@ Attacker compromises GitHub Actions workflow to inject malicious content during 
 - Separate secrets by environment
 - Implement workflow approval gates
 
-## 7. Security Metrics
+## 7. 📈 Security Metrics
 
 ### 7.1 Key Risk Indicators (KRIs)
 
@@ -445,7 +445,7 @@ Attacker compromises GitHub Actions workflow to inject malicious content during 
 | Dependabot | 90% | All vulnerabilities patched within 7 days |
 | Code Review | 90% | 100% of PRs reviewed |
 
-## 8. Assumptions and Constraints
+## 8. 📝 Assumptions and Constraints
 
 ### 8.1 Security Assumptions
 
@@ -462,7 +462,7 @@ Attacker compromises GitHub Actions workflow to inject malicious content during 
 3. **CIA Platform Security:** External platform threat model
 4. **Browser Vulnerabilities:** Client-side browser security issues
 
-## 9. Recommendations
+## 9. 💡 Recommendations
 
 ### 9.1 Immediate Actions (0-30 days)
 
@@ -486,7 +486,7 @@ Attacker compromises GitHub Actions workflow to inject malicious content during 
 3. **Explore:** Additional language support beyond 14 languages
 4. **Assess:** Integration with additional data sources
 
-## 10. Approval and Review
+## 10. ✅ Approval and Review
 
 ### 10.1 Document Control
 

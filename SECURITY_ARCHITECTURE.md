@@ -1,19 +1,19 @@
-# Security Architecture - Riksdags Monitor
+# 🛡️ Riksdagsmonitor - Security Architecture
 
 **Document Version:** 1.0  
 **Last Updated:** 2026-01-29  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
-## Executive Summary
+## 🎯 Executive Summary
 
 Riksdags Monitor is a static website providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS) and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
 
 **Security Posture:** Defense-in-depth static website with GitHub infrastructure security, HTTPS-only access, and comprehensive CI/CD security controls.
 
-## 1. System Overview
+## 1. 🏗️ System Overview
 
-### 1.1 Purpose and Scope
+### 1.1 🎯 Purpose and Scope
 
 **Purpose:**
 - Monitor Swedish Riksdag political activity
@@ -57,7 +57,7 @@ graph TB
     style CIA fill:#9c27b0
 ```
 
-## 2. Security Architecture Components
+## 2. 🔐 Security Architecture Components
 
 ### 2.1 Authentication & Access Control
 
@@ -196,7 +196,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 - NIST CSF 2.0: RS.CO-1 (Personnel know their roles and order of operations)
 - CIS Controls v8.1: 17.1 (Designate Personnel to Manage Incident Handling)
 
-## 3. Compliance Mapping
+## 3. 📋 Compliance Mapping
 
 ### 3.1 ISO 27001:2022 Controls
 
@@ -232,7 +232,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 | IG2 | 13.1 Security Event Alerting | GitHub security alerts |
 | IG2 | 16.1 Secure Development | Static site, no injection risks |
 
-## 4. Security Controls Summary
+## 4. 🛡️ Security Controls Summary
 
 ### 4.1 Preventive Controls
 
@@ -278,7 +278,7 @@ Referrer-Policy: strict-origin-when-cross-origin
    - Rapid deployment via GitHub Actions
    - Version control for rollback
 
-## 5. Security Assumptions and Constraints
+## 5. 📝 Security Assumptions and Constraints
 
 ### 5.1 Assumptions
 
@@ -301,7 +301,7 @@ Referrer-Policy: strict-origin-when-cross-origin
    - No server-side input validation
    - Read-only data presentation
 
-## 6. Risk Assessment
+## 6. ⚠️ Risk Assessment
 
 ### 6.1 Residual Risks
 
@@ -319,7 +319,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 2. **GitHub Platform Dependency:** Acceptable given GitHub's security posture
 3. **External CIA Platform Dependency:** Acceptable with documented availability in THREAT_MODEL.md
 
-## 7. Security Governance
+## 7. 🏛️ Security Governance
 
 ### 7.1 Roles and Responsibilities
 
@@ -344,7 +344,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 - [THREAT_MODEL.md](./THREAT_MODEL.md) - Riksdags Monitor threat analysis
 - [Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md)
 
-## 8. Approval
+## 8. ✅ Approval
 
 | Role | Name | Date | Signature |
 |------|------|------|-----------|
