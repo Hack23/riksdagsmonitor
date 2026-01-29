@@ -1,1 +1,11 @@
 /.project
+.DS_Store
+*~
+*.bak
+*.swp
+.vscode/
+.idea/
+node_modules/
+dist/
+build/
+*.log
