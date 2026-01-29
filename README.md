@@ -1,14 +1,21 @@
-# Riksdagsmonitor
+# 🗳️ Riksdagsmonitor
 
-**Swedish Parliament Intelligence Platform**
+> Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency
+
+## 🎯 Mission
+
+Riksdagsmonitor is a comprehensive intelligence platform for monitoring political activity in Sweden's Riksdag (Parliament). Built on the [Citizen Intelligence Agency (CIA)](https://github.com/Hack23/cia) platform, we provide systematic transparency through real-time analysis and 50+ years of historical data.
+
+## 📊 Quality Metrics
 
 [![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
 [![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
 [![License](https://img.shields.io/github/license/Hack23/riksdagsmonitor)](LICENSE)
+[![ISMS](https://img.shields.io/badge/ISMS-ISO%2027001-blue)](https://github.com/Hack23/ISMS)
 
-## 🗳️ About
+**Security Policy:** Per [Secure Development Policy](https://github.com/Hack23/ISMS/blob/main/Secure_Development_Policy.md), we maintain defense-in-depth architecture with comprehensive security controls and documentation
 
-Riksdagsmonitor is a comprehensive intelligence platform for monitoring political activity in Sweden's Riksdag (Parliament). Built on the [Citizen Intelligence Agency (CIA)](https://github.com/Hack23/cia) platform, it provides real-time analysis of:
+## ✨ Features
 
 - **349 Members of Parliament** - Individual MP tracking and performance metrics
 - **8 Political Parties** - Party performance, coalition dynamics, voting patterns
@@ -76,19 +83,55 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 - **Monitoring:** Dependabot, CodeQL, Secret Scanning
 - **Documentation:** [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md), [THREAT_MODEL.md](THREAT_MODEL.md)
 
-## 📋 ISMS Compliance
+## 🔐 Commitment to Transparency and Security
 
-Riksdagsmonitor is built according to Hack23 AB's Information Security Management System (ISMS):
+At Hack23 AB, we believe that true security comes through transparency and demonstrable practices. Our Information Security Management System (ISMS) is publicly available, showcasing our commitment to security excellence and organizational transparency.
+
+<table>
+  <tr>
+    <td width="50%">
+      <div align="center">
+        <h3>📋 ISMS Compliance</h3>
+        <p><strong>ISO 27001:2022 Aligned</strong></p>
+        <ul align="left">
+          <li><a href="https://github.com/Hack23/ISMS">ISMS Repository</a></li>
+          <li><a href="https://github.com/Hack23/ISMS-PUBLIC">Public ISMS</a></li>
+          <li><a href="https://github.com/Hack23/ISMS/blob/main/Secure_Development_Policy.md">Secure Development Policy</a></li>
+          <li><a href="https://github.com/Hack23/ISMS/blob/main/Threat_Modeling.md">Threat Modeling</a></li>
+          <li><a href="https://github.com/Hack23/ISMS/blob/main/Compliance_Checklist.md">Compliance Checklist</a></li>
+        </ul>
+      </div>
+    </td>
+    <td width="50%">
+      <div align="center">
+        <h3>🛡️ Security Documentation</h3>
+        <p><strong>Defense-in-Depth Architecture</strong></p>
+        <ul align="left">
+          <li><a href="SECURITY_ARCHITECTURE.md">Security Architecture</a></li>
+          <li><a href="THREAT_MODEL.md">Threat Model</a></li>
+          <li><a href="WORKFLOWS.md">CI/CD Workflows</a></li>
+          <li><a href="ARCHITECTURE.md">System Architecture</a></li>
+          <li><a href="FUTURE_SECURITY_ARCHITECTURE.md">Future Security</a></li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+</table>
 
 ### Compliance Frameworks
-- **[ISO 27001:2022](https://github.com/Hack23/ISMS)** - Information security controls
-- **[NIST CSF 2.0](https://github.com/Hack23/ISMS/blob/main/Compliance_Checklist.md)** - Cybersecurity framework
-- **[CIS Controls v8.1](https://github.com/Hack23/ISMS/blob/main/Compliance_Checklist.md)** - Security best practices
+- **ISO 27001:2022** - Information security management controls (7 controls implemented)
+- **NIST CSF 2.0** - Cybersecurity framework (6 functions aligned)
+- **CIS Controls v8.1** - Security best practices (6 controls implemented)
 
-### Security Documentation
-- **[SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md)** - Defense-in-depth architecture, control mapping
-- **[THREAT_MODEL.md](THREAT_MODEL.md)** - STRIDE analysis, MITRE ATT&CK mapping, risk quantification
-- **[Secure Development Policy](https://github.com/Hack23/ISMS/blob/main/Secure_Development_Policy.md)** - Development standards
+### Security Metrics
+
+| Metric | Status | Details |
+|--------|--------|---------|
+| **Risk Level** | 🟢 LOW | 5.52/10.0 (99.7% risk reduction) |
+| **HTML Validation** | ✅ PASSED | 0 errors (HTMLHint) |
+| **Dependencies** | ✅ CLEAN | Dependabot monitoring |
+| **Secrets** | ✅ SECURE | Secret scanning enabled |
+| **Code Scanning** | ✅ ACTIVE | CodeQL analysis |
 
 ## 🚀 Development
 
@@ -143,14 +186,27 @@ linkinator http://localhost:8080/ --recurse
 
 ### Project Documentation
 - [README.md](README.md) - This file
-- [LICENSE](LICENSE) - Apache License 2.0
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security architecture and controls
 - [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis and risk assessment
+- [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows and automation
+- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture and design
+- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Future security roadmap
+- [LICENSE](LICENSE) - Apache License 2.0
 
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)
 - [CIA JSON Export Specifications](https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations)
 - [Hack23 ISMS](https://github.com/Hack23/ISMS)
+- [Hack23 Blog](https://hack23.com/blog.html)
+
+## 🏢 About Hack23
+
+**Hack23 AB (Org.nr 5595347807)** - Swedish cybersecurity and open-source intelligence consultancy
+
+- 🌐 **Website**: [www.hack23.com](https://www.hack23.com)
+- 💼 **LinkedIn**: [Company Profile](https://www.linkedin.com/company/hack23/)
+- 👨‍💻 **Founder**: [James Pether Sörling, CISSP, CISM](https://www.linkedin.com/in/jamessorling/)
+- 🔒 **ISMS**: [Public ISMS Repository](https://github.com/Hack23/ISMS-PUBLIC)
 
 ## 🤝 Contributing
 
