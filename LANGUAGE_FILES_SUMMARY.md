@@ -12,19 +12,19 @@ All 14 language versions have been successfully downloaded from Hack23/homepage 
 | # | Language | File | Status | Size |
 |---|----------|------|--------|------|
 | 1 | 🇬🇧 English | index.html | ✅ Existing | 17.3 KB |
-| 2 | 🇸🇪 Swedish | swedish-election-2026_sv.html | ✅ Downloaded | ~18 KB |
-| 3 | 🇩🇰 Danish | swedish-election-2026_da.html | ✅ Downloaded | ~18 KB |
-| 4 | 🇳🇴 Norwegian | swedish-election-2026_no.html | ✅ Downloaded | ~18 KB |
-| 5 | 🇫🇮 Finnish | swedish-election-2026_fi.html | ✅ Downloaded | ~18 KB |
-| 6 | 🇩🇪 German | swedish-election-2026_de.html | ✅ Downloaded | ~18 KB |
-| 7 | 🇫🇷 French | swedish-election-2026_fr.html | ✅ Downloaded | ~18 KB |
-| 8 | 🇪🇸 Spanish | swedish-election-2026_es.html | ✅ Downloaded | ~18 KB |
-| 9 | 🇳🇱 Dutch | swedish-election-2026_nl.html | ✅ Downloaded | ~18 KB |
-| 10 | 🇸🇦 Arabic | swedish-election-2026_ar.html | ✅ Downloaded | ~18 KB |
-| 11 | 🇮🇱 Hebrew | swedish-election-2026_he.html | ✅ Downloaded | ~18 KB |
-| 12 | 🇯🇵 Japanese | swedish-election-2026_ja.html | ✅ Downloaded | ~18 KB |
-| 13 | 🇰🇷 Korean | swedish-election-2026_ko.html | ✅ Downloaded | ~18 KB |
-| 14 | 🇨🇳 Chinese | swedish-election-2026_zh.html | ✅ Downloaded | ~18 KB |
+| 2 | 🇸🇪 Swedish | index_sv.html | ✅ Downloaded | ~18 KB |
+| 3 | 🇩🇰 Danish | index_da.html | ✅ Downloaded | ~18 KB |
+| 4 | 🇳🇴 Norwegian | index_no.html | ✅ Downloaded | ~18 KB |
+| 5 | 🇫🇮 Finnish | index_fi.html | ✅ Downloaded | ~18 KB |
+| 6 | 🇩🇪 German | index_de.html | ✅ Downloaded | ~18 KB |
+| 7 | 🇫🇷 French | index_fr.html | ✅ Downloaded | ~18 KB |
+| 8 | 🇪🇸 Spanish | index_es.html | ✅ Downloaded | ~18 KB |
+| 9 | 🇳🇱 Dutch | index_nl.html | ✅ Downloaded | ~18 KB |
+| 10 | 🇸🇦 Arabic | index_ar.html | ✅ Downloaded | ~18 KB |
+| 11 | 🇮🇱 Hebrew | index_he.html | ✅ Downloaded | ~18 KB |
+| 12 | 🇯🇵 Japanese | index_ja.html | ✅ Downloaded | ~18 KB |
+| 13 | 🇰🇷 Korean | index_ko.html | ✅ Downloaded | ~18 KB |
+| 14 | 🇨🇳 Chinese | index_zh.html | ✅ Downloaded | ~18 KB |
 
 **Total Size:** ~250 KB across all language files
 
