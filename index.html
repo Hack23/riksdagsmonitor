@@ -4,6 +4,157 @@
 <title>Swedish Election 2026 | Live Intelligence Platform | CIA OSINT | Riksdagsmonitor</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Critical CSS - Inline for faster FCP -->
+<style>
+/* Critical above-the-fold styles only */
+:root {
+	--primary-color: #006633;
+	--primary-light: #007744;
+	--accent-color: #008838; /* WCAG 2.1 AA: 4.59:1 contrast on white (was #00C853 at 2.24:1) */
+	--bg-color: #f8f9fa;
+	--text-color: #1a1a1a;
+	--text-secondary: #4a4a4a; /* WCAG 2.1 AA: 8.86:1 contrast on white (improved from #555555 at 7.46:1) */
+	--button-bg: #007744;
+	--button-text: #fff;
+	--spacing-md: 1rem;
+	--spacing-lg: 1.5rem;
+	--spacing-xl: 2rem;
+	--border-radius: 8px;
+	--border-radius-lg: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary-color: #00cc66;
+		--primary-light: #00ff88;
+		--accent-color: #33eeff;
+		--bg-color: #001a1a;
+		--text-color: #f0f0f0;
+		--text-secondary: #aaaaaa;
+		--button-bg: #2188ff;
+		--button-text: #e0e0e0;
+	}
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	line-height: 1.7;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: var(--spacing-xl);
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+header {
+	text-align: center;
+	margin-bottom: var(--spacing-xl);
+	padding: var(--spacing-xl) var(--spacing-lg);
+	border-radius: var(--border-radius-lg);
+	/* Reserve minimum space for header content to reduce Cumulative Layout Shift (CLS) */
+	min-height: 400px;
+	/* Optimize layout performance by creating a new containing block */
+	contain: layout;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 2.5rem;
+	line-height: 1.2;
+	color: var(--primary-color);
+	font-weight: 600;
+}
+
+.header-subtitle {
+	display: block;
+	font-size: 1.1rem;
+	font-weight: 400;
+	margin-top: 0.5rem;
+	color: var(--text-secondary);
+}
+
+.hero-tagline {
+	font-size: 1.25rem;
+	line-height: 1.6;
+	color: var(--text-color);
+	margin: var(--spacing-lg) auto;
+	max-width: 800px;
+	font-weight: 500;
+}
+
+.hero-subtitle {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	margin: var(--spacing-md) auto var(--spacing-xl);
+	max-width: 700px;
+}
+
+.hero-cta {
+	display: flex;
+	gap: var(--spacing-md);
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: var(--spacing-xl) auto;
+}
+
+.btn-primary, .btn-secondary {
+	display: inline-block;
+	padding: 14px 28px;
+	border-radius: var(--border-radius);
+	text-decoration: none;
+	font-size: 1.05rem;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: none;
+	text-align: center;
+	/* Ensure proper rendering and prevent layout shift */
+	min-width: 140px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.btn-primary {
+	background: var(--button-bg);
+	color: var(--button-text);
+	box-shadow: 0 3px 10px rgba(0, 119, 68, 0.2);
+}
+
+.btn-primary:hover {
+	background: var(--primary-light);
+	box-shadow: 0 5px 15px rgba(0, 119, 68, 0.3);
+	transform: translateY(-2px);
+}
+
+.btn-secondary {
+	background: transparent;
+	color: var(--primary-color);
+	border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+	background: var(--primary-color);
+	color: white;
+}
+
+.logo {
+	width: 80px;
+	height: 80px;
+	border-radius: var(--border-radius-lg);
+	box-shadow: 0 4px 12px rgba(0, 71, 171, 0.15);
+}
+
+.logo-container {
+	margin-bottom: var(--spacing-lg);
+}
+</style>
+
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index.html">
 <meta name="description" content="Swedish Election 2026 live intelligence platform: Real-time monitoring, coalition predictions, 45 risk rules, comprehensive parliamentary analysis. Monitor political activity in Sweden.">
