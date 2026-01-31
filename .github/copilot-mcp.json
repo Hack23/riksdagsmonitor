@@ -13,21 +13,22 @@
       ],
       "env": {
         "GITHUB_TOKEN": "${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}",
-        "GITHUB_PERSONAL_ACCESS_TOKEN":  "${{ secrets. COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}",
-        "GITHUB_OWNER": "Hack23"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}",
+        "GITHUB_OWNER": "Hack23",
+        "GITHUB_API_URL": "https://api.githubcopilot.com/mcp/insiders"
       },
       "tools":  ["*"]
     },
     "filesystem": {
       "type": "local",
       "command":  "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspaces"],
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/runner/work/riksdagsmonitor/riksdagsmonitor"],
       "tools":  ["*"]
     },
     "git": {
       "type": "local",
       "command":  "npx",
-      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "/workspaces"],
+      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "/home/runner/work/riksdagsmonitor/riksdagsmonitor"],
       "tools": ["*"]
     },
     "memory": {
