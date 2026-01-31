@@ -78,9 +78,6 @@ X-Content-Type-Options:
 X-Frame-Options:
   DENY
 
-X-XSS-Protection:
-  1; mode=block
-
 Referrer-Policy:
   strict-origin-when-cross-origin
 
@@ -92,22 +89,23 @@ Permissions-Policy:
 
 ### Subresource Integrity (SRI)
 ```html
-<!-- ✅ Good: SRI for external resources -->
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Inter"
-  integrity="sha384-..."
-  crossorigin="anonymous"
->
-
+<!-- ✅ Good: SRI for stable, versioned external resources -->
 <script
-  src="https://cdn.example.com/script.js"
+  src="https://cdn.example.com/script.v1.2.3.js"
   integrity="sha384-..."
   crossorigin="anonymous"
 ></script>
 
-<!-- ❌ Bad: No integrity check -->
-<script src="https://cdn.example.com/script.js"></script>
+<!-- ⚠️ Google Fonts: dynamic content, SRI not reliable unless you self-host -->
+<!-- Either self-host the font CSS with SRI, or omit SRI for the dynamic URL: -->
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter"
+  crossorigin="anonymous"
+>
+
+<!-- ❌ Bad: No integrity check on a static, versioned asset -->
+<script src="https://cdn.example.com/script.v1.2.3.js"></script>
 ```
 
 ### Dependency Management
