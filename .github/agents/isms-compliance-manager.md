@@ -2,23 +2,6 @@
 name: isms-compliance-manager
 description: Expert in Hack23 ISMS compliance, ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, policy enforcement, and audit preparation
 tools: ["view", "edit", "create", "search", "bash", "grep", "glob"]
-mcp-servers:
-  github:
-    type: local
-    command: npx
-    args:
-      - "-y"
-      - "@modelcontextprotocol/server-github"
-      - "--toolsets"
-      - "all"
-      - "--tools"
-      - "*"
-    env:
-      GITHUB_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
-      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
-      GITHUB_OWNER: Hack23
-      GITHUB_API_URL: https://api.githubcopilot.com/mcp/insiders
-    tools: ["*"]
 ---
 
 ## 📋 Required Context Files
