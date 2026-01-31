@@ -193,10 +193,35 @@ linkinator http://localhost:8080/ --recurse
 - [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Future security roadmap
 - [LICENSE](LICENSE) - Apache License 2.0
 
+### GitHub Copilot Integration
+- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks
+- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance
+- [`.github/agents/`](.github/agents/) - Agent configuration files
+- [`.github/skills/`](.github/skills/) - Skill libraries
+
+**Available Agents**:
+- **security-architect** - Security architecture and ISMS compliance
+- **documentation-architect** - C4 models and technical documentation
+- **quality-engineer** - HTML/CSS validation and accessibility
+- **frontend-specialist** - Static site development and responsive design
+- **isms-compliance-manager** - ISO 27001/NIST CSF/CIS Controls compliance
+- **deployment-specialist** - GitHub Actions and CI/CD automation
+
+**Available Skills**:
+- **hack23-isms-compliance** - ISMS framework requirements
+- **security-by-design** - Security best practices
+- **static-site-security** - Static website security
+- **ci-cd-security** - GitHub Actions security hardening
+- **documentation-standards** - Documentation guidelines
+- **html-accessibility** - WCAG 2.1 AA compliance
+- **multi-language-localization** - Internationalization best practices
+
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)
 - [CIA JSON Export Specifications](https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations)
 - [Hack23 ISMS](https://github.com/Hack23/ISMS)
+- [Hack23 Public ISMS](https://github.com/Hack23/ISMS-PUBLIC)
+- [Hack23 Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 - [Hack23 Blog](https://hack23.com/blog.html)
 
 ## 🏢 About Hack23
