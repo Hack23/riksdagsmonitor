@@ -212,27 +212,43 @@ const pr2 = create_pull_request_with_copilot({
 
 ## Agent Configuration
 
-All agents use the GitHub MCP server with Insiders API for access to experimental features:
+### Repository-Level MCP Configuration
 
+**Important**: Repository-level agents in `.github/agents/` cannot have MCP servers configured in their YAML frontmatter. MCP servers are configured at the repository level in `.github/copilot-mcp.json` and are automatically available to all agents.
+
+Each agent file contains only:
 ```yaml
-mcp-servers:
-  github:
-    type: local
-    command: npx
-    args:
-      - "-y"
-      - "@modelcontextprotocol/server-github"
-      - "--toolsets"
-      - "all"
-      - "--tools"
-      - "*"
-    env:
-      GITHUB_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
-      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
-      GITHUB_OWNER: Hack23
-      GITHUB_API_URL: https://api.githubcopilot.com/mcp/insiders
-    tools: ["*"]
+---
+name: agent-name
+description: Brief description of agent's expertise
+tools: ["view", "edit", "create", "search", "bash", "grep", "glob"]
+---
 ```
+
+### MCP Server Configuration (Repository-Level Only)
+
+MCP servers are configured in `.github/copilot-mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "github": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github", "--toolsets", "all", "--tools", "*"],
+      "env": {
+        "GITHUB_TOKEN": "${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}",
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}",
+        "GITHUB_OWNER": "Hack23",
+        "GITHUB_API_URL": "https://api.githubcopilot.com/mcp/insiders"
+      },
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+This configuration provides all agents with access to the GitHub MCP server with Insiders API for experimental features.
 
 ## Best Practices
 
