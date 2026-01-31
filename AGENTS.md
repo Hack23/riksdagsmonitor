@@ -216,7 +216,7 @@ const pr2 = create_pull_request_with_copilot({
 
 **Important**: Repository-level agents in `.github/agents/` cannot have MCP servers configured in their YAML frontmatter. MCP servers are configured at the repository level in `.github/copilot-mcp.json` and are automatically available to all agents.
 
-Each agent file contains only:
+Each agent file's **YAML frontmatter** contains only:
 ```yaml
 ---
 name: agent-name
@@ -224,6 +224,8 @@ description: Brief description of agent's expertise
 tools: ["view", "edit", "create", "search", "bash", "grep", "glob"]
 ---
 ```
+
+The agent file body after the frontmatter contains the agent's detailed instructions, capabilities, and examples.
 
 ### MCP Server Configuration (Repository-Level Only)
 
@@ -243,12 +245,27 @@ MCP servers are configured in `.github/copilot-mcp.json`:
         "GITHUB_API_URL": "https://api.githubcopilot.com/mcp/insiders"
       },
       "tools": ["*"]
+    },
+    "filesystem": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/runner/work/riksdagsmonitor/riksdagsmonitor"],
+      "tools": ["*"]
+    },
+    "git": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "/home/runner/work/riksdagsmonitor/riksdagsmonitor"],
+      "tools": ["*"]
     }
   }
 }
 ```
 
-This configuration provides all agents with access to the GitHub MCP server with Insiders API for experimental features.
+**Notes**:
+- This configuration provides all agents with access to MCP servers
+- Filesystem and git paths are environment-specific (GitHub Actions runner layout)
+- ⚠️ **Security**: MCP packages are not version-pinned. Consider pinning to specific versions for supply chain security
 
 ## Best Practices
 

@@ -75,7 +75,7 @@ Skills are:
 **Purpose**: Security best practices specific to static HTML/CSS websites on GitHub Pages
 
 **Key Principles**:
-- Leverage eliminated attack vectors (no SQL injection, XSS, CSRF, etc.)
+- Leverage eliminated server-side attack vectors (no server-side SQL injection/CSRF and greatly reduced XSS surface)
 - Minimize attack surface
 - Secure transport layer (TLS 1.3, HTTPS-only)
 - Implement security headers
