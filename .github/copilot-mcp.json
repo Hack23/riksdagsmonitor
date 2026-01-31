@@ -22,13 +22,13 @@
     "filesystem": {
       "type": "local",
       "command":  "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspaces"],
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/runner/work/riksdagsmonitor/riksdagsmonitor"],
       "tools":  ["*"]
     },
     "git": {
       "type": "local",
       "command":  "npx",
-      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "/workspaces"],
+      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "/home/runner/work/riksdagsmonitor/riksdagsmonitor"],
       "tools": ["*"]
     },
     "memory": {
