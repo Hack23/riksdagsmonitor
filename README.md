@@ -11,9 +11,10 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
 [![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
 [![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
 [![License](https://img.shields.io/github/license/Hack23/riksdagsmonitor)](LICENSE)
-[![ISMS](https://img.shields.io/badge/ISMS-ISO%2027001-blue)](https://github.com/Hack23/ISMS)
+[![ISMS](https://img.shields.io/badge/ISMS-ISO%2027001-blue)](https://github.com/Hack23/ISMS-PUBLIC)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Hack23/riksdagsmonitor.com)
 
-**Security Policy:** Per [Secure Development Policy](https://github.com/Hack23/ISMS/blob/main/Secure_Development_Policy.md), we maintain defense-in-depth architecture with comprehensive security controls and documentation
+**Security Policy:** Per [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), we maintain defense-in-depth architecture with comprehensive security controls and documentation
 
 ## ✨ Features
 
@@ -94,11 +95,11 @@ At Hack23 AB, we believe that true security comes through transparency and demon
         <h3>📋 ISMS Compliance</h3>
         <p><strong>ISO 27001:2022 Aligned</strong></p>
         <ul align="left">
-          <li><a href="https://github.com/Hack23/ISMS">ISMS Repository</a></li>
+          <li><a href="https://github.com/Hack23/ISMS-PUBLIC">ISMS Repository</a></li>
           <li><a href="https://github.com/Hack23/ISMS-PUBLIC">Public ISMS</a></li>
-          <li><a href="https://github.com/Hack23/ISMS/blob/main/Secure_Development_Policy.md">Secure Development Policy</a></li>
-          <li><a href="https://github.com/Hack23/ISMS/blob/main/Threat_Modeling.md">Threat Modeling</a></li>
-          <li><a href="https://github.com/Hack23/ISMS/blob/main/Compliance_Checklist.md">Compliance Checklist</a></li>
+          <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a></li>
+          <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling</a></li>
+          <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Compliance_Checklist.md">Compliance Checklist</a></li>
         </ul>
       </div>
     </td>
