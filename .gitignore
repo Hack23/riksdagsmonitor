@@ -9,7 +9,6 @@ node_modules/
 dist/
 build/
 *.log
-package-lock.json
 data/cia-exports/
 types/
 schemas/metadata/

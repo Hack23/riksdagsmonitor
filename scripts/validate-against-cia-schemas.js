@@ -13,7 +13,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import Ajv from 'ajv';
+import Ajv2019 from 'ajv/dist/2019.js';
 import addFormats from 'ajv-formats';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -23,6 +23,7 @@ class CIASchemaValidator {
   constructor() {
     this.schemasDir = path.join(__dirname, '..', 'schemas', 'cia');
     this.dataDir = path.join(__dirname, '..', 'data', 'cia-exports', 'current');
+    const Ajv = Ajv2019.default || Ajv2019;
     this.ajv = new Ajv({ 
       allErrors: true, 
       verbose: true,
