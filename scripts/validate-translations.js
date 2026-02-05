@@ -6,6 +6,22 @@
  * Validates all language files for completeness and consistency
  * 
  * Usage: node scripts/validate-translations.js
+ * 
+ * Validation Checks:
+ * - lang attribute correctness
+ * - dir="rtl" for RTL languages (Arabic, Hebrew)
+ * - Title tag presence
+ * - Meta description presence
+ * - Canonical URL correctness
+ * - Hreflang tag count (checks quantity, not URL correctness)
+ * - Open Graph locale presence
+ * - Schema.org structured data presence
+ * 
+ * Limitations:
+ * - Hreflang validation only counts tags but does not verify that the URLs
+ *   they point to are correct or that the referenced files exist.
+ * - Does not validate translation quality or terminology consistency.
+ * - Does not check for broken internal/external links.
  */
 
 import { readFileSync } from 'fs';

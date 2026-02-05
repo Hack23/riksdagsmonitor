@@ -7,12 +7,14 @@ on:
       - 'index*.html'
       - 'scripts/validate-translations.js'
       - '.github/workflows/translation-validation.yml'
+      - 'TRANSLATION_GUIDE.md'
   pull_request:
     branches: [ master, main ]
     paths:
       - 'index*.html'
       - 'scripts/validate-translations.js'
       - '.github/workflows/translation-validation.yml'
+      - 'TRANSLATION_GUIDE.md'
 
 permissions:
   contents: read
@@ -36,12 +38,14 @@ jobs:
           node-version: '24'
 
       - name: Validate all translation files
+        id: validate
         run: |
           echo "🌐 Validating translations for all 14 languages..."
           echo ""
           npm run validate-translations
           
       - name: Count language files
+        id: count
         run: |
           echo ""
           echo "📊 Language file statistics:"
@@ -55,6 +59,7 @@ jobs:
           done
 
       - name: Verify RTL languages
+        id: rtl
         run: |
           echo ""
           echo "🔄 Verifying RTL (Right-to-Left) language support:"
@@ -77,6 +82,7 @@ jobs:
           fi
 
       - name: Verify hreflang tags
+        id: hreflang
         run: |
           echo ""
           echo "🔗 Verifying hreflang tags for SEO:"
@@ -96,13 +102,35 @@ jobs:
         run: |
           echo ""
           echo "=========================================="
-          echo "   Translation Validation Complete"
+          echo "   Translation Validation Summary"
           echo "=========================================="
           echo ""
-          echo "✅ All 14 language files validated"
-          echo "✅ RTL support verified"
-          echo "✅ Hreflang tags checked"
-          echo "✅ Meta tags validated"
+          
+          # Check outcomes of previous steps
+          if [ "${{ steps.validate.outcome }}" = "success" ]; then
+            echo "✅ Translation validation: PASSED"
+          else
+            echo "❌ Translation validation: FAILED"
+          fi
+          
+          if [ "${{ steps.count.outcome }}" = "success" ]; then
+            echo "✅ Language file count: PASSED"
+          else
+            echo "❌ Language file count: FAILED"
+          fi
+          
+          if [ "${{ steps.rtl.outcome }}" = "success" ]; then
+            echo "✅ RTL support: PASSED"
+          else
+            echo "❌ RTL support: FAILED"
+          fi
+          
+          if [ "${{ steps.hreflang.outcome }}" = "success" ]; then
+            echo "✅ Hreflang tags: PASSED"
+          else
+            echo "❌ Hreflang tags: FAILED"
+          fi
+          
           echo ""
           echo "Languages: EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH"
           echo ""
