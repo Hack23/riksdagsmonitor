@@ -9,6 +9,7 @@
     "validate-data": "node scripts/validate-against-cia-schemas.js",
     "check-updates": "node scripts/check-cia-schema-updates.js",
     "generate-types": "node scripts/generate-types-from-cia-schemas.js",
+    "validate-translations": "node scripts/validate-translations.js",
     "test": "npm run validate-data",
     "htmlhint": "htmlhint *.html",
     "serve": "python3 -m http.server 8080",

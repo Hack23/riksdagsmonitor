@@ -200,6 +200,7 @@ linkinator http://localhost:8080/ --recurse
 
 ### Project Documentation
 - [README.md](README.md) - This file
+- [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) - Multi-language translation standards and glossary
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security architecture and controls
 - [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis and risk assessment
 - [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows and automation
