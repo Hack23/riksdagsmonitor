@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Hack23/cia/schemas/party-performance.schema.json",
+  "title": "Party Performance",
+  "description": "Political party performance metrics and analytics",
+  "version": "1.0.0",
+  "type": "object",
+  "required": ["id", "partyName", "metrics"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique party identifier",
+      "pattern": "^[A-Z]{1,3}$"
+    },
+    "partyName": {
+      "type": "string",
+      "description": "Official party name",
+      "minLength": 1
+    },
+    "shortName": {
+      "type": "string",
+      "description": "Party abbreviation"
+    },
+    "ideology": {
+      "type": "string",
+      "description": "Political ideology classification"
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Performance metrics",
+      "required": ["seats", "voteShare"],
+      "properties": {
+        "seats": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 349,
+          "description": "Current seats in Riksdag"
+        },
+        "voteShare": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage of votes in last election"
+        },
+        "memberCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of party members in parliament"
+        },
+        "documentsAuthored": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "motionsSubmitted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "motionsPassed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "successRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Motion success rate percentage"
+        }
+      }
+    },
+    "voting": {
+      "type": "object",
+      "description": "Voting behavior statistics",
+      "properties": {
+        "totalVotes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cohesionScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Party voting cohesion percentage"
+        },
+        "rebellionRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage of members voting against party line"
+        }
+      }
+    },
+    "coalitions": {
+      "type": "array",
+      "description": "Coalition partnerships",
+      "items": {
+        "type": "object",
+        "required": ["partnerId", "partnerName"],
+        "properties": {
+          "partnerId": {
+            "type": "string"
+          },
+          "partnerName": {
+            "type": "string"
+          },
+          "collaborationScore": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "trends": {
+      "type": "object",
+      "description": "Longitudinal trend analysis",
+      "properties": {
+        "supportTrend": {
+          "type": "string",
+          "enum": ["rising", "stable", "declining"]
+        },
+        "activityTrend": {
+          "type": "string",
+          "enum": ["increasing", "stable", "decreasing"]
+        },
+        "historicalPerformance": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "integer",
+                "minimum": 1900
+              },
+              "seats": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "voteShare": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Schema and data metadata",
+      "properties": {
+        "schemaVersion": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dataSource": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

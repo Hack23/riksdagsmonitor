@@ -1,6 +1,7 @@
 {
   "name": "riksdagsmonitor",
   "version": "1.0.0",
+  "type": "module",
   "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
   "main": "index.html",
   "scripts": {
