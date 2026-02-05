@@ -209,6 +209,12 @@
   margin: var(--spacing-xl) 0;
 }
 
+/* Seats Label */
+.seats-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
 .prediction-card {
   background: var(--card-bg);
   border: 2px solid var(--card-border);
@@ -330,6 +336,12 @@
 .scenario-seats {
   font-size: var(--font-size-lg);
   margin: var(--spacing-sm) 0;
+}
+
+.scenario-risk-level {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
 }
 
 .scenario-majority {

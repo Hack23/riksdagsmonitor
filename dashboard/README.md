@@ -38,6 +38,7 @@ This dashboard provides real-time visualization of:
 ```
 dashboard/
 ├── index.html                  # Main dashboard page (English)
+├── index_sv.html              # Main dashboard page (Swedish)
 ├── styles.css                  # Dashboard-specific styles
 ├── cia-data-loader.js         # Data loading module
 ├── cia-visualizations.js      # Chart rendering module
@@ -160,7 +161,7 @@ Target scores:
 
 ### Content Security Policy
 - Chart.js loaded via CDN with SRI (Subresource Integrity)
-- No inline scripts (CSP compliant)
+- No inline scripts; inline styles being phased out (CSP hardening in progress)
 - HTTPS-only connections
 
 ### Data Handling

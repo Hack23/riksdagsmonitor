@@ -2,7 +2,7 @@
   "title": "Voting Patterns Analysis",
   "description": "Heatmap data for parliamentary voting behavior and patterns",
   "lastUpdated": "2026-02-05T15:00:00Z",
-  "analysisperiod": "2022-2026",
+  "analysisPeriod": "2022-2026",
   "votingMatrix": {
     "labels": ["S", "SD", "M", "V", "C", "KD", "MP", "L"],
     "partyNames": [

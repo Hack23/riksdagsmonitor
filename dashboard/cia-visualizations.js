@@ -3,6 +3,17 @@
  * Renders CIA intelligence data visualizations
  */
 
+/**
+ * Helper function to escape HTML to prevent XSS
+ * @param {string} text - Text to escape
+ * @returns {string} - Escaped text
+ */
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 export class CIADashboardRenderer {
   constructor(data) {
     this.data = data;
@@ -159,20 +170,62 @@ export class CIADashboardRenderer {
     const { top10 } = this.data;
     const container = document.getElementById('influential-mps');
     
-    container.innerHTML = top10.rankings.map(mp => `
-      <div class="ranking-item">
-        <div class="ranking-number">${mp.rank}</div>
-        <div class="ranking-info">
-          <div class="ranking-name">${mp.firstName} ${mp.lastName}</div>
-          <div class="ranking-party">${mp.party}</div>
-          <div class="ranking-role">${mp.role}</div>
-        </div>
-        <div class="ranking-score">
-          <div class="score-value">${mp.influenceScore.toFixed(1)}</div>
-          <div class="score-label">Influence</div>
-        </div>
-      </div>
-    `).join('');
+    if (!container) return;
+    
+    // Clear existing content safely
+    container.textContent = '';
+    
+    const fragment = document.createDocumentFragment();
+    
+    top10.rankings.forEach(mp => {
+      const item = document.createElement('div');
+      item.className = 'ranking-item';
+      
+      const number = document.createElement('div');
+      number.className = 'ranking-number';
+      number.textContent = String(mp.rank);
+      
+      const info = document.createElement('div');
+      info.className = 'ranking-info';
+      
+      const name = document.createElement('div');
+      name.className = 'ranking-name';
+      name.textContent = `${mp.firstName} ${mp.lastName}`;
+      
+      const party = document.createElement('div');
+      party.className = 'ranking-party';
+      party.textContent = mp.party;
+      
+      const role = document.createElement('div');
+      role.className = 'ranking-role';
+      role.textContent = mp.role;
+      
+      info.appendChild(name);
+      info.appendChild(party);
+      info.appendChild(role);
+      
+      const score = document.createElement('div');
+      score.className = 'ranking-score';
+      
+      const scoreValue = document.createElement('div');
+      scoreValue.className = 'score-value';
+      scoreValue.textContent = mp.influenceScore.toFixed(1);
+      
+      const scoreLabel = document.createElement('div');
+      scoreLabel.className = 'score-label';
+      scoreLabel.textContent = 'Influence';
+      
+      score.appendChild(scoreValue);
+      score.appendChild(scoreLabel);
+      
+      item.appendChild(number);
+      item.appendChild(info);
+      item.appendChild(score);
+      
+      fragment.appendChild(item);
+    });
+    
+    container.appendChild(fragment);
   }
 
   /**
@@ -186,19 +239,6 @@ export class CIADashboardRenderer {
 
     // Prepare data for matrix visualization
     const matrix = votingPatterns.votingMatrix;
-    const datasets = matrix.agreementMatrix.map((row, i) => ({
-      label: matrix.partyNames[i],
-      data: row.map((value, j) => ({
-        x: matrix.labels[j],
-        y: matrix.labels[i],
-        v: value
-      })),
-      backgroundColor: (context) => {
-        const value = context.raw?.v || 0;
-        const alpha = value / 100;
-        return `rgba(0, 102, 51, ${alpha})`;
-      }
-    }));
 
     // Using a bar chart as a simple heatmap alternative
     this.charts.heatmap = new Chart(ctx, {
@@ -253,45 +293,90 @@ export class CIADashboardRenderer {
     const { committees } = this.data;
     const container = document.getElementById('committee-list');
     
-    // Render committee cards
-    container.innerHTML = committees.committees.map(committee => `
-      <div class="committee-card">
-        <h3 class="committee-name">${committee.name}</h3>
-        <div class="committee-stats">
-          <div class="committee-stat">
-            <span class="stat-label">Members:</span>
-            <span class="stat-value">${committee.memberCount}</span>
-          </div>
-          <div class="committee-stat">
-            <span class="stat-label">Influence:</span>
-            <span class="stat-value">${committee.influenceScore.toFixed(1)}</span>
-          </div>
-          <div class="committee-stat">
-            <span class="stat-label">Meetings/Year:</span>
-            <span class="stat-value">${committee.meetingsPerYear}</span>
-          </div>
-          <div class="committee-stat">
-            <span class="stat-label">Documents:</span>
-            <span class="stat-value">${committee.documentsProcessed}</span>
-          </div>
-        </div>
-        <div class="committee-issues">
-          <h4>Key Issues</h4>
-          ${committee.keyIssues.map(issue => 
-            `<span class="issue-tag">${issue}</span>`
-          ).join('')}
-        </div>
-      </div>
-    `).join('');
-
+    if (!container) return;
+    
+    // Clear existing content safely
+    container.textContent = '';
+    
+    const fragment = document.createDocumentFragment();
+    
+    committees.committees.forEach(committee => {
+      const card = document.createElement('div');
+      card.className = 'committee-card';
+      
+      const name = document.createElement('h3');
+      name.className = 'committee-name';
+      name.textContent = committee.name;
+      
+      const stats = document.createElement('div');
+      stats.className = 'committee-stats';
+      
+      // Helper to create stat item
+      const createStat = (label, value) => {
+        const stat = document.createElement('div');
+        stat.className = 'committee-stat';
+        
+        const statLabel = document.createElement('span');
+        statLabel.className = 'stat-label';
+        statLabel.textContent = label + ':';
+        
+        const statValue = document.createElement('span');
+        statValue.className = 'stat-value';
+        statValue.textContent = value;
+        
+        stat.appendChild(statLabel);
+        stat.appendChild(statValue);
+        return stat;
+      };
+      
+      stats.appendChild(createStat('Members', committee.memberCount));
+      stats.appendChild(createStat('Influence', committee.influenceScore.toFixed(1)));
+      stats.appendChild(createStat('Meetings/Year', committee.meetingsPerYear));
+      stats.appendChild(createStat('Documents', committee.documentsProcessed));
+      
+      const issues = document.createElement('div');
+      issues.className = 'committee-issues';
+      
+      const issuesHeading = document.createElement('h4');
+      issuesHeading.textContent = 'Key Issues';
+      issues.appendChild(issuesHeading);
+      
+      committee.keyIssues.forEach(issue => {
+        const tag = document.createElement('span');
+        tag.className = 'issue-tag';
+        tag.textContent = issue;
+        issues.appendChild(tag);
+      });
+      
+      card.appendChild(name);
+      card.appendChild(stats);
+      card.appendChild(issues);
+      
+      fragment.appendChild(card);
+    });
+    
+    container.appendChild(fragment);
+    
     // Add simple network visualization note
     const networkViz = document.getElementById('network-visualization');
-    networkViz.innerHTML = `
-      <div>
-        <p><strong>Network Graph:</strong> Interactive committee network visualization would be rendered here using D3.js or similar library.</p>
-        <p>Current data shows ${committees.networkGraph.nodes.length} committees with ${committees.networkGraph.edges.length} interconnections.</p>
-      </div>
-    `;
+    if (networkViz) {
+      networkViz.textContent = '';
+      
+      const vizDiv = document.createElement('div');
+      
+      const p1 = document.createElement('p');
+      const strong = document.createElement('strong');
+      strong.textContent = 'Network Graph:';
+      p1.appendChild(strong);
+      p1.appendChild(document.createTextNode(' Interactive committee network visualization would be rendered here using D3.js or similar library.'));
+      
+      const p2 = document.createElement('p');
+      p2.textContent = `Current data shows ${committees.networkGraph.nodes.length} committees with ${committees.networkGraph.edges.length} interconnections.`;
+      
+      vizDiv.appendChild(p1);
+      vizDiv.appendChild(p2);
+      networkViz.appendChild(vizDiv);
+    }
   }
 
   /**

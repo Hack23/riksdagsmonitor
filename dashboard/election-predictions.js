@@ -3,6 +3,17 @@
  * Renders Swedish election forecasting and coalition scenarios
  */
 
+/**
+ * Helper function to escape HTML to prevent XSS
+ * @param {string} text - Text to escape
+ * @returns {string} - Escaped text
+ */
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 export class Election2026Predictions {
   constructor(electionData) {
     this.data = electionData;
@@ -14,35 +25,79 @@ export class Election2026Predictions {
   renderSeatPredictions() {
     const container = document.getElementById('seat-predictions');
     const { parties } = this.data.forecast;
+    
+    if (!container) return;
+    
+    // Clear existing content safely
+    container.textContent = '';
+    
+    const fragment = document.createDocumentFragment();
 
-    container.innerHTML = parties.map(party => {
+    parties.forEach(party => {
       const changeClass = party.change >= 0 ? 'positive' : 'negative';
       const changeSymbol = party.change >= 0 ? '+' : '';
       const cardClass = party.change >= 0 ? 'gain' : 'loss';
 
-      return `
-        <div class="prediction-card ${cardClass}">
-          <h3 class="prediction-party">${party.name}</h3>
-          <div class="prediction-seats">
-            <div class="seats-current">
-              <div style="font-size: 0.75rem; color: var(--text-secondary);">Current</div>
-              <strong>${party.currentSeats}</strong>
-            </div>
-            <div class="seats-arrow">→</div>
-            <div class="seats-predicted">
-              <div style="font-size: 0.75rem; color: var(--text-secondary);">Predicted</div>
-              <strong>${party.predictedSeats}</strong>
-            </div>
-          </div>
-          <div class="seats-change ${changeClass}">
-            ${changeSymbol}${party.change} seats (${party.voteShare}%)
-          </div>
-          <div class="confidence-interval">
-            95% CI: ${party.confidenceInterval.min}-${party.confidenceInterval.max} seats
-          </div>
-        </div>
-      `;
-    }).join('');
+      const card = document.createElement('div');
+      card.className = `prediction-card ${cardClass}`;
+
+      const partyName = document.createElement('h3');
+      partyName.className = 'prediction-party';
+      partyName.textContent = party.name;
+
+      const seatsDiv = document.createElement('div');
+      seatsDiv.className = 'prediction-seats';
+
+      // Current seats
+      const currentDiv = document.createElement('div');
+      currentDiv.className = 'seats-current';
+      const currentLabel = document.createElement('div');
+      currentLabel.className = 'seats-label';
+      currentLabel.textContent = 'Current';
+      const currentValue = document.createElement('strong');
+      currentValue.textContent = party.currentSeats;
+      currentDiv.appendChild(currentLabel);
+      currentDiv.appendChild(currentValue);
+
+      // Arrow
+      const arrowDiv = document.createElement('div');
+      arrowDiv.className = 'seats-arrow';
+      arrowDiv.textContent = '→';
+
+      // Predicted seats
+      const predictedDiv = document.createElement('div');
+      predictedDiv.className = 'seats-predicted';
+      const predictedLabel = document.createElement('div');
+      predictedLabel.className = 'seats-label';
+      predictedLabel.textContent = 'Predicted';
+      const predictedValue = document.createElement('strong');
+      predictedValue.textContent = party.predictedSeats;
+      predictedDiv.appendChild(predictedLabel);
+      predictedDiv.appendChild(predictedValue);
+
+      seatsDiv.appendChild(currentDiv);
+      seatsDiv.appendChild(arrowDiv);
+      seatsDiv.appendChild(predictedDiv);
+
+      // Change
+      const changeDiv = document.createElement('div');
+      changeDiv.className = `seats-change ${changeClass}`;
+      changeDiv.textContent = `${changeSymbol}${party.change} seats (${party.voteShare}%)`;
+
+      // Confidence interval
+      const confidenceDiv = document.createElement('div');
+      confidenceDiv.className = 'confidence-interval';
+      confidenceDiv.textContent = `95% CI: ${party.confidenceInterval.min}-${party.confidenceInterval.max} seats`;
+
+      card.appendChild(partyName);
+      card.appendChild(seatsDiv);
+      card.appendChild(changeDiv);
+      card.appendChild(confidenceDiv);
+
+      fragment.appendChild(card);
+    });
+
+    container.appendChild(fragment);
   }
 
   /**
@@ -51,32 +106,68 @@ export class Election2026Predictions {
   renderCoalitionScenarios() {
     const container = document.getElementById('coalition-scenarios');
     const { coalitionScenarios } = this.data;
+    
+    if (!container) return;
+    
+    // Clear existing content safely
+    container.textContent = '';
+    
+    const fragment = document.createDocumentFragment();
 
-    container.innerHTML = coalitionScenarios.map(scenario => {
+    coalitionScenarios.forEach(scenario => {
       const majorityClass = scenario.majority ? 'yes' : 'no';
       const majorityText = scenario.majority ? 'Majority ✓' : 'No Majority';
 
-      return `
-        <div class="scenario-card">
-          <div class="scenario-probability">${scenario.probability}%</div>
-          <h3 class="scenario-name">${scenario.name}</h3>
-          <div class="scenario-composition">
-            ${scenario.composition.map(partyId => 
-              `<span class="party-badge">${partyId}</span>`
-            ).join('')}
-          </div>
-          <div class="scenario-seats">
-            <strong>${scenario.totalSeats}</strong> seats (175 required for majority)
-          </div>
-          <span class="scenario-majority ${majorityClass}">
-            ${majorityText}
-          </span>
-          <div style="margin-top: var(--spacing-sm); font-size: var(--font-size-sm); color: var(--text-secondary);">
-            Risk Level: <strong>${scenario.riskLevel}</strong>
-          </div>
-        </div>
-      `;
-    }).join('');
+      const card = document.createElement('div');
+      card.className = 'scenario-card';
+
+      const probability = document.createElement('div');
+      probability.className = 'scenario-probability';
+      probability.textContent = `${scenario.probability}%`;
+
+      const name = document.createElement('h3');
+      name.className = 'scenario-name';
+      name.textContent = scenario.name;
+
+      const composition = document.createElement('div');
+      composition.className = 'scenario-composition';
+      
+      scenario.composition.forEach(partyId => {
+        const badge = document.createElement('span');
+        badge.className = 'party-badge';
+        badge.textContent = partyId;
+        composition.appendChild(badge);
+      });
+
+      const seats = document.createElement('div');
+      seats.className = 'scenario-seats';
+      const seatsStrong = document.createElement('strong');
+      seatsStrong.textContent = scenario.totalSeats;
+      seats.appendChild(seatsStrong);
+      seats.appendChild(document.createTextNode(' seats (175 required for majority)'));
+
+      const majority = document.createElement('span');
+      majority.className = `scenario-majority ${majorityClass}`;
+      majority.textContent = majorityText;
+
+      const riskLevel = document.createElement('div');
+      riskLevel.className = 'scenario-risk-level';
+      riskLevel.textContent = 'Risk Level: ';
+      const riskStrong = document.createElement('strong');
+      riskStrong.textContent = scenario.riskLevel;
+      riskLevel.appendChild(riskStrong);
+
+      card.appendChild(probability);
+      card.appendChild(name);
+      card.appendChild(composition);
+      card.appendChild(seats);
+      card.appendChild(majority);
+      card.appendChild(riskLevel);
+
+      fragment.appendChild(card);
+    });
+
+    container.appendChild(fragment);
   }
 
   /**
