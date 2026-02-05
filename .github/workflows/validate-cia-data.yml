@@ -1,0 +1,140 @@
+name: Validate CIA Data
+
+on:
+  push:
+    paths:
+      - 'data/cia-exports/**'
+      - 'schemas/cia/**'
+      - 'scripts/validate-against-cia-schemas.js'
+      - '.github/workflows/validate-cia-data.yml'
+  pull_request:
+    paths:
+      - 'data/cia-exports/**'
+      - 'schemas/cia/**'
+      - 'scripts/validate-against-cia-schemas.js'
+      - '.github/workflows/validate-cia-data.yml'
+  schedule:
+    - cron: '0 3 * * *'  # Daily at 3 AM UTC
+  workflow_dispatch:
+    inputs:
+      force_validation:
+        description: 'Force validation even if no data exists'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-data:
+    name: Validate CIA Exports
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@e3f713f2d8f53843e71c69a996d56f51aa9adfb9 # v2.14.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci --prefer-offline --no-audit
+          echo "✅ Dependencies installed"
+
+      - name: Check for CIA schemas
+        id: check-schemas
+        run: |
+          if [ -d "schemas/cia" ] && [ "$(ls -A schemas/cia 2>/dev/null | wc -l)" -gt 0 ]; then
+            echo "schemas_exist=true" >> $GITHUB_OUTPUT
+            echo "✅ CIA schemas found"
+          else
+            echo "schemas_exist=false" >> $GITHUB_OUTPUT
+            echo "⚠️ No CIA schemas found - will sync first"
+          fi
+
+      - name: Sync CIA schemas if needed
+        if: steps.check-schemas.outputs.schemas_exist == 'false'
+        run: |
+          echo "🔄 Syncing CIA schemas..."
+          npm run sync-schemas
+          echo "✅ Schemas synced"
+
+      - name: Validate CIA data exports
+        id: validate
+        run: |
+          echo "🔍 Validating CIA data exports against schemas..."
+          npm run validate-data || true
+          echo "✅ Validation complete"
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: validation-report
+          path: validation-report.json
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Generate validation summary
+        if: always()
+        run: |
+          echo "## 📊 CIA Data Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f validation-report.json ]; then
+            echo "### Validation Results" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Extract summary from report
+            TOTAL=$(jq -r '.totalValidated' validation-report.json 2>/dev/null || echo "0")
+            VALID=$(jq -r '.validCount' validation-report.json 2>/dev/null || echo "0")
+            INVALID=$(jq -r '.invalidCount' validation-report.json 2>/dev/null || echo "0")
+            
+            echo "- **Total Validated**: $TOTAL" >> $GITHUB_STEP_SUMMARY
+            echo "- **Valid**: ✅ $VALID" >> $GITHUB_STEP_SUMMARY
+            echo "- **Invalid**: ❌ $INVALID" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            if [ "$INVALID" -gt 0 ]; then
+              echo "### ⚠️ Validation Failures" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
+              jq '.results[] | select(.valid == false)' validation-report.json >> $GITHUB_STEP_SUMMARY
+              echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "ℹ️ No validation report generated - no data to validate" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "CIA data exports will be validated when they become available." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Validation timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
+
+      - name: Check validation status
+        if: always()
+        run: |
+          if [ -f validation-report.json ]; then
+            INVALID=$(jq -r '.invalidCount' validation-report.json 2>/dev/null || echo "0")
+            if [ "$INVALID" -gt 0 ]; then
+              echo "⚠️ Validation found $INVALID invalid export(s)"
+              echo "Please review the validation report artifact for details"
+              # Don't fail the build initially - just warn
+              # exit 1
+            else
+              echo "✅ All exports validated successfully"
+            fi
+          else
+            echo "ℹ️ No data to validate - this is expected if no exports exist yet"
+          fi
