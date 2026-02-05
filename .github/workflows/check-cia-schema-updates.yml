@@ -1,0 +1,146 @@
+name: Check CIA Schema Updates
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Weekly on Monday at 6 AM UTC
+  workflow_dispatch:
+    inputs:
+      auto_update:
+        description: 'Automatically create PR if updates found'
+        required: false
+        default: 'true'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-updates:
+    name: Check for Schema Updates
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@e3f713f2d8f53843e71c69a996d56f51aa9adfb9 # v2.14.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci --prefer-offline --no-audit
+          echo "✅ Dependencies installed"
+
+      - name: Check for CIA schema updates
+        id: check
+        run: |
+          echo "🔍 Checking for CIA schema updates..."
+          npm run check-updates || true
+          
+          # Check if updates were found
+          if [ -f schemas/metadata/update-check.json ]; then
+            UPDATES=$(jq -r '.updatesAvailable' schemas/metadata/update-check.json 2>/dev/null || echo "false")
+            UPDATE_COUNT=$(jq -r '.updateCount' schemas/metadata/update-check.json 2>/dev/null || echo "0")
+            
+            echo "updates=$UPDATES" >> $GITHUB_OUTPUT
+            echo "update_count=$UPDATE_COUNT" >> $GITHUB_OUTPUT
+            
+            if [ "$UPDATES" = "true" ]; then
+              echo "📝 Found $UPDATE_COUNT schema update(s)"
+            else
+              echo "✅ All schemas are up to date"
+            fi
+          else
+            echo "updates=false" >> $GITHUB_OUTPUT
+            echo "update_count=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Sync updated schemas
+        if: steps.check.outputs.updates == 'true'
+        run: |
+          echo "🔄 Syncing updated CIA schemas..."
+          npm run sync-schemas
+          echo "✅ Schemas synced"
+
+      - name: Generate update summary
+        if: always()
+        run: |
+          echo "## 🔄 CIA Schema Update Check" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f schemas/metadata/update-check.json ]; then
+            UPDATES=$(jq -r '.updatesAvailable' schemas/metadata/update-check.json)
+            UPDATE_COUNT=$(jq -r '.updateCount' schemas/metadata/update-check.json)
+            
+            if [ "$UPDATES" = "true" ]; then
+              echo "### 📝 Updates Available: $UPDATE_COUNT" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "The following schemas have been updated:" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              jq -r '.updates[] | "- " + .schema + " (" + .type + ")"' schemas/metadata/update-check.json >> $GITHUB_STEP_SUMMARY
+            else
+              echo "### ✅ All Schemas Up to Date" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "No schema updates detected." >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⚠️ Update check failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Check timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
+
+      - name: Create Pull Request
+        if: steps.check.outputs.updates == 'true' && (github.event_name == 'schedule' || github.event.inputs.auto_update == 'true')
+        uses: peter-evans/create-pull-request@c7dacb6b91ca94e82b64e1c95c2dd95e87b7bb88 # v7.0.7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: Update CIA schemas to latest version'
+          title: '🔄 Update CIA schemas to latest version'
+          body: |
+            ## Automated Schema Update
+            
+            This PR contains automated updates to CIA JSON schemas.
+            
+            ### Summary
+            - **Update Count**: ${{ steps.check.outputs.update_count }}
+            - **Source**: https://github.com/Hack23/cia/tree/master/json-export-specs/schemas
+            - **Timestamp**: ${{ github.event.repository.updated_at }}
+            
+            ### Changes
+            Updated schemas have been synced from the CIA repository to ensure compatibility with the latest data export format.
+            
+            ### Validation
+            - [ ] Review schema changes
+            - [ ] Verify validation still passes
+            - [ ] Check for breaking changes
+            
+            ### References
+            - CIA Repository: https://github.com/Hack23/cia
+            - Schema Documentation: https://github.com/Hack23/cia/tree/master/json-export-specs
+            
+            ---
+            *This PR was automatically created by the CIA schema update workflow*
+          branch: 'update-cia-schemas-${{ github.run_number }}'
+          delete-branch: true
+          labels: |
+            dependencies
+            automated
+            schemas
+          reviewers: pethers
+
+      - name: Notification
+        if: steps.check.outputs.updates == 'true'
+        run: |
+          echo "🔔 Schema updates detected and PR created"
+          echo "Please review the changes before merging"

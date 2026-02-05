@@ -1,0 +1,146 @@
+name: Sync CIA Schemas
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Force sync even if schemas exist'
+        required: false
+        default: 'true'
+  push:
+    paths:
+      - 'scripts/sync-cia-schemas.js'
+      - '.github/workflows/sync-cia-schemas.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-schemas:
+    name: Sync CIA Schemas
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@e3f713f2d8f53843e71c69a996d56f51aa9adfb9 # v2.14.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci --prefer-offline --no-audit
+          echo "✅ Dependencies installed"
+
+      - name: Sync CIA schemas
+        id: sync
+        run: |
+          echo "🔄 Syncing CIA schemas from upstream..."
+          npm run sync-schemas
+          
+          # Count synced schemas
+          if [ -f schemas/metadata/last-sync.json ]; then
+            SYNCED=$(jq -r '.syncedCount' schemas/metadata/last-sync.json 2>/dev/null || echo "0")
+            FAILED=$(jq -r '.failedCount' schemas/metadata/last-sync.json 2>/dev/null || echo "0")
+            
+            echo "synced=$SYNCED" >> $GITHUB_OUTPUT
+            echo "failed=$FAILED" >> $GITHUB_OUTPUT
+            
+            echo "✅ Synced $SYNCED schema(s)"
+            if [ "$FAILED" -gt 0 ]; then
+              echo "⚠️ Failed to sync $FAILED schema(s)"
+            fi
+          fi
+
+      - name: Generate sync summary
+        if: always()
+        run: |
+          echo "## 🔄 CIA Schema Synchronization" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f schemas/metadata/last-sync.json ]; then
+            SYNCED=$(jq -r '.syncedCount' schemas/metadata/last-sync.json)
+            FAILED=$(jq -r '.failedCount' schemas/metadata/last-sync.json)
+            TOTAL=$(jq -r '.totalSchemas' schemas/metadata/last-sync.json)
+            
+            echo "### Summary" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total Schemas**: $TOTAL" >> $GITHUB_STEP_SUMMARY
+            echo "- **Successfully Synced**: ✅ $SYNCED" >> $GITHUB_STEP_SUMMARY
+            echo "- **Failed**: ❌ $FAILED" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            if [ "$FAILED" -gt 0 ]; then
+              echo "### ⚠️ Sync Failures" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
+              jq '.failures' schemas/metadata/last-sync.json >> $GITHUB_STEP_SUMMARY
+              echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📋 Synced Schemas" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            jq -r '.schemas[] | "- " + .name + " (" + (.size / 1024 | floor | tostring) + " KB)"' schemas/metadata/last-sync.json >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Sync failed - no metadata generated" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Sync timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload sync metadata
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: sync-metadata
+          path: schemas/metadata/
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Commit synced schemas
+        if: github.event_name == 'workflow_dispatch' && steps.sync.outputs.synced != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add synced schemas
+          git add schemas/
+          
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "ℹ️ No schema changes detected"
+          else
+            git commit -m "chore: Sync CIA schemas from upstream" \
+                       -m "" \
+                       -m "Synced schema(s) from CIA repository" \
+                       -m "Source https://github.com/Hack23/cia/tree/master/json-export-specs/schemas" \
+                       -m "" \
+                       -m "Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+            
+            git push
+            echo "✅ Schemas committed and pushed"
+          fi
+
+      - name: Check sync status
+        if: always()
+        run: |
+          FAILED="${{ steps.sync.outputs.failed }}"
+          if [ "$FAILED" != "0" ]; then
+            echo "⚠️ Some schemas failed to sync"
+            echo "Please review the sync metadata artifact for details"
+            # Don't fail the build - just warn
+            # exit 1
+          else
+            echo "✅ All schemas synced successfully"
+          fi

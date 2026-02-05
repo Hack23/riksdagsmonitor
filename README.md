@@ -35,6 +35,18 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
 
 ## 📊 CIA Data Products Integration
 
+Riksdagsmonitor integrates with the CIA platform through automated schema validation and data quality assurance.
+
+### Schema Integration
+- **Automated Validation** - All CIA exports validated against JSON schemas
+- **Type Safety** - TypeScript type definitions for development
+- **CI/CD Integration** - Daily validation checks in GitHub Actions
+- **Update Detection** - Weekly checks for schema updates
+
+See [CIA Schema Integration Documentation](docs/CIA_SCHEMA_INTEGRATION.md) for details.
+
+### Data Products
+
 Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA platform:
 
 ### Intelligence Dashboards
