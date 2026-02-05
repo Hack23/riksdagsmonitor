@@ -175,7 +175,7 @@ Target scores:
 ### External Libraries
 - **Chart.js v4.4.1**: Chart rendering (60KB minified)
   - CDN: `https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js`
-  - SRI: `sha384-VzJbN2v1vFcGJCeP5T5XREFm3+OIH7d2qRMOA/fHtfDO5Cd2Qc6bjqH8R5RZqQkQ`
+  - SRI: `sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb`
   - License: MIT
 
 ### Font Dependencies

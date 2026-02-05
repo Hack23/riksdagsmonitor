@@ -3,17 +3,6 @@
  * Renders CIA intelligence data visualizations
  */
 
-/**
- * Helper function to escape HTML to prevent XSS
- * @param {string} text - Text to escape
- * @returns {string} - Escaped text
- */
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
-
 export class CIADashboardRenderer {
   constructor(data) {
     this.data = data;
@@ -26,23 +15,37 @@ export class CIADashboardRenderer {
   renderKeyMetrics() {
     const { overview } = this.data;
     
-    // Update metric values
-    document.getElementById('metric-total-mps').textContent = 
-      overview.keyMetrics.totalMPs;
-    document.getElementById('metric-total-parties').textContent = 
-      overview.keyMetrics.totalParties;
-    document.getElementById('metric-risk-rules').textContent = 
-      overview.keyMetrics.totalRiskRules;
-    document.getElementById('metric-coalition-seats').textContent = 
-      overview.keyMetrics.coalitionSeats;
+    // Update metric values with null checks
+    const totalMpsEl = document.getElementById('metric-total-mps');
+    if (totalMpsEl) {
+      totalMpsEl.textContent = overview.keyMetrics.totalMPs;
+    }
+    const totalPartiesEl = document.getElementById('metric-total-parties');
+    if (totalPartiesEl) {
+      totalPartiesEl.textContent = overview.keyMetrics.totalParties;
+    }
+    const riskRulesEl = document.getElementById('metric-risk-rules');
+    if (riskRulesEl) {
+      riskRulesEl.textContent = overview.keyMetrics.totalRiskRules;
+    }
+    const coalitionSeatsEl = document.getElementById('metric-coalition-seats');
+    if (coalitionSeatsEl) {
+      coalitionSeatsEl.textContent = overview.keyMetrics.coalitionSeats;
+    }
 
-    // Update risk alerts
-    document.getElementById('alert-critical').textContent = 
-      overview.riskAlerts.last90Days.critical;
-    document.getElementById('alert-major').textContent = 
-      overview.riskAlerts.last90Days.major;
-    document.getElementById('alert-minor').textContent = 
-      overview.riskAlerts.last90Days.minor;
+    // Update risk alerts with null checks
+    const alertCriticalEl = document.getElementById('alert-critical');
+    if (alertCriticalEl) {
+      alertCriticalEl.textContent = overview.riskAlerts.last90Days.critical;
+    }
+    const alertMajorEl = document.getElementById('alert-major');
+    if (alertMajorEl) {
+      alertMajorEl.textContent = overview.riskAlerts.last90Days.major;
+    }
+    const alertMinorEl = document.getElementById('alert-minor');
+    if (alertMinorEl) {
+      alertMinorEl.textContent = overview.riskAlerts.last90Days.minor;
+    }
   }
 
   /**

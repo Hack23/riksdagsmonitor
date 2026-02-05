@@ -3,17 +3,6 @@
  * Renders Swedish election forecasting and coalition scenarios
  */
 
-/**
- * Helper function to escape HTML to prevent XSS
- * @param {string} text - Text to escape
- * @returns {string} - Escaped text
- */
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
-
 export class Election2026Predictions {
   constructor(electionData) {
     this.data = electionData;
@@ -174,16 +163,34 @@ export class Election2026Predictions {
    * Render key factors affecting the election
    */
   renderKeyFactors() {
+    const container = document.getElementById('key-factors');
     const { keyFactors } = this.data;
-    
-    return `
-      <div class="key-factors">
-        <h3>Key Election Factors</h3>
-        <ul>
-          ${keyFactors.map(factor => `<li>${factor}</li>`).join('')}
-        </ul>
-      </div>
-    `;
+
+    if (!container) {
+      return;
+    }
+
+    // Clear existing content safely
+    container.textContent = '';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'key-factors';
+
+    const heading = document.createElement('h3');
+    heading.textContent = 'Key Election Factors';
+    wrapper.appendChild(heading);
+
+    const list = document.createElement('ul');
+
+    keyFactors.forEach(factor => {
+      const listItem = document.createElement('li');
+      // Use textContent to prevent XSS from untrusted factor values
+      listItem.textContent = String(factor);
+      list.appendChild(listItem);
+    });
+
+    wrapper.appendChild(list);
+    container.appendChild(wrapper);
   }
 
   /**
@@ -203,6 +210,18 @@ export class Election2026Predictions {
    */
   getSummaryStats() {
     const { parties } = this.data.forecast;
+    
+    // Handle empty parties array defensively
+    if (!parties || parties.length === 0) {
+      return {
+        totalSeats: 0,
+        gainers: 0,
+        losers: 0,
+        stable: 0,
+        biggestGain: null,
+        biggestLoss: null
+      };
+    }
     
     return {
       totalSeats: parties.reduce((sum, p) => sum + p.predictedSeats, 0),
