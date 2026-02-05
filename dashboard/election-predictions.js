@@ -218,22 +218,53 @@ export class Election2026Predictions {
    * Get election date formatted
    */
   getFormattedElectionDate() {
+    // Defensive checks for election date data
+    if (!this.data || !this.data.electionDate) {
+      console.warn('Invalid or missing election date data');
+      return '';
+    }
+
     const date = new Date(this.data.electionDate);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
+
+    // Validate that the constructed date is valid
+    if (Number.isNaN(date.getTime())) {
+      console.warn('Election date is not a valid date:', this.data.electionDate);
+      return '';
+    }
+
+    try {
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (error) {
+      console.warn('Failed to format election date', error);
+      return '';
+    }
   }
 
   /**
    * Calculate and return summary statistics
    */
   getSummaryStats() {
+    // Defensive check for forecast and parties structure
+    if (!this.data || !this.data.forecast || !Array.isArray(this.data.forecast.parties)) {
+      console.warn('Invalid or missing election forecast data for summary stats');
+      return {
+        totalSeats: 0,
+        gainers: 0,
+        losers: 0,
+        stable: 0,
+        biggestGain: null,
+        biggestLoss: null
+      };
+    }
+    
     const { parties } = this.data.forecast;
     
     // Handle empty parties array defensively
-    if (!parties || parties.length === 0) {
+    if (parties.length === 0) {
       return {
         totalSeats: 0,
         gainers: 0,
