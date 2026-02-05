@@ -127,6 +127,9 @@ jobs:
           # Pre-cache @playwright/mcp for faster startup
           npm install -g @playwright/mcp
           
+          # Install riksdag-regering-mcp for Swedish political data
+          npm install -g riksdag-regering-mcp
+          
           echo "✅ Node.js MCP server packages installed globally"
 
       # Cache global npm packages for MCP servers
@@ -158,10 +161,14 @@ jobs:
           
           echo "Checking @playwright/mcp..."
           which mcp-server-playwright 2>/dev/null && echo "✅ mcp-server-playwright found" || echo "ℹ️ @playwright/mcp available via npx"
+          
+          echo "Checking riksdag-regering-mcp..."
+          which riksdag-regering-mcp && echo "✅ riksdag-regering-mcp found" || echo "❌ riksdag-regering-mcp NOT found"
                     
           echo ""
           echo "=== HTTP MCP Servers ==="
-          echo "📍 GitHub MCP Server: Using HTTP endpoint (https://api.githubcopilot.com/mcp/insiders)"         
+          echo "📍 GitHub MCP Server: Using HTTP endpoint (https://api.githubcopilot.com/mcp/insiders)"
+          echo "📍 Riksdag-Regering MCP Server: Using HTTP endpoint (https://riksdag-regering-ai.onrender.com/mcp)"
           echo "✅ MCP server verification complete"
 
       - name: Install Playwright browsers (and OS deps)
