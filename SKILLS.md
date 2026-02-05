@@ -441,6 +441,234 @@ Skills are:
 - Data collection strategies
 - Compliance verification
 
+### 19. cis-controls ✨ NEW
+**Purpose**: CIS Controls v8.1 critical security controls for static HTML/CSS websites on GitHub Pages
+
+**Key Principles**:
+- Asset Inventory (repositories, domains, CDN)
+- Secure Configuration (GitHub Pages, security headers)
+- Access Control (branch protection, MFA)
+- Audit Logging (GitHub audit logs)
+- Application Security (HTML/CSS validation, dependency scanning)
+
+**Enforces**:
+- Control 1: Asset management (GitHub repo, domain, DNS)
+- Control 4: Secure configuration (CSP, HSTS, X-Frame-Options)
+- Control 6: Access control management (GitHub permissions)
+- Control 8: Audit log management
+- Control 16: Application software security (validation, scanning)
+
+**When to Use**:
+- Security hardening
+- Compliance assessments
+- GitHub Pages configuration
+- Security baseline establishment
+
+### 20. iso-27001-controls ✨ NEW
+**Purpose**: ISO 27001:2022 Annex A controls for static HTML/CSS websites
+
+**Key Principles**:
+- Organizational Controls (A.5)
+- Technical Controls (A.8)
+- Development Controls (A.14)
+- Incident Management (A.16)
+
+**Enforces**:
+- A.8.3: Access restrictions via GitHub permissions
+- A.8.23: Web filtering (CSP, security headers)
+- A.8.24: Cryptography (TLS 1.3, HTTPS-only)
+- A.8.28: Secure coding (HTML5/CSS3 validation)
+- A.14.2.8: Security testing (validation, scanning)
+
+**When to Use**:
+- ISMS audits
+- Security architecture changes
+- ISO 27001 certification prep
+- Control implementation verification
+
+### 21. nist-csf-mapping ✨ NEW
+**Purpose**: NIST Cybersecurity Framework 2.0 mapping for static sites
+
+**Key Principles**:
+- IDENTIFY: Asset management, risk assessment
+- PROTECT: Access control, data security
+- DETECT: Continuous monitoring, adverse events
+- RESPOND: Incident analysis, mitigation
+- RECOVER: Recovery planning, communications
+
+**Enforces**:
+- ID.AM: Repository and domain inventory
+- PR.AC: GitHub MFA, branch protection
+- PR.DS: HTTPS-only, no cookies
+- DE.CM: GitHub audit logs, Dependabot
+- RC.RP: Git history backups, rollback procedures
+
+**When to Use**:
+- Security architecture reviews
+- Compliance assessments
+- Risk management
+- Control mapping
+
+### 22. threat-modeling ✨ NEW
+**Purpose**: STRIDE threat modeling for static HTML/CSS websites on GitHub Pages
+
+**Key Principles**:
+- Spoofing (domain hijacking, DNS attacks)
+- Tampering (repository compromise)
+- Repudiation (audit trail integrity)
+- Information Disclosure (secret leaks)
+- Denial of Service (DDoS protection)
+- Elevation of Privilege (access control)
+
+**Enforces**:
+- HTTPS and DNSSEC
+- Branch protection and GPG signing
+- GitHub audit logs
+- Secret scanning
+- GitHub Pages CDN protection
+- Minimal workflow permissions
+
+**When to Use**:
+- Security design
+- Threat analysis
+- Risk assessments
+- ISMS compliance (ISO A.12.6)
+
+### 23. secure-code-review ✨ NEW
+**Purpose**: Security code review for HTML/CSS/JavaScript in static websites
+
+**Key Principles**:
+- HTML Security (no inline scripts, CSP compliance)
+- CSS Security (no external imports, no user-controlled CSS)
+- Link Security (HTTPS-only, link integrity)
+- Configuration Security (no secrets, minimal permissions)
+
+**Enforces**:
+- No inline JavaScript (CSP compliance)
+- External links use rel="noopener noreferrer"
+- All links HTTPS
+- Secret scanning
+- Workflow permissions minimal
+
+**When to Use**:
+- PR reviews
+- Security audits
+- Code contributions
+- XSS prevention
+
+### 24. security-documentation ✨ NEW
+**Purpose**: ISMS security documentation standards for Hack23 projects
+
+**Key Principles**:
+- Current State (SECURITY_ARCHITECTURE.md)
+- Future State (FUTURE_SECURITY_ARCHITECTURE.md)
+- Threat Analysis (THREAT_MODEL.md)
+- System Design (ARCHITECTURE.md)
+- Security Policy (SECURITY.md)
+
+**Enforces**:
+- C4 diagrams (Context, Container, Component)
+- Mermaid workflows
+- Compliance mapping (ISO/NIST/CIS)
+- Document control metadata
+- Classification marking
+
+**When to Use**:
+- Architecture changes
+- Security control updates
+- ISMS audits
+- Compliance documentation
+
+### 25. c4-architecture-documentation ✨ NEW
+**Purpose**: C4 architecture model for documenting static sites with MCP integrations
+
+**Key Principles**:
+- Context Diagram (system and users)
+- Container Diagram (technology choices)
+- Component Diagram (internal structure)
+- Code Diagram (class/interface level)
+
+**Enforces**:
+- Mermaid C4 diagrams
+- Technology stack documentation
+- MCP server integration diagrams
+- Deployment pipeline documentation
+
+**When to Use**:
+- ARCHITECTURE.md updates
+- System design documentation
+- MCP server integration
+- Technology decisions
+
+### 26. github-actions-workflows ✨ NEW
+**Purpose**: GitHub Actions workflow patterns for static site CI/CD
+
+**Key Principles**:
+- Quality Checks (HTML/CSS validation, link checking)
+- Security Scanning (CodeQL, Dependabot, secret scanning)
+- Deployment (GitHub Pages publishing)
+- Minimal Permissions (least privilege)
+
+**Enforces**:
+- HTMLHint validation
+- linkinator link checking
+- CodeQL security analysis
+- Dependency scanning
+- Least privilege permissions
+- SHA-pinned actions
+
+**When to Use**:
+- CI/CD pipeline design
+- Workflow optimization
+- Security hardening
+- Quality gate implementation
+
+### 27. code-quality-checks ✨ NEW
+**Purpose**: Quality gates for static HTML/CSS websites
+
+**Key Principles**:
+- HTML Validation (HTMLHint, 0 errors)
+- CSS Validation (CSSLint, warnings only)
+- Link Integrity (linkinator, 0 broken links)
+- Accessibility (axe-core, WCAG 2.1 AA)
+- Performance (Core Web Vitals, PageSpeed Insights)
+
+**Enforces**:
+- 0 HTML validation errors
+- 0 broken links
+- 0 WCAG 2.1 AA violations
+- 4.5:1 color contrast minimum
+- 90+ PageSpeed score
+
+**When to Use**:
+- PR reviews
+- Quality assurance
+- Pre-deployment checks
+- Continuous monitoring
+
+### 28. secrets-management ✨ NEW
+**Purpose**: GitHub secrets and environment variables for MCP servers and CI/CD
+
+**Key Principles**:
+- GitHub Secrets (Actions, Environment)
+- Secret Scanning (automatic detection)
+- Secret Rotation (90-day cycle)
+- Least Privilege (minimal scopes)
+- Audit Logging (secret access tracking)
+
+**Enforces**:
+- COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN configuration
+- Environment-specific secrets (copilot environment)
+- .gitignore for sensitive files
+- Secret scanning enabled
+- 90-day rotation policy
+
+**When to Use**:
+- MCP server configuration
+- CI/CD workflow setup
+- Secret rotation
+- Security audits
+
 ## How Skills Work
 
 ### Automatic Loading

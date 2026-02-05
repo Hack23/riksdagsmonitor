@@ -208,21 +208,25 @@ linkinator http://localhost:8080/ --recurse
 - [LICENSE](LICENSE) - Apache License 2.0
 
 ### GitHub Copilot Integration
-- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks
-- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance
+- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (9 agents)
+- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (28 skills)
 - [`.github/agents/`](.github/agents/) - Agent configuration files
 - [`.github/skills/`](.github/skills/) - Skill libraries
 
-**Available Agents**:
+**Available Agents (9)**:
 - **security-architect** - Security architecture and ISMS compliance
 - **documentation-architect** - C4 models and technical documentation
 - **quality-engineer** - HTML/CSS validation and accessibility
 - **frontend-specialist** - Static site development and responsive design
 - **isms-compliance-manager** - ISO 27001/NIST CSF/CIS Controls compliance
 - **deployment-specialist** - GitHub Actions and CI/CD automation
-- **intelligence-operative** - Political intelligence analysis, OSINT, Swedish politics expertise
+- **intelligence-operative** - Political intelligence analysis, OSINT, Swedish politics expertise, riksdag-regering-mcp (32 tools)
+- **task-agent** ✨ - Product excellence, quality assurance, Playwright testing, issue management
+- **ui-enhancement-specialist** ✨ - Static HTML/CSS, responsive design, 14-language support, WCAG 2.1 AA
 
-**Available Skills**:
+**Available Skills (28)**:
+
+*Core Infrastructure (7):*
 - **hack23-isms-compliance** - ISMS framework requirements
 - **security-by-design** - Security best practices
 - **static-site-security** - Static website security
@@ -230,6 +234,8 @@ linkinator http://localhost:8080/ --recurse
 - **documentation-standards** - Documentation guidelines
 - **html-accessibility** - WCAG 2.1 AA compliance
 - **multi-language-localization** - Internationalization best practices
+
+*Political Intelligence (11):*
 - **political-science-analysis** - Comparative politics and policy analysis frameworks
 - **osint-methodologies** - Open-source intelligence collection and verification
 - **intelligence-analysis-techniques** - Structured analytic techniques (ACH, SWOT)
@@ -241,6 +247,20 @@ linkinator http://localhost:8080/ --recurse
 - **risk-assessment-frameworks** - Political risk and corruption indicators
 - **data-science-for-intelligence** - Statistical analysis and visualization
 - **gdpr-compliance** - GDPR compliance for political data processing
+
+*ISMS & Security (6):* ✨
+- **cis-controls** - CIS Controls v8.1 for static sites
+- **iso-27001-controls** - ISO 27001:2022 Annex A controls
+- **nist-csf-mapping** - NIST CSF 2.0 framework mapping
+- **threat-modeling** - STRIDE threat analysis
+- **secure-code-review** - HTML/CSS/JS security review
+- **security-documentation** - ISMS documentation standards
+
+*Development & Operations (4):* ✨
+- **c4-architecture-documentation** - C4 model and Mermaid diagrams
+- **github-actions-workflows** - CI/CD patterns and security
+- **code-quality-checks** - HTMLHint, CSSLint, linkinator, axe-core
+- **secrets-management** - GitHub secrets and PAT management
 
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)
