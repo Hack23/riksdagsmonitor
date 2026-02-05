@@ -1,0 +1,46 @@
+{
+  "name": "riksdagsmonitor",
+  "version": "1.0.0",
+  "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+  "main": "index.html",
+  "scripts": {
+    "sync-schemas": "node scripts/sync-cia-schemas.js",
+    "validate-data": "node scripts/validate-against-cia-schemas.js",
+    "check-updates": "node scripts/check-cia-schema-updates.js",
+    "generate-types": "node scripts/generate-types-from-cia-schemas.js",
+    "test": "npm run validate-data",
+    "htmlhint": "htmlhint *.html",
+    "serve": "python3 -m http.server 8080",
+    "linkcheck": "linkinator http://localhost:8080/ --recurse"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hack23/riksdagsmonitor.git"
+  },
+  "keywords": [
+    "riksdag",
+    "parliament",
+    "sweden",
+    "politics",
+    "osint",
+    "transparency",
+    "intelligence"
+  ],
+  "author": "Hack23 AB",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Hack23/riksdagsmonitor/issues"
+  },
+  "homepage": "https://riksdagsmonitor.com",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "^15.0.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

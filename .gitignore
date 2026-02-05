@@ -9,3 +9,11 @@ node_modules/
 dist/
 build/
 *.log
+package-lock.json
+data/cia-exports/
+types/
+schemas/metadata/
+validation-report.json
+htmlhint-report.txt
+internal-links-report.json
+external-links-report.json
