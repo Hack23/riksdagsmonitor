@@ -1,7 +1,7 @@
 # 🏗️ Riksdagsmonitor - System Architecture
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-01-29  
+**Document Version:** 1.1  
+**Last Updated:** 2026-02-05  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -235,6 +235,98 @@ graph TB
     style Dashboard fill:#9c27b0
     style Riksdag fill:#ff9800
 ```
+
+### 3.3 GitHub Copilot MCP Server Integration
+
+Riksdagsmonitor leverages GitHub Copilot with Model Context Protocol (MCP) servers for advanced political intelligence analysis and automation.
+
+#### MCP Server Architecture
+
+```mermaid
+graph TB
+    subgraph "GitHub Copilot Environment"
+        Agent[intelligence-operative Agent]
+        Skills[18 Strategic Skills]
+    end
+    
+    subgraph "MCP Servers"
+        RR[riksdag-regering-mcp<br/>HTTP: riksdag-regering-ai.onrender.com/mcp]
+        GH[GitHub MCP<br/>HTTP: api.githubcopilot.com/mcp/insiders]
+        FS[Filesystem MCP<br/>Local: mcp-server-filesystem]
+        Mem[Memory MCP<br/>Local: mcp-server-memory]
+        PW[Playwright MCP<br/>Local: @playwright/mcp]
+    end
+    
+    subgraph "Data Sources"
+        Riksdag[Riksdagen API<br/>data.riksdagen.se]
+        Regering[Regeringen<br/>via g0v.se]
+    end
+    
+    Agent --> Skills
+    Agent --> RR
+    Agent --> GH
+    Agent --> FS
+    Agent --> Mem
+    Agent --> PW
+    
+    RR --> Riksdag
+    RR --> Regering
+    
+    style Agent fill:#9c27b0
+    style Skills fill:#4caf50
+    style RR fill:#ff9800
+    style GH fill:#2196f3
+```
+
+#### riksdag-regering-mcp Server
+
+**Purpose**: Provides specialized access to Swedish political data for intelligence analysis
+
+**Configuration**:
+```json
+{
+  "riksdag-regering": {
+    "type": "http",
+    "url": "https://riksdag-regering-ai.onrender.com/mcp",
+    "tools": ["*"]
+  }
+}
+```
+
+**32 Available Tools**:
+1. **Ledamöter (MPs)**: Information, activities, assignments, biographical data
+2. **Riksdagsdokument (Documents)**: Motions, written questions, interpellations, bills
+3. **Anföranden (Speeches)**: Chamber debates, committee statements, plenary speeches
+4. **Voteringar (Votes)**: Voting records, party discipline, coalition patterns
+5. **Regeringsdokument (Government)**: SOU reports, propositions, press releases
+
+**Data Sources**:
+- **Riksdagen API**: https://data.riksdagen.se/ (Official Parliament API, 98.5% completeness)
+- **Regeringen via g0v.se**: https://g0v.se/ (Open government data)
+
+**Use Cases**:
+- Political intelligence dashboards
+- Voting pattern analysis
+- Coalition behavior tracking
+- Legislative monitoring
+- Risk assessment for democratic accountability
+
+#### Integration Benefits
+
+| Capability | Without MCP | With MCP |
+|------------|-------------|----------|
+| **Data Access** | Manual API calls | Automated via 32 specialized tools |
+| **Analysis** | Generic prompts | Domain-specific intelligence-operative agent |
+| **Expertise** | Basic knowledge | 18 strategic skills (political science, OSINT, Swedish politics) |
+| **Efficiency** | Multi-step workflows | Integrated single-step operations |
+| **Compliance** | Manual GDPR checks | Built-in GDPR compliance skill |
+
+**Security Considerations**:
+- HTTP-only MCP server (no local execution risk)
+- Public data sources only (GDPR Article 6(1)(e) compliance)
+- No authentication required (public API access)
+- Rate limiting handled by remote server
+- See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for full details
 
 ## 4. Security Architecture Integration
 
