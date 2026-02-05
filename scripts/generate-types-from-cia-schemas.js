@@ -80,7 +80,7 @@ class CIATypeGenerator {
    */
   async generateAllTypes() {
     console.log('📝 CIA Type Generation');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`📁 Schemas directory: ${this.schemasDir}`);
     console.log(`📁 Types directory: ${this.typesDir}`);
     console.log('');
@@ -154,9 +154,9 @@ ${imports}
    */
   printSummary() {
     console.log('');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log('📊 Type Generation Summary');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`✅ Generated: ${this.results.generated.length}`);
     console.log(`❌ Failed: ${this.results.failed.length}`);
     
@@ -170,7 +170,7 @@ ${imports}
     
     console.log('');
     console.log(`📁 Types saved to: ${this.typesDir}`);
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log('');
     console.log('💡 Usage:');
     console.log('   import type { OverviewDashboard } from "./types/overview-dashboard";');

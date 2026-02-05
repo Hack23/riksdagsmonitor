@@ -35,8 +35,7 @@
   "homepage": "https://riksdagsmonitor.com",
   "dependencies": {
     "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1",
-    "node-fetch": "^3.3.2"
+    "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
     "json-schema-to-typescript": "^15.0.3"

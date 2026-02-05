@@ -116,7 +116,7 @@ class CIASchemaValidator {
    */
   async validateAllExports() {
     console.log('🔍 CIA Data Validation');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`📁 Data directory: ${this.dataDir}`);
     console.log('');
 
@@ -199,9 +199,9 @@ class CIASchemaValidator {
    */
   printSummary() {
     console.log('');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log('📊 Validation Summary');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     
     const validCount = this.results.filter(r => r.valid).length;
     const invalidCount = this.results.filter(r => !r.valid).length;
@@ -221,7 +221,7 @@ class CIASchemaValidator {
     
     console.log('');
     console.log('📄 Full report saved to: validation-report.json');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
   }
 }
 

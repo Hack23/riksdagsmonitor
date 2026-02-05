@@ -109,7 +109,7 @@ class CIASchemaSync {
    */
   async syncAllSchemas() {
     console.log('🔄 CIA Schema Synchronization');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`📋 Total schemas: ${CIA_SCHEMAS.length}`);
     console.log(`🎯 Source: ${CIA_SCHEMA_BASE_URL}`);
     console.log('');
@@ -173,9 +173,9 @@ class CIASchemaSync {
    */
   printSummary() {
     console.log('');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log('📊 Synchronization Summary');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`✅ Successfully synced: ${this.results.synced.length}/${this.results.total}`);
     console.log(`❌ Failed: ${this.results.failed.length}/${this.results.total}`);
     
@@ -190,7 +190,7 @@ class CIASchemaSync {
     console.log('');
     console.log(`📁 Schemas saved to: ${this.schemasDir}`);
     console.log(`📋 Metadata saved to: ${this.metadataDir}`);
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
   }
 }
 

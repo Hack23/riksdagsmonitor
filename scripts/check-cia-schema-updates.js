@@ -145,7 +145,7 @@ class CIASchemaUpdateChecker {
    */
   async checkAllSchemas() {
     console.log('🔄 CIA Schema Update Check');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`📋 Checking ${CIA_SCHEMAS.length} schemas`);
     console.log('');
 
@@ -194,9 +194,9 @@ class CIASchemaUpdateChecker {
    */
   printSummary() {
     console.log('');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log('📊 Update Check Summary');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     
     const newSchemas = this.updates.filter(u => u.type === 'new');
     const updatedSchemas = this.updates.filter(u => u.type === 'updated');
@@ -229,7 +229,7 @@ class CIASchemaUpdateChecker {
     
     console.log('');
     console.log(`📄 Report saved to: ${path.join(this.metadataDir, 'update-check.json')}`);
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
   }
 }
 
