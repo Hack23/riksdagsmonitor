@@ -4,7 +4,7 @@
 
 This repository includes custom GitHub Copilot agents specialized for different aspects of the riksdagsmonitor project. Each agent has deep expertise in its domain and can be invoked to assist with specific tasks.
 
-## Available Agents
+## Available Agents (9 Total)
 
 ### 1. Security Architect (`security-architect`)
 **Expertise**: Security architecture, ISMS compliance, threat modeling, ISO 27001/NIST CSF/CIS Controls
@@ -134,6 +134,110 @@ assign_copilot_to_issue({
   issue_number: 128,
   custom_agent: "deployment-specialist",
   custom_instructions: "Optimize CI/CD pipeline and add security hardening"
+})
+```
+
+### 7. Intelligence Operative (`intelligence-operative`)
+**Expertise**: Political intelligence analysis, OSINT methodologies, Swedish politics, behavioral analysis
+
+**Use for**:
+- Political data analysis and visualization dashboards
+- OSINT collection from Swedish government sources
+- Swedish political system analysis (Riksdag, 8 parties, electoral system)
+- Voting pattern analysis and legislative monitoring
+- Coalition behavior and stability assessment
+- Policy impact assessment
+- Risk assessment frameworks for democratic accountability
+- GDPR-compliant political data processing
+- Multi-language political content (14 languages)
+
+**Data Sources via riksdag-regering-mcp**:
+- **32 specialized tools** for accessing Swedish political data
+- **Ledamöter (MPs)**: Information, activities, assignments
+- **Riksdagsdokument (Documents)**: Motions, questions, bills
+- **Anföranden (Speeches)**: Chamber debates, statements
+- **Voteringar (Votes)**: Voting records, patterns
+- **Regeringsdokument (Government)**: SOU reports, propositions
+
+**Example invocation**:
+```javascript
+assign_copilot_to_issue({
+  owner: "Hack23",
+  repo: "riksdagsmonitor",
+  issue_number: 129,
+  custom_agent: "intelligence-operative",
+  custom_instructions: "Create voting discipline dashboard showing party cohesion metrics for 2024"
+})
+```
+
+### 8. Task Agent (`task-agent`) ✨ NEW
+**Expertise**: Product excellence, quality assurance, ISMS compliance, Playwright testing, issue management
+
+**Use for**:
+- Continuous product analysis (quality, UI/UX, security)
+- GitHub issue creation for bugs, features, improvements
+- HTML/CSS validation and link checking
+- Accessibility compliance auditing (WCAG 2.1 AA)
+- Security header verification
+- ISMS compliance tracking (ISO/NIST/CIS)
+- Playwright browser testing and visual regression
+- Agent coordination and task delegation
+
+**Key Capabilities**:
+- **Quality Assessment**: HTML/CSS validation, link integrity, build health
+- **UI/UX Evaluation**: WCAG 2.1 AA audits, responsive design testing, 14-language support
+- **Security & ISMS**: ISO 27001 control verification, NIST CSF mapping, CIS Controls
+- **Browser Testing**: Playwright automation, screenshot capture, cross-browser testing
+- **Issue Management**: Well-structured GitHub issues with labels, priorities, agent assignments
+
+**Example invocation**:
+```javascript
+assign_copilot_to_issue({
+  owner: "Hack23",
+  repo: "riksdagsmonitor",
+  issue_number: 130,
+  custom_agent: "task-agent",
+  custom_instructions: `
+    Audit accessibility compliance for all 14 language versions.
+    Create issues for any WCAG 2.1 AA violations found.
+    Include Playwright screenshots as evidence.
+  `
+})
+```
+
+### 9. UI Enhancement Specialist (`ui-enhancement-specialist`) ✨ NEW
+**Expertise**: Static HTML5/CSS3, responsive design, multi-language localization, WCAG 2.1 AA accessibility
+
+**Use for**:
+- Static HTML5/CSS3 development and optimization
+- Cyberpunk theme design system implementation
+- CSS-only data visualizations (charts, heat maps, progress bars)
+- 14-language support with RTL layouts (Arabic, Hebrew)
+- WCAG 2.1 AA accessibility compliance
+- Core Web Vitals optimization (LCP, FID, CLS)
+- XSS prevention and CSP enforcement
+- Mobile-first responsive design (320px-1440px+)
+
+**Key Capabilities**:
+- **Design System**: Cyberpunk color palette, fluid typography with clamp(), CSS custom properties
+- **Data Visualization**: CSS-only progress bars, heat maps, bar charts for political metrics
+- **Accessibility**: Keyboard navigation, screen reader support, ARIA labels, color contrast 4.5:1
+- **Multi-Language**: Separate HTML files for 14 languages, hreflang SEO, RTL support
+- **Performance**: Lazy loading, CSS optimization, image optimization, Core Web Vitals
+- **Security**: No inline scripts, CSP headers, safe external links
+
+**Example invocation**:
+```javascript
+assign_copilot_to_issue({
+  owner: "Hack23",
+  repo: "riksdagsmonitor",
+  issue_number: 131,
+  custom_agent: "ui-enhancement-specialist",
+  custom_instructions: `
+    Implement voting discipline dashboard using CSS-only visualizations.
+    Ensure WCAG 2.1 AA compliance and responsive design.
+    Support all 14 languages including RTL for Arabic and Hebrew.
+  `
 })
 ```
 
