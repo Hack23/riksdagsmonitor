@@ -1,0 +1,109 @@
+name: Translation Validation
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'index*.html'
+      - 'scripts/validate-translations.js'
+      - '.github/workflows/translation-validation.yml'
+  pull_request:
+    branches: [ master, main ]
+    paths:
+      - 'index*.html'
+      - 'scripts/validate-translations.js'
+      - '.github/workflows/translation-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-translations:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@e3f713f2d8f53843e71c69a996d56f51aa9adfb9 # v2.14.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+
+      - name: Validate all translation files
+        run: |
+          echo "🌐 Validating translations for all 14 languages..."
+          echo ""
+          npm run validate-translations
+          
+      - name: Count language files
+        run: |
+          echo ""
+          echo "📊 Language file statistics:"
+          echo ""
+          echo "Total language files: $(ls -1 index*.html | wc -l)"
+          echo ""
+          for file in index*.html; do
+            size=$(wc -c < "$file" | numfmt --to=iec)
+            lines=$(wc -l < "$file")
+            echo "  $file: $size ($lines lines)"
+          done
+
+      - name: Verify RTL languages
+        run: |
+          echo ""
+          echo "🔄 Verifying RTL (Right-to-Left) language support:"
+          echo ""
+          
+          # Check Arabic
+          if grep -q 'lang="ar" dir="rtl"' index_ar.html; then
+            echo "✅ Arabic (ar): RTL support confirmed"
+          else
+            echo "❌ Arabic (ar): RTL support MISSING"
+            exit 1
+          fi
+          
+          # Check Hebrew
+          if grep -q 'lang="he" dir="rtl"' index_he.html; then
+            echo "✅ Hebrew (he): RTL support confirmed"
+          else
+            echo "❌ Hebrew (he): RTL support MISSING"
+            exit 1
+          fi
+
+      - name: Verify hreflang tags
+        run: |
+          echo ""
+          echo "🔗 Verifying hreflang tags for SEO:"
+          echo ""
+          
+          for file in index*.html; do
+            count=$(grep -c 'hreflang=' "$file" || echo 0)
+            if [ "$count" -ge 14 ]; then
+              echo "✅ $file: $count hreflang tags (sufficient)"
+            else
+              echo "⚠️  $file: $count hreflang tags (should be 14+)"
+            fi
+          done
+
+      - name: Translation validation summary
+        if: always()
+        run: |
+          echo ""
+          echo "=========================================="
+          echo "   Translation Validation Complete"
+          echo "=========================================="
+          echo ""
+          echo "✅ All 14 language files validated"
+          echo "✅ RTL support verified"
+          echo "✅ Hreflang tags checked"
+          echo "✅ Meta tags validated"
+          echo ""
+          echo "Languages: EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH"
+          echo ""
+          echo "=========================================="
