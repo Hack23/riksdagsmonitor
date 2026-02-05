@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CIA Intelligence Dashboard | Swedish Riksdag Monitor | Riksdagsmonitor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../styles.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/dashboard/index.html">
+<meta name="description" content="Interactive CIA intelligence dashboard: Real-time visualization of Swedish Riksdag data, election 2026 predictions, party performance, MP rankings, and comprehensive analytics.">
+<meta name="keywords" content="CIA dashboard, Swedish parliament, riksdag analytics, election 2026, party performance, MP rankings, political intelligence, OSINT visualization">
+<meta name="robots" content="index, follow">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="CIA Intelligence Dashboard | Swedish Riksdag Monitor">
+<meta property="og:description" content="Interactive visualization of CIA intelligence exports: Party performance, election predictions, MP rankings, and comprehensive parliamentary analytics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/dashboard/index.html">
+<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<!-- Chart.js via CDN with SRI -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" 
+        integrity="sha384-VzJbN2v1vFcGJCeP5T5XREFm3+OIH7d2qRMOA/fHtfDO5Cd2Qc6bjqH8R5RZqQkQ" 
+        crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="../index.html">Home</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+Dashboard
+</li>
+</ol>
+</nav>
+
+<header>
+<h1>📊 CIA Intelligence Dashboard</h1>
+<p class="tagline">Interactive visualization of Swedish Riksdag intelligence exports</p>
+<p class="data-attribution">
+Data powered by <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener">Citizen Intelligence Agency (CIA)</a> platform
+</p>
+</header>
+
+<main class="cia-dashboard">
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" aria-live="polite">
+<div class="loading-spinner"></div>
+<p>Loading CIA intelligence data...</p>
+</div>
+
+<!-- Error State -->
+<div id="error-state" class="error-state hidden" role="alert" aria-live="assertive">
+<h2>⚠️ Data Loading Error</h2>
+<p id="error-message"></p>
+<button id="retry-button" class="btn">Retry</button>
+</div>
+
+<!-- Dashboard Content (Hidden until loaded) -->
+<div id="dashboard-content" class="hidden">
+
+<!-- Key Metrics Section -->
+<section id="key-metrics" class="metrics-grid" aria-labelledby="metrics-heading">
+<h2 id="metrics-heading" class="section-heading">Overview Metrics</h2>
+<div class="metrics-cards">
+<div class="metric-card" role="group" aria-label="Total MPs">
+<div class="metric-icon" aria-hidden="true">👥</div>
+<div class="metric-value" id="metric-total-mps" data-cia-metric="totalMPs">-</div>
+<div class="metric-label">Members of Parliament</div>
+</div>
+<div class="metric-card" role="group" aria-label="Political Parties">
+<div class="metric-icon" aria-hidden="true">🏛️</div>
+<div class="metric-value" id="metric-total-parties" data-cia-metric="totalParties">-</div>
+<div class="metric-label">Political Parties</div>
+</div>
+<div class="metric-card" role="group" aria-label="Risk Rules">
+<div class="metric-icon" aria-hidden="true">⚠️</div>
+<div class="metric-value" id="metric-risk-rules" data-cia-metric="totalRiskRules">-</div>
+<div class="metric-label">Risk Rules Active</div>
+</div>
+<div class="metric-card" role="group" aria-label="Coalition Seats">
+<div class="metric-icon" aria-hidden="true">🤝</div>
+<div class="metric-value" id="metric-coalition-seats" data-cia-metric="coalitionSeats">-</div>
+<div class="metric-label">Coalition Seats</div>
+</div>
+</div>
+
+<!-- Risk Alerts -->
+<div class="risk-alerts" role="region" aria-labelledby="risk-alerts-heading">
+<h3 id="risk-alerts-heading">Risk Alerts (Last 90 Days)</h3>
+<div class="alert-badges">
+<span class="alert-badge critical" role="status">
+<span class="badge-count" id="alert-critical">0</span> Critical
+</span>
+<span class="alert-badge major" role="status">
+<span class="badge-count" id="alert-major">0</span> Major
+</span>
+<span class="alert-badge minor" role="status">
+<span class="badge-count" id="alert-minor">0</span> Minor
+</span>
+</div>
+</div>
+</section>
+
+<!-- Party Performance Section -->
+<section id="party-performance" class="chart-section" aria-labelledby="party-performance-heading">
+<h2 id="party-performance-heading" class="section-heading">Party Performance Analysis</h2>
+<div class="chart-container">
+<canvas id="party-seats-chart" role="img" aria-label="Party seats distribution chart"></canvas>
+</div>
+<div class="chart-container">
+<canvas id="party-cohesion-chart" role="img" aria-label="Party voting cohesion chart"></canvas>
+</div>
+</section>
+
+<!-- Election 2026 Predictions Section -->
+<section id="election-forecast" class="election-section" aria-labelledby="election-heading">
+<h2 id="election-heading" class="section-heading">Swedish Election 2026 Predictions</h2>
+<p class="section-description">CIA forecasting model based on historical data and current trends</p>
+<div id="seat-predictions" class="predictions-grid"></div>
+
+<h3>Coalition Scenarios</h3>
+<div id="coalition-scenarios" class="scenarios-grid"></div>
+</section>
+
+<!-- Top 10 Rankings Section -->
+<section id="top-rankings" class="rankings-section" aria-labelledby="rankings-heading">
+<h2 id="rankings-heading" class="section-heading">Top 10 Most Influential MPs</h2>
+<p class="section-description">Network analysis and influence scoring (CIA algorithm)</p>
+<div id="influential-mps" class="rankings-list"></div>
+</section>
+
+<!-- Voting Patterns Heatmap Section -->
+<section id="voting-patterns" class="heatmap-section" aria-labelledby="voting-heading">
+<h2 id="voting-heading" class="section-heading">Voting Patterns Heatmap</h2>
+<p class="section-description">Party agreement matrix (2022-2026)</p>
+<div class="chart-container">
+<canvas id="voting-heatmap" role="img" aria-label="Voting patterns heatmap"></canvas>
+</div>
+</section>
+
+<!-- Committee Network Section -->
+<section id="committee-network" class="network-section" aria-labelledby="committee-heading">
+<h2 id="committee-heading" class="section-heading">Committee Network Analysis</h2>
+<p class="section-description">Parliamentary committee influence mapping</p>
+<div id="network-visualization" class="network-container"></div>
+<div id="committee-list" class="committee-grid"></div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<p>&copy; 2008-2026 | Riksdags Monitor |
+<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
+<a href="https://github.com/Hack23/ISMS-PUBLIC" title="Public ISMS Repository">ISMS</a> |
+<a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" title="Information Security Policy">Security Policy</a>
+</p>
+<p>
+<a href="../index.html" title="English">English</a> |
+<a href="index_sv.html" title="Svenska">Svenska</a> |
+<a href="index_da.html" title="Dansk">Dansk</a> |
+<a href="index_no.html" title="Norsk">Norsk</a> |
+<a href="index_fi.html" title="Suomi">Suomi</a>
+</p>
+</footer>
+
+<!-- JavaScript Modules -->
+<script type="module" src="cia-data-loader.js"></script>
+<script type="module" src="cia-visualizations.js"></script>
+<script type="module" src="election-predictions.js"></script>
+<script type="module">
+// Main dashboard initialization
+import { CIADataLoader } from './cia-data-loader.js';
+import { CIADashboardRenderer } from './cia-visualizations.js';
+import { Election2026Predictions } from './election-predictions.js';
+
+async function initDashboard() {
+  const loader = new CIADataLoader();
+  
+  try {
+    // Load all CIA exports
+    const [overview, election, partyPerf, top10, committees, votingPatterns] = await Promise.all([
+      loader.loadOverviewDashboard(),
+      loader.loadElectionAnalysis(),
+      loader.loadPartyPerformance(),
+      loader.loadTop10Influential(),
+      loader.loadCommitteeNetwork(),
+      loader.loadVotingPatterns()
+    ]);
+    
+    // Hide loading state
+    document.getElementById('loading-state').classList.add('hidden');
+    document.getElementById('dashboard-content').classList.remove('hidden');
+    
+    // Initialize renderers
+    const renderer = new CIADashboardRenderer({
+      overview,
+      partyPerf,
+      top10,
+      committees,
+      votingPatterns
+    });
+    
+    const electionRenderer = new Election2026Predictions(election);
+    
+    // Render all sections
+    renderer.renderKeyMetrics();
+    renderer.renderPartyPerformance();
+    renderer.renderTop10Rankings();
+    renderer.renderVotingPatterns();
+    renderer.renderCommitteeNetwork();
+    
+    electionRenderer.renderSeatPredictions();
+    electionRenderer.renderCoalitionScenarios();
+    
+  } catch (error) {
+    console.error('Dashboard initialization error:', error);
+    document.getElementById('loading-state').classList.add('hidden');
+    document.getElementById('error-state').classList.remove('hidden');
+    document.getElementById('error-message').textContent = error.message;
+    
+    // Retry button handler
+    document.getElementById('retry-button').addEventListener('click', () => {
+      location.reload();
+    });
+  }
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initDashboard);
+} else {
+  initDashboard();
+}
+</script>
+</body>
+</html>
