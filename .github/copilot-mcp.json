@@ -1,5 +1,10 @@
 {
   "mcpServers": {
+    "riksdag-regering": {
+      "type": "http",
+      "url": "https://riksdag-regering-ai.onrender.com/mcp",
+      "tools": ["*"]
+    },
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/insiders",
