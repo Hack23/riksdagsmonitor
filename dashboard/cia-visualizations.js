@@ -13,37 +13,43 @@ export class CIADashboardRenderer {
    * Render key metrics section
    */
   renderKeyMetrics() {
-    const { overview } = this.data;
+    const { overview } = this.data || {};
+    
+    if (!overview) {
+      console.warn('Invalid or missing overview data');
+      return;
+    }
     
     // Update metric values with null checks
     const totalMpsEl = document.getElementById('metric-total-mps');
-    if (totalMpsEl) {
+    if (totalMpsEl && overview.keyMetrics) {
       totalMpsEl.textContent = overview.keyMetrics.totalMPs;
     }
     const totalPartiesEl = document.getElementById('metric-total-parties');
-    if (totalPartiesEl) {
+    if (totalPartiesEl && overview.keyMetrics) {
       totalPartiesEl.textContent = overview.keyMetrics.totalParties;
     }
     const riskRulesEl = document.getElementById('metric-risk-rules');
-    if (riskRulesEl) {
+    if (riskRulesEl && overview.keyMetrics) {
       riskRulesEl.textContent = overview.keyMetrics.totalRiskRules;
     }
     const coalitionSeatsEl = document.getElementById('metric-coalition-seats');
-    if (coalitionSeatsEl) {
+    if (coalitionSeatsEl && overview.keyMetrics) {
       coalitionSeatsEl.textContent = overview.keyMetrics.coalitionSeats;
     }
 
     // Update risk alerts with null checks
+    const hasRiskAlerts = overview.riskAlerts && overview.riskAlerts.last90Days;
     const alertCriticalEl = document.getElementById('alert-critical');
-    if (alertCriticalEl) {
+    if (alertCriticalEl && hasRiskAlerts) {
       alertCriticalEl.textContent = overview.riskAlerts.last90Days.critical;
     }
     const alertMajorEl = document.getElementById('alert-major');
-    if (alertMajorEl) {
+    if (alertMajorEl && hasRiskAlerts) {
       alertMajorEl.textContent = overview.riskAlerts.last90Days.major;
     }
     const alertMinorEl = document.getElementById('alert-minor');
-    if (alertMinorEl) {
+    if (alertMinorEl && hasRiskAlerts) {
       alertMinorEl.textContent = overview.riskAlerts.last90Days.minor;
     }
   }
@@ -53,6 +59,12 @@ export class CIADashboardRenderer {
    */
   renderPartyPerformance() {
     const { partyPerf } = this.data;
+    
+    // Defensive check for data structure
+    if (!partyPerf || !Array.isArray(partyPerf.parties)) {
+      console.warn('Invalid or missing party performance data');
+      return;
+    }
     
     // Party Seats Chart
     const seatsCtx = document.getElementById('party-seats-chart');
@@ -175,6 +187,12 @@ export class CIADashboardRenderer {
     
     if (!container) return;
     
+    // Defensive check for data structure
+    if (!top10 || !Array.isArray(top10.rankings)) {
+      console.warn('Invalid or missing top 10 rankings data');
+      return;
+    }
+    
     // Clear existing content safely
     container.textContent = '';
     
@@ -239,6 +257,15 @@ export class CIADashboardRenderer {
     const ctx = document.getElementById('voting-heatmap');
     
     if (!ctx || typeof Chart === 'undefined') return;
+    
+    // Defensive check for data structure
+    if (!votingPatterns || !votingPatterns.votingMatrix || 
+        !votingPatterns.votingMatrix.labels || 
+        !votingPatterns.votingMatrix.partyNames ||
+        !Array.isArray(votingPatterns.votingMatrix.agreementMatrix)) {
+      console.warn('Invalid or missing voting patterns data');
+      return;
+    }
 
     // Prepare data for matrix visualization
     const matrix = votingPatterns.votingMatrix;
@@ -297,6 +324,12 @@ export class CIADashboardRenderer {
     const container = document.getElementById('committee-list');
     
     if (!container) return;
+    
+    // Defensive check for data structure
+    if (!committees || !Array.isArray(committees.committees)) {
+      console.warn('Invalid or missing committee network data');
+      return;
+    }
     
     // Clear existing content safely
     container.textContent = '';

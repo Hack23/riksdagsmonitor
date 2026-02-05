@@ -13,9 +13,16 @@ export class Election2026Predictions {
    */
   renderSeatPredictions() {
     const container = document.getElementById('seat-predictions');
-    const { parties } = this.data.forecast;
     
     if (!container) return;
+    
+    // Defensive checks for data structure
+    if (!this.data || !this.data.forecast || !Array.isArray(this.data.forecast.parties)) {
+      console.warn('Invalid or missing election forecast data');
+      return;
+    }
+    
+    const { parties } = this.data.forecast;
     
     // Clear existing content safely
     container.textContent = '';
@@ -94,9 +101,16 @@ export class Election2026Predictions {
    */
   renderCoalitionScenarios() {
     const container = document.getElementById('coalition-scenarios');
-    const { coalitionScenarios } = this.data;
     
     if (!container) return;
+    
+    // Defensive check for data structure
+    if (!this.data || !Array.isArray(this.data.coalitionScenarios)) {
+      console.warn('Invalid or missing coalition scenarios data');
+      return;
+    }
+    
+    const { coalitionScenarios } = this.data;
     
     // Clear existing content safely
     container.textContent = '';
@@ -164,11 +178,18 @@ export class Election2026Predictions {
    */
   renderKeyFactors() {
     const container = document.getElementById('key-factors');
-    const { keyFactors } = this.data;
 
     if (!container) {
       return;
     }
+    
+    // Defensive check for keyFactors
+    if (!this.data || !Array.isArray(this.data.keyFactors)) {
+      console.warn('Invalid or missing key factors data');
+      return;
+    }
+    
+    const { keyFactors } = this.data;
 
     // Clear existing content safely
     container.textContent = '';

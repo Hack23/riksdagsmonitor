@@ -34,7 +34,7 @@ export class CIADataLoader {
         return await response.json();
       } catch (fallbackError) {
         console.error(`Both primary and fallback failed for ${filename}:`, fallbackError);
-        throw new Error(`Failed to load ${filename}: ${error.message}`);
+        throw new Error(`Failed to load ${filename}: ${fallbackError.message}`);
       }
     }
   }
