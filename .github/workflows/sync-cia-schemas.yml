@@ -121,12 +121,12 @@ jobs:
           if git diff --staged --quiet; then
             echo "ℹ️ No schema changes detected"
           else
-            git commit -m "chore: Sync CIA schemas from upstream
-
-Synced ${{ steps.sync.outputs.synced }} schema(s) from CIA repository
-Source: https://github.com/Hack23/cia/tree/master/json-export-specs/schemas
-
-Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+            git commit -m "chore: Sync CIA schemas from upstream" \
+                       -m "" \
+                       -m "Synced schema(s) from CIA repository" \
+                       -m "Source https://github.com/Hack23/cia/tree/master/json-export-specs/schemas" \
+                       -m "" \
+                       -m "Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
             
             git push
             echo "✅ Schemas committed and pushed"
