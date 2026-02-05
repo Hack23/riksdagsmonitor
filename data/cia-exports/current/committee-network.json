@@ -1,0 +1,73 @@
+{
+  "title": "Committee Network Analysis",
+  "description": "Parliamentary committee influence mapping and interconnections",
+  "lastUpdated": "2026-02-05T15:00:00Z",
+  "committees": [
+    {
+      "id": "UU",
+      "name": "Foreign Affairs Committee",
+      "memberCount": 17,
+      "influenceScore": 94.2,
+      "keyIssues": ["NATO", "EU policy", "International relations"],
+      "meetingsPerYear": 156,
+      "documentsProcessed": 287
+    },
+    {
+      "id": "FiU",
+      "name": "Finance Committee",
+      "memberCount": 17,
+      "influenceScore": 92.8,
+      "keyIssues": ["Budget", "Taxation", "Economic policy"],
+      "meetingsPerYear": 178,
+      "documentsProcessed": 423
+    },
+    {
+      "id": "SfU",
+      "name": "Social Insurance Committee",
+      "memberCount": 17,
+      "influenceScore": 87.5,
+      "keyIssues": ["Healthcare", "Pensions", "Social security"],
+      "meetingsPerYear": 145,
+      "documentsProcessed": 312
+    },
+    {
+      "id": "JuU",
+      "name": "Justice Committee",
+      "memberCount": 17,
+      "influenceScore": 85.3,
+      "keyIssues": ["Law enforcement", "Courts", "Criminal justice"],
+      "meetingsPerYear": 134,
+      "documentsProcessed": 298
+    },
+    {
+      "id": "MJU",
+      "name": "Environment Committee",
+      "memberCount": 17,
+      "influenceScore": 82.1,
+      "keyIssues": ["Climate", "Energy", "Environmental protection"],
+      "meetingsPerYear": 128,
+      "documentsProcessed": 267
+    }
+  ],
+  "networkGraph": {
+    "nodes": [
+      { "id": "UU", "name": "Foreign Affairs", "size": 94.2 },
+      { "id": "FiU", "name": "Finance", "size": 92.8 },
+      { "id": "SfU", "name": "Social Insurance", "size": 87.5 },
+      { "id": "JuU", "name": "Justice", "size": 85.3 },
+      { "id": "MJU", "name": "Environment", "size": 82.1 }
+    ],
+    "edges": [
+      { "source": "UU", "target": "FiU", "weight": 34, "type": "policy_overlap" },
+      { "source": "FiU", "target": "SfU", "weight": 45, "type": "budget_coordination" },
+      { "source": "SfU", "target": "JuU", "weight": 28, "type": "legislative_collaboration" },
+      { "source": "JuU", "target": "MJU", "weight": 19, "type": "regulatory_alignment" },
+      { "source": "MJU", "target": "FiU", "weight": 37, "type": "budget_coordination" }
+    ]
+  },
+  "crossCommitteeMPs": [
+    { "mpId": "MP001", "committees": ["UU", "FiU"], "bridgeScore": 8.7 },
+    { "mpId": "MP004", "committees": ["SfU", "JuU"], "bridgeScore": 7.9 },
+    { "mpId": "MP007", "committees": ["MJU", "FiU"], "bridgeScore": 7.2 }
+  ]
+}

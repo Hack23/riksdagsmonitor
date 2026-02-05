@@ -1,0 +1,81 @@
+{
+  "title": "Voting Patterns Analysis",
+  "description": "Heatmap data for parliamentary voting behavior and patterns",
+  "lastUpdated": "2026-02-05T15:00:00Z",
+  "analysisperiod": "2022-2026",
+  "votingMatrix": {
+    "labels": ["S", "SD", "M", "V", "C", "KD", "MP", "L"],
+    "partyNames": [
+      "Social Democrats",
+      "Sweden Democrats",
+      "Moderates",
+      "Left Party",
+      "Centre Party",
+      "Christian Democrats",
+      "Green Party",
+      "Liberals"
+    ],
+    "agreementMatrix": [
+      [100, 12, 23, 67, 45, 18, 72, 34],
+      [12, 100, 78, 8, 34, 82, 15, 56],
+      [23, 78, 100, 11, 56, 89, 19, 76],
+      [67, 8, 11, 100, 38, 9, 81, 28],
+      [45, 34, 56, 38, 100, 47, 52, 64],
+      [18, 82, 89, 9, 47, 100, 14, 68],
+      [72, 15, 19, 81, 52, 14, 100, 41],
+      [34, 56, 76, 28, 64, 68, 41, 100]
+    ]
+  },
+  "keyIssues": [
+    {
+      "topic": "Immigration",
+      "coalitionAlignment": 94,
+      "oppositionAlignment": 89,
+      "crossPartyVotes": 3
+    },
+    {
+      "topic": "Climate Policy",
+      "coalitionAlignment": 72,
+      "oppositionAlignment": 93,
+      "crossPartyVotes": 12
+    },
+    {
+      "topic": "Healthcare",
+      "coalitionAlignment": 87,
+      "oppositionAlignment": 78,
+      "crossPartyVotes": 7
+    },
+    {
+      "topic": "Defense/NATO",
+      "coalitionAlignment": 96,
+      "oppositionAlignment": 84,
+      "crossPartyVotes": 2
+    },
+    {
+      "topic": "Economy/Budget",
+      "coalitionAlignment": 91,
+      "oppositionAlignment": 67,
+      "crossPartyVotes": 5
+    }
+  ],
+  "rebellionTracking": [
+    {
+      "party": "L",
+      "rebellionRate": 8.2,
+      "trend": "increasing",
+      "notableRebels": ["MP011", "MP012"]
+    },
+    {
+      "party": "C",
+      "rebellionRate": 6.7,
+      "trend": "stable",
+      "notableRebels": ["MP013"]
+    },
+    {
+      "party": "M",
+      "rebellionRate": 4.3,
+      "trend": "stable",
+      "notableRebels": ["MP014"]
+    }
+  ]
+}
