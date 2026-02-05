@@ -137,6 +137,39 @@ assign_copilot_to_issue({
 })
 ```
 
+### 7. Intelligence Operative (`intelligence-operative`)
+**Expertise**: Political intelligence analysis, OSINT methodologies, Swedish politics, behavioral analysis
+
+**Use for**:
+- Political data analysis and visualization dashboards
+- OSINT collection from Swedish government sources
+- Swedish political system analysis (Riksdag, 8 parties, electoral system)
+- Voting pattern analysis and legislative monitoring
+- Coalition behavior and stability assessment
+- Policy impact assessment
+- Risk assessment frameworks for democratic accountability
+- GDPR-compliant political data processing
+- Multi-language political content (14 languages)
+
+**Data Sources via riksdag-regering-mcp**:
+- **32 specialized tools** for accessing Swedish political data
+- **Ledamöter (MPs)**: Information, activities, assignments
+- **Riksdagsdokument (Documents)**: Motions, questions, bills
+- **Anföranden (Speeches)**: Chamber debates, statements
+- **Voteringar (Votes)**: Voting records, patterns
+- **Regeringsdokument (Government)**: SOU reports, propositions
+
+**Example invocation**:
+```javascript
+assign_copilot_to_issue({
+  owner: "Hack23",
+  repo: "riksdagsmonitor",
+  issue_number: 129,
+  custom_agent: "intelligence-operative",
+  custom_instructions: "Create voting discipline dashboard showing party cohesion metrics for 2024"
+})
+```
+
 ## GitHub Copilot Coding Agent Features
 
 All agents support modern GitHub Copilot coding agent features:

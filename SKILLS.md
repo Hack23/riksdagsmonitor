@@ -193,6 +193,254 @@ Skills are:
 - SEO optimization
 - Cultural adaptation
 
+### 8. political-science-analysis
+**Purpose**: Apply comparative politics, political behavior, public policy analysis frameworks to Swedish political data
+
+**Key Principles**:
+- Objectivity and Non-Partisanship
+- Evidence-Based Analysis
+- Multi-Source Verification
+- Democratic Theory Application
+- Swedish Political System Context
+
+**Enforces**:
+- Balanced coverage of all parties
+- Comparative political frameworks
+- Democratic quality indicators
+- Policy cycle analysis
+- Voting behavior analysis
+
+**When to Use**:
+- Political dashboard design
+- Voting pattern analysis
+- Coalition stability assessment
+- Policy impact evaluation
+- Democratic accountability metrics
+
+### 9. osint-methodologies
+**Purpose**: OSINT collection, source evaluation, data integration for Swedish political intelligence
+
+**Key Principles**:
+- Public Sources Only
+- Source Reliability Assessment (NATO Admiralty Code)
+- Data Quality Metrics
+- Source Triangulation
+- GDPR Compliance
+
+**Enforces**:
+- riksdag-regering-mcp as primary data source
+- Multi-source verification
+- Completeness/accuracy/timeliness tracking
+- Ethical OSINT collection
+- Privacy-by-design
+
+**When to Use**:
+- Data source integration
+- Data quality validation
+- Source credibility assessment
+- OSINT collection strategies
+
+### 10. intelligence-analysis-techniques
+**Purpose**: Structured analytic techniques (ACH, SWOT, Devil's Advocacy) for political intelligence
+
+**Key Principles**:
+- Analysis of Competing Hypotheses
+- SWOT Analysis
+- Red Team Thinking
+- Key Assumptions Check
+- Confidence Level Assessment
+
+**Enforces**:
+- Multiple hypothesis consideration
+- Structured reasoning
+- Bias mitigation
+- Diagnostic evidence focus
+- Uncertainty communication
+
+**When to Use**:
+- Election forecasting
+- Coalition prediction
+- Policy outcome assessment
+- Crisis analysis
+
+### 11. swedish-political-system
+**Purpose**: Swedish Riksdag structure, 8 parties, electoral system, government formation
+
+**Key Principles**:
+- Parliamentary Democracy
+- Negative Parliamentarism
+- Proportional Representation
+- Consensus-Seeking Culture
+- Public Access Principle (Offentlighetsprincipen)
+
+**Enforces**:
+- 349 MPs, 15 committees
+- 8 parliamentary parties
+- 4% electoral threshold
+- Coalition formation patterns
+- Parliamentary procedures
+
+**When to Use**:
+- Political data interpretation
+- Coalition analysis
+- Electoral analysis
+- Government formation
+
+### 12. electoral-analysis
+**Purpose**: Election forecasting, campaign analysis, coalition prediction
+
+**Key Principles**:
+- Historical Trend Analysis
+- Polling Aggregation
+- Seat Projection Modeling
+- Coalition Viability Assessment
+- Confidence Intervals
+
+**Enforces**:
+- Historical data (1970-present)
+- Uncertainty quantification
+- Methodology transparency
+- Scenario modeling
+
+**When to Use**:
+- Election forecasts
+- Campaign tracking
+- Coalition predictions
+- Voter behavior modeling
+
+### 13. behavioral-analysis
+**Purpose**: Political psychology, cognitive biases, leadership analysis
+
+**Key Principles**:
+- Cognitive Bias Recognition
+- Leadership Styles
+- Group Dynamics
+- Political Psychology
+- Behavioral Profiling
+
+**Enforces**:
+- Evidence-based psychological analysis
+- MP behavioral profiles
+- Influence network analysis
+- Coalition psychology
+
+**When to Use**:
+- MP profiling
+- Leadership assessment
+- Coalition dynamics
+- Decision-making analysis
+
+### 14. strategic-communication-analysis
+**Purpose**: Narrative analysis, media bias detection, information operations
+
+**Key Principles**:
+- Narrative Identification
+- Media Analysis
+- Discourse Analysis
+- Counter-Disinformation
+- Fact-Checking
+
+**Enforces**:
+- Objective communication analysis
+- Source credibility assessment
+- Disinformation detection
+- Transparent methodologies
+
+**When to Use**:
+- Media monitoring
+- Narrative tracking
+- Disinformation detection
+- Communication strategy assessment
+
+### 15. legislative-monitoring
+**Purpose**: Voting patterns, bill tracking, committee effectiveness, parliamentary oversight
+
+**Key Principles**:
+- Voting Record Analysis
+- Legislative Pipeline Tracking
+- Committee Productivity
+- Parliamentary Oversight
+- Accountability Mechanisms
+
+**Enforces**:
+- Comprehensive vote tracking
+- Bill lifecycle monitoring
+- Committee effectiveness metrics
+- Government oversight assessment
+
+**When to Use**:
+- Voting pattern analysis
+- Bill tracking
+- Committee analysis
+- Oversight effectiveness
+
+### 16. risk-assessment-frameworks
+**Purpose**: Political risk indicators, corruption detection, early warning systems
+
+**Key Principles**:
+- Electoral Risk
+- Policy Risk
+- Institutional Risk
+- Corruption Risk
+- External Risk
+
+**Enforces**:
+- 45 risk rules framework
+- Severity classification
+- Risk scoring methodology
+- Early warning indicators
+
+**When to Use**:
+- Risk assessment
+- Corruption indicators
+- Democratic stability
+- Accountability gaps
+
+### 17. data-science-for-intelligence
+**Purpose**: Statistical analysis, data visualization, pattern recognition for political intelligence
+
+**Key Principles**:
+- Statistical Rigor
+- CSS-Only Visualization
+- Pattern Recognition
+- Network Analysis
+- WCAG 2.1 AA Accessibility
+
+**Enforces**:
+- Responsive HTML/CSS dashboards
+- No JavaScript frameworks
+- Accessible visualizations
+- Data quality validation
+
+**When to Use**:
+- Dashboard design
+- Data visualization
+- Pattern analysis
+- Statistical modeling
+
+### 18. gdpr-compliance
+**Purpose**: GDPR compliance for political data processing, privacy-by-design
+
+**Key Principles**:
+- Public Interest Basis (Article 6(1)(e))
+- Special Category Data (Article 9)
+- Data Subject Rights
+- Privacy-by-Design
+- Data Minimization
+
+**Enforces**:
+- GDPR Article 6(1)(e) compliance
+- No personal data beyond official capacity
+- No tracking/cookies
+- HTTPS-only
+- Transparent data usage
+
+**When to Use**:
+- Political data processing
+- Privacy assessments
+- Data collection strategies
+- Compliance verification
+
 ## How Skills Work
 
 ### Automatic Loading

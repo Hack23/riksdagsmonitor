@@ -220,6 +220,7 @@ linkinator http://localhost:8080/ --recurse
 - **frontend-specialist** - Static site development and responsive design
 - **isms-compliance-manager** - ISO 27001/NIST CSF/CIS Controls compliance
 - **deployment-specialist** - GitHub Actions and CI/CD automation
+- **intelligence-operative** - Political intelligence analysis, OSINT, Swedish politics expertise
 
 **Available Skills**:
 - **hack23-isms-compliance** - ISMS framework requirements
@@ -229,6 +230,17 @@ linkinator http://localhost:8080/ --recurse
 - **documentation-standards** - Documentation guidelines
 - **html-accessibility** - WCAG 2.1 AA compliance
 - **multi-language-localization** - Internationalization best practices
+- **political-science-analysis** - Comparative politics and policy analysis frameworks
+- **osint-methodologies** - Open-source intelligence collection and verification
+- **intelligence-analysis-techniques** - Structured analytic techniques (ACH, SWOT)
+- **swedish-political-system** - Riksdag structure, 8 parties, electoral system
+- **electoral-analysis** - Election forecasting and coalition prediction
+- **behavioral-analysis** - Political psychology and leadership analysis
+- **strategic-communication-analysis** - Narrative analysis and media monitoring
+- **legislative-monitoring** - Voting patterns and parliamentary oversight
+- **risk-assessment-frameworks** - Political risk and corruption indicators
+- **data-science-for-intelligence** - Statistical analysis and visualization
+- **gdpr-compliance** - GDPR compliance for political data processing
 
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)
