@@ -371,6 +371,129 @@ MCP servers are configured in `.github/copilot-mcp.json`:
 - Filesystem and git paths are environment-specific (GitHub Actions runner layout)
 - ⚠️ **Security**: MCP packages are not version-pinned. Consider pinning to specific versions for supply chain security
 
+## Skills Mapping by Agent
+
+All agents automatically load relevant skills from `.github/skills/` based on their expertise. Here's the recommended skill mapping for each agent:
+
+### Security Architect
+**Primary Skills** (Core expertise):
+- `hack23-isms-compliance` - ISMS framework enforcement
+- `security-by-design` - Security architecture principles
+- `static-site-security` - Static website security
+- `threat-modeling` - STRIDE threat analysis
+- `iso-27001-controls` - ISO 27001:2022 controls
+- `nist-csf-mapping` - NIST CSF 2.0 functions
+- `cis-controls` - CIS Controls v8.1
+- `secure-code-review` - Security code review
+- `security-documentation` - ISMS documentation
+
+**Supporting Skills**:
+- `ci-cd-security` - GitHub Actions security
+- `secrets-management` - Secrets and PAT management
+
+### Documentation Architect
+**Primary Skills**:
+- `documentation-standards` - Documentation guidelines
+- `c4-architecture-documentation` - C4 model and Mermaid diagrams
+- `security-documentation` - ISMS documentation standards
+
+**Supporting Skills**:
+- `hack23-isms-compliance` - Compliance requirements
+- `threat-modeling` - Threat model documentation
+
+### Quality Engineer
+**Primary Skills**:
+- `code-quality-checks` - HTML/CSS validation, link checking
+- `html-accessibility` - WCAG 2.1 AA compliance
+- `playwright-testing` - Browser automation and testing
+- `multi-language-localization` - i18n/l10n testing
+
+**Supporting Skills**:
+- `responsive-design` - Cross-device testing
+- `static-site-security` - Security validation
+- `issue-management` - Bug reporting and tracking
+
+### Frontend Specialist
+**Primary Skills**:
+- `responsive-design` - Mobile-first responsive design
+- `html-accessibility` - WCAG 2.1 AA accessibility
+- `multi-language-localization` - 14-language support
+- `design-system-management` - Cyberpunk theme design system
+
+**Supporting Skills**:
+- `static-site-security` - XSS prevention, CSP
+- `code-quality-checks` - HTML/CSS validation
+- `political-data-visualization` - CSS-only visualizations
+
+### ISMS Compliance Manager
+**Primary Skills**:
+- `hack23-isms-compliance` - ISMS framework
+- `iso-27001-controls` - ISO 27001:2022 Annex A
+- `nist-csf-mapping` - NIST CSF 2.0
+- `cis-controls` - CIS Controls v8.1
+- `security-documentation` - Documentation standards
+
+**Supporting Skills**:
+- `security-by-design` - Security principles
+- `threat-modeling` - Risk assessment
+- `gdpr-compliance` - Data protection
+
+### Deployment Specialist
+**Primary Skills**:
+- `github-actions-workflows` - CI/CD workflow patterns
+- `ci-cd-security` - Workflow security hardening
+- `secrets-management` - GitHub secrets management
+
+**Supporting Skills**:
+- `static-site-security` - Deployment security
+- `code-quality-checks` - Quality gates
+- `hack23-isms-compliance` - Compliance requirements
+
+### Intelligence Operative
+**Primary Skills**:
+- `riksdag-regering-mcp` - 32 political data tools
+- `political-science-analysis` - Political frameworks
+- `osint-methodologies` - OSINT collection
+- `intelligence-analysis-techniques` - ACH, SWOT, Red Team
+- `swedish-political-system` - Riksdag structure
+- `electoral-analysis` - Election forecasting
+- `behavioral-analysis` - Political psychology
+- `legislative-monitoring` - Voting patterns
+- `strategic-communication-analysis` - Narrative analysis
+- `risk-assessment-frameworks` - Risk indicators
+- `data-science-for-intelligence` - Statistical analysis
+
+**Supporting Skills**:
+- `gdpr-compliance` - Political data GDPR
+- `political-data-visualization` - CSS-only dashboards
+- `multi-language-localization` - 14-language content
+
+### Task Agent
+**Primary Skills**:
+- `issue-management` - GitHub issue creation
+- `playwright-testing` - Browser automation and testing
+- `code-quality-checks` - HTML/CSS/link validation
+- `html-accessibility` - WCAG 2.1 AA audits
+- `hack23-isms-compliance` - ISMS verification
+
+**Supporting Skills**:
+- All skills (task agent coordinates across domains)
+
+### UI Enhancement Specialist
+**Primary Skills**:
+- `responsive-design` - Mobile-first design
+- `design-system-management` - Cyberpunk theme
+- `political-data-visualization` - CSS-only charts
+- `html-accessibility` - WCAG 2.1 AA
+- `multi-language-localization` - 14-language support
+
+**Supporting Skills**:
+- `static-site-security` - XSS, CSP enforcement
+- `code-quality-checks` - Validation and testing
+- `playwright-testing` - Visual regression
+
+---
+
 ## Best Practices
 
 ### 1. Choose the Right Agent
@@ -394,14 +517,37 @@ custom_instructions: `
 ```
 
 ### 3. Leverage Skills
-Agents automatically load relevant skills from `.github/skills/`:
-- `hack23-isms-compliance` - ISMS requirements
-- `security-by-design` - Security principles
-- `static-site-security` - Static site security
-- `ci-cd-security` - GitHub Actions security
-- `documentation-standards` - Documentation guidelines
-- `html-accessibility` - WCAG 2.1 AA standards
-- `multi-language-localization` - i18n/l10n best practices
+Agents automatically load relevant skills from `.github/skills/` (34 total skills across 7 categories):
+
+**Core Infrastructure (7)**:
+- `hack23-isms-compliance`, `security-by-design`, `static-site-security`
+- `ci-cd-security`, `documentation-standards`, `html-accessibility`
+- `multi-language-localization`
+
+**Political Intelligence (11)**:
+- `political-science-analysis`, `osint-methodologies`, `intelligence-analysis-techniques`
+- `swedish-political-system`, `electoral-analysis`, `behavioral-analysis`
+- `strategic-communication-analysis`, `legislative-monitoring`
+- `risk-assessment-frameworks`, `data-science-for-intelligence`, `gdpr-compliance`
+
+**ISMS & Security (6)**:
+- `cis-controls`, `iso-27001-controls`, `nist-csf-mapping`
+- `threat-modeling`, `secure-code-review`, `security-documentation`
+
+**Development & Operations (4)**:
+- `c4-architecture-documentation`, `github-actions-workflows`
+- `code-quality-checks`, `secrets-management`
+
+**UI/UX & Design (3)** ✨ NEW:
+- `responsive-design`, `design-system-management`, `political-data-visualization`
+
+**Testing & Quality Assurance (2)** ✨ NEW:
+- `playwright-testing`, `issue-management`
+
+**Data Integration (1)** ✨ NEW:
+- `riksdag-regering-mcp`
+
+See [SKILLS.md](SKILLS.md) for comprehensive skill documentation and [Skills Mapping](#skills-mapping-by-agent) above for agent-specific recommendations.
 
 ### 4. Use Feature Branches
 Specify `base_ref` for feature branch workflows:
@@ -479,5 +625,5 @@ All agents follow these standards:
 
 ---
 
-**Last Updated**: 2026-01-31  
+**Last Updated**: 2026-02-06  
 **Maintained by**: Hack23 AB
