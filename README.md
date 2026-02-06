@@ -214,7 +214,7 @@ linkinator http://localhost:8080/ --recurse
 - [`.github/agents/`](.github/agents/) - Agent configuration files
 - [`.github/skills/`](.github/skills/) - Skill libraries
 
-**Available Agents (9)**:
+**Available Agents (11)** ⬆️ **UPDATED**:
 - **security-architect** - Security architecture and ISMS compliance
 - **documentation-architect** - C4 models and technical documentation
 - **quality-engineer** - HTML/CSS validation and accessibility
@@ -225,7 +225,10 @@ linkinator http://localhost:8080/ --recurse
 - **task-agent** ✨ - Product excellence, quality assurance, Playwright testing, issue management
 - **ui-enhancement-specialist** ✨ - Static HTML/CSS, responsive design, 14-language support, WCAG 2.1 AA
 
-**Available Skills (34)**:
+- **data-pipeline-specialist** ✨ **NEW** - CIA data consumption, ETL workflows, caching strategies, data validation
+- **data-visualization-specialist** ✨ **NEW** - Chart.js/D3.js, interactive dashboards, CIA intelligence visualizations
+
+**Available Skills (40)** ⬆️ **UPDATED**:
 
 *Core Infrastructure (7):*
 - **hack23-isms-compliance** - ISMS framework requirements
@@ -257,23 +260,29 @@ linkinator http://localhost:8080/ --recurse
 - **secure-code-review** - HTML/CSS/JS security review
 - **security-documentation** - ISMS documentation standards
 
-*Development & Operations (4):*
+*Development & Operations (10):* ⬆️ **EXPANDED**
 - **c4-architecture-documentation** - C4 model and Mermaid diagrams
 - **github-actions-workflows** - CI/CD patterns and security
 - **code-quality-checks** - HTMLHint, CSSLint, linkinator, axe-core
 - **secrets-management** - GitHub secrets and PAT management
+- **data-pipeline-engineering** ✨ **NEW** - ETL workflows, automated data fetching
+- **automated-content-generation** ✨ **NEW** - News generation, intelligence reports
+- **performance-optimization** ✨ **NEW** - Core Web Vitals, bundle size, caching
+- **api-integration** ✨ **NEW** - REST/GraphQL clients, rate limiting
 
-*UI/UX & Design (3):* ✨ **NEW**
+*UI/UX & Design (4):* ⬆️ **EXPANDED**
 - **responsive-design** - Mobile-first, CSS Grid/Flexbox, breakpoints (320px-1440px+)
 - **design-system-management** - Cyberpunk theme, CSS variables, component library
 - **political-data-visualization** - CSS-only charts, heat maps, dashboards
+- **advanced-data-visualization** ✨ **NEW** - Chart.js/D3.js, interactive dashboards
 
 *Testing & Quality Assurance (2):* ✨ **NEW**
 - **playwright-testing** - Browser automation, visual regression, accessibility audits
 - **issue-management** - GitHub issue creation, labeling, agent assignment
 
-*Data Integration (1):* ✨ **NEW**
+*Data Integration (2):* ⬆️ **EXPANDED**
 - **riksdag-regering-mcp** - 32 political data tools (Parliament, Government, MPs, votes)
+- **cia-data-integration** ✨ **NEW** - CIA export consumption, validation, caching strategies
 
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)

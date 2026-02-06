@@ -18,7 +18,7 @@ Skills are:
 - ✅ **Reusable**: Apply across multiple tasks
 - ✅ **Context-Aware**: Load only when relevant
 
-## Available Skills (34 Total)
+## Available Skills (40 Total) ✨ Updated
 
 ### Core Infrastructure (7 skills)
 1. hack23-isms-compliance
@@ -50,23 +50,29 @@ Skills are:
 23. secure-code-review
 24. security-documentation
 
-### Development & Operations (4 skills)
+### Development & Operations (10 skills) ⬆️ **EXPANDED**
 25. c4-architecture-documentation
 26. github-actions-workflows
 27. code-quality-checks
 28. secrets-management
+29. **data-pipeline-engineering** ✨ NEW
+30. **automated-content-generation** ✨ NEW
+31. **performance-optimization** ✨ NEW
+32. **api-integration** ✨ NEW
 
-### UI/UX & Design (3 skills) ✨ **NEW**
-29. responsive-design
-30. design-system-management
-31. political-data-visualization
+### UI/UX & Design (4 skills) ⬆️ **EXPANDED**
+33. responsive-design
+34. design-system-management
+35. political-data-visualization
+36. **advanced-data-visualization** ✨ NEW
 
-### Testing & Quality Assurance (2 skills) ✨ **NEW**
-32. playwright-testing
-33. issue-management
+### Testing & Quality Assurance (2 skills)
+37. playwright-testing
+38. issue-management
 
-### Data Integration (1 skill) ✨ **NEW**
-34. riksdag-regering-mcp
+### Data Integration (2 skills) ⬆️ **EXPANDED**
+39. riksdag-regering-mcp
+40. **cia-data-integration** ✨ NEW
 
 ---
 
@@ -1087,3 +1093,183 @@ Skills enforce compliance with:
 
 **Last Updated**: 2026-02-06  
 **Maintained by**: Hack23 AB
+
+### 35. data-pipeline-engineering ✨ NEW - 2026-02-06
+**Purpose**: Expert knowledge in designing robust ETL (Extract, Transform, Load) pipelines for automated data processing
+
+**Key Principles**:
+- Idempotency (pipeline runs produce same results)
+- Observability (full visibility into pipeline health)
+- Error Recovery (graceful handling of failures)
+- Version Tracking (track all data changes)
+- Monitoring (real-time pipeline health checks)
+
+**Enforces**:
+- ETL workflow patterns (Extract → Transform → Load)
+- Automated scheduling (cron, GitHub Actions)
+- Data versioning and archival
+- Pipeline health monitoring
+- Error recovery strategies
+- Audit logging
+
+**When to Use**:
+- Building automated data pipelines
+- Scheduling data fetching workflows
+- Implementing data versioning
+- Monitoring pipeline health
+- Designing error recovery
+
+### 36. automated-content-generation ✨ NEW - 2026-02-06
+**Purpose**: Template-based content generation, intelligence reports, and multi-language automated content
+
+**Key Principles**:
+- Template-Based (reusable content templates)
+- Multi-Language (14 languages support)
+- Data-Driven (content from structured data)
+- Quality Assured (validation before publication)
+- SEO Optimized (search engine friendly)
+
+**Enforces**:
+- Markdown/HTML template engines
+- Multi-language content generation
+- Scheduled content generation (daily/weekly)
+- Content validation and quality checks
+- SEO meta tags and structured data
+- RSS feed generation
+
+**When to Use**:
+- Automated news generation
+- Intelligence report creation
+- Multi-language content
+- Scheduled content updates
+- RSS feed generation
+
+### 37. performance-optimization ✨ NEW - 2026-02-06
+**Purpose**: Core Web Vitals optimization, bundle size reduction, caching strategies, and performance tuning
+
+**Key Principles**:
+- Measure First (Lighthouse/PageSpeed Insights)
+- Core Web Vitals (LCP < 2.5s, FID < 100ms, CLS < 0.1)
+- Progressive Enhancement
+- Lazy Loading
+- Caching Strategy
+
+**Enforces**:
+- Core Web Vitals targets
+- Bundle size optimization (< 100KB initial)
+- Image optimization (WebP, lazy loading)
+- HTTP caching headers
+- CDN optimization
+- Code splitting and tree shaking
+
+**When to Use**:
+- Performance tuning
+- Bundle size reduction
+- Load time optimization
+- Core Web Vitals improvement
+- Caching strategy design
+
+### 38. api-integration ✨ NEW - 2026-02-06
+**Purpose**: REST/GraphQL API client design, rate limiting, error handling, and authentication best practices
+
+**Key Principles**:
+- Resilience (handle failures gracefully)
+- Rate Limiting (respect API limits)
+- Retry Logic (exponential backoff)
+- Circuit Breaker (fail fast when needed)
+- Security (secure credential storage)
+
+**Enforces**:
+- REST/GraphQL client patterns
+- Rate limiting and throttling
+- Retry logic with exponential backoff
+- Circuit breaker pattern
+- Error handling and recovery
+- Authentication (OAuth, API keys, JWT)
+- Request/response logging
+- Timeout configuration
+
+**When to Use**:
+- Building API clients
+- Integrating external services
+- Handling API failures
+- Rate limit management
+- Authentication implementation
+
+### 39. advanced-data-visualization ✨ NEW - 2026-02-06
+**Purpose**: Chart.js/D3.js expertise for interactive dashboards, complex charts, and political data visualization
+
+**Key Principles**:
+- Accessibility First (WCAG 2.1 AA compliant)
+- Responsive Always (mobile-first design)
+- Performance Critical (optimize for large datasets)
+- Clarity Over Complexity (clear data storytelling)
+- Interactive Insight (enable user exploration)
+
+**Enforces**:
+- Chart.js bar/line/scatter/pie charts
+- D3.js network/force/geo diagrams
+- Interactive tooltips and legends
+- Responsive chart design
+- Screen reader compatibility
+- Performance optimization (lazy loading, canvas vs SVG)
+
+**Chart Types**:
+- Election Forecasting (confidence intervals, seat predictions)
+- Risk Heat Maps (multi-dimensional risk scoring)
+- Network Diagrams (influence and power structures)
+- Time Series (historical trends, 50+ years)
+- Scatter Plots (correlation and clustering)
+- Sankey Diagrams (coalition flows)
+
+**When to Use**:
+- Creating interactive dashboards
+- Visualizing complex datasets
+- Building political intelligence displays
+- Network/influence mapping
+- Time series analysis
+
+### 40. cia-data-integration ✨ NEW - 2026-02-06
+**Purpose**: Expert knowledge in consuming CIA platform JSON exports, validation, caching strategies, and data pipeline integration
+
+**Key Principles**:
+- CIA is Source of Truth (never modify CIA's pre-computed data)
+- Validate Before Cache (always validate against CIA-provided JSON schemas)
+- Version Tracking (track all CIA data updates with timestamps)
+- Graceful Degradation (fall back to cached data if CIA unavailable)
+- Data Freshness (monitor and alert on stale data > 24 hours)
+- Audit Logging (log all data operations for traceability)
+
+**Enforces**:
+- Fetch 19 visualization products from CIA platform
+- Handle rate limiting and connection failures
+- Implement retry logic with exponential backoff
+- Circuit breaker pattern for API failures
+- JSON Schema validation using Ajv
+- Versioned caching structure (current + archive)
+- Data freshness monitoring
+- Automatic fallback to cached data
+
+**Data Products (19 Total)**:
+- Overview Dashboard
+- Party Performance
+- Government Cabinet Scorecard
+- Election Cycle Analysis
+- Top 10 Rankings (10 products)
+- Committee Network Analysis
+- Politician Career Analysis
+- Party Longitudinal Analysis
+
+**When to Use**:
+- Implementing CIA export fetch workflows
+- Validating CIA JSON data
+- Designing caching strategies
+- Building data consumption pipelines
+- Monitoring data freshness
+- Handling API failures gracefully
+
+---
+
+**Skills Total**: 40 (34 original + 6 new)  
+**Last Major Update**: 2026-02-06  
+**New Skills Added**: data-pipeline-engineering, automated-content-generation, performance-optimization, api-integration, advanced-data-visualization, cia-data-integration
