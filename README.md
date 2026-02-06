@@ -209,12 +209,12 @@ linkinator http://localhost:8080/ --recurse
 - [LICENSE](LICENSE) - Apache License 2.0
 
 ### GitHub Copilot Integration
-- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (9 agents)
-- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (28 skills)
+- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (13 agents)
+- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (40 skills)
 - [`.github/agents/`](.github/agents/) - Agent configuration files
 - [`.github/skills/`](.github/skills/) - Skill libraries
 
-**Available Agents (11)** ⬆️ **UPDATED**:
+**Available Agents (13)** ⬆️ **UPDATED**:
 - **security-architect** - Security architecture and ISMS compliance
 - **documentation-architect** - C4 models and technical documentation
 - **quality-engineer** - HTML/CSS validation and accessibility
@@ -224,9 +224,10 @@ linkinator http://localhost:8080/ --recurse
 - **intelligence-operative** - Political intelligence analysis, OSINT, Swedish politics expertise, riksdag-regering-mcp (32 tools)
 - **task-agent** ✨ - Product excellence, quality assurance, Playwright testing, issue management
 - **ui-enhancement-specialist** ✨ - Static HTML/CSS, responsive design, 14-language support, WCAG 2.1 AA
-
-- **data-pipeline-specialist** ✨ **NEW** - CIA data consumption, ETL workflows, caching strategies, data validation
-- **data-visualization-specialist** ✨ **NEW** - Chart.js/D3.js, interactive dashboards, CIA intelligence visualizations
+- **data-pipeline-specialist** ✨ - CIA data consumption, ETL workflows, caching strategies, data validation
+- **data-visualization-specialist** ✨ - Chart.js/D3.js, interactive dashboards, CIA intelligence visualizations
+- **content-generator** ✨ **NEW** - Automated news generation, intelligence reports, multi-language content
+- **devops-engineer** ✨ **NEW** - CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring
 
 **Available Skills (40)** ⬆️ **UPDATED**:
 
