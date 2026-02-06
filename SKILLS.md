@@ -18,6 +18,66 @@ Skills are:
 - ✅ **Reusable**: Apply across multiple tasks
 - ✅ **Context-Aware**: Load only when relevant
 
+## Available Skills (40 Total) ✨ Updated
+
+### Core Infrastructure (7 skills)
+1. hack23-isms-compliance
+2. security-by-design
+3. static-site-security
+4. ci-cd-security
+5. documentation-standards
+6. html-accessibility
+7. multi-language-localization
+
+### Political Intelligence (11 skills)
+8. political-science-analysis
+9. osint-methodologies
+10. intelligence-analysis-techniques
+11. swedish-political-system
+12. electoral-analysis
+13. behavioral-analysis
+14. strategic-communication-analysis
+15. legislative-monitoring
+16. risk-assessment-frameworks
+17. data-science-for-intelligence
+18. gdpr-compliance
+
+### ISMS & Security (6 skills)
+19. cis-controls
+20. iso-27001-controls
+21. nist-csf-mapping
+22. threat-modeling
+23. secure-code-review
+24. security-documentation
+
+### Development & Operations (10 skills) ⬆️ **EXPANDED**
+25. c4-architecture-documentation
+26. github-actions-workflows
+27. code-quality-checks
+28. secrets-management
+29. **data-pipeline-engineering** ✨ NEW
+30. **automated-content-generation** ✨ NEW
+31. **performance-optimization** ✨ NEW
+32. **api-integration** ✨ NEW
+
+### UI/UX & Design (4 skills) ⬆️ **EXPANDED**
+33. responsive-design
+34. design-system-management
+35. political-data-visualization
+36. **advanced-data-visualization** ✨ NEW
+
+### Testing & Quality Assurance (2 skills)
+37. playwright-testing
+38. issue-management
+
+### Data Integration (2 skills) ⬆️ **EXPANDED**
+39. riksdag-regering-mcp
+40. **cia-data-integration** ✨ NEW
+
+---
+
+## Detailed Skill Descriptions
+
 ## Available Skills
 
 ### 1. hack23-isms-compliance
@@ -669,6 +729,171 @@ Skills are:
 - Secret rotation
 - Security audits
 
+### 29. responsive-design ✨ NEW
+**Purpose**: Mobile-first responsive web design with CSS Grid/Flexbox, breakpoints (320px-1440px+)
+
+**Key Principles**:
+- Mobile-First Design
+- Fluid Typography (clamp())
+- Flexible Layouts (Grid/Flexbox)
+- Touch-Friendly (44x44px targets)
+- Performance Optimized
+- Content Priority
+
+**Enforces**:
+- Standard breakpoints (320px, 768px, 1024px, 1440px+)
+- Fluid typography with clamp()
+- CSS Grid for layouts
+- 44x44px minimum touch targets
+- Viewport meta tag required
+- Max-width constraint for ultra-wide
+
+**When to Use**:
+- All HTML/CSS development
+- New feature implementation
+- Dashboard design
+- Navigation redesign
+- Mobile optimization
+- Cross-device testing
+
+### 30. design-system-management ✨ NEW
+**Purpose**: Cyberpunk theme design system with CSS custom properties and component library
+
+**Key Principles**:
+- Single Source of Truth (CSS variables)
+- Component-Based Architecture
+- Theme Consistency
+- Accessibility Built-In
+- Responsive Scaling
+- Performance Focused
+
+**Enforces**:
+- CSS custom properties for all design tokens
+- Cyberpunk color palette (cyan, magenta, yellow on dark)
+- Fluid typography and spacing scales
+- Reusable component patterns
+- 4.5:1 color contrast minimum
+- Neon glow effects
+
+**When to Use**:
+- New page creation
+- Component development
+- UI refactoring
+- Theme updates
+- Accessibility enhancements
+- Style standardization
+
+### 31. political-data-visualization ✨ NEW
+**Purpose**: CSS-only data visualization (charts, heat maps, progress bars) for political metrics
+
+**Key Principles**:
+- CSS-Only (no JavaScript)
+- Accessibility First (WCAG 2.1 AA)
+- Semantic Markup
+- Progressive Disclosure
+- Color-Blind Safe
+- Responsive Design
+
+**Enforces**:
+- Progress bars for voting discipline
+- Bar charts for MP/party distribution
+- Heat maps for voting patterns
+- Donut charts for coalitions
+- Timeline visualizations
+- Swedish party color palette
+- Screen reader support
+
+**When to Use**:
+- Dashboard design
+- Party analysis visualizations
+- Voting record displays
+- Committee activity metrics
+- MP profile timelines
+- Risk assessment indicators
+
+### 32. playwright-testing ✨ NEW
+**Purpose**: Browser automation, visual regression testing, screenshot capture for static websites
+
+**Key Principles**:
+- Headless First
+- Visual Evidence
+- Accessibility Integration (axe-core)
+- Cross-Browser Coverage
+- Responsive Testing
+- Performance Monitoring
+
+**Enforces**:
+- Xvfb display for headless rendering
+- Screenshot capture on all tests
+- WCAG 2.1 AA audits with axe-playwright
+- Multi-language testing (14 languages)
+- Responsive viewport testing
+- Core Web Vitals measurement
+
+**When to Use**:
+- Quality assurance automation
+- Visual regression detection
+- Accessibility audits
+- Cross-browser testing
+- Issue validation with evidence
+- Performance monitoring
+
+### 33. issue-management ✨ NEW
+**Purpose**: GitHub issue creation, labeling, milestones, agent assignment for product management
+
+**Key Principles**:
+- Clarity First
+- Actionable Items
+- Properly Labeled
+- Traceable
+- Evidence-Based
+- Agent-Optimized
+
+**Enforces**:
+- Structured issue templates
+- Clear acceptance criteria
+- Type/priority/area/agent labels
+- Screenshot/log evidence
+- Related issue linking
+- Copilot agent assignment format
+
+**When to Use**:
+- Bug reports
+- Feature requests
+- Security issues
+- Accessibility issues
+- Technical debt tracking
+- Agent task delegation
+
+### 34. riksdag-regering-mcp ✨ NEW
+**Purpose**: 32 specialized tools for Swedish political data via riksdag-regering-mcp MCP server
+
+**Key Principles**:
+- Authoritative Data Source
+- Comprehensive Coverage (50+ years)
+- Structured API
+- Real-Time Access
+- GDPR Compliance
+- Multi-Source Integration
+
+**Available Tools**:
+- Search & Discovery (6 tools): MPs, documents, speeches, votes
+- Detailed Information (6 tools): Document content, MP profiles
+- Parliamentary Documents (6 tools): Motions, propositions, reports
+- Government Documents (4 tools): SOU, Dir, propositions
+- Analytics & Aggregation (5 tools): Voting groups, reports
+- Advanced Queries (5 tools): Pagination, batch fetching
+
+**When to Use**:
+- Political intelligence analysis
+- Legislative monitoring
+- MP profiling and analysis
+- Coalition behavior assessment
+- Policy research and tracking
+- Voting pattern analysis
+- Government oversight
+- Electoral research
+
 ## How Skills Work
 
 ### Automatic Loading
@@ -866,5 +1091,185 @@ Skills enforce compliance with:
 
 ---
 
-**Last Updated**: 2026-01-31  
+**Last Updated**: 2026-02-06  
 **Maintained by**: Hack23 AB
+
+### 35. data-pipeline-engineering ✨ NEW - 2026-02-06
+**Purpose**: Expert knowledge in designing robust ETL (Extract, Transform, Load) pipelines for automated data processing
+
+**Key Principles**:
+- Idempotency (pipeline runs produce same results)
+- Observability (full visibility into pipeline health)
+- Error Recovery (graceful handling of failures)
+- Version Tracking (track all data changes)
+- Monitoring (real-time pipeline health checks)
+
+**Enforces**:
+- ETL workflow patterns (Extract → Transform → Load)
+- Automated scheduling (cron, GitHub Actions)
+- Data versioning and archival
+- Pipeline health monitoring
+- Error recovery strategies
+- Audit logging
+
+**When to Use**:
+- Building automated data pipelines
+- Scheduling data fetching workflows
+- Implementing data versioning
+- Monitoring pipeline health
+- Designing error recovery
+
+### 36. automated-content-generation ✨ NEW - 2026-02-06
+**Purpose**: Template-based content generation, intelligence reports, and multi-language automated content
+
+**Key Principles**:
+- Template-Based (reusable content templates)
+- Multi-Language (14 languages support)
+- Data-Driven (content from structured data)
+- Quality Assured (validation before publication)
+- SEO Optimized (search engine friendly)
+
+**Enforces**:
+- Markdown/HTML template engines
+- Multi-language content generation
+- Scheduled content generation (daily/weekly)
+- Content validation and quality checks
+- SEO meta tags and structured data
+- RSS feed generation
+
+**When to Use**:
+- Automated news generation
+- Intelligence report creation
+- Multi-language content
+- Scheduled content updates
+- RSS feed generation
+
+### 37. performance-optimization ✨ NEW - 2026-02-06
+**Purpose**: Core Web Vitals optimization, bundle size reduction, caching strategies, and performance tuning
+
+**Key Principles**:
+- Measure First (Lighthouse/PageSpeed Insights)
+- Core Web Vitals (LCP < 2.5s, FID < 100ms, CLS < 0.1)
+- Progressive Enhancement
+- Lazy Loading
+- Caching Strategy
+
+**Enforces**:
+- Core Web Vitals targets
+- Bundle size optimization (< 100KB initial)
+- Image optimization (WebP, lazy loading)
+- HTTP caching headers
+- CDN optimization
+- Code splitting and tree shaking
+
+**When to Use**:
+- Performance tuning
+- Bundle size reduction
+- Load time optimization
+- Core Web Vitals improvement
+- Caching strategy design
+
+### 38. api-integration ✨ NEW - 2026-02-06
+**Purpose**: REST/GraphQL API client design, rate limiting, error handling, and authentication best practices
+
+**Key Principles**:
+- Resilience (handle failures gracefully)
+- Rate Limiting (respect API limits)
+- Retry Logic (exponential backoff)
+- Circuit Breaker (fail fast when needed)
+- Security (secure credential storage)
+
+**Enforces**:
+- REST/GraphQL client patterns
+- Rate limiting and throttling
+- Retry logic with exponential backoff
+- Circuit breaker pattern
+- Error handling and recovery
+- Authentication (OAuth, API keys, JWT)
+- Request/response logging
+- Timeout configuration
+
+**When to Use**:
+- Building API clients
+- Integrating external services
+- Handling API failures
+- Rate limit management
+- Authentication implementation
+
+### 39. advanced-data-visualization ✨ NEW - 2026-02-06
+**Purpose**: Chart.js/D3.js expertise for interactive dashboards, complex charts, and political data visualization
+
+**Key Principles**:
+- Accessibility First (WCAG 2.1 AA compliant)
+- Responsive Always (mobile-first design)
+- Performance Critical (optimize for large datasets)
+- Clarity Over Complexity (clear data storytelling)
+- Interactive Insight (enable user exploration)
+
+**Enforces**:
+- Chart.js bar/line/scatter/pie charts
+- D3.js network/force/geo diagrams
+- Interactive tooltips and legends
+- Responsive chart design
+- Screen reader compatibility
+- Performance optimization (lazy loading, canvas vs SVG)
+
+**Chart Types**:
+- Election Forecasting (confidence intervals, seat predictions)
+- Risk Heat Maps (multi-dimensional risk scoring)
+- Network Diagrams (influence and power structures)
+- Time Series (historical trends, 50+ years)
+- Scatter Plots (correlation and clustering)
+- Sankey Diagrams (coalition flows)
+
+**When to Use**:
+- Creating interactive dashboards
+- Visualizing complex datasets
+- Building political intelligence displays
+- Network/influence mapping
+- Time series analysis
+
+### 40. cia-data-integration ✨ NEW - 2026-02-06
+**Purpose**: Expert knowledge in consuming CIA platform JSON exports, validation, caching strategies, and data pipeline integration
+
+**Key Principles**:
+- CIA is Source of Truth (never modify CIA's pre-computed data)
+- Validate Before Cache (always validate against CIA-provided JSON schemas)
+- Version Tracking (track all CIA data updates with timestamps)
+- Graceful Degradation (fall back to cached data if CIA unavailable)
+- Data Freshness (monitor and alert on stale data > 24 hours)
+- Audit Logging (log all data operations for traceability)
+
+**Enforces**:
+- Fetch 19 visualization products from CIA platform
+- Handle rate limiting and connection failures
+- Implement retry logic with exponential backoff
+- Circuit breaker pattern for API failures
+- JSON Schema validation using Ajv
+- Versioned caching structure (current + archive)
+- Data freshness monitoring
+- Automatic fallback to cached data
+
+**Data Products (19 Total)**:
+- Overview Dashboard
+- Party Performance
+- Government Cabinet Scorecard
+- Election Cycle Analysis
+- Top 10 Rankings (10 products)
+- Committee Network Analysis
+- Politician Career Analysis
+- Party Longitudinal Analysis
+
+**When to Use**:
+- Implementing CIA export fetch workflows
+- Validating CIA JSON data
+- Designing caching strategies
+- Building data consumption pipelines
+- Monitoring data freshness
+- Handling API failures gracefully
+
+---
+
+**Skills Total**: 40 (34 original + 6 new)  
+**Last Major Update**: 2026-02-06  
+**New Skills Added**: data-pipeline-engineering, automated-content-generation, performance-optimization, api-integration, advanced-data-visualization, cia-data-integration

@@ -209,12 +209,12 @@ linkinator http://localhost:8080/ --recurse
 - [LICENSE](LICENSE) - Apache License 2.0
 
 ### GitHub Copilot Integration
-- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (9 agents)
-- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (28 skills)
+- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (13 agents)
+- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (40 skills)
 - [`.github/agents/`](.github/agents/) - Agent configuration files
 - [`.github/skills/`](.github/skills/) - Skill libraries
 
-**Available Agents (9)**:
+**Available Agents (13)** ⬆️ **UPDATED**:
 - **security-architect** - Security architecture and ISMS compliance
 - **documentation-architect** - C4 models and technical documentation
 - **quality-engineer** - HTML/CSS validation and accessibility
@@ -224,8 +224,12 @@ linkinator http://localhost:8080/ --recurse
 - **intelligence-operative** - Political intelligence analysis, OSINT, Swedish politics expertise, riksdag-regering-mcp (32 tools)
 - **task-agent** ✨ - Product excellence, quality assurance, Playwright testing, issue management
 - **ui-enhancement-specialist** ✨ - Static HTML/CSS, responsive design, 14-language support, WCAG 2.1 AA
+- **data-pipeline-specialist** ✨ - CIA data consumption, ETL workflows, caching strategies, data validation
+- **data-visualization-specialist** ✨ - Chart.js/D3.js, interactive dashboards, CIA intelligence visualizations
+- **content-generator** ✨ **NEW** - Automated news generation, intelligence reports, multi-language content
+- **devops-engineer** ✨ **NEW** - CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring
 
-**Available Skills (28)**:
+**Available Skills (40)** ⬆️ **UPDATED**:
 
 *Core Infrastructure (7):*
 - **hack23-isms-compliance** - ISMS framework requirements
@@ -249,7 +253,7 @@ linkinator http://localhost:8080/ --recurse
 - **data-science-for-intelligence** - Statistical analysis and visualization
 - **gdpr-compliance** - GDPR compliance for political data processing
 
-*ISMS & Security (6):* ✨
+*ISMS & Security (6):*
 - **cis-controls** - CIS Controls v8.1 for static sites
 - **iso-27001-controls** - ISO 27001:2022 Annex A controls
 - **nist-csf-mapping** - NIST CSF 2.0 framework mapping
@@ -257,11 +261,29 @@ linkinator http://localhost:8080/ --recurse
 - **secure-code-review** - HTML/CSS/JS security review
 - **security-documentation** - ISMS documentation standards
 
-*Development & Operations (4):* ✨
+*Development & Operations (10):* ⬆️ **EXPANDED**
 - **c4-architecture-documentation** - C4 model and Mermaid diagrams
 - **github-actions-workflows** - CI/CD patterns and security
 - **code-quality-checks** - HTMLHint, CSSLint, linkinator, axe-core
 - **secrets-management** - GitHub secrets and PAT management
+- **data-pipeline-engineering** ✨ **NEW** - ETL workflows, automated data fetching
+- **automated-content-generation** ✨ **NEW** - News generation, intelligence reports
+- **performance-optimization** ✨ **NEW** - Core Web Vitals, bundle size, caching
+- **api-integration** ✨ **NEW** - REST/GraphQL clients, rate limiting
+
+*UI/UX & Design (4):* ⬆️ **EXPANDED**
+- **responsive-design** - Mobile-first, CSS Grid/Flexbox, breakpoints (320px-1440px+)
+- **design-system-management** - Cyberpunk theme, CSS variables, component library
+- **political-data-visualization** - CSS-only charts, heat maps, dashboards
+- **advanced-data-visualization** ✨ **NEW** - Chart.js/D3.js, interactive dashboards
+
+*Testing & Quality Assurance (2):* ✨ **NEW**
+- **playwright-testing** - Browser automation, visual regression, accessibility audits
+- **issue-management** - GitHub issue creation, labeling, agent assignment
+
+*Data Integration (2):* ⬆️ **EXPANDED**
+- **riksdag-regering-mcp** - 32 political data tools (Parliament, Government, MPs, votes)
+- **cia-data-integration** ✨ **NEW** - CIA export consumption, validation, caching strategies
 
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)
