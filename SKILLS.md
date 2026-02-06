@@ -18,6 +18,60 @@ Skills are:
 - ✅ **Reusable**: Apply across multiple tasks
 - ✅ **Context-Aware**: Load only when relevant
 
+## Available Skills (34 Total)
+
+### Core Infrastructure (7 skills)
+1. hack23-isms-compliance
+2. security-by-design
+3. static-site-security
+4. ci-cd-security
+5. documentation-standards
+6. html-accessibility
+7. multi-language-localization
+
+### Political Intelligence (11 skills)
+8. political-science-analysis
+9. osint-methodologies
+10. intelligence-analysis-techniques
+11. swedish-political-system
+12. electoral-analysis
+13. behavioral-analysis
+14. strategic-communication-analysis
+15. legislative-monitoring
+16. risk-assessment-frameworks
+17. data-science-for-intelligence
+18. gdpr-compliance
+
+### ISMS & Security (6 skills)
+19. cis-controls
+20. iso-27001-controls
+21. nist-csf-mapping
+22. threat-modeling
+23. secure-code-review
+24. security-documentation
+
+### Development & Operations (4 skills)
+25. c4-architecture-documentation
+26. github-actions-workflows
+27. code-quality-checks
+28. secrets-management
+
+### UI/UX & Design (3 skills) ✨ **NEW**
+29. responsive-design
+30. design-system-management
+31. political-data-visualization
+
+### Testing & Quality Assurance (2 skills) ✨ **NEW**
+32. playwright-testing
+33. issue-management
+
+### Data Integration (1 skill) ✨ **NEW**
+34. riksdag-regering-mcp
+
+---
+
+## Detailed Skill Descriptions
+
 ## Available Skills
 
 ### 1. hack23-isms-compliance
@@ -669,6 +723,171 @@ Skills are:
 - Secret rotation
 - Security audits
 
+### 29. responsive-design ✨ NEW
+**Purpose**: Mobile-first responsive web design with CSS Grid/Flexbox, breakpoints (320px-1440px+)
+
+**Key Principles**:
+- Mobile-First Design
+- Fluid Typography (clamp())
+- Flexible Layouts (Grid/Flexbox)
+- Touch-Friendly (44x44px targets)
+- Performance Optimized
+- Content Priority
+
+**Enforces**:
+- Standard breakpoints (320px, 768px, 1024px, 1440px+)
+- Fluid typography with clamp()
+- CSS Grid for layouts
+- 44x44px minimum touch targets
+- Viewport meta tag required
+- Max-width constraint for ultra-wide
+
+**When to Use**:
+- All HTML/CSS development
+- New feature implementation
+- Dashboard design
+- Navigation redesign
+- Mobile optimization
+- Cross-device testing
+
+### 30. design-system-management ✨ NEW
+**Purpose**: Cyberpunk theme design system with CSS custom properties and component library
+
+**Key Principles**:
+- Single Source of Truth (CSS variables)
+- Component-Based Architecture
+- Theme Consistency
+- Accessibility Built-In
+- Responsive Scaling
+- Performance Focused
+
+**Enforces**:
+- CSS custom properties for all design tokens
+- Cyberpunk color palette (cyan, magenta, yellow on dark)
+- Fluid typography and spacing scales
+- Reusable component patterns
+- 4.5:1 color contrast minimum
+- Neon glow effects
+
+**When to Use**:
+- New page creation
+- Component development
+- UI refactoring
+- Theme updates
+- Accessibility enhancements
+- Style standardization
+
+### 31. political-data-visualization ✨ NEW
+**Purpose**: CSS-only data visualization (charts, heat maps, progress bars) for political metrics
+
+**Key Principles**:
+- CSS-Only (no JavaScript)
+- Accessibility First (WCAG 2.1 AA)
+- Semantic Markup
+- Progressive Disclosure
+- Color-Blind Safe
+- Responsive Design
+
+**Enforces**:
+- Progress bars for voting discipline
+- Bar charts for MP/party distribution
+- Heat maps for voting patterns
+- Donut charts for coalitions
+- Timeline visualizations
+- Swedish party color palette
+- Screen reader support
+
+**When to Use**:
+- Dashboard design
+- Party analysis visualizations
+- Voting record displays
+- Committee activity metrics
+- MP profile timelines
+- Risk assessment indicators
+
+### 32. playwright-testing ✨ NEW
+**Purpose**: Browser automation, visual regression testing, screenshot capture for static websites
+
+**Key Principles**:
+- Headless First
+- Visual Evidence
+- Accessibility Integration (axe-core)
+- Cross-Browser Coverage
+- Responsive Testing
+- Performance Monitoring
+
+**Enforces**:
+- Xvfb display for headless rendering
+- Screenshot capture on all tests
+- WCAG 2.1 AA audits with axe-playwright
+- Multi-language testing (14 languages)
+- Responsive viewport testing
+- Core Web Vitals measurement
+
+**When to Use**:
+- Quality assurance automation
+- Visual regression detection
+- Accessibility audits
+- Cross-browser testing
+- Issue validation with evidence
+- Performance monitoring
+
+### 33. issue-management ✨ NEW
+**Purpose**: GitHub issue creation, labeling, milestones, agent assignment for product management
+
+**Key Principles**:
+- Clarity First
+- Actionable Items
+- Properly Labeled
+- Traceable
+- Evidence-Based
+- Agent-Optimized
+
+**Enforces**:
+- Structured issue templates
+- Clear acceptance criteria
+- Type/priority/area/agent labels
+- Screenshot/log evidence
+- Related issue linking
+- Copilot agent assignment format
+
+**When to Use**:
+- Bug reports
+- Feature requests
+- Security issues
+- Accessibility issues
+- Technical debt tracking
+- Agent task delegation
+
+### 34. riksdag-regering-mcp ✨ NEW
+**Purpose**: 32 specialized tools for Swedish political data via riksdag-regering-mcp MCP server
+
+**Key Principles**:
+- Authoritative Data Source
+- Comprehensive Coverage (50+ years)
+- Structured API
+- Real-Time Access
+- GDPR Compliance
+- Multi-Source Integration
+
+**Available Tools**:
+- Search & Discovery (6 tools): MPs, documents, speeches, votes
+- Detailed Information (6 tools): Document content, MP profiles
+- Parliamentary Documents (6 tools): Motions, propositions, reports
+- Government Documents (4 tools): SOU, Dir, propositions
+- Analytics & Aggregation (5 tools): Voting groups, reports
+- Advanced Queries (5 tools): Pagination, batch fetching
+
+**When to Use**:
+- Political intelligence analysis
+- Legislative monitoring
+- MP profiling and analysis
+- Coalition behavior assessment
+- Policy research and tracking
+- Voting pattern analysis
+- Government oversight
+- Electoral research
+
 ## How Skills Work
 
 ### Automatic Loading
@@ -866,5 +1085,5 @@ Skills enforce compliance with:
 
 ---
 
-**Last Updated**: 2026-01-31  
+**Last Updated**: 2026-02-06  
 **Maintained by**: Hack23 AB
