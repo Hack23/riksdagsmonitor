@@ -1,0 +1,128 @@
+{
+  "title": "Top 10 Most Influential MPs",
+  "description": "Network analysis and influence scoring of Swedish Riksdag members",
+  "lastUpdated": "2026-02-05T15:00:00Z",
+  "methodology": "CIA influence scoring algorithm: committee positions (40%), voting power (30%), collaboration networks (20%), media presence (10%)",
+  "rankings": [
+    {
+      "rank": 1,
+      "id": "MP001",
+      "firstName": "Ulf",
+      "lastName": "Kristersson",
+      "party": "Moderates",
+      "role": "Prime Minister",
+      "influenceScore": 98.5,
+      "keyFactors": ["Government leadership", "Coalition management", "Committee chair"],
+      "networkConnections": 147,
+      "votingPower": 9.8
+    },
+    {
+      "rank": 2,
+      "id": "MP002",
+      "firstName": "Jimmie",
+      "lastName": "Åkesson",
+      "party": "Sweden Democrats",
+      "role": "Party Leader",
+      "influenceScore": 92.3,
+      "keyFactors": ["Coalition partner", "Large party bloc", "Media presence"],
+      "networkConnections": 134,
+      "votingPower": 8.7
+    },
+    {
+      "rank": 3,
+      "id": "MP003",
+      "firstName": "Magdalena",
+      "lastName": "Andersson",
+      "party": "Social Democrats",
+      "role": "Former PM / Opposition Leader",
+      "influenceScore": 89.7,
+      "keyFactors": ["Opposition leadership", "Government experience", "Policy expertise"],
+      "networkConnections": 128,
+      "votingPower": 8.5
+    },
+    {
+      "rank": 4,
+      "id": "MP004",
+      "firstName": "Ebba",
+      "lastName": "Busch",
+      "party": "Christian Democrats",
+      "role": "Deputy PM",
+      "influenceScore": 84.2,
+      "keyFactors": ["Government role", "Coalition partner", "Committee influence"],
+      "networkConnections": 119,
+      "votingPower": 7.9
+    },
+    {
+      "rank": 5,
+      "id": "MP005",
+      "firstName": "Johan",
+      "lastName": "Pehrson",
+      "party": "Liberals",
+      "role": "Party Leader",
+      "influenceScore": 78.6,
+      "keyFactors": ["Coalition support", "Policy broker", "Committee work"],
+      "networkConnections": 102,
+      "votingPower": 7.2
+    },
+    {
+      "rank": 6,
+      "id": "MP006",
+      "firstName": "Nooshi",
+      "lastName": "Dadgostar",
+      "party": "Left Party",
+      "role": "Party Leader",
+      "influenceScore": 76.4,
+      "keyFactors": ["Opposition influence", "Budget negotiations", "Media visibility"],
+      "networkConnections": 98,
+      "votingPower": 6.8
+    },
+    {
+      "rank": 7,
+      "id": "MP007",
+      "firstName": "Muharrem",
+      "lastName": "Demirok",
+      "party": "Centre Party",
+      "role": "Party Leader",
+      "influenceScore": 73.1,
+      "keyFactors": ["Swing party", "Committee positions", "Rural advocacy"],
+      "networkConnections": 94,
+      "votingPower": 6.5
+    },
+    {
+      "rank": 8,
+      "id": "MP008",
+      "firstName": "Märta",
+      "lastName": "Stenevi",
+      "party": "Green Party",
+      "role": "Party Co-Leader",
+      "influenceScore": 69.8,
+      "keyFactors": ["Climate policy", "Opposition role", "Committee work"],
+      "networkConnections": 87,
+      "votingPower": 6.1
+    },
+    {
+      "rank": 9,
+      "id": "MP009",
+      "firstName": "Andreas",
+      "lastName": "Carlson",
+      "party": "Christian Democrats",
+      "role": "Minister",
+      "influenceScore": 67.3,
+      "keyFactors": ["Government position", "Policy implementation", "Coalition support"],
+      "networkConnections": 82,
+      "votingPower": 5.9
+    },
+    {
+      "rank": 10,
+      "id": "MP010",
+      "firstName": "Jessica",
+      "lastName": "Rosencrantz",
+      "party": "Moderates",
+      "role": "Committee Chair",
+      "influenceScore": 64.7,
+      "keyFactors": ["Committee leadership", "Legislative expertise", "Government connection"],
+      "networkConnections": 79,
+      "votingPower": 5.6
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Swedish Riksdag Overview Dashboard",
+  "description": "Comprehensive intelligence snapshot of Swedish Parliament",
+  "lastUpdated": "2026-02-05T15:00:00Z",
+  "keyMetrics": {
+    "totalMPs": 349,
+    "totalParties": 8,
+    "totalRiskRules": 45,
+    "governmentCoalition": "Tidö Agreement",
+    "coalitionSeats": 176,
+    "oppositionSeats": 173,
+    "majorityMargin": 1
+  },
+  "riskAlerts": {
+    "critical": 5,
+    "major": 12,
+    "minor": 28,
+    "last90Days": {
+      "critical": 5,
+      "major": 12,
+      "minor": 28
+    }
+  },
+  "parliamentActivity": {
+    "votesLastMonth": 87,
+    "documentsProcessed": 234,
+    "motionsSubmitted": 156,
+    "committeeMeetings": 89
+  },
+  "coalitionStability": {
+    "stabilityScore": 72,
+    "riskLevel": "moderate",
+    "defectionProbability": 15,
+    "ideologicalTension": "high"
+  },
+  "dataQuality": {
+    "completeness": 98.5,
+    "lastDataSync": "2026-02-05T14:30:00Z",
+    "coverage": "50+ years (1971-2024)"
+  }
+}

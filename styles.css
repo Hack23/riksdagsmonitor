@@ -6806,3 +6806,42 @@ html[lang="he"] {
     border: 1px solid #333;
   }
 }
+
+/* ================================================
+   DASHBOARD PROMO SECTION
+   ================================================ */
+.dashboard-promo-section {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.dashboard-promo-heading {
+  font-size: var(--h2-size);
+  margin-bottom: var(--spacing-md);
+}
+
+.dashboard-promo-text {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.dashboard-promo-link {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: white;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.dashboard-promo-link:hover {
+  transform: translateY(-2px);
+}
