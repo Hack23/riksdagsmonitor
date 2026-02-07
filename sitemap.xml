@@ -114,4 +114,24 @@
   <priority>0.7</priority>
 </url>
 
+<url>
+  <loc>https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html</loc>
+  <lastmod>2026-02-06T23:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html</loc>
+  <lastmod>2026-02-06T23:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
+</url>
+
 </urlset>
