@@ -114,24 +114,4 @@
   <priority>0.7</priority>
 </url>
 
-<url>
-  <loc>https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html</loc>
-  <lastmod>2026-02-07T07:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
-</url>
-
-<url>
-  <loc>https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html</loc>
-  <lastmod>2026-02-07T07:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
-</url>
-
 </urlset>
