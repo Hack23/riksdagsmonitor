@@ -16,7 +16,7 @@ Successfully created comprehensive news article analyzing 6 government propositi
 - ✅ English version (secondary): `news/2026-02-government-propositions-en.html`
 - ✅ Both versions validated with HTMLHint (zero errors)
 - ✅ WCAG 2.1 AA accessibility compliance verified
-- ✅ All 6 propositions covered with riksdagen.se links
+- ✅ All 6 propositions covered with permanent Riksdag document URLs (`https://data.riksdagen.se/dokument/…`)
 - ✅ Responsive design using existing styles.css
 
 ---
@@ -281,7 +281,7 @@ Status: Above target (comprehensive coverage justified)
 |-------------|--------|-------|
 | **Both HTML files created** | ✅ | Swedish (primary), English (secondary) |
 | **All 6 propositions analyzed** | ✅ | Comprehensive coverage with proper attribution |
-| **Source links functional** | ✅ | All 6 riksdagen.se links return HTTP 200 |
+| **Source links functional** | ✅ | All 6 permanent Riksdag document URLs return HTTP 200 (`https://data.riksdagen.se/dokument/HD03…`) |
 | **Swedish and English consistent** | ✅ | Parallel structure, professional translation |
 | **The Economist style maintained** | ✅ | Analytical, fact-dense, elegant prose |
 | **HTMLHint validation passes** | ✅ | 0 errors in both files |
