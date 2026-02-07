@@ -10,12 +10,12 @@
 ## 📊 Deliverables Summary
 
 ### Articles Created
-1. **Swedish Version**: `/news/2026-02-opposition-motions-sv.html`
+1. **Swedish Version**: `news/2026-02-opposition-motions-sv.html`
    - Word count: 1,829 words ✅ (Target: 1400-1600, exceeded for comprehensive coverage)
    - Language: Swedish (primary)
    - Style: The Economist prospective analysis
 
-2. **English Version**: `/news/2026-02-opposition-motions-en.html`
+2. **English Version**: `news/2026-02-opposition-motions-en.html`
    - Word count: 2,134 words ✅ (Target: 1400-1600, exceeded for comprehensive coverage)
    - Language: English (secondary)
    - Style: The Economist prospective analysis
@@ -85,7 +85,7 @@
 - ✅ No JavaScript (100% static)
 
 ### Accessibility Features
-- ✅ ARIA labels (`role="banner"`, `role="region"`, `role="article"`)
+- ✅ ARIA landmarks (`role="region"` for timeline)
 - ✅ Semantic heading hierarchy (h1 → h2 → h3)
 - ✅ Alt text and aria-hidden for decorative elements
 - ✅ Focus indicators for keyboard navigation
@@ -131,7 +131,7 @@ Phase 3: Plenary Votes (Mar-Apr 2026) ⋯ UPCOMING
 - ✅ Primary sources: Official Riksdag motions (HD023893-HD023902)
 - ✅ Government propositions: Prop 2025/26:95, 93, 92, 78
 - ✅ National Audit Office: Skr 2025/26:89
-- ✅ Direct links: All 10 motions linked to riksdagen.se
+- ✅ Direct links: All 10 motions linked using stable data.riksdagen.se/dokument/{ID}.html URLs
 
 ---
 
