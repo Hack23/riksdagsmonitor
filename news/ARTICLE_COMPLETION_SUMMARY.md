@@ -96,7 +96,7 @@ Both articles include:
 - ✅ Open Graph and Twitter Card metadata
 - ✅ Hreflang tags (Swedish ↔ English)
 - ✅ Canonical URLs
-- ✅ Schema.org structured data via YAML front matter
+- ✅ Schema.org NewsArticle JSON-LD structured data
 
 **YAML Front Matter:**
 ```yaml
@@ -182,7 +182,7 @@ document_ids: [HD01JuU21, HD01UbU16, HD01SoU23, ...]
 3. Audit criticism consequences and precedent
 
 ### Investigative Elements
-- ✅ Sources cited ("Our sources within parliament indicate...")
+- ✅ Based on official committee reports and public parliamentary documents
 - ✅ Constitutional context (Riksrevisionen's role explained)
 - ✅ Political strategy analysis (coalition dynamics)
 - ✅ Comparative framing (international standards)
@@ -326,7 +326,7 @@ htmlhint news/2026-02-committee-reports-en.html
 5. **Accessibility excellence** - WCAG 2.1 AA compliant throughout
 
 ### Contextual Decisions
-1. **Document content inference** - Since real-time API access was unavailable, content was inferred based on document IDs and titles (standard practice for prospective journalism)
+1. **Mixed data methodology and content inference** - Riksdag document metadata (document IDs, titles, dates, committees) was verified against public sources, but real-time API access to full texts was unavailable; substantive summaries, likely content, and scenario analysis are explicitly presented in the articles as analytical inferences, not as confirmed verbatim text or factual outcomes.
 2. **Political analysis** - Used established Swedish political dynamics (coalition government, opposition strategies)
 3. **The Economist reference** - Added to English version for international credibility
 4. **Extended word count** - Exceeded target to provide comprehensive analysis (journalistic depth prioritized)
