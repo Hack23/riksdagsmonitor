@@ -44,7 +44,7 @@ Status: Above target (comprehensive coverage justified)
 ✅ Semantic HTML5 structure
 ✅ Proper heading hierarchy (h1 → h2 → h3)
 ✅ ARIA labels for navigation (2 per file)
-✅ Role attributes for landmarks (3 per file)
+✅ Landmark regions use semantic elements (header, main, footer) without redundant ARIA roles (3 per file)
 ✅ Language attributes correct (lang="sv", lang="en")
 ✅ No accessibility warnings
 ```
