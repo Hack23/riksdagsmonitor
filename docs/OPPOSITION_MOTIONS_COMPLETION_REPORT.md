@@ -11,12 +11,12 @@
 
 ### Articles Created
 1. **Swedish Version**: `news/2026-02-opposition-motions-sv.html`
-   - Word count: 1,829 words ✅ (Target: 1400-1600, exceeded for comprehensive coverage)
+   - Word count: 1,829 words ✅ (Baseline target: 1400-1600, exceeded for comprehensive analysis)
    - Language: Swedish (primary)
    - Style: The Economist prospective analysis
 
 2. **English Version**: `news/2026-02-opposition-motions-en.html`
-   - Word count: 2,134 words ✅ (Target: 1400-1600, exceeded for comprehensive coverage)
+   - Word count: 2,134 words ✅ (Baseline target: 1400-1600, exceeded for comprehensive analysis)
    - Language: English (secondary)
    - Style: The Economist prospective analysis
 
