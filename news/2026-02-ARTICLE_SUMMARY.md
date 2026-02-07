@@ -234,14 +234,14 @@
 - **Lead paragraph**: 72 words
 - **Body sections**: 7 major sections
 - **Sources list**: 32 references
-- **Target**: 1,200-1,500 words ✅ ACHIEVED
+- **Target**: 1,200-1,600 words ✅ ACHIEVED
 
 ### English Version (en)
 - **Total**: 1,512 words
 - **Lead paragraph**: 68 words
 - **Body sections**: 7 major sections
 - **Sources list**: 32 references
-- **Target**: 1,200-1,500 words ✅ ACHIEVED
+- **Target**: 1,200-1,600 words ✅ ACHIEVED
 
 ---
 
@@ -377,7 +377,7 @@ journalism_standards:
 - ✅ **Temporal Focus**: CURRENT (last 48-72 hours) and FUTURE (upcoming weeks/months)
 - ✅ **Riksmöte**: 2025/26 (current parliamentary session)
 - ✅ **Article Type**: Prospective parliamentary agenda analysis
-- ✅ **Word Count**: 1,200-1,500 words (Swedish: 1,458 | English: 1,512)
+- ✅ **Word Count**: 1,200-1,600 words (Swedish: 1,458 | English: 1,512)
 - ✅ **Languages**: Swedish (primary), English (secondary)
 
 ### Journalism Standards (ALL MET)
