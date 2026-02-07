@@ -207,7 +207,7 @@ Phase 3: Plenary Votes (Mar-Apr 2026) ⋯ UPCOMING
 
 ### Created Files
 ```
-/home/runner/work/riksdagsmonitor/riksdagsmonitor/news/
+news/
 ├── 2026-02-opposition-motions-sv.html  (1,829 words, Swedish)
 └── 2026-02-opposition-motions-en.html  (2,134 words, English)
 ```
