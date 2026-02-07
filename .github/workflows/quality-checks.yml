@@ -43,7 +43,7 @@ jobs:
           echo ""
           
           # Run HTMLHint on all HTML files and capture results
-          if htmlhint *.html > htmlhint-report.txt 2>&1; then
+          if htmlhint *.html news/*.html > htmlhint-report.txt 2>&1; then
             echo "✅ All HTML files passed validation"
             cat htmlhint-report.txt
           else
