@@ -132,7 +132,7 @@ All document IDs, URLs, and events are **100% verified** from Swedish Riksdag of
 
 ### HTML/CSS Standards
 
-- **HTML5**: Semantic structure (`<article>`, `<section>`, `<header>`, `<main>`)
+- **HTML5**: Semantic structure (`<article>`, `<section>`, `<header>`) with `<div class="article-content">` for the main article body (no `<main>` inside `<article>`)
 - **WCAG 2.1 AA**: 
   - Color contrast 4.5:1 minimum
   - Proper heading hierarchy (h1 → h2 → h3)

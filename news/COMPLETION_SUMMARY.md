@@ -223,7 +223,7 @@ Scanned 2 files, no errors found (16 ms).
 
 ### File Paths
 ```
-/home/runner/work/riksdagsmonitor/riksdagsmonitor/news/
+news/
 ├── 2026-02-week-ahead-sv.html (Swedish primary)
 ├── 2026-02-week-ahead-en.html (English secondary)
 └── README.md (Documentation)
