@@ -64,7 +64,7 @@ All articles in this directory follow:
 - **Technical Requirements**: HTML5 semantic structure, WCAG 2.1 AA accessibility
 - **Multi-language**: Swedish primary, English secondary (14 languages planned)
 - **Source Attribution**: All claims cited with authoritative sources
-- **HTML Validation**: Must pass HTMLHint (0 errors) — validate with `htmlhint news/*.html` before publishing
+- **HTML Validation**: Must pass HTMLHint (0 errors) — run `htmlhint news/*.html` manually before publishing (note: this is a separate manual step and is not run by `npm run htmlhint` or CI)
 
 ## Structure
 
