@@ -2,8 +2,8 @@
 
 ## Article Links
 
-- **Swedish (primary)**: [2026-02-parliament-agenda-sv.html](2026-02-parliament-agenda-sv.html)
-- **English (secondary)**: [2026-02-parliament-agenda-en.html](2026-02-parliament-agenda-en.html)
+- **Swedish (primary)**: [2026-02-parliament-agenda-sv.html](../news/2026-02-parliament-agenda-sv.html)
+- **English (secondary)**: [2026-02-parliament-agenda-en.html](../news/2026-02-parliament-agenda-en.html)
 
 ## Key Numbers
 
@@ -51,12 +51,14 @@
 ## Files Delivered
 
 ```
-news/
-├── 2026-02-parliament-agenda-sv.html    # Swedish primary (1,458 words)
-├── 2026-02-parliament-agenda-en.html    # English secondary (1,512 words)
-├── 2026-02-ARTICLE_SUMMARY.md           # Comprehensive summary
-├── 2026-02-QUICK_REFERENCE.md           # This file
-└── README.md                             # Updated with metadata
+riksdagsmonitor/
+├── news/
+│   ├── 2026-02-parliament-agenda-sv.html         # Swedish primary (1,458 words)
+│   ├── 2026-02-parliament-agenda-en.html         # English secondary (1,512 words)
+│   └── README.md                                  # Updated with metadata
+└── docs/
+    ├── 2026-02-PARLIAMENT-AGENDA-SUMMARY.md      # Comprehensive summary
+    └── 2026-02-PARLIAMENT-AGENDA-REFERENCE.md    # This file
 ```
 
 ## Riksdagen.se Links

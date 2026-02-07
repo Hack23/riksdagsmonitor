@@ -414,11 +414,13 @@ journalism_standards:
 ## Files Delivered
 
 ```
-riksdagsmonitor/news/
-├── 2026-02-parliament-agenda-sv.html    # Swedish primary (1,458 words)
-├── 2026-02-parliament-agenda-en.html    # English secondary (1,512 words)
-├── 2026-02-ARTICLE_SUMMARY.md           # This file (comprehensive summary)
-└── README.md                             # Updated with new article entries
+riksdagsmonitor/
+├── news/
+│   ├── 2026-02-parliament-agenda-sv.html        # Swedish primary (1,458 words)
+│   ├── 2026-02-parliament-agenda-en.html        # English secondary (1,512 words)
+│   └── README.md                                # Updated with new article entries
+└── docs/
+    └── 2026-02-PARLIAMENT-AGENDA-SUMMARY.md     # This file (comprehensive summary)
 ```
 
 ---
