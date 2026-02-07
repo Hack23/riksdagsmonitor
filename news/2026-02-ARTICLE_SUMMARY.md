@@ -12,13 +12,13 @@
 - **File**: `news/2026-02-parliament-agenda-sv.html`
 - **Language**: Swedish (sv)
 - **Word Count**: 1,458 words
-- **Status**: ✅ COMPLETE - HTMLHint validation passed
+- **Status**: ✅ COMPLETE - HTML structure reviewed
 
 ### 2. English Secondary Article
 - **File**: `news/2026-02-parliament-agenda-en.html`
 - **Language**: English (en)
 - **Word Count**: 1,512 words
-- **Status**: ✅ COMPLETE - HTMLHint validation passed
+- **Status**: ✅ COMPLETE - HTML structure reviewed
 
 ### 3. Documentation Updated
 - **File**: `news/README.md`
@@ -93,7 +93,7 @@
 - ✅ Cultural sensitivity in translations (säkerhetsförvaring = preventive detention)
 
 **Validation**:
-- ✅ HTMLHint validation passed (0 errors)
+- ✅ HTML structure reviewed (0 errors)
 - ✅ UTF-8 encoding (Swedish characters: å, ä, ö)
 - ✅ No JavaScript dependencies
 - ✅ Mobile-responsive design (styles.css)
@@ -397,7 +397,7 @@ journalism_standards:
 - ✅ Links to riksdagen.se for all documents
 - ✅ No JavaScript dependencies
 - ✅ Mobile-responsive design
-- ✅ HTMLHint validation passed (0 errors)
+- ✅ Manually reviewed for HTML structure and accessibility (Note: repo htmlhint script validates root *.html only)
 
 ### Content Requirements (ALL MET)
 - ✅ 8 propositions covered (February 3-5, 2026)
@@ -431,7 +431,7 @@ This delivery represents **world-class political journalism** covering Swedish p
 2. **The Economist standard**: Analytical, contextual, fact-dense, elegant prose
 3. **Systematic transparency**: 32 authoritative sources, all claims verified
 4. **International perspective**: Nordic comparisons, EU context, global standards
-5. **Technical excellence**: WCAG 2.1 AA, semantic HTML5, HTMLHint validation passed
+5. **Technical excellence**: WCAG 2.1 AA, semantic HTML5, proper structure
 6. **Multilingual support**: Swedish primary, English secondary, 12 more languages planned
 
 The articles provide Swedish citizens and international observers with comprehensive insight into:

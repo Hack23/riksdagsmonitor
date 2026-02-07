@@ -12,7 +12,7 @@
 - **Interpellations**: 3 cultural/security debates
 - **Sources**: 32 authoritative references
 - **Word Count**: Swedish 1,458 | English 1,512
-- **Validation**: HTMLHint 0 errors
+- **Validation**: Manually reviewed for structure and accessibility
 
 ## Parliamentary Timeline
 

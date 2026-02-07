@@ -51,27 +51,9 @@ This directory contains analytical journalism articles about Swedish parliamenta
 
 ### Labor Market Interpellations (February 2025)
 
-**Swedish (Primary)**: [2025-labor-market-interpellations-sv.html](2025-labor-market-interpellations-sv.html)  
-**English (Secondary)**: [2025-labor-market-interpellations-en.html](2025-labor-market-interpellations-en.html)
+_**Note**: This article was removed as it covered historical 2024/25 interpellations. Current news policy focuses on current/future events only._
 
-**Topic**: Analysis of two interpellations from Eva Lindh (S) to the Swedish government regarding:
-1. EU Platform Work Directive implementation for gig economy workers
-2. Subcontractor chain limitations in construction industry
-
-**Interpellations Covered**:
-- 2024/25:734 - Arbetsvillkor inom gigekonomin (Gig economy working conditions)
-- 2024/25:740 - Begränsning av antalet underleverantörer (Subcontractor limits)
-
-**Key Themes**:
-- Liberal vs. Social Democratic labor market philosophy
-- Coalition dynamics (M, L, KD, SD)
-- International comparisons (Denmark, France, Norway)
-- EU directive compliance challenges
-- Worker protection vs. business flexibility
-
-**Style**: The Economist-style analytical journalism  
-**Word Count**: ~2,000 words per version  
-**Date Published**: February 7, 2025
+---
 
 ## Article Standards
 
@@ -82,7 +64,7 @@ All articles in this directory follow:
 - **Technical Requirements**: HTML5 semantic structure, WCAG 2.1 AA accessibility
 - **Multi-language**: Swedish primary, English secondary (14 languages planned)
 - **Source Attribution**: All claims cited with authoritative sources
-- **HTML Validation**: HTMLHint passed (0 errors)
+- **HTML Validation**: Must pass HTMLHint (0 errors) — validate with `htmlhint news/*.html` before publishing
 
 ## Structure
 
