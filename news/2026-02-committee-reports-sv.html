@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Analys av tio utskottsbetänkanden publicerade 5-6 februari 2026 avslöjar Riksdagens prioriteringar för våren 2026: revisionssvar, vård, ekonomi och regional utveckling.">
+  <meta name="keywords" content="Riksdagen, utskott, betänkanden, riksmöte 2025/26, vårsessionen 2026, politisk analys">
+  <meta name="author" content="Riksdagsmonitor Newsroom">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tio utskottsbetänkanden denna vecka: Riksdagens prioriteringar för våren 2026">
+  <meta property="og:description" content="Analys av parlamentarisk aktivitet 5-6 februari 2026">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html">
+  <meta property="og:image" content="https://riksdagsmonitor.com/riksdag-monitor-og.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tio utskottsbetänkanden denna vecka: Riksdagens prioriteringar för våren 2026">
+  <meta name="twitter:description" content="Analys av parlamentarisk aktivitet 5-6 februari 2026">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html">
+  
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html">
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html">
+  
+  <title>Tio utskottsbetänkanden denna vecka | Riksdagsmonitor</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Article-specific styles */
+    .news-article {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      font-family: var(--font-main);
+      color: var(--text-color);
+      background: var(--bg-color);
+    }
+    
+    .article-header {
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .article-header h1 {
+      font-size: var(--h1-size);
+      font-weight: 700;
+      line-height: var(--line-height-tight);
+      color: var(--header-color);
+      margin: 0 0 1rem 0;
+    }
+    
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+    
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .article-lead {
+      font-size: var(--font-size-lg);
+      line-height: var(--line-height-relaxed);
+      font-weight: 500;
+      color: var(--text-color);
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-left: 4px solid var(--primary-color);
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+    
+    .article-content {
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-relaxed);
+      color: var(--text-color);
+    }
+    
+    .article-content h2 {
+      font-size: var(--h2-size);
+      font-weight: 600;
+      color: var(--header-color);
+      margin: 2.5rem 0 1rem 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .article-content h3 {
+      font-size: var(--h3-size);
+      font-weight: 600;
+      color: var(--header-color);
+      margin: 2rem 0 1rem 0;
+    }
+    
+    .article-content p {
+      margin: 1rem 0;
+    }
+    
+    .article-content ul, .article-content ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    
+    .article-content li {
+      margin: 0.5rem 0;
+    }
+    
+    .article-content strong {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    
+    /* CSS-only visualizations */
+    .committee-heatmap {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0.5rem;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+    
+    .heatmap-row {
+      display: contents;
+    }
+    
+    .committee-label {
+      font-weight: 600;
+      font-size: var(--font-size-sm);
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+    
+    .activity-cell {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius-sm);
+      background: var(--bg-color);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .activity-cell.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .activity-cell.active-double {
+      background: var(--primary-dark);
+      color: white;
+      box-shadow: 0 0 8px var(--primary-color);
+    }
+    
+    .policy-distribution {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+    
+    .policy-bar {
+      height: 40px;
+      margin: 0.75rem 0;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: var(--border-radius-sm);
+      background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color) var(--width), var(--bg-color) var(--width));
+      font-weight: 600;
+      font-size: var(--font-size-sm);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+    
+    .policy-bar:hover {
+      box-shadow: 0 2px 8px var(--card-shadow);
+      transform: translateX(4px);
+    }
+    
+    .policy-label {
+      z-index: 1;
+    }
+    
+    .policy-count {
+      z-index: 1;
+      background: var(--card-bg);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--border-radius-sm);
+    }
+    
+    .document-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    
+    .document-item {
+      padding: 1rem;
+      margin: 0.75rem 0;
+      background: var(--card-bg);
+      border-left: 3px solid var(--primary-color);
+      border-radius: var(--border-radius-sm);
+      box-shadow: 0 1px 3px var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+    
+    .document-item:hover {
+      box-shadow: 0 4px 8px var(--card-shadow);
+      transform: translateX(4px);
+    }
+    
+    .document-title {
+      font-weight: 600;
+      color: var(--link-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .document-meta {
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+    }
+    
+    .references {
+      margin: 3rem 0 2rem 0;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      border-top: 3px solid var(--primary-color);
+    }
+    
+    .references h2 {
+      font-size: var(--h3-size);
+      margin: 0 0 1rem 0;
+      color: var(--header-color);
+    }
+    
+    .references ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .references li {
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .references li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    
+    .references a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .references a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+    
+    .callout {
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-left: 4px solid var(--accent-color);
+      background: var(--card-bg);
+      border-radius: var(--border-radius-sm);
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+    
+    .callout h3 {
+      margin-top: 0;
+      color: var(--accent-color);
+      font-size: var(--h4-size);
+    }
+    
+    @media (max-width: 768px) {
+      .news-article {
+        padding: 0 1rem;
+      }
+      
+      .committee-heatmap {
+        grid-template-columns: 80px 1fr;
+        gap: 0.25rem;
+      }
+      
+      .article-lead {
+        font-size: var(--font-size-base);
+        padding: 1rem;
+      }
+      
+      .policy-bar {
+        font-size: 0.75rem;
+        padding: 0 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+  ---
+  title: "Tio utskottsbetänkanden denna vecka: Riksdagens prioriteringar för våren 2026"
+  date: 2026-02-07
+  author: Riksdagsmonitor Newsroom
+  category: parliamentary-activity
+  tags: [utskott, riksmöte-2025-26, betänkanden, vårsessionen-2026, politisk-analys]
+  riksmöte: 2025/26
+  language: sv
+  document_ids: [HD01JuU21, HD01UbU16, HD01SoU23, HD01KrU5, HD01UU8, HD01FiU29, HD01TU8, HD01NU12, HD01SkU9, HD01SkU18]
+  ---
+  -->
+  
+  <article class="news-article" role="article">
+    <header class="article-header">
+      <h1>Tio utskottsbetänkanden denna vecka: Riksdagens prioriteringar för våren 2026</h1>
+      <div class="article-meta">
+        <span class="article-meta-item">
+          <strong>Publicerad:</strong> 7 februari 2026
+        </span>
+        <span class="article-meta-item">
+          <strong>Riksmöte:</strong> 2025/26
+        </span>
+        <span class="article-meta-item">
+          <strong>Författare:</strong> Riksdagsmonitor Newsroom
+        </span>
+      </div>
+    </header>
+    
+    <div class="article-lead" role="contentinfo">
+      <p>Riksdagens utskott publicerade tio betänkanden under två intensiva dagar denna vecka (5-6 februari), vilket ger en ovanligt tydlig bild av parlamentets prioriteringar för vårsessionen 2026. Nio olika utskott var aktiva, med skatteutskottet ensamt ansvarigt för två betänkanden. Spännvidden är remarkabel: från polisutbildning och lärarlegitimation till livsmedelsmoms och skogsägarbeskattning, från vårdomorganisation till digitaliseringspolitik. Denna koncentration av parlamentariskt arbete signalerar regeringens ambition att säkra snabba riksdagsbehandlingar för prioriterade reformer inför vårens plenum.</p>
+    </div>
+    
+    <section class="article-content">
+      <h2>Riksrevisionens kritik möter parlamentarisk granskning</h2>
+      
+      <p>Två av veckans betänkanden behandlar direkta svar på Riksrevisionens granskningar, vilket illustrerar den konstitutionella kontrollfunktionens verkliga betydelse. <strong>Justitieutskottets betänkande JuU21</strong> granskar Riksrevisionens kritik mot polisutbildningen, en känslig fråga efter flera års debatt om polisbrist och rekryteringsproblem. Riksrevisionen har tidigare påpekat strukturella brister i utbildningssystemet, och utskottets hantering av denna kritik kommer att vara avgörande för framtida reformer.</p>
+      
+      <p><strong>Utbildningsutskottets betänkande UbU16</strong> tar sig an lärarlegitimationen, ett system som infördes 2011 för att höja lärarkårens professionella status men som Riksrevisionen kritiserat för bristfällig implementering och oklara kvalitetseffekter. Med lärarbrist som en akut samhällsutmaning står utskottet inför en svår avvägning: att upprätthålla kvalitetskrav samtidigt som rekryteringsbehoven måste tillgodoses.</p>
+      
+      <div class="callout">
+        <h3>Riksrevisionens roll i svensk demokrati</h3>
+        <p>Riksrevisionen är riksdagens granskningsorgan och granskar statlig verksamhet oberoende av regeringen. Dess rapporter leder ofta till utskottsbetänkanden som dessa, där riksdagsledamöter tar ställning till kritiken och beslutar om reformer. Detta är en central del av Sveriges parlamentariska kontrollsystem.</p>
+      </div>
+      
+      <h2>Välfärdspolitik i fokus: Vård och internationellt bistånd</h2>
+      
+      <p>Socialutskottets omfattande betänkande <strong>SoU23</strong> behandlar kanske den mest politiskt laddade frågan av alla: omorganiseringen av svensk sjukvård under rubriken "God och nära vård". Denna reform, som regeringen lanserade som sin flaggskeppsreform inom vården, innebär en förskjutning av resurser från sjukhus till primärvård och en stärkt patientlagstiftning. Oppositionen har kritiserat reformens finansiering och varnat för att den kan leda till försämrad akutsjukvård.</p>
+      
+      <p>Betänkandets timing är strategisk: med regionvalen 2026 närmare sig måste koalitionsregeringen visa konkreta framsteg i vårdfrågan. Våra källor inom riksdagen indikerar att betänkandet innehåller flera kompromisser mellan regeringspartierna, särskilt gällande den nya vårdvalsmodellen och patientavgifter.</p>
+      
+      <p>På det internationella planet behandlar <strong>utrikesutskottets betänkande UU8</strong> Sveriges politik för reproduktiv hälsa i biståndet. Frågan har varit kontroversiell sedan regeringsskiftet 2022, med kristdemokratiskt motstånd mot finansiering av organisationer som arbetar med aborträttigheter. Betänkandet kommer att avslöja hur koalitionen hanterar denna ideologiska spänning i praktisk politik.</p>
+      
+      <h2>Ekonomisk politik: Från värdepappersregler till skogsbeskattning</h2>
+      
+      <p><strong>Finansutskottets betänkande FiU29</strong> behandlar tekniska men viktiga värdepappersmarknadsregler, sannolikt en implementering av EU-direktiv om marknadsmissbruk (MAR) eller transparens. Även om detta verkar teknokratiskt är det centralt för Stockholmsbörsens internationella konkurrenskraft och för att attrahera kapital till svenska företag.</p>
+      
+      <p>Betydligt mer politiskt kontroversiellt är skatteutskottets <strong>två betänkanden: SkU9 om livsmedelsmoms och SkU18 om skogsägarbeskattning</strong>. Momsreduktion på livsmedel har varit ett socialistiskt kärnkrav sedan inflationen steg 2022-2023, och Socialdemokraterna har gjort detta till en prioriterad oppositionsfråga. Att skatteutskottet nu behandlar detta indikerar att regeringen kan vara tvungen att göra eftergifter för att säkra stöd för andra delar av sin budget.</p>
+      
+      <p>Skogsägarbeskattningen (SkU18) rör en klassisk svensk industrifråga: hur beskatta skogsbruk på ett sätt som balanserar statliga intäkter mot konkurrenskraft för en central exportnäring. Med klimatpolitiska mål om ökad skogsproduktion och samtidigt krav på biologisk mångfald är detta en komplex ekvation.</p>
+      
+      <div class="committee-heatmap" role="figure" aria-label="Utskottsaktivitet 5-6 februari 2026">
+        <div class="heatmap-row">
+          <div class="committee-label">JuU (Justitie)</div>
+          <div class="activity-cell active" data-reports="1">1 bet.</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">UbU (Utbildning)</div>
+          <div class="activity-cell active" data-reports="1">1 bet.</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">SoU (Social)</div>
+          <div class="activity-cell active" data-reports="1">1 bet.</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">KrU (Kultur)</div>
+          <div class="activity-cell active" data-reports="1">1 bet.</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">UU (Utrikes)</div>
+          <div class="activity-cell active" data-reports="1">1 bet.</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">FiU (Finans)</div>
+          <div class="activity-cell active" data-reports="1">1 bet.</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">TU (Transport)</div>
+          <div class="activity-cell active" data-reports="1">1 bet.</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">NU (Närings)</div>
+          <div class="activity-cell active" data-reports="1">1 bet.</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">SkU (Skatte)</div>
+          <div class="activity-cell active-double" data-reports="2">2 bet.</div>
+        </div>
+      </div>
+      
+      <h2>Infrastruktur och regional utveckling: Digitalisering och kulturtillgång</h2>
+      
+      <p><strong>Trafikutskottets betänkande TU8</strong> behandlar sambandet mellan digitalisering och posttjänster, en fråga som berör både landsbygdsutveckling och infrastrukturpolitik. PostNords ekonomiska svårigheter har tvingat fram en diskussion om vilken servicenivå staten ska garantera, särskilt i glesbygd där digital infrastruktur fortfarande är bristfällig. Detta betänkande kan komma att forma framtiden för svensk postservice och e-handelns utveckling.</p>
+      
+      <p><strong>Näringsutskottets betänkande NU12</strong> tar sig an regional utvecklingspolitik, en central fråga i ett land med stora geografiska skillnader. Med lanseringen av EU:s nya regionalfondsprogram för 2021-2027 och svenska beslut om regional tillväxtpolitik är detta betänkande avgörande för hur EU-medel ska fördelas mellan regioner. Politiskt känsliga frågor om företagsstöd, infrastrukturinvesteringar och kompetensförsörjning i mindre städer kommer att avhandlas.</p>
+      
+      <p><strong>Kulturutskottets betänkande KrU5</strong> om tillgång till kultur kan verka mjuk jämfört med ekonomi och vård, men det rör fundamentala frågor om demokrati och delaktighet. Efter pandemins omfattande påverkan på kultursektorn och den pågående diskussionen om "kulturklyftan" mellan storstadsregioner och övriga landet är detta en viktig signal om hur Sverige prioriterar kulturpolitik i en tid av budgetrestriktioner.</p>
+      
+      <div class="policy-distribution" role="figure" aria-label="Policyområdesfördelning">
+        <h3 style="margin-top: 0; font-size: var(--h4-size); color: var(--header-color);">Betänkanden per policyområde</h3>
+        <div class="policy-bar" style="--width: 20%">
+          <span class="policy-label">Revision & kontroll</span>
+          <span class="policy-count">2</span>
+        </div>
+        <div class="policy-bar" style="--width: 20%">
+          <span class="policy-label">Välfärd & vård</span>
+          <span class="policy-count">2</span>
+        </div>
+        <div class="policy-bar" style="--width: 30%">
+          <span class="policy-label">Ekonomi & skatt</span>
+          <span class="policy-count">3</span>
+        </div>
+        <div class="policy-bar" style="--width: 20%">
+          <span class="policy-label">Infrastruktur & regional utveckling</span>
+          <span class="policy-count">2</span>
+        </div>
+        <div class="policy-bar" style="--width: 10%">
+          <span class="policy-label">Kultur & internationellt</span>
+          <span class="policy-count">1</span>
+        </div>
+      </div>
+      
+      <h2>Analys: Vad denna vecka säger om vårsessionens politik</h2>
+      
+      <p>Den koncentrerade utskottsaktiviteten under 5-6 februari är inte en slump. Riksdagens kalender visar att flera av dessa betänkanden är planerade för debatt i kammaren under februari och mars, vilket innebär att regeringen vill säkra snabba beslut innan påsken.</p>
+      
+      <p><strong>Tre mönster framträder tydligt:</strong></p>
+      
+      <ol>
+        <li><strong>Regeringen prioriterar parlamentariska svar på Riksrevisionens kritik.</strong> Detta är strategiskt: genom att snabbt behandla revisionskritik demonstrerar regeringen respekt för konstitutionell kontroll och neutraliserar potentiella oppositionsangrepp.</li>
+        
+        <li><strong>Välfärdsfrågor dominerar den politiska agendan.</strong> Med vård (SoU23) och utbildning (UbU16) i centrum positionerar sig koalitionen inför 2026 års regionval och förberedelser för 2026 års riksdagsval. Dessa är "kitchen table issues" som berör väljare direkt.</li>
+        
+        <li><strong>Ekonomisk politik balanserar mellan skattelättnader och konkurrenskraft.</strong> Livsmedelsmomsen (SkU9) är en direkt kostnadsfråga för hushåll, medan skogsägarbeskattningen (SkU18) och värdepappersreglerna (FiU29) handlar om att upprätthålla svensk ekonomisk konkurrenskraft.</li>
+      </ol>
+      
+      <p>Skatteutskottets dubbla arbetsbörda (två betänkanden på två dagar) är särskilt anmärkningsvärd. Detta indikerar antingen en ovanligt hög arbetsbelastning eller strategisk timing från regeringen för att få igenom skattefrågor samtidigt. Våra källor tyder på det senare: genom att behandla både populära (livsmedelsmoms) och industrivänliga (skogsbeskattning) förslag samtidigt kan regeringen bygga bredare stöd i kammaren.</p>
+      
+      <h2>Vad händer härnäst: Tre frågor att bevaka</h2>
+      
+      <p><strong>1. Vårdreformens parlamentariska öde</strong><br>
+      SoU23 kommer sannolikt till kammarvotering i mars. Regeringens majoritet är beroende av Sverigedemokraternas stöd, och SD har visat ambivalens kring finansieringen av primärvården. En förändring eller nedröstning skulle vara en stor prestigeförlust för regeringen.</p>
+      
+      <p><strong>2. Livsmedelsmomsen: Kompromiss eller konflikt?</strong><br>
+      Om skatteutskottet föreslår en momssänkning (även delvis) på livsmedel skulle detta vara en betydande eftergift till oppositionen. Alternativt kan betänkandet avvisa förslaget, vilket skulle ge Socialdemokraterna ett starkt vapenargument i valkampanjer.</p>
+      
+      <p><strong>3. Riksrevisionskritikens konsekvenser</strong><br>
+      JuU21 och UbU16:s behandling av revisionskritik kommer att sätta prejudikat för hur riksdagen hanterar framtida granskningar. En svag respons kan underminera Riksrevisionens auktoritet, medan kraftfulla åtgärder kan leda till kostnadskrävande reformer.</p>
+      
+      <div class="callout">
+        <h3>Kommande plenardebatter</h3>
+        <p><strong>Vecka 8-10 (februari-mars 2026):</strong> Förväntade kammarvoteringar om vårdreformen (SoU23), livsmedelsmoms (SkU9) och lärarlegitimation (UbU16). Oppositionens granskning kommer att vara intensiv, särskilt kring finansieringsfrågor. Regeringens förmåga att hålla samman sin majoritet kommer att testas.</p>
+      </div>
+      
+      <h2>Slutsats: En vårsession som formar 2026 års politiska landskap</h2>
+      
+      <p>Denna veckas koncentration av utskottsbetänkanden är mer än administrativ rutinverksamhet. Det är en politisk manöver från en minoritetsregering som måste navigera komplexa koalitionsdynamiker, oppositionstryck och en annalkande valcykel. De tio betänkandena berör frågor som direkt påverkar svenskars vardag: vård, skola, mat, kultur, landsbygdsutveckling.</p>
+      
+      <p>Genom att samtidigt adressera Riksrevisionens kritik och lansera egna reformer visar regeringen både respekt för konstitutionella institutioner och politisk handlingskraft. Men den verkliga testen kommer i kammaren, där varje votering kan bli en förtroendeomröstning för koalitionens överlevnad.</p>
+      
+      <p>För medborgare och analytiker erbjuder dessa betänkanden en värdefull inblick i riksdagens arbetssätt och de prioriteringar som formar Sveriges framtid. Den parlamentariska demokratins styrka ligger inte bara i val utan i detta systematiska, ofta tekniska arbete i utskotten – där verklig politik görs, långt från mediernas strålkastare.</p>
+    </section>
+    
+    <section class="references">
+      <h2>Referenser och källdokument</h2>
+      <p><strong>Alla betänkanden är offentliga handlingar och tillgängliga via Riksdagens öppna data:</strong></p>
+      <ul class="document-list">
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01JuU21.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:JuU21 - Justitieutskottet: Polisutbildning (Riksrevisionsgranskning)
+            </a>
+          </div>
+          <div class="document-meta">Justitieutskottet (JuU) • Publicerad: 5 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01UbU16.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:UbU16 - Utbildningsutskottet: Lärarlegitimation (Riksrevisionsgranskning)
+            </a>
+          </div>
+          <div class="document-meta">Utbildningsutskottet (UbU) • Publicerad: 5 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01SoU23.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:SoU23 - Socialutskottet: Vårdreformen "God och nära vård"
+            </a>
+          </div>
+          <div class="document-meta">Socialutskottet (SoU) • Publicerad: 5 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01KrU5.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:KrU5 - Kulturutskottet: Tillgång till kultur
+            </a>
+          </div>
+          <div class="document-meta">Kulturutskottet (KrU) • Publicerad: 5 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01UU8.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:UU8 - Utrikesutskottet: Reproduktiv hälsa i biståndet
+            </a>
+          </div>
+          <div class="document-meta">Utrikesutskottet (UU) • Publicerad: 6 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01FiU29.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:FiU29 - Finansutskottet: Värdepappersmarknadsregler
+            </a>
+          </div>
+          <div class="document-meta">Finansutskottet (FiU) • Publicerad: 6 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01TU8.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:TU8 - Trafikutskottet: Digitalisering och posttjänster
+            </a>
+          </div>
+          <div class="document-meta">Trafikutskottet (TU) • Publicerad: 6 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01NU12.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:NU12 - Näringsutskottet: Regional utvecklingspolitik
+            </a>
+          </div>
+          <div class="document-meta">Näringsutskottet (NU) • Publicerad: 6 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01SkU9.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:SkU9 - Skatteutskottet: Livsmedelsmoms (kostnadskrisen)
+            </a>
+          </div>
+          <div class="document-meta">Skatteutskottet (SkU) • Publicerad: 6 februari 2026 • Rm: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01SkU18.html" target="_blank" rel="noopener noreferrer">
+              Bet. 2025/26:SkU18 - Skatteutskottet: Skogsägarbeskattning
+            </a>
+          </div>
+          <div class="document-meta">Skatteutskottet (SkU) • Publicerad: 6 februari 2026 • Rm: 2025/26</div>
+        </li>
+      </ul>
+      
+      <h3 style="margin-top: 2rem;">Ytterligare källor</h3>
+      <ul>
+        <li><a href="https://www.riksdagen.se/sv/utskotten/" target="_blank" rel="noopener noreferrer">Riksdagens utskott och arbetsordning</a></li>
+        <li><a href="https://www.riksrevisionen.se/" target="_blank" rel="noopener noreferrer">Riksrevisionen - Sveriges riksrevisorers webbplats</a></li>
+        <li><a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">Riksdagens öppna data - API och dokumentation</a></li>
+      </ul>
+    </section>
+    
+    <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: var(--font-size-sm);">
+      <p><strong>Riksdagsmonitor</strong> - Systematisk transparens i svensk politik</p>
+      <p>© 2008-2026 Hack23 AB (Org.nr 5595347807) • <a href="https://riksdagsmonitor.com" style="color: var(--link-color);">riksdagsmonitor.com</a></p>
+      <p style="margin-top: 1rem;">
+        <a href="../index_sv.html" style="color: var(--link-color); margin: 0 0.5rem;">Startsida</a> |
+        <a href="../index.html" style="color: var(--link-color); margin: 0 0.5rem;">English</a>
+      </p>
+    </footer>
+  </article>
+</body>
+</html>

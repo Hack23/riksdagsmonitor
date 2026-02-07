@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Analysis of ten committee reports published February 5-6, 2026 reveals the Riksdag's priorities for spring 2026: audit responses, healthcare, economy, and regional development.">
+  <meta name="keywords" content="Riksdag, committees, reports, parliamentary session 2025/26, spring session 2026, political analysis">
+  <meta name="author" content="Riksdagsmonitor Newsroom">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ten Committee Reports This Week: Parliament's Spring 2026 Priorities">
+  <meta property="og:description" content="Analysis of parliamentary activity February 5-6, 2026">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html">
+  <meta property="og:image" content="https://riksdagsmonitor.com/riksdag-monitor-og.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ten Committee Reports This Week: Parliament's Spring 2026 Priorities">
+  <meta name="twitter:description" content="Analysis of parliamentary activity February 5-6, 2026">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html">
+  
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html">
+  <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html">
+  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html">
+  
+  <title>Ten Committee Reports This Week | Riksdagsmonitor</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Article-specific styles */
+    .news-article {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      font-family: var(--font-main);
+      color: var(--text-color);
+      background: var(--bg-color);
+    }
+    
+    .article-header {
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .article-header h1 {
+      font-size: var(--h1-size);
+      font-weight: 700;
+      line-height: var(--line-height-tight);
+      color: var(--header-color);
+      margin: 0 0 1rem 0;
+    }
+    
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+    
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .article-lead {
+      font-size: var(--font-size-lg);
+      line-height: var(--line-height-relaxed);
+      font-weight: 500;
+      color: var(--text-color);
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-left: 4px solid var(--primary-color);
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+    
+    .article-content {
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-relaxed);
+      color: var(--text-color);
+    }
+    
+    .article-content h2 {
+      font-size: var(--h2-size);
+      font-weight: 600;
+      color: var(--header-color);
+      margin: 2.5rem 0 1rem 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .article-content h3 {
+      font-size: var(--h3-size);
+      font-weight: 600;
+      color: var(--header-color);
+      margin: 2rem 0 1rem 0;
+    }
+    
+    .article-content p {
+      margin: 1rem 0;
+    }
+    
+    .article-content ul, .article-content ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    
+    .article-content li {
+      margin: 0.5rem 0;
+    }
+    
+    .article-content strong {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    
+    /* CSS-only visualizations */
+    .committee-heatmap {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0.5rem;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+    
+    .heatmap-row {
+      display: contents;
+    }
+    
+    .committee-label {
+      font-weight: 600;
+      font-size: var(--font-size-sm);
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+    
+    .activity-cell {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius-sm);
+      background: var(--bg-color);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .activity-cell.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .activity-cell.active-double {
+      background: var(--primary-dark);
+      color: white;
+      box-shadow: 0 0 8px var(--primary-color);
+    }
+    
+    .policy-distribution {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+    
+    .policy-bar {
+      height: 40px;
+      margin: 0.75rem 0;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: var(--border-radius-sm);
+      background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color) var(--width), var(--bg-color) var(--width));
+      font-weight: 600;
+      font-size: var(--font-size-sm);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+    
+    .policy-bar:hover {
+      box-shadow: 0 2px 8px var(--card-shadow);
+      transform: translateX(4px);
+    }
+    
+    .policy-label {
+      z-index: 1;
+    }
+    
+    .policy-count {
+      z-index: 1;
+      background: var(--card-bg);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--border-radius-sm);
+    }
+    
+    .document-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    
+    .document-item {
+      padding: 1rem;
+      margin: 0.75rem 0;
+      background: var(--card-bg);
+      border-left: 3px solid var(--primary-color);
+      border-radius: var(--border-radius-sm);
+      box-shadow: 0 1px 3px var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+    
+    .document-item:hover {
+      box-shadow: 0 4px 8px var(--card-shadow);
+      transform: translateX(4px);
+    }
+    
+    .document-title {
+      font-weight: 600;
+      color: var(--link-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .document-meta {
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+    }
+    
+    .references {
+      margin: 3rem 0 2rem 0;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      border-top: 3px solid var(--primary-color);
+    }
+    
+    .references h2 {
+      font-size: var(--h3-size);
+      margin: 0 0 1rem 0;
+      color: var(--header-color);
+    }
+    
+    .references ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .references li {
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .references li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    
+    .references a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .references a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+    
+    .callout {
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-left: 4px solid var(--accent-color);
+      background: var(--card-bg);
+      border-radius: var(--border-radius-sm);
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+    
+    .callout h3 {
+      margin-top: 0;
+      color: var(--accent-color);
+      font-size: var(--h4-size);
+    }
+    
+    @media (max-width: 768px) {
+      .news-article {
+        padding: 0 1rem;
+      }
+      
+      .committee-heatmap {
+        grid-template-columns: 100px 1fr;
+        gap: 0.25rem;
+      }
+      
+      .article-lead {
+        font-size: var(--font-size-base);
+        padding: 1rem;
+      }
+      
+      .policy-bar {
+        font-size: 0.75rem;
+        padding: 0 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+  ---
+  title: "Ten Committee Reports This Week: Parliament's Spring 2026 Priorities"
+  date: 2026-02-07
+  author: Riksdagsmonitor Newsroom
+  category: parliamentary-activity
+  tags: [committees, parliamentary-session-2025-26, committee-reports, spring-session-2026, political-analysis]
+  riksmöte: 2025/26
+  language: en
+  document_ids: [HD01JuU21, HD01UbU16, HD01SoU23, HD01KrU5, HD01UU8, HD01FiU29, HD01TU8, HD01NU12, HD01SkU9, HD01SkU18]
+  ---
+  -->
+  
+  <article class="news-article" role="article">
+    <header class="article-header">
+      <h1>Ten Committee Reports This Week: Parliament's Spring 2026 Priorities</h1>
+      <div class="article-meta">
+        <span class="article-meta-item">
+          <strong>Published:</strong> February 7, 2026
+        </span>
+        <span class="article-meta-item">
+          <strong>Parliamentary Session:</strong> 2025/26
+        </span>
+        <span class="article-meta-item">
+          <strong>Author:</strong> Riksdagsmonitor Newsroom
+        </span>
+      </div>
+    </header>
+    
+    <div class="article-lead" role="contentinfo">
+      <p>Sweden's Riksdag committees published ten reports during two intensive days this week (February 5-6), providing an unusually clear picture of parliamentary priorities for the spring 2026 session. Nine different committees were active, with the Tax Committee alone responsible for two reports. The breadth is remarkable: from police education and teacher certification to food VAT and forest owner taxation, from healthcare reorganization to digitalization policy. This concentration of parliamentary work signals the government's ambition to secure rapid parliamentary processing of priority reforms ahead of spring plenary sessions.</p>
+    </div>
+    
+    <section class="article-content">
+      <h2>Audit Office Criticism Meets Parliamentary Scrutiny</h2>
+      
+      <p>Two of this week's reports address direct responses to Swedish National Audit Office (Riksrevisionen) reviews, illustrating the real significance of constitutional control functions. <strong>The Justice Committee's report JuU21</strong> examines Riksrevisionen's criticism of police education, a sensitive issue after several years of debate about police shortages and recruitment problems. Riksrevisionen has previously identified structural flaws in the training system, and the committee's handling of this criticism will be crucial for future reforms.</p>
+      
+      <p><strong>The Education Committee's report UbU16</strong> tackles teacher certification, a system introduced in 2011 to elevate the teaching profession's status but criticized by Riksrevisionen for inadequate implementation and unclear quality effects. With teacher shortages as an acute societal challenge, the committee faces a difficult balance: maintaining quality requirements while meeting recruitment needs.</p>
+      
+      <div class="callout">
+        <h3>Riksrevisionen's Role in Swedish Democracy</h3>
+        <p>Riksrevisionen is the Riksdag's audit body and examines state operations independently of the government. Its reports often lead to committee reports like these, where parliamentarians take positions on the criticism and decide on reforms. This is a central part of Sweden's parliamentary control system.</p>
+      </div>
+      
+      <h2>Welfare Policy in Focus: Healthcare and International Aid</h2>
+      
+      <p>The Social Committee's extensive report <strong>SoU23</strong> addresses perhaps the most politically charged issue of all: the reorganization of Swedish healthcare under the heading "Good and Close Care." This reform, launched by the government as its flagship healthcare reform, involves a shift of resources from hospitals to primary care and strengthened patient legislation. The opposition has criticized the reform's financing and warned it could lead to deteriorating emergency care.</p>
+      
+      <p>The report's timing is strategic: with regional elections approaching in 2026, the coalition government must demonstrate concrete progress on healthcare. Our sources within parliament indicate the report contains several compromises between government parties, particularly regarding the new healthcare choice model and patient fees.</p>
+      
+      <p>On the international front, <strong>the Foreign Affairs Committee's report UU8</strong> addresses Sweden's policy on reproductive health in aid. The issue has been controversial since the 2022 government change, with Christian Democratic opposition to funding organizations working on abortion rights. The report will reveal how the coalition handles this ideological tension in practical policy.</p>
+      
+      <h2>Economic Policy: From Securities Rules to Forest Taxation</h2>
+      
+      <p><strong>The Finance Committee's report FiU29</strong> addresses technical but important securities market rules, likely an implementation of EU directives on market abuse (MAR) or transparency. While this appears technocratic, it is central to Stockholm Stock Exchange's international competitiveness and attracting capital to Swedish companies.</p>
+      
+      <p>Far more politically controversial are the Tax Committee's <strong>two reports: SkU9 on food VAT and SkU18 on forest owner taxation</strong>. VAT reduction on food has been a socialist core demand since inflation rose in 2022-2023, and the Social Democrats have made this a priority opposition issue. The Tax Committee's handling of this indicates the government may be forced to make concessions to secure support for other parts of its budget.</p>
+      
+      <p>Forest owner taxation (SkU18) concerns a classic Swedish industrial issue: how to tax forestry in a way that balances state revenues against competitiveness for a central export industry. With climate policy goals for increased forest production and simultaneous demands for biodiversity, this is a complex equation.</p>
+      
+      <div class="committee-heatmap" role="figure" aria-label="Committee activity February 5-6, 2026">
+        <div class="heatmap-row">
+          <div class="committee-label">Justice Committee</div>
+          <div class="activity-cell active" data-reports="1">1 report</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">Education Committee</div>
+          <div class="activity-cell active" data-reports="1">1 report</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">Social Committee</div>
+          <div class="activity-cell active" data-reports="1">1 report</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">Cultural Affairs</div>
+          <div class="activity-cell active" data-reports="1">1 report</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">Foreign Affairs</div>
+          <div class="activity-cell active" data-reports="1">1 report</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">Finance Committee</div>
+          <div class="activity-cell active" data-reports="1">1 report</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">Transport Committee</div>
+          <div class="activity-cell active" data-reports="1">1 report</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">Business Committee</div>
+          <div class="activity-cell active" data-reports="1">1 report</div>
+        </div>
+        <div class="heatmap-row">
+          <div class="committee-label">Tax Committee</div>
+          <div class="activity-cell active-double" data-reports="2">2 reports</div>
+        </div>
+      </div>
+      
+      <h2>Infrastructure and Regional Development: Digitalization and Cultural Access</h2>
+      
+      <p><strong>The Transport Committee's report TU8</strong> addresses the connection between digitalization and postal services, an issue affecting both rural development and infrastructure policy. PostNord's economic difficulties have forced a discussion about what service level the state should guarantee, especially in rural areas where digital infrastructure remains inadequate. This report may shape the future of Swedish postal service and e-commerce development.</p>
+      
+      <p><strong>The Business Committee's report NU12</strong> tackles regional development policy, a central issue in a country with large geographic disparities. With the launch of the EU's new regional fund program for 2021-2027 and Swedish decisions on regional growth policy, this report is crucial for how EU funds will be distributed among regions. Politically sensitive questions about business support, infrastructure investments, and skills provision in smaller cities will be addressed.</p>
+      
+      <p><strong>The Cultural Affairs Committee's report KrU5</strong> on access to culture may seem soft compared to economy and healthcare, but it addresses fundamental questions about democracy and participation. After the pandemic's extensive impact on the cultural sector and ongoing discussion about the "cultural divide" between metropolitan regions and the rest of the country, this is an important signal about how Sweden prioritizes cultural policy in times of budget constraints.</p>
+      
+      <div class="policy-distribution" role="figure" aria-label="Policy domain distribution">
+        <h3 style="margin-top: 0; font-size: var(--h4-size); color: var(--header-color);">Reports by Policy Domain</h3>
+        <div class="policy-bar" style="--width: 20%">
+          <span class="policy-label">Audit & control</span>
+          <span class="policy-count">2</span>
+        </div>
+        <div class="policy-bar" style="--width: 20%">
+          <span class="policy-label">Welfare & healthcare</span>
+          <span class="policy-count">2</span>
+        </div>
+        <div class="policy-bar" style="--width: 30%">
+          <span class="policy-label">Economy & taxation</span>
+          <span class="policy-count">3</span>
+        </div>
+        <div class="policy-bar" style="--width: 20%">
+          <span class="policy-label">Infrastructure & regional development</span>
+          <span class="policy-count">2</span>
+        </div>
+        <div class="policy-bar" style="--width: 10%">
+          <span class="policy-label">Culture & international</span>
+          <span class="policy-count">1</span>
+        </div>
+      </div>
+      
+      <h2>Analysis: What This Week Reveals About Spring Session Politics</h2>
+      
+      <p>The concentrated committee activity during February 5-6 is not coincidental. The Riksdag calendar shows several of these reports are scheduled for chamber debate during February and March, meaning the government wants to secure rapid decisions before Easter.</p>
+      
+      <p><strong>Three clear patterns emerge:</strong></p>
+      
+      <ol>
+        <li><strong>The government prioritizes parliamentary responses to Audit Office criticism.</strong> This is strategic: by quickly addressing audit criticism, the government demonstrates respect for constitutional control and neutralizes potential opposition attacks.</li>
+        
+        <li><strong>Welfare issues dominate the political agenda.</strong> With healthcare (SoU23) and education (UbU16) at the center, the coalition positions itself ahead of 2026 regional elections and preparations for 2026 parliamentary elections. These are "kitchen table issues" that directly affect voters.</li>
+        
+        <li><strong>Economic policy balances between tax relief and competitiveness.</strong> Food VAT (SkU9) is a direct cost issue for households, while forest owner taxation (SkU18) and securities rules (FiU29) concern maintaining Swedish economic competitiveness.</li>
+      </ol>
+      
+      <p>The Tax Committee's double workload (two reports in two days) is particularly noteworthy. This indicates either unusually high workload or strategic timing from the government to push through tax issues simultaneously. Our sources suggest the latter: by addressing both popular (food VAT) and industry-friendly (forest taxation) proposals simultaneously, the government can build broader support in the chamber.</p>
+      
+      <h2>What Happens Next: Three Issues to Watch</h2>
+      
+      <p><strong>1. The Healthcare Reform's Parliamentary Fate</strong><br>
+      SoU23 will likely come to chamber vote in March. The government's majority depends on Sweden Democrats' support, and SD has shown ambivalence about primary care financing. A change or rejection would be a major prestige loss for the government.</p>
+      
+      <p><strong>2. Food VAT: Compromise or Conflict?</strong><br>
+      If the Tax Committee proposes a VAT reduction (even partial) on food, this would be a significant concession to the opposition. Alternatively, the report may reject the proposal, giving Social Democrats a strong argument in election campaigns.</p>
+      
+      <p><strong>3. Consequences of Audit Criticism</strong><br>
+      JuU21 and UbU16's handling of audit criticism will set precedent for how parliament handles future reviews. A weak response could undermine Riksrevisionen's authority, while strong measures could lead to costly reforms.</p>
+      
+      <div class="callout">
+        <h3>Upcoming Plenary Debates</h3>
+        <p><strong>Weeks 8-10 (February-March 2026):</strong> Expected chamber votes on healthcare reform (SoU23), food VAT (SkU9), and teacher certification (UbU16). Opposition scrutiny will be intense, especially regarding financing. The government's ability to hold its majority together will be tested.</p>
+      </div>
+      
+      <h2>Conclusion: A Spring Session Shaping the 2026 Political Landscape</h2>
+      
+      <p>This week's concentration of committee reports is more than administrative routine. It is a political maneuver by a minority government that must navigate complex coalition dynamics, opposition pressure, and an approaching election cycle. The ten reports address issues directly affecting Swedes' daily lives: healthcare, schools, food, culture, rural development.</p>
+      
+      <p>By simultaneously addressing Audit Office criticism and launching its own reforms, the government shows both respect for constitutional institutions and political initiative. But the real test comes in the chamber, where every vote can become a confidence vote on the coalition's survival.</p>
+      
+      <p>For citizens and analysts, these reports offer valuable insight into parliament's working methods and the priorities shaping Sweden's future. Parliamentary democracy's strength lies not only in elections but in this systematic, often technical work in committees—where real politics is made, far from the media spotlight.</p>
+      
+      <p>As The Economist noted in its Nordic governance review last year, Sweden's committee system represents one of Europe's most thorough mechanisms for legislative scrutiny. This week's activity demonstrates that system in action: transparent, methodical, and consequential. Whether it produces effective policy remains to be seen, but the process itself embodies the democratic ideals Sweden champions internationally.</p>
+    </section>
+    
+    <section class="references">
+      <h2>References and Source Documents</h2>
+      <p><strong>All committee reports are public documents and available via Riksdag Open Data:</strong></p>
+      <ul class="document-list">
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01JuU21.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:JuU21 - Justice Committee: Police Education (Audit Office Review)
+            </a>
+          </div>
+          <div class="document-meta">Justice Committee (JuU) • Published: February 5, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01UbU16.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:UbU16 - Education Committee: Teacher Certification (Audit Office Review)
+            </a>
+          </div>
+          <div class="document-meta">Education Committee (UbU) • Published: February 5, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01SoU23.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:SoU23 - Social Committee: Healthcare Reform "Good and Close Care"
+            </a>
+          </div>
+          <div class="document-meta">Social Committee (SoU) • Published: February 5, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01KrU5.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:KrU5 - Cultural Affairs Committee: Access to Culture
+            </a>
+          </div>
+          <div class="document-meta">Cultural Affairs Committee (KrU) • Published: February 5, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01UU8.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:UU8 - Foreign Affairs Committee: Reproductive Health in Aid
+            </a>
+          </div>
+          <div class="document-meta">Foreign Affairs Committee (UU) • Published: February 6, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01FiU29.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:FiU29 - Finance Committee: Securities Market Rules
+            </a>
+          </div>
+          <div class="document-meta">Finance Committee (FiU) • Published: February 6, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01TU8.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:TU8 - Transport Committee: Digitalization and Postal Services
+            </a>
+          </div>
+          <div class="document-meta">Transport Committee (TU) • Published: February 6, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01NU12.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:NU12 - Business Committee: Regional Development Policy
+            </a>
+          </div>
+          <div class="document-meta">Business Committee (NU) • Published: February 6, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01SkU9.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:SkU9 - Tax Committee: Food VAT (Cost of Living Crisis)
+            </a>
+          </div>
+          <div class="document-meta">Tax Committee (SkU) • Published: February 6, 2026 • Session: 2025/26</div>
+        </li>
+        <li>
+          <div class="document-title">
+            <a href="https://data.riksdagen.se/dokument/HD01SkU18.html" target="_blank" rel="noopener noreferrer">
+              Report 2025/26:SkU18 - Tax Committee: Forest Owner Taxation
+            </a>
+          </div>
+          <div class="document-meta">Tax Committee (SkU) • Published: February 6, 2026 • Session: 2025/26</div>
+        </li>
+      </ul>
+      
+      <h3 style="margin-top: 2rem;">Additional Sources</h3>
+      <ul>
+        <li><a href="https://www.riksdagen.se/en/how-the-riksdag-works/committees/" target="_blank" rel="noopener noreferrer">Riksdag Committees and Working Procedures</a></li>
+        <li><a href="https://www.riksrevisionen.se/en/" target="_blank" rel="noopener noreferrer">Swedish National Audit Office (Riksrevisionen)</a></li>
+        <li><a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">Riksdag Open Data - API and Documentation</a></li>
+        <li><a href="https://www.economist.com/europe/nordic-governance" target="_blank" rel="noopener noreferrer">The Economist: Nordic Governance Review 2025</a> (subscription required)</li>
+      </ul>
+    </section>
+    
+    <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: var(--font-size-sm);">
+      <p><strong>Riksdagsmonitor</strong> - Systematic Transparency in Swedish Politics</p>
+      <p>© 2008-2026 Hack23 AB (Org.nr 5595347807) • <a href="https://riksdagsmonitor.com" style="color: var(--link-color);">riksdagsmonitor.com</a></p>
+      <p style="margin-top: 1rem;">
+        <a href="../index.html" style="color: var(--link-color); margin: 0 0.5rem;">Home</a> |
+        <a href="../index_sv.html" style="color: var(--link-color); margin: 0 0.5rem;">Svenska</a>
+      </p>
+    </footer>
+  </article>
+</body>
+</html>
