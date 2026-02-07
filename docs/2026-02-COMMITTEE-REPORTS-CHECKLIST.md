@@ -223,7 +223,7 @@ These articles are ready for immediate deployment to:
 
 **For questions about these articles:**
 - **GitHub Issues:** [Hack23/riksdagsmonitor/issues](https://github.com/Hack23/riksdagsmonitor/issues)
-- **Documentation:** See `news/ARTICLE_COMPLETION_SUMMARY.md`
+- **Documentation:** See `docs/2026-02-COMMITTEE-REPORTS-COMPLETION.md`
 - **Agent:** News Journalist (Riksdagsmonitor)
 
 ---
