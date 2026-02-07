@@ -450,8 +450,10 @@ Reference: `TRANSLATION_GUIDE.md`
 ```
 news/
 ├── 2026-02-government-propositions-sv.html (28,705 bytes)
-├── 2026-02-government-propositions-en.html (29,122 bytes)
-└── ARTICLE_COMPLETION_REPORT.md (this file)
+└── 2026-02-government-propositions-en.html (29,122 bytes)
+
+docs/
+└── GOVERNMENT_PROPOSITIONS_COMPLETION_REPORT.md (this file)
 ```
 
 ### Git Commit Message (Suggested)
