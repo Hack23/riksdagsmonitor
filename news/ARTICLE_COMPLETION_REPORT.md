@@ -31,7 +31,7 @@
 | Motions Analyzed | 10 | 10 | ✅ COMPLETE |
 | CSS-Only Timeline | Required | Implemented | ✅ COMPLETE |
 | Responsive Design | 320px-1440px+ | Implemented | ✅ COMPLETE |
-| YAML Front Matter | Required | Embedded in meta | ✅ COMPLETE |
+| Structured Data Markup | Required | JSON-LD + meta tags | ✅ COMPLETE |
 
 ---
 
@@ -271,7 +271,7 @@ news/
 - [x] English article (1400-1600 words) ✓ 2,134 words
 - [x] All 10 motions analyzed (HD023893-HD023902)
 - [x] CSS-only timeline visualization
-- [x] Links to riksdagen.se for all motions
+- [x] Links to data.riksdagen.se/dokument/{ID}.html for all motions
 - [x] Semantic HTML5 structure
 - [x] WCAG 2.1 AA accessibility
 - [x] Responsive design (320px - 1440px+)
