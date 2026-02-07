@@ -10,13 +10,13 @@ This directory contains prospective news articles covering upcoming events in Sw
 
 ### Articles
 
-1. **Swedish (Primary)**: [`2026-02-week-ahead-sv.html`](2026-02-week-ahead-sv.html)
+1. **Swedish (Primary)**: [`2026-02-week-ahead-sv.html`](../news/2026-02-week-ahead-sv.html)
    - **Title**: Kritisk Vecka för Sverige i EU: Försvarsråd och Statsministerns Toppmöte
    - **Date**: 2026-02-07
    - **Word Count**: ~1,450 words (article content)
    - **Language**: Swedish (sv)
 
-2. **English (Secondary)**: [`2026-02-week-ahead-en.html`](2026-02-week-ahead-en.html)
+2. **English (Secondary)**: [`2026-02-week-ahead-en.html`](../news/2026-02-week-ahead-en.html)
    - **Title**: Critical Week for Sweden in EU: Defense Council and Prime Minister's Summit
    - **Date**: 2026-02-07
    - **Word Count**: ~1,450 words (article content)

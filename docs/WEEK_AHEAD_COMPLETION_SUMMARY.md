@@ -27,7 +27,7 @@
    - **Status**: ✅ Validated & Ready
 
 3. **Documentation**
-   - **File**: `news/README.md`
+   - **File**: `docs/NEWS_ARTICLES_README.md`
    - **Size**: 9 KB (9,136 bytes)
    - **Content**: Comprehensive documentation of articles, methodology, data sources
    - **Status**: ✅ Complete
@@ -85,7 +85,7 @@ Scanned 2 files, no errors found (16 ms).
 
 #### CSS-Only Event Calendar
 - Visual 4-day calendar (Feb 6, 10, 11, 12)
-- "Today" highlight with glow effect
+- Event highlight with glow effect
 - Hover states for interaction
 - Fully accessible with ARIA
 - Responsive grid layout
