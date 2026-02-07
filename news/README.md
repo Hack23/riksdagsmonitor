@@ -133,10 +133,14 @@ All document IDs, URLs, and events are **100% verified** from Swedish Riksdag of
 ### HTML/CSS Standards
 
 - **HTML5**: Semantic structure (`<article>`, `<section>`, `<header>`) with `<div class="article-content">` for the main article body (no `<main>` inside `<article>`)
+- **CSS Approach**: 
+  - Embedded `<style>` blocks in each article for self-contained deployment
+  - Duplicated CSS across language versions ensures independent article portability
+  - Future refactoring: Consider extracting to `news-article.css` shared stylesheet
 - **WCAG 2.1 AA**: 
   - Color contrast 4.5:1 minimum
   - Proper heading hierarchy (h1 → h2 → h3)
-  - ARIA labels for calendar
+  - ARIA labels for calendar (no inappropriate role attributes)
   - Keyboard navigation support
   - Screen reader compatible
 
