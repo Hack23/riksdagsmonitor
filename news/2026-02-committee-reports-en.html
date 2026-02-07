@@ -59,6 +59,7 @@
     "publisher": {
       "@type": "Organization",
       "name": "Riksdagsmonitor",
+      "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cia.sourceforge.io/cia-logo.png"
@@ -212,6 +213,13 @@
       box-shadow: 0 0 8px var(--primary-color);
     }
     
+    @media (prefers-color-scheme: dark) {
+      .activity-cell.active,
+      .activity-cell.active-double {
+        color: #000000;
+      }
+    }
+    
     .policy-distribution {
       margin: 2rem 0;
       padding: 1.5rem;
@@ -238,6 +246,16 @@
     .policy-bar:hover {
       box-shadow: 0 2px 8px var(--card-shadow);
       transform: translateX(4px);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      .policy-bar {
+        background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary-dark) var(--width), var(--bg-color) var(--width));
+      }
+      .policy-label,
+      .policy-count {
+        color: #000000;
+      }
     }
     
     .policy-label {
@@ -378,7 +396,7 @@
   ---
   -->
   
-  <article class="news-article" role="article">
+  <article class="news-article">
     <header class="article-header">
       <h1>Ten Committee Reports This Week: Parliament's Spring 2026 Priorities</h1>
       <div class="article-meta">
