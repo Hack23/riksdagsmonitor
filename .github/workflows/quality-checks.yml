@@ -42,8 +42,14 @@ jobs:
           echo "🔍 Validating HTML files with HTMLHint..."
           echo ""
           
+          # Build file list robustly (handles missing news/*.html gracefully)
+          shopt -s nullglob
+          html_files=(*.html)
+          [[ -d news ]] && html_files+=(news/*.html)
+          shopt -u nullglob
+          
           # Run HTMLHint on all HTML files and capture results
-          if htmlhint *.html news/*.html > htmlhint-report.txt 2>&1; then
+          if htmlhint "${html_files[@]}" > htmlhint-report.txt 2>&1; then
             echo "✅ All HTML files passed validation"
             cat htmlhint-report.txt
           else
