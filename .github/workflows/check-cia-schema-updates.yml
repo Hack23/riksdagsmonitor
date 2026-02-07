@@ -102,7 +102,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.check.outputs.updates == 'true' && (github.event_name == 'schedule' || github.event.inputs.auto_update == 'true')
-        uses: peter-evans/create-pull-request@c7dacb6b91ca94e82b64e1c95c2dd95e87b7bb88 # v7.0.7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore: Update CIA schemas to latest version'
