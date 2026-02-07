@@ -11,7 +11,7 @@
     "generate-types": "node scripts/generate-types-from-cia-schemas.js",
     "validate-translations": "node scripts/validate-translations.js",
     "test": "npm run validate-data",
-    "htmlhint": "htmlhint *.html",
+    "htmlhint": "htmlhint *.html news/*.html",
     "serve": "python3 -m http.server 8080",
     "linkcheck": "linkinator http://localhost:8080/ --recurse"
   },
