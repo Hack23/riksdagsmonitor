@@ -345,7 +345,7 @@ Status: Above target (comprehensive coverage justified)
 - ✅ Consistent structure with Swedish
 
 ### Translation Guide Compliance
-Reference: `/home/runner/work/riksdagsmonitor/riksdagsmonitor/TRANSLATION_GUIDE.md`
+Reference: `TRANSLATION_GUIDE.md`
 
 **Never Translated:**
 - ✅ Hack23 AB
@@ -369,7 +369,7 @@ Reference: `/home/runner/work/riksdagsmonitor/riksdagsmonitor/TRANSLATION_GUIDE.
 - ✅ No secrets in article files
 - ✅ GDPR compliant (public figures only)
 - ✅ XSS protection (no user input)
-- ✅ CSP headers compatible (no inline scripts)
+- ✅ CSP headers compatible (JSON-LD structured data uses type="application/ld+json")
 - ✅ Apache License 2.0 footer
 
 ### Content Security
@@ -448,7 +448,7 @@ Reference: `/home/runner/work/riksdagsmonitor/riksdagsmonitor/TRANSLATION_GUIDE.
 
 ### Files Ready for Commit
 ```
-/home/runner/work/riksdagsmonitor/riksdagsmonitor/news/
+news/
 ├── 2026-02-government-propositions-sv.html (28,705 bytes)
 ├── 2026-02-government-propositions-en.html (29,122 bytes)
 └── ARTICLE_COMPLETION_REPORT.md (this file)
@@ -465,8 +465,6 @@ feat: Add comprehensive news article on Feb 2026 government propositions
 - WCAG 2.1 AA accessible, HTMLHint validated
 - Comprehensive political context and international comparisons
 - 1,884 words (SV) / 2,235 words (EN)
-
-Closes #[issue-number]
 ```
 
 ---
@@ -484,7 +482,6 @@ Closes #[issue-number]
 **Created:** 2026-02-07  
 **Agent:** news-journalist  
 **Repository:** Hack23/riksdagsmonitor  
-**Branch:** [current branch]  
 **Status:** ✅ **READY FOR PRODUCTION**
 
 ---
