@@ -154,7 +154,7 @@ All document IDs, URLs, and events are **100% verified** from Swedish Riksdag of
   - Grid layout (auto-fit, minmax)
   - Visual hierarchy with color and typography
   - Interactive hover states
-  - "Today" highlight with glow effect
+  - Event highlight with glow effect
 
 ### Validation Results
 
@@ -172,7 +172,7 @@ Scanned 2 files, no errors found (16 ms).
 ### CSS-Only Event Calendar
 
 Interactive visual calendar showing Feb 6-12 events:
-- **Today marker**: Feb 6 with highlight glow
+- **Event highlights**: Key dates with visual emphasis
 - **Responsive grid**: Auto-adjusts columns based on screen width
 - **Hover effects**: Visual feedback on interaction
 - **Accessibility**: ARIA labels, semantic markup
