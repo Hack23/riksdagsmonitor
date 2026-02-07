@@ -54,7 +54,7 @@
 
 **Prospective Coverage** (CRITICAL REQUIREMENT):
 - ✅ Temporal focus: CURRENT (last 48-72 hours) and FUTURE (upcoming weeks/months)
-- ✅ Recent propositions: February 3-5, 2026 (6 bills in first week)
+- ✅ Recent propositions: February 3-5, 2026 (8 bills in first week)
 - ✅ Upcoming committee hearings: Mid-February 2026
 - ✅ Expected votes: Late February/Early March 2026
 - ✅ Election context: September 14, 2026 parliamentary election
@@ -435,7 +435,7 @@ This delivery represents **world-class political journalism** covering Swedish p
 6. **Multilingual support**: Swedish primary, English secondary, 12 more languages planned
 
 The articles provide Swedish citizens and international observers with comprehensive insight into:
-- Current legislative agenda (6 bills in first week)
+- Current legislative agenda (8 propositions in first week)
 - Security vs. civil liberties debates
 - Financial regulation and economic stability
 - Climate transition and EU compliance

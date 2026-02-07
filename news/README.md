@@ -10,7 +10,7 @@ This directory contains analytical journalism articles about Swedish parliamenta
 **English (Secondary)**: [2026-02-parliament-agenda-en.html](2026-02-parliament-agenda-en.html)
 
 **Topic**: Prospective analysis of Swedish parliamentary activities in February 2026, covering:
-1. Six major propositions tabled in first week (riksmöte 2025/26)
+1. Eight major propositions tabled in first week (riksmöte 2025/26)
 2. Security legislation package (preventive detention, property transfers)
 3. Financial supervision and tax control modernization
 4. Climate transition (renewable energy, circular economy)
