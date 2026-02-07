@@ -226,13 +226,19 @@ All Riksdag documents linked with:
 
 ### Viewing Articles
 
-Open HTML files directly in browser:
+Open HTML files directly in your browser:
 ```bash
-# Swedish version
+# macOS
 open news/2026-02-week-ahead-sv.html
-
-# English version
 open news/2026-02-week-ahead-en.html
+
+# Linux
+xdg-open news/2026-02-week-ahead-sv.html
+xdg-open news/2026-02-week-ahead-en.html
+
+# Windows (PowerShell or Command Prompt)
+start news\2026-02-week-ahead-sv.html
+start news\2026-02-week-ahead-en.html
 ```
 
 ### Integration with riksdagsmonitor.se
@@ -243,6 +249,35 @@ These articles are designed to integrate into the main riksdagsmonitor.se site:
 2. **Homepage**: Feature as "Week Ahead" section
 3. **RSS Feed**: Include in news feed
 4. **Social Sharing**: Meta tags optimized for sharing
+5. **Sitemap**: Add to `sitemap.xml` with proper hreflang alternates (see below)
+
+### Sitemap Integration
+
+Add news articles to `sitemap.xml` for search engine discoverability:
+
+```xml
+<!-- Swedish version -->
+<url>
+  <loc>https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html</loc>
+  <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
+</url>
+
+<!-- English version -->
+<url>
+  <loc>https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html</loc>
+  <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
+</url>
+```
 
 ### Link Structure
 
