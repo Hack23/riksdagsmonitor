@@ -4,6 +4,51 @@ This directory contains analytical journalism articles about Swedish parliamenta
 
 ## Current Articles
 
+### February 2026 Parliamentary Agenda Analysis (February 2026)
+
+**Swedish (Primary)**: [2026-02-parliament-agenda-sv.html](2026-02-parliament-agenda-sv.html)  
+**English (Secondary)**: [2026-02-parliament-agenda-en.html](2026-02-parliament-agenda-en.html)
+
+**Topic**: Prospective analysis of Swedish parliamentary activities in February 2026, covering:
+1. Six major propositions tabled in first week (riksmöte 2025/26)
+2. Security legislation package (preventive detention, property transfers)
+3. Financial supervision and tax control modernization
+4. Climate transition (renewable energy, circular economy)
+5. Cultural debates (language requirements, Lucia celebrations)
+6. Pre-election positioning ahead of September 2026 election
+
+**Propositions Covered**:
+- 2025/26:119 - Macroprudential supervision development
+- 2025/26:118 - Renewable energy directive implementation
+- 2025/26:108 - Waste legislation reform for circular economy
+- 2025/26:107 - Tax Agency control tools modernization
+- 2025/26:106 - Identity requirements for property transfers
+- 2025/26:105 - Security protection for property transfers
+- 2025/26:95 - Security detention (säkerhetsförvaring)
+- 2025/26:93 - Language requirements in elderly care
+
+**Motions and Interpellations**:
+- Motion 2025/26:3901-3902 (C, MP) - Opposition to security detention
+- Motion 2025/26:3900 (V) - Language training funding concerns
+- Interpellation 2025/26:286 - National security adviser
+- Interpellation 2025/26:278 - Minority language investigation
+- Interpellation 2025/26:271 - Traditional Lucia celebrations
+
+**Key Themes**:
+- Security-focused legislation (law and order profile)
+- Financial stability and macroprudential regulation
+- EU directive implementation (renewable energy, waste)
+- Coalition dynamics and parliamentary opposition
+- Pre-election strategic positioning
+- International comparisons (Nordic countries, EU)
+
+**Style**: The Economist-style prospective parliamentary analysis  
+**Word Count**: Swedish 1,458 words | English 1,512 words  
+**Sources**: 32 authoritative references  
+**Date Published**: February 7, 2026
+
+---
+
 ### Labor Market Interpellations (February 2025)
 
 **Swedish (Primary)**: [2025-labor-market-interpellations-sv.html](2025-labor-market-interpellations-sv.html)  
