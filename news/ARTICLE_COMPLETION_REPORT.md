@@ -421,13 +421,13 @@ Reference: `TRANSLATION_GUIDE.md`
 4. **Interactive elements** - Could add timeline visualization (JavaScript-free options)
 
 ### Future Enhancements
-1. Add data visualization (Chart.js with styles.css compatibility)
-2. Create proposition comparison table with filterable columns
-3. Add timeline of committee processing
-4. Include minister profiles with photos
-5. Create related articles linking system
-6. Add social media sharing buttons
-7. Implement print-friendly CSS
+1. Add data visualization using CSS-only/SVG charts aligned with styles.css (maintaining no-JavaScript policy)
+2. Create proposition comparison table with filterable columns (CSS-only)
+3. Add timeline of committee processing (CSS-based visualization)
+4. Include minister profiles with photos (static content)
+5. Create related articles linking system (static HTML navigation)
+6. Add social media sharing buttons (static links, no tracking)
+7. Implement print-friendly CSS (already compatible)
 
 ---
 
