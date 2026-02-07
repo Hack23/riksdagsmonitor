@@ -58,7 +58,7 @@
 - ✅ Upcoming committee hearings: Mid-February 2026
 - ✅ Expected votes: Late February/Early March 2026
 - ✅ Election context: September 14, 2026 parliamentary election
-- ✅ Agenda preview: March-April spring budget, EU election June 2026
+- ✅ Agenda preview: March-April spring budget, EU election June 2029
 
 ---
 
@@ -189,7 +189,7 @@
 - **Mid-February**: Committee hearings (security detention, financial supervision)
 - **Late February/Early March**: Votes expected on multiple bills
 - **March-April**: Spring budget debates, NATO defense spending (2.5% GDP)
-- **June 2026**: EU Parliament election (21 Swedish MEPs)
+- **June 2029**: EU Parliament election (21 Swedish MEPs)
 - **September 14, 2026**: Riksdag election (critical for all parties)
 
 ---

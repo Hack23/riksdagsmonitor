@@ -79,7 +79,7 @@ Each article includes:
 
 ## License
 
-Copyright © 2025 Hack23 AB (Org.nr 5595347807)  
+Copyright © 2026 Hack23 AB (Org.nr 5595347807)  
 Licensed under Apache License 2.0
 
 ---
