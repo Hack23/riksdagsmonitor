@@ -59,7 +59,7 @@ graph TB
     Browsers -.->|HTTPS/TLS 1.3 (DR)| GHCDN
     CF -->|Origin| S3US
     CF -.->|Origin Failover on 500+ errors| S3EU
-    S3US -.->|Real-time Replication| S3EU
+    S3US -.->|S3 CRR (Async, <15 min target)| S3EU
     CF --> Static
     GHCDN --> Pages
     Pages --> Static

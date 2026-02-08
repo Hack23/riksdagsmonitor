@@ -48,7 +48,7 @@ Riksdags Monitor is a static website providing Swedish Parliament intelligence a
 - **🔒 Data Protection:**
   - S3 server-side encryption at rest (AES-256)
   - S3 bucket versioning enabled for rollback capability
-  - Real-time cross-region replication (us-east-1 → eu-west-1)
+  - Cross-region replication (typically within minutes) (us-east-1 → eu-west-1)
   - TLS 1.3 encryption in transit via CloudFront
 
 - **🛡️ DDoS & Threat Protection:**
@@ -67,7 +67,7 @@ graph TB
     subgraph "Primary: AWS Infrastructure"
         CF[CloudFront CDN<br/>600+ Edge Locations]
         S3US[S3 Bucket us-east-1<br/>Primary Storage + Versioning]
-        S3EU[S3 Bucket eu-west-1<br/>Real-time Replica<br/>Active Failover Origin]
+        S3EU[S3 Bucket eu-west-1<br/>Cross-region Replica<br/>Active Failover Origin]
     end
     
     subgraph "Disaster Recovery: GitHub"

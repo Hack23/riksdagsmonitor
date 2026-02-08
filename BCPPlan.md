@@ -60,8 +60,8 @@ graph TB
     
     subgraph RECOVERY["🔄 Recovery Requirements"]
         RTO[⏰ RTO Target<br/>< 30 seconds origin failover<br/>< 15 minutes DNS failover]
-        RPO[💾 RPO Target<br/>0 minutes<br/>synchronized deployments]
-        AVAILABILITY[📈 Availability Target<br/>99.998%<br/>8.76 seconds downtime/year]
+        RPO[💾 RPO Target<br/>< 15 minutes<br/>near-zero effective RPO (S3 replication lag)]
+        AVAILABILITY[📈 Availability Target<br/>99.998%<br/>≈10.5 minutes (~631 seconds) downtime/year]
     end
     
     subgraph DEPLOYMENT["🌍 Deployment Strategy"]
@@ -123,7 +123,7 @@ graph TB
     subgraph PRIMARY["☁️ AWS Primary (Active)"]
         CF[🌍 CloudFront CDN<br/>600+ PoPs<br/>Automatic Origin Failover]
         S3_US[💾 S3 us-east-1<br/>Primary Origin<br/>Versioning Enabled]
-        S3_EU[💾 S3 eu-west-1<br/>Replica Origin<br/>Real-time Replication]
+        S3_EU[💾 S3 eu-west-1<br/>Replica Origin<br/>Asynchronous Replication (<15 min RPO)]
         
         CF -->|Primary| S3_US
         CF -->|Failover on 500+| S3_EU
@@ -131,12 +131,12 @@ graph TB
     end
     
     subgraph DR["📝 GitHub Pages (Standby)"]
-        GH[📄 GitHub Pages<br/>gh-pages branch<br/>Automated Deployment]
+        GH[📄 GitHub Pages<br/>Default branch (root)<br/>Automated Deployment]
     end
     
     USERS[👥 Users] -->|DNS Query| DNS
     HEALTHCHECK -->|Monitor| CF
-    DNS -->|Healthy: Return CF IP| USERS
+    DNS -->|Healthy: Return CloudFront alias/hostname| USERS
     DNS -.->|3 Failed Checks<br/>15 min failover| USERS
     USERS -->|HTTPS/TLS 1.3| CF
     USERS -.->|HTTPS/TLS 1.3 (DR)| GH
@@ -167,7 +167,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 ### Scenario 1: S3 us-east-1 Region Failure
 
-[![RTO](https://img.shields.io/badge/RTO-<_30_seconds-success?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-0_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Transparent-lightgreen?style=flat-square&logo=users&logoColor=white)](#)
+[![RTO](https://img.shields.io/badge/RTO-<_30_seconds-success?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-<_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Transparent-lightgreen?style=flat-square&logo=users&logoColor=white)](#)
 
 **🔍 Detection:**
 - CloudFront origin monitoring detects 500+ HTTP errors from us-east-1
@@ -189,7 +189,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 ### Scenario 2: CloudFront Global Outage
 
-[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-0_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&logo=users&logoColor=black)](#)
+[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-<_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&logo=users&logoColor=black)](#)
 
 **🔍 Detection:**
 - Route 53 health checks fail for CloudFront endpoint
@@ -201,7 +201,8 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 3. 📊 Verify GitHub Pages serving traffic
 4. 📧 Notify CEO of failover event
 5. ⏳ Monitor CloudFront status for restoration
-6. 🔙 Manual DNS failback after CloudFront recovery confirmation
+6. 🔙 Intentionally manual DNS failback after CloudFront recovery and stability confirmation
+   - **Rationale:** Failback is manual by design to avoid DNS flapping and ensure human verification before restoring CloudFront as primary
 
 **✅ Validation:**
 - GitHub Pages availability confirmed
@@ -212,7 +213,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 ### Scenario 3: Both AWS S3 Regions Unavailable
 
-[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-0_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&logo=users&logoColor=black)](#)
+[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-<_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&logo=users&logoColor=black)](#)
 
 **🔍 Detection:**
 - CloudFront cannot reach either S3 origin
