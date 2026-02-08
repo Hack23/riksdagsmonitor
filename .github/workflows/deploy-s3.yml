@@ -71,6 +71,18 @@ jobs:
             www.google.com:443
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0  # Need full history to restore mtimes
+
+      - name: Restore file modification times from git
+        run: |
+          # Restore mtimes to git commit time for accurate change detection
+          # This prevents re-uploading all files on every deployment
+          git ls-tree -r --name-only HEAD | while read filename; do
+            TIME=$(git log -1 --format="%ai" -- "$filename")
+            touch -d "$TIME" "$filename"
+          done
+          echo "✅ Restored mtimes for $(git ls-tree -r --name-only HEAD | wc -l) files"
 
       - name: Cache apt packages
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
@@ -167,11 +179,20 @@ jobs:
             --exclude "screenshots/*" \
             --cache-control "public, max-age=86400"
           
-          # Sync all remaining files (catch-all)
+          # Sync all remaining files (catch-all for CNAME, robots.txt, etc.)
           echo "📦 Syncing remaining files..."
           aws s3 sync . s3://${{ env.S3_BUCKET_NAME }}/ \
             --exclude ".git/*" \
             --exclude "screenshots/*" \
+            --exclude ".github/*" \
+            --exclude "docs/*" \
+            --exclude "schemas/*" \
+            --exclude "scripts/*" \
+            --exclude ".devcontainer/*" \
+            --exclude "quicksight/*" \
+            --exclude "*.md" \
+            --exclude "package*.json" \
+            --exclude ".gitignore" \
             --exclude "*.js" \
             --exclude "*.css" \
             --exclude "*.woff" \
@@ -192,8 +213,8 @@ jobs:
             --exclude "*.txt"
           
           echo "✅ S3 deployment completed with optimized cache headers"
-          echo "ℹ️  Screenshots directory excluded for performance"
-          echo "ℹ️  Files synced based on size and modification time for correctness"
+          echo "ℹ️  Internal directories (.github/, docs/, schemas/, scripts/) excluded from deployment"
+          echo "ℹ️  Files synced based on git mtime + size for accurate change detection"
       
       # Invalidate CloudFront cache to ensure latest content is served
       - name: Invalidate CloudFront
