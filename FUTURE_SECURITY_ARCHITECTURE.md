@@ -11,8 +11,8 @@
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-01-29  
+**Document Version:** 1.1  
+**Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)  
 **Review Cycle:** Quarterly
@@ -23,12 +23,14 @@
 
 This document outlines the future security architecture for Riksdagsmonitor over the next 3-5 years. The roadmap focuses on **proactive security evolution** rather than reactive patches, ensuring the platform remains secure against emerging threats including post-quantum cryptography, AI-powered attacks, and advanced persistent threats.
 
+**Current State (2026 Q1):** Dual-deployment architecture with AWS CloudFront/S3 (primary) and GitHub Pages (disaster recovery) providing 99.997% availability.
+
 **Strategic Goals:**
 - 🔐 **Post-Quantum Readiness** - Cryptographic agility before quantum computers threaten current algorithms
 - 🤖 **AI-Augmented Security** - Machine learning for threat detection and anomaly analysis
 - 🛡️ **Zero-Trust Architecture** - Never trust, always verify, assume breach mentality
 - 📊 **Privacy-Preserving Analytics** - Intelligence without surveillance
-- 🌐 **Decentralized Resilience** - Distributed architecture for high availability
+- 🌐 **Multi-Region Resilience** - Distributed architecture for high availability (AWS + GitHub Pages)
 
 ---
 
@@ -52,12 +54,12 @@ This document outlines the future security architecture for Riksdagsmonitor over
 ```mermaid
 graph TB
     subgraph "2026 Q1 Security Stack"
-        L1[🌐 Network: TLS 1.3, HTTPS-only, GitHub CDN]
+        L1[🌐 Network: TLS 1.3, HTTPS-only, AWS CloudFront 600+ PoPs, Route 53 failover]
         L2[🛡️ Application: Static HTML/CSS, No server-side code]
-        L3[🔑 Access: GitHub MFA, SSH keys, GPG signing]
-        L4[📋 Integrity: Git history, Branch protection]
-        L5[🔍 Monitoring: Dependabot, CodeQL, Secret scanning]
-        L6[🚨 Response: Documented procedures, Rollback capability]
+        L3[🔑 Access: GitHub MFA, AWS OIDC, SSH keys, GPG signing, IAM roles]
+        L4[📋 Integrity: Git history, S3 versioning, Branch protection, Dual deployment]
+        L5[🔍 Monitoring: Dependabot, CodeQL, Secret scanning, CloudTrail, CloudWatch]
+        L6[🚨 Response: Documented procedures, Rollback capability, DNS failover, BCPPlan.md]
     end
     
     L1 --> L2
@@ -75,16 +77,19 @@ graph TB
 ```
 
 **Strengths:**
-- ✅ LOW residual risk (5.52/10.0)
+- ✅ VERY LOW residual risk (3.8/10.0, down from 5.52 single deployment)
 - ✅ Zero high-priority vulnerabilities
+- ✅ Dual deployment provides 99.997% availability (up from 99.70%)
 - ✅ Static architecture eliminates common web vulnerabilities
-- ✅ Comprehensive ISMS documentation
+- ✅ Comprehensive ISMS documentation (BCPPlan, SECURITY_ARCHITECTURE, THREAT_MODEL)
+- ✅ AWS Shield Standard DDoS protection
+- ✅ Multi-region resilience (us-east-1 primary, second region planned)
 
 **Limitations:**
-- ⚠️ Single hosting provider (GitHub dependency)
-- ⚠️ No real-time threat intelligence integration
-- ⚠️ Limited observability (no APM)
-- ⚠️ No content encryption at rest (GitHub-managed)
+- ⚠️ Dual provider dependency (AWS + GitHub, mitigated by independence)
+- ⚠️ Limited real-time threat intelligence integration
+- ⚠️ No Web Application Firewall (WAF) - static site has minimal attack surface
+- ⚠️ S3 encryption uses AWS-managed keys (customer-managed keys option available)
 
 ---
 
@@ -159,15 +164,17 @@ graph LR
 
 **Phase 1: Assessment (2027 Q1)**
 - Inventory all cryptographic dependencies
-- GitHub Pages TLS capabilities assessment
-- Browser compatibility matrix (PQC support)
-- Performance impact analysis
+- AWS CloudFront TLS capabilities assessment (TLS 1.3 support for PQC algorithms)
+- Browser compatibility matrix (PQC support across Chrome, Safari, Firefox, Edge)
+- Performance impact analysis (PQC handshake overhead, certificate size)
+- Cost analysis (AWS CloudFront custom SSL certificate with PQC)
 
 **Phase 2: Hybrid Deployment (2027 Q2-Q3)**
-- Configure hybrid TLS (classical + PQC)
-- Browser fallback mechanisms
-- Performance monitoring
-- User experience validation
+- Configure hybrid TLS on CloudFront (classical + PQC via custom SSL certificate)
+- Browser fallback mechanisms (TLS 1.3 classical for older browsers)
+- Performance monitoring (CloudWatch metrics for handshake latency)
+- User experience validation (Core Web Vitals tracking)
+- Cost optimization (minimize custom certificate fees)
 
 **Phase 3: Full PQC Migration (2028 Q1)**
 - Deprecate classical-only connections
@@ -226,10 +233,11 @@ graph TB
 - Integration with GitHub Actions logs
 
 **2. Threat Intelligence (2027 Q1)**
-- Integration with threat intelligence feeds (MISP, OTX)
-- Automated IOC matching
-- Proactive blocking of known-bad actors
-- Threat actor profiling
+- Integration with threat intelligence feeds (MISP, OTX, AWS GuardDuty if enabled)
+- Automated IOC (Indicator of Compromise) matching against CloudFront logs
+- Proactive blocking of known-bad actors via AWS WAF (planned)
+- Threat actor profiling and attribution
+- Integration with OSINT sources for political targeting intelligence
 
 **3. Behavioral Analysis (2027 Q2)**
 - User interaction patterns (if analytics added)
@@ -426,28 +434,37 @@ gantt
 
 ## 5. 💻 Technology Evolution
 
-### 5.1 Hosting Platform Migration Considerations
+### 1.1 Current State Baseline (2026 Q1)
 
-**Current:** GitHub Pages (Static hosting)  
+**Current Hosting:**
+- **Primary:** AWS CloudFront (600+ PoPs) + S3 (us-east-1)
+- **Disaster Recovery:** GitHub Pages (standby deployment)
+- **DNS:** AWS Route 53 with health checks and automatic failover
+- **Availability:** 99.997% (dual deployment strategy)
+
 **Future Options:**
 
-| Platform | Pros | Cons | Timeline | Recommendation |
-|----------|------|------|----------|----------------|
-| **GitHub Pages** | Free, integrated, simple | Limited customization, single provider | Current | ✅ Stay for now |
-| **CloudFlare Pages** | Advanced WAF, global CDN, free SSL | Migration complexity | 2027 Q2 | 🟡 Evaluate |
-| **AWS S3 + CloudFront** | Full control, AWS ecosystem | Cost, complexity | 2028 Q1 | 🟢 Consider for scale |
-| **Vercel** | Excellent DX, preview deployments | Cost at scale | 2027 Q4 | 🟡 Alternative option |
+| Platform | Current Status | Pros | Cons | Timeline | Recommendation |
+|----------|----------------|------|------|----------|----------------|
+| **AWS CloudFront + S3** | ✅ Active Primary | Enterprise CDN, 600+ PoPs, DDoS protection, WAF integration | Cost, complexity | Current | ✅ Continue |
+| **GitHub Pages** | ✅ Active DR | Free, integrated, simple, disaster recovery | Limited customization, single provider | Current | ✅ Keep as DR |
+| **S3 Multi-Region** | 🔄 Planned | Regional failover, compliance, data residency | Replication cost, complexity | 2026 Q4 | 🟢 Implement |
+| **CloudFlare Workers** | 🟡 Evaluate | Edge compute, advanced WAF, global network | Migration complexity, cost at scale | 2027 Q2 | 🟡 Monitor |
+| **Vercel** | 🟡 Alternative | Excellent DX, preview deployments, global edge | Cost at scale, vendor lock-in | 2027 Q4 | 🟡 Backup option |
 
 **Decision Criteria:**
 - Cost-effectiveness for static content
-- Security feature set (WAF, DDoS, monitoring)
-- ISMS compliance capabilities
+- Security feature set (WAF, DDoS, monitoring, compliance)
+- ISMS compliance capabilities (audit logs, encryption, access controls)
 - Migration effort vs. benefit
+- Business continuity and disaster recovery
 
 **Recommended Path:**
-- 2026-2027: Stay on GitHub Pages, maximize security features
-- 2027 Q2: CloudFlare Pages pilot for advanced WAF capabilities
-- 2028 Q1: AWS migration if dynamic features needed (API, backend)
+- **2026 Q4:** Implement S3 multi-region replication (us-east-1 → second region)
+- **2027 Q2:** Add AWS WAF to CloudFront for advanced threat protection
+- **2027 Q4:** Evaluate CloudFront Origin Shield for additional caching layer
+- **2028 Q1:** Consider CloudFlare Workers for edge compute if dynamic features needed
+- **2028+:** Maintain dual deployment strategy (AWS primary + GitHub Pages DR)
 
 ---
 
@@ -455,27 +472,35 @@ gantt
 
 ```mermaid
 graph LR
-    Current[GitHub Pages CDN<br/>Basic global distribution] --> Enhanced[CloudFlare CDN<br/>Advanced WAF, Bot protection]
-    Enhanced --> Premium[Multi-CDN Strategy<br/>Resilience & performance]
+    Current[AWS CloudFront<br/>600+ PoPs, Shield Standard] --> Enhanced[CloudFront + WAF<br/>Threat protection, Rate limiting]
+    Enhanced --> Premium[Multi-CDN Strategy<br/>CloudFront + CloudFlare Workers<br/>Resilience & performance]
     
-    style Current fill:#90caf9
+    style Current fill:#4caf50
     style Enhanced fill:#ff9800
     style Premium fill:#4caf50
 ```
 
 **Enhancements:**
 
-**CloudFlare Integration (2027 Q2)**
-- Advanced Web Application Firewall (WAF)
-- Bot protection and rate limiting
-- DNSSEC and DNS-over-HTTPS (DoH)
-- Zero-trust network access (ZTNA)
+**Phase 1: AWS WAF Integration (2027 Q2)**
+- Managed rule groups (Core Rule Set, Known Bad Inputs, SQL Injection)
+- Rate limiting (per IP, per country)
+- Geo-blocking (if needed for compliance)
+- Custom rules for application-specific threats
+- Real-time metrics in CloudWatch
 
-**Multi-CDN Strategy (2028 Q4)**
-- Primary: CloudFlare
-- Failover: Fastly or AWS CloudFront
-- Automatic failover detection
-- Load balancing across CDNs
+**Phase 2: CloudFront Optimization (2027 Q4)**
+- Origin Shield (additional caching layer before S3)
+- Lambda@Edge for custom security headers (CSP Level 3)
+- Field-level encryption (if handling sensitive data in future)
+- Real-time logs to Amazon Kinesis Data Streams
+
+**Phase 3: Multi-CDN Strategy (2028 Q4)**
+- Primary: AWS CloudFront (existing)
+- Secondary: CloudFlare Workers (edge compute)
+- Tertiary: GitHub Pages (disaster recovery)
+- DNS-based load balancing via Route 53
+- Automatic failover across CDNs
 
 ---
 
@@ -485,11 +510,13 @@ graph LR
 |---------------|----------------|-------------------|---------|
 | **SAST** | CodeQL | + Semgrep, SonarCloud | Enhanced code scanning |
 | **SCA** | Dependabot | + Snyk, FOSSA | Better dependency insights |
-| **DAST** | None | OWASP ZAP, Burp Suite | Dynamic scanning |
-| **Secret Scanning** | GitHub | + GitGuardian | Advanced secret detection |
+| **DAST** | None | OWASP ZAP, AWS Inspector | Dynamic scanning |
+| **Secret Scanning** | GitHub + AWS Secrets Manager | + GitGuardian | Advanced secret detection |
 | **SBOM** | Manual | CycloneDX, SPDX | Automated generation |
-| **Container Scanning** | N/A | Trivy, Grype | If containerized |
+| **Container Scanning** | N/A | Trivy, Grype | If containerized (Lambda@Edge) |
 | **Fuzzing** | None | OSS-Fuzz | Input validation |
+| **WAF** | None | AWS WAF Managed Rules | Threat protection |
+| **DDoS** | AWS Shield Standard | AWS Shield Advanced | Enhanced DDoS protection |
 
 ---
 
@@ -629,7 +656,8 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 - 🔐 **Post-Quantum Ready by 2028** - Ahead of predicted quantum threat timeline
 - 🤖 **AI-Augmented Security by 2027** - Machine learning for threat detection
 - 🛡️ **Zero-Trust Architecture by 2028** - Comprehensive trust verification
-- 📊 **99.9% Risk Reduction by 2030** - Industry-leading security posture
+- 📊 **99.997% Availability Achieved (2026)** - Dual deployment strategy (AWS + GitHub Pages)
+- 🌐 **Multi-Region Resilience by 2027** - S3 replication + CloudFront global distribution
 - 🏆 **ISO 27001 Certification Track** - Formal compliance validation
 
 **Alignment with Business Goals:**
@@ -644,10 +672,11 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 ## 📖 References
 
 ### ISMS Documentation
-- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Current security controls
+- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Current security controls (AWS + GitHub Pages)
 - [THREAT_MODEL.md](THREAT_MODEL.md) - Current threat analysis
-- [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows
-- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture
+- [BCPPlan.md](BCPPlan.md) - Business Continuity Plan with dual-deployment disaster recovery
+- [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows (AWS S3 + GitHub Pages deployment)
+- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture (dual deployment)
 - [Hack23 ISMS](https://github.com/Hack23/ISMS-PUBLIC)
 - [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 
@@ -656,6 +685,8 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 - [SLSA Supply Chain Security](https://slsa.dev/)
 - [OWASP Application Security](https://owasp.org/)
 - [CIS Controls v8.1](https://www.cisecurity.org/controls/v8)
+- [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
+- [AWS Security Best Practices](https://aws.amazon.com/security/best-practices/)
 
 ---
 
@@ -664,5 +695,6 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 - **Path:** /FUTURE_SECURITY_ARCHITECTURE.md
 - **Format:** Markdown with Mermaid diagrams
 - **Classification:** Public
-- **Next Review:** 2026-04-29 (Quarterly)
+- **Next Review:** 2026-05-08 (Quarterly)
 - **Change Management:** Requires Security Architect approval for major revisions
+- **Change History:** v1.1 (2026-02-08) - Updated for AWS infrastructure, dual deployment, multi-region strategy
