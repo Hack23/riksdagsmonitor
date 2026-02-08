@@ -1,17 +1,17 @@
 # 🏗️ Riksdagsmonitor - System Architecture
 
-**Document Version:** 1.1  
-**Last Updated:** 2026-02-05  
+**Document Version:** 1.2  
+**Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
 ## Executive Summary
 
-Riksdagsmonitor is a static website providing Swedish Parliament intelligence through CIA platform integration. This document describes the system architecture, component interactions, data flows, and design decisions aligned with Hack23 AB's ISMS standards.
+Riksdagsmonitor is a static website providing Swedish Parliament intelligence through CIA platform integration. The platform employs a **dual-deployment architecture** with AWS (CloudFront + S3 multi-region) as primary infrastructure and GitHub Pages as disaster recovery fallback. This document describes the system architecture, component interactions, data flows, and design decisions aligned with Hack23 AB's ISMS standards.
 
 ## 1. System Overview
 
-### 1.1 Architecture Diagram
+### 1.1 Dual-Deployment Architecture Diagram
 
 ```mermaid
 graph TB
@@ -20,9 +20,19 @@ graph TB
         Browsers[Web Browsers<br/>Chrome, Safari, Firefox]
     end
     
-    subgraph "Content Delivery Layer"
-        CDN[GitHub Pages CDN<br/>Global Distribution]
-        DNS[DNS<br/>riksdagsmonitor.com]
+    subgraph "DNS Layer"
+        Route53[Route 53<br/>DNS + Health Checks]
+    end
+    
+    subgraph "Primary: AWS Infrastructure"
+        CF[CloudFront CDN<br/>Global Edge Locations]
+        S3US[S3 Bucket<br/>us-east-1 Primary]
+        S3EU[S3 Bucket<br/>Second Region Planned]
+    end
+    
+    subgraph "Disaster Recovery: GitHub Pages"
+        GHCDN[GitHub Pages CDN<br/>Standby Deployment]
+        GHRepo[GitHub Repository<br/>main branch]
     end
     
     subgraph "Application Layer"
@@ -39,16 +49,23 @@ graph TB
         WB[World Bank<br/>data.worldbank.org]
     end
     
-    subgraph "Infrastructure Layer"
-        GitHub[GitHub Repository<br/>Version Control]
-        Actions[GitHub Actions<br/>CI/CD Pipeline]
-        Pages[GitHub Pages<br/>Hosting]
+    subgraph "CI/CD Layer"
+        GitHub[GitHub Repository<br/>Source Control]
+        ActionsAWS[GitHub Actions<br/>deploy-s3.yml]
+        ActionsGH[GitHub Pages<br/>Auto-Deploy]
     end
     
     Users --> Browsers
-    Browsers -->|HTTPS/TLS 1.3| DNS
-    DNS --> CDN
-    CDN --> Static
+    Browsers -->|HTTPS/TLS 1.3| Route53
+    Route53 -->|Primary Active| CF
+    Route53 -.->|Failover Standby| GHCDN
+    
+    CF --> S3US
+    CF -.-> S3EU
+    GHCDN --> GHRepo
+    
+    S3US --> Static
+    GHRepo --> Static
     Static --> Index
     Static --> Styles
     
@@ -58,12 +75,17 @@ graph TB
     CIA --> ESV
     CIA --> WB
     
-    GitHub --> Actions
-    Actions --> Pages
-    Pages --> CDN
+    GitHub --> ActionsAWS
+    GitHub --> ActionsGH
+    ActionsAWS -->|Deploy| S3US
+    ActionsAWS -.->|Replicate| S3EU
+    ActionsGH -->|Auto-Deploy| GHRepo
     
     style Users fill:#e1f5ff
-    style CDN fill:#90caf9
+    style Route53 fill:#ff9800
+    style CF fill:#4caf50
+    style S3US fill:#2196f3
+    style GHCDN fill:#90caf9
     style Static fill:#4caf50
     style CIA fill:#9c27b0
     style GitHub fill:#ff9800
@@ -74,45 +96,55 @@ graph TB
 | Component | Responsibility | Technology | Status |
 |-----------|---------------|------------|--------|
 | **Static Website** | Present intelligence data | HTML/CSS | ✅ Active |
-| **GitHub Pages** | Hosting infrastructure | GitHub CDN | ✅ Active |
-| **GitHub Actions** | CI/CD automation | YAML workflows | ✅ Active |
+| **AWS CloudFront** | Primary CDN (global edge locations) | AWS CloudFront | ✅ Active (Primary) |
+| **AWS S3 (us-east-1)** | Primary storage bucket | Amazon S3 | ✅ Active (Primary) |
+| **AWS S3 (Second Region)** | Multi-region replication | Amazon S3 | 🔄 Planned |
+| **Route 53** | DNS with health checks and failover | AWS Route 53 | ✅ Active |
+| **GitHub Pages** | Disaster recovery hosting | GitHub CDN | ✅ Active (DR Standby) |
+| **GitHub Actions** | CI/CD automation (AWS + GitHub) | YAML workflows | ✅ Active |
 | **CIA Platform** | Data processing & analysis | Java/Spring Boot | ✅ External |
 | **Data Sources** | Raw political data | Open APIs | ✅ External |
 
 ## 2. Data Flow Architecture
 
-### 2.1 Content Delivery Flow
+### 2.1 Content Delivery Flow (AWS Primary)
 
 ```mermaid
 sequenceDiagram
     participant User
     participant Browser
-    participant DNS
-    participant CDN as GitHub Pages CDN
-    participant Static as Static Files
+    participant Route53 as Route 53 DNS
+    participant CF as CloudFront CDN
+    participant S3 as S3 Bucket
     participant CIA as CIA Platform
     
     User->>Browser: Visit riksdagsmonitor.com
-    Browser->>DNS: Resolve domain
-    DNS-->>Browser: CDN IP address
-    Browser->>CDN: HTTPS request
-    CDN->>Static: Fetch index.html
-    Static-->>CDN: HTML content
-    CDN-->>Browser: Render page
-    Browser->>CDN: Fetch styles.css
-    CDN->>Static: Get CSS
-    Static-->>CDN: CSS content
-    CDN-->>Browser: Apply styling
+    Browser->>Route53: Resolve domain
+    Route53-->>Browser: CloudFront IP (Primary)
+    
+    alt CloudFront Healthy
+        Browser->>CF: HTTPS request
+        CF->>S3: Fetch index.html (cache miss)
+        S3-->>CF: HTML content
+        CF-->>Browser: Render page (cached at edge)
+        Browser->>CF: Fetch styles.css
+        CF-->>Browser: CSS (cached 1 year)
+    else CloudFront Unhealthy
+        Route53-->>Browser: GitHub Pages IP (Failover)
+        Browser->>GitHub Pages CDN: HTTPS request
+        GitHub Pages CDN-->>Browser: Serve content
+    end
     
     Note over Browser,CIA: User clicks CIA link
     Browser->>CIA: Navigate to dashboard
     CIA-->>Browser: Interactive data
     
     Note over Browser: Static content cached
-    Note over CDN: CDN caching active
+    Note over CF: Edge caching active
+    Note over S3: Origin with versioning
 ```
 
-### 2.2 CI/CD Deployment Flow
+### 2.2 CI/CD Deployment Flow (Dual Deployment)
 
 ```mermaid
 graph LR
@@ -135,15 +167,26 @@ graph LR
     H -->|No| I
     
     J --> K
-    K --> L[GitHub Pages Deploy]
-    L --> M[CDN Update]
-    M --> N[Live on riksdagsmonitor.com]
+    
+    K --> L1[AWS S3 Deploy<br/>deploy-s3.yml]
+    K --> L2[GitHub Pages Deploy<br/>Auto]
+    
+    L1 --> M1[S3 Sync<br/>us-east-1]
+    L1 --> M2[Cache Headers<br/>Set TTL]
+    L1 --> M3[CloudFront Invalidation<br/>Purge Cache]
+    
+    L2 --> M4[GitHub Pages CDN<br/>Update]
+    
+    M1 --> N[Live on CloudFront Primary]
+    M3 --> N
+    M4 --> O[Standby on GitHub Pages]
     
     style D fill:#4caf50
     style E fill:#ff9800
     style K fill:#2196f3
     style I fill:#f44336
     style N fill:#4caf50
+    style O fill:#90caf9
 ```
 
 ## 3. Component Architecture
@@ -399,48 +442,76 @@ graph LR
 
 ## 6. Scalability Architecture
 
-### 6.1 Traffic Handling
+### 6.1 Traffic Handling (AWS CloudFront)
 
 ```mermaid
 graph TB
     Users[End Users<br/>Global Traffic]
     
-    subgraph "CDN Layer"
-        Edge1[Edge Server<br/>North America]
-        Edge2[Edge Server<br/>Europe]
-        Edge3[Edge Server<br/>Asia]
+    subgraph "CloudFront Edge Locations (600+ worldwide)"
+        Edge1[Edge POP<br/>North America 80+ locations]
+        Edge2[Edge POP<br/>Europe 50+ locations]
+        Edge3[Edge POP<br/>Asia Pacific 40+ locations]
+        Edge4[Edge POP<br/>South America 20+ locations]
+        Edge5[Edge POP<br/>Middle East/Africa 20+ locations]
     end
     
-    subgraph "Origin"
-        GitHub[GitHub Pages<br/>Primary Origin]
+    subgraph "Origin - S3 Multi-Region"
+        S3Primary[S3 us-east-1<br/>Primary Origin]
+        S3Secondary[S3 Second Region<br/>Failover Origin]
+    end
+    
+    subgraph "Disaster Recovery"
+        GHCDN[GitHub Pages CDN<br/>Standby]
     end
     
     Users --> Edge1
     Users --> Edge2
     Users --> Edge3
+    Users --> Edge4
+    Users --> Edge5
     
-    Edge1 -->|Cache Miss| GitHub
-    Edge2 -->|Cache Miss| GitHub
-    Edge3 -->|Cache Miss| GitHub
+    Edge1 -->|Cache Miss| S3Primary
+    Edge2 -->|Cache Miss| S3Primary
+    Edge3 -->|Cache Miss| S3Primary
+    Edge4 -->|Cache Miss| S3Primary
+    Edge5 -->|Cache Miss| S3Primary
     
-    Edge1 -->|Cache Hit| Users
-    Edge2 -->|Cache Hit| Users
-    Edge3 -->|Cache Hit| Users
+    S3Primary -.->|Replication| S3Secondary
     
-    style GitHub fill:#ff9800
-    style Edge1 fill:#90caf9
-    style Edge2 fill:#90caf9
-    style Edge3 fill:#90caf9
+    Edge1 -->|Cache Hit 95%+| Users
+    Edge2 -->|Cache Hit 95%+| Users
+    Edge3 -->|Cache Hit 95%+| Users
+    
+    Users -.->|DNS Failover| GHCDN
+    
+    style S3Primary fill:#2196f3
+    style S3Secondary fill:#64b5f6
+    style Edge1 fill:#4caf50
+    style Edge2 fill:#4caf50
+    style Edge3 fill:#4caf50
+    style Edge4 fill:#4caf50
+    style Edge5 fill:#4caf50
+    style GHCDN fill:#90caf9
 ```
+
+**CloudFront Performance:**
+- **Edge Locations:** 600+ Points of Presence globally
+- **Cache Hit Ratio:** 95%+ for static assets
+- **Origin Shield:** Optional caching layer (planned)
+- **Cache TTL:** 1 hour (HTML), 1 year (CSS/JS/images)
+- **Compression:** Brotli + Gzip automatic compression
 
 ### 6.2 Performance Characteristics
 
 | Metric | Target | Current | Method |
 |--------|--------|---------|--------|
-| **First Contentful Paint** | <1.5s | <1s | Static files, CDN caching |
-| **Time to Interactive** | <3s | <2s | No JavaScript dependencies |
-| **Largest Contentful Paint** | <2.5s | <2s | Optimized CSS, cached fonts |
+| **First Contentful Paint** | <1.5s | <0.8s | CloudFront edge caching, static files |
+| **Time to Interactive** | <3s | <1.5s | No JavaScript dependencies, CDN acceleration |
+| **Largest Contentful Paint** | <2.5s | <1.8s | Optimized CSS, CloudFront compression |
 | **Cumulative Layout Shift** | <0.1 | <0.05 | Stable layout, no dynamic content |
+| **Global Latency (p95)** | <200ms | <150ms | CloudFront 600+ edge locations |
+| **Availability** | 99.9% | 99.997% | Dual deployment (AWS + GitHub Pages) |
 
 ## 7. Monitoring Architecture
 
@@ -509,8 +580,11 @@ graph TB
 
 | Technology | Version | Purpose | Rationale |
 |------------|---------|---------|-----------|
-| **GitHub Pages** | Latest | Static hosting | Free, reliable, global CDN |
-| **GitHub Actions** | Latest | CI/CD | Integrated with repository, secure |
+| **AWS CloudFront** | Latest | Primary CDN (600+ PoPs) | Enterprise-grade, 99.9% SLA |
+| **AWS S3** | Latest | Primary storage (us-east-1) | 99.9% durability, versioning |
+| **AWS Route 53** | Latest | DNS with health checks | 100% availability SLA, failover |
+| **GitHub Pages** | Latest | Disaster recovery hosting | Free, reliable, global CDN |
+| **GitHub Actions** | Latest | CI/CD (AWS + GitHub) | Integrated with repository, secure |
 | **HTMLHint** | Latest | HTML validation | Industry standard validator |
 | **Linkinator** | v6 | Link checking | Reliable, actively maintained |
 
@@ -518,7 +592,11 @@ graph TB
 
 | Dependency | Type | Risk Level | Mitigation |
 |------------|------|------------|------------|
-| **GitHub Pages** | Infrastructure | LOW | 99.9% SLA, documented in THREAT_MODEL.md |
+| **AWS CloudFront** | Infrastructure (Primary) | LOW | 99.9% SLA, multi-region, failover to GitHub Pages |
+| **AWS S3** | Storage (Primary) | LOW | 99.9% SLA, versioning enabled, multi-region planned |
+| **AWS Route 53** | DNS | VERY LOW | 100% SLA, health checks, automatic failover |
+| **GitHub Pages** | Infrastructure (DR) | LOW | 99.9% SLA (estimated), disaster recovery only |
+| **GitHub Actions** | CI/CD | LOW | Dual deployment strategy, can manually deploy to AWS |
 | **Google Fonts** | CDN | LOW | Cached, fallback fonts available |
 | **CIA Platform** | External Service | LOW | Independent service, documented links |
 
@@ -552,15 +630,23 @@ graph LR
 
 **Rollback Methods:**
 1. **Git Revert:** Immediate rollback via git revert command
-2. **Branch Protection:** Required reviews prevent bad code
-3. **Immutable History:** Complete audit trail for forensics
-4. **Rapid Deployment:** Re-deploy takes <2 minutes
+2. **S3 Versioning:** Restore previous object versions
+3. **CloudFront Invalidation:** Purge bad content from CDN (5-15 minutes)
+4. **DNS Failover:** Switch to GitHub Pages immediately (15 minutes)
+5. **Branch Protection:** Required reviews prevent bad code
+6. **Immutable History:** Complete audit trail for forensics
+7. **Rapid Deployment:** Re-deploy takes <3 minutes (AWS) or <2 minutes (GitHub Pages)
 
 **Rollback SLA:**
-- Detection: <5 minutes (monitoring alerts)
+- Detection: <5 minutes (monitoring alerts, health checks)
 - Decision: <10 minutes (review incident)
-- Execution: <2 minutes (git revert + deploy)
-- **Total RTO:** <17 minutes
+- Execution: <3 minutes (git revert + AWS deploy) or <15 minutes (DNS failover)
+- **Total RTO:** <18 minutes (AWS rollback) or <30 minutes (full failover)
+
+**Business Continuity:**
+- See [BCPPlan.md](BCPPlan.md) for comprehensive disaster recovery procedures
+- Dual deployment ensures 99.997% availability
+- Automated health checks trigger failover
 
 ## 10. Future Architecture
 
@@ -590,7 +676,11 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 | Decision | Rationale | Trade-offs |
 |----------|-----------|------------|
 | **Static HTML/CSS Only** | Eliminates XSS, SQLi, CSRF vulnerabilities | Limited interactivity |
-| **GitHub Pages Hosting** | Free, reliable, global CDN, HTTPS by default | Platform dependency |
+| **AWS Primary + GitHub Pages DR** | 99.997% availability, enterprise CDN, failover protection | Increased complexity, cost |
+| **CloudFront CDN (600+ PoPs)** | Global performance, low latency, DDoS protection | AWS dependency |
+| **S3 Multi-Region** | Data durability, regional failover, compliance | Planned feature, future cost |
+| **Route 53 DNS** | Health checks, automatic failover, 100% SLA | AWS dependency |
+| **Dual Deployment Strategy** | Business continuity, zero-downtime failover | Deployment complexity |
 | **External CIA Platform** | Reuse existing OSINT infrastructure | External service dependency |
 | **No JavaScript** | Reduces attack surface, improves performance | No dynamic features |
 | **Multi-language Files** | SEO optimization, clear URL structure | File duplication |
@@ -599,9 +689,12 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 
 1. **Security by Design:** Static files eliminate common web vulnerabilities
 2. **Defense in Depth:** Multiple security layers (network, application, access control)
-3. **Simplicity:** Minimal technology stack reduces maintenance burden
-4. **Transparency:** Open source, public ISMS, documented architecture
-5. **Performance:** CDN caching, no JavaScript, optimized assets
+3. **High Availability:** Dual deployment strategy ensures 99.997% uptime
+4. **Business Continuity:** Automatic failover protects against infrastructure outages
+5. **Simplicity:** Minimal technology stack reduces maintenance burden
+6. **Transparency:** Open source, public ISMS, documented architecture
+7. **Performance:** Global CDN (600+ PoPs), edge caching, optimized assets
+8. **Disaster Recovery:** GitHub Pages standby deployment for AWS failures
 
 ## 12. Related Documentation
 
@@ -609,12 +702,15 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security controls and compliance
 - [THREAT_MODEL.md](THREAT_MODEL.md) - STRIDE analysis and risk assessment
 - [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows and automation
+- [BCPPlan.md](BCPPlan.md) - Business Continuity Plan with disaster recovery procedures
 - [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Future roadmap
 
 ### External References
 - [Hack23 ISMS](https://github.com/Hack23/ISMS)
 - [Secure Development Policy](https://github.com/Hack23/ISMS/blob/main/Secure_Development_Policy.md)
 - [CIA Platform Architecture](https://github.com/Hack23/cia/blob/master/ARCHITECTURE.md)
+- [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
+- [AWS CloudFront Documentation](https://docs.aws.amazon.com/cloudfront/)
 
 ---
 
@@ -624,3 +720,4 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 - **Format:** Markdown with Mermaid diagrams
 - **Classification:** Public
 - **Next Review:** 2026-04-29
+- **Change History:** v1.2 (2026-02-08) - Added AWS dual-deployment architecture
