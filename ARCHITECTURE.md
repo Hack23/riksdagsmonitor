@@ -1,7 +1,5 @@
 # 🏗️ Riksdagsmonitor - System Architecture
 
-**Document Version:** 1.3  
-**Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -725,5 +723,3 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 - **Path:** /ARCHITECTURE.md
 - **Format:** Markdown with Mermaid diagrams
 - **Classification:** Public
-- **Next Review:** 2026-04-29
-- **Change History:** v1.3 (2026-02-08) - Updated for active multi-region S3 replication (us-east-1 → eu-west-1), CloudFront origin failover on 500+ errors

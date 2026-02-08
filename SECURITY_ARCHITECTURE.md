@@ -1,7 +1,5 @@
 # 🛡️ Riksdagsmonitor - Security Architecture
 
-**Document Version:** 1.2  
-**Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -533,5 +531,3 @@ Referrer-Policy: strict-origin-when-cross-origin
 - **Path:** /SECURITY_ARCHITECTURE.md
 - **Format:** Markdown
 - **Classification:** Public
-- **Next Review:** 2027-02-08
-- **Change History:** v1.2 (2026-02-08) - Updated for active multi-region S3 replication (us-east-1 → eu-west-1), CloudFront origin failover on 500+ errors, improved risk score to 2.8/10.0

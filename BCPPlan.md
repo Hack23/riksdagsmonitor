@@ -1,7 +1,5 @@
 # 🔄 Riksdagsmonitor - Business Continuity Plan (BCP)
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -482,14 +480,6 @@ diff <(curl -s https://riksdagsmonitor.com/index.html) \
 - **Regular Review:** Quarterly
 - **Post-Incident Review:** Within 5 business days of BCP activation
 - **Architecture Change Review:** Before any major infrastructure changes
-- **Next Review Date:** 2026-05-08
-
-### 10.2 Change History
-
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2026-02-08 | James Pether Sörling | Initial BCP document creation for AWS + GitHub Pages dual deployment |
-| 1.1 | 2026-02-08 | James Pether Sörling | Updated for multi-region S3 replication (us-east-1 → eu-west-1), CloudFront origin failover on 500+ errors |
 
 ---
 
@@ -500,4 +490,3 @@ diff <(curl -s https://riksdagsmonitor.com/index.html) \
 - **Classification:** Public
 - **Owner:** Hack23 AB
 - **Approved By:** James Pether Sörling, CISSP, CISM
-- **Next Review:** 2026-05-08
