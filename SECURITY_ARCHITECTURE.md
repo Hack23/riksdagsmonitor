@@ -85,7 +85,7 @@ graph TB
     
     CF -->|Cache Miss| S3US
     CF -.->|Origin Failover on 500+ errors| S3EU
-    S3US -->|Real-time Replication| S3EU
+    S3US -->|Async Cross-Region Replication (<15 min RPO)| S3EU
     GHCDN --> GitHub
     
     User -->|External Links| CIA

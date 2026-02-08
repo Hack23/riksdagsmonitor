@@ -235,7 +235,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 ### Scenario 4: AWS Account Compromise
 
-[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-0_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Security_incident-red?style=flat-square&logo=shield-halved&logoColor=white)](#)
+[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-Up_to_last_deployment-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Security_incident-red?style=flat-square&logo=shield-halved&logoColor=white)](#)
 
 **🔍 Detection:**
 - CloudTrail alerts for unauthorized API calls
@@ -248,7 +248,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 3. 🔄 Rotate GitHub Actions OIDC trust policy
 4. 📊 CloudTrail audit of unauthorized actions
 5. 🛡️ AWS Support engagement for forensics
-6. 🔧 Restore infrastructure from Infrastructure-as-Code
+6. 🔧 Restore infrastructure from documented configuration and backups (future-state: Infrastructure-as-Code)
 7. ✅ Security validation before DNS failback
 
 **✅ Validation:**
@@ -261,7 +261,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 ### Scenario 5: GitHub Pages Unavailable (During DR)
 
-[![RTO](https://img.shields.io/badge/RTO-Manual_restore-orange?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-0_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Extended_downtime-red?style=flat-square&logo=users&logoColor=white)](#)
+[![RTO](https://img.shields.io/badge/RTO-Manual_restore-orange?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-Up_to_last_successful_deploy-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Extended_downtime-red?style=flat-square&logo=users&logoColor=white)](#)
 
 **🔍 Detection:**
 - GitHub Pages deployment failure
