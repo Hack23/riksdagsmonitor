@@ -59,8 +59,8 @@ graph TB
     end
     
     subgraph RECOVERY["🔄 Recovery Requirements"]
-        RTO[⏰ RTO Target<br/>< 30 seconds origin failover<br/>< 15 minutes DNS failover]
-        RPO[💾 RPO Target<br/>< 15 minutes<br/>near-zero effective RPO (S3 replication lag)]
+        RTO[⏰ RTO Target<br/>&lt; 30 seconds origin failover<br/>&lt; 15 minutes DNS failover]
+        RPO[💾 RPO Target<br/>&lt; 15 minutes<br/>near-zero effective RPO (S3 replication lag)]
         AVAILABILITY[📈 Availability Target<br/>99.998%<br/>≈10.5 minutes (~631 seconds) downtime/year]
     end
     

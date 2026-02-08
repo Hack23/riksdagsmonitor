@@ -111,7 +111,6 @@ sequenceDiagram
     participant DNS as Route 53 DNS
     participant CDN as AWS CloudFront
     participant S3 as S3 us-east-1
-    participant Static as Static Files
     participant CIA as CIA Platform
     
     User->>Browser: Visit riksdagsmonitor.com
@@ -119,14 +118,10 @@ sequenceDiagram
     DNS-->>Browser: CloudFront endpoint
     Browser->>CDN: HTTPS request
     CDN->>S3: Fetch index.html
-    S3->>Static: Get content
-    Static-->>S3: HTML content
     S3-->>CDN: HTML content
     CDN-->>Browser: Render page
     Browser->>CDN: Fetch styles.css
     CDN->>S3: Get CSS
-    S3->>Static: Get content
-    Static-->>S3: CSS content
     S3-->>CDN: CSS content
     CDN-->>Browser: Apply styling
     

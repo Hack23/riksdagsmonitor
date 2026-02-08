@@ -72,7 +72,12 @@ graph TB
     
     subgraph "Disaster Recovery: GitHub"
         GHCDN[GitHub Pages CDN<br/>Standby Deployment]
-        GitHub[GitHub Repository<br/>Source of Truth]
+    end
+    
+    subgraph "GitHub Infrastructure"
+        GitHubRepo[GitHub Repository<br/>main branch]
+        Actions[GitHub Actions<br/>CI/CD Dual Deploy]
+        Security[Security Scanning<br/>Dependabot, CodeQL, Secrets]
     end
     
     CIA[CIA Platform<br/>www.hack23.com/cia]
@@ -89,16 +94,10 @@ graph TB
     
     User -->|External Links| CIA
     
-    subgraph "GitHub Infrastructure"
-        GitHub[GitHub Repository<br/>main branch]
-        Actions[GitHub Actions<br/>CI/CD Dual Deploy]
-        Security[Security Scanning<br/>Dependabot, CodeQL, Secrets]
-    end
-    
-    GHCDN --> GitHub
+    GHCDN --> GitHubRepo
     Actions -->|Deploy| S3US
-    Actions -->|Deploy| GitHub
-    Security -->|Monitor| GitHub
+    Actions -->|Deploy| GitHubRepo
+    Security -->|Monitor| GitHubRepo
     
     style User fill:#e1f5ff
     style Route53 fill:#ff9800
