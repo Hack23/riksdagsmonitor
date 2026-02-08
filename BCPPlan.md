@@ -243,9 +243,9 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 - Unexpected configuration changes
 
 **🔄 Recovery Procedure:**
-1. 🔒 Immediate DNS failover to GitHub Pages (manual: 2 minutes)
+1. 🔒 Immediate DNS failover to GitHub Pages (operator action: 2 minutes; client-visible cutover: up to DNS TTL propagation ~15 minutes)
 2. 🔐 Revoke all AWS IAM credentials and access keys
-3. 🔄 Rotate GitHub Actions OIDC trust policy
+3. 🔄 Update AWS IAM role trust policy for GitHub Actions OIDC provider to revoke compromised trust
 4. 📊 CloudTrail audit of unauthorized actions
 5. 🛡️ AWS Support engagement for forensics
 6. 🔧 Restore infrastructure from documented configuration and backups (future-state: Infrastructure-as-Code)

@@ -86,12 +86,15 @@ graph TB
     CF -->|Cache Miss| S3US
     CF -.->|Origin Failover on 500+ errors| S3EU
     S3US -->|Async Cross-Region Replication (<15 min RPO)| S3EU
-    GHCDN --> GitHub
     
     User -->|External Links| CIA
     
+    subgraph "Disaster Recovery: GitHub"
+        GitHub[GitHub Repository<br/>main branch]
+        GHCDN --> GitHub
+    end
+    
     subgraph "GitHub Infrastructure"
-        GitHub
         Actions[GitHub Actions<br/>CI/CD Dual Deploy]
         Security[Security Scanning<br/>Dependabot, CodeQL, Secrets]
     end
