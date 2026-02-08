@@ -1,5 +1,8 @@
 # 🏗️ Riksdagsmonitor - System Architecture
 
+**Document Owner:** CEO | **Version:** 1.3 | **Last Updated:** 2026-02-08 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-08
+
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
