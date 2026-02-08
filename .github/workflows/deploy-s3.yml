@@ -84,23 +84,6 @@ jobs:
           done
           echo "✅ Restored mtimes for $(git ls-tree -r --name-only HEAD | wc -l) files"
 
-      - name: Cache apt packages
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
-        with:
-          path: /var/cache/apt/archives
-          key: ${{ runner.os }}-apt-${{ hashFiles('**/.github/workflows/main.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-apt-
-
-      - name: Cache npm dependencies
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-minify-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-minify-
-            ${{ runner.os }}-npm-
-
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
         with:
@@ -108,113 +91,56 @@ jobs:
           role-session-name: githubworkflowrolesessiont2
           aws-region: ${{ env.AWS_REGION }}
       
-      - name: Deploy to S3 with proper cache headers
+      - name: Deploy to S3 with cache headers
         run: |
-          echo "🚀 Starting S3 deployment with optimized cache headers..."
-          
-          # Sync JS files with immutable cache (1 year)
-          echo "⚡ Syncing JavaScript files..."
-          aws s3 sync . s3://${{ env.S3_BUCKET_NAME }}/ \
-            --exclude "*" \
-            --include "*.js" \
-            --exclude ".git/*" \
-            --exclude "screenshots/*" \
-            --cache-control "public, max-age=31536000, immutable"
-          
-          # Sync CSS files with immutable cache (1 year)
-          echo "🎨 Syncing CSS files..."
-          aws s3 sync . s3://${{ env.S3_BUCKET_NAME }}/ \
-            --exclude "*" \
-            --include "*.css" \
-            --exclude ".git/*" \
-            --exclude "screenshots/*" \
-            --cache-control "public, max-age=31536000, immutable"
-          
-          # Sync font files with immutable cache (1 year)
-          echo "🔤 Syncing font files..."
-          aws s3 sync . s3://${{ env.S3_BUCKET_NAME }}/ \
-            --exclude "*" \
-            --include "*.woff" \
-            --include "*.woff2" \
-            --include "*.ttf" \
-            --include "*.eot" \
-            --include "*.otf" \
-            --exclude ".git/*" \
-            --exclude "screenshots/*" \
-            --cache-control "public, max-age=31536000, immutable"
-          
-          # Sync image files with immutable cache (1 year)
-          echo "🖼️  Syncing image files..."
-          aws s3 sync . s3://${{ env.S3_BUCKET_NAME }}/ \
-            --exclude "*" \
-            --include "*.webp" \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
-            --include "*.gif" \
-            --include "*.svg" \
-            --include "*.ico" \
-            --exclude ".git/*" \
-            --exclude "screenshots/*" \
-            --cache-control "public, max-age=31536000, immutable"
-          
-          # Sync HTML files with short cache (1 hour)
-          echo "📄 Syncing HTML files..."
-          aws s3 sync . s3://${{ env.S3_BUCKET_NAME }}/ \
-            --exclude "*" \
-            --include "*.html" \
-            --exclude ".git/*" \
-            --exclude "screenshots/*" \
-            --cache-control "public, max-age=3600, must-revalidate" \
-            --content-type "text/html; charset=utf-8"
-          
-          # Sync metadata files with medium cache (1 day)
-          echo "📋 Syncing metadata files..."
-          aws s3 sync . s3://${{ env.S3_BUCKET_NAME }}/ \
-            --exclude "*" \
-            --include "*.xml" \
-            --include "*.json" \
-            --include "*.txt" \
-            --exclude ".git/*" \
-            --exclude "screenshots/*" \
-            --cache-control "public, max-age=86400"
-          
-          # Sync all remaining files (catch-all for CNAME, robots.txt, etc.)
-          echo "📦 Syncing remaining files..."
-          aws s3 sync . s3://${{ env.S3_BUCKET_NAME }}/ \
-            --exclude ".git/*" \
-            --exclude "screenshots/*" \
-            --exclude ".github/*" \
-            --exclude "docs/*" \
-            --exclude "schemas/*" \
-            --exclude "scripts/*" \
-            --exclude ".devcontainer/*" \
-            --exclude "quicksight/*" \
-            --exclude "*.md" \
-            --exclude "package*.json" \
-            --exclude ".gitignore" \
-            --exclude "*.js" \
-            --exclude "*.css" \
-            --exclude "*.woff" \
-            --exclude "*.woff2" \
-            --exclude "*.ttf" \
-            --exclude "*.eot" \
-            --exclude "*.otf" \
-            --exclude "*.webp" \
-            --exclude "*.png" \
-            --exclude "*.jpg" \
-            --exclude "*.jpeg" \
-            --exclude "*.gif" \
-            --exclude "*.svg" \
-            --exclude "*.ico" \
-            --exclude "*.html" \
-            --exclude "*.xml" \
-            --exclude "*.json" \
-            --exclude "*.txt"
-          
-          echo "✅ S3 deployment completed with optimized cache headers"
-          echo "ℹ️  Internal directories (.github/, docs/, schemas/, scripts/) excluded from deployment"
-          echo "ℹ️  Files synced based on git mtime + size for accurate change detection"
+          BUCKET="s3://${{ env.S3_BUCKET_NAME }}"
+          SRC="."
+
+          # HTML files - short cache, must-revalidate
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.html' \
+            --cache-control 'public, max-age=3600, must-revalidate' \
+            --content-type 'text/html; charset=utf-8' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # CSS files - long cache, immutable
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.css' \
+            --cache-control 'public, max-age=31536000, immutable' \
+            --content-type 'text/css' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # JS files - long cache, immutable
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.js' \
+            --cache-control 'public, max-age=31536000, immutable' \
+            --content-type 'application/javascript' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # Image files - long cache, immutable
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
+            --include '*.webp' --include '*.png' --include '*.jpg' --include '*.jpeg' \
+            --include '*.gif' --include '*.svg' --include '*.ico' \
+            --cache-control 'public, max-age=31536000, immutable' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # Font files - long cache, immutable
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
+            --include '*.woff' --include '*.woff2' --include '*.ttf' --include '*.eot' --include '*.otf' \
+            --cache-control 'public, max-age=31536000, immutable' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # Metadata files - medium cache (1 day)
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
+            --include '*.xml' --include '*.json' --include '*.txt' \
+            --cache-control 'public, max-age=86400' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # Everything else
+          aws s3 sync "$SRC" "$BUCKET" \
+            --exclude '.git/*' --exclude 'screenshots/*' \
+            --exclude '.github/*' --exclude 'docs/*' --exclude 'schemas/*' \
+            --exclude 'scripts/*' --exclude '.devcontainer/*' --exclude 'quicksight/*' \
+            --exclude '*.md' --exclude 'package*.json' --exclude '.gitignore'
+
+          echo "✅ Deploy with cache headers completed"
       
       # Invalidate CloudFront cache to ensure latest content is served
       - name: Invalidate CloudFront
