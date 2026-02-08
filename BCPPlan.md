@@ -123,7 +123,7 @@ graph TB
     subgraph PRIMARY["☁️ AWS Primary (Active)"]
         CF[🌍 CloudFront CDN<br/>600+ PoPs<br/>Automatic Origin Failover]
         S3_US[💾 S3 us-east-1<br/>Primary Origin<br/>Versioning Enabled]
-        S3_EU[💾 S3 eu-west-1<br/>Replica Origin<br/>Asynchronous Replication (<15 min RPO)]
+        S3_EU[💾 S3 eu-west-1<br/>Replica Origin<br/>Asynchronous Replication (&lt;15 min RPO)]
         
         CF -->|Primary| S3_US
         CF -->|Failover on 500+| S3_EU
@@ -340,7 +340,7 @@ graph TD
     CHECK_CF -->|No| MANUAL_DNS[🌐 Manual DNS Failover<br/>to GitHub Pages<br/>RTO: 2 minutes]
     CHECK_CF -->|Yes| CHECK_S3{S3 Origins<br/>Accessible?}
     
-    CHECK_S3 -->|us-east-1 No| AUTO_FAILOVER[⚡ Automatic Origin Failover<br/>to eu-west-1<br/>RTO: < 30 seconds]
+    CHECK_S3 -->|us-east-1 No| AUTO_FAILOVER[⚡ Automatic Origin Failover<br/>to eu-west-1<br/>RTO: &lt; 30 seconds]
     CHECK_S3 -->|Both No| ROUTE53_FAILOVER[⚕️ Route 53 Health Check<br/>DNS Failover<br/>RTO: 15 minutes]
     CHECK_S3 -->|Yes| CHECK_HEALTH{Health Check<br/>Passing?}
     
@@ -449,6 +449,8 @@ As CEO/Founder is the sole employee, traditional business continuity teams are n
 ### 🔧 Operations
 - [⚙️ WORKFLOWS.md](./WORKFLOWS.md) - CI/CD workflows and deployment automation
 - [📖 README.md](./README.md) - Project overview and quick start guide
+
+> ℹ️ **Alignment notice:** WORKFLOWS.md, FUTURE_SECURITY_ARCHITECTURE.md and THREAT_MODEL.md are pending update to fully align with the dual-deployment continuity model and current primary hosting described in this BCPPlan. If there is any conflict regarding the current hosting/deployment architecture, this BCPPlan is the authoritative source.
 
 ---
 

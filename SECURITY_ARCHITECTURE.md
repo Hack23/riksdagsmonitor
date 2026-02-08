@@ -90,7 +90,7 @@ graph TB
     
     CF -->|Cache Miss| S3US
     CF -.->|Origin Failover on 500+ errors| S3EU
-    S3US -->|Async Cross-Region Replication (<15 min RPO)| S3EU
+    S3US -->|Async Cross-Region Replication (&lt;15 min RPO)| S3EU
     
     User -->|External Links| CIA
     
