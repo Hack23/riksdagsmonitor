@@ -3,7 +3,10 @@ on:
   release:
     types: [published]
   workflow_dispatch:
-permissions: write-all
+permissions:
+  contents: read
+  id-token: write
+  actions: write
 
 env:
   AWS_REGION : "us-east-1"
@@ -104,8 +107,7 @@ jobs:
             --include "*.js" \
             --exclude ".git/*" \
             --exclude "screenshots/*" \
-            --cache-control "public, max-age=31536000, immutable" \
-            --size-only
+            --cache-control "public, max-age=31536000, immutable"
           
           # Sync CSS files with immutable cache (1 year)
           echo "🎨 Syncing CSS files..."
@@ -114,8 +116,7 @@ jobs:
             --include "*.css" \
             --exclude ".git/*" \
             --exclude "screenshots/*" \
-            --cache-control "public, max-age=31536000, immutable" \
-            --size-only
+            --cache-control "public, max-age=31536000, immutable"
           
           # Sync font files with immutable cache (1 year)
           echo "🔤 Syncing font files..."
@@ -128,8 +129,7 @@ jobs:
             --include "*.otf" \
             --exclude ".git/*" \
             --exclude "screenshots/*" \
-            --cache-control "public, max-age=31536000, immutable" \
-            --size-only
+            --cache-control "public, max-age=31536000, immutable"
           
           # Sync image files with immutable cache (1 year)
           echo "🖼️  Syncing image files..."
@@ -144,8 +144,7 @@ jobs:
             --include "*.ico" \
             --exclude ".git/*" \
             --exclude "screenshots/*" \
-            --cache-control "public, max-age=31536000, immutable" \
-            --size-only
+            --cache-control "public, max-age=31536000, immutable"
           
           # Sync HTML files with short cache (1 hour)
           echo "📄 Syncing HTML files..."
@@ -155,8 +154,7 @@ jobs:
             --exclude ".git/*" \
             --exclude "screenshots/*" \
             --cache-control "public, max-age=3600, must-revalidate" \
-            --content-type "text/html; charset=utf-8" \
-            --size-only
+            --content-type "text/html; charset=utf-8"
           
           # Sync metadata files with medium cache (1 day)
           echo "📋 Syncing metadata files..."
@@ -167,8 +165,7 @@ jobs:
             --include "*.txt" \
             --exclude ".git/*" \
             --exclude "screenshots/*" \
-            --cache-control "public, max-age=86400" \
-            --size-only
+            --cache-control "public, max-age=86400"
           
           # Sync all remaining files (catch-all)
           echo "📦 Syncing remaining files..."
@@ -192,12 +189,11 @@ jobs:
             --exclude "*.html" \
             --exclude "*.xml" \
             --exclude "*.json" \
-            --exclude "*.txt" \
-            --size-only
+            --exclude "*.txt"
           
           echo "✅ S3 deployment completed with optimized cache headers"
           echo "ℹ️  Screenshots directory excluded for performance"
-          echo "ℹ️  Only changed files were uploaded (--size-only flag)"
+          echo "ℹ️  Files synced based on size and modification time for correctness"
       
       # Invalidate CloudFront cache to ensure latest content is served
       - name: Invalidate CloudFront
