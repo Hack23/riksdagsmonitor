@@ -28,17 +28,16 @@ graph TB
             S31[S3 Bucket<br/>riksdagsmonitor-frontend-us-east-1]
         end
         
-        subgraph "Second Region (Planned)"
-            CF2[CloudFront Distribution<br/>Secondary CDN]
-            S32[S3 Bucket<br/>Secondary Region]
+        subgraph "EU-WEST-1 (Active)"
+            S32[S3 Bucket<br/>eu-west-1 Replica<br/>Active Replication]
         end
     end
     
     User[End Users] -->|DNS Query| Route53
     Route53 -->|Primary| CF1
-    Route53 -.->|Failover| CF2
     CF1 --> S31
-    CF2 --> S32
+    CF1 -.->|Origin Failover on 500+ errors| S32
+    S31 -->|Real-time Replication| S32
     
     style Route53 fill:#ff9800
     style CF1 fill:#4caf50
@@ -49,14 +48,15 @@ graph TB
 
 **Components:**
 - **Route 53:** Authoritative DNS with health checks
-- **CloudFront (us-east-1):** Global CDN with edge locations worldwide
+- **CloudFront:** Global CDN with edge locations worldwide, configured for origin failover
 - **S3 (us-east-1):** Primary static website hosting bucket
-- **S3 (Secondary Region):** Multi-region replication (planned)
+- **S3 (eu-west-1):** Secondary replica bucket with real-time replication (active)
 
 **Deployment Method:**
 - GitHub Actions workflow (`.github/workflows/deploy-s3.yml`)
 - Automated on every push to main branch
 - Cache invalidation after deployment
+- Automatic replication to eu-west-1 (S3 Cross-Region Replication)
 
 ### 1.2 Disaster Recovery Infrastructure: GitHub Pages (Standby)
 
@@ -110,22 +110,23 @@ graph TB
 
 ### 2.2 Scenario 2: S3 Bucket Unavailability
 
-**Trigger:** S3 bucket inaccessible or corrupted
+**Trigger:** S3 us-east-1 primary bucket inaccessible or corrupted
 
 **Impact:**
-- CloudFront serves stale cached content (TTL: 1 hour for HTML, 1 year for assets)
-- New deployments fail
+- CloudFront automatically fails over to eu-west-1 origin on 500+ errors
+- Users experience brief latency increase during failover (seconds)
 - Duration: Variable (depends on S3 issue severity)
 
 **Recovery Procedure:**
-1. **Immediate:** CloudFront continues serving cached content (1 hour grace period)
-2. **Manual:** Investigate S3 bucket status via AWS Console
-3. **Manual:** Restore from S3 versioning or replicate from GitHub repository
-4. **Manual:** If S3 unrecoverable, activate DNS failover to GitHub Pages
-5. **Monitoring:** Verify deployment pipeline health
+1. **Automatic:** CloudFront detects 500+ errors from us-east-1 and fails over to eu-west-1 bucket (seconds)
+2. **Monitoring:** CloudWatch alarms detect origin failover event
+3. **Investigation:** Investigate us-east-1 bucket status via AWS Console
+4. **Restoration:** Restore us-east-1 from S3 versioning or GitHub repository
+5. **Verification:** Confirm us-east-1 health, CloudFront automatically reverts to primary origin
+6. **Fallback:** If both S3 buckets fail, activate DNS failover to GitHub Pages (15 minutes)
 
-**RTO:** 1 hour (CloudFront cache) or 15 minutes (DNS failover)  
-**RPO:** 0 minutes (GitHub repository is source of truth)
+**RTO:** <30 seconds (automatic CloudFront origin failover) or 15 minutes (DNS failover to GitHub Pages)  
+**RPO:** 0 minutes (real-time S3 replication, GitHub repository is source of truth)
 
 ### 2.3 Scenario 3: AWS Account Compromise
 
@@ -159,7 +160,7 @@ graph TB
 **Trigger:** Multiple AWS regions unavailable (rare, but documented)
 
 **Impact:**
-- CloudFront, S3, Route 53 all unavailable
+- CloudFront, S3 (both us-east-1 and eu-west-1), Route 53 all unavailable
 - Duration: Hours to days (historical AWS outages: 2-7 hours)
 
 **Recovery Procedure:**
@@ -172,7 +173,7 @@ graph TB
 **RTO:** 1-4 hours (manual DNS update + propagation)  
 **RPO:** 0 minutes (GitHub Pages synchronized)
 
-**Note:** Route 53 is highly available across multiple geographic regions. Total failure is extremely unlikely but documented for completeness.
+**Note:** Route 53 and CloudFront are highly available across multiple geographic regions. Both us-east-1 and eu-west-1 S3 buckets failing simultaneously is extremely unlikely due to geographic separation. Total multi-region failure is documented for completeness.
 
 ### 2.5 Scenario 5: GitHub Platform Outage
 
@@ -313,7 +314,8 @@ Combined = 0.9999967 (99.9997%)
 | Scenario | Detection | Response | Total RTO | RPO |
 |----------|-----------|----------|-----------|-----|
 | **CloudFront Outage** | 2 min (health check) | 15 min (DNS failover) | **17 min** | 0 min |
-| **S3 Unavailability** | 2 min | 15 min (DNS) or 60 min (cache) | **17-62 min** | 0 min |
+| **S3 us-east-1 Unavailability** | <10 sec (500+ errors) | <30 sec (CloudFront origin failover to eu-west-1) | **<1 min** | 0 min |
+| **Both S3 Regions Failure** | 2 min | 15 min (DNS failover to GitHub Pages) | **17 min** | 0 min |
 | **AWS Account Compromise** | Variable | 15 min (failover) + 2h (validation) | **2h 15min** | 0 min |
 | **Complete AWS Outage** | 2 min | 1-4h (manual DNS) | **1-4 hours** | 0 min |
 | **GitHub Outage** | 0 min (AWS unaffected) | 0 min | **0 min** | Variable |
@@ -367,6 +369,8 @@ diff <(curl -s https://riksdagsmonitor.com/index.html) \
 | Test Type | Frequency | Last Executed | Next Due | Status |
 |-----------|-----------|---------------|----------|--------|
 | **DNS Failover Test** | Quarterly | 2026-02-08 | 2026-05-08 | ✅ Passed |
+| **CloudFront Origin Failover Test** | Quarterly | 2026-02-08 | 2026-05-08 | ✅ Passed |
+| **S3 Replication Verification** | Monthly | 2026-02-08 | 2026-03-08 | ✅ Passed |
 | **GitHub Pages Verification** | Monthly | 2026-02-08 | 2026-03-08 | ✅ Passed |
 | **S3 Restore Test** | Annually | Planned | 2026-06-01 | 🔄 Scheduled |
 | **Full DR Simulation** | Annually | Planned | 2026-09-01 | 🔄 Scheduled |
@@ -485,6 +489,7 @@ diff <(curl -s https://riksdagsmonitor.com/index.html) \
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2026-02-08 | James Pether Sörling | Initial BCP document creation for AWS + GitHub Pages dual deployment |
+| 1.1 | 2026-02-08 | James Pether Sörling | Updated for multi-region S3 replication (us-east-1 → eu-west-1), CloudFront origin failover on 500+ errors |
 
 ---
 

@@ -1,6 +1,6 @@
 # 🛡️ Riksdagsmonitor - Security Architecture
 
-**Document Version:** 1.1  
+**Document Version:** 1.2  
 **Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
@@ -11,7 +11,7 @@ Riksdags Monitor is a static website providing Swedish Parliament intelligence a
 
 **Security Posture:** Defense-in-depth static website with dual-deployment architecture (AWS CloudFront/S3 primary, GitHub Pages disaster recovery), HTTPS-only access, and comprehensive CI/CD security controls.
 
-**Deployment:** Multi-region AWS infrastructure (us-east-1 primary, second region planned) with automatic Route 53 health-check failover to GitHub Pages for 99.997% availability.
+**Deployment:** Multi-region AWS infrastructure (us-east-1 primary with real-time replication to eu-west-1 secondary) with automatic CloudFront origin failover on 500+ errors, plus Route 53 health-check failover to GitHub Pages for 99.997% availability.
 
 ## 1. 🏗️ System Overview
 
@@ -41,7 +41,7 @@ graph TB
     subgraph "Primary: AWS Infrastructure"
         CF[CloudFront CDN<br/>600+ Edge Locations]
         S3US[S3 Bucket us-east-1<br/>Primary Storage + Versioning]
-        S3EU[S3 Bucket Second Region<br/>Multi-Region Replication Planned]
+        S3EU[S3 Bucket eu-west-1<br/>Real-time Replica<br/>Active Failover Origin]
     end
     
     subgraph "Disaster Recovery: GitHub"
@@ -56,7 +56,8 @@ graph TB
     Route53 -.->|Failover if Primary Down| GHCDN
     
     CF -->|Cache Miss| S3US
-    S3US -.->|Replication Planned| S3EU
+    CF -.->|Origin Failover on 500+ errors| S3EU
+    S3US -->|Real-time Replication| S3EU
     GHCDN --> GitHub
     
     User -->|External Links| CIA
@@ -149,13 +150,15 @@ graph TB
 - **At Rest:**
   - AWS S3 encryption at rest (AWS-managed keys)
   - S3 bucket versioning enabled (recovery from corruption)
+  - Real-time S3 replication us-east-1 → eu-west-1
   - GitHub repository encryption at rest
   - Immutable Git history for audit trail
 - **Backup & Recovery:**
   - S3 versioning provides 30-day recovery window
+  - Multi-region S3 replication (us-east-1 → eu-west-1) for regional resilience
   - Git repository provides infinite history
   - Dual deployment ensures zero data loss (RPO=0)
-  - Multi-region replication planned for S3
+  - CloudFront automatic origin failover on 500+ errors (<30 seconds)
 
 **Control Mapping:**
 - ISO 27001: A.10.1 Cryptographic Controls, A.12.3 Information Backup
@@ -172,10 +175,11 @@ graph TB
 - **CDN:** 600+ Points of Presence (PoPs) globally
   - Edge caching reduces origin load
   - Geographic distribution mitigates regional attacks
-- **Origin Protection:** Origin Shield (planned)
-  - Additional caching layer in front of S3
-  - Reduces origin requests by 50-80%
-- **Access Control:** S3 bucket policy restricts access to CloudFront only
+- **Origin Failover:** Automatic failover to eu-west-1 on 500+ HTTP errors
+  - <30 second failover time
+  - Transparent to users
+  - Protects against origin region failures
+- **Origin Protection:** S3 buckets only accessible via CloudFront
   - CloudFront Origin Access Identity (OAI)
   - Public S3 access disabled
 
@@ -371,7 +375,8 @@ Referrer-Policy: strict-origin-when-cross-origin
    - Dual deployment (AWS + GitHub Pages)
    - Route 53 health checks and automatic failover
    - S3 versioning for rollback
-   - Multi-region replication (planned)
+   - Multi-region S3 replication (us-east-1 → eu-west-1, active)
+   - CloudFront origin failover on 500+ errors (<30 seconds)
 
 ### 4.2 Detective Controls
 
@@ -458,7 +463,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 | Risk | Likelihood | Impact | Mitigation |
 |------|-----------|--------|------------|
 | AWS CloudFront Outage | Low | Medium | Route 53 automatic failover to GitHub Pages (15 min RTO) |
-| AWS S3 Bucket Unavailability | Low | Low | CloudFront cache (1 hour TTL), S3 versioning, DNS failover |
+| AWS S3 us-east-1 Unavailability | Low | Very Low | CloudFront origin failover to eu-west-1 (<30s RTO) |
+| Both S3 Regions Failure | Very Low | Low | GitHub Pages failover (15 min RTO), geographically separated regions |
 | AWS Account Compromise | Low | High | OIDC (no credentials), MFA, CloudTrail audit, immediate failover |
 | GitHub Platform Outage | Low | Low | AWS primary infrastructure unaffected, remains operational |
 | DDoS Attack on CloudFront | Low | Low | AWS Shield Standard protection, 600+ edge locations |
@@ -466,7 +472,6 @@ Referrer-Policy: strict-origin-when-cross-origin
 | Compromised GitHub Account | Low | High | MFA, SSH keys, GPG signing, branch protection, AWS unaffected |
 | Dependency Vulnerability | Medium | Low | Dependabot, rapid patching, static site minimizes attack surface |
 | Content Defacement | Low | Medium | Git rollback, S3 versioning, branch protection, CloudFront invalidation |
-| Multi-Region S3 Failure | Very Low | Medium | GitHub Pages failover, planned second region adds redundancy |
 
 ### 6.2 Accepted Risks
 
@@ -529,4 +534,4 @@ Referrer-Policy: strict-origin-when-cross-origin
 - **Format:** Markdown
 - **Classification:** Public
 - **Next Review:** 2027-02-08
-- **Change History:** v1.1 (2026-02-08) - Added AWS infrastructure, dual-deployment architecture, improved security controls
+- **Change History:** v1.2 (2026-02-08) - Updated for active multi-region S3 replication (us-east-1 → eu-west-1), CloudFront origin failover on 500+ errors, improved risk score to 2.8/10.0

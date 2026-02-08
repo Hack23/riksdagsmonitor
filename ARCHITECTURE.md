@@ -1,13 +1,13 @@
 # 🏗️ Riksdagsmonitor - System Architecture
 
-**Document Version:** 1.2  
+**Document Version:** 1.3  
 **Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
 ## Executive Summary
 
-Riksdagsmonitor is a static website providing Swedish Parliament intelligence through CIA platform integration. The platform employs a **dual-deployment architecture** with AWS (CloudFront + S3 multi-region) as primary infrastructure and GitHub Pages as disaster recovery fallback. This document describes the system architecture, component interactions, data flows, and design decisions aligned with Hack23 AB's ISMS standards.
+Riksdagsmonitor is a static website providing Swedish Parliament intelligence through CIA platform integration. The platform employs a **dual-deployment architecture** with AWS (CloudFront + S3 multi-region: us-east-1 primary, eu-west-1 replica) as primary infrastructure and GitHub Pages as disaster recovery fallback. CloudFront is configured for automatic origin failover to eu-west-1 on 500+ HTTP errors. This document describes the system architecture, component interactions, data flows, and design decisions aligned with Hack23 AB's ISMS standards.
 
 ## 1. System Overview
 
@@ -27,7 +27,7 @@ graph TB
     subgraph "Primary: AWS Infrastructure"
         CF[CloudFront CDN<br/>Global Edge Locations]
         S3US[S3 Bucket<br/>us-east-1 Primary]
-        S3EU[S3 Bucket<br/>Second Region Planned]
+        S3EU[S3 Bucket<br/>eu-west-1 Replica<br/>Active Replication]
     end
     
     subgraph "Disaster Recovery: GitHub Pages"
@@ -61,7 +61,8 @@ graph TB
     Route53 -.->|Failover Standby| GHCDN
     
     CF --> S3US
-    CF -.-> S3EU
+    CF -.->|Origin Failover on 500+ errors| S3EU
+    S3US -->|Real-time Replication| S3EU
     GHCDN --> GHRepo
     
     S3US --> Static
@@ -98,7 +99,7 @@ graph TB
 | **Static Website** | Present intelligence data | HTML/CSS | ✅ Active |
 | **AWS CloudFront** | Primary CDN (global edge locations) | AWS CloudFront | ✅ Active (Primary) |
 | **AWS S3 (us-east-1)** | Primary storage bucket | Amazon S3 | ✅ Active (Primary) |
-| **AWS S3 (Second Region)** | Multi-region replication | Amazon S3 | 🔄 Planned |
+| **AWS S3 (eu-west-1)** | Multi-region replica bucket | Amazon S3 | ✅ Active (Replication) |
 | **Route 53** | DNS with health checks and failover | AWS Route 53 | ✅ Active |
 | **GitHub Pages** | Disaster recovery hosting | GitHub CDN | ✅ Active (DR Standby) |
 | **GitHub Actions** | CI/CD automation (AWS + GitHub) | YAML workflows | ✅ Active |
@@ -498,7 +499,8 @@ graph TB
 **CloudFront Performance:**
 - **Edge Locations:** 600+ Points of Presence globally
 - **Cache Hit Ratio:** 95%+ for static assets
-- **Origin Shield:** Optional caching layer (planned)
+- **Origin Failover:** Automatic failover to eu-west-1 on 500+ errors from us-east-1
+- **Origin Shield:** Optional caching layer (available, can be enabled)
 - **Cache TTL:** 1 hour (HTML), 1 year (CSS/JS/images)
 - **Compression:** Brotli + Gzip automatic compression
 
@@ -592,8 +594,9 @@ graph TB
 
 | Dependency | Type | Risk Level | Mitigation |
 |------------|------|------------|------------|
-| **AWS CloudFront** | Infrastructure (Primary) | LOW | 99.9% SLA, multi-region, failover to GitHub Pages |
-| **AWS S3** | Storage (Primary) | LOW | 99.9% SLA, versioning enabled, multi-region planned |
+| **AWS CloudFront** | Infrastructure (Primary) | LOW | 99.9% SLA, multi-region origins, automatic failover, GitHub Pages failover |
+| **AWS S3 (us-east-1)** | Storage (Primary) | LOW | 99.9% SLA, versioning enabled, replicates to eu-west-1 |
+| **AWS S3 (eu-west-1)** | Storage (Replica) | LOW | 99.9% SLA, automatic failover origin for CloudFront |
 | **AWS Route 53** | DNS | VERY LOW | 100% SLA, health checks, automatic failover |
 | **GitHub Pages** | Infrastructure (DR) | LOW | 99.9% SLA (estimated), disaster recovery only |
 | **GitHub Actions** | CI/CD | LOW | Dual deployment strategy, can manually deploy to AWS |
@@ -661,13 +664,15 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 
 **Q3 2026:**
 - Advanced link monitoring
-- Security header enhancement
+- Security header enhancement via Lambda@Edge
 - Accessibility improvements
+- CloudFront Origin Shield (additional caching layer)
 
 **Q4 2026:**
 - Multi-language content generation
 - A/B testing framework
 - Analytics integration
+- AWS WAF integration for advanced threat protection
 
 ## 11. Design Decisions
 
@@ -676,9 +681,9 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 | Decision | Rationale | Trade-offs |
 |----------|-----------|------------|
 | **Static HTML/CSS Only** | Eliminates XSS, SQLi, CSRF vulnerabilities | Limited interactivity |
-| **AWS Primary + GitHub Pages DR** | 99.997% availability, enterprise CDN, failover protection | Increased complexity, cost |
-| **CloudFront CDN (600+ PoPs)** | Global performance, low latency, DDoS protection | AWS dependency |
-| **S3 Multi-Region** | Data durability, regional failover, compliance | Planned feature, future cost |
+| **AWS Primary + GitHub Pages DR** | 99.997% availability, enterprise CDN, failover protection, multi-region | Increased complexity, cost |
+| **CloudFront CDN (600+ PoPs)** | Global performance, low latency, DDoS protection, origin failover | AWS dependency |
+| **S3 Multi-Region (us-east-1 + eu-west-1)** | Data durability, regional failover, <30s automatic failover on errors | Replication cost, storage duplication |
 | **Route 53 DNS** | Health checks, automatic failover, 100% SLA | AWS dependency |
 | **Dual Deployment Strategy** | Business continuity, zero-downtime failover | Deployment complexity |
 | **External CIA Platform** | Reuse existing OSINT infrastructure | External service dependency |
@@ -690,7 +695,8 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 1. **Security by Design:** Static files eliminate common web vulnerabilities
 2. **Defense in Depth:** Multiple security layers (network, application, access control)
 3. **High Availability:** Dual deployment strategy ensures 99.997% uptime
-4. **Business Continuity:** Automatic failover protects against infrastructure outages
+4. **Business Continuity:** Automatic origin failover (CloudFront to eu-west-1) + DNS failover (Route 53 to GitHub Pages)
+5. **Multi-Region Resilience:** Real-time S3 replication us-east-1 → eu-west-1, <30s failover on origin errors
 5. **Simplicity:** Minimal technology stack reduces maintenance burden
 6. **Transparency:** Open source, public ISMS, documented architecture
 7. **Performance:** Global CDN (600+ PoPs), edge caching, optimized assets
@@ -720,4 +726,4 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 - **Format:** Markdown with Mermaid diagrams
 - **Classification:** Public
 - **Next Review:** 2026-04-29
-- **Change History:** v1.2 (2026-02-08) - Added AWS dual-deployment architecture
+- **Change History:** v1.3 (2026-02-08) - Updated for active multi-region S3 replication (us-east-1 → eu-west-1), CloudFront origin failover on 500+ errors
