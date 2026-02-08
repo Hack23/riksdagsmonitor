@@ -25,7 +25,7 @@
 
 **Riksdagsmonitor's** business continuity framework demonstrates how **geographic redundancy and automated failover directly enable operational resilience and service availability.** Our dual-deployment strategy serves as both operational necessity and technical demonstration of enterprise-grade reliability principles.
 
-This plan ensures the riksdagsmonitor.com platform remains operational during infrastructure disruptions through AWS multi-region deployment (primary) and GitHub Pages disaster recovery (standby), achieving 99.998% availability with sub-minute recovery times.
+This plan is designed to maintain the riksdagsmonitor.com platform during infrastructure disruptions through AWS multi-region deployment (primary) and GitHub Pages disaster recovery (standby), targeting 99.998% availability under normal operating conditions, with CloudFront origin failover typically completing in under 60 seconds and DNS/Route 53 failover (including health checks and DNS propagation) completing within approximately 15 minutes during full-region incidents.
 
 *— James Pether Sörling, CEO/Founder*
 
@@ -153,13 +153,13 @@ These are business continuity **design objectives**, not contractual guarantees.
 | Component | Provider SLA | Failover Mechanism | Target RTO | Target RPO | Notes |
 |-----------|--------------|-------------------|------------|------------|-------|
 | **🌍 CloudFront** | 99.9% (AWS SLA) | Origin failover | < 30 seconds | ≈ 0 minutes | Cache may serve slightly stale content during failover |
-| **💾 S3 us-east-1** | 99.99% (AWS SLA) | Multi-region replica | < 30 seconds | < 1 minute | Cross-region replication typically < 15 min; static content allows near-zero effective RPO |
-| **💾 S3 eu-west-1** | 99.99% (AWS SLA) | Primary failback | < 30 seconds | < 1 minute | Replication lag possible; static content minimizes impact |
-| **🌐 Route 53** | 100% (AWS SLA) | Health check failover (30s × 3 checks) | 15 minutes | ≈ 0 minutes | Includes health check detection (90s) + DNS TTL propagation |
-| **📝 GitHub Pages** | 99.9% (target; no formal SLA) | Manual DNS update | 15 minutes | Up to last deployment | Static content; RPO = time since last successful GitHub Actions deploy |
-| **🎯 Combined** | **Design target ≈ 99.998%** | Automated multi-layer | **< 30 seconds (objective)** | **Near-zero for static content (objective)** | Theoretical calculation assuming largely independent failures |
+| **💾 S3 us-east-1** | 99.99% (AWS SLA) | Multi-region replica | < 30 seconds | < 15 minutes | S3 cross-region replication typically completes within minutes; static content allows near-zero effective RPO |
+| **💾 S3 eu-west-1** | 99.99% (AWS SLA) | Primary failback | < 30 seconds | < 15 minutes | Replication lag possible; static content minimizes data loss impact |
+| **🌐 Route 53** | 100% (AWS SLA) | Health check failover (30s × 3 checks) | 15 minutes | ≈ 0 minutes | Includes health check detection (90s) + DNS TTL propagation (~14 min) |
+| **📝 GitHub Pages** | 99.9% (target; no formal SLA) | Route 53 automated DNS failover | 15 minutes | Up to last deployment | Static content served via Route 53 health-check based DNS failover; RPO = time since last successful GitHub Actions deploy |
+| **🎯 Combined** | **Design target ≈ 99.998%** | Automated multi-layer | **< 30 seconds (objective)** | **< 15 minutes for static content (objective)** | Theoretical calculation assuming largely independent failures |
 
-_**Disclaimer**: These are business continuity **design objectives** based on AWS published SLAs (CloudFront 99.9%, S3 99.99%, Route 53 100%) and GitHub public reliability targets. The combined 99.998% availability is a **theoretical design target** assuming largely independent failures. Actual end-to-end availability may be lower in practice. RPO values assume static content characteristics; replication lag may result in RPO > 0 in some scenarios._
+_**Disclaimer**: These are business continuity **design objectives** based on AWS published SLAs (CloudFront 99.9%, S3 99.99%, Route 53 100%) and GitHub public reliability targets. The combined 99.998% availability is a **theoretical design target** assuming largely independent failures. Actual end-to-end availability may be lower in practice. RPO values reflect S3 cross-region replication characteristics (typically < 15 minutes) and static content deployment timing; actual RPO may vary._
 
 ---
 
@@ -193,10 +193,10 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 **🔍 Detection:**
 - Route 53 health checks fail for CloudFront endpoint
-- Automated DNS failover to GitHub Pages after 3 consecutive failures (15 minutes)
+- Automated DNS failover to GitHub Pages after health check detection + DNS propagation (≈ 15 minutes total)
 
 **🔄 Recovery Procedure:**
-1. ⚕️ Route 53 detects CloudFront health check failures (3 × 5 minutes = 15 minutes)
+1. ⚕️ Route 53 detects CloudFront health check failures (30s intervals × 3 failures = 90 seconds detection time)
 2. 🌐 DNS automatically updates riksdagsmonitor.com → GitHub Pages
 3. 📊 Verify GitHub Pages serving traffic
 4. 📧 Notify CEO of failover event
@@ -405,6 +405,8 @@ graph TD
 | **💾 Data Synchronization** | 0 RPO | 0 seconds (real-time) | ✅ On track |
 | **🧪 BCP Testing** | Quarterly | Last tested 2026-02 | ✅ Current |
 | **📊 Monitoring Coverage** | 100% | 100% (all endpoints) | ✅ Complete |
+
+> **Note:** The "Current Status" values in this table are illustrative planning examples. Actual operational metrics are monitored via AWS CloudWatch, Route 53 health check logs, and GitHub Pages status, and documented in operational runbooks.
 
 ---
 

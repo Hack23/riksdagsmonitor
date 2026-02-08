@@ -54,8 +54,8 @@ Riksdags Monitor is a static website providing Swedish Parliament intelligence a
 - **🛡️ DDoS & Threat Protection:**
   - AWS Shield Standard (automatic DDoS protection)
   - CloudFront geographic restrictions capability
-  - Rate limiting via CloudFront distribution settings
-  - Web Application Firewall (WAF) ready for future implementation
+  - Planned request rate limiting via AWS WAF rate-based rules associated with CloudFront
+  - AWS Web Application Firewall (WAF) planned for advanced application-layer threat protection and rate limiting
 
 ### 1.3 Architecture Diagram
 
