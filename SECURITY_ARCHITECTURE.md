@@ -7,7 +7,7 @@
 
 ## 🎯 Executive Summary
 
-Riksdags Monitor is a static website providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS) and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
+Riksdagsmonitor is a static website providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS) and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
 
 **Security Posture:** Defense-in-depth static website with dual-deployment architecture (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access, and comprehensive CI/CD security controls.
 
@@ -89,7 +89,7 @@ graph TB
     User -.->|HTTPS Only TLS 1.3 (DR)| GHCDN
     
     CF -->|Cache Miss| S3US
-    CF -.->|Origin Failover on 500+ errors| S3EU
+    CF -.->|Origin Failover on 5xx errors| S3EU
     S3US -->|Async Cross-Region Replication (&lt;15 min RPO)| S3EU
     
     User -->|External Links| CIA

@@ -126,7 +126,7 @@ graph TB
         S3_EU[💾 S3 eu-west-1<br/>Replica Origin<br/>Asynchronous Replication (&lt;15 min RPO)]
         
         CF -->|Primary| S3_US
-        CF -->|Failover on 500+| S3_EU
+        CF -->|Failover on 5xx errors| S3_EU
         S3_US -.->|Replication| S3_EU
     end
     
@@ -137,7 +137,7 @@ graph TB
     USERS[👥 Users] -->|DNS Query| DNS
     HEALTHCHECK -->|Monitor| CF
     DNS -->|Healthy: Return CloudFront alias/hostname| USERS
-    DNS -.->|3 Failed Checks<br/>15 min failover| USERS
+    DNS -.->|3 Failed Checks (~90s detection)<br/>+ DNS TTL/propagation (up to ~15 min total)| USERS
     USERS -->|HTTPS/TLS 1.3| CF
     USERS -.->|HTTPS/TLS 1.3 (DR)| GH
     
