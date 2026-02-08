@@ -115,8 +115,9 @@ graph TB
   }
 }%%
 graph TB
-    subgraph DNS["🌐 Route 53 DNS"]
-        HEALTHCHECK[⚕️ Health Check<br/>riksdagsmonitor.com<br/>30-second intervals]
+    subgraph ROUTE53["🌐 Route 53 DNS"]
+        DNS[📡 DNS Service<br/>Health Checks Every 30s]
+        HEALTHCHECK[⚕️ Health Checker<br/>Tests CloudFront Endpoint]
     end
     
     subgraph PRIMARY["☁️ AWS Primary (Active)"]
@@ -133,25 +134,32 @@ graph TB
         GH[📄 GitHub Pages<br/>gh-pages branch<br/>Automated Deployment]
     end
     
-    USERS[👥 Users] --> HEALTHCHECK
-    HEALTHCHECK -->|Healthy| CF
-    HEALTHCHECK -->|Unhealthy<br/>15 min failover| GH
+    USERS[👥 Users] -->|DNS Query| DNS
+    HEALTHCHECK -->|Monitor| CF
+    DNS -->|Healthy: Return CF IP| USERS
+    DNS -.->|3 Failed Checks<br/>15 min failover| USERS
+    USERS -->|HTTPS/TLS 1.3| CF
+    USERS -.->|HTTPS/TLS 1.3 (DR)| GH
     
-    style DNS fill:#1565C0
+    style ROUTE53 fill:#1565C0
     style PRIMARY fill:#4CAF50
     style DR fill:#FF9800
 ```
 
-### 🛡️ Availability Guarantees
+### 🛡️ Availability Objectives & Assumptions
 
-| Component | SLA | Failover Mechanism | RTO | RPO |
-|-----------|-----|-------------------|-----|-----|
-| **🌍 CloudFront** | 99.9% | Origin failover | < 30 seconds | 0 minutes |
-| **💾 S3 us-east-1** | 99.99% | Multi-region replica | < 30 seconds | 0 minutes |
-| **💾 S3 eu-west-1** | 99.99% | Primary failback | < 30 seconds | 0 minutes |
-| **🌐 Route 53** | 100% | Health check failover | 15 minutes | 0 minutes |
-| **📝 GitHub Pages** | 99.9% | Manual DNS update | 15 minutes | 0 minutes |
-| **🎯 Combined** | **99.998%** | Automated multi-layer | **< 30 seconds** | **0 minutes** |
+These are business continuity **design objectives**, not contractual guarantees. Availability figures are based on underlying cloud provider SLAs and documented reliability targets.
+
+| Component | Provider SLA | Failover Mechanism | Target RTO | Target RPO | Notes |
+|-----------|--------------|-------------------|------------|------------|-------|
+| **🌍 CloudFront** | 99.9% (AWS SLA) | Origin failover | < 30 seconds | ≈ 0 minutes | Cache may serve slightly stale content during failover |
+| **💾 S3 us-east-1** | 99.99% (AWS SLA) | Multi-region replica | < 30 seconds | < 1 minute | Cross-region replication typically < 15 min; static content allows near-zero effective RPO |
+| **💾 S3 eu-west-1** | 99.99% (AWS SLA) | Primary failback | < 30 seconds | < 1 minute | Replication lag possible; static content minimizes impact |
+| **🌐 Route 53** | 100% (AWS SLA) | Health check failover (30s × 3 checks) | 15 minutes | ≈ 0 minutes | Includes health check detection (90s) + DNS TTL propagation |
+| **📝 GitHub Pages** | 99.9% (target; no formal SLA) | Manual DNS update | 15 minutes | Up to last deployment | Static content; RPO = time since last successful GitHub Actions deploy |
+| **🎯 Combined** | **Design target ≈ 99.998%** | Automated multi-layer | **< 30 seconds (objective)** | **Near-zero for static content (objective)** | Theoretical calculation assuming largely independent failures |
+
+_**Disclaimer**: These are business continuity **design objectives** based on AWS published SLAs (CloudFront 99.9%, S3 99.99%, Route 53 100%) and GitHub public reliability targets. The combined 99.998% availability is a **theoretical design target** assuming largely independent failures. Actual end-to-end availability may be lower in practice. RPO values assume static content characteristics; replication lag may result in RPO > 0 in some scenarios._
 
 ---
 
@@ -296,7 +304,7 @@ graph TB
 | **☁️ AWS Support** | 🌐 Enterprise Portal | 📞 Phone support | < 15 minutes |
 | **📝 GitHub Support** | 🌐 Enterprise Portal | 📧 Email | < 1 hour |
 | **🌐 Route 53 Operations** | ☁️ AWS Console | 📱 Mobile app | < 5 minutes |
-| **📊 Monitoring Alerts** | 📧 Email + 📱 SMS | 💬 Slack | Real-time |
+| **📊 Monitoring Alerts** | 📧 Email + 📱 SMS | 💬 Chat/IM | Real-time |
 
 ---
 
@@ -370,10 +378,10 @@ graph TD
 ### 🎯 Testing Methodology
 
 **Quarterly Origin Failover Test:**
-1. 🔧 Temporarily disable S3 us-east-1 bucket (maintenance mode)
-2. ⏱️ Measure CloudFront automatic failover time
-3. ✅ Verify content served from eu-west-1
-4. 🔙 Re-enable us-east-1, confirm failback
+1. 🔧 Temporarily deny CloudFront access to S3 us-east-1 via bucket policy (add temporary Deny statement for CloudFront Origin Access Identity)
+2. ⏱️ Measure CloudFront automatic failover time to eu-west-1
+3. ✅ Verify content served from eu-west-1 origin
+4. 🔙 Remove the temporary Deny from us-east-1 bucket policy and confirm failback to primary origin
 5. 📝 Document results and improvements
 
 **Semi-Annual DNS Failover Test:**
@@ -421,7 +429,7 @@ As CEO/Founder is the sole employee, traditional business continuity teams are n
 |--------------|----------------|---------------|
 | **🤖 Automated Failover** | CloudFront origin failover (< 30s), Route 53 DNS failover (15 min) | Eliminates manual recovery for primary scenarios |
 | **📚 Documentation** | Complete runbooks in BCPPlan.md, ARCHITECTURE.md, SECURITY_ARCHITECTURE.md | Enables recovery by any technical professional |
-| **🔄 Infrastructure-as-Code** | All AWS resources defined in Terraform/CloudFormation | Reproducible infrastructure from Git repository |
+| **🔄 Infrastructure-as-Code (Planned)** | AWS static site and DNS infrastructure to be codified in Terraform/CloudFormation (see FUTURE_SECURITY_ARCHITECTURE.md) | Future-state: fully reproducible infrastructure from version-controlled IaC |
 | **📊 Comprehensive Monitoring** | CloudWatch, Route 53 health checks, automated alerts | Real-time detection and notification |
 | **💾 Geographic Redundancy** | Multi-region S3 (us-east-1 + eu-west-1), GitHub Pages standby | No single point of failure |
 

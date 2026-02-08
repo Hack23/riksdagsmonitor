@@ -29,7 +29,35 @@ Riksdags Monitor is a static website providing Swedish Parliament intelligence a
 - GitHub Pages hosting infrastructure (Disaster Recovery)
 - AWS Route 53 DNS with health checks and automatic failover
 
-### 1.2 Architecture Diagram
+### 1.2 🔐 AWS Security Controls
+
+**AWS Infrastructure Security (Primary Deployment):**
+
+- **🔑 Authentication & Access Control:**
+  - GitHub Actions OIDC integration for AWS authentication (ephemeral credentials)
+  - No long-lived AWS access keys or IAM user credentials stored
+  - Least-privilege IAM roles with time-limited session tokens
+  - S3 bucket policies restrict access to CloudFront Origin Access Identity only
+
+- **📊 Audit Logging & Monitoring:**
+  - AWS CloudTrail enabled for all API activity logging
+  - 90-day log retention in dedicated S3 audit bucket
+  - CloudWatch metrics for S3, CloudFront, and Route 53
+  - Real-time alerting on security events and anomalies
+
+- **🔒 Data Protection:**
+  - S3 server-side encryption at rest (AES-256)
+  - S3 bucket versioning enabled for rollback capability
+  - Real-time cross-region replication (us-east-1 → eu-west-1)
+  - TLS 1.3 encryption in transit via CloudFront
+
+- **🛡️ DDoS & Threat Protection:**
+  - AWS Shield Standard (automatic DDoS protection)
+  - CloudFront geographic restrictions capability
+  - Rate limiting via CloudFront distribution settings
+  - Web Application Firewall (WAF) ready for future implementation
+
+### 1.3 Architecture Diagram
 
 ```mermaid
 graph TB
@@ -49,9 +77,11 @@ graph TB
     
     CIA[CIA Platform<br/>www.hack23.com/cia]
     
-    User -->|HTTPS Only TLS 1.3| Route53
-    Route53 -->|Primary Health Check OK| CF
-    Route53 -.->|Failover if Primary Down| GHCDN
+    User -->|DNS Query| Route53
+    Route53 -->|DNS Response: CloudFront Primary| User
+    Route53 -.->|DNS Response: GitHub Pages on Failover| User
+    User -->|HTTPS Only TLS 1.3| CF
+    User -.->|HTTPS Only TLS 1.3 (DR)| GHCDN
     
     CF -->|Cache Miss| S3US
     CF -.->|Origin Failover on 500+ errors| S3EU

@@ -52,9 +52,11 @@ graph TB
     end
     
     Users --> Browsers
-    Browsers -->|HTTPS/TLS 1.3| Route53
-    Route53 -->|Primary| CF
-    Route53 -.->|Failover on Health Check Fail| GHCDN
+    Browsers -->|DNS Query| Route53
+    Route53 -->|DNS Response: CF Primary| Browsers
+    Route53 -.->|DNS Response: GHCDN on Failover| Browsers
+    Browsers -->|HTTPS/TLS 1.3| CF
+    Browsers -.->|HTTPS/TLS 1.3 (DR)| GHCDN
     CF -->|Origin| S3US
     CF -.->|Origin Failover on 500+ errors| S3EU
     S3US -.->|Real-time Replication| S3EU
