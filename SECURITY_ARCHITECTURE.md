@@ -89,16 +89,13 @@ graph TB
     
     User -->|External Links| CIA
     
-    subgraph "Disaster Recovery: GitHub"
-        GitHub[GitHub Repository<br/>main branch]
-        GHCDN --> GitHub
-    end
-    
     subgraph "GitHub Infrastructure"
+        GitHub[GitHub Repository<br/>main branch]
         Actions[GitHub Actions<br/>CI/CD Dual Deploy]
         Security[Security Scanning<br/>Dependabot, CodeQL, Secrets]
     end
     
+    GHCDN --> GitHub
     Actions -->|Deploy| S3US
     Actions -->|Deploy| GitHub
     Security -->|Monitor| GitHub

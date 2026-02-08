@@ -167,7 +167,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 ### Scenario 1: S3 us-east-1 Region Failure
 
-[![RTO](https://img.shields.io/badge/RTO-<_30_seconds-success?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-<_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Transparent-lightgreen?style=flat-square&logo=users&logoColor=white)](#)
+[![RTO](https://img.shields.io/badge/RTO-%3C_30_seconds-success?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-%3C_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Transparent-lightgreen?style=flat-square&logo=users&logoColor=white)](#)
 
 **🔍 Detection:**
 - CloudFront origin monitoring detects 500+ HTTP errors from us-east-1
@@ -189,7 +189,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 ### Scenario 2: CloudFront Global Outage
 
-[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-<_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&logo=users&logoColor=black)](#)
+[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-%3C_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&logo=users&logoColor=black)](#)
 
 **🔍 Detection:**
 - Route 53 health checks fail for CloudFront endpoint
@@ -213,7 +213,7 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 
 ### Scenario 3: Both AWS S3 Regions Unavailable
 
-[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-<_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&logo=users&logoColor=black)](#)
+[![RTO](https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&logo=clock&logoColor=white)](#) [![RPO](https://img.shields.io/badge/RPO-%3C_15_minutes-success?style=flat-square&logo=database&logoColor=white)](#) [![Impact](https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&logo=users&logoColor=black)](#)
 
 **🔍 Detection:**
 - CloudFront cannot reach either S3 origin

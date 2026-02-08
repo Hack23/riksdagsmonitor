@@ -108,21 +108,26 @@ graph TB
 sequenceDiagram
     participant User
     participant Browser
-    participant DNS
-    participant CDN as GitHub Pages CDN
+    participant DNS as Route 53 DNS
+    participant CDN as AWS CloudFront
+    participant S3 as S3 us-east-1
     participant Static as Static Files
     participant CIA as CIA Platform
     
     User->>Browser: Visit riksdagsmonitor.com
     Browser->>DNS: Resolve domain
-    DNS-->>Browser: CDN IP address
+    DNS-->>Browser: CloudFront endpoint
     Browser->>CDN: HTTPS request
-    CDN->>Static: Fetch index.html
-    Static-->>CDN: HTML content
+    CDN->>S3: Fetch index.html
+    S3->>Static: Get content
+    Static-->>S3: HTML content
+    S3-->>CDN: HTML content
     CDN-->>Browser: Render page
     Browser->>CDN: Fetch styles.css
-    CDN->>Static: Get CSS
-    Static-->>CDN: CSS content
+    CDN->>S3: Get CSS
+    S3->>Static: Get content
+    Static-->>S3: CSS content
+    S3-->>CDN: CSS content
     CDN-->>Browser: Apply styling
     
     Note over Browser,CIA: User clicks CIA link
@@ -130,7 +135,7 @@ sequenceDiagram
     CIA-->>Browser: Interactive data
     
     Note over Browser: Static content cached
-    Note over CDN: CDN caching active
+    Note over CDN: Edge caching active (600+ PoPs)
 ```
 
 ### 2.2 CI/CD Deployment Flow
@@ -156,9 +161,10 @@ graph LR
     H -->|No| I
     
     J --> K
-    K --> L[GitHub Pages Deploy]
-    L --> M[CDN Update]
-    M --> N[Live on riksdagsmonitor.com]
+    K --> L[Dual Deploy: S3 + GitHub Pages]
+    L --> M[CloudFront Update Primary]
+    L --> N[GitHub Pages DR Standby]
+    M --> O[Live on riksdagsmonitor.com]
     
     style D fill:#4caf50
     style E fill:#ff9800
