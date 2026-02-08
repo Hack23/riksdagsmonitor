@@ -1,7 +1,7 @@
 # 🛡️ Riksdagsmonitor - Security Architecture
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-01-29  
+**Document Version:** 1.1  
+**Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -9,7 +9,7 @@
 
 Riksdags Monitor is a static website providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS) and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
 
-**Security Posture:** Defense-in-depth static website with GitHub infrastructure security, HTTPS-only access, and comprehensive CI/CD security controls.
+**Security Posture:** Defense-in-depth static website with dual-deployment architecture (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access, and comprehensive CI/CD security controls.
 
 ## 1. 🏗️ System Overview
 
@@ -25,33 +25,56 @@ Riksdags Monitor is a static website providing Swedish Parliament intelligence a
 - Static HTML/CSS website
 - Multi-language support (14 languages)
 - Integration with CIA platform for data visualization
-- GitHub Pages hosting infrastructure
+- AWS CloudFront + S3 hosting infrastructure (Primary)
+- GitHub Pages hosting infrastructure (Disaster Recovery)
+- AWS Route 53 DNS with health checks and automatic failover
 
 ### 1.2 Architecture Diagram
 
 ```mermaid
 graph TB
     User[User Browser]
-    CDN[GitHub Pages CDN]
-    GitHub[GitHub Repository]
+    Route53[AWS Route 53<br/>DNS + Health Checks]
+    
+    subgraph "Primary: AWS Infrastructure"
+        CF[CloudFront CDN<br/>600+ Edge Locations]
+        S3US[S3 Bucket us-east-1<br/>Primary Storage + Versioning]
+        S3EU[S3 Bucket eu-west-1<br/>Real-time Replica<br/>Active Failover Origin]
+    end
+    
+    subgraph "Disaster Recovery: GitHub"
+        GHCDN[GitHub Pages CDN<br/>Standby Deployment]
+        GitHub[GitHub Repository<br/>Source of Truth]
+    end
+    
     CIA[CIA Platform<br/>www.hack23.com/cia]
     
-    User -->|HTTPS Only| CDN
-    CDN -->|Serves Static Content| GitHub
+    User -->|HTTPS Only TLS 1.3| Route53
+    Route53 -->|Primary Health Check OK| CF
+    Route53 -.->|Failover if Primary Down| GHCDN
+    
+    CF -->|Cache Miss| S3US
+    CF -.->|Origin Failover on 500+ errors| S3EU
+    S3US -->|Real-time Replication| S3EU
+    GHCDN --> GitHub
+    
     User -->|External Links| CIA
     
     subgraph "GitHub Infrastructure"
         GitHub
-        Actions[GitHub Actions<br/>CI/CD Pipeline]
-        Security[Security Scanning<br/>Dependabot, CodeQL]
+        Actions[GitHub Actions<br/>CI/CD Dual Deploy]
+        Security[Security Scanning<br/>Dependabot, CodeQL, Secrets]
     end
     
+    Actions -->|Deploy| S3US
     Actions -->|Deploy| GitHub
     Security -->|Monitor| GitHub
     
     style User fill:#e1f5ff
-    style CDN fill:#90caf9
-    style GitHub fill:#4caf50
+    style Route53 fill:#ff9800
+    style CF fill:#4caf50
+    style S3US fill:#2196f3
+    style GHCDN fill:#90caf9
     style Actions fill:#ff9800
     style Security fill:#f44336
     style CIA fill:#9c27b0
