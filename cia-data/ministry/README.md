@@ -183,7 +183,7 @@ wc -l *.csv
 
 - **Dashboard**: `js/ministry-dashboard.js` (1,373 lines)
 - **Styles**: `styles.css` (dashboard section, lines 3552-4003)
-- **Documentation**: `MINISTRY_DASHBOARD_IMPLEMENTATION.md`
+- **Documentation**: See main repository README and inline documentation in `js/ministry-dashboard.js`
 - **HTML**: All 14 language files (index*.html) with dashboard section
 
 ## License

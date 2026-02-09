@@ -133,7 +133,7 @@ cd cia-data/ministry && ./download-ministry-data.sh
 
 ## Related Documentation
 
-- **Ministry Dashboard**: `MINISTRY_DASHBOARD_IMPLEMENTATION.md`
+- **Ministry Dashboard**: See the main dashboard implementation documentation in `js/ministry-dashboard.js`
 - **Security Architecture**: `SECURITY_ARCHITECTURE.md` (Section 2.3.1)
 - **Overall Architecture**: `ARCHITECTURE.md`
 - **CIA Platform**: https://hack23.github.io/cia/

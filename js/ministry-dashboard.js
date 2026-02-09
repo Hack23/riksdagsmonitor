@@ -253,7 +253,14 @@
       high: 'High',
       medium: 'Medium',
       low: 'Low',
-      dataAttribution: 'Data by CIA Platform'
+      dataAttribution: 'Data by CIA Platform',
+      tableCaption: 'Government Ministry Risk and Productivity Data',
+      tableHeaders: {
+        ministry: 'Ministry',
+        riskScore: 'Risk Score',
+        riskLevel: 'Risk Level',
+        productivity: 'Productivity'
+      }
     },
     sv: {
       title: 'Statsrådens Risk & Inflytande',
@@ -269,7 +276,14 @@
       high: 'Hög',
       medium: 'Medel',
       low: 'Låg',
-      dataAttribution: 'Data från CIA-plattformen'
+      dataAttribution: 'Data från CIA-plattformen',
+      tableCaption: 'Regeringens Departments Risk och Produktivitetsdata',
+      tableHeaders: {
+        ministry: 'Departement',
+        riskScore: 'Riskpoäng',
+        riskLevel: 'Risknivå',
+        productivity: 'Produktivitet'
+      }
     },
     da: {
       title: 'Ministres Risiko & Indflydelse',
@@ -285,7 +299,14 @@
       high: 'Høj',
       medium: 'Medium',
       low: 'Lav',
-      dataAttribution: 'Data af CIA Platform'
+      dataAttribution: 'Data af CIA Platform',
+      tableCaption: 'Regerings Ministeriums Risiko og Produktivitetsdata',
+      tableHeaders: {
+        ministry: 'Ministerium',
+        riskScore: 'Risikoscore',
+        riskLevel: 'Risikoniveau',
+        productivity: 'Produktivitet'
+      }
     },
     no: {
       title: 'Statsråders Risiko & Innflytelse',
@@ -301,7 +322,14 @@
       high: 'Høy',
       medium: 'Medium',
       low: 'Lav',
-      dataAttribution: 'Data fra CIA Platform'
+      dataAttribution: 'Data fra CIA Platform',
+      tableCaption: 'Regjeringens Departements Risiko og Produktivitetsdata',
+      tableHeaders: {
+        ministry: 'Departement',
+        riskScore: 'Risikoscore',
+        riskLevel: 'Risikonivå',
+        productivity: 'Produktivitet'
+      }
     },
     fi: {
       title: 'Ministerien Riski & Vaikutusvalta',
@@ -349,7 +377,14 @@
       high: 'Élevé',
       medium: 'Moyen',
       low: 'Faible',
-      dataAttribution: 'Données de la plateforme CIA'
+      dataAttribution: 'Données de la plateforme CIA',
+      tableCaption: 'Données de Risque et de Productivité des Ministères',
+      tableHeaders: {
+        ministry: 'Ministère',
+        riskScore: 'Score de Risque',
+        riskLevel: 'Niveau de Risque',
+        productivity: 'Productivité'
+      }
     },
     es: {
       title: 'Riesgo e Influencia de Ministros',
@@ -381,7 +416,14 @@
       high: 'Hoog',
       medium: 'Gemiddeld',
       low: 'Laag',
-      dataAttribution: 'Gegevens van CIA Platform'
+      dataAttribution: 'Gegevens van CIA Platform',
+      tableCaption: 'Regeringsministerie Risico- en Productiviteitsgegevens',
+      tableHeaders: {
+        ministry: 'Ministerie',
+        riskScore: 'Risicoscore',
+        riskLevel: 'Risiconiveau',
+        productivity: 'Productiviteit'
+      }
     },
     ar: {
       title: 'مخاطر وتأثير الوزراء',
@@ -397,7 +439,14 @@
       high: 'عالي',
       medium: 'متوسط',
       low: 'منخفض',
-      dataAttribution: 'بيانات من منصة CIA'
+      dataAttribution: 'بيانات من منصة CIA',
+      tableCaption: 'بيانات المخاطر والإنتاجية للوزارات الحكومية',
+      tableHeaders: {
+        ministry: 'الوزارة',
+        riskScore: 'درجة المخاطر',
+        riskLevel: 'مستوى المخاطر',
+        productivity: 'الإنتاجية'
+      }
     },
     he: {
       title: 'סיכון והשפעה של שרים',
@@ -413,7 +462,14 @@
       high: 'גבוה',
       medium: 'בינוני',
       low: 'נמוך',
-      dataAttribution: 'נתונים מפלטפורמת CIA'
+      dataAttribution: 'נתונים מפלטפורמת CIA',
+      tableCaption: 'נתוני סיכון ופרודוקטיביות של משרדי הממשלה',
+      tableHeaders: {
+        ministry: 'משרד',
+        riskScore: 'ציון סיכון',
+        riskLevel: 'רמת סיכון',
+        productivity: 'פרודוקטיביות'
+      }
     },
     ja: {
       title: '大臣のリスクと影響力',
@@ -429,7 +485,14 @@
       high: '高',
       medium: '中',
       low: '低',
-      dataAttribution: 'CIAプラットフォームのデータ'
+      dataAttribution: 'CIAプラットフォームのデータ',
+      tableCaption: '政府省庁のリスクと生産性データ',
+      tableHeaders: {
+        ministry: '省庁',
+        riskScore: 'リスクスコア',
+        riskLevel: 'リスクレベル',
+        productivity: '生産性'
+      }
     },
     ko: {
       title: '정부 장관 위험 및 영향력',
@@ -445,7 +508,14 @@
       high: '높음',
       medium: '중간',
       low: '낮음',
-      dataAttribution: 'CIA 플랫폼 데이터'
+      dataAttribution: 'CIA 플랫폼 데이터',
+      tableCaption: '정부 부처 위험 및 생산성 데이터',
+      tableHeaders: {
+        ministry: '부처',
+        riskScore: '위험 점수',
+        riskLevel: '위험 수준',
+        productivity: '생산성'
+      }
     },
     zh: {
       title: '政府部长风险与影响力',
@@ -461,7 +531,14 @@
       high: '高',
       medium: '中',
       low: '低',
-      dataAttribution: 'CIA平台数据'
+      dataAttribution: 'CIA平台数据',
+      tableCaption: '政府部委风险和生产力数据',
+      tableHeaders: {
+        ministry: '部委',
+        riskScore: '风险评分',
+        riskLevel: '风险等级',
+        productivity: '生产力'
+      }
     }
   };
 
@@ -747,23 +824,46 @@
         .attr('fill', (d) => colorScale(parseFloat(d.riskScore) || 0))
         .attr('rx', 4)
         .attr('tabindex', 0)
-        .attr('role', 'graphics-symbol')
-        .attr('aria-label', (d, i) => `${ministries[i]}: Risk score ${d.riskScore}`)
-        .style('cursor', 'pointer');
+        .attr('role', 'button')
+        .attr('aria-label', (d, i) => `${ministries[i]}: Risk score ${d.riskScore}. Press Enter to view details`)
+        .style('cursor', 'pointer')
+        .on('keydown', (event, d) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            const i = data.indexOf(d);
+            const ministry = ministries[i];
+            const ministryName = ministryTranslations[ministry] || ministry;
+            
+            // Show accessible dialog instead of tooltip
+            const riskLevel = parseFloat(d.riskScore);
+            let level = 'Low';
+            if (riskLevel >= 8) level = 'Critical';
+            else if (riskLevel >= 6) level = 'High';
+            else if (riskLevel >= 4) level = 'Medium';
+            
+            alert(`${ministryName}\n\nRisk Score: ${d.riskScore}\nRisk Level: ${level}\nActive Alerts: ${d.alerts || 0}`);
+          }
+        });
 
-      // Tooltips
-      const tooltip = d3.select('body')
-        .append('div')
-        .attr('class', 'ministry-tooltip')
-        .style('position', 'absolute')
-        .style('visibility', 'hidden')
-        .style('background-color', 'var(--card-bg)')
-        .style('border', '1px solid var(--border-color)')
-        .style('border-radius', '8px')
-        .style('padding', '12px')
-        .style('box-shadow', '0 4px 12px var(--card-shadow)')
-        .style('font-size', '14px')
-        .style('z-index', '1000');
+      // Tooltip (reuse existing if available)
+      let tooltip = d3.select('body').select('.ministry-tooltip');
+      if (tooltip.empty()) {
+        tooltip = d3.select('body')
+          .append('div')
+          .attr('class', 'ministry-tooltip')
+          .style('position', 'absolute')
+          .style('visibility', 'hidden')
+          .style('background-color', 'var(--card-bg)')
+          .style('border', '1px solid var(--border-color)')
+          .style('border-radius', '8px')
+          .style('padding', '12px')
+          .style('box-shadow', '0 4px 12px var(--card-shadow)')
+          .style('font-size', '14px')
+          .style('z-index', '1000');
+      }
+      
+      // Store tooltip reference for cleanup
+      this.tooltip = tooltip;
 
       bars.on('mouseover', (event, d) => {
           const riskLevel = parseFloat(d.riskScore);
@@ -1174,14 +1274,15 @@
 
       // Create caption
       const caption = document.createElement('caption');
-      caption.textContent = 'Government Ministry Risk and Productivity Data';
+      caption.textContent = UI_TRANSLATIONS[this.lang]?.tableCaption || 'Government Ministry Risk and Productivity Data';
       this.table.appendChild(caption);
 
       // Create thead
       const thead = document.createElement('thead');
       const headerRow = document.createElement('tr');
       
-      ['Ministry', 'Risk Score', 'Risk Level', 'Productivity'].forEach(headerText => {
+      const tableHeaders = UI_TRANSLATIONS[this.lang]?.tableHeaders || UI_TRANSLATIONS.en.tableHeaders;
+      [tableHeaders.ministry, tableHeaders.riskScore, tableHeaders.riskLevel, tableHeaders.productivity].forEach(headerText => {
         const th = document.createElement('th');
         th.setAttribute('scope', 'col');
         th.textContent = headerText;
@@ -1206,23 +1307,29 @@
 
         const row = document.createElement('tr');
         
+        const tableHeaders = UI_TRANSLATIONS[this.lang]?.tableHeaders || UI_TRANSLATIONS.en.tableHeaders;
+        
         // Ministry name cell
         const ministryCell = document.createElement('td');
+        ministryCell.setAttribute('data-label', tableHeaders.ministry);
         ministryCell.textContent = ministryTranslations[item.ministry] || item.ministry;
         row.appendChild(ministryCell);
         
         // Risk score cell
         const scoreCell = document.createElement('td');
+        scoreCell.setAttribute('data-label', tableHeaders.riskScore);
         scoreCell.textContent = item.riskScore;
         row.appendChild(scoreCell);
         
         // Risk level cell
         const levelCell = document.createElement('td');
+        levelCell.setAttribute('data-label', tableHeaders.riskLevel);
         levelCell.textContent = riskLevel;
         row.appendChild(levelCell);
         
         // Productivity cell
         const prodCell = document.createElement('td');
+        prodCell.setAttribute('data-label', tableHeaders.productivity);
         prodCell.textContent = prodValue;
         row.appendChild(prodCell);
         
@@ -1252,8 +1359,9 @@
         // Fetch all data
         this.data = await this.fetcher.fetchAllData();
 
-        // Generate mock data if CIA data is not available
-        if (!this.data.riskLevels || this.data.riskLevels.length === 0) {
+        // Generate mock data if CIA data is not available or schema is incompatible
+        if (!this.data.riskLevels || this.data.riskLevels.length === 0 || !this.validateDataSchema(this.data)) {
+          console.warn('CIA data unavailable or schema mismatch, using fallback data');
           this.data = this.generateMockData();
         }
 
@@ -1302,6 +1410,40 @@
         container.innerHTML = '';
         container.appendChild(errorMsg);
       }
+    }
+    
+    /**
+     * Validate data schema to ensure required fields are present
+     */
+    validateDataSchema(data) {
+      try {
+        // Check if risk data has expected structure
+        if (data.riskLevels && data.riskLevels.length > 0) {
+          const sample = data.riskLevels[0];
+          const hasRequiredFields = sample.ministry && typeof sample.riskScore !== 'undefined';
+          if (!hasRequiredFields) {
+            console.warn('Risk data schema mismatch: missing ministry or riskScore fields');
+            return false;
+          }
+        }
+        return true;
+      } catch (error) {
+        console.error('Schema validation error:', error);
+        return false;
+      }
+    }
+    
+    /**
+     * Cleanup method to remove tooltips and event listeners
+     */
+    destroy() {
+      // Remove tooltip if it exists
+      if (this.charts.riskHeatMap && this.charts.riskHeatMap.tooltip) {
+        this.charts.riskHeatMap.tooltip.remove();
+      }
+      
+      // Clean up other resources
+      this.charts = {};
     }
 
     generateMockData() {

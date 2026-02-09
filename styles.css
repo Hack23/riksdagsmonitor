@@ -7262,14 +7262,6 @@ html[lang="he"] {
    ================================================== */
 
 /* Enhanced Loading States */
-/* Dashboard Data Attribution */
-.data-attribution {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-}
-
 .loading-spinner {
   display: inline-block;
   width: 2rem;
@@ -7402,23 +7394,21 @@ a:not(.button):not(.btn):hover {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Reduced Motion Support */
+/* Reduced Motion Support for Dashboard */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  .dashboard-container *,
+  .dashboard-container *::before,
+  .dashboard-container *::after,
+  .ministry-tooltip {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
 
 /* Print Styles */
 @media print {
   .no-print,
-  .scroll-indicator,
-  .page-progress,
   nav,
   footer {
     display: none !important;
@@ -7507,14 +7497,12 @@ textarea:valid {
   border-color: var(--success-color);
 }
 
-/* Performance Optimization - GPU Acceleration */
-.card,
-button,
-.btn,
-img {
+/* Performance Optimization - GPU Acceleration for Dashboard Elements */
+.card:hover,
+button:active,
+.btn:active {
   transform: translateZ(0);
   backface-visibility: hidden;
-  perspective: 1000px;
 }
 
 /* Enhanced Stats Display */
