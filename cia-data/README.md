@@ -19,7 +19,7 @@ cia-data/
 ## 📊 Data Categories
 
 ### Seasonal & Temporal Analysis
-- `view_riksdagen_seasonal_anomaly_detection_sample.csv` - Z-score based anomaly detection (2002-2025)
+- `view_riksdagen_seasonal_anomaly_detection_sample.csv` - Z-score based anomaly detection (2002-2026)
 - `view_riksdagen_seasonal_activity_patterns_sample.csv` - Quarterly activity patterns
 - `view_riksdagen_voting_anomaly_detection_sample.csv` - Voting behavior anomalies
 
@@ -125,4 +125,4 @@ Data is provided by the CIA platform under Apache 2.0 license.
 
 **Last Updated**: 2026-02-09  
 **Total Files**: 25 CSV files (~636KB)  
-**Coverage**: 1994-2034 (election cycles), 2002-2025 (seasonal), 50+ years (longitudinal)
+**Coverage**: 1994-2034 (election cycles), 2002-2026 (seasonal), 50+ years (longitudinal)

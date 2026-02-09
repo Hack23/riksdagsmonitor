@@ -6854,7 +6854,7 @@ html[lang="he"] {
 .alert-banner.moderate {
   background: rgba(251, 192, 45, 0.2);
   border: 2px solid #fbc02d;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 .alert-banner.low {
@@ -7274,16 +7274,16 @@ html[lang="he"] {
   filter: contrast(1.2);
 }
 
-/* Enhanced Button States */
-.btn:hover,
-button:hover {
+/* Enhanced Button States (scoped to dashboard) */
+#anomaly-detection-dashboard .btn:hover,
+#anomaly-detection-dashboard button:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 102, 51, 0.3);
 }
 
-.btn:active,
-button:active {
+#anomaly-detection-dashboard .btn:active,
+#anomaly-detection-dashboard button:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 102, 51, 0.2);
 }

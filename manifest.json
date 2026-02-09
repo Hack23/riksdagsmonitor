@@ -7,15 +7,7 @@
   "background_color": "#f8f9fa",
   "theme_color": "#006633",
   "orientation": "portrait-primary",
-  "icons": [
-    {
-      "_comment": "Icons should be added locally to repository for PWA installability",
-      "_note": "Minimum required: 192x192 and 512x512 PNG files",
-      "_example_src": "/images/icon-192x192.png",
-      "_example_type": "image/png",
-      "_example_sizes": "192x192"
-    }
-  ],
+  "icons": [],
   "categories": ["politics", "news", "government"],
   "lang": "en",
   "dir": "ltr",

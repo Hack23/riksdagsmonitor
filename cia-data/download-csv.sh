@@ -19,11 +19,12 @@ download_file() {
     local category=$3
     
     echo -n "  ⬇️  $(basename "$path")${category:+ [$category]}... "
-    if curl -sL "$url" -o "$path" 2>/dev/null; then
+    if curl -fsSL "$url" -o "$path" 2>/dev/null; then
         local size=$(du -h "$path" | cut -f1)
         echo "✅ ($size)"
     else
         echo "❌ Failed"
+        return 1
     fi
 }
 

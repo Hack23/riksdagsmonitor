@@ -71,7 +71,7 @@ Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA p
 - **Committee Network Analysis** - Influence mapping and assignments
 - **Politician Career Analysis** - Career trajectories and milestones
 - **Party Longitudinal Analysis** - 50+ years of party evolution
-- **Anomaly Detection & Early Warning** ✨ **NEW** - Statistical outlier identification (2002-2025)
+- **Anomaly Detection & Early Warning** ✨ **NEW** - Statistical outlier identification (2002-2026)
 
 ### Anomaly Detection Dashboard
 
@@ -82,7 +82,7 @@ The Anomaly Detection & Early Warning System provides real-time identification o
 - **Statistical Analysis** - Z-score threshold detection (|Z| ≥ 2.0 for anomalies)
 - **Severity Classification** - CRITICAL (≥2.5), HIGH (≥2.0), MODERATE (≥1.5), LOW (<1.5)
 - **Anomaly Types** - Ballot, Document, and Attendance anomalies
-- **Historical Timeline** - 23 years of anomaly data (2002-2025)
+- **Historical Timeline** - 24 years of anomaly data (2002-2026)
 - **Interactive Visualizations** - 6 Chart.js/D3.js charts with filtering
 
 **Data Coverage:**
@@ -109,7 +109,7 @@ The Anomaly Detection & Early Warning System provides real-time identification o
 
 ## 📁 CIA Data Directory
 
-The `cia-data/` directory contains 25 CSV files (656KB) from the CIA platform, organized by category:
+The `cia-data/` directory contains 25 CSV files (~636KB) from the CIA platform, organized by category:
 
 ### Directory Structure
 ```
