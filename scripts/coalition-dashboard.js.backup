@@ -38,61 +38,6 @@
     annualVotes: null
   };
 
-  // Data source configuration
-  const DATA_CONFIG = {
-    baseUrl: 'cia-data/',
-    files: {
-      coalition: 'coalition/distribution_coalition_alignment.csv',
-      behavioral: 'parties/distribution_behavioral_patterns_by_party.csv',
-      decision: 'parties/distribution_decision_patterns_by_party.csv',
-      anomalyClassification: 'voting/distribution_voting_anomaly_classification.csv',
-      anomalyByParty: 'voting/distribution_anomaly_by_party.csv',
-      annualVotes: 'voting/distribution_annual_party_votes.csv'
-    },
-    useMockData: false // Set to true to force mock data
-  };
-
-  /**
-   * Parse CSV text into array of objects
-   */
-  function parseCSV(csvText) {
-    const lines = csvText.trim().split('\n');
-    if (lines.length < 2) return []; // Need at least header and one data row
-    
-    const headers = lines[0].split(',').map(h => h.trim());
-    const data = [];
-    
-    for (let i = 1; i < lines.length; i++) {
-      const values = lines[i].split(',');
-      if (values.length === headers.length) {
-        const row = {};
-        headers.forEach((header, index) => {
-          row[header] = values[index].trim();
-        });
-        data.push(row);
-      }
-    }
-    
-    return data;
-  }
-
-  /**
-   * Fetch CSV file with error handling
-   */
-  async function fetchCSV(filename) {
-    try {
-      const response = await fetch(DATA_CONFIG.baseUrl + filename);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const text = await response.text();
-      return parseCSV(text);
-    } catch (error) {
-      console.warn(`Failed to load ${filename}:`, error.message);
-      return null;
-    }
-  }
-
   /**
    * Initialize the dashboard
    */
@@ -134,39 +79,17 @@
    */
   async function fetchCoalitionData() {
     try {
-      if (DATA_CONFIG.useMockData) {
-        dataCache.coalitionAlignment = generateMockCoalitionData();
-        console.log('✅ Coalition data loaded (mock)');
-        return;
-      }
-
-      // Try to load real CSV data
-      const csvData = await fetchCSV(DATA_CONFIG.files.coalition);
+      // Simulated data - replace with actual CIA API call
+      // const response = await fetch('https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_coalition_alignment.csv');
+      // const csvText = await response.text();
+      // dataCache.coalitionAlignment = parseCSV(csvText);
       
-      if (csvData && csvData.length > 0) {
-        // Transform CSV data into coalition alignment format
-        const alignment = {};
-        
-        csvData.forEach(row => {
-          const party1 = row.party1;
-          const party2 = row.party2;
-          const alignmentRate = parseFloat(row.alignment_rate);
-          
-          if (!alignment[party1]) alignment[party1] = {};
-          alignment[party1][party2] = alignmentRate;
-        });
-        
-        dataCache.coalitionAlignment = alignment;
-        console.log('✅ Coalition data loaded from CSV');
-      } else {
-        // Fallback to mock data
-        dataCache.coalitionAlignment = generateMockCoalitionData();
-        console.log('⚠️ Coalition data loaded (mock fallback)');
-      }
+      // Mock data for demonstration
+      dataCache.coalitionAlignment = generateMockCoalitionData();
+      console.log('✅ Coalition data loaded');
     } catch (error) {
       console.error('Failed to fetch coalition data:', error);
-      dataCache.coalitionAlignment = generateMockCoalitionData();
-      console.log('⚠️ Coalition data loaded (mock fallback due to error)');
+      throw error;
     }
   }
 
@@ -174,194 +97,32 @@
    * Fetch behavioral patterns data
    */
   async function fetchBehavioralData() {
-    try {
-      if (DATA_CONFIG.useMockData) {
-        dataCache.behavioralPatterns = generateMockBehavioralData();
-        console.log('✅ Behavioral data loaded (mock)');
-        return;
-      }
-
-      // Try to load real CSV data
-      const csvData = await fetchCSV(DATA_CONFIG.files.behavioral);
-      
-      if (csvData && csvData.length > 0) {
-        // Transform CSV data into behavioral patterns format
-        const patterns = {};
-        
-        // Aggregate by party, calculate consistency based on behavioral assessment
-        const partyData = {};
-        csvData.forEach(row => {
-          const party = row.party;
-          if (party === '-') return; // Skip aggregate rows
-          
-          if (!partyData[party]) {
-            partyData[party] = { total: 0, standardBehavior: 0 };
-          }
-          
-          const count = parseInt(row.politician_count) || 0;
-          partyData[party].total += count;
-          
-          // Standard behavior counts as high consistency
-          if (row.behavioral_assessment === 'STANDARD_BEHAVIOR') {
-            partyData[party].standardBehavior += count;
-          }
-        });
-        
-        // Calculate consistency percentages
-        Object.keys(partyData).forEach(party => {
-          if (partyData[party].total > 0) {
-            const consistency = (partyData[party].standardBehavior / partyData[party].total) * 100;
-            // Normalize to 75-100 range for visualization
-            patterns[party] = Math.max(75, Math.min(100, consistency || 80));
-          }
-        });
-        
-        dataCache.behavioralPatterns = patterns;
-        console.log('✅ Behavioral data loaded from CSV');
-      } else {
-        dataCache.behavioralPatterns = generateMockBehavioralData();
-        console.log('⚠️ Behavioral data loaded (mock fallback)');
-      }
-    } catch (error) {
-      console.error('Failed to fetch behavioral data:', error);
-      dataCache.behavioralPatterns = generateMockBehavioralData();
-      console.log('⚠️ Behavioral data loaded (mock fallback due to error)');
-    }
+    dataCache.behavioralPatterns = generateMockBehavioralData();
+    console.log('✅ Behavioral data loaded');
   }
 
   /**
    * Fetch decision patterns data
    */
   async function fetchDecisionData() {
-    try {
-      if (DATA_CONFIG.useMockData) {
-        dataCache.decisionPatterns = generateMockDecisionData();
-        console.log('✅ Decision data loaded (mock)');
-        return;
-      }
-
-      // Try to load real CSV data (not currently used in visualizations)
-      const csvData = await fetchCSV(DATA_CONFIG.files.decision);
-      
-      if (csvData && csvData.length > 0) {
-        dataCache.decisionPatterns = csvData;
-        console.log('✅ Decision data loaded from CSV');
-      } else {
-        dataCache.decisionPatterns = generateMockDecisionData();
-        console.log('⚠️ Decision data loaded (mock fallback)');
-      }
-    } catch (error) {
-      console.error('Failed to fetch decision data:', error);
-      dataCache.decisionPatterns = generateMockDecisionData();
-      console.log('⚠️ Decision data loaded (mock fallback due to error)');
-    }
+    dataCache.decisionPatterns = generateMockDecisionData();
+    console.log('✅ Decision data loaded');
   }
 
   /**
    * Fetch voting anomaly data
    */
   async function fetchAnomalyData() {
-    try {
-      if (DATA_CONFIG.useMockData) {
-        dataCache.votingAnomalies = generateMockAnomalyData();
-        console.log('✅ Anomaly data loaded (mock)');
-        return;
-      }
-
-      // Try to load real CSV data
-      const csvData = await fetchCSV(DATA_CONFIG.files.anomalyByParty);
-      
-      if (csvData && csvData.length > 0) {
-        // Transform CSV data into anomaly format
-        const anomalies = [];
-        
-        // Generate anomaly points from party data
-        csvData.forEach(row => {
-          const party = row.party;
-          if (party === '-') return; // Skip aggregate rows
-          
-          const avgRebellions = parseFloat(row.avg_rebellions) || 0;
-          const count = parseInt(row.politician_count) || 1;
-          
-          // Create anomaly entries (spread over last 5 years)
-          const years = [2020, 2021, 2022, 2023, 2024];
-          years.forEach((year, idx) => {
-            if (avgRebellions > 0 && count > 0) {
-              const date = `${year}-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-15`;
-              const deviation = Math.min(6, avgRebellions * (0.5 + Math.random()));
-              
-              anomalies.push({
-                party: party,
-                date: date,
-                deviation: deviation,
-                severity: deviation > 4 ? 'critical' : deviation > 2.5 ? 'major' : 'minor'
-              });
-            }
-          });
-        });
-        
-        dataCache.votingAnomalies = anomalies;
-        console.log('✅ Anomaly data loaded from CSV');
-      } else {
-        dataCache.votingAnomalies = generateMockAnomalyData();
-        console.log('⚠️ Anomaly data loaded (mock fallback)');
-      }
-    } catch (error) {
-      console.error('Failed to fetch anomaly data:', error);
-      dataCache.votingAnomalies = generateMockAnomalyData();
-      console.log('⚠️ Anomaly data loaded (mock fallback due to error)');
-    }
+    dataCache.votingAnomalies = generateMockAnomalyData();
+    console.log('✅ Anomaly data loaded');
   }
 
   /**
    * Fetch annual votes data
    */
   async function fetchAnnualVotesData() {
-    try {
-      if (DATA_CONFIG.useMockData) {
-        dataCache.annualVotes = generateMockAnnualVotesData();
-        console.log('✅ Annual votes data loaded (mock)');
-        return;
-      }
-
-      // Try to load real CSV data
-      const csvData = await fetchCSV(DATA_CONFIG.files.annualVotes);
-      
-      if (csvData && csvData.length > 0) {
-        // Transform CSV data into annual votes format
-        const annualData = {};
-        
-        csvData.forEach(row => {
-          const year = parseInt(row.year);
-          const party = row.party;
-          const voteCount = parseInt(row.vote_count) || 0;
-          
-          if (!annualData[party]) {
-            annualData[party] = [];
-          }
-          
-          annualData[party].push({
-            year: year,
-            votes: voteCount
-          });
-        });
-        
-        // Sort by year for each party
-        Object.keys(annualData).forEach(party => {
-          annualData[party].sort((a, b) => a.year - b.year);
-        });
-        
-        dataCache.annualVotes = annualData;
-        console.log('✅ Annual votes data loaded from CSV');
-      } else {
-        dataCache.annualVotes = generateMockAnnualVotesData();
-        console.log('⚠️ Annual votes data loaded (mock fallback)');
-      }
-    } catch (error) {
-      console.error('Failed to fetch annual votes data:', error);
-      dataCache.annualVotes = generateMockAnnualVotesData();
-      console.log('⚠️ Annual votes data loaded (mock fallback due to error)');
-    }
+    dataCache.annualVotes = generateMockAnnualVotesData();
+    console.log('✅ Annual votes data loaded');
   }
 
   /**
@@ -802,60 +563,25 @@
 
     const ctx = canvas.getContext('2d');
     
-    // Determine year range from data
-    let years = [];
-    let useRealData = false;
-    
-    if (dataCache.annualVotes && Object.keys(dataCache.annualVotes).length > 0) {
-      // Use real data years
-      const allYears = new Set();
-      Object.values(dataCache.annualVotes).forEach(partyData => {
-        partyData.forEach(d => allYears.add(d.year));
-      });
-      years = Array.from(allYears).sort((a, b) => a - b);
-      useRealData = true;
-      console.log('📊 Using real annual votes data for decision trends');
-    }
-    
-    // Fallback to 1990-2026 range
-    if (years.length === 0) {
-      for (let year = 1990; year <= 2026; year++) {
-        years.push(year);
-      }
-      console.log('📊 Using generated data for decision trends');
+    // Prepare yearly data from 1990-2026
+    const years = [];
+    for (let year = 1990; year <= 2026; year++) {
+      years.push(year);
     }
 
-    const datasets = Object.keys(PARTIES).map(partyId => {
-      let data;
-      
-      if (useRealData && dataCache.annualVotes[partyId]) {
-        // Use real data
-        const partyYearData = {};
-        dataCache.annualVotes[partyId].forEach(d => {
-          partyYearData[d.year] = d.votes;
-        });
-        
-        // Map to year array (0 if no data for that year)
-        data = years.map(year => partyYearData[year] || 0);
-      } else {
-        // Generate mock data
-        data = years.map(year => {
-          const baseValue = 500;
-          const trend = (year - (years[0] || 1990)) * 10;
-          const noise = Math.random() * 100 - 50;
-          return baseValue + trend + noise;
-        });
-      }
-      
-      return {
-        label: PARTIES[partyId].name,
-        data: data,
-        borderColor: PARTIES[partyId].color,
-        backgroundColor: PARTIES[partyId].color + '20',
-        tension: 0.4,
-        fill: false
-      };
-    });
+    const datasets = Object.keys(PARTIES).map(partyId => ({
+      label: PARTIES[partyId].name,
+      data: years.map(year => {
+        const baseValue = 500;
+        const trend = (year - 1990) * 10;
+        const noise = Math.random() * 100 - 50;
+        return baseValue + trend + noise;
+      }),
+      borderColor: PARTIES[partyId].color,
+      backgroundColor: PARTIES[partyId].color + '20',
+      tension: 0.4,
+      fill: false
+    }));
 
     new Chart(ctx, {
       type: 'line',
@@ -869,7 +595,7 @@
         plugins: {
           title: {
             display: true,
-            text: `Annual Voting Activity Trends (${years[0]}-${years[years.length - 1]})`,
+            text: 'Annual Voting Activity Trends (1990-2026)',
             font: { size: 16, weight: 'bold' }
           },
           legend: {
@@ -878,12 +604,7 @@
           },
           tooltip: {
             mode: 'index',
-            intersect: false,
-            callbacks: {
-              label: function(context) {
-                return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' votes';
-              }
-            }
+            intersect: false
           }
         },
         scales: {
