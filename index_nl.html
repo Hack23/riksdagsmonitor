@@ -67,7 +67,17 @@
 	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
 
-	<!-- Schema.org structured data -->
+	
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
+<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -572,7 +582,52 @@
 			</div>
 		</section>
 
-		<section id="technical-specifications">
+		
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Coalitie- en stempatroonanalyse</h2>
+<p>Interactieve analyse van coalitiedynamiek, partij-afstemming en stemgedragspatronen in het Zweedse Riksdag.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Coalitienetwerk (Interactief)</h3>
+<p>Kracht-gestuurd diagram dat coalitiekracht tussen Zweedse politieke partijen toont. Sleep knooppunten, zoom en klik voor details.</p>
+<div id="coalitionNetwork" role="img" aria-label="Coalitienetwerkdiagram dat relaties tussen 8 Zweedse politieke partijen toont"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Stemanomalieën (Laatste 5 jaar)</h3>
+<p>Spreidingsdiagram dat ongewone stempatronen en partij-afwijkingen van verwacht gedrag benadrukt.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Stemanomalieën spreidingsdiagram dat afwijkingsscores voor alle partijen toont"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Partij-afstemming heatmap</h3>
+<p>Matrixvisualisatie die partij-overschrijdende stem overeenstemmingniveaus toont op basis van historische stemregisters.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Partij-afstemming heatmap die stemovereenstemming percentages tussen alle partijparen toont"></div>
+</div>
+
+<div class="chart-card">
+<h3>Gedragspatronen</h3>
+<p>Partij stem consistentiescores die naleving van de partijlijn over alle stemmen meten.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Gedragspatronen staafdiagram dat stemconsistentie percentages voor alle partijen toont"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Beslissingstrends (1990-2026)</h3>
+<p>Historische tijdlijn die jaarlijkse stemactiviteitstrends voor alle partijen over 36 jaar toont.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Beslissingstrends tijdlijn die jaarlijkse stemvolumes van 1990 tot 2026 toont"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>Data-attributie:</strong> Visualisaties aangedreven door CIA Platform intelligence-exporten. Gegevens worden wekelijks bijgewerkt vanuit het Zweedse Riksdag open data API's.
+</p>
+</section>
+
+<section id="technical-specifications">
 			<h2>Technical Specifications</h2>
 			
 			<div class="tech-specs">
@@ -650,5 +705,9 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>

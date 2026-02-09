@@ -67,7 +67,17 @@
 	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
 
-	<!-- Schema.org structured data -->
+	
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
+<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -572,7 +582,52 @@
 			</div>
 		</section>
 
-		<section id="technical-specifications">
+		
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Análisis de coaliciones y patrones de votación</h2>
+<p>Análisis interactivo de la dinámica de coaliciones, alineación de partidos y patrones de comportamiento de votación en el Riksdag sueco.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Red de coalición (Interactivo)</h3>
+<p>Gráfico dirigido por fuerza que muestra la fuerza de coalición entre los partidos políticos suecos. Arrastra nodos, acerca y haz clic para obtener detalles.</p>
+<div id="coalitionNetwork" role="img" aria-label="Diagrama de red de coalición que muestra relaciones entre 8 partidos políticos suecos"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Anomalías de votación (Últimos 5 años)</h3>
+<p>Diagrama de dispersión que resalta patrones de votación inusuales y deserciones de partidos del comportamiento esperado.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Diagrama de dispersión de anomalías de votación que muestra puntuaciones de desviación para todos los partidos"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Mapa de calor de alineación de partidos</h3>
+<p>Visualización matricial que muestra niveles de acuerdo de votación entre partidos basados en registros de votación históricos.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Mapa de calor de alineación de partidos que muestra porcentajes de acuerdo de votación entre todos los pares de partidos"></div>
+</div>
+
+<div class="chart-card">
+<h3>Patrones de comportamiento</h3>
+<p>Puntuaciones de consistencia de votación de partidos que miden la adhesión a la línea del partido en todas las votaciones.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Diagrama de barras de patrones de comportamiento que muestra porcentajes de consistencia de votación para todos los partidos"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Tendencias de decisiones (1990-2026)</h3>
+<p>Línea de tiempo histórica que muestra tendencias de actividad de votación anual para todos los partidos durante 36 años.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Línea de tiempo de tendencias de decisiones que muestra volúmenes de votación anuales desde 1990 hasta 2026"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>Atribución de datos:</strong> Visualizaciones impulsadas por las exportaciones de inteligencia de la plataforma CIA. Los datos se actualizan semanalmente desde las API de datos abiertos del Riksdag sueco.
+</p>
+</section>
+
+<section id="technical-specifications">
 			<h2>Technical Specifications</h2>
 			
 			<div class="tech-specs">
@@ -650,5 +705,9 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>

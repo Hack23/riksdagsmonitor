@@ -47,7 +47,17 @@
 	<meta name="application-name" content="Hack23 AB">
 	<meta name="theme-color" content="#0066CC">
 	
-	<!-- Schema.org structured data -->
+	
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
+<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -584,7 +594,52 @@
 			</div>
 		</section>
 
-		<section id="technical-specifications">
+		
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 تحليل التحالفات وأنماط التصويت</h2>
+<p>تحليل تفاعلي لديناميكيات التحالف ومواءمة الأحزاب وأنماط سلوك التصويت في البرلمان السويدي.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>شبكة التحالف (تفاعلية)</h3>
+<p>رسم بياني موجه بالقوة يوضح قوة التحالف بين الأحزاب السياسية السويدية. اسحب العقد، قم بالتكبير والنقر للحصول على التفاصيل.</p>
+<div id="coalitionNetwork" role="img" aria-label="مخطط شبكة التحالف يوضح العلاقات بين 8 أحزاب سياسية سويدية"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>شذوذات التصويت (آخر 5 سنوات)</h3>
+<p>مخطط تشتت يسلط الضوء على أنماط التصويت غير العادية وانشقاقات الأحزاب عن السلوك المتوقع.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="مخطط تشتت شذوذات التصويت يوضح درجات الانحراف لجميع الأحزاب"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>خريطة حرارية لمواءمة الأحزاب</h3>
+<p>تصور مصفوفي يوضح مستويات اتفاق التصويت عبر الأحزاب بناءً على سجلات التصويت التاريخية.</p>
+<div id="alignmentHeatMap" role="img" aria-label="خريطة حرارية لمواءمة الأحزاب توضح نسب اتفاق التصويت بين جميع أزواج الأحزاب"></div>
+</div>
+
+<div class="chart-card">
+<h3>أنماط السلوك</h3>
+<p>درجات اتساق التصويت الحزبي التي تقيس الالتزام بخط الحزب عبر جميع الأصوات.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="مخطط أشرطة أنماط السلوك يوضح نسب اتساق التصويت لجميع الأحزاب"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>اتجاهات القرارات (1990-2026)</h3>
+<p>جدول زمني تاريخي يوضح اتجاهات نشاط التصويت السنوي لجميع الأحزاب على مدى 36 عامًا.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="جدول زمني لاتجاهات القرارات يوضح أحجام التصويت السنوية من 1990 إلى 2026"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>إسناد البيانات:</strong> التصورات مدعومة بصادرات الاستخبارات من منصة CIA. يتم تحديث البيانات أسبوعيًا من واجهات برمجة التطبيقات المفتوحة للبرلمان السويدي.
+</p>
+</section>
+
+<section id="technical-specifications">
 			<h2>المواصفات التقنية</h2>
 			
 			<div class="tech-specs">
@@ -664,5 +719,9 @@
 			<a href="swedish-election-2026_ar.html" title="Arabic documentation">العربية</a>
 		</p>
 	</footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>

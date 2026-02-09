@@ -46,7 +46,17 @@
 	<meta name="application-name" content="Hack23 AB">
 	<meta name="theme-color" content="#0066CC">
 	
-	<!-- Schema.org structured data -->
+	
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
+<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -582,7 +592,52 @@
 			</div>
 		</section>
 
-		<section id="technical-specifications">
+		
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Koalitions- og afstemningsmønsteranalyse</h2>
+<p>Interaktiv analyse af koalitionsdynamik, partioverenskomster og afstemningsadfærdsmønstre i den svenske Riksdag.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Koalitionsnetværk (Interaktiv)</h3>
+<p>Kraftstyret graf der viser koalitionsstyrke mellem svenske politiske partier. Træk knudepunkter, zoom og klik for detaljer.</p>
+<div id="coalitionNetwork" role="img" aria-label="Koalitionsnetværksdiagram der viser relationer mellem 8 svenske politiske partier"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Afstemningsanomalier (Sidste 5 år)</h3>
+<p>Spredningsdiagram der fremhæver usædvanlige afstemningsmønstre og partiafvigelser fra forventet adfærd.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Afstemningsanomalier spredningsdiagram der viser afvigelsesscorer for alle partier"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Partioverenskomst varmekort</h3>
+<p>Matrixvisualisering der viser overenskomstniveauer mellem partier baseret på historiske afstemningsregistre.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Partioverenskomst varmekort der viser afstemningsoverensstemmelse i procent mellem alle partipar"></div>
+</div>
+
+<div class="chart-card">
+<h3>Adfærdsmønstre</h3>
+<p>Partiafstemningskonsistensscorer der måler overholdelse af partilinjen over alle afstemninger.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Adfærdsmønstre søjlediagram der viser afstemningskonsistens i procent for alle partier"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Beslutningstendenser (1990-2026)</h3>
+<p>Historisk tidslinje der viser årlige afstemningsaktivitetstendenser for alle partier over 36 år.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Beslutningstendenser tidslinje der viser årlige afstemningsvolumener fra 1990 til 2026"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>Dataattribution:</strong> Visualiseringer drevet af CIA-platformens efterretningseksporter. Data opdateres ugentligt fra det svenske Riksdags åbne data API'er.
+</p>
+</section>
+
+<section id="technical-specifications">
 			<h2>Technical Specifications</h2>
 			
 			<div class="tech-specs">
@@ -661,5 +716,9 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>

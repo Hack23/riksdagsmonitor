@@ -48,7 +48,17 @@
 	<meta name="application-name" content="Hack23 AB">
 	<meta name="theme-color" content="#0066CC">
 	
-	<!-- Schema.org structured data -->
+	
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
+<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -606,7 +616,52 @@
 			</div>
 		</section>
 
-		<section id="technical-specifications">
+		
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 연립 및 투표 패턴 분석</h2>
+<p>스웨덴 의회의 연립 역학, 정당 조정 및 투표 행동 패턴에 대한 대화형 분석.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>연립 네트워크 (대화형)</h3>
+<p>스웨덴 정당 간 연립 강도를 보여주는 힘 지향 그래프. 노드를 드래그하고 확대/축소하고 클릭하여 세부 정보를 확인하세요.</p>
+<div id="coalitionNetwork" role="img" aria-label="8개 스웨덴 정당 간의 관계를 보여주는 연립 네트워크 다이어그램"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>투표 이상 (최근 5년)</h3>
+<p>비정상적인 투표 패턴과 예상 행동에서 벗어난 정당 탈당을 강조하는 산점도.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="모든 정당의 편차 점수를 보여주는 투표 이상 산점도"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>정당 조정 히트맵</h3>
+<p>역사적 투표 기록을 기반으로 정당 간 투표 합의 수준을 보여주는 매트릭스 시각화.</p>
+<div id="alignmentHeatMap" role="img" aria-label="모든 정당 쌍 간의 투표 합의 비율을 보여주는 정당 조정 히트맵"></div>
+</div>
+
+<div class="chart-card">
+<h3>행동 패턴</h3>
+<p>모든 투표에서 당론 준수를 측정하는 정당 투표 일관성 점수.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="모든 정당의 투표 일관성 비율을 보여주는 행동 패턴 막대 차트"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>결정 트렌드 (1990-2026)</h3>
+<p>36년에 걸쳐 모든 정당의 연간 투표 활동 트렌드를 보여주는 역사적 타임라인.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="1990년부터 2026년까지 연간 투표량을 보여주는 결정 트렌드 타임라인"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>데이터 출처:</strong> CIA 플랫폼 인텔리전스 내보내기로 구동되는 시각화. 스웨덴 의회의 공개 데이터 API에서 매주 업데이트되는 데이터.
+</p>
+</section>
+
+<section id="technical-specifications">
 			<h2>기술 사양</h2>
 			
 			<div class="tech-specs">
@@ -685,5 +740,9 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>

@@ -46,7 +46,17 @@
 	<meta name="application-name" content="Hack23 AB">
 	<meta name="theme-color" content="#0066CC">
 	
-	<!-- Schema.org structured data -->
+	
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
+<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -586,7 +596,52 @@
 			</div>
 		</section>
 
-		<section id="technical-specifications">
+		
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 ניתוח קואליציות ודפוסי הצבעה</h2>
+<p>ניתוח אינטראקטיבי של דינמיקת קואליציות, התאמת מפלגות ודפוסי התנהגות הצבעה בריקסדאג השוודי.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>רשת קואליציה (אינטראקטיבית)</h3>
+<p>גרף מכוון כוח המציג את עוצמת הקואליציה בין מפלגות פוליטיות שוודיות. גרור צמתים, זום ולחץ לפרטים.</p>
+<div id="coalitionNetwork" role="img" aria-label="תרשים רשת קואליציה המציג יחסים בין 8 מפלגות פוליטיות שוודיות"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>אנומליות הצבעה (5 שנים אחרונות)</h3>
+<p>תרשים פיזור המדגיש דפוסי הצבעה חריגים וסטיות מפלגתיות מהתנהגות צפויה.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="תרשים פיזור אנומליות הצבעה המציג ציוני סטייה לכל המפלגות"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>מפת חום התאמת מפלגות</h3>
+<p>ויזואליזציה מטריצית המציגה רמות הסכמה בהצבעה בין מפלגות על בסיס רישומי הצבעה היסטוריים.</p>
+<div id="alignmentHeatMap" role="img" aria-label="מפת חום התאמת מפלגות המציגה אחוזי הסכמה בהצבעה בין כל זוגות המפלגות"></div>
+</div>
+
+<div class="chart-card">
+<h3>דפוסי התנהגות</h3>
+<p>ציוני עקביות הצבעה מפלגתית המודדים עמידה בקו המפלגה על פני כל ההצבעות.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="תרשים עמודות דפוסי התנהגות המציג אחוזי עקביות הצבעה לכל המפלגות"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>מגמות החלטות (1990-2026)</h3>
+<p>ציר זמן היסטורי המציג מגמות פעילות הצבעה שנתיות לכל המפלגות על פני 36 שנים.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="ציר זמן מגמות החלטות המציג נפחי הצבעה שנתיים מ-1990 עד 2026"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>ייחוס נתונים:</strong> ויזואליזציות מופעלות על ידי יצוא מודיעין פלטפורמת CIA. נתונים מתעדכנים שבועית מממשקי API של נתונים פתוחים של הריקסדאג השוודי.
+</p>
+</section>
+
+<section id="technical-specifications">
 			<h2>מפרטים טכניים</h2>
 			
 			<div class="tech-specs">
@@ -666,5 +721,9 @@
 			<a href="swedish-election-2026_he.html" title="תיעוד בעברית">עברית</a>
 		</p>
 	</footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>

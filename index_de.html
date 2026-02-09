@@ -67,7 +67,17 @@
 	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
 
-	<!-- Schema.org structured data -->
+	
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
+<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -572,7 +582,52 @@
 			</div>
 		</section>
 
-		<section id="technical-specifications">
+		
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Koalitions- und Abstimmungsmusteranalyse</h2>
+<p>Interaktive Analyse der Koalitionsdynamik, Parteienausrichtung und Abstimmungsverhaltensmuster im schwedischen Riksdag.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Koalitionsnetzwerk (Interaktiv)</h3>
+<p>Kraftgesteuertes Diagramm, das die Koalitionsstärke zwischen schwedischen politischen Parteien zeigt. Ziehen Sie Knoten, zoomen Sie und klicken Sie für Details.</p>
+<div id="coalitionNetwork" role="img" aria-label="Koalitionsnetzwerkdiagramm, das Beziehungen zwischen 8 schwedischen politischen Parteien zeigt"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Abstimmungsanomalien (Letzte 5 Jahre)</h3>
+<p>Streudiagramm, das ungewöhnliche Abstimmungsmuster und Parteiabweichungen vom erwarteten Verhalten hervorhebt.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Abstimmungsanomalien Streudiagramm, das Abweichungswerte für alle Parteien zeigt"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Parteienausrichtung Heatmap</h3>
+<p>Matrixvisualisierung, die parteiübergreifende Abstimmungsübereinstimmungsniveaus basierend auf historischen Abstimmungsaufzeichnungen zeigt.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Parteienausrichtung Heatmap, die Abstimmungsübereinstimmung in Prozent zwischen allen Parteipaaren zeigt"></div>
+</div>
+
+<div class="chart-card">
+<h3>Verhaltensmuster</h3>
+<p>Parteiabstimmungskonsistenzwerte, die die Einhaltung der Parteilinie über alle Abstimmungen messen.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Verhaltensmuster Balkendiagramm, das Abstimmungskonsistenz in Prozent für alle Parteien zeigt"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Entscheidungstrends (1990-2026)</h3>
+<p>Historische Zeitachse, die jährliche Abstimmungsaktivitätstrends für alle Parteien über 36 Jahre zeigt.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Entscheidungstrends Zeitachse, die jährliche Abstimmungsvolumina von 1990 bis 2026 zeigt"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>Datenquelle:</strong> Visualisierungen werden von CIA-Plattform-Intelligence-Exporten unterstützt. Daten werden wöchentlich von den offenen Daten-APIs des schwedischen Riksdag aktualisiert.
+</p>
+</section>
+
+<section id="technical-specifications">
 			<h2>Technical Specifications</h2>
 			
 			<div class="tech-specs">
@@ -650,5 +705,9 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>

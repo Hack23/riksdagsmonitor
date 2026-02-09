@@ -80,6 +80,16 @@
 <link rel="alternate" hreflang="zh-Hans" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
 <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
+
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
 <!-- Schema.org structured data -->
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -228,11 +238,60 @@
         </ul>
       </section>
     </article>
-  </main>
+  
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 連立と投票パターン分析</h2>
+<p>スウェーデン国会における連立力学、政党調整、投票行動パターンのインタラクティブ分析。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>連立ネットワーク（インタラクティブ）</h3>
+<p>スウェーデン政党間の連立強度を示す力学グラフ。ノードをドラッグ、ズーム、クリックして詳細を確認。</p>
+<div id="coalitionNetwork" role="img" aria-label="8つのスウェーデン政党間の関係を示す連立ネットワーク図"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>投票異常（過去5年間）</h3>
+<p>異常な投票パターンと予想される行動からの政党逸脱を強調する散布図。</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="すべての政党の偏差スコアを示す投票異常散布図"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>政党調整ヒートマップ</h3>
+<p>歴史的投票記録に基づく政党間の投票合意レベルを示すマトリックス可視化。</p>
+<div id="alignmentHeatMap" role="img" aria-label="すべての政党ペア間の投票合意率を示す政党調整ヒートマップ"></div>
+</div>
+
+<div class="chart-card">
+<h3>行動パターン</h3>
+<p>すべての投票における党派路線の遵守を測定する政党投票一貫性スコア。</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="すべての政党の投票一貫性率を示す行動パターン棒グラフ"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>決定トレンド（1990-2026）</h3>
+<p>36年間のすべての政党の年間投票活動トレンドを示す歴史的タイムライン。</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="1990年から2026年までの年間投票量を示す決定トレンドタイムライン"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>データ帰属:</strong> CIAプラットフォームのインテリジェンスエクスポートを活用した可視化。スウェーデン国会のオープンデータAPIから毎週更新されるデータ。
+</p>
+</section>
+
+</main>
 
   <footer>
     <p>&copy; 2025 Hack23 AB. All rights reserved.</p>
     <p><a href="index_ja.html">ホーム</a> | <a href="blog_ja.html">ブログ</a></p>
   </footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>

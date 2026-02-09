@@ -46,7 +46,17 @@
 	<meta name="application-name" content="Hack23 AB">
 	<meta name="theme-color" content="#0066CC">
 	
-	<!-- Schema.org structured data -->
+	
+<!-- D3.js v7 for data visualizations -->
+<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js v4 for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO" crossorigin="anonymous" defer></script>
+
+<!-- Chart.js date adapter for time series -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+
+<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -582,7 +592,52 @@
 			</div>
 		</section>
 
-		<section id="technical-specifications">
+		
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Koalitio- ja äänestysmallianalyysi</h2>
+<p>Interaktiivinen analyysi koalitiodynamiikasta, puolueiden yhteensovittamisesta ja äänestys käyttäytymismalleista Ruotsin valtiopäivillä.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Koalitioverkosto (Interaktiivinen)</h3>
+<p>Voimaohjattu kaavio, joka näyttää koalitiovoiman ruotsalaisten poliittisten puolueiden välillä. Vedä solmuja, zoomaa ja napsauta lisätietoja varten.</p>
+<div id="coalitionNetwork" role="img" aria-label="Koalitioverkostokaavio, joka näyttää suhteet 8 ruotsalaisen poliittisen puolueen välillä"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Äänestyspoikkeamat (Viimeiset 5 vuotta)</h3>
+<p>Hajontakaavio, joka korostaa epätavallisia äänestys malleja ja puolueiden poikkeamia odotetusta käyttäytymisestä.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Äänestyspoikkeamat hajontakaavio, joka näyttää poikkeamapisteet kaikille puolueille"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Puolueiden yhteensovittamisen lämpökartta</h3>
+<p>Matriisivisualisointi, joka näyttää puolueiden väliset sopimustasot historiallisten äänestysrekisterien perusteella.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Puolueiden yhteensovittamisen lämpökartta, joka näyttää äänestysyhtäpitävyyden prosentteina kaikkien puolueparien välillä"></div>
+</div>
+
+<div class="chart-card">
+<h3>Käyttäytymismallit</h3>
+<p>Puolueen äänestysyhdenmukaisuuspisteet, jotka mittaavat puoluelinjan noudattamista kaikissa äänestyksissä.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Käyttäytymismallit pylväskaavio, joka näyttää äänestysyhdenmukaisuuden prosentteina kaikille puolueille"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Päätöstrendit (1990-2026)</h3>
+<p>Historiallinen aikajana, joka näyttää vuotuiset äänestysaktiviteettitrendit kaikille puolueille 36 vuoden ajalta.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Päätöstrendit aikajana, joka näyttää vuotuiset äänestysvolyymit vuodesta 1990 vuoteen 2026"></canvas>
+</div>
+</div>
+
+<p class="note" style="margin-top: var(--spacing-lg);">
+<strong>Datan lähde:</strong> Visualisoinnit CIA-alustan tiedusteluviennin tukemina. Data päivittyy viikoittain Ruotsin valtiopäivien avoimista data-APIsta.
+</p>
+</section>
+
+<section id="technical-specifications">
 			<h2>Technical Specifications</h2>
 			
 			<div class="tech-specs">
@@ -661,5 +716,9 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+
+<!-- Coalition Dashboard Script -->
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>
