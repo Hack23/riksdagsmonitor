@@ -7,7 +7,7 @@
 #### Skip-to-Content Link
 ```bash
 $ grep -c "skip-to-content" index.html
-2  # ✅ Present in HTML (1) and CSS (1)
+1  # ✅ Present in HTML
 ```
 
 #### Enhanced Footer
@@ -75,7 +75,7 @@ $ grep 'meta name="geo' index.html | wc -l
 #### Open Graph
 ```bash
 $ grep 'meta property="og:' index.html | wc -l
-14  # ✅ Complete OG tags (title, description, image, url, type, etc.)
+29  # ✅ Complete OG tags including image metadata and 13 locale alternates (title, description, image, url, type, locales, etc.)
 ```
 
 #### Twitter Card
@@ -108,7 +108,7 @@ $ grep -c "Disallow:" robots.txt
 4  # ✅ Internal directories protected
 
 $ grep -c "Crawl-delay:" robots.txt
-2  # ✅ Optimized crawl rates
+5  # ✅ Optimized crawl rates for Googlebot, Bingbot, DuckDuckBot, Slurp, Baiduspider
 ```
 
 ### sitemap.xml Validation
@@ -118,7 +118,7 @@ $ grep -c "<url>" sitemap.xml
 25  # ✅ All pages included (14 language variants + 10 news articles + homepage)
 
 $ grep -c "xhtml:link" sitemap.xml
-88  # ✅ All hreflang alternates present
+44  # ✅ All hreflang alternates present
 
 $ grep -c "2026-02-09" sitemap.xml
 23  # ✅ Recent lastmod dates updated

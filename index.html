@@ -12,7 +12,7 @@
 <meta name="author" content="James Pether Sörling, CISSP, CISM">
 <meta name="generator" content="Riksdagsmonitor Intelligence Platform">
 <meta name="rating" content="general">
-<meta name="revisit-after" content="1 days">
+<meta name="revisit-after" content="1 day">
 <meta name="language" content="English">
 <meta name="geo.region" content="SE">
 <meta name="geo.placename" content="Sweden">
@@ -45,10 +45,6 @@
 <meta property="og:locale:alternate" content="nb_NO">
 <meta property="og:locale:alternate" content="sv_SE">
 <meta property="og:locale:alternate" content="zh_CN">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://riksdagsmonitor.com/index.html">
-<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
-<meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -98,7 +94,7 @@
         "@id": "https://riksdagsmonitor.com/#founder",
         "name": "James Pether Sörling",
         "jobTitle": "Founder & Chief Intelligence Officer",
-        "alumniOf": "CISSP, CISM",
+        "hasCredential": ["CISSP", "CISM"],
         "sameAs": [
           "https://www.linkedin.com/in/jamessorling/",
           "https://github.com/Hack23"
@@ -127,14 +123,6 @@
       "description": "Real-time monitoring of Swedish Parliament with CIA OSINT analysis, election forecasting, coalition predictions, and comprehensive political transparency.",
       "publisher": {
         "@id": "https://riksdagsmonitor.com/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://riksdagsmonitor.com/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
       },
       "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
     },
@@ -641,20 +629,20 @@ Swedish Election 2026
   <div class="footer-section">
     <h3>🌍 Languages (14)</h3>
     <div class="language-grid">
-      <a href="index.html" title="English" hreflang="en">🇬🇧 English</a>
-      <a href="index_sv.html" title="Svenska" hreflang="sv">🇸🇪 Svenska</a>
-      <a href="index_da.html" title="Dansk" hreflang="da">🇩🇰 Dansk</a>
-      <a href="index_no.html" title="Norsk" hreflang="no">🇳🇴 Norsk</a>
-      <a href="index_fi.html" title="Suomi" hreflang="fi">🇫🇮 Suomi</a>
-      <a href="index_de.html" title="Deutsch" hreflang="de">🇩🇪 Deutsch</a>
-      <a href="index_fr.html" title="Français" hreflang="fr">🇫🇷 Français</a>
-      <a href="index_es.html" title="Español" hreflang="es">🇪🇸 Español</a>
-      <a href="index_nl.html" title="Nederlands" hreflang="nl">🇳🇱 Nederlands</a>
-      <a href="index_ar.html" title="العربية" hreflang="ar">🇸🇦 العربية</a>
-      <a href="index_he.html" title="עברית" hreflang="he">🇮🇱 עברית</a>
-      <a href="index_ja.html" title="日本語" hreflang="ja">🇯🇵 日本語</a>
-      <a href="index_ko.html" title="한국어" hreflang="ko">🇰🇷 한국어</a>
-      <a href="index_zh.html" title="中文" hreflang="zh">🇨🇳 中文</a>
+      <a href="index.html" title="English" hreflang="en"><span aria-hidden="true">🇬🇧</span> English</a>
+      <a href="index_sv.html" title="Svenska" hreflang="sv"><span aria-hidden="true">🇸🇪</span> Svenska</a>
+      <a href="index_da.html" title="Dansk" hreflang="da"><span aria-hidden="true">🇩🇰</span> Dansk</a>
+      <a href="index_no.html" title="Norsk" hreflang="no"><span aria-hidden="true">🇳🇴</span> Norsk</a>
+      <a href="index_fi.html" title="Suomi" hreflang="fi"><span aria-hidden="true">🇫🇮</span> Suomi</a>
+      <a href="index_de.html" title="Deutsch" hreflang="de"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+      <a href="index_fr.html" title="Français" hreflang="fr"><span aria-hidden="true">🇫🇷</span> Français</a>
+      <a href="index_es.html" title="Español" hreflang="es"><span aria-hidden="true">🇪🇸</span> Español</a>
+      <a href="index_nl.html" title="Nederlands" hreflang="nl"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
+      <a href="index_ar.html" title="العربية" hreflang="ar"><span aria-hidden="true">🇸🇦</span> العربية</a>
+      <a href="index_he.html" title="עברית" hreflang="he"><span aria-hidden="true">🇮🇱</span> עברית</a>
+      <a href="index_ja.html" title="日本語" hreflang="ja"><span aria-hidden="true">🇯🇵</span> 日本語</a>
+      <a href="index_ko.html" title="한국어" hreflang="ko"><span aria-hidden="true">🇰🇷</span> 한국어</a>
+      <a href="index_zh.html" title="中文" hreflang="zh"><span aria-hidden="true">🇨🇳</span> 中文</a>
     </div>
   </div>
 </div>
@@ -681,9 +669,10 @@ window.addEventListener('scroll', () => {
 });
 
 backToTopButton.addEventListener('click', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: prefersReducedMotion ? 'auto' : 'smooth'
   });
 });
 </script>
