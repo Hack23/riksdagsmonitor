@@ -6806,3 +6806,388 @@ html[lang="he"] {
     border: 1px solid #333;
   }
 }
+
+/* ==================================================
+   RISK ASSESSMENT & ANOMALY DETECTION DASHBOARD
+   ================================================== */
+
+/* Dashboard Container */
+.dashboard-container {
+  margin: var(--spacing-2xl) 0;
+  padding: var(--spacing-xl);
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.dashboard-description {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  max-width: 80ch;
+}
+
+/* Alert Banner */
+.alert-banner {
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  border: 2px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.alert-banner.critical {
+  background: #ffebee;
+  color: #c62828;
+  border-color: #ef5350;
+}
+
+.alert-banner.high {
+  background: #fff3e0;
+  color: #e65100;
+  border-color: #ff9800;
+}
+
+.alert-banner.normal {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #66bb6a;
+}
+
+.alert-details {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+@media (prefers-color-scheme: dark) {
+  .alert-banner.critical {
+    background: rgba(198, 40, 40, 0.2);
+    color: #ef5350;
+    border-color: #ef5350;
+  }
+  
+  .alert-banner.high {
+    background: rgba(230, 81, 0, 0.2);
+    color: #ff9800;
+    border-color: #ff9800;
+  }
+  
+  .alert-banner.normal {
+    background: rgba(46, 125, 50, 0.2);
+    color: #66bb6a;
+    border-color: #66bb6a;
+  }
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+/* Chart Card */
+.chart-card {
+  padding: var(--spacing-lg);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px var(--card-shadow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: 0 4px 8px var(--card-shadow);
+  transform: translateY(-2px);
+}
+
+.chart-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.chart-card h3 {
+  margin-top: 0;
+  color: var(--header-color);
+  font-size: var(--h3-size);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: var(--spacing-sm);
+}
+
+.chart-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+}
+
+/* Controls */
+.controls {
+  margin: var(--spacing-md) 0;
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  flex-wrap: wrap;
+  padding: var(--spacing-md);
+  background: var(--bg-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.control-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.control-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.control-label select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-sm);
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.btn-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+.btn-sm:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.btn-sm:active {
+  transform: translateY(0);
+}
+
+/* Heat Map Container */
+#riskHeatMap {
+  width: 100%;
+  height: 600px;
+  overflow: auto;
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-sm);
+  background: var(--bg-color);
+}
+
+#riskHeatMap svg {
+  display: block;
+}
+
+/* Heat Map Legend */
+.legend {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-color);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+/* Canvas Charts */
+canvas {
+  max-width: 100%;
+  height: auto !important;
+  min-height: 300px;
+}
+
+/* Top 10 Lists */
+#ethicsConcernsList,
+#electoralRiskList {
+  list-style-type: decimal;
+  padding-left: var(--spacing-xl);
+  margin: var(--spacing-md) 0;
+}
+
+#ethicsConcernsList li,
+#electoralRiskList li {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--card-border);
+  line-height: 1.6;
+}
+
+#ethicsConcernsList li:last-child,
+#electoralRiskList li:last-child {
+  border-bottom: none;
+}
+
+#ethicsConcernsList li strong,
+#electoralRiskList li strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Data Attribution */
+.data-attribution {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md);
+  background: var(--bg-color);
+  border-radius: var(--border-radius-sm);
+  border-left: 4px solid var(--primary-color);
+  font-size: var(--font-size-sm);
+}
+
+.data-attribution p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.data-attribution p:last-child {
+  margin-bottom: 0;
+}
+
+.methodology-note {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-container {
+    padding: var(--spacing-md);
+  }
+  
+  #riskHeatMap {
+    height: 400px;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .control-label {
+    width: 100%;
+  }
+  
+  .control-label select {
+    width: 100%;
+  }
+  
+  canvas {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: var(--spacing-sm);
+  }
+  
+  .chart-card {
+    padding: var(--spacing-md);
+  }
+  
+  #riskHeatMap {
+    height: 300px;
+  }
+  
+  .alert-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Dark Mode Specific Styles */
+@media (prefers-color-scheme: dark) {
+  .dashboard-container {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    box-shadow: 0 4px 6px rgba(0, 204, 102, 0.1);
+  }
+  
+  .chart-card {
+    background: rgba(0, 28, 37, 0.8);
+    border-color: rgba(0, 204, 102, 0.3);
+  }
+  
+  .chart-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 204, 102, 0.2);
+  }
+  
+  #riskHeatMap {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--card-border);
+  }
+  
+  .controls {
+    background: rgba(0, 26, 26, 0.5);
+  }
+  
+  .data-attribution {
+    background: rgba(0, 26, 26, 0.5);
+    border-left-color: var(--primary-color);
+  }
+  
+  .legend {
+    background: rgba(0, 26, 26, 0.5);
+  }
+}
+
+/* Accessibility: High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .chart-card {
+    border-width: 2px;
+  }
+  
+  .alert-banner {
+    border-width: 3px;
+  }
+  
+  .control-label input[type="checkbox"] {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .dashboard-container {
+    page-break-inside: avoid;
+  }
+  
+  .chart-card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .controls {
+    display: none;
+  }
+  
+  #riskHeatMap {
+    height: auto;
+    overflow: visible;
+  }
+}
