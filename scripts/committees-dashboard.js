@@ -150,12 +150,12 @@
      * @returns {Array|null} Cached data or null
      */
     getCached(key) {
-      const cacheKey = CONFIG.cache.prefix + key;
-      const cached = localStorage.getItem(cacheKey);
-      
-      if (!cached) return null;
-
       try {
+        const cacheKey = CONFIG.cache.prefix + key;
+        const cached = localStorage.getItem(cacheKey);
+        
+        if (!cached) return null;
+
         const { data, timestamp } = JSON.parse(cached);
         const age = Date.now() - timestamp;
         
@@ -163,6 +163,13 @@
           return data;
         } else {
           localStorage.removeItem(cacheKey);
+          return null;
+        }
+      } catch (error) {
+        // localStorage might be disabled, in privacy mode, or have quota issues
+        console.warn('[DataManager] Cache read failed:', error);
+        return null;
+      }
           return null;
         }
       } catch (error) {
@@ -406,7 +413,12 @@
       html += '<tbody>';
 
       nodes.forEach(node => {
-        const connections = links.filter(l => l.source.id === node.id || l.target.id === node.id).length;
+        // Handle both string and object types for source/target
+        const connections = links.filter(l => {
+          const sourceId = typeof l.source === 'string' ? l.source : l.source && l.source.id;
+          const targetId = typeof l.target === 'string' ? l.target : l.target && l.target.id;
+          return sourceId === node.id || targetId === node.id;
+        }).length;
         html += `<tr>
           <td>${node.name} (${node.code})</td>
           <td>${node.productivity.toFixed(1)}</td>
@@ -997,16 +1009,38 @@
         }
       });
     }
+
+    /**
+     * Destroy all Chart.js instances
+     */
+    destroy() {
+      Object.keys(this.charts).forEach(key => {
+        if (this.charts[key] && typeof this.charts[key].destroy === 'function') {
+          this.charts[key].destroy();
+        }
+      });
+      this.charts = {};
+    }
   }
 
   // ==============================================
   // INITIALIZATION
   // ==============================================
 
+  // Keep references to visualization instances for reuse
+  let visualizationInstances = null;
+
   /**
    * Initialize committee dashboard
    */
   async function initializeDashboard() {
+    // Early guard: only initialize when the main dashboard container exists
+    const dashboardRoot = document.getElementById('committee-dashboard');
+    if (!dashboardRoot) {
+      console.info('[CommitteeDashboard] Skipping initialization: #committee-dashboard container not found.');
+      return;
+    }
+
     console.log('[CommitteeDashboard] Initializing...');
 
     try {
@@ -1029,6 +1063,11 @@
       const data = await dataManager.loadAllData();
       console.log('[CommitteeDashboard] Data loaded successfully', data);
 
+      // Destroy existing Chart.js instances if they exist
+      if (visualizationInstances && visualizationInstances.charts) {
+        visualizationInstances.charts.destroy();
+      }
+
       // Render visualizations
       const network = new NetworkDiagram('committeeNetwork', data);
       network.render();
@@ -1038,6 +1077,13 @@
 
       const charts = new ChartJSVisualizations();
       charts.renderAll(data);
+
+      // Store instances for later cleanup/reuse
+      visualizationInstances = {
+        network: network,
+        heatmap: heatmap,
+        charts: charts
+      };
 
       // Hide loading indicator
       hideLoadingIndicator();
