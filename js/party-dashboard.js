@@ -544,10 +544,10 @@
 
     const t = getTranslations();
     
-    // Update ARIA label for current language
-    ctx.setAttribute('aria-label', t.effectivenessAriaLabel);
+    // Update ARIA label for current language with fallback to English
+    ctx.setAttribute('aria-label', t.effectivenessAriaLabel || TRANSLATIONS.en.effectivenessAriaLabel);
     const srOnly = ctx.parentElement.querySelector('.sr-only');
-    if (srOnly) srOnly.textContent = t.effectivenessSrOnly;
+    if (srOnly) srOnly.textContent = t.effectivenessSrOnly || TRANSLATIONS.en.effectivenessSrOnly;
     
     // Process real CSV data
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
@@ -653,10 +653,10 @@
 
     const t = getTranslations();
     
-    // Update ARIA label for current language
-    ctx.setAttribute('aria-label', t.comparisonAriaLabel);
+    // Update ARIA label for current language with fallback to English
+    ctx.setAttribute('aria-label', t.comparisonAriaLabel || TRANSLATIONS.en.comparisonAriaLabel);
     const srOnly = ctx.parentElement.querySelector('.sr-only');
-    if (srOnly) srOnly.textContent = t.comparisonSrOnly;
+    if (srOnly) srOnly.textContent = t.comparisonSrOnly || TRANSLATIONS.en.comparisonSrOnly;
     
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
     
@@ -739,10 +739,10 @@
 
     const t = getTranslations();
     
-    // Update ARIA label for current language
-    container.setAttribute('aria-label', t.coalitionAriaLabel);
+    // Update ARIA label for current language with fallback to English
+    container.setAttribute('aria-label', t.coalitionAriaLabel || TRANSLATIONS.en.coalitionAriaLabel);
     const srOnly = container.parentElement.querySelector('.sr-only');
-    if (srOnly) srOnly.textContent = t.coalitionSrOnly;
+    if (srOnly) srOnly.textContent = t.coalitionSrOnly || TRANSLATIONS.en.coalitionSrOnly;
     
     // Process real CSV data for coalitions
     const coalitions = [];
@@ -801,10 +801,10 @@
 
     const t = getTranslations();
     
-    // Update ARIA label for current language
-    ctx.setAttribute('aria-label', t.momentumAriaLabel);
+    // Update ARIA label for current language with fallback to English
+    ctx.setAttribute('aria-label', t.momentumAriaLabel || TRANSLATIONS.en.momentumAriaLabel);
     const srOnly = ctx.parentElement.querySelector('.sr-only');
-    if (srOnly) srOnly.textContent = t.momentumSrOnly;
+    if (srOnly) srOnly.textContent = t.momentumSrOnly || TRANSLATIONS.en.momentumSrOnly;
     
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
     

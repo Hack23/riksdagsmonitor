@@ -18,7 +18,7 @@
     } else {
       backToTopButton.classList.remove('visible');
     }
-  });
+  }, { passive: true });
   
   // Scroll to top with reduced motion support
   backToTopButton.addEventListener('click', function() {

@@ -18,7 +18,7 @@ PASSED_CHECKS=0
 FAILED_CHECKS=0
 
 check_result() {
-    if [ $1 -eq 0 ]; then
+    if [ "${1:-1}" -eq 0 ]; then
         echo -e "${GREEN}✓${NC} $2"
         ((PASSED_CHECKS++))
     else

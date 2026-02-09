@@ -19,13 +19,13 @@
         {
           "name": "distribution_party_effectiveness_trends.csv",
           "description": "Historical effectiveness trends (1990-2026)",
-          "fields": ["year", "party", "effectiveness_score", "trend"],
+          "fields": ["party", "year", "quarter", "documents_produced", "motions_count", "active_members", "avg_win_rate", "effectiveness_assessment"],
           "dashboard": "party-dashboard"
         },
         {
           "name": "distribution_party_momentum.csv",
           "description": "Current party momentum indicators",
-          "fields": ["party", "momentum_score", "percentile", "trend_direction"],
+          "fields": ["party", "year", "quarter", "period", "participation_rate", "momentum", "trend_direction", "stability_classification"],
           "dashboard": "party-dashboard"
         },
         {
