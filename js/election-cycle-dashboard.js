@@ -18,10 +18,22 @@
     cachePrefix: 'riksdag_election_cycle_',
     cacheExpiry: 24 * 60 * 60 * 1000, // 24 hours
     dataUrls: {
-      comparative: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_comparative_analysis_sample.csv',
-      decision: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_decision_intelligence_sample.csv',
-      predictive: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_predictive_intelligence_sample.csv',
-      temporal: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_temporal_trends_sample.csv'
+      comparative: [
+        'cia-data/election-cycle/view_election_cycle_comparative_analysis_sample.csv',
+        'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_comparative_analysis_sample.csv'
+      ],
+      decision: [
+        'cia-data/election-cycle/view_election_cycle_decision_intelligence_sample.csv',
+        'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_decision_intelligence_sample.csv'
+      ],
+      predictive: [
+        'cia-data/election-cycle/view_election_cycle_predictive_intelligence_sample.csv',
+        'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_predictive_intelligence_sample.csv'
+      ],
+      temporal: [
+        'cia-data/election-cycle/view_election_cycle_temporal_trends_sample.csv',
+        'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_temporal_trends_sample.csv'
+      ]
     },
     partyColors: {
       'M': '#52BDEC',   // Moderaterna (blue)
@@ -623,6 +635,7 @@
 
     /**
      * Fetch individual CSV file with 24h caching
+     * Tries local file first, then falls back to remote URL
      */
     async fetchData(type) {
       const cacheKey = CONFIG.cachePrefix + type;
@@ -633,32 +646,52 @@
         return cached;
       }
 
-      try {
-        const response = await fetch(CONFIG.dataUrls[type]);
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
+      const urls = Array.isArray(CONFIG.dataUrls[type]) 
+        ? CONFIG.dataUrls[type] 
+        : [CONFIG.dataUrls[type]];
 
-        const csvText = await response.text();
-        const parsed = Papa.parse(csvText, {
-          header: true,
-          dynamicTyping: true,
-          skipEmptyLines: true
-        });
+      // Try each URL in order (local first, then remote)
+      for (let i = 0; i < urls.length; i++) {
+        const url = urls[i];
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            if (i < urls.length - 1) {
+              // Try next URL
+              console.log(`Failed to fetch ${url}, trying next...`);
+              continue;
+            }
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          }
 
-        this.data[type] = parsed.data;
-        this.setCache(cacheKey, parsed.data);
-        return parsed.data;
-      } catch (error) {
-        console.error(`Error fetching ${type} data:`, error);
-        // Try to use cached data even if expired
-        const expiredCache = localStorage.getItem(cacheKey);
-        if (expiredCache) {
-          const parsed = JSON.parse(expiredCache);
+          const csvText = await response.text();
+          const parsed = Papa.parse(csvText, {
+            header: true,
+            dynamicTyping: true,
+            skipEmptyLines: true
+          });
+
           this.data[type] = parsed.data;
+          this.setCache(cacheKey, parsed.data);
+          console.log(`Successfully loaded ${type} data from: ${url}`);
           return parsed.data;
+        } catch (error) {
+          if (i < urls.length - 1) {
+            // Try next URL
+            console.log(`Error fetching ${url}: ${error.message}, trying next...`);
+            continue;
+          }
+          console.error(`Error fetching ${type} data from all sources:`, error);
+          // Try to use cached data even if expired
+          const expiredCache = localStorage.getItem(cacheKey);
+          if (expiredCache) {
+            const parsed = JSON.parse(expiredCache);
+            this.data[type] = parsed.data;
+            console.log(`Using expired cache for ${type}`);
+            return parsed.data;
+          }
+          throw error;
         }
-        throw error;
       }
     }
 
