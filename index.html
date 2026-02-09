@@ -79,13 +79,22 @@
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>">
 
 <!-- D3.js v7 for data visualizations -->
-<script src="https://d3js.org/d3.v7.min.js" crossorigin="anonymous" defer></script>
+<script src="https://d3js.org/d3.v7.min.js" 
+        integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb"
+        crossorigin="anonymous" 
+        defer></script>
 
 <!-- Chart.js v4 for charts -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" 
+        integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g"
+        crossorigin="anonymous" 
+        defer></script>
 
 <!-- Chart.js date adapter for time series -->
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" 
+        integrity="sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzbUUiBGLsIQUE+b1mxws"
+        crossorigin="anonymous" 
+        defer></script>
 
 <!-- Schema.org structured data -->
 <script type="application/ld+json">
@@ -101,14 +110,6 @@
       "description": "Comprehensive intelligence platform for Swedish parliamentary monitoring, election tracking, and political transparency using OSINT methodologies.",
       "publisher": {
         "@id": "https://riksdagsmonitor.com/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://riksdagsmonitor.com/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
       },
       "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
     },
@@ -310,7 +311,7 @@
 </head>
 <body>
 <!-- Skip to main content for accessibility -->
-<a href="#main-content" class="skip-to-content">Skip to main content</a>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Breadcrumb Navigation -->
 <nav aria-label="Breadcrumb">
@@ -572,7 +573,7 @@ Swedish Election 2026
 </div>
 </div>
 
-<p class="note" style="margin-top: var(--spacing-lg);">
+<p class="note dashboard-attribution">
 <strong>Data Attribution:</strong> Visualizations powered by CIA Platform intelligence exports. Data updates weekly from Swedish Parliament open data APIs.
 </p>
 </section>
@@ -720,32 +721,7 @@ Swedish Election 2026
 <script src="scripts/coalition-dashboard.js" defer></script>
 
 <!-- Back to Top functionality -->
-<script>
-(function() {
-  'use strict';
-  
-  const backToTopButton = document.getElementById('back-to-top');
-  
-  if (backToTopButton) {
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('visible');
-      } else {
-        backToTopButton.classList.remove('visible');
-      }
-    });
-    
-    // Scroll to top when clicked
-    backToTopButton.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-})();
-</script>
+<script src="scripts/back-to-top.js" defer></script>
 
 </body>
 </html>

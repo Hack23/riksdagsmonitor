@@ -54,26 +54,18 @@
 
   /**
    * Parse CSV text into array of objects
+   * Uses D3's built-in CSV parser which properly handles quoted fields
+   * @param {string} csvText - Raw CSV text
+   * @returns {Array} Array of objects with header keys
    */
   function parseCSV(csvText) {
-    const lines = csvText.trim().split('\n');
-    if (lines.length < 2) return []; // Need at least header and one data row
-    
-    const headers = lines[0].split(',').map(h => h.trim());
-    const data = [];
-    
-    for (let i = 1; i < lines.length; i++) {
-      const values = lines[i].split(',');
-      if (values.length === headers.length) {
-        const row = {};
-        headers.forEach((header, index) => {
-          row[header] = values[index].trim();
-        });
-        data.push(row);
-      }
+    try {
+      // Use D3's csvParse which handles quoted fields, escaped quotes, etc.
+      return d3.csvParse(csvText);
+    } catch (error) {
+      console.error('CSV parsing error:', error);
+      return [];
     }
-    
-    return data;
   }
 
   /**

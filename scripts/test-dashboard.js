@@ -75,7 +75,8 @@ const canvases = [
 canvases.forEach(id => {
   const canvas = document.getElementById(id);
   if (canvas && canvas.getContext) {
-    const ctx = canvas.getContext('2d');
+    // Context validation only
+    canvas.getContext('2d');
     console.log(`  ✅ ${id}: ${canvas.width}x${canvas.height}px`);
   } else {
     console.error(`  ❌ ${id}: Not rendered or no context`);

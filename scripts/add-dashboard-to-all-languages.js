@@ -104,7 +104,7 @@ function generateDashboardSection(langCode) {
 </div>
 </div>
 
-<p class="note" style="margin-top: var(--spacing-lg);">
+<p class="note dashboard-attribution">
 <strong>${t.dataAttribution}</strong> ${t.dataAttributionText}
 </p>
 </section>

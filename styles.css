@@ -498,104 +498,6 @@ body {
 }
 
 /* ==================================================
-   ACCESSIBILITY ENHANCEMENTS
-   Skip to content link and focus improvements
-   ================================================== */
-
-/* Skip to main content link for keyboard navigation */
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-color);
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-weight: 600;
-  z-index: 10000;
-  border-radius: 0 0 4px 0;
-  transition: top 0.3s ease;
-}
-
-.skip-to-content:focus {
-  top: 0;
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-/* Enhanced focus states for better keyboard navigation */
-*:focus-visible {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
-/* Back to top button */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--primary-color);
-  color: white;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 4px 12px var(--card-shadow);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.back-to-top:hover {
-  background: var(--primary-light);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px var(--card-shadow);
-}
-
-.back-to-top:focus-visible {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 4px;
-}
-
-/* Print styles */
-@media print {
-  .back-to-top,
-  .skip-to-content,
-  nav,
-  .scanner-effect,
-  .breadcrumb {
-    display: none !important;
-  }
-  
-  body {
-    max-width: 100%;
-    padding: 0;
-    background: white;
-    color: black;
-  }
-  
-  a {
-    color: black;
-    text-decoration: underline;
-  }
-  
-  a[href]:after {
-    content: " (" attr(href) ")";
-    font-size: 0.8em;
-  }
-}
 
 /* Scan line effect for dark mode */
 @media (prefers-color-scheme: dark) {
@@ -6941,6 +6843,7 @@ html[lang="he"] {
    ================================================== */
 
 .dashboard-container {
+  position: relative; /* For absolute positioning of loading overlay */
   margin: var(--spacing-2xl) 0;
   padding: var(--spacing-xl);
   background: var(--card-bg);
@@ -6999,6 +6902,11 @@ html[lang="he"] {
 #coalitionNetwork .nodes g:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 4px;
+}
+
+/* Dashboard attribution note */
+.dashboard-attribution {
+  margin-top: var(--spacing-lg);
 }
 
 /* Loading state */

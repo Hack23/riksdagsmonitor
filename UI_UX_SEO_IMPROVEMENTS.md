@@ -167,7 +167,7 @@ backToTopButton.addEventListener('click', function() {
 - [x] Performance hints working
 - [x] All links functional
 
-## �� Future Recommendations
+## 🔮 Future Recommendations
 
 ### High Priority
 1. Apply same enhancements to all 14 language files
