@@ -6806,3 +6806,248 @@ html[lang="he"] {
     border: 1px solid #333;
   }
 }
+
+/* ==========================================
+   PRE-ELECTION MONITORING DASHBOARD
+   ========================================== */
+
+/* Dashboard Section */
+.dashboard-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--primary-color);
+}
+
+.dashboard-section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.dashboard-intro {
+  margin-bottom: 2rem;
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+}
+
+/* Status Cards */
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-card {
+  background: var(--bg-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.status-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
+}
+
+.current-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.baseline-comparison {
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  font-size: var(--font-size-base);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  margin-top: 0.5rem;
+}
+
+.status-badge.normal {
+  background: var(--success-color);
+  color: #fff;
+}
+
+.status-badge.improving {
+  background: var(--info-color);
+  color: #fff;
+}
+
+.status-badge.warning {
+  background: var(--warning-color);
+  color: #fff;
+}
+
+.status-badge.alert {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.chart-card.wide {
+  grid-column: span 2;
+}
+
+.chart-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: var(--font-size-xl);
+  color: var(--text-color);
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  margin-bottom: 1rem;
+}
+
+.chart-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Warning Matrix */
+#warning-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  min-height: 250px;
+}
+
+.warning-cell {
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.warning-cell:hover {
+  background: var(--bg-color);
+}
+
+.warning-cell .status-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.warning-cell .metric-name {
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.warning-cell .deviation-value {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Data Attribution */
+.data-attribution {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Loading State */
+.dashboard-section.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.dashboard-section.loading::after {
+  content: "Loading dashboard...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+}
+
+/* Error State */
+.dashboard-section .error {
+  padding: 2rem;
+  text-align: center;
+  color: var(--danger-color);
+  font-size: var(--font-size-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .chart-card.wide {
+    grid-column: span 1;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .status-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }
+  
+  #warning-matrix {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .status-card {
+    padding: 1rem;
+  }
+  
+  .current-value {
+    font-size: 1.5rem;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+}
