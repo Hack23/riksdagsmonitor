@@ -7198,37 +7198,6 @@ html[lang="he"] {
    ACCESSIBILITY ENHANCEMENTS
    ================================================== */
 
-/* Skip to Main Content Link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-color);
-  color: #fff;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 0 0 4px 0;
-  z-index: 10000;
-  transition: top 0.3s ease;
-}
-
-.skip-link:focus {
-  top: 0;
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-/* Enhanced Focus Indicators */
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
 /* Improved Visual Hierarchy */
 .subtitle {
   display: inline-block;
@@ -7361,30 +7330,14 @@ button:active {
 @media (max-width: 768px) {
   .btn,
   button,
-  a {
+  a.btn,
+  nav a,
+  .language-switcher a {
     min-height: 44px;
     min-width: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  }
-}
-
-/* Print Styles */
-@media print {
-  .skip-link,
-  .breadcrumb,
-  button {
-    display: none;
-  }
-  
-  .card {
-    page-break-inside: avoid;
-  }
-  
-  body {
-    background: white;
-    color: black;
   }
 }
 

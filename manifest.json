@@ -7,14 +7,7 @@
   "background_color": "#f8f9fa",
   "theme_color": "#006633",
   "orientation": "portrait-primary",
-  "icons": [
-    {
-      "src": "https://cia.sourceforge.io/cia-logo.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
+  "icons": [],
   "categories": ["politics", "news", "government"],
   "lang": "en",
   "dir": "ltr",
@@ -34,13 +27,7 @@
       "name": "Dashboard",
       "short_name": "Dashboard",
       "description": "View main intelligence dashboard",
-      "url": "/index.html",
-      "icons": [
-        {
-          "src": "https://cia.sourceforge.io/cia-logo.png",
-          "sizes": "192x192"
-        }
-      ]
+      "url": "/index.html"
     }
   ]
 }
