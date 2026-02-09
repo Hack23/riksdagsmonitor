@@ -381,8 +381,18 @@
             const row = {};
             Object.keys(d).forEach((key) => {
               const value = d[key];
-              const numValue = typeof value === 'string' ? parseFloat(value) : NaN;
-              row[key] = isNaN(numValue) ? value : numValue;
+              // Only coerce if the value is purely numeric (no letters, no dashes except leading minus)
+              // This prevents "2022-2026" from becoming 2022
+              if (typeof value === 'string') {
+                // Match pattern: optional minus, followed by digits, optional decimal point and more digits
+                if (/^-?\d+(\.\d+)?$/.test(value.trim())) {
+                  row[key] = parseFloat(value);
+                } else {
+                  row[key] = value;
+                }
+              } else {
+                row[key] = value;
+              }
             });
             return row;
           });
@@ -403,9 +413,12 @@
         const row = {};
         headers.forEach((header, index) => {
           const value = values[index];
-          // Try to convert to number
-          const numValue = parseFloat(value);
-          row[header] = isNaN(numValue) ? value : numValue;
+          // Only coerce if purely numeric
+          if (/^-?\d+(\.\d+)?$/.test(value)) {
+            row[header] = parseFloat(value);
+          } else {
+            row[header] = value;
+          }
         });
         data.push(row);
       }
@@ -1245,6 +1258,12 @@
       this.dataManager = new SeasonalPatternsDataManager();
       this.chartRenderer = null;
       this.currentLanguage = this.detectLanguage();
+      // Initialize translations with fallback to English
+      this.translations = TRANSLATIONS[this.currentLanguage] || TRANSLATIONS.en;
+      // Ensure tooltips exist (fallback to English if missing)
+      if (!this.translations.tooltips) {
+        this.translations.tooltips = TRANSLATIONS.en.tooltips;
+      }
       this.currentFilters = {
         year: 'all',
         quarter: 'all',
@@ -1412,11 +1431,22 @@
     showError() {
       const container = document.getElementById('seasonal-patterns-dashboard');
       if (container) {
-        container.innerHTML = `
-          <div class="error-message" role="alert">
-            <p>⚠️ ${TRANSLATIONS[this.currentLanguage]?.error || TRANSLATIONS.en.error}</p>
-          </div>
-        `;
+        // Clear existing content
+        while (container.firstChild) {
+          container.removeChild(container.firstChild);
+        }
+
+        // Create error elements using DOM methods
+        const errorWrapper = document.createElement('div');
+        errorWrapper.className = 'error-message';
+        errorWrapper.setAttribute('role', 'alert');
+
+        const errorText = document.createElement('p');
+        const message = this.translations.error || TRANSLATIONS.en.error;
+        errorText.textContent = `⚠️ ${message}`;
+
+        errorWrapper.appendChild(errorText);
+        container.appendChild(errorWrapper);
       }
     }
   }
