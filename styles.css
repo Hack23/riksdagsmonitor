@@ -6811,6 +6811,11 @@ html[lang="he"] {
    ANOMALY DETECTION DASHBOARD STYLES
    ================================================== */
 
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
 /* Dashboard Container */
 #anomaly-detection-dashboard {
   margin: 3rem 0;

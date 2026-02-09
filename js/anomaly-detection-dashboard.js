@@ -405,7 +405,7 @@
         
         const severity = anomaly.anomaly_severity.toLowerCase();
         banner.className = `alert-banner ${severity}`;
-        banner.style.display = 'flex';
+        banner.classList.remove('hidden');
 
         // Attach dismiss handler
         const dismissBtn = banner.querySelector('.dismiss-alert');
@@ -418,7 +418,7 @@
     dismissAlert() {
       const banner = document.getElementById('anomaly-alert-banner');
       if (banner) {
-        banner.style.display = 'none';
+        banner.classList.add('hidden');
         localStorage.setItem(CONFIG.alertDismissKey, Date.now().toString());
       }
     }
@@ -1030,7 +1030,7 @@
           loading.style.color = '#00d9ff';
           
           if (canvas) {
-            canvas.style.display = 'none';
+            canvas.classList.add('hidden');
             section.appendChild(loading);
           } else if (container) {
             container.innerHTML = '';
@@ -1045,7 +1045,7 @@
       loadingIndicators.forEach(indicator => indicator.remove());
       
       const canvases = document.querySelectorAll('#anomaly-detection-dashboard canvas');
-      canvases.forEach(canvas => canvas.style.display = 'block');
+      canvases.forEach(canvas => canvas.classList.remove('hidden'));
     }
 
     showError(message) {

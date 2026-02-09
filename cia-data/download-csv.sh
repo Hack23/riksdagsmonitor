@@ -18,7 +18,7 @@ download_file() {
     local path=$2
     local category=$3
     
-    echo -n "  ⬇️  $(basename $path)... "
+    echo -n "  ⬇️  $(basename "$path")${category:+ [$category]}... "
     if curl -sL "$url" -o "$path" 2>/dev/null; then
         local size=$(du -h "$path" | cut -f1)
         echo "✅ ($size)"

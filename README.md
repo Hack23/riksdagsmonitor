@@ -86,16 +86,16 @@ The Anomaly Detection & Early Warning System provides real-time identification o
 - **Interactive Visualizations** - 6 Chart.js/D3.js charts with filtering
 
 **Data Coverage:**
-- **Total Records**: 32 quarters analyzed (2002-2025)
-- **Anomalies Detected**: 12 out of 32 quarters (37.5% anomaly rate)
-- **Severity Breakdown**: 5 CRITICAL, 1 HIGH, 6 MODERATE
-- **Type Breakdown**: 4 ballot anomalies, 8 document anomalies, 0 attendance anomalies
-- **Direction**: 11 unusually high, 1 unusually low
+- **Total Records**: 41 quarters analyzed (2002-2026)
+- **Anomalies Detected**: Counts calculated from Z-score thresholds shown in dashboard
+- **Severity Breakdown**: 8 CRITICAL, 2 HIGH, 12 MODERATE, 19 LOW
+- **Type Breakdown**: Ballot, document, and attendance anomalies (displayed in dashboard)
+- **Direction**: Both unusually high and unusually low activity levels detected
 
 **Key Visualizations:**
-1. **Anomaly Timeline** - Scatter plot showing all anomalies across 23 years
+1. **Anomaly Timeline** - Scatter plot showing all anomalies across 23+ years
 2. **Z-Score Distribution** - Histogram with normal curve overlay
-3. **Anomaly Type Breakdown** - Doughnut chart (33% ballot, 67% document)
+3. **Anomaly Type Breakdown** - Doughnut chart showing distribution by type
 4. **Severity Heat Map** - D3.js heat map (year × quarter grid)
 5. **Quarterly Frequency** - Stacked bar chart by severity
 6. **Recent Anomalies Feed** - Last 5 anomalies with full details
