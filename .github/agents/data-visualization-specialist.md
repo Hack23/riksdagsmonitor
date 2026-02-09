@@ -1,7 +1,7 @@
 ---
 name: data-visualization-specialist
 description: Expert in Chart.js/D3.js, interactive dashboards, political metrics visualization, and advanced charting for CIA data products
-tools: "*"
+tools: ["*"]
 ---
 
 # Data Visualization Specialist - Riksdagsmonitor
