@@ -34,7 +34,7 @@ Comprehensive SEO and UI/UX enhancements implemented for riksdagsmonitor.com to 
 | Description | 125 chars | 200 chars | +60% more details |
 | Keywords | 10 terms | 20+ terms | +100% coverage |
 | Geographic | None | SE, Stockholm coords | Sweden targeting |
-| OG Properties | 7 | 14 | +100% social data |
+| OG Properties | 7 | 29 | +314% social data (incl. locale alternates & image metadata) |
 | Twitter Card | 5 | 7 | Image metadata |
 
 **New Meta Tags**:
@@ -93,7 +93,7 @@ After:
 ```html
 <a href="#main-content" class="skip-to-content">Skip to main content</a>
 ```
-- Hidden by default (top: -40px)
+- Hidden by default (top: -100px)
 - Visible on focus (top: 0)
 - High contrast with outline
 

@@ -19,7 +19,7 @@ $ grep -c "footer-section" index.html
 #### Schema.org Types
 ```bash
 $ grep -c "@type" index.html
-34  # ✅ 6 main types + nested types (ImageObject, PostalAddress, etc.)
+32  # ✅ 6 main types + nested types (ImageObject, PostalAddress, etc.)
 ```
 
 #### Language Grid
@@ -170,7 +170,7 @@ $ grep -c "\.footer-bottom" styles.css
 
 ### Accessibility ✅
 - [x] Skip-to-content link present
-- [x] Skip-to-content link hidden by default (top: -40px)
+- [x] Skip-to-content link hidden by default (top: -100px)
 - [x] Skip-to-content link visible on focus (top: 0)
 - [x] Main element has id="main-content"
 - [x] Footer has role="contentinfo"

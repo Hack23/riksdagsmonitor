@@ -1034,8 +1034,13 @@ a:hover {
   opacity: 1;
 }
 
-/* Skip to Content Link - alias to existing .skip-link */
+/* Skip to Content Link
+ * NOTE: .skip-link is the canonical skip-link class (defined at line 666).
+ * .skip-to-content is an alias for compatibility with this PR's HTML.
+ * Prefer using .skip-link directly in new code to avoid duplication.
+ */
 .skip-to-content {
+  /* Inherit all styles from .skip-link by applying the same rules */
   position: absolute;
   top: -100px;
   left: 0;
