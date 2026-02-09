@@ -359,7 +359,7 @@ const COMMITTEES = [
 | **CSP Compliance** | No inline scripts, external CDN allowed | CSP Level 3 |
 | **HTTPS Only** | All resources loaded over TLS 1.3 | TLS 1.3 |
 | **CORS Headers** | Proper CORS configuration for CIA data | CORS |
-| **XSS Prevention** | No innerHTML, textContent only | OWASP |
+| **XSS Prevention** | Restricted `innerHTML` for static templates; untrusted data via `textContent`/DOM APIs | OWASP |
 
 ### 3.2 External Integration Architecture
 

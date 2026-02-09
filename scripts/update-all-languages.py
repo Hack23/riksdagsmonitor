@@ -4,8 +4,6 @@ Update all 14 language HTML files with Committee Dashboard
 Adds CDN libraries and committee analytics section
 """
 
-import os
-import re
 from pathlib import Path
 
 # Language-specific translations for the committee dashboard
@@ -303,7 +301,7 @@ def generate_dashboard_html(lang_code):
 </div>
 
 <div class="dashboard-attribution">
-<p><small>{trans['attribution']} <a href="https://www.hack23.com/cia" target="_blank">CIA Platform</a> | {trans['updated']} <span id="lastUpdated">{trans['loading']}</span></small></p>
+<p><small>{trans['attribution']} <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | {trans['updated']} <span id="lastUpdated">{trans['loading']}</span></small></p>
 </div>
 </section>
 
