@@ -645,6 +645,90 @@
 				</ul>
 			</div>
 		</section>
+
+		<section id="anomaly-detection-dashboard">
+			<h2>🚨 Anomalidetektering och Tidig Varning</h2>
+			<p>Statistisk utliggaridentifiering i Sveriges riksdags aktivitet (2002-2025) med Z-poänganalys</p>
+
+			<!-- Alert Banner (for active anomalies) -->
+			<div id="anomaly-alert-banner" class="alert-banner critical" style="display: none;">
+				<span class="alert-icon">🔴</span>
+				<p><strong id="alert-prefix">KRITISK ANOMALI UPPTÄCKT:</strong> <span id="alert-message"></span></p>
+				<button class="dismiss-alert">Avvisa</button>
+			</div>
+
+			<!-- Filters -->
+			<div class="dashboard-filters">
+				<select id="severity-filter" aria-label="Filtrera efter allvarlighetsgrad">
+					<option value="all">Alla allvarlighetsgrader</option>
+					<option value="CRITICAL">🔴 Kritisk</option>
+					<option value="HIGH">🟠 Hög</option>
+					<option value="MODERATE">🟡 Måttlig</option>
+					<option value="LOW">🟢 Låg</option>
+				</select>
+				<select id="type-filter" aria-label="Filtrera efter anomalityp">
+					<option value="all">Alla typer</option>
+					<option value="BALLOT_ANOMALY">Omröstningsanomali</option>
+					<option value="DOCUMENT_ANOMALY">Dokumentanomali</option>
+					<option value="ATTENDANCE_ANOMALY">Närvaroanomali</option>
+					<option value="NO_ANOMALY">Ingen anomali</option>
+				</select>
+				<select id="direction-filter" aria-label="Filtrera efter riktning">
+					<option value="all">Alla riktningar</option>
+					<option value="UNUSUALLY_HIGH">Ovanligt hög</option>
+					<option value="UNUSUALLY_LOW">Ovanligt låg</option>
+					<option value="WITHIN_NORMAL_RANGE">Inom normalintervall</option>
+				</select>
+				<select id="year-filter" aria-label="Filtrera efter år">
+					<option value="all">Alla år</option>
+				</select>
+			</div>
+
+			<!-- Visualizations -->
+			<div class="dashboard-grid">
+				<!-- Chart 1: Anomaly Timeline -->
+				<div class="chart-card wide">
+					<h3>Anomalitidslinje (2002-2025)</h3>
+					<canvas id="anomaly-timeline-chart" role="img" aria-label="Spridningsdiagram som visar anomalier över tid"></canvas>
+					<p class="chart-description">Kronologisk vy av upptäckta anomalier med allvarlighetskodning</p>
+				</div>
+
+				<!-- Chart 2: Z-Score Distribution -->
+				<div class="chart-card">
+					<h3>Z-poängfördelning</h3>
+					<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram av Z-poängfördelning"></canvas>
+					<p class="chart-description">Normalkurva med utliggare (|Z| ≥ 2.0)</p>
+				</div>
+
+				<!-- Chart 3: Anomaly Type Breakdown -->
+				<div class="chart-card">
+					<h3>Anomalitypfördelning</h3>
+					<canvas id="anomaly-type-chart" role="img" aria-label="Munkdiagram som visar anomalityper"></canvas>
+					<p class="chart-description">Omröstnings- vs. dokumentanomalier</p>
+				</div>
+
+				<!-- Chart 4: Severity Heat Map -->
+				<div class="chart-card wide">
+					<h3>Allvarlighetsvärmekartan (År × Kvartal)</h3>
+					<div id="severity-heatmap" role="img" aria-label="Värmekarta som visar allvarlighetsgrad per år och kvartal"></div>
+					<p class="chart-description">Rutnät som visar anomalins allvarlighetsgrad per år och kvartal</p>
+				</div>
+
+				<!-- Chart 5: Quarterly Anomaly Frequency -->
+				<div class="chart-card">
+					<h3>Anomalifrekvens per kvartal</h3>
+					<canvas id="quarterly-frequency-chart" role="img" aria-label="Stapeldiagram som visar anomalifrekvens per kvartal"></canvas>
+					<p class="chart-description">Q1-Q4 anomaliräkning över alla år</p>
+				</div>
+
+				<!-- Chart 6: Recent Anomalies Feed -->
+				<div class="chart-card">
+					<h3>Senaste anomalierna (Senaste 5)</h3>
+					<div id="recent-anomalies-feed" role="feed" aria-label="Flöde av senaste anomalier"></div>
+					<p class="chart-description">Senaste anomalier med detaljer</p>
+				</div>
+			</div>
+		</section>
 	</main>
 	
 	<footer>
@@ -661,5 +745,12 @@
 			<a href="swedish-election-2026_sv.html" title="Svensk dokumentation">Svenska</a>
 		</p>
 	</footer>
+
+	<!-- Visualization Libraries -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+
+	<!-- Anomaly Detection Dashboard -->
+	<script src="js/anomaly-detection-dashboard.js"></script>
 </body>
 </html>
