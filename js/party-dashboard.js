@@ -54,12 +54,20 @@
       sectionDescription: 'Comprehensive analysis of Swedish political parties using 50+ years of CIA platform data. Track effectiveness trends, coalition dynamics, and momentum indicators across 8 parties.',
       effectivenessTitle: 'Effectiveness Trends (1990-2026)',
       effectivenessDescription: 'Historical party effectiveness scores showing legislative productivity, voting consistency, and policy impact over time.',
+      effectivenessAriaLabel: 'Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties',
+      effectivenessSrOnly: 'Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.',
       comparisonTitle: 'Party Comparison (Current Period)',
       comparisonDescription: 'Comparative analysis of party performance metrics for the current legislative period.',
+      comparisonAriaLabel: 'Horizontal bar chart comparing performance scores across 8 Swedish political parties',
+      comparisonSrOnly: 'Bar chart showing party performance rankings with scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party.',
       coalitionTitle: 'Coalition Alignment',
       coalitionDescription: 'Coalition patterns and inter-party collaboration networks.',
+      coalitionAriaLabel: 'Coalition alignment visualization showing collaboration strength between political parties',
+      coalitionSrOnly: 'Visualization of coalition patterns and alignment rates between Swedish political parties.',
       momentumTitle: 'Momentum Indicators',
       momentumDescription: 'Party momentum scores with percentile benchmarks (P50, P90) indicating electoral trajectory.',
+      momentumAriaLabel: 'Doughnut chart showing momentum indicators for all 8 Swedish political parties',
+      momentumSrOnly: 'Doughnut chart displaying momentum scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party.',
       loadingMessage: 'Loading CIA data from GitHub repository...',
       errorMessage: 'Error loading data. Please try again later.',
       dataAttribution: 'Data by CIA Platform',
@@ -80,12 +88,20 @@
       sectionDescription: 'Omfattande analys av svenska politiska partier med över 50 års CIA-plattformsdata. Spåra effektivitetstrender, koalitionsdynamik och momentumindikatorer för 8 partier.',
       effectivenessTitle: 'Effektivitetstrender (1990-2026)',
       effectivenessDescription: 'Historiska partieffektivitetspoäng som visar lagstiftningsproduktivitet, röstningskonsistens och politisk påverkan över tid.',
+      effectivenessAriaLabel: 'Linjeagram över partieffektivitet som visar trender från 1990 till 2026 för alla 8 svenska politiska partier',
+      effectivenessSrOnly: 'Linjeagram som visar effektivitetspoäng för Socialdemokraterna, Moderaterna, Sverigedemokraterna, Centerpartiet, Vänsterpartiet, Kristdemokraterna, Liberalerna och Miljöpartiet från 1990 till 2026.',
       comparisonTitle: 'Partijämförelse (Nuvarande Period)',
       comparisonDescription: 'Jämförande analys av partiprestandametrik för nuvarande mandatperiod.',
+      comparisonAriaLabel: 'Horisontellt stapeldiagram som jämför prestandapoäng för 8 svenska politiska partier',
+      comparisonSrOnly: 'Stapeldiagram som visar partiprestandarankingar med poäng för Socialdemokraterna, Moderaterna, Sverigedemokraterna, Centerpartiet, Vänsterpartiet, Kristdemokraterna, Liberalerna och Miljöpartiet.',
       coalitionTitle: 'Koalitionsanpassning',
       coalitionDescription: 'Koalitionsmönster och samarbetsnätverk mellan partier.',
+      coalitionAriaLabel: 'Visualisering av koalitionsanpassning som visar samarbetsstyrka mellan politiska partier',
+      coalitionSrOnly: 'Visualisering av koalitionsmönster och anpassningsgrader mellan svenska politiska partier.',
       momentumTitle: 'Momentumindikatorer',
       momentumDescription: 'Partimomentumpoäng med percentilriktmärken (P50, P90) som indikerar valbana.',
+      momentumAriaLabel: 'Ringdiagram som visar momentumindikatorer för alla 8 svenska politiska partier',
+      momentumSrOnly: 'Ringdiagram som visar momentumpoäng för Socialdemokraterna, Moderaterna, Sverigedemokraterna, Centerpartiet, Vänsterpartiet, Kristdemokraterna, Liberalerna och Miljöpartiet.',
       loadingMessage: 'Laddar CIA-data från GitHub-repository...',
       errorMessage: 'Fel vid laddning av data. Försök igen senare.',
       dataAttribution: 'Data från CIA-plattformen',
@@ -528,6 +544,11 @@
 
     const t = getTranslations();
     
+    // Update ARIA label for current language
+    ctx.setAttribute('aria-label', t.effectivenessAriaLabel);
+    const srOnly = ctx.parentElement.querySelector('.sr-only');
+    if (srOnly) srOnly.textContent = t.effectivenessSrOnly;
+    
     // Process real CSV data
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
     const partyData = {};
@@ -631,6 +652,12 @@
     if (!ctx) return;
 
     const t = getTranslations();
+    
+    // Update ARIA label for current language
+    ctx.setAttribute('aria-label', t.comparisonAriaLabel);
+    const srOnly = ctx.parentElement.querySelector('.sr-only');
+    if (srOnly) srOnly.textContent = t.comparisonSrOnly;
+    
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
     
     // Process real CSV data
@@ -712,6 +739,11 @@
 
     const t = getTranslations();
     
+    // Update ARIA label for current language
+    container.setAttribute('aria-label', t.coalitionAriaLabel);
+    const srOnly = container.parentElement.querySelector('.sr-only');
+    if (srOnly) srOnly.textContent = t.coalitionSrOnly;
+    
     // Process real CSV data for coalitions
     const coalitions = [];
     
@@ -768,6 +800,12 @@
     if (!ctx) return;
 
     const t = getTranslations();
+    
+    // Update ARIA label for current language
+    ctx.setAttribute('aria-label', t.momentumAriaLabel);
+    const srOnly = ctx.parentElement.querySelector('.sr-only');
+    if (srOnly) srOnly.textContent = t.momentumSrOnly;
+    
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
     
     // Process real CSV data for momentum
