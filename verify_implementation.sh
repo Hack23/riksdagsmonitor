@@ -30,7 +30,7 @@ echo "   styles.css: $(wc -l < styles.css) lines, $(du -h styles.css | cut -f1)"
 echo ""
 
 echo "4. Feature Checks:"
-echo "   - Skip-to-content: $(grep -c 'skip-to-content' index.html) occurrences"
+echo "   - Skip-to-content: $(grep -c 'skip-link' index.html) occurrences"
 echo "   - Back-to-top button: $(grep -c 'back-to-top' index.html) occurrences"
 echo "   - Footer sections: $(grep -c 'footer-section' index.html) sections"
 echo "   - Language links: $(grep -c 'language-grid' index.html) grids"
@@ -46,7 +46,7 @@ echo "   - Resource hints: $(grep -c 'dns-prefetch\|preconnect\|preload' index.h
 echo ""
 
 echo "6. CSS Feature Checks:"
-echo "   - Skip-to-content styles: $(grep -c '\.skip-to-content' styles.css) occurrences"
+echo "   - Skip-link styles: $(grep -c '\.skip-link' styles.css) occurrences"
 echo "   - Back-to-top styles: $(grep -c '\.back-to-top' styles.css) occurrences"
 echo "   - Footer styles: $(grep -c '\.footer-' styles.css) occurrences"
 echo "   - Language grid styles: $(grep -c '\.language-grid' styles.css) occurrences"

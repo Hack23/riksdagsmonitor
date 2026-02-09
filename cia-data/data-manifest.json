@@ -64,22 +64,6 @@
       "size": 441,
       "columns": ["party", "resilience_classification", "politician_count", "avg_resilience_score"],
       "status": "available"
-    },
-    {
-      "name": "top10_ethics_concerns.csv",
-      "category": "top_lists",
-      "description": "Top 10 MPs with highest ethics risk scores",
-      "size": 14,
-      "columns": ["rank", "politician", "ethics_score"],
-      "status": "not_available"
-    },
-    {
-      "name": "top10_electoral_risk.csv",
-      "category": "top_lists",
-      "description": "Top 10 MPs with highest electoral vulnerability",
-      "size": 14,
-      "columns": ["rank", "politician", "risk_score"],
-      "status": "not_available"
     }
   ],
   "usage": {
@@ -94,14 +78,13 @@
     ]
   },
   "statistics": {
-    "totalFiles": 9,
+    "totalFiles": 7,
     "availableFiles": 7,
     "totalSize": "~44KB",
     "categories": {
       "risk_assessment": 4,
       "anomaly_detection": 2,
-      "crisis_resilience": 1,
-      "top_lists": 2
+      "crisis_resilience": 1
     }
   }
 }

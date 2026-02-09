@@ -7095,7 +7095,7 @@ html[lang="he"] {
     width: 100%;
   }
   
-  canvas {
+  #risk-dashboard canvas {
     min-height: 250px;
   }
 }
@@ -7203,8 +7203,12 @@ html[lang="he"] {
    at lines 666-789. Avoiding duplicate universal focus rules. */
 
 /* Remove outline for mouse clicks (only show for keyboard) */
-*:focus:not(:focus-visible) {
-  outline: none;
+/* Focus visible support (scoped to browsers that support it) */
+@supports selector(:focus-visible) {
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
 }
 
 /* Respect user's motion preferences */

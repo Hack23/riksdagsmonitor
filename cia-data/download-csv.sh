@@ -1,8 +1,13 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Download CIA platform sample data files for riksdagsmonitor dashboard
 # Base URL for CIA sample data
 BASE_URL="https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data"
+
+# Ensure downloads are saved relative to this script's directory (cia-data/)
+cd "$(dirname "$0")"
 
 # Function to download and validate HTTP response
 download_file() {
