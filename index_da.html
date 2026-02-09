@@ -645,6 +645,76 @@
 				</ul>
 			</div>
 		</section>
+<section id="seasonal-patterns-dashboard">
+<h2>📅 Sæsonmønstre (2002-2025)</h2>
+<p class="subtitle">Kvartalsanalyse med Z-score anomalidetektion</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="Filtrer efter år">
+<option value="all">Alle år</option>
+</select>
+
+<select id="quarter-filter" aria-label="Filtrer efter kvartal">
+<option value="all">Alle kvartaler</option>
+<option value="1">K1 - Vintersession</option>
+<option value="2">K2 - Forårssession</option>
+<option value="3">K3 - Sommerpause</option>
+<option value="4">K4 - Efterårssession</option>
+</select>
+
+<select id="election-filter" aria-label="Filtrer efter valgstatus">
+<option value="all">Alle</option>
+<option value="election">Valgår</option>
+<option value="non-election">Ikke-valgår</option>
+</select>
+
+<select id="classification-filter" aria-label="Filtrer efter aktivitetsklassificering">
+<option value="all">Alle klassificeringer</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>Kvartalsaktivitet varmekort (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">Afstemningsvolumen efter år og kvartal med Z-score. Røde cirkler indikerer statistiske afvigelser (|Z| ≥ 2.0).</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Z-score anomalidetektion</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Z-score anomalidetektion"></canvas>
+<p class="chart-description">Statistiske afvigelser (|Z| ≥ 2.0) markeret med rødt. Stiplede linjer viser anomalitærskler.</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>Gennemsnitlig aktivitet efter kvartal (alle år)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Gennemsnitlig aktivitet efter kvartal (alle år)"></canvas>
+<p class="chart-description">K1-K4 basislinjer. Viser typiske aktivitetsmønstre over sæsoner.</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>Sæsonmønster klassificering</h3>
+<canvas id="classification-chart" role="img" aria-label="Sæsonmønster klassificering"></canvas>
+<p class="chart-description">Fordeling af NORMAL, FORHØJET, REDUCERET og ANOMALI mønstre over årene.</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>Kvartal-til-kvartal ændringer</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Kvartal-til-kvartal ændringer"></canvas>
+<p class="chart-description">Sekventielle afstemningsændringer (% og absolut). Grønt indikerer stigning, rødt indikerer fald.</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Data fra CIA-platformen | Opdateres dagligt</p>
+</section>
+
 	</main>
 	
 	<footer>
@@ -661,5 +731,13 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+<!-- Visualiseringsbiblioteker -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-4g6qjJ6wLsD/wG9HVNaEqkPT8Vqwj/fYz13pKK09pQvClzJIPHFOnP8WqqDkc2M0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha384-U4TGn6R7rz6OfYYTpLGOZLYdXb6vKSYFoJioBnZ8IrEJ1LJOe2mApxqZqLpDyNDP" crossorigin="anonymous"></script>
+
+<!-- Dashboard-script -->
+<script src="js/seasonal-patterns-dashboard.js"></script>
+
 </body>
 </html>

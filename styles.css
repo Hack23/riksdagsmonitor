@@ -6806,3 +6806,357 @@ html[lang="he"] {
     border: 1px solid #333;
   }
 }
+
+/* ==================================================
+   SEASONAL PATTERNS DASHBOARD
+   ================================================== */
+
+/* Dashboard Container */
+#seasonal-patterns-dashboard {
+  max-width: 1400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 16px var(--card-shadow);
+}
+
+#seasonal-patterns-dashboard h2 {
+  font-family: var(--font-accent);
+  font-size: var(--h2-size);
+  color: var(--header-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+#seasonal-patterns-dashboard .subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  margin-bottom: 2rem;
+}
+
+/* Dashboard Filters */
+.dashboard-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.dashboard-filters select {
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-base);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.dashboard-filters select:hover {
+  border-color: var(--primary-color);
+}
+
+.dashboard-filters select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 102, 51, 0.1);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Chart Cards */
+.chart-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 8px var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: 0 4px 16px var(--card-shadow);
+  transform: translateY(-2px);
+}
+
+.chart-card.wide {
+  grid-column: 1 / -1;
+}
+
+.chart-card h3 {
+  font-family: var(--font-accent);
+  font-size: var(--h3-size);
+  color: var(--header-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.chart-card .chart-description {
+  margin-top: 1rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Chart Containers */
+.chart-card canvas {
+  width: 100% !important;
+  height: 400px !important;
+  max-height: 400px;
+}
+
+#seasonal-heatmap {
+  width: 100%;
+  min-height: 600px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#seasonal-heatmap svg {
+  font-family: var(--font-main);
+}
+
+#seasonal-heatmap .axis text {
+  font-size: 12px;
+  fill: var(--text-color);
+}
+
+#seasonal-heatmap .axis line,
+#seasonal-heatmap .axis path {
+  stroke: var(--border-color);
+}
+
+#seasonal-heatmap .cell {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#seasonal-heatmap .cell:hover {
+  stroke: #000 !important;
+  stroke-width: 2 !important;
+}
+
+#seasonal-heatmap .anomaly-marker {
+  cursor: pointer;
+  animation: pulse-anomaly 2s infinite;
+}
+
+@keyframes pulse-anomaly {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #seasonal-heatmap .anomaly-marker {
+    animation: none;
+  }
+  
+  #seasonal-patterns-dashboard.loading::after {
+    animation: none;
+    opacity: 0.9;
+  }
+}
+
+/* Loading State */
+#seasonal-patterns-dashboard.loading {
+  position: relative;
+  min-height: 400px;
+}
+
+/* Loading overlay - shows spinner animation */
+#seasonal-patterns-dashboard.loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #seasonal-patterns-dashboard.loading::before {
+    animation: none;
+    border-top-color: var(--primary-color);
+    border-right-color: var(--primary-color);
+  }
+}
+
+#seasonal-patterns-dashboard.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 9;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Error Message */
+.error-message {
+  padding: 2rem;
+  background: #fff5f5;
+  border: 2px solid var(--danger-color);
+  border-radius: var(--border-radius);
+  color: var(--danger-color);
+  text-align: center;
+  font-size: var(--font-size-lg);
+}
+
+/* Data Attribution */
+.data-attribution {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  #seasonal-patterns-dashboard {
+    background: rgba(26, 26, 26, 0.95);
+  }
+  
+  .dashboard-filters {
+    background: rgba(30, 30, 30, 0.8);
+  }
+  
+  .chart-card {
+    background: rgba(26, 26, 26, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  #seasonal-patterns-dashboard.loading::after {
+    background: rgba(26, 26, 26, 0.9);
+  }
+  
+  .error-message {
+    background: rgba(211, 47, 47, 0.1);
+    border-color: var(--danger-color);
+  }
+  
+  #seasonal-heatmap .axis text {
+    fill: var(--light-text, #e0e0e0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-card.wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #seasonal-patterns-dashboard {
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+  
+  .dashboard-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .dashboard-filters select {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .dashboard-grid {
+    gap: 1.5rem;
+  }
+  
+  .chart-card {
+    padding: 1rem;
+  }
+  
+  .chart-card canvas {
+    height: 300px !important;
+  }
+  
+  #seasonal-heatmap {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  #seasonal-patterns-dashboard h2 {
+    font-size: var(--h3-size);
+  }
+  
+  .chart-card h3 {
+    font-size: var(--h4-size);
+  }
+  
+  .chart-card canvas {
+    height: 250px !important;
+  }
+  
+  #seasonal-heatmap {
+    min-height: 400px;
+  }
+}
