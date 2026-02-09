@@ -39,7 +39,6 @@
     "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
-    "htmlhint": "^1.8.1",
     "json-schema-to-typescript": "^15.0.3"
   },
   "engines": {
