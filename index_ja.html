@@ -177,6 +177,9 @@
   ]
 }</script>
 
+<!-- Chart.js for Party Dashboard Visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-dq3FSt0HAXW9PcHCBX8qvM8r4QcBjEKN8XAUYsN3EcdVsVm2D/r0ZXfm7vMPQJ2+" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <header>
@@ -227,6 +230,42 @@
           <li><a href="blog_ja.html">ブログ</a></li>
         </ul>
       </section>
+    
+<section id="party-dashboard" class="dashboard-container">
+<h2>🗳️ 政党のパフォーマンスと効果</h2>
+<p>CIAプラットフォームの50年以上のデータを使用したスウェーデンの政党の包括的な分析。8つの政党の効果トレンド、連立動態、勢いの指標を追跡します。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>効果トレンド（1990-2026）</h3>
+<p>立法の生産性、投票の一貫性、および政策の影響を時系列で示す歴史的な政党の効果スコア。</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>政党比較（現在の期間）</h3>
+<p>現在の立法期間における政党のパフォーマンスメトリクスの比較分析。</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>連立の調整</h3>
+<p>連立パターンと政党間の協力ネットワーク。</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>勢いの指標</h3>
+<p>パーセンタイルベンチマーク（P50、P90）を使用した政党の勢いスコアで、選挙の軌跡を示します。</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
     </article>
   </main>
 
@@ -234,5 +273,7 @@
     <p>&copy; 2025 Hack23 AB. All rights reserved.</p>
     <p><a href="index_ja.html">ホーム</a> | <a href="blog_ja.html">ブログ</a></p>
   </footer>
+<!-- Party Dashboard Script -->
+<script src="js/party-dashboard.js"></script>
 </body>
 </html>

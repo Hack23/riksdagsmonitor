@@ -96,6 +96,9 @@
 <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
 <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
+<!-- Chart.js for Party Dashboard Visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-dq3FSt0HAXW9PcHCBX8qvM8r4QcBjEKN8XAUYsN3EcdVsVm2D/r0ZXfm7vMPQJ2+" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <!-- Breadcrumb Navigation -->
@@ -319,6 +322,41 @@ Swedish Election 2026
 <p class="note">All visualizations available through CIA platform with real-time data updates from Swedish Parliament open data APIs.</p>
 </section>
 
+<section id="party-dashboard" class="dashboard-container">
+<h2>🗳️ Party Performance & Effectiveness</h2>
+<p>Comprehensive analysis of Swedish political parties using 50+ years of CIA platform data. Track effectiveness trends, coalition dynamics, and momentum indicators across 8 parties.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>Effectiveness Trends (1990-2026)</h3>
+<p>Historical party effectiveness scores showing legislative productivity, voting consistency, and policy impact over time.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>Party Comparison (Current Period)</h3>
+<p>Comparative analysis of party performance metrics for the current legislative period.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>Coalition Alignment</h3>
+<p>Coalition patterns and inter-party collaboration networks.</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>Momentum Indicators</h3>
+<p>Party momentum scores with percentile benchmarks (P50, P90) indicating electoral trajectory.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
 <section id="data-integration">
 <h2>🔗 Data Sources & Integration</h2>
 <p>Riksdags Monitor integrates multiple authoritative data sources:</p>
@@ -411,5 +449,8 @@ Swedish Election 2026
 <a href="swedish-election-2026_fi.html" title="Suomi">Suomi</a>
 </p>
 </footer>
+
+<!-- Party Dashboard Script -->
+<script src="js/party-dashboard.js"></script>
 </body>
 </html>

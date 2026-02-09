@@ -216,6 +216,9 @@
 	<link rel="alternate" hreflang="zh-Hans" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
 	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
+<!-- Chart.js for Party Dashboard Visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-dq3FSt0HAXW9PcHCBX8qvM8r4QcBjEKN8XAUYsN3EcdVsVm2D/r0ZXfm7vMPQJ2+" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<!-- Breadcrumb Navigation -->
@@ -623,7 +626,43 @@
 			</div>
 		</section>
 
-		<section id="final-cta">
+		
+<section id="party-dashboard" class="dashboard-container">
+<h2>🗳️ Partiprestasjon & Effektivitet</h2>
+<p>Omfattende analyse av svenske politiske partier med over 50 års CIA-plattformdata. Spor effektivitetstrender, koalisjonsdynamikk og momentumindikatorer for 8 partier.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>Effektivitetstrender (1990-2026)</h3>
+<p>Historiske partieffektivitetspoeng som viser lovgivende produktivitet, stemmekonsistens og politisk innvirkning over tid.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>Partisammenligning (Nåværende Periode)</h3>
+<p>Sammenlignende analyse av partiprestasjonsmålinger for den nåværende lovgivende perioden.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>Koalisjonstilpasning</h3>
+<p>Koalisjonsmønstre og samarbeidsnettverk mellom partier.</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>Momentumindikatorer</h3>
+<p>Partimomentumpoeng med persentilreferanser (P50, P90) som indikerer valgbane.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+<section id="final-cta">
 			<h2>Join the Intelligence Revolution</h2>
 			<p>Swedish Election 2026: Prove the power of systematic political transparency</p>
 			
@@ -661,5 +700,7 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+<!-- Party Dashboard Script -->
+<script src="js/party-dashboard.js"></script>
 </body>
 </html>
