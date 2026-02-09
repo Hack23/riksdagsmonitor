@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """Quick fix for Japanese and Chinese HTML files"""
 
-import os
-
 # Japanese translation
 ja_dashboard = '''
 <section id="party-dashboard" class="dashboard-container">

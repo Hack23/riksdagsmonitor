@@ -84,15 +84,7 @@
       "publisher": {
         "@id": "https://riksdagsmonitor.com/#organization"
       },
-      "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://riksdagsmonitor.com/?s={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
+      "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
     },
     {
       "@type": "Organization",
@@ -270,7 +262,7 @@
 <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
 <!-- Chart.js for Party Dashboard Visualizations -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-e6cc9LaIG7xZ3XD5B+jtr1NhTWPQGQdRCh6xiZ+ZFUtWCpg4ycv3Sh+SkZoopvUY" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -626,35 +618,16 @@ Swedish Election 2026
 </p>
 </footer>
 
-<!-- Party Dashboard Script -->
-<script src="js/party-dashboard.js"></script>
-
 <!-- Back to Top Button -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
   ↑
 </button>
 
-<script>
-// Back to Top Button Functionality
-(function() {
-  const backToTopButton = document.getElementById('backToTop');
-  
-  window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-      backToTopButton.classList.add('visible');
-    } else {
-      backToTopButton.classList.remove('visible');
-    }
-  });
-  
-  backToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-})();
-</script>
+<!-- Party Dashboard Script -->
+<script src="js/party-dashboard.js"></script>
+
+<!-- Back to Top Button Script (respects prefers-reduced-motion) -->
+<script src="js/back-to-top.js"></script>
 
 </body>
 </html>
