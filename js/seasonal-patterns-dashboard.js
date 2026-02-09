@@ -120,6 +120,20 @@
         quarter: 'Quarter',
         year: 'Year'
       },
+      chartLabels: {
+        ballotZScore: 'Ballot Z-Score',
+        documentZScore: 'Document Z-Score',
+        attendanceZScore: 'Attendance Z-Score',
+        yearQuarter: 'Year-Quarter',
+        zScore: 'Z-Score',
+        quarter: 'Quarter',
+        averageBallots: 'Average Ballots',
+        year: 'Year',
+        count: 'Count',
+        changePercent: 'Change (%)',
+        qoqChange: 'QoQ Change (%)',
+        anomaly: 'ANOMALY'
+      },
       loading: 'Loading data...',
       error: 'Error loading data. Please try again.',
       dataAttribution: 'Data by CIA Platform'
@@ -187,6 +201,20 @@
         quarter: 'Kvartal',
         year: 'År'
       },
+      chartLabels: {
+        ballotZScore: 'Omröstningar Z-poäng',
+        documentZScore: 'Dokument Z-poäng',
+        attendanceZScore: 'Närvaro Z-poäng',
+        yearQuarter: 'År-Kvartal',
+        zScore: 'Z-poäng',
+        quarter: 'Kvartal',
+        averageBallots: 'Genomsnittliga omröstningar',
+        year: 'År',
+        count: 'Antal',
+        changePercent: 'Förändring (%)',
+        qoqChange: 'KtK-förändring (%)',
+        anomaly: 'ANOMALI'
+      },
       loading: 'Laddar data...',
       error: 'Fel vid inläsning av data. Försök igen.',
       dataAttribution: 'Data från CIA-plattformen'
@@ -253,6 +281,20 @@
         na: 'Mangler',
         quarter: 'Kvartal',
         year: 'År'
+      },
+      chartLabels: {
+        ballotZScore: 'Afstemninger Z-score',
+        documentZScore: 'Dokument Z-score',
+        attendanceZScore: 'Fremmøde Z-score',
+        yearQuarter: 'År-Kvartal',
+        zScore: 'Z-score',
+        quarter: 'Kvartal',
+        averageBallots: 'Gennemsnitlige afstemninger',
+        year: 'År',
+        count: 'Antal',
+        changePercent: 'Ændring (%)',
+        qoqChange: 'KtK-ændring (%)',
+        anomaly: 'ANOMALI'
       },
       loading: 'Indlæser data...',
       error: 'Fejl ved indlæsning af data. Prøv igen.',
@@ -801,7 +843,7 @@
       legend.append('text')
         .attr('x', 0)
         .attr('y', -10)
-        .text('Ballots')
+        .text(this.translations.tooltips.ballots)
         .style('font-size', '12px')
         .style('font-weight', '500');
     }
@@ -817,6 +859,7 @@
       }
 
       const ctx = canvas.getContext('2d');
+      const t = this.translations.chartLabels;
 
       // Sort data by year and quarter
       const sortedData = [...data].sort((a, b) => {
@@ -835,7 +878,7 @@
           labels: labels,
           datasets: [
             {
-              label: 'Ballot Z-Score',
+              label: t.ballotZScore,
               data: ballotZScores,
               borderColor: CONFIG.colors.primary,
               backgroundColor: CONFIG.colors.primary + '40',
@@ -845,7 +888,7 @@
               tension: 0.1
             },
             {
-              label: 'Document Z-Score',
+              label: t.documentZScore,
               data: docZScores,
               borderColor: CONFIG.colors.secondary,
               backgroundColor: CONFIG.colors.secondary + '40',
@@ -855,7 +898,7 @@
               tension: 0.1
             },
             {
-              label: 'Attendance Z-Score',
+              label: t.attendanceZScore,
               data: attendanceZScores,
               borderColor: CONFIG.colors.tertiary,
               backgroundColor: CONFIG.colors.tertiary + '40',
@@ -890,7 +933,7 @@
                   label += context.parsed.y.toFixed(2);
                   const absZ = Math.abs(context.parsed.y);
                   if (absZ >= CONFIG.zScoreThreshold) {
-                    label += ' 🔴 ANOMALY';
+                    label += ' 🔴 ' + t.anomaly;
                   }
                   return label;
                 }
@@ -902,7 +945,7 @@
               display: true,
               title: {
                 display: true,
-                text: 'Year-Quarter'
+                text: t.yearQuarter
               },
               ticks: {
                 maxRotation: 90,
@@ -915,7 +958,7 @@
               display: true,
               title: {
                 display: true,
-                text: 'Z-Score'
+                text: t.zScore
               },
               min: -4,
               max: 4
@@ -991,14 +1034,14 @@
               display: true,
               title: {
                 display: true,
-                text: 'Quarter'
+                text: this.translations.chartLabels.quarter
               }
             },
             y: {
               display: true,
               title: {
                 display: true,
-                text: 'Average Ballots'
+                text: this.translations.chartLabels.averageBallots
               },
               beginAtZero: true
             }
@@ -1143,7 +1186,7 @@
               display: true,
               title: {
                 display: true,
-                text: 'Year'
+                text: this.translations.chartLabels.year
               }
             },
             y: {
@@ -1151,7 +1194,7 @@
               display: true,
               title: {
                 display: true,
-                text: 'Count'
+                text: this.translations.chartLabels.count
               },
               beginAtZero: true
             }
@@ -1196,7 +1239,7 @@
           labels: labels,
           datasets: [
             {
-              label: 'QoQ Change (%)',
+              label: this.translations.chartLabels.qoqChange,
               data: changes,
               backgroundColor: colors,
               borderColor: colors,
@@ -1227,7 +1270,7 @@
               display: true,
               title: {
                 display: true,
-                text: 'Year-Quarter'
+                text: this.translations.chartLabels.yearQuarter
               },
               ticks: {
                 maxRotation: 90,
@@ -1240,7 +1283,7 @@
               display: true,
               title: {
                 display: true,
-                text: 'Change (%)'
+                text: this.translations.chartLabels.changePercent
               }
             }
           }
@@ -1263,6 +1306,10 @@
       // Ensure tooltips exist (fallback to English if missing)
       if (!this.translations.tooltips) {
         this.translations.tooltips = TRANSLATIONS.en.tooltips;
+      }
+      // Ensure chartLabels exist (fallback to English if missing)
+      if (!this.translations.chartLabels) {
+        this.translations.chartLabels = TRANSLATIONS.en.chartLabels;
       }
       this.currentFilters = {
         year: 'all',

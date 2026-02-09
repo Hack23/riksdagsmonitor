@@ -6988,16 +6988,33 @@ html[lang="he"] {
   min-height: 400px;
 }
 
-/* Loading overlay - text is injected by JavaScript in the user's language */
+/* Loading overlay - shows spinner animation */
 #seasonal-patterns-dashboard.loading::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: var(--font-size-xl);
-  color: var(--text-secondary);
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
   z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #seasonal-patterns-dashboard.loading::before {
+    animation: none;
+    border-top-color: var(--primary-color);
+    border-right-color: var(--primary-color);
+  }
 }
 
 #seasonal-patterns-dashboard.loading::after {
