@@ -65,7 +65,22 @@
       elevated: 'ELEVATED',
       improving: 'IMPROVING',
       declining: 'DECLINING',
-      stable: 'STABLE'
+      stable: 'STABLE',
+      metrics: {
+        ballots: 'Ballots',
+        documents: 'Documents',
+        attendance: 'Attendance',
+        yoyChange: 'YoY Change',
+        winRate: 'Win Rate',
+        absenceRate: 'Absence Rate',
+        proposals: 'Proposals',
+        assignments: 'Assignments'
+      },
+      status: {
+        ok: 'OK',
+        warning: 'Warning',
+        alert: 'Alert'
+      }
     },
     sv: {
       title: 'Övervakning före val',
@@ -83,7 +98,22 @@
       elevated: 'FÖRHÖJD',
       improving: 'FÖRBÄTTRAS',
       declining: 'FÖRSÄMRAS',
-      stable: 'STABIL'
+      stable: 'STABIL',
+      metrics: {
+        ballots: 'Omröstningar',
+        documents: 'Dokument',
+        attendance: 'Närvaro',
+        yoyChange: 'ÅfÅ-förändring',
+        winRate: 'Vinstfrekvens',
+        absenceRate: 'Frånvarofrekvens',
+        proposals: 'Förslag',
+        assignments: 'Uppdrag'
+      },
+      status: {
+        ok: 'OK',
+        warning: 'Varning',
+        alert: 'Alert'
+      }
     }
   };
 
@@ -240,12 +270,22 @@
       }
     }
 
-    getCurrentYearData(year = 2025) {
-      if (!this.preElectionData) return null;
-      return this.preElectionData.find(d => d.year === year);
+    getLatestYear() {
+      if (!this.preElectionData || this.preElectionData.length === 0) return null;
+      return Math.max(...this.preElectionData.map(d => d.year));
     }
 
-    calculateDeviations(currentYear = 2025) {
+    getCurrentYearData(year) {
+      if (!this.preElectionData) return null;
+      
+      // If no year specified, use the latest year in the dataset
+      const targetYear = year !== undefined ? year : this.getLatestYear();
+      if (!targetYear) return null;
+      
+      return this.preElectionData.find(d => d.year === targetYear);
+    }
+
+    calculateDeviations(currentYear) {
       const data = this.getCurrentYearData(currentYear);
       if (!data) return null;
 
@@ -266,40 +306,40 @@
     }
 
     generateEarlyWarnings() {
-      const data = this.getCurrentYearData(2025);
+      const data = this.getCurrentYearData();
       if (!data) return [];
 
       const warnings = [];
-      const deviations = this.calculateDeviations(2025);
+      const deviations = this.calculateDeviations();
 
       // Ballot warning
       if (deviations.ballots < CONFIG.thresholds.ballotAlert) {
-        warnings.push({ metric: 'Ballots', status: 'alert', deviation: deviations.ballots });
+        warnings.push({ metric: 'ballots', status: 'alert', deviation: deviations.ballots });
       } else if (deviations.ballots < CONFIG.thresholds.ballotWarning) {
-        warnings.push({ metric: 'Ballots', status: 'warning', deviation: deviations.ballots });
+        warnings.push({ metric: 'ballots', status: 'warning', deviation: deviations.ballots });
       } else {
-        warnings.push({ metric: 'Ballots', status: 'ok', deviation: deviations.ballots });
+        warnings.push({ metric: 'ballots', status: 'ok', deviation: deviations.ballots });
       }
 
       // Document warning
       if (Math.abs(deviations.documents) > CONFIG.thresholds.documentWarning) {
-        warnings.push({ metric: 'Documents', status: 'warning', deviation: deviations.documents });
+        warnings.push({ metric: 'documents', status: 'warning', deviation: deviations.documents });
       } else {
-        warnings.push({ metric: 'Documents', status: 'ok', deviation: deviations.documents });
+        warnings.push({ metric: 'documents', status: 'ok', deviation: deviations.documents });
       }
 
       // Attendance warning
       if (deviations.attendance < CONFIG.thresholds.attendanceWarning) {
-        warnings.push({ metric: 'Attendance', status: 'warning', deviation: deviations.attendance });
+        warnings.push({ metric: 'attendance', status: 'warning', deviation: deviations.attendance });
       } else {
-        warnings.push({ metric: 'Attendance', status: 'ok', deviation: deviations.attendance });
+        warnings.push({ metric: 'attendance', status: 'ok', deviation: deviations.attendance });
       }
 
       // YoY change warning
       if (Math.abs(data.yoy_ballot_change_pct || 0) > CONFIG.thresholds.yoyAlert) {
-        warnings.push({ metric: 'YoY Change', status: 'alert', deviation: data.yoy_ballot_change_pct });
+        warnings.push({ metric: 'yoyChange', status: 'alert', deviation: data.yoy_ballot_change_pct });
       } else {
-        warnings.push({ metric: 'YoY Change', status: 'ok', deviation: data.yoy_ballot_change_pct });
+        warnings.push({ metric: 'yoyChange', status: 'ok', deviation: data.yoy_ballot_change_pct });
       }
 
       return warnings;
@@ -523,9 +563,9 @@
                 data.baseline_ballots / 100,
                 data.baseline_documents / 100,
                 data.baseline_assignments,
-                85,
-                56,
-                15
+                data.baseline_attendance || 85,
+                data.baseline_party_win_rate || 56,
+                data.baseline_party_absence_rate || 15
               ],
               borderColor: CONFIG.chartColors.baseline,
               backgroundColor: CONFIG.chartColors.baseline + '22',
@@ -652,17 +692,29 @@
 
       data.sort((a, b) => a.year - b.year);
 
+      const years = data.map(d => d.year);
       const values = data.map(d => d.total_ballots);
-      const changes = [
-        values[0],
-        values[1] - values[0],
-        values[2] - values[1]
-      ];
+      
+      // Generate labels and changes dynamically
+      const labels = [];
+      const changes = [];
+      
+      for (let i = 0; i < values.length; i++) {
+        if (i === 0) {
+          // First year: absolute value
+          labels.push(String(years[0]));
+          changes.push(values[0]);
+        } else {
+          // Subsequent years: year-over-year change
+          labels.push(String(years[i]) + ' Change');
+          changes.push(values[i] - values[i - 1]);
+        }
+      }
 
       new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2023', '2024 Change', '2025 Change'],
+          labels: labels,
           datasets: [{
             label: 'Ballot Activity',
             data: changes,
@@ -721,16 +773,20 @@
       if (!container) return;
 
       const warnings = this.dataManager.generateEarlyWarnings();
+      const lang = getCurrentLanguage();
+      const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
       container.innerHTML = warnings.map(w => {
         const statusIcon = w.status === 'ok' ? '🟢' : w.status === 'warning' ? '🟡' : '🔴';
         const statusClass = w.status === 'ok' ? 'normal' : w.status === 'warning' ? 'warning' : 'alert';
+        const statusLabel = t.status[w.status] || w.status.toUpperCase();
+        const metricLabel = t.metrics[w.metric] || w.metric;
         const deviationText = (w.deviation > 0 ? '+' : '') + w.deviation.toFixed(1) + '%';
 
         return `
           <div class="warning-cell ${statusClass}">
-            <div class="status-icon">${statusIcon}</div>
-            <div class="metric-name">${w.metric}</div>
+            <div class="status-icon" role="img" aria-label="${statusLabel}">${statusIcon}</div>
+            <div class="metric-name">${metricLabel}</div>
             <div class="deviation-value">${deviationText}</div>
           </div>
         `;

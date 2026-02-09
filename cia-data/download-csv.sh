@@ -10,7 +10,7 @@
 # Author: Hack23 AB
 # License: Apache-2.0
 
-set -e  # Exit on error
+# Note: We don't use set -e so that all downloads are attempted even if some fail
 
 # Color codes for output
 GREEN='\033[0;32m'
@@ -31,6 +31,9 @@ echo -e "${BLUE}CIA Platform CSV Data Downloader${NC}"
 echo -e "${BLUE}==================================${NC}"
 echo ""
 
+# Track failures
+FAILED_FILES=()
+
 # Function to download a file
 download_file() {
     local url="$1"
@@ -46,6 +49,7 @@ download_file() {
         return 0
     else
         echo -e "${RED}✗ Failed:${NC} $filename"
+        FAILED_FILES+=("$filename")
         return 1
     fi
 }
@@ -67,7 +71,20 @@ download_file \
 
 echo ""
 echo -e "${BLUE}==================================${NC}"
-echo -e "${GREEN}✓ Download Complete${NC}"
+
+# Report results
+if [ ${#FAILED_FILES[@]} -eq 0 ]; then
+    echo -e "${GREEN}✓ Download Complete${NC}"
+    echo -e "${GREEN}All files downloaded successfully!${NC}"
+    exit 0
+else
+    echo -e "${YELLOW}⚠ Download Complete with Errors${NC}"
+    echo -e "${RED}Failed files:${NC}"
+    for file in "${FAILED_FILES[@]}"; do
+        echo -e "${RED}  - $file${NC}"
+    done
+    exit 1
+fi
 echo -e "${BLUE}==================================${NC}"
 echo ""
 

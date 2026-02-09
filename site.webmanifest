@@ -8,6 +8,7 @@
   "theme_color": "#0066CC",
   "orientation": "portrait-primary",
   "icons": [],
+  "_comment": "icons array is empty until favicon image assets are generated (16x16, 32x32, 180x180, 192x192, 512x512). Once created, add entries with purpose: 'any' and 'maskable' variants for optimal PWA support.",
   "categories": ["news", "politics", "government"],
   "lang": "en",
   "dir": "ltr",
