@@ -1,0 +1,107 @@
+{
+  "name": "CIA Risk Assessment Data",
+  "version": "1.0.0",
+  "description": "CSV data files from CIA platform for Swedish Parliament monitoring",
+  "source": {
+    "repository": "https://github.com/Hack23/cia",
+    "baseUrl": "https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data",
+    "branch": "master"
+  },
+  "lastUpdated": "2026-02-09T06:08:00Z",
+  "files": [
+    {
+      "name": "distribution_politician_risk_levels.csv",
+      "category": "risk_assessment",
+      "description": "Risk level distribution across MPs",
+      "size": 83,
+      "columns": ["risk_level", "politician_count", "percentage"],
+      "status": "available"
+    },
+    {
+      "name": "distribution_risk_by_party.csv",
+      "category": "risk_assessment",
+      "description": "Party-level risk aggregation",
+      "size": 466,
+      "columns": ["party", "risk_level", "politician_count", "avg_risk_score"],
+      "status": "available"
+    },
+    {
+      "name": "distribution_risk_score_buckets.csv",
+      "category": "risk_assessment",
+      "description": "Risk score ranges and distributions",
+      "size": 164,
+      "columns": ["score_bucket", "politician_count", "avg_score", "min_score", "max_score"],
+      "status": "available"
+    },
+    {
+      "name": "percentile_risk_score_evolution.csv",
+      "category": "risk_assessment",
+      "description": "Statistical percentiles for risk metrics",
+      "size": 519,
+      "columns": ["column_name", "data_type", "distinct_count", "min_value", "max_value", "p1", "p10", "p25", "median", "p75", "p90", "p99"],
+      "status": "available"
+    },
+    {
+      "name": "distribution_voting_anomaly_classification.csv",
+      "category": "anomaly_detection",
+      "description": "Classification of voting anomalies",
+      "size": 66,
+      "columns": ["anomaly_classification", "politician_count", "percentage", "avg_rebellions"],
+      "status": "available"
+    },
+    {
+      "name": "percentile_voting_anomaly_detection.csv",
+      "category": "anomaly_detection",
+      "description": "Statistical percentiles for anomaly metrics",
+      "size": 278,
+      "columns": ["column_name", "data_type", "distinct_count", "min_value", "max_value", "p1", "p10", "p25", "median", "p75", "p90", "p99"],
+      "status": "available"
+    },
+    {
+      "name": "distribution_crisis_resilience.csv",
+      "category": "crisis_resilience",
+      "description": "Party and MP crisis resilience scores",
+      "size": 441,
+      "columns": ["party", "resilience_classification", "politician_count", "avg_resilience_score"],
+      "status": "available"
+    },
+    {
+      "name": "top10_ethics_concerns.csv",
+      "category": "top_lists",
+      "description": "Top 10 MPs with highest ethics risk scores",
+      "size": 14,
+      "columns": ["rank", "politician", "ethics_score"],
+      "status": "not_available"
+    },
+    {
+      "name": "top10_electoral_risk.csv",
+      "category": "top_lists",
+      "description": "Top 10 MPs with highest electoral vulnerability",
+      "size": 14,
+      "columns": ["rank", "politician", "risk_score"],
+      "status": "not_available"
+    }
+  ],
+  "usage": {
+    "dashboard": "Risk Assessment & Anomaly Detection Dashboard",
+    "location": "index.html",
+    "visualizations": [
+      "Risk Heat Map (45 rules × 349 MPs)",
+      "Risk Distribution Chart",
+      "Anomaly Detection Scatter Plot",
+      "Crisis Resilience Radar Chart",
+      "Risk Evolution Timeline"
+    ]
+  },
+  "statistics": {
+    "totalFiles": 9,
+    "availableFiles": 7,
+    "totalSize": "~44KB",
+    "categories": {
+      "risk_assessment": 4,
+      "anomaly_detection": 2,
+      "crisis_resilience": 1,
+      "top_lists": 2
+    }
+  }
+}
