@@ -6988,8 +6988,9 @@ html[lang="he"] {
   min-height: 400px;
 }
 
+/* Loading overlay - text is injected by JavaScript in the user's language */
 #seasonal-patterns-dashboard.loading::before {
-  content: 'Loading data...';
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;

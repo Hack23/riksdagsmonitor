@@ -7,7 +7,7 @@ Quarterly parliamentary activity analysis for the Swedish Riksdag (2002-2025).
 ### view_riksdagen_seasonal_activity_patterns_sample.csv
 
 **Size**: ~35KB  
-**Records**: 86 data rows (23 years × 4 quarters, some quarters missing)  
+**Records**: 85 data rows (24 years: 2002-2025, 11 quarters missing from full 96-quarter coverage)  
 **Time Range**: 2002-2025  
 **Update Frequency**: Quarterly
 
@@ -100,11 +100,16 @@ Quarterly parliamentary activity analysis for the Swedish Riksdag (2002-2025).
 
 ### Anomalies Detected
 
-Records with `|Z| ≥ 2.0`:
-- **2021 Q2**: 336 ballots (Z=2.17) - Unusually high activity
-- **2004 Q3**: 17 ballots (Z=2.80) - Anomaly during summer recess
+Records with ballot Z-score `|Z| ≥ 2.0`:
+- **2022 Q2**: Z=3.38 - Highest anomaly
+- **2004 Q3**: Z=2.80 - Anomaly during summer recess
+- **2004 Q1**: Z=2.74 - Winter anomaly
+- **2022 Q1**: Z=2.40 - Winter anomaly
+- **2021 Q2**: Z=2.17 - Unusually high spring activity
 
-Note: 2022 Q4 (Z=-1.66) and 2023 Q4 (Z=-1.57) show reduced activity but do not meet the |Z| ≥ 2.0 threshold for classification as statistical anomalies.
+Additional notable periods with reduced activity below anomaly threshold:
+- **2022 Q4**: Z=-1.66 - Reduced activity during election transition
+- **2023 Q4**: Z=-1.57 - Post-election reduced activity
 
 ### Election Year Effects
 

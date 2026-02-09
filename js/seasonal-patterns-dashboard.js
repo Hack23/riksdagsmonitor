@@ -111,6 +111,15 @@
         UNUSUALLY_HIGH_ACTIVITY: 'Unusually High Activity',
         UNUSUALLY_LOW_ACTIVITY: 'Unusually Low Activity'
       },
+      tooltips: {
+        ballots: 'Ballots',
+        zScore: 'Z-Score',
+        classification: 'Classification',
+        anomaly: 'ANOMALY',
+        na: 'N/A',
+        quarter: 'Quarter',
+        year: 'Year'
+      },
       loading: 'Loading data...',
       error: 'Error loading data. Please try again.',
       dataAttribution: 'Data by CIA Platform'
@@ -169,6 +178,15 @@
         UNUSUALLY_HIGH_ACTIVITY: 'Ovanligt hög aktivitet',
         UNUSUALLY_LOW_ACTIVITY: 'Ovanligt låg aktivitet'
       },
+      tooltips: {
+        ballots: 'Omröstningar',
+        zScore: 'Z-poäng',
+        classification: 'Klassificering',
+        anomaly: 'ANOMALI',
+        na: 'Saknas',
+        quarter: 'Kvartal',
+        year: 'År'
+      },
       loading: 'Laddar data...',
       error: 'Fel vid inläsning av data. Försök igen.',
       dataAttribution: 'Data från CIA-plattformen'
@@ -226,6 +244,15 @@
         Q4_ELEVATED_ACTIVITY: 'K4 forhøjet aktivitet',
         UNUSUALLY_HIGH_ACTIVITY: 'Usædvanligt høj aktivitet',
         UNUSUALLY_LOW_ACTIVITY: 'Usædvanligt lav aktivitet'
+      },
+      tooltips: {
+        ballots: 'Afstemninger',
+        zScore: 'Z-score',
+        classification: 'Klassificering',
+        anomaly: 'ANOMALI',
+        na: 'Mangler',
+        quarter: 'Kvartal',
+        year: 'År'
       },
       loading: 'Indlæser data...',
       error: 'Fejl ved indlæsning af data. Prøv igen.',
@@ -343,8 +370,30 @@
 
     /**
      * Fallback CSV parser (if PapaParse is not available)
+     * Uses d3.csvParse when available (handles RFC 4180 quoted fields),
+     * otherwise falls back to a minimal parser.
      */
     parseCSVFallback(csvText) {
+      // Prefer d3.csvParse if D3 is available (handles RFC 4180 properly)
+      if (typeof d3 !== 'undefined' && typeof d3.csvParse === 'function') {
+        try {
+          const parsed = d3.csvParse(csvText, (d) => {
+            const row = {};
+            Object.keys(d).forEach((key) => {
+              const value = d[key];
+              const numValue = typeof value === 'string' ? parseFloat(value) : NaN;
+              row[key] = isNaN(numValue) ? value : numValue;
+            });
+            return row;
+          });
+          return parsed;
+        } catch (err) {
+          console.warn('d3.csvParse failed, using basic parser:', err);
+        }
+      }
+
+      // Minimal fallback parser (does not handle quoted fields with commas)
+      console.warn('Using basic CSV parser - quoted fields with commas may not parse correctly');
       const lines = csvText.trim().split('\n');
       const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
       const data = [];
@@ -637,7 +686,11 @@
           d3.select(this).attr('stroke', '#fff').attr('stroke-width', 1);
         })
         .append('title')
-        .text(d => `${d.year} Q${d.quarter}\nBallots: ${d.total_ballots}\nZ-Score: ${(d.ballot_z_score || 0).toFixed(2)}\nClassification: ${d.seasonal_pattern_classification || 'N/A'}`);
+        .text(d => {
+          const t = this.translations;
+          const classText = t.classifications[d.seasonal_pattern_classification] || t.classifications[d.base_activity_classification] || d.seasonal_pattern_classification || t.tooltips.na;
+          return `${d.year} Q${d.quarter}\n${t.tooltips.ballots}: ${d.total_ballots}\n${t.tooltips.zScore}: ${(d.ballot_z_score || 0).toFixed(2)}\n${t.tooltips.classification}: ${classText}`;
+        });
 
       // Add anomaly markers
       const anomalies = data.filter(d => Math.abs(d.ballot_z_score || 0) >= CONFIG.zScoreThreshold);
@@ -654,7 +707,10 @@
         .attr('stroke-width', 2)
         .attr('role', 'presentation')
         .append('title')
-        .text(d => `ANOMALY: ${d.year} Q${d.quarter}\nZ-Score: ${(d.ballot_z_score || 0).toFixed(2)}`);
+        .text(d => {
+          const t = this.translations;
+          return `${t.tooltips.anomaly}: ${d.year} Q${d.quarter}\n${t.tooltips.zScore}: ${(d.ballot_z_score || 0).toFixed(2)}`;
+        });
 
       // Add axes
       const xAxis = d3.axisBottom(xScale)
