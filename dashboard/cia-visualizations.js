@@ -69,13 +69,19 @@ export class CIADashboardRenderer {
     // Party Seats Chart
     const seatsCtx = document.getElementById('party-seats-chart');
     if (seatsCtx && typeof Chart !== 'undefined') {
+      // Defensive check for nested party properties
+      const hasValidMetrics = partyPerf.parties.every(p => p && p.metrics && typeof p.metrics.seats === 'number');
+      if (!hasValidMetrics) {
+        console.warn('Some parties have invalid or missing metrics data');
+      }
+      
       this.charts.seats = new Chart(seatsCtx, {
         type: 'bar',
         data: {
-          labels: partyPerf.parties.map(p => p.shortName),
+          labels: partyPerf.parties.map(p => p.shortName || 'Unknown'),
           datasets: [{
             label: 'Current Seats',
-            data: partyPerf.parties.map(p => p.metrics.seats),
+            data: partyPerf.parties.map(p => (p && p.metrics && typeof p.metrics.seats === 'number') ? p.metrics.seats : 0),
             backgroundColor: [
               'rgba(224, 32, 32, 0.8)',    // S - Red
               'rgba(221, 171, 0, 0.8)',    // SD - Yellow
@@ -129,13 +135,25 @@ export class CIADashboardRenderer {
     // Party Cohesion Chart
     const cohesionCtx = document.getElementById('party-cohesion-chart');
     if (cohesionCtx && typeof Chart !== 'undefined') {
+      // Defensive check for nested voting properties
+      const hasValidVoting = partyPerf.parties.every(p => 
+        p && p.voting && 
+        typeof p.voting.cohesionScore === 'number' &&
+        typeof p.voting.rebellionRate === 'number'
+      );
+      if (!hasValidVoting) {
+        console.warn('Some parties have invalid or missing voting data');
+      }
+      
       this.charts.cohesion = new Chart(cohesionCtx, {
         type: 'line',
         data: {
-          labels: partyPerf.parties.map(p => p.shortName),
+          labels: partyPerf.parties.map(p => p.shortName || 'Unknown'),
           datasets: [{
             label: 'Voting Cohesion (%)',
-            data: partyPerf.parties.map(p => p.voting.cohesionScore),
+            data: partyPerf.parties.map(p => 
+              (p && p.voting && typeof p.voting.cohesionScore === 'number') ? p.voting.cohesionScore : 0
+            ),
             borderColor: 'rgb(0, 102, 51)',
             backgroundColor: 'rgba(0, 102, 51, 0.1)',
             tension: 0.4,
@@ -144,7 +162,9 @@ export class CIADashboardRenderer {
             pointHoverRadius: 7
           }, {
             label: 'Rebellion Rate (%)',
-            data: partyPerf.parties.map(p => p.voting.rebellionRate),
+            data: partyPerf.parties.map(p => 
+              (p && p.voting && typeof p.voting.rebellionRate === 'number') ? p.voting.rebellionRate : 0
+            ),
             borderColor: 'rgb(220, 53, 69)',
             backgroundColor: 'rgba(220, 53, 69, 0.1)',
             tension: 0.4,
@@ -230,7 +250,11 @@ export class CIADashboardRenderer {
       
       const scoreValue = document.createElement('div');
       scoreValue.className = 'score-value';
-      scoreValue.textContent = mp.influenceScore.toFixed(1);
+      // Defensive check for influenceScore property
+      const influenceScore = (mp && typeof mp.influenceScore === 'number' && Number.isFinite(mp.influenceScore))
+        ? mp.influenceScore
+        : null;
+      scoreValue.textContent = influenceScore !== null ? influenceScore.toFixed(1) : 'N/A';
       
       const scoreLabel = document.createElement('div');
       scoreLabel.className = 'score-label';
@@ -365,10 +389,18 @@ export class CIADashboardRenderer {
         return stat;
       };
       
-      stats.appendChild(createStat('Members', committee.memberCount));
-      stats.appendChild(createStat('Influence', committee.influenceScore.toFixed(1)));
-      stats.appendChild(createStat('Meetings/Year', committee.meetingsPerYear));
-      stats.appendChild(createStat('Documents', committee.documentsProcessed));
+      // Defensive checks for committee properties
+      const memberCount = (typeof committee.memberCount === 'number') ? committee.memberCount : 'N/A';
+      const influenceScore = (typeof committee.influenceScore === 'number' && Number.isFinite(committee.influenceScore)) 
+        ? committee.influenceScore.toFixed(1) 
+        : 'N/A';
+      const meetingsPerYear = (typeof committee.meetingsPerYear === 'number') ? committee.meetingsPerYear : 'N/A';
+      const documentsProcessed = (typeof committee.documentsProcessed === 'number') ? committee.documentsProcessed : 'N/A';
+      
+      stats.appendChild(createStat('Members', memberCount));
+      stats.appendChild(createStat('Influence', influenceScore));
+      stats.appendChild(createStat('Meetings/Year', meetingsPerYear));
+      stats.appendChild(createStat('Documents', documentsProcessed));
       
       const issues = document.createElement('div');
       issues.className = 'committee-issues';
@@ -377,12 +409,15 @@ export class CIADashboardRenderer {
       issuesHeading.textContent = 'Key Issues';
       issues.appendChild(issuesHeading);
       
-      committee.keyIssues.forEach(issue => {
-        const tag = document.createElement('span');
-        tag.className = 'issue-tag';
-        tag.textContent = issue;
-        issues.appendChild(tag);
-      });
+      // Defensive check for keyIssues array
+      if (Array.isArray(committee.keyIssues)) {
+        committee.keyIssues.forEach(issue => {
+          const tag = document.createElement('span');
+          tag.className = 'issue-tag';
+          tag.textContent = issue;
+          issues.appendChild(tag);
+        });
+      }
       
       card.appendChild(name);
       card.appendChild(stats);

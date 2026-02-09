@@ -80,10 +80,20 @@ export class Election2026Predictions {
       changeDiv.className = `seats-change ${changeClass}`;
       changeDiv.textContent = `${changeSymbol}${party.change} seats (${party.voteShare}%)`;
 
-      // Confidence interval
+      // Confidence interval with defensive check
       const confidenceDiv = document.createElement('div');
       confidenceDiv.className = 'confidence-interval';
-      confidenceDiv.textContent = `95% CI: ${party.confidenceInterval.min}-${party.confidenceInterval.max} seats`;
+      let ciText = '95% CI: N/A';
+      if (
+        party.confidenceInterval &&
+        typeof party.confidenceInterval.min === 'number' &&
+        typeof party.confidenceInterval.max === 'number'
+      ) {
+        ciText = `95% CI: ${party.confidenceInterval.min}-${party.confidenceInterval.max} seats`;
+      } else {
+        console.warn('Missing or invalid confidenceInterval for party', party.name, party);
+      }
+      confidenceDiv.textContent = ciText;
 
       card.appendChild(partyName);
       card.appendChild(seatsDiv);
@@ -135,12 +145,17 @@ export class Election2026Predictions {
       const composition = document.createElement('div');
       composition.className = 'scenario-composition';
       
-      scenario.composition.forEach(partyId => {
-        const badge = document.createElement('span');
-        badge.className = 'party-badge';
-        badge.textContent = partyId;
-        composition.appendChild(badge);
-      });
+      // Defensive check for composition array
+      if (Array.isArray(scenario.composition)) {
+        scenario.composition.forEach(partyId => {
+          const badge = document.createElement('span');
+          badge.className = 'party-badge';
+          badge.textContent = partyId;
+          composition.appendChild(badge);
+        });
+      } else {
+        console.warn('Missing or invalid composition for scenario', scenario.name);
+      }
 
       const seats = document.createElement('div');
       seats.className = 'scenario-seats';
@@ -175,6 +190,8 @@ export class Election2026Predictions {
 
   /**
    * Render key factors affecting the election
+   * NOTE: Reserved for future implementation - requires adding <div id="key-factors"></div> to HTML
+   * and calling this method from dashboard-init.js. The data is available in election-analysis.json.
    */
   renderKeyFactors() {
     const container = document.getElementById('key-factors');
@@ -216,6 +233,9 @@ export class Election2026Predictions {
 
   /**
    * Get election date formatted
+   * NOTE: Reserved for future implementation - can be used to display election date in dashboard header.
+   * The data is available as electionDate in election-analysis.json.
+   * @returns {string} Formatted election date or empty string if invalid
    */
   getFormattedElectionDate() {
     // Defensive checks for election date data
@@ -246,6 +266,9 @@ export class Election2026Predictions {
 
   /**
    * Calculate and return summary statistics
+   * NOTE: Reserved for future implementation - can be used to display election summary metrics.
+   * Calculates total seats, gainers/losers/stable parties, and biggest changes.
+   * @returns {Object} Summary statistics object
    */
   getSummaryStats() {
     // Defensive check for forecast and parties structure

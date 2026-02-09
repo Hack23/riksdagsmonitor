@@ -50,7 +50,8 @@ async function initDashboard() {
     console.error('Dashboard initialization error:', error);
     document.getElementById('loading-state').classList.add('hidden');
     document.getElementById('error-state').classList.remove('hidden');
-    document.getElementById('error-message').textContent = error.message;
+    document.getElementById('error-message').textContent =
+      (error && error.message) || 'An unknown error occurred while loading dashboard data.';
     
     // Retry button handler
     document.getElementById('retry-button').addEventListener('click', () => {
