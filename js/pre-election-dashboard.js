@@ -16,8 +16,14 @@
   // Configuration
   const CONFIG = {
     dataUrls: {
-      preElection: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_pre_election_quarterly_activity_sample.csv',
-      electionComparison: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_q4_election_year_comparison_sample.csv'
+      preElection: [
+        'cia-data/pre-election/view_riksdagen_pre_election_quarterly_activity_sample.csv',
+        'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_pre_election_quarterly_activity_sample.csv'
+      ],
+      electionComparison: [
+        'cia-data/pre-election/view_riksdagen_q4_election_year_comparison_sample.csv',
+        'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_q4_election_year_comparison_sample.csv'
+      ]
     },
     cachePrefix: 'riksdag_pre_election_',
     cacheDuration: 24 * 60 * 60 * 1000, // 24 hours
@@ -119,21 +125,19 @@
         if (cachedPreElection && cachedElectionComparison) {
           this.preElectionData = cachedPreElection;
           this.electionComparisonData = cachedElectionComparison;
+          console.log('✓ Loaded pre-election data from cache');
           return true;
         }
 
-        // Fetch fresh data
-        const [preElectionResponse, electionComparisonResponse] = await Promise.all([
-          fetch(CONFIG.dataUrls.preElection),
-          fetch(CONFIG.dataUrls.electionComparison)
+        // Fetch fresh data with local-first strategy
+        const [preElectionCsv, electionComparisonCsv] = await Promise.all([
+          this.fetchWithFallback(CONFIG.dataUrls.preElection),
+          this.fetchWithFallback(CONFIG.dataUrls.electionComparison)
         ]);
 
-        if (!preElectionResponse.ok || !electionComparisonResponse.ok) {
+        if (!preElectionCsv || !electionComparisonCsv) {
           throw new Error('Failed to fetch CIA data');
         }
-
-        const preElectionCsv = await preElectionResponse.text();
-        const electionComparisonCsv = await electionComparisonResponse.text();
 
         // Parse CSV data
         this.preElectionData = this.parseCSV(preElectionCsv);
@@ -143,11 +147,42 @@
         this.saveToCache('preElection', this.preElectionData);
         this.saveToCache('electionComparison', this.electionComparisonData);
 
+        console.log('✓ Loaded pre-election data from source');
         return true;
       } catch (error) {
         console.error('Error fetching pre-election data:', error);
         return false;
       }
+    }
+
+    async fetchWithFallback(urls) {
+      // urls can be a string or array of URLs (local first, then remote)
+      const urlArray = Array.isArray(urls) ? urls : [urls];
+
+      for (let i = 0; i < urlArray.length; i++) {
+        const url = urlArray[i];
+        const isLocal = !url.startsWith('http');
+
+        try {
+          console.log(`Trying to fetch: ${url}`);
+          const response = await fetch(url);
+
+          if (response.ok) {
+            const text = await response.text();
+            // Verify we got actual CSV data (not empty or error page)
+            if (text.trim().length > 0 && text.includes(',')) {
+              console.log(`✓ Successfully loaded from ${isLocal ? 'local' : 'remote'}: ${url}`);
+              return text;
+            }
+          }
+        } catch (error) {
+          console.warn(`Failed to fetch from ${url}:`, error.message);
+          // Continue to next URL in fallback chain
+        }
+      }
+
+      console.error('All fetch attempts failed for:', urlArray);
+      return null;
     }
 
     parseCSV(csvText) {
