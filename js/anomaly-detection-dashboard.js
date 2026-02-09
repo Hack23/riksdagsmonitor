@@ -16,7 +16,11 @@
 
   // Configuration
   const CONFIG = {
-    dataUrl: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_anomaly_detection_sample.csv',
+    // Local-first data loading with fallback to remote URL
+    dataUrls: [
+      'cia-data/seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv', // Try local first
+      'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_anomaly_detection_sample.csv' // Fallback to remote
+    ],
     cacheKey: 'riksdag_anomaly_detection',
     cacheDuration: 60 * 60 * 1000, // 1 hour in milliseconds
     alertDismissKey: 'anomaly_alert_dismissed',
@@ -187,11 +191,34 @@
           return cached;
         }
 
-        // Fetch from CIA repository
+        // Try to fetch from multiple URLs (local first, then remote fallback)
         console.log('Fetching fresh anomaly data from CIA...');
-        const response = await fetch(CONFIG.dataUrl);
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        let response = null;
+        let lastError = null;
+        
+        for (const url of CONFIG.dataUrls) {
+          try {
+            console.log(`Attempting to fetch from: ${url}`);
+            response = await fetch(url);
+            
+            if (response.ok) {
+              console.log(`✓ Successfully fetched from: ${url}`);
+              break; // Success, exit loop
+            } else {
+              console.warn(`⚠ Failed to fetch from ${url}: HTTP ${response.status}`);
+              lastError = new Error(`HTTP ${response.status}: ${response.statusText}`);
+              response = null; // Reset for next iteration
+            }
+          } catch (error) {
+            console.warn(`⚠ Error fetching from ${url}:`, error.message);
+            lastError = error;
+            response = null;
+          }
+        }
+        
+        // If all URLs failed, throw the last error
+        if (!response) {
+          throw lastError || new Error('All data sources failed');
         }
 
         const csvText = await response.text();
