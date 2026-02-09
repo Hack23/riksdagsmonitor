@@ -16,10 +16,6 @@ cia-data/
 ├── README.md                    # This file
 ├── download-csv.sh              # Automated download script
 ├── data-manifest.json           # File metadata and field descriptions
-├── ministry/                    # Ministry dashboard data
-│   ├── README.md
-│   ├── download-ministry-data.sh
-│   └── *.csv (15 CSV files, ~252KB)
 └── seasonal/                    # Seasonal activity patterns data
     ├── README.md
     └── view_riksdagen_seasonal_activity_patterns_sample.csv
@@ -27,69 +23,109 @@ cia-data/
 
 ## Data Sources
 
-All data is sourced from the CIA platform:
-- **Repository**: https://github.com/Hack23/cia
-- **Data Location**: `service.data.impl/sample-data/`
-- **Base URL**: https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/
+All CSV files are downloaded from:
+```
+https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/
+```
 
-## Available Datasets
+## Usage Pattern
 
-### 1. Ministry Data (`ministry/`)
+Dashboards implement a **local-first loading strategy**:
 
-Government minister risk & influence analytics:
-- Ministry risk levels and distributions
-- Productivity metrics over time
-- Decision impact analysis
-- Minister influence rankings
+1. **Try Local**: Attempt to load from `cia-data/` directory
+2. **Fallback Remote**: If local unavailable, fetch from GitHub
+3. **Cache**: Store in browser LocalStorage for 24 hours
 
-**Files**: 15 CSV files (~252KB, 1,880+ records)
-**Coverage**: Current government + 5 years historical
-**Documentation**: See `ministry/README.md`
+Example configuration:
+```javascript
+const CONFIG = {
+  dataUrls: [
+    'cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv',  // Local
+    'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_activity_patterns_sample.csv'  // Remote
+  ]
+};
+```
 
-### 2. Seasonal Activity Patterns (`seasonal/`)
+## Updating Data
 
-Parliament activity patterns by season and time:
-- Activity levels by month/quarter
-- Document types by season
-- Voting patterns over time
-- Committee activity trends
-
-**Files**: 1 CSV file
-**Documentation**: See `seasonal/README.md`
-
-## Data Updates
-
-To update all datasets:
+To refresh all CSV files:
 
 ```bash
 cd cia-data
 ./download-csv.sh
 ```
 
-For ministry-specific data:
+This script downloads the latest data from the CIA platform repository.
 
-```bash
-cd cia-data/ministry
-./download-ministry-data.sh
-```
+## Data Categories
 
-## Dashboard Integration
+### Seasonal Activity Patterns (`seasonal/`)
 
-Dashboards use local-first data loading with remote fallback:
+Quarterly parliamentary activity analysis (2002-2025):
+- **File**: `view_riksdagen_seasonal_activity_patterns_sample.csv`
+- **Records**: 85 (11 quarters missing from full 96-quarter coverage for 2002–2025)
+- **Dashboard**: Seasonal Activity Patterns Dashboard
+- **Fields**: 32 columns including:
+  - Time dimensions: year, quarter, is_election_year, election_cycle
+  - Activity metrics: total_ballots, active_politicians, attendance_rate, documents_produced
+  - Baselines: q_baseline_ballots, q_baseline_docs, q_baseline_attendance
+  - Statistical: ballot_z_score, doc_z_score, attendance_z_score (anomaly detection)
+  - Classifications: base_activity_classification, seasonal_pattern_classification
+  - Cross-year: cross_year_quarter_avg_ballots, cross_year_z_score
+  - Trends: qoq_ballot_change_pct, activity_quartile_cycle
 
-1. **Primary**: Try local file from `cia-data/`
-2. **Fallback**: Fetch from GitHub raw URL
-3. **Cache**: 1-hour LocalStorage cache
+### Anomaly Detection (`seasonal/`)
 
-## Compliance & Security
+Statistical outlier identification in parliament activity (2002-2026):
+- **File**: `view_riksdagen_seasonal_anomaly_detection_sample.csv`
+- **Records**: 41 quarters (2002 Q1 - 2026 Q1)
+- **Dashboard**: Anomaly Detection & Early Warning System
+- **Purpose**: Identify unusual parliamentary activity patterns using Z-score analysis
+- **Fields**: 20 columns including:
+  - Time dimensions: year, quarter, is_election_year, parliamentary_period
+  - Activity metrics: total_ballots, active_politicians, attendance_rate, documents_produced
+  - Baselines: q_baseline_ballots, q_baseline_docs, q_baseline_attendance
+  - Std Deviations: q_stddev_ballots, q_stddev_docs, q_stddev_attendance
+  - Z-Scores: ballot_z_score, doc_z_score, attendance_z_score
+  - Classification: activity_classification, anomaly_type, anomaly_direction
+  - Severity: max_z_score, anomaly_severity (LOW, MODERATE, HIGH, CRITICAL)
+  - Labels: quarter_label (Q1_JAN_MAR, Q2_APR_JUN, Q3_JUL_SEP, Q4_OCT_DEC)
 
-- **GDPR**: Only public data, no personal information
-- **ISO 27001**: Data handling documented in `SECURITY_ARCHITECTURE.md`
-- **NIST CSF**: Secure data transmission (HTTPS-only)
-- **CIS Controls**: Data protection and integrity
+**Anomaly Detection Criteria**:
+- |Z| < 1.5: LOW severity (within normal range)
+- 1.5 ≤ |Z| < 2.0: MODERATE severity
+- 2.0 ≤ |Z| < 2.5: HIGH severity
+- |Z| ≥ 2.5: CRITICAL severity
 
-## Related Documentation
+**Historical Findings** (from 41 quarters):
+- 8 CRITICAL anomalies (Z ≥ 2.5)
+- 2 HIGH anomalies (2.0 ≤ Z < 2.5)
+- 12 MODERATE anomalies (1.5 ≤ Z < 2.0)
+- 19 LOW (normal activity)
+- Most extreme: 2006 Q1 document anomaly (Z = +10.97)
 
-- **Ministry Dashboard**: See the main dashboard implementation documentation in `js/ministry-dashboard.js`
-- **Security**: `SECURITY_ARCHITECTURE.md`
-- **Architecture**: `ARCHITECTURE.md`
+## Data Quality
+
+- **Validation**: All CSV files validated against CIA platform schemas
+- **Completeness**: Sample data represents key patterns and trends
+- **Updates**: Data refreshed periodically from CIA platform
+- **Integrity**: Files include checksums in data-manifest.json
+
+## License
+
+Data sourced from CIA Platform (Citizen Intelligence Agency):
+- **Repository**: https://github.com/Hack23/cia
+- **License**: Apache License 2.0
+- **Copyright**: © 2008-2026 Hack23 AB
+
+## Support
+
+For questions about the data or CIA platform:
+- **Website**: https://www.hack23.com/cia
+- **Documentation**: https://hack23.github.io/cia/
+- **Issues**: https://github.com/Hack23/cia/issues
+
+---
+
+**Last Updated**: 2026-02-09  
+**Maintained by**: Hack23 AB
