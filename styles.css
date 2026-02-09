@@ -6806,3 +6806,134 @@ html[lang="he"] {
     border: 1px solid #333;
   }
 }
+
+/* ===================================================
+   ELECTION CYCLE DASHBOARD STYLES
+   =================================================== */
+
+.dashboard-section {
+  padding: 2rem 0;
+}
+
+.dashboard-filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.chart-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px var(--card-shadow);
+  border: 1px solid var(--card-border);
+}
+
+.chart-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--header-color);
+}
+
+.chart-description {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.dashboard-loader,
+.dashboard-error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+.dashboard-error {
+  color: var(--danger-color);
+}
+
+/* Responsive grid for charts */
+@media (max-width: 767px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-card[style*="grid-column: span 2"] {
+    grid-column: span 1 !important;
+  }
+  
+  .dashboard-filters {
+    flex-direction: column;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .chart-card[style*="grid-column: span 2"] {
+    grid-column: span 2;
+  }
+}
+
+/* D3.js SVG styling */
+#decision-heatmap svg {
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+#decision-heatmap text {
+  font-family: var(--font-main);
+  font-size: 12px;
+  fill: var(--text-color);
+}
+
+/* Chart canvas responsiveness */
+.chart-card canvas {
+  max-width: 100%;
+  height: auto !important;
+}
