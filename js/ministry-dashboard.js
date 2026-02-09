@@ -571,19 +571,62 @@
 
     parseCSV(text) {
       const lines = text.trim().split('\n');
-      const headers = lines[0].split(',').map(h => h.trim());
+      if (lines.length === 0) return [];
+      
+      const headers = this.parseCSVLine(lines[0]);
       const data = [];
 
       for (let i = 1; i < lines.length; i++) {
-        const values = lines[i].split(',');
+        const values = this.parseCSVLine(lines[i]);
+        if (values.length !== headers.length) {
+          console.warn(`CSV row ${i} has ${values.length} columns but expected ${headers.length}, skipping`);
+          continue;
+        }
         const row = {};
         headers.forEach((header, index) => {
-          row[header] = values[index] ? values[index].trim() : '';
+          row[header] = values[index] || '';
         });
         data.push(row);
       }
 
       return data;
+    }
+
+    /**
+     * Parse a single CSV line with support for quoted fields
+     * @param {string} line - CSV line to parse
+     * @returns {Array<string>} - Array of values
+     */
+    parseCSVLine(line) {
+      const values = [];
+      let current = '';
+      let inQuotes = false;
+      
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const nextChar = line[i + 1];
+        
+        if (char === '"') {
+          if (inQuotes && nextChar === '"') {
+            // Escaped quote
+            current += '"';
+            i++; // Skip next quote
+          } else {
+            // Toggle quote state
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          // Field separator
+          values.push(current.trim());
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      
+      // Add last field
+      values.push(current.trim());
+      return values;
     }
 
     async fetchAllData() {
@@ -640,7 +683,6 @@
 
       // Process data
       const ministries = this.data.map(d => this.translations[d.ministry] || d.ministry);
-      const riskScores = this.data.map(d => parseFloat(d.riskScore) || 0);
 
       // Scales
       const yScale = d3.scaleBand()
@@ -702,26 +744,29 @@
         .style('font-size', '14px')
         .style('z-index', '1000');
 
-      bars.on('mouseover', function(event, d) {
+      bars.on('mouseover', (event, d) => {
           const riskLevel = parseFloat(d.riskScore);
           let level = 'Low';
           if (riskLevel >= 8.0) level = 'Critical';
           else if (riskLevel >= 6.0) level = 'High';
           else if (riskLevel >= 4.0) level = 'Medium';
 
-          tooltip.html(`
-            <strong>${MINISTRY_TRANSLATIONS[this.lang][d.ministry] || d.ministry}</strong><br/>
+          const ministryName = MINISTRY_TRANSLATIONS[this.lang][d.ministry] || d.ministry;
+          const htmlContent = `
+            <strong>${ministryName}</strong><br/>
             Risk Score: ${d.riskScore}<br/>
             Level: ${level}<br/>
             Alerts: ${d.alerts || 'N/A'}
-          `.bind(this))
+          `;
+          
+          tooltip.html(htmlContent)
             .style('visibility', 'visible');
-        }.bind(this))
-        .on('mousemove', function(event) {
+        })
+        .on('mousemove', (event) => {
           tooltip.style('top', (event.pageY - 10) + 'px')
             .style('left', (event.pageX + 10) + 'px');
         })
-        .on('mouseout', function() {
+        .on('mouseout', () => {
           tooltip.style('visibility', 'hidden');
         });
 
@@ -1095,18 +1140,30 @@
 
       const ministryTranslations = MINISTRY_TRANSLATIONS[this.lang] || MINISTRY_TRANSLATIONS.en;
 
-      let html = `
-        <caption>Government Ministry Risk and Productivity Data</caption>
-        <thead>
-          <tr>
-            <th scope="col">Ministry</th>
-            <th scope="col">Risk Score</th>
-            <th scope="col">Risk Level</th>
-            <th scope="col">Productivity</th>
-          </tr>
-        </thead>
-        <tbody>
-      `;
+      // Clear existing content
+      this.table.innerHTML = '';
+
+      // Create caption
+      const caption = document.createElement('caption');
+      caption.textContent = 'Government Ministry Risk and Productivity Data';
+      this.table.appendChild(caption);
+
+      // Create thead
+      const thead = document.createElement('thead');
+      const headerRow = document.createElement('tr');
+      
+      ['Ministry', 'Risk Score', 'Risk Level', 'Productivity'].forEach(headerText => {
+        const th = document.createElement('th');
+        th.setAttribute('scope', 'col');
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+      });
+      
+      thead.appendChild(headerRow);
+      this.table.appendChild(thead);
+
+      // Create tbody
+      const tbody = document.createElement('tbody');
 
       this.data.riskLevels.forEach((item, index) => {
         const riskScore = parseFloat(item.riskScore) || 0;
@@ -1118,21 +1175,32 @@
         const productivity = this.data.productivity[index];
         const prodValue = productivity ? productivity.currentQuarter : 'N/A';
 
-        html += `
-          <tr>
-            <td>${ministryTranslations[item.ministry] || item.ministry}</td>
-            <td>${item.riskScore}</td>
-            <td>${riskLevel}</td>
-            <td>${prodValue}</td>
-          </tr>
-        `;
+        const row = document.createElement('tr');
+        
+        // Ministry name cell
+        const ministryCell = document.createElement('td');
+        ministryCell.textContent = ministryTranslations[item.ministry] || item.ministry;
+        row.appendChild(ministryCell);
+        
+        // Risk score cell
+        const scoreCell = document.createElement('td');
+        scoreCell.textContent = item.riskScore;
+        row.appendChild(scoreCell);
+        
+        // Risk level cell
+        const levelCell = document.createElement('td');
+        levelCell.textContent = riskLevel;
+        row.appendChild(levelCell);
+        
+        // Productivity cell
+        const prodCell = document.createElement('td');
+        prodCell.textContent = prodValue;
+        row.appendChild(prodCell);
+        
+        tbody.appendChild(row);
       });
 
-      html += `
-        </tbody>
-      `;
-
-      this.table.innerHTML = html;
+      this.table.appendChild(tbody);
     }
   }
 
