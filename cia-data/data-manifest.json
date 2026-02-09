@@ -1,86 +1,46 @@
 {
   "version": "1.0.0",
   "lastUpdated": "2026-02-09",
-  "source": "https://github.com/Hack23/cia/tree/master/service.data.impl/sample-data",
-  "totalFiles": 25,
-  "totalSize": "636KB",
+  "files": [
+    {
+      "category": "seasonal",
+      "filename": "view_riksdagen_seasonal_activity_patterns_sample.csv",
+      "path": "seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv",
+      "url": "https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_activity_patterns_sample.csv",
+      "size": "35KB",
+      "records": 85,
+      "timeRange": "2002-2025",
+      "dashboard": "Seasonal Activity Patterns Dashboard",
+      "description": "Quarterly parliamentary activity analysis with Z-score anomaly detection",
+      "fields": 32,
+      "keyMetrics": [
+        "total_ballots",
+        "attendance_rate",
+        "documents_produced",
+        "ballot_z_score",
+        "seasonal_pattern_classification"
+      ],
+      "updateFrequency": "Quarterly",
+      "usedBy": [
+        "js/seasonal-patterns-dashboard.js"
+      ]
+    }
+  ],
   "categories": {
     "seasonal": {
-      "description": "Seasonal activity patterns and anomaly detection",
-      "files": [
-        "view_riksdagen_seasonal_anomaly_detection_sample.csv",
-        "view_riksdagen_seasonal_activity_patterns_sample.csv"
-      ]
-    },
-    "voting": {
-      "description": "Voting anomalies and patterns",
-      "files": [
-        "view_riksdagen_voting_anomaly_detection_sample.csv"
-      ]
-    },
-    "election-cycle": {
-      "description": "Election cycle analysis and predictive intelligence",
-      "files": [
-        "view_riksdagen_election_proximity_trends_sample.csv",
-        "view_election_cycle_comparative_analysis_sample.csv",
-        "view_election_cycle_predictive_intelligence_sample.csv",
-        "view_riksdagen_pre_election_quarterly_activity_sample.csv"
-      ]
-    },
-    "party": {
-      "description": "Party performance, effectiveness, and longitudinal data",
-      "files": [
-        "distribution_annual_party_votes.csv",
-        "distribution_party_performance.csv",
-        "view_party_performance_metrics_sample.csv",
-        "view_party_effectiveness_trends_sample.csv",
-        "view_riksdagen_party_longitudinal_performance_sample.csv"
-      ]
-    },
-    "committee": {
-      "description": "Committee productivity and effectiveness",
-      "files": [
-        "view_committee_productivity_sample.csv",
-        "view_committee_productivity_matrix_sample.csv",
-        "distribution_committee_productivity_matrix.csv"
-      ]
-    },
-    "ministry": {
-      "description": "Ministry risk, effectiveness, and productivity",
-      "files": [
-        "view_ministry_risk_evolution_sample.csv",
-        "view_ministry_effectiveness_trends_sample.csv",
-        "view_ministry_productivity_matrix_sample.csv",
-        "distribution_ministry_risk_levels.csv"
-      ]
-    },
-    "politician": {
-      "description": "Politician risk, behavior, and influence metrics",
-      "files": [
-        "view_politician_risk_summary_sample.csv",
-        "view_politician_behavioral_trends_sample.csv",
-        "view_riksdagen_politician_influence_metrics_sample.csv"
-      ]
-    },
-    "distribution": {
-      "description": "Statistical distributions and trends",
-      "files": [
-        "distribution_decision_trends.csv",
-        "distribution_risk_score_buckets.csv",
-        "distribution_coalition_alignment.csv"
-      ]
+      "name": "Seasonal Activity Patterns",
+      "description": "Quarterly parliamentary activity analysis",
+      "files": 1,
+      "totalSize": "35KB"
     }
   },
-  "dashboards": {
-    "anomaly-detection": {
-      "primaryFiles": [
-        "seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv"
-      ],
-      "supplementaryFiles": [
-        "voting/view_riksdagen_voting_anomaly_detection_sample.csv"
-      ],
-      "coverage": "2002-2026",
-      "records": 41
-    }
+  "statistics": {
+    "totalFiles": 1,
+    "totalRecords": 85,
+    "totalSize": "35KB",
+    "timeRange": "2002-2025",
+    "dashboards": [
+      "Seasonal Activity Patterns Dashboard"
+    ]
   }
 }

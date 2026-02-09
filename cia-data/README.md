@@ -1,128 +1,101 @@
-# CIA Platform Sample Data
+# CIA Platform Data Repository
 
-This directory contains CSV data files from the [Citizen Intelligence Agency (CIA)](https://github.com/Hack23/cia) platform for use in riksdagsmonitor dashboards.
+This directory contains CSV data files downloaded from the [CIA Platform](https://github.com/Hack23/cia) for use in Riksdagsmonitor dashboards.
 
-## 📁 Directory Structure
+## Purpose
+
+- **Improved Performance**: Local data loading is faster than remote fetches
+- **Reliability**: Reduces dependency on external network availability
+- **Offline Capability**: Dashboards work even without internet connection
+- **Development**: Enables local testing without API rate limits
+
+## Directory Structure
 
 ```
 cia-data/
-├── seasonal/           # Seasonal activity patterns and anomaly detection
-├── election-cycle/     # Election cycle analysis and predictive intelligence
-├── party/              # Party performance, effectiveness, and longitudinal data
-├── politician/         # Politician risk, behavior, and influence metrics
-├── committee/          # Committee productivity and effectiveness
-├── ministry/           # Ministry risk, effectiveness, and productivity
-├── voting/             # Voting anomalies and patterns
-└── distribution/       # Statistical distributions and trends
+├── README.md                    # This file
+├── download-csv.sh              # Automated download script
+├── data-manifest.json           # File metadata and field descriptions
+└── seasonal/                    # Seasonal activity patterns data
+    ├── README.md
+    └── view_riksdagen_seasonal_activity_patterns_sample.csv
 ```
 
-## 📊 Data Categories
+## Data Sources
 
-### Seasonal & Temporal Analysis
-- `view_riksdagen_seasonal_anomaly_detection_sample.csv` - Z-score based anomaly detection (2002-2026)
-- `view_riksdagen_seasonal_activity_patterns_sample.csv` - Quarterly activity patterns
-- `view_riksdagen_voting_anomaly_detection_sample.csv` - Voting behavior anomalies
-
-### Election Cycle Intelligence
-- `view_riksdagen_election_proximity_trends_sample.csv` - Activity trends near elections
-- `view_election_cycle_comparative_analysis_sample.csv` - Cross-cycle comparisons
-- `view_election_cycle_predictive_intelligence_sample.csv` - Election forecasting models
-- `view_riksdagen_pre_election_quarterly_activity_sample.csv` - Pre-election activity
-
-### Party Performance
-- `distribution_annual_party_votes.csv` - Annual voting records by party (2002-2026)
-- `distribution_party_performance.csv` - Party effectiveness metrics
-- `view_party_performance_metrics_sample.csv` - Comprehensive party metrics
-- `view_party_effectiveness_trends_sample.csv` - Temporal effectiveness analysis
-- `view_riksdagen_party_longitudinal_performance_sample.csv` - 50+ years party evolution
-
-### Committee Analysis
-- `view_committee_productivity_sample.csv` - Committee output metrics
-- `view_committee_productivity_matrix_sample.csv` - Cross-committee comparisons
-- `distribution_committee_productivity_matrix.csv` - Productivity distribution
-
-### Ministry Governance
-- `view_ministry_risk_evolution_sample.csv` - Ministry risk tracking
-- `view_ministry_effectiveness_trends_sample.csv` - Ministry performance trends
-- `view_ministry_productivity_matrix_sample.csv` - Ministry output analysis
-- `distribution_ministry_risk_levels.csv` - Risk classification
-
-### Politician Metrics
-- `view_politician_risk_summary_sample.csv` - Individual MP risk assessments
-- `view_politician_behavioral_trends_sample.csv` - Behavioral pattern analysis
-- `view_riksdagen_politician_influence_metrics_sample.csv` - Influence network metrics
-
-### Statistical Distributions
-- `distribution_decision_trends.csv` - Decision-making patterns
-- `distribution_risk_score_buckets.csv` - Risk score distributions
-- `distribution_coalition_alignment.csv` - Coalition behavior patterns
-
-## 🔄 Data Updates
-
-### Source
-All CSV files are sourced from the CIA platform's sample data repository:
+All CSV files are downloaded from:
 ```
-https://github.com/Hack23/cia/tree/master/service.data.impl/sample-data
+https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/
 ```
 
-### Update Frequency
-- **Anomaly Detection**: Updated quarterly (after each parliamentary quarter)
-- **Party/Politician Data**: Updated annually
-- **Committee/Ministry**: Updated monthly
-- **Election Cycle**: Updated during election years
+## Usage Pattern
 
-### Manual Update
-To download the latest versions of all CSV files:
+Dashboards implement a **local-first loading strategy**:
+
+1. **Try Local**: Attempt to load from `cia-data/` directory
+2. **Fallback Remote**: If local unavailable, fetch from GitHub
+3. **Cache**: Store in browser LocalStorage for 24 hours
+
+Example configuration:
+```javascript
+const CONFIG = {
+  dataUrls: [
+    'cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv',  // Local
+    'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_activity_patterns_sample.csv'  // Remote
+  ]
+};
+```
+
+## Updating Data
+
+To refresh all CSV files:
+
 ```bash
 cd cia-data
-bash download-csv.sh
+./download-csv.sh
 ```
 
-## 📈 Dashboard Usage
+This script downloads the latest data from the CIA platform repository.
 
-### Anomaly Detection Dashboard
-**Files Used**:
-- `seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv` (primary)
-- `voting/view_riksdagen_voting_anomaly_detection_sample.csv` (supplementary)
+## Data Categories
 
-**Features**:
-- Z-score based statistical outlier detection
-- 41 quarters analyzed (2002-2026)
-- Severity classification: CRITICAL (≥2.5σ), HIGH (≥2.0σ), MODERATE (≥1.5σ), LOW (<1.5σ)
-- 6 visualizations (Chart.js + D3.js)
+### Seasonal Activity Patterns (`seasonal/`)
 
-### Future Dashboards
-Additional dashboards can leverage:
-- Election cycle data for forecasting
-- Party longitudinal data for trend analysis
-- Committee data for productivity tracking
-- Ministry data for governance oversight
+Quarterly parliamentary activity analysis (2002-2025):
+- **File**: `view_riksdagen_seasonal_activity_patterns_sample.csv`
+- **Records**: 85 (11 quarters missing from full 96-quarter coverage for 2002–2025)
+- **Dashboard**: Seasonal Activity Patterns Dashboard
+- **Fields**: 32 columns including:
+  - Time dimensions: year, quarter, is_election_year, election_cycle
+  - Activity metrics: total_ballots, active_politicians, attendance_rate, documents_produced
+  - Baselines: q_baseline_ballots, q_baseline_docs, q_baseline_attendance
+  - Statistical: ballot_z_score, doc_z_score, attendance_z_score (anomaly detection)
+  - Classifications: base_activity_classification, seasonal_pattern_classification
+  - Cross-year: cross_year_quarter_avg_ballots, cross_year_z_score
+  - Trends: qoq_ballot_change_pct, activity_quartile_cycle
 
-## 🔍 Data Fields
+## Data Quality
 
-### Anomaly Detection CSV
-Key fields in `view_riksdagen_seasonal_anomaly_detection_sample.csv`:
-- `year`, `quarter` - Time period
-- `total_ballots`, `documents_produced`, `attendance_rate` - Activity metrics
-- `ballot_z_score`, `doc_z_score`, `attendance_z_score` - Statistical scores
-- `anomaly_type` - BALLOT_ANOMALY, DOCUMENT_ANOMALY, ATTENDANCE_ANOMALY, NO_ANOMALY
-- `anomaly_severity` - CRITICAL, HIGH, MODERATE, LOW
-- `anomaly_direction` - UNUSUALLY_HIGH, UNUSUALLY_LOW, WITHIN_NORMAL_RANGE
-- `max_z_score` - Highest absolute Z-score for the period
+- **Validation**: All CSV files validated against CIA platform schemas
+- **Completeness**: Sample data represents key patterns and trends
+- **Updates**: Data refreshed periodically from CIA platform
+- **Integrity**: Files include checksums in data-manifest.json
 
-## 📄 License
+## License
 
-Data is provided by the CIA platform under Apache 2.0 license.
+Data sourced from CIA Platform (Citizen Intelligence Agency):
+- **Repository**: https://github.com/Hack23/cia
+- **License**: Apache License 2.0
+- **Copyright**: © 2008-2026 Hack23 AB
 
-## 🔗 References
+## Support
 
-- **CIA Platform**: https://www.hack23.com/cia
-- **GitHub Repository**: https://github.com/Hack23/cia
-- **Data Source**: https://github.com/Hack23/cia/tree/master/service.data.impl/sample-data
-- **Riksdagsmonitor**: https://riksdagsmonitor.com
+For questions about the data or CIA platform:
+- **Website**: https://www.hack23.com/cia
+- **Documentation**: https://hack23.github.io/cia/
+- **Issues**: https://github.com/Hack23/cia/issues
 
 ---
 
 **Last Updated**: 2026-02-09  
-**Total Files**: 25 CSV files (~636KB)  
-**Coverage**: 1994-2034 (election cycles), 2002-2026 (seasonal), 50+ years (longitudinal)
+**Maintained by**: Hack23 AB
