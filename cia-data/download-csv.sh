@@ -1,44 +1,54 @@
 #!/bin/bash
-# Download CIA CSV data files
 
+# Download CIA platform sample data files for riksdagsmonitor dashboard
+# Base URL for CIA sample data
 BASE_URL="https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data"
 
-echo "Downloading CIA CSV data files..."
+# Function to download and validate HTTP response
+download_file() {
+  local filename="$1"
+  local http_code=$(curl -sS -w "%{http_code}" -o "$filename" "$BASE_URL/$filename")
+  
+  if [ "$http_code" != "200" ]; then
+    echo "✗ Failed to download $filename (HTTP $http_code)"
+    rm -f "$filename"
+    return 1
+  fi
+  
+  # Check if file contains "404" text (HTML error page)
+  if grep -q "404" "$filename" 2>/dev/null; then
+    echo "✗ Failed to download $filename (404 Not Found)"
+    rm -f "$filename"
+    return 1
+  fi
+  
+  echo "✓ Downloaded $filename"
+  return 0
+}
+
+echo "Downloading CIA risk assessment data..."
+echo ""
 
 # Risk Assessment Files
-curl -sS -o distribution_politician_risk_levels.csv "$BASE_URL/distribution_politician_risk_levels.csv"
-echo "✓ Downloaded distribution_politician_risk_levels.csv"
-
-curl -sS -o distribution_risk_by_party.csv "$BASE_URL/distribution_risk_by_party.csv"
-echo "✓ Downloaded distribution_risk_by_party.csv"
-
-curl -sS -o distribution_risk_score_buckets.csv "$BASE_URL/distribution_risk_score_buckets.csv"
-echo "✓ Downloaded distribution_risk_score_buckets.csv"
-
-curl -sS -o percentile_risk_score_evolution.csv "$BASE_URL/percentile_risk_score_evolution.csv"
-echo "✓ Downloaded percentile_risk_score_evolution.csv"
+download_file "distribution_politician_risk_levels.csv"
+download_file "distribution_risk_by_party.csv"
+download_file "distribution_risk_score_buckets.csv"
+download_file "percentile_risk_score_evolution.csv"
 
 # Anomaly Detection Files
-curl -sS -o distribution_voting_anomaly_classification.csv "$BASE_URL/distribution_voting_anomaly_classification.csv"
-echo "✓ Downloaded distribution_voting_anomaly_classification.csv"
-
-curl -sS -o percentile_voting_anomaly_detection.csv "$BASE_URL/percentile_voting_anomaly_detection.csv"
-echo "✓ Downloaded percentile_voting_anomaly_detection.csv"
+download_file "distribution_voting_anomaly_classification.csv"
+download_file "percentile_voting_anomaly_detection.csv"
 
 # Crisis Resilience Files
-curl -sS -o distribution_crisis_resilience.csv "$BASE_URL/distribution_crisis_resilience.csv"
-echo "✓ Downloaded distribution_crisis_resilience.csv"
+download_file "distribution_crisis_resilience.csv"
 
-# Top 10 Lists
-curl -sS -o top10_ethics_concerns.csv "$BASE_URL/top10_ethics_concerns.csv"
-echo "✓ Downloaded top10_ethics_concerns.csv"
-
-curl -sS -o top10_electoral_risk.csv "$BASE_URL/top10_electoral_risk.csv"
-echo "✓ Downloaded top10_electoral_risk.csv"
+# Top 10 Lists (may not exist in source repository)
+download_file "top10_ethics_concerns.csv" || echo "⚠ top10_ethics_concerns.csv not available in source repository"
+download_file "top10_electoral_risk.csv" || echo "⚠ top10_electoral_risk.csv not available in source repository"
 
 echo ""
-echo "Download complete! Files saved in cia-data directory."
+echo "Download complete! Successfully downloaded files saved in cia-data directory."
 echo ""
 echo "Summary:"
-ls -lh *.csv | wc -l | xargs echo "Total CSV files:"
+ls -lh *.csv 2>/dev/null | wc -l | xargs echo "Total CSV files:"
 du -sh . | awk '{print "Total size: " $1}'

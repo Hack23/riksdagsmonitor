@@ -7012,10 +7012,10 @@ html[lang="he"] {
   align-items: center;
 }
 
-/* Canvas Charts */
-canvas {
+/* Canvas Charts (scoped to risk dashboard) */
+#risk-dashboard canvas {
   max-width: 100%;
-  height: auto !important;
+  height: auto;
   min-height: 300px;
 }
 
@@ -7196,50 +7196,15 @@ canvas {
    UI/UX ENHANCEMENTS - FEBRUARY 2026
    ================================================== */
 
-/* Skip to Content Link (WCAG 2.1 AAA) */
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-color);
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  z-index: 100;
-  border-radius: 0 0 4px 0;
-  font-weight: 600;
-  transition: top 0.3s ease;
-}
+/* Note: Skip-to-content link styles already defined earlier in this file
+   at lines 666-789 (.skip-link pattern). Reusing existing implementation. */
 
-.skip-to-content:focus {
-  top: 0;
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-/* Enhanced Focus Indicators (WCAG 2.1 AAA - 3px) */
-*:focus-visible {
-  outline: 3px solid var(--primary-color);
-  outline-offset: 2px;
-  border-radius: var(--border-radius-sm);
-}
-
-/* Fallback for browsers without :focus-visible */
-@supports not selector(:focus-visible) {
-  *:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-  }
-}
+/* Note: Global focus-visible styles already defined earlier in this file
+   at lines 666-789. Avoiding duplicate universal focus rules. */
 
 /* Remove outline for mouse clicks (only show for keyboard) */
 *:focus:not(:focus-visible) {
   outline: none;
-}
-
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Respect user's motion preferences */
@@ -7343,48 +7308,8 @@ button:not(.back-to-top):active::after {
   height: 200px;
 }
 
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 102, 51, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.back-to-top:hover {
-  background: var(--primary-light);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 102, 51, 0.4);
-}
-
-.back-to-top:active {
-  transform: translateY(-1px);
-}
-
-.back-to-top:focus-visible {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 3px;
-}
+/* Note: Back-to-top button styles already defined earlier in this file
+   at lines 989-1030. Avoiding duplicate .back-to-top implementation. */
 
 /* Enhanced Footer */
 footer {
