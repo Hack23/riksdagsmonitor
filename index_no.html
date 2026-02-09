@@ -216,7 +216,6 @@
 	<link rel="alternate" hreflang="zh-Hans" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
 	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
-
 </head>
 <body>
 	<!-- Breadcrumb Navigation -->
@@ -646,6 +645,76 @@
 				</ul>
 			</div>
 		</section>
+<section id="seasonal-patterns-dashboard">
+<h2>📅 Sesongmønster (2002-2025)</h2>
+<p class="subtitle">Kvartalsanalyse med Z-score anomalideteksjon</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="Filtrer etter år">
+<option value="all">Alle år</option>
+</select>
+
+<select id="quarter-filter" aria-label="Filtrer etter kvartal">
+<option value="all">Alle kvartaler</option>
+<option value="1">K1 - Vintersesjon</option>
+<option value="2">K2 - Vårsesjon</option>
+<option value="3">K3 - Sommerpause</option>
+<option value="4">K4 - Høstsesjon</option>
+</select>
+
+<select id="election-filter" aria-label="Filtrer etter valgstatus">
+<option value="all">Alle</option>
+<option value="election">Valgår</option>
+<option value="non-election">Ikke-valgår</option>
+</select>
+
+<select id="classification-filter" aria-label="Filtrer etter aktivitetsklassifisering">
+<option value="all">Alle klassifiseringer</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>Kvartalsaktivitet varmekart (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">Avstemningsvolum etter år og kvartal med Z-score. Røde sirkler indikerer statistiske avvik (|Z| ≥ 2.0).</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Z-score anomalideteksjon</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Z-score anomalideteksjon"></canvas>
+<p class="chart-description">Statistiske avvik (|Z| ≥ 2.0) markert i rødt i tidslinjen.</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>Gjennomsnittlig aktivitet per kvartal (alle år)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Gjennomsnittlig aktivitet per kvartal (alle år)"></canvas>
+<p class="chart-description">K1-K4 basislinjer. Viser typiske aktivitetsmønstre gjennom sesonger.</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>Sesongmønster klassifisering</h3>
+<canvas id="classification-chart" role="img" aria-label="Sesongmønster klassifisering"></canvas>
+<p class="chart-description">Fordeling av NORMAL, FORHØYET, REDUSERT og ANOMALI mønstre over årene.</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>Kvartal-til-kvartal endringer</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Kvartal-til-kvartal endringer"></canvas>
+<p class="chart-description">Sekvensielle avstemningsendringer (% og absolutt). Grønt indikerer økning, rødt indikerer reduksjon.</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Data fra CIA-plattformen | Oppdateres daglig</p>
+</section>
+
 	</main>
 	
 	<footer>
@@ -662,6 +731,13 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+<!-- Visualiseringsbiblioteker -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-4g6qjJ6wLsD/wG9HVNaEqkPT8Vqwj/fYz13pKK09pQvClzJIPHFOnP8WqqDkc2M0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha384-U4TGn6R7rz6OfYYTpLGOZLYdXb6vKSYFoJioBnZ8IrEJ1LJOe2mApxqZqLpDyNDP" crossorigin="anonymous"></script>
+
+<!-- Dashboard-script -->
+<script src="js/seasonal-patterns-dashboard.js"></script>
 
 </body>
 </html>
