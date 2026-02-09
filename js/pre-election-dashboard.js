@@ -81,6 +81,14 @@
         ok: 'OK',
         warning: 'Warning',
         alert: 'Alert'
+      },
+      chartLabels: {
+        ballots: 'Ballots',
+        documents: 'Documents',
+        attendance: 'Attendance',
+        electionYear: 'Election Year',
+        nonElectionYear: 'Non-Election Year',
+        baseline: 'Baseline'
       }
     },
     sv: {
@@ -114,6 +122,14 @@
         ok: 'OK',
         warning: 'Varning',
         alert: 'Alert'
+      },
+      chartLabels: {
+        ballots: 'Omröstningar',
+        documents: 'Dokument',
+        attendance: 'Närvaro',
+        electionYear: 'Valår',
+        nonElectionYear: 'Icke-valår',
+        baseline: 'Baslinje'
       }
     }
   };
@@ -337,10 +353,11 @@
       }
 
       // YoY change warning
-      if (Math.abs(data.yoy_ballot_change_pct || 0) > CONFIG.thresholds.yoyAlert) {
-        warnings.push({ metric: 'yoyChange', status: 'alert', deviation: data.yoy_ballot_change_pct });
+      const yoyDeviation = Number(data.yoy_ballot_change_pct) || 0;
+      if (Math.abs(yoyDeviation) > CONFIG.thresholds.yoyAlert) {
+        warnings.push({ metric: 'yoyChange', status: 'alert', deviation: yoyDeviation });
       } else {
-        warnings.push({ metric: 'yoyChange', status: 'ok', deviation: data.yoy_ballot_change_pct });
+        warnings.push({ metric: 'yoyChange', status: 'ok', deviation: yoyDeviation });
       }
 
       return warnings;
@@ -359,6 +376,10 @@
 
       const data = this.dataManager.preElectionData;
       if (!data || data.length === 0) return;
+
+      // Get translations
+      const lang = getCurrentLanguage();
+      const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
       // Sort by year
       data.sort((a, b) => a.year - b.year);
@@ -435,7 +456,7 @@
               position: 'left',
               title: {
                 display: true,
-                text: 'Ballots',
+                text: t.chartLabels.ballots,
                 color: CONFIG.chartColors.ballots
               },
               ticks: { color: '#e0e0e0' },
@@ -446,7 +467,7 @@
               position: 'right',
               title: {
                 display: true,
-                text: 'Documents',
+                text: t.chartLabels.documents,
                 color: CONFIG.chartColors.documents
               },
               ticks: { color: '#e0e0e0' },
@@ -468,6 +489,10 @@
       const data = this.dataManager.electionComparisonData;
       if (!data || data.length === 0) return;
 
+      // Get translations
+      const lang = getCurrentLanguage();
+      const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+
       // Sort by year
       data.sort((a, b) => a.year - b.year);
 
@@ -477,14 +502,14 @@
           labels: data.map(d => d.year),
           datasets: [
             {
-              label: 'Election Year',
+              label: t.chartLabels.electionYear,
               data: data.map(d => (d.is_election_year === 't' || d.is_election_year === true) ? d.total_ballots : null),
               backgroundColor: CONFIG.chartColors.election + '99',
               borderColor: CONFIG.chartColors.election,
               borderWidth: 1
             },
             {
-              label: 'Non-Election Year',
+              label: t.chartLabels.nonElectionYear,
               data: data.map(d => (d.is_election_year === 'f' || d.is_election_year === false) ? d.total_ballots : null),
               backgroundColor: CONFIG.chartColors.nonElection + '99',
               borderColor: CONFIG.chartColors.nonElection,
@@ -503,7 +528,7 @@
             tooltip: {
               callbacks: {
                 label: function(context) {
-                  return context.dataset.label + ': ' + (context.parsed.y || 0).toLocaleString() + ' ballots';
+                  return context.dataset.label + ': ' + (context.parsed.y || 0).toLocaleString() + ' ' + t.chartLabels.ballots.toLowerCase();
                 }
               }
             }
@@ -539,6 +564,10 @@
       const latestYear = this.dataManager.getLatestYear();
       const data = this.dataManager.getCurrentYearData(latestYear);
       if (!data) return;
+
+      // Get translations
+      const lang = getCurrentLanguage();
+      const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
       new Chart(ctx, {
         type: 'radar',
@@ -778,21 +807,39 @@
       const lang = getCurrentLanguage();
       const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
-      container.innerHTML = warnings.map(w => {
+      // Clear existing content safely
+      container.textContent = '';
+
+      warnings.forEach(w => {
         const statusIcon = w.status === 'ok' ? '🟢' : w.status === 'warning' ? '🟡' : '🔴';
         const statusClass = w.status === 'ok' ? 'normal' : w.status === 'warning' ? 'warning' : 'alert';
         const statusLabel = t.status[w.status] || w.status.toUpperCase();
         const metricLabel = t.metrics[w.metric] || w.metric;
         const deviationText = (w.deviation > 0 ? '+' : '') + w.deviation.toFixed(1) + '%';
 
-        return `
-          <div class="warning-cell ${statusClass}">
-            <div class="status-icon" role="img" aria-label="${statusLabel}">${statusIcon}</div>
-            <div class="metric-name">${metricLabel}</div>
-            <div class="deviation-value">${deviationText}</div>
-          </div>
-        `;
-      }).join('');
+        const cell = document.createElement('div');
+        cell.classList.add('warning-cell', statusClass);
+
+        const statusIconEl = document.createElement('div');
+        statusIconEl.classList.add('status-icon');
+        statusIconEl.setAttribute('role', 'img');
+        statusIconEl.setAttribute('aria-label', statusLabel);
+        statusIconEl.textContent = statusIcon;
+
+        const metricNameEl = document.createElement('div');
+        metricNameEl.classList.add('metric-name');
+        metricNameEl.textContent = metricLabel;
+
+        const deviationValueEl = document.createElement('div');
+        deviationValueEl.classList.add('deviation-value');
+        deviationValueEl.textContent = deviationText;
+
+        cell.appendChild(statusIconEl);
+        cell.appendChild(metricNameEl);
+        cell.appendChild(deviationValueEl);
+
+        container.appendChild(cell);
+      });
     }
 
     renderAllCharts() {
@@ -864,9 +911,19 @@
       partyCard.querySelector('.current-value').textContent = 
         data.avg_party_win_rate.toFixed(2) + '%';
       
-      const prevYear = dataManager.preElectionData.find(d => d.year === 2024);
-      const yoyChange = prevYear ? 
-        ((data.avg_party_win_rate - prevYear.avg_party_win_rate) / prevYear.avg_party_win_rate * 100) : 0;
+      // Derive previous year from available data rather than using hard-coded 2024
+      const availableYears = Array.from(
+        new Set(dataManager.preElectionData.map(d => d.year))
+      ).sort((a, b) => a - b);
+      const latestYearIndex = availableYears.indexOf(latestYear);
+      const prevYearValue = latestYearIndex > 0 ? availableYears[latestYearIndex - 1] : null;
+      const prevYear = prevYearValue !== null
+        ? dataManager.preElectionData.find(d => d.year === prevYearValue)
+        : null;
+      
+      const yoyChange = (prevYear && prevYear.avg_party_win_rate)
+        ? ((data.avg_party_win_rate - prevYear.avg_party_win_rate) / prevYear.avg_party_win_rate * 100)
+        : 0;
       
       partyCard.querySelector('.baseline-comparison').textContent = 
         (yoyChange > 0 ? '+' : '') + yoyChange.toFixed(2) + '% ' + t.yoy;
