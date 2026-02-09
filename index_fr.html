@@ -206,6 +206,9 @@
     }
   ]
 }</script>
+<!-- Chart.js for Party Dashboard Visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-e6cc9LaIG7xZ3XD5B+jtr1NhTWPQGQdRCh6xiZ+ZFUtWCpg4ycv3Sh+SkZoopvUY" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<!-- Breadcrumb Navigation -->
@@ -613,7 +616,43 @@
 			</div>
 		</section>
 
-		<section id="final-cta">
+		
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> Performance & Efficacité des Partis</h2>
+<p>Analyse complète des partis politiques suédois avec plus de 50 ans de données de la plateforme CIA. Suivez les tendances d'efficacité, la dynamique de coalition et les indicateurs de momentum pour 8 partis.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>Tendances d'Efficacité (1990-2026)</h3>
+<p>Scores historiques d'efficacité des partis montrant la productivité législative, la cohérence de vote et l'impact politique au fil du temps.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>Comparaison des Partis (Période Actuelle)</h3>
+<p>Analyse comparative des métriques de performance des partis pour la période législative actuelle.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>Alignement de Coalition</h3>
+<p>Modèles de coalition et réseaux de collaboration inter-partis.</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>Indicateurs de Momentum</h3>
+<p>Scores de momentum des partis avec des repères de percentile (P50, P90) indiquant la trajectoire électorale.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+<section id="final-cta">
 			<h2>Join the Intelligence Revolution</h2>
 			<p>Swedish Election 2026: Prove the power of systematic political transparency</p>
 			
@@ -635,6 +674,8 @@
 				</ul>
 			</div>
 		</section>
+	</main>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 Modèles d'activité saisonnière (2002-2025)</h2>
 <p class="subtitle">Analyse trimestrielle avec détection d'anomalies Z-Score</p>
@@ -705,7 +746,6 @@
 <p class="data-attribution">📊 Données de la plateforme CIA | Mis à jour quotidiennement</p>
 </section>
 
-	
 <section id="anomaly-detection-dashboard">
 <h2>🚨 Anomaly Detection & Early Warning System</h2>
 <p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
@@ -790,7 +830,7 @@
 </div>
 </section>
 
-</main>
+
 <footer>
 		<p>&copy; 2008-2026 | Hack23 AB (Org.nr 5595347807) |
 			<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
@@ -805,14 +845,10 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
-<!-- Bibliothèques de visualisation -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-4g6qjJ6wLsD/wG9HVNaEqkPT8Vqwj/fYz13pKK09pQvClzJIPHFOnP8WqqDkc2M0" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha384-U4TGn6R7rz6OfYYTpLGOZLYdXb6vKSYFoJioBnZ8IrEJ1LJOe2mApxqZqLpDyNDP" crossorigin="anonymous"></script>
-
-<!-- Script du tableau de bord -->
+<!-- Party Dashboard Script -->
+<script src="js/party-dashboard.js"></script>
 <script src="js/seasonal-patterns-dashboard.js"></script>
-
+<script src="js/pre-election-dashboard.js"></script>
 <script src="js/anomaly-detection-dashboard.js"></script>
 </body>
 </html>

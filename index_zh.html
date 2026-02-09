@@ -194,6 +194,9 @@
 	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
 
+<!-- Chart.js for Party Dashboard Visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-e6cc9LaIG7xZ3XD5B+jtr1NhTWPQGQdRCh6xiZ+ZFUtWCpg4ycv3Sh+SkZoopvUY" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -400,7 +403,45 @@
       </ul>
     </section>
 
-  </article>
+  
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> 政党表现与效率</h2>
+<p>使用CIA平台50多年的数据对瑞典政党进行全面分析。跟踪8个政党的效率趋势、联盟动态和动量指标。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>效率趋势（1990-2026）</h3>
+<p>显示立法生产力、投票一致性和政策影响随时间变化的历史政党效率分数。</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>政党比较（当前期间）</h3>
+<p>当前立法期间政党绩效指标的比较分析。</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>联盟协调</h3>
+<p>联盟模式和政党间合作网络。</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>动量指标</h3>
+<p>具有百分位基准（P50，P90）的政党动量分数，指示选举轨迹。</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+    </article>
+</main>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 季节性活动模式 (2002-2025)</h2>
 <p class="subtitle">使用Z分数异常检测的季度分析</p>
@@ -470,7 +511,6 @@
 
 <p class="data-attribution">📊 来自CIA平台的数据 | 每日更新</p>
 </section>
-
 
 <section id="anomaly-detection-dashboard">
 <h2>🚨 Anomaly Detection & Early Warning System</h2>
@@ -556,7 +596,7 @@
 </div>
 </section>
 
-</main>
+
 
 <footer>
   <div class="footer-content">
@@ -596,15 +636,11 @@
     <p>🍎 独立思考。质疑权威。23 FNORD 5 🍎</p>
   </div>
 </footer>
-<!-- 可视化库 -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-4g6qjJ6wLsD/wG9HVNaEqkPT8Vqwj/fYz13pKK09pQvClzJIPHFOnP8WqqDkc2M0" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha384-U4TGn6R7rz6OfYYTpLGOZLYdXb6vKSYFoJioBnZ8IrEJ1LJOe2mApxqZqLpDyNDP" crossorigin="anonymous"></script>
 
-<!-- 仪表板脚本 -->
+<!-- Party Dashboard Script -->
+<script src="js/party-dashboard.js"></script>
 <script src="js/seasonal-patterns-dashboard.js"></script>
-
-
+<script src="js/pre-election-dashboard.js"></script>
 <script src="js/anomaly-detection-dashboard.js"></script>
 </body>
 </html>

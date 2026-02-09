@@ -220,6 +220,9 @@
 	<link rel="alternate" hreflang="zh-Hans" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
 	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
 
+<!-- Chart.js for Party Dashboard Visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-e6cc9LaIG7xZ3XD5B+jtr1NhTWPQGQdRCh6xiZ+ZFUtWCpg4ycv3Sh+SkZoopvUY" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<!-- Breadcrumb Navigation -->
@@ -647,7 +650,43 @@
 			</div>
 		</section>
 
-		<section id="final-cta">
+		
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> 정당 성과 및 효과</h2>
+<p>50년 이상의 CIA 플랫폼 데이터로 스웨덴 정당에 대한 포괄적인 분석. 8개 정당의 효과 추세, 연립 역학 및 모멘텀 지표를 추적합니다.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>효과 추세 (1990-2026)</h3>
+<p>시간 경과에 따른 입법 생산성, 투표 일관성 및 정책 영향을 보여주는 역사적 정당 효과 점수.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>정당 비교 (현재 기간)</h3>
+<p>현재 입법 기간에 대한 정당 성과 메트릭의 비교 분석.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>연립 조정</h3>
+<p>연립 패턴 및 정당 간 협력 네트워크.</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>모멘텀 지표</h3>
+<p>백분위수 벤치마크(P50, P90)로 선거 궤적을 나타내는 정당 모멘텀 점수.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+<section id="final-cta">
 			<h2>인텔리전스 혁명에 참여하세요</h2>
 			<p>스웨덴 선거 2026: 체계적인 정치적 투명성의 힘을 증명하다</p>
 			
@@ -669,6 +708,8 @@
 				</ul>
 			</div>
 		</section>
+	</main>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 계절별 활동 패턴 (2002-2025)</h2>
 <p class="subtitle">Z-점수 이상 탐지를 통한 분기별 분석</p>
@@ -739,7 +780,6 @@
 <p class="data-attribution">📊 CIA 플랫폼의 데이터 | 매일 업데이트</p>
 </section>
 
-	
 <section id="anomaly-detection-dashboard">
 <h2>🚨 Anomaly Detection & Early Warning System</h2>
 <p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
@@ -824,7 +864,7 @@
 </div>
 </section>
 
-</main>
+
 	
 	<footer>
 		<p>&copy; 2008-2026 | Hack23 AB (Org.nr 5595347807) |
@@ -840,14 +880,10 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
-<!-- 시각화 라이브러리 -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-4g6qjJ6wLsD/wG9HVNaEqkPT8Vqwj/fYz13pKK09pQvClzJIPHFOnP8WqqDkc2M0" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha384-U4TGn6R7rz6OfYYTpLGOZLYdXb6vKSYFoJioBnZ8IrEJ1LJOe2mApxqZqLpDyNDP" crossorigin="anonymous"></script>
-
-<!-- 대시보드 스크립트 -->
+<!-- Party Dashboard Script -->
+<script src="js/party-dashboard.js"></script>
 <script src="js/seasonal-patterns-dashboard.js"></script>
-
+<script src="js/pre-election-dashboard.js"></script>
 <script src="js/anomaly-detection-dashboard.js"></script>
 </body>
 </html>

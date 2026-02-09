@@ -94,7 +94,20 @@ Riksdagsmonitor currently features 4 interactive intelligence dashboards built w
 - **Purpose**: Track pre-election parliamentary activity and behavior changes
 - **Data Source**: `cia-data/pre-election/*.csv`
 
-### 4. 🚨 Anomaly Detection & Early Warning System
+
+
+### 4. 🗳️ Party Performance & Effectiveness Dashboard
+
+**Coverage:** 1990-2026 (37 years)  
+**Analysis:** Comprehensive party analytics across 8 Swedish political parties
+
+**Key Features:**
+- **Effectiveness Trends:** Historical legislative productivity and voting consistency
+- **Comparative Analysis:** Party-by-party benchmarking
+- **Coalition Patterns:** Party alignment visualization
+- **Momentum Indicators:** Electoral trajectory with percentile benchmarks
+
+### 5. 🚨 Anomaly Detection & Early Warning System
 - **Coverage**: 2002-2026 (41 quarters analyzed)
 - **Visualizations**: 6 interactive charts including timeline, Z-score distribution, heat map
 - **Features**:

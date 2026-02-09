@@ -177,6 +177,9 @@
   ]
 }</script>
 
+<!-- Chart.js for Party Dashboard Visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-e6cc9LaIG7xZ3XD5B+jtr1NhTWPQGQdRCh6xiZ+ZFUtWCpg4ycv3Sh+SkZoopvUY" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <header>
@@ -227,7 +230,45 @@
           <li><a href="blog_ja.html">ブログ</a></li>
         </ul>
       </section>
+    
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> 政党のパフォーマンスと効果</h2>
+<p>CIAプラットフォームの50年以上のデータを使用したスウェーデンの政党の包括的な分析。8つの政党の効果トレンド、連立動態、勢いの指標を追跡します。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>効果トレンド（1990-2026）</h3>
+<p>立法の生産性、投票の一貫性、および政策の影響を時系列で示す歴史的な政党の効果スコア。</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>政党比較（現在の期間）</h3>
+<p>現在の立法期間における政党のパフォーマンスメトリクスの比較分析。</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>連立の調整</h3>
+<p>連立パターンと政党間の協力ネットワーク。</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>勢いの指標</h3>
+<p>パーセンタイルベンチマーク（P50、P90）を使用した政党の勢いスコアで、選挙の軌跡を示します。</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
     </article>
+  </main>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 季節的活動パターン（2002-2025）</h2>
 <p class="subtitle">Zスコア異常検出による四半期分析</p>
@@ -298,7 +339,6 @@
 <p class="data-attribution">📊 CIAプラットフォームからのデータ | 毎日更新</p>
 </section>
 
-  
 <section id="anomaly-detection-dashboard">
 <h2>🚨 Anomaly Detection & Early Warning System</h2>
 <p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
@@ -383,20 +423,16 @@
 </div>
 </section>
 
-</main>
+
 
   <footer>
     <p>&copy; 2025 Hack23 AB. All rights reserved.</p>
     <p><a href="index_ja.html">ホーム</a> | <a href="blog_ja.html">ブログ</a></p>
   </footer>
-<!-- ビジュアライゼーションライブラリ -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-4g6qjJ6wLsD/wG9HVNaEqkPT8Vqwj/fYz13pKK09pQvClzJIPHFOnP8WqqDkc2M0" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha384-U4TGn6R7rz6OfYYTpLGOZLYdXb6vKSYFoJioBnZ8IrEJ1LJOe2mApxqZqLpDyNDP" crossorigin="anonymous"></script>
-
-<!-- ダッシュボードスクリプト -->
+<!-- Party Dashboard Script -->
+<script src="js/party-dashboard.js"></script>
 <script src="js/seasonal-patterns-dashboard.js"></script>
-
+<script src="js/pre-election-dashboard.js"></script>
 <script src="js/anomaly-detection-dashboard.js"></script>
 </body>
 </html>
