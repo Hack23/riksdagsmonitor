@@ -38,7 +38,7 @@
 
 ## 🔍 Schema.org Types Implemented
 
-1. **WebSite** - Site identity with SearchAction
+1. **WebSite** - Site identity and basic metadata
 2. **Organization** - Hack23 AB with founder credentials
 3. **WebPage** - Page-level metadata with breadcrumb
 4. **BreadcrumbList** - Navigation hierarchy

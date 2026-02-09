@@ -11,7 +11,6 @@ The Coalition & Voting Pattern Dashboard provides interactive analysis of Swedis
 - **Node size** proportional to influence score (5-15 range)
 - **Edge thickness** represents coalition strength (0.3-0.8 scale)
 - **Drag & drop** nodes to rearrange the network
-- **Zoom & pan** for detailed exploration
 - **Click nodes** to view party details
 - **Keyboard navigation** with Tab key
 - **Accessible table fallback** for screen readers
