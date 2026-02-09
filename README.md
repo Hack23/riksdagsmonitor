@@ -107,6 +107,49 @@ The Anomaly Detection & Early Warning System provides real-time identification o
 
 **Data Source:** [CIA Seasonal Anomaly Detection](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/view_riksdagen_seasonal_anomaly_detection_sample.csv)
 
+## 📁 CIA Data Directory
+
+The `cia-data/` directory contains 25 CSV files (656KB) from the CIA platform, organized by category:
+
+### Directory Structure
+```
+cia-data/
+├── seasonal/          # Seasonal activity patterns & anomaly detection
+├── voting/            # Voting anomalies & patterns
+├── election-cycle/    # Election proximity & predictive intelligence
+├── party/             # Party performance & longitudinal data (50+ years)
+├── committee/         # Committee productivity metrics
+├── ministry/          # Ministry risk & effectiveness
+├── politician/        # Politician risk & influence
+└── distribution/      # Statistical distributions & trends
+```
+
+### Data Loading Strategy
+Dashboards use a **local-first approach** with graceful fallback:
+1. Try local file: `cia-data/[category]/[filename].csv`
+2. Fallback to remote: `https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/[filename].csv`
+
+**Benefits:**
+- ⚡ Faster load times (local files)
+- 🔒 Works offline (with cache)
+- 📉 Reduced API usage
+- 🛡️ Graceful degradation
+
+### Updating Data
+To download the latest CSV files from the CIA platform:
+```bash
+cd cia-data
+bash download-csv.sh
+```
+
+**Update Frequency:**
+- Anomaly Detection: Quarterly (after each parliamentary quarter)
+- Party/Politician Data: Annually
+- Committee/Ministry: Monthly
+- Election Cycle: During election years
+
+See [`cia-data/README.md`](cia-data/README.md) for detailed documentation of all data files.
+
 ## 🔗 Data Sources
 
 Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
