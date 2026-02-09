@@ -103,7 +103,8 @@ Quarterly parliamentary activity analysis for the Swedish Riksdag (2002-2025).
 Records with `|Z| ≥ 2.0`:
 - **2021 Q2**: 336 ballots (Z=2.17) - Unusually high activity
 - **2004 Q3**: 17 ballots (Z=2.80) - Anomaly during summer recess
-- **2022 Q4**: 31 ballots (Z=-1.66) - Reduced activity (election year)
+
+Note: 2022 Q4 (Z=-1.66) and 2023 Q4 (Z=-1.57) show reduced activity but do not meet the |Z| ≥ 2.0 threshold for classification as statistical anomalies.
 
 ### Election Year Effects
 

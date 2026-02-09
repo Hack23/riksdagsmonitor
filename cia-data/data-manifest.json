@@ -21,7 +21,6 @@
         "seasonal_pattern_classification"
       ],
       "updateFrequency": "Quarterly",
-      "checksum": "auto-generated",
       "usedBy": [
         "js/seasonal-patterns-dashboard.js"
       ]

@@ -63,7 +63,7 @@ This script downloads the latest data from the CIA platform repository.
 
 Quarterly parliamentary activity analysis (2002-2025):
 - **File**: `view_riksdagen_seasonal_activity_patterns_sample.csv`
-- **Records**: 92 (23 years × 4 quarters)
+- **Records**: 86 (6 quarters missing from full 2002–2025 coverage)
 - **Dashboard**: Seasonal Activity Patterns Dashboard
 - **Fields**: 32 columns including:
   - Time dimensions: year, quarter, is_election_year, election_cycle

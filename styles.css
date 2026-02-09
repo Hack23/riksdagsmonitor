@@ -6970,6 +6970,18 @@ html[lang="he"] {
   }
 }
 
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #seasonal-heatmap .anomaly-marker {
+    animation: none;
+  }
+  
+  #seasonal-patterns-dashboard.loading::after {
+    animation: none;
+    opacity: 0.9;
+  }
+}
+
 /* Loading State */
 #seasonal-patterns-dashboard.loading {
   position: relative;
@@ -7006,6 +7018,19 @@ html[lang="he"] {
   50% {
     opacity: 0.7;
   }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Error Message */

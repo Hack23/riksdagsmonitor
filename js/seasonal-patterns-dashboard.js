@@ -173,7 +173,6 @@
       error: 'Fel vid inläsning av data. Försök igen.',
       dataAttribution: 'Data från CIA-plattformen'
     },
-    // Add more languages as needed (da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh)
     da: {
       title: 'Sæsonmønstre (2002-2025)',
       subtitle: 'Kvartalsanalyse med Z-score anomalidetektion',
@@ -206,7 +205,7 @@
         },
         comparison: {
           title: 'Gennemsnitlig aktivitet efter kvartal (alle år)',
-          description: 'K1-K4 basislinjer med standardafvigelsesbånd'
+          description: 'K1-K4 basislinjer med standardafvikelsesbånd'
         },
         classification: {
           title: 'Sæsonmønster klassificering',
@@ -231,7 +230,19 @@
       loading: 'Indlæser data...',
       error: 'Fejl ved indlæsning af data. Prøv igen.',
       dataAttribution: 'Data fra CIA-platformen'
-    }
+    },
+    // Additional languages with full translations
+    no: { title: 'Sesongmønstre (2002-2025)', subtitle: 'Kvartalsanalyse med Z-score anomalideteksjon', filters: { year: 'År', quarter: 'Kvartal', election: 'Valgstatus', classification: 'Aktivitetsklassifisering', allYears: 'Alle år', allQuarters: 'Alle kvartaler', allElections: 'Alle', electionYears: 'Valgår', nonElectionYears: 'Ikke-valgår', allClassifications: 'Alle klassifiseringer' }, quarters: { Q1: 'K1 - Vintersesjon', Q2: 'K2 - Vårsesjon', Q3: 'K3 - Sommerferie', Q4: 'K4 - Høstsesjon' }, charts: { heatmap: { title: 'Kvartalsaktivitet varmekart (2002-2025)', description: 'Avstemningsvolum etter år og kvartal med Z-score' }, zscore: { title: 'Z-score anomalideteksjon', description: 'Statistiske avvik (|Z| ≥ 2.0) markert i rødt' }, comparison: { title: 'Gjennomsnittlig aktivitet etter kvartal (alle år)', description: 'K1-K4 basislinjer med standardavviksbånd' }, classification: { title: 'Sesongmønster klassifisering', description: 'Fordeling av NORMAL, FORHØYET, REDUSERT, ANOMALI mønstre' }, qoq: { title: 'Kvartal-til-kvartal endringer', description: 'Sekvensielle avstemningsendringer (% og absolutt)' } }, classifications: { NORMAL_ACTIVITY: 'Normal aktivitet', ELEVATED_ACTIVITY: 'Forhøyet aktivitet', REDUCED_ACTIVITY: 'Redusert aktivitet', ANOMALY_DETECTED: 'Anomali oppdaget', NORMAL_SEASONAL_PATTERN: 'Normalt sesongmønster', Q3_SUMMER_LULL: 'K3 sommerferie', Q4_ELEVATED_ACTIVITY: 'K4 forhøyet aktivitet', UNUSUALLY_HIGH_ACTIVITY: 'Uvanlig høy aktivitet', UNUSUALLY_LOW_ACTIVITY: 'Uvanlig lav aktivitet' }, loading: 'Laster data...', error: 'Feil ved lasting av data. Prøv igjen.', dataAttribution: 'Data fra CIA-plattformen' },
+    fi: { title: 'Kausivaihtelut (2002-2025)', subtitle: 'Neljännesvuosi-analyysi Z-pisteiden poikkeamatunnistuksella', filters: { year: 'Vuosi', quarter: 'Kvartaali', election: 'Vaalitilanne', classification: 'Aktiviteettiluokitus', allYears: 'Kaikki vuodet', allQuarters: 'Kaikki kvartaalit', allElections: 'Kaikki', electionYears: 'Vaalivuodet', nonElectionYears: 'Ei-vaalivuodet', allClassifications: 'Kaikki luokitukset' }, quarters: { Q1: 'Q1 - Talviistunto', Q2: 'Q2 - Kevätistunto', Q3: 'Q3 - Kesätauko', Q4: 'Q4 - Syysistunto' }, charts: { heatmap: { title: 'Neljännesvuosi-aktiviteetti lämpökartta (2002-2025)', description: 'Äänestysvolyymi vuoden ja kvartaalin mukaan Z-pisteillä' }, zscore: { title: 'Z-piste poikkeamatunnistus', description: 'Tilastolliset poikkeamat (|Z| ≥ 2.0) merkitty punaisella' }, comparison: { title: 'Keskimääräinen aktiviteetti kvartaaleittain (kaikki vuodet)', description: 'Q1-Q4 perusviivat keskihajontakaistaleilla' }, classification: { title: 'Kausivaihtelujen luokittelu', description: 'NORMAALI, KOHONNUT, ALENTUNUT, POIKKEAMA -mallien jakauma' }, qoq: { title: 'Kvartaalista toiseen muutokset', description: 'Peräkkäiset äänestysmuutokset (% ja absoluuttinen)' } }, classifications: { NORMAL_ACTIVITY: 'Normaali aktiviteetti', ELEVATED_ACTIVITY: 'Kohonnut aktiviteetti', REDUCED_ACTIVITY: 'Alentunut aktiviteetti', ANOMALY_DETECTED: 'Poikkeama havaittu', NORMAL_SEASONAL_PATTERN: 'Normaali kausimalli', Q3_SUMMER_LULL: 'Q3 kesätauko', Q4_ELEVATED_ACTIVITY: 'Q4 kohonnut aktiviteetti', UNUSUALLY_HIGH_ACTIVITY: 'Epätavallisen korkea aktiviteetti', UNUSUALLY_LOW_ACTIVITY: 'Epätavallisen matala aktiviteetti' }, loading: 'Ladataan tietoja...', error: 'Virhe tietojen lataamisessa. Yritä uudelleen.', dataAttribution: 'Data CIA-alustalta' },
+    de: { title: 'Saisonale Muster (2002-2025)', subtitle: 'Quartalsanalyse mit Z-Score-Anomalieerkennung', filters: { year: 'Jahr', quarter: 'Quartal', election: 'Wahlstatus', classification: 'Aktivitätsklassifizierung', allYears: 'Alle Jahre', allQuarters: 'Alle Quartale', allElections: 'Alle', electionYears: 'Wahljahre', nonElectionYears: 'Nicht-Wahljahre', allClassifications: 'Alle Klassifizierungen' }, quarters: { Q1: 'Q1 - Wintersitzung', Q2: 'Q2 - Frühjahrssitzung', Q3: 'Q3 - Sommerpause', Q4: 'Q4 - Herbstsitzung' }, charts: { heatmap: { title: 'Quartalsaktivität Heatmap (2002-2025)', description: 'Abstimmungsvolumen nach Jahr und Quartal mit Z-Score' }, zscore: { title: 'Z-Score-Anomalieerkennung', description: 'Statistische Ausreißer (|Z| ≥ 2.0) rot markiert' }, comparison: { title: 'Durchschnittliche Aktivität nach Quartal (alle Jahre)', description: 'Q1-Q4 Basislinien mit Standardabweichungsbändern' }, classification: { title: 'Saisonale Musterklassifizierung', description: 'Verteilung von NORMAL, ERHÖHT, REDUZIERT, ANOMALIE Mustern' }, qoq: { title: 'Quartal-zu-Quartal Änderungen', description: 'Aufeinanderfolgende Abstimmungsänderungen (% und absolut)' } }, classifications: { NORMAL_ACTIVITY: 'Normale Aktivität', ELEVATED_ACTIVITY: 'Erhöhte Aktivität', REDUCED_ACTIVITY: 'Reduzierte Aktivität', ANOMALY_DETECTED: 'Anomalie erkannt', NORMAL_SEASONAL_PATTERN: 'Normales saisonales Muster', Q3_SUMMER_LULL: 'Q3 Sommerpause', Q4_ELEVATED_ACTIVITY: 'Q4 erhöhte Aktivität', UNUSUALLY_HIGH_ACTIVITY: 'Ungewöhnlich hohe Aktivität', UNUSUALLY_LOW_ACTIVITY: 'Ungewöhnlich niedrige Aktivität' }, loading: 'Daten werden geladen...', error: 'Fehler beim Laden der Daten. Bitte versuchen Sie es erneut.', dataAttribution: 'Daten von CIA-Plattform' },
+    fr: { title: 'Schémas saisonniers (2002-2025)', subtitle: 'Analyse trimestrielle avec détection d\'anomalies par score Z', filters: { year: 'Année', quarter: 'Trimestre', election: 'Statut électoral', classification: 'Classification d\'activité', allYears: 'Toutes les années', allQuarters: 'Tous les trimestres', allElections: 'Tous', electionYears: 'Années électorales', nonElectionYears: 'Années non-électorales', allClassifications: 'Toutes les classifications' }, quarters: { Q1: 'T1 - Session d\'hiver', Q2: 'T2 - Session de printemps', Q3: 'T3 - Pause estivale', Q4: 'T4 - Session d\'automne' }, charts: { heatmap: { title: 'Carte de chaleur d\'activité trimestrielle (2002-2025)', description: 'Volume de scrutins par année et trimestre avec score Z' }, zscore: { title: 'Détection d\'anomalies par score Z', description: 'Valeurs aberrantes statistiques (|Z| ≥ 2.0) marquées en rouge' }, comparison: { title: 'Activité moyenne par trimestre (toutes les années)', description: 'Lignes de base T1-T4 avec bandes d\'écart-type' }, classification: { title: 'Classification des schémas saisonniers', description: 'Distribution des schémas NORMAL, ÉLEVÉ, RÉDUIT, ANOMALIE' }, qoq: { title: 'Changements d\'un trimestre à l\'autre', description: 'Changements séquentiels de scrutins (% et absolu)' } }, classifications: { NORMAL_ACTIVITY: 'Activité normale', ELEVATED_ACTIVITY: 'Activité élevée', REDUCED_ACTIVITY: 'Activité réduite', ANOMALY_DETECTED: 'Anomalie détectée', NORMAL_SEASONAL_PATTERN: 'Schéma saisonnier normal', Q3_SUMMER_LULL: 'T3 pause estivale', Q4_ELEVATED_ACTIVITY: 'T4 activité élevée', UNUSUALLY_HIGH_ACTIVITY: 'Activité exceptionnellement élevée', UNUSUALLY_LOW_ACTIVITY: 'Activité exceptionnellement basse' }, loading: 'Chargement des données...', error: 'Erreur lors du chargement des données. Veuillez réessayer.', dataAttribution: 'Données de la plateforme CIA' },
+    es: { title: 'Patrones estacionales (2002-2025)', subtitle: 'Análisis trimestral con detección de anomalías por puntuación Z', filters: { year: 'Año', quarter: 'Trimestre', election: 'Estado electoral', classification: 'Clasificación de actividad', allYears: 'Todos los años', allQuarters: 'Todos los trimestres', allElections: 'Todos', electionYears: 'Años electorales', nonElectionYears: 'Años no electorales', allClassifications: 'Todas las clasificaciones' }, quarters: { Q1: 'T1 - Sesión de invierno', Q2: 'T2 - Sesión de primavera', Q3: 'T3 - Receso de verano', Q4: 'T4 - Sesión de otoño' }, charts: { heatmap: { title: 'Mapa de calor de actividad trimestral (2002-2025)', description: 'Volumen de votaciones por año y trimestre con puntuación Z' }, zscore: { title: 'Detección de anomalías por puntuación Z', description: 'Valores atípicos estadísticos (|Z| ≥ 2.0) marcados en rojo' }, comparison: { title: 'Actividad promedio por trimestre (todos los años)', description: 'Líneas base T1-T4 con bandas de desviación estándar' }, classification: { title: 'Clasificación de patrones estacionales', description: 'Distribución de patrones NORMAL, ELEVADO, REDUCIDO, ANOMALÍA' }, qoq: { title: 'Cambios de trimestre a trimestre', description: 'Cambios secuenciales de votaciones (% y absoluto)' } }, classifications: { NORMAL_ACTIVITY: 'Actividad normal', ELEVATED_ACTIVITY: 'Actividad elevada', REDUCED_ACTIVITY: 'Actividad reducida', ANOMALY_DETECTED: 'Anomalía detectada', NORMAL_SEASONAL_PATTERN: 'Patrón estacional normal', Q3_SUMMER_LULL: 'T3 receso de verano', Q4_ELEVATED_ACTIVITY: 'T4 actividad elevada', UNUSUALLY_HIGH_ACTIVITY: 'Actividad inusualmente alta', UNUSUALLY_LOW_ACTIVITY: 'Actividad inusualmente baja' }, loading: 'Cargando datos...', error: 'Error al cargar los datos. Por favor, inténtelo de nuevo.', dataAttribution: 'Datos de la plataforma CIA' },
+    nl: { title: 'Seizoenspatronen (2002-2025)', subtitle: 'Kwartaalanalyse met Z-score anomaliedetectie', filters: { year: 'Jaar', quarter: 'Kwartaal', election: 'Verkiezingsstatus', classification: 'Activiteitsclassificatie', allYears: 'Alle jaren', allQuarters: 'Alle kwartalen', allElections: 'Alle', electionYears: 'Verkiezingsjaren', nonElectionYears: 'Niet-verkiezingsjaren', allClassifications: 'Alle classificaties' }, quarters: { Q1: 'K1 - Wintersessie', Q2: 'K2 - Voorjaarssessie', Q3: 'K3 - Zomerpauze', Q4: 'K4 - Herfst sessie' }, charts: { heatmap: { title: 'Kwartaalactiviteit heatmap (2002-2025)', description: 'Stemvolume per jaar en kwartaal met Z-score' }, zscore: { title: 'Z-score anomaliedetectie', description: 'Statistische uitschieters (|Z| ≥ 2.0) gemarkeerd in rood' }, comparison: { title: 'Gemiddelde activiteit per kwartaal (alle jaren)', description: 'K1-K4 basislijnen met standaardafwijkingsbanden' }, classification: { title: 'Seizoenspatroon classificatie', description: 'Verdeling van NORMAAL, VERHOOGD, VERMINDERD, ANOMALIE patronen' }, qoq: { title: 'Kwartaal-op-kwartaal veranderingen', description: 'Opeenvolgende stemveranderingen (% en absoluut)' } }, classifications: { NORMAL_ACTIVITY: 'Normale activiteit', ELEVATED_ACTIVITY: 'Verhoogde activiteit', REDUCED_ACTIVITY: 'Verminderde activiteit', ANOMALY_DETECTED: 'Anomalie gedetecteerd', NORMAL_SEASONAL_PATTERN: 'Normaal seizoenspatroon', Q3_SUMMER_LULL: 'K3 zomerpauze', Q4_ELEVATED_ACTIVITY: 'K4 verhoogde activiteit', UNUSUALLY_HIGH_ACTIVITY: 'Ongewoon hoge activiteit', UNUSUALLY_LOW_ACTIVITY: 'Ongewoon lage activiteit' }, loading: 'Gegevens laden...', error: 'Fout bij het laden van gegevens. Probeer het opnieuw.', dataAttribution: 'Data van CIA-platform' },
+    ar: { title: 'الأنماط الموسمية (2002-2025)', subtitle: 'تحليل ربع سنوي مع كشف الشذوذ بالنقاط Z', filters: { year: 'السنة', quarter: 'الربع', election: 'حالة الانتخابات', classification: 'تصنيف النشاط', allYears: 'كل السنوات', allQuarters: 'كل الأرباع', allElections: 'الكل', electionYears: 'سنوات الانتخابات', nonElectionYears: 'سنوات بدون انتخابات', allClassifications: 'كل التصنيفات' }, quarters: { Q1: 'الربع 1 - جلسة الشتاء', Q2: 'الربع 2 - جلسة الربيع', Q3: 'الربع 3 - عطلة الصيف', Q4: 'الربع 4 - جلسة الخريف' }, charts: { heatmap: { title: 'خريطة حرارية للنشاط الفصلي (2002-2025)', description: 'حجم التصويت حسب السنة والربع مع نقاط Z' }, zscore: { title: 'كشف الشذوذ بالنقاط Z', description: 'القيم الشاذة الإحصائية (|Z| ≥ 2.0) مميزة بالأحمر' }, comparison: { title: 'متوسط النشاط حسب الربع (كل السنوات)', description: 'خطوط أساسية للربع 1-4 مع نطاقات الانحراف المعياري' }, classification: { title: 'تصنيف الأنماط الموسمية', description: 'توزيع الأنماط العادية والمرتفعة والمنخفضة والشاذة' }, qoq: { title: 'التغيرات من ربع لآخر', description: 'التغيرات المتسلسلة في التصويت (% ومطلق)' } }, classifications: { NORMAL_ACTIVITY: 'نشاط عادي', ELEVATED_ACTIVITY: 'نشاط مرتفع', REDUCED_ACTIVITY: 'نشاط منخفض', ANOMALY_DETECTED: 'شذوذ مكتشف', NORMAL_SEASONAL_PATTERN: 'نمط موسمي عادي', Q3_SUMMER_LULL: 'الربع 3 عطلة صيفية', Q4_ELEVATED_ACTIVITY: 'الربع 4 نشاط مرتفع', UNUSUALLY_HIGH_ACTIVITY: 'نشاط مرتفع بشكل غير عادي', UNUSUALLY_LOW_ACTIVITY: 'نشاط منخفض بشكل غير عادي' }, loading: 'جاري تحميل البيانات...', error: 'خطأ في تحميل البيانات. يرجى المحاولة مرة أخرى.', dataAttribution: 'البيانات من منصة CIA' },
+    he: { title: 'דפוסים עונתיים (2002-2025)', subtitle: 'ניתוח רבעוני עם זיהוי חריגות Z-Score', filters: { year: 'שנה', quarter: 'רבעון', election: 'סטטוס בחירות', classification: 'סיווג פעילות', allYears: 'כל השנים', allQuarters: 'כל הרבעונים', allElections: 'הכל', electionYears: 'שנות בחירות', nonElectionYears: 'שנים ללא בחירות', allClassifications: 'כל הסיווגים' }, quarters: { Q1: 'רבעון 1 - מושב חורף', Q2: 'רבעון 2 - מושב אביב', Q3: 'רבעון 3 - הפסקת קיץ', Q4: 'רבעון 4 - מושב סתיו' }, charts: { heatmap: { title: 'מפת חום של פעילות רבעונית (2002-2025)', description: 'נפח הצבעות לפי שנה ורבעון עם ציון Z' }, zscore: { title: 'זיהוי חריגות Z-Score', description: 'ערכים סטטיסטיים חריגים (|Z| ≥ 2.0) מסומנים באדום' }, comparison: { title: 'פעילות ממוצעת לפי רבעון (כל השנים)', description: 'קווי בסיס רבעון 1-4 עם רצועות סטיית תקן' }, classification: { title: 'סיווג דפוסים עונתיים', description: 'התפלגות דפוסים רגילים, מוגברים, מופחתים וחריגים' }, qoq: { title: 'שינויים מרבעון לרבעון', description: 'שינויים רציפים בהצבעה (% ומוחלט)' } }, classifications: { NORMAL_ACTIVITY: 'פעילות רגילה', ELEVATED_ACTIVITY: 'פעילות מוגברת', REDUCED_ACTIVITY: 'פעילות מופחתת', ANOMALY_DETECTED: 'חריגה זוהתה', NORMAL_SEASONAL_PATTERN: 'דפוס עונתי רגיל', Q3_SUMMER_LULL: 'רבעון 3 הפסקת קיץ', Q4_ELEVATED_ACTIVITY: 'רבעון 4 פעילות מוגברת', UNUSUALLY_HIGH_ACTIVITY: 'פעילות גבוהה במיוחד', UNUSUALLY_LOW_ACTIVITY: 'פעילות נמוכה במיוחד' }, loading: 'טוען נתונים...', error: 'שגיאה בטעינת נתונים. נסה שוב.', dataAttribution: 'נתונים מפלטפורמת CIA' },
+    ja: { title: '季節パターン (2002-2025)', subtitle: 'Zスコア異常検出を伴う四半期分析', filters: { year: '年', quarter: '四半期', election: '選挙状況', classification: '活動分類', allYears: 'すべての年', allQuarters: 'すべての四半期', allElections: 'すべて', electionYears: '選挙年', nonElectionYears: '非選挙年', allClassifications: 'すべての分類' }, quarters: { Q1: 'Q1 - 冬季会期', Q2: 'Q2 - 春季会期', Q3: 'Q3 - 夏季休会', Q4: 'Q4 - 秋季会期' }, charts: { heatmap: { title: '四半期活動ヒートマップ (2002-2025)', description: '年と四半期別の投票量とZスコア' }, zscore: { title: 'Zスコア異常検出', description: '統計的外れ値 (|Z| ≥ 2.0) を赤でマーク' }, comparison: { title: '四半期別平均活動（全年）', description: 'Q1-Q4のベースラインと標準偏差バンド' }, classification: { title: '季節パターン分類', description: '正常、上昇、減少、異常パターンの分布' }, qoq: { title: '四半期間の変化', description: '連続的な投票変化（%と絶対値）' } }, classifications: { NORMAL_ACTIVITY: '通常の活動', ELEVATED_ACTIVITY: '活動上昇', REDUCED_ACTIVITY: '活動減少', ANOMALY_DETECTED: '異常検出', NORMAL_SEASONAL_PATTERN: '通常の季節パターン', Q3_SUMMER_LULL: 'Q3夏季休会', Q4_ELEVATED_ACTIVITY: 'Q4活動上昇', UNUSUALLY_HIGH_ACTIVITY: '異常に高い活動', UNUSUALLY_LOW_ACTIVITY: '異常に低い活動' }, loading: 'データ読み込み中...', error: 'データの読み込みエラー。もう一度お試しください。', dataAttribution: 'CIAプラットフォームのデータ' },
+    ko: { title: '계절별 패턴 (2002-2025)', subtitle: 'Z점수 이상 탐지를 통한 분기별 분석', filters: { year: '년도', quarter: '분기', election: '선거 상태', classification: '활동 분류', allYears: '모든 연도', allQuarters: '모든 분기', allElections: '모두', electionYears: '선거 연도', nonElectionYears: '비선거 연도', allClassifications: '모든 분류' }, quarters: { Q1: '1분기 - 겨울 회기', Q2: '2분기 - 봄 회기', Q3: '3분기 - 여름 휴회', Q4: '4분기 - 가을 회기' }, charts: { heatmap: { title: '분기별 활동 히트맵 (2002-2025)', description: '연도 및 분기별 투표량과 Z점수' }, zscore: { title: 'Z점수 이상 탐지', description: '통계적 이상값 (|Z| ≥ 2.0)은 빨간색으로 표시' }, comparison: { title: '분기별 평균 활동 (모든 연도)', description: '1~4분기 기준선과 표준편차 밴드' }, classification: { title: '계절별 패턴 분류', description: '정상, 상승, 감소, 이상 패턴의 분포' }, qoq: { title: '분기별 변화', description: '순차적 투표 변화 (% 및 절대값)' } }, classifications: { NORMAL_ACTIVITY: '정상 활동', ELEVATED_ACTIVITY: '상승 활동', REDUCED_ACTIVITY: '감소 활동', ANOMALY_DETECTED: '이상 탐지', NORMAL_SEASONAL_PATTERN: '정상 계절 패턴', Q3_SUMMER_LULL: '3분기 여름 휴회', Q4_ELEVATED_ACTIVITY: '4분기 상승 활동', UNUSUALLY_HIGH_ACTIVITY: '비정상적으로 높은 활동', UNUSUALLY_LOW_ACTIVITY: '비정상적으로 낮은 활동' }, loading: '데이터 로딩 중...', error: '데이터 로딩 오류. 다시 시도해주세요.', dataAttribution: 'CIA 플랫폼의 데이터' },
+    zh: { title: '季节性模式 (2002-2025)', subtitle: '带Z分数异常检测的季度分析', filters: { year: '年份', quarter: '季度', election: '选举状态', classification: '活动分类', allYears: '所有年份', allQuarters: '所有季度', allElections: '全部', electionYears: '选举年', nonElectionYears: '非选举年', allClassifications: '所有分类' }, quarters: { Q1: '第1季度 - 冬季会期', Q2: '第2季度 - 春季会期', Q3: '第3季度 - 夏季休会', Q4: '第4季度 - 秋季会期' }, charts: { heatmap: { title: '季度活动热图 (2002-2025)', description: '按年份和季度的投票量与Z分数' }, zscore: { title: 'Z分数异常检测', description: '统计异常值 (|Z| ≥ 2.0) 标记为红色' }, comparison: { title: '按季度的平均活动（所有年份）', description: '第1-4季度基线与标准差带' }, classification: { title: '季节性模式分类', description: '正常、升高、降低、异常模式的分布' }, qoq: { title: '季度环比变化', description: '连续投票变化（%和绝对值）' } }, classifications: { NORMAL_ACTIVITY: '正常活动', ELEVATED_ACTIVITY: '活动升高', REDUCED_ACTIVITY: '活动降低', ANOMALY_DETECTED: '检测到异常', NORMAL_SEASONAL_PATTERN: '正常季节性模式', Q3_SUMMER_LULL: '第3季度夏季休会', Q4_ELEVATED_ACTIVITY: '第4季度活动升高', UNUSUALLY_HIGH_ACTIVITY: '异常高的活动', UNUSUALLY_LOW_ACTIVITY: '异常低的活动' }, loading: '加载数据中...', error: '加载数据出错。请重试。', dataAttribution: '数据来自CIA平台' }
   };
 
   // ============================================================================
@@ -296,10 +307,18 @@
         // Try to use cached data even if expired
         const cached = localStorage.getItem(CONFIG.cacheKey);
         if (cached) {
-          const parsed = JSON.parse(cached);
-          console.log('Using expired cache as fallback');
-          this.data = parsed.data;
-          return parsed.data;
+          try {
+            const parsed = JSON.parse(cached);
+            if (parsed && typeof parsed === 'object' && 'data' in parsed) {
+              console.log('Using expired cache as fallback');
+              this.data = parsed.data;
+              return parsed.data;
+            } else {
+              console.warn('Expired cache is in an unexpected format, ignoring.');
+            }
+          } catch (parseError) {
+            console.warn('Failed to parse expired cache, ignoring.', parseError);
+          }
         }
         throw error;
       }
@@ -542,7 +561,7 @@
       // Render each chart
       this.renderSeasonalHeatmap(data);
       this.renderZScoreTimeline(data);
-      this.renderQuarterComparison();
+      this.renderQuarterComparison(data);
       this.renderClassificationChart(data);
       this.renderQoQChangeChart(data);
     }
@@ -653,11 +672,14 @@
         .attr('class', 'axis');
 
       // Add axis labels
+      const quarterLabel = this.translations.filters?.quarter || 'Quarter';
+      const yearLabel = this.translations.filters?.year || 'Year';
+      
       svg.append('text')
         .attr('x', width / 2)
         .attr('y', height + 40)
         .attr('text-anchor', 'middle')
-        .text('Quarter')
+        .text(quarterLabel)
         .style('font-size', '14px')
         .style('font-weight', '500');
 
@@ -666,12 +688,11 @@
         .attr('x', -height / 2)
         .attr('y', -40)
         .attr('text-anchor', 'middle')
-        .text('Year')
+        .text(yearLabel)
         .style('font-size', '14px')
         .style('font-weight', '500');
 
       // Add legend
-      const legendWidth = 200;
       const legendHeight = 10;
       const legend = svg.append('g')
         .attr('transform', `translate(${width + 20}, 0)`);
@@ -805,36 +826,6 @@
                   return label;
                 }
               }
-            },
-            annotation: {
-              annotations: {
-                threshold1: {
-                  type: 'line',
-                  yMin: CONFIG.zScoreThreshold,
-                  yMax: CONFIG.zScoreThreshold,
-                  borderColor: CONFIG.colors.danger,
-                  borderWidth: 2,
-                  borderDash: [5, 5],
-                  label: {
-                    content: '+2.0 Threshold',
-                    enabled: true,
-                    position: 'end'
-                  }
-                },
-                threshold2: {
-                  type: 'line',
-                  yMin: -CONFIG.zScoreThreshold,
-                  yMax: -CONFIG.zScoreThreshold,
-                  borderColor: CONFIG.colors.danger,
-                  borderWidth: 2,
-                  borderDash: [5, 5],
-                  label: {
-                    content: '-2.0 Threshold',
-                    enabled: true,
-                    position: 'end'
-                  }
-                }
-              }
             }
           },
           scales: {
@@ -866,9 +857,9 @@
     }
 
     /**
-     * Render quarter comparison chart with error bars using Chart.js
+     * Render quarter comparison chart using Chart.js
      */
-    renderQuarterComparison() {
+    renderQuarterComparison(data) {
       const canvas = document.getElementById('quarter-comparison-chart');
       if (!canvas || typeof Chart === 'undefined') {
         console.warn('Chart.js not loaded or canvas not found');
@@ -876,7 +867,9 @@
       }
 
       const ctx = canvas.getContext('2d');
-      const aggregated = this.dataManager.aggregateByQuarter();
+      
+      // Aggregate the provided filtered data
+      const aggregated = this.aggregateDataByQuarter(data || this.dataManager.data);
 
       if (!aggregated) {
         console.warn('No aggregated data available');
@@ -893,12 +886,11 @@
           labels: labels.map(q => this.translations.quarters[q] || q),
           datasets: [
             {
-              label: 'Average Ballots',
+              label: this.translations.charts?.comparison?.title || 'Average Ballots',
               data: avgBallots,
               backgroundColor: labels.map(q => CONFIG.quarterColors[q]),
               borderColor: labels.map(q => CONFIG.quarterColors[q]),
-              borderWidth: 2,
-              errorBars: stddevBallots
+              borderWidth: 2
             }
           ]
         },
@@ -944,6 +936,63 @@
           }
         }
       });
+    }
+
+    /**
+     * Aggregate data by quarter (for filtered datasets)
+     */
+    aggregateDataByQuarter(data) {
+      if (!data) return null;
+
+      const quarters = { Q1: [], Q2: [], Q3: [], Q4: [] };
+      
+      data.forEach(row => {
+        const quarter = `Q${row.quarter}`;
+        if (quarters[quarter]) {
+          quarters[quarter].push(row);
+        }
+      });
+
+      const aggregated = {};
+      Object.keys(quarters).forEach(q => {
+        const records = quarters[q];
+        if (records.length === 0) return;
+
+        const ballots = records.map(r => r.total_ballots || 0);
+        const attendance = records.map(r => r.attendance_rate || 0);
+        const docs = records.map(r => r.documents_produced || 0);
+
+        aggregated[q] = {
+          quarter: q,
+          avgBallots: this.mean(ballots),
+          stddevBallots: this.stddev(ballots),
+          avgAttendance: this.mean(attendance),
+          stddevAttendance: this.stddev(attendance),
+          avgDocs: this.mean(docs),
+          stddevDocs: this.stddev(docs),
+          count: records.length
+        };
+      });
+
+      return aggregated;
+    }
+
+    /**
+     * Calculate mean of an array
+     */
+    mean(arr) {
+      if (!arr || arr.length === 0) return 0;
+      return arr.reduce((sum, val) => sum + val, 0) / arr.length;
+    }
+
+    /**
+     * Calculate standard deviation of an array
+     */
+    stddev(arr) {
+      if (!arr || arr.length === 0) return 0;
+      const avg = this.mean(arr);
+      const squareDiffs = arr.map(val => Math.pow(val - avg, 2));
+      return Math.sqrt(this.mean(squareDiffs));
     }
 
     /**
@@ -1235,12 +1284,25 @@
           this.applyFilters();
         });
 
-        // Populate classification options
-        const classifications = [...new Set(this.dataManager.data.map(d => d.seasonal_pattern_classification))].filter(c => c);
+        // Populate classification options from both seasonal and base activity classifications
+        const classificationSet = new Set();
+        this.dataManager.data.forEach(d => {
+          if (d.seasonal_pattern_classification) {
+            classificationSet.add(d.seasonal_pattern_classification);
+          }
+          if (d.base_activity_classification) {
+            classificationSet.add(d.base_activity_classification);
+          }
+        });
+
+        const classifications = [...classificationSet].sort();
         classifications.forEach(classification => {
           const option = document.createElement('option');
           option.value = classification;
-          option.textContent = classification;
+          const translatedLabel = this.translations.classifications?.[classification]
+            || TRANSLATIONS.en?.classifications?.[classification]
+            || classification;
+          option.textContent = translatedLabel;
           classificationFilter.appendChild(option);
         });
       }
@@ -1261,6 +1323,14 @@
       const container = document.getElementById('seasonal-patterns-dashboard');
       if (container) {
         container.classList.add('loading');
+        container.setAttribute('aria-busy', 'true');
+        // Add screen reader announcement
+        const loadingMsg = document.createElement('div');
+        loadingMsg.setAttribute('role', 'status');
+        loadingMsg.setAttribute('aria-live', 'polite');
+        loadingMsg.className = 'sr-only';
+        loadingMsg.textContent = this.translations.loading || 'Loading data...';
+        container.prepend(loadingMsg);
       }
     }
 
@@ -1271,6 +1341,12 @@
       const container = document.getElementById('seasonal-patterns-dashboard');
       if (container) {
         container.classList.remove('loading');
+        container.removeAttribute('aria-busy');
+        // Remove screen reader loading message
+        const loadingMsg = container.querySelector('[role="status"]');
+        if (loadingMsg) {
+          loadingMsg.remove();
+        }
       }
     }
 

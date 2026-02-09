@@ -12,8 +12,26 @@ echo ""
 
 # Seasonal Activity Patterns
 echo "📊 Seasonal Activity Patterns..."
-curl -s -o seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv \
+curl -sS --fail --location -o seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv \
   "${BASE_URL}/view_riksdagen_seasonal_activity_patterns_sample.csv"
+
+# Basic validation to avoid silently treating HTML error pages as CSV
+if [ ! -s seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv ]; then
+  echo "❌ Download failed: seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv is empty or missing." >&2
+  exit 1
+fi
+
+first_line="$(head -n 1 seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv || true)"
+if printf '%s\n' "$first_line" | grep -q '^<'; then
+  echo "❌ Download failed: seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv appears to contain HTML, not CSV." >&2
+  exit 1
+fi
+
+if ! printf '%s\n' "$first_line" | grep -q ','; then
+  echo "❌ Download failed: seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv does not look like CSV (no comma in header)." >&2
+  exit 1
+fi
+
 echo "✅ Downloaded view_riksdagen_seasonal_activity_patterns_sample.csv ($(wc -l < seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv) lines)"
 
 echo ""
