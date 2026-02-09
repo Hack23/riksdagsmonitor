@@ -104,11 +104,11 @@
 <link rel="preload" href="styles.css" as="style">
 ```
 
-### Skip-to-Content CSS
+### Skip-Link CSS
 ```css
-.skip-to-content {
+.skip-link {
   position: absolute;
-  top: -40px; /* Hidden by default */
+  top: -100px; /* Hidden by default */
   left: 0;
   background: var(--primary-color);
   color: white;

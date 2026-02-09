@@ -12,7 +12,7 @@ Successfully implemented comprehensive coalition and voting pattern dashboard fo
 - ✅ Force-directed graph with 8 Swedish political parties
 - ✅ Node size proportional to influence (5-15 range)
 - ✅ Edge thickness representing coalition strength (0.3-0.8)
-- ✅ Drag & drop, zoom, pan interactions
+- ✅ Drag & drop interactions
 - ✅ Click to view party details
 - ✅ Keyboard navigation (Tab, Enter, Space)
 - ✅ Accessible table fallback for screen readers

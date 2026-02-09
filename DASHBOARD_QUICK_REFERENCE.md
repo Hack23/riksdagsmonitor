@@ -188,9 +188,27 @@ Content-Security-Policy:
 ```
 
 ### SRI Hashes
-- D3.js: `sha384-4N8bTG5E3kMHBdZ5X4WkfgBN4L6gXG7VKYgXGPnNfJt6nO7Rl5jTBZz/+pIf9fPz`
-- Chart.js: `sha384-vKT6s7/8fqX7c6v3HfUmVXVZYFCZnxmRTbP5TW+t8H5z7d4mzf7Y1BZ/yg9xH8eO`
-- Date adapter: `sha384-rwYN+9ZL9kH5lh6eTN9g8H3lQ+KgD9yH4tZ7L9pR6H9nX5dI+9Z8dH3yF4tJ3L5m`
+
+The Subresource Integrity (SRI) hashes for external scripts (D3.js, Chart.js, and the date adapter) are defined in the HTML files. Treat the `integrity` attributes in `index.html` as the single source of truth:
+
+```html
+<!-- D3.js v7 -->
+<script src="https://d3js.org/d3.v7.min.js" 
+        integrity="sha384-mbYTBykXLaphoETzAXlouFLTXQxt2+jeXwcG9N68IyfPnpVRCO15a+ORI68EHuzX"
+        crossorigin="anonymous" defer></script>
+
+<!-- Chart.js 4.4.0 -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" 
+        integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g"
+        crossorigin="anonymous" defer></script>
+
+<!-- Date adapter 3.0.0 -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" 
+        integrity="sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzbUUiBGLsIQUE+b1mxws"
+        crossorigin="anonymous" defer></script>
+```
+
+All 14 language HTML files use identical hashes.
 
 ## 📊 Performance Benchmarks
 

@@ -45,7 +45,7 @@ The Coalition & Voting Pattern Dashboard provides interactive analysis of Swedis
 - **Party consistency scores** measuring adherence to party line
 - **Range:** 70-100% consistency
 - **Color-coded** bars matching party colors
-- **Sorted** by consistency score
+- **Displayed** in fixed party order (S, M, SD, V, MP, C, L, KD)
 - **Interactive tooltips** with precise percentages
 
 ### 5. Decision Trends (Chart.js Line Chart)
