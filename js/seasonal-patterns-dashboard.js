@@ -24,7 +24,10 @@
   // ============================================================================
   
   const CONFIG = {
-    dataUrl: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_activity_patterns_sample.csv',
+    dataUrls: [
+      'cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv', // Local first
+      'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_activity_patterns_sample.csv' // Remote fallback
+    ],
     cacheKey: 'riksdag_seasonal_patterns',
     cacheDuration: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
     zScoreThreshold: 2.0, // Anomaly threshold
@@ -243,6 +246,7 @@
 
     /**
      * Fetch data from CIA platform with 24-hour caching
+     * Implements local-first loading: tries local file, then remote fallback
      */
     async fetchData() {
       try {
@@ -254,22 +258,39 @@
           return cached;
         }
 
-        console.log('Fetching fresh seasonal patterns data from CIA platform...');
-        const response = await fetch(CONFIG.dataUrl);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
+        // Try each URL in sequence (local first, then remote)
+        let lastError = null;
+        for (let i = 0; i < CONFIG.dataUrls.length; i++) {
+          const url = CONFIG.dataUrls[i];
+          const isLocal = !url.startsWith('http');
+          
+          try {
+            console.log(`Fetching seasonal patterns data from ${isLocal ? 'local' : 'remote'} source (${i + 1}/${CONFIG.dataUrls.length})...`);
+            const response = await fetch(url);
+            
+            if (!response.ok) {
+              throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
 
-        const csvText = await response.text();
-        const parsedData = this.parseCSV(csvText);
+            const csvText = await response.text();
+            const parsedData = this.parseCSV(csvText);
+            
+            // Cache the data
+            this.setCachedData(parsedData);
+            this.data = parsedData;
+            
+            console.log(`✅ Loaded ${parsedData.length} seasonal activity records from ${isLocal ? 'local' : 'remote'} source`);
+            return parsedData;
+          } catch (error) {
+            lastError = error;
+            console.warn(`Failed to load from ${isLocal ? 'local' : 'remote'} source: ${error.message}`);
+            // Continue to next URL
+          }
+        }
         
-        // Cache the data
-        this.setCachedData(parsedData);
-        this.data = parsedData;
+        // All URLs failed
+        throw lastError || new Error('All data sources failed');
         
-        console.log(`Loaded ${parsedData.length} seasonal activity records`);
-        return parsedData;
       } catch (error) {
         console.error('Error fetching seasonal patterns data:', error);
         // Try to use cached data even if expired

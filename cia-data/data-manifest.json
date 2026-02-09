@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-09",
+  "files": [
+    {
+      "category": "seasonal",
+      "filename": "view_riksdagen_seasonal_activity_patterns_sample.csv",
+      "path": "seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv",
+      "url": "https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_activity_patterns_sample.csv",
+      "size": "35KB",
+      "records": 86,
+      "timeRange": "2002-2025",
+      "dashboard": "Seasonal Activity Patterns Dashboard",
+      "description": "Quarterly parliamentary activity analysis with Z-score anomaly detection",
+      "fields": 32,
+      "keyMetrics": [
+        "total_ballots",
+        "attendance_rate",
+        "documents_produced",
+        "ballot_z_score",
+        "seasonal_pattern_classification"
+      ],
+      "updateFrequency": "Quarterly",
+      "checksum": "auto-generated",
+      "usedBy": [
+        "js/seasonal-patterns-dashboard.js"
+      ]
+    }
+  ],
+  "categories": {
+    "seasonal": {
+      "name": "Seasonal Activity Patterns",
+      "description": "Quarterly parliamentary activity analysis",
+      "files": 1,
+      "totalSize": "35KB"
+    }
+  },
+  "statistics": {
+    "totalFiles": 1,
+    "totalRecords": 86,
+    "totalSize": "35KB",
+    "timeRange": "2002-2025",
+    "dashboards": [
+      "Seasonal Activity Patterns Dashboard"
+    ]
+  }
+}
