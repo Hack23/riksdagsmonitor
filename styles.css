@@ -1035,12 +1035,14 @@ a:hover {
 }
 
 /* Skip to Content Link
- * NOTE: .skip-link is the canonical skip-link class (defined at line 666).
- * .skip-to-content is an alias for compatibility with this PR's HTML.
- * Prefer using .skip-link directly in new code to avoid duplication.
+ * NOTE: 
+ * - .skip-link is the canonical skip-link class (defined in KEYBOARD NAVIGATION section)
+ * - .skip-to-content is an alias for compatibility with this PR's HTML
+ * - Both classes share the same styling via combined selectors below
+ * - Prefer using .skip-link directly in new code
  */
+.skip-link,
 .skip-to-content {
-  /* Inherit all styles from .skip-link by applying the same rules */
   position: absolute;
   top: -100px;
   left: 0;
@@ -1055,6 +1057,7 @@ a:hover {
 }
 
 @supports selector(:focus-visible) {
+  .skip-link:focus-visible,
   .skip-to-content:focus-visible {
     top: 0;
     outline: 3px solid var(--accent-color);
@@ -1063,6 +1066,7 @@ a:hover {
 }
 
 @supports not selector(:focus-visible) {
+  .skip-link:focus,
   .skip-to-content:focus {
     top: 0;
     outline: 3px solid var(--accent-color);

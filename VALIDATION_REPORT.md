@@ -294,7 +294,7 @@ Expected Scores:
 
 All automated and manual validation tests passed successfully:
 
-- ✅ **Schema.org**: 6 types, 34 @type instances, 0 errors
+- ✅ **Schema.org**: 6 types, 32 @type instances, 0 errors
 - ✅ **Meta Tags**: 20+ keywords, 200-char description, complete OG/Twitter
 - ✅ **Accessibility**: WCAG 2.1 AAA skip navigation, semantic HTML
 - ✅ **Footer**: 4 sections, 14 languages, responsive grid

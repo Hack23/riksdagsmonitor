@@ -48,7 +48,7 @@ Meta Tags Enhancement:
   • Keywords:     10 terms  → 20+ terms (+100%)
   • Description:  125 chars → 200 chars (+60%)
   • Geographic:   None      → Sweden, Stockholm coords
-  • Open Graph:   7 props   → 14 props (+100%)
+  • Open Graph:   7 props   → 29 props (+314%)
   • Twitter Card: 5 props   → 7 props (+40%)
 
 robots.txt Optimization:
@@ -72,7 +72,7 @@ Performance Optimization:
 🎨 UI/UX ENHANCEMENTS
 
 Accessibility (WCAG 2.1 AAA):
-  • Skip-to-content link: Hidden (top: -40px), visible on focus (top: 0)
+  • Skip-to-content link: Hidden (top: -100px), visible on focus (top: 0)
   • Semantic HTML5: header, nav, main#main-content, footer[role=contentinfo]
   • Keyboard navigation: Full tab order, focus indicators
   • ARIA labels: All interactive elements
