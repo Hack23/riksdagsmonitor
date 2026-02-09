@@ -16,7 +16,7 @@ Comprehensive SEO and UI/UX enhancements implemented for riksdagsmonitor.com to 
   "@context": "https://schema.org",
   "@graph": [
     "Organization",    // Hack23 AB with founder, address, contact
-    "WebSite",        // With SearchAction capability
+    "WebSite",        // Site-level metadata
     "WebPage",        // Page-level metadata
     "BreadcrumbList", // Navigation hierarchy
     "Event",          // Swedish Election 2026 (enhanced)
@@ -41,7 +41,7 @@ Comprehensive SEO and UI/UX enhancements implemented for riksdagsmonitor.com to 
 - `geo.region`: SE (Sweden)
 - `geo.position`: 59.329323;18.068581 (Stockholm)
 - `ICBM`: Geographic coordinates
-- `revisit-after`: 1 days
+- `revisit-after`: 1 day
 - `og:image:width`, `og:image:height`, `og:image:alt`
 - `twitter:image:alt`, `twitter:domain`
 

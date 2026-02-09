@@ -1034,25 +1034,35 @@ a:hover {
   opacity: 1;
 }
 
-/* Skip to Content Link (Accessibility) */
+/* Skip to Content Link - alias to existing .skip-link */
 .skip-to-content {
   position: absolute;
-  top: -40px;
+  top: -100px;
   left: 0;
-  background: var(--primary-color);
+  background-color: var(--primary-color);
   color: white;
-  padding: 8px 16px;
+  padding: var(--spacing-md) var(--spacing-lg);
   text-decoration: none;
   font-weight: 600;
-  border-radius: 0 0 4px 0;
   z-index: 10000;
-  transition: top 0.3s ease;
+  border-radius: 0 0 var(--border-radius) 0;
+  transition: top 0.2s ease;
 }
 
-.skip-to-content:focus {
-  top: 0;
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
+@supports selector(:focus-visible) {
+  .skip-to-content:focus-visible {
+    top: 0;
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+  }
+}
+
+@supports not selector(:focus-visible) {
+  .skip-to-content:focus {
+    top: 0;
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+  }
 }
 
 /* Enhanced Footer Styles */

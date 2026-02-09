@@ -44,13 +44,11 @@ $ grep -c "language-grid" index.html
 - ContactPoint (Technical Support)
 - GeoCoordinates (59.329323, 18.068581)
 - Place (Sweden)
-- SearchAction (Site search)
-- EntryPoint (Search target)
 - Question (6 FAQs)
 - Answer (6 FAQ answers)
 - Offer (Free access)
 
-**Total @type Count**: 34 ✅
+**Total @type Count**: 32 ✅
 
 ### Meta Tags Validation
 
@@ -147,7 +145,7 @@ $ grep -c "\.footer-bottom" styles.css
 
 ### Schema.org ✅
 - [x] Organization with legal name, founder, address
-- [x] WebSite with SearchAction
+- [x] WebSite (site-level metadata)
 - [x] WebPage with breadcrumb linkage
 - [x] BreadcrumbList (Home → Swedish Election 2026)
 - [x] Event with geo-coordinates (59.329323, 18.068581)
@@ -166,7 +164,7 @@ $ grep -c "\.footer-bottom" styles.css
 - [x] Geographic metadata (Sweden, Stockholm)
 - [x] robots directive (index, follow)
 - [x] Author information
-- [x] Open Graph complete (14 properties)
+- [x] Open Graph complete (29 properties, including locale alternates and image metadata)
 - [x] Twitter Card complete (7 properties)
 - [x] All 13 locale alternates maintained
 
