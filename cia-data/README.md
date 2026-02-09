@@ -74,6 +74,36 @@ Quarterly parliamentary activity analysis (2002-2025):
   - Cross-year: cross_year_quarter_avg_ballots, cross_year_z_score
   - Trends: qoq_ballot_change_pct, activity_quartile_cycle
 
+### Anomaly Detection (`seasonal/`)
+
+Statistical outlier identification in parliament activity (2002-2026):
+- **File**: `view_riksdagen_seasonal_anomaly_detection_sample.csv`
+- **Records**: 41 quarters (2002 Q1 - 2026 Q1)
+- **Dashboard**: Anomaly Detection & Early Warning System
+- **Purpose**: Identify unusual parliamentary activity patterns using Z-score analysis
+- **Fields**: 20 columns including:
+  - Time dimensions: year, quarter, is_election_year, parliamentary_period
+  - Activity metrics: total_ballots, active_politicians, attendance_rate, documents_produced
+  - Baselines: q_baseline_ballots, q_baseline_docs, q_baseline_attendance
+  - Std Deviations: q_stddev_ballots, q_stddev_docs, q_stddev_attendance
+  - Z-Scores: ballot_z_score, doc_z_score, attendance_z_score
+  - Classification: activity_classification, anomaly_type, anomaly_direction
+  - Severity: max_z_score, anomaly_severity (LOW, MODERATE, HIGH, CRITICAL)
+  - Labels: quarter_label (Q1_JAN_MAR, Q2_APR_JUN, Q3_JUL_SEP, Q4_OCT_DEC)
+
+**Anomaly Detection Criteria**:
+- |Z| < 1.5: LOW severity (within normal range)
+- 1.5 ≤ |Z| < 2.0: MODERATE severity
+- 2.0 ≤ |Z| < 2.5: HIGH severity
+- |Z| ≥ 2.5: CRITICAL severity
+
+**Historical Findings** (from 41 quarters):
+- 8 CRITICAL anomalies (Z ≥ 2.5)
+- 2 HIGH anomalies (2.0 ≤ Z < 2.5)
+- 12 MODERATE anomalies (1.5 ≤ Z < 2.0)
+- 19 LOW (normal activity)
+- Most extreme: 2006 Q1 document anomaly (Z = +10.97)
+
 ## Data Quality
 
 - **Validation**: All CSV files validated against CIA platform schemas
