@@ -1,13 +1,13 @@
 # 🏗️ Riksdagsmonitor - System Architecture
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-01-29  
+**Document Version:** 1.2  
+**Last Updated:** 2026-02-08  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
 ## Executive Summary
 
-Riksdagsmonitor is a static website providing Swedish Parliament intelligence through CIA platform integration. This document describes the system architecture, component interactions, data flows, and design decisions aligned with Hack23 AB's ISMS standards.
+Riksdagsmonitor is a static website providing Swedish Parliament intelligence through CIA platform integration. Deployed on AWS CloudFront with multi-region S3 storage (us-east-1 primary, eu-west-1 replica) and GitHub Pages disaster recovery. This document describes the system architecture, component interactions, data flows, and design decisions aligned with Hack23 AB's ISMS standards.
 
 ## 1. System Overview
 
@@ -21,14 +21,20 @@ graph TB
     end
     
     subgraph "Content Delivery Layer"
-        CDN[GitHub Pages CDN<br/>Global Distribution]
-        DNS[DNS<br/>riksdagsmonitor.com]
+        Route53[AWS Route 53<br/>DNS + Health Checks]
+        CF[AWS CloudFront<br/>600+ Edge Locations]
+        GHCDN[GitHub Pages CDN<br/>DR Standby]
     end
     
     subgraph "Application Layer"
         Static[Static Website<br/>HTML/CSS]
         Index[index.html<br/>14 Languages]
         Styles[styles.css<br/>107KB]
+    end
+    
+    subgraph "Storage Layer"
+        S3US[S3 us-east-1<br/>Primary Storage]
+        S3EU[S3 eu-west-1<br/>Replica Storage]
     end
     
     subgraph "Data Layer"
@@ -41,14 +47,22 @@ graph TB
     
     subgraph "Infrastructure Layer"
         GitHub[GitHub Repository<br/>Version Control]
-        Actions[GitHub Actions<br/>CI/CD Pipeline]
-        Pages[GitHub Pages<br/>Hosting]
+        Actions[GitHub Actions<br/>CI/CD Dual Deploy]
+        Pages[GitHub Pages<br/>DR Hosting]
     end
     
     Users --> Browsers
-    Browsers -->|HTTPS/TLS 1.3| DNS
-    DNS --> CDN
-    CDN --> Static
+    Browsers -->|DNS Query| Route53
+    Route53 -->|DNS Response: CF Primary| Browsers
+    Route53 -.->|DNS Response: GHCDN on Failover| Browsers
+    Browsers -->|HTTPS/TLS 1.3| CF
+    Browsers -.->|HTTPS/TLS 1.3 (DR)| GHCDN
+    CF -->|Origin| S3US
+    CF -.->|Origin Failover on 500+ errors| S3EU
+    S3US -.->|S3 CRR (Async, &lt;15 min target)| S3EU
+    CF --> Static
+    GHCDN --> Pages
+    Pages --> Static
     Static --> Index
     Static --> Styles
     
@@ -59,12 +73,15 @@ graph TB
     CIA --> WB
     
     GitHub --> Actions
-    Actions --> Pages
-    Pages --> CDN
+    Actions -->|Deploy| S3US
+    Actions -->|Deploy| Pages
     
     style Users fill:#e1f5ff
-    style CDN fill:#90caf9
-    style Static fill:#4caf50
+    style CF fill:#4caf50
+    style S3US fill:#2196f3
+    style S3EU fill:#64b5f6
+    style GHCDN fill:#90caf9
+    style Static fill:#81c784
     style CIA fill:#9c27b0
     style GitHub fill:#ff9800
 ```
@@ -74,7 +91,11 @@ graph TB
 | Component | Responsibility | Technology | Status |
 |-----------|---------------|------------|--------|
 | **Static Website** | Present intelligence data | HTML/CSS | ✅ Active |
-| **GitHub Pages** | Hosting infrastructure | GitHub CDN | ✅ Active |
+| **AWS CloudFront** | Primary CDN | 600+ global PoPs | ✅ Active |
+| **S3 us-east-1** | Primary storage | Amazon S3 + versioning | ✅ Active |
+| **S3 eu-west-1** | Replica storage | S3 replication | ✅ Active |
+| **Route 53** | DNS + health checks | AWS managed DNS | ✅ Active |
+| **GitHub Pages** | DR hosting | GitHub CDN | ✅ Standby |
 | **GitHub Actions** | CI/CD automation | YAML workflows | ✅ Active |
 | **CIA Platform** | Data processing & analysis | Java/Spring Boot | ✅ External |
 | **Data Sources** | Raw political data | Open APIs | ✅ External |
@@ -87,21 +108,21 @@ graph TB
 sequenceDiagram
     participant User
     participant Browser
-    participant DNS
-    participant CDN as GitHub Pages CDN
-    participant Static as Static Files
+    participant DNS as Route 53 DNS
+    participant CDN as AWS CloudFront
+    participant S3 as S3 us-east-1
     participant CIA as CIA Platform
     
     User->>Browser: Visit riksdagsmonitor.com
     Browser->>DNS: Resolve domain
-    DNS-->>Browser: CDN IP address
+    DNS-->>Browser: CloudFront endpoint
     Browser->>CDN: HTTPS request
-    CDN->>Static: Fetch index.html
-    Static-->>CDN: HTML content
+    CDN->>S3: Fetch index.html
+    S3-->>CDN: HTML content
     CDN-->>Browser: Render page
     Browser->>CDN: Fetch styles.css
-    CDN->>Static: Get CSS
-    Static-->>CDN: CSS content
+    CDN->>S3: Get CSS
+    S3-->>CDN: CSS content
     CDN-->>Browser: Apply styling
     
     Note over Browser,CIA: User clicks CIA link
@@ -109,7 +130,7 @@ sequenceDiagram
     CIA-->>Browser: Interactive data
     
     Note over Browser: Static content cached
-    Note over CDN: CDN caching active
+    Note over CDN: Edge caching active (600+ PoPs)
 ```
 
 ### 2.2 CI/CD Deployment Flow
@@ -135,9 +156,10 @@ graph LR
     H -->|No| I
     
     J --> K
-    K --> L[GitHub Pages Deploy]
-    L --> M[CDN Update]
-    M --> N[Live on riksdagsmonitor.com]
+    K --> L[Dual Deploy: S3 + GitHub Pages]
+    L --> M[CloudFront Update Primary]
+    L --> N[GitHub Pages DR Standby]
+    M --> O[Live on riksdagsmonitor.com]
     
     style D fill:#4caf50
     style E fill:#ff9800
@@ -235,6 +257,98 @@ graph TB
     style Dashboard fill:#9c27b0
     style Riksdag fill:#ff9800
 ```
+
+### 3.3 GitHub Copilot MCP Server Integration
+
+Riksdagsmonitor leverages GitHub Copilot with Model Context Protocol (MCP) servers for advanced political intelligence analysis and automation.
+
+#### MCP Server Architecture
+
+```mermaid
+graph TB
+    subgraph "GitHub Copilot Environment"
+        Agent[intelligence-operative Agent]
+        Skills[18 Strategic Skills]
+    end
+    
+    subgraph "MCP Servers"
+        RR[riksdag-regering-mcp<br/>HTTP: riksdag-regering-ai.onrender.com/mcp]
+        GH[GitHub MCP<br/>HTTP: api.githubcopilot.com/mcp/insiders]
+        FS[Filesystem MCP<br/>Local: mcp-server-filesystem]
+        Mem[Memory MCP<br/>Local: mcp-server-memory]
+        PW[Playwright MCP<br/>Local: @playwright/mcp]
+    end
+    
+    subgraph "Data Sources"
+        Riksdag[Riksdagen API<br/>data.riksdagen.se]
+        Regering[Regeringen<br/>via g0v.se]
+    end
+    
+    Agent --> Skills
+    Agent --> RR
+    Agent --> GH
+    Agent --> FS
+    Agent --> Mem
+    Agent --> PW
+    
+    RR --> Riksdag
+    RR --> Regering
+    
+    style Agent fill:#9c27b0
+    style Skills fill:#4caf50
+    style RR fill:#ff9800
+    style GH fill:#2196f3
+```
+
+#### riksdag-regering-mcp Server
+
+**Purpose**: Provides specialized access to Swedish political data for intelligence analysis
+
+**Configuration**:
+```json
+{
+  "riksdag-regering": {
+    "type": "http",
+    "url": "https://riksdag-regering-ai.onrender.com/mcp",
+    "tools": ["*"]
+  }
+}
+```
+
+**32 Available Tools**:
+1. **Ledamöter (MPs)**: Information, activities, assignments, biographical data
+2. **Riksdagsdokument (Documents)**: Motions, written questions, interpellations, bills
+3. **Anföranden (Speeches)**: Chamber debates, committee statements, plenary speeches
+4. **Voteringar (Votes)**: Voting records, party discipline, coalition patterns
+5. **Regeringsdokument (Government)**: SOU reports, propositions, press releases
+
+**Data Sources**:
+- **Riksdagen API**: https://data.riksdagen.se/ (Official Parliament API, 98.5% completeness)
+- **Regeringen via g0v.se**: https://g0v.se/ (Open government data)
+
+**Use Cases**:
+- Political intelligence dashboards
+- Voting pattern analysis
+- Coalition behavior tracking
+- Legislative monitoring
+- Risk assessment for democratic accountability
+
+#### Integration Benefits
+
+| Capability | Without MCP | With MCP |
+|------------|-------------|----------|
+| **Data Access** | Manual API calls | Automated via 32 specialized tools |
+| **Analysis** | Generic prompts | Domain-specific intelligence-operative agent |
+| **Expertise** | Basic knowledge | 18 strategic skills (political science, OSINT, Swedish politics) |
+| **Efficiency** | Multi-step workflows | Integrated single-step operations |
+| **Compliance** | Manual GDPR checks | Built-in GDPR compliance skill |
+
+**Security Considerations**:
+- HTTP-only MCP server (no local execution risk)
+- Public data sources only (GDPR Article 6(1)(e) compliance)
+- No authentication required (public API access)
+- Rate limiting handled by remote server
+- See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for full details
 
 ## 4. Security Architecture Integration
 

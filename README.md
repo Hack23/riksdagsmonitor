@@ -35,6 +35,18 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
 
 ## 📊 CIA Data Products Integration
 
+Riksdagsmonitor integrates with the CIA platform through automated schema validation and data quality assurance.
+
+### Schema Integration
+- **Automated Validation** - All CIA exports validated against JSON schemas
+- **Type Safety** - TypeScript type definitions for development
+- **CI/CD Integration** - Daily validation checks in GitHub Actions
+- **Update Detection** - Weekly checks for schema updates
+
+See [CIA Schema Integration Documentation](docs/CIA_SCHEMA_INTEGRATION.md) for details.
+
+### Data Products
+
 Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA platform:
 
 ### Intelligence Dashboards
@@ -188,6 +200,7 @@ linkinator http://localhost:8080/ --recurse
 
 ### Project Documentation
 - [README.md](README.md) - This file
+- [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) - Multi-language translation standards and glossary
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security architecture and controls
 - [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis and risk assessment
 - [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows and automation
@@ -196,20 +209,29 @@ linkinator http://localhost:8080/ --recurse
 - [LICENSE](LICENSE) - Apache License 2.0
 
 ### GitHub Copilot Integration
-- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks
-- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance
+- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (13 agents)
+- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (40 skills)
 - [`.github/agents/`](.github/agents/) - Agent configuration files
 - [`.github/skills/`](.github/skills/) - Skill libraries
 
-**Available Agents**:
+**Available Agents (13)** ⬆️ **UPDATED**:
 - **security-architect** - Security architecture and ISMS compliance
 - **documentation-architect** - C4 models and technical documentation
 - **quality-engineer** - HTML/CSS validation and accessibility
 - **frontend-specialist** - Static site development and responsive design
 - **isms-compliance-manager** - ISO 27001/NIST CSF/CIS Controls compliance
 - **deployment-specialist** - GitHub Actions and CI/CD automation
+- **intelligence-operative** - Political intelligence analysis, OSINT, Swedish politics expertise, riksdag-regering-mcp (32 tools)
+- **task-agent** ✨ - Product excellence, quality assurance, Playwright testing, issue management
+- **ui-enhancement-specialist** ✨ - Static HTML/CSS, responsive design, 14-language support, WCAG 2.1 AA
+- **data-pipeline-specialist** ✨ - CIA data consumption, ETL workflows, caching strategies, data validation
+- **data-visualization-specialist** ✨ - Chart.js/D3.js, interactive dashboards, CIA intelligence visualizations
+- **content-generator** ✨ **NEW** - Automated news generation, intelligence reports, multi-language content
+- **devops-engineer** ✨ **NEW** - CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring
 
-**Available Skills**:
+**Available Skills (40)** ⬆️ **UPDATED**:
+
+*Core Infrastructure (7):*
 - **hack23-isms-compliance** - ISMS framework requirements
 - **security-by-design** - Security best practices
 - **static-site-security** - Static website security
@@ -217,6 +239,51 @@ linkinator http://localhost:8080/ --recurse
 - **documentation-standards** - Documentation guidelines
 - **html-accessibility** - WCAG 2.1 AA compliance
 - **multi-language-localization** - Internationalization best practices
+
+*Political Intelligence (11):*
+- **political-science-analysis** - Comparative politics and policy analysis frameworks
+- **osint-methodologies** - Open-source intelligence collection and verification
+- **intelligence-analysis-techniques** - Structured analytic techniques (ACH, SWOT)
+- **swedish-political-system** - Riksdag structure, 8 parties, electoral system
+- **electoral-analysis** - Election forecasting and coalition prediction
+- **behavioral-analysis** - Political psychology and leadership analysis
+- **strategic-communication-analysis** - Narrative analysis and media monitoring
+- **legislative-monitoring** - Voting patterns and parliamentary oversight
+- **risk-assessment-frameworks** - Political risk and corruption indicators
+- **data-science-for-intelligence** - Statistical analysis and visualization
+- **gdpr-compliance** - GDPR compliance for political data processing
+
+*ISMS & Security (6):*
+- **cis-controls** - CIS Controls v8.1 for static sites
+- **iso-27001-controls** - ISO 27001:2022 Annex A controls
+- **nist-csf-mapping** - NIST CSF 2.0 framework mapping
+- **threat-modeling** - STRIDE threat analysis
+- **secure-code-review** - HTML/CSS/JS security review
+- **security-documentation** - ISMS documentation standards
+
+*Development & Operations (10):* ⬆️ **EXPANDED**
+- **c4-architecture-documentation** - C4 model and Mermaid diagrams
+- **github-actions-workflows** - CI/CD patterns and security
+- **code-quality-checks** - HTMLHint, CSSLint, linkinator, axe-core
+- **secrets-management** - GitHub secrets and PAT management
+- **data-pipeline-engineering** ✨ **NEW** - ETL workflows, automated data fetching
+- **automated-content-generation** ✨ **NEW** - News generation, intelligence reports
+- **performance-optimization** ✨ **NEW** - Core Web Vitals, bundle size, caching
+- **api-integration** ✨ **NEW** - REST/GraphQL clients, rate limiting
+
+*UI/UX & Design (4):* ⬆️ **EXPANDED**
+- **responsive-design** - Mobile-first, CSS Grid/Flexbox, breakpoints (320px-1440px+)
+- **design-system-management** - Cyberpunk theme, CSS variables, component library
+- **political-data-visualization** - CSS-only charts, heat maps, dashboards
+- **advanced-data-visualization** ✨ **NEW** - Chart.js/D3.js, interactive dashboards
+
+*Testing & Quality Assurance (2):* ✨ **NEW**
+- **playwright-testing** - Browser automation, visual regression, accessibility audits
+- **issue-management** - GitHub issue creation, labeling, agent assignment
+
+*Data Integration (2):* ⬆️ **EXPANDED**
+- **riksdag-regering-mcp** - 32 political data tools (Parliament, Government, MPs, votes)
+- **cia-data-integration** ✨ **NEW** - CIA export consumption, validation, caching strategies
 
 ### External Documentation
 - [CIA Platform Documentation](https://hack23.github.io/cia/)
