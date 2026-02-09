@@ -7193,3 +7193,283 @@ html[lang="he"] {
     page-break-inside: avoid;
   }
 }
+
+/* ==================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================================== */
+
+/* Skip to Main Content Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+  z-index: 10000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Enhanced Focus Indicators */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Improved Visual Hierarchy */
+.subtitle {
+  display: inline-block;
+  font-size: 0.85em;
+  color: var(--primary-light);
+  font-weight: 500;
+}
+
+/* Enhanced Card Hover States */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px var(--card-shadow);
+  border-color: var(--primary-color);
+}
+
+.card:focus-within {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Skeleton Screens */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-color) 25%,
+    #e0e0e0 50%,
+    var(--bg-color) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--border-radius-sm);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Improved Color Contrast for Accessibility */
+.high-contrast {
+  filter: contrast(1.2);
+}
+
+/* Enhanced Button States */
+.btn:hover,
+button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 102, 51, 0.3);
+}
+
+.btn:active,
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 102, 51, 0.2);
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Enhanced Breadcrumb Styling */
+.breadcrumb {
+  background: transparent;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '›';
+  color: var(--text-secondary);
+  padding: 0 0.5rem;
+}
+
+/* Improved Stats Display */
+.hero-stats .stat {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-stats .stat:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 102, 51, 0.15);
+}
+
+/* Better Mobile Touch Targets */
+@media (max-width: 768px) {
+  .btn,
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .skip-link,
+  .breadcrumb,
+  button {
+    display: none;
+  }
+  
+  .card {
+    page-break-inside: avoid;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .skip-link {
+    transition: none;
+  }
+}
+
+/* ==================================================
+   SEO & SEMANTIC HTML ENHANCEMENTS
+   ================================================== */
+
+/* Improved Heading Hierarchy */
+article h1,
+section h1 {
+  font-size: var(--h1-size);
+  margin-bottom: 1.5rem;
+}
+
+article h2,
+section h2 {
+  font-size: var(--h2-size);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+article h3,
+section h3 {
+  font-size: var(--h3-size);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Enhanced Link Styling for SEO */
+a[href^="http"]:not([href*="riksdagsmonitor.com"])::after {
+  content: ' ↗';
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+a[href^="http"]:not([href*="riksdagsmonitor.com"]):hover::after {
+  opacity: 1;
+}
+
+/* Better List Styling */
+ul, ol {
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Enhanced Table Styling (if needed) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+tr:hover {
+  background: var(--bg-color);
+}
+
