@@ -242,7 +242,7 @@ graph TB
 
 | Component | Technology | Purpose | Interactive |
 |-----------|-----------|---------|-------------|
-| **Network Diagram** | D3.js v7 | Force-directed graph showing committee relationships | ✅ Yes (drag, zoom) |
+| **Network Diagram** | D3.js v7 | Force-directed graph showing committee relationships | ✅ Yes (drag) |
 | **Productivity Matrix** | D3.js v7 | Heat map of productivity scores over time (2020-2026) | ✅ Yes (hover) |
 | **Committee Comparison** | Chart.js v4 | Bar chart comparing 15 committees | ✅ Yes (tooltips) |
 | **Decision Effectiveness** | Chart.js v4 | Stacked bar showing outcomes over years | ✅ Yes (tooltips) |
@@ -298,24 +298,24 @@ The Committee Dashboard implements comprehensive WCAG 2.1 AA accessibility:
 
 #### 3.1.5 Multi-Language Support
 
-Dashboard translated into 14 languages with localized committee names:
+Site shell and static content are available in 14 languages; the interactive committee dashboard (`#committee-dashboard`) is currently implemented in English only.
 
 | Language | Code | File | Translation Status |
-|----------|------|------|-------------------|
-| English | en | index.html | ✅ Complete |
-| Swedish | sv | index_sv.html | ✅ Complete |
-| Danish | da | index_da.html | ✅ Complete |
-| Norwegian | no | index_no.html | ✅ Complete |
-| Finnish | fi | index_fi.html | ✅ Complete |
-| German | de | index_de.html | ✅ Complete |
-| French | fr | index_fr.html | ✅ Complete |
-| Spanish | es | index_es.html | ✅ Complete |
-| Dutch | nl | index_nl.html | ✅ Complete |
-| Arabic | ar | index_ar.html | ✅ Complete (RTL) |
-| Hebrew | he | index_he.html | ✅ Complete (RTL) |
-| Japanese | ja | index_ja.html | ✅ Complete |
-| Korean | ko | index_ko.html | ✅ Complete |
-| Chinese | zh | index_zh.html | ✅ Complete |
+|----------|------|------|---------------------|
+| English | en | index.html | ✅ Complete (full dashboard + UI) |
+| Swedish | sv | index_sv.html | 🟡 Partial (page localized, dashboard EN-only) |
+| Danish | da | index_da.html | 🟡 Partial (page localized, dashboard EN-only) |
+| Norwegian | no | index_no.html | 🟡 Partial (page localized, dashboard EN-only) |
+| Finnish | fi | index_fi.html | 🟡 Partial (page localized, dashboard EN-only) |
+| German | de | index_de.html | 🟡 Partial (page localized, dashboard EN-only) |
+| French | fr | index_fr.html | 🟡 Partial (page localized, dashboard EN-only) |
+| Spanish | es | index_es.html | 🟡 Partial (page localized, dashboard EN-only) |
+| Dutch | nl | index_nl.html | 🟡 Partial (page localized, dashboard EN-only) |
+| Arabic | ar | index_ar.html | 🟡 Partial (RTL page localized, dashboard EN-only) |
+| Hebrew | he | index_he.html | 🟡 Partial (RTL page localized, dashboard EN-only) |
+| Japanese | ja | index_ja.html | 🟡 Partial (page localized, dashboard EN-only) |
+| Korean | ko | index_ko.html | 🟡 Partial (page localized, dashboard EN-only) |
+| Chinese | zh | index_zh.html | 🟡 Partial (page localized, dashboard EN-only) |
 
 #### 3.1.6 Committee Data Model
 

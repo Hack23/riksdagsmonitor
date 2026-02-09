@@ -2,18 +2,40 @@
 """
 Committee Dashboard Multi-Language Update Script
 
-Helper script for managing the Committee Dashboard section across localized HTML files.
-Originally used to add CDN libraries and committee analytics sections; retained for
-maintenance/one-off updates.
+DEPRECATED: As of PR #56, the committee dashboard is only in index.html (English).
+The 13 translated language files do NOT include the dashboard section or scripts.
 
-WARNING: This script uses brittle string replacements and can silently fail if HTML
-formatting differs. Current workflow (as of PR #56) is to only include dashboard in
-index.html (English), not in the 13 translated language files.
+This script is DEPRECATED and should NOT be run without explicit confirmation.
+If you need to add dashboard to all languages, use this as a reference but verify
+the workflow first.
 
-Usage: python3 update-all-languages.py
+WARNING: This script uses brittle string replacements (exact <meta name="application-name">
+match and raw </body> replacement) and will silently fail if HTML formatting differs.
+Consider using stable insertion markers or an HTML parser for reliable insertions.
+
+Usage: python3 update-all-languages.py --confirm-update-all
 """
 
+import sys
 from pathlib import Path
+
+# Check for confirmation flag
+if '--confirm-update-all' not in sys.argv:
+    print("=" * 70)
+    print("ERROR: This script is DEPRECATED")
+    print("=" * 70)
+    print()
+    print("As of PR #56, the committee dashboard exists ONLY in index.html (English).")
+    print("The 13 translated language files do NOT include dashboard sections.")
+    print()
+    print("This script will modify all 14 HTML files, which contradicts current workflow.")
+    print()
+    print("If you really want to run this script, use:")
+    print("  python3 update-all-languages.py --confirm-update-all")
+    print()
+    print("Otherwise, manually update only the files you need.")
+    print("=" * 70)
+    sys.exit(1)
 
 # Language-specific translations for the committee dashboard
 TRANSLATIONS = {
@@ -381,9 +403,17 @@ def main():
         'zh': 'index_zh.html'
     }
     
-    print("=" * 60)
-    print("Updating all 14 language files with Committee Dashboard")
-    print("=" * 60)
+    print("=" * 70)
+    print("WARNING: Updating all 14 language files with Committee Dashboard")
+    print("=" * 70)
+    print()
+    print("This will modify:")
+    for lang_code, filename in lang_files.items():
+        print(f"  - {filename}")
+    print()
+    print("Current workflow: Dashboard should ONLY be in index.html (English).")
+    print("You confirmed with --confirm-update-all flag. Proceeding...")
+    print("=" * 70)
     print()
     
     for lang_code, filename in lang_files.items():

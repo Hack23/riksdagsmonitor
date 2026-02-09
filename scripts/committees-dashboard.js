@@ -167,14 +167,13 @@
         }
       } catch (error) {
         // localStorage might be disabled, in privacy mode, or have quota issues
+        // OR JSON parse error if data is corrupted
         console.warn('[DataManager] Cache read failed:', error);
-        return null;
-      }
-          return null;
+        try {
+          localStorage.removeItem(cacheKey);
+        } catch (e) {
+          // Ignore if removal also fails
         }
-      } catch (error) {
-        console.warn(`[DataManager] Invalid cache for ${key}`, error);
-        localStorage.removeItem(cacheKey);
         return null;
       }
     }
