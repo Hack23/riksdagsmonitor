@@ -319,6 +319,76 @@ Swedish Election 2026
 <p class="note">All visualizations available through CIA platform with real-time data updates from Swedish Parliament open data APIs.</p>
 </section>
 
+<section id="seasonal-patterns-dashboard">
+<h2>📅 Seasonal Activity Patterns (2002-2025)</h2>
+<p class="subtitle">Quarterly Analysis with Z-Score Anomaly Detection</p>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="Filter by year">
+<option value="all">All Years</option>
+</select>
+
+<select id="quarter-filter" aria-label="Filter by quarter">
+<option value="all">All Quarters</option>
+<option value="1">Q1 - Winter Session</option>
+<option value="2">Q2 - Spring Session</option>
+<option value="3">Q3 - Summer Recess</option>
+<option value="4">Q4 - Autumn Session</option>
+</select>
+
+<select id="election-filter" aria-label="Filter by election status">
+<option value="all">All</option>
+<option value="election">Election Years</option>
+<option value="non-election">Non-Election Years</option>
+</select>
+
+<select id="classification-filter" aria-label="Filter by activity classification">
+<option value="all">All Classifications</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Quarterly Activity Heat Map -->
+<div class="chart-card wide">
+<h3>Quarterly Activity Heat Map (2002-2025)</h3>
+<div id="seasonal-heatmap" role="img" aria-label="Heat map showing ballot volume by year and quarter with Z-score overlay"></div>
+<p class="chart-description">Ballot volume by year and quarter with Z-score overlay. Red circles indicate statistical anomalies (|Z| ≥ 2.0).</p>
+</div>
+
+<!-- Chart 2: Z-Score Anomaly Timeline -->
+<div class="chart-card">
+<h3>Z-Score Anomaly Detection</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Line chart showing Z-score timeline for ballot, document, and attendance metrics"></canvas>
+<p class="chart-description">Statistical outliers (|Z| ≥ 2.0) flagged in red. Dashed lines show anomaly thresholds.</p>
+</div>
+
+<!-- Chart 3: Cross-Year Quarter Comparison -->
+<div class="chart-card">
+<h3>Average Activity by Quarter (All Years)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Bar chart showing average ballots by quarter with error bars"></canvas>
+<p class="chart-description">Q1-Q4 baselines with standard deviation bands. Shows typical activity patterns across seasons.</p>
+</div>
+
+<!-- Chart 4: Activity Classification Distribution -->
+<div class="chart-card wide">
+<h3>Seasonal Pattern Classification</h3>
+<canvas id="classification-chart" role="img" aria-label="Stacked bar chart showing distribution of activity classifications by year"></canvas>
+<p class="chart-description">Distribution of NORMAL, ELEVATED, REDUCED, and ANOMALY patterns across years.</p>
+</div>
+
+<!-- Chart 5: QoQ Change Waterfall -->
+<div class="chart-card">
+<h3>Quarter-over-Quarter Changes</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Bar chart showing quarter-over-quarter ballot changes as percentages"></canvas>
+<p class="chart-description">Sequential ballot changes (% and absolute). Green indicates increase, red indicates decrease.</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Data by CIA Platform | Updated Daily</p>
+</section>
+
 <section id="data-integration">
 <h2>🔗 Data Sources & Integration</h2>
 <p>Riksdags Monitor integrates multiple authoritative data sources:</p>
@@ -411,5 +481,14 @@ Swedish Election 2026
 <a href="swedish-election-2026_fi.html" title="Suomi">Suomi</a>
 </p>
 </footer>
+
+<!-- Visualization Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-4g6qjJ6wLsD/wG9HVNaEqkPT8Vqwj/fYz13pKK09pQvClzJIPHFOnP8WqqDkc2M0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha384-U4TGn6R7rz6OfYYTpLGOZLYdXb6vKSYFoJioBnZ8IrEJ1LJOe2mApxqZqLpDyNDP" crossorigin="anonymous"></script>
+
+<!-- Dashboard Scripts -->
+<script src="js/seasonal-patterns-dashboard.js"></script>
+
 </body>
 </html>
