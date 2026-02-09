@@ -528,19 +528,43 @@
 
     const t = getTranslations();
     
-    // Mock data for demonstration (replace with actual CIA data processing)
-    const years = Array.from({length: 37}, (_, i) => 1990 + i); // 1990-2026
+    // Process real CSV data
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+    const partyData = {};
+    const allYears = new Set();
+    
+    // Parse effectiveness data from CSV
+    data.forEach(row => {
+      if (row.party && row.year && row.avg_win_rate) {
+        const party = row.party;
+        const year = parseInt(row.year);
+        const effectiveness = parseFloat(row.avg_win_rate) || 0;
+        
+        if (parties.includes(party) && year >= 1990 && year <= 2026) {
+          if (!partyData[party]) partyData[party] = {};
+          partyData[party][year] = effectiveness;
+          allYears.add(year);
+        }
+      }
+    });
+    
+    // Create sorted year array
+    const years = Array.from(allYears).sort((a, b) => a - b);
+    if (years.length === 0) {
+      // Fallback to year range if no data
+      years.push(...Array.from({length: 37}, (_, i) => 1990 + i));
+    }
     
     const datasets = parties.map(party => ({
       label: t.parties[party] || party,
-      data: years.map(() => 50 + Math.random() * 40), // Mock data
+      data: years.map(year => partyData[party]?.[year] || null), // Use real data or null
       borderColor: CONFIG.chartColors[party],
       backgroundColor: CONFIG.chartColors[party] + '20',
       borderWidth: 2,
       tension: 0.3,
       pointRadius: 0,
-      pointHoverRadius: 5
+      pointHoverRadius: 5,
+      spanGaps: true // Connect lines across missing data
     }));
 
     new Chart(ctx, {
@@ -609,11 +633,26 @@
     const t = getTranslations();
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
     
-    const chartData = parties.map(party => ({
-      party: t.parties[party] || party,
-      score: 50 + Math.random() * 40, // Mock data
-      color: CONFIG.chartColors[party]
-    }));
+    // Process real CSV data
+    const chartData = parties.map(party => {
+      const partyRow = data.find(row => row.party === party);
+      let score = 50; // Default fallback
+      
+      if (partyRow) {
+        // Use docs_per_member as performance score, normalized to 0-100 scale
+        score = parseFloat(partyRow.docs_per_member) || 0;
+        // If very small numbers, multiply by 10 for visibility
+        if (score > 0 && score < 10) score *= 10;
+        // Cap at 100 for chart scale
+        if (score > 100) score = 100;
+      }
+      
+      return {
+        party: t.parties[party] || party,
+        score: score,
+        color: CONFIG.chartColors[party]
+      };
+    });
 
     // Sort by score descending
     chartData.sort((a, b) => b.score - a.score);
@@ -673,17 +712,40 @@
 
     const t = getTranslations();
     
-    // Simple HTML-based network visualization (no D3.js dependency)
-    const coalitions = [
-      { name: t.parties['M'] + ' + ' + t.parties['KD'], strength: 85, parties: ['M', 'KD'] },
-      { name: t.parties['M'] + ' + ' + t.parties['L'], strength: 72, parties: ['M', 'L'] },
-      { name: t.parties['SD'] + ' (Support)', strength: 68, parties: ['SD'] },
-      { name: t.parties['S'] + ' + ' + t.parties['V'], strength: 55, parties: ['S', 'V'] },
-      { name: t.parties['C'] + ' + ' + t.parties['L'], strength: 48, parties: ['C', 'L'] },
-      { name: t.parties['MP'] + ' + ' + t.parties['V'], strength: 42, parties: ['MP', 'V'] }
-    ];
+    // Process real CSV data for coalitions
+    const coalitions = [];
+    
+    data.forEach(row => {
+      if (row.party1 && row.party2 && row.alignment_rate) {
+        const rate = parseFloat(row.alignment_rate) || 0;
+        const party1Label = t.parties[row.party1] || row.party1;
+        const party2Label = t.parties[row.party2] || row.party2;
+        
+        coalitions.push({
+          name: `${party1Label} + ${party2Label}`,
+          strength: Math.round(rate),
+          parties: [row.party1, row.party2],
+          likelihood: row.coalition_likelihood || 'UNKNOWN'
+        });
+      }
+    });
+    
+    // Sort by strength descending
+    coalitions.sort((a, b) => b.strength - a.strength);
+    
+    // Take top 6 coalitions
+    const topCoalitions = coalitions.slice(0, 6);
+    
+    // Fallback if no data
+    if (topCoalitions.length === 0) {
+      topCoalitions.push(
+        { name: t.parties['M'] + ' + ' + t.parties['KD'], strength: 85, parties: ['M', 'KD'] },
+        { name: t.parties['M'] + ' + ' + t.parties['L'], strength: 72, parties: ['M', 'L'] },
+        { name: t.parties['S'] + ' + ' + t.parties['V'], strength: 55, parties: ['S', 'V'] }
+      );
+    }
 
-    const html = coalitions.map(coalition => `
+    const html = topCoalitions.map(coalition => `
       <div class="coalition-item" style="margin-bottom: 1rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
           <span style="font-weight: 600;">${coalition.name}</span>
@@ -699,7 +761,7 @@
   }
 
   /**
-   * Create Momentum Indicators Radar Chart
+   * Create Momentum Indicators Doughnut Chart
    */
   function createMomentumChart(data) {
     const ctx = document.getElementById('partyMomentumChart');
@@ -708,11 +770,32 @@
     const t = getTranslations();
     const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
     
-    // Mock momentum data
-    const momentumData = parties.map(party => ({
-      party: party,
-      momentum: 50 + Math.random() * 40
-    }));
+    // Process real CSV data for momentum
+    const momentumData = parties.map(party => {
+      // Filter data for this party and get most recent quarter
+      const partyRows = data.filter(row => row.party === party && row.momentum);
+      
+      if (partyRows.length > 0) {
+        // Sort by year and quarter to get latest
+        partyRows.sort((a, b) => {
+          const yearDiff = parseInt(b.year) - parseInt(a.year);
+          if (yearDiff !== 0) return yearDiff;
+          return parseInt(b.quarter) - parseInt(a.quarter);
+        });
+        
+        const momentum = parseFloat(partyRows[0].momentum) || 0;
+        // Scale momentum to 0-100 range for visualization
+        return {
+          party: party,
+          momentum: Math.abs(momentum) * 100 || 50 // Default to 50 if 0
+        };
+      }
+      
+      return {
+        party: party,
+        momentum: 50 // Default value
+      };
+    });
 
     new Chart(ctx, {
       type: 'doughnut',

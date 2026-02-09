@@ -82,4 +82,4 @@ curl -s -o "$CIA_DATA_DIR/politician/distribution_influence_buckets.csv" "$BASE_
 
 echo ""
 echo "✅ Download complete! Files saved to $CIA_DATA_DIR"
-echo "📊 Total files downloaded: 36"
+echo "📊 Total files downloaded: 33"

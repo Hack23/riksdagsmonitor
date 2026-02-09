@@ -234,7 +234,7 @@ add_dashboard_to_file() {
   
   # First, add Chart.js CDN if not already present
   if ! grep -q 'chart.js@4.4.2' "$file"; then
-    perl -i -pe 's|(</head>)|<!-- Chart.js for Party Dashboard Visualizations -->\n<script src="https://cdn.jsdelivr.net/npm/chart.js\@4.4.2/dist/chart.umd.min.js" integrity="sha384-dq3FSt0HAXW9PcHCBX8qvM8r4QcBjEKN8XAUYsN3EcdVsVm2D/r0ZXfm7vMPQJ2+" crossorigin="anonymous"></script>\n\n$1|' "$file"
+    perl -i -pe 's|(</head>)|<!-- Chart.js for Party Dashboard Visualizations -->\n<script src="https://cdn.jsdelivr.net/npm/chart.js\@4.4.2/dist/chart.umd.min.js" integrity="sha384-e6cc9LaIG7xZ3XD5B+jtr1NhTWPQGQdRCh6xiZ+ZFUtWCpg4ycv3Sh+SkZoopvUY" crossorigin="anonymous"></script>\n\n$1|' "$file"
   fi
   
   # Add dashboard section (insert before data-integration section)
