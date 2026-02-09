@@ -709,6 +709,162 @@
 			</div>
 		</section>
 	</main>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 계절별 활동 패턴 (2002-2025)</h2>
+<p class="subtitle">Z-점수 이상 탐지를 통한 분기별 분석</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="연도별 필터">
+<option value="all">모든 연도</option>
+</select>
+
+<select id="quarter-filter" aria-label="분기별 필터">
+<option value="all">모든 분기</option>
+<option value="1">Q1 - 겨울 회기</option>
+<option value="2">Q2 - 봄 회기</option>
+<option value="3">Q3 - 여름 휴회</option>
+<option value="4">Q4 - 가을 회기</option>
+</select>
+
+<select id="election-filter" aria-label="선거 상태별 필터">
+<option value="all">모두</option>
+<option value="election">선거 연도</option>
+<option value="non-election">비선거 연도</option>
+</select>
+
+<select id="classification-filter" aria-label="활동 분류별 필터">
+<option value="all">모든 분류</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>분기별 활동 히트맵 (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">연도 및 분기별 투표량 (Z-점수 포함).</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Z-점수 이상 탐지</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Z-점수 이상 탐지"></canvas>
+<p class="chart-description">통계적 이상값 (|Z| ≥ 2.0) 빨간색 표시.</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>분기별 평균 활동 (모든 연도)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="분기별 평균 활동 (모든 연도)"></canvas>
+<p class="chart-description">Q1-Q4 기준선 및 표준편차 밴드.</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>계절 패턴 분류</h3>
+<canvas id="classification-chart" role="img" aria-label="계절 패턴 분류"></canvas>
+<p class="chart-description">정상, 상승, 감소, 이상 패턴의 분포.</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>분기별 변화</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="분기별 변화"></canvas>
+<p class="chart-description">순차적 투표 변화 (% 및 절대값).</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 CIA 플랫폼의 데이터 | 매일 업데이트</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 Anomaly Detection & Early Warning System</h2>
+<p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Dismiss</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="severity-filter" aria-label="Filter by severity">
+<option value="all">All Severities</option>
+<option value="CRITICAL">🔴 Critical</option>
+<option value="HIGH">🟠 High</option>
+<option value="MODERATE">🟡 Moderate</option>
+<option value="LOW">🟢 Low</option>
+</select>
+<select id="type-filter" aria-label="Filter by anomaly type">
+<option value="all">All Types</option>
+<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
+<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
+<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
+<option value="NO_ANOMALY">No Anomaly</option>
+</select>
+<select id="direction-filter" aria-label="Filter by direction">
+<option value="all">All Directions</option>
+<option value="UNUSUALLY_HIGH">Unusually High</option>
+<option value="UNUSUALLY_LOW">Unusually Low</option>
+<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+</select>
+<select id="year-filter" aria-label="Filter by year">
+<option value="all">All Years</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Anomaly Timeline -->
+<div class="chart-card wide">
+<h3>Anomaly Timeline (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
+<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Z-Score Distribution</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
+<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+</div>
+
+<!-- Chart 3: Anomaly Type Breakdown -->
+<div class="chart-card">
+<h3>Anomaly Type Distribution</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
+<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>Severity Heat Map (Year × Quarter)</h3>
+<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
+<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+</div>
+
+<!-- Chart 5: Quarterly Anomaly Frequency -->
+<div class="chart-card">
+<h3>Anomaly Frequency by Quarter</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>Recent Anomalies (Last 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
+<p class="chart-description">Most recent anomalies with details</p>
+</div>
+</div>
+</section>
+
+
 	
 	<footer>
 		<p>&copy; 2008-2026 | Hack23 AB (Org.nr 5595347807) |
@@ -726,5 +882,8 @@
 	</footer>
 <!-- Party Dashboard Script -->
 <script src="js/party-dashboard.js"></script>
+<script src="js/seasonal-patterns-dashboard.js"></script>
+<script src="js/pre-election-dashboard.js"></script>
+<script src="js/anomaly-detection-dashboard.js"></script>
 </body>
 </html>

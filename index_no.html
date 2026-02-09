@@ -685,6 +685,162 @@
 			</div>
 		</section>
 	</main>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 Sesongmønster (2002-2025)</h2>
+<p class="subtitle">Kvartalsanalyse med Z-score anomalideteksjon</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="Filtrer etter år">
+<option value="all">Alle år</option>
+</select>
+
+<select id="quarter-filter" aria-label="Filtrer etter kvartal">
+<option value="all">Alle kvartaler</option>
+<option value="1">K1 - Vintersesjon</option>
+<option value="2">K2 - Vårsesjon</option>
+<option value="3">K3 - Sommerpause</option>
+<option value="4">K4 - Høstsesjon</option>
+</select>
+
+<select id="election-filter" aria-label="Filtrer etter valgstatus">
+<option value="all">Alle</option>
+<option value="election">Valgår</option>
+<option value="non-election">Ikke-valgår</option>
+</select>
+
+<select id="classification-filter" aria-label="Filtrer etter aktivitetsklassifisering">
+<option value="all">Alle klassifiseringer</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>Kvartalsaktivitet varmekart (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">Avstemningsvolum etter år og kvartal med Z-score. Røde sirkler indikerer statistiske avvik (|Z| ≥ 2.0).</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Z-score anomalideteksjon</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Z-score anomalideteksjon"></canvas>
+<p class="chart-description">Statistiske avvik (|Z| ≥ 2.0) markert i rødt i tidslinjen.</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>Gjennomsnittlig aktivitet per kvartal (alle år)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Gjennomsnittlig aktivitet per kvartal (alle år)"></canvas>
+<p class="chart-description">K1-K4 basislinjer. Viser typiske aktivitetsmønstre gjennom sesonger.</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>Sesongmønster klassifisering</h3>
+<canvas id="classification-chart" role="img" aria-label="Sesongmønster klassifisering"></canvas>
+<p class="chart-description">Fordeling av NORMAL, FORHØYET, REDUSERT og ANOMALI mønstre over årene.</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>Kvartal-til-kvartal endringer</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Kvartal-til-kvartal endringer"></canvas>
+<p class="chart-description">Sekvensielle avstemningsendringer (% og absolutt). Grønt indikerer økning, rødt indikerer reduksjon.</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Data fra CIA-plattformen | Oppdateres daglig</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 Anomaly Detection & Early Warning System</h2>
+<p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Dismiss</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="severity-filter" aria-label="Filter by severity">
+<option value="all">All Severities</option>
+<option value="CRITICAL">🔴 Critical</option>
+<option value="HIGH">🟠 High</option>
+<option value="MODERATE">🟡 Moderate</option>
+<option value="LOW">🟢 Low</option>
+</select>
+<select id="type-filter" aria-label="Filter by anomaly type">
+<option value="all">All Types</option>
+<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
+<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
+<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
+<option value="NO_ANOMALY">No Anomaly</option>
+</select>
+<select id="direction-filter" aria-label="Filter by direction">
+<option value="all">All Directions</option>
+<option value="UNUSUALLY_HIGH">Unusually High</option>
+<option value="UNUSUALLY_LOW">Unusually Low</option>
+<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+</select>
+<select id="year-filter" aria-label="Filter by year">
+<option value="all">All Years</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Anomaly Timeline -->
+<div class="chart-card wide">
+<h3>Anomaly Timeline (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
+<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Z-Score Distribution</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
+<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+</div>
+
+<!-- Chart 3: Anomaly Type Breakdown -->
+<div class="chart-card">
+<h3>Anomaly Type Distribution</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
+<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>Severity Heat Map (Year × Quarter)</h3>
+<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
+<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+</div>
+
+<!-- Chart 5: Quarterly Anomaly Frequency -->
+<div class="chart-card">
+<h3>Anomaly Frequency by Quarter</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>Recent Anomalies (Last 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
+<p class="chart-description">Most recent anomalies with details</p>
+</div>
+</div>
+</section>
+
+
 	
 	<footer>
 		<p>&copy; 2008-2026 | Hack23 AB (Org.nr 5595347807) |
@@ -702,5 +858,8 @@
 	</footer>
 <!-- Party Dashboard Script -->
 <script src="js/party-dashboard.js"></script>
+<script src="js/seasonal-patterns-dashboard.js"></script>
+<script src="js/pre-election-dashboard.js"></script>
+<script src="js/anomaly-detection-dashboard.js"></script>
 </body>
 </html>
