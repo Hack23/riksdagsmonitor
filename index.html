@@ -384,6 +384,40 @@ Swedish Election 2026
 </div>
 </section>
 
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ Government Minister Risk & Influence</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Ministry Risk Heat Map</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="Ministry Risk Heat Map showing risk levels across government departments"></div>
+</div>
+
+<div class="chart-card">
+<h3>Top 10 Most Influential Ministers</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Bar chart showing top 10 most influential ministers"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Ministry Productivity Matrix</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Bar chart comparing ministry productivity across quarters"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Decision Impact Trends</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Line chart showing decision impact trends over time"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>View data as accessible table</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
 <section id="resources">
 <h2>Resources & Documentation</h2>
 <div class="resources">
@@ -411,5 +445,8 @@ Swedish Election 2026
 <a href="swedish-election-2026_fi.html" title="Suomi">Suomi</a>
 </p>
 </footer>
+
+<!-- Ministry Dashboard JavaScript -->
+<script src="js/ministry-dashboard.js" defer></script>
 </body>
 </html>

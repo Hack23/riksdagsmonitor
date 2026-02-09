@@ -572,6 +572,40 @@
 			</div>
 		</section>
 
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ Risque & Influence des Ministres</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Carte des Risques Ministériels</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="Carte des Risques Ministériels"></div>
+</div>
+
+<div class="chart-card">
+<h3>Top 10 Ministres les Plus Influents</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Top 10 Ministres les Plus Influents"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Matrice de Productivité Ministérielle</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Matrice de Productivité Ministérielle"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Tendances d'Impact des Décisions</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Tendances d'Impact des Décisions"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>Afficher les données sous forme de tableau</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
 		<section id="technical-specifications">
 			<h2>Technical Specifications</h2>
 			
@@ -650,5 +684,7 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+<!-- Ministry Dashboard JavaScript -->
+<script src="js/ministry-dashboard.js" defer></script>
 </body>
 </html>

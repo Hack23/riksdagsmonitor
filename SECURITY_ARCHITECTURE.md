@@ -164,6 +164,66 @@ graph TB
 - NIST CSF 2.0: PR.DS-2 (Data-in-transit protected)
 - CIS Controls v8.1: 3.10 (Encrypt Sensitive Data in Transit)
 
+### 2.3.1 Ministry Data Handling & Visualization
+
+**Government Minister Risk & Influence Analytics Dashboard:**
+
+The Riksdagsmonitor platform includes a comprehensive ministry analytics dashboard that processes and visualizes Swedish government minister data, implementing additional security and privacy controls:
+
+**Data Sources:**
+- **CIA Platform CSV Exports:** Ministry risk levels, productivity metrics, influence scores
+- **Data Location:** GitHub raw content API (https://raw.githubusercontent.com/Hack23/cia/)
+- **Sample Data Files:**
+  - `distribution_ministry_risk_levels.csv` - Ministry risk assessment scores
+  - `distribution_ministry_productivity_matrix.csv` - Productivity comparisons
+  - `percentile_politician_influence_metrics.csv` - Influence network analysis
+  - `distribution_ministry_decision_impact.csv` - Decision effectiveness metrics
+
+**Data Processing Security:**
+- **Client-Side Only:** All data processing occurs in user's browser (no server-side processing)
+- **HTTPS-Only Fetching:** All external data fetched over HTTPS with proper error handling
+- **Local Caching:** Browser localStorage used for temporary caching (1-hour expiry)
+- **No PII Storage:** Only aggregate statistics, no personally identifiable information
+- **Read-Only Access:** No write operations to external data sources
+
+**Risk Assessment Methodology:**
+The ministry risk scoring follows CIA platform's established framework:
+- **Critical Risk (>8.0):** Multiple major violations, systemic failures
+- **High Risk (6.0-8.0):** Frequent violations, concerning patterns
+- **Medium Risk (4.0-6.0):** Occasional violations, monitoring required
+- **Low Risk (<4.0):** Minimal violations, good compliance
+
+**Visualization Security:**
+- **D3.js (v7.8.5):** Loaded from CDNJS with SRI hash verification
+- **Chart.js (v4.4.1):** Loaded from jsDelivr with SRI hash verification
+- **CSP Compliance:** All external scripts include integrity checks
+- **XSS Prevention:** All user-facing text properly escaped and sanitized
+- **Accessibility:** WCAG 2.1 AA compliant with screen reader support
+
+**Privacy Controls:**
+- **No User Tracking:** No analytics, no cookies, no fingerprinting
+- **Attribution Visible:** "Data by CIA Platform" clearly displayed
+- **Transparent Methodology:** Risk calculation methodology publicly documented
+- **Audit Trail:** All data transformations logged (console) for debugging
+
+**Data Retention:**
+- **Cache Duration:** 1 hour (configurable)
+- **No Persistent Storage:** Cache cleared on page unload or expiry
+- **No Historical Data:** Only current snapshot displayed
+- **User Control:** Users can clear cache via browser controls
+
+**Compliance Mapping:**
+- **ISO 27001:** A.18.1.4 (Privacy and protection of PII)
+- **NIST CSF 2.0:** PR.DS-5 (Protections against data leaks implemented)
+- **CIS Controls v8.1:** 3.3 (Configure Data Access Control Lists)
+- **GDPR Article 5:** Principles relating to processing of personal data (data minimization)
+
+**Risk Mitigation:**
+- **Fallback Handling:** Mock data displayed if CIA data unavailable
+- **Error Messages:** User-friendly error messages, technical details logged
+- **Rate Limiting:** Respects GitHub API rate limits (handled via caching)
+- **Dependency Pinning:** Specific library versions with integrity checks
+
 ### 2.4 Network Security
 
 **GitHub Pages Infrastructure:**

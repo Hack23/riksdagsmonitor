@@ -3550,6 +3550,456 @@ footer {
 }
 
 /* ==================================================
+   GOVERNMENT MINISTER RISK & INFLUENCE DASHBOARD
+   ================================================== */
+
+/* Dashboard Container */
+.dashboard-container {
+  margin: var(--spacing-2xl) 0;
+  padding: var(--spacing-xl);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.dashboard-container > h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-2xl);
+  font-size: var(--h2-size);
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: var(--spacing-md);
+  }
+  
+  .dashboard-grid {
+    gap: var(--spacing-md);
+  }
+}
+
+/* Chart Card */
+.chart-card {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.chart-card h3 {
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--header-color);
+  font-size: var(--h3-size);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: var(--spacing-sm);
+}
+
+.chart-card.wide {
+  grid-column: 1 / -1;
+  min-height: 600px;
+}
+
+@media (max-width: 1200px) {
+  .chart-card.wide {
+    grid-column: auto;
+  }
+}
+
+/* Chart containers */
+.chart-card > div,
+.chart-card > canvas {
+  flex: 1;
+  min-height: 300px;
+  position: relative;
+}
+
+/* Ministry Risk Heat Map specific styles */
+#ministryRiskHeatMap {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#ministryRiskHeatMap svg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Risk level color classes */
+.risk-critical {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.risk-high {
+  color: #f57c00;
+  font-weight: 600;
+}
+
+.risk-medium {
+  color: #fbc02d;
+  font-weight: 600;
+}
+
+.risk-low {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+/* Tooltip styling for D3 visualizations */
+.ministry-tooltip {
+  position: absolute;
+  visibility: hidden;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  font-size: 14px;
+  z-index: 1000;
+  pointer-events: none;
+  max-width: 300px;
+}
+
+.ministry-tooltip strong {
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Screen Reader Only Alternative */
+.sr-only-alternative {
+  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-lg);
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.sr-only-alternative summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding: var(--spacing-md);
+  list-style: none;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.sr-only-alternative summary:hover {
+  background: rgba(0, 102, 51, 0.05);
+}
+
+.sr-only-alternative summary:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.sr-only-alternative summary::-webkit-details-marker {
+  display: none;
+}
+
+.sr-only-alternative table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-lg);
+}
+
+.sr-only-alternative table caption {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+  font-size: var(--font-size-lg);
+}
+
+.sr-only-alternative th,
+.sr-only-alternative td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.sr-only-alternative th {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.sr-only-alternative tbody tr:nth-child(even) {
+  background: var(--badge-bg);
+}
+
+.sr-only-alternative tbody tr:hover {
+  background: rgba(0, 102, 51, 0.05);
+}
+
+/* Loading and Error States */
+.loading-message {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.error-message {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--danger-color);
+  font-size: var(--font-size-lg);
+  background: rgba(220, 53, 69, 0.1);
+  border: 2px solid var(--danger-color);
+  border-radius: var(--border-radius);
+}
+
+/* Data Attribution */
+.data-attribution {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.data-attribution a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.data-attribution a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .dashboard-container {
+    background: linear-gradient(135deg, rgba(0, 28, 37, 0.95), rgba(0, 26, 26, 0.98));
+    border: 1px solid rgba(0, 204, 102, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 204, 102, 0.2);
+  }
+  
+  .chart-card {
+    background: rgba(0, 28, 37, 0.5);
+    border: 1px solid rgba(0, 204, 102, 0.2);
+  }
+  
+  .chart-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 204, 102, 0.4);
+  }
+  
+  .chart-card h3 {
+    border-bottom-color: var(--primary-light);
+  }
+  
+  .ministry-tooltip {
+    background-color: rgba(0, 28, 37, 0.95);
+    border-color: rgba(0, 204, 102, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 204, 102, 0.3);
+  }
+  
+  .sr-only-alternative summary:hover {
+    background: rgba(0, 204, 102, 0.1);
+  }
+}
+
+/* RTL Support for Arabic and Hebrew */
+[dir="rtl"] .dashboard-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .chart-card h3 {
+  text-align: right;
+}
+
+[dir="rtl"] .ministry-tooltip {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Responsive Design for Charts */
+@media (max-width: 768px) {
+  .chart-card {
+    min-height: 350px;
+    padding: var(--spacing-md);
+  }
+  
+  .chart-card.wide {
+    min-height: 500px;
+  }
+  
+  .chart-card h3 {
+    font-size: var(--h4-size);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .sr-only-alternative th,
+  .sr-only-alternative td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-card {
+    min-height: 300px;
+    padding: var(--spacing-sm);
+  }
+  
+  .chart-card.wide {
+    min-height: 400px;
+  }
+  
+  .chart-card h3 {
+    font-size: var(--h5-size);
+  }
+  
+  .dashboard-container > h2 {
+    font-size: var(--h3-size);
+  }
+  
+  /* Stack table cells for very small screens */
+  .sr-only-alternative table,
+  .sr-only-alternative thead,
+  .sr-only-alternative tbody,
+  .sr-only-alternative th,
+  .sr-only-alternative td,
+  .sr-only-alternative tr {
+    display: block;
+  }
+  
+  .sr-only-alternative thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .sr-only-alternative tr {
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .sr-only-alternative td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  .sr-only-alternative td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .dashboard-container {
+    border-width: 2px;
+  }
+  
+  .chart-card {
+    border-width: 2px;
+  }
+  
+  .chart-card h3 {
+    border-bottom-width: 3px;
+  }
+  
+  .ministry-tooltip {
+    border-width: 2px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .chart-card:hover {
+    transform: none;
+  }
+  
+  .loading-message {
+    animation: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .dashboard-container {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .chart-card {
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+  
+  .chart-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .ministry-tooltip {
+    display: none;
+  }
+  
+  .sr-only-alternative {
+    display: block !important;
+  }
+  
+  .sr-only-alternative details {
+    display: block !important;
+  }
+  
+  .sr-only-alternative summary {
+    display: none;
+  }
+}
+
+/* ==================================================
    SWEDISH ELECTION 2026 STYLES
    ================================================== */
 

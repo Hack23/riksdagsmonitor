@@ -606,6 +606,40 @@
 			</div>
 		</section>
 
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ 정부 장관 위험 및 영향력</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>부처 위험 히트맵</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="부처 위험 히트맵"></div>
+</div>
+
+<div class="chart-card">
+<h3>가장 영향력 있는 10명의 장관</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="가장 영향력 있는 10명의 장관"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>부처 생산성 매트릭스</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="부처 생산성 매트릭스"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>결정 영향 트렌드</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="결정 영향 트렌드"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>테이블로 데이터 보기</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
 		<section id="technical-specifications">
 			<h2>기술 사양</h2>
 			
@@ -685,5 +719,7 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+<!-- Ministry Dashboard JavaScript -->
+<script src="js/ministry-dashboard.js" defer></script>
 </body>
 </html>

@@ -572,6 +572,40 @@
 			</div>
 		</section>
 
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ Ministerrisico & Invloed</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Ministerie Risicokaart</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="Ministerie Risicokaart"></div>
+</div>
+
+<div class="chart-card">
+<h3>Top 10 Meest Invloedrijke Ministers</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Top 10 Meest Invloedrijke Ministers"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Ministerie Productiviteitsmatrix</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Ministerie Productiviteitsmatrix"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Besluitvormingsimpacttrends</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Besluitvormingsimpacttrends"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>Gegevens als tabel weergeven</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
 		<section id="technical-specifications">
 			<h2>Technical Specifications</h2>
 			
@@ -650,5 +684,7 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+<!-- Ministry Dashboard JavaScript -->
+<script src="js/ministry-dashboard.js" defer></script>
 </body>
 </html>

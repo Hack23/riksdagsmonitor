@@ -584,6 +584,40 @@
 			</div>
 		</section>
 
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ مخاطر وتأثير الوزراء</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>خريطة مخاطر الوزارات</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="خريطة مخاطر الوزارات"></div>
+</div>
+
+<div class="chart-card">
+<h3>أكثر 10 وزراء تأثيراً</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="أكثر 10 وزراء تأثيراً"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>مصفوفة إنتاجية الوزارات</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="مصفوفة إنتاجية الوزارات"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>اتجاهات تأثير القرارات</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="اتجاهات تأثير القرارات"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>عرض البيانات كجدول</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
 		<section id="technical-specifications">
 			<h2>المواصفات التقنية</h2>
 			
@@ -664,5 +698,7 @@
 			<a href="swedish-election-2026_ar.html" title="Arabic documentation">العربية</a>
 		</p>
 	</footer>
+<!-- Ministry Dashboard JavaScript -->
+<script src="js/ministry-dashboard.js" defer></script>
 </body>
 </html>
