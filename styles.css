@@ -7191,3 +7191,596 @@ canvas {
     overflow: visible;
   }
 }
+
+/* ==================================================
+   UI/UX ENHANCEMENTS - FEBRUARY 2026
+   ================================================== */
+
+/* Skip to Content Link (WCAG 2.1 AAA) */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Enhanced Focus Indicators (WCAG 2.1 AAA - 3px) */
+*:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Fallback for browsers without :focus-visible */
+@supports not selector(:focus-visible) {
+  *:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+}
+
+/* Remove outline for mouse clicks (only show for keyboard) */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: wait;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-color) 25%,
+    var(--card-border) 50%,
+    var(--bg-color) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+  border-radius: var(--border-radius);
+  min-height: 20px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhanced Card Hover Effects */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 
+    0 10px 20px rgba(0, 102, 51, 0.15),
+    0 6px 6px rgba(0, 102, 51, 0.1),
+    0 0 20px rgba(0, 102, 51, 0.05);
+}
+
+.card:active {
+  transform: translateY(-2px) scale(1.005);
+}
+
+/* Micro-interactions for Buttons */
+.btn,
+button:not(.back-to-top) {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover,
+button:not(.back-to-top):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 102, 51, 0.2);
+}
+
+.btn:active,
+button:not(.back-to-top):active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 102, 51, 0.2);
+}
+
+/* Button ripple effect */
+.btn::after,
+button:not(.back-to-top)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after,
+button:not(.back-to-top):active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 102, 51, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 102, 51, 0.4);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* Enhanced Footer */
+footer {
+  background: var(--card-bg);
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+  border-top: 3px solid var(--primary-color);
+  box-shadow: 0 -4px 12px rgba(0, 102, 51, 0.05);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer-section p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+
+.footer-section a:hover {
+  color: var(--primary-color);
+  padding-left: 4px;
+}
+
+.footer-section a:focus-visible {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.footer-stats {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.footer-stats li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.footer-stats li:last-child {
+  border-bottom: none;
+}
+
+.footer-stats li strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Language Grid */
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.language-grid a {
+  padding: 0.5rem;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  transition: all 0.2s ease;
+  background: var(--bg-color);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.language-grid a:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 102, 51, 0.2);
+}
+
+.language-grid a:active {
+  transform: translateY(0);
+}
+
+.language-grid a:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+  border-color: var(--primary-color);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0.5rem 0;
+}
+
+.footer-bottom a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.footer-bottom a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.footer-bottom time {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Responsive Footer */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  footer {
+    padding: 2rem 1rem 1rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-grid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 0.4rem;
+  }
+  
+  .language-grid a {
+    padding: 0.4rem;
+    font-size: 0.75rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+  
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+}
+
+/* Minimum Touch Target Size (WCAG 2.1 AAA) */
+@media (pointer: coarse) {
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .language-grid a {
+    min-height: 44px;
+    padding: 0.6rem;
+  }
+}
+
+/* High Contrast Mode Enhancements */
+@media (prefers-contrast: high) {
+  .skip-to-content:focus,
+  *:focus-visible {
+    outline-width: 4px;
+  }
+  
+  .card:hover {
+    border-width: 2px;
+  }
+  
+  .back-to-top {
+    border: 2px solid white;
+  }
+  
+  footer {
+    border-top-width: 4px;
+  }
+}
+
+/* Dark Mode Support (Future Enhancement) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode variables remain the same as light mode for now */
+    /* The cyberpunk green theme works well in both modes */
+  }
+}
+
+/* Print Styles for Footer */
+@media print {
+  footer {
+    page-break-before: always;
+    border-top: 2px solid #000;
+  }
+  
+  .back-to-top,
+  .skip-to-content {
+    display: none;
+  }
+  
+  .language-grid {
+    display: none;
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Accessibility: Focus Management */
+.focus-trap {
+  position: relative;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Interactive Element States */
+a,
+button {
+  cursor: pointer;
+}
+
+a:focus,
+button:focus {
+  outline-width: 3px;
+}
+
+/* Disabled State */
+button:disabled,
+a[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* External Link Indicator (Optional) */
+a[target="_blank"]::after {
+  content: ' ↗';
+  font-size: 0.8em;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+.language-grid a[target="_blank"]::after,
+.footer-stats a[target="_blank"]::after {
+  content: none; /* Remove for language links */
+}
+
+/* Loading Spinner (for future async content) */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 102, 51, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tooltip Enhancement */
+[title] {
+  position: relative;
+}
+
+/* Enhance existing breadcrumb for better accessibility */
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '/';
+  padding: 0 0.5rem;
+  color: var(--text-secondary);
+}
+
+.breadcrumb-item a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.breadcrumb-item[aria-current="page"] {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Enhanced Time Elements */
+time {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Improve Header Accessibility */
+header {
+  position: relative;
+}
+
+header h1 {
+  scroll-margin-top: 2rem;
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button,
+.card,
+.language-grid a {
+  -webkit-tap-highlight-color: rgba(0, 102, 51, 0.2);
+}
+
+/* EOF - UI/UX Enhancements */
