@@ -19,7 +19,9 @@
   // Configuration
   const CONFIG = {
     dataSource: {
-      baseUrl: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/',
+      // Local-first data loading: try local files first, then fallback to remote
+      localUrl: 'cia-data/ministry/',
+      remoteUrl: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/',
       files: {
         riskLevels: 'distribution_ministry_risk_levels.csv',
         productivity: 'distribution_ministry_productivity_matrix.csv',
@@ -521,31 +523,50 @@
         return cached;
       }
 
-      const url = `${CONFIG.dataSource.baseUrl}${filename}`;
+      // Try local file first, then fallback to remote
+      const urls = [
+        `${CONFIG.dataSource.localUrl}${filename}`,
+        `${CONFIG.dataSource.remoteUrl}${filename}`
+      ];
       
-      try {
-        const response = await fetch(url, {
-          method: 'GET',
-          headers: {
-            'Accept': 'text/csv'
+      for (const url of urls) {
+        try {
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Accept': 'text/csv'
+            }
+          });
+
+          if (!response.ok) {
+            console.log(`Failed to fetch from ${url}: ${response.status}`);
+            continue; // Try next URL
           }
-        });
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          const text = await response.text();
+          
+          // Check if we got valid CSV data
+          if (!text || text.length < 10) {
+            console.log(`Empty or invalid data from ${url}`);
+            continue; // Try next URL
+          }
+          
+          const data = this.parseCSV(text);
+          
+          // Cache the data
+          this.cache.set(filename, data);
+          
+          console.log(`✓ Loaded ${filename} from ${url.includes('cia-data') ? 'local' : 'remote'} (${data.length} rows)`);
+          return data;
+        } catch (error) {
+          console.log(`Error fetching from ${url}:`, error.message);
+          // Continue to next URL
         }
-
-        const text = await response.text();
-        const data = this.parseCSV(text);
-        
-        // Cache the data
-        this.cache.set(filename, data);
-        
-        return data;
-      } catch (error) {
-        console.error(`Error fetching ${filename}:`, error);
-        throw error;
       }
+      
+      // All URLs failed
+      console.error(`Failed to fetch ${filename} from all sources`);
+      throw new Error(`Unable to load ${filename}`);
     }
 
     parseCSV(text) {
