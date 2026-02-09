@@ -197,7 +197,7 @@ The ministry risk scoring follows CIA platform's established framework:
 - **D3.js (v7.8.5):** Loaded from CDNJS with SRI hash verification
 - **Chart.js (v4.4.1):** Loaded from jsDelivr with SRI hash verification
 - **CSP Compliance:** All external scripts include integrity checks
-- **XSS Prevention:** All user-facing text properly escaped and sanitized
+- **XSS Mitigation:** Core UI text properly escaped; CSV-derived tooltip values use DOM construction methods
 - **Accessibility:** WCAG 2.1 AA compliant with screen reader support
 
 **Privacy Controls:**
@@ -207,10 +207,11 @@ The ministry risk scoring follows CIA platform's established framework:
 - **Audit Trail:** All data transformations logged (console) for debugging
 
 **Data Retention:**
-- **Cache Duration:** 1 hour (configurable)
-- **No Persistent Storage:** Cache cleared on page unload or expiry
+- **Cache Duration:** 1 hour (configurable via DataCache.TTL)
+- **Persistent Storage:** Data cached in `localStorage` with TTL-based expiry
+- **Deletion Behavior:** Cache entries removed automatically on expiry or when users clear site data
 - **No Historical Data:** Only current snapshot displayed
-- **User Control:** Users can clear cache via browser controls
+- **User Control:** Users can clear cached data via standard browser storage/site data controls
 
 **Compliance Mapping:**
 - **ISO 27001:** A.18.1.4 (Privacy and protection of PII)

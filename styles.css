@@ -7262,6 +7262,14 @@ html[lang="he"] {
    ================================================== */
 
 /* Enhanced Loading States */
+/* Dashboard Data Attribution */
+.data-attribution {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
 .loading-spinner {
   display: inline-block;
   width: 2rem;
@@ -7331,31 +7339,14 @@ button:active::after,
 }
 
 /* Smooth Image Loading */
-img {
+/* Smooth Image Loading (opt-in only) */
+img.fade-in {
   opacity: 0;
   transition: opacity 0.3s ease-in;
 }
 
-img.loaded,
-img:not([loading]) {
+img.fade-in.loaded {
   opacity: 1;
-}
-
-/* Progress Bar for Page Load */
-.page-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-out;
-  z-index: 9999;
-}
-
-.page-progress.active {
-  transform: translateX(0);
 }
 
 /* Enhanced Link Underlines */
@@ -7409,37 +7400,6 @@ a:not(.button):not(.btn):hover {
 [data-tooltip]:hover::before {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
-}
-
-/* Enhanced Scroll Indicators */
-.scroll-indicator {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 3rem;
-  height: 3rem;
-  background: var(--primary-color);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-}
-
-.scroll-indicator.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.scroll-indicator:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Reduced Motion Support */

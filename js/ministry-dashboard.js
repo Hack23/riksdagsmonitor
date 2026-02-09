@@ -13,6 +13,27 @@
  * @performance Lazy loading, local caching, < 3 second load time
  */
 
+/**
+ * Ministry Dashboard - Government Minister Risk & Influence Analytics
+ * 
+ * Visualizes Swedish government ministry data using D3.js and Chart.js
+ * Features: Risk heat maps, influence rankings, productivity matrices, decision impact trends
+ * 
+ * @version 1.0.0
+ * @author Riksdagsmonitor
+ * 
+ * KNOWN LIMITATIONS:
+ * - Current CIA CSV schemas don't match expected chart data structures
+ * - Charts will display fallback/mock data until data transformation layer is implemented
+ * - Required transformations:
+ *   1. RiskHeatMap: Aggregate risk_level data by ministry
+ *   2. InfluenceChart: Transform percentile data to per-politician format
+ *   3. ProductivityChart: Convert yearly data to quarterly comparison
+ *   4. DecisionImpactChart: Map decision_type/approval_rate to impact scores
+ * 
+ * TODO: Add data transformation layer to map actual CSV schemas to chart requirements
+ */
+
 (function() {
   'use strict';
 
@@ -752,15 +773,23 @@
           else if (riskLevel >= 4.0) level = 'Medium';
 
           const ministryName = MINISTRY_TRANSLATIONS[this.lang][d.ministry] || d.ministry;
-          const htmlContent = `
-            <strong>${ministryName}</strong><br/>
-            Risk Score: ${d.riskScore}<br/>
-            Level: ${level}<br/>
-            Alerts: ${d.alerts || 'N/A'}
-          `;
           
-          tooltip.html(htmlContent)
-            .style('visibility', 'visible');
+          // Build tooltip DOM safely without HTML injection
+          tooltip.selectAll('*').remove();
+          
+          const strong = tooltip.append('strong');
+          strong.text(ministryName);
+          
+          tooltip.append('br');
+          tooltip.append('span').text(`Risk Score: ${d.riskScore}`);
+          
+          tooltip.append('br');
+          tooltip.append('span').text(`Level: ${level}`);
+          
+          tooltip.append('br');
+          tooltip.append('span').text(`Alerts: ${d.alerts || 'N/A'}`);
+          
+          tooltip.style('visibility', 'visible');
         })
         .on('mousemove', (event) => {
           tooltip.style('top', (event.pageY - 10) + 'px')
@@ -1364,8 +1393,21 @@
       if (container) {
         const attribution = document.createElement('p');
         attribution.className = 'data-attribution';
-        attribution.style.cssText = 'text-align: center; margin-top: 2rem; font-size: 0.875rem; color: var(--text-secondary);';
-        attribution.innerHTML = `📊 ${UI_TRANSLATIONS[this.lang].dataAttribution} | <a href="https://www.hack23.com/cia" target="_blank" rel="noopener">www.hack23.com/cia</a>`;
+        
+        // Build attribution safely without innerHTML
+        const emoji = document.createTextNode('📊 ');
+        attribution.appendChild(emoji);
+        
+        const text = document.createTextNode(UI_TRANSLATIONS[this.lang].dataAttribution + ' | ');
+        attribution.appendChild(text);
+        
+        const link = document.createElement('a');
+        link.href = 'https://www.hack23.com/cia';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'www.hack23.com/cia';
+        attribution.appendChild(link);
+        
         container.appendChild(attribution);
       }
     }
