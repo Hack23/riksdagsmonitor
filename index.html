@@ -84,13 +84,6 @@
 <link rel="preload" href="styles.css" as="style">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
 
-<!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
 <!-- D3.js v7 for network diagrams and heat maps -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
 
@@ -116,14 +109,6 @@
       "description": "Swedish Parliament Intelligence & Election Monitoring Platform",
       "publisher": {
         "@id": "https://riksdagsmonitor.com/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://riksdagsmonitor.com/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
       },
       "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
     },
@@ -463,28 +448,28 @@ Swedish Election 2026
 <div class="scanner-effect"></div>
 <h3>Intelligence Dashboard</h3>
 <p>Comprehensive overview of Swedish Riksdag with key performance indicators</p>
-<a href="https://www.hack23.com/cia/#!dashboard/OVERVIEW" target="_blank" class="btn">View Dashboard</a>
+<a href="https://www.hack23.com/cia/#!dashboard/OVERVIEW" target="_blank" rel="noopener noreferrer" class="btn">View Dashboard</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>Party Performance</h3>
 <p>Longitudinal analysis of party activities, voting patterns, and effectiveness</p>
-<a href="https://www.hack23.com/cia/#!partyranking/CHARTS/CURRENTPARTYLEADERSCORECARD" target="_blank" class="btn">Analyze Parties</a>
+<a href="https://www.hack23.com/cia/#!partyranking/CHARTS/CURRENTPARTYLEADERSCORECARD" target="_blank" rel="noopener noreferrer" class="btn">Analyze Parties</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>Politician Careers</h3>
 <p>Individual MP tracking with career analysis and performance metrics</p>
-<a href="https://www.hack23.com/cia/#!politicianranking/CHARTS" target="_blank" class="btn">View Politicians</a>
+<a href="https://www.hack23.com/cia/#!politicianranking/CHARTS" target="_blank" rel="noopener noreferrer" class="btn">View Politicians</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>Government Cabinet</h3>
 <p>Ministry-level analysis and current government performance scorecard</p>
-<a href="https://www.hack23.com/cia/#!ministryranking/CHARTS/CURRENTMINISTRIESLEADERSCORECARD" target="_blank" class="btn">View Cabinet</a>
+<a href="https://www.hack23.com/cia/#!ministryranking/CHARTS/CURRENTMINISTRIESLEADERSCORECARD" target="_blank" rel="noopener noreferrer" class="btn">View Cabinet</a>
 </div>
 </div>
 </section>
@@ -564,7 +549,7 @@ Swedish Election 2026
 </div>
 
 <div class="dashboard-attribution">
-<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank">CIA Platform</a> | Updated: <span id="lastUpdated">Loading...</span></small></p>
+<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="lastUpdated">Loading...</span></small></p>
 </div>
 </section>
 
@@ -577,28 +562,28 @@ Swedish Election 2026
 <div class="scanner-effect"></div>
 <h3>Swedish Parliament (Riksdagen)</h3>
 <p>Official parliamentary data including votes, documents, committee work, and MP information</p>
-<a href="http://data.riksdagen.se/" target="_blank">data.riksdagen.se</a>
+<a href="http://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">data.riksdagen.se</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>Swedish Election Authority</h3>
 <p>Historical election results, voter turnout, and electoral statistics</p>
-<a href="http://www.val.se/" target="_blank">val.se</a>
+<a href="http://www.val.se/" target="_blank" rel="noopener noreferrer">val.se</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>Financial Management Authority</h3>
 <p>Government budget data, spending analysis, and financial accountability</p>
-<a href="https://www.esv.se/psidata/" target="_blank">esv.se/psidata</a>
+<a href="https://www.esv.se/psidata/" target="_blank" rel="noopener noreferrer">esv.se/psidata</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>World Bank Open Data</h3>
 <p>Country-level economic and development indicators for comparative analysis</p>
-<a href="http://data.worldbank.org/" target="_blank">data.worldbank.org</a>
+<a href="http://data.worldbank.org/" target="_blank" rel="noopener noreferrer">data.worldbank.org</a>
 </div>
 </div>
 </section>
@@ -637,10 +622,10 @@ Swedish Election 2026
 <h2>Resources & Documentation</h2>
 <div class="resources">
 <ul>
-<li><a href="https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations" target="_blank">CIA Visualization Specifications</a> - Technical specs for all 19 visualization products</li>
-<li><a href="https://hack23.github.io/cia/" target="_blank">CIA Platform Documentation</a> - Complete platform documentation and API reference</li>
-<li><a href="https://github.com/Hack23/cia" target="_blank">CIA Open Source Project</a> - GitHub repository with source code</li>
-<li><a href="https://www.hack23.com" target="_blank">Created by Hack23</a> - About the development organization</li>
+<li><a href="https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations" target="_blank" rel="noopener noreferrer">CIA Visualization Specifications</a> - Technical specs for all 19 visualization products</li>
+<li><a href="https://hack23.github.io/cia/" target="_blank" rel="noopener noreferrer">CIA Platform Documentation</a> - Complete platform documentation and API reference</li>
+<li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIA Open Source Project</a> - GitHub repository with source code</li>
+<li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Created by Hack23</a> - About the development organization</li>
 </ul>
 </div>
 </section>
@@ -680,20 +665,20 @@ Swedish Election 2026
     <div class="footer-section">
       <h3>Languages</h3>
       <div class="language-grid">
-        <a href="index.html">🇬🇧 EN</a>
-        <a href="index_sv.html">🇸🇪 SV</a>
-        <a href="index_da.html">🇩🇰 DA</a>
-        <a href="index_no.html">🇳🇴 NO</a>
-        <a href="index_fi.html">🇫🇮 FI</a>
-        <a href="index_de.html">🇩🇪 DE</a>
-        <a href="index_fr.html">🇫🇷 FR</a>
-        <a href="index_es.html">🇪🇸 ES</a>
-        <a href="index_nl.html">🇳🇱 NL</a>
-        <a href="index_ar.html">🇸🇦 AR</a>
-        <a href="index_he.html">🇮🇱 HE</a>
-        <a href="index_ja.html">🇯🇵 JA</a>
-        <a href="index_ko.html">🇰🇷 KO</a>
-        <a href="index_zh.html">🇨🇳 ZH</a>
+        <a href="index.html"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="index_sv.html"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="index_da.html"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="index_no.html"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="index_fi.html"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="index_de.html"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="index_fr.html"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="index_es.html"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="index_nl.html"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="index_ar.html"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="index_he.html"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="index_ja.html"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="index_ko.html"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="index_zh.html"><span aria-hidden="true">🇨🇳</span> ZH</a>
       </div>
     </div>
   </div>
@@ -713,20 +698,36 @@ Swedish Election 2026
 </footer>
 
 <!-- Back to Top Button -->
-<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+<button class="back-to-top" type="button" aria-label="Back to top">
   ↑
 </button>
 
 <script>
-// Show back-to-top button after scrolling 300px
-window.addEventListener('scroll', function() {
+// Back-to-top button behavior
+(function() {
   const backToTop = document.querySelector('.back-to-top');
-  if (window.scrollY > 300) {
-    backToTop.classList.add('visible');
-  } else {
-    backToTop.classList.remove('visible');
+  if (!backToTop) {
+    return;
   }
-});
+
+  // Show back-to-top button after scrolling 300px
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+
+  // Scroll smoothly to top when button is clicked (respect prefers-reduced-motion)
+  backToTop.addEventListener('click', function() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ 
+      top: 0, 
+      behavior: prefersReducedMotion ? 'auto' : 'smooth' 
+    });
+  });
+})();
 </script>
 
 <!-- Committee Dashboard JavaScript -->
