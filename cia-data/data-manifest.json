@@ -79,8 +79,8 @@
       "supplementaryFiles": [
         "voting/view_riksdagen_voting_anomaly_detection_sample.csv"
       ],
-      "coverage": "2002-2025",
-      "records": 32
+      "coverage": "2002-2026",
+      "records": 41
     }
   }
 }

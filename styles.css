@@ -7212,13 +7212,16 @@ html[lang="he"] {
 }
 
 /* Enhanced Card Hover States */
-.card:hover {
+/* Dashboard Card Hover Effects (scoped to dashboard) */
+#anomaly-detection-dashboard .card:hover,
+.dashboard-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px var(--card-shadow);
   border-color: var(--primary-color);
 }
 
-.card:focus-within {
+#anomaly-detection-dashboard .card:focus-within,
+.dashboard-card:focus-within {
   outline: 3px solid var(--accent-color);
   outline-offset: 2px;
 }
@@ -7347,10 +7350,15 @@ button:active {
 }
 
 /* Reduced Motion Preferences */
+/* Reduced Motion Support (scoped to dashboard animations) */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  #anomaly-detection-dashboard *,
+  #anomaly-detection-dashboard *::before,
+  #anomaly-detection-dashboard *::after,
+  .dashboard-card,
+  .dashboard-card *,
+  .loading-skeleton,
+  .shimmer {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

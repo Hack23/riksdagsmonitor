@@ -87,8 +87,8 @@ bash download-csv.sh
 
 **Features**:
 - Z-score based statistical outlier detection
-- 32 quarters analyzed (2002-2025)
-- Severity classification: CRITICAL (≥2.5σ), HIGH (≥2.0σ), MODERATE (≥1.5σ)
+- 41 quarters analyzed (2002-2026)
+- Severity classification: CRITICAL (≥2.5σ), HIGH (≥2.0σ), MODERATE (≥1.5σ), LOW (<1.5σ)
 - 6 visualizations (Chart.js + D3.js)
 
 ### Future Dashboards
