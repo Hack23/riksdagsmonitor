@@ -9,6 +9,7 @@ node_modules/
 dist/
 build/
 *.log
+console-logs.txt
 data/cia-exports/
 types/
 schemas/metadata/

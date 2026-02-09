@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
 """
-Update all 14 language HTML files with Committee Dashboard
-Adds CDN libraries and committee analytics section
+Committee Dashboard Multi-Language Update Script
+
+Helper script for managing the Committee Dashboard section across localized HTML files.
+Originally used to add CDN libraries and committee analytics sections; retained for
+maintenance/one-off updates.
+
+WARNING: This script uses brittle string replacements and can silently fail if HTML
+formatting differs. Current workflow (as of PR #56) is to only include dashboard in
+index.html (English), not in the 13 translated language files.
+
+Usage: python3 update-all-languages.py
 """
 
 from pathlib import Path

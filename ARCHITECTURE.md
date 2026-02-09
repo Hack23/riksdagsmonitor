@@ -356,7 +356,7 @@ const COMMITTEES = [
 | Security Control | Implementation | Standard |
 |-----------------|---------------|----------|
 | **Subresource Integrity** | SHA-384 SRI hashes for all CDN libraries | SRI |
-| **CSP Compliance** | No inline scripts, external CDN allowed | CSP Level 3 |
+| **CSP Compliance** | Single inline back-to-top script allowed via CSP nonce; all other scripts from external CDN | CSP Level 3 |
 | **HTTPS Only** | All resources loaded over TLS 1.3 | TLS 1.3 |
 | **CORS Headers** | Proper CORS configuration for CIA data | CORS |
 | **XSS Prevention** | Restricted `innerHTML` for static templates; untrusted data via `textContent`/DOM APIs | OWASP |

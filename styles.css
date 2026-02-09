@@ -197,7 +197,7 @@
   border-width: 0;
 }
 
-.sr-only table {
+table.sr-only {
   border-collapse: collapse;
 }
 

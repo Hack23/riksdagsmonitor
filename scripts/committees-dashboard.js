@@ -1030,6 +1030,9 @@
   // Keep references to visualization instances for reuse
   let visualizationInstances = null;
 
+  // Module-level flag to prevent concurrent initializations
+  let isInitializing = false;
+
   /**
    * Initialize committee dashboard
    */
@@ -1041,6 +1044,13 @@
       return;
     }
 
+    // Prevent concurrent initializations (race condition on resize)
+    if (isInitializing) {
+      console.info('[CommitteeDashboard] Already initializing, skipping duplicate call');
+      return;
+    }
+
+    isInitializing = true;
     console.log('[CommitteeDashboard] Initializing...');
 
     try {
@@ -1092,26 +1102,40 @@
     } catch (error) {
       console.error('[CommitteeDashboard] Initialization failed:', error);
       showErrorMessage(error.message);
+    } finally {
+      // Always clear the flag when initialization completes or fails
+      isInitializing = false;
     }
   }
 
   /**
-   * Show loading indicator
+   * Show loading indicator (idempotent - safe to call multiple times)
    */
   function showLoadingIndicator() {
     const dashboard = document.getElementById('committee-dashboard');
-    if (dashboard) {
-      const indicator = document.createElement('div');
-      indicator.id = 'committee-loading';
-      indicator.className = 'loading-indicator';
-      indicator.setAttribute('role', 'status');
-      indicator.setAttribute('aria-live', 'polite');
-      indicator.innerHTML = `
-        <div class="spinner"></div>
-        <p>Loading committee data...</p>
-      `;
-      dashboard.insertBefore(indicator, dashboard.firstChild);
+    if (!dashboard) return;
+
+    // Remove existing loading indicator if present (idempotency)
+    const existing = document.getElementById('committee-loading');
+    if (existing) {
+      existing.remove();
     }
+
+    const indicator = document.createElement('div');
+    indicator.id = 'committee-loading';
+    indicator.className = 'loading-indicator';
+    indicator.setAttribute('role', 'status');
+    indicator.setAttribute('aria-live', 'polite');
+    
+    const spinner = document.createElement('div');
+    spinner.className = 'spinner';
+    indicator.appendChild(spinner);
+    
+    const text = document.createElement('p');
+    text.textContent = 'Loading committee data...';
+    indicator.appendChild(text);
+    
+    dashboard.insertBefore(indicator, dashboard.firstChild);
   }
 
   /**
@@ -1129,17 +1153,25 @@
    */
   function showErrorMessage(message) {
     const dashboard = document.getElementById('committee-dashboard');
-    if (dashboard) {
-      const error = document.createElement('div');
-      error.className = 'error-message';
-      error.setAttribute('role', 'alert');
-      error.innerHTML = `
-        <h3>⚠️ Error Loading Committee Dashboard</h3>
-        <p>${message}</p>
-        <p>Please refresh the page or contact support if the issue persists.</p>
-      `;
-      dashboard.insertBefore(error, dashboard.firstChild);
-    }
+    if (!dashboard) return;
+
+    const error = document.createElement('div');
+    error.className = 'error-message';
+    error.setAttribute('role', 'alert');
+    
+    const heading = document.createElement('h3');
+    heading.textContent = '⚠️ Error Loading Committee Dashboard';
+    error.appendChild(heading);
+    
+    const messageParagraph = document.createElement('p');
+    messageParagraph.textContent = message;
+    error.appendChild(messageParagraph);
+    
+    const supportParagraph = document.createElement('p');
+    supportParagraph.textContent = 'Please refresh the page or contact support if the issue persists.';
+    error.appendChild(supportParagraph);
+    
+    dashboard.insertBefore(error, dashboard.firstChild);
 
     hideLoadingIndicator();
   }
