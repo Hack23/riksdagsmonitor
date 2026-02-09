@@ -76,7 +76,6 @@ echo -e "${BLUE}==================================${NC}"
 if [ ${#FAILED_FILES[@]} -eq 0 ]; then
     echo -e "${GREEN}✓ Download Complete${NC}"
     echo -e "${GREEN}All files downloaded successfully!${NC}"
-    exit 0
 else
     echo -e "${YELLOW}⚠ Download Complete with Errors${NC}"
     echo -e "${RED}Failed files:${NC}"
@@ -85,8 +84,6 @@ else
     done
     exit 1
 fi
-echo -e "${BLUE}==================================${NC}"
-echo ""
 
 # Show summary
 echo "Summary:"

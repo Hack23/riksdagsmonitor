@@ -7073,27 +7073,16 @@ html[lang="he"] {
   box-shadow: 0 8px 24px rgba(0, 102, 51, 0.15);
 }
 
-/* Smooth focus indicators - using focus-visible for better UX */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-  transition: outline-offset 0.2s ease;
-}
+/* Note: Focus indicators are defined in the canonical KEYBOARD NAVIGATION & FOCUS INDICATORS
+   section (lines 660-790). Do not duplicate focus-visible rules to avoid overriding behavior. */
 
-/* Loading animation for images */
-img {
+/* Loading animation for images with opt-in .fade-in class */
+img.fade-in {
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-img[loading="lazy"] {
-  opacity: 0;
-}
-
-img[loading="lazy"].loaded {
+img.fade-in.loaded {
   opacity: 1;
 }
 

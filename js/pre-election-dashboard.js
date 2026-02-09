@@ -47,7 +47,8 @@
     }
   };
 
-  // Translations for 14 languages
+  // Translations for 2 languages (EN, SV)
+  // NOTE: Only English and Swedish translations implemented. Other languages use English fallback.
   const TRANSLATIONS = {
     en: {
       title: 'Pre-Election Monitoring Dashboard',
@@ -368,7 +369,7 @@
           labels: data.map(d => d.year),
           datasets: [
             {
-              label: 'Ballots',
+              label: t.metrics.ballots,
               data: data.map(d => d.total_ballots),
               borderColor: CONFIG.chartColors.ballots,
               backgroundColor: CONFIG.chartColors.ballots + '33',
@@ -376,7 +377,7 @@
               tension: 0.3
             },
             {
-              label: 'Documents',
+              label: t.metrics.documents,
               data: data.map(d => d.total_documents),
               borderColor: CONFIG.chartColors.documents,
               backgroundColor: CONFIG.chartColors.documents + '33',
@@ -535,16 +536,17 @@
       const ctx = document.getElementById('deviation-radar-chart');
       if (!ctx) return;
 
-      const data = this.dataManager.getCurrentYearData(2025);
+      const latestYear = this.dataManager.getLatestYear();
+      const data = this.dataManager.getCurrentYearData(latestYear);
       if (!data) return;
 
       new Chart(ctx, {
         type: 'radar',
         data: {
-          labels: ['Ballots', 'Documents', 'Assignments', 'Attendance', 'Win Rate', 'Absence Rate'],
+          labels: [t.metrics.ballots, t.metrics.documents, t.metrics.assignments, t.metrics.attendance, t.metrics.winRate, t.metrics.absenceRate],
           datasets: [
             {
-              label: '2025 Q4',
+              label: `${latestYear} Q4`,
               data: [
                 data.total_ballots / 100,
                 data.total_documents / 100,
@@ -805,10 +807,11 @@
 
   // Status Card Updater
   function updateStatusCards(dataManager) {
-    const data = dataManager.getCurrentYearData(2025);
+    const latestYear = dataManager.getLatestYear();
+    const data = dataManager.getCurrentYearData(latestYear);
     if (!data) return;
 
-    const deviations = dataManager.calculateDeviations(2025);
+    const deviations = dataManager.calculateDeviations(latestYear);
 
     // Update ballot activity
     const ballotCard = document.querySelector('.status-card[data-metric="ballots"]');

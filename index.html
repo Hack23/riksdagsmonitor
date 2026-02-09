@@ -65,7 +65,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
 <link rel="dns-prefetch" href="https://cia.sourceforge.io">
-<link rel="preload" href="styles.css" as="style">
+<!-- Note: styles.css is already loaded via standard link tag above, preload is redundant -->
 
 <!-- Schema.org structured data -->
 <script type="application/ld+json">
@@ -81,11 +81,7 @@
       "publisher": {
         "@id": "https://riksdagsmonitor.com/#organization"
       },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://riksdagsmonitor.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
+      <%-- Note: SearchAction removed - no search functionality implemented yet --%>
       "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
     },
     {
@@ -573,28 +569,28 @@ Swedish Election 2026
 <!-- Real-Time Status Cards -->
 <div class="status-cards">
 <div class="status-card" data-metric="ballots">
-<h3>📊 Ballot Activity</h3>
+<h3><span aria-hidden="true">📊</span> Ballot Activity</h3>
 <p class="current-value">16,750</p>
 <p class="baseline-comparison">+4.34% vs baseline</p>
 <span class="status-badge normal">NORMAL</span>
 </div>
 
 <div class="status-card" data-metric="documents">
-<h3>📄 Document Production</h3>
+<h3><span aria-hidden="true">📄</span> Document Production</h3>
 <p class="current-value">3,451</p>
 <p class="baseline-comparison">+25.55% vs baseline</p>
 <span class="status-badge normal">NORMAL</span>
 </div>
 
 <div class="status-card" data-metric="attendance">
-<h3>✅ Attendance Rate</h3>
+<h3><span aria-hidden="true">✅</span> Attendance Rate</h3>
 <p class="current-value">85.75%</p>
 <p class="baseline-comparison">+0.75% vs baseline</p>
 <span class="status-badge normal">STABLE</span>
 </div>
 
 <div class="status-card" data-metric="party-performance">
-<h3>🎯 Party Win Rate</h3>
+<h3><span aria-hidden="true">🎯</span> Party Win Rate</h3>
 <p class="current-value">59.72%</p>
 <p class="baseline-comparison">+3.55% YoY</p>
 <span class="status-badge improving">IMPROVING</span>
@@ -708,22 +704,22 @@ Swedish Election 2026
   </div>
   
   <div class="footer-section">
-    <h3>🌍 Languages</h3>
+    <h3><span aria-hidden="true">🌍</span> Languages</h3>
     <div class="language-switcher">
-      <a href="index.html" title="English" lang="en">🇬🇧 EN</a>
-      <a href="index_sv.html" title="Svenska" lang="sv">🇸🇪 SV</a>
-      <a href="index_da.html" title="Dansk" lang="da">🇩🇰 DA</a>
-      <a href="index_no.html" title="Norsk" lang="no">🇳🇴 NO</a>
-      <a href="index_fi.html" title="Suomi" lang="fi">🇫🇮 FI</a>
-      <a href="index_de.html" title="Deutsch" lang="de">🇩🇪 DE</a>
-      <a href="index_fr.html" title="Français" lang="fr">🇫🇷 FR</a>
-      <a href="index_es.html" title="Español" lang="es">🇪🇸 ES</a>
-      <a href="index_nl.html" title="Nederlands" lang="nl">🇳🇱 NL</a>
-      <a href="index_ar.html" title="العربية" lang="ar">🇸🇦 AR</a>
-      <a href="index_he.html" title="עברית" lang="he">🇮🇱 HE</a>
-      <a href="index_ja.html" title="日本語" lang="ja">🇯🇵 JA</a>
-      <a href="index_ko.html" title="한국어" lang="ko">🇰🇷 KO</a>
-      <a href="index_zh.html" title="中文" lang="zh">🇨🇳 ZH</a>
+      <a href="index.html" title="English" lang="en"><span aria-hidden="true">🇬🇧</span> EN</a>
+      <a href="index_sv.html" title="Svenska" lang="sv"><span aria-hidden="true">🇸🇪</span> SV</a>
+      <a href="index_da.html" title="Dansk" lang="da"><span aria-hidden="true">🇩🇰</span> DA</a>
+      <a href="index_no.html" title="Norsk" lang="no"><span aria-hidden="true">🇳🇴</span> NO</a>
+      <a href="index_fi.html" title="Suomi" lang="fi"><span aria-hidden="true">🇫🇮</span> FI</a>
+      <a href="index_de.html" title="Deutsch" lang="de"><span aria-hidden="true">🇩🇪</span> DE</a>
+      <a href="index_fr.html" title="Français" lang="fr"><span aria-hidden="true">🇫🇷</span> FR</a>
+      <a href="index_es.html" title="Español" lang="es"><span aria-hidden="true">🇪🇸</span> ES</a>
+      <a href="index_nl.html" title="Nederlands" lang="nl"><span aria-hidden="true">🇳🇱</span> NL</a>
+      <a href="index_ar.html" title="العربية" lang="ar"><span aria-hidden="true">🇸🇦</span> AR</a>
+      <a href="index_he.html" title="עברית" lang="he"><span aria-hidden="true">🇮🇱</span> HE</a>
+      <a href="index_ja.html" title="日本語" lang="ja"><span aria-hidden="true">🇯🇵</span> JA</a>
+      <a href="index_ko.html" title="한국어" lang="ko"><span aria-hidden="true">🇰🇷</span> KO</a>
+      <a href="index_zh.html" title="中文" lang="zh"><span aria-hidden="true">🇨🇳</span> ZH</a>
     </div>
   </div>
 </div>
@@ -754,9 +750,13 @@ Swedish Election 2026
     
     // Smooth scroll to top on click
     backToTopButton.addEventListener('click', function() {
+      // Smooth scroll to top on click, respecting prefers-reduced-motion
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+      
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: scrollBehavior
       });
     });
   }

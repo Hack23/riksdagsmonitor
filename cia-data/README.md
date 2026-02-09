@@ -27,7 +27,7 @@ cia-data/
 
 **Time Period**: 2023-2025 (3 years, 4 rows including header)
 
-**Use Case**: Pre-Election Monitoring Dashboard (Issue #XX)
+**Use Case**: Pre-Election Monitoring Dashboard (PR #67)
 
 **Key Fields**:
 - `year` - Calendar year (2023, 2024, 2025)
