@@ -481,6 +481,29 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ==================================================
+   ACCESSIBILITY - SKIP TO CONTENT LINK
+   ================================================== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 10000;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
 body {
   font-family: var(--font-main);
   line-height: 1.75; /* Improved from 1.7 for optimal readability */
@@ -2002,18 +2025,33 @@ table[role="presentation"] p {
               transform 0.3s ease,
               box-shadow 0.3s ease;
   line-height: 1.5;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .btn:hover {
   background: var(--link-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-decoration: none;
+  border-color: var(--link-hover);
+}
+
+.btn:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {

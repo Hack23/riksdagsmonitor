@@ -6,8 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index.html">
-<meta name="description" content="Swedish Election 2026 live intelligence platform: Real-time monitoring, coalition predictions, 45 risk rules, comprehensive parliamentary analysis. Monitor political activity in Sweden.">
-<meta name="keywords" content="Swedish election 2026, riksdag monitoring, coalition prediction, political intelligence, OSINT platform, parliamentary analysis, CIA platform, Swedish politics, election monitoring, riksdagsmonitor">
+<meta name="description" content="Track Swedish Parliament 2026 with AI-powered intelligence: Real-time MP monitoring, coalition forecasts, 45 risk rules, 50+ years data. Official OSINT platform for Sweden's Riksdag political transparency.">
+<meta name="keywords" content="Swedish election 2026, riksdag monitoring, coalition prediction, political intelligence, OSINT platform, parliamentary analysis, CIA platform, Swedish politics, election monitoring, riksdagsmonitor, MP tracking, voting patterns, parliamentary transparency, government accountability, political risk assessment, Sweden democracy, riksdagen data, legislative analysis, political forecasting">
+<meta name="geo.region" content="SE">
+<meta name="geo.placename" content="Sweden">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="referrer" content="no-referrer-when-downgrade">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="James Pether Sörling, CISSP, CISM">
 
@@ -43,6 +49,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cia.sourceforge.io">
+<link rel="dns-prefetch" href="https://www.hack23.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 <meta name="application-name" content="Riksdagsmonitor">
@@ -53,6 +63,56 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Riksdagsmonitor",
+      "alternateName": "Swedish Parliament Intelligence",
+      "url": "https://riksdagsmonitor.com",
+      "logo": "https://cia.sourceforge.io/cia-logo.png",
+      "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+      "sameAs": [
+        "https://www.hack23.com/cia",
+        "https://github.com/Hack23/riksdagsmonitor",
+        "https://www.linkedin.com/company/hack23/"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "James Pether Sörling",
+        "jobTitle": "CEO",
+        "alumniOf": "CISSP, CISM",
+        "url": "https://www.linkedin.com/in/jamessorling/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SE"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Riksdagsmonitor",
+      "url": "https://riksdagsmonitor.com",
+      "description": "Swedish Parliament Intelligence Platform",
+      "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.hack23.com/cia/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "name": "Swedish Parliament (Riksdagen)",
+      "url": "https://www.riksdagen.se",
+      "description": "Sweden's national legislature - 349 MPs, 8 political parties",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SE",
+        "addressLocality": "Stockholm"
+      }
+    },
     {
       "@type": "Event",
       "name": "Swedish Parliamentary Election 2026",
@@ -72,9 +132,71 @@
       },
       "organizer": {
         "@type": "Organization",
-        "name": "Riksdags Monitor",
+        "name": "Riksdagsmonitor",
         "url": "https://riksdagsmonitor.com"
       }
+    },
+    {
+      "@type": "Dataset",
+      "name": "Swedish Parliament Historical Data 1971-2024",
+      "description": "Comprehensive dataset covering 50+ years of Swedish parliamentary activity including voting records, legislative documents, MP data, and coalition patterns.",
+      "url": "https://riksdagsmonitor.com",
+      "temporalCoverage": "1971/2024",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Sweden"
+      },
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://www.hack23.com/cia/api"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://riksdagsmonitor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Swedish Election 2026",
+          "item": "https://riksdagsmonitor.com/index.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Riksdagsmonitor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor is a comprehensive intelligence platform for monitoring political activity in Sweden's Riksdag (Parliament). Built on the CIA (Citizen Intelligence Agency) platform, it provides systematic transparency through real-time analysis and 50+ years of historical data covering 349 MPs and 8 political parties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many MPs does Riksdagsmonitor track?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor tracks all 349 Members of Parliament in Sweden's Riksdag, providing comprehensive performance metrics, voting patterns, and behavioral analysis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What data sources does Riksdagsmonitor use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor integrates multiple authoritative Swedish open data sources including the Swedish Parliament (Riksdagen) official API, Swedish Election Authority data, Swedish Financial Management Authority budget data, and World Bank Open Data for comparative analysis."
+          }
+        }
+      ]
     }
   ]
 }
@@ -98,19 +220,24 @@
 
 </head>
 <body>
+<!-- Skip to main content for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- Breadcrumb Navigation -->
 <nav aria-label="Breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item">
-<a href="index.html">Home</a>
+<ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="index.html" itemprop="item"><span itemprop="name">Home</span></a>
+<meta itemprop="position" content="1" />
 </li>
-<li class="breadcrumb-item" aria-current="page">
-Swedish Election 2026
+<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+<span itemprop="name">Swedish Election 2026</span>
+<meta itemprop="position" content="2" />
 </li>
 </ol>
 </nav>
 
-<header>
+<header role="banner">
 <h1>🗳️ Swedish Election 2026<br>Live Intelligence Platform</h1>
 <p class="tagline">Real-time monitoring · Coalition predictions · Systematic transparency</p>
 
@@ -139,11 +266,11 @@ Swedish Election 2026
 </div>
 </header>
 
-<main>
+<main id="main-content" role="main">
 <section id="dashboard-link" class="dashboard-promo-section">
 <h2 class="dashboard-promo-heading">📊 Interactive CIA Dashboard</h2>
 <p class="dashboard-promo-text">Explore real-time visualization of Swedish Riksdag data</p>
-<a href="dashboard/index.html" class="btn dashboard-promo-link">
+<a href="dashboard/index.html" class="btn dashboard-promo-link" aria-label="View Interactive CIA Dashboard">
   View Dashboard →
 </a>
 </section>
