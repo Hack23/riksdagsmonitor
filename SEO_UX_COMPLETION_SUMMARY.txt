@@ -130,7 +130,7 @@ Automated Tests: 59/59 PASSED (100%) ✅
 └──────────────────┴───────┴────────┴────────┴─────────┘
 
 Key Validations:
-  • Schema.org: 34 @type instances, 6 main types, 0 errors
+  • Schema.org: 32 @type instances, 6 main types, 0 errors
   • Meta tags: 20+ keywords, 200-char description, complete OG/Twitter
   • Accessibility: Skip-to-content functional, semantic HTML, ARIA complete
   • Footer: 4 sections, 14 languages, responsive grid
@@ -178,11 +178,12 @@ Search Performance:
 
 📚 DELIVERABLES
 
-Code Files (4):
+Code Files - SEO/UX scope (4):
   1. ✅ index.html          (243 lines modified)
   2. ✅ styles.css          (125 lines added)
   3. ✅ robots.txt          (18 lines modified)
   4. ✅ sitemap.xml         (75 lines added)
+  Note: Additional data and analysis files (e.g., cia-data/** CSVs, cia-data/ANALYSIS_SUMMARY.md, and other documentation) were also updated in this PR but are outside the SEO/UX scope summarized here.
 
 Documentation Files (3):
   1. ✅ SEO_UX_IMPROVEMENTS_SUMMARY.md  (322 lines - comprehensive analysis)
@@ -209,7 +210,7 @@ Code Quality:
 
 SEO Optimization:
   ✅ Meta tags complete (20+ keywords, 200-char description)
-  ✅ Schema.org comprehensive (6 types, 34 @type instances)
+  ✅ Schema.org comprehensive (6 types, 32 @type instances)
   ✅ robots.txt optimized (Disallow, crawl-delay)
   ✅ sitemap.xml complete (25 URLs, news articles)
   ✅ Geographic targeting (Sweden, Stockholm)

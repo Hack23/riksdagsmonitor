@@ -137,7 +137,7 @@ After:
 
 **Interactive States**:
 - Link hover: color change + underline
-- Language hover: background color + scale
+- Language hover: background and text color change
 - Skip-to-content focus: 3px solid outline
 
 ### 4. Back-to-Top Button (Maintained)

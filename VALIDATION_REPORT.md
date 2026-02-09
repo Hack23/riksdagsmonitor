@@ -100,10 +100,10 @@ $ grep 'link rel="dns-prefetch"' index.html | wc -l
 
 ```bash
 $ grep -c "User-agent:" robots.txt
-7  # ✅ All major bots configured
+8  # ✅ All major bots configured
 
 $ grep -c "Disallow:" robots.txt
-4  # ✅ Internal directories protected
+4  # ℹ️ 4 Disallow rules found under User-agent: *, bot-specific groups may need their own Disallow entries
 
 $ grep -c "Crawl-delay:" robots.txt
 5  # ✅ Optimized crawl rates for Googlebot, Bingbot, DuckDuckBot, Slurp, Baiduspider
@@ -188,7 +188,7 @@ $ grep -c "\.footer-bottom" styles.css
 - [x] Languages section has 14 languages with flag emojis
 - [x] Footer bottom has copyright and last updated
 - [x] Proper time elements for dates
-- [x] All links have proper rel attributes (noopener for external)
+- [x] All external links use rel="noopener noreferrer"
 - [x] Responsive grid (4 columns → 1 column at 768px)
 - [x] Language grid auto-fills on desktop, 2 columns on mobile
 
