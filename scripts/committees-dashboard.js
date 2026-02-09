@@ -23,13 +23,13 @@
   // ==============================================
 
   const CONFIG = {
-    // CIA Data Sources (GitHub raw URLs)
+    // CIA Data Sources - Local files with remote fallback
     dataUrls: {
-      productivityMatrix: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_committee_productivity_matrix.csv',
-      committeeDecisions: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_committee_decisions.csv',
-      annualDocuments: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_annual_committee_documents.csv',
-      ballotSummary: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_committee_ballot_decision_party_summary.csv',
-      seasonalPatterns: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/percentile_seasonal_activity_patterns.csv'
+      productivityMatrix: ['cia-data/distribution_committee_productivity_matrix.csv', 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_committee_productivity_matrix.csv'],
+      committeeDecisions: ['cia-data/view_riksdagen_committee_decisions.csv', 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_committee_decisions_sample.csv'],
+      annualDocuments: ['cia-data/distribution_annual_committee_documents.csv', 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_annual_committee_documents.csv'],
+      ballotSummary: ['cia-data/view_riksdagen_committee_ballot_decision_party_summary.csv', 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_committee_ballot_decision_party_summary_sample.csv'],
+      seasonalPatterns: ['cia-data/percentile_seasonal_activity_patterns.csv', 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/percentile_seasonal_activity_patterns.csv']
     },
     
     // Cache configuration
@@ -78,7 +78,7 @@
     /**
      * Fetch CSV data with caching support
      * @param {string} key - Cache key identifier
-     * @param {string} url - URL to fetch data from
+     * @param {string|Array<string>} url - URL(s) to fetch data from (tries in order if array)
      * @returns {Promise<Array>} Parsed CSV data
      */
     async fetchData(key, url) {
@@ -91,43 +91,57 @@
         }
       }
 
-      try {
-        console.log(`[DataManager] Fetching ${key} from ${url}`);
-        const response = await fetch(url);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      // Convert single URL to array for consistent handling
+      const urls = Array.isArray(url) ? url : [url];
+      let lastError = null;
+
+      // Try each URL in order (local first, then remote fallback)
+      for (let i = 0; i < urls.length; i++) {
+        const currentUrl = urls[i];
+        try {
+          console.log(`[DataManager] Fetching ${key} from ${currentUrl}`);
+          const response = await fetch(currentUrl);
+          
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          }
+
+          const csvText = await response.text();
+          
+          // Parse CSV using Papa Parse
+          if (typeof Papa === 'undefined') {
+            throw new Error('Papa Parse library not loaded');
+          }
+
+          const parsed = Papa.parse(csvText, {
+            header: true,
+            dynamicTyping: true,
+            skipEmptyLines: true
+          });
+
+          if (parsed.errors.length > 0) {
+            console.warn(`[DataManager] CSV parsing warnings for ${key}:`, parsed.errors);
+          }
+
+          const data = parsed.data;
+          
+          // Cache the result
+          if (CONFIG.cache.enabled) {
+            this.setCached(key, data);
+          }
+
+          console.log(`[DataManager] Successfully loaded ${key} from ${i === 0 ? 'local' : 'remote'} source`);
+          return data;
+        } catch (error) {
+          console.warn(`[DataManager] Failed to fetch ${key} from ${currentUrl}:`, error.message);
+          lastError = error;
+          // Continue to next URL if available
         }
-
-        const csvText = await response.text();
-        
-        // Parse CSV using Papa Parse
-        if (typeof Papa === 'undefined') {
-          throw new Error('Papa Parse library not loaded');
-        }
-
-        const parsed = Papa.parse(csvText, {
-          header: true,
-          dynamicTyping: true,
-          skipEmptyLines: true
-        });
-
-        if (parsed.errors.length > 0) {
-          console.warn(`[DataManager] CSV parsing warnings for ${key}:`, parsed.errors);
-        }
-
-        const data = parsed.data;
-        
-        // Cache the result
-        if (CONFIG.cache.enabled) {
-          this.setCached(key, data);
-        }
-
-        return data;
-      } catch (error) {
-        console.error(`[DataManager] Error fetching ${key}:`, error);
-        throw error;
       }
+
+      // All URLs failed
+      console.error(`[DataManager] All sources failed for ${key}`);
+      throw lastError || new Error(`Failed to fetch ${key} from any source`);
     }
 
     /**

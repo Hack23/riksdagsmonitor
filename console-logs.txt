@@ -1,0 +1,16 @@
+Total messages: 14 (Errors: 1, Warnings: 0)
+
+[LOG] [CommitteeDashboard] Initializing... @ http://localhost:8080/scripts/committees-dashboard.js:1009
+[LOG] [DataManager] Fetching productivityMatrix from cia-data/distribution_committee_productivity_matrix.csv @ http://localhost:8080/scripts/committees-dashboard.js:101
+[LOG] [DataManager] Fetching committeeDecisions from cia-data/view_riksdagen_committee_decisions.csv @ http://localhost:8080/scripts/committees-dashboard.js:101
+[LOG] [DataManager] Fetching annualDocuments from cia-data/distribution_annual_committee_documents.csv @ http://localhost:8080/scripts/committees-dashboard.js:101
+[LOG] [DataManager] Fetching ballotSummary from cia-data/view_riksdagen_committee_ballot_decision_party_summary.csv @ http://localhost:8080/scripts/committees-dashboard.js:101
+[LOG] [DataManager] Fetching seasonalPatterns from cia-data/percentile_seasonal_activity_patterns.csv @ http://localhost:8080/scripts/committees-dashboard.js:101
+[LOG] [DataManager] Successfully loaded productivityMatrix from local source @ http://localhost:8080/scripts/committees-dashboard.js:132
+[LOG] [DataManager] Successfully loaded committeeDecisions from local source @ http://localhost:8080/scripts/committees-dashboard.js:132
+[LOG] [DataManager] Successfully loaded annualDocuments from local source @ http://localhost:8080/scripts/committees-dashboard.js:132
+[LOG] [DataManager] Successfully loaded ballotSummary from local source @ http://localhost:8080/scripts/committees-dashboard.js:132
+[LOG] [DataManager] Successfully loaded seasonalPatterns from local source @ http://localhost:8080/scripts/committees-dashboard.js:132
+[LOG] [CommitteeDashboard] Data loaded successfully {productivityMatrix: Array(191), committeeDecisions: Array(500), annualDocuments: Array(819), ballotSummary: Array(500), seasonalPatterns: Array(26)} @ http://localhost:8080/scripts/committees-dashboard.js:1029
+[LOG] [CommitteeDashboard] Initialization complete @ http://localhost:8080/scripts/committees-dashboard.js:1044
+[ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/favicon.ico:0
