@@ -509,7 +509,7 @@
                 data.total_ballots / 100,
                 data.total_documents / 100,
                 data.total_new_assignments,
-                data.avg_attendance_rate * 100,
+                data.avg_attendance_rate,
                 data.avg_party_win_rate,
                 data.avg_party_absence_rate
               ],
@@ -790,7 +790,7 @@
     const attendanceCard = document.querySelector('.status-card[data-metric="attendance"]');
     if (attendanceCard) {
       attendanceCard.querySelector('.current-value').textContent = 
-        (data.avg_attendance_rate * 100).toFixed(2) + '%';
+        data.avg_attendance_rate.toFixed(2) + '%';
       attendanceCard.querySelector('.baseline-comparison').textContent = 
         (deviations.attendance > 0 ? '+' : '') + deviations.attendance.toFixed(2) + '% ' + t.vsBaseline;
       
@@ -862,20 +862,40 @@
   // Wait for DOM and Chart.js to be ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      // Wait for Chart.js to load
+      // Wait for Chart.js to load (max 10 seconds)
+      let attempts = 0;
+      const maxAttempts = 100; // 10 seconds at 100ms intervals
       const checkChartJS = setInterval(() => {
+        attempts++;
         if (typeof Chart !== 'undefined') {
           clearInterval(checkChartJS);
           initDashboard();
+        } else if (attempts >= maxAttempts) {
+          clearInterval(checkChartJS);
+          console.error('Chart.js failed to load after 10 seconds');
+          const dashboard = document.getElementById('pre-election-dashboard');
+          if (dashboard) {
+            dashboard.innerHTML = '<div class="error">Failed to load Chart.js library. Please refresh the page.</div>';
+          }
         }
       }, 100);
     });
   } else {
-    // Wait for Chart.js to load
+    // Wait for Chart.js to load (max 10 seconds)
+    let attempts = 0;
+    const maxAttempts = 100; // 10 seconds at 100ms intervals
     const checkChartJS = setInterval(() => {
+      attempts++;
       if (typeof Chart !== 'undefined') {
         clearInterval(checkChartJS);
         initDashboard();
+      } else if (attempts >= maxAttempts) {
+        clearInterval(checkChartJS);
+        console.error('Chart.js failed to load after 10 seconds');
+        const dashboard = document.getElementById('pre-election-dashboard');
+        if (dashboard) {
+          dashboard.innerHTML = '<div class="error">Failed to load Chart.js library. Please refresh the page.</div>';
+        }
       }
     }, 100);
   }
