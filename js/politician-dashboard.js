@@ -6,7 +6,7 @@
 // CIA GitHub raw content base URL
 const CIA_DATA_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data';
 
-// Data cache
+// Data cache for future CIA data integration
 const dataCache = {
   top10Productive: null,
   top10Influential: null,
@@ -19,6 +19,8 @@ const dataCache = {
 
 /**
  * Fetch CSV data from CIA repository
+ * NOTE: Prepared for future integration - currently using placeholder data
+ * TODO: Wire this into loadDashboardData once CIA CSV files are available
  * @param {string} filename - CSV filename
  * @returns {Promise<Array>} Parsed CSV data
  */
@@ -45,7 +47,10 @@ function parseCSV(csvText) {
   const lines = csvText.trim().split('\n');
   if (lines.length < 2) return [];
   
-  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+  const rawHeaders = parseCSVLine(lines[0]);
+  const headers = rawHeaders.map(h =>
+    h.trim().replace(/^\uFEFF?"/, '').replace(/"$/, '')
+  );
   const data = [];
   
   for (let i = 1; i < lines.length; i++) {
@@ -106,7 +111,11 @@ function renderTop10List(containerId, data, scoreLabel = 'Score') {
   if (!container) return;
   
   if (!data || data.length === 0) {
-    container.innerHTML = '<div class="error-message">No data available</div>';
+    container.textContent = '';
+    const errorElement = document.createElement('div');
+    errorElement.className = 'error-message';
+    errorElement.textContent = 'No data available';
+    container.appendChild(errorElement);
     return;
   }
   
@@ -150,7 +159,9 @@ function renderTop10List(containerId, data, scoreLabel = 'Score') {
 
 /**
  * Create career trajectory line chart
- * @param {Array} data - Career trajectory data
+ * NOTE: Currently displays placeholder data structure
+ * TODO: Accept and map real CIA career trajectory data
+ * @param {Array} data - Career trajectory data (unused - placeholder data shown)
  */
 function createCareerTrajectoryChart(data) {
   const canvas = document.getElementById('career-trajectory-chart');
@@ -158,7 +169,7 @@ function createCareerTrajectoryChart(data) {
   
   const ctx = canvas.getContext('2d');
   
-  // Sample data structure - in production, parse from CIA CSV
+  // PLACEHOLDER DATA - Replace with parsed CIA CSV data
   const chartData = {
     labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
     datasets: [
@@ -238,7 +249,9 @@ function createCareerTrajectoryChart(data) {
 
 /**
  * Create productivity vs influence scatter chart
- * @param {Array} data - Productivity data
+ * NOTE: Currently displays placeholder data structure
+ * TODO: Accept and map real CIA productivity/influence data
+ * @param {Array} data - Productivity data (unused - placeholder data shown)
  */
 function createProductivityInfluenceChart(data) {
   const canvas = document.getElementById('productivity-influence-chart');
@@ -246,7 +259,7 @@ function createProductivityInfluenceChart(data) {
   
   const ctx = canvas.getContext('2d');
   
-  // Sample data - in production, parse from CIA CSV
+  // PLACEHOLDER DATA - Replace with parsed CIA CSV data
   const chartData = {
     datasets: [{
       label: 'MPs',
@@ -334,7 +347,9 @@ function createProductivityInfluenceChart(data) {
 
 /**
  * Create experience distribution bar chart
- * @param {Array} data - Experience distribution data
+ * NOTE: Currently displays placeholder data structure
+ * TODO: Accept and map real CIA experience distribution data
+ * @param {Array} data - Experience distribution data (unused - placeholder data shown)
  */
 function createExperienceDistributionChart(data) {
   const canvas = document.getElementById('experience-distribution-chart');
@@ -342,7 +357,7 @@ function createExperienceDistributionChart(data) {
   
   const ctx = canvas.getContext('2d');
   
-  // Sample data - in production, parse from CIA CSV
+  // PLACEHOLDER DATA - Replace with parsed CIA CSV data
   const chartData = {
     labels: ['0-2 years', '3-5 years', '6-10 years', '11-15 years', '16-20 years', '20+ years'],
     datasets: [{
@@ -416,11 +431,17 @@ function createExperienceDistributionChart(data) {
 
 /**
  * Load all dashboard data
+ * NOTE: Currently uses placeholder data for UI demonstration
+ * TODO: Replace with real CIA CSV fetching:
+ * - fetchCIAData('top10_most_productive.csv')
+ * - fetchCIAData('top10_most_influential.csv')
+ * - fetchCIAData('top10_rising_stars.csv')
+ * - fetchCIAData('percentile_politician_career_trajectory.csv')
  */
 async function loadDashboardData() {
   try {
-    // Generate sample data for Top 10 lists
-    // In production, these would be loaded from CIA CSV files
+    // PLACEHOLDER DATA - Replace with CIA CSV fetching
+    // Example: const productive = await fetchCIAData('top10_most_productive.csv');
     const sampleTop10Productive = Array.from({length: 10}, (_, i) => ({
       name: `MP ${i + 1}`,
       party: ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'][Math.floor(Math.random() * 8)],
@@ -445,13 +466,14 @@ async function loadDashboardData() {
       score: (85 - i * 2).toString()
     }));
     
-    // Render Top 10 lists
+    // Render Top 10 lists with placeholder data
     renderTop10List('top10-productive-container', sampleTop10Productive, 'Documents');
     renderTop10List('top10-influential-container', sampleTop10Influential, 'Influence');
     renderTop10List('top10-rising-stars-container', sampleTop10RisingStars, 'Growth');
     renderTop10List('top10-controversial-container', sampleTop10Controversial, 'Controversy');
     
-    // Create charts
+    // Create charts with placeholder data
+    // TODO: Pass real CIA data to these functions once available
     createCareerTrajectoryChart([]);
     createProductivityInfluenceChart([]);
     createExperienceDistributionChart([]);
@@ -477,7 +499,15 @@ function showError(message) {
   containers.forEach(id => {
     const container = document.getElementById(id);
     if (container) {
-      container.innerHTML = `<div class="error-message">${message}</div>`;
+      // Clear existing content safely
+      container.textContent = '';
+
+      // Create error message element with safe text insertion
+      const errorElement = document.createElement('div');
+      errorElement.className = 'error-message';
+      errorElement.textContent = message;
+
+      container.appendChild(errorElement);
     }
   });
 }

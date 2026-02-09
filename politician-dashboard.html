@@ -80,6 +80,10 @@
   margin-bottom: 1rem;
 }
 
+.chart-card-spacing {
+  margin-top: 2rem;
+}
+
 .chart-wrapper {
   position: relative;
   height: 400px;
@@ -99,6 +103,27 @@
   padding: 1rem;
   color: var(--primary-magenta, #ff006e);
   margin: 1rem 0;
+}
+
+.wip-banner {
+  background: rgba(255, 190, 11, 0.15);
+  border: 2px solid var(--primary-yellow, #ffbe0b);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.wip-banner h2 {
+  color: var(--primary-yellow, #ffbe0b);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wip-banner p {
+  color: var(--light-text, #e0e0e0);
+  margin: 0.5rem 0 0 0;
 }
 
 .top10-list {
@@ -178,6 +203,13 @@
 <p>Comprehensive analysis of Sweden's 349 Members of Parliament: career trajectories, productivity metrics, and influence rankings based on CIA intelligence data.</p>
 </div>
 
+<!-- WIP Banner -->
+<div class="wip-banner" role="alert">
+<h2>⚠️ Work In Progress - Demo Data</h2>
+<p>This dashboard is currently under development and displays <strong>placeholder/sample data</strong> for demonstration purposes.</p>
+<p>Real CIA CSV data integration is pending. Do not use these visualizations for decision-making.</p>
+</div>
+
 <div class="dashboard-grid">
 <!-- Top 10 Most Productive -->
 <div class="chart-card">
@@ -213,7 +245,7 @@
 </div>
 
 <!-- Career Trajectory Chart -->
-<div class="chart-card" style="margin-top: 2rem;">
+<div class="chart-card chart-card-spacing">
 <h2>📈 Career Trajectory Analysis</h2>
 <div class="chart-wrapper">
 <canvas id="career-trajectory-chart" role="img" aria-label="Career trajectory timeline chart showing MP career progression"></canvas>
@@ -221,7 +253,7 @@
 </div>
 
 <!-- Productivity vs Influence -->
-<div class="chart-card" style="margin-top: 2rem;">
+<div class="chart-card chart-card-spacing">
 <h2>💼 Productivity vs. Influence</h2>
 <div class="chart-wrapper">
 <canvas id="productivity-influence-chart" role="img" aria-label="Scatter plot showing relationship between MP productivity and influence"></canvas>
@@ -229,7 +261,7 @@
 </div>
 
 <!-- Experience Distribution -->
-<div class="chart-card" style="margin-top: 2rem;">
+<div class="chart-card chart-card-spacing">
 <h2>🎓 Experience Distribution</h2>
 <div class="chart-wrapper">
 <canvas id="experience-distribution-chart" role="img" aria-label="Bar chart showing distribution of MP experience levels"></canvas>
