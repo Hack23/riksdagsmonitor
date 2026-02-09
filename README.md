@@ -71,6 +71,41 @@ Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA p
 - **Committee Network Analysis** - Influence mapping and assignments
 - **Politician Career Analysis** - Career trajectories and milestones
 - **Party Longitudinal Analysis** - 50+ years of party evolution
+- **Anomaly Detection & Early Warning** ✨ **NEW** - Statistical outlier identification (2002-2025)
+
+### Anomaly Detection Dashboard
+
+The Anomaly Detection & Early Warning System provides real-time identification of unusual parliamentary activity using Z-score statistical analysis:
+
+**Features:**
+- **Real-time Anomaly Feed** - Most recent anomalies displayed first
+- **Statistical Analysis** - Z-score threshold detection (|Z| ≥ 2.0 for anomalies)
+- **Severity Classification** - CRITICAL (≥2.5), HIGH (≥2.0), MODERATE (≥1.5), LOW (<1.5)
+- **Anomaly Types** - Ballot, Document, and Attendance anomalies
+- **Historical Timeline** - 23 years of anomaly data (2002-2025)
+- **Interactive Visualizations** - 6 Chart.js/D3.js charts with filtering
+
+**Data Coverage:**
+- **Total Records**: 32 quarters analyzed (2002-2025)
+- **Anomalies Detected**: 12 out of 32 quarters (37.5% anomaly rate)
+- **Severity Breakdown**: 5 CRITICAL, 1 HIGH, 6 MODERATE
+- **Type Breakdown**: 4 ballot anomalies, 8 document anomalies, 0 attendance anomalies
+- **Direction**: 11 unusually high, 1 unusually low
+
+**Key Visualizations:**
+1. **Anomaly Timeline** - Scatter plot showing all anomalies across 23 years
+2. **Z-Score Distribution** - Histogram with normal curve overlay
+3. **Anomaly Type Breakdown** - Doughnut chart (33% ballot, 67% document)
+4. **Severity Heat Map** - D3.js heat map (year × quarter grid)
+5. **Quarterly Frequency** - Stacked bar chart by severity
+6. **Recent Anomalies Feed** - Last 5 anomalies with full details
+
+**Alert System:**
+- Automatic alerts for CRITICAL or HIGH anomalies in last 2 quarters
+- Dismissible banner with 24-hour cooldown
+- Color-coded severity indicators (🔴 Critical, 🟠 High, 🟡 Moderate, 🟢 Low)
+
+**Data Source:** [CIA Seasonal Anomaly Detection](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/view_riksdagen_seasonal_anomaly_detection_sample.csv)
 
 ## 🔗 Data Sources
 
