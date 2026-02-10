@@ -1,13 +1,13 @@
 # 🏗️ Riksdagsmonitor - System Architecture
 
-**Document Version:** 1.2  
-**Last Updated:** 2026-02-08  
+**Document Version:** 1.3  
+**Last Updated:** 2026-02-10  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
 ## Executive Summary
 
-Riksdagsmonitor is a static website providing Swedish Parliament intelligence through CIA platform integration. Deployed on AWS CloudFront with multi-region S3 storage (us-east-1 primary, eu-west-1 replica) and GitHub Pages disaster recovery. This document describes the system architecture, component interactions, data flows, and design decisions aligned with Hack23 AB's ISMS standards.
+Riksdagsmonitor is a web application providing Swedish Parliament intelligence through interactive dashboards (Chart.js/D3.js) and CIA platform integration. Deployed on AWS CloudFront with multi-region S3 storage (us-east-1 primary, eu-west-1 replica) and GitHub Pages disaster recovery. This document describes the system architecture, component interactions, data flows, and design decisions aligned with Hack23 AB's ISMS standards.
 
 ## 1. System Overview
 
@@ -90,7 +90,8 @@ graph TB
 
 | Component | Responsibility | Technology | Status |
 |-----------|---------------|------------|--------|
-| **Static Website** | Present intelligence data | HTML/CSS | ✅ Active |
+| **Interactive Dashboards** | Data visualization | Chart.js v4.4.1, D3.js v7 | ✅ Active |
+| **Static Website** | Present intelligence content | HTML/CSS/JavaScript | ✅ Active |
 | **AWS CloudFront** | Primary CDN | 600+ global PoPs | ✅ Active |
 | **S3 us-east-1** | Primary storage | Amazon S3 + versioning | ✅ Active |
 | **S3 eu-west-1** | Replica storage | S3 replication | ✅ Active |
@@ -175,16 +176,33 @@ graph LR
 ```mermaid
 graph TD
     subgraph "HTML Pages"
-        Index[index.html<br/>English]
-        LangSV[swedish-election-2026_sv.html<br/>Swedish]
-        LangDA[swedish-election-2026_da.html<br/>Danish]
-        LangNO[swedish-election-2026_no.html<br/>Norwegian]
+        Index[index.html<br/>English + 9 Dashboards]
+        LangSV[index_sv.html<br/>Swedish + 9 Dashboards]
+        LangDA[index_da.html<br/>Danish]
+        LangNO[index_no.html<br/>Norwegian]
         LangOther[10 other languages...]
+    end
+    
+    subgraph "JavaScript Dashboards (300KB+)"
+        D1[party-dashboard.js<br/>43KB]
+        D2[committees-dashboard.js]
+        D3[coalition-dashboard.js]
+        D4[election-cycle-dashboard.js<br/>46KB]
+        D5[seasonal-patterns-dashboard.js<br/>68KB]
+        D6[pre-election-dashboard.js<br/>33KB]
+        D7[anomaly-detection-dashboard.js<br/>37KB]
+        D8[ministry-dashboard.js<br/>56KB]
+        D9[politician-dashboard.js<br/>14KB]
     end
     
     subgraph "Styling"
         CSS[styles.css<br/>107KB]
         Fonts[Google Fonts<br/>Inter, Orbitron]
+    end
+    
+    subgraph "External Libraries"
+        Chart[Chart.js v4.4.1<br/>via CDN + SRI]
+        D3[D3.js v7<br/>via CDN + SRI]
     end
     
     subgraph "Configuration"
@@ -201,16 +219,40 @@ graph TD
         Arch[ARCHITECTURE.md]
     end
     
+    Index --> D1
+    Index --> D2
+    Index --> D3
+    Index --> D4
+    Index --> D5
+    Index --> D6
+    Index --> D7
+    Index --> D8
+    Index --> D9
     Index --> CSS
+    
     LangSV --> CSS
     LangDA --> CSS
     LangNO --> CSS
     LangOther --> CSS
     
+    D1 --> Chart
+    D4 --> Chart
+    D5 --> Chart
+    D6 --> Chart
+    D7 --> Chart
+    D8 --> Chart
+    D9 --> Chart
+    
+    D1 --> D3
+    D4 --> D3
+    D5 --> D3
+    
     CSS --> Fonts
     
     style Index fill:#4caf50
     style CSS fill:#2196f3
+    style Chart fill:#ff9800
+    style D3 fill:#ff9800
     style Security fill:#f44336
 ```
 
@@ -525,22 +567,34 @@ graph TB
 |------------|---------|---------|-----------|
 | **HTML5** | Standard | Content structure | Universal browser support |
 | **CSS3** | Standard | Styling & layout | Responsive design, no framework overhead |
+| **JavaScript ES6+** | Standard | Interactive dashboards | Modern browser features |
+| **Chart.js** | v4.4.1 | Data visualization | Industry standard, 62k+ GitHub stars |
+| **D3.js** | v7 | Advanced visualizations | Powerful, flexible, 108k+ GitHub stars |
 | **Google Fonts** | Latest | Typography | Professional appearance, cached globally |
 
 ### 8.2 Infrastructure Stack
 
 | Technology | Version | Purpose | Rationale |
 |------------|---------|---------|-----------|
-| **GitHub Pages** | Latest | Static hosting | Free, reliable, global CDN |
+| **AWS CloudFront** | Latest | Primary CDN | Global edge locations, DDoS protection |
+| **AWS S3** | Latest | Primary storage | Reliable, scalable, versioning support |
+| **AWS Route 53** | Latest | DNS with failover | Health checks, automatic failover |
+| **GitHub Pages** | Latest | DR hosting | Free, reliable, global CDN |
 | **GitHub Actions** | Latest | CI/CD | Integrated with repository, secure |
 | **HTMLHint** | Latest | HTML validation | Industry standard validator |
 | **Linkinator** | v6 | Link checking | Reliable, actively maintained |
+| **npm** | Latest | Package management | JavaScript dependency management |
 
 ### 8.3 External Dependencies
 
 | Dependency | Type | Risk Level | Mitigation |
 |------------|------|------------|------------|
-| **GitHub Pages** | Infrastructure | LOW | 99.9% SLA, documented in THREAT_MODEL.md |
+| **AWS CloudFront** | Infrastructure | LOW | 99.95% SLA, GitHub Pages DR |
+| **AWS S3** | Infrastructure | LOW | Cross-region replication, versioning |
+| **AWS Route 53** | Infrastructure | LOW | 100% SLA, health checks |
+| **GitHub Pages** | Infrastructure (DR) | LOW | 99.9% SLA |
+| **Chart.js CDN** | External Library | LOW | SRI hash validation, trusted CDN |
+| **D3.js CDN** | External Library | LOW | SRI hash validation, trusted CDN |
 | **Google Fonts** | CDN | LOW | Cached, fallback fonts available |
 | **CIA Platform** | External Service | LOW | Independent service, documented links |
 
@@ -611,19 +665,22 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 
 | Decision | Rationale | Trade-offs |
 |----------|-----------|------------|
-| **Static HTML/CSS Only** | Eliminates XSS, SQLi, CSRF vulnerabilities | Limited interactivity |
-| **GitHub Pages Hosting** | Free, reliable, global CDN, HTTPS by default | Platform dependency |
+| **Interactive Dashboards (Chart.js/D3.js)** | Rich data visualization, modern UX | Increases attack surface, requires JavaScript |
+| **AWS CloudFront Primary** | 600+ PoPs, DDoS protection, 99.95% SLA | Cost for high traffic, vendor lock-in |
+| **GitHub Pages DR** | Free, reliable secondary deployment | Platform dependency |
 | **External CIA Platform** | Reuse existing OSINT infrastructure | External service dependency |
-| **No JavaScript** | Reduces attack surface, improves performance | No dynamic features |
+| **Client-Side Rendering** | No server-side code, reduced attack surface | Browser compatibility requirements |
 | **Multi-language Files** | SEO optimization, clear URL structure | File duplication |
+| **SRI for CDN Resources** | Supply chain security, tamper detection | Requires version pinning, update coordination |
 
 ### 11.2 Architecture Principles
 
-1. **Security by Design:** Static files eliminate common web vulnerabilities
-2. **Defense in Depth:** Multiple security layers (network, application, access control)
-3. **Simplicity:** Minimal technology stack reduces maintenance burden
+1. **Security by Design:** Dual deployment with automatic failover, defense-in-depth
+2. **Defense in Depth:** Multiple security layers (AWS Shield, CSP, SRI, OIDC)
+3. **Resilience:** Multi-region storage, cross-region replication, automatic failover
 4. **Transparency:** Open source, public ISMS, documented architecture
-5. **Performance:** CDN caching, no JavaScript, optimized assets
+5. **Performance:** CDN caching, client-side rendering, optimized assets
+6. **Usability:** Interactive dashboards with modern visualizations
 
 ## 12. Related Documentation
 
@@ -645,4 +702,4 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 - **Path:** /ARCHITECTURE.md
 - **Format:** Markdown with Mermaid diagrams
 - **Classification:** Public
-- **Next Review:** 2026-04-29
+- **Next Review:** 2026-05-10
