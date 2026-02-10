@@ -1,0 +1,14 @@
+# Temporary files
+*.tmp
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# Editor files
+.DS_Store
+Thumbs.db
+
+# Don't ignore CSV files - they should be committed
+!*.csv
