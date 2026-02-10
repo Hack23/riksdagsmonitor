@@ -7,7 +7,7 @@
 
 ## 🎯 Executive Summary
 
-This threat model analyzes security risks for Riksdagsmonitor using the STRIDE framework, attack trees, and MITRE ATT&CK mapping. The analysis identifies threats to the web platform infrastructure (AWS CloudFront, S3, Route 53, GitHub Pages DR) with 9 interactive Chart.js/D3.js dashboards, evaluates their likelihood and impact, and documents mitigations aligned with Hack23 AB's ISMS.
+This threat model analyzes security risks for Riksdagsmonitor using the STRIDE framework, attack trees, and MITRE ATT&CK mapping. The analysis identifies threats to the web platform infrastructure (AWS CloudFront, S3, Route 53, GitHub Pages DR) with 9 dashboard sections (4 functional Chart.js/D3.js dashboards, 5 placeholders), evaluates their likelihood and impact, and documents mitigations aligned with Hack23 AB's ISMS.
 
 **Key Findings:**
 - **High-Risk Threats:** 0 (All high-risk threats mitigated)
@@ -48,8 +48,8 @@ graph TB
 
 | Asset | Type | Classification | Value |
 |-------|------|----------------|-------|
-| Interactive Dashboards (9) | Application | Public | MEDIUM |
-| Chart.js/D3.js Code (300KB+) | Application | Public | MEDIUM |
+| Dashboard sections (9; 4 functional, 5 placeholders) | Application | Public | MEDIUM |
+| Chart.js/D3.js Code (150KB+ functional) | Application | Public | MEDIUM |
 | CIA Data (CSV files) | Data | Public | LOW |
 | GitHub Repository | Infrastructure | Internal | MEDIUM |
 | AWS S3 Buckets (us-east-1, eu-west-1) | Infrastructure | Internal | MEDIUM |

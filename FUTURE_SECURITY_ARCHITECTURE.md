@@ -502,7 +502,7 @@ graph LR
 | Tool Category | Current (2026) | Future (2027-2028) | Purpose |
 |---------------|----------------|-------------------|---------|
 | **SAST** | CodeQL | + Semgrep, SonarCloud | Enhanced code scanning |
-| **SCA** | Dependabot, npm audit | + Snyk, FOSSA | Better dependency insights |
+| **SCA** | Dependabot, dependency-review | + npm audit, Snyk, FOSSA | Better dependency insights |
 | **DAST** | None | OWASP ZAP, Burp Suite | Dynamic scanning of dashboards |
 | **Secret Scanning** | GitHub | + GitGuardian | Advanced secret detection |
 | **SBOM** | Manual | CycloneDX, SPDX | Automated generation (Chart.js, D3.js) |

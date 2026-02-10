@@ -9,7 +9,7 @@
 
 Riksdagsmonitor is a web platform providing Swedish Parliament intelligence with interactive dashboards (Chart.js/D3.js) and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS) and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
 
-**Security Posture:** Defense-in-depth web platform with dual-deployment architecture (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access (TLS 1.3), 9 interactive JavaScript dashboards, and comprehensive CI/CD security controls.
+**Security Posture:** Defense-in-depth web platform with dual-deployment architecture (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access (TLS 1.3), 9 dashboard sections (4 functional, 5 placeholders), and comprehensive CI/CD security controls.
 
 ## 1. 🏗️ System Overview
 
@@ -19,12 +19,12 @@ Riksdagsmonitor is a web platform providing Swedish Parliament intelligence with
 - Monitor Swedish Riksdag political activity
 - Provide real-time intelligence on 349 MPs
 - Track coalition stability and election predictions
-- Deliver 9 interactive CIA platform dashboards with Chart.js/D3.js
+- Deliver 9 dashboard sections with CIA platform data (4 functional: committee, coalition, election-cycle, risk/anomaly; 5 placeholders: party, seasonal, pre-election, ministry)
 - OSINT-powered political transparency
 
 **Scope:**
 - Web application with HTML/CSS/JavaScript (Chart.js, D3.js)
-- 9 interactive intelligence dashboards (300KB+ JavaScript)
+- 9 dashboard sections (4 functional with 150KB+ JavaScript, 5 placeholders with HTML structure only)
 - Multi-language support (14 languages)
 - CIA data integration with local CSV caching
 - AWS CloudFront + S3 hosting infrastructure (Primary)
@@ -377,7 +377,7 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 1. **AWS Infrastructure:** Trusted cloud provider with robust security
 2. **GitHub Infrastructure:** Trusted cloud provider with robust security (DR)
 3. **Client-Side Security:** Chart.js/D3.js libraries are secure and maintained
-4. **CDN Security:** jsDelivr and Cloudflare CDNs are trusted for Chart.js/D3.js delivery
+4. **CDN Security:** jsDelivr CDN is trusted for Chart.js/D3.js delivery (Cloudflare may be evaluated as future failover CDN)
 5. **Public Data:** All content is public information (Swedish Riksdag open data)
 6. **External Dependencies:** CIA platform (www.hack23.com/cia) maintains its own security
 7. **Browser Security:** Users have modern browsers with JavaScript enabled
