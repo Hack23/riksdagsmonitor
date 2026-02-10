@@ -170,196 +170,49 @@ graph LR
 
 ## 3. Component Architecture
 
-### 3.1 Committee Performance & Network Analytics Dashboard
-
-The Committee Dashboard is an interactive data visualization component using D3.js and Chart.js to analyze Swedish Riksdag committee performance.
-
-#### 3.1.1 Dashboard Architecture
+### 3.1 Static Website Structure
 
 ```mermaid
-graph TB
-    subgraph "User Interface Layer"
-        HTML[14 HTML Pages<br/>Multi-language Support]
-        CSS[styles.css<br/>Cyberpunk Theme]
+graph TD
+    subgraph "HTML Pages"
+        Index[index.html<br/>English]
+        LangSV[swedish-election-2026_sv.html<br/>Swedish]
+        LangDA[swedish-election-2026_da.html<br/>Danish]
+        LangNO[swedish-election-2026_no.html<br/>Norwegian]
+        LangOther[10 other languages...]
     end
     
-    subgraph "Visualization Layer"
-        D3Network[D3.js Network Diagram<br/>Force-directed Graph]
-        D3Heatmap[D3.js Productivity Matrix<br/>Heat Map Visualization]
-        ChartBar[Chart.js Bar Chart<br/>Committee Comparison]
-        ChartStacked[Chart.js Stacked Bar<br/>Decision Effectiveness]
-        ChartLine[Chart.js Line Chart<br/>Seasonal Patterns]
+    subgraph "Styling"
+        CSS[styles.css<br/>107KB]
+        Fonts[Google Fonts<br/>Inter, Orbitron]
     end
     
-    subgraph "Data Layer"
-        DataManager[Data Manager<br/>Fetch & Cache]
-        LocalStorage[Browser LocalStorage<br/>24-hour Cache]
+    subgraph "Configuration"
+        CNAME[CNAME<br/>riksdagsmonitor.com]
+        Sitemap[sitemap.xml<br/>14 pages]
+        Robots[robots.txt<br/>SEO config]
     end
     
-    subgraph "CIA Data Sources"
-        ProductivityCSV[distribution_committee_productivity_matrix.csv]
-        DecisionsCSV[view_riksdagen_committee_decisions.csv]
-        DocumentsCSV[distribution_annual_committee_documents.csv]
-        BallotCSV[view_riksdagen_committee_ballot_decision_party_summary.csv]
-        SeasonalCSV[percentile_seasonal_activity_patterns.csv]
+    subgraph "Documentation"
+        Readme[README.md]
+        Security[SECURITY_ARCHITECTURE.md]
+        Threat[THREAT_MODEL.md]
+        Workflows[WORKFLOWS.md]
+        Arch[ARCHITECTURE.md]
     end
     
-    HTML --> D3Network
-    HTML --> D3Heatmap
-    HTML --> ChartBar
-    HTML --> ChartStacked
-    HTML --> ChartLine
+    Index --> CSS
+    LangSV --> CSS
+    LangDA --> CSS
+    LangNO --> CSS
+    LangOther --> CSS
     
-    D3Network --> DataManager
-    D3Heatmap --> DataManager
-    ChartBar --> DataManager
-    ChartStacked --> DataManager
-    ChartLine --> DataManager
+    CSS --> Fonts
     
-    DataManager --> LocalStorage
-    DataManager --> ProductivityCSV
-    DataManager --> DecisionsCSV
-    DataManager --> DocumentsCSV
-    DataManager --> BallotCSV
-    DataManager --> SeasonalCSV
-    
-    CSS --> D3Network
-    CSS --> D3Heatmap
-    CSS --> ChartBar
-    CSS --> ChartStacked
-    CSS --> ChartLine
-    
-    style HTML fill:#4caf50
-    style DataManager fill:#2196f3
-    style ProductivityCSV fill:#9c27b0
-    style DecisionsCSV fill:#9c27b0
-    style DocumentsCSV fill:#9c27b0
-    style BallotCSV fill:#9c27b0
-    style SeasonalCSV fill:#9c27b0
+    style Index fill:#4caf50
+    style CSS fill:#2196f3
+    style Security fill:#f44336
 ```
-
-#### 3.1.2 Committee Dashboard Components
-
-| Component | Technology | Purpose | Interactive |
-|-----------|-----------|---------|-------------|
-| **Network Diagram** | D3.js v7 | Force-directed graph showing committee relationships | ✅ Yes (drag) |
-| **Productivity Matrix** | D3.js v7 | Heat map of productivity scores over time (2020-2026) | ✅ Yes (hover) |
-| **Committee Comparison** | Chart.js v4 | Bar chart comparing 15 committees | ✅ Yes (tooltips) |
-| **Decision Effectiveness** | Chart.js v4 | Stacked bar showing outcomes over years | ✅ Yes (tooltips) |
-| **Seasonal Patterns** | Chart.js v4 | Line chart of quarterly activity trends | ✅ Yes (tooltips) |
-
-#### 3.1.3 Data Integration
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant Browser
-    participant Dashboard as Committee Dashboard
-    participant Cache as LocalStorage Cache
-    participant CIA as CIA GitHub Raw
-    
-    User->>Browser: Load Page
-    Browser->>Dashboard: Initialize Dashboard
-    Dashboard->>Cache: Check Cache (24h TTL)
-    
-    alt Cache Hit
-        Cache-->>Dashboard: Return Cached Data
-    else Cache Miss
-        Dashboard->>CIA: Fetch CSV Files
-        CIA-->>Dashboard: Return Data
-        Dashboard->>Cache: Store in Cache
-    end
-    
-    Dashboard->>Browser: Parse CSV (Papa Parse)
-    Dashboard->>Browser: Render D3.js Visualizations
-    Dashboard->>Browser: Render Chart.js Charts
-    Browser->>User: Display Interactive Dashboard
-    
-    User->>Dashboard: Interact (drag, hover, click)
-    Dashboard->>Browser: Update Visualization
-    Browser->>User: Show Updated View
-    
-    Note over Cache: 24-hour cache TTL
-    Note over Dashboard: WCAG 2.1 AA compliant
-```
-
-#### 3.1.4 Accessibility Features
-
-The Committee Dashboard implements comprehensive WCAG 2.1 AA accessibility:
-
-| Feature | Implementation | Standard |
-|---------|---------------|----------|
-| **Keyboard Navigation** | Full support for tab, arrow keys, Enter/Space | WCAG 2.1.1 |
-| **Screen Reader Support** | Accessible tables (sr-only) with full data | WCAG 4.1.2 |
-| **Color Contrast** | All text meets 4.5:1 minimum contrast | WCAG 1.4.3 |
-| **Focus Indicators** | 3px outline with 2px offset, high contrast | WCAG 2.4.7 |
-| **ARIA Labels** | All interactive elements labeled | WCAG 4.1.2 |
-| **Alternative Text** | Descriptive aria-label for all visualizations | WCAG 1.1.1 |
-
-#### 3.1.5 Multi-Language Support
-
-Site shell and static content are available in 14 languages; the interactive committee dashboard (`#committee-dashboard`) is currently implemented in English only.
-
-| Language | Code | File | Translation Status |
-|----------|------|------|---------------------|
-| English | en | index.html | ✅ Complete (full dashboard + UI) |
-| Swedish | sv | index_sv.html | 🟡 Partial (page localized, dashboard EN-only) |
-| Danish | da | index_da.html | 🟡 Partial (page localized, dashboard EN-only) |
-| Norwegian | no | index_no.html | 🟡 Partial (page localized, dashboard EN-only) |
-| Finnish | fi | index_fi.html | 🟡 Partial (page localized, dashboard EN-only) |
-| German | de | index_de.html | 🟡 Partial (page localized, dashboard EN-only) |
-| French | fr | index_fr.html | 🟡 Partial (page localized, dashboard EN-only) |
-| Spanish | es | index_es.html | 🟡 Partial (page localized, dashboard EN-only) |
-| Dutch | nl | index_nl.html | 🟡 Partial (page localized, dashboard EN-only) |
-| Arabic | ar | index_ar.html | 🟡 Partial (RTL page localized, dashboard EN-only) |
-| Hebrew | he | index_he.html | 🟡 Partial (RTL page localized, dashboard EN-only) |
-| Japanese | ja | index_ja.html | 🟡 Partial (page localized, dashboard EN-only) |
-| Korean | ko | index_ko.html | 🟡 Partial (page localized, dashboard EN-only) |
-| Chinese | zh | index_zh.html | 🟡 Partial (page localized, dashboard EN-only) |
-
-#### 3.1.6 Committee Data Model
-
-15 Swedish Riksdag Committees tracked:
-
-```javascript
-const COMMITTEES = [
-  { code: 'AU', name: 'Foreign Affairs Committee', domain: 'Foreign Policy' },
-  { code: 'CU', name: 'Civil Affairs Committee', domain: 'Civil Law' },
-  { code: 'FiU', name: 'Finance Committee', domain: 'Economics' },
-  { code: 'FöU', name: 'Defense Committee', domain: 'National Security' },
-  { code: 'JuU', name: 'Justice Committee', domain: 'Justice' },
-  { code: 'KU', name: 'Constitutional Committee', domain: 'Constitution' },
-  { code: 'KrU', name: 'Cultural Affairs Committee', domain: 'Culture' },
-  { code: 'MjU', name: 'Environment Committee', domain: 'Environment' },
-  { code: 'NU', name: 'Business Committee', domain: 'Business' },
-  { code: 'SkU', name: 'Taxation Committee', domain: 'Taxation' },
-  { code: 'SoU', name: 'Social Insurance Committee', domain: 'Social Welfare' },
-  { code: 'TU', name: 'Transport Committee', domain: 'Transportation' },
-  { code: 'UbU', name: 'Education Committee', domain: 'Education' },
-  { code: 'UFöU', name: 'Foreign Defense Committee', domain: 'Security Policy' },
-  { code: 'UU', name: 'Foreign Affairs Sub-Committee', domain: 'Foreign Policy' }
-];
-```
-
-#### 3.1.7 Performance Optimization
-
-| Optimization | Implementation | Impact |
-|--------------|---------------|--------|
-| **Data Caching** | 24-hour LocalStorage cache | ↓ 95% network requests |
-| **CSV Parsing** | Papa Parse streaming | ↓ 60% parse time |
-| **Lazy Loading** | On-demand visualization rendering | ↓ 40% initial load |
-| **CDN Delivery** | jsDelivr with SRI hashes | ↓ 70% load time |
-| **Responsive Resize** | Debounced window resize (300ms) | ↓ 80% reflow |
-
-#### 3.1.8 Security Implementation
-
-| Security Control | Implementation | Standard |
-|-----------------|---------------|----------|
-| **Subresource Integrity** | SHA-384 SRI hashes for all CDN libraries | SRI |
-| **CSP Compliance** | Single inline back-to-top script allowed via CSP nonce; all other scripts from external CDN | CSP Level 3 |
-| **HTTPS Only** | All resources loaded over TLS 1.3 | TLS 1.3 |
-| **CORS Headers** | Proper CORS configuration for CIA data | CORS |
-| **XSS Prevention** | Restricted `innerHTML` for static templates; untrusted data via `textContent`/DOM APIs | OWASP |
 
 ### 3.2 External Integration Architecture
 

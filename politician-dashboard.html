@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Politician Career & Productivity Analytics | Riksdagsmonitor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/politician-dashboard.html">
+<meta name="description" content="Comprehensive politician career and productivity dashboard: Top 10 rankings, career trajectories, productivity metrics, and experience analysis for Sweden's 349 MPs.">
+<meta name="keywords" content="politician analytics, MP productivity, career trajectory, riksdag politicians, Swedish parliament, legislative output, committee activity">
+<meta name="robots" content="index, follow">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Politician Career & Productivity Analytics">
+<meta property="og:description" content="Interactive dashboard tracking career trajectories and productivity metrics for Sweden's 349 MPs">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/politician-dashboard.html">
+<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" 
+        integrity="sha384-e6cc9LaIG7xZ3XD5B+jtr1NhTWPQGQdRCh6xiZ+ZFUtWCpg4ycv3Sh+SkZoopvUY" 
+        crossorigin="anonymous"></script>
+
+<style>
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--primary-cyan, #00d9ff);
+  margin-bottom: 1rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.chart-card {
+  background: var(--mid-bg, #1a1e3d);
+  border: 1px solid var(--primary-cyan, #00d9ff);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
+}
+
+.chart-card h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  color: var(--light-text, #e0e0e0);
+  margin-bottom: 1rem;
+}
+
+.chart-card-spacing {
+  margin-top: 2rem;
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 400px;
+  margin-top: 1rem;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 2rem;
+  color: var(--primary-cyan, #00d9ff);
+}
+
+.error-message {
+  background: rgba(255, 0, 110, 0.1);
+  border: 1px solid var(--primary-magenta, #ff006e);
+  border-radius: 4px;
+  padding: 1rem;
+  color: var(--primary-magenta, #ff006e);
+  margin: 1rem 0;
+}
+
+.wip-banner {
+  background: rgba(255, 190, 11, 0.15);
+  border: 2px solid var(--primary-yellow, #ffbe0b);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.wip-banner h2 {
+  color: var(--primary-yellow, #ffbe0b);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wip-banner p {
+  color: var(--light-text, #e0e0e0);
+  margin: 0.5rem 0 0 0;
+}
+
+.top10-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.top10-list li {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: rgba(0, 217, 255, 0.05);
+  border-left: 3px solid var(--primary-cyan, #00d9ff);
+  border-radius: 4px;
+}
+
+.top10-list .rank {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-cyan, #00d9ff);
+  min-width: 3rem;
+  text-align: center;
+}
+
+.top10-list .name {
+  flex: 1;
+  color: var(--light-text, #e0e0e0);
+}
+
+.top10-list .party {
+  font-size: 0.875rem;
+  color: var(--primary-yellow, #ffbe0b);
+  margin-left: 1rem;
+}
+
+.top10-list .score {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--primary-magenta, #ff006e);
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    height: 300px;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+<nav>
+<div class="logo">
+<a href="index.html">Riksdagsmonitor</a>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="politician-dashboard.html" class="active">Politician Dashboard</a></li>
+<li><a href="index.html#data-sources">Data Sources</a></li>
+<li><a href="index.html#about">About</a></li>
+</ul>
+</nav>
+</header>
+
+<main id="main-content">
+<div class="dashboard-container">
+<div class="dashboard-header">
+<h1>👤 Politician Career & Productivity Analytics</h1>
+<p>Comprehensive analysis of Sweden's 349 Members of Parliament: career trajectories, productivity metrics, and influence rankings based on CIA intelligence data.</p>
+</div>
+
+<!-- WIP Banner -->
+<div class="wip-banner" role="alert">
+<h2>⚠️ Work In Progress - Demo Data</h2>
+<p>This dashboard is currently under development and displays <strong>placeholder/sample data</strong> for demonstration purposes.</p>
+<p>Real CIA CSV data integration is pending. Do not use these visualizations for decision-making.</p>
+</div>
+
+<div class="dashboard-grid">
+<!-- Top 10 Most Productive -->
+<div class="chart-card">
+<h2>📊 Top 10 Most Productive</h2>
+<div id="top10-productive-container">
+<div class="loading-spinner">Loading data...</div>
+</div>
+</div>
+
+<!-- Top 10 Most Influential -->
+<div class="chart-card">
+<h2>🌟 Top 10 Most Influential</h2>
+<div id="top10-influential-container">
+<div class="loading-spinner">Loading data...</div>
+</div>
+</div>
+
+<!-- Top 10 Rising Stars -->
+<div class="chart-card">
+<h2>⭐ Top 10 Rising Stars</h2>
+<div id="top10-rising-stars-container">
+<div class="loading-spinner">Loading data...</div>
+</div>
+</div>
+
+<!-- Top 10 Most Controversial -->
+<div class="chart-card">
+<h2>⚡ Top 10 Most Controversial</h2>
+<div id="top10-controversial-container">
+<div class="loading-spinner">Loading data...</div>
+</div>
+</div>
+</div>
+
+<!-- Career Trajectory Chart -->
+<div class="chart-card chart-card-spacing">
+<h2>📈 Career Trajectory Analysis</h2>
+<div class="chart-wrapper">
+<canvas id="career-trajectory-chart" role="img" aria-label="Career trajectory timeline chart showing MP career progression"></canvas>
+</div>
+</div>
+
+<!-- Productivity vs Influence -->
+<div class="chart-card chart-card-spacing">
+<h2>💼 Productivity vs. Influence</h2>
+<div class="chart-wrapper">
+<canvas id="productivity-influence-chart" role="img" aria-label="Scatter plot showing relationship between MP productivity and influence"></canvas>
+</div>
+</div>
+
+<!-- Experience Distribution -->
+<div class="chart-card chart-card-spacing">
+<h2>🎓 Experience Distribution</h2>
+<div class="chart-wrapper">
+<canvas id="experience-distribution-chart" role="img" aria-label="Bar chart showing distribution of MP experience levels"></canvas>
+</div>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h3>Riksdagsmonitor</h3>
+<p>Systematic transparency through data intelligence.</p>
+<p>Powered by <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener noreferrer">CIA Platform</a></p>
+</div>
+<div class="footer-section">
+<h3>Data Sources</h3>
+<ul>
+<li><a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">Riksdagen Open Data</a></li>
+<li><a href="https://www.regeringen.se/" target="_blank" rel="noopener noreferrer">Swedish Government</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Contact</h3>
+<p>Email: <a href="mailto:contact@riksdagsmonitor.com">contact@riksdagsmonitor.com</a></p>
+<p>GitHub: <a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">Hack23/riksdagsmonitor</a></p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Hack23 AB. Licensed under MIT. Built for transparency.</p>
+</div>
+</footer>
+
+<script src="js/politician-dashboard.js"></script>
+</body>
+</html>

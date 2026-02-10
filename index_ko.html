@@ -671,7 +671,275 @@
 		</section>
 	</main>
 	
-	<footer>
+	
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> 정당 성과 및 효과</h2>
+<p>50년 이상의 CIA 플랫폼 데이터로 스웨덴 정당에 대한 포괄적인 분석. 8개 정당의 효과 추세, 연립 역학 및 모멘텀 지표를 추적합니다.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>효과 추세 (1990-2026)</h3>
+<p>시간 경과에 따른 입법 생산성, 투표 일관성 및 정책 영향을 보여주는 역사적 정당 효과 점수.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>정당 비교 (현재 기간)</h3>
+<p>현재 입법 기간에 대한 정당 성과 메트릭의 비교 분석.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>연립 조정</h3>
+<p>연립 패턴 및 정당 간 협력 네트워크.</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>모멘텀 지표</h3>
+<p>백분위수 벤치마크(P50, P90)로 선거 궤적을 나타내는 정당 모멘텀 점수.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 연립 및 투표 패턴 분석</h2>
+<p>스웨덴 의회의 연립 역학, 정당 조정 및 투표 행동 패턴에 대한 대화형 분석.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>연립 네트워크 (대화형)</h3>
+<p>스웨덴 정당 간 연립 강도를 보여주는 힘 지향 그래프. 노드를 드래그하고 확대/축소하고 클릭하여 세부 정보를 확인하세요.</p>
+<div id="coalitionNetwork" role="img" aria-label="8개 스웨덴 정당 간의 관계를 보여주는 연립 네트워크 다이어그램"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>투표 이상 (최근 5년)</h3>
+<p>비정상적인 투표 패턴과 예상 행동에서 벗어난 정당 탈당을 강조하는 산점도.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="모든 정당의 편차 점수를 보여주는 투표 이상 산점도"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>정당 조정 히트맵</h3>
+<p>역사적 투표 기록을 기반으로 정당 간 투표 합의 수준을 보여주는 매트릭스 시각화.</p>
+<div id="alignmentHeatMap" role="img" aria-label="모든 정당 쌍 간의 투표 합의 비율을 보여주는 정당 조정 히트맵"></div>
+</div>
+
+<div class="chart-card">
+<h3>행동 패턴</h3>
+<p>모든 투표에서 당론 준수를 측정하는 정당 투표 일관성 점수.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="모든 정당의 투표 일관성 비율을 보여주는 행동 패턴 막대 차트"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>결정 트렌드 (1990-2026)</h3>
+<p>36년에 걸쳐 모든 정당의 연간 투표 활동 트렌드를 보여주는 역사적 타임라인.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="1990년부터 2026년까지 연간 투표량을 보여주는 결정 트렌드 타임라인"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>데이터 출처:</strong> CIA 플랫폼 인텔리전스 내보내기로 구동되는 시각화. 스웨덴 의회의 공개 데이터 API에서 매주 업데이트되는 데이터.
+</p>
+</section>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 계절별 활동 패턴 (2002-2025)</h2>
+<p class="subtitle">Z-점수 이상 탐지를 통한 분기별 분석</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="연도별 필터">
+<option value="all">모든 연도</option>
+</select>
+
+<select id="quarter-filter" aria-label="분기별 필터">
+<option value="all">모든 분기</option>
+<option value="1">Q1 - 겨울 회기</option>
+<option value="2">Q2 - 봄 회기</option>
+<option value="3">Q3 - 여름 휴회</option>
+<option value="4">Q4 - 가을 회기</option>
+</select>
+
+<select id="election-filter" aria-label="선거 상태별 필터">
+<option value="all">모두</option>
+<option value="election">선거 연도</option>
+<option value="non-election">비선거 연도</option>
+</select>
+
+<select id="classification-filter" aria-label="활동 분류별 필터">
+<option value="all">모든 분류</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>분기별 활동 히트맵 (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">연도 및 분기별 투표량 (Z-점수 포함).</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Z-점수 이상 탐지</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Z-점수 이상 탐지"></canvas>
+<p class="chart-description">통계적 이상값 (|Z| ≥ 2.0) 빨간색 표시.</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>분기별 평균 활동 (모든 연도)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="분기별 평균 활동 (모든 연도)"></canvas>
+<p class="chart-description">Q1-Q4 기준선 및 표준편차 밴드.</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>계절 패턴 분류</h3>
+<canvas id="classification-chart" role="img" aria-label="계절 패턴 분류"></canvas>
+<p class="chart-description">정상, 상승, 감소, 이상 패턴의 분포.</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>분기별 변화</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="분기별 변화"></canvas>
+<p class="chart-description">순차적 투표 변화 (% 및 절대값).</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 CIA 플랫폼의 데이터 | 매일 업데이트</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 Anomaly Detection & Early Warning System</h2>
+<p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Dismiss</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="severity-filter" aria-label="Filter by severity">
+<option value="all">All Severities</option>
+<option value="CRITICAL">🔴 Critical</option>
+<option value="HIGH">🟠 High</option>
+<option value="MODERATE">🟡 Moderate</option>
+<option value="LOW">🟢 Low</option>
+</select>
+<select id="type-filter" aria-label="Filter by anomaly type">
+<option value="all">All Types</option>
+<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
+<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
+<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
+<option value="NO_ANOMALY">No Anomaly</option>
+</select>
+<select id="direction-filter" aria-label="Filter by direction">
+<option value="all">All Directions</option>
+<option value="UNUSUALLY_HIGH">Unusually High</option>
+<option value="UNUSUALLY_LOW">Unusually Low</option>
+<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+</select>
+<select id="year-filter" aria-label="Filter by year">
+<option value="all">All Years</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Anomaly Timeline -->
+<div class="chart-card wide">
+<h3>Anomaly Timeline (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
+<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Z-Score Distribution</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
+<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+</div>
+
+<!-- Chart 3: Anomaly Type Breakdown -->
+<div class="chart-card">
+<h3>Anomaly Type Distribution</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
+<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>Severity Heat Map (Year × Quarter)</h3>
+<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
+<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+</div>
+
+<!-- Chart 5: Quarterly Anomaly Frequency -->
+<div class="chart-card">
+<h3>Anomaly Frequency by Quarter</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>Recent Anomalies (Last 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
+<p class="chart-description">Most recent anomalies with details</p>
+</div>
+</div>
+</section>
+
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ 정부 장관 위험 및 영향력</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>부처 위험 히트맵</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="부처 위험 히트맵"></div>
+</div>
+
+<div class="chart-card">
+<h3>가장 영향력 있는 10명의 장관</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="가장 영향력 있는 10명의 장관"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>부처 생산성 매트릭스</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="부처 생산성 매트릭스"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>결정 영향 트렌드</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="결정 영향 트렌드"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>테이블로 데이터 보기</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
+<footer>
 		<p>&copy; 2008-2026 | Hack23 AB (Org.nr 5595347807) |
 			<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
 			<a href="https://www.linkedin.com/company/hack23/">Company LinkedIn</a> |
@@ -686,6 +954,10 @@
 		</p>
 	</footer>
 
-<!-- Committee Dashboard JavaScript -->
+
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
+
 </body>
 </html>
