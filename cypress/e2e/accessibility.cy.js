@@ -43,7 +43,9 @@ describe('Accessibility (WCAG 2.1 AA)', () => {
       }
 
       if (!hasAssociatedLabel) {
-        expect(ariaLabel || ariaLabelledby).to.exist;
+        const hasAriaLabel = ariaLabel !== undefined && ariaLabel !== null && ariaLabel !== '';
+        const hasAriaLabelledby = ariaLabelledby !== undefined && ariaLabelledby !== null && ariaLabelledby !== '';
+        expect(hasAriaLabel || hasAriaLabelledby).to.be.true;
       }
     });
   });
@@ -59,11 +61,11 @@ describe('Accessibility (WCAG 2.1 AA)', () => {
   
   it('should be keyboard navigable', () => {
     // Start from body and use real Tab key events to move focus
-    cy.get('body').type('{tab}');
+    cy.get('body').tab();
     cy.focused().should('exist');
     
     // Press Tab again from the currently focused element
-    cy.focused().type('{tab}');
+    cy.focused().tab();
     cy.focused().should('exist');
   });
   

@@ -2028,9 +2028,7 @@ Performance tiers (ntile_party_tier: 1-4)
       const totalScore = baseScore + spike;
       anomalies.push({
         x: date.getTime(), // Use numeric timestamp
-        y: totalScore,
-        isCritical: totalScore > p99,
-        isWarning: totalScore > p90 && totalScore <= p99
+        y: totalScore
       });
     }
     
