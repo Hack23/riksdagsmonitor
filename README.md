@@ -2,6 +2,11 @@
 
 > Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency
 
+**Document Classification:** 🟢 Public  
+**Last Updated:** 2026-02-10  
+**Owner:** Hack23 AB (Org.nr 5595347807)  
+**Review Cycle:** Quarterly
+
 ## 🎯 Mission
 
 Riksdagsmonitor is a comprehensive intelligence platform for monitoring political activity in Sweden's Riksdag (Parliament). Built on the [Citizen Intelligence Agency (CIA)](https://github.com/Hack23/cia) platform, we provide systematic transparency through real-time analysis and 50+ years of historical data.
@@ -16,6 +21,64 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Hack23/riksdagsmonitor)
 
 **Security Policy:** Per [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), we maintain defense-in-depth architecture with comprehensive security controls and documentation
+
+## 📊 Information Classification
+
+Riksdagsmonitor follows Hack23 AB's Information Security Management System (ISMS) for data classification and handling:
+
+### Classification Levels
+
+| Classification | Description | Examples | Handling Requirements |
+|----------------|-------------|----------|----------------------|
+| 🟢 **Public** | Information intended for public disclosure | Website content, Swedish Riksdag open data, documentation | No restrictions, published on GitHub Pages |
+| 🟡 **Internal** | Information for internal use only | GitHub Actions secrets, deployment credentials | GitHub organization access only, MFA required |
+| 🟠 **Confidential** | Sensitive business information | Not applicable to this project | N/A |
+| 🔴 **Restricted** | Highly sensitive information | Not applicable to this project | N/A |
+
+### Data Inventory
+
+**Public Data (🟢):**
+- All website HTML/CSS content (14 languages)
+- Swedish Parliament data (MPs, votes, documents, committees)
+- Election results and statistics
+- Government budget and spending data
+- All source code and documentation
+
+**Internal Data (🟡):**
+- GitHub Personal Access Tokens (PATs)
+- AWS IAM credentials (ephemeral via OIDC)
+- GitHub Actions secrets
+- Deployment pipeline configurations
+
+**No Sensitive Data:**
+- ❌ No user accounts or authentication
+- ❌ No personally identifiable information (PII)
+- ❌ No financial transactions or payment data
+- ❌ No confidential government information
+
+### Data Handling Controls
+
+**Public Data:**
+- Published via GitHub Pages and AWS CloudFront
+- TLS 1.3 encryption in transit
+- No access controls required (intentionally public)
+- Version controlled via Git
+
+**Internal Data:**
+- Stored in GitHub Secrets (encrypted at rest)
+- AWS credentials via OIDC (no long-lived keys)
+- Accessed only via secure GitHub Actions workflows
+- Least privilege principle enforced
+- Regular rotation and audit
+
+### Compliance Alignment
+
+- **ISO 27001:2022 A.8** - Asset Management
+- **NIST CSF 2.0 PR.DS** - Data Security
+- **CIS Controls v8.1 Control 3** - Data Protection
+- **GDPR** - Not applicable (no personal data processing)
+
+See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for detailed security controls.
 
 ## ✨ Features
 

@@ -1,7 +1,9 @@
 # 🌐 Riksdagsmonitor Translation Guide
 
-**Version 1.0**  
+**Version:** 1.0  
 **Last Updated:** 2026-02-05  
+**Classification:** Public  
+**Owner:** Hack23 AB (Org.nr 5595347807)  
 **Repository:** [Hack23/riksdagsmonitor](https://github.com/Hack23/riksdagsmonitor)
 
 ---

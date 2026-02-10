@@ -1,7 +1,7 @@
 # 🛡️ Riksdagsmonitor - Security Architecture
 
-**Document Version:** 1.1  
-**Last Updated:** 2026-02-08  
+**Document Version:** 1.2  
+**Last Updated:** 2026-02-10  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -145,24 +145,65 @@ graph TB
 
 ### 2.3 Data Security
 
-**Data Classification:**
-- **Public Information:** All website content (Swedish Riksdag open data)
-- **Internal:** GitHub Actions secrets, deployment credentials
-- **No Sensitive Data:** No user data, no PII, no financial information
+**Information Classification:**
 
-**Data Protection:**
-- **In Transit:** 
-  - TLS 1.3 encryption (GitHub Pages default)
-  - HTTPS-only access enforced
-  - HSTS headers configured
-- **At Rest:**
-  - GitHub repository encryption at rest
-  - Immutable Git history for audit trail
+Following Hack23 AB ISMS information classification policy:
+
+| Classification | Data Types | Handling Requirements | Storage Location |
+|----------------|-----------|----------------------|-----------------|
+| 🟢 **Public** | Website content, Swedish Riksdag open data, documentation | No restrictions, TLS 1.3 in transit | GitHub repository, AWS S3, GitHub Pages |
+| 🟡 **Internal** | GitHub Actions secrets, AWS credentials, deployment configs | Encrypted at rest, MFA access, least privilege | GitHub Secrets, AWS Secrets Manager (ephemeral OIDC) |
+| 🟠 **Confidential** | Not applicable | N/A | N/A |
+| 🔴 **Restricted** | Not applicable | N/A | N/A |
+
+**Data Inventory:**
+- **Public Data:** 
+  - 14-language website (HTML/CSS)
+  - Swedish Parliament data (349 MPs, 50+ years)
+  - Election statistics, voting records
+  - Government budget data
+  - All source code and documentation
+- **Internal Data:**
+  - GitHub Personal Access Tokens (PATs)
+  - AWS IAM credentials (ephemeral via OIDC)
+  - GitHub Actions workflow secrets
+- **No Sensitive Data:**
+  - ❌ No user accounts or PII
+  - ❌ No financial transactions
+  - ❌ No confidential government information
+
+**Data Protection Controls:**
+
+**In Transit:**
+- TLS 1.3 encryption (AWS CloudFront + GitHub Pages)
+- HTTPS-only access enforced
+- HSTS headers configured (max-age=31536000)
+- Certificate transparency monitoring
+
+**At Rest:**
+- AWS S3 server-side encryption (AES-256)
+- GitHub repository encryption at rest
+- GitHub Secrets encryption (Libsodium sealed boxes)
+- Immutable Git history for audit trail
+- S3 versioning enabled for rollback capability
+
+**Access Controls:**
+- Public data: No authentication (intentionally public)
+- Internal data: GitHub MFA, SSH keys, GPG signing
+- AWS credentials: Ephemeral OIDC tokens only (no long-lived keys)
+- Least privilege IAM roles
+
+**Data Lifecycle:**
+- **Creation:** Git commits with GPG signing
+- **Storage:** GitHub + AWS S3 with versioning
+- **Access:** TLS 1.3 encrypted channels only
+- **Retention:** Indefinite (public data), 90 days (AWS CloudTrail logs)
+- **Deletion:** Git history retained, S3 versioning for recovery
 
 **Control Mapping:**
-- ISO 27001: A.10.1 Cryptographic Controls
-- NIST CSF 2.0: PR.DS-2 (Data-in-transit protected)
-- CIS Controls v8.1: 3.10 (Encrypt Sensitive Data in Transit)
+- ISO 27001: A.8.2 (Information classification), A.10.1 (Cryptographic controls)
+- NIST CSF 2.0: PR.DS-1 (Data-at-rest protected), PR.DS-2 (Data-in-transit protected)
+- CIS Controls v8.1: 3.1 (Establish data management), 3.10 (Encrypt data in transit)
 
 ### 2.4 Network Security
 
@@ -254,11 +295,12 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 | Control | Implementation | Status |
 |---------|----------------|--------|
+| A.8.2 | Information classification scheme, data inventory, handling controls | ✅ Implemented |
 | A.9.2 | GitHub MFA, SSH keys, GPG signing | ✅ Implemented |
 | A.9.4 | Repository permissions, least privilege | ✅ Implemented |
-| A.10.1 | TLS 1.3, HTTPS-only | ✅ Implemented |
-| A.12.4 | Git history, GitHub audit logs | ✅ Implemented |
-| A.13.1 | GitHub infrastructure, security headers | ✅ Implemented |
+| A.10.1 | TLS 1.3, HTTPS-only, encryption at rest | ✅ Implemented |
+| A.12.4 | Git history, GitHub audit logs, AWS CloudTrail | ✅ Implemented |
+| A.13.1 | AWS infrastructure, security headers | ✅ Implemented |
 | A.14.2 | Dependabot, CodeQL scanning | ✅ Implemented |
 | A.16.1 | Incident response procedures | ✅ Implemented |
 
@@ -266,23 +308,25 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 | Function | Category | Implementation |
 |----------|----------|----------------|
-| IDENTIFY | Asset Management | GitHub repository, static assets |
-| PROTECT | Access Control | GitHub authentication, MFA |
-| PROTECT | Data Security | TLS 1.3, HTTPS-only |
+| GOVERN | Asset Management | Information classification scheme, data inventory |
+| IDENTIFY | Asset Management | GitHub repository, static assets, data sources |
+| PROTECT | Access Control | GitHub authentication, MFA, AWS OIDC |
+| PROTECT | Data Security | TLS 1.3, HTTPS-only, encryption at rest |
 | DETECT | Security Monitoring | Dependabot, CodeQL, secret scanning |
-| RESPOND | Incident Response | Documented procedures |
-| RECOVER | Recovery Planning | Git rollback, GitHub Pages re-deploy |
+| RESPOND | Incident Response | Documented procedures, escalation paths |
+| RECOVER | Recovery Planning | Git rollback, S3 versioning, multi-region replication |
 
 ### 3.3 CIS Controls v8.1
 
 | IG | Control | Implementation |
 |----|---------|----------------|
+| IG1 | 3.1 Establish Data Management | Information classification policy, data inventory |
 | IG1 | 3.10 Encrypt Data in Transit | TLS 1.3, HTTPS-only |
 | IG1 | 5.1 Account Inventory | GitHub organization audit |
-| IG1 | 8.2 Collect Audit Logs | Git history, GitHub Actions logs |
-| IG2 | 6.8 Role-Based Access Control | GitHub repository permissions |
-| IG2 | 13.1 Security Event Alerting | GitHub security alerts |
-| IG2 | 16.1 Secure Development | Static site, no injection risks |
+| IG1 | 8.2 Collect Audit Logs | Git history, GitHub Actions logs, AWS CloudTrail |
+| IG2 | 6.8 Role-Based Access Control | GitHub repository permissions, AWS IAM |
+| IG2 | 13.1 Security Event Alerting | GitHub security alerts, AWS CloudWatch |
+| IG2 | 16.1 Secure Development | Static site, no injection risks, secure CI/CD |
 
 ## 4. 🛡️ Security Controls Summary
 
@@ -400,8 +444,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 | Role | Name | Date | Signature |
 |------|------|------|-----------|
-| Security Architect | James Pether Sörling, CISSP, CISM | 2026-01-29 | [Digital Signature] |
-| Repository Owner | Hack23 AB | 2026-01-29 | [Approved via Git Commit] |
+| Security Architect | James Pether Sörling, CISSP, CISM | 2026-02-10 | [Digital Signature] |
+| Repository Owner | Hack23 AB | 2026-02-10 | [Approved via Git Commit] |
 
 ---
 
@@ -410,4 +454,6 @@ Referrer-Policy: strict-origin-when-cross-origin
 - **Path:** /SECURITY_ARCHITECTURE.md
 - **Format:** Markdown
 - **Classification:** Public
-- **Next Review:** 2027-01-29
+- **Version:** 1.2
+- **Last Updated:** 2026-02-10
+- **Next Review:** 2027-02-10
