@@ -240,8 +240,8 @@ jobs:
    ```yaml
    - name: Fetch CIA exports
      env:
-       FORCE_REFRESH: ${{ inputs.force_refresh }}
-       EXPORT_TYPES: ${{ inputs.export_types }}
+       FORCE_REFRESH: ${{ github.event.inputs.force_refresh }}
+       EXPORT_TYPES: ${{ github.event.inputs.export_types }}
    ```
    
    **19 CIA Visualization Products:**
@@ -271,9 +271,13 @@ jobs:
 
 5. **Create PR with Updated Data**
    ```yaml
+   - name: Set PR date
+     id: pr_date
+     run: echo "date=$(date +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+
    - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
      with:
-       title: 'CIA Data Update - $(date +%Y-%m-%d)'
+       title: "CIA Data Update - ${{ steps.pr_date.outputs.date }}"
        branch: 'data-pipeline/cia-update-${{ github.run_number }}'
        assignees: data-pipeline-specialist
    ```
@@ -882,7 +886,8 @@ npm run validate-translations
 
 1. **Use Caching Aggressively**
    ```yaml
-   - uses: actions/cache@v5
+   # Note: Examples use SHA-pinned form for security (matching repo workflows)
+   - uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
      with:
        path: ~/.npm
        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}

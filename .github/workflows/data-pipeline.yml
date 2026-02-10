@@ -1,8 +1,11 @@
 name: CIA Data Pipeline
 
 on:
-  schedule:
-    - cron: '0 2 * * *'  # Daily at 02:00 UTC (03:00 CET in winter, 04:00 CEST in summer)
+  # NOTE: Schedule trigger disabled until CIA export fetch implementation is complete
+  # Once the real fetch script is implemented (replacing placeholder in line 84-91),
+  # uncomment the schedule trigger to enable daily automated data updates
+  # schedule:
+  #   - cron: '0 2 * * *'  # Daily at 02:00 UTC (03:00 CET in winter, 04:00 CEST in summer)
   workflow_dispatch:
     inputs:
       force_refresh:

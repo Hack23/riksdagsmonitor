@@ -62,12 +62,16 @@ jobs:
           TARGET_URL="${{ github.event.inputs.url || 'https://riksdagsmonitor.com' }}"
           echo "Auditing: $TARGET_URL"
           
-          # Construct Swedish URL (only if using default base URL)
-          if [ "${{ github.event.inputs.url }}" = "" ]; then
-            SWEDISH_URL="$TARGET_URL/index_sv.html"
+          # Construct Swedish URL based on the computed TARGET_URL
+          PROD_BASE_URL="https://riksdagsmonitor.com"
+          NORMALIZED_TARGET="${TARGET_URL%/}"
+          if [ "$NORMALIZED_TARGET" = "$PROD_BASE_URL" ]; then
+            SWEDISH_URL="$NORMALIZED_TARGET/index_sv.html"
           else
+            # For custom URLs, use as-is (user should provide full path)
             SWEDISH_URL="$TARGET_URL"
           fi
+          echo "Swedish URL: $SWEDISH_URL"
           
           # Run Lighthouse with retry logic (network can be flaky)
           MAX_RETRIES=3
@@ -144,7 +148,7 @@ jobs:
         run: |
           echo "## 🔍 Lighthouse Performance Audit" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Target**: \`${{ inputs.url || 'https://riksdagsmonitor.com' }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Target**: \`${{ github.event.inputs.url || 'https://riksdagsmonitor.com' }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ -n "${{ steps.parse.outputs.performance }}" ]; then
