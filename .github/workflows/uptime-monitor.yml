@@ -238,7 +238,7 @@ jobs:
       
       - name: Create incident issue
         if: failure() && steps.homepage.outcome == 'failure'
-        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         with:
           script: |
             const httpCode = '${{ steps.homepage.outputs.http_code }}';
@@ -278,7 +278,7 @@ jobs:
       
       - name: Close resolved incidents
         if: success() && steps.homepage.outcome == 'success'
-        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         with:
           script: |
             // Find open incident issues

@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-# CIA Data Directory
-
-This directory contains CSV data files from the [Citizen Intelligence Agency (CIA) Platform](https://github.com/Hack23/cia) used by various dashboards in the Riksdagsmonitor application.
-
-## Overview
-
-The CIA platform provides comprehensive Swedish Parliament (Riksdag) analytics with 50+ years of historical data. This directory stores local copies of sample data files for:
-
-- **Faster load times**: Local files load instantly vs. remote fetch
-- **Offline capability**: Dashboards work without internet connection
-- **Version control**: Track data changes over time
-- **Development**: Test dashboards without network dependency
-=======
 # CIA Platform Data Repository
 
 This directory contains CSV data files downloaded from the [CIA Platform](https://github.com/Hack23/cia) for use in Riksdagsmonitor dashboards.
@@ -22,19 +8,22 @@ This directory contains CSV data files downloaded from the [CIA Platform](https:
 - **Reliability**: Reduces dependency on external network availability
 - **Offline Capability**: Dashboards work even without internet connection
 - **Development**: Enables local testing without API rate limits
->>>>>>> main
 
 ## Directory Structure
 
 ```
 cia-data/
-<<<<<<< HEAD
 ├── election-cycle/          # Election cycle analysis (1994-2034)
 │   ├── view_election_cycle_comparative_analysis_sample.csv
 │   ├── view_election_cycle_decision_intelligence_sample.csv
 │   ├── view_election_cycle_predictive_intelligence_sample.csv
 │   └── view_election_cycle_temporal_trends_sample.csv
-└── README.md                # This file
+├── README.md                # This file
+├── download-csv.sh          # Automated download script
+├── data-manifest.json       # File metadata and field descriptions
+└── seasonal/                # Seasonal activity patterns data
+    ├── README.md
+    └── view_riksdagen_seasonal_activity_patterns_sample.csv
 ```
 
 ## Data Files
@@ -259,14 +248,6 @@ To add new data files:
 
 **Maintained by**: Hack23 AB  
 **Last Updated**: 2026-02-09
-=======
-├── README.md                    # This file
-├── download-csv.sh              # Automated download script
-├── data-manifest.json           # File metadata and field descriptions
-└── seasonal/                    # Seasonal activity patterns data
-    ├── README.md
-    └── view_riksdagen_seasonal_activity_patterns_sample.csv
-```
 
 ## Data Sources
 
@@ -376,4 +357,3 @@ For questions about the data or CIA platform:
 
 **Last Updated**: 2026-02-09  
 **Maintained by**: Hack23 AB
->>>>>>> main

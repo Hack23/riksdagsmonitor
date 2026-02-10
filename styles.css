@@ -1157,10 +1157,6 @@ a:hover {
   .nav-toggle:hover {
     background: rgba(0, 204, 102, 0.1);
   }
-}
-  }
-}
-
 @media (max-width: 480px) {
   .nav-container {
     padding: 0.75rem 0.75rem;
@@ -7216,7 +7212,6 @@ html[lang="he"] {
     outline: none;
   }
 }
-}
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
@@ -8552,13 +8547,6 @@ a:hover {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-  
-  .back-to-top:hover {
-    background: var(--primary-light);
-    box-shadow: 0 6px 16px rgba(0, 204, 102, 0.4);
-  }
-}
-
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .nav-container {
@@ -8679,8 +8667,6 @@ a:hover {
   
   .nav-toggle:hover {
     background: rgba(0, 204, 102, 0.1);
-  }
-}
   }
 }
 
@@ -10948,7 +10934,6 @@ footer {
 .faq-answer ol ol {
   margin-top: var(--spacing-sm);
   padding-left: var(--spacing-lg);
-}
 }
 
 .faq-answer strong {
@@ -14702,7 +14687,7 @@ html[lang="he"] {
     min-height: 400px;
   }
 }
-   ANOMALY DETECTION DASHBOARD STYLES
+/* ANOMALY DETECTION DASHBOARD STYLES
    ================================================== */
 
 
@@ -15049,7 +15034,10 @@ html[lang="he"] {
 @media (prefers-color-scheme: dark) {
   #anomaly-detection-dashboard {
     background: #1a1e3d;
-    color: #e0e0e0;   COALITION & VOTING PATTERN DASHBOARD
+    color: #e0e0e0;
+  }
+}
+/* COALITION & VOTING PATTERN DASHBOARD
    ================================================== */
 
 .dashboard-container {
