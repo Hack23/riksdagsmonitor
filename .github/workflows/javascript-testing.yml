@@ -136,7 +136,7 @@ jobs:
           path: dist/
       
       - name: Run Cypress E2E tests
-        uses: cypress-io/github-action@a04b1ce84e46e159fbd84a3f9d759e1e2ae8401e # v6.9.1
+        uses: cypress-io/github-action@84d178e4bbce871e23f2ffa3085898cde0e4f0ec # v7.1.2
         with:
           start: npm run preview
           wait-on: 'http://localhost:4173'
