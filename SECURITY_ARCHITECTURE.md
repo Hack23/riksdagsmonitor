@@ -1,15 +1,15 @@
 # 🛡️ Riksdagsmonitor - Security Architecture
 
-**Document Version:** 1.1  
-**Last Updated:** 2026-02-08  
+**Document Version:** 1.3  
+**Last Updated:** 2026-02-10  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
 ## 🎯 Executive Summary
 
-Riksdagsmonitor is a static website providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS) and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
+Riksdagsmonitor is a web platform providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS), [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md), and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
 
-**Security Posture:** Defense-in-depth static website with dual-deployment architecture (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access, and comprehensive CI/CD security controls.
+**Security Posture:** Defense-in-depth architecture with dual-deployment (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access, and comprehensive CI/CD security controls.
 
 ## 1. 🏗️ System Overview
 
@@ -19,12 +19,14 @@ Riksdagsmonitor is a static website providing Swedish Parliament intelligence an
 - Monitor Swedish Riksdag political activity
 - Provide real-time intelligence on 349 MPs
 - Track coalition stability and election predictions
-- Deliver CIA platform data visualizations to public
+- Deliver 9 dashboard sections with CIA platform data (4 functional: committee, coalition, election-cycle, risk/anomaly; 5 placeholders: party, seasonal, pre-election, ministry, anomaly detection)
+- OSINT-powered political transparency
 
 **Scope:**
-- Static HTML/CSS website
+- Web application with HTML/CSS/JavaScript (Chart.js, D3.js)
+- 9 dashboard sections (4 functional with 150KB+ JavaScript, 5 placeholders with HTML structure only)
 - Multi-language support (14 languages)
-- Integration with CIA platform for data visualization
+- CIA data integration with local CSV caching
 - AWS CloudFront + S3 hosting infrastructure (Primary)
 - GitHub Pages hosting infrastructure (Disaster Recovery)
 - AWS Route 53 DNS with health checks and automatic failover
@@ -145,41 +147,94 @@ graph TB
 
 ### 2.3 Data Security
 
-**Data Classification:**
-- **Public Information:** All website content (Swedish Riksdag open data)
-- **Internal:** GitHub Actions secrets, deployment credentials
-- **No Sensitive Data:** No user data, no PII, no financial information
+**Information Classification:**
 
-**Data Protection:**
-- **In Transit:** 
-  - TLS 1.3 encryption (GitHub Pages default)
-  - HTTPS-only access enforced
-  - HSTS headers configured
-- **At Rest:**
-  - GitHub repository encryption at rest
-  - Immutable Git history for audit trail
+Following Hack23 AB ISMS information classification policy:
+
+| Classification | Data Types | Handling Requirements | Storage / Access Method |
+|----------------|-----------|----------------------|------------------------|
+| 🟢 **Public** | Website content, Swedish Riksdag open data, documentation | No restrictions, TLS 1.3 in transit | GitHub repository, AWS S3, GitHub Pages (CDN) |
+| 🟡 **Internal** | GitHub Actions secrets, AWS credentials, deployment configs | Encrypted at rest, MFA access, least privilege | GitHub Secrets, AWS IAM (ephemeral STS/OIDC) |
+| 🟠 **Confidential** | Not applicable | N/A | N/A |
+| 🔴 **Restricted** | Not applicable | N/A | N/A |
+
+**Data Inventory:**
+- **Public Data:** 
+  - 14-language website (HTML/CSS)
+  - Swedish Parliament data (349 MPs, 50+ years)
+  - Election statistics, voting records
+  - Government budget data
+  - All source code and documentation
+- **Internal Data:**
+  - GitHub repository and Actions access tokens (if used, e.g., optional PATs for local tooling)
+  - AWS IAM credentials (ephemeral via OIDC)
+  - GitHub Actions workflow secrets
+- **No Sensitive End-User Data:**
+  - ❌ No end-user accounts or authentication features
+  - ❌ No collection of non-public personal data from site users
+  - ⚠️ Public personal data about Swedish public officials (e.g., names, person identifiers, roles) from Riksdag open data and cia-data datasets
+    - **Information classification:** 🟢 Public (openly available data)
+    - **Privacy classification:** Personal data – public-official (GDPR/PII handling still applies despite public availability)
+
+**Data Protection Controls:**
+
+**In Transit:**
+- TLS 1.3 encryption (AWS CloudFront + GitHub Pages)
+- HTTPS-only access enforced
+- HSTS headers configured (max-age=31536000)
+- Certificate transparency monitoring
+
+**At Rest:**
+- AWS S3 server-side encryption (AES-256)
+- GitHub repository encryption at rest
+- GitHub Secrets encryption (Libsodium sealed boxes)
+- Immutable Git history for audit trail
+- S3 versioning enabled for rollback capability
+
+**Access Controls:**
+- Public data: No authentication (intentionally public)
+- Internal data: GitHub MFA, SSH keys, GPG signing
+- AWS credentials: Ephemeral OIDC tokens only (no long-lived keys)
+- Least privilege IAM roles
+
+**Data Lifecycle:**
+- **Creation:** Git commits with GPG signing
+- **Storage:** GitHub + AWS S3 with versioning
+- **Access:** TLS 1.3 encrypted channels only
+- **Retention:** Indefinite (public data), 90 days (AWS CloudTrail logs)
+- **Deletion:** Git history retained, S3 versioning for recovery
 
 **Control Mapping:**
-- ISO 27001: A.10.1 Cryptographic Controls
-- NIST CSF 2.0: PR.DS-2 (Data-in-transit protected)
-- CIS Controls v8.1: 3.10 (Encrypt Sensitive Data in Transit)
+- ISO 27001: A.5.10 (Acceptable use - data classification), A.10.1 (Cryptographic controls)
+- NIST CSF 2.0: PR.DS-1 (Data-at-rest protected), PR.DS-2 (Data-in-transit protected)
+- CIS Controls v8.1: 3.1 (Establish data management), 3.10 (Encrypt data in transit)
 
 ### 2.4 Network Security
 
-**GitHub Pages Infrastructure:**
+**AWS CloudFront Infrastructure (Primary):**
+- **DDoS Protection:** AWS Shield Standard (automatic protection)
+- **CDN:** 600+ global edge locations
+- **WAF:** Available for application-layer protection (roadmap: 2027 Q2)
+- **TLS:** CloudFront managed certificates with TLS 1.3
+- **Firewall:** AWS infrastructure-level protection
+
+**GitHub Pages Infrastructure (Disaster Recovery):**
 - **DDoS Protection:** GitHub infrastructure-level protection
 - **CDN:** GitHub Pages CDN for global distribution
 - **Firewall:** GitHub-managed infrastructure firewall
 
-**Security Headers:**
+**Security Headers (Target Configuration - AWS CloudFront Response Headers Policy):**
 ```
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
 Strict-Transport-Security: max-age=31536000; includeSubDomains
 Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
+
+**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027).
 
 **Control Mapping:**
 - ISO 27001: A.13.1 Network Security Management
@@ -188,16 +243,49 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 ### 2.5 Application Security
 
-**Static Website Security:**
-- **No Server-Side Code:** Eliminates injection vulnerabilities
-- **No Database:** No SQL injection risk
-- **No User Input Processing:** No XSS attack surface
-- **External Data:** Read-only links to CIA platform
+**Web Application Security:**
+- **Client-Side JavaScript:** Chart.js and D3.js for interactive dashboards
+  - 3 external JS files loaded: `scripts/coalition-dashboard.js` (33KB), `scripts/committees-dashboard.js` (39KB), `js/election-cycle-dashboard.js` (46KB) ≈118KB
+  - 1 large inline script (946 lines, ~32KB) handling risk dashboard only (includes one anomaly chart within risk dashboard)
+  - 5 placeholder dashboard sections with HTML structure but no JavaScript initialization (future implementation):
+    - Party Performance Dashboard
+    - Seasonal Patterns Dashboard
+    - Pre-Election Monitoring Dashboard
+    - Ministry Dashboard
+    - Anomaly Detection Dashboard (standalone section with timeline/heatmap/distribution charts - distinct from single anomaly chart in risk dashboard)
+  - Total: ~150KB active JavaScript code (118KB external + 32KB inline; source size, transfer size smaller when compressed)
+- **XSS Mitigation:** Content Security Policy (CSP) headers with script-src restrictions
+- **Input Sanitization:** CIA CSV data is subjected to best-effort, non-blocking schema validation during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`); validation failures currently surface as warnings rather than blocking publication, and client-side code then parses this CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
+- **External Dependencies:** 
+  - Chart.js v4.4.1 (via CDN with SRI hash)
+  - chartjs-plugin-annotation v3.x (Chart.js annotation plugin, via CDN with SRI hash)
+  - D3.js v7 (via CDN with SRI hash)
+  - Google Fonts (trusted CDN)
+- **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` that is subject to non-blocking CI schema validation checks in pre-processing (e.g., `.github/workflows/validate-cia-data.yml`), with local caching for performance; the browser consumes this dataset which may contain validation warnings
+- **No User Input Processing:** Dashboards do not accept or process arbitrary user input; they display pre-processed CIA data generated upstream in CI/data pipelines that has passed non-blocking schema validation checks where configured
+- **No Server-Side Code:** Static hosting eliminates injection vulnerabilities
+
+**Dashboard Security:**
+- **9 Dashboard Sections (4 functional, 5 placeholders):**
+
+**Functional Dashboards (4):**
+1. **Committee Dashboard** (`scripts/committees-dashboard.js` 39KB) ✅
+2. **Coalition Dashboard** (`scripts/coalition-dashboard.js` 33KB) ✅
+3. **Election Cycle Dashboard** (`js/election-cycle-dashboard.js` 46KB) ✅
+4. **Risk Dashboard** (inline script ~32KB, includes one anomaly detection chart) ✅
+
+**Placeholder Dashboard Sections (5 - HTML structure only, no JavaScript):**
+5. **Party Performance Dashboard** - Canvas elements present, awaiting JS implementation
+6. **Seasonal Patterns Dashboard** - Canvas elements present, awaiting JS implementation
+7. **Pre-Election Monitoring Dashboard** - Canvas elements present, awaiting JS implementation
+8. **Ministry Dashboard** - Canvas elements present, awaiting JS implementation
+9. **Anomaly Detection Dashboard** - Standalone section with multiple canvas elements (anomaly-timeline-chart, zscore-distribution-chart, anomaly-type-chart, quarterly-frequency-chart), distinct from the single anomaly chart within risk dashboard, awaiting JS implementation
 
 **Dependency Management:**
-- CSS frameworks: Google Fonts (trusted CDN)
-- No JavaScript dependencies (static HTML only)
-- Regular dependency scanning via Dependabot
+- Chart.js and D3.js loaded via pinned CDN URLs with SRI; versions reviewed manually at least quarterly and after critical CVE disclosures
+- Subresource Integrity (SRI) hashes for CDN resources
+- Dependabot configured for GitHub Actions workflows (`.github/dependabot.yml`) and automated dependency risk assessment for repository-managed components via GitHub dependency-review and Dependabot alerts
+- Supply chain security scanning via CodeQL and OpenSSF Scorecards
 
 **Control Mapping:**
 - ISO 27001: A.14.2 Security in Development and Support
@@ -254,11 +342,12 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 | Control | Implementation | Status |
 |---------|----------------|--------|
+| A.8.2 | Information classification scheme, data inventory, handling controls | ✅ Implemented |
 | A.9.2 | GitHub MFA, SSH keys, GPG signing | ✅ Implemented |
 | A.9.4 | Repository permissions, least privilege | ✅ Implemented |
-| A.10.1 | TLS 1.3, HTTPS-only | ✅ Implemented |
-| A.12.4 | Git history, GitHub audit logs | ✅ Implemented |
-| A.13.1 | GitHub infrastructure, security headers | ✅ Implemented |
+| A.10.1 | TLS 1.3, HTTPS-only, encryption at rest | ✅ Implemented |
+| A.12.4 | Git history, GitHub audit logs, AWS CloudTrail | ✅ Implemented |
+| A.13.1 | AWS infrastructure, security headers | ✅ Implemented |
 | A.14.2 | Dependabot, CodeQL scanning | ✅ Implemented |
 | A.16.1 | Incident response procedures | ✅ Implemented |
 
@@ -266,23 +355,25 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 | Function | Category | Implementation |
 |----------|----------|----------------|
-| IDENTIFY | Asset Management | GitHub repository, static assets |
-| PROTECT | Access Control | GitHub authentication, MFA |
-| PROTECT | Data Security | TLS 1.3, HTTPS-only |
+| GOVERN | Asset Management | Information classification scheme, data inventory |
+| IDENTIFY | Asset Management | GitHub repository, static assets, data sources |
+| PROTECT | Access Control | GitHub authentication, MFA, AWS OIDC |
+| PROTECT | Data Security | TLS 1.3, HTTPS-only, encryption at rest |
 | DETECT | Security Monitoring | Dependabot, CodeQL, secret scanning |
-| RESPOND | Incident Response | Documented procedures |
-| RECOVER | Recovery Planning | Git rollback, GitHub Pages re-deploy |
+| RESPOND | Incident Response | Documented procedures, escalation paths |
+| RECOVER | Recovery Planning | Git rollback, S3 versioning, multi-region replication |
 
 ### 3.3 CIS Controls v8.1
 
 | IG | Control | Implementation |
 |----|---------|----------------|
+| IG1 | 3.1 Establish Data Management | Information classification policy, data inventory |
 | IG1 | 3.10 Encrypt Data in Transit | TLS 1.3, HTTPS-only |
 | IG1 | 5.1 Account Inventory | GitHub organization audit |
-| IG1 | 8.2 Collect Audit Logs | Git history, GitHub Actions logs |
-| IG2 | 6.8 Role-Based Access Control | GitHub repository permissions |
-| IG2 | 13.1 Security Event Alerting | GitHub security alerts |
-| IG2 | 16.1 Secure Development | Static site, no injection risks |
+| IG1 | 8.2 Collect Audit Logs | Git history, GitHub Actions logs, AWS CloudTrail |
+| IG2 | 6.8 Role-Based Access Control | GitHub repository permissions, AWS IAM |
+| IG2 | 13.1 Security Event Alerting | GitHub security alerts, AWS CloudWatch |
+| IG2 | 16.1 Secure Development | Static site with reduced injection surface; mitigated via CSP/SRI/safe DOM handling; secure CI/CD |
 
 ## 4. 🛡️ Security Controls Summary
 
@@ -293,17 +384,22 @@ Referrer-Policy: strict-origin-when-cross-origin
    - SSH key authentication with passphrase
    - GPG commit signing
    - Branch protection rules
+   - AWS OIDC authentication (no long-lived credentials)
 
 2. **Network Security:**
    - HTTPS-only access (TLS 1.3)
-   - Security headers (CSP, HSTS, X-Frame-Options)
-   - GitHub infrastructure DDoS protection
+   - Security headers (CSP, HSTS, X-Frame-Options, Permissions-Policy)
+   - AWS CloudFront DDoS protection (AWS Shield Standard)
+   - Route 53 health checks and automatic failover
+   - GitHub infrastructure DDoS protection (DR)
 
 3. **Development Security:**
-   - Static HTML/CSS only (no server-side code)
-   - No user input processing
-   - Dependency scanning via Dependabot
-   - Code quality checks in CI/CD
+   - HTML/CSS/JavaScript with Chart.js and D3.js
+   - CSP headers with SRI for CDN resources
+   - No user input processing (display CIA data only)
+   - Dependency scanning via GitHub Dependabot alerts
+   - Code quality checks in CI/CD (HTMLHint, linkinator)
+   - CIA data validation against JSON schemas
 
 ### 4.2 Detective Controls
 
@@ -334,24 +430,32 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 ### 5.1 Assumptions
 
-1. **GitHub Infrastructure:** Trusted cloud provider with robust security
-2. **Static Content:** No dynamic server-side processing eliminates common vulnerabilities
-3. **Public Data:** All content is public information (Swedish Riksdag open data)
-4. **External Dependencies:** CIA platform (www.hack23.com/cia) maintains its own security
+1. **AWS Infrastructure:** Trusted cloud provider with robust security
+2. **GitHub Infrastructure:** Trusted cloud provider with robust security (DR)
+3. **Client-Side Security:** Chart.js/D3.js libraries are secure and maintained
+4. **CDN Security:** jsDelivr CDN is trusted for Chart.js/D3.js delivery (Cloudflare may be evaluated as future failover CDN)
+5. **Public Data:** All content is public information (Swedish Riksdag open data)
+6. **External Dependencies:** CIA platform (www.hack23.com/cia) maintains its own security
+7. **Browser Security:** Users have modern browsers with JavaScript enabled
 
 ### 5.2 Constraints
 
-1. **GitHub Pages Limitations:**
+1. **AWS Infrastructure Limitations:**
+   - S3 static website limitations (no server-side code execution)
+   - CloudFront caching behavior (potential stale content)
+   - Cost constraints for high traffic scenarios
+
+2. **GitHub Pages Limitations (DR):**
    - No server-side code execution
    - No database access
    - Limited customization of HTTP headers
    - Fixed infrastructure (cannot modify underlying OS)
 
-2. **Static Website Limitations:**
-   - No user authentication capability
-   - No session management
-   - No server-side input validation
-   - Read-only data presentation
+3. **Client-Side JavaScript Limitations:**
+   - Requires JavaScript enabled in browser
+   - CSP `'unsafe-inline'` needed for Chart.js/D3.js
+   - Browser compatibility requirements (ES6+)
+   - Limited control over client execution environment
 
 ## 6. ⚠️ Risk Assessment
 
@@ -359,17 +463,23 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|-----------|--------|------------|
-| GitHub Platform Outage | Low | Medium | Documented in THREAT_MODEL.md |
-| DDoS Attack on GitHub | Low | Low | GitHub infrastructure protection |
+| AWS CloudFront/S3 Outage | Low | Medium | GitHub Pages DR, documented failover |
+| GitHub Platform Outage (DR) | Low | Low | AWS primary handles traffic |
+| DDoS Attack on AWS | Low | Low | AWS Shield Standard, CloudFront protection |
+| XSS via Chart.js/D3.js | Low | Medium | CSP headers, SRI hashes, trusted CDNs |
 | Compromised GitHub Account | Low | High | MFA, SSH keys, GPG signing |
-| Dependency Vulnerability | Medium | Low | Dependabot, rapid patching |
-| Content Defacement | Low | Medium | Git rollback, branch protection |
+| Chart.js/D3.js Vulnerability | Medium | Medium | Manual quarterly/CVE review, SRI validation, rapid version pin updates |
+| CIA Data Injection | Low | Medium | Schema validation, local CSV caching |
+| Content Defacement | Low | Medium | Git rollback, branch protection, dual deployment |
+| DNS Hijacking via Route 53 | Very Low | High | DNSSEC (planned), IAM least privilege |
 
 ### 6.2 Accepted Risks
 
-1. **No User Authentication:** Acceptable as website is intentionally public
-2. **GitHub Platform Dependency:** Acceptable given GitHub's security posture
-3. **External CIA Platform Dependency:** Acceptable with documented availability in THREAT_MODEL.md
+1. **Client-Side JavaScript:** Acceptable for interactive dashboards with CSP and SRI
+2. **AWS Platform Dependency:** Acceptable given AWS's security posture and GitHub Pages DR
+3. **GitHub Platform Dependency (DR):** Acceptable with AWS as primary
+4. **External CIA Platform Dependency:** Acceptable with documented availability in THREAT_MODEL.md
+5. **CSP 'unsafe-inline':** Acceptable for Chart.js/D3.js dashboard rendering (future: nonce-based CSP)
 
 ## 7. 🏛️ Security Governance
 
@@ -400,8 +510,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 | Role | Name | Date | Signature |
 |------|------|------|-----------|
-| Security Architect | James Pether Sörling, CISSP, CISM | 2026-01-29 | [Digital Signature] |
-| Repository Owner | Hack23 AB | 2026-01-29 | [Approved via Git Commit] |
+| Security Architect | James Pether Sörling, CISSP, CISM | 2026-02-10 | [Digital Signature] |
+| Repository Owner | Hack23 AB | 2026-02-10 | [Approved via Git Commit] |
 
 ---
 
@@ -410,4 +520,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 - **Path:** /SECURITY_ARCHITECTURE.md
 - **Format:** Markdown
 - **Classification:** Public
-- **Next Review:** 2027-01-29
+- **Version:** 1.3
+- **Last Updated:** 2026-02-10
+- **Next Review:** 2027-02-10
+- **Classification Framework:** [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)

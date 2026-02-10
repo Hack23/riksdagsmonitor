@@ -1,13 +1,11 @@
 name: Deploy
 on:
-<<<<<<< HEAD
+  push:
+    branches: ["main"]
   release:
     types: [published]
   workflow_dispatch:
-=======
-  push:
-    branches: ["main"]
->>>>>>> origin/main
+
 permissions:
   contents: read
   id-token: write
