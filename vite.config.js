@@ -9,7 +9,7 @@
  */
 
 import { defineConfig } from 'vite';
-import { ViteSRI } from 'vite-plugin-sri';
+import sri from 'vite-plugin-sri-gen';
 
 export default defineConfig({
   // Base configuration
@@ -63,18 +63,7 @@ export default defineConfig({
         manualChunks: {
           // Core visualization libraries
           'chart': ['chart.js', 'chartjs-plugin-annotation'],
-          'd3': ['d3'],
-          
-          // Dashboard modules
-          'dashboards': [
-            './js/party-dashboard.js',
-            './js/anomaly-detection-dashboard.js',
-            './js/seasonal-patterns-dashboard.js',
-            './js/pre-election-dashboard.js',
-            './js/politician-dashboard.js',
-            './js/ministry-dashboard.js',
-            './js/election-cycle-dashboard.js'
-          ]
+          'd3': ['d3']
         },
         
         // Asset file naming
@@ -121,8 +110,8 @@ export default defineConfig({
   // Plugins
   plugins: [
     // Generate Subresource Integrity (SRI) hashes for security
-    ViteSRI({
-      algorithms: ['sha384']
+    sri({
+      algorithm: 'sha384'
     })
   ],
   
