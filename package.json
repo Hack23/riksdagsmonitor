@@ -5,12 +5,21 @@
   "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
   "main": "index.html",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "e2e": "start-server-and-test preview http://localhost:4173 cypress:run",
     "sync-schemas": "node scripts/sync-cia-schemas.js",
     "validate-data": "node scripts/validate-against-cia-schemas.js",
     "check-updates": "node scripts/check-cia-schema-updates.js",
     "generate-types": "node scripts/generate-types-from-cia-schemas.js",
     "validate-translations": "node scripts/validate-translations.js",
-    "test": "npm run validate-data",
     "htmlhint": "sh -c 'htmlhint *.html; set -- news/*.html; if [ -e \"$1\" ]; then htmlhint \"$@\"; else echo \"No news/*.html files to lint\"; fi'",
     "serve": "python3 -m http.server 8080",
     "linkcheck": "linkinator http://localhost:8080/ --recurse"
@@ -26,7 +35,12 @@
     "politics",
     "osint",
     "transparency",
-    "intelligence"
+    "intelligence",
+    "vite",
+    "vitest",
+    "cypress",
+    "chart.js",
+    "d3"
   ],
   "author": "Hack23 AB",
   "license": "Apache-2.0",
@@ -36,10 +50,21 @@
   "homepage": "https://riksdagsmonitor.com",
   "dependencies": {
     "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1"
+    "ajv-formats": "^3.0.1",
+    "chart.js": "^4.4.1",
+    "chartjs-plugin-annotation": "^3.0.1",
+    "d3": "^7.9.0"
   },
   "devDependencies": {
-    "json-schema-to-typescript": "^15.0.3"
+    "@vitest/coverage-v8": "^2.1.8",
+    "@vitest/ui": "^2.1.8",
+    "cypress": "^13.16.1",
+    "happy-dom": "^15.11.7",
+    "json-schema-to-typescript": "^15.0.3",
+    "start-server-and-test": "^2.0.9",
+    "vite": "^6.0.7",
+    "vite-plugin-sri": "^1.0.1",
+    "vitest": "^2.1.8"
   },
   "engines": {
     "node": ">=20"
