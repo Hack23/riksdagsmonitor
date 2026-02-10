@@ -202,10 +202,15 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 **Web Application Security:**
 - **Client-Side JavaScript:** Chart.js and D3.js for interactive dashboards
-  - 3 external JS files loaded: `scripts/coalition-dashboard.js`, `scripts/committees-dashboard.js`, `js/election-cycle-dashboard.js`
-  - 1 large inline script (946 lines) handling risk and anomaly detection dashboards
-  - 4 placeholder dashboard sections (party, seasonal, pre-election, ministry) with HTML structure but no JavaScript initialization (future implementation)
-  - Total: ~120KB active JavaScript code for 4 functional dashboards
+  - 3 external JS files loaded: `scripts/coalition-dashboard.js` (33KB), `scripts/committees-dashboard.js` (39KB), `js/election-cycle-dashboard.js` (46KB) ≈118KB
+  - 1 large inline script (946 lines, ~32KB) handling risk dashboard only (includes one anomaly chart within risk dashboard)
+  - 5 placeholder dashboard sections with HTML structure but no JavaScript initialization (future implementation):
+    - Party Performance Dashboard
+    - Seasonal Patterns Dashboard
+    - Pre-Election Monitoring Dashboard
+    - Ministry Dashboard
+    - Anomaly Detection Dashboard (standalone section with timeline/heatmap/distribution charts - distinct from single anomaly chart in risk dashboard)
+  - Total: ~150KB active JavaScript code (118KB external + 32KB inline; source size, transfer size smaller when compressed)
 - **XSS Mitigation:** Content Security Policy (CSP) headers with script-src restrictions
 - **Input Sanitization:** CIA CSV data is schema-validated during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`) before publication; client-side code then parses this pre-validated CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
 - **External Dependencies:** 
@@ -218,15 +223,19 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 **Dashboard Security:**
 - **9 Dashboard Sections (4 functional, 5 placeholders):**
-  1. Party Performance Dashboard (placeholder - HTML structure only)
-  2. Committee Dashboard (`scripts/committees-dashboard.js`, 39KB) ✅
-  3. Coalition Dashboard (`scripts/coalition-dashboard.js`, 33KB) ✅
-  4. Election Cycle Dashboard (`js/election-cycle-dashboard.js`, 46KB) ✅
-  5. Seasonal Patterns Dashboard (placeholder - HTML structure only)
-  6. Pre-Election Monitoring Dashboard (placeholder - HTML structure only)
-  7. Anomaly Detection Dashboard (inline script) ✅
-  8. Ministry Dashboard (placeholder - HTML structure only)
-  9. Risk Dashboard (inline script) ✅
+
+**Functional Dashboards (4):**
+1. **Committee Dashboard** (`scripts/committees-dashboard.js` 39KB) ✅
+2. **Coalition Dashboard** (`scripts/coalition-dashboard.js` 33KB) ✅
+3. **Election Cycle Dashboard** (`js/election-cycle-dashboard.js` 46KB) ✅
+4. **Risk Dashboard** (inline script ~32KB, includes one anomaly detection chart) ✅
+
+**Placeholder Dashboard Sections (5 - HTML structure only, no JavaScript):**
+5. **Party Performance Dashboard** - Canvas elements present, awaiting JS implementation
+6. **Seasonal Patterns Dashboard** - Canvas elements present, awaiting JS implementation
+7. **Pre-Election Monitoring Dashboard** - Canvas elements present, awaiting JS implementation
+8. **Ministry Dashboard** - Canvas elements present, awaiting JS implementation
+9. **Anomaly Detection Dashboard** - Standalone section with multiple canvas elements (anomaly-timeline-chart, zscore-distribution-chart, anomaly-type-chart, quarterly-frequency-chart), distinct from the single anomaly chart within risk dashboard, awaiting JS implementation
 
 **Dependency Management:**
 - Regular Chart.js/D3.js version updates via Dependabot

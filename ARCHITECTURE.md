@@ -188,7 +188,7 @@ graph TD
         ExtJS1[scripts/committees-dashboard.js<br/>39KB - Committee]
         ExtJS2[scripts/coalition-dashboard.js<br/>33KB - Coalition]
         ExtJS3[js/election-cycle-dashboard.js<br/>46KB - Election Cycle]
-        Placeholders[5 Placeholder Sections<br/>Party, Seasonal, Pre-Election<br/>Ministry - HTML only, no JS]
+        Placeholders[5 Placeholder Sections<br/>Party, Seasonal, Pre-Election,<br/>Ministry, Anomaly Detection<br/>HTML only, no JS]
     end
     
     subgraph "Styling"

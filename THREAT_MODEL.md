@@ -51,7 +51,7 @@ graph TB
 | Dashboard sections (9; 4 functional, 5 placeholders) | Application | Public | MEDIUM |
 | Chart.js/D3.js Code (150KB+ functional) | Application | Public | MEDIUM |
 | CIA Data (CSV files) | Data | Public | LOW |
-| GitHub Repository | Infrastructure | Internal | MEDIUM |
+| GitHub Repository | Infrastructure | Public | MEDIUM |
 | AWS S3 Buckets (us-east-1, eu-west-1) | Infrastructure | Internal | MEDIUM |
 | AWS CloudFront Distribution | Infrastructure | Internal | MEDIUM |
 | Route 53 DNS Configuration | Infrastructure | Internal | HIGH |
