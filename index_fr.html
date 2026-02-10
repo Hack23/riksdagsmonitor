@@ -661,7 +661,7 @@
 <div class="chart-card">
 <h3>Alignement de Coalition</h3>
 <p>Modèles de coalition et réseaux de collaboration inter-partis.</p>
-<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<div id="partyCoalitionAlignment" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
 <span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
 </div>
 
@@ -724,11 +724,11 @@
 
 <!-- Filter -->
 <div class="dashboard-filters">
-<select id="year-filter" aria-label="Filtrer par année">
+<select id="seasonal-year-filter" aria-label="Filtrer par année">
 <option value="all">Toutes les années</option>
 </select>
 
-<select id="quarter-filter" aria-label="Filtrer par trimestre">
+<select id="seasonal-quarter-filter" aria-label="Filtrer par trimestre">
 <option value="all">Tous les trimestres</option>
 <option value="1">Q1 - Session d'hiver</option>
 <option value="2">Q2 - Session de printemps</option>
@@ -736,7 +736,7 @@
 <option value="4">Q4 - Session d'automne</option>
 </select>
 
-<select id="election-filter" aria-label="Filtrer par statut électoral">
+<select id="seasonal-election-filter" aria-label="Filtrer par statut électoral">
 <option value="all">Tous</option>
 <option value="election">Années électorales</option>
 <option value="non-election">Années non électorales</option>
@@ -923,7 +923,6 @@
 	</footer>
 <<<<<<< HEAD
 =======
-
 
 
 

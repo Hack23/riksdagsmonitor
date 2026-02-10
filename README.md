@@ -127,6 +127,10 @@ Riksdagsmonitor currently features 4 interactive intelligence dashboards built w
 - Responsive design (320px-1440px+)
 - CSP-compliant (SRI hashes on all CDN resources)
 
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+>>>>>>> main
 >>>>>>> origin/main
 ## 🔗 Data Sources
 
