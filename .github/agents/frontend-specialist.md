@@ -1,7 +1,7 @@
 ---
 name: frontend-specialist
 description: Expert in static HTML/CSS websites, responsive design, multi-language localization, and modern frontend best practices
-tools: ["view", "edit", "create", "bash", "search", "grep", "glob"]
+tools: ["*"]
 ---
 
 ## 📋 Required Context Files
