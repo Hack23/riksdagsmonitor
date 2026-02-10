@@ -1,0 +1,280 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 8 * * 1'  # Weekly on Monday at 8 AM UTC
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to audit (default: production site)'
+        type: string
+        default: 'https://riksdagsmonitor.com'
+        required: false
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  lighthouse:
+    name: Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+      
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+      
+      - name: Cache Lighthouse CLI
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-lighthouse-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-lighthouse-
+      
+      - name: Install Lighthouse CI
+        run: |
+          echo "📦 Installing Lighthouse CI..."
+          npm install -g @lhci/cli@0.14.x
+          lhci --version
+          echo "✅ Lighthouse CI installed"
+      
+      - name: Run Lighthouse on production site
+        id: lighthouse-prod
+        run: |
+          echo "🔍 Running Lighthouse audit on production..."
+          
+          TARGET_URL="${{ inputs.url || 'https://riksdagsmonitor.com' }}"
+          echo "Auditing: $TARGET_URL"
+          
+          # Run Lighthouse with retry logic (network can be flaky)
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            if lhci autorun \
+              --url="$TARGET_URL" \
+              --url="$TARGET_URL/index_sv.html" \
+              --collect.numberOfRuns=3 \
+              --collect.settings.chromeFlags="--no-sandbox --disable-gpu --headless" \
+              --assert.preset="lighthouse:recommended" \
+              --upload.target=filesystem \
+              --upload.outputDir=./lighthouse-results \
+              2>&1 | tee lighthouse.log; then
+              
+              echo "✅ Lighthouse audit completed"
+              break
+            else
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                echo "⚠️ Lighthouse audit failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+                sleep 10
+              else
+                echo "❌ Lighthouse audit failed after $MAX_RETRIES attempts"
+                exit 1
+              fi
+            fi
+          done
+      
+      - name: Parse Lighthouse results
+        id: parse
+        if: always()
+        run: |
+          echo "📊 Parsing Lighthouse results..."
+          
+          if [ -d lighthouse-results ] && [ "$(ls -A lighthouse-results)" ]; then
+            # Find the latest manifest
+            MANIFEST=$(find lighthouse-results -name "manifest.json" -type f | head -n 1)
+            
+            if [ -f "$MANIFEST" ]; then
+              # Extract Core Web Vitals and scores
+              PERFORMANCE=$(jq -r '.[0].summary.performance' "$MANIFEST" 2>/dev/null || echo "0")
+              ACCESSIBILITY=$(jq -r '.[0].summary.accessibility' "$MANIFEST" 2>/dev/null || echo "0")
+              BEST_PRACTICES=$(jq -r '.[0].summary."best-practices"' "$MANIFEST" 2>/dev/null || echo "0")
+              SEO=$(jq -r '.[0].summary.seo' "$MANIFEST" 2>/dev/null || echo "0")
+              
+              echo "performance=$PERFORMANCE" >> $GITHUB_OUTPUT
+              echo "accessibility=$ACCESSIBILITY" >> $GITHUB_OUTPUT
+              echo "best_practices=$BEST_PRACTICES" >> $GITHUB_OUTPUT
+              echo "seo=$SEO" >> $GITHUB_OUTPUT
+              
+              echo "📈 Scores: Performance=$PERFORMANCE, A11y=$ACCESSIBILITY, BP=$BEST_PRACTICES, SEO=$SEO"
+            else
+              echo "⚠️ No manifest.json found"
+            fi
+          else
+            echo "⚠️ No lighthouse-results directory found"
+          fi
+      
+      - name: Upload Lighthouse artifacts
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: lighthouse-results
+          path: |
+            lighthouse-results/
+            lighthouse.log
+          retention-days: 30
+          if-no-files-found: ignore
+      
+      - name: Generate performance summary
+        if: always()
+        run: |
+          echo "## 🔍 Lighthouse Performance Audit" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Target**: \`${{ inputs.url || 'https://riksdagsmonitor.com' }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -n "${{ steps.parse.outputs.performance }}" ]; then
+            echo "### Lighthouse Scores" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Category | Score | Status |" >> $GITHUB_STEP_SUMMARY
+            echo "|----------|-------|--------|" >> $GITHUB_STEP_SUMMARY
+            
+            # Performance
+            PERF="${{ steps.parse.outputs.performance }}"
+            PERF_INT=$(echo "$PERF * 100" | bc | cut -d. -f1)
+            PERF_STATUS="🔴"
+            [ $PERF_INT -ge 50 ] && PERF_STATUS="🟡"
+            [ $PERF_INT -ge 90 ] && PERF_STATUS="🟢"
+            echo "| **Performance** | ${PERF_INT}/100 | $PERF_STATUS |" >> $GITHUB_STEP_SUMMARY
+            
+            # Accessibility
+            A11Y="${{ steps.parse.outputs.accessibility }}"
+            A11Y_INT=$(echo "$A11Y * 100" | bc | cut -d. -f1)
+            A11Y_STATUS="🔴"
+            [ $A11Y_INT -ge 50 ] && A11Y_STATUS="🟡"
+            [ $A11Y_INT -ge 90 ] && A11Y_STATUS="🟢"
+            echo "| **Accessibility** | ${A11Y_INT}/100 | $A11Y_STATUS |" >> $GITHUB_STEP_SUMMARY
+            
+            # Best Practices
+            BP="${{ steps.parse.outputs.best_practices }}"
+            BP_INT=$(echo "$BP * 100" | bc | cut -d. -f1)
+            BP_STATUS="🔴"
+            [ $BP_INT -ge 50 ] && BP_STATUS="🟡"
+            [ $BP_INT -ge 90 ] && BP_STATUS="🟢"
+            echo "| **Best Practices** | ${BP_INT}/100 | $BP_STATUS |" >> $GITHUB_STEP_SUMMARY
+            
+            # SEO
+            SEO="${{ steps.parse.outputs.seo }}"
+            SEO_INT=$(echo "$SEO * 100" | bc | cut -d. -f1)
+            SEO_STATUS="🔴"
+            [ $SEO_INT -ge 50 ] && SEO_STATUS="🟡"
+            [ $SEO_INT -ge 90 ] && SEO_STATUS="🟢"
+            echo "| **SEO** | ${SEO_INT}/100 | $SEO_STATUS |" >> $GITHUB_STEP_SUMMARY
+            
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Performance targets
+            echo "### 🎯 Core Web Vitals Targets" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "- **First Contentful Paint (FCP)**: < 1.5s" >> $GITHUB_STEP_SUMMARY
+            echo "- **Largest Contentful Paint (LCP)**: < 2.5s" >> $GITHUB_STEP_SUMMARY
+            echo "- **Time to Interactive (TTI)**: < 3.0s" >> $GITHUB_STEP_SUMMARY
+            echo "- **Cumulative Layout Shift (CLS)**: < 0.1" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total Blocking Time (TBT)**: < 200ms" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Recommendations
+            echo "### 💡 Optimization Opportunities" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            if [ $PERF_INT -lt 90 ]; then
+              echo "**Performance** 🔴" >> $GITHUB_STEP_SUMMARY
+              echo "- Review Lighthouse report artifact for specific recommendations" >> $GITHUB_STEP_SUMMARY
+              echo "- Consider image optimization, CSS minification, JS bundling" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+            if [ $A11Y_INT -lt 90 ]; then
+              echo "**Accessibility** ⚠️" >> $GITHUB_STEP_SUMMARY
+              echo "- Review WCAG 2.1 AA compliance" >> $GITHUB_STEP_SUMMARY
+              echo "- Check color contrast, ARIA labels, keyboard navigation" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⚠️ No Lighthouse results available" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The audit may have failed. Check the workflow logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Audit timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Comment on PR (if PR context)
+        if: github.event_name == 'pull_request' && steps.parse.outputs.performance != ''
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const performance = '${{ steps.parse.outputs.performance }}';
+            const accessibility = '${{ steps.parse.outputs.accessibility }}';
+            const bestPractices = '${{ steps.parse.outputs.best_practices }}';
+            const seo = '${{ steps.parse.outputs.seo }}';
+            
+            const perfInt = Math.round(performance * 100);
+            const a11yInt = Math.round(accessibility * 100);
+            const bpInt = Math.round(bestPractices * 100);
+            const seoInt = Math.round(seo * 100);
+            
+            const getStatus = (score) => score >= 90 ? '🟢' : score >= 50 ? '🟡' : '🔴';
+            
+            const body = `## 🔍 Lighthouse Performance Audit
+            
+            | Category | Score | Status |
+            |----------|-------|--------|
+            | **Performance** | ${perfInt}/100 | ${getStatus(perfInt)} |
+            | **Accessibility** | ${a11yInt}/100 | ${getStatus(a11yInt)} |
+            | **Best Practices** | ${bpInt}/100 | ${getStatus(bpInt)} |
+            | **SEO** | ${seoInt}/100 | ${getStatus(seoInt)} |
+            
+            📥 [Download full Lighthouse report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.name,
+              body: body
+            });
+      
+      - name: Check performance thresholds
+        if: steps.parse.outputs.performance != ''
+        run: |
+          PERF=$(echo "${{ steps.parse.outputs.performance }} * 100" | bc | cut -d. -f1)
+          A11Y=$(echo "${{ steps.parse.outputs.accessibility }} * 100" | bc | cut -d. -f1)
+          
+          echo "📊 Checking performance thresholds..."
+          echo "Performance: $PERF/100 (target: 70+)"
+          echo "Accessibility: $A11Y/100 (target: 90+)"
+          
+          if [ $PERF -lt 70 ]; then
+            echo "⚠️ Performance score below threshold (70)"
+            echo "Consider optimizing assets and reducing bundle size"
+            # Don't fail for now - just warn
+            # exit 1
+          fi
+          
+          if [ $A11Y -lt 90 ]; then
+            echo "⚠️ Accessibility score below WCAG 2.1 AA threshold (90)"
+            echo "Review accessibility issues in Lighthouse report"
+            # Don't fail for now - just warn
+            # exit 1
+          fi
+          
+          echo "✅ Lighthouse audit complete"
