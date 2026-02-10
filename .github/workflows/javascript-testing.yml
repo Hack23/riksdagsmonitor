@@ -60,16 +60,8 @@ jobs:
       - name: Run Vitest unit tests
         run: npm run test:coverage
       
-      - name: Upload coverage reports
-        uses: codecov/codecov-action@5cd78f23119dd009b3d6a93ce24e0f9d65a80754 # v5.3.0
-        with:
-          files: ./coverage/lcov.info
-          flags: unittests
-          name: vitest-coverage
-          fail_ci_if_error: false
-      
       - name: Archive coverage results
-        uses: actions/upload-artifact@4b3e3d77b02b231558f806c3e3359c900c01ef58 # v4.6.0
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
         with:
           name: coverage-report
           path: coverage/
@@ -107,7 +99,7 @@ jobs:
           echo "✅ Build completed successfully"
       
       - name: Archive build artifacts
-        uses: actions/upload-artifact@4b3e3d77b02b231558f806c3e3359c900c01ef58 # v4.6.0
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
         with:
           name: build-dist
           path: dist/
@@ -144,7 +136,7 @@ jobs:
           path: dist/
       
       - name: Run Cypress E2E tests
-        uses: cypress-io/github-action@8c5c69c5aacddb4017bc9ed4f24bf7d3a1f1e0ab # v6.9.1
+        uses: cypress-io/github-action@a04b1ce84e46e159fbd84a3f9d759e1e2ae8401e # v6.9.1
         with:
           start: npm run preview
           wait-on: 'http://localhost:4173'
@@ -154,7 +146,7 @@ jobs:
       
       - name: Archive Cypress screenshots
         if: failure()
-        uses: actions/upload-artifact@4b3e3d77b02b231558f806c3e3359c900c01ef58 # v4.6.0
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
         with:
           name: cypress-screenshots
           path: cypress/screenshots/
@@ -162,7 +154,7 @@ jobs:
       
       - name: Archive Cypress videos
         if: always()
-        uses: actions/upload-artifact@4b3e3d77b02b231558f806c3e3359c900c01ef58 # v4.6.0
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
         with:
           name: cypress-videos
           path: cypress/videos/
