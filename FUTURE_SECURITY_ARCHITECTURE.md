@@ -11,8 +11,8 @@
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-01-29  
+**Document Version:** 1.1  
+**Last Updated:** 2026-02-10  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)  
 **Review Cycle:** Quarterly
@@ -21,7 +21,7 @@
 
 ## 🎯 Executive Summary
 
-This document outlines the future security architecture for Riksdagsmonitor over the next 3-5 years. The roadmap focuses on **proactive security evolution** rather than reactive patches, ensuring the platform remains secure against emerging threats including post-quantum cryptography, AI-powered attacks, and advanced persistent threats.
+This document outlines the future security architecture for Riksdagsmonitor over the next 3-5 years. The roadmap focuses on **proactive security evolution** rather than reactive patches, ensuring the web platform with interactive Chart.js/D3.js dashboards remains secure against emerging threats including post-quantum cryptography, AI-powered attacks, and advanced persistent threats.
 
 **Strategic Goals:**
 - 🔐 **Post-Quantum Readiness** - Cryptographic agility before quantum computers threaten current algorithms
@@ -51,13 +51,13 @@ This document outlines the future security architecture for Riksdagsmonitor over
 
 ```mermaid
 graph TB
-    subgraph "2026 Q1 Security Stack"
-        L1[🌐 Network: TLS 1.3, HTTPS-only, GitHub CDN]
-        L2[🛡️ Application: Static HTML/CSS, No server-side code]
-        L3[🔑 Access: GitHub MFA, SSH keys, GPG signing]
-        L4[📋 Integrity: Git history, Branch protection]
+    subgraph "2026 Q1 Security Stack (Current)"
+        L1[🌐 Network: TLS 1.3, HTTPS-only, AWS CloudFront + GitHub CDN]
+        L2[🛡️ Application: HTML/CSS/JavaScript, Chart.js/D3.js dashboards]
+        L3[🔑 Access: GitHub MFA, SSH keys, GPG signing, AWS OIDC]
+        L4[📋 Integrity: Git history, Branch protection, SRI hashes]
         L5[🔍 Monitoring: Dependabot, CodeQL, Secret scanning]
-        L6[🚨 Response: Documented procedures, Rollback capability]
+        L6[🚨 Response: Documented procedures, Rollback capability, Dual deployment]
     end
     
     L1 --> L2
@@ -75,16 +75,19 @@ graph TB
 ```
 
 **Strengths:**
-- ✅ LOW residual risk (5.52/10.0)
+- ✅ LOW residual risk (7.21/10.0)
 - ✅ Zero high-priority vulnerabilities
-- ✅ Static architecture eliminates common web vulnerabilities
+- ✅ Dual deployment with automatic failover (AWS + GitHub Pages)
+- ✅ Interactive dashboards with SRI hash validation
 - ✅ Comprehensive ISMS documentation
+- ✅ AWS OIDC authentication (no long-lived credentials)
 
 **Limitations:**
-- ⚠️ Single hosting provider (GitHub dependency)
+- ⚠️ CSP `'unsafe-inline'` required for Chart.js/D3.js (future: nonce-based CSP)
+- ⚠️ Client-side JavaScript increases attack surface (XSS risks)
+- ⚠️ CDN dependency for Chart.js/D3.js (supply chain risk)
 - ⚠️ No real-time threat intelligence integration
-- ⚠️ Limited observability (no APM)
-- ⚠️ No content encryption at rest (GitHub-managed)
+- ⚠️ Limited observability (no APM for client-side performance)
 
 ---
 
@@ -171,7 +174,7 @@ graph LR
 
 **Phase 3: Full PQC Migration (2028 Q1)**
 - Deprecate classical-only connections
-- Full PQC enforcement
+- Full PQC enforcement for AWS CloudFront
 - Certificate management automation
 - Documentation updates
 
@@ -179,6 +182,11 @@ graph LR
 - **Key Encapsulation:** CRYSTALS-Kyber (KEM)
 - **Digital Signatures:** CRYSTALS-Dilithium, FALCON
 - **Fallback:** Classical algorithms during transition
+
+**AWS Integration:**
+- CloudFront custom SSL certificate with PQC support
+- S3 presigned URLs with post-quantum signatures
+- Route 53 DNSSEC with PQC algorithms
 
 **Control Mapping:**
 - ISO 27001: A.10.1.1 (Cryptographic controls)
@@ -220,27 +228,28 @@ graph TB
 **Capabilities:**
 
 **1. Anomaly Detection (2026 Q4)**
-- Traffic pattern analysis via CloudFlare WAF (if migrated)
+- Traffic pattern analysis via AWS CloudWatch and CloudFront logs
 - Baseline establishment for normal behavior
 - Real-time alerting on deviations
 - Integration with GitHub Actions logs
 
 **2. Threat Intelligence (2027 Q1)**
 - Integration with threat intelligence feeds (MISP, OTX)
-- Automated IOC matching
-- Proactive blocking of known-bad actors
+- Automated IOC matching against CloudFront access logs
+- Proactive blocking of known-bad actors via AWS WAF
 - Threat actor profiling
 
 **3. Behavioral Analysis (2027 Q2)**
 - User interaction patterns (if analytics added)
-- Bot detection and mitigation
+- Bot detection and mitigation via AWS WAF
 - Session anomaly detection
 - Privacy-preserving analytics (differential privacy)
+- Client-side dashboard performance monitoring
 
 **4. Predictive Security (2027 Q3)**
-- Dependency vulnerability forecasting
+- Dependency vulnerability forecasting (Chart.js/D3.js)
 - Zero-day prediction models
-- Attack surface trend analysis
+- Attack surface trend analysis (JavaScript attack surface)
 - Risk score predictions
 
 **Privacy Considerations:**
@@ -282,10 +291,11 @@ graph TB
 - Reproducible builds
 
 **Network Isolation (2028 Q2)**
-- Content Security Policy Level 3
-- Subresource Integrity (SRI) for all external resources
+- Content Security Policy Level 3 with nonces (remove `'unsafe-inline'`)
+- Subresource Integrity (SRI) for all external resources (Chart.js, D3.js)
 - CORS policy enforcement
-- DNS-over-HTTPS (DoH)
+- DNS-over-HTTPS (DoH) via Route 53
+- AWS WAF integration with CloudFront
 
 **Control Mapping:**
 - ISO 27001: A.13.1 (Network security management)
@@ -321,19 +331,21 @@ graph TB
 **Components:**
 
 **1. Application Performance Monitoring (2027 Q1)**
-- Real User Monitoring (RUM)
+- Real User Monitoring (RUM) for Chart.js/D3.js dashboards
 - Synthetic monitoring from global locations
 - Performance regression detection
 - Lighthouse CI integration
+- Client-side error tracking (Sentry or similar)
 
 **Metrics:**
 - First Contentful Paint (FCP) < 1s
 - Time to Interactive (TTI) < 2s
 - Cumulative Layout Shift (CLS) < 0.05
+- Chart.js rendering performance < 500ms
 - Core Web Vitals monitoring
 
 **2. Security Information & Event Management (2027 Q3)**
-- Centralized log aggregation (GitHub + CDN logs)
+- Centralized log aggregation (GitHub + AWS CloudFront + S3 access logs)
 - Real-time security event correlation
 - Automated incident response workflows
 - Compliance reporting automation
@@ -341,7 +353,8 @@ graph TB
 **Integration:**
 - Elastic Stack (ELK) or Splunk
 - GitHub audit log streaming
-- CloudFlare WAF logs (if migrated)
+- AWS CloudTrail and CloudWatch Logs
+- CloudFront access logs
 - Automated alerting to PagerDuty/Opsgenie
 
 **3. Distributed Tracing (2028 Q1)**
@@ -387,10 +400,13 @@ gantt
 ### 4.2 Phase-by-Phase Breakdown
 
 **2026 Q3-Q4: Foundation**
-- ✅ Complete current ISMS documentation
+- ✅ Complete current ISMS documentation (DONE: Feb 2026)
+- ✅ AWS CloudFront + S3 deployment (DONE: Feb 2026)
+- ✅ Dual deployment with GitHub Pages DR (DONE: Feb 2026)
 - 🔄 Implement APM monitoring (Lighthouse CI)
 - 🔄 Enable GitHub Advanced Security features
 - 🔄 AI anomaly detection prototype
+- 🔄 Nonce-based CSP for Chart.js/D3.js (remove `'unsafe-inline'`)
 
 **2027 Q1-Q2: Early Adoption**
 - 🔐 PQC assessment and hybrid deployment
@@ -428,15 +444,15 @@ gantt
 
 ### 5.1 Hosting Platform Migration Considerations
 
-**Current:** GitHub Pages (Static hosting)  
+**Current:** AWS CloudFront + S3 (Multi-region, cross-region replication)  
 **Future Options:**
 
 | Platform | Pros | Cons | Timeline | Recommendation |
 |----------|------|------|----------|----------------|
-| **GitHub Pages** | Free, integrated, simple | Limited customization, single provider | Current | ✅ Stay for now |
-| **CloudFlare Pages** | Advanced WAF, global CDN, free SSL | Migration complexity | 2027 Q2 | 🟡 Evaluate |
-| **AWS S3 + CloudFront** | Full control, AWS ecosystem | Cost, complexity | 2028 Q1 | 🟢 Consider for scale |
-| **Vercel** | Excellent DX, preview deployments | Cost at scale | 2027 Q4 | 🟡 Alternative option |
+| **AWS CloudFront + S3** | 99.9% SLA, DDoS protection, multi-region | Cost, complexity | Current | ✅ Stay (already implemented) |
+| **GitHub Pages** | Free, integrated, simple | Limited customization, single provider | Current (DR) | ✅ Keep as DR |
+| **AWS WAF** | Advanced protection, rate limiting, geo-blocking | Additional cost | 2027 Q2 | 🟡 High priority |
+| **Multi-CDN Strategy** | Resilience, performance optimization | Complexity, cost | 2028 Q4 | 🟢 Consider for scale |
 
 **Decision Criteria:**
 - Cost-effectiveness for static content
@@ -445,9 +461,10 @@ gantt
 - Migration effort vs. benefit
 
 **Recommended Path:**
-- 2026-2027: Stay on GitHub Pages, maximize security features
-- 2027 Q2: CloudFlare Pages pilot for advanced WAF capabilities
-- 2028 Q1: AWS migration if dynamic features needed (API, backend)
+- 2026-2027: Stay on AWS CloudFront + S3, maximize security features
+- 2027 Q2: AWS WAF integration for advanced application-layer protection
+- 2028 Q1: Enhanced monitoring and observability (APM, SIEM)
+- 2028 Q4: Evaluate multi-CDN strategy if traffic scales significantly
 
 ---
 
@@ -455,27 +472,28 @@ gantt
 
 ```mermaid
 graph LR
-    Current[GitHub Pages CDN<br/>Basic global distribution] --> Enhanced[CloudFlare CDN<br/>Advanced WAF, Bot protection]
+    Current[AWS CloudFront + S3<br/>Multi-region deployment] --> Enhanced[AWS WAF Integration<br/>Advanced application protection]
     Enhanced --> Premium[Multi-CDN Strategy<br/>Resilience & performance]
     
-    style Current fill:#90caf9
+    style Current fill:#4caf50
     style Enhanced fill:#ff9800
     style Premium fill:#4caf50
 ```
 
 **Enhancements:**
 
-**CloudFlare Integration (2027 Q2)**
-- Advanced Web Application Firewall (WAF)
+**AWS WAF Integration (2027 Q2)**
+- Advanced Web Application Firewall (WAF) with CloudFront
 - Bot protection and rate limiting
-- DNSSEC and DNS-over-HTTPS (DoH)
-- Zero-trust network access (ZTNA)
+- Geo-blocking capabilities
+- Custom rule sets for dashboard protection
+- XSS and SQL injection prevention (defense-in-depth)
 
 **Multi-CDN Strategy (2028 Q4)**
-- Primary: CloudFlare
-- Failover: Fastly or AWS CloudFront
-- Automatic failover detection
-- Load balancing across CDNs
+- Primary: AWS CloudFront
+- Failover: Cloudflare or Fastly
+- Automatic failover detection via Route 53
+- Load balancing across CDNs for optimal performance
 
 ---
 
@@ -484,12 +502,13 @@ graph LR
 | Tool Category | Current (2026) | Future (2027-2028) | Purpose |
 |---------------|----------------|-------------------|---------|
 | **SAST** | CodeQL | + Semgrep, SonarCloud | Enhanced code scanning |
-| **SCA** | Dependabot | + Snyk, FOSSA | Better dependency insights |
-| **DAST** | None | OWASP ZAP, Burp Suite | Dynamic scanning |
+| **SCA** | Dependabot, dependency-review | + npm audit, Snyk, FOSSA | Better dependency insights |
+| **DAST** | None | OWASP ZAP, Burp Suite | Dynamic scanning of dashboards |
 | **Secret Scanning** | GitHub | + GitGuardian | Advanced secret detection |
-| **SBOM** | Manual | CycloneDX, SPDX | Automated generation |
-| **Container Scanning** | N/A | Trivy, Grype | If containerized |
-| **Fuzzing** | None | OSS-Fuzz | Input validation |
+| **SBOM** | Manual | CycloneDX, SPDX | Automated generation (Chart.js, D3.js) |
+| **Container Scanning** | N/A | N/A | Not applicable (static hosting) |
+| **Fuzzing** | None | OSS-Fuzz | Input validation for CIA data |
+| **Client-Side Security** | None | JSXray, Retire.js | JavaScript vulnerability detection |
 
 ---
 
@@ -561,19 +580,21 @@ graph TB
 | Risk ID | Future Threat | Likelihood (2030) | Impact | Mitigation | Timeline |
 |---------|---------------|-------------------|--------|------------|----------|
 | FR-01 | Quantum decryption of TLS | HIGH | CRITICAL | PQC migration | 2027-2028 |
-| FR-02 | AI-powered supply chain attack | MEDIUM | HIGH | SLSA Level 3, SBOM | 2027 |
-| FR-03 | GitHub platform compromise | LOW | HIGH | Multi-cloud strategy | 2028 |
-| FR-04 | DNS hijacking via BGP | MEDIUM | MEDIUM | DNSSEC, DoH | 2027 |
+| FR-02 | AI-powered supply chain attack (Chart.js/D3.js) | MEDIUM | HIGH | SLSA Level 3, SBOM, SRI | 2027 |
+| FR-03 | AWS infrastructure compromise | LOW | HIGH | Multi-CDN strategy, AWS security best practices | 2028 |
+| FR-04 | DNS hijacking via Route 53 | MEDIUM | MEDIUM | DNSSEC, DoH, IAM least privilege | 2027 |
 | FR-05 | Deepfake social engineering | MEDIUM | MEDIUM | MFA, training | 2026 |
-| FR-06 | IoT botnet DDoS | MEDIUM | LOW | CDN WAF, rate limiting | 2027 |
+| FR-06 | IoT botnet DDoS | MEDIUM | LOW | AWS WAF, rate limiting, AWS Shield | 2027 |
 | FR-07 | Zero-day in GitHub Actions | LOW | MEDIUM | SHA-pinning, attestations | Ongoing |
 | FR-08 | Regulatory non-compliance | MEDIUM | HIGH | ISMS evolution | Ongoing |
+| FR-09 | XSS in Chart.js/D3.js dashboards | MEDIUM | MEDIUM | CSP nonces, SRI, regular updates | 2027 |
+| FR-10 | Client-side data exfiltration | LOW | MEDIUM | CSP, browser security, monitoring | 2027 |
 
 ### 7.2 Residual Risk Evolution
 
 ```mermaid
 graph LR
-    Current[2026: 5.52/10.0<br/>LOW Risk] --> Enhanced[2027: 3.5/10.0<br/>VERY LOW Risk]
+    Current[2026: 7.21/10.0<br/>LOW Risk] --> Enhanced[2027: 4.5/10.0<br/>VERY LOW Risk]
     Enhanced --> Optimized[2030: 2.0/10.0<br/>MINIMAL Risk]
     
     style Current fill:#4caf50
@@ -582,9 +603,9 @@ graph LR
 ```
 
 **Target Risk Reduction:**
-- Current: 99.7% risk reduction
-- 2027: 99.85% risk reduction (PQC + AI security)
-- 2030: 99.9% risk reduction (Full zero-trust)
+- Current: 99.5% risk reduction (web platform with dashboards)
+- 2027: 99.75% risk reduction (PQC + AI security + nonce-based CSP)
+- 2030: 99.9% risk reduction (Full zero-trust + AWS WAF)
 
 ---
 
@@ -594,13 +615,14 @@ graph LR
 
 | Metric | Current (2026) | Target (2027) | Target (2030) |
 |--------|----------------|---------------|---------------|
-| **Residual Risk Score** | 5.52/10.0 | 3.5/10.0 | 2.0/10.0 |
+| **Residual Risk Score** | 7.21/10.0 | 4.5/10.0 | 2.0/10.0 |
 | **MTTR (Incidents)** | <17 min | <10 min | <5 min |
 | **Vulnerability Window** | <7 days | <24 hours | <4 hours |
 | **Compliance Score** | 85% | 95% | 99% |
 | **Security Automation** | 60% | 80% | 95% |
 | **Threat Detection Rate** | N/A | 95% | 99% |
 | **False Positive Rate** | N/A | <5% | <2% |
+| **Dashboard XSS Protection** | Basic (CSP) | Enhanced (nonce-based) | Advanced (isolation) |
 
 ### 8.2 Maturity Assessment
 
@@ -623,7 +645,7 @@ graph LR
 
 ## 9. 🤝 Conclusion
 
-This Future Security Architecture demonstrates Hack23 AB's commitment to **proactive security evolution** rather than reactive patching. By implementing post-quantum cryptography before it's necessary, AI-augmented security before attacks become fully autonomous, and zero-trust principles before breaches occur, Riksdagsmonitor will maintain its security leadership.
+This Future Security Architecture demonstrates Hack23 AB's commitment to **proactive security evolution** rather than reactive patching. By implementing post-quantum cryptography before it's necessary, AI-augmented security before attacks become fully autonomous, and zero-trust principles before breaches occur, Riksdagsmonitor will maintain its security leadership while delivering interactive Chart.js/D3.js dashboards.
 
 **Key Takeaways:**
 - 🔐 **Post-Quantum Ready by 2028** - Ahead of predicted quantum threat timeline
@@ -631,6 +653,8 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 - 🛡️ **Zero-Trust Architecture by 2028** - Comprehensive trust verification
 - 📊 **99.9% Risk Reduction by 2030** - Industry-leading security posture
 - 🏆 **ISO 27001 Certification Track** - Formal compliance validation
+- 🎨 **Nonce-Based CSP by 2027** - Eliminate `'unsafe-inline'` for Chart.js/D3.js
+- ☁️ **AWS WAF Integration by 2027** - Advanced application-layer protection
 
 **Alignment with Business Goals:**
 - 💼 Competitive advantage through security leadership
@@ -664,5 +688,5 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 - **Path:** /FUTURE_SECURITY_ARCHITECTURE.md
 - **Format:** Markdown with Mermaid diagrams
 - **Classification:** Public
-- **Next Review:** 2026-04-29 (Quarterly)
+- **Next Review:** 2026-05-10 (Quarterly)
 - **Change Management:** Requires Security Architect approval for major revisions
