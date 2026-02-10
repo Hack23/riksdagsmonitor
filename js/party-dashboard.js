@@ -734,7 +734,7 @@
    * Create Coalition Network Visualization
    */
   function createCoalitionNetwork(data) {
-    const container = document.getElementById('coalitionNetwork');
+    const container = document.getElementById('partyCoalitionAlignment');
     if (!container) return;
 
     const t = getTranslations();
