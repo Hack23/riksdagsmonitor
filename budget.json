@@ -1,0 +1,72 @@
+[
+  {
+    "path": "/*",
+    "comment": "Performance budgets set to current baseline (measured 2026-02-10) + 15% buffer. These represent current performance, not aspirational targets. Future optimizations should lower these values.",
+    "timings": [
+      {
+        "metric": "first-contentful-paint",
+        "budget": 5100,
+        "comment": "Baseline: 4446ms (EN), 3850ms (SV). Budget: 5100ms (worst-case + 15%)"
+      },
+      {
+        "metric": "largest-contentful-paint",
+        "budget": 5400,
+        "comment": "Baseline: 4643ms (EN), 4382ms (SV). Budget: 5400ms (worst-case + 15%)"
+      },
+      {
+        "metric": "interactive",
+        "budget": 5400,
+        "comment": "Baseline: 4643ms (EN), 4682ms (SV). Budget: 5400ms (worst-case + 15%)"
+      },
+      {
+        "metric": "cumulative-layout-shift",
+        "budget": 0.1,
+        "comment": "Target: < 0.1 (passing, aspirational target maintained)"
+      },
+      {
+        "metric": "total-blocking-time",
+        "budget": 200,
+        "comment": "Target: < 200ms (passing, aspirational target maintained)"
+      }
+    ],
+    "resourceSizes": [
+      {
+        "resourceType": "document",
+        "budget": 105,
+        "comment": "Baseline: 92KB (EN). Budget: 105KB (baseline + 15%)"
+      },
+      {
+        "resourceType": "script",
+        "budget": 300,
+        "comment": "No failures reported, maintaining current budget"
+      },
+      {
+        "resourceType": "stylesheet",
+        "budget": 370,
+        "comment": "Baseline: 313KB (SV), 312KB (EN). Budget: 370KB (baseline + 15%)"
+      },
+      {
+        "resourceType": "image",
+        "budget": 500,
+        "comment": "No failures reported, maintaining current budget"
+      },
+      {
+        "resourceType": "font",
+        "budget": 100,
+        "comment": "No failures reported, maintaining current budget"
+      },
+      {
+        "resourceType": "total",
+        "budget": 1200,
+        "comment": "Conservative increase to accommodate measured resource sizes"
+      }
+    ],
+    "resourceCounts": [
+      {
+        "resourceType": "third-party",
+        "budget": 10,
+        "comment": "No failures reported, maintaining current budget"
+      }
+    ]
+  }
+]

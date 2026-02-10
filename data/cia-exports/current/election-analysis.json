@@ -1,0 +1,128 @@
+{
+  "title": "Swedish Election 2026 Analysis",
+  "description": "Election forecasting and coalition scenario modeling",
+  "electionDate": "2026-09-13",
+  "lastUpdated": "2026-02-05T15:00:00Z",
+  "forecast": {
+    "parties": [
+      {
+        "id": "S",
+        "name": "Social Democrats",
+        "currentSeats": 107,
+        "predictedSeats": 95,
+        "change": -12,
+        "voteShare": 26.8,
+        "confidenceInterval": { "min": 88, "max": 102 }
+      },
+      {
+        "id": "SD",
+        "name": "Sweden Democrats",
+        "currentSeats": 73,
+        "predictedSeats": 82,
+        "change": 9,
+        "voteShare": 23.1,
+        "confidenceInterval": { "min": 76, "max": 88 }
+      },
+      {
+        "id": "M",
+        "name": "Moderates",
+        "currentSeats": 68,
+        "predictedSeats": 72,
+        "change": 4,
+        "voteShare": 20.3,
+        "confidenceInterval": { "min": 67, "max": 77 }
+      },
+      {
+        "id": "V",
+        "name": "Left Party",
+        "currentSeats": 24,
+        "predictedSeats": 28,
+        "change": 4,
+        "voteShare": 7.9,
+        "confidenceInterval": { "min": 24, "max": 32 }
+      },
+      {
+        "id": "C",
+        "name": "Centre Party",
+        "currentSeats": 24,
+        "predictedSeats": 22,
+        "change": -2,
+        "voteShare": 6.2,
+        "confidenceInterval": { "min": 18, "max": 26 }
+      },
+      {
+        "id": "KD",
+        "name": "Christian Democrats",
+        "currentSeats": 19,
+        "predictedSeats": 21,
+        "change": 2,
+        "voteShare": 5.9,
+        "confidenceInterval": { "min": 17, "max": 25 }
+      },
+      {
+        "id": "MP",
+        "name": "Green Party",
+        "currentSeats": 18,
+        "predictedSeats": 19,
+        "change": 1,
+        "voteShare": 5.4,
+        "confidenceInterval": { "min": 15, "max": 23 }
+      },
+      {
+        "id": "L",
+        "name": "Liberals",
+        "currentSeats": 16,
+        "predictedSeats": 10,
+        "change": -6,
+        "voteShare": 4.4,
+        "confidenceInterval": { "min": 0, "max": 15 }
+      }
+    ]
+  },
+  "coalitionScenarios": [
+    {
+      "name": "Tidö Coalition (Renewed)",
+      "probability": 35,
+      "composition": ["M", "KD", "SD", "L"],
+      "totalSeats": 185,
+      "majority": true,
+      "riskLevel": "moderate"
+    },
+    {
+      "name": "Left-Green Coalition",
+      "probability": 28,
+      "composition": ["S", "V", "MP", "C"],
+      "totalSeats": 164,
+      "majority": false,
+      "riskLevel": "high"
+    },
+    {
+      "name": "Grand Coalition",
+      "probability": 22,
+      "composition": ["S", "M", "C"],
+      "totalSeats": 189,
+      "majority": true,
+      "riskLevel": "low"
+    },
+    {
+      "name": "SD-Led Coalition",
+      "probability": 15,
+      "composition": ["SD", "M", "KD"],
+      "totalSeats": 175,
+      "majority": true,
+      "riskLevel": "high"
+    }
+  ],
+  "keyFactors": [
+    "Economic conditions",
+    "Immigration policy",
+    "Climate change priorities",
+    "Healthcare reform",
+    "NATO membership impact"
+  ],
+  "historicalContext": {
+    "turnoutTrend": "stable",
+    "volatilityIndex": 2.3,
+    "lastElectionTurnout": 87.2
+  }
+}

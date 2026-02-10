@@ -1,0 +1,239 @@
+{
+  "title": "Party Performance Dashboard",
+  "description": "Longitudinal analysis of party activities and effectiveness",
+  "lastUpdated": "2026-02-05T15:00:00Z",
+  "parties": [
+    {
+      "id": "S",
+      "partyName": "Social Democrats",
+      "shortName": "S",
+      "ideology": "Social Democracy",
+      "metrics": {
+        "seats": 107,
+        "voteShare": 30.3,
+        "memberCount": 107,
+        "documentsAuthored": 1247,
+        "motionsSubmitted": 523,
+        "motionsPassed": 187,
+        "successRate": 35.8
+      },
+      "voting": {
+        "totalVotes": 8734,
+        "cohesionScore": 89.4,
+        "rebellionRate": 3.2
+      },
+      "trends": {
+        "supportTrend": "declining",
+        "activityTrend": "stable",
+        "historicalPerformance": [
+          { "year": 2022, "seats": 107, "voteShare": 30.3 },
+          { "year": 2018, "seats": 100, "voteShare": 28.3 },
+          { "year": 2014, "seats": 113, "voteShare": 31.0 }
+        ]
+      }
+    },
+    {
+      "id": "SD",
+      "partyName": "Sweden Democrats",
+      "shortName": "SD",
+      "ideology": "National Conservatism",
+      "metrics": {
+        "seats": 73,
+        "voteShare": 20.5,
+        "memberCount": 73,
+        "documentsAuthored": 892,
+        "motionsSubmitted": 456,
+        "motionsPassed": 89,
+        "successRate": 19.5
+      },
+      "voting": {
+        "totalVotes": 5987,
+        "cohesionScore": 92.1,
+        "rebellionRate": 2.1
+      },
+      "trends": {
+        "supportTrend": "rising",
+        "activityTrend": "increasing",
+        "historicalPerformance": [
+          { "year": 2022, "seats": 73, "voteShare": 20.5 },
+          { "year": 2018, "seats": 62, "voteShare": 17.5 },
+          { "year": 2014, "seats": 49, "voteShare": 12.9 }
+        ]
+      }
+    },
+    {
+      "id": "M",
+      "partyName": "Moderates",
+      "shortName": "M",
+      "ideology": "Liberal Conservatism",
+      "metrics": {
+        "seats": 68,
+        "voteShare": 19.1,
+        "memberCount": 68,
+        "documentsAuthored": 1034,
+        "motionsSubmitted": 487,
+        "motionsPassed": 203,
+        "successRate": 41.7
+      },
+      "voting": {
+        "totalVotes": 5576,
+        "cohesionScore": 87.9,
+        "rebellionRate": 4.3
+      },
+      "trends": {
+        "supportTrend": "stable",
+        "activityTrend": "stable",
+        "historicalPerformance": [
+          { "year": 2022, "seats": 68, "voteShare": 19.1 },
+          { "year": 2018, "seats": 70, "voteShare": 19.8 },
+          { "year": 2014, "seats": 84, "voteShare": 23.3 }
+        ]
+      }
+    },
+    {
+      "id": "V",
+      "partyName": "Left Party",
+      "shortName": "V",
+      "ideology": "Democratic Socialism",
+      "metrics": {
+        "seats": 24,
+        "voteShare": 6.7,
+        "memberCount": 24,
+        "documentsAuthored": 387,
+        "motionsSubmitted": 234,
+        "motionsPassed": 45,
+        "successRate": 19.2
+      },
+      "voting": {
+        "totalVotes": 1968,
+        "cohesionScore": 94.2,
+        "rebellionRate": 1.8
+      },
+      "trends": {
+        "supportTrend": "stable",
+        "activityTrend": "stable",
+        "historicalPerformance": [
+          { "year": 2022, "seats": 24, "voteShare": 6.7 },
+          { "year": 2018, "seats": 28, "voteShare": 8.0 },
+          { "year": 2014, "seats": 21, "voteShare": 5.7 }
+        ]
+      }
+    },
+    {
+      "id": "C",
+      "partyName": "Centre Party",
+      "shortName": "C",
+      "ideology": "Agrarian Liberalism",
+      "metrics": {
+        "seats": 24,
+        "voteShare": 6.7,
+        "memberCount": 24,
+        "documentsAuthored": 412,
+        "motionsSubmitted": 198,
+        "motionsPassed": 76,
+        "successRate": 38.4
+      },
+      "voting": {
+        "totalVotes": 1968,
+        "cohesionScore": 82.3,
+        "rebellionRate": 6.7
+      },
+      "trends": {
+        "supportTrend": "declining",
+        "activityTrend": "stable",
+        "historicalPerformance": [
+          { "year": 2022, "seats": 24, "voteShare": 6.7 },
+          { "year": 2018, "seats": 31, "voteShare": 8.6 },
+          { "year": 2014, "seats": 22, "voteShare": 6.1 }
+        ]
+      }
+    },
+    {
+      "id": "KD",
+      "partyName": "Christian Democrats",
+      "shortName": "KD",
+      "ideology": "Christian Democracy",
+      "metrics": {
+        "seats": 19,
+        "voteShare": 5.3,
+        "memberCount": 19,
+        "documentsAuthored": 298,
+        "motionsSubmitted": 167,
+        "motionsPassed": 58,
+        "successRate": 34.7
+      },
+      "voting": {
+        "totalVotes": 1558,
+        "cohesionScore": 90.5,
+        "rebellionRate": 3.2
+      },
+      "trends": {
+        "supportTrend": "stable",
+        "activityTrend": "stable",
+        "historicalPerformance": [
+          { "year": 2022, "seats": 19, "voteShare": 5.3 },
+          { "year": 2018, "seats": 22, "voteShare": 6.3 },
+          { "year": 2014, "seats": 16, "voteShare": 4.6 }
+        ]
+      }
+    },
+    {
+      "id": "MP",
+      "partyName": "Green Party",
+      "shortName": "MP",
+      "ideology": "Green Politics",
+      "metrics": {
+        "seats": 18,
+        "voteShare": 5.1,
+        "memberCount": 18,
+        "documentsAuthored": 356,
+        "motionsSubmitted": 289,
+        "motionsPassed": 52,
+        "successRate": 18.0
+      },
+      "voting": {
+        "totalVotes": 1476,
+        "cohesionScore": 91.2,
+        "rebellionRate": 2.9
+      },
+      "trends": {
+        "supportTrend": "stable",
+        "activityTrend": "increasing",
+        "historicalPerformance": [
+          { "year": 2022, "seats": 18, "voteShare": 5.1 },
+          { "year": 2018, "seats": 16, "voteShare": 4.4 },
+          { "year": 2014, "seats": 25, "voteShare": 6.9 }
+        ]
+      }
+    },
+    {
+      "id": "L",
+      "partyName": "Liberals",
+      "shortName": "L",
+      "ideology": "Social Liberalism",
+      "metrics": {
+        "seats": 16,
+        "voteShare": 4.5,
+        "memberCount": 16,
+        "documentsAuthored": 267,
+        "motionsSubmitted": 145,
+        "motionsPassed": 48,
+        "successRate": 33.1
+      },
+      "voting": {
+        "totalVotes": 1312,
+        "cohesionScore": 79.8,
+        "rebellionRate": 8.2
+      },
+      "trends": {
+        "supportTrend": "declining",
+        "activityTrend": "stable",
+        "historicalPerformance": [
+          { "year": 2022, "seats": 16, "voteShare": 4.5 },
+          { "year": 2018, "seats": 20, "voteShare": 5.5 },
+          { "year": 2014, "seats": 19, "voteShare": 5.4 }
+        ]
+      }
+    }
+  ]
+}
