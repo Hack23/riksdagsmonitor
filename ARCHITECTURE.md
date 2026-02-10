@@ -90,7 +90,7 @@ graph TB
 
 | Component | Responsibility | Technology | Status |
 |-----------|---------------|------------|--------|
-| **Interactive Dashboards** | Data visualization | Chart.js v4.4.1, D3.js v7 | ✅ Active |
+| **Interactive Dashboards** | Data visualization | Chart.js v4.4.1 + chartjs-plugin-annotation, D3.js v7 | ✅ Active |
 | **Static Website** | Present intelligence content | HTML/CSS/JavaScript | ✅ Active |
 | **AWS CloudFront** | Primary CDN | 600+ global PoPs | ✅ Active |
 | **S3 us-east-1** | Primary storage | Amazon S3 + versioning | ✅ Active |
@@ -198,6 +198,7 @@ graph TD
     
     subgraph "External Libraries"
         Chart[Chart.js v4.4.1<br/>via CDN + SRI]
+        ChartPlugin[chartjs-plugin-annotation v3.x<br/>via CDN + SRI]
         D3[D3.js v7<br/>via CDN + SRI]
     end
     
@@ -222,9 +223,13 @@ graph TD
     Index --> Placeholders
     Index --> CSS
     
+    LangSV --> ExtJS2
     LangSV --> CSS
+    LangDA --> ExtJS2
     LangDA --> CSS
+    LangNO --> ExtJS2
     LangNO --> CSS
+    LangOther --> ExtJS2
     LangOther --> CSS
     
     InlineScript --> Chart
