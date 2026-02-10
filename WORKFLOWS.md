@@ -271,7 +271,7 @@ jobs:
 
 5. **Create PR with Updated Data**
    ```yaml
-   - uses: peter-evans/create-pull-request@v8.1.0
+   - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
      with:
        title: 'CIA Data Update - $(date +%Y-%m-%d)'
        branch: 'data-pipeline/cia-update-${{ github.run_number }}'

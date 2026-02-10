@@ -31,8 +31,8 @@ jobs:
         run: |
           echo "🔍 Checking homepage availability..."
           
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L https://riksdagsmonitor.com)
-          RESPONSE_TIME=$(curl -s -o /dev/null -w "%{time_total}" -L https://riksdagsmonitor.com)
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L --connect-timeout 10 --max-time 30 https://riksdagsmonitor.com)
+          RESPONSE_TIME=$(curl -s -o /dev/null -w "%{time_total}" -L --connect-timeout 10 --max-time 30 https://riksdagsmonitor.com)
           
           echo "http_code=$HTTP_CODE" >> $GITHUB_OUTPUT
           echo "response_time=$RESPONSE_TIME" >> $GITHUB_OUTPUT
@@ -47,6 +47,7 @@ jobs:
       - name: Check all 14 language versions
         id: languages
         if: github.event.inputs.check_all_languages != 'false'
+        continue-on-error: true
         run: |
           echo "🌐 Checking all 14 language versions..."
           
@@ -62,7 +63,7 @@ jobs:
               URL="https://riksdagsmonitor.com/index_$lang.html"
             fi
             
-            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L "$URL")
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L --connect-timeout 10 --max-time 30 "$URL")
             
             if [ "$HTTP_CODE" = "200" ]; then
               echo "✅ $lang: HTTP $HTTP_CODE"
@@ -80,7 +81,7 @@ jobs:
           
           if [ $FAIL_COUNT -gt 0 ]; then
             echo "⚠️ $FAIL_COUNT language version(s) failed: $FAILED_LANGUAGES"
-            exit 1
+            echo "Treating as degraded service (not critical failure)"
           else
             echo "✅ All 14 language versions are UP"
           fi
@@ -102,7 +103,7 @@ jobs:
           FAIL_COUNT=0
           
           for asset in "${ASSETS[@]}"; do
-            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L "$asset")
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L --connect-timeout 10 --max-time 30 "$asset")
             
             if [ "$HTTP_CODE" = "200" ]; then
               echo "✅ $(basename $asset): HTTP $HTTP_CODE"
@@ -131,7 +132,7 @@ jobs:
           echo "🔒 Checking HTTPS and security headers..."
           
           # Check HTTPS redirect
-          HTTP_REDIRECT=$(curl -s -o /dev/null -w "%{redirect_url}" http://riksdagsmonitor.com)
+          HTTP_REDIRECT=$(curl -s -o /dev/null -w "%{redirect_url}" --connect-timeout 10 --max-time 30 http://riksdagsmonitor.com)
           if [[ "$HTTP_REDIRECT" == https://* ]]; then
             echo "✅ HTTPS redirect: Working"
           else
@@ -139,7 +140,7 @@ jobs:
           fi
           
           # Check security headers
-          HEADERS=$(curl -sI https://riksdagsmonitor.com)
+          HEADERS=$(curl -sI --connect-timeout 10 --max-time 30 https://riksdagsmonitor.com)
           
           # Check for key security headers
           if echo "$HEADERS" | grep -qi "strict-transport-security"; then

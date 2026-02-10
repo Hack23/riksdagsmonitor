@@ -50,7 +50,7 @@ jobs:
       - name: Install Lighthouse CI
         run: |
           echo "📦 Installing Lighthouse CI..."
-          npm install -g @lhci/cli@0.14.x
+          npm install -g @lhci/cli@0.14.3
           lhci --version
           echo "✅ Lighthouse CI installed"
       
@@ -59,8 +59,15 @@ jobs:
         run: |
           echo "🔍 Running Lighthouse audit on production..."
           
-          TARGET_URL="${{ inputs.url || 'https://riksdagsmonitor.com' }}"
+          TARGET_URL="${{ github.event.inputs.url || 'https://riksdagsmonitor.com' }}"
           echo "Auditing: $TARGET_URL"
+          
+          # Construct Swedish URL (only if using default base URL)
+          if [ "${{ github.event.inputs.url }}" = "" ]; then
+            SWEDISH_URL="$TARGET_URL/index_sv.html"
+          else
+            SWEDISH_URL="$TARGET_URL"
+          fi
           
           # Run Lighthouse with retry logic (network can be flaky)
           MAX_RETRIES=3
@@ -69,7 +76,7 @@ jobs:
           while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
             if lhci autorun \
               --url="$TARGET_URL" \
-              --url="$TARGET_URL/index_sv.html" \
+              --url="$SWEDISH_URL" \
               --collect.numberOfRuns=3 \
               --collect.settings.chromeFlags="--no-sandbox --disable-gpu --headless" \
               --assert.preset="lighthouse:recommended" \
