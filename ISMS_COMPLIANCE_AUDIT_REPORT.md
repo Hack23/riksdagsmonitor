@@ -2,7 +2,7 @@
 
 **Document Version:** 1.0  
 **Audit Date:** 2026-02-10  
-**Classification:** Internal  
+**Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)  
 **Auditor:** ISMS Compliance Manager Agent
 
@@ -95,12 +95,13 @@ Initial documentation focused on technical features rather than ISMS compliance 
 1. **README.md Enhancement:**
    - Added "📊 Information Classification" section (lines 20-71)
    - 4-level classification scheme: 🟢 Public, 🟡 Internal, 🟠 Confidential, 🔴 Restricted
-   - Complete data inventory (Public: website content, open data; Internal: secrets, credentials)
+   - Complete data inventory (Public: website content, open data, person-level reference data from official sources; Internal: secrets, credentials)
    - Handling requirements per classification level
-   - Confirmed no sensitive data (no PII, no financial data)
+   - Data inventory updated to explicitly document person-level fields under `cia-data` (e.g., `first_name`, `last_name`, `person_id`) and classify them as Public with applicable privacy controls
+   - Privacy posture clarified and aligned with ISO 27001 A.8, NIST CSF PR.DS, and CIS Controls 3 for the documented data types, including person-level fields from public sources
    - Compliance alignment (ISO 27001 A.8, NIST CSF PR.DS, CIS Controls 3)
 
-2. **SECURITY_ARCHITECTURE.md Update (v1.1 → v1.2):**
+2. **SECURITY_ARCHITECTURE.md Update (v1.2 → v1.3):**
    - Expanded "2.3 Data Security" section
    - Detailed information classification table
    - Complete data inventory with types and storage locations
@@ -238,7 +239,7 @@ FUTURE_SECURITY_ARCHITECTURE.md (1.0) provides comprehensive 3-5 year security r
 | Document | Classification Label | Version Control | Review Date | Status |
 |----------|---------------------|-----------------|-------------|--------|
 | README.md | ✅ Public | ✅ 2026-02-10 | ✅ Quarterly | ✅ Complete |
-| SECURITY_ARCHITECTURE.md | ✅ Public | ✅ v1.2 (2026-02-10) | ✅ 2027-02-10 | ✅ Complete |
+| SECURITY_ARCHITECTURE.md | ✅ Public | ✅ v1.3 (2026-02-10) | ✅ 2027-02-10 | ✅ Complete |
 | THREAT_MODEL.md | ✅ Public | ✅ v1.0 (2026-01-29) | ✅ 2026-04-29 | ✅ Complete |
 | FUTURE_SECURITY_ARCHITECTURE.md | ✅ Public | ✅ v1.0 (2026-01-29) | ✅ 2026-04-29 | ✅ Complete |
 | ARCHITECTURE.md | ✅ Public | ✅ v1.2 (2026-02-08) | ✅ Quarterly | ✅ Complete |

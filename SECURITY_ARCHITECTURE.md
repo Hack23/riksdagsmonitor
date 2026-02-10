@@ -152,7 +152,7 @@ Following Hack23 AB ISMS information classification policy:
 | Classification | Data Types | Handling Requirements | Storage Location |
 |----------------|-----------|----------------------|-----------------|
 | 🟢 **Public** | Website content, Swedish Riksdag open data, documentation | No restrictions, TLS 1.3 in transit | GitHub repository, AWS S3, GitHub Pages |
-| 🟡 **Internal** | GitHub Actions secrets, AWS credentials, deployment configs | Encrypted at rest, MFA access, least privilege | GitHub Secrets, AWS Secrets Manager (ephemeral OIDC) |
+| 🟡 **Internal** | GitHub Actions secrets, AWS credentials, deployment configs | Encrypted at rest, MFA access, least privilege | GitHub Secrets, AWS STS (ephemeral OIDC assumed roles) |
 | 🟠 **Confidential** | Not applicable | N/A | N/A |
 | 🔴 **Restricted** | Not applicable | N/A | N/A |
 
@@ -167,10 +167,10 @@ Following Hack23 AB ISMS information classification policy:
   - GitHub Personal Access Tokens (PATs)
   - AWS IAM credentials (ephemeral via OIDC)
   - GitHub Actions workflow secrets
-- **No Sensitive Data:**
-  - ❌ No user accounts or PII
-  - ❌ No financial transactions
-  - ❌ No confidential government information
+- **No Sensitive End-User Data:**
+  - ❌ No end-user accounts or authentication features
+  - ❌ No collection of non-public personal data from site users
+  - ⚠️ Public personal data about Swedish public officials (e.g., names, person identifiers, roles) from Riksdag open data and cia-data datasets, classified as 🟢 Public
 
 **Data Protection Controls:**
 

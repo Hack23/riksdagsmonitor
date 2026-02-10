@@ -40,9 +40,9 @@ Riksdagsmonitor follows Hack23 AB's comprehensive [Classification Framework](htt
 **Availability:** High - 99.9% uptime target, automated failover (AWS multi-region, GitHub Pages DR)
 
 ### 🏷️ Privacy Classification
-[![Privacy](https://img.shields.io/badge/Privacy-NA-lightgrey?style=for-the-badge&logo=times-circle&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#privacy-levels)
+[![Privacy](https://img.shields.io/badge/Privacy-Personal-orange?style=for-the-badge&logo=user-shield&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#privacy-levels)
 
-**No Personal Data:** This project processes zero personal data. All content is public Swedish Parliament data (MPs as public figures, voting records, legislative documents). GDPR does not apply.
+**Personal Data (Public Officials):** This project processes personal data about public officials (e.g., names, roles, voting records, person identifiers) sourced from Swedish Riksdag open data and the Citizen Intelligence Agency (CIA) datasets. Data relates only to MPs and other public figures acting in their official capacity; no special-category data or data about private individuals is processed. GDPR applies, with processing based on public-interest and legitimate-interest grounds for transparency and democratic accountability.
 
 ### ⏱️ Business Continuity Classification
 [![RTO](https://img.shields.io/badge/RTO-High_(1--4hrs)-yellow?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rto-classifications)
@@ -86,9 +86,10 @@ For operational data handling, we use a simplified 4-level scheme:
 - GitHub Actions secrets
 - Deployment pipeline configurations
 
-**No Sensitive Data:**
+**No User or Confidential Data:**
 - ❌ No user accounts or authentication
-- ❌ No personally identifiable information (PII)
+- ❌ No non-public or end-user personally identifiable information (PII)
+- ✅ Only public-figure data from official Swedish Parliament records (MP names, roles, votes)
 - ❌ No financial transactions or payment data
 - ❌ No confidential government information
 
@@ -112,53 +113,8 @@ For operational data handling, we use a simplified 4-level scheme:
 - **ISO 27001:2022 A.8** - Asset Management
 - **NIST CSF 2.0 PR.DS** - Data Security
 - **CIS Controls v8.1 Control 3** - Data Protection
-- **GDPR** - Not applicable (no personal data processing)
+- **GDPR** - Applicable for public-official data processing (public interest and legitimate interest grounds)
 - **Hack23 Classification Framework** - [Full framework documentation](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
-
-See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for detailed security controls.
-
-### Data Inventory
-
-**Public Data (🟢):**
-- All website HTML/CSS content (14 languages)
-- Swedish Parliament data (MPs, votes, documents, committees)
-- Election results and statistics
-- Government budget and spending data
-- All source code and documentation
-
-**Internal Data (🟡):**
-- GitHub Personal Access Tokens (PATs)
-- AWS IAM credentials (ephemeral via OIDC)
-- GitHub Actions secrets
-- Deployment pipeline configurations
-
-**No Sensitive Data:**
-- ❌ No user accounts or authentication
-- ❌ No personally identifiable information (PII)
-- ❌ No financial transactions or payment data
-- ❌ No confidential government information
-
-### Data Handling Controls
-
-**Public Data:**
-- Published via GitHub Pages and AWS CloudFront
-- TLS 1.3 encryption in transit
-- No access controls required (intentionally public)
-- Version controlled via Git
-
-**Internal Data:**
-- Stored in GitHub Secrets (encrypted at rest)
-- AWS credentials via OIDC (no long-lived keys)
-- Accessed only via secure GitHub Actions workflows
-- Least privilege principle enforced
-- Regular rotation and audit
-
-### Compliance Alignment
-
-- **ISO 27001:2022 A.8** - Asset Management
-- **NIST CSF 2.0 PR.DS** - Data Security
-- **CIS Controls v8.1 Control 3** - Data Protection
-- **GDPR** - Not applicable (no personal data processing)
 
 See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for detailed security controls.
 
