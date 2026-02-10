@@ -259,9 +259,8 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - **External Dependencies:**
   - Chart.js v4.4.1 (hosted locally on CloudFront/S3 at js/lib/chart.umd.js)
   - chartjs-plugin-annotation v3.0.1 (hosted locally on CloudFront/S3 at js/lib/chartjs-plugin-annotation.min.js)
-  - D3.js v7 (hosted locally on CloudFront/S3 at js/lib/d3.min.js)
+  - D3.js v7.9.0 (hosted locally on CloudFront/S3 at js/lib/d3.min.js)
   - Google Fonts (Inter, Orbitron, Share Tech Mono - via fonts.googleapis.com and fonts.gstatic.com CDN)
-  - Google Fonts (trusted CDN)
 - **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` that is subject to non-blocking CI schema validation checks in pre-processing (e.g., `.github/workflows/validate-cia-data.yml`), with local caching for performance; the browser consumes this dataset which may contain validation warnings
 - **No User Input Processing:** Dashboards do not accept or process arbitrary user input; they display pre-processed CIA data generated upstream in CI/data pipelines that has passed non-blocking schema validation checks where configured
 - **No Server-Side Code:** Static hosting eliminates injection vulnerabilities
@@ -283,8 +282,8 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 9. **Anomaly Detection Dashboard** - Standalone section with multiple canvas elements (anomaly-timeline-chart, zscore-distribution-chart, anomaly-type-chart, quarterly-frequency-chart), distinct from the single anomaly chart within risk dashboard, awaiting JS implementation
 
 **Dependency Management:**
-- Chart.js and D3.js hosted locally on CloudFront/S3 (js/lib/); versions reviewed manually at least quarterly and after critical CVE disclosures
-- No Subresource Integrity (SRI) hashes needed (all scripts served from same origin)
+- Chart.js, D3.js, and chartjs-plugin-annotation hosted locally on CloudFront/S3 (js/lib/); versions reviewed manually at least quarterly and after critical CVE disclosures
+- Library file integrity can be verified via SHA-256 hashes if needed for deployment validation (not required for runtime as served from same origin)
 - Dependabot configured for GitHub Actions workflows (`.github/dependabot.yml`) and automated dependency risk assessment for repository-managed components via GitHub dependency-review and Dependabot alerts
 - Supply chain security scanning via CodeQL and OpenSSF Scorecards
 
