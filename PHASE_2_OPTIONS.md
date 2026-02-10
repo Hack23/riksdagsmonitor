@@ -337,7 +337,7 @@ Phase 2 aims to expand riksdagsmonitor news coverage to **Danish (DA), Norwegian
 ---
 
 **Status:** Awaiting user direction  
-**Next Step:** User selects option (A, B, C, or D)  
+**Next Step:** User selects option (1, 2, 3, or 4)  
 **Contact:** Ready to proceed with selected approach
 
 **Last Updated:** 2026-02-10  

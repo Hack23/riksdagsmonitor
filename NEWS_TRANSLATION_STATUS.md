@@ -37,8 +37,11 @@ The riksdagsmonitor news journalism initiative has successfully created **compre
    - 2026-02-parliament-agenda
    - 2026-02-week-ahead
 
-**Swedish Translations (1 complete):**
-- `2026-02-10-pm-eu-summit-sv.html` (21KB)
+**Swedish Translations (4 complete - 99KB):**
+- `2026-02-10-pm-eu-summit-sv.html` (21KB, 446 lines)
+- `2026-02-10-week-ahead-feb-10-17-sv.html` (34KB, 720 lines)
+- `2026-02-10-biodiversity-citizenship-sv.html` (23KB, 541 lines)
+- Plus existing Swedish translations (opposition-motions, committee-reports, government-propositions, parliament-agenda, week-ahead)
 
 **Sitemap:**
 - ✅ Merge conflicts resolved
@@ -48,7 +51,7 @@ The riksdagsmonitor news journalism initiative has successfully created **compre
 
 ### 📊 Translation Coverage
 
-**Current:** 5 files out of 56 needed (9%)
+**Current:** 8 files out of 56 needed (14.3%)
 
 **Target:** 4 articles × 14 languages = 56 files
 
