@@ -1,7 +1,7 @@
 ---
 name: news-journalist
 description: Expert political journalist with The Economist-style expertise covering Swedish government (Riksdagen, Regeringen, Myndigheter) and global politics
-tools: ["view", "edit", "create", "bash", "grep", "glob"]
+tools: ["*"]
 ---
 
 ## 📋 Required Context Files
