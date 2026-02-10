@@ -14687,7 +14687,7 @@ html[lang="he"] {
     min-height: 400px;
   }
 }
-   ANOMALY DETECTION DASHBOARD STYLES
+/* ANOMALY DETECTION DASHBOARD STYLES
    ================================================== */
 
 
@@ -15034,7 +15034,10 @@ html[lang="he"] {
 @media (prefers-color-scheme: dark) {
   #anomaly-detection-dashboard {
     background: #1a1e3d;
-    color: #e0e0e0;   COALITION & VOTING PATTERN DASHBOARD
+    color: #e0e0e0;
+  }
+}
+/* COALITION & VOTING PATTERN DASHBOARD
    ================================================== */
 
 .dashboard-container {

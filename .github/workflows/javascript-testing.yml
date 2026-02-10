@@ -142,7 +142,6 @@ jobs:
           wait-on: 'http://localhost:4173'
           wait-on-timeout: 60
           browser: chrome
-          headless: true
       
       - name: Archive Cypress screenshots
         if: failure()
