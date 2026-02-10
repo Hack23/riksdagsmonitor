@@ -215,6 +215,7 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - **Input Sanitization:** CIA CSV data is subjected to best-effort, non-blocking schema validation during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`); validation failures currently surface as warnings rather than blocking publication, and client-side code then parses this CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
 - **External Dependencies:** 
   - Chart.js v4.4.1 (via CDN with SRI hash)
+  - chartjs-plugin-annotation v3.x (Chart.js annotation plugin, via CDN with SRI hash)
   - D3.js v7 (via CDN with SRI hash)
   - Google Fonts (trusted CDN)
 - **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` that is subject to non-blocking CI schema validation checks in pre-processing (e.g., `.github/workflows/validate-cia-data.yml`), with local caching for performance; the browser consumes this dataset which may contain validation warnings
@@ -421,7 +422,7 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 | DDoS Attack on AWS | Low | Low | AWS Shield Standard, CloudFront protection |
 | XSS via Chart.js/D3.js | Low | Medium | CSP headers, SRI hashes, trusted CDNs |
 | Compromised GitHub Account | Low | High | MFA, SSH keys, GPG signing |
-| Chart.js/D3.js Vulnerability | Medium | Medium | Dependabot, rapid patching, SRI validation |
+| Chart.js/D3.js Vulnerability | Medium | Medium | Manual quarterly/CVE review, SRI validation, rapid version pin updates |
 | CIA Data Injection | Low | Medium | Schema validation, local CSV caching |
 | Content Defacement | Low | Medium | Git rollback, branch protection, dual deployment |
 | DNS Hijacking via Route 53 | Very Low | High | DNSSEC (planned), IAM least privilege |

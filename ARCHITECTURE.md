@@ -580,11 +580,11 @@ graph TB
 
 | Dependency | Type | Risk Level | Mitigation |
 |------------|------|------------|------------|
-| **AWS CloudFront** | Infrastructure | LOW | 99.95% SLA, GitHub Pages DR |
+| **AWS CloudFront** | Infrastructure | LOW | 99.9% SLA, GitHub Pages DR |
 | **AWS S3** | Infrastructure | LOW | Cross-region replication, versioning |
 | **AWS Route 53** | Infrastructure | LOW | 100% SLA, health checks |
 | **GitHub Pages** | Infrastructure (DR) | LOW | 99.9% SLA |
-| **Chart.js CDN** | External Library | LOW | SRI hash validation, trusted CDN |
+| **Chart.js ecosystem CDN assets (Chart.js, chartjs-plugin-annotation)** | External Library | LOW | SRI hash validation for core library and plugins, trusted CDN |
 | **D3.js CDN** | External Library | LOW | SRI hash validation, trusted CDN |
 | **Google Fonts** | CDN | LOW | Cached, fallback fonts available |
 | **CIA Platform** | External Service | LOW | Independent service, documented links |
@@ -657,7 +657,7 @@ See [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) for detai
 | Decision | Rationale | Trade-offs |
 |----------|-----------|------------|
 | **Interactive Dashboards (Chart.js/D3.js)** | Rich data visualization, modern UX | Increases attack surface, requires JavaScript |
-| **AWS CloudFront Primary** | 600+ PoPs, DDoS protection, 99.95% SLA | Cost for high traffic, vendor lock-in |
+| **AWS CloudFront Primary** | 600+ PoPs, DDoS protection, 99.9% SLA | Cost for high traffic, vendor lock-in |
 | **GitHub Pages DR** | Free, reliable secondary deployment | Platform dependency |
 | **External CIA Platform** | Reuse existing OSINT infrastructure | External service dependency |
 | **Client-Side Rendering** | No server-side code, reduced attack surface | Browser compatibility requirements |

@@ -449,7 +449,7 @@ gantt
 
 | Platform | Pros | Cons | Timeline | Recommendation |
 |----------|------|------|----------|----------------|
-| **AWS CloudFront + S3** | 99.95% SLA, DDoS protection, multi-region | Cost, complexity | Current | ✅ Stay (already implemented) |
+| **AWS CloudFront + S3** | 99.9% SLA, DDoS protection, multi-region | Cost, complexity | Current | ✅ Stay (already implemented) |
 | **GitHub Pages** | Free, integrated, simple | Limited customization, single provider | Current (DR) | ✅ Keep as DR |
 | **AWS WAF** | Advanced protection, rate limiting, geo-blocking | Additional cost | 2027 Q2 | 🟡 High priority |
 | **Multi-CDN Strategy** | Resilience, performance optimization | Complexity, cost | 2028 Q4 | 🟢 Consider for scale |
