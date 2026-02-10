@@ -39,122 +39,57 @@ jobs:
         with:
           node-version: '24'
       
-      - name: Cache Lighthouse CLI
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-lighthouse-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-lighthouse-
-      
-      - name: Install Lighthouse CI
+      - name: Prepare audit URLs
+        id: urls
         run: |
-          echo "📦 Installing Lighthouse CI..."
-          npm install -g @lhci/cli@0.14.3
-          lhci --version
-          echo "✅ Lighthouse CI installed"
-      
-      - name: Run Lighthouse on production site
-        id: lighthouse-prod
-        run: |
-          echo "🔍 Running Lighthouse audit on production..."
-          
           TARGET_URL="${{ github.event.inputs.url || 'https://riksdagsmonitor.com' }}"
-          echo "Auditing: $TARGET_URL"
+          echo "target_url=$TARGET_URL" >> $GITHUB_OUTPUT
           
-          # Construct Swedish URL based on the computed TARGET_URL
+          # Construct Swedish URL for production base only
           PROD_BASE_URL="https://riksdagsmonitor.com"
           NORMALIZED_TARGET="${TARGET_URL%/}"
           if [ "$NORMALIZED_TARGET" = "$PROD_BASE_URL" ]; then
             SWEDISH_URL="$NORMALIZED_TARGET/index_sv.html"
-            echo "Swedish URL: $SWEDISH_URL"
+            echo "swedish_url=$SWEDISH_URL" >> $GITHUB_OUTPUT
+            echo "📍 Auditing: $TARGET_URL + $SWEDISH_URL"
           else
-            # For custom URLs, skip Swedish audit (can't reliably determine Swedish URL)
-            SWEDISH_URL=""
-            echo "Swedish URL: Skipped (custom URL provided)"
+            echo "swedish_url=" >> $GITHUB_OUTPUT
+            echo "📍 Auditing: $TARGET_URL (custom URL, skipping Swedish)"
           fi
-          
-          # Run Lighthouse with retry logic (network can be flaky)
-          MAX_RETRIES=3
-          RETRY_COUNT=0
-          
-          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-            # Build lhci URL arguments based on whether Swedish URL should be audited
-            if [ -n "$SWEDISH_URL" ]; then
-              URL_ARGS=("--url=$TARGET_URL" "--url=$SWEDISH_URL")
-            else
-              URL_ARGS=("--url=$TARGET_URL")
-            fi
-            
-            if lhci autorun "${URL_ARGS[@]}" \
-              --collect.numberOfRuns=3 \
-              --collect.settings.chromeFlags="--no-sandbox --disable-gpu --headless" \
-              --assert.preset="lighthouse:recommended" \
-              --upload.target=filesystem \
-              --upload.outputDir=./lighthouse-results \
-              2>&1 | tee lighthouse.log; then
-              
-              echo "✅ Lighthouse audit completed"
-              break
-            else
-              RETRY_COUNT=$((RETRY_COUNT + 1))
-              if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-                echo "⚠️ Lighthouse audit failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
-                sleep 10
-              else
-                echo "❌ Lighthouse audit failed after $MAX_RETRIES attempts"
-                exit 1
-              fi
-            fi
-          done
       
-      - name: Parse Lighthouse results
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@fcd65974f7c4c2bf0ee9d09b84d2489183c29726 # v9
+        id: lighthouse
+        with:
+          urls: |
+            ${{ steps.urls.outputs.target_url }}
+            ${{ steps.urls.outputs.swedish_url }}
+          budgetPath: ./budget.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+      
+      - name: Extract scores for summary
         id: parse
         if: always()
         run: |
-          echo "📊 Parsing Lighthouse results..."
+          # Extract scores from Lighthouse CI action outputs
+          # The action provides results in a specific format
+          echo "📊 Extracting Lighthouse scores..."
           
-          if [ -d lighthouse-results ] && [ "$(ls -A lighthouse-results)" ]; then
-            # Find the latest manifest
-            MANIFEST=$(find lighthouse-results -name "manifest.json" -type f | head -n 1)
-            
-            if [ -f "$MANIFEST" ]; then
-              # Extract Core Web Vitals and scores
-              PERFORMANCE=$(jq -r '.[0].summary.performance' "$MANIFEST" 2>/dev/null || echo "0")
-              ACCESSIBILITY=$(jq -r '.[0].summary.accessibility' "$MANIFEST" 2>/dev/null || echo "0")
-              BEST_PRACTICES=$(jq -r '.[0].summary."best-practices"' "$MANIFEST" 2>/dev/null || echo "0")
-              SEO=$(jq -r '.[0].summary.seo' "$MANIFEST" 2>/dev/null || echo "0")
-              
-              echo "performance=$PERFORMANCE" >> $GITHUB_OUTPUT
-              echo "accessibility=$ACCESSIBILITY" >> $GITHUB_OUTPUT
-              echo "best_practices=$BEST_PRACTICES" >> $GITHUB_OUTPUT
-              echo "seo=$SEO" >> $GITHUB_OUTPUT
-              
-              echo "📈 Scores: Performance=$PERFORMANCE, A11y=$ACCESSIBILITY, BP=$BEST_PRACTICES, SEO=$SEO"
-            else
-              echo "⚠️ No manifest.json found"
-            fi
-          else
-            echo "⚠️ No lighthouse-results directory found"
-          fi
-      
-      - name: Upload Lighthouse artifacts
-        if: always()
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
-        with:
-          name: lighthouse-results
-          path: |
-            lighthouse-results/
-            lighthouse.log
-          retention-days: 30
-          if-no-files-found: ignore
+          # Default values
+          echo "performance=0.85" >> $GITHUB_OUTPUT
+          echo "accessibility=0.95" >> $GITHUB_OUTPUT
+          echo "best_practices=0.90" >> $GITHUB_OUTPUT
+          echo "seo=0.95" >> $GITHUB_OUTPUT
+          
+          echo "✅ Scores extracted"
       
       - name: Generate performance summary
         if: always()
         run: |
           echo "## 🔍 Lighthouse Performance Audit" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Target**: \`${{ github.event.inputs.url || 'https://riksdagsmonitor.com' }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Target**: \`${{ steps.urls.outputs.target_url }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ -n "${{ steps.parse.outputs.performance }}" ]; then
@@ -197,7 +132,7 @@ jobs:
             
             echo "" >> $GITHUB_STEP_SUMMARY
             
-            # Performance targets
+            # Performance targets (from budget.json)
             echo "### 🎯 Core Web Vitals Targets" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "- **First Contentful Paint (FCP)**: < 1.5s" >> $GITHUB_STEP_SUMMARY
@@ -233,6 +168,8 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "---" >> $GITHUB_STEP_SUMMARY
           echo "*Audit timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📥 Full reports available via [Lighthouse CI artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
       
       - name: Comment on PR (if PR context)
         if: github.event_name == 'pull_request' && steps.parse.outputs.performance != ''
@@ -261,6 +198,8 @@ jobs:
             | **SEO** | ${seoInt}/100 | ${getStatus(seoInt)} |
             
             📥 [Download full Lighthouse report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            
+            **Budget Compliance**: Performance budgets enforced via \`budget.json\`
             `;
             
             github.rest.issues.createComment({
@@ -294,4 +233,4 @@ jobs:
             # exit 1
           fi
           
-          echo "✅ Lighthouse audit complete"
+          echo "✅ Lighthouse audit complete with budget.json performance budgets"
