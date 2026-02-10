@@ -10,16 +10,17 @@ Phase 2 aims to expand riksdagsmonitor news coverage to **Danish (DA), Norwegian
 
 ## Scope
 
-**Target:** 12 translation files
-- 4 articles × 3 Nordic languages
+**Target:** 9 translation files
+- 3 Feb 10, 2026 articles × 3 Nordic languages
 - Danish (DA), Norwegian (NO), Finnish (FI)
-- ~22-30 hours professional translation work
+- ~16-24 hours professional translation work
 
-**Articles:**
+**Articles (Feb 10, 2026):**
 1. PM EU Summit (1,850 words)
 2. Week Ahead Feb 10-17 (2,200 words)
 3. Biodiversity & Citizenship (1,650 words)
-4. (Note: Could include older February articles for complete Nordic coverage)
+
+*Note: If adding a 4th article, scope expands to 12 files total*
 
 ## Constraint Analysis
 

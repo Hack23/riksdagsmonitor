@@ -11,7 +11,7 @@ The riksdagsmonitor news journalism initiative has successfully created **compre
 
 ### ✅ Completed Work
 
-**English Articles (4 Feb 10 articles - 71KB):**
+**English Articles - Feb 10, 2026 (3 articles - 71KB):**
 1. `2026-02-10-pm-eu-summit-en.html` (23KB, ~1,850 words)
    - Today's open EU Committee meeting
    - PM Brussels preparations
@@ -30,18 +30,17 @@ The riksdagsmonitor news journalism initiative has successfully created **compre
    - Strategic timing analysis
    - European comparative context
 
-4. Existing articles with EN/SV versions:
-   - 2026-02-opposition-motions
-   - 2026-02-committee-reports  
-   - 2026-02-government-propositions
-   - 2026-02-parliament-agenda
-   - 2026-02-week-ahead
-
-**Swedish Translations (4 complete - 99KB):**
+**Swedish Translations - Feb 10, 2026 (3 articles - 78KB):**
 - `2026-02-10-pm-eu-summit-sv.html` (21KB, 446 lines)
 - `2026-02-10-week-ahead-feb-10-17-sv.html` (34KB, 720 lines)
 - `2026-02-10-biodiversity-citizenship-sv.html` (23KB, 541 lines)
-- Plus existing Swedish translations (opposition-motions, committee-reports, government-propositions, parliament-agenda, week-ahead)
+
+**Existing Older Articles (EN/SV pairs):**
+- 2026-02-opposition-motions (EN/SV)
+- 2026-02-committee-reports (EN/SV)
+- 2026-02-government-propositions (EN/SV)
+- 2026-02-parliament-agenda (EN/SV)
+- 2026-02-week-ahead (EN/SV)
 
 **Sitemap:**
 - ✅ Merge conflicts resolved
@@ -49,21 +48,21 @@ The riksdagsmonitor news journalism initiative has successfully created **compre
 - ✅ Valid XML structure
 - ✅ Proper hreflang alternates
 
-### 📊 Translation Coverage
+### 📊 Translation Coverage (Feb 10 Articles Only)
 
-**Current:** 8 files out of 56 needed (14.3%)
+**Current:** 6 files out of 42 needed (14.3%)
 
-**Target:** 4 articles × 14 languages = 56 files
+**Target:** 3 Feb 10 articles × 14 languages = 42 files
 
-**Gap:** 48 translation files (86%)
+**Gap:** 36 remaining files for Feb 10 articles (86%)
 
 ## Supported Languages
 
 Riksdagsmonitor supports 14 languages:
 
 ### Nordic (Strategic Priority)
-1. **English (EN)** - ✅ Complete (4/4 articles)
-2. **Swedish (SV)** - ✅ Complete (4/4 articles)
+1. **English (EN)** - ✅ Complete (3/3 Feb 10 articles)
+2. **Swedish (SV)** - ✅ Complete (3/3 Feb 10 articles)
 3. **Danish (DA)** - ❌ Not started
 4. **Norwegian (NO)** - ❌ Not started
 5. **Finnish (FI)** - ❌ Not started
@@ -267,7 +266,7 @@ Each translated article requires:
 ```xml
 <url>
   <loc>https://riksdagsmonitor.com/news/article-XX.html</loc>
-  <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  <lastmod>2026-02-10T09:00:00Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href=".../article-en.html"/>
