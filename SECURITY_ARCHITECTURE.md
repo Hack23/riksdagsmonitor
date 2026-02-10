@@ -225,7 +225,7 @@ Following Hack23 AB ISMS information classification policy:
 
 **Security Headers (Target Configuration - AWS CloudFront Response Headers Policy):**
 ```
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
@@ -234,7 +234,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
 
-**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027).
+**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027). Chart.js, D3.js, and chartjs-plugin-annotation are hosted locally on CloudFront (js/lib/) rather than via external CDN, eliminating external script dependencies.
 
 **Control Mapping:**
 - ISO 27001: A.13.1 Network Security Management
@@ -256,11 +256,11 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
   - Total: ~150KB active JavaScript code (118KB external + 32KB inline; source size, transfer size smaller when compressed)
 - **XSS Mitigation:** Content Security Policy (CSP) headers with script-src restrictions
 - **Input Sanitization:** CIA CSV data is subjected to best-effort, non-blocking schema validation during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`); validation failures currently surface as warnings rather than blocking publication, and client-side code then parses this CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
-- **External Dependencies:** 
-  - Chart.js v4.4.1 (via CDN with SRI hash)
-  - chartjs-plugin-annotation v3.x (Chart.js annotation plugin, via CDN with SRI hash)
-  - D3.js v7 (via CDN with SRI hash)
-  - Google Fonts (trusted CDN)
+- **External Dependencies:**
+  - Chart.js v4.4.1 (hosted locally on CloudFront/S3 at js/lib/chart.umd.4.4.1.js)
+  - chartjs-plugin-annotation v3.0.1 (hosted locally on CloudFront/S3 at js/lib/chartjs-plugin-annotation.3.0.1.min.js)
+  - D3.js v7.9.0 (hosted locally on CloudFront/S3 at js/lib/d3.7.9.0.min.js)
+  - Google Fonts (Inter, Orbitron, Share Tech Mono - via fonts.googleapis.com and fonts.gstatic.com CDN)
 - **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` that is subject to non-blocking CI schema validation checks in pre-processing (e.g., `.github/workflows/validate-cia-data.yml`), with local caching for performance; the browser consumes this dataset which may contain validation warnings
 - **No User Input Processing:** Dashboards do not accept or process arbitrary user input; they display pre-processed CIA data generated upstream in CI/data pipelines that has passed non-blocking schema validation checks where configured
 - **No Server-Side Code:** Static hosting eliminates injection vulnerabilities
@@ -282,8 +282,8 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 9. **Anomaly Detection Dashboard** - Standalone section with multiple canvas elements (anomaly-timeline-chart, zscore-distribution-chart, anomaly-type-chart, quarterly-frequency-chart), distinct from the single anomaly chart within risk dashboard, awaiting JS implementation
 
 **Dependency Management:**
-- Chart.js and D3.js loaded via pinned CDN URLs with SRI; versions reviewed manually at least quarterly and after critical CVE disclosures
-- Subresource Integrity (SRI) hashes for CDN resources
+- Chart.js, D3.js, and chartjs-plugin-annotation hosted locally on CloudFront/S3 (js/lib/); versions reviewed manually at least quarterly and after critical CVE disclosures
+- Library file integrity can be verified via SHA-256 hashes if needed for deployment validation (not required for runtime as served from same origin)
 - Dependabot configured for GitHub Actions workflows (`.github/dependabot.yml`) and automated dependency risk assessment for repository-managed components via GitHub dependency-review and Dependabot alerts
 - Supply chain security scanning via CodeQL and OpenSSF Scorecards
 
@@ -432,8 +432,8 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 1. **AWS Infrastructure:** Trusted cloud provider with robust security
 2. **GitHub Infrastructure:** Trusted cloud provider with robust security (DR)
-3. **Client-Side Security:** Chart.js/D3.js libraries are secure and maintained
-4. **CDN Security:** jsDelivr CDN is trusted for Chart.js/D3.js delivery (Cloudflare may be evaluated as future failover CDN)
+3. **Client-Side Security:** Chart.js/D3.js libraries are secure, maintained, and hosted locally on CloudFront
+4. **CloudFront Security:** AWS CloudFront is trusted for static asset delivery with 99.9% SLA
 5. **Public Data:** All content is public information (Swedish Riksdag open data)
 6. **External Dependencies:** CIA platform (www.hack23.com/cia) maintains its own security
 7. **Browser Security:** Users have modern browsers with JavaScript enabled
@@ -466,9 +466,9 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 | AWS CloudFront/S3 Outage | Low | Medium | GitHub Pages DR, documented failover |
 | GitHub Platform Outage (DR) | Low | Low | AWS primary handles traffic |
 | DDoS Attack on AWS | Low | Low | AWS Shield Standard, CloudFront protection |
-| XSS via Chart.js/D3.js | Low | Medium | CSP headers, SRI hashes, trusted CDNs |
+| XSS via Chart.js/D3.js | Low | Medium | CSP headers, locally-hosted libraries (no external CDN), quarterly version reviews |
 | Compromised GitHub Account | Low | High | MFA, SSH keys, GPG signing |
-| Chart.js/D3.js Vulnerability | Medium | Medium | Manual quarterly/CVE review, SRI validation, rapid version pin updates |
+| Chart.js/D3.js Vulnerability | Medium | Medium | Locally-hosted libraries with quarterly/CVE version reviews, deployment-time integrity verification, rapid version updates |
 | CIA Data Injection | Low | Medium | Schema validation, local CSV caching |
 | Content Defacement | Low | Medium | Git rollback, branch protection, dual deployment |
 | DNS Hijacking via Route 53 | Very Low | High | DNSSEC (planned), IAM least privilege |

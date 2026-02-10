@@ -196,10 +196,10 @@ graph TD
         Fonts[Google Fonts<br/>Inter, Orbitron]
     end
     
-    subgraph "External Libraries"
-        Chart[Chart.js v4.4.1<br/>via CDN + SRI]
-        ChartPlugin[chartjs-plugin-annotation v3.x<br/>via CDN + SRI]
-        D3[D3.js v7<br/>via CDN + SRI]
+    subgraph ExtLibs["External Libraries"]
+        Chart[Chart.js v4.4.1<br/>Hosted on CloudFront]
+        ChartPlugin[chartjs-plugin-annotation v3.0.1<br/>Hosted on CloudFront]
+        D3[D3.js v7<br/>Hosted on CloudFront]
     end
     
     subgraph "Configuration"
@@ -589,8 +589,8 @@ graph TB
 | **AWS S3** | Infrastructure | LOW | Cross-region replication, versioning |
 | **AWS Route 53** | Infrastructure | LOW | 100% SLA, health checks |
 | **GitHub Pages** | Infrastructure (DR) | LOW | 99.9% SLA |
-| **Chart.js ecosystem CDN assets (Chart.js, chartjs-plugin-annotation)** | External Library | LOW | SRI hash validation for core library and plugins, trusted CDN |
-| **D3.js CDN** | External Library | LOW | SRI hash validation, trusted CDN |
+| **Chart.js ecosystem assets (Chart.js, chartjs-plugin-annotation)** | JavaScript Library | LOW | Hosted locally on CloudFront/S3 (js/lib/), no external CDN dependencies |
+| **D3.js** | JavaScript Library | LOW | Hosted locally on CloudFront/S3 (js/lib/), no external CDN dependencies |
 | **Google Fonts** | CDN | LOW | Cached, fallback fonts available |
 | **CIA Platform** | External Service | LOW | Independent service, documented links |
 
