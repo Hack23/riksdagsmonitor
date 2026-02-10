@@ -190,7 +190,7 @@ Phase 2 aims to expand riksdagsmonitor news coverage to **Danish (DA), Norwegian
 
 | Option | Time | Cost | Quality | Best For |
 |--------|------|------|---------|----------|
-| **Option 1: Professional** | 2-3 weeks | €1,500-2,400 | ⭐⭐⭐⭐⭐ | Final production content |
+| **Option 1: Professional** | 2-3 weeks | €2,000-3,200 | ⭐⭐⭐⭐⭐ | Final production content |
 | **Option 2: Full Demo** | 4-6 hours | €0 | ⭐⭐ (tech only) | Stakeholder review, technical validation |
 | **Option 3: Limited Demo** | 2-3 hours | €0 | ⭐⭐ (tech only) | Quick proof of concept |
 | **Option 4: Hybrid** | 1-2 weeks | €800-1,500 | ⭐⭐⭐⭐ | Budget-conscious approach |
@@ -261,7 +261,7 @@ Phase 2 aims to expand riksdagsmonitor news coverage to **Danish (DA), Norwegian
 4. Publication preparation
 
 **Total Timeline:** 5 weeks  
-**Total Cost:** €1,500-2,400
+**Total Cost:** €2,000-3,200
 
 ## Quality Assurance
 

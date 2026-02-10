@@ -7,11 +7,11 @@
 
 The riksdagsmonitor news journalism initiative has successfully created **comprehensive English-language political journalism** covering Swedish Parliament and Government activity for February 2026. Initial Swedish translations demonstrate proof-of-concept for multi-language support. However, achieving full 14-language coverage represents a substantial undertaking requiring systematic approach.
 
-## Current Status
+## Current Status (Feb 10, 2026 Articles)
 
 ### ✅ Completed Work
 
-**English Articles (4 total - 71KB):**
+**English Articles (4 Feb 10 articles - 71KB):**
 1. `2026-02-10-pm-eu-summit-en.html` (23KB, ~1,850 words)
    - Today's open EU Committee meeting
    - PM Brussels preparations
@@ -127,20 +127,21 @@ Each translation must meet The Economist editorial standards:
 - **Total per language:** 7-10 hours
 
 **Full 14-Language Coverage:**
-- **51 remaining articles × 1.75 hours = 89 hours**
-- **With QA and coordination: ~100-120 hours (3 weeks full-time)**
+- **48 remaining translation files × 1.75 hours = 84 hours**
+- **With QA and coordination: ~95-110 hours (3 weeks full-time)**
 
 ## Recommended Phased Approach
 
-### Phase 1: Swedish Completion (High Priority)
-**Scope:** 2 remaining Swedish articles  
-**Effort:** 3-4 hours  
+### Phase 1: Swedish Completion (✅ Completed)
+**Scope:** 4 Swedish translations for Feb 10 articles (completed)  
+**Effort:** ~7-10 hours (completed)  
 **Rationale:** Primary Swedish audience, demonstrates commitment
 
-**Deliverables:**
-- 2026-02-10-week-ahead-feb-10-17-sv.html
-- 2026-02-10-biodiversity-citizenship-sv.html
-- Sitemap update
+**Deliverables (all completed):**
+- ✅ 2026-02-10-pm-eu-summit-sv.html
+- ✅ 2026-02-10-week-ahead-feb-10-17-sv.html
+- ✅ 2026-02-10-biodiversity-citizenship-sv.html
+- ✅ Sitemap update
 
 ### Phase 2: Nordic Languages (Strategic)
 **Scope:** DA, NO, FI (3 languages × 4 articles = 12 files)  
