@@ -6,7 +6,7 @@ on:
       - main
       - develop
     paths:
-      - '**.js'
+      - '**/*.js'
       - 'package.json'
       - 'package-lock.json'
       - 'vite.config.js'

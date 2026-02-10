@@ -40,21 +40,21 @@ describe('Dashboard Functionality', () => {
   
   describe('Anomaly Detection Dashboard', () => {
     it('should display anomaly dashboard', () => {
-      cy.get('#anomaly-dashboard').should('exist');
+      cy.get('#anomaly-detection-dashboard').should('exist');
     });
     
     it('should have severity filter', () => {
-      cy.get('#severity-filter').should('exist');
-      cy.get('#severity-filter option').should('have.length.greaterThan', 1);
+      cy.get('#anomaly-severity-filter').should('exist');
+      cy.get('#anomaly-severity-filter option').should('have.length.greaterThan', 1);
     });
     
     it('should have type filter', () => {
-      cy.get('#type-filter').should('exist');
-      cy.get('#type-filter option').should('have.length.greaterThan', 1);
+      cy.get('#anomaly-type-filter').should('exist');
+      cy.get('#anomaly-type-filter option').should('have.length.greaterThan', 1);
     });
     
     it('should filter anomalies by severity', () => {
-      cy.get('#severity-filter').select('CRITICAL');
+      cy.get('#anomaly-severity-filter').select('CRITICAL');
       // Verify filtering logic works
     });
     

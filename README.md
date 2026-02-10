@@ -275,7 +275,7 @@ npm run e2e            # Builds, previews, and runs Cypress
 ### Building for Production
 
 ```bash
-# Build with Vite (bundles Chart.js, D3.js locally)
+# Build with Vite
 npm run build
 
 # Preview production build

@@ -1,8 +1,8 @@
 /**
  * Vite Configuration for Riksdagsmonitor
  * 
- * Static HTML/CSS site with Chart.js and D3.js bundling
- * Deployed to CloudFront (no external CDN dependencies)
+ * Static HTML/CSS site with multi-language support
+ * Deployed to CloudFront with SRI hash generation
  * 
  * @author Hack23 AB
  * @license Apache-2.0
