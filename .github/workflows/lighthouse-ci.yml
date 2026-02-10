@@ -18,7 +18,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  checks: write
+
 
 jobs:
   lighthouse:
@@ -79,20 +79,20 @@ jobs:
           RETRY_COUNT=0
           
           while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-            # Build lhci command based on whether Swedish URL should be audited
+            # Build lhci URL arguments based on whether Swedish URL should be audited
             if [ -n "$SWEDISH_URL" ]; then
-              LHCI_CMD="lhci autorun --url=\"$TARGET_URL\" --url=\"$SWEDISH_URL\""
+              URL_ARGS=("--url=$TARGET_URL" "--url=$SWEDISH_URL")
             else
-              LHCI_CMD="lhci autorun --url=\"$TARGET_URL\""
+              URL_ARGS=("--url=$TARGET_URL")
             fi
             
-            if eval "$LHCI_CMD \
+            if lhci autorun "${URL_ARGS[@]}" \
               --collect.numberOfRuns=3 \
-              --collect.settings.chromeFlags=\"--no-sandbox --disable-gpu --headless\" \
-              --assert.preset=\"lighthouse:recommended\" \
+              --collect.settings.chromeFlags="--no-sandbox --disable-gpu --headless" \
+              --assert.preset="lighthouse:recommended" \
               --upload.target=filesystem \
               --upload.outputDir=./lighthouse-results \
-              2>&1 | tee lighthouse.log"; then
+              2>&1 | tee lighthouse.log; then
               
               echo "✅ Lighthouse audit completed"
               break

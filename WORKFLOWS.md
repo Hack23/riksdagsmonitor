@@ -217,17 +217,17 @@ jobs:
 
 **File:** `.github/workflows/data-pipeline.yml`  
 **Trigger:** Manual (`workflow_dispatch`)  
-**Purpose:** CIA intelligence export fetching, validation, and caching  
-**Note:** Currently manual-only; daily scheduling will be enabled once the automated fetch is implemented
+**Purpose:** Future CIA intelligence export fetching, validation, and caching pipeline (design documented; implementation in progress)  
+**Note:** The current `Fetch CIA Exports` step in `data-pipeline.yml` is a placeholder only (it always sets `fetched=0` and does not download exports or update `last-fetch.json`). As a result, the described validation, cache generation, and PR-creation stages are not yet active; daily scheduling will be enabled and this section updated once the real fetch implementation lands.
 
 ### Jobs
 
 #### 4.1 Fetch & Validate CIA Intelligence Exports
-- **Purpose:** CIA data pipeline for exports (manual trigger; future automation planned)
+- **Purpose:** CIA data pipeline for exports (manual trigger; future automation planned, current fetch step is a no-op placeholder)
 - **Schedule:** Not yet scheduled; planned future schedule is daily at 02:00 UTC (03:00/04:00 CET/CEST)
 - **Permissions:** contents: write, pull-requests: write
 
-**Pipeline Stages:**
+**Pipeline Stages:** *(intended design – blocked until the real fetch implementation is in place)*
 
 1. **Data Freshness Check**
    ```yaml
@@ -422,7 +422,7 @@ lhci autorun \
 ```yaml
 - name: Create incident issue
   if: failure() && steps.homepage.outcome == 'failure'
-  uses: actions/github-script@v7.0.1
+  uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
   # Creates issue with label: incident, uptime-monitor, critical
 ```
 
@@ -502,8 +502,8 @@ on:
   workflow_dispatch:
 ```
 
-Used by: data-pipeline.yml, validate-cia-data.yml  
-**Purpose:** Automated nightly data refresh
+Used by: validate-cia-data.yml (data-pipeline.yml is currently workflow_dispatch-only until fetch is implemented)  
+**Purpose:** Automated nightly data validation/refresh for external data sources
 
 ### Pattern 2: Performance Monitoring
 ```yaml
