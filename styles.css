@@ -663,13 +663,7 @@ a:hover {
    ================================================== */
 
 /* Skip to Main Content Link - visible only when focused */
-<<<<<<< HEAD
-/* Skip-link for keyboard navigation (WCAG 2.1 AAA) */
-.skip-link,
-.skip-to-content {
-=======
 .skip-link {
->>>>>>> origin/main
   position: absolute;
   top: -100px;
   left: 0;
@@ -686,12 +680,7 @@ a:hover {
 /* Focus-visible with progressive enhancement for Safari < 15.4 */
 @supports selector(:focus-visible) {
   /* Modern browsers with :focus-visible support */
-<<<<<<< HEAD
-  .skip-link:focus-visible,
-  .skip-to-content:focus-visible {
-=======
   .skip-link:focus-visible {
->>>>>>> origin/main
     top: 0;
     outline: 3px solid var(--accent-color);
     outline-offset: 2px;
@@ -742,12 +731,7 @@ a:hover {
 
 @supports not selector(:focus-visible) {
   /* Fallback for Safari < 15.4 and older browsers - use :focus */
-<<<<<<< HEAD
-  .skip-link:focus,
-  .skip-to-content:focus {
-=======
   .skip-link:focus {
->>>>>>> origin/main
     top: 0;
     outline: 3px solid var(--accent-color);
     outline-offset: 2px;
@@ -1045,110 +1029,6 @@ a:hover {
   }
 }
 
-<<<<<<< HEAD
-.back-to-top.visible {
-  display: block;
-  opacity: 1;
-}
-
-/* Enhanced Footer Styles */
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.footer-section h3 {
-  color: var(--header-color);
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  font-family: var(--font-accent);
-}
-
-.footer-section p {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
-}
-
-.language-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 0.5rem;
-}
-
-.language-grid a {
-  color: var(--link-color);
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 0.9rem;
-  display: block;
-}
-
-.language-grid a:hover {
-  background-color: var(--bg-color);
-  color: var(--primary-color);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 1.5rem;
-}
-
-.footer-bottom p {
-  margin: 0.5rem 0;
-  color: var(--text-secondary);
-}
-
-.footer-bottom a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .language-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-=======
->>>>>>> origin/main
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .nav-container {
@@ -6926,8 +6806,6 @@ html[lang="he"] {
     border: 1px solid #333;
   }
 }
-<<<<<<< HEAD
-=======
 
 /* ==================================================
    RISK ASSESSMENT & ANOMALY DETECTION DASHBOARD
@@ -8496,163 +8374,6 @@ a:hover {
   }
 }
 
-/* ==================================================
-   KEYBOARD NAVIGATION & FOCUS INDICATORS (WCAG 2.1 AA)
-   Cross-browser compatibility with focus-visible fallback
-   ================================================== */
-
-/* Skip to Main Content Link - visible only when focused */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  background-color: var(--primary-color);
-  color: white;
-  padding: var(--spacing-md) var(--spacing-lg);
-  text-decoration: none;
-  font-weight: 600;
-  z-index: 10000;
-  border-radius: 0 0 var(--border-radius) 0;
-  transition: top 0.2s ease;
-}
-
-/* Focus-visible with progressive enhancement for Safari < 15.4 */
-@supports selector(:focus-visible) {
-  /* Modern browsers with :focus-visible support */
-  .skip-link:focus-visible {
-    top: 0;
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
-  }
-  
-  /* Universal Focus Indicator - WCAG 2.1 AA compliant (3:1 contrast ratio) */
-  *:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-  }
-  
-  /* Enhanced link focus with background highlight */
-  a:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 4px;
-    background-color: rgba(0, 102, 51, 0.1);
-    border-radius: var(--border-radius-sm);
-  }
-  
-  /* Button focus with enhanced visibility and shadow */
-  button:focus-visible,
-  .btn:focus-visible,
-  .btn-primary-large:focus-visible,
-  .btn-secondary:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(0, 102, 51, 0.2);
-  }
-  
-  /* Form control focus indicators */
-  input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(0, 102, 51, 0.1);
-  }
-  
-  /* Checkbox and radio button focus */
-  input[type="checkbox"]:focus-visible,
-  input[type="radio"]:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(0, 102, 51, 0.2);
-  }
-}
-
-@supports not selector(:focus-visible) {
-  /* Fallback for Safari < 15.4 and older browsers - use :focus */
-  .skip-link:focus {
-    top: 0;
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
-  }
-  
-  /* Universal Focus Indicator fallback */
-  *:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-  }
-  
-  /* Enhanced link focus fallback */
-  a:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 4px;
-    background-color: rgba(0, 102, 51, 0.1);
-    border-radius: var(--border-radius-sm);
-  }
-  
-  /* Button focus fallback */
-  button:focus,
-  .btn:focus,
-  .btn-primary-large:focus,
-  .btn-secondary:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(0, 102, 51, 0.2);
-  }
-  
-  /* Form control focus fallback */
-  input:focus,
-  textarea:focus,
-  select:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(0, 102, 51, 0.1);
-  }
-  
-  /* Checkbox and radio button focus fallback */
-  input[type="checkbox"]:focus,
-  input[type="radio"]:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(0, 102, 51, 0.2);
-  }
-}
-
-/* Dark mode focus indicators */
-@media (prefers-color-scheme: dark) {
-  .skip-link {
-    color: var(--bg-color);
-  }
-  
-  .skip-link:focus-visible {
-    outline-color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
-  }
-  
-  *:focus-visible {
-    outline-color: var(--primary-color);
-  }
-  
-  a:focus-visible {
-    background-color: rgba(0, 204, 102, 0.15);
-    outline-color: var(--primary-color);
-  }
-  
-  button:focus-visible,
-  .btn:focus-visible {
-    outline-color: var(--primary-light);
-    box-shadow: 0 0 0 4px rgba(0, 204, 102, 0.3);
-  }
-  
-  input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
-    outline-color: var(--primary-color);
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(0, 204, 102, 0.2);
-  }
-}
 
 /* ==================================================
    STICKY NAVIGATION
@@ -15531,4 +15252,3 @@ html[lang="he"] {
     border-color: rgba(0, 204, 102, 0.3);
   }
 }
->>>>>>> origin/main
