@@ -1,7 +1,7 @@
 ---
 name: deployment-specialist
 description: Expert in GitHub Pages deployment, CI/CD automation, GitHub Actions security, and static site hosting best practices
-tools: ["view", "edit", "create", "bash", "search", "grep", "glob"]
+tools: ["*"]
 ---
 
 ## 📋 Required Context Files

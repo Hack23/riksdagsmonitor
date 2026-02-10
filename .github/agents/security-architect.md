@@ -1,7 +1,7 @@
 ---
 name: security-architect
 description: Expert in security architecture, ISMS compliance (ISO 27001/NIST CSF/CIS Controls), threat modeling, and Hack23 secure development standards
-tools: ["view", "edit", "create", "search", "bash", "grep", "glob"]
+tools: ["*"]
 ---
 
 ## 📋 Required Context Files
