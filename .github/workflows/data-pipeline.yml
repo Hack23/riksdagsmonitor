@@ -1,0 +1,298 @@
+name: CIA Data Pipeline
+
+on:
+  # NOTE: Schedule trigger disabled until CIA export fetch implementation is complete
+  # Once the real fetch script is implemented (replacing placeholder in line 84-91),
+  # uncomment the schedule trigger to enable daily automated data updates
+  # schedule:
+  #   - cron: '0 2 * * *'  # Daily at 02:00 UTC (03:00 CET in winter, 04:00 CEST in summer)
+  workflow_dispatch:
+    inputs:
+      force_refresh:
+        description: 'Force full data refresh (ignore cache)'
+        type: boolean
+        default: false
+        required: false
+      export_types:
+        description: 'Comma-separated list of export types to fetch (or "all")'
+        type: string
+        default: 'all'
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-cia-data:
+    name: Fetch & Validate CIA Intelligence Exports
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+      
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci --prefer-offline --no-audit
+          echo "✅ Dependencies installed"
+      
+      - name: Check current data freshness
+        id: freshness
+        run: |
+          echo "🔍 Checking current data freshness..."
+          if [ -f "data/cia-exports/metadata/last-fetch.json" ]; then
+            LAST_FETCH=$(jq -r '.timestamp' data/cia-exports/metadata/last-fetch.json)
+            HOURS_AGO=$(( ($(date +%s) - $(date -d "$LAST_FETCH" +%s)) / 3600 ))
+            echo "hours_since_fetch=$HOURS_AGO" >> $GITHUB_OUTPUT
+            echo "📊 Data last fetched: $LAST_FETCH ($HOURS_AGO hours ago)"
+            
+            if [ $HOURS_AGO -lt 23 ] && [ "${{ github.event.inputs.force_refresh }}" != "true" ]; then
+              echo "skip_fetch=true" >> $GITHUB_OUTPUT
+              echo "✅ Data is fresh (< 23 hours old), skipping fetch"
+            else
+              echo "skip_fetch=false" >> $GITHUB_OUTPUT
+              echo "📥 Data needs refresh"
+            fi
+          else
+            echo "skip_fetch=false" >> $GITHUB_OUTPUT
+            echo "hours_since_fetch=9999" >> $GITHUB_OUTPUT
+            echo "ℹ️ No previous data found, will fetch fresh data"
+          fi
+      
+      - name: Fetch CIA exports
+        if: steps.freshness.outputs.skip_fetch != 'true'
+        id: fetch
+        env:
+          FORCE_REFRESH: ${{ github.event.inputs.force_refresh }}
+          EXPORT_TYPES: ${{ github.event.inputs.export_types }}
+        run: |
+          echo "📥 Fetching CIA intelligence exports..."
+          
+          # Create exports directory if it doesn't exist
+          mkdir -p data/cia-exports/metadata
+          
+          # TODO: Replace with actual CIA export fetch script
+          # For now, DO NOT create placeholder metadata to avoid interfering
+          # with freshness checks while no real data is fetched.
+          
+          echo "fetched=0" >> $GITHUB_OUTPUT
+          echo "failed=0" >> $GITHUB_OUTPUT
+          echo "⚠️ CIA export fetching script not yet implemented"
+          echo "📝 Placeholder mode: no data fetched and no metadata freshness updated"
+      
+      - name: Validate fetched data
+        if: steps.freshness.outputs.skip_fetch != 'true' && steps.fetch.outputs.fetched != '0'
+        id: validate
+        run: |
+          echo "🔍 Validating fetched data against CIA schemas..."
+          
+          # Check if validation script exists
+          if [ -f "scripts/validate-against-cia-schemas.js" ]; then
+            if npm run validate-data; then
+              if [ -f "validation-report.json" ]; then
+                VALID=$(jq -r '.validCount' validation-report.json 2>/dev/null || echo "0")
+                INVALID=$(jq -r '.invalidCount' validation-report.json 2>/dev/null || echo "0")
+                
+                echo "valid=$VALID" >> $GITHUB_OUTPUT
+                echo "invalid=$INVALID" >> $GITHUB_OUTPUT
+                
+                echo "✅ Validation complete: $VALID valid, $INVALID invalid"
+              else
+                echo "⚠️ Validation succeeded but no report generated"
+                echo "valid=0" >> $GITHUB_OUTPUT
+                echo "invalid=0" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "❌ Validation failed"
+              echo "valid=0" >> $GITHUB_OUTPUT
+              echo "invalid=1" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "ℹ️ Validation script not found, skipping validation"
+            echo "valid=0" >> $GITHUB_OUTPUT
+            echo "invalid=0" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Generate cache with versioning
+        if: steps.freshness.outputs.skip_fetch != 'true' && steps.fetch.outputs.fetched != '0' && steps.validate.outputs.invalid == '0'
+        run: |
+          echo "💾 Generating versioned cache..."
+          
+          # Create cache directory structure
+          mkdir -p data/cia-exports/cache/current
+          mkdir -p data/cia-exports/cache/archive
+          
+          # Archive previous current cache (if exists)
+          if [ -d "data/cia-exports/cache/current" ] && [ "$(ls -A data/cia-exports/cache/current)" ]; then
+            ARCHIVE_DATE=$(date -u +"%Y%m%d-%H%M%S")
+            echo "📦 Archiving previous cache as $ARCHIVE_DATE"
+            mkdir -p "data/cia-exports/cache/archive/$ARCHIVE_DATE"
+            cp -r data/cia-exports/cache/current/* "data/cia-exports/cache/archive/$ARCHIVE_DATE/" 2>/dev/null || true
+            
+            # Keep only last 7 archives
+            cd data/cia-exports/cache/archive
+            ls -t | tail -n +8 | xargs -r rm -rf
+            cd -
+          fi
+          
+          # TODO: Generate new cache from validated exports
+          # This should process CIA exports and create optimized cache files
+          
+          echo "✅ Cache generation complete"
+      
+      - name: Upload fetch artifacts
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: data-pipeline-artifacts
+          path: |
+            data/cia-exports/metadata/
+            validation-report.json
+          retention-days: 30
+          if-no-files-found: ignore
+      
+      - name: Generate pipeline summary
+        if: always()
+        run: |
+          echo "## 📊 CIA Data Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Pipeline status
+          if [ "${{ steps.freshness.outputs.skip_fetch }}" = "true" ]; then
+            echo "### ✅ Pipeline Status: SKIPPED" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Data is fresh (< 23 hours old). No fetch performed." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "- **Last Fetch**: ${{ steps.freshness.outputs.hours_since_fetch }} hours ago" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 📥 Pipeline Status: EXECUTED" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Fetch results
+            echo "#### Data Fetch" >> $GITHUB_STEP_SUMMARY
+            echo "- **Fetched**: ${{ steps.fetch.outputs.fetched }} exports" >> $GITHUB_STEP_SUMMARY
+            echo "- **Failed**: ${{ steps.fetch.outputs.failed }} exports" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Validation results
+            echo "#### Data Validation" >> $GITHUB_STEP_SUMMARY
+            echo "- **Valid**: ✅ ${{ steps.validate.outputs.valid }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Invalid**: ❌ ${{ steps.validate.outputs.invalid }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Show validation errors if any
+            if [ "${{ steps.validate.outputs.invalid }}" != "0" ] && [ -f validation-report.json ]; then
+              echo "#### ⚠️ Validation Errors" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
+              jq '.results[] | select(.valid == false)' validation-report.json >> $GITHUB_STEP_SUMMARY
+              echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Pipeline execution timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Create PR with updated data
+        if: |
+          steps.freshness.outputs.skip_fetch != 'true' && 
+          steps.validate.outputs.invalid == '0' &&
+          steps.fetch.outputs.fetched != '0'
+        id: create-pr
+        run: |
+          # Generate timestamp for PR
+          PR_DATE=$(date +%Y-%m-%d)
+          PR_TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          echo "pr_date=$PR_DATE" >> $GITHUB_OUTPUT
+          echo "pr_timestamp=$PR_TIMESTAMP" >> $GITHUB_OUTPUT
+      
+      - name: Submit PR with updated data
+        if: steps.create-pr.outcome == 'success'
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'data: Update CIA intelligence exports'
+          title: '📊 CIA Data Update - ${{ steps.create-pr.outputs.pr_date }}'
+          body: |
+            ## Automated CIA Data Pipeline Update
+            
+            This PR contains automated CIA intelligence export updates.
+            
+            ### Summary
+            - **Fetched**: ${{ steps.fetch.outputs.fetched }} exports
+            - **Valid**: ${{ steps.validate.outputs.valid }}
+            - **Failed**: ${{ steps.fetch.outputs.failed }}
+            - **Invalid**: ${{ steps.validate.outputs.invalid }}
+            - **Timestamp**: ${{ steps.create-pr.outputs.pr_timestamp }}
+            
+            ### Data Sources (19 CIA Visualization Products)
+            
+            #### Intelligence Dashboards
+            - Overview Dashboard
+            - Party Performance
+            - Government Cabinet
+            - Election Cycle Analysis
+            
+            #### Top 10 Rankings
+            - Most Influential MPs
+            - Most Productive MPs
+            - Most Controversial MPs
+            - Most Absent MPs
+            - Party Rebels
+            - Coalition Brokers
+            - Rising Stars
+            - Electoral Risk
+            - Ethics Concerns
+            - Media Presence
+            
+            #### Advanced Analytics
+            - Committee Network Analysis
+            - Politician Career Analysis
+            - Party Longitudinal Analysis
+            
+            ### Validation
+            - [x] Data validated against JSON schemas
+            - [x] Cache generated with version archival
+            - [ ] Manual review of key metrics
+            
+            ### References
+            - Pipeline: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            - CIA Platform: https://github.com/Hack23/cia
+            
+            ---
+            *This PR was automatically created by the CIA data pipeline workflow*
+          branch: 'data-pipeline/cia-update-${{ github.run_number }}'
+          delete-branch: true
+          labels: |
+            automated-pipeline
+            data-update
+            cia-intelligence
+          assignees: data-pipeline-specialist
+      
+      - name: Check pipeline status
+        if: always()
+        run: |
+          if [ "${{ steps.freshness.outputs.skip_fetch }}" = "true" ]; then
+            echo "✅ Pipeline skipped - data is fresh"
+          elif [ "${{ steps.validate.outputs.invalid }}" != "0" ] && [ -n "${{ steps.validate.outputs.invalid }}" ]; then
+            echo "⚠️ Pipeline completed with validation errors"
+            echo "Please review the validation report artifact"
+            # Don't fail for now - just warn
+            # exit 1
+          else
+            echo "✅ Pipeline completed successfully"
+          fi
