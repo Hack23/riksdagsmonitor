@@ -172,8 +172,6 @@ Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA p
 - **Politician Career Analysis** - Career trajectories and milestones
 - **Party Longitudinal Analysis** - 50+ years of party evolution
 
-<<<<<<< HEAD
-=======
 ## 📈 Implemented Dashboards
 
 Riksdagsmonitor currently features 4 interactive intelligence dashboards built with Chart.js and D3.js:
@@ -195,8 +193,6 @@ Riksdagsmonitor currently features 4 interactive intelligence dashboards built w
 - **Visualizations**: Historical comparisons, election-year patterns
 - **Purpose**: Track pre-election parliamentary activity and behavior changes
 - **Data Source**: `cia-data/pre-election/*.csv`
-
-
 
 ### 4. 🗳️ Party Performance & Effectiveness Dashboard
 
@@ -226,12 +222,6 @@ Riksdagsmonitor currently features 4 interactive intelligence dashboards built w
 - 14-language support
 - Responsive design (320px-1440px+)
 - CSP-compliant (SRI hashes on all CDN resources)
-
-<<<<<<< HEAD
->>>>>>> origin/main
-=======
->>>>>>> main
->>>>>>> origin/main
 ## 🔗 Data Sources
 
 Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
@@ -244,11 +234,30 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 ## 🏗️ Technical Architecture
 
 ### Stack
-- **Frontend:** Static HTML/CSS (no JavaScript frameworks)
+- **Frontend:** Static HTML/CSS with JavaScript dashboards
+- **Build System:** Vite 7 (ES modules, code splitting, SRI hashes)
+- **Visualization:** Chart.js 4 + D3.js 7 via jsDelivr CDN (SRI + CSP enforced)
+- **Testing:** Vitest (unit), Cypress (E2E) - 49 tests passing
 - **Styling:** Custom CSS with cyberpunk theme, responsive design
-- **Hosting:** GitHub Pages with global CDN
-- **CI/CD:** GitHub Actions for automated deployment
+- **Hosting:** GitHub Pages with CloudFront CDN
+- **CI/CD:** GitHub Actions for automated testing and deployment
 - **Data Platform:** CIA OSINT platform (Java/Spring Boot backend)
+
+### JavaScript Architecture
+- **8 Dashboard Modules:**
+  - party-dashboard.js (effectiveness analytics)
+  - anomaly-detection-dashboard.js (statistical outliers)
+  - seasonal-patterns-dashboard.js (temporal trends)
+  - pre-election-dashboard.js (election monitoring)
+  - politician-dashboard.js (MP tracking)
+  - ministry-dashboard.js (cabinet analysis)
+  - election-cycle-dashboard.js (cycle patterns)
+  - back-to-top.js (navigation)
+
+- **Data Loading:** Local-first with GitHub fallback
+- **Caching:** LocalStorage with freshness checks (1-7 days)
+- **Performance:** Code splitting, lazy loading, asset optimization
+- **Security:** SRI hashes (sha384), CSP-compliant script loading
 
 ### Security
 - **HTTPS-Only:** TLS 1.3 encryption enforced
@@ -321,7 +330,14 @@ At Hack23 AB, we believe that true security comes through transparency and demon
 git clone git@github.com:Hack23/riksdagsmonitor.git
 cd riksdagsmonitor
 
-# Serve locally
+# Install dependencies
+npm install
+
+# Development server with Vite (hot reload)
+npm run dev
+# Opens http://localhost:8080
+
+# OR serve statically
 python3 -m http.server 8080
 # or
 npx http-server -p 8080
@@ -330,17 +346,58 @@ npx http-server -p 8080
 open http://localhost:8080
 ```
 
+### Testing
+
+```bash
+# Install dependencies (if not already done)
+npm install
+
+# Run unit tests (Vitest)
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests with UI
+npm run test:ui
+
+# Run E2E tests (Cypress)
+npm run cypress:open    # Interactive GUI
+npm run cypress:run     # Headless
+
+# Full E2E test suite
+npm run e2e            # Builds, previews, and runs Cypress
+```
+
+### Building for Production
+
+```bash
+# Build with Vite
+npm run build
+
+# Preview production build
+npm run preview
+# Opens http://localhost:4173
+
+# Build output in dist/
+ls dist/
+```
+
 ### Quality Checks
 
 ```bash
 # HTML validation
-npm install -g htmlhint
-htmlhint *.html
+npm run htmlhint
 
 # Link checking
-npm install -g linkinator@6
 python3 -m http.server 8080 &
-linkinator http://localhost:8080/ --recurse
+npm run linkcheck
+
+# Run all quality checks
+npm run htmlhint && npm test && npm run build
 ```
 
 ### CI/CD Pipeline
@@ -348,13 +405,22 @@ linkinator http://localhost:8080/ --recurse
 **Automated Checks:**
 - HTML validation (HTMLHint)
 - Link checking (linkinator)
+- JavaScript testing (Vitest unit tests - 49 tests)
+- E2E testing (Cypress)
+- Build validation (Vite)
 - Dependency review (Dependabot)
 - Security scanning (CodeQL, Secret Scanning)
 
 **Workflows:**
 - `.github/workflows/quality-checks.yml` - HTML/link validation
+- `.github/workflows/javascript-testing.yml` - Vite build, Vitest, Cypress E2E
 - `.github/workflows/dependency-review.yml` - Dependency security
 - `.github/workflows/copilot-setup-steps.yml` - Copilot agent setup
+
+**Test Results**:
+- ✅ 49/49 unit tests passing (Vitest)
+- ✅ 100% test pass rate
+- ✅ Coverage: 70% lines, 70% functions, 60% branches
 
 ## 📖 Documentation
 
