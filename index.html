@@ -490,6 +490,20 @@ Attendance, ballots, and volatility trends
 </p>
 </div>
 
+</p>
+</div>
+
+<!-- Chart 4: Temporal Trends -->
+<div class="chart-card" style="grid-column: span 2; background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
+<h3>Temporal Voting Patterns</h3>
+<div style="height: 400px; position: relative;">
+<canvas id="temporal-trends-chart"></canvas>
+</div>
+<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
+Attendance, ballots, and volatility trends
+</p>
+</div>
+
 <!-- Chart 5: Party Comparative Analysis -->
 <div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
 <h3>Party Tier Distribution</h3>
@@ -541,6 +555,57 @@ Performance tiers (ntile_party_tier: 1-4)
 <canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
 <span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
 </div>
+</div>
+</section>
+
+<section id="committee-dashboard" class="dashboard-container">
+<h2>🏛️ Committee Performance & Network Analytics</h2>
+
+<div class="dashboard-grid">
+<!-- Network Diagram (Full Width) -->
+<div class="chart-card wide">
+<h3>Committee Network Diagram</h3>
+<p>Interactive visualization of committee relationships and productivity. Drag nodes to explore connections.</p>
+<div id="committeeNetwork" role="img" aria-label="Committee network connections diagram showing relationships between 15 Swedish Riksdag committees"></div>
+<table class="sr-only" id="committeeNetworkTable" aria-label="Committee network connections data table">
+<!-- Accessible fallback table populated by JavaScript -->
+</table>
+</div>
+
+<!-- Productivity Heat Map (Full Width) -->
+<div class="chart-card wide">
+<h3>Productivity Matrix (2020-2026)</h3>
+<p>Heat map showing committee productivity scores over time. Hover over cells for detailed information.</p>
+<div id="productivityMatrix" role="img" aria-label="Committee productivity matrix showing performance over time from 2020 to 2026"></div>
+<table class="sr-only" id="productivityMatrixTable" aria-label="Committee productivity matrix data table">
+<!-- Accessible fallback table populated by JavaScript -->
+</table>
+</div>
+
+<!-- Committee Comparison -->
+<div class="chart-card">
+<h3>Committee Comparison</h3>
+<p>Compare productivity scores across all 15 committees.</p>
+<canvas id="committeeComparisonChart" role="img" aria-label="Bar chart comparing productivity scores across committees"></canvas>
+</div>
+
+<!-- Decision Effectiveness -->
+<div class="chart-card">
+<h3>Decision Effectiveness</h3>
+<p>Track decision outcomes (approved, rejected, pending) over time.</p>
+<canvas id="decisionEffectivenessChart" role="img" aria-label="Stacked bar chart showing decision effectiveness over years"></canvas>
+</div>
+
+<!-- Seasonal Patterns (Full Width) -->
+<div class="chart-card wide">
+<h3>Seasonal Activity Patterns</h3>
+<p>Quarterly activity trends showing how committee work varies across the year.</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="Line chart displaying seasonal activity patterns by quarter"></canvas>
+</div>
+</div>
+
+<div class="dashboard-attribution">
+<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="lastUpdated">Loading...</span></small></p>
 </div>
 </section>
 
@@ -2149,6 +2214,8 @@ Performance tiers (ntile_party_tier: 1-4)
 
 
 <script src="scripts/coalition-dashboard.js" defer></script>
+
+<script src="scripts/committees-dashboard.js"></script>
 
 <script src="js/election-cycle-dashboard.js"></script>
 </body>
