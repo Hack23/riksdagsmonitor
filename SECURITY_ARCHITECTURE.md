@@ -1,15 +1,15 @@
 # 🛡️ Riksdagsmonitor - Security Architecture
 
-**Document Version:** 1.2  
+**Document Version:** 1.3  
 **Last Updated:** 2026-02-10  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
 ## 🎯 Executive Summary
 
-Riksdagsmonitor is a static website providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS) and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
+Riksdagsmonitor is a web platform providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS), [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md), and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
 
-**Security Posture:** Defense-in-depth static website with dual-deployment architecture (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access, and comprehensive CI/CD security controls.
+**Security Posture:** Defense-in-depth architecture with dual-deployment (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access, and comprehensive CI/CD security controls.
 
 ## 1. 🏗️ System Overview
 
@@ -454,6 +454,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 - **Path:** /SECURITY_ARCHITECTURE.md
 - **Format:** Markdown
 - **Classification:** Public
-- **Version:** 1.2
+- **Version:** 1.3
 - **Last Updated:** 2026-02-10
 - **Next Review:** 2027-02-10
+- **Classification Framework:** [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
