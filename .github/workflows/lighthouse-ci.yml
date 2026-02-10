@@ -64,7 +64,7 @@ jobs:
           urls: |
             ${{ steps.urls.outputs.target_url }}
             ${{ steps.urls.outputs.swedish_url }}
-          budgetPath: ./budget.json
+          budgetPath: ./budget.json  # Baseline budgets (current performance + 15% buffer). Future optimizations should lower these values.
           uploadArtifacts: true
           temporaryPublicStorage: true
       
