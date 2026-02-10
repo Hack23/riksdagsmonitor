@@ -72,6 +72,8 @@ Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA p
 - **Politician Career Analysis** - Career trajectories and milestones
 - **Party Longitudinal Analysis** - 50+ years of party evolution
 
+<<<<<<< HEAD
+=======
 ## 📈 Implemented Dashboards
 
 Riksdagsmonitor currently features 4 interactive intelligence dashboards built with Chart.js and D3.js:
@@ -125,6 +127,7 @@ Riksdagsmonitor currently features 4 interactive intelligence dashboards built w
 - Responsive design (320px-1440px+)
 - CSP-compliant (SRI hashes on all CDN resources)
 
+>>>>>>> main
 ## 🔗 Data Sources
 
 Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
