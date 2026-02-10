@@ -235,8 +235,8 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 
 ### Stack
 - **Frontend:** Static HTML/CSS with JavaScript dashboards
-- **Build System:** Vite 7 (ES modules, code splitting, SRI hashes)
-- **Visualization:** Chart.js 4 + D3.js 7 via jsDelivr CDN (SRI + CSP enforced)
+- **Build System:** Vite 7 (ES modules, code splitting)
+- **Visualization:** Chart.js 4 + D3.js 7 hosted locally on CloudFront
 - **Testing:** Vitest (unit), Cypress (E2E) - 49 tests passing
 - **Styling:** Custom CSS with cyberpunk theme, responsive design
 - **Hosting:** GitHub Pages with CloudFront CDN
