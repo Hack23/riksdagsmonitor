@@ -244,28 +244,8 @@ jobs:
               await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.name,
-                title: `🚨 Site Down - HTTP ${httpCode} - ${timestamp}`,
-                body: `## Incident Report
-
-**Status**: 🔴 SITE DOWN
-**Timestamp**: ${timestamp}
-**HTTP Code**: ${httpCode}
-**Detected by**: Uptime Monitor Workflow
-
-### Details
-Homepage is returning HTTP ${httpCode} instead of expected 200.
-
-### Action Required
-1. Check deployment status
-2. Review GitHub Pages configuration
-3. Verify DNS settings
-4. Check CDN status
-
-### Logs
-[Workflow Run](https://github.com/${context.repo.owner}/${context.repo.name}/actions/runs/${context.runId})
-
----
-*This issue was automatically created by the uptime monitor workflow*`,
+                title: '🚨 Site Down - HTTP ' + httpCode + ' - ' + timestamp,
+                body: '## Incident Report\n\n**Status**: 🔴 SITE DOWN\n**Timestamp**: ' + timestamp + '\n**HTTP Code**: ' + httpCode + '\n**Detected by**: Uptime Monitor Workflow\n\n### Details\nHomepage is returning HTTP ' + httpCode + ' instead of expected 200.\n\n### Action Required\n1. Check deployment status\n2. Review GitHub Pages configuration\n3. Verify DNS settings\n4. Check CDN status\n\n### Logs\n[Workflow Run](https://github.com/' + context.repo.owner + '/' + context.repo.name + '/actions/runs/' + context.runId + ')\n\n---\nThis issue was automatically created by the uptime monitor workflow',
                 labels: ['incident', 'uptime-monitor', 'critical']
               });
               
@@ -277,11 +257,7 @@ Homepage is returning HTTP ${httpCode} instead of expected 200.
                 owner: context.repo.owner,
                 repo: context.repo.name,
                 issue_number: issueNumber,
-                body: `### Update: ${timestamp}
-
-Site still down - HTTP ${httpCode}
-
-[Latest workflow run](https://github.com/${context.repo.owner}/${context.repo.name}/actions/runs/${context.runId})`
+                body: 'Update: ' + timestamp + '\n\nSite still down - HTTP ' + httpCode + '\n\n[Latest workflow run](https://github.com/' + context.repo.owner + '/' + context.repo.name + '/actions/runs/' + context.runId + ')'
               });
               
               console.log('Incident issue updated');
@@ -306,14 +282,7 @@ Site still down - HTTP ${httpCode}
                 owner: context.repo.owner,
                 repo: context.repo.name,
                 issue_number: issue.number,
-                body: `### ✅ Incident Resolved
-
-Site is now operational.
-
-**Resolved at**: ${new Date().toISOString()}
-**Duration**: From ${issue.created_at} to now
-
-[Verification workflow run](https://github.com/${context.repo.owner}/${context.repo.name}/actions/runs/${context.runId})`
+                body: '### ✅ Incident Resolved\n\nSite is now operational.\n\n**Resolved at**: ' + new Date().toISOString() + '\n**Duration**: From ' + issue.created_at + ' to now\n\n[Verification workflow run](https://github.com/' + context.repo.owner + '/' + context.repo.name + '/actions/runs/' + context.runId + ')'
               });
               
               await github.rest.issues.update({
