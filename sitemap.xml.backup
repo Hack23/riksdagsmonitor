@@ -4,7 +4,11 @@
 
 <url>
   <loc>https://riksdagsmonitor.com/</loc>
+<<<<<<< HEAD
   <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+=======
+  <lastmod>2026-02-05T15:00:00+00:00</lastmod>
+>>>>>>> origin/main
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html"/>
@@ -25,7 +29,11 @@
 
 <url>
   <loc>https://riksdagsmonitor.com/index_sv.html</loc>
+<<<<<<< HEAD
   <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+=======
+  <lastmod>2026-02-05T15:00:00+00:00</lastmod>
+>>>>>>> origin/main
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
@@ -146,7 +154,11 @@
 
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html</loc>
+<<<<<<< HEAD
   <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+=======
+  <lastmod>2026-02-06T23:00:00+00:00</lastmod>
+>>>>>>> origin/main
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html"/>
@@ -154,6 +166,7 @@
   <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
 </url>
 
+<<<<<<< HEAD
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html</loc>
   <lastmod>2026-02-09T00:00:00+00:00</lastmod>
@@ -214,43 +227,6 @@
   <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
 </url>
 
-
-<url>
-  <loc>https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html</loc>
-  <lastmod>2026-02-10T10:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
-</url>
-
-<url>
-  <loc>https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html</loc>
-  <lastmod>2026-02-10T10:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
-</url>
-
-<url>
-  <loc>https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html</loc>
-  <lastmod>2026-02-10T10:00:00+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
-</url>
-
-<url>
-  <loc>https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html</loc>
-  <lastmod>2026-02-10T14:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
-</url>
-
+=======
+>>>>>>> origin/main
 </urlset>
