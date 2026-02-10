@@ -636,6 +636,281 @@
 			</div>
 		</section>
 	</main>
+<<<<<<< HEAD
+=======
+
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> Parteileistung & Effektivität</h2>
+<p>Umfassende Analyse schwedischer politischer Parteien mit über 50 Jahren CIA-Plattformdaten. Verfolgen Sie Effektivitätstrends, Koalitionsdynamik und Momentumindikatoren für 8 Parteien.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>Effektivitätstrends (1990-2026)</h3>
+<p>Historische Parteieneffektivitätswerte, die legislative Produktivität, Abstimmungskonsistenz und politische Auswirkungen im Laufe der Zeit zeigen.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>Parteienvergleich (Aktuelle Periode)</h3>
+<p>Vergleichende Analyse der Parteileistungsmetriken für die aktuelle Legislaturperiode.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>Koalitionsausrichtung</h3>
+<p>Koalitionsmuster und parteiübergreifende Zusammenarbeitsnetzwerke.</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>Momentum-Indikatoren</h3>
+<p>Parteien-Momentum-Werte mit Perzentil-Benchmarks (P50, P90), die den Wahlverlauf anzeigen.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Koalitions- und Abstimmungsmusteranalyse</h2>
+<p>Interaktive Analyse der Koalitionsdynamik, Parteienausrichtung und Abstimmungsverhaltensmuster im schwedischen Riksdag.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Koalitionsnetzwerk (Interaktiv)</h3>
+<p>Kraftgesteuertes Diagramm, das die Koalitionsstärke zwischen schwedischen politischen Parteien zeigt. Ziehen Sie Knoten, zoomen Sie und klicken Sie für Details.</p>
+<div id="coalitionNetwork" role="img" aria-label="Koalitionsnetzwerkdiagramm, das Beziehungen zwischen 8 schwedischen politischen Parteien zeigt"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Abstimmungsanomalien (Letzte 5 Jahre)</h3>
+<p>Streudiagramm, das ungewöhnliche Abstimmungsmuster und Parteiabweichungen vom erwarteten Verhalten hervorhebt.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Abstimmungsanomalien Streudiagramm, das Abweichungswerte für alle Parteien zeigt"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Parteienausrichtung Heatmap</h3>
+<p>Matrixvisualisierung, die parteiübergreifende Abstimmungsübereinstimmungsniveaus basierend auf historischen Abstimmungsaufzeichnungen zeigt.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Parteienausrichtung Heatmap, die Abstimmungsübereinstimmung in Prozent zwischen allen Parteipaaren zeigt"></div>
+</div>
+
+<div class="chart-card">
+<h3>Verhaltensmuster</h3>
+<p>Parteiabstimmungskonsistenzwerte, die die Einhaltung der Parteilinie über alle Abstimmungen messen.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Verhaltensmuster Balkendiagramm, das Abstimmungskonsistenz in Prozent für alle Parteien zeigt"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Entscheidungstrends (1990-2026)</h3>
+<p>Historische Zeitachse, die jährliche Abstimmungsaktivitätstrends für alle Parteien über 36 Jahre zeigt.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Entscheidungstrends Zeitachse, die jährliche Abstimmungsvolumina von 1990 bis 2026 zeigt"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Datenquelle:</strong> Visualisierungen werden von CIA-Plattform-Intelligence-Exporten unterstützt. Daten werden wöchentlich von den offenen Daten-APIs des schwedischen Riksdag aktualisiert.
+</p>
+</section>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 Saisonale Aktivitätsmuster (2002-2025)</h2>
+<p class="subtitle">Quartalsanalyse mit Z-Score-Anomalieerkennung</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="Nach Jahr filtern">
+<option value="all">Alle Jahre</option>
+</select>
+
+<select id="quarter-filter" aria-label="Nach Quartal filtern">
+<option value="all">Alle Quartale</option>
+<option value="1">Q1 - Wintersitzung</option>
+<option value="2">Q2 - Frühlingssitzung</option>
+<option value="3">Q3 - Sommerpause</option>
+<option value="4">Q4 - Herbstsitzung</option>
+</select>
+
+<select id="election-filter" aria-label="Nach Wahlstatus filtern">
+<option value="all">Alle</option>
+<option value="election">Wahljahre</option>
+<option value="non-election">Keine Wahljahre</option>
+</select>
+
+<select id="classification-filter" aria-label="Nach Aktivitätsklassifizierung filtern">
+<option value="all">Alle Klassifizierungen</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>Quartalsaktivität Heatmap (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">Abstimmungsvolumen nach Jahr und Quartal mit Z-Score.</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Z-Score-Anomalieerkennung</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Z-Score-Anomalieerkennung"></canvas>
+<p class="chart-description">Statistische Ausreißer (|Z| ≥ 2.0) rot markiert.</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>Durchschnittliche Aktivität pro Quartal (alle Jahre)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Durchschnittliche Aktivität pro Quartal (alle Jahre)"></canvas>
+<p class="chart-description">Q1-Q4 Basislinien. Zeigt typische Aktivitätsmuster über Jahreszeiten.</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>Saisonale Musterklassifizierung</h3>
+<canvas id="classification-chart" role="img" aria-label="Saisonale Musterklassifizierung"></canvas>
+<p class="chart-description">Verteilung von NORMAL, ERHÖHT, REDUZIERT und ANOMALIE-Mustern.</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>Quartalsweise Änderungen</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Quartalsweise Änderungen"></canvas>
+<p class="chart-description">Sequentielle Abstimmungsänderungen (% und absolut).</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Daten von der CIA-Plattform | Täglich aktualisiert</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 Anomaly Detection & Early Warning System</h2>
+<p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Dismiss</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="severity-filter" aria-label="Filter by severity">
+<option value="all">All Severities</option>
+<option value="CRITICAL">🔴 Critical</option>
+<option value="HIGH">🟠 High</option>
+<option value="MODERATE">🟡 Moderate</option>
+<option value="LOW">🟢 Low</option>
+</select>
+<select id="type-filter" aria-label="Filter by anomaly type">
+<option value="all">All Types</option>
+<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
+<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
+<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
+<option value="NO_ANOMALY">No Anomaly</option>
+</select>
+<select id="direction-filter" aria-label="Filter by direction">
+<option value="all">All Directions</option>
+<option value="UNUSUALLY_HIGH">Unusually High</option>
+<option value="UNUSUALLY_LOW">Unusually Low</option>
+<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+</select>
+<select id="year-filter" aria-label="Filter by year">
+<option value="all">All Years</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Anomaly Timeline -->
+<div class="chart-card wide">
+<h3>Anomaly Timeline (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
+<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Z-Score Distribution</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
+<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+</div>
+
+<!-- Chart 3: Anomaly Type Breakdown -->
+<div class="chart-card">
+<h3>Anomaly Type Distribution</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
+<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>Severity Heat Map (Year × Quarter)</h3>
+<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
+<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+</div>
+
+<!-- Chart 5: Quarterly Anomaly Frequency -->
+<div class="chart-card">
+<h3>Anomaly Frequency by Quarter</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>Recent Anomalies (Last 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
+<p class="chart-description">Most recent anomalies with details</p>
+</div>
+</div>
+</section>
+
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ Ministerrisiko & Einfluss</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Ministerium-Risikokarte</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="Ministerium-Risikokarte"></div>
+</div>
+
+<div class="chart-card">
+<h3>Top 10 Einflussreichste Minister</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Top 10 Einflussreichste Minister"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Ministerium-Produktivitätsmatrix</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Ministerium-Produktivitätsmatrix"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Entscheidungswirkungstrends</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Entscheidungswirkungstrends"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>Daten als Tabelle anzeigen</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+>>>>>>> main
+>>>>>>> origin/main
 <footer>
 		<p>&copy; 2008-2026 | Hack23 AB (Org.nr 5595347807) |
 			<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
@@ -650,5 +925,18 @@
 			<a href="swedish-election-2026_sv.html" title="Swedish documentation">Svenska</a>
 		</p>
 	</footer>
+<<<<<<< HEAD
+=======
+
+
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
+
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+>>>>>>> main
+>>>>>>> origin/main
 </body>
 </html>

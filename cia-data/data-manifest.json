@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-09",
+  "totalFiles": 33,
+  "totalSize": "260KB",
+  "sourceRepository": "https://github.com/Hack23/cia",
+  "sourcePath": "service.data.impl/sample-data",
+  "dataCategories": {
+    "party": {
+      "fileCount": 9,
+      "description": "Party-level metrics and analysis",
+      "files": [
+        {
+          "name": "distribution_party_performance.csv",
+          "description": "Overall party performance metrics",
+          "fields": ["party", "performance_score", "legislative_output", "voting_consistency", "policy_impact"],
+          "dashboard": "party-dashboard"
+        },
+        {
+          "name": "distribution_party_effectiveness_trends.csv",
+          "description": "Historical effectiveness trends (1990-2026)",
+          "fields": ["party", "year", "quarter", "documents_produced", "motions_count", "active_members", "avg_win_rate", "effectiveness_assessment"],
+          "dashboard": "party-dashboard"
+        },
+        {
+          "name": "distribution_party_momentum.csv",
+          "description": "Current party momentum indicators",
+          "fields": ["party", "year", "quarter", "period", "participation_rate", "momentum", "trend_direction", "stability_classification"],
+          "dashboard": "party-dashboard"
+        },
+        {
+          "name": "distribution_coalition_alignment.csv",
+          "description": "Coalition collaboration patterns",
+          "fields": ["party1", "party2", "alignment_strength", "collaboration_frequency"],
+          "dashboard": "party-dashboard"
+        },
+        {
+          "name": "distribution_annual_party_members.csv",
+          "description": "Annual party membership counts",
+          "fields": ["year", "party", "member_count"],
+          "dashboard": "party-dashboard"
+        },
+        {
+          "name": "distribution_gender_by_party.csv",
+          "description": "Gender distribution per party",
+          "fields": ["party", "male", "female", "other", "total"],
+          "dashboard": "diversity-analytics"
+        },
+        {
+          "name": "distribution_experience_by_party.csv",
+          "description": "Experience levels per party",
+          "fields": ["party", "avg_experience_years", "min_experience", "max_experience"],
+          "dashboard": "competency-analysis"
+        },
+        {
+          "name": "distribution_behavioral_patterns_by_party.csv",
+          "description": "Behavioral analysis per party",
+          "fields": ["party", "pattern_type", "frequency", "significance"],
+          "dashboard": "pattern-recognition"
+        },
+        {
+          "name": "distribution_decision_patterns_by_party.csv",
+          "description": "Decision-making patterns per party",
+          "fields": ["party", "decision_type", "frequency", "success_rate"],
+          "dashboard": "legislative-strategy"
+        }
+      ]
+    },
+    "voting": {
+      "fileCount": 7,
+      "description": "Voting patterns, ballot data, and document processing",
+      "files": [
+        {
+          "name": "distribution_annual_party_votes.csv",
+          "description": "Annual voting records by party (2002-2026)",
+          "fields": ["year", "party", "total_votes", "yes_votes", "no_votes", "abstain_votes"],
+          "dashboard": "coalition-dashboard"
+        },
+        {
+          "name": "distribution_annual_ballots.csv",
+          "description": "Annual ballot counts",
+          "fields": ["year", "total_ballots", "chamber_votes", "committee_votes"],
+          "dashboard": "legislative-activity"
+        },
+        {
+          "name": "distribution_decision_trends.csv",
+          "description": "Decision-making trend analysis",
+          "fields": ["year", "decision_type", "count", "trend"],
+          "dashboard": "governance-patterns"
+        },
+        {
+          "name": "distribution_document_types.csv",
+          "description": "Distribution of document types",
+          "fields": ["document_type", "count", "percentage"],
+          "dashboard": "document-analytics"
+        },
+        {
+          "name": "distribution_annual_document_types.csv",
+          "description": "Annual document type trends",
+          "fields": ["year", "document_type", "count"],
+          "dashboard": "document-trends"
+        },
+        {
+          "name": "distribution_document_status.csv",
+          "description": "Document status distribution",
+          "fields": ["status", "count", "percentage"],
+          "dashboard": "workflow-analysis"
+        },
+        {
+          "name": "distribution_annual_document_status.csv",
+          "description": "Annual document status trends",
+          "fields": ["year", "status", "count"],
+          "dashboard": "process-efficiency"
+        }
+      ]
+    },
+    "committee": {
+      "fileCount": 5,
+      "description": "Committee productivity, activity, and assignments",
+      "files": [
+        {
+          "name": "distribution_committee_activity.csv",
+          "description": "Committee activity levels",
+          "fields": ["committee", "activity_score", "meetings", "decisions"],
+          "dashboard": "committee-dashboard"
+        },
+        {
+          "name": "distribution_committee_productivity.csv",
+          "description": "Committee productivity metrics",
+          "fields": ["committee", "productivity_score", "output_rate", "efficiency"],
+          "dashboard": "committee-dashboard"
+        },
+        {
+          "name": "distribution_committee_productivity_matrix.csv",
+          "description": "Productivity matrix analysis",
+          "fields": ["committee", "metric", "value"],
+          "dashboard": "committee-dashboard"
+        },
+        {
+          "name": "distribution_annual_committee_assignments.csv",
+          "description": "Annual committee assignments",
+          "fields": ["year", "committee", "assignment_count"],
+          "dashboard": "assignment-trends"
+        },
+        {
+          "name": "distribution_annual_committee_documents.csv",
+          "description": "Annual committee documents",
+          "fields": ["year", "committee", "document_count"],
+          "dashboard": "document-output"
+        }
+      ]
+    },
+    "ministry": {
+      "fileCount": 4,
+      "description": "Government ministry effectiveness and productivity",
+      "files": [
+        {
+          "name": "distribution_ministry_effectiveness.csv",
+          "description": "Ministry effectiveness scores",
+          "fields": ["ministry", "effectiveness_score", "budget_efficiency", "policy_impact"],
+          "dashboard": "ministry-dashboard"
+        },
+        {
+          "name": "distribution_ministry_productivity_matrix.csv",
+          "description": "Ministry productivity matrix",
+          "fields": ["ministry", "metric", "value"],
+          "dashboard": "ministry-dashboard"
+        },
+        {
+          "name": "distribution_ministry_decision_impact.csv",
+          "description": "Decision impact analysis",
+          "fields": ["ministry", "decision_type", "impact_score"],
+          "dashboard": "policy-effectiveness"
+        },
+        {
+          "name": "distribution_annual_ministry_assignments.csv",
+          "description": "Annual ministry assignments",
+          "fields": ["year", "ministry", "assignment_count"],
+          "dashboard": "assignment-history"
+        }
+      ]
+    },
+    "risk": {
+      "fileCount": 3,
+      "description": "Risk assessment and crisis resilience",
+      "files": [
+        {
+          "name": "distribution_ministry_risk_levels.csv",
+          "description": "Ministry risk level distribution",
+          "fields": ["ministry", "risk_level", "risk_score", "category"],
+          "dashboard": "risk-dashboard"
+        },
+        {
+          "name": "distribution_ministry_risk_quarterly.csv",
+          "description": "Quarterly risk trends",
+          "fields": ["quarter", "ministry", "risk_score", "trend"],
+          "dashboard": "risk-monitoring"
+        },
+        {
+          "name": "distribution_crisis_resilience.csv",
+          "description": "Crisis resilience indicators",
+          "fields": ["entity", "resilience_score", "vulnerability_index"],
+          "dashboard": "stability-assessment"
+        }
+      ]
+    },
+    "politician": {
+      "fileCount": 3,
+      "description": "Individual politician metrics and distributions",
+      "files": [
+        {
+          "name": "distribution_experience_levels.csv",
+          "description": "Experience level distribution",
+          "fields": ["experience_level", "count", "percentage"],
+          "dashboard": "politician-analytics"
+        },
+        {
+          "name": "distribution_assignment_roles.csv",
+          "description": "Role distribution patterns",
+          "fields": ["role", "count", "percentage"],
+          "dashboard": "assignment-analysis"
+        },
+        {
+          "name": "distribution_influence_buckets.csv",
+          "description": "Influence level distribution",
+          "fields": ["influence_bucket", "count", "percentage"],
+          "dashboard": "influence-network"
+        }
+      ]
+    },
+    "election": {
+      "fileCount": 1,
+      "description": "Election region distribution",
+      "files": [
+        {
+          "name": "distribution_election_regions.csv",
+          "description": "Election region distribution",
+          "fields": ["region", "electorate", "turnout_rate"],
+          "dashboard": "electoral-geography"
+        }
+      ]
+    },
+    "anomaly": {
+      "fileCount": 1,
+      "description": "Anomaly detection patterns",
+      "files": [
+        {
+          "name": "distribution_anomaly_by_party.csv",
+          "description": "Anomaly patterns by party",
+          "fields": ["party", "anomaly_type", "frequency", "severity"],
+          "dashboard": "outlier-detection"
+        }
+      ]
+    }
+  },
+  "updateProcedure": {
+    "command": "./cia-data/download-csv.sh",
+    "frequency": "weekly",
+    "lastRun": "2026-02-09"
+  },
+  "integrations": {
+    "dashboards": [
+      "party-dashboard",
+      "coalition-dashboard",
+      "committee-dashboard",
+      "ministry-dashboard",
+      "risk-dashboard"
+    ],
+    "scripts": [
+      "js/party-dashboard.js",
+      "scripts/coalition-dashboard.js",
+      "scripts/committees-dashboard.js",
+      "js/ministry-dashboard.js"
+    ]
+  }
+}

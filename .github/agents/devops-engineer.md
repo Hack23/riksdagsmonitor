@@ -1,7 +1,7 @@
 ---
 name: devops-engineer
 description: CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring, performance optimization for static sites
-tools: ["view", "edit", "create", "bash", "grep", "glob"]
+tools: ["*"]
 ---
 
 ## 📋 Required Context Files

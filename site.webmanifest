@@ -1,0 +1,18 @@
+{
+  "name": "Riksdagsmonitor - Swedish Parliament Intelligence",
+  "short_name": "Riksdagsmonitor",
+  "description": "Real-time monitoring and intelligence platform for Swedish Parliament (Riksdag). Track 349 MPs, coalition predictions, and legislative activity.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#0066CC",
+  "orientation": "portrait-primary",
+  "icons": [],
+  "_comment": "Icons array is empty - awaiting generation of favicon/icon assets. Required sizes: 16x16, 32x32, 180x180, 192x192, 512x512 (PNG format). Include 'purpose': 'any' and 'maskable' variants for optimal PWA support. Once generated, update this manifest with icon paths.",
+  "categories": ["news", "politics", "government"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}

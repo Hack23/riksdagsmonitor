@@ -1,7 +1,7 @@
 ---
 name: data-pipeline-specialist
 description: Expert in CIA data consumption, ETL workflows, caching strategies, data validation, and automated data pipeline orchestration
-tools: ["view", "edit", "create", "bash", "search", "grep", "glob"]
+tools: ["*"]
 ---
 
 # Data Pipeline Specialist - Riksdagsmonitor
