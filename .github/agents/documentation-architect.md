@@ -1,7 +1,7 @@
 ---
 name: documentation-architect
 description: Expert in technical documentation, C4 architecture models, Mermaid diagrams, and Hack23 documentation standards
-tools: ["view", "edit", "create", "search", "bash", "grep", "glob"]
+tools: ["*"]
 ---
 
 ## 📋 Required Context Files
