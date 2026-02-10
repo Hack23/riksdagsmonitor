@@ -120,20 +120,20 @@ Each translation must meet The Economist editorial standards:
 - Quality review and validation: 15-20 minutes
 - **Total per article:** 85-115 minutes (1.5-2 hours)
 
-**Per Language (4 articles):**
-- Translation work: 6-8 hours
+**Per Language (3 articles):**
+- Translation work: 5-6 hours
 - Quality assurance: 1-2 hours
-- **Total per language:** 7-10 hours
+- **Total per language:** 6-8 hours
 
 **Full 14-Language Coverage:**
-- **48 remaining translation files × 1.75 hours = 84 hours**
-- **With QA and coordination: ~95-110 hours (3 weeks full-time)**
+- **36 remaining translation files × 1.75 hours ≈ 63 hours**
+- **With QA and coordination: ~70-85 hours (~2-2.5 weeks full-time)**
 
 ## Recommended Phased Approach
 
 ### Phase 1: Swedish Completion (✅ Completed)
-**Scope:** 4 Swedish translations for Feb 10 articles (completed)  
-**Effort:** ~7-10 hours (completed)  
+**Scope:** 3 Swedish article translations for Feb 10 coverage + sitemap update (completed)  
+**Effort:** ~6-8 hours (completed)  
 **Rationale:** Primary Swedish audience, demonstrates commitment
 
 **Deliverables (all completed):**
