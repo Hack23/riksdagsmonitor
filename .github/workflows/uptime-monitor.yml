@@ -31,8 +31,10 @@ jobs:
         run: |
           echo "🔍 Checking homepage availability..."
           
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L --connect-timeout 10 --max-time 30 https://riksdagsmonitor.com)
-          RESPONSE_TIME=$(curl -s -o /dev/null -w "%{time_total}" -L --connect-timeout 10 --max-time 30 https://riksdagsmonitor.com)
+          # Single curl request to capture both HTTP code and response time
+          CURL_OUTPUT=$(curl -s -o /dev/null -w "%{http_code} %{time_total}" -L --connect-timeout 10 --max-time 30 https://riksdagsmonitor.com)
+          HTTP_CODE=$(echo "$CURL_OUTPUT" | awk '{print $1}')
+          RESPONSE_TIME=$(echo "$CURL_OUTPUT" | awk '{print $2}')
           
           echo "http_code=$HTTP_CODE" >> $GITHUB_OUTPUT
           echo "response_time=$RESPONSE_TIME" >> $GITHUB_OUTPUT
@@ -211,8 +213,18 @@ jobs:
           echo "### 📊 Overall Status" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ "${{ steps.homepage.outcome }}" = "success" ] && \
-             { [ "${{ steps.languages.outcome }}" = "success" ] || [ "${{ steps.languages.outcome }}" = "skipped" ]; }; then
+          # Check homepage, languages, and assets for overall status
+          LANGUAGES_OK=false
+          if [ "${{ steps.languages.outcome }}" = "success" ] || [ "${{ steps.languages.outcome }}" = "skipped" ]; then
+            LANGUAGES_OK=true
+          fi
+          
+          ASSETS_OK=true
+          if [ -n "${{ steps.assets.outputs.fail_count }}" ] && [ "${{ steps.assets.outputs.fail_count }}" != "0" ]; then
+            ASSETS_OK=false
+          fi
+          
+          if [ "${{ steps.homepage.outcome }}" = "success" ] && [ "$LANGUAGES_OK" = "true" ] && [ "$ASSETS_OK" = "true" ]; then
             echo "🟢 **ALL SYSTEMS OPERATIONAL**" >> $GITHUB_STEP_SUMMARY
           elif [ "${{ steps.homepage.outcome }}" = "success" ]; then
             echo "🟡 **DEGRADED SERVICE** - Homepage up, but some issues detected" >> $GITHUB_STEP_SUMMARY

@@ -317,7 +317,7 @@ jobs:
 #### 5.1 Lighthouse Performance Audit
 - **Purpose:** Track Core Web Vitals and performance metrics
 - **Schedule:** Weekly + on main branch changes
-- **Permissions:** contents: read, pull-requests: write, checks: write
+- **Permissions:** contents: read, pull-requests: write
 
 **Audit Configuration:**
 ```yaml
@@ -919,7 +919,7 @@ npm run validate-translations
 
 1. **Use if-no-files-found: ignore**
    ```yaml
-   - uses: actions/upload-artifact@v6
+   - uses: actions/upload-artifact@0b0cf7a4bbde4f8777da630a136716afda3db770 # v6
      with:
        if-no-files-found: ignore
    ```

@@ -94,7 +94,7 @@ jobs:
           echo "📝 Placeholder mode: no data fetched and no metadata freshness updated"
       
       - name: Validate fetched data
-        if: steps.freshness.outputs.skip_fetch != 'true'
+        if: steps.freshness.outputs.skip_fetch != 'true' && steps.fetch.outputs.fetched != '0'
         id: validate
         run: |
           echo "🔍 Validating fetched data against CIA schemas..."
@@ -127,7 +127,7 @@ jobs:
           fi
       
       - name: Generate cache with versioning
-        if: steps.freshness.outputs.skip_fetch != 'true' && steps.validate.outputs.invalid == '0'
+        if: steps.freshness.outputs.skip_fetch != 'true' && steps.fetch.outputs.fetched != '0' && steps.validate.outputs.invalid == '0'
         run: |
           echo "💾 Generating versioned cache..."
           
