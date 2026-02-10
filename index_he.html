@@ -46,17 +46,7 @@
 	<meta name="application-name" content="Hack23 AB">
 	<meta name="theme-color" content="#0066CC">
 	
-	
-<!-- D3.js v7 for data visualizations -->
-<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-mbYTBykXLaphoETzAXlouFLTXQxt2+jeXwcG9N68IyfPnpVRCO15a+ORI68EHuzX" crossorigin="anonymous" defer></script>
-
-<!-- Chart.js v4 for charts -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g" crossorigin="anonymous" defer></script>
-
-<!-- Chart.js date adapter for time series -->
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" integrity="sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzbUUiBGLsIQUE+b1mxws" crossorigin="anonymous" defer></script>
-
-<!-- Schema.org structured data -->
+	<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -596,52 +586,7 @@
 			</div>
 		</section>
 
-		
-<section id="coalition-dashboard" class="dashboard-container">
-<h2>🤝 ניתוח קואליציות ודפוסי הצבעה</h2>
-<p>ניתוח אינטראקטיבי של דינמיקת קואליציות, התאמת מפלגות ודפוסי התנהגות הצבעה בריקסדאג השוודי.</p>
-
-<div class="dashboard-grid">
-<div class="chart-card wide">
-<h3>רשת קואליציה (אינטראקטיבית)</h3>
-<p>גרף מכוון כוח המציג את עוצמת הקואליציה בין מפלגות פוליטיות שוודיות. גרור צמתים, זום ולחץ לפרטים.</p>
-<div id="coalitionNetwork" role="img" aria-label="תרשים רשת קואליציה המציג יחסים בין 8 מפלגות פוליטיות שוודיות"></div>
-<table class="sr-only" id="coalitionNetworkTable">
-<!-- Accessible table fallback populated by JavaScript -->
-</table>
-</div>
-
-<div class="chart-card">
-<h3>אנומליות הצבעה (5 שנים אחרונות)</h3>
-<p>תרשים פיזור המדגיש דפוסי הצבעה חריגים וסטיות מפלגתיות מהתנהגות צפויה.</p>
-<canvas id="votingAnomalyChart" role="img" aria-label="תרשים פיזור אנומליות הצבעה המציג ציוני סטייה לכל המפלגות"></canvas>
-</div>
-
-<div class="chart-card">
-<h3>מפת חום התאמת מפלגות</h3>
-<p>ויזואליזציה מטריצית המציגה רמות הסכמה בהצבעה בין מפלגות על בסיס רישומי הצבעה היסטוריים.</p>
-<div id="alignmentHeatMap" role="img" aria-label="מפת חום התאמת מפלגות המציגה אחוזי הסכמה בהצבעה בין כל זוגות המפלגות"></div>
-</div>
-
-<div class="chart-card">
-<h3>דפוסי התנהגות</h3>
-<p>ציוני עקביות הצבעה מפלגתית המודדים עמידה בקו המפלגה על פני כל ההצבעות.</p>
-<canvas id="behavioralPatternsChart" role="img" aria-label="תרשים עמודות דפוסי התנהגות המציג אחוזי עקביות הצבעה לכל המפלגות"></canvas>
-</div>
-
-<div class="chart-card wide">
-<h3>מגמות החלטות (1990-2026)</h3>
-<p>ציר זמן היסטורי המציג מגמות פעילות הצבעה שנתיות לכל המפלגות על פני 36 שנים.</p>
-<canvas id="decisionTrendsChart" role="img" aria-label="ציר זמן מגמות החלטות המציג נפחי הצבעה שנתיים מ-1990 עד 2026"></canvas>
-</div>
-</div>
-
-<p class="note dashboard-attribution">
-<strong>ייחוס נתונים:</strong> ויזואליזציות מופעלות על ידי יצוא מודיעין פלטפורמת CIA. נתונים מתעדכנים שבועית מממשקי API של נתונים פתוחים של הריקסדאג השוודי.
-</p>
-</section>
-
-<section id="technical-specifications">
+		<section id="technical-specifications">
 			<h2>מפרטים טכניים</h2>
 			
 			<div class="tech-specs">
@@ -706,7 +651,275 @@
 		</section>
 	</main>
 	
-	<footer>
+	
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> ביצועים ויעילות של מפלגות</h2>
+<p>ניתוח מקיף של מפלגות פוליטיות שוודיות עם יותר מ-50 שנים של נתוני פלטפורמת CIA. עקבו אחר מגמות יעילות, דינמיקת קואליציה ומדדי מומנטום עבור 8 מפלגות.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>מגמות יעילות (1990-2026)</h3>
+<p>ציוני יעילות היסטוריים של מפלגות המציגים פרודוקטיביות חקיקתית, עקביות הצבעה והשפעה מדינית לאורך זמן.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>השוואת מפלגות (תקופה נוכחית)</h3>
+<p>ניתוח השוואתי של מדדי ביצועים של מפלגות לתקופת החקיקה הנוכחית.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>יישור קואליציה</h3>
+<p>דפוסי קואליציה ורשתות שיתוף פעולה בין-מפלגתיות.</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>מדדי מומנטום</h3>
+<p>ציוני מומנטום של מפלגות עם אמות מידה אחוזיות (P50, P90) המצביעים על מסלול בחירות.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 ניתוח קואליציות ודפוסי הצבעה</h2>
+<p>ניתוח אינטראקטיבי של דינמיקת קואליציות, התאמת מפלגות ודפוסי התנהגות הצבעה בריקסדאג השוודי.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>רשת קואליציה (אינטראקטיבית)</h3>
+<p>גרף מכוון כוח המציג את עוצמת הקואליציה בין מפלגות פוליטיות שוודיות. גרור צמתים, זום ולחץ לפרטים.</p>
+<div id="coalitionNetwork" role="img" aria-label="תרשים רשת קואליציה המציג יחסים בין 8 מפלגות פוליטיות שוודיות"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>אנומליות הצבעה (5 שנים אחרונות)</h3>
+<p>תרשים פיזור המדגיש דפוסי הצבעה חריגים וסטיות מפלגתיות מהתנהגות צפויה.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="תרשים פיזור אנומליות הצבעה המציג ציוני סטייה לכל המפלגות"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>מפת חום התאמת מפלגות</h3>
+<p>ויזואליזציה מטריצית המציגה רמות הסכמה בהצבעה בין מפלגות על בסיס רישומי הצבעה היסטוריים.</p>
+<div id="alignmentHeatMap" role="img" aria-label="מפת חום התאמת מפלגות המציגה אחוזי הסכמה בהצבעה בין כל זוגות המפלגות"></div>
+</div>
+
+<div class="chart-card">
+<h3>דפוסי התנהגות</h3>
+<p>ציוני עקביות הצבעה מפלגתית המודדים עמידה בקו המפלגה על פני כל ההצבעות.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="תרשים עמודות דפוסי התנהגות המציג אחוזי עקביות הצבעה לכל המפלגות"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>מגמות החלטות (1990-2026)</h3>
+<p>ציר זמן היסטורי המציג מגמות פעילות הצבעה שנתיות לכל המפלגות על פני 36 שנים.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="ציר זמן מגמות החלטות המציג נפחי הצבעה שנתיים מ-1990 עד 2026"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>ייחוס נתונים:</strong> ויזואליזציות מופעלות על ידי יצוא מודיעין פלטפורמת CIA. נתונים מתעדכנים שבועית מממשקי API של נתונים פתוחים של הריקסדאג השוודי.
+</p>
+</section>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 דפוסי פעילות עונתיים (2002-2025)</h2>
+<p class="subtitle">ניתוח רבעוני עם זיהוי אנומליות Z-Score</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="סנן לפי שנה">
+<option value="all">כל השנים</option>
+</select>
+
+<select id="quarter-filter" aria-label="סנן לפי רבעון">
+<option value="all">כל הרבעונים</option>
+<option value="1">Q1 - מושב חורף</option>
+<option value="2">Q2 - מושב אביב</option>
+<option value="3">Q3 - הפסקת קיץ</option>
+<option value="4">Q4 - מושב סתיו</option>
+</select>
+
+<select id="election-filter" aria-label="סנן לפי סטטוס בחירות">
+<option value="all">הכל</option>
+<option value="election">שנות בחירות</option>
+<option value="non-election">שנים ללא בחירות</option>
+</select>
+
+<select id="classification-filter" aria-label="סנן לפי סיווג פעילות">
+<option value="all">כל הסיווגים</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>מפת חום של פעילות רבעונית (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">נפח הצבעות לפי שנה ורבעון עם Z-Score.</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>זיהוי אנומליות Z-Score</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="זיהוי אנומליות Z-Score"></canvas>
+<p class="chart-description">ערכים חריגים סטטיסטיים (|Z| ≥ 2.0) מסומנים באדום.</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>פעילות ממוצעת לפי רבעון (כל השנים)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="פעילות ממוצעת לפי רבעון (כל השנים)"></canvas>
+<p class="chart-description">קווי בסיס Q1-Q4 עם רצועות סטיית תקן.</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>סיווג דפוסים עונתיים</h3>
+<canvas id="classification-chart" role="img" aria-label="סיווג דפוסים עונתיים"></canvas>
+<p class="chart-description">התפלגות דפוסים רגילים, מוגברים, מופחתים וחריגים.</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>שינויים רבעוניים</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="שינויים רבעוניים"></canvas>
+<p class="chart-description">שינויים רציפים בהצבעות (% ומוחלט).</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 נתונים מפלטפורמת CIA | מתעדכן יומית</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 Anomaly Detection & Early Warning System</h2>
+<p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Dismiss</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="severity-filter" aria-label="Filter by severity">
+<option value="all">All Severities</option>
+<option value="CRITICAL">🔴 Critical</option>
+<option value="HIGH">🟠 High</option>
+<option value="MODERATE">🟡 Moderate</option>
+<option value="LOW">🟢 Low</option>
+</select>
+<select id="type-filter" aria-label="Filter by anomaly type">
+<option value="all">All Types</option>
+<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
+<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
+<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
+<option value="NO_ANOMALY">No Anomaly</option>
+</select>
+<select id="direction-filter" aria-label="Filter by direction">
+<option value="all">All Directions</option>
+<option value="UNUSUALLY_HIGH">Unusually High</option>
+<option value="UNUSUALLY_LOW">Unusually Low</option>
+<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+</select>
+<select id="year-filter" aria-label="Filter by year">
+<option value="all">All Years</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Anomaly Timeline -->
+<div class="chart-card wide">
+<h3>Anomaly Timeline (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
+<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Z-Score Distribution</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
+<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+</div>
+
+<!-- Chart 3: Anomaly Type Breakdown -->
+<div class="chart-card">
+<h3>Anomaly Type Distribution</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
+<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>Severity Heat Map (Year × Quarter)</h3>
+<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
+<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+</div>
+
+<!-- Chart 5: Quarterly Anomaly Frequency -->
+<div class="chart-card">
+<h3>Anomaly Frequency by Quarter</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>Recent Anomalies (Last 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
+<p class="chart-description">Most recent anomalies with details</p>
+</div>
+</div>
+</section>
+
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ סיכון והשפעה של שרים</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>מפת סיכונים משרדית</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="מפת סיכונים משרדית"></div>
+</div>
+
+<div class="chart-card">
+<h3>10 השרים המשפיעים ביותר</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="10 השרים המשפיעים ביותר"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>מטריצת פרודוקטיביות משרדית</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="מטריצת פרודוקטיביות משרדית"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>מגמות השפעת החלטות</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="מגמות השפעת החלטות"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>הצג נתונים כטבלה</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
+<footer>
 		<p>&copy; 2008-2026 | Hack23 AB (מס' רישום 5595347807) |
 			<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
 			<a href="https://www.linkedin.com/company/hack23/">לינקדאין חברה</a> |
@@ -722,7 +935,9 @@
 		</p>
 	</footer>
 
-<!-- Coalition Dashboard Script -->
+
+
+
 <script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>

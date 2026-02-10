@@ -72,6 +72,59 @@ Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA p
 - **Politician Career Analysis** - Career trajectories and milestones
 - **Party Longitudinal Analysis** - 50+ years of party evolution
 
+## 📈 Implemented Dashboards
+
+Riksdagsmonitor currently features 4 interactive intelligence dashboards built with Chart.js and D3.js:
+
+### 1. 🌡️ Seasonal Activity Patterns Dashboard
+- **Coverage**: 2002-2025 (quarterly data, 23+ years)
+- **Visualizations**: Heat maps, time series, Z-score analysis
+- **Purpose**: Track quarterly parliamentary activity patterns and detect seasonal trends
+- **Data Source**: `cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv`
+
+### 2. 👤 Politician Dashboard
+- **Coverage**: 349 MPs with comprehensive risk and performance metrics
+- **Visualizations**: Top 10 rankings, risk profiles, influence metrics
+- **Purpose**: Individual MP tracking and transparency assessment
+- **Data Source**: `cia-data/politician/*.csv`
+
+### 3. 🗳️ Pre-Election Monitoring Dashboard
+- **Coverage**: Q4 2023-2025 (12-15 months before 2026 election)
+- **Visualizations**: Historical comparisons, election-year patterns
+- **Purpose**: Track pre-election parliamentary activity and behavior changes
+- **Data Source**: `cia-data/pre-election/*.csv`
+
+
+
+### 4. 🗳️ Party Performance & Effectiveness Dashboard
+
+**Coverage:** 1990-2026 (37 years)  
+**Analysis:** Comprehensive party analytics across 8 Swedish political parties
+
+**Key Features:**
+- **Effectiveness Trends:** Historical legislative productivity and voting consistency
+- **Comparative Analysis:** Party-by-party benchmarking
+- **Coalition Patterns:** Party alignment visualization
+- **Momentum Indicators:** Electoral trajectory with percentile benchmarks
+
+### 5. 🚨 Anomaly Detection & Early Warning System
+- **Coverage**: 2002-2026 (41 quarters analyzed)
+- **Visualizations**: 6 interactive charts including timeline, Z-score distribution, heat map
+- **Features**:
+  - Real-time alert system for critical anomalies
+  - Statistical Z-score analysis (|Z| ≥ 2.0 for anomalies)
+  - Severity classification: CRITICAL (≥2.5), HIGH (≥2.0), MODERATE (≥1.5), LOW (<1.5)
+  - Anomaly types: Ballot, Document, Attendance
+  - Direction indicators: UNUSUALLY_HIGH, UNUSUALLY_LOW
+- **Data Source**: `cia-data/seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv`
+
+**Dashboard Features**:
+- Local-first data loading (1-hour caching)
+- WCAG 2.1 AA accessible
+- 14-language support
+- Responsive design (320px-1440px+)
+- CSP-compliant (SRI hashes on all CDN resources)
+
 ## 🔗 Data Sources
 
 Riksdagsmonitor integrates multiple authoritative Swedish open data sources:

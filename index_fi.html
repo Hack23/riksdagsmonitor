@@ -46,17 +46,7 @@
 	<meta name="application-name" content="Hack23 AB">
 	<meta name="theme-color" content="#0066CC">
 	
-	
-<!-- D3.js v7 for data visualizations -->
-<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-mbYTBykXLaphoETzAXlouFLTXQxt2+jeXwcG9N68IyfPnpVRCO15a+ORI68EHuzX" crossorigin="anonymous" defer></script>
-
-<!-- Chart.js v4 for charts -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g" crossorigin="anonymous" defer></script>
-
-<!-- Chart.js date adapter for time series -->
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" integrity="sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzbUUiBGLsIQUE+b1mxws" crossorigin="anonymous" defer></script>
-
-<!-- Schema.org structured data -->
+	<!-- Schema.org structured data -->
 	<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -592,52 +582,7 @@
 			</div>
 		</section>
 
-		
-<section id="coalition-dashboard" class="dashboard-container">
-<h2>🤝 Koalitio- ja äänestysmallianalyysi</h2>
-<p>Interaktiivinen analyysi koalitiodynamiikasta, puolueiden yhteensovittamisesta ja äänestys käyttäytymismalleista Ruotsin valtiopäivillä.</p>
-
-<div class="dashboard-grid">
-<div class="chart-card wide">
-<h3>Koalitioverkosto (Interaktiivinen)</h3>
-<p>Voimaohjattu kaavio, joka näyttää koalitiovoiman ruotsalaisten poliittisten puolueiden välillä. Vedä solmuja, zoomaa ja napsauta lisätietoja varten.</p>
-<div id="coalitionNetwork" role="img" aria-label="Koalitioverkostokaavio, joka näyttää suhteet 8 ruotsalaisen poliittisen puolueen välillä"></div>
-<table class="sr-only" id="coalitionNetworkTable">
-<!-- Accessible table fallback populated by JavaScript -->
-</table>
-</div>
-
-<div class="chart-card">
-<h3>Äänestyspoikkeamat (Viimeiset 5 vuotta)</h3>
-<p>Hajontakaavio, joka korostaa epätavallisia äänestys malleja ja puolueiden poikkeamia odotetusta käyttäytymisestä.</p>
-<canvas id="votingAnomalyChart" role="img" aria-label="Äänestyspoikkeamat hajontakaavio, joka näyttää poikkeamapisteet kaikille puolueille"></canvas>
-</div>
-
-<div class="chart-card">
-<h3>Puolueiden yhteensovittamisen lämpökartta</h3>
-<p>Matriisivisualisointi, joka näyttää puolueiden väliset sopimustasot historiallisten äänestysrekisterien perusteella.</p>
-<div id="alignmentHeatMap" role="img" aria-label="Puolueiden yhteensovittamisen lämpökartta, joka näyttää äänestysyhtäpitävyyden prosentteina kaikkien puolueparien välillä"></div>
-</div>
-
-<div class="chart-card">
-<h3>Käyttäytymismallit</h3>
-<p>Puolueen äänestysyhdenmukaisuuspisteet, jotka mittaavat puoluelinjan noudattamista kaikissa äänestyksissä.</p>
-<canvas id="behavioralPatternsChart" role="img" aria-label="Käyttäytymismallit pylväskaavio, joka näyttää äänestysyhdenmukaisuuden prosentteina kaikille puolueille"></canvas>
-</div>
-
-<div class="chart-card wide">
-<h3>Päätöstrendit (1990-2026)</h3>
-<p>Historiallinen aikajana, joka näyttää vuotuiset äänestysaktiviteettitrendit kaikille puolueille 36 vuoden ajalta.</p>
-<canvas id="decisionTrendsChart" role="img" aria-label="Päätöstrendit aikajana, joka näyttää vuotuiset äänestysvolyymit vuodesta 1990 vuoteen 2026"></canvas>
-</div>
-</div>
-
-<p class="note dashboard-attribution">
-<strong>Datan lähde:</strong> Visualisoinnit CIA-alustan tiedusteluviennin tukemina. Data päivittyy viikoittain Ruotsin valtiopäivien avoimista data-APIsta.
-</p>
-</section>
-
-<section id="technical-specifications">
+		<section id="technical-specifications">
 			<h2>Technical Specifications</h2>
 			
 			<div class="tech-specs">
@@ -702,7 +647,275 @@
 		</section>
 	</main>
 	
-	<footer>
+	
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> Puolueiden Suorituskyky & Tehokkuus</h2>
+<p>Kattava analyysi ruotsalaisista poliittisista puolueista yli 50 vuoden CIA-alustatiedoilla. Seuraa tehokkuustrendejä, koalitiodynamiikkaa ja vauhtia indikaattoreita 8 puolueelle.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>Tehokkuustrendit (1990-2026)</h3>
+<p>Historialliset puolueiden tehokkuuspisteet, jotka osoittavat lainsäädännöllisen tuottavuuden, äänestyksen johdonmukaisuuden ja politiikan vaikutuksen ajan mittaan.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>Puoluevertailu (Nykyinen Kausi)</h3>
+<p>Vertaileva analyysi puolueiden suorituskykymittareista nykyisellä lainsäädäntökaudella.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>Koalition Yhdenmukaistaminen</h3>
+<p>Koalitiokuviot ja puolueiden väliset yhteistyöverkostot.</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>Vauhti-Indikaattorit</h3>
+<p>Puolueen vauhtipisteet prosenttipisteillä (P50, P90), jotka osoittavat vaalikaaren.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Koalitio- ja äänestysmallianalyysi</h2>
+<p>Interaktiivinen analyysi koalitiodynamiikasta, puolueiden yhteensovittamisesta ja äänestys käyttäytymismalleista Ruotsin valtiopäivillä.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Koalitioverkosto (Interaktiivinen)</h3>
+<p>Voimaohjattu kaavio, joka näyttää koalitiovoiman ruotsalaisten poliittisten puolueiden välillä. Vedä solmuja, zoomaa ja napsauta lisätietoja varten.</p>
+<div id="coalitionNetwork" role="img" aria-label="Koalitioverkostokaavio, joka näyttää suhteet 8 ruotsalaisen poliittisen puolueen välillä"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Äänestyspoikkeamat (Viimeiset 5 vuotta)</h3>
+<p>Hajontakaavio, joka korostaa epätavallisia äänestys malleja ja puolueiden poikkeamia odotetusta käyttäytymisestä.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Äänestyspoikkeamat hajontakaavio, joka näyttää poikkeamapisteet kaikille puolueille"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Puolueiden yhteensovittamisen lämpökartta</h3>
+<p>Matriisivisualisointi, joka näyttää puolueiden väliset sopimustasot historiallisten äänestysrekisterien perusteella.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Puolueiden yhteensovittamisen lämpökartta, joka näyttää äänestysyhtäpitävyyden prosentteina kaikkien puolueparien välillä"></div>
+</div>
+
+<div class="chart-card">
+<h3>Käyttäytymismallit</h3>
+<p>Puolueen äänestysyhdenmukaisuuspisteet, jotka mittaavat puoluelinjan noudattamista kaikissa äänestyksissä.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Käyttäytymismallit pylväskaavio, joka näyttää äänestysyhdenmukaisuuden prosentteina kaikille puolueille"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Päätöstrendit (1990-2026)</h3>
+<p>Historiallinen aikajana, joka näyttää vuotuiset äänestysaktiviteettitrendit kaikille puolueille 36 vuoden ajalta.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Päätöstrendit aikajana, joka näyttää vuotuiset äänestysvolyymit vuodesta 1990 vuoteen 2026"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Datan lähde:</strong> Visualisoinnit CIA-alustan tiedusteluviennin tukemina. Data päivittyy viikoittain Ruotsin valtiopäivien avoimista data-APIsta.
+</p>
+</section>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 Kausivaihtelut (2002-2025)</h2>
+<p class="subtitle">Neljännesvuosianalyysi Z-pisteen poikkeamien havaitsemisella</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="Suodata vuoden mukaan">
+<option value="all">Kaikki vuodet</option>
+</select>
+
+<select id="quarter-filter" aria-label="Suodata neljänneksen mukaan">
+<option value="all">Kaikki neljännekset</option>
+<option value="1">Q1 - Talviistunto</option>
+<option value="2">Q2 - Kevätistunto</option>
+<option value="3">Q3 - Kesätauko</option>
+<option value="4">Q4 - Syysistunto</option>
+</select>
+
+<select id="election-filter" aria-label="Suodata vaalitilan mukaan">
+<option value="all">Kaikki</option>
+<option value="election">Vaalivuodet</option>
+<option value="non-election">Ei-vaalivuodet</option>
+</select>
+
+<select id="classification-filter" aria-label="Suodata toimintaluokituksen mukaan">
+<option value="all">Kaikki luokitukset</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>Neljännesvuosiaktiivisuuden lämpökartta (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">Äänestysvolyymi vuoden ja neljänneksen mukaan Z-pisteiden kanssa. Punaiset ympyrät osoittavat tilastollisia poikkeamia (|Z| ≥ 2.0).</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Z-pisteen poikkeamien havaitseminen</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Z-pisteen poikkeamien havaitseminen"></canvas>
+<p class="chart-description">Tilastolliset poikkeamat (|Z| ≥ 2.0) merkitty punaisella. Katkoviivat näyttävät poikkeamakynnykset.</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>Keskimääräinen toiminta neljänneksittäin (kaikki vuodet)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Keskimääräinen toiminta neljänneksittäin (kaikki vuodet)"></canvas>
+<p class="chart-description">Q1-Q4 perusviivat. Näyttää tyypilliset toimintamallit kausien mukaan.</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>Kausivaihtelun luokittelu</h3>
+<canvas id="classification-chart" role="img" aria-label="Kausivaihtelun luokittelu"></canvas>
+<p class="chart-description">NORMAALI, KOHONNUT, ALENTUNUT ja POIKKEAMA -mallien jakautuminen vuosien mukaan.</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>Neljänneksittäiset muutokset</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Neljänneksittäiset muutokset"></canvas>
+<p class="chart-description">Peräkkäiset äänestysmuutokset (% ja absoluuttinen). Vihreä tarkoittaa kasvua, punainen laskua.</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Tiedot CIA-alustalta | Päivitetään päivittäin</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 Anomaly Detection & Early Warning System</h2>
+<p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Dismiss</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="severity-filter" aria-label="Filter by severity">
+<option value="all">All Severities</option>
+<option value="CRITICAL">🔴 Critical</option>
+<option value="HIGH">🟠 High</option>
+<option value="MODERATE">🟡 Moderate</option>
+<option value="LOW">🟢 Low</option>
+</select>
+<select id="type-filter" aria-label="Filter by anomaly type">
+<option value="all">All Types</option>
+<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
+<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
+<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
+<option value="NO_ANOMALY">No Anomaly</option>
+</select>
+<select id="direction-filter" aria-label="Filter by direction">
+<option value="all">All Directions</option>
+<option value="UNUSUALLY_HIGH">Unusually High</option>
+<option value="UNUSUALLY_LOW">Unusually Low</option>
+<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+</select>
+<select id="year-filter" aria-label="Filter by year">
+<option value="all">All Years</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Anomaly Timeline -->
+<div class="chart-card wide">
+<h3>Anomaly Timeline (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
+<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Z-Score Distribution</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
+<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+</div>
+
+<!-- Chart 3: Anomaly Type Breakdown -->
+<div class="chart-card">
+<h3>Anomaly Type Distribution</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
+<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>Severity Heat Map (Year × Quarter)</h3>
+<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
+<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+</div>
+
+<!-- Chart 5: Quarterly Anomaly Frequency -->
+<div class="chart-card">
+<h3>Anomaly Frequency by Quarter</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>Recent Anomalies (Last 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
+<p class="chart-description">Most recent anomalies with details</p>
+</div>
+</div>
+</section>
+
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ Ministerien Riski & Vaikutusvalta</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Ministeriöiden Riskikartta</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="Ministeriöiden Riskikartta"></div>
+</div>
+
+<div class="chart-card">
+<h3>Top 10 Vaikutusvaltaisinta Ministeriä</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Top 10 Vaikutusvaltaisinta Ministeriä"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Ministeriöiden Tuottavuusmatriisi</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Ministeriöiden Tuottavuusmatriisi"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Päätösvaikutustrendit</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Päätösvaikutustrendit"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>Näytä tiedot taulukkona</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
+<footer>
 		<p>&copy; 2008-2026 | Hack23 AB (Org.nr 5595347807) |
 			<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
 			<a href="https://www.linkedin.com/company/hack23/">Company LinkedIn</a> |
@@ -717,7 +930,9 @@
 		</p>
 	</footer>
 
-<!-- Coalition Dashboard Script -->
+
+
+
 <script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>
