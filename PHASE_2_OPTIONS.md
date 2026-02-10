@@ -76,17 +76,17 @@ Phase 2 aims to expand riksdagsmonitor news coverage to **Danish (DA), Norwegian
 - Familiarity with Swedish/Nordic politics
 
 **Budget Estimate:**
-- **Danish:** €450-750 (3 articles @ €150-250 each)
-- **Norwegian:** €450-750 (3 articles @ €150-250 each)
-- **Finnish:** €600-900 (3 articles @ €200-300 each)
-- **Total: €1,500-2,400** for professional quality
+- **Danish:** €600-1,000 (4 articles @ €150-250 each)
+- **Norwegian:** €600-1,000 (4 articles @ €150-250 each)
+- **Finnish:** €800-1,200 (4 articles @ €200-300 each)
+- **Total: €2,000-3,200** for professional quality
 
 **Timeline:** 2-3 weeks (coordinating with 3 translators)
 
 **Quality:** Professional political journalism standards maintained
 
 **Deliverables:**
-- 12 professionally translated articles
+- 12 professionally translated files (4 articles × 3 languages)
 - Cultural adaptation for each Nordic country
 - The Economist editorial quality
 - All technical infrastructure (HTML, sitemap, etc.)

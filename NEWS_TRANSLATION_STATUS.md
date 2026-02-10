@@ -55,7 +55,7 @@ The riksdagsmonitor news journalism initiative has successfully created **compre
 
 **Target:** 4 articles × 14 languages = 56 files
 
-**Gap:** 51 translation files (91%)
+**Gap:** 48 translation files (86%)
 
 ## Supported Languages
 
@@ -63,7 +63,7 @@ Riksdagsmonitor supports 14 languages:
 
 ### Nordic (Strategic Priority)
 1. **English (EN)** - ✅ Complete (4/4 articles)
-2. **Swedish (SV)** - 🟡 Partial (1/4 new articles)
+2. **Swedish (SV)** - ✅ Complete (4/4 articles)
 3. **Danish (DA)** - ❌ Not started
 4. **Norwegian (NO)** - ❌ Not started
 5. **Finnish (FI)** - ❌ Not started
@@ -320,7 +320,7 @@ Plus CSS adjustments:
 
 ### Coverage
 - **Target:** 100% (56 files)
-- **Current:** 9% (5 files)
+- **Current:** 14.3% (8 files)
 - **Minimum viable:** 50% (28 files - EN/SV/Nordic/DE/FR)
 
 ### Quality
