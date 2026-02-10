@@ -72,8 +72,6 @@ Riksdagsmonitor leverages 19 comprehensive visualization products from the CIA p
 - **Politician Career Analysis** - Career trajectories and milestones
 - **Party Longitudinal Analysis** - 50+ years of party evolution
 
-<<<<<<< HEAD
-=======
 ## 📈 Implemented Dashboards
 
 Riksdagsmonitor currently features 4 interactive intelligence dashboards built with Chart.js and D3.js:
@@ -95,8 +93,6 @@ Riksdagsmonitor currently features 4 interactive intelligence dashboards built w
 - **Visualizations**: Historical comparisons, election-year patterns
 - **Purpose**: Track pre-election parliamentary activity and behavior changes
 - **Data Source**: `cia-data/pre-election/*.csv`
-
-
 
 ### 4. 🗳️ Party Performance & Effectiveness Dashboard
 
@@ -126,12 +122,6 @@ Riksdagsmonitor currently features 4 interactive intelligence dashboards built w
 - 14-language support
 - Responsive design (320px-1440px+)
 - CSP-compliant (SRI hashes on all CDN resources)
-
-<<<<<<< HEAD
->>>>>>> origin/main
-=======
->>>>>>> main
->>>>>>> origin/main
 ## 🔗 Data Sources
 
 Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
@@ -145,7 +135,7 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 
 ### Stack
 - **Frontend:** Static HTML/CSS with JavaScript dashboards
-- **Build System:** Vite 6 (ES modules, code splitting, SRI hashes)
+- **Build System:** Vite 7 (ES modules, code splitting, SRI hashes)
 - **Visualization:** Chart.js 4 + D3.js 7 (bundled locally, no CDN)
 - **Testing:** Vitest (unit), Cypress (E2E) - 49 tests passing
 - **Styling:** Custom CSS with cyberpunk theme, responsive design
