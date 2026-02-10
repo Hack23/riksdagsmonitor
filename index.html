@@ -490,6 +490,115 @@ Swedish Election 2026
 <p class="note">All visualizations available through CIA platform with real-time data updates from Swedish Parliament open data APIs.</p>
 </section>
 
+<section id="data-integration">
+<h2>🔗 Data Sources & Integration</h2>
+<p>Riksdags Monitor integrates multiple authoritative data sources:</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Swedish Parliament (Riksdagen)</h3>
+<p>Official parliamentary data including votes, documents, committee work, and MP information</p>
+<a href="http://data.riksdagen.se/" target="_blank">data.riksdagen.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Swedish Election Authority</h3>
+<p>Historical election results, voter turnout, and electoral statistics</p>
+<a href="http://www.val.se/" target="_blank">val.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Financial Management Authority</h3>
+<p>Government budget data, spending analysis, and financial accountability</p>
+<a href="https://www.esv.se/psidata/" target="_blank">esv.se/psidata</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>World Bank Open Data</h3>
+<p>Country-level economic and development indicators for comparative analysis</p>
+<a href="http://data.worldbank.org/" target="_blank">data.worldbank.org</a>
+</div>
+</div>
+</section>
+
+<section id="technical-specifications">
+<h2>Technical Specifications</h2>
+
+<div class="tech-specs">
+<div class="spec-category">
+<h3>Platform Access</h3>
+<ul>
+<li><strong>CIA Platform:</strong> <a href="https://www.hack23.com/cia/">www.hack23.com/cia</a></li>
+<li><strong>Architecture:</strong> RESTful API with OAuth 2.0</li>
+<li><strong>Data Format:</strong> JSON, CSV, Excel exports</li>
+<li><strong>Response Time:</strong> &lt;200ms (P95)</li>
+<li><strong>Uptime SLA:</strong> 99.9%</li>
+<li><strong>Documentation:</strong> OpenAPI/Swagger specification</li>
+</ul>
+</div>
+
+<div class="spec-category">
+<h3>Data Coverage</h3>
+<ul>
+<li><strong>MPs:</strong> All 349 members of Riksdag</li>
+<li><strong>Historical Data:</strong> 1971-2024 (50+ years)</li>
+<li><strong>Votes:</strong> 10,000+ annually</li>
+<li><strong>Documents:</strong> 20,000+ processed annually</li>
+<li><strong>Update Frequency:</strong> Real-time for votes, daily for documents</li>
+<li><strong>Languages:</strong> 14 languages supported</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="resources">
+<h2>Resources & Documentation</h2>
+<div class="resources">
+<ul>
+<li><a href="https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations" target="_blank">CIA Visualization Specifications</a> - Technical specs for all 19 visualization products</li>
+<li><a href="https://hack23.github.io/cia/" target="_blank">CIA Platform Documentation</a> - Complete platform documentation and API reference</li>
+<li><a href="https://github.com/Hack23/cia" target="_blank">CIA Open Source Project</a> - GitHub repository with source code</li>
+<li><a href="https://www.hack23.com" target="_blank">Created by Hack23</a> - About the development organization</li>
+</ul>
+</div>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2008-2026 | Riksdags Monitor |
+<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
+<a href="https://github.com/Hack23/ISMS-PUBLIC" title="Public ISMS Repository">ISMS</a> |
+<a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" title="Information Security Policy">Security Policy</a>
+</p>
+<p>
+<a href="index.html" title="English">English</a> |
+<a href="swedish-election-2026_sv.html" title="Svenska">Svenska</a> |
+<a href="swedish-election-2026_da.html" title="Dansk">Dansk</a> |
+<a href="swedish-election-2026_no.html" title="Norsk">Norsk</a> |
+<a href="swedish-election-2026_fi.html" title="Suomi">Suomi</a>
+</p>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  ↑
+</button>
+
+<!-- Party Dashboard Script -->
+<!-- Back to Top Button Script (respects prefers-reduced-motion) -->
+<script src="js/back-to-top.js"></script>
+
+    <script src="js/party-dashboard.js"></script>
+    <script src="js/seasonal-patterns-dashboard.js"></script>
+    <script src="js/pre-election-dashboard.js"></script>
+    <script src="js/anomaly-detection-dashboard.js"></script>
+    <script src="js/ministry-dashboard.js" defer></script>
+    </body>
+</html>
 <section id="party-dashboard" class="dashboard-container">
 <h2><span aria-hidden="true">🗳️</span> Party Performance & Effectiveness</h2>
 <p>Comprehensive analysis of Swedish political parties using 50+ years of CIA platform data. Track effectiveness trends, coalition dynamics, and momentum indicators across 8 parties.</p>
@@ -772,114 +881,37 @@ Swedish Election 2026
 </div>
 </section>
 
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ Government Minister Risk & Influence</h2>
 
-
-<section id="data-integration">
-<h2>🔗 Data Sources & Integration</h2>
-<p>Riksdags Monitor integrates multiple authoritative data sources:</p>
-
-<div class="cards">
-<div class="card">
-<div class="scanner-effect"></div>
-<h3>Swedish Parliament (Riksdagen)</h3>
-<p>Official parliamentary data including votes, documents, committee work, and MP information</p>
-<a href="http://data.riksdagen.se/" target="_blank">data.riksdagen.se</a>
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Ministry Risk Heat Map</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="Ministry Risk Heat Map showing risk levels across government departments"></div>
 </div>
 
-<div class="card">
-<div class="scanner-effect"></div>
-<h3>Swedish Election Authority</h3>
-<p>Historical election results, voter turnout, and electoral statistics</p>
-<a href="http://www.val.se/" target="_blank">val.se</a>
+<div class="chart-card">
+<h3>Top 10 Most Influential Ministers</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Bar chart showing top 10 most influential ministers"></canvas>
 </div>
 
-<div class="card">
-<div class="scanner-effect"></div>
-<h3>Financial Management Authority</h3>
-<p>Government budget data, spending analysis, and financial accountability</p>
-<a href="https://www.esv.se/psidata/" target="_blank">esv.se/psidata</a>
+<div class="chart-card">
+<h3>Ministry Productivity Matrix</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Bar chart comparing ministry productivity across quarters"></canvas>
 </div>
 
-<div class="card">
-<div class="scanner-effect"></div>
-<h3>World Bank Open Data</h3>
-<p>Country-level economic and development indicators for comparative analysis</p>
-<a href="http://data.worldbank.org/" target="_blank">data.worldbank.org</a>
+<div class="chart-card">
+<h3>Decision Impact Trends</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Line chart showing decision impact trends over time"></canvas>
 </div>
 </div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>View data as accessible table</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
 </section>
 
-<section id="technical-specifications">
-<h2>Technical Specifications</h2>
-
-<div class="tech-specs">
-<div class="spec-category">
-<h3>Platform Access</h3>
-<ul>
-<li><strong>CIA Platform:</strong> <a href="https://www.hack23.com/cia/">www.hack23.com/cia</a></li>
-<li><strong>Architecture:</strong> RESTful API with OAuth 2.0</li>
-<li><strong>Data Format:</strong> JSON, CSV, Excel exports</li>
-<li><strong>Response Time:</strong> &lt;200ms (P95)</li>
-<li><strong>Uptime SLA:</strong> 99.9%</li>
-<li><strong>Documentation:</strong> OpenAPI/Swagger specification</li>
-</ul>
-</div>
-
-<div class="spec-category">
-<h3>Data Coverage</h3>
-<ul>
-<li><strong>MPs:</strong> All 349 members of Riksdag</li>
-<li><strong>Historical Data:</strong> 1971-2024 (50+ years)</li>
-<li><strong>Votes:</strong> 10,000+ annually</li>
-<li><strong>Documents:</strong> 20,000+ processed annually</li>
-<li><strong>Update Frequency:</strong> Real-time for votes, daily for documents</li>
-<li><strong>Languages:</strong> 14 languages supported</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section id="resources">
-<h2>Resources & Documentation</h2>
-<div class="resources">
-<ul>
-<li><a href="https://github.com/Hack23/cia/tree/master/json-export-specs/visualizations" target="_blank">CIA Visualization Specifications</a> - Technical specs for all 19 visualization products</li>
-<li><a href="https://hack23.github.io/cia/" target="_blank">CIA Platform Documentation</a> - Complete platform documentation and API reference</li>
-<li><a href="https://github.com/Hack23/cia" target="_blank">CIA Open Source Project</a> - GitHub repository with source code</li>
-<li><a href="https://www.hack23.com" target="_blank">Created by Hack23</a> - About the development organization</li>
-</ul>
-</div>
-</section>
-</main>
-
-<footer>
-<p>&copy; 2008-2026 | Riksdags Monitor |
-<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
-<a href="https://github.com/Hack23/ISMS-PUBLIC" title="Public ISMS Repository">ISMS</a> |
-<a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" title="Information Security Policy">Security Policy</a>
-</p>
-<p>
-<a href="index.html" title="English">English</a> |
-<a href="swedish-election-2026_sv.html" title="Svenska">Svenska</a> |
-<a href="swedish-election-2026_da.html" title="Dansk">Dansk</a> |
-<a href="swedish-election-2026_no.html" title="Norsk">Norsk</a> |
-<a href="swedish-election-2026_fi.html" title="Suomi">Suomi</a>
-</p>
-</footer>
-
-<!-- Back to Top Button -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
-  ↑
-</button>
-
-<!-- Party Dashboard Script -->
-<script src="js/party-dashboard.js"></script>
-<script src="js/seasonal-patterns-dashboard.js"></script>
-<script src="js/pre-election-dashboard.js"></script>
-<script src="js/anomaly-detection-dashboard.js"></script>
-
-<!-- Back to Top Button Script (respects prefers-reduced-motion) -->
-<script src="js/back-to-top.js"></script>
-
-</body>
-</html>

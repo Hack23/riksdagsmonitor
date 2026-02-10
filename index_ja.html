@@ -231,7 +231,21 @@
         </ul>
       </section>
     
-<section id="party-dashboard" class="dashboard-container">
+</article>
+  </main>
+
+<footer>
+    <p>&copy; 2025 Hack23 AB. All rights reserved.</p>
+    <p><a href="index_ja.html">ホーム</a> | <a href="blog_ja.html">ブログ</a></p>
+  </footer>
+<!-- Party Dashboard Script -->
+    <script src="js/party-dashboard.js"></script>
+    <script src="js/seasonal-patterns-dashboard.js"></script>
+    <script src="js/pre-election-dashboard.js"></script>
+    <script src="js/anomaly-detection-dashboard.js"></script>
+    <script src="js/ministry-dashboard.js" defer></script>
+    </body>
+</html><section id="party-dashboard" class="dashboard-container">
 <h2><span aria-hidden="true">🗳️</span> 政党のパフォーマンスと効果</h2>
 <p>CIAプラットフォームの50年以上のデータを使用したスウェーデンの政党の包括的な分析。8つの政党の効果トレンド、連立動態、勢いの指標を追跡します。</p>
 
@@ -265,9 +279,6 @@
 </div>
 </div>
 </section>
-
-    </article>
-  </main>
 
 <section id="seasonal-patterns-dashboard">
 <h2>📅 季節的活動パターン（2002-2025）</h2>
@@ -423,16 +434,37 @@
 </div>
 </section>
 
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ 大臣のリスクと影響力</h2>
 
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>省庁リスクヒートマップ</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="省庁リスクヒートマップ"></div>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Hack23 AB. All rights reserved.</p>
-    <p><a href="index_ja.html">ホーム</a> | <a href="blog_ja.html">ブログ</a></p>
-  </footer>
-<!-- Party Dashboard Script -->
-<script src="js/party-dashboard.js"></script>
-<script src="js/seasonal-patterns-dashboard.js"></script>
-<script src="js/pre-election-dashboard.js"></script>
-<script src="js/anomaly-detection-dashboard.js"></script>
-</body>
-</html>
+<div class="chart-card">
+<h3>最も影響力のある10人の大臣</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="最も影響力のある10人の大臣"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>省庁生産性マトリックス</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="省庁生産性マトリックス"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>意思決定の影響トレンド</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="意思決定の影響トレンド"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>テーブルとしてデータを表示</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
