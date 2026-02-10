@@ -1,0 +1,33 @@
+{
+  "name": "Riksdagsmonitor - Swedish Parliament Intelligence",
+  "short_name": "Riksdagsmonitor",
+  "description": "Live intelligence platform monitoring Swedish Parliament, tracking 349 MPs, coalition predictions, and election forecasting for Swedish Election 2026",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#006633",
+  "orientation": "portrait-primary",
+  "icons": [],
+  "categories": ["politics", "news", "government"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "english-article-preview.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Dashboard preview"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View main intelligence dashboard",
+      "url": "/index.html"
+    }
+  ]
+}
