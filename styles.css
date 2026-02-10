@@ -1005,6 +1005,13 @@ a:hover {
   opacity: 0;
 }
 
+.back-to-top.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
 .back-to-top:hover {
   background: var(--primary-light);
   transform: translateY(-4px);
@@ -8545,43 +8552,6 @@ a:hover {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 999;
-  transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 12px var(--card-shadow);
-  display: none;
-  opacity: 0;
-}
-
-.back-to-top:hover {
-  background: var(--primary-light);
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px var(--card-shadow);
-}
-
-.back-to-top:focus-visible {
-  outline: 3px solid var(--primary-light);
-  outline-offset: 4px;
-  box-shadow: 0 0 0 4px rgba(0, 119, 68, 0.3);
-}
-
-@media (prefers-color-scheme: dark) {
-  .back-to-top {
-    background: var(--primary-color);
-    box-shadow: 0 4px 12px rgba(0, 204, 102, 0.3);
-  }
   
   .back-to-top:hover {
     background: var(--primary-light);
