@@ -27,7 +27,7 @@ This report documents a comprehensive ISMS compliance audit of the Riksdagsmonit
 - **Low Priority:** 0
 - **Observations:** 2 (Enhancement opportunities)
 
-**Overall Status:** ✅ **COMPLIANT** (after remediation)
+**Overall Status:** ⚠️ **PROVISIONALLY COMPLIANT** (remediation completed, pending formal reviewer/approver sign-off)
 
 ---
 
@@ -121,7 +121,7 @@ Initial documentation focused on technical features rather than ISMS compliance 
 
 **Verification:**
 - ✅ README.md has comprehensive information classification section
-- ✅ SECURITY_ARCHITECTURE.md v1.2 has detailed data controls
+- ✅ SECURITY_ARCHITECTURE.md v1.3 has detailed data controls
 - ✅ ISO 27001 A.8.2 control documented and implemented
 - ✅ All 9 key documents have classification labels
 
@@ -347,9 +347,9 @@ The Riksdagsmonitor repository is now **fully compliant** with Hack23 AB ISMS re
 
 ### 7.1 Internal Documentation
 - [README.md](README.md) - Information classification section
-- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security controls v1.2
-- [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis v1.0
-- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap v1.0
+- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security controls v1.3
+- [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis v1.1
+- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap v1.1
 
 ### 7.2 Hack23 ISMS
 - [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
@@ -366,7 +366,7 @@ The Riksdagsmonitor repository is now **fully compliant** with Hack23 AB ISMS re
 **Document Control:**
 - **Repository:** https://github.com/Hack23/riksdagsmonitor
 - **Path:** /ISMS_COMPLIANCE_AUDIT_REPORT.md
-- **Classification:** Internal (contains audit findings)
+- **Classification:** Public (transparency, public repository)
 - **Version:** 1.0
 - **Audit Date:** 2026-02-10
 - **Next Audit:** 2026-05-10 (Quarterly)
@@ -400,7 +400,9 @@ While basic data classification was implemented (4-level scheme), the official H
      - Confidentiality: Public
      - Integrity: High (automated validation, Git signatures)
      - Availability: High (99.9% uptime, automated failover)
-   - Added Privacy classification: NA (no personal data)
+   - Added Privacy classification: Personal (public-official data from Riksdag/CIA sources)
+     - Clarified GDPR applicability with public-interest/legitimate-interest grounds
+     - Distinguished end-user PII from public-official personal data
    - Added Business Continuity classification:
      - RTO: High (1-4 hours)
      - RPO: Daily (4-24 hours)
@@ -420,7 +422,7 @@ While basic data classification was implemented (4-level scheme), the official H
 |-------------------|-------------------|-------------------|--------|
 | **Data Classification** | ✅ 4-level scheme | ✅ 4-level scheme (maintained) | ✅ Compliant |
 | **CIA Triad** | ❌ Not documented | ✅ Fully classified with badges | ✅ Compliant |
-| **Privacy/PII** | ✅ Stated "no PII" | ✅ Formal classification (NA) | ✅ Compliant |
+| **Privacy/PII** | ❌ Incorrectly stated "NA/no PII" | ✅ Formal classification (Personal, GDPR applicable) | ✅ Compliant |
 | **Business Continuity** | ⚠️ Mentioned in BCP | ✅ RTO/RPO formally classified | ✅ Compliant |
 | **Business Impact** | ❌ Not documented | ✅ 4-dimension matrix | ✅ Compliant |
 | **Project Type** | ❌ Not documented | ✅ Classified with badges | ✅ Compliant |

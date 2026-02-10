@@ -149,10 +149,10 @@ graph TB
 
 Following Hack23 AB ISMS information classification policy:
 
-| Classification | Data Types | Handling Requirements | Storage Location |
-|----------------|-----------|----------------------|-----------------|
-| 🟢 **Public** | Website content, Swedish Riksdag open data, documentation | No restrictions, TLS 1.3 in transit | GitHub repository, AWS S3, GitHub Pages |
-| 🟡 **Internal** | GitHub Actions secrets, AWS credentials, deployment configs | Encrypted at rest, MFA access, least privilege | GitHub Secrets, AWS STS (ephemeral OIDC assumed roles) |
+| Classification | Data Types | Handling Requirements | Storage / Access Method |
+|----------------|-----------|----------------------|------------------------|
+| 🟢 **Public** | Website content, Swedish Riksdag open data, documentation | No restrictions, TLS 1.3 in transit | GitHub repository, AWS S3, GitHub Pages (CDN) |
+| 🟡 **Internal** | GitHub Actions secrets, AWS credentials, deployment configs | Encrypted at rest, MFA access, least privilege | GitHub Secrets, AWS IAM (ephemeral STS/OIDC) |
 | 🟠 **Confidential** | Not applicable | N/A | N/A |
 | 🔴 **Restricted** | Not applicable | N/A | N/A |
 
