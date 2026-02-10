@@ -81,9 +81,8 @@ For operational data handling, we use a simplified 4-level scheme:
 - All source code and documentation
 
 **Internal Data (🟡):**
-- GitHub Personal Access Tokens (PATs)
+- GitHub Actions secrets (tokens if used; no long-lived PATs)
 - AWS IAM credentials (ephemeral via OIDC)
-- GitHub Actions secrets
 - Deployment pipeline configurations
 
 **No User or Confidential Data:**

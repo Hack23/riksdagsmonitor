@@ -164,7 +164,7 @@ Following Hack23 AB ISMS information classification policy:
   - Government budget data
   - All source code and documentation
 - **Internal Data:**
-  - GitHub Personal Access Tokens (PATs)
+  - GitHub repository and Actions access tokens (if used, e.g., optional PATs for local tooling)
   - AWS IAM credentials (ephemeral via OIDC)
   - GitHub Actions workflow secrets
 - **No Sensitive End-User Data:**

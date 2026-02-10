@@ -93,13 +93,14 @@ Initial documentation focused on technical features rather than ISMS compliance 
 **Remediation Actions Taken:**
 
 1. **README.md Enhancement:**
-   - Added "📊 Information Classification" section (lines 20-71)
-   - 4-level classification scheme: 🟢 Public, 🟡 Internal, 🟠 Confidential, 🔴 Restricted
-   - Complete data inventory (Public: website content, open data, person-level reference data from official sources; Internal: secrets, credentials)
-   - Handling requirements per classification level
-   - Data inventory updated to explicitly document person-level fields under `cia-data` (e.g., `first_name`, `last_name`, `person_id`) and classify them as Public with applicable privacy controls
-   - Privacy posture clarified and aligned with ISO 27001 A.8, NIST CSF PR.DS, and CIS Controls 3 for the documented data types, including person-level fields from public sources
-   - Compliance alignment (ISO 27001 A.8, NIST CSF PR.DS, CIS Controls 3)
+   - Enhanced "📊 Project Classification" section with comprehensive multi-dimensional classification per Hack23 Classification Framework v1.3
+   - Added CIA Triad classification (Confidentiality: Public, Integrity: High, Availability: High)
+   - Added Privacy classification: Personal (public-official data from Riksdag/CIA sources, GDPR applicable with public-interest grounds)
+   - Added Business Continuity classification (RTO: High 1-4hrs, RPO: Daily 4-24hrs)
+   - Added Business Impact Analysis (Financial: Low, Operational: Moderate, Reputational: Moderate, Regulatory: Low)
+   - Documented data inventory: Public data (website content, open data including person-level data from official sources) and Internal data (secrets, credentials)
+   - Clarified handling of person-level data about public officials from Swedish Parliament/CIA datasets
+   - All classifications aligned with ISO 27001 A.8, NIST CSF PR.DS, and CIS Controls 3
 
 2. **SECURITY_ARCHITECTURE.md Update (v1.2 → v1.3):**
    - Expanded "2.3 Data Security" section
@@ -348,8 +349,8 @@ The Riksdagsmonitor repository is now **fully compliant** with Hack23 AB ISMS re
 ### 7.1 Internal Documentation
 - [README.md](README.md) - Information classification section
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security controls v1.3
-- [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis v1.1
-- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap v1.1
+- [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis v1.0
+- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap v1.0
 
 ### 7.2 Hack23 ISMS
 - [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
