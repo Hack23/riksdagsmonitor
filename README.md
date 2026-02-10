@@ -2,6 +2,11 @@
 
 > Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency
 
+**Document Classification:** 🟢 Public  
+**Last Updated:** 2026-02-10  
+**Owner:** Hack23 AB (Org.nr 5595347807)  
+**Review Cycle:** Quarterly
+
 ## 🎯 Mission
 
 Riksdagsmonitor is a comprehensive intelligence platform for monitoring political activity in Sweden's Riksdag (Parliament). Built on the [Citizen Intelligence Agency (CIA)](https://github.com/Hack23/cia) platform, we provide systematic transparency through real-time analysis and 50+ years of historical data.
@@ -16,6 +21,101 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Hack23/riksdagsmonitor)
 
 **Security Policy:** Per [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), we maintain defense-in-depth architecture with comprehensive security controls and documentation
+
+## 📊 Project Classification
+
+Riksdagsmonitor follows Hack23 AB's comprehensive [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) for security, business continuity, and impact analysis:
+
+### 🎯 Project Classification
+[![Project Type](https://img.shields.io/badge/Type-Frontend_Apps-yellow?style=for-the-badge&logo=window-maximize&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#project-type-classifications)
+[![Process Type](https://img.shields.io/badge/Process-Development-cyan?style=for-the-badge&logo=code&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#project-type-classifications)
+
+### 🔒 Security Classification (CIA Triad)
+[![Confidentiality](https://img.shields.io/badge/Confidentiality-Public-lightgrey?style=for-the-badge&logo=shield&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)
+[![Integrity](https://img.shields.io/badge/Integrity-High-orange?style=for-the-badge&logo=check-circle&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels)
+[![Availability](https://img.shields.io/badge/Availability-High-orange?style=for-the-badge&logo=server&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
+
+**Confidentiality:** Public - All information intentionally disclosed (Swedish Riksdag open data, website content)  
+**Integrity:** High - Automated validation, digital signatures (Git commits), accurate political data required  
+**Availability:** High - 99.998% design availability target (underpinned by AWS CloudFront 99.9% SLA), automated failover (AWS multi-region, GitHub Pages DR)
+
+### 🏷️ Privacy Classification
+[![Privacy](https://img.shields.io/badge/Privacy-Personal-orange?style=for-the-badge&logo=user-shield&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#privacy-levels)
+
+**Personal Data (Public Officials):** This project processes personal data about public officials (e.g., names, roles, voting records, person identifiers) sourced from Swedish Riksdag open data and the Citizen Intelligence Agency (CIA) datasets. Data relates only to MPs and other public figures acting in their official capacity; no special-category data or data about private individuals is processed. GDPR applies, with processing based on public-interest and legitimate-interest grounds for transparency and democratic accountability.
+
+### ⏱️ Business Continuity Classification
+[![RTO](https://img.shields.io/badge/RTO-High_%281--4hrs%29-yellow?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rto-classifications)
+[![RPO](https://img.shields.io/badge/RPO-Daily_%284--24hrs%29-lightblue?style=for-the-badge&logo=database&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rpo-classifications)
+
+**RTO (Recovery Time Objective):** 1-4 hours - Automated multi-region failover (AWS CloudFront + S3 us-east-1 primary, eu-west-1 replica, GitHub Pages DR)  
+**RPO (Recovery Point Objective):** 4-24 hours - Daily data pipeline updates, Git version control, S3 versioning
+
+### 💰 Business Impact Analysis
+
+| Impact Category | Level | Description |
+|-----------------|-------|-------------|
+| **Financial** | [![Low](https://img.shields.io/badge/Low-lightgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#financial-impact-levels) | Minimal financial impact (<$500 daily) - Open-source project, no revenue dependency |
+| **Operational** | [![Moderate](https://img.shields.io/badge/Moderate-yellow?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#operational-impact-levels) | Partial service impact - Swedish political transparency temporarily unavailable |
+| **Reputational** | [![Moderate](https://img.shields.io/badge/Moderate-yellow?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#reputational-impact-levels) | Industry attention - Transparency advocates may notice outage |
+| **Regulatory** | [![Low](https://img.shields.io/badge/Low-lightgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#regulatory-impact-levels) | No regulatory impact - Public information dissemination only |
+
+### 📋 Data Classification Levels
+
+For operational data handling, we use a simplified 4-level scheme:
+
+| Classification | Description | Examples | Handling Requirements |
+|----------------|-------------|----------|----------------------|
+| 🟢 **Public** | Information intended for public disclosure | Website content, Swedish Riksdag open data, documentation | No restrictions, published on GitHub Pages |
+| 🟡 **Internal** | Information for internal use only | GitHub Actions secrets, deployment credentials | GitHub organization access only, MFA required |
+| 🟠 **Confidential** | Sensitive business information | Not applicable to this project | N/A |
+| 🔴 **Restricted** | Highly sensitive information | Not applicable to this project | N/A |
+
+### 📦 Data Inventory
+
+**Public Data (🟢):**
+- All website HTML/CSS content (14 languages)
+- Swedish Parliament data (MPs, votes, documents, committees)
+- Election results and statistics
+- Government budget and spending data
+- All source code and documentation
+
+**Internal Data (🟡):**
+- GitHub Actions secrets (tokens if used; no long-lived PATs)
+- AWS IAM credentials (ephemeral via OIDC)
+- Deployment pipeline configurations
+
+**No User or Confidential Data:**
+- ❌ No user accounts or authentication
+- ❌ No non-public or end-user personally identifiable information (PII)
+- ✅ Only public-figure data from official Swedish Parliament records (MP names, roles, votes)
+- ❌ No financial transactions or payment data
+- ❌ No confidential government information
+
+### 🔐 Data Handling Controls
+
+**Public Data:**
+- Published via GitHub Pages and AWS CloudFront
+- TLS 1.3 encryption in transit
+- No access controls required (intentionally public)
+- Version controlled via Git
+
+**Internal Data:**
+- Stored in GitHub Secrets (encrypted at rest)
+- AWS credentials via OIDC (no long-lived keys)
+- Accessed only via secure GitHub Actions workflows
+- Least privilege principle enforced
+- Regular rotation and audit
+
+### 📋 Compliance Alignment
+
+- **ISO 27001:2022 A.8** - Asset Management
+- **NIST CSF 2.0 PR.DS** - Data Security
+- **CIS Controls v8.1 Control 3** - Data Protection
+- **GDPR** - Applicable for public-official data processing (public interest and legitimate interest grounds)
+- **Hack23 Classification Framework** - [Full framework documentation](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
+See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for detailed security controls.
 
 ## ✨ Features
 
