@@ -2276,7 +2276,7 @@ Performance tiers (ntile_party_tier: 1-4)
     // Ethics Concerns
     const ethicsList = document.getElementById('ethicsConcernsList');
     const ethicsData = riskData
-      .filter(d => d.rule.includes('Ethics') || Math.random() > 0.5)
+      .filter(d => String(d.rule || '').includes('Ethics') || Math.random() > 0.5)
       .sort((a, b) => b.score - a.score)
       .slice(0, 10);
     
