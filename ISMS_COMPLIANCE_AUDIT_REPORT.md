@@ -46,7 +46,7 @@ This report documents a comprehensive ISMS compliance audit of the Riksdagsmonit
 **Out of Scope:**
 - Source code security review (separate code review process)
 - Penetration testing (not required for static site)
-- Third-party dependency audit (handled by Dependabot)
+- Full third-party dependency audit of all runtime libraries; automated coverage is currently limited to GitHub Actions via Dependabot and dependency-review, with CDN-pinned libraries monitored via manual review and CVE tracking
 
 ### 1.2 Methodology
 

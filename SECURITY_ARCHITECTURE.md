@@ -170,7 +170,9 @@ Following Hack23 AB ISMS information classification policy:
 - **No Sensitive End-User Data:**
   - ❌ No end-user accounts or authentication features
   - ❌ No collection of non-public personal data from site users
-  - ⚠️ Public personal data about Swedish public officials (e.g., names, person identifiers, roles) from Riksdag open data and cia-data datasets, classified as 🟢 Public
+  - ⚠️ Public personal data about Swedish public officials (e.g., names, person identifiers, roles) from Riksdag open data and cia-data datasets
+    - **Information classification:** 🟢 Public (openly available data)
+    - **Privacy classification:** Personal data – public-official (GDPR/PII handling still applies despite public availability)
 
 **Data Protection Controls:**
 
@@ -326,7 +328,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 | IG1 | 8.2 Collect Audit Logs | Git history, GitHub Actions logs, AWS CloudTrail |
 | IG2 | 6.8 Role-Based Access Control | GitHub repository permissions, AWS IAM |
 | IG2 | 13.1 Security Event Alerting | GitHub security alerts, AWS CloudWatch |
-| IG2 | 16.1 Secure Development | Static site, no injection risks, secure CI/CD |
+| IG2 | 16.1 Secure Development | Static site with reduced injection surface; mitigated via CSP/SRI/safe DOM handling; secure CI/CD |
 
 ## 4. 🛡️ Security Controls Summary
 
