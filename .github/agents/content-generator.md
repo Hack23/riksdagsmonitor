@@ -1,7 +1,7 @@
 ---
 name: content-generator
 description: Automated content generation, intelligence reports, multi-language news, template-based rendering for Swedish political transparency
-tools: ["view", "edit", "create", "bash", "grep", "glob"]
+tools: ["*"]
 ---
 
 ## 📋 Required Context Files

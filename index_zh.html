@@ -403,6 +403,277 @@
   </article>
 </main>
 
+<<<<<<< HEAD
+=======
+
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> 政党表现与效率</h2>
+<p>使用CIA平台50多年的数据对瑞典政党进行全面分析。跟踪8个政党的效率趋势、联盟动态和动量指标。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>效率趋势（1990-2026）</h3>
+<p>显示立法生产力、投票一致性和政策影响随时间变化的历史政党效率分数。</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>政党比较（当前期间）</h3>
+<p>当前立法期间政党绩效指标的比较分析。</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+</div>
+
+<div class="chart-card">
+<h3>联盟协调</h3>
+<p>联盟模式和政党间合作网络。</p>
+<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+</div>
+
+<div class="chart-card">
+<h3>动量指标</h3>
+<p>具有百分位基准（P50，P90）的政党动量分数，指示选举轨迹。</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+</div>
+</div>
+</section>
+
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 联盟和投票模式分析</h2>
+<p>瑞典国会联盟动态、政党协调和投票行为模式的互动分析。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>联盟网络（互动）</h3>
+<p>力导向图显示瑞典政党之间的联盟强度。拖动节点、缩放并单击以获取详细信息。</p>
+<div id="coalitionNetwork" role="img" aria-label="显示8个瑞典政党之间关系的联盟网络图"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>投票异常（最近5年）</h3>
+<p>散点图突出显示异常投票模式和政党偏离预期行为。</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="显示所有政党偏差分数的投票异常散点图"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>政党协调热图</h3>
+<p>基于历史投票记录显示跨党派投票一致性水平的矩阵可视化。</p>
+<div id="alignmentHeatMap" role="img" aria-label="显示所有政党对之间投票一致性百分比的政党协调热图"></div>
+</div>
+
+<div class="chart-card">
+<h3>行为模式</h3>
+<p>衡量所有投票中遵守党派路线的政党投票一致性分数。</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="显示所有政党投票一致性百分比的行为模式柱状图"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>决策趋势（1990-2026）</h3>
+<p>历史时间线显示所有政党36年来的年度投票活动趋势。</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="显示1990年至2026年年度投票量的决策趋势时间线"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>数据归属：</strong> 由CIA平台情报导出提供支持的可视化。数据每周从瑞典国会开放数据API更新。
+</p>
+</section>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 季节性活动模式 (2002-2025)</h2>
+<p class="subtitle">使用Z分数异常检测的季度分析</p>
+
+<!-- Filter -->
+<div class="dashboard-filters">
+<select id="year-filter" aria-label="按年份筛选">
+<option value="all">所有年份</option>
+</select>
+
+<select id="quarter-filter" aria-label="按季度筛选">
+<option value="all">所有季度</option>
+<option value="1">Q1 - 冬季会议</option>
+<option value="2">Q2 - 春季会议</option>
+<option value="3">Q3 - 夏季休会</option>
+<option value="4">Q4 - 秋季会议</option>
+</select>
+
+<select id="election-filter" aria-label="按选举状态筛选">
+<option value="all">全部</option>
+<option value="election">选举年份</option>
+<option value="non-election">非选举年份</option>
+</select>
+
+<select id="classification-filter" aria-label="按活动分类筛选">
+<option value="all">所有分类</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1 -->
+<div class="chart-card wide">
+<h3>季度活动热图 (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">按年份和季度显示投票量（带Z分数）。</p>
+</div>
+
+<!-- Chart 2 -->
+<div class="chart-card">
+<h3>Z分数异常检测</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Z分数异常检测"></canvas>
+<p class="chart-description">统计异常值（|Z| ≥ 2.0）用红色标记。</p>
+</div>
+
+<!-- Chart 3 -->
+<div class="chart-card">
+<h3>按季度平均活动（所有年份）</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="按季度平均活动（所有年份）"></canvas>
+<p class="chart-description">Q1-Q4基线及标准差带。</p>
+</div>
+
+<!-- Chart 4 -->
+<div class="chart-card wide">
+<h3>季节模式分类</h3>
+<canvas id="classification-chart" role="img" aria-label="季节模式分类"></canvas>
+<p class="chart-description">正常、升高、降低和异常模式的分布。</p>
+</div>
+
+<!-- Chart 5 -->
+<div class="chart-card">
+<h3>季度变化</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="季度变化"></canvas>
+<p class="chart-description">连续投票变化（%和绝对值）。</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 来自CIA平台的数据 | 每日更新</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 Anomaly Detection & Early Warning System</h2>
+<p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Dismiss</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="severity-filter" aria-label="Filter by severity">
+<option value="all">All Severities</option>
+<option value="CRITICAL">🔴 Critical</option>
+<option value="HIGH">🟠 High</option>
+<option value="MODERATE">🟡 Moderate</option>
+<option value="LOW">🟢 Low</option>
+</select>
+<select id="type-filter" aria-label="Filter by anomaly type">
+<option value="all">All Types</option>
+<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
+<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
+<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
+<option value="NO_ANOMALY">No Anomaly</option>
+</select>
+<select id="direction-filter" aria-label="Filter by direction">
+<option value="all">All Directions</option>
+<option value="UNUSUALLY_HIGH">Unusually High</option>
+<option value="UNUSUALLY_LOW">Unusually Low</option>
+<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+</select>
+<select id="year-filter" aria-label="Filter by year">
+<option value="all">All Years</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Anomaly Timeline -->
+<div class="chart-card wide">
+<h3>Anomaly Timeline (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
+<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Z-Score Distribution</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
+<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+</div>
+
+<!-- Chart 3: Anomaly Type Breakdown -->
+<div class="chart-card">
+<h3>Anomaly Type Distribution</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
+<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>Severity Heat Map (Year × Quarter)</h3>
+<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
+<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+</div>
+
+<!-- Chart 5: Quarterly Anomaly Frequency -->
+<div class="chart-card">
+<h3>Anomaly Frequency by Quarter</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>Recent Anomalies (Last 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
+<p class="chart-description">Most recent anomalies with details</p>
+</div>
+</div>
+</section>
+
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ 政府部长风险与影响力</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>部委风险热图</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="部委风险热图"></div>
+</div>
+
+<div class="chart-card">
+<h3>最具影响力的10位部长</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="最具影响力的10位部长"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>部委生产力矩阵</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="部委生产力矩阵"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>决策影响趋势</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="决策影响趋势"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>以表格形式查看数据</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
+>>>>>>> origin/main
 <footer>
   <div class="footer-content">
     <div class="footer-section">
@@ -442,5 +713,14 @@
   </div>
 </footer>
 
+<<<<<<< HEAD
+=======
+
+
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
+
+>>>>>>> origin/main
 </body>
 </html>
