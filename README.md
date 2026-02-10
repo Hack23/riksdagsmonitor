@@ -45,8 +45,8 @@ Riksdagsmonitor follows Hack23 AB's comprehensive [Classification Framework](htt
 **Personal Data (Public Officials):** This project processes personal data about public officials (e.g., names, roles, voting records, person identifiers) sourced from Swedish Riksdag open data and the Citizen Intelligence Agency (CIA) datasets. Data relates only to MPs and other public figures acting in their official capacity; no special-category data or data about private individuals is processed. GDPR applies, with processing based on public-interest and legitimate-interest grounds for transparency and democratic accountability.
 
 ### ⏱️ Business Continuity Classification
-[![RTO](https://img.shields.io/badge/RTO-High_(1--4hrs)-yellow?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rto-classifications)
-[![RPO](https://img.shields.io/badge/RPO-Daily_(4--24hrs)-lightblue?style=for-the-badge&logo=database&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rpo-classifications)
+[![RTO](https://img.shields.io/badge/RTO-High_%281--4hrs%29-yellow?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rto-classifications)
+[![RPO](https://img.shields.io/badge/RPO-Daily_%284--24hrs%29-lightblue?style=for-the-badge&logo=database&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rpo-classifications)
 
 **RTO (Recovery Time Objective):** 1-4 hours - Automated multi-region failover (AWS CloudFront + S3 us-east-1 primary, eu-west-1 replica, GitHub Pages DR)  
 **RPO (Recovery Point Objective):** 4-24 hours - Daily data pipeline updates, Git version control, S3 versioning

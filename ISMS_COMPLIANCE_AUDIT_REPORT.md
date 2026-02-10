@@ -102,7 +102,7 @@ Initial documentation focused on technical features rather than ISMS compliance 
    - Clarified handling of person-level data about public officials from Swedish Parliament/CIA datasets
    - All classifications aligned with ISO 27001 A.8, NIST CSF PR.DS, and CIS Controls 3
 
-2. **SECURITY_ARCHITECTURE.md Update (v1.2 → v1.3):**
+2. **SECURITY_ARCHITECTURE.md Update (v1.1 → v1.3):**
    - Expanded "2.3 Data Security" section
    - Detailed information classification table
    - Complete data inventory with types and storage locations
@@ -412,7 +412,7 @@ While basic data classification was implemented (4-level scheme), the official H
    - Maintained existing 4-level data classification scheme for operational use
    - Added comprehensive badge links to official classification framework
 
-2. **SECURITY_ARCHITECTURE.md Update (v1.2 → v1.3):**
+2. **SECURITY_ARCHITECTURE.md Update (v1.1 → v1.3):**
    - Added reference to official Classification Framework in Executive Summary
    - Updated document control with Classification Framework link
    - Updated version and review date
