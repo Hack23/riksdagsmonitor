@@ -127,9 +127,10 @@ graph TB
 - **Impact:** Medium (Content manipulation, credential theft)
 - **Mitigation:**
   - TLS 1.3 encryption (AWS CloudFront + GitHub Pages)
-  - HSTS header enforcement
+  - HSTS header enforcement with preload list registration
   - HTTPS-only access (no HTTP fallback)
-  - Certificate pinning via browser trust store
+  - Certificate Transparency (CT) log monitoring and alerting
+  - Short-lived TLS certificates with automated rotation
   - Route 53 health checks
 - **Residual Risk:** VERY LOW (Strong encryption)
 - **MITRE ATT&CK:** T1557.002 (Man-in-the-Middle: ARP Cache Poisoning)

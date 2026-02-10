@@ -183,16 +183,11 @@ graph TD
         LangOther[10 other languages...]
     end
     
-    subgraph "JavaScript Dashboards (300KB+)"
-        D1[party-dashboard.js<br/>43KB]
-        D2[committees-dashboard.js]
-        D3[coalition-dashboard.js]
-        D4[election-cycle-dashboard.js<br/>46KB]
-        D5[seasonal-patterns-dashboard.js<br/>68KB]
-        D6[pre-election-dashboard.js<br/>33KB]
-        D7[anomaly-detection-dashboard.js<br/>37KB]
-        D8[ministry-dashboard.js<br/>56KB]
-        D9[politician-dashboard.js<br/>14KB]
+    subgraph "JavaScript Dashboards"
+        InlineScript[Inline Script<br/>946 lines<br/>Party, Seasonal, Pre-Election<br/>Anomaly, Ministry, Risk]
+        ExtJS1[scripts/committees-dashboard.js<br/>39KB]
+        ExtJS2[scripts/coalition-dashboard.js<br/>33KB]
+        ExtJS3[js/election-cycle-dashboard.js<br/>46KB]
     end
     
     subgraph "Styling"
@@ -219,15 +214,10 @@ graph TD
         Arch[ARCHITECTURE.md]
     end
     
-    Index --> D1
-    Index --> D2
-    Index --> D3
-    Index --> D4
-    Index --> D5
-    Index --> D6
-    Index --> D7
-    Index --> D8
-    Index --> D9
+    Index --> InlineScript
+    Index --> ExtJS1
+    Index --> ExtJS2
+    Index --> ExtJS3
     Index --> CSS
     
     LangSV --> CSS
@@ -235,21 +225,15 @@ graph TD
     LangNO --> CSS
     LangOther --> CSS
     
-    D1 --> Chart
-    D4 --> Chart
-    D5 --> Chart
-    D6 --> Chart
-    D7 --> Chart
-    D8 --> Chart
-    D9 --> Chart
-    
-    D1 --> D3
-    D4 --> D3
-    D5 --> D3
+    InlineScript --> Chart
+    ExtJS1 --> Chart
+    ExtJS2 --> Chart
+    ExtJS3 --> Chart
     
     CSS --> Fonts
     
     style Index fill:#4caf50
+    style InlineScript fill:#ff9800
     style CSS fill:#2196f3
     style Chart fill:#ff9800
     style D3 fill:#ff9800

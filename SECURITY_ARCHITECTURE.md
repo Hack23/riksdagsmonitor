@@ -168,14 +168,21 @@ graph TB
 
 ### 2.4 Network Security
 
-**GitHub Pages Infrastructure:**
+**AWS CloudFront Infrastructure (Primary):**
+- **DDoS Protection:** AWS Shield Standard (automatic protection)
+- **CDN:** 600+ global edge locations
+- **WAF:** Available for application-layer protection (roadmap: 2027 Q2)
+- **TLS:** CloudFront managed certificates with TLS 1.3
+- **Firewall:** AWS infrastructure-level protection
+
+**GitHub Pages Infrastructure (Disaster Recovery):**
 - **DDoS Protection:** GitHub infrastructure-level protection
 - **CDN:** GitHub Pages CDN for global distribution
 - **Firewall:** GitHub-managed infrastructure firewall
 
 **Security Headers:**
 ```
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
@@ -184,7 +191,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
 
-**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles (dashboard rendering requirements). Future enhancement: nonce-based CSP for stricter inline script control.
+**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027).
 
 **Control Mapping:**
 - ISO 27001: A.13.1 Network Security Management
@@ -194,28 +201,31 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 ### 2.5 Application Security
 
 **Web Application Security:**
-- **Client-Side JavaScript:** Chart.js and D3.js for interactive dashboards (9 dashboards, 300KB+ code)
+- **Client-Side JavaScript:** Chart.js and D3.js for interactive dashboards
+  - 3 external JS files loaded: `scripts/coalition-dashboard.js`, `scripts/committees-dashboard.js`, `js/election-cycle-dashboard.js`
+  - 1 large inline script (946 lines) handling party, seasonal, pre-election, anomaly, ministry, and risk dashboards
+  - Total: ~300KB JavaScript code across 9 dashboards
 - **XSS Mitigation:** Content Security Policy (CSP) headers with script-src restrictions
-- **Input Sanitization:** Chart.js/D3.js handle CSV data parsing with validation
+- **Input Sanitization:** Application code parses CSV data (D3 CSV utilities/custom parsers) and validates against CIA schemas before rendering via Chart.js/D3.js
 - **External Dependencies:** 
   - Chart.js v4.4.1 (via CDN with SRI hash)
   - D3.js v7 (via CDN with SRI hash)
   - Google Fonts (trusted CDN)
-- **CIA Data Integration:** Local CSV caching with validation against CIA schemas
+- **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` with local caching and schema validation
 - **No User Input Processing:** Dashboards display pre-processed CIA data only
 - **No Server-Side Code:** Static hosting eliminates injection vulnerabilities
 
 **Dashboard Security:**
 - **9 Interactive Dashboards:**
-  1. Party Performance Dashboard (party-dashboard.js, 43KB)
-  2. Committee Dashboard (committees-dashboard.js)  
-  3. Coalition Dashboard (coalition-dashboard.js)
-  4. Election Cycle Dashboard (election-cycle-dashboard.js, 46KB)
-  5. Seasonal Patterns Dashboard (seasonal-patterns-dashboard.js, 68KB)
-  6. Pre-Election Monitoring Dashboard (pre-election-dashboard.js, 33KB)
-  7. Anomaly Detection Dashboard (anomaly-detection-dashboard.js, 37KB)
-  8. Ministry Dashboard (ministry-dashboard.js, 56KB)
-  9. Risk Dashboard (politician-dashboard.js, 14KB)
+  1. Party Performance Dashboard (inline script)
+  2. Committee Dashboard (`scripts/committees-dashboard.js`, 39KB)
+  3. Coalition Dashboard (`scripts/coalition-dashboard.js`, 33KB)
+  4. Election Cycle Dashboard (`js/election-cycle-dashboard.js`, 46KB)
+  5. Seasonal Patterns Dashboard (inline script)
+  6. Pre-Election Monitoring Dashboard (inline script)
+  7. Anomaly Detection Dashboard (inline script)
+  8. Ministry Dashboard (inline script)
+  9. Risk Dashboard (inline script)
 
 **Dependency Management:**
 - Regular Chart.js/D3.js version updates via Dependabot
