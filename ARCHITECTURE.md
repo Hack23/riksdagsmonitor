@@ -176,18 +176,19 @@ graph LR
 ```mermaid
 graph TD
     subgraph "HTML Pages"
-        Index[index.html<br/>English + 9 Dashboards]
-        LangSV[index_sv.html<br/>Swedish + 9 Dashboards]
+        Index[index.html<br/>English + 4 Functional Dashboards]
+        LangSV[index_sv.html<br/>Swedish]
         LangDA[index_da.html<br/>Danish]
         LangNO[index_no.html<br/>Norwegian]
         LangOther[10 other languages...]
     end
     
     subgraph "JavaScript Dashboards"
-        InlineScript[Inline Script<br/>946 lines<br/>Party, Seasonal, Pre-Election<br/>Anomaly, Ministry, Risk]
-        ExtJS1[scripts/committees-dashboard.js<br/>39KB]
-        ExtJS2[scripts/coalition-dashboard.js<br/>33KB]
-        ExtJS3[js/election-cycle-dashboard.js<br/>46KB]
+        InlineScript[Inline Script<br/>946 lines<br/>Risk + Anomaly Detection]
+        ExtJS1[scripts/committees-dashboard.js<br/>39KB - Committee]
+        ExtJS2[scripts/coalition-dashboard.js<br/>33KB - Coalition]
+        ExtJS3[js/election-cycle-dashboard.js<br/>46KB - Election Cycle]
+        Placeholders[5 Placeholder Sections<br/>Party, Seasonal, Pre-Election<br/>Ministry - HTML only, no JS]
     end
     
     subgraph "Styling"
@@ -218,6 +219,7 @@ graph TD
     Index --> ExtJS1
     Index --> ExtJS2
     Index --> ExtJS3
+    Index --> Placeholders
     Index --> CSS
     
     LangSV --> CSS
@@ -234,6 +236,7 @@ graph TD
     
     style Index fill:#4caf50
     style InlineScript fill:#ff9800
+    style Placeholders fill:#9e9e9e
     style CSS fill:#2196f3
     style Chart fill:#ff9800
     style D3 fill:#ff9800

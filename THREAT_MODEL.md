@@ -66,7 +66,7 @@ graph TB
 3. **External → GitHub Pages:** User browsers accessing via HTTPS (disaster recovery)
 4. **GitHub Actions → AWS:** OIDC authentication for deployment
 5. **GitHub Actions → Repository:** Automated deployment pipeline
-6. **Browser → Chart.js/D3.js CDN:** External CDN trust (jsDelivr, Cloudflare)
+6. **Browser → Chart.js/D3.js CDN:** External CDN trust (jsDelivr)
 7. **Internal → External:** Links to CIA platform (external trust)
 
 ## 2. 🔍 STRIDE Threat Analysis
@@ -143,9 +143,9 @@ graph TB
 - **Impact:** High (XSS, data exfiltration, dashboard manipulation)
 - **Mitigation:**
   - Subresource Integrity (SRI) hashes for Chart.js and D3.js
-  - Trusted CDNs (jsDelivr, Cloudflare)
+  - Trusted CDN (jsDelivr) for all external Chart.js/D3.js assets
   - Dependency version pinning
-  - Regular vulnerability scanning (Dependabot, npm audit)
+  - Regular dependency security scanning (Dependabot, GitHub dependency-review, CodeQL)
   - CSP script-src restrictions
 - **Residual Risk:** LOW (SRI validation)
 - **MITRE ATT&CK:** T1195.002 (Supply Chain Compromise: Compromise Software Supply Chain)

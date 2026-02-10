@@ -56,7 +56,7 @@ graph TB
         L2[🛡️ Application: HTML/CSS/JavaScript, Chart.js/D3.js dashboards]
         L3[🔑 Access: GitHub MFA, SSH keys, GPG signing, AWS OIDC]
         L4[📋 Integrity: Git history, Branch protection, SRI hashes]
-        L5[🔍 Monitoring: Dependabot, CodeQL, Secret scanning, npm audit]
+        L5[🔍 Monitoring: Dependabot, CodeQL, Secret scanning]
         L6[🚨 Response: Documented procedures, Rollback capability, Dual deployment]
     end
     

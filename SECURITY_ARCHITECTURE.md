@@ -182,7 +182,7 @@ graph TB
 
 **Security Headers:**
 ```
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
@@ -203,35 +203,36 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 **Web Application Security:**
 - **Client-Side JavaScript:** Chart.js and D3.js for interactive dashboards
   - 3 external JS files loaded: `scripts/coalition-dashboard.js`, `scripts/committees-dashboard.js`, `js/election-cycle-dashboard.js`
-  - 1 large inline script (946 lines) handling party, seasonal, pre-election, anomaly, ministry, and risk dashboards
-  - Total: ~300KB JavaScript code across 9 dashboards
+  - 1 large inline script (946 lines) handling risk and anomaly detection dashboards
+  - 4 placeholder dashboard sections (party, seasonal, pre-election, ministry) with HTML structure but no JavaScript initialization (future implementation)
+  - Total: ~120KB active JavaScript code for 4 functional dashboards
 - **XSS Mitigation:** Content Security Policy (CSP) headers with script-src restrictions
-- **Input Sanitization:** Application code parses CSV data (D3 CSV utilities/custom parsers) and validates against CIA schemas before rendering via Chart.js/D3.js
+- **Input Sanitization:** CIA CSV data is schema-validated during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`) before publication; client-side code then parses this pre-validated CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
 - **External Dependencies:** 
   - Chart.js v4.4.1 (via CDN with SRI hash)
   - D3.js v7 (via CDN with SRI hash)
   - Google Fonts (trusted CDN)
-- **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` with local caching and schema validation
-- **No User Input Processing:** Dashboards display pre-processed CIA data only
+- **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` that has been validated against CIA schemas in CI/pre-processing (e.g., `.github/workflows/validate-cia-data.yml`), with local caching for performance
+- **No User Input Processing:** Dashboards do not accept or process arbitrary user input; they display pre-processed, schema-validated CIA data generated upstream in CI/data pipelines
 - **No Server-Side Code:** Static hosting eliminates injection vulnerabilities
 
 **Dashboard Security:**
-- **9 Interactive Dashboards:**
-  1. Party Performance Dashboard (inline script)
-  2. Committee Dashboard (`scripts/committees-dashboard.js`, 39KB)
-  3. Coalition Dashboard (`scripts/coalition-dashboard.js`, 33KB)
-  4. Election Cycle Dashboard (`js/election-cycle-dashboard.js`, 46KB)
-  5. Seasonal Patterns Dashboard (inline script)
-  6. Pre-Election Monitoring Dashboard (inline script)
-  7. Anomaly Detection Dashboard (inline script)
-  8. Ministry Dashboard (inline script)
-  9. Risk Dashboard (inline script)
+- **9 Dashboard Sections (4 functional, 5 placeholders):**
+  1. Party Performance Dashboard (placeholder - HTML structure only)
+  2. Committee Dashboard (`scripts/committees-dashboard.js`, 39KB) ✅
+  3. Coalition Dashboard (`scripts/coalition-dashboard.js`, 33KB) ✅
+  4. Election Cycle Dashboard (`js/election-cycle-dashboard.js`, 46KB) ✅
+  5. Seasonal Patterns Dashboard (placeholder - HTML structure only)
+  6. Pre-Election Monitoring Dashboard (placeholder - HTML structure only)
+  7. Anomaly Detection Dashboard (inline script) ✅
+  8. Ministry Dashboard (placeholder - HTML structure only)
+  9. Risk Dashboard (inline script) ✅
 
 **Dependency Management:**
 - Regular Chart.js/D3.js version updates via Dependabot
 - Subresource Integrity (SRI) hashes for CDN resources
-- Vulnerability scanning via npm audit and Dependabot
-- Supply chain security via SBOM generation
+- Automated dependency risk assessment via GitHub dependency-review and Dependabot alerts
+- Supply chain security scanning via CodeQL and OpenSSF Scorecards
 
 **Control Mapping:**
 - ISO 27001: A.14.2 Security in Development and Support
@@ -340,8 +341,8 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
    - HTML/CSS/JavaScript with Chart.js and D3.js
    - CSP headers with SRI for CDN resources
    - No user input processing (display CIA data only)
-   - Dependency scanning via Dependabot (npm audit)
-   - Code quality checks in CI/CD (HTMLHint, ESLint)
+   - Dependency scanning via GitHub Dependabot alerts
+   - Code quality checks in CI/CD (HTMLHint, linkinator)
    - CIA data validation against JSON schemas
 
 ### 4.2 Detective Controls
