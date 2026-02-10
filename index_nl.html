@@ -672,6 +672,50 @@
 </div>
 </section>
 
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Coalitie- en stempatroonanalyse</h2>
+<p>Interactieve analyse van coalitiedynamiek, partij-afstemming en stemgedragspatronen in het Zweedse Riksdag.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Coalitienetwerk (Interactief)</h3>
+<p>Kracht-gestuurd diagram dat coalitiekracht tussen Zweedse politieke partijen toont. Sleep knooppunten, zoom en klik voor details.</p>
+<div id="coalitionNetwork" role="img" aria-label="Coalitienetwerkdiagram dat relaties tussen 8 Zweedse politieke partijen toont"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Stemanomalieën (Laatste 5 jaar)</h3>
+<p>Spreidingsdiagram dat ongewone stempatronen en partij-afwijkingen van verwacht gedrag benadrukt.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Stemanomalieën spreidingsdiagram dat afwijkingsscores voor alle partijen toont"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Partij-afstemming heatmap</h3>
+<p>Matrixvisualisatie die partij-overschrijdende stem overeenstemmingniveaus toont op basis van historische stemregisters.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Partij-afstemming heatmap die stemovereenstemming percentages tussen alle partijparen toont"></div>
+</div>
+
+<div class="chart-card">
+<h3>Gedragspatronen</h3>
+<p>Partij stem consistentiescores die naleving van de partijlijn over alle stemmen meten.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Gedragspatronen staafdiagram dat stemconsistentie percentages voor alle partijen toont"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Beslissingstrends (1990-2026)</h3>
+<p>Historische tijdlijn die jaarlijkse stemactiviteitstrends voor alle partijen over 36 jaar toont.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Beslissingstrends tijdlijn die jaarlijkse stemvolumes van 1990 tot 2026 toont"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Data-attributie:</strong> Visualisaties aangedreven door CIA Platform intelligence-exporten. Gegevens worden wekelijks bijgewerkt vanuit het Zweedse Riksdag open data API's.
+</p>
+</section>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 Seizoensactiviteitspatronen (2002-2025)</h2>
 <p class="subtitle">Kwartaalanalyse met Z-Score anomaliedetectie</p>
@@ -876,6 +920,9 @@
 	</footer>
 
 
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>
 </html>

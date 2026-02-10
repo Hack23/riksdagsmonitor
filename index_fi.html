@@ -683,6 +683,50 @@
 </div>
 </section>
 
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Koalitio- ja äänestysmallianalyysi</h2>
+<p>Interaktiivinen analyysi koalitiodynamiikasta, puolueiden yhteensovittamisesta ja äänestys käyttäytymismalleista Ruotsin valtiopäivillä.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Koalitioverkosto (Interaktiivinen)</h3>
+<p>Voimaohjattu kaavio, joka näyttää koalitiovoiman ruotsalaisten poliittisten puolueiden välillä. Vedä solmuja, zoomaa ja napsauta lisätietoja varten.</p>
+<div id="coalitionNetwork" role="img" aria-label="Koalitioverkostokaavio, joka näyttää suhteet 8 ruotsalaisen poliittisen puolueen välillä"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Äänestyspoikkeamat (Viimeiset 5 vuotta)</h3>
+<p>Hajontakaavio, joka korostaa epätavallisia äänestys malleja ja puolueiden poikkeamia odotetusta käyttäytymisestä.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Äänestyspoikkeamat hajontakaavio, joka näyttää poikkeamapisteet kaikille puolueille"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Puolueiden yhteensovittamisen lämpökartta</h3>
+<p>Matriisivisualisointi, joka näyttää puolueiden väliset sopimustasot historiallisten äänestysrekisterien perusteella.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Puolueiden yhteensovittamisen lämpökartta, joka näyttää äänestysyhtäpitävyyden prosentteina kaikkien puolueparien välillä"></div>
+</div>
+
+<div class="chart-card">
+<h3>Käyttäytymismallit</h3>
+<p>Puolueen äänestysyhdenmukaisuuspisteet, jotka mittaavat puoluelinjan noudattamista kaikissa äänestyksissä.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Käyttäytymismallit pylväskaavio, joka näyttää äänestysyhdenmukaisuuden prosentteina kaikille puolueille"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Päätöstrendit (1990-2026)</h3>
+<p>Historiallinen aikajana, joka näyttää vuotuiset äänestysaktiviteettitrendit kaikille puolueille 36 vuoden ajalta.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Päätöstrendit aikajana, joka näyttää vuotuiset äänestysvolyymit vuodesta 1990 vuoteen 2026"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Datan lähde:</strong> Visualisoinnit CIA-alustan tiedusteluviennin tukemina. Data päivittyy viikoittain Ruotsin valtiopäivien avoimista data-APIsta.
+</p>
+</section>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 Kausivaihtelut (2002-2025)</h2>
 <p class="subtitle">Neljännesvuosianalyysi Z-pisteen poikkeamien havaitsemisella</p>
@@ -887,6 +931,9 @@
 	</footer>
 
 
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>
 </html>

@@ -439,6 +439,50 @@
 </div>
 </section>
 
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 联盟和投票模式分析</h2>
+<p>瑞典国会联盟动态、政党协调和投票行为模式的互动分析。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>联盟网络（互动）</h3>
+<p>力导向图显示瑞典政党之间的联盟强度。拖动节点、缩放并单击以获取详细信息。</p>
+<div id="coalitionNetwork" role="img" aria-label="显示8个瑞典政党之间关系的联盟网络图"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>投票异常（最近5年）</h3>
+<p>散点图突出显示异常投票模式和政党偏离预期行为。</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="显示所有政党偏差分数的投票异常散点图"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>政党协调热图</h3>
+<p>基于历史投票记录显示跨党派投票一致性水平的矩阵可视化。</p>
+<div id="alignmentHeatMap" role="img" aria-label="显示所有政党对之间投票一致性百分比的政党协调热图"></div>
+</div>
+
+<div class="chart-card">
+<h3>行为模式</h3>
+<p>衡量所有投票中遵守党派路线的政党投票一致性分数。</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="显示所有政党投票一致性百分比的行为模式柱状图"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>决策趋势（1990-2026）</h3>
+<p>历史时间线显示所有政党36年来的年度投票活动趋势。</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="显示1990年至2026年年度投票量的决策趋势时间线"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>数据归属：</strong> 由CIA平台情报导出提供支持的可视化。数据每周从瑞典国会开放数据API更新。
+</p>
+</section>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 季节性活动模式 (2002-2025)</h2>
 <p class="subtitle">使用Z分数异常检测的季度分析</p>
@@ -668,6 +712,9 @@
 
 
 
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>
 </html>

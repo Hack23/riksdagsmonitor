@@ -683,6 +683,50 @@
 </div>
 </section>
 
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Koalisjons- og stemmemønsteranalyse</h2>
+<p>Interaktiv analyse av koalisjonsdynamikk, partisamordning og stemmeatferdsmønstre i Sveriges Riksdag.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Koalisjonsnettverk (Interaktiv)</h3>
+<p>Kraftstyrt graf som viser koalisjonsstyrke mellom svenske politiske partier. Dra noder, zoom og klikk for detaljer.</p>
+<div id="coalitionNetwork" role="img" aria-label="Koalisjonsnettverksdiagram som viser relasjoner mellom 8 svenske politiske partier"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Stemmeavvik (Siste 5 år)</h3>
+<p>Spredningsdiagram som fremhever uvanlige stemmemønstre og partiavvik fra forventet atferd.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Stemmeavvik spredningsdiagram som viser avvikspoeng for alle partier"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Partisamordning varmekart</h3>
+<p>Matrisevisualisering som viser overenskomstnivåer mellom partier basert på historiske stemmeregistre.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Partisamordning varmekart som viser stemmeoverensstemmelse i prosent mellom alle partipar"></div>
+</div>
+
+<div class="chart-card">
+<h3>Atferdsmønstre</h3>
+<p>Partistemmekonsistenspoeng som måler overholdelse av partilinjen over alle stemmer.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Atferdsmønstre stolpediagram som viser stemmekonsistens i prosent for alle partier"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Beslutningstrender (1990-2026)</h3>
+<p>Historisk tidslinje som viser årlige stemmeaktivitetstrender for alle partier over 36 år.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Beslutningstrender tidslinje som viser årlige stemmevolumer fra 1990 til 2026"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Dataattribusjon:</strong> Visualiseringer drevet av CIA-plattformens etterretningseksporter. Data oppdateres ukentlig fra Sveriges Riksdags åpne data API-er.
+</p>
+</section>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 Sesongmønster (2002-2025)</h2>
 <p class="subtitle">Kvartalsanalyse med Z-score anomalideteksjon</p>
@@ -887,6 +931,9 @@
 	</footer>
 
 
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>
 </html>

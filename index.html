@@ -444,6 +444,50 @@ Swedish Election 2026
 </div>
 </section>
 
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Coalition & Voting Pattern Analysis</h2>
+<p>Interactive analysis of coalition dynamics, party alignments, and voting behavior patterns in the Swedish Riksdag.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Coalition Network (Interactive)</h3>
+<p>Force-directed graph showing coalition strength between Swedish political parties. Drag nodes, zoom, and click for details.</p>
+<div id="coalitionNetwork" role="img" aria-label="Coalition network diagram showing relationships between 8 Swedish political parties"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Voting Anomalies (Last 5 Years)</h3>
+<p>Scatter plot highlighting unusual voting patterns and party defections from expected behavior.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Voting anomaly scatter plot showing deviation scores for all parties"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Party Alignment Heat Map</h3>
+<p>Matrix visualization showing cross-party voting agreement levels based on historical voting records.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Party alignment heat map showing voting agreement percentages between all party pairs"></div>
+</div>
+
+<div class="chart-card">
+<h3>Behavioral Patterns</h3>
+<p>Party voting consistency scores measuring adherence to party line across all votes.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Behavioral patterns bar chart showing voting consistency percentages for all parties"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Decision Trends (1990-2026)</h3>
+<p>Historical timeline showing annual voting activity trends for all parties over 36 years.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Decision trends timeline showing annual voting volumes from 1990 to 2026"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Data Attribution:</strong> Visualizations powered by CIA Platform intelligence exports. Data updates weekly from Swedish Parliament open data APIs.
+</p>
+</section>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 Seasonal Activity Patterns (2002-2025)</h2>
 <p class="subtitle">Quarterly Analysis with Z-Score Anomaly Detection</p>
@@ -2002,6 +2046,9 @@ Swedish Election 2026
   }
 })();
 </script>
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>
 </html>

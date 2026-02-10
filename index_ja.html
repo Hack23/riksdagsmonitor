@@ -266,6 +266,50 @@
 </div>
 </section>
 
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 連立と投票パターン分析</h2>
+<p>スウェーデン国会における連立力学、政党調整、投票行動パターンのインタラクティブ分析。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>連立ネットワーク（インタラクティブ）</h3>
+<p>スウェーデン政党間の連立強度を示す力学グラフ。ノードをドラッグ、ズーム、クリックして詳細を確認。</p>
+<div id="coalitionNetwork" role="img" aria-label="8つのスウェーデン政党間の関係を示す連立ネットワーク図"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>投票異常（過去5年間）</h3>
+<p>異常な投票パターンと予想される行動からの政党逸脱を強調する散布図。</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="すべての政党の偏差スコアを示す投票異常散布図"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>政党調整ヒートマップ</h3>
+<p>歴史的投票記録に基づく政党間の投票合意レベルを示すマトリックス可視化。</p>
+<div id="alignmentHeatMap" role="img" aria-label="すべての政党ペア間の投票合意率を示す政党調整ヒートマップ"></div>
+</div>
+
+<div class="chart-card">
+<h3>行動パターン</h3>
+<p>すべての投票における党派路線の遵守を測定する政党投票一貫性スコア。</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="すべての政党の投票一貫性率を示す行動パターン棒グラフ"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>決定トレンド（1990-2026）</h3>
+<p>36年間のすべての政党の年間投票活動トレンドを示す歴史的タイムライン。</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="1990年から2026年までの年間投票量を示す決定トレンドタイムライン"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>データ帰属:</strong> CIAプラットフォームのインテリジェンスエクスポートを活用した可視化。スウェーデン国会のオープンデータAPIから毎週更新されるデータ。
+</p>
+</section>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 季節的活動パターン（2002-2025）</h2>
 <p class="subtitle">Zスコア異常検出による四半期分析</p>
@@ -460,6 +504,9 @@
   </footer>
 
 
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>
 </html>

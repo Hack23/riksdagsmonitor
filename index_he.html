@@ -687,6 +687,50 @@
 </div>
 </section>
 
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 ניתוח קואליציות ודפוסי הצבעה</h2>
+<p>ניתוח אינטראקטיבי של דינמיקת קואליציות, התאמת מפלגות ודפוסי התנהגות הצבעה בריקסדאג השוודי.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>רשת קואליציה (אינטראקטיבית)</h3>
+<p>גרף מכוון כוח המציג את עוצמת הקואליציה בין מפלגות פוליטיות שוודיות. גרור צמתים, זום ולחץ לפרטים.</p>
+<div id="coalitionNetwork" role="img" aria-label="תרשים רשת קואליציה המציג יחסים בין 8 מפלגות פוליטיות שוודיות"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>אנומליות הצבעה (5 שנים אחרונות)</h3>
+<p>תרשים פיזור המדגיש דפוסי הצבעה חריגים וסטיות מפלגתיות מהתנהגות צפויה.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="תרשים פיזור אנומליות הצבעה המציג ציוני סטייה לכל המפלגות"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>מפת חום התאמת מפלגות</h3>
+<p>ויזואליזציה מטריצית המציגה רמות הסכמה בהצבעה בין מפלגות על בסיס רישומי הצבעה היסטוריים.</p>
+<div id="alignmentHeatMap" role="img" aria-label="מפת חום התאמת מפלגות המציגה אחוזי הסכמה בהצבעה בין כל זוגות המפלגות"></div>
+</div>
+
+<div class="chart-card">
+<h3>דפוסי התנהגות</h3>
+<p>ציוני עקביות הצבעה מפלגתית המודדים עמידה בקו המפלגה על פני כל ההצבעות.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="תרשים עמודות דפוסי התנהגות המציג אחוזי עקביות הצבעה לכל המפלגות"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>מגמות החלטות (1990-2026)</h3>
+<p>ציר זמן היסטורי המציג מגמות פעילות הצבעה שנתיות לכל המפלגות על פני 36 שנים.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="ציר זמן מגמות החלטות המציג נפחי הצבעה שנתיים מ-1990 עד 2026"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>ייחוס נתונים:</strong> ויזואליזציות מופעלות על ידי יצוא מודיעין פלטפורמת CIA. נתונים מתעדכנים שבועית מממשקי API של נתונים פתוחים של הריקסדאג השוודי.
+</p>
+</section>
+
 <section id="seasonal-patterns-dashboard">
 <h2>📅 דפוסי פעילות עונתיים (2002-2025)</h2>
 <p class="subtitle">ניתוח רבעוני עם זיהוי אנומליות Z-Score</p>
@@ -892,6 +936,9 @@
 	</footer>
 
 
+
+
+<script src="scripts/coalition-dashboard.js" defer></script>
 
 </body>
 </html>
