@@ -1519,10 +1519,10 @@ Performance tiers (ntile_party_tier: 1-4)
     
     for (let mpIdx = 0; mpIdx < 349; mpIdx++) {
       const party = parties[mpIdx % parties.length];
-      const mpName = \`MP_\${String(mpIdx + 1).padStart(3, '0')}\`;
+      const mpName = `MP_${String(mpIdx + 1).padStart(3, '0')}`;
       
       for (let ruleIdx = 0; ruleIdx < 45; ruleIdx++) {
-        const ruleId = \`Rule_\${String(ruleIdx + 1).padStart(2, '0')}\`;
+        const ruleId = `Rule_${String(ruleIdx + 1).padStart(2, '0')}`;
         
         // Generate realistic risk distribution
         // 70% low (0-4), 20% medium (4-6), 8% high (6-8), 2% critical (8-10)
@@ -1542,7 +1542,7 @@ Performance tiers (ntile_party_tier: 1-4)
           politician: mpName,
           party: party,
           rule: ruleId,
-          ruleName: \`Risk Rule \${ruleIdx + 1}\`,
+          ruleName: `Risk Rule ${ruleIdx + 1}`,
           score: score,
           level: classifyRiskLevel(score)
         });
@@ -1560,11 +1560,11 @@ Performance tiers (ntile_party_tier: 1-4)
   async function fetchCIAData(url) {
     try {
       const response = await fetch(url);
-      if (!response.ok) throw new Error(\`HTTP \${response.status}\`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const text = await response.text();
       return parseCSV(text);
     } catch (error) {
-      console.warn(\`Failed to fetch CIA data from \${url}:\`, error);
+      console.warn(`Failed to fetch CIA data from ${url}:`, error);
       return null;
     }
   }
@@ -1658,17 +1658,17 @@ Performance tiers (ntile_party_tier: 1-4)
       warningBanner.setAttribute('aria-live', 'assertive');
     } else if (highRiskMPs.length > 100) {
       warningBanner.className = 'alert-banner high';
-      warningBanner.innerHTML = \`
-        <strong>⚠️ HIGH:</strong> Elevated risk detected across \${highRiskMPs.length} violations (≥6.0)
+      warningBanner.innerHTML = `
+        <strong>⚠️ HIGH:</strong> Elevated risk detected across ${highRiskMPs.length} violations (≥6.0)
         <span class="alert-details">Monitoring advised</span>
-      \`;
+      `;
       warningBanner.setAttribute('aria-live', 'polite');
     } else {
       warningBanner.className = 'alert-banner normal';
-      warningBanner.innerHTML = \`
+      warningBanner.innerHTML = `
         <strong>✓ NORMAL:</strong> Risk levels within acceptable parameters
         <span class="alert-details">Routine monitoring active</span>
-      \`;
+      `;
       warningBanner.setAttribute('aria-live', 'polite');
     }
   }
@@ -1692,7 +1692,7 @@ Performance tiers (ntile_party_tier: 1-4)
     const svg = container.append('svg')
       .attr('width', '100%')
       .attr('height', 600)
-      .attr('viewBox', \`0 0 \${width} \${height}\`)
+      .attr('viewBox', `0 0 ${width} ${height}`)
       .attr('preserveAspectRatio', 'xMidYMid meet');
     
     // Create tooltip
@@ -1725,14 +1725,14 @@ Performance tiers (ntile_party_tier: 1-4)
     
     // Create main group
     const g = svg.append('g')
-      .attr('transform', \`translate(\${margin.left},\${margin.top})\`);
+      .attr('transform', `translate(${margin.left},${margin.top})`);
     
     // Add zoom behavior
     const zoom = d3.zoom()
       .scaleExtent([1, 10])
       .translateExtent([[0, 0], [45 * cellWidth, 349 * cellHeight]])
       .on('zoom', (event) => {
-        g.attr('transform', \`translate(\${margin.left + event.transform.x},\${margin.top + event.transform.y}) scale(\${event.transform.k})\`);
+        g.attr('transform', `translate(${margin.left + event.transform.x},${margin.top + event.transform.y}) scale(${event.transform.k})`);
       });
     
     svg.call(zoom);
@@ -1767,12 +1767,12 @@ Performance tiers (ntile_party_tier: 1-4)
       })
       .on('mouseover', function(event, d) {
         tooltip.style('visibility', 'visible')
-          .html(\`
-            <strong>\${d.politician}</strong> (\${d.party})<br>
-            <strong>\${d.ruleName}</strong><br>
-            Risk Score: <strong>\${d.score.toFixed(2)}</strong><br>
-            Level: <strong>\${d.level}</strong>
-          \`);
+          .html(`
+            <strong>${d.politician}</strong> (${d.party})<br>
+            <strong>${d.ruleName}</strong><br>
+            Risk Score: <strong>${d.score.toFixed(2)}</strong><br>
+            Level: <strong>${d.level}</strong>
+          `);
         d3.select(this).attr('stroke', '#000').attr('stroke-width', 2);
       })
       .on('mousemove', function(event) {
@@ -1985,7 +1985,7 @@ Performance tiers (ntile_party_tier: 1-4)
               label: function(context) {
                 const total = Object.values(buckets).reduce((a, b) => a + b, 0);
                 const percentage = ((context.parsed.y / total) * 100).toFixed(1);
-                return \`\${context.parsed.y} violations (\${percentage}%)\`;
+                return `${context.parsed.y} violations (${percentage}%)`;
               }
             }
           }
@@ -2086,7 +2086,7 @@ Performance tiers (ntile_party_tier: 1-4)
                 borderWidth: 2,
                 borderDash: [5, 5],
                 label: {
-                  content: \`P90: \${p90.toFixed(1)}\`,
+                  content: `P90: ${p90.toFixed(1)}`,
                   display: true,
                   position: 'end'
                 }
@@ -2099,7 +2099,7 @@ Performance tiers (ntile_party_tier: 1-4)
                 borderWidth: 2,
                 borderDash: [5, 5],
                 label: {
-                  content: \`P99: \${p99.toFixed(1)}\`,
+                  content: `P99: ${p99.toFixed(1)}`,
                   display: true,
                   position: 'end'
                 }
@@ -2109,7 +2109,7 @@ Performance tiers (ntile_party_tier: 1-4)
           tooltip: {
             callbacks: {
               label: function(context) {
-                return \`Deviation: \${context.parsed.y.toFixed(2)}\`;
+                return `Deviation: ${context.parsed.y.toFixed(2)}`;
               }
             }
           }
@@ -2181,7 +2181,7 @@ Performance tiers (ntile_party_tier: 1-4)
           tooltip: {
             callbacks: {
               label: function(context) {
-                return \`Resilience: \${context.parsed.r.toFixed(1)}%\`;
+                return `Resilience: ${context.parsed.r.toFixed(1)}%`;
               }
             }
           }
@@ -2295,7 +2295,7 @@ Performance tiers (ntile_party_tier: 1-4)
     } else {
       ethicsData.forEach(d => {
         const li = document.createElement('li');
-        li.innerHTML = \`<strong>\${d.politician}</strong> (\${d.party}) - Risk Score: \${d.score.toFixed(2)}\`;
+        li.innerHTML = `<strong>${d.politician}</strong> (${d.party}) - Risk Score: ${d.score.toFixed(2)}`;
         ethicsList.appendChild(li);
       });
     }
@@ -2310,14 +2310,14 @@ Performance tiers (ntile_party_tier: 1-4)
       // Mock data if no real data
       for (let i = 1; i <= 10; i++) {
         const li = document.createElement('li');
-        li.innerHTML = \`<strong>MP_\${String(i + 10).padStart(3, '0')}</strong> - Electoral Risk: \${(85 - i * 3)}%\`;
+        li.innerHTML = `<strong>MP_${String(i + 10).padStart(3, '0')}</strong> - Electoral Risk: ${(85 - i * 3)}%`;
         electoralList.appendChild(li);
       }
     } else {
       electoralData.forEach(d => {
         const li = document.createElement('li');
         const riskPercent = ((d.score / 10) * 100).toFixed(0);
-        li.innerHTML = \`<strong>\${d.politician}</strong> (\${d.party}) - Electoral Risk: \${riskPercent}%\`;
+        li.innerHTML = `<strong>${d.politician}</strong> (${d.party}) - Electoral Risk: ${riskPercent}%`;
         electoralList.appendChild(li);
       });
     }
