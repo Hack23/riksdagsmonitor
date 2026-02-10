@@ -75,10 +75,10 @@ This report documents a comprehensive ISMS compliance audit of the Riksdagsmonit
 **Status:** ✅ **CLOSED**
 
 **Description:**
-README.md lacked information classification section, violating ISO 27001:2022 Annex A control A.8.2 (Information classification) and Hack23 ISMS requirements.
+README.md lacked information classification section, violating ISO 27001:2022 Annex A control A.5.10 (Acceptable use - data classification) and Hack23 ISMS requirements.
 
 **Impact:**
-- Non-compliance with ISO 27001 A.8.2
+- Non-compliance with ISO 27001 A.5.10
 - Insufficient data inventory documentation
 - Unclear data handling requirements for contributors
 - Missing compliance framework coverage

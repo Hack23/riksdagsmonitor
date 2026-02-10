@@ -17,7 +17,7 @@
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-10 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-08  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-10  
 **📌 Classification:** Public
 
 ---

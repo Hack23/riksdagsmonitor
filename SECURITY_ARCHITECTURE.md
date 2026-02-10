@@ -203,7 +203,7 @@ Following Hack23 AB ISMS information classification policy:
 - **Deletion:** Git history retained, S3 versioning for recovery
 
 **Control Mapping:**
-- ISO 27001: A.8.2 (Information classification), A.10.1 (Cryptographic controls)
+- ISO 27001: A.5.10 (Acceptable use - data classification), A.10.1 (Cryptographic controls)
 - NIST CSF 2.0: PR.DS-1 (Data-at-rest protected), PR.DS-2 (Data-in-transit protected)
 - CIS Controls v8.1: 3.1 (Establish data management), 3.10 (Encrypt data in transit)
 
@@ -232,9 +232,9 @@ Referrer-Policy: strict-origin-when-cross-origin
 ### 2.5 Application Security
 
 **Static Website Security:**
-- **No Server-Side Code:** Eliminates injection vulnerabilities
+- **No Server-Side Code:** Reduces server-side injection vulnerabilities
 - **No Database:** No SQL injection risk
-- **No User Input Processing:** No XSS attack surface
+- **Client-Side JavaScript:** Injection surface reduced via CSP, SRI, safe DOM handling
 - **External Data:** Read-only links to CIA platform
 
 **Dependency Management:**

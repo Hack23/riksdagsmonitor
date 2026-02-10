@@ -37,7 +37,7 @@ Riksdagsmonitor follows Hack23 AB's comprehensive [Classification Framework](htt
 
 **Confidentiality:** Public - All information intentionally disclosed (Swedish Riksdag open data, website content)  
 **Integrity:** High - Automated validation, digital signatures (Git commits), accurate political data required  
-**Availability:** High - 99.9% uptime target, automated failover (AWS multi-region, GitHub Pages DR)
+**Availability:** High - 99.998% design availability target (underpinned by AWS CloudFront 99.9% SLA), automated failover (AWS multi-region, GitHub Pages DR)
 
 ### 🏷️ Privacy Classification
 [![Privacy](https://img.shields.io/badge/Privacy-Personal-orange?style=for-the-badge&logo=user-shield&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#privacy-levels)
