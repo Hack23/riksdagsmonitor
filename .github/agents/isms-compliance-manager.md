@@ -1,7 +1,7 @@
 ---
 name: isms-compliance-manager
 description: Expert in Hack23 ISMS compliance, ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, policy enforcement, and audit preparation
-tools: ["view", "edit", "create", "search", "bash", "grep", "glob"]
+tools: ["*"]
 ---
 
 ## 📋 Required Context Files
