@@ -216,14 +216,15 @@ jobs:
 ## 4. CIA Data Pipeline Workflow ✨ **NEW**
 
 **File:** `.github/workflows/data-pipeline.yml`  
-**Trigger:** Schedule (daily at 02:00 UTC), Workflow dispatch  
-**Purpose:** Automated CIA intelligence export fetching, validation, and caching
+**Trigger:** Manual (`workflow_dispatch`)  
+**Purpose:** CIA intelligence export fetching, validation, and caching  
+**Note:** Currently manual-only; daily scheduling will be enabled once the automated fetch is implemented
 
 ### Jobs
 
 #### 4.1 Fetch & Validate CIA Intelligence Exports
-- **Purpose:** Automated daily data pipeline for CIA exports
-- **Schedule:** Daily at 02:00 UTC (03:00/04:00 CET/CEST)
+- **Purpose:** CIA data pipeline for exports (manual trigger; future automation planned)
+- **Schedule:** Not yet scheduled; planned future schedule is daily at 02:00 UTC (03:00/04:00 CET/CEST)
 - **Permissions:** contents: write, pull-requests: write
 
 **Pipeline Stages:**
@@ -482,7 +483,7 @@ lhci autorun \
 | 7 | validate-cia-data.yml | ✅ | SHA+HR | Daily 3AM | CIA data validation |
 | 8 | sync-cia-schemas.yml | ✅ | SHA+HR | On-demand | Schema synchronization |
 | 9 | check-cia-schema-updates.yml | ✅ | SHA+HR | Weekly Mon | Schema update checks |
-| 10 | **data-pipeline.yml** | ✨ NEW | SHA+HR | Daily 2AM | CIA data fetch |
+| 10 | **data-pipeline.yml** | ✨ NEW | SHA+HR | On-demand | CIA data fetch |
 | 11 | **lighthouse-ci.yml** | ✨ NEW | SHA+HR | Weekly Mon | Performance monitoring |
 | 12 | **uptime-monitor.yml** | ✨ NEW | SHA+HR | Every 15min | Site availability |
 

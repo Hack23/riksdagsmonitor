@@ -212,7 +212,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ "${{ steps.homepage.outcome }}" = "success" ] && \
-             [ "${{ steps.languages.outcome }}" = "success" ]; then
+             { [ "${{ steps.languages.outcome }}" = "success" ] || [ "${{ steps.languages.outcome }}" = "skipped" ]; }; then
             echo "🟢 **ALL SYSTEMS OPERATIONAL**" >> $GITHUB_STEP_SUMMARY
           elif [ "${{ steps.homepage.outcome }}" = "success" ]; then
             echo "🟡 **DEGRADED SERVICE** - Homepage up, but some issues detected" >> $GITHUB_STEP_SUMMARY

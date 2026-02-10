@@ -286,13 +286,13 @@ jobs:
       - name: Check pipeline status
         if: always()
         run: |
-          if [ "${{ steps.validate.outputs.invalid }}" != "0" ]; then
+          if [ "${{ steps.freshness.outputs.skip_fetch }}" = "true" ]; then
+            echo "✅ Pipeline skipped - data is fresh"
+          elif [ "${{ steps.validate.outputs.invalid }}" != "0" ] && [ -n "${{ steps.validate.outputs.invalid }}" ]; then
             echo "⚠️ Pipeline completed with validation errors"
             echo "Please review the validation report artifact"
             # Don't fail for now - just warn
             # exit 1
-          elif [ "${{ steps.freshness.outputs.skip_fetch }}" = "true" ]; then
-            echo "✅ Pipeline skipped - data is fresh"
           else
             echo "✅ Pipeline completed successfully"
           fi

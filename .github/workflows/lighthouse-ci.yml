@@ -67,26 +67,32 @@ jobs:
           NORMALIZED_TARGET="${TARGET_URL%/}"
           if [ "$NORMALIZED_TARGET" = "$PROD_BASE_URL" ]; then
             SWEDISH_URL="$NORMALIZED_TARGET/index_sv.html"
+            echo "Swedish URL: $SWEDISH_URL"
           else
-            # For custom URLs, use as-is (user should provide full path)
-            SWEDISH_URL="$TARGET_URL"
+            # For custom URLs, skip Swedish audit (can't reliably determine Swedish URL)
+            SWEDISH_URL=""
+            echo "Swedish URL: Skipped (custom URL provided)"
           fi
-          echo "Swedish URL: $SWEDISH_URL"
           
           # Run Lighthouse with retry logic (network can be flaky)
           MAX_RETRIES=3
           RETRY_COUNT=0
           
           while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-            if lhci autorun \
-              --url="$TARGET_URL" \
-              --url="$SWEDISH_URL" \
+            # Build lhci command based on whether Swedish URL should be audited
+            if [ -n "$SWEDISH_URL" ]; then
+              LHCI_CMD="lhci autorun --url=\"$TARGET_URL\" --url=\"$SWEDISH_URL\""
+            else
+              LHCI_CMD="lhci autorun --url=\"$TARGET_URL\""
+            fi
+            
+            if eval "$LHCI_CMD \
               --collect.numberOfRuns=3 \
-              --collect.settings.chromeFlags="--no-sandbox --disable-gpu --headless" \
-              --assert.preset="lighthouse:recommended" \
+              --collect.settings.chromeFlags=\"--no-sandbox --disable-gpu --headless\" \
+              --assert.preset=\"lighthouse:recommended\" \
               --upload.target=filesystem \
               --upload.outputDir=./lighthouse-results \
-              2>&1 | tee lighthouse.log; then
+              2>&1 | tee lighthouse.log"; then
               
               echo "✅ Lighthouse audit completed"
               break
