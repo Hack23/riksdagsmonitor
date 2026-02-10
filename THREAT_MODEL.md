@@ -49,7 +49,7 @@ graph TB
 | Asset | Type | Classification | Value |
 |-------|------|----------------|-------|
 | Dashboard sections (9; 4 functional, 5 placeholders) | Application | Public | MEDIUM |
-| Chart.js/D3.js Code (150KB+ functional) | Application | Public | MEDIUM |
+| Dashboard JavaScript (custom, Chart.js/D3.js-based, ~150KB excluding CDN libraries) | Application | Public | MEDIUM |
 | CIA Data (CSV files) | Data | Public | LOW |
 | GitHub Repository | Infrastructure | Public | MEDIUM |
 | AWS S3 Buckets (us-east-1, eu-west-1) | Infrastructure | Internal | MEDIUM |
@@ -144,10 +144,10 @@ graph TB
 - **Mitigation:**
   - Subresource Integrity (SRI) hashes for Chart.js and D3.js
   - Trusted CDN (jsDelivr) for all external Chart.js/D3.js assets
-  - Dependency version pinning
-  - Regular dependency security scanning (Dependabot, GitHub dependency-review, CodeQL)
+  - Dependency version pinning via explicit CDN version URLs
+  - Manual security review of CDN-loaded Chart.js/D3.js versions against vendor advisories and public CVE feeds (Dependabot/dependency-review/CodeQL do not track these CDN assets)
   - CSP script-src restrictions
-- **Residual Risk:** LOW (SRI validation)
+- **Residual Risk:** LOW (SRI validation and manual version reviews)
 - **MITRE ATT&CK:** T1195.002 (Supply Chain Compromise: Compromise Software Supply Chain)
 
 ### 2.3 Repudiation
@@ -207,7 +207,8 @@ graph TB
 - **Mitigation:**
   - Content Security Policy (CSP) headers
   - Subresource Integrity (SRI) for Chart.js/D3.js
-  - Regular dependency updates (Dependabot)
+  - Regular manual review and update of CDN Chart.js/D3.js versions
+  - Dependabot for GitHub Actions and repository-managed dependencies
   - No sensitive user data (public CIA data only)
   - Browser XSS protections
 - **Residual Risk:** LOW (Defense-in-depth)
@@ -219,7 +220,7 @@ graph TB
 
 - **Threat:** AWS CloudFront, S3, or Route 53 unavailable
 - **Attack Vector:** AWS infrastructure failure, DDoS on AWS
-- **Likelihood:** Low (AWS SLA 99.95%)
+- **Likelihood:** Low (AWS CloudFront SLA 99.9% per Amazon CloudFront Service Level Agreement)
 - **Impact:** Medium (Website unavailable, automatic failover to GitHub Pages DR)
 - **Mitigation:**
   - Accept AWS infrastructure dependency
@@ -238,7 +239,7 @@ graph TB
 - **Likelihood:** Very Low (Rare simultaneous AWS + GitHub outage)
 - **Impact:** High (Complete service unavailability if both fail)
 - **Mitigation:**
-  - AWS as primary (99.95% SLA)
+  - AWS CloudFront as primary (99.9% SLA)
   - Accept GitHub infrastructure dependency for DR
   - Monitor GitHub status page
   - Documented recovery procedures
@@ -612,6 +613,6 @@ Attacker compromises GitHub Actions workflow to inject malicious content during 
 - **Path:** /THREAT_MODEL.md
 - **Format:** Markdown
 - **Classification:** Public
-- **Version:** 1.0
+- **Version:** 1.1
 - **Last Updated:** 2026-02-10
 - **Next Review:** 2026-05-10

@@ -228,9 +228,13 @@ graph TD
     LangOther --> CSS
     
     InlineScript --> Chart
+    InlineScript --> D3
     ExtJS1 --> Chart
+    ExtJS1 --> D3
     ExtJS2 --> Chart
+    ExtJS2 --> D3
     ExtJS3 --> Chart
+    ExtJS3 --> D3
     
     CSS --> Fonts
     

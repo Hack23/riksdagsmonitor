@@ -180,7 +180,7 @@ graph TB
 - **CDN:** GitHub Pages CDN for global distribution
 - **Firewall:** GitHub-managed infrastructure firewall
 
-**Security Headers:**
+**Security Headers (Target Configuration - AWS CloudFront Response Headers Policy):**
 ```
 Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com
 X-Content-Type-Options: nosniff
@@ -191,7 +191,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
 
-**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027).
+**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027).
 
 **Control Mapping:**
 - ISO 27001: A.13.1 Network Security Management
@@ -212,13 +212,13 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
     - Anomaly Detection Dashboard (standalone section with timeline/heatmap/distribution charts - distinct from single anomaly chart in risk dashboard)
   - Total: ~150KB active JavaScript code (118KB external + 32KB inline; source size, transfer size smaller when compressed)
 - **XSS Mitigation:** Content Security Policy (CSP) headers with script-src restrictions
-- **Input Sanitization:** CIA CSV data is schema-validated during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`) before publication; client-side code then parses this pre-validated CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
+- **Input Sanitization:** CIA CSV data is subjected to best-effort, non-blocking schema validation during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`); validation failures currently surface as warnings rather than blocking publication, and client-side code then parses this CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
 - **External Dependencies:** 
   - Chart.js v4.4.1 (via CDN with SRI hash)
   - D3.js v7 (via CDN with SRI hash)
   - Google Fonts (trusted CDN)
-- **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` that has been validated against CIA schemas in CI/pre-processing (e.g., `.github/workflows/validate-cia-data.yml`), with local caching for performance
-- **No User Input Processing:** Dashboards do not accept or process arbitrary user input; they display pre-processed, schema-validated CIA data generated upstream in CI/data pipelines
+- **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` that is subject to non-blocking CI schema validation checks in pre-processing (e.g., `.github/workflows/validate-cia-data.yml`), with local caching for performance; the browser consumes this dataset which may contain validation warnings
+- **No User Input Processing:** Dashboards do not accept or process arbitrary user input; they display pre-processed CIA data generated upstream in CI/data pipelines that has passed non-blocking schema validation checks where configured
 - **No Server-Side Code:** Static hosting eliminates injection vulnerabilities
 
 **Dashboard Security:**
@@ -238,9 +238,9 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 9. **Anomaly Detection Dashboard** - Standalone section with multiple canvas elements (anomaly-timeline-chart, zscore-distribution-chart, anomaly-type-chart, quarterly-frequency-chart), distinct from the single anomaly chart within risk dashboard, awaiting JS implementation
 
 **Dependency Management:**
-- Regular Chart.js/D3.js version updates via Dependabot
+- Chart.js and D3.js loaded via pinned CDN URLs with SRI; versions reviewed manually at least quarterly and after critical CVE disclosures
 - Subresource Integrity (SRI) hashes for CDN resources
-- Automated dependency risk assessment via GitHub dependency-review and Dependabot alerts
+- Dependabot configured for GitHub Actions workflows (`.github/dependabot.yml`) and automated dependency risk assessment for repository-managed components via GitHub dependency-review and Dependabot alerts
 - Supply chain security scanning via CodeQL and OpenSSF Scorecards
 
 **Control Mapping:**
