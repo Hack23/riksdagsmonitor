@@ -241,6 +241,7 @@
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html"/>
   <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
 </url>
 
@@ -250,6 +251,28 @@
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
+</url>
+
+
+<url>
+  <loc>https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html</loc>
+  <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
+</url>
+
+<url>
+  <loc>https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html</loc>
+  <lastmod>2026-02-10T14:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html"/>
   <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
 </url>
 
