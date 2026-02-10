@@ -8547,13 +8547,6 @@ a:hover {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-  
-  .back-to-top:hover {
-    background: var(--primary-light);
-    box-shadow: 0 6px 16px rgba(0, 204, 102, 0.4);
-  }
-}
-
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .nav-container {
@@ -8674,8 +8667,6 @@ a:hover {
   
   .nav-toggle:hover {
     background: rgba(0, 204, 102, 0.1);
-  }
-}
   }
 }
 
@@ -10943,7 +10934,6 @@ footer {
 .faq-answer ol ol {
   margin-top: var(--spacing-sm);
   padding-left: var(--spacing-lg);
-}
 }
 
 .faq-answer strong {
@@ -15216,4 +15206,7 @@ html[lang="he"] {
     background: rgba(0, 26, 26, 0.5);
     border-color: rgba(0, 204, 102, 0.3);
   }
+}
+
+}
 }
