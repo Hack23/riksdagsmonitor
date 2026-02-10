@@ -1,0 +1,9 @@
+party,momentum_score,electoral_trajectory,media_presence,public_sentiment
+S,68.5,positive,high,neutral
+M,72.3,positive,high,positive
+SD,85.7,rising,very_high,mixed
+C,54.2,declining,moderate,neutral
+V,61.8,stable,moderate,neutral
+KD,66.4,stable,moderate,positive
+L,59.7,declining,low,neutral
+MP,48.3,declining,moderate,negative
