@@ -1862,7 +1862,7 @@ Performance tiers (ntile_party_tier: 1-4)
       .attr('text-anchor', 'middle')
       .attr('font-size', '10px')
       .attr('fill', 'currentColor')
-      .text(d => d.replace('Rule_', 'R'));
+      .text(d => String(d || '').replace('Rule_', 'R'));
     
     // Add Y axis labels (politicians) - Sample every 10th
     g.append('g')
@@ -1895,7 +1895,7 @@ Performance tiers (ntile_party_tier: 1-4)
     rules.forEach(rule => {
       const option = document.createElement('option');
       option.value = rule;
-      option.textContent = rule.replace('Rule_', 'Risk Rule ');
+      option.textContent = String(rule || '').replace('Rule_', 'Risk Rule ');
       ruleFilter.appendChild(option);
     });
     
