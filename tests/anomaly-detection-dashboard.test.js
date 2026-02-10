@@ -12,17 +12,17 @@ describe('Anomaly Detection Dashboard', () => {
   
   beforeEach(() => {
     document.body.innerHTML = `
-      <section id="anomaly-dashboard">
+      <section id="anomaly-detection-dashboard">
         <h2>Anomaly Detection & Early Warning System</h2>
         <div class="filters">
-          <select id="severity-filter">
+          <select id="anomaly-severity-filter">
             <option value="">All Severities</option>
             <option value="CRITICAL">Critical</option>
             <option value="HIGH">High</option>
             <option value="MODERATE">Moderate</option>
             <option value="LOW">Low</option>
           </select>
-          <select id="type-filter">
+          <select id="anomaly-type-filter">
             <option value="">All Types</option>
             <option value="BALLOT_ANOMALY">Ballot Anomaly</option>
             <option value="DOCUMENT_ANOMALY">Document Anomaly</option>
@@ -32,7 +32,7 @@ describe('Anomaly Detection Dashboard', () => {
         <div class="dashboard-grid">
           <canvas id="anomaly-timeline-chart"></canvas>
           <canvas id="zscore-distribution-chart"></canvas>
-          <canvas id="type-breakdown-chart"></canvas>
+          <canvas id="anomaly-type-chart"></canvas>
           <div id="severity-heatmap"></div>
           <canvas id="quarterly-frequency-chart"></canvas>
         </div>
@@ -40,7 +40,7 @@ describe('Anomaly Detection Dashboard', () => {
       </section>
     `;
     
-    container = document.getElementById('anomaly-dashboard');
+    container = document.getElementById('anomaly-detection-dashboard');
   });
   
   describe('Configuration', () => {
@@ -115,13 +115,13 @@ describe('Anomaly Detection Dashboard', () => {
     });
     
     it('should have severity filter', () => {
-      const filter = document.getElementById('severity-filter');
+      const filter = document.getElementById('anomaly-severity-filter');
       expect(filter).not.toBeNull();
       expect(filter.options.length).toBeGreaterThan(0);
     });
     
     it('should have type filter', () => {
-      const filter = document.getElementById('type-filter');
+      const filter = document.getElementById('anomaly-type-filter');
       expect(filter).not.toBeNull();
       expect(filter.options.length).toBeGreaterThan(0);
     });
@@ -129,7 +129,7 @@ describe('Anomaly Detection Dashboard', () => {
     it('should have all chart canvases', () => {
       expect(document.getElementById('anomaly-timeline-chart')).not.toBeNull();
       expect(document.getElementById('zscore-distribution-chart')).not.toBeNull();
-      expect(document.getElementById('type-breakdown-chart')).not.toBeNull();
+      expect(document.getElementById('anomaly-type-chart')).not.toBeNull();
       expect(document.getElementById('quarterly-frequency-chart')).not.toBeNull();
     });
     

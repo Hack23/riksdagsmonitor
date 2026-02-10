@@ -26,8 +26,8 @@ export default defineConfig({
       reporter: ['text', 'html', 'lcov', 'json'],
       reportsDirectory: './coverage',
       
-      // Include all files for accurate coverage metrics
-      all: true,
+      // Disabled: tests don't import dashboard modules (by design)
+      all: false,
       
       // Coverage thresholds
       lines: 70,

@@ -1,13 +1,8 @@
-name: Deploy
+name: Deploy to S3
 on:
-<<<<<<< HEAD
-  release:
-    types: [published]
-  workflow_dispatch:
-=======
   push:
     branches: ["main"]
->>>>>>> origin/main
+  workflow_dispatch:
 permissions:
   contents: read
   id-token: write

@@ -65,15 +65,15 @@ describe('Dashboard Functionality', () => {
   
   describe('Seasonal Patterns Dashboard', () => {
     it('should display seasonal patterns dashboard', () => {
-      cy.get('#seasonal-dashboard').should('exist');
+      cy.get('#seasonal-patterns-dashboard').should('exist');
     });
     
     it('should have year filter', () => {
-      cy.get('#year-filter').should('exist');
+      cy.get('#seasonal-year-filter').should('exist');
     });
     
     it('should have quarter filter', () => {
-      cy.get('#quarter-filter').should('exist');
+      cy.get('#seasonal-quarter-filter').should('exist');
     });
   });
   
