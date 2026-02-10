@@ -33,17 +33,21 @@ after(() => {
 
 // Handle uncaught exceptions
 Cypress.on('uncaught:exception', (err, runnable) => {
-  // Ignore Chart.js animation frame errors
-  if (err.message.includes('ResizeObserver')) {
+  // Ignore ResizeObserver-related animation frame errors from charts
+  if (err && typeof err.message === 'string' && err.message.includes('ResizeObserver')) {
     return false;
   }
-  
-  // Ignore D3 rendering errors
-  if (err.message.includes('d3')) {
+
+  // Ignore known benign D3 rendering errors
+  if (err && typeof err.message === 'string' && err.message.includes('d3')) {
     return false;
   }
+
+  // For all other errors, allow Cypress to fail the test
+  // Log to the browser console instead of using cy.log (not supported here)
+  // eslint-disable-next-line no-console
+  console.error('Uncaught exception in Cypress test:', err);
   
-  // Log other errors but don't fail tests
-  cy.log('⚠️ Uncaught exception:', err.message);
-  return false;
+  // Return true to fail the test for real errors
+  return true;
 });

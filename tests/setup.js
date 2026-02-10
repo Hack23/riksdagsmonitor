@@ -104,16 +104,6 @@ global.sessionStorage = {
   clear: vi.fn()
 };
 
-// Mock console methods to reduce noise in tests
-global.console = {
-  ...console,
-  log: vi.fn(),
-  debug: vi.fn(),
-  info: vi.fn(),
-  warn: vi.fn(),
-  error: vi.fn()
-};
-
 // Setup DOM utilities
 beforeEach(() => {
   // Clear DOM before each test
@@ -121,6 +111,13 @@ beforeEach(() => {
   
   // Reset all mocks
   vi.clearAllMocks();
+  
+  // Silence console output while keeping the original console object
+  vi.spyOn(console, 'log').mockImplementation(() => {});
+  vi.spyOn(console, 'debug').mockImplementation(() => {});
+  vi.spyOn(console, 'info').mockImplementation(() => {});
+  vi.spyOn(console, 'warn').mockImplementation(() => {});
+  vi.spyOn(console, 'error').mockImplementation(() => {});
 });
 
 afterEach(() => {

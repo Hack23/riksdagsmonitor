@@ -14,7 +14,7 @@
     "test:coverage": "vitest run --coverage",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "e2e": "start-server-and-test preview http://localhost:4173 cypress:run",
+    "e2e": "npm run build && start-server-and-test preview http://localhost:4173 cypress:run",
     "sync-schemas": "node scripts/sync-cia-schemas.js",
     "validate-data": "node scripts/validate-against-cia-schemas.js",
     "check-updates": "node scripts/check-cia-schema-updates.js",

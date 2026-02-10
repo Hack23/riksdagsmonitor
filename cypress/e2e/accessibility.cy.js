@@ -33,9 +33,16 @@ describe('Accessibility (WCAG 2.1 AA)', () => {
       const ariaLabel = $input.attr('aria-label');
       const ariaLabelledby = $input.attr('aria-labelledby');
       
+      // A control is considered labeled if it has either:
+      // - an associated <label for="id">, or
+      // - an ARIA label (aria-label or aria-labelledby)
+      let hasAssociatedLabel = false;
+
       if (id) {
-        cy.get(`label[for="${id}"]`).should('exist');
-      } else {
+        hasAssociatedLabel = Cypress.$(`label[for="${id}"]`).length > 0;
+      }
+
+      if (!hasAssociatedLabel) {
         expect(ariaLabel || ariaLabelledby).to.exist;
       }
     });
@@ -51,10 +58,12 @@ describe('Accessibility (WCAG 2.1 AA)', () => {
   });
   
   it('should be keyboard navigable', () => {
-    cy.get('body').tab();
+    // Start from body and use real Tab key events to move focus
+    cy.get('body').type('{tab}');
     cy.focused().should('exist');
     
-    cy.get('body').tab();
+    // Press Tab again from the currently focused element
+    cy.focused().type('{tab}');
     cy.focused().should('exist');
   });
   

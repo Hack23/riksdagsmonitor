@@ -48,7 +48,12 @@ Cypress.Commands.add('testResponsive', (selector) => {
  */
 Cypress.Commands.add('waitForChart', (canvasId) => {
   cy.get(`#${canvasId}`).should('be.visible');
-  cy.wait(500); // Wait for animation
+  // Wait for chart to be fully rendered by checking canvas has content
+  cy.get(`#${canvasId}`).should(($canvas) => {
+    const canvas = $canvas[0];
+    expect(canvas.width).to.be.greaterThan(0);
+    expect(canvas.height).to.be.greaterThan(0);
+  });
 });
 
 /**
@@ -56,7 +61,10 @@ Cypress.Commands.add('waitForChart', (canvasId) => {
  */
 Cypress.Commands.add('waitForD3', (containerId) => {
   cy.get(`#${containerId} svg`).should('exist');
-  cy.wait(500); // Wait for rendering
+  // Wait for SVG to have actual content (elements)
+  cy.get(`#${containerId} svg`).should(($svg) => {
+    expect($svg.children().length).to.be.greaterThan(0);
+  });
 });
 
 /**

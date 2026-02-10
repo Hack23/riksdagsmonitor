@@ -26,6 +26,9 @@ export default defineConfig({
       reporter: ['text', 'html', 'lcov', 'json'],
       reportsDirectory: './coverage',
       
+      // Include all files for accurate coverage metrics
+      all: true,
+      
       // Coverage thresholds
       lines: 70,
       functions: 70,

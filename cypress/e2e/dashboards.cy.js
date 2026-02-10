@@ -7,8 +7,8 @@
 
 describe('Dashboard Functionality', () => {
   beforeEach(() => {
-    cy.visit('/');
     cy.stubCIAData();
+    cy.visit('/');
   });
   
   describe('Party Dashboard', () => {

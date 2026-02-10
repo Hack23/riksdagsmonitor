@@ -32,8 +32,6 @@ on:
 
 permissions:
   contents: read
-  checks: write
-  pull-requests: write
 
 jobs:
   # Vitest Unit Tests
@@ -148,7 +146,6 @@ jobs:
       - name: Run Cypress E2E tests
         uses: cypress-io/github-action@8c5c69c5aacddb4017bc9ed4f24bf7d3a1f1e0ab # v6.9.1
         with:
-          build: npm run build
           start: npm run preview
           wait-on: 'http://localhost:4173'
           wait-on-timeout: 60

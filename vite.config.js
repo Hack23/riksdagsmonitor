@@ -43,6 +43,7 @@ export default defineConfig({
     // Code splitting configuration
     rollupOptions: {
       input: {
+        // Main language homepages
         main: './index.html',
         ar: './index_ar.html',
         da: './index_da.html',
@@ -56,7 +57,11 @@ export default defineConfig({
         nl: './index_nl.html',
         no: './index_no.html',
         sv: './index_sv.html',
-        zh: './index_zh.html'
+        zh: './index_zh.html',
+        // Additional pages
+        'politician-dashboard': './politician-dashboard.html',
+        'dashboard/index': './dashboard/index.html',
+        'dashboard/index_sv': './dashboard/index_sv.html'
       },
       output: {
         // Manual chunk splitting for optimal loading
@@ -68,9 +73,6 @@ export default defineConfig({
         
         // Asset file naming
         assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
-          
           if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico|webp)$/i.test(assetInfo.name)) {
             return `assets/images/[name]-[hash][extname]`;
           }
@@ -88,13 +90,10 @@ export default defineConfig({
       }
     },
     
-    // Minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
+    // Minification (use Vite default: esbuild)
+    minify: 'esbuild',
+    esbuild: {
+      drop: ['console', 'debugger']
     },
     
     // CSS options

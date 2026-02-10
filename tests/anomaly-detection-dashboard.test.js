@@ -5,7 +5,7 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 
 describe('Anomaly Detection Dashboard', () => {
   let container;
