@@ -226,8 +226,53 @@ Maintain evidence for:
 
 ## References
 
-- [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
-- [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
-- [ISO 27001:2022](https://www.iso.org/standard/27001)
-- [NIST CSF 2.0](https://www.nist.gov/cyberframework)
-- [CIS Controls v8.1](https://www.cisecurity.org/controls)
+### Hack23 ISMS Core Policies
+- [Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) - Master ISMS framework
+- [Information Security Strategy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Strategy.md) - Strategic security roadmap
+- [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - SDLC security requirements
+- [Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) - Open source governance
+- [Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) - Systematic threat analysis
+
+### Compliance & Classification
+- [Compliance Checklist](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Compliance_Checklist.md) - Multi-framework mapping
+- [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) - Business impact analysis
+- [CRA Conformity Assessment](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md) - EU Cyber Resilience Act
+
+### Risk & Incident Management
+- [Risk Register](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Register.md) - Enterprise risk management
+- [Risk Assessment Methodology](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md) - Risk evaluation framework
+- [Incident Response Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) - Security incident procedures
+- [Business Continuity Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Business_Continuity_Plan.md) - BCP/DR processes
+
+### Technical Controls
+- [Access Control Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md) - IAM and authentication
+- [Cryptography Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) - Encryption standards
+- [Network Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Network_Security_Policy.md) - Network controls
+- [Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) - Vuln scanning and remediation
+- [Backup Recovery Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Backup_Recovery_Policy.md) - Data protection
+- [Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) - Change control
+
+### Supporting Documents
+- [Asset Register](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Register.md) - Information assets
+- [Data Classification Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Data_Classification_Policy.md) - Data handling
+- [Acceptable Use Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Acceptable_Use_Policy.md) - Usage guidelines
+- [Segregation of Duties Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Segregation_of_Duties_Policy.md) - SoD compensating controls
+- [Third Party Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Third_Party_Management.md) - Supplier security
+- [Physical Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Physical_Security_Policy.md) - Physical controls
+- [AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) - AI governance
+- [Privacy Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md) - GDPR compliance
+
+### Example Implementations
+- [CIA Security Architecture](https://github.com/Hack23/cia/blob/master/SECURITY_ARCHITECTURE.md) - Full authentication stack
+- [CIA Threat Model](https://github.com/Hack23/cia/blob/master/THREAT_MODEL.md) - Comprehensive threat analysis
+- [CIA Compliance Manager Security](https://github.com/Hack23/cia-compliance-manager/blob/main/docs/architecture/SECURITY_ARCHITECTURE.md) - Frontend-only security
+- [Black Trigram Security](https://github.com/Hack23/blacktrigram/blob/main/SECURITY_ARCHITECTURE.md) - Gaming security
+- [Riksdagsmonitor Security](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md) - Static site security
+
+### Compliance Frameworks
+- [ISO 27001:2022](https://www.iso.org/standard/27001) - Information security management
+- [NIST CSF 2.0](https://www.nist.gov/cyberframework) - Cybersecurity Framework
+- [CIS Controls v8.1](https://www.cisecurity.org/controls) - Security best practices
+- [NIS2 Directive](https://eur-lex.europa.eu/eli/dir/2022/2555) - EU cybersecurity requirements
+- [EU CRA](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act) - Cyber Resilience Act
+- [GDPR](https://gdpr.eu/) - Data protection regulation
