@@ -140,23 +140,57 @@ function generateSitemap() {
   });
   
   // News index pages (canonical is news/ for English, based on <link rel="canonical">)
-  const newsIndexEnMtime = getFileModTime(path.join(NEWS_DIR, 'index.html'));
-  const newsIndexSvMtime = getFileModTime(path.join(NEWS_DIR, 'index_sv.html'));
-  const newsIndexMaxMtime = new Date(Math.max(new Date(newsIndexEnMtime), new Date(newsIndexSvMtime))).toISOString();
+  // Calculate lastmod using all news language files
+  const newsLangFiles = ['index.html', 'index_sv.html', 'index_da.html', 'index_no.html', 'index_fi.html', 'index_de.html', 'index_fr.html', 'index_es.html', 'index_nl.html', 'index_ar.html', 'index_he.html'];
+  const newsIndexMtimes = newsLangFiles.map(file => {
+    try {
+      return new Date(getFileModTime(path.join(NEWS_DIR, file)));
+    } catch (e) {
+      return new Date(0); // File doesn't exist yet
+    }
+  });
+  const newsIndexMaxMtime = new Date(Math.max(...newsIndexMtimes)).toISOString();
   
-  // Build alternates for news index pages that actually exist
+  // Build alternates for news index pages that actually exist (using nb for Norwegian Bokmål)
   const newsIndexAlternates = [
     { lang: 'en', href: 'news/' },
     { lang: 'sv', href: 'news/index_sv.html' },
     { lang: 'da', href: 'news/index_da.html' },
-    { lang: 'no', href: 'news/index_no.html' },
+    { lang: 'nb', href: 'news/index_no.html' },
     { lang: 'fi', href: 'news/index_fi.html' },
     { lang: 'de', href: 'news/index_de.html' },
     { lang: 'fr', href: 'news/index_fr.html' },
+    { lang: 'es', href: 'news/index_es.html' },
+    { lang: 'nl', href: 'news/index_nl.html' },
+    { lang: 'ar', href: 'news/index_ar.html' },
+    { lang: 'he', href: 'news/index_he.html' },
     { lang: 'x-default', href: 'news/' }
   ];
   
   xml += generateUrlEntry('news/', newsIndexMaxMtime, 'daily', '0.9', newsIndexAlternates);
+  
+  // Add individual entries for each news language page (excluding EN which is canonical news/)
+  const newsLanguagePages = [
+    { file: 'index_sv.html', priority: '0.9' },
+    { file: 'index_da.html', priority: '0.7' },
+    { file: 'index_no.html', priority: '0.7' },
+    { file: 'index_fi.html', priority: '0.7' },
+    { file: 'index_de.html', priority: '0.7' },
+    { file: 'index_fr.html', priority: '0.7' },
+    { file: 'index_es.html', priority: '0.7' },
+    { file: 'index_nl.html', priority: '0.7' },
+    { file: 'index_ar.html', priority: '0.7' },
+    { file: 'index_he.html', priority: '0.7' }
+  ];
+  
+  newsLanguagePages.forEach(({ file, priority }) => {
+    try {
+      const lastmod = getFileModTime(path.join(NEWS_DIR, file));
+      xml += generateUrlEntry(`news/${file}`, lastmod, 'daily', priority);
+    } catch (e) {
+      // File doesn't exist yet, skip
+    }
+  });
   
   // News articles
   const articles = getNewsArticles();

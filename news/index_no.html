@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/index_no.html">
+  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
   <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
   <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
   <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
@@ -370,6 +370,13 @@
       }
     ];
     
+    // Localized article type labels
+    const typeLabels = {
+      'prospective': 'Prospektiv',
+      'retrospective': 'Retrospektiv',
+      'analysis': 'Analyse'
+    };
+
     let filteredArticles = [...articles];
     
     function renderArticles(articlesToRender) {
@@ -388,7 +395,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${typeLabels[article.type] || article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
