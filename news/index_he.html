@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>חדשות - Riksdagsmonitor</title>
+  <meta name="description" content="חדשות וניתוחים אחרונים מהפרלמנט השוודי (ריקסדאג). עיתונות פוליטית בסגנון The Economist המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.">
+  <meta name="keywords" content="חדשות ריקסדאג, פרלמנט שבדיה, ניתוח ממשלה, עיתונות פוליטית, שקיפות, דמוקרטיה">
+  <meta name="author" content="James Pether Sörling, CISSP, CISM">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_he.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="חדשות - Riksdagsmonitor">
+  <meta property="og:description" content="עיתונות פוליטית אחרונה מהפרלמנט השוודי">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_he.html">
+  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta property="og:site_name" content="Riksdagsmonitor">
+  <meta property="og:locale" content="he_IL">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="חדשות - Riksdagsmonitor">
+  <meta name="twitter:description" content="עיתונות פוליטית אחרונה מהפרלמנט השוודי">
+  <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+  
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
+  <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
+  <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
+  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/index_no.html">
+  <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
+  <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
+  <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
+  <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
+  <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
+  <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
+  <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
+  <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html">
+  <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/news/index_ko.html">
+  <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/index_zh.html">
+  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  
+  <style>
+    body {
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .header-section {
+      background: rgba(26, 30, 61, 0.9);
+      border-bottom: 2px solid var(--primary-cyan, #00d9ff);
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 1rem 0;
+      background: linear-gradient(135deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem 1rem;
+    }
+    
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: rgba(26, 30, 61, 0.6);
+      border-radius: 8px;
+      border: 1px solid rgba(0, 217, 255, 0.3);
+    }
+    
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .filter-group label {
+      font-size: 0.9rem;
+      color: var(--primary-cyan, #00d9ff);
+      font-weight: 600;
+    }
+    
+    .filter-group select {
+      padding: 0.5rem;
+      background: rgba(10, 14, 39, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.5);
+      border-radius: 4px;
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+    }
+    
+    .filter-group select:hover {
+      border-color: var(--primary-cyan, #00d9ff);
+    }
+    
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .article-card {
+      background: rgba(26, 30, 61, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .article-card:hover {
+      border-color: var(--primary-cyan, #00d9ff);
+      box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    
+    .article-date {
+      color: var(--primary-cyan, #00d9ff);
+    }
+    
+    .article-type {
+      padding: 0.2rem 0.6rem;
+      background: rgba(0, 217, 255, 0.1);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .article-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      color: #fff;
+      line-height: 1.4;
+    }
+    
+    .article-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .article-title a:hover {
+      color: var(--primary-cyan, #00d9ff);
+    }
+    
+    .article-excerpt {
+      color: #b0b0b0;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+    
+    .tag {
+      padding: 0.3rem 0.6rem;
+      background: rgba(255, 0, 110, 0.1);
+      border: 1px solid rgba(255, 0, 110, 0.3);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--primary-magenta, #ff006e);
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: #888;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      background: rgba(26, 30, 61, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 4px;
+      color: var(--primary-cyan, #00d9ff);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      border-color: var(--primary-cyan, #00d9ff);
+      background: rgba(0, 217, 255, 0.1);
+    }
+    
+    /* RTL-specific styles */
+    [dir="rtl"] .filter-bar {
+      flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .article-meta {
+      flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .article-tags {
+      flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .back-link::before {
+      content: "← ";
+    }
+    
+    @media (max-width: 768px) {
+      .filter-bar {
+        flex-direction: column;
+      }
+      
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-section">
+    <div class="header-content">
+      <h1><span aria-hidden="true">📰</span> חדשות Riksdagsmonitor</h1>
+      <p class="subtitle">עיתונות פוליטית בסגנון The Economist • שקיפות שיטתית • אחריות דמוקרטית</p>
+    </div>
+  </div>
+  
+  <div class="container">
+    <a href="../index_he.html" class="back-link">חזרה ללוח המחוונים</a>
+    
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label for="filter-type">סוג כתבה</label>
+        <select id="filter-type">
+          <option value="all">כל הסוגים</option>
+          <option value="retrospective">רטרוספקטיבי</option>
+          <option value="prospective">פרוספקטיבי (השבוע הבא)</option>
+          <option value="analysis">ניתוח</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="filter-topic">נושא</label>
+        <select id="filter-topic">
+          <option value="all">כל הנושאים</option>
+          <option value="eu">ענייני האיחוד האירופי</option>
+          <option value="government">ממשלה</option>
+          <option value="parliament">פרלמנט</option>
+          <option value="committees">ועדות</option>
+          <option value="legislation">חקיקה</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="filter-sort">מיין לפי</label>
+        <select id="filter-sort">
+          <option value="date-desc">החדש ביותר תחילה</option>
+          <option value="date-asc">הישן ביותר תחילה</option>
+          <option value="title">כותרת א-ת</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="articles-grid" id="articles-grid">
+      <!-- Articles dynamically loaded via JavaScript -->
+    </div>
+    
+    <div class="no-results" id="no-results" style="display: none;">
+      <p>לא נמצאו כתבות התואמות את הקריטריונים.</p>
+    </div>
+  </div>
+  
+  <script>
+    // News articles metadata
+    const articles = [
+      {
+        title: "השבוע הבא: פסגת בריסל בוחנת את האסטרטגיה השבדית באיחוד האירופי",
+        date: "2026-02-10",
+        type: "prospective",
+        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
+        excerpt: "שבוע קריטי למדיניות האירופית השבדית כאשר ראש הממשלה קריסטרסון משתתף בפסגת מנהיגים לא פורמלית בעוד ועדת האיחוד האירופי עוקבת אחר סוגיות הגנה וכלכלה.",
+        topics: ["eu", "defense", "parliament", "citizenship", "environment"],
+        tags: ["פסגת האיחוד האירופי", "בריסל", "מדיניות הגנה", "פיקוח פרלמנטרי"]
+      },
+      {
+        title: "ראש הממשלה עומד בפני הפרלמנט לפני פסגת בריסל",
+        date: "2026-02-10",
+        type: "retrospective",
+        slug: "2026-02-10-pm-eu-summit-en.html",
+        excerpt: "בישיבה פתוחה נדירה של ועדת האיחוד האירופי, ראש הממשלה אולף קריסטרסון מתייעץ עם הריקסדאג לפני פסגת מנהיגים לא פורמלית בעוד הממשלה מתמודדת עם לחץ גובר בנושא פשיעה כלכלית ומדיניות אזרחות.",
+        topics: ["eu", "government", "parliament"],
+        tags: ["האיחוד האירופי", "ראש הממשלה", "פשיעה כלכלית", "אזרחות"]
+      },
+      {
+        title: "הכרזה על אסטרטגיית מגוון ביולוגי ורפורמה באזרחות",
+        date: "2026-02-10",
+        type: "retrospective",
+        slug: "2026-02-10-biodiversity-citizenship-en.html",
+        excerpt: "הממשלה מכריזה על אסטרטגיה מקיפה למגוון ביולוגי ומסמנת רפורמה משמעותית באזרחות בעוד הקואליציה מנווטת בין סדרי עדיפויות מתחרים בנושא סביבה והגירה.",
+        topics: ["environment", "government", "legislation"],
+        tags: ["מגוון ביולוגי", "אזרחות", "סביבה", "הגירה"]
+      },
+      {
+        title: "הצעות ממשלה פברואר 2026",
+        date: "2026-02-07",
+        type: "analysis",
+        slug: "2026-02-government-propositions-en.html",
+        excerpt: "התקפה מדינית על פני פיקוח פיננסי, אנרגיה מתחדשת וביטחון נכסים מסמנת דחיפה חקיקתית אינטנסיבית לפני החופשה האביבית.",
+        topics: ["government", "legislation", "parliament"],
+        tags: ["הצעות", "פיננסים", "אקלים", "נכסים", "מיסים"]
+      },
+      {
+        title: "דוחות ועדות פברואר 2026",
+        date: "2026-02-06",
+        type: "analysis",
+        slug: "2026-02-committee-reports-en.html",
+        excerpt: "ועדות פרלמנטריות מגישות דוחות מקיפים המשתרעים על חינוך, הגנה ומדיניות חברתית כאשר הריקסדאג נכנס לשלב החלטה קריטי.",
+        topics: ["committees", "parliament"],
+        tags: ["דוחות ועדה", "חינוך", "הגנה", "מדיניות חברתית"]
+      },
+      {
+        title: "הצעות אופוזיציה פברואר 2026",
+        date: "2026-02-07",
+        type: "analysis",
+        slug: "2026-02-opposition-motions-en.html",
+        excerpt: "מפלגות האופוזיציה מגבירות לחץ חקיקתי עם חבילות הצעות מקיפות המכוונות למדיניות הממשלתית על פני פשיעה כלכלית, שירותי בריאות ואקלים.",
+        topics: ["parliament", "legislation"],
+        tags: ["אופוזיציה", "הצעות", "פשיעה כלכלית", "שירותי בריאות"]
+      },
+      {
+        title: "סדר יום הפרלמנט - סקירת השבוע",
+        date: "2026-02-09",
+        type: "prospective",
+        slug: "2026-02-parliament-agenda-en.html",
+        excerpt: "תצוגה מקדימה מקיפה של פעילות פרלמנטרית קרובה כולל ישיבות ועדות, דיונים באולם ושאלות שרים.",
+        topics: ["parliament"],
+        tags: ["פרלמנט", "סדר יום", "תצוגה מקדימה שבועית"]
+      },
+      {
+        title: "השבוע הבא",
+        date: "2026-02-09",
+        type: "prospective",
+        slug: "2026-02-week-ahead-en.html",
+        excerpt: "מבט קדימה על התפתחויות פוליטיות מרכזיות, פעילות פרלמנטרית והחלטות ממשלה בשבוע הקרוב.",
+        topics: ["parliament", "government"],
+        tags: ["השבוע הבא", "תצוגה מקדימה", "לוח שנה פוליטי"]
+      }
+    ];
+    
+    let filteredArticles = [...articles];
+    
+    function renderArticles(articlesToRender) {
+      const grid = document.getElementById('articles-grid');
+      const noResults = document.getElementById('no-results');
+      
+      if (articlesToRender.length === 0) {
+        grid.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+      
+      noResults.style.display = 'none';
+      
+      grid.innerHTML = articlesToRender.map(article => `
+        <article class="article-card">
+          <div class="article-meta">
+            <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
+            <span class="article-type">${article.type}</span>
+          </div>
+          <h2 class="article-title">
+            <a href="${article.slug}">${article.title}</a>
+          </h2>
+          <p class="article-excerpt">${article.excerpt}</p>
+          <div class="article-tags">
+            ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+        </article>
+      `).join('');
+    }
+    
+    function formatDate(dateStr) {
+      const date = new Date(dateStr);
+      const months = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+      return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+    }
+    
+    function filterArticles() {
+      const typeFilter = document.getElementById('filter-type').value;
+      const topicFilter = document.getElementById('filter-topic').value;
+      const sortFilter = document.getElementById('filter-sort').value;
+      
+      let filtered = [...articles];
+      
+      // Apply type filter
+      if (typeFilter !== 'all') {
+        filtered = filtered.filter(article => article.type === typeFilter);
+      }
+      
+      // Apply topic filter
+      if (topicFilter !== 'all') {
+        filtered = filtered.filter(article => article.topics.includes(topicFilter));
+      }
+      
+      // Apply sorting
+      switch(sortFilter) {
+        case 'date-desc':
+          filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+          break;
+        case 'date-asc':
+          filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+          break;
+        case 'title':
+          filtered.sort((a, b) => a.title.localeCompare(b.title, 'he'));
+          break;
+      }
+      
+      filteredArticles = filtered;
+      renderArticles(filteredArticles);
+    }
+    
+    // Event listeners
+    document.getElementById('filter-type').addEventListener('change', filterArticles);
+    document.getElementById('filter-topic').addEventListener('change', filterArticles);
+    document.getElementById('filter-sort').addEventListener('change', filterArticles);
+    
+    // Initial render
+    filterArticles();
+  </script>
+</body>
+</html>
