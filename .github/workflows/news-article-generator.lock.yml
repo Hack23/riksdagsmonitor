@@ -21,7 +21,7 @@
 #
 # Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server
 #
-# frontmatter-hash: abd33c7303ff83abe2f104b8129a7e179927da3d704daeccc90b5d1764016f98
+# frontmatter-hash: ca7bc476d1e4efffbe6fb04856291738b204d5bb21b7edccbe4dda3c8e20bdfb
 
 name: "News Article Generator"
 "on":
