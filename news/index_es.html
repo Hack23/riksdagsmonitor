@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News - Riksdagsmonitor</title>
-  <meta name="description" content="Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <title>Noticias - Riksdagsmonitor</title>
+  <meta name="description" content="Últimas noticias y análisis del Riksdag sueco. Periodismo político al estilo de The Economist que cubre el parlamento, gobierno y agencias con transparencia sistemática.">
+  <meta name="keywords" content="noticias riksdag, parlamento sueco, análisis gubernamental, periodismo político, transparencia, democracia">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
-  <link rel="canonical" href="https://riksdagsmonitor.com/news/">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_es.html">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="News - Riksdagsmonitor">
-  <meta property="og:description" content="Latest political journalism from Sweden's Riksdag">
+  <meta property="og:title" content="Noticias - Riksdagsmonitor">
+  <meta property="og:description" content="Últimas noticias de periodismo político del Riksdag sueco">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riksdagsmonitor.com/news/">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_es.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
   <meta property="og:site_name" content="Riksdagsmonitor">
+  <meta property="og:locale" content="es_ES">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="News - Riksdagsmonitor">
-  <meta name="twitter:description" content="Latest political journalism from Sweden's Riksdag">
+  <meta name="twitter:title" content="Noticias - Riksdagsmonitor">
+  <meta name="twitter:description" content="Últimas noticias de periodismo político del Riksdag sueco">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
@@ -241,43 +242,43 @@
 <body>
   <div class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor News</h1>
-      <p class="subtitle">The Economist-style political journalism • Systematic transparency • Democratic accountability</p>
+      <h1><span aria-hidden="true">📰</span> Noticias de Riksdagsmonitor</h1>
+      <p class="subtitle">Periodismo político al estilo de The Economist • Transparencia sistemática • Responsabilidad democrática</p>
     </div>
   </div>
   
   <div class="container">
-    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <a href="../index_es.html" class="back-link">← Volver al Panel</a>
     
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">Article Type</label>
+        <label for="filter-type">Tipo de Artículo</label>
         <select id="filter-type">
-          <option value="all">All Types</option>
-          <option value="retrospective">Retrospective</option>
-          <option value="prospective">Prospective (Week Ahead)</option>
-          <option value="analysis">Analysis</option>
+          <option value="all">Todos los Tipos</option>
+          <option value="retrospective">Retrospectivo</option>
+          <option value="prospective">Prospectivo (Semana Próxima)</option>
+          <option value="analysis">Análisis</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">Topic</label>
+        <label for="filter-topic">Tema</label>
         <select id="filter-topic">
-          <option value="all">All Topics</option>
-          <option value="eu">EU Affairs</option>
-          <option value="government">Government</option>
-          <option value="parliament">Parliament</option>
-          <option value="committees">Committees</option>
-          <option value="legislation">Legislation</option>
+          <option value="all">Todos los Temas</option>
+          <option value="eu">Asuntos de la UE</option>
+          <option value="government">Gobierno</option>
+          <option value="parliament">Parlamento</option>
+          <option value="committees">Comités</option>
+          <option value="legislation">Legislación</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">Sort By</label>
+        <label for="filter-sort">Ordenar por</label>
         <select id="filter-sort">
-          <option value="date-desc">Newest First</option>
-          <option value="date-asc">Oldest First</option>
-          <option value="title">Title A-Z</option>
+          <option value="date-desc">Más Recientes</option>
+          <option value="date-asc">Más Antiguos</option>
+          <option value="title">Título A-Z</option>
         </select>
       </div>
     </div>
@@ -287,7 +288,7 @@
     </div>
     
     <div class="no-results" id="no-results" style="display: none;">
-      <p>No articles found matching your filters.</p>
+      <p>No se encontraron artículos que coincidan con sus filtros.</p>
     </div>
   </div>
   
@@ -295,80 +296,87 @@
     // News articles metadata
     const articles = [
       {
-        title: "Week Ahead: Brussels Summit Tests Swedish EU Strategy",
+        title: "Semana Próxima: La Cumbre de Bruselas Pone a Prueba la Estrategia Europea Sueca",
         date: "2026-02-10",
         type: "prospective",
         slug: "2026-02-10-week-ahead-feb-10-17-en.html",
-        excerpt: "Critical week for Swedish European policy as PM Kristersson attends informal leaders summit while EU Committee follows up on defense and economic issues.",
+        excerpt: "Semana crítica para la política europea sueca mientras el primer ministro Kristersson asiste a la cumbre informal de líderes mientras el Comité de la UE hace seguimiento a cuestiones de defensa y economía.",
         topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["EU Summit", "Brussels", "Defense Policy", "Parliamentary Oversight"]
+        tags: ["Cumbre UE", "Bruselas", "Política de Defensa", "Supervisión Parlamentaria"]
       },
       {
-        title: "Prime Minister Faces Parliament Before Brussels Summit",
+        title: "Primer Ministro se Presenta ante el Parlamento Antes de la Cumbre de Bruselas",
         date: "2026-02-10",
         type: "retrospective",
         slug: "2026-02-10-pm-eu-summit-en.html",
-        excerpt: "In rare open EU Committee meeting, PM Ulf Kristersson consults Riksdag before informal leaders summit while government confronts mounting pressure on economic crime and citizenship policy.",
+        excerpt: "En rara reunión abierta del Comité de la UE, el primer ministro Ulf Kristersson consulta al Riksdag antes de la cumbre informal de líderes mientras el gobierno enfrenta presión creciente sobre delitos económicos y política de ciudadanía.",
         topics: ["eu", "government", "parliament"],
-        tags: ["EU", "Prime Minister", "Economic Crime", "Citizenship"]
+        tags: ["UE", "Primer Ministro", "Delitos Económicos", "Ciudadanía"]
       },
       {
-        title: "Biodiversity Strategy and Citizenship Reform Announced",
+        title: "Estrategia de Biodiversidad y Reforma de Ciudadanía Anunciadas",
         date: "2026-02-10",
         type: "retrospective",
         slug: "2026-02-10-biodiversity-citizenship-en.html",
-        excerpt: "Government announces comprehensive biodiversity strategy and signals major citizenship reform as coalition navigates competing priorities on environment and immigration.",
+        excerpt: "El gobierno anuncia una estrategia integral de biodiversidad y señala una reforma importante de ciudadanía mientras la coalición navega prioridades en conflicto sobre medio ambiente e inmigración.",
         topics: ["environment", "government", "legislation"],
-        tags: ["Biodiversity", "Citizenship", "Environment", "Immigration"]
+        tags: ["Biodiversidad", "Ciudadanía", "Medio Ambiente", "Inmigración"]
       },
       {
-        title: "Government Propositions February 2026",
+        title: "Proposiciones del Gobierno Febrero 2026",
         date: "2026-02-07",
         type: "analysis",
         slug: "2026-02-government-propositions-en.html",
-        excerpt: "Policy offensive across financial supervision, renewable energy, and property security marks intensive legislative push before spring recess.",
+        excerpt: "Ofensiva política en supervisión financiera, energía renovable y seguridad de propiedad marca un impulso legislativo intensivo antes del receso de primavera.",
         topics: ["government", "legislation", "parliament"],
-        tags: ["Propositions", "Finance", "Climate", "Property", "Tax"]
+        tags: ["Proposiciones", "Finanzas", "Clima", "Propiedad", "Impuestos"]
       },
       {
-        title: "Committee Reports February 2026",
+        title: "Informes de Comités Febrero 2026",
         date: "2026-02-06",
         type: "analysis",
         slug: "2026-02-committee-reports-en.html",
-        excerpt: "Parliamentary committees deliver comprehensive reports spanning education, defense, and social policy as Riksdag enters critical decision phase.",
+        excerpt: "Los comités parlamentarios entregan informes integrales que abarcan educación, defensa y política social mientras el Riksdag entra en fase crítica de decisiones.",
         topics: ["committees", "parliament"],
-        tags: ["Committee Reports", "Education", "Defense", "Social Policy"]
+        tags: ["Informes de Comités", "Educación", "Defensa", "Política Social"]
       },
       {
-        title: "Opposition Motions February 2026",
+        title: "Mociones de la Oposición Febrero 2026",
         date: "2026-02-07",
         type: "analysis",
         slug: "2026-02-opposition-motions-en.html",
-        excerpt: "Opposition parties intensify legislative pressure with comprehensive motion packages targeting government policy across economic crime, healthcare, and climate.",
+        excerpt: "Los partidos de oposición intensifican la presión legislativa con paquetes integrales de mociones dirigidos a la política gubernamental sobre delitos económicos, atención médica y clima.",
         topics: ["parliament", "legislation"],
-        tags: ["Opposition", "Motions", "Economic Crime", "Healthcare"]
+        tags: ["Oposición", "Mociones", "Delitos Económicos", "Atención Médica"]
       },
       {
-        title: "Parliament Agenda - Week Overview",
+        title: "Agenda del Parlamento - Resumen de la Semana",
         date: "2026-02-09",
         type: "prospective",
         slug: "2026-02-parliament-agenda-en.html",
-        excerpt: "Comprehensive preview of upcoming parliamentary activity including committee meetings, chamber debates, and ministerial questions.",
+        excerpt: "Vista previa integral de la actividad parlamentaria próxima incluyendo reuniones de comités, debates en la cámara y preguntas ministeriales.",
         topics: ["parliament"],
-        tags: ["Parliament", "Agenda", "Weekly Preview"]
+        tags: ["Parlamento", "Agenda", "Vista Previa Semanal"]
       },
       {
-        title: "The Week Ahead",
+        title: "La Semana Próxima",
         date: "2026-02-09",
         type: "prospective",
         slug: "2026-02-week-ahead-en.html",
-        excerpt: "Looking ahead at key political developments, parliamentary activity, and government decisions in the coming week.",
+        excerpt: "Mirando hacia adelante los desarrollos políticos clave, actividad parlamentaria y decisiones gubernamentales en la próxima semana.",
         topics: ["parliament", "government"],
-        tags: ["Week Ahead", "Preview", "Political Calendar"]
+        tags: ["Semana Próxima", "Vista Previa", "Calendario Político"]
       }
     ];
     
     let filteredArticles = [...articles];
+    
+    // Localized type labels
+    const typeLabels = {
+      'prospective': 'Prospectivo',
+      'retrospective': 'Retrospectivo',
+      'analysis': 'Análisis'
+    };
     
     function renderArticles(articlesToRender) {
       const grid = document.getElementById('articles-grid');
@@ -386,7 +394,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${typeLabels[article.type] || article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -400,8 +408,11 @@
     }
     
     function formatDate(dateStr) {
-      const date = new Date(dateStr);
-      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      // Parse date components to avoid timezone issues
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+      return `${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`;
     }
     
     function filterArticles() {
