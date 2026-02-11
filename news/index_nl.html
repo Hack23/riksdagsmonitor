@@ -27,18 +27,8 @@
   <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
-  <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/index_no.html">
-  <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
-  <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
-  <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
   <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
   <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
-  <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
-  <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
-  <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html">
-  <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/news/index_ko.html">
-  <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/index_zh.html">
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
   
   <!-- Fonts -->
@@ -326,7 +316,7 @@
         date: "2026-02-10",
         type: "retrospective",
         slug: "2026-02-10-biodiversity-citizenship-en.html",
-        excerpt: "Regering kondigt uitgebreide biodiversiteitsstrategie aan en signaleert grote staatsbugerhervorming terwijl coalitie concurrerende prioriteiten navigeert op milieu en immigratie.",
+        excerpt: "Regering kondigt uitgebreide biodiversiteitsstrategie aan en signaleert grote staatsburgerhervorming terwijl coalitie concurrerende prioriteiten navigeert op milieu en immigratie.",
         topics: ["environment", "government", "legislation"],
         tags: ["Biodiversiteit", "Staatsburgerschap", "Milieu", "Immigratie"]
       },
@@ -379,6 +369,13 @@
     
     let filteredArticles = [...articles];
     
+    // Localized type labels
+    const typeLabels = {
+      'prospective': 'Prospectief',
+      'retrospective': 'Retrospectief',
+      'analysis': 'Analyse'
+    };
+    
     function renderArticles(articlesToRender) {
       const grid = document.getElementById('articles-grid');
       const noResults = document.getElementById('no-results');
@@ -395,7 +392,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${typeLabels[article.type] || article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
