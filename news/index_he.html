@@ -275,6 +275,10 @@
   <div class="container">
     <a href="../index_he.html" class="back-link">חזרה ללוח המחוונים</a>
     
+    <div class="language-notice">
+      <strong>📢 הערה:</strong> התוכן זמין כעת באנגלית. מאמרים מקומיים בעברית יגיעו בקרוב. • <em>Content currently available in English. Localized Hebrew articles coming soon.</em>
+    </div>
+    
     <div class="filter-bar">
       <div class="filter-group">
         <label for="filter-type">סוג כתבה</label>
@@ -420,6 +424,7 @@
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${typeLabels[article.type] || article.type}</span>
+            <span class="language-badge" title="Article language: English">🇬🇧 EN</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>

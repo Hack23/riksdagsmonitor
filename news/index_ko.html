@@ -248,6 +248,30 @@
       background: rgba(0, 217, 255, 0.1);
     }
     
+    .language-notice {
+      background: rgba(255, 190, 11, 0.1);
+      border: 1px solid rgba(255, 190, 11, 0.3);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      color: #e0e0e0;
+    }
+    
+    .language-notice strong {
+      color: var(--primary-yellow, #ffbe0b);
+    }
+    
+    .language-badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      color: #b0b0b0;
+      margin-left: 0.5rem;
+    }
+    
     @media (max-width: 768px) {
       .filter-bar {
         flex-direction: column;
@@ -269,6 +293,10 @@
   
   <div class="container">
     <a href="../index_ko.html" class="back-link">← 대시보드로 돌아가기</a>
+    
+    <div class="language-notice">
+      <strong>📢 참고:</strong> 콘텐츠는 현재 영어로 제공됩니다. 현지화된 한국어 기사가 곧 제공될 예정입니다. • <em>Content currently available in English. Localized Korean articles coming soon.</em>
+    </div>
     
     <div class="filter-bar">
       <div class="filter-group">
@@ -415,6 +443,7 @@
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${typeLabels[article.type] || article.type}</span>
+            <span class="language-badge" title="Article language: English">🇬🇧 EN</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>

@@ -275,6 +275,10 @@
   <div class="container">
     <a href="../index_ar.html" class="back-link">العودة إلى لوحة المعلومات</a>
     
+    <div class="language-notice">
+      <strong>📢 ملاحظة:</strong> المحتوى متاح حالياً باللغة الإنجليزية. المقالات المحلية باللغة العربية قادمة قريباً. • <em>Content currently available in English. Localized Arabic articles coming soon.</em>
+    </div>
+    
     <div class="filter-bar">
       <div class="filter-group">
         <label for="filter-type">نوع المقال</label>
@@ -420,6 +424,7 @@
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${typeLabels[article.type] || article.type}</span>
+            <span class="language-badge" title="Article language: English">🇬🇧 EN</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
