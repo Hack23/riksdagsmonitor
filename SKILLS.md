@@ -18,7 +18,7 @@ Skills are:
 - ✅ **Reusable**: Apply across multiple tasks
 - ✅ **Context-Aware**: Load only when relevant
 
-## Available Skills (41 Total) ✨ Updated
+## Available Skills (56 Total) ✨ **UPDATED 2026-02-11**
 
 ### Core Infrastructure (7 skills)
 1. hack23-isms-compliance
@@ -50,30 +50,38 @@ Skills are:
 23. secure-code-review
 24. security-documentation
 
-### Development & Operations (11 skills) ⬆️ **EXPANDED**
+### Development & Operations (11 skills)
 25. c4-architecture-documentation
 26. github-actions-workflows
 27. code-quality-checks
 28. secrets-management
-29. **data-pipeline-engineering** ✨ NEW
-30. **automated-content-generation** ✨ NEW
-31. **performance-optimization** ✨ NEW
-32. **api-integration** ✨ NEW
-33. **github-agentic-workflows** ✨ **NEW** (2026-02-11)
+29. data-pipeline-engineering
+30. automated-content-generation
+31. performance-optimization
+32. api-integration
+33. github-agentic-workflows
 
-### UI/UX & Design (4 skills) ⬆️ **EXPANDED**
-33. responsive-design
-34. design-system-management
-35. political-data-visualization
-36. **advanced-data-visualization** ✨ NEW
+### UI/UX & Design (5 skills) ⬆️ **EXPANDED** ✨
+34. responsive-design
+35. design-system-management
+36. political-data-visualization
+37. advanced-data-visualization
+38. **ui-ux-design** ✨ **NEW** (2026-02-11) - Comprehensive UX, usability, accessibility
 
 ### Testing & Quality Assurance (2 skills)
-37. playwright-testing
-38. issue-management
+39. playwright-testing
+40. issue-management
 
-### Data Integration (2 skills) ⬆️ **EXPANDED**
-39. riksdag-regering-mcp
-40. **cia-data-integration** ✨ NEW
+### Data Integration (2 skills)
+41. riksdag-regering-mcp
+42. cia-data-integration
+
+### Business & Marketing (2 skills) ✨ **NEW CATEGORY** (2026-02-11)
+43. **marketing** ✨ **NEW** - Digital marketing, SEO, content, social media, analytics
+44. **business-development** ✨ **NEW** - Partnerships, revenue models, stakeholder engagement
+
+### Language & Localization (1 skill) ✨ **NEW CATEGORY** (2026-02-11)
+45. **language-expertise** ✨ **NEW** - Comprehensive expertise for all 14 languages (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
 
 ---
 
@@ -1368,3 +1376,170 @@ gh aw init                         # Initialize repository
 **Version**: 1.0.0  
 **Last Updated**: 2026-02-11  
 **Coverage**: 1670 lines, 34KB comprehensive documentation
+
+---
+
+## New Skills Details (2026-02-11)
+
+### 38. ui-ux-design ✨ NEW
+**Purpose**: Comprehensive user experience and interface design for political transparency platforms
+
+**Key Capabilities**:
+- User research and persona development (journalists, researchers, citizens, policymakers)
+- Information architecture and site structure optimization
+- WCAG 2.1 AA accessibility compliance (mandatory)
+- Mobile-first responsive design (320px-1920px+)
+- Cyberpunk theme design system implementation
+- Usability testing and A/B testing strategies
+- Core Web Vitals optimization (LCP, FID, CLS)
+- Multi-language UI considerations (14 languages, RTL support)
+
+**When to Use**:
+- Designing new features or pages
+- UI/UX improvements and optimization
+- Accessibility audits and remediation
+- Usability testing and user research
+- Design system updates
+- Performance optimization
+- Multi-language UI enhancements
+
+**Related Skills**: responsive-design, design-system-management, html-accessibility, multi-language-localization
+
+### 43. marketing ✨ NEW
+**Purpose**: Strategic marketing for promoting political transparency platforms and driving adoption
+
+**Key Capabilities**:
+- SEO optimization (technical, content, link building)
+- Content marketing strategy and calendar
+- Social media engagement (Twitter/X, LinkedIn, Mastodon)
+- Analytics and measurement (Google Analytics, KPIs)
+- Media relations and press kit development
+- Growth strategies (short, medium, long-term)
+- Brand guidelines and messaging framework
+- Compliance and ethical marketing (GDPR, neutrality)
+
+**When to Use**:
+- SEO optimization across all language versions
+- Content strategy and planning
+- Social media campaigns
+- Media outreach and partnerships
+- Growth initiatives and user acquisition
+- Brand development and positioning
+- Analytics review and optimization
+
+**Target Audiences**: Citizens, journalists, researchers, policymakers, international users
+
+### 44. business-development ✨ NEW
+**Purpose**: Strategic growth, partnerships, and sustainable revenue models for open-source platforms
+
+**Key Capabilities**:
+- Stakeholder engagement and partnership strategies
+- Revenue models (freemium, enterprise SaaS, grants, consulting)
+- Community building (open-source and user communities)
+- Target stakeholder analysis (journalists, academics, NGOs, corporate, citizens)
+- Sales funnel and outreach strategies
+- Business risk management
+- Ethical boundaries and transparency commitments
+
+**When to Use**:
+- Partnership development and evaluation
+- Revenue strategy and business model design
+- Community engagement and growth
+- Enterprise sales and consulting services
+- Grant applications and funding strategies
+- Stakeholder communication
+- Business planning and sustainability
+
+**Revenue Streams**: Enterprise licenses, research grants, consulting, partnerships, ethical sponsorships
+
+### 45. language-expertise ✨ NEW
+**Purpose**: Comprehensive linguistic and cultural expertise for all 14 supported languages
+
+**Supported Languages**:
+- **Latin Script (LTR)**: English (en), Swedish (sv), Danish (da), Norwegian (no), Finnish (fi), German (de), French (fr), Spanish (es), Dutch (nl)
+- **RTL Languages**: Arabic (ar), Hebrew (he)
+- **Asian Scripts**: Japanese (ja), Korean (ko), Chinese (zh)
+
+**Key Capabilities**:
+- Native-level translation quality and domain expertise
+- Cultural appropriateness and political sensitivities
+- Technical correctness (UTF-8, RTL, fonts, formatting)
+- Language-specific style guidelines and terminology
+- Translation workflow and quality assurance
+- Accessibility (screen readers, font selection)
+- SEO (hreflang tags, multilingual sitemaps)
+- Cultural considerations (colors, symbols, formats)
+
+**When to Use**:
+- Creating or updating content in any of 14 languages
+- Translation and localization tasks
+- Cultural adaptation and sensitivity reviews
+- RTL layout implementation (Arabic, Hebrew)
+- Multi-language SEO optimization
+- Font and typography selection
+- Date/number/currency formatting
+- Political terminology translation
+
+**Critical Features**: RTL support for Arabic/Hebrew, CJK font support, cultural color symbolism, political neutrality across all languages
+
+---
+
+## Skill Usage Guidelines
+
+### When to Apply Multiple Skills
+
+Many tasks benefit from combining multiple skills:
+
+**Example 1: New Dashboard Feature**
+- `ui-ux-design` - User research, wireframes, usability testing
+- `responsive-design` - Mobile-first layout implementation
+- `html-accessibility` - WCAG 2.1 AA compliance
+- `advanced-data-visualization` - Chart.js/D3.js implementation
+- `language-expertise` - Multi-language labels, RTL support
+- `marketing` - SEO optimization, social sharing
+
+**Example 2: Content Creation**
+- `automated-content-generation` - Template-based article generation
+- `language-expertise` - Translation to all 14 languages
+- `editorial-standards` - Fact-checking, AP style compliance
+- `marketing` - SEO optimization, social media promotion
+- `html-accessibility` - Accessible article structure
+
+**Example 3: Business Growth Initiative**
+- `business-development` - Partnership strategy, revenue models
+- `marketing` - SEO, content marketing, social media
+- `ui-ux-design` - User research, conversion optimization
+- `data-science-for-intelligence` - Analytics and insights
+- `language-expertise` - International market expansion
+
+---
+
+## Skill Maintenance
+
+### Adding New Skills
+1. Create directory in `.github/skills/SKILL-NAME/`
+2. Create `SKILL.md` with YAML frontmatter
+3. Include comprehensive guidance and examples
+4. Update this `SKILLS.md` catalog
+5. Update `README.md` if adding new category
+
+### Updating Existing Skills
+1. Maintain version history in skill file
+2. Update last modified date
+3. Cross-reference related skills
+4. Keep examples current with repository state
+
+### Quality Standards
+- ✅ Clear purpose statement
+- ✅ Comprehensive capabilities list
+- ✅ Concrete examples and code snippets
+- ✅ "When to Use" guidance
+- ✅ Related skills cross-references
+- ✅ Compliance with Hack23 standards
+
+---
+
+**Last Updated**: 2026-02-11  
+**Total Skills**: 45  
+**New Categories**: Business & Marketing (2 skills), Language & Localization (1 skill)  
+**Maintained by**: Hack23 AB
