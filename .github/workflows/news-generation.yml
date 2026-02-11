@@ -169,9 +169,7 @@ jobs:
               mv news/metadata/last-generation.tmp news/metadata/last-generation.json
           else
             # Create new metadata file with basic fields
-            cat > news/metadata/last-generation.json <<EOF
-{"timestamp": "${{ steps.check-updates.outputs.current_time }}", "generated": ${{ steps.generate.outputs.generated || 0 }}, "errors": ${{ steps.generate.outputs.errors || 0 }}}
-EOF
+            echo '{"timestamp": "${{ steps.check-updates.outputs.current_time }}", "generated": ${{ steps.generate.outputs.generated || 0 }}, "errors": ${{ steps.generate.outputs.errors || 0 }}}' > news/metadata/last-generation.json
           fi
           
           echo "✅ Timestamp updated"
