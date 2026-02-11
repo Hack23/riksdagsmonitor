@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nyheter - Riksdagsmonitor</title>
-  <meta name="description" content="Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.">
-  <meta name="keywords" content="riksdagsnyheter, svenska riksdagen, regeringsanalys, politisk journalistik, transparens, demokrati">
+  <title>Nieuws - Riksdagsmonitor</title>
+  <meta name="description" content="Laatste nieuws en analyses uit de Zweedse Riksdag. The Economist-stijl politieke journalistiek over parlement, regering en agentschappen met systematische transparantie.">
+  <meta name="keywords" content="riksdag nieuws, zweeds parlement, regeringsanalyse, politieke journalistiek, transparantie, democratie">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
-  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_sv.html">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_nl.html">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Nyheter - Riksdagsmonitor">
-  <meta property="og:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta property="og:title" content="Nieuws - Riksdagsmonitor">
+  <meta property="og:description" content="Laatste politieke journalistiek uit de Zweedse Riksdag">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_sv.html">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_nl.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
   <meta property="og:site_name" content="Riksdagsmonitor">
-  <meta property="og:locale" content="sv_SE">
+  <meta property="og:locale" content="nl_NL">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nyheter - Riksdagsmonitor">
-  <meta name="twitter:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta name="twitter:title" content="Nieuws - Riksdagsmonitor">
+  <meta name="twitter:description" content="Laatste politieke journalistiek uit de Zweedse Riksdag">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
@@ -250,43 +250,43 @@
 <body>
   <div class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor Nyheter</h1>
-      <p class="subtitle">Politisk journalistik i The Economist-stil • Systematisk transparens • Demokratiskt ansvarsutkrävande</p>
+      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor Nieuws</h1>
+      <p class="subtitle">The Economist-stijl politieke journalistiek • Systematische transparantie • Democratische verantwoording</p>
     </div>
   </div>
   
   <div class="container">
-    <a href="../index_sv.html" class="back-link">← Tillbaka till instrumentpanelen</a>
+    <a href="../index_nl.html" class="back-link">← Terug naar Dashboard</a>
     
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">Artikeltyp</label>
+        <label for="filter-type">Artikeltype</label>
         <select id="filter-type">
-          <option value="all">Alla typer</option>
-          <option value="retrospective">Retrospektiv</option>
-          <option value="prospective">Prospektiv (Veckan som kommer)</option>
-          <option value="analysis">Analys</option>
+          <option value="all">Alle Typen</option>
+          <option value="retrospective">Retrospectief</option>
+          <option value="prospective">Prospectief (Volgende Week)</option>
+          <option value="analysis">Analyse</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">Ämne</label>
+        <label for="filter-topic">Onderwerp</label>
         <select id="filter-topic">
-          <option value="all">Alla ämnen</option>
-          <option value="eu">EU-frågor</option>
+          <option value="all">Alle Onderwerpen</option>
+          <option value="eu">EU-zaken</option>
           <option value="government">Regering</option>
-          <option value="parliament">Riksdag</option>
-          <option value="committees">Utskott</option>
-          <option value="legislation">Lagstiftning</option>
+          <option value="parliament">Parlement</option>
+          <option value="committees">Commissies</option>
+          <option value="legislation">Wetgeving</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">Sortera</label>
+        <label for="filter-sort">Sorteren op</label>
         <select id="filter-sort">
-          <option value="date-desc">Nyast först</option>
-          <option value="date-asc">Äldst först</option>
-          <option value="title">Titel A-Ö</option>
+          <option value="date-desc">Nieuwste Eerst</option>
+          <option value="date-asc">Oudste Eerst</option>
+          <option value="title">Titel A-Z</option>
         </select>
       </div>
     </div>
@@ -296,7 +296,7 @@
     </div>
     
     <div class="no-results" id="no-results" style="display: none;">
-      <p>Inga artiklar hittades som matchar dina filter.</p>
+      <p>Geen artikelen gevonden die overeenkomen met uw filters.</p>
     </div>
   </div>
   
@@ -304,76 +304,76 @@
     // News articles metadata
     const articles = [
       {
-        title: "Veckan som kommer: Brysseltoppmöte testar svensk EU-strategi",
+        title: "Volgende Week: Brusselse Top Test Zweedse EU-Strategie",
         date: "2026-02-10",
         type: "prospective",
-        slug: "2026-02-10-week-ahead-feb-10-17-sv.html",
-        excerpt: "Kritisk vecka för svensk europapolitik när statsminister Kristersson deltar i informellt toppmöte medan EU-nämnden följer upp försvars- och ekonomifrågor.",
+        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
+        excerpt: "Kritieke week voor Zweeds Europees beleid terwijl premier Kristersson informele leiders top bijwoont terwijl EU-commissie defensie- en economische kwesties opvolgt.",
         topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["EU-toppmöte", "Bryssel", "Försvarspolitik", "Parlamentarisk granskning"]
+        tags: ["EU-top", "Brussel", "Defensiebeleid", "Parlementair Toezicht"]
       },
       {
-        title: "Statsministern möter riksdagen före Brysseltoppmötet",
+        title: "Premier Staat Parlement te Woord Voor Brusselse Top",
         date: "2026-02-10",
         type: "retrospective",
-        slug: "2026-02-10-pm-eu-summit-sv.html",
-        excerpt: "Vid sällsynt öppet EU-nämndsmöte konsulterar statsminister Ulf Kristersson riksdagen före informellt toppmöte medan regeringen möter växande press om ekonomisk brottslighet och medborgarskap.",
+        slug: "2026-02-10-pm-eu-summit-en.html",
+        excerpt: "In zeldzame openbare EU-commissievergadering raadpleegt premier Ulf Kristersson de Riksdag voor informele leiders top terwijl regering toenemende druk confronteert over economische criminaliteit en staatsburgerbeleid.",
         topics: ["eu", "government", "parliament"],
-        tags: ["EU", "Statsminister", "Ekonomisk brottslighet", "Medborgarskap"]
+        tags: ["EU", "Premier", "Economische Criminaliteit", "Staatsburgerschap"]
       },
       {
-        title: "Biologisk mångfald och medborgarskapsreform presenteras",
+        title: "Biodiversiteitsstrategie en Staatsburgerhervorming Aangekondigd",
         date: "2026-02-10",
         type: "retrospective",
-        slug: "2026-02-10-biodiversity-citizenship-sv.html",
-        excerpt: "Regeringen presenterar omfattande strategi för biologisk mångfald och signalerar stor medborgarskapsreform när koalitionen navigerar konkurrerande prioriteringar kring miljö och invandring.",
+        slug: "2026-02-10-biodiversity-citizenship-en.html",
+        excerpt: "Regering kondigt uitgebreide biodiversiteitsstrategie aan en signaleert grote staatsbugerhervorming terwijl coalitie concurrerende prioriteiten navigeert op milieu en immigratie.",
         topics: ["environment", "government", "legislation"],
-        tags: ["Biologisk mångfald", "Medborgarskap", "Miljö", "Invandring"]
+        tags: ["Biodiversiteit", "Staatsburgerschap", "Milieu", "Immigratie"]
       },
       {
-        title: "Regeringspropositioner februari 2026",
+        title: "Regeringsvoorstellen Februari 2026",
         date: "2026-02-07",
         type: "analysis",
-        slug: "2026-02-government-propositions-sv.html",
-        excerpt: "Policyoffensiv över finansiell tillsyn, förnybar energi och egendomsskydd markerar intensiv lagstiftningsdragning före våruppehållet.",
+        slug: "2026-02-government-propositions-en.html",
+        excerpt: "Beleidsoffensief op financieel toezicht, hernieuwbare energie en eigendomsbeveiliging markeert intensieve wetgevingsimpuls voor voorjaarsreces.",
         topics: ["government", "legislation", "parliament"],
-        tags: ["Propositioner", "Finans", "Klimat", "Egendom", "Skatt"]
+        tags: ["Voorstellen", "Financiën", "Klimaat", "Eigendom", "Belasting"]
       },
       {
-        title: "Utskottsbetänkanden februari 2026",
+        title: "Commissierapporten Februari 2026",
         date: "2026-02-06",
         type: "analysis",
-        slug: "2026-02-committee-reports-sv.html",
-        excerpt: "Riksdagens utskott lämnar omfattande betänkanden som spänner över utbildning, försvar och socialpolitik när riksdagen går in i kritisk beslutsfas.",
+        slug: "2026-02-committee-reports-en.html",
+        excerpt: "Parlementaire commissies leveren uitgebreide rapporten over onderwijs, defensie en sociaal beleid terwijl Riksdag kritieke beslissingsfase ingaat.",
         topics: ["committees", "parliament"],
-        tags: ["Utskottsbetänkanden", "Utbildning", "Försvar", "Socialpolitik"]
+        tags: ["Commissierapporten", "Onderwijs", "Defensie", "Sociaal Beleid"]
       },
       {
-        title: "Oppositionsmotioner februari 2026",
+        title: "Oppositiemoties Februari 2026",
         date: "2026-02-07",
         type: "analysis",
-        slug: "2026-02-opposition-motions-sv.html",
-        excerpt: "Oppositionspartier intensifierar lagstiftningspressen med omfattande motionspaket som riktar sig mot regeringens politik över ekonomisk brottslighet, sjukvård och klimat.",
+        slug: "2026-02-opposition-motions-en.html",
+        excerpt: "Oppositiepartijen intensiveren wetgevingsdruk met uitgebreide motiepakketten gericht op regeringsbeleid over economische criminaliteit, gezondheidszorg en klimaat.",
         topics: ["parliament", "legislation"],
-        tags: ["Opposition", "Motioner", "Ekonomisk brottslighet", "Sjukvård"]
+        tags: ["Oppositie", "Moties", "Economische Criminaliteit", "Gezondheidszorg"]
       },
       {
-        title: "Riksdagens agenda - Veckoöversikt",
+        title: "Parlementsagenda - Weekoverzicht",
         date: "2026-02-09",
         type: "prospective",
-        slug: "2026-02-parliament-agenda-sv.html",
-        excerpt: "Omfattande förhandsgranskning av kommande parlamentarisk aktivitet inklusive utskottsmöten, kammarens debatter och ministerfrågor.",
+        slug: "2026-02-parliament-agenda-en.html",
+        excerpt: "Uitgebreid vooruitzicht op komende parlementaire activiteit inclusief commissievergaderingen, kamerdebatten en ministeriële vragen.",
         topics: ["parliament"],
-        tags: ["Riksdag", "Agenda", "Veckoförhandsgranskning"]
+        tags: ["Parlement", "Agenda", "Weekvooruitzicht"]
       },
       {
-        title: "Veckan som kommer",
+        title: "De Volgende Week",
         date: "2026-02-09",
         type: "prospective",
-        slug: "2026-02-week-ahead-sv.html",
-        excerpt: "Blick framåt på viktiga politiska händelser, parlamentarisk aktivitet och regeringsbeslut under kommande vecka.",
+        slug: "2026-02-week-ahead-en.html",
+        excerpt: "Vooruitkijkend naar belangrijke politieke ontwikkelingen, parlementaire activiteit en regeringsbesluiten in de komende week.",
         topics: ["parliament", "government"],
-        tags: ["Veckan som kommer", "Förhandsgranskning", "Politisk kalender"]
+        tags: ["Volgende Week", "Vooruitzicht", "Politieke Kalender"]
       }
     ];
     
@@ -410,7 +410,11 @@
     
     function formatDate(dateStr) {
       const date = new Date(dateStr);
-      return date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+      const months = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
+      const day = date.getDate();
+      const month = months[date.getMonth()];
+      const year = date.getFullYear();
+      return `${day} ${month} ${year}`;
     }
     
     function filterArticles() {
