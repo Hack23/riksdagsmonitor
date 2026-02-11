@@ -259,6 +259,14 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 - **Performance:** Code splitting, lazy loading, asset optimization
 - **Security:** SRI hashes (sha384), CSP-compliant script loading
 
+### Hosting & CDN
+- **Primary:** AWS CloudFront + S3 (us-east-1)
+- **DR Fallback:** GitHub Pages
+- **Domain:** riksdagsmonitor.com (custom domain)
+- **SSL/TLS:** TLS 1.3 via CloudFront
+- **Edge Locations:** 400+ globally via CloudFront
+- **Directory Index:** CloudFront Function for automatic `index.html` handling ([see docs](docs/CLOUDFRONT_FUNCTION_DEPLOYMENT.md))
+
 ### Security
 - **HTTPS-Only:** TLS 1.3 encryption enforced
 - **Security Headers:** CSP, HSTS, X-Frame-Options, X-Content-Type-Options
