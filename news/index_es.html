@@ -29,6 +29,8 @@
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
   <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
   <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
+  <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
+  <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
   
   <!-- Fonts -->
@@ -406,12 +408,11 @@
     }
     
     function formatDate(dateStr) {
-      const date = new Date(dateStr);
+      // Parse date components to avoid timezone issues
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
       const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
-      const day = date.getDate();
-      const month = months[date.getMonth()];
-      const year = date.getFullYear();
-      return `${day} de ${month} de ${year}`;
+      return `${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`;
     }
     
     function filterArticles() {
