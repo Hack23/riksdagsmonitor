@@ -42,3 +42,4 @@ cypress/downloads/
 # yarn.lock
 # pnpm-lock.yaml
 test-libraries.html
+news-*-screenshot.png
