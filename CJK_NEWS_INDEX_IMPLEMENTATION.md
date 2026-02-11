@@ -82,13 +82,17 @@ h1, h2, h3 {
 
 ### 3. SEO & Metadata
 
-#### Hreflang Tags (All 14 Languages)
-Complete hreflang implementation covering:
-- Nordic: EN, SV, DA, NO, FI
-- European: DE, FR, ES, NL
-- Middle Eastern: AR, HE
-- East Asian: JA, KO, ZH
-- x-default: EN
+#### Hreflang Tags (7 Languages)
+Complete bidirectional hreflang implementation for existing news pages:
+- EN: English (x-default)
+- SV: Swedish
+- AR: Arabic
+- HE: Hebrew
+- JA: Japanese ✨ NEW
+- KO: Korean ✨ NEW
+- ZH: Chinese (Simplified) ✨ NEW
+
+All 7 news index pages reference each other for optimal SEO.
 
 #### Open Graph Tags
 - Properly localized `og:locale` (ja_JP, ko_KR, zh_CN)

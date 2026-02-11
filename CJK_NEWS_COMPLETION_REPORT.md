@@ -80,17 +80,11 @@ h1, h2, h3 {
 
 ### 3. SEO & Metadata ✅
 
-#### Complete Hreflang Implementation (14 Languages)
+#### Complete Hreflang Implementation (7 Languages)
+Bidirectional hreflang for all existing news index pages:
 ```html
 <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
 <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
-<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-<link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/index_no.html">
-<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
-<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
-<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
-<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
-<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
 <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
 <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
 <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html"> ✨ NEW
