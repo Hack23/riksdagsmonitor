@@ -139,6 +139,22 @@ function generateSitemap() {
     xml += generateUrlEntry(loc, lastmod, 'daily', priority);
   });
   
+  // Politician dashboard page
+  const politicianDashboardMtime = getFileModTime(path.join(ROOT_DIR, 'politician-dashboard.html'));
+  xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
+  
+  // Dashboard pages with language alternates
+  const dashboardAlternates = [
+    { lang: 'en', href: 'dashboard/index.html' },
+    { lang: 'sv', href: 'dashboard/index_sv.html' }
+  ];
+  
+  const dashboardEnMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index.html'));
+  xml += generateUrlEntry('dashboard/index.html', dashboardEnMtime, 'weekly', '0.8', dashboardAlternates);
+  
+  const dashboardSvMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index_sv.html'));
+  xml += generateUrlEntry('dashboard/index_sv.html', dashboardSvMtime, 'weekly', '0.8');
+  
   // News index pages (canonical is news/ for English, based on <link rel="canonical">)
   // Calculate lastmod using all news language files
   const newsLangFiles = ['index.html', 'index_sv.html', 'index_da.html', 'index_no.html', 'index_fi.html', 'index_de.html', 'index_fr.html', 'index_es.html', 'index_nl.html', 'index_ar.html', 'index_he.html'];
