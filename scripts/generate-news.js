@@ -9,8 +9,12 @@
  * Usage: node generate-news.js --types="week-ahead,committee-reports"
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Parse command line arguments
 const args = process.argv.slice(2);
@@ -268,15 +272,13 @@ mcp_server: riksdag-regering-mcp
 }
 
 // Run if called directly
-if (require.main === module) {
-  generateNews()
-    .then(stats => {
-      process.exit(stats.errors > 0 ? 1 : 0);
-    })
-    .catch(error => {
-      console.error('❌ Fatal error:', error);
-      process.exit(1);
-    });
-}
+generateNews()
+  .then(stats => {
+    process.exit(stats.errors > 0 ? 1 : 0);
+  })
+  .catch(error => {
+    console.error('❌ Fatal error:', error);
+    process.exit(1);
+  });
 
-module.exports = { generateNews, getArticleTemplate };
+export { generateNews, getArticleTemplate };

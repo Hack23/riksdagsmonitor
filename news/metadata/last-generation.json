@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-11T13:11:54.262Z",
+  "types": [
+    "week-ahead"
+  ],
+  "generated": 0,
+  "errors": 0,
+  "status": "placeholder",
+  "note": "MCP integration pending - script structure in place"
+}
