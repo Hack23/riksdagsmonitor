@@ -3182,6 +3182,67 @@ footer {
   }
 }
 
+
+/* ==================================================
+   NEWS NAVIGATION
+   Cyberpunk cyan-themed callout for News section
+   ================================================== */
+
+.news-navigation {
+  background: rgba(0, 217, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  margin: 0 var(--spacing-md) var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+}
+
+.news-navigation a {
+  color: #00d9ff;
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.news-navigation a:hover {
+  color: #33eeff;
+  transform: translateY(-2px);
+}
+
+.news-navigation a:focus-visible {
+  outline: 3px solid #00d9ff;
+  outline-offset: 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.news-navigation-icon {
+  font-size: 1.3rem;
+}
+
+.news-navigation p {
+  margin: 0.5rem 0 0 0;
+  color: #b0b0b0;
+  font-size: var(--font-size-sm);
+}
+
+@media (prefers-color-scheme: dark) {
+  .news-navigation {
+    background: rgba(0, 217, 255, 0.12);
+    border-color: rgba(0, 217, 255, 0.4);
+  }
+  
+  .news-navigation a:hover {
+    color: #66f3ff;
+  }
+  
+  .news-navigation p {
+    color: #c0c0c0;
+  }
+}
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .breadcrumb {
