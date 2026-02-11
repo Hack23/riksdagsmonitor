@@ -156,9 +156,39 @@ jobs:
           # Always update timestamp, even when 0 articles generated
           # This prevents repeated executions when no new content is available
           mkdir -p news/metadata
-          echo "{\"timestamp\": \"${{ steps.check-updates.outputs.current_time }}\", \"generated\": ${{ steps.generate.outputs.generated || 0 }}, \"errors\": ${{ steps.generate.outputs.errors || 0 }}}" > news/metadata/last-generation.json
+          
+          # Preserve existing metadata fields (types, status, note) if file exists
+          if [ -f "news/metadata/last-generation.json" ]; then
+            # Update only timestamp/counters while preserving other fields
+            jq \
+              --arg ts "${{ steps.check-updates.outputs.current_time }}" \
+              --argjson gen "${{ steps.generate.outputs.generated || 0 }}" \
+              --argjson err "${{ steps.generate.outputs.errors || 0 }}" \
+              '.timestamp = $ts | .generated = $gen | .errors = $err' \
+              news/metadata/last-generation.json > news/metadata/last-generation.tmp && \
+              mv news/metadata/last-generation.tmp news/metadata/last-generation.json
+          else
+            # Create new metadata file with basic fields
+            cat > news/metadata/last-generation.json <<EOF
+{"timestamp": "${{ steps.check-updates.outputs.current_time }}", "generated": ${{ steps.generate.outputs.generated || 0 }}, "errors": ${{ steps.generate.outputs.errors || 0 }}}
+EOF
+          fi
           
           echo "✅ Timestamp updated"
+      
+      - name: Commit timestamp update (when no articles generated)
+        if: steps.check-updates.outputs.should_generate == 'true' && steps.generate.outputs.generated == '0'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add news/metadata/last-generation.json
+          if git diff --staged --quiet; then
+            echo "ℹ️ No timestamp changes to commit"
+          else
+            git commit -m "chore: Update news generation timestamp (0 articles generated)"
+            git push
+            echo "✅ Timestamp committed to main branch"
+          fi
       
       - name: Validate generated articles
         if: steps.generate.outputs.generated != '0'

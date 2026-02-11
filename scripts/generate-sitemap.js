@@ -116,32 +116,38 @@ function generateUrlEntry(loc, lastmod, changefreq, priority, alternates = []) {
 function generateSitemap() {
   console.log('🔨 Generating sitemap...');
   
-  const now = new Date().toISOString();
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">`;
   
-  // Main index page with all language alternates
+  // Main index page with all language alternates (canonical is index.html based on <link rel="canonical">)
   const indexAlternates = LANGUAGES.map(lang => ({
     lang,
     href: lang === 'en' ? 'index.html' : `index_${lang}.html`
   }));
   
-  xml += generateUrlEntry('', now, 'daily', '1.0', indexAlternates);
+  // Use actual file mtime for main index
+  const indexMtime = getFileModTime(path.join(ROOT_DIR, 'index.html'));
+  xml += generateUrlEntry('index.html', indexMtime, 'daily', '1.0', indexAlternates);
   
-  // Individual language index pages
-  LANGUAGES.forEach(lang => {
-    const loc = lang === 'en' ? 'index.html' : `index_${lang}.html`;
+  // Individual language index pages (excluding English since it's the canonical above)
+  LANGUAGES.filter(lang => lang !== 'en').forEach(lang => {
+    const loc = `index_${lang}.html`;
     const lastmod = getFileModTime(path.join(ROOT_DIR, loc));
     const priority = lang === 'sv' ? '0.9' : '0.7';
     
     xml += generateUrlEntry(loc, lastmod, 'daily', priority);
   });
   
-  // News index pages
-  xml += generateUrlEntry('news/', now, 'daily', '0.9', [
-    { lang: 'en', href: 'news/index.html' },
-    { lang: 'sv', href: 'news/index_sv.html' }
+  // News index pages (canonical is news/ for English, based on <link rel="canonical">)
+  const newsIndexEnMtime = getFileModTime(path.join(NEWS_DIR, 'index.html'));
+  const newsIndexSvMtime = getFileModTime(path.join(NEWS_DIR, 'index_sv.html'));
+  const newsIndexMaxMtime = new Date(Math.max(new Date(newsIndexEnMtime), new Date(newsIndexSvMtime))).toISOString();
+  
+  xml += generateUrlEntry('news/', newsIndexMaxMtime, 'daily', '0.9', [
+    { lang: 'en', href: 'news/' },
+    { lang: 'sv', href: 'news/index_sv.html' },
+    { lang: 'x-default', href: 'news/' }
   ]);
   
   // News articles
@@ -149,19 +155,26 @@ function generateSitemap() {
   console.log(`  Processing ${articles.length} article groups...`);
   
   articles.forEach(article => {
+    // Sort languages to ensure 'en' is first for stable x-default
+    const sortedLanguages = [...article.languages].sort((a, b) => {
+      if (a === 'en') return -1;
+      if (b === 'en') return 1;
+      return a.localeCompare(b);
+    });
+    
     // Build alternates list once for all language entries
-    const alternates = article.languages.map(altLang => ({
+    const alternates = sortedLanguages.map(altLang => ({
       lang: altLang,
       href: `news/${article.baseSlug}-${altLang}.html`
     }));
     
-    // Add x-default pointing to the primary language variant
+    // Add x-default pointing to English if available, otherwise first sorted language
     alternates.push({
       lang: 'x-default',
-      href: `news/${article.baseSlug}-${article.languages[0]}.html`
+      href: `news/${article.baseSlug}-${sortedLanguages[0]}.html`
     });
     
-    article.languages.forEach(lang => {
+    sortedLanguages.forEach(lang => {
       const loc = `news/${article.baseSlug}-${lang}.html`;
       xml += generateUrlEntry(loc, article.lastmod, 'monthly', '0.8', alternates);
     });
