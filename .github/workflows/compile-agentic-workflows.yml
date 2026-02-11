@@ -123,47 +123,50 @@ jobs:
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           script: |
+            const issueBody = [
+              '## Problem',
+              '',
+              'The agentic workflow markdown files have been updated, but the lock files could not be automatically compiled.',
+              '',
+              '### Action Required',
+              '',
+              'Please compile the lock files locally:',
+              '',
+              '```bash',
+              '# Install gh-aw extension (first time only)',
+              'gh extension install github/gh-aw',
+              '',
+              '# Compile all agentic workflows',
+              'cd .github/workflows',
+              'gh aw compile news-article-generator.md',
+              '',
+              '# Commit and push the updated lock files',
+              'git add *.lock.yml',
+              'git commit -m "chore: recompile agentic workflow lock files"',
+              'git push',
+              '```',
+              '',
+              '### Files Affected',
+              '',
+              '- `.github/workflows/news-article-generator.md`',
+              '- `.github/workflows/news-article-generator.lock.yml`',
+              '',
+              '### Why This Happened',
+              '',
+              'The gh-aw tool requires GitHub authentication and is not available in the automated workflow environment.',
+              '',
+              '### More Information',
+              '',
+              '- [GitHub Agentic Workflows Documentation](https://github.com/github/gh-aw/blob/main/.github/aw/github-agentic-workflows.md)',
+              '- Triggered by: ' + (context.payload.head_commit?.message || 'Manual trigger'),
+              '- Workflow run: ' + context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId
+            ].join('\n');
+            
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: '⚠️ Agentic Workflow Lock Files Need Manual Compilation',
-              body: `## Problem
-
-The agentic workflow markdown files have been updated, but the lock files could not be automatically compiled.
-
-### Action Required
-
-Please compile the lock files locally:
-
-\`\`\`bash
-# Install gh-aw extension (first time only)
-gh extension install github/gh-aw
-
-# Compile all agentic workflows
-cd .github/workflows
-gh aw compile news-article-generator.md
-
-# Commit and push the updated lock files
-git add *.lock.yml
-git commit -m "chore: recompile agentic workflow lock files"
-git push
-\`\`\`
-
-### Files Affected
-
-- \`.github/workflows/news-article-generator.md\`
-- \`.github/workflows/news-article-generator.lock.yml\`
-
-### Why This Happened
-
-The gh-aw tool requires GitHub authentication and is not available in the automated workflow environment.
-
-### More Information
-
-- [GitHub Agentic Workflows Documentation](https://github.com/github/gh-aw/blob/main/.github/aw/github-agentic-workflows.md)
-- Triggered by: ${context.payload.head_commit?.message || 'Manual trigger'}
-- Workflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}
-`,
+              body: issueBody,
               labels: ['infrastructure', 'automated-issue', 'needs-action']
             });
             
