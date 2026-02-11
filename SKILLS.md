@@ -18,7 +18,7 @@ Skills are:
 - ✅ **Reusable**: Apply across multiple tasks
 - ✅ **Context-Aware**: Load only when relevant
 
-## Available Skills (40 Total) ✨ Updated
+## Available Skills (41 Total) ✨ Updated
 
 ### Core Infrastructure (7 skills)
 1. hack23-isms-compliance
@@ -50,7 +50,7 @@ Skills are:
 23. secure-code-review
 24. security-documentation
 
-### Development & Operations (10 skills) ⬆️ **EXPANDED**
+### Development & Operations (11 skills) ⬆️ **EXPANDED**
 25. c4-architecture-documentation
 26. github-actions-workflows
 27. code-quality-checks
@@ -59,6 +59,7 @@ Skills are:
 30. **automated-content-generation** ✨ NEW
 31. **performance-optimization** ✨ NEW
 32. **api-integration** ✨ NEW
+33. **github-agentic-workflows** ✨ **NEW** (2026-02-11)
 
 ### UI/UX & Design (4 skills) ⬆️ **EXPANDED**
 33. responsive-design
@@ -1273,3 +1274,97 @@ Skills enforce compliance with:
 **Skills Total**: 40 (34 original + 6 new)  
 **Last Major Update**: 2026-02-06  
 **New Skills Added**: data-pipeline-engineering, automated-content-generation, performance-optimization, api-integration, advanced-data-visualization, cia-data-integration
+
+### 33. github-agentic-workflows ✨ **NEW** (2026-02-11)
+**Purpose**: Master GitHub Agentic Workflows - AI-powered repository automation hosted in GitHub Actions
+
+**Key Capabilities**:
+- **Agentic Automation**: Create workflows that reason, decide, and adapt using natural language
+- **Model Context Protocol (MCP)**: Integrate tools via standardized protocol
+- **Security Architecture**: Defense-in-depth with safe outputs, threat detection, permission separation
+- **Operational Patterns**: ChatOps, DailyOps, DataOps, IssueOps, MemoryOps, MultiRepoOps, ProjectOps, and more
+- **Orchestration**: Coordinate multiple workflows with orchestrator/worker patterns
+- **Memory Systems**: Persistent state with cache-memory (7-day) and repo-memory (unlimited)
+- **Safe Inputs/Outputs**: Custom tools and pre-approved actions without write permissions
+- **Cost Management**: Monitor and optimize AI engine and GitHub Actions costs
+
+**Core Components**:
+- Workflow structure (frontmatter + markdown instructions)
+- Triggers (issues, PRs, schedules, slash commands, labels)
+- Tools (github, edit, view, bash, playwright, web, custom MCP)
+- Safe outputs (create-issue, create-comment, create-pr, update-project, upload-asset)
+- Security layers (prompt injection protection, threat detection, SARIF reporting)
+
+**Operational Patterns** (13 types):
+1. **ChatOps**: Slash command-based interactive automation (`/review`, `/deploy`)
+2. **DailyOps**: Scheduled incremental improvements (technical debt reduction)
+3. **DataOps**: Deterministic extraction + agentic analysis (reports, audits)
+4. **DispatchOps**: Manual workflow execution with inputs
+5. **IssueOps**: Automated issue triage and management
+6. **LabelOps**: Label-based workflow triggers and routing
+7. **MemoryOps**: Stateful workflows with persistent data between runs
+8. **MultiRepoOps**: Cross-repository coordination and synchronization
+9. **ProjectOps**: GitHub Projects v2 board automation
+10. **SideRepoOps**: Separate automation repository pattern
+11. **SpecOps**: W3C-style specification maintenance
+12. **TaskOps**: Scaffolded improvement strategy (research → plan → implement)
+13. **TrialOps**: Testing workflows in isolated trial repositories
+
+**Advanced Features**:
+- Memory persistence (cache-memory, repo-memory)
+- Concurrency control and timeout settings
+- Environment variables and imports
+- GitHub Projects v2 integration
+- Asset uploads to orphaned git branches
+- Comment minimization (SPAM classification)
+- SARIF code scanning alerts
+- Tracker IDs for orchestration monitoring
+
+**CLI Commands**:
+```bash
+gh extension install github/gh-aw  # Install extension
+gh aw compile                      # Compile .md to .lock.yml
+gh aw run workflow-name            # Trigger run
+gh aw status                       # Check status
+gh aw logs --costs                 # Monitor costs
+gh aw add-wizard org/repo/workflow # Add external workflow
+gh aw init                         # Initialize repository
+```
+
+**AI Engines**:
+- GitHub Copilot (default, requires PAT with copilot access)
+- Claude by Anthropic (requires ANTHROPIC_API_KEY)
+- Codex (requires OPENAI_API_KEY)
+
+**Security Best Practices**:
+- ✅ Minimal permissions (read-only for AI job)
+- ✅ Safe outputs for write operations
+- ✅ Threat detection enabled
+- ✅ Network restrictions applied
+- ✅ Tool allowlists (explicit tool access)
+- ✅ Human approval for critical actions
+- ✅ Dry run testing before production
+- ✅ Regular cost and log monitoring
+
+**When to Use**:
+- Creating AI-powered repository automation
+- Implementing Continuous AI patterns
+- Building issue/PR triage bots
+- Automating code quality improvements
+- Setting up slash command workflows
+- Cross-repository coordination
+- Project board automation
+- Security scanning workflows
+- Documentation maintenance
+- Daily incremental improvements
+
+**References**:
+- Official Docs: https://github.github.com/gh-aw/
+- Security Architecture: https://github.github.com/gh-aw/introduction/architecture/
+- Operational Patterns: https://github.github.com/gh-aw/patterns/
+- Reference Glossary: https://github.github.com/gh-aw/reference/glossary/
+- Model Context Protocol: https://modelcontextprotocol.io/
+
+**Version**: 1.0.0  
+**Last Updated**: 2026-02-11  
+**Coverage**: 1670 lines, 34KB comprehensive documentation
