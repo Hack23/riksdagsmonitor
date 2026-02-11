@@ -1,46 +1,37 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nyheter - Riksdagsmonitor</title>
-  <meta name="description" content="Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.">
-  <meta name="keywords" content="riksdagsnyheter, svenska riksdagen, regeringsanalys, politisk journalistik, transparens, demokrati">
+  <title>חדשות - Riksdagsmonitor</title>
+  <meta name="description" content="חדשות וניתוחים אחרונים מהפרלמנט השוודי (ריקסדאג). עיתונות פוליטית בסגנון The Economist המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.">
+  <meta name="keywords" content="חדשות ריקסדאג, פרלמנט שבדיה, ניתוח ממשלה, עיתונות פוליטית, שקיפות, דמוקרטיה">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
-  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_sv.html">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_he.html">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Nyheter - Riksdagsmonitor">
-  <meta property="og:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta property="og:title" content="חדשות - Riksdagsmonitor">
+  <meta property="og:description" content="עיתונות פוליטית אחרונה מהפרלמנט השוודי">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_sv.html">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_he.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
   <meta property="og:site_name" content="Riksdagsmonitor">
-  <meta property="og:locale" content="sv_SE">
+  <meta property="og:locale" content="he_IL">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nyheter - Riksdagsmonitor">
-  <meta name="twitter:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta name="twitter:title" content="חדשות - Riksdagsmonitor">
+  <meta name="twitter:description" content="עיתונות פוליטית אחרונה מהפרלמנט השוודי">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
-  <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
-  <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
-  <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
-  <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
   <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
   <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
   <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html">
   <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/news/index_ko.html">
   <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/index_zh.html">
-  <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
-  <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
-  <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
-  <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
   
   <!-- Fonts -->
@@ -238,6 +229,23 @@
       background: rgba(0, 217, 255, 0.1);
     }
     
+    /* RTL-specific styles */
+    [dir="rtl"] .filter-bar {
+      flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .article-meta {
+      flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .article-tags {
+      flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .back-link::before {
+      content: "← ";
+    }
+    
     @media (max-width: 768px) {
       .filter-bar {
         flex-direction: column;
@@ -252,43 +260,43 @@
 <body>
   <div class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor Nyheter</h1>
-      <p class="subtitle">Politisk journalistik i The Economist-stil • Systematisk transparens • Demokratiskt ansvarsutkrävande</p>
+      <h1><span aria-hidden="true">📰</span> חדשות Riksdagsmonitor</h1>
+      <p class="subtitle">עיתונות פוליטית בסגנון The Economist • שקיפות שיטתית • אחריות דמוקרטית</p>
     </div>
   </div>
   
   <div class="container">
-    <a href="../index_sv.html" class="back-link">← Tillbaka till instrumentpanelen</a>
+    <a href="../index_he.html" class="back-link">חזרה ללוח המחוונים</a>
     
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">Artikeltyp</label>
+        <label for="filter-type">סוג כתבה</label>
         <select id="filter-type">
-          <option value="all">Alla typer</option>
-          <option value="retrospective">Retrospektiv</option>
-          <option value="prospective">Prospektiv (Veckan som kommer)</option>
-          <option value="analysis">Analys</option>
+          <option value="all">כל הסוגים</option>
+          <option value="retrospective">רטרוספקטיבי</option>
+          <option value="prospective">פרוספקטיבי (השבוע הבא)</option>
+          <option value="analysis">ניתוח</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">Ämne</label>
+        <label for="filter-topic">נושא</label>
         <select id="filter-topic">
-          <option value="all">Alla ämnen</option>
-          <option value="eu">EU-frågor</option>
-          <option value="government">Regering</option>
-          <option value="parliament">Riksdag</option>
-          <option value="committees">Utskott</option>
-          <option value="legislation">Lagstiftning</option>
+          <option value="all">כל הנושאים</option>
+          <option value="eu">ענייני האיחוד האירופי</option>
+          <option value="government">ממשלה</option>
+          <option value="parliament">פרלמנט</option>
+          <option value="committees">ועדות</option>
+          <option value="legislation">חקיקה</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">Sortera</label>
+        <label for="filter-sort">מיין לפי</label>
         <select id="filter-sort">
-          <option value="date-desc">Nyast först</option>
-          <option value="date-asc">Äldst först</option>
-          <option value="title">Titel A-Ö</option>
+          <option value="date-desc">החדש ביותר תחילה</option>
+          <option value="date-asc">הישן ביותר תחילה</option>
+          <option value="title">כותרת א-ת</option>
         </select>
       </div>
     </div>
@@ -298,7 +306,7 @@
     </div>
     
     <div class="no-results" id="no-results" style="display: none;">
-      <p>Inga artiklar hittades som matchar dina filter.</p>
+      <p>לא נמצאו כתבות התואמות את הקריטריונים.</p>
     </div>
   </div>
   
@@ -306,80 +314,87 @@
     // News articles metadata
     const articles = [
       {
-        title: "Veckan som kommer: Brysseltoppmöte testar svensk EU-strategi",
+        title: "השבוע הבא: פסגת בריסל בוחנת את האסטרטגיה השבדית באיחוד האירופי",
         date: "2026-02-10",
         type: "prospective",
-        slug: "2026-02-10-week-ahead-feb-10-17-sv.html",
-        excerpt: "Kritisk vecka för svensk europapolitik när statsminister Kristersson deltar i informellt toppmöte medan EU-nämnden följer upp försvars- och ekonomifrågor.",
+        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
+        excerpt: "שבוע קריטי למדיניות האירופית השבדית כאשר ראש הממשלה קריסטרסון משתתף בפסגת מנהיגים לא פורמלית בעוד ועדת האיחוד האירופי עוקבת אחר סוגיות הגנה וכלכלה.",
         topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["EU-toppmöte", "Bryssel", "Försvarspolitik", "Parlamentarisk granskning"]
+        tags: ["פסגת האיחוד האירופי", "בריסל", "מדיניות הגנה", "פיקוח פרלמנטרי"]
       },
       {
-        title: "Statsministern möter riksdagen före Brysseltoppmötet",
+        title: "ראש הממשלה עומד בפני הפרלמנט לפני פסגת בריסל",
         date: "2026-02-10",
         type: "retrospective",
-        slug: "2026-02-10-pm-eu-summit-sv.html",
-        excerpt: "Vid sällsynt öppet EU-nämndsmöte konsulterar statsminister Ulf Kristersson riksdagen före informellt toppmöte medan regeringen möter växande press om ekonomisk brottslighet och medborgarskap.",
+        slug: "2026-02-10-pm-eu-summit-en.html",
+        excerpt: "בישיבה פתוחה נדירה של ועדת האיחוד האירופי, ראש הממשלה אולף קריסטרסון מתייעץ עם הריקסדאג לפני פסגת מנהיגים לא פורמלית בעוד הממשלה מתמודדת עם לחץ גובר בנושא פשיעה כלכלית ומדיניות אזרחות.",
         topics: ["eu", "government", "parliament"],
-        tags: ["EU", "Statsminister", "Ekonomisk brottslighet", "Medborgarskap"]
+        tags: ["האיחוד האירופי", "ראש הממשלה", "פשיעה כלכלית", "אזרחות"]
       },
       {
-        title: "Biologisk mångfald och medborgarskapsreform presenteras",
+        title: "הכרזה על אסטרטגיית מגוון ביולוגי ורפורמה באזרחות",
         date: "2026-02-10",
         type: "retrospective",
-        slug: "2026-02-10-biodiversity-citizenship-sv.html",
-        excerpt: "Regeringen presenterar omfattande strategi för biologisk mångfald och signalerar stor medborgarskapsreform när koalitionen navigerar konkurrerande prioriteringar kring miljö och invandring.",
+        slug: "2026-02-10-biodiversity-citizenship-en.html",
+        excerpt: "הממשלה מכריזה על אסטרטגיה מקיפה למגוון ביולוגי ומסמנת רפורמה משמעותית באזרחות בעוד הקואליציה מנווטת בין סדרי עדיפויות מתחרים בנושא סביבה והגירה.",
         topics: ["environment", "government", "legislation"],
-        tags: ["Biologisk mångfald", "Medborgarskap", "Miljö", "Invandring"]
+        tags: ["מגוון ביולוגי", "אזרחות", "סביבה", "הגירה"]
       },
       {
-        title: "Regeringspropositioner februari 2026",
+        title: "הצעות ממשלה פברואר 2026",
         date: "2026-02-07",
         type: "analysis",
-        slug: "2026-02-government-propositions-sv.html",
-        excerpt: "Policyoffensiv över finansiell tillsyn, förnybar energi och egendomsskydd markerar intensiv lagstiftningsdragning före våruppehållet.",
+        slug: "2026-02-government-propositions-en.html",
+        excerpt: "התקפה מדינית על פני פיקוח פיננסי, אנרגיה מתחדשת וביטחון נכסים מסמנת דחיפה חקיקתית אינטנסיבית לפני החופשה האביבית.",
         topics: ["government", "legislation", "parliament"],
-        tags: ["Propositioner", "Finans", "Klimat", "Egendom", "Skatt"]
+        tags: ["הצעות", "פיננסים", "אקלים", "נכסים", "מיסים"]
       },
       {
-        title: "Utskottsbetänkanden februari 2026",
+        title: "דוחות ועדות פברואר 2026",
         date: "2026-02-06",
         type: "analysis",
-        slug: "2026-02-committee-reports-sv.html",
-        excerpt: "Riksdagens utskott lämnar omfattande betänkanden som spänner över utbildning, försvar och socialpolitik när riksdagen går in i kritisk beslutsfas.",
+        slug: "2026-02-committee-reports-en.html",
+        excerpt: "ועדות פרלמנטריות מגישות דוחות מקיפים המשתרעים על חינוך, הגנה ומדיניות חברתית כאשר הריקסדאג נכנס לשלב החלטה קריטי.",
         topics: ["committees", "parliament"],
-        tags: ["Utskottsbetänkanden", "Utbildning", "Försvar", "Socialpolitik"]
+        tags: ["דוחות ועדה", "חינוך", "הגנה", "מדיניות חברתית"]
       },
       {
-        title: "Oppositionsmotioner februari 2026",
+        title: "הצעות אופוזיציה פברואר 2026",
         date: "2026-02-07",
         type: "analysis",
-        slug: "2026-02-opposition-motions-sv.html",
-        excerpt: "Oppositionspartier intensifierar lagstiftningspressen med omfattande motionspaket som riktar sig mot regeringens politik över ekonomisk brottslighet, sjukvård och klimat.",
+        slug: "2026-02-opposition-motions-en.html",
+        excerpt: "מפלגות האופוזיציה מגבירות לחץ חקיקתי עם חבילות הצעות מקיפות המכוונות למדיניות הממשלתית על פני פשיעה כלכלית, שירותי בריאות ואקלים.",
         topics: ["parliament", "legislation"],
-        tags: ["Opposition", "Motioner", "Ekonomisk brottslighet", "Sjukvård"]
+        tags: ["אופוזיציה", "הצעות", "פשיעה כלכלית", "שירותי בריאות"]
       },
       {
-        title: "Riksdagens agenda - Veckoöversikt",
+        title: "סדר יום הפרלמנט - סקירת השבוע",
         date: "2026-02-09",
         type: "prospective",
-        slug: "2026-02-parliament-agenda-sv.html",
-        excerpt: "Omfattande förhandsgranskning av kommande parlamentarisk aktivitet inklusive utskottsmöten, kammarens debatter och ministerfrågor.",
+        slug: "2026-02-parliament-agenda-en.html",
+        excerpt: "תצוגה מקדימה מקיפה של פעילות פרלמנטרית קרובה כולל ישיבות ועדות, דיונים באולם ושאלות שרים.",
         topics: ["parliament"],
-        tags: ["Riksdag", "Agenda", "Veckoförhandsgranskning"]
+        tags: ["פרלמנט", "סדר יום", "תצוגה מקדימה שבועית"]
       },
       {
-        title: "Veckan som kommer",
+        title: "השבוע הבא",
         date: "2026-02-09",
         type: "prospective",
-        slug: "2026-02-week-ahead-sv.html",
-        excerpt: "Blick framåt på viktiga politiska händelser, parlamentarisk aktivitet och regeringsbeslut under kommande vecka.",
+        slug: "2026-02-week-ahead-en.html",
+        excerpt: "מבט קדימה על התפתחויות פוליטיות מרכזיות, פעילות פרלמנטרית והחלטות ממשלה בשבוע הקרוב.",
         topics: ["parliament", "government"],
-        tags: ["Veckan som kommer", "Förhandsgranskning", "Politisk kalender"]
+        tags: ["השבוע הבא", "תצוגה מקדימה", "לוח שנה פוליטי"]
       }
     ];
     
     let filteredArticles = [...articles];
+    
+    // Localized type labels
+    const typeLabels = {
+      'prospective': 'פרוספקטיבי',
+      'retrospective': 'רטרוספקטיבי',
+      'analysis': 'ניתוח'
+    };
     
     function renderArticles(articlesToRender) {
       const grid = document.getElementById('articles-grid');
@@ -397,7 +412,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${typeLabels[article.type] || article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -411,8 +426,11 @@
     }
     
     function formatDate(dateStr) {
-      const date = new Date(dateStr);
-      return date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+      // Parse date components to avoid timezone issues
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      const months = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+      return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
     }
     
     function filterArticles() {
@@ -441,7 +459,7 @@
           filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
           break;
         case 'title':
-          filtered.sort((a, b) => a.title.localeCompare(b.title));
+          filtered.sort((a, b) => a.title.localeCompare(b.title, 'he'));
           break;
       }
       

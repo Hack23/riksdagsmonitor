@@ -1,52 +1,44 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nyheter - Riksdagsmonitor</title>
-  <meta name="description" content="Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.">
-  <meta name="keywords" content="riksdagsnyheter, svenska riksdagen, regeringsanalys, politisk journalistik, transparens, demokrati">
+  <title>뉴스 - Riksdagsmonitor</title>
+  <meta name="description" content="스웨덴 의회(릭스다그)의 최신 분석. CIA OSINT 역량을 활용한 AI 기반 정치 저널리즘. 의회, 정부, 기관의 체계적 투명성 제공.">
+  <meta name="keywords" content="릭스다그 뉴스, 스웨덴 의회, 정부 분석, 정치 저널리즘, 투명성, 민주주의">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
-  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_sv.html">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_ko.html">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Nyheter - Riksdagsmonitor">
-  <meta property="og:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta property="og:title" content="뉴스 - Riksdagsmonitor">
+  <meta property="og:description" content="스웨덴 의회의 최신 정치 저널리즘">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_sv.html">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_ko.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
   <meta property="og:site_name" content="Riksdagsmonitor">
-  <meta property="og:locale" content="sv_SE">
+  <meta property="og:locale" content="ko_KR">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nyheter - Riksdagsmonitor">
-  <meta name="twitter:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta name="twitter:title" content="뉴스 - Riksdagsmonitor">
+  <meta name="twitter:description" content="스웨덴 의회의 최신 정치 저널리즘">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
-  <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
-  <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
-  <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
-  <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
   <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
   <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
   <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html">
   <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/news/index_ko.html">
   <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/index_zh.html">
-  <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
-  <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
-  <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
-  <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../styles.css">
   
@@ -54,10 +46,12 @@
     body {
       background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
       color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
+      font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+      line-height: 1.8;
       padding: 0;
       margin: 0;
+      font-size: 16px;
+      letter-spacing: 0.02em;
     }
     
     .header-section {
@@ -73,19 +67,27 @@
     }
     
     h1 {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Orbitron', 'Noto Sans KR', sans-serif;
       font-size: clamp(2rem, 5vw, 3rem);
       margin: 0 0 1rem 0;
       background: linear-gradient(135deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+    }
+    
+    h2, h3 {
+      line-height: 1.5;
+      letter-spacing: 0.05em;
     }
     
     .subtitle {
       font-size: 1.1rem;
       color: #b0b0b0;
       margin: 0;
+      line-height: 1.8;
     }
     
     .container {
@@ -123,7 +125,7 @@
       border: 1px solid rgba(0, 217, 255, 0.5);
       border-radius: 4px;
       color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Noto Sans KR', sans-serif;
       cursor: pointer;
     }
     
@@ -180,7 +182,7 @@
       font-weight: 600;
       margin: 0 0 1rem 0;
       color: #fff;
-      line-height: 1.4;
+      line-height: 1.6;
     }
     
     .article-title a {
@@ -197,6 +199,7 @@
       color: #b0b0b0;
       margin-bottom: 1rem;
       flex-grow: 1;
+      line-height: 1.8;
     }
     
     .article-tags {
@@ -252,43 +255,43 @@
 <body>
   <div class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor Nyheter</h1>
-      <p class="subtitle">Politisk journalistik i The Economist-stil • Systematisk transparens • Demokratiskt ansvarsutkrävande</p>
+      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor 뉴스</h1>
+      <p class="subtitle">이코노미스트 스타일 정치 저널리즘 • 체계적 투명성 • 민주적 책임성</p>
     </div>
   </div>
   
   <div class="container">
-    <a href="../index_sv.html" class="back-link">← Tillbaka till instrumentpanelen</a>
+    <a href="../index_ko.html" class="back-link">← 대시보드로 돌아가기</a>
     
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">Artikeltyp</label>
+        <label for="filter-type">기사 유형</label>
         <select id="filter-type">
-          <option value="all">Alla typer</option>
-          <option value="retrospective">Retrospektiv</option>
-          <option value="prospective">Prospektiv (Veckan som kommer)</option>
-          <option value="analysis">Analys</option>
+          <option value="all">전체 유형</option>
+          <option value="retrospective">회고</option>
+          <option value="prospective">전망 (다음 주)</option>
+          <option value="analysis">분석</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">Ämne</label>
+        <label for="filter-topic">주제</label>
         <select id="filter-topic">
-          <option value="all">Alla ämnen</option>
-          <option value="eu">EU-frågor</option>
-          <option value="government">Regering</option>
-          <option value="parliament">Riksdag</option>
-          <option value="committees">Utskott</option>
-          <option value="legislation">Lagstiftning</option>
+          <option value="all">전체 주제</option>
+          <option value="eu">EU 문제</option>
+          <option value="government">정부</option>
+          <option value="parliament">의회</option>
+          <option value="committees">위원회</option>
+          <option value="legislation">입법</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">Sortera</label>
+        <label for="filter-sort">정렬 기준</label>
         <select id="filter-sort">
-          <option value="date-desc">Nyast först</option>
-          <option value="date-asc">Äldst först</option>
-          <option value="title">Titel A-Ö</option>
+          <option value="date-desc">최신순</option>
+          <option value="date-asc">과거순</option>
+          <option value="title">제목순</option>
         </select>
       </div>
     </div>
@@ -298,7 +301,7 @@
     </div>
     
     <div class="no-results" id="no-results" style="display: none;">
-      <p>Inga artiklar hittades som matchar dina filter.</p>
+      <p>필터 조건과 일치하는 기사를 찾을 수 없습니다.</p>
     </div>
   </div>
   
@@ -306,78 +309,85 @@
     // News articles metadata
     const articles = [
       {
-        title: "Veckan som kommer: Brysseltoppmöte testar svensk EU-strategi",
+        title: "다음 주: 브뤼셀 정상회의가 스웨덴 EU 전략을 시험하다",
         date: "2026-02-10",
         type: "prospective",
-        slug: "2026-02-10-week-ahead-feb-10-17-sv.html",
-        excerpt: "Kritisk vecka för svensk europapolitik när statsminister Kristersson deltar i informellt toppmöte medan EU-nämnden följer upp försvars- och ekonomifrågor.",
+        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
+        excerpt: "크리스테르손 총리가 비공식 정상회의에 참석하는 동안 EU 위원회가 국방 및 경제 문제를 추진하는 스웨덴 유럽 정책의 중요한 주.",
         topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["EU-toppmöte", "Bryssel", "Försvarspolitik", "Parlamentarisk granskning"]
+        tags: ["EU 정상회의", "브뤼셀", "국방 정책", "의회 감독"]
       },
       {
-        title: "Statsministern möter riksdagen före Brysseltoppmötet",
+        title: "총리, 브뤼셀 정상회의 전 의회 출석",
         date: "2026-02-10",
         type: "retrospective",
-        slug: "2026-02-10-pm-eu-summit-sv.html",
-        excerpt: "Vid sällsynt öppet EU-nämndsmöte konsulterar statsminister Ulf Kristersson riksdagen före informellt toppmöte medan regeringen möter växande press om ekonomisk brottslighet och medborgarskap.",
+        slug: "2026-02-10-pm-eu-summit-en.html",
+        excerpt: "드문 공개 EU 위원회 회의에서 울프 크리스테르손 총리가 비공식 정상회의 전 릭스다그에 자문하고, 정부는 경제 범죄 및 시민권 정책에 대한 압박 증가에 직면합니다.",
         topics: ["eu", "government", "parliament"],
-        tags: ["EU", "Statsminister", "Ekonomisk brottslighet", "Medborgarskap"]
+        tags: ["EU", "총리", "경제 범죄", "시민권"]
       },
       {
-        title: "Biologisk mångfald och medborgarskapsreform presenteras",
+        title: "생물다양성 전략 및 시민권 개혁 발표",
         date: "2026-02-10",
         type: "retrospective",
-        slug: "2026-02-10-biodiversity-citizenship-sv.html",
-        excerpt: "Regeringen presenterar omfattande strategi för biologisk mångfald och signalerar stor medborgarskapsreform när koalitionen navigerar konkurrerande prioriteringar kring miljö och invandring.",
+        slug: "2026-02-10-biodiversity-citizenship-en.html",
+        excerpt: "정부가 환경과 이민에 대한 경쟁 우선순위를 조율하면서 포괄적인 생물다양성 전략을 발표하고 주요 시민권 개혁을 시사합니다.",
         topics: ["environment", "government", "legislation"],
-        tags: ["Biologisk mångfald", "Medborgarskap", "Miljö", "Invandring"]
+        tags: ["생물다양성", "시민권", "환경", "이민"]
       },
       {
-        title: "Regeringspropositioner februari 2026",
+        title: "정부 제안서 2026년 2월",
         date: "2026-02-07",
         type: "analysis",
-        slug: "2026-02-government-propositions-sv.html",
-        excerpt: "Policyoffensiv över finansiell tillsyn, förnybar energi och egendomsskydd markerar intensiv lagstiftningsdragning före våruppehållet.",
+        slug: "2026-02-government-propositions-en.html",
+        excerpt: "금융 감독, 재생 에너지, 재산 보호에 걸친 정책 공세가 봄 휴회 전 집중적인 입법 추진을 표시합니다.",
         topics: ["government", "legislation", "parliament"],
-        tags: ["Propositioner", "Finans", "Klimat", "Egendom", "Skatt"]
+        tags: ["제안서", "금융", "기후", "재산", "세금"]
       },
       {
-        title: "Utskottsbetänkanden februari 2026",
+        title: "위원회 보고서 2026년 2월",
         date: "2026-02-06",
         type: "analysis",
-        slug: "2026-02-committee-reports-sv.html",
-        excerpt: "Riksdagens utskott lämnar omfattande betänkanden som spänner över utbildning, försvar och socialpolitik när riksdagen går in i kritisk beslutsfas.",
+        slug: "2026-02-committee-reports-en.html",
+        excerpt: "의회 위원회가 교육, 국방, 사회 정책에 걸친 포괄적인 보고서를 제출하면서 릭스다그가 중요한 결정 단계에 진입합니다.",
         topics: ["committees", "parliament"],
-        tags: ["Utskottsbetänkanden", "Utbildning", "Försvar", "Socialpolitik"]
+        tags: ["위원회 보고서", "교육", "국방", "사회 정책"]
       },
       {
-        title: "Oppositionsmotioner februari 2026",
+        title: "야당 발의안 2026년 2월",
         date: "2026-02-07",
         type: "analysis",
-        slug: "2026-02-opposition-motions-sv.html",
-        excerpt: "Oppositionspartier intensifierar lagstiftningspressen med omfattande motionspaket som riktar sig mot regeringens politik över ekonomisk brottslighet, sjukvård och klimat.",
+        slug: "2026-02-opposition-motions-en.html",
+        excerpt: "야당이 경제 범죄, 의료, 기후에 걸친 정부 정책을 겨냥한 포괄적인 발의안 패키지로 입법 압력을 강화합니다.",
         topics: ["parliament", "legislation"],
-        tags: ["Opposition", "Motioner", "Ekonomisk brottslighet", "Sjukvård"]
+        tags: ["야당", "발의안", "경제 범죄", "의료"]
       },
       {
-        title: "Riksdagens agenda - Veckoöversikt",
+        title: "의회 의제 - 주간 개요",
         date: "2026-02-09",
         type: "prospective",
-        slug: "2026-02-parliament-agenda-sv.html",
-        excerpt: "Omfattande förhandsgranskning av kommande parlamentarisk aktivitet inklusive utskottsmöten, kammarens debatter och ministerfrågor.",
+        slug: "2026-02-parliament-agenda-en.html",
+        excerpt: "위원회 회의, 본회의 토론, 장관 질의를 포함한 향후 의회 활동의 포괄적인 미리보기.",
         topics: ["parliament"],
-        tags: ["Riksdag", "Agenda", "Veckoförhandsgranskning"]
+        tags: ["의회", "의제", "주간 미리보기"]
       },
       {
-        title: "Veckan som kommer",
+        title: "다음 주 전망",
         date: "2026-02-09",
         type: "prospective",
-        slug: "2026-02-week-ahead-sv.html",
-        excerpt: "Blick framåt på viktiga politiska händelser, parlamentarisk aktivitet och regeringsbeslut under kommande vecka.",
+        slug: "2026-02-week-ahead-en.html",
+        excerpt: "앞으로 한 주간의 주요 정치 발전, 의회 활동, 정부 결정에 대한 전망.",
         topics: ["parliament", "government"],
-        tags: ["Veckan som kommer", "Förhandsgranskning", "Politisk kalender"]
+        tags: ["다음 주", "미리보기", "정치 일정"]
       }
     ];
+    
+    // Localized type labels
+    const typeLabels = {
+      'prospective': '전망 (다음 주)',
+      'retrospective': '회고',
+      'analysis': '분석'
+    };
     
     let filteredArticles = [...articles];
     
@@ -397,7 +407,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${typeLabels[article.type] || article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -411,8 +421,10 @@
     }
     
     function formatDate(dateStr) {
-      const date = new Date(dateStr);
-      return date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+      // Parse date components to avoid timezone issues
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`;
     }
     
     function filterArticles() {
@@ -441,7 +453,7 @@
           filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
           break;
         case 'title':
-          filtered.sort((a, b) => a.title.localeCompare(b.title));
+          filtered.sort((a, b) => a.title.localeCompare(b.title, 'ko'));
           break;
       }
       

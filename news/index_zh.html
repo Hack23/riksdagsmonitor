@@ -1,52 +1,44 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nyheter - Riksdagsmonitor</title>
-  <meta name="description" content="Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.">
-  <meta name="keywords" content="riksdagsnyheter, svenska riksdagen, regeringsanalys, politisk journalistik, transparens, demokrati">
+  <title>新闻 - Riksdagsmonitor</title>
+  <meta name="description" content="瑞典议会（国会）最新分析。利用CIA OSINT能力的AI驱动政治新闻。提供议会、政府和机构的系统透明度。">
+  <meta name="keywords" content="国会新闻, 瑞典议会, 政府分析, 政治新闻, 透明度, 民主">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
-  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_sv.html">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_zh.html">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Nyheter - Riksdagsmonitor">
-  <meta property="og:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta property="og:title" content="新闻 - Riksdagsmonitor">
+  <meta property="og:description" content="来自瑞典议会的最新政治新闻">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_sv.html">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_zh.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
   <meta property="og:site_name" content="Riksdagsmonitor">
-  <meta property="og:locale" content="sv_SE">
+  <meta property="og:locale" content="zh_CN">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nyheter - Riksdagsmonitor">
-  <meta name="twitter:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta name="twitter:title" content="新闻 - Riksdagsmonitor">
+  <meta name="twitter:description" content="来自瑞典议会的最新政治新闻">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
-  <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
-  <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
-  <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
-  <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
   <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
   <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
   <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html">
   <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/news/index_ko.html">
   <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/index_zh.html">
-  <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
-  <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
-  <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
-  <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../styles.css">
   
@@ -54,10 +46,12 @@
     body {
       background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
       color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
+      font-family: 'Noto Sans SC', 'Microsoft YaHei', 'SimSun', sans-serif;
+      line-height: 1.8;
       padding: 0;
       margin: 0;
+      font-size: 16px;
+      letter-spacing: 0.02em;
     }
     
     .header-section {
@@ -73,19 +67,27 @@
     }
     
     h1 {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
       font-size: clamp(2rem, 5vw, 3rem);
       margin: 0 0 1rem 0;
       background: linear-gradient(135deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+    }
+    
+    h2, h3 {
+      line-height: 1.5;
+      letter-spacing: 0.05em;
     }
     
     .subtitle {
       font-size: 1.1rem;
       color: #b0b0b0;
       margin: 0;
+      line-height: 1.8;
     }
     
     .container {
@@ -123,7 +125,7 @@
       border: 1px solid rgba(0, 217, 255, 0.5);
       border-radius: 4px;
       color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Noto Sans SC', sans-serif;
       cursor: pointer;
     }
     
@@ -180,7 +182,7 @@
       font-weight: 600;
       margin: 0 0 1rem 0;
       color: #fff;
-      line-height: 1.4;
+      line-height: 1.6;
     }
     
     .article-title a {
@@ -197,6 +199,7 @@
       color: #b0b0b0;
       margin-bottom: 1rem;
       flex-grow: 1;
+      line-height: 1.8;
     }
     
     .article-tags {
@@ -252,43 +255,43 @@
 <body>
   <div class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor Nyheter</h1>
-      <p class="subtitle">Politisk journalistik i The Economist-stil • Systematisk transparens • Demokratiskt ansvarsutkrävande</p>
+      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor 新闻</h1>
+      <p class="subtitle">经济学人风格政治新闻 • 系统透明度 • 民主问责制</p>
     </div>
   </div>
   
   <div class="container">
-    <a href="../index_sv.html" class="back-link">← Tillbaka till instrumentpanelen</a>
+    <a href="../index_zh.html" class="back-link">← 返回仪表板</a>
     
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">Artikeltyp</label>
+        <label for="filter-type">文章类型</label>
         <select id="filter-type">
-          <option value="all">Alla typer</option>
-          <option value="retrospective">Retrospektiv</option>
-          <option value="prospective">Prospektiv (Veckan som kommer)</option>
-          <option value="analysis">Analys</option>
+          <option value="all">全部类型</option>
+          <option value="retrospective">回顾</option>
+          <option value="prospective">展望（下周）</option>
+          <option value="analysis">分析</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">Ämne</label>
+        <label for="filter-topic">主题</label>
         <select id="filter-topic">
-          <option value="all">Alla ämnen</option>
-          <option value="eu">EU-frågor</option>
-          <option value="government">Regering</option>
-          <option value="parliament">Riksdag</option>
-          <option value="committees">Utskott</option>
-          <option value="legislation">Lagstiftning</option>
+          <option value="all">全部主题</option>
+          <option value="eu">欧盟事务</option>
+          <option value="government">政府</option>
+          <option value="parliament">议会</option>
+          <option value="committees">委员会</option>
+          <option value="legislation">立法</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">Sortera</label>
+        <label for="filter-sort">排序方式</label>
         <select id="filter-sort">
-          <option value="date-desc">Nyast först</option>
-          <option value="date-asc">Äldst först</option>
-          <option value="title">Titel A-Ö</option>
+          <option value="date-desc">最新优先</option>
+          <option value="date-asc">最早优先</option>
+          <option value="title">标题排序</option>
         </select>
       </div>
     </div>
@@ -298,7 +301,7 @@
     </div>
     
     <div class="no-results" id="no-results" style="display: none;">
-      <p>Inga artiklar hittades som matchar dina filter.</p>
+      <p>未找到符合筛选条件的文章。</p>
     </div>
   </div>
   
@@ -306,78 +309,85 @@
     // News articles metadata
     const articles = [
       {
-        title: "Veckan som kommer: Brysseltoppmöte testar svensk EU-strategi",
+        title: "下周：布鲁塞尔峰会考验瑞典欧盟战略",
         date: "2026-02-10",
         type: "prospective",
-        slug: "2026-02-10-week-ahead-feb-10-17-sv.html",
-        excerpt: "Kritisk vecka för svensk europapolitik när statsminister Kristersson deltar i informellt toppmöte medan EU-nämnden följer upp försvars- och ekonomifrågor.",
+        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
+        excerpt: "克里斯特松首相出席非正式领导人峰会，而欧盟委员会跟进国防和经济问题，对瑞典欧洲政策至关重要的一周。",
         topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["EU-toppmöte", "Bryssel", "Försvarspolitik", "Parlamentarisk granskning"]
+        tags: ["欧盟峰会", "布鲁塞尔", "国防政策", "议会监督"]
       },
       {
-        title: "Statsministern möter riksdagen före Brysseltoppmötet",
+        title: "首相在布鲁塞尔峰会前面对议会",
         date: "2026-02-10",
         type: "retrospective",
-        slug: "2026-02-10-pm-eu-summit-sv.html",
-        excerpt: "Vid sällsynt öppet EU-nämndsmöte konsulterar statsminister Ulf Kristersson riksdagen före informellt toppmöte medan regeringen möter växande press om ekonomisk brottslighet och medborgarskap.",
+        slug: "2026-02-10-pm-eu-summit-en.html",
+        excerpt: "在罕见的公开欧盟委员会会议上，乌尔夫·克里斯特松首相在非正式领导人峰会前咨询国会，而政府面临经济犯罪和公民身份政策的日益压力。",
         topics: ["eu", "government", "parliament"],
-        tags: ["EU", "Statsminister", "Ekonomisk brottslighet", "Medborgarskap"]
+        tags: ["欧盟", "首相", "经济犯罪", "公民身份"]
       },
       {
-        title: "Biologisk mångfald och medborgarskapsreform presenteras",
+        title: "宣布生物多样性战略和公民身份改革",
         date: "2026-02-10",
         type: "retrospective",
-        slug: "2026-02-10-biodiversity-citizenship-sv.html",
-        excerpt: "Regeringen presenterar omfattande strategi för biologisk mångfald och signalerar stor medborgarskapsreform när koalitionen navigerar konkurrerande prioriteringar kring miljö och invandring.",
+        slug: "2026-02-10-biodiversity-citizenship-en.html",
+        excerpt: "政府宣布全面的生物多样性战略，并表明重大公民身份改革，联合政府在环境和移民的竞争优先事项中寻求平衡。",
         topics: ["environment", "government", "legislation"],
-        tags: ["Biologisk mångfald", "Medborgarskap", "Miljö", "Invandring"]
+        tags: ["生物多样性", "公民身份", "环境", "移民"]
       },
       {
-        title: "Regeringspropositioner februari 2026",
+        title: "政府提案 2026年2月",
         date: "2026-02-07",
         type: "analysis",
-        slug: "2026-02-government-propositions-sv.html",
-        excerpt: "Policyoffensiv över finansiell tillsyn, förnybar energi och egendomsskydd markerar intensiv lagstiftningsdragning före våruppehållet.",
+        slug: "2026-02-government-propositions-en.html",
+        excerpt: "涵盖金融监管、可再生能源和财产安全的政策攻势标志着春季休会前的密集立法推动。",
         topics: ["government", "legislation", "parliament"],
-        tags: ["Propositioner", "Finans", "Klimat", "Egendom", "Skatt"]
+        tags: ["提案", "金融", "气候", "财产", "税收"]
       },
       {
-        title: "Utskottsbetänkanden februari 2026",
+        title: "委员会报告 2026年2月",
         date: "2026-02-06",
         type: "analysis",
-        slug: "2026-02-committee-reports-sv.html",
-        excerpt: "Riksdagens utskott lämnar omfattande betänkanden som spänner över utbildning, försvar och socialpolitik när riksdagen går in i kritisk beslutsfas.",
+        slug: "2026-02-committee-reports-en.html",
+        excerpt: "议会委员会提交涵盖教育、国防和社会政策的综合报告，国会进入关键决策阶段。",
         topics: ["committees", "parliament"],
-        tags: ["Utskottsbetänkanden", "Utbildning", "Försvar", "Socialpolitik"]
+        tags: ["委员会报告", "教育", "国防", "社会政策"]
       },
       {
-        title: "Oppositionsmotioner februari 2026",
+        title: "反对党动议 2026年2月",
         date: "2026-02-07",
         type: "analysis",
-        slug: "2026-02-opposition-motions-sv.html",
-        excerpt: "Oppositionspartier intensifierar lagstiftningspressen med omfattande motionspaket som riktar sig mot regeringens politik över ekonomisk brottslighet, sjukvård och klimat.",
+        slug: "2026-02-opposition-motions-en.html",
+        excerpt: "反对党通过针对经济犯罪、医疗保健和气候的政府政策的综合动议包，加强立法压力。",
         topics: ["parliament", "legislation"],
-        tags: ["Opposition", "Motioner", "Ekonomisk brottslighet", "Sjukvård"]
+        tags: ["反对党", "动议", "经济犯罪", "医疗保健"]
       },
       {
-        title: "Riksdagens agenda - Veckoöversikt",
+        title: "议会议程 - 周概览",
         date: "2026-02-09",
         type: "prospective",
-        slug: "2026-02-parliament-agenda-sv.html",
-        excerpt: "Omfattande förhandsgranskning av kommande parlamentarisk aktivitet inklusive utskottsmöten, kammarens debatter och ministerfrågor.",
+        slug: "2026-02-parliament-agenda-en.html",
+        excerpt: "即将举行的议会活动全面预览，包括委员会会议、全体辩论和部长质询。",
         topics: ["parliament"],
-        tags: ["Riksdag", "Agenda", "Veckoförhandsgranskning"]
+        tags: ["议会", "议程", "周预览"]
       },
       {
-        title: "Veckan som kommer",
+        title: "下周展望",
         date: "2026-02-09",
         type: "prospective",
-        slug: "2026-02-week-ahead-sv.html",
-        excerpt: "Blick framåt på viktiga politiska händelser, parlamentarisk aktivitet och regeringsbeslut under kommande vecka.",
+        slug: "2026-02-week-ahead-en.html",
+        excerpt: "展望下周主要政治发展、议会活动和政府决定。",
         topics: ["parliament", "government"],
-        tags: ["Veckan som kommer", "Förhandsgranskning", "Politisk kalender"]
+        tags: ["下周", "预览", "政治日历"]
       }
     ];
+    
+    // Localized type labels
+    const typeLabels = {
+      'prospective': '展望（下周）',
+      'retrospective': '回顾',
+      'analysis': '分析'
+    };
     
     let filteredArticles = [...articles];
     
@@ -397,7 +407,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${typeLabels[article.type] || article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -411,8 +421,10 @@
     }
     
     function formatDate(dateStr) {
-      const date = new Date(dateStr);
-      return date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+      // Parse date components to avoid timezone issues
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
     }
     
     function filterArticles() {
@@ -441,7 +453,7 @@
           filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
           break;
         case 'title':
-          filtered.sort((a, b) => a.title.localeCompare(b.title));
+          filtered.sort((a, b) => a.title.localeCompare(b.title, 'zh-Hans'));
           break;
       }
       
