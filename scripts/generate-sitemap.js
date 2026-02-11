@@ -51,13 +51,21 @@ function getNewsArticles() {
     const match = file.match(/^(.+?)-(en|sv)\.html$/);
     if (match) {
       const [, baseSlug, lang] = match;
+      const filePath = path.join(NEWS_DIR, file);
+      const fileModTime = getFileModTime(filePath);
       
       if (!articles.has(baseSlug)) {
         articles.set(baseSlug, {
           baseSlug,
           languages: [],
-          lastmod: getFileModTime(path.join(NEWS_DIR, file))
+          lastmod: fileModTime
         });
+      } else {
+        const article = articles.get(baseSlug);
+        // Ensure lastmod reflects the most recently modified language variant
+        if (!article.lastmod || new Date(fileModTime) > new Date(article.lastmod)) {
+          article.lastmod = fileModTime;
+        }
       }
       
       articles.get(baseSlug).languages.push(lang);
@@ -141,21 +149,20 @@ function generateSitemap() {
   console.log(`  Processing ${articles.length} article groups...`);
   
   articles.forEach(article => {
+    // Build alternates list once for all language entries
+    const alternates = article.languages.map(altLang => ({
+      lang: altLang,
+      href: `news/${article.baseSlug}-${altLang}.html`
+    }));
+    
+    // Add x-default pointing to the primary language variant
+    alternates.push({
+      lang: 'x-default',
+      href: `news/${article.baseSlug}-${article.languages[0]}.html`
+    });
+    
     article.languages.forEach(lang => {
       const loc = `news/${article.baseSlug}-${lang}.html`;
-      const alternates = article.languages.map(altLang => ({
-        lang: altLang,
-        href: `news/${article.baseSlug}-${altLang}.html`
-      }));
-      
-      // Add x-default to first language
-      if (lang === article.languages[0]) {
-        alternates.push({
-          lang: 'x-default',
-          href: `news/${article.baseSlug}-${article.languages[0]}.html`
-        });
-      }
-      
       xml += generateUrlEntry(loc, article.lastmod, 'monthly', '0.8', alternates);
     });
   });

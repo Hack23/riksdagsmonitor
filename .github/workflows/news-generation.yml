@@ -44,6 +44,10 @@ jobs:
       - name: Install dependencies
         run: |
           echo "📦 Installing dependencies..."
+          
+          # Install jq for JSON processing
+          sudo apt-get update && sudo apt-get install -y jq
+          
           npm ci --prefer-offline --no-audit
           
           # Install riksdag-regering-mcp for data access
@@ -143,6 +147,18 @@ jobs:
             echo "⚠️ Sitemap generation script not found"
             echo "updated=false" >> $GITHUB_OUTPUT
           fi
+      
+      - name: Update last generation timestamp
+        if: steps.check-updates.outputs.should_generate == 'true'
+        run: |
+          echo "⏰ Updating last generation timestamp..."
+          
+          # Always update timestamp, even when 0 articles generated
+          # This prevents repeated executions when no new content is available
+          mkdir -p news/metadata
+          echo "{\"timestamp\": \"${{ steps.check-updates.outputs.current_time }}\", \"generated\": ${{ steps.generate.outputs.generated || 0 }}, \"errors\": ${{ steps.generate.outputs.errors || 0 }}}" > news/metadata/last-generation.json
+          
+          echo "✅ Timestamp updated"
       
       - name: Validate generated articles
         if: steps.generate.outputs.generated != '0'

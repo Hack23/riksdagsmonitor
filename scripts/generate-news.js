@@ -29,7 +29,6 @@ console.log('Article types:', articleTypes.join(', '));
 // Configuration
 const NEWS_DIR = path.join(__dirname, '..', 'news');
 const METADATA_DIR = path.join(NEWS_DIR, 'metadata');
-const TEMPLATES_DIR = path.join(__dirname, 'templates');
 
 // Ensure directories exist
 if (!fs.existsSync(METADATA_DIR)) {
