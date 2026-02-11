@@ -6893,6 +6893,105 @@ html[lang="he"] {
   box-shadow: 0 4px 6px var(--card-shadow);
 }
 
+/* Dashboard Section (alternative wrapper) */
+.dashboard-section {
+  margin: var(--spacing-2xl) 0;
+  padding: var(--spacing-xl);
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+/* Status Cards Grid (Pre-Election Dashboard) */
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.status-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  text-align: center;
+  box-shadow: 0 2px 4px var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.status-card h3 {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.status-card .current-value {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: var(--spacing-sm) 0;
+  line-height: var(--line-height-tight);
+}
+
+.status-card .baseline-comparison {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: var(--spacing-xs) 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge.normal {
+  background: rgba(0, 136, 56, 0.12);
+  color: var(--success-color);
+}
+
+.status-badge.improving {
+  background: rgba(0, 102, 204, 0.12);
+  color: var(--transparency-color);
+}
+
+.status-badge.warning {
+  background: rgba(179, 90, 0, 0.12);
+  color: var(--warning-color);
+}
+
+.status-badge.critical {
+  background: rgba(220, 53, 69, 0.12);
+  color: var(--danger-color);
+}
+
+@media (max-width: 767px) {
+  .status-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  .status-card .current-value {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .dashboard-section {
+    padding: var(--spacing-md);
+  }
+}
+
 .dashboard-description {
   font-size: var(--font-size-lg);
   color: var(--text-secondary);

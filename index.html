@@ -475,20 +475,6 @@ Attendance, ballots, and volatility trends
 </p>
 </div>
 
-</p>
-</div>
-
-<!-- Chart 4: Temporal Trends -->
-<div class="chart-card" style="grid-column: span 2; background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Temporal Voting Patterns</h3>
-<div style="height: 400px; position: relative;">
-<canvas id="temporal-trends-chart"></canvas>
-</div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Attendance, ballots, and volatility trends
-</p>
-</div>
-
 <!-- Chart 5: Party Comparative Analysis -->
 <div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
 <h3>Party Tier Distribution</h3>
@@ -590,7 +576,7 @@ Performance tiers (ntile_party_tier: 1-4)
 </div>
 
 <div class="dashboard-attribution">
-<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="lastUpdated">Loading...</span></small></p>
+<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="committeeLastUpdated">Loading...</span></small></p>
 </div>
 </section>
 
@@ -2324,5 +2310,15 @@ Performance tiers (ntile_party_tier: 1-4)
 <script type="module" src="scripts/committees-dashboard.js"></script>
 
 <script type="module" src="js/election-cycle-dashboard.js"></script>
+
+<script src="js/party-dashboard.js"></script>
+
+<script src="js/ministry-dashboard.js"></script>
+
+<script src="js/seasonal-patterns-dashboard.js"></script>
+
+<script src="js/pre-election-dashboard.js"></script>
+
+<script src="js/anomaly-detection-dashboard.js"></script>
 </body>
 </html>
