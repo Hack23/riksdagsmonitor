@@ -259,7 +259,9 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - **External Dependencies:**
   - Chart.js v4.4.1 (hosted locally on CloudFront/S3 at js/lib/chart.umd.4.4.1.js)
   - chartjs-plugin-annotation v3.0.1 (hosted locally on CloudFront/S3 at js/lib/chartjs-plugin-annotation.3.0.1.min.js)
+  - chartjs-adapter-date-fns v3.0.0 bundle (hosted locally on CloudFront/S3 at js/lib/chartjs-adapter-date-fns.3.0.0.bundle.min.js) - for time-series charts
   - D3.js v7.9.0 (hosted locally on CloudFront/S3 at js/lib/d3.7.9.0.min.js)
+  - Papa Parse v5.5.3 (hosted locally on CloudFront/S3 at js/lib/papaparse.5.5.3.min.js) - for CSV parsing
   - Google Fonts (Inter, Orbitron, Share Tech Mono - via fonts.googleapis.com and fonts.gstatic.com CDN)
 - **CIA Data Integration:** Fetches CSV data from `https://raw.githubusercontent.com/Hack23/cia/` that is subject to non-blocking CI schema validation checks in pre-processing (e.g., `.github/workflows/validate-cia-data.yml`), with local caching for performance; the browser consumes this dataset which may contain validation warnings
 - **No User Input Processing:** Dashboards do not accept or process arbitrary user input; they display pre-processed CIA data generated upstream in CI/data pipelines that has passed non-blocking schema validation checks where configured
@@ -282,7 +284,7 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 9. **Anomaly Detection Dashboard** - Standalone section with multiple canvas elements (anomaly-timeline-chart, zscore-distribution-chart, anomaly-type-chart, quarterly-frequency-chart), distinct from the single anomaly chart within risk dashboard, awaiting JS implementation
 
 **Dependency Management:**
-- Chart.js, D3.js, and chartjs-plugin-annotation hosted locally on CloudFront/S3 (js/lib/); versions reviewed manually at least quarterly and after critical CVE disclosures
+- Chart.js, D3.js, chartjs-plugin-annotation, chartjs-adapter-date-fns, and Papa Parse hosted locally on CloudFront/S3 (js/lib/); versions reviewed manually at least quarterly and after critical CVE disclosures
 - Library file integrity can be verified via SHA-256 hashes if needed for deployment validation (not required for runtime as served from same origin)
 - Dependabot configured for GitHub Actions workflows (`.github/dependabot.yml`) and automated dependency risk assessment for repository-managed components via GitHub dependency-review and Dependabot alerts
 - Supply chain security scanning via CodeQL and OpenSSF Scorecards
