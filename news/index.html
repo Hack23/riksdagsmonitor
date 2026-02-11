@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - Riksdagsmonitor</title>
+  <meta name="description" content="Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.">
+  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <meta name="author" content="James Pether Sörling, CISSP, CISM">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="News - Riksdagsmonitor">
+  <meta property="og:description" content="Latest political journalism from Sweden's Riksdag">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/">
+  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta property="og:site_name" content="Riksdagsmonitor">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="News - Riksdagsmonitor">
+  <meta name="twitter:description" content="Latest political journalism from Sweden's Riksdag">
+  <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+  
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
+  <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
+  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  
+  <style>
+    body {
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .header-section {
+      background: rgba(26, 30, 61, 0.9);
+      border-bottom: 2px solid var(--primary-cyan, #00d9ff);
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 1rem 0;
+      background: linear-gradient(135deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem 1rem;
+    }
+    
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: rgba(26, 30, 61, 0.6);
+      border-radius: 8px;
+      border: 1px solid rgba(0, 217, 255, 0.3);
+    }
+    
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .filter-group label {
+      font-size: 0.9rem;
+      color: var(--primary-cyan, #00d9ff);
+      font-weight: 600;
+    }
+    
+    .filter-group select {
+      padding: 0.5rem;
+      background: rgba(10, 14, 39, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.5);
+      border-radius: 4px;
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+    }
+    
+    .filter-group select:hover {
+      border-color: var(--primary-cyan, #00d9ff);
+    }
+    
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .article-card {
+      background: rgba(26, 30, 61, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .article-card:hover {
+      border-color: var(--primary-cyan, #00d9ff);
+      box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    
+    .article-date {
+      color: var(--primary-cyan, #00d9ff);
+    }
+    
+    .article-type {
+      padding: 0.2rem 0.6rem;
+      background: rgba(0, 217, 255, 0.1);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .article-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      color: #fff;
+      line-height: 1.4;
+    }
+    
+    .article-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .article-title a:hover {
+      color: var(--primary-cyan, #00d9ff);
+    }
+    
+    .article-excerpt {
+      color: #b0b0b0;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+    
+    .tag {
+      padding: 0.3rem 0.6rem;
+      background: rgba(255, 0, 110, 0.1);
+      border: 1px solid rgba(255, 0, 110, 0.3);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--primary-magenta, #ff006e);
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: #888;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      background: rgba(26, 30, 61, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 4px;
+      color: var(--primary-cyan, #00d9ff);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      border-color: var(--primary-cyan, #00d9ff);
+      background: rgba(0, 217, 255, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .filter-bar {
+        flex-direction: column;
+      }
+      
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-section">
+    <div class="header-content">
+      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor News</h1>
+      <p class="subtitle">The Economist-style political journalism • Systematic transparency • Democratic accountability</p>
+    </div>
+  </div>
+  
+  <div class="container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label for="filter-type">Article Type</label>
+        <select id="filter-type">
+          <option value="all">All Types</option>
+          <option value="retrospective">Retrospective</option>
+          <option value="prospective">Prospective (Week Ahead)</option>
+          <option value="analysis">Analysis</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="filter-topic">Topic</label>
+        <select id="filter-topic">
+          <option value="all">All Topics</option>
+          <option value="eu">EU Affairs</option>
+          <option value="government">Government</option>
+          <option value="parliament">Parliament</option>
+          <option value="committees">Committees</option>
+          <option value="legislation">Legislation</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="filter-sort">Sort By</label>
+        <select id="filter-sort">
+          <option value="date-desc">Newest First</option>
+          <option value="date-asc">Oldest First</option>
+          <option value="title">Title A-Z</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="articles-grid" id="articles-grid">
+      <!-- Articles dynamically loaded via JavaScript -->
+    </div>
+    
+    <div class="no-results" id="no-results" style="display: none;">
+      <p>No articles found matching your filters.</p>
+    </div>
+  </div>
+  
+  <script>
+    // News articles metadata
+    const articles = [
+      {
+        title: "Week Ahead: Brussels Summit Tests Swedish EU Strategy",
+        date: "2026-02-10",
+        type: "prospective",
+        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
+        excerpt: "Critical week for Swedish European policy as PM Kristersson attends informal leaders summit while EU Committee follows up on defense and economic issues.",
+        topics: ["eu", "defense", "parliament", "citizenship", "environment"],
+        tags: ["EU Summit", "Brussels", "Defense Policy", "Parliamentary Oversight"]
+      },
+      {
+        title: "Prime Minister Faces Parliament Before Brussels Summit",
+        date: "2026-02-10",
+        type: "retrospective",
+        slug: "2026-02-10-pm-eu-summit-en.html",
+        excerpt: "In rare open EU Committee meeting, PM Ulf Kristersson consults Riksdag before informal leaders summit while government confronts mounting pressure on economic crime and citizenship policy.",
+        topics: ["eu", "government", "parliament"],
+        tags: ["EU", "Prime Minister", "Economic Crime", "Citizenship"]
+      },
+      {
+        title: "Biodiversity Strategy and Citizenship Reform Announced",
+        date: "2026-02-10",
+        type: "retrospective",
+        slug: "2026-02-10-biodiversity-citizenship-en.html",
+        excerpt: "Government announces comprehensive biodiversity strategy and signals major citizenship reform as coalition navigates competing priorities on environment and immigration.",
+        topics: ["environment", "government", "legislation"],
+        tags: ["Biodiversity", "Citizenship", "Environment", "Immigration"]
+      },
+      {
+        title: "Government Propositions February 2026",
+        date: "2026-02-07",
+        type: "analysis",
+        slug: "2026-02-government-propositions-en.html",
+        excerpt: "Policy offensive across financial supervision, renewable energy, and property security marks intensive legislative push before spring recess.",
+        topics: ["government", "legislation", "parliament"],
+        tags: ["Propositions", "Finance", "Climate", "Property", "Tax"]
+      },
+      {
+        title: "Committee Reports February 2026",
+        date: "2026-02-06",
+        type: "analysis",
+        slug: "2026-02-committee-reports-en.html",
+        excerpt: "Parliamentary committees deliver comprehensive reports spanning education, defense, and social policy as Riksdag enters critical decision phase.",
+        topics: ["committees", "parliament"],
+        tags: ["Committee Reports", "Education", "Defense", "Social Policy"]
+      },
+      {
+        title: "Opposition Motions February 2026",
+        date: "2026-02-07",
+        type: "analysis",
+        slug: "2026-02-opposition-motions-en.html",
+        excerpt: "Opposition parties intensify legislative pressure with comprehensive motion packages targeting government policy across economic crime, healthcare, and climate.",
+        topics: ["parliament", "legislation"],
+        tags: ["Opposition", "Motions", "Economic Crime", "Healthcare"]
+      },
+      {
+        title: "Parliament Agenda - Week Overview",
+        date: "2026-02-09",
+        type: "prospective",
+        slug: "2026-02-parliament-agenda-en.html",
+        excerpt: "Comprehensive preview of upcoming parliamentary activity including committee meetings, chamber debates, and ministerial questions.",
+        topics: ["parliament"],
+        tags: ["Parliament", "Agenda", "Weekly Preview"]
+      },
+      {
+        title: "The Week Ahead",
+        date: "2026-02-09",
+        type: "prospective",
+        slug: "2026-02-week-ahead-en.html",
+        excerpt: "Looking ahead at key political developments, parliamentary activity, and government decisions in the coming week.",
+        topics: ["parliament", "government"],
+        tags: ["Week Ahead", "Preview", "Political Calendar"]
+      }
+    ];
+    
+    let filteredArticles = [...articles];
+    
+    function renderArticles(articlesToRender) {
+      const grid = document.getElementById('articles-grid');
+      const noResults = document.getElementById('no-results');
+      
+      if (articlesToRender.length === 0) {
+        grid.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+      
+      noResults.style.display = 'none';
+      
+      grid.innerHTML = articlesToRender.map(article => `
+        <article class="article-card">
+          <div class="article-meta">
+            <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
+            <span class="article-type">${article.type}</span>
+          </div>
+          <h2 class="article-title">
+            <a href="${article.slug}">${article.title}</a>
+          </h2>
+          <p class="article-excerpt">${article.excerpt}</p>
+          <div class="article-tags">
+            ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+        </article>
+      `).join('');
+    }
+    
+    function formatDate(dateStr) {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+    
+    function filterArticles() {
+      const typeFilter = document.getElementById('filter-type').value;
+      const topicFilter = document.getElementById('filter-topic').value;
+      const sortFilter = document.getElementById('filter-sort').value;
+      
+      let filtered = [...articles];
+      
+      // Apply type filter
+      if (typeFilter !== 'all') {
+        filtered = filtered.filter(article => article.type === typeFilter);
+      }
+      
+      // Apply topic filter
+      if (topicFilter !== 'all') {
+        filtered = filtered.filter(article => article.topics.includes(topicFilter));
+      }
+      
+      // Apply sorting
+      switch(sortFilter) {
+        case 'date-desc':
+          filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+          break;
+        case 'date-asc':
+          filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+          break;
+        case 'title':
+          filtered.sort((a, b) => a.title.localeCompare(b.title));
+          break;
+      }
+      
+      filteredArticles = filtered;
+      renderArticles(filteredArticles);
+    }
+    
+    // Event listeners
+    document.getElementById('filter-type').addEventListener('change', filterArticles);
+    document.getElementById('filter-topic').addEventListener('change', filterArticles);
+    document.getElementById('filter-sort').addEventListener('change', filterArticles);
+    
+    // Initial render
+    filterArticles();
+  </script>
+</body>
+</html>
