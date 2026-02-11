@@ -144,11 +144,19 @@ function generateSitemap() {
   const newsIndexSvMtime = getFileModTime(path.join(NEWS_DIR, 'index_sv.html'));
   const newsIndexMaxMtime = new Date(Math.max(new Date(newsIndexEnMtime), new Date(newsIndexSvMtime))).toISOString();
   
-  xml += generateUrlEntry('news/', newsIndexMaxMtime, 'daily', '0.9', [
+  // Build alternates for news index pages that actually exist
+  const newsIndexAlternates = [
     { lang: 'en', href: 'news/' },
     { lang: 'sv', href: 'news/index_sv.html' },
+    { lang: 'da', href: 'news/index_da.html' },
+    { lang: 'no', href: 'news/index_no.html' },
+    { lang: 'fi', href: 'news/index_fi.html' },
+    { lang: 'de', href: 'news/index_de.html' },
+    { lang: 'fr', href: 'news/index_fr.html' },
     { lang: 'x-default', href: 'news/' }
-  ]);
+  ];
+  
+  xml += generateUrlEntry('news/', newsIndexMaxMtime, 'daily', '0.9', newsIndexAlternates);
   
   // News articles
   const articles = getNewsArticles();
