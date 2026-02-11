@@ -263,10 +263,10 @@ function createProductivityInfluenceChart(data) {
   const chartData = {
     datasets: [{
       label: 'MPs',
-      data: Array.from({length: 50}, () => ({
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        r: Math.random() * 20 + 5
+      data: Array.from({length: 50}, (_, i) => ({
+        x: (i * 2) % 100,
+        y: (i * 3 + 10) % 100,
+        r: (i % 20) + 5
       })),
       backgroundColor: 'rgba(0, 217, 255, 0.5)',
       borderColor: '#00d9ff',
@@ -442,27 +442,28 @@ async function loadDashboardData() {
   try {
     // PLACEHOLDER DATA - Replace with CIA CSV fetching
     // Example: const productive = await fetchCIAData('top10_most_productive.csv');
+    const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
     const sampleTop10Productive = Array.from({length: 10}, (_, i) => ({
       name: `MP ${i + 1}`,
-      party: ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'][Math.floor(Math.random() * 8)],
+      party: parties[i % 8],
       score: (100 - i * 5).toString()
     }));
     
     const sampleTop10Influential = Array.from({length: 10}, (_, i) => ({
       name: `MP ${i + 11}`,
-      party: ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'][Math.floor(Math.random() * 8)],
+      party: parties[(i + 1) % 8],
       score: (95 - i * 4).toString()
     }));
     
     const sampleTop10RisingStars = Array.from({length: 10}, (_, i) => ({
       name: `MP ${i + 21}`,
-      party: ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'][Math.floor(Math.random() * 8)],
+      party: parties[(i + 2) % 8],
       score: (90 - i * 3).toString()
     }));
     
     const sampleTop10Controversial = Array.from({length: 10}, (_, i) => ({
       name: `MP ${i + 31}`,
-      party: ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'][Math.floor(Math.random() * 8)],
+      party: parties[(i + 3) % 8],
       score: (85 - i * 2).toString()
     }));
     
