@@ -235,8 +235,8 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 
 ### Stack
 - **Frontend:** Static HTML/CSS with JavaScript dashboards
-- **Build System:** Vite 7 (ES modules, code splitting, SRI hashes)
-- **Visualization:** Chart.js 4 + D3.js 7 via jsDelivr CDN (SRI + CSP enforced)
+- **Build System:** Vite 7 (ES modules, code splitting)
+- **Visualization:** Chart.js 4 + D3.js 7 hosted locally on CloudFront
 - **Testing:** Vitest (unit), Cypress (E2E) - 49 tests passing
 - **Styling:** Custom CSS with cyberpunk theme, responsive design
 - **Hosting:** GitHub Pages with CloudFront CDN
@@ -436,7 +436,7 @@ npm run htmlhint && npm test && npm run build
 
 ### GitHub Copilot Integration
 - [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (13 agents)
-- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (40 skills)
+- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (56 skills) ✨ **UPDATED 2026-02-11**
 - [`.github/agents/`](.github/agents/) - Agent configuration files
 - [`.github/skills/`](.github/skills/) - Skill libraries
 
@@ -455,7 +455,7 @@ npm run htmlhint && npm test && npm run build
 - **content-generator** ✨ **NEW** - Automated news generation, intelligence reports, multi-language content
 - **devops-engineer** ✨ **NEW** - CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring
 
-**Available Skills (40)** ⬆️ **UPDATED**:
+**Available Skills (41)** ⬆️ **UPDATED**:
 
 *Core Infrastructure (7):*
 - **hack23-isms-compliance** - ISMS framework requirements
@@ -487,7 +487,7 @@ npm run htmlhint && npm test && npm run build
 - **secure-code-review** - HTML/CSS/JS security review
 - **security-documentation** - ISMS documentation standards
 
-*Development & Operations (10):* ⬆️ **EXPANDED**
+*Development & Operations (11):* ⬆️ **EXPANDED**
 - **c4-architecture-documentation** - C4 model and Mermaid diagrams
 - **github-actions-workflows** - CI/CD patterns and security
 - **code-quality-checks** - HTMLHint, CSSLint, linkinator, axe-core
@@ -496,6 +496,7 @@ npm run htmlhint && npm test && npm run build
 - **automated-content-generation** ✨ **NEW** - News generation, intelligence reports
 - **performance-optimization** ✨ **NEW** - Core Web Vitals, bundle size, caching
 - **api-integration** ✨ **NEW** - REST/GraphQL clients, rate limiting
+- **github-agentic-workflows** ✨ **NEW** - AI-powered repository automation, MCP tools, safe outputs
 
 *UI/UX & Design (4):* ⬆️ **EXPANDED**
 - **responsive-design** - Mobile-first, CSS Grid/Flexbox, breakpoints (320px-1440px+)

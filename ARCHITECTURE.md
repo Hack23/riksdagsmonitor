@@ -90,7 +90,7 @@ graph TB
 
 | Component | Responsibility | Technology | Status |
 |-----------|---------------|------------|--------|
-| **Interactive Dashboards** | Data visualization | Chart.js v4.4.1 + chartjs-plugin-annotation, D3.js v7 | ✅ Active |
+| **Interactive Dashboards** | Data visualization | Chart.js v4.4.1 + plugins (annotation, date-fns adapter), D3.js v7, Papa Parse v5.5.3 | ✅ Active |
 | **Static Website** | Present intelligence content | HTML/CSS/JavaScript | ✅ Active |
 | **AWS CloudFront** | Primary CDN | 600+ global PoPs | ✅ Active |
 | **S3 us-east-1** | Primary storage | Amazon S3 + versioning | ✅ Active |
@@ -196,10 +196,12 @@ graph TD
         Fonts[Google Fonts<br/>Inter, Orbitron]
     end
     
-    subgraph "External Libraries"
-        Chart[Chart.js v4.4.1<br/>via CDN + SRI]
-        ChartPlugin[chartjs-plugin-annotation v3.x<br/>via CDN + SRI]
-        D3[D3.js v7<br/>via CDN + SRI]
+    subgraph ExtLibs["External Libraries"]
+        Chart[Chart.js v4.4.1<br/>Hosted on CloudFront]
+        ChartPlugin[chartjs-plugin-annotation v3.0.1<br/>Hosted on CloudFront]
+        ChartAdapter[chartjs-adapter-date-fns v3.0.0<br/>Hosted on CloudFront]
+        D3[D3.js v7<br/>Hosted on CloudFront]
+        Papa[Papa Parse v5.5.3<br/>Hosted on CloudFront]
     end
     
     subgraph "Configuration"
@@ -565,7 +567,10 @@ graph TB
 | **CSS3** | Standard | Styling & layout | Responsive design, no framework overhead |
 | **JavaScript ES6+** | Standard | Interactive dashboards | Modern browser features |
 | **Chart.js** | v4.4.1 | Data visualization | Industry standard, 62k+ GitHub stars |
+| **chartjs-plugin-annotation** | v3.0.1 | Chart annotations | Official Chart.js plugin |
+| **chartjs-adapter-date-fns** | v3.0.0 | Time-series charts | Official date adapter with date-fns bundled |
 | **D3.js** | v7 | Advanced visualizations | Powerful, flexible, 108k+ GitHub stars |
+| **Papa Parse** | v5.5.3 | CSV parsing | Reliable CSV parser, 12k+ GitHub stars |
 | **Google Fonts** | Latest | Typography | Professional appearance, cached globally |
 
 ### 8.2 Infrastructure Stack
@@ -589,8 +594,9 @@ graph TB
 | **AWS S3** | Infrastructure | LOW | Cross-region replication, versioning |
 | **AWS Route 53** | Infrastructure | LOW | 100% SLA, health checks |
 | **GitHub Pages** | Infrastructure (DR) | LOW | 99.9% SLA |
-| **Chart.js ecosystem CDN assets (Chart.js, chartjs-plugin-annotation)** | External Library | LOW | SRI hash validation for core library and plugins, trusted CDN |
-| **D3.js CDN** | External Library | LOW | SRI hash validation, trusted CDN |
+| **Chart.js ecosystem assets (Chart.js, chartjs-plugin-annotation, chartjs-adapter-date-fns)** | JavaScript Library | LOW | Hosted locally on CloudFront/S3 (js/lib/), no external CDN dependencies |
+| **D3.js** | JavaScript Library | LOW | Hosted locally on CloudFront/S3 (js/lib/), no external CDN dependencies |
+| **Papa Parse** | JavaScript Library | LOW | Hosted locally on CloudFront/S3 (js/lib/), no external CDN dependencies |
 | **Google Fonts** | CDN | LOW | Cached, fallback fonts available |
 | **CIA Platform** | External Service | LOW | Independent service, documented links |
 

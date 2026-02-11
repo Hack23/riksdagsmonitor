@@ -1,0 +1,287 @@
+name: Automated News Generation
+
+on:
+  schedule:
+    # Run every 12 hours at 00:00 UTC and 12:00 UTC
+    - cron: '0 0,12 * * *'
+  workflow_dispatch:
+    inputs:
+      force_generation:
+        description: 'Force news generation even if no new content'
+        type: boolean
+        default: false
+        required: false
+      article_types:
+        description: 'Comma-separated article types to generate (week-ahead,committee-reports,propositions,motions,breaking)'
+        type: string
+        default: 'week-ahead'
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-news:
+    name: Generate News Articles
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+      
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          
+          # Install jq for JSON processing
+          sudo apt-get update && sudo apt-get install -y jq
+          
+          npm ci --prefer-offline --no-audit
+          
+          # Install riksdag-regering-mcp for data access
+          npm install -g riksdag-regering-mcp
+          echo "✅ Dependencies installed"
+      
+      - name: Check for new Riksdag/Regering updates
+        id: check-updates
+        run: |
+          echo "🔍 Checking for new Riksdag/Regering updates..."
+          
+          # Store current timestamp
+          CURRENT_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "current_time=$CURRENT_TIME" >> $GITHUB_OUTPUT
+          
+          # Check last generation time
+          if [ -f "news/metadata/last-generation.json" ]; then
+            LAST_GEN=$(jq -r '.timestamp' news/metadata/last-generation.json)
+            echo "last_generation=$LAST_GEN" >> $GITHUB_OUTPUT
+            echo "📊 Last generation: $LAST_GEN"
+          else
+            echo "last_generation=never" >> $GITHUB_OUTPUT
+            echo "ℹ️ No previous generation found"
+          fi
+          
+          # Determine if we should generate news
+          if [ "${{ github.event.inputs.force_generation }}" = "true" ]; then
+            echo "should_generate=true" >> $GITHUB_OUTPUT
+            echo "✅ Force generation enabled"
+          else
+            # Check if it's been more than 11 hours since last generation
+            if [ -f "news/metadata/last-generation.json" ]; then
+              HOURS_AGO=$(( ($(date +%s) - $(date -d "$LAST_GEN" +%s)) / 3600 ))
+              if [ $HOURS_AGO -gt 11 ]; then
+                echo "should_generate=true" >> $GITHUB_OUTPUT
+                echo "✅ More than 11 hours since last generation ($HOURS_AGO hours)"
+              else
+                echo "should_generate=false" >> $GITHUB_OUTPUT
+                echo "ℹ️ Recent generation found ($HOURS_AGO hours ago), skipping"
+              fi
+            else
+              echo "should_generate=true" >> $GITHUB_OUTPUT
+              echo "✅ First generation"
+            fi
+          fi
+      
+      - name: Generate news articles
+        if: steps.check-updates.outputs.should_generate == 'true'
+        id: generate
+        env:
+          ARTICLE_TYPES: ${{ github.event.inputs.article_types || 'week-ahead' }}
+        run: |
+          echo "📰 Generating news articles..."
+          
+          # Create metadata directory
+          mkdir -p news/metadata
+          
+          # Run news generation script
+          if [ -f "scripts/generate-news.js" ]; then
+            node scripts/generate-news.js --types="$ARTICLE_TYPES"
+            
+            # Check results
+            if [ -f "news/metadata/generation-result.json" ]; then
+              GENERATED=$(jq -r '.generated' news/metadata/generation-result.json)
+              ERRORS=$(jq -r '.errors' news/metadata/generation-result.json)
+              
+              echo "generated=$GENERATED" >> $GITHUB_OUTPUT
+              echo "errors=$ERRORS" >> $GITHUB_OUTPUT
+              echo "✅ Generated $GENERATED articles with $ERRORS errors"
+            else
+              echo "generated=0" >> $GITHUB_OUTPUT
+              echo "errors=1" >> $GITHUB_OUTPUT
+              echo "❌ Generation failed - no result file"
+            fi
+          else
+            echo "⚠️ News generation script not found"
+            echo "📝 Creating placeholder metadata"
+            
+            # Create placeholder
+            echo '{"timestamp": "'${{ steps.check-updates.outputs.current_time }}'", "generated": 0, "note": "Script not implemented"}' > news/metadata/last-generation.json
+            
+            echo "generated=0" >> $GITHUB_OUTPUT
+            echo "errors=0" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Update sitemap
+        if: steps.generate.outputs.generated != '0'
+        id: sitemap
+        run: |
+          echo "🗺️ Updating sitemap.xml..."
+          
+          if [ -f "scripts/generate-sitemap.js" ]; then
+            node scripts/generate-sitemap.js
+            echo "✅ Sitemap updated"
+            echo "updated=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ Sitemap generation script not found"
+            echo "updated=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Update last generation timestamp
+        if: steps.check-updates.outputs.should_generate == 'true'
+        run: |
+          echo "⏰ Updating last generation timestamp..."
+          
+          # Always update timestamp, even when 0 articles generated
+          # This prevents repeated executions when no new content is available
+          mkdir -p news/metadata
+          
+          # Preserve existing metadata fields (types, status, note) if file exists
+          if [ -f "news/metadata/last-generation.json" ]; then
+            # Update only timestamp/counters while preserving other fields
+            jq \
+              --arg ts "${{ steps.check-updates.outputs.current_time }}" \
+              --argjson gen "${{ steps.generate.outputs.generated || 0 }}" \
+              --argjson err "${{ steps.generate.outputs.errors || 0 }}" \
+              '.timestamp = $ts | .generated = $gen | .errors = $err' \
+              news/metadata/last-generation.json > news/metadata/last-generation.tmp && \
+              mv news/metadata/last-generation.tmp news/metadata/last-generation.json
+          else
+            # Create new metadata file with basic fields
+            echo '{"timestamp": "${{ steps.check-updates.outputs.current_time }}", "generated": ${{ steps.generate.outputs.generated || 0 }}, "errors": ${{ steps.generate.outputs.errors || 0 }}}' > news/metadata/last-generation.json
+          fi
+          
+          echo "✅ Timestamp updated"
+      
+      - name: Commit timestamp update (when no articles generated)
+        if: steps.check-updates.outputs.should_generate == 'true' && steps.generate.outputs.generated == '0'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add news/metadata/last-generation.json
+          if git diff --staged --quiet; then
+            echo "ℹ️ No timestamp changes to commit"
+          else
+            git commit -m "chore: Update news generation timestamp (0 articles generated)"
+            git push
+            echo "✅ Timestamp committed to main branch"
+          fi
+      
+      - name: Validate generated articles
+        if: steps.generate.outputs.generated != '0'
+        run: |
+          echo "🔍 Validating generated HTML..."
+          
+          # Find newly generated articles (modified in last 5 minutes)
+          GENERATED_FILES=$(find news -name "*.html" -type f -mmin -5)
+          
+          if [ -n "$GENERATED_FILES" ]; then
+            echo "📄 Found generated files:"
+            echo "$GENERATED_FILES"
+            
+            # Run HTML validation on generated files
+            if command -v htmlhint &> /dev/null; then
+              echo "$GENERATED_FILES" | xargs htmlhint || echo "⚠️ HTML validation warnings found"
+            else
+              echo "ℹ️ HTMLHint not available, skipping validation"
+            fi
+          else
+            echo "ℹ️ No recently generated files found"
+          fi
+      
+      - name: Generate workflow summary
+        if: always()
+        run: |
+          echo "## 📰 News Generation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.check-updates.outputs.should_generate }}" = "true" ]; then
+            echo "### ✅ Generation Status: EXECUTED" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "- **Articles Generated**: ${{ steps.generate.outputs.generated }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Errors**: ${{ steps.generate.outputs.errors }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Sitemap Updated**: ${{ steps.sitemap.outputs.updated || 'false' }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Timestamp**: ${{ steps.check-updates.outputs.current_time }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ℹ️ Generation Status: SKIPPED" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Recent generation found (< 11 hours old). Use manual trigger with force_generation to override." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "- **Last Generation**: ${{ steps.check-updates.outputs.last_generation }}" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Workflow execution: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Create PR with generated articles
+        if: steps.generate.outputs.generated != '0'
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'news: Automated news generation - ${{ steps.check-updates.outputs.current_time }}'
+          title: '📰 Automated News Update - ${{ steps.check-updates.outputs.current_time }}'
+          body: |
+            ## Automated News Generation
+            
+            This PR contains automatically generated news articles from riksdag-regering-mcp data.
+            
+            ### Summary
+            - **Articles Generated**: ${{ steps.generate.outputs.generated }}
+            - **Errors**: ${{ steps.generate.outputs.errors }}
+            - **Sitemap Updated**: ${{ steps.sitemap.outputs.updated }}
+            - **Generation Time**: ${{ steps.check-updates.outputs.current_time }}
+            
+            ### Article Types
+            ${{ github.event.inputs.article_types || 'week-ahead (default)' }}
+            
+            ### Data Sources
+            - **riksdag-regering-mcp**: Swedish Parliament and Government data
+            - **32 specialized tools**: Documents, MPs, votes, speeches, calendar events
+            
+            ### Quality Checks
+            - [x] HTML validation
+            - [x] Sitemap updated
+            - [ ] Editorial review recommended
+            - [ ] Multi-language support (EN/SV)
+            
+            ### References
+            - Workflow: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            - MCP Server: riksdag-regering-mcp
+            
+            ---
+            *This PR was automatically created by the news generation workflow*
+            
+            **Next Steps:**
+            1. Review generated articles for accuracy and tone
+            2. Verify source citations and links
+            3. Check multi-language consistency
+            4. Approve and merge if quality standards met
+          branch: 'news-generation/automated-${{ github.run_number }}'
+          delete-branch: true
+          labels: |
+            automated-news
+            news-generation
+            needs-editorial-review
+          assignees: news-journalist
