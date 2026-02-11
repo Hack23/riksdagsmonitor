@@ -443,7 +443,7 @@
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${typeLabels[article.type] || article.type}</span>
-            <span class="language-badge" title="Article language: English">🇬🇧 EN</span>
+            <span class="language-badge" aria-label="Article language: English"><span aria-hidden="true">🇬🇧</span> EN</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
