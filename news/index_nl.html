@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>חדשות - Riksdagsmonitor</title>
-  <meta name="description" content="חדשות וניתוחים אחרונים מהפרלמנט השוודי (ריקסדאג). עיתונות פוליטית בסגנון The Economist המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.">
-  <meta name="keywords" content="חדשות ריקסדאג, פרלמנט שבדיה, ניתוח ממשלה, עיתונות פוליטית, שקיפות, דמוקרטיה">
+  <title>Nieuws - Riksdagsmonitor</title>
+  <meta name="description" content="Laatste nieuws en analyses uit de Zweedse Riksdag. The Economist-stijl politieke journalistiek over parlement, regering en agentschappen met systematische transparantie.">
+  <meta name="keywords" content="riksdag nieuws, zweeds parlement, regeringsanalyse, politieke journalistiek, transparantie, democratie">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
-  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_he.html">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_nl.html">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="חדשות - Riksdagsmonitor">
-  <meta property="og:description" content="עיתונות פוליטית אחרונה מהפרלמנט השוודי">
+  <meta property="og:title" content="Nieuws - Riksdagsmonitor">
+  <meta property="og:description" content="Laatste politieke journalistiek uit de Zweedse Riksdag">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_he.html">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_nl.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
   <meta property="og:site_name" content="Riksdagsmonitor">
-  <meta property="og:locale" content="he_IL">
+  <meta property="og:locale" content="nl_NL">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="חדשות - Riksdagsmonitor">
-  <meta name="twitter:description" content="עיתונות פוליטית אחרונה מהפרלמנט השוודי">
+  <meta name="twitter:title" content="Nieuws - Riksdagsmonitor">
+  <meta name="twitter:description" content="Laatste politieke journalistiek uit de Zweedse Riksdag">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
+  <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
+  <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
   <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
   <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
-  <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html">
-  <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/news/index_ko.html">
-  <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/index_zh.html">
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
   
   <!-- Fonts -->
@@ -229,23 +228,6 @@
       background: rgba(0, 217, 255, 0.1);
     }
     
-    /* RTL-specific styles */
-    [dir="rtl"] .filter-bar {
-      flex-direction: row-reverse;
-    }
-    
-    [dir="rtl"] .article-meta {
-      flex-direction: row-reverse;
-    }
-    
-    [dir="rtl"] .article-tags {
-      flex-direction: row-reverse;
-    }
-    
-    [dir="rtl"] .back-link::before {
-      content: "← ";
-    }
-    
     @media (max-width: 768px) {
       .filter-bar {
         flex-direction: column;
@@ -260,43 +242,43 @@
 <body>
   <div class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> חדשות Riksdagsmonitor</h1>
-      <p class="subtitle">עיתונות פוליטית בסגנון The Economist • שקיפות שיטתית • אחריות דמוקרטית</p>
+      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor Nieuws</h1>
+      <p class="subtitle">The Economist-stijl politieke journalistiek • Systematische transparantie • Democratische verantwoording</p>
     </div>
   </div>
   
   <div class="container">
-    <a href="../index_he.html" class="back-link">חזרה ללוח המחוונים</a>
+    <a href="../index_nl.html" class="back-link">← Terug naar Dashboard</a>
     
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">סוג כתבה</label>
+        <label for="filter-type">Artikeltype</label>
         <select id="filter-type">
-          <option value="all">כל הסוגים</option>
-          <option value="retrospective">רטרוספקטיבי</option>
-          <option value="prospective">פרוספקטיבי (השבוע הבא)</option>
-          <option value="analysis">ניתוח</option>
+          <option value="all">Alle Typen</option>
+          <option value="retrospective">Retrospectief</option>
+          <option value="prospective">Prospectief (Volgende Week)</option>
+          <option value="analysis">Analyse</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">נושא</label>
+        <label for="filter-topic">Onderwerp</label>
         <select id="filter-topic">
-          <option value="all">כל הנושאים</option>
-          <option value="eu">ענייני האיחוד האירופי</option>
-          <option value="government">ממשלה</option>
-          <option value="parliament">פרלמנט</option>
-          <option value="committees">ועדות</option>
-          <option value="legislation">חקיקה</option>
+          <option value="all">Alle Onderwerpen</option>
+          <option value="eu">EU-zaken</option>
+          <option value="government">Regering</option>
+          <option value="parliament">Parlement</option>
+          <option value="committees">Commissies</option>
+          <option value="legislation">Wetgeving</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">מיין לפי</label>
+        <label for="filter-sort">Sorteren op</label>
         <select id="filter-sort">
-          <option value="date-desc">החדש ביותר תחילה</option>
-          <option value="date-asc">הישן ביותר תחילה</option>
-          <option value="title">כותרת א-ת</option>
+          <option value="date-desc">Nieuwste Eerst</option>
+          <option value="date-asc">Oudste Eerst</option>
+          <option value="title">Titel A-Z</option>
         </select>
       </div>
     </div>
@@ -306,7 +288,7 @@
     </div>
     
     <div class="no-results" id="no-results" style="display: none;">
-      <p>לא נמצאו כתבות התואמות את הקריטריונים.</p>
+      <p>Geen artikelen gevonden die overeenkomen met uw filters.</p>
     </div>
   </div>
   
@@ -314,76 +296,76 @@
     // News articles metadata
     const articles = [
       {
-        title: "השבוע הבא: פסגת בריסל בוחנת את האסטרטגיה השבדית באיחוד האירופי",
+        title: "Volgende Week: Brusselse Top Test Zweedse EU-Strategie",
         date: "2026-02-10",
         type: "prospective",
         slug: "2026-02-10-week-ahead-feb-10-17-en.html",
-        excerpt: "שבוע קריטי למדיניות האירופית השבדית כאשר ראש הממשלה קריסטרסון משתתף בפסגת מנהיגים לא פורמלית בעוד ועדת האיחוד האירופי עוקבת אחר סוגיות הגנה וכלכלה.",
+        excerpt: "Kritieke week voor Zweeds Europees beleid terwijl premier Kristersson informele leiders top bijwoont terwijl EU-commissie defensie- en economische kwesties opvolgt.",
         topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["פסגת האיחוד האירופי", "בריסל", "מדיניות הגנה", "פיקוח פרלמנטרי"]
+        tags: ["EU-top", "Brussel", "Defensiebeleid", "Parlementair Toezicht"]
       },
       {
-        title: "ראש הממשלה עומד בפני הפרלמנט לפני פסגת בריסל",
+        title: "Premier Staat Parlement te Woord Voor Brusselse Top",
         date: "2026-02-10",
         type: "retrospective",
         slug: "2026-02-10-pm-eu-summit-en.html",
-        excerpt: "בישיבה פתוחה נדירה של ועדת האיחוד האירופי, ראש הממשלה אולף קריסטרסון מתייעץ עם הריקסדאג לפני פסגת מנהיגים לא פורמלית בעוד הממשלה מתמודדת עם לחץ גובר בנושא פשיעה כלכלית ומדיניות אזרחות.",
+        excerpt: "In zeldzame openbare EU-commissievergadering raadpleegt premier Ulf Kristersson de Riksdag voor informele leiders top terwijl regering toenemende druk confronteert over economische criminaliteit en staatsburgerbeleid.",
         topics: ["eu", "government", "parliament"],
-        tags: ["האיחוד האירופי", "ראש הממשלה", "פשיעה כלכלית", "אזרחות"]
+        tags: ["EU", "Premier", "Economische Criminaliteit", "Staatsburgerschap"]
       },
       {
-        title: "הכרזה על אסטרטגיית מגוון ביולוגי ורפורמה באזרחות",
+        title: "Biodiversiteitsstrategie en Staatsburgerhervorming Aangekondigd",
         date: "2026-02-10",
         type: "retrospective",
         slug: "2026-02-10-biodiversity-citizenship-en.html",
-        excerpt: "הממשלה מכריזה על אסטרטגיה מקיפה למגוון ביולוגי ומסמנת רפורמה משמעותית באזרחות בעוד הקואליציה מנווטת בין סדרי עדיפויות מתחרים בנושא סביבה והגירה.",
+        excerpt: "Regering kondigt uitgebreide biodiversiteitsstrategie aan en signaleert grote staatsburgerhervorming terwijl coalitie concurrerende prioriteiten navigeert op milieu en immigratie.",
         topics: ["environment", "government", "legislation"],
-        tags: ["מגוון ביולוגי", "אזרחות", "סביבה", "הגירה"]
+        tags: ["Biodiversiteit", "Staatsburgerschap", "Milieu", "Immigratie"]
       },
       {
-        title: "הצעות ממשלה פברואר 2026",
+        title: "Regeringsvoorstellen Februari 2026",
         date: "2026-02-07",
         type: "analysis",
         slug: "2026-02-government-propositions-en.html",
-        excerpt: "התקפה מדינית על פני פיקוח פיננסי, אנרגיה מתחדשת וביטחון נכסים מסמנת דחיפה חקיקתית אינטנסיבית לפני החופשה האביבית.",
+        excerpt: "Beleidsoffensief op financieel toezicht, hernieuwbare energie en eigendomsbeveiliging markeert intensieve wetgevingsimpuls voor voorjaarsreces.",
         topics: ["government", "legislation", "parliament"],
-        tags: ["הצעות", "פיננסים", "אקלים", "נכסים", "מיסים"]
+        tags: ["Voorstellen", "Financiën", "Klimaat", "Eigendom", "Belasting"]
       },
       {
-        title: "דוחות ועדות פברואר 2026",
+        title: "Commissierapporten Februari 2026",
         date: "2026-02-06",
         type: "analysis",
         slug: "2026-02-committee-reports-en.html",
-        excerpt: "ועדות פרלמנטריות מגישות דוחות מקיפים המשתרעים על חינוך, הגנה ומדיניות חברתית כאשר הריקסדאג נכנס לשלב החלטה קריטי.",
+        excerpt: "Parlementaire commissies leveren uitgebreide rapporten over onderwijs, defensie en sociaal beleid terwijl Riksdag kritieke beslissingsfase ingaat.",
         topics: ["committees", "parliament"],
-        tags: ["דוחות ועדה", "חינוך", "הגנה", "מדיניות חברתית"]
+        tags: ["Commissierapporten", "Onderwijs", "Defensie", "Sociaal Beleid"]
       },
       {
-        title: "הצעות אופוזיציה פברואר 2026",
+        title: "Oppositiemoties Februari 2026",
         date: "2026-02-07",
         type: "analysis",
         slug: "2026-02-opposition-motions-en.html",
-        excerpt: "מפלגות האופוזיציה מגבירות לחץ חקיקתי עם חבילות הצעות מקיפות המכוונות למדיניות הממשלתית על פני פשיעה כלכלית, שירותי בריאות ואקלים.",
+        excerpt: "Oppositiepartijen intensiveren wetgevingsdruk met uitgebreide motiepakketten gericht op regeringsbeleid over economische criminaliteit, gezondheidszorg en klimaat.",
         topics: ["parliament", "legislation"],
-        tags: ["אופוזיציה", "הצעות", "פשיעה כלכלית", "שירותי בריאות"]
+        tags: ["Oppositie", "Moties", "Economische Criminaliteit", "Gezondheidszorg"]
       },
       {
-        title: "סדר יום הפרלמנט - סקירת השבוע",
+        title: "Parlementsagenda - Weekoverzicht",
         date: "2026-02-09",
         type: "prospective",
         slug: "2026-02-parliament-agenda-en.html",
-        excerpt: "תצוגה מקדימה מקיפה של פעילות פרלמנטרית קרובה כולל ישיבות ועדות, דיונים באולם ושאלות שרים.",
+        excerpt: "Uitgebreid vooruitzicht op komende parlementaire activiteit inclusief commissievergaderingen, kamerdebatten en ministeriële vragen.",
         topics: ["parliament"],
-        tags: ["פרלמנט", "סדר יום", "תצוגה מקדימה שבועית"]
+        tags: ["Parlement", "Agenda", "Weekvooruitzicht"]
       },
       {
-        title: "השבוע הבא",
+        title: "De Volgende Week",
         date: "2026-02-09",
         type: "prospective",
         slug: "2026-02-week-ahead-en.html",
-        excerpt: "מבט קדימה על התפתחויות פוליטיות מרכזיות, פעילות פרלמנטרית והחלטות ממשלה בשבוע הקרוב.",
+        excerpt: "Vooruitkijkend naar belangrijke politieke ontwikkelingen, parlementaire activiteit en regeringsbesluiten in de komende week.",
         topics: ["parliament", "government"],
-        tags: ["השבוע הבא", "תצוגה מקדימה", "לוח שנה פוליטי"]
+        tags: ["Volgende Week", "Vooruitzicht", "Politieke Kalender"]
       }
     ];
     
@@ -391,9 +373,9 @@
     
     // Localized type labels
     const typeLabels = {
-      'prospective': 'פרוספקטיבי',
-      'retrospective': 'רטרוספקטיבי',
-      'analysis': 'ניתוח'
+      'prospective': 'Prospectief',
+      'retrospective': 'Retrospectief',
+      'analysis': 'Analyse'
     };
     
     function renderArticles(articlesToRender) {
@@ -429,7 +411,7 @@
       // Parse date components to avoid timezone issues
       const [year, month, day] = dateStr.split('-').map(Number);
       const date = new Date(year, month - 1, day);
-      const months = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+      const months = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
       return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
     }
     
@@ -459,7 +441,7 @@
           filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
           break;
         case 'title':
-          filtered.sort((a, b) => a.title.localeCompare(b.title, 'he'));
+          filtered.sort((a, b) => a.title.localeCompare(b.title));
           break;
       }
       
