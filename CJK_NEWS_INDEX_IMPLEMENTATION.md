@@ -208,7 +208,7 @@ Mobile-first approach with breakpoints from 320px to 1440px+.
 ### ✅ Security
 - External links use `rel="noopener noreferrer"`
 - Content Security Policy ready
-- No inline scripts (CSP compliant)
+- Inline scripts used for client-side filtering/sorting (consider externalizing for strict CSP)
 
 ### ✅ Performance
 - Font preconnect for faster loading
@@ -268,10 +268,10 @@ Scanned 3 files, no errors found (17 ms).
 - [x] UTF-8 encoding verified
 - [x] CJK fonts load properly
 - [x] Responsive design (320px - 1440px+)
-- [x] All text translated (no English remaining)
+- [x] All user-facing text translated (article type badges now localized)
 - [x] Date formatting works correctly
 - [x] Filtering system functional
-- [x] Hreflang tags complete (14 languages)
+- [x] Hreflang tags reference only existing pages (EN, SV, JA, KO, ZH)
 - [x] Meta tags properly localized
 - [x] Accessibility standards met
 - [x] External links safe (noopener noreferrer)

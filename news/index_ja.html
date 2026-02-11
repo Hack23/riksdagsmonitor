@@ -27,15 +27,6 @@
   <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
-  <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/index_no.html">
-  <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
-  <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
-  <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
-  <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
-  <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
-  <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
-  <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
   <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html">
   <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/news/index_ko.html">
   <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/index_zh.html">
@@ -44,7 +35,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../styles.css">
@@ -389,6 +380,13 @@
       }
     ];
     
+    // Localized type labels
+    const typeLabels = {
+      'prospective': 'プロスペクティブ（次週）',
+      'retrospective': 'レトロスペクティブ',
+      'analysis': '分析'
+    };
+    
     let filteredArticles = [...articles];
     
     function renderArticles(articlesToRender) {
@@ -407,7 +405,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${typeLabels[article.type] || article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
