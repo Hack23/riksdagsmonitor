@@ -119,10 +119,12 @@ See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for detailed security c
 
 ## ✨ Features
 
-- **349 Members of Parliament** - Individual MP tracking and performance metrics
+- **349 Current MPs** - Individual MP tracking and performance metrics
+- **2,494 Historical Politicians** - Complete database from 1971-2024 (50+ years)
 - **8 Political Parties** - Party performance, coalition dynamics, voting patterns
 - **45 Risk Rules** - Systematic transparency through behavioral analysis
-- **50+ Years of Data** - Historical trends and longitudinal analysis (1971-2024)
+- **3.5+ Million Votes** - Comprehensive voting record analysis
+- **109,000+ Documents** - Parliamentary documents processed and analyzed
 
 ## 🌐 Live Platform
 
@@ -135,7 +137,27 @@ See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for detailed security c
 
 ## 📊 CIA Data Products Integration
 
-Riksdagsmonitor integrates with the CIA platform through automated schema validation and data quality assurance.
+Riksdagsmonitor integrates with the CIA platform through automated data pipelines, schema validation, and daily statistics updates.
+
+### Production Database Statistics
+
+**Live Statistics** (Updated Daily at 03:00 CET):
+- **2,494 Politicians** - Complete historical database (1971-2024)
+- **349 Current MPs** - Active Members of Parliament
+- **3.5+ Million Votes** - Comprehensive voting records
+- **109,000+ Documents** - Parliamentary documents processed
+- **8,740 Committee Documents** - Committee work tracked
+- **2,308 Rule Violations** - Transparency issues identified
+
+**Data Source**: [extraction_summary_report.csv](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv)  
+**Update Schedule**: Daily automated fetch via GitHub Actions  
+**Last Extraction**: See `cia-data/production-stats.json` → `metadata.last_updated` (updated daily)
+
+**Implementation**:
+- `scripts/load-cia-stats.js` - Fetches and parses production statistics
+- `scripts/update-stats-from-cia.js` - Updates website files
+- `.github/workflows/update-cia-stats.yml` - Automated daily workflow
+- `cia-data/production-stats.json` - Cached statistics (24-hour freshness)
 
 ### Schema Integration
 - **Automated Validation** - All CIA exports validated against JSON schemas

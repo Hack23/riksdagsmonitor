@@ -1,0 +1,284 @@
+{
+  "metadata": {
+    "source_url": "https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/extraction_summary_report.csv",
+    "last_updated": "2026-02-09 03:42:53.763705",
+    "extraction_time": "2026-02-09 03:42:53.763705",
+    "generated_at": "2026-02-12T12:54:03.651Z",
+    "version": "1.0.0"
+  },
+  "counts": {
+    "total_persons": 2494,
+    "total_votes": 3529786,
+    "total_documents": 109259,
+    "total_committee_documents": 8740,
+    "total_rule_violations": 2308,
+    "total_against_proposals": 55016,
+    "total_committee_proposals": 58175,
+    "total_document_activities": 374158
+  },
+  "tables": {
+    "success": [
+      {
+        "name": "against_proposal_container",
+        "count": 5357
+      },
+      {
+        "name": "against_proposal_data",
+        "count": 55016
+      },
+      {
+        "name": "agency",
+        "count": 1
+      },
+      {
+        "name": "application_action_event",
+        "count": 459
+      },
+      {
+        "name": "application_configuration",
+        "count": 14
+      },
+      {
+        "name": "application_session",
+        "count": 189
+      },
+      {
+        "name": "assignment_data",
+        "count": 31411
+      },
+      {
+        "name": "committee_document_data",
+        "count": 8740
+      },
+      {
+        "name": "committee_proposal_component_0",
+        "count": 8740
+      },
+      {
+        "name": "committee_proposal_container",
+        "count": 7959
+      },
+      {
+        "name": "committee_proposal_data",
+        "count": 58175
+      },
+      {
+        "name": "country_element",
+        "count": 211
+      },
+      {
+        "name": "databasechangelog",
+        "count": 626
+      },
+      {
+        "name": "databasechangeloglock",
+        "count": 1
+      },
+      {
+        "name": "detail_data",
+        "count": 17485
+      },
+      {
+        "name": "document_activity_container",
+        "count": 108283
+      },
+      {
+        "name": "document_activity_data",
+        "count": 374158
+      },
+      {
+        "name": "document_attachment",
+        "count": 155141
+      },
+      {
+        "name": "document_attachment_container",
+        "count": 88762
+      },
+      {
+        "name": "document_content_data",
+        "count": 299703
+      },
+      {
+        "name": "document_data",
+        "count": 109259
+      },
+      {
+        "name": "document_detail_container",
+        "count": 108079
+      },
+      {
+        "name": "document_detail_data",
+        "count": 363145
+      },
+      {
+        "name": "document_element",
+        "count": 313442
+      },
+      {
+        "name": "document_person_reference_co_0",
+        "count": 96512
+      },
+      {
+        "name": "document_person_reference_da_0",
+        "count": 266406
+      },
+      {
+        "name": "document_proposal_container",
+        "count": 98069
+      },
+      {
+        "name": "document_proposal_data",
+        "count": 98069
+      },
+      {
+        "name": "document_reference_container",
+        "count": 56052
+      },
+      {
+        "name": "document_reference_data",
+        "count": 259731
+      },
+      {
+        "name": "document_status_container",
+        "count": 109259
+      },
+      {
+        "name": "encrypted_value",
+        "count": 2
+      },
+      {
+        "name": "government_body_data",
+        "count": 6520
+      },
+      {
+        "name": "indicator_element",
+        "count": 30443
+      },
+      {
+        "name": "jv_commit",
+        "count": 4994641
+      },
+      {
+        "name": "jv_commit_property",
+        "count": 4994641
+      },
+      {
+        "name": "jv_global_id",
+        "count": 12100696
+      },
+      {
+        "name": "jv_snapshot",
+        "count": 12193270
+      },
+      {
+        "name": "language_data",
+        "count": 135
+      },
+      {
+        "name": "person_assignment_data",
+        "count": 2492
+      },
+      {
+        "name": "person_data",
+        "count": 2494
+      },
+      {
+        "name": "person_detail_data",
+        "count": 2492
+      },
+      {
+        "name": "portal",
+        "count": 2
+      },
+      {
+        "name": "qrtz_cron_triggers",
+        "count": 4
+      },
+      {
+        "name": "qrtz_job_details",
+        "count": 4
+      },
+      {
+        "name": "qrtz_locks",
+        "count": 2
+      },
+      {
+        "name": "qrtz_scheduler_state",
+        "count": 1
+      },
+      {
+        "name": "qrtz_triggers",
+        "count": 4
+      },
+      {
+        "name": "rule_violation",
+        "count": 2308
+      },
+      {
+        "name": "sweden_political_party",
+        "count": 40
+      },
+      {
+        "name": "topic",
+        "count": 5848
+      },
+      {
+        "name": "topics",
+        "count": 30443
+      },
+      {
+        "name": "user_account",
+        "count": 11
+      },
+      {
+        "name": "vote_data",
+        "count": 3529786
+      },
+      {
+        "name": "world_bank_data",
+        "count": 587154
+      }
+    ],
+    "empty": [
+      "application_view",
+      "assignment_element",
+      "countries_element",
+      "data_element",
+      "data_source_content",
+      "detail_element",
+      "document_container_element",
+      "domain_portal",
+      "indicators_element",
+      "language_content_data",
+      "operational_information_cont_0",
+      "performance_indicator_content",
+      "person_assignment_element",
+      "person_container_data",
+      "person_container_element",
+      "person_detail_element",
+      "person_element",
+      "qrtz_blob_triggers",
+      "qrtz_calendars",
+      "qrtz_fired_triggers",
+      "qrtz_paused_trigger_grps",
+      "qrtz_simple_triggers",
+      "qrtz_simprop_triggers",
+      "quality_assurance_content",
+      "sweden_county_data",
+      "sweden_county_data_container",
+      "sweden_county_electoral_area",
+      "sweden_county_electoral_regi_0",
+      "sweden_county_electoral_regi_1",
+      "sweden_election_region",
+      "sweden_election_type",
+      "sweden_election_type_contain_0",
+      "sweden_municipality_data",
+      "sweden_municipality_election_0",
+      "sweden_parliament_electoral__0",
+      "sweden_parliament_electoral__1",
+      "target_profile_content",
+      "user_account_address",
+      "vote_meta_data"
+    ]
+  }
+}

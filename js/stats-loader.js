@@ -2,13 +2,15 @@
  * Dynamic Stats Loader
  * Riksdagsmonitor - Swedish Parliament Intelligence Platform
  *
- * Loads hero statistics from CIA Platform CSV data instead of hardcoded values.
- * Falls back to default values if CSV data is unavailable.
+ * Loads statistics from CIA Platform production data (updated daily).
+ * Primary source: production-stats.json (generated from extraction_summary_report.csv)
+ * Fallback: CSV files directly
  *
- * Data Sources:
- * - distribution_person_status.csv: Active MP count
- * - distribution_politician_risk_levels.csv: Risk level breakdown
- * - distribution_annual_party_votes.csv: Historical year range
+ * Data Sources (priority order):
+ * 1. cia-data/production-stats.json: All aggregate statistics
+ * 2. CSV files: Individual data sources (backward compatibility)
+ *
+ * Updates DOM elements with data-stat-id attributes
  *
  * License: Apache 2.0
  */
@@ -19,6 +21,12 @@
   const REMOTE_BASE = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
 
   const DATA_SOURCES = {
+    // Primary: production-stats.json (updated daily at 03:00 CET)
+    productionStats: [
+      'cia-data/production-stats.json',
+      REMOTE_BASE + 'production-stats.json'
+    ],
+    // Fallback: CSV files
     personStatus: [
       'cia-data/distribution_person_status.csv',
       REMOTE_BASE + 'distribution_person_status.csv'
@@ -38,15 +46,26 @@
   };
 
   /**
-   * Fetch CSV with local-first fallback
+   * Fetch data with local-first fallback (JSON or CSV)
    * @param {string[]} urls - Array of URLs to try in order
-   * @returns {Promise<string|null>} Raw CSV text or null
+   * @returns {Promise<any|null>} Parsed data or null
    */
-  async function fetchCSVText(urls) {
+  async function fetchData(urls) {
     for (const url of urls) {
       try {
         const resp = await fetch(url);
         if (!resp.ok) continue;
+        
+        // Try JSON first
+        if (url.endsWith('.json')) {
+          try {
+            return await resp.json();
+          } catch (e) {
+            continue;
+          }
+        }
+        
+        // Fall back to CSV text
         const text = await resp.text();
         if (text && text.trim().split('\n').length > 1) {
           return text;
@@ -56,6 +75,14 @@
       }
     }
     return null;
+  }
+
+  /**
+   * Fetch CSV with local-first fallback (backward compatibility)
+   */
+  async function fetchCSVText(urls) {
+    const data = await fetchData(urls);
+    return (typeof data === 'string') ? data : null;
   }
 
   /**
@@ -78,18 +105,84 @@
 
   /**
    * Update a DOM element's text if it exists
+   * Supports both id-based and data-stat-id attribute selectors
    */
-  function updateStat(id, value) {
-    const el = document.getElementById(id);
+  function updateStat(identifier, value) {
+    // Try by ID first
+    let el = document.getElementById(identifier);
+    
+    // Try by data-stat-id attribute
+    if (!el) {
+      el = document.querySelector(`[data-stat-id="${identifier}"]`);
+    }
+    
     if (el && value !== null && value !== undefined) {
-      el.textContent = value;
+      // Format numbers with locale separators
+      let displayValue = value;
+
+      if (typeof value === 'number') {
+        displayValue = value.toLocaleString();
+      } else if (typeof value === 'string') {
+        // Normalize common grouping separators (commas, dots, spaces) before parsing
+        const normalized = value.replace(/[,.\s]/g, '');
+        // Only treat as numeric if the normalized value is digits-only
+        if (/^[0-9]+$/.test(normalized)) {
+          const numericValue = Number(normalized);
+          displayValue = numericValue.toLocaleString();
+        }
+        // Otherwise keep the original string value
+      }
+      
+      el.textContent = displayValue;
     }
   }
 
   /**
-   * Load and display real stats from CSV data
+   * Load statistics from production-stats.json (primary source)
    */
-  async function loadStats() {
+  async function loadFromJSON() {
+    const data = await fetchData(DATA_SOURCES.productionStats);
+    if (!data || !data.counts) {
+      return false; // Failed, will try CSV fallback
+    }
+
+    // Update all statistics from JSON
+    const counts = data.counts;
+    
+    // Current MPs (349 official Riksdag size, but load from person status CSV for accuracy)
+    // Historical persons
+    if (counts.total_persons) {
+      updateStat('stat-historical-persons', counts.total_persons);
+    }
+    
+    // Total votes
+    if (counts.total_votes) {
+      updateStat('stat-total-votes', counts.total_votes);
+    }
+    
+    // Total documents
+    if (counts.total_documents) {
+      updateStat('stat-total-documents', counts.total_documents);
+    }
+    
+    // Committee documents
+    if (counts.total_committee_documents) {
+      updateStat('stat-committee-documents', counts.total_committee_documents);
+    }
+    
+    // Rule violations
+    if (counts.total_rule_violations) {
+      updateStat('stat-rule-violations', counts.total_rule_violations);
+    }
+
+    console.log('✅ Stats loaded from production-stats.json', counts);
+    return true;
+  }
+
+  /**
+   * Load and display real stats from CSV data (fallback method)
+   */
+  async function loadFromCSV() {
     try {
       // Load all CSV data in parallel
       const [personText, riskText, votesText, partyText] = await Promise.all([
@@ -107,7 +200,7 @@
           r.status && r.status.includes('Tj\u00e4nstg\u00f6rande')
         );
         if (activeRow && activeRow.person_count) {
-          updateStat('stat-mps', parseInt(activeRow.person_count).toLocaleString());
+          updateStat('stat-mps', parseInt(activeRow.person_count));
         }
       }
 
@@ -144,9 +237,28 @@
         }
       }
 
-      console.log('✅ Hero stats loaded from CSV data');
+      console.log('✅ Stats loaded from CSV fallback data');
     } catch (error) {
       console.warn('Stats loader: using default values', error.message);
+    }
+  }
+
+  /**
+   * Main loader - tries JSON first, falls back to CSV
+   */
+  async function loadStats() {
+    try {
+      // Try JSON first (faster, more complete)
+      const jsonSuccess = await loadFromJSON();
+      
+      // Always load CSV for current MPs and parties (more accurate for current state)
+      await loadFromCSV();
+      
+      if (!jsonSuccess) {
+        console.log('ℹ️  Using CSV fallback for all statistics');
+      }
+    } catch (error) {
+      console.warn('Stats loader error:', error.message);
     }
   }
 

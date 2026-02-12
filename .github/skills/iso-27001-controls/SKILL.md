@@ -84,9 +84,19 @@ Access: Open to all users
 ```
 
 **A.8.11 - Data Masking**
-- ✅ No personal data collected
-- ✅ No cookies or tracking
-- ✅ External links only (no PII stored)
+- ❌ NOT applicable to Riksdagsmonitor
+- **Reason**: A.8.11 applies to masking sensitive data in non-production environments
+- **Context**: Riksdagsmonitor processes only **public government data** (Swedish Offentlighetsprincipen)
+- **Data Type**: Public officials in official capacity (MPs, ministers, voting records, parliamentary documents)
+- **Legal Basis**: GDPR Article 6(1)(e) public interest, Article 9(2)(e) manifestly public political opinions
+- **Journalist Exemption**: Swedish Press Freedom Act (Tryckfrihetsförordningen)
+- **No Masking Needed**: All data is public, no test environments with production data copies
+
+**More Appropriate Controls**:
+- ✅ **A.5.33** - Protection of records (source attribution, audit trails via Git)
+- ✅ **A.5.34** - Privacy and protection of PII (public officials, official capacity only)
+- ✅ **A.8.10** - Information deletion (retention policies, no excessive storage)
+- ✅ **A.8.19** - Security of information in use (HTTPS-only, CSP headers)
 
 **A.8.23 - Web Filtering**
 ```html
