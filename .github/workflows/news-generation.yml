@@ -133,8 +133,23 @@ jobs:
             echo "errors=0" >> $GITHUB_OUTPUT
           fi
       
+      - name: Regenerate news indexes
+        if: steps.check-updates.outputs.should_generate == 'true'
+        id: indexes
+        run: |
+          echo "🗂️ Regenerating news index files..."
+          
+          if [ -f "scripts/generate-news-indexes.js" ]; then
+            node scripts/generate-news-indexes.js
+            echo "✅ All 14 language index files regenerated"
+            echo "updated=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ News index generation script not found"
+            echo "updated=false" >> $GITHUB_OUTPUT
+          fi
+      
       - name: Update sitemap
-        if: steps.generate.outputs.generated != '0'
+        if: steps.generate.outputs.generated != '0' || steps.indexes.outputs.updated == 'true'
         id: sitemap
         run: |
           echo "🗺️ Updating sitemap.xml..."
@@ -221,6 +236,7 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "- **Articles Generated**: ${{ steps.generate.outputs.generated }}" >> $GITHUB_STEP_SUMMARY
             echo "- **Errors**: ${{ steps.generate.outputs.errors }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **News Indexes Updated**: ${{ steps.indexes.outputs.updated || 'false' }}" >> $GITHUB_STEP_SUMMARY
             echo "- **Sitemap Updated**: ${{ steps.sitemap.outputs.updated || 'false' }}" >> $GITHUB_STEP_SUMMARY
             echo "- **Timestamp**: ${{ steps.check-updates.outputs.current_time }}" >> $GITHUB_STEP_SUMMARY
           else
@@ -250,6 +266,7 @@ jobs:
             ### Summary
             - **Articles Generated**: ${{ steps.generate.outputs.generated }}
             - **Errors**: ${{ steps.generate.outputs.errors }}
+            - **News Indexes**: ${{ steps.indexes.outputs.updated == 'true' && 'Regenerated (all 14 languages)' || 'Not updated' }}
             - **Sitemap Updated**: ${{ steps.sitemap.outputs.updated }}
             - **Generation Time**: ${{ steps.check-updates.outputs.current_time }}
             
@@ -262,6 +279,7 @@ jobs:
             
             ### Quality Checks
             - [x] HTML validation
+            - [x] News indexes regenerated (14 languages)
             - [x] Sitemap updated
             - [ ] Editorial review recommended
             - [ ] Multi-language support (EN/SV)

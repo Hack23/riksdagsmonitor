@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noticias - Riksdagsmonitor</title>
-  <meta name="description" content="Últimas noticias y análisis del Riksdag sueco. Periodismo político al estilo de The Economist que cubre el parlamento, gobierno y agencias con transparencia sistemática.">
-  <meta name="keywords" content="noticias riksdag, parlamento sueco, análisis gubernamental, periodismo político, transparencia, democracia">
+  <meta name="description" content="Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.">
+  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_es.html">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Noticias - Riksdagsmonitor">
-  <meta property="og:description" content="Últimas noticias de periodismo político del Riksdag sueco">
+  <meta property="og:description" content="Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/index_es.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
@@ -21,11 +21,11 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Noticias - Riksdagsmonitor">
-  <meta name="twitter:description" content="Últimas noticias de periodismo político del Riksdag sueco">
+  <meta name="twitter:description" content="Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
-  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/index.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
   <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
@@ -48,7 +48,7 @@
   
   <link rel="stylesheet" href="../styles.css">
   
-  <style>
+    <style>
     body {
       background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
       color: #e0e0e0;
@@ -83,13 +83,51 @@
     .subtitle {
       font-size: 1.1rem;
       color: #b0b0b0;
-      margin: 0;
+      margin: 0 0 1rem 0;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: var(--primary-cyan, #00d9ff);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      transition: transform 0.2s;
+    }
+    
+    .back-link:hover {
+      transform: translateX(-5px);
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem 3rem 1rem;
+    }
+    
+    .language-notice {
+      background: rgba(255, 190, 11, 0.1);
+      border-left: 4px solid var(--primary-yellow, #ffbe0b);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+    
+    .language-notice h2 {
+      font-size: 1.2rem;
+      color: var(--primary-yellow, #ffbe0b);
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .language-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #fff;
+      margin-left: 0.5rem;
     }
     
     .filter-bar {
@@ -107,6 +145,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      flex: 1;
+      min-width: 180px;
     }
     
     .filter-group label {
@@ -201,218 +241,209 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: auto;
     }
     
     .tag {
-      padding: 0.3rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       background: rgba(255, 0, 110, 0.1);
       border: 1px solid rgba(255, 0, 110, 0.3);
       border-radius: 4px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--primary-magenta, #ff006e);
     }
     
-    .no-results {
-      text-align: center;
-      padding: 3rem;
-      color: #888;
-    }
-    
-    .back-link {
-      display: inline-block;
-      margin-bottom: 2rem;
-      padding: 0.5rem 1rem;
-      background: rgba(26, 30, 61, 0.8);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 4px;
-      color: var(--primary-cyan, #00d9ff);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .back-link:hover {
-      border-color: var(--primary-cyan, #00d9ff);
-      background: rgba(0, 217, 255, 0.1);
-    }
-    
-    .language-notice {
-      background: rgba(255, 190, 11, 0.1);
-      border: 1px solid rgba(255, 190, 11, 0.3);
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      margin-bottom: 2rem;
-      color: #e0e0e0;
-    }
-    
-    .language-notice strong {
-      color: var(--primary-yellow, #ffbe0b);
-    }
-    
-    .language-badge {
-      display: inline-block;
-      padding: 0.2rem 0.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 4px;
-      font-size: 0.7rem;
-      color: #b0b0b0;
-      margin-left: 0.5rem;
-    }
-    
     @media (max-width: 768px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      
       .filter-bar {
         flex-direction: column;
       }
       
-      .articles-grid {
-        grid-template-columns: 1fr;
+      .filter-group {
+        min-width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="header-section">
+  <header class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> Noticias de Riksdagsmonitor</h1>
-      <p class="subtitle">Periodismo político al estilo de The Economist • Transparencia sistemática • Responsabilidad democrática</p>
+      <h1>Noticias</h1>
+      <p class="subtitle">Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.</p>
+      <a href="../index_es.html" class="back-link">← Volver a la página principal</a>
     </div>
-  </div>
+  </header>
   
   <div class="container">
-    <a href="../index_es.html" class="back-link">← Volver al Panel</a>
-    
     <div class="language-notice">
-      <strong>📢 Nota:</strong> Contenido actualmente disponible en inglés. Artículos españoles localizados próximamente. • <em>Content currently available in English. Localized Spanish articles coming soon.</em>
+      <h2>Artículos disponibles en inglés</h2>
+      <p>Los artículos actualmente solo están disponibles en inglés y sueco. La traducción automática al español estará disponible pronto. <span class="language-badge" aria-label="English language"><span aria-hidden="true">🇬🇧</span> EN</span></p>
     </div>
+
     
+    <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">Tipo de Artículo</label>
+        <label for="filter-type">Tipo:</label>
         <select id="filter-type">
-          <option value="all">Todos los Tipos</option>
+          <option value="all">Todos los tipos</option>
+          <option value="prospective">Prospectivo</option>
           <option value="retrospective">Retrospectivo</option>
-          <option value="prospective">Prospectivo (Semana Próxima)</option>
           <option value="analysis">Análisis</option>
+          <option value="breaking">Última hora</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">Tema</label>
+        <label for="filter-topic">Tema:</label>
         <select id="filter-topic">
-          <option value="all">Todos los Temas</option>
-          <option value="eu">Asuntos de la UE</option>
-          <option value="government">Gobierno</option>
+          <option value="all">Todos los temas</option>
           <option value="parliament">Parlamento</option>
+          <option value="government">Gobierno</option>
+          <option value="eu">EU</option>
+          <option value="defense">Defensa</option>
+          <option value="environment">Medio ambiente</option>
           <option value="committees">Comités</option>
           <option value="legislation">Legislación</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">Ordenar por</label>
+        <label for="filter-sort">Ordenar:</label>
         <select id="filter-sort">
-          <option value="date-desc">Más Recientes</option>
-          <option value="date-asc">Más Antiguos</option>
-          <option value="title">Título A-Z</option>
+          <option value="date-desc">Más reciente</option>
+          <option value="date-asc">Más antiguo</option>
+          <option value="title">Título</option>
         </select>
       </div>
     </div>
     
-    <div class="articles-grid" id="articles-grid">
-      <!-- Articles dynamically loaded via JavaScript -->
-    </div>
+    <!-- Articles Grid -->
+    <div class="articles-grid" id="articles-grid"></div>
     
-    <div class="no-results" id="no-results" style="display: none;">
-      <p>No se encontraron artículos que coincidan con sus filtros.</p>
+    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
+      Ningún artículo coincidió con los filtros
     </div>
   </div>
   
   <script>
-    // News articles metadata
+    // Dynamic articles array - generated from news/ directory
     const articles = [
-      {
-        title: "Semana Próxima: La Cumbre de Bruselas Pone a Prueba la Estrategia Europea Sueca",
-        date: "2026-02-10",
-        type: "prospective",
-        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
-        excerpt: "Semana crítica para la política europea sueca mientras el primer ministro Kristersson asiste a la cumbre informal de líderes mientras el Comité de la UE hace seguimiento a cuestiones de defensa y economía.",
-        topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["Cumbre UE", "Bruselas", "Política de Defensa", "Supervisión Parlamentaria"]
-      },
-      {
-        title: "Primer Ministro se Presenta ante el Parlamento Antes de la Cumbre de Bruselas",
-        date: "2026-02-10",
-        type: "retrospective",
-        slug: "2026-02-10-pm-eu-summit-en.html",
-        excerpt: "En rara reunión abierta del Comité de la UE, el primer ministro Ulf Kristersson consulta al Riksdag antes de la cumbre informal de líderes mientras el gobierno enfrenta presión creciente sobre delitos económicos y política de ciudadanía.",
-        topics: ["eu", "government", "parliament"],
-        tags: ["UE", "Primer Ministro", "Delitos Económicos", "Ciudadanía"]
-      },
-      {
-        title: "Estrategia de Biodiversidad y Reforma de Ciudadanía Anunciadas",
-        date: "2026-02-10",
-        type: "retrospective",
-        slug: "2026-02-10-biodiversity-citizenship-en.html",
-        excerpt: "El gobierno anuncia una estrategia integral de biodiversidad y señala una reforma importante de ciudadanía mientras la coalición navega prioridades en conflicto sobre medio ambiente e inmigración.",
-        topics: ["environment", "government", "legislation"],
-        tags: ["Biodiversidad", "Ciudadanía", "Medio Ambiente", "Inmigración"]
-      },
-      {
-        title: "Proposiciones del Gobierno Febrero 2026",
-        date: "2026-02-07",
-        type: "analysis",
-        slug: "2026-02-government-propositions-en.html",
-        excerpt: "Ofensiva política en supervisión financiera, energía renovable y seguridad de propiedad marca un impulso legislativo intensivo antes del receso de primavera.",
-        topics: ["government", "legislation", "parliament"],
-        tags: ["Proposiciones", "Finanzas", "Clima", "Propiedad", "Impuestos"]
-      },
-      {
-        title: "Informes de Comités Febrero 2026",
-        date: "2026-02-06",
-        type: "analysis",
-        slug: "2026-02-committee-reports-en.html",
-        excerpt: "Los comités parlamentarios entregan informes integrales que abarcan educación, defensa y política social mientras el Riksdag entra en fase crítica de decisiones.",
-        topics: ["committees", "parliament"],
-        tags: ["Informes de Comités", "Educación", "Defensa", "Política Social"]
-      },
-      {
-        title: "Mociones de la Oposición Febrero 2026",
-        date: "2026-02-07",
-        type: "analysis",
-        slug: "2026-02-opposition-motions-en.html",
-        excerpt: "Los partidos de oposición intensifican la presión legislativa con paquetes integrales de mociones dirigidos a la política gubernamental sobre delitos económicos, atención médica y clima.",
-        topics: ["parliament", "legislation"],
-        tags: ["Oposición", "Mociones", "Delitos Económicos", "Atención Médica"]
-      },
-      {
-        title: "Agenda del Parlamento - Resumen de la Semana",
-        date: "2026-02-09",
-        type: "prospective",
-        slug: "2026-02-parliament-agenda-en.html",
-        excerpt: "Vista previa integral de la actividad parlamentaria próxima incluyendo reuniones de comités, debates en la cámara y preguntas ministeriales.",
-        topics: ["parliament"],
-        tags: ["Parlamento", "Agenda", "Vista Previa Semanal"]
-      },
-      {
-        title: "La Semana Próxima",
-        date: "2026-02-09",
-        type: "prospective",
-        slug: "2026-02-week-ahead-en.html",
-        excerpt: "Mirando hacia adelante los desarrollos políticos clave, actividad parlamentaria y decisiones gubernamentales en la próxima semana.",
-        topics: ["parliament", "government"],
-        tags: ["Semana Próxima", "Vista Previa", "Calendario Político"]
-      }
-    ];
+  {
+    "title": "Ten Committee Reports This Week: Parliament",
+    "date": "2026-02-12",
+    "type": "analysis",
+    "slug": "2026-02-committee-reports-en.html",
+    "excerpt": "Analysis of parliamentary activity February 5-6, 2026",
+    "topics": [],
+    "tags": []
+  },
+  {
+    "title": "Sweden",
+    "date": "2026-02-12",
+    "type": "retrospective",
+    "slug": "2026-02-parliament-agenda-en.html",
+    "excerpt": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
+    "topics": [],
+    "tags": []
+  },
+  {
+    "title": "Government Announces Biodiversity Strategy and Stricter Citizenship Rules",
+    "date": "2026-02-10T13:00:00Z",
+    "type": "retrospective",
+    "slug": "2026-02-10-biodiversity-citizenship-en.html",
+    "excerpt": "Dual policy announcements signal proactive government agenda on environment and integration.",
+    "topics": [
+      "environment"
+    ],
+    "tags": [
+      "Biodiversity",
+      "Citizenship",
+      "Environment"
+    ]
+  },
+  {
+    "title": "Prime Minister Faces Parliament Before Brussels Summit",
+    "date": "2026-02-10T09:00:00Z",
+    "type": "analysis",
+    "slug": "2026-02-10-pm-eu-summit-en.html",
+    "excerpt": "Rare open EU Committee meeting as PM Kristersson prepares for informal leaders summit while government battles opposition pressure.",
+    "topics": [
+      "eu"
+    ],
+    "tags": [
+      "EU",
+      "Prime Minister",
+      "Economic Crime",
+      "Citizenship"
+    ]
+  },
+  {
+    "title": "Week Ahead: Brussels Summit Tests Swedish EU Strategy",
+    "date": "2026-02-10T09:00:00Z",
+    "type": "prospective",
+    "slug": "2026-02-10-week-ahead-feb-10-17-en.html",
+    "excerpt": "Critical week as PM faces Brussels summit while parliament intensifies oversight on citizenship, crime, and environment.",
+    "topics": [
+      "eu",
+      "parliament"
+    ],
+    "tags": [
+      "EU Summit",
+      "Parliament",
+      "Prospective Coverage"
+    ]
+  },
+  {
+    "title": "Government Propositions February 2026 | Riksdagsmonitor",
+    "date": "2026-02-07T07:00:00+00:00",
+    "type": "analysis",
+    "slug": "2026-02-government-propositions-en.html",
+    "excerpt": "Six propositions reveal coalition priorities: financial stability, green transition, and security crackdowns.",
+    "topics": [
+      "parliament"
+    ],
+    "tags": [
+      "Riksdag"
+    ]
+  },
+  {
+    "title": "Fresh Opposition Motions - Spring 2026 Battle Lines Emerge",
+    "date": "2026-02-07T00:00:00Z",
+    "type": "analysis",
+    "slug": "2026-02-opposition-motions-en.html",
+    "excerpt": "Ten fresh opposition motions reveal spring parliamentary battle lines - from indefinite detention to elderly care and constitutional rights.",
+    "topics": [
+      "parliament"
+    ],
+    "tags": [
+      "Riksdag",
+      "Opposition",
+      "Motions"
+    ]
+  },
+  {
+    "title": "Critical Week for Sweden in EU: Defense Council and Prime Minister",
+    "date": "2026-02-07T00:00:00+01:00",
+    "type": "prospective",
+    "slug": "2026-02-week-ahead-en.html",
+    "excerpt": "Critical week for Swedish EU policy: Defense Minister and Prime Minister face councils in Brussels while opposition intensifies government scrutiny.",
+    "topics": [
+      "eu",
+      "defense"
+    ],
+    "tags": [
+      "EU",
+      "Defense",
+      "Accountability",
+      "Ukraine"
+    ]
+  }
+];
     
     let filteredArticles = [...articles];
-    
-    // Localized type labels
-    const typeLabels = {
-      'prospective': 'Prospectivo',
-      'retrospective': 'Retrospectivo',
-      'analysis': 'Análisis'
-    };
     
     function renderArticles(articlesToRender) {
       const grid = document.getElementById('articles-grid');
@@ -430,8 +461,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${typeLabels[article.type] || article.type}</span>
-            <span class="language-badge" aria-label="Article language: English"><span aria-hidden="true">🇬🇧</span> EN</span>
+            <span class="article-type">${article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -445,11 +475,8 @@
     }
     
     function formatDate(dateStr) {
-      // Parse date components to avoid timezone issues
-      const [year, month, day] = dateStr.split('-').map(Number);
-      const date = new Date(year, month - 1, day);
-      const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
-      return `${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`;
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('es', { year: 'numeric', month: 'long', day: 'numeric' });
     }
     
     function filterArticles() {

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nyheter - Riksdagsmonitor</title>
   <meta name="description" content="Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.">
-  <meta name="keywords" content="riksdagsnyheter, svenska riksdagen, regeringsanalys, politisk journalistik, transparens, demokrati">
+  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_sv.html">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Nyheter - Riksdagsmonitor">
-  <meta property="og:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta property="og:description" content="Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/index_sv.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
@@ -21,11 +21,11 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Nyheter - Riksdagsmonitor">
-  <meta name="twitter:description" content="Senaste politiska journalistiken från Sveriges Riksdag">
+  <meta name="twitter:description" content="Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
-  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/index.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
   <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
@@ -48,7 +48,7 @@
   
   <link rel="stylesheet" href="../styles.css">
   
-  <style>
+    <style>
     body {
       background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
       color: #e0e0e0;
@@ -83,13 +83,51 @@
     .subtitle {
       font-size: 1.1rem;
       color: #b0b0b0;
-      margin: 0;
+      margin: 0 0 1rem 0;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: var(--primary-cyan, #00d9ff);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      transition: transform 0.2s;
+    }
+    
+    .back-link:hover {
+      transform: translateX(-5px);
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem 3rem 1rem;
+    }
+    
+    .language-notice {
+      background: rgba(255, 190, 11, 0.1);
+      border-left: 4px solid var(--primary-yellow, #ffbe0b);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+    
+    .language-notice h2 {
+      font-size: 1.2rem;
+      color: var(--primary-yellow, #ffbe0b);
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .language-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #fff;
+      margin-left: 0.5rem;
     }
     
     .filter-bar {
@@ -107,6 +145,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      flex: 1;
+      min-width: 180px;
     }
     
     .filter-group label {
@@ -201,181 +241,202 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: auto;
     }
     
     .tag {
-      padding: 0.3rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       background: rgba(255, 0, 110, 0.1);
       border: 1px solid rgba(255, 0, 110, 0.3);
       border-radius: 4px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--primary-magenta, #ff006e);
     }
     
-    .no-results {
-      text-align: center;
-      padding: 3rem;
-      color: #888;
-    }
-    
-    .back-link {
-      display: inline-block;
-      margin-bottom: 2rem;
-      padding: 0.5rem 1rem;
-      background: rgba(26, 30, 61, 0.8);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 4px;
-      color: var(--primary-cyan, #00d9ff);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .back-link:hover {
-      border-color: var(--primary-cyan, #00d9ff);
-      background: rgba(0, 217, 255, 0.1);
-    }
-    
     @media (max-width: 768px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      
       .filter-bar {
         flex-direction: column;
       }
       
-      .articles-grid {
-        grid-template-columns: 1fr;
+      .filter-group {
+        min-width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="header-section">
+  <header class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor Nyheter</h1>
-      <p class="subtitle">Politisk journalistik i The Economist-stil • Systematisk transparens • Demokratiskt ansvarsutkrävande</p>
+      <h1>Nyheter</h1>
+      <p class="subtitle">Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.</p>
+      <a href="../index_sv.html" class="back-link">← Tillbaka till huvudsidan</a>
     </div>
-  </div>
+  </header>
   
   <div class="container">
-    <a href="../index_sv.html" class="back-link">← Tillbaka till instrumentpanelen</a>
+
     
+    <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">Artikeltyp</label>
+        <label for="filter-type">Typ:</label>
         <select id="filter-type">
           <option value="all">Alla typer</option>
-          <option value="retrospective">Retrospektiv</option>
-          <option value="prospective">Prospektiv (Veckan som kommer)</option>
+          <option value="prospective">Framåtblickande</option>
+          <option value="retrospective">Återblickande</option>
           <option value="analysis">Analys</option>
+          <option value="breaking">Senaste nytt</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">Ämne</label>
+        <label for="filter-topic">Ämne:</label>
         <select id="filter-topic">
           <option value="all">Alla ämnen</option>
-          <option value="eu">EU-frågor</option>
-          <option value="government">Regering</option>
-          <option value="parliament">Riksdag</option>
+          <option value="parliament">Riksdagen</option>
+          <option value="government">Regeringen</option>
+          <option value="eu">EU</option>
+          <option value="defense">Försvar</option>
+          <option value="environment">Miljö</option>
           <option value="committees">Utskott</option>
           <option value="legislation">Lagstiftning</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">Sortera</label>
+        <label for="filter-sort">Sortera:</label>
         <select id="filter-sort">
           <option value="date-desc">Nyast först</option>
           <option value="date-asc">Äldst först</option>
-          <option value="title">Titel A-Ö</option>
+          <option value="title">Titel</option>
         </select>
       </div>
     </div>
     
-    <div class="articles-grid" id="articles-grid">
-      <!-- Articles dynamically loaded via JavaScript -->
-    </div>
+    <!-- Articles Grid -->
+    <div class="articles-grid" id="articles-grid"></div>
     
-    <div class="no-results" id="no-results" style="display: none;">
-      <p>Inga artiklar hittades som matchar dina filter.</p>
+    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
+      Inga artiklar matchade filtren
     </div>
   </div>
   
   <script>
-    // News articles metadata
+    // Dynamic articles array - generated from news/ directory
     const articles = [
-      {
-        title: "Veckan som kommer: Brysseltoppmöte testar svensk EU-strategi",
-        date: "2026-02-10",
-        type: "prospective",
-        slug: "2026-02-10-week-ahead-feb-10-17-sv.html",
-        excerpt: "Kritisk vecka för svensk europapolitik när statsminister Kristersson deltar i informellt toppmöte medan EU-nämnden följer upp försvars- och ekonomifrågor.",
-        topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["EU-toppmöte", "Bryssel", "Försvarspolitik", "Parlamentarisk granskning"]
-      },
-      {
-        title: "Statsministern möter riksdagen före Brysseltoppmötet",
-        date: "2026-02-10",
-        type: "retrospective",
-        slug: "2026-02-10-pm-eu-summit-sv.html",
-        excerpt: "Vid sällsynt öppet EU-nämndsmöte konsulterar statsminister Ulf Kristersson riksdagen före informellt toppmöte medan regeringen möter växande press om ekonomisk brottslighet och medborgarskap.",
-        topics: ["eu", "government", "parliament"],
-        tags: ["EU", "Statsminister", "Ekonomisk brottslighet", "Medborgarskap"]
-      },
-      {
-        title: "Biologisk mångfald och medborgarskapsreform presenteras",
-        date: "2026-02-10",
-        type: "retrospective",
-        slug: "2026-02-10-biodiversity-citizenship-sv.html",
-        excerpt: "Regeringen presenterar omfattande strategi för biologisk mångfald och signalerar stor medborgarskapsreform när koalitionen navigerar konkurrerande prioriteringar kring miljö och invandring.",
-        topics: ["environment", "government", "legislation"],
-        tags: ["Biologisk mångfald", "Medborgarskap", "Miljö", "Invandring"]
-      },
-      {
-        title: "Regeringspropositioner februari 2026",
-        date: "2026-02-07",
-        type: "analysis",
-        slug: "2026-02-government-propositions-sv.html",
-        excerpt: "Policyoffensiv över finansiell tillsyn, förnybar energi och egendomsskydd markerar intensiv lagstiftningsdragning före våruppehållet.",
-        topics: ["government", "legislation", "parliament"],
-        tags: ["Propositioner", "Finans", "Klimat", "Egendom", "Skatt"]
-      },
-      {
-        title: "Utskottsbetänkanden februari 2026",
-        date: "2026-02-06",
-        type: "analysis",
-        slug: "2026-02-committee-reports-sv.html",
-        excerpt: "Riksdagens utskott lämnar omfattande betänkanden som spänner över utbildning, försvar och socialpolitik när riksdagen går in i kritisk beslutsfas.",
-        topics: ["committees", "parliament"],
-        tags: ["Utskottsbetänkanden", "Utbildning", "Försvar", "Socialpolitik"]
-      },
-      {
-        title: "Oppositionsmotioner februari 2026",
-        date: "2026-02-07",
-        type: "analysis",
-        slug: "2026-02-opposition-motions-sv.html",
-        excerpt: "Oppositionspartier intensifierar lagstiftningspressen med omfattande motionspaket som riktar sig mot regeringens politik över ekonomisk brottslighet, sjukvård och klimat.",
-        topics: ["parliament", "legislation"],
-        tags: ["Opposition", "Motioner", "Ekonomisk brottslighet", "Sjukvård"]
-      },
-      {
-        title: "Riksdagens agenda - Veckoöversikt",
-        date: "2026-02-09",
-        type: "prospective",
-        slug: "2026-02-parliament-agenda-sv.html",
-        excerpt: "Omfattande förhandsgranskning av kommande parlamentarisk aktivitet inklusive utskottsmöten, kammarens debatter och ministerfrågor.",
-        topics: ["parliament"],
-        tags: ["Riksdag", "Agenda", "Veckoförhandsgranskning"]
-      },
-      {
-        title: "Veckan som kommer",
-        date: "2026-02-09",
-        type: "prospective",
-        slug: "2026-02-week-ahead-sv.html",
-        excerpt: "Blick framåt på viktiga politiska händelser, parlamentarisk aktivitet och regeringsbeslut under kommande vecka.",
-        topics: ["parliament", "government"],
-        tags: ["Veckan som kommer", "Förhandsgranskning", "Politisk kalender"]
-      }
-    ];
+  {
+    "title": "Tio utskottsbetänkanden denna vecka: Riksdagens prioriteringar för våren 2026",
+    "date": "2026-02-12",
+    "type": "analysis",
+    "slug": "2026-02-committee-reports-sv.html",
+    "excerpt": "Analys av parlamentarisk aktivitet 5-6 februari 2026",
+    "topics": [],
+    "tags": []
+  },
+  {
+    "title": "Riksdagens februarioffensiv: Säkerhet och ekonomi inför höstens val",
+    "date": "2026-02-12",
+    "type": "retrospective",
+    "slug": "2026-02-parliament-agenda-sv.html",
+    "excerpt": "Åtta stora propositioner första veckan, säkerhetsförvaring möter opposition, och koalitionen rustar för valrörelsen.",
+    "topics": [],
+    "tags": []
+  },
+  {
+    "title": "Regeringen presenterar biologisk mångfald och strängare medborgarskapsregler",
+    "date": "2026-02-10T13:00:00Z",
+    "type": "retrospective",
+    "slug": "2026-02-10-biodiversity-citizenship-sv.html",
+    "excerpt": "Dubbla policybesked signalerar proaktiv regeringsagenda för miljö och integration.",
+    "topics": [
+      "environment"
+    ],
+    "tags": [
+      "Biologisk mångfald",
+      "Medborgarskap",
+      "Miljö"
+    ]
+  },
+  {
+    "title": "Statsministern möter riksdagen inför Brysseltoppmöte",
+    "date": "2026-02-10T09:00:00Z",
+    "type": "analysis",
+    "slug": "2026-02-10-pm-eu-summit-sv.html",
+    "excerpt": "Sällsynt öppet EU-nämndsmöte när statsminister Kristersson förbereder informellt toppmöte medan regeringen möter oppositionens press.",
+    "topics": [
+      "eu"
+    ],
+    "tags": [
+      "EU",
+      "Statsminister",
+      "Ekonomisk brottslighet"
+    ]
+  },
+  {
+    "title": "Veckan som kommer: Brysseltoppmöte testar svensk EU-strategi",
+    "date": "2026-02-10T09:00:00Z",
+    "type": "prospective",
+    "slug": "2026-02-10-week-ahead-feb-10-17-sv.html",
+    "excerpt": "Kritisk vecka när statsministern möter Brysseltopp medan riksdagen intensifierar tillsynen över medborgarskap, brottslighet och miljö.",
+    "topics": [
+      "eu",
+      "parliament"
+    ],
+    "tags": [
+      "EU-toppmöte",
+      "Riksdag",
+      "Prospektiv bevakning"
+    ]
+  },
+  {
+    "title": "Regeringens propositioner februari 2026 | Riksdagsmonitor",
+    "date": "2026-02-07T07:00:00+00:00",
+    "type": "analysis",
+    "slug": "2026-02-government-propositions-sv.html",
+    "excerpt": "Sex propositioner avslöjar koalitionens prioriteringar: finansiell stabilitet, grön omställning och säkerhetsskärpningar.",
+    "topics": [
+      "parliament"
+    ],
+    "tags": [
+      "Riksdag"
+    ]
+  },
+  {
+    "title": "Färska oppositionsmotioner - Vårens stridslinjer framträder",
+    "date": "2026-02-07T00:00:00Z",
+    "type": "analysis",
+    "slug": "2026-02-opposition-motions-sv.html",
+    "excerpt": "Tio färska oppositionsmotioner avslöjar vårens parlamentariska stridslinjer - från livstidsförvaring till äldreomsorg och konstitutionella rättigheter.",
+    "topics": [
+      "parliament"
+    ],
+    "tags": [
+      "Riksdagen",
+      "Opposition",
+      "Motioner"
+    ]
+  },
+  {
+    "title": "Kritisk Vecka för Sverige i EU: Försvarsråd och Statsministerns Toppmöte",
+    "date": "2026-02-07T00:00:00+01:00",
+    "type": "prospective",
+    "slug": "2026-02-week-ahead-sv.html",
+    "excerpt": "Kritisk vecka för svensk EU-politik: Försvarsminister och statsminister inför råd i Bryssel medan oppositionen intensifierar granskningen av regeringen.",
+    "topics": [
+      "eu",
+      "defense"
+    ],
+    "tags": [
+      "EU",
+      "Defense",
+      "Accountability",
+      "Ukraine"
+    ]
+  }
+];
     
     let filteredArticles = [...articles];
     
@@ -410,7 +471,7 @@
     
     function formatDate(dateStr) {
       const date = new Date(dateStr);
-      return date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+      return date.toLocaleDateString('sv', { year: 'numeric', month: 'long', day: 'numeric' });
     }
     
     function filterArticles() {

@@ -1,0 +1,637 @@
+/**
+ * Article Template Generator
+ * 
+ * Generates HTML article templates that match existing riksdagsmonitor article format.
+ * Maintains cyberpunk styling, accessibility (WCAG 2.1 AA), and SEO best practices.
+ * 
+ * Format preserved:
+ * - Header section (title, date, meta)
+ * - Event calendar with visual grid (for Week Ahead articles)
+ * - Article content with semantic HTML
+ * - Context boxes for additional information
+ * - Links to source documents
+ * - "Watch Section" with key points
+ * - Professional cyberpunk styling
+ */
+
+/**
+ * Generate complete article HTML
+ * 
+ * @param {Object} data - Article data
+ * @param {string} data.slug - Article slug (e.g., "2026-02-12-week-ahead")
+ * @param {string} data.title - Article title
+ * @param {string} data.subtitle - Article subtitle/lede
+ * @param {string} data.date - Publication date (ISO format)
+ * @param {string} data.type - Article type (prospective, retrospective, analysis, breaking)
+ * @param {string} data.readTime - Estimated read time (e.g., "6 min read")
+ * @param {string} data.lang - Language code (en, sv)
+ * @param {string} data.langFull - Full language name (English, Svenska)
+ * @param {string} data.locale - Locale code (en_US, sv_SE)
+ * @param {string} data.content - Main article HTML content
+ * @param {Array} data.events - Calendar events (for Week Ahead articles)
+ * @param {Array} data.watchPoints - Key points to watch
+ * @param {Array} data.sources - Data sources/tools used
+ * @param {Array} data.keywords - SEO keywords
+ * @param {Array} data.topics - Article topics for categorization
+ * @param {Array} data.tags - Article tags for display
+ * @returns {string} Complete HTML article
+ */
+export function generateArticleHTML(data) {
+  const {
+    slug,
+    title,
+    subtitle,
+    date,
+    type,
+    readTime = '5 min read',
+    lang = 'en',
+    locale = 'en_US',
+    content,
+    events = [],
+    watchPoints = [],
+    sources = [],
+    keywords = [],
+    tags = []
+  } = data;
+  
+  const dateObj = new Date(date);
+  const formattedDate = formatDate(dateObj, lang);
+  const isoDate = dateObj.toISOString().split('T')[0];
+  
+  // Determine type label
+  const typeLabels = {
+    en: {
+      prospective: 'The Week Ahead',
+      retrospective: 'Weekly Review',
+      analysis: 'Analysis',
+      breaking: 'Breaking News'
+    },
+    sv: {
+      prospective: 'Veckan som kommer',
+      retrospective: 'Veckans återblick',
+      analysis: 'Analys',
+      breaking: 'Senaste nytt'
+    }
+  };
+  
+  const typeLabel = typeLabels[lang][type] || 'News';
+  
+  // Determine alternate language slug and URL
+  const altLang = lang === 'en' ? 'sv' : 'en';
+  const altSlug = slug.replace(`-${lang}.html`, `-${altLang}.html`);
+  const baseSlug = slug.replace(`-${lang}.html`, '');
+  
+  return `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title}</title>
+  <meta name="description" content="${escapeHtml(subtitle).substring(0, 160)}">
+  <meta name="keywords" content="${keywords.join(', ')}">
+  <meta name="author" content="James Pether Sörling, CISSP, CISM">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/${slug}">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(subtitle).substring(0, 200)}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
+  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta property="og:locale" content="${locale}">
+  <meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
+  <meta property="article:published_time" content="${dateObj.toISOString()}">
+  <meta property="article:author" content="News Journalist Agent">
+  <meta property="article:section" content="${typeLabel}">
+${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`).join('\n')}
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(title)}">
+  <meta name="twitter:description" content="${escapeHtml(subtitle).substring(0, 200)}">
+  <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
+  
+  <!-- Hreflang for language alternatives -->
+  <link rel="alternate" hreflang="${altLang}" href="https://riksdagsmonitor.com/news/${altSlug}">
+  <link rel="alternate" hreflang="${lang}" href="https://riksdagsmonitor.com/news/${slug}">
+  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/${baseSlug}-en.html">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  
+  <!-- Schema.org NewsArticle structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "${escapeHtml(title)}",
+    "description": "${escapeHtml(subtitle).substring(0, 200)}",
+    "datePublished": "${dateObj.toISOString()}",
+    "author": {
+      "@type": "Person",
+      "name": "James Pether Sörling",
+      "jobTitle": "Political Intelligence Analyst"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Riksdagsmonitor",
+      "url": "https://riksdagsmonitor.com"
+    },
+    "image": "https://cia.sourceforge.io/cia-logo.png",
+    "inLanguage": "${lang}",
+    "keywords": "${keywords.join(', ')}"
+  }
+  </script>
+  
+  ${generateArticleCSS()}
+</head>
+<body>
+<article class="news-article">
+  <header class="article-header">
+    <h1>${title}</h1>
+    <div class="article-meta">
+      <time datetime="${isoDate}">${formattedDate}</time>
+      <span class="separator">•</span>
+      <span>${typeLabel}</span>
+      <span class="separator">•</span>
+      <span>${readTime}</span>
+    </div>
+  </header>
+
+${events.length > 0 ? generateEventCalendar(events, lang) : ''}
+
+  <div class="article-content">
+    <p class="lede">
+      ${subtitle}
+    </p>
+
+${content}
+
+${watchPoints.length > 0 ? generateWatchSection(watchPoints, lang) : ''}
+  </div>
+
+  <footer class="article-footer">
+    <div class="article-sources">
+      <h3>${lang === 'sv' ? 'Källor och data' : 'Sources and Data'}</h3>
+      <p><strong>${lang === 'sv' ? 'Datakällor' : 'Data Sources'}:</strong> ${sources.join(', ')}</p>
+      <p><strong>${lang === 'sv' ? 'Genererad av' : 'Generated by'}:</strong> ${lang === 'sv' ? 'Automatiserat nyhetssystem med riksdag-regering-mcp' : 'Automated News System using riksdag-regering-mcp'}</p>
+      <p><strong>${lang === 'sv' ? 'Analysverktyg' : 'Analysis Tools'}:</strong> ${lang === 'sv' ? 'AI-assisterad journalistik med mänsklig granskning' : 'AI-assisted journalism with human editorial oversight'}</p>
+    </div>
+    
+    <div class="article-nav">
+      <a href="${lang === 'en' ? 'index.html' : 'index_sv.html'}" class="back-to-news">
+        ← ${lang === 'sv' ? 'Tillbaka till nyheter' : 'Back to News'}
+      </a>
+    </div>
+  </footer>
+</article>
+
+<script src="../scripts/back-to-top.js"></script>
+</body>
+</html>`;
+}
+
+/**
+ * Generate event calendar section
+ */
+function generateEventCalendar(events, lang = 'en') {
+  const title = lang === 'sv' ? 'Veckans händelser' : 'Event Calendar';
+  const weekLabel = events.length > 0 && events[0].date ? 
+    `${formatDateRange(events, lang)}` : '';
+  
+  return `
+  <section class="event-calendar" aria-label="${title}">
+    <h2>${title}${weekLabel ? `: ${weekLabel}` : ''}</h2>
+    <div class="calendar-grid">
+${events.map(event => `      <div class="calendar-day${event.isToday ? ' today' : ''}" aria-label="${event.dayLabel}">
+        <div class="day-header">${event.dayName}</div>
+        <span class="day-date">${event.dayNumber}</span>
+        <ul class="event-list">
+${event.items.map(item => `          <li class="event-item">
+            <span class="event-time">${item.time}</span>
+            <span class="event-title">${item.title}</span>
+          </li>`).join('\n')}
+        </ul>
+      </div>`).join('\n')}
+    </div>
+  </section>`;
+}
+
+/**
+ * Generate "Watch Section" with key points
+ */
+function generateWatchSection(watchPoints, lang = 'en') {
+  const title = lang === 'sv' ? 'Vad man ska följa denna vecka' : 'What to Watch This Week';
+  
+  return `
+    <section class="watch-section">
+      <h2>${title}</h2>
+      <ul class="watch-list">
+${watchPoints.map(point => `        <li>
+          <strong>${point.title}:</strong> ${point.description}
+        </li>`).join('\n')}
+      </ul>
+    </section>`;
+}
+
+/**
+ * Generate article-specific CSS
+ */
+function generateArticleCSS() {
+  return `  <style>
+${getArticleStyles()}
+  </style>`;
+}
+
+/**
+ * Get article CSS styles (matching existing articles)
+ */
+function getArticleStyles() {
+  return `body {
+  font-family: var(--font-main, 'Inter', sans-serif);
+  background: var(--bg-color, #f8f9fa);
+  color: var(--text-color, #1a1a1a);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+.news-article {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.article-header {
+  border-bottom: 3px solid var(--primary-color, #006633);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.article-header h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem 0;
+  color: var(--header-color, #006633);
+  font-weight: 700;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #4a4a4a);
+  align-items: center;
+}
+
+.article-meta time {
+  font-weight: 600;
+}
+
+.article-meta .separator {
+  color: var(--border-color, #ccc);
+}
+
+/* Event Calendar */
+.event-calendar {
+  background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px var(--card-shadow, rgba(0, 102, 51, 0.08));
+}
+
+.event-calendar h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.calendar-day {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--border-radius, 8px);
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.calendar-day:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.calendar-day.today {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.day-header {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.day-date {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-item {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.event-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.event-time {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.event-title {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Article Content */
+.article-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.lede {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--text-color, #1a1a1a);
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary-color, #006633);
+}
+
+.article-content h2 {
+  font-size: 1.75rem;
+  color: var(--header-color, #006633);
+  margin: 2.5rem 0 1rem 0;
+  font-weight: 700;
+}
+
+.article-content h3 {
+  font-size: 1.35rem;
+  color: var(--primary-color, #006633);
+  margin: 2rem 0 0.75rem 0;
+  font-weight: 600;
+}
+
+.article-content p {
+  margin-bottom: 1.25rem;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1.25rem 0;
+  padding-left: 2rem;
+}
+
+.article-content li {
+  margin-bottom: 0.75rem;
+}
+
+.article-content a {
+  color: var(--link-color, #007744);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 119, 68, 0.3);
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.article-content a:hover {
+  color: var(--link-hover, #006633);
+  text-decoration-color: var(--link-hover, #006633);
+}
+
+.context-box {
+  background: var(--badge-bg, #f8f9fa);
+  border-left: 4px solid var(--primary-color, #006633);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.context-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color, #006633);
+}
+
+/* Watch Section */
+.watch-section {
+  background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.watch-section h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.watch-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.watch-list li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  line-height: 1.6;
+}
+
+.watch-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.watch-list strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+/* Article Footer */
+.article-footer {
+  border-top: 2px solid var(--section-border, #e9ecef);
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.article-sources {
+  background: var(--badge-bg, #f8f9fa);
+  padding: 1.5rem;
+  border-radius: var(--border-radius, 8px);
+  margin-bottom: 1.5rem;
+}
+
+.article-sources h3 {
+  margin-top: 0;
+  color: var(--primary-color, #006633);
+  font-size: 1.2rem;
+}
+
+.article-sources p {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #4a4a4a);
+}
+
+.article-nav {
+  text-align: center;
+}
+
+.back-to-news {
+  display: inline-block;
+  color: var(--link-color, #007744);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--link-color, #007744);
+  border-radius: var(--border-radius, 8px);
+  transition: all 0.3s ease;
+}
+
+.back-to-news:hover {
+  background: var(--link-color, #007744);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 68, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .news-article {
+    padding: 0 1rem;
+  }
+  
+  .article-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .article-content {
+    font-size: 1rem;
+  }
+  
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+  
+  .event-calendar,
+  .watch-section {
+    background: white;
+    color: black;
+    border: 2px solid #006633;
+  }
+  
+  .back-to-news {
+    display: none;
+  }
+}`;
+}
+
+/**
+ * Helper: Format date for display
+ */
+function formatDate(date, lang = 'en') {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString(lang === 'sv' ? 'sv-SE' : 'en-US', options);
+}
+
+/**
+ * Helper: Format date range for calendar title
+ */
+function formatDateRange(events, lang = 'en') {
+  if (events.length === 0) return '';
+  
+  const firstEvent = events[0];
+  const lastEvent = events[events.length - 1];
+  
+  if (!firstEvent.date || !lastEvent.date) return '';
+  
+  const options = { month: 'long', day: 'numeric', year: 'numeric' };
+  const startDate = new Date(firstEvent.date).toLocaleDateString(lang === 'sv' ? 'sv-SE' : 'en-US', options);
+  const endDate = new Date(lastEvent.date).toLocaleDateString(lang === 'sv' ? 'sv-SE' : 'en-US', { month: 'long', day: 'numeric' });
+  
+  return `${startDate.split(' ')[1]} ${startDate.split(' ')[0]} - ${endDate}`;
+}
+
+/**
+ * Helper: Escape HTML special characters
+ */
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
+
+export default {
+  generateArticleHTML,
+  generateEventCalendar,
+  generateWatchSection
+};

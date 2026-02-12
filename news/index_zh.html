@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>新闻 - Riksdagsmonitor</title>
-  <meta name="description" content="瑞典议会（国会）最新分析。利用CIA OSINT能力的AI驱动政治新闻。提供议会、政府和机构的系统透明度。">
-  <meta name="keywords" content="国会新闻, 瑞典议会, 政府分析, 政治新闻, 透明度, 民主">
+  <meta name="description" content="来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。">
+  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_zh.html">
   
   <!-- Open Graph -->
   <meta property="og:title" content="新闻 - Riksdagsmonitor">
-  <meta property="og:description" content="来自瑞典议会的最新政治新闻">
+  <meta property="og:description" content="来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/index_zh.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
@@ -21,11 +21,11 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="新闻 - Riksdagsmonitor">
-  <meta name="twitter:description" content="来自瑞典议会的最新政治新闻">
+  <meta name="twitter:description" content="来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
-  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/index.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
   <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
@@ -44,21 +44,18 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../styles.css">
   
-  <style>
+    <style>
     body {
       background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
       color: #e0e0e0;
-      font-family: 'Noto Sans SC', 'Microsoft YaHei', 'SimSun', sans-serif;
-      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
       padding: 0;
       margin: 0;
-      font-size: 16px;
-      letter-spacing: 0.02em;
     }
     
     .header-section {
@@ -74,33 +71,63 @@
     }
     
     h1 {
-      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       font-size: clamp(2rem, 5vw, 3rem);
       margin: 0 0 1rem 0;
       background: linear-gradient(135deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      line-height: 1.5;
-      letter-spacing: 0.05em;
-    }
-    
-    h2, h3 {
-      line-height: 1.5;
-      letter-spacing: 0.05em;
     }
     
     .subtitle {
       font-size: 1.1rem;
       color: #b0b0b0;
-      margin: 0;
-      line-height: 1.8;
+      margin: 0 0 1rem 0;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: var(--primary-cyan, #00d9ff);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      transition: transform 0.2s;
+    }
+    
+    .back-link:hover {
+      transform: translateX(-5px);
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem 3rem 1rem;
+    }
+    
+    .language-notice {
+      background: rgba(255, 190, 11, 0.1);
+      border-left: 4px solid var(--primary-yellow, #ffbe0b);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+    
+    .language-notice h2 {
+      font-size: 1.2rem;
+      color: var(--primary-yellow, #ffbe0b);
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .language-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #fff;
+      margin-left: 0.5rem;
     }
     
     .filter-bar {
@@ -118,6 +145,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      flex: 1;
+      min-width: 180px;
     }
     
     .filter-group label {
@@ -132,7 +161,7 @@
       border: 1px solid rgba(0, 217, 255, 0.5);
       border-radius: 4px;
       color: #e0e0e0;
-      font-family: 'Noto Sans SC', sans-serif;
+      font-family: 'Inter', sans-serif;
       cursor: pointer;
     }
     
@@ -189,7 +218,7 @@
       font-weight: 600;
       margin: 0 0 1rem 0;
       color: #fff;
-      line-height: 1.6;
+      line-height: 1.4;
     }
     
     .article-title a {
@@ -206,223 +235,213 @@
       color: #b0b0b0;
       margin-bottom: 1rem;
       flex-grow: 1;
-      line-height: 1.8;
     }
     
     .article-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: auto;
     }
     
     .tag {
-      padding: 0.3rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       background: rgba(255, 0, 110, 0.1);
       border: 1px solid rgba(255, 0, 110, 0.3);
       border-radius: 4px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--primary-magenta, #ff006e);
     }
     
-    .no-results {
-      text-align: center;
-      padding: 3rem;
-      color: #888;
-    }
-    
-    .back-link {
-      display: inline-block;
-      margin-bottom: 2rem;
-      padding: 0.5rem 1rem;
-      background: rgba(26, 30, 61, 0.8);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 4px;
-      color: var(--primary-cyan, #00d9ff);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .back-link:hover {
-      border-color: var(--primary-cyan, #00d9ff);
-      background: rgba(0, 217, 255, 0.1);
-    }
-    
-    .language-notice {
-      background: rgba(255, 190, 11, 0.1);
-      border: 1px solid rgba(255, 190, 11, 0.3);
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      margin-bottom: 2rem;
-      color: #e0e0e0;
-    }
-    
-    .language-notice strong {
-      color: var(--primary-yellow, #ffbe0b);
-    }
-    
-    .language-badge {
-      display: inline-block;
-      padding: 0.2rem 0.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 4px;
-      font-size: 0.7rem;
-      color: #b0b0b0;
-      margin-left: 0.5rem;
-    }
-    
     @media (max-width: 768px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      
       .filter-bar {
         flex-direction: column;
       }
       
-      .articles-grid {
-        grid-template-columns: 1fr;
+      .filter-group {
+        min-width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="header-section">
+  <header class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> Riksdagsmonitor 新闻</h1>
-      <p class="subtitle">经济学人风格政治新闻 • 系统透明度 • 民主问责制</p>
+      <h1>新闻</h1>
+      <p class="subtitle">来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。</p>
+      <a href="../index_zh.html" class="back-link">← 返回主页</a>
     </div>
-  </div>
+  </header>
   
   <div class="container">
-    <a href="../index_zh.html" class="back-link">← 返回仪表板</a>
-    
     <div class="language-notice">
-      <strong>📢 注意:</strong> 内容目前以英文提供。本地化中文文章即将推出。 • <em>Content currently available in English. Localized Chinese articles coming soon.</em>
+      <h2>文章以英文提供</h2>
+      <p>文章目前仅提供英文和瑞典文版本。中文自动翻译即将推出。 <span class="language-badge" aria-label="English language"><span aria-hidden="true">🇬🇧</span> EN</span></p>
     </div>
+
     
+    <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">文章类型</label>
+        <label for="filter-type">类型:</label>
         <select id="filter-type">
-          <option value="all">全部类型</option>
+          <option value="all">所有类型</option>
+          <option value="prospective">前瞻</option>
           <option value="retrospective">回顾</option>
-          <option value="prospective">展望（下周）</option>
           <option value="analysis">分析</option>
+          <option value="breaking">最新消息</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">主题</label>
+        <label for="filter-topic">主题:</label>
         <select id="filter-topic">
-          <option value="all">全部主题</option>
-          <option value="eu">欧盟事务</option>
-          <option value="government">政府</option>
+          <option value="all">所有主题</option>
           <option value="parliament">议会</option>
+          <option value="government">政府</option>
+          <option value="eu">EU</option>
+          <option value="defense">国防</option>
+          <option value="environment">环境</option>
           <option value="committees">委员会</option>
           <option value="legislation">立法</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">排序方式</label>
+        <label for="filter-sort">排序:</label>
         <select id="filter-sort">
           <option value="date-desc">最新优先</option>
-          <option value="date-asc">最早优先</option>
-          <option value="title">标题排序</option>
+          <option value="date-asc">最旧优先</option>
+          <option value="title">标题</option>
         </select>
       </div>
     </div>
     
-    <div class="articles-grid" id="articles-grid">
-      <!-- Articles dynamically loaded via JavaScript -->
-    </div>
+    <!-- Articles Grid -->
+    <div class="articles-grid" id="articles-grid"></div>
     
-    <div class="no-results" id="no-results" style="display: none;">
-      <p>未找到符合筛选条件的文章。</p>
+    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
+      没有与过滤器匹配的文章
     </div>
   </div>
   
   <script>
-    // News articles metadata
+    // Dynamic articles array - generated from news/ directory
     const articles = [
-      {
-        title: "下周：布鲁塞尔峰会考验瑞典欧盟战略",
-        date: "2026-02-10",
-        type: "prospective",
-        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
-        excerpt: "克里斯特松首相出席非正式领导人峰会，而欧盟委员会跟进国防和经济问题，对瑞典欧洲政策至关重要的一周。",
-        topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["欧盟峰会", "布鲁塞尔", "国防政策", "议会监督"]
-      },
-      {
-        title: "首相在布鲁塞尔峰会前面对议会",
-        date: "2026-02-10",
-        type: "retrospective",
-        slug: "2026-02-10-pm-eu-summit-en.html",
-        excerpt: "在罕见的公开欧盟委员会会议上，乌尔夫·克里斯特松首相在非正式领导人峰会前咨询国会，而政府面临经济犯罪和公民身份政策的日益压力。",
-        topics: ["eu", "government", "parliament"],
-        tags: ["欧盟", "首相", "经济犯罪", "公民身份"]
-      },
-      {
-        title: "宣布生物多样性战略和公民身份改革",
-        date: "2026-02-10",
-        type: "retrospective",
-        slug: "2026-02-10-biodiversity-citizenship-en.html",
-        excerpt: "政府宣布全面的生物多样性战略，并表明重大公民身份改革，联合政府在环境和移民的竞争优先事项中寻求平衡。",
-        topics: ["environment", "government", "legislation"],
-        tags: ["生物多样性", "公民身份", "环境", "移民"]
-      },
-      {
-        title: "政府提案 2026年2月",
-        date: "2026-02-07",
-        type: "analysis",
-        slug: "2026-02-government-propositions-en.html",
-        excerpt: "涵盖金融监管、可再生能源和财产安全的政策攻势标志着春季休会前的密集立法推动。",
-        topics: ["government", "legislation", "parliament"],
-        tags: ["提案", "金融", "气候", "财产", "税收"]
-      },
-      {
-        title: "委员会报告 2026年2月",
-        date: "2026-02-06",
-        type: "analysis",
-        slug: "2026-02-committee-reports-en.html",
-        excerpt: "议会委员会提交涵盖教育、国防和社会政策的综合报告，国会进入关键决策阶段。",
-        topics: ["committees", "parliament"],
-        tags: ["委员会报告", "教育", "国防", "社会政策"]
-      },
-      {
-        title: "反对党动议 2026年2月",
-        date: "2026-02-07",
-        type: "analysis",
-        slug: "2026-02-opposition-motions-en.html",
-        excerpt: "反对党通过针对经济犯罪、医疗保健和气候的政府政策的综合动议包，加强立法压力。",
-        topics: ["parliament", "legislation"],
-        tags: ["反对党", "动议", "经济犯罪", "医疗保健"]
-      },
-      {
-        title: "议会议程 - 周概览",
-        date: "2026-02-09",
-        type: "prospective",
-        slug: "2026-02-parliament-agenda-en.html",
-        excerpt: "即将举行的议会活动全面预览，包括委员会会议、全体辩论和部长质询。",
-        topics: ["parliament"],
-        tags: ["议会", "议程", "周预览"]
-      },
-      {
-        title: "下周展望",
-        date: "2026-02-09",
-        type: "prospective",
-        slug: "2026-02-week-ahead-en.html",
-        excerpt: "展望下周主要政治发展、议会活动和政府决定。",
-        topics: ["parliament", "government"],
-        tags: ["下周", "预览", "政治日历"]
-      }
-    ];
-    
-    // Localized type labels
-    const typeLabels = {
-      'prospective': '展望（下周）',
-      'retrospective': '回顾',
-      'analysis': '分析'
-    };
+  {
+    "title": "Ten Committee Reports This Week: Parliament",
+    "date": "2026-02-12",
+    "type": "analysis",
+    "slug": "2026-02-committee-reports-en.html",
+    "excerpt": "Analysis of parliamentary activity February 5-6, 2026",
+    "topics": [],
+    "tags": []
+  },
+  {
+    "title": "Sweden",
+    "date": "2026-02-12",
+    "type": "retrospective",
+    "slug": "2026-02-parliament-agenda-en.html",
+    "excerpt": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
+    "topics": [],
+    "tags": []
+  },
+  {
+    "title": "Government Announces Biodiversity Strategy and Stricter Citizenship Rules",
+    "date": "2026-02-10T13:00:00Z",
+    "type": "retrospective",
+    "slug": "2026-02-10-biodiversity-citizenship-en.html",
+    "excerpt": "Dual policy announcements signal proactive government agenda on environment and integration.",
+    "topics": [
+      "environment"
+    ],
+    "tags": [
+      "Biodiversity",
+      "Citizenship",
+      "Environment"
+    ]
+  },
+  {
+    "title": "Prime Minister Faces Parliament Before Brussels Summit",
+    "date": "2026-02-10T09:00:00Z",
+    "type": "analysis",
+    "slug": "2026-02-10-pm-eu-summit-en.html",
+    "excerpt": "Rare open EU Committee meeting as PM Kristersson prepares for informal leaders summit while government battles opposition pressure.",
+    "topics": [
+      "eu"
+    ],
+    "tags": [
+      "EU",
+      "Prime Minister",
+      "Economic Crime",
+      "Citizenship"
+    ]
+  },
+  {
+    "title": "Week Ahead: Brussels Summit Tests Swedish EU Strategy",
+    "date": "2026-02-10T09:00:00Z",
+    "type": "prospective",
+    "slug": "2026-02-10-week-ahead-feb-10-17-en.html",
+    "excerpt": "Critical week as PM faces Brussels summit while parliament intensifies oversight on citizenship, crime, and environment.",
+    "topics": [
+      "eu",
+      "parliament"
+    ],
+    "tags": [
+      "EU Summit",
+      "Parliament",
+      "Prospective Coverage"
+    ]
+  },
+  {
+    "title": "Government Propositions February 2026 | Riksdagsmonitor",
+    "date": "2026-02-07T07:00:00+00:00",
+    "type": "analysis",
+    "slug": "2026-02-government-propositions-en.html",
+    "excerpt": "Six propositions reveal coalition priorities: financial stability, green transition, and security crackdowns.",
+    "topics": [
+      "parliament"
+    ],
+    "tags": [
+      "Riksdag"
+    ]
+  },
+  {
+    "title": "Fresh Opposition Motions - Spring 2026 Battle Lines Emerge",
+    "date": "2026-02-07T00:00:00Z",
+    "type": "analysis",
+    "slug": "2026-02-opposition-motions-en.html",
+    "excerpt": "Ten fresh opposition motions reveal spring parliamentary battle lines - from indefinite detention to elderly care and constitutional rights.",
+    "topics": [
+      "parliament"
+    ],
+    "tags": [
+      "Riksdag",
+      "Opposition",
+      "Motions"
+    ]
+  },
+  {
+    "title": "Critical Week for Sweden in EU: Defense Council and Prime Minister",
+    "date": "2026-02-07T00:00:00+01:00",
+    "type": "prospective",
+    "slug": "2026-02-week-ahead-en.html",
+    "excerpt": "Critical week for Swedish EU policy: Defense Minister and Prime Minister face councils in Brussels while opposition intensifies government scrutiny.",
+    "topics": [
+      "eu",
+      "defense"
+    ],
+    "tags": [
+      "EU",
+      "Defense",
+      "Accountability",
+      "Ukraine"
+    ]
+  }
+];
     
     let filteredArticles = [...articles];
     
@@ -442,8 +461,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${typeLabels[article.type] || article.type}</span>
-            <span class="language-badge" aria-label="Article language: English"><span aria-hidden="true">🇬🇧</span> EN</span>
+            <span class="article-type">${article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -457,10 +475,8 @@
     }
     
     function formatDate(dateStr) {
-      // Parse date components to avoid timezone issues
-      const [year, month, day] = dateStr.split('-').map(Number);
-      const date = new Date(year, month - 1, day);
-      return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('zh', { year: 'numeric', month: 'long', day: 'numeric' });
     }
     
     function filterArticles() {
@@ -489,7 +505,7 @@
           filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
           break;
         case 'title':
-          filtered.sort((a, b) => a.title.localeCompare(b.title, 'zh-Hans'));
+          filtered.sort((a, b) => a.title.localeCompare(b.title));
           break;
       }
       
