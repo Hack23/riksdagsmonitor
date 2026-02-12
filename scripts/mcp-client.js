@@ -76,13 +76,15 @@ export class MCPClient {
     } catch (error) {
       this.errorCount++;
       
-      // Retry on network errors
-      if (retryCount < this.maxRetries && (
+      // Retry on network errors (case-insensitive check)
+      // maxRetries represents total attempts, so we retry until retryCount reaches maxRetries - 1
+      const errorMsg = error.message ? error.message.toLowerCase() : '';
+      if (retryCount < this.maxRetries - 1 && (
         error.name === 'AbortError' || 
-        error.message.includes('network') ||
-        error.message.includes('ECONNREFUSED')
+        errorMsg.includes('network') ||
+        errorMsg.includes('econnrefused')
       )) {
-        console.warn(`⚠️ Request failed, retrying (${retryCount + 1}/${this.maxRetries})...`);
+        console.warn(`⚠️ Request failed, retrying (${retryCount + 1}/${this.maxRetries - 1})...`);
         await this.sleep(RETRY_DELAY * Math.pow(2, retryCount)); // Exponential backoff
         return this.request(tool, params, retryCount + 1);
       }
