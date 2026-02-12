@@ -15,17 +15,27 @@
  *   const events = await client.fetchCalendarEvents('2026-02-10', '2026-02-17');
  */
 
-const MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp';
-const REQUEST_TIMEOUT = 30000; // 30 seconds
-const MAX_RETRIES = 3;
+const DEFAULT_MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp';
+const DEFAULT_REQUEST_TIMEOUT = 30000; // 30 seconds
+const DEFAULT_MAX_RETRIES = 3;
 const RETRY_DELAY = 1000; // 1 second
 
 /**
  * MCP Client Class
  */
 export class MCPClient {
-  constructor(serverUrl = MCP_SERVER_URL) {
-    this.serverUrl = serverUrl;
+  constructor(config = {}) {
+    // Support both object config and string URL for backwards compatibility
+    if (typeof config === 'string') {
+      this.baseURL = config;
+      this.timeout = DEFAULT_REQUEST_TIMEOUT;
+      this.maxRetries = DEFAULT_MAX_RETRIES;
+    } else {
+      this.baseURL = config.baseURL || config.serverUrl || DEFAULT_MCP_SERVER_URL;
+      this.timeout = config.timeout || DEFAULT_REQUEST_TIMEOUT;
+      this.maxRetries = config.maxRetries || DEFAULT_MAX_RETRIES;
+    }
+    
     this.requestCount = 0;
     this.errorCount = 0;
   }
@@ -38,14 +48,14 @@ export class MCPClient {
    * @param {number} retryCount - Current retry attempt
    * @returns {Promise<Object>} Tool response
    */
-  async makeRequest(tool, params = {}, retryCount = 0) {
+  async request(tool, params = {}, retryCount = 0) {
     this.requestCount++;
     
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
+      const timeoutId = setTimeout(() => controller.abort(), this.timeout);
       
-      const response = await fetch(`${this.serverUrl}/tools/${tool}`, {
+      const response = await fetch(`${this.baseURL}/tools/${tool}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,14 +77,14 @@ export class MCPClient {
       this.errorCount++;
       
       // Retry on network errors
-      if (retryCount < MAX_RETRIES && (
+      if (retryCount < this.maxRetries && (
         error.name === 'AbortError' || 
         error.message.includes('network') ||
         error.message.includes('ECONNREFUSED')
       )) {
-        console.warn(`⚠️ Request failed, retrying (${retryCount + 1}/${MAX_RETRIES})...`);
+        console.warn(`⚠️ Request failed, retrying (${retryCount + 1}/${this.maxRetries})...`);
         await this.sleep(RETRY_DELAY * Math.pow(2, retryCount)); // Exponential backoff
-        return this.makeRequest(tool, params, retryCount + 1);
+        return this.request(tool, params, retryCount + 1);
       }
       
       throw new Error(`MCP request failed: ${error.message}`);
@@ -102,7 +112,7 @@ export class MCPClient {
     if (org) params.org = org;
     if (akt) params.akt = akt;
     
-    const response = await this.makeRequest('get_calendar_events', params);
+    const response = await this.request('get_calendar_events', params);
     return response.events || [];
   }
 
@@ -119,7 +129,7 @@ export class MCPClient {
     if (rm) params.rm = rm;
     if (organ) params.organ = organ;
     
-    const response = await this.makeRequest('get_betankanden', params);
+    const response = await this.request('get_betankanden', params);
     return response.reports || [];
   }
 
@@ -134,7 +144,7 @@ export class MCPClient {
     const params = { limit };
     if (rm) params.rm = rm;
     
-    const response = await this.makeRequest('get_propositioner', params);
+    const response = await this.request('get_propositioner', params);
     return response.propositions || [];
   }
 
@@ -149,7 +159,7 @@ export class MCPClient {
     const params = { limit };
     if (rm) params.rm = rm;
     
-    const response = await this.makeRequest('get_motioner', params);
+    const response = await this.request('get_motioner', params);
     return response.motions || [];
   }
 
@@ -166,7 +176,7 @@ export class MCPClient {
    * @returns {Promise<Array>} Documents
    */
   async searchDocuments(searchParams) {
-    const response = await this.makeRequest('search_dokument', searchParams);
+    const response = await this.request('search_dokument', searchParams);
     return response.documents || [];
   }
 
@@ -182,7 +192,7 @@ export class MCPClient {
    * @returns {Promise<Array>} Speeches
    */
   async searchSpeeches(searchParams) {
-    const response = await this.makeRequest('search_anforanden', searchParams);
+    const response = await this.request('search_anforanden', searchParams);
     return response.speeches || [];
   }
 
@@ -197,7 +207,7 @@ export class MCPClient {
    * @returns {Promise<Array>} MPs
    */
   async fetchMPs(filters = {}) {
-    const response = await this.makeRequest('search_ledamoter', filters);
+    const response = await this.request('search_ledamoter', filters);
     return response.mps || [];
   }
 
@@ -211,7 +221,7 @@ export class MCPClient {
    * @returns {Promise<Array>} Voting records
    */
   async fetchVotingRecords(filters) {
-    const response = await this.makeRequest('search_voteringar', filters);
+    const response = await this.request('search_voteringar', filters);
     return response.votes || [];
   }
 
@@ -227,7 +237,7 @@ export class MCPClient {
    * @returns {Promise<Array>} Government documents
    */
   async fetchGovernmentDocuments(searchParams) {
-    const response = await this.makeRequest('search_regering', searchParams);
+    const response = await this.request('search_regering', searchParams);
     return response.documents || [];
   }
 
@@ -241,7 +251,7 @@ export class MCPClient {
       requests: this.requestCount,
       errors: this.errorCount,
       successRate: this.requestCount > 0 
-        ? ((this.requestCount - this.errorCount) / this.requestCount * 100).toFixed(1) + '%'
+        ? Math.round((this.requestCount - this.errorCount) / this.requestCount * 100) + '%'
         : '0%'
     };
   }

@@ -131,7 +131,6 @@ async function generateWeekAhead() {
     const eventGridEN = transformCalendarToEventGrid(events, 'en');
     const contentEN = generateArticleContent({ events, highlights: [] }, 'week-ahead', 'en');
     const watchPointsEN = extractWatchPoints({ events }, 'en');
-    const topics = extractTopics(events);
     const metadataEN = generateMetadata({ events }, 'week-ahead', 'en');
     const readTime = calculateReadTime(contentEN);
     const sources = generateSources(['get_calendar_events']);

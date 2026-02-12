@@ -23,13 +23,18 @@ export function transformCalendarToEventGrid(events, lang = 'en') {
   // Group events by date
   const eventsByDate = {};
   events.forEach(event => {
-    const date = event.datum || event.from;
-    if (!date) return;
-    
-    if (!eventsByDate[date]) {
-      eventsByDate[date] = [];
+    // Extract date from various field formats (MCP responses use 'from', 'start', or 'datum')
+    let dateStr = event.datum || event.from || event.start;
+    if (dateStr) {
+      // Extract just the date part if it's an ISO timestamp
+      dateStr = dateStr.split('T')[0];
     }
-    eventsByDate[date].push(event);
+    if (!dateStr) return;
+    
+    if (!eventsByDate[dateStr]) {
+      eventsByDate[dateStr] = [];
+    }
+    eventsByDate[dateStr].push(event);
   });
   
   // Sort dates
@@ -38,14 +43,14 @@ export function transformCalendarToEventGrid(events, lang = 'en') {
   // Convert to grid format
   const eventGrid = sortedDates.map(date => {
     const dateObj = new Date(date);
-    const isToday = isToday Date(dateObj);
+    const isTodayFlag = isTodayDate(dateObj);
     
     return {
       date: date,
       dayName: formatDayName(dateObj, lang),
       dayNumber: dateObj.getDate().toString(),
       dayLabel: formatDayLabel(dateObj, lang),
-      isToday: isToday,
+      isToday: isTodayFlag,
       items: eventsByDate[date].map(event => ({
         time: event.tid || event.time || 'Expected',
         title: event.rubrik || event.titel || event.title || 'Event'
@@ -193,9 +198,14 @@ function generateWeekAheadContent(data, lang) {
       : '\n    <h2>Nyckel händelser denna vecka</h2>\n';
     
     highPriority.forEach(event => {
+      // Derive dayName from event date if not present
+      const dayName = event.dayName || (event.datum || event.from || event.start ? formatDayName(new Date(event.datum || event.from || event.start), lang) : '');
+      const eventTime = event.time || event.tid || 'Expected';
+      const eventTitle = event.title || event.titel || 'Event';
+      
       content += `
-    <h3>${event.dayName} - ${event.title}</h3>
-    <p>${event.description || `${event.time}: ${event.details || 'Parliamentary session scheduled.'}`}</p>
+    <h3>${dayName ? dayName + ' - ' : ''}${eventTitle}</h3>
+    <p>${event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`}</p>
 `;
     });
   }
@@ -236,11 +246,18 @@ function isHighPriority(event) {
  * Generate Committee Reports content
  */
 function generateCommitteeContent(data, lang) {
-  const { reports } = data;
+  const reports = data.reports || [];
   
   let content = lang === 'en'
     ? '<h2>Latest Committee Reports</h2>\n'
     : '<h2>Senaste kommittérapporter</h2>\n';
+  
+  if (reports.length === 0) {
+    content += lang === 'en'
+      ? '<p>No committee reports available at this time.</p>\n'
+      : '<p>Inga kommittérapporter tillgängliga för tillfället.</p>\n';
+    return content;
+  }
   
   reports.forEach(report => {
     content += `
@@ -258,11 +275,18 @@ function generateCommitteeContent(data, lang) {
  * Generate Propositions content
  */
 function generatePropositionsContent(data, lang) {
-  const { propositions } = data;
+  const propositions = data.propositions || [];
   
   let content = lang === 'en'
     ? '<h2>Government Propositions</h2>\n'
     : '<h2>Regeringens propositioner</h2>\n';
+  
+  if (propositions.length === 0) {
+    content += lang === 'en'
+      ? '<p>No government propositions available at this time.</p>\n'
+      : '<p>Inga regeringspropositioner tillgängliga för tillfället.</p>\n';
+    return content;
+  }
   
   propositions.forEach(prop => {
     content += `
@@ -279,11 +303,18 @@ function generatePropositionsContent(data, lang) {
  * Generate Motions content
  */
 function generateMotionsContent(data, lang) {
-  const { motions } = data;
+  const motions = data.motions || [];
   
   let content = lang === 'en'
     ? '<h2>Opposition Motions</h2>\n'
     : '<h2>Oppositionens motioner</h2>\n';
+  
+  if (motions.length === 0) {
+    content += lang === 'en'
+      ? '<p>No opposition motions available at this time.</p>\n'
+      : '<p>Inga oppositionsmotioner tillgängliga för tillfället.</p>\n';
+    return content;
+  }
   
   motions.forEach(motion => {
     content += `
@@ -321,8 +352,12 @@ export function extractWatchPoints(data, lang = 'en') {
   if (data.events) {
     const highPriorityEvents = data.events.filter(isHighPriority);
     highPriorityEvents.forEach(event => {
+      // Derive dayName from event date if not present
+      const dayName = event.dayName || (event.datum || event.from || event.start ? formatDayName(new Date((event.datum || event.from || event.start).split('T')[0]), lang) : '');
+      const eventTitle = event.title || event.titel || 'Event';
+      
       watchPoints.push({
-        title: `${event.dayName}: ${event.title}`,
+        title: dayName ? `${dayName}: ${eventTitle}` : eventTitle,
         description: event.description || (lang === 'en' 
           ? 'Monitor developments and outcomes'
           : 'Övervaka utveckling och resultat')

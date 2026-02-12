@@ -45,14 +45,12 @@ export function generateArticleHTML(data) {
     type,
     readTime = '5 min read',
     lang = 'en',
-    langFull = 'English',
     locale = 'en_US',
     content,
     events = [],
     watchPoints = [],
     sources = [],
     keywords = [],
-    topics = [],
     tags = []
   } = data;
   
