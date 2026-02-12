@@ -25,7 +25,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 const SITEMAP_FILE = path.join(ROOT_DIR, 'sitemap.xml');
 
 // Language codes
-const LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+const LANGUAGES = ['en', 'sv', 'da', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
 
 /**
  * Get news articles with metadata
@@ -123,7 +123,7 @@ function generateSitemap() {
   // Main index page with all language alternates (canonical is index.html based on <link rel="canonical">)
   const indexAlternates = LANGUAGES.map(lang => ({
     lang,
-    href: lang === 'en' ? 'index.html' : `index_${lang}.html`
+    href: lang === 'en' ? 'index.html' : `index_${lang === 'nb' ? 'no' : lang}.html`
   }));
   
   // Use actual file mtime for main index
@@ -132,7 +132,7 @@ function generateSitemap() {
   
   // Individual language index pages (excluding English since it's the canonical above)
   LANGUAGES.filter(lang => lang !== 'en').forEach(lang => {
-    const loc = `index_${lang}.html`;
+    const loc = `index_${lang === 'nb' ? 'no' : lang}.html`;
     const lastmod = getFileModTime(path.join(ROOT_DIR, loc));
     const priority = lang === 'sv' ? '0.9' : '0.7';
     
