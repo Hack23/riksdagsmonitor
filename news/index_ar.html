@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الأخبار - Riksdagsmonitor</title>
-  <meta name="description" content="آخر الأخبار والتحليلات من البرلمان السويدي (ريكسداغ). صحافة سياسية بأسلوب The Economist تغطي البرلمان والحكومة والوكالات مع شفافية منهجية.">
-  <meta name="keywords" content="أخبار ريكسداغ, البرلمان السويدي, تحليل الحكومة, الصحافة السياسية, الشفافية, الديمقراطية">
+  <title>أخبار - Riksdagsmonitor</title>
+  <meta name="description" content="آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.">
+  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_ar.html">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="الأخبار - Riksdagsmonitor">
-  <meta property="og:description" content="آخر الصحافة السياسية من البرلمان السويدي">
+  <meta property="og:title" content="أخبار - Riksdagsmonitor">
+  <meta property="og:description" content="آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/index_ar.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
@@ -20,12 +20,12 @@
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="الأخبار - Riksdagsmonitor">
-  <meta name="twitter:description" content="آخر الصحافة السياسية من البرلمان السويدي">
+  <meta name="twitter:title" content="أخبار - Riksdagsmonitor">
+  <meta name="twitter:description" content="آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
-  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/">
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/index.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
   <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
@@ -48,7 +48,7 @@
   
   <link rel="stylesheet" href="../styles.css">
   
-  <style>
+    <style>
     body {
       background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
       color: #e0e0e0;
@@ -83,13 +83,51 @@
     .subtitle {
       font-size: 1.1rem;
       color: #b0b0b0;
-      margin: 0;
+      margin: 0 0 1rem 0;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: var(--primary-cyan, #00d9ff);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      transition: transform 0.2s;
+    }
+    
+    .back-link:hover {
+      transform: translateX(-5px);
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem 3rem 1rem;
+    }
+    
+    .language-notice {
+      background: rgba(255, 190, 11, 0.1);
+      border-right: 4px solid var(--primary-yellow, #ffbe0b);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+    
+    .language-notice h2 {
+      font-size: 1.2rem;
+      color: var(--primary-yellow, #ffbe0b);
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .language-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #fff;
+      margin-right: 0.5rem;
     }
     
     .filter-bar {
@@ -107,6 +145,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      flex: 1;
+      min-width: 180px;
     }
     
     .filter-group label {
@@ -201,241 +241,209 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: auto;
     }
     
     .tag {
-      padding: 0.3rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       background: rgba(255, 0, 110, 0.1);
       border: 1px solid rgba(255, 0, 110, 0.3);
       border-radius: 4px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--primary-magenta, #ff006e);
     }
     
-    .no-results {
-      text-align: center;
-      padding: 3rem;
-      color: #888;
-    }
-    
-    .back-link {
-      display: inline-block;
-      margin-bottom: 2rem;
-      padding: 0.5rem 1rem;
-      background: rgba(26, 30, 61, 0.8);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 4px;
-      color: var(--primary-cyan, #00d9ff);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .back-link:hover {
-      border-color: var(--primary-cyan, #00d9ff);
-      background: rgba(0, 217, 255, 0.1);
-    }
-    
-    .language-notice {
-      background: rgba(255, 190, 11, 0.1);
-      border: 1px solid rgba(255, 190, 11, 0.3);
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      margin-bottom: 2rem;
-      color: #e0e0e0;
-    }
-    
-    .language-notice strong {
-      color: var(--primary-yellow, #ffbe0b);
-    }
-    
-    .language-badge {
-      display: inline-block;
-      padding: 0.2rem 0.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 4px;
-      font-size: 0.7rem;
-      color: #b0b0b0;
-      margin-left: 0.5rem;
-    }
-    
-    /* RTL-specific badge spacing */
-    [dir="rtl"] .language-badge {
-      margin-left: 0;
-      margin-right: 0.5rem;
-    }
-    
-    /* RTL-specific styles */
-    [dir="rtl"] .filter-bar {
-      flex-direction: row-reverse;
-    }
-    
-    [dir="rtl"] .article-meta {
-      flex-direction: row-reverse;
-    }
-    
-    [dir="rtl"] .article-tags {
-      flex-direction: row-reverse;
-    }
-    
-    [dir="rtl"] .back-link::before {
-      content: "← ";
-    }
-    
     @media (max-width: 768px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      
       .filter-bar {
         flex-direction: column;
       }
       
-      .articles-grid {
-        grid-template-columns: 1fr;
+      .filter-group {
+        min-width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="header-section">
+  <header class="header-section">
     <div class="header-content">
-      <h1><span aria-hidden="true">📰</span> أخبار Riksdagsmonitor</h1>
-      <p class="subtitle">صحافة سياسية بأسلوب The Economist • شفافية منهجية • مساءلة ديمقراطية</p>
+      <h1>أخبار</h1>
+      <p class="subtitle">آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.</p>
+      <a href="../index_ar.html" class="back-link">← العودة إلى الصفحة الرئيسية</a>
     </div>
-  </div>
+  </header>
   
   <div class="container">
-    <a href="../index_ar.html" class="back-link">العودة إلى لوحة المعلومات</a>
-    
     <div class="language-notice">
-      <strong>📢 ملاحظة:</strong> المحتوى متاح حالياً باللغة الإنجليزية. المقالات المحلية باللغة العربية قادمة قريباً.<span dir="ltr"> • <em>Content currently available in English. Localized Arabic articles coming soon.</em></span>
+      <h2>المقالات متاحة بالإنجليزية</h2>
+      <p>المقالات متاحة حالياً باللغتين الإنجليزية والسويدية فقط. الترجمة الآلية إلى العربية قريباً. <span class="language-badge" dir="ltr" aria-label="English language"><span aria-hidden="true">🇬🇧</span> EN</span></p>
     </div>
+
     
+    <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">نوع المقال</label>
+        <label for="filter-type">النوع:</label>
         <select id="filter-type">
-          <option value="all">كل الأنواع</option>
-          <option value="retrospective">استعراضي</option>
-          <option value="prospective">استباقي (الأسبوع القادم)</option>
+          <option value="all">جميع الأنواع</option>
+          <option value="prospective">استشرافي</option>
+          <option value="retrospective">استعادي</option>
           <option value="analysis">تحليل</option>
+          <option value="breaking">أخبار عاجلة</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">الموضوع</label>
+        <label for="filter-topic">الموضوع:</label>
         <select id="filter-topic">
-          <option value="all">كل المواضيع</option>
-          <option value="eu">شؤون الاتحاد الأوروبي</option>
-          <option value="government">الحكومة</option>
+          <option value="all">جميع المواضيع</option>
           <option value="parliament">البرلمان</option>
+          <option value="government">الحكومة</option>
+          <option value="eu">EU</option>
+          <option value="defense">الدفاع</option>
+          <option value="environment">البيئة</option>
           <option value="committees">اللجان</option>
           <option value="legislation">التشريعات</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">ترتيب حسب</label>
+        <label for="filter-sort">ترتيب:</label>
         <select id="filter-sort">
           <option value="date-desc">الأحدث أولاً</option>
           <option value="date-asc">الأقدم أولاً</option>
-          <option value="title">العنوان أ-ي</option>
+          <option value="title">العنوان</option>
         </select>
       </div>
     </div>
     
-    <div class="articles-grid" id="articles-grid">
-      <!-- Articles dynamically loaded via JavaScript -->
-    </div>
+    <!-- Articles Grid -->
+    <div class="articles-grid" id="articles-grid"></div>
     
-    <div class="no-results" id="no-results" style="display: none;">
-      <p>لم يتم العثور على مقالات تطابق معايير البحث.</p>
+    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
+      لا توجد مقالات تطابق الفلاتر
     </div>
   </div>
   
   <script>
-    // News articles metadata
+    // Dynamic articles array - generated from news/ directory
     const articles = [
-      {
-        title: "الأسبوع القادم: قمة بروكسل تختبر الاستراتيجية السويدية للاتحاد الأوروبي",
-        date: "2026-02-10",
-        type: "prospective",
-        slug: "2026-02-10-week-ahead-feb-10-17-en.html",
-        excerpt: "أسبوع حاسم للسياسة الأوروبية السويدية حيث يحضر رئيس الوزراء كريسترسون قمة القادة غير الرسمية بينما تتابع لجنة الاتحاد الأوروبي قضايا الدفاع والاقتصاد.",
-        topics: ["eu", "defense", "parliament", "citizenship", "environment"],
-        tags: ["قمة الاتحاد الأوروبي", "بروكسل", "سياسة الدفاع", "الرقابة البرلمانية"]
-      },
-      {
-        title: "رئيس الوزراء يواجه البرلمان قبل قمة بروكسل",
-        date: "2026-02-10",
-        type: "retrospective",
-        slug: "2026-02-10-pm-eu-summit-en.html",
-        excerpt: "في اجتماع مفتوح نادر للجنة الاتحاد الأوروبي، يستشير رئيس الوزراء أولف كريسترسون البرلمان قبل قمة القادة غير الرسمية بينما تواجه الحكومة ضغوطاً متزايدة بشأن الجريمة الاقتصادية وسياسة الجنسية.",
-        topics: ["eu", "government", "parliament"],
-        tags: ["الاتحاد الأوروبي", "رئيس الوزراء", "الجريمة الاقتصادية", "الجنسية"]
-      },
-      {
-        title: "الإعلان عن استراتيجية التنوع البيولوجي وإصلاح الجنسية",
-        date: "2026-02-10",
-        type: "retrospective",
-        slug: "2026-02-10-biodiversity-citizenship-en.html",
-        excerpt: "تعلن الحكومة عن استراتيجية شاملة للتنوع البيولوجي وتشير إلى إصلاح كبير للجنسية حيث يتنقل الائتلاف بين الأولويات المتنافسة بشأن البيئة والهجرة.",
-        topics: ["environment", "government", "legislation"],
-        tags: ["التنوع البيولوجي", "الجنسية", "البيئة", "الهجرة"]
-      },
-      {
-        title: "مقترحات الحكومة فبراير 2026",
-        date: "2026-02-07",
-        type: "analysis",
-        slug: "2026-02-government-propositions-en.html",
-        excerpt: "هجوم سياسي عبر الإشراف المالي والطاقة المتجددة وأمن الملكية يمثل دفعة تشريعية مكثفة قبل العطلة الربيعية.",
-        topics: ["government", "legislation", "parliament"],
-        tags: ["المقترحات", "المالية", "المناخ", "الملكية", "الضرائب"]
-      },
-      {
-        title: "تقارير اللجان فبراير 2026",
-        date: "2026-02-06",
-        type: "analysis",
-        slug: "2026-02-committee-reports-en.html",
-        excerpt: "تقدم اللجان البرلمانية تقارير شاملة تغطي التعليم والدفاع والسياسة الاجتماعية حيث يدخل البرلمان مرحلة القرار الحاسمة.",
-        topics: ["committees", "parliament"],
-        tags: ["تقارير اللجان", "التعليم", "الدفاع", "السياسة الاجتماعية"]
-      },
-      {
-        title: "مقترحات المعارضة فبراير 2026",
-        date: "2026-02-07",
-        type: "analysis",
-        slug: "2026-02-opposition-motions-en.html",
-        excerpt: "تكثف أحزاب المعارضة الضغط التشريعي بحزم مقترحات شاملة تستهدف السياسة الحكومية عبر الجريمة الاقتصادية والرعاية الصحية والمناخ.",
-        topics: ["parliament", "legislation"],
-        tags: ["المعارضة", "المقترحات", "الجريمة الاقتصادية", "الرعاية الصحية"]
-      },
-      {
-        title: "جدول أعمال البرلمان - نظرة عامة على الأسبوع",
-        date: "2026-02-09",
-        type: "prospective",
-        slug: "2026-02-parliament-agenda-en.html",
-        excerpt: "معاينة شاملة للنشاط البرلماني القادم بما في ذلك اجتماعات اللجان ومناقشات الجلسة العامة وأسئلة الوزراء.",
-        topics: ["parliament"],
-        tags: ["البرلمان", "جدول الأعمال", "معاينة أسبوعية"]
-      },
-      {
-        title: "الأسبوع القادم",
-        date: "2026-02-09",
-        type: "prospective",
-        slug: "2026-02-week-ahead-en.html",
-        excerpt: "نظرة مستقبلية على التطورات السياسية الرئيسية والنشاط البرلماني وقرارات الحكومة في الأسبوع المقبل.",
-        topics: ["parliament", "government"],
-        tags: ["الأسبوع القادم", "معاينة", "التقويم السياسي"]
-      }
-    ];
+  {
+    "title": "Ten Committee Reports This Week: Parliament",
+    "date": "2026-02-12",
+    "type": "analysis",
+    "slug": "2026-02-committee-reports-en.html",
+    "excerpt": "Analysis of parliamentary activity February 5-6, 2026",
+    "topics": [],
+    "tags": []
+  },
+  {
+    "title": "Sweden",
+    "date": "2026-02-12",
+    "type": "retrospective",
+    "slug": "2026-02-parliament-agenda-en.html",
+    "excerpt": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
+    "topics": [],
+    "tags": []
+  },
+  {
+    "title": "Government Announces Biodiversity Strategy and Stricter Citizenship Rules",
+    "date": "2026-02-10T13:00:00Z",
+    "type": "retrospective",
+    "slug": "2026-02-10-biodiversity-citizenship-en.html",
+    "excerpt": "Dual policy announcements signal proactive government agenda on environment and integration.",
+    "topics": [
+      "environment"
+    ],
+    "tags": [
+      "Biodiversity",
+      "Citizenship",
+      "Environment"
+    ]
+  },
+  {
+    "title": "Prime Minister Faces Parliament Before Brussels Summit",
+    "date": "2026-02-10T09:00:00Z",
+    "type": "analysis",
+    "slug": "2026-02-10-pm-eu-summit-en.html",
+    "excerpt": "Rare open EU Committee meeting as PM Kristersson prepares for informal leaders summit while government battles opposition pressure.",
+    "topics": [
+      "eu"
+    ],
+    "tags": [
+      "EU",
+      "Prime Minister",
+      "Economic Crime",
+      "Citizenship"
+    ]
+  },
+  {
+    "title": "Week Ahead: Brussels Summit Tests Swedish EU Strategy",
+    "date": "2026-02-10T09:00:00Z",
+    "type": "prospective",
+    "slug": "2026-02-10-week-ahead-feb-10-17-en.html",
+    "excerpt": "Critical week as PM faces Brussels summit while parliament intensifies oversight on citizenship, crime, and environment.",
+    "topics": [
+      "eu",
+      "parliament"
+    ],
+    "tags": [
+      "EU Summit",
+      "Parliament",
+      "Prospective Coverage"
+    ]
+  },
+  {
+    "title": "Government Propositions February 2026 | Riksdagsmonitor",
+    "date": "2026-02-07T07:00:00+00:00",
+    "type": "analysis",
+    "slug": "2026-02-government-propositions-en.html",
+    "excerpt": "Six propositions reveal coalition priorities: financial stability, green transition, and security crackdowns.",
+    "topics": [
+      "parliament"
+    ],
+    "tags": [
+      "Riksdag"
+    ]
+  },
+  {
+    "title": "Fresh Opposition Motions - Spring 2026 Battle Lines Emerge",
+    "date": "2026-02-07T00:00:00Z",
+    "type": "analysis",
+    "slug": "2026-02-opposition-motions-en.html",
+    "excerpt": "Ten fresh opposition motions reveal spring parliamentary battle lines - from indefinite detention to elderly care and constitutional rights.",
+    "topics": [
+      "parliament"
+    ],
+    "tags": [
+      "Riksdag",
+      "Opposition",
+      "Motions"
+    ]
+  },
+  {
+    "title": "Critical Week for Sweden in EU: Defense Council and Prime Minister",
+    "date": "2026-02-07T00:00:00+01:00",
+    "type": "prospective",
+    "slug": "2026-02-week-ahead-en.html",
+    "excerpt": "Critical week for Swedish EU policy: Defense Minister and Prime Minister face councils in Brussels while opposition intensifies government scrutiny.",
+    "topics": [
+      "eu",
+      "defense"
+    ],
+    "tags": [
+      "EU",
+      "Defense",
+      "Accountability",
+      "Ukraine"
+    ]
+  }
+];
     
     let filteredArticles = [...articles];
-    
-    // Localized type labels
-    const typeLabels = {
-      'prospective': 'استباقي',
-      'retrospective': 'استعراضي',
-      'analysis': 'تحليل'
-    };
     
     function renderArticles(articlesToRender) {
       const grid = document.getElementById('articles-grid');
@@ -453,8 +461,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${typeLabels[article.type] || article.type}</span>
-            <span class="language-badge" dir="ltr" aria-label="Article language: English"><span aria-hidden="true">🇬🇧</span> EN</span>
+            <span class="article-type">${article.type}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -468,11 +475,8 @@
     }
     
     function formatDate(dateStr) {
-      // Parse date components to avoid timezone issues
-      const [year, month, day] = dateStr.split('-').map(Number);
-      const date = new Date(year, month - 1, day);
-      const months = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
-      return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('ar', { year: 'numeric', month: 'long', day: 'numeric' });
     }
     
     function filterArticles() {
@@ -501,7 +505,7 @@
           filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
           break;
         case 'title':
-          filtered.sort((a, b) => a.title.localeCompare(b.title, 'ar'));
+          filtered.sort((a, b) => a.title.localeCompare(b.title));
           break;
       }
       
