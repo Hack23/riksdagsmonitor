@@ -14,6 +14,10 @@ on:
         type: boolean
         required: false
         default: false
+      languages:
+        description: 'Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)'
+        required: false
+        default: en,sv
 
 permissions:
   contents: read
@@ -46,7 +50,9 @@ steps:
     run: |
       npm ci --prefer-offline --no-audit
 
-engine: copilot
+engine:
+  id: copilot
+  model: claude-opus-4-6
 ---
 
 # 📰 News Article Generator Agent
@@ -62,6 +68,16 @@ Generate news articles based on the latest data from riksdag-regering-mcp server
 Check the GitHub event inputs:
 - **article_types**: Available from `github.event.inputs.article_types` (default: week-ahead if not provided)
 - **force_generation**: Available from `github.event.inputs.force_generation` (default: false if not provided)
+- **languages**: Available from `github.event.inputs.languages` (default: en,sv if not provided)
+
+### Language Options
+
+The `languages` input supports:
+- **en,sv** (default) - English and Swedish only
+- **nordic** - Nordic languages: en,sv,da,no,fi
+- **eu-core** - EU core languages: en,sv,de,fr,es,nl
+- **all** - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
+- **custom** - Any comma-separated list (e.g., "en,sv,de,fr")
 
 ### Article Types to Generate
 
@@ -215,9 +231,12 @@ For each article type with significant updates:
    - Reference MCP tool calls
    - Include data timestamps
 
-5. **Generate both languages**:
-   - English version (`-en.html`)
-   - Swedish version (`-sv.html`)
+5. **Generate requested languages**:
+   - Parse the `languages` input
+   - Expand presets: "nordic" → "en,sv,da,no,fi", "eu-core" → "en,sv,de,fr,es,nl", "all" → all 14
+   - Generate article for each language with proper title/subtitle
+   - Use language-specific Schema.org markup
+   - Include RTL support for Arabic (ar) and Hebrew (he)
 
 ### Step 5: Regenerate News Indexes
 

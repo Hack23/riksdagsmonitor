@@ -22,21 +22,37 @@ const __dirname = path.dirname(__filename);
 
 // Configuration
 const NEWS_DIR = path.join(__dirname, '..', 'news');
+
+/**
+ * Helper: Escape HTML special characters for safe inclusion in HTML/JSON-LD
+ */
+function escapeHtml(text) {
+  if (!text) return '';
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return String(text).replace(/[&<>"']/g, m => map[m]);
+}
+
 const LANGUAGES = {
-  en: { name: 'English', code: 'en', locale: 'en_US', title: 'News', subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.' },
-  sv: { name: 'Svenska', code: 'sv', locale: 'sv_SE', title: 'Nyheter', subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.' },
-  da: { name: 'Dansk', code: 'da', locale: 'da_DK', title: 'Nyheder', subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.' },
-  no: { name: 'Norsk', code: 'nb', locale: 'nb_NO', title: 'Nyheter', subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.' },
-  fi: { name: 'Suomi', code: 'fi', locale: 'fi_FI', title: 'Uutiset', subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.' },
-  de: { name: 'Deutsch', code: 'de', locale: 'de_DE', title: 'Nachrichten', subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.' },
-  fr: { name: 'Français', code: 'fr', locale: 'fr_FR', title: 'Actualités', subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.' },
-  es: { name: 'Español', code: 'es', locale: 'es_ES', title: 'Noticias', subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.' },
-  nl: { name: 'Nederlands', code: 'nl', locale: 'nl_NL', title: 'Nieuws', subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.' },
-  ar: { name: 'العربية', code: 'ar', locale: 'ar_SA', title: 'أخبار', subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.', rtl: true },
-  he: { name: 'עברית', code: 'he', locale: 'he_IL', title: 'חדשות', subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.', rtl: true },
-  ja: { name: '日本語', code: 'ja', locale: 'ja_JP', title: 'ニュース', subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。' },
-  ko: { name: '한국어', code: 'ko', locale: 'ko_KR', title: '뉴스', subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.' },
-  zh: { name: '中文', code: 'zh', locale: 'zh_CN', title: '新闻', subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。' }
+  en: { name: 'English', code: 'en', locale: 'en_US', title: 'News', subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.', breadcrumbs: { home: 'Home', news: 'News' } },
+  sv: { name: 'Svenska', code: 'sv', locale: 'sv_SE', title: 'Nyheter', subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.', breadcrumbs: { home: 'Hem', news: 'Nyheter' } },
+  da: { name: 'Dansk', code: 'da', locale: 'da_DK', title: 'Nyheder', subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.', breadcrumbs: { home: 'Hjem', news: 'Nyheder' } },
+  no: { name: 'Norsk', code: 'nb', locale: 'nb_NO', title: 'Nyheter', subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.', breadcrumbs: { home: 'Hjem', news: 'Nyheter' } },
+  fi: { name: 'Suomi', code: 'fi', locale: 'fi_FI', title: 'Uutiset', subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.', breadcrumbs: { home: 'Etusivu', news: 'Uutiset' } },
+  de: { name: 'Deutsch', code: 'de', locale: 'de_DE', title: 'Nachrichten', subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.', breadcrumbs: { home: 'Startseite', news: 'Nachrichten' } },
+  fr: { name: 'Français', code: 'fr', locale: 'fr_FR', title: 'Actualités', subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.', breadcrumbs: { home: 'Accueil', news: 'Actualités' } },
+  es: { name: 'Español', code: 'es', locale: 'es_ES', title: 'Noticias', subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.', breadcrumbs: { home: 'Inicio', news: 'Noticias' } },
+  nl: { name: 'Nederlands', code: 'nl', locale: 'nl_NL', title: 'Nieuws', subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.', breadcrumbs: { home: 'Home', news: 'Nieuws' } },
+  ar: { name: 'العربية', code: 'ar', locale: 'ar_SA', title: 'أخبار', subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.', rtl: true, breadcrumbs: { home: 'الرئيسية', news: 'أخبار' } },
+  he: { name: 'עברית', code: 'he', locale: 'he_IL', title: 'חדשות', subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.', rtl: true, breadcrumbs: { home: 'בית', news: 'חדשות' } },
+  ja: { name: '日本語', code: 'ja', locale: 'ja_JP', title: 'ニュース', subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。', breadcrumbs: { home: 'ホーム', news: 'ニュース' } },
+  ko: { name: '한국어', code: 'ko', locale: 'ko_KR', title: '뉴스', subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.', breadcrumbs: { home: '홈', news: '뉴스' } },
+  zh: { name: '中文', code: 'zh', locale: 'zh_CN', title: '新闻', subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。', breadcrumbs: { home: '主页', news: '新闻' } }
 };
 
 console.log('🗂️ Dynamic News Index Generation');
@@ -50,8 +66,8 @@ function parseArticleMetadata(filePath) {
     const content = fs.readFileSync(filePath, 'utf-8');
     const fileName = path.basename(filePath);
     
-    // Extract language from filename (e.g., article-en.html → en)
-    const langMatch = fileName.match(/-(en|sv)\.html$/);
+    // Extract language from filename (e.g., article-en.html → en, article-da.html → da)
+    const langMatch = fileName.match(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
     if (!langMatch) {
       console.warn(`  ⚠️ Skipping ${fileName}: no language suffix`);
       return null;
@@ -248,16 +264,86 @@ function generateIndexHTML(langKey, articles, allArticlesByLang) {
   <!-- Hreflang -->
 ${generateHreflangTags()}
   
+  <!-- Schema.org ItemList structured data for article aggregation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "${lang.title}",
+    "description": "${lang.subtitle}",
+    "numberOfItems": ${displayArticles.length},
+    "itemListElement": [${displayArticles.slice(0, 10).map((article, index) => `
+      {
+        "@type": "ListItem",
+        "position": ${index + 1},
+        "item": {
+          "@type": "NewsArticle",
+          "headline": "${escapeHtml(article.title)}",
+          "url": "https://riksdagsmonitor.com/news/${article.slug}",
+          "datePublished": "${article.date}",
+          "description": "${escapeHtml(article.description).substring(0, 150)}",
+          "inLanguage": "${article.lang || lang.code}"
+        }
+      }`).join(',')}
+    ]
+  }
+  </script>
+  
+  <!-- BreadcrumbList structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "${escapeHtml(lang.breadcrumbs.home)}",
+        "item": "https://riksdagsmonitor.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "${escapeHtml(lang.breadcrumbs.news)}",
+        "item": "https://riksdagsmonitor.com/news/${filename}"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- WebSite structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Riksdagsmonitor",
+    "url": "https://riksdagsmonitor.com",
+    "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hack23 AB",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://riksdagsmonitor.com/news/${filename}?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../styles.css">
-  
-  ${generateInlineCSS(lang.rtl)}
+  ${generateRTLStyles(lang.rtl)}
 </head>
-<body>
+<body class="news-page">
   <header class="header-section">
     <div class="header-content">
       <h1>${lang.title}</h1>
@@ -430,223 +516,28 @@ function generateHreflangTags() {
 /**
  * Generate inline CSS
  */
-function generateInlineCSS(isRTL) {
-  return `  <style>
-    body {
-      background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      padding: 0;
-      margin: 0;
+/**
+ * Generate minimal RTL-specific styles
+ * All other styles are now in styles.css under .news-page scope
+ */
+function generateRTLStyles(isRTL) {
+  if (!isRTL) return '';
+  
+  return `
+  <style>
+    /* RTL-specific overrides for Arabic and Hebrew */
+    .news-page .language-notice {
+      border-left: none;
+      border-right: 4px solid var(--primary-yellow, #ffbe0b);
     }
     
-    .header-section {
-      background: rgba(26, 30, 61, 0.9);
-      border-bottom: 2px solid var(--primary-cyan, #00d9ff);
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
+    .news-page .language-badge {
+      margin-left: 0;
+      margin-right: 0.5rem;
     }
     
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin: 0 0 1rem 0;
-      background: linear-gradient(135deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .subtitle {
-      font-size: 1.1rem;
-      color: #b0b0b0;
-      margin: 0 0 1rem 0;
-    }
-    
-    .back-link {
-      display: inline-block;
-      color: var(--primary-cyan, #00d9ff);
-      text-decoration: none;
-      padding: 0.5rem 0;
-      transition: transform 0.2s;
-    }
-    
-    .back-link:hover {
-      transform: translateX(-5px);
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem 3rem 1rem;
-    }
-    
-    .language-notice {
-      background: rgba(255, 190, 11, 0.1);
-      border-${isRTL ? 'right' : 'left'}: 4px solid var(--primary-yellow, #ffbe0b);
-      padding: 1rem;
-      margin-bottom: 2rem;
-      border-radius: 4px;
-    }
-    
-    .language-notice h2 {
-      font-size: 1.2rem;
-      color: var(--primary-yellow, #ffbe0b);
-      margin: 0 0 0.5rem 0;
-    }
-    
-    .language-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      color: #fff;
-      ${isRTL ? 'margin-right: 0.5rem;' : 'margin-left: 0.5rem;'}
-    }
-    
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background: rgba(26, 30, 61, 0.6);
-      border-radius: 8px;
-      border: 1px solid rgba(0, 217, 255, 0.3);
-    }
-    
-    .filter-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      flex: 1;
-      min-width: 180px;
-    }
-    
-    .filter-group label {
-      font-size: 0.9rem;
-      color: var(--primary-cyan, #00d9ff);
-      font-weight: 600;
-    }
-    
-    .filter-group select {
-      padding: 0.5rem;
-      background: rgba(10, 14, 39, 0.8);
-      border: 1px solid rgba(0, 217, 255, 0.5);
-      border-radius: 4px;
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-    }
-    
-    .filter-group select:hover {
-      border-color: var(--primary-cyan, #00d9ff);
-    }
-    
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .article-card {
-      background: rgba(26, 30, 61, 0.8);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .article-card:hover {
-      border-color: var(--primary-cyan, #00d9ff);
-      box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
-      transform: translateY(-2px);
-    }
-    
-    .article-meta {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      font-size: 0.85rem;
-      color: #888;
-    }
-    
-    .article-date {
-      color: var(--primary-cyan, #00d9ff);
-    }
-    
-    .article-type {
-      padding: 0.2rem 0.6rem;
-      background: rgba(0, 217, 255, 0.1);
-      border-radius: 4px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .article-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0 0 1rem 0;
-      color: #fff;
-      line-height: 1.4;
-    }
-    
-    .article-title a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    
-    .article-title a:hover {
-      color: var(--primary-cyan, #00d9ff);
-    }
-    
-    .article-excerpt {
-      color: #b0b0b0;
-      margin-bottom: 1rem;
-      flex-grow: 1;
-    }
-    
-    .article-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    
-    .tag {
-      padding: 0.3rem 0.7rem;
-      background: rgba(255, 0, 110, 0.1);
-      border: 1px solid rgba(255, 0, 110, 0.3);
-      border-radius: 4px;
-      font-size: 0.8rem;
-      color: var(--primary-magenta, #ff006e);
-    }
-    
-    @media (max-width: 768px) {
-      .articles-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .filter-bar {
-        flex-direction: column;
-      }
-      
-      .filter-group {
-        min-width: 100%;
-      }
+    .news-page .back-link:hover {
+      transform: translateX(5px); /* Reverse direction for RTL */
     }
   </style>`;
 }
