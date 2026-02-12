@@ -46,7 +46,9 @@ steps:
     run: |
       npm ci --prefer-offline --no-audit
 
-engine: copilot
+engine:
+  id: copilot
+  model: claude-opus-4-6
 ---
 
 # 📰 News Article Generator Agent
