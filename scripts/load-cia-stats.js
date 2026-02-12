@@ -9,10 +9,19 @@
  * Update Schedule: Daily at 02:57 CET (CIA extraction time)
  * 
  * ISMS Compliance:
- * - ISO 27001:2022 A.8.11 - Data masking (only aggregate counts, no PII)
- * - NIST CSF 2.0 PR.DS-5 - Protections against data leaks (HTTPS-only)
- * - CIS Control 3.1 - Data inventory (documented data sources)
- * - GDPR Article 5 - Data minimization (aggregate statistics only)
+ * - ISO 27001:2022 A.5.33 - Protection of records (source attribution, audit trails via Git)
+ * - ISO 27001:2022 A.5.34 - Privacy and PII protection (public officials in official capacity only)
+ * - ISO 27001:2022 A.8.10 - Information deletion (documented retention policies, no excessive storage)
+ * - ISO 27001:2022 A.8.19 - Security in use (HTTPS-only, CSP headers)
+ * - NIST CSF 2.0 PR.DS-5 - Protections against data leaks (HTTPS-only, public data only)
+ * - NIST CSF 2.0 ID.AM-5 - Resources prioritized (data classified as PUBLIC)
+ * - CIS Control 3.1 - Data inventory (documented public data sources)
+ * - GDPR Article 6(1)(e) - Public interest processing (democratic transparency)
+ * - GDPR Article 9(2)(e) - Political opinions manifestly made public (voting records, party affiliation)
+ * - Swedish Offentlighetsprincipen - Public access to government information (Tryckfrihetsförordningen)
+ *
+ * Note: A.8.11 (Data Masking) NOT applicable - processes only public government data,
+ * no sensitive data requiring masking. Journalist/OSINT platform covering public officials.
  */
 
 import https from 'https';

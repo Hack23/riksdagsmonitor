@@ -10,9 +10,15 @@
  * - Update descriptions to clarify: "349 current MPs, 2494 historical politicians tracked"
  * 
  * ISMS Compliance:
- * - ISO 27001:2022 A.8.3 - Information lifecycle management
- * - NIST CSF 2.0 PR.DS-5 - Data integrity
- * - CIS Control 3.14 - Data integrity validation
+ * - ISO 27001:2022 A.5.33 - Protection of records (data integrity, source attribution)
+ * - ISO 27001:2022 A.8.3 - Information lifecycle management (automated updates)
+ * - ISO 27001:2022 A.8.10 - Information deletion (proper retention policies)
+ * - NIST CSF 2.0 PR.DS-5 - Data integrity (validation checks)
+ * - CIS Control 3.14 - Data integrity validation (automated verification)
+ * - GDPR Article 6(1)(e) - Public interest processing (political transparency)
+ * 
+ * Note: Processes only public government data (Swedish Offentlighetsprincipen),
+ * journalist/OSINT platform covering public officials in official capacity.
  */
 
 import fs from 'fs';

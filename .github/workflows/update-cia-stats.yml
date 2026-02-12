@@ -181,9 +181,18 @@ jobs:
           echo "  - File write permission issues"
 
 # ISMS Compliance
-# - ISO 27001:2022 A.8.3 - Information lifecycle management (automated updates)
-# - ISO 27001:2022 A.8.11 - Data masking (aggregate statistics only, no PII)
-# - NIST CSF 2.0 PR.DS-5 - Data integrity (automated validation)
-# - NIST CSF 2.0 DE.CM-1 - Network monitoring (harden-runner egress audit)
-# - CIS Control 3.1 - Data inventory (documented data sources)
-# - GDPR Article 5 - Data minimization (aggregate statistics only)
+# - ISO 27001:2022 A.5.33 - Protection of records (audit trails via Git, source attribution)
+# - ISO 27001:2022 A.8.3 - Information lifecycle management (automated daily updates)
+# - ISO 27001:2022 A.8.10 - Information deletion (proper retention policies, no excessive storage)
+# - ISO 27001:2022 A.8.19 - Security in use (HTTPS-only data transmission)
+# - NIST CSF 2.0 PR.DS-5 - Data integrity (automated validation checks)
+# - NIST CSF 2.0 DE.CM-1 - Network monitoring (harden-runner egress auditing)
+# - CIS Control 3.1 - Data inventory (documented public data sources)
+# - CIS Control 3.14 - Data integrity validation (automated verification)
+# - GDPR Article 6(1)(e) - Public interest processing (democratic transparency, political accountability)
+# - GDPR Article 9(2)(e) - Political opinions manifestly made public (voting records, party affiliation)
+# - Swedish Offentlighetsprincipen - Public access to government information (constitutional right)
+#
+# Note: A.8.11 (Data Masking) NOT applicable - processes only public government data from
+# Swedish Riksdag/Government. No sensitive data requiring masking. Journalist/OSINT platform
+# covering public officials in official capacity, protected by Press Freedom Act (Tryckfrihetsförordningen).

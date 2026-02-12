@@ -64,14 +64,32 @@ The **riksdag-regering-mcp** MCP server provides 32 specialized tools:
 ## ISMS Compliance
 
 ### ISO 27001:2022
-- **A.5.10**: Acceptable use (objective, non-partisan)
-- **A.5.33**: Protection of records (source attribution)
-- **A.8.8**: Technical vulnerabilities (API monitoring)
+- **A.5.10**: Acceptable use (objective, non-partisan journalism)
+- **A.5.33**: Protection of records (source attribution, audit trails)
+- **A.5.34**: Privacy and PII (public officials in official capacity only)
+- **A.8.8**: Technical vulnerabilities (API monitoring, dependency scanning)
+- **A.8.10**: Information deletion (documented retention policies)
+- **A.8.19**: Security in use (HTTPS-only, CSP headers)
+
+**Not Applicable**:
+- **A.8.11 (Data Masking)**: NOT applicable - processes only public government data,
+  no sensitive data requiring masking, journalist/OSINT platform covering public officials
 
 ### NIST CSF 2.0
-- **ID.AM-5**: Resources prioritized by classification
-- **PR.DS-5**: Protections against data leaks
-- **DE.CM-1**: Network monitored for events
+- **ID.AM-5**: Resources prioritized by classification (PUBLIC data only)
+- **PR.DS-5**: Protections against data leaks (HTTPS-only, public data)
+- **DE.CM-1**: Network monitored for events (CI/CD security scanning)
+
+### GDPR Compliance
+- **Article 6(1)(e)**: Public interest processing (democratic transparency, political accountability)
+- **Article 6(1)(f)**: Legitimate interests (journalistic purposes, transparency)
+- **Article 9(2)(e)**: Political opinions manifestly made public (voting records, party affiliation)
+- **Article 9(2)(g)**: Processing for substantial public interest (journalism exemption)
+
+### Swedish Law
+- **Offentlighetsprincipen**: Constitutional right to access public documents (Tryckfrihetsförordningen 2:1)
+- **Press Freedom Act**: Journalist exemption for covering public officials
+- **Public Officials**: Reduced privacy expectations for official government activities
 
 ## References
 

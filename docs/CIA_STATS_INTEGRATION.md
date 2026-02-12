@@ -50,10 +50,20 @@ From CIA Production Database (2026-02-09):
 
 ## ISMS Compliance
 
-- **ISO 27001** A.8.11 - Data masking (no PII)
-- **NIST CSF** PR.DS-5 - HTTPS-only
-- **CIS Control** 3.1 - Data inventory
-- **GDPR** Article 5 - Data minimization
+- **ISO 27001** A.5.33 - Protection of records (source attribution, audit trails)
+- **ISO 27001** A.5.34 - Privacy and PII (public officials in official capacity only)
+- **ISO 27001** A.8.10 - Information deletion (retention policies, no excessive storage)
+- **ISO 27001** A.8.19 - Security in use (HTTPS-only, CSP headers)
+- **NIST CSF** PR.DS-5 - Data leakage protection (HTTPS-only, public data only)
+- **NIST CSF** ID.AM-5 - Resources prioritized (data classified as PUBLIC)
+- **CIS Control** 3.1 - Data inventory (documented public sources)
+- **CIS Control** 3.14 - Data integrity validation
+- **GDPR** Article 6(1)(e) - Public interest processing (democratic transparency)
+- **GDPR** Article 9(2)(e) - Political opinions (manifestly public, voting records)
+- **Swedish Offentlighetsprincipen** - Public access to government information
+
+**Note**: A.8.11 (Data Masking) NOT applicable - processes only public government data.
+Journalist/OSINT platform covering public officials, protected by Press Freedom Act.
 
 ## References
 
