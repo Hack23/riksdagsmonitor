@@ -61,7 +61,19 @@ export default defineConfig({
         // Additional pages
         'politician-dashboard': './politician-dashboard.html',
         'dashboard/index': './dashboard/index.html',
-        'dashboard/index_sv': './dashboard/index_sv.html'
+        'dashboard/index_sv': './dashboard/index_sv.html',
+        'dashboard/index_da': './dashboard/index_da.html',
+        'dashboard/index_no': './dashboard/index_no.html',
+        'dashboard/index_fi': './dashboard/index_fi.html',
+        'dashboard/index_de': './dashboard/index_de.html',
+        'dashboard/index_fr': './dashboard/index_fr.html',
+        'dashboard/index_es': './dashboard/index_es.html',
+        'dashboard/index_nl': './dashboard/index_nl.html',
+        'dashboard/index_ar': './dashboard/index_ar.html',
+        'dashboard/index_he': './dashboard/index_he.html',
+        'dashboard/index_ja': './dashboard/index_ja.html',
+        'dashboard/index_ko': './dashboard/index_ko.html',
+        'dashboard/index_zh': './dashboard/index_zh.html'
       },
       output: {
         // Manual chunk splitting for optimal loading

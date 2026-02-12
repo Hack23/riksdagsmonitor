@@ -112,12 +112,97 @@
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboard/index.html"/>
   <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboard/index_sv.html"/>
+  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboard/index_da.html"/>
+  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboard/index_no.html"/>
+  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboard/index_fi.html"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboard/index_de.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboard/index_fr.html"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/dashboard/index_es.html"/>
+  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/dashboard/index_nl.html"/>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/dashboard/index_ar.html"/>
+  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/dashboard/index_he.html"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/dashboard/index_ja.html"/>
+  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/dashboard/index_ko.html"/>
+  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/dashboard/index_zh.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboard/index.html"/>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/dashboard/index_sv.html</loc>
   <lastmod>2026-02-12T00:23:59.082Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_da.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_no.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_fi.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_de.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_fr.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_es.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_nl.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_ar.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_he.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_ja.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_ko.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/dashboard/index_zh.html</loc>
+  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap.html</loc>
