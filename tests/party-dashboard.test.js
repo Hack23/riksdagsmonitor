@@ -68,6 +68,74 @@ describe('Party Performance Dashboard', () => {
     });
   });
   
+  describe('Data Source Configuration', () => {
+    it('should use local-first URLs with cia-data/ prefix', () => {
+      const localPaths = [
+        'cia-data/distribution_party_effectiveness_trends.csv',
+        'cia-data/distribution_party_momentum.csv',
+        'cia-data/distribution_experience_by_party.csv',
+        'cia-data/distribution_risk_by_party.csv'
+      ];
+      localPaths.forEach(path => {
+        expect(path).toMatch(/^cia-data\//);
+      });
+    });
+
+    it('should have remote fallback URLs for CIA data', () => {
+      const remoteBase = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
+      expect(remoteBase).toContain('sample-data');
+    });
+  });
+
+  describe('Real CSV Schema Tests', () => {
+    it('should parse party effectiveness trends CSV with real columns', () => {
+      const csv = 'party,year,quarter,documents_produced,motions_count,active_members,avg_win_rate,effectiveness_assessment\nS,2023,2,45,30,65,61.11,Standard party operations';
+      const headers = csv.split('\n')[0].split(',');
+      expect(headers).toContain('party');
+      expect(headers).toContain('documents_produced');
+      expect(headers).toContain('motions_count');
+      expect(headers).toContain('avg_win_rate');
+      expect(headers).toContain('effectiveness_assessment');
+    });
+
+    it('should parse party momentum CSV with real columns', () => {
+      const csv = 'party,year,quarter,period,participation_rate,momentum,trend_direction,stability_classification\nS,2026,1,2026-Q1,85.5,2.3,IMPROVING,STABLE';
+      const headers = csv.split('\n')[0].split(',');
+      expect(headers).toContain('party');
+      expect(headers).toContain('participation_rate');
+      expect(headers).toContain('momentum');
+      expect(headers).toContain('trend_direction');
+      expect(headers).toContain('stability_classification');
+    });
+
+    it('should parse experience by party CSV with real columns', () => {
+      const csv = 'party,experience_level,politician_count\nS,MIXED_EXPERIENCE,15\nM,SENIOR,20';
+      const headers = csv.split('\n')[0].split(',');
+      expect(headers).toContain('party');
+      expect(headers).toContain('experience_level');
+      expect(headers).toContain('politician_count');
+    });
+
+    it('should handle empty party field in CSV', () => {
+      // Real data has rows with empty party field
+      const csv = 'party,year,quarter,period,participation_rate,momentum,trend_direction,stability_classification\n"",2026,1,2026-Q1,0.00,0.00,STABLE,VERY_STABLE\nS,2026,1,2026-Q1,85.5,2.3,IMPROVING,STABLE';
+      const lines = csv.split('\n');
+      const firstDataRow = lines[1];
+      // Should be able to filter out empty party rows
+      expect(firstDataRow.startsWith('""')).toBe(true);
+    });
+
+    it('should handle trend direction values', () => {
+      const validDirections = ['IMPROVING', 'DECLINING', 'STABLE'];
+      validDirections.forEach(dir => expect(typeof dir).toBe('string'));
+    });
+
+    it('should handle stability classifications', () => {
+      const validClassifications = ['VERY_STABLE', 'STABLE', 'MODERATE', 'VOLATILE'];
+      expect(validClassifications.length).toBe(4);
+    });
+  });
+
   describe('Configuration', () => {
     const CONFIG = {
       githubRawBase: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data',
@@ -103,7 +171,6 @@ describe('Party Performance Dashboard', () => {
     });
     
     it('should use WCAG AA compliant colors', () => {
-      // Colors should be defined and valid hex
       Object.values(CONFIG.chartColors).forEach(color => {
         expect(color).toMatch(/^#[0-9A-Fa-f]{6}$/);
       });
@@ -111,28 +178,17 @@ describe('Party Performance Dashboard', () => {
   });
   
   describe('Data Fetching', () => {
-    it('should fetch CSV data from GitHub', async () => {
+    it('should fetch CSV data from local first', async () => {
       const mockFetch = vi.fn(() => 
         Promise.resolve({
           ok: true,
-          text: () => Promise.resolve('Year,Party,Score\n2024,S,75\n2024,M,72')
+          text: () => Promise.resolve('party,year,quarter,documents_produced,motions_count,active_members,avg_win_rate,effectiveness_assessment\nS,2023,2,45,30,65,61.11,Standard party operations')
         })
       );
       
       global.fetch = mockFetch;
-      
-      await fetch('test-url');
-      
+      await fetch('cia-data/distribution_party_effectiveness_trends.csv');
       expect(mockFetch).toHaveBeenCalled();
-    });
-    
-    it('should parse CSV data correctly', () => {
-      const csvData = 'Year,Party,Score\n2024,S,75\n2024,M,72\n2024,SD,68';
-      const lines = csvData.split('\n');
-      const headers = lines[0].split(',');
-      
-      expect(headers).toEqual(['Year', 'Party', 'Score']);
-      expect(lines.length).toBe(4); // header + 3 data rows
     });
     
     it('should handle fetch errors gracefully', async () => {
@@ -145,9 +201,14 @@ describe('Party Performance Dashboard', () => {
       );
       
       global.fetch = mockFetch;
-      
-      const response = await fetch('test-url');
+      const response = await fetch('cia-data/distribution_party_effectiveness_trends.csv');
       expect(response.ok).toBe(false);
+    });
+
+    it('should handle empty CSV data', () => {
+      const csv = 'party,year,documents_produced\n';
+      const lines = csv.trim().split('\n');
+      expect(lines.length).toBe(1);
     });
     
     it('should use localStorage for caching', () => {

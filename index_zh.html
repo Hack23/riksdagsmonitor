@@ -57,8 +57,8 @@
       "name": "瑞典议会选举2026",
       "description": "使用CIA OSINT功能进行瑞典选举监控的实时情报平台。实时分析349名议员、联盟预测和全面风险评估。",
       "image": "https://cia.sourceforge.io/cia-logo.png",
-      "startDate": "2026-09",
-      "endDate": "2026-09",
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-13",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
@@ -413,6 +413,100 @@
 </main>
 
 
+
+<section id="election-cycle-dashboard" class="dashboard-section">
+<h2>🗳️ Election Cycle Intelligence (1994-2034)</h2>
+<p>Comprehensive analysis of 40 years of Swedish Parliament election cycles with party performance evolution, decision-making effectiveness, predictive risk forecasting, and temporal voting patterns across 9+ election cycles.</p>
+
+<div class="dashboard-loader" style="display: none; text-align: center; padding: 2rem;">
+Loading data...
+</div>
+
+<div class="dashboard-error" style="display: none; color: #d32f2f; text-align: center; padding: 2rem;">
+Failed to load data
+</div>
+
+<div class="dashboard-filters" style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+<div class="filter-group">
+<label for="election-cycle-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Election Cycle:</label>
+<select id="election-cycle-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
+<option value="all">All Cycles</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="election-party-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Party:</label>
+<select id="election-party-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
+<option value="all">All Parties</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="election-metric-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Metric:</label>
+<select id="election-metric-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
+<option value="performance">Performance</option>
+<option value="decisions">Decisions</option>
+<option value="risk">Risk</option>
+<option value="attendance">Attendance</option>
+</select>
+</div>
+</div>
+
+<div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div class="chart-card" style="grid-column: span 2; background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
+<h3>Election Cycle Performance Timeline</h3>
+<div style="height: 400px; position: relative;">
+<canvas id="cycle-timeline-chart"></canvas>
+</div>
+<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
+Party performance evolution across 9 election cycles (1994-2034)
+</p>
+</div>
+
+<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
+<h3>Decision Effectiveness Heatmap</h3>
+<div id="decision-heatmap" style="min-height: 400px; overflow-x: auto;"></div>
+<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
+Legislative approval rates by party and cycle
+</p>
+</div>
+
+<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
+<h3>Predictive Risk Forecasting</h3>
+<div style="height: 400px; position: relative;">
+<canvas id="risk-forecast-chart"></canvas>
+</div>
+<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
+Risk trajectory and confidence levels (2022-2034)
+</p>
+</div>
+
+<div class="chart-card" style="grid-column: span 2; background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
+<h3>Temporal Voting Patterns</h3>
+<div style="height: 400px; position: relative;">
+<canvas id="temporal-trends-chart"></canvas>
+</div>
+<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
+Attendance, ballots, and volatility trends
+</p>
+</div>
+
+<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
+<h3>Party Tier Distribution</h3>
+<div style="height: 400px; position: relative;">
+<canvas id="party-tier-chart"></canvas>
+</div>
+<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
+Performance tiers (ntile_party_tier: 1-4)
+</p>
+</div>
+</div>
+
+<p class="note" style="margin-top: 2rem; text-align: center; color: var(--text-secondary);">
+<strong>Data by CIA Platform</strong> | Updated from GitHub sample data | 24-hour caching
+</p>
+</section>
+
 <section id="party-dashboard" class="dashboard-container">
 <h2><span aria-hidden="true">🗳️</span> 政党表现与效率</h2>
 <p>使用CIA平台50多年的数据对瑞典政党进行全面分析。跟踪8个政党的效率趋势、联盟动态和动量指标。</p>
@@ -445,6 +539,51 @@
 <canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
 <span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
 </div>
+</div>
+</section>
+
+
+<section id="committee-dashboard" class="dashboard-container">
+<h2>🏛️ Committee Performance & Network Analytics</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Committee Network Diagram</h3>
+<p>Interactive visualization of committee relationships and productivity. Drag nodes to explore connections.</p>
+<div id="committeeNetwork" role="img" aria-label="Committee network connections diagram showing relationships between 15 Swedish Riksdag committees"></div>
+<table class="sr-only" id="committeeNetworkTable" aria-label="Committee network connections data table">
+</table>
+</div>
+
+<div class="chart-card wide">
+<h3>Productivity Matrix (2020-2026)</h3>
+<p>Heat map showing committee productivity scores over time. Hover over cells for detailed information.</p>
+<div id="productivityMatrix" role="img" aria-label="Committee productivity matrix showing performance over time from 2020 to 2026"></div>
+<table class="sr-only" id="productivityMatrixTable" aria-label="Committee productivity matrix data table">
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Committee Comparison</h3>
+<p>Compare productivity scores across all 15 committees.</p>
+<canvas id="committeeComparisonChart" role="img" aria-label="Bar chart comparing productivity scores across committees"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Decision Effectiveness</h3>
+<p>Track decision outcomes (approved, rejected, pending) over time.</p>
+<canvas id="decisionEffectivenessChart" role="img" aria-label="Stacked bar chart showing decision effectiveness over years"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Seasonal Activity Patterns</h3>
+<p>Quarterly activity trends showing how committee work varies across the year.</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="Line chart displaying seasonal activity patterns by quarter"></canvas>
+</div>
+</div>
+
+<div class="dashboard-attribution">
+<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="committeeLastUpdated">Loading...</span></small></p>
 </div>
 </section>
 
@@ -646,6 +785,34 @@
 </div>
 </section>
 
+
+
+<section id="pre-election-dashboard" class="dashboard-section">
+<h2><span aria-hidden="true">🗳️</span> Pre-Election Monitoring Dashboard (Q4 2023-2025)</h2>
+<p class="dashboard-intro">Track Q4 parliamentary activity in the critical 12-15 months before the 2026 election. Compare current activity against historical baselines and election-year patterns.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Pre-Election Activity Timeline</h3>
+<p>Monthly parliamentary activity compared to historical averages.</p>
+<canvas id="preElectionTimelineChart" role="img" aria-label="Pre-election activity timeline chart"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Party Readiness Indicators</h3>
+<p>Assessment of party preparation for the 2026 election based on legislative activity.</p>
+<canvas id="partyReadinessChart" role="img" aria-label="Party readiness indicators chart"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Key Metrics</h3>
+<div id="preElectionMetrics" role="region" aria-label="Pre-election key metrics"></div>
+</div>
+</div>
+
+<p class="data-attribution">📊 Data by CIA Platform | Updated Daily</p>
+</section>
+
 <section id="ministry-dashboard" class="dashboard-container">
 <h2>🎖️ 政府部长风险与影响力</h2>
 
@@ -722,6 +889,12 @@
 <script src="js/pre-election-dashboard.js"></script>
 
 <script src="js/anomaly-detection-dashboard.js"></script>
+<script src="js/stats-loader.js"></script>
+
+<script type="module" src="scripts/committees-dashboard.js"></script>
+
+<script type="module" src="js/election-cycle-dashboard.js"></script>
+
 
 </body>
 </html>

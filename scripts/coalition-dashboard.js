@@ -38,16 +38,44 @@
     annualVotes: null
   };
 
-  // Data source configuration
+  // Remote base URL for CIA CSV data
+  const REMOTE_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
+
+  // Data source configuration with local-first + remote fallback
   const DATA_CONFIG = {
-    baseUrl: 'cia-data/',
     files: {
-      coalition: 'coalition/distribution_coalition_alignment.csv',
-      behavioral: 'parties/distribution_behavioral_patterns_by_party.csv',
-      decision: 'parties/distribution_decision_patterns_by_party.csv',
-      anomalyClassification: 'voting/distribution_voting_anomaly_classification.csv',
-      anomalyByParty: 'voting/distribution_anomaly_by_party.csv',
-      annualVotes: 'voting/distribution_annual_party_votes.csv'
+      coalition: [
+        'cia-data/party/distribution_coalition_alignment.csv',
+        REMOTE_BASE_URL + 'distribution_coalition_alignment.csv'
+      ],
+      behavioral: [
+        'cia-data/parties/distribution_behavioral_patterns_by_party.csv',
+        REMOTE_BASE_URL + 'distribution_behavioral_patterns_by_party.csv'
+      ],
+      decision: [
+        'cia-data/parties/distribution_decision_patterns_by_party.csv',
+        REMOTE_BASE_URL + 'distribution_decision_patterns_by_party.csv'
+      ],
+      anomalyClassification: [
+        'cia-data/voting/distribution_voting_anomaly_classification.csv',
+        REMOTE_BASE_URL + 'distribution_voting_anomaly_classification.csv'
+      ],
+      anomalyByParty: [
+        'cia-data/anomaly/distribution_anomaly_by_party.csv',
+        REMOTE_BASE_URL + 'distribution_anomaly_by_party.csv'
+      ],
+      annualVotes: [
+        'cia-data/voting/distribution_annual_party_votes.csv',
+        REMOTE_BASE_URL + 'distribution_annual_party_votes.csv'
+      ],
+      decisionTrends: [
+        'cia-data/voting/distribution_decision_trends.csv',
+        REMOTE_BASE_URL + 'distribution_decision_trends.csv'
+      ],
+      partyMomentum: [
+        'cia-data/distribution_party_momentum.csv',
+        REMOTE_BASE_URL + 'distribution_party_momentum.csv'
+      ]
     },
     useMockData: false // Set to true to force mock data
   };
@@ -69,20 +97,29 @@
   }
 
   /**
-   * Fetch CSV file with error handling
+   * Fetch CSV file with local-first fallback to remote
+   * @param {Array<string>} urls - Array of [localUrl, remoteUrl]
+   * @returns {Array|null} Parsed CSV data or null
    */
-  async function fetchCSV(filename) {
-    try {
-      const response = await fetch(DATA_CONFIG.baseUrl + filename);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+  async function fetchCSV(urls) {
+    const urlList = Array.isArray(urls) ? urls : [urls];
+    for (const url of urlList) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const text = await response.text();
+        const data = parseCSV(text);
+        if (data && data.length > 0) {
+          console.log(`  Loaded from: ${url} (${data.length} rows)`);
+          return data;
+        }
+      } catch (error) {
+        console.warn(`  Failed: ${url} - ${error.message}`);
       }
-      const text = await response.text();
-      return parseCSV(text);
-    } catch (error) {
-      console.warn(`Failed to load ${filename}:`, error.message);
-      return null;
     }
+    return null;
   }
 
   /**
@@ -267,29 +304,26 @@
         // Transform CSV data into anomaly format
         const anomalies = [];
         
-        // Generate anomaly points from party data
+        // Generate anomaly entries from party anomaly data
         csvData.forEach(row => {
           const party = row.party;
-          if (party === '-') return; // Skip aggregate rows
+          if (party === '-' || !party) return; // Skip aggregate rows
           
           const avgRebellions = parseFloat(row.avg_rebellions) || 0;
           const count = parseInt(row.politician_count) || 1;
+          const classification = row.anomaly_classification || 'EXPECTED_BEHAVIOR';
           
-          // Create anomaly entries (spread over last 5 years)
-          const years = [2020, 2021, 2022, 2023, 2024];
-          years.forEach((year, idx) => {
-            if (avgRebellions > 0 && count > 0) {
-              const date = `${year}-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-15`;
-              const deviation = Math.min(6, avgRebellions * (0.5 + Math.random()));
-              
-              anomalies.push({
-                party: party,
-                date: date,
-                deviation: deviation,
-                severity: deviation > 4 ? 'critical' : deviation > 2.5 ? 'major' : 'minor'
-              });
-            }
-          });
+          if (avgRebellions > 0 && count > 0) {
+            // Create a single representative anomaly entry per party
+            const deviation = Math.min(6, avgRebellions);
+            anomalies.push({
+              party: party,
+              date: '2024-06-15',
+              deviation: deviation,
+              severity: classification === 'HIGH_REBELLION_RATE' ? 'critical' : 
+                        deviation > 2.5 ? 'major' : 'minor'
+            });
+          }
         });
         
         dataCache.votingAnomalies = anomalies;
@@ -379,13 +413,22 @@
       .attr('style', 'max-width: 100%; height: auto;');
 
     // Create nodes from parties
-    const nodes = Object.keys(PARTIES).map(id => ({
-      id,
-      name: PARTIES[id].name,
-      fullName: PARTIES[id].fullName,
-      color: PARTIES[id].color,
-      influence: Math.random() * 10 + 5 // 5-15 influence score
-    }));
+    const nodes = Object.keys(PARTIES).map(id => {
+      // Calculate influence from alignment data (sum of alignment rates with other parties)
+      let influence = 5;
+      const alignment = dataCache.coalitionAlignment;
+      if (alignment && alignment[id]) {
+        const rates = Object.values(alignment[id]).filter(v => typeof v === 'number');
+        influence = rates.length > 0 ? (rates.reduce((s, v) => s + v, 0) / rates.length) / 10 + 3 : 5;
+      }
+      return {
+        id,
+        name: PARTIES[id].name,
+        fullName: PARTIES[id].fullName,
+        color: PARTIES[id].color,
+        influence: Math.max(5, Math.min(15, influence))
+      };
+    });
 
     // Create coalition edges based on alignment data
     const links = [];
@@ -395,8 +438,8 @@
       nodes.forEach((target, j) => {
         if (i < j) {
           const strength = alignment[source.id] && alignment[source.id][target.id] 
-            ? alignment[source.id][target.id] 
-            : Math.random() * 0.5 + 0.3; // 0.3-0.8 coalition strength
+            ? alignment[source.id][target.id] / 100
+            : 0.5; // Default neutral alignment if no data
           
           links.push({
             source: source.id,
@@ -582,8 +625,8 @@
     partyIds.forEach(party1 => {
       partyIds.forEach(party2 => {
         const alignment = party1 === party2 ? 1.0 : 
-          (dataCache.coalitionAlignment[party1] && dataCache.coalitionAlignment[party1][party2]) ||
-          Math.random() * 0.6 + 0.2;
+          ((dataCache.coalitionAlignment[party1] && dataCache.coalitionAlignment[party1][party2]) 
+            ? dataCache.coalitionAlignment[party1][party2] / 100 : 0.5);
         
         heatMapData.push({
           party1,
@@ -740,7 +783,7 @@
       labels: partyIds.map(id => PARTIES[id].name),
       datasets: [{
         label: 'Party Consistency Score (%)',
-        data: partyIds.map(id => dataCache.behavioralPatterns[id] || Math.random() * 30 + 70),
+        data: partyIds.map(id => dataCache.behavioralPatterns[id] || 80),
         backgroundColor: partyIds.map(id => PARTIES[id].color),
         borderColor: partyIds.map(id => PARTIES[id].color),
         borderWidth: 1
@@ -830,13 +873,8 @@
         // Map to year array (0 if no data for that year)
         data = years.map(year => partyYearData[year] || 0);
       } else {
-        // Generate mock data
-        data = years.map(year => {
-          const baseValue = 500;
-          const trend = (year - (years[0] || 1990)) * 10;
-          const noise = Math.random() * 100 - 50;
-          return baseValue + trend + noise;
-        });
+        // No real data available, use placeholder zeros
+        data = years.map(() => 0);
       }
       
       return {
@@ -1002,36 +1040,21 @@
     }
   }
 
-  // ========== MOCK DATA GENERATORS ==========
-  // These will be replaced with actual CIA API calls
+  // ========== FALLBACK DATA GENERATORS ==========
+  // Used only when CSV data is unavailable (header-only files or fetch failures)
 
   function generateMockCoalitionData() {
+    // coalition_alignment.csv is header-only upstream - use known Swedish bloc patterns
     const data = {};
-    Object.keys(PARTIES).forEach(party1 => {
-      data[party1] = {};
-      Object.keys(PARTIES).forEach(party2 => {
-        if (party1 !== party2) {
-          // Higher alignment for similar ideological parties
-          let baseAlignment = 0.3;
-          
-          // Right-wing bloc
-          if (['M', 'KD', 'L'].includes(party1) && ['M', 'KD', 'L'].includes(party2)) {
-            baseAlignment = 0.75;
-          }
-          // Left-wing bloc
-          if (['S', 'V', 'MP'].includes(party1) && ['S', 'V', 'MP'].includes(party2)) {
-            baseAlignment = 0.70;
-          }
-          // Centre parties
-          if (['C', 'L'].includes(party1) && ['C', 'L'].includes(party2)) {
-            baseAlignment = 0.65;
-          }
-          // SD alignments
-          if (['SD', 'M', 'KD'].includes(party1) && ['SD', 'M', 'KD'].includes(party2)) {
-            baseAlignment = 0.60;
-          }
-          
-          data[party1][party2] = baseAlignment + Math.random() * 0.15;
+    const rightBloc = ['M', 'KD', 'L', 'SD'];
+    const leftBloc = ['S', 'V', 'MP'];
+    Object.keys(PARTIES).forEach(p1 => {
+      data[p1] = {};
+      Object.keys(PARTIES).forEach(p2 => {
+        if (p1 !== p2) {
+          const sameBloc = (rightBloc.includes(p1) && rightBloc.includes(p2)) ||
+                          (leftBloc.includes(p1) && leftBloc.includes(p2));
+          data[p1][p2] = sameBloc ? 0.70 : 0.35;
         }
       });
     });
@@ -1039,47 +1062,22 @@
   }
 
   function generateMockBehavioralData() {
+    // Fallback: neutral values until real data loads
     const data = {};
-    Object.keys(PARTIES).forEach(partyId => {
-      data[partyId] = Math.random() * 25 + 75; // 75-100% consistency
-    });
+    Object.keys(PARTIES).forEach(p => { data[p] = 80; });
     return data;
   }
 
   function generateMockDecisionData() {
-    return {}; // Not used in current implementation
+    return [];
   }
 
   function generateMockAnomalyData() {
-    const anomalies = [];
-    const partyIds = Object.keys(PARTIES);
-    
-    // Generate anomalies for last 5 years
-    const startDate = new Date('2019-01-01');
-    const endDate = new Date('2024-12-31');
-    
-    partyIds.forEach(partyId => {
-      // 5-10 anomalies per party
-      const count = Math.floor(Math.random() * 6) + 5;
-      
-      for (let i = 0; i < count; i++) {
-        const date = new Date(startDate.getTime() + Math.random() * (endDate - startDate));
-        const deviation = Math.random() * 5 + 1; // 1-6 deviation score
-        
-        anomalies.push({
-          party: partyId,
-          date: date.toISOString().split('T')[0],
-          deviation: deviation,
-          severity: deviation > 4 ? 'critical' : deviation > 2.5 ? 'major' : 'minor'
-        });
-      }
-    });
-    
-    return anomalies;
+    return []; // Empty until real data loads
   }
 
   function generateMockAnnualVotesData() {
-    return {}; // Not used in current implementation
+    return {}; // Empty until real data loads
   }
 
   // Initialize dashboard when DOM is ready

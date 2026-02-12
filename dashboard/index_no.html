@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<title>CIA Etterretningspanel | Svensk Riksdags Monitor | Riksdagsmonitor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../styles.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/dashboard/index_no.html">
+<meta name="description" content="Interaktivt CIA etterretningspanel: Sanntidsvisualisering av svensk riksdagsdata, valgprognose 2026, partiytelse, stortingsrepresentanter og omfattende analyser.">
+<meta name="keywords" content="CIA dashboard, Swedish parliament, riksdag analytics, election 2026, party performance, MP rankings, political intelligence, OSINT visualization">
+<meta name="robots" content="index, follow">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+
+<!-- Hreflang tags for all language versions -->
+<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboard/index.html">
+<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboard/index_sv.html">
+<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboard/index_da.html">
+<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboard/index_no.html">
+<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboard/index_fi.html">
+<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboard/index_de.html">
+<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboard/index_fr.html">
+<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/dashboard/index_es.html">
+<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/dashboard/index_nl.html">
+<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/dashboard/index_ar.html">
+<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/dashboard/index_he.html">
+<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/dashboard/index_ja.html">
+<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/dashboard/index_ko.html">
+<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/dashboard/index_zh.html">
+<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboard/index.html">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="CIA Etterretningspanel | Svensk Riksdags Monitor">
+<meta property="og:description" content="Interaktiv visualisering av CIA etterretningseksporter: Partiytelse, valgprognoser, stortingsrepresentanter og omfattende parlamentariske analyser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/dashboard/index_no.html">
+<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+<meta property="og:image:alt" content="CIA Etterretningspanel">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Riksdagsmonitor">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CIA Etterretningspanel | Svensk Riksdags Monitor">
+<meta name="twitter:description" content="Interaktiv CIA etterretningsvisualisering: Partiytelse, valgprognoser, stortingsrepresentanter">
+<meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+
+<!-- Additional Meta Tags -->
+<meta name="theme-color" content="#0a0e27">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/png" href="https://cia.sourceforge.io/cia-logo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<!-- Chart.js via CDN with SRI -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" 
+        integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" 
+        crossorigin="anonymous"></script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "CIA Etterretningspanel",
+  "description": "Interaktiv visualisering av svensk riksdags etterretninger",
+  "url": "https://riksdagsmonitor.com/dashboard/index_no.html",
+  "inLanguage": "no",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Riksdagsmonitor",
+    "url": "https://riksdagsmonitor.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hack23 AB",
+    "url": "https://www.hack23.com"
+  }
+}
+</script>
+</head>
+<body>
+<!-- Skip to Main Content Link -->
+<a href="#main-dashboard" class="skip-link">Hopp til instrumentpanel</a>
+
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="../index_no.html">Hjem</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+Instrumentpanel
+</li>
+</ol>
+</nav>
+
+<header>
+<h1>📊 CIA Etterretningspanel</h1>
+<p class="tagline">Interaktiv visualisering av svensk riksdags etterretninger</p>
+<p class="data-attribution">
+Data fra <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener">Citizen Intelligence Agency (CIA)</a> platform
+</p>
+</header>
+
+<noscript>
+<div class="error-state" role="alert">
+<h2>JavaScript kreves</h2>
+<p>Dette instrumentpanelet krever JavaScript for å laste og visualisere CIA etterretningsdata. Vennligst aktiver JavaScript i nettleserinnstillingene.</p>
+</div>
+</noscript>
+
+<main class="cia-dashboard" id="main-dashboard">
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" aria-live="polite">
+<div class="loading-spinner"></div>
+<p>Laster CIA etterretningsdata...</p>
+</div>
+
+<!-- Error State -->
+<div id="error-state" class="error-state hidden" role="alert" aria-live="assertive">
+<h2>⚠️ Feil ved datalasting</h2>
+<p id="error-message"></p>
+<button id="retry-button" class="btn">Prøv igjen</button>
+</div>
+
+<!-- Dashboard Content (Hidden until loaded) -->
+<div id="dashboard-content" class="hidden">
+
+<!-- Key Metrics Section -->
+<section id="key-metrics" class="metrics-grid" aria-labelledby="metrics-heading">
+<h2 id="metrics-heading" class="section-heading">Oversiktsmål</h2>
+<div class="metrics-cards">
+<div class="metric-card" role="group" aria-label="Stortingsrepresentanter">
+<div class="metric-icon" aria-hidden="true">👥</div>
+<div class="metric-value" id="metric-total-mps" data-cia-metric="totalMPs">-</div>
+<div class="metric-label">Stortingsrepresentanter</div>
+</div>
+<div class="metric-card" role="group" aria-label="Politiske Partier">
+<div class="metric-icon" aria-hidden="true">🏛️</div>
+<div class="metric-value" id="metric-total-parties" data-cia-metric="totalParties">-</div>
+<div class="metric-label">Politiske Partier</div>
+</div>
+<div class="metric-card" role="group" aria-label="Aktive Risikregler">
+<div class="metric-icon" aria-hidden="true">⚠️</div>
+<div class="metric-value" id="metric-risk-rules" data-cia-metric="totalRiskRules">-</div>
+<div class="metric-label">Aktive Risikregler</div>
+</div>
+<div class="metric-card" role="group" aria-label="Koalisjonsmandat">
+<div class="metric-icon" aria-hidden="true">🤝</div>
+<div class="metric-value" id="metric-coalition-seats" data-cia-metric="coalitionSeats">-</div>
+<div class="metric-label">Koalisjonsmandat</div>
+</div>
+</div>
+
+<!-- Risk Alerts -->
+<div class="risk-alerts" role="region" aria-labelledby="risk-alerts-heading">
+<h3 id="risk-alerts-heading">Risikovarsler (Siste 90 Dager)</h3>
+<div class="alert-badges">
+<span class="alert-badge critical" role="status">
+<span class="badge-count" id="alert-critical">0</span> Kritiske
+</span>
+<span class="alert-badge major" role="status">
+<span class="badge-count" id="alert-major">0</span> Alvorlige
+</span>
+<span class="alert-badge minor" role="status">
+<span class="badge-count" id="alert-minor">0</span> Mindre
+</span>
+</div>
+</div>
+</section>
+
+<!-- Party Performance Section -->
+<section id="party-performance" class="chart-section" aria-labelledby="party-performance-heading">
+<h2 id="party-performance-heading" class="section-heading">Partiytelse Analyse</h2>
+<div class="chart-container">
+<canvas id="party-seats-chart" role="img" aria-label="Partiseter fordeling diagram"></canvas>
+</div>
+<div class="chart-container">
+<canvas id="party-cohesion-chart" role="img" aria-label="Parti stemme samhold diagram"></canvas>
+</div>
+</section>
+
+<!-- Election 2026 Predictions Section -->
+<section id="election-forecast" class="election-section" aria-labelledby="election-heading">
+<h2 id="election-heading" class="section-heading">Svensk Valg 2026 Prognoser</h2>
+<p class="section-description">CIA prognosemodell basert på historiske data og nåværende trender</p>
+<div id="seat-predictions" class="predictions-grid"></div>
+
+<h3>Koalisjonsscenarier</h3>
+<div id="coalition-scenarios" class="scenarios-grid"></div>
+
+<h3>Viktige Valgfaktorer</h3>
+<div id="key-factors"></div>
+</section>
+
+<!-- Top 10 Rankings Section -->
+<section id="top-rankings" class="rankings-section" aria-labelledby="rankings-heading">
+<h2 id="rankings-heading" class="section-heading">Topp 10 Mest Innflytelsesrike Stortingsrepresentanter</h2>
+<p class="section-description">Nettverksanalyse og innflytelse vurdering (CIA algoritme)</p>
+<div id="influential-mps" class="rankings-list"></div>
+</section>
+
+<!-- Voting Patterns Heatmap Section -->
+<section id="voting-patterns" class="heatmap-section" aria-labelledby="voting-heading">
+<h2 id="voting-heading" class="section-heading">Stemmemønster Varmekart</h2>
+<p class="section-description">Parti avtale matrise (2022-2026)</p>
+<div class="chart-container">
+<canvas id="voting-heatmap" role="img" aria-label="Stemmemønster varmekart"></canvas>
+</div>
+</section>
+
+<!-- Committee Network Section -->
+<section id="committee-network" class="network-section" aria-labelledby="committee-heading">
+<h2 id="committee-heading" class="section-heading">Komité Nettverksanalyse</h2>
+<p class="section-description">Parlamentariske komiteers innflytelseskartlegging</p>
+<div id="network-visualization" class="network-container"></div>
+<div id="committee-list" class="committee-grid"></div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<p>&copy; 2008-2026 | Riksdags Monitor |
+<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
+<a href="https://github.com/Hack23/ISMS-PUBLIC" title="Public ISMS Repository">ISMS</a> |
+<a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" title="Information Security Policy">Security Policy</a>
+</p>
+<p>
+<a href="index.html" title="English">English</a> |
+<a href="index_sv.html" title="Svenska">Svenska</a> |
+<a href="index_da.html" title="Dansk">Dansk</a> |
+<a href="index_no.html" title="Norsk">Norsk</a> |
+<a href="index_fi.html" title="Suomi">Suomi</a> |
+<a href="index_de.html" title="Deutsch">Deutsch</a> |
+<a href="index_fr.html" title="Français">Français</a> |
+<a href="index_es.html" title="Español">Español</a> |
+<a href="index_nl.html" title="Nederlands">Nederlands</a> |
+<a href="index_ar.html" title="العربية">العربية</a> |
+<a href="index_he.html" title="עברית">עברית</a> |
+<a href="index_ja.html" title="日本語">日本語</a> |
+<a href="index_ko.html" title="한국어">한국어</a> |
+<a href="index_zh.html" title="中文">中文</a>
+</p>
+</footer>
+
+<!-- JavaScript Modules -->
+<script type="module" src="cia-data-loader.js"></script>
+<script type="module" src="cia-visualizations.js"></script>
+<script type="module" src="election-predictions.js"></script>
+<script type="module" src="dashboard-init.js"></script>
+</body>
+</html>
