@@ -24,10 +24,7 @@ timeout-minutes: 30
 
 mcp-servers:
   riksdag-regering:
-    command: npx
-    args:
-      - -y
-      - riksdag-regering-mcp
+    url: https://riksdag-regering-ai.onrender.com/mcp
 
 tools:
   github:
@@ -48,7 +45,6 @@ steps:
   - name: Install dependencies
     run: |
       npm ci --prefer-offline --no-audit
-      npm install -g riksdag-regering-mcp
 
 engine: copilot
 ---
