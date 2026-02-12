@@ -38,16 +38,44 @@
     annualVotes: null
   };
 
-  // Data source configuration
+  // Remote base URL for CIA CSV data
+  const REMOTE_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
+
+  // Data source configuration with local-first + remote fallback
   const DATA_CONFIG = {
-    baseUrl: 'cia-data/',
     files: {
-      coalition: 'party/distribution_coalition_alignment.csv',
-      behavioral: 'parties/distribution_behavioral_patterns_by_party.csv',
-      decision: 'parties/distribution_decision_patterns_by_party.csv',
-      anomalyClassification: 'voting/distribution_voting_anomaly_classification.csv',
-      anomalyByParty: 'anomaly/distribution_anomaly_by_party.csv',
-      annualVotes: 'voting/distribution_annual_party_votes.csv'
+      coalition: [
+        'cia-data/party/distribution_coalition_alignment.csv',
+        REMOTE_BASE_URL + 'distribution_coalition_alignment.csv'
+      ],
+      behavioral: [
+        'cia-data/parties/distribution_behavioral_patterns_by_party.csv',
+        REMOTE_BASE_URL + 'distribution_behavioral_patterns_by_party.csv'
+      ],
+      decision: [
+        'cia-data/parties/distribution_decision_patterns_by_party.csv',
+        REMOTE_BASE_URL + 'distribution_decision_patterns_by_party.csv'
+      ],
+      anomalyClassification: [
+        'cia-data/voting/distribution_voting_anomaly_classification.csv',
+        REMOTE_BASE_URL + 'distribution_voting_anomaly_classification.csv'
+      ],
+      anomalyByParty: [
+        'cia-data/anomaly/distribution_anomaly_by_party.csv',
+        REMOTE_BASE_URL + 'distribution_anomaly_by_party.csv'
+      ],
+      annualVotes: [
+        'cia-data/voting/distribution_annual_party_votes.csv',
+        REMOTE_BASE_URL + 'distribution_annual_party_votes.csv'
+      ],
+      decisionTrends: [
+        'cia-data/voting/distribution_decision_trends.csv',
+        REMOTE_BASE_URL + 'distribution_decision_trends.csv'
+      ],
+      partyMomentum: [
+        'cia-data/distribution_party_momentum.csv',
+        REMOTE_BASE_URL + 'distribution_party_momentum.csv'
+      ]
     },
     useMockData: false // Set to true to force mock data
   };
@@ -69,20 +97,29 @@
   }
 
   /**
-   * Fetch CSV file with error handling
+   * Fetch CSV file with local-first fallback to remote
+   * @param {Array<string>} urls - Array of [localUrl, remoteUrl]
+   * @returns {Array|null} Parsed CSV data or null
    */
-  async function fetchCSV(filename) {
-    try {
-      const response = await fetch(DATA_CONFIG.baseUrl + filename);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+  async function fetchCSV(urls) {
+    const urlList = Array.isArray(urls) ? urls : [urls];
+    for (const url of urlList) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const text = await response.text();
+        const data = parseCSV(text);
+        if (data && data.length > 0) {
+          console.log(`  Loaded from: ${url} (${data.length} rows)`);
+          return data;
+        }
+      } catch (error) {
+        console.warn(`  Failed: ${url} - ${error.message}`);
       }
-      const text = await response.text();
-      return parseCSV(text);
-    } catch (error) {
-      console.warn(`Failed to load ${filename}:`, error.message);
-      return null;
     }
+    return null;
   }
 
   /**
@@ -1003,36 +1040,21 @@
     }
   }
 
-  // ========== MOCK DATA GENERATORS ==========
-  // These will be replaced with actual CIA API calls
+  // ========== FALLBACK DATA GENERATORS ==========
+  // Used only when CSV data is unavailable (header-only files or fetch failures)
 
   function generateMockCoalitionData() {
+    // coalition_alignment.csv is header-only upstream - use known Swedish bloc patterns
     const data = {};
-    Object.keys(PARTIES).forEach(party1 => {
-      data[party1] = {};
-      Object.keys(PARTIES).forEach(party2 => {
-        if (party1 !== party2) {
-          // Higher alignment for similar ideological parties
-          let baseAlignment = 0.3;
-          
-          // Right-wing bloc
-          if (['M', 'KD', 'L'].includes(party1) && ['M', 'KD', 'L'].includes(party2)) {
-            baseAlignment = 0.75;
-          }
-          // Left-wing bloc
-          if (['S', 'V', 'MP'].includes(party1) && ['S', 'V', 'MP'].includes(party2)) {
-            baseAlignment = 0.70;
-          }
-          // Centre parties
-          if (['C', 'L'].includes(party1) && ['C', 'L'].includes(party2)) {
-            baseAlignment = 0.65;
-          }
-          // SD alignments
-          if (['SD', 'M', 'KD'].includes(party1) && ['SD', 'M', 'KD'].includes(party2)) {
-            baseAlignment = 0.60;
-          }
-          
-          data[party1][party2] = baseAlignment + 0.05;
+    const rightBloc = ['M', 'KD', 'L', 'SD'];
+    const leftBloc = ['S', 'V', 'MP'];
+    Object.keys(PARTIES).forEach(p1 => {
+      data[p1] = {};
+      Object.keys(PARTIES).forEach(p2 => {
+        if (p1 !== p2) {
+          const sameBloc = (rightBloc.includes(p1) && rightBloc.includes(p2)) ||
+                          (leftBloc.includes(p1) && leftBloc.includes(p2));
+          data[p1][p2] = sameBloc ? 0.70 : 0.35;
         }
       });
     });
@@ -1040,40 +1062,22 @@
   }
 
   function generateMockBehavioralData() {
+    // Fallback: neutral values until real data loads
     const data = {};
-    Object.keys(PARTIES).forEach(partyId => {
-      data[partyId] = 85; // 85% consistency default
-    });
+    Object.keys(PARTIES).forEach(p => { data[p] = 80; });
     return data;
   }
 
   function generateMockDecisionData() {
-    return {}; // Not used in current implementation
+    return [];
   }
 
   function generateMockAnomalyData() {
-    const anomalies = [];
-    const partyIds = Object.keys(PARTIES);
-    
-    // Generate anomalies for last 5 years
-    const startDate = new Date('2019-01-01');
-    const endDate = new Date('2024-12-31');
-    
-    partyIds.forEach((partyId, idx) => {
-      // Generate 1 representative anomaly per party
-      anomalies.push({
-        party: partyId,
-        date: '2024-06-01',
-        deviation: 2.0,
-        severity: 'minor'
-      });
-    });
-    
-    return anomalies;
+    return []; // Empty until real data loads
   }
 
   function generateMockAnnualVotesData() {
-    return {}; // Not used in current implementation
+    return {}; // Empty until real data loads
   }
 
   // Initialize dashboard when DOM is ready
