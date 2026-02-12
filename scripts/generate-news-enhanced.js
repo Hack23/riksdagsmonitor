@@ -29,13 +29,39 @@ const __dirname = path.dirname(__filename);
 // Parse command line arguments
 const args = process.argv.slice(2);
 const typesArg = args.find(arg => arg.startsWith('--types='));
+const languagesArg = args.find(arg => arg.startsWith('--languages='));
+const translateFromArg = args.find(arg => arg.startsWith('--translate-from='));
 const dryRunArg = args.includes('--dry-run');
+
 const articleTypes = typesArg 
   ? typesArg.split('=')[1].split(',')
   : ['week-ahead'];
 
+// Language preset expansion
+const ALL_LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+const LANGUAGE_PRESETS = {
+  'all': ALL_LANGUAGES,
+  'nordic': ['en', 'sv', 'da', 'no', 'fi'],
+  'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl']
+};
+
+let languagesInput = languagesArg ? languagesArg.split('=')[1] : 'en,sv';
+
+// Expand presets
+if (LANGUAGE_PRESETS[languagesInput]) {
+  languagesInput = LANGUAGE_PRESETS[languagesInput].join(',');
+}
+
+const languages = languagesInput.split(',');
+
+const translateFrom = translateFromArg
+  ? translateFromArg.split('=')[1]
+  : null;
+
 console.log('📰 Enhanced News Generation Script');
 console.log('Article types:', articleTypes.join(', '));
+console.log('Languages:', languages.join(', '));
+console.log('Translate from:', translateFrom || 'none (generate original)');
 console.log('Dry run:', dryRunArg ? 'Yes (no files written)' : 'No');
 
 // Configuration
@@ -95,21 +121,26 @@ async function writeArticle(html, filename) {
 }
 
 /**
- * Write EN/SV article pair
+ * Write article in specified language
  */
-async function writeArticlePair(htmlEN, htmlSV, slug) {
-  const filenameEN = `${slug}-en.html`;
-  const filenameSV = `${slug}-sv.html`;
-  
-  await writeArticle(htmlEN, filenameEN);
-  await writeArticle(htmlSV, filenameSV);
-  
-  stats.generated += 2;
-  stats.articles.push(filenameEN, filenameSV);
+async function writeSingleArticle(html, slug, lang) {
+  const filename = `${slug}-${lang}.html`;
+  await writeArticle(html, filename);
+  stats.generated += 1;
+  stats.articles.push(filename);
+  return filename;
 }
 
 /**
- * Generate Week Ahead article
+ * Write EN/SV article pair (legacy function for backward compatibility)
+ */
+async function writeArticlePair(htmlEN, htmlSV, slug) {
+  await writeSingleArticle(htmlEN, slug, 'en');
+  await writeSingleArticle(htmlSV, slug, 'sv');
+}
+
+/**
+ * Generate Week Ahead article in specified languages
  */
 async function generateWeekAhead() {
   console.log('📅 Generating Week Ahead article...');
@@ -125,71 +156,66 @@ async function generateWeekAhead() {
     const events = await client.fetchCalendarEvents(dateRange.start, dateRange.end);
     console.log(`  📊 Found ${events.length} events`);
     
-    // 2. Transform for English version
-    console.log('  🔄 Transforming data for EN version...');
-    const eventGridEN = transformCalendarToEventGrid(events, 'en');
-    const contentEN = generateArticleContent({ events, highlights: [] }, 'week-ahead', 'en');
-    const watchPointsEN = extractWatchPoints({ events }, 'en');
-    const metadataEN = generateMetadata({ events }, 'week-ahead', 'en');
-    const readTime = calculateReadTime(contentEN);
-    const sources = generateSources(['get_calendar_events']);
-    
-    // 3. Generate English HTML
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-week-ahead`;
-    const titleEN = `Week Ahead: ${dateRange.start} to ${dateRange.end}`;
-    const subtitleEN = `Parliamentary calendar, committee meetings, and chamber debates for the coming week`;
     
-    const htmlEN = generateArticleHTML({
-      slug: `${slug}-en.html`,
-      title: titleEN,
-      subtitle: subtitleEN,
-      date: today.toISOString().split('T')[0],
-      type: 'prospective',
-      readTime,
-      lang: 'en',
-      content: contentEN,
-      events: eventGridEN,
-      watchPoints: watchPointsEN,
-      sources,
-      keywords: metadataEN.keywords,
-      topics: metadataEN.topics,
-      tags: metadataEN.tags
-    });
+    // 2. Generate for each requested language
+    for (const lang of languages) {
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+      
+      // Transform data for this language
+      const eventGrid = transformCalendarToEventGrid(events, lang);
+      const content = generateArticleContent({ events, highlights: [] }, 'week-ahead', lang);
+      const watchPoints = extractWatchPoints({ events }, lang);
+      const metadata = generateMetadata({ events }, 'week-ahead', lang);
+      const readTime = calculateReadTime(content);
+      const sources = generateSources(['get_calendar_events']);
+      
+      // Language-specific titles
+      const titles = {
+        en: { title: `Week Ahead: ${dateRange.start} to ${dateRange.end}`, subtitle: `Parliamentary calendar, committee meetings, and chamber debates for the coming week` },
+        sv: { title: `Vecka Framåt: ${dateRange.start} till ${dateRange.end}`, subtitle: `Riksdagens kalender, utskottsmöten och kammarens debatter för kommande vecka` },
+        da: { title: `Ugen Fremover: ${dateRange.start} til ${dateRange.end}`, subtitle: `Parlamentarisk kalender, udvalgsm\u00f8der og debatter for den kommende uge` },
+        no: { title: `Uke Fremover: ${dateRange.start} til ${dateRange.end}`, subtitle: `Parlamentarisk kalender, komitémøter og debatter for kommende uke` },
+        fi: { title: `Tuleva Viikko: ${dateRange.start} - ${dateRange.end}`, subtitle: `Parlamentin kalenteri, valiokuntien kokoukset ja keskustelut tulevalle viikolle` },
+        de: { title: `Woche Voraus: ${dateRange.start} bis ${dateRange.end}`, subtitle: `Parlamentarischer Kalender, Ausschusssitzungen und Debatten für die kommende Woche` },
+        fr: { title: `Semaine à Venir: ${dateRange.start} au ${dateRange.end}`, subtitle: `Calendrier parlementaire, réunions de commission et débats pour la semaine à venir` },
+        es: { title: `Semana Próxima: ${dateRange.start} a ${dateRange.end}`, subtitle: `Calendario parlamentario, reuniones de comisión y debates para la próxima semana` },
+        nl: { title: `Week Vooruit: ${dateRange.start} tot ${dateRange.end}`, subtitle: `Parlementaire kalender, commissievergaderingen en debatten voor de komende week` },
+        ar: { title: `الأسبوع القادم: ${dateRange.start} إلى ${dateRange.end}`, subtitle: `التقويم البرلماني واجتماعات اللجان والمناقشات للأسبوع المقبل` },
+        he: { title: `השבוע הקרוב: ${dateRange.start} עד ${dateRange.end}`, subtitle: `לוח שנה פרלמנטרי, פגישות ועדה ודיונים לשבוע הקרוב` },
+        ja: { title: `来週の展望: ${dateRange.start} から ${dateRange.end}`, subtitle: `来週の議会カレンダー、委員会会議、討論` },
+        ko: { title: `다음 주 전망: ${dateRange.start}부터 ${dateRange.end}까지`, subtitle: `다음 주 의회 일정, 위원회 회의 및 토론` },
+        zh: { title: `下周展望：${dateRange.start} 至 ${dateRange.end}`, subtitle: `下周议会日程、委员会会议和辩论` }
+      };
+      
+      const langTitles = titles[lang] || titles.en;
+      
+      // Generate HTML for this language
+      const html = generateArticleHTML({
+        slug: `${slug}-${lang}.html`,
+        title: langTitles.title,
+        subtitle: langTitles.subtitle,
+        date: today.toISOString().split('T')[0],
+        type: 'prospective',
+        readTime,
+        lang,
+        content,
+        events: eventGrid,
+        watchPoints,
+        sources,
+        keywords: metadata.keywords,
+        topics: metadata.topics,
+        tags: metadata.tags
+      });
+      
+      // Write article
+      await writeSingleArticle(html, slug, lang);
+      console.log(`  ✅ ${lang.toUpperCase()} version generated`);
+    }
     
-    // 4. Transform for Swedish version
-    console.log('  🔄 Transforming data for SV version...');
-    const eventGridSV = transformCalendarToEventGrid(events, 'sv');
-    const contentSV = generateArticleContent({ events, highlights: [] }, 'week-ahead', 'sv');
-    const watchPointsSV = extractWatchPoints({ events }, 'sv');
-    const metadataSV = generateMetadata({ events }, 'week-ahead', 'sv');
-    
-    // 5. Generate Swedish HTML
-    const titleSV = `Vecka Framåt: ${dateRange.start} till ${dateRange.end}`;
-    const subtitleSV = `Riksdagens kalender, utskottsmöten och kammarens debatter för kommande vecka`;
-    
-    const htmlSV = generateArticleHTML({
-      slug: `${slug}-sv.html`,
-      title: titleSV,
-      subtitle: subtitleSV,
-      date: today.toISOString().split('T')[0],
-      type: 'prospective',
-      readTime,
-      lang: 'sv',
-      content: contentSV,
-      events: eventGridSV,
-      watchPoints: watchPointsSV,
-      sources,
-      keywords: metadataSV.keywords,
-      topics: metadataSV.topics,
-      tags: metadataSV.tags
-    });
-    
-    // 6. Write article pair
-    await writeArticlePair(htmlEN, htmlSV, slug);
-    
-    console.log('  ✅ Week Ahead article generated successfully');
-    return { success: true, files: 2, slug };
+    console.log('  ✅ Week Ahead article generated successfully in all requested languages');
+    return { success: true, files: languages.length, slug };
     
   } catch (error) {
     console.error('❌ Error generating Week Ahead:', error.message);
@@ -307,11 +333,13 @@ async function generateNews() {
   fs.writeFileSync(metadataFile, JSON.stringify({
     timestamp: stats.timestamp,
     types: articleTypes,
+    languages: languages,
+    translateFrom: translateFrom,
     generated: stats.generated,
     errors: stats.errors,
     articles: stats.articles,
     status: 'enhanced',
-    note: 'Enhanced script with MCP integration'
+    note: 'Enhanced script with MCP integration and multi-language support'
   }, null, 2));
   
   // Save detailed results

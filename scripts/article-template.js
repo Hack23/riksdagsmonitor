@@ -15,6 +15,36 @@
  */
 
 /**
+ * Breadcrumb translations for all supported languages
+ */
+const BREADCRUMB_TRANSLATIONS = {
+  en: { home: 'Home', news: 'News' },
+  sv: { home: 'Hem', news: 'Nyheter' },
+  da: { home: 'Hjem', news: 'Nyheder' },
+  no: { home: 'Hjem', news: 'Nyheter' },
+  fi: { home: 'Etusivu', news: 'Uutiset' },
+  de: { home: 'Startseite', news: 'Nachrichten' },
+  fr: { home: 'Accueil', news: 'Actualités' },
+  es: { home: 'Inicio', news: 'Noticias' },
+  nl: { home: 'Home', news: 'Nieuws' },
+  ar: { home: 'الرئيسية', news: 'أخبار' },
+  he: { home: 'בית', news: 'חדשות' },
+  ja: { home: 'ホーム', news: 'ニュース' },
+  ko: { home: '홈', news: '뉴스' },
+  zh: { home: '主页', news: '新闻' }
+};
+
+/**
+ * Get breadcrumb name for a given language
+ * @param {string} lang - Language code
+ * @param {string} type - Breadcrumb type ('home' or 'news')
+ * @returns {string} Translated breadcrumb name
+ */
+function getBreadcrumbName(lang, type) {
+  return BREADCRUMB_TRANSLATIONS[lang]?.[type] || BREADCRUMB_TRANSLATIONS.en[type];
+}
+
+/**
  * Generate complete article HTML
  * 
  * @param {Object} data - Article data
@@ -58,7 +88,7 @@ export function generateArticleHTML(data) {
   const formattedDate = formatDate(dateObj, lang);
   const isoDate = dateObj.toISOString().split('T')[0];
   
-  // Determine type label
+  // Determine type label with fallback to English for unsupported languages
   const typeLabels = {
     en: {
       prospective: 'The Week Ahead',
@@ -74,7 +104,8 @@ export function generateArticleHTML(data) {
     }
   };
   
-  const typeLabel = typeLabels[lang][type] || 'News';
+  // Fall back to English labels if language not supported
+  const typeLabel = typeLabels[lang]?.[type] || typeLabels.en[type] || 'News';
   
   // Determine alternate language slug and URL
   const altLang = lang === 'en' ? 'sv' : 'en';
@@ -98,10 +129,14 @@ export function generateArticleHTML(data) {
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta property="og:locale" content="${locale}">
   <meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta property="article:published_time" content="${dateObj.toISOString()}">
-  <meta property="article:author" content="News Journalist Agent">
+  <meta property="article:modified_time" content="${dateObj.toISOString()}">
+  <meta property="article:author" content="James Pether Sörling">
   <meta property="article:section" content="${typeLabel}">
 ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`).join('\n')}
   
@@ -110,8 +145,13 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(subtitle).substring(0, 200)}">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta name="twitter:site" content="@riksdagsmonitor">
   <meta name="twitter:creator" content="@jamessorling">
+  <meta name="twitter:label1" content="Reading time">
+  <meta name="twitter:data1" content="${readTime}">
+  <meta name="twitter:label2" content="Article type">
+  <meta name="twitter:data2" content="${typeLabel}">
   
   <!-- Hreflang for language alternatives -->
   <link rel="alternate" hreflang="${altLang}" href="https://riksdagsmonitor.com/news/${altSlug}">
@@ -131,21 +171,116 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     "headline": "${escapeHtml(title)}",
+    "alternativeHeadline": "${escapeHtml(subtitle).substring(0, 100)}",
     "description": "${escapeHtml(subtitle).substring(0, 200)}",
     "datePublished": "${dateObj.toISOString()}",
+    "dateModified": "${dateObj.toISOString()}",
     "author": {
       "@type": "Person",
       "name": "James Pether Sörling",
-      "jobTitle": "Political Intelligence Analyst"
+      "jobTitle": "Political Intelligence Analyst",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Hack23 AB"
+      },
+      "url": "https://riksdagsmonitor.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Riksdagsmonitor",
+      "url": "https://riksdagsmonitor.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://cia.sourceforge.io/cia-logo.png",
+      "width": 1200,
+      "height": 630
+    },
+    "articleSection": "${typeLabel}",
+    "articleBody": "${escapeHtml(content).substring(0, 500)}...",
+    "wordCount": ${Math.ceil(content.length / 5)},
+    "inLanguage": "${lang}",
+    "keywords": "${keywords.join(', ')}",
+    "about": {
+      "@type": "Thing",
+      "name": "Swedish Parliament",
+      "sameAs": "https://www.wikidata.org/wiki/Q1968818"
+    },
+    "isAccessibleForFree": true,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Riksdagsmonitor",
       "url": "https://riksdagsmonitor.com"
     },
-    "image": "https://cia.sourceforge.io/cia-logo.png",
-    "inLanguage": "${lang}",
-    "keywords": "${keywords.join(', ')}"
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://riksdagsmonitor.com/news/${slug}"
+    }${tags.length > 0 ? `,
+    "mentions": [${tags.map(tag => `
+      {
+        "@type": "Thing",
+        "name": "${escapeHtml(tag)}"
+      }`).join(',')}
+    ]` : ''}
+  }
+  </script>
+  
+  <!-- BreadcrumbList structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "${getBreadcrumbName(lang, 'home')}",
+        "item": "https://riksdagsmonitor.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "${getBreadcrumbName(lang, 'news')}",
+        "item": "https://riksdagsmonitor.com/news/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "${escapeHtml(title).substring(0, 50)}",
+        "item": "https://riksdagsmonitor.com/news/${slug}"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Organization structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Riksdagsmonitor",
+    "url": "https://riksdagsmonitor.com",
+    "logo": "https://cia.sourceforge.io/cia-logo.png",
+    "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+    "foundingDate": "2020",
+    "founder": {
+      "@type": "Person",
+      "name": "James Pether Sörling"
+    },
+    "sameAs": [
+      "https://github.com/Hack23/riksdagsmonitor"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Technical Support",
+      "url": "https://github.com/Hack23/riksdagsmonitor/issues"
+    }
   }
   </script>
   
