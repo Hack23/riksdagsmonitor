@@ -8478,7 +8478,7 @@ button,
  */
 
 /* News page body override for dark theme */
-.news-page body {
+body.news-page {
   background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
   color: #e0e0e0;
   font-family: 'Inter', sans-serif;

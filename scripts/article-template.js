@@ -58,7 +58,7 @@ export function generateArticleHTML(data) {
   const formattedDate = formatDate(dateObj, lang);
   const isoDate = dateObj.toISOString().split('T')[0];
   
-  // Determine type label
+  // Determine type label with fallback to English for unsupported languages
   const typeLabels = {
     en: {
       prospective: 'The Week Ahead',
@@ -74,7 +74,8 @@ export function generateArticleHTML(data) {
     }
   };
   
-  const typeLabel = typeLabels[lang][type] || 'News';
+  // Fall back to English labels if language not supported
+  const typeLabel = typeLabels[lang]?.[type] || typeLabels.en[type] || 'News';
   
   // Determine alternate language slug and URL
   const altLang = lang === 'en' ? 'sv' : 'en';

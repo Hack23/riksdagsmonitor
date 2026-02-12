@@ -66,8 +66,8 @@ function parseArticleMetadata(filePath) {
     const content = fs.readFileSync(filePath, 'utf-8');
     const fileName = path.basename(filePath);
     
-    // Extract language from filename (e.g., article-en.html → en)
-    const langMatch = fileName.match(/-(en|sv)\.html$/);
+    // Extract language from filename (e.g., article-en.html → en, article-da.html → da)
+    const langMatch = fileName.match(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
     if (!langMatch) {
       console.warn(`  ⚠️ Skipping ${fileName}: no language suffix`);
       return null;
@@ -282,7 +282,7 @@ ${generateHreflangTags()}
           "url": "https://riksdagsmonitor.com/news/${article.slug}",
           "datePublished": "${article.date}",
           "description": "${escapeHtml(article.description).substring(0, 150)}",
-          "inLanguage": "${lang.code}"
+          "inLanguage": "${article.lang || lang.code}"
         }
       }`).join(',')}
     ]

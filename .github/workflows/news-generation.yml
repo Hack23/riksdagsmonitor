@@ -132,9 +132,9 @@ jobs:
               ;;
           esac
           
-          # Run news generation script
-          if [ -f "scripts/generate-news.js" ]; then
-            node scripts/generate-news.js --types="$ARTICLE_TYPES" --languages="$LANG_ARG"
+          # Run news generation script (use enhanced version with multi-language support)
+          if [ -f "scripts/generate-news-enhanced.js" ]; then
+            node scripts/generate-news-enhanced.js --types="$ARTICLE_TYPES" --languages="$LANG_ARG"
             
             # Check results
             if [ -f "news/metadata/generation-result.json" ]; then

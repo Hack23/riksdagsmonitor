@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -154,7 +154,6 @@ describe('Multi-Language Support', () => {
 
   describe('Language Presets', () => {
     it('should define Nordic languages correctly', () => {
-      const expectedNordic = ['en', 'sv', 'da', 'no', 'fi'];
       const workflowPath = path.join(projectRoot, '.github', 'workflows', 'news-generation.yml');
       const content = fs.readFileSync(workflowPath, 'utf-8');
       
@@ -162,7 +161,6 @@ describe('Multi-Language Support', () => {
     });
 
     it('should define EU Core languages correctly', () => {
-      const expectedEUCore = ['en', 'sv', 'de', 'fr', 'es', 'nl'];
       const workflowPath = path.join(projectRoot, '.github', 'workflows', 'news-generation.yml');
       const content = fs.readFileSync(workflowPath, 'utf-8');
       
@@ -170,7 +168,6 @@ describe('Multi-Language Support', () => {
     });
 
     it('should define all 14 languages correctly', () => {
-      const expectedAll = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
       const workflowPath = path.join(projectRoot, '.github', 'workflows', 'news-generation.yml');
       const content = fs.readFileSync(workflowPath, 'utf-8');
       

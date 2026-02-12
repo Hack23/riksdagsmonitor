@@ -5,14 +5,22 @@
  * Validates workflow specifications, engine configuration, and output safety.
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import yaml from 'js-yaml';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const WORKFLOW_MD_PATH = path.join(__dirname, '..', '.github', 'workflows', 'news-article-generator.md');
+
+// Helper to import js-yaml dynamically
+let yaml = { load: () => ({}) };
+try {
+  const yamlModule = await import('js-yaml');
+  yaml = yamlModule.default || yamlModule;
+} catch (e) {
+  console.warn('js-yaml not available, some tests may be skipped');
+}
 
 describe('Agentic Workflow Configuration', () => {
   let workflowContent;
@@ -277,12 +285,3 @@ describe('Generated Articles Quality', () => {
     });
   });
 });
-
-// Helper to import js-yaml dynamically
-let yaml = { load: () => ({}) };
-try {
-  const yamlModule = await import('js-yaml');
-  yaml = yamlModule.default || yamlModule;
-} catch (e) {
-  console.warn('js-yaml not available, some tests may be skipped');
-}
