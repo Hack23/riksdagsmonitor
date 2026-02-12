@@ -22,6 +22,22 @@ const __dirname = path.dirname(__filename);
 
 // Configuration
 const NEWS_DIR = path.join(__dirname, '..', 'news');
+
+/**
+ * Helper: Escape HTML special characters for safe inclusion in HTML/JSON-LD
+ */
+function escapeHtml(text) {
+  if (!text) return '';
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return String(text).replace(/[&<>"']/g, m => map[m]);
+}
+
 const LANGUAGES = {
   en: { name: 'English', code: 'en', locale: 'en_US', title: 'News', subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.' },
   sv: { name: 'Svenska', code: 'sv', locale: 'sv_SE', title: 'Nyheter', subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.' },
@@ -247,6 +263,77 @@ function generateIndexHTML(langKey, articles, allArticlesByLang) {
   
   <!-- Hreflang -->
 ${generateHreflangTags()}
+  
+  <!-- Schema.org ItemList structured data for article aggregation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "${lang.title}",
+    "description": "${lang.subtitle}",
+    "numberOfItems": ${displayArticles.length},
+    "itemListElement": [${displayArticles.slice(0, 10).map((article, index) => `
+      {
+        "@type": "ListItem",
+        "position": ${index + 1},
+        "item": {
+          "@type": "NewsArticle",
+          "headline": "${escapeHtml(article.title)}",
+          "url": "https://riksdagsmonitor.com/news/${article.slug}",
+          "datePublished": "${article.date}",
+          "description": "${escapeHtml(article.description).substring(0, 150)}",
+          "inLanguage": "${lang.code}"
+        }
+      }`).join(',')}
+    ]
+  }
+  </script>
+  
+  <!-- BreadcrumbList structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://riksdagsmonitor.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "News",
+        "item": "https://riksdagsmonitor.com/news/${filename}"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- WebSite structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Riksdagsmonitor",
+    "url": "https://riksdagsmonitor.com",
+    "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hack23 AB",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://riksdagsmonitor.com/news/${filename}?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
