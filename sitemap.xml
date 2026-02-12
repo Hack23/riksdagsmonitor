@@ -1,25 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
   <loc>https://riksdagsmonitor.com/index.html</loc>
   <lastmod>2026-02-12T00:23:59.084Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/index_sv.html"/>
-  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/index_da.html"/>
-  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/index_no.html"/>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/index_fi.html"/>
-  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/index_de.html"/>
-  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/index_fr.html"/>
-  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/index_es.html"/>
-  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/index_nl.html"/>
-  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/index_ar.html"/>
-  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/index_he.html"/>
-  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/index_ja.html"/>
-  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/index_ko.html"/>
-  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/index_zh.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/index_sv.html" />
+  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/index_da.html" />
+  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/index_no.html" />
+  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/index_fi.html" />
+  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/index_de.html" />
+  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/index_fr.html" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/index_es.html" />
+  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/index_nl.html" />
+  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/index_ar.html" />
+  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/index_he.html" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/index_ja.html" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/index_ko.html" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/index_zh.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_sv.html</loc>
@@ -110,21 +109,21 @@
   <lastmod>2026-02-12T00:23:59.082Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboard/index.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboard/index_sv.html"/>
-  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboard/index_da.html"/>
-  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboard/index_no.html"/>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboard/index_fi.html"/>
-  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboard/index_de.html"/>
-  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboard/index_fr.html"/>
-  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/dashboard/index_es.html"/>
-  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/dashboard/index_nl.html"/>
-  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/dashboard/index_ar.html"/>
-  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/dashboard/index_he.html"/>
-  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/dashboard/index_ja.html"/>
-  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/dashboard/index_ko.html"/>
-  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/dashboard/index_zh.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboard/index.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboard/index.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboard/index_sv.html" />
+  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboard/index_da.html" />
+  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboard/index_no.html" />
+  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboard/index_fi.html" />
+  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboard/index_de.html" />
+  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboard/index_fr.html" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/dashboard/index_es.html" />
+  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/dashboard/index_nl.html" />
+  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/dashboard/index_ar.html" />
+  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/dashboard/index_he.html" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/dashboard/index_ja.html" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/dashboard/index_ko.html" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/dashboard/index_zh.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboard/index.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/dashboard/index_sv.html</loc>
@@ -209,21 +208,21 @@
   <lastmod>2026-02-12T00:28:24.029Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/sitemap.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/sitemap_sv.html"/>
-  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/sitemap_da.html"/>
-  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/sitemap_no.html"/>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/sitemap_fi.html"/>
-  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/sitemap_de.html"/>
-  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/sitemap_fr.html"/>
-  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/sitemap_es.html"/>
-  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/sitemap_nl.html"/>
-  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/sitemap_ar.html"/>
-  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/sitemap_he.html"/>
-  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/sitemap_ja.html"/>
-  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/sitemap_ko.html"/>
-  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/sitemap_zh.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/sitemap.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/sitemap.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/sitemap_sv.html" />
+  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/sitemap_da.html" />
+  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/sitemap_no.html" />
+  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/sitemap_fi.html" />
+  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/sitemap_de.html" />
+  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/sitemap_fr.html" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/sitemap_es.html" />
+  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/sitemap_nl.html" />
+  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/sitemap_ar.html" />
+  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/sitemap_he.html" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/sitemap_ja.html" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/sitemap_ko.html" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/sitemap_zh.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/sitemap.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_sv.html</loc>
@@ -308,18 +307,18 @@
   <lastmod>2026-02-12T00:23:59.093Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html"/>
-  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html"/>
-  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html"/>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html"/>
-  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html"/>
-  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html"/>
-  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html"/>
-  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html"/>
-  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html"/>
-  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html" />
+  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html" />
+  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html" />
+  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html" />
+  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html" />
+  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html" />
+  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html" />
+  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html" />
+  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_sv.html</loc>
@@ -386,144 +385,144 @@
   <lastmod>2026-02-12T00:23:59.090Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html</loc>
   <lastmod>2026-02-12T00:23:59.090Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html</loc>
   <lastmod>2026-02-12T00:23:59.091Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html</loc>
   <lastmod>2026-02-12T00:23:59.091Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html</loc>
   <lastmod>2026-02-12T00:23:59.091Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html</loc>
   <lastmod>2026-02-12T00:23:59.091Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html</loc>
   <lastmod>2026-02-12T00:23:59.091Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html</loc>
   <lastmod>2026-02-12T00:23:59.091Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html</loc>
   <lastmod>2026-02-12T00:23:59.091Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html</loc>
   <lastmod>2026-02-12T00:23:59.091Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html</loc>
   <lastmod>2026-02-12T00:23:59.092Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-opposition-motions-sv.html</loc>
   <lastmod>2026-02-12T00:23:59.092Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html</loc>
   <lastmod>2026-02-12T00:23:59.092Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-parliament-agenda-sv.html</loc>
   <lastmod>2026-02-12T00:23:59.092Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html</loc>
   <lastmod>2026-02-12T00:23:59.092Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html" />
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html</loc>
   <lastmod>2026-02-12T00:23:59.092Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html" />
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html" />
 </url>
   
-</urlset>
+<url><loc>https://riksdagsmonitor.com/news/2026-02-12-week-ahead-en.html</loc><lastmod>2026-02-12T04:41:11.179434Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-12-week-ahead-en.html" /><xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-12-week-ahead-sv.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-12-week-ahead-en.html" /></url><url><loc>https://riksdagsmonitor.com/news/2026-02-12-week-ahead-sv.html</loc><lastmod>2026-02-12T04:41:11.179434Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-12-week-ahead-en.html" /><xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-12-week-ahead-sv.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-12-week-ahead-en.html" /></url></urlset>
