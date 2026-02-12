@@ -99,8 +99,10 @@ describe('Agentic Workflow Configuration', () => {
       }
     });
 
-    it('should have contents read permission minimum', () => {
-      expect(frontmatter.permissions.contents).toBe('read');
+    it('should have contents write permission for PR creation', () => {
+      // Changed from 'read' to 'write' to fix issue #118
+      // Agentic workflows require write permissions for safe-outputs (PR creation)
+      expect(frontmatter.permissions.contents).toBe('write');
     });
   });
 

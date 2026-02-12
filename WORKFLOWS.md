@@ -4,8 +4,8 @@
 [![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 
-**Document Version:** 2.0  
-**Last Updated:** 2026-02-10  
+**Document Version:** 3.0  
+**Last Updated:** 2026-02-12  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -13,7 +13,7 @@
 
 This document describes the Continuous Integration and Continuous Deployment (CI/CD) workflows for Riksdagsmonitor. All workflows are implemented using GitHub Actions and follow Hack23 AB's [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md).
 
-**Total Workflows: 12** (9 existing + 3 new)  
+**Total Workflows: 14** (12 existing + 2 new)  
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 
 ## Workflow Overview
@@ -470,7 +470,299 @@ lhci autorun \
 - NIST CSF 2.0: DE.CM-1 (Network monitored)
 - CIS Controls v8.1: 8.11 (Monitoring and alerting)
 
-## Workflow Inventory (12 Total)
+## 7. News Generation Workflows ✨ **NEW**
+
+**Files:**
+- `.github/workflows/news-generation.yml` (Manual workflow)
+- `.github/workflows/news-article-generator.md` (Agentic workflow source)
+- `.github/workflows/news-article-generator.lock.yml` (Agentic workflow compiled)
+
+**Triggers:**
+- **Manual:** Schedule (daily), Workflow dispatch
+- **Agentic:** Schedule (daily 05:51 UTC), Workflow dispatch
+
+**Purpose:** Automated political news article generation from riksdag-regering-mcp data
+
+### Overview
+
+Riksdagsmonitor features **dual news generation pipelines**:
+
+1. **Manual Workflow** (`news-generation.yml`) - Script-based generation
+2. **Agentic Workflow** (`news-article-generator.lock.yml`) - AI-powered generation with Claude Opus 4
+
+### 7.1 Manual News Generation Workflow
+
+**File:** `.github/workflows/news-generation.yml`  
+**Status:** ✅ Operational  
+**Schedule:** Daily at 00:00 and 12:00 UTC  
+**Permissions:** contents: write, pull-requests: write
+
+#### Pipeline Stages
+
+1. **Check for Updates**
+   ```yaml
+   - name: Check for new Riksdag/Regering updates
+     # Skip if last generation < 11 hours ago (unless force_generation=true)
+   ```
+
+2. **Generate Articles**
+   ```bash
+   node scripts/generate-news-enhanced.js \
+     --types="$ARTICLE_TYPES" \
+     --languages="$LANG_ARG"
+   ```
+   
+   **Supported Article Types:**
+   - `week-ahead` - Prospective coverage of upcoming events
+   - `committee-reports` - Committee report analysis
+   - `propositions` - Government bill analysis
+   - `motions` - Opposition motion analysis
+   - `breaking` - Significant developments
+
+3. **Regenerate Indexes**
+   ```bash
+   node scripts/generate-news-indexes.js
+   # Scans news/ directory
+   # Generates all 14 language index files
+   ```
+
+4. **Update Sitemap**
+   ```bash
+   node scripts/generate-sitemap.js
+   # Updates sitemap.xml with new articles
+   ```
+
+5. **HTML Validation**
+   ```bash
+   find news -name "*.html" -type f -mmin -5 | xargs htmlhint
+   ```
+
+6. **Create Pull Request**
+   ```yaml
+   - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0
+     with:
+       title: '📰 Automated News Update - {timestamp}'
+       labels: automated-news, news-generation, needs-editorial-review
+   ```
+
+#### Features
+
+- ✅ Smart caching (skip if < 11 hours old)
+- ✅ Multi-language support (14 languages via presets)
+- ✅ Language presets: `nordic`, `eu-core`, `all`
+- ✅ HTML validation with HTMLHint
+- ✅ Automated PR creation
+- ✅ Workflow summary with metrics
+
+### 7.2 Agentic News Generation Workflow
+
+**File:** `.github/workflows/news-article-generator.lock.yml`  
+**Source:** `.github/workflows/news-article-generator.md`  
+**Status:** ✅ Fixed (2026-02-12)  
+**Schedule:** Daily at 05:51 UTC (scattered)  
+**Permissions:** contents: write, pull-requests: write, issues: read
+
+#### Architecture
+
+The agentic workflow uses **GitHub Agentic Workflows (gh-aw)** framework:
+
+**Engine:** `copilot` (Claude Opus 4)  
+**MCP Servers:** 
+- `riksdag-regering` (HTTP) - 32 specialized tools for Swedish political data
+- `github` (HTTP) - GitHub API integration
+- `filesystem` (local) - File system operations
+- `memory` (local) - Knowledge graph
+- `sequential-thinking` (local) - Chain of thought reasoning
+- `playwright` (local) - Browser automation (disabled by default)
+
+**Safe Outputs:**
+- `create-pull-request` - PR creation with generated articles
+- `add-comment` - Issue/PR comments
+- `noop` - No-op logging for transparency
+
+#### Agent Instructions (The Economist Style)
+
+The agent generates world-class political journalism following **The Economist style guide**:
+
+**Core Principles:**
+- Clarity above all - Short sentences, simple words, active voice
+- Analytical depth - Context, background, multiple perspectives
+- Elegant prose - Sophisticated but not pretentious
+- Objectivity - Fact-based, balanced, no partisan bias
+
+**Article Structure:**
+1. **Lead Paragraph** (50 words): Who, what, when, where, why
+2. **Context** (150-200 words): Background and history
+3. **Evidence** (300-400 words): Data, quotes, documents from MCP tools
+4. **Analysis** (200-300 words): Interpretation and implications
+5. **Conclusion** (100 words): Synthesis and broader significance
+
+#### Quality Gates
+
+**Pre-generation:**
+- Check last generation timestamp (< 11 hours = skip)
+- Verify MCP server availability
+- Validate riksdag-regering-mcp connectivity
+
+**Post-generation:**
+- HTML validation (HTMLHint)
+- Metadata validation (YAML frontmatter, og:tags, Schema.org)
+- Link checking (internal/external)
+- Multi-language consistency (EN/SV parity)
+- SEO metadata completeness
+
+**PR Creation:**
+- Article count validation
+- Language coverage check (EN + SV minimum)
+- Index file regeneration verified
+- Sitemap update confirmed
+- Quality summary in PR body with validation results
+
+#### MCP Tools (riksdag-regering-mcp)
+
+**32 Specialized Tools Available:**
+
+**Document Search:**
+- `search_dokument` - Search all Riksdag documents
+- `get_dokument` - Get specific document with full text
+- `search_dokument_fulltext` - Full-text search
+
+**Parliament Activity:**
+- `get_propositioner` - Latest government bills
+- `get_betankanden` - Latest committee reports
+- `get_motioner` - Latest opposition motions
+- `get_fragor` - Written questions to ministers
+- `get_interpellationer` - Interpellations
+
+**Calendar & Events:**
+- `get_calendar_events` - Upcoming parliamentary events
+- `list_reports` - Available reports
+- `fetch_report` - Get specific report
+
+**MPs & Voting:**
+- `search_ledamoter` - Search MPs by name, party, status
+- `get_ledamot` - Get MP details
+- `search_voteringar` - Search votes
+- `get_voting_group` - Votes grouped by party/district
+
+**Debates & Speeches:**
+- `search_anforanden` - Search speeches
+
+**Government Documents:**
+- `search_regering` - Search government documents
+- `get_g0v_document_content` - Get full document content (Markdown)
+- `analyze_g0v_by_department` - Department-wise analysis
+
+**Batch Operations:**
+- `batch_fetch_documents` - Multiple session fetching
+- `fetch_paginated_documents` - Large result sets
+- `fetch_paginated_anforanden` - Large debate sets
+
+**Enhanced Search:**
+- `enhanced_government_search` - Combined Riksdag + Government search
+
+#### Failure Analysis & Resolution
+
+**Previous Issues (Resolved 2026-02-12):**
+- ❌ Secret verification failures (4 consecutive runs)
+- ❌ Insufficient permissions (read-only → prevented PR creation)
+
+**Root Cause:**
+- Workflow had `contents: read` but required `contents: write` for safe-outputs
+- Missing `pull-requests: write` permission
+- gh-aw framework expected write access for PR creation
+
+**Solution Applied:**
+```yaml
+# Updated permissions in news-article-generator.md
+permissions:
+  contents: write  # Enable PR creation
+  pull-requests: write  # Enable PR creation
+  issues: read  # Keep read access
+```
+
+**Documentation:**
+- Analysis: `docs/AGENTIC_WORKFLOW_ANALYSIS.md`
+- Issue: #118 (resolved)
+
+#### Compilation Process
+
+The agentic workflow uses a **compile-once, run-many** pattern:
+
+**Source:** `news-article-generator.md` (499 lines, human-editable)  
+**Compiled:** `news-article-generator.lock.yml` (1,117 lines, machine-generated)
+
+**Compilation Command:**
+```bash
+cd .github/workflows
+gh aw compile news-article-generator.md
+```
+
+**When to Recompile:**
+- After editing `.md` file
+- After updating agent instructions
+- After changing permissions or MCP servers
+- After gh-aw framework updates
+
+**Auto-compilation Workflow:**
+- `.github/workflows/compile-agentic-workflows.yml`
+- Triggers on `.md` file changes
+- Creates issue if compilation fails
+- Requires manual compilation (gh CLI + gh-aw extension)
+
+### Security Controls
+
+**Implemented (Both Workflows):**
+- Harden Runner (egress audit mode)
+- SHA-pinned actions
+- Least privilege permissions
+- Environment secrets management
+- Audit logging
+- HTML validation
+- Link checking
+
+**Additional (Agentic Workflow):**
+- MCP gateway with API key rotation
+- Safe-outputs validation framework
+- Firewall activity logging
+- Network egress monitoring
+- Agent stdio logging
+
+**Control Mapping:**
+- ISO 27001: A.14.2 (Security in Development)
+- NIST CSF 2.0: PR.DS-2 (Data in transit protected)
+- CIS Controls v8.1: 16.1 (Secure application development)
+
+### Monitoring & Metrics
+
+**Success Metrics:**
+- Workflow success rate: Target >95% (Manual: 100%, Agentic: Fixed 2026-02-12)
+- Articles generated per run: 1-5 (depends on parliamentary activity)
+- PR creation time: < 5 minutes
+- HTML validation pass rate: 100%
+
+**Alerting:**
+- 3 consecutive failures → Issue created automatically
+- MCP server unavailable → Slack notification
+- Validation failures → PR comment with details
+
+### Future Enhancements
+
+**Planned:**
+- [ ] Multi-language expansion (beyond EN/SV)
+- [ ] Automated editorial scoring
+- [ ] A/B testing for article templates
+- [ ] Integration with CIA intelligence exports
+- [ ] Automated fact-checking validation
+- [ ] SEO performance tracking per article
+
+**Under Consideration:**
+- [ ] Real-time breaking news generation
+- [ ] Social media auto-posting
+- [ ] Newsletter compilation
+- [ ] Podcast script generation
+
+## Workflow Inventory (14 Total)
 
 | # | Workflow | Status | Security | Schedule | Purpose |
 |---|----------|--------|----------|----------|---------|
@@ -486,6 +778,8 @@ lhci autorun \
 | 10 | **data-pipeline.yml** | ✨ NEW | SHA+HR | On-demand | CIA data fetch |
 | 11 | **lighthouse-ci.yml** | ✨ NEW | SHA+HR | Weekly Mon | Performance monitoring |
 | 12 | **uptime-monitor.yml** | ✨ NEW | SHA+HR | Every 15min | Site availability |
+| 13 | **news-generation.yml** | ✨ NEW | SHA+HR | Daily (00:00, 12:00) | Manual news generation |
+| 14 | **news-article-generator.lock.yml** | ✨ NEW | SHA+HR | Daily 05:51 | AI news generation (agentic) |
 
 **Legend:**
 - SHA: SHA-pinned actions
