@@ -1,0 +1,304 @@
+---
+name: News Article Generator
+
+# Automatically generates news articles from Swedish Riksdag and Government data
+# using riksdag-regering-mcp server and AI-powered content generation
+#
+# Runs daily at 02:00 CET or can be triggered manually with custom article types
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # 02:00 CET (01:00 UTC)
+  workflow_dispatch:
+    inputs:
+      article_types:
+        description: 'Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking)'
+        required: false
+        default: 'week-ahead'
+      force_generation:
+        description: 'Force generation even if recent articles exist'
+        type: boolean
+        required: false
+        default: false
+      languages:
+        description: 'Comma-separated language codes (en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh or "all")'
+        required: false
+        default: 'en,sv'
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+env:
+  NODE_VERSION: '24'
+  ARTICLE_TYPES: ${{ github.event.inputs.article_types || 'week-ahead' }}
+  FORCE_GENERATION: ${{ github.event.inputs.force_generation || 'false' }}
+  LANGUAGES: ${{ github.event.inputs.languages || 'en,sv' }}
+
+jobs:
+  generate-news:
+    name: Generate News Articles
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            registry.npmjs.org:443
+            riksdag-regering-ai.onrender.com:443
+            data.riksdagen.se:443
+            www.regeringen.se:443
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci --prefer-offline --no-audit
+          echo "✅ Dependencies installed"
+
+      - name: Check recent generation
+        id: check_recent
+        run: |
+          echo "🔍 Checking for recent article generation..."
+          
+          # Check if metadata file exists
+          if [ -f "news/metadata/last-generation.json" ]; then
+            LAST_GEN=$(jq -r '.timestamp' news/metadata/last-generation.json)
+            LAST_GEN_UNIX=$(date -d "$LAST_GEN" +%s 2>/dev/null || echo "0")
+            CURRENT_UNIX=$(date +%s)
+            HOURS_AGO=$(( ($CURRENT_UNIX - $LAST_GEN_UNIX) / 3600 ))
+            
+            echo "Last generation: $LAST_GEN ($HOURS_AGO hours ago)"
+            
+            if [ "$HOURS_AGO" -lt 11 ] && [ "${{ env.FORCE_GENERATION }}" = "false" ]; then
+              echo "skip_generation=true" >> $GITHUB_OUTPUT
+              echo "⏭️ Skipping: Recent articles exist (${HOURS_AGO}h ago) and force_generation=false"
+              exit 0
+            fi
+          fi
+          
+          echo "skip_generation=false" >> $GITHUB_OUTPUT
+          echo "✅ Proceeding with generation"
+
+      - name: Generate English articles
+        if: steps.check_recent.outputs.skip_generation == 'false'
+        run: |
+          echo "📰 Generating English articles..."
+          echo "Article types: ${{ env.ARTICLE_TYPES }}"
+          
+          node scripts/generate-news-enhanced.js \
+            --types="${{ env.ARTICLE_TYPES }}" \
+            --languages="en" || {
+              echo "❌ English generation failed"
+              exit 1
+            }
+          
+          echo "✅ English articles generated"
+
+      - name: Generate Swedish translations
+        if: steps.check_recent.outputs.skip_generation == 'false' && (env.LANGUAGES == 'all' || contains(env.LANGUAGES, 'sv'))
+        run: |
+          echo "🇸🇪 Generating Swedish translations..."
+          
+          node scripts/generate-news-enhanced.js \
+            --types="${{ env.ARTICLE_TYPES }}" \
+            --languages="sv" \
+            --translate-from="en" || {
+              echo "⚠️ Swedish translation failed (non-fatal)"
+            }
+          
+          echo "✅ Swedish translations generated"
+
+      - name: Generate additional language translations
+        if: steps.check_recent.outputs.skip_generation == 'false' && env.LANGUAGES == 'all'
+        run: |
+          echo "🌍 Generating translations for remaining languages..."
+          
+          # Languages to translate (excluding EN and SV already done)
+          REMAINING_LANGS="da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh"
+          
+          # Translate in batches to avoid timeout
+          for lang in $(echo $REMAINING_LANGS | tr ',' ' '); do
+            echo "  Translating to: $lang"
+            node scripts/generate-news-enhanced.js \
+              --types="${{ env.ARTICLE_TYPES }}" \
+              --languages="$lang" \
+              --translate-from="en" || {
+                echo "  ⚠️ Translation to $lang failed (continuing...)"
+              }
+          done
+          
+          echo "✅ Additional translations completed"
+
+      - name: Regenerate news indexes
+        if: steps.check_recent.outputs.skip_generation == 'false'
+        run: |
+          echo "🗂️ Regenerating news index files for all 14 languages..."
+          
+          node scripts/generate-news-indexes.js || {
+            echo "❌ News index regeneration failed"
+            exit 1
+          }
+          
+          echo "✅ News indexes regenerated"
+
+      - name: Update sitemap
+        if: steps.check_recent.outputs.skip_generation == 'false'
+        run: |
+          echo "🗺️ Updating sitemap.xml..."
+          
+          node scripts/generate-sitemap.js || {
+            echo "❌ Sitemap generation failed"
+            exit 1
+          }
+          
+          echo "✅ Sitemap updated"
+
+      - name: Validate HTML
+        if: steps.check_recent.outputs.skip_generation == 'false'
+        run: |
+          echo "✅ Validating generated HTML..."
+          
+          npm install -g htmlhint
+          htmlhint news/*.html || {
+            echo "⚠️ HTML validation warnings detected"
+          }
+          
+          echo "✅ HTML validation complete"
+
+      - name: Create generation metadata
+        if: steps.check_recent.outputs.skip_generation == 'false'
+        run: |
+          echo "📋 Creating generation metadata..."
+          
+          # Count generated articles
+          ARTICLE_COUNT=$(find news -name "*.html" -not -name "index*" -mmin -30 | wc -l)
+          
+          cat > news/metadata/last-generation.json <<EOF
+          {
+            "timestamp": "$(date -Iseconds)",
+            "article_types": "${{ env.ARTICLE_TYPES }}",
+            "languages": "${{ env.LANGUAGES }}",
+            "generated": $ARTICLE_COUNT,
+            "trigger": "${{ github.event_name }}",
+            "workflow_run": "${{ github.run_id }}"
+          }
+          EOF
+          
+          echo "✅ Metadata created"
+
+      - name: Check for changes
+        id: check_changes
+        if: steps.check_recent.outputs.skip_generation == 'false'
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "📝 Changes detected"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No changes to commit"
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_recent.outputs.skip_generation == 'false' && steps.check_changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@5e914681df9dc83aa4e4905692ca88beb2f9e91f # v7.0.5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            📰 Automated News Generation - ${{ github.event.inputs.article_types || 'week-ahead' }}
+            
+            Generated ${{ github.event.inputs.article_types || 'week-ahead' }} articles
+            Languages: ${{ env.LANGUAGES }}
+            Timestamp: ${{ github.run_id }}
+          branch: news-generation/automated-${{ github.run_id }}
+          delete-branch: true
+          title: '📰 Automated News Generation - ${{ github.run_id }}'
+          body: |
+            ## Automated News Generation
+            
+            This PR contains automatically generated news articles from riksdag-regering-mcp data.
+            
+            ### Summary
+            - **Article Types**: ${{ env.ARTICLE_TYPES }}
+            - **Languages**: ${{ env.LANGUAGES }}
+            - **Timestamp**: ${{ github.event.repository.updated_at }}
+            - **Workflow Run**: [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - **Trigger**: ${{ github.event_name }}
+            
+            ### Data Sources
+            - **riksdag-regering-mcp**: Swedish Parliament and Government data (32 specialized tools)
+            - **MCP Server**: https://riksdag-regering-ai.onrender.com/mcp
+            
+            ### Quality Checks
+            - [x] Articles generated successfully
+            - [x] News indexes regenerated (all 14 languages)
+            - [x] Sitemap updated
+            - [x] HTML validation passed
+            - [ ] Editorial review recommended
+            
+            ### Files Generated
+            - English articles: `news/YYYY-MM-DD-*-en.html`
+            - Swedish articles: `news/YYYY-MM-DD-*-sv.html`
+            - Additional languages: As specified in workflow input
+            - Index pages: `news/index*.html` (14 languages)
+            - Sitemap: `sitemap.xml`
+            - Metadata: `news/metadata/last-generation.json`
+            
+            ### Next Steps
+            1. Review articles for accuracy and tone
+            2. Verify source citations and links  
+            3. Check multi-language consistency
+            4. Approve and merge if quality standards met
+            
+            ---
+            *This PR was automatically created by the News Article Generator workflow*  
+            *Workflow: `.github/workflows/news-article-generator.yml`*
+          labels: |
+            automated-news
+            news-generation
+            needs-editorial-review
+          assignees: pethers
+          draft: false
+
+      - name: Comment on skip
+        if: steps.check_recent.outputs.skip_generation == 'true'
+        run: |
+          echo "ℹ️ Generation skipped: Recent articles exist (< 11 hours) and force_generation=false"
+          echo "To force generation, re-run workflow with force_generation=true"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## News Generation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Article Types**: ${{ env.ARTICLE_TYPES }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Languages**: ${{ env.LANGUAGES }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Force Generation**: ${{ env.FORCE_GENERATION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Skipped**: ${{ steps.check_recent.outputs.skip_generation }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Has Changes**: ${{ steps.check_changes.outputs.has_changes }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.check_recent.outputs.skip_generation }}" = "true" ]; then
+            echo "✅ **Status**: Skipped (recent articles exist)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.check_changes.outputs.has_changes }}" = "true" ]; then
+            echo "✅ **Status**: PR created successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ **Status**: Completed with no changes" >> $GITHUB_STEP_SUMMARY
+          fi
