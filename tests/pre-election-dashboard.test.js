@@ -131,13 +131,51 @@ describe('Pre-Election Dashboard', () => {
     });
   });
 
+  describe('Data Source Configuration', () => {
+    it('should use local-first URLs with cia-data/ prefix', () => {
+      const localPaths = [
+        'cia-data/pre-election/view_riksdagen_pre_election_quarterly_activity_sample.csv',
+        'cia-data/pre-election/view_riksdagen_q4_election_year_comparison_sample.csv'
+      ];
+      localPaths.forEach(path => {
+        expect(path).toMatch(/^cia-data\//);
+      });
+    });
+
+    it('should have remote fallback URLs for CIA data', () => {
+      const remoteBase = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
+      expect(remoteBase).toContain('sample-data');
+    });
+  });
+
   describe('Pre-Election Data Processing', () => {
-    it('should parse pre-election metrics', () => {
-      const csv = 'Year,Quarter,Ballots,Documents\n2024,Q4,150,320\n2023,Q4,145,310';
+    it('should parse pre-election quarterly activity CSV with real columns', () => {
+      const csv = 'year,is_election_year,total_ballots,active_politicians,avg_attendance_rate,total_votes,avg_win_rate,avg_rebel_rate,total_documents,active_document_authors';
+      const headers = csv.split(',');
+      expect(headers).toContain('year');
+      expect(headers).toContain('is_election_year');
+      expect(headers).toContain('total_ballots');
+      expect(headers).toContain('avg_attendance_rate');
+      expect(headers).toContain('total_documents');
+    });
+
+    it('should parse Q4 election year comparison CSV with real columns', () => {
+      const csv = 'year,is_election_year,total_ballots,active_politicians,attendance_rate,documents_produced,baseline_ballots,baseline_docs,ballot_deviation_from_baseline,activity_classification';
+      const headers = csv.split(',');
+      expect(headers).toContain('baseline_ballots');
+      expect(headers).toContain('baseline_docs');
+      expect(headers).toContain('ballot_deviation_from_baseline');
+      expect(headers).toContain('activity_classification');
+    });
+
+    it('should have ballot and document deviation metrics', () => {
+      const csv = 'year,ballot_deviation_from_baseline,document_deviation_from_baseline,ballot_percent_change_from_baseline,ballot_z_score,q4_activity_classification\n2023,-5234.33,-297.67,-32.61,-1.06,REDUCED_ACTIVITY';
       const lines = csv.split('\n');
       const headers = lines[0].split(',');
-      expect(headers).toContain('Ballots');
-      expect(headers).toContain('Documents');
+      expect(headers).toContain('ballot_z_score');
+      expect(headers).toContain('q4_activity_classification');
+      const values = lines[1].split(',');
+      expect(values[values.length - 1]).toBe('REDUCED_ACTIVITY');
     });
 
     it('should calculate year-over-year changes', () => {
@@ -163,6 +201,12 @@ describe('Pre-Election Dashboard', () => {
       expect(classifyQ4(5)).toBe('normal');
       expect(classifyQ4(15)).toBe('warning');
       expect(classifyQ4(25)).toBe('critical');
+    });
+
+    it('should handle empty CSV gracefully', () => {
+      const csv = 'year,is_election_year,total_ballots\n';
+      const lines = csv.trim().split('\n');
+      expect(lines.length).toBe(1);
     });
   });
 

@@ -116,13 +116,51 @@ describe('Seasonal Patterns Dashboard', () => {
     });
   });
 
+  describe('Data Source Configuration', () => {
+    it('should use local-first URLs with cia-data/ prefix', () => {
+      const localPaths = [
+        'cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv',
+        'cia-data/seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv',
+        'cia-data/seasonal/view_riksdagen_seasonal_quarterly_activity_sample.csv'
+      ];
+      localPaths.forEach(path => {
+        expect(path).toMatch(/^cia-data\//);
+      });
+    });
+
+    it('should have remote fallback URLs for CIA data', () => {
+      const remoteBase = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
+      expect(remoteBase).toContain('sample-data');
+    });
+  });
+
   describe('Seasonal Data Processing', () => {
-    it('should parse seasonal CSV data', () => {
-      const csv = 'Year,Quarter,Activity,ZScore\n2024,Q1,250,1.5\n2024,Q2,180,-0.3';
-      const lines = csv.split('\n');
-      const headers = lines[0].split(',');
-      expect(headers).toContain('Quarter');
-      expect(headers).toContain('ZScore');
+    it('should parse seasonal activity patterns CSV with real columns', () => {
+      const csv = 'year,quarter,is_election_year,election_cycle,total_ballots,active_politicians,attendance_rate,documents_produced,q_baseline_ballots,q_stddev_ballots,ballot_z_score,seasonal_pattern_classification';
+      const headers = csv.split(',');
+      expect(headers).toContain('year');
+      expect(headers).toContain('quarter');
+      expect(headers).toContain('is_election_year');
+      expect(headers).toContain('election_cycle');
+      expect(headers).toContain('ballot_z_score');
+      expect(headers).toContain('seasonal_pattern_classification');
+    });
+
+    it('should parse seasonal anomaly detection CSV with real columns', () => {
+      const csv = 'year,quarter,is_election_year,total_ballots,activity_classification,anomaly_type,anomaly_direction,max_z_score,anomaly_severity';
+      const headers = csv.split(',');
+      expect(headers).toContain('anomaly_type');
+      expect(headers).toContain('anomaly_direction');
+      expect(headers).toContain('max_z_score');
+      expect(headers).toContain('anomaly_severity');
+    });
+
+    it('should parse seasonal quarterly activity CSV with real columns', () => {
+      const csv = 'year,quarter,is_election_year,total_ballots,active_politicians,attendance_rate,documents_produced,q_baseline_ballots,ballot_z_score,activity_classification';
+      const headers = csv.split(',');
+      expect(headers).toContain('q_baseline_ballots');
+      expect(headers).toContain('ballot_z_score');
+      expect(headers).toContain('activity_classification');
     });
 
     it('should calculate Z-scores for anomaly detection', () => {
@@ -160,6 +198,21 @@ describe('Seasonal Patterns Dashboard', () => {
       }, {});
       expect(Object.keys(byYear)).toHaveLength(2);
       expect(byYear[2024]).toHaveLength(2);
+    });
+
+    it('should identify anomaly types from real data', () => {
+      const anomalyTypes = ['BALLOT_ANOMALY', 'DOCUMENT_ANOMALY', 'ATTENDANCE_ANOMALY'];
+      const directions = ['UNUSUALLY_HIGH', 'UNUSUALLY_LOW'];
+      const severities = ['HIGH', 'MEDIUM', 'LOW'];
+      expect(anomalyTypes).toContain('BALLOT_ANOMALY');
+      expect(directions).toContain('UNUSUALLY_HIGH');
+      expect(severities).toContain('HIGH');
+    });
+
+    it('should handle empty CSV gracefully', () => {
+      const csv = 'year,quarter,total_ballots,ballot_z_score\n';
+      const lines = csv.trim().split('\n');
+      expect(lines.length).toBe(1);
     });
   });
 

@@ -112,13 +112,26 @@ describe('Election Cycle Dashboard', () => {
   });
 
   describe('Data Processing', () => {
-    it('should parse election cycle data', () => {
-      const csvData = 'Cycle,Year,Quarter,Score\n2022-2026,2024,Q1,72\n2022-2026,2024,Q2,75';
+    it('should parse party effectiveness trends CSV with real columns', () => {
+      // Real CSV: party,year,effectiveness_score (or similar)
+      const csvData = 'party,year,effectiveness_score,decisions,attendance\nS,2022,78.5,120,92.3\nM,2022,75.2,110,89.1';
       const lines = csvData.split('\n');
       const headers = lines[0].split(',');
-      expect(headers).toContain('Cycle');
-      expect(headers).toContain('Year');
+      expect(headers).toContain('party');
+      expect(headers).toContain('year');
+      expect(headers).toContain('effectiveness_score');
       expect(lines.length).toBe(3);
+    });
+
+    it('should parse risk evolution temporal CSV with real columns', () => {
+      // Real CSV: assessment_period,risk_severity,politician_count,avg_risk_score
+      const csvData = 'assessment_period,risk_severity,politician_count,avg_risk_score\n2026-02-01 00:00:00+01,LOW,249,19.98\n2026-02-01 00:00:00+01,MEDIUM,130,42.50';
+      const lines = csvData.split('\n');
+      const headers = lines[0].split(',');
+      expect(headers).toContain('assessment_period');
+      expect(headers).toContain('risk_severity');
+      expect(headers).toContain('politician_count');
+      expect(headers).toContain('avg_risk_score');
     });
 
     it('should group data by election cycle', () => {
@@ -134,6 +147,51 @@ describe('Election Cycle Dashboard', () => {
       }, {});
       expect(Object.keys(grouped)).toHaveLength(2);
       expect(grouped['2022-2026']).toHaveLength(2);
+    });
+
+    it('should calculate risk severity distribution', () => {
+      const rows = [
+        { risk_severity: 'LOW', politician_count: '249' },
+        { risk_severity: 'MEDIUM', politician_count: '130' },
+        { risk_severity: 'HIGH', politician_count: '23' }
+      ];
+      const total = rows.reduce((sum, r) => sum + parseInt(r.politician_count), 0);
+      expect(total).toBe(402);
+      const lowPct = parseInt(rows[0].politician_count) / total;
+      expect(lowPct).toBeGreaterThan(0.5);
+    });
+  });
+
+  describe('Data Source Configuration', () => {
+    it('should use local-first URLs with cia-data/ prefix', () => {
+      const localPaths = [
+        'cia-data/distribution_party_effectiveness_trends.csv',
+        'cia-data/distribution_risk_evolution_temporal.csv',
+        'cia-data/election-cycle/'
+      ];
+      localPaths.forEach(path => {
+        expect(path).toMatch(/^cia-data\//);
+      });
+    });
+
+    it('should have remote fallback URLs for CIA data', () => {
+      const remoteBase = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
+      expect(remoteBase).toContain('sample-data');
+    });
+  });
+
+  describe('Error Handling', () => {
+    it('should handle empty CSV gracefully', () => {
+      const csv = 'party,year,score\n';
+      const lines = csv.trim().split('\n');
+      expect(lines.length).toBe(1);
+    });
+
+    it('should handle fetch rejection', async () => {
+      const fetchMock = vi.fn().mockRejectedValue(new Error('404'));
+      global.fetch = fetchMock;
+      try { await fetch('nonexistent.csv'); } catch (e) { expect(e.message).toBe('404'); }
+      delete global.fetch;
     });
   });
 

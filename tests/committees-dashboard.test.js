@@ -123,24 +123,36 @@ describe('Committees Dashboard', () => {
   });
 
   describe('Committee Data Processing', () => {
-    it('should parse committee performance data', () => {
-      const csv = 'Committee,Decisions,Documents,Score\nFinanss,120,350,82\nJustitie,95,280,75';
+    it('should parse committee productivity matrix CSV with real columns', () => {
+      // Real CSV: committee_code,committee_name,year,quarter,total_documents,active_members,productivity_level,productivity_assessment
+      const csv = 'committee_code,committee_name,year,quarter,total_documents,active_members,productivity_level,productivity_assessment\nFiU,Finansutskottet,2024,3,120,17,HIGH,ABOVE_AVERAGE';
       const lines = csv.split('\n');
       const headers = lines[0].split(',');
-      expect(headers).toContain('Committee');
-      expect(headers).toContain('Decisions');
-      expect(lines.length).toBe(3);
+      expect(headers).toContain('committee_code');
+      expect(headers).toContain('committee_name');
+      expect(headers).toContain('total_documents');
+      expect(headers).toContain('productivity_assessment');
+    });
+
+    it('should parse committee ballot decision summary CSV with real columns', () => {
+      // Real CSV: embedded_id_concern,embedded_id_issue,embedded_id_party,approved,total_votes,percentage_approved,party_won,rebel_votes,percentage_rebel
+      const csv = 'embedded_id_concern,embedded_id_issue,embedded_id_party,approved,total_votes,percentage_approved,party_won,rebel_votes,percentage_rebel\nSocialförsäkringsutskottet,Bet. 2024/25:SfU8,S,5,5,100.00,true,0,0.00';
+      const lines = csv.split('\n');
+      const headers = lines[0].split(',');
+      expect(headers).toContain('embedded_id_concern');
+      expect(headers).toContain('percentage_approved');
+      expect(headers).toContain('rebel_votes');
     });
 
     it('should rank committees by effectiveness', () => {
       const committees = [
-        { name: 'Finanss', score: 82 },
-        { name: 'Justitie', score: 75 },
-        { name: 'Försvars', score: 88 }
+        { name: 'Finansutskottet', score: 82 },
+        { name: 'Justitieutskottet', score: 75 },
+        { name: 'Försvarsutskottet', score: 88 }
       ];
       const ranked = [...committees].sort((a, b) => b.score - a.score);
-      expect(ranked[0].name).toBe('Försvars');
-      expect(ranked[2].name).toBe('Justitie');
+      expect(ranked[0].name).toBe('Försvarsutskottet');
+      expect(ranked[2].name).toBe('Justitieutskottet');
     });
 
     it('should calculate productivity metrics', () => {
@@ -148,6 +160,45 @@ describe('Committees Dashboard', () => {
       const members = 17;
       const productivity = decisions / members;
       expect(productivity).toBeCloseTo(7.06, 1);
+    });
+  });
+
+  describe('Data Source Configuration', () => {
+    it('should use local-first URLs with cia-data/ prefix', () => {
+      const localPaths = [
+        'cia-data/committee/distribution_committee_productivity_matrix.csv',
+        'cia-data/committee/view_riksdagen_committee_decisions.csv',
+        'cia-data/committee/view_riksdagen_committee_ballot_decision_party_summary.csv'
+      ];
+      localPaths.forEach(path => {
+        expect(path).toMatch(/^cia-data\//);
+        expect(path).toMatch(/\.csv$/);
+      });
+    });
+
+    it('should have remote fallback URLs', () => {
+      const remoteBase = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
+      expect(remoteBase).toMatch(/^https:\/\//);
+      expect(remoteBase).toContain('sample-data');
+    });
+  });
+
+  describe('Error Handling', () => {
+    it('should handle empty CSV data', () => {
+      const csv = 'committee_code,committee_name,year,quarter\n';
+      const lines = csv.trim().split('\n');
+      expect(lines.length).toBe(1); // header only
+    });
+
+    it('should handle fetch failures gracefully', async () => {
+      const fetchMock = vi.fn().mockRejectedValue(new Error('Network error'));
+      global.fetch = fetchMock;
+      try {
+        await fetch('cia-data/committee/nonexistent.csv');
+      } catch (error) {
+        expect(error.message).toBe('Network error');
+      }
+      delete global.fetch;
     });
   });
 

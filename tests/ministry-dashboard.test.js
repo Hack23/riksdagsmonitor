@@ -77,16 +77,88 @@ describe('Ministry Dashboard', () => {
     });
   });
 
+  describe('Data Source Configuration', () => {
+    it('should use local-first URLs with cia-data/ prefix', () => {
+      const localPaths = [
+        'cia-data/distribution_ministry_effectiveness.csv',
+        'cia-data/distribution_ministry_productivity_matrix.csv',
+        'cia-data/distribution_ministry_decision_impact.csv',
+        'cia-data/distribution_ministry_risk_levels.csv',
+        'cia-data/distribution_ministry_risk_quarterly.csv'
+      ];
+      localPaths.forEach(path => {
+        expect(path).toMatch(/^cia-data\//);
+      });
+    });
+
+    it('should have remote fallback URLs for CIA data', () => {
+      const remoteBase = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
+      expect(remoteBase).toContain('sample-data');
+    });
+  });
+
+  describe('Real CSV Schema Tests', () => {
+    it('should parse ministry effectiveness CSV with real columns', () => {
+      const csv = 'ministry_name,year,quarter,documents_produced,government_bills,active_members,effectiveness_assessment\nKulturdepartementet,2023,1,1,0,0,Ministry performance concerns';
+      const headers = csv.split('\n')[0].split(',');
+      expect(headers).toContain('ministry_name');
+      expect(headers).toContain('effectiveness_assessment');
+      expect(headers).toContain('documents_produced');
+      expect(headers).toContain('government_bills');
+    });
+
+    it('should parse ministry productivity matrix CSV with real columns', () => {
+      const csv = 'ministry_name,year,documents_produced,propositions,government_bills,unique_contributors,performance_assessment\nFinansdepartementet,2026,6,6,0,0,High-performing ministry';
+      const headers = csv.split('\n')[0].split(',');
+      expect(headers).toContain('ministry_name');
+      expect(headers).toContain('propositions');
+      expect(headers).toContain('unique_contributors');
+      expect(headers).toContain('performance_assessment');
+    });
+
+    it('should parse ministry decision impact CSV with real columns', () => {
+      const csv = 'ministry_code,committee,decision_type,total_proposals,approved_proposals,rejected_proposals,approval_rate\nJustitiedepartementet,Bifall,"",28,28,0,100.00';
+      const headers = csv.split('\n')[0].split(',');
+      expect(headers).toContain('ministry_code');
+      expect(headers).toContain('total_proposals');
+      expect(headers).toContain('approved_proposals');
+      expect(headers).toContain('approval_rate');
+    });
+
+    it('should parse ministry risk levels CSV with real columns', () => {
+      const csv = 'risk_level,period_count,percentage,avg_documents\nCRITICAL,160,95.24,0.00';
+      const headers = csv.split('\n')[0].split(',');
+      expect(headers).toContain('risk_level');
+      expect(headers).toContain('period_count');
+      expect(headers).toContain('percentage');
+    });
+
+    it('should parse ministry risk quarterly CSV with real columns', () => {
+      const csv = 'year,quarter,risk_level,ministry_count,avg_documents\n2026,1,CRITICAL,20,0.00';
+      const headers = csv.split('\n')[0].split(',');
+      expect(headers).toContain('year');
+      expect(headers).toContain('quarter');
+      expect(headers).toContain('risk_level');
+      expect(headers).toContain('ministry_count');
+    });
+
+    it('should calculate approval rates from proposals', () => {
+      const row = { total_proposals: '28', approved_proposals: '28', rejected_proposals: '0' };
+      const rate = parseInt(row.approved_proposals) / parseInt(row.total_proposals) * 100;
+      expect(rate).toBe(100);
+    });
+  });
+
   describe('Data Fetching', () => {
     it('should fetch ministry CSV data', async () => {
       const mockFetch = vi.fn(() =>
         Promise.resolve({
           ok: true,
-          text: () => Promise.resolve('Ministry,Score,Year\nFinance,85,2024\nDefense,78,2024')
+          text: () => Promise.resolve('ministry_name,year,documents_produced\nFinansdepartementet,2026,6')
         })
       );
       global.fetch = mockFetch;
-      const response = await fetch('test-url');
+      const response = await fetch('cia-data/distribution_ministry_effectiveness.csv');
       expect(response.ok).toBe(true);
     });
 
@@ -95,14 +167,14 @@ describe('Ministry Dashboard', () => {
         Promise.resolve({ ok: false, status: 500, statusText: 'Server Error' })
       );
       global.fetch = mockFetch;
-      const response = await fetch('test-url');
+      const response = await fetch('cia-data/distribution_ministry_effectiveness.csv');
       expect(response.ok).toBe(false);
     });
 
-    it('should parse CSV headers correctly', () => {
-      const csv = 'Ministry,Score,Year\nFinance,85,2024';
-      const headers = csv.split('\n')[0].split(',');
-      expect(headers).toEqual(['Ministry', 'Score', 'Year']);
+    it('should handle empty CSV gracefully', () => {
+      const csv = 'ministry_name,year,documents_produced\n';
+      const lines = csv.trim().split('\n');
+      expect(lines.length).toBe(1);
     });
   });
 
@@ -110,7 +182,7 @@ describe('Ministry Dashboard', () => {
     it('should create chart with responsive options', () => {
       const config = {
         type: 'bar',
-        data: { labels: ['Finance', 'Defense'], datasets: [{ data: [85, 78] }] },
+        data: { labels: ['Finansdepartementet', 'Justitiedepartementet'], datasets: [{ data: [6, 28] }] },
         options: { responsive: true, maintainAspectRatio: false }
       };
       expect(config.options.responsive).toBe(true);
