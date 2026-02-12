@@ -219,7 +219,26 @@ For each article type with significant updates:
    - English version (`-en.html`)
    - Swedish version (`-sv.html`)
 
-### Step 5: Update Sitemap
+### Step 5: Regenerate News Indexes
+
+**CRITICAL**: After generating articles, regenerate all 14 language news index files:
+
+```bash
+node scripts/generate-news-indexes.js
+```
+
+This script:
+- Scans `news/` directory for all article HTML files
+- Parses metadata from HTML meta tags (og:title, og:description, article:published_time)
+- Extracts article type, topics, and tags automatically
+- Groups articles by language (EN/SV)
+- Generates all 14 `news/index_*.html` files dynamically
+- Eliminates manual updates - articles appear automatically in indexes
+
+**Why This Is Critical:**
+Without running this script, newly generated articles won't appear in the news index pages. This was the blocking issue identified in PR #120 where index files had hardcoded article arrays that required manual updates.
+
+### Step 6: Update Sitemap
 
 Run the sitemap generation script:
 
@@ -232,7 +251,7 @@ This will:
 - Generate `sitemap.xml` with proper hreflang tags
 - Include all 32 URLs (14 language index pages + news articles)
 
-### Step 6: Create Metadata
+### Step 7: Create Metadata
 
 Create/update `news/metadata/last-generation.json`:
 
@@ -253,7 +272,7 @@ Create/update `news/metadata/last-generation.json`:
 }
 ```
 
-### Step 7: Create Pull Request
+### Step 8: Create Pull Request
 
 Use safe-outputs to create a PR with:
 
