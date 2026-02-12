@@ -117,10 +117,22 @@
     }
     
     if (el && value !== null && value !== undefined) {
-      // Format numbers with locale separators if it's a number
-      const displayValue = (typeof value === 'number' || !isNaN(parseInt(value))) 
-        ? parseInt(value).toLocaleString() 
-        : value;
+      // Format numbers with locale separators
+      let displayValue = value;
+
+      if (typeof value === 'number') {
+        displayValue = value.toLocaleString();
+      } else if (typeof value === 'string') {
+        // Normalize common grouping separators (commas, dots, spaces) before parsing
+        const normalized = value.replace(/[,.\s]/g, '');
+        // Only treat as numeric if the normalized value is digits-only
+        if (/^[0-9]+$/.test(normalized)) {
+          const numericValue = Number(normalized);
+          displayValue = numericValue.toLocaleString();
+        }
+        // Otherwise keep the original string value
+      }
+      
       el.textContent = displayValue;
     }
   }

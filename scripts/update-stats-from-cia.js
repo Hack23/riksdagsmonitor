@@ -146,9 +146,9 @@ function updateHTMLFile(filePath, stats) {
     }
     
     // Update dashboard description
-    const dashboardDescPattern = /Comprehensive intelligence analysis using 45 risk rules across \d+ MPs with statistical anomaly detection \(P90\/P99 thresholds\)/;
-    if (dashboardDescPattern.test(content) && desc.dashboardDescription) {
-      content = content.replace(dashboardDescPattern, 'Comprehensive intelligence analysis using 45 risk rules across 349 MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes 2,494 politicians (1971-2024)');
+    const dashboardDescPattern = /Comprehensive intelligence analysis using 45 risk rules(?: \(detecting <span[^>]*>\d+<\/span> violations\))? across \d+ MPs with statistical anomaly detection \(P90\/P99 thresholds\)(?:[^<]*)?(?:<span[^>]*>\d+<\/span>[^.]*)?/;
+    if (dashboardDescPattern.test(content) && desc && desc.dashboardDescription) {
+      content = content.replace(dashboardDescPattern, desc.dashboardDescription);
       changeCount++;
     }
     
@@ -260,7 +260,7 @@ function updateHTMLFile(filePath, stats) {
       const comment = `<!-- Statistics Section -->
     <!-- CIA Production Database Stats (as of ${stats.metadata.last_updated}):
          - Current MPs: ${currentMPs}
-         - Historical Politicians: ${historicalPoliticians.toLocaleString()} (1971-2024)
+         - Historical Politicians: ${historicalPoliticians} (1971-2024)
          - Total Votes: ${totalVotes}
          - Total Documents: ${totalDocuments}
          - Rule Violations: ${ruleViolations}

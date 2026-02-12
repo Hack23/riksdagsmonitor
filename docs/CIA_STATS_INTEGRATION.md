@@ -1,7 +1,7 @@
 # CIA Production Statistics Integration - Quick Reference
 
 **Document Classification:** 🟢 Public  
-**Last Updated:** 2026-02-12  
+**Last Updated:** Dynamic (see `cia-data/production-stats.json`)  
 **Owner:** Hack23 AB (Org.nr 5595347807)  
 **Version:** 1.0.0
 
@@ -29,7 +29,7 @@ Daily workflow at 03:00 CET: `.github/workflows/update-cia-stats.yml`
 
 ## Key Statistics
 
-From CIA Production Database (2026-02-09):
+From CIA Production Database (example from 2026-02-09):
 
 | Metric | Value |
 |--------|-------|
@@ -38,6 +38,8 @@ From CIA Production Database (2026-02-09):
 | **Total Votes** | 3,529,786 |
 | **Total Documents** | 109,259 |
 | **Rule Violations** | 2,308 |
+
+**Note**: For current statistics, check `cia-data/production-stats.json` metadata.last_updated.
 
 **Source**: [extraction_summary_report.csv](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv)
 

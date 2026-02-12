@@ -1590,7 +1590,7 @@ Performance tiers (ntile_party_tier: 1-4)
     const cellWidth = 15;
     const cellHeight = 15;
     const width = 45 * cellWidth + margin.left + margin.right;
-    const height = 349 * cellHeight + margin.top + margin.bottom; // Current MPs // Current MPs
+    const height = 349 * cellHeight + margin.top + margin.bottom; // Current MPs
     
     // Create SVG
     const svg = container.append('svg')
@@ -1624,7 +1624,7 @@ Performance tiers (ntile_party_tier: 1-4)
     
     const yScale = d3.scaleBand()
       .domain(politicians)
-      .range([0, 349 * cellHeight]) // Current MPs // Current MPs
+      .range([0, 349 * cellHeight]) // Current MPs
       .padding(0.05);
     
     // Create main group
@@ -1634,7 +1634,7 @@ Performance tiers (ntile_party_tier: 1-4)
     // Add zoom behavior
     const zoom = d3.zoom()
       .scaleExtent([1, 10])
-      .translateExtent([[0, 0], [45 * cellWidth, 349 * cellHeight]]) // Current MPs // Current MPs
+      .translateExtent([[0, 0], [45 * cellWidth, 349 * cellHeight]]) // Current MPs
       .on('zoom', (event) => {
         g.attr('transform', `translate(${margin.left + event.transform.x},${margin.top + event.transform.y}) scale(${event.transform.k})`);
       });
