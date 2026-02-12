@@ -1,525 +1,77 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Actualités - Riksdagsmonitor</title>
-  <meta name="description" content="Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
-  <meta name="author" content="James Pether Sörling, CISSP, CISM">
-  <link rel="canonical" href="https://riksdagsmonitor.com/news/index_fr.html">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Actualités - Riksdagsmonitor">
-  <meta property="og:description" content="Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riksdagsmonitor.com/news/index_fr.html">
-  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
-  <meta property="og:site_name" content="Riksdagsmonitor">
-  <meta property="og:locale" content="fr_FR">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Actualités - Riksdagsmonitor">
-  <meta name="twitter:description" content="Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.">
-  <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
-  
-  <!-- Hreflang -->
-  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/index.html">
-  <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
-  <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
-  <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
-  <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
-  <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
-  <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/news/index_es.html">
-  <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html">
-  <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html">
-  <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html">
-  <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/news/index_ja.html">
-  <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/news/index_ko.html">
-  <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/news/index_zh.html">
-  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="../styles.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riksdagsmonitor News - FR</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-    body {
-      background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .header-section {
-      background: rgba(26, 30, 61, 0.9);
-      border-bottom: 2px solid var(--primary-cyan, #00d9ff);
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin: 0 0 1rem 0;
-      background: linear-gradient(135deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .subtitle {
-      font-size: 1.1rem;
-      color: #b0b0b0;
-      margin: 0 0 1rem 0;
-    }
-    
-    .back-link {
-      display: inline-block;
-      color: var(--primary-cyan, #00d9ff);
-      text-decoration: none;
-      padding: 0.5rem 0;
-      transition: transform 0.2s;
-    }
-    
-    .back-link:hover {
-      transform: translateX(-5px);
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem 3rem 1rem;
-    }
-    
-    .language-notice {
-      background: rgba(255, 190, 11, 0.1);
-      border-left: 4px solid var(--primary-yellow, #ffbe0b);
-      padding: 1rem;
-      margin-bottom: 2rem;
-      border-radius: 4px;
-    }
-    
-    .language-notice h2 {
-      font-size: 1.2rem;
-      color: var(--primary-yellow, #ffbe0b);
-      margin: 0 0 0.5rem 0;
-    }
-    
-    .language-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      color: #fff;
-      margin-left: 0.5rem;
-    }
-    
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background: rgba(26, 30, 61, 0.6);
-      border-radius: 8px;
-      border: 1px solid rgba(0, 217, 255, 0.3);
-    }
-    
-    .filter-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      flex: 1;
-      min-width: 180px;
-    }
-    
-    .filter-group label {
-      font-size: 0.9rem;
-      color: var(--primary-cyan, #00d9ff);
-      font-weight: 600;
-    }
-    
-    .filter-group select {
-      padding: 0.5rem;
-      background: rgba(10, 14, 39, 0.8);
-      border: 1px solid rgba(0, 217, 255, 0.5);
-      border-radius: 4px;
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-    }
-    
-    .filter-group select:hover {
-      border-color: var(--primary-cyan, #00d9ff);
-    }
-    
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .article-card {
-      background: rgba(26, 30, 61, 0.8);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .article-card:hover {
-      border-color: var(--primary-cyan, #00d9ff);
-      box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
-      transform: translateY(-2px);
-    }
-    
-    .article-meta {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      font-size: 0.85rem;
-      color: #888;
-    }
-    
-    .article-date {
-      color: var(--primary-cyan, #00d9ff);
-    }
-    
-    .article-type {
-      padding: 0.2rem 0.6rem;
-      background: rgba(0, 217, 255, 0.1);
-      border-radius: 4px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .article-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0 0 1rem 0;
-      color: #fff;
-      line-height: 1.4;
-    }
-    
-    .article-title a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    
-    .article-title a:hover {
-      color: var(--primary-cyan, #00d9ff);
-    }
-    
-    .article-excerpt {
-      color: #b0b0b0;
-      margin-bottom: 1rem;
-      flex-grow: 1;
-    }
-    
-    .article-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    
-    .tag {
-      padding: 0.3rem 0.7rem;
-      background: rgba(255, 0, 110, 0.1);
-      border: 1px solid rgba(255, 0, 110, 0.3);
-      border-radius: 4px;
-      font-size: 0.8rem;
-      color: var(--primary-magenta, #ff006e);
-    }
-    
-    @media (max-width: 768px) {
-      .articles-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .filter-bar {
-        flex-direction: column;
-      }
-      
-      .filter-group {
-        min-width: 100%;
-      }
-    }
-  </style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .news-card {
+            background: rgba(10, 14, 39, 0.8);
+            border: 1px solid var(--primary-cyan, #00d9ff);
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px var(--primary-cyan, #00d9ff);
+        }
+        .card-date {
+            color: var(--primary-yellow, #ffbe0b);
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+        .tags {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid var(--primary-cyan, #00d9ff);
+            padding: 2px 8px;
+            font-size: 0.8em;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-  <header class="header-section">
-    <div class="header-content">
-      <h1>Actualités</h1>
-      <p class="subtitle">Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.</p>
-      <a href="../index_fr.html" class="back-link">← Retour à l'accueil</a>
-    </div>
-  </header>
-  
-  <div class="container">
-    <div class="language-notice">
-      <h2>Articles disponibles en anglais</h2>
-      <p>Les articles ne sont actuellement disponibles qu'en anglais et en suédois. La traduction automatique en français arrive bientôt. <span class="language-badge" aria-label="English language"><span aria-hidden="true">🇬🇧</span> EN</span></p>
-    </div>
-
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <h1>News Archive</h1>
+        </nav>
+    </header>
+    <main>
+        <div class="news-grid">
+            
+    <article class="news-card" onclick="window.location.href='news/2026-02-12-legislative-update-housing-detention-en.html'">
+        <div class="card-date">2026-02-12</div>
+        <h3>Government Moves on Security Detention and Housing Registry</h3>
+        <p>Legislative update: Swedish government proposes new housing registry to combat crime while opposition challenges security detention measures.</p>
+        <div class="tags">
+            <span class="tag">Legislation</span><span class="tag">Security</span><span class="tag">Housing</span><span class="tag">Justice</span>
+        </div>
+    </article>
     
-    <!-- Filter Bar -->
-    <div class="filter-bar">
-      <div class="filter-group">
-        <label for="filter-type">Type:</label>
-        <select id="filter-type">
-          <option value="all">Tous types</option>
-          <option value="prospective">Prospectif</option>
-          <option value="retrospective">Rétrospectif</option>
-          <option value="analysis">Analyse</option>
-          <option value="breaking">Dernières nouvelles</option>
-        </select>
-      </div>
-      
-      <div class="filter-group">
-        <label for="filter-topic">Sujet:</label>
-        <select id="filter-topic">
-          <option value="all">Tous sujets</option>
-          <option value="parliament">Parlement</option>
-          <option value="government">Gouvernement</option>
-          <option value="eu">EU</option>
-          <option value="defense">Défense</option>
-          <option value="environment">Environnement</option>
-          <option value="committees">Comités</option>
-          <option value="legislation">Législation</option>
-        </select>
-      </div>
-      
-      <div class="filter-group">
-        <label for="filter-sort">Trier:</label>
-        <select id="filter-sort">
-          <option value="date-desc">Plus récent</option>
-          <option value="date-asc">Plus ancien</option>
-          <option value="title">Titre</option>
-        </select>
-      </div>
-    </div>
+    <article class="news-card" onclick="window.location.href='news/2026-02-12-parliamentary-questions-security-en.html'">
+        <div class="card-date">2026-02-12</div>
+        <h3>Security Protocols and Environmental Concerns Dominate Question Time</h3>
+        <p>Parliamentary scrutiny intensifies as MPs question the Prime Minister on security vetting and the Environment Minister on ecosystem collapse.</p>
+        <div class="tags">
+            <span class="tag">Scrutiny</span><span class="tag">National Security</span><span class="tag">Environment</span><span class="tag">Questions</span>
+        </div>
+    </article>
     
-    <!-- Articles Grid -->
-    <div class="articles-grid" id="articles-grid"></div>
-    
-    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
-      Aucun article ne correspond aux filtres
-    </div>
-  </div>
-  
-  <script>
-    // Dynamic articles array - generated from news/ directory
-    const articles = [
-  {
-    "title": "Ten Committee Reports This Week: Parliament",
-    "date": "2026-02-12",
-    "type": "analysis",
-    "slug": "2026-02-committee-reports-en.html",
-    "excerpt": "Analysis of parliamentary activity February 5-6, 2026",
-    "topics": [],
-    "tags": []
-  },
-  {
-    "title": "Sweden",
-    "date": "2026-02-12",
-    "type": "retrospective",
-    "slug": "2026-02-parliament-agenda-en.html",
-    "excerpt": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
-    "topics": [],
-    "tags": []
-  },
-  {
-    "title": "Government Announces Biodiversity Strategy and Stricter Citizenship Rules",
-    "date": "2026-02-10T13:00:00Z",
-    "type": "retrospective",
-    "slug": "2026-02-10-biodiversity-citizenship-en.html",
-    "excerpt": "Dual policy announcements signal proactive government agenda on environment and integration.",
-    "topics": [
-      "environment"
-    ],
-    "tags": [
-      "Biodiversity",
-      "Citizenship",
-      "Environment"
-    ]
-  },
-  {
-    "title": "Prime Minister Faces Parliament Before Brussels Summit",
-    "date": "2026-02-10T09:00:00Z",
-    "type": "analysis",
-    "slug": "2026-02-10-pm-eu-summit-en.html",
-    "excerpt": "Rare open EU Committee meeting as PM Kristersson prepares for informal leaders summit while government battles opposition pressure.",
-    "topics": [
-      "eu"
-    ],
-    "tags": [
-      "EU",
-      "Prime Minister",
-      "Economic Crime",
-      "Citizenship"
-    ]
-  },
-  {
-    "title": "Week Ahead: Brussels Summit Tests Swedish EU Strategy",
-    "date": "2026-02-10T09:00:00Z",
-    "type": "prospective",
-    "slug": "2026-02-10-week-ahead-feb-10-17-en.html",
-    "excerpt": "Critical week as PM faces Brussels summit while parliament intensifies oversight on citizenship, crime, and environment.",
-    "topics": [
-      "eu",
-      "parliament"
-    ],
-    "tags": [
-      "EU Summit",
-      "Parliament",
-      "Prospective Coverage"
-    ]
-  },
-  {
-    "title": "Government Propositions February 2026 | Riksdagsmonitor",
-    "date": "2026-02-07T07:00:00+00:00",
-    "type": "analysis",
-    "slug": "2026-02-government-propositions-en.html",
-    "excerpt": "Six propositions reveal coalition priorities: financial stability, green transition, and security crackdowns.",
-    "topics": [
-      "parliament"
-    ],
-    "tags": [
-      "Riksdag"
-    ]
-  },
-  {
-    "title": "Fresh Opposition Motions - Spring 2026 Battle Lines Emerge",
-    "date": "2026-02-07T00:00:00Z",
-    "type": "analysis",
-    "slug": "2026-02-opposition-motions-en.html",
-    "excerpt": "Ten fresh opposition motions reveal spring parliamentary battle lines - from indefinite detention to elderly care and constitutional rights.",
-    "topics": [
-      "parliament"
-    ],
-    "tags": [
-      "Riksdag",
-      "Opposition",
-      "Motions"
-    ]
-  },
-  {
-    "title": "Critical Week for Sweden in EU: Defense Council and Prime Minister",
-    "date": "2026-02-07T00:00:00+01:00",
-    "type": "prospective",
-    "slug": "2026-02-week-ahead-en.html",
-    "excerpt": "Critical week for Swedish EU policy: Defense Minister and Prime Minister face councils in Brussels while opposition intensifies government scrutiny.",
-    "topics": [
-      "eu",
-      "defense"
-    ],
-    "tags": [
-      "EU",
-      "Defense",
-      "Accountability",
-      "Ukraine"
-    ]
-  }
-];
-    
-    let filteredArticles = [...articles];
-    
-    function renderArticles(articlesToRender) {
-      const grid = document.getElementById('articles-grid');
-      const noResults = document.getElementById('no-results');
-      
-      if (articlesToRender.length === 0) {
-        grid.innerHTML = '';
-        noResults.style.display = 'block';
-        return;
-      }
-      
-      noResults.style.display = 'none';
-      
-      grid.innerHTML = articlesToRender.map(article => `
-        <article class="article-card">
-          <div class="article-meta">
-            <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
-          </div>
-          <h2 class="article-title">
-            <a href="${article.slug}">${article.title}</a>
-          </h2>
-          <p class="article-excerpt">${article.excerpt}</p>
-          <div class="article-tags">
-            ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-          </div>
-        </article>
-      `).join('');
-    }
-    
-    function formatDate(dateStr) {
-      const date = new Date(dateStr);
-      return date.toLocaleDateString('fr', { year: 'numeric', month: 'long', day: 'numeric' });
-    }
-    
-    function filterArticles() {
-      const typeFilter = document.getElementById('filter-type').value;
-      const topicFilter = document.getElementById('filter-topic').value;
-      const sortFilter = document.getElementById('filter-sort').value;
-      
-      let filtered = [...articles];
-      
-      // Apply type filter
-      if (typeFilter !== 'all') {
-        filtered = filtered.filter(article => article.type === typeFilter);
-      }
-      
-      // Apply topic filter
-      if (topicFilter !== 'all') {
-        filtered = filtered.filter(article => article.topics.includes(topicFilter));
-      }
-      
-      // Apply sorting
-      switch(sortFilter) {
-        case 'date-desc':
-          filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-          break;
-        case 'date-asc':
-          filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
-          break;
-        case 'title':
-          filtered.sort((a, b) => a.title.localeCompare(b.title));
-          break;
-      }
-      
-      filteredArticles = filtered;
-      renderArticles(filteredArticles);
-    }
-    
-    // Event listeners
-    document.getElementById('filter-type').addEventListener('change', filterArticles);
-    document.getElementById('filter-topic').addEventListener('change', filterArticles);
-    document.getElementById('filter-sort').addEventListener('change', filterArticles);
-    
-    // Initial render
-    filterArticles();
-  </script>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,10 +1,21 @@
 {
-  "timestamp": "2026-02-12T04:57:27.955Z",
-  "types": [
-    "week-ahead"
-  ],
-  "generated": 0,
-  "errors": 0,
-  "status": "placeholder",
-  "note": "MCP integration pending - script structure in place"
+  "timestamp": "2026-02-12T12:00:00Z",
+  "types": ["week-ahead", "legislative-update", "questions"],
+  "generated": 4,
+  "errors": 1,
+  "error_details": ["riksdag-regering-get_calendar_events: API returned HTML instead of JSON"],
+  "articles": [
+    {
+      "slug": "2026-02-12-legislative-update-housing-detention",
+      "type": "legislative-update",
+      "languages": ["en", "sv"],
+      "sources": ["get_propositioner", "get_motioner"]
+    },
+    {
+      "slug": "2026-02-12-parliamentary-questions-security",
+      "type": "questions",
+      "languages": ["en", "sv"],
+      "sources": ["get_fragor"]
+    }
+  ]
 }
