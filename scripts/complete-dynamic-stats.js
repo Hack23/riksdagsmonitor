@@ -75,7 +75,7 @@ function addDynamicStats(content, filename) {
 
   // 1. Replace "10,000+ votes" with exact production count
   // Matches: "10,000+ votes analyzed", "10000+ votes", etc.
-  const votesPattern = /10,?000\+\s+(votes?|röster|stemmen|äänet|Stimmen|voix|votos|voti|票|קולות|أصوات|투표|票)(\s+analyzed)?/gi;
+  const votesPattern = /10,?000\+\s+(votes?|röster|stemmen|äänet|Stimmen|voix|votos|voti|הצבעות|票|קולות|أصوات|투표)(\s+analyzed)?/gi;
   const votesMatches = body.match(votesPattern);
   if (votesMatches) {
     body = body.replace(votesPattern, (match) => {
@@ -114,18 +114,19 @@ function addDynamicStats(content, filename) {
     }
   }
 
-  // 4. Add committee documents count if "committee work" is mentioned
-  const committeePattern = /<li>Committee work quantified<\/li>/i;
+  // 4. Add committee documents count if "committee work" is mentioned (multi-language)
+  const committeePattern = /<li>([^<]*(Committee work quantified|Utskottsarbete|Udvalgsarbejde|Komitéarbeid|Valiokuntaty|Ausschussarbeit|Travail en comité|Trabajo de comité|Commissiewerk|委員会作業|위원회 작업|ועדה עבודה|عمل اللجنة)[ קמטעבותלד]*)<\/li>/i;
   if (committeePattern.test(body) && !body.includes('stat-committee-documents')) {
     body = body.replace(
       committeePattern,
-      `<li>Committee work quantified (<span data-stat-id="stat-committee-documents">8740</span> documents)</li>`
+      (match, localizedText) =>
+        `<li>${localizedText} (<span data-stat-id="stat-committee-documents">8740</span>)</li>`
     );
     changeCount++;
   }
 
-  // 5. Add rule violations count near "45 risk rules"
-  const riskPattern = /(45 risk rules)(?!\s*\(detecting)/i;
+  // 5. Add rule violations count near "45 risk rules" (multi-language)
+  const riskPattern = /(45 (?:risk rules|riskiregler|risikoregler|risikregeler|riskisääntö|Risikoregeln|règles de risque|reglas de riesgo|risicoregels|リスクルール|위험 규칙|כללי סיכון|قواعد المخاطرة))(?!\s*\(detecting)/i;
   if (riskPattern.test(body) && !body.includes('stat-rule-violations')) {
     body = body.replace(
       riskPattern,

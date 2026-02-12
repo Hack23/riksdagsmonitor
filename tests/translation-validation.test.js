@@ -113,10 +113,7 @@ describe('Translation Validation', () => {
       const filePath = join(__dirname, '..', 'index_de.html');
       const content = readFileSync(filePath, 'utf-8');
       
-      // Should contain German terms (allow English fallback but prefer German)
-      const germanTerms = ['Deutschland', 'Wahl', 'Parlament', 'Überwachung', 'Intelligenz'];
-      // Note: Some pages may use English as fallback, so we don't fail if not found
-      // Just verify the file exists and has content
+      // Allow English fallback; just ensure file has substantial content
       expect(content.length).toBeGreaterThan(1000);
     });
 
@@ -124,9 +121,7 @@ describe('Translation Validation', () => {
       const filePath = join(__dirname, '..', 'index_fr.html');
       const content = readFileSync(filePath, 'utf-8');
       
-      // Should contain French terms
-      const frenchTerms = ['élection', 'parlement', 'surveillance', 'intelligence'];
-      // Allow English fallback
+      // Allow English fallback; just ensure file has substantial content
       expect(content.length).toBeGreaterThan(1000);
     });
   });

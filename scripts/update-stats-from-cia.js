@@ -154,7 +154,7 @@ function updateHTMLFile(filePath, stats) {
     
     // Update risk heat map title
     const riskHeatMapTitlePattern = /<h3>Risk Level Heat Map \(45 Rules × \d+ MPs\)<\/h3>/;
-    if (riskHeatMapTitlePattern.test(content) && desc.riskHeatMapTitle) {
+    if (riskHeatMapTitlePattern.test(content) && desc && desc.riskHeatMapTitle) {
       content = content.replace(riskHeatMapTitlePattern, `<h3>${desc.riskHeatMapTitle}</h3>`);
       changeCount++;
     }
@@ -174,13 +174,13 @@ function updateHTMLFile(filePath, stats) {
     }
     
     // Update Schema.org descriptions
-    if (desc.schemaDescription) {
+    if (desc && desc.schemaDescription) {
       const schemaDescPattern1 = /"description": "Swedish Election 2026 live intelligence platform with CIA OSINT monitoring of \d+ MPs[^"]*"/g;
       content = content.replace(schemaDescPattern1, `"description": "${desc.schemaDescription}"`);
       changeCount++;
     }
     
-    if (desc.eventDescription) {
+    if (desc && desc.eventDescription) {
       const schemaDescPattern2 = /"description": "Swedish Parliamentary Election scheduled for 13 September 2026[^"]*"/g;
       content = content.replace(schemaDescPattern2, `"description": "${desc.eventDescription}"`);
       changeCount++;

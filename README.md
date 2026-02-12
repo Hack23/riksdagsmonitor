@@ -151,7 +151,7 @@ Riksdagsmonitor integrates with the CIA platform through automated data pipeline
 
 **Data Source**: [extraction_summary_report.csv](https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/extraction_summary_report.csv)  
 **Update Schedule**: Daily automated fetch via GitHub Actions  
-**Last Extraction**: 2026-02-09 03:42:53 UTC
+**Last Extraction**: See `cia-data/production-stats.json` → `metadata.last_updated` (updated daily)
 
 **Implementation**:
 - `scripts/load-cia-stats.js` - Fetches and parses production statistics
