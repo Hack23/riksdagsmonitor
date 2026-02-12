@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>网站地图 | Riksdagsmonitor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="canonical" href="https://riksdagsmonitor.com/sitemap_zh.html">
+    <meta name="description" content="Riksdagsmonitor 平台的完整导航">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="James Pether Sörling, CISSP, CISM">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Site Map | Riksdagsmonitor">
+    <meta property="og:description" content="Complete site navigation for Riksdagsmonitor platform">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://riksdagsmonitor.com/sitemap_zh.html">
+    <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+    <meta property="og:image:alt" content="Riksdagsmonitor Site Map">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Riksdagsmonitor">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Site Map | Riksdagsmonitor">
+    <meta name="twitter:description" content="Complete navigation for Riksdagsmonitor: 14 languages, dashboards, news & analysis">
+    <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+    <meta name="twitter:site" content="@riksdagsmonitor">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#0a0e27">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" type="image/png" href="https://cia.sourceforge.io/cia-logo.png">
+    
+    <!-- Hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/sitemap.html">
+    <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/sitemap_sv.html">
+    <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/sitemap_da.html">
+    <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/sitemap_no.html">
+    <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/sitemap_fi.html">
+    <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/sitemap_de.html">
+    <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/sitemap_fr.html">
+    <link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/sitemap_es.html">
+    <link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/sitemap_nl.html">
+    <link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/sitemap_ar.html">
+    <link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/sitemap_he.html">
+    <link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/sitemap_ja.html">
+    <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/sitemap_ko.html">
+    <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/sitemap_zh.html">
+    <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/sitemap.html">
+    
+    <style>
+        .sitemap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .sitemap-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--primary-cyan);
+        }
+        
+        .sitemap-header h1 {
+            font-family: var(--font-heading);
+            color: var(--primary-cyan);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        .sitemap-header p {
+            color: var(--light-text);
+            font-size: 1.125rem;
+        }
+        
+        .sitemap-section {
+            margin-bottom: 3rem;
+        }
+        
+        .sitemap-section h2 {
+            font-family: var(--font-heading);
+            color: var(--primary-magenta);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--primary-magenta);
+        }
+        
+        .sitemap-section h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-yellow);
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sitemap-list li {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .sitemap-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.2);
+        }
+        
+        .sitemap-list a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sitemap-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .sitemap-list a:focus {
+            outline: 2px solid var(--primary-cyan);
+            outline-offset: 2px;
+        }
+        
+        .sitemap-description {
+            color: var(--muted-text);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+        
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .language-grid li {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .sitemap-container {
+                padding: 1rem 0.5rem;
+            }
+            
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        
+        /* Table of Contents */
+        .toc-nav {
+            background: var(--mid-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-cyan);
+        }
+        
+        .toc-nav h2 {
+            font-family: var(--font-heading);
+            color: var(--primary-cyan);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .toc-list li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .toc-list a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.5rem 0;
+            transition: transform 0.2s ease;
+        }
+        
+        .toc-list a:hover {
+            transform: translateX(5px);
+            text-decoration: underline;
+        }
+        
+        .toc-list a:focus {
+            outline: 2px solid var(--primary-cyan);
+            outline-offset: 2px;
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Riksdagsmonitor",
+      "url": "https://riksdagsmonitor.com",
+      "description": "Swedish Parliament Intelligence Platform - Real-time monitoring, coalition predictions, and comprehensive political analysis",
+      "inLanguage": ["en", "sv", "da", "nb", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hack23 AB",
+        "url": "https://www.hack23.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "Site Map",
+      "url": "https://riksdagsmonitor.com/sitemap_zh.html",
+      "inLanguage": "zh"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="sitemap-container">
+        <header class="sitemap-header">
+            <h1>网站地图</h1>
+            <p>Riksdagsmonitor 平台的完整导航</p>
+        </header>
+        
+        <!-- Quick Navigation -->
+        <nav class="toc-nav" aria-label="Quick navigation">
+            <h2>快速跳转</h2>
+            <ul class="toc-list">
+                <li><a href="#main-platform">主平台</a></li>
+                <li><a href="#dashboards">仪表板</a></li>
+                <li><a href="#news">新闻</a></li>
+                <li><a href="#languages">多语言</a></li>
+                <li><a href="#resources">资源</a></li>
+                <li><a href="#sitemap-languages">网站地图语言</a></li>
+            </ul>
+        </nav>
+        
+        <main id="main-content">
+            <!-- Main Platform Section -->
+            <section class="sitemap-section" id="main-platform">
+                <h2>主平台</h2>
+                <ul class="sitemap-list">
+                    <li>
+                        <a href="index.html">主页 - 英语</a>
+                        <p class="sitemap-description">瑞典2026年选举实时情报平台：实时监控、联盟预测、45条风险规则、全面的议会分析。</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Dashboards Section -->
+            <section class="sitemap-section" id="dashboards">
+                <h2>交互式仪表板</h2>
+                <ul class="sitemap-list">
+                    <li>
+                        <a href="dashboard/index.html">CIA 情报仪表板 - 英语</a>
+                        <p class="sitemap-description">CIA情报导出的交互式可视化：政党表现、选举预测、议员排名和全面的议会分析。</p>
+                    </li>
+                    <li>
+                        <a href="dashboard/index_sv.html">CIA 情报仪表板 - 瑞典语</a>
+                        <p class="sitemap-description">CIA情报导出的交互式可视化：政党表现、选举预测、议员排名和全面的议会分析。</p>
+                    </li>
+                    <li>
+                        <a href="politician-dashboard.html">政治家职业生涯和生产力分析</a>
+                        <p class="sitemap-description">政治家职业生涯和生产力的综合仪表板：前10名排名、职业轨迹、生产力指标和瑞典349名议员的经验分析。</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- News Section -->
+            <section class="sitemap-section" id="news">
+                <h2>新闻与分析</h2>
+                <h3>新闻索引页面</h3>
+                <ul class="sitemap-list">
+                    <li>
+                        <a href="news/index.html">新闻索引 - 英语</a>
+                        <p class="sitemap-description">来自瑞典议会和政府的最新政治新闻、分析和更新。</p>
+                    </li>
+                    <li>
+                        <a href="news/index_sv.html">新闻索引 - 瑞典语</a>
+                        <p class="sitemap-description">来自瑞典议会和政府的最新政治新闻、分析和更新。</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Multi-Language Section -->
+            <section class="sitemap-section" id="languages">
+                <h2>多语言平台访问</h2>
+                <p class="sitemap-description" style="margin-bottom: 1.5rem;">使用您喜欢的语言访问主平台。所有版本都包括实时监控、联盟预测和全面的议会分析。</p>
+                <ul class="sitemap-list language-grid">
+                    <li>
+                        <a href="index.html">🇬🇧 English</a>
+                    </li>
+                    <li>
+                        <a href="index_sv.html">🇸🇪 Svenska</a>
+                    </li>
+                    <li>
+                        <a href="index_da.html">🇩🇰 Dansk</a>
+                    </li>
+                    <li>
+                        <a href="index_no.html">🇳🇴 Norsk</a>
+                    </li>
+                    <li>
+                        <a href="index_fi.html">🇫🇮 Suomi</a>
+                    </li>
+                    <li>
+                        <a href="index_de.html">🇩🇪 Deutsch</a>
+                    </li>
+                    <li>
+                        <a href="index_fr.html">🇫🇷 Français</a>
+                    </li>
+                    <li>
+                        <a href="index_es.html">🇪🇸 Español</a>
+                    </li>
+                    <li>
+                        <a href="index_nl.html">🇳🇱 Nederlands</a>
+                    </li>
+                    <li>
+                        <a href="index_ar.html">🇸🇦 العربية</a>
+                    </li>
+                    <li>
+                        <a href="index_he.html">🇮🇱 עברית</a>
+                    </li>
+                    <li>
+                        <a href="index_ja.html">🇯🇵 日本語</a>
+                    </li>
+                    <li>
+                        <a href="index_ko.html">🇰🇷 한국어</a>
+                    </li>
+                    <li>
+                        <a href="index_zh.html">🇨🇳 中文</a>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Additional Resources -->
+            <section class="sitemap-section" id="resources">
+                <h2>其他资源</h2>
+                <ul class="sitemap-list">
+                    <li>
+                        <a href="sitemap.xml">XML 网站地图</a>
+                        <p class="sitemap-description">搜索引擎的机器可读网站地图（XML格式）。</p>
+                    </li>
+                    <li>
+                        <a href="robots.txt">Robots.txt</a>
+                        <p class="sitemap-description">搜索引擎爬虫指令。</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Other Sitemap Languages -->
+            <section class="sitemap-section" id="sitemap-languages">
+                <h2>此网站地图的其他语言版本</h2>
+                <ul class="sitemap-list language-grid">
+                    <li>
+                        <a href="sitemap_sv.html">🇸🇪 Svenska</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_da.html">🇩🇰 Dansk</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_no.html">🇳🇴 Norsk</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_fi.html">🇫🇮 Suomi</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_de.html">🇩🇪 Deutsch</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_fr.html">🇫🇷 Français</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_es.html">🇪🇸 Español</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_nl.html">🇳🇱 Nederlands</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_ar.html">🇸🇦 العربية</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_he.html">🇮🇱 עברית</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_ja.html">🇯🇵 日本語</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_ko.html">🇰🇷 한국어</a>
+                    </li>
+                    <li>
+                        <a href="sitemap_zh.html">🇨🇳 中文</a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        
+        <footer style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--primary-cyan); color: var(--muted-text);">
+            <p>&copy; 2026 Riksdagsmonitor | <a href="index.html" style="color: var(--primary-cyan);">主页</a></p>
+        </footer>
+    </div>
+</body>
+</html>

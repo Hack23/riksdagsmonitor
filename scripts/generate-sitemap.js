@@ -25,7 +25,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 const SITEMAP_FILE = path.join(ROOT_DIR, 'sitemap.xml');
 
 // Language codes
-const LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+const LANGUAGES = ['en', 'sv', 'da', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
 
 /**
  * Get news articles with metadata
@@ -123,7 +123,7 @@ function generateSitemap() {
   // Main index page with all language alternates (canonical is index.html based on <link rel="canonical">)
   const indexAlternates = LANGUAGES.map(lang => ({
     lang,
-    href: lang === 'en' ? 'index.html' : `index_${lang}.html`
+    href: lang === 'en' ? 'index.html' : `index_${lang === 'nb' ? 'no' : lang}.html`
   }));
   
   // Use actual file mtime for main index
@@ -132,11 +132,71 @@ function generateSitemap() {
   
   // Individual language index pages (excluding English since it's the canonical above)
   LANGUAGES.filter(lang => lang !== 'en').forEach(lang => {
-    const loc = `index_${lang}.html`;
+    const loc = `index_${lang === 'nb' ? 'no' : lang}.html`;
     const lastmod = getFileModTime(path.join(ROOT_DIR, loc));
     const priority = lang === 'sv' ? '0.9' : '0.7';
     
     xml += generateUrlEntry(loc, lastmod, 'daily', priority);
+  });
+  
+  // Politician dashboard page
+  const politicianDashboardMtime = getFileModTime(path.join(ROOT_DIR, 'politician-dashboard.html'));
+  xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
+  
+  // Dashboard pages with language alternates
+  const dashboardAlternates = [
+    { lang: 'en', href: 'dashboard/index.html' },
+    { lang: 'sv', href: 'dashboard/index_sv.html' }
+  ];
+  
+  const dashboardEnMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index.html'));
+  xml += generateUrlEntry('dashboard/index.html', dashboardEnMtime, 'weekly', '0.8', dashboardAlternates);
+  
+  const dashboardSvMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index_sv.html'));
+  xml += generateUrlEntry('dashboard/index_sv.html', dashboardSvMtime, 'weekly', '0.8');
+  
+  // Sitemap HTML pages with language alternates
+  const sitemapAlternates = [
+    { lang: 'en', href: 'sitemap.html' },
+    { lang: 'sv', href: 'sitemap_sv.html' },
+    { lang: 'da', href: 'sitemap_da.html' },
+    { lang: 'nb', href: 'sitemap_no.html' },
+    { lang: 'fi', href: 'sitemap_fi.html' },
+    { lang: 'de', href: 'sitemap_de.html' },
+    { lang: 'fr', href: 'sitemap_fr.html' },
+    { lang: 'es', href: 'sitemap_es.html' },
+    { lang: 'nl', href: 'sitemap_nl.html' },
+    { lang: 'ar', href: 'sitemap_ar.html' },
+    { lang: 'he', href: 'sitemap_he.html' },
+    { lang: 'ja', href: 'sitemap_ja.html' },
+    { lang: 'ko', href: 'sitemap_ko.html' },
+    { lang: 'zh', href: 'sitemap_zh.html' },
+    { lang: 'x-default', href: 'sitemap.html' }
+  ];
+  
+  const sitemapEnMtime = getFileModTime(path.join(ROOT_DIR, 'sitemap.html'));
+  xml += generateUrlEntry('sitemap.html', sitemapEnMtime, 'monthly', '0.6', sitemapAlternates);
+  
+  // Individual sitemap language pages (excluding English)
+  const sitemapLangPages = [
+    { file: 'sitemap_sv.html', priority: '0.5' },
+    { file: 'sitemap_da.html', priority: '0.4' },
+    { file: 'sitemap_no.html', priority: '0.4' },
+    { file: 'sitemap_fi.html', priority: '0.4' },
+    { file: 'sitemap_de.html', priority: '0.4' },
+    { file: 'sitemap_fr.html', priority: '0.4' },
+    { file: 'sitemap_es.html', priority: '0.4' },
+    { file: 'sitemap_nl.html', priority: '0.4' },
+    { file: 'sitemap_ar.html', priority: '0.4' },
+    { file: 'sitemap_he.html', priority: '0.4' },
+    { file: 'sitemap_ja.html', priority: '0.4' },
+    { file: 'sitemap_ko.html', priority: '0.4' },
+    { file: 'sitemap_zh.html', priority: '0.4' }
+  ];
+  
+  sitemapLangPages.forEach(({ file, priority }) => {
+    const lastmod = getFileModTime(path.join(ROOT_DIR, file));
+    xml += generateUrlEntry(file, lastmod, 'monthly', priority);
   });
   
   // News index pages (canonical is news/ for English, based on <link rel="canonical">)
