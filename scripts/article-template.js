@@ -15,6 +15,36 @@
  */
 
 /**
+ * Breadcrumb translations for all supported languages
+ */
+const BREADCRUMB_TRANSLATIONS = {
+  en: { home: 'Home', news: 'News' },
+  sv: { home: 'Hem', news: 'Nyheter' },
+  da: { home: 'Hjem', news: 'Nyheder' },
+  no: { home: 'Hjem', news: 'Nyheter' },
+  fi: { home: 'Etusivu', news: 'Uutiset' },
+  de: { home: 'Startseite', news: 'Nachrichten' },
+  fr: { home: 'Accueil', news: 'Actualités' },
+  es: { home: 'Inicio', news: 'Noticias' },
+  nl: { home: 'Home', news: 'Nieuws' },
+  ar: { home: 'الرئيسية', news: 'أخبار' },
+  he: { home: 'בית', news: 'חדשות' },
+  ja: { home: 'ホーム', news: 'ニュース' },
+  ko: { home: '홈', news: '뉴스' },
+  zh: { home: '主页', news: '新闻' }
+};
+
+/**
+ * Get breadcrumb name for a given language
+ * @param {string} lang - Language code
+ * @param {string} type - Breadcrumb type ('home' or 'news')
+ * @returns {string} Translated breadcrumb name
+ */
+function getBreadcrumbName(lang, type) {
+  return BREADCRUMB_TRANSLATIONS[lang]?.[type] || BREADCRUMB_TRANSLATIONS.en[type];
+}
+
+/**
  * Generate complete article HTML
  * 
  * @param {Object} data - Article data
@@ -210,13 +240,13 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "${getBreadcrumbName(lang, 'home')}",
         "item": "https://riksdagsmonitor.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "News",
+        "name": "${getBreadcrumbName(lang, 'news')}",
         "item": "https://riksdagsmonitor.com/news/"
       },
       {

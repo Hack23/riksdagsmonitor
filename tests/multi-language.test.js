@@ -16,16 +16,17 @@ describe('Multi-Language Support', () => {
       // Check for languages argument parsing
       expect(content).toContain('languagesArg');
       expect(content).toContain('--languages=');
-      // Check that languages variable is set from languagesArg with proper splitting
-      expect(content).toContain("languagesArg.split('=')[1].split(',')");
+      // Check that languagesInput is set and then split
+      expect(content).toContain("languagesArg.split('=')[1]");
+      expect(content).toContain("languagesInput.split(',')");
     });
 
     it('should default to EN and SV', () => {
       const scriptPath = path.join(projectRoot, 'scripts', 'generate-news-enhanced.js');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       
-      // Check default languages
-      expect(content).toMatch(/\['en',\s*'sv'\]/);
+      // Check default languages (now uses string 'en,sv' instead of array literal)
+      expect(content).toContain("'en,sv'");
     });
 
     it('should support all 14 languages in titles', () => {
@@ -281,8 +282,8 @@ describe('Multi-Language Support', () => {
       const scriptPath = path.join(projectRoot, 'scripts', 'generate-news-enhanced.js');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       
-      // Should default to EN,SV
-      expect(content).toMatch(/\['en',\s*'sv'\]/);
+      // Should default to EN,SV (now uses string 'en,sv' instead of array literal)
+      expect(content).toContain("'en,sv'");
     });
 
     it('should support legacy writeArticlePair function', () => {

@@ -52,7 +52,7 @@ describe('SEO & Structured Data', () => {
 
     it('should include enhanced NewsArticle properties', () => {
       const html = generateArticleHTML(sampleArticle);
-      const jsonLDMatch = html.match(/<script type="application\/ld\+json">\s*(\{[\s\S]*?\})\s*<\/script>/);
+      const jsonLDMatch = html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
       const jsonLD = JSON.parse(jsonLDMatch[1]);
       
       expect(jsonLD.alternativeHeadline).toBeTruthy();
@@ -67,7 +67,7 @@ describe('SEO & Structured Data', () => {
 
     it('should include proper author information', () => {
       const html = generateArticleHTML(sampleArticle);
-      const jsonLDMatch = html.match(/<script type="application\/ld\+json">\s*(\{[\s\S]*?\})\s*<\/script>/);
+      const jsonLDMatch = html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
       const jsonLD = JSON.parse(jsonLDMatch[1]);
       
       expect(jsonLD.author['@type']).toBe('Person');
@@ -78,7 +78,7 @@ describe('SEO & Structured Data', () => {
 
     it('should include proper publisher information with logo', () => {
       const html = generateArticleHTML(sampleArticle);
-      const jsonLDMatch = html.match(/<script type="application\/ld\+json">\s*(\{[\s\S]*?\})\s*<\/script>/);
+      const jsonLDMatch = html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
       const jsonLD = JSON.parse(jsonLDMatch[1]);
       
       expect(jsonLD.publisher['@type']).toBe('Organization');
