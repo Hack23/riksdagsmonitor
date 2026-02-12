@@ -1,0 +1,63 @@
+{
+  "calendarEvents": [
+    {
+      "id": "event-001",
+      "title": "EU Committee Open Meeting",
+      "start": "2026-02-10T10:00:00",
+      "end": "2026-02-10T12:00:00",
+      "organ": "UU",
+      "type": "meeting",
+      "description": "Discussion on EU policy matters"
+    },
+    {
+      "id": "event-002",
+      "title": "Chamber Debate - Budget",
+      "start": "2026-02-11T14:00:00",
+      "end": "2026-02-11T16:00:00",
+      "organ": "Kammaren",
+      "type": "debate",
+      "description": "Annual budget debate"
+    },
+    {
+      "id": "event-003",
+      "title": "Finance Committee Meeting",
+      "start": "2026-02-12T09:00:00",
+      "end": "2026-02-12T11:00:00",
+      "organ": "FiU",
+      "type": "meeting",
+      "description": "Committee meeting"
+    }
+  ],
+  "committeeReports": [
+    {
+      "id": "bet-001",
+      "title": "Committee Report on Education",
+      "organ": "UbU",
+      "date": "2026-02-05",
+      "dokument_url_html": "https://riksdag.se/bet-001"
+    },
+    {
+      "id": "bet-002",
+      "title": "Committee Report on Healthcare",
+      "organ": "SoU",
+      "date": "2026-02-06",
+      "dokument_url_html": "https://riksdag.se/bet-002"
+    }
+  ],
+  "propositions": [
+    {
+      "id": "prop-001",
+      "title": "Government Proposition on Climate",
+      "date": "2026-02-01",
+      "dokument_url_html": "https://riksdag.se/prop-001"
+    }
+  ],
+  "motions": [
+    {
+      "id": "mot-001",
+      "title": "Opposition Motion on Tax Reform",
+      "date": "2026-01-28",
+      "dokument_url_html": "https://riksdag.se/mot-001"
+    }
+  ]
+}
