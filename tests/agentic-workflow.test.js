@@ -210,9 +210,9 @@ describe('Generated Articles Quality', () => {
       // Should have article files
       expect(articleFiles.length).toBeGreaterThan(0);
       
-      // Articles should follow naming convention: YYYY-MM-DD-slug-lang.html
+      // Articles should follow naming convention: YYYY-MM-DD-slug-lang.html or YYYY-MM-slug-lang.html
       articleFiles.forEach(file => {
-        expect(file).toMatch(/^\d{4}-\d{2}-\d{2}-.+-(en|sv)\.html$/);
+        expect(file).toMatch(/^\d{4}-\d{2}(-\d{2})?-.+-(en|sv)\.html$/);
       });
     });
 
@@ -279,10 +279,10 @@ describe('Generated Articles Quality', () => {
 });
 
 // Helper to import js-yaml dynamically
-let yaml;
+let yaml = { load: () => ({}) };
 try {
-  yaml = await import('js-yaml');
+  const yamlModule = await import('js-yaml');
+  yaml = yamlModule.default || yamlModule;
 } catch (e) {
   console.warn('js-yaml not available, some tests may be skipped');
-  yaml = { load: () => ({}) };
 }

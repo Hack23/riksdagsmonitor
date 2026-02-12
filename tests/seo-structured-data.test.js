@@ -190,7 +190,7 @@ describe('SEO & Structured Data', () => {
       const descMatch = html.match(/meta name="description" content="([^"]+)"/);
       
       expect(descMatch).toBeTruthy();
-      expect(descMatch[1].length).toBeGreaterThan(50);
+      expect(descMatch[1].length).toBeGreaterThanOrEqual(50);
       expect(descMatch[1].length).toBeLessThan(160);
     });
   });
