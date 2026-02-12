@@ -1,10 +1,19 @@
 {
-  "timestamp": "2026-02-12T04:57:27.955Z",
+  "timestamp": "2026-02-12T13:06:54.587Z",
   "types": [
     "week-ahead"
   ],
+  "languages": [
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi"
+  ],
+  "translateFrom": null,
   "generated": 0,
-  "errors": 0,
-  "status": "placeholder",
-  "note": "MCP integration pending - script structure in place"
+  "errors": 1,
+  "articles": [],
+  "status": "enhanced",
+  "note": "Enhanced script with MCP integration and multi-language support"
 }
