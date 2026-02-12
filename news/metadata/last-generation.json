@@ -1,10 +1,14 @@
 {
-  "timestamp": "2026-02-11T19:26:02Z",
-  "types": [
-    "week-ahead"
-  ],
-  "generated": 0,
+  "timestamp": "2026-02-12T07:14:00Z",
+  "types": ["week-ahead"],
+  "generated": 2,
   "errors": 0,
-  "status": "placeholder",
-  "note": "MCP integration pending - script structure in place"
+  "articles": [
+    {
+      "slug": "2026-02-12-week-ahead-feb-12-19",
+      "type": "prospective",
+      "languages": ["en", "sv"],
+      "sources": ["get_propositioner", "get_fragor"]
+    }
+  ]
 }
