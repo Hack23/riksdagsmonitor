@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>CIA情报仪表板 | 瑞典国会监测 | Riksdagsmonitor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../styles.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/dashboard/index_zh.html">
+<meta name="description" content="交互式CIA情报仪表板：瑞典国会数据实时可视化、2026年选举预测、政党表现、国会议员排名及综合分析。">
+<meta name="keywords" content="CIA dashboard, Swedish parliament, riksdag analytics, election 2026, party performance, MP rankings, political intelligence, OSINT visualization">
+<meta name="robots" content="index, follow">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+
+<!-- Hreflang tags for all language versions -->
+<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboard/index.html">
+<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboard/index_sv.html">
+<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboard/index_da.html">
+<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboard/index_no.html">
+<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboard/index_fi.html">
+<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboard/index_de.html">
+<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboard/index_fr.html">
+<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/dashboard/index_es.html">
+<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/dashboard/index_nl.html">
+<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/dashboard/index_ar.html">
+<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/dashboard/index_he.html">
+<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/dashboard/index_ja.html">
+<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/dashboard/index_ko.html">
+<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/dashboard/index_zh.html">
+<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboard/index.html">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="CIA情报仪表板 | 瑞典国会监测">
+<meta property="og:description" content="CIA情报导出的交互式可视化：政党表现、选举预测、国会议员排名及全面的议会分析。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/dashboard/index_zh.html">
+<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+<meta property="og:image:alt" content="CIA情报仪表板">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="Riksdagsmonitor">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CIA情报仪表板 | 瑞典国会监测">
+<meta name="twitter:description" content="交互式CIA情报可视化：政党表现、选举预测、国会议员排名">
+<meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+
+<!-- Additional Meta Tags -->
+<meta name="theme-color" content="#0a0e27">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/png" href="https://cia.sourceforge.io/cia-logo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<!-- Chart.js via CDN with SRI -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" 
+        integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" 
+        crossorigin="anonymous"></script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "CIA情报仪表板",
+  "description": "瑞典国会情报的交互式可视化",
+  "url": "https://riksdagsmonitor.com/dashboard/index_zh.html",
+  "inLanguage": "zh",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Riksdagsmonitor",
+    "url": "https://riksdagsmonitor.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hack23 AB",
+    "url": "https://www.hack23.com"
+  }
+}
+</script>
+</head>
+<body>
+<!-- Skip to Main Content Link -->
+<a href="#main-dashboard" class="skip-link">跳转到仪表板</a>
+
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="../index_zh.html">首页</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+仪表板
+</li>
+</ol>
+</nav>
+
+<header>
+<h1>📊 CIA情报仪表板</h1>
+<p class="tagline">瑞典国会情报的交互式可视化</p>
+<p class="data-attribution">
+数据来自 <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener">Citizen Intelligence Agency (CIA)</a> 平台
+</p>
+</header>
+
+<noscript>
+<div class="error-state" role="alert">
+<h2>需要JavaScript</h2>
+<p>此仪表板需要JavaScript来加载和可视化CIA情报数据。请在浏览器设置中启用JavaScript。</p>
+</div>
+</noscript>
+
+<main class="cia-dashboard" id="main-dashboard">
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" aria-live="polite">
+<div class="loading-spinner"></div>
+<p>正在加载CIA情报数据...</p>
+</div>
+
+<!-- Error State -->
+<div id="error-state" class="error-state hidden" role="alert" aria-live="assertive">
+<h2>⚠️ 数据加载错误</h2>
+<p id="error-message"></p>
+<button id="retry-button" class="btn">重试</button>
+</div>
+
+<!-- Dashboard Content (Hidden until loaded) -->
+<div id="dashboard-content" class="hidden">
+
+<!-- Key Metrics Section -->
+<section id="key-metrics" class="metrics-grid" aria-labelledby="metrics-heading">
+<h2 id="metrics-heading" class="section-heading">概览指标</h2>
+<div class="metrics-cards">
+<div class="metric-card" role="group" aria-label="国会议员">
+<div class="metric-icon" aria-hidden="true">👥</div>
+<div class="metric-value" id="metric-total-mps" data-cia-metric="totalMPs">-</div>
+<div class="metric-label">国会议员</div>
+</div>
+<div class="metric-card" role="group" aria-label="政党">
+<div class="metric-icon" aria-hidden="true">🏛️</div>
+<div class="metric-value" id="metric-total-parties" data-cia-metric="totalParties">-</div>
+<div class="metric-label">政党</div>
+</div>
+<div class="metric-card" role="group" aria-label="活跃风险规则">
+<div class="metric-icon" aria-hidden="true">⚠️</div>
+<div class="metric-value" id="metric-risk-rules" data-cia-metric="totalRiskRules">-</div>
+<div class="metric-label">活跃风险规则</div>
+</div>
+<div class="metric-card" role="group" aria-label="联盟席位">
+<div class="metric-icon" aria-hidden="true">🤝</div>
+<div class="metric-value" id="metric-coalition-seats" data-cia-metric="coalitionSeats">-</div>
+<div class="metric-label">联盟席位</div>
+</div>
+</div>
+
+<!-- Risk Alerts -->
+<div class="risk-alerts" role="region" aria-labelledby="risk-alerts-heading">
+<h3 id="risk-alerts-heading">风险警报（最近90天）</h3>
+<div class="alert-badges">
+<span class="alert-badge critical" role="status">
+<span class="badge-count" id="alert-critical">0</span> 严重
+</span>
+<span class="alert-badge major" role="status">
+<span class="badge-count" id="alert-major">0</span> 重大
+</span>
+<span class="alert-badge minor" role="status">
+<span class="badge-count" id="alert-minor">0</span> 轻微
+</span>
+</div>
+</div>
+</section>
+
+<!-- Party Performance Section -->
+<section id="party-performance" class="chart-section" aria-labelledby="party-performance-heading">
+<h2 id="party-performance-heading" class="section-heading">政党表现分析</h2>
+<div class="chart-container">
+<canvas id="party-seats-chart" role="img" aria-label="政党席位分配图表"></canvas>
+</div>
+<div class="chart-container">
+<canvas id="party-cohesion-chart" role="img" aria-label="政党投票凝聚力图表"></canvas>
+</div>
+</section>
+
+<!-- Election 2026 Predictions Section -->
+<section id="election-forecast" class="election-section" aria-labelledby="election-heading">
+<h2 id="election-heading" class="section-heading">瑞典2026年选举预测</h2>
+<p class="section-description">基于历史数据和当前趋势的CIA预测模型</p>
+<div id="seat-predictions" class="predictions-grid"></div>
+
+<h3>联盟方案</h3>
+<div id="coalition-scenarios" class="scenarios-grid"></div>
+
+<h3>关键选举因素</h3>
+<div id="key-factors"></div>
+</section>
+
+<!-- Top 10 Rankings Section -->
+<section id="top-rankings" class="rankings-section" aria-labelledby="rankings-heading">
+<h2 id="rankings-heading" class="section-heading">最具影响力的10位国会议员</h2>
+<p class="section-description">网络分析和影响力评分（CIA算法）</p>
+<div id="influential-mps" class="rankings-list"></div>
+</section>
+
+<!-- Voting Patterns Heatmap Section -->
+<section id="voting-patterns" class="heatmap-section" aria-labelledby="voting-heading">
+<h2 id="voting-heading" class="section-heading">投票模式热图</h2>
+<p class="section-description">政党一致性矩阵（2022-2026）</p>
+<div class="chart-container">
+<canvas id="voting-heatmap" role="img" aria-label="投票模式热图"></canvas>
+</div>
+</section>
+
+<!-- Committee Network Section -->
+<section id="committee-network" class="network-section" aria-labelledby="committee-heading">
+<h2 id="committee-heading" class="section-heading">委员会网络分析</h2>
+<p class="section-description">议会委员会影响力映射</p>
+<div id="network-visualization" class="network-container"></div>
+<div id="committee-list" class="committee-grid"></div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<p>&copy; 2008-2026 | Riksdags Monitor |
+<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
+<a href="https://github.com/Hack23/ISMS-PUBLIC" title="Public ISMS Repository">ISMS</a> |
+<a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" title="Information Security Policy">Security Policy</a>
+</p>
+<p>
+<a href="index.html" title="English">English</a> |
+<a href="index_sv.html" title="Svenska">Svenska</a> |
+<a href="index_da.html" title="Dansk">Dansk</a> |
+<a href="index_no.html" title="Norsk">Norsk</a> |
+<a href="index_fi.html" title="Suomi">Suomi</a> |
+<a href="index_de.html" title="Deutsch">Deutsch</a> |
+<a href="index_fr.html" title="Français">Français</a> |
+<a href="index_es.html" title="Español">Español</a> |
+<a href="index_nl.html" title="Nederlands">Nederlands</a> |
+<a href="index_ar.html" title="العربية">العربية</a> |
+<a href="index_he.html" title="עברית">עברית</a> |
+<a href="index_ja.html" title="日本語">日本語</a> |
+<a href="index_ko.html" title="한국어">한국어</a> |
+<a href="index_zh.html" title="中文">中文</a>
+</p>
+</footer>
+
+<!-- JavaScript Modules -->
+<script type="module" src="cia-data-loader.js"></script>
+<script type="module" src="cia-visualizations.js"></script>
+<script type="module" src="election-predictions.js"></script>
+<script type="module" src="dashboard-init.js"></script>
+</body>
+</html>
