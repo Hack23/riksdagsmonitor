@@ -20,9 +20,9 @@ on:
         default: en,sv
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
   issues: read
-  pull-requests: read
 
 timeout-minutes: 30
 
@@ -291,7 +291,51 @@ Create/update `news/metadata/last-generation.json`:
 }
 ```
 
-### Step 8: Create Pull Request
+### Step 8: Validate Generated Articles
+
+Before creating the PR, validate the quality of generated articles:
+
+**HTML Validation:**
+```bash
+# Validate HTML structure
+npx htmlhint news/*.html --config .htmlhintrc
+
+# Check for common issues:
+# - Missing alt attributes
+# - Duplicate IDs
+# - Invalid nesting
+# - Missing required meta tags
+```
+
+**Metadata Validation:**
+```bash
+# Verify all required meta tags exist:
+# - og:title, og:description, og:image, og:url
+# - article:published_time, article:author
+# - twitter:card, twitter:title, twitter:description
+# - Schema.org NewsArticle structured data
+
+# Verify YAML frontmatter (if used)
+# - title, date, author, type, language
+```
+
+**Link Checking:**
+```bash
+# Check all links in generated articles
+# - Internal links to Riksdag documents
+# - External sources
+# - Verify no broken links
+```
+
+**Quality Criteria:**
+- ✅ All HTML validates without errors
+- ✅ All required meta tags present
+- ✅ No broken links
+- ✅ Proper heading hierarchy (h1 → h2 → h3)
+- ✅ Alt text on all images
+- ✅ Source citations with document IDs
+
+### Step 9: Create Pull Request
 
 Use safe-outputs to create a PR with:
 
@@ -317,17 +361,29 @@ This PR contains automatically generated news articles from riksdag-regering-mcp
 - **32 specialized tools**: Documents, MPs, votes, speeches, calendar events
 
 ### Quality Checks
-- [x] HTML structure valid
+- [x] HTML validation passed
+- [x] Metadata validation passed
+- [x] No broken links detected
 - [x] SEO metadata complete
 - [x] Source attribution included
 - [x] Multi-language support (EN/SV)
+- [x] News indexes regenerated
 - [x] Sitemap updated
 - [ ] Editorial review recommended
+
+### Validation Results
+```
+HTML Validation: PASSED (0 errors)
+Link Check: PASSED (0 broken links)
+Metadata: COMPLETE
+SEO Score: {score}/100
+```
 
 ### References
 - MCP Server: riksdag-regering-mcp (npm)
 - Data: Swedish Riksdag Open Data API
 - Style Guide: The Economist
+- Workflow: {workflow_run_url}
 
 ---
 *This PR was automatically created by the News Article Generator agent*
@@ -403,7 +459,7 @@ This PR contains automatically generated news articles from riksdag-regering-mcp
 **If no significant updates:**
 1. Check last-generation.json timestamp
 2. If < 11 hours and not forced, skip gracefully
-3. Create comment explaining: "No significant updates found"
+3. Use `noop` safe-output to log: "No significant updates found in riksdag-regering-mcp data. Last generation: {timestamp}. Use force_generation=true to override."
 4. Do not create PR
 5. Exit with success
 
@@ -412,7 +468,20 @@ This PR contains automatically generated news articles from riksdag-regering-mcp
 2. Continue with remaining articles
 3. Include partial results in PR
 4. Mark failed articles in metadata
-5. Provide debugging information
+5. Provide debugging information in PR body
+
+**If validation fails:**
+1. Log validation errors (HTML errors, broken links, missing metadata)
+2. Include validation report in PR body
+3. Add `needs-fixes` label to PR
+4. Do not block PR creation (editorial review can fix issues)
+5. Provide clear remediation steps
+
+**Critical failures that should stop workflow:**
+- MCP server completely unavailable (> 3 retries)
+- File system errors (cannot write files)
+- Git operations failing (cannot commit/push)
+- Safe-outputs failing (cannot create PR)
 
 ## Example Queries
 
