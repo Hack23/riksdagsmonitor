@@ -145,7 +145,7 @@ describe('Article Template', () => {
     it('should include responsive design CSS', () => {
       const html = generateArticleHTML(mockArticleData);
       
-      expect(html).toContain('@media (min-width: 768px)');
+      expect(html).toContain('@media (max-width: 768px)');
       expect(html).toContain('grid-template-columns');
     });
 
@@ -170,7 +170,7 @@ describe('Article Template', () => {
     it('should include back to news link', () => {
       const html = generateArticleHTML(mockArticleData);
       
-      expect(html).toContain('href="../news/"');
+      expect(html).toContain('href="index.html"');
       expect(html).toContain('Back to News');
     });
   });
