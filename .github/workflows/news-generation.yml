@@ -16,6 +16,11 @@ on:
         type: string
         default: 'week-ahead'
         required: false
+      languages:
+        description: 'Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)'
+        type: string
+        default: 'en,sv'
+        required: false
 
 permissions:
   contents: write
@@ -99,15 +104,37 @@ jobs:
         id: generate
         env:
           ARTICLE_TYPES: ${{ github.event.inputs.article_types || 'week-ahead' }}
+          LANGUAGES: ${{ github.event.inputs.languages || 'en,sv' }}
         run: |
           echo "📰 Generating news articles..."
+          echo "📋 Article types: $ARTICLE_TYPES"
+          echo "🌐 Languages: $LANGUAGES"
           
           # Create metadata directory
           mkdir -p news/metadata
           
+          # Expand language presets
+          case "$LANGUAGES" in
+            "nordic")
+              LANG_ARG="en,sv,da,no,fi"
+              echo "🌍 Expanding 'nordic' to: $LANG_ARG"
+              ;;
+            "eu-core")
+              LANG_ARG="en,sv,de,fr,es,nl"
+              echo "🌍 Expanding 'eu-core' to: $LANG_ARG"
+              ;;
+            "all")
+              LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh"
+              echo "🌍 Expanding 'all' to all 14 languages"
+              ;;
+            *)
+              LANG_ARG="$LANGUAGES"
+              ;;
+          esac
+          
           # Run news generation script
           if [ -f "scripts/generate-news.js" ]; then
-            node scripts/generate-news.js --types="$ARTICLE_TYPES"
+            node scripts/generate-news.js --types="$ARTICLE_TYPES" --languages="$LANG_ARG"
             
             # Check results
             if [ -f "news/metadata/generation-result.json" ]; then
