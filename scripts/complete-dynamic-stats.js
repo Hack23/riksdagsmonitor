@@ -104,11 +104,14 @@ function addDynamicStats(content, filename) {
 
   // 3. Pattern for existing "2,494 historical" (keep and improve)
   // Wrap 2,494 or 2494 with <span data-stat-id="stat-historical-persons">
-  const historicalPattern = /(?<!\<span[^>]*>)\b2,?494\b(?!\<\/span>)(?=\s+(historical|historiska|historiske|historiallisia|historisch|historiques|históricos|historisch|历史|היסטוריים|تاريخي|역사적|歴史的))/gi;
-  const historicalMatches = body.match(historicalPattern);
-  if (historicalMatches) {
-    body = body.replace(historicalPattern, '<span data-stat-id="stat-historical-persons">2494</span>');
-    changeCount++;
+  // Only replace if not already wrapped in span
+  if (!body.includes('data-stat-id="stat-historical-persons"')) {
+    const historicalPattern = /\b2,?494\b(?=\s+(historical|historiska|historiske|historiallisia|historisch|historiques|históricos|historisch|历史|היסטוריים|تاريخي|역사적|歴史的))/gi;
+    const historicalMatches = body.match(historicalPattern);
+    if (historicalMatches) {
+      body = body.replace(historicalPattern, '<span data-stat-id="stat-historical-persons">2494</span>');
+      changeCount++;
+    }
   }
 
   // 4. Add committee documents count if "committee work" is mentioned

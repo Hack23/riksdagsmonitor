@@ -16,8 +16,7 @@ on:
         default: false
 
 permissions:
-  contents: write # Required to commit updated statistics
-  pull-requests: write # Required to create PR if branch protection enabled
+  contents: write # Required to commit and push updated statistics
 
 jobs:
   update-stats:

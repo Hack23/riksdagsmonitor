@@ -75,56 +75,58 @@ function updateHTMLFile(filePath, stats) {
   // Historical politicians (all persons in CIA database)
   const historicalPoliticians = counts.total_persons;
   
-  // Total votes
-  const totalVotes = counts.total_votes.toLocaleString();
+  // Total votes (raw number - stats-loader.js will format at runtime)
+  const totalVotes = counts.total_votes;
   
-  // Total documents
-  const totalDocuments = counts.total_documents.toLocaleString();
+  // Total documents (raw number - stats-loader.js will format at runtime)
+  const totalDocuments = counts.total_documents;
   
-  // Rule violations
-  const ruleViolations = counts.total_rule_violations.toLocaleString();
+  // Rule violations (raw number - stats-loader.js will format at runtime)
+  const ruleViolations = counts.total_rule_violations;
   
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     const originalContent = content;
     let changeCount = 0;
     
-    // Language-specific descriptions
+    // Language-specific descriptions (only update if explicitly defined)
     const descriptions = {
       'index.html': {
-        heroDescription: `Real-time monitoring · Coalition predictions · Systematic transparency. 45 risk rules tracking ${currentMPs} MPs (${historicalPoliticians.toLocaleString()} historical politicians in database).`,
-        twitterDescription: `Real-time monitoring of ${currentMPs} MPs across 8 parties · Coalition predictions with 45 risk rules · Election forecasting · Track Swedish politics 24/7 · ${historicalPoliticians.toLocaleString()} historical politicians tracked`,
-        schemaDescription: `Swedish Election 2026 live intelligence platform with CIA OSINT monitoring of ${currentMPs} MPs across 8 parties. Real-time coalition predictions, 45 risk rules, and comprehensive parliamentary analysis. Database includes ${historicalPoliticians.toLocaleString()} historical politicians (1971-2024).`,
-        eventDescription: `Swedish Parliamentary Election scheduled for 13 September 2026. Live intelligence platform monitoring ${currentMPs} MPs across 8 parties with CIA OSINT capabilities, coalition predictions, and comprehensive risk assessment. Track voting patterns, committee activities, and political transparency in real-time. Historical database: ${historicalPoliticians.toLocaleString()} politicians tracked since 1971.`,
-        aboutText: `Riksdagsmonitor is a comprehensive Swedish Parliament monitoring platform that provides real-time intelligence, election forecasting, and political transparency through CIA OSINT analysis. It tracks ${currentMPs} MPs across 8 parties with 45 risk rules and comprehensive parliamentary analysis. Historical database includes ${historicalPoliticians.toLocaleString()} politicians from 1971-2024.`,
-        mpTrackingText: `Riksdagsmonitor tracks all ${currentMPs} Members of Parliament (MPs) in the Swedish Riksdag, monitoring their voting patterns, attendance, committee work, and debate performance in real-time. Historical database includes ${historicalPoliticians.toLocaleString()} politicians tracked since 1971.`,
-        dashboardDescription: `Comprehensive intelligence analysis using 45 risk rules across ${currentMPs} MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes ${historicalPoliticians.toLocaleString()} politicians (1971-2024).`,
+        heroDescription: `Real-time monitoring · Coalition predictions · Systematic transparency. 45 risk rules tracking ${currentMPs} MPs (${historicalPoliticians} historical politicians in database).`,
+        twitterDescription: `Real-time monitoring of ${currentMPs} MPs across 8 parties · Coalition predictions with 45 risk rules · Election forecasting · Track Swedish politics 24/7 · ${historicalPoliticians} historical politicians tracked`,
+        schemaDescription: `Swedish Election 2026 live intelligence platform with CIA OSINT monitoring of ${currentMPs} MPs across 8 parties. Real-time coalition predictions, 45 risk rules, and comprehensive parliamentary analysis. Database includes ${historicalPoliticians} historical politicians (1971-2024).`,
+        eventDescription: `Swedish Parliamentary Election scheduled for 13 September 2026. Live intelligence platform monitoring ${currentMPs} MPs across 8 parties with CIA OSINT capabilities, coalition predictions, and comprehensive risk assessment. Track voting patterns, committee activities, and political transparency in real-time. Historical database: ${historicalPoliticians} politicians tracked since 1971.`,
+        aboutText: `Riksdagsmonitor is a comprehensive Swedish Parliament monitoring platform that provides real-time intelligence, election forecasting, and political transparency through CIA OSINT analysis. It tracks ${currentMPs} MPs across 8 parties with 45 risk rules and comprehensive parliamentary analysis. Historical database includes ${historicalPoliticians} politicians from 1971-2024.`,
+        mpTrackingText: `Riksdagsmonitor tracks all ${currentMPs} Members of Parliament (MPs) in the Swedish Riksdag, monitoring their voting patterns, attendance, committee work, and debate performance in real-time. Historical database includes ${historicalPoliticians} politicians tracked since 1971.`,
+        dashboardDescription: `Comprehensive intelligence analysis using 45 risk rules across ${currentMPs} MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes ${historicalPoliticians} politicians (1971-2024).`,
         riskHeatMapTitle: `Risk Level Heat Map (45 Rules × ${currentMPs} MPs)`,
-        featureListMPs: `${currentMPs} MPs tracked (${historicalPoliticians.toLocaleString()} historical)`,
-        organizationText: `Riksdagsmonitor is a live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities, tracking ${currentMPs} MPs with 45 risk rules across 4 domains: Politician-level (20 rules), Party-level (12 rules), Committee-level (8 rules), and Ministry-level (5 rules). Historical database: ${historicalPoliticians.toLocaleString()} politicians (1971-2024).`,
-        electionText: `The Swedish Parliamentary Election 2026 is scheduled for September 13, 2026 (second Sunday in September). This is a nationwide election to determine the composition of the Riksdag (Swedish Parliament) with ${currentMPs} seats. Riksdagsmonitor tracks current and historical politicians (${historicalPoliticians.toLocaleString()} total since 1971).`,
-        monitoringText: `The platform monitors all ${currentMPs} members of the Swedish Parliament (Riksdag) across 8 political parties: Social Democrats (S), Moderates (M), Sweden Democrats (SD), Centre Party (C), Left Party (V), Christian Democrats (KD), Liberals (L), and Green Party (MP). Historical database includes ${historicalPoliticians.toLocaleString()} politicians tracked since 1971.`
+        featureListMPs: `${currentMPs} MPs tracked (${historicalPoliticians} historical)`,
+        organizationText: `Riksdagsmonitor is a live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities, tracking ${currentMPs} MPs with 45 risk rules across 4 domains: Politician-level (20 rules), Party-level (12 rules), Committee-level (8 rules), and Ministry-level (5 rules). Historical database: ${historicalPoliticians} politicians (1971-2024).`,
+        electionText: `The Swedish Parliamentary Election 2026 is scheduled for September 13, 2026 (second Sunday in September). This is a nationwide election to determine the composition of the Riksdag (Swedish Parliament) with ${currentMPs} seats. Riksdagsmonitor tracks current and historical politicians (${historicalPoliticians} total since 1971).`,
+        monitoringText: `The platform monitors all ${currentMPs} members of the Swedish Parliament (Riksdag) across 8 political parties: Social Democrats (S), Moderates (M), Sweden Democrats (SD), Centre Party (C), Left Party (V), Christian Democrats (KD), Liberals (L), and Green Party (MP). Historical database includes ${historicalPoliticians} politicians tracked since 1971.`
       },
       'index_sv.html': {
-        heroDescription: `Realtidsövervakning · Koalitionsprognoser · Systematisk transparens. 45 riskregler spårar ${currentMPs} riksdagsledamöter (${historicalPoliticians.toLocaleString()} historiska politiker i databasen).`,
-        twitterDescription: `Realtidsövervakning av ${currentMPs} riksdagsledamöter över 8 partier · Koalitionsprognoser med 45 riskregler · Valprognos · Spåra svensk politik 24/7 · ${historicalPoliticians.toLocaleString()} historiska politiker spårade`,
-        schemaDescription: `Svenska valet 2026 live underrättelseplattform med CIA OSINT-övervakning av ${currentMPs} riksdagsledamöter över 8 partier. Realtidskoalitionsprognoser, 45 riskregler och omfattande parlamentarisk analys. Databasen inkluderar ${historicalPoliticians.toLocaleString()} historiska politiker (1971-2024).`
+        heroDescription: `Realtidsövervakning · Koalitionsprognoser · Systematisk transparens. 45 riskregler spårar ${currentMPs} riksdagsledamöter (${historicalPoliticians} historiska politiker i databasen).`,
+        twitterDescription: `Realtidsövervakning av ${currentMPs} riksdagsledamöter över 8 partier · Koalitionsprognoser med 45 riskregler · Valprognos · Spåra svensk politik 24/7 · ${historicalPoliticians} historiska politiker spårade`,
+        schemaDescription: `Svenska valet 2026 live underrättelseplattform med CIA OSINT-övervakning av ${currentMPs} riksdagsledamöter över 8 partier. Realtidskoalitionsprognoser, 45 riskregler och omfattande parlamentarisk analys. Databasen inkluderar ${historicalPoliticians} historiska politiker (1971-2024).`
       }
+      // Note: Other languages (da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh) preserve existing translations
+      // Only update if explicitly defined above to avoid overwriting localized content
     };
     
     const lang = path.basename(filePath);
-    const desc = descriptions[lang] || descriptions['index.html'];
+    const desc = descriptions[lang]; // No fallback - only update if explicitly defined
     
-    // Update meta description
+    // Update meta description (only if language has explicit translation)
     const ogDescPattern = /<meta property="og:description" content="[^"]*">/;
-    if (ogDescPattern.test(content) && desc.heroDescription) {
+    if (ogDescPattern.test(content) && desc && desc.heroDescription) {
       content = content.replace(ogDescPattern, `<meta property="og:description" content="${desc.heroDescription}">`);
       changeCount++;
     }
     
-    // Update Twitter description
+    // Update Twitter description (only if language has explicit translation)
     const twitterDescPattern = /<meta name="twitter:description" content="[^"]*">/;
-    if (twitterDescPattern.test(content) && desc.twitterDescription) {
+    if (twitterDescPattern.test(content) && desc && desc.twitterDescription) {
       content = content.replace(twitterDescPattern, `<meta name="twitter:description" content="${desc.twitterDescription}">`);
       changeCount++;
     }
@@ -214,8 +216,9 @@ function updateHTMLFile(filePath, stats) {
       changeCount++;
     }
     
-    // Update JavaScript heat map generation (keep at 349 for current MPs, add comment)
-    const heatMapLoopPattern = /for \(let mpIdx = 0; mpIdx < \d+; mpIdx\+\+\) {/;
+    // Update JavaScript heat map generation (keep at 349 for current MPs, add comment if not present)
+    // Make idempotent by checking for existing comment
+    const heatMapLoopPattern = /for \(let mpIdx = 0; mpIdx < \d+; mpIdx\+\+\) \{(?: \/\/ Current MPs)*/;
     if (heatMapLoopPattern.test(content)) {
       content = content.replace(
         heatMapLoopPattern,
@@ -224,7 +227,7 @@ function updateHTMLFile(filePath, stats) {
       changeCount++;
     }
     
-    const heatMapHeightPattern = /const height = \d+ \* cellHeight \+ margin\.top \+ margin\.bottom;/;
+    const heatMapHeightPattern = /const height = \d+ \* cellHeight \+ margin\.top \+ margin\.bottom;(?: \/\/ Current MPs)*/;
     if (heatMapHeightPattern.test(content)) {
       content = content.replace(
         heatMapHeightPattern,
@@ -233,7 +236,7 @@ function updateHTMLFile(filePath, stats) {
       changeCount++;
     }
     
-    const heatMapRangePattern = /\.range\(\[0, \d+ \* cellHeight\]\)/;
+    const heatMapRangePattern = /\.range\(\[0, \d+ \* cellHeight\]\)(?: \/\/ Current MPs)*/;
     if (heatMapRangePattern.test(content)) {
       content = content.replace(
         heatMapRangePattern,
@@ -242,7 +245,7 @@ function updateHTMLFile(filePath, stats) {
       changeCount++;
     }
     
-    const heatMapTranslatePattern = /\.translateExtent\(\[\[0, 0\], \[45 \* cellWidth, \d+ \* cellHeight\]\]\)/;
+    const heatMapTranslatePattern = /\.translateExtent\(\[\[0, 0\], \[45 \* cellWidth, \d+ \* cellHeight\]\]\)(?: \/\/ Current MPs)*/;
     if (heatMapTranslatePattern.test(content)) {
       content = content.replace(
         heatMapTranslatePattern,

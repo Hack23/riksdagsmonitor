@@ -114,7 +114,6 @@ describe('Complete Dynamic Stats Script', () => {
       const scriptPath = path.join(process.cwd(), 'scripts', 'complete-dynamic-stats.js');
       const loaderPath = path.join(process.cwd(), 'js', 'stats-loader.js');
       
-      const scriptContent = fs.readFileSync(scriptPath, 'utf-8');
       const loaderContent = fs.readFileSync(loaderPath, 'utf-8');
       
       // Check that stat IDs in script match those in loader

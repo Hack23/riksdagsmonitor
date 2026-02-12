@@ -907,7 +907,7 @@ Performance tiers (ntile_party_tier: 1-4)
 
 <section id="risk-dashboard" class="dashboard-container">
 <h2><span aria-hidden="true">⚠️</span> Risk Assessment &amp; Anomaly Detection</h2>
-<p class="dashboard-description">Comprehensive intelligence analysis using 45 risk rules (detecting <span data-stat-id="stat-rule-violations">2308</span> violations) across 349 MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes 2,494 politicians (1971-2024).. Historical analysis includes 2,494 politicians (1971-2024). (P90/P99 thresholds)</p>
+<p class="dashboard-description">Comprehensive intelligence analysis using 45 risk rules (detecting <span data-stat-id="stat-rule-violations">2308</span> violations) across 349 MPs with statistical anomaly detection (P90/P99 thresholds), including historical data for <span data-stat-id="stat-historical-persons">2494</span> politicians (1971-2024).</p>
 
 <div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
   <!-- Alerts populated by JavaScript -->
@@ -1421,7 +1421,7 @@ Performance tiers (ntile_party_tier: 1-4)
     const data = [];
     const parties = Object.keys(PARTY_COLORS);
     
-    for (let mpIdx = 0; mpIdx < 349; mpIdx++) { // Current MPs // Current MPs
+    for (let mpIdx = 0; mpIdx < 349; mpIdx++) { // Current MPs
       const party = parties[mpIdx % parties.length];
       const mpName = `MP_${String(mpIdx + 1).padStart(3, '0')}`;
       

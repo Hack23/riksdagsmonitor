@@ -229,7 +229,6 @@ describe('ISMS Compliance - Data Classification', () => {
       const assessedPrivacyRisk = true;         // DPIA completed
       const publicOfficialsOnly = true;         // No private citizens
       const officialCapacityOnly = true;        // No personal activities
-      const noSpecialCategoryData = false;      // Political opinions (exempt)
 
       expect(assessedPrivacyRisk).toBe(true);
       expect(publicOfficialsOnly).toBe(true);
@@ -305,7 +304,6 @@ describe('ISMS Compliance - Data Classification', () => {
       // Note: No sensitive data - only public government data
       
       const hasSensitiveData = false;       // Only public data
-      const needsAccessLogging = false;     // Public data, no logging required
       const gitHistoryAudit = true;         // Version control audit trail
 
       expect(hasSensitiveData).toBe(false);

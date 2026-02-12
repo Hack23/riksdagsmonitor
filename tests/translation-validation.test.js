@@ -115,7 +115,6 @@ describe('Translation Validation', () => {
       
       // Should contain German terms (allow English fallback but prefer German)
       const germanTerms = ['Deutschland', 'Wahl', 'Parlament', 'Überwachung', 'Intelligenz'];
-      const hasGermanContent = germanTerms.some(term => content.includes(term));
       // Note: Some pages may use English as fallback, so we don't fail if not found
       // Just verify the file exists and has content
       expect(content.length).toBeGreaterThan(1000);
@@ -127,7 +126,6 @@ describe('Translation Validation', () => {
       
       // Should contain French terms
       const frenchTerms = ['élection', 'parlement', 'surveillance', 'intelligence'];
-      const hasFrenchContent = frenchTerms.some(term => content.toLowerCase().includes(term));
       // Allow English fallback
       expect(content.length).toBeGreaterThan(1000);
     });
