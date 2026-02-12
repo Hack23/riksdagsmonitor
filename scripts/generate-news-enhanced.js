@@ -17,7 +17,6 @@ import {
   transformCalendarToEventGrid,
   generateArticleContent,
   extractWatchPoints,
-  extractTopics,
   generateMetadata,
   calculateReadTime,
   generateSources
