@@ -11,15 +11,9 @@ async function initDashboard() {
   const loader = new CIADataLoader();
   
   try {
-    // Load all CIA exports
-    const [overview, election, partyPerf, top10, committees, votingPatterns] = await Promise.all([
-      loader.loadOverviewDashboard(),
-      loader.loadElectionAnalysis(),
-      loader.loadPartyPerformance(),
-      loader.loadTop10Influential(),
-      loader.loadCommitteeNetwork(),
-      loader.loadVotingPatterns()
-    ]);
+    // Load all CIA exports using the loadAll method
+    const data = await loader.loadAll();
+    const { overview, election, partyPerf, top10, committees, votingPatterns } = data;
     
     // Hide loading state
     document.getElementById('loading-state').classList.add('hidden');
@@ -45,6 +39,7 @@ async function initDashboard() {
     
     electionRenderer.renderSeatPredictions();
     electionRenderer.renderCoalitionScenarios();
+    electionRenderer.renderKeyFactors();
     
   } catch (error) {
     console.error('Dashboard initialization error:', error);
