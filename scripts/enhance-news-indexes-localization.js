@@ -510,7 +510,7 @@ function addDynamicContentSupport(content, lang) {
     const i18n = {
       noArticles: '${loc.noArticles}',
       loading: '${loc.loading}',
-      articleCount: (n) => n === 1 ? '${loc.articleCount(1)}' : \`\${n} ${loc.filters.allTypes.toLowerCase()}\`
+      articleCount: (n) => n === 1 ? '${loc.articleCount(1)}' : '${loc.articleCount(2).replace('2', "' + n + '")}'
     };
     
     // Dynamic content loader

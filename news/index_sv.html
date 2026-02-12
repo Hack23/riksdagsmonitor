@@ -159,13 +159,13 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "Hem",
         "item": "https://riksdagsmonitor.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "News",
+        "name": "Nyheter",
         "item": "https://riksdagsmonitor.com/news/index_sv.html"
       }
     ]
@@ -460,7 +460,7 @@
     const i18n = {
       noArticles: 'Inga artiklar tillgängliga',
       loading: 'Laddar artiklar...',
-      articleCount: (n) => n === 1 ? '1 artikel' : `${n} alla typer`
+      articleCount: (n) => n === 1 ? '1 artikel' : '' + n + ' artiklar'
     };
     
     // Dynamic content loader

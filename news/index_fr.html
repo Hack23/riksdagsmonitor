@@ -159,13 +159,13 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "Accueil",
         "item": "https://riksdagsmonitor.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "News",
+        "name": "Actualités",
         "item": "https://riksdagsmonitor.com/news/index_fr.html"
       }
     ]
@@ -465,7 +465,7 @@
     const i18n = {
       noArticles: 'Aucun article disponible',
       loading: 'Chargement des articles...',
-      articleCount: (n) => n === 1 ? '1 article' : `${n} tous les types`
+      articleCount: (n) => n === 1 ? '1 article' : '' + n + ' articles'
     };
     
     // Dynamic content loader

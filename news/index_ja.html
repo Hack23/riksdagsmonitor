@@ -159,13 +159,13 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "ホーム",
         "item": "https://riksdagsmonitor.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "News",
+        "name": "ニュース",
         "item": "https://riksdagsmonitor.com/news/index_ja.html"
       }
     ]
@@ -465,7 +465,7 @@
     const i18n = {
       noArticles: '記事がありません',
       loading: '記事を読み込み中...',
-      articleCount: (n) => n === 1 ? '1件の記事' : `${n} すべての種類`
+      articleCount: (n) => n === 1 ? '1件の記事' : '' + n + '件の記事'
     };
     
     // Dynamic content loader

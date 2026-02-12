@@ -219,8 +219,9 @@ describe('Generated Articles Quality', () => {
       expect(articleFiles.length).toBeGreaterThan(0);
       
       // Articles should follow naming convention: YYYY-MM-DD-slug-lang.html or YYYY-MM-slug-lang.html
+      // Supports all 14 languages: en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh
       articleFiles.forEach(file => {
-        expect(file).toMatch(/^\d{4}-\d{2}(-\d{2})?-.+-(en|sv)\.html$/);
+        expect(file).toMatch(/^\d{4}-\d{2}(-\d{2})?-.+-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
       });
     });
 

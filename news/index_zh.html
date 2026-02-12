@@ -159,13 +159,13 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "主页",
         "item": "https://riksdagsmonitor.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "News",
+        "name": "新闻",
         "item": "https://riksdagsmonitor.com/news/index_zh.html"
       }
     ]
@@ -465,7 +465,7 @@
     const i18n = {
       noArticles: '没有可用文章',
       loading: '正在加载文章...',
-      articleCount: (n) => n === 1 ? '1篇文章' : `${n} 所有类型`
+      articleCount: (n) => n === 1 ? '1篇文章' : '' + n + '篇文章'
     };
     
     // Dynamic content loader

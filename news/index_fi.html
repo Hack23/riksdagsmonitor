@@ -159,13 +159,13 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "Etusivu",
         "item": "https://riksdagsmonitor.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "News",
+        "name": "Uutiset",
         "item": "https://riksdagsmonitor.com/news/index_fi.html"
       }
     ]
@@ -465,7 +465,7 @@
     const i18n = {
       noArticles: 'Ei artikkeleita saatavilla',
       loading: 'Ladataan artikkeleita...',
-      articleCount: (n) => n === 1 ? '1 artikkeli' : `${n} kaikki tyypit`
+      articleCount: (n) => n === 1 ? '1 artikkeli' : '' + n + ' artikkelia'
     };
     
     // Dynamic content loader

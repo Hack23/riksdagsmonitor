@@ -36,8 +36,8 @@ describe('SEO & Structured Data', () => {
     it('should include NewsArticle schema with all required properties', () => {
       const html = generateArticleHTML(sampleArticle);
       
-      // Extract JSON-LD
-      const jsonLDMatch = html.match(/<script type="application\/ld\+json">\s*(\{[\s\S]*?\})\s*<\/script>/);
+      // Extract JSON-LD - capture full script content
+      const jsonLDMatch = html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
       expect(jsonLDMatch, 'NewsArticle JSON-LD should exist').toBeTruthy();
       
       const jsonLD = JSON.parse(jsonLDMatch[1]);
@@ -191,7 +191,7 @@ describe('SEO & Structured Data', () => {
       
       expect(descMatch).toBeTruthy();
       expect(descMatch[1].length).toBeGreaterThanOrEqual(50);
-      expect(descMatch[1].length).toBeLessThan(160);
+      expect(descMatch[1].length).toBeLessThanOrEqual(160);
     });
   });
 

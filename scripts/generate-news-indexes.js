@@ -39,20 +39,20 @@ function escapeHtml(text) {
 }
 
 const LANGUAGES = {
-  en: { name: 'English', code: 'en', locale: 'en_US', title: 'News', subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.' },
-  sv: { name: 'Svenska', code: 'sv', locale: 'sv_SE', title: 'Nyheter', subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.' },
-  da: { name: 'Dansk', code: 'da', locale: 'da_DK', title: 'Nyheder', subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.' },
-  no: { name: 'Norsk', code: 'nb', locale: 'nb_NO', title: 'Nyheter', subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.' },
-  fi: { name: 'Suomi', code: 'fi', locale: 'fi_FI', title: 'Uutiset', subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.' },
-  de: { name: 'Deutsch', code: 'de', locale: 'de_DE', title: 'Nachrichten', subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.' },
-  fr: { name: 'Français', code: 'fr', locale: 'fr_FR', title: 'Actualités', subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.' },
-  es: { name: 'Español', code: 'es', locale: 'es_ES', title: 'Noticias', subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.' },
-  nl: { name: 'Nederlands', code: 'nl', locale: 'nl_NL', title: 'Nieuws', subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.' },
-  ar: { name: 'العربية', code: 'ar', locale: 'ar_SA', title: 'أخبار', subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.', rtl: true },
-  he: { name: 'עברית', code: 'he', locale: 'he_IL', title: 'חדשות', subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.', rtl: true },
-  ja: { name: '日本語', code: 'ja', locale: 'ja_JP', title: 'ニュース', subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。' },
-  ko: { name: '한국어', code: 'ko', locale: 'ko_KR', title: '뉴스', subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.' },
-  zh: { name: '中文', code: 'zh', locale: 'zh_CN', title: '新闻', subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。' }
+  en: { name: 'English', code: 'en', locale: 'en_US', title: 'News', subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.', breadcrumbs: { home: 'Home', news: 'News' } },
+  sv: { name: 'Svenska', code: 'sv', locale: 'sv_SE', title: 'Nyheter', subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.', breadcrumbs: { home: 'Hem', news: 'Nyheter' } },
+  da: { name: 'Dansk', code: 'da', locale: 'da_DK', title: 'Nyheder', subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.', breadcrumbs: { home: 'Hjem', news: 'Nyheder' } },
+  no: { name: 'Norsk', code: 'nb', locale: 'nb_NO', title: 'Nyheter', subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.', breadcrumbs: { home: 'Hjem', news: 'Nyheter' } },
+  fi: { name: 'Suomi', code: 'fi', locale: 'fi_FI', title: 'Uutiset', subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.', breadcrumbs: { home: 'Etusivu', news: 'Uutiset' } },
+  de: { name: 'Deutsch', code: 'de', locale: 'de_DE', title: 'Nachrichten', subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.', breadcrumbs: { home: 'Startseite', news: 'Nachrichten' } },
+  fr: { name: 'Français', code: 'fr', locale: 'fr_FR', title: 'Actualités', subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.', breadcrumbs: { home: 'Accueil', news: 'Actualités' } },
+  es: { name: 'Español', code: 'es', locale: 'es_ES', title: 'Noticias', subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.', breadcrumbs: { home: 'Inicio', news: 'Noticias' } },
+  nl: { name: 'Nederlands', code: 'nl', locale: 'nl_NL', title: 'Nieuws', subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.', breadcrumbs: { home: 'Home', news: 'Nieuws' } },
+  ar: { name: 'العربية', code: 'ar', locale: 'ar_SA', title: 'أخبار', subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.', rtl: true, breadcrumbs: { home: 'الرئيسية', news: 'أخبار' } },
+  he: { name: 'עברית', code: 'he', locale: 'he_IL', title: 'חדשות', subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.', rtl: true, breadcrumbs: { home: 'בית', news: 'חדשות' } },
+  ja: { name: '日本語', code: 'ja', locale: 'ja_JP', title: 'ニュース', subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。', breadcrumbs: { home: 'ホーム', news: 'ニュース' } },
+  ko: { name: '한국어', code: 'ko', locale: 'ko_KR', title: '뉴스', subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.', breadcrumbs: { home: '홈', news: '뉴스' } },
+  zh: { name: '中文', code: 'zh', locale: 'zh_CN', title: '新闻', subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。', breadcrumbs: { home: '主页', news: '新闻' } }
 };
 
 console.log('🗂️ Dynamic News Index Generation');
@@ -298,13 +298,13 @@ ${generateHreflangTags()}
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "${escapeHtml(lang.breadcrumbs.home)}",
         "item": "https://riksdagsmonitor.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "News",
+        "name": "${escapeHtml(lang.breadcrumbs.news)}",
         "item": "https://riksdagsmonitor.com/news/${filename}"
       }
     ]

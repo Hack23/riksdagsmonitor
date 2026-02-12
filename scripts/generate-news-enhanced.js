@@ -37,9 +37,22 @@ const articleTypes = typesArg
   ? typesArg.split('=')[1].split(',')
   : ['week-ahead'];
 
-const languages = languagesArg
-  ? languagesArg.split('=')[1].split(',')
-  : ['en', 'sv'];
+// Language preset expansion
+const ALL_LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+const LANGUAGE_PRESETS = {
+  'all': ALL_LANGUAGES,
+  'nordic': ['en', 'sv', 'da', 'no', 'fi'],
+  'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl']
+};
+
+let languagesInput = languagesArg ? languagesArg.split('=')[1] : 'en,sv';
+
+// Expand presets
+if (LANGUAGE_PRESETS[languagesInput]) {
+  languagesInput = LANGUAGE_PRESETS[languagesInput].join(',');
+}
+
+const languages = languagesInput.split(',');
 
 const translateFrom = translateFromArg
   ? translateFromArg.split('=')[1]
