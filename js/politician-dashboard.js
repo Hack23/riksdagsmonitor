@@ -6,36 +6,73 @@
 // CIA GitHub raw content base URL
 const CIA_DATA_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data';
 
-// Data cache for future CIA data integration
+// Local data paths (try local first, then remote)
+const LOCAL_DATA_BASE = 'cia-data';
+
+// Data URLs with local-first, remote-fallback
+const DATA_SOURCES = {
+  riskSummary: [
+    `${LOCAL_DATA_BASE}/politician/view_politician_risk_summary_sample.csv`,
+    `${CIA_DATA_BASE_URL}/politician/view_politician_risk_summary_sample.csv`
+  ],
+  influenceMetrics: [
+    `${LOCAL_DATA_BASE}/politician/view_riksdagen_politician_influence_metrics_sample.csv`,
+    `${CIA_DATA_BASE_URL}/politician/view_riksdagen_politician_influence_metrics_sample.csv`
+  ],
+  behavioralTrends: [
+    `${LOCAL_DATA_BASE}/politician/view_politician_behavioral_trends_sample.csv`,
+    `${CIA_DATA_BASE_URL}/politician/view_politician_behavioral_trends_sample.csv`
+  ],
+  experienceLevels: [
+    `${LOCAL_DATA_BASE}/politician/distribution_experience_levels.csv`,
+    `${CIA_DATA_BASE_URL}/politician/distribution_experience_levels.csv`
+  ],
+  influenceBuckets: [
+    `${LOCAL_DATA_BASE}/politician/distribution_influence_buckets.csv`,
+    `${CIA_DATA_BASE_URL}/politician/distribution_influence_buckets.csv`
+  ],
+  assignmentRoles: [
+    `${LOCAL_DATA_BASE}/politician/distribution_assignment_roles.csv`,
+    `${CIA_DATA_BASE_URL}/politician/distribution_assignment_roles.csv`
+  ]
+};
+
+// Data cache
 const dataCache = {
-  top10Productive: null,
-  top10Influential: null,
-  top10RisingStars: null,
-  top10Controversial: null,
-  careerTrajectory: null,
-  productivity: null,
-  experienceDistribution: null
+  riskSummary: null,
+  influenceMetrics: null,
+  behavioralTrends: null,
+  experienceLevels: null,
+  influenceBuckets: null,
+  assignmentRoles: null
 };
 
 /**
- * Fetch CSV data from CIA repository
- * NOTE: Prepared for future integration - currently using placeholder data
- * TODO: Wire this into loadDashboardData once CIA CSV files are available
- * @param {string} filename - CSV filename
+ * Fetch CSV data with local-first, remote-fallback strategy
+ * @param {string[]} urls - Array of [localUrl, remoteUrl]
  * @returns {Promise<Array>} Parsed CSV data
  */
-async function fetchCIAData(filename) {
-  try {
-    const response = await fetch(`${CIA_DATA_BASE_URL}/${filename}`);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${filename}: ${response.statusText}`);
+async function fetchCIAData(urls) {
+  const urlList = Array.isArray(urls) ? urls : [urls];
+  let lastError = null;
+
+  for (const url of urlList) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+      }
+      const text = await response.text();
+      const data = parseCSV(text);
+      if (data.length > 0) return data;
+    } catch (error) {
+      lastError = error;
+      console.warn(`Fetch failed for ${url}, trying next source...`);
     }
-    const text = await response.text();
-    return parseCSV(text);
-  } catch (error) {
-    console.error(`Error fetching ${filename}:`, error);
-    throw error;
   }
+
+  console.error('All data sources failed:', lastError);
+  return [];
 }
 
 /**
@@ -158,40 +195,77 @@ function renderTop10List(containerId, data, scoreLabel = 'Score') {
 }
 
 /**
- * Create career trajectory line chart
- * NOTE: Currently displays placeholder data structure
- * TODO: Accept and map real CIA career trajectory data
- * @param {Array} data - Career trajectory data (unused - placeholder data shown)
+ * Create career trajectory line chart from behavioral trends data
+ * Shows attendance, effectiveness, and discipline trends over time
+ * @param {Array} data - Behavioral trends data from CIA CSV
  */
 function createCareerTrajectoryChart(data) {
   const canvas = document.getElementById('career-trajectory-chart');
   if (!canvas) return;
-  
+
   const ctx = canvas.getContext('2d');
-  
-  // PLACEHOLDER DATA - Replace with parsed CIA CSV data
-  const chartData = {
-    labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
-    datasets: [
-      {
-        label: 'Average Career Level',
-        data: [2.5, 3.2, 3.8, 4.1, 4.5, 4.8],
-        borderColor: '#00d9ff',
-        backgroundColor: 'rgba(0, 217, 255, 0.1)',
-        tension: 0.4,
-        fill: true
-      },
-      {
-        label: 'P75 Career Level',
-        data: [3.5, 4.2, 4.8, 5.1, 5.5, 5.8],
-        borderColor: '#ff006e',
-        backgroundColor: 'rgba(255, 0, 110, 0.1)',
-        tension: 0.4,
-        fill: true
+
+  let chartData;
+  if (data && data.length > 0) {
+    // Group data by time_bucket and compute averages
+    const byPeriod = {};
+    data.forEach(row => {
+      const period = (row.time_bucket || row.period_start || '').substring(0, 7); // YYYY-MM
+      if (!period) return;
+      if (!byPeriod[period]) {
+        byPeriod[period] = { absence: [], winRate: [], rebelRate: [], count: 0 };
       }
-    ]
-  };
-  
+      byPeriod[period].absence.push(parseFloat(row.avg_absence_rate) || 0);
+      byPeriod[period].winRate.push(parseFloat(row.avg_win_rate) || 0);
+      byPeriod[period].rebelRate.push(parseFloat(row.avg_rebel_rate) || 0);
+      byPeriod[period].count++;
+    });
+
+    const periods = Object.keys(byPeriod).sort();
+    const avg = arr => arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
+
+    chartData = {
+      labels: periods,
+      datasets: [
+        {
+          label: 'Avg Win Rate (%)',
+          data: periods.map(p => avg(byPeriod[p].winRate).toFixed(1)),
+          borderColor: '#00d9ff',
+          backgroundColor: 'rgba(0, 217, 255, 0.1)',
+          tension: 0.4,
+          fill: true
+        },
+        {
+          label: 'Avg Absence Rate (%)',
+          data: periods.map(p => avg(byPeriod[p].absence).toFixed(1)),
+          borderColor: '#ff006e',
+          backgroundColor: 'rgba(255, 0, 110, 0.1)',
+          tension: 0.4,
+          fill: true
+        },
+        {
+          label: 'Avg Rebel Rate (%)',
+          data: periods.map(p => avg(byPeriod[p].rebelRate).toFixed(1)),
+          borderColor: '#ffbe0b',
+          backgroundColor: 'rgba(255, 190, 11, 0.1)',
+          tension: 0.4,
+          fill: true
+        }
+      ]
+    };
+  } else {
+    // Fallback with empty state
+    chartData = {
+      labels: ['No Data'],
+      datasets: [{
+        label: 'No behavioral data available',
+        data: [0],
+        borderColor: '#00d9ff',
+        backgroundColor: 'rgba(0, 217, 255, 0.1)'
+      }]
+    };
+  }
+
   new Chart(ctx, {
     type: 'line',
     data: chartData,
@@ -248,32 +322,83 @@ function createCareerTrajectoryChart(data) {
 }
 
 /**
- * Create productivity vs influence scatter chart
- * NOTE: Currently displays placeholder data structure
- * TODO: Accept and map real CIA productivity/influence data
- * @param {Array} data - Productivity data (unused - placeholder data shown)
+ * Create productivity vs influence scatter chart from real CIA data
+ * Uses risk_summary (productivity proxy via documents/votes) and influence_metrics
+ * @param {Array} riskData - Risk summary data with vote counts and documents
+ * @param {Array} influenceData - Influence metrics with network connections
  */
-function createProductivityInfluenceChart(data) {
+function createProductivityInfluenceChart(riskData, influenceData) {
   const canvas = document.getElementById('productivity-influence-chart');
   if (!canvas) return;
-  
+
   const ctx = canvas.getContext('2d');
-  
-  // PLACEHOLDER DATA - Replace with parsed CIA CSV data
-  const chartData = {
-    datasets: [{
-      label: 'MPs',
-      data: Array.from({length: 50}, (_, i) => ({
-        x: (i * 2) % 100,
-        y: (i * 3 + 10) % 100,
-        r: (i % 20) + 5
-      })),
-      backgroundColor: 'rgba(0, 217, 255, 0.5)',
-      borderColor: '#00d9ff',
-      borderWidth: 1
-    }]
-  };
-  
+
+  let chartData;
+  if (riskData && riskData.length > 0 && influenceData && influenceData.length > 0) {
+    // Build influence lookup by person_id
+    const influenceLookup = {};
+    influenceData.forEach(row => {
+      influenceLookup[row.person_id] = {
+        connections: parseInt(row.network_connections) || 0,
+        classification: row.influence_classification || 'UNKNOWN'
+      };
+    });
+
+    // Color by party
+    const partyColors = {
+      'S': 'rgba(237, 28, 36, 0.6)',
+      'M': 'rgba(0, 106, 179, 0.6)',
+      'SD': 'rgba(221, 221, 0, 0.6)',
+      'C': 'rgba(0, 153, 68, 0.6)',
+      'V': 'rgba(218, 41, 28, 0.6)',
+      'KD': 'rgba(0, 95, 164, 0.6)',
+      'L': 'rgba(0, 106, 180, 0.6)',
+      'MP': 'rgba(83, 160, 39, 0.6)'
+    };
+
+    // Group data by party for datasets
+    const byParty = {};
+    riskData.forEach(row => {
+      if (row.status !== 'Tjänstgörande riksdagsledamot') return;
+      const party = row.party || 'Unknown';
+      const influence = influenceLookup[row.person_id];
+      const productivity = parseInt(row.annual_vote_count) || 0;
+      const connections = influence ? influence.connections : 0;
+      const riskScore = parseFloat(row.risk_score) || 10;
+
+      if (!byParty[party]) byParty[party] = [];
+      byParty[party].push({
+        x: productivity,
+        y: connections,
+        r: Math.max(3, riskScore / 5),
+        name: `${row.first_name} ${row.last_name}`,
+        party: party,
+        riskLevel: row.risk_level
+      });
+    });
+
+    chartData = {
+      datasets: Object.entries(byParty).map(([party, points]) => ({
+        label: party,
+        data: points,
+        backgroundColor: partyColors[party] || 'rgba(128, 128, 128, 0.5)',
+        borderColor: (partyColors[party] || 'rgba(128,128,128,0.5)').replace('0.6', '1'),
+        borderWidth: 1
+      }))
+    };
+  } else {
+    // Fallback with empty state
+    chartData = {
+      datasets: [{
+        label: 'No data available',
+        data: [{ x: 0, y: 0, r: 5 }],
+        backgroundColor: 'rgba(0, 217, 255, 0.5)',
+        borderColor: '#00d9ff',
+        borderWidth: 1
+      }]
+    };
+  }
+
   new Chart(ctx, {
     type: 'bubble',
     data: chartData,
@@ -282,7 +407,11 @@ function createProductivityInfluenceChart(data) {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          display: false
+          display: true,
+          labels: {
+            color: '#e0e0e0',
+            font: { family: "'Inter', sans-serif" }
+          }
         },
         tooltip: {
           backgroundColor: 'rgba(26, 30, 61, 0.95)',
@@ -292,11 +421,13 @@ function createProductivityInfluenceChart(data) {
           borderWidth: 1,
           callbacks: {
             label: function(context) {
+              const raw = context.raw;
               return [
-                `Productivity: ${context.parsed.x.toFixed(1)}`,
-                `Influence: ${context.parsed.y.toFixed(1)}`,
-                `Experience: ${context.raw.r.toFixed(0)} years`
-              ];
+                raw.name ? `${raw.name} (${raw.party})` : '',
+                `Votes: ${context.parsed.x}`,
+                `Connections: ${context.parsed.y}`,
+                raw.riskLevel ? `Risk: ${raw.riskLevel}` : ''
+              ].filter(Boolean);
             }
           }
         }
@@ -305,40 +436,22 @@ function createProductivityInfluenceChart(data) {
         x: {
           title: {
             display: true,
-            text: 'Productivity Score',
+            text: 'Annual Vote Count',
             color: '#e0e0e0',
-            font: {
-              family: "'Inter', sans-serif"
-            }
+            font: { family: "'Inter', sans-serif" }
           },
-          ticks: {
-            color: '#e0e0e0',
-            font: {
-              family: "'Inter', sans-serif"
-            }
-          },
-          grid: {
-            color: 'rgba(0, 217, 255, 0.1)'
-          }
+          ticks: { color: '#e0e0e0', font: { family: "'Inter', sans-serif" } },
+          grid: { color: 'rgba(0, 217, 255, 0.1)' }
         },
         y: {
           title: {
             display: true,
-            text: 'Influence Score',
+            text: 'Network Connections',
             color: '#e0e0e0',
-            font: {
-              family: "'Inter', sans-serif"
-            }
+            font: { family: "'Inter', sans-serif" }
           },
-          ticks: {
-            color: '#e0e0e0',
-            font: {
-              family: "'Inter', sans-serif"
-            }
-          },
-          grid: {
-            color: 'rgba(0, 217, 255, 0.1)'
-          }
+          ticks: { color: '#e0e0e0', font: { family: "'Inter', sans-serif" } },
+          grid: { color: 'rgba(0, 217, 255, 0.1)' }
         }
       }
     }
@@ -346,43 +459,52 @@ function createProductivityInfluenceChart(data) {
 }
 
 /**
- * Create experience distribution bar chart
- * NOTE: Currently displays placeholder data structure
- * TODO: Accept and map real CIA experience distribution data
- * @param {Array} data - Experience distribution data (unused - placeholder data shown)
+ * Create experience distribution bar chart from real CIA data
+ * @param {Array} data - Experience distribution data from distribution_experience_levels.csv
  */
 function createExperienceDistributionChart(data) {
   const canvas = document.getElementById('experience-distribution-chart');
   if (!canvas) return;
-  
+
   const ctx = canvas.getContext('2d');
-  
-  // PLACEHOLDER DATA - Replace with parsed CIA CSV data
+
+  let labels, counts;
+  if (data && data.length > 0) {
+    // Format labels nicely from CSV values like ACTIVE_COMMITTEES → Active Committees
+    const formatLabel = (s) => s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()).toLowerCase().replace(/^\w/, c => c.toUpperCase());
+    labels = data.map(row => formatLabel(row.experience_level || ''));
+    counts = data.map(row => parseInt(row.politician_count) || 0);
+  } else {
+    labels = ['No Data'];
+    counts = [0];
+  }
+
+  const colors = [
+    'rgba(0, 217, 255, 0.7)',
+    'rgba(0, 217, 255, 0.6)',
+    'rgba(0, 217, 255, 0.5)',
+    'rgba(255, 190, 11, 0.6)',
+    'rgba(255, 0, 110, 0.5)',
+    'rgba(255, 0, 110, 0.6)',
+    'rgba(255, 0, 110, 0.7)'
+  ];
+  const borderColors = [
+    '#00d9ff', '#00d9ff', '#00d9ff',
+    '#ffbe0b',
+    '#ff006e', '#ff006e', '#ff006e'
+  ];
+
   const chartData = {
-    labels: ['0-2 years', '3-5 years', '6-10 years', '11-15 years', '16-20 years', '20+ years'],
+    labels: labels,
     datasets: [{
-      label: 'Number of MPs',
-      data: [45, 78, 95, 67, 42, 22],
-      backgroundColor: [
-        'rgba(0, 217, 255, 0.7)',
-        'rgba(0, 217, 255, 0.6)',
-        'rgba(0, 217, 255, 0.5)',
-        'rgba(255, 0, 110, 0.5)',
-        'rgba(255, 0, 110, 0.6)',
-        'rgba(255, 0, 110, 0.7)'
-      ],
-      borderColor: [
-        '#00d9ff',
-        '#00d9ff',
-        '#00d9ff',
-        '#ff006e',
-        '#ff006e',
-        '#ff006e'
-      ],
+      label: 'Number of Politicians',
+      data: counts,
+      backgroundColor: labels.map((_, i) => colors[i % colors.length]),
+      borderColor: labels.map((_, i) => borderColors[i % borderColors.length]),
       borderWidth: 2
     }]
   };
-  
+
   new Chart(ctx, {
     type: 'bar',
     data: chartData,
@@ -405,24 +527,17 @@ function createExperienceDistributionChart(data) {
         x: {
           ticks: {
             color: '#e0e0e0',
-            font: {
-              family: "'Inter', sans-serif"
-            }
+            font: { family: "'Inter', sans-serif" },
+            maxRotation: 45
           },
-          grid: {
-            color: 'rgba(0, 217, 255, 0.1)'
-          }
+          grid: { color: 'rgba(0, 217, 255, 0.1)' }
         },
         y: {
           ticks: {
             color: '#e0e0e0',
-            font: {
-              family: "'Inter', sans-serif"
-            }
+            font: { family: "'Inter', sans-serif" }
           },
-          grid: {
-            color: 'rgba(0, 217, 255, 0.1)'
-          }
+          grid: { color: 'rgba(0, 217, 255, 0.1)' }
         }
       }
     }
@@ -430,55 +545,83 @@ function createExperienceDistributionChart(data) {
 }
 
 /**
- * Load all dashboard data
- * NOTE: Currently uses placeholder data for UI demonstration
- * TODO: Replace with real CIA CSV fetching:
- * - fetchCIAData('top10_most_productive.csv')
- * - fetchCIAData('top10_most_influential.csv')
- * - fetchCIAData('top10_rising_stars.csv')
- * - fetchCIAData('percentile_politician_career_trajectory.csv')
+ * Load all dashboard data from real CIA CSV files
+ * Uses local-first with remote-fallback for each data source
  */
 async function loadDashboardData() {
   try {
-    // PLACEHOLDER DATA - Replace with CIA CSV fetching
-    // Example: const productive = await fetchCIAData('top10_most_productive.csv');
-    const parties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
-    const sampleTop10Productive = Array.from({length: 10}, (_, i) => ({
-      name: `MP ${i + 1}`,
-      party: parties[i % 8],
-      score: (100 - i * 5).toString()
-    }));
-    
-    const sampleTop10Influential = Array.from({length: 10}, (_, i) => ({
-      name: `MP ${i + 11}`,
-      party: parties[(i + 1) % 8],
-      score: (95 - i * 4).toString()
-    }));
-    
-    const sampleTop10RisingStars = Array.from({length: 10}, (_, i) => ({
-      name: `MP ${i + 21}`,
-      party: parties[(i + 2) % 8],
-      score: (90 - i * 3).toString()
-    }));
-    
-    const sampleTop10Controversial = Array.from({length: 10}, (_, i) => ({
-      name: `MP ${i + 31}`,
-      party: parties[(i + 3) % 8],
-      score: (85 - i * 2).toString()
-    }));
-    
-    // Render Top 10 lists with placeholder data
-    renderTop10List('top10-productive-container', sampleTop10Productive, 'Documents');
-    renderTop10List('top10-influential-container', sampleTop10Influential, 'Influence');
-    renderTop10List('top10-rising-stars-container', sampleTop10RisingStars, 'Growth');
-    renderTop10List('top10-controversial-container', sampleTop10Controversial, 'Controversy');
-    
-    // Create charts with placeholder data
-    // TODO: Pass real CIA data to these functions once available
-    createCareerTrajectoryChart([]);
-    createProductivityInfluenceChart([]);
-    createExperienceDistributionChart([]);
-    
+    // Fetch all data sources in parallel
+    const [riskData, influenceData, behavioralData, experienceData] = await Promise.all([
+      fetchCIAData(DATA_SOURCES.riskSummary),
+      fetchCIAData(DATA_SOURCES.influenceMetrics),
+      fetchCIAData(DATA_SOURCES.behavioralTrends),
+      fetchCIAData(DATA_SOURCES.experienceLevels)
+    ]);
+
+    // Cache data
+    dataCache.riskSummary = riskData;
+    dataCache.influenceMetrics = influenceData;
+    dataCache.behavioralTrends = behavioralData;
+    dataCache.experienceLevels = experienceData;
+
+    // --- Top 10 Most Productive (by annual_vote_count) ---
+    const activeRiskData = riskData.filter(r => r.status === 'Tjänstgörande riksdagsledamot');
+    const top10Productive = [...activeRiskData]
+      .sort((a, b) => (parseInt(b.annual_vote_count) || 0) - (parseInt(a.annual_vote_count) || 0))
+      .slice(0, 10)
+      .map(r => ({
+        name: `${r.first_name} ${r.last_name}`,
+        party: r.party,
+        score: r.annual_vote_count || '0'
+      }));
+
+    // --- Top 10 Most Influential (by network_connections) ---
+    const top10Influential = [...influenceData]
+      .sort((a, b) => (parseInt(b.network_connections) || 0) - (parseInt(a.network_connections) || 0))
+      .slice(0, 10)
+      .map(r => ({
+        name: `${r.first_name} ${r.last_name}`,
+        party: r.party,
+        score: r.network_connections || '0'
+      }));
+
+    // --- Top 10 Rising Stars (lowest risk among active - new effective MPs) ---
+    const top10RisingStars = [...activeRiskData]
+      .filter(r => parseInt(r.annual_vote_count) > 0)
+      .sort((a, b) => {
+        // Best combination: low risk score + high vote count
+        const scoreA = (parseFloat(a.risk_score) || 50) - ((parseInt(a.annual_vote_count) || 0) / 100);
+        const scoreB = (parseFloat(b.risk_score) || 50) - ((parseInt(b.annual_vote_count) || 0) / 100);
+        return scoreA - scoreB;
+      })
+      .slice(0, 10)
+      .map(r => ({
+        name: `${r.first_name} ${r.last_name}`,
+        party: r.party,
+        score: r.risk_score || '0'
+      }));
+
+    // --- Top 10 Controversial (highest risk_score) ---
+    const top10Controversial = [...activeRiskData]
+      .sort((a, b) => (parseFloat(b.risk_score) || 0) - (parseFloat(a.risk_score) || 0))
+      .slice(0, 10)
+      .map(r => ({
+        name: `${r.first_name} ${r.last_name}`,
+        party: r.party,
+        score: r.risk_score || '0'
+      }));
+
+    // Render Top 10 lists with real data
+    renderTop10List('top10-productive-container', top10Productive, 'Votes');
+    renderTop10List('top10-influential-container', top10Influential, 'Connections');
+    renderTop10List('top10-rising-stars-container', top10RisingStars, 'Risk Score');
+    renderTop10List('top10-controversial-container', top10Controversial, 'Risk Score');
+
+    // Create charts with real data
+    createCareerTrajectoryChart(behavioralData);
+    createProductivityInfluenceChart(riskData, influenceData);
+    createExperienceDistributionChart(experienceData);
+
   } catch (error) {
     console.error('Error loading dashboard data:', error);
     showError('Failed to load dashboard data. Please try again later.');

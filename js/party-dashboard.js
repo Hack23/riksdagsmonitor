@@ -469,7 +469,7 @@
   }
 
   /**
-   * Fetch data from GitHub with caching
+   * Fetch data with local-first, remote-fallback strategy and caching
    */
   async function fetchData(filename) {
     const cacheKey = CONFIG.cachePrefix + filename;
@@ -485,9 +485,24 @@
       }
     }
 
-    // Fetch fresh data
+    // Try local file first
+    const localUrl = `cia-data/party/${filename}`;
+    try {
+      const localResponse = await fetch(localUrl);
+      if (localResponse.ok) {
+        const csvText = await localResponse.text();
+        if (csvText.trim().split('\n').length > 1) {
+          localStorage.setItem(cacheKey, csvText);
+          localStorage.setItem(cacheKey + '_timestamp', Date.now().toString());
+          return parseCSV(csvText);
+        }
+      }
+    } catch (localError) {
+      console.warn(`Local fetch failed for ${filename}, trying remote...`);
+    }
+
+    // Fetch from remote
     const url = `${CONFIG.githubRawBase}/${filename}`;
-    console.log(`Fetching fresh data from: ${url}`);
     
     try {
       const response = await fetch(url);
