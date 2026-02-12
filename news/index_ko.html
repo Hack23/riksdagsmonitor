@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>뉴스 - Riksdagsmonitor</title>
   <meta name="description" content="스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <meta name="keywords" content="의회 뉴스, 스웨덴 의회, 정부 분석, 정치 저널리즘, 투명성, 민주주의">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_ko.html">
   
@@ -458,5 +458,36 @@
     // Initial render
     filterArticles();
   </script>
+
+  <!-- Dynamic Content Loader -->
+  <script>
+    // Localization data
+    const i18n = {
+      noArticles: '사용 가능한 기사가 없습니다',
+      loading: '기사를 로드 중...',
+      articleCount: (n) => n === 1 ? '1개의 기사' : `${n} 모든 유형`
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = `<p class="no-articles">${i18n.noArticles}</p>`;
+      }
+    });
+  </script>
+
 </body>
 </html>

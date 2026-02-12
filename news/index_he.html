@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>חדשות - Riksdagsmonitor</title>
   <meta name="description" content="חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <meta name="keywords" content="חדשות הפרלמנט, הפרלמנט השוודי, ניתוח ממשלתי, עיתונות פוליטית, שקיפות, דמוקרטיה">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_he.html">
   
@@ -474,5 +474,36 @@
     // Initial render
     filterArticles();
   </script>
+
+  <!-- Dynamic Content Loader -->
+  <script>
+    // Localization data
+    const i18n = {
+      noArticles: 'אין מאמרים זמינים',
+      loading: 'טוען מאמרים...',
+      articleCount: (n) => n === 1 ? 'מאמר אחד' : `${n} כל הסוגים`
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = `<p class="no-articles">${i18n.noArticles}</p>`;
+      }
+    });
+  </script>
+
 </body>
 </html>

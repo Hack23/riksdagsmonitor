@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nyheder - Riksdagsmonitor</title>
   <meta name="description" content="Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <meta name="keywords" content="riksdag nyheder, svensk parlament, regeringsanalyse, politisk journalistik, gennemsigtighed, demokrati">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_da.html">
   
@@ -226,8 +226,8 @@
         <label for="filter-type">Type:</label>
         <select id="filter-type">
           <option value="all">Alle typer</option>
-          <option value="prospective">Fremadrettet</option>
-          <option value="retrospective">Tilbageblik</option>
+          <option value="prospective">Fremadskuende</option>
+          <option value="retrospective">Tilbageskuende</option>
           <option value="analysis">Analyse</option>
           <option value="breaking">Seneste nyt</option>
         </select>
@@ -458,5 +458,36 @@
     // Initial render
     filterArticles();
   </script>
+
+  <!-- Dynamic Content Loader -->
+  <script>
+    // Localization data
+    const i18n = {
+      noArticles: 'Ingen artikler tilgængelige',
+      loading: 'Indlæser artikler...',
+      articleCount: (n) => n === 1 ? '1 artikel' : `${n} alle typer`
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = `<p class="no-articles">${i18n.noArticles}</p>`;
+      }
+    });
+  </script>
+
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>أخبار - Riksdagsmonitor</title>
   <meta name="description" content="آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <meta name="keywords" content="أخبار البرلمان, البرلمان السويدي, تحليل حكومي, صحافة سياسية, شفافية, ديمقراطية">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_ar.html">
   
@@ -243,7 +243,7 @@
         <select id="filter-type">
           <option value="all">جميع الأنواع</option>
           <option value="prospective">استشرافي</option>
-          <option value="retrospective">استعادي</option>
+          <option value="retrospective">استرجاعي</option>
           <option value="analysis">تحليل</option>
           <option value="breaking">أخبار عاجلة</option>
         </select>
@@ -264,7 +264,7 @@
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">ترتيب:</label>
+        <label for="filter-sort">الترتيب:</label>
         <select id="filter-sort">
           <option value="date-desc">الأحدث أولاً</option>
           <option value="date-asc">الأقدم أولاً</option>
@@ -474,5 +474,36 @@
     // Initial render
     filterArticles();
   </script>
+
+  <!-- Dynamic Content Loader -->
+  <script>
+    // Localization data
+    const i18n = {
+      noArticles: 'لا توجد مقالات متاحة',
+      loading: 'جارٍ تحميل المقالات...',
+      articleCount: (n) => n === 1 ? 'مقال واحد' : `${n} جميع الأنواع`
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = `<p class="no-articles">${i18n.noArticles}</p>`;
+      }
+    });
+  </script>
+
 </body>
 </html>

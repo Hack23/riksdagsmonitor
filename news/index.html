@@ -221,11 +221,11 @@
       <div class="filter-group">
         <label for="filter-type">Type:</label>
         <select id="filter-type">
-          <option value="all">All Types</option>
+          <option value="all">All types</option>
           <option value="prospective">Prospective</option>
           <option value="retrospective">Retrospective</option>
           <option value="analysis">Analysis</option>
-          <option value="breaking">Breaking</option>
+          <option value="breaking">Breaking news</option>
         </select>
       </div>
       
@@ -454,5 +454,36 @@
     // Initial render
     filterArticles();
   </script>
+
+  <!-- Dynamic Content Loader -->
+  <script>
+    // Localization data
+    const i18n = {
+      noArticles: 'No articles available',
+      loading: 'Loading articles...',
+      articleCount: (n) => n === 1 ? '1 article' : `${n} all types`
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = `<p class="no-articles">${i18n.noArticles}</p>`;
+      }
+    });
+  </script>
+
 </body>
 </html>

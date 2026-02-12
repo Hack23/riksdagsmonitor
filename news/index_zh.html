@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>新闻 - Riksdagsmonitor</title>
   <meta name="description" content="来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <meta name="keywords" content="议会新闻, 瑞典议会, 政府分析, 政治新闻, 透明度, 民主">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_zh.html">
   
@@ -223,18 +223,18 @@
     <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">类型:</label>
+        <label for="filter-type">类型：</label>
         <select id="filter-type">
           <option value="all">所有类型</option>
-          <option value="prospective">前瞻</option>
-          <option value="retrospective">回顾</option>
+          <option value="prospective">前瞻性</option>
+          <option value="retrospective">回顾性</option>
           <option value="analysis">分析</option>
-          <option value="breaking">最新消息</option>
+          <option value="breaking">突发新闻</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">主题:</label>
+        <label for="filter-topic">主题：</label>
         <select id="filter-topic">
           <option value="all">所有主题</option>
           <option value="parliament">议会</option>
@@ -248,7 +248,7 @@
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">排序:</label>
+        <label for="filter-sort">排序：</label>
         <select id="filter-sort">
           <option value="date-desc">最新优先</option>
           <option value="date-asc">最旧优先</option>
@@ -458,5 +458,36 @@
     // Initial render
     filterArticles();
   </script>
+
+  <!-- Dynamic Content Loader -->
+  <script>
+    // Localization data
+    const i18n = {
+      noArticles: '没有可用文章',
+      loading: '正在加载文章...',
+      articleCount: (n) => n === 1 ? '1篇文章' : `${n} 所有类型`
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = `<p class="no-articles">${i18n.noArticles}</p>`;
+      }
+    });
+  </script>
+
 </body>
 </html>

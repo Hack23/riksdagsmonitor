@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ニュース - Riksdagsmonitor</title>
   <meta name="description" content="スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <meta name="keywords" content="国会ニュース, スウェーデン議会, 政府分析, 政治ジャーナリズム, 透明性, 民主主義">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index_ja.html">
   
@@ -223,18 +223,18 @@
     <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">タイプ:</label>
+        <label for="filter-type">種類：</label>
         <select id="filter-type">
-          <option value="all">すべてのタイプ</option>
-          <option value="prospective">予測</option>
-          <option value="retrospective">振り返り</option>
+          <option value="all">すべての種類</option>
+          <option value="prospective">将来展望</option>
+          <option value="retrospective">回顧</option>
           <option value="analysis">分析</option>
           <option value="breaking">速報</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">トピック:</label>
+        <label for="filter-topic">トピック：</label>
         <select id="filter-topic">
           <option value="all">すべてのトピック</option>
           <option value="parliament">議会</option>
@@ -248,7 +248,7 @@
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">並べ替え:</label>
+        <label for="filter-sort">並び替え：</label>
         <select id="filter-sort">
           <option value="date-desc">最新順</option>
           <option value="date-asc">古い順</option>
@@ -458,5 +458,36 @@
     // Initial render
     filterArticles();
   </script>
+
+  <!-- Dynamic Content Loader -->
+  <script>
+    // Localization data
+    const i18n = {
+      noArticles: '記事がありません',
+      loading: '記事を読み込み中...',
+      articleCount: (n) => n === 1 ? '1件の記事' : `${n} すべての種類`
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = `<p class="no-articles">${i18n.noArticles}</p>`;
+      }
+    });
+  </script>
+
 </body>
 </html>
