@@ -11,12 +11,15 @@ on:
     paths:
       - '.github/workflows/*.md'
   workflow_dispatch:
+env:
+  GITHUB_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
+  GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
 
 permissions:
   contents: write
   pull-requests: write
   actions: write
-
+ 
 jobs:
   compile:
     name: Compile Agentic Workflows
