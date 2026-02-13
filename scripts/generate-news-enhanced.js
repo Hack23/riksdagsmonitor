@@ -30,11 +30,14 @@ const __dirname = path.dirname(__filename);
 const args = process.argv.slice(2);
 const typesArg = args.find(arg => arg.startsWith('--types='));
 const languagesArg = args.find(arg => arg.startsWith('--languages='));
-const translateFromArg = args.find(arg => arg.startsWith('--translate-from='));
 const dryRunArg = args.includes('--dry-run');
+
+// Valid article types
+const VALID_ARTICLE_TYPES = ['week-ahead', 'committee-reports', 'propositions', 'motions', 'breaking'];
 
 const articleTypes = typesArg 
   ? typesArg.split('=')[1].split(',')
+  : ['week-ahead'];
   : ['week-ahead'];
 
 // Language preset expansion
@@ -52,16 +55,22 @@ if (LANGUAGE_PRESETS[languagesInput]) {
   languagesInput = LANGUAGE_PRESETS[languagesInput].join(',');
 }
 
-const languages = languagesInput.split(',');
+const languages = languagesInput.split(',').filter(l => ALL_LANGUAGES.includes(l.trim()));
 
-const translateFrom = translateFromArg
-  ? translateFromArg.split('=')[1]
-  : null;
+if (languages.length === 0) {
+  console.error('❌ No valid language codes provided. Valid codes:', ALL_LANGUAGES.join(', '));
+  process.exit(1);
+}
+
+// Validate article types
+const invalidTypes = articleTypes.filter(t => !VALID_ARTICLE_TYPES.includes(t.trim()));
+if (invalidTypes.length > 0) {
+  console.warn(`⚠️ Unknown article types ignored: ${invalidTypes.join(', ')}`);
+}
 
 console.log('📰 Enhanced News Generation Script');
 console.log('Article types:', articleTypes.join(', '));
 console.log('Languages:', languages.join(', '));
-console.log('Translate from:', translateFrom || 'none (generate original)');
 console.log('Dry run:', dryRunArg ? 'Yes (no files written)' : 'No');
 
 // Configuration
@@ -323,6 +332,10 @@ async function generateNews() {
       case 'motions':
         await generateMotions();
         break;
+      case 'breaking':
+        console.log('⚡ Breaking news generation requires manual trigger with specific event context');
+        console.log('  ⚠️ Full implementation pending');
+        break;
       default:
         console.warn(`⚠️ Unknown article type: ${type}`);
     }
@@ -334,7 +347,6 @@ async function generateNews() {
     timestamp: stats.timestamp,
     types: articleTypes,
     languages: languages,
-    translateFrom: translateFrom,
     generated: stats.generated,
     errors: stats.errors,
     articles: stats.articles,
@@ -370,4 +382,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     });
 }
 
-export { generateNews, generateWeekAhead, writeArticlePair };
+export { generateNews, generateWeekAhead, writeSingleArticle, VALID_ARTICLE_TYPES, ALL_LANGUAGES, LANGUAGE_PRESETS };

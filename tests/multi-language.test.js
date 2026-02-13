@@ -286,14 +286,15 @@ describe('Multi-Language Support', () => {
       expect(content).toContain("'en,sv'");
     });
 
-    it('should support legacy writeArticlePair function', () => {
+    it('should support writeSingleArticle and writeArticlePair functions', () => {
       const scriptPath = path.join(projectRoot, 'scripts', 'generate-news-enhanced.js');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       
-      // Check for function existence and export
+      // writeArticlePair exists as internal function (calls writeSingleArticle)
       expect(content).toContain('writeArticlePair');
       expect(content).toMatch(/function\s+writeArticlePair/);
-      expect(content).toMatch(/export\s*\{[^}]*writeArticlePair[^}]*\}/);
+      // writeSingleArticle is the public API export
+      expect(content).toMatch(/export\s*\{[^}]*writeSingleArticle[^}]*\}/);
     });
   });
 });

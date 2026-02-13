@@ -56,15 +56,43 @@ describe('Data Transformers', () => {
       
       expect(grid).toBeInstanceOf(Array);
       expect(grid[0]).toHaveProperty('dayName');
-      // Swedish day names
-      expect(['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'])
-        .toContain(grid[0].dayName);
+      // Swedish day names (Intl may return lowercase — compare case-insensitively)
+      const validSwedishDays = ['måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag', 'söndag'];
+      expect(validSwedishDays).toContain(grid[0].dayName.toLowerCase());
     });
 
     it('should handle empty events array', () => {
       const grid = transformCalendarToEventGrid([], 'en');
       expect(grid).toBeInstanceOf(Array);
       expect(grid.length).toBe(0);
+    });
+
+    it('should handle null/undefined events', () => {
+      expect(transformCalendarToEventGrid(null, 'en')).toEqual([]);
+      expect(transformCalendarToEventGrid(undefined, 'en')).toEqual([]);
+    });
+
+    it('should support all 14 languages via Intl formatting', () => {
+      const allLangs = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+      
+      allLangs.forEach(lang => {
+        const grid = transformCalendarToEventGrid(mockEvents, lang);
+        expect(grid).toBeInstanceOf(Array);
+        expect(grid.length).toBeGreaterThan(0);
+        // Day name should be a non-empty string for all languages
+        expect(grid[0].dayName).toBeTruthy();
+        expect(typeof grid[0].dayName).toBe('string');
+        expect(grid[0].dayName.length).toBeGreaterThan(0);
+      });
+    });
+
+    it('should handle events with different date field names', () => {
+      const eventsWithDatum = [
+        { titel: 'Event 1', datum: '2026-02-10T10:00:00' },
+        { rubrik: 'Event 2', from: '2026-02-11T14:00:00' }
+      ];
+      const grid = transformCalendarToEventGrid(eventsWithDatum, 'en');
+      expect(grid.length).toBe(2);
     });
 
     it('should group events by date', () => {
@@ -206,6 +234,44 @@ describe('Data Transformers', () => {
     it('should handle empty content', () => {
       const readTime = calculateReadTime('');
       expect(readTime).toBe('1 min read');
+    });
+
+    it('should handle content with only HTML tags', () => {
+      const readTime = calculateReadTime('<div><p></p></div>');
+      expect(readTime).toContain('min read');
+    });
+
+    it('should never return less than 1 minute', () => {
+      const readTime = calculateReadTime('<p>Hello</p>');
+      const minutes = parseInt(readTime);
+      expect(minutes).toBeGreaterThanOrEqual(1);
+    });
+  });
+
+  describe('generateArticleContent edge cases', () => {
+    it('should handle unknown article type gracefully', () => {
+      const content = generateArticleContent({ events: [] }, 'unknown-type', 'en');
+      expect(typeof content).toBe('string');
+      expect(content.length).toBeGreaterThan(0);
+    });
+
+    it('should handle committee-reports with empty reports array', () => {
+      const content = generateArticleContent({ reports: [] }, 'committee-reports', 'en');
+      expect(content).toContain('No committee reports');
+    });
+
+    it('should handle propositions with data', () => {
+      const content = generateArticleContent({ 
+        propositions: [{ titel: 'Test Prop', url: '#', dokumentnamn: 'Prop 2025/26:1' }] 
+      }, 'propositions', 'en');
+      expect(content).toContain('Test Prop');
+    });
+
+    it('should handle motions with data', () => {
+      const content = generateArticleContent({ 
+        motions: [{ titel: 'Test Motion', parti: 'S', url: '#', dokumentnamn: 'Mot 2025/26:1', intressent_namn: 'Test Person' }] 
+      }, 'motions', 'en');
+      expect(content).toContain('Test Motion');
     });
   });
 

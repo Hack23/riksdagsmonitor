@@ -202,16 +202,26 @@ jobs:
           # Preserve existing metadata fields (types, status, note) if file exists
           if [ -f "news/metadata/last-generation.json" ]; then
             # Update only timestamp/counters while preserving other fields
+            CURRENT_TIME="${{ steps.check-updates.outputs.current_time }}"
+            GENERATED="${{ steps.generate.outputs.generated || '0' }}"
+            ERRORS="${{ steps.generate.outputs.errors || '0' }}"
             jq \
-              --arg ts "${{ steps.check-updates.outputs.current_time }}" \
-              --argjson gen "${{ steps.generate.outputs.generated || 0 }}" \
-              --argjson err "${{ steps.generate.outputs.errors || 0 }}" \
+              --arg ts "$CURRENT_TIME" \
+              --argjson gen "${GENERATED}" \
+              --argjson err "${ERRORS}" \
               '.timestamp = $ts | .generated = $gen | .errors = $err' \
               news/metadata/last-generation.json > news/metadata/last-generation.tmp && \
               mv news/metadata/last-generation.tmp news/metadata/last-generation.json
           else
-            # Create new metadata file with basic fields
-            echo '{"timestamp": "${{ steps.check-updates.outputs.current_time }}", "generated": ${{ steps.generate.outputs.generated || 0 }}, "errors": ${{ steps.generate.outputs.errors || 0 }}}' > news/metadata/last-generation.json
+            # Create new metadata file using jq for safe JSON construction
+            CURRENT_TIME="${{ steps.check-updates.outputs.current_time }}"
+            GENERATED="${{ steps.generate.outputs.generated || '0' }}"
+            ERRORS="${{ steps.generate.outputs.errors || '0' }}"
+            jq -n \
+              --arg ts "$CURRENT_TIME" \
+              --argjson gen "${GENERATED}" \
+              --argjson err "${ERRORS}" \
+              '{timestamp: $ts, generated: $gen, errors: $err}' > news/metadata/last-generation.json
           fi
           
           echo "✅ Timestamp updated"
@@ -329,4 +339,3 @@ jobs:
             automated-news
             news-generation
             needs-editorial-review
-          assignees: news-journalist

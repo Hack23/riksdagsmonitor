@@ -160,4 +160,69 @@ describe('MCPClient', () => {
       expect(stats.successRate).toBe('67%'); // 2/3 = 66.67%
     });
   });
+
+  describe('tool name validation', () => {
+    it('should reject empty tool names', async () => {
+      await expect(client.request('', {})).rejects.toThrow('Invalid tool name');
+    });
+
+    it('should reject tool names with path traversal characters', async () => {
+      await expect(client.request('../admin', {})).rejects.toThrow('Invalid tool name');
+      await expect(client.request('tools/../../etc', {})).rejects.toThrow('Invalid tool name');
+    });
+
+    it('should reject tool names with special characters', async () => {
+      await expect(client.request('tool;rm -rf', {})).rejects.toThrow('Invalid tool name');
+      await expect(client.request('tool name with spaces', {})).rejects.toThrow('Invalid tool name');
+    });
+
+    it('should accept valid tool names', async () => {
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ result: 'success' })
+      }));
+
+      // Valid tool names should not throw validation errors
+      await expect(client.request('get_calendar_events', {})).resolves.toBeDefined();
+      await expect(client.request('search_dokument', {})).resolves.toBeDefined();
+      await expect(client.request('get-betankanden', {})).resolves.toBeDefined();
+    });
+  });
+
+  describe('error counting accuracy', () => {
+    it('should not over-count errors on retried requests', async () => {
+      let attempt = 0;
+      global.fetch = vi.fn(() => {
+        attempt++;
+        if (attempt < 3) {
+          return Promise.reject(new Error('Network error'));
+        }
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({ result: 'success' })
+        });
+      });
+
+      await client.request('test_tool', {});
+      
+      const stats = client.getStats();
+      // Request succeeded after retries — should count as 1 request, 0 errors
+      expect(stats.requests).toBe(1);
+      expect(stats.errors).toBe(0);
+    });
+
+    it('should count exactly one error for a fully failed request', async () => {
+      global.fetch = vi.fn(() => Promise.reject(new Error('Network error')));
+
+      try {
+        await client.request('test_tool', {});
+      } catch (e) {
+        // Expected
+      }
+
+      const stats = client.getStats();
+      expect(stats.requests).toBe(1);
+      expect(stats.errors).toBe(1);
+    });
+  });
 });

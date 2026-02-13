@@ -16,27 +16,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { escapeHtml } from './html-utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
 const NEWS_DIR = path.join(__dirname, '..', 'news');
-
-/**
- * Helper: Escape HTML special characters for safe inclusion in HTML/JSON-LD
- */
-function escapeHtml(text) {
-  if (!text) return '';
-  const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
-  return String(text).replace(/[&<>"']/g, m => map[m]);
-}
 
 const LANGUAGES = {
   en: { name: 'English', code: 'en', locale: 'en_US', title: 'News', subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.', breadcrumbs: { home: 'Home', news: 'News' } },
@@ -199,10 +185,10 @@ function scanNewsArticles() {
   
   console.log(`  Found ${files.length} article files`);
   
-  const articlesByLang = {
-    en: [],
-    sv: []
-  };
+  // Initialize buckets for all 14 supported languages
+  const articlesByLang = Object.fromEntries(
+    Object.keys(LANGUAGES).map(lang => [lang, []])
+  );
   
   files.forEach(file => {
     const filePath = path.join(NEWS_DIR, file);
@@ -218,8 +204,10 @@ function scanNewsArticles() {
     articlesByLang[lang].sort((a, b) => new Date(b.date) - new Date(a.date));
   });
   
-  console.log(`  📊 English articles: ${articlesByLang.en.length}`);
-  console.log(`  📊 Swedish articles: ${articlesByLang.sv.length}`);
+  const langCounts = Object.entries(articlesByLang)
+    .filter(([, arr]) => arr.length > 0)
+    .map(([lang, arr]) => `${lang.toUpperCase()} ${arr.length}`);
+  console.log(`  📊 Articles by language: ${langCounts.length > 0 ? langCounts.join(', ') : 'none found'}`);
   
   return articlesByLang;
 }
@@ -607,7 +595,8 @@ function generateAllIndexes() {
   console.log('\n✨ Generation complete!');
   console.log(`  ✅ Success: ${successCount} files`);
   console.log(`  ❌ Errors: ${errorCount} files`);
-  console.log(`  📊 Total articles: EN ${articlesByLang.en.length}, SV ${articlesByLang.sv.length}`);
+  const totalArticles = Object.values(articlesByLang).reduce((sum, arr) => sum + arr.length, 0);
+  console.log(`  📊 Total articles: ${totalArticles}`);
   console.log('\n💡 Note: Languages without articles display English content with language notice');
   
   return {

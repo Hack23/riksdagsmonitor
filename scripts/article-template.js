@@ -14,6 +14,8 @@
  * - Professional cyberpunk styling
  */
 
+import { escapeHtml } from './html-utils.js';
+
 /**
  * Breadcrumb translations for all supported languages
  */
@@ -749,20 +751,6 @@ function formatDateRange(events, lang = 'en') {
   const endDate = new Date(lastEvent.date).toLocaleDateString(lang === 'sv' ? 'sv-SE' : 'en-US', { month: 'long', day: 'numeric' });
   
   return `${startDate.split(' ')[1]} ${startDate.split(' ')[0]} - ${endDate}`;
-}
-
-/**
- * Helper: Escape HTML special characters
- */
-function escapeHtml(text) {
-  const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
-  return text.replace(/[&<>"']/g, m => map[m]);
 }
 
 export default {
