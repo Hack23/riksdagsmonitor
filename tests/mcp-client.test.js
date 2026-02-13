@@ -29,6 +29,7 @@ describe('MCPClient', () => {
 
   afterEach(() => {
     global.fetch = originalFetch;
+    vi.clearAllMocks();  // Clear mock data to prevent memory leaks
   });
 
   describe('constructor', () => {
@@ -791,6 +792,7 @@ describe('Module convenience exports', () => {
 
   afterEach(() => {
     global.fetch = originalFetch;
+    vi.clearAllMocks();  // Clear mock data to prevent memory leaks
   });
 
   it('should export getDefaultClient function', () => {
