@@ -9,7 +9,7 @@
  * - SEO optimization
  */
 
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -84,6 +84,9 @@ beforeAll(() => {
 });
 
 describe('News Index Localization - All 14 Languages', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   
   describe('File Existence', () => {
     Object.entries(LANGUAGES).forEach(([lang, fileName]) => {

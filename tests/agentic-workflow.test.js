@@ -5,7 +5,7 @@
  * Validates workflow specifications, engine configuration, and output safety.
  */
 
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -36,6 +36,10 @@ describe('Agentic Workflow Configuration', () => {
         frontmatter = yaml.load(frontmatterMatch[1]);
       }
     }
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
   });
 
   describe('Engine Configuration', () => {

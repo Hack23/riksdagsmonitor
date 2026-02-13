@@ -89,6 +89,10 @@ describe('Generate News Enhanced', () => {
     vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {});
   });
 
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
   describe('Module Constants', () => {
     it('should export VALID_ARTICLE_TYPES with all supported types', () => {
       if (!moduleExports) return;

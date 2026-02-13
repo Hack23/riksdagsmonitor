@@ -14,6 +14,10 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 describe('SEO & Structured Data', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+  
   // Sample article data for testing
   const sampleArticle = {
     slug: '2026-02-12-test-article-en.html',

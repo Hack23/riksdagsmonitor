@@ -10,7 +10,7 @@
  * Focus: Verify correct control mapping for public data journalism
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -19,6 +19,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 describe('ISMS Compliance - Data Classification', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   describe('Data Source Classification', () => {
     it('should classify all data sources as public', () => {
       // Riksdagsmonitor only processes public government data

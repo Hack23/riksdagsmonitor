@@ -5,7 +5,7 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 
 describe('Anomaly Detection Dashboard', () => {
   let container;
@@ -41,6 +41,11 @@ describe('Anomaly Detection Dashboard', () => {
     `;
     
     container = document.getElementById('anomaly-detection-dashboard');
+  });
+  
+  afterEach(() => {
+    vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
   
   describe('Configuration', () => {

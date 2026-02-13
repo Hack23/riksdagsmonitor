@@ -30,6 +30,7 @@ describe('Sitemap Generation', () => {
   });
 
   afterEach(() => {
+    vi.clearAllMocks();
     process.exit = originalExit;
     fs.writeFileSync = originalWriteFileSync;
   });

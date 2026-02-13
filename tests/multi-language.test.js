@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -8,6 +8,9 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 
 describe('Multi-Language Support', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   describe('Script Configuration', () => {
     it('should support --languages flag in generate-news-enhanced.js', () => {
       const scriptPath = path.join(projectRoot, 'scripts', 'generate-news-enhanced.js');

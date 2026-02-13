@@ -3,7 +3,7 @@
  * Tests data transformation functions
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import {
   transformCalendarToEventGrid,
   generateArticleContent,
@@ -15,6 +15,9 @@ import {
 } from '../scripts/data-transformers.js';
 
 describe('Data Transformers', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   const mockEvents = [
     {
       title: 'EU Committee Open Meeting',

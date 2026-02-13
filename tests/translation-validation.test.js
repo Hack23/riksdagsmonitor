@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -25,6 +25,10 @@ const LANGUAGES = [
 ];
 
 describe('Translation Validation', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+  
   describe('File Existence', () => {
     LANGUAGES.forEach(({ code, file, name }) => {
       it(`should have ${name} (${code}) index file: ${file}`, () => {
