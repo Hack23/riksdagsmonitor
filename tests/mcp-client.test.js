@@ -69,38 +69,70 @@ describe('MCPClient', () => {
   });
 
   describe('request', () => {
-    it('should make successful HTTP request', async () => {
-      const mockResponse = { result: 'success', data: [] };
+    it('should make successful HTTP request with JSON-RPC 2.0', async () => {
+      const mockJsonRpcResponse = { 
+        jsonrpc: '2.0',
+        id: 1,
+        result: { data: [], success: true }
+      };
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockResponse)
+        json: () => Promise.resolve(mockJsonRpcResponse)
       }));
 
       const result = await client.request('test_tool', { param: 'value' });
-      expect(result).toEqual(mockResponse);
+      expect(result).toEqual({ data: [], success: true });
       expect(global.fetch).toHaveBeenCalledTimes(1);
     });
 
-    it('should send correct HTTP method and headers', async () => {
+    it('should send correct JSON-RPC 2.0 request format', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: {} })
       }));
 
       await client.request('test_tool', { key: 'val' });
       
       const callArgs = global.fetch.mock.calls[0];
-      expect(callArgs[0]).toBe('https://riksdag-regering-ai.onrender.com/mcp/tools/test_tool');
+      // JSON-RPC posts to base URL, not /tools/{tool}
+      expect(callArgs[0]).toBe('https://riksdag-regering-ai.onrender.com/mcp');
       expect(callArgs[1].method).toBe('POST');
       expect(callArgs[1].headers['Content-Type']).toBe('application/json');
-      expect(JSON.parse(callArgs[1].body)).toEqual({ key: 'val' });
+      
+      const body = JSON.parse(callArgs[1].body);
+      expect(body.jsonrpc).toBe('2.0');
+      expect(body.id).toBeDefined();
+      expect(body.method).toBe('tools/call');
+      expect(body.params).toEqual({
+        name: 'riksdag-regering--test_tool',
+        arguments: { key: 'val' }
+      });
+    });
+
+    it('should handle JSON-RPC error responses', async () => {
+      const jsonRpcError = {
+        jsonrpc: '2.0',
+        id: 1,
+        error: {
+          code: -32601,
+          message: 'Method not found'
+        }
+      };
+      
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(jsonRpcError)
+      }));
+
+      await expect(client.request('unknown_tool', {})).rejects.toThrow('MCP tool error: Method not found');
     });
 
     it('should throw on non-ok HTTP response', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: false,
         status: 500,
-        statusText: 'Internal Server Error'
+        statusText: 'Internal Server Error',
+        text: () => Promise.resolve('Server error details')
       }));
 
       await expect(client.request('test_tool', {})).rejects.toThrow('MCP server error: 500 Internal Server Error');
@@ -110,7 +142,8 @@ describe('MCPClient', () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: false,
         status: 404,
-        statusText: 'Not Found'
+        statusText: 'Not Found',
+        text: () => Promise.resolve('')
       }));
 
       await expect(client.request('bad_tool', {})).rejects.toThrow('404 Not Found');
@@ -125,12 +158,12 @@ describe('MCPClient', () => {
         }
         return Promise.resolve({
           ok: true,
-          json: () => Promise.resolve({ result: 'success' })
+          json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { success: true } })
         });
       });
 
       const result = await client.request('test_tool', {});
-      expect(result).toEqual({ result: 'success' });
+      expect(result).toEqual({ success: true });
       expect(global.fetch).toHaveBeenCalledTimes(3);
     });
 
@@ -143,12 +176,12 @@ describe('MCPClient', () => {
         }
         return Promise.resolve({
           ok: true,
-          json: () => Promise.resolve({ result: 'ok' })
+          json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { ok: true } })
         });
       });
 
       const result = await client.request('test_tool', {});
-      expect(result).toEqual({ result: 'ok' });
+      expect(result).toEqual({ ok: true });
     });
 
     it('should fail after max retries', async () => {
@@ -162,7 +195,8 @@ describe('MCPClient', () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: false,
         status: 400,
-        statusText: 'Bad Request'
+        statusText: 'Bad Request',
+        text: () => Promise.resolve('')
       }));
 
       // Non-network errors (HTTP errors) are not retried — they throw immediately
@@ -173,7 +207,7 @@ describe('MCPClient', () => {
     it('should track statistics', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ result: 'success' })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { success: true } })
       }));
 
       const statsBefore = client.getStats();
@@ -189,12 +223,48 @@ describe('MCPClient', () => {
     it('should use default empty params when none provided', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ result: 'ok' })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { ok: true } })
       }));
 
       await client.request('test_tool');
       const callArgs = global.fetch.mock.calls[0];
-      expect(JSON.parse(callArgs[1].body)).toEqual({});
+      const body = JSON.parse(callArgs[1].body);
+      expect(body.params.arguments).toEqual({});
+    });
+
+    it('should try without prefix if tool not found with prefix', async () => {
+      let callCount = 0;
+      global.fetch = vi.fn(() => {
+        callCount++;
+        if (callCount === 1) {
+          // First call with prefix fails
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve({
+              jsonrpc: '2.0',
+              id: 1,
+              error: { code: -32601, message: 'Tool riksdag-regering--test_tool not found' }
+            })
+          });
+        }
+        // Second call without prefix succeeds
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({ jsonrpc: '2.0', id: 2, result: { success: true } })
+        });
+      });
+
+      const result = await client.request('test_tool', {});
+      expect(result).toEqual({ success: true });
+      expect(global.fetch).toHaveBeenCalledTimes(2);
+      
+      // First call should have prefix
+      const firstCall = JSON.parse(global.fetch.mock.calls[0][1].body);
+      expect(firstCall.params.name).toBe('riksdag-regering--test_tool');
+      
+      // Second call should not have prefix
+      const secondCall = JSON.parse(global.fetch.mock.calls[1][1].body);
+      expect(secondCall.params.name).toBe('test_tool');
     });
   });
 
@@ -216,7 +286,7 @@ describe('MCPClient', () => {
 
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ events: mockEvents })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { events: mockEvents } })
       }));
 
       const events = await client.fetchCalendarEvents('2026-02-10', '2026-02-17');
@@ -227,19 +297,19 @@ describe('MCPClient', () => {
     it('should pass optional org and akt parameters', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ events: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { events: [] } })
       }));
 
       await client.fetchCalendarEvents('2026-02-10', '2026-02-17', 'kammaren', 'debatt');
       const callArgs = global.fetch.mock.calls[0];
       const body = JSON.parse(callArgs[1].body);
-      expect(body).toEqual({ from: '2026-02-10', tom: '2026-02-17', org: 'kammaren', akt: 'debatt' });
+      expect(body.params.arguments).toEqual({ from: '2026-02-10', tom: '2026-02-17', org: 'kammaren', akt: 'debatt' });
     });
 
     it('should return empty array when response has no events key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const events = await client.fetchCalendarEvents('2026-02-10', '2026-02-17');
@@ -256,7 +326,7 @@ describe('MCPClient', () => {
 
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ reports: mockReports })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { reports: mockReports } })
       }));
 
       const reports = await client.fetchCommitteeReports(10);
@@ -266,18 +336,18 @@ describe('MCPClient', () => {
     it('should pass optional rm and organ parameters', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ reports: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { reports: [] } })
       }));
 
       await client.fetchCommitteeReports(5, '2025/26', 'UbU');
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body).toEqual({ limit: 5, rm: '2025/26', organ: 'UbU' });
+      expect(body.params.arguments).toEqual({ limit: 5, rm: '2025/26', organ: 'UbU' });
     });
 
     it('should return empty array when response has no reports key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const reports = await client.fetchCommitteeReports();
@@ -290,7 +360,7 @@ describe('MCPClient', () => {
       const mockProps = [{ title: 'Prop 1' }];
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ propositions: mockProps })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { propositions: mockProps } })
       }));
 
       const props = await client.fetchPropositions();
@@ -301,28 +371,29 @@ describe('MCPClient', () => {
     it('should pass optional rm parameter', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ propositions: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { propositions: [] } })
       }));
 
       await client.fetchPropositions(5, '2025/26');
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body).toEqual({ limit: 5, rm: '2025/26' });
+      expect(body.params.arguments).toEqual({ limit: 5, rm: '2025/26' });
     });
 
     it('should call correct tool name', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ propositions: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { propositions: [] } })
       }));
 
       await client.fetchPropositions();
-      expect(global.fetch.mock.calls[0][0]).toContain('/tools/get_propositioner');
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      expect(body.params.name).toBe('riksdag-regering--get_propositioner');
     });
 
     it('should return empty array when response has no propositions key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const props = await client.fetchPropositions();
@@ -335,7 +406,7 @@ describe('MCPClient', () => {
       const mockMotions = [{ title: 'Motion 1' }, { title: 'Motion 2' }];
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ motions: mockMotions })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { motions: mockMotions } })
       }));
 
       const motions = await client.fetchMotions();
@@ -345,28 +416,29 @@ describe('MCPClient', () => {
     it('should pass optional rm parameter', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ motions: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { motions: [] } })
       }));
 
       await client.fetchMotions(15, '2025/26');
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body).toEqual({ limit: 15, rm: '2025/26' });
+      expect(body.params.arguments).toEqual({ limit: 15, rm: '2025/26' });
     });
 
     it('should call correct tool name', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ motions: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { motions: [] } })
       }));
 
       await client.fetchMotions();
-      expect(global.fetch.mock.calls[0][0]).toContain('/tools/get_motioner');
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      expect(body.params.name).toBe('riksdag-regering--get_motioner');
     });
 
     it('should return empty array when response has no motions key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const motions = await client.fetchMotions();
@@ -379,7 +451,7 @@ describe('MCPClient', () => {
       const mockDocs = [{ id: '1', title: 'Doc 1' }];
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ documents: mockDocs })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { documents: mockDocs } })
       }));
 
       const docs = await client.searchDocuments({ sok: 'budget', doktyp: 'mot', limit: 5 });
@@ -390,17 +462,18 @@ describe('MCPClient', () => {
     it('should call correct tool name', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ documents: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { documents: [] } })
       }));
 
       await client.searchDocuments({ sok: 'test' });
-      expect(global.fetch.mock.calls[0][0]).toContain('/tools/search_dokument');
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      expect(body.params.name).toBe('riksdag-regering--search_dokument');
     });
 
     it('should return empty array when response has no documents key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const docs = await client.searchDocuments({ sok: 'test' });
@@ -413,7 +486,7 @@ describe('MCPClient', () => {
       const mockSpeeches = [{ speaker: 'MP1', text: 'Speech text' }];
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ speeches: mockSpeeches })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { speeches: mockSpeeches } })
       }));
 
       const speeches = await client.searchSpeeches({ sok: 'klimat', parti: 'S' });
@@ -424,17 +497,18 @@ describe('MCPClient', () => {
     it('should call correct tool name', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ speeches: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { speeches: [] } })
       }));
 
       await client.searchSpeeches({ sok: 'test' });
-      expect(global.fetch.mock.calls[0][0]).toContain('/tools/search_anforanden');
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      expect(body.params.name).toBe('riksdag-regering--search_anforanden');
     });
 
     it('should return empty array when response has no speeches key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const speeches = await client.searchSpeeches({ sok: 'test' });
@@ -447,7 +521,7 @@ describe('MCPClient', () => {
       const mockMPs = [{ name: 'MP1', parti: 'S' }, { name: 'MP2', parti: 'M' }];
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ mps: mockMPs })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { mps: mockMPs } })
       }));
 
       const mps = await client.fetchMPs({ parti: 'S' });
@@ -457,28 +531,29 @@ describe('MCPClient', () => {
     it('should call correct tool name', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ mps: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { mps: [] } })
       }));
 
       await client.fetchMPs();
-      expect(global.fetch.mock.calls[0][0]).toContain('/tools/search_ledamoter');
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      expect(body.params.name).toBe('riksdag-regering--search_ledamoter');
     });
 
     it('should pass empty object when no filters provided', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ mps: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { mps: [] } })
       }));
 
       await client.fetchMPs();
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body).toEqual({});
+      expect(body.params.arguments).toEqual({});
     });
 
     it('should return empty array when response has no mps key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const mps = await client.fetchMPs();
@@ -491,7 +566,7 @@ describe('MCPClient', () => {
       const mockVotes = [{ bet: '2025/26:UbU1', punkt: '1' }];
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ votes: mockVotes })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { votes: mockVotes } })
       }));
 
       const votes = await client.fetchVotingRecords({ rm: '2025/26', bet: '2025/26:UbU1' });
@@ -501,17 +576,18 @@ describe('MCPClient', () => {
     it('should call correct tool name', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ votes: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { votes: [] } })
       }));
 
       await client.fetchVotingRecords({ rm: '2025/26' });
-      expect(global.fetch.mock.calls[0][0]).toContain('/tools/search_voteringar');
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      expect(body.params.name).toBe('riksdag-regering--search_voteringar');
     });
 
     it('should return empty array when response has no votes key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const votes = await client.fetchVotingRecords({ rm: '2025/26' });
@@ -524,7 +600,7 @@ describe('MCPClient', () => {
       const mockDocs = [{ type: 'SOU', title: 'Betänkande' }];
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ documents: mockDocs })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { documents: mockDocs } })
       }));
 
       const docs = await client.fetchGovernmentDocuments({ type: 'SOU', limit: 10 });
@@ -535,17 +611,18 @@ describe('MCPClient', () => {
     it('should call correct tool name', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ documents: [] })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { documents: [] } })
       }));
 
       await client.fetchGovernmentDocuments({ type: 'press' });
-      expect(global.fetch.mock.calls[0][0]).toContain('/tools/search_regering');
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      expect(body.params.name).toBe('riksdag-regering--search_regering');
     });
 
     it('should return empty array when response has no documents key', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       const docs = await client.fetchGovernmentDocuments({});
@@ -570,7 +647,7 @@ describe('MCPClient', () => {
       // 2 successful requests
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ result: 'success' })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { status: 'success' } })
       }));
       await client.request('test1', {});
       await client.request('test2', {});
@@ -592,7 +669,7 @@ describe('MCPClient', () => {
     it('should show 100% success rate when all requests succeed', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       await client.request('t1', {});
@@ -607,7 +684,7 @@ describe('MCPClient', () => {
     it('should reset request and error counts to zero', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({ jsonrpc: "2.0", id: 1, result: {} })
       }));
 
       await client.request('test', {});
@@ -657,7 +734,7 @@ describe('MCPClient', () => {
     it('should accept valid tool names', async () => {
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ result: 'success' })
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { status: 'success' } })
       }));
 
       // Valid tool names should not throw validation errors
@@ -677,7 +754,7 @@ describe('MCPClient', () => {
         }
         return Promise.resolve({
           ok: true,
-          json: () => Promise.resolve({ result: 'success' })
+          json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { status: 'success' } })
         });
       });
 
@@ -767,7 +844,7 @@ describe('Module convenience exports', () => {
   it('convenience searchDocuments should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ documents: [] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { documents: [] } })
     }));
 
     const docs = await searchDocuments({ sok: 'budget' });
@@ -797,7 +874,7 @@ describe('Module convenience exports', () => {
   it('convenience searchSpeeches should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ speeches: [] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { speeches: [] } })
     }));
 
     const speeches = await searchSpeeches({ sok: 'test' });
