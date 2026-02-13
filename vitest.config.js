@@ -106,13 +106,11 @@ export default defineConfig({
     // Watch mode settings
     watch: false,
     
-    // Pool options for parallel execution
-    pool: 'threads',
-    poolOptions: {
-      threads: {
-        singleThread: false
-      }
-    },
+    // Pool options for parallel execution (Vitest 4+)
+    // Use VM threads for better memory control
+    pool: 'vmThreads',
+    // Single VM thread to reduce memory pressure
+    singleThread: true,
     
     // Mock configuration
     mockReset: true,

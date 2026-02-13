@@ -5,7 +5,7 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 describe('Back to Top Button', () => {
   let button;
@@ -19,6 +19,11 @@ describe('Back to Top Button', () => {
     `;
     
     button = document.getElementById('back-to-top');
+  });
+  
+  afterEach(() => {
+    vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
   
   it('should exist in DOM', () => {

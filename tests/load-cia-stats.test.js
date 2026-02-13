@@ -1,8 +1,11 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
 describe('Load CIA Stats Script', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   describe('Script Configuration', () => {
     it('should have load-cia-stats.js script', () => {
       const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
