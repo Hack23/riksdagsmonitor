@@ -12,6 +12,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 describe('Election 2026 Predictions', () => {
   afterEach(() => {
     vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
 
   describe('Seat Predictions Rendering', () => {

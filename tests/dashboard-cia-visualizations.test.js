@@ -28,6 +28,7 @@ describe('CIA Dashboard Renderer', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    document.body.innerHTML = '';
     delete global.Chart;
   });
 

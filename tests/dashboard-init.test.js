@@ -59,6 +59,7 @@ describe('Dashboard Initialization', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
 
   describe('Loading State Management', () => {

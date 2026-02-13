@@ -58,6 +58,7 @@ describe('Seasonal Patterns Dashboard', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
 
   describe('DOM Structure', () => {

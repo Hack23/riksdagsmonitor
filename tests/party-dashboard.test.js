@@ -39,6 +39,7 @@ describe('Party Performance Dashboard', () => {
   
   afterEach(() => {
     vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
   
   describe('DOM Structure', () => {

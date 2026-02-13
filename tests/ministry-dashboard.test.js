@@ -48,6 +48,7 @@ describe('Ministry Dashboard', () => {
     // Restore original fetch mock
     global.fetch = originalFetch;
     vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
 
   describe('DOM Structure', () => {
