@@ -273,6 +273,48 @@ describe('Data Transformers', () => {
       }, 'motions', 'en');
       expect(content).toContain('Test Motion');
     });
+
+    it('should include highlights section when highlights are provided', () => {
+      const content = generateArticleContent(
+        { 
+          events: mockEvents, 
+          highlights: [
+            { title: 'Budget Vote', description: 'Critical budget debate expected' },
+            { title: 'EU Summit', description: 'Key EU decisions ahead' }
+          ] 
+        },
+        'week-ahead',
+        'en'
+      );
+      expect(content).toContain('What to Watch');
+      expect(content).toContain('Budget Vote');
+      expect(content).toContain('Critical budget debate expected');
+      expect(content).toContain('EU Summit');
+    });
+
+    it('should include Swedish highlights section', () => {
+      const content = generateArticleContent(
+        { 
+          events: mockEvents, 
+          highlights: [
+            { title: 'Budgetomröstning', description: 'Viktig budgetdebatt förväntas' }
+          ] 
+        },
+        'week-ahead',
+        'sv'
+      );
+      expect(content).toContain('Vad man ska följa');
+      expect(content).toContain('Budgetomröstning');
+    });
+
+    it('should handle events with no date field', () => {
+      const content = generateArticleContent(
+        { events: [{ title: 'No date event' }], highlights: [] },
+        'week-ahead',
+        'en'
+      );
+      expect(typeof content).toBe('string');
+    });
   });
 
   describe('generateSources', () => {
@@ -296,6 +338,20 @@ describe('Data Transformers', () => {
       const sources = generateSources(tools);
       
       expect(sources.some(s => s.includes('Calendar') || s.includes('Riksdagen'))).toBe(true);
+    });
+
+    it('should include sources for all MCP tool types', () => {
+      const sources = generateSources([
+        'get_calendar_events', 'get_betankanden', 'get_propositioner',
+        'get_motioner', 'search_dokument'
+      ]);
+      
+      expect(sources).toContain('riksdag-regering-mcp');
+      expect(sources).toContain('Riksdagen Calendar');
+      expect(sources).toContain('Committee Reports');
+      expect(sources).toContain('Government Propositions');
+      expect(sources).toContain('Parliamentary Motions');
+      expect(sources).toContain('Riksdagen Documents');
     });
   });
 });
