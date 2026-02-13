@@ -287,6 +287,7 @@
   
   <script>
     // Dynamic articles array - generated from news/ directory
+    const currentLang = 'sv';
     const articles = [
   {
     "title": "Veckan som kommer: Utrikespolitisk debatt och finanspolitisk granskning när riksdagen återsamlas",
@@ -302,7 +303,14 @@
       "Finanspolitiska rådet",
       "Statsministerns frågestund",
       "Riksdag"
-    ]
+    ],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Riksdagen i våruppehåll: En halvtidsbedömning av Tidöregeringens lagstiftningsarbete",
@@ -319,7 +327,26 @@
       "Coalition Government",
       "Legislative Analysis",
       "Tidö Agreement"
-    ]
+    ],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "ar",
+      "he",
+      "ja",
+      "ko",
+      "zh"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Tio utskottsbetänkanden denna vecka: Riksdagens prioriteringar för våren 2026",
@@ -328,7 +355,14 @@
     "slug": "2026-02-committee-reports-sv.html",
     "excerpt": "Analys av parlamentarisk aktivitet 5-6 februari 2026",
     "topics": [],
-    "tags": []
+    "tags": [],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Riksdagens februarioffensiv: Säkerhet och ekonomi inför höstens val",
@@ -337,7 +371,14 @@
     "slug": "2026-02-parliament-agenda-sv.html",
     "excerpt": "Åtta stora propositioner första veckan, säkerhetsförvaring möter opposition, och koalitionen rustar för valrörelsen.",
     "topics": [],
-    "tags": []
+    "tags": [],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Regeringen presenterar biologisk mångfald och strängare medborgarskapsregler",
@@ -352,7 +393,14 @@
       "Biologisk mångfald",
       "Medborgarskap",
       "Miljö"
-    ]
+    ],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Statsministern möter riksdagen inför Brysseltoppmöte",
@@ -367,7 +415,14 @@
       "EU",
       "Statsminister",
       "Ekonomisk brottslighet"
-    ]
+    ],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Veckan som kommer: Brysseltoppmöte testar svensk EU-strategi",
@@ -383,7 +438,14 @@
       "EU-toppmöte",
       "Riksdag",
       "Prospektiv bevakning"
-    ]
+    ],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Regeringens propositioner februari 2026 | Riksdagsmonitor",
@@ -396,7 +458,14 @@
     ],
     "tags": [
       "Riksdag"
-    ]
+    ],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Färska oppositionsmotioner - Vårens stridslinjer framträder",
@@ -411,7 +480,14 @@
       "Riksdagen",
       "Opposition",
       "Motioner"
-    ]
+    ],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Kritisk Vecka för Sverige i EU: Försvarsråd och Statsministerns Toppmöte",
@@ -428,7 +504,14 @@
       "Defense",
       "Accountability",
       "Ukraine"
-    ]
+    ],
+    "articleLang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   }
 ];
     
@@ -447,15 +530,24 @@
       noResults.style.display = 'none';
       
       grid.innerHTML = articlesToRender.map(article => `
-        <article class="article-card">
+        <article class="article-card" data-article-lang="${article.articleLang}">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${localizeType(article.type)}</span>
+            ${article.isFallback ? `<span class="language-badge" data-lang="${article.articleLang}">${article.articleLang.toUpperCase()}</span>` : ''}
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
           </h2>
           <p class="article-excerpt">${article.excerpt}</p>
+          ${article.availableLanguages && article.availableLanguages.length > 1 ? `
+            <div class="article-translations">
+              Available in: ${article.availableLanguages.map(lang => {
+                const slug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh).html$/, `-${lang}.html`);
+                return `<a href="${slug}" class="translation-link" data-lang="${lang}">${lang.toUpperCase()}</a>`;
+              }).join(', ')}
+            </div>
+          ` : ''}
           <div class="article-tags">
             ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
           </div>

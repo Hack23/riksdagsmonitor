@@ -287,6 +287,7 @@
   
   <script>
     // Dynamic articles array - generated from news/ directory
+    const currentLang = 'en';
     const articles = [
   {
     "title": "Week Ahead: Foreign Policy Debate and Fiscal Reckoning as Riksdag Reconvenes",
@@ -302,7 +303,14 @@
       "Fiscal Policy Council",
       "PM Question Time",
       "Parliament"
-    ]
+    ],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Sweden’s Riksdag Enters Spring Recess: A Mid-Session Assessment of the Tidö Government’s Legislative Record",
@@ -319,7 +327,26 @@
       "Coalition Government",
       "Legislative Analysis",
       "Tidö Agreement"
-    ]
+    ],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "ar",
+      "he",
+      "ja",
+      "ko",
+      "zh"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Ten Committee Reports This Week: Parliament",
@@ -328,7 +355,14 @@
     "slug": "2026-02-committee-reports-en.html",
     "excerpt": "Analysis of parliamentary activity February 5-6, 2026",
     "topics": [],
-    "tags": []
+    "tags": [],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Sweden",
@@ -337,7 +371,14 @@
     "slug": "2026-02-parliament-agenda-en.html",
     "excerpt": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
     "topics": [],
-    "tags": []
+    "tags": [],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Government Announces Biodiversity Strategy and Stricter Citizenship Rules",
@@ -352,7 +393,14 @@
       "Biodiversity",
       "Citizenship",
       "Environment"
-    ]
+    ],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Prime Minister Faces Parliament Before Brussels Summit",
@@ -368,7 +416,14 @@
       "Prime Minister",
       "Economic Crime",
       "Citizenship"
-    ]
+    ],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Week Ahead: Brussels Summit Tests Swedish EU Strategy",
@@ -384,7 +439,14 @@
       "EU Summit",
       "Parliament",
       "Prospective Coverage"
-    ]
+    ],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Government Propositions February 2026 | Riksdagsmonitor",
@@ -397,7 +459,14 @@
     ],
     "tags": [
       "Riksdag"
-    ]
+    ],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Fresh Opposition Motions - Spring 2026 Battle Lines Emerge",
@@ -412,7 +481,14 @@
       "Riksdag",
       "Opposition",
       "Motions"
-    ]
+    ],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   },
   {
     "title": "Critical Week for Sweden in EU: Defense Council and Prime Minister",
@@ -429,7 +505,14 @@
       "Defense",
       "Accountability",
       "Ukraine"
-    ]
+    ],
+    "articleLang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "isNative": true,
+    "isFallback": false
   }
 ];
     
@@ -448,15 +531,24 @@
       noResults.style.display = 'none';
       
       grid.innerHTML = articlesToRender.map(article => `
-        <article class="article-card">
+        <article class="article-card" data-article-lang="${article.articleLang}">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${localizeType(article.type)}</span>
+            ${article.isFallback ? `<span class="language-badge" data-lang="${article.articleLang}">${article.articleLang.toUpperCase()}</span>` : ''}
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
           </h2>
           <p class="article-excerpt">${article.excerpt}</p>
+          ${article.availableLanguages && article.availableLanguages.length > 1 ? `
+            <div class="article-translations">
+              Available in: ${article.availableLanguages.map(lang => {
+                const slug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh).html$/, `-${lang}.html`);
+                return `<a href="${slug}" class="translation-link" data-lang="${lang}">${lang.toUpperCase()}</a>`;
+              }).join(', ')}
+            </div>
+          ` : ''}
           <div class="article-tags">
             ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
           </div>

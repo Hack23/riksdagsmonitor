@@ -8686,6 +8686,73 @@ body.news-page {
   color: var(--primary-magenta, #ff006e);
 }
 
+/* Language badge in article card (for fallback articles) */
+.news-page .article-meta .language-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: var(--primary-yellow, #ffbe0b);
+  color: var(--dark-bg, #0a0e27);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: auto;
+}
+
+/* Fallback article indicator */
+.news-page .article-card[data-article-lang]:not([data-article-lang="en"]):not([data-article-lang="sv"]),
+.news-page .article-card[data-article-lang="en"]:not(.news-page[lang="en"] .article-card),
+.news-page .article-card[data-article-lang="sv"]:not(.news-page[lang="sv"] .article-card) {
+  /* Only apply fallback styling if article language doesn't match page language */
+}
+
+.news-page .article-card[data-article-lang] .language-badge {
+  /* Highlight fallback articles with yellow badge */
+  border: 1px solid rgba(255, 190, 11, 0.5);
+}
+
+/* Article translations section */
+.news-page .article-translations {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: rgba(0, 217, 255, 0.05);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.news-page .article-translations .translation-link {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 3px;
+  color: var(--primary-cyan, #00d9ff);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.news-page .article-translations .translation-link:hover {
+  background: rgba(0, 217, 255, 0.2);
+  border-color: var(--primary-cyan, #00d9ff);
+  transform: translateY(-1px);
+}
+
+.news-page .article-translations .translation-link[data-lang="ar"],
+.news-page .article-translations .translation-link[data-lang="he"] {
+  /* RTL languages get special indicator */
+  font-style: italic;
+}
+
 /* News page responsive */
 @media (max-width: 768px) {
   .news-page .articles-grid {

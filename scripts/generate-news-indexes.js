@@ -409,6 +409,73 @@ function scanNewsArticles() {
 }
 
 /**
+ * Aggregate articles with cross-language support and prioritization
+ * Returns all articles with proper sorting: native > translations > EN/SV fallback
+ */
+function aggregateArticlesForLanguage(langKey, nativeArticles, allArticlesByLang) {
+  // Get all articles from all languages
+  const allArticles = [];
+  const articlesBySlug = new Map();
+  
+  // First, collect all articles and group by base slug (without language suffix)
+  Object.entries(allArticlesByLang).forEach(([lang, articles]) => {
+    articles.forEach(article => {
+      // Extract base slug (e.g., "2026-02-14-article-en.html" -> "2026-02-14-article")
+      const baseSlug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '');
+      
+      if (!articlesBySlug.has(baseSlug)) {
+        articlesBySlug.set(baseSlug, {
+          baseSlug,
+          articles: [],
+          languages: []
+        });
+      }
+      
+      const group = articlesBySlug.get(baseSlug);
+      group.articles.push({ ...article, articleLang: lang });
+      group.languages.push(lang);
+    });
+  });
+  
+  // Now prioritize: native > translations > EN/SV fallback
+  const prioritizedArticles = [];
+  
+  articlesBySlug.forEach((group) => {
+    // Check if native language version exists
+    const nativeVersion = group.articles.find(a => a.articleLang === langKey);
+    
+    if (nativeVersion) {
+      // Use native version
+      prioritizedArticles.push({
+        ...nativeVersion,
+        availableLanguages: group.languages,
+        isNative: true,
+        isFallback: false
+      });
+    } else {
+      // Use EN or SV as fallback (prefer EN)
+      const fallbackVersion = group.articles.find(a => a.articleLang === 'en') || 
+                             group.articles.find(a => a.articleLang === 'sv') ||
+                             group.articles[0];
+      
+      if (fallbackVersion) {
+        prioritizedArticles.push({
+          ...fallbackVersion,
+          availableLanguages: group.languages,
+          isNative: false,
+          isFallback: true
+        });
+      }
+    }
+  });
+  
+  // Sort by date descending (newest first)
+  prioritizedArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  return prioritizedArticles;
+}
+
+/**
  * Generate index HTML for a specific language
  */
 function generateIndexHTML(langKey, articles, allArticlesByLang) {
@@ -417,9 +484,9 @@ function generateIndexHTML(langKey, articles, allArticlesByLang) {
   const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
   const mainIndex = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
   
-  // For languages without articles, use English articles with language notice
-  const displayArticles = articles.length > 0 ? articles : allArticlesByLang.en;
-  const needsLanguageNotice = articles.length === 0 && langKey !== 'en';
+  // NEW: Aggregate all articles with cross-language support
+  const displayArticles = aggregateArticlesForLanguage(langKey, articles, allArticlesByLang);
+  const needsLanguageNotice = false; // No longer needed as we show all articles
   
   const escapedSubtitle = escapeHtml(lang.subtitle);
 
@@ -590,6 +657,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
   
   <script>
     // Dynamic articles array - generated from news/ directory
+    const currentLang = '${langKey}';
     const articles = ${JSON.stringify(displayArticles.map(a => ({
       title: a.title,
       date: a.date,
@@ -597,7 +665,11 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       slug: a.slug,
       excerpt: a.description.substring(0, 200),
       topics: a.topics,
-      tags: a.tags
+      tags: a.tags,
+      articleLang: a.articleLang,
+      availableLanguages: a.availableLanguages || [],
+      isNative: a.isNative,
+      isFallback: a.isFallback
     })), null, 2)};
     
     let filteredArticles = [...articles];
@@ -615,15 +687,24 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       noResults.style.display = 'none';
       
       grid.innerHTML = articlesToRender.map(article => \`
-        <article class="article-card">
+        <article class="article-card" data-article-lang="\${article.articleLang}">
           <div class="article-meta">
             <time class="article-date" datetime="\${article.date}">\${formatDate(article.date)}</time>
             <span class="article-type">\${localizeType(article.type)}</span>
+            \${article.isFallback ? \`<span class="language-badge" data-lang="\${article.articleLang}">\${article.articleLang.toUpperCase()}</span>\` : ''}
           </div>
           <h2 class="article-title">
             <a href="\${article.slug}">\${article.title}</a>
           </h2>
           <p class="article-excerpt">\${article.excerpt}</p>
+          \${article.availableLanguages && article.availableLanguages.length > 1 ? \`
+            <div class="article-translations">
+              Available in: \${article.availableLanguages.map(lang => {
+                const slug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, \`-\${lang}.html\`);
+                return \`<a href="\${slug}" class="translation-link" data-lang="\${lang}">\${lang.toUpperCase()}</a>\`;
+              }).join(', ')}
+            </div>
+          \` : ''}
           <div class="article-tags">
             \${article.tags.map(tag => \`<span class="tag">\${tag}</span>\`).join('')}
           </div>
