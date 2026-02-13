@@ -108,7 +108,7 @@ export default defineConfig({
     
     // Pool options for parallel execution (Vitest 4+)
     pool: 'threads',
-    singleThread: false,
+    singleThread: true, // Single thread to reduce memory pressure
     
     // Mock configuration
     mockReset: true,

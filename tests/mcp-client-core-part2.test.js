@@ -365,6 +365,9 @@ describe('MCPClient Part 2', () => {
 
   describe('error counting accuracy', () => {
     it('should not over-count errors on retried requests', async () => {
+      // Mock sleep to make test fast (prevent 3000ms delay causing OOM)
+      vi.spyOn(client, 'sleep').mockResolvedValue();
+      
       let attempt = 0;
       global.fetch = vi.fn(() => {
         attempt++;
@@ -386,6 +389,9 @@ describe('MCPClient Part 2', () => {
     });
 
     it('should count exactly one error for a fully failed request', async () => {
+      // Mock sleep to make test fast (prevent 3000ms delay causing OOM)
+      vi.spyOn(client, 'sleep').mockResolvedValue();
+      
       global.fetch = vi.fn(() => Promise.reject(new Error('Network error')));
 
       try {
