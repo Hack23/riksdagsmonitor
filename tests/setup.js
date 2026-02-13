@@ -76,6 +76,9 @@ global.d3 = {
   min: vi.fn((arr, fn) => Math.min(...arr.map(fn || (x => x))))
 };
 
+// Preserve native fetch before mocking (for integration tests)
+global.__nativeFetch = global.fetch;
+
 // Mock fetch globally
 global.fetch = vi.fn((url) => {
   return Promise.resolve({

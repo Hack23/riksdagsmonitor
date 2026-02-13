@@ -245,7 +245,7 @@ await client.fetchMotions(limit, rm);
 {
   "test:integration": "vitest run tests/integration --reporter=verbose",
   "test:integration:skip": "SKIP_INTEGRATION_TESTS=true vitest run tests/integration",
-  "test:all": "npm run test && npm run test:integration:skip"
+  "test:all": "npm run test && npm run test:integration"
 }
 ```
 

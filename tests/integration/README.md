@@ -133,9 +133,7 @@ Integration tests can be optionally run in CI/CD:
 
 ```javascript
 describe('newMethod', () => {
-  it('should perform expected behavior', async () => {
-    if (!serverAvailable) return; // Skip if server unavailable
-
+  it.skipIf(!serverAvailable)('should perform expected behavior', async () => {
     const result = await client.newMethod(params);
     
     expect(result).toBeDefined();

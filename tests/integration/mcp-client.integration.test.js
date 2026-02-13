@@ -31,16 +31,16 @@ describeIntegration('MCP Client Integration Tests', () => {
     console.log('\n🔍 Testing MCP server availability...');
     console.log(`📡 Server URL: ${MCP_SERVER_URL}`);
     
-    // Restore real fetch for integration tests (setup.js globally mocks it)
-    // Use native fetch (available in Node.js 18+)
+    // Restore real fetch for integration tests
+    // setup.js preserves native fetch in global.__nativeFetch before mocking
     originalFetch = global.fetch;
     
-    // Try to restore real fetch - Node.js 18+ has native fetch
-    if (typeof globalThis.fetch === 'function' && globalThis.fetch !== global.fetch) {
-      global.fetch = globalThis.fetch;
-      console.log('✓ Restored native fetch');
+    if (typeof global.__nativeFetch === 'function') {
+      global.fetch = global.__nativeFetch;
+      console.log('✓ Restored native fetch from setup.js');
     } else {
-      console.warn('⚠️ Could not restore real fetch, using mock (tests may not hit actual server)');
+      console.warn('⚠️ Native fetch not preserved - integration tests will use mock');
+      console.warn('⚠️ Update tests/setup.js to preserve: global.__nativeFetch = global.fetch');
     }
     
     client = new MCPClient({ baseURL: MCP_SERVER_URL, timeout: 30000 });
