@@ -49,10 +49,35 @@ export default defineConfig({
         'coverage/**',
         'tests/**',
         '*.config.js',
+        // Vendored third-party libraries (no point testing)
+        'js/lib/**',
+        // Browser-only IIFE scripts (tested via DOM structural tests, not importable)
+        'js/anomaly-detection-dashboard.js',
+        'js/election-cycle-dashboard.js',
+        'js/ministry-dashboard.js',
+        'js/party-dashboard.js',
+        'js/politician-dashboard.js',
+        'js/pre-election-dashboard.js',
+        'js/seasonal-patterns-dashboard.js',
+        'js/stats-loader.js',
+        // Browser-only scripts loaded via <script> in HTML
+        'scripts/coalition-dashboard.js',
+        'scripts/committees-dashboard.js',
+        'scripts/back-to-top.js',
+        // CLI-only scripts not importable in test environment
         'scripts/sync-cia-schemas.js',
         'scripts/check-cia-schema-updates.js',
         'scripts/generate-types-from-cia-schemas.js',
-        'scripts/add-dashboard-to-all-languages.js'
+        'scripts/generate-news-backport.js',
+        'scripts/load-cia-stats.js',
+        'scripts/update-stats-from-cia.js',
+        'scripts/validate-against-cia-schemas.js',
+        // CLI validation script (not importable, uses process.exit)
+        'scripts/validate-translations.js',
+        // Dashboard modules (tested via structural DOM tests)
+        'dashboard/cia-visualizations.js',
+        'dashboard/dashboard-init.js',
+        'dashboard/election-predictions.js'
       ]
     },
     

@@ -534,4 +534,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     });
 }
 
-export { generateNews, generateWeekAhead, writeSingleArticle, VALID_ARTICLE_TYPES, ALL_LANGUAGES, LANGUAGE_PRESETS };
+export { generateNews, generateWeekAhead, generateCommitteeReports, generatePropositions, generateMotions, writeSingleArticle, writeArticlePair, VALID_ARTICLE_TYPES, ALL_LANGUAGES, LANGUAGE_PRESETS, formatDateForSlug, getWeekAheadDateRange };
