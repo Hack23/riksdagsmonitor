@@ -61,7 +61,7 @@ describe('Module convenience exports', () => {
   it('convenience fetchCalendarEvents should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ events: [{ title: 'E1' }] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { events: [{ title: 'E1' }] } })
     }));
 
     const events = await fetchCalendarEvents('2026-01-01', '2026-01-07');
@@ -72,7 +72,7 @@ describe('Module convenience exports', () => {
   it('convenience fetchPropositions should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ propositions: [{ title: 'P1' }] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { propositions: [{ title: 'P1' }] } })
     }));
 
     const props = await fetchPropositions(5);
@@ -92,7 +92,7 @@ describe('Module convenience exports', () => {
   it('convenience fetchMPs should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ mps: [{ name: 'A' }] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { mps: [{ name: 'A' }] } })
     }));
 
     const mps = await fetchMPs({ parti: 'S' });
@@ -102,7 +102,7 @@ describe('Module convenience exports', () => {
   it('convenience fetchMotions should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ motions: [{ title: 'M1' }] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { motions: [{ title: 'M1' }] } })
     }));
 
     const motions = await fetchMotions(5);
@@ -122,7 +122,7 @@ describe('Module convenience exports', () => {
   it('convenience fetchVotingRecords should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ votes: [{ id: 'v1' }] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { votes: [{ id: 'v1' }] } })
     }));
 
     const votes = await fetchVotingRecords({ rm: '2025/26' });
@@ -132,7 +132,7 @@ describe('Module convenience exports', () => {
   it('convenience fetchGovernmentDocuments should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ documents: [{ title: 'D1' }] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { documents: [{ title: 'D1' }] } })
     }));
 
     const docs = await fetchGovernmentDocuments({ type: 'SOU' });
@@ -142,7 +142,7 @@ describe('Module convenience exports', () => {
   it('convenience fetchCommitteeReports should delegate to default client', async () => {
     global.fetch = vi.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve({ reports: [{ title: 'R1' }] })
+      json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { reports: [{ title: 'R1' }] } })
     }));
 
     const reports = await fetchCommitteeReports(5);
