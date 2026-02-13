@@ -125,6 +125,45 @@ await fetch('https://riksdag-regering-ai.onrender.com/mcp/tools/get_calendar_eve
 
 ## Testing the MCP Client
 
+### Unit Testing
+
+Run MCP client unit tests (mocked responses):
+```bash
+npm test tests/mcp-client.test.js
+```
+
+These tests use mocked responses and don't require network access. All 93 unit tests validate:
+- JSON-RPC 2.0 protocol implementation
+- Request structure and parameters
+- Response parsing
+- Error handling
+- Retry logic
+
+### Integration Testing
+
+Run integration tests against the live MCP server:
+```bash
+# Run integration tests (requires network access to MCP server)
+npm run test:integration
+
+# Skip integration tests (useful when server unavailable)
+npm run test:integration:skip
+
+# Run all tests (unit + integration with auto-skip)
+npm run test:all
+```
+
+Integration tests validate:
+- All 9 MCP client methods (fetchCalendarEvents, fetchCommitteeReports, etc.)
+- Actual API calls to live server
+- Response structure and data quality
+- Error handling with real scenarios
+- Performance and concurrency
+
+**Auto-Skip Feature**: Integration tests automatically skip if the MCP server is unavailable, preventing test failures due to network issues.
+
+See `tests/integration/README.md` for detailed documentation.
+
 ### Manual Testing
 
 ```bash
@@ -147,14 +186,7 @@ curl -X POST https://riksdag-regering-ai.onrender.com/mcp \
   }'
 ```
 
-### Unit Testing
-
-Run MCP client tests:
-```bash
-npm test tests/mcp-client.test.js
-```
-
-### Integration Testing
+### Integration Testing with News Generation
 
 Test news generation locally:
 ```bash
