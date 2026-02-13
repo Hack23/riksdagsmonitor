@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
   <loc>https://riksdagsmonitor.com/index.html</loc>
-  <lastmod>2026-02-12T00:23:59.084Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html"/>
@@ -23,190 +23,105 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.086Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_da.html</loc>
-  <lastmod>2026-02-12T00:23:59.084Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_no.html</loc>
-  <lastmod>2026-02-12T00:23:59.085Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_fi.html</loc>
-  <lastmod>2026-02-12T00:23:59.084Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_de.html</loc>
-  <lastmod>2026-02-12T00:23:59.084Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_fr.html</loc>
-  <lastmod>2026-02-12T00:23:59.085Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_es.html</loc>
-  <lastmod>2026-02-12T00:23:59.084Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_nl.html</loc>
-  <lastmod>2026-02-12T00:23:59.085Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_ar.html</loc>
-  <lastmod>2026-02-12T00:23:59.084Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_he.html</loc>
-  <lastmod>2026-02-12T00:23:59.085Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_ja.html</loc>
-  <lastmod>2026-02-12T00:23:59.085Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_ko.html</loc>
-  <lastmod>2026-02-12T00:23:59.085Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.561Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/index_zh.html</loc>
-  <lastmod>2026-02-12T00:23:59.086Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.562Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/politician-dashboard.html</loc>
-  <lastmod>2026-02-12T00:23:59.094Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.570Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/dashboard/index.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.559Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboard/index.html"/>
   <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboard/index_sv.html"/>
-  <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboard/index_da.html"/>
-  <xhtml:link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboard/index_no.html"/>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboard/index_fi.html"/>
-  <xhtml:link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboard/index_de.html"/>
-  <xhtml:link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboard/index_fr.html"/>
-  <xhtml:link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/dashboard/index_es.html"/>
-  <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/dashboard/index_nl.html"/>
-  <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/dashboard/index_ar.html"/>
-  <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/dashboard/index_he.html"/>
-  <xhtml:link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/dashboard/index_ja.html"/>
-  <xhtml:link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/dashboard/index_ko.html"/>
-  <xhtml:link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/dashboard/index_zh.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboard/index.html"/>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/dashboard/index_sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.559Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_da.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_no.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_fi.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_de.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_fr.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_es.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_nl.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_ar.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_he.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_ja.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_ko.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://riksdagsmonitor.com/dashboard/index_zh.html</loc>
-  <lastmod>2026-02-12T00:23:59.082Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
   <loc>https://riksdagsmonitor.com/sitemap.html</loc>
-  <lastmod>2026-02-12T00:28:24.029Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.572Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/sitemap.html"/>
@@ -227,85 +142,85 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_sv.html</loc>
-  <lastmod>2026-02-12T00:28:24.050Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_da.html</loc>
-  <lastmod>2026-02-12T00:28:24.033Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.572Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_no.html</loc>
-  <lastmod>2026-02-12T00:28:24.049Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_fi.html</loc>
-  <lastmod>2026-02-12T00:28:24.038Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_de.html</loc>
-  <lastmod>2026-02-12T00:28:24.035Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.572Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_fr.html</loc>
-  <lastmod>2026-02-12T00:28:24.040Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_es.html</loc>
-  <lastmod>2026-02-12T00:28:24.036Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_nl.html</loc>
-  <lastmod>2026-02-12T00:28:24.047Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_ar.html</loc>
-  <lastmod>2026-02-12T00:28:24.031Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.572Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_he.html</loc>
-  <lastmod>2026-02-12T00:28:24.042Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_ja.html</loc>
-  <lastmod>2026-02-12T00:28:24.043Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_ko.html</loc>
-  <lastmod>2026-02-12T00:28:24.045Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/sitemap_zh.html</loc>
-  <lastmod>2026-02-12T00:28:24.052Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.573Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.150Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/"/>
@@ -323,67 +238,67 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.147Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_da.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.147Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_no.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.148Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_fi.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.148Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_de.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.148Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_fr.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.149Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_es.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.149Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_nl.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.149Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_ar.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.150Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_he.html</loc>
-  <lastmod>2026-02-12T00:23:59.093Z</lastmod>
+  <lastmod>2026-02-13T15:34:19.150Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html</loc>
-  <lastmod>2026-02-12T00:23:59.090Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
@@ -392,7 +307,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.090Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-biodiversity-citizenship-en.html"/>
@@ -401,7 +316,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html</loc>
-  <lastmod>2026-02-12T00:23:59.091Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
@@ -410,7 +325,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.091Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-pm-eu-summit-en.html"/>
@@ -419,7 +334,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html</loc>
-  <lastmod>2026-02-12T00:23:59.091Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
@@ -428,7 +343,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.091Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
@@ -436,8 +351,26 @@
   <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-10-week-ahead-feb-10-17-en.html"/>
 </url>
 <url>
+  <loc>https://riksdagsmonitor.com/news/2026-02-13-week-ahead-feb-13-20-en.html</loc>
+  <lastmod>2026-02-13T15:34:12.592Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-13-week-ahead-feb-13-20-en.html"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-13-week-ahead-feb-13-20-sv.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-13-week-ahead-feb-13-20-en.html"/>
+</url>
+<url>
+  <loc>https://riksdagsmonitor.com/news/2026-02-13-week-ahead-feb-13-20-sv.html</loc>
+  <lastmod>2026-02-13T15:34:12.592Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-13-week-ahead-feb-13-20-en.html"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-02-13-week-ahead-feb-13-20-sv.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/2026-02-13-week-ahead-feb-13-20-en.html"/>
+</url>
+<url>
   <loc>https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html</loc>
-  <lastmod>2026-02-12T00:23:59.091Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
@@ -446,7 +379,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.091Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html"/>
@@ -455,7 +388,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html</loc>
-  <lastmod>2026-02-12T00:23:59.091Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
@@ -464,7 +397,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-government-propositions-sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.091Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.567Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-government-propositions-en.html"/>
@@ -473,7 +406,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html</loc>
-  <lastmod>2026-02-12T00:23:59.092Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.568Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html"/>
@@ -482,7 +415,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-opposition-motions-sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.092Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.568Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html"/>
@@ -491,7 +424,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html</loc>
-  <lastmod>2026-02-12T00:23:59.092Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.568Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html"/>
@@ -500,7 +433,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-parliament-agenda-sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.092Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.568Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html"/>
@@ -509,7 +442,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html</loc>
-  <lastmod>2026-02-12T00:23:59.092Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.568Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
@@ -518,7 +451,7 @@
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/2026-02-week-ahead-sv.html</loc>
-  <lastmod>2026-02-12T00:23:59.092Z</lastmod>
+  <lastmod>2026-02-13T15:27:07.568Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html"/>
