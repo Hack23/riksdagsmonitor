@@ -26,6 +26,12 @@ permissions:
 
 timeout-minutes: 20
 
+network:
+  allowed:
+    - defaults
+    - node
+    - riksdag-regering-ai.onrender.com
+
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
@@ -42,6 +48,12 @@ tools:
       DISPLAY: ":99"
 
 safe-outputs:
+  allowed-domains:
+    - riksdag-regering-ai.onrender.com
+    - data.riksdagen.se
+    - www.riksdagen.se
+    - www.regeringen.se
+    - github.com
   create-pull-request: {}
   add-comment: {}
 
