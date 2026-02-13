@@ -9,7 +9,12 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 describe('Stats Loader', () => {
+  let originalFetch;
+
   beforeEach(() => {
+    // Save original fetch mock from setup.js
+    originalFetch = global.fetch;
+    
     document.body.innerHTML = `
       <div class="hero-stats">
         <div class="stat">
@@ -33,8 +38,9 @@ describe('Stats Loader', () => {
   });
 
   afterEach(() => {
+    // Restore original fetch mock
+    global.fetch = originalFetch;
     vi.clearAllMocks();
-    if (global.fetch) delete global.fetch;
   });
 
   describe('DOM Elements', () => {
