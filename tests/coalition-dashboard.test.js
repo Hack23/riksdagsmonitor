@@ -9,8 +9,12 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 describe('Coalition Dashboard', () => {
   let container;
+  let originalFetch;
 
   beforeEach(() => {
+    // Save original fetch mock from setup.js
+    originalFetch = global.fetch;
+    
     document.body.innerHTML = `
       <section id="coalition-dashboard" class="dashboard-container">
         <h2>Coalition & Voting Patterns</h2>
@@ -46,7 +50,10 @@ describe('Coalition Dashboard', () => {
   });
 
   afterEach(() => {
+    // Restore original fetch mock
+    global.fetch = originalFetch;
     vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
 
   describe('DOM Structure', () => {
@@ -310,7 +317,7 @@ describe('Coalition Dashboard', () => {
         expect(error.message).toBe('Network error');
       }
       
-      delete global.fetch;
+      // Fetch will be restored in afterEach
     });
 
     it('should skip aggregate rows with party "-"', () => {
