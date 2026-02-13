@@ -38,7 +38,6 @@ const VALID_ARTICLE_TYPES = ['week-ahead', 'committee-reports', 'propositions', 
 const articleTypes = typesArg 
   ? typesArg.split('=')[1].split(',')
   : ['week-ahead'];
-  : ['week-ahead'];
 
 // Language preset expansion
 const ALL_LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
@@ -243,19 +242,66 @@ async function generateCommitteeReports() {
   try {
     const client = new MCPClient();
     
-    // 1. Fetch latest committee reports
     console.log('  🔄 Fetching committee reports from riksdag-regering-mcp...');
     const reports = await client.fetchCommitteeReports(10);
     console.log(`  📊 Found ${reports.length} committee reports`);
     
-    // 2. Generate article (simplified for now)
+    if (reports.length === 0) {
+      console.log('  ℹ️ No new committee reports found, skipping');
+      return { success: true, files: 0 };
+    }
+    
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-committee-reports`;
     
-    console.log(`  ℹ️ Would generate: ${slug}-en.html, ${slug}-sv.html`);
-    console.log('  ⚠️ Full implementation pending');
+    for (const lang of languages) {
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+      
+      const content = generateArticleContent({ reports }, 'committee-reports', lang);
+      const watchPoints = extractWatchPoints({ reports }, lang);
+      const metadata = generateMetadata({ reports }, 'committee-reports', lang);
+      const readTime = calculateReadTime(content);
+      const sources = generateSources(['get_betankanden']);
+      
+      const titles = {
+        en: { title: `Committee Reports: Parliamentary Priorities This Week`, subtitle: `Analysis of ${reports.length} committee reports revealing Riksdag priorities for the current session` },
+        sv: { title: `Utskottsbetänkanden: Riksdagens prioriteringar denna vecka`, subtitle: `Analys av ${reports.length} utskottsbetänkanden som avslöjar riksdagens prioriteringar` },
+        da: { title: `Udvalgsbetænkninger: Parlamentets prioriteringer denne uge`, subtitle: `Analyse af ${reports.length} udvalgsbetænkninger` },
+        no: { title: `Komitéinnstillinger: Stortingets prioriteringer denne uken`, subtitle: `Analyse av ${reports.length} komitéinnstillinger` },
+        fi: { title: `Valiokunnan mietinnöt: Eduskunnan prioriteetit tällä viikolla`, subtitle: `Analyysi ${reports.length} valiokunnan mietinnöstä` },
+        de: { title: `Ausschussberichte: Parlamentarische Prioritäten diese Woche`, subtitle: `Analyse von ${reports.length} Ausschussberichten` },
+        fr: { title: `Rapports de commission: Priorités parlementaires cette semaine`, subtitle: `Analyse de ${reports.length} rapports de commission` },
+        es: { title: `Informes de comisión: Prioridades parlamentarias esta semana`, subtitle: `Análisis de ${reports.length} informes de comisión` },
+        nl: { title: `Commissierapporten: Parlementaire prioriteiten deze week`, subtitle: `Analyse van ${reports.length} commissierapporten` },
+        ar: { title: `تقارير اللجان: أولويات البرلمان هذا الأسبوع`, subtitle: `تحليل ${reports.length} تقارير لجان` },
+        he: { title: `דוחות ועדה: סדרי עדיפויות פרלמנטריים השבוע`, subtitle: `ניתוח ${reports.length} דוחות ועדה` },
+        ja: { title: `委員会報告：今週の議会優先事項`, subtitle: `${reports.length}件の委員会報告の分析` },
+        ko: { title: `위원회 보고서: 이번 주 의회 우선순위`, subtitle: `${reports.length}개 위원회 보고서 분석` },
+        zh: { title: `委员会报告：本周议会优先事项`, subtitle: `${reports.length}份委员会报告分析` }
+      };
+      
+      const langTitles = titles[lang] || titles.en;
+      
+      const html = generateArticleHTML({
+        slug: `${slug}-${lang}.html`,
+        title: langTitles.title,
+        subtitle: langTitles.subtitle,
+        date: today.toISOString().split('T')[0],
+        type: 'analysis',
+        readTime,
+        lang,
+        content,
+        watchPoints,
+        sources,
+        keywords: metadata.keywords,
+        topics: metadata.topics,
+        tags: metadata.tags
+      });
+      
+      await writeSingleArticle(html, slug, lang);
+    }
     
-    return { success: true, files: 0 };
+    return { success: true, files: languages.length, slug };
     
   } catch (error) {
     console.error('❌ Error generating Committee Reports:', error.message);
@@ -277,9 +323,62 @@ async function generatePropositions() {
     const propositions = await client.fetchPropositions(10);
     console.log(`  📊 Found ${propositions.length} propositions`);
     
-    console.log('  ⚠️ Full implementation pending');
+    if (propositions.length === 0) {
+      console.log('  ℹ️ No new propositions found, skipping');
+      return { success: true, files: 0 };
+    }
     
-    return { success: true, files: 0 };
+    const today = new Date();
+    const slug = `${formatDateForSlug(today)}-government-propositions`;
+    
+    for (const lang of languages) {
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+      
+      const content = generateArticleContent({ propositions }, 'propositions', lang);
+      const watchPoints = extractWatchPoints({ propositions }, lang);
+      const metadata = generateMetadata({ propositions }, 'propositions', lang);
+      const readTime = calculateReadTime(content);
+      const sources = generateSources(['get_propositioner']);
+      
+      const titles = {
+        en: { title: `Government Propositions: Policy Priorities This Week`, subtitle: `Analysis of ${propositions.length} government propositions shaping the legislative agenda` },
+        sv: { title: `Regeringens propositioner: Veckans prioriteringar`, subtitle: `Analys av ${propositions.length} propositioner som formar den lagstiftande agendan` },
+        da: { title: `Regeringsforslag: Politiske prioriteringer denne uge`, subtitle: `Analyse af ${propositions.length} regeringsforslag` },
+        no: { title: `Regjeringens proposisjoner: Politiske prioriteringer denne uken`, subtitle: `Analyse av ${propositions.length} regjeringsproposisjoner` },
+        fi: { title: `Hallituksen esitykset: Viikon poliittiset prioriteetit`, subtitle: `Analyysi ${propositions.length} hallituksen esityksestä` },
+        de: { title: `Regierungsvorlagen: Politische Prioritäten diese Woche`, subtitle: `Analyse von ${propositions.length} Regierungsvorlagen` },
+        fr: { title: `Propositions gouvernementales: Priorités politiques cette semaine`, subtitle: `Analyse de ${propositions.length} propositions gouvernementales` },
+        es: { title: `Proposiciones gubernamentales: Prioridades políticas esta semana`, subtitle: `Análisis de ${propositions.length} proposiciones gubernamentales` },
+        nl: { title: `Regeringsvoorstellen: Politieke prioriteiten deze week`, subtitle: `Analyse van ${propositions.length} regeringsvoorstellen` },
+        ar: { title: `مقترحات الحكومة: الأولويات السياسية هذا الأسبوع`, subtitle: `تحليل ${propositions.length} مقترحات حكومية` },
+        he: { title: `הצעות ממשלה: סדרי עדיפויות מדיניים השבוע`, subtitle: `ניתוח ${propositions.length} הצעות ממשלה` },
+        ja: { title: `政府提案：今週の政策優先事項`, subtitle: `${propositions.length}件の政府提案の分析` },
+        ko: { title: `정부 법안: 이번 주 정책 우선순위`, subtitle: `${propositions.length}개 정부 법안 분석` },
+        zh: { title: `政府提案：本周政策优先事项`, subtitle: `${propositions.length}份政府提案分析` }
+      };
+      
+      const langTitles = titles[lang] || titles.en;
+      
+      const html = generateArticleHTML({
+        slug: `${slug}-${lang}.html`,
+        title: langTitles.title,
+        subtitle: langTitles.subtitle,
+        date: today.toISOString().split('T')[0],
+        type: 'analysis',
+        readTime,
+        lang,
+        content,
+        watchPoints,
+        sources,
+        keywords: metadata.keywords,
+        topics: metadata.topics,
+        tags: metadata.tags
+      });
+      
+      await writeSingleArticle(html, slug, lang);
+    }
+    
+    return { success: true, files: languages.length, slug };
     
   } catch (error) {
     console.error('❌ Error generating Propositions:', error.message);
@@ -301,9 +400,62 @@ async function generateMotions() {
     const motions = await client.fetchMotions(10);
     console.log(`  📊 Found ${motions.length} motions`);
     
-    console.log('  ⚠️ Full implementation pending');
+    if (motions.length === 0) {
+      console.log('  ℹ️ No new motions found, skipping');
+      return { success: true, files: 0 };
+    }
     
-    return { success: true, files: 0 };
+    const today = new Date();
+    const slug = `${formatDateForSlug(today)}-opposition-motions`;
+    
+    for (const lang of languages) {
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+      
+      const content = generateArticleContent({ motions }, 'motions', lang);
+      const watchPoints = extractWatchPoints({ motions }, lang);
+      const metadata = generateMetadata({ motions }, 'motions', lang);
+      const readTime = calculateReadTime(content);
+      const sources = generateSources(['get_motioner']);
+      
+      const titles = {
+        en: { title: `Opposition Motions: Battle Lines This Week`, subtitle: `Analysis of ${motions.length} opposition motions revealing parliamentary fault lines` },
+        sv: { title: `Oppositionsmotioner: Veckans stridslinjer`, subtitle: `Analys av ${motions.length} oppositionsmotioner som avslöjar parlamentariska skiljelinjer` },
+        da: { title: `Oppositionsforslag: Ugens kamppladser`, subtitle: `Analyse af ${motions.length} oppositionsforslag` },
+        no: { title: `Opposisjonsforslag: Ukens kamplinjer`, subtitle: `Analyse av ${motions.length} opposisjonsforslag` },
+        fi: { title: `Opposition aloitteet: Viikon taistelulinjat`, subtitle: `Analyysi ${motions.length} opposition aloitteesta` },
+        de: { title: `Oppositionsanträge: Kampflinien dieser Woche`, subtitle: `Analyse von ${motions.length} Oppositionsanträgen` },
+        fr: { title: `Motions d'opposition: Lignes de bataille cette semaine`, subtitle: `Analyse de ${motions.length} motions d'opposition` },
+        es: { title: `Mociones de oposición: Líneas de batalla esta semana`, subtitle: `Análisis de ${motions.length} mociones de oposición` },
+        nl: { title: `Oppositiemoties: Strijdlijnen deze week`, subtitle: `Analyse van ${motions.length} oppositiemoties` },
+        ar: { title: `اقتراحات المعارضة: خطوط المعركة هذا الأسبوع`, subtitle: `تحليل ${motions.length} اقتراحات المعارضة` },
+        he: { title: `הצעות אופוזיציה: קווי העימות השבוע`, subtitle: `ניתוח ${motions.length} הצעות אופוזיציה` },
+        ja: { title: `野党動議：今週の対立構図`, subtitle: `${motions.length}件の野党動議の分析` },
+        ko: { title: `야당 동의: 이번 주 대립 구도`, subtitle: `${motions.length}개 야당 동의 분석` },
+        zh: { title: `反对党动议：本周对立格局`, subtitle: `${motions.length}份反对党动议分析` }
+      };
+      
+      const langTitles = titles[lang] || titles.en;
+      
+      const html = generateArticleHTML({
+        slug: `${slug}-${lang}.html`,
+        title: langTitles.title,
+        subtitle: langTitles.subtitle,
+        date: today.toISOString().split('T')[0],
+        type: 'analysis',
+        readTime,
+        lang,
+        content,
+        watchPoints,
+        sources,
+        keywords: metadata.keywords,
+        topics: metadata.topics,
+        tags: metadata.tags
+      });
+      
+      await writeSingleArticle(html, slug, lang);
+    }
+    
+    return { success: true, files: languages.length, slug };
     
   } catch (error) {
     console.error('❌ Error generating Motions:', error.message);

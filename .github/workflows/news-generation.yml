@@ -2,8 +2,14 @@ name: Automated News Generation
 
 on:
   schedule:
-    # Run every 12 hours at 00:00 UTC and 12:00 UTC
-    - cron: '0 0,12 * * *'
+    # Morning briefing: 06:00 UTC (07:00 CET) - calendar, week-ahead
+    - cron: '0 6 * * 1-5'
+    # Midday update: 12:00 UTC (13:00 CET) - committee reports, propositions, motions
+    - cron: '0 12 * * 1-5'
+    # Evening wrap-up: 18:00 UTC (19:00 CET) - all types, full analysis
+    - cron: '0 18 * * 1-5'
+    # Weekend summary: 10:00 UTC Saturday
+    - cron: '0 10 * * 6'
   workflow_dispatch:
     inputs:
       force_generation:
@@ -83,12 +89,12 @@ jobs:
             echo "should_generate=true" >> $GITHUB_OUTPUT
             echo "✅ Force generation enabled"
           else
-            # Check if it's been more than 11 hours since last generation
+            # Check if it's been more than 5 hours since last generation
             if [ -f "news/metadata/last-generation.json" ]; then
               HOURS_AGO=$(( ($(date +%s) - $(date -d "$LAST_GEN" +%s)) / 3600 ))
-              if [ $HOURS_AGO -gt 11 ]; then
+              if [ $HOURS_AGO -gt 5 ]; then
                 echo "should_generate=true" >> $GITHUB_OUTPUT
-                echo "✅ More than 11 hours since last generation ($HOURS_AGO hours)"
+                echo "✅ More than 5 hours since last generation ($HOURS_AGO hours)"
               else
                 echo "should_generate=false" >> $GITHUB_OUTPUT
                 echo "ℹ️ Recent generation found ($HOURS_AGO hours ago), skipping"
@@ -103,36 +109,79 @@ jobs:
         if: steps.check-updates.outputs.should_generate == 'true'
         id: generate
         env:
-          ARTICLE_TYPES: ${{ github.event.inputs.article_types || 'week-ahead' }}
-          LANGUAGES: ${{ github.event.inputs.languages || 'en,sv' }}
+          ARTICLE_TYPES: ${{ github.event.inputs.article_types || '' }}
+          LANGUAGES: ${{ github.event.inputs.languages || '' }}
         run: |
           echo "📰 Generating news articles..."
+          
+          # Determine article types based on time-of-day if not manually specified
+          if [ -z "$ARTICLE_TYPES" ]; then
+            HOUR=$(date -u +"%H")
+            DAY_OF_WEEK=$(date -u +"%u")  # 1=Monday, 7=Sunday
+            
+            if [ "$DAY_OF_WEEK" -ge 6 ]; then
+              # Weekend: full analysis
+              ARTICLE_TYPES="week-ahead,committee-reports,propositions,motions"
+              echo "📅 Weekend schedule: full analysis"
+            elif [ "$HOUR" -lt 9 ]; then
+              # Morning (06:00 UTC): calendar & week-ahead
+              ARTICLE_TYPES="week-ahead"
+              echo "🌅 Morning schedule: week-ahead briefing"
+            elif [ "$HOUR" -lt 15 ]; then
+              # Midday (12:00 UTC): committee reports, propositions, motions
+              ARTICLE_TYPES="committee-reports,propositions,motions"
+              echo "☀️ Midday schedule: parliamentary activity"
+            else
+              # Evening (18:00 UTC): all types
+              ARTICLE_TYPES="week-ahead,committee-reports,propositions,motions,breaking"
+              echo "🌆 Evening schedule: comprehensive wrap-up"
+            fi
+          fi
+          
+          # Determine languages based on time slot if not manually specified
+          if [ -z "$LANGUAGES" ]; then
+            HOUR=$(date -u +"%H")
+            if [ "$HOUR" -lt 9 ]; then
+              # Morning: core languages for speed
+              LANG_ARG="en,sv"
+              echo "🌐 Morning: EN/SV for fast delivery"
+            elif [ "$HOUR" -lt 15 ]; then
+              # Midday: Nordic languages
+              LANG_ARG="en,sv,da,no,fi"
+              echo "🌐 Midday: Nordic languages"
+            else
+              # Evening: all 14 languages
+              LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh"
+              echo "🌐 Evening: all 14 languages"
+            fi
+          else
+            # Manual override - expand presets
+            case "$LANGUAGES" in
+              "nordic")
+                LANG_ARG="en,sv,da,no,fi"
+                echo "🌍 Expanding 'nordic' to: $LANG_ARG"
+                ;;
+              "eu-core")
+                LANG_ARG="en,sv,de,fr,es,nl"
+                echo "🌍 Expanding 'eu-core' to: $LANG_ARG"
+                ;;
+              "all")
+                LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh"
+                echo "🌍 Expanding 'all' to all 14 languages"
+                ;;
+              *)
+                LANG_ARG="$LANGUAGES"
+                ;;
+            esac
+          fi
+          
           echo "📋 Article types: $ARTICLE_TYPES"
-          echo "🌐 Languages: $LANGUAGES"
+          echo "🌐 Languages: $LANG_ARG"
           
           # Create metadata directory
           mkdir -p news/metadata
           
-          # Expand language presets
-          case "$LANGUAGES" in
-            "nordic")
-              LANG_ARG="en,sv,da,no,fi"
-              echo "🌍 Expanding 'nordic' to: $LANG_ARG"
-              ;;
-            "eu-core")
-              LANG_ARG="en,sv,de,fr,es,nl"
-              echo "🌍 Expanding 'eu-core' to: $LANG_ARG"
-              ;;
-            "all")
-              LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh"
-              echo "🌍 Expanding 'all' to all 14 languages"
-              ;;
-            *)
-              LANG_ARG="$LANGUAGES"
-              ;;
-          esac
-          
-          # Run news generation script (use enhanced version with multi-language support)
+          # Run news generation script
           if [ -f "scripts/generate-news-enhanced.js" ]; then
             node scripts/generate-news-enhanced.js --types="$ARTICLE_TYPES" --languages="$LANG_ARG"
             
