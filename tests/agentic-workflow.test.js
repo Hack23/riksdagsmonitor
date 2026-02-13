@@ -48,10 +48,10 @@ describe('Agentic Workflow Configuration', () => {
       expect(frontmatter.engine).toBeTruthy();
     });
 
-    it('should use copilot engine with claude-opus-4-6 model', () => {
+    it('should use copilot engine with claude-opus-4.6 model', () => {
       expect(frontmatter.engine).toEqual({
         id: 'copilot',
-        model: 'claude-opus-4-6'
+        model: 'claude-opus-4.6'
       });
     });
 
