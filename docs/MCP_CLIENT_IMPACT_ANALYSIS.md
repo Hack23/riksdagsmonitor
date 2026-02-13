@@ -91,25 +91,7 @@ This document provides a comprehensive analysis of all code, tests, and GitHub w
 
 **Total**: 93 unit tests (all passing)
 
-### 2.2 Integration Tests: `tests/integration/mcp-client.integration.test.js`
-
-**Status**: ✅ **NEW** (22 tests)
-
-**Test Categories**:
-1. **Server Availability** (1 test)
-2. **Method Tests** (12 tests - covers all 9 methods)
-3. **Error Handling** (2 tests)
-4. **Data Quality** (1 test)
-5. **Performance** (2 tests)
-
-**Features**:
-- Auto-skip when MCP server unavailable
-- Validates against live server responses
-- Tests concurrent requests
-- Measures performance
-- Logs detailed progress
-
-### 2.3 Test Fixtures: `tests/fixtures/mock-mcp-responses.json`
+### 2.2 Test Fixtures: `tests/fixtures/mock-mcp-responses.json`
 
 **Status**: ✅ **EXISTS** (no changes required)
 
@@ -202,28 +184,6 @@ await client.fetchMotions(limit, rm);
 
 **Impact**: Will benefit from MCP client fix.
 
-### 4.5 `.github/workflows/javascript-testing.yml`
-
-**Status**: ⚠️ **RECOMMENDATION**: Add integration tests (optional)
-
-**Current**: Runs unit tests only
-
-**Recommended Addition**:
-```yaml
-- name: Run integration tests (optional)
-  if: github.event_name == 'schedule' # Only on scheduled runs
-  run: npm run test:integration
-  continue-on-error: true # Don't fail build if server unavailable
-  env:
-    MCP_SERVER_URL: https://riksdag-regering-ai.onrender.com/mcp
-```
-
-**Why Optional**:
-- Integration tests require network access to MCP server
-- MCP server may be unavailable
-- Adds significant time to CI/CD
-- Auto-skip feature prevents failures
-
 ---
 
 ## 5. Configuration Files
@@ -240,14 +200,7 @@ await client.fetchMotions(limit, rm);
 
 **Status**: ✅ **UPDATED**
 
-**Added Scripts**:
-```json
-{
-  "test:integration": "vitest run tests/integration --reporter=verbose",
-  "test:integration:skip": "SKIP_INTEGRATION_TESTS=true vitest run tests/integration",
-  "test:all": "npm run test && npm run test:integration"
-}
-```
+**Scripts**: Standard test scripts maintained
 
 **Dependencies**: No new dependencies added (uses existing vitest)
 
@@ -255,7 +208,7 @@ await client.fetchMotions(limit, rm);
 
 **Status**: ✅ **NO CHANGES REQUIRED**
 
-Works with both unit and integration tests.
+Standard vitest configuration for unit tests.
 
 ---
 
@@ -277,30 +230,11 @@ Works with both unit and integration tests.
 
 **Lines**: 264 lines of comprehensive troubleshooting guidance
 
-### 6.2 `tests/integration/README.md`
-
-**Status**: ✅ **NEW**
-
-**Content**:
-- Overview of integration tests
-- Running instructions
-- Environment variables
-- Test behavior and auto-skip
-- Success output examples
-- Test categories
-- CI/CD integration guidance
-- Writing new tests
-- Debugging and troubleshooting
-
-**Lines**: 243 lines
-
-### 6.3 Other Documentation
+### 6.2 Other Documentation
 
 **Files Referencing MCP Client**:
-- `README.md` - Could be updated with integration test info
-- `WORKFLOWS.md` - Could document MCP client workflows
-
-**Status**: ⚠️ **OPTIONAL UPDATES**
+- `README.md` - Documents MCP client usage
+- `WORKFLOWS.md` - Documents MCP client workflows
 
 ---
 
@@ -366,8 +300,7 @@ All consumers automatically use the corrected implementation.
 
 **NONE** - Changes are low risk because:
 - Fix resolves existing 404 errors
-- Comprehensive test coverage (93 unit + 22 integration)
-- Auto-skip feature prevents test failures
+- Comprehensive test coverage (93 unit tests)
 - No external API consumers
 
 ### 9.2 Medium Risk Areas
@@ -442,7 +375,6 @@ All consumers automatically use the corrected implementation.
 
 - [x] MCP client implementation corrected
 - [x] All 93 unit tests passing
-- [x] Integration tests created (22 tests)
 - [x] Documentation complete
 - [x] No breaking changes introduced
 
@@ -455,7 +387,6 @@ All consumers automatically use the corrected implementation.
 
 ### 11.3 Post-Deployment
 
-- [ ] Run integration tests manually
 - [ ] Monitor workflow success rate (next 7 days)
 - [ ] Review error logs (if any)
 - [ ] Update documentation (if needed)
@@ -490,8 +421,7 @@ All consumers automatically use the corrected implementation.
 
 - `scripts/mcp-client.js` - MCP client implementation
 - `tests/mcp-client.test.js` - Unit tests (93 tests)
-- `tests/integration/mcp-client.integration.test.js` - Integration tests (22 tests)
-- `tests/integration/README.md` - Integration test guide
+- `tests/mcp-client.test.js` - Unit tests (93 tests)
 - `docs/MCP_SERVER_TROUBLESHOOTING.md` - Troubleshooting guide
 
 ### 13.2 External Documentation
@@ -524,13 +454,11 @@ All consumers automatically use the corrected implementation.
 **Core Implementation** (1 file):
 - `scripts/mcp-client.js` (corrected)
 
-**Tests** (3 files):
+**Tests** (1 file):
 - `tests/mcp-client.test.js` (updated - 93 tests)
-- `tests/integration/mcp-client.integration.test.js` (new - 22 tests)
-- `tests/integration/README.md` (new)
 
 **Configuration** (1 file):
-- `package.json` (updated with new scripts)
+- `package.json` (updated scripts)
 
 **Documentation** (1 file):
 - `docs/MCP_SERVER_TROUBLESHOOTING.md` (updated)

@@ -139,31 +139,6 @@ These tests use mocked responses and don't require network access. All 93 unit t
 - Error handling
 - Retry logic
 
-### Integration Testing
-
-Run integration tests against the live MCP server:
-```bash
-# Run integration tests (requires network access to MCP server)
-npm run test:integration
-
-# Skip integration tests (useful when server unavailable)
-npm run test:integration:skip
-
-# Run all tests (unit + integration with auto-skip)
-npm run test:all
-```
-
-Integration tests validate:
-- All 9 MCP client methods (fetchCalendarEvents, fetchCommitteeReports, etc.)
-- Actual API calls to live server
-- Response structure and data quality
-- Error handling with real scenarios
-- Performance and concurrency
-
-**Auto-Skip Feature**: Integration tests automatically skip if the MCP server is unavailable, preventing test failures due to network issues.
-
-See `tests/integration/README.md` for detailed documentation.
-
 ### Manual Testing
 
 ```bash
