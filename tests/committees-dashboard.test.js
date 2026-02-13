@@ -9,8 +9,12 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 describe('Committees Dashboard', () => {
   let container;
+  let originalFetch;
 
   beforeEach(() => {
+    // Save original fetch mock from setup.js
+    originalFetch = global.fetch;
+    
     document.body.innerHTML = `
       <section id="committee-dashboard" class="dashboard-container">
         <h2>Committee Performance Dashboard</h2>
@@ -52,6 +56,8 @@ describe('Committees Dashboard', () => {
   });
 
   afterEach(() => {
+    // Restore original fetch mock
+    global.fetch = originalFetch;
     vi.clearAllMocks();
   });
 
@@ -198,7 +204,7 @@ describe('Committees Dashboard', () => {
       } catch (error) {
         expect(error.message).toBe('Network error');
       }
-      delete global.fetch;
+      // Fetch will be restored in afterEach
     });
   });
 

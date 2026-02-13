@@ -9,8 +9,12 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 describe('Ministry Dashboard', () => {
   let container;
+  let originalFetch;
 
   beforeEach(() => {
+    // Save original fetch mock from setup.js
+    originalFetch = global.fetch;
+    
     document.body.innerHTML = `
       <section id="ministry-dashboard" class="dashboard-container">
         <h2>Ministry Performance Dashboard</h2>
@@ -41,6 +45,8 @@ describe('Ministry Dashboard', () => {
   });
 
   afterEach(() => {
+    // Restore original fetch mock
+    global.fetch = originalFetch;
     vi.clearAllMocks();
   });
 

@@ -9,8 +9,12 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 describe('Politician Career & Productivity Analytics Dashboard', () => {
   let container;
+  let originalFetch;
 
   beforeEach(() => {
+    // Save original fetch mock from setup.js
+    originalFetch = global.fetch;
+    
     // Create dashboard container matching index.html structure
     document.body.innerHTML = `
       <section id="politician-dashboard">
@@ -37,6 +41,8 @@ describe('Politician Career & Productivity Analytics Dashboard', () => {
   });
 
   afterEach(() => {
+    // Restore original fetch mock
+    global.fetch = originalFetch;
     vi.clearAllMocks();
     document.body.innerHTML = '';
   });
@@ -446,17 +452,16 @@ describe('Politician Career & Productivity Analytics Dashboard', () => {
 
     it('should handle fetch failures gracefully', async () => {
       const mockFetch = vi.fn().mockRejectedValue(new Error('Network error'));
-      const originalFetch = globalThis.fetch;
-      globalThis.fetch = mockFetch;
+      global.fetch = mockFetch;
 
       try {
-        const response = await globalThis.fetch('fake-url.csv');
+        const response = await global.fetch('fake-url.csv');
         expect.unreachable();
       } catch (error) {
         expect(error.message).toBe('Network error');
       }
 
-      globalThis.fetch = originalFetch;
+      // Fetch will be restored in afterEach
     });
   });
 

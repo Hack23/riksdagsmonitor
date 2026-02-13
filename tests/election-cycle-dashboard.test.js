@@ -9,8 +9,12 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 describe('Election Cycle Dashboard', () => {
   let container;
+  let originalFetch;
 
   beforeEach(() => {
+    // Save original fetch mock from setup.js
+    originalFetch = global.fetch;
+    
     document.body.innerHTML = `
       <section id="election-cycle-dashboard" class="dashboard-section">
         <h2>Election Cycle Analysis</h2>
@@ -51,6 +55,8 @@ describe('Election Cycle Dashboard', () => {
   });
 
   afterEach(() => {
+    // Restore original fetch mock
+    global.fetch = originalFetch;
     vi.clearAllMocks();
   });
 
@@ -191,7 +197,7 @@ describe('Election Cycle Dashboard', () => {
       const fetchMock = vi.fn().mockRejectedValue(new Error('404'));
       global.fetch = fetchMock;
       try { await fetch('nonexistent.csv'); } catch (e) { expect(e.message).toBe('404'); }
-      delete global.fetch;
+      // Fetch will be restored in afterEach
     });
   });
 
