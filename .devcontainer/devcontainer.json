@@ -38,7 +38,7 @@
     }
   },
 
-  "postCreateCommand": "npm install -g npm@latest typescript@latest eslint@latest && npm ci",
+  "postCreateCommand": "npm install -g npm@latest typescript@latest eslint@latest && npm ci && gh extension install github/gh-aw",
   "shutdownAction": "none",
 
   // Forward necessary ports
