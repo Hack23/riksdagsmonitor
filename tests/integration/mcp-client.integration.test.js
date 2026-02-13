@@ -25,10 +25,23 @@ const MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-a
 describeIntegration('MCP Client Integration Tests', () => {
   let client;
   let serverAvailable = false;
+  let originalFetch;
 
   beforeAll(async () => {
     console.log('\n🔍 Testing MCP server availability...');
     console.log(`📡 Server URL: ${MCP_SERVER_URL}`);
+    
+    // Restore real fetch for integration tests (setup.js globally mocks it)
+    // Use native fetch (available in Node.js 18+)
+    originalFetch = global.fetch;
+    
+    // Try to restore real fetch - Node.js 18+ has native fetch
+    if (typeof globalThis.fetch === 'function' && globalThis.fetch !== global.fetch) {
+      global.fetch = globalThis.fetch;
+      console.log('✓ Restored native fetch');
+    } else {
+      console.warn('⚠️ Could not restore real fetch, using mock (tests may not hit actual server)');
+    }
     
     client = new MCPClient({ baseURL: MCP_SERVER_URL, timeout: 30000 });
     
@@ -49,6 +62,11 @@ describeIntegration('MCP Client Integration Tests', () => {
   }, TEST_TIMEOUT);
 
   afterAll(() => {
+    // Restore original fetch mock from setup.js
+    if (originalFetch) {
+      global.fetch = originalFetch;
+    }
+    
     if (serverAvailable) {
       const stats = client.getStats();
       console.log('\n📊 MCP Client Statistics:');
@@ -59,18 +77,13 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('Server Availability', () => {
-    it('should connect to MCP server', () => {
-      if (!serverAvailable) {
-        console.log('⚠️ Skipping: MCP server not available');
-        return;
-      }
+    it.skipIf(!serverAvailable)('should connect to MCP server', () => {
       expect(serverAvailable).toBe(true);
     });
   });
 
   describe('fetchCalendarEvents', () => {
-    it('should fetch calendar events for next 7 days', async () => {
-      if (!serverAvailable) return;
+    it.skipIf(!serverAvailable)('should fetch calendar events for next 7 days', async () => {
 
       const today = new Date();
       const from = today.toISOString().split('T')[0];
@@ -93,9 +106,7 @@ describeIntegration('MCP Client Integration Tests', () => {
       }
     }, TEST_TIMEOUT);
 
-    it('should filter calendar events by organ', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should filter calendar events by organ', async () => {
       const today = new Date();
       const from = today.toISOString().split('T')[0];
       const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
@@ -109,9 +120,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('fetchCommitteeReports', () => {
-    it('should fetch latest committee reports', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should fetch latest committee reports', async () => {
       const reports = await client.fetchCommitteeReports(5);
       
       expect(reports).toBeDefined();
@@ -126,9 +135,7 @@ describeIntegration('MCP Client Integration Tests', () => {
       }
     }, TEST_TIMEOUT);
 
-    it('should fetch committee reports for specific riksmöte', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should fetch committee reports for specific riksmöte', async () => {
       const currentYear = new Date().getFullYear();
       const rm = `${currentYear - 1}/${String(currentYear).substring(2)}`;
       
@@ -140,9 +147,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('fetchPropositions', () => {
-    it('should fetch latest government propositions', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should fetch latest government propositions', async () => {
       const propositions = await client.fetchPropositions(5);
       
       expect(propositions).toBeDefined();
@@ -159,9 +164,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('fetchMotions', () => {
-    it('should fetch latest motions', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should fetch latest motions', async () => {
       const motions = await client.fetchMotions(5);
       
       expect(motions).toBeDefined();
@@ -178,9 +181,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('searchDocuments', () => {
-    it('should search riksdag documents', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should search riksdag documents', async () => {
       const documents = await client.searchDocuments({ 
         sok: 'budget',
         limit: 5
@@ -198,9 +199,7 @@ describeIntegration('MCP Client Integration Tests', () => {
       }
     }, TEST_TIMEOUT);
 
-    it('should search documents by type', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should search documents by type', async () => {
       const documents = await client.searchDocuments({ 
         doktyp: 'mot',
         limit: 3
@@ -212,9 +211,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('searchSpeeches', () => {
-    it('should search parliamentary speeches', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should search parliamentary speeches', async () => {
       const speeches = await client.searchSpeeches({ 
         sok: 'miljö',
         limit: 5
@@ -234,9 +231,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('fetchMPs', () => {
-    it('should fetch all MPs', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should fetch all MPs', async () => {
       const mps = await client.fetchMPs({});
       
       expect(mps).toBeDefined();
@@ -251,9 +246,7 @@ describeIntegration('MCP Client Integration Tests', () => {
       }
     }, TEST_TIMEOUT);
 
-    it('should filter MPs by party', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should filter MPs by party', async () => {
       const mps = await client.fetchMPs({ parti: 'S' });
       
       expect(Array.isArray(mps)).toBe(true);
@@ -268,9 +261,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('fetchVotingRecords', () => {
-    it('should fetch voting records', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should fetch voting records', async () => {
       const currentYear = new Date().getFullYear();
       const rm = `${currentYear - 1}/${String(currentYear).substring(2)}`;
       
@@ -293,9 +284,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('fetchGovernmentDocuments', () => {
-    it('should fetch government documents', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should fetch government documents', async () => {
       const docs = await client.fetchGovernmentDocuments({ 
         type: 'pressmeddelanden',
         limit: 5
@@ -315,9 +304,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('Error Handling', () => {
-    it('should handle invalid date formats gracefully', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should handle invalid date formats gracefully', async () => {
       try {
         await client.fetchCalendarEvents('invalid-date', '2026-12-31');
         // If it doesn't throw, that's okay - server might handle it
@@ -328,9 +315,7 @@ describeIntegration('MCP Client Integration Tests', () => {
       }
     }, TEST_TIMEOUT);
 
-    it('should handle network timeouts', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should handle network timeouts', async () => {
       const slowClient = new MCPClient({ 
         baseURL: MCP_SERVER_URL,
         timeout: 100 // Very short timeout
@@ -347,9 +332,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('Response Data Quality', () => {
-    it('should return consistent data structures', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should return consistent data structures', async () => {
       const today = new Date();
       const from = today.toISOString().split('T')[0];
       const tom = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
@@ -373,9 +356,7 @@ describeIntegration('MCP Client Integration Tests', () => {
   });
 
   describe('Performance', () => {
-    it('should complete requests within timeout', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should complete requests within timeout', async () => {
       const startTime = Date.now();
       
       await client.fetchPropositions(5);
@@ -386,9 +367,7 @@ describeIntegration('MCP Client Integration Tests', () => {
       console.log(`   ✓ Request completed in ${duration}ms`);
     }, TEST_TIMEOUT);
 
-    it('should handle concurrent requests', async () => {
-      if (!serverAvailable) return;
-
+    it.skipIf(!serverAvailable)('should handle concurrent requests', async () => {
       const startTime = Date.now();
       
       const results = await Promise.all([

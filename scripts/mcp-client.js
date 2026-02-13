@@ -73,10 +73,10 @@ export class MCPClient {
       this.requestCount++;
     }
     
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), this.timeout);
+    
     try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), this.timeout);
-      
       // MCP uses JSON-RPC 2.0 protocol
       // Call the tool using tools/call method
       // Try with server prefix first (riksdag-regering--tool_name)
@@ -102,8 +102,6 @@ export class MCPClient {
         signal: controller.signal
       });
       
-      clearTimeout(timeoutId);
-      
       if (!response.ok) {
         // Provide more detailed error information
         let errorBody = '';
@@ -122,10 +120,11 @@ export class MCPClient {
         const errorMsg = jsonRpcResponse.error.message || JSON.stringify(jsonRpcResponse.error);
         
         // If tool not found and we used prefix, try without prefix
-        if (errorMsg.includes('not found') && toolName.includes('--') && retryCount === 0) {
+        // Guard against infinite recursion by checking if tool already doesn't have prefix
+        if (errorMsg.includes('not found') && toolName.startsWith('riksdag-regering--')) {
           console.warn(`⚠️ Tool not found with prefix, retrying without prefix...`);
           // Recursive call without prefix
-          return this.request(tool.replace(/^.*--/, ''), params, retryCount);
+          return this.request(tool.replace(/^riksdag-regering--/, ''), params, retryCount);
         }
         
         throw new Error(`MCP tool error: ${errorMsg}`);
@@ -152,6 +151,9 @@ export class MCPClient {
       this.errorCount++;
       
       throw new Error(`MCP request failed: ${error.message}`);
+    } finally {
+      // Always clear timeout to prevent timer leak
+      clearTimeout(timeoutId);
     }
   }
 

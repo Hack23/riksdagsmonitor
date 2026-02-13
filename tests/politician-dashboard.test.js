@@ -455,7 +455,7 @@ describe('Politician Career & Productivity Analytics Dashboard', () => {
       global.fetch = mockFetch;
 
       try {
-        const response = await global.fetch('fake-url.csv');
+        await global.fetch('fake-url.csv');
         expect.unreachable();
       } catch (error) {
         expect(error.message).toBe('Network error');
