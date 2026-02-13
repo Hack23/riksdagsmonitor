@@ -57,7 +57,7 @@
           "@type": "NewsArticle",
           "headline": "Tio utskottsbetänkanden denna vecka: Riksdagens prioriteringar för våren 2026",
           "url": "https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html",
-          "datePublished": "2026-02-12",
+          "datePublished": "2026-02-13",
           "description": "Analys av parlamentarisk aktivitet 5-6 februari 2026",
           "inLanguage": "sv"
         }
@@ -69,7 +69,7 @@
           "@type": "NewsArticle",
           "headline": "Riksdagens februarioffensiv: Säkerhet och ekonomi inför höstens val",
           "url": "https://riksdagsmonitor.com/news/2026-02-parliament-agenda-sv.html",
-          "datePublished": "2026-02-12",
+          "datePublished": "2026-02-13",
           "description": "Åtta stora propositioner första veckan, säkerhetsförvaring möter opposition, och koalitionen rustar för valrörelsen.",
           "inLanguage": "sv"
         }
@@ -266,7 +266,7 @@
     const articles = [
   {
     "title": "Tio utskottsbetänkanden denna vecka: Riksdagens prioriteringar för våren 2026",
-    "date": "2026-02-12",
+    "date": "2026-02-13",
     "type": "analysis",
     "slug": "2026-02-committee-reports-sv.html",
     "excerpt": "Analys av parlamentarisk aktivitet 5-6 februari 2026",
@@ -275,7 +275,7 @@
   },
   {
     "title": "Riksdagens februarioffensiv: Säkerhet och ekonomi inför höstens val",
-    "date": "2026-02-12",
+    "date": "2026-02-13",
     "type": "retrospective",
     "slug": "2026-02-parliament-agenda-sv.html",
     "excerpt": "Åtta stora propositioner första veckan, säkerhetsförvaring möter opposition, och koalitionen rustar för valrörelsen.",
@@ -393,7 +393,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${localizeType(article.type)}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -404,6 +404,12 @@
           </div>
         </article>
       `).join('');
+    }
+    
+    const typeLabels = {"prospective":"Framåtblickande","retrospective":"Återblickande","analysis":"Analys","breaking":"Senaste nytt"};
+    
+    function localizeType(type) {
+      return typeLabels[type] || type;
     }
     
     function formatDate(dateStr) {

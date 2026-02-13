@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News - Riksdagsmonitor</title>
-  <meta name="description" content="Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.">
+  <meta name="description" content="Latest news and analysis from Sweden&#039;s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.">
   <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/index.html">
   
   <!-- Open Graph -->
   <meta property="og:title" content="News - Riksdagsmonitor">
-  <meta property="og:description" content="Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.">
+  <meta property="og:description" content="Latest news and analysis from Sweden&#039;s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/index.html">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="News - Riksdagsmonitor">
-  <meta name="twitter:description" content="Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.">
+  <meta name="twitter:description" content="Latest news and analysis from Sweden&#039;s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
@@ -47,7 +47,7 @@
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "News",
-    "description": "Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.",
+    "description": "Latest news and analysis from Sweden&#039;s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.",
     "numberOfItems": 8,
     "itemListElement": [
       {
@@ -57,7 +57,7 @@
           "@type": "NewsArticle",
           "headline": "Ten Committee Reports This Week: Parliament",
           "url": "https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html",
-          "datePublished": "2026-02-12",
+          "datePublished": "2026-02-13",
           "description": "Analysis of parliamentary activity February 5-6, 2026",
           "inLanguage": "en"
         }
@@ -69,7 +69,7 @@
           "@type": "NewsArticle",
           "headline": "Sweden",
           "url": "https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html",
-          "datePublished": "2026-02-12",
+          "datePublished": "2026-02-13",
           "description": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
           "inLanguage": "en"
         }
@@ -266,7 +266,7 @@
     const articles = [
   {
     "title": "Ten Committee Reports This Week: Parliament",
-    "date": "2026-02-12",
+    "date": "2026-02-13",
     "type": "analysis",
     "slug": "2026-02-committee-reports-en.html",
     "excerpt": "Analysis of parliamentary activity February 5-6, 2026",
@@ -275,7 +275,7 @@
   },
   {
     "title": "Sweden",
-    "date": "2026-02-12",
+    "date": "2026-02-13",
     "type": "retrospective",
     "slug": "2026-02-parliament-agenda-en.html",
     "excerpt": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
@@ -394,7 +394,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${localizeType(article.type)}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -405,6 +405,12 @@
           </div>
         </article>
       `).join('');
+    }
+    
+    const typeLabels = {"prospective":"Prospective","retrospective":"Retrospective","analysis":"Analysis","breaking":"Breaking news"};
+    
+    function localizeType(type) {
+      return typeLabels[type] || type;
     }
     
     function formatDate(dateStr) {

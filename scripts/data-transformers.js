@@ -72,34 +72,40 @@ function isTodayDate(date) {
 }
 
 /**
- * Format day name (Monday, Tuesday, etc.)
+ * Map of custom locale codes to Intl-compatible locale strings
+ */
+const LOCALE_MAP = {
+  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'nb-NO', fi: 'fi-FI',
+  de: 'de-DE', fr: 'fr-FR', es: 'es-ES', nl: 'nl-NL', ar: 'ar-SA',
+  he: 'he-IL', ja: 'ja-JP', ko: 'ko-KR', zh: 'zh-CN'
+};
+
+/**
+ * Format day name (Monday, Tuesday, etc.) using Intl for all 14 languages
  */
 function formatDayName(date, lang = 'en') {
-  const dayNames = {
-    en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    sv: ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag']
-  };
-  return dayNames[lang][date.getDay()];
+  const locale = LOCALE_MAP[lang] || lang;
+  try {
+    return new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(date);
+  } catch {
+    return new Intl.DateTimeFormat('en-GB', { weekday: 'long' }).format(date);
+  }
 }
 
 /**
- * Format day label (e.g., "February 10 - Monday")
+ * Format day label (e.g., "February 10 - Monday") using Intl for all 14 languages
  */
 function formatDayLabel(date, lang = 'en') {
-  const monthNames = {
-    en: ['January', 'February', 'March', 'April', 'May', 'June', 
-         'July', 'August', 'September', 'October', 'November', 'December'],
-    sv: ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
-         'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
-  };
-  
-  const dayName = formatDayName(date, lang);
-  const monthName = monthNames[lang][date.getMonth()];
-  const day = date.getDate();
-  
-  return lang === 'sv' 
-    ? `${day} ${monthName} - ${dayName}`
-    : `${monthName} ${day} - ${dayName}`;
+  const locale = LOCALE_MAP[lang] || lang;
+  try {
+    const dayName = formatDayName(date, lang);
+    const monthDay = new Intl.DateTimeFormat(locale, { month: 'long', day: 'numeric' }).format(date);
+    return `${monthDay} - ${dayName}`;
+  } catch {
+    const dayName = formatDayName(date, 'en');
+    const monthDay = new Intl.DateTimeFormat('en-GB', { month: 'long', day: 'numeric' }).format(date);
+    return `${monthDay} - ${dayName}`;
+  }
 }
 
 /**

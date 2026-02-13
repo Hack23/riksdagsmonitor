@@ -56,15 +56,43 @@ describe('Data Transformers', () => {
       
       expect(grid).toBeInstanceOf(Array);
       expect(grid[0]).toHaveProperty('dayName');
-      // Swedish day names
-      expect(['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'])
-        .toContain(grid[0].dayName);
+      // Swedish day names (Intl may return lowercase — compare case-insensitively)
+      const validSwedishDays = ['måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag', 'söndag'];
+      expect(validSwedishDays).toContain(grid[0].dayName.toLowerCase());
     });
 
     it('should handle empty events array', () => {
       const grid = transformCalendarToEventGrid([], 'en');
       expect(grid).toBeInstanceOf(Array);
       expect(grid.length).toBe(0);
+    });
+
+    it('should handle null/undefined events', () => {
+      expect(transformCalendarToEventGrid(null, 'en')).toEqual([]);
+      expect(transformCalendarToEventGrid(undefined, 'en')).toEqual([]);
+    });
+
+    it('should support all 14 languages via Intl formatting', () => {
+      const allLangs = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+      
+      allLangs.forEach(lang => {
+        const grid = transformCalendarToEventGrid(mockEvents, lang);
+        expect(grid).toBeInstanceOf(Array);
+        expect(grid.length).toBeGreaterThan(0);
+        // Day name should be a non-empty string for all languages
+        expect(grid[0].dayName).toBeTruthy();
+        expect(typeof grid[0].dayName).toBe('string');
+        expect(grid[0].dayName.length).toBeGreaterThan(0);
+      });
+    });
+
+    it('should handle events with different date field names', () => {
+      const eventsWithDatum = [
+        { titel: 'Event 1', datum: '2026-02-10T10:00:00' },
+        { rubrik: 'Event 2', from: '2026-02-11T14:00:00' }
+      ];
+      const grid = transformCalendarToEventGrid(eventsWithDatum, 'en');
+      expect(grid.length).toBe(2);
     });
 
     it('should group events by date', () => {
@@ -207,6 +235,86 @@ describe('Data Transformers', () => {
       const readTime = calculateReadTime('');
       expect(readTime).toBe('1 min read');
     });
+
+    it('should handle content with only HTML tags', () => {
+      const readTime = calculateReadTime('<div><p></p></div>');
+      expect(readTime).toContain('min read');
+    });
+
+    it('should never return less than 1 minute', () => {
+      const readTime = calculateReadTime('<p>Hello</p>');
+      const minutes = parseInt(readTime);
+      expect(minutes).toBeGreaterThanOrEqual(1);
+    });
+  });
+
+  describe('generateArticleContent edge cases', () => {
+    it('should handle unknown article type gracefully', () => {
+      const content = generateArticleContent({ events: [] }, 'unknown-type', 'en');
+      expect(typeof content).toBe('string');
+      expect(content.length).toBeGreaterThan(0);
+    });
+
+    it('should handle committee-reports with empty reports array', () => {
+      const content = generateArticleContent({ reports: [] }, 'committee-reports', 'en');
+      expect(content).toContain('No committee reports');
+    });
+
+    it('should handle propositions with data', () => {
+      const content = generateArticleContent({ 
+        propositions: [{ titel: 'Test Prop', url: '#', dokumentnamn: 'Prop 2025/26:1' }] 
+      }, 'propositions', 'en');
+      expect(content).toContain('Test Prop');
+    });
+
+    it('should handle motions with data', () => {
+      const content = generateArticleContent({ 
+        motions: [{ titel: 'Test Motion', parti: 'S', url: '#', dokumentnamn: 'Mot 2025/26:1', intressent_namn: 'Test Person' }] 
+      }, 'motions', 'en');
+      expect(content).toContain('Test Motion');
+    });
+
+    it('should include highlights section when highlights are provided', () => {
+      const content = generateArticleContent(
+        { 
+          events: mockEvents, 
+          highlights: [
+            { title: 'Budget Vote', description: 'Critical budget debate expected' },
+            { title: 'EU Summit', description: 'Key EU decisions ahead' }
+          ] 
+        },
+        'week-ahead',
+        'en'
+      );
+      expect(content).toContain('What to Watch');
+      expect(content).toContain('Budget Vote');
+      expect(content).toContain('Critical budget debate expected');
+      expect(content).toContain('EU Summit');
+    });
+
+    it('should include Swedish highlights section', () => {
+      const content = generateArticleContent(
+        { 
+          events: mockEvents, 
+          highlights: [
+            { title: 'Budgetomröstning', description: 'Viktig budgetdebatt förväntas' }
+          ] 
+        },
+        'week-ahead',
+        'sv'
+      );
+      expect(content).toContain('Vad man ska följa');
+      expect(content).toContain('Budgetomröstning');
+    });
+
+    it('should handle events with no date field', () => {
+      const content = generateArticleContent(
+        { events: [{ title: 'No date event' }], highlights: [] },
+        'week-ahead',
+        'en'
+      );
+      expect(typeof content).toBe('string');
+    });
   });
 
   describe('generateSources', () => {
@@ -230,6 +338,20 @@ describe('Data Transformers', () => {
       const sources = generateSources(tools);
       
       expect(sources.some(s => s.includes('Calendar') || s.includes('Riksdagen'))).toBe(true);
+    });
+
+    it('should include sources for all MCP tool types', () => {
+      const sources = generateSources([
+        'get_calendar_events', 'get_betankanden', 'get_propositioner',
+        'get_motioner', 'search_dokument'
+      ]);
+      
+      expect(sources).toContain('riksdag-regering-mcp');
+      expect(sources).toContain('Riksdagen Calendar');
+      expect(sources).toContain('Committee Reports');
+      expect(sources).toContain('Government Propositions');
+      expect(sources).toContain('Parliamentary Motions');
+      expect(sources).toContain('Riksdagen Documents');
     });
   });
 });

@@ -19,29 +19,24 @@
 #   gh aw compile
 # For more information: https://github.com/github/gh-aw/blob/main/.github/aw/github-agentic-workflows.md
 #
-# Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server and validates with Playwright
+# Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation
 #
-# frontmatter-hash: c9d9feadb54806ba1214aa1e511cf0b3a1150a71785bb317fcb84007534c979c
+# frontmatter-hash: 9eda22f921cadccc405523f9e59989b46ef521eac76378886162cb1bdaafdf06
 
-name: "News Article Generator"
+name: "News Realtime Monitor"
 "on":
   schedule:
-  - cron: "51 5 * * *"
-    # Friendly format: daily (scattered)
+  - cron: "0 10 * * 1-5"
+  - cron: "0 14 * * 1-5"
   workflow_dispatch:
     inputs:
-      article_types:
-        default: week-ahead
-        description: Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking)
+      focus:
+        default: all
+        description: "Focus area: votes, debates, questions, all"
         required: false
-      force_generation:
-        default: false
-        description: Force generation even if recent articles exist
-        required: false
-        type: boolean
       languages:
         default: en,sv
-        description: Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)
+        description: Languages to generate (en,sv | nordic | eu-core | all)
         required: false
 
 permissions: {}
@@ -49,7 +44,7 @@ permissions: {}
 concurrency:
   group: "gh-aw-${{ github.workflow }}"
 
-run-name: "News Article Generator"
+run-name: "News Realtime Monitor"
 
 jobs:
   activation:
@@ -67,7 +62,7 @@ jobs:
       - name: Check workflow file timestamps
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
-          GH_AW_WORKFLOW_FILE: "news-article-generator.lock.yml"
+          GH_AW_WORKFLOW_FILE: "news-realtime-monitor.lock.yml"
         with:
           script: |
             const { setupGlobals } = require('/opt/gh-aw/actions/setup_globals.cjs');
@@ -158,7 +153,7 @@ jobs:
               version: "",
               agent_version: "0.0.409",
               cli_version: "v0.43.18",
-              workflow_name: "News Article Generator",
+              workflow_name: "News Realtime Monitor",
               experimental: false,
               supports_tools_allowlist: true,
               supports_http_transport: true,
@@ -612,7 +607,7 @@ jobs:
           </system>
           GH_AW_PROMPT_EOF
           cat << 'GH_AW_PROMPT_EOF' >> "$GH_AW_PROMPT"
-          {{#runtime-import .github/workflows/news-article-generator.md}}
+          {{#runtime-import .github/workflows/news-realtime-monitor.md}}
           GH_AW_PROMPT_EOF
       - name: Substitute placeholders
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
@@ -667,7 +662,7 @@ jobs:
       - name: Execute GitHub Copilot CLI
         id: agentic_execution
         # Copilot CLI tool arguments (sorted):
-        timeout-minutes: 30
+        timeout-minutes: 20
         run: |
           set -o pipefail
           sudo -E awf --env-all --container-workdir "${GITHUB_WORKSPACE}" --allow-domains '*.jsr.io,api.business.githubcopilot.com,api.enterprise.githubcopilot.com,api.github.com,api.githubcopilot.com,api.individual.githubcopilot.com,api.npms.io,api.snapcraft.io,archive.ubuntu.com,azure.archive.ubuntu.com,bun.sh,crl.geotrust.com,crl.globalsign.com,crl.identrust.com,crl.sectigo.com,crl.thawte.com,crl.usertrust.com,crl.verisign.com,crl3.digicert.com,crl4.digicert.com,crls.ssl.com,deb.nodesource.com,deno.land,get.pnpm.io,github.com,host.docker.internal,json-schema.org,json.schemastore.org,jsr.io,keyserver.ubuntu.com,nodejs.org,npm.pkg.github.com,npmjs.com,npmjs.org,ocsp.digicert.com,ocsp.geotrust.com,ocsp.globalsign.com,ocsp.identrust.com,ocsp.sectigo.com,ocsp.ssl.com,ocsp.thawte.com,ocsp.usertrust.com,ocsp.verisign.com,packagecloud.io,packages.cloud.google.com,packages.microsoft.com,ppa.launchpad.net,raw.githubusercontent.com,registry.bower.io,registry.npmjs.com,registry.npmjs.org,registry.yarnpkg.com,repo.yarnpkg.com,riksdag-regering-ai.onrender.com,s.symcb.com,s.symcd.com,security.ubuntu.com,skimdb.npmjs.com,telemetry.enterprise.githubcopilot.com,ts-crl.ws.symantec.com,ts-ocsp.ws.symantec.com,www.npmjs.com,www.npmjs.org,yarnpkg.com' --log-level info --proxy-logs-dir /tmp/gh-aw/sandbox/firewall/logs --enable-host-access --image-tag 0.16.4 --skip-pull \
@@ -857,7 +852,7 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
           GH_AW_NOOP_MAX: 1
-          GH_AW_WORKFLOW_NAME: "News Article Generator"
+          GH_AW_WORKFLOW_NAME: "News Realtime Monitor"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -870,7 +865,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "News Article Generator"
+          GH_AW_WORKFLOW_NAME: "News Realtime Monitor"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -883,10 +878,10 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "News Article Generator"
+          GH_AW_WORKFLOW_NAME: "News Realtime Monitor"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
-          GH_AW_WORKFLOW_ID: "news-article-generator"
+          GH_AW_WORKFLOW_ID: "news-realtime-monitor"
           GH_AW_SECRET_VERIFICATION_RESULT: ${{ needs.agent.outputs.secret_verification_result }}
           GH_AW_CHECKOUT_PR_SUCCESS: ${{ needs.agent.outputs.checkout_pr_success }}
         with:
@@ -901,7 +896,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "News Article Generator"
+          GH_AW_WORKFLOW_NAME: "News Realtime Monitor"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
           GH_AW_NOOP_MESSAGE: ${{ steps.noop.outputs.noop_message }}
@@ -918,7 +913,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "News Article Generator"
+          GH_AW_WORKFLOW_NAME: "News Realtime Monitor"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -935,7 +930,7 @@ jobs:
           GH_AW_COMMENT_ID: ${{ needs.activation.outputs.comment_id }}
           GH_AW_COMMENT_REPO: ${{ needs.activation.outputs.comment_repo }}
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          GH_AW_WORKFLOW_NAME: "News Article Generator"
+          GH_AW_WORKFLOW_NAME: "News Realtime Monitor"
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
           GH_AW_DETECTION_CONCLUSION: ${{ needs.detection.result }}
         with:
@@ -981,8 +976,8 @@ jobs:
       - name: Setup threat detection
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
-          WORKFLOW_NAME: "News Article Generator"
-          WORKFLOW_DESCRIPTION: "Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server and validates with Playwright"
+          WORKFLOW_NAME: "News Realtime Monitor"
+          WORKFLOW_DESCRIPTION: "Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation"
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |
@@ -1062,8 +1057,8 @@ jobs:
     env:
       GH_AW_ENGINE_ID: "copilot"
       GH_AW_ENGINE_MODEL: "claude-opus-4.6"
-      GH_AW_WORKFLOW_ID: "news-article-generator"
-      GH_AW_WORKFLOW_NAME: "News Article Generator"
+      GH_AW_WORKFLOW_ID: "news-realtime-monitor"
+      GH_AW_WORKFLOW_NAME: "News Realtime Monitor"
     outputs:
       create_discussion_error_count: ${{ steps.process_safe_outputs.outputs.create_discussion_error_count }}
       create_discussion_errors: ${{ steps.process_safe_outputs.outputs.create_discussion_errors }}

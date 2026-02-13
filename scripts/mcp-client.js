@@ -49,7 +49,15 @@ export class MCPClient {
    * @returns {Promise<Object>} Tool response
    */
   async request(tool, params = {}, retryCount = 0) {
-    this.requestCount++;
+    // Validate tool name to prevent path traversal
+    if (!tool || typeof tool !== 'string' || !/^[a-zA-Z0-9_-]+$/.test(tool)) {
+      throw new Error(`Invalid tool name: ${tool}. Tool names must contain only alphanumeric characters, hyphens, and underscores.`);
+    }
+    
+    // Only count the initial request, not retries
+    if (retryCount === 0) {
+      this.requestCount++;
+    }
     
     try {
       const controller = new AbortController();
@@ -74,8 +82,6 @@ export class MCPClient {
       return data;
       
     } catch (error) {
-      this.errorCount++;
-      
       // Retry on network errors (case-insensitive check)
       // maxRetries represents total attempts, so we retry until retryCount reaches maxRetries - 1
       const errorMsg = error.message ? error.message.toLowerCase() : '';
@@ -88,6 +94,9 @@ export class MCPClient {
         await this.sleep(RETRY_DELAY * Math.pow(2, retryCount)); // Exponential backoff
         return this.request(tool, params, retryCount + 1);
       }
+      
+      // Only increment error count on final failure (not retries)
+      this.errorCount++;
       
       throw new Error(`MCP request failed: ${error.message}`);
     }
