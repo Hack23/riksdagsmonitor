@@ -3,22 +3,36 @@
 /**
  * MCP Client for riksdag-regering-mcp Server
  * 
- * HTTP client for accessing Swedish Parliament and Government data
+ * JSON-RPC 2.0 client for accessing Swedish Parliament and Government data
  * via the riksdag-regering-mcp server (32 specialized tools).
  * 
  * Server: https://riksdag-regering-ai.onrender.com/mcp
+ * Protocol: JSON-RPC 2.0 (https://www.jsonrpc.org/specification)
  * Tools: 32 tools for Swedish political data (Riksdag, Regering, MPs, votes, documents)
+ * 
+ * MCP Protocol:
+ *   - POST to /mcp endpoint (not /mcp/tools/{tool})
+ *   - JSON-RPC 2.0 format with method: 'tools/call'
+ *   - Tool names: 'riksdag-regering--{tool}' (e.g., 'riksdag-regering--get_calendar_events')
  * 
  * Usage:
  *   import { MCPClient } from './mcp-client.js';
  *   const client = new MCPClient();
  *   const events = await client.fetchCalendarEvents('2026-02-10', '2026-02-17');
+ * 
+ * Error Handling:
+ *   - Automatic retries on network errors (max 3 attempts with exponential backoff)
+ *   - Fallback from prefixed to non-prefixed tool names
+ *   - Detailed error messages with troubleshooting hints
  */
 
 const DEFAULT_MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp';
 const DEFAULT_REQUEST_TIMEOUT = 30000; // 30 seconds
 const DEFAULT_MAX_RETRIES = 3;
 const RETRY_DELAY = 1000; // 1 second
+
+// JSON-RPC 2.0 request ID counter
+let jsonRpcId = 1;
 
 /**
  * MCP Client Class
@@ -41,7 +55,7 @@ export class MCPClient {
   }
 
   /**
-   * Make HTTP request to MCP server
+   * Make HTTP request to MCP server using JSON-RPC 2.0 protocol
    * 
    * @param {string} tool - Tool name (e.g., 'get_calendar_events')
    * @param {Object} params - Tool parameters
@@ -63,23 +77,62 @@ export class MCPClient {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), this.timeout);
       
-      const response = await fetch(`${this.baseURL}/tools/${tool}`, {
+      // MCP uses JSON-RPC 2.0 protocol
+      // Call the tool using tools/call method
+      // Try with server prefix first (riksdag-regering--tool_name)
+      // If that fails with "tool not found", try without prefix
+      const toolName = tool.includes('--') ? tool : `riksdag-regering--${tool}`;
+      
+      const jsonRpcRequest = {
+        jsonrpc: '2.0',
+        id: jsonRpcId++,
+        method: 'tools/call',
+        params: {
+          name: toolName,
+          arguments: params
+        }
+      };
+      
+      const response = await fetch(this.baseURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(params),
+        body: JSON.stringify(jsonRpcRequest),
         signal: controller.signal
       });
       
       clearTimeout(timeoutId);
       
       if (!response.ok) {
-        throw new Error(`MCP server error: ${response.status} ${response.statusText}`);
+        // Provide more detailed error information
+        let errorBody = '';
+        try {
+          errorBody = await response.text();
+        } catch (e) {
+          // Ignore if we can't read the body
+        }
+        throw new Error(`MCP server error: ${response.status} ${response.statusText}${errorBody ? ' - ' + errorBody : ''}`);
       }
       
-      const data = await response.json();
-      return data;
+      const jsonRpcResponse = await response.json();
+      
+      // Check for JSON-RPC error
+      if (jsonRpcResponse.error) {
+        const errorMsg = jsonRpcResponse.error.message || JSON.stringify(jsonRpcResponse.error);
+        
+        // If tool not found and we used prefix, try without prefix
+        if (errorMsg.includes('not found') && toolName.includes('--') && retryCount === 0) {
+          console.warn(`⚠️ Tool not found with prefix, retrying without prefix...`);
+          // Recursive call without prefix
+          return this.request(tool.replace(/^.*--/, ''), params, retryCount);
+        }
+        
+        throw new Error(`MCP tool error: ${errorMsg}`);
+      }
+      
+      // Extract result from JSON-RPC response
+      return jsonRpcResponse.result || {};
       
     } catch (error) {
       // Retry on network errors (case-insensitive check)
