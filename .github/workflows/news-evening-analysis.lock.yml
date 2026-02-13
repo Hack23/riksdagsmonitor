@@ -19,9 +19,9 @@
 #   gh aw compile
 # For more information: https://github.com/github/gh-aw/blob/main/.github/aw/github-agentic-workflows.md
 #
-# Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage
+# Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage and Playwright validation
 #
-# frontmatter-hash: 7876402faf17ba7f866dceff955b7ef946389ac0a417a17371426fca18983e0e
+# frontmatter-hash: 497e1fe0e8e31e310a3b4ec3ce4c41f496ddb582e16c9be052deadcdc0bc00db
 
 name: "News Evening Analysis"
 "on":
@@ -496,6 +496,23 @@ jobs:
                   "GITHUB_TOOLSETS": "context,repos,issues,pull_requests"
                 }
               },
+              "microsoft/playwright": {
+                "type": "stdio",
+                "container": "node:lts-alpine",
+                "entrypoint": "npx",
+                "entrypointArgs": [
+                  "npx",
+                  "-y",
+                  "@playwright/mcp@latest",
+                  "--headless"
+                ],
+                "tools": [
+                  "*"
+                ],
+                "env": {
+                  "DISPLAY": ":99"
+                }
+              },
               "riksdag-regering": {
                 "type": "http",
                 "url": "https://riksdag-regering-ai.onrender.com/mcp",
@@ -963,7 +980,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           WORKFLOW_NAME: "News Evening Analysis"
-          WORKFLOW_DESCRIPTION: "Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage"
+          WORKFLOW_DESCRIPTION: "Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage and Playwright validation"
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |

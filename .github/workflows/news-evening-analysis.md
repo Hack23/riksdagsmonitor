@@ -1,6 +1,6 @@
 ---
 name: News Evening Analysis
-description: Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage
+description: Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage and Playwright validation
 on:
   schedule:
     # Run weekday evenings at 18:00 UTC (19:00 CET)
@@ -36,6 +36,11 @@ tools:
     toolsets:
       - default
   bash: true
+  microsoft/playwright:
+    command: npx
+    args: ["-y", "@playwright/mcp@latest", "--headless"]
+    env:
+      DISPLAY: ":99"
 
 safe-outputs:
   create-pull-request: {}
@@ -272,6 +277,42 @@ Before creating the PR:
 - ✅ No unverified claims
 - ✅ Hreflang tags for all language versions
 - ✅ Schema.org NewsArticle structured data
+- ✅ Mobile-responsive layout
+- ✅ RTL support for Arabic and Hebrew versions
+
+### Playwright Visual Validation
+
+Use the **microsoft/playwright** MCP tool to visually validate generated articles before creating the PR:
+
+1. Start a local server: `npx http-server . -p 8080 &`
+2. Use `browser_navigate` to open each generated article
+3. Use `browser_snapshot` to verify the accessibility tree structure
+4. Use `browser_screenshot` to capture visual evidence for the PR
+5. Verify heading hierarchy, content sections, and source citations render correctly
+6. For RTL languages (ar, he): verify text direction and layout
+7. Stop the server: `kill %1 2>/dev/null || true`
+
+### Cross-Referencing Strategy
+
+For deeper evening analysis, combine data from multiple riksdag-regering-mcp tools:
+
+**Vote Analysis Pattern:**
+1. `search_voteringar` - get vote results
+2. `get_voting_group` - party-level breakdown
+3. `search_anforanden` - speeches during the debate
+4. `search_ledamoter` - MP profiles for context
+
+**Government Activity Pattern:**
+1. `search_regering` - government documents published today
+2. `get_propositioner` - new government bills
+3. `analyze_g0v_by_department` - departmental breakdown
+4. `enhanced_government_search` - combined search
+
+**Legislative Tracking Pattern:**
+1. `get_betankanden` - committee reports
+2. `get_motioner` - opposition motions on same topic
+3. `search_dokument_fulltext` - find related documents
+4. `get_dokument` - get full text of key documents
 - ✅ Mobile-responsive layout
 - ✅ RTL support for Arabic and Hebrew versions
 

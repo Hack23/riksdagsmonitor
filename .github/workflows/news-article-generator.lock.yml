@@ -19,9 +19,9 @@
 #   gh aw compile
 # For more information: https://github.com/github/gh-aw/blob/main/.github/aw/github-agentic-workflows.md
 #
-# Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server
+# Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server and validates with Playwright
 #
-# frontmatter-hash: 2eb165bb62290f0be20f848a4d47046d5fef3c2734a4644537fdbbc4d5a78a09
+# frontmatter-hash: 5ae1360156cf58d3940f3970eb7324a73783637668c16bd991ae8ceb62dfa3cb
 
 name: "News Article Generator"
 "on":
@@ -498,6 +498,23 @@ jobs:
                   "GITHUB_TOOLSETS": "context,repos,issues,pull_requests"
                 }
               },
+              "microsoft/playwright": {
+                "type": "stdio",
+                "container": "node:lts-alpine",
+                "entrypoint": "npx",
+                "entrypointArgs": [
+                  "npx",
+                  "-y",
+                  "@playwright/mcp@latest",
+                  "--headless"
+                ],
+                "tools": [
+                  "*"
+                ],
+                "env": {
+                  "DISPLAY": ":99"
+                }
+              },
               "riksdag-regering": {
                 "type": "http",
                 "url": "https://riksdag-regering-ai.onrender.com/mcp",
@@ -965,7 +982,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           WORKFLOW_NAME: "News Article Generator"
-          WORKFLOW_DESCRIPTION: "Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server"
+          WORKFLOW_DESCRIPTION: "Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server and validates with Playwright"
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |

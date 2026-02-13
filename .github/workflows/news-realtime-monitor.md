@@ -1,6 +1,6 @@
 ---
 name: News Realtime Monitor
-description: Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours
+description: Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation
 on:
   schedule:
     # Run twice during Swedish parliamentary working hours (CET/CEST)
@@ -35,6 +35,11 @@ tools:
     toolsets:
       - default
   bash: true
+  microsoft/playwright:
+    command: npx
+    args: ["-y", "@playwright/mcp@latest", "--headless"]
+    env:
+      DISPLAY: ":99"
 
 safe-outputs:
   create-pull-request: {}
@@ -212,6 +217,19 @@ If no significant events detected, log to metadata and exit gracefully.
 - `search_regering` - Search government documents
 - `enhanced_government_search` - Combined search
 
+### Playwright MCP Tools (microsoft/playwright)
+- `browser_navigate` - Navigate to generated article URL
+- `browser_snapshot` - Capture accessibility tree for validation
+- `browser_screenshot` - Take screenshot for PR evidence
+
+### Cross-Referencing for Breaking News
+
+When a significant event is detected, enrich the article by combining multiple tools:
+
+1. **Vote event detected** → `search_voteringar` + `get_voting_group` + `search_anforanden` (related speeches) + `search_ledamoter` (key MPs)
+2. **Government announcement** → `search_regering` + `get_propositioner` + `enhanced_government_search`
+3. **Major debate** → `search_anforanden` + `search_dokument` (underlying documents) + `get_calendar_events` (scheduled context)
+
 ## Quality Standards
 
 - ✅ Verify all facts against riksdag-regering-mcp data
@@ -220,6 +238,15 @@ If no significant events detected, log to metadata and exit gracefully.
 - ✅ Proper HTML5, WCAG 2.1 AA accessible
 - ✅ Generate all requested language versions
 - ✅ RTL support for Arabic and Hebrew
+
+### Playwright Visual Validation
+
+If articles are generated, validate with Playwright before creating PR:
+1. `npx http-server . -p 8080 &` (start local server)
+2. `browser_navigate` to each generated article
+3. `browser_snapshot` to verify accessibility tree
+4. `browser_screenshot` for visual evidence in PR
+5. `kill %1 2>/dev/null || true` (cleanup)
 
 ## Error Handling
 

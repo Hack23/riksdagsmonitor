@@ -19,9 +19,9 @@
 #   gh aw compile
 # For more information: https://github.com/github/gh-aw/blob/main/.github/aw/github-agentic-workflows.md
 #
-# Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours
+# Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation
 #
-# frontmatter-hash: 060cfcbd8e6b68c012d629bbf62156cf9ca4417758315b30a6989b8e553f76ea
+# frontmatter-hash: e753a5e63893a03384caac1017af4fb0927f66ced04d81560b204b8e95663fad
 
 name: "News Realtime Monitor"
 "on":
@@ -493,6 +493,23 @@ jobs:
                   "GITHUB_TOOLSETS": "context,repos,issues,pull_requests"
                 }
               },
+              "microsoft/playwright": {
+                "type": "stdio",
+                "container": "node:lts-alpine",
+                "entrypoint": "npx",
+                "entrypointArgs": [
+                  "npx",
+                  "-y",
+                  "@playwright/mcp@latest",
+                  "--headless"
+                ],
+                "tools": [
+                  "*"
+                ],
+                "env": {
+                  "DISPLAY": ":99"
+                }
+              },
               "riksdag-regering": {
                 "type": "http",
                 "url": "https://riksdag-regering-ai.onrender.com/mcp",
@@ -960,7 +977,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           WORKFLOW_NAME: "News Realtime Monitor"
-          WORKFLOW_DESCRIPTION: "Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours"
+          WORKFLOW_DESCRIPTION: "Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation"
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |
