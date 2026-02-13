@@ -25,20 +25,216 @@ const __dirname = path.dirname(__filename);
 const NEWS_DIR = path.join(__dirname, '..', 'news');
 
 const LANGUAGES = {
-  en: { name: 'English', code: 'en', locale: 'en_US', title: 'News', subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.', breadcrumbs: { home: 'Home', news: 'News' } },
-  sv: { name: 'Svenska', code: 'sv', locale: 'sv_SE', title: 'Nyheter', subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.', breadcrumbs: { home: 'Hem', news: 'Nyheter' } },
-  da: { name: 'Dansk', code: 'da', locale: 'da_DK', title: 'Nyheder', subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.', breadcrumbs: { home: 'Hjem', news: 'Nyheder' } },
-  no: { name: 'Norsk', code: 'nb', locale: 'nb_NO', title: 'Nyheter', subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.', breadcrumbs: { home: 'Hjem', news: 'Nyheter' } },
-  fi: { name: 'Suomi', code: 'fi', locale: 'fi_FI', title: 'Uutiset', subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.', breadcrumbs: { home: 'Etusivu', news: 'Uutiset' } },
-  de: { name: 'Deutsch', code: 'de', locale: 'de_DE', title: 'Nachrichten', subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.', breadcrumbs: { home: 'Startseite', news: 'Nachrichten' } },
-  fr: { name: 'Français', code: 'fr', locale: 'fr_FR', title: 'Actualités', subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.', breadcrumbs: { home: 'Accueil', news: 'Actualités' } },
-  es: { name: 'Español', code: 'es', locale: 'es_ES', title: 'Noticias', subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.', breadcrumbs: { home: 'Inicio', news: 'Noticias' } },
-  nl: { name: 'Nederlands', code: 'nl', locale: 'nl_NL', title: 'Nieuws', subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.', breadcrumbs: { home: 'Home', news: 'Nieuws' } },
-  ar: { name: 'العربية', code: 'ar', locale: 'ar_SA', title: 'أخبار', subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.', rtl: true, breadcrumbs: { home: 'الرئيسية', news: 'أخبار' } },
-  he: { name: 'עברית', code: 'he', locale: 'he_IL', title: 'חדשות', subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.', rtl: true, breadcrumbs: { home: 'בית', news: 'חדשות' } },
-  ja: { name: '日本語', code: 'ja', locale: 'ja_JP', title: 'ニュース', subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。', breadcrumbs: { home: 'ホーム', news: 'ニュース' } },
-  ko: { name: '한국어', code: 'ko', locale: 'ko_KR', title: '뉴스', subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.', breadcrumbs: { home: '홈', news: '뉴스' } },
-  zh: { name: '中文', code: 'zh', locale: 'zh_CN', title: '新闻', subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。', breadcrumbs: { home: '主页', news: '新闻' } }
+  en: {
+    name: 'English', code: 'en', locale: 'en_US',
+    title: 'News',
+    subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
+    keywords: 'riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy',
+    breadcrumbs: { home: 'Home', news: 'News' },
+    backLink: 'Back to Main',
+    filters: {
+      type: 'Type:', allTypes: 'All types', prospective: 'Prospective', retrospective: 'Retrospective', analysis: 'Analysis', breaking: 'Breaking news',
+      topic: 'Topic:', allTopics: 'All Topics', parliament: 'Parliament', government: 'Government', defense: 'Defense', environment: 'Environment', committees: 'Committees', legislation: 'Legislation',
+      sort: 'Sort:', newest: 'Newest First', oldest: 'Oldest First', titleSort: 'Title'
+    },
+    noResults: 'No articles matched the filters',
+    i18n: { noArticles: 'No articles available', loading: 'Loading articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'' }
+  },
+  sv: {
+    name: 'Svenska', code: 'sv', locale: 'sv_SE',
+    title: 'Nyheter',
+    subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.',
+    keywords: 'riksdag nyheter, svenska riksdagen, regeringsanalys, politisk journalistik, öppenhet, demokrati',
+    breadcrumbs: { home: 'Hem', news: 'Nyheter' },
+    backLink: 'Tillbaka till huvudsidan',
+    filters: {
+      type: 'Typ:', allTypes: 'Alla typer', prospective: 'Framåtblickande', retrospective: 'Återblickande', analysis: 'Analys', breaking: 'Senaste nytt',
+      topic: 'Ämne:', allTopics: 'Alla ämnen', parliament: 'Riksdagen', government: 'Regeringen', defense: 'Försvar', environment: 'Miljö', committees: 'Utskott', legislation: 'Lagstiftning',
+      sort: 'Sortera:', newest: 'Nyast först', oldest: 'Äldst först', titleSort: 'Titel'
+    },
+    noResults: 'Inga artiklar matchade filtren',
+    i18n: { noArticles: 'Inga artiklar tillgängliga', loading: 'Laddar artiklar...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artiklar\'' }
+  },
+  da: {
+    name: 'Dansk', code: 'da', locale: 'da_DK',
+    title: 'Nyheder',
+    subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.',
+    keywords: 'riksdag nyheder, svensk parlament, regeringsanalyse, politisk journalistik, gennemsigtighed, demokrati',
+    breadcrumbs: { home: 'Hjem', news: 'Nyheder' },
+    backLink: 'Tilbage til hovedsiden',
+    filters: {
+      type: 'Type:', allTypes: 'Alle typer', prospective: 'Fremadrettet', retrospective: 'Tilbageblik', analysis: 'Analyse', breaking: 'Seneste nyt',
+      topic: 'Emne:', allTopics: 'Alle emner', parliament: 'Parlamentet', government: 'Regeringen', defense: 'Forsvar', environment: 'Miljø', committees: 'Udvalg', legislation: 'Lovgivning',
+      sort: 'Sorter:', newest: 'Nyeste først', oldest: 'Ældste først', titleSort: 'Titel'
+    },
+    noResults: 'Ingen artikler matchede filtrene',
+    i18n: { noArticles: 'Ingen artikler tilgængelige', loading: 'Indlæser artikler...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikler\'' }
+  },
+  no: {
+    name: 'Norsk', code: 'nb', locale: 'nb_NO',
+    title: 'Nyheter',
+    subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.',
+    keywords: 'riksdag nyheter, svensk parlament, regjeringsanalyse, politisk journalistikk, åpenhet, demokrati',
+    breadcrumbs: { home: 'Hjem', news: 'Nyheter' },
+    backLink: 'Tilbake til hovedsiden',
+    filters: {
+      type: 'Type:', allTypes: 'Alle typer', prospective: 'Fremtidsrettet', retrospective: 'Tilbakeblikk', analysis: 'Analyse', breaking: 'Siste nytt',
+      topic: 'Emne:', allTopics: 'Alle emner', parliament: 'Parlamentet', government: 'Regjeringen', defense: 'Forsvar', environment: 'Miljø', committees: 'Utvalg', legislation: 'Lovgivning',
+      sort: 'Sorter:', newest: 'Nyeste først', oldest: 'Eldste først', titleSort: 'Tittel'
+    },
+    noResults: 'Ingen artikler matchet filtrene',
+    i18n: { noArticles: 'Ingen artikler tilgjengelige', loading: 'Laster artikler...', articleCount: '(n) => n === 1 ? \'1 artikkel\' : \'\' + n + \' artikler\'' }
+  },
+  fi: {
+    name: 'Suomi', code: 'fi', locale: 'fi_FI',
+    title: 'Uutiset',
+    subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.',
+    keywords: 'riksdag uutiset, ruotsin parlamentti, hallitusanalyysi, poliittinen journalismi, avoimuus, demokratia',
+    breadcrumbs: { home: 'Etusivu', news: 'Uutiset' },
+    backLink: 'Takaisin etusivulle',
+    filters: {
+      type: 'Tyyppi:', allTypes: 'Kaikki tyypit', prospective: 'Ennakoiva', retrospective: 'Takautuva', analysis: 'Analyysi', breaking: 'Viimeisimmät',
+      topic: 'Aihe:', allTopics: 'Kaikki aiheet', parliament: 'Parlamentti', government: 'Hallitus', defense: 'Puolustus', environment: 'Ympäristö', committees: 'Valiokunnat', legislation: 'Lainsäädäntö',
+      sort: 'Järjestä:', newest: 'Uusimmat ensin', oldest: 'Vanhimmat ensin', titleSort: 'Otsikko'
+    },
+    noResults: 'Mikään artikkeli ei vastannut suodattimia',
+    i18n: { noArticles: 'Ei artikkeleita saatavilla', loading: 'Ladataan artikkeleita...', articleCount: '(n) => n === 1 ? \'1 artikkeli\' : \'\' + n + \' artikkelia\'' }
+  },
+  de: {
+    name: 'Deutsch', code: 'de', locale: 'de_DE',
+    title: 'Nachrichten',
+    subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.',
+    keywords: 'riksdag nachrichten, schwedisches parlament, regierungsanalyse, politischer journalismus, transparenz, demokratie',
+    breadcrumbs: { home: 'Startseite', news: 'Nachrichten' },
+    backLink: 'Zurück zur Hauptseite',
+    filters: {
+      type: 'Typ:', allTypes: 'Alle Typen', prospective: 'Vorausschauend', retrospective: 'Rückblickend', analysis: 'Analyse', breaking: 'Eilmeldungen',
+      topic: 'Thema:', allTopics: 'Alle Themen', parliament: 'Parlament', government: 'Regierung', defense: 'Verteidigung', environment: 'Umwelt', committees: 'Ausschüsse', legislation: 'Gesetzgebung',
+      sort: 'Sortieren:', newest: 'Neueste zuerst', oldest: 'Älteste zuerst', titleSort: 'Titel'
+    },
+    noResults: 'Keine Artikel entsprachen den Filtern',
+    i18n: { noArticles: 'Keine Artikel verfügbar', loading: 'Artikel werden geladen...', articleCount: '(n) => n === 1 ? \'1 Artikel\' : \'\' + n + \' Artikel\'' }
+  },
+  fr: {
+    name: 'Français', code: 'fr', locale: 'fr_FR',
+    title: 'Actualités',
+    subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.',
+    keywords: 'riksdag actualités, parlement suédois, analyse gouvernementale, journalisme politique, transparence, démocratie',
+    breadcrumbs: { home: 'Accueil', news: 'Actualités' },
+    backLink: 'Retour à l\'accueil',
+    filters: {
+      type: 'Type :', allTypes: 'Tous types', prospective: 'Prospectif', retrospective: 'Rétrospectif', analysis: 'Analyse', breaking: 'Dernières nouvelles',
+      topic: 'Sujet :', allTopics: 'Tous sujets', parliament: 'Parlement', government: 'Gouvernement', defense: 'Défense', environment: 'Environnement', committees: 'Comités', legislation: 'Législation',
+      sort: 'Trier :', newest: 'Plus récent', oldest: 'Plus ancien', titleSort: 'Titre'
+    },
+    noResults: 'Aucun article ne correspond aux filtres',
+    i18n: { noArticles: 'Aucun article disponible', loading: 'Chargement des articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'' }
+  },
+  es: {
+    name: 'Español', code: 'es', locale: 'es_ES',
+    title: 'Noticias',
+    subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.',
+    keywords: 'riksdag noticias, parlamento sueco, análisis gubernamental, periodismo político, transparencia, democracia',
+    breadcrumbs: { home: 'Inicio', news: 'Noticias' },
+    backLink: 'Volver a la página principal',
+    filters: {
+      type: 'Tipo:', allTypes: 'Todos los tipos', prospective: 'Prospectivo', retrospective: 'Retrospectivo', analysis: 'Análisis', breaking: 'Última hora',
+      topic: 'Tema:', allTopics: 'Todos los temas', parliament: 'Parlamento', government: 'Gobierno', defense: 'Defensa', environment: 'Medio ambiente', committees: 'Comités', legislation: 'Legislación',
+      sort: 'Ordenar:', newest: 'Más reciente', oldest: 'Más antiguo', titleSort: 'Título'
+    },
+    noResults: 'Ningún artículo coincidió con los filtros',
+    i18n: { noArticles: 'No hay artículos disponibles', loading: 'Cargando artículos...', articleCount: '(n) => n === 1 ? \'1 artículo\' : \'\' + n + \' artículos\'' }
+  },
+  nl: {
+    name: 'Nederlands', code: 'nl', locale: 'nl_NL',
+    title: 'Nieuws',
+    subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.',
+    keywords: 'riksdag nieuws, zweeds parlement, regeringsanalyse, politieke journalistiek, transparantie, democratie',
+    breadcrumbs: { home: 'Home', news: 'Nieuws' },
+    backLink: 'Terug naar hoofdpagina',
+    filters: {
+      type: 'Type:', allTypes: 'Alle types', prospective: 'Vooruitziend', retrospective: 'Terugblik', analysis: 'Analyse', breaking: 'Laatste nieuws',
+      topic: 'Onderwerp:', allTopics: 'Alle onderwerpen', parliament: 'Parlement', government: 'Regering', defense: 'Defensie', environment: 'Milieu', committees: 'Commissies', legislation: 'Wetgeving',
+      sort: 'Sorteren:', newest: 'Nieuwste eerst', oldest: 'Oudste eerst', titleSort: 'Titel'
+    },
+    noResults: 'Geen artikelen voldeden aan de filters',
+    i18n: { noArticles: 'Geen artikelen beschikbaar', loading: 'Artikelen laden...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikelen\'' }
+  },
+  ar: {
+    name: 'العربية', code: 'ar', locale: 'ar_SA', rtl: true,
+    title: 'أخبار',
+    subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.',
+    keywords: 'أخبار البرلمان, البرلمان السويدي, تحليل حكومي, صحافة سياسية, شفافية, ديمقراطية',
+    breadcrumbs: { home: 'الرئيسية', news: 'أخبار' },
+    backLink: 'العودة إلى الصفحة الرئيسية',
+    filters: {
+      type: 'النوع:', allTypes: 'جميع الأنواع', prospective: 'استشرافي', retrospective: 'استعادي', analysis: 'تحليل', breaking: 'أخبار عاجلة',
+      topic: 'الموضوع:', allTopics: 'جميع المواضيع', parliament: 'البرلمان', government: 'الحكومة', defense: 'الدفاع', environment: 'البيئة', committees: 'اللجان', legislation: 'التشريعات',
+      sort: 'الترتيب:', newest: 'الأحدث أولاً', oldest: 'الأقدم أولاً', titleSort: 'العنوان'
+    },
+    noResults: 'لا توجد مقالات تطابق الفلاتر',
+    i18n: { noArticles: 'لا توجد مقالات متاحة', loading: 'جارٍ تحميل المقالات...', articleCount: '(n) => n === 1 ? \'مقال واحد\' : \'\' + n + \' مقالات\'' }
+  },
+  he: {
+    name: 'עברית', code: 'he', locale: 'he_IL', rtl: true,
+    title: 'חדשות',
+    subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.',
+    keywords: 'חדשות הפרלמנט, הפרלמנט השוודי, ניתוח ממשלתי, עיתונות פוליטית, שקיפות, דמוקרטיה',
+    breadcrumbs: { home: 'בית', news: 'חדשות' },
+    backLink: 'חזרה לדף הבית',
+    filters: {
+      type: 'סוג:', allTypes: 'כל הסוגים', prospective: 'פרוספקטיבי', retrospective: 'רטרוספקטיבי', analysis: 'ניתוח', breaking: 'חדשות אחרונות',
+      topic: 'נושא:', allTopics: 'כל הנושאים', parliament: 'פרלמנט', government: 'ממשלה', defense: 'הגנה', environment: 'סביבה', committees: 'ועדות', legislation: 'חקיקה',
+      sort: 'מיון:', newest: 'החדש ביותר', oldest: 'הישן ביותר', titleSort: 'כותרת'
+    },
+    noResults: 'אין מאמרים שתואמים את הסינון',
+    i18n: { noArticles: 'אין מאמרים זמינים', loading: 'טוען מאמרים...', articleCount: '(n) => n === 1 ? \'מאמר אחד\' : \'\' + n + \' מאמרים\'' }
+  },
+  ja: {
+    name: '日本語', code: 'ja', locale: 'ja_JP',
+    title: 'ニュース',
+    subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。',
+    keywords: '国会ニュース, スウェーデン議会, 政府分析, 政治ジャーナリズム, 透明性, 民主主義',
+    breadcrumbs: { home: 'ホーム', news: 'ニュース' },
+    backLink: 'ホームページに戻る',
+    filters: {
+      type: '種類：', allTypes: 'すべてのタイプ', prospective: '予測', retrospective: '振り返り', analysis: '分析', breaking: '速報',
+      topic: 'トピック：', allTopics: 'すべてのトピック', parliament: '議会', government: '政府', defense: '防衛', environment: '環境', committees: '委員会', legislation: '立法',
+      sort: '並び替え：', newest: '最新順', oldest: '古い順', titleSort: 'タイトル'
+    },
+    noResults: 'フィルターに一致する記事がありません',
+    i18n: { noArticles: '記事がありません', loading: '記事を読み込み中...', articleCount: '(n) => n === 1 ? \'1件の記事\' : \'\' + n + \'件の記事\'' }
+  },
+  ko: {
+    name: '한국어', code: 'ko', locale: 'ko_KR',
+    title: '뉴스',
+    subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.',
+    keywords: '의회 뉴스, 스웨덴 의회, 정부 분석, 정치 저널리즘, 투명성, 민주주의',
+    breadcrumbs: { home: '홈', news: '뉴스' },
+    backLink: '홈페이지로 돌아가기',
+    filters: {
+      type: '유형:', allTypes: '모든 유형', prospective: '전망', retrospective: '회고', analysis: '분석', breaking: '속보',
+      topic: '주제:', allTopics: '모든 주제', parliament: '의회', government: '정부', defense: '국방', environment: '환경', committees: '위원회', legislation: '입법',
+      sort: '정렬:', newest: '최신순', oldest: '오래된 순', titleSort: '제목'
+    },
+    noResults: '필터와 일치하는 기사가 없습니다',
+    i18n: { noArticles: '기사가 없습니다', loading: '기사 로딩 중...', articleCount: '(n) => n === 1 ? \'1개의 기사\' : \'\' + n + \'개의 기사\'' }
+  },
+  zh: {
+    name: '中文', code: 'zh', locale: 'zh_CN',
+    title: '新闻',
+    subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。',
+    keywords: '议会新闻, 瑞典议会, 政府分析, 政治新闻, 透明度, 民主',
+    breadcrumbs: { home: '主页', news: '新闻' },
+    backLink: '返回主页',
+    filters: {
+      type: '类型：', allTypes: '所有类型', prospective: '前瞻', retrospective: '回顾', analysis: '分析', breaking: '最新消息',
+      topic: '主题：', allTopics: '所有主题', parliament: '议会', government: '政府', defense: '国防', environment: '环境', committees: '委员会', legislation: '立法',
+      sort: '排序：', newest: '最新优先', oldest: '最旧优先', titleSort: '标题'
+    },
+    noResults: '没有与过滤器匹配的文章',
+    i18n: { noArticles: '没有可用的文章', loading: '正在加载文章...', articleCount: '(n) => n === 1 ? \'1篇文章\' : \'\' + n + \'篇文章\'' }
+  }
 };
 
 console.log('🗂️ Dynamic News Index Generation');
@@ -217,26 +413,30 @@ function scanNewsArticles() {
  */
 function generateIndexHTML(langKey, articles, allArticlesByLang) {
   const lang = LANGUAGES[langKey];
+  const f = lang.filters;
   const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
+  const mainIndex = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
   
   // For languages without articles, use English articles with language notice
   const displayArticles = articles.length > 0 ? articles : allArticlesByLang.en;
   const needsLanguageNotice = articles.length === 0 && langKey !== 'en';
   
+  const escapedSubtitle = escapeHtml(lang.subtitle);
+
   const html = `<!DOCTYPE html>
 <html lang="${lang.code}"${lang.rtl ? ' dir="rtl"' : ''}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${lang.title} - Riksdagsmonitor</title>
-  <meta name="description" content="${lang.subtitle}">
-  <meta name="keywords" content="riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy">
+  <title>${escapeHtml(lang.title)} - Riksdagsmonitor</title>
+  <meta name="description" content="${escapedSubtitle}">
+  <meta name="keywords" content="${escapeHtml(lang.keywords)}">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/${filename}">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="${lang.title} - Riksdagsmonitor">
-  <meta property="og:description" content="${lang.subtitle}">
+  <meta property="og:title" content="${escapeHtml(lang.title)} - Riksdagsmonitor">
+  <meta property="og:description" content="${escapedSubtitle}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${filename}">
   <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
@@ -245,8 +445,8 @@ function generateIndexHTML(langKey, articles, allArticlesByLang) {
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="${lang.title} - Riksdagsmonitor">
-  <meta name="twitter:description" content="${lang.subtitle}">
+  <meta name="twitter:title" content="${escapeHtml(lang.title)} - Riksdagsmonitor">
+  <meta name="twitter:description" content="${escapedSubtitle}">
   <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
   
   <!-- Hreflang -->
@@ -257,8 +457,8 @@ ${generateHreflangTags()}
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "${lang.title}",
-    "description": "${lang.subtitle}",
+    "name": "${escapeHtml(lang.title)}",
+    "description": "${escapedSubtitle}",
     "numberOfItems": ${displayArticles.length},
     "itemListElement": [${displayArticles.slice(0, 10).map((article, index) => `
       {
@@ -334,9 +534,9 @@ ${generateHreflangTags()}
 <body class="news-page">
   <header class="header-section">
     <div class="header-content">
-      <h1>${lang.title}</h1>
+      <h1>${escapeHtml(lang.title)}</h1>
       <p class="subtitle">${lang.subtitle}</p>
-      <a href="../${langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`}" class="back-link">← ${langKey === 'sv' ? 'Tillbaka till huvudsidan' : langKey === 'da' ? 'Tilbage til hovedsiden' : langKey === 'no' ? 'Tilbake til hovedsiden' : langKey === 'fi' ? 'Takaisin etusivulle' : langKey === 'de' ? 'Zurück zur Hauptseite' : langKey === 'fr' ? 'Retour à l\'accueil' : langKey === 'es' ? 'Volver a la página principal' : langKey === 'nl' ? 'Terug naar hoofdpagina' : langKey === 'ar' ? 'العودة إلى الصفحة الرئيسية' : langKey === 'he' ? 'חזרה לדף הבית' : langKey === 'ja' ? 'ホームページに戻る' : langKey === 'ko' ? '홈페이지로 돌아가기' : langKey === 'zh' ? '返回主页' : 'Back to Main'}</a>
+      <a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}</a>
     </div>
   </header>
   
@@ -346,36 +546,36 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="filter-group">
-        <label for="filter-type">${langKey === 'sv' ? 'Typ' : langKey === 'da' ? 'Type' : langKey === 'no' ? 'Type' : langKey === 'fi' ? 'Tyyppi' : langKey === 'de' ? 'Typ' : langKey === 'fr' ? 'Type' : langKey === 'es' ? 'Tipo' : langKey === 'nl' ? 'Type' : langKey === 'ar' ? 'النوع' : langKey === 'he' ? 'סוג' : langKey === 'ja' ? 'タイプ' : langKey === 'ko' ? '유형' : langKey === 'zh' ? '类型' : 'Type'}:</label>
+        <label for="filter-type">${f.type}</label>
         <select id="filter-type">
-          <option value="all">${langKey === 'sv' ? 'Alla typer' : langKey === 'da' ? 'Alle typer' : langKey === 'no' ? 'Alle typer' : langKey === 'fi' ? 'Kaikki tyypit' : langKey === 'de' ? 'Alle Typen' : langKey === 'fr' ? 'Tous types' : langKey === 'es' ? 'Todos los tipos' : langKey === 'nl' ? 'Alle types' : langKey === 'ar' ? 'جميع الأنواع' : langKey === 'he' ? 'כל הסוגים' : langKey === 'ja' ? 'すべてのタイプ' : langKey === 'ko' ? '모든 유형' : langKey === 'zh' ? '所有类型' : 'All Types'}</option>
-          <option value="prospective">${langKey === 'sv' ? 'Framåtblickande' : langKey === 'da' ? 'Fremadrettet' : langKey === 'no' ? 'Fremtidsrettet' : langKey === 'fi' ? 'Ennakoiva' : langKey === 'de' ? 'Vorausschauend' : langKey === 'fr' ? 'Prospectif' : langKey === 'es' ? 'Prospectivo' : langKey === 'nl' ? 'Vooruitziend' : langKey === 'ar' ? 'استشرافي' : langKey === 'he' ? 'פרוספקטיבי' : langKey === 'ja' ? '予測' : langKey === 'ko' ? '전망' : langKey === 'zh' ? '前瞻' : 'Prospective'}</option>
-          <option value="retrospective">${langKey === 'sv' ? 'Återblickande' : langKey === 'da' ? 'Tilbageblik' : langKey === 'no' ? 'Tilbakeblikk' : langKey === 'fi' ? 'Takautuva' : langKey === 'de' ? 'Rückblickend' : langKey === 'fr' ? 'Rétrospectif' : langKey === 'es' ? 'Retrospectivo' : langKey === 'nl' ? 'Terugblik' : langKey === 'ar' ? 'استعادي' : langKey === 'he' ? 'רטרוספקטיבי' : langKey === 'ja' ? '振り返り' : langKey === 'ko' ? '회고' : langKey === 'zh' ? '回顾' : 'Retrospective'}</option>
-          <option value="analysis">${langKey === 'sv' ? 'Analys' : langKey === 'da' ? 'Analyse' : langKey === 'no' ? 'Analyse' : langKey === 'fi' ? 'Analyysi' : langKey === 'de' ? 'Analyse' : langKey === 'fr' ? 'Analyse' : langKey === 'es' ? 'Análisis' : langKey === 'nl' ? 'Analyse' : langKey === 'ar' ? 'تحليل' : langKey === 'he' ? 'ניתוח' : langKey === 'ja' ? '分析' : langKey === 'ko' ? '분석' : langKey === 'zh' ? '分析' : 'Analysis'}</option>
-          <option value="breaking">${langKey === 'sv' ? 'Senaste nytt' : langKey === 'da' ? 'Seneste nyt' : langKey === 'no' ? 'Siste nytt' : langKey === 'fi' ? 'Viimeisimmät' : langKey === 'de' ? 'Eilmeldungen' : langKey === 'fr' ? 'Dernières nouvelles' : langKey === 'es' ? 'Última hora' : langKey === 'nl' ? 'Laatste nieuws' : langKey === 'ar' ? 'أخبار عاجلة' : langKey === 'he' ? 'חדשות אחרונות' : langKey === 'ja' ? '速報' : langKey === 'ko' ? '속보' : langKey === 'zh' ? '最新消息' : 'Breaking'}</option>
+          <option value="all">${escapeHtml(f.allTypes)}</option>
+          <option value="prospective">${escapeHtml(f.prospective)}</option>
+          <option value="retrospective">${escapeHtml(f.retrospective)}</option>
+          <option value="analysis">${escapeHtml(f.analysis)}</option>
+          <option value="breaking">${escapeHtml(f.breaking)}</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-topic">${langKey === 'sv' ? 'Ämne' : langKey === 'da' ? 'Emne' : langKey === 'no' ? 'Emne' : langKey === 'fi' ? 'Aihe' : langKey === 'de' ? 'Thema' : langKey === 'fr' ? 'Sujet' : langKey === 'es' ? 'Tema' : langKey === 'nl' ? 'Onderwerp' : langKey === 'ar' ? 'الموضوع' : langKey === 'he' ? 'נושא' : langKey === 'ja' ? 'トピック' : langKey === 'ko' ? '주제' : langKey === 'zh' ? '主题' : 'Topic'}:</label>
+        <label for="filter-topic">${f.topic}</label>
         <select id="filter-topic">
-          <option value="all">${langKey === 'sv' ? 'Alla ämnen' : langKey === 'da' ? 'Alle emner' : langKey === 'no' ? 'Alle emner' : langKey === 'fi' ? 'Kaikki aiheet' : langKey === 'de' ? 'Alle Themen' : langKey === 'fr' ? 'Tous sujets' : langKey === 'es' ? 'Todos los temas' : langKey === 'nl' ? 'Alle onderwerpen' : langKey === 'ar' ? 'جميع المواضيع' : langKey === 'he' ? 'כל הנושאים' : langKey === 'ja' ? 'すべてのトピック' : langKey === 'ko' ? '모든 주제' : langKey === 'zh' ? '所有主题' : 'All Topics'}</option>
-          <option value="parliament">${langKey === 'sv' ? 'Riksdagen' : langKey === 'da' ? 'Parlamentet' : langKey === 'no' ? 'Parlamentet' : langKey === 'fi' ? 'Parlamentti' : langKey === 'de' ? 'Parlament' : langKey === 'fr' ? 'Parlement' : langKey === 'es' ? 'Parlamento' : langKey === 'nl' ? 'Parlement' : langKey === 'ar' ? 'البرلمان' : langKey === 'he' ? 'פרלמנט' : langKey === 'ja' ? '議会' : langKey === 'ko' ? '의회' : langKey === 'zh' ? '议会' : 'Parliament'}</option>
-          <option value="government">${langKey === 'sv' ? 'Regeringen' : langKey === 'da' ? 'Regeringen' : langKey === 'no' ? 'Regjeringen' : langKey === 'fi' ? 'Hallitus' : langKey === 'de' ? 'Regierung' : langKey === 'fr' ? 'Gouvernement' : langKey === 'es' ? 'Gobierno' : langKey === 'nl' ? 'Regering' : langKey === 'ar' ? 'الحكومة' : langKey === 'he' ? 'ממשלה' : langKey === 'ja' ? '政府' : langKey === 'ko' ? '정부' : langKey === 'zh' ? '政府' : 'Government'}</option>
+          <option value="all">${escapeHtml(f.allTopics)}</option>
+          <option value="parliament">${escapeHtml(f.parliament)}</option>
+          <option value="government">${escapeHtml(f.government)}</option>
           <option value="eu">EU</option>
-          <option value="defense">${langKey === 'sv' ? 'Försvar' : langKey === 'da' ? 'Forsvar' : langKey === 'no' ? 'Forsvar' : langKey === 'fi' ? 'Puolustus' : langKey === 'de' ? 'Verteidigung' : langKey === 'fr' ? 'Défense' : langKey === 'es' ? 'Defensa' : langKey === 'nl' ? 'Defensie' : langKey === 'ar' ? 'الدفاع' : langKey === 'he' ? 'הגנה' : langKey === 'ja' ? '防衛' : langKey === 'ko' ? '국방' : langKey === 'zh' ? '国防' : 'Defense'}</option>
-          <option value="environment">${langKey === 'sv' ? 'Miljö' : langKey === 'da' ? 'Miljø' : langKey === 'no' ? 'Miljø' : langKey === 'fi' ? 'Ympäristö' : langKey === 'de' ? 'Umwelt' : langKey === 'fr' ? 'Environnement' : langKey === 'es' ? 'Medio ambiente' : langKey === 'nl' ? 'Milieu' : langKey === 'ar' ? 'البيئة' : langKey === 'he' ? 'סביבה' : langKey === 'ja' ? '環境' : langKey === 'ko' ? '환경' : langKey === 'zh' ? '环境' : 'Environment'}</option>
-          <option value="committees">${langKey === 'sv' ? 'Utskott' : langKey === 'da' ? 'Udvalg' : langKey === 'no' ? 'Utvalg' : langKey === 'fi' ? 'Valiokunnat' : langKey === 'de' ? 'Ausschüsse' : langKey === 'fr' ? 'Comités' : langKey === 'es' ? 'Comités' : langKey === 'nl' ? 'Commissies' : langKey === 'ar' ? 'اللجان' : langKey === 'he' ? 'ועדות' : langKey === 'ja' ? '委員会' : langKey === 'ko' ? '위원회' : langKey === 'zh' ? '委员会' : 'Committees'}</option>
-          <option value="legislation">${langKey === 'sv' ? 'Lagstiftning' : langKey === 'da' ? 'Lovgivning' : langKey === 'no' ? 'Lovgivning' : langKey === 'fi' ? 'Lainsäädäntö' : langKey === 'de' ? 'Gesetzgebung' : langKey === 'fr' ? 'Législation' : langKey === 'es' ? 'Legislación' : langKey === 'nl' ? 'Wetgeving' : langKey === 'ar' ? 'التشريعات' : langKey === 'he' ? 'חקיקה' : langKey === 'ja' ? '立法' : langKey === 'ko' ? '입법' : langKey === 'zh' ? '立法' : 'Legislation'}</option>
+          <option value="defense">${escapeHtml(f.defense)}</option>
+          <option value="environment">${escapeHtml(f.environment)}</option>
+          <option value="committees">${escapeHtml(f.committees)}</option>
+          <option value="legislation">${escapeHtml(f.legislation)}</option>
         </select>
       </div>
       
       <div class="filter-group">
-        <label for="filter-sort">${langKey === 'sv' ? 'Sortera' : langKey === 'da' ? 'Sorter' : langKey === 'no' ? 'Sorter' : langKey === 'fi' ? 'Lajittele' : langKey === 'de' ? 'Sortieren' : langKey === 'fr' ? 'Trier' : langKey === 'es' ? 'Ordenar' : langKey === 'nl' ? 'Sorteren' : langKey === 'ar' ? 'ترتيب' : langKey === 'he' ? 'מיון' : langKey === 'ja' ? '並べ替え' : langKey === 'ko' ? '정렬' : langKey === 'zh' ? '排序' : 'Sort'}:</label>
+        <label for="filter-sort">${f.sort}</label>
         <select id="filter-sort">
-          <option value="date-desc">${langKey === 'sv' ? 'Nyast först' : langKey === 'da' ? 'Nyeste først' : langKey === 'no' ? 'Nyeste først' : langKey === 'fi' ? 'Uusimmat ensin' : langKey === 'de' ? 'Neueste zuerst' : langKey === 'fr' ? 'Plus récent' : langKey === 'es' ? 'Más reciente' : langKey === 'nl' ? 'Nieuwste eerst' : langKey === 'ar' ? 'الأحدث أولاً' : langKey === 'he' ? 'החדש ביותר' : langKey === 'ja' ? '最新順' : langKey === 'ko' ? '최신순' : langKey === 'zh' ? '最新优先' : 'Newest First'}</option>
-          <option value="date-asc">${langKey === 'sv' ? 'Äldst först' : langKey === 'da' ? 'Ældste først' : langKey === 'no' ? 'Eldste først' : langKey === 'fi' ? 'Vanhimmat ensin' : langKey === 'de' ? 'Älteste zuerst' : langKey === 'fr' ? 'Plus ancien' : langKey === 'es' ? 'Más antiguo' : langKey === 'nl' ? 'Oudste eerst' : langKey === 'ar' ? 'الأقدم أولاً' : langKey === 'he' ? 'הישן ביותר' : langKey === 'ja' ? '古い順' : langKey === 'ko' ? '오래된 순' : langKey === 'zh' ? '最旧优先' : 'Oldest First'}</option>
-          <option value="title">${langKey === 'sv' ? 'Titel' : langKey === 'da' ? 'Titel' : langKey === 'no' ? 'Tittel' : langKey === 'fi' ? 'Otsikko' : langKey === 'de' ? 'Titel' : langKey === 'fr' ? 'Titre' : langKey === 'es' ? 'Título' : langKey === 'nl' ? 'Titel' : langKey === 'ar' ? 'العنوان' : langKey === 'he' ? 'כותרת' : langKey === 'ja' ? 'タイトル' : langKey === 'ko' ? '제목' : langKey === 'zh' ? '标题' : 'Title'}</option>
+          <option value="date-desc">${escapeHtml(f.newest)}</option>
+          <option value="date-asc">${escapeHtml(f.oldest)}</option>
+          <option value="title">${escapeHtml(f.titleSort)}</option>
         </select>
       </div>
     </div>
@@ -384,7 +584,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     <div class="articles-grid" id="articles-grid"></div>
     
     <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
-      ${langKey === 'sv' ? 'Inga artiklar matchade filtren' : langKey === 'da' ? 'Ingen artikler matchede filtrene' : langKey === 'no' ? 'Ingen artikler matchet filtrene' : langKey === 'fi' ? 'Mikään artikkeli ei vastannut suodattimia' : langKey === 'de' ? 'Keine Artikel entsprachen den Filtern' : langKey === 'fr' ? 'Aucun article ne correspond aux filtres' : langKey === 'es' ? 'Ningún artículo coincidió con los filtros' : langKey === 'nl' ? 'Geen artikelen voldeden aan de filters' : langKey === 'ar' ? 'لا توجد مقالات تطابق الفلاتر' : langKey === 'he' ? 'אין מאמרים שתואמים את הסינון' : langKey === 'ja' ? 'フィルターに一致する記事がありません' : langKey === 'ko' ? '필터와 일치하는 기사가 없습니다' : langKey === 'zh' ? '没有与过滤器匹配的文章' : 'No articles matched the filters'}
+      ${escapeHtml(lang.noResults)}
     </div>
   </div>
   
@@ -418,7 +618,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="\${article.date}">\${formatDate(article.date)}</time>
-            <span class="article-type">\${article.type}</span>
+            <span class="article-type">\${localizeType(article.type)}</span>
           </div>
           <h2 class="article-title">
             <a href="\${article.slug}">\${article.title}</a>
@@ -429,6 +629,17 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
           </div>
         </article>
       \`).join('');
+    }
+    
+    const typeLabels = ${JSON.stringify({
+      prospective: f.prospective,
+      retrospective: f.retrospective,
+      analysis: f.analysis,
+      breaking: f.breaking
+    })};
+    
+    function localizeType(type) {
+      return typeLabels[type] || type;
     }
     
     function formatDate(dateStr) {
@@ -478,6 +689,37 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     // Initial render
     filterArticles();
   </script>
+
+  <!-- Dynamic Content Loader -->
+  <script>
+    // Localization data
+    const i18n = {
+      noArticles: '${lang.i18n.noArticles}',
+      loading: '${lang.i18n.loading}',
+      articleCount: ${lang.i18n.articleCount}
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = \`<p class="no-articles">\${i18n.noArticles}</p>\`;
+      }
+    });
+  </script>
+
 </body>
 </html>`;
   

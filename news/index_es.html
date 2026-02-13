@@ -57,7 +57,7 @@
           "@type": "NewsArticle",
           "headline": "Ten Committee Reports This Week: Parliament",
           "url": "https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html",
-          "datePublished": "2026-02-12",
+          "datePublished": "2026-02-13",
           "description": "Analysis of parliamentary activity February 5-6, 2026",
           "inLanguage": "en"
         }
@@ -69,7 +69,7 @@
           "@type": "NewsArticle",
           "headline": "Sweden",
           "url": "https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html",
-          "datePublished": "2026-02-12",
+          "datePublished": "2026-02-13",
           "description": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
           "inLanguage": "en"
         }
@@ -229,7 +229,7 @@
           <option value="prospective">Prospectivo</option>
           <option value="retrospective">Retrospectivo</option>
           <option value="analysis">Análisis</option>
-          <option value="breaking">Últimas noticias</option>
+          <option value="breaking">Última hora</option>
         </select>
       </div>
       
@@ -270,7 +270,7 @@
     const articles = [
   {
     "title": "Ten Committee Reports This Week: Parliament",
-    "date": "2026-02-12",
+    "date": "2026-02-13",
     "type": "analysis",
     "slug": "2026-02-committee-reports-en.html",
     "excerpt": "Analysis of parliamentary activity February 5-6, 2026",
@@ -279,7 +279,7 @@
   },
   {
     "title": "Sweden",
-    "date": "2026-02-12",
+    "date": "2026-02-13",
     "type": "retrospective",
     "slug": "2026-02-parliament-agenda-en.html",
     "excerpt": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
@@ -398,7 +398,7 @@
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
-            <span class="article-type">${article.type}</span>
+            <span class="article-type">${localizeType(article.type)}</span>
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
@@ -409,6 +409,12 @@
           </div>
         </article>
       `).join('');
+    }
+    
+    const typeLabels = {"prospective":"Prospectivo","retrospective":"Retrospectivo","analysis":"Análisis","breaking":"Última hora"};
+    
+    function localizeType(type) {
+      return typeLabels[type] || type;
     }
     
     function formatDate(dateStr) {
