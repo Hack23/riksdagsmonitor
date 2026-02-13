@@ -20,9 +20,9 @@ on:
         default: en,sv
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
   issues: read
+  pull-requests: read
 
 timeout-minutes: 30
 
