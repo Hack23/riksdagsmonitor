@@ -43,7 +43,7 @@ import {
 import { 
   generateMotions as generateMotionsModule,
   REQUIRED_TOOLS as MOTIONS_TOOLS
-} from './news-types/breaking-news.js';
+} from './news-types/motions.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
