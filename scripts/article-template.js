@@ -162,7 +162,7 @@ export function generateArticleHTML(data) {
   <meta property="og:description" content="${escapeHtml(subtitle).substring(0, 200)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
-  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
@@ -178,7 +178,7 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(subtitle).substring(0, 200)}">
-  <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta name="twitter:site" content="@riksdagsmonitor">
   <meta name="twitter:creator" content="@jamessorling">
@@ -224,14 +224,14 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
       "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "url": "https://hack23.com/cia-icon-140.webp",
         "width": 600,
         "height": 60
       }
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://cia.sourceforge.io/cia-logo.png",
+      "url": "https://hack23.com/cia-icon-140.webp",
       "width": 1200,
       "height": 630
     },
@@ -299,7 +299,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
     "@type": "Organization",
     "name": "Riksdagsmonitor",
     "url": "https://riksdagsmonitor.com",
-    "logo": "https://cia.sourceforge.io/cia-logo.png",
+    "logo": "https://hack23.com/cia-icon-140.webp",
     "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
     "foundingDate": "2020",
     "founder": {

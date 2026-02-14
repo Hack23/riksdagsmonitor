@@ -3,8 +3,8 @@
     "source_url": "https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/extraction_summary_report.csv",
     "last_updated": "2026-02-09 03:42:53.763705",
     "extraction_time": "2026-02-09 03:42:53.763705",
-    "generated_at": "2026-02-12T12:54:03.651Z",
-    "version": "1.0.0"
+    "generated_at": "2026-02-13T17:10:30.545Z",
+    "version": "1.2.0"
   },
   "counts": {
     "total_persons": 2494,
@@ -14,7 +14,26 @@
     "total_rule_violations": 2308,
     "total_against_proposals": 55016,
     "total_committee_proposals": 58175,
-    "total_document_activities": 374158
+    "total_document_activities": 374158,
+    "total_political_parties": 40,
+    "total_assignments": 31411,
+    "total_document_attachments": 155141,
+    "total_riksdag_parties": 12,
+    "total_governments": 20,
+    "total_government_proposals": 5738,
+    "total_government_roles": 76,
+    "total_government_role_members": 500,
+    "total_member_proposals": 94633,
+    "total_committee_decisions": 58231,
+    "total_committee_member_proposals": 94072,
+    "total_committee_role_members": 19072,
+    "total_committee_roles": 153,
+    "total_party_members": 2433,
+    "total_party_role_members": 301,
+    "total_party_summary": 13,
+    "total_politician_documents": 279153,
+    "total_ballot_politician_summaries": 3529786,
+    "total_document_content": 299703
   },
   "tables": {
     "success": [

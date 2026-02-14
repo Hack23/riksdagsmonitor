@@ -7120,12 +7120,55 @@ html[lang="he"] {
   }
 }
 
+/* Dashboard Loader & Error States */
+.dashboard-loader {
+  display: none;
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.dashboard-error {
+  display: none;
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: #d32f2f;
+  font-size: var(--font-size-lg);
+}
+
+/* Filter Group (used in dashboard filters) */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 150px;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+}
+
 /* Dashboard Grid */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: var(--spacing-xl);
   margin-top: var(--spacing-xl);
+}
+
+/* Chart Container (consistent height for chart wrappers) */
+.chart-container {
+  height: 400px;
+  position: relative;
+}
+
+.chart-container--scrollable {
+  min-height: 400px;
+  overflow-x: auto;
 }
 
 /* Chart Card */

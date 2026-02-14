@@ -13,6 +13,10 @@ echo "Destination: $CIA_DATA_DIR"
 echo ""
 
 # Party-related files
+echo "📥 Downloading extraction summary (single source of truth for stats)..."
+curl -s -o "$CIA_DATA_DIR/extraction_summary_report.csv" "$BASE_URL/extraction_summary_report.csv" && echo "  ✓ extraction_summary_report.csv"
+
+echo ""
 echo "📥 Downloading Party data..."
 curl -s -o "$CIA_DATA_DIR/party/distribution_party_performance.csv" "$BASE_URL/distribution_party_performance.csv" && echo "  ✓ distribution_party_performance.csv"
 curl -s -o "$CIA_DATA_DIR/party/distribution_party_effectiveness_trends.csv" "$BASE_URL/distribution_party_effectiveness_trends.csv" && echo "  ✓ distribution_party_effectiveness_trends.csv"
