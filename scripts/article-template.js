@@ -196,6 +196,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   
+  <!-- Main stylesheet - contains all article styles -->
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Schema.org NewsArticle structured data -->
@@ -316,10 +317,10 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
     }
   }
   </script>
-  
-  ${generateArticleCSS()}
 </head>
 <body>
+<!-- Article styles are now in styles.css under .news-article namespace.
+     No embedded CSS needed - promotes consistency and maintainability. -->
 <article class="news-article">
   <header class="article-header">
     <h1>${title}</h1>
