@@ -80,7 +80,7 @@
           "description": "Date of the evening analysis"
         },
         "languagesGenerated": {
-          "type": "number",
+          "type": "integer",
           "description": "Number of language versions generated",
           "minimum": 1,
           "maximum": 14
@@ -98,11 +98,11 @@
           "maximum": 1.0
         },
         "historicalContextPresent": {
-          "type": "number",
+          "type": "integer",
           "description": "Number of articles with historical context"
         },
         "internationalComparisons": {
-          "type": "number",
+          "type": "integer",
           "description": "Number of articles with international comparisons"
         }
       }

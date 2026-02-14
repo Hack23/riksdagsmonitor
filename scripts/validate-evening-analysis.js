@@ -22,6 +22,10 @@
 
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Parse HTML article
@@ -59,7 +63,7 @@ function extractSections(html) {
  * Extract lead paragraph
  */
 function extractLeadParagraph(html) {
-  const match = html.match(/<p class="lede?">\s*([^<]+)\s*<\/p>/i);
+  const match = html.match(/<p class="lede">([\s\S]*?)<\/p>/i);
   return match ? match[1].trim() : null;
 }
 
@@ -384,7 +388,7 @@ function printValidation(validation) {
 }
 
 // CLI execution
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] === __filename) {
   const args = process.argv.slice(2);
   
   if (args.length === 0) {
