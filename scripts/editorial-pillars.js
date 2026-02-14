@@ -113,8 +113,12 @@ export function detectArticleLanguage(html) {
     return 'en';
   }
   const match = html.match(/<html[^>]*lang="([^"]+)"/i);
-  if (match && EDITORIAL_PILLAR_HEADINGS[match[1]]) {
-    return match[1];
+  if (match && match[1]) {
+    // Normalize language code: lowercase and strip region (e.g., "EN" or "no-NO" -> "en", "no")
+    const primaryLang = match[1].toLowerCase().split('-')[0];
+    if (EDITORIAL_PILLAR_HEADINGS[primaryLang]) {
+      return primaryLang;
+    }
   }
   // Fallback to English
   return 'en';

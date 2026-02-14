@@ -8922,6 +8922,10 @@ body.news-page {
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
+/* Note: calendar-day is currently a non-interactive <div> without tabindex.
+   Focus states below are included for future enhancement if calendar days
+   become interactive (e.g., clickable for drill-down details).
+   Currently only :hover applies. */
 .news-article .calendar-day:hover,
 .news-article .calendar-day:focus,
 .news-article .calendar-day:focus-visible {

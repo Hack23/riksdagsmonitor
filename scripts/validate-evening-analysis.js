@@ -27,7 +27,6 @@ import { extractPartyMentions } from './party-variants.js';
 import { detectArticleLanguage, getLocalizedHeading } from './editorial-pillars.js';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 /**
  * Parse HTML article
@@ -114,12 +113,14 @@ function validateStructure(html) {
     }
   };
   
-  // Check minimum word counts
+  // Check minimum word counts (aligned with WORKFLOWS.md spec)
+  // Parliamentary Pulse, Government Watch, Opposition Dynamics: 200-400 words each
+  // Looking Ahead: 100-200 words
   results.meetsMinimumLength = 
-    results.wordCounts.parliamentaryPulse >= 150 &&
-    results.wordCounts.governmentWatch >= 150 &&
-    results.wordCounts.oppositionDynamics >= 150 &&
-    results.wordCounts.lookingAhead >= 80;
+    results.wordCounts.parliamentaryPulse >= 200 &&
+    results.wordCounts.governmentWatch >= 200 &&
+    results.wordCounts.oppositionDynamics >= 200 &&
+    results.wordCounts.lookingAhead >= 100;
   
   // All 5 pillars present
   results.hasAllPillars = 
