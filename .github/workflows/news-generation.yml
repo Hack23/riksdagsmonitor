@@ -390,13 +390,17 @@ jobs:
           
           # MCP Server Status
           echo "### 🔌 MCP Server Status" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.mcp-health.outputs.server_available }}" = "true" ]; then
-            echo "✅ **riksdag-regering MCP server**: Available" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check-updates.outputs.should_generate }}" = "true" ]; then
+            if [ "${{ steps.mcp-health.outputs.server_available }}" = "true" ]; then
+              echo "✅ **riksdag-regering MCP server**: Available" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ **riksdag-regering MCP server**: Unavailable" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "**Note**: The MCP server may be cold starting (Render.com free tier)." >> $GITHUB_STEP_SUMMARY
+              echo "Try running the workflow again in 5-10 minutes." >> $GITHUB_STEP_SUMMARY
+            fi
           else
-            echo "❌ **riksdag-regering MCP server**: Unavailable" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**Note**: The MCP server may be cold starting (Render.com free tier)." >> $GITHUB_STEP_SUMMARY
-            echo "Try running the workflow again in 5-10 minutes." >> $GITHUB_STEP_SUMMARY
+            echo "ℹ️ **riksdag-regering MCP server**: Not checked (generation skipped)" >> $GITHUB_STEP_SUMMARY
           fi
           echo "" >> $GITHUB_STEP_SUMMARY
           
