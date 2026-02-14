@@ -88,13 +88,11 @@ workflow_dispatch:
       default: en,sv
 ```
 
-**Traditional Workflow** (`.github/workflows/news-generation.yml`):
-```yaml
-- name: Generate news
-  run: |
-    node scripts/generate-news-enhanced.js \
-      --types="week-ahead" \
-      --languages="all"  # <-- Add this
+**CLI Usage** (used by agentic workflows via bash tool):
+```bash
+node scripts/generate-news-enhanced.js \
+  --types="week-ahead" \
+  --languages="all"
 ```
 
 ---

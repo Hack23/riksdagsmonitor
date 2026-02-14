@@ -470,91 +470,31 @@ lhci autorun \
 - NIST CSF 2.0: DE.CM-1 (Network monitored)
 - CIS Controls v8.1: 8.11 (Monitoring and alerting)
 
-## 7. News Generation Workflows ✨ **NEW**
+## 7. News Generation Workflows (Agentic)
 
 **Files:**
-- `.github/workflows/news-generation.yml` (Manual workflow)
-- `.github/workflows/news-article-generator.md` (Agentic workflow source)
-- `.github/workflows/news-article-generator.lock.yml` (Agentic workflow compiled)
+- `.github/workflows/news-article-generator.md` → `.lock.yml` (General article generation)
+- `.github/workflows/news-realtime-monitor.md` → `.lock.yml` (Breaking news)
+- `.github/workflows/news-evening-analysis.md` → `.lock.yml` (Evening analysis)
 
 **Triggers:**
-- **Manual:** Schedule (daily), Workflow dispatch
-- **Agentic:** Schedule (daily 05:51 UTC), Workflow dispatch
+- **Article Generator:** Daily ~05:51 UTC, Workflow dispatch
+- **Realtime Monitor:** 10:00 + 14:00 UTC Mon-Fri, Workflow dispatch
+- **Evening Analysis:** 18:00 UTC Mon-Fri, Workflow dispatch
 
-**Purpose:** Automated political news article generation from riksdag-regering-mcp data
+**Purpose:** AI-powered political news article generation from riksdag-regering-mcp data using GitHub Agentic Workflows (gh-aw) with Claude Opus 4.
 
 ### Overview
 
-Riksdagsmonitor features **dual news generation pipelines**:
+Riksdagsmonitor uses **three complementary agentic workflows** for full-day news coverage:
 
-1. **Manual Workflow** (`news-generation.yml`) - Script-based generation
-2. **Agentic Workflow** (`news-article-generator.lock.yml`) - AI-powered generation with Claude Opus 4
+| Workflow | Schedule | Purpose |
+|----------|----------|---------|
+| `news-article-generator.lock.yml` | ~05:51 UTC daily | General article generation (all types) |
+| `news-realtime-monitor.lock.yml` | 10:00 + 14:00 UTC Mon-Fri | Breaking news / live monitoring |
+| `news-evening-analysis.lock.yml` | 18:00 UTC Mon-Fri | Deep evening analysis wrap-up |
 
-### 7.1 Manual News Generation Workflow
-
-**File:** `.github/workflows/news-generation.yml`  
-**Status:** ✅ Operational  
-**Schedule:** Daily at 00:00 and 12:00 UTC  
-**Permissions:** contents: write, pull-requests: write
-
-#### Pipeline Stages
-
-1. **Check for Updates**
-   ```yaml
-   - name: Check for new Riksdag/Regering updates
-     # Skip if last generation < 11 hours ago (unless force_generation=true)
-   ```
-
-2. **Generate Articles**
-   ```bash
-   node scripts/generate-news-enhanced.js \
-     --types="$ARTICLE_TYPES" \
-     --languages="$LANG_ARG"
-   ```
-   
-   **Supported Article Types:**
-   - `week-ahead` - Prospective coverage of upcoming events
-   - `committee-reports` - Committee report analysis
-   - `propositions` - Government bill analysis
-   - `motions` - Opposition motion analysis
-   - `breaking` - Significant developments
-
-3. **Regenerate Indexes**
-   ```bash
-   node scripts/generate-news-indexes.js
-   # Scans news/ directory
-   # Generates all 14 language index files
-   ```
-
-4. **Update Sitemap**
-   ```bash
-   node scripts/generate-sitemap.js
-   # Updates sitemap.xml with new articles
-   ```
-
-5. **HTML Validation**
-   ```bash
-   find news -name "*.html" -type f -mmin -5 | xargs htmlhint
-   ```
-
-6. **Create Pull Request**
-   ```yaml
-   - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0
-     with:
-       title: '📰 Automated News Update - {timestamp}'
-       labels: automated-news, news-generation, needs-editorial-review
-   ```
-
-#### Features
-
-- ✅ Smart caching (skip if < 11 hours old)
-- ✅ Multi-language support (14 languages via presets)
-- ✅ Language presets: `nordic`, `eu-core`, `all`
-- ✅ HTML validation with HTMLHint
-- ✅ Automated PR creation
-- ✅ Workflow summary with metrics
-
-### 7.2 Agentic News Generation Workflow
+### 7.1 Agentic News Generation Workflow
 
 **File:** `.github/workflows/news-article-generator.lock.yml`  
 **Source:** `.github/workflows/news-article-generator.md`  
@@ -957,7 +897,7 @@ node scripts/validate-evening-analysis.js news/YYYY-MM-DD-evening-analysis-en.ht
 - [ ] Newsletter compilation
 - [ ] Podcast script generation
 
-## Workflow Inventory (16 Total)
+## Workflow Inventory (15 Total)
 
 | # | Workflow | Status | Security | Schedule | Purpose |
 |---|----------|--------|----------|----------|---------|
@@ -973,10 +913,9 @@ node scripts/validate-evening-analysis.js news/YYYY-MM-DD-evening-analysis-en.ht
 | 10 | **data-pipeline.yml** | ✨ NEW | SHA+HR | On-demand | CIA data fetch |
 | 11 | **lighthouse-ci.yml** | ✨ NEW | SHA+HR | Weekly Mon | Performance monitoring |
 | 12 | **uptime-monitor.yml** | ✨ NEW | SHA+HR | Every 15min | Site availability |
-| 13 | **news-generation.yml** | ✨ NEW | SHA+HR | Daily (00:00, 12:00) | Manual news generation |
-| 14 | **news-article-generator.lock.yml** | ✨ NEW | SHA+HR | Daily 05:51 | AI news generation (agentic) |
-| 15 | **news-evening-analysis.lock.yml** | ✨ NEW | SHA+HR | Weekday 18:00 UTC | Evening wrap-up (agentic) |
-| 16 | **news-realtime-monitor.lock.yml** | ✨ NEW | SHA+HR | Every 2 hours | Breaking news (agentic) |
+| 13 | **news-article-generator.lock.yml** | ✅ | SHA+HR | Daily 05:51 | AI news generation (agentic) |
+| 14 | **news-evening-analysis.lock.yml** | ✅ | SHA+HR | Weekday 18:00 UTC | Evening wrap-up (agentic) |
+| 15 | **news-realtime-monitor.lock.yml** | ✅ | SHA+HR | 10:00+14:00 Mon-Fri | Breaking news (agentic) |
 
 **Legend:**
 - SHA: SHA-pinned actions

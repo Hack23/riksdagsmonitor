@@ -169,7 +169,7 @@ console.log(`Screenshots: ${results.screenshots.length}`);
 - **Multi-Language**: All 14 languages tested
 
 ### Backward Compatibility
-- **Existing Workflow**: `generate-news-enhanced.js` still works
+- **Agentic Workflows**: `generate-news-enhanced.js` used by agentic workflows via bash tool
 - **Legacy Functions**: `writeArticlePair()`, `writeSingleArticle()` maintained
 - **Export Compatibility**: All original exports preserved
 
