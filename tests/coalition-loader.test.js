@@ -1008,12 +1008,12 @@ SD,t,73`;
       // Simulate error
       const error = new Error('Network error');
       
-      // Display error
-      cardsContainer.innerHTML = `
-        <p class="error-message">
-          Unable to load coalition data: ${error.message}
-        </p>
-      `;
+      // Display error using safe DOM APIs
+      cardsContainer.textContent = '';
+      const errorElement = document.createElement('p');
+      errorElement.className = 'error-message';
+      errorElement.textContent = `Unable to load coalition data: ${error.message}`;
+      cardsContainer.appendChild(errorElement);
 
       const errorMessage = cardsContainer.querySelector('.error-message');
       expect(errorMessage).not.toBeNull();

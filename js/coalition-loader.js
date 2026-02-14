@@ -97,7 +97,7 @@
     de: {
       coalitionTitle: 'Aktuelle Koalition: Tidö-Vereinbarung',
       coalitionStatus: 'Bildung: Oktober 2022 | Status: Aktiv',
-      parliamentSeats: 'Parlamentssitze',
+      parliamentSeats: 'Sitze im schwedischen Reichstag',
       governmentMembers: 'Regierungsmitglieder',
       partyAssignments: 'Parteiaufgaben',
       leader: 'Vorsitzender',
@@ -110,7 +110,7 @@
     fr: {
       coalitionTitle: 'Coalition actuelle : Accord de Tidö',
       coalitionStatus: 'Formation : octobre 2022 | Statut : Actif',
-      parliamentSeats: 'Sièges parlementaires',
+      parliamentSeats: 'Sièges au Riksdag suédois',
       governmentMembers: 'Membres du gouvernement',
       partyAssignments: 'Affectations de parti',
       leader: 'Chef',
@@ -123,7 +123,7 @@
     es: {
       coalitionTitle: 'Coalición actual: Acuerdo de Tidö',
       coalitionStatus: 'Formación: octubre 2022 | Estado: Activo',
-      parliamentSeats: 'Escaños parlamentarios',
+      parliamentSeats: 'Escaños del Riksdag sueco',
       governmentMembers: 'Miembros del gobierno',
       partyAssignments: 'Asignaciones de partido',
       leader: 'Líder',
@@ -149,7 +149,7 @@
     nl: {
       coalitionTitle: 'Huidige coalitie: Tidö-akkoord',
       coalitionStatus: 'Vorming: oktober 2022 | Status: Actief',
-      parliamentSeats: 'Parlementszetels',
+      parliamentSeats: 'Zetels in het Zweedse Rijksdag',
       governmentMembers: 'Regeringsleden',
       partyAssignments: 'Partijfuncties',
       leader: 'Leider',
@@ -396,7 +396,7 @@
    * Get party leader name from role data
    * @param {Array} roleData - Party role data
    * @param {string} partyCode - Party code (e.g., 'M', 'SD')
-   * @returns {Object} Leader info { name, role }
+   * @returns {Object} Leader info { name, roleType: 'leader'|'groupLeader' }
    */
   function getPartyLeader(roleData, partyCode) {
     // Prioritize Partiledare (Party Leader) over Gruppledare (Group Leader)
@@ -407,7 +407,7 @@
     if (partyLeader) {
       return {
         name: `${partyLeader.first_name} ${partyLeader.last_name}`,
-        role: 'Party Leader'
+        roleType: 'leader'
       };
     }
 
@@ -418,11 +418,11 @@
     if (groupLeader) {
       return {
         name: `${groupLeader.first_name} ${groupLeader.last_name}`,
-        role: 'Group Leader'
+        roleType: 'groupLeader'
       };
     }
 
-    return { name: 'Unknown', role: '' };
+    return { name: 'Unknown', roleType: 'leader' };
   }
 
   /**
@@ -447,42 +447,78 @@
     // Clear existing cards
     cardsContainer.innerHTML = '';
 
+    // Filter to known parties only (have PARTY_INFO entry)
+    const knownParties = partySummary.filter(party => PARTY_INFO[party.party]);
+
     // Sort parties by parliament seats (descending)
-    const sortedParties = [...partySummary].sort((a, b) => {
-      const seatsA = parseInt(a.total_active_parliament) || 0;
-      const seatsB = parseInt(b.total_active_parliament) || 0;
+    const sortedParties = [...knownParties].sort((a, b) => {
+      const seatsA = parseInt(a.total_active_parliament, 10) || 0;
+      const seatsB = parseInt(b.total_active_parliament, 10) || 0;
       return seatsB - seatsA;
     });
 
-    // Calculate total seats
+    // Calculate total seats (only from known parties)
     const totalSeats = sortedParties.reduce((sum, party) => {
-      return sum + (parseInt(party.total_active_parliament) || 0);
+      return sum + (parseInt(party.total_active_parliament, 10) || 0);
     }, 0);
 
     // Render each party card
     sortedParties.forEach(party => {
       const partyCode = party.party;
       const partyInfo = PARTY_INFO[partyCode];
-      if (!partyInfo) return; // Skip unknown parties
+      if (!partyInfo) return; // Skip unknown parties (already filtered, but defensive)
 
-      const parliamentSeats = parseInt(party.total_active_parliament) || 0;
-      const governmentMembers = parseInt(party.total_active_government) || 0;
-      const partyAssignments = parseInt(party.current_party_assignments) || 0;
+      const parliamentSeats = parseInt(party.total_active_parliament, 10) || 0;
+      const governmentMembers = parseInt(party.total_active_government, 10) || 0;
+      const partyAssignments = parseInt(party.current_party_assignments, 10) || 0;
       
       const leader = getPartyLeader(partyRoles, partyCode);
+      const leaderLabel = t[leader.roleType] || t.leader; // Use roleType to select label
 
+      // Create card using safe DOM APIs (XSS prevention)
       const card = document.createElement('div');
       card.className = 'card';
-      card.innerHTML = `
-        <div class="scanner-effect"></div>
-        <h3>${partyInfo.name} (${partyCode})</h3>
-        <div class="party-stats">
-          <p><strong>${parliamentSeats} ${t.parliamentSeats}</strong></p>
-          ${governmentMembers > 0 ? `<p>${governmentMembers} ${t.governmentMembers}</p>` : ''}
-          <p>${partyAssignments} ${t.partyAssignments}</p>
-        </div>
-        <p class="party-leader">${t.leader}: ${leader.name}</p>
-      `;
+
+      // Scanner effect
+      const scanner = document.createElement('div');
+      scanner.className = 'scanner-effect';
+      card.appendChild(scanner);
+
+      // Party heading
+      const heading = document.createElement('h3');
+      heading.textContent = `${partyInfo.name} (${partyCode})`;
+      card.appendChild(heading);
+
+      // Party stats container
+      const partyStats = document.createElement('div');
+      partyStats.className = 'party-stats';
+
+      // Parliament seats
+      const seatsP = document.createElement('p');
+      const seatsStrong = document.createElement('strong');
+      seatsStrong.textContent = `${parliamentSeats} ${t.parliamentSeats}`;
+      seatsP.appendChild(seatsStrong);
+      partyStats.appendChild(seatsP);
+
+      // Government members (only if > 0)
+      if (governmentMembers > 0) {
+        const govP = document.createElement('p');
+        govP.textContent = `${governmentMembers} ${t.governmentMembers}`;
+        partyStats.appendChild(govP);
+      }
+
+      // Party assignments
+      const assignmentsP = document.createElement('p');
+      assignmentsP.textContent = `${partyAssignments} ${t.partyAssignments}`;
+      partyStats.appendChild(assignmentsP);
+
+      card.appendChild(partyStats);
+
+      // Party leader
+      const leaderP = document.createElement('p');
+      leaderP.className = 'party-leader';
+      leaderP.textContent = `${leaderLabel}: ${leader.name}`;
+      card.appendChild(leaderP);
 
       cardsContainer.appendChild(card);
     });
@@ -493,7 +529,7 @@
       statusP.textContent = `${t.coalitionStatus} | Total Seats: ${totalSeats} of 349`;
     }
 
-    console.log(`Rendered ${sortedParties.length} active parties`);
+    console.log(`Rendered ${sortedParties.length} active parties with ${totalSeats} total seats`);
   }
 
   /**
