@@ -920,6 +920,201 @@ gh aw compile news-article-generator.md
 - Creates issue if compilation fails
 - Requires manual compilation (gh CLI + gh-aw extension)
 
+### 7.3 Evening Analysis Workflow
+
+**File:** `.github/workflows/news-evening-analysis.lock.yml`  
+**Source:** `.github/workflows/news-evening-analysis.md`  
+**Status:** ✅ Active  
+**Schedule:** Weekday evenings at 18:00 UTC (19:00 CET)  
+**Model:** claude-opus-4.6  
+**Timeout:** 30 minutes  
+**Languages:** All 14 supported languages (default)
+
+#### Purpose
+
+Generate comprehensive daily wrap-up of Swedish parliamentary and government activity written in **The Economist style** with deeper analytical depth than breaking coverage. This is the flagship daily product.
+
+#### 5 Editorial Pillars Structure
+
+Every evening analysis article must include these 5 structural elements:
+
+1. **Lead Story** (400-800 words)
+   - The most significant development of the day
+   - What happened and why it matters
+   - Immediate implications for Swedish politics
+   - Analytical thesis in opening paragraph
+
+2. **Parliamentary Pulse** (200-400 words)
+   - Summary of legislative activity
+   - Key votes and their margins
+   - Important debates and notable speeches
+   - Committee decisions and reports
+
+3. **Government Watch** (200-300 words)
+   - Executive branch activity
+   - New propositions or policy announcements
+   - Ministerial statements
+   - Regulatory developments
+
+4. **Opposition Dynamics** (200-300 words)
+   - Opposition motions and strategy
+   - Coalition dynamics and tensions
+   - Cross-party collaboration or conflict
+
+5. **Looking Ahead** (100-200 words)
+   - What's coming tomorrow/this week
+   - Scheduled votes and debates
+   - Upcoming committee meetings
+   - Expected government announcements
+
+#### Quality Requirements
+
+**Analytical Depth (Target ≥ 0.6):**
+- Causal analysis (because, therefore, consequently)
+- Comparative analysis (compared to, unlike, whereas)
+- Evaluative statements (suggests, reveals, indicates)
+- Contextual framing (historically, traditionally, background)
+- Forward-looking predictions (will, likely, expected)
+
+**Historical Context (Target ≥ 1.0 on 0-3 scale):**
+- References to past events or sessions
+- Historical comparisons (since YYYY, compared to last year)
+- Trend analysis over time
+
+**Party Perspectives (Target ≥ 6):**
+- Minimum 6 parties mentioned per article
+- Balanced coverage across coalition and opposition
+- Government (M, KD, L) + SD + Opposition (S, V, MP, C)
+
+**Source Citations (Target ≥ 5):**
+- riksdag-regering-mcp tool citations
+- Document IDs (dok_id) for Riksdag documents
+- Riksmöte session references (e.g., 2025/26)
+- Attributed quotes with anförande IDs
+
+**International Comparison (Target 60%+ of articles):**
+- Relate Swedish politics to European trends
+- Compare to other Nordic democracies
+- Global context when relevant
+
+#### Validation & Testing
+
+**Automated Validation Script:**
+```bash
+node scripts/validate-evening-analysis.js news/YYYY-MM-DD-evening-analysis-en.html
+```
+
+**Validation Report Includes:**
+- ✅ All 5 Editorial Pillars present
+- ✅ Word count per section (meets minimums)
+- ✅ Analytical depth score (0.0-1.0)
+- ✅ Historical context score (0-3)
+- ✅ International comparison presence
+- ✅ Party perspective count
+- ✅ Source citation count
+- ✅ Overall quality score (0.0-1.0)
+
+**Test Suite:**
+- `tests/news-evening-analysis.test.js` - 30 comprehensive test cases
+  - Structure validation (8 tests)
+  - Analytical depth (7 tests)
+  - Cross-workflow coordination (5 tests)
+  - Multi-language quality (5 tests)
+  - Helper function validation (5 tests)
+
+**Quality Thresholds:**
+- Overall quality score ≥ 0.75 (good)
+- Analytical depth ≥ 0.6 (acceptable)
+- Historical context ≥ 1.0 (present in 90%+ articles)
+- Party perspectives ≥ 6 (balanced coverage)
+- Source citations ≥ 5 (well-documented)
+
+#### Cross-Workflow Coordination
+
+**Workflow State Management:**
+- `news/metadata/workflow-state.json` - Shared state across workflows
+  - Last evening analysis timestamp
+  - Recent realtime articles (for deduplication)
+  - MCP query cache (2-hour TTL)
+  - Evening analysis metrics
+
+**Quality Metrics Tracking:**
+- `news/metadata/quality-metrics.json` - Per-article quality scores
+  - Quality score by language
+  - Analytical depth by language
+  - Historical context presence
+  - International comparison count
+  - Aggregate metrics across all languages
+
+**Deduplication Strategy:**
+- Check recent realtime articles (< 6 hours)
+- Calculate similarity score (word overlap)
+- If similarity > 70%, synthesize but don't repeat verbatim
+- Reference realtime coverage, add deeper analysis
+
+#### Multi-Language Support
+
+**14 Languages Generated:**
+- **Nordic:** en, sv, da, no, fi
+- **EU Core:** de, fr, es, nl
+- **Global:** ar, he, ja, ko, zh
+
+**Language-Specific Requirements:**
+- Proper `lang` attribute in HTML
+- `dir="rtl"` for Arabic and Hebrew
+- Hreflang tags for all 14 languages
+- Schema.org NewsArticle in each language
+- Culturally appropriate tone and formatting
+
+**Tone Adaptation by Language:**
+- English: Confident, witty, global perspective
+- Swedish: Balanced, accessible, domestic focus
+- German: Thorough, precise, analytical
+- French: Elegant, nuanced, European context
+- Arabic/Hebrew: Culturally appropriate, RTL-aware
+
+#### MCP Tools Integration
+
+**Primary Data Sources:**
+- `get_calendar_events` - Daily parliamentary schedule
+- `search_voteringar` - Votes taken today
+- `get_betankanden` - Committee reports published
+- `search_anforanden` - Speeches and debates
+- `search_regering` - Government documents today
+- `get_propositioner` - New propositions
+- `get_motioner` - Opposition motions
+- `get_fragor` / `get_interpellationer` - Questions to ministers
+
+**Analysis Patterns:**
+- Vote analysis: voteringar → voting_group → anföranden → ledamoter
+- Government activity: regering → propositioner → analyze_by_department
+- Legislative tracking: betankanden → motioner → dokument_fulltext
+
+#### Monitoring & Metrics
+
+**Success Criteria:**
+- ✅ All 14 language versions generated
+- ✅ All 5 Editorial Pillars present in each article
+- ✅ Quality score ≥ 0.75 for 90%+ articles
+- ✅ Historical context in 90%+ articles
+- ✅ Party perspectives ≥ 6 in every article
+
+**Failure Conditions:**
+- ❌ Quality score < 0.6 → Alert for review
+- ❌ Missing Editorial Pillar → Validation fails
+- ❌ < 6 parties mentioned → Coverage gap
+- ❌ < 5 source citations → Insufficient documentation
+
+**PR Creation:**
+- Branch: `news-evening/{date}`
+- Labels: `automated-news`, `evening-analysis`, `needs-editorial-review`
+- Body includes:
+  - Article count and languages generated
+  - Quality validation results
+  - Key findings and significance rating
+  - MCP tools used
+  - Validation report summary
+
 ### Security Controls
 
 **Implemented (Both Workflows):**
@@ -972,7 +1167,7 @@ gh aw compile news-article-generator.md
 - [ ] Newsletter compilation
 - [ ] Podcast script generation
 
-## Workflow Inventory (14 Total)
+## Workflow Inventory (16 Total)
 
 | # | Workflow | Status | Security | Schedule | Purpose |
 |---|----------|--------|----------|----------|---------|
@@ -990,6 +1185,8 @@ gh aw compile news-article-generator.md
 | 12 | **uptime-monitor.yml** | ✨ NEW | SHA+HR | Every 15min | Site availability |
 | 13 | **news-generation.yml** | ✨ NEW | SHA+HR | Daily (00:00, 12:00) | Manual news generation |
 | 14 | **news-article-generator.lock.yml** | ✨ NEW | SHA+HR | Daily 05:51 | AI news generation (agentic) |
+| 15 | **news-evening-analysis.lock.yml** | ✨ NEW | SHA+HR | Weekday 18:00 UTC | Evening wrap-up (agentic) |
+| 16 | **news-realtime-monitor.lock.yml** | ✨ NEW | SHA+HR | Every 2 hours | Breaking news (agentic) |
 
 **Legend:**
 - SHA: SHA-pinned actions
