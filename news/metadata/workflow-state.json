@@ -1,6 +1,18 @@
 {
-  "lastUpdate": null,
-  "recentArticles": [],
-  "mcpQueryCache": {},
+  "lastUpdate": "2026-02-14T14:37:00Z",
+  "recentArticles": [
+    {
+      "slug": "2026-02-14-week-ahead-feb-15-21",
+      "type": "week-ahead",
+      "languages": ["en", "sv"],
+      "generated": "2026-02-14T14:37:00Z"
+    }
+  ],
+  "mcpQueryCache": {
+    "get_betankanden": "2026-02-14T14:37:00Z",
+    "get_propositioner": "2026-02-14T14:37:00Z",
+    "get_fragor": "2026-02-14T14:37:00Z",
+    "get_interpellationer": "2026-02-14T14:37:00Z"
+  },
   "note": "This file is used for coordination between agentic and traditional workflows"
 }
