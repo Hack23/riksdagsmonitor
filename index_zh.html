@@ -193,7 +193,7 @@
       "startDate": "2026-09-13",
       "endDate": "2026-09-13",
       "eventStatus": "https://schema.org/EventScheduled",
-      "event出勤Mode": "https://schema.org/OfflineEvent出勤Mode",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
         "name": "瑞典",
@@ -534,17 +534,17 @@
 
 <div class="dashboard-grid">
 <div class="chart-card">
-<h3>Effectiveness Trends (1990-2026)</h3>
-<p>Historical party effectiveness scores showing legislative productivity, voting consistency, and policy impact over time.</p>
+<h3>政党效能趋势（1990-2026）</h3>
+<p>展示政党历史效能评分，反映立法生产力、投票一致性与政策影响的长期变化。</p>
 <canvas id="partyEffectivenessChart" role="img" aria-label="政党效能折线图显示了 1990 年至 2026 年所有 8 个瑞典政党的趋势"></canvas>
 <span class="sr-only">显示 1990 年至 2026 年间社会民主党、中社会党、瑞典民主党、中间党、左翼党、基督教民主党、自由党和绿党的有效性得分的折线图。</span>
 </div>
 
 <div class="chart-card">
 <h3>政党比较（当前时期）</h3>
-<p>Comparative analysis of party performance metrics for the current legislative period.</p>
+<p>对当前立法周期各政党的关键绩效指标进行对比分析。</p>
 <canvas id="partyComparisonChart" role="img" aria-label="比较所有 8 个瑞典政党当前表现分数的条形图"></canvas>
-<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+<span class="sr-only">水平条形图展示当前立法周期内所有政党的对比绩效分数，并按分数排序。</span>
 </div>
 
 <div class="chart-card">
@@ -555,10 +555,10 @@
 </div>
 
 <div class="chart-card">
-<h3>Momentum Indicators</h3>
+<h3>势头指标</h3>
 <p>政党势头得分与百分位数基准（P50、P90）表明选举轨迹。</p>
 <canvas id="partyMomentumChart" role="img" aria-label="显示所有 8 个瑞典政党动力得分的圆环图"></canvas>
-<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+<span class="sr-only">环形图展示各政党的势头指标得分，并附带百分位基准。</span>
 </div>
 </div>
 </section>
@@ -570,7 +570,7 @@
 <!-- Network Diagram (Full Width) -->
 <div class="chart-card wide">
 <h3>委员会网络图</h3>
-<p>Interactive visualization of committee relationships and productivity. Drag nodes to explore connections.</p>
+<p>以交互方式展示委员会关系与生产力。可拖动节点查看关联结构。</p>
 <div id="committeeNetwork" role="img" aria-label="显示瑞典议会 15 个委员会之间关系的委员会网络连接图"></div>
 <table class="sr-only" id="committeeNetworkTable" aria-label="委员会网络连接数据表">
 <!-- Accessible fallback table populated by JavaScript -->
@@ -579,8 +579,8 @@
 
 <!-- Productivity Heat Map (Full Width) -->
 <div class="chart-card wide">
-<h3>Productivity Matrix (2020-2026)</h3>
-<p>Heat map showing committee productivity scores over time. Hover over cells for detailed information.</p>
+<h3>生产力矩阵（2020-2026）</h3>
+<p>热力图展示委员会在不同时期的生产力评分。悬停单元格可查看详细信息。</p>
 <div id="productivityMatrix" role="img" aria-label="委员会生产力矩阵显示 2020 年至 2026 年期间的绩效"></div>
 <table class="sr-only" id="productivityMatrixTable" aria-label="委员会生产力矩阵数据表">
 <!-- Accessible fallback table populated by JavaScript -->
@@ -590,27 +590,27 @@
 <!-- 委员会比较 -->
 <div class="chart-card">
 <h3>委员会比较</h3>
-<p>Compare productivity scores across all 15 committees.</p>
+<p>比较全部 15 个委员会的生产力评分。</p>
 <canvas id="committeeComparisonChart" role="img" aria-label="Bar chart comparing productivity scores across committees"></canvas>
 </div>
 
 <!-- 决策有效性 -->
 <div class="chart-card">
 <h3>决策有效性</h3>
-<p>Track decision outcomes (approved, rejected, pending) over time.</p>
+<p>跟踪决策结果（通过、否决、待定）随时间的变化。</p>
 <canvas id="decisionEffectivenessChart" role="img" aria-label="Stacked bar chart showing decision effectiveness over years"></canvas>
 </div>
 
 <!-- Seasonal Patterns (Full Width) -->
 <div class="chart-card wide">
-<h3>Seasonal Activity Patterns</h3>
-<p>Quarterly activity trends showing how committee work varies across the year.</p>
-<canvas id="seasonalPatternsChart" role="img" aria-label="Line chart displaying seasonal activity patterns by quarter"></canvas>
+<h3>季节性活动模式</h3>
+<p>按季度展示活动趋势，反映委员会工作在全年中的变化。</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="按季度显示季节性活动模式的折线图"></canvas>
 </div>
 </div>
 
 <div class="dashboard-attribution">
-<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="committeeLastUpdated">加载中...</span></small></p>
+<p><small>📊 数据由 <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA 平台</a> 提供 | 更新时间：<span id="committeeLastUpdated">加载中...</span></small></p>
 </div>
 </section>
 
@@ -629,26 +629,26 @@
 </div>
 
 <div class="chart-card">
-<h3>Voting Anomalies (Last 5 Years)</h3>
-<p>Scatter plot highlighting unusual voting patterns and party defections from expected behavior.</p>
-<canvas id="voting异常Chart" role="img" aria-label="显示各方偏差分数的投票异常散点图"></canvas>
+<h3>投票异常（最近 5 年）</h3>
+<p>散点图突出显示异常投票模式以及偏离预期的党内倒戈行为。</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="显示各政党偏差分数的投票异常散点图"></canvas>
 </div>
 
 <div class="chart-card">
 <h3>政党一致性热力图</h3>
-<p>Matrix visualization showing cross-party voting agreement levels based on historical voting records.</p>
+<p>基于历史投票记录，以矩阵形式展示跨党派投票一致性水平。</p>
 <div id="alignmentHeatMap" role="img" aria-label="政党联盟热图显示所有政党对之间的投票一致百分比"></div>
 </div>
 
 <div class="chart-card">
-<h3>Behavioral Patterns</h3>
+<h3>行为模式</h3>
 <p>政党投票一致性分数衡量所有投票中对政党路线的遵守情况。</p>
-<canvas id="behavioralPatternsChart" role="img" aria-label="Behavioral patterns bar chart showing voting consistency percentages for all parties"></canvas>
+<canvas id="behavioralPatternsChart" role="img" aria-label="显示各政党投票一致性百分比的行为模式柱状图"></canvas>
 </div>
 
 <div class="chart-card wide">
 <h3>决策趋势（1990-2026）</h3>
-<p>Historical timeline showing annual voting activity trends for all parties over 36 years.</p>
+<p>历史时间线展示 36 年来各政党年度投票活动趋势。</p>
 <canvas id="decisionTrendsChart" role="img" aria-label="显示 1990 年至 2026 年年度投票量的决策趋势时间表"></canvas>
 </div>
 </div>
@@ -659,7 +659,7 @@
 </section>
 
 <section id="seasonal-patterns-dashboard">
-<h2>📅 Seasonal Activity Patterns (2002-2025)</h2>
+<h2>📅 季节性活动模式（2002-2025）</h2>
 <p class="subtitle">带Z分数异常检测的季度分析</p>
 
 <!-- Filters -->
@@ -670,16 +670,16 @@
 
 <select id="seasonal-quarter-filter" aria-label="按季度筛选">
 <option value="all">所有季度</option>
-<option value="1">Q1 - Winter Session</option>
-<option value="2">Q2 - Spring Session</option>
-<option value="3">Q3 - Summer Recess</option>
-<option value="4">Q4 - Autumn Session</option>
+<option value="1">Q1 - 冬季会期</option>
+<option value="2">Q2 - 春季会期</option>
+<option value="3">Q3 - 夏季休会</option>
+<option value="4">Q4 - 秋季会期</option>
 </select>
 
 <select id="seasonal-election-filter" aria-label="按选举状态筛选">
-<option value="all">All</option>
+<option value="all">全部</option>
 <option value="election">选举年份</option>
-<option value="non-election">Non-选举年份</option>
+<option value="non-election">非选举年份</option>
 </select>
 
 <select id="classification-filter" aria-label="按活动分类筛选">
@@ -691,37 +691,37 @@
 <div class="dashboard-grid">
 <!-- Chart 1: Quarterly Activity Heat Map -->
 <div class="chart-card wide">
-<h3>Quarterly Activity Heat Map (2002-2025)</h3>
+<h3>季度活动热力图（2002-2025）</h3>
 <div id="seasonal-heatmap"></div>
-<p class="chart-description">Ballot volume by year and quarter with Z-score overlay. Red circles indicate statistical anomalies (|Z| ≥ 2.0).</p>
+<p class="chart-description">按年与季度展示投票量并叠加 Z 分数。红色圆点表示统计异常（|Z| ≥ 2.0）。</p>
 </div>
 
 <!-- Chart 2: Z-Score 异常 Timeline -->
 <div class="chart-card">
 <h3>Z 分数异常检测</h3>
-<canvas id="zscore-timeline-chart" role="img" aria-label="Line chart showing Z-score timeline for ballot, document, and attendance metrics"></canvas>
-<p class="chart-description">Statistical outliers (|Z| ≥ 2.0) are flagged in red based on anomaly thresholds.</p>
+<canvas id="zscore-timeline-chart" role="img" aria-label="显示投票、文档与出勤指标 Z 分数时间线的折线图"></canvas>
+<p class="chart-description">基于异常阈值，将统计离群值（|Z| ≥ 2.0）以红色标记。</p>
 </div>
 
 <!-- Chart 3: Cross-Year Quarter Comparison -->
 <div class="chart-card">
-<h3>Average Activity by Quarter (所有年份)</h3>
-<canvas id="quarter-comparison-chart" role="img" aria-label="Bar chart showing average ballots by quarter across all years"></canvas>
-<p class="chart-description">Q1–Q4 baselines across all years. Shows typical activity patterns across seasons.</p>
+<h3>按季度平均活动量（所有年份）</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="显示所有年份各季度平均投票量的柱状图"></canvas>
+<p class="chart-description">展示所有年份的 Q1–Q4 基线，反映季节性典型活动模式。</p>
 </div>
 
 <!-- Chart 4: Activity Classification Distribution -->
 <div class="chart-card wide">
-<h3>Seasonal Pattern Classification</h3>
-<canvas id="classification-chart" role="img" aria-label="Stacked bar chart showing distribution of activity classifications by year"></canvas>
-<p class="chart-description">Distribution of NORMAL, ELEVATED, REDUCED, and ANOMALY patterns across years.</p>
+<h3>季节性模式分类</h3>
+<canvas id="classification-chart" role="img" aria-label="显示各年份活动分类分布的堆叠柱状图"></canvas>
+<p class="chart-description">展示各年份正常、升高、降低与异常模式的分布。</p>
 </div>
 
 <!-- Chart 5: QoQ Change Waterfall -->
 <div class="chart-card">
-<h3>Quarter-over-Quarter Changes</h3>
-<canvas id="qoq-change-chart" role="img" aria-label="Bar chart showing quarter-over-quarter ballot changes as percentages"></canvas>
-<p class="chart-description">Sequential ballot changes (% and absolute). Green indicates increase, red indicates decrease.</p>
+<h3>季度环比变化</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="显示投票量季度环比变化百分比的柱状图"></canvas>
+<p class="chart-description">展示连续季度的投票变化（百分比与绝对值）。绿色表示上升，红色表示下降。</p>
 </div>
 </div>
 
@@ -735,31 +735,31 @@
 <!-- Real-Time Status Cards -->
 <div class="status-cards">
 <div class="status-card" data-metric="ballots">
-<h3><span aria-hidden="true">📊</span> Ballot Activity</h3>
+<h3><span aria-hidden="true">📊</span> 投票活动</h3>
 <p class="current-value">16,750</p>
-<p class="baseline-comparison">+4.34% vs baseline</p>
-<span class="status-badge normal">NORMAL</span>
+<p class="baseline-comparison">较基线 +4.34%</p>
+<span class="status-badge normal">正常</span>
 </div>
 
 <div class="status-card" data-metric="documents">
-<h3><span aria-hidden="true">📄</span> Document Production</h3>
+<h3><span aria-hidden="true">📄</span> 文档产出</h3>
 <p class="current-value">3,451</p>
-<p class="baseline-comparison">+25.55% vs baseline</p>
-<span class="status-badge normal">NORMAL</span>
+<p class="baseline-comparison">较基线 +25.55%</p>
+<span class="status-badge normal">正常</span>
 </div>
 
 <div class="status-card" data-metric="attendance">
-<h3><span aria-hidden="true">✅</span> 出勤 Rate</h3>
+<h3><span aria-hidden="true">✅</span> 出勤率</h3>
 <p class="current-value">85.75%</p>
-<p class="baseline-comparison">+0.75% vs baseline</p>
-<span class="status-badge normal">STABLE</span>
+<p class="baseline-comparison">较基线 +0.75%</p>
+<span class="status-badge normal">稳定</span>
 </div>
 
 <div class="status-card" data-metric="party-performance">
 <h3><span aria-hidden="true">🎯</span> 政党胜率</h3>
 <p class="current-value">59.72%</p>
-<p class="baseline-comparison">+3.55% YoY</p>
-<span class="status-badge improving">IMPROVING</span>
+<p class="baseline-comparison">同比 +3.55%</p>
+<span class="status-badge improving">改善中</span>
 </div>
 </div>
 
@@ -767,29 +767,29 @@
 <div class="dashboard-grid">
 <!-- Chart 1: Q4 Activity Timeline (2023-2025) -->
 <div class="chart-card wide">
-<h3>Q4 Activity Timeline (2023-2025)</h3>
+<h3>Q4 活动时间线（2023-2025）</h3>
 <div class="chart-container">
-<canvas id="q4-timeline-chart" aria-label="Q4 Activity Timeline showing ballots, documents, and attendance trends from 2023 to 2025"></canvas>
+<canvas id="q4-timeline-chart" aria-label="显示 2023 至 2025 年投票、文档与出勤趋势的 Q4 活动时间线"></canvas>
 </div>
-<p class="chart-description">Ballots, documents, attendance trends with baseline overlay</p>
+<p class="chart-description">投票、文档与出勤趋势（叠加历史基线）</p>
 </div>
 
 <!-- 图 2：选举年比较 -->
 <div class="chart-card">
 <h3>选举年与非选举年Q4模式</h3>
 <div class="chart-container">
-<canvas id="election-comparison-chart" aria-label="Comparison of Q4 ballot activity in election years versus non-election years from 2002 to 2025"></canvas>
+<canvas id="election-comparison-chart" aria-label="比较 2002 至 2025 年选举年与非选举年 Q4 投票活动"></canvas>
 </div>
 <p class="chart-description">第四季度历史活动（2002-2025）：选举年与非选举年</p>
 </div>
 
 <!-- Chart 3: Baseline Deviation Radar -->
 <div class="chart-card">
-<h3>Deviation from Baseline (2025 Q4)</h3>
+<h3>相对基线偏差（2025 年 Q4）</h3>
 <div class="chart-container">
-<canvas id="deviation-radar-chart" aria-label="Radar chart showing 2025 Q4 metrics compared to historical baselines"></canvas>
+<canvas id="deviation-radar-chart" aria-label="显示 2025 年 Q4 指标与历史基线对比的雷达图"></canvas>
 </div>
-<p class="chart-description">Multi-metric deviation analysis</p>
+<p class="chart-description">多指标偏差分析</p>
 </div>
 
 <!-- 图4：聚会 绩效 轮班 -->
@@ -798,23 +798,23 @@
 <div class="chart-container">
 <canvas id="party-trends-chart" aria-label="Line chart showing party win rate, absence rate, and document production from 2023 to 2025"></canvas>
 </div>
-<p class="chart-description">Win rate, absence rate, document production by year</p>
+<p class="chart-description">各年份胜率、缺勤率与文档产出</p>
 </div>
 
 <!-- Chart 5: YoY Change Waterfall -->
 <div class="chart-card">
-<h3>Year-over-Year Changes</h3>
+<h3>同比变化</h3>
 <div class="chart-container">
-<canvas id="yoy-waterfall-chart" aria-label="Waterfall chart showing year-over-year ballot activity changes from 2023 to 2025"></canvas>
+<canvas id="yoy-waterfall-chart" aria-label="显示 2023 至 2025 年投票活动同比变化的瀑布图"></canvas>
 </div>
-<p class="chart-description">Ballot activity changes: 2023 → 2024 → 2025</p>
+<p class="chart-description">投票活动变化：2023 → 2024 → 2025</p>
 </div>
 
 <!-- Chart 6: Early Warning Indicators -->
 <div class="chart-card">
-<h3>Early Warning Indicator Matrix</h3>
-<div id="warning-matrix" role="region" aria-label="Early warning indicator matrix showing status of 4 monitored metrics: ballots, documents, attendance, and year-over-year change"></div>
-<p class="chart-description">Real-time status of 4 monitored metrics (ballots, documents, attendance, YoY change)</p>
+<h3>早期预警指标矩阵</h3>
+<div id="warning-matrix" role="region" aria-label="显示 4 项监测指标状态的早期预警矩阵：投票、文档、出勤与同比变化"></div>
+<p class="chart-description">4 项监测指标的实时状态（投票、文档、出勤、同比变化）</p>
 </div>
 </div>
 
@@ -850,8 +850,8 @@
 </select>
 <select id="anomaly-direction-filter" aria-label="按方向过滤">
 <option value="all">所有方向</option>
-<option value="UNUSUALLY_HIGH">Unusually 高</option>
-<option value="UNUSUALLY_LOW">Unusually 低</option>
+<option value="UNUSUALLY_HIGH">异常偏高</option>
+<option value="UNUSUALLY_LOW">异常偏低</option>
 <option value="WITHIN_NORMAL_RANGE">在正常范围内</option>
 </select>
 <select id="anomaly-year-filter" aria-label="按年份筛选">
@@ -864,64 +864,64 @@
 <!-- Chart 1: 异常 Timeline -->
 <div class="chart-card wide">
 <h3>异常时间线（2002-2026）</h3>
-<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
-<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="显示异常随时间变化的散点图"></canvas>
+<p class="chart-description">按时间顺序展示检测到的异常，并标注严重级别</p>
 </div>
 
 <!-- Chart 2: Z-Score Distribution -->
 <div class="chart-card">
-<h3>Z-Score Distribution</h3>
-<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
-<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+<h3>Z 分数分布</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Z 分数分布直方图"></canvas>
+<p class="chart-description">正态曲线与离群点标记（|Z| ≥ 2.0）</p>
 </div>
 
 <!-- Chart 3: 异常 Type Breakdown -->
 <div class="chart-card">
 <h3>异常类型分布</h3>
 <canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
-<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+<p class="chart-description">投票异常与文档异常的分布</p>
 </div>
 
 <!-- Chart 4: Severity Heat Map -->
 <div class="chart-card wide">
-<h3>Severity Heat Map (Year × Quarter)</h3>
-<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
-<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+<h3>严重性热力图（年份 × 季度）</h3>
+<div id="severity-heatmap" role="img" aria-label="按年份与季度显示异常严重性的热力图"></div>
+<p class="chart-description">网格展示各年份与季度的异常严重程度</p>
 </div>
 
 <!-- Chart 5: Quarterly 异常 Frequency -->
 <div class="chart-card">
 <h3>按季度异常频率</h3>
-<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="显示按季度划分异常频次的柱状图"></canvas>
 <p class="chart-description">Q1-Q4 anomaly counts across all years</p>
 </div>
 
 <!-- Chart 6: Recent Anomalies Feed -->
 <div class="chart-card">
-<h3>Recent Anomalies (Last 5)</h3>
-<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
-<p class="chart-description">Most recent anomalies with details</p>
+<h3>最近异常（最新 5 条）</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="最近异常信息流"></div>
+<p class="chart-description">最近检测到的异常及其详细信息</p>
 </div>
 </div>
 </section>
 
 <section id="ministry-dashboard" class="dashboard-container">
-<h2>🎖️ Government Minister 风险 & Influence</h2>
+<h2>🎖️ 政府部长风险与影响力</h2>
 
 <div class="dashboard-grid">
 <div class="chart-card wide">
-<h3>Ministry 风险 Heat Map</h3>
-<div id="ministry风险HeatMap" role="img" aria-label="Ministry 风险 Heat Map showing risk levels across government departments"></div>
+<h3>部委风险热力图</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="显示各政府部门风险水平的部委风险热力图"></div>
 </div>
 
 <div class="chart-card">
-<h3>Top 10 Most Influential Ministers</h3>
-<canvas id="ministerInfluenceChart" role="img" aria-label="Bar chart showing top 10 most influential ministers"></canvas>
+<h3>影响力最高的 10 位部长</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="显示影响力最高 10 位部长的柱状图"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>Ministry Productivity Matrix</h3>
-<canvas id="ministryProductivityChart" role="img" aria-label="Bar chart comparing ministry productivity across quarters"></canvas>
+<h3>部委生产力矩阵</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="比较各季度部委生产力的柱状图"></canvas>
 </div>
 
 <div class="chart-card">
@@ -940,8 +940,8 @@
 </section>
 
 <section id="risk-dashboard" class="dashboard-container">
-<h2><span aria-hidden="true">⚠️</span> 风险 Assessment &amp; 异常 Detection</h2>
-<p class="dashboard-description">Comprehensive intelligence analysis using 45 risk rules across 349 MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes 2494 politicians (1971-2024).</p>
+<h2><span aria-hidden="true">⚠️</span> 风险评估与异常检测</h2>
+<p class="dashboard-description">基于 45 条风险规则，对 349 名议员开展综合情报分析，并结合统计异常检测（P90/P99 阈值）。历史分析覆盖 1971-2024 年共 2494 名政治人物。</p>
 
 <div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
   <!-- Alerts populated by JavaScript -->
@@ -949,12 +949,12 @@
 
 <div class="dashboard-grid">
   <div class="chart-card full-width">
-    <h3>风险 Level Heat Map (45 Rules × 349 MPs)</h3>
-    <p class="chart-description">Interactive heat map showing risk scores for each MP across all 45 transparency rules. Click cells for details.</p>
+    <h3>风险等级热力图（45 条规则 × 349 名议员）</h3>
+    <p class="chart-description">交互式热力图展示每位议员在 45 条透明度规则下的风险评分。点击单元格查看详情。</p>
     <div class="controls">
       <label class="control-label">
-        <input type="checkbox" id="filter高风险" aria-label="仅显示高风险 MPs (score ≥6.0)" aria-describedby="filter高风险Desc">
-        <span id="filter高风险Desc">仅显示高风险 (≥6.0)</span>
+        <input type="checkbox" id="filterHighRisk" aria-label="仅显示高风险议员（分数 ≥6.0）" aria-describedby="filterHighRiskDesc">
+        <span id="filterHighRiskDesc">仅显示高风险（≥6.0）</span>
       </label>
       <label class="control-label">
         <span>按规则筛选:</span>
@@ -964,46 +964,46 @@
       </label>
       <button id="resetZoom" class="btn btn-sm" aria-label="Reset zoom">重置缩放</button>
     </div>
-    <div id="riskHeatMap" role="img" aria-label="风险 assessment heat map showing 45 rules by 349 MPs"></div>
+    <div id="riskHeatMap" role="img" aria-label="显示 349 名议员在 45 条规则下风险评估结果的热力图"></div>
     <div id="heatMapLegend" class="legend" role="img" aria-label="Heat map color legend"></div>
   </div>
   
   <div class="chart-card">
-    <h3>风险 Distribution</h3>
-    <p class="chart-description">Distribution of risk scores across all MPs</p>
-    <canvas id="riskDistributionChart" role="img" aria-label="Bar chart showing risk score distribution"></canvas>
+    <h3>风险分布</h3>
+    <p class="chart-description">所有议员的风险评分分布</p>
+    <canvas id="riskDistributionChart" role="img" aria-label="显示风险评分分布的柱状图"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>异常 Detection (P90/P99)</h3>
-    <p class="chart-description">Voting anomalies with statistical thresholds at 90th and 99th percentiles</p>
-    <canvas id="anomalyDetectionChart" role="img" aria-label="Scatter plot showing voting anomalies"></canvas>
+    <h3>异常检测（P90/P99）</h3>
+    <p class="chart-description">基于第 90 与第 99 百分位阈值识别投票异常</p>
+    <canvas id="anomalyDetectionChart" role="img" aria-label="显示投票异常的散点图"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>Crisis Resilience Indicators</h3>
-    <p class="chart-description">Resilience scores by party and government stability metrics</p>
-    <canvas id="crisisResilienceChart" role="img" aria-label="Radar chart showing crisis resilience indicators"></canvas>
+    <h3>危机韧性指标</h3>
+    <p class="chart-description">按政党展示韧性评分与政府稳定性指标</p>
+    <canvas id="crisisResilienceChart" role="img" aria-label="显示危机韧性指标的雷达图"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>风险 Evolution Timeline (2020-2026)</h3>
-    <p class="chart-description">Historical trends of risk categories over time</p>
-    <canvas id="riskEvolutionChart" role="img" aria-label="Line chart showing risk evolution over time"></canvas>
+    <h3>风险演化时间线（2020-2026）</h3>
+    <p class="chart-description">风险类别随时间变化的历史趋势</p>
+    <canvas id="riskEvolutionChart" role="img" aria-label="显示风险随时间演化的折线图"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>Top 10 Ethics Concerns</h3>
-    <p class="chart-description">MPs with highest ethics risk scores</p>
-    <ol id="ethicsConcernsList" aria-label="Top 10 ethics concerns list">
+    <h3>伦理风险最高的 10 名议员</h3>
+    <p class="chart-description">伦理风险评分最高的议员名单</p>
+    <ol id="ethicsConcernsList" aria-label="伦理风险前 10 名列表">
       <!-- Populated by JavaScript -->
     </ol>
   </div>
   
   <div class="chart-card">
-    <h3>Electoral 风险 (MPs at 风险)</h3>
-    <p class="chart-description">MPs with highest electoral vulnerability for 2026 election</p>
-    <ol id="electoral风险List" aria-label="Top 10 MPs at electoral risk">
+    <h3>选举风险（高风险议员）</h3>
+    <p class="chart-description">2026 年选举中脆弱性最高的议员</p>
+    <ol id="electoralRiskList" aria-label="选举风险前 10 名议员列表">
       <!-- Populated by JavaScript -->
     </ol>
   </div>
@@ -1011,25 +1011,25 @@
 
 <div class="data-attribution">
   <p><strong>数据来源:</strong> <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency</a> | <strong>最后更新:</strong> <span id="lastUpdated">加载中...</span></p>
-  <p class="methodology-note"><em>风险 scores calculated using 45 transparency rules across 4 domains (politician, party, committee, ministry). 异常 detection uses P90 (warning) and P99 (critical) statistical thresholds.</em></p>
+  <p class="methodology-note"><em>风险评分基于 4 个领域（政治人物、政党、委员会、部委）的 45 条透明度规则计算。异常检测采用 P90（预警）与 P99（严重）统计阈值。</em></p>
 </div>
 </section>
 
   <section id="intelligence-capabilities">
-<h2>Comprehensive Intelligence Platform</h2>
-<p>CIA delivers systematic political transparency through 45 risk rules across 4 domains and 5 analytical frameworks.</p>
+<h2>综合情报平台</h2>
+<p>CIA 通过覆盖 4 个领域的 45 条风险规则和 5 类分析框架，系统性提升政治透明度。</p>
 
 <div class="cards">
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>🔍 Real-Time Monitoring</h3>
+<h3>🔍 实时监测</h3>
 <ul>
-<li>349 MPs tracked (<span data-stat-id="stat-historical-persons">—</span> historical) automatically</li>
-<li><span data-stat-id="stat-total-votes">—</span> individual ballot records analyzed</li>
-<li><span data-stat-id="stat-total-documents">—</span> documents processed</li>
-<li><span data-stat-id="stat-member-proposals">—</span> member proposals tracked</li>
-<li><span data-stat-id="stat-government-proposals">—</span> government proposals monitored</li>
-<li>委员会工作量化 (<span data-stat-id="stat-committee-documents">—</span> documents)</li>
+<li>自动追踪 349 名议员（历史累计 <span data-stat-id="stat-historical-persons">—</span> 名）</li>
+<li>已分析 <span data-stat-id="stat-total-votes">—</span> 条个人投票记录</li>
+<li>已处理 <span data-stat-id="stat-total-documents">—</span> 份文档</li>
+<li>已追踪 <span data-stat-id="stat-member-proposals">—</span> 项议员提案</li>
+<li>已监测 <span data-stat-id="stat-government-proposals">—</span> 项政府提案</li>
+<li>委员会工作量化（<span data-stat-id="stat-committee-documents">—</span> 份文档）</li>
 </ul>
 </div>
 
@@ -1037,85 +1037,85 @@
 <div class="scanner-effect"></div>
 <h3>📊 联盟预测</h3>
 <ul>
-<li>4 election scenarios modeled</li>
-<li>Historical pattern analysis (1971-2024)</li>
+<li>建模 4 种选举情景</li>
+<li>历史模式分析（1971-2024）</li>
 <li>党纪跟踪</li>
-<li>Defection probability estimation</li>
-<li>Government formation simulation</li>
+<li>倒戈概率估计</li>
+<li>政府组建模拟</li>
 </ul>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>✅ Fact-Checking Infrastructure</h3>
+<h3>✅ 事实核查基础设施</h3>
 <ul>
-<li>Politician claims vs. voting records</li>
+<li>政治人物言论与投票记录交叉核验</li>
 <li>党平台一致性分析</li>
-<li>Campaign promise tracking</li>
-<li>Real-time debate verification</li>
-<li>Historical accountability metrics</li>
+<li>竞选承诺追踪</li>
+<li>实时辩论核验</li>
+<li>历史问责指标</li>
 </ul>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>⚠️ 风险 Assessment</h3>
+<h3>⚠️ 风险评估</h3>
 <ul>
-<li>45 behavioral risk rules active</li>
-<li>MINOR/MAJOR/CRITICAL severity levels</li>
-<li>Automated alert system</li>
-<li>Trend analysis for context</li>
-<li>Transparent methodology</li>
+<li>45 条行为风险规则已启用</li>
+<li>轻微/重大/严重三级严重度</li>
+<li>自动化告警系统</li>
+<li>趋势分析提供上下文</li>
+<li>方法论透明可追溯</li>
 </ul>
 </div>
 </div>
 
 <div class="risk-rules-breakdown">
-<h3>45 风险 Rules Across 4 Domains</h3>
+<h3>4 个领域的 45 条风险规则</h3>
 <ul>
-<li><strong>Politician-Level (20 rules):</strong> 出勤, voting consistency, role conflicts, productivity</li>
+<li><strong>政治人物层级（20 条规则）：</strong> 出勤、投票一致性、角色冲突、生产力</li>
 <li><strong>党级（12 条规则）：</strong> 联盟纪律、意识形态漂移、内部冲突</li>
-<li><strong>委员会级（8条规则）：</strong> Legislative productivity, partisan deadlock, expert testimony</li>
-<li><strong>Ministry-Level (5 rules):</strong> Budget overruns, policy failures, accountability lapses</li>
+<li><strong>委员会层级（8 条规则）：</strong> 立法生产力、党派僵局、专家证词</li>
+<li><strong>部委层级（5 条规则）：</strong> 预算超支、政策失误、问责缺失</li>
 </ul>
 
-<h3>5 Analytical Frameworks</h3>
+<h3>5 大分析框架</h3>
 <ul>
-<li><strong>Temporal Analysis:</strong> Trend detection across time periods</li>
-<li><strong>Comparative Analysis:</strong> Cross-party/MP benchmarking</li>
-<li><strong>Pattern Recognition:</strong> Behavioral anomaly detection</li>
+<li><strong>时间分析：</strong> 跨时段趋势识别</li>
+<li><strong>比较分析：</strong> 跨党派/议员基准对比</li>
+<li><strong>模式识别：</strong> 行为异常检测</li>
 <li><strong>预测智能：</strong> 选举结果预测、联盟建模</li>
-<li><strong>Network Analysis:</strong> Influence mapping, collaboration patterns</li>
+<li><strong>网络分析：</strong> 影响力映射与协作模式</li>
 </ul>
 </div>
 </section>
 
 <section id="data-sources">
-<h2><span aria-hidden="true">📊</span> Citizen Intelligence Agency Data Products</h2>
+<h2><span aria-hidden="true">📊</span> Citizen Intelligence Agency 数据产品</h2>
 <p>Riksdagsmonitor 由<a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency (CIA)</a>— 一个开源 OSINT 平台，可将瑞典议会数据处理成可操作的情报产品。</p>
 
 <div class="cards">
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">📈</span> 风险 Assessment Reports</h3>
-<p>45 risk rules across 4 domains analyze politician behavior, party discipline, committee effectiveness, and ministry accountability in real-time.</p>
+<h3><span aria-hidden="true">📈</span> 风险评估报告</h3>
+<p>基于 4 个领域的 45 条风险规则，实时分析政治人物行为、政党纪律、委员会效能和部委问责。</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">📅</span> Seasonal Activity Analysis</h3>
-<p>Z-score anomaly detection identifies unusual parliamentary activity patterns by quarter, with historical baselines from 2002 to present.</p>
+<h3><span aria-hidden="true">📅</span> 季节性活动分析</h3>
+<p>通过 Z 分数异常检测识别各季度异常议会活动模式，历史基线覆盖 2002 年至今。</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3><span aria-hidden="true">🎯</span> 选举周期情报</h3>
-<p>绩效 tracking across 9+ election cycles (1994–2034) with predictive risk forecasting, party tier analysis, and coalition probability modeling.</p>
+<p>覆盖 9 个以上选举周期（1994–2034）的绩效追踪，并提供预测性风险预报、政党分层分析与联盟概率建模。</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">🔗</span> Open Data Integration</h3>
+<h3><span aria-hidden="true">🔗</span> 开放数据整合</h3>
 <p>所有情报产品均来自官方开放数据源。可视化内容通过夜间数据管道自动更新，并采用 24 小时缓存。</p>
 </div>
 </div>
@@ -1125,35 +1125,35 @@
 
   
 <section id="data-integration">
-<h2><span aria-hidden="true">🔗</span> Data Sources &amp; Integration</h2>
+<h2><span aria-hidden="true">🔗</span> 数据来源与整合</h2>
 <p>Riksdagsmonitor 整合了多个瑞典和国际权威数据源：</p>
 
 <div class="cards">
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>瑞典议会 (Riksdagen)</h3>
-<p>Official parliamentary data including votes, documents, committee work, and MP information.</p>
+<p>官方议会数据，包括投票、文档、委员会工作与议员信息。</p>
 <a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">data.riksdagen.se</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>瑞典选举局</h3>
-<p>Historical election results, voter turnout, and electoral statistics for all national elections.</p>
+<p>提供历次全国选举结果、投票率与选举统计数据。</p>
 <a href="https://www.val.se/" target="_blank" rel="noopener noreferrer">val.se</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>Financial Management Authority (ESV)</h3>
-<p>Government budget data, public spending analysis, and financial accountability reporting.</p>
+<h3>财政管理局（ESV）</h3>
+<p>提供政府预算数据、公共支出分析与财政问责报告。</p>
 <a href="https://www.esv.se/psidata/" target="_blank" rel="noopener noreferrer">esv.se/psidata</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>World Bank Open Data</h3>
-<p>Country-level economic and development indicators for international comparative analysis.</p>
+<h3>世界银行开放数据</h3>
+<p>提供国家级经济与发展指标，用于国际比较分析。</p>
 <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">data.worldbank.org</a>
 </div>
 </div>
@@ -1166,10 +1166,10 @@
       <h3>关于Riksdagsmonitor</h3>
       <p>使用 CIA OSINT 功能进行瑞典议会监控的实时情报平台。</p>
       <ul class="footer-stats">
-        <li><strong>349 MPs</strong> tracked</li>
-        <li><strong>45 risk rules</strong> active</li>
-        <li><strong>14 languages</strong> supported</li>
-        <li><strong>50+ years</strong> historical data</li>
+        <li>已追踪 <strong>349 名议员</strong></li>
+        <li>已启用 <strong>45 条风险规则</strong></li>
+        <li>支持 <strong>14 种语言</strong></li>
+        <li>覆盖 <strong>50+ 年</strong>历史数据</li>
       </ul>
     </div>
     
@@ -1179,7 +1179,7 @@
         <li><a href="index.html">首页</a></li>
         <li><a href="news/index_zh.html">新闻</a></li>
         <li><a href="dashboard/index_zh.html">仪表板</a></li>
-        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA 平台</a></li>
         <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub 代码库</a></li>
         <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
       </ul>
