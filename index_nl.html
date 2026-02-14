@@ -1,1099 +1,1233 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+<title>Riksdagsmonitor | Zweeds verkiezingsintelligentieplatform 2026 | Parlementaire monitoring</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zweedse Verkiezingen 2026 | Live Intelligence Platform | CIA OSINT | Hack23</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
-<meta name="description" content="Zweedse Verkiezingen 2026 live intelligence platform: Real-time monitoring, coalitievoorspellingen, 45 risicoregels, uitgebreide parlementaire analyse. Pilotprogramma voor mediaorganisaties.">
-	<meta name="twitter:description" content="Zweedse Verkiezingen 2026 live intelligence platform: Real-time monitoring, coalitievoorspellingen, 45 risicoregels, uitgebreide parlementaire analyse. Pilotprogramma voor mediaorganisaties.">
-<meta name="keywords" content="Zweedse verkiezingen 2026, riksdag monitoring, coalitievoorspelling, politieke intelligentie, OSINT platform, parlementaire analyse, media pilotprogramma, CIA platform, Zweedse politiek, verkiezingsmonitoring">
-<meta name="robots" content="index, follow">
-<meta name="author" content="James Pether Sörling">
-<meta property="og:title" content="Zweedse Verkiezingen 2026 | Live Intelligence Platform">
-<meta property="og:description" content="Real-time monitoring · Coalitievoorspellingen · Systematische transparantie. 45 risicoregels voor 349 parlementsleden. Pilotprogramma voor Zweedse en internationale media.">
-<meta property="og:locale" content="nl_NL">
-	<meta property="og:locale:alternate" content="ar_SA">
-	<meta property="og:locale:alternate" content="da_DK">
-	<meta property="og:locale:alternate" content="de_DE">
-	<meta property="og:locale:alternate" content="en_US">
-	<meta property="og:locale:alternate" content="es_ES">
-	<meta property="og:locale:alternate" content="fi_FI">
-	<meta property="og:locale:alternate" content="fr_FR">
-	<meta property="og:locale:alternate" content="he_IL">
-	<meta property="og:locale:alternate" content="ja_JP">
-	<meta property="og:locale:alternate" content="ko_KR">
-	<meta property="og:locale:alternate" content="nb_NO">
-	<meta property="og:locale:alternate" content="sv_SE">
-	<meta property="og:locale:alternate" content="zh_CN"><meta property="og:type" content="article">
-<meta property="og:url" content="https://riksdagsmonitor.com/index_nl.html">
-<meta property="og:image" content="https://www.hack23.com/blog.webp"><!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.hack23.com/blog.webp">
-<meta name="twitter:image:alt" content="Hack23 Security Blog">
-<meta name="twitter:site" content="@hack23ab">
-<meta name="twitter:creator" content="@jamessorling">
-
 <link rel="canonical" href="https://riksdagsmonitor.com/index_nl.html">
-	<!-- Hreflang tags for language alternatives -->
-	<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/swedish-election-2026_ar.html">
-	<link rel="alternate" hreflang="ar-SA" href="https://riksdagsmonitor.com/swedish-election-2026_ar.html">
-	<link rel="alternate" hreflang="ar-EG" href="https://riksdagsmonitor.com/swedish-election-2026_ar.html">
-	<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/swedish-election-2026_da.html">
-	<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/swedish-election-2026_de.html">
-	<link rel="alternate" hreflang="de-DE" href="https://riksdagsmonitor.com/swedish-election-2026_de.html">
-	<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/swedish-election-2026.html">
-	<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/swedish-election-2026_es.html">
-	<link rel="alternate" hreflang="es-ES" href="https://riksdagsmonitor.com/swedish-election-2026_es.html">
-	<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/swedish-election-2026_fi.html">
-	<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/swedish-election-2026_fr.html">
-	<link rel="alternate" hreflang="fr-FR" href="https://riksdagsmonitor.com/swedish-election-2026_fr.html">
-	<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/swedish-election-2026_he.html">
-	<link rel="alternate" hreflang="he-IL" href="https://riksdagsmonitor.com/swedish-election-2026_he.html">
-	<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/swedish-election-2026_ja.html">
-	<link rel="alternate" hreflang="ja-JP" href="https://riksdagsmonitor.com/swedish-election-2026_ja.html">
-	<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/swedish-election-2026_ko.html">
-	<link rel="alternate" hreflang="ko-KR" href="https://riksdagsmonitor.com/swedish-election-2026_ko.html">
-	<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/index_nl.html">
-	<link rel="alternate" hreflang="nl-NL" href="https://riksdagsmonitor.com/index_nl.html">
-	<link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/swedish-election-2026_no.html">
-	<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/swedish-election-2026_no.html">
-	<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/swedish-election-2026_sv.html">
-	<link rel="alternate" hreflang="sv-SE" href="https://riksdagsmonitor.com/swedish-election-2026_sv.html">
-	<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
-	<link rel="alternate" hreflang="zh-CN" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
-	<link rel="alternate" hreflang="zh-SG" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
-	<link rel="alternate" hreflang="zh-Hans" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
-	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
+<link rel="manifest" href="site.webmanifest">
+<meta name="description" content="Riksdagsmonitor: Zweeds verkiezingsintelligentieplatform 2026. Realtime monitoring van 349 parlementsleden in 8 partijen, coalitievoorspellingen, 45 risicoregels en meer dan 50 jaar parlementaire data van het Citizen Intelligence Agency (CIA) OSINT-platform.">
+<meta name="keywords" content="Zweedse verkiezingen 2026, riksdagsmonitor, riksdag-monitoring, coalitievoorspelling, politieke intelligence, OSINT-platform, parlementaire analyse, Citizen Intelligence Agency, Zweedse politiek, verkiezingsmonitoring, riksdagsval 2026, valövervakning, Sveriges riksdag, politisk intelligens, parlamentsanalys, koalitionsförutsägelse, riskbedömning, svensk politik, demokratisk insyn, 349 parlementsleden, 45 risicoregels, parlementaire transparantie, Zweedse democratie, verkiezingsvoorspelling 2026">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
 
+<!-- Geografische meta-tags -->
+<meta name="geo.region" content="SE">
+<meta name="geo.placename" content="Göteborg">
+<meta name="geo.position" content="57.708870;11.974560">
+<meta name="ICBM" content="57.708870, 11.974560">
 
-	<!-- Schema.org structured data -->
-	<script type="application/ld+json">{
+<!-- Mobiele webapp-tags -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Riksdagsmonitor">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="320">
+
+<!-- Open Graph / sociale media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/index_nl.html">
+<meta property="og:site_name" content="Riksdagsmonitor">
+<meta property="og:title" content="Riksdagsmonitor | Zweeds verkiezingsintelligentieplatform 2026">
+<meta property="og:description" content="Realtime monitoring van 349 parlementsleden in 8 partijen. Coalitievoorspellingen, 45 risicoregels, verkiezingsvoorspellingen en 50+ jaar parlementaire data. Gratis en open source.">
+<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Riksdagsmonitor - Intelligentieplatform voor het Zweedse parlement">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="ar_SA">
+<meta property="og:locale:alternate" content="da_DK">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fi_FI">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:locale:alternate" content="sv_SE">
+<meta property="og:locale:alternate" content="zh_CN">
+
+<!-- Twitter-kaart -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Riksdagsmonitor | Zweeds verkiezingsintelligentieplatform 2026">
+<meta name="twitter:description" content="Realtime monitoring van 349 parlementsleden in 8 partijen. Coalitievoorspellingen, 45 risicoregels, verkiezingsvoorspellingen en 50+ jaar parlementaire data. Gratis en open source.">
+<meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+<meta name="twitter:image:alt" content="Riksdagsmonitor - Intelligentieplatform voor het Zweedse parlement">
+<meta name="twitter:site" content="@riksdagsmonitor">
+<meta name="twitter:creator" content="@jamessorling">
+<meta name="twitter:domain" content="riksdagsmonitor.com">
+
+<!-- DNS-prefetch en preconnect voor prestaties -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cia.sourceforge.io">
+<link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<meta name="application-name" content="Riksdagsmonitor">
+<meta name="theme-color" content="#0a0e27">
+
+<!-- Gestructureerde data van Schema.org -->
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://riksdagsmonitor.com/#organization",
+      "name": "Riksdagsmonitor",
+      "legalName": "Hack23 AB",
+      "url": "https://riksdagsmonitor.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "width": 250,
+        "height": 250
+      },
+      "description": "Monitoringsplatform voor het Zweedse parlement dat realtime intelligence, verkiezingsvoorspelling en politieke transparantie biedt via CIA OSINT-analyse.",
+      "foundingDate": "2008",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://riksdagsmonitor.com/#founder",
+        "name": "James Pether Sörling",
+        "jobTitle": "Oprichter en Chief Intelligence Officer",
+        "hasCredential": ["CISSP", "CISM"],
+        "sameAs": [
+          "https://www.linkedin.com/in/jamessorling/",
+          "https://github.com/Hack23"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SE",
+        "addressLocality": "Göteborg"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Technische ondersteuning",
+        "availableLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
+      },
+      "sameAs": [
+        "https://github.com/Hack23/riksdagsmonitor",
+        "https://github.com/Hack23/cia"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://riksdagsmonitor.com/#website",
+      "url": "https://riksdagsmonitor.com",
+      "name": "Riksdagsmonitor - Intelligentieplatform voor het Zweedse parlement",
+      "description": "Realtime monitoring van het Zweedse parlement met CIA OSINT-analyse, verkiezingsvoorspelling, coalitievoorspellingen en uitgebreide politieke transparantie.",
+      "publisher": {
+        "@id": "https://riksdagsmonitor.com/#organization"
+      },
+      "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://riksdagsmonitor.com/#webpage",
+      "url": "https://riksdagsmonitor.com/index.html",
+      "name": "Riksdagsmonitor | Zweeds verkiezingsintelligentieplatform 2026",
+      "description": "Realtime monitoring van het Zweedse parlement met Citizen Intelligence Agency (CIA) OSINT-analyse. 349 parlementsleden gevolgd in 8 partijen met 45 risicoregels, coalitievoorspellingen en 50+ jaar historische data.",
+      "isPartOf": {
+        "@id": "https://riksdagsmonitor.com/#website"
+      },
+      "about": {
+        "@id": "https://riksdagsmonitor.com/#event"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2008-01-01T00:00:00+00:00",
+      "dateModified": "2026-02-13T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "https://riksdagsmonitor.com/#breadcrumb"
+      },
+      "inLanguage": "nl",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": "https://riksdagsmonitor.com/index_nl.html"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://riksdagsmonitor.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://riksdagsmonitor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Zweedse verkiezingen 2026",
+          "item": "https://riksdagsmonitor.com/index_nl.html"
+        }
+      ]
+    },
+    {
       "@type": "Event",
-      "name": "Zweedse Parlementsverkiezingen 2026",
-      "description": "Live intelligence platform voor Zweedse verkiezingsmonitoring met CIA OSINT-capaciteiten. Real-time analyse van 349 parlementsleden, coalitievoorspellingen en uitgebreide risicobeoordeling.",
-      "image": "https://cia.sourceforge.io/cia-logo.png",
+      "@id": "https://riksdagsmonitor.com/#event",
+      "name": "Zweedse parlementsverkiezingen 2026",
+      "description": "Zweedse parlementsverkiezing gepland op 13 september 2026. Live intelligenceplatform dat 349 parlementsleden in 8 partijen monitort met CIA OSINT-capaciteiten, coalitievoorspellingen en uitgebreide risicobeoordeling. Volg stempatronen, commissieactiviteiten en politieke transparantie in realtime. Historische database: 2494 politici gevolgd sinds 1971.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "width": 1200,
+        "height": 630
+      },
       "startDate": "2026-09-13",
       "endDate": "2026-09-13",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
-        "name": "Sweden",
+        "name": "Zweden",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "SE"
+          "addressCountry": "SE",
+          "addressRegion": "Zweden"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 59.329323,
+          "longitude": 18.068581
         }
       },
       "organizer": {
-        "@type": "Organization",
-        "name": "Hack23 AB",
-        "url": "https://hack23.com"
+        "@id": "https://riksdagsmonitor.com/#organization"
       },
       "performer": {
         "@type": "Organization",
-        "name": "Hack23 AB",
-        "url": "https://hack23.com"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "name": "Swedish Election 2026 Pilot Program",
-        "url": "https://riksdagsmonitor.com/index_nl.html#pilot-program",
-        "lowPrice": "5000",
-        "highPrice": "7500",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/LimitedAvailability",
-        "offerCount": "15",
-        "validFrom": "2025-01-01",
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Swedish Media Organizations Tier",
-            "price": "5000",
-            "priceCurrency": "EUR",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "5000",
-              "priceCurrency": "EUR",
-              "unitText": "MONTH"
-            },
-            "availability": "https://schema.org/LimitedAvailability",
-            "availableAtOrFrom": {
-              "@type": "Place",
-              "name": "Sweden"
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Global News Organizations Tier",
-            "price": "7500",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/LimitedAvailability"
-          }
-        ]
+        "name": "Zweedse Riksdag",
+        "sameAs": "https://www.riksdagen.se"
       }
     },
     {
-      "@type": "Product",
-      "name": "CIA Zweedse Verkiezingen 2026 Intelligence Platform",
-      "description": "Uitgebreid politiek intelligence platform voor Zweedse verkiezingsmonitoring met 45 risicoregels, real-time parlementslid tracking en coalitievoorspellingsmodellen.",
-      "image": "https://cia.sourceforge.io/cia-logo.png",
-      "brand": {
-        "@type": "Organization",
-        "name": "Hack23 AB",
-        "url": "https://hack23.com"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://riksdagsmonitor.com/index_nl.html#pilot-program",
-        "priceCurrency": "EUR",
-        "price": "5000",
-        "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/LimitedAvailability",
-        "validFrom": "2025-01-01",
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": ["SE", "NO", "DK", "FI"]
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "DAY"
-            }
+      "@type": "FAQPage",
+      "@id": "https://riksdagsmonitor.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat is Riksdagsmonitor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor is een uitgebreid monitoringsplatform voor het Zweedse parlement dat realtime intelligence, verkiezingsvoorspellingen en politieke transparantie biedt via CIA OSINT-analyse. Het volgt 349 parlementariërs in 8 partijen met 45 risicoregels en uitgebreide parlementaire analyse. De historische database bevat 2494 politici uit 1971-2024."
           }
         },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "SE",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://riksdagsmonitor.com/index_nl.html#breadcrumb",
-      "itemListElement": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://hack23.com/"
+          "@type": "Question",
+          "name": "Wanneer is de Zweedse verkiezing van 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De Zweedse parlementsverkiezing van 2026 staat gepland op 13 september 2026 (de tweede zondag van september). Dit is een landelijke verkiezing om de samenstelling van de Riksdag (het Zweedse parlement) met 349 zetels te bepalen. Riksdagsmonitor volgt huidige en historische politici (2494 in totaal sinds 1971)."
+          }
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Zweedse Verkiezingen 2026",
-          "item": "https://riksdagsmonitor.com/index_nl.html"
+          "@type": "Question",
+          "name": "Hoeveel parlementariërs worden door Riksdagsmonitor gevolgd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor volgt alle 349 leden van het Zweedse parlement (Riksdag) en monitort hun stempatronen, aanwezigheid, commissiewerk en debatprestaties in realtime. De historische database bevat 2494 politici die sinds 1971 worden gevolgd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat zijn de 45 risicoregels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De 45 risicoregels zijn gedragsbeoordelingscriteria over 4 domeinen: politicusniveau (20 regels over aanwezigheid, stemconsistentie, rolconflicten en productiviteit), partijniveau (12 regels voor coalitiediscipline, ideologische verschuiving en interne conflicten), commissieniveau (8 regels voor wetgevende productiviteit en partijpolitieke blokkade) en ministerieniveau (5 regels voor budgetoverschrijdingen, beleidsfalen en verantwoording)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Riksdagsmonitor gratis te gebruiken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, Riksdagsmonitor is volledig gratis te gebruiken. Het biedt open toegang tot monitoring van het Zweedse parlement, verkiezingsvoorspellingen en politieke transparantiegegevens in 14 talen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welke talen ondersteunt Riksdagsmonitor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor ondersteunt 14 talen: Engels, Zweeds, Deens, Noors, Fins, Duits, Frans, Spaans, Nederlands, Arabisch, Hebreeuws, Japans, Koreaans en Chinees, waardoor Zweedse politieke intelligence toegankelijk wordt voor een wereldwijd publiek."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe werkt coalitievoorspelling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coalitievoorspelling gebruikt algoritmen die stempatronen, commissiesgedrag, partijdiscipline-scores en historische gegevens over coalitievorming over meer dan 50 jaar analyseren. Het systeem beoordeelt ideologische compatibiliteit, zetelverdeling en stabiliteitsindicatoren om waarschijnlijke regeringsformaties te voorspellen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat is het Citizen Intelligence Agency (CIA)-platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Het Citizen Intelligence Agency (CIA) is een open-source OSINT-platform voor politieke transparantie, ontwikkeld door Hack23 AB. Het verwerkt jaarlijks duizenden stemmen, analyseert parlementaire documenten en biedt realtime monitoring met uitgebreide dashboards voor risicobeoordeling."
+          }
         }
       ]
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "name": "Sveriges riksdag",
+      "alternateName": "Zweeds parlement",
+      "url": "https://www.riksdagen.se",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 12 Stockholm",
+        "addressLocality": "Stockholm",
+        "addressCountry": "SE"
+      },
+      "numberOfEmployees": 349,
+      "foundingDate": "1866"
     }
   ]
-}</script>
+}
+</script>
+
+<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/index_ar.html">
+<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/index_da.html">
+<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/index_de.html">
+<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html">
+<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/index_es.html">
+<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/index_fi.html">
+<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/index_fr.html">
+<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/index_he.html">
+<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/index_ja.html">
+<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/index_ko.html">
+<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/index_nl.html">
+<link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/index_no.html">
+<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/index_sv.html">
+<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/index_zh.html">
+<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/index.html">
+
 </head>
 <body>
-	<!-- Breadcrumb Navigation -->
-	<nav aria-label="Broodkruimelnavigatie">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index_nl.html">Home</a>
-			</li>
-			<li class="breadcrumb-item" aria-current="page">
-				Zweedse Verkiezingen 2026
-			</li>
-		</ol>
-	</nav>
+<!-- Overslaan-naar-inhoud-link voor toegankelijkheid -->
+<a href="#main-content" class="skip-to-content">Ga naar hoofdinhoud</a>
 
-	<!-- News Navigation -->
-	<div class="news-navigation">
-		<a href="news/index_nl.html" aria-label="Nieuws – AI-gedreven politieke journalistiek">
-			<span class="news-navigation-icon">📰</span>
-			<span>Nieuws</span>
-		</a>
-		<p>AI-gedreven politieke journalistiek met CIA OSINT</p>
-	</div>
+<!-- Broodkruimelnavigatie -->
+<nav aria-label="Broodkruimel">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index_nl.html">Start</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+Zweedse verkiezingen 2026
+</li>
+</ol>
+</nav>
 
-	<header>
-		<h1>🗳️ Zweedse Verkiezingen 2026<br>Live Intelligence Platform</h1>
-		<p class="tagline">Real-time monitoring · Coalitievoorspellingen · Systematische transparantie</p>
-		
-		<div class="election-countdown">
-			<h2>Verkiezingen over: <span id="countdown">13 september 2026</span></h2>
-			<p>13 september 2026 (tweede zondag in september)</p>
-		</div>
-		
-		<div class="hero-stats">
-			<div class="stat">
-				<span class="number" data-stat-id="stat-historical-persons">2.494</span>
-				<span class="label">Politici Gevolgd</span>
-			</div>
-			<div class="stat">
-				<span class="number" data-stat-id="stat-total-votes">3.529.786</span>
-				<span class="label">Stemmen Geanalyseerd</span>
-			</div>
-			<div class="stat">
-				<span class="number" data-stat-id="stat-total-documents">109.259</span>
-				<span class="label">Documenten Verwerkt</span>
-			</div>
-			<div class="stat">
-				<span class="number" data-stat-id="stat-rule-violations">2.308</span>
-				<span class="label">Regelovertredingen Gedetecteerd</span>
-			</div>
-		</div>
-		
-		<div class="app-link">
-			<a href="#pilot-program" class="btn" title="Inschrijven voor Pilotprogramma">Inschrijven voor Pilotprogramma</a>
-			<a href="cia-docs.html#business-case" title="Bekijk Business Case">Bekijk Business Case</a>
-			<a href="index_nl.html" title="Home">Home</a>
-		</div>
-	</header>
+<!-- Nieuwsnavigatie -->
+<nav class="news-navigation" aria-label="Nieuws">
+<a href="news/index_nl.html" aria-label="Ga naar de nieuwsrubriek - door AI vernieuwde politieke journalistiek">
+<span class="news-navigation-icon" aria-hidden="true">📰</span>
+<span>Nieuws</span>
+</a>
+<p>Door AI vernieuwde politieke journalistiek, aangedreven door CIA OSINT</p>
+</nav>
 
-	<main>
-		<section id="coalition-status">
-			<h2>Huidige Coalitie: Tidö-Akkoord</h2>
-			<p>Vorming: Oktober 2022 | Status: Actief | Meerderheid: 176 zetels (van 349 totaal)</p>
-			
-			<div class="cards">
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>Moderates (M)</h3>
-					<p><strong>68 zetels</strong></p>
-					<p>Leider: Ulf Kristersson (Prime Minister)</p>
-				</div>
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>Christian Democrats (KD)</h3>
-					<p><strong>19 zetels</strong></p>
-					<p>Leider: Ebba Busch</p>
-				</div>
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>Sweden Democrats (SD)</h3>
-					<p><strong>73 zetels</strong></p>
-					<p>Leider: Jimmie Åkesson</p>
-				</div>
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>Liberals (L) - Steun</h3>
-					<p><strong>16 zetels</strong></p>
-					<p>Leider: Johan Pehrson</p>
-				</div>
-			</div>
-			
-			<div class="coalition-stability">
-				<h3>Coalitie Stabiliteitsanalyse</h3>
-				<div class="stability-info">
-					<p><strong>Meerderheidsvoorsprong:</strong> 1 zetel (zeer smal)</p>
-					<p><strong>CIA Risk Assessment:</strong> 12 MAJOR alerts, 5 CRITICAL alerts detected (last 90 days)</p>
-					<p><strong>Fragility Indicators:</strong> Ideological tensions between SD and L, vulnerable to defections</p>
-					<p><strong>Stability Score:</strong> Moderate Risk (72%)</p>
-				</div>
-			</div>
-		</section>
+<header>
+<h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">Zweeds verkiezingsintelligentieplatform 2026</span></h1>
+<p class="tagline">Realtime parlementaire monitoring · Coalitievoorspellingen · 45 risicoregels · 50+ jaar data</p>
 
-		<section id="intelligence-capabilities">
-			<h2>Comprehensive Intelligence Platform</h2>
-			<p>CIA delivers systematic political transparency through 45 risk rules (detecting <span data-stat-id="stat-rule-violations">2308</span> violations) across 4 domains and 5 analytical frameworks.</p>
-			
-			<div class="cards">
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>🔍 Real-Time Monitoring</h3>
-					<ul>
-						<li>349 MPs tracked (<span data-stat-id="stat-historical-persons">2494</span> historical) automatically</li>
-						<li><span data-stat-id="stat-total-votes">3529786</span> votes analyzed annually</li>
-						<li><span data-stat-id="stat-total-documents">109259</span> documents processed</li>
-						<li>Committee work quantified (<span data-stat-id="stat-committee-documents">8740</span> documents)</li>
-						<li>Debate performance metrics</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>📊 Coalition Prediction</h3>
-					<ul>
-						<li>4 election scenarios modeled</li>
-						<li>Historical pattern analysis (1971-2024)</li>
-						<li>Party discipline tracking</li>
-						<li>Defection probability estimation</li>
-						<li>Government formation simulation</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>✅ Fact-Checking Infrastructure</h3>
-					<ul>
-						<li>Politician claims vs. voting records</li>
-						<li>Party platform consistency analysis</li>
-						<li>Campaign promise tracking</li>
-						<li>Real-time debate verification</li>
-						<li>Historical accountability metrics</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>⚠️ Risk Assessment</h3>
-					<ul>
-						<li>45 behavioral risk rules active</li>
-						<li>MINOR/MAJOR/CRITICAL severity levels</li>
-						<li>Automated alert system</li>
-						<li>Trend analysis for context</li>
-						<li>Transparent methodology</li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="risk-rules-breakdown">
-				<h3>45 Risk Rules Across 4 Domains</h3>
-				<ul>
-					<li><strong>Politician-Level (20 rules):</strong> Attendance, voting consistency, role conflicts, productivity</li>
-					<li><strong>Party-Level (12 rules):</strong> Coalition discipline, ideological drift, internal conflicts</li>
-					<li><strong>Committee-Level (8 rules):</strong> Legislative productivity, partisan deadlock, expert testimony</li>
-					<li><strong>Ministry-Level (5 rules):</strong> Budget overruns, policy failures, accountability lapses</li>
-				</ul>
-				
-				<h3>5 Analytical Frameworks</h3>
-				<ul>
-					<li><strong>Temporal Analysis:</strong> Trend detection across time periods</li>
-					<li><strong>Comparative Analysis:</strong> Cross-party/MP benchmarking</li>
-					<li><strong>Pattern Recognition:</strong> Behavioral anomaly detection</li>
-					<li><strong>Predictive Intelligence:</strong> Election outcome forecasting, coalition modeling</li>
-					<li><strong>Network Analysis:</strong> Influence mapping, collaboration patterns</li>
-				</ul>
-			</div>
-		</section>
+<div class="election-countdown">
+<h2>Verkiezing over: <span id="countdown">13 september 2026</span></h2>
+<p>13 september 2026 (tweede zondag van september)</p>
+</div>
 
-		<section id="election-timeline">
-			<h2>Election 2026 Monitoring Timeline</h2>
-			
-			<div class="timeline-phases">
-				<div class="phase">
-					<h3>Phase 1: Pre-Campaign (Now - December 2025)</h3>
-					<ul>
-						<li>Historical baseline analysis (2022-2025)</li>
-						<li>Coalition stability tracking</li>
-						<li>MP behavioral pattern establishment</li>
-						<li>Pilot program participant selection</li>
-					</ul>
-				</div>
-				
-				<div class="phase">
-					<h3>Phase 2: Campaign Period (January - August 2026)</h3>
-					<ul>
-						<li>Real-time MP activity monitoring</li>
-						<li>Party platform analysis</li>
-						<li>Coalition negotiation pattern detection</li>
-						<li>Debate performance quantification</li>
-						<li>Voter sentiment analysis</li>
-					</ul>
-				</div>
-				
-				<div class="phase">
-					<h3>Fase 3: Verkiezingsdag (13 september 2026)</h3>
-					<ul>
-						<li>Live results aggregation from Valmyndigheten</li>
-						<li>Instant coalition formation scenarios</li>
-						<li>Historical comparison with previous elections</li>
-						<li>Predictive modeling for government formation</li>
-					</ul>
-				</div>
-				
-				<div class="phase">
-					<h3>Phase 4: Post-Election (October - December 2026)</h3>
-					<ul>
-						<li>Coalition stability assessment</li>
-						<li>Government formation prediction accuracy evaluation</li>
-						<li>Lessons learned documentation</li>
-						<li>International replication planning</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">—</span>
+<span class="label">Gevolgde politici</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">—</span>
+<span class="label">Parlementaire stemmingen</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">—</span>
+<span class="label">Verwerkte documenten</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">—</span>
+<span class="label">Regeringsvoorstellen</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">—</span>
+<span class="label">Commissiebesluiten</span>
+</div>
+</div>
+</header>
 
-		<section id="coalition-scenarios">
-			<h2>Predictive Coalition Scenarios</h2>
-			<p>Based on CIA's 45 risk rules and 50 years of historical data analysis</p>
-			
-			<div class="scenarios">
-				<div class="scenario">
-					<h3>Scenario 1: The Fragmentation (40% probability)</h3>
-					<p class="scenario-summary">SD breaks from Tidö coalition over policy dispute. Early warning detected 3 months before via voting pattern analysis.</p>
-					<ul>
-						<li><strong>Trigger:</strong> Immigration policy disagreement or EU integration stance</li>
-						<li><strong>Outcome:</strong> Early election call, chaos, coalition realignment</li>
-						<li><strong>CIA Detection:</strong> Voting discipline breakdown, defection signals</li>
-					</ul>
-				</div>
-				
-				<div class="scenario">
-					<h3>Scenario 2: The Silent Coalition (35% probability)</h3>
-					<p class="scenario-summary">Social Democrats (S) + Moderates (M) secret negotiation post-election. Network analysis detects behind-the-scenes connections.</p>
-					<ul>
-						<li><strong>Trigger:</strong> Stalemate prevents traditional coalition formation</li>
-						<li><strong>Outcome:</strong> Political earthquake, establishment parties merge, new center</li>
-						<li><strong>CIA Detection:</strong> Committee cooperation patterns, voting convergence</li>
-					</ul>
-				</div>
-				
-				<div class="scenario">
-					<h3>Scenario 3: The Radical Shift (15% probability)</h3>
-					<p class="scenario-summary">Left Party (V) + Center Party (C) unexpected alliance. Predictive modeling identifies policy overlap areas.</p>
-					<ul>
-						<li><strong>Trigger:</strong> Environmental/agricultural policy convergence</li>
-						<li><strong>Outcome:</strong> Ideological realignment, horseshoe theory validated</li>
-						<li><strong>CIA Detection:</strong> Cross-ideology committee work, voting pattern similarity</li>
-					</ul>
-				</div>
-				
-				<div class="scenario">
-					<h3>Scenario 4: The Status Quo (10% probability)</h3>
-					<p class="scenario-summary">Tidö coalition survives and wins reelection. BUT: CIA detects 23 CRITICAL alerts ignored by mainstream analysis.</p>
-					<ul>
-						<li><strong>Trigger:</strong> Economic stability maintains voter confidence despite internal tensions</li>
-						<li><strong>Outcome:</strong> Slow-motion collapse begins 2027, CIA validated retrospectively</li>
-						<li><strong>CIA Detection:</strong> Accumulated risk indicators show underlying fragility</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+<main id="main-content" role="main">
+<section id="coalition-status">
+<h2>Huidige coalitie: Tidö-akkoord</h2>
+<p>Vorming: oktober 2022 | Status: actief | Meerderheid: 176 zetels (van 349 totaal)</p>
 
-		<section id="pilot-program">
-			<h2>Swedish Election 2026 Pilot Program</h2>
-			<p class="intro">Limited slots: 5 Swedish + 10 Global media organizations</p>
-			
-			<div class="cards">
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>🇸🇪 Swedish Media Organizations</h3>
-					<p class="price"><strong>€5,000/month</strong> (50% discount)</p>
-					<p class="duration">6 months (April - September 2026)</p>
-					<h4>Features:</h4>
-					<ul>
-						<li>Full Enterprise API access (unlimited requests)</li>
-						<li>Swedish-specific risk rules and analytics</li>
-						<li>Integration with Swedish media CMS systems</li>
-						<li>Dedicated Swedish-speaking support engineer</li>
-						<li>White-label dashboards with organization branding</li>
-						<li>Election night live monitoring dashboard</li>
-						<li>Post-election analysis workshop (Stockholm-based)</li>
-					</ul>
-					<p class="target"><strong>Target:</strong> SVT, DN, SvD, Aftonbladet, Expressen</p>
-					<p class="slots"><strong>5 slots available</strong></p>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>🌍 Global News Organizations</h3>
-					<p class="price"><strong>€7,500 total</strong> (75% discount)</p>
-					<p class="duration">3 months (July - September 2026)</p>
-					<h4>Features:</h4>
-					<ul>
-						<li>Full Enterprise API access</li>
-						<li>Real-time election monitoring</li>
-						<li>Coalition prediction models</li>
-						<li>Dedicated integration support (40 hours)</li>
-						<li>Custom dashboard configuration</li>
-						<li>White-label branding options</li>
-						<li>Post-election analysis workshop (virtual)</li>
-					</ul>
-					<p class="target"><strong>Target:</strong> The Economist, FT, Reuters, Bloomberg, AP</p>
-					<p class="slots"><strong>10 slots available</strong></p>
-				</div>
-			</div>
-			
-			<div class="pilot-application">
-				<h3>How to Apply</h3>
-				<ol>
-					<li><strong>Contact:</strong> <a href="mailto:pether@hack23.com">pether@hack23.com</a></li>
-					<li><strong>LinkedIn:</strong> Connect with <a href="https://www.linkedin.com/in/jamessorling/" target="_blank" rel="noopener">James Pether Sörling, CEO</a></li>
-					<li><strong>Include:</strong> Organization name, team size, election coverage plans, API use case</li>
-				</ol>
-				<p><strong>Application Deadline:</strong> March 2026 (rolling acceptance until slots filled)</p>
-				<p><strong>Early Bird Bonus:</strong> Apply before December 2025 for additional 10% first-year discount</p>
-			</div>
-		</section>
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Moderaten (M)</h3>
+<p><strong>68 zetels</strong></p>
+<p>Leider: Ulf Kristersson (premier)</p>
+</div>
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Christendemocraten (KD)</h3>
+<p><strong>19 zetels</strong></p>
+<p>Leider: Ebba Busch</p>
+</div>
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Zweedse Democraten (SD)</h3>
+<p><strong>73 zetels</strong></p>
+<p>Leider: Jimmie Åkesson</p>
+</div>
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Liberalen (L) - Steun</h3>
+<p><strong>16 zetels</strong></p>
+<p>Leider: Johan Pehrson</p>
+</div>
+</div>
 
-		<section id="media-use-cases">
-			<h2>Media Organization Use Cases</h2>
-			
-			<div class="cards">
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>SVT (Swedish Public Television)</h3>
-					<p><strong>Use Case:</strong> Impartial comprehensive coverage with automated MP scorecards</p>
-					<ul>
-						<li>Real-time performance dashboards for all 349 MPs</li>
-						<li>Automated fact-checking for live debates</li>
-						<li>Coalition stability meter for election night</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>Dagens Nyheter (DN)</h3>
-					<p><strong>Use Case:</strong> Investigative journalism with pattern detection</p>
-					<ul>
-						<li>Anomaly detection for hidden conflicts of interest</li>
-						<li>Historical voting pattern analysis</li>
-						<li>Deep-dive data for investigative reports</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>The Economist</h3>
-					<p><strong>Use Case:</strong> Comparative democracy analysis for global audience</p>
-					<ul>
-						<li>Swedish election as Nordic democracy case study</li>
-						<li>Coalition prediction models for international readers</li>
-						<li>Comparative analysis with other parliaments</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>Reuters</h3>
-					<p><strong>Use Case:</strong> 24/7 automated parliamentary monitoring</p>
-					<ul>
-						<li>Real-time API integration for breaking news</li>
-						<li>Automated alerts for significant political events</li>
-						<li>Historical data for context in news stories</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+<div class="coalition-stability">
+<h3>Beoordeling van coalitiestabiliteit</h3>
+<div class="stability-info">
+<p><strong>Meerderheidsmarge:</strong> 1 zetel (smal)</p>
+<p><strong>CIA-risicobeoordeling:</strong> 12 GROTE waarschuwingen, 5 KRITIEKE waarschuwingen gedetecteerd (laatste 90 dagen)</p>
+<p><strong>Fragiliteitsindicatoren:</strong> ideologische spanningen tussen SD en L, kwetsbaar voor overlopen</p>
+<p><strong>Stabiliteitsscore:</strong> Matig risico (72%)</p>
+</div>
+</div>
+</section>
 
-		<section id="technical-specifications">
-			<h2>Technical Specifications</h2>
-			
-			<div class="tech-specs">
-				<div class="spec-category">
-					<h3>API Access</h3>
-					<ul>
-						<li><strong>Architecture:</strong> RESTful API</li>
-						<li><strong>Authentication:</strong> OAuth 2.0</li>
-						<li><strong>Rate Limits:</strong> Unlimited for pilot participants</li>
-						<li><strong>Response Time:</strong> &lt;200ms (P95)</li>
-						<li><strong>Uptime SLA:</strong> 99.9%</li>
-						<li><strong>Documentation:</strong> OpenAPI/Swagger specification</li>
-					</ul>
-				</div>
-				
-				<div class="spec-category">
-					<h3>Dashboard Features</h3>
-					<ul>
-						<li><strong>Real-time Monitoring:</strong> Vote results, turnout, projections</li>
-						<li><strong>Coalition Stability Meter:</strong> Live risk score updates</li>
-						<li><strong>MP Scorecards:</strong> Attendance, voting patterns, productivity</li>
-						<li><strong>Custom Alerts:</strong> Email, SMS, Slack integration</li>
-						<li><strong>Export Capabilities:</strong> PDF, Excel, PowerPoint</li>
-						<li><strong>White-label Branding:</strong> Enterprise tier customization</li>
-					</ul>
-				</div>
-				
-				<div class="spec-category">
-					<h3>Data Coverage</h3>
-					<ul>
-						<li><strong>MPs:</strong> All 349 members of Riksdag</li>
-						<li><strong>Historical Data:</strong> 1971-2024 (50+ years)</li>
-						<li><strong>Votes:</strong> 10,000+ annually</li>
-						<li><strong>Documents:</strong> 20,000+ processed annually</li>
-						<li><strong>Update Frequency:</strong> Real-time for votes, daily for documents</li>
-					</ul>
-				</div>
-			</div>
-		</section>
 
-		<section id="final-cta">
-			<h2>Join the Intelligence Revolution</h2>
-			<p>Swedish Election 2026: Prove the power of systematic political transparency</p>
-			
-			<div class="app-link">
-				<a href="mailto:pether@hack23.com?subject=Swedish%20Election%202026%20Pilot%20Application" class="btn" title="Apply for pilot program">Apply Now</a>
-				<a href="cia-docs.html#business-case" title="View full business case">View Full Business Case</a>
-				<a href="https://github.com/Hack23/cia" target="_blank" rel="noopener" title="Explore CIA platform on GitHub">Explore Platform (GitHub)</a>
-			</div>
-			
-			<div class="resources">
-				<h3>Resources</h3>
-				<ul>
-					<li><a href="https://github.com/Hack23/cia/blob/master/BUSINESS_PRODUCT_DOCUMENT.md" target="_blank" rel="noopener">Business Product Document</a></li>
-					<li><a href="https://github.com/Hack23/cia/blob/master/DATA_ANALYSIS_INTOP_OSINT.md" target="_blank" rel="noopener">OSINT Methodology</a></li>
-					<li><a href="https://github.com/Hack23/cia/blob/master/RISK_RULES_INTOP_OSINT.md" target="_blank" rel="noopener">45 Risk Rules Documentation</a></li>
-					<li><a href="cia-docs_nl.html">CIA Platform Documentation</a></li>
-					<li><a href="cia-features_nl.html">CIA Platform Features</a></li>
-					<li><a href="blog_nl.html">Blog: Political Transparency</a></li>
-				</ul>
-			</div>
-		</section>
-	</main>
+<!-- Dashboard voor risicobeoordeling en anomaliedetectie -->
 
 
 <section id="election-cycle-dashboard" class="dashboard-section">
-<h2>🗳️ Election Cycle Intelligence (1994-2034)</h2>
-<p>Comprehensive analysis of 40 years of Swedish Parliament election cycles with party performance evolution, decision-making effectiveness, predictive risk forecasting, and temporal voting patterns across 9+ election cycles.</p>
+<h2>🗳️ Verkiezingscyclus-intelligence (1994-2034)</h2>
+<p>Uitgebreide analyse van 40 jaar verkiezingscycli van het Zweedse parlement met evolutie van partijprestaties, effectiviteit van besluitvorming, voorspellende risicovoorspelling en temporele stempatronen over meer dan 9 verkiezingscycli.</p>
 
-<div class="dashboard-loader" style="display: none; text-align: center; padding: 2rem;">
-Loading data...
+<div class="dashboard-loader">
+Gegevens laden...
 </div>
 
-<div class="dashboard-error" style="display: none; color: #d32f2f; text-align: center; padding: 2rem;">
-Failed to load data
+<div class="dashboard-error">
+Laden van gegevens mislukt
 </div>
 
-<div class="dashboard-filters" style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+<!-- Filters -->
+<div class="dashboard-filters">
 <div class="filter-group">
-<label for="election-cycle-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Election Cycle:</label>
-<select id="election-cycle-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
-<option value="all">All Cycles</option>
+<label for="election-cycle-filter">Verkiezingscyclus:</label>
+<select id="election-cycle-filter">
+<option value="all">Alle cycli</option>
 </select>
 </div>
 
 <div class="filter-group">
-<label for="election-party-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Party:</label>
-<select id="election-party-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
-<option value="all">All Parties</option>
+<label for="election-party-filter">Partij:</label>
+<select id="election-party-filter">
+<option value="all">Alle partijen</option>
 </select>
 </div>
 
 <div class="filter-group">
-<label for="election-metric-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Metric:</label>
-<select id="election-metric-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
-<option value="performance">Performance</option>
-<option value="decisions">Decisions</option>
-<option value="risk">Risk</option>
-<option value="attendance">Attendance</option>
+<label for="election-metric-filter">Metriek:</label>
+<select id="election-metric-filter">
+<option value="performance">Prestatie</option>
+<option value="decisions">Besluiten</option>
+<option value="risk">Risico</option>
+<option value="attendance">Aanwezigheid</option>
 </select>
 </div>
 </div>
 
-<div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin: 2rem 0;">
-<div class="chart-card" style="grid-column: span 2; background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Election Cycle Performance Timeline</h3>
-<div style="height: 400px; position: relative;">
+<!-- Visualisatie-raster -->
+<div class="dashboard-grid">
+<!-- Grafiek 1: Tijdlijn verkiezingscyclus -->
+<div class="chart-card wide">
+<h3>Tijdlijn van prestaties per verkiezingscyclus</h3>
+<div class="chart-container">
 <canvas id="cycle-timeline-chart"></canvas>
 </div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Party performance evolution across 9 election cycles (1994-2034)
+<p class="chart-description">
+Evolutie van partijprestaties over 9 verkiezingscycli (1994-2034)
 </p>
 </div>
 
-<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Decision Effectiveness Heatmap</h3>
-<div id="decision-heatmap" style="min-height: 400px; overflow-x: auto;"></div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Legislative approval rates by party and cycle
+<!-- Grafiek 2: Matrix van besluitvormingseffectiviteit -->
+<div class="chart-card">
+<h3>Heatmap van besluitvormingseffectiviteit</h3>
+<div id="decision-heatmap" class="chart-container chart-container--scrollable"></div>
+<p class="chart-description">
+Wetgevende goedkeuringspercentages per partij en cyclus
 </p>
 </div>
 
-<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Predictive Risk Forecasting</h3>
-<div style="height: 400px; position: relative;">
+<!-- Grafiek 3: Risicovoorspelling -->
+<div class="chart-card">
+<h3>Voorspellende risicoprognose</h3>
+<div class="chart-container">
 <canvas id="risk-forecast-chart"></canvas>
 </div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Risk trajectory and confidence levels (2022-2034)
+<p class="chart-description">
+Risicotraject en betrouwbaarheidsniveaus (2022-2034)
 </p>
 </div>
 
-<div class="chart-card" style="grid-column: span 2; background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Temporal Voting Patterns</h3>
-<div style="height: 400px; position: relative;">
+<!-- Grafiek 4: Temporele trends -->
+<div class="chart-card wide">
+<h3>Temporele stempatronen</h3>
+<div class="chart-container">
 <canvas id="temporal-trends-chart"></canvas>
 </div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Attendance, ballots, and volatility trends
+<p class="chart-description">
+Trends in aanwezigheid, stemmingen en volatiliteit
 </p>
 </div>
 
-<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Party Tier Distribution</h3>
-<div style="height: 400px; position: relative;">
+<!-- Grafiek 5: Vergelijkende partijanalyse -->
+<div class="chart-card">
+<h3>Verdeling van partijniveaus</h3>
+<div class="chart-container">
 <canvas id="party-tier-chart"></canvas>
 </div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Performance tiers (ntile_party_tier: 1-4)
+<p class="chart-description">
+Prestatieniveaus (ntile_party_tier: 1-4)
 </p>
 </div>
 </div>
 
-<p class="note" style="margin-top: 2rem; text-align: center; color: var(--text-secondary);">
-<strong>Data by CIA Platform</strong> | Updated from GitHub sample data | 24-hour caching
+<p class="note dashboard-attribution">
+<strong>Data door Citizen Intelligence Agency Platform</strong> | Bijgewerkt vanuit GitHub-voorbeelddata | 24-uurs caching
 </p>
 </section>
 
+
 <section id="party-dashboard" class="dashboard-container">
-<h2><span aria-hidden="true">🗳️</span> Partijprestatie & Effectiviteit</h2>
-<p>Uitgebreide analyse van Zweedse politieke partijen met meer dan 50 jaar CIA-platformgegevens. Volg effectiviteitstrends, coalitiedynamiek en momentumindicatoren voor 8 partijen.</p>
+<h2><span aria-hidden="true">🗳️</span> Partijprestaties en effectiviteit</h2>
+<p>Uitgebreide analyse van Zweedse politieke partijen met 50+ jaar CIA-platformdata. Volg effectiviteitstrends, coalitiedynamiek en momentumindicatoren over 8 partijen.</p>
 
 <div class="dashboard-grid">
 <div class="chart-card">
 <h3>Effectiviteitstrends (1990-2026)</h3>
-<p>Historische partijeffectiviteitsscores die wetgevende productiviteit, stemconsistentie en beleidsimpact in de loop van de tijd tonen.</p>
-<canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
-<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+<p>Historische effectiviteitsscores van partijen die wetgevende productiviteit, stemconsistentie en beleidsimpact in de tijd tonen.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Lijngrafiek van partij-effectiviteit met trends van 1990 tot 2026 voor alle 8 Zweedse politieke partijen"></canvas>
+<span class="sr-only">Lijngrafiek met effectiviteitsscores voor Sociaaldemocraten, Moderaten, Zweedse Democraten, Centrumpartij, Linkse Partij, Christendemocraten, Liberalen en Groene Partij van 1990 tot 2026.</span>
 </div>
 
 <div class="chart-card">
-<h3>Partijvergelijking (Huidige Periode)</h3>
-<p>Vergelijkende analyse van partijprestatiemetrics voor de huidige wetgevende periode.</p>
-<canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
-<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+<h3>Partijvergelijking (huidige periode)</h3>
+<p>Vergelijkende analyse van prestatie-indicatoren van partijen voor de huidige legislatuur.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Staafdiagram dat huidige prestatiescores van alle 8 Zweedse politieke partijen vergelijkt"></canvas>
+<span class="sr-only">Horizontaal staafdiagram met vergelijkende prestatiescores voor alle partijen in de huidige legislatuur, gesorteerd op score.</span>
 </div>
 
 <div class="chart-card">
-<h3>Coalitie-Afstemming</h3>
+<h3>Coalitie-uitlijning</h3>
 <p>Coalitiepatronen en samenwerkingsnetwerken tussen partijen.</p>
-<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
-<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+<div id="coalitionAlignmentChart" role="region" aria-label="Visualisatie van coalitie-uitlijning die de samenwerkingssterkte tussen politieke partijen toont"></div>
+<span class="sr-only">Visuele weergave van coalitiepatronen met percentages van samenwerkingssterkte tussen verschillende partijcombinaties.</span>
 </div>
 
 <div class="chart-card">
 <h3>Momentumindicatoren</h3>
-<p>Partijmomentumscores met percentiel-benchmarks (P50, P90) die het verkiezingstraject aangeven.</p>
-<canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
-<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+<p>Partijmomentumscores met percentielbenchmarks (P50, P90) die de verkiezingstraject tonen.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Donutdiagram met momentumscores voor alle 8 Zweedse politieke partijen"></canvas>
+<span class="sr-only">Donutdiagram met momentumindicator-scores per partij en percentielbenchmarks.</span>
 </div>
 </div>
 </section>
 
-
 <section id="committee-dashboard" class="dashboard-container">
-<h2>🏛️ Committee Performance & Network Analytics</h2>
+<h2>🏛️ Commissieprestaties en netwerkanalyse</h2>
 
 <div class="dashboard-grid">
+<!-- Netwerkdiagram (volle breedte) -->
 <div class="chart-card wide">
-<h3>Committee Network Diagram</h3>
-<p>Interactive visualization of committee relationships and productivity. Drag nodes to explore connections.</p>
-<div id="committeeNetwork" role="img" aria-label="Committee network connections diagram showing relationships between 15 Swedish Riksdag committees"></div>
-<table class="sr-only" id="committeeNetworkTable" aria-label="Committee network connections data table">
+<h3>Commissienetwerkdiagram</h3>
+<p>Interactieve visualisatie van commissierelaties en productiviteit. Sleep knooppunten om verbindingen te verkennen.</p>
+<div id="committeeNetwork" role="img" aria-label="Diagram van commissienetwerkverbindingen met relaties tussen 15 commissies van de Zweedse Riksdag"></div>
+<table class="sr-only" id="committeeNetworkTable" aria-label="Gegevenstabel voor commissienetwerkverbindingen">
+<!-- Toegankelijke fallbacktabel gevuld door JavaScript -->
 </table>
 </div>
 
+<!-- Productiviteits-heatmap (volle breedte) -->
 <div class="chart-card wide">
-<h3>Productivity Matrix (2020-2026)</h3>
-<p>Heat map showing committee productivity scores over time. Hover over cells for detailed information.</p>
-<div id="productivityMatrix" role="img" aria-label="Committee productivity matrix showing performance over time from 2020 to 2026"></div>
-<table class="sr-only" id="productivityMatrixTable" aria-label="Committee productivity matrix data table">
+<h3>Productiviteitsmatrix (2020-2026)</h3>
+<p>Heatmap met productiviteitsscores van commissies in de tijd. Beweeg over cellen voor details.</p>
+<div id="productivityMatrix" role="img" aria-label="Commissieproductiviteitsmatrix met prestaties van 2020 tot 2026"></div>
+<table class="sr-only" id="productivityMatrixTable" aria-label="Gegevenstabel voor commissieproductiviteitsmatrix">
+<!-- Toegankelijke fallbacktabel gevuld door JavaScript -->
 </table>
 </div>
 
+<!-- Commissievergelijking -->
 <div class="chart-card">
-<h3>Committee Comparison</h3>
-<p>Compare productivity scores across all 15 committees.</p>
-<canvas id="committeeComparisonChart" role="img" aria-label="Bar chart comparing productivity scores across committees"></canvas>
+<h3>Commissievergelijking</h3>
+<p>Vergelijk productiviteitsscores van alle 15 commissies.</p>
+<canvas id="committeeComparisonChart" role="img" aria-label="Staafdiagram dat productiviteitsscores tussen commissies vergelijkt"></canvas>
 </div>
 
+<!-- Besluitvormingseffectiviteit -->
 <div class="chart-card">
-<h3>Decision Effectiveness</h3>
-<p>Track decision outcomes (approved, rejected, pending) over time.</p>
-<canvas id="decisionEffectivenessChart" role="img" aria-label="Stacked bar chart showing decision effectiveness over years"></canvas>
+<h3>Effectiviteit van besluiten</h3>
+<p>Volg besluituitkomsten (goedgekeurd, afgewezen, in behandeling) in de tijd.</p>
+<canvas id="decisionEffectivenessChart" role="img" aria-label="Gestapeld staafdiagram met besluitvormingseffectiviteit over de jaren"></canvas>
 </div>
 
+<!-- Seizoenspatronen (volle breedte) -->
 <div class="chart-card wide">
-<h3>Seasonal Activity Patterns</h3>
-<p>Quarterly activity trends showing how committee work varies across the year.</p>
-<canvas id="seasonalPatternsChart" role="img" aria-label="Line chart displaying seasonal activity patterns by quarter"></canvas>
+<h3>Seizoensgebonden activiteitspatronen</h3>
+<p>Kwartaaltrends die tonen hoe commissiewerk door het jaar heen varieert.</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="Lijngrafiek met seizoensactiviteitspatronen per kwartaal"></canvas>
 </div>
 </div>
 
 <div class="dashboard-attribution">
-<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="committeeLastUpdated">Loading...</span></small></p>
+<p><small>📊 Data aangedreven door <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Bijgewerkt: <span id="committeeLastUpdated">Laden...</span></small></p>
 </div>
 </section>
 
 <section id="coalition-dashboard" class="dashboard-container">
 <h2>🤝 Coalitie- en stempatroonanalyse</h2>
-<p>Interactieve analyse van coalitiedynamiek, partij-afstemming en stemgedragspatronen in het Zweedse Riksdag.</p>
+<p>Interactieve analyse van coalitiedynamiek, partijuitlijning en stemgedragspatronen in de Zweedse Riksdag.</p>
 
 <div class="dashboard-grid">
 <div class="chart-card wide">
-<h3>Coalitienetwerk (Interactief)</h3>
-<p>Kracht-gestuurd diagram dat coalitiekracht tussen Zweedse politieke partijen toont. Sleep knooppunten, zoom en klik voor details.</p>
-<div id="coalitionNetwork" role="img" aria-label="Coalitienetwerkdiagram dat relaties tussen 8 Zweedse politieke partijen toont"></div>
+<h3>Coalitienetwerk (interactief)</h3>
+<p>Force-directed grafiek die coalitiesterkte tussen Zweedse politieke partijen toont. Sleep knooppunten, zoom en klik voor details.</p>
+<div id="coalitionNetwork" role="img" aria-label="Coalitienetwerkdiagram met relaties tussen 8 Zweedse politieke partijen"></div>
 <table class="sr-only" id="coalitionNetworkTable">
-<!-- Accessible table fallback populated by JavaScript -->
+<!-- Toegankelijke tabel-fallback gevuld door JavaScript -->
 </table>
 </div>
 
 <div class="chart-card">
-<h3>Stemanomalieën (Laatste 5 jaar)</h3>
-<p>Spreidingsdiagram dat ongewone stempatronen en partij-afwijkingen van verwacht gedrag benadrukt.</p>
-<canvas id="votingAnomalyChart" role="img" aria-label="Stemanomalieën spreidingsdiagram dat afwijkingsscores voor alle partijen toont"></canvas>
+<h3>Stemanomalieën (laatste 5 jaar)</h3>
+<p>Spreidingsdiagram dat ongebruikelijke stempatronen en partijoverlopen ten opzichte van verwacht gedrag markeert.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Spreidingsdiagram van stemanomalieën met afwijkingsscores voor alle partijen"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>Partij-afstemming heatmap</h3>
-<p>Matrixvisualisatie die partij-overschrijdende stem overeenstemmingniveaus toont op basis van historische stemregisters.</p>
-<div id="alignmentHeatMap" role="img" aria-label="Partij-afstemming heatmap die stemovereenstemming percentages tussen alle partijparen toont"></div>
+<h3>Heatmap van partij-uitlijning</h3>
+<p>Matrixvisualisatie met niveaus van stemovereenstemming tussen partijen op basis van historische stemgegevens.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Heatmap van partij-uitlijning met percentages stemovereenstemming tussen alle partijparen"></div>
 </div>
 
 <div class="chart-card">
 <h3>Gedragspatronen</h3>
-<p>Partij stem consistentiescores die naleving van de partijlijn over alle stemmen meten.</p>
-<canvas id="behavioralPatternsChart" role="img" aria-label="Gedragspatronen staafdiagram dat stemconsistentie percentages voor alle partijen toont"></canvas>
+<p>Scores voor stemconsistentie per partij die naleving van de partijlijn over alle stemmingen meten.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Staafdiagram van gedragspatronen met percentages stemconsistentie voor alle partijen"></canvas>
 </div>
 
 <div class="chart-card wide">
-<h3>Beslissingstrends (1990-2026)</h3>
-<p>Historische tijdlijn die jaarlijkse stemactiviteitstrends voor alle partijen over 36 jaar toont.</p>
-<canvas id="decisionTrendsChart" role="img" aria-label="Beslissingstrends tijdlijn die jaarlijkse stemvolumes van 1990 tot 2026 toont"></canvas>
+<h3>Besluittrends (1990-2026)</h3>
+<p>Historische tijdlijn met jaarlijkse trends in stemactiviteit voor alle partijen over 36 jaar.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Tijdlijn van besluittrends met jaarlijkse stemvolumes van 1990 tot 2026"></canvas>
 </div>
 </div>
 
 <p class="note dashboard-attribution">
-<strong>Data-attributie:</strong> Visualisaties aangedreven door CIA Platform intelligence-exporten. Gegevens worden wekelijks bijgewerkt vanuit het Zweedse Riksdag open data API's.
+<strong>Databronvermelding:</strong> Visualisaties aangedreven door intelligence-exports van CIA Platform. Gegevens worden wekelijks bijgewerkt vanuit open data-API’s van het Zweedse parlement.
 </p>
 </section>
 
 <section id="seasonal-patterns-dashboard">
-<h2>📅 Seizoensactiviteitspatronen (2002-2025)</h2>
-<p class="subtitle">Kwartaalanalyse met Z-Score anomaliedetectie</p>
+<h2>📅 Seizoensgebonden activiteitspatronen (2002-2025)</h2>
+<p class="subtitle">Kwartaalanalyse met Z-score-anomaliedetectie</p>
 
-<!-- Filter -->
+<!-- Filters -->
 <div class="dashboard-filters">
-<select id="year-filter" aria-label="Filteren op jaar">
+<select id="seasonal-year-filter" aria-label="Filter op jaar">
 <option value="all">Alle jaren</option>
 </select>
 
-<select id="quarter-filter" aria-label="Filteren op kwartaal">
+<select id="seasonal-quarter-filter" aria-label="Filter op kwartaal">
 <option value="all">Alle kwartalen</option>
 <option value="1">K1 - Wintersessie</option>
-<option value="2">K2 - Lentesessie</option>
+<option value="2">K2 - Voorjaarssessie</option>
 <option value="3">K3 - Zomerreces</option>
 <option value="4">K4 - Herfstsessie</option>
 </select>
 
-<select id="election-filter" aria-label="Filteren op verkiezingsstatus">
-<option value="all">Alle</option>
+<select id="seasonal-election-filter" aria-label="Filter op verkiezingsstatus">
+<option value="all">Alles</option>
 <option value="election">Verkiezingsjaren</option>
-<option value="non-election">Geen verkiezingsjaren</option>
+<option value="non-election">Niet-verkiezingsjaren</option>
 </select>
 
-<select id="classification-filter" aria-label="Filteren op activiteitsclassificatie">
+<select id="classification-filter" aria-label="Filter op activiteitsclassificatie">
 <option value="all">Alle classificaties</option>
 </select>
 </div>
 
 <!-- Visualizations -->
 <div class="dashboard-grid">
-<!-- Chart 1 -->
+<!-- Chart 1: Quarterly Activity Heat Map -->
 <div class="chart-card wide">
-<h3>Kwartaalactiviteit heatmap (2002-2025)</h3>
+<h3>Heatmap van kwartaalactiviteit (2002-2025)</h3>
 <div id="seasonal-heatmap"></div>
-<p class="chart-description">Stemvolume per jaar en kwartaal met Z-Score.</p>
+<p class="chart-description">Stemvolume per jaar en kwartaal met Z-score-overlay. Rode cirkels duiden statistische anomalieën aan (|Z| ≥ 2,0).</p>
 </div>
 
-<!-- Chart 2 -->
+<!-- Grafiek 2: Z-score-anomalietijdlijn -->
 <div class="chart-card">
-<h3>Z-Score anomaliedetectie</h3>
-<canvas id="zscore-timeline-chart" role="img" aria-label="Z-Score anomaliedetectie"></canvas>
-<p class="chart-description">Statistieke uitbijters (|Z| ≥ 2.0) rood gemarkeerd.</p>
+<h3>Z-score-anomaliedetectie</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Lijngrafiek met Z-score-tijdlijn voor stem-, document- en aanwezigheidsmetrics"></canvas>
+<p class="chart-description">Statistische uitschieters (|Z| ≥ 2,0) worden op basis van anomaliedrempels in rood gemarkeerd.</p>
 </div>
 
-<!-- Chart 3 -->
+<!-- Chart 3: Cross-Year Quarter Comparison -->
 <div class="chart-card">
 <h3>Gemiddelde activiteit per kwartaal (alle jaren)</h3>
-<canvas id="quarter-comparison-chart" role="img" aria-label="Gemiddelde activiteit per kwartaal (alle jaren)"></canvas>
-<p class="chart-description">K1-K4 basislijnen. Toont typische activiteitspatronen over seizoenen.</p>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Staafdiagram met gemiddelde stemmingen per kwartaal over alle jaren"></canvas>
+<p class="chart-description">K1–K4-baselines over alle jaren. Toont typische activiteitspatronen per seizoen.</p>
 </div>
 
-<!-- Chart 4 -->
+<!-- Chart 4: Activity Classification Distribution -->
 <div class="chart-card wide">
-<h3>Seizoenspatroon classificatie</h3>
-<canvas id="classification-chart" role="img" aria-label="Seizoenspatroon classificatie"></canvas>
-<p class="chart-description">Verdeling van NORMAAL, VERHOOGD, VERLAAGD en ANOMALIE patronen.</p>
+<h3>Classificatie van seizoenspatronen</h3>
+<canvas id="classification-chart" role="img" aria-label="Gestapeld staafdiagram met verdeling van activiteitsclassificaties per jaar"></canvas>
+<p class="chart-description">Verdeling van patronen NORMAAL, VERHOOGD, VERMINDERD en ANOMALIE over de jaren.</p>
 </div>
 
-<!-- Chart 5 -->
+<!-- Chart 5: QoQ Change Waterfall -->
 <div class="chart-card">
-<h3>Kwartaal-op-kwartaal veranderingen</h3>
-<canvas id="qoq-change-chart" role="img" aria-label="Kwartaal-op-kwartaal veranderingen"></canvas>
-<p class="chart-description">Opeenvolgende stemveranderingen (% en absoluut).</p>
+<h3>Kwartaal-op-kwartaalveranderingen</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Staafdiagram met kwartaal-op-kwartaalveranderingen in stemmingen als percentages"></canvas>
+<p class="chart-description">Opeenvolgende stemveranderingen (% en absoluut). Groen betekent stijging, rood betekent daling.</p>
 </div>
 </div>
 
-<p class="data-attribution">📊 Gegevens van het CIA-platform | Dagelijks bijgewerkt</p>
+<p class="data-attribution">📊 Data door CIA Platform | Dagelijks bijgewerkt</p>
+</section>
+
+<section id="pre-election-dashboard" class="dashboard-section">
+<h2><span aria-hidden="true">🗳️</span> Dashboard voor pre-verkiezingsmonitoring (K4 2023-2025)</h2>
+<p class="dashboard-intro">Volg parlementaire activiteit in K4 tijdens de kritieke 12-15 maanden vóór de verkiezing van 2026. Vergelijk huidige activiteit met historische baselines en patronen van verkiezingsjaren.</p>
+
+<!-- Statuskaarten in realtime -->
+<div class="status-cards">
+<div class="status-card" data-metric="ballots">
+<h3><span aria-hidden="true">📊</span> Stemactiviteit</h3>
+<p class="current-value">16,750</p>
+<p class="baseline-comparison">+4,34% t.o.v. baseline</p>
+<span class="status-badge normal">NORMAL</span>
+</div>
+
+<div class="status-card" data-metric="documents">
+<h3><span aria-hidden="true">📄</span> Documentproductie</h3>
+<p class="current-value">3,451</p>
+<p class="baseline-comparison">+25,55% t.o.v. baseline</p>
+<span class="status-badge normal">NORMAL</span>
+</div>
+
+<div class="status-card" data-metric="attendance">
+<h3><span aria-hidden="true">✅</span> Aanwezigheidspercentage</h3>
+<p class="current-value">85.75%</p>
+<p class="baseline-comparison">+0,75% t.o.v. baseline</p>
+<span class="status-badge normal">STABLE</span>
+</div>
+
+<div class="status-card" data-metric="party-performance">
+<h3><span aria-hidden="true">🎯</span> Partijwinstpercentage</h3>
+<p class="current-value">59.72%</p>
+<p class="baseline-comparison">+3,55% j-o-j</p>
+<span class="status-badge improving">IMPROVING</span>
+</div>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Q4 Activity Timeline (2023-2025) -->
+<div class="chart-card wide">
+<h3>Tijdlijn van K4-activiteit (2023-2025)</h3>
+<div class="chart-container">
+<canvas id="q4-timeline-chart" aria-label="Tijdlijn van K4-activiteit met trends in stemmingen, documenten en aanwezigheid van 2023 tot 2025"></canvas>
+</div>
+<p class="chart-description">Trends in stemmingen, documenten en aanwezigheid met baseline-overlay</p>
+</div>
+
+<!-- Grafiek 2: Vergelijking verkiezingsjaar -->
+<div class="chart-card">
+<h3>K4-patronen in verkiezings- vs. niet-verkiezingsjaren</h3>
+<div class="chart-container">
+<canvas id="election-comparison-chart" aria-label="Vergelijking van K4-stemactiviteit in verkiezingsjaren versus niet-verkiezingsjaren van 2002 tot 2025"></canvas>
+</div>
+<p class="chart-description">Historische K4-activiteit (2002-2025): verkiezingsjaren vs. niet-verkiezingsjaren</p>
+</div>
+
+<!-- Chart 3: Baseline Deviation Radar -->
+<div class="chart-card">
+<h3>Afwijking van baseline (K4 2025)</h3>
+<div class="chart-container">
+<canvas id="deviation-radar-chart" aria-label="Radardiagram met K4-metrics van 2025 vergeleken met historische baselines"></canvas>
+</div>
+<p class="chart-description">Afwijkingsanalyse over meerdere metrics</p>
+</div>
+
+<!-- Chart 4: Party Performance Shifts -->
+<div class="chart-card wide">
+<h3>Trends in partijprestaties (2023-2025)</h3>
+<div class="chart-container">
+<canvas id="party-trends-chart" aria-label="Lijngrafiek met partijwinstpercentage, afwezigheidspercentage en documentproductie van 2023 tot 2025"></canvas>
+</div>
+<p class="chart-description">Winstpercentage, afwezigheidspercentage en documentproductie per jaar</p>
+</div>
+
+<!-- Chart 5: YoY Change Waterfall -->
+<div class="chart-card">
+<h3>Jaar-op-jaarveranderingen</h3>
+<div class="chart-container">
+<canvas id="yoy-waterfall-chart" aria-label="Watervaldiagram met jaar-op-jaarveranderingen in stemactiviteit van 2023 tot 2025"></canvas>
+</div>
+<p class="chart-description">Veranderingen in stemactiviteit: 2023 → 2024 → 2025</p>
+</div>
+
+<!-- Chart 6: Early Warning Indicators -->
+<div class="chart-card">
+<h3>Matrix van vroegtijdige waarschuwingsindicatoren</h3>
+<div id="warning-matrix" role="region" aria-label="Matrix van vroegtijdige waarschuwingsindicatoren met status van 4 gemonitorde metrics: stemmingen, documenten, aanwezigheid en jaar-op-jaarverandering"></div>
+<p class="chart-description">Realtime status van 4 gemonitorde metrics (stemmingen, documenten, aanwezigheid, j-o-j-verandering)</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Data door CIA Platform | Dagelijks bijgewerkt</p>
 </section>
 
 <section id="anomaly-detection-dashboard">
-<h2>🚨 Anomaly Detection & Early Warning System</h2>
-<p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
+<h2>🚨 Anomaliedetectie en vroegtijdig waarschuwingssysteem</h2>
+<p>Identificatie van statistische uitschieters in activiteit van het Zweedse parlement (2002-2026) met Z-score-analyse</p>
 
-<!-- Alert Banner (for active anomalies) -->
+<!-- Waarschuwingsbanner (voor actieve anomalieën) -->
 <div id="anomaly-alert-banner" class="alert-banner critical hidden">
 <span class="alert-icon">🔴</span>
-<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
-<button class="dismiss-alert">Dismiss</button>
+<p><strong id="alert-prefix">KRITIEKE ANOMALIE GEDETECTEERD:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Sluiten</button>
 </div>
 
 <!-- Filters -->
 <div class="dashboard-filters">
-<select id="severity-filter" aria-label="Filter by severity">
-<option value="all">All Severities</option>
-<option value="CRITICAL">🔴 Critical</option>
-<option value="HIGH">🟠 High</option>
-<option value="MODERATE">🟡 Moderate</option>
-<option value="LOW">🟢 Low</option>
+<select id="anomaly-severity-filter" aria-label="Filter op ernst">
+<option value="all">Alle ernstniveaus</option>
+<option value="CRITICAL">🔴 Kritiek</option>
+<option value="HIGH">🟠 Hoog</option>
+<option value="MODERATE">🟡 Matig</option>
+<option value="LOW">🟢 Laag</option>
 </select>
-<select id="type-filter" aria-label="Filter by anomaly type">
-<option value="all">All Types</option>
-<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
-<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
-<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
-<option value="NO_ANOMALY">No Anomaly</option>
+<select id="anomaly-type-filter" aria-label="Filter op anomalietype">
+<option value="all">Alle typen</option>
+<option value="BALLOT_ANOMALY">Stemanomalie</option>
+<option value="DOCUMENT_ANOMALY">Documentanomalie</option>
+<option value="ATTENDANCE_ANOMALY">Aanwezigheidsanomalie</option>
+<option value="NO_ANOMALY">Geen anomalie</option>
 </select>
-<select id="direction-filter" aria-label="Filter by direction">
-<option value="all">All Directions</option>
-<option value="UNUSUALLY_HIGH">Unusually High</option>
-<option value="UNUSUALLY_LOW">Unusually Low</option>
-<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+<select id="anomaly-direction-filter" aria-label="Filter op richting">
+<option value="all">Alle richtingen</option>
+<option value="UNUSUALLY_HIGH">Ongebruikelijk hoog</option>
+<option value="UNUSUALLY_LOW">Ongebruikelijk laag</option>
+<option value="WITHIN_NORMAL_RANGE">Binnen normaal bereik</option>
 </select>
-<select id="year-filter" aria-label="Filter by year">
-<option value="all">All Years</option>
+<select id="anomaly-year-filter" aria-label="Filter op jaar">
+<option value="all">Alle jaren</option>
 </select>
 </div>
 
 <!-- Visualizations -->
 <div class="dashboard-grid">
-<!-- Chart 1: Anomaly Timeline -->
+<!-- Grafiek 1: Anomalietijdlijn -->
 <div class="chart-card wide">
-<h3>Anomaly Timeline (2002-2026)</h3>
-<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
-<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+<h3>Anomalietijdlijn (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Spreidingsdiagram met anomalieën in de tijd"></canvas>
+<p class="chart-description">Chronologisch overzicht van gedetecteerde anomalieën met ernstcodering</p>
 </div>
 
 <!-- Chart 2: Z-Score Distribution -->
 <div class="chart-card">
-<h3>Z-Score Distribution</h3>
-<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
-<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+<h3>Z-scoreverdeling</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram van de Z-scoreverdeling"></canvas>
+<p class="chart-description">Normale curve met uitschieter-markeringen (|Z| ≥ 2,0)</p>
 </div>
 
-<!-- Chart 3: Anomaly Type Breakdown -->
+<!-- Grafiek 3: Uitsplitsing anomalietype -->
 <div class="chart-card">
-<h3>Anomaly Type Distribution</h3>
-<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
-<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+<h3>Verdeling van anomalietypen</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Donutdiagram met anomalietypen"></canvas>
+<p class="chart-description">Verdeling van stem- versus documentanomalieën</p>
 </div>
 
 <!-- Chart 4: Severity Heat Map -->
 <div class="chart-card wide">
-<h3>Severity Heat Map (Year × Quarter)</h3>
-<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
-<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+<h3>Ernst-heatmap (jaar × kwartaal)</h3>
+<div id="severity-heatmap" role="img" aria-label="Heatmap met ernst per jaar en kwartaal"></div>
+<p class="chart-description">Raster met anomalie-ernst per jaar en kwartaal</p>
 </div>
 
-<!-- Chart 5: Quarterly Anomaly Frequency -->
+<!-- Grafiek 5: Kwartaalfrequentie van anomalieën -->
 <div class="chart-card">
-<h3>Anomaly Frequency by Quarter</h3>
-<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
-<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+<h3>Anomaliefrequentie per kwartaal</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Staafdiagram met anomaliefrequentie per kwartaal"></canvas>
+<p class="chart-description">K1-K4 anomalieaantallen over alle jaren</p>
 </div>
 
 <!-- Chart 6: Recent Anomalies Feed -->
 <div class="chart-card">
-<h3>Recent Anomalies (Last 5)</h3>
-<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
-<p class="chart-description">Most recent anomalies with details</p>
+<h3>Recente anomalieën (laatste 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed met recente anomalieën"></div>
+<p class="chart-description">Meest recente anomalieën met details</p>
 </div>
 </div>
-</section>
-
-
-
-<section id="pre-election-dashboard" class="dashboard-section">
-<h2><span aria-hidden="true">🗳️</span> Pre-Election Monitoring Dashboard (Q4 2023-2025)</h2>
-<p class="dashboard-intro">Track Q4 parliamentary activity in the critical 12-15 months before the 2026 election. Compare current activity against historical baselines and election-year patterns.</p>
-
-<div class="dashboard-grid">
-<div class="chart-card wide">
-<h3>Pre-Election Activity Timeline</h3>
-<p>Monthly parliamentary activity compared to historical averages.</p>
-<canvas id="preElectionTimelineChart" role="img" aria-label="Pre-election activity timeline chart"></canvas>
-</div>
-
-<div class="chart-card">
-<h3>Party Readiness Indicators</h3>
-<p>Assessment of party preparation for the 2026 election based on legislative activity.</p>
-<canvas id="partyReadinessChart" role="img" aria-label="Party readiness indicators chart"></canvas>
-</div>
-
-<div class="chart-card">
-<h3>Key Metrics</h3>
-<div id="preElectionMetrics" role="region" aria-label="Pre-election key metrics"></div>
-</div>
-</div>
-
-<p class="data-attribution">📊 Data by CIA Platform | Updated Daily</p>
 </section>
 
 <section id="ministry-dashboard" class="dashboard-container">
-<h2>🎖️ Ministerrisico & Invloed</h2>
+<h2>🎖️ Risico en invloed van regeringsministers</h2>
 
 <div class="dashboard-grid">
 <div class="chart-card wide">
-<h3>Ministerie Risicokaart</h3>
-<div id="ministryRiskHeatMap" role="img" aria-label="Ministerie Risicokaart"></div>
+<h3>Heatmap van ministerierisico</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="Heatmap van ministerierisico met risiconiveaus per overheidsdepartement"></div>
 </div>
 
 <div class="chart-card">
-<h3>Top 10 Meest Invloedrijke Ministers</h3>
-<canvas id="ministerInfluenceChart" role="img" aria-label="Top 10 Meest Invloedrijke Ministers"></canvas>
+<h3>Top 10 meest invloedrijke ministers</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Staafdiagram met de top 10 meest invloedrijke ministers"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>Ministerie Productiviteitsmatrix</h3>
-<canvas id="ministryProductivityChart" role="img" aria-label="Ministerie Productiviteitsmatrix"></canvas>
+<h3>Productiviteitsmatrix van ministeries</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Staafdiagram dat productiviteit van ministeries per kwartaal vergelijkt"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>Besluitvormingsimpacttrends</h3>
-<canvas id="decisionImpactChart" role="img" aria-label="Besluitvormingsimpacttrends"></canvas>
+<h3>Trends in besluitimpact</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Lijngrafiek met trends in besluitimpact in de tijd"></canvas>
 </div>
 </div>
 
-<!-- Alternative data table for screen readers -->
+<!-- Alternatieve gegevenstabel voor schermlezers -->
 <details class="sr-only-alternative">
-<summary>Gegevens als tabel weergeven</summary>
+<summary>Bekijk gegevens als toegankelijke tabel</summary>
 <table id="ministryDataTable">
-<!-- Populated by JavaScript -->
+<!-- Gevuld door JavaScript -->
 </table>
 </details>
 </section>
 
-<footer>
-		<p>&copy; 2008-2026 <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Göteborg, Zweden</p>
-		<p>Oprichter & CEO: <a href="https://www.linkedin.com/in/jamessorling/" target="_blank" rel="noopener noreferrer">James Pether Sörling</a>, CISSP, CISM</p>
-		<p>
-			<a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a> |
-			<a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Bedrijf LinkedIn</a> |
-			<a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer" title="Openbaar ISMS">Openbaar ISMS</a> |
-			<a href="mailto:info@hack23.com">Neem contact op</a>
-		</p>
-	</footer>
+<section id="risk-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">⚠️</span> Risicobeoordeling en anomaliedetectie</h2>
+<p class="dashboard-description">Uitgebreide intelligence-analyse met 45 risicoregels over 349 parlementariërs en statistische anomaliedetectie (P90/P99-drempels). Historische analyse omvat 2494 politici (1971-2024).</p>
 
+<div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
+  <!-- Waarschuwingen gevuld door JavaScript -->
+</div>
 
+<div class="dashboard-grid">
+  <div class="chart-card full-width">
+    <h3>Heatmap van risiconiveau (45 regels × 349 parlementariërs)</h3>
+    <p class="chart-description">Interactieve heatmap met risicoscores per parlementariër over alle 45 transparantieregels. Klik op cellen voor details.</p>
+    <div class="controls">
+      <label class="control-label">
+        <input type="checkbox" id="filterHighRisk" aria-label="Toon alleen parlementariërs met hoog risico (score ≥6,0)" aria-describedby="filterHighRiskDesc">
+        <span id="filterHighRiskDesc">Toon alleen hoog risico (≥6,0)</span>
+      </label>
+      <label class="control-label">
+        <span>Filter op regel:</span>
+        <select id="riskRuleFilter" aria-label="Filter op risicoregel">
+          <option value="">Alle regels</option>
+        </select>
+      </label>
+      <button id="resetZoom" class="btn btn-sm" aria-label="Zoom resetten">Zoom resetten</button>
+    </div>
+    <div id="riskHeatMap" role="img" aria-label="Heatmap voor risicobeoordeling met 45 regels voor 349 parlementariërs"></div>
+    <div id="heatMapLegend" class="legend" role="img" aria-label="Kleurlegenda van de heatmap"></div>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Risicoverdeling</h3>
+    <p class="chart-description">Verdeling van risicoscores over alle parlementariërs</p>
+    <canvas id="riskDistributionChart" role="img" aria-label="Staafdiagram met verdeling van risicoscores"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Anomaliedetectie (P90/P99)</h3>
+    <p class="chart-description">Stemanomalieën met statistische drempels op het 90e en 99e percentiel</p>
+    <canvas id="anomalyDetectionChart" role="img" aria-label="Spreidingsdiagram met stemanomalieën"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Indicatoren voor crisisbestendigheid</h3>
+    <p class="chart-description">Bestendigheidsscores per partij en metrics voor regeringsstabiliteit</p>
+    <canvas id="crisisResilienceChart" role="img" aria-label="Radardiagram met indicatoren voor crisisbestendigheid"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Tijdlijn van risico-evolutie (2020-2026)</h3>
+    <p class="chart-description">Historische trends van risicocategorieën in de tijd</p>
+    <canvas id="riskEvolutionChart" role="img" aria-label="Lijngrafiek met risico-evolutie in de tijd"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Top 10 ethische zorgen</h3>
+    <p class="chart-description">Parlementariërs met de hoogste ethische risicoscores</p>
+    <ol id="ethicsConcernsList" aria-label="Top 10-lijst met ethische zorgen">
+      <!-- Gevuld door JavaScript -->
+    </ol>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Verkiezingsrisico (parlementariërs met risico)</h3>
+    <p class="chart-description">Parlementariërs met de hoogste verkiezingskwetsbaarheid voor de verkiezing van 2026</p>
+    <ol id="electoralRiskList" aria-label="Top 10 parlementariërs met verkiezingsrisico">
+      <!-- Gevuld door JavaScript -->
+    </ol>
+  </div>
+</div>
 
+<div class="data-attribution">
+  <p><strong>Databron:</strong> <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency</a> | <strong>Laatst bijgewerkt:</strong> <span id="lastUpdated">Laden...</span></p>
+  <p class="methodology-note"><em>Risicoscores worden berekend met 45 transparantieregels over 4 domeinen (politicus, partij, commissie, ministerie). Anomaliedetectie gebruikt statistische drempels van P90 (waarschuwing) en P99 (kritiek).</em></p>
+</div>
+</section>
 
+  <section id="intelligence-capabilities">
+<h2>Uitgebreid intelligenceplatform</h2>
+<p>CIA levert systematische politieke transparantie via 45 risicoregels over 4 domeinen en 5 analytische kaders.</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>🔍 Realtime monitoring</h3>
+<ul>
+<li>349 parlementariërs automatisch gevolgd (<span data-stat-id="stat-historical-persons">—</span> historisch)</li>
+<li><span data-stat-id="stat-total-votes">—</span> individuele stemregistraties geanalyseerd</li>
+<li><span data-stat-id="stat-total-documents">—</span> documenten verwerkt</li>
+<li><span data-stat-id="stat-member-proposals">—</span> voorstellen van leden gevolgd</li>
+<li><span data-stat-id="stat-government-proposals">—</span> regeringsvoorstellen gemonitord</li>
+<li>Commissiewerk gekwantificeerd (<span data-stat-id="stat-committee-documents">—</span> documenten)</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>📊 Coalitievoorspelling</h3>
+<ul>
+<li>4 verkiezingsscenario’s gemodelleerd</li>
+<li>Analyse van historische patronen (1971-2024)</li>
+<li>Volgen van partijdiscipline</li>
+<li>Schatting van kans op overlopen</li>
+<li>Simulatie van regeringsvorming</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>✅ Factcheck-infrastructuur</h3>
+<ul>
+<li>Uitspraken van politici vs. stemregisters</li>
+<li>Analyse van consistentie van partijprogramma’s</li>
+<li>Volgen van campagnebeloften</li>
+<li>Realtime verificatie van debatten</li>
+<li>Historische verantwoordingsmetrics</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>⚠️ Risicobeoordeling</h3>
+<ul>
+<li>45 gedragsmatige risicoregels actief</li>
+<li>MINOR/MAJOR/CRITICAL severity levels</li>
+<li>Geautomatiseerd waarschuwingssysteem</li>
+<li>Trendanalyse voor context</li>
+<li>Transparante methodologie</li>
+</ul>
+</div>
+</div>
+
+<div class="risk-rules-breakdown">
+<h3>45 risicoregels over 4 domeinen</h3>
+<ul>
+<li><strong>Politicusniveau (20 regels):</strong> Aanwezigheid, stemconsistentie, rolconflicten, productiviteit</li>
+<li><strong>Partijniveau (12 regels):</strong> Coalitiediscipline, ideologische verschuiving, interne conflicten</li>
+<li><strong>Commissieniveau (8 regels):</strong> Wetgevende productiviteit, partijpolitieke impasse, expertgetuigenis</li>
+<li><strong>Ministerieniveau (5 regels):</strong> Budgetoverschrijdingen, beleidsfalen, tekortschietende verantwoording</li>
+</ul>
+
+<h3>5 analytische kaders</h3>
+<ul>
+<li><strong>Temporele analyse:</strong> Trenddetectie over tijdsperioden</li>
+<li><strong>Vergelijkende analyse:</strong> Benchmarking tussen partijen/parlementariërs</li>
+<li><strong>Patroonherkenning:</strong> Detectie van gedragsanomalieën</li>
+<li><strong>Voorspellende intelligence:</strong> Voorspellen van verkiezingsuitkomsten en coalitiemodellering</li>
+<li><strong>Netwerkanalyse:</strong> Invloed in kaart brengen en samenwerkingspatronen</li>
+</ul>
+</div>
+</section>
+
+<section id="data-sources">
+<h2><span aria-hidden="true">📊</span> Dataproducten van Citizen Intelligence Agency</h2>
+<p>Riksdagsmonitor wordt aangedreven door de <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency (CIA)</a> — een open-source OSINT-platform dat Zweedse parlementaire data omzet in bruikbare intelligenceproducten.</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">📈</span> Risicobeoordelingsrapporten</h3>
+<p>45 risicoregels over 4 domeinen analyseren in realtime het gedrag van politici, partijdiscipline, commissie-effectiviteit en ministeriële verantwoording.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">📅</span> Analyse van seizoensactiviteit</h3>
+<p>Z-score-anomaliedetectie identificeert ongebruikelijke parlementaire activiteitspatronen per kwartaal, met historische baselines van 2002 tot nu.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">🎯</span> Verkiezingscyclus-intelligence</h3>
+<p>Prestatiemonitoring over 9+ verkiezingscycli (1994–2034) met voorspellende risicoprognose, analyse van partijniveaus en modellering van coalitiekansen.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">🔗</span> Integratie van open data</h3>
+<p>Alle intelligenceproducten zijn afgeleid van officiële open databronnen. Visualisaties worden automatisch bijgewerkt via nachtelijke datapijplijnen met 24-uurs caching.</p>
+</div>
+</div>
+
+<p class="note">Alle dataproducten zijn beschikbaar via het Citizen Intelligence Agency-platform met realtime updates vanuit open data-API’s van het Zweedse parlement.</p>
+</section>
+
+  
+<section id="data-integration">
+<h2><span aria-hidden="true">🔗</span> Databronnen en integratie</h2>
+<p>Riksdagsmonitor integreert meerdere gezaghebbende Zweedse en internationale databronnen:</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Zweeds parlement (Riksdagen)</h3>
+<p>Officiële parlementaire data, waaronder stemmingen, documenten, commissiewerk en informatie over parlementariërs.</p>
+<a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">data.riksdagen.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Zweedse verkiezingsautoriteit</h3>
+<p>Historische verkiezingsresultaten, opkomst en verkiezingsstatistieken voor alle nationale verkiezingen.</p>
+<a href="https://www.val.se/" target="_blank" rel="noopener noreferrer">val.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Financiële beheerautoriteit (ESV)</h3>
+<p>Overheidsbudgetdata, analyse van publieke uitgaven en rapportage over financiële verantwoording.</p>
+<a href="https://www.esv.se/psidata/" target="_blank" rel="noopener noreferrer">esv.se/psidata</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Open data van de Wereldbank</h3>
+<p>Economische en ontwikkelingsindicatoren op landniveau voor internationale vergelijkende analyse.</p>
+<a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">data.worldbank.org</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Over Riksdagsmonitor</h3>
+      <p>Live intelligenceplatform voor monitoring van het Zweedse parlement met CIA OSINT-capaciteiten.</p>
+      <ul class="footer-stats">
+        <li><strong>349 parlementariërs</strong> gevolgd</li>
+        <li><strong>45 risicoregels</strong> actief</li>
+        <li><strong>14 talen</strong> ondersteund</li>
+        <li><strong>50+ jaar</strong> historische data</li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Snelle links</h3>
+      <ul>
+        <li><a href="index_nl.html">Start</a></li>
+        <li><a href="news/index_nl.html">Nieuws</a></li>
+        <li><a href="dashboard/index_nl.html">Dashboard</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub-opslagplaats</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Gebouwd door Hack23 AB</h3>
+      <p>Zweedse cybersecurity-consultancy gespecialiseerd in politieke transparantie en open-source intelligence.</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Bedrijfs-LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Openbaar ISMS</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Beveiligingsbeleid</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Privacybeleid</a></li>
+        <li><a href="mailto:info@hack23.com">Contact opnemen</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Talen</h3>
+      <div class="language-grid">
+        <a href="index.html" title="English" aria-label="Overschakelen naar Engels"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="index_sv.html" title="Svenska" aria-label="Byt till Svenska"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="index_da.html" title="Dansk" aria-label="Skift til Dansk"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="index_no.html" title="Norsk" aria-label="Bytt til Norsk"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="index_fi.html" title="Suomi" aria-label="Vaihda Suomeksi"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="index_de.html" title="Deutsch" aria-label="Wechseln zu Deutsch"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="index_fr.html" title="Français" aria-label="Passer au Français"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="index_es.html" title="Español" aria-label="Cambiar a Español"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="index_nl.html" title="Nederlands" aria-label="Schakel naar Nederlands"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="index_ar.html" title="العربية" aria-label="التبديل إلى العربية"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="index_he.html" title="עברית" aria-label="עבור לעברית"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="index_ja.html" title="日本語" aria-label="日本語に切り替え"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="index_ko.html" title="한국어" aria-label="한국어로 전환"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="index_zh.html" title="中文" aria-label="切换到中文"><span aria-hidden="true">🇨🇳</span> ZH</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Göteborg, Zweden</p>
+  </div>
+</footer>
+
+<!-- Terug naar boven-knop -->
+<button id="back-to-top" class="back-to-top" aria-label="Terug naar boven" title="Terug naar boven">
+  <span aria-hidden="true">↑</span>
+</button>
 
 <!-- D3.js v7.9.0 for heat map visualization (hosted locally on CloudFront) -->
 <script src="js/lib/d3.7.9.0.min.js"></script>
@@ -1110,7 +1244,18 @@ Performance tiers (ntile_party_tier: 1-4)
 <!-- Papa Parse v5.5.3 for CSV parsing (hosted locally on CloudFront) -->
 <script src="js/lib/papaparse.5.5.3.min.js"></script>
 
+<script src="js/risk-dashboard.js"></script>
+
+<script src="js/back-to-top.js"></script>
+
+
+<script src="js/stats-loader.js"></script>
+
 <script type="module" src="scripts/coalition-dashboard.js" defer></script>
+
+<script type="module" src="scripts/committees-dashboard.js"></script>
+
+<script type="module" src="js/election-cycle-dashboard.js"></script>
 
 <script src="js/party-dashboard.js"></script>
 
@@ -1121,12 +1266,5 @@ Performance tiers (ntile_party_tier: 1-4)
 <script src="js/pre-election-dashboard.js"></script>
 
 <script src="js/anomaly-detection-dashboard.js"></script>
-<script src="js/stats-loader.js"></script>
-
-<script type="module" src="scripts/committees-dashboard.js"></script>
-
-<script type="module" src="js/election-cycle-dashboard.js"></script>
-
-
 </body>
 </html>

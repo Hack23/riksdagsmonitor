@@ -1,848 +1,607 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<title>스웨덴 2026년 선거 분석 - CIA 프로젝트 | Hack23</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="canonical" href="https://riksdagsmonitor.com/index_ko.html">
-	<meta name="description" content="데이터 기반 스웨덴 의회 선거 분석. Citizen Intelligence Agency (CIA) 프로젝트의 정치적 투명성 및 민주적 감시 기능 시연.">
-	<meta name="keywords" content="스웨덴 선거, 정치 분석, 데이터 기반 분석, CIA 프로젝트, OSINT, 정치적 투명성, 민주적 감시, 의회 모니터링, 투표 패턴, 정당 분석, 한국어">
-	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-	<meta name="author" content="James Pether Sörling, CISSP, CISM">
-	
-	<!-- Open Graph / Social Media -->
-	<meta property="og:title" content="스웨덴 2026년 선거 | 실시간 인텔리전스 플랫폼">
-	<meta property="og:description" content="실시간 모니터링 · 연정 예측 · 체계적 투명성. 45개 위험 규칙으로 349명 의원 추적. 스웨덴 및 글로벌 미디어 파일럿 프로그램.">
-	<meta property="og:locale" content="ko_KR">
-	<meta property="og:locale:alternate" content="ar_SA">
-	<meta property="og:locale:alternate" content="da_DK">
-	<meta property="og:locale:alternate" content="de_DE">
-	<meta property="og:locale:alternate" content="en_US">
-	<meta property="og:locale:alternate" content="es_ES">
-	<meta property="og:locale:alternate" content="fi_FI">
-	<meta property="og:locale:alternate" content="fr_FR">
-	<meta property="og:locale:alternate" content="he_IL">
-	<meta property="og:locale:alternate" content="ja_JP">
-	<meta property="og:locale:alternate" content="nl_NL">
-	<meta property="og:locale:alternate" content="nb_NO">
-	<meta property="og:locale:alternate" content="sv_SE">
-	<meta property="og:locale:alternate" content="zh_CN">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://riksdagsmonitor.com/index_ko.html">
-	<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
-	<meta property="og:site_name" content="Riksdags Monitor - Swedish Parliament Intelligence">
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="스웨덴 2026년 선거 | 실시간 인텔리전스 플랫폼">
-	<meta name="twitter:description" content="349명 의원 실시간 모니터링, 연정 예측, 45개 위험 규칙. 미디어 조직을 위한 파일럿 프로그램.">
-	<meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
-	<meta name="twitter:site" content="@hack23ab">
-	<meta name="twitter:creator" content="@jamessorling">
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-	
-	<meta name="application-name" content="Hack23 AB">
-	<meta name="theme-color" content="#0066CC">
-	
-	<!-- Schema.org structured data -->
-	<script type="application/ld+json">{
+<title>Riksdagsmonitor | 2026 스웨덴 총선 인텔리전스 플랫폼 | 의회 모니터링</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/index_ko.html">
+<link rel="manifest" href="site.webmanifest">
+<meta name="description" content="Riksdagsmonitor: 2026 스웨덴 총선 인텔리전스 플랫폼. 8개 정당 349명의 국회의원을 실시간 모니터링하고, 연정 예측, 45개 위험 규칙, Citizen Intelligence Agency(CIA) OSINT 플랫폼의 50년+ 의회 데이터를 제공합니다.">
+<meta name="keywords" content="Swedish election 2026, riksdagsmonitor, riksdag monitoring, coalition prediction, political intelligence, OSINT platform, parliamentary analysis, Citizen Intelligence Agency, Swedish politics, election monitoring, riksdagsval 2026, valövervakning, Sveriges riksdag, politisk intelligens, parlamentsanalys, koalitionsförutsägelse, riskbedömning, svensk politik, demokratisk insyn, 349 MPs, 45 risk rules, parliamentary transparency, Sweden democracy, election forecasting 2026">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+
+<!-- Geographic Meta Tags -->
+<meta name="geo.region" content="SE">
+<meta name="geo.placename" content="Gothenburg">
+<meta name="geo.position" content="57.708870;11.974560">
+<meta name="ICBM" content="57.708870, 11.974560">
+
+<!-- Mobile Web App Tags -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Riksdagsmonitor">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="320">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/index_ko.html">
+<meta property="og:site_name" content="Riksdagsmonitor">
+<meta property="og:title" content="Riksdagsmonitor | 2026 스웨덴 총선 인텔리전스 플랫폼">
+<meta property="og:description" content="8개 정당 349명의 의원을 실시간 모니터링합니다. 연정 예측, 45개 위험 규칙, 선거 예측, 50년+ 의회 데이터 제공. 무료 오픈소스입니다.">
+<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Riksdagsmonitor - 스웨덴 의회 인텔리전스 플랫폼">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="ar_SA">
+<meta property="og:locale:alternate" content="da_DK">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fi_FI">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:locale:alternate" content="sv_SE">
+<meta property="og:locale:alternate" content="zh_CN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Riksdagsmonitor | 2026 스웨덴 총선 인텔리전스 플랫폼">
+<meta name="twitter:description" content="8개 정당 349명의 의원을 실시간 모니터링합니다. 연정 예측, 45개 위험 규칙, 선거 예측, 50년+ 의회 데이터 제공. 무료 오픈소스입니다.">
+<meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+<meta name="twitter:image:alt" content="Riksdagsmonitor - 스웨덴 의회 인텔리전스 플랫폼">
+<meta name="twitter:site" content="@riksdagsmonitor">
+<meta name="twitter:creator" content="@jamessorling">
+<meta name="twitter:domain" content="riksdagsmonitor.com">
+
+<!-- DNS Prefetch & Preconnect for 성과 -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cia.sourceforge.io">
+<link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<meta name="application-name" content="Riksdagsmonitor">
+<meta name="theme-color" content="#0a0e27">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Event",
-      "name": "스웨덴 의회 선거 2026",
-      "description": "CIA OSINT 기능을 사용한 스웨덴 선거 모니터링 실시간 인텔리전스 플랫폼. 349명 의원 실시간 분석, 연정 예측, 종합적 위험 평가.",
-      "image": "https://cia.sourceforge.io/cia-logo.png",
-      "startDate": "2026-09-13",
-      "endDate": "2026-09-13",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "스웨덴",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "SE"
-        }
+      "@type": "Organization",
+      "@id": "https://riksdagsmonitor.com/#organization",
+      "name": "Riksdagsmonitor",
+      "legalName": "Hack23 AB",
+      "url": "https://riksdagsmonitor.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "width": 250,
+        "height": 250
       },
-      "organizer": {
-        "@type": "Organization",
-        "name": "Hack23 AB",
-        "url": "https://hack23.com"
-      },
-      "performer": {
-        "@type": "Organization",
-        "name": "Hack23 AB",
-        "url": "https://hack23.com"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "name": "스웨덴 선거 2026 파일럿 프로그램",
-        "url": "https://riksdagsmonitor.com/index_ko.html#pilot-program",
-        "lowPrice": "5000",
-        "highPrice": "7500",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/LimitedAvailability",
-        "offerCount": "15",
-        "validFrom": "2025-01-01",
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "스웨덴 미디어 조직 티어",
-            "price": "5000",
-            "priceCurrency": "EUR",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "5000",
-              "priceCurrency": "EUR",
-              "unitText": "MONTH"
-            },
-            "availability": "https://schema.org/LimitedAvailability",
-            "availableAtOrFrom": {
-              "@type": "Place",
-              "name": "스웨덴"
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "글로벌 뉴스 조직 티어",
-            "price": "7500",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/LimitedAvailability"
-          }
+      "description": "CIA OSINT 분석을 통해 실시간 인텔리전스, 선거 예측, 정치적 투명성을 제공하는 스웨덴 의회 모니터링 플랫폼입니다.",
+      "foundingDate": "2008",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://riksdagsmonitor.com/#founder",
+        "name": "James Pether Sörling",
+        "jobTitle": "창립자 겸 최고 인텔리전스 책임자",
+        "hasCredential": ["CISSP", "CISM"],
+        "sameAs": [
+          "https://www.linkedin.com/in/jamessorling/",
+          "https://github.com/Hack23"
         ]
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "CIA 스웨덴 선거 2026 인텔리전스 플랫폼",
-      "description": "45개 위험 규칙, 실시간 의원 추적, 연정 예측 모델을 갖춘 스웨덴 선거 모니터링을 위한 종합 정치 인텔리전스 플랫폼.",
-      "image": "https://cia.sourceforge.io/cia-logo.png",
-      "brand": {
-        "@type": "Organization",
-        "name": "Hack23 AB",
-        "url": "https://hack23.com"
       },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://riksdagsmonitor.com/index_ko.html#pilot-program",
-        "priceCurrency": "EUR",
-        "price": "5000",
-        "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/LimitedAvailability",
-        "validFrom": "2025-01-01",
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": ["SE", "NO", "DK", "FI"]
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "DAY"
-            }
-          }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "SE",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
-      }
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SE",
+        "addressLocality": "Gothenburg"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "기술 지원",
+        "availableLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
+      },
+      "sameAs": [
+        "https://github.com/Hack23/riksdagsmonitor",
+        "https://github.com/Hack23/cia"
+      ]
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://riksdagsmonitor.com/index_ko.html#breadcrumb",
+      "@type": "WebSite",
+      "@id": "https://riksdagsmonitor.com/#website",
+      "url": "https://riksdagsmonitor.com",
+      "name": "Riksdagsmonitor - 스웨덴 의회 인텔리전스 플랫폼",
+      "description": "CIA OSINT 분석을 활용한 스웨덴 의회 실시간 모니터링, 선거 예측, 연정 예측 및 포괄적 정치 투명성.",
+      "publisher": {
+        "@id": "https://riksdagsmonitor.com/#organization"
+      },
+      "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://riksdagsmonitor.com/#webpage",
+      "url": "https://riksdagsmonitor.com/index.html",
+      "name": "Riksdagsmonitor | 2026 스웨덴 총선 인텔리전스 플랫폼",
+      "description": "Citizen Intelligence Agency(CIA) OSINT 분석으로 스웨덴 의회를 실시간 모니터링합니다. 8개 정당 349명 의원을 45개 위험 규칙으로 추적하며, 연정 예측과 50년+ 역사 데이터를 제공합니다.",
+      "isPartOf": {
+        "@id": "https://riksdagsmonitor.com/#website"
+      },
+      "about": {
+        "@id": "https://riksdagsmonitor.com/#event"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2008-01-01T00:00:00+00:00",
+      "dateModified": "2026-02-13T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "https://riksdagsmonitor.com/#breadcrumb"
+      },
+      "inLanguage": "ko",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": "https://riksdagsmonitor.com/index.html"
+        }
+      ]
+    },
+    {
+      "@type": "경로 탐색List",
+      "@id": "https://riksdagsmonitor.com/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "홈",
-          "item": "https://riksdagsmonitor.com/index_ko.html"
+          "item": "https://riksdagsmonitor.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "스웨덴 선거 2026",
-          "item": "https://riksdagsmonitor.com/index_ko.html"
+          "name": "2026 스웨덴 총선",
+          "item": "https://riksdagsmonitor.com/index.html"
         }
       ]
+    },
+    {
+      "@type": "Event",
+      "@id": "https://riksdagsmonitor.com/#event",
+      "name": "2026 스웨덴 의회 선거",
+      "description": "Swedish Parliamentary Election scheduled for 13 September 2026. Live intelligence platform monitoring 349 MPs across 8 parties with CIA OSINT capabilities, coalition predictions, and comprehensive risk assessment. Track voting patterns, committee activities, and political transparency in real-time. Historical database: 2494 politicians tracked since 1971.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "width": 1200,
+        "height": 630
+      },
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-13",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "event출석Mode": "https://schema.org/OfflineEvent출석Mode",
+      "location": {
+        "@type": "Place",
+        "name": "스웨덴",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "SE",
+          "addressRegion": "스웨덴"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 59.329323,
+          "longitude": 18.068581
+        }
+      },
+      "organizer": {
+        "@id": "https://riksdagsmonitor.com/#organization"
+      },
+      "performer": {
+        "@type": "Organization",
+        "name": "스웨덴 릭스다그",
+        "sameAs": "https://www.riksdagen.se"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://riksdagsmonitor.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Riksdagsmonitor란 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor는 CIA OSINT 분석을 통해 실시간 인텔리전스, 선거 예측, 정치적 투명성을 제공하는 종합 스웨덴 의회 모니터링 플랫폼입니다. 8개 정당의 349명 의원을 45개 위험 규칙으로 추적하며, 포괄적인 의회 분석을 제공합니다. 역사 데이터베이스에는 1971~2024년의 정치인 2494명이 포함됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "2026년 스웨덴 선거는 언제인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년 스웨덴 의회 선거는 2026년 9월 13일(9월 둘째 일요일)로 예정되어 있습니다. 이는 349석 규모의 릭스다그(스웨덴 의회) 구성을 결정하는 전국 선거입니다. Riksdagsmonitor는 현재 및 과거 정치인을 추적합니다(1971년 이후 총 2494명)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riksdagsmonitor는 몇 명의 의원을 추적하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor는 스웨덴 릭스다그의 국회의원(MP) 349명 전원을 추적하며, 투표 패턴, 출석, 위원회 활동, 토론 성과를 실시간으로 모니터링합니다. 역사 데이터베이스에는 1971년 이후 추적된 정치인 2494명이 포함됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "45개 위험 규칙이란 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "45개 위험 규칙은 4개 영역에 걸친 행동 평가 기준입니다. 정치인 수준(출석, 투표 일관성, 역할 충돌, 생산성을 다루는 20개 규칙), 정당 수준(연정 규율, 이념 이탈, 내부 갈등에 대한 12개 규칙), 위원회 수준(입법 생산성, 당파적 교착에 대한 8개 규칙), 부처 수준(예산 초과, 정책 실패, 책무성에 대한 5개 규칙)으로 구성됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riksdagsmonitor는 무료로 사용할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "예, Riksdagsmonitor는 완전히 무료로 사용할 수 있습니다. 스웨덴 의회 모니터링, 선거 예측, 정치적 투명성 데이터에 대한 공개 접근을 14개 언어로 제공합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riksdagsmonitor는 어떤 언어를 지원하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor는 영어, 스웨덴어, 덴마크어, 노르웨이어, 핀란드어, 독일어, 프랑스어, 스페인어, 네덜란드어, 아랍어, 히브리어, 일본어, 한국어, 중국어의 14개 언어를 지원하여 스웨덴 정치 인텔리전스를 전 세계가 이용할 수 있도록 합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "연정 예측은 어떻게 작동하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "연정 예측은 투표 패턴, 위원회 행동, 정당 규율 점수, 50년+의 역사적 연정 구성 데이터를 분석하는 알고리즘을 사용합니다. 시스템은 이념적 호환성, 의석 분포, 안정성 지표를 평가하여 가능성 높은 정부 구성을 예측합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Citizen Intelligence Agency(CIA) 플랫폼이란 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Citizen Intelligence Agency(CIA)는 Hack23 AB가 개발한 정치적 투명성을 위한 오픈소스 OSINT 플랫폼입니다. 매년 수천 건의 표결을 처리하고 의회 문서를 분석하며, 종합적인 위험 평가 대시보드와 함께 실시간 모니터링을 제공합니다."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "name": "Sveriges riksdag",
+      "alternateName": "스웨덴 의회",
+      "url": "https://www.riksdagen.se",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 12 Stockholm",
+        "addressLocality": "Stockholm",
+        "addressCountry": "SE"
+      },
+      "numberOfEmployees": 349,
+      "foundingDate": "1866"
     }
-  ],
-  "inLanguage": "ko"
-}</script>
+  ]
+}
+</script>
 
-	<!-- Hreflang tags for international SEO -->
-	<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/swedish-election-2026_ar.html">
-	<link rel="alternate" hreflang="ar-SA" href="https://riksdagsmonitor.com/swedish-election-2026_ar.html">
-	<link rel="alternate" hreflang="ar-EG" href="https://riksdagsmonitor.com/swedish-election-2026_ar.html">
-	<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/swedish-election-2026_da.html">
-	<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/swedish-election-2026_de.html">
-	<link rel="alternate" hreflang="de-DE" href="https://riksdagsmonitor.com/swedish-election-2026_de.html">
-	<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/swedish-election-2026.html">
-	<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/swedish-election-2026_es.html">
-	<link rel="alternate" hreflang="es-ES" href="https://riksdagsmonitor.com/swedish-election-2026_es.html">
-	<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/swedish-election-2026_fi.html">
-	<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/swedish-election-2026_fr.html">
-	<link rel="alternate" hreflang="fr-FR" href="https://riksdagsmonitor.com/swedish-election-2026_fr.html">
-	<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/swedish-election-2026_he.html">
-	<link rel="alternate" hreflang="he-IL" href="https://riksdagsmonitor.com/swedish-election-2026_he.html">
-	<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/swedish-election-2026_ja.html">
-	<link rel="alternate" hreflang="ja-JP" href="https://riksdagsmonitor.com/swedish-election-2026_ja.html">
-	<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/index_ko.html">
-	<link rel="alternate" hreflang="ko-KR" href="https://riksdagsmonitor.com/index_ko.html">
-	<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/swedish-election-2026_nl.html">
-	<link rel="alternate" hreflang="nl-NL" href="https://riksdagsmonitor.com/swedish-election-2026_nl.html">
-	<link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/swedish-election-2026_no.html">
-	<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/swedish-election-2026_no.html">
-	<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/swedish-election-2026_sv.html">
-	<link rel="alternate" hreflang="sv-SE" href="https://riksdagsmonitor.com/swedish-election-2026_sv.html">
-	<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
-	<link rel="alternate" hreflang="zh-CN" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
-	<link rel="alternate" hreflang="zh-SG" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
-	<link rel="alternate" hreflang="zh-Hans" href="https://riksdagsmonitor.com/swedish-election-2026_zh.html">
-	<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/swedish-election-2026.html">
+<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/index_ar.html">
+<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/index_da.html">
+<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/index_de.html">
+<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html">
+<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/index_es.html">
+<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/index_fi.html">
+<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/index_fr.html">
+<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/index_he.html">
+<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/index_ja.html">
+<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/index_ko.html">
+<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/index_nl.html">
+<link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/index_no.html">
+<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/index_sv.html">
+<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/index_zh.html">
+<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/index.html">
 
 </head>
 <body>
-	<!-- Breadcrumb Navigation -->
-	<nav aria-label="브레드크럼">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index_ko.html">홈</a>
-			</li>
-			<li class="breadcrumb-item" aria-current="page">
-				스웨덴 선거 2026
-			</li>
-		</ol>
-	</nav>
+<!-- 접근성을 위한 본문 건너뛰기 링크 -->
+<a href="#main-content" class="skip-to-content">메인 콘텐츠로 건너뛰기</a>
 
-	<!-- News Navigation -->
-	<div class="news-navigation">
-		<a href="news/index_ko.html" aria-label="뉴스 – AI 기반 정치 저널리즘">
-			<span class="news-navigation-icon">📰</span>
-			<span>뉴스</span>
-		</a>
-		<p>AI 기반 정치 저널리즘 (CIA OSINT)</p>
-	</div>
+<!-- 경로 탐색 Navigation -->
+<nav aria-label="경로 탐색">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.html">홈</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+2026 스웨덴 총선
+</li>
+</ol>
+</nav>
 
-	<header>
-		<h1>🗳️ 스웨덴 2026년 선거<br>실시간 인텔리전스 플랫폼</h1>
-		<p class="tagline">실시간 모니터링 · 연정 예측 · 체계적 투명성</p>
-		
-		<div class="election-countdown">
-<h2>선거까지: <span id="countdown">2026년 9월 13일</span></h2>
-				<p>2026년 9월 13일 (9월 두 번째 일요일)</p>
-		</div>
-		
-		<div class="hero-stats">
-			<div class="stat">
-				<span class="number" data-stat-id="stat-historical-persons">2,494</span>
-				<span class="label">추적 정치인</span>
-			</div>
-			<div class="stat">
-				<span class="number" data-stat-id="stat-total-votes">3,529,786</span>
-				<span class="label">분석된 투표</span>
-			</div>
-			<div class="stat">
-				<span class="number" data-stat-id="stat-total-documents">109,259</span>
-				<span class="label">처리된 문서</span>
-			</div>
-			<div class="stat">
-				<span class="number" data-stat-id="stat-rule-violations">2,308</span>
-				<span class="label">규칙 위반</span>
-			</div>
-		</div>
-		
-		<div class="app-link">
-			<a href="#pilot-program" class="btn" title="파일럿 프로그램 신청">파일럿 프로그램 신청</a>
-			<a href="cia-docs_ko.html#business-case" title="비즈니스 케이스 보기">비즈니스 케이스 보기</a>
-			<a href="index_ko.html" title="홈으로 이동">홈</a>
-		</div>
-	</header>
+<!-- 뉴스 Navigation -->
+<nav class="news-navigation" aria-label="뉴스">
+<a href="news/index.html" aria-label="Visit 뉴스 section - AI-Disrupted Political Journalism">
+<span class="news-navigation-icon" aria-hidden="true">📰</span>
+<span>뉴스</span>
+</a>
+<p>AI-Disrupted Political Journalism powered by CIA OSINT</p>
+</nav>
 
-	<!-- 한국 독자를 위한 소개 섹션 -->
-	<section class="korean-context" style="background: #f0f8ff; padding: 2rem; margin: 2rem 0; border-radius: 8px; border-left: 4px solid #0066CC;">
-		<h2>🇰🇷 한국 독자를 위한 배경</h2>
-		<p>
-			이 페이지는 <strong>Citizen Intelligence Agency (CIA)</strong> 프로젝트가 제공하는 
-			데이터 기반 정치 분석 기능을 시연합니다. 스웨덴 의회 선거를 예시로 사용하여 
-			정치적 투명성과 민주적 감시를 어떻게 촉진하는지 보여줍니다.
-		</p>
-		<p>
-			<strong>스웨덴 의회 시스템:</strong> 스웨덴은 비례대표제 의회 시스템을 운영하며 349명의 의원이 있습니다. 
-			CIA 프로젝트는 의원 활동, 투표 패턴, 정치적 영향력을 추적하여 시민들에게 
-			투명한 정보를 제공합니다. 이는 한국의 국회 모니터링 시스템과 유사한 목적을 가지고 있습니다.
-		</p>
-		<p>
-			<strong>적용 가능성:</strong> 이 플랫폼의 기술과 방법론은 모든 민주주의 국가의 의회에 적용 가능합니다. 
-			한국의 국회(300명 의원)에도 동일한 분석 프레임워크를 사용할 수 있으며, 
-			정치적 투명성과 책임성을 높이는 데 기여할 수 있습니다.
-		</p>
-	</section>
+<header>
+<h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">2026 스웨덴 총선 인텔리전스 플랫폼</span></h1>
+<p class="tagline">실시간 의회 모니터링 · 연정 예측 · 45개 위험 규칙 · 50년+ 데이터</p>
 
-	<main>
-		<section id="coalition-status">
-			<h2>현재 연정: Tidö 협정</h2>
-			<p>구성: 2022년 10월 | 상태: 활성 | 과반: 176석 (전체 349석 중)</p>
-			
-			<div class="cards">
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>온건당 (M)</h3>
-					<p><strong>68석</strong></p>
-					<p>대표: Ulf Kristersson (총리)</p>
-				</div>
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>기독민주당 (KD)</h3>
-					<p><strong>19석</strong></p>
-					<p>대표: Ebba Busch</p>
-				</div>
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>스웨덴민주당 (SD)</h3>
-					<p><strong>73석</strong></p>
-					<p>대표: Jimmie Åkesson</p>
-				</div>
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>자유당 (L) - 지지</h3>
-					<p><strong>16석</strong></p>
-					<p>대표: Johan Pehrson</p>
-				</div>
-			</div>
-			
-			<div class="coalition-stability">
-				<h3>연정 안정성 평가</h3>
-				<div class="stability-info">
-					<p><strong>과반 차이:</strong> 1석 (매우 적음)</p>
-					<p><strong>CIA 위험 평가:</strong> 최근 90일간 주요 경고 12건, 심각 경고 5건 감지</p>
-					<p><strong>불안정 지표:</strong> SD와 L 간 이념적 긴장, 이탈 가능성 높음</p>
-					<p><strong>안정성 점수:</strong> 중간 위험 (72%)</p>
-				</div>
-			</div>
-		</section>
+<div class="election-countdown">
+<h2>선거까지: <span id="countdown">13 September 2026</span></h2>
+<p>13 September 2026 (9월 둘째 일요일)</p>
+</div>
 
-		<section id="intelligence-capabilities">
-			<h2>종합 인텔리전스 플랫폼</h2>
-			<p>CIA는 4개 영역과 5개 분석 프레임워크에 걸친 45개 위험 규칙을 통해 체계적인 정치적 투명성을 제공합니다.</p>
-			
-			<div class="cards">
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>🔍 실시간 모니터링</h3>
-					<ul>
-						<li>349명 의원 자동 추적</li>
-						<li>연간 10,000개 이상의 투표 분석</li>
-						<li>20,000개 이상의 문서 처리</li>
-						<li>위원회 활동 정량화</li>
-						<li>토론 성과 지표</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>📊 연정 예측</h3>
-					<ul>
-						<li>4가지 선거 시나리오 모델링</li>
-						<li>역사적 패턴 분석 (1971-2024)</li>
-						<li>정당 규율 추적</li>
-						<li>이탈 확률 추정</li>
-						<li>정부 구성 시뮬레이션</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>✅ 팩트체크 인프라</h3>
-					<ul>
-						<li>정치인 발언 대 투표 기록</li>
-						<li>정당 강령 일관성 분석</li>
-						<li>선거 공약 추적</li>
-						<li>실시간 토론 검증</li>
-						<li>역사적 책임성 지표</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>⚠️ 위험 평가</h3>
-					<ul>
-						<li>45개 행동 위험 규칙 활성</li>
-						<li>경미/주요/심각 심각도 수준</li>
-						<li>자동 경고 시스템</li>
-						<li>맥락 파악을 위한 추세 분석</li>
-						<li>투명한 방법론</li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="risk-rules-breakdown">
-				<h3>4개 영역에 걸친 45개 위험 규칙</h3>
-				<ul>
-					<li><strong>정치인 수준 (20개 규칙):</strong> 출석, 투표 일관성, 역할 충돌, 생산성</li>
-					<li><strong>정당 수준 (12개 규칙):</strong> 연정 규율, 이념적 표류, 내부 갈등</li>
-					<li><strong>위원회 수준 (8개 규칙):</strong> 입법 생산성, 당파적 교착 상태, 전문가 증언</li>
-					<li><strong>부처 수준 (5개 규칙):</strong> 예산 초과, 정책 실패, 책임성 공백</li>
-				</ul>
-				
-				<h3>5가지 분석 프레임워크</h3>
-				<ul>
-					<li><strong>시간적 분석:</strong> 기간별 추세 감지</li>
-					<li><strong>비교 분석:</strong> 정당/의원 간 벤치마킹</li>
-					<li><strong>패턴 인식:</strong> 행동 이상 감지</li>
-					<li><strong>예측 인텔리전스:</strong> 선거 결과 예측, 연정 모델링</li>
-					<li><strong>네트워크 분석:</strong> 영향력 매핑, 협력 패턴</li>
-				</ul>
-			</div>
-		</section>
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">—</span>
+<span class="label">추적 중인 정치인</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">—</span>
+<span class="label">의회 표결</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">—</span>
+<span class="label">처리된 문서</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">—</span>
+<span class="label">정부 법안</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">—</span>
+<span class="label">위원회 결정</span>
+</div>
+</div>
+</header>
 
-		<section id="election-timeline">
-			<h2>선거 2026 모니터링 타임라인</h2>
-			
-			<div class="timeline-phases">
-				<div class="phase">
-					<h3>1단계: 선거 전 (현재 - 2025년 12월)</h3>
-					<ul>
-						<li>역사적 기준선 분석 (2022-2025)</li>
-						<li>연정 안정성 추적</li>
-						<li>의원 행동 패턴 설정</li>
-						<li>파일럿 프로그램 참가자 선정</li>
-					</ul>
-				</div>
-				
-				<div class="phase">
-					<h3>2단계: 선거 기간 (2026년 1월 - 8월)</h3>
-					<ul>
-						<li>실시간 의원 활동 모니터링</li>
-						<li>정당 강령 분석</li>
-						<li>연정 협상 패턴 감지</li>
-						<li>토론 성과 정량화</li>
-						<li>유권자 정서 분석</li>
-					</ul>
-				</div>
-				
-				<div class="phase">
-					<h3>3단계: 선거일 (2026년 9월 13일)</h3>
-					<ul>
-						<li>Valmyndigheten의 실시간 결과 집계</li>
-						<li>즉각적인 연정 구성 시나리오</li>
-						<li>이전 선거와의 역사적 비교</li>
-						<li>정부 구성 예측 모델링</li>
-					</ul>
-				</div>
-				
-				<div class="phase">
-					<h3>4단계: 선거 후 (2026년 10월 - 12월)</h3>
-					<ul>
-						<li>연정 안정성 평가</li>
-						<li>정부 구성 예측 정확도 평가</li>
-						<li>교훈 문서화</li>
-						<li>국제 복제 계획</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+<main id="main-content" role="main">
+<section id="coalition-status">
+<h2>현재 연정: 티되 협정</h2>
+<p>Formation: October 2022 | Status: Active | Majority: 176 seats (of 349 total)</p>
 
-		<section id="coalition-scenarios">
-			<h2>예측 연정 시나리오</h2>
-			<p>CIA의 45개 위험 규칙과 50년 역사 데이터 분석 기반</p>
-			
-			<div class="scenarios">
-				<div class="scenario">
-					<h3>시나리오 1: 분열 (확률 40%)</h3>
-					<p class="scenario-summary">SD가 정책 분쟁으로 Tidö 연정에서 이탈. 투표 패턴 분석을 통해 3개월 전 조기 경고 감지.</p>
-					<ul>
-						<li><strong>촉발 요인:</strong> 이민 정책 불일치 또는 EU 통합 입장</li>
-						<li><strong>결과:</strong> 조기 선거 요청, 혼란, 연정 재편</li>
-						<li><strong>CIA 감지:</strong> 투표 규율 붕괴, 이탈 신호</li>
-					</ul>
-				</div>
-				
-				<div class="scenario">
-					<h3>시나리오 2: 침묵의 연정 (확률 35%)</h3>
-					<p class="scenario-summary">사회민주당(S) + 온건당(M) 선거 후 비밀 협상. 네트워크 분석이 배후 연결 감지.</p>
-					<ul>
-						<li><strong>촉발 요인:</strong> 교착 상태로 전통적 연정 구성 불가</li>
-						<li><strong>결과:</strong> 정치적 지진, 기성 정당 합병, 새로운 중도</li>
-						<li><strong>CIA 감지:</strong> 위원회 협력 패턴, 투표 수렴</li>
-					</ul>
-				</div>
-				
-				<div class="scenario">
-					<h3>시나리오 3: 급진적 전환 (확률 15%)</h3>
-					<p class="scenario-summary">좌파당(V) + 중앙당(C) 예상치 못한 동맹. 예측 모델이 정책 중첩 영역 식별.</p>
-					<ul>
-						<li><strong>촉발 요인:</strong> 환경/농업 정책 수렴</li>
-						<li><strong>결과:</strong> 이념적 재편, 말굽 이론 검증</li>
-						<li><strong>CIA 감지:</strong> 교차 이념 위원회 작업, 투표 패턴 유사성</li>
-					</ul>
-				</div>
-				
-				<div class="scenario">
-					<h3>시나리오 4: 현상 유지 (확률 10%)</h3>
-					<p class="scenario-summary">Tidö 연정이 살아남아 재선. 하지만: CIA가 주류 분석에서 무시된 23개 심각 경고 감지.</p>
-					<ul>
-						<li><strong>촉발 요인:</strong> 내부 긴장에도 불구하고 경제 안정이 유권자 신뢰 유지</li>
-						<li><strong>결과:</strong> 2027년 서서히 붕괴 시작, CIA가 사후 검증됨</li>
-						<li><strong>CIA 감지:</strong> 누적된 위험 지표가 근본적 취약성 표시</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>보통s (M)</h3>
+<p><strong>68 seats</strong></p>
+<p>Leader: Ulf Kristersson (Prime Minister)</p>
+</div>
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Christian Democrats (KD)</h3>
+<p><strong>19 seats</strong></p>
+<p>Leader: Ebba Busch</p>
+</div>
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Sweden Democrats (SD)</h3>
+<p><strong>73 seats</strong></p>
+<p>Leader: Jimmie Åkesson</p>
+</div>
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Liberals (L) - Support</h3>
+<p><strong>16 seats</strong></p>
+<p>Leader: Johan Pehrson</p>
+</div>
+</div>
 
-		<section id="pilot-program">
-			<h2>스웨덴 선거 2026 파일럿 프로그램</h2>
-			<p class="intro">제한된 슬롯: 스웨덴 5개 + 글로벌 10개 미디어 조직</p>
-			
-			<div class="cards">
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>🇸🇪 스웨덴 미디어 조직</h3>
-					<p class="price"><strong>€5,000/월</strong> (50% 할인)</p>
-					<p class="duration">6개월 (2026년 4월 - 9월)</p>
-					<h4>기능:</h4>
-					<ul>
-						<li>전체 엔터프라이즈 API 액세스 (무제한 요청)</li>
-						<li>스웨덴 전용 위험 규칙 및 분석</li>
-						<li>스웨덴 미디어 CMS 시스템과 통합</li>
-						<li>전담 스웨덴어 구사 지원 엔지니어</li>
-						<li>조직 브랜딩이 적용된 화이트 레이블 대시보드</li>
-						<li>선거일 실시간 모니터링 대시보드</li>
-						<li>선거 후 분석 워크숍 (스톡홀름 기반)</li>
-					</ul>
-					<p class="target"><strong>대상:</strong> SVT, DN, SvD, Aftonbladet, Expressen</p>
-					<p class="slots"><strong>5개 슬롯 사용 가능</strong></p>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>🌍 글로벌 뉴스 조직</h3>
-					<p class="price"><strong>€7,500 총액</strong> (75% 할인)</p>
-					<p class="duration">3개월 (2026년 7월 - 9월)</p>
-					<h4>기능:</h4>
-					<ul>
-						<li>전체 엔터프라이즈 API 액세스</li>
-						<li>실시간 선거 모니터링</li>
-						<li>연정 예측 모델</li>
-						<li>전담 통합 지원 (40시간)</li>
-						<li>맞춤형 대시보드 구성</li>
-						<li>화이트 레이블 브랜딩 옵션</li>
-						<li>선거 후 분석 워크숍 (가상)</li>
-					</ul>
-					<p class="target"><strong>대상:</strong> The Economist, FT, Reuters, Bloomberg, AP</p>
-					<p class="slots"><strong>10개 슬롯 사용 가능</strong></p>
-				</div>
-			</div>
-			
-			<div class="pilot-application">
-				<h3>신청 방법</h3>
-				<ol>
-					<li><strong>연락처:</strong> <a href="mailto:pether@hack23.com">pether@hack23.com</a></li>
-					<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jamessorling/" target="_blank" rel="noopener">James Pether Sörling, CEO</a>와 연결</li>
-					<li><strong>포함 사항:</strong> 조직명, 팀 규모, 선거 취재 계획, API 사용 사례</li>
-				</ol>
-				<p><strong>신청 마감:</strong> 2026년 3월 (슬롯이 채워질 때까지 수시 접수)</p>
-				<p><strong>조기 신청 보너스:</strong> 2025년 12월 이전 신청 시 첫해 추가 10% 할인</p>
-			</div>
-		</section>
+<div class="coalition-stability">
+<h3>연정 안정성 평가</h3>
+<div class="stability-info">
+<p><strong>Majority Margin:</strong> 1 seat (narrow)</p>
+<p><strong>CIA 위험 Assessment:</strong> 12 MAJOR alerts, 5 CRITICAL alerts detected (last 90 days)</p>
+<p><strong>Fragility Indicators:</strong> Ideological tensions between SD and L, vulnerable to defections</p>
+<p><strong>Stability Score:</strong> 보통 위험 (72%)</p>
+</div>
+</div>
+</section>
 
-		<section id="media-use-cases">
-			<h2>미디어 조직 사용 사례</h2>
-			
-			<div class="cards">
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>SVT (스웨덴 공영 TV)</h3>
-					<p><strong>사용 사례:</strong> 자동화된 의원 성적표를 통한 공정한 종합 취재</p>
-					<ul>
-						<li>349명 모든 의원의 실시간 성과 대시보드</li>
-						<li>실시간 토론 자동 팩트체크</li>
-						<li>선거일 연정 안정성 측정기</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>Dagens Nyheter (DN)</h3>
-					<p><strong>사용 사례:</strong> 패턴 감지를 통한 탐사 저널리즘</p>
-					<ul>
-						<li>숨겨진 이해 충돌 이상 감지</li>
-						<li>역사적 투표 패턴 분석</li>
-						<li>탐사 보도를 위한 심층 데이터</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>The Economist</h3>
-					<p><strong>사용 사례:</strong> 글로벌 독자를 위한 비교 민주주의 분석</p>
-					<ul>
-						<li>북유럽 민주주의 사례 연구로서의 스웨덴 선거</li>
-						<li>국제 독자를 위한 연정 예측 모델</li>
-						<li>다른 의회와의 비교 분석</li>
-					</ul>
-				</div>
-				
-				<div class="card">
-					<div class="scanner-effect"></div>
-					<h3>Reuters</h3>
-					<p><strong>사용 사례:</strong> 24/7 자동 의회 모니터링</p>
-					<ul>
-						<li>속보를 위한 실시간 API 통합</li>
-						<li>중요한 정치적 사건에 대한 자동 경고</li>
-						<li>뉴스 기사의 맥락을 위한 역사 데이터</li>
-					</ul>
-				</div>
-			</div>
-		</section>
 
-		<section id="technical-specifications">
-			<h2>기술 사양</h2>
-			
-			<div class="tech-specs">
-				<div class="spec-category">
-					<h3>API 액세스</h3>
-					<ul>
-						<li><strong>아키텍처:</strong> RESTful API</li>
-						<li><strong>인증:</strong> OAuth 2.0</li>
-						<li><strong>속도 제한:</strong> 파일럿 참가자 무제한</li>
-						<li><strong>응답 시간:</strong> &lt;200ms (P95)</li>
-						<li><strong>가동 시간 SLA:</strong> 99.9%</li>
-						<li><strong>문서:</strong> OpenAPI/Swagger 사양</li>
-					</ul>
-				</div>
-				
-				<div class="spec-category">
-					<h3>대시보드 기능</h3>
-					<ul>
-						<li><strong>실시간 모니터링:</strong> 투표 결과, 투표율, 예측</li>
-						<li><strong>연정 안정성 측정기:</strong> 실시간 위험 점수 업데이트</li>
-						<li><strong>의원 성적표:</strong> 출석, 투표 패턴, 생산성</li>
-						<li><strong>맞춤형 경고:</strong> 이메일, SMS, Slack 통합</li>
-						<li><strong>내보내기 기능:</strong> PDF, Excel, PowerPoint</li>
-						<li><strong>화이트 레이블 브랜딩:</strong> 엔터프라이즈 티어 맞춤화</li>
-					</ul>
-				</div>
-				
-				<div class="spec-category">
-					<h3>데이터 범위</h3>
-					<ul>
-						<li><strong>의원:</strong> 의회(Riksdag)의 모든 349명</li>
-						<li><strong>역사 데이터:</strong> 1971-2024 (50년 이상)</li>
-						<li><strong>투표:</strong> 연간 10,000개 이상</li>
-						<li><strong>문서:</strong> 연간 20,000개 이상 처리</li>
-						<li><strong>업데이트 빈도:</strong> 투표는 실시간, 문서는 일일</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+<!-- 위험 Assessment & Anomaly Detection 대시보드 -->
 
-		<section id="final-cta">
-			<h2>인텔리전스 혁명에 참여하세요</h2>
-			<p>스웨덴 선거 2026: 체계적인 정치적 투명성의 힘을 증명하다</p>
-			
-			<div class="app-link">
-				<a href="mailto:pether@hack23.com?subject=Swedish%20Election%202026%20Pilot%20Application" class="btn" title="파일럿 프로그램 신청">지금 신청하기</a>
-				<a href="cia-docs_ko.html#business-case" title="전체 비즈니스 케이스 보기">전체 비즈니스 케이스 보기</a>
-				<a href="https://github.com/Hack23/cia" target="_blank" rel="noopener" title="GitHub에서 CIA 플랫폼 탐색">플랫폼 탐색 (GitHub)</a>
-			</div>
-			
-			<div class="resources">
-				<h3>리소스</h3>
-				<ul>
-					<li><a href="https://github.com/Hack23/cia/blob/master/BUSINESS_PRODUCT_DOCUMENT.md" target="_blank" rel="noopener">비즈니스 제품 문서</a></li>
-					<li><a href="https://github.com/Hack23/cia/blob/master/DATA_ANALYSIS_INTOP_OSINT.md" target="_blank" rel="noopener">OSINT 방법론</a></li>
-					<li><a href="https://github.com/Hack23/cia/blob/master/RISK_RULES_INTOP_OSINT.md" target="_blank" rel="noopener">45개 위험 규칙 문서</a></li>
-					<li><a href="cia-docs_ko.html">CIA 플랫폼 문서</a></li>
-					<li><a href="cia-features_ko.html">CIA 플랫폼 기능</a></li>
-					<li><a href="blog_ko.html">블로그: 정치적 투명성</a></li>
-				</ul>
-			</div>
-		</section>
-	</main>
-	
-	
 
 <section id="election-cycle-dashboard" class="dashboard-section">
-<h2>🗳️ Election Cycle Intelligence (1994-2034)</h2>
+<h2>🗳️ 선거 주기 인텔리전스 (1994-2034)</h2>
 <p>Comprehensive analysis of 40 years of Swedish Parliament election cycles with party performance evolution, decision-making effectiveness, predictive risk forecasting, and temporal voting patterns across 9+ election cycles.</p>
 
-<div class="dashboard-loader" style="display: none; text-align: center; padding: 2rem;">
-Loading data...
+<div class="dashboard-loader">
+데이터 로딩 중...
 </div>
 
-<div class="dashboard-error" style="display: none; color: #d32f2f; text-align: center; padding: 2rem;">
-Failed to load data
+<div class="dashboard-error">
+데이터 로드 실패
 </div>
 
-<div class="dashboard-filters" style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+<!-- Filters -->
+<div class="dashboard-filters">
 <div class="filter-group">
-<label for="election-cycle-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Election Cycle:</label>
-<select id="election-cycle-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
-<option value="all">All Cycles</option>
+<label for="election-cycle-filter">선거 주기:</label>
+<select id="election-cycle-filter">
+<option value="all">모든 주기</option>
 </select>
 </div>
 
 <div class="filter-group">
-<label for="election-party-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Party:</label>
-<select id="election-party-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
-<option value="all">All Parties</option>
+<label for="election-party-filter">정당:</label>
+<select id="election-party-filter">
+<option value="all">모든 정당</option>
 </select>
 </div>
 
 <div class="filter-group">
-<label for="election-metric-filter" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Metric:</label>
-<select id="election-metric-filter" style="padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background: var(--card-bg); color: var(--text-color); min-width: 150px;">
-<option value="performance">Performance</option>
-<option value="decisions">Decisions</option>
-<option value="risk">Risk</option>
-<option value="attendance">Attendance</option>
+<label for="election-metric-filter">지표:</label>
+<select id="election-metric-filter">
+<option value="performance">성과</option>
+<option value="decisions">결정</option>
+<option value="risk">위험</option>
+<option value="attendance">출석</option>
 </select>
 </div>
 </div>
 
-<div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin: 2rem 0;">
-<div class="chart-card" style="grid-column: span 2; background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Election Cycle Performance Timeline</h3>
-<div style="height: 400px; position: relative;">
+<!-- Visualizations Grid -->
+<div class="dashboard-grid">
+<!-- Chart 1: Election Cycle Timeline -->
+<div class="chart-card wide">
+<h3>선거 주기 성과 타임라인</h3>
+<div class="chart-container">
 <canvas id="cycle-timeline-chart"></canvas>
 </div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
+<p class="chart-description">
 Party performance evolution across 9 election cycles (1994-2034)
 </p>
 </div>
 
-<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Decision Effectiveness Heatmap</h3>
-<div id="decision-heatmap" style="min-height: 400px; overflow-x: auto;"></div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
+<!-- Chart 2: 의사결정 효과 Matrix -->
+<div class="chart-card">
+<h3>의사결정 효과 히트맵</h3>
+<div id="decision-heatmap" class="chart-container chart-container--scrollable"></div>
+<p class="chart-description">
 Legislative approval rates by party and cycle
 </p>
 </div>
 
-<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Predictive Risk Forecasting</h3>
-<div style="height: 400px; position: relative;">
+<!-- Chart 3: 위험 Forecasting -->
+<div class="chart-card">
+<h3>Predictive 위험 Forecasting</h3>
+<div class="chart-container">
 <canvas id="risk-forecast-chart"></canvas>
 </div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Risk trajectory and confidence levels (2022-2034)
+<p class="chart-description">
+위험 trajectory and confidence levels (2022-2034)
 </p>
 </div>
 
-<div class="chart-card" style="grid-column: span 2; background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
+<!-- Chart 4: Temporal Trends -->
+<div class="chart-card wide">
 <h3>Temporal Voting Patterns</h3>
-<div style="height: 400px; position: relative;">
+<div class="chart-container">
 <canvas id="temporal-trends-chart"></canvas>
 </div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Attendance, ballots, and volatility trends
+<p class="chart-description">
+출석, ballots, and volatility trends
 </p>
 </div>
 
-<div class="chart-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow);">
-<h3>Party Tier Distribution</h3>
-<div style="height: 400px; position: relative;">
+<!-- Chart 5: Party Comparative Analysis -->
+<div class="chart-card">
+<h3>정당 티어 분포</h3>
+<div class="chart-container">
 <canvas id="party-tier-chart"></canvas>
 </div>
-<p class="chart-description" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.875rem;">
-Performance tiers (ntile_party_tier: 1-4)
+<p class="chart-description">
+성과 tiers (ntile_party_tier: 1-4)
 </p>
 </div>
 </div>
 
-<p class="note" style="margin-top: 2rem; text-align: center; color: var(--text-secondary);">
-<strong>Data by CIA Platform</strong> | Updated from GitHub sample data | 24-hour caching
+<p class="note dashboard-attribution">
+<strong>Data by Citizen Intelligence Agency Platform</strong> | Updated from GitHub sample data | 24-hour caching
 </p>
 </section>
 
+
 <section id="party-dashboard" class="dashboard-container">
-<h2><span aria-hidden="true">🗳️</span> 정당 성과 및 효과</h2>
-<p>50년 이상의 CIA 플랫폼 데이터로 스웨덴 정당에 대한 포괄적인 분석. 8개 정당의 효과 추세, 연립 역학 및 모멘텀 지표를 추적합니다.</p>
+<h2><span aria-hidden="true">🗳️</span> 정당 성과 및 효과성</h2>
+<p>Comprehensive analysis of Swedish political parties using 50+ years of CIA platform data. Track effectiveness trends, coalition dynamics, and momentum indicators across 8 parties.</p>
 
 <div class="dashboard-grid">
 <div class="chart-card">
-<h3>효과 추세 (1990-2026)</h3>
-<p>시간 경과에 따른 입법 생산성, 투표 일관성 및 정책 영향을 보여주는 역사적 정당 효과 점수.</p>
+<h3>Effectiveness Trends (1990-2026)</h3>
+<p>Historical party effectiveness scores showing legislative productivity, voting consistency, and policy impact over time.</p>
 <canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
-<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
+<span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, 보통s, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
 </div>
 
 <div class="chart-card">
-<h3>정당 비교 (현재 기간)</h3>
-<p>현재 입법 기간에 대한 정당 성과 메트릭의 비교 분석.</p>
+<h3>Party Comparison (Current Period)</h3>
+<p>Comparative analysis of party performance metrics for the current legislative period.</p>
 <canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
 <span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
 </div>
 
 <div class="chart-card">
-<h3>연립 조정</h3>
-<p>연립 패턴 및 정당 간 협력 네트워크.</p>
-<div id="coalitionNetwork" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+<h3>Coalition Alignment</h3>
+<p>Coalition patterns and inter-party collaboration networks.</p>
+<div id="coalitionAlignmentChart" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
 <span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
 </div>
 
 <div class="chart-card">
-<h3>모멘텀 지표</h3>
-<p>백분위수 벤치마크(P50, P90)로 선거 궤적을 나타내는 정당 모멘텀 점수.</p>
+<h3>Momentum Indicators</h3>
+<p>Party momentum scores with percentile benchmarks (P50, P90) indicating electoral trajectory.</p>
 <canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
 <span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
 </div>
 </div>
 </section>
 
-
 <section id="committee-dashboard" class="dashboard-container">
-<h2>🏛️ Committee Performance & Network Analytics</h2>
+<h2>🏛️ 위원회 성과 및 네트워크 분석</h2>
 
 <div class="dashboard-grid">
+<!-- Network Diagram (Full Width) -->
 <div class="chart-card wide">
-<h3>Committee Network Diagram</h3>
+<h3>위원회 네트워크 다이어그램</h3>
 <p>Interactive visualization of committee relationships and productivity. Drag nodes to explore connections.</p>
 <div id="committeeNetwork" role="img" aria-label="Committee network connections diagram showing relationships between 15 Swedish Riksdag committees"></div>
 <table class="sr-only" id="committeeNetworkTable" aria-label="Committee network connections data table">
+<!-- Accessible fallback table populated by JavaScript -->
 </table>
 </div>
 
+<!-- Productivity Heat Map (Full Width) -->
 <div class="chart-card wide">
 <h3>Productivity Matrix (2020-2026)</h3>
 <p>Heat map showing committee productivity scores over time. Hover over cells for detailed information.</p>
 <div id="productivityMatrix" role="img" aria-label="Committee productivity matrix showing performance over time from 2020 to 2026"></div>
 <table class="sr-only" id="productivityMatrixTable" aria-label="Committee productivity matrix data table">
+<!-- Accessible fallback table populated by JavaScript -->
 </table>
 </div>
 
+<!-- 위원회 비교 -->
 <div class="chart-card">
-<h3>Committee Comparison</h3>
+<h3>위원회 비교</h3>
 <p>Compare productivity scores across all 15 committees.</p>
 <canvas id="committeeComparisonChart" role="img" aria-label="Bar chart comparing productivity scores across committees"></canvas>
 </div>
 
+<!-- 의사결정 효과 -->
 <div class="chart-card">
-<h3>Decision Effectiveness</h3>
+<h3>의사결정 효과</h3>
 <p>Track decision outcomes (approved, rejected, pending) over time.</p>
 <canvas id="decisionEffectivenessChart" role="img" aria-label="Stacked bar chart showing decision effectiveness over years"></canvas>
 </div>
 
+<!-- Seasonal Patterns (Full Width) -->
 <div class="chart-card wide">
 <h3>Seasonal Activity Patterns</h3>
 <p>Quarterly activity trends showing how committee work varies across the year.</p>
@@ -851,76 +610,76 @@ Performance tiers (ntile_party_tier: 1-4)
 </div>
 
 <div class="dashboard-attribution">
-<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="committeeLastUpdated">Loading...</span></small></p>
+<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="committeeLastUpdated">로딩 중...</span></small></p>
 </div>
 </section>
 
 <section id="coalition-dashboard" class="dashboard-container">
-<h2>🤝 연립 및 투표 패턴 분석</h2>
-<p>스웨덴 의회의 연립 역학, 정당 조정 및 투표 행동 패턴에 대한 대화형 분석.</p>
+<h2>🤝 연정 및 투표 패턴 분석</h2>
+<p>Interactive analysis of coalition dynamics, party alignments, and voting behavior patterns in the Swedish Riksdag.</p>
 
 <div class="dashboard-grid">
 <div class="chart-card wide">
-<h3>연립 네트워크 (대화형)</h3>
-<p>스웨덴 정당 간 연립 강도를 보여주는 힘 지향 그래프. 노드를 드래그하고 확대/축소하고 클릭하여 세부 정보를 확인하세요.</p>
-<div id="coalitionNetwork" role="img" aria-label="8개 스웨덴 정당 간의 관계를 보여주는 연립 네트워크 다이어그램"></div>
+<h3>연정 네트워크(인터랙티브)</h3>
+<p>Force-directed graph showing coalition strength between Swedish political parties. Drag nodes, zoom, and click for details.</p>
+<div id="coalitionNetwork" role="img" aria-label="Coalition network diagram showing relationships between 8 Swedish political parties"></div>
 <table class="sr-only" id="coalitionNetworkTable">
 <!-- Accessible table fallback populated by JavaScript -->
 </table>
 </div>
 
 <div class="chart-card">
-<h3>투표 이상 (최근 5년)</h3>
-<p>비정상적인 투표 패턴과 예상 행동에서 벗어난 정당 탈당을 강조하는 산점도.</p>
-<canvas id="votingAnomalyChart" role="img" aria-label="모든 정당의 편차 점수를 보여주는 투표 이상 산점도"></canvas>
+<h3>Voting Anomalies (Last 5 Years)</h3>
+<p>Scatter plot highlighting unusual voting patterns and party defections from expected behavior.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Voting anomaly scatter plot showing deviation scores for all parties"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>정당 조정 히트맵</h3>
-<p>역사적 투표 기록을 기반으로 정당 간 투표 합의 수준을 보여주는 매트릭스 시각화.</p>
-<div id="alignmentHeatMap" role="img" aria-label="모든 정당 쌍 간의 투표 합의 비율을 보여주는 정당 조정 히트맵"></div>
+<h3>정당 정렬 히트맵</h3>
+<p>Matrix visualization showing cross-party voting agreement levels based on historical voting records.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Party alignment heat map showing voting agreement percentages between all party pairs"></div>
 </div>
 
 <div class="chart-card">
-<h3>행동 패턴</h3>
-<p>모든 투표에서 당론 준수를 측정하는 정당 투표 일관성 점수.</p>
-<canvas id="behavioralPatternsChart" role="img" aria-label="모든 정당의 투표 일관성 비율을 보여주는 행동 패턴 막대 차트"></canvas>
+<h3>Behavioral Patterns</h3>
+<p>Party voting consistency scores measuring adherence to party line across all votes.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Behavioral patterns bar chart showing voting consistency percentages for all parties"></canvas>
 </div>
 
 <div class="chart-card wide">
-<h3>결정 트렌드 (1990-2026)</h3>
-<p>36년에 걸쳐 모든 정당의 연간 투표 활동 트렌드를 보여주는 역사적 타임라인.</p>
-<canvas id="decisionTrendsChart" role="img" aria-label="1990년부터 2026년까지 연간 투표량을 보여주는 결정 트렌드 타임라인"></canvas>
+<h3>의사결정 추세(1990-2026)</h3>
+<p>Historical timeline showing annual voting activity trends for all parties over 36 years.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Decision trends timeline showing annual voting volumes from 1990 to 2026"></canvas>
 </div>
 </div>
 
 <p class="note dashboard-attribution">
-<strong>데이터 출처:</strong> CIA 플랫폼 인텔리전스 내보내기로 구동되는 시각화. 스웨덴 의회의 공개 데이터 API에서 매주 업데이트되는 데이터.
+<strong>데이터 출처:</strong> Visualizations powered by CIA Platform intelligence exports. Data updates weekly from Swedish Parliament open data APIs.
 </p>
 </section>
 
 <section id="seasonal-patterns-dashboard">
-<h2>📅 계절별 활동 패턴 (2002-2025)</h2>
-<p class="subtitle">Z-점수 이상 탐지를 통한 분기별 분석</p>
+<h2>📅 Seasonal Activity Patterns (2002-2025)</h2>
+<p class="subtitle">Z-점수 이상 탐지를 포함한 분기별 분석</p>
 
-<!-- Filter -->
+<!-- Filters -->
 <div class="dashboard-filters">
-<select id="year-filter" aria-label="연도별 필터">
+<select id="seasonal-year-filter" aria-label="연도별 필터">
 <option value="all">모든 연도</option>
 </select>
 
-<select id="quarter-filter" aria-label="분기별 필터">
+<select id="seasonal-quarter-filter" aria-label="분기별 필터">
 <option value="all">모든 분기</option>
-<option value="1">Q1 - 겨울 회기</option>
-<option value="2">Q2 - 봄 회기</option>
-<option value="3">Q3 - 여름 휴회</option>
-<option value="4">Q4 - 가을 회기</option>
+<option value="1">Q1 - Winter Session</option>
+<option value="2">Q2 - Spring Session</option>
+<option value="3">Q3 - Summer Recess</option>
+<option value="4">Q4 - Autumn Session</option>
 </select>
 
-<select id="election-filter" aria-label="선거 상태별 필터">
-<option value="all">모두</option>
+<select id="seasonal-election-filter" aria-label="선거 상태별 필터">
+<option value="all">All</option>
 <option value="election">선거 연도</option>
-<option value="non-election">비선거 연도</option>
+<option value="non-election">Non-선거 연도</option>
 </select>
 
 <select id="classification-filter" aria-label="활동 분류별 필터">
@@ -930,80 +689,173 @@ Performance tiers (ntile_party_tier: 1-4)
 
 <!-- Visualizations -->
 <div class="dashboard-grid">
-<!-- Chart 1 -->
+<!-- Chart 1: Quarterly Activity Heat Map -->
 <div class="chart-card wide">
-<h3>분기별 활동 히트맵 (2002-2025)</h3>
+<h3>Quarterly Activity Heat Map (2002-2025)</h3>
 <div id="seasonal-heatmap"></div>
-<p class="chart-description">연도 및 분기별 투표량 (Z-점수 포함).</p>
+<p class="chart-description">Ballot volume by year and quarter with Z-score overlay. Red circles indicate statistical anomalies (|Z| ≥ 2.0).</p>
 </div>
 
-<!-- Chart 2 -->
+<!-- Chart 2: Z-Score Anomaly Timeline -->
 <div class="chart-card">
-<h3>Z-점수 이상 탐지</h3>
-<canvas id="zscore-timeline-chart" role="img" aria-label="Z-점수 이상 탐지"></canvas>
-<p class="chart-description">통계적 이상값 (|Z| ≥ 2.0) 빨간색 표시.</p>
+<h3>Z-Score Anomaly Detection</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Line chart showing Z-score timeline for ballot, document, and attendance metrics"></canvas>
+<p class="chart-description">Statistical outliers (|Z| ≥ 2.0) are flagged in red based on anomaly thresholds.</p>
 </div>
 
-<!-- Chart 3 -->
+<!-- Chart 3: Cross-Year Quarter Comparison -->
 <div class="chart-card">
-<h3>분기별 평균 활동 (모든 연도)</h3>
-<canvas id="quarter-comparison-chart" role="img" aria-label="분기별 평균 활동 (모든 연도)"></canvas>
-<p class="chart-description">Q1-Q4 기준선 및 표준편차 밴드.</p>
+<h3>Average Activity by Quarter (모든 연도)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Bar chart showing average ballots by quarter across all years"></canvas>
+<p class="chart-description">Q1–Q4 baselines across all years. Shows typical activity patterns across seasons.</p>
 </div>
 
-<!-- Chart 4 -->
+<!-- Chart 4: Activity Classification Distribution -->
 <div class="chart-card wide">
-<h3>계절 패턴 분류</h3>
-<canvas id="classification-chart" role="img" aria-label="계절 패턴 분류"></canvas>
-<p class="chart-description">정상, 상승, 감소, 이상 패턴의 분포.</p>
+<h3>Seasonal Pattern Classification</h3>
+<canvas id="classification-chart" role="img" aria-label="Stacked bar chart showing distribution of activity classifications by year"></canvas>
+<p class="chart-description">Distribution of NORMAL, ELEVATED, REDUCED, and ANOMALY patterns across years.</p>
 </div>
 
-<!-- Chart 5 -->
+<!-- Chart 5: QoQ Change Waterfall -->
 <div class="chart-card">
-<h3>분기별 변화</h3>
-<canvas id="qoq-change-chart" role="img" aria-label="분기별 변화"></canvas>
-<p class="chart-description">순차적 투표 변화 (% 및 절대값).</p>
+<h3>Quarter-over-Quarter Changes</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Bar chart showing quarter-over-quarter ballot changes as percentages"></canvas>
+<p class="chart-description">Sequential ballot changes (% and absolute). Green indicates increase, red indicates decrease.</p>
 </div>
 </div>
 
-<p class="data-attribution">📊 CIA 플랫폼의 데이터 | 매일 업데이트</p>
+<p class="data-attribution">📊 Data by CIA Platform | 매일 업데이트</p>
+</section>
+
+<section id="pre-election-dashboard" class="dashboard-section">
+<h2><span aria-hidden="true">🗳️</span> 선거 전 모니터링 대시보드 (Q4 2023-2025)</h2>
+<p class="dashboard-intro">Track Q4 parliamentary activity in the critical 12-15 months before the 2026 election. Compare current activity against historical baselines and election-year patterns.</p>
+
+<!-- Real-Time Status Cards -->
+<div class="status-cards">
+<div class="status-card" data-metric="ballots">
+<h3><span aria-hidden="true">📊</span> Ballot Activity</h3>
+<p class="current-value">16,750</p>
+<p class="baseline-comparison">+4.34% vs baseline</p>
+<span class="status-badge normal">NORMAL</span>
+</div>
+
+<div class="status-card" data-metric="documents">
+<h3><span aria-hidden="true">📄</span> Document Production</h3>
+<p class="current-value">3,451</p>
+<p class="baseline-comparison">+25.55% vs baseline</p>
+<span class="status-badge normal">NORMAL</span>
+</div>
+
+<div class="status-card" data-metric="attendance">
+<h3><span aria-hidden="true">✅</span> 출석 Rate</h3>
+<p class="current-value">85.75%</p>
+<p class="baseline-comparison">+0.75% vs baseline</p>
+<span class="status-badge normal">STABLE</span>
+</div>
+
+<div class="status-card" data-metric="party-performance">
+<h3><span aria-hidden="true">🎯</span> 정당 승률</h3>
+<p class="current-value">59.72%</p>
+<p class="baseline-comparison">+3.55% YoY</p>
+<span class="status-badge improving">IMPROVING</span>
+</div>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Q4 Activity Timeline (2023-2025) -->
+<div class="chart-card wide">
+<h3>Q4 Activity Timeline (2023-2025)</h3>
+<div class="chart-container">
+<canvas id="q4-timeline-chart" aria-label="Q4 Activity Timeline showing ballots, documents, and attendance trends from 2023 to 2025"></canvas>
+</div>
+<p class="chart-description">Ballots, documents, attendance trends with baseline overlay</p>
+</div>
+
+<!-- Chart 2: Election Year Comparison -->
+<div class="chart-card">
+<h3>선거/비선거 Q4 패턴 비교</h3>
+<div class="chart-container">
+<canvas id="election-comparison-chart" aria-label="Comparison of Q4 ballot activity in election years versus non-election years from 2002 to 2025"></canvas>
+</div>
+<p class="chart-description">Historical Q4 activity (2002-2025): Election years vs. Non-election years</p>
+</div>
+
+<!-- Chart 3: Baseline Deviation Radar -->
+<div class="chart-card">
+<h3>Deviation from Baseline (2025 Q4)</h3>
+<div class="chart-container">
+<canvas id="deviation-radar-chart" aria-label="Radar chart showing 2025 Q4 metrics compared to historical baselines"></canvas>
+</div>
+<p class="chart-description">Multi-metric deviation analysis</p>
+</div>
+
+<!-- Chart 4: Party 성과 Shifts -->
+<div class="chart-card wide">
+<h3>Party 성과 Trends (2023-2025)</h3>
+<div class="chart-container">
+<canvas id="party-trends-chart" aria-label="Line chart showing party win rate, absence rate, and document production from 2023 to 2025"></canvas>
+</div>
+<p class="chart-description">Win rate, absence rate, document production by year</p>
+</div>
+
+<!-- Chart 5: YoY Change Waterfall -->
+<div class="chart-card">
+<h3>Year-over-Year Changes</h3>
+<div class="chart-container">
+<canvas id="yoy-waterfall-chart" aria-label="Waterfall chart showing year-over-year ballot activity changes from 2023 to 2025"></canvas>
+</div>
+<p class="chart-description">Ballot activity changes: 2023 → 2024 → 2025</p>
+</div>
+
+<!-- Chart 6: Early Warning Indicators -->
+<div class="chart-card">
+<h3>Early Warning Indicator Matrix</h3>
+<div id="warning-matrix" role="region" aria-label="Early warning indicator matrix showing status of 4 monitored metrics: ballots, documents, attendance, and year-over-year change"></div>
+<p class="chart-description">Real-time status of 4 monitored metrics (ballots, documents, attendance, YoY change)</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Data by CIA Platform | 매일 업데이트</p>
 </section>
 
 <section id="anomaly-detection-dashboard">
-<h2>🚨 Anomaly Detection & Early Warning System</h2>
+<h2>🚨 이상 탐지 및 조기 경보 시스템</h2>
 <p>Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis</p>
 
 <!-- Alert Banner (for active anomalies) -->
 <div id="anomaly-alert-banner" class="alert-banner critical hidden">
 <span class="alert-icon">🔴</span>
-<p><strong id="alert-prefix">CRITICAL ANOMALY DETECTED:</strong> <span id="alert-message"></span></p>
-<button class="dismiss-alert">Dismiss</button>
+<p><strong id="alert-prefix">치명적 이상 징후 감지:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">닫기</button>
 </div>
 
 <!-- Filters -->
 <div class="dashboard-filters">
-<select id="severity-filter" aria-label="Filter by severity">
-<option value="all">All Severities</option>
-<option value="CRITICAL">🔴 Critical</option>
-<option value="HIGH">🟠 High</option>
-<option value="MODERATE">🟡 Moderate</option>
-<option value="LOW">🟢 Low</option>
+<select id="anomaly-severity-filter" aria-label="Filter by severity">
+<option value="all">모든 심각도</option>
+<option value="CRITICAL">🔴 치명적</option>
+<option value="HIGH">🟠 높음</option>
+<option value="MODERATE">🟡 보통</option>
+<option value="LOW">🟢 낮음</option>
 </select>
-<select id="type-filter" aria-label="Filter by anomaly type">
-<option value="all">All Types</option>
-<option value="BALLOT_ANOMALY">Ballot Anomaly</option>
-<option value="DOCUMENT_ANOMALY">Document Anomaly</option>
-<option value="ATTENDANCE_ANOMALY">Attendance Anomaly</option>
-<option value="NO_ANOMALY">No Anomaly</option>
+<select id="anomaly-type-filter" aria-label="Filter by anomaly type">
+<option value="all">모든 유형</option>
+<option value="BALLOT_ANOMALY">표결 이상</option>
+<option value="DOCUMENT_ANOMALY">문서 이상</option>
+<option value="ATTENDANCE_ANOMALY">출석 Anomaly</option>
+<option value="NO_ANOMALY">이상 없음</option>
 </select>
-<select id="direction-filter" aria-label="Filter by direction">
-<option value="all">All Directions</option>
-<option value="UNUSUALLY_HIGH">Unusually High</option>
-<option value="UNUSUALLY_LOW">Unusually Low</option>
-<option value="WITHIN_NORMAL_RANGE">Within Normal Range</option>
+<select id="anomaly-direction-filter" aria-label="Filter by direction">
+<option value="all">모든 방향</option>
+<option value="UNUSUALLY_HIGH">Unusually 높음</option>
+<option value="UNUSUALLY_LOW">Unusually 낮음</option>
+<option value="WITHIN_NORMAL_RANGE">정상 범위</option>
 </select>
-<select id="year-filter" aria-label="Filter by year">
-<option value="all">All Years</option>
+<select id="anomaly-year-filter" aria-label="연도별 필터">
+<option value="all">모든 연도</option>
 </select>
 </div>
 
@@ -1011,7 +863,7 @@ Performance tiers (ntile_party_tier: 1-4)
 <div class="dashboard-grid">
 <!-- Chart 1: Anomaly Timeline -->
 <div class="chart-card wide">
-<h3>Anomaly Timeline (2002-2026)</h3>
+<h3>이상 타임라인(2002-2026)</h3>
 <canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
 <p class="chart-description">Chronological view of detected anomalies with severity coding</p>
 </div>
@@ -1025,7 +877,7 @@ Performance tiers (ntile_party_tier: 1-4)
 
 <!-- Chart 3: Anomaly Type Breakdown -->
 <div class="chart-card">
-<h3>Anomaly Type Distribution</h3>
+<h3>이상 유형 분포</h3>
 <canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
 <p class="chart-description">Ballot vs. Document anomaly distribution</p>
 </div>
@@ -1039,7 +891,7 @@ Performance tiers (ntile_party_tier: 1-4)
 
 <!-- Chart 5: Quarterly Anomaly Frequency -->
 <div class="chart-card">
-<h3>Anomaly Frequency by Quarter</h3>
+<h3>분기별 이상 빈도</h3>
 <canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
 <p class="chart-description">Q1-Q4 anomaly counts across all years</p>
 </div>
@@ -1053,82 +905,329 @@ Performance tiers (ntile_party_tier: 1-4)
 </div>
 </section>
 
-
-
-<section id="pre-election-dashboard" class="dashboard-section">
-<h2><span aria-hidden="true">🗳️</span> Pre-Election Monitoring Dashboard (Q4 2023-2025)</h2>
-<p class="dashboard-intro">Track Q4 parliamentary activity in the critical 12-15 months before the 2026 election. Compare current activity against historical baselines and election-year patterns.</p>
-
-<div class="dashboard-grid">
-<div class="chart-card wide">
-<h3>Pre-Election Activity Timeline</h3>
-<p>Monthly parliamentary activity compared to historical averages.</p>
-<canvas id="preElectionTimelineChart" role="img" aria-label="Pre-election activity timeline chart"></canvas>
-</div>
-
-<div class="chart-card">
-<h3>Party Readiness Indicators</h3>
-<p>Assessment of party preparation for the 2026 election based on legislative activity.</p>
-<canvas id="partyReadinessChart" role="img" aria-label="Party readiness indicators chart"></canvas>
-</div>
-
-<div class="chart-card">
-<h3>Key Metrics</h3>
-<div id="preElectionMetrics" role="region" aria-label="Pre-election key metrics"></div>
-</div>
-</div>
-
-<p class="data-attribution">📊 Data by CIA Platform | Updated Daily</p>
-</section>
-
 <section id="ministry-dashboard" class="dashboard-container">
-<h2>🎖️ 정부 장관 위험 및 영향력</h2>
+<h2>🎖️ Government Minister 위험 & Influence</h2>
 
 <div class="dashboard-grid">
 <div class="chart-card wide">
-<h3>부처 위험 히트맵</h3>
-<div id="ministryRiskHeatMap" role="img" aria-label="부처 위험 히트맵"></div>
+<h3>Ministry 위험 Heat Map</h3>
+<div id="ministry위험HeatMap" role="img" aria-label="Ministry 위험 Heat Map showing risk levels across government departments"></div>
 </div>
 
 <div class="chart-card">
-<h3>가장 영향력 있는 10명의 장관</h3>
-<canvas id="ministerInfluenceChart" role="img" aria-label="가장 영향력 있는 10명의 장관"></canvas>
+<h3>Top 10 Most Influential Ministers</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Bar chart showing top 10 most influential ministers"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>부처 생산성 매트릭스</h3>
-<canvas id="ministryProductivityChart" role="img" aria-label="부처 생산성 매트릭스"></canvas>
+<h3>Ministry Productivity Matrix</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Bar chart comparing ministry productivity across quarters"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>결정 영향 트렌드</h3>
-<canvas id="decisionImpactChart" role="img" aria-label="결정 영향 트렌드"></canvas>
+<h3>Decision Impact Trends</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Line chart showing decision impact trends over time"></canvas>
 </div>
 </div>
 
 <!-- Alternative data table for screen readers -->
 <details class="sr-only-alternative">
-<summary>테이블로 데이터 보기</summary>
+<summary>접근 가능한 표로 데이터 보기</summary>
 <table id="ministryDataTable">
 <!-- Populated by JavaScript -->
 </table>
 </details>
 </section>
 
-<footer>
-		<p>&copy; 2008-2026 <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (등록번호 5595347807) | 예테보리, 스웨덴</p>
-		<p>설립자 겸 CEO: <a href="https://www.linkedin.com/in/jamessorling/" target="_blank" rel="noopener noreferrer">James Pether Sörling</a>, CISSP, CISM</p>
-		<p>
-			<a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a> |
-			<a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">회사 LinkedIn</a> |
-			<a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer" title="공개 ISMS">공개 ISMS</a> |
-			<a href="mailto:info@hack23.com">문의하기</a>
-		</p>
-	</footer>
+<section id="risk-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">⚠️</span> 위험 Assessment &amp; Anomaly Detection</h2>
+<p class="dashboard-description">Comprehensive intelligence analysis using 45 risk rules across 349 MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes 2494 politicians (1971-2024).</p>
 
+<div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
+  <!-- Alerts populated by JavaScript -->
+</div>
 
+<div class="dashboard-grid">
+  <div class="chart-card full-width">
+    <h3>위험 Level Heat Map (45 Rules × 349 MPs)</h3>
+    <p class="chart-description">Interactive heat map showing risk scores for each MP across all 45 transparency rules. Click cells for details.</p>
+    <div class="controls">
+      <label class="control-label">
+        <input type="checkbox" id="filter높음위험" aria-label="고위험만 표시 MPs (score ≥6.0)" aria-describedby="filter높음위험Desc">
+        <span id="filter높음위험Desc">고위험만 표시 (≥6.0)</span>
+      </label>
+      <label class="control-label">
+        <span>규칙별 필터:</span>
+        <select id="riskRuleFilter" aria-label="위험 규칙별 필터">
+          <option value="">모든 규칙</option>
+        </select>
+      </label>
+      <button id="resetZoom" class="btn btn-sm" aria-label="Reset zoom">줌 초기화</button>
+    </div>
+    <div id="riskHeatMap" role="img" aria-label="위험 assessment heat map showing 45 rules by 349 MPs"></div>
+    <div id="heatMapLegend" class="legend" role="img" aria-label="Heat map color legend"></div>
+  </div>
+  
+  <div class="chart-card">
+    <h3>위험 Distribution</h3>
+    <p class="chart-description">Distribution of risk scores across all MPs</p>
+    <canvas id="riskDistributionChart" role="img" aria-label="Bar chart showing risk score distribution"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Anomaly Detection (P90/P99)</h3>
+    <p class="chart-description">Voting anomalies with statistical thresholds at 90th and 99th percentiles</p>
+    <canvas id="anomalyDetectionChart" role="img" aria-label="Scatter plot showing voting anomalies"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Crisis Resilience Indicators</h3>
+    <p class="chart-description">Resilience scores by party and government stability metrics</p>
+    <canvas id="crisisResilienceChart" role="img" aria-label="Radar chart showing crisis resilience indicators"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>위험 Evolution Timeline (2020-2026)</h3>
+    <p class="chart-description">Historical trends of risk categories over time</p>
+    <canvas id="riskEvolutionChart" role="img" aria-label="Line chart showing risk evolution over time"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Top 10 Ethics Concerns</h3>
+    <p class="chart-description">MPs with highest ethics risk scores</p>
+    <ol id="ethicsConcernsList" aria-label="Top 10 ethics concerns list">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Electoral 위험 (MPs at 위험)</h3>
+    <p class="chart-description">MPs with highest electoral vulnerability for 2026 election</p>
+    <ol id="electoral위험List" aria-label="Top 10 MPs at electoral risk">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </div>
+</div>
 
+<div class="data-attribution">
+  <p><strong>데이터 출처:</strong> <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency</a> | <strong>마지막 업데이트:</strong> <span id="lastUpdated">로딩 중...</span></p>
+  <p class="methodology-note"><em>위험 scores calculated using 45 transparency rules across 4 domains (politician, party, committee, ministry). Anomaly detection uses P90 (warning) and P99 (critical) statistical thresholds.</em></p>
+</div>
+</section>
 
+  <section id="intelligence-capabilities">
+<h2>Comprehensive Intelligence Platform</h2>
+<p>CIA delivers systematic political transparency through 45 risk rules across 4 domains and 5 analytical frameworks.</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>🔍 Real-Time Monitoring</h3>
+<ul>
+<li>349 MPs tracked (<span data-stat-id="stat-historical-persons">—</span> historical) automatically</li>
+<li><span data-stat-id="stat-total-votes">—</span> individual ballot records analyzed</li>
+<li><span data-stat-id="stat-total-documents">—</span> documents processed</li>
+<li><span data-stat-id="stat-member-proposals">—</span> member proposals tracked</li>
+<li><span data-stat-id="stat-government-proposals">—</span> government proposals monitored</li>
+<li>Committee work quantified (<span data-stat-id="stat-committee-documents">—</span> documents)</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>📊 Coalition Prediction</h3>
+<ul>
+<li>4 election scenarios modeled</li>
+<li>Historical pattern analysis (1971-2024)</li>
+<li>Party discipline tracking</li>
+<li>Defection probability estimation</li>
+<li>Government formation simulation</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>✅ Fact-Checking Infrastructure</h3>
+<ul>
+<li>Politician claims vs. voting records</li>
+<li>Party platform consistency analysis</li>
+<li>Campaign promise tracking</li>
+<li>Real-time debate verification</li>
+<li>Historical accountability metrics</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>⚠️ 위험 Assessment</h3>
+<ul>
+<li>45 behavioral risk rules active</li>
+<li>MINOR/MAJOR/CRITICAL severity levels</li>
+<li>Automated alert system</li>
+<li>Trend analysis for context</li>
+<li>Transparent methodology</li>
+</ul>
+</div>
+</div>
+
+<div class="risk-rules-breakdown">
+<h3>45 위험 Rules Across 4 Domains</h3>
+<ul>
+<li><strong>Politician-Level (20 rules):</strong> 출석, voting consistency, role conflicts, productivity</li>
+<li><strong>Party-Level (12 rules):</strong> Coalition discipline, ideological drift, internal conflicts</li>
+<li><strong>Committee-Level (8 rules):</strong> Legislative productivity, partisan deadlock, expert testimony</li>
+<li><strong>Ministry-Level (5 rules):</strong> Budget overruns, policy failures, accountability lapses</li>
+</ul>
+
+<h3>5 Analytical Frameworks</h3>
+<ul>
+<li><strong>Temporal Analysis:</strong> Trend detection across time periods</li>
+<li><strong>Comparative Analysis:</strong> Cross-party/MP benchmarking</li>
+<li><strong>Pattern Recognition:</strong> Behavioral anomaly detection</li>
+<li><strong>Predictive Intelligence:</strong> Election outcome forecasting, coalition modeling</li>
+<li><strong>Network Analysis:</strong> Influence mapping, collaboration patterns</li>
+</ul>
+</div>
+</section>
+
+<section id="data-sources">
+<h2><span aria-hidden="true">📊</span> Citizen Intelligence Agency Data Products</h2>
+<p>Riksdagsmonitor is powered by the <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency (CIA)</a> — an open-source OSINT platform that processes Swedish parliamentary data into actionable intelligence products.</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">📈</span> 위험 Assessment Reports</h3>
+<p>45 risk rules across 4 domains analyze politician behavior, party discipline, committee effectiveness, and ministry accountability in real-time.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">📅</span> Seasonal Activity Analysis</h3>
+<p>Z-score anomaly detection identifies unusual parliamentary activity patterns by quarter, with historical baselines from 2002 to present.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">🎯</span> 선거 주기 인텔리전스</h3>
+<p>성과 tracking across 9+ election cycles (1994–2034) with predictive risk forecasting, party tier analysis, and coalition probability modeling.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">🔗</span> Open Data Integration</h3>
+<p>All intelligence products are derived from official open data sources. Visualizations update automatically via nightly data pipelines with 24-hour caching.</p>
+</div>
+</div>
+
+<p class="note">All data products available through the Citizen Intelligence Agency platform with real-time updates from Swedish Parliament open data APIs.</p>
+</section>
+
+  
+<section id="data-integration">
+<h2><span aria-hidden="true">🔗</span> Data Sources &amp; Integration</h2>
+<p>Riksdagsmonitor integrates multiple authoritative Swedish and international data sources:</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Swedish Parliament (Riksdagen)</h3>
+<p>Official parliamentary data including votes, documents, committee work, and MP information.</p>
+<a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">data.riksdagen.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Swedish Election Authority</h3>
+<p>Historical election results, voter turnout, and electoral statistics for all national elections.</p>
+<a href="https://www.val.se/" target="_blank" rel="noopener noreferrer">val.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Financial Management Authority (ESV)</h3>
+<p>Government budget data, public spending analysis, and financial accountability reporting.</p>
+<a href="https://www.esv.se/psidata/" target="_blank" rel="noopener noreferrer">esv.se/psidata</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>World Bank Open Data</h3>
+<p>Country-level economic and development indicators for international comparative analysis.</p>
+<a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">data.worldbank.org</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Riksdagsmonitor 소개</h3>
+      <p>Live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities.</p>
+      <ul class="footer-stats">
+        <li><strong>349 MPs</strong> tracked</li>
+        <li><strong>45 risk rules</strong> active</li>
+        <li><strong>14 languages</strong> supported</li>
+        <li><strong>50+ years</strong> historical data</li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>빠른 링크</h3>
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="news/index.html">뉴스</a></li>
+        <li><a href="dashboard/index.html">대시보드</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub 저장소</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Hack23 AB 제작</h3>
+      <p>Swedish cybersecurity consultancy specializing in political transparency and open-source intelligence.</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">회사 LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Public ISMS</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">보안 정책</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">개인정보 보호정책</a></li>
+        <li><a href="mailto:info@hack23.com">문의하기</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>언어</h3>
+      <div class="language-grid">
+        <a href="index.html" title="English" aria-label="Switch to English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="index_sv.html" title="Svenska" aria-label="Byt till Svenska"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="index_da.html" title="Dansk" aria-label="Skift til Dansk"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="index_no.html" title="Norsk" aria-label="Bytt til Norsk"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="index_fi.html" title="Suomi" aria-label="Vaihda Suomeksi"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="index_de.html" title="Deutsch" aria-label="Wechseln zu Deutsch"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="index_fr.html" title="Français" aria-label="Passer au Français"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="index_es.html" title="Español" aria-label="Cambiar a Español"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="index_nl.html" title="Nederlands" aria-label="Schakel naar Nederlands"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="index_ar.html" title="العربية" aria-label="التبديل إلى العربية"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="index_he.html" title="עברית" aria-label="עבור לעברית"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="index_ja.html" title="日本語" aria-label="日本語に切り替え"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="index_ko.html" title="한국어" aria-label="한국어로 전환"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="index_zh.html" title="中文" aria-label="切换到中文"><span aria-hidden="true">🇨🇳</span> ZH</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | 스웨덴 예테보리</p>
+  </div>
+</footer>
+
+<!-- 맨 위로 버튼 -->
+<button id="back-to-top" class="back-to-top" aria-label="맨 위로" title="맨 위로">
+  <span aria-hidden="true">↑</span>
+</button>
 
 <!-- D3.js v7.9.0 for heat map visualization (hosted locally on CloudFront) -->
 <script src="js/lib/d3.7.9.0.min.js"></script>
@@ -1145,7 +1244,18 @@ Performance tiers (ntile_party_tier: 1-4)
 <!-- Papa Parse v5.5.3 for CSV parsing (hosted locally on CloudFront) -->
 <script src="js/lib/papaparse.5.5.3.min.js"></script>
 
+<script src="js/risk-dashboard.js"></script>
+
+<script src="js/back-to-top.js"></script>
+
+
+<script src="js/stats-loader.js"></script>
+
 <script type="module" src="scripts/coalition-dashboard.js" defer></script>
+
+<script type="module" src="scripts/committees-dashboard.js"></script>
+
+<script type="module" src="js/election-cycle-dashboard.js"></script>
 
 <script src="js/party-dashboard.js"></script>
 
@@ -1156,12 +1266,5 @@ Performance tiers (ntile_party_tier: 1-4)
 <script src="js/pre-election-dashboard.js"></script>
 
 <script src="js/anomaly-detection-dashboard.js"></script>
-<script src="js/stats-loader.js"></script>
-
-<script type="module" src="scripts/committees-dashboard.js"></script>
-
-<script type="module" src="js/election-cycle-dashboard.js"></script>
-
-
 </body>
 </html>
