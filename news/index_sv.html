@@ -286,6 +286,12 @@
   </div>
   
   <script>
+    // Language flags mapping (shared with server-side)
+    const LANGUAGE_FLAGS = {"en":"🇬🇧","sv":"🇸🇪","da":"🇩🇰","no":"🇳🇴","fi":"🇫🇮","de":"🇩🇪","fr":"🇫🇷","es":"🇪🇸","nl":"🇳🇱","ar":"🇸🇦","he":"🇮🇱","ja":"🇯🇵","ko":"🇰🇷","zh":"🇨🇳"};
+    
+    // Available in translation (for current language)
+    const AVAILABLE_IN_TEXT = 'Tillgänglig på';
+    
     // Dynamic articles array - generated from news/ directory
     const articles = [
   {
@@ -293,6 +299,11 @@
     "date": "2026-02-14T06:00:00Z",
     "type": "prospective",
     "slug": "2026-02-14-week-ahead-feb-14-20-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Riksdagen återvänder med utrikespolitisk debatt, statsministerns frågestund och rapport från Finanspolitiska rådet. En avgörande vecka för Sveriges geopolitiska och ekonomiska inriktning.",
     "topics": [
       "parliament"
@@ -309,6 +320,11 @@
     "date": "2026-02-14",
     "type": "analysis",
     "slug": "2026-02-committee-reports-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Analys av parlamentarisk aktivitet 5-6 februari 2026",
     "topics": [],
     "tags": []
@@ -318,6 +334,11 @@
     "date": "2026-02-14",
     "type": "retrospective",
     "slug": "2026-02-parliament-agenda-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Åtta stora propositioner första veckan, säkerhetsförvaring möter opposition, och koalitionen rustar för valrörelsen.",
     "topics": [],
     "tags": []
@@ -327,6 +348,23 @@
     "date": "2026-02-13T18:00:00.000Z",
     "type": "retrospective",
     "slug": "2026-02-13-evening-analysis-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "ar",
+      "he",
+      "ja",
+      "ko",
+      "zh"
+    ],
     "excerpt": "Med 2,308 regelöverträdelser flaggade bland 2,494 bevakade politiker och 109,259 behandlade dokument avslöjar riksdagssessionen en regering som kämpar med att omsätta koalitionsaritmetik till lagstift",
     "topics": [
       "parliament",
@@ -344,6 +382,11 @@
     "date": "2026-02-10T13:00:00Z",
     "type": "retrospective",
     "slug": "2026-02-10-biodiversity-citizenship-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Dubbla policybesked signalerar proaktiv regeringsagenda för miljö och integration.",
     "topics": [
       "environment"
@@ -359,6 +402,11 @@
     "date": "2026-02-10T09:00:00Z",
     "type": "analysis",
     "slug": "2026-02-10-pm-eu-summit-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Sällsynt öppet EU-nämndsmöte när statsminister Kristersson förbereder informellt toppmöte medan regeringen möter oppositionens press.",
     "topics": [
       "eu"
@@ -374,6 +422,11 @@
     "date": "2026-02-10T09:00:00Z",
     "type": "prospective",
     "slug": "2026-02-10-week-ahead-feb-10-17-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Kritisk vecka när statsministern möter Brysseltopp medan riksdagen intensifierar tillsynen över medborgarskap, brottslighet och miljö.",
     "topics": [
       "eu",
@@ -390,6 +443,11 @@
     "date": "2026-02-07T07:00:00+00:00",
     "type": "analysis",
     "slug": "2026-02-government-propositions-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Sex propositioner avslöjar koalitionens prioriteringar: finansiell stabilitet, grön omställning och säkerhetsskärpningar.",
     "topics": [
       "parliament"
@@ -403,6 +461,11 @@
     "date": "2026-02-07T00:00:00Z",
     "type": "analysis",
     "slug": "2026-02-opposition-motions-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Tio färska oppositionsmotioner avslöjar vårens parlamentariska stridslinjer - från livstidsförvaring till äldreomsorg och konstitutionella rättigheter.",
     "topics": [
       "parliament"
@@ -418,6 +481,11 @@
     "date": "2026-02-07T00:00:00+01:00",
     "type": "prospective",
     "slug": "2026-02-week-ahead-sv.html",
+    "lang": "sv",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Kritisk vecka för svensk EU-politik: Försvarsminister och statsminister inför råd i Bryssel medan oppositionen intensifierar granskningen av regeringen.",
     "topics": [
       "eu",
@@ -446,21 +514,40 @@
       
       noResults.style.display = 'none';
       
-      grid.innerHTML = articlesToRender.map(article => `
+      grid.innerHTML = articlesToRender.map(article => {
+        // Generate language badge for the article using shared LANGUAGE_FLAGS
+        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
+        const langBadge = `<span class="language-badge" aria-label="${article.lang} language"><span aria-hidden="true">${flag}</span> ${article.lang.toUpperCase()}</span>`;
+        
+        // Generate available languages display if multiple languages exist
+        const availableLangs = article.availableLanguages || [article.lang];
+        let availableDisplay = '';
+        if (availableLangs.length > 1) {
+          const availableBadges = availableLangs.map(l => {
+            const f = LANGUAGE_FLAGS[l] || '🌐';
+            return `<span class="lang-badge-sm"><span aria-hidden="true">${f}</span> ${l.toUpperCase()}</span>`;
+          }).join(' ');
+          availableDisplay = `<p class="available-languages"><strong>${AVAILABLE_IN_TEXT}:</strong> ${availableBadges}</p>`;
+        }
+        
+        return `
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${localizeType(article.type)}</span>
+            ${langBadge}
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
           </h2>
           <p class="article-excerpt">${article.excerpt}</p>
+          ${availableDisplay}
           <div class="article-tags">
             ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
           </div>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
     
     const typeLabels = {"prospective":"Framåtblickande","retrospective":"Återblickande","analysis":"Analys","breaking":"Senaste nytt"};

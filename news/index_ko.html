@@ -178,6 +178,12 @@
   </div>
   
   <script>
+    // Language flags mapping (shared with server-side)
+    const LANGUAGE_FLAGS = {"en":"🇬🇧","sv":"🇸🇪","da":"🇩🇰","no":"🇳🇴","fi":"🇫🇮","de":"🇩🇪","fr":"🇫🇷","es":"🇪🇸","nl":"🇳🇱","ar":"🇸🇦","he":"🇮🇱","ja":"🇯🇵","ko":"🇰🇷","zh":"🇨🇳"};
+    
+    // Available in translation (for current language)
+    const AVAILABLE_IN_TEXT = '사용 가능 언어';
+    
     // Dynamic articles array - generated from news/ directory
     const articles = [
   {
@@ -185,6 +191,23 @@
     "date": "2026-02-13T18:00:00.000Z",
     "type": "retrospective",
     "slug": "2026-02-13-evening-analysis-ko.html",
+    "lang": "ko",
+    "availableLanguages": [
+      "en",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "ar",
+      "he",
+      "ja",
+      "ko",
+      "zh"
+    ],
     "excerpt": "2,494명의 정치인을 추적하며 2,308건의 규정 위반이 감지된 가운데, 의회 회기는 연립 산술을 입법 추진력으로 전환하는 데 고군분투하는 정부를 드러난다",
     "topics": [
       "parliament",
@@ -213,21 +236,40 @@
       
       noResults.style.display = 'none';
       
-      grid.innerHTML = articlesToRender.map(article => `
+      grid.innerHTML = articlesToRender.map(article => {
+        // Generate language badge for the article using shared LANGUAGE_FLAGS
+        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
+        const langBadge = `<span class="language-badge" aria-label="${article.lang} language"><span aria-hidden="true">${flag}</span> ${article.lang.toUpperCase()}</span>`;
+        
+        // Generate available languages display if multiple languages exist
+        const availableLangs = article.availableLanguages || [article.lang];
+        let availableDisplay = '';
+        if (availableLangs.length > 1) {
+          const availableBadges = availableLangs.map(l => {
+            const f = LANGUAGE_FLAGS[l] || '🌐';
+            return `<span class="lang-badge-sm"><span aria-hidden="true">${f}</span> ${l.toUpperCase()}</span>`;
+          }).join(' ');
+          availableDisplay = `<p class="available-languages"><strong>${AVAILABLE_IN_TEXT}:</strong> ${availableBadges}</p>`;
+        }
+        
+        return `
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${localizeType(article.type)}</span>
+            ${langBadge}
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
           </h2>
           <p class="article-excerpt">${article.excerpt}</p>
+          ${availableDisplay}
           <div class="article-tags">
             ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
           </div>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
     
     const typeLabels = {"prospective":"전망","retrospective":"회고","analysis":"분석","breaking":"속보"};
