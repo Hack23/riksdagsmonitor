@@ -107,9 +107,10 @@ function extractStatistics(data) {
       last_updated: null,
       extraction_time: null,
       generated_at: new Date().toISOString(),
-      version: '1.0.0'
+      version: '1.2.0'
     },
     counts: {
+      // Core entity counts (from tables)
       total_persons: 0,
       total_votes: 0,
       total_documents: 0,
@@ -117,7 +118,27 @@ function extractStatistics(data) {
       total_rule_violations: 0,
       total_against_proposals: 0,
       total_committee_proposals: 0,
-      total_document_activities: 0
+      total_document_activities: 0,
+      total_political_parties: 0,
+      total_assignments: 0,
+      total_document_attachments: 0,
+      // Riksdag entity counts (from views)
+      total_riksdag_parties: 0,
+      total_governments: 0,
+      total_government_proposals: 0,
+      total_government_roles: 0,
+      total_government_role_members: 0,
+      total_member_proposals: 0,
+      total_committee_decisions: 0,
+      total_committee_member_proposals: 0,
+      total_committee_role_members: 0,
+      total_committee_roles: 0,
+      total_party_members: 0,
+      total_party_role_members: 0,
+      total_party_summary: 0,
+      total_politician_documents: 0,
+      total_ballot_politician_summaries: 0,
+      total_document_content: 0
     },
     tables: {
       success: [],
@@ -125,7 +146,7 @@ function extractStatistics(data) {
     }
   };
 
-  // Key tables mapping
+  // Key tables mapping to stat counts
   const keyTables = {
     'person_data': 'total_persons',
     'vote_data': 'total_votes',
@@ -134,7 +155,30 @@ function extractStatistics(data) {
     'rule_violation': 'total_rule_violations',
     'against_proposal_data': 'total_against_proposals',
     'committee_proposal_data': 'total_committee_proposals',
-    'document_activity_data': 'total_document_activities'
+    'document_activity_data': 'total_document_activities',
+    'sweden_political_party': 'total_political_parties',
+    'assignment_data': 'total_assignments',
+    'document_attachment': 'total_document_attachments',
+    'document_content_data': 'total_document_content'
+  };
+
+  // Key views mapping (views use object_type='view')
+  const keyViews = {
+    'view_riksdagen_party': 'total_riksdag_parties',
+    'view_riksdagen_goverment': 'total_governments',
+    'view_riksdagen_goverment_proposals': 'total_government_proposals',
+    'view_riksdagen_goverment_roles': 'total_government_roles',
+    'view_riksdagen_goverment_role_member': 'total_government_role_members',
+    'view_riksdagen_member_proposals': 'total_member_proposals',
+    'view_riksdagen_committee_decisions': 'total_committee_decisions',
+    'view_riksdagen_committee_parliament_member_proposal': 'total_committee_member_proposals',
+    'view_riksdagen_committee_role_member': 'total_committee_role_members',
+    'view_riksdagen_committee_roles': 'total_committee_roles',
+    'view_riksdagen_party_member': 'total_party_members',
+    'view_riksdagen_party_role_member': 'total_party_role_members',
+    'view_riksdagen_party_summary': 'total_party_summary',
+    'view_riksdagen_politician_document': 'total_politician_documents',
+    'view_riksdagen_vote_data_ballot_politician_summary': 'total_ballot_politician_summaries'
   };
 
   // Process each row
@@ -147,22 +191,28 @@ function extractStatistics(data) {
       stats.metadata.last_updated = extraction_time;
     }
 
-    // Only process table types
-    if (object_type === 'table') {
-      if (status === 'success') {
-        const count = parseInt(row_count, 10) || 0;
+    // Process tables and views with success status
+    if (status === 'success') {
+      const count = parseInt(row_count, 10) || 0;
+
+      if (object_type === 'table') {
         stats.tables.success.push({
           name: object_name,
           count: count
         });
 
-        // Extract key statistics
+        // Extract key table statistics
         if (keyTables[object_name]) {
           stats.counts[keyTables[object_name]] = count;
         }
-      } else if (status === 'empty') {
-        stats.tables.empty.push(object_name);
+      } else if (object_type === 'view') {
+        // Extract key view statistics
+        if (keyViews[object_name]) {
+          stats.counts[keyViews[object_name]] = count;
+        }
       }
+    } else if (status === 'empty' && object_type === 'table') {
+      stats.tables.empty.push(object_name);
     }
   });
 
@@ -235,6 +285,10 @@ async function main() {
     console.log(`  Total Votes: ${cachedData.counts.total_votes.toLocaleString()}`);
     console.log(`  Total Documents: ${cachedData.counts.total_documents.toLocaleString()}`);
     console.log(`  Total Rule Violations: ${cachedData.counts.total_rule_violations.toLocaleString()}`);
+    console.log(`  Governments: ${(cachedData.counts.total_governments || 0).toLocaleString()}`);
+    console.log(`  Government Proposals: ${(cachedData.counts.total_government_proposals || 0).toLocaleString()}`);
+    console.log(`  Committee Decisions: ${(cachedData.counts.total_committee_decisions || 0).toLocaleString()}`);
+    console.log(`  Member Proposals: ${(cachedData.counts.total_member_proposals || 0).toLocaleString()}`);
     console.log();
     console.log(`Last Updated: ${cachedData.metadata.last_updated}`);
     console.log();
@@ -259,7 +313,7 @@ async function main() {
     console.log();
 
     // Display key statistics
-    console.log('Key Statistics:');
+    console.log('Key Statistics (Tables):');
     console.log(`  Total Persons: ${stats.counts.total_persons.toLocaleString()}`);
     console.log(`  Total Votes: ${stats.counts.total_votes.toLocaleString()}`);
     console.log(`  Total Documents: ${stats.counts.total_documents.toLocaleString()}`);
@@ -268,6 +322,20 @@ async function main() {
     console.log(`  Total Against Proposals: ${stats.counts.total_against_proposals.toLocaleString()}`);
     console.log(`  Total Committee Proposals: ${stats.counts.total_committee_proposals.toLocaleString()}`);
     console.log(`  Total Document Activities: ${stats.counts.total_document_activities.toLocaleString()}`);
+    console.log();
+    console.log('Key Statistics (Views):');
+    console.log(`  Riksdag Parties: ${stats.counts.total_riksdag_parties.toLocaleString()}`);
+    console.log(`  Governments: ${stats.counts.total_governments.toLocaleString()}`);
+    console.log(`  Government Proposals: ${stats.counts.total_government_proposals.toLocaleString()}`);
+    console.log(`  Government Roles: ${stats.counts.total_government_roles.toLocaleString()}`);
+    console.log(`  Government Role Members: ${stats.counts.total_government_role_members.toLocaleString()}`);
+    console.log(`  Member Proposals: ${stats.counts.total_member_proposals.toLocaleString()}`);
+    console.log(`  Committee Decisions: ${stats.counts.total_committee_decisions.toLocaleString()}`);
+    console.log(`  Committee Role Members: ${stats.counts.total_committee_role_members.toLocaleString()}`);
+    console.log(`  Party Members: ${stats.counts.total_party_members.toLocaleString()}`);
+    console.log(`  Party Summary: ${stats.counts.total_party_summary.toLocaleString()}`);
+    console.log(`  Politician Documents: ${stats.counts.total_politician_documents.toLocaleString()}`);
+    console.log(`  Ballot Politician Summaries: ${stats.counts.total_ballot_politician_summaries.toLocaleString()}`);
     console.log();
     console.log(`Successful Tables: ${stats.tables.success.length}`);
     console.log(`Empty Tables: ${stats.tables.empty.length}`);

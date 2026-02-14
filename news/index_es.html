@@ -14,7 +14,7 @@
   <meta property="og:description" content="Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/index_es.html">
-  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
   <meta property="og:site_name" content="Riksdagsmonitor">
   <meta property="og:locale" content="es_ES">
   
@@ -22,13 +22,13 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Noticias - Riksdagsmonitor">
   <meta name="twitter:description" content="Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.">
-  <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   
   <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/index.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
+  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/index_no.html">
   <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
   <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
   <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
@@ -101,7 +101,7 @@
       "name": "Hack23 AB",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cia.sourceforge.io/cia-logo.png"
+        "url": "https://hack23.com/cia-icon-140.webp"
       }
     },
     "potentialAction": {
@@ -178,6 +178,12 @@
   </div>
   
   <script>
+    // Language flags mapping (shared with server-side)
+    const LANGUAGE_FLAGS = {"en":"🇬🇧","sv":"🇸🇪","da":"🇩🇰","no":"🇳🇴","fi":"🇫🇮","de":"🇩🇪","fr":"🇫🇷","es":"🇪🇸","nl":"🇳🇱","ar":"🇸🇦","he":"🇮🇱","ja":"🇯🇵","ko":"🇰🇷","zh":"🇨🇳"};
+    
+    // Available in translation (for current language)
+    const AVAILABLE_IN_TEXT = 'Disponible en';
+    
     // Dynamic articles array - generated from news/ directory
     const articles = [
   {
@@ -185,6 +191,23 @@
     "date": "2026-02-13T18:00:00.000Z",
     "type": "retrospective",
     "slug": "2026-02-13-evening-analysis-es.html",
+    "lang": "es",
+    "availableLanguages": [
+      "en",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "ar",
+      "he",
+      "ja",
+      "ko",
+      "zh"
+    ],
     "excerpt": "Con 2.308 violaciones de reglas marcadas entre 2.494 políticos monitoreados, la sesión parlamentaria revela un gobierno que lucha por convertir la aritmética de coalición en impulso legislativo",
     "topics": [
       "parliament",
@@ -213,21 +236,40 @@
       
       noResults.style.display = 'none';
       
-      grid.innerHTML = articlesToRender.map(article => `
+      grid.innerHTML = articlesToRender.map(article => {
+        // Generate language badge for the article using shared LANGUAGE_FLAGS
+        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
+        const langBadge = `<span class="language-badge" aria-label="${article.lang} language"><span aria-hidden="true">${flag}</span> ${article.lang.toUpperCase()}</span>`;
+        
+        // Generate available languages display if multiple languages exist
+        const availableLangs = article.availableLanguages || [article.lang];
+        let availableDisplay = '';
+        if (availableLangs.length > 1) {
+          const availableBadges = availableLangs.map(l => {
+            const f = LANGUAGE_FLAGS[l] || '🌐';
+            return `<span class="lang-badge-sm"><span aria-hidden="true">${f}</span> ${l.toUpperCase()}</span>`;
+          }).join(' ');
+          availableDisplay = `<p class="available-languages"><strong>${AVAILABLE_IN_TEXT}:</strong> ${availableBadges}</p>`;
+        }
+        
+        return `
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${localizeType(article.type)}</span>
+            ${langBadge}
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
           </h2>
           <p class="article-excerpt">${article.excerpt}</p>
+          ${availableDisplay}
           <div class="article-tags">
             ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
           </div>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
     
     const typeLabels = {"prospective":"Prospectivo","retrospective":"Retrospectivo","analysis":"Análisis","breaking":"Última hora"};

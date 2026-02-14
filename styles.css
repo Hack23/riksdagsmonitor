@@ -7120,12 +7120,55 @@ html[lang="he"] {
   }
 }
 
+/* Dashboard Loader & Error States */
+.dashboard-loader {
+  display: none;
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.dashboard-error {
+  display: none;
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: #d32f2f;
+  font-size: var(--font-size-lg);
+}
+
+/* Filter Group (used in dashboard filters) */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 150px;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+}
+
 /* Dashboard Grid */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: var(--spacing-xl);
   margin-top: var(--spacing-xl);
+}
+
+/* Chart Container (consistent height for chart wrappers) */
+.chart-container {
+  height: 400px;
+  position: relative;
+}
+
+.chart-container--scrollable {
+  min-height: 400px;
+  overflow-x: auto;
 }
 
 /* Chart Card */
@@ -8699,4 +8742,469 @@ body.news-page {
   .news-page .filter-group {
     min-width: 100%;
   }
+}
+
+/* ========================================
+   Coalition Status Section Styles
+   ======================================== */
+
+#coalition-status {
+  margin: 2rem 0;
+}
+
+#coalition-status .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+#coalition-status .card {
+  min-height: 200px;
+}
+
+#coalition-status .card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--header-color);
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+}
+
+#coalition-status .party-stats {
+  margin: 1rem 0;
+}
+
+#coalition-status .party-stats p {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+#coalition-status .party-stats strong {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#coalition-status .party-leader {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+}
+
+#coalition-status .party-leader strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+#coalition-status .leader-details {
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--primary-cyan, #00d9ff);
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+#coalition-status .leader-details p {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+}
+
+#coalition-status .loading-message,
+#coalition-status .error-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+#coalition-status .error-message {
+  color: var(--danger-color, #f44336);
+}
+
+/* Responsive adjustments for coalition cards */
+@media (max-width: 768px) {
+  #coalition-status .cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  #coalition-status .card {
+    min-height: 160px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #coalition-status .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* ============================================================================
+/* =============================================
+   NEWS ARTICLE STYLES
+   For generated news articles (evening analysis, etc.)
+   Latest news and analysis from Sweden's Riksdag.
+   The Economist-style political journalism covering
+   parliament, government, and agencies with systematic transparency.
+   ============================================= */
+
+/* News Article Container */
+.news-article {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  background: var(--bg-color, #f8f9fa);
+}
+
+/* Article Header */
+.news-article .article-header {
+  border-bottom: 3px solid var(--primary-color, #006633);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.news-article .article-header h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem 0;
+  color: var(--header-color, #006633);
+  font-weight: 700;
+}
+
+/* Economist-style subtitle tagline */
+.news-article .article-tagline {
+  font-size: 0.95rem;
+  color: var(--text-secondary, #4a4a4a);
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Article metadata - date, type, read time */
+.news-article .article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #4a4a4a);
+  align-items: center;
+}
+
+.news-article .article-meta time {
+  font-weight: 600;
+}
+
+.news-article .article-meta .separator {
+  color: var(--border-color, #ccc);
+}
+
+/* Lead Paragraph */
+.news-article .lede {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--text-color, #1a1a1a);
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary-color, #006633);
+}
+
+/* Article Content */
+.news-article .article-content h2 {
+  font-size: 1.75rem;
+  margin: 2.5rem 0 1rem 0;
+  color: var(--header-color, #006633);
+  font-weight: 600;
+}
+
+.news-article .article-content h3 {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.75rem 0;
+  color: var(--primary-color, #006633);
+  font-weight: 600;
+}
+
+.news-article .article-content p {
+  margin: 0 0 1.25rem 0;
+  line-height: 1.7;
+}
+
+/* Context Box */
+.news-article .context-box {
+  background: var(--badge-bg, #f8f9fa);
+  border-left: 4px solid var(--primary-color, #006633);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.news-article .context-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color, #006633);
+}
+
+.news-article .context-box ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.news-article .context-box li {
+  margin: 0.5rem 0;
+}
+
+/* Watch Section */
+.news-article .watch-section {
+  background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .watch-section h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.news-article .watch-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-article .watch-list li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.news-article .watch-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-article .watch-list strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Event Calendar (for Week Ahead articles) */
+.news-article .event-calendar {
+  background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px var(--card-shadow, rgba(0, 102, 51, 0.08));
+}
+
+.news-article .event-calendar h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.news-article .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.news-article .calendar-day {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--border-radius, 8px);
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Note: calendar-day is currently a non-interactive <div> without tabindex.
+   Focus states below are included for future enhancement if calendar days
+   become interactive (e.g., clickable for drill-down details).
+   Currently only :hover applies. */
+.news-article .calendar-day:hover,
+.news-article .calendar-day:focus,
+.news-article .calendar-day:focus-visible {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.news-article .calendar-day.today {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.news-article .day-header {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.news-article .day-date {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.news-article .event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-article .event-item {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.news-article .event-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-article .event-time {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.news-article .event-title {
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* Article Footer */
+.news-article .article-footer {
+  border-top: 2px solid var(--section-border, #e9ecef);
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.news-article .article-sources {
+  background: var(--badge-bg, #f8f9fa);
+  padding: 1.5rem;
+  border-radius: var(--border-radius, 8px);
+  margin-bottom: 1.5rem;
+}
+
+.news-article .article-sources h3 {
+  margin-top: 0;
+  color: var(--primary-color, #006633);
+  font-size: 1.2rem;
+}
+
+.news-article .article-sources p {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #4a4a4a);
+}
+
+.news-article .article-nav {
+  text-align: center;
+}
+
+.news-article .back-to-news {
+  display: inline-block;
+  color: var(--link-color, #007744);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--link-color, #007744);
+  border-radius: var(--border-radius, 8px);
+  transition: all 0.3s ease;
+}
+
+.news-article .back-to-news:hover,
+.news-article .back-to-news:focus,
+.news-article .back-to-news:focus-visible {
+  background: var(--link-color, #007744);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 68, 0.2);
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Responsive Design for News Articles */
+@media (max-width: 768px) {
+  .news-article {
+    padding: 0 1rem;
+  }
+  
+  .news-article .article-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .news-article .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .news-article .event-calendar {
+    padding: 1.5rem;
+  }
+  
+  .news-article .watch-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Site Tagline for News Articles */
+.news-article .site-tagline {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #6c757d);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color, #e9ecef);
+  font-weight: 500;
+}
+
+/* Language badge styles (namespaced under .news-page) */
+.news-page .lang-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(0, 102, 51, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: var(--primary-color, #006633);
+  border: 1px solid rgba(0, 102, 51, 0.2);
+  font-weight: 500;
+}
+
+/* Available Languages Section (namespaced under .news-page) */
+.news-page .available-languages {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #6c757d);
+}
+
+.news-page .available-languages strong {
+  font-weight: 600;
+  margin-right: 0.5rem;
 }

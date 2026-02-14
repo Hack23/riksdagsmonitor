@@ -76,6 +76,20 @@ function getNewsIndexFilename(lang) {
 }
 
 /**
+ * Sanitize article body content for JSON-LD structured data
+ * Removes newlines and normalizes whitespace to prevent invalid JSON
+ * @param {string} htmlContent - Article HTML content
+ * @returns {string} Sanitized content suitable for JSON-LD
+ */
+function sanitizeArticleBody(htmlContent) {
+  return htmlContent
+    .substring(0, 500)
+    .replace(/\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
  * Generate complete article HTML
  * 
  * @param {Object} data - Article data
@@ -162,7 +176,7 @@ export function generateArticleHTML(data) {
   <meta property="og:description" content="${escapeHtml(subtitle).substring(0, 200)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
-  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
@@ -178,7 +192,7 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(subtitle).substring(0, 200)}">
-  <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta name="twitter:site" content="@riksdagsmonitor">
   <meta name="twitter:creator" content="@jamessorling">
@@ -188,7 +202,7 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:data2" content="${typeLabel}">
   
   <!-- Hreflang for language alternatives -->
-${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb' : l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
+${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/${baseSlug}-en.html">
   
   <!-- Google Fonts -->
@@ -196,6 +210,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   
+  <!-- Main stylesheet - contains all article styles -->
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Schema.org NewsArticle structured data -->
@@ -224,19 +239,19 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
       "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cia.sourceforge.io/cia-logo.png",
+        "url": "https://hack23.com/cia-icon-140.webp",
         "width": 600,
         "height": 60
       }
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://cia.sourceforge.io/cia-logo.png",
+      "url": "https://hack23.com/cia-icon-140.webp",
       "width": 1200,
       "height": 630
     },
     "articleSection": "${typeLabel}",
-    "articleBody": "${escapeHtml(content).substring(0, 500)}...",
+    "articleBody": "${escapeHtml(content).replace(/\n/g, ' ').replace(/\s+/g, ' ').substring(0, 500)}...",
     "wordCount": ${Math.ceil(content.length / 5)},
     "inLanguage": "${lang}",
     "keywords": "${keywords.join(', ')}",
@@ -299,7 +314,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
     "@type": "Organization",
     "name": "Riksdagsmonitor",
     "url": "https://riksdagsmonitor.com",
-    "logo": "https://cia.sourceforge.io/cia-logo.png",
+    "logo": "https://hack23.com/cia-icon-140.webp",
     "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
     "foundingDate": "2020",
     "founder": {
@@ -320,8 +335,11 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
   ${generateArticleCSS()}
 </head>
 <body>
+<!-- Article styles are now in styles.css under .news-article namespace.
+     No embedded CSS needed - promotes consistency and maintainability. -->
 <article class="news-article">
   <header class="article-header">
+    <div class="site-tagline"${lang !== 'en' ? ' lang="en"' : ''}>Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.</div>
     <h1>${title}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>
@@ -762,7 +780,7 @@ function getArticleStyles() {
  * Locale map for all 14 supported languages
  */
 const LOCALE_MAP = {
-  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'nb-NO', fi: 'fi-FI',
+  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'no-NO', fi: 'fi-FI',
   de: 'de-DE', fr: 'fr-FR', es: 'es-ES', nl: 'nl-NL', ar: 'ar-SA',
   he: 'he-IL', ja: 'ja-JP', ko: 'ko-KR', zh: 'zh-CN'
 };

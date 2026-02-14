@@ -457,8 +457,8 @@ describe('Article Template', () => {
   describe('All 14 hreflang tags', () => {
     it('should include hreflang tags for all 14 languages', () => {
       const html = generateArticleHTML(mockArticleData);
-      // Note: Norwegian uses BCP 47 code 'nb' (Bokmål) in hreflang, not 'no'
-      const allLangs = ['en', 'sv', 'da', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+      // Norwegian language code
+      const allLangs = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
       allLangs.forEach(lang => {
         expect(html).toContain(`hreflang="${lang}"`);
       });
