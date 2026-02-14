@@ -439,7 +439,7 @@ function generateIndexHTML(langKey, articles, allArticlesByLang) {
   <meta property="og:description" content="${escapedSubtitle}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${filename}">
-  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
   <meta property="og:site_name" content="Riksdagsmonitor">
   <meta property="og:locale" content="${lang.locale}">
   
@@ -447,7 +447,7 @@ function generateIndexHTML(langKey, articles, allArticlesByLang) {
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="${escapeHtml(lang.title)} - Riksdagsmonitor">
   <meta name="twitter:description" content="${escapedSubtitle}">
-  <meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+  <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   
   <!-- Hreflang -->
 ${generateHreflangTags()}
@@ -512,7 +512,7 @@ ${generateHreflangTags()}
       "name": "Hack23 AB",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cia.sourceforge.io/cia-logo.png"
+        "url": "https://hack23.com/cia-icon-140.webp"
       }
     },
     "potentialAction": {
