@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CIA Intelligence Dashboard | Swedish Riksdag Monitor | Riksdagsmonitor</title>
+<title>Riksdagsmonitor | Intelligence Dashboard | Swedish Parliament Analytics</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../styles.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/dashboard/index.html">
-<meta name="description" content="Interactive CIA intelligence dashboard: Real-time visualization of Swedish Riksdag data, election 2026 predictions, party performance, MP rankings, and comprehensive analytics.">
-<meta name="keywords" content="CIA dashboard, Swedish parliament, riksdag analytics, election 2026, party performance, MP rankings, political intelligence, OSINT visualization">
-<meta name="robots" content="index, follow">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="description" content="Interactive Citizen Intelligence Agency (CIA) dashboard: Real-time visualization of Swedish Riksdag data, election 2026 predictions, party performance, MP rankings, and parliamentary analytics.">
+<meta name="keywords" content="riksdagsmonitor dashboard, Swedish parliament analytics, riksdag data visualization, election 2026, party performance, MP rankings, political intelligence, Citizen Intelligence Agency, OSINT">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="James Pether Sörling, CISSP, CISM">
+<meta name="application-name" content="Riksdagsmonitor">
+<meta name="theme-color" content="#0a0e27">
+<meta name="color-scheme" content="dark light">
 
 <!-- Hreflang tags for all language versions -->
 <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboard/index.html">
 <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboard/index_sv.html">
 <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboard/index_da.html">
-<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboard/index_no.html">
+<link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/dashboard/index_no.html">
 <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboard/index_fi.html">
 <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboard/index_de.html">
 <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboard/index_fr.html">
@@ -30,61 +34,93 @@
 <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboard/index.html">
 
 <!-- Open Graph / Social Media -->
-<meta property="og:title" content="CIA Intelligence Dashboard | Swedish Riksdag Monitor">
-<meta property="og:description" content="Interactive visualization of CIA intelligence exports: Party performance, election predictions, MP rankings, and comprehensive parliamentary analytics.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://riksdagsmonitor.com/dashboard/index.html">
-<meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
-<meta property="og:image:alt" content="CIA Intelligence Dashboard">
-<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Riksdagsmonitor">
+<meta property="og:title" content="Riksdagsmonitor | Intelligence Dashboard">
+<meta property="og:description" content="Interactive visualization of Citizen Intelligence Agency exports: Party performance, election predictions, MP rankings, and parliamentary analytics.">
+<meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Riksdagsmonitor - Intelligence Dashboard">
+<meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CIA Intelligence Dashboard | Swedish Riksdag Monitor">
-<meta name="twitter:description" content="Interactive CIA intelligence visualization: Party performance, election predictions, MP rankings">
-<meta name="twitter:image" content="https://cia.sourceforge.io/cia-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Riksdagsmonitor | Intelligence Dashboard">
+<meta name="twitter:description" content="Interactive visualization: Party performance, election predictions, MP rankings, and parliamentary analytics.">
+<meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+<meta name="twitter:image:alt" content="Riksdagsmonitor - Intelligence Dashboard">
+<meta name="twitter:site" content="@riksdagsmonitor">
+<meta name="twitter:creator" content="@jamessorling">
+<meta name="twitter:domain" content="riksdagsmonitor.com">
 
 <!-- Additional Meta Tags -->
-<meta name="theme-color" content="#0a0e27">
-<meta name="color-scheme" content="dark light">
-<link rel="icon" type="image/png" href="https://cia.sourceforge.io/cia-logo.png">
+<link rel="icon" type="image/png" href="https://hack23.com/cia-icon-140.webp">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-<!-- Chart.js via CDN with SRI -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" 
-        integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" 
-        crossorigin="anonymous"></script>
+<!-- Chart.js v4.4.1 (hosted locally) -->
+<script src="../js/lib/chart.umd.4.4.1.js"></script>
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "CIA Intelligence Dashboard",
-  "description": "Interactive visualization of Swedish Riksdag intelligence exports",
-  "url": "https://riksdagsmonitor.com/dashboard/index.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Riksdagsmonitor",
-    "url": "https://riksdagsmonitor.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Hack23 AB",
-    "url": "https://www.hack23.com"
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Riksdagsmonitor | Intelligence Dashboard",
+      "description": "Interactive visualization of Swedish Riksdag intelligence data with party performance, election predictions, and MP rankings.",
+      "url": "https://riksdagsmonitor.com/dashboard/index.html",
+      "inLanguage": "en",
+      "dateModified": "2026-02-13T00:00:00+00:00",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Riksdagsmonitor",
+        "url": "https://riksdagsmonitor.com"
+      },
+      "breadcrumb": {
+        "@id": "https://riksdagsmonitor.com/dashboard/#breadcrumb"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hack23 AB",
+        "url": "https://www.hack23.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hack23.com/cia-icon-140.webp"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://riksdagsmonitor.com/dashboard/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://riksdagsmonitor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dashboard",
+          "item": "https://riksdagsmonitor.com/dashboard/index.html"
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
 <body>
-<!-- Skip to Main Content Link -->
-<a href="#main-dashboard" class="skip-link">Skip to dashboard content</a>
+<!-- Skip to Content Link for Accessibility -->
+<a href="#main-dashboard" class="skip-to-content">Skip to dashboard content</a>
 
 <!-- Breadcrumb Navigation -->
 <nav aria-label="Breadcrumb">
@@ -99,11 +135,12 @@ Dashboard
 </nav>
 
 <header>
-<h1>📊 CIA Intelligence Dashboard</h1>
-<p class="tagline">Interactive visualization of Swedish Riksdag intelligence exports</p>
-<p class="data-attribution">
-Data powered by <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener">Citizen Intelligence Agency (CIA)</a> platform
-</p>
+<h1><span aria-hidden="true">📊</span> Riksdagsmonitor Intelligence Dashboard</h1>
+<p class="tagline">Interactive visualization of Swedish Riksdag intelligence data from Citizen Intelligence Agency</p>
+<nav class="page-nav" aria-label="Page navigation">
+<a href="../index.html">← Home</a>
+<a href="../news/index.html">News →</a>
+</nav>
 </header>
 
 <noscript>
@@ -224,28 +261,41 @@ Data powered by <a href="https://www.hack23.com/cia/" target="_blank" rel="noope
 </div>
 </main>
 
-<footer>
-<p>&copy; 2008-2026 | Riksdags Monitor |
-<a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a> |
-<a href="https://github.com/Hack23/ISMS-PUBLIC" title="Public ISMS Repository">ISMS</a> |
-<a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" title="Information Security Policy">Security Policy</a>
-</p>
-<p>
-<a href="index.html" title="English">English</a> |
-<a href="index_sv.html" title="Svenska">Svenska</a> |
-<a href="index_da.html" title="Dansk">Dansk</a> |
-<a href="index_no.html" title="Norsk">Norsk</a> |
-<a href="index_fi.html" title="Suomi">Suomi</a> |
-<a href="index_de.html" title="Deutsch">Deutsch</a> |
-<a href="index_fr.html" title="Français">Français</a> |
-<a href="index_es.html" title="Español">Español</a> |
-<a href="index_nl.html" title="Nederlands">Nederlands</a> |
-<a href="index_ar.html" title="العربية">العربية</a> |
-<a href="index_he.html" title="עברית">עברית</a> |
-<a href="index_ja.html" title="日本語">日本語</a> |
-<a href="index_ko.html" title="한국어">한국어</a> |
-<a href="index_zh.html" title="中文">中文</a>
-</p>
+<footer role="contentinfo">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../news/index.html">News</a></li>
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+<li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Languages</h3>
+<div class="language-grid">
+<a href="index.html" title="English" aria-label="Switch to English"><span aria-hidden="true">🇬🇧</span> EN</a>
+<a href="index_sv.html" title="Svenska" aria-label="Byt till Svenska"><span aria-hidden="true">🇸🇪</span> SV</a>
+<a href="index_da.html" title="Dansk" aria-label="Skift til Dansk"><span aria-hidden="true">🇩🇰</span> DA</a>
+<a href="index_no.html" title="Norsk" aria-label="Bytt til Norsk"><span aria-hidden="true">🇳🇴</span> NO</a>
+<a href="index_fi.html" title="Suomi" aria-label="Vaihda Suomeksi"><span aria-hidden="true">🇫🇮</span> FI</a>
+<a href="index_de.html" title="Deutsch" aria-label="Wechseln zu Deutsch"><span aria-hidden="true">🇩🇪</span> DE</a>
+<a href="index_fr.html" title="Français" aria-label="Passer au Français"><span aria-hidden="true">🇫🇷</span> FR</a>
+<a href="index_es.html" title="Español" aria-label="Cambiar a Español"><span aria-hidden="true">🇪🇸</span> ES</a>
+<a href="index_nl.html" title="Nederlands" aria-label="Schakel naar Nederlands"><span aria-hidden="true">🇳🇱</span> NL</a>
+<a href="index_ar.html" title="العربية" aria-label="التبديل إلى العربية"><span aria-hidden="true">🇸🇦</span> AR</a>
+<a href="index_he.html" title="עברית" aria-label="עבור לעברית"><span aria-hidden="true">🇮🇱</span> HE</a>
+<a href="index_ja.html" title="日本語" aria-label="日本語に切り替え"><span aria-hidden="true">🇯🇵</span> JA</a>
+<a href="index_ko.html" title="한국어" aria-label="한국어로 전환"><span aria-hidden="true">🇰🇷</span> KO</a>
+<a href="index_zh.html" title="中文" aria-label="切换到中文"><span aria-hidden="true">🇨🇳</span> ZH</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden</p>
+</div>
 </footer>
 
 <!-- JavaScript Modules -->
