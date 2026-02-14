@@ -203,3 +203,241 @@ describe('News Realtime Monitor - Multi-Language Synchronization', () => {
     });
   });
 });
+
+describe('News Realtime Monitor - Quality Framework', () => {
+  let qualityModule;
+
+  beforeEach(async () => {
+    qualityModule = await import('../scripts/article-quality-enhancer.js');
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
+  describe('assessAnalyticalDepth', () => {
+    it('should score high for causal reasoning', () => {
+      const content = 'Because the government failed, therefore the opposition won. As a result, policy changed.';
+      const score = qualityModule.assessAnalyticalDepth(content);
+      expect(score).toBeGreaterThan(0.1);
+    });
+
+    it('should score high for comparative analysis', () => {
+      const content = 'Compared to previous years, while this policy works, however that one failed.';
+      const score = qualityModule.assessAnalyticalDepth(content);
+      expect(score).toBeGreaterThan(0.1);
+    });
+
+    it('should return 0 for non-analytical content', () => {
+      const content = 'The meeting happened. People attended. End of story.';
+      const score = qualityModule.assessAnalyticalDepth(content);
+      expect(score).toBeLessThan(0.1);
+    });
+
+    it('should cap score at 1.0', () => {
+      const content = 'because therefore as a result compared to while however trend pattern shift data shows according to study report';
+      const score = qualityModule.assessAnalyticalDepth(content);
+      expect(score).toBeLessThanOrEqual(1.0);
+    });
+  });
+
+  describe('countPartyPerspectives', () => {
+    it('should count Swedish party mentions', () => {
+      const content = 'Socialdemokraterna said X. Moderaterna said Y. SD commented Z. Vänsterpartiet agreed.';
+      const count = qualityModule.countPartyPerspectives(content);
+      expect(count).toBeGreaterThanOrEqual(4);
+    });
+
+    it('should normalize party names', () => {
+      const content = 'Social Democrats and S both mentioned. Moderate and Moderaterna both said.';
+      const count = qualityModule.countPartyPerspectives(content);
+      expect(count).toBe(2); // S and M
+    });
+
+    it('should return 0 for no party mentions', () => {
+      const content = 'This article has no political party references at all.';
+      const count = qualityModule.countPartyPerspectives(content);
+      expect(count).toBe(0);
+    });
+
+    it('should handle all 8 Swedish parties', () => {
+      const content = 'S, M, SD, C, V, KD, L, MP all participated in the debate.';
+      const count = qualityModule.countPartyPerspectives(content);
+      expect(count).toBe(8);
+    });
+  });
+
+  describe('countCrossReferences', () => {
+    it('should detect proposition references', () => {
+      const content = 'According to Prop. 2024/25:1 and Prop. 2024/25:100, the policy changed.';
+      const count = qualityModule.countCrossReferences(content);
+      expect(count).toBe(2);
+    });
+
+    it('should detect committee report references', () => {
+      const content = 'Bet. 2024/25:FiU10 and Bet. 2024/25:AU5 were reviewed.';
+      const count = qualityModule.countCrossReferences(content);
+      expect(count).toBe(2);
+    });
+
+    it('should detect motion references', () => {
+      const content = 'Mot. 2024/25:123, Mot. 2024/25:456, and Mot. 2024/25:789.';
+      const count = qualityModule.countCrossReferences(content);
+      expect(count).toBe(3);
+    });
+
+    it('should return 0 for no document references', () => {
+      const content = 'This article has no riksdag document IDs.';
+      const count = qualityModule.countCrossReferences(content);
+      expect(count).toBe(0);
+    });
+  });
+
+  describe('hasWhyThisMatters', () => {
+    it('should detect "Why This Matters" in English', () => {
+      const content = '<h2>Why This Matters</h2><p>This is important because...</p>';
+      const result = qualityModule.hasWhyThisMatters(content);
+      expect(result).toBe(true);
+    });
+
+    it('should detect Swedish equivalents', () => {
+      const content = '<h2>Varför detta betyder något</h2><p>Betydelse...</p>';
+      const result = qualityModule.hasWhyThisMatters(content);
+      expect(result).toBe(true);
+    });
+
+    it('should return false if section missing', () => {
+      const content = '<h2>Introduction</h2><p>Just basic content here.</p>';
+      const result = qualityModule.hasWhyThisMatters(content);
+      expect(result).toBe(false);
+    });
+  });
+
+  describe('hasHistoricalContext', () => {
+    it('should detect year references', () => {
+      const content = 'Since 2015, the policy has changed. In 2020, another shift occurred.';
+      const result = qualityModule.hasHistoricalContext(content);
+      expect(result).toBe(true);
+    });
+
+    it('should detect "historically" keyword', () => {
+      const content = 'Historically, this has never happened before.';
+      const result = qualityModule.hasHistoricalContext(content);
+      expect(result).toBe(true);
+    });
+
+    it('should return false if no historical context', () => {
+      const content = 'Today the meeting happened. Tomorrow another one.';
+      const result = qualityModule.hasHistoricalContext(content);
+      expect(result).toBe(false);
+    });
+  });
+
+  describe('calculateQualityScore', () => {
+    it('should calculate score with all metrics met', () => {
+      const metrics = {
+        analyticalDepth: 0.8,
+        partyCount: 6,
+        crossReferences: 4,
+        hasWhyThisMatters: true,
+        hasHistoricalContext: true,
+        hasInternationalComparison: true
+      };
+      const score = qualityModule.calculateQualityScore(metrics);
+      expect(score).toBeGreaterThanOrEqual(0.9);
+    });
+
+    it('should calculate lower score for poor metrics', () => {
+      const metrics = {
+        analyticalDepth: 0.2,
+        partyCount: 1,
+        crossReferences: 0,
+        hasWhyThisMatters: false,
+        hasHistoricalContext: false,
+        hasInternationalComparison: false
+      };
+      const score = qualityModule.calculateQualityScore(metrics);
+      expect(score).toBeLessThan(0.3);
+    });
+
+    it('should normalize party count correctly', () => {
+      const metricsWithFourParties = {
+        analyticalDepth: 0,
+        partyCount: 4,
+        crossReferences: 0,
+        hasWhyThisMatters: false,
+        hasHistoricalContext: false,
+        hasInternationalComparison: false
+      };
+      const score = qualityModule.calculateQualityScore(metricsWithFourParties);
+      // 4 parties should contribute 0.25 (25% weight)
+      expect(score).toBeGreaterThanOrEqual(0.24);
+      expect(score).toBeLessThanOrEqual(0.26);
+    });
+
+    it('should cap score at 1.0', () => {
+      const metrics = {
+        analyticalDepth: 1.5, // Artificially high
+        partyCount: 20,
+        crossReferences: 100,
+        hasWhyThisMatters: true,
+        hasHistoricalContext: true,
+        hasInternationalComparison: true
+      };
+      const score = qualityModule.calculateQualityScore(metrics);
+      expect(score).toBeLessThanOrEqual(1.0);
+    });
+  });
+
+  describe('enhanceArticleQuality integration', () => {
+    it('should pass for high-quality real article', async () => {
+      // Find any existing article in news directory
+      const newsFiles = fs.readdirSync(NEWS_DIR)
+        .filter(f => f.endsWith('.html') && !f.startsWith('index'));
+      
+      if (newsFiles.length === 0) {
+        return; // Skip if no articles
+      }
+
+      const articlePath = path.join(NEWS_DIR, newsFiles[0]);
+      const result = await qualityModule.enhanceArticleQuality(articlePath, {
+        minQualityScore: 0.3, // Lower threshold for test
+        minAnalyticalDepth: 0.2,
+        minPartySources: 2,
+        minCrossReferences: 1,
+        requireWhyThisMatters: false
+      });
+
+      expect(result).toHaveProperty('passed');
+      expect(result).toHaveProperty('qualityScore');
+      expect(result).toHaveProperty('metrics');
+      expect(result.qualityScore).toBeGreaterThanOrEqual(0);
+      expect(result.qualityScore).toBeLessThanOrEqual(1);
+    });
+
+    it('should fail for non-existent article', async () => {
+      const result = await qualityModule.enhanceArticleQuality('/tmp/nonexistent.html');
+      expect(result.passed).toBe(false);
+      expect(result.error).toBe('Article file not found');
+    });
+
+    it('should return detailed metrics', async () => {
+      const newsFiles = fs.readdirSync(NEWS_DIR)
+        .filter(f => f.endsWith('.html') && !f.startsWith('index'));
+      
+      if (newsFiles.length === 0) {
+        return;
+      }
+
+      const articlePath = path.join(NEWS_DIR, newsFiles[0]);
+      const result = await qualityModule.enhanceArticleQuality(articlePath);
+
+      expect(result.metrics).toHaveProperty('analyticalDepth');
+      expect(result.metrics).toHaveProperty('partyCount');
+      expect(result.metrics).toHaveProperty('crossReferences');
+      expect(result.metrics).toHaveProperty('hasWhyThisMatters');
+      expect(result.metrics).toHaveProperty('hasHistoricalContext');
+      expect(result.metrics).toHaveProperty('hasInternationalComparison');
+    });
+  });
+});
