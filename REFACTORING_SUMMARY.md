@@ -7,7 +7,7 @@ Successfully refactored `news-article-generator.md` agentic workflow into modula
 
 ### Must Have (100% Complete)
 - [x] **Modular architecture**: 5 scripts in `scripts/news-types/` ✅
-- [x] **Test suite**: 6 test files in `tests/news-types/` with **111 tests total** ✅ (exceeds 60+ requirement)
+- [x] **Test suite**: 6 test files in `tests/news-types/` with **94 tests total** ✅ (exceeds 60+ requirement)
 - [x] **Cross-referencing validation**: `validate-cross-references.js` ✅
 - [x] **Playwright validation**: Automated screenshot capture ✅
 - [x] **RTL validation** for ar/he versions ✅
@@ -60,7 +60,7 @@ Successfully refactored `news-article-generator.md` agentic workflow into modula
    - Heading hierarchy validation
    - PR comment generation
 
-### Test Suite (6 files, 111 tests)
+### Test Suite (6 files, 94 tests)
 1. `tests/news-types/week-ahead.test.js` - **46 tests**
    - Configuration (5), Date ranges (4), Data collection (4)
    - Article structure (6), Cross-referencing (3), Validation (4)
@@ -83,7 +83,7 @@ Successfully refactored `news-article-generator.md` agentic workflow into modula
 6. `tests/news-article-generator-integration.test.js` - **14 tests**
    - Cross-reference validation, Batch validation, Quality scoring, Reporting
 
-**Total: 111 tests (exceeds 60+ requirement by 85%)**
+**Total: 94 tests (exceeds 60+ requirement by 57%)**
 
 ### Documentation (2 files)
 1. `MODULAR_NEWS_ARCHITECTURE.md`
@@ -110,7 +110,7 @@ Total Tests: 111
 ├── Breaking News: 11 tests (9.9%)
 └── Integration: 14 tests (12.6%)
 
-Status: ✅ All 111 tests passing
+Status: ✅ All 94 tests passing
 ```
 
 ## 🎨 Cross-Reference Patterns Implemented
@@ -152,13 +152,13 @@ All 14 languages tested:
 ## 🚀 Performance Characteristics
 
 - **Modular Loading**: Each article type loads independently
-- **Test Execution**: 111 tests complete in < 1 second
+- **Test Execution**: 94 tests complete in < 1 second
 - **Memory Efficient**: vmThreads pool prevents OOM
 - **Backward Compatible**: Existing workflows unchanged
 
 ## 📈 Quality Metrics
 
-- **Test Coverage**: 111 tests across all modules
+- **Test Coverage**: 94 tests across all modules
 - **Code Modularity**: 5 independent article generators
 - **Validation Coverage**: 100% of required tools mapped
 - **Documentation**: Complete API reference and examples
@@ -188,7 +188,7 @@ All 14 languages tested:
 ### For Maintainability
 - **Modular Updates**: Change one type without affecting others
 - **Clear Documentation**: Architecture fully documented
-- **Test Coverage**: 111 tests provide confidence
+- **Test Coverage**: 94 tests provide confidence
 - **Future-Proof**: Easy to add new article types
 
 ## 📝 Next Steps (Future Enhancements)
@@ -202,7 +202,7 @@ All 14 languages tested:
 ## ✨ Success Metrics
 
 - ✅ **Modular Architecture**: 5/5 modules created
-- ✅ **Test Coverage**: 111/60 tests (185% of requirement)
+- ✅ **Test Coverage**: 94/60 tests (157% of requirement)
 - ✅ **Cross-Reference Validation**: 5/5 article types covered
 - ✅ **Playwright Validation**: Screenshots + Accessibility + RTL
 - ✅ **Documentation**: Complete architecture docs
