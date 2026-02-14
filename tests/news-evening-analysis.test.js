@@ -399,7 +399,7 @@ describe('Evening Analysis Structure Validation', () => {
     const article = parseArticle(testFile);
     const html = article.content;
     
-    const requiredHreflangs = ['en', 'sv', 'da', 'nb', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+    const requiredHreflangs = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
     
     for (const lang of requiredHreflangs) {
       expect(html).toContain(`hreflang="${lang}"`);

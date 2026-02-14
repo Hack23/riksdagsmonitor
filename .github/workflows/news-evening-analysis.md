@@ -209,11 +209,11 @@ Structure the analysis around these editorial pillars:
   <meta name="twitter:description" content="{subtitle}">
   
   <!-- Hreflang for all language alternatives -->
-  <!-- NOTE: Norwegian articles use filename suffix "-no.html" but hreflang code "nb" (Bokmål) -->
+  <!-- NOTE: Norwegian articles use filename suffix "-no.html" and hreflang code "no" -->
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/{baseSlug}-en.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/{baseSlug}-sv.html">
-  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/{baseSlug}-no.html">
-  <!-- Include all 14 languages: en, sv, da, nb (no), fi, de, fr, es, nl, ar, he, ja, ko, zh -->
+  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/{baseSlug}-no.html">
+  <!-- Include all 14 languages: en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh -->
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
