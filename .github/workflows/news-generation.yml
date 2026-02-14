@@ -293,7 +293,17 @@ jobs:
               "message": "$ERROR_MSG",
               "severity": "$ERROR_SEVERITY",
               "retryable": true
-            }
+            },
+            "errorHistory": [
+              {
+                "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+                "workflow": "news-generation.yml",
+                "errorType": "$ERROR_TYPE",
+                "message": "$ERROR_MSG",
+                "severity": "$ERROR_SEVERITY",
+                "retryable": true
+              }
+            ]
           }
           EOF
             

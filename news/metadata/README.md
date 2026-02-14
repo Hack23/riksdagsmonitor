@@ -175,4 +175,4 @@ Critical errors (severity=critical) trigger GitHub issue comments:
 
 - Workflow: `.github/workflows/news-generation.yml`
 - Tests: `tests/workflows/news-generation.test.js`
-- Issue: [Issue about news generation fixes]
+- Issue: #161

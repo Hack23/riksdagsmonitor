@@ -114,7 +114,7 @@ function shouldCreatePR({ generated, success, hasTimestampOnly = false }) {
  * Agentic workflow activity check
  * Determines if recent agentic workflow activity exists
  */
-export function hasRecentAgenticActivity(workflowState, thresholdHours = 2) {
+function hasRecentAgenticActivity(workflowState, thresholdHours = 2) {
   if (!workflowState || !workflowState.lastUpdate) {
     return false;
   }
@@ -129,7 +129,7 @@ export function hasRecentAgenticActivity(workflowState, thresholdHours = 2) {
 /**
  * Should skip traditional workflow due to agentic activity
  */
-export function shouldSkipTraditionalWorkflow(workflowState, shouldGenerate) {
+function shouldSkipTraditionalWorkflow(workflowState, shouldGenerate) {
   if (!shouldGenerate) {
     return true; // Skip if we wouldn't generate anyway
   }
@@ -209,8 +209,7 @@ describe('News Generation Workflow Logic', () => {
       // This is the key case: prevents infinite retry loops
       const shouldCommit = shouldCommitTimestamp({
         shouldGenerate: true,
-        articlesGenerated: 0,
-        lastGenerationHours: 6
+        articlesGenerated: 0
       });
       expect(shouldCommit).toBe(true);
     });
