@@ -17,12 +17,11 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for motions articles
+ * Currently implements only get_motioner
+ * TODO: Add search_dokument_fulltext, analyze_g0v_by_department, search_anforanden for richer cross-referencing
  */
 export const REQUIRED_TOOLS = [
-  'get_motioner',
-  'search_dokument_fulltext',
-  'analyze_g0v_by_department',
-  'search_anforanden'
+  'get_motioner'
 ];
 
 /**
@@ -185,11 +184,15 @@ function getTitles(lang, count) {
 }
 
 export function validateMotions(article) {
+  const hasMotions = checkMotions(article);
+  const hasMinimumSources = countSources(article) >= 3;
+  const hasOppositionAnalysis = checkOppositionAnalysis(article);
+  
   return {
-    hasMotions: checkMotions(article),
-    hasMinimumSources: countSources(article) >= 3,
-    hasOppositionAnalysis: checkOppositionAnalysis(article),
-    passed: false
+    hasMotions,
+    hasMinimumSources,
+    hasOppositionAnalysis,
+    passed: hasMotions && hasMinimumSources && hasOppositionAnalysis
   };
 }
 

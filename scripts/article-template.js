@@ -321,7 +321,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
 <body>
 <article class="news-article">
   <header class="article-header">
-    <p class="article-tagline">Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.</p>
+    <p class="article-tagline"${lang !== 'en' ? ' lang="en"' : ''}>Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.</p>
     <h1>${title}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>

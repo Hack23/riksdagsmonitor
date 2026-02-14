@@ -18,12 +18,11 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for week-ahead articles
+ * Currently implements only get_calendar_events
+ * TODO: Add search_dokument, get_fragor, get_interpellationer for richer cross-referencing
  */
 export const REQUIRED_TOOLS = [
-  'get_calendar_events',
-  'search_dokument',
-  'get_fragor',
-  'get_interpellationer'
+  'get_calendar_events'
 ];
 
 /**
@@ -231,12 +230,17 @@ function getTitles(lang, dateRange) {
  * @returns {Object} Validation result
  */
 export function validateWeekAhead(article) {
+  const hasCalendarEvents = checkCalendarEvents(article);
+  const hasMinimumSources = countSources(article) >= 3;
+  const hasProspectiveTone = checkProspectiveTone(article);
+  const hasAllDaysOfWeek = checkDailyCoverage(article, 7);
+  
   return {
-    hasCalendarEvents: checkCalendarEvents(article),
-    hasMinimumSources: countSources(article) >= 3,
-    hasProspectiveTone: checkProspectiveTone(article),
-    hasAllDaysOfWeek: checkDailyCoverage(article, 7),
-    passed: false // Will be set based on all checks
+    hasCalendarEvents,
+    hasMinimumSources,
+    hasProspectiveTone,
+    hasAllDaysOfWeek,
+    passed: hasCalendarEvents && hasMinimumSources && hasProspectiveTone && hasAllDaysOfWeek
   };
 }
 

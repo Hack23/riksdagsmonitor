@@ -99,8 +99,9 @@ export function validateCrossReferences(articleType, articleContent, mcpCalls = 
   // Extract cross-references from content
   const crossReferencesInText = extractCrossReferences(articleContent);
   
-  // Validate minimum sources requirement
-  const hasMinimumSources = usedTools.length >= MINIMUM_SOURCES;
+  // Validate minimum sources requirement - use deduplicated unique tools
+  const uniqueTools = [...new Set(usedTools.filter(Boolean))];
+  const hasMinimumSources = uniqueTools.length >= MINIMUM_SOURCES;
   
   // Check if all required tools were used
   const allRequiredToolsUsed = missingTools.length === 0;
@@ -147,20 +148,32 @@ function calculateScore(allRequired, minSources, hasReferences, extraCount) {
  * @returns {Object} Aggregated validation results
  */
 export function validateArticleBatch(articles) {
-  const results = articles.map(article => 
+  const results = (articles || []).map(article => 
     validateCrossReferences(article.type, article.content, article.mcpCalls)
   );
   
+  if (results.length === 0) {
+    return {
+      total: 0,
+      passed: 0,
+      failed: 0,
+      avgScore: 0,
+      passRate: 0,
+      details: []
+    };
+  }
+  
+  const total = results.length;
   const passed = results.filter(r => r.passed).length;
-  const failed = results.length - passed;
-  const avgScore = results.reduce((sum, r) => sum + r.score, 0) / results.length;
+  const failed = total - passed;
+  const avgScore = results.reduce((sum, r) => sum + r.score, 0) / total;
   
   return {
-    total: results.length,
+    total,
     passed,
     failed,
     avgScore,
-    passRate: passed / results.length,
+    passRate: passed / total,
     details: results
   };
 }

@@ -17,12 +17,11 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for propositions articles
+ * Currently implements only get_propositioner
+ * TODO: Add search_dokument_fulltext, analyze_g0v_by_department, search_anforanden for richer cross-referencing
  */
 export const REQUIRED_TOOLS = [
-  'get_propositioner',
-  'search_dokument_fulltext',
-  'analyze_g0v_by_department',
-  'search_anforanden'
+  'get_propositioner'
 ];
 
 /**
@@ -185,11 +184,15 @@ function getTitles(lang, count) {
 }
 
 export function validatePropositions(article) {
+  const hasPropositions = checkPropositions(article);
+  const hasMinimumSources = countSources(article) >= 3;
+  const hasPolicyAnalysis = checkPolicyAnalysis(article);
+  
   return {
-    hasPropositions: checkPropositions(article),
-    hasMinimumSources: countSources(article) >= 3,
-    hasPolicyAnalysis: checkPolicyAnalysis(article),
-    passed: false
+    hasPropositions,
+    hasMinimumSources,
+    hasPolicyAnalysis,
+    passed: hasPropositions && hasMinimumSources && hasPolicyAnalysis
   };
 }
 

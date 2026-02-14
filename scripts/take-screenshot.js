@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1200, height: 1600 } });
   
-  const filePath = join(__dirname, 'news', 'sample-economist-style.html');
+  const filePath = join(__dirname, '..', 'news', 'sample-economist-style.html');
   await page.goto(`file://${filePath}`);
   
   await page.screenshot({ 

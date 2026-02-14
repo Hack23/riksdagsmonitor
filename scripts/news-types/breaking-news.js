@@ -70,14 +70,14 @@ export async function generateBreakingNews(options = {}) {
     if (eventData.voteId) {
       console.log('  🔄 Fetching voting details...');
       const votes = await client.fetchVotingRecords({ punkt: eventData.voteId });
-      mcpCalls.push({ tool: 'fetch_voting_records', result: votes });
+      mcpCalls.push({ tool: 'search_voteringar', result: votes });
     }
     
     // Example: Fetch related speeches
     if (eventData.topic) {
       console.log('  🔄 Fetching related speeches...');
       const speeches = await client.searchSpeeches({ text: eventData.topic });
-      mcpCalls.push({ tool: 'search_speeches', result: speeches });
+      mcpCalls.push({ tool: 'search_anforanden', result: speeches });
     }
     
     const today = new Date();
@@ -214,12 +214,17 @@ function getTitles(lang, eventContext) {
 }
 
 export function validateBreakingNews(article) {
+  const hasBreakingEvent = checkBreakingEvent(article);
+  const hasMinimumSources = countSources(article) >= 3;
+  const hasTimeliness = checkTimeliness(article);
+  const hasImpactAnalysis = checkImpactAnalysis(article);
+  
   return {
-    hasBreakingEvent: checkBreakingEvent(article),
-    hasMinimumSources: countSources(article) >= 3,
-    hasTimeliness: checkTimeliness(article),
-    hasImpactAnalysis: checkImpactAnalysis(article),
-    passed: false
+    hasBreakingEvent,
+    hasMinimumSources,
+    hasTimeliness,
+    hasImpactAnalysis,
+    passed: hasBreakingEvent && hasMinimumSources && hasTimeliness && hasImpactAnalysis
   };
 }
 

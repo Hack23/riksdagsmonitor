@@ -17,12 +17,11 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for committee-reports articles
+ * Currently implements only get_betankanden
+ * TODO: Add search_voteringar, search_anforanden, get_propositioner for richer cross-referencing
  */
 export const REQUIRED_TOOLS = [
-  'get_betankanden',
-  'search_voteringar',
-  'search_anforanden',
-  'get_propositioner'
+  'get_betankanden'
 ];
 
 /**
@@ -201,12 +200,17 @@ function getTitles(lang, reportsCount) {
  * Validate committee reports article structure
  */
 export function validateCommitteeReports(article) {
+  const hasCommitteeReports = checkCommitteeReports(article);
+  const hasMinimumSources = countSources(article) >= 3;
+  const hasAnalysisTone = checkAnalysisTone(article);
+  const hasPartyPositions = checkPartyPositions(article);
+  
   return {
-    hasCommitteeReports: checkCommitteeReports(article),
-    hasMinimumSources: countSources(article) >= 3,
-    hasAnalysisTone: checkAnalysisTone(article),
-    hasPartyPositions: checkPartyPositions(article),
-    passed: false
+    hasCommitteeReports,
+    hasMinimumSources,
+    hasAnalysisTone,
+    hasPartyPositions,
+    passed: hasCommitteeReports && hasMinimumSources && hasAnalysisTone && hasPartyPositions
   };
 }
 

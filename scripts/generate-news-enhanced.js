@@ -6,7 +6,9 @@
  * Generates news articles using riksdag-regering-mcp data
  * Integrates MCP client, data transformers, and article template
  * 
- * REFACTORED: Now uses modular article generators from news-types/
+ * Note: Modular article generators exist in news-types/ but this script
+ * currently uses its own implementations. Future refactoring should migrate
+ * to use the modular generators.
  * 
  * Usage: node generate-news-enhanced.js --types="week-ahead,committee-reports"
  */
@@ -25,25 +27,11 @@ import {
 } from './data-transformers.js';
 import { generateArticleHTML } from './article-template.js';
 
-// Import modular article generators
+// Import only the utilities needed (not the main generator functions)
 import { 
-  generateWeekAhead as generateWeekAheadModule,
   getWeekAheadDateRange,
-  formatDateForSlug as formatDateForSlugModule,
-  REQUIRED_TOOLS as WEEK_AHEAD_TOOLS
+  formatDateForSlug as formatDateForSlugModule
 } from './news-types/week-ahead.js';
-import { 
-  generateCommitteeReports as generateCommitteeReportsModule,
-  REQUIRED_TOOLS as COMMITTEE_REPORTS_TOOLS
-} from './news-types/committee-reports.js';
-import { 
-  generatePropositions as generatePropositionsModule,
-  REQUIRED_TOOLS as PROPOSITIONS_TOOLS
-} from './news-types/propositions.js';
-import { 
-  generateMotions as generateMotionsModule,
-  REQUIRED_TOOLS as MOTIONS_TOOLS
-} from './news-types/motions.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
