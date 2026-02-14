@@ -277,7 +277,7 @@ function generateAvailableLanguages(languages, currentLang) {
   const availableText = AVAILABLE_IN_TRANSLATIONS[currentLang] || 'Available in';
   const badges = languages.map(lang => generateLanguageBadge(lang, isRTL)).join(' ');
   
-  return `<p class="available-languages"${isRTL ? ' dir="ltr"' : ''}><strong>${availableText}:</strong> ${badges}</p>`;
+  return `<p class="available-languages"><strong>${availableText}:</strong> ${badges}</p>`;
 }
 
 console.log('🗂️ Dynamic News Index Generation');
@@ -687,6 +687,12 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
   </div>
   
   <script>
+    // Language flags mapping (shared with server-side)
+    const LANGUAGE_FLAGS = ${JSON.stringify(LANGUAGE_FLAGS)};
+    
+    // Available in translation (for current language)
+    const AVAILABLE_IN_TEXT = '${escapeHtml(AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in')}';
+    
     // Dynamic articles array - generated from news/ directory
     const articles = ${JSON.stringify(displayArticles.map(a => ({
       title: a.title,
@@ -715,20 +721,19 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       noResults.style.display = 'none';
       
       grid.innerHTML = articlesToRender.map(article => {
-        // Generate language badge for the article
-        const flag = {en:'🇬🇧',sv:'🇸🇪',da:'🇩🇰',no:'🇳🇴',fi:'🇫🇮',de:'🇩🇪',fr:'🇫🇷',es:'🇪🇸',nl:'🇳🇱',ar:'🇸🇦',he:'🇮🇱',ja:'🇯🇵',ko:'🇰🇷',zh:'🇨🇳'}[article.lang] || '🌐';
+        // Generate language badge for the article using shared LANGUAGE_FLAGS
+        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
         const langBadge = \`<span class="language-badge" aria-label="\${article.lang} language"><span aria-hidden="true">\${flag}</span> \${article.lang.toUpperCase()}</span>\`;
         
         // Generate available languages display if multiple languages exist
         const availableLangs = article.availableLanguages || [article.lang];
         let availableDisplay = '';
         if (availableLangs.length > 1) {
-          const availableText = '${AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in'}';
           const availableBadges = availableLangs.map(l => {
-            const f = {en:'🇬🇧',sv:'🇸🇪',da:'🇩🇰',no:'🇳🇴',fi:'🇫🇮',de:'🇩🇪',fr:'🇫🇷',es:'🇪🇸',nl:'🇳🇱',ar:'🇸🇦',he:'🇮🇱',ja:'🇯🇵',ko:'🇰🇷',zh:'🇨🇳'}[l] || '🌐';
+            const f = LANGUAGE_FLAGS[l] || '🌐';
             return \`<span class="lang-badge-sm"><span aria-hidden="true">\${f}</span> \${l.toUpperCase()}</span>\`;
           }).join(' ');
-          availableDisplay = \`<p class="available-languages"><strong>\${availableText}:</strong> \${availableBadges}</p>\`;
+          availableDisplay = \`<p class="available-languages"><strong>\${AVAILABLE_IN_TEXT}:</strong> \${availableBadges}</p>\`;
         }
         
         return \`
@@ -938,13 +943,13 @@ function generateAllIndexes() {
   let successCount = 0;
   let errorCount = 0;
   
+  // Get ALL articles with language metadata once for all indexes (performance optimization)
+  const allArticlesWithLanguageInfo = getAllArticlesWithLanguageInfo(articlesByLang);
+  
   Object.keys(LANGUAGES).forEach(langKey => {
     try {
       const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
       const filePath = path.join(NEWS_DIR, filename);
-      
-      // Get ALL articles with language metadata for cross-language discovery
-      const allArticlesWithLanguageInfo = getAllArticlesWithLanguageInfo(articlesByLang);
       
       const html = generateIndexHTML(langKey, allArticlesWithLanguageInfo, articlesByLang);
       fs.writeFileSync(filePath, html, 'utf-8');

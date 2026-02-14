@@ -94,11 +94,15 @@ export class WorkflowStateCoordinator {
   cleanupExpiredEntries() {
     const now = Date.now();
     
-    // Clean MCP cache (2-hour TTL)
+    // Clean MCP cache using per-entry TTL (default: 2 hours)
     Object.keys(this.state.mcpQueryCache).forEach(key => {
       const entry = this.state.mcpQueryCache[key];
       const entryTime = new Date(entry.timestamp).getTime();
-      if (now - entryTime > MCP_CACHE_TTL_SECONDS * 1000) {
+      const effectiveTtlSeconds =
+        typeof entry.ttl === 'number' && entry.ttl > 0
+          ? entry.ttl
+          : MCP_CACHE_TTL_SECONDS;
+      if (now - entryTime > effectiveTtlSeconds * 1000) {
         delete this.state.mcpQueryCache[key];
       }
     });
@@ -177,10 +181,10 @@ export class WorkflowStateCoordinator {
    * 
    * @param {string} title - Article title
    * @param {string[]} topics - Article topics
-   * @param {string[]} sources - Article sources
+   * @param {string[]} mcpQueries - MCP query keys used for this article
    * @returns {Object} { isDuplicate: boolean, matchedArticle: Object|null, similarityScore: number }
    */
-  async checkDuplicateArticle(title, topics = [], sources = []) {
+  async checkDuplicateArticle(title, topics = [], mcpQueries = []) {
     this.cleanupExpiredEntries();
     
     let maxSimilarity = 0;
@@ -190,7 +194,7 @@ export class WorkflowStateCoordinator {
       const similarity = this.calculateSimilarity(
         title,
         topics,
-        sources,
+        mcpQueries,
         recentArticle.title,
         recentArticle.topics,
         recentArticle.mcpQueries
@@ -217,14 +221,14 @@ export class WorkflowStateCoordinator {
    * Uses weighted combination of:
    * - Title similarity (50%)
    * - Topic overlap (30%)
-   * - Source overlap (20%)
+   * - MCP query overlap (20%)
    * 
    * @returns {number} Similarity score 0.0-1.0
    */
-  calculateSimilarity(title1, topics1, sources1, title2, topics2, sources2) {
+  calculateSimilarity(title1, topics1, mcpQueries1, title2, topics2, mcpQueries2) {
     const titleSim = this.stringSimilarity(title1, title2);
     const topicSim = this.setOverlap(topics1, topics2);
-    const sourceSim = this.setOverlap(sources1, sources2);
+    const sourceSim = this.setOverlap(mcpQueries1, mcpQueries2);
     
     return (titleSim * 0.5) + (topicSim * 0.3) + (sourceSim * 0.2);
   }

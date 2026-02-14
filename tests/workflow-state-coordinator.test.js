@@ -61,11 +61,23 @@ describe('Workflow State Coordinator', () => {
 
     it('should create metadata directory if missing', async () => {
       const dir = path.dirname(TEST_STATE_FILE);
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-      }
       
+      // Ensure any existing test file is removed
+      if (fs.existsSync(TEST_STATE_FILE)) {
+        fs.unlinkSync(TEST_STATE_FILE);
+      }
+
+      // Remove the directory to simulate a missing metadata directory
+      if (fs.existsSync(dir)) {
+        fs.rmSync(dir, { recursive: true });
+      }
+
+      expect(fs.existsSync(dir)).toBe(false);
+
       await coordinator.save();
+
+      // save() should recreate the directory and state file
+      expect(fs.existsSync(dir)).toBe(true);
       expect(fs.existsSync(TEST_STATE_FILE)).toBe(true);
     });
 

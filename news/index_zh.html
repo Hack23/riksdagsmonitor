@@ -286,6 +286,12 @@
   </div>
   
   <script>
+    // Language flags mapping (shared with server-side)
+    const LANGUAGE_FLAGS = {"en":"🇬🇧","sv":"🇸🇪","da":"🇩🇰","no":"🇳🇴","fi":"🇫🇮","de":"🇩🇪","fr":"🇫🇷","es":"🇪🇸","nl":"🇳🇱","ar":"🇸🇦","he":"🇮🇱","ja":"🇯🇵","ko":"🇰🇷","zh":"🇨🇳"};
+    
+    // Available in translation (for current language)
+    const AVAILABLE_IN_TEXT = '可用语言';
+    
     // Dynamic articles array - generated from news/ directory
     const articles = [
   {
@@ -1122,20 +1128,19 @@
       noResults.style.display = 'none';
       
       grid.innerHTML = articlesToRender.map(article => {
-        // Generate language badge for the article
-        const flag = {en:'🇬🇧',sv:'🇸🇪',da:'🇩🇰',no:'🇳🇴',fi:'🇫🇮',de:'🇩🇪',fr:'🇫🇷',es:'🇪🇸',nl:'🇳🇱',ar:'🇸🇦',he:'🇮🇱',ja:'🇯🇵',ko:'🇰🇷',zh:'🇨🇳'}[article.lang] || '🌐';
+        // Generate language badge for the article using shared LANGUAGE_FLAGS
+        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
         const langBadge = `<span class="language-badge" aria-label="${article.lang} language"><span aria-hidden="true">${flag}</span> ${article.lang.toUpperCase()}</span>`;
         
         // Generate available languages display if multiple languages exist
         const availableLangs = article.availableLanguages || [article.lang];
         let availableDisplay = '';
         if (availableLangs.length > 1) {
-          const availableText = '可用语言';
           const availableBadges = availableLangs.map(l => {
-            const f = {en:'🇬🇧',sv:'🇸🇪',da:'🇩🇰',no:'🇳🇴',fi:'🇫🇮',de:'🇩🇪',fr:'🇫🇷',es:'🇪🇸',nl:'🇳🇱',ar:'🇸🇦',he:'🇮🇱',ja:'🇯🇵',ko:'🇰🇷',zh:'🇨🇳'}[l] || '🌐';
+            const f = LANGUAGE_FLAGS[l] || '🌐';
             return `<span class="lang-badge-sm"><span aria-hidden="true">${f}</span> ${l.toUpperCase()}</span>`;
           }).join(' ');
-          availableDisplay = `<p class="available-languages"><strong>${availableText}:</strong> ${availableBadges}</p>`;
+          availableDisplay = `<p class="available-languages"><strong>${AVAILABLE_IN_TEXT}:</strong> ${availableBadges}</p>`;
         }
         
         return `
