@@ -943,18 +943,17 @@ function generateAllIndexes() {
   let successCount = 0;
   let errorCount = 0;
   
-  // Get ALL articles with language metadata once for all indexes (performance optimization)
-  const allArticlesWithLanguageInfo = getAllArticlesWithLanguageInfo(articlesByLang);
-  
   Object.keys(LANGUAGES).forEach(langKey => {
     try {
       const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
       const filePath = path.join(NEWS_DIR, filename);
       
-      const html = generateIndexHTML(langKey, allArticlesWithLanguageInfo, articlesByLang);
+      // Use language-specific articles, not all articles
+      const languageArticles = articlesByLang[langKey] || [];
+      const html = generateIndexHTML(langKey, languageArticles, articlesByLang);
       fs.writeFileSync(filePath, html, 'utf-8');
       
-      console.log(`  ✅ Generated: ${filename} (${allArticlesWithLanguageInfo.length} articles)`);
+      console.log(`  ✅ Generated: ${filename} (${languageArticles.length} articles)`);
       successCount++;
     } catch (error) {
       console.error(`  ❌ Failed to generate ${langKey}:`, error.message);
