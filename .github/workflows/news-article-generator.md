@@ -7,9 +7,8 @@ on:
   workflow_dispatch:
     inputs:
       article_types:
-        description: Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking)
+        description: Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking). Leave empty for day-of-week schedule.
         required: false
-        default: week-ahead
       force_generation:
         description: Force generation even if recent articles exist
         type: boolean
@@ -18,7 +17,7 @@ on:
       languages:
         description: 'Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)'
         required: false
-        default: en,sv
+        default: all
 
 permissions:
   contents: read
@@ -82,17 +81,25 @@ Generate news articles based on the latest data from riksdag-regering-mcp server
 ### Workflow Inputs
 
 Check the GitHub event inputs:
-- **article_types**: Available from `github.event.inputs.article_types` (default: week-ahead if not provided)
+- **article_types**: Available from `github.event.inputs.article_types` (if empty, uses day-of-week schedule — see below)
 - **force_generation**: Available from `github.event.inputs.force_generation` (default: false if not provided)
-- **languages**: Available from `github.event.inputs.languages` (default: en,sv if not provided)
+- **languages**: Available from `github.event.inputs.languages` (default: all — all 14 languages)
+
+### Day-of-Week Article Schedule (when article_types not specified)
+
+| Day | Article Types | Rationale |
+|-----|--------------|-----------|
+| **Monday–Thursday** | `committee-reports,propositions,motions` | Active parliamentary days |
+| **Friday** | `week-ahead,committee-reports,propositions,motions` | Parliamentary activity + next week preview |
+| **Saturday–Sunday** | `committee-reports,propositions,motions` | Government/Riksdag document monitoring (press releases, crisis, SOU) |
 
 ### Language Options
 
 The `languages` input supports:
-- **en,sv** (default) - English and Swedish only
+- **en,sv** - English and Swedish only
 - **nordic** - Nordic languages: en,sv,da,no,fi
 - **eu-core** - EU core languages: en,sv,de,fr,es,nl
-- **all** - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
+- **all** (default) - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
 - **custom** - Any comma-separated list (e.g., "en,sv,de,fr")
 
 ### Article Types to Generate
@@ -273,10 +280,10 @@ For the data retrieved:
 First, parse the `languages` input from `github.event.inputs.languages` and expand presets:
 
 ```bash
-# Get languages input (default: en,sv)
+# Get languages input (default: all 14 languages)
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 if [ -z "$LANGUAGES_INPUT" ]; then
-  LANGUAGES_INPUT="en,sv"
+  LANGUAGES_INPUT="all"
 fi
 
 # Trim and normalize the input before preset expansion
@@ -307,13 +314,33 @@ echo "📋 Final languages: $LANG_ARG"
 
 #### Run Automated News Generation Script
 
-Use the `generate-news-enhanced.js` script to generate articles for all requested types and languages:
+Use the `generate-news-enhanced.js` script to generate articles for the appropriate types and languages:
 
 ```bash
-# Get article types input
+# Get article types input — use day-of-week schedule if not manually specified
 ARTICLE_TYPES="${{ github.event.inputs.article_types }}"
 if [ -z "$ARTICLE_TYPES" ]; then
-  ARTICLE_TYPES="week-ahead"
+  DAY_OF_WEEK=$(date -u +"%u")  # 1=Monday, 7=Sunday
+
+  case "$DAY_OF_WEEK" in
+    5)
+      # Friday: parliamentary activity + next week preview
+      ARTICLE_TYPES="week-ahead,committee-reports,propositions,motions"
+      echo "📅 Friday schedule: week-ahead preview + parliamentary activity"
+      ;;
+    6|7)
+      # Weekend: Riksdag closed but government may publish press releases,
+      # crisis communications, SOU reports, or other urgent documents.
+      # Check for new committee reports, propositions, and motions.
+      ARTICLE_TYPES="committee-reports,propositions,motions"
+      echo "📅 Weekend schedule: government & riksdag document monitoring"
+      ;;
+    *)
+      # Monday-Thursday: active parliamentary days
+      ARTICLE_TYPES="committee-reports,propositions,motions"
+      echo "📅 Weekday schedule: parliamentary activity coverage"
+      ;;
+  esac
 fi
 
 echo "📰 Generating news articles..."

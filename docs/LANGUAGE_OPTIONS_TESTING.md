@@ -310,9 +310,8 @@ done
 
 The workflow automatically tests language handling:
 
-```yaml
-# .github/workflows/news-generation.yml (lines 142-176)
-# Expands language presets
+```bash
+# Language preset expansion (used by agentic workflows and CLI)
 case "$LANGUAGES" in
   "nordic")
     LANG_ARG="en,sv,da,no,fi"
