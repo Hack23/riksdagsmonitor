@@ -193,7 +193,7 @@
       "startDate": "2026-09-13",
       "endDate": "2026-09-13",
       "eventStatus": "https://schema.org/EventScheduled",
-      "event出席Mode": "https://schema.org/OfflineEvent出席Mode",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
         "name": "スウェーデン",
@@ -534,31 +534,31 @@
 
 <div class="dashboard-grid">
 <div class="chart-card">
-<h3>Effectiveness Trends (1990-2026)</h3>
-<p>Historical party effectiveness scores showing legislative productivity, voting consistency, and policy impact over time.</p>
+<h3>政党有効性トレンド（1990-2026）</h3>
+<p>立法生産性、投票の一貫性、政策インパクトの時系列推移を示す政党有効性スコアです。</p>
 <canvas id="partyEffectivenessChart" role="img" aria-label="スウェーデンの 8 つの政党すべての 1990 年から 2026 年までの傾向を示す党効性折れ線グラフ"></canvas>
 <span class="sr-only">1990 年から 2026 年までの社会民主党、中党、スウェーデン民主党、中央党、左翼党、キリスト教民主党、自由党、緑の党の有効性スコアを表示する折れ線グラフ。</span>
 </div>
 
 <div class="chart-card">
 <h3>政党比較（当期）</h3>
-<p>Comparative analysis of party performance metrics for the current legislative period.</p>
+<p>現立法期間における政党パフォーマンス指標の比較分析です。</p>
 <canvas id="partyComparisonChart" role="img" aria-label="スウェーデンの 8 つの政党すべての現在のパフォーマンス スコアを比較した棒グラフ"></canvas>
-<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+<span class="sr-only">現立法期間における全政党の比較パフォーマンススコアを、スコア順で示す横棒グラフです。</span>
 </div>
 
 <div class="chart-card">
 <h3>連合の連携</h3>
 <p>連立パターンと政党間の協力ネットワーク。</p>
 <div id="coalitionAlignmentChart" role="region" aria-label="政党間の連携の強さを示す連立連携の視覚化"></div>
-<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+<span class="sr-only">政党の組み合わせごとの協力強度（%）を示す連立パターンの可視化です。</span>
 </div>
 
 <div class="chart-card">
-<h3>Momentum Indicators</h3>
+<h3>モメンタム指標</h3>
 <p>選挙の軌跡を示すパーセンタイルベンチマーク (P50、P90) を使用した政党の勢いスコア。</p>
 <canvas id="partyMomentumChart" role="img" aria-label="スウェーデンの 8 つの政党すべての勢いスコアを示すドーナツ グラフ"></canvas>
-<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+<span class="sr-only">各政党のモメンタム指標スコアとパーセンタイル基準を示すドーナツグラフです。</span>
 </div>
 </div>
 </section>
@@ -570,7 +570,7 @@
 <!-- Network Diagram (Full Width) -->
 <div class="chart-card wide">
 <h3>委員会ネットワーク図</h3>
-<p>Interactive visualization of committee relationships and productivity. Drag nodes to explore connections.</p>
+<p>委員会間の関係と生産性をインタラクティブに可視化します。ノードをドラッグして関連性を探索できます。</p>
 <div id="committeeNetwork" role="img" aria-label="スウェーデンの国会議事堂の 15 の委員会間の関係を示す委員会ネットワーク接続図"></div>
 <table class="sr-only" id="committeeNetworkTable" aria-label="委員会ネットワーク接続データテーブル">
 <!-- Accessible fallback table populated by JavaScript -->
@@ -579,8 +579,8 @@
 
 <!-- Productivity Heat Map (Full Width) -->
 <div class="chart-card wide">
-<h3>Productivity Matrix (2020-2026)</h3>
-<p>Heat map showing committee productivity scores over time. Hover over cells for detailed information.</p>
+<h3>生産性マトリクス（2020-2026）</h3>
+<p>委員会の生産性スコアを時系列で示すヒートマップです。セルにホバーすると詳細を確認できます。</p>
 <div id="productivityMatrix" role="img" aria-label="2020 年から 2026 年までの長期にわたるパフォーマンスを示す委員会の生産性マトリックス"></div>
 <table class="sr-only" id="productivityMatrixTable" aria-label="委員会生産性マトリックス データ表">
 <!-- Accessible fallback table populated by JavaScript -->
@@ -590,27 +590,27 @@
 <!-- 委員会比較 -->
 <div class="chart-card">
 <h3>委員会比較</h3>
-<p>Compare productivity scores across all 15 committees.</p>
-<canvas id="committeeComparisonChart" role="img" aria-label="Bar chart comparing productivity scores across committees"></canvas>
+<p>15の全委員会の生産性スコアを比較します。</p>
+<canvas id="committeeComparisonChart" role="img" aria-label="委員会ごとの生産性スコアを比較する棒グラフ"></canvas>
 </div>
 
 <!-- 意思決定有効性 -->
 <div class="chart-card">
 <h3>意思決定有効性</h3>
-<p>Track decision outcomes (approved, rejected, pending) over time.</p>
-<canvas id="decisionEffectivenessChart" role="img" aria-label="Stacked bar chart showing decision effectiveness over years"></canvas>
+<p>意思決定結果（可決・否決・保留）の推移を追跡します。</p>
+<canvas id="decisionEffectivenessChart" role="img" aria-label="年次の意思決定有効性を示す積み上げ棒グラフ"></canvas>
 </div>
 
 <!-- Seasonal Patterns (Full Width) -->
 <div class="chart-card wide">
-<h3>Seasonal Activity Patterns</h3>
-<p>Quarterly activity trends showing how committee work varies across the year.</p>
-<canvas id="seasonalPatternsChart" role="img" aria-label="Line chart displaying seasonal activity patterns by quarter"></canvas>
+<h3>季節別活動パターン</h3>
+<p>委員会活動が年間でどう変化するかを、四半期トレンドで示します。</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="四半期ごとの季節別活動パターンを示す折れ線グラフ"></canvas>
 </div>
 </div>
 
 <div class="dashboard-attribution">
-<p><small>📊 Data powered by <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | Updated: <span id="committeeLastUpdated">読み込み中...</span></small></p>
+<p><small>📊 データ提供: <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA プラットフォーム</a> | 更新: <span id="committeeLastUpdated">読み込み中...</span></small></p>
 </div>
 </section>
 
@@ -629,26 +629,26 @@
 </div>
 
 <div class="chart-card">
-<h3>Voting Anomalies (Last 5 Years)</h3>
-<p>Scatter plot highlighting unusual voting patterns and party defections from expected behavior.</p>
-<canvas id="voting異常Chart" role="img" aria-label="すべての政党の偏差スコアを示す投票異常散布図"></canvas>
+<h3>投票異常（直近5年）</h3>
+<p>通常と異なる投票パターンや、想定から外れた党内離反を強調する散布図です。</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="全政党の偏差スコアを示す投票異常散布図"></canvas>
 </div>
 
 <div class="chart-card">
 <h3>政党整合ヒートマップ</h3>
-<p>Matrix visualization showing cross-party voting agreement levels based on historical voting records.</p>
+<p>過去の投票記録に基づき、政党間の投票一致度をマトリクスで可視化します。</p>
 <div id="alignmentHeatMap" role="img" aria-label="すべての政党ペア間の投票同意率を示す政党連携ヒート マップ"></div>
 </div>
 
 <div class="chart-card">
-<h3>Behavioral Patterns</h3>
+<h3>行動パターン</h3>
 <p>政党の投票の一貫性スコアは、すべての投票における党の方針の遵守を測定します。</p>
-<canvas id="behavioralPatternsChart" role="img" aria-label="Behavioral patterns bar chart showing voting consistency percentages for all parties"></canvas>
+<canvas id="behavioralPatternsChart" role="img" aria-label="全政党の投票一貫性比率を示す行動パターン棒グラフ"></canvas>
 </div>
 
 <div class="chart-card wide">
 <h3>意思決定トレンド（1990-2026）</h3>
-<p>Historical timeline showing annual voting activity trends for all parties over 36 years.</p>
+<p>36年間にわたる全政党の年次投票活動トレンドを示すヒストリカルタイムラインです。</p>
 <canvas id="decisionTrendsChart" role="img" aria-label="1990 年から 2026 年までの年間投票量を示す意思決定動向タイムライン"></canvas>
 </div>
 </div>
@@ -659,7 +659,7 @@
 </section>
 
 <section id="seasonal-patterns-dashboard">
-<h2>📅 Seasonal Activity Patterns (2002-2025)</h2>
+<h2>📅 季節別活動パターン（2002-2025）</h2>
 <p class="subtitle">Zスコア異常検知を用いた四半期分析</p>
 
 <!-- Filters -->
@@ -670,16 +670,16 @@
 
 <select id="seasonal-quarter-filter" aria-label="四半期で絞り込み">
 <option value="all">すべての四半期</option>
-<option value="1">Q1 - Winter Session</option>
-<option value="2">Q2 - Spring Session</option>
-<option value="3">Q3 - Summer Recess</option>
-<option value="4">Q4 - Autumn Session</option>
+<option value="1">Q1 - 冬会期</option>
+<option value="2">Q2 - 春会期</option>
+<option value="3">Q3 - 夏季休会</option>
+<option value="4">Q4 - 秋会期</option>
 </select>
 
 <select id="seasonal-election-filter" aria-label="選挙ステータスで絞り込み">
-<option value="all">All</option>
+<option value="all">すべて</option>
 <option value="election">選挙年</option>
-<option value="non-election">Non-選挙年</option>
+<option value="non-election">非選挙年</option>
 </select>
 
 <select id="classification-filter" aria-label="活動分類で絞り込み">
@@ -691,41 +691,41 @@
 <div class="dashboard-grid">
 <!-- Chart 1: Quarterly Activity Heat Map -->
 <div class="chart-card wide">
-<h3>Quarterly Activity Heat Map (2002-2025)</h3>
+<h3>四半期活動ヒートマップ（2002-2025）</h3>
 <div id="seasonal-heatmap"></div>
-<p class="chart-description">Ballot volume by year and quarter with Z-score overlay. Red circles indicate statistical anomalies (|Z| ≥ 2.0).</p>
+<p class="chart-description">年・四半期ごとの投票量にZスコアを重ねて表示。赤い円は統計的異常（|Z| ≥ 2.0）を示します。</p>
 </div>
 
 <!-- Chart 2: Z-Score 異常 Timeline -->
 <div class="chart-card">
 <h3>Z スコアの異常検出</h3>
-<canvas id="zscore-timeline-chart" role="img" aria-label="Line chart showing Z-score timeline for ballot, document, and attendance metrics"></canvas>
-<p class="chart-description">Statistical outliers (|Z| ≥ 2.0) are flagged in red based on anomaly thresholds.</p>
+<canvas id="zscore-timeline-chart" role="img" aria-label="投票・文書・出席指標のZスコア時系列を示す折れ線グラフ"></canvas>
+<p class="chart-description">異常閾値に基づき、統計的外れ値（|Z| ≥ 2.0）を赤で表示します。</p>
 </div>
 
 <!-- Chart 3: Cross-Year Quarter Comparison -->
 <div class="chart-card">
-<h3>Average Activity by Quarter (すべての年)</h3>
-<canvas id="quarter-comparison-chart" role="img" aria-label="Bar chart showing average ballots by quarter across all years"></canvas>
-<p class="chart-description">Q1–Q4 baselines across all years. Shows typical activity patterns across seasons.</p>
+<h3>四半期別平均活動（全年度）</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="全年度の四半期別平均投票量を示す棒グラフ"></canvas>
+<p class="chart-description">全年度におけるQ1〜Q4の基準線を示し、季節ごとの典型的活動パターンを把握できます。</p>
 </div>
 
 <!-- Chart 4: Activity Classification Distribution -->
 <div class="chart-card wide">
-<h3>Seasonal Pattern Classification</h3>
-<canvas id="classification-chart" role="img" aria-label="Stacked bar chart showing distribution of activity classifications by year"></canvas>
-<p class="chart-description">Distribution of NORMAL, ELEVATED, REDUCED, and ANOMALY patterns across years.</p>
+<h3>季節パターン分類</h3>
+<canvas id="classification-chart" role="img" aria-label="年度別活動分類の分布を示す積み上げ棒グラフ"></canvas>
+<p class="chart-description">年度ごとの NORMAL・ELEVATED・REDUCED・ANOMALY パターン分布です。</p>
 </div>
 
 <!-- Chart 5: QoQ Change Waterfall -->
 <div class="chart-card">
-<h3>Quarter-over-Quarter Changes</h3>
-<canvas id="qoq-change-chart" role="img" aria-label="Bar chart showing quarter-over-quarter ballot changes as percentages"></canvas>
-<p class="chart-description">Sequential ballot changes (% and absolute). Green indicates increase, red indicates decrease.</p>
+<h3>前四半期比の変化</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="投票量の前四半期比変化率を示す棒グラフ"></canvas>
+<p class="chart-description">連続四半期の投票変化（%と絶対値）。緑は増加、赤は減少を示します。</p>
 </div>
 </div>
 
-<p class="data-attribution">📊 Data by CIA Platform | 毎日更新</p>
+<p class="data-attribution">📊 データ: CIA プラットフォーム | 毎日更新</p>
 </section>
 
 <section id="pre-election-dashboard" class="dashboard-section">
@@ -735,31 +735,31 @@
 <!-- Real-Time Status Cards -->
 <div class="status-cards">
 <div class="status-card" data-metric="ballots">
-<h3><span aria-hidden="true">📊</span> Ballot Activity</h3>
+<h3><span aria-hidden="true">📊</span> 投票活動</h3>
 <p class="current-value">16,750</p>
-<p class="baseline-comparison">+4.34% vs baseline</p>
-<span class="status-badge normal">NORMAL</span>
+<p class="baseline-comparison">基準比 +4.34%</p>
+<span class="status-badge normal">通常</span>
 </div>
 
 <div class="status-card" data-metric="documents">
-<h3><span aria-hidden="true">📄</span> Document Production</h3>
+<h3><span aria-hidden="true">📄</span> 文書生産</h3>
 <p class="current-value">3,451</p>
-<p class="baseline-comparison">+25.55% vs baseline</p>
-<span class="status-badge normal">NORMAL</span>
+<p class="baseline-comparison">基準比 +25.55%</p>
+<span class="status-badge normal">通常</span>
 </div>
 
 <div class="status-card" data-metric="attendance">
-<h3><span aria-hidden="true">✅</span> 出席 Rate</h3>
+<h3><span aria-hidden="true">✅</span> 出席率</h3>
 <p class="current-value">85.75%</p>
-<p class="baseline-comparison">+0.75% vs baseline</p>
-<span class="status-badge normal">STABLE</span>
+<p class="baseline-comparison">基準比 +0.75%</p>
+<span class="status-badge normal">安定</span>
 </div>
 
 <div class="status-card" data-metric="party-performance">
 <h3><span aria-hidden="true">🎯</span> 政党勝率</h3>
 <p class="current-value">59.72%</p>
-<p class="baseline-comparison">+3.55% YoY</p>
-<span class="status-badge improving">IMPROVING</span>
+<p class="baseline-comparison">前年比 +3.55%</p>
+<span class="status-badge improving">改善中</span>
 </div>
 </div>
 
@@ -767,29 +767,29 @@
 <div class="dashboard-grid">
 <!-- Chart 1: Q4 Activity Timeline (2023-2025) -->
 <div class="chart-card wide">
-<h3>Q4 Activity Timeline (2023-2025)</h3>
+<h3>Q4 活動タイムライン（2023-2025）</h3>
 <div class="chart-container">
-<canvas id="q4-timeline-chart" aria-label="Q4 Activity Timeline showing ballots, documents, and attendance trends from 2023 to 2025"></canvas>
+<canvas id="q4-timeline-chart" aria-label="2023年から2025年の投票・文書・出席トレンドを示すQ4活動タイムライン"></canvas>
 </div>
-<p class="chart-description">Ballots, documents, attendance trends with baseline overlay</p>
+<p class="chart-description">基準線を重ねた投票・文書・出席トレンド</p>
 </div>
 
 <!-- 図 2: 選挙年の比較 -->
 <div class="chart-card">
 <h3>選挙年と非選挙年のQ4パターン</h3>
 <div class="chart-container">
-<canvas id="election-comparison-chart" aria-label="Comparison of Q4 ballot activity in election years versus non-election years from 2002 to 2025"></canvas>
+<canvas id="election-comparison-chart" aria-label="2002年から2025年の選挙年と非選挙年におけるQ4投票活動の比較"></canvas>
 </div>
 <p class="chart-description">第 4 四半期の過去の活動 (2002 ～ 2025 年): 選挙年と非選挙年</p>
 </div>
 
 <!-- Chart 3: Baseline Deviation Radar -->
 <div class="chart-card">
-<h3>Deviation from Baseline (2025 Q4)</h3>
+<h3>基準からの乖離（2025年Q4）</h3>
 <div class="chart-container">
-<canvas id="deviation-radar-chart" aria-label="Radar chart showing 2025 Q4 metrics compared to historical baselines"></canvas>
+<canvas id="deviation-radar-chart" aria-label="2025年Q4指標を過去基準と比較するレーダーチャート"></canvas>
 </div>
-<p class="chart-description">Multi-metric deviation analysis</p>
+<p class="chart-description">複数指標の乖離分析</p>
 </div>
 
 <!-- チャート 4: パーティー パフォーマンス シフト -->
@@ -798,23 +798,23 @@
 <div class="chart-container">
 <canvas id="party-trends-chart" aria-label="Line chart showing party win rate, absence rate, and document production from 2023 to 2025"></canvas>
 </div>
-<p class="chart-description">Win rate, absence rate, document production by year</p>
+<p class="chart-description">年別の勝率・欠席率・文書生産量</p>
 </div>
 
 <!-- Chart 5: YoY Change Waterfall -->
 <div class="chart-card">
-<h3>Year-over-Year Changes</h3>
+<h3>前年比変化</h3>
 <div class="chart-container">
-<canvas id="yoy-waterfall-chart" aria-label="Waterfall chart showing year-over-year ballot activity changes from 2023 to 2025"></canvas>
+<canvas id="yoy-waterfall-chart" aria-label="2023年から2025年の投票活動の前年比変化を示すウォーターフォールチャート"></canvas>
 </div>
-<p class="chart-description">Ballot activity changes: 2023 → 2024 → 2025</p>
+<p class="chart-description">投票活動の変化: 2023 → 2024 → 2025</p>
 </div>
 
 <!-- Chart 6: Early Warning Indicators -->
 <div class="chart-card">
-<h3>Early Warning Indicator Matrix</h3>
-<div id="warning-matrix" role="region" aria-label="Early warning indicator matrix showing status of 4 monitored metrics: ballots, documents, attendance, and year-over-year change"></div>
-<p class="chart-description">Real-time status of 4 monitored metrics (ballots, documents, attendance, YoY change)</p>
+<h3>早期警戒指標マトリクス</h3>
+<div id="warning-matrix" role="region" aria-label="4つの監視指標（投票、文書、出席、前年比変化）の状態を示す早期警戒指標マトリクス"></div>
+<p class="chart-description">4つの監視指標のリアルタイム状態（投票、文書、出席、前年比変化）</p>
 </div>
 </div>
 
@@ -850,8 +850,8 @@
 </select>
 <select id="anomaly-direction-filter" aria-label="方向でフィルタリングする">
 <option value="all">すべての方向</option>
-<option value="UNUSUALLY_HIGH">Unusually 高</option>
-<option value="UNUSUALLY_LOW">Unusually 低</option>
+<option value="UNUSUALLY_HIGH">異常に高い</option>
+<option value="UNUSUALLY_LOW">異常に低い</option>
 <option value="WITHIN_NORMAL_RANGE">正常範囲内</option>
 </select>
 <select id="anomaly-year-filter" aria-label="年で絞り込み">
@@ -864,64 +864,64 @@
 <!-- Chart 1: 異常 Timeline -->
 <div class="chart-card wide">
 <h3>異常タイムライン（2002-2026）</h3>
-<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
-<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="時間経過に沿った異常を示す散布図"></canvas>
+<p class="chart-description">検出された異常を重大度コード付きで時系列表示</p>
 </div>
 
 <!-- Chart 2: Z-Score Distribution -->
 <div class="chart-card">
-<h3>Z-Score Distribution</h3>
-<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
-<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+<h3>Zスコア分布</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Zスコア分布ヒストグラム"></canvas>
+<p class="chart-description">外れ値マーカー付き正規曲線（|Z| ≥ 2.0）</p>
 </div>
 
 <!-- Chart 3: 異常 Type Breakdown -->
 <div class="chart-card">
 <h3>異常タイプ分布</h3>
-<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
-<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+<canvas id="anomaly-type-chart" role="img" aria-label="異常タイプの分布を示すドーナツチャート"></canvas>
+<p class="chart-description">投票異常と文書異常の分布</p>
 </div>
 
 <!-- Chart 4: Severity Heat Map -->
 <div class="chart-card wide">
-<h3>Severity Heat Map (Year × Quarter)</h3>
-<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
-<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+<h3>重大度ヒートマップ（年 × 四半期）</h3>
+<div id="severity-heatmap" role="img" aria-label="年と四半期ごとの重大度を示すヒートマップ"></div>
+<p class="chart-description">年・四半期ごとの異常重大度を示すグリッド</p>
 </div>
 
 <!-- Chart 5: Quarterly 異常 Frequency -->
 <div class="chart-card">
 <h3>四半期別異常頻度</h3>
-<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="四半期ごとの異常頻度を示す棒グラフ"></canvas>
 <p class="chart-description">Q1-Q4 anomaly counts across all years</p>
 </div>
 
 <!-- Chart 6: Recent Anomalies Feed -->
 <div class="chart-card">
-<h3>Recent Anomalies (Last 5)</h3>
-<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
-<p class="chart-description">Most recent anomalies with details</p>
+<h3>最近の異常（最新5件）</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="最近の異常フィード"></div>
+<p class="chart-description">最新の異常と詳細情報</p>
 </div>
 </div>
 </section>
 
 <section id="ministry-dashboard" class="dashboard-container">
-<h2>🎖️ Government Minister リスク & Influence</h2>
+<h2>🎖️ 政府大臣のリスクと影響力</h2>
 
 <div class="dashboard-grid">
 <div class="chart-card wide">
-<h3>Ministry リスク Heat Map</h3>
-<div id="ministryリスクHeatMap" role="img" aria-label="Ministry リスク Heat Map showing risk levels across government departments"></div>
+<h3>省庁リスクヒートマップ</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="政府各省庁のリスク水準を示す省庁リスクヒートマップ"></div>
 </div>
 
 <div class="chart-card">
-<h3>Top 10 Most Influential Ministers</h3>
-<canvas id="ministerInfluenceChart" role="img" aria-label="Bar chart showing top 10 most influential ministers"></canvas>
+<h3>最も影響力のある大臣トップ10</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="影響力の高い大臣トップ10を示す棒グラフ"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>Ministry Productivity Matrix</h3>
-<canvas id="ministryProductivityChart" role="img" aria-label="Bar chart comparing ministry productivity across quarters"></canvas>
+<h3>省庁生産性マトリクス</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="四半期ごとの省庁生産性を比較する棒グラフ"></canvas>
 </div>
 
 <div class="chart-card">
@@ -940,8 +940,8 @@
 </section>
 
 <section id="risk-dashboard" class="dashboard-container">
-<h2><span aria-hidden="true">⚠️</span> リスク Assessment &amp; 異常 Detection</h2>
-<p class="dashboard-description">Comprehensive intelligence analysis using 45 risk rules across 349 MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes 2494 politicians (1971-2024).</p>
+<h2><span aria-hidden="true">⚠️</span> リスク評価と異常検知</h2>
+<p class="dashboard-description">349人の議員に対して45のリスクルールを適用し、統計的異常検知（P90/P99閾値）を組み合わせた包括的インテリジェンス分析です。履歴分析には1971-2024年の2494人の政治家データを含みます。</p>
 
 <div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
   <!-- Alerts populated by JavaScript -->
@@ -949,12 +949,12 @@
 
 <div class="dashboard-grid">
   <div class="chart-card full-width">
-    <h3>リスク Level Heat Map (45 Rules × 349 MPs)</h3>
-    <p class="chart-description">Interactive heat map showing risk scores for each MP across all 45 transparency rules. Click cells for details.</p>
+    <h3>リスクレベルヒートマップ（45ルール × 349議員）</h3>
+    <p class="chart-description">45の透明性ルールにわたる各議員のリスクスコアを示すインタラクティブヒートマップです。セルをクリックすると詳細を表示します。</p>
     <div class="controls">
       <label class="control-label">
-        <input type="checkbox" id="filter高リスク" aria-label="高リスクのみ表示 MPs (score ≥6.0)" aria-describedby="filter高リスクDesc">
-        <span id="filter高リスクDesc">高リスクのみ表示 (≥6.0)</span>
+        <input type="checkbox" id="filterHighRisk" aria-label="高リスク議員のみ表示（スコア ≥6.0）" aria-describedby="filterHighRiskDesc">
+        <span id="filterHighRiskDesc">高リスクのみ表示（≥6.0）</span>
       </label>
       <label class="control-label">
         <span>ルールで絞り込み:</span>
@@ -964,46 +964,46 @@
       </label>
       <button id="resetZoom" class="btn btn-sm" aria-label="Reset zoom">ズームをリセット</button>
     </div>
-    <div id="riskHeatMap" role="img" aria-label="リスク assessment heat map showing 45 rules by 349 MPs"></div>
+    <div id="riskHeatMap" role="img" aria-label="349議員と45ルールのリスク評価ヒートマップ"></div>
     <div id="heatMapLegend" class="legend" role="img" aria-label="Heat map color legend"></div>
   </div>
   
   <div class="chart-card">
-    <h3>リスク Distribution</h3>
-    <p class="chart-description">Distribution of risk scores across all MPs</p>
-    <canvas id="riskDistributionChart" role="img" aria-label="Bar chart showing risk score distribution"></canvas>
+    <h3>リスク分布</h3>
+    <p class="chart-description">全議員におけるリスクスコア分布</p>
+    <canvas id="riskDistributionChart" role="img" aria-label="リスクスコア分布を示す棒グラフ"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>異常 Detection (P90/P99)</h3>
-    <p class="chart-description">Voting anomalies with statistical thresholds at 90th and 99th percentiles</p>
-    <canvas id="anomalyDetectionChart" role="img" aria-label="Scatter plot showing voting anomalies"></canvas>
+    <h3>異常検知（P90/P99）</h3>
+    <p class="chart-description">90・99パーセンタイル閾値に基づく投票異常</p>
+    <canvas id="anomalyDetectionChart" role="img" aria-label="投票異常を示す散布図"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>Crisis Resilience Indicators</h3>
-    <p class="chart-description">Resilience scores by party and government stability metrics</p>
-    <canvas id="crisisResilienceChart" role="img" aria-label="Radar chart showing crisis resilience indicators"></canvas>
+    <h3>危機レジリエンス指標</h3>
+    <p class="chart-description">政党別レジリエンススコアと政権安定性指標</p>
+    <canvas id="crisisResilienceChart" role="img" aria-label="危機レジリエンス指標を示すレーダーチャート"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>リスク Evolution Timeline (2020-2026)</h3>
-    <p class="chart-description">Historical trends of risk categories over time</p>
-    <canvas id="riskEvolutionChart" role="img" aria-label="Line chart showing risk evolution over time"></canvas>
+    <h3>リスク推移タイムライン（2020-2026）</h3>
+    <p class="chart-description">時間経過に伴うリスクカテゴリの履歴トレンド</p>
+    <canvas id="riskEvolutionChart" role="img" aria-label="リスクの時系列推移を示す折れ線グラフ"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>Top 10 Ethics Concerns</h3>
-    <p class="chart-description">MPs with highest ethics risk scores</p>
-    <ol id="ethicsConcernsList" aria-label="Top 10 ethics concerns list">
+    <h3>倫理リスク上位10名</h3>
+    <p class="chart-description">倫理リスクスコアが最も高い議員</p>
+    <ol id="ethicsConcernsList" aria-label="倫理リスク上位10名リスト">
       <!-- Populated by JavaScript -->
     </ol>
   </div>
   
   <div class="chart-card">
-    <h3>Electoral リスク (MPs at リスク)</h3>
-    <p class="chart-description">MPs with highest electoral vulnerability for 2026 election</p>
-    <ol id="electoralリスクList" aria-label="Top 10 MPs at electoral risk">
+    <h3>選挙リスク（高リスク議員）</h3>
+    <p class="chart-description">2026年選挙で最も脆弱性が高い議員</p>
+    <ol id="electoralRiskList" aria-label="選挙リスク上位10名議員">
       <!-- Populated by JavaScript -->
     </ol>
   </div>
@@ -1011,25 +1011,25 @@
 
 <div class="data-attribution">
   <p><strong>データソース:</strong> <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency</a> | <strong>最終更新:</strong> <span id="lastUpdated">読み込み中...</span></p>
-  <p class="methodology-note"><em>リスク scores calculated using 45 transparency rules across 4 domains (politician, party, committee, ministry). 異常 detection uses P90 (warning) and P99 (critical) statistical thresholds.</em></p>
+  <p class="methodology-note"><em>リスクスコアは4領域（政治家、政党、委員会、省庁）における45の透明性ルールで算出。異常検知はP90（警告）・P99（重大）の統計閾値を使用します。</em></p>
 </div>
 </section>
 
   <section id="intelligence-capabilities">
-<h2>Comprehensive Intelligence Platform</h2>
-<p>CIA delivers systematic political transparency through 45 risk rules across 4 domains and 5 analytical frameworks.</p>
+<h2>総合インテリジェンスプラットフォーム</h2>
+<p>CIAは4領域の45リスクルールと5つの分析フレームワークにより、政治的透明性を体系的に提供します。</p>
 
 <div class="cards">
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>🔍 Real-Time Monitoring</h3>
+<h3>🔍 リアルタイム監視</h3>
 <ul>
-<li>349 MPs tracked (<span data-stat-id="stat-historical-persons">—</span> historical) automatically</li>
-<li><span data-stat-id="stat-total-votes">—</span> individual ballot records analyzed</li>
-<li><span data-stat-id="stat-total-documents">—</span> documents processed</li>
-<li><span data-stat-id="stat-member-proposals">—</span> member proposals tracked</li>
-<li><span data-stat-id="stat-government-proposals">—</span> government proposals monitored</li>
-<li>委員会の仕事を定量化 (<span data-stat-id="stat-committee-documents">—</span> documents)</li>
+<li>349名の議員を自動追跡（履歴データ <span data-stat-id="stat-historical-persons">—</span> 名）</li>
+<li>個別投票記録 <span data-stat-id="stat-total-votes">—</span> 件を分析</li>
+<li>文書 <span data-stat-id="stat-total-documents">—</span> 件を処理</li>
+<li>議員提案 <span data-stat-id="stat-member-proposals">—</span> 件を追跡</li>
+<li>政府提案 <span data-stat-id="stat-government-proposals">—</span> 件を監視</li>
+<li>委員会業務を定量化（文書 <span data-stat-id="stat-committee-documents">—</span> 件）</li>
 </ul>
 </div>
 
@@ -1037,85 +1037,85 @@
 <div class="scanner-effect"></div>
 <h3>📊 連合の予測</h3>
 <ul>
-<li>4 election scenarios modeled</li>
-<li>Historical pattern analysis (1971-2024)</li>
+<li>4つの選挙シナリオをモデル化</li>
+<li>履歴パターン分析（1971-2024）</li>
 <li>党規律の追跡</li>
-<li>Defection probability estimation</li>
-<li>Government formation simulation</li>
+<li>離反確率の推定</li>
+<li>政権形成シミュレーション</li>
 </ul>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>✅ Fact-Checking Infrastructure</h3>
+<h3>✅ ファクトチェック基盤</h3>
 <ul>
-<li>Politician claims vs. voting records</li>
+<li>政治家発言と投票記録の照合</li>
 <li>パーティプラットフォームの一貫性分析</li>
-<li>Campaign promise tracking</li>
-<li>Real-time debate verification</li>
-<li>Historical accountability metrics</li>
+<li>公約トラッキング</li>
+<li>リアルタイム討論検証</li>
+<li>履歴説明責任指標</li>
 </ul>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>⚠️ リスク Assessment</h3>
+<h3>⚠️ リスク評価</h3>
 <ul>
-<li>45 behavioral risk rules active</li>
-<li>MINOR/MAJOR/CRITICAL severity levels</li>
-<li>Automated alert system</li>
-<li>Trend analysis for context</li>
-<li>Transparent methodology</li>
+<li>45の行動リスクルールを運用</li>
+<li>MINOR/MAJOR/CRITICAL の重大度区分</li>
+<li>自動アラートシステム</li>
+<li>文脈を踏まえたトレンド分析</li>
+<li>透明性のある方法論</li>
 </ul>
 </div>
 </div>
 
 <div class="risk-rules-breakdown">
-<h3>45 リスク Rules Across 4 Domains</h3>
+<h3>4領域にわたる45のリスクルール</h3>
 <ul>
-<li><strong>Politician-Level (20 rules):</strong> 出席, voting consistency, role conflicts, productivity</li>
+<li><strong>政治家レベル（20ルール）:</strong> 出席、投票一貫性、役割衝突、生産性</li>
 <li><strong>パーティーレベル (12 ルール):</strong> 連立規律、理念の乖離、内部対立</li>
-<li><strong>委員会レベル (8 つのルール):</strong> Legislative productivity, partisan deadlock, expert testimony</li>
-<li><strong>Ministry-Level (5 rules):</strong> Budget overruns, policy failures, accountability lapses</li>
+<li><strong>委員会レベル（8ルール）:</strong> 立法生産性、党派的行き詰まり、専門家証言</li>
+<li><strong>省庁レベル（5ルール）:</strong> 予算超過、政策失敗、説明責任の欠如</li>
 </ul>
 
-<h3>5 Analytical Frameworks</h3>
+<h3>5つの分析フレームワーク</h3>
 <ul>
-<li><strong>Temporal Analysis:</strong> Trend detection across time periods</li>
-<li><strong>Comparative Analysis:</strong> Cross-party/MP benchmarking</li>
-<li><strong>Pattern Recognition:</strong> Behavioral anomaly detection</li>
+<li><strong>時系列分析:</strong> 期間横断のトレンド検出</li>
+<li><strong>比較分析:</strong> 政党/議員間ベンチマーク</li>
+<li><strong>パターン認識:</strong> 行動異常検知</li>
 <li><strong>予測インテリジェンス:</strong> 選挙結果予測、連立モデリング</li>
-<li><strong>Network Analysis:</strong> Influence mapping, collaboration patterns</li>
+<li><strong>ネットワーク分析:</strong> 影響力マッピング、協調パターン</li>
 </ul>
 </div>
 </section>
 
 <section id="data-sources">
-<h2><span aria-hidden="true">📊</span> Citizen Intelligence Agency Data Products</h2>
+<h2><span aria-hidden="true">📊</span> Citizen Intelligence Agency データ製品</h2>
 <p>Riksdagsmonitor は、<a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency (CIA)</a>— スウェーデンの議会データを処理して実用的なインテリジェンス製品を作成するオープンソースの OSINT プラットフォーム。</p>
 
 <div class="cards">
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">📈</span> リスク Assessment Reports</h3>
-<p>45 risk rules across 4 domains analyze politician behavior, party discipline, committee effectiveness, and ministry accountability in real-time.</p>
+<h3><span aria-hidden="true">📈</span> リスク評価レポート</h3>
+<p>4領域の45リスクルールにより、政治家行動・政党規律・委員会有効性・省庁説明責任をリアルタイム分析します。</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">📅</span> Seasonal Activity Analysis</h3>
-<p>Z-score anomaly detection identifies unusual parliamentary activity patterns by quarter, with historical baselines from 2002 to present.</p>
+<h3><span aria-hidden="true">📅</span> 季節別活動分析</h3>
+<p>Zスコア異常検知により四半期ごとの異常議会活動を特定し、2002年以降の基準線と比較します。</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3><span aria-hidden="true">🎯</span> 選挙サイクル・インテリジェンス</h3>
-<p>パフォーマンス tracking across 9+ election cycles (1994–2034) with predictive risk forecasting, party tier analysis, and coalition probability modeling.</p>
+<p>9回以上の選挙サイクル（1994-2034）でパフォーマンスを追跡し、予測リスク、政党階層分析、連立確率モデリングを提供します。</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">🔗</span> Open Data Integration</h3>
+<h3><span aria-hidden="true">🔗</span> オープンデータ統合</h3>
 <p>すべてのインテリジェンス製品は公式のオープンデータソースに基づいています。可視化は夜間データパイプラインにより自動更新され、24時間キャッシュされます。</p>
 </div>
 </div>
@@ -1125,35 +1125,35 @@
 
   
 <section id="data-integration">
-<h2><span aria-hidden="true">🔗</span> Data Sources &amp; Integration</h2>
+<h2><span aria-hidden="true">🔗</span> データソースと統合</h2>
 <p>Riksdagsmonitor は、複数の信頼できるスウェーデンおよび国際的なデータ ソースを統合します。</p>
 
 <div class="cards">
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>スウェーデン議会 (リクスダーゲン)</h3>
-<p>Official parliamentary data including votes, documents, committee work, and MP information.</p>
+<p>投票、文書、委員会活動、議員情報を含む公式議会データ。</p>
 <a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">data.riksdagen.se</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>スウェーデン選挙管理局</h3>
-<p>Historical election results, voter turnout, and electoral statistics for all national elections.</p>
+<p>全国選挙の履歴結果、投票率、選挙統計データ。</p>
 <a href="https://www.val.se/" target="_blank" rel="noopener noreferrer">val.se</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>Financial Management Authority (ESV)</h3>
-<p>Government budget data, public spending analysis, and financial accountability reporting.</p>
+<h3>財政管理庁（ESV）</h3>
+<p>政府予算データ、公共支出分析、財政説明責任レポート。</p>
 <a href="https://www.esv.se/psidata/" target="_blank" rel="noopener noreferrer">esv.se/psidata</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>World Bank Open Data</h3>
-<p>Country-level economic and development indicators for international comparative analysis.</p>
+<h3>世界銀行オープンデータ</h3>
+<p>国際比較分析のための国別経済・開発指標。</p>
 <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">data.worldbank.org</a>
 </div>
 </div>
@@ -1166,10 +1166,10 @@
       <h3>Riksdagsmonitorについて</h3>
       <p>CIA OSINT 機能を使用したスウェーデン議会監視用のライブ インテリジェンス プラットフォーム。</p>
       <ul class="footer-stats">
-        <li><strong>349 MPs</strong> tracked</li>
-        <li><strong>45 risk rules</strong> active</li>
-        <li><strong>14 languages</strong> supported</li>
-        <li><strong>50+ years</strong> historical data</li>
+        <li><strong>349名の議員</strong>を追跡</li>
+        <li><strong>45のリスクルール</strong>を運用</li>
+        <li><strong>14言語</strong>をサポート</li>
+        <li><strong>50年以上</strong>の履歴データ</li>
       </ul>
     </div>
     
@@ -1179,7 +1179,7 @@
         <li><a href="index.html">ホーム</a></li>
         <li><a href="news/index_ja.html">ニュース</a></li>
         <li><a href="dashboard/index_ja.html">ダッシュボード</a></li>
-        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA プラットフォーム</a></li>
         <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHubリポジトリ</a></li>
         <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
       </ul>
