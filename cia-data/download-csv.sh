@@ -86,6 +86,13 @@ curl -s -o "$CIA_DATA_DIR/politician/distribution_experience_levels.csv" "$BASE_
 curl -s -o "$CIA_DATA_DIR/politician/distribution_assignment_roles.csv" "$BASE_URL/distribution_assignment_roles.csv" && echo "  ✓ distribution_assignment_roles.csv"
 curl -s -o "$CIA_DATA_DIR/politician/distribution_influence_buckets.csv" "$BASE_URL/distribution_influence_buckets.csv" && echo "  ✓ distribution_influence_buckets.csv"
 
+# Politician detailed data files
+echo ""
+echo "📥 Downloading Politician detailed data..."
+curl -s -o "$CIA_DATA_DIR/view_riksdagen_politician_sample.csv" "$BASE_URL/view_riksdagen_politician_sample.csv" && echo "  ✓ view_riksdagen_politician_sample.csv"
+curl -s -o "$CIA_DATA_DIR/view_riksdagen_politician_experience_summary_sample.csv" "$BASE_URL/view_riksdagen_politician_experience_summary_sample.csv" && echo "  ✓ view_riksdagen_politician_experience_summary_sample.csv"
+curl -s -o "$CIA_DATA_DIR/view_riksdagen_party_document_summary_sample.csv" "$BASE_URL/view_riksdagen_party_document_summary_sample.csv" && echo "  ✓ view_riksdagen_party_document_summary_sample.csv"
+
 echo ""
 echo "✅ Download complete! Files saved to $CIA_DATA_DIR"
-echo "📊 Total files downloaded: 33"
+echo "📊 Total files downloaded: 36"
