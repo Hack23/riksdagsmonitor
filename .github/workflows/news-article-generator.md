@@ -279,6 +279,9 @@ if [ -z "$LANGUAGES_INPUT" ]; then
   LANGUAGES_INPUT="en,sv"
 fi
 
+# Trim and normalize the input before preset expansion
+LANGUAGES_INPUT=$(echo "$LANGUAGES_INPUT" | xargs)
+
 # Expand language presets
 case "$LANGUAGES_INPUT" in
   "nordic")
@@ -517,6 +520,9 @@ echo "🌐 Validating language coverage..."
 EXPECTED_LANGS="$LANG_ARG"
 IFS=',' read -ra LANG_ARRAY <<< "$EXPECTED_LANGS"
 
+# Track any languages that are missing articles
+missing_langs=()
+
 for lang in "${LANG_ARRAY[@]}"; do
   lang_trimmed=$(echo "$lang" | xargs)  # Trim whitespace
   
@@ -527,8 +533,17 @@ for lang in "${LANG_ARRAY[@]}"; do
     echo "  ✅ $lang_trimmed: $count articles generated"
   else
     echo "  ❌ $lang_trimmed: No articles found (expected at least 1)"
+    missing_langs+=("$lang_trimmed")
   fi
 done
+
+# Fail the workflow if any requested languages are missing articles
+if [ "${#missing_langs[@]}" -ne 0 ]; then
+  echo "❌ Validation failed: No articles generated for the following requested languages: ${missing_langs[*]}"
+  exit 1
+else
+  echo "✅ Validation passed: Articles generated for all requested languages."
+fi
 
 # Verify RTL attributes for Arabic and Hebrew
 for lang in ar he; do

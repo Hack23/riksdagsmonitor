@@ -259,8 +259,8 @@ done
 ```bash
 # Verify RTL layout for Arabic and Hebrew
 for lang in ar he; do
-  if [ -f "news/$(ls -t news/*-${lang}.html 2>/dev/null | head -1)" ]; then
-    if grep -q 'dir="rtl"' "news/"*-${lang}.html; then
+  if ls -t news/*-"$lang".html 1>/dev/null 2>&1; then
+    if grep -q 'dir="rtl"' news/*-"$lang".html; then
       echo "✅ $lang: RTL attribute present"
     else
       echo "❌ $lang: RTL attribute missing"

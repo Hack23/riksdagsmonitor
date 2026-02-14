@@ -47,9 +47,9 @@ const LANGUAGE_PRESETS = {
   'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl']
 };
 
-let languagesInput = languagesArg ? languagesArg.split('=')[1] : 'en,sv';
+let languagesInput = languagesArg ? languagesArg.split('=')[1].trim().toLowerCase() : 'en,sv';
 
-// Expand presets
+// Expand presets (after trimming and normalizing)
 if (LANGUAGE_PRESETS[languagesInput]) {
   languagesInput = LANGUAGE_PRESETS[languagesInput].join(',');
 }
