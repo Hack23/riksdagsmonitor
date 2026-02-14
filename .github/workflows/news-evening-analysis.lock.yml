@@ -21,14 +21,15 @@
 #
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
-# Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage and Playwright validation
+# Generates comprehensive evening analysis articles summarizing parliamentary and government activity with deeper analytical coverage and Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 #
-# frontmatter-hash: 60c91653f46e7dd6ac618f6ac1bc69d72c0f884da6bd80ef4aee5e9334f2b131
+# frontmatter-hash: 041ae3c8d51066690b13dfb5b1fa704b5480f2231658fca66ad2afe75fe1f95b
 
 name: "News Evening Analysis"
 "on":
   schedule:
   - cron: "0 18 * * 1-5"
+  - cron: "0 16 * * 6"
   workflow_dispatch:
     inputs:
       coverage_depth:
@@ -1000,7 +1001,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           WORKFLOW_NAME: "News Evening Analysis"
-          WORKFLOW_DESCRIPTION: "Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage and Playwright validation"
+          WORKFLOW_DESCRIPTION: "Generates comprehensive evening analysis articles summarizing parliamentary and government activity with deeper analytical coverage and Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week."
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |

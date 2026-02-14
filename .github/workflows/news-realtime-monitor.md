@@ -1,6 +1,6 @@
 ---
 name: News Realtime Monitor
-description: Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation
+description: Monitors Riksdag and Government for real-time updates and generates breaking news articles with Playwright validation. Runs twice daily on weekdays, once on weekends for government press releases and crisis communications.
 strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule:
@@ -9,6 +9,8 @@ on:
     - cron: '0 10 * * 1-5'
     # 14:00 UTC (15:00 CET) - Afternoon check
     - cron: '0 14 * * 1-5'
+    # Weekend: single midday check for government press releases, crisis, urgent documents
+    - cron: '0 12 * * 0,6'
   workflow_dispatch:
     inputs:
       focus:
@@ -106,13 +108,15 @@ Query riksdag-regering-mcp for activity in the **last 6 hours**:
 // Get today's date
 const today = new Date().toISOString().split('T')[0];
 
+// === RIKSDAG ACTIVITY ===
+
 // Check recent votes
 search_voteringar({ rm: "2025/26", limit: 20 })
 
 // Check recent speeches/debates
 search_anforanden({ rm: "2025/26", limit: 20 })
 
-// Check recently published documents
+// Check recently published Riksdag documents
 search_dokument({ from_date: today, limit: 30 })
 
 // Check ministerial questions filed today
@@ -123,6 +127,14 @@ get_interpellationer({ rm: "2025/26", limit: 10 })
 
 // Check calendar for today's events  
 get_calendar_events({ from: today, tom: today, limit: 50 })
+
+// === GOVERNMENT ACTIVITY ===
+
+// Check government documents (press releases, SOU, crisis, dir, etc.)
+search_regering({ from_date: today, limit: 30 })
+
+// Combined enhanced search for both Riksdag + Government
+enhanced_government_search({ query: "", from_date: today, limit: 20 })
 ```
 
 ### Step 2: Assess Newsworthiness
@@ -137,6 +149,9 @@ For each piece of data, evaluate significance using these criteria:
 - Critical committee report releases
 - Votes of confidence or no-confidence motions
 - Budget-related votes or propositions
+- Government crisis communications or emergency press releases
+- Major policy U-turns or resignations
+- SOU (Statens offentliga utredningar) reports on high-profile topics
 
 **MEDIUM significance (generate update article):**
 - Regular committee reports

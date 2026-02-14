@@ -1,11 +1,13 @@
 ---
 name: News Evening Analysis
-description: Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage and Playwright validation
+description: Generates comprehensive evening analysis articles summarizing parliamentary and government activity with deeper analytical coverage and Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule:
     # Run weekday evenings at 18:00 UTC (19:00 CET)
     - cron: '0 18 * * 1-5'
+    # Saturday: weekly wrap-up summarizing the full parliamentary week
+    - cron: '0 16 * * 6'
   workflow_dispatch:
     inputs:
       coverage_depth:
@@ -76,15 +78,26 @@ engine:
 
 # 🌆 Evening Parliamentary Analysis
 
-You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to produce a comprehensive daily wrap-up of Swedish parliamentary and government activity, written in **The Economist style** with deeper analytical depth than breaking coverage.
+You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to produce a comprehensive wrap-up of Swedish parliamentary and government activity, written in **The Economist style** with deeper analytical depth than breaking coverage.
 
 ## Your Task
 
-Generate an evening analysis article that synthesizes the day's parliamentary activity into a coherent analytical narrative. This is the flagship daily product.
+Generate an analysis article that synthesizes parliamentary and government activity into a coherent analytical narrative. This is the flagship analysis product.
+
+### Saturday Weekly Wrap-Up
+
+**On Saturdays** (day-of-week = 6), produce a **Weekly Parliamentary Review** instead of a daily wrap-up:
+- Look back over the **entire parliamentary week** (Monday–Friday, ~120 hours)
+- Use `coverage_depth: comprehensive` regardless of input
+- Structure as a weekly review: key votes, major debates, government announcements, opposition dynamics, and the week-ahead outlook
+- Title format: "The Week in Swedish Politics: {key theme}" or similar
+- Article type: `weekly-review` (use slug pattern `YYYY-MM-DD-weekly-review-{lang}.html`)
+
+**On weekdays** (Monday–Friday), produce the standard **daily evening analysis**.
 
 ### Coverage Depth
 
-Check the `coverage_depth` input:
+Check the `coverage_depth` input (overridden to `comprehensive` on Saturdays):
 - **standard** - Day's key events with brief analysis (800-1200 words)
 - **deep** - Extended analysis with historical context (1500-2500 words)
 - **comprehensive** - Full coverage including minor events (2500-4000 words)
@@ -101,52 +114,65 @@ Generate article versions for each requested language with culturally appropriat
 
 ## Analysis Workflow
 
-### Step 1: Gather Day's Data
+### Step 1: Gather Data
 
-Query riksdag-regering-mcp comprehensively:
+Determine the lookback period based on day of week:
 
 ```javascript
 const today = new Date().toISOString().split('T')[0];
-const lookback = github.event.inputs.lookback_hours || 12;
+const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
+
+// Saturday = weekly wrap-up (look back 5 days), weekday = daily (lookback_hours input)
+const lookbackHours = dayOfWeek === 6 ? 120 : (github.event.inputs.lookback_hours || 12);
+const fromDate = dayOfWeek === 6
+  ? new Date(Date.now() - 5 * 86400000).toISOString().split('T')[0]  // Monday
+  : today;
 
 // === PARLIAMENTARY ACTIVITY ===
 
-// Today's calendar events (what was scheduled vs what happened)
-get_calendar_events({ from: today, tom: today, limit: 100 })
+// Calendar events (today for daily, Mon-Fri for weekly)
+get_calendar_events({ from: fromDate, tom: today, limit: 100 })
 
-// Votes taken today
-search_voteringar({ rm: "2025/26", limit: 50 })
+// Votes (weekly wrap-up gets higher limit for full week)
+search_voteringar({ rm: "2025/26", limit: dayOfWeek === 6 ? 100 : 50 })
 get_voting_group({ rm: "2025/26", groupBy: "parti" })
 
 // Committee reports published
-get_betankanden({ rm: "2025/26", limit: 20 })
+get_betankanden({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
 
 // Speeches and debates
-search_anforanden({ rm: "2025/26", limit: 50 })
+search_anforanden({ rm: "2025/26", limit: dayOfWeek === 6 ? 100 : 50 })
 
 // === GOVERNMENT ACTIVITY ===
 
-// Government documents published today
-search_regering({ from_date: today, limit: 30 })
+// Government documents published (press releases, SOU, crisis, etc.)
+search_regering({ from_date: fromDate, limit: dayOfWeek === 6 ? 50 : 30 })
 
 // New propositions
-get_propositioner({ rm: "2025/26", limit: 10 })
+get_propositioner({ rm: "2025/26", limit: dayOfWeek === 6 ? 20 : 10 })
 
 // Opposition motions
-get_motioner({ rm: "2025/26", limit: 20 })
+get_motioner({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
 
 // Ministerial questions and interpellations
-get_fragor({ rm: "2025/26", limit: 20 })
-get_interpellationer({ rm: "2025/26", limit: 10 })
+get_fragor({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
+get_interpellationer({ rm: "2025/26", limit: dayOfWeek === 6 ? 20 : 10 })
 
-// === TOMORROW'S PREVIEW ===
-const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
-get_calendar_events({ from: tomorrow, tom: tomorrow, limit: 50 })
+// === NEXT WEEK PREVIEW (Saturday) / TOMORROW (weekday) ===
+const nextMonday = dayOfWeek === 6
+  ? new Date(Date.now() + 2 * 86400000).toISOString().split('T')[0]
+  : new Date(Date.now() + 86400000).toISOString().split('T')[0];
+const previewEnd = dayOfWeek === 6
+  ? new Date(Date.now() + 7 * 86400000).toISOString().split('T')[0]  // Full next week
+  : nextMonday;
+get_calendar_events({ from: nextMonday, tom: previewEnd, limit: 50 })
 ```
 
 ### Step 2: Synthesize and Analyze
 
 Structure the analysis around these editorial pillars:
+
+**Weekday (daily wrap-up):**
 
 1. **Lead Story** - The most significant development of the day
    - What happened and why it matters
@@ -172,6 +198,32 @@ Structure the analysis around these editorial pillars:
    - Scheduled votes and debates
    - Upcoming committee meetings
    - Expected government announcements
+
+**Saturday (weekly wrap-up):**
+
+1. **The Week's Defining Moment** - The single most significant development
+   - Why it mattered more than anything else this week
+   - How it shifted the political landscape
+
+2. **Legislative Scorecard** - Full week's parliamentary output
+   - Total votes, passage rates, notable defeats
+   - Key committee reports and their implications
+   - Government bills advanced or stalled
+
+3. **Government in Review** - Executive branch activity summary
+   - Policy announcements and SOU reports published
+   - Ministerial accountability (questions, interpellations answered)
+   - Press releases and public communications
+
+4. **Party Power Dynamics** - Cross-party week-in-review
+   - Coalition stability indicators
+   - Opposition strategy patterns
+   - Notable cross-party collaboration or conflict
+
+5. **The Week Ahead** - Preview of next week's parliamentary calendar
+   - Scheduled votes, debates, and committee meetings
+   - Expected government announcements
+   - Key dates and deadlines
 
 ### Step 3: Write the Article
 

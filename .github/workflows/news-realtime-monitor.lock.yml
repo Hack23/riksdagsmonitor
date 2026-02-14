@@ -21,15 +21,16 @@
 #
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
-# Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation
+# Monitors Riksdag and Government for real-time updates and generates breaking news articles with Playwright validation. Runs twice daily on weekdays, once on weekends for government press releases and crisis communications.
 #
-# frontmatter-hash: c502033519229899efe9ecfecf5623153dd7225c7ae51c5013bf6487ee424f28
+# frontmatter-hash: bebb836ae1df2e0ff546dd88efaa1a3213d2fddccdb085e0637462670bba166c
 
 name: "News Realtime Monitor"
 "on":
   schedule:
   - cron: "0 10 * * 1-5"
   - cron: "0 14 * * 1-5"
+  - cron: "0 12 * * 0,6"
   workflow_dispatch:
     inputs:
       focus:
@@ -997,7 +998,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           WORKFLOW_NAME: "News Realtime Monitor"
-          WORKFLOW_DESCRIPTION: "Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation"
+          WORKFLOW_DESCRIPTION: "Monitors Riksdag and Government for real-time updates and generates breaking news articles with Playwright validation. Runs twice daily on weekdays, once on weekends for government press releases and crisis communications."
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |
