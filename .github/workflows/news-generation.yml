@@ -129,15 +129,17 @@ jobs:
             
             # Fallback to Python for cross-platform compatibility
             if command -v python3 >/dev/null 2>&1; then
-              if ts=$(python3 -c "
+              if ts=$(python3 - "$input" << 'PYCODE' 2>/dev/null
 import sys
 from datetime import datetime
 try:
-    dt = datetime.fromisoformat('$input'.replace('Z', '+00:00'))
+    arg = sys.argv[1]
+    dt = datetime.fromisoformat(arg.replace('Z', '+00:00'))
     print(int(dt.timestamp()))
-except:
+except Exception:
     sys.exit(1)
-" 2>/dev/null); then
+PYCODE
+              ); then
                 echo "$ts"
                 return 0
               fi
@@ -301,7 +303,14 @@ except:
             echo "❌ Generation failed with exit code $EXIT_CODE"
             
             # Detect error type from logs
-            if grep -q "MCP.*timeout" generation.log 2>/dev/null || grep -q "MCP.*unavailable" generation.log 2>/dev/null; then
+            # Check for MCP-related failures: timeout, unavailable, AbortError, network errors, connection refused
+            if grep -qi "MCP.*timeout" generation.log 2>/dev/null || \
+               grep -qi "MCP.*unavailable" generation.log 2>/dev/null || \
+               grep -qi "MCP request failed" generation.log 2>/dev/null || \
+               grep -qi "AbortError" generation.log 2>/dev/null || \
+               grep -qi "aborted" generation.log 2>/dev/null || \
+               grep -qi "ECONNREFUSED" generation.log 2>/dev/null || \
+               grep -qi "network.*error" generation.log 2>/dev/null; then
               ERROR_TYPE="mcp_unavailable"
               ERROR_SEVERITY="warning"
               ERROR_MSG="riksdag-regering-mcp server timeout or unavailable"
@@ -315,23 +324,45 @@ except:
             ERROR_TIMESTAMP="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
             
             if [ -f "news/metadata/errors.json" ]; then
-              # Append to existing errorHistory
-              jq \
-                --arg ts "$ERROR_TIMESTAMP" \
-                --arg type "$ERROR_TYPE" \
-                --arg msg "$ERROR_MSG" \
-                --arg sev "$ERROR_SEVERITY" \
-                '.lastError = {
-                  timestamp: $ts,
-                  workflow: "news-generation.yml",
-                  errorType: $type,
-                  message: $msg,
-                  severity: $sev,
-                  retryable: true
-                }
-                | .errorHistory = ((.errorHistory // []) + [.lastError])' \
-                news/metadata/errors.json > news/metadata/errors.tmp && \
-                mv news/metadata/errors.tmp news/metadata/errors.json
+              # Validate existing JSON before appending; if invalid, recreate file
+              if jq empty news/metadata/errors.json >/dev/null 2>&1; then
+                # Append to existing errorHistory
+                jq \
+                  --arg ts "$ERROR_TIMESTAMP" \
+                  --arg type "$ERROR_TYPE" \
+                  --arg msg "$ERROR_MSG" \
+                  --arg sev "$ERROR_SEVERITY" \
+                  '.lastError = {
+                    timestamp: $ts,
+                    workflow: "news-generation.yml",
+                    errorType: $type,
+                    message: $msg,
+                    severity: $sev,
+                    retryable: true
+                  }
+                  | .errorHistory = ((.errorHistory // []) + [.lastError])' \
+                  news/metadata/errors.json > news/metadata/errors.tmp && \
+                  mv news/metadata/errors.tmp news/metadata/errors.json
+              else
+                # Existing errors.json is empty or corrupted; recreate with current error
+                echo "⚠️ errors.json is corrupted, recreating with current error"
+                jq -n \
+                  --arg ts "$ERROR_TIMESTAMP" \
+                  --arg type "$ERROR_TYPE" \
+                  --arg msg "$ERROR_MSG" \
+                  --arg sev "$ERROR_SEVERITY" \
+                  '{
+                    lastError: {
+                      timestamp: $ts,
+                      workflow: "news-generation.yml",
+                      errorType: $type,
+                      message: $msg,
+                      severity: $sev,
+                      retryable: true
+                    }
+                  }
+                  | . + { errorHistory: [ .lastError ] }' > news/metadata/errors.json
+              fi
             else
               # Create new errors.json with history
               jq -n \
