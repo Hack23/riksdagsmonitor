@@ -8744,6 +8744,105 @@ body.news-page {
   }
 }
 
+/* ========================================
+   Coalition Status Section Styles
+   ======================================== */
+
+#coalition-status {
+  margin: 2rem 0;
+}
+
+#coalition-status .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+#coalition-status .card {
+  min-height: 200px;
+}
+
+#coalition-status .card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--header-color);
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+}
+
+#coalition-status .party-stats {
+  margin: 1rem 0;
+}
+
+#coalition-status .party-stats p {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+#coalition-status .party-stats strong {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#coalition-status .party-leader {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+}
+
+#coalition-status .party-leader strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+#coalition-status .leader-details {
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--primary-cyan, #00d9ff);
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+#coalition-status .leader-details p {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+}
+
+#coalition-status .loading-message,
+#coalition-status .error-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+#coalition-status .error-message {
+  color: var(--danger-color, #f44336);
+}
+
+/* Responsive adjustments for coalition cards */
+@media (max-width: 768px) {
+  #coalition-status .cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  #coalition-status .card {
+    min-height: 160px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #coalition-status .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* ============================================================================
 /* =============================================
    NEWS ARTICLE STYLES
    For generated news articles (evening analysis, etc.)
