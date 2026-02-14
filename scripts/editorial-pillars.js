@@ -109,6 +109,9 @@ export const EDITORIAL_PILLAR_HEADINGS = {
  * @returns {string} - Language code (fallback to 'en')
  */
 export function detectArticleLanguage(html) {
+  if (!html) {
+    return 'en';
+  }
   const match = html.match(/<html[^>]*lang="([^"]+)"/i);
   if (match && EDITORIAL_PILLAR_HEADINGS[match[1]]) {
     return match[1];

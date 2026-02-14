@@ -28,6 +28,10 @@ export const PARTY_VARIANTS = {
 export function extractPartyMentions(html) {
   const parties = new Set();
   
+  if (!html) {
+    return parties;
+  }
+  
   for (const [canonicalCode, variants] of Object.entries(PARTY_VARIANTS)) {
     for (const variant of variants) {
       const pattern = new RegExp(`\\b${variant}\\b`, 'i');
