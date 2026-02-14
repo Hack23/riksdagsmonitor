@@ -266,18 +266,83 @@ For the data retrieved:
 
 ### Step 4: Generate Articles
 
-For each article type with significant updates:
+**IMPORTANT**: Use the automated generation script instead of creating HTML files manually.
 
-1. **Create HTML file** at `news/YYYY-MM-DD-{slug}-{lang}.html`
+#### Parse and Expand Languages Input
 
-2. **HTML Requirements:**
-   - **MUST** use `<link rel="stylesheet" href="../styles.css">` - NO embedded `<style>` tags
-   - Follow "Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency."
-   - Use semantic HTML5: `<article>`, `<header>`, `<section>`, `<footer>`
-   - Include proper `<html lang="{lang}">` and `dir="rtl"` for Arabic/Hebrew
+First, parse the `languages` input from `github.event.inputs.languages` and expand presets:
+
+```bash
+# Get languages input (default: en,sv)
+LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+if [ -z "$LANGUAGES_INPUT" ]; then
+  LANGUAGES_INPUT="en,sv"
+fi
+
+# Expand language presets
+case "$LANGUAGES_INPUT" in
+  "nordic")
+    LANG_ARG="en,sv,da,no,fi"
+    echo "🌍 Expanding 'nordic' to: $LANG_ARG"
+    ;;
+  "eu-core")
+    LANG_ARG="en,sv,de,fr,es,nl"
+    echo "🌍 Expanding 'eu-core' to: $LANG_ARG"
+    ;;
+  "all")
+    LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh"
+    echo "🌍 Expanding 'all' to all 14 languages"
+    ;;
+  *)
+    LANG_ARG="$LANGUAGES_INPUT"
+    echo "🌐 Using custom language list: $LANG_ARG"
+    ;;
+esac
+
+echo "📋 Final languages: $LANG_ARG"
+```
+
+#### Run Automated News Generation Script
+
+Use the `generate-news-enhanced.js` script to generate articles for all requested types and languages:
+
+```bash
+# Get article types input
+ARTICLE_TYPES="${{ github.event.inputs.article_types }}"
+if [ -z "$ARTICLE_TYPES" ]; then
+  ARTICLE_TYPES="week-ahead"
+fi
+
+echo "📰 Generating news articles..."
+echo "  Types: $ARTICLE_TYPES"
+echo "  Languages: $LANG_ARG"
+
+# Run generation script
+node scripts/generate-news-enhanced.js \
+  --types="$ARTICLE_TYPES" \
+  --languages="$LANG_ARG"
+```
+
+**What the script does**:
+- Connects to riksdag-regering-mcp server
+- Queries relevant MCP tools based on article types
+- Analyzes data and generates news articles
+- Creates HTML files at `news/YYYY-MM-DD-{slug}-{lang}.html`
+- Generates proper metadata and structured data
+- Validates all language codes
+- Handles RTL layout for Arabic (ar) and Hebrew (he)
+
+#### Generated Article Structure
+
+The script creates articles with:
+
+1. **HTML Requirements** (automatically handled):
+   - Uses `<link rel="stylesheet" href="../styles.css">` - NO embedded `<style>` tags
+   - Semantic HTML5: `<article>`, `<header>`, `<section>`, `<footer>`
+   - Proper `<html lang="{lang}">` and `dir="rtl"` for Arabic/Hebrew
    - Mobile-responsive (handled by styles.css)
 
-3. **Metadata Structure**:
+2. **Metadata Structure** (automatically handled):
    - SEO metadata (title, description, keywords)
    - Open Graph tags
    - Twitter Card tags
@@ -285,14 +350,14 @@ For each article type with significant updates:
    - YAML frontmatter (in HTML comment)
    - Hreflang tags for all language alternatives
 
-4. **Write article content** following The Economist style:
+3. **Content Structure** (The Economist style):
    - **Lead paragraph** (50 words): Who, what, when, where, why
    - **Context** (150-200 words): Background and history
    - **Evidence** (300-400 words): Data, quotes, documents
    - **Analysis** (200-300 words): Interpretation and implications
    - **Conclusion** (100 words): Synthesis and broader significance
 
-5. **CSS Classes Available in styles.css:**
+4. **CSS Classes** (available in styles.css):
    - `.news-article` - Main container
    - `.article-header` - Header with title and meta
    - `.article-meta` - Date, time, article type
@@ -305,18 +370,24 @@ For each article type with significant updates:
    - `.article-sources` - Sources and attribution
    - `.back-to-news` - Navigation link
 
-6. **Source attribution**:
-   - Link to Riksdag documents (dok_id)
-   - Cite government sources
-   - Reference MCP tool calls
-   - Include data timestamps
+5. **Source Attribution**:
+   - Links to Riksdag documents (dok_id)
+   - Cites government sources
+   - References MCP tool calls
+   - Includes data timestamps
 
-7. **Generate requested languages**:
-   - Parse the `languages` input
-   - Expand presets: "nordic" → "en,sv,da,no,fi", "eu-core" → "en,sv,de,fr,es,nl", "all" → all 14
-   - Generate article for each language with proper title/subtitle
-   - Use language-specific Schema.org markup
-   - Include RTL support for Arabic (ar) and Hebrew (he)
+#### Language Support
+
+The script handles all 14 supported languages:
+- **Nordic**: en, sv, da, no, fi
+- **EU Core**: de, fr, es, nl
+- **Other**: ar (RTL), he (RTL), ja, ko, zh
+
+**Presets**:
+- `nordic` → en,sv,da,no,fi
+- `eu-core` → en,sv,de,fr,es,nl
+- `all` → All 14 languages
+- Custom → Any comma-separated list (e.g., "en,sv,de,fr")
 
 ### Step 5: Regenerate News Indexes
 
@@ -437,6 +508,38 @@ sleep 2
 kill %1 2>/dev/null || true
 ```
 
+**Language Validation:**
+```bash
+# Verify all requested languages were generated
+echo "🌐 Validating language coverage..."
+
+# Parse expected languages from input
+EXPECTED_LANGS="$LANG_ARG"
+IFS=',' read -ra LANG_ARRAY <<< "$EXPECTED_LANGS"
+
+for lang in "${LANG_ARRAY[@]}"; do
+  lang_trimmed=$(echo "$lang" | xargs)  # Trim whitespace
+  
+  # Count articles for this language
+  count=$(find news -name "*-${lang_trimmed}.html" -type f -mmin -10 | wc -l)
+  
+  if [ $count -gt 0 ]; then
+    echo "  ✅ $lang_trimmed: $count articles generated"
+  else
+    echo "  ❌ $lang_trimmed: No articles found (expected at least 1)"
+  fi
+done
+
+# Verify RTL attributes for Arabic and Hebrew
+for lang in ar he; do
+  if [[ "$EXPECTED_LANGS" == *"$lang"* ]]; then
+    # Check if RTL is properly set
+    rtl_count=$(grep -l 'dir="rtl"' news/*-${lang}.html 2>/dev/null | wc -l)
+    echo "  🔄 $lang RTL: $rtl_count files with dir=\"rtl\""
+  fi
+done
+```
+
 **Quality Criteria:**
 - ✅ All HTML validates without errors
 - ✅ All required meta tags present
@@ -444,9 +547,10 @@ kill %1 2>/dev/null || true
 - ✅ Proper heading hierarchy (h1 → h2 → h3)
 - ✅ Alt text on all images
 - ✅ Source citations with document IDs
+- ✅ **All requested languages generated** (verify count matches input)
+- ✅ **RTL layout for ar/he** (dir="rtl" attribute present)
 - ✅ Playwright visual validation passed
 - ✅ Accessibility tree structure correct
-- ✅ RTL layout verified for ar/he versions
 
 ### Step 9: Create Pull Request
 
