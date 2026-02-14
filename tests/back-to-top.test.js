@@ -22,9 +22,10 @@ describe('Back to Top Button', () => {
 
     button = document.getElementById('back-to-top');
   });
-
   afterEach(() => {
     vi.restoreAllMocks();
+    vi.clearAllMocks();
+    document.body.innerHTML = '';
   });
 
   // ============================================================================

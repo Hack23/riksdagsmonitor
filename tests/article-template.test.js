@@ -3,11 +3,14 @@
  * Tests HTML article generation
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import { generateArticleHTML } from '../scripts/article-template.js';
 import articleTemplateDefault from '../scripts/article-template.js';
 
 describe('Article Template', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   const mockArticleData = {
     slug: '2026-02-10-week-ahead-en.html',
     title: 'Week Ahead: February 10-17, 2026',

@@ -20,6 +20,10 @@ describe('Generate News Indexes', () => {
     module = await import('../scripts/generate-news-indexes.js');
   });
 
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
   describe('parseArticleMetadata', () => {
     it('should parse metadata from a real article file', () => {
       // Find any existing article file in the news directory

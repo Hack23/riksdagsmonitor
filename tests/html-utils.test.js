@@ -1,7 +1,10 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import { escapeHtml } from '../scripts/html-utils.js';
 
 describe('html-utils', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   describe('escapeHtml', () => {
     it('should escape ampersands', () => {
       expect(escapeHtml('foo & bar')).toBe('foo &amp; bar');
