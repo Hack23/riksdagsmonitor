@@ -151,16 +151,27 @@ function countSectionWords(sectionHtml) {
  */
 function extractPartyMentions(html) {
   const parties = new Set();
-  const partyNames = [
-    'Socialdemokraterna', 'Moderaterna', 'Sverigedemokraterna', 'SD',
-    'Vänsterpartiet', 'Miljöpartiet', 'Centerpartiet', 'Liberalerna',
-    'Kristdemokraterna', 'KD', 'V', 'MP', 'C', 'L', 'M', 'S'
-  ];
   
-  for (const party of partyNames) {
-    const pattern = new RegExp(`\\b${party}\\b`, 'i');
-    if (pattern.test(html)) {
-      parties.add(party);
+  // Map canonical party codes to their name/abbreviation variants
+  const partyVariants = {
+    S: ['Socialdemokraterna', 'S'],
+    M: ['Moderaterna', 'M'],
+    SD: ['Sverigedemokraterna', 'SD'],
+    V: ['Vänsterpartiet', 'V'],
+    MP: ['Miljöpartiet', 'MP'],
+    C: ['Centerpartiet', 'C'],
+    L: ['Liberalerna', 'L'],
+    KD: ['Kristdemokraterna', 'KD']
+  };
+
+  for (const [canonicalCode, variants] of Object.entries(partyVariants)) {
+    for (const variant of variants) {
+      const pattern = new RegExp(`\\b${variant}\\b`, 'i');
+      if (pattern.test(html)) {
+        // Ensure we only count each party once, even if multiple variants appear
+        parties.add(canonicalCode);
+        break;
+      }
     }
   }
   
@@ -805,9 +816,11 @@ describe('Validation Helper Functions', () => {
     const html = '<p>Socialdemokraterna and Moderaterna debated the budget. SD abstained.</p>';
     const parties = extractPartyMentions(html);
     
-    expect(parties).toContain('Socialdemokraterna');
-    expect(parties).toContain('Moderaterna');
-    expect(parties.length).toBeGreaterThanOrEqual(2);
+    // Now returns canonical codes to avoid double-counting
+    expect(parties).toContain('S');  // Socialdemokraterna
+    expect(parties).toContain('M');  // Moderaterna
+    expect(parties).toContain('SD'); // SD
+    expect(parties.length).toBe(3);
   });
 
   it('should detect historical markers', () => {

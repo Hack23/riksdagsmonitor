@@ -18,7 +18,7 @@
           "description": "Which workflow generated this article"
         },
         "languages": {
-          "type": "number",
+          "type": "integer",
           "description": "Number of language versions generated",
           "minimum": 1,
           "maximum": 14
@@ -49,22 +49,22 @@
                   "description": "Historical context score (0-3)"
                 },
                 "internationalComparisons": {
-                  "type": "number",
+                  "type": "integer",
                   "minimum": 0,
                   "description": "Count of international comparisons"
                 },
                 "partyPerspectives": {
-                  "type": "number",
+                  "type": "integer",
                   "minimum": 0,
                   "description": "Number of parties mentioned"
                 },
                 "sources": {
-                  "type": "number",
+                  "type": "integer",
                   "minimum": 0,
                   "description": "Number of source citations"
                 },
                 "wordCount": {
-                  "type": "number",
+                  "type": "integer",
                   "minimum": 0,
                   "description": "Total word count"
                 },
@@ -92,11 +92,11 @@
               "maximum": 1.0
             },
             "historicalContextPresent": {
-              "type": "number",
+              "type": "integer",
               "description": "Number of articles with historical context"
             },
             "internationalComparisons": {
-              "type": "number",
+              "type": "integer",
               "description": "Total international comparisons across all articles"
             }
           }

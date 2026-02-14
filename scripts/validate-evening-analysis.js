@@ -213,16 +213,26 @@ function hasForwardLooking(html) {
  */
 function countPartyPerspectives(html) {
   const parties = new Set();
-  const partyNames = [
-    'Socialdemokraterna', 'Moderaterna', 'Sverigedemokraterna', 'SD',
-    'Vänsterpartiet', 'Miljöpartiet', 'Centerpartiet', 'Liberalerna',
-    'Kristdemokraterna', 'KD', 'V', 'MP', 'C', 'L', 'M', 'S'
-  ];
-  
-  for (const party of partyNames) {
-    const pattern = new RegExp(`\\b${party}\\b`, 'i');
-    if (pattern.test(html)) {
-      parties.add(party);
+  // Map canonical party codes to their name/abbreviation variants
+  const partyVariants = {
+    S: ['Socialdemokraterna', 'S'],
+    M: ['Moderaterna', 'M'],
+    SD: ['Sverigedemokraterna', 'SD'],
+    V: ['Vänsterpartiet', 'V'],
+    MP: ['Miljöpartiet', 'MP'],
+    C: ['Centerpartiet', 'C'],
+    L: ['Liberalerna', 'L'],
+    KD: ['Kristdemokraterna', 'KD']
+  };
+
+  for (const [canonicalCode, variants] of Object.entries(partyVariants)) {
+    for (const variant of variants) {
+      const pattern = new RegExp(`\\b${variant}\\b`, 'i');
+      if (pattern.test(html)) {
+        // Ensure we only count each party once, even if multiple variants appear
+        parties.add(canonicalCode);
+        break;
+      }
     }
   }
   
@@ -401,8 +411,12 @@ if (process.argv[1] === __filename) {
   const validation = validateEveningAnalysis(articlePath);
   printValidation(validation);
   
-  // Exit with error code if quality is below 0.6
-  if (validation.qualityScore && validation.qualityScore < 0.6) {
+  // Exit with error code if there's an error or quality is below 0.6
+  if (validation.error) {
+    process.exit(1);
+  }
+  
+  if (typeof validation.qualityScore === 'number' && validation.qualityScore < 0.6) {
     process.exit(1);
   }
 }
