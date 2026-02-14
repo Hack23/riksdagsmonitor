@@ -2,7 +2,7 @@
  * Unit Tests for Propositions Article Generation Module
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vitest';
 
 const { mockClientInstance, mockPropositions, MockMCPClient } = vi.hoisted(() => {
   const mockPropositions = [

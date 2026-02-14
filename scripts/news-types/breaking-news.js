@@ -69,15 +69,15 @@ export async function generateBreakingNews(options = {}) {
     // Example: Fetch related votes if event involves a vote
     if (eventData.voteId) {
       console.log('  🔄 Fetching voting details...');
-      const votes = await client.searchVoteringar({ punkt: eventData.voteId });
-      mcpCalls.push({ tool: 'search_voteringar', result: votes });
+      const votes = await client.fetchVotingRecords({ punkt: eventData.voteId });
+      mcpCalls.push({ tool: 'fetch_voting_records', result: votes });
     }
     
     // Example: Fetch related speeches
     if (eventData.topic) {
       console.log('  🔄 Fetching related speeches...');
-      const speeches = await client.searchAnforanden({ text: eventData.topic });
-      mcpCalls.push({ tool: 'search_anforanden', result: speeches });
+      const speeches = await client.searchSpeeches({ text: eventData.topic });
+      mcpCalls.push({ tool: 'search_speeches', result: speeches });
     }
     
     const today = new Date();

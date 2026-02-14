@@ -2,7 +2,7 @@
  * Unit Tests for Motions Article Generation Module
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vitest';
 
 const { mockClientInstance, mockMotions, MockMCPClient } = vi.hoisted(() => {
   const mockMotions = [

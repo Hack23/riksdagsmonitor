@@ -2,7 +2,7 @@
  * Unit Tests for Breaking News Article Generation Module
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vitest';
 
 const { mockClientInstance, MockMCPClient } = vi.hoisted(() => {
   const mockClientInstance = {

@@ -8,7 +8,7 @@
  * - Article structure validation
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vitest';
 
 // Mock MCP client
 const { mockClientInstance, mockCommitteeReports, MockMCPClient } = vi.hoisted(() => {
