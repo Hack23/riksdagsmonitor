@@ -31,7 +31,8 @@ network:
   allowed:
     - defaults
     - node
-    - riksdag-regering-ai.onrender.com
+    - "*.com"
+    - "*.se"
 
 mcp-servers:
   riksdag-regering:
@@ -50,11 +51,8 @@ tools:
 
 safe-outputs:
   allowed-domains:
-    - riksdag-regering-ai.onrender.com
-    - data.riksdagen.se
-    - www.riksdagen.se
-    - www.regeringen.se
-    - github.com
+    - "*.com"
+    - "*.se"
   create-pull-request: {}
   add-comment: {}
 
