@@ -28,7 +28,7 @@
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/index.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html">
-  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/index_no.html">
+  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/index_no.html">
   <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/index_fi.html">
   <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/index_de.html">
   <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/index_fr.html">
@@ -58,7 +58,7 @@
           "headline": "Week Ahead: Foreign Policy Debate and Fiscal Reckoning as Riksdag Reconvenes",
           "url": "https://riksdagsmonitor.com/news/2026-02-14-week-ahead-feb-14-20-en.html",
           "datePublished": "2026-02-14T06:00:00Z",
-          "description": "Parliament returns with annual foreign policy debate, PM question time, and Fiscal Policy Council report. A pivotal week for Sweden",
+          "description": "Parliament returns with annual foreign policy debate, PM question time, and Fiscal Policy Council report. A pivotal week for Sweden&#039;s geopolitica",
           "inLanguage": "en"
         }
       },
@@ -67,19 +67,7 @@
         "position": 2,
         "item": {
           "@type": "NewsArticle",
-          "headline": "Parliament Returns: Budget Debate and Foreign Policy Focus",
-          "url": "https://riksdagsmonitor.com/news/2026-02-14-sample-no-embedded-css-en.html",
-          "datePublished": "2026-02-14T00:00:00.000Z",
-          "description": "Latest news and analysis from Sweden&amp;#039;s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with s",
-          "inLanguage": "en"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "NewsArticle",
-          "headline": "Ten Committee Reports This Week: Parliament",
+          "headline": "Ten Committee Reports This Week: Parliament&#039;s Spring 2026 Priorities",
           "url": "https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html",
           "datePublished": "2026-02-14",
           "description": "Analysis of parliamentary activity February 5-6, 2026",
@@ -88,13 +76,25 @@
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 3,
         "item": {
           "@type": "NewsArticle",
-          "headline": "Sweden",
+          "headline": "Sweden&#039;s February Parliamentary Offensive: Security and Economy Before Election",
           "url": "https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html",
           "datePublished": "2026-02-14",
           "description": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "NewsArticle",
+          "headline": "Sweden’s Riksdag Enters Spring Recess: A Mid-Session Assessment of the Tidö Government’s Legislative Record",
+          "url": "https://riksdagsmonitor.com/news/2026-02-13-evening-analysis-en.html",
+          "datePublished": "2026-02-13T18:00:00.000Z",
+          "description": "With 2,308 rule violations flagged across 2,494 tracked politicians and 109,259 documents processed, the parliamentary session reveals a government st",
           "inLanguage": "en"
         }
       },
@@ -167,6 +167,18 @@
           "url": "https://riksdagsmonitor.com/news/2026-02-opposition-motions-en.html",
           "datePublished": "2026-02-07T00:00:00Z",
           "description": "Ten fresh opposition motions reveal spring parliamentary battle lines - from indefinite detention to elderly care and constitutional rights.",
+          "inLanguage": "en"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "NewsArticle",
+          "headline": "Critical Week for Sweden in EU: Defense Council and Prime Minister&#039;s Summit",
+          "url": "https://riksdagsmonitor.com/news/2026-02-week-ahead-en.html",
+          "datePublished": "2026-02-07T00:00:00+01:00",
+          "description": "Critical week for Swedish EU policy: Defense Minister and Prime Minister face councils in Brussels while opposition intensifies government scrutiny.",
           "inLanguage": "en"
         }
       }
@@ -286,6 +298,12 @@
   </div>
   
   <script>
+    // Language flags mapping (shared with server-side)
+    const LANGUAGE_FLAGS = {"en":"🇬🇧","sv":"🇸🇪","da":"🇩🇰","no":"🇳🇴","fi":"🇫🇮","de":"🇩🇪","fr":"🇫🇷","es":"🇪🇸","nl":"🇳🇱","ar":"🇸🇦","he":"🇮🇱","ja":"🇯🇵","ko":"🇰🇷","zh":"🇨🇳"};
+    
+    // Available in translation (for current language)
+    const AVAILABLE_IN_TEXT = 'Available in';
+    
     // Dynamic articles array - generated from news/ directory
     const articles = [
   {
@@ -293,7 +311,12 @@
     "date": "2026-02-14T06:00:00Z",
     "type": "prospective",
     "slug": "2026-02-14-week-ahead-feb-14-20-en.html",
-    "excerpt": "Parliament returns with annual foreign policy debate, PM question time, and Fiscal Policy Council report. A pivotal week for Sweden",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
+    "excerpt": "Parliament returns with annual foreign policy debate, PM question time, and Fiscal Policy Council report. A pivotal week for Sweden's geopolitical and economic direction.",
     "topics": [
       "parliament"
     ],
@@ -305,33 +328,29 @@
     ]
   },
   {
-    "title": "Parliament Returns: Budget Debate and Foreign Policy Focus",
-    "date": "2026-02-14T00:00:00.000Z",
-    "type": "prospective",
-    "slug": "2026-02-14-sample-no-embedded-css-en.html",
-    "excerpt": "Latest news and analysis from Sweden&#039;s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.",
-    "topics": [],
-    "tags": [
-      "Budget Debate",
-      "Foreign Policy",
-      "Coalition Politics",
-      "PM Question Time"
-    ]
-  },
-  {
-    "title": "Ten Committee Reports This Week: Parliament",
+    "title": "Ten Committee Reports This Week: Parliament's Spring 2026 Priorities",
     "date": "2026-02-14",
     "type": "analysis",
     "slug": "2026-02-committee-reports-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Analysis of parliamentary activity February 5-6, 2026",
     "topics": [],
     "tags": []
   },
   {
-    "title": "Sweden",
+    "title": "Sweden's February Parliamentary Offensive: Security and Economy Before Election",
     "date": "2026-02-14",
     "type": "retrospective",
     "slug": "2026-02-parliament-agenda-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Eight major propositions in first week, security detention faces opposition, coalition gears up for September election campaign.",
     "topics": [],
     "tags": []
@@ -341,16 +360,33 @@
     "date": "2026-02-13T18:00:00.000Z",
     "type": "retrospective",
     "slug": "2026-02-13-evening-analysis-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "ar",
+      "he",
+      "ja",
+      "ko",
+      "zh"
+    ],
     "excerpt": "With 2,308 rule violations flagged across 2,494 tracked politicians and 109,259 documents processed, the parliamentary session reveals a government struggling to translate coalition arithmetic into le",
     "topics": [
       "parliament",
       "government"
     ],
     "tags": [
-      "Riksdag",
-      "Coalition Government",
-      "Legislative Analysis",
-      "Tidö Agreement"
+      "Budget Debate",
+      "Foreign Policy",
+      "Coalition Politics",
+      "PM Question Time"
     ]
   },
   {
@@ -358,6 +394,11 @@
     "date": "2026-02-10T13:00:00Z",
     "type": "retrospective",
     "slug": "2026-02-10-biodiversity-citizenship-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Dual policy announcements signal proactive government agenda on environment and integration.",
     "topics": [
       "environment"
@@ -373,6 +414,11 @@
     "date": "2026-02-10T09:00:00Z",
     "type": "analysis",
     "slug": "2026-02-10-pm-eu-summit-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Rare open EU Committee meeting as PM Kristersson prepares for informal leaders summit while government battles opposition pressure.",
     "topics": [
       "eu"
@@ -389,6 +435,11 @@
     "date": "2026-02-10T09:00:00Z",
     "type": "prospective",
     "slug": "2026-02-10-week-ahead-feb-10-17-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Critical week as PM faces Brussels summit while parliament intensifies oversight on citizenship, crime, and environment.",
     "topics": [
       "eu",
@@ -405,6 +456,11 @@
     "date": "2026-02-07T07:00:00+00:00",
     "type": "analysis",
     "slug": "2026-02-government-propositions-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Six propositions reveal coalition priorities: financial stability, green transition, and security crackdowns.",
     "topics": [
       "parliament"
@@ -418,6 +474,11 @@
     "date": "2026-02-07T00:00:00Z",
     "type": "analysis",
     "slug": "2026-02-opposition-motions-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Ten fresh opposition motions reveal spring parliamentary battle lines - from indefinite detention to elderly care and constitutional rights.",
     "topics": [
       "parliament"
@@ -429,10 +490,15 @@
     ]
   },
   {
-    "title": "Critical Week for Sweden in EU: Defense Council and Prime Minister",
+    "title": "Critical Week for Sweden in EU: Defense Council and Prime Minister's Summit",
     "date": "2026-02-07T00:00:00+01:00",
     "type": "prospective",
     "slug": "2026-02-week-ahead-en.html",
+    "lang": "en",
+    "availableLanguages": [
+      "en",
+      "sv"
+    ],
     "excerpt": "Critical week for Swedish EU policy: Defense Minister and Prime Minister face councils in Brussels while opposition intensifies government scrutiny.",
     "topics": [
       "eu",
@@ -461,21 +527,40 @@
       
       noResults.style.display = 'none';
       
-      grid.innerHTML = articlesToRender.map(article => `
+      grid.innerHTML = articlesToRender.map(article => {
+        // Generate language badge for the article using shared LANGUAGE_FLAGS
+        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
+        const langBadge = `<span class="language-badge" aria-label="${article.lang} language"><span aria-hidden="true">${flag}</span> ${article.lang.toUpperCase()}</span>`;
+        
+        // Generate available languages display if multiple languages exist
+        const availableLangs = article.availableLanguages || [article.lang];
+        let availableDisplay = '';
+        if (availableLangs.length > 1) {
+          const availableBadges = availableLangs.map(l => {
+            const f = LANGUAGE_FLAGS[l] || '🌐';
+            return `<span class="lang-badge-sm"><span aria-hidden="true">${f}</span> ${l.toUpperCase()}</span>`;
+          }).join(' ');
+          availableDisplay = `<p class="available-languages"><strong>${AVAILABLE_IN_TEXT}:</strong> ${availableBadges}</p>`;
+        }
+        
+        return `
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="${article.date}">${formatDate(article.date)}</time>
             <span class="article-type">${localizeType(article.type)}</span>
+            ${langBadge}
           </div>
           <h2 class="article-title">
             <a href="${article.slug}">${article.title}</a>
           </h2>
           <p class="article-excerpt">${article.excerpt}</p>
+          ${availableDisplay}
           <div class="article-tags">
             ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
           </div>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
     
     const typeLabels = {"prospective":"Prospective","retrospective":"Retrospective","analysis":"Analysis","breaking":"Breaking news"};

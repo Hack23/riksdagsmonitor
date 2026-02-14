@@ -9159,3 +9159,41 @@ body.news-page {
     padding: 1.5rem;
   }
 }
+
+/* Site Tagline for News Articles */
+.news-article .site-tagline {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #6c757d);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color, #e9ecef);
+  font-weight: 500;
+}
+
+/* Language badge styles (namespaced under .news-page) */
+.news-page .lang-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(0, 102, 51, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: var(--primary-color, #006633);
+  border: 1px solid rgba(0, 102, 51, 0.2);
+  font-weight: 500;
+}
+
+/* Available Languages Section (namespaced under .news-page) */
+.news-page .available-languages {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #6c757d);
+}
+
+.news-page .available-languages strong {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
