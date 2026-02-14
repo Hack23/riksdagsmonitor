@@ -6,8 +6,8 @@ import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vite
 
 const { mockClientInstance, MockMCPClient } = vi.hoisted(() => {
   const mockClientInstance = {
-    searchVoteringar: vi.fn().mockResolvedValue([]),
-    searchAnforanden: vi.fn().mockResolvedValue([])
+    fetchVotingRecords: vi.fn().mockResolvedValue([]),
+    searchSpeeches: vi.fn().mockResolvedValue([])
   };
   
   function MockMCPClient() {
@@ -81,7 +81,7 @@ describe('Breaking News Article Generation', () => {
         eventData
       });
       
-      expect(mockClientInstance.searchVoteringar).toHaveBeenCalled();
+      expect(mockClientInstance.fetchVotingRecords).toHaveBeenCalled();
     });
 
     it('should fetch speeches if topic provided', async () => {
@@ -95,7 +95,7 @@ describe('Breaking News Article Generation', () => {
         eventData
       });
       
-      expect(mockClientInstance.searchAnforanden).toHaveBeenCalled();
+      expect(mockClientInstance.searchSpeeches).toHaveBeenCalled();
     });
   });
 
