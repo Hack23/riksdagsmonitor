@@ -6,6 +6,8 @@
  * Generates news articles using riksdag-regering-mcp data
  * Integrates MCP client, data transformers, and article template
  * 
+ * REFACTORED: Now uses modular article generators from news-types/
+ * 
  * Usage: node generate-news-enhanced.js --types="week-ahead,committee-reports"
  */
 
@@ -22,6 +24,26 @@ import {
   generateSources
 } from './data-transformers.js';
 import { generateArticleHTML } from './article-template.js';
+
+// Import modular article generators
+import { 
+  generateWeekAhead as generateWeekAheadModule,
+  getWeekAheadDateRange,
+  formatDateForSlug as formatDateForSlugModule,
+  REQUIRED_TOOLS as WEEK_AHEAD_TOOLS
+} from './news-types/week-ahead.js';
+import { 
+  generateCommitteeReports as generateCommitteeReportsModule,
+  REQUIRED_TOOLS as COMMITTEE_REPORTS_TOOLS
+} from './news-types/committee-reports.js';
+import { 
+  generatePropositions as generatePropositionsModule,
+  REQUIRED_TOOLS as PROPOSITIONS_TOOLS
+} from './news-types/propositions.js';
+import { 
+  generateMotions as generateMotionsModule,
+  REQUIRED_TOOLS as MOTIONS_TOOLS
+} from './news-types/breaking-news.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -91,27 +113,19 @@ const stats = {
 
 /**
  * Get date range for Week Ahead (next 7 days)
+ * Re-exported from modular file for backward compatibility
  */
-function getWeekAheadDateRange() {
-  const today = new Date();
-  const startDate = new Date(today);
-  startDate.setDate(today.getDate() + 1); // Tomorrow
-  
-  const endDate = new Date(startDate);
-  endDate.setDate(startDate.getDate() + 7); // +7 days
-  
-  return {
-    start: startDate.toISOString().split('T')[0],
-    end: endDate.toISOString().split('T')[0]
-  };
-}
+export { getWeekAheadDateRange };
 
 /**
  * Format date for article slug
+ * Re-exported from modular file for backward compatibility
  */
 function formatDateForSlug(date = new Date()) {
   return date.toISOString().split('T')[0];
 }
+// Also export from module
+export { formatDateForSlugModule };
 
 /**
  * Write article to file
