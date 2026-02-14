@@ -71,7 +71,7 @@ const LANGUAGES = {
     i18n: { noArticles: 'Ingen artikler tilgængelige', loading: 'Indlæser artikler...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikler\'' }
   },
   no: {
-    name: 'Norsk', code: 'nb', locale: 'nb_NO',
+    name: 'Norsk', code: 'no', locale: 'no_NO',
     title: 'Nyheter',
     subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.',
     keywords: 'riksdag nyheter, svensk parlament, regjeringsanalyse, politisk journalistikk, åpenhet, demokrati',

@@ -386,30 +386,8 @@ Swedish Election 2026
 <p>Formation: October 2022 | Status: Active | Majority: 176 seats (of 349 total)</p>
 
 <div class="cards">
-<div class="card">
-<div class="scanner-effect"></div>
-<h3>Moderates (M)</h3>
-<p><strong>68 seats</strong></p>
-<p>Leader: Ulf Kristersson (Prime Minister)</p>
-</div>
-<div class="card">
-<div class="scanner-effect"></div>
-<h3>Christian Democrats (KD)</h3>
-<p><strong>19 seats</strong></p>
-<p>Leader: Ebba Busch</p>
-</div>
-<div class="card">
-<div class="scanner-effect"></div>
-<h3>Sweden Democrats (SD)</h3>
-<p><strong>73 seats</strong></p>
-<p>Leader: Jimmie Åkesson</p>
-</div>
-<div class="card">
-<div class="scanner-effect"></div>
-<h3>Liberals (L) - Support</h3>
-<p><strong>16 seats</strong></p>
-<p>Leader: Johan Pehrson</p>
-</div>
+<!-- Coalition party cards dynamically loaded from CIA data -->
+<p class="loading-message"></p>
 </div>
 
 <div class="coalition-stability">
@@ -1266,5 +1244,7 @@ Performance tiers (ntile_party_tier: 1-4)
 <script src="js/pre-election-dashboard.js"></script>
 
 <script src="js/anomaly-detection-dashboard.js"></script>
+
+<script src="js/coalition-loader.js"></script>
 </body>
 </html>

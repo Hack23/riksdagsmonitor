@@ -76,6 +76,20 @@ function getNewsIndexFilename(lang) {
 }
 
 /**
+ * Sanitize article body content for JSON-LD structured data
+ * Removes newlines and normalizes whitespace to prevent invalid JSON
+ * @param {string} htmlContent - Article HTML content
+ * @returns {string} Sanitized content suitable for JSON-LD
+ */
+function sanitizeArticleBody(htmlContent) {
+  return htmlContent
+    .substring(0, 500)
+    .replace(/\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
  * Generate complete article HTML
  * 
  * @param {Object} data - Article data
@@ -188,7 +202,7 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:data2" content="${typeLabel}">
   
   <!-- Hreflang for language alternatives -->
-${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb' : l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
+${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/${baseSlug}-en.html">
   
   <!-- Google Fonts -->
@@ -317,6 +331,8 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
     }
   }
   </script>
+  
+  ${generateArticleCSS()}
 </head>
 <body>
 <!-- Article styles are now in styles.css under .news-article namespace.
@@ -764,7 +780,7 @@ function getArticleStyles() {
  * Locale map for all 14 supported languages
  */
 const LOCALE_MAP = {
-  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'nb-NO', fi: 'fi-FI',
+  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'no-NO', fi: 'fi-FI',
   de: 'de-DE', fr: 'fr-FR', es: 'es-ES', nl: 'nl-NL', ar: 'ar-SA',
   he: 'he-IL', ja: 'ja-JP', ko: 'ko-KR', zh: 'zh-CN'
 };

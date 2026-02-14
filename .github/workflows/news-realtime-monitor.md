@@ -165,13 +165,27 @@ For HIGH significance events, generate articles following **The Economist style*
 - **Reaction** (200 words): Statements from parties, analysis
 - **Implications** (150 words): What happens next
 
-**Important HTML requirements:**
-- Use the cyberpunk theme (dark background, cyan/magenta accents)
+**HTML Requirements:**
+- **MUST** use `<link rel="stylesheet" href="../styles.css">` - NO embedded `<style>` tags
+- Follow "Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency."
 - Include proper `<html lang="{lang}">` and `dir="rtl"` for Arabic/Hebrew
 - Schema.org `NewsArticle` structured data
 - Open Graph and Twitter Card meta tags
 - Hreflang alternates for all generated languages
-- Mobile-responsive layout
+- Use semantic HTML5: `<article>`, `<header>`, `<section>`, `<footer>`
+- Mobile-responsive (handled by styles.css)
+
+**Available CSS Classes in styles.css:**
+- `.news-article` - Main container
+- `.article-header` - Header with title and meta
+- `.article-meta` - Date, time, article type
+- `.lede` - Lead paragraph with accent border
+- `.article-content` - Main content area
+- `.context-box` - Information/background boxes
+- `.watch-section` - Key points section
+- `.article-footer` - Footer with sources
+- `.article-sources` - Sources and attribution
+- `.back-to-news` - Navigation link
 
 ### Step 4: Update Indexes and Sitemap
 
