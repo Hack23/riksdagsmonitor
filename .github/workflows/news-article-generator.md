@@ -1,6 +1,7 @@
 ---
 name: News Article Generator
 description: Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server and validates with Playwright
+strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule: daily
   workflow_dispatch:
