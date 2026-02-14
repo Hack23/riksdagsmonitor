@@ -1,6 +1,7 @@
 ---
 name: News Evening Analysis
 description: Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage and Playwright validation
+strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule:
     # Run weekday evenings at 18:00 UTC (19:00 CET)

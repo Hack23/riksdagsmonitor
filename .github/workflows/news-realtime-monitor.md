@@ -1,6 +1,7 @@
 ---
 name: News Realtime Monitor
 description: Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation
+strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule:
     # Run twice during Swedish parliamentary working hours (CET/CEST)
