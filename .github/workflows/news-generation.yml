@@ -268,29 +268,22 @@ except:
           if [ ! -f "scripts/generate-news-enhanced.js" ]; then
             echo "❌ CRITICAL ERROR: scripts/generate-news-enhanced.js not found"
             
-            # Log structured error
-            cat > news/metadata/errors.json <<EOF
-          {
-            "lastError": {
-              "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-              "workflow": "news-generation.yml",
-              "errorType": "script_missing",
-              "message": "scripts/generate-news-enhanced.js not found",
-              "severity": "critical",
-              "retryable": false
-            },
-            "errorHistory": [
-              {
-                "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-                "workflow": "news-generation.yml",
-                "errorType": "script_missing",
-                "message": "scripts/generate-news-enhanced.js not found",
-                "severity": "critical",
-                "retryable": false
+            # Log structured error using jq (construct once, reuse for history)
+            ERROR_TIMESTAMP="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+            jq -n \
+              --arg ts "$ERROR_TIMESTAMP" \
+              '{ 
+                lastError: {
+                  timestamp: $ts,
+                  workflow: "news-generation.yml",
+                  errorType: "script_missing",
+                  message: "scripts/generate-news-enhanced.js not found",
+                  severity: "critical",
+                  retryable: false
+                }
               }
-            ]
-          }
-          EOF
+              | . + { errorHistory: [ .lastError ] }' \
+              > news/metadata/errors.json
             
             echo "generated=0" >> $GITHUB_OUTPUT
             echo "errors=1" >> $GITHUB_OUTPUT
@@ -318,29 +311,47 @@ except:
               ERROR_MSG="News generation script failed with exit code $EXIT_CODE"
             fi
             
-            # Log structured error
-            cat > news/metadata/errors.json <<EOF
-          {
-            "lastError": {
-              "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-              "workflow": "news-generation.yml",
-              "errorType": "$ERROR_TYPE",
-              "message": "$ERROR_MSG",
-              "severity": "$ERROR_SEVERITY",
-              "retryable": true
-            },
-            "errorHistory": [
-              {
-                "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-                "workflow": "news-generation.yml",
-                "errorType": "$ERROR_TYPE",
-                "message": "$ERROR_MSG",
-                "severity": "$ERROR_SEVERITY",
-                "retryable": true
-              }
-            ]
-          }
-          EOF
+            # Log structured error (preserve existing history, construct once)
+            ERROR_TIMESTAMP="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+            
+            if [ -f "news/metadata/errors.json" ]; then
+              # Append to existing errorHistory
+              jq \
+                --arg ts "$ERROR_TIMESTAMP" \
+                --arg type "$ERROR_TYPE" \
+                --arg msg "$ERROR_MSG" \
+                --arg sev "$ERROR_SEVERITY" \
+                '.lastError = {
+                  timestamp: $ts,
+                  workflow: "news-generation.yml",
+                  errorType: $type,
+                  message: $msg,
+                  severity: $sev,
+                  retryable: true
+                }
+                | .errorHistory = ((.errorHistory // []) + [.lastError])' \
+                news/metadata/errors.json > news/metadata/errors.tmp && \
+                mv news/metadata/errors.tmp news/metadata/errors.json
+            else
+              # Create new errors.json with history
+              jq -n \
+                --arg ts "$ERROR_TIMESTAMP" \
+                --arg type "$ERROR_TYPE" \
+                --arg msg "$ERROR_MSG" \
+                --arg sev "$ERROR_SEVERITY" \
+                '{
+                  lastError: {
+                    timestamp: $ts,
+                    workflow: "news-generation.yml",
+                    errorType: $type,
+                    message: $msg,
+                    severity: $sev,
+                    retryable: true
+                  }
+                }
+                | . + { errorHistory: [ .lastError ] }' \
+                > news/metadata/errors.json
+            fi
             
             echo "generated=0" >> $GITHUB_OUTPUT
             echo "errors=1" >> $GITHUB_OUTPUT

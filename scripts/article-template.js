@@ -47,6 +47,21 @@ function getBreadcrumbName(lang, type) {
 }
 
 /**
+ * Sanitize article body content for JSON-LD structured data
+ * Converts HTML content to valid single-line JSON string
+ * 
+ * @param {string} htmlContent - HTML content (already escaped)
+ * @returns {string} Sanitized single-line text suitable for JSON
+ */
+function sanitizeArticleBody(htmlContent) {
+  return htmlContent
+    .substring(0, 500) // Limit length for structured data
+    .replace(/\n/g, ' ') // Remove newlines
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
+}
+
+/**
  * Footer label translations for all 14 languages
  */
 const FOOTER_LABELS = {
