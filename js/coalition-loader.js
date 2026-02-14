@@ -84,7 +84,7 @@
     no: {
       coalitionTitle: 'Nåværende koalisjon: Tidö-avtalen',
       coalitionStatus: 'Dannelse: oktober 2022 | Status: Aktiv',
-      parliamentSeats: 'Stortingsmandater',
+      parliamentSeats: 'Riksdagsmandater',
       governmentMembers: 'Regjeringsmedlemmer',
       partyAssignments: 'Partioppgaver',
       leader: 'Leder',
@@ -136,7 +136,7 @@
     fi: {
       coalitionTitle: 'Nykyinen koalitio: Tidö-sopimus',
       coalitionStatus: 'Muodostus: lokakuu 2022 | Tila: Aktiivinen',
-      parliamentSeats: 'Eduskuntapaikkoja',
+      parliamentSeats: 'Riksdagin paikat',
       governmentMembers: 'Hallituksen jäseniä',
       partyAssignments: 'Puoluetehtävät',
       leader: 'Johtaja',
@@ -521,11 +521,11 @@
     const cardsContainer = container.querySelector('.cards');
     if (cardsContainer) {
       const t = getTranslations();
-      cardsContainer.innerHTML = `
-        <p class="error-message">
-          ${t.errorMessage}: ${error.message}
-        </p>
-      `;
+      const errorP = document.createElement('p');
+      errorP.className = 'error-message';
+      errorP.textContent = `${t.errorMessage}: ${error.message}`;
+      cardsContainer.innerHTML = '';
+      cardsContainer.appendChild(errorP);
     }
     console.error('Coalition loader error:', error);
   }
