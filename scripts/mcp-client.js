@@ -29,6 +29,7 @@
  */
 
 const DEFAULT_MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp';
+const DEFAULT_MCP_AUTH_TOKEN = process.env.MCP_AUTH_TOKEN || '';
 const DEFAULT_MAX_RETRIES = 3;
 const RETRY_DELAY = 2000; // 2 seconds (increased for server spin-up)
 
@@ -64,6 +65,8 @@ export class MCPClient {
     
     this.requestCount = 0;
     this.errorCount = 0;
+    this.authToken = (typeof config === 'object' && config.authToken) || DEFAULT_MCP_AUTH_TOKEN;
+    this.sessionId = null;
   }
 
   /**
@@ -110,11 +113,22 @@ export class MCPClient {
         }
       };
       
+      // Initialize session if needed (Streamable HTTP MCP transport)
+      if (this.authToken && !this.sessionId) {
+        try {
+          await this.initializeSession();
+        } catch (e) {
+          // Session init is optional - continue without it
+        }
+      }
+      
+      const headers = { 'Content-Type': 'application/json' };
+      if (this.authToken) headers['Authorization'] = this.authToken;
+      if (this.sessionId) headers['Mcp-Session-Id'] = this.sessionId;
+      
       const response = await fetch(this.baseURL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers,
         body: JSON.stringify(jsonRpcRequest),
         signal: controller.signal
       });
@@ -130,7 +144,17 @@ export class MCPClient {
         throw new Error(`MCP server error: ${response.status} ${response.statusText}${errorBody ? ' - ' + errorBody : ''}`);
       }
       
-      const jsonRpcResponse = await response.json();
+      // Parse response - handle both JSON and SSE (text/event-stream) formats
+      const contentType = (response.headers && typeof response.headers.get === 'function') 
+        ? (response.headers.get('content-type') || '') 
+        : '';
+      let jsonRpcResponse;
+      if (contentType.includes('text/event-stream')) {
+        const text = await response.text();
+        jsonRpcResponse = this.parseSSEResponse(text);
+      } else {
+        jsonRpcResponse = await response.json();
+      }
       
       // Check for JSON-RPC error
       if (jsonRpcResponse.error) {
@@ -139,18 +163,37 @@ export class MCPClient {
         // If tool error and we used prefix, try without prefix
         // Server returns "not found" or "Internal error" for unrecognized prefixed tool names
         // skipPrefix flag prevents infinite recursion on the fallback attempt
-        const isToolLookupError = errorMsg.includes('not found') || errorMsg.includes('Internal error') || errorMsg.includes('Unknown tool');
+        const isToolLookupError = errorMsg.includes('not found') || errorMsg.includes('Internal error') || errorMsg.includes('Unknown tool') || errorMsg.includes('unknown tool');
         if (isToolLookupError && toolName.startsWith('riksdag-regering--') && !skipPrefix) {
           const bareTool = toolName.replace(/^riksdag-regering--/, '');
           console.warn(`⚠️ Tool '${toolName}' not found, retrying as '${bareTool}'...`);
           return this.request(bareTool, params, retryCount, true);
         }
         
+        // Handle session initialization error (Streamable HTTP transport)
+        if (errorMsg.includes('session initialization')) {
+          this.sessionId = null;
+          if (retryCount === 0) {
+            console.warn('⚠️ Session expired, re-initializing...');
+            await this.initializeSession();
+            return this.request(tool, params, retryCount + 1, skipPrefix);
+          }
+        }
+        
         throw new Error(`MCP tool error: ${errorMsg}`);
       }
       
       // Extract result from JSON-RPC response
-      return jsonRpcResponse.result || {};
+      // MCP tools/call returns content array with text field containing JSON
+      const result = jsonRpcResponse.result || {};
+      if (result.content && Array.isArray(result.content) && result.content[0]?.text) {
+        try {
+          return JSON.parse(result.content[0].text);
+        } catch (e) {
+          return { text: result.content[0].text };
+        }
+      }
+      return result;
       
     } catch (error) {
       // Retry on network errors (case-insensitive check)
@@ -201,6 +244,65 @@ export class MCPClient {
   }
 
   /**
+   * Parse SSE (text/event-stream) response body into JSON-RPC response
+   */
+  parseSSEResponse(text) {
+    const lines = text.split('\n');
+    for (const line of lines) {
+      if (line.startsWith('data: ')) {
+        return JSON.parse(line.substring(6));
+      }
+    }
+    // If no SSE format, try direct JSON parse
+    return JSON.parse(text);
+  }
+
+  /**
+   * Initialize MCP session for Streamable HTTP transport
+   */
+  async initializeSession() {
+    if (this.sessionId || !this.authToken) return;
+    
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), this.timeout);
+    
+    try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (this.authToken) headers['Authorization'] = this.authToken;
+      
+      const response = await fetch(this.baseURL, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          id: jsonRpcId++,
+          method: 'initialize',
+          params: {
+            protocolVersion: '2025-03-26',
+            capabilities: {},
+            clientInfo: { name: 'riksdagsmonitor-news', version: '1.0.0' }
+          }
+        }),
+        signal: controller.signal
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Session init failed: ${response.status} ${response.statusText}`);
+      }
+      
+      const sessionId = (response.headers && typeof response.headers.get === 'function') 
+        ? response.headers.get('Mcp-Session-Id') 
+        : null;
+      if (sessionId) {
+        this.sessionId = sessionId;
+        console.log(`  🔗 MCP session initialized: ${sessionId.substring(0, 8)}...`);
+      }
+    } finally {
+      clearTimeout(timeoutId);
+    }
+  }
+
+  /**
    * Fetch calendar events (upcoming parliamentary activity)
    * 
    * @param {string} from - Start date (YYYY-MM-DD)
@@ -215,7 +317,7 @@ export class MCPClient {
     if (akt) params.akt = akt;
     
     const response = await this.request('get_calendar_events', params);
-    return response.events || [];
+    return response.kalender || response.events || [];
   }
 
   /**
@@ -232,7 +334,7 @@ export class MCPClient {
     if (organ) params.organ = organ;
     
     const response = await this.request('get_betankanden', params);
-    return response.reports || [];
+    return response.dokument || response.reports || [];
   }
 
   /**
@@ -247,7 +349,7 @@ export class MCPClient {
     if (rm) params.rm = rm;
     
     const response = await this.request('get_propositioner', params);
-    return response.propositions || [];
+    return response.dokument || response.propositions || [];
   }
 
   /**
@@ -262,7 +364,7 @@ export class MCPClient {
     if (rm) params.rm = rm;
     
     const response = await this.request('get_motioner', params);
-    return response.motions || [];
+    return response.dokument || response.motions || [];
   }
 
   /**
