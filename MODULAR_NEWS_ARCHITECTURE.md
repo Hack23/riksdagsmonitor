@@ -76,7 +76,7 @@ The news generation system has been refactored into a modular architecture with 
 5. **breaking-news.test.js** - 11 tests
 6. **news-article-generator-integration.test.js** - 14 tests
 
-**Total**: 111 tests passing (exceeds 60+ requirement)
+**Total**: 94 tests passing (exceeds 60+ requirement by 57%)
 
 ## Cross-Reference Patterns
 

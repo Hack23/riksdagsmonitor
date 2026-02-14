@@ -29,8 +29,7 @@ import { generateArticleHTML } from './article-template.js';
 
 // Import only the utilities needed (not the main generator functions)
 import { 
-  getWeekAheadDateRange,
-  formatDateForSlug as formatDateForSlugModule
+  getWeekAheadDateRange
 } from './news-types/week-ahead.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -107,13 +106,10 @@ export { getWeekAheadDateRange };
 
 /**
  * Format date for article slug
- * Re-exported from modular file for backward compatibility
  */
 function formatDateForSlug(date = new Date()) {
   return date.toISOString().split('T')[0];
 }
-// Also export from module
-export { formatDateForSlugModule };
 
 /**
  * Write article to file

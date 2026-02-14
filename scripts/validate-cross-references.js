@@ -64,7 +64,7 @@ export function extractCrossReferences(content) {
     documents: /dokument|document|bill|proposition|motion|betänkande/gi,
     votes: /vote|votering|röst|ballot/gi,
     speeches: /speech|anförande|debate|tal/gi,
-    members: /ledamot|mp|member|representative/gi,
+    members: /ledamot|\bmp\b|member|representative/gi,  // Word boundary for mp to avoid false matches
     committees: /committee|utskott|commission/gi,
     questions: /question|fråga|interpellation/gi
   };

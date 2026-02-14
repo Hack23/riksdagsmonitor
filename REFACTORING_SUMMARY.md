@@ -11,7 +11,7 @@ Successfully refactored `news-article-generator.md` agentic workflow into modula
 - [x] **Cross-referencing validation**: `validate-cross-references.js` ✅
 - [x] **Playwright validation**: Automated screenshot capture ✅
 - [x] **RTL validation** for ar/he versions ✅
-- [x] **All tests passing**: `npm test` shows 111/111 passing ✅
+- [x] **All tests passing**: `npm test` shows 94/94 passing ✅
 - [x] **Week-ahead tests**: 46 test cases ✅ (exceeds 15+ requirement)
 - [x] **Committee reports tests**: 22 test cases ✅ (exceeds 15+ requirement)
 - [x] **Documentation updated**: `MODULAR_NEWS_ARCHITECTURE.md` ✅
