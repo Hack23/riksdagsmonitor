@@ -193,7 +193,7 @@
       "startDate": "2026-09-13",
       "endDate": "2026-09-13",
       "eventStatus": "https://schema.org/EventScheduled",
-      "eventנוכחותMode": "https://schema.org/OfflineEventנוכחותMode",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
         "name": "שוודיה",
@@ -534,31 +534,31 @@
 
 <div class="dashboard-grid">
 <div class="chart-card">
-<h3>Effectiveness Trends (1990-2026)</h3>
-<p>Historical party effectiveness scores showing legislative productivity, voting consistency, and policy impact over time.</p>
+<h3>מגמות אפקטיביות (1990-2026)</h3>
+<p>ציוני אפקטיביות היסטוריים של מפלגות המציגים פרודוקטיביות חקיקתית, עקביות הצבעה והשפעת מדיניות לאורך זמן.</p>
 <canvas id="partyEffectivenessChart" role="img" aria-label="תרשים קו יעילות המפלגה מציג מגמות מ-1990 עד 2026 עבור כל 8 המפלגות הפוליטיות השבדיות"></canvas>
 <span class="sr-only">תרשים קווים המציג ציוני יעילות עבור סוציאל-דמוקרטים, בינוניים, דמוקרטים שבדיה, מפלגת המרכז, מפלגת שמאל, נוצרים-דמוקרטים, ליברלים ומפלגת הירוקים מ-1990 עד 2026.</span>
 </div>
 
 <div class="chart-card">
 <h3>השוואת מסיבות (תקופה נוכחית)</h3>
-<p>Comparative analysis of party performance metrics for the current legislative period.</p>
+<p>ניתוח השוואתי של מדדי ביצועי מפלגות עבור תקופת החקיקה הנוכחית.</p>
 <canvas id="partyComparisonChart" role="img" aria-label="תרשים עמודות המשווה את ציוני הביצועים הנוכחיים בכל 8 המפלגות השבדיות"></canvas>
-<span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
+<span class="sr-only">תרשים עמודות אופקי המציג ציוני ביצועים השוואתיים לכל המפלגות בתקופת החקיקה הנוכחית, ממוינים לפי ציון.</span>
 </div>
 
 <div class="chart-card">
 <h3>המערך הקואליציוני</h3>
 <p>דפוסי קואליציה ורשתות שיתוף פעולה בין מפלגות.</p>
 <div id="coalitionAlignmentChart" role="region" aria-label="הדמיית יישור קואליציוני המראה חוזק שיתוף פעולה בין מפלגות פוליטיות"></div>
-<span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
+<span class="sr-only">ייצוג חזותי של דפוסי קואליציה המציג אחוזי חוזק שיתוף פעולה בין שילובי מפלגות שונים.</span>
 </div>
 
 <div class="chart-card">
-<h3>Momentum Indicators</h3>
+<h3>מחווני מומנטום</h3>
 <p>ציוני המומנטום של המפלגה עם מדדי אחוזון (P50, P90) המצביעים על מסלול בחירות.</p>
 <canvas id="partyMomentumChart" role="img" aria-label="תרשים סופגניות המציג את ציוני המומנטום של כל 8 המפלגות הפוליטיות בשוודיה"></canvas>
-<span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
+<span class="sr-only">תרשים דונאט המציג ציוני מחווני מומנטום לכל מפלגה עם מדדי אחוזונים.</span>
 </div>
 </div>
 </section>
@@ -570,7 +570,7 @@
 <!-- Network Diagram (Full Width) -->
 <div class="chart-card wide">
 <h3>דיאגרמת רשת ועדות</h3>
-<p>Interactive visualization of committee relationships and productivity. Drag nodes to explore connections.</p>
+<p>ויזואליזציה אינטראקטיבית של קשרי ועדות ופרודוקטיביות. גררו צמתים כדי לחקור קשרים.</p>
 <div id="committeeNetwork" role="img" aria-label="תרשים חיבורי רשת ועדות המציג את הקשרים בין 15 ועדות Riksdag שבדיה"></div>
 <table class="sr-only" id="committeeNetworkTable" aria-label="טבלת נתוני חיבורי רשת ועדות">
 <!-- Accessible fallback table populated by JavaScript -->
@@ -579,8 +579,8 @@
 
 <!-- Productivity Heat Map (Full Width) -->
 <div class="chart-card wide">
-<h3>Productivity Matrix (2020-2026)</h3>
-<p>Heat map showing committee productivity scores over time. Hover over cells for detailed information.</p>
+<h3>מטריצת פרודוקטיביות (2020-2026)</h3>
+<p>מפת חום המציגה ציוני פרודוקטיביות ועדות לאורך זמן. רחפו מעל תאים למידע מפורט.</p>
 <div id="productivityMatrix" role="img" aria-label="מטריצת פרודוקטיביות של ועדות המציגה ביצועים לאורך זמן מ-2020 עד 2026"></div>
 <table class="sr-only" id="productivityMatrixTable" aria-label="טבלת נתוני מטריצת פריון הוועדה">
 <!-- Accessible fallback table populated by JavaScript -->
@@ -590,27 +590,27 @@
 <!-- השוואת ועדות -->
 <div class="chart-card">
 <h3>השוואת ועדות</h3>
-<p>Compare productivity scores across all 15 committees.</p>
-<canvas id="committeeComparisonChart" role="img" aria-label="Bar chart comparing productivity scores across committees"></canvas>
+<p>השוואת ציוני פרודוקטיביות בכל 15 הוועדות.</p>
+<canvas id="committeeComparisonChart" role="img" aria-label="תרשים עמודות המשווה ציוני פרודוקטיביות בין ועדות"></canvas>
 </div>
 
 <!-- אפקטיביות החלטות -->
 <div class="chart-card">
 <h3>אפקטיביות החלטות</h3>
-<p>Track decision outcomes (approved, rejected, pending) over time.</p>
-<canvas id="decisionEffectivenessChart" role="img" aria-label="Stacked bar chart showing decision effectiveness over years"></canvas>
+<p>מעקב אחר תוצאות החלטות (אושר, נדחה, ממתין) לאורך זמן.</p>
+<canvas id="decisionEffectivenessChart" role="img" aria-label="תרשים עמודות מוערם המציג אפקטיביות החלטות לאורך שנים"></canvas>
 </div>
 
 <!-- Seasonal Patterns (Full Width) -->
 <div class="chart-card wide">
-<h3>Seasonal Activity Patterns</h3>
-<p>Quarterly activity trends showing how committee work varies across the year.</p>
-<canvas id="seasonalPatternsChart" role="img" aria-label="Line chart displaying seasonal activity patterns by quarter"></canvas>
+<h3>דפוסי פעילות עונתיים</h3>
+<p>מגמות פעילות רבעוניות המראות כיצד עבודת הוועדות משתנה לאורך השנה.</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="תרשים קווי המציג דפוסי פעילות עונתיים לפי רבעון"></canvas>
 </div>
 </div>
 
 <div class="dashboard-attribution">
-<p><small>📊 נתונים מופעלים על ידי <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a> | עודכן: <span id="committeeLastUpdated">טוען...</span></small></p>
+<p><small>📊 נתונים מופעלים על ידי <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">פלטפורמת CIA</a> | עודכן: <span id="committeeLastUpdated">טוען...</span></small></p>
 </div>
 </section>
 
@@ -629,26 +629,26 @@
 </div>
 
 <div class="chart-card">
-<h3>Voting Anomalies (Last 5 Years)</h3>
-<p>Scatter plot highlighting unusual voting patterns and party defections from expected behavior.</p>
-<canvas id="votingאֲנוֹמַלִיָהChart" role="img" aria-label="עלילת פיזור חריגות הצבעה המציגה ציוני סטייה עבור כל הצדדים"></canvas>
+<h3>חריגות הצבעה (5 השנים האחרונות)</h3>
+<p>תרשים פיזור המדגיש דפוסי הצבעה חריגים וסטיות מפלגתיות מההתנהגות הצפויה.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="תרשים פיזור חריגות הצבעה המציג ציוני סטייה לכל המפלגות"></canvas>
 </div>
 
 <div class="chart-card">
 <h3>מפת חום ליישור מפלגתי</h3>
-<p>Matrix visualization showing cross-party voting agreement levels based on historical voting records.</p>
+<p>ויזואליזציית מטריצה המציגה רמות הסכמה בהצבעה בין מפלגות על בסיס רשומות הצבעה היסטוריות.</p>
 <div id="alignmentHeatMap" role="img" aria-label="מפת חום יישור המפלגה המציגה את אחוזי הסכמי ההצבעה בין כל צמדי המפלגות"></div>
 </div>
 
 <div class="chart-card">
-<h3>Behavioral Patterns</h3>
+<h3>דפוסי התנהגות</h3>
 <p>ציוני עקביות ההצבעה של המפלגה מודדים עמידה בקו המפלגה בכל הקולות.</p>
-<canvas id="behavioralPatternsChart" role="img" aria-label="Behavioral patterns bar chart showing voting consistency percentages for all parties"></canvas>
+<canvas id="behavioralPatternsChart" role="img" aria-label="תרשים עמודות של דפוסי התנהגות המציג אחוזי עקביות הצבעה לכל המפלגות"></canvas>
 </div>
 
 <div class="chart-card wide">
 <h3>מגמות החלטות (1990-2026)</h3>
-<p>Historical timeline showing annual voting activity trends for all parties over 36 years.</p>
+<p>ציר זמן היסטורי המציג מגמות פעילות הצבעה שנתית לכל המפלגות במשך 36 שנים.</p>
 <canvas id="decisionTrendsChart" role="img" aria-label="ציר הזמן של מגמות החלטות המציג את נפחי ההצבעה השנתיים מ-1990 עד 2026"></canvas>
 </div>
 </div>
@@ -659,7 +659,7 @@
 </section>
 
 <section id="seasonal-patterns-dashboard">
-<h2>📅 Seasonal Activity Patterns (2002-2025)</h2>
+<h2>📅 דפוסי פעילות עונתיים (2002-2025)</h2>
 <p class="subtitle">ניתוח רבעוני עם זיהוי אנומליות בציון Z</p>
 
 <!-- Filters -->
@@ -670,16 +670,16 @@
 
 <select id="seasonal-quarter-filter" aria-label="סינון לפי רבעון">
 <option value="all">כל הרבעונים</option>
-<option value="1">Q1 - Winter Session</option>
-<option value="2">Q2 - Spring Session</option>
-<option value="3">Q3 - Summer Recess</option>
-<option value="4">Q4 - Autumn Session</option>
+<option value="1">Q1 - מושב חורף</option>
+<option value="2">Q2 - מושב אביב</option>
+<option value="3">Q3 - פגרת קיץ</option>
+<option value="4">Q4 - מושב סתיו</option>
 </select>
 
 <select id="seasonal-election-filter" aria-label="סינון לפי סטטוס בחירות">
-<option value="all">All</option>
+<option value="all">הכול</option>
 <option value="election">שנות בחירות</option>
-<option value="non-election">Non-שנות בחירות</option>
+<option value="non-election">שנים לא-בחירות</option>
 </select>
 
 <select id="classification-filter" aria-label="סינון לפי סיווג פעילות">
@@ -691,41 +691,41 @@
 <div class="dashboard-grid">
 <!-- Chart 1: Quarterly Activity Heat Map -->
 <div class="chart-card wide">
-<h3>Quarterly Activity Heat Map (2002-2025)</h3>
+<h3>מפת חום לפעילות רבעונית (2002-2025)</h3>
 <div id="seasonal-heatmap"></div>
-<p class="chart-description">Ballot volume by year and quarter with Z-score overlay. Red circles indicate statistical anomalies (|Z| ≥ 2.0).</p>
+<p class="chart-description">נפח הצבעות לפי שנה ורבעון עם שכבת Z-score. עיגולים אדומים מציינים חריגות סטטיסטיות (|Z| ≥ 2.0).</p>
 </div>
 
 <!-- Chart 2: Z-Score אֲנוֹמַלִיָה Timeline -->
 <div class="chart-card">
 <h3>זיהוי אנומליות בציון Z</h3>
-<canvas id="zscore-timeline-chart" role="img" aria-label="Line chart showing Z-score timeline for ballot, document, and attendance metrics"></canvas>
-<p class="chart-description">Statistical outliers (|Z| ≥ 2.0) are flagged in red based on anomaly thresholds.</p>
+<canvas id="zscore-timeline-chart" role="img" aria-label="תרשים קווי המציג ציר זמן של Z-score למדדי הצבעה, מסמכים ונוכחות"></canvas>
+<p class="chart-description">ערכי קצה סטטיסטיים (|Z| ≥ 2.0) מסומנים באדום לפי ספי חריגה.</p>
 </div>
 
 <!-- Chart 3: Cross-Year Quarter Comparison -->
 <div class="chart-card">
-<h3>Average Activity by Quarter (כל השנים)</h3>
-<canvas id="quarter-comparison-chart" role="img" aria-label="Bar chart showing average ballots by quarter across all years"></canvas>
-<p class="chart-description">Q1–Q4 baselines across all years. Shows typical activity patterns across seasons.</p>
+<h3>פעילות ממוצעת לפי רבעון (כל השנים)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="תרשים עמודות המציג ממוצע הצבעות לפי רבעון בכל השנים"></canvas>
+<p class="chart-description">קווי בסיס Q1–Q4 בכל השנים. מציג דפוסי פעילות עונתיים טיפוסיים.</p>
 </div>
 
 <!-- Chart 4: Activity Classification Distribution -->
 <div class="chart-card wide">
-<h3>Seasonal Pattern Classification</h3>
-<canvas id="classification-chart" role="img" aria-label="Stacked bar chart showing distribution of activity classifications by year"></canvas>
-<p class="chart-description">Distribution of NORMAL, ELEVATED, REDUCED, and ANOMALY patterns across years.</p>
+<h3>סיווג דפוס עונתי</h3>
+<canvas id="classification-chart" role="img" aria-label="תרשים עמודות מוערם המציג התפלגות סיווגי פעילות לפי שנה"></canvas>
+<p class="chart-description">התפלגות דפוסים NORMAL, ELEVATED, REDUCED ו-ANOMALY לאורך השנים.</p>
 </div>
 
 <!-- Chart 5: QoQ Change Waterfall -->
 <div class="chart-card">
-<h3>Quarter-over-Quarter Changes</h3>
-<canvas id="qoq-change-chart" role="img" aria-label="Bar chart showing quarter-over-quarter ballot changes as percentages"></canvas>
-<p class="chart-description">Sequential ballot changes (% and absolute). Green indicates increase, red indicates decrease.</p>
+<h3>שינויים רבעון-מול-רבעון</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="תרשים עמודות המציג שינויי הצבעה רבעון-מול-רבעון באחוזים"></canvas>
+<p class="chart-description">שינויים רציפים בהצבעות (אחוזי ומוחלט). ירוק מציין עלייה, אדום מציין ירידה.</p>
 </div>
 </div>
 
-<p class="data-attribution">📊 Data by CIA Platform | מתעדכן מדי יום</p>
+<p class="data-attribution">📊 נתונים על ידי פלטפורמת CIA | מתעדכן מדי יום</p>
 </section>
 
 <section id="pre-election-dashboard" class="dashboard-section">
@@ -735,31 +735,31 @@
 <!-- Real-Time Status Cards -->
 <div class="status-cards">
 <div class="status-card" data-metric="ballots">
-<h3><span aria-hidden="true">📊</span> Ballot Activity</h3>
+<h3><span aria-hidden="true">📊</span> פעילות הצבעה</h3>
 <p class="current-value">16,750</p>
-<p class="baseline-comparison">+4.34% vs baseline</p>
-<span class="status-badge normal">NORMAL</span>
+<p class="baseline-comparison">+4.34% לעומת קו בסיס</p>
+<span class="status-badge normal">תקין</span>
 </div>
 
 <div class="status-card" data-metric="documents">
-<h3><span aria-hidden="true">📄</span> Document Production</h3>
+<h3><span aria-hidden="true">📄</span> ייצור מסמכים</h3>
 <p class="current-value">3,451</p>
-<p class="baseline-comparison">+25.55% vs baseline</p>
-<span class="status-badge normal">NORMAL</span>
+<p class="baseline-comparison">+25.55% לעומת קו בסיס</p>
+<span class="status-badge normal">תקין</span>
 </div>
 
 <div class="status-card" data-metric="attendance">
-<h3><span aria-hidden="true">✅</span> נוכחות Rate</h3>
+<h3><span aria-hidden="true">✅</span> שיעור נוכחות</h3>
 <p class="current-value">85.75%</p>
-<p class="baseline-comparison">+0.75% vs baseline</p>
-<span class="status-badge normal">STABLE</span>
+<p class="baseline-comparison">+0.75% לעומת קו בסיס</p>
+<span class="status-badge normal">יציב</span>
 </div>
 
 <div class="status-card" data-metric="party-performance">
 <h3><span aria-hidden="true">🎯</span> שיעור ניצחון מפלגה</h3>
 <p class="current-value">59.72%</p>
-<p class="baseline-comparison">+3.55% YoY</p>
-<span class="status-badge improving">IMPROVING</span>
+<p class="baseline-comparison">+3.55% משנה לשנה</p>
+<span class="status-badge improving">במגמת שיפור</span>
 </div>
 </div>
 
@@ -767,29 +767,29 @@
 <div class="dashboard-grid">
 <!-- Chart 1: Q4 Activity Timeline (2023-2025) -->
 <div class="chart-card wide">
-<h3>Q4 Activity Timeline (2023-2025)</h3>
+<h3>ציר זמן פעילות Q4 (2023-2025)</h3>
 <div class="chart-container">
-<canvas id="q4-timeline-chart" aria-label="Q4 Activity Timeline showing ballots, documents, and attendance trends from 2023 to 2025"></canvas>
+<canvas id="q4-timeline-chart" aria-label="ציר זמן פעילות Q4 המציג מגמות הצבעות, מסמכים ונוכחות בין 2023 ל-2025"></canvas>
 </div>
-<p class="chart-description">Ballots, documents, attendance trends with baseline overlay</p>
+<p class="chart-description">מגמות הצבעות, מסמכים ונוכחות עם שכבת קו בסיס</p>
 </div>
 
 <!-- תרשים 2: השוואת שנת בחירות -->
 <div class="chart-card">
 <h3>דפוסי Q4 בשנות בחירות מול לא-בחירות</h3>
 <div class="chart-container">
-<canvas id="election-comparison-chart" aria-label="Comparison of Q4 ballot activity in election years versus non-election years from 2002 to 2025"></canvas>
+<canvas id="election-comparison-chart" aria-label="השוואת פעילות הצבעה ב-Q4 בשנות בחירות לעומת לא-בחירות בין 2002 ל-2025"></canvas>
 </div>
 <p class="chart-description">פעילות היסטורית ברבעון הרביעי (2002-2025): שנות בחירות לעומת שנים לא בחירות</p>
 </div>
 
 <!-- Chart 3: Baseline Deviation Radar -->
 <div class="chart-card">
-<h3>Deviation from Baseline (2025 Q4)</h3>
+<h3>סטייה מקו בסיס (Q4 2025)</h3>
 <div class="chart-container">
-<canvas id="deviation-radar-chart" aria-label="Radar chart showing 2025 Q4 metrics compared to historical baselines"></canvas>
+<canvas id="deviation-radar-chart" aria-label="תרשים רדאר המציג מדדי Q4 2025 בהשוואה לקווי בסיס היסטוריים"></canvas>
 </div>
-<p class="chart-description">Multi-metric deviation analysis</p>
+<p class="chart-description">ניתוח סטייה רב-מדדי</p>
 </div>
 
 <!-- תרשים 4: מסיבה ביצועים משמרות -->
@@ -798,23 +798,23 @@
 <div class="chart-container">
 <canvas id="party-trends-chart" aria-label="Line chart showing party win rate, absence rate, and document production from 2023 to 2025"></canvas>
 </div>
-<p class="chart-description">Win rate, absence rate, document production by year</p>
+<p class="chart-description">שיעור ניצחון, שיעור היעדרות וייצור מסמכים לפי שנה</p>
 </div>
 
 <!-- Chart 5: YoY Change Waterfall -->
 <div class="chart-card">
-<h3>Year-over-Year Changes</h3>
+<h3>שינויים משנה לשנה</h3>
 <div class="chart-container">
-<canvas id="yoy-waterfall-chart" aria-label="Waterfall chart showing year-over-year ballot activity changes from 2023 to 2025"></canvas>
+<canvas id="yoy-waterfall-chart" aria-label="תרשים מפל המציג שינויים בפעילות הצבעה משנה לשנה בין 2023 ל-2025"></canvas>
 </div>
-<p class="chart-description">Ballot activity changes: 2023 → 2024 → 2025</p>
+<p class="chart-description">שינויים בפעילות ההצבעה: 2023 → 2024 → 2025</p>
 </div>
 
 <!-- Chart 6: Early Warning Indicators -->
 <div class="chart-card">
-<h3>Early Warning Indicator Matrix</h3>
-<div id="warning-matrix" role="region" aria-label="Early warning indicator matrix showing status of 4 monitored metrics: ballots, documents, attendance, and year-over-year change"></div>
-<p class="chart-description">Real-time status of 4 monitored metrics (ballots, documents, attendance, YoY change)</p>
+<h3>מטריצת מחווני התרעה מוקדמת</h3>
+<div id="warning-matrix" role="region" aria-label="מטריצת מחווני התרעה מוקדמת המציגה מצב של 4 מדדים מנוטרים: הצבעות, מסמכים, נוכחות ושינוי שנתי"></div>
+<p class="chart-description">מצב בזמן אמת של 4 מדדים מנוטרים (הצבעות, מסמכים, נוכחות, שינוי שנתי)</p>
 </div>
 </div>
 
@@ -850,8 +850,8 @@
 </select>
 <select id="anomaly-direction-filter" aria-label="סנן לפי כיוון">
 <option value="all">כל הכיוונים</option>
-<option value="UNUSUALLY_HIGH">Unusually גבוה</option>
-<option value="UNUSUALLY_LOW">Unusually נמוך</option>
+<option value="UNUSUALLY_HIGH">גבוה באופן חריג</option>
+<option value="UNUSUALLY_LOW">נמוך באופן חריג</option>
 <option value="WITHIN_NORMAL_RANGE">בתחום התקין</option>
 </select>
 <select id="anomaly-year-filter" aria-label="סינון לפי שנה">
@@ -864,64 +864,64 @@
 <!-- Chart 1: אֲנוֹמַלִיָה Timeline -->
 <div class="chart-card wide">
 <h3>ציר זמן אנומליות (2002-2026)</h3>
-<canvas id="anomaly-timeline-chart" role="img" aria-label="Scatter plot showing anomalies over time"></canvas>
-<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="תרשים פיזור המציג אנומליות לאורך זמן"></canvas>
+<p class="chart-description">תצוגה כרונולוגית של אנומליות שזוהו עם קידוד חומרה</p>
 </div>
 
 <!-- Chart 2: Z-Score Distribution -->
 <div class="chart-card">
-<h3>Z-Score Distribution</h3>
-<canvas id="zscore-distribution-chart" role="img" aria-label="Histogram of Z-score distribution"></canvas>
-<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+<h3>התפלגות Z-Score</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="היסטוגרמה של התפלגות Z-score"></canvas>
+<p class="chart-description">עקומה נורמלית עם סימון ערכי קצה (|Z| ≥ 2.0)</p>
 </div>
 
 <!-- Chart 3: אֲנוֹמַלִיָה Type Breakdown -->
 <div class="chart-card">
 <h3>התפלגות סוגי אנומליות</h3>
-<canvas id="anomaly-type-chart" role="img" aria-label="Doughnut chart showing anomaly types"></canvas>
-<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+<canvas id="anomaly-type-chart" role="img" aria-label="תרשים דונאט המציג סוגי אנומליות"></canvas>
+<p class="chart-description">התפלגות אנומליות הצבעה לעומת מסמכים</p>
 </div>
 
 <!-- Chart 4: Severity Heat Map -->
 <div class="chart-card wide">
-<h3>Severity Heat Map (Year × Quarter)</h3>
-<div id="severity-heatmap" role="img" aria-label="Heat map showing severity by year and quarter"></div>
-<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+<h3>מפת חום חומרה (שנה × רבעון)</h3>
+<div id="severity-heatmap" role="img" aria-label="מפת חום המציגה חומרה לפי שנה ורבעון"></div>
+<p class="chart-description">גריד המציג חומרת אנומליות לפי שנה ורבעון</p>
 </div>
 
 <!-- Chart 5: Quarterly אֲנוֹמַלִיָה Frequency -->
 <div class="chart-card">
 <h3>תדירות אנומליות לפי רבעון</h3>
-<canvas id="quarterly-frequency-chart" role="img" aria-label="Bar chart showing anomaly frequency by quarter"></canvas>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="תרשים עמודות המציג תדירות אנומליות לפי רבעון"></canvas>
 <p class="chart-description">Q1-Q4 anomaly counts across all years</p>
 </div>
 
 <!-- Chart 6: Recent Anomalies Feed -->
 <div class="chart-card">
-<h3>Recent Anomalies (Last 5)</h3>
-<div id="recent-anomalies-feed" role="feed" aria-label="Feed of recent anomalies"></div>
-<p class="chart-description">Most recent anomalies with details</p>
+<h3>אנומליות אחרונות (5 האחרונות)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="פיד של אנומליות אחרונות"></div>
+<p class="chart-description">האנומליות העדכניות ביותר עם פרטים</p>
 </div>
 </div>
 </section>
 
 <section id="ministry-dashboard" class="dashboard-container">
-<h2>🎖️ Government Minister סיכון & Influence</h2>
+<h2>🎖️ סיכון והשפעה של שרי ממשלה</h2>
 
 <div class="dashboard-grid">
 <div class="chart-card wide">
-<h3>Ministry סיכון Heat Map</h3>
-<div id="ministryסיכוןHeatMap" role="img" aria-label="Ministry סיכון Heat Map showing risk levels across government departments"></div>
+<h3>מפת חום סיכונים של משרדים</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="מפת חום סיכון של משרדים המציגה רמות סיכון ברחבי משרדי הממשלה"></div>
 </div>
 
 <div class="chart-card">
-<h3>Top 10 Most Influential Ministers</h3>
-<canvas id="ministerInfluenceChart" role="img" aria-label="Bar chart showing top 10 most influential ministers"></canvas>
+<h3>10 השרים המשפיעים ביותר</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="תרשים עמודות המציג את 10 השרים המשפיעים ביותר"></canvas>
 </div>
 
 <div class="chart-card">
-<h3>Ministry Productivity Matrix</h3>
-<canvas id="ministryProductivityChart" role="img" aria-label="Bar chart comparing ministry productivity across quarters"></canvas>
+<h3>מטריצת פרודוקטיביות משרדים</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="תרשים עמודות המשווה פרודוקטיביות משרדים בין רבעונים"></canvas>
 </div>
 
 <div class="chart-card">
@@ -940,8 +940,8 @@
 </section>
 
 <section id="risk-dashboard" class="dashboard-container">
-<h2><span aria-hidden="true">⚠️</span> סיכון Assessment &amp; אֲנוֹמַלִיָה Detection</h2>
-<p class="dashboard-description">Comprehensive intelligence analysis using 45 risk rules across 349 MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes 2494 politicians (1971-2024).</p>
+<h2><span aria-hidden="true">⚠️</span> הערכת סיכון וזיהוי אנומליות</h2>
+<p class="dashboard-description">ניתוח מודיעיני מקיף המשתמש ב-45 כללי סיכון עבור 349 חברי פרלמנט עם זיהוי אנומליות סטטיסטי (ספי P90/P99). הניתוח ההיסטורי כולל 2494 פוליטיקאים (1971-2024).</p>
 
 <div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
   <!-- Alerts populated by JavaScript -->
@@ -949,12 +949,12 @@
 
 <div class="dashboard-grid">
   <div class="chart-card full-width">
-    <h3>סיכון Level Heat Map (45 Rules × 349 MPs)</h3>
-    <p class="chart-description">Interactive heat map showing risk scores for each MP across all 45 transparency rules. Click cells for details.</p>
+    <h3>מפת חום רמת סיכון (45 כללים × 349 חברי פרלמנט)</h3>
+    <p class="chart-description">מפת חום אינטראקטיבית המציגה ציוני סיכון לכל חבר פרלמנט על פני כל 45 כללי השקיפות. לחצו על תאים לפרטים.</p>
     <div class="controls">
       <label class="control-label">
-        <input type="checkbox" id="filterגבוהסיכון" aria-label="הצג רק בסיכון גבוה MPs (score ≥6.0)" aria-describedby="filterגבוהסיכוןDesc">
-        <span id="filterגבוהסיכוןDesc">הצג רק בסיכון גבוה (≥6.0)</span>
+        <input type="checkbox" id="filterHighRisk" aria-label="הצג רק חברי פרלמנט בסיכון גבוה (score ≥6.0)" aria-describedby="filterHighRiskDesc">
+        <span id="filterHighRiskDesc">הצג רק בסיכון גבוה (≥6.0)</span>
       </label>
       <label class="control-label">
         <span>סינון לפי כלל:</span>
@@ -964,46 +964,46 @@
       </label>
       <button id="resetZoom" class="btn btn-sm" aria-label="Reset zoom">איפוס תצוגה</button>
     </div>
-    <div id="riskHeatMap" role="img" aria-label="סיכון assessment heat map showing 45 rules by 349 MPs"></div>
+    <div id="riskHeatMap" role="img" aria-label="מפת חום להערכת סיכון המציגה 45 כללים עבור 349 חברי פרלמנט"></div>
     <div id="heatMapLegend" class="legend" role="img" aria-label="Heat map color legend"></div>
   </div>
   
   <div class="chart-card">
-    <h3>סיכון Distribution</h3>
-    <p class="chart-description">Distribution of risk scores across all MPs</p>
-    <canvas id="riskDistributionChart" role="img" aria-label="Bar chart showing risk score distribution"></canvas>
+    <h3>התפלגות סיכון</h3>
+    <p class="chart-description">התפלגות ציוני סיכון על פני כל חברי הפרלמנט</p>
+    <canvas id="riskDistributionChart" role="img" aria-label="תרשים עמודות המציג התפלגות ציוני סיכון"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>אֲנוֹמַלִיָה Detection (P90/P99)</h3>
-    <p class="chart-description">Voting anomalies with statistical thresholds at 90th and 99th percentiles</p>
-    <canvas id="anomalyDetectionChart" role="img" aria-label="Scatter plot showing voting anomalies"></canvas>
+    <h3>זיהוי אנומליות (P90/P99)</h3>
+    <p class="chart-description">חריגות הצבעה עם ספים סטטיסטיים באחוזונים 90 ו-99</p>
+    <canvas id="anomalyDetectionChart" role="img" aria-label="תרשים פיזור המציג חריגות הצבעה"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>Crisis Resilience Indicators</h3>
-    <p class="chart-description">Resilience scores by party and government stability metrics</p>
-    <canvas id="crisisResilienceChart" role="img" aria-label="Radar chart showing crisis resilience indicators"></canvas>
+    <h3>מדדי חוסן במשבר</h3>
+    <p class="chart-description">ציוני חוסן לפי מפלגה ומדדי יציבות ממשלתית</p>
+    <canvas id="crisisResilienceChart" role="img" aria-label="תרשים רדאר המציג מדדי חוסן במשבר"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>סיכון Evolution Timeline (2020-2026)</h3>
-    <p class="chart-description">Historical trends of risk categories over time</p>
-    <canvas id="riskEvolutionChart" role="img" aria-label="Line chart showing risk evolution over time"></canvas>
+    <h3>ציר זמן התפתחות סיכון (2020-2026)</h3>
+    <p class="chart-description">מגמות היסטוריות של קטגוריות סיכון לאורך זמן</p>
+    <canvas id="riskEvolutionChart" role="img" aria-label="תרשים קווי המציג התפתחות סיכון לאורך זמן"></canvas>
   </div>
   
   <div class="chart-card">
-    <h3>Top 10 Ethics Concerns</h3>
-    <p class="chart-description">MPs with highest ethics risk scores</p>
-    <ol id="ethicsConcernsList" aria-label="Top 10 ethics concerns list">
+    <h3>10 חששות האתיקה המובילים</h3>
+    <p class="chart-description">חברי פרלמנט עם ציוני סיכון אתי הגבוהים ביותר</p>
+    <ol id="ethicsConcernsList" aria-label="רשימת 10 חששות האתיקה המובילים">
       <!-- Populated by JavaScript -->
     </ol>
   </div>
   
   <div class="chart-card">
-    <h3>Electoral סיכון (MPs at סיכון)</h3>
-    <p class="chart-description">MPs with highest electoral vulnerability for 2026 election</p>
-    <ol id="electoralסיכוןList" aria-label="Top 10 MPs at electoral risk">
+    <h3>סיכון אלקטורלי (חברי פרלמנט בסיכון)</h3>
+    <p class="chart-description">חברי פרלמנט עם הפגיעות האלקטורלית הגבוהה ביותר לבחירות 2026</p>
+    <ol id="electoralRiskList" aria-label="10 חברי פרלמנט מובילים בסיכון אלקטורלי">
       <!-- Populated by JavaScript -->
     </ol>
   </div>
@@ -1011,25 +1011,25 @@
 
 <div class="data-attribution">
   <p><strong>מקור נתונים:</strong> <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency</a> | <strong>עודכן לאחרונה:</strong> <span id="lastUpdated">טוען...</span></p>
-  <p class="methodology-note"><em>סיכון scores calculated using 45 transparency rules across 4 domains (politician, party, committee, ministry). אֲנוֹמַלִיָה detection uses P90 (warning) and P99 (critical) statistical thresholds.</em></p>
+  <p class="methodology-note"><em>ציוני סיכון מחושבים באמצעות 45 כללי שקיפות ב-4 תחומים (פוליטיקאי, מפלגה, ועדה, משרד). זיהוי אנומליות משתמש בספים סטטיסטיים P90 (אזהרה) ו-P99 (קריטי).</em></p>
 </div>
 </section>
 
   <section id="intelligence-capabilities">
-<h2>Comprehensive Intelligence Platform</h2>
-<p>CIA delivers systematic political transparency through 45 risk rules across 4 domains and 5 analytical frameworks.</p>
+<h2>פלטפורמת מודיעין מקיפה</h2>
+<p>CIA מספקת שקיפות פוליטית שיטתית באמצעות 45 כללי סיכון ב-4 תחומים ו-5 מסגרות אנליטיות.</p>
 
 <div class="cards">
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>🔍 Real-Time Monitoring</h3>
+<h3>🔍 ניטור בזמן אמת</h3>
 <ul>
-<li>349 MPs tracked (<span data-stat-id="stat-historical-persons">—</span> historical) automatically</li>
-<li><span data-stat-id="stat-total-votes">—</span> individual ballot records analyzed</li>
-<li><span data-stat-id="stat-total-documents">—</span> documents processed</li>
-<li><span data-stat-id="stat-member-proposals">—</span> member proposals tracked</li>
-<li><span data-stat-id="stat-government-proposals">—</span> government proposals monitored</li>
-<li>עבודת הוועדות נמדדת (<span data-stat-id="stat-committee-documents">—</span> documents)</li>
+<li>349 חברי פרלמנט במעקב אוטומטי (<span data-stat-id="stat-historical-persons">—</span> היסטוריים)</li>
+<li><span data-stat-id="stat-total-votes">—</span> רשומות הצבעה אישיות נותחו</li>
+<li><span data-stat-id="stat-total-documents">—</span> מסמכים עובדו</li>
+<li><span data-stat-id="stat-member-proposals">—</span> הצעות חברי פרלמנט במעקב</li>
+<li><span data-stat-id="stat-government-proposals">—</span> הצעות ממשלה מנוטרות</li>
+<li>עבודת ועדות נמדדת כמותית (<span data-stat-id="stat-committee-documents">—</span> מסמכים)</li>
 </ul>
 </div>
 
@@ -1037,85 +1037,85 @@
 <div class="scanner-effect"></div>
 <h3>📊 תחזית קואליציה</h3>
 <ul>
-<li>4 election scenarios modeled</li>
-<li>Historical pattern analysis (1971-2024)</li>
+<li>4 תרחישי בחירות ממודלים</li>
+<li>ניתוח דפוסים היסטוריים (1971-2024)</li>
 <li>מעקב אחר משמעת מפלגתית</li>
-<li>Defection probability estimation</li>
-<li>Government formation simulation</li>
+<li>הערכת הסתברות לעריקה</li>
+<li>סימולציית הקמת ממשלה</li>
 </ul>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>✅ Fact-Checking Infrastructure</h3>
+<h3>✅ תשתית בדיקת עובדות</h3>
 <ul>
-<li>Politician claims vs. voting records</li>
+<li>השוואת הצהרות פוליטיקאים מול רישומי הצבעה</li>
 <li>ניתוח עקביות מצע מפלגתי</li>
-<li>Campaign promise tracking</li>
-<li>Real-time debate verification</li>
-<li>Historical accountability metrics</li>
+<li>מעקב אחר הבטחות קמפיין</li>
+<li>אימות דיונים בזמן אמת</li>
+<li>מדדי אחריותיות היסטוריים</li>
 </ul>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>⚠️ סיכון Assessment</h3>
+<h3>⚠️ הערכת סיכון</h3>
 <ul>
-<li>45 behavioral risk rules active</li>
-<li>MINOR/MAJOR/CRITICAL severity levels</li>
-<li>Automated alert system</li>
-<li>Trend analysis for context</li>
-<li>Transparent methodology</li>
+<li>45 כללי סיכון התנהגותיים פעילים</li>
+<li>רמות חומרה MINOR/MAJOR/CRITICAL</li>
+<li>מערכת התרעות אוטומטית</li>
+<li>ניתוח מגמות להקשר</li>
+<li>מתודולוגיה שקופה</li>
 </ul>
 </div>
 </div>
 
 <div class="risk-rules-breakdown">
-<h3>45 סיכון Rules Across 4 Domains</h3>
+<h3>45 כללי סיכון ב-4 תחומים</h3>
 <ul>
-<li><strong>Politician-Level (20 rules):</strong> נוכחות, voting consistency, role conflicts, productivity</li>
+<li><strong>רמת פוליטיקאי (20 כללים):</strong> נוכחות, עקביות הצבעה, ניגודי תפקידים, פרודוקטיביות</li>
 <li><strong>רמת מפלגה (12 כללים):</strong> משמעת קואליציונית, סטייה אידאולוגית ועימותים פנימיים</li>
-<li><strong>רמת ועדה (8 כללים):</strong> Legislative productivity, partisan deadlock, expert testimony</li>
-<li><strong>Ministry-Level (5 rules):</strong> Budget overruns, policy failures, accountability lapses</li>
+<li><strong>רמת ועדה (8 כללים):</strong> פרודוקטיביות חקיקתית, מבוי סתום מפלגתי, עדות מומחים</li>
+<li><strong>רמת משרד (5 כללים):</strong> חריגות תקציב, כשלי מדיניות, כשלים באחריותיות</li>
 </ul>
 
-<h3>5 Analytical Frameworks</h3>
+<h3>5 מסגרות אנליטיות</h3>
 <ul>
-<li><strong>Temporal Analysis:</strong> Trend detection across time periods</li>
-<li><strong>Comparative Analysis:</strong> Cross-party/MP benchmarking</li>
-<li><strong>Pattern Recognition:</strong> Behavioral anomaly detection</li>
+<li><strong>ניתוח זמני:</strong> זיהוי מגמות לאורך תקופות זמן</li>
+<li><strong>ניתוח השוואתי:</strong> בנצ'מרק בין-מפלגתי/חברי פרלמנט</li>
+<li><strong>זיהוי תבניות:</strong> זיהוי חריגות התנהגותיות</li>
 <li><strong>מודיעין חיזוי:</strong> חיזוי תוצאות בחירות ומידול קואליציות</li>
-<li><strong>Network Analysis:</strong> Influence mapping, collaboration patterns</li>
+<li><strong>ניתוח רשת:</strong> מיפוי השפעה ודפוסי שיתוף פעולה</li>
 </ul>
 </div>
 </section>
 
 <section id="data-sources">
-<h2><span aria-hidden="true">📊</span> Citizen Intelligence Agency Data Products</h2>
+<h2><span aria-hidden="true">📊</span> מוצרי נתונים של Citizen Intelligence Agency</h2>
 <p>Riksdagsmonitor מופעל על ידי<a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency (CIA)</a>- פלטפורמת OSINT בקוד פתוח המעבדת נתונים פרלמנטריים שוודיים למוצרי מודיעין ניתנים לפעולה.</p>
 
 <div class="cards">
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">📈</span> סיכון Assessment Reports</h3>
-<p>45 risk rules across 4 domains analyze politician behavior, party discipline, committee effectiveness, and ministry accountability in real-time.</p>
+<h3><span aria-hidden="true">📈</span> דוחות הערכת סיכון</h3>
+<p>45 כללי סיכון בארבעה תחומים מנתחים בזמן אמת התנהגות פוליטיקאים, משמעת מפלגתית, אפקטיביות ועדות ואחריותיות משרדית.</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">📅</span> Seasonal Activity Analysis</h3>
-<p>Z-score anomaly detection identifies unusual parliamentary activity patterns by quarter, with historical baselines from 2002 to present.</p>
+<h3><span aria-hidden="true">📅</span> ניתוח פעילות עונתית</h3>
+<p>זיהוי אנומליות בציון Z מאתר דפוסי פעילות פרלמנטרית חריגים לפי רבעון, עם קווי בסיס היסטוריים מ-2002 ועד היום.</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3><span aria-hidden="true">🎯</span> מודיעין מחזורי בחירות</h3>
-<p>ביצועים tracking across 9+ election cycles (1994–2034) with predictive risk forecasting, party tier analysis, and coalition probability modeling.</p>
+<p>מעקב ביצועים לאורך יותר מ-9 מחזורי בחירות (1994–2034) עם חיזוי סיכונים, ניתוח שכבות מפלגה ומידול הסתברות קואליציונית.</p>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3><span aria-hidden="true">🔗</span> Open Data Integration</h3>
+<h3><span aria-hidden="true">🔗</span> אינטגרציית נתונים פתוחים</h3>
 <p>כל מוצרי המודיעין נגזרים ממקורות נתונים פתוחים רשמיים. הוויזואליזציות מתעדכנות אוטומטית באמצעות צינורות נתונים ליליים עם קאשינג של 24 שעות.</p>
 </div>
 </div>
@@ -1132,28 +1132,28 @@
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>הפרלמנט השוודי (Riksdagen)</h3>
-<p>Official parliamentary data including votes, documents, committee work, and MP information.</p>
+<p>נתונים פרלמנטריים רשמיים הכוללים הצבעות, מסמכים, עבודת ועדות ומידע על חברי פרלמנט.</p>
 <a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">data.riksdagen.se</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
 <h3>רשות הבחירות השוודית</h3>
-<p>Historical election results, voter turnout, and electoral statistics for all national elections.</p>
+<p>תוצאות בחירות היסטוריות, שיעורי הצבעה וסטטיסטיקות בחירות לכלל הבחירות הלאומיות.</p>
 <a href="https://www.val.se/" target="_blank" rel="noopener noreferrer">val.se</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>Financial Management Authority (ESV)</h3>
-<p>Government budget data, public spending analysis, and financial accountability reporting.</p>
+<h3>הרשות לניהול פיננסי (ESV)</h3>
+<p>נתוני תקציב ממשלתי, ניתוח הוצאות ציבוריות ודיווח על אחריותיות פיננסית.</p>
 <a href="https://www.esv.se/psidata/" target="_blank" rel="noopener noreferrer">esv.se/psidata</a>
 </div>
 
 <div class="card">
 <div class="scanner-effect"></div>
-<h3>World Bank Open Data</h3>
-<p>Country-level economic and development indicators for international comparative analysis.</p>
+<h3>נתונים פתוחים של הבנק העולמי</h3>
+<p>מדדים כלכליים ופיתוחיים ברמת מדינה לצורך ניתוח השוואתי בינלאומי.</p>
 <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">data.worldbank.org</a>
 </div>
 </div>
@@ -1166,10 +1166,10 @@
       <h3>אודות Riksdagsmonitor</h3>
       <p>פלטפורמת מודיעין חיה לניטור הפרלמנט השוודי באמצעות יכולות CIA OSINT.</p>
       <ul class="footer-stats">
-        <li><strong>349 MPs</strong> tracked</li>
-        <li><strong>45 risk rules</strong> active</li>
-        <li><strong>14 languages</strong> supported</li>
-        <li><strong>50+ years</strong> historical data</li>
+        <li><strong>349 חברי פרלמנט</strong> במעקב</li>
+        <li><strong>45 כללי סיכון</strong> פעילים</li>
+        <li><strong>14 שפות</strong> נתמכות</li>
+        <li><strong>50+ שנים</strong> של נתונים היסטוריים</li>
       </ul>
     </div>
     
@@ -1179,7 +1179,7 @@
         <li><a href="index.html">בית</a></li>
         <li><a href="news/index_he.html">חדשות</a></li>
         <li><a href="dashboard/index_he.html">לוח מחוונים</a></li>
-        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">פלטפורמת CIA</a></li>
         <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">מאגר GitHub</a></li>
         <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
       </ul>
