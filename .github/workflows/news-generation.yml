@@ -111,13 +111,48 @@ jobs:
         run: |
           echo "🤖 Checking for recent agentic workflow activity..."
           
+          # Portable timestamp parsing function (GNU date, BSD date, Python fallback)
+          parse_timestamp() {
+            local input="$1"
+            
+            # Try GNU date (-d option)
+            if ts=$(date -d "$input" +%s 2>/dev/null); then
+              echo "$ts"
+              return 0
+            fi
+            
+            # Try BSD date (-j -f option) for ISO8601
+            if ts=$(date -j -f '%Y-%m-%dT%H:%M:%SZ' "$input" +%s 2>/dev/null); then
+              echo "$ts"
+              return 0
+            fi
+            
+            # Fallback to Python for cross-platform compatibility
+            if command -v python3 >/dev/null 2>&1; then
+              if ts=$(python3 -c "
+import sys
+from datetime import datetime
+try:
+    dt = datetime.fromisoformat('$input'.replace('Z', '+00:00'))
+    print(int(dt.timestamp()))
+except:
+    sys.exit(1)
+" 2>/dev/null); then
+                echo "$ts"
+                return 0
+              fi
+            fi
+            
+            return 1
+          }
+          
           if [ -f "news/metadata/workflow-state.json" ]; then
             # Check if agentic workflows generated content recently (< 2 hours)
             LAST_AGENTIC=$(jq -r '.lastUpdate // empty' news/metadata/workflow-state.json)
             
             if [ -n "$LAST_AGENTIC" ]; then
               # Safely parse lastUpdate and guard against invalid or future timestamps
-              if PARSED_AGENTIC_TS=$(date -d "$LAST_AGENTIC" +%s 2>/dev/null); then
+              if PARSED_AGENTIC_TS=$(parse_timestamp "$LAST_AGENTIC"); then
                 NOW_TS=$(date +%s)
                 
                 # Check for future timestamp (clock skew or invalid data)

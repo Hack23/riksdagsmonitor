@@ -236,7 +236,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
       "height": 630
     },
     "articleSection": "${typeLabel}",
-    "articleBody": "${escapeHtml(content).substring(0, 500).replace(/\n/g, ' ').replace(/\s+/g, ' ')}...",
+    "articleBody": "${sanitizeArticleBody(escapeHtml(content))}...",
     "wordCount": ${Math.ceil(content.length / 5)},
     "inLanguage": "${lang}",
     "keywords": "${keywords.join(', ')}",
