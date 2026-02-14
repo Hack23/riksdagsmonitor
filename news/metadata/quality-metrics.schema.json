@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Quality Metrics Schema",
+  "description": "Quality metrics for news articles by workflow and date",
+  "type": "object",
+  "patternProperties": {
+    "^\\d{4}-\\d{2}-\\d{2}-.+$": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Article generation date"
+        },
+        "workflow": {
+          "type": "string",
+          "enum": ["evening-analysis", "realtime-monitor", "article-generator"],
+          "description": "Which workflow generated this article"
+        },
+        "languages": {
+          "type": "number",
+          "description": "Number of language versions generated",
+          "minimum": 1,
+          "maximum": 14
+        },
+        "metrics": {
+          "type": "object",
+          "description": "Per-language quality metrics",
+          "patternProperties": {
+            "^(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)$": {
+              "type": "object",
+              "properties": {
+                "qualityScore": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "description": "Overall quality score"
+                },
+                "analyticalDepth": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "description": "Analytical depth score"
+                },
+                "historicalContext": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 3,
+                  "description": "Historical context score (0-3)"
+                },
+                "internationalComparisons": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Count of international comparisons"
+                },
+                "partyPerspectives": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Number of parties mentioned"
+                },
+                "sources": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Number of source citations"
+                },
+                "wordCount": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Total word count"
+                },
+                "hasAllPillars": {
+                  "type": "boolean",
+                  "description": "Whether all 5 Editorial Pillars are present (evening-analysis only)"
+                }
+              },
+              "required": ["qualityScore", "analyticalDepth", "wordCount"]
+            }
+          }
+        },
+        "aggregateMetrics": {
+          "type": "object",
+          "description": "Aggregated metrics across all languages",
+          "properties": {
+            "avgQualityScore": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "avgAnalyticalDepth": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "historicalContextPresent": {
+              "type": "number",
+              "description": "Number of articles with historical context"
+            },
+            "internationalComparisons": {
+              "type": "number",
+              "description": "Total international comparisons across all articles"
+            }
+          }
+        }
+      },
+      "required": ["date", "workflow", "languages", "metrics", "aggregateMetrics"]
+    }
+  }
+}

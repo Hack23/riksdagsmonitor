@@ -1,0 +1,35 @@
+{
+  "2026-02-13-evening-analysis": {
+    "date": "2026-02-13",
+    "workflow": "evening-analysis",
+    "languages": 14,
+    "metrics": {
+      "en": {
+        "qualityScore": 0.82,
+        "analyticalDepth": 0.75,
+        "historicalContext": 2,
+        "internationalComparisons": 1,
+        "partyPerspectives": 7,
+        "sources": 15,
+        "wordCount": 2850,
+        "hasAllPillars": true
+      },
+      "sv": {
+        "qualityScore": 0.80,
+        "analyticalDepth": 0.72,
+        "historicalContext": 2,
+        "internationalComparisons": 1,
+        "partyPerspectives": 7,
+        "sources": 15,
+        "wordCount": 2650,
+        "hasAllPillars": true
+      }
+    },
+    "aggregateMetrics": {
+      "avgQualityScore": 0.82,
+      "avgAnalyticalDepth": 0.75,
+      "historicalContextPresent": 14,
+      "internationalComparisons": 8
+    }
+  }
+}
