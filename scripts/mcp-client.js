@@ -13,7 +13,9 @@
  * MCP Protocol:
  *   - POST to /mcp endpoint (not /mcp/tools/{tool})
  *   - JSON-RPC 2.0 format with method: 'tools/call'
- *   - Tool names: 'riksdag-regering--{tool}' (e.g., 'riksdag-regering--get_calendar_events')
+ *   - Direct server: use unprefixed tool names (e.g., 'get_calendar_events')
+ *   - MCP Gateway: use prefixed tool names (e.g., 'riksdag-regering--get_calendar_events')
+ *   - Client auto-detects which mode based on URL
  * 
  * Usage:
  *   import { MCPClient } from './mcp-client.js';
@@ -72,14 +74,14 @@ export class MCPClient {
    * @param {number} retryCount - Current retry attempt
    * @returns {Promise<Object>} Tool response
    */
-  async request(tool, params = {}, retryCount = 0) {
+  async request(tool, params = {}, retryCount = 0, skipPrefix = false) {
     // Validate tool name to prevent path traversal
     if (!tool || typeof tool !== 'string' || !/^[a-zA-Z0-9_-]+$/.test(tool)) {
       throw new Error(`Invalid tool name: ${tool}. Tool names must contain only alphanumeric characters, hyphens, and underscores.`);
     }
     
     // Only count the initial request, not retries
-    if (retryCount === 0) {
+    if (retryCount === 0 && !skipPrefix) {
       this.requestCount++;
     }
     
@@ -89,9 +91,14 @@ export class MCPClient {
     try {
       // MCP uses JSON-RPC 2.0 protocol
       // Call the tool using tools/call method
-      // Try with server prefix first (riksdag-regering--tool_name)
-      // If that fails with "tool not found", try without prefix
-      const toolName = tool.includes('--') ? tool : `riksdag-regering--${tool}`;
+      // 
+      // Tool name prefixing rules:
+      // - MCP Gateway (host.docker.internal) expects prefixed names: "riksdag-regering--tool_name"
+      // - Direct MCP Server (onrender.com) expects unprefixed names: "tool_name"
+      // - skipPrefix is set to true on fallback retry to prevent infinite recursion
+      const isGateway = this.baseURL.includes('host.docker.internal') || this.baseURL.includes('/mcp/riksdag-regering');
+      const shouldPrefix = isGateway && !skipPrefix && !tool.includes('--');
+      const toolName = shouldPrefix ? `riksdag-regering--${tool}` : tool;
       
       const jsonRpcRequest = {
         jsonrpc: '2.0',
@@ -129,12 +136,14 @@ export class MCPClient {
       if (jsonRpcResponse.error) {
         const errorMsg = jsonRpcResponse.error.message || JSON.stringify(jsonRpcResponse.error);
         
-        // If tool not found and we used prefix, try without prefix
-        // Guard against infinite recursion by checking if tool already doesn't have prefix
-        if (errorMsg.includes('not found') && toolName.startsWith('riksdag-regering--')) {
-          console.warn(`⚠️ Tool not found with prefix, retrying without prefix...`);
-          // Recursive call without prefix
-          return this.request(tool.replace(/^riksdag-regering--/, ''), params, retryCount);
+        // If tool error and we used prefix, try without prefix
+        // Server returns "not found" or "Internal error" for unrecognized prefixed tool names
+        // skipPrefix flag prevents infinite recursion on the fallback attempt
+        const isToolLookupError = errorMsg.includes('not found') || errorMsg.includes('Internal error') || errorMsg.includes('Unknown tool');
+        if (isToolLookupError && toolName.startsWith('riksdag-regering--') && !skipPrefix) {
+          const bareTool = toolName.replace(/^riksdag-regering--/, '');
+          console.warn(`⚠️ Tool '${toolName}' not found, retrying as '${bareTool}'...`);
+          return this.request(bareTool, params, retryCount, true);
         }
         
         throw new Error(`MCP tool error: ${errorMsg}`);
@@ -154,7 +163,7 @@ export class MCPClient {
       )) {
         console.warn(`⚠️ Request failed, retrying (${retryCount + 1}/${this.maxRetries - 1})...`);
         await this.sleep(RETRY_DELAY * Math.pow(2, retryCount)); // Exponential backoff
-        return this.request(tool, params, retryCount + 1);
+        return this.request(tool, params, retryCount + 1, skipPrefix);
       }
       
       // Only increment error count on final failure (not retries)

@@ -53,23 +53,18 @@ describe('Committee Reports Article Generation', () => {
     it('should export REQUIRED_TOOLS constant', () => {
       expect(committeeReportsModule.REQUIRED_TOOLS).toBeDefined();
       expect(Array.isArray(committeeReportsModule.REQUIRED_TOOLS)).toBe(true);
-      expect(committeeReportsModule.REQUIRED_TOOLS.length).toBe(4);
+      expect(committeeReportsModule.REQUIRED_TOOLS.length).toBeGreaterThan(0);
     });
 
     it('should require betankanden tool', () => {
       expect(committeeReportsModule.REQUIRED_TOOLS).toContain('get_betankanden');
     });
 
-    it('should require voteringar tool', () => {
-      expect(committeeReportsModule.REQUIRED_TOOLS).toContain('search_voteringar');
-    });
-
-    it('should require anforanden tool', () => {
-      expect(committeeReportsModule.REQUIRED_TOOLS).toContain('search_anforanden');
-    });
-
-    it('should require propositioner tool', () => {
-      expect(committeeReportsModule.REQUIRED_TOOLS).toContain('get_propositioner');
+    it('should only list tools actually used by generateCommitteeReports', () => {
+      // REQUIRED_TOOLS must match tools actually called in the implementation.
+      // Future cross-referencing tools (voteringar, anforanden, propositioner)
+      // should be added here when implemented in generateCommitteeReports().
+      expect(committeeReportsModule.REQUIRED_TOOLS).toEqual(['get_betankanden']);
     });
   });
 

@@ -321,13 +321,50 @@ node scripts/generate-news-indexes.js
 node scripts/generate-sitemap.js
 ```
 
-### Step 6: Create PR
+### Step 6: Create Pull Request
 
-Create a PR with the evening analysis:
+**IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
+
+In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead, you MUST use the **safeoutputs MCP tools** available through the MCP gateway. These tools are already registered and available to you:
+
+#### Available Safe-Output MCP Tools
+
+1. **`safeoutputs___create_pull_request`** - Create a PR with your changes
+   ```json
+   {
+     "title": "🌆 Evening Analysis: {Lead headline} - {date}",
+     "body": "## Evening Parliamentary Analysis\n\nThis PR contains...",
+     "labels": ["automated-news", "evening-analysis", "needs-editorial-review"]
+   }
+   ```
+
+2. **`safeoutputs___add_comment`** - Add a comment to the triggering issue/PR
+   ```json
+   {
+     "body": "Evening analysis completed successfully. {count} articles generated.",
+     "item_number": 123
+   }
+   ```
+
+3. **`safeoutputs___noop`** - Log a status message when no action is needed
+   ```json
+   {
+     "message": "No significant parliamentary activity detected today. Metadata updated."
+   }
+   ```
+
+4. **`safeoutputs___missing_tool`** - Report missing capabilities
+5. **`safeoutputs___missing_data`** - Report missing data
+
+#### How to Create the PR
+
+After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool with:
 
 **Title:** `🌆 Evening Analysis: {Lead headline} - {date}`
 **Branch:** `news-evening/{date}`
 **Labels:** `automated-news`, `evening-analysis`, `needs-editorial-review`
+
+**⚠️ NEVER use `git push` directly** - it will fail in the sandbox. Always use `safeoutputs___create_pull_request` MCP tool to create PRs.
 
 **PR Body should include:**
 - Summary of articles generated
@@ -335,6 +372,14 @@ Create a PR with the evening analysis:
 - List of riksdag-regering-mcp tools used
 - Quality validation results
 - Count of language versions generated
+
+#### If No Significant Activity
+
+If no noteworthy parliamentary activity occurred today:
+1. Update `news/metadata/last-generation.json` with timestamp
+2. Call the `safeoutputs___noop` MCP tool with a status message
+3. Do not create a PR
+4. Exit gracefully
 
 ## Writing Guidelines (The Economist Style)
 
@@ -408,7 +453,14 @@ For deeper evening analysis, combine data from multiple riksdag-regering-mcp too
 2. `get_motioner` - opposition motions on same topic
 3. `search_dokument_fulltext` - find related documents
 4. `get_dokument` - get full text of key documents
-- ✅ Mobile-responsive layout
-- ✅ RTL support for Arabic and Hebrew versions
 
-🎯 **Now begin: Gather today's comprehensive parliamentary data, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR.**
+🎯 **Now begin: Gather today's comprehensive parliamentary data, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
+
+### ⚠️ Sandbox Networking Reminder
+
+The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
+
+1. **For any Node.js scripts that use mcp-client.js**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running them
+2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
+3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool
+4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name

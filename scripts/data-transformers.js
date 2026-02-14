@@ -173,35 +173,385 @@ export function generateArticleContent(data, type, lang = 'en') {
 /**
  * Generate Week Ahead article content
  */
+// Multi-language labels for content generation
+export const CONTENT_LABELS = {
+  en: {
+    whyMatters: 'Why This Week Matters',
+    whyMattersDefault: 'This week features significant parliamentary activity with key debates, committee meetings, and government consultations that will shape Sweden\'s political landscape.',
+    keyEvents: 'Key Events This Week',
+    whatToWatch: 'What to Watch',
+    latestReports: 'Latest Committee Reports',
+    noReports: 'No committee reports available at this time.',
+    committee: 'Committee', document: 'Document',
+    reportDefault: 'Committee report on parliamentary matter.',
+    govProps: 'Government Propositions',
+    noProps: 'No government propositions available at this time.',
+    propDefault: 'Government proposal to Parliament.',
+    oppMotions: 'Opposition Motions',
+    noMotions: 'No opposition motions available at this time.',
+    author: 'Author', party: 'Party',
+    motionDefault: 'Parliamentary motion by opposition member.',
+    genericContent: 'Content generation in progress.',
+    monitorDev: 'Monitor developments and outcomes',
+    committeeDebates: 'Committee Debates',
+    committeeDebatesDesc: (n) => `${n} committee reports scheduled for chamber debate`,
+    govProposals: 'Government Proposals',
+    govProposalsDesc: (n) => `${n} new government propositions under review`,
+    weekAhead: 'Week Ahead', committeeReportsTag: 'Committee Reports',
+    govPropsTag: 'Government Propositions', oppMotionsTag: 'Opposition Motions'
+  },
+  sv: {
+    whyMatters: 'Varför denna vecka är viktig',
+    whyMattersDefault: 'Denna vecka innehåller betydande parlamentarisk aktivitet med viktiga debatter, kommittémöten och regeringskonsultationer som kommer att forma Sveriges politiska landskap.',
+    keyEvents: 'Nyckelhändelser denna vecka',
+    whatToWatch: 'Vad man ska följa',
+    latestReports: 'Senaste kommittérapporter',
+    noReports: 'Inga kommittérapporter tillgängliga för tillfället.',
+    committee: 'Kommitté', document: 'Dokument',
+    reportDefault: 'Kommittérapport om riksdagsärende.',
+    govProps: 'Regeringens propositioner',
+    noProps: 'Inga regeringspropositioner tillgängliga för tillfället.',
+    propDefault: 'Regeringens förslag till riksdagen.',
+    oppMotions: 'Oppositionens motioner',
+    noMotions: 'Inga oppositionsmotioner tillgängliga för tillfället.',
+    author: 'Författare', party: 'Parti',
+    motionDefault: 'Riksdagsmotion av oppositionsmedlem.',
+    genericContent: 'Innehållsgenerering pågår.',
+    monitorDev: 'Övervaka utveckling och resultat',
+    committeeDebates: 'Kommittédebatter',
+    committeeDebatesDesc: (n) => `${n} kommittérapporter planerade för kammarens debatt`,
+    govProposals: 'Regeringsförslag',
+    govProposalsDesc: (n) => `${n} nya regeringspropositioner under granskning`,
+    weekAhead: 'Veckan som kommer', committeeReportsTag: 'Kommittérapporter',
+    govPropsTag: 'Regeringens propositioner', oppMotionsTag: 'Oppositionens motioner'
+  },
+  da: {
+    whyMatters: 'Hvorfor denne uge er vigtig',
+    whyMattersDefault: 'Denne uge byder på vigtig parlamentarisk aktivitet med centrale debatter, udvalgsmøder og regeringskonsultationer.',
+    keyEvents: 'Vigtige begivenheder denne uge',
+    whatToWatch: 'Hvad man skal følge',
+    latestReports: 'Seneste udvalgsbetænkninger',
+    noReports: 'Ingen udvalgsbetænkninger tilgængelige på nuværende tidspunkt.',
+    committee: 'Udvalg', document: 'Dokument',
+    reportDefault: 'Udvalgsbetænkning om parlamentarisk sag.',
+    govProps: 'Regeringsforslag',
+    noProps: 'Ingen regeringsforslag tilgængelige på nuværende tidspunkt.',
+    propDefault: 'Regeringsforslag til parlamentet.',
+    oppMotions: 'Oppositionsforslag',
+    noMotions: 'Ingen oppositionsforslag tilgængelige på nuværende tidspunkt.',
+    author: 'Forfatter', party: 'Parti',
+    motionDefault: 'Parlamentarisk forslag fra oppositionsmedlem.',
+    genericContent: 'Indhold genereres.',
+    monitorDev: 'Overvåg udviklingen og resultaterne',
+    committeeDebates: 'Udvalgsedebatter',
+    committeeDebatesDesc: (n) => `${n} udvalgsbetænkninger planlagt til kammerdebat`,
+    govProposals: 'Regeringsforslag',
+    govProposalsDesc: (n) => `${n} nye regeringsforslag under behandling`,
+    weekAhead: 'Ugen fremover', committeeReportsTag: 'Udvalgsbetænkninger',
+    govPropsTag: 'Regeringsforslag', oppMotionsTag: 'Oppositionsforslag'
+  },
+  no: {
+    whyMatters: 'Hvorfor denne uken er viktig',
+    whyMattersDefault: 'Denne uken byr på viktig parlamentarisk aktivitet med sentrale debatter, komitémøter og regjeringskonsultasjoner.',
+    keyEvents: 'Viktige hendelser denne uken',
+    whatToWatch: 'Hva man bør følge med på',
+    latestReports: 'Siste komitéinnstillinger',
+    noReports: 'Ingen komitéinnstillinger tilgjengelige for øyeblikket.',
+    committee: 'Komité', document: 'Dokument',
+    reportDefault: 'Komitéinnstilling om parlamentarisk sak.',
+    govProps: 'Regjeringens proposisjoner',
+    noProps: 'Ingen regjeringsproposisjoner tilgjengelige for øyeblikket.',
+    propDefault: 'Regjeringens forslag til parlamentet.',
+    oppMotions: 'Opposisjonsforslag',
+    noMotions: 'Ingen opposisjonsforslag tilgjengelige for øyeblikket.',
+    author: 'Forfatter', party: 'Parti',
+    motionDefault: 'Parlamentarisk forslag fra opposisjonsmedlem.',
+    genericContent: 'Innholdsgenerering pågår.',
+    monitorDev: 'Overvåk utviklingen og resultatene',
+    committeeDebates: 'Komitédebatter',
+    committeeDebatesDesc: (n) => `${n} komitéinnstillinger planlagt for kammerdebatt`,
+    govProposals: 'Regjeringsforslag',
+    govProposalsDesc: (n) => `${n} nye regjeringsproposisjoner under vurdering`,
+    weekAhead: 'Uke fremover', committeeReportsTag: 'Komitéinnstillinger',
+    govPropsTag: 'Regjeringens proposisjoner', oppMotionsTag: 'Opposisjonsforslag'
+  },
+  fi: {
+    whyMatters: 'Miksi tämä viikko on tärkeä',
+    whyMattersDefault: 'Tällä viikolla on merkittävää parlamentaarista toimintaa, johon kuuluu tärkeitä keskusteluja, valiokuntakokouksia ja hallituksen kuulemisia.',
+    keyEvents: 'Viikon tärkeimmät tapahtumat',
+    whatToWatch: 'Mitä seurata',
+    latestReports: 'Uusimmat valiokuntamietinnöt',
+    noReports: 'Ei valiokuntamietintöjä saatavilla tällä hetkellä.',
+    committee: 'Valiokunta', document: 'Asiakirja',
+    reportDefault: 'Valiokuntamietintö parlamentaarisesta asiasta.',
+    govProps: 'Hallituksen esitykset',
+    noProps: 'Ei hallituksen esityksiä saatavilla tällä hetkellä.',
+    propDefault: 'Hallituksen esitys eduskunnalle.',
+    oppMotions: 'Opposition aloitteet',
+    noMotions: 'Ei opposition aloitteita saatavilla tällä hetkellä.',
+    author: 'Tekijä', party: 'Puolue',
+    motionDefault: 'Opposition jäsenen eduskunta-aloite.',
+    genericContent: 'Sisältöä luodaan.',
+    monitorDev: 'Seuraa kehitystä ja tuloksia',
+    committeeDebates: 'Valiokuntakeskustelut',
+    committeeDebatesDesc: (n) => `${n} valiokuntamietintöä aikataulutettu täysistuntokeskusteluun`,
+    govProposals: 'Hallituksen esitykset',
+    govProposalsDesc: (n) => `${n} uutta hallituksen esitystä käsittelyssä`,
+    weekAhead: 'Tuleva viikko', committeeReportsTag: 'Valiokuntamietinnöt',
+    govPropsTag: 'Hallituksen esitykset', oppMotionsTag: 'Opposition aloitteet'
+  },
+  de: {
+    whyMatters: 'Warum diese Woche wichtig ist',
+    whyMattersDefault: 'Diese Woche bietet bedeutende parlamentarische Aktivitäten mit wichtigen Debatten, Ausschusssitzungen und Regierungskonsultationen.',
+    keyEvents: 'Wichtige Ereignisse diese Woche',
+    whatToWatch: 'Was zu beobachten ist',
+    latestReports: 'Neueste Ausschussberichte',
+    noReports: 'Derzeit keine Ausschussberichte verfügbar.',
+    committee: 'Ausschuss', document: 'Dokument',
+    reportDefault: 'Ausschussbericht über parlamentarische Angelegenheit.',
+    govProps: 'Regierungsvorlagen',
+    noProps: 'Derzeit keine Regierungsvorlagen verfügbar.',
+    propDefault: 'Regierungsvorlage an das Parlament.',
+    oppMotions: 'Oppositionsanträge',
+    noMotions: 'Derzeit keine Oppositionsanträge verfügbar.',
+    author: 'Autor', party: 'Partei',
+    motionDefault: 'Parlamentarischer Antrag eines Oppositionsmitglieds.',
+    genericContent: 'Inhaltserstellung läuft.',
+    monitorDev: 'Entwicklungen und Ergebnisse überwachen',
+    committeeDebates: 'Ausschussdebatten',
+    committeeDebatesDesc: (n) => `${n} Ausschussberichte für Plenardebatte geplant`,
+    govProposals: 'Regierungsvorlagen',
+    govProposalsDesc: (n) => `${n} neue Regierungsvorlagen in Prüfung`,
+    weekAhead: 'Woche Voraus', committeeReportsTag: 'Ausschussberichte',
+    govPropsTag: 'Regierungsvorlagen', oppMotionsTag: 'Oppositionsanträge'
+  },
+  fr: {
+    whyMatters: 'Pourquoi cette semaine est importante',
+    whyMattersDefault: 'Cette semaine est marquée par une activité parlementaire significative avec des débats clés, des réunions de commission et des consultations gouvernementales.',
+    keyEvents: 'Événements clés cette semaine',
+    whatToWatch: 'À suivre',
+    latestReports: 'Derniers rapports de commission',
+    noReports: 'Aucun rapport de commission disponible pour le moment.',
+    committee: 'Commission', document: 'Document',
+    reportDefault: 'Rapport de commission sur une affaire parlementaire.',
+    govProps: 'Propositions gouvernementales',
+    noProps: 'Aucune proposition gouvernementale disponible pour le moment.',
+    propDefault: 'Proposition du gouvernement au Parlement.',
+    oppMotions: 'Motions d\'opposition',
+    noMotions: 'Aucune motion d\'opposition disponible pour le moment.',
+    author: 'Auteur', party: 'Parti',
+    motionDefault: 'Motion parlementaire d\'un membre de l\'opposition.',
+    genericContent: 'Génération de contenu en cours.',
+    monitorDev: 'Suivre les développements et les résultats',
+    committeeDebates: 'Débats en commission',
+    committeeDebatesDesc: (n) => `${n} rapports de commission prévus pour débat en séance`,
+    govProposals: 'Propositions gouvernementales',
+    govProposalsDesc: (n) => `${n} nouvelles propositions gouvernementales à l'examen`,
+    weekAhead: 'Semaine à venir', committeeReportsTag: 'Rapports de commission',
+    govPropsTag: 'Propositions gouvernementales', oppMotionsTag: 'Motions d\'opposition'
+  },
+  es: {
+    whyMatters: 'Por qué esta semana es importante',
+    whyMattersDefault: 'Esta semana presenta actividad parlamentaria significativa con debates clave, reuniones de comisión y consultas gubernamentales.',
+    keyEvents: 'Eventos clave esta semana',
+    whatToWatch: 'Qué observar',
+    latestReports: 'Últimos informes de comisión',
+    noReports: 'No hay informes de comisión disponibles en este momento.',
+    committee: 'Comisión', document: 'Documento',
+    reportDefault: 'Informe de comisión sobre asunto parlamentario.',
+    govProps: 'Proposiciones gubernamentales',
+    noProps: 'No hay proposiciones gubernamentales disponibles en este momento.',
+    propDefault: 'Propuesta del gobierno al Parlamento.',
+    oppMotions: 'Mociones de oposición',
+    noMotions: 'No hay mociones de oposición disponibles en este momento.',
+    author: 'Autor', party: 'Partido',
+    motionDefault: 'Moción parlamentaria de un miembro de la oposición.',
+    genericContent: 'Generación de contenido en curso.',
+    monitorDev: 'Monitorear desarrollos y resultados',
+    committeeDebates: 'Debates en comisión',
+    committeeDebatesDesc: (n) => `${n} informes de comisión programados para debate en pleno`,
+    govProposals: 'Propuestas gubernamentales',
+    govProposalsDesc: (n) => `${n} nuevas proposiciones gubernamentales en revisión`,
+    weekAhead: 'Semana próxima', committeeReportsTag: 'Informes de comisión',
+    govPropsTag: 'Proposiciones gubernamentales', oppMotionsTag: 'Mociones de oposición'
+  },
+  nl: {
+    whyMatters: 'Waarom deze week belangrijk is',
+    whyMattersDefault: 'Deze week biedt belangrijke parlementaire activiteit met cruciale debatten, commissievergaderingen en regeringsconsultaties.',
+    keyEvents: 'Belangrijke gebeurtenissen deze week',
+    whatToWatch: 'Wat te volgen',
+    latestReports: 'Nieuwste commissierapporten',
+    noReports: 'Geen commissierapporten beschikbaar op dit moment.',
+    committee: 'Commissie', document: 'Document',
+    reportDefault: 'Commissierapport over parlementaire zaak.',
+    govProps: 'Regeringsvoorstellen',
+    noProps: 'Geen regeringsvoorstellen beschikbaar op dit moment.',
+    propDefault: 'Regeringsvoorstel aan het parlement.',
+    oppMotions: 'Oppositiemoties',
+    noMotions: 'Geen oppositiemoties beschikbaar op dit moment.',
+    author: 'Auteur', party: 'Partij',
+    motionDefault: 'Parlementaire motie van een oppositielid.',
+    genericContent: 'Inhoud wordt gegenereerd.',
+    monitorDev: 'Ontwikkelingen en resultaten volgen',
+    committeeDebates: 'Commissiedebatten',
+    committeeDebatesDesc: (n) => `${n} commissierapporten gepland voor plenair debat`,
+    govProposals: 'Regeringsvoorstellen',
+    govProposalsDesc: (n) => `${n} nieuwe regeringsvoorstellen in behandeling`,
+    weekAhead: 'Week vooruit', committeeReportsTag: 'Commissierapporten',
+    govPropsTag: 'Regeringsvoorstellen', oppMotionsTag: 'Oppositiemoties'
+  },
+  ar: {
+    whyMatters: 'لماذا هذا الأسبوع مهم',
+    whyMattersDefault: 'يتميز هذا الأسبوع بنشاط برلماني كبير يشمل مناقشات رئيسية واجتماعات لجان ومشاورات حكومية.',
+    keyEvents: 'الأحداث الرئيسية هذا الأسبوع',
+    whatToWatch: 'ما يجب متابعته',
+    latestReports: 'أحدث تقارير اللجان',
+    noReports: 'لا توجد تقارير لجان متاحة حالياً.',
+    committee: 'اللجنة', document: 'الوثيقة',
+    reportDefault: 'تقرير لجنة عن مسألة برلمانية.',
+    govProps: 'مقترحات الحكومة',
+    noProps: 'لا توجد مقترحات حكومية متاحة حالياً.',
+    propDefault: 'مقترح حكومي للبرلمان.',
+    oppMotions: 'اقتراحات المعارضة',
+    noMotions: 'لا توجد اقتراحات معارضة متاحة حالياً.',
+    author: 'المؤلف', party: 'الحزب',
+    motionDefault: 'اقتراح برلماني من عضو في المعارضة.',
+    genericContent: 'جارٍ إنشاء المحتوى.',
+    monitorDev: 'متابعة التطورات والنتائج',
+    committeeDebates: 'مناقشات اللجان',
+    committeeDebatesDesc: (n) => `${n} تقارير لجان مجدولة للمناقشة في الجلسة العامة`,
+    govProposals: 'مقترحات حكومية',
+    govProposalsDesc: (n) => `${n} مقترحات حكومية جديدة قيد المراجعة`,
+    weekAhead: 'الأسبوع القادم', committeeReportsTag: 'تقارير اللجان',
+    govPropsTag: 'مقترحات الحكومة', oppMotionsTag: 'اقتراحات المعارضة'
+  },
+  he: {
+    whyMatters: 'למה השבוע הזה חשוב',
+    whyMattersDefault: 'השבוע כולל פעילות פרלמנטרית משמעותית עם דיונים מרכזיים, ישיבות ועדה והתייעצויות ממשלתיות.',
+    keyEvents: 'אירועים מרכזיים השבוע',
+    whatToWatch: 'מה לעקוב אחריו',
+    latestReports: 'דוחות ועדה אחרונים',
+    noReports: 'אין דוחות ועדה זמינים כרגע.',
+    committee: 'ועדה', document: 'מסמך',
+    reportDefault: 'דוח ועדה בנושא פרלמנטרי.',
+    govProps: 'הצעות ממשלה',
+    noProps: 'אין הצעות ממשלה זמינות כרגע.',
+    propDefault: 'הצעת ממשלה לפרלמנט.',
+    oppMotions: 'הצעות אופוזיציה',
+    noMotions: 'אין הצעות אופוזיציה זמינות כרגע.',
+    author: 'מחבר', party: 'מפלגה',
+    motionDefault: 'הצעה פרלמנטרית של חבר אופוזיציה.',
+    genericContent: 'יצירת תוכן בתהליך.',
+    monitorDev: 'לעקוב אחר התפתחויות ותוצאות',
+    committeeDebates: 'דיוני ועדות',
+    committeeDebatesDesc: (n) => `${n} דוחות ועדה מתוכננים לדיון במליאה`,
+    govProposals: 'הצעות ממשלה',
+    govProposalsDesc: (n) => `${n} הצעות ממשלה חדשות בבחינה`,
+    weekAhead: 'השבוע הקרוב', committeeReportsTag: 'דוחות ועדה',
+    govPropsTag: 'הצעות ממשלה', oppMotionsTag: 'הצעות אופוזיציה'
+  },
+  ja: {
+    whyMatters: 'なぜ今週が重要か',
+    whyMattersDefault: '今週は重要な議会活動があり、主要な討論、委員会会議、政府協議が予定されています。',
+    keyEvents: '今週の主要イベント',
+    whatToWatch: '注目すべきポイント',
+    latestReports: '最新の委員会報告',
+    noReports: '現在、委員会報告はありません。',
+    committee: '委員会', document: '文書',
+    reportDefault: '議会事案に関する委員会報告。',
+    govProps: '政府提案',
+    noProps: '現在、政府提案はありません。',
+    propDefault: '政府から議会への提案。',
+    oppMotions: '野党動議',
+    noMotions: '現在、野党動議はありません。',
+    author: '著者', party: '政党',
+    motionDefault: '野党議員による議会動議。',
+    genericContent: 'コンテンツ生成中。',
+    monitorDev: '動向と結果を監視',
+    committeeDebates: '委員会討論',
+    committeeDebatesDesc: (n) => `${n}件の委員会報告が本会議討論に予定`,
+    govProposals: '政府提案',
+    govProposalsDesc: (n) => `${n}件の新しい政府提案が審議中`,
+    weekAhead: '来週の展望', committeeReportsTag: '委員会報告',
+    govPropsTag: '政府提案', oppMotionsTag: '野党動議'
+  },
+  ko: {
+    whyMatters: '이번 주가 중요한 이유',
+    whyMattersDefault: '이번 주에는 주요 토론, 위원회 회의 및 정부 협의를 포함한 중요한 의회 활동이 있습니다.',
+    keyEvents: '이번 주 주요 일정',
+    whatToWatch: '주목할 사항',
+    latestReports: '최신 위원회 보고서',
+    noReports: '현재 이용 가능한 위원회 보고서가 없습니다.',
+    committee: '위원회', document: '문서',
+    reportDefault: '의회 사안에 대한 위원회 보고서.',
+    govProps: '정부 법안',
+    noProps: '현재 이용 가능한 정부 법안이 없습니다.',
+    propDefault: '정부의 의회 법안.',
+    oppMotions: '야당 동의',
+    noMotions: '현재 이용 가능한 야당 동의가 없습니다.',
+    author: '저자', party: '정당',
+    motionDefault: '야당 의원의 의회 동의.',
+    genericContent: '콘텐츠 생성 중.',
+    monitorDev: '동향 및 결과 모니터링',
+    committeeDebates: '위원회 토론',
+    committeeDebatesDesc: (n) => `${n}개 위원회 보고서가 본회의 토론에 예정`,
+    govProposals: '정부 법안',
+    govProposalsDesc: (n) => `${n}개 새 정부 법안 검토 중`,
+    weekAhead: '다음 주 전망', committeeReportsTag: '위원회 보고서',
+    govPropsTag: '정부 법안', oppMotionsTag: '야당 동의'
+  },
+  zh: {
+    whyMatters: '为什么本周很重要',
+    whyMattersDefault: '本周有重要的议会活动，包括关键辩论、委员会会议和政府磋商。',
+    keyEvents: '本周重要事件',
+    whatToWatch: '值得关注的要点',
+    latestReports: '最新委员会报告',
+    noReports: '目前没有可用的委员会报告。',
+    committee: '委员会', document: '文件',
+    reportDefault: '关于议会事务的委员会报告。',
+    govProps: '政府提案',
+    noProps: '目前没有可用的政府提案。',
+    propDefault: '政府向议会提交的提案。',
+    oppMotions: '反对党动议',
+    noMotions: '目前没有可用的反对党动议。',
+    author: '作者', party: '政党',
+    motionDefault: '反对党议员的议会动议。',
+    genericContent: '内容生成中。',
+    monitorDev: '监测发展动态和结果',
+    committeeDebates: '委员会辩论',
+    committeeDebatesDesc: (n) => `${n}份委员会报告安排在全体会议上辩论`,
+    govProposals: '政府提案',
+    govProposalsDesc: (n) => `${n}项新政府提案正在审查中`,
+    weekAhead: '下周展望', committeeReportsTag: '委员会报告',
+    govPropsTag: '政府提案', oppMotionsTag: '反对党动议'
+  }
+};
+
+/**
+ * Get localized label with fallback to English
+ */
+export function L(lang, key) {
+  return CONTENT_LABELS[lang]?.[key] || CONTENT_LABELS.en[key];
+}
+
 function generateWeekAheadContent(data, lang) {
   const { events, highlights, context } = data;
   
   let content = '';
   
   // Introduction section
-  if (lang === 'en') {
-    content += `
+  content += `
     <div class="context-box">
-      <h3>Why This Week Matters</h3>
-      <p>${context || 'This week features significant parliamentary activity with key debates, committee meetings, and government consultations that will shape Sweden\'s political landscape.'}</p>
+      <h3>${L(lang, 'whyMatters')}</h3>
+      <p>${context || L(lang, 'whyMattersDefault')}</p>
     </div>
 `;
-  } else {
-    content += `
-    <div class="context-box">
-      <h3>Varför denna vecka är viktig</h3>
-      <p>${context || 'Denna vecka innehåller betydande parlamentarisk aktivitet med viktiga debatter, kommittémöten och regeringskonsultationer som kommer att forma Sveriges politiska landskap.'}</p>
-    </div>
-`;
-  }
   
   // Group events by significance
   const highPriority = events.filter(e => isHighPriority(e));
   
   if (highPriority.length > 0) {
-    content += lang === 'en' 
-      ? '\n    <h2>Key Events This Week</h2>\n' 
-      : '\n    <h2>Nyckel händelser denna vecka</h2>\n';
+    content += `\n    <h2>${L(lang, 'keyEvents')}</h2>\n`;
     
     highPriority.forEach(event => {
       // Derive dayName from event date if not present
@@ -218,9 +568,7 @@ function generateWeekAheadContent(data, lang) {
   
   // Additional context
   if (highlights && highlights.length > 0) {
-    content += lang === 'en' 
-      ? '\n    <h2>What to Watch</h2>\n    <ul>\n' 
-      : '\n    <h2>Vad man ska följa</h2>\n    <ul>\n';
+    content += `\n    <h2>${L(lang, 'whatToWatch')}</h2>\n    <ul>\n`;
     
     highlights.forEach(highlight => {
       content += `      <li><strong>${highlight.title}:</strong> ${highlight.description}</li>\n`;
@@ -254,23 +602,19 @@ function isHighPriority(event) {
 function generateCommitteeContent(data, lang) {
   const reports = data.reports || [];
   
-  let content = lang === 'en'
-    ? '<h2>Latest Committee Reports</h2>\n'
-    : '<h2>Senaste kommittérapporter</h2>\n';
+  let content = `<h2>${L(lang, 'latestReports')}</h2>\n`;
   
   if (reports.length === 0) {
-    content += lang === 'en'
-      ? '<p>No committee reports available at this time.</p>\n'
-      : '<p>Inga kommittérapporter tillgängliga för tillfället.</p>\n';
+    content += `<p>${L(lang, 'noReports')}</p>\n`;
     return content;
   }
   
   reports.forEach(report => {
     content += `
     <h3>${report.titel || report.title}</h3>
-    <p><strong>${lang === 'en' ? 'Committee' : 'Kommitté'}:</strong> ${report.organ}</p>
-    <p><strong>${lang === 'en' ? 'Document' : 'Dokument'}:</strong> <a href="${report.url}" class="document-link" rel="noopener noreferrer">${report.dokumentnamn}</a></p>
-    <p>${report.summary || (lang === 'en' ? 'Committee report on parliamentary matter.' : 'Kommittérapport om riksdagsärende.')}</p>
+    <p><strong>${L(lang, 'committee')}:</strong> ${report.organ}</p>
+    <p><strong>${L(lang, 'document')}:</strong> <a href="${report.url}" class="document-link" rel="noopener noreferrer">${report.dokumentnamn}</a></p>
+    <p>${report.summary || L(lang, 'reportDefault')}</p>
 `;
   });
   
@@ -283,22 +627,18 @@ function generateCommitteeContent(data, lang) {
 function generatePropositionsContent(data, lang) {
   const propositions = data.propositions || [];
   
-  let content = lang === 'en'
-    ? '<h2>Government Propositions</h2>\n'
-    : '<h2>Regeringens propositioner</h2>\n';
+  let content = `<h2>${L(lang, 'govProps')}</h2>\n`;
   
   if (propositions.length === 0) {
-    content += lang === 'en'
-      ? '<p>No government propositions available at this time.</p>\n'
-      : '<p>Inga regeringspropositioner tillgängliga för tillfället.</p>\n';
+    content += `<p>${L(lang, 'noProps')}</p>\n`;
     return content;
   }
   
   propositions.forEach(prop => {
     content += `
     <h3>${prop.titel || prop.title}</h3>
-    <p><strong>${lang === 'en' ? 'Document' : 'Dokument'}:</strong> <a href="${prop.url}" class="document-link" rel="noopener noreferrer">${prop.dokumentnamn}</a></p>
-    <p>${prop.summary || (lang === 'en' ? 'Government proposal to Parliament.' : 'Regeringens förslag till riksdagen.')}</p>
+    <p><strong>${L(lang, 'document')}:</strong> <a href="${prop.url}" class="document-link" rel="noopener noreferrer">${prop.dokumentnamn}</a></p>
+    <p>${prop.summary || L(lang, 'propDefault')}</p>
 `;
   });
   
@@ -311,24 +651,20 @@ function generatePropositionsContent(data, lang) {
 function generateMotionsContent(data, lang) {
   const motions = data.motions || [];
   
-  let content = lang === 'en'
-    ? '<h2>Opposition Motions</h2>\n'
-    : '<h2>Oppositionens motioner</h2>\n';
+  let content = `<h2>${L(lang, 'oppMotions')}</h2>\n`;
   
   if (motions.length === 0) {
-    content += lang === 'en'
-      ? '<p>No opposition motions available at this time.</p>\n'
-      : '<p>Inga oppositionsmotioner tillgängliga för tillfället.</p>\n';
+    content += `<p>${L(lang, 'noMotions')}</p>\n`;
     return content;
   }
   
   motions.forEach(motion => {
     content += `
     <h3>${motion.titel || motion.title}</h3>
-    <p><strong>${lang === 'en' ? 'Author' : 'Författare'}:</strong> ${motion.intressent_namn || motion.author}</p>
-    <p><strong>${lang === 'en' ? 'Party' : 'Parti'}:</strong> ${motion.parti}</p>
-    <p><strong>${lang === 'en' ? 'Document' : 'Dokument'}:</strong> <a href="${motion.url}" class="document-link" rel="noopener noreferrer">${motion.dokumentnamn}</a></p>
-    <p>${motion.summary || (lang === 'en' ? 'Parliamentary motion by opposition member.' : 'Riksdagsmotion av oppositionsmedlem.')}</p>
+    <p><strong>${L(lang, 'author')}:</strong> ${motion.intressent_namn || motion.author}</p>
+    <p><strong>${L(lang, 'party')}:</strong> ${motion.parti}</p>
+    <p><strong>${L(lang, 'document')}:</strong> <a href="${motion.url}" class="document-link" rel="noopener noreferrer">${motion.dokumentnamn}</a></p>
+    <p>${motion.summary || L(lang, 'motionDefault')}</p>
 `;
   });
   
@@ -339,9 +675,7 @@ function generateMotionsContent(data, lang) {
  * Generate generic content
  */
 function generateGenericContent(data, lang) {
-  return lang === 'en'
-    ? '<p>Content generation in progress.</p>'
-    : '<p>Innehållsgenerering pågår.</p>';
+  return `<p>${L(lang, 'genericContent')}</p>`;
 }
 
 /**
@@ -364,9 +698,7 @@ export function extractWatchPoints(data, lang = 'en') {
       
       watchPoints.push({
         title: dayName ? `${dayName}: ${eventTitle}` : eventTitle,
-        description: event.description || (lang === 'en' 
-          ? 'Monitor developments and outcomes'
-          : 'Övervaka utveckling och resultat')
+        description: event.description || L(lang, 'monitorDev')
       });
     });
   }
@@ -374,20 +706,16 @@ export function extractWatchPoints(data, lang = 'en') {
   // From committee reports
   if (data.reports && data.reports.length > 0) {
     watchPoints.push({
-      title: lang === 'en' ? 'Committee Debates' : 'Kommittédebatter',
-      description: lang === 'en'
-        ? `${data.reports.length} committee reports scheduled for chamber debate`
-        : `${data.reports.length} kommittérapporter planerade för kammarens debatt`
+      title: L(lang, 'committeeDebates'),
+      description: L(lang, 'committeeDebatesDesc')(data.reports.length)
     });
   }
   
   // From propositions
   if (data.propositions && data.propositions.length > 0) {
     watchPoints.push({
-      title: lang === 'en' ? 'Government Proposals' : 'Regeringsförslag',
-      description: lang === 'en'
-        ? `${data.propositions.length} new government propositions under review`
-        : `${data.propositions.length} nya regeringspropositioner under granskning`
+      title: L(lang, 'govProposals'),
+      description: L(lang, 'govProposalsDesc')(data.propositions.length)
     });
   }
   
@@ -412,22 +740,22 @@ export function generateMetadata(data, type, lang = 'en') {
     case 'week-ahead':
       keywords.push('parliament', 'week ahead', 'calendar', 'events');
       topics.push('parliament');
-      tags.push(lang === 'en' ? 'Week Ahead' : 'Veckan som kommer');
+      tags.push(L(lang, 'weekAhead'));
       break;
     case 'committee-reports':
       keywords.push('committee', 'reports', 'betänkanden', 'parliament');
       topics.push('committees', 'reports');
-      tags.push(lang === 'en' ? 'Committee Reports' : 'Kommittérapporter');
+      tags.push(L(lang, 'committeeReportsTag'));
       break;
     case 'propositions':
       keywords.push('government', 'propositions', 'parliament', 'legislation');
       topics.push('government', 'legislation');
-      tags.push(lang === 'en' ? 'Government Propositions' : 'Regeringens propositioner');
+      tags.push(L(lang, 'govPropsTag'));
       break;
     case 'motions':
       keywords.push('motions', 'opposition', 'parliament', 'proposals');
       topics.push('parliament', 'opposition');
-      tags.push(lang === 'en' ? 'Opposition Motions' : 'Oppositionens motioner');
+      tags.push(L(lang, 'oppMotionsTag'));
       break;
   }
   
@@ -501,5 +829,7 @@ export default {
   extractTopics,
   generateMetadata,
   calculateReadTime,
-  generateSources
+  generateSources,
+  CONTENT_LABELS,
+  L
 };

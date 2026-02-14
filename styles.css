@@ -9183,6 +9183,61 @@ body.news-page {
   font-weight: 500;
 }
 
+/* Print Styles for News Articles */
+@media print {
+  .news-article .event-calendar,
+  .news-article .watch-section {
+    background: white;
+    color: black;
+    border: 2px solid #006633;
+  }
+  
+  .news-article .back-to-news {
+    display: none;
+  }
+}
+
+/* RTL overrides for News Articles (Arabic & Hebrew) */
+[dir="rtl"] .news-article {
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .article-header {
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .article-meta {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .news-article .lede {
+  padding-left: 0;
+  padding-right: 1rem;
+  border-left: none;
+  border-right: 4px solid var(--primary-color, #006633);
+}
+
+[dir="rtl"] .news-article .context-box {
+  border-left: none;
+  border-right: 4px solid var(--primary-color, #006633);
+}
+
+[dir="rtl"] .news-article .breadcrumb-nav {
+  direction: rtl;
+}
+
+[dir="rtl"] .news-article .watch-list li::before {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .news-article .article-content ul,
+[dir="rtl"] .news-article .article-content ol {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
 /* Language badge styles (namespaced under .news-page) */
 .news-page .lang-badge-sm {
   display: inline-flex;

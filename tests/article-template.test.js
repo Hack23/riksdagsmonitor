@@ -146,11 +146,14 @@ describe('Article Template', () => {
       expect(html).toContain('Vecka Framåt');
     });
 
-    it('should include responsive design CSS', () => {
+    it('should use external styles.css and not embed CSS', () => {
       const html = generateArticleHTML(mockArticleData);
       
-      expect(html).toContain('@media (max-width: 768px)');
-      expect(html).toContain('grid-template-columns');
+      // Should link to external stylesheet
+      expect(html).toContain('href="../styles.css"');
+      expect(html).toContain('<link rel="stylesheet"');
+      // Should NOT have embedded style tags
+      expect(html).not.toMatch(/<style[^>]*>/);
     });
 
     it('should include accessibility attributes', () => {
@@ -306,13 +309,20 @@ describe('Article Template', () => {
     it('should set correct html lang for Arabic', () => {
       const data = { ...mockArticleData, lang: 'ar', slug: '2026-02-10-test-ar.html' };
       const html = generateArticleHTML(data);
-      expect(html).toContain('<html lang="ar">');
+      expect(html).toContain('<html lang="ar" dir="rtl">');
     });
 
     it('should set correct html lang for Hebrew', () => {
       const data = { ...mockArticleData, lang: 'he', slug: '2026-02-10-test-he.html' };
       const html = generateArticleHTML(data);
-      expect(html).toContain('<html lang="he">');
+      expect(html).toContain('<html lang="he" dir="rtl">');
+    });
+
+    it('should not include dir attribute for LTR languages', () => {
+      const data = { ...mockArticleData, lang: 'en', slug: '2026-02-10-test-en.html' };
+      const html = generateArticleHTML(data);
+      expect(html).toContain('<html lang="en">');
+      expect(html).not.toContain('dir="rtl"');
     });
   });
 

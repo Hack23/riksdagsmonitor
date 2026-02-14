@@ -113,6 +113,30 @@ describe('party-variants', () => {
         expect(parties.has('MP')).toBe(true);
       });
 
+      it('should detect MP abbreviation after HTML tag', () => {
+        const html = '<p>MP röstade för förslaget.</p>';
+        const parties = extractPartyMentions(html);
+        
+        expect(parties.size).toBe(1);
+        expect(parties.has('MP')).toBe(true);
+      });
+
+      it('should detect SD abbreviation after HTML tag', () => {
+        const html = '<p>SD lade fram ett ändringsförslag.</p>';
+        const parties = extractPartyMentions(html);
+        
+        expect(parties.size).toBe(1);
+        expect(parties.has('SD')).toBe(true);
+      });
+
+      it('should detect KD abbreviation after HTML tag', () => {
+        const html = '<p>KD lade fram ett alternativ.</p>';
+        const parties = extractPartyMentions(html);
+        
+        expect(parties.size).toBe(1);
+        expect(parties.has('KD')).toBe(true);
+      });
+
       it('should detect Centerpartiet', () => {
         const html = '<p>Centerpartiet föreslog en kompromiss.</p>';
         const parties = extractPartyMentions(html);
