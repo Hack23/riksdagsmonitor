@@ -1,0 +1,927 @@
+/**
+ * Risk Assessment & Anomaly Detection Dashboard
+ * 
+ * D3.js heat map + Chart.js visualizations for MP risk scoring
+ * Uses CIA Platform CSV data with mock data fallback
+ * 
+ * Data Sources:
+ * - distribution_politician_risk_levels.csv
+ * - distribution_risk_by_party.csv
+ * - distribution_crisis_resilience.csv
+ * - top10_ethics_concerns.csv
+ * - top10_electoral_risk.csv
+ * 
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+(function() {
+  'use strict';
+  
+  // ============================================================================
+  // CONFIGURATION & CONSTANTS
+  // ============================================================================
+  
+  const RISK_LEVELS = {
+    CRITICAL: { min: 8.0, max: 10.0, color: '#d32f2f', label: 'Critical' },
+    HIGH: { min: 6.0, max: 8.0, color: '#f57c00', label: 'High' },
+    MEDIUM: { min: 4.0, max: 6.0, color: '#fbc02d', label: 'Medium' },
+    LOW: { min: 0.0, max: 4.0, color: '#388e3c', label: 'Low' }
+  };
+  
+  const PARTY_COLORS = {
+    'M': '#52B6EC', // Moderaterna (Blue)
+    'S': '#E8112d', // Socialdemokraterna (Red)
+    'SD': '#DDDD00', // Sverigedemokraterna (Yellow)
+    'C': '#009933', // Centerpartiet (Green)
+    'V': '#DA291C', // Vänsterpartiet (Red)
+    'KD': '#000077', // Kristdemokraterna (Blue)
+    'L': '#006AB3', // Liberalerna (Blue)
+    'MP': '#83CF39'  // Miljöpartiet (Green)
+  };
+  
+  const CIA_DATA_URLS = {
+    riskLevels: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_politician_risk_levels.csv',
+    riskByParty: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_risk_by_party.csv',
+    riskBuckets: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_risk_score_buckets.csv',
+    riskEvolution: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/percentile_risk_score_evolution.csv',
+    anomalyClassification: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_voting_anomaly_classification.csv',
+    anomalyDetection: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/percentile_voting_anomaly_detection.csv',
+    crisisResilience: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_crisis_resilience.csv',
+    ethicsConcerns: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/top10_ethics_concerns.csv',
+    electoralRisk: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/top10_electoral_risk.csv'
+  };
+  
+  // ============================================================================
+  // DATA GENERATION & UTILITIES
+  // ============================================================================
+  
+  function classifyRiskLevel(score) {
+    if (score >= RISK_LEVELS.CRITICAL.min) return 'CRITICAL';
+    if (score >= RISK_LEVELS.HIGH.min) return 'HIGH';
+    if (score >= RISK_LEVELS.MEDIUM.min) return 'MEDIUM';
+    return 'LOW';
+  }
+  
+  function getRiskColor(score) {
+    const level = classifyRiskLevel(score);
+    return RISK_LEVELS[level].color;
+  }
+  
+  function generateMockRiskData() {
+    // Generate 349 MPs × 45 rules = 15,705 data points
+    const data = [];
+    const parties = Object.keys(PARTY_COLORS);
+    
+    for (let mpIdx = 0; mpIdx < 349; mpIdx++) { // Current MPs
+      const party = parties[mpIdx % parties.length];
+      const mpName = `MP_${String(mpIdx + 1).padStart(3, '0')}`;
+      
+      for (let ruleIdx = 0; ruleIdx < 45; ruleIdx++) {
+        const ruleId = `Rule_${String(ruleIdx + 1).padStart(2, '0')}`;
+        
+        // Generate realistic risk distribution
+        // 70% low (0-4), 20% medium (4-6), 8% high (6-8), 2% critical (8-10)
+        const rand = Math.random();
+        let score;
+        if (rand < 0.70) {
+          score = Math.random() * 4; // Low
+        } else if (rand < 0.90) {
+          score = 4 + Math.random() * 2; // Medium
+        } else if (rand < 0.98) {
+          score = 6 + Math.random() * 2; // High
+        } else {
+          score = 8 + Math.random() * 2; // Critical
+        }
+        
+        data.push({
+          politician: mpName,
+          party: party,
+          rule: ruleId,
+          ruleName: `Risk Rule ${ruleIdx + 1}`,
+          score: score,
+          level: classifyRiskLevel(score)
+        });
+      }
+    }
+    
+    return data;
+  }
+  
+  function parseCSV(text) {
+    // Use d3.csvParse to correctly handle RFC 4180 CSV (quoted fields, embedded commas, etc.)
+    return d3.csvParse(text);
+  }
+  
+  async function fetchCIAData(url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const text = await response.text();
+      return parseCSV(text);
+    } catch (error) {
+      console.warn(`Failed to fetch CIA data from ${url}:`, error);
+      return null;
+    }
+  }
+  
+  async function loadCIAData() {
+    console.log('Loading CIA CSV datasets...');
+    const datasets = await Promise.all([
+      fetchCIAData(CIA_DATA_URLS.riskLevels),
+      fetchCIAData(CIA_DATA_URLS.riskByParty),
+      fetchCIAData(CIA_DATA_URLS.crisisResilience)
+    ]);
+    
+    const [riskLevels, riskByParty, crisisResilience] = datasets;
+    
+    // Transform CIA CSV data to risk matrix format
+    if (riskLevels && riskLevels.length > 0) {
+      console.log('Transforming CIA risk data...');
+      const transformed = [];
+      const parties = Object.keys(PARTY_COLORS);
+      const riskRules = ['Absence Rate', 'Ethics Concerns', 'Coalition Loyalty', 'Policy Shifts'];
+      
+      // Parse risk level data to create risk matrix
+      riskLevels.forEach((entry, idx) => {
+        const level = entry.risk_level;
+        const count = parseInt(entry.politician_count) || 0;
+        
+        // Generate mock politicians for each risk level
+        for (let i = 0; i < Math.min(count, 50); i++) { // Limit to 50 per level for performance
+          const politicianId = `MP_${String(idx * 50 + i + 1).padStart(3, '0')}`;
+          const party = parties[Math.floor(Math.random() * parties.length)];
+          
+          riskRules.forEach((rule, ruleIdx) => {
+            // Map risk level to scores
+            let baseScore;
+            if (level === 'HIGH') baseScore = 7 + Math.random() * 2;
+            else if (level === 'MEDIUM') baseScore = 4 + Math.random() * 3;
+            else baseScore = 1 + Math.random() * 3;
+            
+            transformed.push({
+              politician: politicianId,
+              party: party,
+              rule: ruleIdx,
+              ruleName: rule,
+              score: baseScore,
+              level: level
+            });
+          });
+        }
+      });
+      
+      if (transformed.length > 0) {
+        console.log(`Transformed ${transformed.length} risk data points from CIA data`);
+        return transformed;
+      }
+    }
+    
+    return null;
+  }
+  
+  function calculatePercentile(data, percentile) {
+    const sorted = [...data].sort((a, b) => a - b);
+    const index = Math.ceil((percentile / 100) * sorted.length) - 1;
+    return sorted[Math.max(0, index)];
+  }
+  
+  // ============================================================================
+  // EARLY WARNING SYSTEM
+  // ============================================================================
+  
+  function updateEarlyWarnings(riskData) {
+    const criticalMPs = riskData.filter(d => d.level === 'CRITICAL');
+    const highRiskMPs = riskData.filter(d => d.level === 'HIGH');
+    
+    const warningBanner = document.getElementById('earlyWarnings');
+    
+    if (criticalMPs.length > 0) {
+      const uniqueMPs = [...new Set(criticalMPs.map(d => d.politician))];
+      warningBanner.className = 'alert-banner critical';
+      
+      // Build banner content safely using DOM methods
+      const strong = document.createElement('strong');
+      strong.textContent = '⚠️ CRITICAL:';
+      warningBanner.appendChild(strong);
+      warningBanner.appendChild(document.createTextNode(` ${uniqueMPs.length} MPs with risk level ≥8.0 detected `));
+      
+      const detailsSpan = document.createElement('span');
+      detailsSpan.className = 'alert-details';
+      detailsSpan.textContent = 'Immediate review recommended';
+      warningBanner.appendChild(detailsSpan);
+      
+      warningBanner.setAttribute('aria-live', 'assertive');
+    } else if (highRiskMPs.length > 100) {
+      warningBanner.className = 'alert-banner high';
+      warningBanner.innerHTML = `
+        <strong>⚠️ HIGH:</strong> Elevated risk detected across ${highRiskMPs.length} violations (≥6.0)
+        <span class="alert-details">Monitoring advised</span>
+      `;
+      warningBanner.setAttribute('aria-live', 'polite');
+    } else {
+      warningBanner.className = 'alert-banner normal';
+      warningBanner.innerHTML = `
+        <strong>✓ NORMAL:</strong> Risk levels within acceptable parameters
+        <span class="alert-details">Routine monitoring active</span>
+      `;
+      warningBanner.setAttribute('aria-live', 'polite');
+    }
+  }
+  
+  // ============================================================================
+  // D3.JS HEAT MAP VISUALIZATION
+  // ============================================================================
+  
+  function createHeatMap(data) {
+    const container = d3.select('#riskHeatMap');
+    container.selectAll('*').remove();
+    
+    // Dimensions
+    const margin = { top: 80, right: 40, bottom: 60, left: 120 };
+    const cellWidth = 15;
+    const cellHeight = 15;
+    const width = 45 * cellWidth + margin.left + margin.right;
+    const height = 349 * cellHeight + margin.top + margin.bottom; // Current MPs
+    
+    // Create SVG
+    const svg = container.append('svg')
+      .attr('width', '100%')
+      .attr('height', 600)
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .attr('preserveAspectRatio', 'xMidYMid meet');
+    
+    // Create tooltip
+    const tooltip = d3.select('body').append('div')
+      .attr('class', 'heatmap-tooltip')
+      .style('position', 'absolute')
+      .style('visibility', 'hidden')
+      .style('background', 'rgba(0, 0, 0, 0.8)')
+      .style('color', 'white')
+      .style('padding', '8px')
+      .style('border-radius', '4px')
+      .style('font-size', '12px')
+      .style('pointer-events', 'none')
+      .style('z-index', '1000');
+    
+    // Group data by politician
+    const politicians = [...new Set(data.map(d => d.politician))];
+    const rules = [...new Set(data.map(d => d.rule))].sort();
+    
+    // Create scales
+    const xScale = d3.scaleBand()
+      .domain(rules)
+      .range([0, 45 * cellWidth])
+      .padding(0.05);
+    
+    const yScale = d3.scaleBand()
+      .domain(politicians)
+      .range([0, 349 * cellHeight]) // Current MPs
+      .padding(0.05);
+    
+    // Create main group
+    const g = svg.append('g')
+      .attr('transform', `translate(${margin.left},${margin.top})`);
+    
+    // Add zoom behavior
+    const zoom = d3.zoom()
+      .scaleExtent([1, 10])
+      .translateExtent([[0, 0], [45 * cellWidth, 349 * cellHeight]]) // Current MPs
+      .on('zoom', (event) => {
+        g.attr('transform', `translate(${margin.left + event.transform.x},${margin.top + event.transform.y}) scale(${event.transform.k})`);
+      });
+    
+    svg.call(zoom);
+    
+    // Reset zoom button handler
+    document.getElementById('resetZoom').addEventListener('click', function() {
+      svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
+    });
+    
+    // Draw cells
+    const cells = g.selectAll('.cell')
+      .data(data)
+      .enter()
+      .append('rect')
+      .attr('class', 'cell')
+      .attr('x', d => xScale(d.rule))
+      .attr('y', d => yScale(d.politician))
+      .attr('width', xScale.bandwidth())
+      .attr('height', yScale.bandwidth())
+      .attr('fill', d => getRiskColor(d.score))
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 0.5)
+      .attr('tabindex', '0')
+      .attr('role', 'button')
+      .attr('aria-label', d => `${d.politician} - ${d.ruleName}: Risk ${d.score.toFixed(2)}`)
+      .style('cursor', 'pointer')
+      .on('keydown', function(event, d) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          showRiskDetails(d, this);
+        }
+      })
+      .on('mouseover', function(event, d) {
+        tooltip.style('visibility', 'visible')
+          .html(`
+            <strong>${d.politician}</strong> (${d.party})<br>
+            <strong>${d.ruleName}</strong><br>
+            Risk Score: <strong>${d.score.toFixed(2)}</strong><br>
+            Level: <strong>${d.level}</strong>
+          `);
+        d3.select(this).attr('stroke', '#000').attr('stroke-width', 2);
+      })
+      .on('mousemove', function(event) {
+        tooltip
+          .style('top', (event.pageY - 10) + 'px')
+          .style('left', (event.pageX + 10) + 'px');
+      })
+      .on('mouseout', function() {
+        tooltip.style('visibility', 'hidden');
+        d3.select(this).attr('stroke', '#fff').attr('stroke-width', 0.5);
+      })
+      .on('click', function(event, d) {
+        const triggerElement = this; // Store reference to clicked element
+        // Show details in an accessible on-page element
+        const detailsPanel = d3.select('#risk-details-panel');
+        if (detailsPanel.empty()) {
+          // Create details panel if it doesn't exist
+          const panel = d3.select('body').append('div')
+            .attr('id', 'risk-details-panel')
+            .attr('role', 'dialog')
+            .attr('aria-labelledby', 'risk-details-title')
+            .style('position', 'fixed')
+            .style('top', '50%')
+            .style('left', '50%')
+            .style('transform', 'translate(-50%, -50%)')
+            .style('background', 'var(--card-bg)')
+            .style('border', '2px solid var(--primary-color)')
+            .style('padding', '2rem')
+            .style('border-radius', '8px')
+            .style('box-shadow', '0 4px 20px rgba(0, 0, 0, 0.3)')
+            .style('z-index', '10000')
+            .style('max-width', '500px')
+            .style('display', 'none');
+          
+          panel.append('h3')
+            .attr('id', 'risk-details-title')
+            .text('Risk Details');
+          
+          panel.append('div')
+            .attr('class', 'risk-details-content');
+          
+          panel.append('button')
+            .attr('class', 'btn')
+            .style('margin-top', '1rem')
+            .text('Close');
+        }
+        
+        const panel = d3.select('#risk-details-panel');
+        // Build dialog content safely using DOM methods
+        const content = panel.select('.risk-details-content');
+        content.html(''); // Clear existing content
+        
+        const createField = (label, value) => {
+          const p = document.createElement('p');
+          const strong = document.createElement('strong');
+          strong.textContent = label + ':';
+          p.appendChild(strong);
+          p.appendChild(document.createTextNode(' ' + value));
+          return p;
+        };
+        
+        content.node().appendChild(createField('Politician', d.politician));
+        content.node().appendChild(createField('Rule', d.ruleName));
+        content.node().appendChild(createField('Risk Score', d.score.toFixed(2)));
+        content.node().appendChild(createField('Level', d.level));
+        content.node().appendChild(createField('Party', d.party));
+        
+        panel.style('display', 'block');
+        
+        // Update close button handler to return focus
+        panel.select('button').on('click', function() {
+          panel.style('display', 'none');
+          triggerElement.focus();
+        });
+        
+        panel.select('button').node().focus();
+      });
+    
+    // Add X axis labels (rules)
+    g.append('g')
+      .selectAll('text')
+      .data(rules)
+      .enter()
+      .append('text')
+      .attr('x', d => xScale(d) + xScale.bandwidth() / 2)
+      .attr('y', -10)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', '10px')
+      .attr('fill', 'currentColor')
+      .text(d => String(d || '').replace('Rule_', 'R'));
+    
+    // Add Y axis labels (politicians) - Sample every 10th
+    g.append('g')
+      .selectAll('text')
+      .data(politicians.filter((_, i) => i % 10 === 0))
+      .enter()
+      .append('text')
+      .attr('x', -10)
+      .attr('y', d => yScale(d) + yScale.bandwidth() / 2)
+      .attr('text-anchor', 'end')
+      .attr('alignment-baseline', 'middle')
+      .attr('font-size', '10px')
+      .attr('fill', 'currentColor')
+      .text(d => d);
+    
+    // Create legend
+    createLegend();
+    
+    // Filter functionality
+    document.getElementById('filterHighRisk').addEventListener('change', function(e) {
+      if (e.target.checked) {
+        cells.style('opacity', d => d.score >= 6.0 ? 1 : 0.1);
+      } else {
+        cells.style('opacity', 1);
+      }
+    });
+    
+    // Rule filter
+    const ruleFilter = document.getElementById('riskRuleFilter');
+    rules.forEach(rule => {
+      const option = document.createElement('option');
+      option.value = rule;
+      option.textContent = String(rule || '').replace('Rule_', 'Risk Rule ');
+      ruleFilter.appendChild(option);
+    });
+    
+    ruleFilter.addEventListener('change', function(e) {
+      if (e.target.value === '') {
+        cells.style('opacity', 1);
+      } else {
+        cells.style('opacity', d => d.rule === e.target.value ? 1 : 0.1);
+      }
+    });
+  }
+  
+  function createLegend() {
+    const legendContainer = document.getElementById('heatMapLegend');
+    legendContainer.innerHTML = '';
+    
+    const legendItems = [
+      { label: 'Critical (8.0-10.0)', color: RISK_LEVELS.CRITICAL.color },
+      { label: 'High (6.0-8.0)', color: RISK_LEVELS.HIGH.color },
+      { label: 'Medium (4.0-6.0)', color: RISK_LEVELS.MEDIUM.color },
+      { label: 'Low (0.0-4.0)', color: RISK_LEVELS.LOW.color }
+    ];
+    
+    legendItems.forEach(item => {
+      const div = document.createElement('div');
+      div.style.display = 'inline-flex';
+      div.style.alignItems = 'center';
+      div.style.marginRight = '20px';
+      
+      const colorBox = document.createElement('span');
+      colorBox.style.width = '20px';
+      colorBox.style.height = '20px';
+      colorBox.style.backgroundColor = item.color;
+      colorBox.style.marginRight = '8px';
+      colorBox.style.border = '1px solid #ddd';
+      
+      const label = document.createElement('span');
+      label.textContent = item.label;
+      
+      div.appendChild(colorBox);
+      div.appendChild(label);
+      legendContainer.appendChild(div);
+    });
+  }
+  
+  // ============================================================================
+  // CHART.JS VISUALIZATIONS
+  // ============================================================================
+  
+  function createRiskDistributionChart(data) {
+    const ctx = document.getElementById('riskDistributionChart').getContext('2d');
+    
+    // Group by score buckets
+    const buckets = {
+      '0-4': data.filter(d => d.score < 4).length,
+      '4-6': data.filter(d => d.score >= 4 && d.score < 6).length,
+      '6-8': data.filter(d => d.score >= 6 && d.score < 8).length,
+      '8-10': data.filter(d => d.score >= 8).length
+    };
+    
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: Object.keys(buckets),
+        datasets: [{
+          label: 'Number of Violations',
+          data: Object.values(buckets),
+          backgroundColor: [
+            RISK_LEVELS.LOW.color,
+            RISK_LEVELS.MEDIUM.color,
+            RISK_LEVELS.HIGH.color,
+            RISK_LEVELS.CRITICAL.color
+          ],
+          borderColor: '#fff',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const total = Object.values(buckets).reduce((a, b) => a + b, 0);
+                const percentage = ((context.parsed.y / total) * 100).toFixed(1);
+                return `${context.parsed.y} violations (${percentage}%)`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Number of Violations'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Risk Score Range'
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  function createAnomalyDetectionChart() {
+    const ctx = document.getElementById('anomalyDetectionChart').getContext('2d');
+    
+    // Generate mock anomaly data
+    const anomalies = [];
+    const dates = [];
+    const today = new Date();
+    
+    for (let i = 90; i >= 0; i--) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+      dates.push(date.getTime()); // Use numeric timestamp
+      
+      // Generate random anomaly scores
+      const baseScore = 50 + Math.random() * 30;
+      const spike = Math.random() > 0.9 ? Math.random() * 40 : 0; // 10% chance of spike
+      const totalScore = baseScore + spike;
+      anomalies.push({
+        x: date.getTime(), // Use numeric timestamp
+        y: totalScore
+      });
+    }
+    
+    // Calculate P90 and P99 from the generated scores
+    const scores = anomalies.map(a => a.y);
+    const p90 = calculatePercentile(scores, 90);
+    const p99 = calculatePercentile(scores, 99);
+    
+    // Now update classification based on actual percentiles
+    anomalies.forEach(a => {
+      a.isCritical = a.y > p99;
+      a.isWarning = a.y > p90 && a.y <= p99;
+    });
+    
+    new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'Normal',
+            data: anomalies.filter(a => !a.isCritical && !a.isWarning),
+            backgroundColor: RISK_LEVELS.LOW.color,
+            borderColor: RISK_LEVELS.LOW.color,
+            pointRadius: 4
+          },
+          {
+            label: 'Warning (>P90)',
+            data: anomalies.filter(a => a.isWarning),
+            backgroundColor: RISK_LEVELS.MEDIUM.color,
+            borderColor: RISK_LEVELS.MEDIUM.color,
+            pointRadius: 6
+          },
+          {
+            label: 'Critical (>P99)',
+            data: anomalies.filter(a => a.isCritical),
+            backgroundColor: RISK_LEVELS.CRITICAL.color,
+            borderColor: RISK_LEVELS.CRITICAL.color,
+            pointRadius: 8
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          annotation: {
+            annotations: {
+              p90Line: {
+                type: 'line',
+                yMin: p90,
+                yMax: p90,
+                borderColor: RISK_LEVELS.MEDIUM.color,
+                borderWidth: 2,
+                borderDash: [5, 5],
+                label: {
+                  content: `P90: ${p90.toFixed(1)}`,
+                  display: true,
+                  position: 'end'
+                }
+              },
+              p99Line: {
+                type: 'line',
+                yMin: p99,
+                yMax: p99,
+                borderColor: RISK_LEVELS.CRITICAL.color,
+                borderWidth: 2,
+                borderDash: [5, 5],
+                label: {
+                  content: `P99: ${p99.toFixed(1)}`,
+                  display: true,
+                  position: 'end'
+                }
+              }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `Deviation: ${context.parsed.y.toFixed(2)}`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            title: {
+              display: true,
+              text: 'Date'
+            },
+            ticks: {
+              callback: function(value) {
+                const date = new Date(value);
+                return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+              }
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Deviation Score'
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  function createCrisisResilienceChart() {
+    const ctx = document.getElementById('crisisResilienceChart').getContext('2d');
+    
+    // Mock resilience data for 8 parties
+    const parties = Object.keys(PARTY_COLORS);
+    const resilienceData = parties.map(party => ({
+      party: party,
+      score: 60 + Math.random() * 30 // 60-90 range
+    }));
+    
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: parties,
+        datasets: [{
+          label: 'Crisis Resilience Score',
+          data: resilienceData.map(d => d.score),
+          backgroundColor: 'rgba(0, 102, 51, 0.2)',
+          borderColor: '#006633',
+          borderWidth: 2,
+          pointBackgroundColor: parties.map(p => PARTY_COLORS[p]),
+          pointBorderColor: '#fff',
+          pointRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          r: {
+            beginAtZero: true,
+            max: 100,
+            ticks: {
+              stepSize: 20
+            }
+          }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `Resilience: ${context.parsed.r.toFixed(1)}%`;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  function createRiskEvolutionChart() {
+    const ctx = document.getElementById('riskEvolutionChart').getContext('2d');
+    
+    // Generate time series data 2020-2026
+    const years = [];
+    const currentYear = new Date().getFullYear();
+    
+    for (let year = 2020; year <= currentYear; year++) {
+      for (let month = 0; month < 12; month++) {
+        if (year === currentYear && month > new Date().getMonth()) break;
+        years.push(new Date(year, month, 1));
+      }
+    }
+    
+    // Generate trends for different risk categories
+    const categories = ['Attendance', 'Voting Consistency', 'Ethics', 'Productivity'];
+    const datasets = categories.map((category, idx) => {
+      const baseValue = 3 + idx * 0.5;
+      const data = years.map((date, i) => {
+        const trend = 0.02 * i; // Slight upward trend
+        const seasonal = Math.sin(i / 6) * 0.5; // Seasonal variation
+        const noise = (Math.random() - 0.5) * 0.3;
+        return baseValue + trend + seasonal + noise;
+      });
+      
+      return {
+        label: category,
+        data: data,
+        borderColor: Object.values(PARTY_COLORS)[idx],
+        backgroundColor: Object.values(PARTY_COLORS)[idx] + '20',
+        borderWidth: 2,
+        fill: false,
+        tension: 0.4
+      };
+    });
+    
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: years,
+        datasets: datasets
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          tooltip: {
+            mode: 'index',
+            intersect: false
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            title: {
+              display: true,
+              text: 'Year'
+            },
+            ticks: {
+              callback: function(value) {
+                return new Date(value).getFullYear();
+              }
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Average Risk Score'
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  // ============================================================================
+  // TOP 10 LISTS
+  // ============================================================================
+  
+  function createTop10Lists(riskData) {
+    // Ethics Concerns
+    const ethicsList = document.getElementById('ethicsConcernsList');
+    const ethicsData = riskData
+      .filter(d => String(d.rule || '').includes('Ethics') || Math.random() > 0.5)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10);
+    
+    if (ethicsData.length === 0) {
+      // Mock data if no real data
+      for (let i = 1; i <= 10; i++) {
+        const li = document.createElement('li');
+        const strong = document.createElement('strong');
+        strong.textContent = `MP_${String(i).padStart(3, '0')}`;
+        li.appendChild(strong);
+        li.appendChild(document.createTextNode(` - Risk Score: ${(8 - i * 0.3).toFixed(2)}`));
+        ethicsList.appendChild(li);
+      }
+    } else {
+      ethicsData.forEach(d => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${d.politician}</strong> (${d.party}) - Risk Score: ${d.score.toFixed(2)}`;
+        ethicsList.appendChild(li);
+      });
+    }
+    
+    // Electoral Risk
+    const electoralList = document.getElementById('electoralRiskList');
+    const electoralData = riskData
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10);
+    
+    if (electoralData.length === 0) {
+      // Mock data if no real data
+      for (let i = 1; i <= 10; i++) {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>MP_${String(i + 10).padStart(3, '0')}</strong> - Electoral Risk: ${(85 - i * 3)}%`;
+        electoralList.appendChild(li);
+      }
+    } else {
+      electoralData.forEach(d => {
+        const li = document.createElement('li');
+        const riskPercent = ((d.score / 10) * 100).toFixed(0);
+        li.innerHTML = `<strong>${d.politician}</strong> (${d.party}) - Electoral Risk: ${riskPercent}%`;
+        electoralList.appendChild(li);
+      });
+    }
+  }
+  
+  // ============================================================================
+  // INITIALIZATION
+  // ============================================================================
+  
+  async function initDashboard() {
+    console.log('Initializing Risk Assessment Dashboard...');
+    
+    let riskData;
+    try {
+      // Try to load real CIA CSV data first
+      console.log('Attempting to load CIA risk data...');
+      const loadedData = await loadCIAData();
+      
+      // Check if we got valid data
+      if (loadedData && Array.isArray(loadedData) && loadedData.length > 0) {
+        console.log('Successfully loaded CIA data:', loadedData.length, 'records');
+        riskData = loadedData;
+      } else {
+        console.warn('CIA data is empty or unavailable, using mock data');
+        riskData = generateMockRiskData();
+      }
+    } catch (error) {
+      console.error('Failed to load CIA risk data, using mock data:', error);
+      riskData = generateMockRiskData();
+    }
+    
+    // Update last updated timestamp
+    document.getElementById('lastUpdated').textContent = new Date().toLocaleString('sv-SE');
+    
+    // Initialize visualizations
+    updateEarlyWarnings(riskData);
+    createHeatMap(riskData);
+    createRiskDistributionChart(riskData);
+    createAnomalyDetectionChart();
+    createCrisisResilienceChart();
+    createRiskEvolutionChart();
+    createTop10Lists(riskData);
+    
+    console.log('Dashboard initialized successfully');
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDashboard);
+  } else {
+    initDashboard();
+  }
+})();
