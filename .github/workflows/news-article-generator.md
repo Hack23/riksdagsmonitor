@@ -97,10 +97,10 @@ Check the GitHub event inputs:
 ### Language Options
 
 The `languages` input supports:
-- **en,sv** (default) - English and Swedish only
+- **en,sv** - English and Swedish only
 - **nordic** - Nordic languages: en,sv,da,no,fi
 - **eu-core** - EU core languages: en,sv,de,fr,es,nl
-- **all** - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
+- **all** (default) - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
 - **custom** - Any comma-separated list (e.g., "en,sv,de,fr")
 
 ### Article Types to Generate
