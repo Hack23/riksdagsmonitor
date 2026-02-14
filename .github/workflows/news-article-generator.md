@@ -320,6 +320,10 @@ echo "📰 Generating news articles..."
 echo "  Types: $ARTICLE_TYPES"
 echo "  Languages: $LANG_ARG"
 
+# Route through MCP gateway (direct HTTPS fails in sandbox due to transparent proxy)
+# The gateway handles the external connection and exposes it over plain HTTP
+export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
+
 # Run generation script
 node scripts/generate-news-enhanced.js \
   --types="$ARTICLE_TYPES" \
@@ -569,7 +573,42 @@ done
 
 ### Step 9: Create Pull Request
 
-Use safe-outputs to create a PR with:
+**IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
+
+In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead, you MUST use the **safeoutputs MCP tools** available through the MCP gateway. These tools are already registered and available to you:
+
+#### Available Safe-Output MCP Tools
+
+1. **`safeoutputs___create_pull_request`** - Create a PR with your changes
+   ```json
+   {
+     "title": "📰 Automated News Generation - 2026-02-14",
+     "body": "## Automated News Generation\n\nThis PR contains...",
+     "labels": ["automated-news", "news-generation", "needs-editorial-review"]
+   }
+   ```
+
+2. **`safeoutputs___add_comment`** - Add a comment to the triggering issue/PR
+   ```json
+   {
+     "body": "News generation completed successfully. 4 articles generated.",
+     "item_number": 123
+   }
+   ```
+
+3. **`safeoutputs___noop`** - Log a status message when no action is needed
+   ```json
+   {
+     "message": "No significant updates found. Last generation: 2026-02-14T13:00:00Z"
+   }
+   ```
+
+4. **`safeoutputs___missing_tool`** - Report missing capabilities
+5. **`safeoutputs___missing_data`** - Report missing data
+
+#### How to Create the PR
+
+After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool with:
 
 **Title:** `📰 Automated News Generation - {date}`
 
@@ -691,7 +730,7 @@ SEO Score: {score}/100
 **If no significant updates:**
 1. Check last-generation.json timestamp
 2. If < 11 hours and not forced, skip gracefully
-3. Use `noop` safe-output to log: "No significant updates found in riksdag-regering-mcp data. Last generation: {timestamp}. Use force_generation=true to override."
+3. Call the `safeoutputs___noop` MCP tool with: `{"message": "No significant updates found in riksdag-regering-mcp data. Last generation: {timestamp}. Use force_generation=true to override."}`
 4. Do not create PR
 5. Exit with success
 
@@ -712,8 +751,10 @@ SEO Score: {score}/100
 **Critical failures that should stop workflow:**
 - MCP server completely unavailable (> 3 retries)
 - File system errors (cannot write files)
-- Git operations failing (cannot commit/push)
-- Safe-outputs failing (cannot create PR)
+- Git commit failing (cannot stage/commit changes locally)
+- Safe-outputs MCP tools failing (cannot call `safeoutputs___create_pull_request`)
+
+**⚠️ NEVER use `git push` directly** - it will fail in the sandbox. Always use `safeoutputs___create_pull_request` MCP tool to create PRs.
 
 ## Example Queries
 
@@ -796,4 +837,13 @@ For each generated article, create:
 
 Remember: You are producing world-class political journalism that informs Swedish citizens and holds power accountable. Maintain the highest standards of accuracy, balance, and analytical depth.
 
-🎯 **Now begin: Check for recent generation, query riksdag-regering-mcp, analyze data, generate articles, and create a PR.**
+🎯 **Now begin: Check for recent generation, query riksdag-regering-mcp, analyze data, generate articles, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
+
+### ⚠️ Sandbox Networking Reminder
+
+The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
+
+1. **For the generation script**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running `node scripts/generate-news-enhanced.js`
+2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
+3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool (NOT file writes to `/tmp/` or `/opt/`)
+4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name

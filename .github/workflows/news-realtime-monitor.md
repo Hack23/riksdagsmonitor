@@ -210,13 +210,55 @@ Create/update `news/metadata/last-generation.json` with:
 
 ### Step 6: Create PR (if articles generated)
 
-If any significant articles were generated, create a PR:
+**IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
+
+In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead, you MUST use the **safeoutputs MCP tools** available through the MCP gateway.
+
+#### Available Safe-Output MCP Tools
+
+1. **`safeoutputs___create_pull_request`** - Create a PR with your changes
+   ```json
+   {
+     "title": "🔴 Breaking: {primary headline} - {date}",
+     "body": "## Breaking News\n\nThis PR contains...",
+     "labels": ["automated-news", "breaking-news", "needs-editorial-review"]
+   }
+   ```
+
+2. **`safeoutputs___add_comment`** - Add a comment to the triggering issue/PR
+   ```json
+   {
+     "body": "Real-time monitor detected significant events. {count} articles generated.",
+     "item_number": 123
+   }
+   ```
+
+3. **`safeoutputs___noop`** - Log a status message when no action is needed
+   ```json
+   {
+     "message": "No significant events detected during this monitoring window. Metadata updated."
+   }
+   ```
+
+4. **`safeoutputs___missing_tool`** - Report missing capabilities
+5. **`safeoutputs___missing_data`** - Report missing data
+
+#### How to Create the PR
+
+After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool.
 
 **Title:** `🔴 Breaking: {primary headline} - {date}`
 **Branch:** `news-realtime/{timestamp}`
 **Labels:** `automated-news`, `breaking-news`, `needs-editorial-review`
 
-If no significant events detected, log to metadata and exit gracefully.
+**⚠️ NEVER use `git push` directly** - it will fail in the sandbox. Always use `safeoutputs___create_pull_request` MCP tool to create PRs.
+
+#### If No Significant Events Detected
+
+1. Update `news/metadata/last-generation.json` with timestamp
+2. Call the `safeoutputs___noop` MCP tool with a status message
+3. Do not create a PR
+4. Exit gracefully
 
 ## Available MCP Tools
 
@@ -281,4 +323,13 @@ If articles are generated, validate with Playwright before creating PR:
 - If no significant events: update metadata timestamp, exit cleanly (no PR)
 - If partial data: generate articles for available data, note gaps in metadata
 
-🎯 **Now begin: Query riksdag-regering-mcp for real-time data, assess significance, and generate breaking news if warranted.**
+🎯 **Now begin: Query riksdag-regering-mcp for real-time data, assess significance, and generate breaking news if warranted. Use `safeoutputs___create_pull_request` to create PRs.**
+
+### ⚠️ Sandbox Networking Reminder
+
+The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
+
+1. **For any Node.js scripts that use mcp-client.js**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running them
+2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
+3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool
+4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name

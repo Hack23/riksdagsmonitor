@@ -11,7 +11,9 @@ import {
   extractTopics,
   generateMetadata,
   calculateReadTime,
-  generateSources
+  generateSources,
+  CONTENT_LABELS,
+  L
 } from '../scripts/data-transformers.js';
 
 describe('Data Transformers', () => {
@@ -355,6 +357,120 @@ describe('Data Transformers', () => {
       expect(sources).toContain('Government Propositions');
       expect(sources).toContain('Parliamentary Motions');
       expect(sources).toContain('Riksdagen Documents');
+    });
+  });
+
+  describe('Multi-language content labels (CONTENT_LABELS)', () => {
+    const ALL_LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+    const REQUIRED_KEYS = [
+      'whyMatters', 'whyMattersDefault', 'keyEvents', 'whatToWatch',
+      'latestReports', 'noReports', 'committee', 'document',
+      'reportDefault', 'govProps', 'noProps', 'propDefault',
+      'oppMotions', 'noMotions', 'author', 'party', 'motionDefault',
+      'genericContent', 'monitorDev', 'committeeDebates', 'committeeDebatesDesc',
+      'govProposals', 'govProposalsDesc', 'weekAhead', 'committeeReportsTag',
+      'govPropsTag', 'oppMotionsTag'
+    ];
+
+    it('should have labels for all 14 supported languages', () => {
+      ALL_LANGUAGES.forEach(lang => {
+        expect(CONTENT_LABELS).toHaveProperty(lang);
+      });
+    });
+
+    it('should have all required keys in every language', () => {
+      ALL_LANGUAGES.forEach(lang => {
+        REQUIRED_KEYS.forEach(key => {
+          expect(CONTENT_LABELS[lang]).toHaveProperty(key);
+        });
+      });
+    });
+
+    it('should have non-empty string values for static labels', () => {
+      const staticKeys = REQUIRED_KEYS.filter(k => !k.endsWith('Desc'));
+      ALL_LANGUAGES.forEach(lang => {
+        staticKeys.forEach(key => {
+          const val = CONTENT_LABELS[lang][key];
+          expect(typeof val).toBe('string');
+          expect(val.length).toBeGreaterThan(0);
+        });
+      });
+    });
+
+    it('should have function values for Desc labels', () => {
+      const descKeys = REQUIRED_KEYS.filter(k => k.endsWith('Desc'));
+      ALL_LANGUAGES.forEach(lang => {
+        descKeys.forEach(key => {
+          expect(typeof CONTENT_LABELS[lang][key]).toBe('function');
+          // Should return a string when called with a number
+          expect(typeof CONTENT_LABELS[lang][key](5)).toBe('string');
+        });
+      });
+    });
+
+    it('L() helper should return correct label for known language', () => {
+      expect(L('de', 'whyMatters')).toBe('Warum diese Woche wichtig ist');
+      expect(L('fr', 'latestReports')).toBe('Derniers rapports de commission');
+    });
+
+    it('L() helper should fallback to English for unknown language', () => {
+      expect(L('xx', 'whyMatters')).toBe('Why This Week Matters');
+    });
+  });
+
+  describe('Multi-language article content generation', () => {
+    const nonEnSvLanguages = ['da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+
+    it('should generate localized content for all 14 languages', () => {
+      nonEnSvLanguages.forEach(lang => {
+        const content = generateArticleContent(
+          { events: mockEvents, highlights: [] },
+          'week-ahead',
+          lang
+        );
+        expect(typeof content).toBe('string');
+        expect(content.length).toBeGreaterThan(50);
+        // Should NOT contain Swedish-specific headings for non-sv languages
+        if (lang !== 'sv') {
+          expect(content).not.toContain('Varför denna vecka är viktig');
+        }
+      });
+    });
+
+    it('should generate localized committee content for German', () => {
+      const content = generateArticleContent(
+        { reports: [] },
+        'committee-reports',
+        'de'
+      );
+      expect(content).toContain('Neueste Ausschussberichte');
+    });
+
+    it('should generate localized propositions content for French', () => {
+      const content = generateArticleContent(
+        { propositions: [] },
+        'propositions',
+        'fr'
+      );
+      expect(content).toContain('Propositions gouvernementales');
+    });
+
+    it('should generate localized motions content for Japanese', () => {
+      const content = generateArticleContent(
+        { motions: [] },
+        'motions',
+        'ja'
+      );
+      expect(content).toContain('野党動議');
+    });
+
+    it('should generate localized metadata tags', () => {
+      const metadata = generateMetadata(
+        { events: mockEvents },
+        'week-ahead',
+        'de'
+      );
+      expect(metadata.tags).toContain('Woche Voraus');
     });
   });
 });
