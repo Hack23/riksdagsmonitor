@@ -37,25 +37,17 @@ export function extractPartyMentions(html) {
       // Escape special regex characters in variant
       const escapedVariant = variant.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       
-      // For single-letter codes (S, M, V, C, L), use stricter matching to avoid false positives
-      // in Swedish names like "Sörling" or words like "USA"
-      if (variant.length === 1) {
-        // Match only if preceded by whitespace/start and followed by whitespace/punctuation/end
-        // This prevents matching 'S' in "Sörling" or 'M' in "MP"
-        const pattern = new RegExp(`(?:^|\\s)${escapedVariant}(?:\\s|[,.:;!?]|$)`, 'i');
-        if (pattern.test(html)) {
-          parties.add(canonicalCode);
-          break;
-        }
-      } else {
-        // For multi-letter variants, use Unicode-aware word boundary
-        // \b doesn't work well with non-ASCII (ä, ö, å)
-        const pattern = new RegExp(`(?:^|\\s|[^\\p{L}\\p{N}])${escapedVariant}(?:$|\\s|[^\\p{L}\\p{N}])`, 'ui');
-        if (pattern.test(html)) {
-          // Ensure we only count each party once, even if multiple variants appear
-          parties.add(canonicalCode);
-          break;
-        }
+      // Use Unicode-aware non-letter/non-number boundary for ALL variants.
+      // This handles HTML tags (>), parentheses, punctuation, whitespace etc.
+      // \b doesn't work well with non-ASCII (ä, ö, å) so we use [^\p{L}\p{N}].
+      // For short codes (S, M, V, C, L, MP, SD, KD), this prevents matching
+      // inside words like "Sörling", "USA", or "MP" when looking for "M".
+      const pattern = new RegExp(
+        `(?:^|[^\\p{L}\\p{N}])${escapedVariant}(?=$|[^\\p{L}\\p{N}])`, 'ui'
+      );
+      if (pattern.test(html)) {
+        parties.add(canonicalCode);
+        break;
       }
     }
   }

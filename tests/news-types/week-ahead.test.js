@@ -62,16 +62,11 @@ describe('Week-Ahead Article Generation', () => {
       expect(weekAheadModule.REQUIRED_TOOLS).toContain('get_calendar_events');
     });
 
-    it('should require search_dokument tool', () => {
-      expect(weekAheadModule.REQUIRED_TOOLS).toContain('search_dokument');
-    });
-
-    it('should require fragor tool', () => {
-      expect(weekAheadModule.REQUIRED_TOOLS).toContain('get_fragor');
-    });
-
-    it('should require interpellationer tool', () => {
-      expect(weekAheadModule.REQUIRED_TOOLS).toContain('get_interpellationer');
+    it('should only list tools actually used by generateWeekAhead', () => {
+      // REQUIRED_TOOLS must match tools actually called in the implementation.
+      // Future cross-referencing tools (search_dokument, get_fragor, get_interpellationer)
+      // should be added here when implemented in generateWeekAhead().
+      expect(weekAheadModule.REQUIRED_TOOLS).toEqual(['get_calendar_events']);
     });
   });
 
