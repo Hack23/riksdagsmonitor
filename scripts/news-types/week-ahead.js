@@ -18,11 +18,14 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for week-ahead articles
- * Currently implements only get_calendar_events
- * TODO: Add search_dokument, get_fragor, get_interpellationer for richer cross-referencing
+ * These tools are used for calendar events, document search, questions, and interpellations
+ * and must stay in sync with validate-cross-references.js expectations.
  */
 export const REQUIRED_TOOLS = [
-  'get_calendar_events'
+  'get_calendar_events',
+  'search_dokument',
+  'get_fragor',
+  'get_interpellationer'
 ];
 
 /**

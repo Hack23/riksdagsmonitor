@@ -17,11 +17,13 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for propositions articles
- * Currently implements only get_propositioner
- * TODO: Add search_dokument_fulltext, analyze_g0v_by_department, search_anforanden for richer cross-referencing
+ * Declares all tools used for cross-referencing and validation
  */
 export const REQUIRED_TOOLS = [
-  'get_propositioner'
+  'get_propositioner',
+  'search_dokument_fulltext',
+  'analyze_g0v_by_department',
+  'search_anforanden'
 ];
 
 /**

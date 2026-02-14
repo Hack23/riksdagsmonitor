@@ -17,11 +17,13 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for committee-reports articles
- * Currently implements only get_betankanden
- * TODO: Add search_voteringar, search_anforanden, get_propositioner for richer cross-referencing
+ * Used for cross-reference validation and article generation
  */
 export const REQUIRED_TOOLS = [
-  'get_betankanden'
+  'get_betankanden',
+  'search_voteringar',
+  'search_anforanden',
+  'get_propositioner'
 ];
 
 /**

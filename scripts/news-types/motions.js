@@ -17,11 +17,14 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for motions articles
- * Currently implements only get_motioner
- * TODO: Add search_dokument_fulltext, analyze_g0v_by_department, search_anforanden for richer cross-referencing
+ * These tools are used for motions retrieval, fulltext search, government analysis, and speech references
+ * and must stay in sync with validate-cross-references.js expectations.
  */
 export const REQUIRED_TOOLS = [
-  'get_motioner'
+  'get_motioner',
+  'search_dokument_fulltext',
+  'analyze_g0v_by_department',
+  'search_anforanden'
 ];
 
 /**
