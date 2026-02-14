@@ -15,7 +15,7 @@ import { describe, it, expect } from 'vitest';
  * Language expansion logic from workflow
  * Expands preset names to actual language codes
  */
-export function expandLanguagePreset(preset) {
+function expandLanguagePreset(preset) {
   const presets = {
     'nordic': ['en', 'sv', 'da', 'no', 'fi'],
     'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl'],
@@ -29,7 +29,7 @@ export function expandLanguagePreset(preset) {
  * Timestamp commit logic from workflow
  * Determines if timestamp should be committed to main branch
  */
-export function shouldCommitTimestamp({ shouldGenerate, articlesGenerated, lastGenerationHours = null }) {
+function shouldCommitTimestamp({ shouldGenerate, articlesGenerated }) {
   // Only commit timestamp when:
   // 1. Generation was attempted (should_generate=true)
   // 2. Zero articles generated (no new content)
@@ -51,7 +51,7 @@ export function shouldCommitTimestamp({ shouldGenerate, articlesGenerated, lastG
  * Error type detection from workflow logs
  * Classifies errors by type and severity
  */
-export function detectErrorType(errorMessage) {
+function detectErrorType(errorMessage) {
   if (!errorMessage) return null;
   
   const errorMsg = errorMessage.toLowerCase();
@@ -74,7 +74,7 @@ export function detectErrorType(errorMessage) {
 /**
  * Error severity classification
  */
-export function getErrorSeverity(errorType) {
+function getErrorSeverity(errorType) {
   const severityMap = {
     'script_missing': 'critical',
     'mcp_unavailable': 'warning',
@@ -89,7 +89,7 @@ export function getErrorSeverity(errorType) {
  * PR creation decision logic
  * Determines if PR should be created
  */
-export function shouldCreatePR({ generated, success, hasTimestampOnly = false }) {
+function shouldCreatePR({ generated, success, hasTimestampOnly = false }) {
   // Only create PR when:
   // 1. Articles were generated (> 0)
   // 2. Generation succeeded

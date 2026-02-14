@@ -116,14 +116,31 @@ jobs:
             LAST_AGENTIC=$(jq -r '.lastUpdate // empty' news/metadata/workflow-state.json)
             
             if [ -n "$LAST_AGENTIC" ]; then
-              HOURS_AGO=$(( ($(date +%s) - $(date -d "$LAST_AGENTIC" +%s)) / 3600 ))
-              
-              if [ $HOURS_AGO -lt 2 ]; then
-                echo "agentic_recent=true" >> $GITHUB_OUTPUT
-                echo "✅ Agentic workflows active (${HOURS_AGO}h ago), skipping traditional workflow"
+              # Safely parse lastUpdate and guard against invalid or future timestamps
+              if PARSED_AGENTIC_TS=$(date -d "$LAST_AGENTIC" +%s 2>/dev/null); then
+                NOW_TS=$(date +%s)
+                
+                # Check for future timestamp (clock skew or invalid data)
+                if [ "$PARSED_AGENTIC_TS" -gt "$NOW_TS" ]; then
+                  # Future timestamp - treat as invalid, not recent
+                  echo "agentic_recent=false" >> $GITHUB_OUTPUT
+                  echo "⚠️ Future timestamp in workflow state (clock skew?), proceeding with traditional workflow"
+                else
+                  # Valid past timestamp - calculate hours ago
+                  HOURS_AGO=$(( (NOW_TS - PARSED_AGENTIC_TS) / 3600 ))
+                  
+                  if [ "$HOURS_AGO" -lt 2 ]; then
+                    echo "agentic_recent=true" >> $GITHUB_OUTPUT
+                    echo "✅ Agentic workflows active (${HOURS_AGO}h ago), skipping traditional workflow"
+                  else
+                    echo "agentic_recent=false" >> $GITHUB_OUTPUT
+                    echo "ℹ️ No recent agentic activity (${HOURS_AGO}h ago), proceeding with traditional workflow"
+                  fi
+                fi
               else
+                # Unparseable timestamp
                 echo "agentic_recent=false" >> $GITHUB_OUTPUT
-                echo "ℹ️ No recent agentic activity (${HOURS_AGO}h ago), proceeding with traditional workflow"
+                echo "⚠️ Unparseable lastUpdate timestamp in workflow state, proceeding with traditional workflow"
               fi
             else
               echo "agentic_recent=false" >> $GITHUB_OUTPUT
@@ -226,7 +243,17 @@ jobs:
               "message": "scripts/generate-news-enhanced.js not found",
               "severity": "critical",
               "retryable": false
-            }
+            },
+            "errorHistory": [
+              {
+                "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+                "workflow": "news-generation.yml",
+                "errorType": "script_missing",
+                "message": "scripts/generate-news-enhanced.js not found",
+                "severity": "critical",
+                "retryable": false
+              }
+            ]
           }
           EOF
             

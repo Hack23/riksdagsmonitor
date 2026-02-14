@@ -286,7 +286,7 @@ npm test -- tests/workflows/news-generation.test.js
 
 ## References
 
-- **Issue:** [Original issue about news-generation.yml fixes]
+- **Issue:** #162 - Fix news-generation.yml: Timestamp logic, error handling, and agentic workflow integration
 - **Workflow:** `.github/workflows/news-generation.yml`
 - **Tests:** `tests/workflows/news-generation.test.js`
 - **Docs:** `WORKFLOWS.md`, `news/metadata/README.md`
