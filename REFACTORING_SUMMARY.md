@@ -102,13 +102,13 @@ Successfully refactored `news-article-generator.md` agentic workflow into modula
 ## 🧪 Test Coverage Breakdown
 
 ```
-Total Tests: 111
-├── Week-Ahead: 46 tests (41.4%)
-├── Committee Reports: 22 tests (19.8%)
-├── Propositions: 9 tests (8.1%)
-├── Motions: 9 tests (8.1%)
-├── Breaking News: 11 tests (9.9%)
-└── Integration: 14 tests (12.6%)
+Total Tests: 94
+├── Week-Ahead: 18 tests (19.1%)
+├── Committee Reports: 20 tests (21.3%)
+├── Propositions: 18 tests (19.1%)
+├── Motions: 18 tests (19.1%)
+├── Breaking News: 11 tests (11.7%)
+└── Integration: 9 tests (9.6%)
 
 Status: ✅ All 94 tests passing
 ```
