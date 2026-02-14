@@ -478,9 +478,9 @@ lhci autorun \
 - `.github/workflows/news-evening-analysis.md` → `.lock.yml` (Evening analysis)
 
 **Triggers:**
-- **Article Generator:** Daily ~05:51 UTC, Workflow dispatch
-- **Realtime Monitor:** 10:00 + 14:00 UTC Mon-Fri, Workflow dispatch
-- **Evening Analysis:** 18:00 UTC Mon-Fri, Workflow dispatch
+- **Article Generator:** Daily ~05:51 UTC (day-of-week article types), Workflow dispatch
+- **Realtime Monitor:** 10:00 + 14:00 UTC Mon-Fri, 12:00 UTC Sat-Sun, Workflow dispatch
+- **Evening Analysis:** 18:00 UTC Mon-Fri, 16:00 UTC Sat (weekly wrap-up), Workflow dispatch
 
 **Purpose:** AI-powered political news article generation from riksdag-regering-mcp data using GitHub Agentic Workflows (gh-aw) with Claude Opus 4.
 
@@ -490,9 +490,9 @@ Riksdagsmonitor uses **three complementary agentic workflows** for full-day news
 
 | Workflow | Schedule | Purpose |
 |----------|----------|---------|
-| `news-article-generator.lock.yml` | ~05:51 UTC daily | General article generation (all types) |
-| `news-realtime-monitor.lock.yml` | 10:00 + 14:00 UTC Mon-Fri | Breaking news / live monitoring |
-| `news-evening-analysis.lock.yml` | 18:00 UTC Mon-Fri | Deep evening analysis wrap-up |
+| `news-article-generator.lock.yml` | ~05:51 UTC daily (7 days) | Day-of-week article generation |
+| `news-realtime-monitor.lock.yml` | 10:00 + 14:00 UTC Mon-Fri, 12:00 UTC Sat-Sun | Breaking news / live monitoring |
+| `news-evening-analysis.lock.yml` | 18:00 UTC Mon-Fri, 16:00 UTC Sat | Evening analysis + Saturday weekly wrap-up |
 
 ### 7.1 Agentic News Generation Workflow
 

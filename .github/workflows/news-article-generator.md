@@ -7,9 +7,8 @@ on:
   workflow_dispatch:
     inputs:
       article_types:
-        description: Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking)
+        description: Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking). Leave empty for day-of-week schedule.
         required: false
-        default: week-ahead,committee-reports,propositions,motions
       force_generation:
         description: Force generation even if recent articles exist
         type: boolean
