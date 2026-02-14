@@ -8927,6 +8927,8 @@ body.news-page {
 .news-article .calendar-day:focus-visible {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
 }
 
 .news-article .calendar-day.today {
@@ -9042,15 +9044,15 @@ body.news-page {
     font-size: 1.75rem;
   }
   
-  .calendar-grid {
+  .news-article .calendar-grid {
     grid-template-columns: 1fr;
   }
   
-  .event-calendar {
+  .news-article .event-calendar {
     padding: 1.5rem;
   }
   
-  .watch-section {
+  .news-article .watch-section {
     padding: 1.5rem;
   }
 }

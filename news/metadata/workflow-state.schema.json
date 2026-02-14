@@ -15,7 +15,7 @@
       "description": "Timestamp of last evening analysis generation"
     },
     "lastRealtimeMonitor": {
-      "type": "string",
+      "type": ["string", "null"],
       "format": "date-time",
       "description": "Timestamp of last realtime monitor check"
     },

@@ -23,6 +23,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { extractPartyMentions } from './party-variants.js';
+import { detectArticleLanguage, getLocalizedHeading } from './editorial-pillars.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,15 +47,18 @@ function parseArticle(filepath) {
 }
 
 /**
- * Extract sections from article
+ * Extract sections from article (with multi-language support)
  */
 function extractSections(html) {
+  // Detect article language from HTML lang attribute
+  const lang = detectArticleLanguage(html);
+  
   const sections = {
     leadParagraph: extractLeadParagraph(html),
-    parliamentaryPulse: extractSection(html, 'Parliamentary Pulse'),
-    governmentWatch: extractSection(html, 'Government Watch'),
-    oppositionDynamics: extractSection(html, 'Opposition Dynamics'),
-    lookingAhead: extractSection(html, 'Looking Ahead')
+    parliamentaryPulse: extractSection(html, getLocalizedHeading(lang, 'parliamentaryPulse')),
+    governmentWatch: extractSection(html, getLocalizedHeading(lang, 'governmentWatch')),
+    oppositionDynamics: extractSection(html, getLocalizedHeading(lang, 'oppositionDynamics')),
+    lookingAhead: extractSection(html, getLocalizedHeading(lang, 'lookingAhead'))
   };
   
   return sections;
@@ -209,34 +214,10 @@ function hasForwardLooking(html) {
 }
 
 /**
- * Count party perspectives
+ * Count party perspectives (using shared party-variants module)
  */
 function countPartyPerspectives(html) {
-  const parties = new Set();
-  // Map canonical party codes to their name/abbreviation variants
-  const partyVariants = {
-    S: ['Socialdemokraterna', 'S'],
-    M: ['Moderaterna', 'M'],
-    SD: ['Sverigedemokraterna', 'SD'],
-    V: ['Vänsterpartiet', 'V'],
-    MP: ['Miljöpartiet', 'MP'],
-    C: ['Centerpartiet', 'C'],
-    L: ['Liberalerna', 'L'],
-    KD: ['Kristdemokraterna', 'KD']
-  };
-
-  for (const [canonicalCode, variants] of Object.entries(partyVariants)) {
-    for (const variant of variants) {
-      const pattern = new RegExp(`\\b${variant}\\b`, 'i');
-      if (pattern.test(html)) {
-        // Ensure we only count each party once, even if multiple variants appear
-        parties.add(canonicalCode);
-        break;
-      }
-    }
-  }
-  
-  return parties.size;
+  return extractPartyMentions(html).size;
 }
 
 /**
