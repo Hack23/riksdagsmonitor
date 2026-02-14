@@ -29,19 +29,20 @@ export const REQUIRED_TOOLS = [
 ];
 
 /**
- * Get date range for Week Ahead (next 7 days)
+ * Get date range for Week Ahead (next 7 days)  
+ * Uses UTC to avoid timezone boundary issues with toISOString()
  */
 export function getWeekAheadDateRange() {
   const today = new Date();
-  const startDate = new Date(today);
-  startDate.setDate(today.getDate() + 1); // Tomorrow
   
-  const endDate = new Date(startDate);
-  endDate.setDate(startDate.getDate() + 7); // +7 days
+  // Use UTC to avoid off-by-one date issues at timezone boundaries
+  const todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+  const startUTC = todayUTC + (24 * 60 * 60 * 1000); // Tomorrow
+  const endUTC = startUTC + (7 * 24 * 60 * 60 * 1000); // +7 days
   
   return {
-    start: startDate.toISOString().split('T')[0],
-    end: endDate.toISOString().split('T')[0]
+    start: new Date(startUTC).toISOString().split('T')[0],
+    end: new Date(endUTC).toISOString().split('T')[0]
   };
 }
 

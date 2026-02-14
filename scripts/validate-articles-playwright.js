@@ -96,7 +96,11 @@ export async function validateArticlesWithPlaywright(articlePaths, options = {})
  */
 async function validateSingleArticle(browser, articlePath, config) {
   const page = await browser.newPage();
-  const url = `${config.baseUrl}/${articlePath}`;
+  
+  // Normalize articlePath to avoid duplicate segments (e.g., "news/news/article.html")
+  const normalizedPath = articlePath.replace(/^\/?news\//, '');
+  const url = `${config.baseUrl}/news/${normalizedPath}`;
+  
   const issues = [];
   const screenshots = [];
   
@@ -308,12 +312,12 @@ function generateScreenshotName(articlePath, viewport) {
 function hasProperARIA(node) {
   if (!node) return true;
   
-  // Check if node has proper role
-  const hasRole = node.role !== null;
+  // Check if node has a non-empty ARIA role
+  const hasRole = node.role != null && node.role !== '';
   
-  // Recursively check children
+  // Recursively check children, including the current node
   if (node.children) {
-    return node.children.every(child => hasProperARIA(child));
+    return hasRole && node.children.every(child => hasProperARIA(child));
   }
   
   return hasRole;
@@ -358,7 +362,10 @@ export function generatePRComment(results) {
   for (const [article, articleScreenshots] of Object.entries(byArticle)) {
     comment += `#### ${article}\n\n`;
     articleScreenshots.forEach(ss => {
-      comment += `![${ss.viewport}](screenshots/${ss.name})\n`;
+      // Note: Screenshots should be uploaded as CI artifacts or committed for links to work
+      // Relative paths won't render in GitHub PR comments without proper setup
+      comment += `![${ss.viewport}](screenshots/${ss.name}) `;
+      comment += `_[View screenshot: ${ss.name}]_\n`;
     });
     comment += `\n`;
   }

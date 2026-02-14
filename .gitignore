@@ -47,3 +47,4 @@ news-*-screenshot.png
 # News metadata (runtime state, not versioned)
 news/metadata/generation-result.json
 news/metadata/last-generation.json
+styles_*.css

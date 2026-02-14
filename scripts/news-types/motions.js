@@ -17,6 +17,16 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for motions articles
+ * 
+ * CURRENT IMPLEMENTATION STATUS:
+ * - get_motioner: ✅ Implemented (line 56)
+ * - search_dokument_fulltext: ❌ TODO - Not yet implemented
+ * - analyze_g0v_by_department: ❌ TODO - Not yet implemented
+ * - search_anforanden: ❌ TODO - Not yet implemented
+ * 
+ * NOTE: REQUIRED_TOOLS lists the full specification for validation.
+ * Current implementation calls a subset. This causes validation warnings
+ * but allows tests to pass. Full implementation should add the missing tools.
  * These tools are used for motions retrieval, fulltext search, government analysis, and speech references
  * and must stay in sync with validate-cross-references.js expectations.
  */

@@ -17,6 +17,16 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for committee-reports articles
+ * 
+ * CURRENT IMPLEMENTATION STATUS:
+ * - get_betankanden: ✅ Implemented (line 56)
+ * - search_voteringar: ❌ TODO - Not yet implemented
+ * - search_anforanden: ❌ TODO - Not yet implemented
+ * - get_propositioner: ❌ TODO - Not yet implemented
+ * 
+ * NOTE: REQUIRED_TOOLS lists the full specification for validation.
+ * Current implementation calls a subset. This causes validation warnings
+ * but allows tests to pass. Full implementation should add the missing tools.
  * Used for cross-reference validation and article generation
  */
 export const REQUIRED_TOOLS = [

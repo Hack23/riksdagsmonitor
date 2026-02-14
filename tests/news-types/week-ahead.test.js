@@ -82,16 +82,22 @@ describe('Week-Ahead Article Generation', () => {
     });
 
     it('should return date range starting tomorrow', () => {
-      const range = weekAheadModule.getWeekAheadDateRange();
+      // Use fake timers for deterministic test
+      const testDate = new Date('2026-02-14T12:00:00Z');
+      vi.useFakeTimers();
+      vi.setSystemTime(testDate);
       
-      expect(range).toHaveProperty('start');
-      expect(range).toHaveProperty('end');
-      
-      const today = new Date();
-      const tomorrow = new Date(today);
-      tomorrow.setDate(today.getDate() + 1);
-      
-      expect(range.start).toBe(tomorrow.toISOString().split('T')[0]);
+      try {
+        const range = weekAheadModule.getWeekAheadDateRange();
+        
+        expect(range).toHaveProperty('start');
+        expect(range).toHaveProperty('end');
+        
+        expect(range.start).toBe('2026-02-15'); // Tomorrow from Feb 14
+        expect(range.end).toBe('2026-02-22');   // +7 days from start
+      } finally {
+        vi.useRealTimers();
+      }
     });
 
     it('should return 7-day range', () => {

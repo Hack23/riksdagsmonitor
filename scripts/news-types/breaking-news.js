@@ -17,6 +17,16 @@ import { generateArticleHTML } from '../article-template.js';
 
 /**
  * Required MCP tools for breaking news articles
+ * 
+ * CURRENT IMPLEMENTATION STATUS:
+ * - search_voteringar: ✅ Implemented (conditional, line 72)
+ * - search_anforanden: ✅ Implemented (conditional, line 79)
+ * - get_voting_group: ❌ TODO - Not yet implemented  
+ * - search_ledamoter: ❌ TODO - Not yet implemented
+ * 
+ * NOTE: REQUIRED_TOOLS lists the full specification for validation.
+ * Current implementation calls a subset. This causes validation warnings
+ * but allows tests to pass. Full implementation should add the missing tools.
  */
 export const REQUIRED_TOOLS = [
   'search_voteringar',
