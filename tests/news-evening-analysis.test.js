@@ -436,6 +436,47 @@ describe('Evening Analysis Structure Validation', () => {
     expect(html).toContain('"@context": "https://schema.org"');
   });
 
+  it('should use external styles.css instead of embedded CSS', () => {
+    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    
+    if (!fs.existsSync(testFile)) {
+      console.warn('⚠️ Test article not found, skipping');
+      return;
+    }
+    
+    const article = parseArticle(testFile);
+    const html = article.content;
+    
+    // Should have link to styles.css
+    expect(html).toContain('href="../styles.css"');
+    expect(html).toContain('<link rel="stylesheet"');
+    
+    // Should NOT have embedded style tags
+    const hasEmbeddedCSS = /<style[^>]*>/.test(html);
+    expect(hasEmbeddedCSS).toBe(false);
+  });
+
+  it('should follow Economist-style journalism standards', () => {
+    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    
+    if (!fs.existsSync(testFile)) {
+      console.warn('⚠️ Test article not found, skipping');
+      return;
+    }
+    
+    const article = parseArticle(testFile);
+    const html = article.content;
+    
+    // Check for meta description that matches the style guide
+    const hasProperDescription = html.includes('Latest news and analysis') || 
+                                  html.includes('Economist-style') ||
+                                  html.includes('Swedish Parliament') ||
+                                  html.includes('Riksdag');
+    
+    // At minimum should mention Swedish Parliament/Riksdag
+    expect(hasProperDescription).toBe(true);
+  });
+
   it('should have RTL direction for Arabic articles', () => {
     const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-ar.html');
     

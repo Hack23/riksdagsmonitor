@@ -176,45 +176,125 @@ Structure the analysis around these editorial pillars:
 
 **Article Type:** `analysis`
 
+**HTML Template Requirements:**
+- **MUST** use `<link rel="stylesheet" href="../styles.css">` - NO embedded `<style>` tags
+- Follow "Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency."
+- Include proper meta tags, Open Graph, Twitter Card, and Schema.org structured data
+- Use semantic HTML5 structure with `<article>`, `<header>`, `<section>`, `<footer>`
+
 **Structure for each language version:**
 
 ```html
-<!-- Evening Analysis article structure -->
-<article>
-  <h1>{Analytical headline capturing day's key theme}</h1>
-  <h2>{Subtitle with specific data point}</h2>
+<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="{subtitle}">
+  <meta name="keywords" content="{keywords}">
+  <meta name="author" content="James Pether Sörling, CISSP, CISM">
+  <link rel="canonical" href="https://riksdagsmonitor.com/news/{slug}">
   
-  <div class="article-meta">
-    <time>{date}</time>
-    <span class="read-time">{X} min read</span>
-    <span class="article-type">Evening Analysis</span>
-  </div>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{subtitle}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://riksdagsmonitor.com/news/{slug}">
+  <meta property="og:image" content="https://cia.sourceforge.io/cia-logo.png">
   
-  <div class="article-content">
-    <p class="lead">{Opening paragraph: analytical thesis}</p>
-    
-    <h3>The Day's Main Story</h3>
-    <p>{400-800 words of lead story analysis}</p>
-    
-    <h3>Parliamentary Pulse</h3>
-    <p>{200-400 words summarizing legislative activity}</p>
-    
-    <h3>Government Watch</h3>
-    <p>{200-300 words on executive activity}</p>
-    
-    <h3>Opposition Dynamics</h3>
-    <p>{200-300 words on opposition and cross-party}</p>
-    
-    <h3>Looking Ahead</h3>
-    <p>{100-200 words on tomorrow's agenda}</p>
-  </div>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{subtitle}">
   
-  <div class="sources">
-    <h4>Sources</h4>
-    <ul>{List all riksdag-regering-mcp tools used with document IDs}</ul>
+  <!-- Hreflang for all language alternatives -->
+  <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/{baseSlug}-en.html">
+  <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/{baseSlug}-sv.html">
+  <!-- ... (all 14 languages) -->
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- CRITICAL: Use external stylesheet, NO embedded CSS -->
+  <link rel="stylesheet" href="../styles.css">
+  
+  <!-- Schema.org NewsArticle structured data -->
+  <script type="application/ld+json">{...}</script>
+</head>
+<body>
+  <div class="news-article">
+    <header class="article-header">
+      <h1>{Analytical headline capturing day's key theme}</h1>
+      <div class="article-meta">
+        <time datetime="{isoDate}">{formattedDate}</time>
+        <span class="separator">•</span>
+        <span class="read-time">{X} min read</span>
+        <span class="separator">•</span>
+        <span class="article-type">Evening Analysis</span>
+      </div>
+    </header>
+    
+    <article class="article-content">
+      <p class="lede">{Opening paragraph: analytical thesis}</p>
+      
+      <h2>The Day's Main Story</h2>
+      <p>{400-800 words of lead story analysis}</p>
+      
+      <h2>Parliamentary Pulse</h2>
+      <p>{200-400 words summarizing legislative activity}</p>
+      
+      <h2>Government Watch</h2>
+      <p>{200-300 words on executive activity}</p>
+      
+      <h2>Opposition Dynamics</h2>
+      <p>{200-300 words on opposition and cross-party}</p>
+      
+      <h2>Looking Ahead</h2>
+      <p>{100-200 words on tomorrow's agenda}</p>
+      
+      <div class="context-box">
+        <h3>By the Numbers</h3>
+        <ul>{Key statistics from today's data}</ul>
+      </div>
+      
+      <section class="watch-section">
+        <h2>What to Watch This Week</h2>
+        <ul class="watch-list">
+          <li><strong>{Topic}:</strong> {Description}</li>
+        </ul>
+      </section>
+    </article>
+    
+    <footer class="article-footer">
+      <div class="article-sources">
+        <h3>Sources and Data</h3>
+        <p><strong>Data Sources:</strong> {List riksdag-regering-mcp tools with document IDs}</p>
+        <p><strong>Generated by:</strong> Automated News System using riksdag-regering-mcp</p>
+        <p><strong>Analysis Tools:</strong> AI-assisted journalism with human editorial oversight</p>
+      </div>
+      <div class="article-nav">
+        <a href="../index.html" class="back-to-news">Back to News</a>
+      </div>
+    </footer>
   </div>
-</article>
+</body>
+</html>
 ```
+
+**CSS Classes Available in styles.css:**
+- `.news-article` - Main container
+- `.article-header` - Header section
+- `.article-meta` - Date, time, type info
+- `.lede` - Lead paragraph with left border
+- `.article-content` - Main content area
+- `.context-box` - Information boxes
+- `.watch-section` - "What to Watch" section
+- `.article-footer` - Footer with sources
+- `.article-sources` - Sources section
+- `.back-to-news` - Back button
 
 ### Step 4: Generate All Language Versions
 
