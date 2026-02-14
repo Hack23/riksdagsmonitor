@@ -54,11 +54,11 @@ const LANGUAGE_PRESETS = {
   'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl']
 };
 
-let langInput = getArg('languages', 'en,sv');
+let langInput = getArg('languages', 'en,sv').trim().toLowerCase();
 if (LANGUAGE_PRESETS[langInput]) {
   langInput = LANGUAGE_PRESETS[langInput].join(',');
 }
-const languages = langInput.split(',').filter(l => ALL_LANGUAGES.includes(l.trim()));
+const languages = langInput.split(',').map(l => l.trim()).filter(l => ALL_LANGUAGES.includes(l));
 
 const articleTypes = typesInput.split(',').filter(Boolean);
 const NEWS_DIR = path.join(__dirname, '..', 'news');
