@@ -494,22 +494,67 @@ Riksdagsmonitor features **dual news generation pipelines**:
 
 **File:** `.github/workflows/news-generation.yml`  
 **Status:** ✅ Operational  
-**Schedule:** Daily at 00:00 and 12:00 UTC  
+**Schedule:** 4 time slots (06:00, 12:00, 18:00 UTC weekdays + 10:00 UTC Saturday)  
 **Permissions:** contents: write, pull-requests: write
+
+#### Scheduled Execution Strategy
+
+```yaml
+Morning (06:00 UTC / 07:00 CET):
+  Article Types: week-ahead
+  Languages: en,sv (core languages for speed)
+  
+Midday (12:00 UTC / 13:00 CET):
+  Article Types: committee-reports,propositions,motions
+  Languages: en,sv,da,no,fi (Nordic languages)
+  
+Evening (18:00 UTC / 19:00 CET):
+  Article Types: week-ahead,committee-reports,propositions,motions,breaking
+  Languages: all 14 languages
+  
+Weekend (10:00 UTC Saturday):
+  Article Types: week-ahead,committee-reports,propositions,motions
+  Languages: all 14 languages
+```
 
 #### Pipeline Stages
 
 1. **Check for Updates**
    ```yaml
    - name: Check for new Riksdag/Regering updates
-     # Skip if last generation < 11 hours ago (unless force_generation=true)
+     # Skip if last generation < 5 hours ago (unless force_generation=true)
    ```
 
-2. **Generate Articles**
+2. **Check Agentic Workflow Activity** ✨ NEW
+   ```yaml
+   - name: Check for recent agentic workflow activity
+     # Reads news/metadata/workflow-state.json
+     # Skips if agentic workflows active < 2 hours ago
+     # Prevents duplicate work between workflows
+   ```
+
+3. **Generate Articles**
    ```bash
+   # Check script exists (fail loudly if missing)
+   if [ ! -f "scripts/generate-news-enhanced.js" ]; then
+     echo "❌ CRITICAL ERROR"
+     # Log to errors.json with severity=critical
+     exit 1
+   fi
+   
+   # Run with error capture
+   set +e
    node scripts/generate-news-enhanced.js \
      --types="$ARTICLE_TYPES" \
-     --languages="$LANG_ARG"
+     --languages="$LANG_ARG" 2>&1 | tee generation.log
+   EXIT_CODE=$?
+   set -e
+   
+   # Detect error type and log to errors.json
+   if [ $EXIT_CODE -ne 0 ]; then
+     # Classify: script_missing, mcp_unavailable, script_failure
+     exit 1
+   fi
    ```
    
    **Supported Article Types:**
@@ -519,40 +564,205 @@ Riksdagsmonitor features **dual news generation pipelines**:
    - `motions` - Opposition motion analysis
    - `breaking` - Significant developments
 
-3. **Regenerate Indexes**
+4. **Regenerate Indexes**
    ```bash
    node scripts/generate-news-indexes.js
    # Scans news/ directory
    # Generates all 14 language index files
    ```
 
-4. **Update Sitemap**
+5. **Update Sitemap**
    ```bash
    node scripts/generate-sitemap.js
    # Updates sitemap.xml with new articles
    ```
 
-5. **HTML Validation**
+6. **Update Timestamp** ✨ FIXED
+   ```yaml
+   # OLD: Always committed timestamp (51% of runs)
+   # NEW: Only commit when generated=0 AND no agentic activity
+   - name: Commit timestamp update (when no articles generated)
+     if: |
+       steps.check-updates.outputs.should_generate == 'true' &&
+       steps.check-agentic.outputs.agentic_recent != 'true' &&
+       steps.generate.outputs.generated == '0'
+     # Prevents infinite retry loops when no new content
+   ```
+
+7. **HTML Validation**
    ```bash
    find news -name "*.html" -type f -mmin -5 | xargs htmlhint
    ```
 
-6. **Create Pull Request**
+8. **Create Pull Request** ✨ FIXED
    ```yaml
    - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0
+     # OLD: Created PR even for edge cases
+     # NEW: Only when success AND articles > 0
+     if: |
+       success() &&
+       steps.generate.outcome == 'success' &&
+       steps.generate.outputs.generated != '0' &&
+       steps.generate.outputs.generated != ''
      with:
-       title: '📰 Automated News Update - {timestamp}'
+       title: '📰 {count} News Articles - {timestamp}'
        labels: automated-news, news-generation, needs-editorial-review
    ```
 
+9. **Notify on Critical Failure** ✨ NEW
+   ```yaml
+   - name: Notify on critical failure
+     if: failure() && steps.generate.outcome == 'failure'
+     uses: actions/github-script@v7
+     # Reads errors.json and comments on open bug issues
+     # Only for critical errors (severity=critical)
+   ```
+
+#### Error Handling
+
+**Structured Error Logging:** `news/metadata/errors.json`
+
+```json
+{
+  "lastError": {
+    "timestamp": "2026-02-14T12:00:00Z",
+    "workflow": "news-generation.yml",
+    "errorType": "script_missing",
+    "message": "scripts/generate-news-enhanced.js not found",
+    "severity": "critical",
+    "retryable": false
+  }
+}
+```
+
+**Error Types:**
+- `script_missing` (critical, not retryable) - Script files missing
+- `mcp_unavailable` (warning, retryable) - riksdag-regering-mcp timeout
+- `script_failure` (error, retryable) - Script execution failed
+- `unknown` (error, retryable) - Unclassified errors
+
+**Error Notification:**
+- Critical errors trigger GitHub issue comments
+- Finds open issues with labels: `component:news-generation`, `type:bug`
+- Includes error details, workflow run URL, action required
+
+#### Workflow Coordination
+
+**Traditional vs Agentic Workflows:**
+
+```mermaid
+graph TD
+    A[Scheduled Trigger] --> B{Check Last Generation}
+    B -->|< 5 hours| C[Skip]
+    B -->|> 5 hours| D{Check Agentic Activity}
+    D -->|< 2 hours| E[Skip - Agentic Active]
+    D -->|> 2 hours| F[Run Traditional Workflow]
+    
+    G[Agentic Workflow] -->|Updates| H[workflow-state.json]
+    H --> D
+    
+    F --> I{Generated?}
+    I -->|Yes| J[Create PR]
+    I -->|No| K[Commit Timestamp]
+    
+    style E fill:#ff9800
+    style F fill:#4caf50
+    style J fill:#4caf50
+    style K fill:#2196f3
+```
+
+**Coordination File:** `news/metadata/workflow-state.json`
+
+```json
+{
+  "lastUpdate": "2026-02-14T12:00:00Z",
+  "recentArticles": [
+    {
+      "id": "2026-02-14-week-ahead-en",
+      "timestamp": "2026-02-14T12:00:00Z"
+    }
+  ],
+  "mcpQueryCache": {
+    "calendar_events": {
+      "timestamp": "2026-02-14T11:30:00Z",
+      "ttl": 7200
+    }
+  }
+}
+```
+
+**Benefits:**
+- Prevents duplicate articles when both workflows active
+- Reduces MCP API calls (2-hour cache TTL)
+- Traditional workflow as fallback when agentic unavailable
+- Similarity-based deduplication (>70% threshold)
+
 #### Features
 
-- ✅ Smart caching (skip if < 11 hours old)
+- ✅ Smart caching (skip if < 5 hours old)
+- ✅ Agentic workflow coordination (skip if agentic activity < 2 hours)
 - ✅ Multi-language support (14 languages via presets)
 - ✅ Language presets: `nordic`, `eu-core`, `all`
+- ✅ Structured error logging (errors.json)
+- ✅ Error type detection (script_missing, mcp_unavailable, script_failure)
+- ✅ Critical failure notification (GitHub issue comments)
+- ✅ Smart timestamp commits (only when no articles generated)
+- ✅ Smart PR creation (only when articles > 0 AND success)
 - ✅ HTML validation with HTMLHint
-- ✅ Automated PR creation
 - ✅ Workflow summary with metrics
+- ✅ Comprehensive test suite (29 tests covering all logic)
+
+#### Testing
+
+**Test File:** `tests/workflows/news-generation.test.js`
+
+**Coverage:**
+- Language expansion (5 tests) - nordic, eu-core, all presets
+- Timestamp commit logic (5 tests) - when to commit, when to skip
+- Error detection (7 tests) - classify error types and severity
+- PR creation logic (5 tests) - success conditions
+- Agentic workflow coordination (7 tests) - activity detection
+
+**Run Tests:**
+```bash
+npm test -- tests/workflows/news-generation.test.js
+# All 29 tests should pass
+```
+
+#### Troubleshooting
+
+**Problem:** Timestamp-only commits polluting history (51% of runs)
+**Solution:** ✅ Fixed - Only commits when generated=0 AND no agentic activity
+**Expected Impact:** Reduce to <20%
+
+**Problem:** Zero-article runs too frequent (69% of runs)
+**Solution:** ✅ Improved - Agentic workflow coordination prevents duplicate checks
+**Expected Impact:** Reduce to <40% with better content availability
+
+**Problem:** Workflow fails silently when script missing
+**Solution:** ✅ Fixed - Fails loudly with critical error to errors.json
+**Expected Impact:** Immediate maintainer notification
+
+**Problem:** PR created for trivial changes
+**Solution:** ✅ Fixed - Only creates PR when success AND articles > 0
+**Expected Impact:** Eliminate false-positive PRs
+
+**Problem:** Cannot diagnose failure reasons
+**Solution:** ✅ Improved - Structured error logging with error types
+**Expected Impact:** Better diagnostics and faster troubleshooting
+
+#### Metrics & Monitoring
+
+**Target Metrics:**
+- Timestamp-only commits: <20% (was 51%)
+- Zero-article runs: <40% (was 69%)
+- Failed runs: <10% (was 20%)
+- Articles per run: >1.0 avg (was 0.63)
+
+**Monitoring Files:**
+- `news/metadata/last-generation.json` - Last run status
+- `news/metadata/errors.json` - Error tracking
+- `news/metadata/workflow-state.json` - Coordination state
 
 ### 7.2 Agentic News Generation Workflow
 

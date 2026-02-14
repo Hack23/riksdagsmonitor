@@ -47,6 +47,21 @@ function getBreadcrumbName(lang, type) {
 }
 
 /**
+ * Sanitize article body content for JSON-LD structured data
+ * Converts HTML content to valid single-line JSON string
+ * 
+ * @param {string} htmlContent - HTML content (already escaped)
+ * @returns {string} Sanitized single-line text suitable for JSON
+ */
+function sanitizeArticleBody(htmlContent) {
+  return htmlContent
+    .substring(0, 500) // Limit length for structured data
+    .replace(/\n/g, ' ') // Remove newlines
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
+}
+
+/**
  * Footer label translations for all 14 languages
  */
 const FOOTER_LABELS = {
@@ -197,7 +212,6 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../styles.css">
-  <!-- No embedded styles - all styles in styles.css for maintainability -->
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">
@@ -237,7 +251,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
       "height": 630
     },
     "articleSection": "${typeLabel}",
-    "articleBody": "${escapeHtml(content).substring(0, 500)}...",
+    "articleBody": "${sanitizeArticleBody(escapeHtml(content))}...",
     "wordCount": ${Math.ceil(content.length / 5)},
     "inLanguage": "${lang}",
     "keywords": "${keywords.join(', ')}",
@@ -321,7 +335,6 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
 <body>
 <article class="news-article">
   <header class="article-header">
-    <p class="article-tagline"${lang !== 'en' ? ' lang="en"' : ''}>Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.</p>
     <h1>${title}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>

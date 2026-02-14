@@ -6,10 +6,6 @@
  * Generates news articles using riksdag-regering-mcp data
  * Integrates MCP client, data transformers, and article template
  * 
- * Note: Modular article generators exist in news-types/ but this script
- * currently uses its own implementations. Future refactoring should migrate
- * to use the modular generators.
- * 
  * Usage: node generate-news-enhanced.js --types="week-ahead,committee-reports"
  */
 
@@ -26,11 +22,6 @@ import {
   generateSources
 } from './data-transformers.js';
 import { generateArticleHTML } from './article-template.js';
-
-// Import only the utilities needed (not the main generator functions)
-import { 
-  getWeekAheadDateRange
-} from './news-types/week-ahead.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -100,9 +91,20 @@ const stats = {
 
 /**
  * Get date range for Week Ahead (next 7 days)
- * Re-exported from modular file for backward compatibility
  */
-export { getWeekAheadDateRange };
+function getWeekAheadDateRange() {
+  const today = new Date();
+  const startDate = new Date(today);
+  startDate.setDate(today.getDate() + 1); // Tomorrow
+  
+  const endDate = new Date(startDate);
+  endDate.setDate(startDate.getDate() + 7); // +7 days
+  
+  return {
+    start: startDate.toISOString().split('T')[0],
+    end: endDate.toISOString().split('T')[0]
+  };
+}
 
 /**
  * Format date for article slug
