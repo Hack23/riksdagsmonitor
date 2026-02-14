@@ -323,6 +323,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
      No embedded CSS needed - promotes consistency and maintainability. -->
 <article class="news-article">
   <header class="article-header">
+    <div class="site-tagline">Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.</div>
     <h1>${title}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>

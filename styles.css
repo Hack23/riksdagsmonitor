@@ -9035,3 +9035,15 @@ body.news-page {
     display: none;
   }
 }
+
+/* Site Tagline for News Articles */
+.news-article .site-tagline {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #6c757d);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color, #e9ecef);
+  font-weight: 500;
+}
