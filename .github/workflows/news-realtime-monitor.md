@@ -18,7 +18,7 @@ on:
       languages:
         description: 'Languages to generate (en,sv | nordic | eu-core | all)'
         required: false
-        default: en,sv
+        default: all
 
 permissions:
   contents: read
@@ -92,10 +92,9 @@ Check the `focus` input (default: `all`):
 ### Language Support
 
 Parse the `languages` input and expand presets:
-- **en,sv** (default) - English and Swedish
+- **all** (default) - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
 - **nordic** → en,sv,da,no,fi
 - **eu-core** → en,sv,de,fr,es,nl
-- **all** → all 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
 
 ## Detection Workflow
 

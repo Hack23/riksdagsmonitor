@@ -23,7 +23,7 @@
 #
 # Monitors Riksdag and Government for real-time updates and generates breaking news articles during Swedish parliamentary working hours with Playwright validation
 #
-# frontmatter-hash: 67c7ee31b9c88ea9409e8153ad915686706ddb5ac52ceb18dfe4e156095fdce3
+# frontmatter-hash: c502033519229899efe9ecfecf5623153dd7225c7ae51c5013bf6487ee424f28
 
 name: "News Realtime Monitor"
 "on":
@@ -37,7 +37,7 @@ name: "News Realtime Monitor"
         description: "Focus area: votes, debates, questions, all"
         required: false
       languages:
-        default: en,sv
+        default: all
         description: Languages to generate (en,sv | nordic | eu-core | all)
         required: false
 

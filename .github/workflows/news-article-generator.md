@@ -9,7 +9,7 @@ on:
       article_types:
         description: Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking)
         required: false
-        default: week-ahead
+        default: week-ahead,committee-reports,propositions,motions
       force_generation:
         description: Force generation even if recent articles exist
         type: boolean
@@ -18,7 +18,7 @@ on:
       languages:
         description: 'Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)'
         required: false
-        default: en,sv
+        default: all
 
 permissions:
   contents: read
@@ -82,9 +82,9 @@ Generate news articles based on the latest data from riksdag-regering-mcp server
 ### Workflow Inputs
 
 Check the GitHub event inputs:
-- **article_types**: Available from `github.event.inputs.article_types` (default: week-ahead if not provided)
+- **article_types**: Available from `github.event.inputs.article_types` (default: week-ahead,committee-reports,propositions,motions)
 - **force_generation**: Available from `github.event.inputs.force_generation` (default: false if not provided)
-- **languages**: Available from `github.event.inputs.languages` (default: en,sv if not provided)
+- **languages**: Available from `github.event.inputs.languages` (default: all — all 14 languages)
 
 ### Language Options
 
@@ -273,10 +273,10 @@ For the data retrieved:
 First, parse the `languages` input from `github.event.inputs.languages` and expand presets:
 
 ```bash
-# Get languages input (default: en,sv)
+# Get languages input (default: all 14 languages)
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 if [ -z "$LANGUAGES_INPUT" ]; then
-  LANGUAGES_INPUT="en,sv"
+  LANGUAGES_INPUT="all"
 fi
 
 # Trim and normalize the input before preset expansion
@@ -310,10 +310,10 @@ echo "📋 Final languages: $LANG_ARG"
 Use the `generate-news-enhanced.js` script to generate articles for all requested types and languages:
 
 ```bash
-# Get article types input
+# Get article types input (default: all structured types for full coverage)
 ARTICLE_TYPES="${{ github.event.inputs.article_types }}"
 if [ -z "$ARTICLE_TYPES" ]; then
-  ARTICLE_TYPES="week-ahead"
+  ARTICLE_TYPES="week-ahead,committee-reports,propositions,motions"
 fi
 
 echo "📰 Generating news articles..."

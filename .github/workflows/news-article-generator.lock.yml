@@ -23,7 +23,7 @@
 #
 # Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server and validates with Playwright
 #
-# frontmatter-hash: 9e70c1090bbfdc208275c7c139eb5e4f41ffcd77873c27f7f51912e5ad205d7e
+# frontmatter-hash: b0870e4013c12d1c670ffbdcd7eb980ae789ec13d49dd2b4d7819eab9924f53e
 
 name: "News Article Generator"
 "on":
@@ -33,7 +33,7 @@ name: "News Article Generator"
   workflow_dispatch:
     inputs:
       article_types:
-        default: week-ahead
+        default: week-ahead,committee-reports,propositions,motions
         description: Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking)
         required: false
       force_generation:
@@ -42,7 +42,7 @@ name: "News Article Generator"
         required: false
         type: boolean
       languages:
-        default: en,sv
+        default: all
         description: Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)
         required: false
 
