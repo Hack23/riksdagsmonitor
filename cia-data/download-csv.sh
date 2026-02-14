@@ -18,6 +18,8 @@ curl -s -o "$CIA_DATA_DIR/extraction_summary_report.csv" "$BASE_URL/extraction_s
 
 echo ""
 echo "📥 Downloading Party data..."
+curl -s -o "$CIA_DATA_DIR/view_riksdagen_party_summary_sample.csv" "$BASE_URL/view_riksdagen_party_summary_sample.csv" && echo "  ✓ view_riksdagen_party_summary_sample.csv"
+curl -s -o "$CIA_DATA_DIR/view_riksdagen_party_role_member_sample.csv" "$BASE_URL/view_riksdagen_party_role_member_sample.csv" && echo "  ✓ view_riksdagen_party_role_member_sample.csv"
 curl -s -o "$CIA_DATA_DIR/party/distribution_party_performance.csv" "$BASE_URL/distribution_party_performance.csv" && echo "  ✓ distribution_party_performance.csv"
 curl -s -o "$CIA_DATA_DIR/party/distribution_party_effectiveness_trends.csv" "$BASE_URL/distribution_party_effectiveness_trends.csv" && echo "  ✓ distribution_party_effectiveness_trends.csv"
 curl -s -o "$CIA_DATA_DIR/party/distribution_party_momentum.csv" "$BASE_URL/distribution_party_momentum.csv" && echo "  ✓ distribution_party_momentum.csv"
