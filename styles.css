@@ -9047,3 +9047,29 @@ body.news-page {
   border-bottom: 1px solid var(--border-color, #e9ecef);
   font-weight: 500;
 }
+
+/* Language Badge Small (for "Available in" indicators) */
+.lang-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(0, 102, 51, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: var(--primary-color, #006633);
+  border: 1px solid rgba(0, 102, 51, 0.2);
+  font-weight: 500;
+}
+
+/* Available Languages Section */
+.available-languages {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #6c757d);
+}
+
+.available-languages strong {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
