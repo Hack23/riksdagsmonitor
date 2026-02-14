@@ -61,9 +61,46 @@ jobs:
           
           npm ci --prefer-offline --no-audit
           
-          # Install riksdag-regering-mcp for data access
-          npm install -g riksdag-regering-mcp
           echo "✅ Dependencies installed"
+      
+      - name: Health check riksdag-regering MCP server
+        id: mcp-health
+        run: |
+          echo "🔍 Checking riksdag-regering MCP server health..."
+          
+          MCP_SERVER_URL="https://riksdag-regering-ai.onrender.com/mcp"
+          MAX_ATTEMPTS=5
+          WAIT_TIME=10
+          
+          for attempt in $(seq 1 $MAX_ATTEMPTS); do
+            echo "  Attempt $attempt/$MAX_ATTEMPTS..."
+            
+            # Try to connect to MCP server with extended timeout
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -m 30 \
+              -X POST "$MCP_SERVER_URL" \
+              -H "Content-Type: application/json" \
+              -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' 2>&1 || echo "000")
+            
+            if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "204" ]; then
+              echo "✅ MCP server is healthy (HTTP $HTTP_CODE)"
+              echo "server_available=true" >> $GITHUB_OUTPUT
+              echo "MCP_SERVER_URL=$MCP_SERVER_URL" >> $GITHUB_ENV
+              exit 0
+            fi
+            
+            echo "  ⚠️ Server returned HTTP $HTTP_CODE"
+            
+            if [ $attempt -lt $MAX_ATTEMPTS ]; then
+              echo "  ⏳ Waiting ${WAIT_TIME}s before retry (server may be cold starting)..."
+              sleep $WAIT_TIME
+            fi
+          done
+          
+          echo "❌ MCP server unavailable after $MAX_ATTEMPTS attempts"
+          echo "server_available=false" >> $GITHUB_OUTPUT
+          
+          # Don't fail the workflow, let generation step handle it gracefully
+          exit 0
       
       - name: Check for new Riksdag/Regering updates
         id: check-updates
@@ -113,6 +150,30 @@ jobs:
           LANGUAGES: ${{ github.event.inputs.languages || '' }}
         run: |
           echo "📰 Generating news articles..."
+          
+          # Check if MCP server is available
+          if [ "${{ steps.mcp-health.outputs.server_available }}" != "true" ]; then
+            echo "⚠️ riksdag-regering MCP server is unavailable"
+            echo "⚠️ Cannot generate articles without data source"
+            echo "⚠️ This may be due to:"
+            echo "   - Server cold start (Render.com free tier)"
+            echo "   - Network issues"
+            echo "   - Server maintenance"
+            echo ""
+            echo "📝 Creating placeholder metadata to prevent repeated attempts..."
+            
+            mkdir -p news/metadata
+            CURRENT_TIME="${{ steps.check-updates.outputs.current_time }}"
+            jq -n \
+              --arg ts "$CURRENT_TIME" \
+              '{timestamp: $ts, generated: 0, errors: 1, note: "MCP server unavailable"}' \
+              > news/metadata/last-generation.json
+            
+            echo "generated=0" >> $GITHUB_OUTPUT
+            echo "errors=1" >> $GITHUB_OUTPUT
+            
+            exit 0
+          fi
           
           # Determine article types based on time-of-day if not manually specified
           if [ -z "$ARTICLE_TYPES" ]; then
@@ -315,6 +376,18 @@ jobs:
         if: always()
         run: |
           echo "## 📰 News Generation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # MCP Server Status
+          echo "### 🔌 MCP Server Status" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.mcp-health.outputs.server_available }}" = "true" ]; then
+            echo "✅ **riksdag-regering MCP server**: Available" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **riksdag-regering MCP server**: Unavailable" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Note**: The MCP server may be cold starting (Render.com free tier)." >> $GITHUB_STEP_SUMMARY
+            echo "Try running the workflow again in 5-10 minutes." >> $GITHUB_STEP_SUMMARY
+          fi
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ "${{ steps.check-updates.outputs.should_generate }}" = "true" ]; then

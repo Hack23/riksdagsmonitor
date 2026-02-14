@@ -27,9 +27,9 @@
  */
 
 const DEFAULT_MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp';
-const DEFAULT_REQUEST_TIMEOUT = 30000; // 30 seconds
+const DEFAULT_REQUEST_TIMEOUT = 60000; // 60 seconds (increased for cold starts)
 const DEFAULT_MAX_RETRIES = 3;
-const RETRY_DELAY = 1000; // 1 second
+const RETRY_DELAY = 2000; // 2 seconds (increased for server spin-up)
 
 // JSON-RPC 2.0 request ID counter
 let jsonRpcId = 1;
@@ -150,7 +150,24 @@ export class MCPClient {
       // Only increment error count on final failure (not retries)
       this.errorCount++;
       
-      throw new Error(`MCP request failed: ${error.message}`);
+      // Provide helpful error message with troubleshooting hints
+      let errorMessage = `MCP request failed: ${error.message}`;
+      
+      if (error.name === 'AbortError' || errorMsg.includes('timeout')) {
+        errorMessage += `\n\n💡 Troubleshooting tips:
+  - The MCP server may be cold starting (Render.com free tier)
+  - Try increasing timeout or waiting a few minutes
+  - Server URL: ${this.baseURL}
+  - Consider running workflow again in 5-10 minutes`;
+      } else if (errorMsg.includes('network') || errorMsg.includes('econnrefused') || errorMsg.includes('fetch failed')) {
+        errorMessage += `\n\n💡 Troubleshooting tips:
+  - Check if MCP server is accessible: ${this.baseURL}
+  - Verify network connectivity
+  - The server may be temporarily unavailable
+  - Try manual workflow dispatch with force_generation=true`;
+      }
+      
+      throw new Error(errorMessage);
     } finally {
       // Always clear timeout to prevent timer leak
       clearTimeout(timeoutId);
