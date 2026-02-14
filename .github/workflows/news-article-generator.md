@@ -269,27 +269,49 @@ For the data retrieved:
 For each article type with significant updates:
 
 1. **Create HTML file** at `news/YYYY-MM-DD-{slug}-{lang}.html`
-2. **Include proper structure**:
+
+2. **HTML Requirements:**
+   - **MUST** use `<link rel="stylesheet" href="../styles.css">` - NO embedded `<style>` tags
+   - Follow "Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency."
+   - Use semantic HTML5: `<article>`, `<header>`, `<section>`, `<footer>`
+   - Include proper `<html lang="{lang}">` and `dir="rtl"` for Arabic/Hebrew
+   - Mobile-responsive (handled by styles.css)
+
+3. **Metadata Structure**:
    - SEO metadata (title, description, keywords)
    - Open Graph tags
-   - Schema.org NewsArticle
+   - Twitter Card tags
+   - Schema.org NewsArticle structured data
    - YAML frontmatter (in HTML comment)
-   - Hreflang tags for language alternatives
+   - Hreflang tags for all language alternatives
 
-3. **Write article content** following The Economist style:
+4. **Write article content** following The Economist style:
    - **Lead paragraph** (50 words): Who, what, when, where, why
    - **Context** (150-200 words): Background and history
    - **Evidence** (300-400 words): Data, quotes, documents
    - **Analysis** (200-300 words): Interpretation and implications
    - **Conclusion** (100 words): Synthesis and broader significance
 
-4. **Source attribution**:
+5. **CSS Classes Available in styles.css:**
+   - `.news-article` - Main container
+   - `.article-header` - Header with title and meta
+   - `.article-meta` - Date, time, article type
+   - `.lede` - Lead paragraph with accent border
+   - `.article-content` - Main content area
+   - `.context-box` - Information/background boxes
+   - `.event-calendar` - Calendar grid (for Week Ahead)
+   - `.watch-section` - Key points section
+   - `.article-footer` - Footer with sources
+   - `.article-sources` - Sources and attribution
+   - `.back-to-news` - Navigation link
+
+6. **Source attribution**:
    - Link to Riksdag documents (dok_id)
    - Cite government sources
    - Reference MCP tool calls
    - Include data timestamps
 
-5. **Generate requested languages**:
+7. **Generate requested languages**:
    - Parse the `languages` input
    - Expand presets: "nordic" → "en,sv,da,no,fi", "eu-core" → "en,sv,de,fr,es,nl", "all" → all 14
    - Generate article for each language with proper title/subtitle

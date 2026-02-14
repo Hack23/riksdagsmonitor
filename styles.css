@@ -8843,20 +8843,23 @@ body.news-page {
   }
 }
 /* ============================================================================
+/* =============================================
    NEWS ARTICLE STYLES
-   The Economist-style political journalism for individual articles
-   ============================================================================ */
+   For generated news articles (evening analysis, etc.)
+   Latest news and analysis from Sweden's Riksdag.
+   The Economist-style political journalism covering
+   parliament, government, and agencies with systematic transparency.
+   ============================================= */
 
-/* Article container - clean, professional layout */
+/* News Article Container */
 .news-article {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1.5rem;
   background: var(--bg-color, #f8f9fa);
-  color: var(--text-color, #1a1a1a);
 }
 
-/* Article header with branding accent */
+/* Article Header */
 .news-article .article-header {
   border-bottom: 3px solid var(--primary-color, #006633);
   padding-bottom: 1.5rem;
@@ -8869,10 +8872,8 @@ body.news-page {
   margin: 0 0 0.75rem 0;
   color: var(--header-color, #006633);
   font-weight: 700;
-  font-family: var(--font-main, 'Inter', sans-serif);
 }
 
-/* Article metadata - date, type, read time */
 .news-article .article-meta {
   display: flex;
   flex-wrap: wrap;
@@ -8890,7 +8891,103 @@ body.news-page {
   color: var(--border-color, #ccc);
 }
 
-/* Event Calendar - prospective coverage for Week Ahead */
+/* Lead Paragraph */
+.news-article .lede {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--text-color, #1a1a1a);
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary-color, #006633);
+}
+
+/* Article Content */
+.news-article .article-content h2 {
+  font-size: 1.75rem;
+  margin: 2.5rem 0 1rem 0;
+  color: var(--header-color, #006633);
+  font-weight: 600;
+}
+
+.news-article .article-content h3 {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.75rem 0;
+  color: var(--primary-color, #006633);
+  font-weight: 600;
+}
+
+.news-article .article-content p {
+  margin: 0 0 1.25rem 0;
+  line-height: 1.7;
+}
+
+/* Context Box */
+.news-article .context-box {
+  background: var(--badge-bg, #f8f9fa);
+  border-left: 4px solid var(--primary-color, #006633);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.news-article .context-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color, #006633);
+}
+
+.news-article .context-box ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.news-article .context-box li {
+  margin: 0.5rem 0;
+}
+
+/* Watch Section */
+.news-article .watch-section {
+  background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .watch-section h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.news-article .watch-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-article .watch-list li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.news-article .watch-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-article .watch-list strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Event Calendar (for Week Ahead articles) */
 .news-article .event-calendar {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
   color: white;
@@ -8924,9 +9021,17 @@ body.news-page {
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.news-article .calendar-day:hover {
+/* Note: calendar-day is currently a non-interactive <div> without tabindex.
+   Focus states below are included for future enhancement if calendar days
+   become interactive (e.g., clickable for drill-down details).
+   Currently only :hover applies. */
+.news-article .calendar-day:hover,
+.news-article .calendar-day:focus,
+.news-article .calendar-day:focus-visible {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
 }
 
 .news-article .calendar-day.today {
@@ -8970,135 +9075,17 @@ body.news-page {
 }
 
 .news-article .event-time {
-  display: block;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-weight: 500;
 }
 
 .news-article .event-title {
-  display: block;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Article Content - The Economist style typography */
-.news-article .article-content {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  font-family: var(--font-main, 'Inter', sans-serif);
-}
-
-/* Lede paragraph - standout opening */
-.news-article .lede {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  font-weight: 500;
-  color: var(--text-color, #1a1a1a);
-  margin-bottom: 2rem;
-  padding-left: 1rem;
-  border-left: 4px solid var(--primary-color, #006633);
-}
-
-.news-article .article-content h2 {
-  font-size: 1.75rem;
-  color: var(--header-color, #006633);
-  margin: 2.5rem 0 1rem 0;
-  font-weight: 700;
-}
-
-.news-article .article-content h3 {
-  font-size: 1.35rem;
-  color: var(--primary-color, #006633);
-  margin: 2rem 0 0.75rem 0;
   font-weight: 600;
+  margin-top: 0.25rem;
 }
 
-.news-article .article-content p {
-  margin-bottom: 1.25rem;
-}
-
-.news-article .article-content ul,
-.news-article .article-content ol {
-  margin: 1.25rem 0;
-  padding-left: 2rem;
-}
-
-.news-article .article-content li {
-  margin-bottom: 0.75rem;
-}
-
-.news-article .article-content a {
-  color: var(--link-color, #007744);
-  text-decoration: underline;
-  text-decoration-color: rgba(0, 119, 68, 0.3);
-  text-underline-offset: 2px;
-  transition: all 0.2s ease;
-}
-
-.news-article .article-content a:hover {
-  color: var(--link-hover, #006633);
-  text-decoration-color: var(--link-hover, #006633);
-}
-
-/* Context boxes for additional information */
-.news-article .context-box {
-  background: var(--badge-bg, #f8f9fa);
-  border-left: 4px solid var(--primary-color, #006633);
-  padding: 1.5rem;
-  margin: 2rem 0;
-  border-radius: var(--border-radius-sm, 4px);
-}
-
-.news-article .context-box h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: var(--primary-color, #006633);
-}
-
-/* Watch Section - key points to monitor */
-.news-article .watch-section {
-  background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
-  color: white;
-  border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
-  margin: 2rem 0;
-}
-
-.news-article .watch-section h2 {
-  font-size: 1.5rem;
-  margin: 0 0 1.5rem 0;
-  font-weight: 700;
-  text-align: center;
-}
-
-.news-article .watch-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.news-article .watch-list li {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  line-height: 1.6;
-}
-
-.news-article .watch-list li:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.news-article .watch-list strong {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-}
-
-/* Article Footer - sources and navigation */
+/* Article Footer */
 .news-article .article-footer {
   border-top: 2px solid var(--section-border, #e9ecef);
   margin-top: 3rem;
@@ -9139,14 +9126,18 @@ body.news-page {
   transition: all 0.3s ease;
 }
 
-.news-article .back-to-news:hover {
+.news-article .back-to-news:hover,
+.news-article .back-to-news:focus,
+.news-article .back-to-news:focus-visible {
   background: var(--link-color, #007744);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 119, 68, 0.2);
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
 }
 
-/* News Article Responsive Design */
+/* Responsive Design for News Articles */
 @media (max-width: 768px) {
   .news-article {
     padding: 0 1rem;
@@ -9156,44 +9147,15 @@ body.news-page {
     font-size: 1.75rem;
   }
   
-  .news-article .article-content {
-    font-size: 1rem;
-  }
-  
-  .news-article .lede {
-    font-size: 1.05rem;
-  }
-  
   .news-article .calendar-grid {
     grid-template-columns: 1fr;
   }
   
-  .news-article .event-calendar,
-  .news-article .watch-section {
+  .news-article .event-calendar {
     padding: 1.5rem;
   }
-}
-
-/* Print Styles for News Articles */
-@media print {
-  .news-article {
-    max-width: 100%;
-    padding: 0;
-  }
   
-  .news-article .event-calendar,
   .news-article .watch-section {
-    background: white;
-    color: black;
-    border: 2px solid #006633;
-    page-break-inside: avoid;
-  }
-  
-  .news-article .back-to-news {
-    display: none;
-  }
-  
-  .news-article .article-header {
-    border-bottom-color: #006633;
+    padding: 1.5rem;
   }
 }
