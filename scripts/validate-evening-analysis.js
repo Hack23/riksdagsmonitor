@@ -147,7 +147,7 @@ function calculateAnalyticalDepth(html) {
     'forward-looking': [/will/i, /likely/i, /expected/i, /projected/i, /forecast/i]
   };
   
-  for (const [category, markers] of Object.entries(analyticalMarkers)) {
+  for (const markers of Object.values(analyticalMarkers)) {
     const found = markers.some(marker => marker.test(html));
     if (found) {
       score += 0.2;
@@ -339,13 +339,13 @@ function printValidation(validation) {
   console.log('\n📏 Word Counts per Section');
   console.log('  • Lead Paragraph:', validation.structure.wordCounts.leadParagraph, 'words');
   console.log('  • Parliamentary Pulse:', validation.structure.wordCounts.parliamentaryPulse, 'words', 
-    validation.structure.wordCounts.parliamentaryPulse >= 150 ? '✅' : '⚠️  (min 150)');
+    validation.structure.wordCounts.parliamentaryPulse >= 200 ? '✅' : '⚠️  (min 200)');
   console.log('  • Government Watch:', validation.structure.wordCounts.governmentWatch, 'words',
-    validation.structure.wordCounts.governmentWatch >= 150 ? '✅' : '⚠️  (min 150)');
+    validation.structure.wordCounts.governmentWatch >= 200 ? '✅' : '⚠️  (min 200)');
   console.log('  • Opposition Dynamics:', validation.structure.wordCounts.oppositionDynamics, 'words',
-    validation.structure.wordCounts.oppositionDynamics >= 150 ? '✅' : '⚠️  (min 150)');
+    validation.structure.wordCounts.oppositionDynamics >= 200 ? '✅' : '⚠️  (min 200)');
   console.log('  • Looking Ahead:', validation.structure.wordCounts.lookingAhead, 'words',
-    validation.structure.wordCounts.lookingAhead >= 80 ? '✅' : '⚠️  (min 80)');
+    validation.structure.wordCounts.lookingAhead >= 100 ? '✅' : '⚠️  (min 100)');
   
   console.log('\n🎯 Analytical Quality');
   console.log('  • Analytical Depth:', validation.analyticalDepth.toFixed(2), 
