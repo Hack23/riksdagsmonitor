@@ -30,9 +30,9 @@ timeout-minutes: 30
 network:
   allowed:
     - defaults
-    - node
     - "*.com"
     - "*.se"
+    - "*.org"
 
 mcp-servers:
   riksdag-regering:
@@ -53,6 +53,7 @@ safe-outputs:
   allowed-domains:
     - "*.com"
     - "*.se"
+    - "*.org"
   create-pull-request: {}
   add-comment: {}
 
