@@ -8874,6 +8874,17 @@ body.news-page {
   font-weight: 700;
 }
 
+/* Economist-style subtitle tagline */
+.news-article .article-tagline {
+  font-size: 0.95rem;
+  color: var(--text-secondary, #4a4a4a);
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Article metadata - date, type, read time */
 .news-article .article-meta {
   display: flex;
   flex-wrap: wrap;
