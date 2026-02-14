@@ -8744,19 +8744,21 @@ body.news-page {
   }
 }
 
-/* ====================================================================
+/* ============================================================================
    NEWS ARTICLE STYLES
-   Economist-style political journalism for generated articles
-   ==================================================================== */
+   The Economist-style political journalism for individual articles
+   ============================================================================ */
 
-/* Article Container & Structure */
+/* Article container - clean, professional layout */
 .news-article {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1.5rem;
+  background: var(--bg-color, #f8f9fa);
+  color: var(--text-color, #1a1a1a);
 }
 
-/* Article Header with Economist-style */
+/* Article header with branding accent */
 .news-article .article-header {
   border-bottom: 3px solid var(--primary-color, #006633);
   padding-bottom: 1.5rem;
@@ -8782,6 +8784,7 @@ body.news-page {
   letter-spacing: 0.02em;
 }
 
+/* Article metadata - date, type, read time */
 .news-article .article-meta {
   display: flex;
   flex-wrap: wrap;
@@ -8799,7 +8802,7 @@ body.news-page {
   color: var(--border-color, #ccc);
 }
 
-/* Event Calendar */
+/* Event Calendar - prospective coverage for Week Ahead */
 .news-article .event-calendar {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
   color: white;
@@ -8892,15 +8895,14 @@ body.news-page {
   line-height: 1.4;
 }
 
-/* Article Content - Economist Typography */
+/* Article Content - The Economist style typography */
 .news-article .article-content {
   font-size: 1.05rem;
   line-height: 1.8;
-  max-width: 66ch; /* Optimal reading length */
-  margin: 0 auto;
+  font-family: var(--font-main, 'Inter', sans-serif);
 }
 
-/* Lede paragraph with drop cap (Economist style) */
+/* Lede paragraph - standout opening */
 .news-article .lede {
   font-size: 1.15rem;
   line-height: 1.7;
@@ -8911,23 +8913,11 @@ body.news-page {
   border-left: 4px solid var(--primary-color, #006633);
 }
 
-/* Drop cap for first letter (optional Economist flourish) */
-.news-article .lede::first-letter {
-  float: left;
-  font-size: 3.5rem;
-  line-height: 0.85;
-  margin: 0.1rem 0.1rem 0 0;
-  font-weight: 700;
-  color: var(--primary-color, #006633);
-}
-
 .news-article .article-content h2 {
   font-size: 1.75rem;
   color: var(--header-color, #006633);
   margin: 2.5rem 0 1rem 0;
   font-weight: 700;
-  border-top: 1px solid var(--section-border, #e9ecef);
-  padding-top: 2rem;
 }
 
 .news-article .article-content h3 {
@@ -8939,10 +8929,6 @@ body.news-page {
 
 .news-article .article-content p {
   margin-bottom: 1.25rem;
-  text-align: justify; /* Economist uses justified text */
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
 }
 
 .news-article .article-content ul,
@@ -8968,7 +8954,7 @@ body.news-page {
   text-decoration-color: var(--link-hover, #006633);
 }
 
-/* Context boxes - Economist "explainer" style */
+/* Context boxes for additional information */
 .news-article .context-box {
   background: var(--badge-bg, #f8f9fa);
   border-left: 4px solid var(--primary-color, #006633);
@@ -8981,55 +8967,9 @@ body.news-page {
   margin-top: 0;
   font-size: 1.2rem;
   color: var(--primary-color, #006633);
-  font-weight: 700;
 }
 
-/* "Why This Matters" section - Economist analysis style */
-.news-article .why-matters {
-  background: linear-gradient(135deg, rgba(0, 102, 51, 0.05) 0%, rgba(0, 119, 68, 0.02) 100%);
-  border: 2px solid var(--primary-color, #006633);
-  border-radius: var(--border-radius, 8px);
-  padding: 2rem;
-  margin: 2.5rem 0;
-}
-
-.news-article .why-matters h3 {
-  margin-top: 0;
-  color: var(--primary-color, #006633);
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.news-article .why-matters p {
-  margin-bottom: 1rem;
-  text-align: left; /* No justification in boxes */
-}
-
-/* Pull quotes - Economist style */
-.news-article .pull-quote {
-  font-size: 1.35rem;
-  line-height: 1.5;
-  font-weight: 600;
-  color: var(--primary-color, #006633);
-  margin: 2.5rem 0;
-  padding: 1.5rem 2rem;
-  border-left: 5px solid var(--primary-color, #006633);
-  font-style: italic;
-  position: relative;
-}
-
-.news-article .pull-quote::before {
-  content: '"';
-  font-size: 4rem;
-  position: absolute;
-  top: -1rem;
-  left: 0.5rem;
-  opacity: 0.2;
-  font-family: Georgia, serif;
-}
-
-/* Watch Section */
+/* Watch Section - key points to monitor */
 .news-article .watch-section {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
   color: white;
@@ -9070,14 +9010,11 @@ body.news-page {
   font-size: 1.05rem;
 }
 
-/* Article Footer */
+/* Article Footer - sources and navigation */
 .news-article .article-footer {
   border-top: 2px solid var(--section-border, #e9ecef);
   margin-top: 3rem;
   padding-top: 2rem;
-  max-width: 66ch;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .news-article .article-sources {
@@ -9097,7 +9034,6 @@ body.news-page {
   margin: 0.75rem 0;
   font-size: 0.95rem;
   color: var(--text-secondary, #4a4a4a);
-  text-align: left; /* No justification in metadata */
 }
 
 .news-article .article-nav {
@@ -9115,18 +9051,14 @@ body.news-page {
   transition: all 0.3s ease;
 }
 
-.news-article .back-to-news:hover,
-.news-article .back-to-news:focus,
-.news-article .back-to-news:focus-visible {
+.news-article .back-to-news:hover {
   background: var(--link-color, #007744);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 119, 68, 0.2);
-  outline: 3px solid currentColor;
-  outline-offset: 2px;
 }
 
-/* Responsive Design for News Articles */
+/* News Article Responsive Design */
 @media (max-width: 768px) {
   .news-article {
     padding: 0 1rem;
@@ -9140,21 +9072,17 @@ body.news-page {
     font-size: 1rem;
   }
   
-  .news-article .article-content p {
-    text-align: left; /* No justification on mobile */
-  }
-  
-  .news-article .lede::first-letter {
-    font-size: 2.5rem; /* Smaller drop cap on mobile */
+  .news-article .lede {
+    font-size: 1.05rem;
   }
   
   .news-article .calendar-grid {
     grid-template-columns: 1fr;
   }
   
-  .pull-quote {
-    font-size: 1.15rem;
-    padding: 1rem 1.5rem;
+  .news-article .event-calendar,
+  .news-article .watch-section {
+    padding: 1.5rem;
   }
 }
 
@@ -9162,42 +9090,22 @@ body.news-page {
 @media print {
   .news-article {
     max-width: 100%;
+    padding: 0;
   }
   
-  body {
-    background: white;
-  }
-  
-  .event-calendar,
-  .watch-section {
+  .news-article .event-calendar,
+  .news-article .watch-section {
     background: white;
     color: black;
     border: 2px solid #006633;
+    page-break-inside: avoid;
   }
   
-  .back-to-news {
+  .news-article .back-to-news {
     display: none;
   }
   
-  .article-content p {
-    text-align: left; /* No justification in print */
-  }
-}
-
-/* Dark Mode Support for News Articles (if ever needed) */
-@media (prefers-color-scheme: dark) {
-  .news-article {
-    color: #e0e0e0;
-  }
-  
-  .article-header h1,
-  .article-content h2,
-  .article-content h3 {
-    color: var(--primary-light, #007744);
-  }
-  
-  .context-box,
-  .article-sources {
-    background: rgba(255, 255, 255, 0.05);
+  .news-article .article-header {
+    border-bottom-color: #006633;
   }
 }
