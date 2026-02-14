@@ -459,6 +459,167 @@ graph LR
 | **Financial Authority** | Budget, Spending | Monthly | CIA Platform |
 | **World Bank** | Country Indicators | Quarterly | CIA Platform |
 
+### 5.3 News Generation Architecture
+
+#### 5.3.1 Evening Analysis Editorial Structure
+
+The evening analysis workflow follows a **5 Editorial Pillars** structure inspired by The Economist's analytical journalism:
+
+```mermaid
+graph TD
+    subgraph "Evening Analysis Structure"
+        Lead[1. Lead Story<br/>400-800 words<br/>Analytical thesis]
+        Pulse[2. Parliamentary Pulse<br/>200-400 words<br/>Legislative activity]
+        Watch[3. Government Watch<br/>200-300 words<br/>Executive actions]
+        Opposition[4. Opposition Dynamics<br/>200-300 words<br/>Cross-party analysis]
+        Ahead[5. Looking Ahead<br/>100-200 words<br/>Tomorrow's preview]
+    end
+    
+    Lead --> Pulse
+    Pulse --> Watch
+    Watch --> Opposition
+    Opposition --> Ahead
+    
+    style Lead fill:#ff9800
+    style Pulse fill:#4caf50
+    style Watch fill:#2196f3
+    style Opposition fill:#9c27b0
+    style Ahead fill:#00bcd4
+```
+
+**Pillar Definitions:**
+
+1. **Lead Story** - Opening narrative establishing the day's main theme
+   - Analytical thesis in lead paragraph
+   - "Why this matters" context
+   - Most significant development with implications
+   - Sets tone for entire article
+
+2. **Parliamentary Pulse** - Legislative body activity summary
+   - Key votes and margins
+   - Committee reports published
+   - Debate highlights
+   - Speeches and procedural actions
+
+3. **Government Watch** - Executive branch monitoring
+   - New propositions
+   - Ministerial announcements
+   - Policy changes
+   - Regulatory actions
+
+4. **Opposition Dynamics** - Cross-party political analysis
+   - Opposition party strategies
+   - Coalition tensions
+   - Cross-party collaboration patterns
+   - Political maneuvering
+
+5. **Looking Ahead** - Forward-looking preview
+   - Tomorrow's parliamentary calendar
+   - Upcoming votes and debates
+   - Expected announcements
+   - "What to watch" guidance
+
+#### 5.3.2 Quality Metrics Schema
+
+News articles are validated against comprehensive quality metrics:
+
+**Quality Dimensions:**
+
+| Dimension | Metric | Target | Measurement |
+|-----------|--------|--------|-------------|
+| **Analytical Depth** | Score 0.0-1.0 | ≥ 0.6 | Causal, comparative, evaluative markers |
+| **Historical Context** | Score 0-3 | ≥ 1.0 | Historical references, trends, comparisons |
+| **Party Coverage** | Count | ≥ 6 | Unique party mentions |
+| **Source Citations** | Count | ≥ 5 | riksdag-regering-mcp tool usage |
+| **International Comparison** | Boolean | 60%+ | European/global context present |
+| **Structure Completeness** | Boolean | 100% | All 5 pillars present |
+
+**Quality Score Calculation:**
+- Structure (30%): All pillars + minimum word counts
+- Analytical depth (20%): Marker detection
+- Historical context (15%): Temporal references
+- Sources (15%): Citation count
+- Party perspectives (10%): Coverage breadth
+- Forward-looking (5%): Preview content
+- International comparison (5%): Global context
+
+#### 5.3.3 Workflow State Management
+
+Cross-workflow coordination prevents duplication and maintains quality:
+
+```mermaid
+graph LR
+    subgraph "Workflow State"
+        State[workflow-state.json<br/>Shared state file]
+        
+        Evening[Evening Analysis<br/>18:00 UTC]
+        Realtime[Realtime Monitor<br/>Every 2 hours]
+        Generator[Article Generator<br/>05:51 UTC]
+    end
+    
+    Evening -->|Write| State
+    Realtime -->|Write| State
+    Generator -->|Write| State
+    
+    State -->|Read| Evening
+    State -->|Read| Realtime
+    State -->|Read| Generator
+    
+    style State fill:#ff9800
+    style Evening fill:#4caf50
+    style Realtime fill:#2196f3
+    style Generator fill:#9c27b0
+```
+
+**State File Schema:**
+- `lastEveningAnalysis`: Timestamp of last evening analysis
+- `realtimeArticlesSinceEvening`: Recent breaking news (for deduplication)
+- `mcpQueryCache`: 2-hour TTL cache of MCP queries
+- `eveningAnalysisMetrics`: Aggregate quality scores
+
+**Deduplication Logic:**
+- Calculate text similarity (word overlap) between new and recent articles
+- If similarity > 70%, synthesize but don't repeat verbatim
+- Reference earlier coverage, add deeper analysis layer
+- Update workflow state after successful generation
+
+#### 5.3.4 Multi-Language Content Architecture
+
+14-language support with consistent quality across all versions:
+
+```mermaid
+graph TB
+    subgraph "Language Generation"
+        Source[Agent Generation<br/>Claude Opus 4.6]
+        
+        Nordic[Nordic Languages<br/>en, sv, da, no, fi]
+        EU[EU Core<br/>de, fr, es, nl]
+        Global[Global<br/>ar, he, ja, ko, zh]
+    end
+    
+    Source --> Nordic
+    Source --> EU
+    Source --> Global
+    
+    Nordic --> Validation[Quality Validation<br/>All languages]
+    EU --> Validation
+    Global --> Validation
+    
+    style Source fill:#9c27b0
+    style Nordic fill:#4caf50
+    style EU fill:#2196f3
+    style Global fill:#ff9800
+    style Validation fill:#00bcd4
+```
+
+**Language-Specific Requirements:**
+- Proper HTML `lang` attribute
+- RTL support (`dir="rtl"`) for Arabic and Hebrew
+- Hreflang tags linking all 14 versions
+- Schema.org NewsArticle in each language
+- Culturally appropriate tone and formatting
+- Consistent analytical depth across languages (±0.5 on 1.0 scale)
+
 ## 6. Scalability Architecture
 
 ### 6.1 Traffic Handling

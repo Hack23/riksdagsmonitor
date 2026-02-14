@@ -75,7 +75,7 @@ function isTodayDate(date) {
  * Map of custom locale codes to Intl-compatible locale strings
  */
 const LOCALE_MAP = {
-  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'nb-NO', fi: 'fi-FI',
+  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'no-NO', fi: 'fi-FI',
   de: 'de-DE', fr: 'fr-FR', es: 'es-ES', nl: 'nl-NL', ar: 'ar-SA',
   he: 'he-IL', ja: 'ja-JP', ko: 'ko-KR', zh: 'zh-CN'
 };
