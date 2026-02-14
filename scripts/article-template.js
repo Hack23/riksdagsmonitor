@@ -76,6 +76,20 @@ function getNewsIndexFilename(lang) {
 }
 
 /**
+ * Sanitize article body content for JSON-LD structured data
+ * Removes newlines and normalizes whitespace to prevent invalid JSON
+ * @param {string} htmlContent - Article HTML content
+ * @returns {string} Sanitized content suitable for JSON-LD
+ */
+function sanitizeArticleBody(htmlContent) {
+  return htmlContent
+    .substring(0, 500)
+    .replace(/\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
  * Generate complete article HTML
  * 
  * @param {Object} data - Article data
@@ -236,7 +250,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb'
       "height": 630
     },
     "articleSection": "${typeLabel}",
-    "articleBody": "${escapeHtml(content).substring(0, 500)}...",
+    "articleBody": "${escapeHtml(sanitizeArticleBody(content))}...",
     "wordCount": ${Math.ceil(content.length / 5)},
     "inLanguage": "${lang}",
     "keywords": "${keywords.join(', ')}",

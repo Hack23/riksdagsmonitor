@@ -691,7 +691,10 @@
       leaderSection.className = 'party-leader';
       
       const leaderName = document.createElement('p');
-      leaderName.innerHTML = `<strong>${leaderLabel}:</strong> ${leader.name}`;
+      const leaderStrong = document.createElement('strong');
+      leaderStrong.textContent = `${leaderLabel}:`;
+      leaderName.appendChild(leaderStrong);
+      leaderName.appendChild(document.createTextNode(` ${leader.name}`));
       leaderSection.appendChild(leaderName);
 
       // Enhanced leader information (if available)
