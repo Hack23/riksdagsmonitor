@@ -79,7 +79,13 @@ jobs:
             HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -m 30 \
               -X POST "$MCP_SERVER_URL" \
               -H "Content-Type: application/json" \
-              -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' 2>&1 || echo "000")
+              -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' 2>/dev/null)
+            CURL_EXIT=$?
+            
+            if [ $CURL_EXIT -ne 0 ]; then
+              echo "  ❌ Request to MCP server failed (curl exit code $CURL_EXIT)"
+              HTTP_CODE="000"
+            fi
             
             if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "204" ]; then
               echo "✅ MCP server is healthy (HTTP $HTTP_CODE)"
