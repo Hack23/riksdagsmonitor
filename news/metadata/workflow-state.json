@@ -1,16 +1,6 @@
 {
-  "lastUpdated": "2026-02-14T00:00:00.000Z",
-  "lastEveningAnalysis": "2026-02-13T18:00:00.000Z",
-  "lastRealtimeMonitor": null,
-  "lastArticleGenerator": "2026-02-14T08:00:00.000Z",
-  "realtimeArticlesSinceEvening": [],
+  "lastUpdate": null,
+  "recentArticles": [],
   "mcpQueryCache": {},
-  "eveningAnalysisMetrics": {
-    "date": "2026-02-13",
-    "languagesGenerated": 14,
-    "avgQualityScore": 0.82,
-    "avgAnalyticalDepth": 0.75,
-    "historicalContextPresent": 14,
-    "internationalComparisons": 8
-  }
+  "note": "This file is used for coordination between agentic and traditional workflows"
 }

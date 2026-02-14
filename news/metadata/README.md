@@ -1,144 +1,178 @@
 # News Metadata Directory
 
-This directory contains shared state and quality metrics for news generation workflows.
+This directory contains metadata files used for news generation workflow coordination and error tracking.
 
 ## Files
 
-### workflow-state.json
-**Purpose:** Shared state across news workflows for coordination and deduplication
+### `last-generation.json`
+Tracks the last successful news generation run.
 
-**Schema:** `workflow-state.schema.json`
-
-**Structure:**
+**Schema:**
 ```json
 {
-  "lastUpdated": "ISO 8601 timestamp",
-  "lastEveningAnalysis": "ISO 8601 timestamp",
-  "lastRealtimeMonitor": "ISO 8601 timestamp",
-  "lastArticleGenerator": "ISO 8601 timestamp",
-  "realtimeArticlesSinceEvening": [
+  "timestamp": "2026-02-14T12:00:00Z",
+  "generated": 5,
+  "errors": 0,
+  "types": "week-ahead,committee-reports",
+  "status": "success"
+}
+```
+
+**Purpose:**
+- Prevents duplicate generation runs (5-hour threshold)
+- Tracks generation success/failure metrics
+- Used by workflow to determine if generation should run
+
+### `errors.json`
+Structured error logging for workflow failures.
+
+**Schema:**
+```json
+{
+  "lastError": {
+    "timestamp": "2026-02-14T12:00:00Z",
+    "workflow": "news-generation.yml",
+    "errorType": "script_missing",
+    "message": "scripts/generate-news-enhanced.js not found",
+    "severity": "critical",
+    "retryable": false
+  },
+  "errorHistory": [
     {
-      "slug": "article-slug",
-      "timestamp": "ISO 8601 timestamp",
-      "topics": ["topic1", "topic2"],
-      "synthesizedInEvening": true|false,
-      "languages": ["en", "sv", ...]
+      "timestamp": "2026-02-13T18:00:00Z",
+      "errorType": "mcp_unavailable",
+      "message": "riksdag-regering-mcp server timeout",
+      "severity": "warning",
+      "retryable": true
+    }
+  ]
+}
+```
+
+**Error Types:**
+- `script_missing` (severity: critical, retryable: false)
+  - Critical script files not found
+  - Requires immediate maintainer attention
+- `mcp_unavailable` (severity: warning, retryable: true)
+  - riksdag-regering-mcp server timeout or unavailable
+  - Transient network/service issues
+- `script_failure` (severity: error, retryable: true)
+  - Script execution failed with exit code
+  - May be data quality or logic issues
+- `unknown` (severity: error, retryable: true)
+  - Unclassified errors
+
+**Purpose:**
+- Structured error tracking for diagnostics
+- Critical error notification triggers
+- Error pattern analysis for workflow improvements
+
+### `workflow-state.json`
+Coordination between agentic and traditional workflows.
+
+**Schema:**
+```json
+{
+  "lastUpdate": "2026-02-14T12:00:00Z",
+  "recentArticles": [
+    {
+      "id": "2026-02-14-week-ahead-en",
+      "timestamp": "2026-02-14T12:00:00Z",
+      "type": "week-ahead",
+      "languages": ["en", "sv"]
     }
   ],
   "mcpQueryCache": {
-    "query-key": {
-      "query": "MCP query string",
-      "result": { },
-      "timestamp": "ISO 8601 timestamp",
-      "ttl": 7200
+    "calendar_events_2026-02-14": {
+      "timestamp": "2026-02-14T11:30:00Z",
+      "ttl": 7200,
+      "data": []
     }
   },
-  "eveningAnalysisMetrics": {
-    "date": "YYYY-MM-DD",
-    "languagesGenerated": 14,
-    "avgQualityScore": 0.82,
-    "avgAnalyticalDepth": 0.75,
-    "historicalContextPresent": 14,
-    "internationalComparisons": 8
-  }
+  "note": "This file is used for coordination between agentic and traditional workflows"
 }
 ```
 
-**Usage:**
-- Read by workflows before generation to avoid duplication
-- Updated after generation with new articles and metrics
-- MCP query cache has 2-hour TTL to prevent redundant API calls
+**Purpose:**
+- Prevents duplicate work between agentic and traditional workflows
+- MCP query caching (2-hour TTL) to reduce API calls
+- Recent article tracking for similarity-based deduplication
+- Traditional workflow skips if agentic activity recent (<2 hours)
 
-### quality-metrics.json
-**Purpose:** Track quality scores for all generated articles
+### `generation-result.json`
+Output from news generation script.
 
-**Schema:** `quality-metrics.schema.json`
-
-**Structure:**
+**Schema:**
 ```json
 {
-  "YYYY-MM-DD-article-type": {
-    "date": "YYYY-MM-DD",
-    "workflow": "evening-analysis|realtime-monitor|article-generator",
-    "languages": 14,
-    "metrics": {
-      "en": {
-        "qualityScore": 0.82,
-        "analyticalDepth": 0.75,
-        "historicalContext": 2,
-        "internationalComparisons": 1,
-        "partyPerspectives": 7,
-        "sources": 15,
-        "wordCount": 2850,
-        "hasAllPillars": true
-      },
-      "sv": { ... }
-    },
-    "aggregateMetrics": {
-      "avgQualityScore": 0.82,
-      "avgAnalyticalDepth": 0.75,
-      "historicalContextPresent": 14,
-      "internationalComparisons": 8
+  "timestamp": "2026-02-14T12:00:00Z",
+  "generated": 5,
+  "errors": 0,
+  "articles": [
+    {
+      "id": "2026-02-14-week-ahead-en",
+      "type": "week-ahead",
+      "language": "en",
+      "path": "news/2026-02-14-week-ahead-en.html",
+      "qualityScore": 0.85
     }
-  }
+  ]
 }
 ```
 
-**Validation:**
-- Automatically updated by `scripts/validate-evening-analysis.js`
-- Used for quality tracking and trend analysis
-- Aggregate metrics calculated across all language versions
+**Purpose:**
+- Output from generate-news-enhanced.js
+- Used by workflow to determine PR creation
+- Tracks article metadata for quality analysis
 
 ## Workflow Integration
 
-### Evening Analysis Workflow
-1. Read `workflow-state.json` to check recent articles
-2. Generate article with deduplication
-3. Validate with `scripts/validate-evening-analysis.js`
-4. Update `quality-metrics.json` with scores
-5. Update `workflow-state.json` with completion timestamp
-
-### Realtime Monitor Workflow
-1. Read `workflow-state.json` to check last evening analysis
-2. Generate breaking news articles
-3. Add to `realtimeArticlesSinceEvening` array
-4. Update `workflow-state.json`
-
-### Deduplication Logic
-- Calculate text similarity between new article and recent articles
-- If similarity > 70%, synthesize but don't repeat verbatim
-- Reference earlier coverage, add deeper analysis
-- Mark as `synthesizedInEvening: true` in workflow state
-
-## Quality Thresholds
-
-### Evening Analysis
-- Overall quality score ≥ 0.75 (good)
-- Analytical depth ≥ 0.6 (acceptable)
-- Historical context ≥ 1.0 (present)
-- Party perspectives ≥ 6 (balanced)
-- Source citations ≥ 5 (documented)
-- International comparison in 60%+ articles
-
-### Validation
-Run validation script:
-```bash
-node scripts/validate-evening-analysis.js news/YYYY-MM-DD-evening-analysis-en.html
+### Traditional Workflow (news-generation.yml)
+```yaml
+# 1. Check last generation time (last-generation.json)
+# 2. Check agentic workflow activity (workflow-state.json)
+# 3. Generate articles if needed
+# 4. Log errors to errors.json on failure
+# 5. Update last-generation.json on success/failure
+# 6. Commit timestamp if 0 articles generated
+# 7. Create PR if articles > 0
 ```
 
-## Data Retention
-- `workflow-state.json`: Rolling state (keep latest)
-- `quality-metrics.json`: Historical data (retain indefinitely)
-- `realtimeArticlesSinceEvening`: Cleared after evening analysis
-- `mcpQueryCache`: 2-hour TTL, auto-expire
+### Agentic Workflows
+- `news-realtime-monitor.md` - Real-time breaking news
+- `news-evening-analysis.md` - Evening comprehensive analysis
+- `news-article-generator.md` - Batch article generation
 
-## Schema Validation
-Schemas are defined using JSON Schema Draft 7:
-- `workflow-state.schema.json`
-- `quality-metrics.schema.json`
+**Coordination:**
+- Agentic workflows update workflow-state.json with lastUpdate
+- Traditional workflow checks lastUpdate and skips if < 2 hours
+- Prevents duplicate articles when both workflows active
 
-Validate with:
-```bash
-ajv validate -s workflow-state.schema.json -d workflow-state.json
-ajv validate -s quality-metrics.schema.json -d quality-metrics.json
+## Error Notification
+
+Critical errors (severity=critical) trigger GitHub issue comments:
+
+```yaml
+- name: Notify on critical failure
+  if: failure() && steps.generate.outcome == 'failure'
+  uses: actions/github-script@v7
+  # Reads errors.json and comments on open bug issues
 ```
+
+## Maintenance
+
+**Cleanup:**
+- `errorHistory` should be pruned to last 10 errors
+- `mcpQueryCache` entries older than TTL should be removed
+- `recentArticles` should be pruned to last 6 hours
+
+**Monitoring:**
+- Track error rates by errorType
+- Monitor workflow success rate
+- Analyze zero-article run frequency
+
+## References
+
+- Workflow: `.github/workflows/news-generation.yml`
+- Tests: `tests/workflows/news-generation.test.js`
+- Issue: #161
