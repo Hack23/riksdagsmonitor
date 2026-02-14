@@ -237,6 +237,49 @@ const LANGUAGES = {
   }
 };
 
+// Language flags mapping for badges
+const LANGUAGE_FLAGS = {
+  en: '🇬🇧', sv: '🇸🇪', da: '🇩🇰', no: '🇳🇴', fi: '🇫🇮',
+  de: '🇩🇪', fr: '🇫🇷', es: '🇪🇸', nl: '🇳🇱', ar: '🇸🇦',
+  he: '🇮🇱', ja: '🇯🇵', ko: '🇰🇷', zh: '🇨🇳'
+};
+
+// "Available in" translations for each language
+const AVAILABLE_IN_TRANSLATIONS = {
+  en: 'Available in', sv: 'Tillgänglig på', da: 'Tilgængelig på', no: 'Tilgjengelig på', fi: 'Saatavilla kielellä',
+  de: 'Verfügbar in', fr: 'Disponible en', es: 'Disponible en', nl: 'Beschikbaar in', ar: 'متاح في',
+  he: 'זמין ב', ja: '利用可能な言語', ko: '사용 가능 언어', zh: '可用语言'
+};
+
+/**
+ * Generate language badge HTML for an article
+ * @param {string} lang - Language code (e.g., 'en', 'sv')
+ * @param {boolean} isRTL - Whether the current display language is RTL
+ * @returns {string} HTML for language badge
+ */
+function generateLanguageBadge(lang, isRTL = false) {
+  const flag = LANGUAGE_FLAGS[lang] || '🌐';
+  const langUpper = lang.toUpperCase();
+  const dirAttr = isRTL ? ' dir="ltr"' : '';
+  return `<span class="language-badge"${dirAttr} aria-label="${LANGUAGES[lang]?.name || lang} language"><span aria-hidden="true">${flag}</span> ${langUpper}</span>`;
+}
+
+/**
+ * Generate "Available in" text with language badges
+ * @param {Array} languages - Array of language codes
+ * @param {string} currentLang - Current display language
+ * @returns {string} HTML for available languages display
+ */
+function generateAvailableLanguages(languages, currentLang) {
+  if (!languages || languages.length <= 1) return '';
+  
+  const isRTL = ['ar', 'he'].includes(currentLang);
+  const availableText = AVAILABLE_IN_TRANSLATIONS[currentLang] || 'Available in';
+  const badges = languages.map(lang => generateLanguageBadge(lang, isRTL)).join(' ');
+  
+  return `<p class="available-languages"${isRTL ? ' dir="ltr"' : ''}><strong>${availableText}:</strong> ${badges}</p>`;
+}
+
 console.log('🗂️ Dynamic News Index Generation');
 console.log('📍 Scanning news directory:', NEWS_DIR);
 
@@ -409,17 +452,72 @@ function scanNewsArticles() {
 }
 
 /**
- * Generate index HTML for a specific language
+ * Get all articles with language information for cross-language discovery
+ * 
+ * This function collects ALL articles from all languages and enriches each
+ * with metadata about which language versions are available for the same slug.
+ * 
+ * This enables cross-language article discovery: French readers can discover
+ * English/Swedish articles, and vice versa.
+ * 
+ * @param {Object} articlesByLang - Articles grouped by language
+ * @returns {Array} All articles with availableLanguages field
  */
-function generateIndexHTML(langKey, articles, allArticlesByLang) {
+function getAllArticlesWithLanguageInfo(articlesByLang) {
+  // Build a map of slugs to available languages
+  const slugToLanguages = new Map();
+  
+  Object.entries(articlesByLang).forEach(([lang, articles]) => {
+    articles.forEach(article => {
+      // Extract base slug (remove language suffix)
+      const baseSlug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '');
+      
+      if (!slugToLanguages.has(baseSlug)) {
+        slugToLanguages.set(baseSlug, []);
+      }
+      slugToLanguages.get(baseSlug).push(lang);
+    });
+  });
+  
+  // Collect all articles and enrich with language info
+  const allArticles = [];
+  
+  Object.entries(articlesByLang).forEach(([lang, articles]) => {
+    articles.forEach(article => {
+      const baseSlug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '');
+      const availableLanguages = slugToLanguages.get(baseSlug) || [lang];
+      
+      allArticles.push({
+        ...article,
+        availableLanguages: availableLanguages.sort(),
+        baseSlug
+      });
+    });
+  });
+  
+  // Sort by date descending (newest first)
+  allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  return allArticles;
+}
+
+/**
+ * Generate index HTML for a specific language
+ * 
+ * IMPORTANT: This function now displays ALL articles regardless of language,
+ * with language badges for cross-language discovery. This allows readers
+ * in any language to discover content available in other languages.
+ */
+function generateIndexHTML(langKey, allArticles, allArticlesByLang) {
   const lang = LANGUAGES[langKey];
   const f = lang.filters;
   const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
   const mainIndex = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
+  const isRTL = ['ar', 'he'].includes(langKey);
   
-  // For languages without articles, use English articles with language notice
-  const displayArticles = articles.length > 0 ? articles : allArticlesByLang.en;
-  const needsLanguageNotice = articles.length === 0 && langKey !== 'en';
+  // Use ALL articles for display (cross-language discovery)
+  const displayArticles = allArticles;
+  const needsLanguageNotice = allArticles.length === 0;
   
   const escapedSubtitle = escapeHtml(lang.subtitle);
 
@@ -595,6 +693,8 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       date: a.date,
       type: a.type,
       slug: a.slug,
+      lang: a.lang,
+      availableLanguages: a.availableLanguages || [a.lang],
       excerpt: a.description.substring(0, 200),
       topics: a.topics,
       tags: a.tags
@@ -614,21 +714,41 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       
       noResults.style.display = 'none';
       
-      grid.innerHTML = articlesToRender.map(article => \`
+      grid.innerHTML = articlesToRender.map(article => {
+        // Generate language badge for the article
+        const flag = {en:'🇬🇧',sv:'🇸🇪',da:'🇩🇰',no:'🇳🇴',fi:'🇫🇮',de:'🇩🇪',fr:'🇫🇷',es:'🇪🇸',nl:'🇳🇱',ar:'🇸🇦',he:'🇮🇱',ja:'🇯🇵',ko:'🇰🇷',zh:'🇨🇳'}[article.lang] || '🌐';
+        const langBadge = \`<span class="language-badge" aria-label="\${article.lang} language"><span aria-hidden="true">\${flag}</span> \${article.lang.toUpperCase()}</span>\`;
+        
+        // Generate available languages display if multiple languages exist
+        const availableLangs = article.availableLanguages || [article.lang];
+        let availableDisplay = '';
+        if (availableLangs.length > 1) {
+          const availableText = '${AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in'}';
+          const availableBadges = availableLangs.map(l => {
+            const f = {en:'🇬🇧',sv:'🇸🇪',da:'🇩🇰',no:'🇳🇴',fi:'🇫🇮',de:'🇩🇪',fr:'🇫🇷',es:'🇪🇸',nl:'🇳🇱',ar:'🇸🇦',he:'🇮🇱',ja:'🇯🇵',ko:'🇰🇷',zh:'🇨🇳'}[l] || '🌐';
+            return \`<span class="lang-badge-sm"><span aria-hidden="true">\${f}</span> \${l.toUpperCase()}</span>\`;
+          }).join(' ');
+          availableDisplay = \`<p class="available-languages"><strong>\${availableText}:</strong> \${availableBadges}</p>\`;
+        }
+        
+        return \`
         <article class="article-card">
           <div class="article-meta">
             <time class="article-date" datetime="\${article.date}">\${formatDate(article.date)}</time>
             <span class="article-type">\${localizeType(article.type)}</span>
+            \${langBadge}
           </div>
           <h2 class="article-title">
             <a href="\${article.slug}">\${article.title}</a>
           </h2>
           <p class="article-excerpt">\${article.excerpt}</p>
+          \${availableDisplay}
           <div class="article-tags">
             \${article.tags.map(tag => \`<span class="tag">\${tag}</span>\`).join('')}
           </div>
         </article>
-      \`).join('');
+      \`;
+      }).join('');
     }
     
     const typeLabels = ${JSON.stringify({
@@ -823,10 +943,13 @@ function generateAllIndexes() {
       const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
       const filePath = path.join(NEWS_DIR, filename);
       
-      const html = generateIndexHTML(langKey, articlesByLang[langKey] || [], articlesByLang);
+      // Get ALL articles with language metadata for cross-language discovery
+      const allArticlesWithLanguageInfo = getAllArticlesWithLanguageInfo(articlesByLang);
+      
+      const html = generateIndexHTML(langKey, allArticlesWithLanguageInfo, articlesByLang);
       fs.writeFileSync(filePath, html, 'utf-8');
       
-      console.log(`  ✅ Generated: ${filename}`);
+      console.log(`  ✅ Generated: ${filename} (${allArticlesWithLanguageInfo.length} articles)`);
       successCount++;
     } catch (error) {
       console.error(`  ❌ Failed to generate ${langKey}:`, error.message);
@@ -861,4 +984,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
 }
 
-export { generateAllIndexes, parseArticleMetadata, scanNewsArticles };
+export { 
+  generateAllIndexes, 
+  parseArticleMetadata, 
+  scanNewsArticles,
+  getAllArticlesWithLanguageInfo,
+  generateLanguageBadge,
+  generateAvailableLanguages
+};
