@@ -27,9 +27,19 @@
  */
 
 const DEFAULT_MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp';
-const DEFAULT_REQUEST_TIMEOUT = 60000; // 60 seconds (increased for cold starts)
 const DEFAULT_MAX_RETRIES = 3;
 const RETRY_DELAY = 2000; // 2 seconds (increased for server spin-up)
+
+/**
+ * Get default request timeout from environment or use 30s default
+ * @returns {number} Timeout in milliseconds
+ */
+function getDefaultTimeout() {
+  // Default 30s timeout to match existing tests; override via MCP_CLIENT_TIMEOUT_MS (e.g., 60000 for cold starts)
+  return process.env.MCP_CLIENT_TIMEOUT_MS
+    ? (Number.parseInt(process.env.MCP_CLIENT_TIMEOUT_MS, 10) || 30000)
+    : 30000;
+}
 
 // JSON-RPC 2.0 request ID counter
 let jsonRpcId = 1;
@@ -42,11 +52,11 @@ export class MCPClient {
     // Support both object config and string URL for backwards compatibility
     if (typeof config === 'string') {
       this.baseURL = config;
-      this.timeout = DEFAULT_REQUEST_TIMEOUT;
+      this.timeout = getDefaultTimeout();
       this.maxRetries = DEFAULT_MAX_RETRIES;
     } else {
       this.baseURL = config.baseURL || config.serverUrl || DEFAULT_MCP_SERVER_URL;
-      this.timeout = config.timeout || DEFAULT_REQUEST_TIMEOUT;
+      this.timeout = config.timeout || getDefaultTimeout();
       this.maxRetries = config.maxRetries || DEFAULT_MAX_RETRIES;
     }
     

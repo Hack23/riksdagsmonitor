@@ -63,7 +63,48 @@ jobs:
           
           echo "✅ Dependencies installed"
       
+      - name: Check for new Riksdag/Regering updates
+        id: check-updates
+        run: |
+          echo "🔍 Checking for new Riksdag/Regering updates..."
+          
+          # Store current timestamp
+          CURRENT_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "current_time=$CURRENT_TIME" >> $GITHUB_OUTPUT
+          
+          # Check last generation time
+          if [ -f "news/metadata/last-generation.json" ]; then
+            LAST_GEN=$(jq -r '.timestamp' news/metadata/last-generation.json)
+            echo "last_generation=$LAST_GEN" >> $GITHUB_OUTPUT
+            echo "📊 Last generation: $LAST_GEN"
+          else
+            echo "last_generation=never" >> $GITHUB_OUTPUT
+            echo "ℹ️ No previous generation found"
+          fi
+          
+          # Determine if we should generate news
+          if [ "${{ github.event.inputs.force_generation }}" = "true" ]; then
+            echo "should_generate=true" >> $GITHUB_OUTPUT
+            echo "✅ Force generation enabled"
+          else
+            # Check if it's been more than 5 hours since last generation
+            if [ -f "news/metadata/last-generation.json" ]; then
+              HOURS_AGO=$(( ($(date +%s) - $(date -d "$LAST_GEN" +%s)) / 3600 ))
+              if [ $HOURS_AGO -gt 5 ]; then
+                echo "should_generate=true" >> $GITHUB_OUTPUT
+                echo "✅ More than 5 hours since last generation ($HOURS_AGO hours)"
+              else
+                echo "should_generate=false" >> $GITHUB_OUTPUT
+                echo "ℹ️ Recent generation found ($HOURS_AGO hours ago), skipping"
+              fi
+            else
+              echo "should_generate=true" >> $GITHUB_OUTPUT
+              echo "✅ First generation"
+            fi
+          fi
+      
       - name: Health check riksdag-regering MCP server
+        if: steps.check-updates.outputs.should_generate == 'true'
         id: mcp-health
         run: |
           echo "🔍 Checking riksdag-regering MCP server health..."
@@ -107,46 +148,6 @@ jobs:
           
           # Don't fail the workflow, let generation step handle it gracefully
           exit 0
-      
-      - name: Check for new Riksdag/Regering updates
-        id: check-updates
-        run: |
-          echo "🔍 Checking for new Riksdag/Regering updates..."
-          
-          # Store current timestamp
-          CURRENT_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          echo "current_time=$CURRENT_TIME" >> $GITHUB_OUTPUT
-          
-          # Check last generation time
-          if [ -f "news/metadata/last-generation.json" ]; then
-            LAST_GEN=$(jq -r '.timestamp' news/metadata/last-generation.json)
-            echo "last_generation=$LAST_GEN" >> $GITHUB_OUTPUT
-            echo "📊 Last generation: $LAST_GEN"
-          else
-            echo "last_generation=never" >> $GITHUB_OUTPUT
-            echo "ℹ️ No previous generation found"
-          fi
-          
-          # Determine if we should generate news
-          if [ "${{ github.event.inputs.force_generation }}" = "true" ]; then
-            echo "should_generate=true" >> $GITHUB_OUTPUT
-            echo "✅ Force generation enabled"
-          else
-            # Check if it's been more than 5 hours since last generation
-            if [ -f "news/metadata/last-generation.json" ]; then
-              HOURS_AGO=$(( ($(date +%s) - $(date -d "$LAST_GEN" +%s)) / 3600 ))
-              if [ $HOURS_AGO -gt 5 ]; then
-                echo "should_generate=true" >> $GITHUB_OUTPUT
-                echo "✅ More than 5 hours since last generation ($HOURS_AGO hours)"
-              else
-                echo "should_generate=false" >> $GITHUB_OUTPUT
-                echo "ℹ️ Recent generation found ($HOURS_AGO hours ago), skipping"
-              fi
-            else
-              echo "should_generate=true" >> $GITHUB_OUTPUT
-              echo "✅ First generation"
-            fi
-          fi
       
       - name: Generate news articles
         if: steps.check-updates.outputs.should_generate == 'true'
@@ -247,6 +248,9 @@ jobs:
           
           # Create metadata directory
           mkdir -p news/metadata
+          
+          # Set MCP client timeout for cold start tolerance (60 seconds)
+          export MCP_CLIENT_TIMEOUT_MS=60000
           
           # Run news generation script
           if [ -f "scripts/generate-news-enhanced.js" ]; then
