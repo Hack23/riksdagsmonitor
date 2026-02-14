@@ -321,18 +321,28 @@ function parseArticleMetadata(filePath) {
 
 /**
  * Extract content from meta tags
+ * 
+ * Fixed: regex now properly handles apostrophes and special characters in content
  */
 function extractMetaContent(html, property) {
-  const patterns = [
-    new RegExp(`<meta\\s+property=["']${property}["']\\s+content=["']([^"']+)["']`, 'i'),
-    new RegExp(`<meta\\s+content=["']([^"']+)["']\\s+property=["']${property}["']`, 'i'),
-    new RegExp(`<meta\\s+name=["']${property}["']\\s+content=["']([^"']+)["']`, 'i')
-  ];
+  // Match double-quoted attributes
+  const doubleQuotePattern = new RegExp(`<meta\\s+(?:property|name)="${property}"\\s+content="([^"]+)"`, 'i');
+  const doubleQuoteMatch = html.match(doubleQuotePattern);
+  if (doubleQuoteMatch) return doubleQuoteMatch[1];
   
-  for (const pattern of patterns) {
-    const match = html.match(pattern);
-    if (match) return match[1];
-  }
+  // Match single-quoted attributes
+  const singleQuotePattern = new RegExp(`<meta\\s+(?:property|name)='${property}'\\s+content='([^']+)'`, 'i');
+  const singleQuoteMatch = html.match(singleQuotePattern);
+  if (singleQuoteMatch) return singleQuoteMatch[1];
+  
+  // Try reversed order (content before property/name)
+  const reversedDoublePattern = new RegExp(`<meta\\s+content="([^"]+)"\\s+(?:property|name)="${property}"`, 'i');
+  const reversedDoubleMatch = html.match(reversedDoublePattern);
+  if (reversedDoubleMatch) return reversedDoubleMatch[1];
+  
+  const reversedSinglePattern = new RegExp(`<meta\\s+content='([^']+)'\\s+(?:property|name)='${property}'`, 'i');
+  const reversedSingleMatch = html.match(reversedSinglePattern);
+  if (reversedSingleMatch) return reversedSingleMatch[1];
   
   return null;
 }
@@ -454,14 +464,20 @@ function scanNewsArticles() {
 /**
  * Get all articles with language information for cross-language discovery
  * 
+ * NOTE: This function is currently UNUSED in production but preserved for potential
+ * future use. It was implemented for Issue #155's cross-language discovery feature
+ * but the requirement changed to language-specific filtering (each index shows only
+ * articles in its target language).
+ * 
+ * If cross-language discovery is needed again, this function can be used instead of
+ * passing articlesByLang[langKey] to generateIndexHTML() on line 958.
+ * 
  * This function collects ALL articles from all languages and enriches each
  * with metadata about which language versions are available for the same slug.
  * 
- * This enables cross-language article discovery: French readers can discover
- * English/Swedish articles, and vice versa.
- * 
  * @param {Object} articlesByLang - Articles grouped by language
  * @returns {Array} All articles with availableLanguages field
+ * @deprecated Currently unused - kept for potential future cross-language discovery
  */
 function getAllArticlesWithLanguageInfo(articlesByLang) {
   // Build a map of slugs to available languages
@@ -504,20 +520,24 @@ function getAllArticlesWithLanguageInfo(articlesByLang) {
 /**
  * Generate index HTML for a specific language
  * 
- * IMPORTANT: This function now displays ALL articles regardless of language,
- * with language badges for cross-language discovery. This allows readers
- * in any language to discover content available in other languages.
+ * Each language index displays only articles in that specific language.
+ * Articles include metadata about which other languages they're available in
+ * for cross-language discovery indicators.
+ * 
+ * @param {string} langKey - Language code (en, sv, etc.)
+ * @param {Array} languageArticles - Articles in the target language only
+ * @param {Object} allArticlesByLang - All articles grouped by language
  */
-function generateIndexHTML(langKey, allArticles, allArticlesByLang) {
+function generateIndexHTML(langKey, languageArticles, allArticlesByLang) {
   const lang = LANGUAGES[langKey];
   const f = lang.filters;
   const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
   const mainIndex = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
   const isRTL = ['ar', 'he'].includes(langKey);
   
-  // Use ALL articles for display (cross-language discovery)
-  const displayArticles = allArticles;
-  const needsLanguageNotice = allArticles.length === 0;
+  // Display only articles in this language
+  const displayArticles = languageArticles;
+  const needsLanguageNotice = languageArticles.length === 0;
   
   const escapedSubtitle = escapeHtml(lang.subtitle);
 

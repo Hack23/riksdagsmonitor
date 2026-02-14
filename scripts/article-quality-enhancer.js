@@ -34,18 +34,19 @@ const DEFAULT_THRESHOLDS = {
 };
 
 /**
- * Swedish political parties for perspective validation
+ * Map of normalized party codes to their common name variants
+ * This prevents double-counting when both full names and abbreviations appear
  */
-const SWEDISH_PARTIES = [
-  'Socialdemokraterna', 'S', 'Social Democrats',
-  'Moderaterna', 'M', 'Moderate',
-  'Sverigedemokraterna', 'SD', 'Sweden Democrats',
-  'Centerpartiet', 'C', 'Centre Party',
-  'Vänsterpartiet', 'V', 'Left Party',
-  'Kristdemokraterna', 'KD', 'Christian Democrats',
-  'Liberalerna', 'L', 'Liberals',
-  'Miljöpartiet', 'MP', 'Green Party'
-];
+const PARTY_VARIANTS = {
+  S: ['Socialdemokraterna', 'Social Democrats', 'S'],
+  M: ['Moderaterna', 'Moderate', 'M'],
+  SD: ['Sverigedemokraterna', 'Sweden Democrats', 'SD'],
+  C: ['Centerpartiet', 'Centre Party', 'C'],
+  V: ['Vänsterpartiet', 'Left Party', 'V'],
+  KD: ['Kristdemokraterna', 'Christian Democrats', 'KD'],
+  L: ['Liberalerna', 'Liberals', 'L'],
+  MP: ['Miljöpartiet', 'Green Party', 'MP']
+};
 
 /**
  * Riksdag/Regering document ID patterns
@@ -107,6 +108,9 @@ function assessAnalyticalDepth(content) {
 /**
  * Count unique party perspectives mentioned in article
  * 
+ * Uses PARTY_VARIANTS pattern to prevent double-counting when both
+ * full names and abbreviations appear in the same text.
+ * 
  * @param {string} content - HTML content of article
  * @returns {number} Number of unique parties mentioned
  */
@@ -114,19 +118,15 @@ function countPartyPerspectives(content) {
   const text = content;
   const partiesFound = new Set();
   
-  SWEDISH_PARTIES.forEach(party => {
-    const regex = new RegExp(`\\b${party}\\b`, 'gi');
-    if (regex.test(text)) {
-      // Normalize to party abbreviation
-      if (['Socialdemokraterna', 'Social Democrats'].includes(party)) partiesFound.add('S');
-      else if (['Moderaterna', 'Moderate'].includes(party)) partiesFound.add('M');
-      else if (['Sverigedemokraterna', 'Sweden Democrats'].includes(party)) partiesFound.add('SD');
-      else if (['Centerpartiet', 'Centre Party'].includes(party)) partiesFound.add('C');
-      else if (['Vänsterpartiet', 'Left Party'].includes(party)) partiesFound.add('V');
-      else if (['Kristdemokraterna', 'Christian Democrats'].includes(party)) partiesFound.add('KD');
-      else if (['Liberalerna', 'Liberals'].includes(party)) partiesFound.add('L');
-      else if (['Miljöpartiet', 'Green Party'].includes(party)) partiesFound.add('MP');
-      else partiesFound.add(party);
+  // Iterate through party codes and check all variants
+  Object.entries(PARTY_VARIANTS).forEach(([code, variants]) => {
+    // Check if any variant of this party is mentioned
+    for (const variant of variants) {
+      const regex = new RegExp(`\\b${variant}\\b`, 'gi');
+      if (regex.test(text)) {
+        partiesFound.add(code);
+        break; // Stop checking variants once party is found
+      }
     }
   });
   

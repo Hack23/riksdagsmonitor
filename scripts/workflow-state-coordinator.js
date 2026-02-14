@@ -149,7 +149,13 @@ export class WorkflowStateCoordinator {
     const now = Date.now();
     const entryTime = new Date(entry.timestamp).getTime();
     
-    if (now - entryTime > (entry.ttl * 1000)) {
+    // Use per-entry TTL with fallback to default constant
+    const effectiveTtlSeconds =
+      typeof entry.ttl === 'number' && entry.ttl > 0
+        ? entry.ttl
+        : MCP_CACHE_TTL_SECONDS;
+    
+    if (now - entryTime > effectiveTtlSeconds * 1000) {
       delete this.state.mcpQueryCache[queryKey];
       return null;
     }

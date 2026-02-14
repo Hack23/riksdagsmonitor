@@ -9039,11 +9039,15 @@ body.news-page {
   transition: all 0.3s ease;
 }
 
-.news-article .back-to-news:hover {
+.news-article .back-to-news:hover,
+.news-article .back-to-news:focus,
+.news-article .back-to-news:focus-visible {
   background: var(--link-color, #007744);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 119, 68, 0.2);
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* Responsive Design for News Articles */
