@@ -98,6 +98,13 @@ export class WorkflowStateCoordinator {
     Object.keys(this.state.mcpQueryCache).forEach(key => {
       const entry = this.state.mcpQueryCache[key];
       const entryTime = new Date(entry.timestamp).getTime();
+      
+      // If timestamp is invalid (NaN), treat as expired and delete
+      if (isNaN(entryTime)) {
+        delete this.state.mcpQueryCache[key];
+        return;
+      }
+      
       const effectiveTtlSeconds =
         typeof entry.ttl === 'number' && entry.ttl > 0
           ? entry.ttl
@@ -110,6 +117,12 @@ export class WorkflowStateCoordinator {
     // Clean recent articles (6-hour TTL)
     this.state.recentArticles = this.state.recentArticles.filter(article => {
       const articleTime = new Date(article.timestamp).getTime();
+      
+      // If timestamp is invalid (NaN), treat as expired and exclude
+      if (isNaN(articleTime)) {
+        return false;
+      }
+      
       return (now - articleTime) <= RECENT_ARTICLE_TTL_SECONDS * 1000;
     });
   }
@@ -281,7 +294,14 @@ export class WorkflowStateCoordinator {
    * @returns {string} SHA-256 hash
    */
   hashObject(obj) {
-    const str = JSON.stringify(obj, Object.keys(obj).sort());
+    // Handle null/undefined and non-object inputs safely
+    // Only use Object.keys for non-null objects, otherwise let JSON.stringify
+    // use its default behavior
+    const replacer = (obj !== null && typeof obj === 'object' && !Array.isArray(obj))
+      ? Object.keys(obj).sort()
+      : undefined;
+    
+    const str = JSON.stringify(obj, replacer);
     return crypto.createHash('sha256').update(str).digest('hex').substring(0, 16);
   }
 

@@ -119,22 +119,27 @@ describe('Workflow State Coordinator', () => {
     });
 
     it('should expire cache after TTL', async () => {
-      const queryKey = 'test_query';
-      const result = { data: 'test' };
-      const shortTTL = 1; // 1 second
-      
-      await coordinator.cacheMCPQuery(queryKey, result, shortTTL);
-      
-      // Should be cached immediately
-      let cached = coordinator.getCachedMCPQuery(queryKey);
-      expect(cached).toEqual(result);
-      
-      // Wait for expiration
-      await new Promise(resolve => setTimeout(resolve, 1100));
-      
-      // Should be expired
-      cached = coordinator.getCachedMCPQuery(queryKey);
-      expect(cached).toBeNull();
+      vi.useFakeTimers();
+      try {
+        const queryKey = 'test_query';
+        const result = { data: 'test' };
+        const shortTTL = 1; // 1 second
+        
+        await coordinator.cacheMCPQuery(queryKey, result, shortTTL);
+        
+        // Should be cached immediately
+        let cached = coordinator.getCachedMCPQuery(queryKey);
+        expect(cached).toEqual(result);
+        
+        // Advance time past TTL to trigger expiration
+        await vi.advanceTimersByTimeAsync(1100);
+        
+        // Should be expired
+        cached = coordinator.getCachedMCPQuery(queryKey);
+        expect(cached).toBeNull();
+      } finally {
+        vi.useRealTimers();
+      }
     });
 
     it('should include result hash in cache entry', async () => {

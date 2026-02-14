@@ -315,19 +315,23 @@ export async function enhanceArticleQuality(articlePath, thresholds = {}) {
     issues.push('Missing "Why This Matters" section');
   }
   
+  // Separate warnings (recommendations) from blocking failures
+  const warnings = [];
+  
   if (options.recommendHistoricalContext && !metrics.hasHistoricalContext) {
-    issues.push('Recommended: Add historical context');
+    warnings.push('Recommended: Add historical context');
   }
   
   if (options.recommendInternationalComparison && !metrics.hasInternationalComparison) {
-    issues.push('Recommended: Add international comparison');
+    warnings.push('Recommended: Add international comparison');
   }
   
   return {
-    passed: issues.length === 0,
+    passed: issues.length === 0, // Only blocking issues affect passed status
     qualityScore,
     metrics,
     issues,
+    warnings, // Non-blocking recommendations
     thresholds: options,
     articlePath
   };

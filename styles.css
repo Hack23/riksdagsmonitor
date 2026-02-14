@@ -9096,7 +9096,8 @@ body.news-page {
 }
 
 /* Language Badge Small (for "Available in" indicators) */
-.lang-badge-sm {
+/* Language badge styles (namespaced under .news-page) */
+.news-page .lang-badge-sm {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
@@ -9109,14 +9110,14 @@ body.news-page {
   font-weight: 500;
 }
 
-/* Available Languages Section */
-.available-languages {
+/* Available Languages Section (namespaced under .news-page) */
+.news-page .available-languages {
   margin: 0.5rem 0;
   font-size: 0.85rem;
   color: var(--text-secondary, #6c757d);
 }
 
-.available-languages strong {
+.news-page .available-languages strong {
   font-weight: 600;
   margin-right: 0.5rem;
 }

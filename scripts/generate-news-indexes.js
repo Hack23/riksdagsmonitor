@@ -462,6 +462,46 @@ function scanNewsArticles() {
 }
 
 /**
+ * Build map of base slugs to available languages for cross-language discovery
+ * 
+ * Detects articles with the same base slug (e.g., "2026-02-14-week-ahead")
+ * across different languages and maps slug -> [language codes].
+ * 
+ * @param {Object} articlesByLang - Articles grouped by language
+ * @returns {Object} Map of slug -> array of language codes
+ */
+function buildSlugToLanguagesMap(articlesByLang) {
+  const slugToLanguages = {};
+  
+  // Iterate through all articles in all languages
+  Object.entries(articlesByLang).forEach(([lang, articles]) => {
+    articles.forEach(article => {
+      // Strip language suffix from slug to get base slug
+      // e.g., "2026-02-14-article-en.html" -> "2026-02-14-article.html"
+      const baseSlug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '.html');
+      
+      if (!slugToLanguages[article.slug]) {
+        // Initialize with base slug mapping
+        slugToLanguages[article.slug] = [];
+      }
+      
+      // Find all articles with the same base slug across languages
+      Object.entries(articlesByLang).forEach(([otherLang, otherArticles]) => {
+        otherArticles.forEach(otherArticle => {
+          const otherBaseSlug = otherArticle.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '.html');
+          
+          if (baseSlug === otherBaseSlug && !slugToLanguages[article.slug].includes(otherLang)) {
+            slugToLanguages[article.slug].push(otherLang);
+          }
+        });
+      });
+    });
+  });
+  
+  return slugToLanguages;
+}
+
+/**
  * Get all articles with language information for cross-language discovery
  * 
  * NOTE: This function is currently UNUSED in production but preserved for potential
@@ -957,6 +997,9 @@ function generateAllIndexes() {
   // Scan news directory
   const articlesByLang = scanNewsArticles();
   
+  // Build slug-to-languages map for cross-language discovery
+  const slugToLanguages = buildSlugToLanguagesMap(articlesByLang);
+  
   // Generate index for each language
   console.log('\n📝 Generating index files...');
   
@@ -968,9 +1011,16 @@ function generateAllIndexes() {
       const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
       const filePath = path.join(NEWS_DIR, filename);
       
-      // Use language-specific articles, not all articles
+      // Use language-specific articles and enrich with availableLanguages
       const languageArticles = articlesByLang[langKey] || [];
-      const html = generateIndexHTML(langKey, languageArticles, articlesByLang);
+      
+      // Enrich each article with availableLanguages for cross-language discovery
+      const enrichedArticles = languageArticles.map(article => ({
+        ...article,
+        availableLanguages: slugToLanguages[article.slug] || [article.lang]
+      }));
+      
+      const html = generateIndexHTML(langKey, enrichedArticles, articlesByLang);
       fs.writeFileSync(filePath, html, 'utf-8');
       
       console.log(`  ✅ Generated: ${filename} (${languageArticles.length} articles)`);
@@ -986,7 +1036,6 @@ function generateAllIndexes() {
   console.log(`  ❌ Errors: ${errorCount} files`);
   const totalArticles = Object.values(articlesByLang).reduce((sum, arr) => sum + arr.length, 0);
   console.log(`  📊 Total articles: ${totalArticles}`);
-  console.log('\n💡 Note: Languages without articles display English content with language notice');
   
   return {
     success: errorCount === 0,
