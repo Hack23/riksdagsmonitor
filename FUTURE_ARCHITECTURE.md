@@ -442,14 +442,14 @@ C4Component
 **Objective:** Deploy conversational interfaces using **Amazon Bedrock** and **AWS AppSync real-time subscriptions**.
 
 **Features:**
-- ✨ **AI Chatbot** - Bedrock Claude Opus 4.6 with Bedrock Knowledge Bases (RAG)
+- ✨ **AI Chatbot** - Bedrock Claude Opus 6.0 with Bedrock Knowledge Bases (RAG)
 - ✨ **Voice Interface** - Amazon Lex (conversational AI) + Polly (TTS)
-- ✨ **Personal Briefings** - Bedrock Claude Opus 4.6 + EventBridge (scheduled)
+- ✨ **Personal Briefings** - Bedrock Claude Opus 6.0 + EventBridge (scheduled)
 - ✨ **Multi-Agent Systems** - Bedrock Agents (autonomous task execution)
 
 **AWS Serverless Stack:**
 - **Conversational AI:** Amazon Lex v2 (pay-per-request, no minimum fees)
-- **Text Generation:** Amazon Bedrock - Claude Opus 4.6
+- **Text Generation:** Amazon Bedrock - Claude Opus 6.0
 - **Voice Output:** Amazon Polly Neural TTS
 - **Voice Input:** Amazon Transcribe (real-time streaming)
 - **Knowledge Base:** Amazon Bedrock Knowledge Bases (RAG)
@@ -459,9 +459,9 @@ C4Component
 **Use Cases:**
 1. **Daily Briefings** - "What happened in Riksdag today?" (Bedrock + Lambda)
 2. **MP Tracking** - "What has Magdalena Andersson voted on?" (Neptune + Bedrock)
-3. **Policy Research** - "Summarize climate legislation 2020-2024" (Knowledge Bases + Claude Opus 4.6)
-4. **Coalition Analysis** - "Most likely coalitions after 2026 election?" (SageMaker + Claude Opus 4.6)
-5. **Transparency Monitoring** - "Which MPs have risk violations?" (Aurora + Claude Opus 4.6)
+3. **Policy Research** - "Summarize climate legislation 2020-2024" (Knowledge Bases + Claude Opus 6.0)
+4. **Coalition Analysis** - "Most likely coalitions after 2026 election?" (SageMaker + Claude Opus 6.0)
+5. **Transparency Monitoring** - "Which MPs have risk violations?" (Aurora + Claude Opus 6.0)
 
 **AWS-Native Voice Interfaces:**
 - ✅ **Amazon Lex** - Conversational AI with automatic speech recognition
@@ -500,14 +500,14 @@ C4Component
 **Future (2027-2028):** 30+ languages via **Amazon Bedrock Claude Opus 5.x**
 
 **AWS Translation Stack:**
-- **Primary:** Amazon Bedrock Claude Opus 4.6 (cultural adaptation, political terminology)
+- **Primary:** Amazon Bedrock Claude Opus 5.x (cultural adaptation, political terminology)
 - **Fallback:** Amazon Translate Neural (99 languages, fast batch translation)
-- **Quality Control:** Bedrock Claude Opus 4.6 (translation validation)
+- **Quality Control:** Bedrock Claude Opus 5.x (translation validation)
 
 **AWS Translation Services:**
-- ✅ **Primary:** Amazon Bedrock Claude Opus 4.6 for political terminology nuance
+- ✅ **Primary:** Amazon Bedrock Claude Opus 5.x for political terminology nuance
 - ✅ **Fallback:** Amazon Translate Neural (99 languages, fast batch translation)
-- ✅ **Quality Control:** Bedrock Claude Opus 4.6 (translation validation)
+- ✅ **Quality Control:** Bedrock Claude Opus 5.x (translation validation)
 
 ### 4.3 Data Scaling
 
@@ -1877,6 +1877,20 @@ graph TB
 - Read **this document (Future Architecture)** for AWS serverless roadmap
 - Check **[Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md)** for security evolution
 - Explore **[Agents](AGENTS.md)** and **[Skills](SKILLS.md)** for GitHub Copilot capabilities
+
+---
+
+## 🎯 Conclusion
+
+Riksdagsmonitor's future architecture represents a strategic evolution from a static HTML/CSS transparency platform to a hybrid intelligent system combining GitHub Copilot agentic orchestration with AWS serverless data infrastructure. This transformation advances the platform's mission of democratic accountability through enhanced automation, scalability, and intelligence while maintaining the security-first principles established in our ISMS framework.
+
+**Key Architectural Achievements**: The hybrid architecture preserves riksdagsmonitor's sophisticated 14-agent GitHub Copilot ecosystem (content-generator, news-journalist, intelligence-operative) as the primary orchestration layer, while introducing AWS serverless services (Aurora Serverless v2, DynamoDB, Neptune Serverless, OpenSearch Serverless) as the scalable data backend. This design leverages the strengths of both platforms: agents provide specialized domain expertise and safe-outputs workflows, while AWS delivers multi-region reliability, enterprise-grade security services (GuardDuty, Security Hub, WAF), and unlimited data processing capacity. The 4-phase enhancement roadmap (Enhanced Journalism 2026, Predictive Analytics 2027, Semantic Intelligence 2028, Conversational AI 2029+) introduces progressively advanced capabilities using bleeding-edge AI models (Claude Opus 4.6 for 2026, Opus 5.x for 2027-2028, Opus 6.0 for 2028+) delivered through Amazon Bedrock's unified interface.
+
+**Strategic Value Proposition**: The architecture delivers measurable technical advantages across all AWS Well-Architected pillars. Security is enhanced through defense-in-depth integration of seven AWS security services plus agent-based safe-outputs validation. Reliability improves via multi-region deployment (Aurora Global Database, DynamoDB Global Tables, S3 Cross-Region Replication) achieving RTO < 5 minutes and RPO < 1 second. Performance scales elastically through serverless auto-scaling combined with agent-driven optimization. Operational excellence is achieved through comprehensive automation, Infrastructure as Code (CDK/Terraform), and continuous resilience validation via AWS Resilience Hub (resilience score 92/100). The platform maintains pure technical focus with zero infrastructure management overhead, enabling the development team to concentrate on feature delivery and democratic transparency innovation rather than operations.
+
+**Migration Roadmap Summary**: The 4-phase migration strategy balances technical risk with capability advancement. Phase 1 (2026 Q2-Q3) establishes the AWS foundation with Lambda, Aurora Serverless v2, and Bedrock integration while preserving GitHub Actions agent workflows. Phase 2 (2026 Q4-2027 Q1) adds real-time capabilities through AppSync GraphQL and Kinesis Data Streams for event-driven architecture. Phase 3 (2027 Q2-Q4) introduces graph intelligence via Neptune Serverless and vector search through OpenSearch Serverless with Bedrock Knowledge Bases. Phase 4 (2028+) completes the transformation with conversational AI using Amazon Lex, Bedrock Agents, and Claude Opus 6.0 for natural language interfaces. Each phase includes comprehensive rollback procedures, automated testing gates, and gradual traffic migration to ensure zero-downtime deployment.
+
+**Path Forward**: Success depends on disciplined execution of the technical roadmap, continuous security validation per ISO 27001/NIST CSF 2.0/CIS Controls frameworks, and preservation of the agentic orchestration architecture that distinguishes riksdagsmonitor from conventional platforms. The hybrid model positions riksdagsmonitor as a reference implementation for intelligent civic technology, demonstrating how advanced AI agents and cloud infrastructure combine to serve democratic transparency at scale. Future enhancements will extend geographic coverage to Nordic parliaments (Denmark, Norway, Finland), expand language support to 30+ languages via Bedrock's multilingual capabilities, and deepen intelligence analysis through SageMaker election forecasting models. The architecture provides a sustainable foundation for riksdagsmonitor's evolution as Sweden's premier political accountability platform for the next decade.
 
 ---
 

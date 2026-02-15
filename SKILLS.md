@@ -293,8 +293,6 @@ Skills are:
 - Multi-region deployment topology
 - DynamoDB Global Tables configuration
 - Route 53 health checks and failover
-- Cost comparison tables (Traditional vs Serverless)
-- Total cost of ownership analysis
 - Risk mitigation strategies
 
 **Reference Implementation**:
@@ -306,7 +304,6 @@ Skills are:
 - Updating existing future architecture documentation
 - Planning AWS serverless migrations
 - Documenting multi-region strategies
-- Business case development for architectural evolution
 - Compliance with Hack23 documentation standards
 
 ### 9. political-science-analysis
