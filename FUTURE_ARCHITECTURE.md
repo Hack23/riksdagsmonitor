@@ -36,7 +36,7 @@
 
 ## 🎯 Purpose
 
-> *"At Hack23 AB, we have made a strategic decision to build our future on AWS serverless architecture. This means zero infrastructure management, no Kubernetes, no containers to maintain—just pure serverless compute, managed AI services, and AWS's deep expertise in security and compliance. By standardizing entirely on AWS, we eliminate operational complexity, reduce costs, and leverage Amazon Bedrock for all AI capabilities. This document openly shares our AWS-first roadmap for transforming Riksdagsmonitor into an AI-enhanced political intelligence platform built on the most mature serverless ecosystem in the industry."*
+> *"At Hack23 AB, we have made a strategic decision to build our future on AWS serverless architecture. This means zero infrastructure management, no Kubernetes, no containers to maintain—just pure serverless compute, managed AI services, and AWS's deep expertise in security and compliance. By standardizing entirely on AWS, we eliminate operational complexity and leverage Amazon Bedrock for all AI capabilities. This document openly shares our AWS-first roadmap for transforming Riksdagsmonitor into an AI-enhanced political intelligence platform built on the most mature serverless ecosystem in the industry."*
 >
 > — **James Pether Sörling, CEO, Hack23 AB**
 
@@ -50,7 +50,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 - ☁️ **Single Cloud Provider** - AWS only per [Hack23 ISMS SUPPLIER.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/SUPPLIER.md)
 - 🤖 **Amazon Bedrock First** - All AI via Bedrock (Claude Opus 4.6, Llama 4 405B, Nova Premier) - bleeding-edge models only
 - ⚡ **Pure Serverless** - AWS Lambda, AppSync, Step Functions, EventBridge for all compute
-- 💰 **Pay-Per-Use** - Zero idle costs, automatic scaling from 0 to millions
+- 🔄 **Automatic Scaling** - Scale from zero to millions based on demand
 - 🏗️ **AWS Well-Architected** - Operational Excellence, Security, Reliability, Performance, Cost Optimization
 
 **Strategic Vision:**
@@ -59,7 +59,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 - 🧠 **Semantic Intelligence** - Knowledge graphs (Neptune Serverless) + vector search (Bedrock Knowledge Bases)
 - 🌐 **Geographic Expansion** - Nordic countries (DK, NO, FI), EU Parliament
 - 📱 **Native Mobile Apps** - iOS/Android with AWS AppSync + Amplify
-- 🔌 **API Monetization** - GraphQL API via AWS AppSync ($49-$499/mo tiers)
+- 🔌 **Public API** - GraphQL API via AWS AppSync for external integrations
 
 **AWS Serverless Foundation Stack:**
 
@@ -79,7 +79,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 - **2026 Q2-Q3:** Amazon Bedrock integration for AI journalism (Claude Opus 4.6 - current SOTA)
 - **2026 Q4-2027 Q1:** AWS Lambda + AppSync for serverless GraphQL API
 - **2027 Q2-Q4:** Neptune Serverless + Bedrock Knowledge Bases for semantic search
-- **2028+:** AWS Amplify mobile apps + API monetization via Usage Plans
+- **2028+:** AWS Amplify mobile apps + public API via AppSync
 
 **Current State (2026 Q1):**
 - ✅ Static HTML/CSS website (14 languages)
@@ -99,11 +99,10 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 5. [AWS Serverless Architecture Evolution](#5-aws-serverless-architecture-evolution)
 6. [Advanced Features Roadmap](#6-advanced-features-roadmap)
 7. [Migration Strategy (AWS-Only)](#7-migration-strategy-aws-only)
-8. [Cost-Benefit Analysis (AWS Pricing)](#8-cost-benefit-analysis-aws-pricing)
-9. [Risk Assessment (AWS-Specific)](#9-risk-assessment-aws-specific)
-10. [Success Metrics](#10-success-metrics)
-11. [Timeline & Milestones](#11-timeline--milestones)
-12. [Related Documentation](#12-related-documentation)
+8. [Risk Assessment (AWS-Specific)](#8-risk-assessment-aws-specific)
+9. [Success Metrics](#9-success-metrics)
+10. [Timeline & Milestones](#10-timeline--milestones)
+11. [Related Documentation](#11-related-documentation)
 
 ---
 
@@ -128,8 +127,8 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 - ✅ Real-time statistics from CIA production database (daily updates)
 
 **Architecture Strengths:**
-- 🟢 **Low infrastructure cost** - Static hosting on CloudFront + S3 (~$50/month)
-- 🟢 **High availability** - 99.999% CloudFront SLA + S3 11 9's durability
+- 🟢 **Simple infrastructure** - Static hosting on CloudFront + S3
+- 🟢 **High availability** - 99.9% CloudFront SLA + S3 11 9's durability
 - 🟢 **Simple security model** - Client-side rendering, minimal attack surface
 - 🟢 **AWS foundation** - CloudFront + S3 deployment
 - 🟢 **ISMS compliant** - ISO 27001, NIST CSF 2.0, CIS Controls
@@ -198,7 +197,7 @@ C4Container
         Container(amplify_web, "Web PWA", "AWS Amplify Hosting", "Progressive Web App, SSR")
         Container(amplify_mobile, "Mobile Apps", "AWS Amplify + AppSync", "iOS/Android native apps")
         
-        Container(appsync, "GraphQL API", "AWS AppSync", "Managed GraphQL, real-time subscriptions, $10/M req")
+        Container(appsync, "GraphQL API", "AWS AppSync", "Managed GraphQL, real-time subscriptions")
         Container(api_gateway, "REST API", "Amazon API Gateway", "Legacy REST endpoints, usage plans")
         
         Container(lambda_news, "News Generator", "AWS Lambda (Python)", "Bedrock integration for articles")
@@ -354,7 +353,7 @@ C4Component
 - ✅ **AWS data residency** - All processing within AWS infrastructure
 - ✅ **Built-in guardrails** - Bedrock Guardrails for content filtering
 - ✅ **Model flexibility** - Claude Opus 4.6, Llama 4 405B, Nova Premier via unified API
-- ✅ **Usage-based pricing** - Pay per token, automatic cost optimization
+- ✅ **Automatic scaling** - Serverless capacity management, no provisioning
 
 ### 3.2 Phase 2: Predictive Analytics (2026 Q4-2027 Q1)
 
@@ -634,42 +633,6 @@ Amplify Hosting (SSR) → CloudFront
 | None | CloudWatch Metrics + Alarms | Auto-scaling triggers, alerting |
 | None | AWS X-Ray | Distributed tracing, latency analysis |
 
-### 5.3 AWS Cost Model (Serverless)
-
-**Current Costs (Static Site - 2026 Q1):**
-- CloudFront: $20/month (50 GB transfer)
-- S3: $5/month (100 GB storage)
-- Route 53: $1/month (1 hosted zone)
-- **Total: ~$26/month**
-
-**Projected Costs (Serverless - 2027):**
-
-| Service | Usage | Cost/Month |
-|---------|-------|------------|
-| **Lambda** | 10M requests/mo, 512 MB, 1s avg | $20 |
-| **AppSync** | 5M queries/mo, 1M subscriptions | $25 |
-| **API Gateway** | 5M REST requests/mo | $18 |
-| **Aurora Serverless v2** | 0.5 ACU avg (pauses to 0) | $45 |
-| **DynamoDB** | 10 GB storage, 5M reads, 1M writes | $8 |
-| **Bedrock** | Claude Opus 4.6: 100M input tokens, 20M output | $600 |
-| **Neptune Serverless** | 10 NCU avg, 50 GB storage | $70 |
-| **OpenSearch Serverless** | 2 OCU, 50 GB storage | $180 |
-| **Timestream** | 10 GB storage, 1M queries | $5 |
-| **S3 + CloudFront** | 100 GB storage, 500 GB transfer | $60 |
-| **Step Functions** | 100K state transitions | $2.5 |
-| **EventBridge** | 10M events | $10 |
-| **CloudWatch** | 50 GB logs, 100 metrics | $20 |
-| **X-Ray** | 1M traces | $5 |
-| **Total** | | **~$948.5/month** |
-
-**Revenue Offset (API Monetization):**
-- Researcher tier ($49/mo): 10 customers = $490/mo
-- Enterprise tier ($499/mo): 2 customers = $998/mo
-- **Total Revenue:** $1,488/mo
-- **Net Profit:** $539.5/mo (after AWS costs)
-
-**Break-Even:** 20 API customers (mixed tiers)
-
 ---
 
 ## 6. 📱 Advanced Features Roadmap
@@ -688,26 +651,19 @@ Amplify Hosting (SSR) → CloudFront
 - 🔐 **Authentication** - Amazon Cognito (social login, MFA)
 - 📊 **Custom Dashboards** - User-configurable views (stored in DynamoDB)
 
-### 6.2 API Monetization (AWS AppSync + Usage Plans)
+### 6.2 Public API (AWS AppSync GraphQL)
 
-**Tier Structure:**
+**API Features:**
+- 🔌 **GraphQL API** - AWS AppSync with real-time subscriptions
+- 🔐 **Authentication** - Cognito user pools, API keys for public access
+- 📊 **Rate Limiting** - AWS WAF rules for fair usage
+- 📈 **Usage Monitoring** - CloudWatch metrics and dashboards
 
-| Tier | Price | Limits | AWS Implementation |
-|------|-------|--------|-------------------|
-| **Free** | $0/mo | 100 requests/day | AppSync + API key (rate limited) |
-| **Researcher** | $49/mo | 10,000 requests/day | AppSync + Cognito + Usage Plans |
-| **Enterprise** | $499/mo | Unlimited | AppSync + Cognito + dedicated cache |
-
-**AWS Billing Integration:**
-- **Stripe:** Collect payments (external to AWS)
-- **Lambda:** Provision API keys via Cognito user pools
-- **AppSync:** Authorize requests via Lambda authorizer
-- **CloudWatch:** Track usage, enforce rate limits
-
-**Revenue Projection:**
-- **Year 1 (2027):** 10 Researcher + 2 Enterprise = $6,468/year
-- **Year 2 (2028):** 50 Researcher + 10 Enterprise = $89,280/year
-- **Year 3 (2029):** 200 Researcher + 30 Enterprise = $296,280/year
+**API Capabilities:**
+- Query political data (MPs, votes, documents, debates)
+- Real-time subscriptions for new content
+- Batch operations for researchers
+- GraphQL introspection for discoverability
 
 ### 6.3 Data Export & Integrations
 
@@ -739,7 +695,7 @@ Amplify Hosting (SSR) → CloudFront
 - Deploy AWS AppSync GraphQL API
 - Migrate Chart.js/D3.js dashboards to fetch from AppSync
 - Add API Gateway for legacy REST endpoints
-- Launch API monetization (Stripe + Cognito)
+- Enable public API access (authentication + rate limiting)
 
 **Phase 4: Semantic Search (2027 Q4-2028 Q1)**
 - Deploy Neptune Serverless for graph database
@@ -763,72 +719,7 @@ Amplify Hosting (SSR) → CloudFront
 
 ---
 
-## 8. 💰 Cost-Benefit Analysis (AWS Pricing)
-
-### 8.1 Infrastructure Costs (AWS Serverless)
-
-**Year 1 (2027) - Initial Serverless Deployment:**
-
-| Service | Monthly Cost | Annual Cost |
-|---------|--------------|-------------|
-| Lambda (compute) | $20 | $240 |
-| AppSync (GraphQL) | $25 | $300 |
-| Aurora Serverless v2 | $45 | $540 |
-| DynamoDB | $8 | $96 |
-| Bedrock (Claude Opus 4.6) | $600 | $7,200 |
-| Neptune Serverless | $70 | $840 |
-| OpenSearch Serverless | $180 | $2,160 |
-| Timestream | $5 | $60 |
-| S3 + CloudFront | $60 | $720 |
-| Step Functions + EventBridge | $12.5 | $150 |
-| CloudWatch + X-Ray | $25 | $300 |
-| **Total** | **$930.5/mo** | **$11,166/year** |
-
-**Year 2 (2028) - Added Mobile Apps + Increased Usage:**
-
-| Service | Monthly Cost | Annual Cost |
-|---------|--------------|-------------|
-| All Year 1 services | $1,200 | $14,400 |
-| Amplify Hosting (SSR) | $50 | $600 |
-| Cognito (user authentication) | $25 | $300 |
-| SNS (push notifications) | $10 | $120 |
-| SageMaker Serverless | $100 | $1,200 |
-| **Total** | **$1,385/mo** | **$16,620/year** |
-
-### 8.2 Development Costs
-
-**Assuming single developer (CEO) + AWS contractors:**
-
-| Phase | Timeline | Effort (hours) | Cost @ €100/hr |
-|-------|----------|----------------|----------------|
-| **Phase 1: Foundation** | 2026 Q2-Q3 | 300 | €30,000 |
-| **Phase 2: AI Integration** | 2026 Q4-2027 Q1 | 400 | €40,000 |
-| **Phase 3: API + AppSync** | 2027 Q2-Q3 | 500 | €50,000 |
-| **Phase 4: Semantic Search** | 2027 Q4-2028 Q1 | 400 | €40,000 |
-| **Phase 5: Mobile Apps** | 2028 Q2-Q3 | 600 | €60,000 |
-| **Total** | 2.5 years | **2,200 hours** | **€220,000** |
-
-### 8.3 ROI Analysis (3-Year)
-
-**Investment:**
-- Development: €220,000
-- Infrastructure (3 years): €42,000 (Year 1: $11K, Year 2-3: $16K each)
-- **Total Investment:** €262,000
-
-**Revenue (API Monetization):**
-- Year 1 (2027): €6,000
-- Year 2 (2028): €83,000
-- Year 3 (2029): €275,000
-- **Total Revenue:** €364,000
-
-**ROI:**
-- **Net Profit:** €102,000 (€364K revenue - €262K investment)
-- **ROI:** **+39%** over 3 years
-- **Break-Even:** 2028 Q3
-
----
-
-## 9. ⚠️ Risk Assessment (AWS-Specific)
+## 8. ⚠️ Risk Assessment (AWS-Specific)
 
 ### 9.1 Technical Risks
 
@@ -860,7 +751,7 @@ Amplify Hosting (SSR) → CloudFront
 
 ---
 
-## 10. 📊 Success Metrics
+## 9. 📊 Success Metrics
 
 ### 10.1 Technical Metrics
 
@@ -871,33 +762,22 @@ Amplify Hosting (SSR) → CloudFront
 | **Bedrock Latency (Claude Opus 4.6)** | N/A | <2s (first token) | CloudWatch metrics |
 | **AppSync Subscription Latency** | N/A | <100ms | CloudWatch metrics |
 | **Uptime** | 99.998% | 99.99% | CloudWatch alarms |
-| **Cost per Request** | N/A | <$0.001 | Cost Explorer |
 
-### 10.2 User Metrics
+### 9.2 User Metrics
 
 | Metric | Current (2026 Q1) | Target (2028) | Measurement |
 |--------|-------------------|---------------|-------------|
 | **Monthly Active Users** | 5,000 | 50,000 | CloudWatch RUM |
 | **Mobile App Installs** | 0 | 10,000 | Amplify Analytics |
-| **API Customers** | 0 | 50 | Cognito user pools |
+| **API Users** | 0 | 500 | Cognito user pools |
 | **AppSync Subscribers** | 0 | 5,000 | AppSync metrics |
 | **Session Duration** | 3 min | 10 min | CloudWatch RUM |
 
-### 10.3 Business Metrics
-
-| Metric | Current (2026 Q1) | Target (2028) | Measurement |
-|--------|-------------------|---------------|-------------|
-| **Monthly Recurring Revenue** | €0 | €7,500 | Stripe dashboard |
-| **Annual Revenue** | €0 | €90,000 | Financial statements |
-| **Operating Margin** | N/A | 75% | Revenue - AWS costs |
-| **Customer Acquisition Cost** | N/A | <€100 | Marketing / new customers |
-| **AWS Cost per User** | N/A | <€0.02 | Cost Explorer / MAU |
-
 ---
 
-## 11. 📅 Timeline & Milestones
+## 10. 📅 Timeline & Milestones
 
-### 11.1 Detailed Implementation Timeline
+### 10.1 Detailed Implementation Timeline
 
 ```mermaid
 gantt
@@ -917,7 +797,7 @@ gantt
     section Phase 3: API Launch
     AWS AppSync GraphQL Deployment             :2027-04-01, 90d
     API Gateway REST Endpoints                 :2027-05-01, 60d
-    API Monetization (Cognito + Stripe)        :2027-06-01, 45d
+    Public API Authentication (Cognito)        :2027-06-01, 45d
     
     section Phase 4: Semantic Search
     Neptune Serverless Deployment              :2027-10-01, 90d
@@ -936,7 +816,7 @@ gantt
     Bedrock Agents (Multi-Agent Systems)       :2029-04-01, 90d
 ```
 
-### 11.2 Key Milestones
+### 10.2 Key Milestones
 
 **2026:**
 - ✅ **Q2:** Lambda + Aurora Serverless deployed, API foundation ready
@@ -946,7 +826,7 @@ gantt
 **2027:**
 - ✅ **Q1:** Bedrock multimodal (text + image + audio) content generation
 - ✅ **Q2:** AWS AppSync GraphQL API, dashboard migration
-- ✅ **Q3:** API monetization live, first paying customers
+- ✅ **Q3:** Public API launch with authentication and rate limiting
 - ✅ **Q4:** Neptune Serverless + Bedrock Knowledge Bases, semantic search
 
 **2028:**
@@ -963,7 +843,7 @@ gantt
 
 ---
 
-## 11.3 AWS Well-Architected Framework Alignment
+## 10.3 AWS Well-Architected Framework Alignment
 
 ### 🏗️ Well-Architected Pillars Integration
 
@@ -1224,7 +1104,7 @@ graph LR
 
 **Practice Cloud Financial Management:**
 - ✅ **AWS Cost Explorer** - Daily cost tracking with anomaly detection
-- ✅ **AWS Budgets** - $500/month budget with 80% threshold alerts
+- ✅ **AWS Budgets** - Budget alerts for capacity planning
 - ✅ **Cost Allocation Tags** - Environment, service, owner tags for all resources
 
 **Expenditure & Usage Awareness:**
@@ -1233,35 +1113,20 @@ graph LR
 - ✅ **S3 Storage Analytics** - Storage class distribution, access patterns
 
 **Cost-Effective Resources:**
-- ✅ **Lambda Pay-Per-Use** - $0.20 per 1M requests, zero idle costs
-- ✅ **Aurora Serverless v2** - Pay per ACU-hour, scales to zero (0.5 ACU minimum)
-- ✅ **DynamoDB On-Demand** - Pay per request, no capacity planning
+- ✅ **Lambda Serverless** - Automatic scaling, pay-per-invocation model
+- ✅ **Aurora Serverless v2** - Pay per ACU-hour, dynamic capacity management
+- ✅ **DynamoDB On-Demand** - Pay per request, automatic capacity scaling
 - ✅ **S3 Intelligent-Tiering** - Automatic storage class optimization
 
 **Manage Demand & Supply:**
-- ✅ **API Gateway Caching** - 5-minute TTL reduces Lambda invocations by 70%
-- ✅ **CloudFront Edge Caching** - 24-hour TTL reduces origin requests by 90%
+- ✅ **API Gateway Caching** - 5-minute TTL reduces Lambda invocations
+- ✅ **CloudFront Edge Caching** - 24-hour TTL reduces origin requests
 - ✅ **Lambda Reserved Concurrency** - Guaranteed capacity for critical functions
 
 **Optimize Over Time:**
 - ✅ **AWS Compute Optimizer** - Right-sizing recommendations reviewed quarterly
 - ✅ **AWS Trusted Advisor** - Cost optimization checks reviewed monthly
 - ✅ **S3 Lifecycle Policies** - Move to Glacier after 90 days, delete after 7 years
-
-**Cost Projection (Monthly):**
-
-```mermaid
-pie title AWS Serverless Monthly Cost Breakdown ($450-550/month)
-    "Lambda (Compute)" : 80
-    "Aurora Serverless v2" : 120
-    "DynamoDB (On-Demand)" : 60
-    "CloudFront (CDN)" : 40
-    "AppSync (GraphQL)" : 30
-    "OpenSearch Serverless" : 50
-    "Bedrock (AI)" : 100
-    "S3 Storage" : 20
-    "Data Transfer" : 50
-```
 
 ### 🔧 Operational Excellence Pillar Implementation
 
@@ -1325,7 +1190,7 @@ graph TB
 
 ---
 
-## 11.4 AWS Security Services Integration
+## 10.4 AWS Security Services Integration
 
 ### 🛡️ Comprehensive Security Architecture
 
@@ -1535,7 +1400,7 @@ flowchart LR
 
 ---
 
-## 11.5 Multi-Region Strategy
+## 10.5 Multi-Region Strategy
 
 ### 🌍 Global Resilience Architecture
 
@@ -1704,7 +1569,7 @@ graph TB
 
 ---
 
-## 11.6 AWS Resilience Hub Integration
+## 10.6 AWS Resilience Hub Integration
 
 ### 🔧 Operational Readiness Automation
 
@@ -1826,7 +1691,7 @@ graph TB
 
 ---
 
-## 11.7 Enterprise Integration
+## 10.7 Enterprise Integration
 
 ### 🔌 SIEM & Security Tool Integration
 
@@ -1966,9 +1831,9 @@ graph TB
 ### 📡 API Gateway Management
 
 **Enterprise API Features:**
-- ✅ **Usage Plans** - $49/month (10K requests), $99/month (50K), $499/month (250K)
-- ✅ **API Keys** - Secure API key management per customer
-- ✅ **Rate Limiting** - Throttling per usage plan (100/1000/5000 req/sec)
+- ✅ **Usage Plans** - Tiered access levels with different request quotas
+- ✅ **API Keys** - Secure API key management per user
+- ✅ **Rate Limiting** - Throttling per usage tier (varying request rates)
 - ✅ **Quota Management** - Daily/monthly quotas with overage alerts
 
 **API Monitoring:**
@@ -1983,7 +1848,7 @@ graph TB
 
 ---
 
-## 12. 📚 Related Documentation
+## 11. 📚 Related Documentation
 
 <div class="documentation-map">
 
@@ -2013,7 +1878,7 @@ graph TB
 | **[Future State Diagrams](FUTURE_STATEDIAGRAM.md)** | 🔄 Behavior | AI-enhanced state transitions, event-driven workflows | 📝 Planned |
 | **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 Process | Bedrock AI workflows, Step Functions orchestration | ✅ Active |
 | **[Future Mindmaps](FUTURE_MINDMAP.md)** | 🧠 Concept | Future capability evolution, AWS service relationships | 📝 Planned |
-| **[Future SWOT Analysis](FUTURE_SWOT.md)** | 💼 Business | Future strategic opportunities, AI monetization | 📝 Planned |
+| **[Future SWOT Analysis](FUTURE_SWOT.md)** | 💼 Business | Future strategic opportunities and growth strategies | 📝 Planned |
 | **[Future Workflows](FUTURE_WORKFLOWS.md)** | 🔧 DevOps | Enhanced CI/CD with AWS CodePipeline, blue/green deployments | 📝 Planned |
 | **[Future Data Model](FUTURE_DATA_MODEL.md)** | 📊 Data | Aurora, DynamoDB, Neptune data architecture | 📝 Planned |
 
