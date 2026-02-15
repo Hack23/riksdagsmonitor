@@ -22,10 +22,7 @@
   <a href="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
   <a href="https://slsa.dev"><img src="https://slsa.dev/images/gh-badge-level3.svg" alt="SLSA 3"/></a>
   <a href="https://sonarcloud.io/dashboard?id=Hack23_riksdagsmonitor"><img src="https://sonarcloud.io/api/project_badges/measure?project=Hack23_riksdagsmonitor&metric=alert_status" alt="Quality Gate"/></a>
-  <a href="https://bestpractices.coreinfrastructure.org/projects/XXXXX"><img src="https://bestpractices.coreinfrastructure.org/projects/XXXXX/badge" alt="CII Best Practices"/></a>
   <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor.svg?type=shield" alt="FOSSA"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Unit_Coverage-85%25-success?style=for-the-badge" alt="Unit Test Coverage"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/E2E_Coverage-75%25-success?style=for-the-badge" alt="E2E Test Coverage"/></a>
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
@@ -531,13 +528,7 @@ C4Component
 **AWS Real-Time Stack:**
 - **Streaming:** Amazon Kinesis Data Streams (ingest)
 - **Processing:** Lambda (consume Kinesis records)
-- **Notifications:** AppSync subscriptions (push to clients)
-- **Storage:** DynamoDB Streams (change data capture)
-
-**AWS Real-Time Stack:**
-- **Streaming:** Amazon Kinesis Data Streams (ingest)
-- **Processing:** Lambda (consume Kinesis records)
-- **Analytics:** Kinesis Analytics (SQL on streaming data)
+- **Analytics:** Kinesis Data Analytics (SQL on streaming data)
 - **Notifications:** AppSync subscriptions (push to clients)
 - **Storage:** DynamoDB Streams (change data capture)
 - **Fully Managed:** Zero cluster management, auto-scaling
@@ -721,7 +712,7 @@ Amplify Hosting (SSR) → CloudFront
 
 ## 8. ⚠️ Risk Assessment (AWS-Specific)
 
-### 9.1 Technical Risks
+### 8.1 Technical Risks
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
@@ -731,7 +722,7 @@ Amplify Hosting (SSR) → CloudFront
 | **Aurora Serverless Pauses** | MEDIUM | LOW | Min capacity 0.5 ACU (faster wake-up), read replicas for queries |
 | **AWS Service Limits** | LOW | HIGH | Request limit increases proactively, monitor Service Quotas |
 
-### 9.2 AWS-Specific Risks
+### 8.2 AWS-Specific Risks
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
@@ -740,20 +731,11 @@ Amplify Hosting (SSR) → CloudFront
 | **Cost Overruns** | MEDIUM | HIGH | CloudWatch Billing Alarms, Cost Anomaly Detection, Budget limits |
 | **Vendor Lock-In** | HIGH | MEDIUM | Accept AWS lock-in as strategic decision per ISMS SUPPLIER.md |
 
-### 9.3 Business Risks
-
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| **Low API Adoption** | MEDIUM | HIGH | Free tier, aggressive marketing, university partnerships |
-| **Competitive AWS Products** | LOW | MEDIUM | Differentiation through 50+ years data, Swedish focus, transparency |
-| **Single Developer Risk** | HIGH | CRITICAL | Documentation, IaC (Terraform), GitHub Copilot agents, AWS ProServe |
-| **AWS Price Increases** | MEDIUM | MEDIUM | Reserved Capacity for predictable workloads, Savings Plans |
-
 ---
 
 ## 9. 📊 Success Metrics
 
-### 10.1 Technical Metrics
+### 9.1 Technical Metrics
 
 | Metric | Current (2026 Q1) | Target (2028) | Measurement |
 |--------|-------------------|---------------|-------------|
@@ -762,16 +744,6 @@ Amplify Hosting (SSR) → CloudFront
 | **Bedrock Latency (Claude Opus 4.6)** | N/A | <2s (first token) | CloudWatch metrics |
 | **AppSync Subscription Latency** | N/A | <100ms | CloudWatch metrics |
 | **Uptime** | 99.998% | 99.99% | CloudWatch alarms |
-
-### 9.2 User Metrics
-
-| Metric | Current (2026 Q1) | Target (2028) | Measurement |
-|--------|-------------------|---------------|-------------|
-| **Monthly Active Users** | 5,000 | 50,000 | CloudWatch RUM |
-| **Mobile App Installs** | 0 | 10,000 | Amplify Analytics |
-| **API Users** | 0 | 500 | Cognito user pools |
-| **AppSync Subscribers** | 0 | 5,000 | AppSync metrics |
-| **Session Duration** | 3 min | 10 min | CloudWatch RUM |
 
 ---
 
@@ -1831,10 +1803,10 @@ graph TB
 ### 📡 API Gateway Management
 
 **Enterprise API Features:**
-- ✅ **Usage Plans** - Tiered access levels with different request quotas
-- ✅ **API Keys** - Secure API key management per user
-- ✅ **Rate Limiting** - Throttling per usage tier (varying request rates)
-- ✅ **Quota Management** - Daily/monthly quotas with overage alerts
+- ✅ **Request Throttling** - Configurable rate limits per endpoint
+- ✅ **API Keys** - Secure API key management and authentication
+- ✅ **Caching** - Response caching at multiple layers (CloudFront, API Gateway, AppSync)
+- ✅ **Access Control** - IAM-based and Cognito authentication
 
 **API Monitoring:**
 - ✅ **CloudWatch Metrics** - Request count, latency, error rate
@@ -1859,14 +1831,14 @@ graph TB
 | **[Current Architecture](ARCHITECTURE.md)** | 🏛️ Architecture | C4 model current structure (Context, Container, Component diagrams) | ✅ Active |
 | **[Security Architecture](SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Current security controls, CSP implementation, SLSA Level 3 | ✅ Active |
 | **[State Diagrams](STATEDIAGRAM.md)** | 🔄 Behavior | Current system state transitions and lifecycles | ✅ Active |
-| **[Process Flowcharts](FLOWCHART.md)** | 🔄 Process | Current static site deployment workflows | ✅ Active |
+| **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 Process | Bedrock AI workflows, Step Functions orchestration | ✅ Active |
 | **[Mindmaps](MINDMAP.md)** | 🧠 Concept | Current system component relationships | ✅ Active |
 | **[SWOT Analysis](SWOT.md)** | 💼 Business | Current strategic assessment and positioning | ✅ Active |
 | **[CI/CD Workflows](WORKFLOWS.md)** | 🔧 DevOps | Current GitHub Actions automation | ✅ Active |
 | **[Data Model](DATA_MODEL.md)** | 📊 Data | Current client-side data structures, CIA integration | ✅ Active |
 | **[Threat Model](THREAT_MODEL.md)** | 🎯 Security | STRIDE threat analysis, attack surfaces | ✅ Active |
-| **[Agents](AGENTS.md)** | 🤖 Automation | GitHub Copilot custom agents (13 agents) | ✅ Active |
-| **[Skills](SKILLS.md)** | 🎓 Knowledge | Agent skill libraries (56 specialized skills) | ✅ Active |
+| **[Agents](AGENTS.md)** | 🤖 Automation | GitHub Copilot custom agents (14 agents) | ✅ Active |
+| **[Skills](SKILLS.md)** | 🎓 Knowledge | Agent skill libraries (57 specialized skills) | ✅ Active |
 | **[Labels](LABELS.md)** | 🏷️ Organization | GitHub issue labels and management | ✅ Active |
 
 ### Future Architecture Evolution (v2.0+ Roadmap)
@@ -1875,12 +1847,12 @@ graph TB
 |----------|------|---------|--------|
 | **[Future Architecture](FUTURE_ARCHITECTURE.md)** | 🚀 Evolution | **This document:** AWS serverless roadmap, AI enhancement | ✅ Active |
 | **[Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Planned AWS security enhancements (GuardDuty, Security Hub, WAF) | ✅ Active |
-| **[Future State Diagrams](FUTURE_STATEDIAGRAM.md)** | 🔄 Behavior | AI-enhanced state transitions, event-driven workflows | 📝 Planned |
+| **Future State Diagrams** | 🔄 Behavior | AI-enhanced state transitions, event-driven workflows | 📝 Planned |
 | **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 Process | Bedrock AI workflows, Step Functions orchestration | ✅ Active |
-| **[Future Mindmaps](FUTURE_MINDMAP.md)** | 🧠 Concept | Future capability evolution, AWS service relationships | 📝 Planned |
-| **[Future SWOT Analysis](FUTURE_SWOT.md)** | 💼 Business | Future strategic opportunities and growth strategies | 📝 Planned |
-| **[Future Workflows](FUTURE_WORKFLOWS.md)** | 🔧 DevOps | Enhanced CI/CD with AWS CodePipeline, blue/green deployments | 📝 Planned |
-| **[Future Data Model](FUTURE_DATA_MODEL.md)** | 📊 Data | Aurora, DynamoDB, Neptune data architecture | 📝 Planned |
+| **Future Mindmaps** | 🧠 Concept | Future capability evolution, AWS service relationships | 📝 Planned |
+| **Future SWOT Analysis** | 💼 Business | Future strategic opportunities and growth strategies | 📝 Planned |
+| **Future Workflows** | 🔧 DevOps | Enhanced CI/CD with AWS CodePipeline, blue/green deployments | 📝 Planned |
+| **Future Data Model** | 📊 Data | Aurora, DynamoDB, Neptune data architecture | 📝 Planned |
 
 ### External References & Standards
 

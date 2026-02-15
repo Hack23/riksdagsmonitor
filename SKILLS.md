@@ -271,19 +271,18 @@ Skills are:
 - C4 Model Architecture (Context + Container diagrams)
 - AWS Well-Architected Framework Alignment (5 pillars)
 - Multi-Region Strategy Documentation
-- Business Impact & ROI Analysis
+- Pure Technical Architecture (no business/monetary content)
 
 **Enforces**:
-- Document structure: 800-1,300 lines minimum
+- Document structure: minimum 800 lines (target 1,000-1,300)
 - Related documentation table: 16 documents (8 current + 8 future)
 - C4 diagrams: Context + Container with focus statements
-- AWS Well-Architected: All 5 pillars (Security, Reliability, Performance, Cost, Operational Excellence)
+- AWS Well-Architected: All 5 pillars (Security, Reliability, Performance, Cost Optimization, Operational Excellence)
 - AWS Security Services: 7 core services (IAM, Cognito, GuardDuty, Security Hub, WAF, KMS, CloudTrail)
 - Multi-region architecture: Active-Active or Active-Passive with DynamoDB Global Tables
 - Mermaid diagrams: Minimum 8 diagrams with consistent color scheme
-- Business analysis: Cost comparison, 3-year TCO, ROI calculations
-- Migration roadmap: 4-phase plan with timeline and investment breakdown
-- Comprehensive conclusion: 400-600 words summarizing vision
+- Migration roadmap: 4-phase plan with timeline and technical milestones
+- Comprehensive conclusion: 400-600 words summarizing technical vision
 
 **Standards Include**:
 - Header format with version, date, status (X.X-DRAFT)

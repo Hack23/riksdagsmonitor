@@ -10,7 +10,7 @@ This skill provides **comprehensive standards** for creating FUTURE_ARCHITECTURE
 - **Document structure**: 800-1,300 lines with 10-15 major sections
 - **Header format**: Version, date, status with executive summary
 - **Related documentation table**: 16 documents (8 current + 8 future)
-- **Comprehensive conclusion**: 400-600 words with business impact
+- **Comprehensive conclusion**: 400-600 words with technical vision
 
 ### 🏗️ C4 Architecture Model
 - **C4 Context diagram**: System-level external view with 6+ personas
