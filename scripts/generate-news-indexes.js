@@ -1013,7 +1013,7 @@ function generateHreflangTags() {
     tags.push(`  <link rel="alternate" hreflang="${hrefLang}" href="https://riksdagsmonitor.com/news/${filename}">`);
   });
   
-  tags.push(`  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">`);
+  tags.push(`  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/index.html">`);
   
   return tags.join('\n');
 }
