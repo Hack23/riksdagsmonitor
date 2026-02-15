@@ -330,15 +330,13 @@ SELECT
     p.first_name,
     p.last_name,
     p.party,
-    COUNT(DISTINCT d.document_id) as document_count,
     COUNT(DISTINCT v.vote_id) as vote_count,
     COUNT(DISTINCT CASE WHEN v.is_rebel_vote THEN v.vote_id END) as rebel_count
 FROM politicians p
-LEFT JOIN documents d ON d.embedding_id LIKE '%' || p.person_id || '%'
 LEFT JOIN votes v ON v.person_id = p.person_id
 WHERE p.status = 'Tjänstgörande riksdagsledamot'
 GROUP BY p.person_id, p.first_name, p.last_name, p.party
-ORDER BY document_count DESC, vote_count DESC
+ORDER BY vote_count DESC
 LIMIT 20;
 ```
 
@@ -669,6 +667,19 @@ async function generateEmbedding(text) {
 
 **Embed Document for Semantic Search**
 ```javascript
+// Initialize OpenSearch Serverless client
+const { Client } = require('@opensearch-project/opensearch');
+const { defaultProvider } = require('@aws-sdk/credential-provider-node');
+const aws4 = require('aws4');
+
+const opensearch = new Client({
+  node: process.env.OPENSEARCH_ENDPOINT,
+  ...aws4.sign({ 
+    service: 'aoss',
+    region: 'us-east-1'
+  }, defaultProvider())
+});
+
 async function embedDocument(document) {
   const fullText = [
     document.title,
@@ -737,7 +748,7 @@ async function queryKnowledgeBase(question) {
       type: "KNOWLEDGE_BASE",
       knowledgeBaseConfiguration: {
         knowledgeBaseId: "KB12345",
-        modelArn: "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-opus-4-20260208-v1:0",
+        modelArn: "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-opus-6-v1:0",
         retrievalConfiguration: {
           vectorSearchConfiguration: {
             numberOfResults: 5
@@ -816,8 +827,8 @@ CIA API Gateway → EventBridge → Lambda → Aurora/Neptune/DynamoDB/OpenSearc
 **Lambda Function Example:**
 ```javascript
 exports.handler = async (event) => {
-  // EventBridge event from CIA API webhook
-  const ciaData = JSON.parse(event.body);
+  // EventBridge event from CIA API webhook (payload in `detail`)
+  const ciaData = event.detail;
   
   // Store in Aurora
   await aurora.query('INSERT INTO politicians VALUES (...)');
@@ -1298,7 +1309,7 @@ graph TB
     
     subgraph "Bedrock Knowledge Base"
         KB[Knowledge Base<br/>Riksdagsmonitor-KB]
-        Claude[Claude 3 Sonnet<br/>Generation Model]
+        Claude[Claude Opus 6.0<br/>Generation Model]
     end
     
     subgraph "Application"
@@ -1398,7 +1409,7 @@ gantt
 | Quarter | Milestone | Deliverables |
 |---------|-----------|--------------|
 | **Q1 2028** | Bedrock Titan Embeddings | 8192-dim vectors for all documents |
-| **Q2 2028** | Bedrock Knowledge Bases | RAG pipeline with Claude 3 |
+| **Q2 2028** | Bedrock Knowledge Bases | RAG pipeline with Claude Opus 6.0 |
 | **Q3 2028** | Semantic Search | Vector similarity search |
 | **Q1 2029** | Predictive Models | Vote prediction, election forecasting |
 
