@@ -3,7 +3,7 @@
  * Tests vocabulary extraction from news articles
  */
 
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterAll } from 'vitest';
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'fs';
 import { execSync } from 'child_process';
 
@@ -18,6 +18,15 @@ describe('extract-vocabulary.js', () => {
       // Directory doesn't exist, that's fine
     }
     mkdirSync(testDir, { recursive: true });
+  });
+
+  afterAll(() => {
+    // Clean up test fixtures after all tests complete
+    try {
+      rmSync(testDir, { recursive: true, force: true });
+    } catch (e) {
+      // Directory cleanup failed, ignore
+    }
   });
 
   describe('Language code extraction', () => {

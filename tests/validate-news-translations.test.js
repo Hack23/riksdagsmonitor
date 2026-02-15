@@ -3,7 +3,7 @@
  * Tests validation of translated news articles
  */
 
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterAll } from 'vitest';
 import { writeFileSync, mkdirSync, rmSync } from 'fs';
 import { execSync } from 'child_process';
 
@@ -18,6 +18,15 @@ describe('validate-news-translations.js', () => {
       // Directory doesn't exist, that's fine
     }
     mkdirSync(testDir, { recursive: true });
+  });
+
+  afterAll(() => {
+    // Clean up test fixtures after all tests complete
+    try {
+      rmSync(testDir, { recursive: true, force: true });
+    } catch (e) {
+      // Directory cleanup failed, ignore
+    }
   });
 
   describe('Language code detection', () => {
