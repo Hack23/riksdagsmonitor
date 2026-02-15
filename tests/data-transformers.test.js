@@ -473,4 +473,252 @@ describe('Data Transformers', () => {
       expect(metadata.tags).toContain('Woche Voraus');
     });
   });
+
+  describe('data-translate markers for Swedish API content', () => {
+    it('should wrap Swedish titel in data-translate span for committee reports', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Bättre förutsättningar', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).toContain('data-translate="true"');
+      expect(content).toContain('lang="sv"');
+      expect(content).toContain('Bättre förutsättningar');
+    });
+
+    it('should NOT wrap English title in data-translate span for committee reports', () => {
+      const content = generateArticleContent(
+        { reports: [{ title: 'Better conditions', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).not.toContain('data-translate="true"');
+      expect(content).toContain('Better conditions');
+    });
+
+    it('should wrap Swedish titel in data-translate span for propositions', () => {
+      const content = generateArticleContent(
+        { propositions: [{ titel: 'Ändringsbudget för 2026', url: '#' }] },
+        'propositions',
+        'en'
+      );
+      expect(content).toContain('data-translate="true"');
+      expect(content).toContain('lang="sv"');
+      expect(content).toContain('Ändringsbudget för 2026');
+    });
+
+    it('should NOT wrap English title in data-translate span for propositions', () => {
+      const content = generateArticleContent(
+        { propositions: [{ title: 'Budget Amendment 2026', url: '#' }] },
+        'propositions',
+        'en'
+      );
+      expect(content).not.toContain('data-translate="true"');
+      expect(content).toContain('Budget Amendment 2026');
+    });
+
+    it('should wrap Swedish titel in data-translate span for motions', () => {
+      const content = generateArticleContent(
+        { motions: [{ titel: 'Djurskydd', url: '#', parti: 'MP', intressent_namn: 'Test' }] },
+        'motions',
+        'en'
+      );
+      expect(content).toContain('data-translate="true"');
+      expect(content).toContain('lang="sv"');
+      expect(content).toContain('Djurskydd');
+    });
+
+    it('should NOT wrap English title in data-translate span for motions', () => {
+      const content = generateArticleContent(
+        { motions: [{ title: 'Animal Protection', url: '#', parti: 'MP', intressent_namn: 'Test' }] },
+        'motions',
+        'en'
+      );
+      expect(content).not.toContain('data-translate="true"');
+      expect(content).toContain('Animal Protection');
+    });
+
+    it('should wrap Swedish summary in data-translate span when present', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', summary: 'Förslaget innebär att', url: '#', organ: 'SoU' }] },
+        'committee-reports',
+        'en'
+      );
+      // Two data-translate spans: one for title, one for summary
+      const matches = content.match(/data-translate="true"/g);
+      expect(matches).not.toBeNull();
+      expect(matches.length).toBe(2);
+      expect(content).toContain('Förslaget innebär att');
+    });
+
+    it('should use localized default when no summary provided', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', url: '#', organ: 'SoU' }] },
+        'committee-reports',
+        'de'
+      );
+      // Only title has data-translate, summary is localized default
+      const matches = content.match(/data-translate="true"/g);
+      expect(matches).not.toBeNull();
+      expect(matches.length).toBe(1);
+      // Should contain the German default text
+      expect(content).toContain(L('de', 'reportDefault'));
+    });
+
+    it('should wrap week-ahead event titel in data-translate span', () => {
+      const eventsWithTitel = [
+        { titel: 'Öppen utfrågning om AI', rubrik: 'EU debate on AI', datum: '2026-02-10T10:00:00', organ: 'TU' }
+      ];
+      const content = generateArticleContent(
+        { events: eventsWithTitel, highlights: [] },
+        'week-ahead',
+        'en'
+      );
+      expect(content).toContain('data-translate="true"');
+      expect(content).toContain('Öppen utfrågning om AI');
+    });
+
+    it('should NOT wrap week-ahead event with English title', () => {
+      const eventsWithTitle = [
+        { title: 'EU summit on trade', datum: '2026-02-10T10:00:00', organ: 'TU' }
+      ];
+      const content = generateArticleContent(
+        { events: eventsWithTitle, highlights: [] },
+        'week-ahead',
+        'en'
+      );
+      expect(content).not.toContain('data-translate="true"');
+      expect(content).toContain('EU summit on trade');
+    });
+  });
+
+  describe('HTML escaping in data-translate spans (XSS prevention)', () => {
+    it('should escape HTML special characters in Swedish titles', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test <script>alert("xss")</script>', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).not.toContain('<script>');
+      expect(content).toContain('&lt;script&gt;');
+    });
+
+    it('should escape HTML in Swedish summaries', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', summary: 'Summary with <img onerror="hack">', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).not.toContain('<img onerror');
+      expect(content).toContain('&lt;img onerror');
+    });
+
+    it('should escape HTML in document names', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', dokumentnamn: 'Doc <b>bold</b>', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).not.toContain('<b>bold</b>');
+      expect(content).toContain('&lt;b&gt;');
+    });
+  });
+
+  describe('dokumentnamn fallback chain', () => {
+    it('should use dokumentnamn as link text when available', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', dokumentnamn: 'Bet 2025/26:FiU1', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).toContain('>Bet 2025/26:FiU1</a>');
+    });
+
+    it('should fall back to dok_id when dokumentnamn missing', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', dok_id: 'GX01FiU1', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).toContain('>GX01FiU1</a>');
+    });
+
+    it('should fall back to title text when both dokumentnamn and dok_id missing', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Fallback Title', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).toContain('>Fallback Title</a>');
+    });
+
+    it('should never render "undefined" as link text', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', url: '#', organ: 'FiU' }] },
+        'committee-reports',
+        'en'
+      );
+      expect(content).not.toContain('>undefined</a>');
+      expect(content).not.toContain('>undefined<');
+    });
+
+    it('should apply dokumentnamn fallback for propositions', () => {
+      const content = generateArticleContent(
+        { propositions: [{ titel: 'Test Prop', dok_id: 'PROP123', url: '#' }] },
+        'propositions',
+        'en'
+      );
+      expect(content).toContain('>PROP123</a>');
+    });
+
+    it('should apply dokumentnamn fallback for motions', () => {
+      const content = generateArticleContent(
+        { motions: [{ titel: 'Test Motion', dok_id: 'MOT456', url: '#', parti: 'S', intressent_namn: 'Test' }] },
+        'motions',
+        'en'
+      );
+      expect(content).toContain('>MOT456</a>');
+    });
+  });
+
+  describe('extractWatchPoints with data-translate markers', () => {
+    it('should wrap Swedish event titles in data-translate span', () => {
+      const watchPoints = extractWatchPoints({
+        events: [
+          { titel: 'Öppen utfrågning', rubrik: 'EU summit debate', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ]
+      }, 'en');
+      
+      expect(watchPoints.length).toBeGreaterThan(0);
+      const wp = watchPoints[0];
+      expect(wp.title).toContain('data-translate="true"');
+      expect(wp.title).toContain('lang="sv"');
+      expect(wp.title).toContain('Öppen utfrågning');
+    });
+
+    it('should NOT wrap English event titles in data-translate span', () => {
+      const watchPoints = extractWatchPoints({
+        events: [
+          { title: 'EU summit on trade', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ]
+      }, 'en');
+      
+      expect(watchPoints.length).toBeGreaterThan(0);
+      const wp = watchPoints[0];
+      expect(wp.title).not.toContain('data-translate="true"');
+      expect(wp.title).toContain('EU summit on trade');
+    });
+
+    it('should escape HTML in watch point titles', () => {
+      const watchPoints = extractWatchPoints({
+        events: [
+          { titel: 'Test <script>hack</script>', rubrik: 'EU vote on safety', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ]
+      }, 'en');
+      
+      expect(watchPoints.length).toBeGreaterThan(0);
+      expect(watchPoints[0].title).not.toContain('<script>');
+      expect(watchPoints[0].title).toContain('&lt;script&gt;');
+    });
+  });
 });

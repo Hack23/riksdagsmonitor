@@ -10,6 +10,8 @@
  *   import { transformCalendarToEventGrid, generateArticleContent } from './data-transformers.js';
  */
 
+import { escapeHtml } from './html-utils.js';
+
 /**
  * Transform calendar events into event grid structure for template
  * 
@@ -560,9 +562,10 @@ function generateWeekAheadContent(data, lang) {
       const eventTitle = event.title || event.titel || 'Event';
       
       // Mark Swedish API titles for LLM translation post-processing
+      const escapedEventTitle = escapeHtml(eventTitle);
       const titleHtml = (event.titel && !event.title) 
-        ? `<span data-translate="true" lang="sv">${eventTitle}</span>` 
-        : eventTitle;
+        ? `<span data-translate="true" lang="sv">${escapedEventTitle}</span>` 
+        : escapedEventTitle;
       
       content += `
     <h3>${dayName ? dayName + ' - ' : ''}${titleHtml}</h3>
@@ -616,12 +619,16 @@ function generateCommitteeContent(data, lang) {
   
   reports.forEach(report => {
     // Mark Swedish API titles/summaries for LLM translation post-processing
+    // Only wrap in data-translate when content is from Swedish API (titel field)
     const titleText = report.titel || report.title || '';
-    const titleHtml = `<span data-translate="true" lang="sv">${titleText}</span>`;
-    const docName = report.dokumentnamn || report.dok_id || titleText;
+    const escapedTitle = escapeHtml(titleText);
+    const titleHtml = (report.titel && !report.title)
+      ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+      : escapedTitle;
+    const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
     const summaryText = report.summary || '';
     const summaryHtml = summaryText 
-      ? `<span data-translate="true" lang="sv">${summaryText}</span>` 
+      ? ((report.titel && !report.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
       : L(lang, 'reportDefault');
     
     content += `
@@ -650,12 +657,16 @@ function generatePropositionsContent(data, lang) {
   
   propositions.forEach(prop => {
     // Mark Swedish API titles/summaries for LLM translation post-processing
+    // Only wrap in data-translate when content is from Swedish API (titel field)
     const titleText = prop.titel || prop.title || '';
-    const titleHtml = `<span data-translate="true" lang="sv">${titleText}</span>`;
-    const docName = prop.dokumentnamn || prop.dok_id || titleText;
+    const escapedTitle = escapeHtml(titleText);
+    const titleHtml = (prop.titel && !prop.title)
+      ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+      : escapedTitle;
+    const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
     const summaryText = prop.summary || '';
     const summaryHtml = summaryText 
-      ? `<span data-translate="true" lang="sv">${summaryText}</span>` 
+      ? ((prop.titel && !prop.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
       : L(lang, 'propDefault');
     
     content += `
@@ -683,12 +694,16 @@ function generateMotionsContent(data, lang) {
   
   motions.forEach(motion => {
     // Mark Swedish API titles/summaries for LLM translation post-processing
+    // Only wrap in data-translate when content is from Swedish API (titel field)
     const titleText = motion.titel || motion.title || '';
-    const titleHtml = `<span data-translate="true" lang="sv">${titleText}</span>`;
-    const docName = motion.dokumentnamn || motion.dok_id || titleText;
+    const escapedTitle = escapeHtml(titleText);
+    const titleHtml = (motion.titel && !motion.title)
+      ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+      : escapedTitle;
+    const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
     const summaryText = motion.summary || '';
     const summaryHtml = summaryText 
-      ? `<span data-translate="true" lang="sv">${summaryText}</span>` 
+      ? ((motion.titel && !motion.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
       : L(lang, 'motionDefault');
     
     content += `
@@ -729,9 +744,10 @@ export function extractWatchPoints(data, lang = 'en') {
       const eventTitle = event.title || event.titel || 'Event';
       
       // Mark Swedish API titles for LLM translation post-processing
+      const escapedEventTitle = escapeHtml(eventTitle);
       const titleDisplay = (event.titel && !event.title)
-        ? `<span data-translate="true" lang="sv">${eventTitle}</span>`
-        : eventTitle;
+        ? `<span data-translate="true" lang="sv">${escapedEventTitle}</span>`
+        : escapedEventTitle;
       
       watchPoints.push({
         title: dayName ? `${dayName}: ${titleDisplay}` : titleDisplay,
