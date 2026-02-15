@@ -329,7 +329,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
         "@type": "ListItem",
         "position": 2,
         "name": "${getBreadcrumbName(lang, 'news')}",
-        "item": "https://riksdagsmonitor.com/news/"
+        "item": "https://riksdagsmonitor.com/news/index.html"
       },
       {
         "@type": "ListItem",

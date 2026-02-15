@@ -219,11 +219,11 @@
   <priority>0.4</priority>
 </url>
 <url>
-  <loc>https://riksdagsmonitor.com/news/</loc>
+  <loc>https://riksdagsmonitor.com/news/index.html</loc>
   <lastmod>2026-02-14T22:36:04.411Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/index.html"/>
   <xhtml:link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/index_sv.html"/>
   <xhtml:link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/index_da.html"/>
   <xhtml:link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/index_no.html"/>
@@ -234,7 +234,7 @@
   <xhtml:link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/news/index_nl.html"/>
   <xhtml:link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/news/index_ar.html"/>
   <xhtml:link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/news/index_he.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/index.html"/>
 </url>
 <url>
   <loc>https://riksdagsmonitor.com/news/index_sv.html</loc>
