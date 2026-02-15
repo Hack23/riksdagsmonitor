@@ -124,6 +124,78 @@ The CIA Triad is fundamental to information security. Use consistent translation
 | **DevSecOps** | DevSecOps | DevSecOps | DevSecOps | DevSecOps |
 | **ISMS** | ISMS | ISMS | SMSI | SGSI |
 
+#### E. Swedish Parliamentary Document Types (Riksdag API)
+
+These terms appear in Riksdag API responses and MUST be translated accurately in news articles. The Swedish term is the `doktyp` field value. **Never leave these untranslated.**
+
+| Swedish | English | German | French | Spanish |
+|---------|---------|--------|--------|---------|
+| **Betänkande** (bet) | Committee report | Ausschussbericht | Rapport de commission | Informe de comité |
+| **Proposition** (prop) | Government bill | Regierungsvorlage | Projet de loi du gouvernement | Proyecto de ley gubernamental |
+| **Motion** (mot) | Parliamentary motion | Parlamentarischer Antrag | Motion parlementaire | Moción parlamentaria |
+| **Interpellation** (ip) | Interpellation | Interpellation | Interpellation | Interpelación |
+| **Skriftlig fråga** (fr) | Written question | Schriftliche Anfrage | Question écrite | Pregunta escrita |
+| **Votering** | Division/Vote | Abstimmung | Vote/Scrutin | Votación |
+| **Anförande** | Parliamentary speech | Parlamentsrede | Discours parlementaire | Discurso parlamentario |
+| **Riksdagsskrivelse** (rskr) | Parliamentary communication | Reichstagsschreiben | Communication parlementaire | Comunicación parlamentaria |
+
+| Swedish | Danish | Norwegian | Finnish | Dutch |
+|---------|--------|-----------|---------|-------|
+| **Betänkande** | Udvalgsbetænkning | Komitéinnstilling | Valiokunnan mietintö | Commissieverslag |
+| **Proposition** | Regeringsforslag | Regjeringsforslag | Hallituksen esitys | Wetsvoorstel |
+| **Motion** | Beslutningsforslag | Representantforslag | Lakialoite | Parlementaire motie |
+| **Interpellation** | Forespørgsel | Interpellasjon | Välikysymys | Interpellatie |
+| **Skriftlig fråga** | Skriftligt spørgsmål | Skriftlig spørsmål | Kirjallinen kysymys | Schriftelijke vraag |
+| **Votering** | Afstemning | Votering | Äänestys | Stemming |
+| **Anförande** | Tale | Innlegg | Puheenvuoro | Toespraak |
+
+| Swedish | Arabic | Hebrew | Japanese | Korean | Chinese |
+|---------|--------|--------|----------|--------|---------|
+| **Betänkande** | تقرير اللجنة | דוח ועדה | 委員会報告 | 위원회 보고서 | 委员会报告 |
+| **Proposition** | مشروع قانون حكومي | הצעת חוק ממשלתית | 政府法案 | 정부 법안 | 政府法案 |
+| **Motion** | اقتراح برلماني | הצעה פרלמנטרית | 議会動議 | 의회 동의 | 议会动议 |
+| **Interpellation** | استجواب | אינטרפלציה | 質問主意書 | 대정부질문 | 质询 |
+| **Skriftlig fråga** | سؤال مكتوب | שאילתה | 書面質問 | 서면질의 | 书面质询 |
+| **Votering** | تصويت | הצבעה | 採決 | 표결 | 表决 |
+| **Anförande** | خطاب برلماني | נאום פרלמנטרי | 国会演説 | 의회 연설 | 议会发言 |
+
+#### F. Riksdag Committee Abbreviations
+
+Committee abbreviations (e.g., FiU, SoU) appear in document references like "Bet. 2025/26:FiU10". Keep abbreviations as-is in document references, but translate committee names in running text.
+
+| Abbreviation | Swedish Name | English |
+|-------------|-------------|---------|
+| **FiU** | Finansutskottet | Finance Committee |
+| **SoU** | Socialutskottet | Social Affairs Committee |
+| **JuU** | Justitieutskottet | Justice Committee |
+| **CU** | Civilutskottet | Civil Affairs Committee |
+| **UU** | Utrikesutskottet | Foreign Affairs Committee |
+| **FöU** | Försvarsutskottet | Defence Committee |
+| **KU** | Konstitutionsutskottet | Constitutional Committee |
+| **KrU** | Kulturutskottet | Cultural Affairs Committee |
+| **MJU** | Miljö- och jordbruksutskottet | Environment and Agriculture Committee |
+| **NU** | Näringsutskottet | Industry Committee |
+| **SkU** | Skatteutskottet | Tax Committee |
+| **SfU** | Socialförsäkringsutskottet | Social Insurance Committee |
+| **TU** | Trafikutskottet | Transport Committee |
+| **UbU** | Utbildningsutskottet | Education Committee |
+| **AU** | Arbetsmarknadsutskottet | Labour Market Committee |
+
+#### G. Common Policy Terms from Riksdag API
+
+| Swedish | English | Notes |
+|---------|---------|-------|
+| **Statlig personal** | Government personnel | Civil servants |
+| **Bostadsrätt** | Tenant-ownership / Housing cooperative | Swedish housing form |
+| **Föräldrapenning** | Parental allowance | Social insurance benefit |
+| **Djurskydd** | Animal welfare/protection | Regulatory area |
+| **Fribeloppet** | Earning threshold | Tax-free amount for students/pensioners |
+| **Tidöavtalet** | The Tidö Agreement | 2022 governing agreement (M, KD, L, SD) |
+| **Riksrevisionen** | Swedish National Audit Office | Keep "Riksrevisionen" in parentheses |
+| **Riksbanken** | Sveriges Riksbank | Sweden's central bank |
+| **Statsråd** | Cabinet minister | Member of the government |
+| **Regeringskansliet** | Government Offices of Sweden | Administrative apparatus |
+
 ---
 
 ## 🔄 Cultural Adaptations
