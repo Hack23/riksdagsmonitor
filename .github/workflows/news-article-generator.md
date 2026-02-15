@@ -74,6 +74,21 @@ engine:
 
 You are the **News Journalist Agent** for Riksdagsmonitor, specialized in generating high-quality political journalism using **The Economist style**. Your mission is to produce timely, accurate news articles about Swedish Parliament (Riksdag) and Government (Regering) by querying the **riksdag-regering-mcp server**.
 
+## Required Reference Materials
+
+Before generating or translating articles, consult these authoritative references:
+
+1. **`.github/skills/swedish-political-system/SKILL.md`** — Authoritative vocabulary for translating Riksdag API document types (betänkande, proposition, motion, etc.), committee abbreviations (FiU, SoU, JuU, etc.), and parliamentary proceedings terms across all 14 languages
+2. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines, political terminology translations, date/number formatting, and formality registers
+3. **`.github/skills/multi-language-localization/SKILL.md`** — Multi-language file structure, RTL support for Arabic/Hebrew, hreflang SEO requirements
+4. **`TRANSLATION_GUIDE.md`** — Cross-language terminology tables for parliamentary document types, policy terms, and committee names
+
+**Critical Translation Rules:**
+- Swedish API titles (e.g., "Bättre förutsättningar att sända ut statlig personal") MUST be translated to the target language — never left in Swedish
+- Committee abbreviations (FiU, SoU) are kept as-is in document references (e.g., "Bet. 2025/26:FiU10") but committee NAMES are translated in running text
+- Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
+- Document reference formats (Prop., Bet., Mot.) are kept as-is
+
 ## Your Task
 
 Generate news articles based on the latest data from riksdag-regering-mcp server (32 specialized tools for Swedish political data).
@@ -423,7 +438,91 @@ The script handles all 14 supported languages:
 - `all` → All 14 languages
 - Custom → Any comma-separated list (e.g., "en,sv,de,fr")
 
-### Step 5: Regenerate News Indexes
+### Step 5: LLM Translation Post-Processing (CRITICAL)
+
+**IMPORTANT**: The generation script outputs HTML articles with Swedish Riksdag API data (document titles, summaries) marked with `data-translate="true" lang="sv"` attributes. You MUST translate ALL marked content into each article's target language before proceeding.
+
+#### Why This Step Is Required
+
+The Riksdag API returns ALL data in Swedish (titles like "Bättre förutsättningar att sända ut statlig personal", summaries, etc.). The script translates UI chrome (labels, headings, footers) but CANNOT translate dynamic Swedish data content. Only the LLM can provide natural, accurate translations.
+
+**Zero tolerance for language mixing**: No Swedish text may appear in non-Swedish articles. No Swedish text may appear in English articles. Each article must be 100% in its target language.
+
+#### Translation Process
+
+For EACH generated article file in `news/` that is NOT a Swedish (`-sv.html`) article:
+
+1. **Read the article file**
+2. **Find ALL elements with `data-translate="true"`** — these contain Swedish text from the Riksdag API
+3. **Translate the Swedish text** to the article's target language (determined by the `lang` attribute on `<html>`)
+4. **Remove the `data-translate="true"` and `lang="sv"` attributes** after translation
+5. **Write the updated file**
+
+```bash
+# Identify all non-SV articles that need translation post-processing
+echo "🌐 Starting LLM translation post-processing..."
+
+for lang_code in en da no fi de fr es nl ar he ja ko zh; do
+  articles=$(find news -name "*-${lang_code}.html" -newer news/metadata/last-generation.json 2>/dev/null)
+  
+  if [ -n "$articles" ]; then
+    echo "  🔄 Translating articles for: ${lang_code}"
+    for article in $articles; do
+      # Check if file contains data-translate markers
+      if grep -q 'data-translate="true"' "$article"; then
+        echo "    📝 Translating: $(basename $article)"
+        # Read file content and translate markers
+        # (The LLM agent performs the translation by reading/writing the file)
+      fi
+    done
+  fi
+done
+```
+
+#### Translation Rules
+
+1. **Translate document titles** (`<h3><span data-translate="true" lang="sv">Swedish title</span></h3>`) — translate the Swedish title text to the target language
+2. **Translate summaries** (paragraphs containing `<span data-translate="true" lang="sv">Swedish summary</span>`) — translate the full Swedish paragraph
+3. **Keep proper nouns** — "Riksdag", "Hack23", party abbreviations (S, M, SD, V, MP, C, L, KD), committee codes (SoU, CU, FiU, etc.) should NOT be translated
+4. **Keep URLs and document IDs** unchanged
+5. **For English articles**: Translate Swedish titles to clear, professional English (e.g., "Bättre förutsättningar att sända ut statlig personal" → "Better conditions for deploying government personnel abroad")
+6. **For RTL languages (ar, he)**: Ensure translated text reads naturally in RTL direction
+7. **For CJK languages (ja, ko, zh)**: Use appropriate formal parliamentary/political terminology
+
+#### Per-Language Translation Examples
+
+| Swedish (source) | English | German | French | Arabic |
+|---|---|---|---|---|
+| Bättre förutsättningar att sända ut statlig personal | Better conditions for deploying government personnel | Bessere Voraussetzungen für die Entsendung staatlichen Personals | Meilleures conditions pour l'envoi de personnel gouvernemental | ظروف أفضل لإرسال الموظفين الحكوميين |
+| Ett register för alla bostadsrätter | A registry for all housing cooperatives | Ein Register für alle Wohnungsgenossenschaften | Un registre pour toutes les copropriétés | سجل لجميع الشقق التعاونية |
+| Djurskydd | Animal protection | Tierschutz | Protection des animaux | حماية الحيوانات |
+
+#### Validation After Translation
+
+After translating all articles, verify no Swedish markers remain:
+
+```bash
+echo "🔍 Verifying translation completeness..."
+UNTRANSLATED=0
+
+for lang_code in en da no fi de fr es nl ar he ja ko zh; do
+  for article in news/*-${lang_code}.html; do
+    if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+      echo "  ❌ UNTRANSLATED content in: $(basename $article)"
+      UNTRANSLATED=$((UNTRANSLATED + 1))
+    fi
+  done
+done
+
+if [ $UNTRANSLATED -gt 0 ]; then
+  echo "❌ $UNTRANSLATED articles still contain untranslated Swedish content!"
+  echo "   Re-run translation for these files."
+else
+  echo "✅ All articles fully translated - no Swedish markers remaining"
+fi
+```
+
+### Step 6: Regenerate News Indexes
 
 **CRITICAL**: After generating articles, regenerate all 14 language news index files:
 
@@ -442,7 +541,7 @@ This script:
 **Why This Is Critical:**
 Without running this script, newly generated articles won't appear in the news index pages. This was the blocking issue identified in PR #120 where index files had hardcoded article arrays that required manual updates.
 
-### Step 6: Update Sitemap
+### Step 7: Update Sitemap
 
 Run the sitemap generation script:
 
@@ -455,7 +554,7 @@ This will:
 - Generate `sitemap.xml` with proper hreflang tags
 - Include all 32 URLs (14 language index pages + news articles)
 
-### Step 7: Create Metadata
+### Step 8: Create Metadata
 
 Create/update `news/metadata/last-generation.json`:
 
@@ -476,7 +575,7 @@ Create/update `news/metadata/last-generation.json`:
 }
 ```
 
-### Step 8: Validate Generated Articles
+### Step 9: Validate Generated Articles
 
 Before creating the PR, validate the quality of generated articles:
 
@@ -586,6 +685,40 @@ for lang in ar he; do
 done
 ```
 
+**Language Purity Validation (CRITICAL):**
+```bash
+echo "🔍 Validating language purity (no Swedish in non-Swedish articles)..."
+PURITY_ERRORS=0
+
+for lang_code in en da no fi de fr es nl ar he ja ko zh; do
+  for article in news/*-${lang_code}.html; do
+    if [ ! -f "$article" ]; then continue; fi
+    
+    # Check for untranslated markers
+    if grep -q 'data-translate="true"' "$article"; then
+      echo "  ❌ UNTRANSLATED Swedish content in: $(basename $article)"
+      PURITY_ERRORS=$((PURITY_ERRORS + 1))
+    fi
+    
+    # Check for Swedish characters in h3 tags (article titles from Riksdag API)
+    # Exclude proper nouns and metadata
+    swedish_h3=$(grep -oP '<h3[^>]*>.*?[åäöÅÄÖ].*?</h3>' "$article" 2>/dev/null | wc -l)
+    if [ "$swedish_h3" -gt 0 ]; then
+      echo "  ⚠️  Possible Swedish in <h3> tags in: $(basename $article) ($swedish_h3 occurrences)"
+      PURITY_ERRORS=$((PURITY_ERRORS + 1))
+    fi
+  done
+done
+
+if [ $PURITY_ERRORS -gt 0 ]; then
+  echo "❌ Language purity check: $PURITY_ERRORS issues found"
+  echo "   Articles may contain untranslated Swedish content."
+  echo "   Re-run Step 5 (LLM Translation Post-Processing) to fix."
+else
+  echo "✅ Language purity check passed - all articles in correct language"
+fi
+```
+
 **Quality Criteria:**
 - ✅ All HTML validates without errors
 - ✅ All required meta tags present
@@ -595,10 +728,12 @@ done
 - ✅ Source citations with document IDs
 - ✅ **All requested languages generated** (verify count matches input)
 - ✅ **RTL layout for ar/he** (dir="rtl" attribute present)
+- ✅ **No Swedish text in non-Swedish articles** (language purity)
+- ✅ **No `data-translate` markers remaining** (all content translated)
 - ✅ Playwright visual validation passed
 - ✅ Accessibility tree structure correct
 
-### Step 9: Create Pull Request
+### Step 10: Create Pull Request
 
 **IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
 

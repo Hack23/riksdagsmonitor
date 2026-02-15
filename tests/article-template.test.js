@@ -474,4 +474,153 @@ describe('Article Template', () => {
       });
     });
   });
+
+  describe('og:locale mapping (OG_LOCALE_MAP)', () => {
+    const ogLocaleTests = [
+      { lang: 'en', expected: 'en_US' },
+      { lang: 'sv', expected: 'sv_SE' },
+      { lang: 'da', expected: 'da_DK' },
+      { lang: 'no', expected: 'nb_NO' },
+      { lang: 'fi', expected: 'fi_FI' },
+      { lang: 'de', expected: 'de_DE' },
+      { lang: 'fr', expected: 'fr_FR' },
+      { lang: 'es', expected: 'es_ES' },
+      { lang: 'nl', expected: 'nl_NL' },
+      { lang: 'ar', expected: 'ar_SA' },
+      { lang: 'he', expected: 'he_IL' },
+      { lang: 'ja', expected: 'ja_JP' },
+      { lang: 'ko', expected: 'ko_KR' },
+      { lang: 'zh', expected: 'zh_CN' }
+    ];
+
+    ogLocaleTests.forEach(({ lang, expected }) => {
+      it(`should output og:locale ${expected} for ${lang}`, () => {
+        const data = { ...mockArticleData, lang, slug: `2026-02-10-test-${lang}.html` };
+        const html = generateArticleHTML(data);
+        expect(html).toContain(`<meta property="og:locale" content="${expected}"`);
+      });
+    });
+
+    it('should fall back to en_US for unknown language', () => {
+      const data = { ...mockArticleData, lang: 'xx', slug: '2026-02-10-test-xx.html' };
+      const html = generateArticleHTML(data);
+      expect(html).toContain('og:locale');
+      expect(html).toContain('en_US');
+    });
+  });
+
+  describe('Site tagline (SITE_TAGLINE)', () => {
+    it('should include site-tagline div in English', () => {
+      const html = generateArticleHTML(mockArticleData);
+      expect(html).toContain('class="site-tagline"');
+      expect(html).toContain('Swedish Parliament Intelligence Platform');
+    });
+
+    it('should include Swedish tagline for sv', () => {
+      const data = { ...mockArticleData, lang: 'sv', slug: '2026-02-10-test-sv.html' };
+      const html = generateArticleHTML(data);
+      expect(html).toContain('class="site-tagline"');
+      expect(html).toContain('Senaste nyheter och analyser');
+    });
+
+    it('should include German tagline for de', () => {
+      const data = { ...mockArticleData, lang: 'de', slug: '2026-02-10-test-de.html' };
+      const html = generateArticleHTML(data);
+      expect(html).toContain('Aktuelle Nachrichten und Analysen');
+    });
+
+    it('should include Japanese tagline for ja', () => {
+      const data = { ...mockArticleData, lang: 'ja', slug: '2026-02-10-test-ja.html' };
+      const html = generateArticleHTML(data);
+      expect(html).toContain('スウェーデン議会リクスダーグの最新ニュースと分析');
+    });
+
+    it('should include Arabic tagline for ar', () => {
+      const data = { ...mockArticleData, lang: 'ar', slug: '2026-02-10-test-ar.html' };
+      const html = generateArticleHTML(data);
+      expect(html).toContain('أحدث الأخبار والتحليلات من البرلمان السويدي');
+    });
+
+    it('should fall back to English tagline for unknown language', () => {
+      const data = { ...mockArticleData, lang: 'xx', slug: '2026-02-10-test-xx.html' };
+      const html = generateArticleHTML(data);
+      expect(html).toContain('Swedish Parliament Intelligence Platform');
+    });
+  });
+
+  describe('Watch section titles (WATCH_SECTION_TITLES)', () => {
+    const watchTitleTests = [
+      { lang: 'en', expected: 'What to Watch This Week' },
+      { lang: 'sv', expected: 'Vad man ska följa denna vecka' },
+      { lang: 'de', expected: 'Worauf diese Woche zu achten ist' },
+      { lang: 'fr', expected: 'À suivre cette semaine' },
+      { lang: 'ja', expected: '今週の注目ポイント' },
+      { lang: 'ar', expected: 'ما يجب متابعته هذا الأسبوع' },
+      { lang: 'ko', expected: '이번 주 주목할 사항' },
+      { lang: 'zh', expected: '本周关注要点' }
+    ];
+
+    watchTitleTests.forEach(({ lang, expected }) => {
+      it(`should use localized watch title for ${lang}`, () => {
+        const data = {
+          ...mockArticleData,
+          lang,
+          slug: `2026-02-10-test-${lang}.html`,
+          watchPoints: [{ title: 'Test', description: 'Test desc' }]
+        };
+        const html = generateArticleHTML(data);
+        expect(html).toContain(expected);
+      });
+    });
+  });
+
+  describe('Event calendar titles (EVENT_CALENDAR_TITLES)', () => {
+    const calendarTitleTests = [
+      { lang: 'en', expected: 'Event Calendar' },
+      { lang: 'sv', expected: 'Veckans händelser' },
+      { lang: 'de', expected: 'Veranstaltungskalender' },
+      { lang: 'fr', expected: 'Calendrier des événements' },
+      { lang: 'ja', expected: 'イベントカレンダー' },
+      { lang: 'ar', expected: 'تقويم الأحداث' },
+      { lang: 'ko', expected: '일정 캘린더' },
+      { lang: 'zh', expected: '活动日历' }
+    ];
+
+    calendarTitleTests.forEach(({ lang, expected }) => {
+      it(`should use localized calendar title for ${lang}`, () => {
+        const data = {
+          ...mockArticleData,
+          lang,
+          slug: `2026-02-10-test-${lang}.html`
+        };
+        const html = generateArticleHTML(data);
+        expect(html).toContain(expected);
+      });
+    });
+  });
+
+  describe('sanitizeArticleBody in JSON-LD', () => {
+    it('should include sanitized articleBody in JSON-LD', () => {
+      const html = generateArticleHTML(mockArticleData);
+      expect(html).toContain('"articleBody"');
+      // Should not contain raw newlines within the JSON-LD block
+      const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+      expect(jsonLdMatch).not.toBeNull();
+      const jsonLd = jsonLdMatch[1];
+      // The articleBody value itself should have newlines removed
+      const bodyMatch = jsonLd.match(/"articleBody":\s*"([^"]*)"/);
+      expect(bodyMatch).not.toBeNull();
+      expect(bodyMatch[1]).not.toContain('\n');
+    });
+
+    it('should truncate long articleBody to 500 chars', () => {
+      const longContent = '<p>' + 'Word '.repeat(500) + '</p>';
+      const data = { ...mockArticleData, content: longContent };
+      const html = generateArticleHTML(data);
+      const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+      const jsonLd = jsonLdMatch[1];
+      const bodyMatch = jsonLd.match(/"articleBody":\s*"([^"]*)"/);
+      expect(bodyMatch[1].length).toBeLessThanOrEqual(510); // 500 chars + some escaped entities
+    });
+  });
 });
