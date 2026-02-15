@@ -27,6 +27,8 @@
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "generate-news-backport": "node scripts/generate-news-backport.js",
     "htmlhint": "sh -c 'htmlhint *.html; set -- news/*.html; if [ -e \"$1\" ]; then htmlhint \"$@\"; else echo \"No news/*.html files to lint\"; fi'",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "serve": "python3 -m http.server 8080",
     "linkcheck": "linkinator http://localhost:8080/ --recurse"
   },
@@ -62,8 +64,11 @@
     "d3": "^7.9.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@vitest/coverage-v8": "^4.0.18",
     "@vitest/ui": "^4.0.18",
+    "eslint": "^9.39.2",
+    "globals": "^17.3.0",
     "happy-dom": "^20.6.1",
     "htmlhint": "^1.9.1",
     "js-yaml": "^4.1.1",

@@ -180,10 +180,13 @@ function generateReport(results) {
     if (committeeLabels.size > 0) console.log(`  "Committee": ${Array.from(committeeLabels).join(', ')}`);
     if (documentLabels.size > 0) console.log(`  "Document": ${Array.from(documentLabels).join(', ')}`);
     
-    // Show sample titles from committee reports
+    // Show sample titles from any articles (prioritize committee reports)
     const committeeReports = data.samples.filter(s => s.type === 'committee-reports');
-    if (committeeReports.length > 0 && committeeReports[0].terms.titles.length > 0) {
-      console.log(`  Sample titles: ${committeeReports[0].terms.titles.slice(0, 3).join(', ')}`);
+    const sampleWithTitles = committeeReports.find(s => s.terms.titles && s.terms.titles.length > 0) || 
+                              data.samples.find(s => s.terms.titles && s.terms.titles.length > 0);
+    
+    if (sampleWithTitles && sampleWithTitles.terms.titles.length > 0) {
+      console.log(`  Sample titles: ${sampleWithTitles.terms.titles.slice(0, 3).join(', ')}`);
     }
   }
   
