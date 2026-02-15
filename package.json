@@ -20,6 +20,8 @@
     "check-updates": "node scripts/check-cia-schema-updates.js",
     "generate-types": "node scripts/generate-types-from-cia-schemas.js",
     "validate-translations": "node scripts/validate-translations.js",
+    "validate-news": "node scripts/validate-news-translations.js",
+    "validate-all": "npm run htmlhint && npm run validate-translations && npm run validate-news",
     "generate-news": "node scripts/generate-news-enhanced.js",
     "generate-news-indexes": "node scripts/generate-news-indexes.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
