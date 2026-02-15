@@ -209,3 +209,130 @@ Used by `classifyArticleType()` in `generate-news-indexes.js` to determine artic
 - **Election Authority**: https://www.val.se/
 - **Riksdag Open Data API**: https://data.riksdagen.se/
 - **TRANSLATION_GUIDE.md**: See repository root for cross-language terminology tables
+
+---
+
+## Real-World Translation Examples (From News Articles)
+
+This section provides proven translations extracted from actual translated news articles (Feb 2026), showing how political terms are used in context.
+
+### Committee Report Titles (Real Examples)
+
+These are actual committee report titles from news articles, showing natural translations:
+
+**"Better conditions for deploying government personnel abroad"**
+- 🇸🇪 Swedish: "Bättre förutsättningar att sända ut statlig personal"
+- 🇩🇪 German: "Bessere Voraussetzungen für die Entsendung staatlichen Personals"
+- 🇫🇷 French: "Meilleures conditions pour le déploiement du personnel gouvernemental"
+- 🇪🇸 Spanish: "Mejores condiciones para el despliegue de personal estatal"
+- 🇳🇱 Dutch: "Betere voorwaarden voor de uitzending van overheidspersoneel"
+- 🇸🇦 Arabic: "ظروف أفضل لإرسال الموظفين الحكوميين"
+- 🇮🇱 Hebrew: "תנאים טובים יותר לשליחת עובדי מדינה"
+- 🇯🇵 Japanese: "国家公務員の海外派遣条件の改善"
+- 🇰🇷 Korean: "국가 공무원 파견 조건 개선"
+- 🇨🇳 Chinese: "改善国家工作人员外派条件"
+
+**"A register for all condominiums"**
+- 🇸🇪 Swedish: "Ett register för alla bostadsrätter"
+- 🇩🇪 German: "Ein Register für alle Eigentumswohnungen"
+- 🇫🇷 French: "Un registre pour toutes les copropriétés"
+- 🇪🇸 Spanish: "Un registro para todas las viviendas en régimen de propiedad"
+- 🇳🇱 Dutch: "Een register voor alle appartementsrechten"
+- 🇸🇦 Arabic: "سجل لجميع حقوق الملكية السكنية"
+- 🇮🇱 Hebrew: "מרשם לכל דירות הבעלות"
+- 🇯🇵 Japanese: "全分譲住宅の登録制度"
+- 🇰🇷 Korean: "모든 분양주택 등록 제도"
+- 🇨🇳 Chinese: "所有产权公寓登记制度"
+
+**"Animal welfare"**
+- 🇸🇪 Swedish: "Djurskydd"
+- 🇩🇪 German: "Tierschutz"
+- 🇫🇷 French: "Protection des animaux"
+- 🇪🇸 Spanish: "Bienestar animal"
+- 🇳🇱 Dutch: "Dierenwelzijn"
+- 🇸🇦 Arabic: "رعاية الحيوان"
+- 🇮🇱 Hebrew: "רווחת בעלי חיים"
+
+**"Trade policy"**
+- 🇸🇪 Swedish: "Handelspolitik"
+- 🇩🇪 German: "Handelspolitik"
+- 🇫🇷 French: "Politique commerciale"
+- 🇪🇸 Spanish: "Política comercial"
+- 🇳🇱 Dutch: "Handelsbeleid"
+
+**"Planning and construction"**
+- 🇸🇪 Swedish: "Planering och byggande"
+- 🇩🇪 German: "Planung und Bauwesen"
+- 🇫🇷 French: "Planification et construction"
+- 🇪🇸 Spanish: "Planificación y construcción"
+- 🇳🇱 Dutch: "Planning en bouw"
+
+### Evening Analysis Headlines (Real Examples)
+
+From February 2026 evening analysis articles:
+
+**"Sweden's Riksdag Enters Spring Recess: A Mid-Session Assessment"**
+- 🇸🇪 Swedish: "Sveriges riksdag går in i våruppehåll: En halvtidsbedömning"
+- 🇩🇪 German: "Schwedens Riksdag in der Frühjahrspause: Eine Halbzeitbewertung"
+- 🇫🇷 French: "Le Riksdag suédois entre en pause de printemps: Une évaluation à mi-parcours"
+
+### News Article UI Labels (Validated Translations)
+
+Labels extracted from 81 translated news articles:
+
+**"What to Watch This Week"**
+- 🇸🇪 Swedish: "Vad man ska följa denna vecka"
+- 🇩🇪 German: "Was diese Woche zu beobachten"
+- 🇫🇷 French: "À surveiller cette semaine"
+- 🇪🇸 Spanish: "Qué observar esta semana"
+- 🇳🇱 Dutch: "Te volgen deze week"
+- 🇩🇰 Danish: "Hvad man skal følge denne uge"
+- 🇳🇴 Norwegian: "Hva man skal følge denne uken"
+- 🇫🇮 Finnish: "Mitä seurata tällä viikolla"
+
+**"Committee"**
+- 🇸🇪 Swedish: "Kommitté"
+- 🇩🇪 German: "Ausschuss"
+- 🇫🇷 French: "Commission"
+- 🇪🇸 Spanish: "Comisión"
+- 🇳🇱 Dutch: "Commissie"
+- 🇩🇰 Danish: "Udvalg"
+- 🇳🇴 Norwegian: "Komité"
+- 🇫🇮 Finnish: "Valiokunta"
+
+**"Document"**
+- 🇸🇪 Swedish: "Dokument"
+- 🇩🇪 German: "Dokument"
+- 🇫🇷 French: "Document"
+- 🇪🇸 Spanish: "Documento"
+- 🇳🇱 Dutch: "Document"
+- 🇩🇰 Danish: "Dokument"
+- 🇳🇴 Norwegian: "Dokument"
+- 🇫🇮 Finnish: "Asiakirja"
+
+### Usage Guidelines
+
+**When translating committee reports:**
+1. Use these proven translations as templates
+2. Maintain formal register (journalistic third-person)
+3. Keep Swedish committee codes (SoU, FiU, CU, etc.) in references
+4. Translate committee NAMES in running text
+5. Never translate party abbreviations (S, M, SD, V, MP, C, L, KD)
+
+**When translating analysis articles:**
+1. Use formal political terminology
+2. Maintain The Economist style
+3. Adapt cultural references appropriately
+4. Keep proper nouns in Swedish (Riksdag, Tidö Agreement)
+
+**Quality assurance:**
+- Compare your translation with examples above
+- Maintain consistent terminology across articles
+- Use TRANSLATION_GUIDE.md for additional reference
+- Consult language-expertise skill for style guidelines
+
+---
+
+**Data Source**: Extracted from 81 translated news articles (2026-02-10 to 2026-02-14)  
+**Languages Analyzed**: All 14 supported languages  
+**Last Updated**: 2026-02-15

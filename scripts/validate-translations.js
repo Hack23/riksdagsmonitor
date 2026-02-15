@@ -92,6 +92,15 @@ const checks = {
   
   hasSchemaOrg: (content) => {
     return content.includes('"@context": "https://schema.org"');
+  },
+  
+  // NEW: Check for untranslated Swedish content markers
+  noUntranslatedMarkers: (content, lang) => {
+    // Swedish files can have Swedish content
+    if (lang.code === 'sv') return true;
+    
+    // Non-Swedish files should NOT have data-translate markers
+    return !content.includes('data-translate="true"');
   }
 };
 
@@ -158,6 +167,21 @@ function validateLanguageFile(lang) {
       results.failed.push('Schema.org structured data missing');
     }
     
+    // NEW: Check for untranslated Swedish content
+    if (checks.noUntranslatedMarkers(content, lang)) {
+      results.passed.push('No untranslated Swedish markers');
+    } else {
+      // Count how many markers remain
+      const markerCount = (content.match(/data-translate="true"/g) || []).length;
+      results.failed.push(`Contains ${markerCount} untranslated Swedish content markers (data-translate="true")`);
+      
+      // Extract a sample for debugging
+      const sampleMatch = content.match(/<span data-translate="true"[^>]*>([^<]{0,50})/);
+      if (sampleMatch) {
+        results.untranslatedSample = sampleMatch[1] + (sampleMatch[1].length >= 50 ? '...' : '');
+      }
+    }
+    
     return results;
     
   } catch (error) {
@@ -200,6 +224,11 @@ function printResults(results) {
         result.failed.forEach(failure => {
           console.log(`    ${colors.red}✗ ${failure}${colors.reset}`);
         });
+        
+        // Show untranslated sample if available
+        if (result.untranslatedSample) {
+          console.log(`    ${colors.yellow}Sample: "${result.untranslatedSample}"${colors.reset}`);
+        }
       }
       
       totalPassed += result.passed.length;
