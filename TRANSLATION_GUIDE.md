@@ -406,6 +406,153 @@ grep -r 'data-translate="true"' news/*.html
 
 ---
 
+## 📰 Political Intelligence Vocabulary (From News Articles)
+
+This section contains real-world political terminology extracted from translated news articles, providing proven translations for political intelligence and parliamentary reporting.
+
+### F. News Article UI Labels
+
+Standard labels used across all news article types:
+
+| English | Swedish | German | French | Spanish | Dutch | Danish | Norwegian | Finnish |
+|---------|---------|--------|--------|---------|-------|--------|-----------|---------|
+| Committee | Kommitté | Ausschuss | Commission | Comisión | Commissie | Udvalg | Komité | Valiokunta |
+| Document | Dokument | Dokument | Document | Documento | Document | Dokument | Dokument | Asiakirja |
+| What to Watch | Vad man ska följa | Was zu beobachten | À surveiller | Qué observar | Te volgen | Hvad man skal følge | Hva man skal følge | Mitä seurata |
+| This Week | Denna vecka | Diese Woche | Cette semaine | Esta semana | Deze week | Denne uge | Denne uken | Tällä viikolla |
+| Next Week | Nästa vecka | Nächste Woche | La semaine prochaine | La próxima semana | Volgende week | Næste uge | Neste uke | Ensi viikolla |
+| Analysis | Analys | Analyse | Analyse | Análisis | Analyse | Analyse | Analyse | Analyysi |
+| Evening Analysis | Kvällsanalys | Abendanalyse | Analyse du soir | Análisis vespertino | Avondanalyse | Aftenanalyse | Kveldsanalyse | Ilta-analyysi |
+
+### G. Committee Report Terminology
+
+Common phrases from committee reports:
+
+| English | Swedish | German | French |
+|---------|---------|--------|--------|
+| Better conditions for deploying government personnel | Bättre förutsättningar att sända ut statlig personal | Bessere Voraussetzungen für die Entsendung staatlichen Personals | Meilleures conditions pour le déploiement du personnel gouvernemental |
+| A register for all condominiums | Ett register för alla bostadsrätter | Ein Register für alle Eigentumswohnungen | Un registre pour toutes les copropriétés |
+| Animal welfare | Djurskydd | Tierschutz | Protection des animaux |
+| Trade policy | Handelspolitik | Handelspolitik | Politique commerciale |
+| Planning and construction | Planering och byggande | Planung und Bauwesen | Planification et construction |
+
+### H. Political Process Terms
+
+Key political process vocabulary from analysis articles:
+
+| Concept | English | Swedish | German | French | Spanish |
+|---------|---------|---------|--------|--------|---------|
+| Coalition | Coalition | Koalition | Koalition | Coalition | Coalición |
+| Legislative analysis | Legislative analysis | Lagstiftningsanalys | Gesetzgebungsanalyse | Analyse législative | Análisis legislativo |
+| Political risk | Political risk | Politisk risk | Politisches Risiko | Risque politique | Riesgo político |
+| Government record | Government record | Regeringsprotokoll | Regierungsbilanz | Bilan gouvernemental | Registro del gobierno |
+| Parliamentary priorities | Parliamentary priorities | Parlamentariska prioriteringar | Parlamentarische Prioritäten | Priorités parlementaires | Prioridades parlamentarias |
+| Mid-session assessment | Mid-session assessment | Halvtidsbedömning | Halbzeitbewertung | Évaluation à mi-session | Evaluación a mitad de período |
+
+### I. CJK and RTL Language Vocabulary
+
+For Chinese, Japanese, Korean, Arabic, and Hebrew:
+
+#### Chinese (简体中文)
+- **委员会** (Committee)
+- **文件** (Document)
+- **本周关注** (What to Watch This Week)
+- **改善国家工作人员外派条件** (Better conditions for deploying government personnel)
+- **所有产权公寓登记制度** (A register for all condominiums)
+- **动物保护** (Animal welfare)
+
+#### Japanese (日本語)
+- **委員会** (Committee)
+- **文書** (Document)
+- **今週の注目** (What to Watch This Week)
+- **国家公務員の海外派遣条件の改善** (Better conditions for deploying government personnel)
+- **全分譲住宅の登録制度** (A registry for all condominiums)
+- **動物福祉** (Animal welfare)
+
+#### Korean (한국어)
+- **위원회** (Committee)
+- **문서** (Document)
+- **이번 주 주목사항** (What to Watch This Week)
+- **국가 공무원 파견 조건 개선** (Better conditions for deploying government personnel)
+- **모든 분양주택 등록 제도** (A registry for all condominiums)
+- **동물 복지** (Animal welfare)
+
+#### Arabic (العربية)
+- **لجنة** (Committee)
+- **وثيقة** (Document)
+- **ما يجب متابعته هذا الأسبوع** (What to Watch This Week)
+- **ظروف أفضل لإرسال الموظفين الحكوميين** (Better conditions for deploying government personnel)
+- **سجل لجميع حقوق الملكية السكنية** (A registry for all condominiums)
+- **رعاية الحيوان** (Animal welfare)
+
+#### Hebrew (עברית)
+- **ועדה** (Committee)
+- **מסמך** (Document)
+- **על מה לעקוב השבוע** (What to Watch This Week)
+- **תנאים טובים יותר לשליחת עובדי מדינה** (Better conditions for deploying government personnel)
+- **מרשם לכל דירות הבעלות** (A registry for all condominiums)
+- **רווחת בעלי חיים** (Animal welfare)
+
+### J. Article Type Classifications
+
+Standard article type names across languages:
+
+| Type | English | Swedish | German | French | Spanish |
+|------|---------|---------|--------|--------|---------|
+| Committee Reports | Committee Reports | Utskottsbetänkanden | Ausschussberichte | Rapports de commission | Informes de comisión |
+| Propositions | Government Propositions | Propositioner | Regierungsvorlagen | Propositions gouvernementales | Proposiciones gubernamentales |
+| Motions | Opposition Motions | Motioner | Anträge | Motions | Mociones |
+| Evening Analysis | Evening Analysis | Kvällsanalys | Abendanalyse | Analyse du soir | Análisis vespertino |
+| Week Ahead | Week Ahead | Veckan som kommer | Kommende Woche | La semaine à venir | La semana próxima |
+
+### K. Temporal Expressions
+
+Time-related vocabulary from news articles:
+
+| English | Swedish | German | French | Spanish | Dutch |
+|---------|---------|--------|--------|---------|-------|
+| Today | Idag | Heute | Aujourd'hui | Hoy | Vandaag |
+| Tomorrow | Imorgon | Morgen | Demain | Mañana | Morgen |
+| This week | Denna vecka | Diese Woche | Cette semaine | Esta semana | Deze week |
+| Next week | Nästa vecka | Nächste Woche | La semaine prochaine | La próxima semana | Volgende week |
+| Last week | Förra veckan | Letzte Woche | La semaine dernière | La semana pasada | Vorige week |
+| Spring recess | Våruppehåll | Frühjahrspaüse | Pause de printemps | Receso de primavera | Voorjaarsreces |
+| Mid-session | Halvtid | Halbzeit | Mi-session | Mitad de período | Halverweg |
+| Parliamentary week | Parlamentsvecka | Parlamentswoche | Semaine parlementaire | Semana parlamentaria | Parlementaire week |
+
+### L. Context-Specific Translation Notes
+
+**Formal vs. Informal Register:**
+- All political news uses **formal register** across all languages
+- "You" → Swedish "ni" (not "du"), German "Sie" (not "du"), French "vous" (not "tu")
+- Journalistic third-person perspective maintained
+
+**Cultural Sensitivities:**
+- **Political party names**: Always use Swedish abbreviations (S, M, SD, V, MP, C, L, KD)
+- **Riksdag**: Keep in Swedish (don't translate to "Parliament" in running text)
+- **Tidö Agreement**: Proper noun, always "Tidö-avtalet" or "Tidö Agreement"
+- **Committee codes**: Keep Swedish (SoU, FiU, CU, etc.) in document references
+
+**Number Formatting:**
+- **English**: 1,000.50 (comma thousands, period decimal)
+- **Swedish/German/Nordic**: 1 000,50 (space thousands, comma decimal)
+- **French**: 1 000,50 (space thousands, comma decimal)
+- **Arabic**: ١٬٠٠٠٫٥٠ (Arabic-Indic numerals optional, comma thousands, period decimal)
+
+**Date Formatting:**
+- **English**: February 15, 2026
+- **Swedish**: 15 februari 2026
+- **German**: 15. Februar 2026
+- **French**: 15 février 2026
+- **Spanish**: 15 de febrero de 2026
+- **Japanese**: 2026年2月15日
+- **Chinese**: 2026年2月15日
+- **Korean**: 2026년 2월 15일
+- **Arabic**: ١٥ فبراير ٢٠٢٦
+- **Hebrew**: 15 בפברואר 2026
+
+---
+
 ## 📚 Reference Documents
 
 ### External Translation Guides
