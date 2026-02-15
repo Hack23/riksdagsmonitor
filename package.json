@@ -53,7 +53,7 @@
   },
   "homepage": "https://riksdagsmonitor.com",
   "dependencies": {
-    "ajv": "^8.17.1",
+    "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
     "chart.js": "^4.5.1",
     "chartjs-plugin-annotation": "^3.1.0",
