@@ -1,9 +1,26 @@
-# 📊 Riksdagsmonitor - Data Architecture Model
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-02-15  
-**Classification:** Public  
-**Owner:** Hack23 AB (Org.nr 5595347807)
+<h1 align="center">📊 Riksdagsmonitor — Data Architecture Model</h1>
+
+<p align="center">
+  <strong>🏛️ Comprehensive Political Data Architecture for Democratic Transparency</strong><br>
+  <em>🗄️ 50+ Years Historical Data · 19 CIA Products · 14-Language Support</em>
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-02-15  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
 
 ## Executive Summary
 
@@ -2459,6 +2476,19 @@ This DATA_MODEL.md complements ARCHITECTURE.md:
 - [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
 
 ### External References
+## 📚 Related Documents
+
+- [🏛️ Architecture](./ARCHITECTURE.md) - C4 system architecture models
+- [🔄 Flowchart](./FLOWCHART.md) - Data pipelines and workflow processes
+- [📈 State Diagram](./STATEDIAGRAM.md) - System state transitions
+- [💼 SWOT](./SWOT.md) - Strategic analysis and positioning
+- [🎯 Threat Model](./THREAT_MODEL.md) - Security threat analysis
+- [🔐 Security Architecture](./SECURITY_ARCHITECTURE.md) - Current security controls
+- [🚀 Future Data Model](./FUTURE_DATA_MODEL.md) - Future data architecture roadmap
+- [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - Hack23 SDLC requirements
+- [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) - Data classification standards
+
+### External References
 - [CIA Platform](https://github.com/Hack23/cia) - Citizen Intelligence Agency backend
 - [CIA Data Specs](https://github.com/Hack23/cia/tree/master/json-export-specs) - Export specifications
 - [Swedish Riksdag API](https://data.riksdagen.se/) - Official parliament API
@@ -2466,16 +2496,11 @@ This DATA_MODEL.md complements ARCHITECTURE.md:
 
 ---
 
-**Document Control:**
-- **Repository:** https://github.com/Hack23/riksdagsmonitor
-- **Path:** /DATA_MODEL.md
-- **Format:** Markdown with Mermaid diagrams
-- **Classification:** Public
-- **Next Review:** 2026-05-15
-
----
-
-**Maintained by:** Hack23 AB (Org.nr 5595347807)  
-**Contact:** https://www.hack23.com  
-**Copyright:** © 2008-2026 Hack23 AB
+**📋 Document Control:**  
+**✅ Approved by:** James Pether Sörling, CEO  
+**📤 Distribution:** Public  
+**🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square&logo=unlock&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
+**📅 Effective Date:** 2026-02-15  
+**⏰ Next Review:** 2027-02-15  
+**🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
 
