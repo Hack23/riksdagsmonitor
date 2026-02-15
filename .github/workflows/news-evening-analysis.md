@@ -80,6 +80,20 @@ engine:
 
 You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to produce a comprehensive wrap-up of Swedish parliamentary and government activity, written in **The Economist style** with deeper analytical depth than breaking coverage.
 
+## ⚠️ CRITICAL REQUIREMENT: Multi-Language Translation
+
+**YOU MUST TRANSLATE ALL SWEDISH CONTENT INTO EACH TARGET LANGUAGE. THIS IS MANDATORY.**
+
+The Riksdag API returns data in **Swedish only**. When you generate articles in languages other than Swedish:
+
+1. **ALL Swedish document titles** (e.g., "Bättre förutsättningar att sända ut statlig personal") **MUST be translated**
+2. **ALL Swedish summaries** and descriptions **MUST be translated**
+3. **ZERO TOLERANCE** for language mixing - no Swedish in non-Swedish articles
+4. **Translation markers** (`data-translate="true" lang="sv"`) indicate Swedish content that needs translation - these MUST be removed after translation
+5. **Validation is mandatory** - check every article to ensure no Swedish content remains
+
+**See Step 5: Translation Post-Processing** below for detailed mandatory instructions.
+
 ## Required Reference Materials
 
 Before generating or translating articles, consult these authoritative references:
@@ -378,7 +392,53 @@ For each language in the requested set:
 7. Use culturally appropriate date formatting
 8. Adapt analytical tone to target language conventions
 
-### Step 5: Regenerate Indexes and Sitemap
+### Step 5: Translate Swedish Content (CRITICAL - MANDATORY)
+
+🚨 **THIS STEP IS ABSOLUTELY MANDATORY. DO NOT SKIP. DO NOT PROCEED TO STEP 6 WITHOUT COMPLETING THIS.** 🚨
+
+**The Problem**: If you used the generation script or included Swedish API data, the articles contain Swedish content marked with `data-translate="true" lang="sv"` attributes that MUST be translated.
+
+**Process**: For EACH non-Swedish article:
+
+1. **Identify articles needing translation**:
+```bash
+for article in news/*-evening-analysis-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+    echo "NEEDS TRANSLATION: $article"
+  fi
+done
+```
+
+2. **Translate EACH file**:
+   - Read the article file
+   - Find all `<span data-translate="true" lang="sv">Swedish text</span>`
+   - Translate the Swedish text to the article's target language (check `<html lang="">`)
+   - Replace the span with plain translated text
+   - Consult `TRANSLATION_GUIDE.md` and `.github/skills/swedish-political-system/SKILL.md` for correct terminology
+   - Write the updated file back
+
+3. **Validation (MANDATORY)**:
+```bash
+UNTRANSLATED=0
+for article in news/*-evening-analysis-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+    echo "❌ UNTRANSLATED: $(basename $article)"
+    UNTRANSLATED=$((UNTRANSLATED + 1))
+  fi
+done
+
+if [ $UNTRANSLATED -gt 0 ]; then
+  echo "❌ $UNTRANSLATED articles contain untranslated Swedish content!"
+  echo "GO BACK and translate them. DO NOT proceed to Step 6."
+  exit 1
+else
+  echo "✅ All articles fully translated"
+fi
+```
+
+**See `.github/workflows/news-article-generator.md` Step 5 for detailed translation examples and rules.**
+
+### Step 6: Regenerate Indexes and Sitemap
 
 ```bash
 # Regenerate all 14 language news index files
@@ -388,7 +448,7 @@ node scripts/generate-news-indexes.js
 node scripts/generate-sitemap.js
 ```
 
-### Step 6: Create Pull Request
+### Step 7: Create Pull Request
 
 **IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
 

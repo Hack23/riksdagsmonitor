@@ -93,6 +93,27 @@ Before generating or translating articles, consult these authoritative reference
 
 Generate news articles based on the latest data from riksdag-regering-mcp server (32 specialized tools for Swedish political data).
 
+## ⚠️ CRITICAL REQUIREMENT: Multi-Language Translation
+
+**YOU MUST TRANSLATE ALL SWEDISH CONTENT INTO EACH TARGET LANGUAGE. THIS IS MANDATORY.**
+
+The Riksdag API returns data in **Swedish only**. When you generate articles in languages other than Swedish:
+
+1. **ALL Swedish document titles** (e.g., "Bättre förutsättningar att sända ut statlig personal") **MUST be translated**
+2. **ALL Swedish summaries** and descriptions **MUST be translated**
+3. **ZERO TOLERANCE** for language mixing - no Swedish in non-Swedish articles
+4. **Translation markers** (`data-translate="true" lang="sv"`) indicate Swedish content that needs translation - these MUST be removed after translation
+5. **Validation is mandatory** - check every article to ensure no Swedish content remains
+
+**How to translate**:
+- Read each generated article file
+- Find all `<span data-translate="true" lang="sv">Swedish text</span>` elements
+- Translate the Swedish text to the article's target language (check the `<html lang="XX">` attribute)
+- Replace the span with plain translated text (remove the span tags and attributes)
+- Verify no `data-translate` markers remain
+
+See **Step 5: LLM Translation Post-Processing** below for detailed instructions.
+
 ### Workflow Inputs
 
 Check the GitHub event inputs:
@@ -438,25 +459,62 @@ The script handles all 14 supported languages:
 - `all` → All 14 languages
 - Custom → Any comma-separated list (e.g., "en,sv,de,fr")
 
-### Step 5: LLM Translation Post-Processing (CRITICAL)
+### Step 5: LLM Translation Post-Processing (CRITICAL - MANDATORY)
 
-**IMPORTANT**: The generation script outputs HTML articles with Swedish Riksdag API data (document titles, summaries) marked with `data-translate="true" lang="sv"` attributes. You MUST translate ALL marked content into each article's target language before proceeding.
+🚨 **THIS STEP IS ABSOLUTELY MANDATORY AND BLOCKING. DO NOT SKIP. DO NOT PROCEED TO STEP 6 WITHOUT COMPLETING THIS STEP.** 🚨
 
-#### Why This Step Is Required
+#### The Problem
 
-The Riksdag API returns ALL data in Swedish (titles like "Bättre förutsättningar att sända ut statlig personal", summaries, etc.). The script translates UI chrome (labels, headings, footers) but CANNOT translate dynamic Swedish data content. Only the LLM can provide natural, accurate translations.
+The generation script (`generate-news-enhanced.js`) outputs HTML articles with Swedish Riksdag API data (document titles, summaries) marked with `data-translate="true" lang="sv"` attributes. The script **cannot** translate this content because:
 
-**Zero tolerance for language mixing**: No Swedish text may appear in non-Swedish articles. No Swedish text may appear in English articles. Each article must be 100% in its target language.
+1. The Riksdag API returns ALL data in Swedish only
+2. Automatic translation would produce poor quality
+3. Only an LLM (you) can provide natural, accurate, context-aware translations
 
-#### Translation Process
+**Examples of Swedish content that MUST be translated:**
+- Document titles: `<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>`
+- Summaries: `<p><span data-translate="true" lang="sv">Regeringen föreslår...</span></p>`
+- Any other Swedish text from the Riksdag API
 
-For EACH generated article file in `news/` that is NOT a Swedish (`-sv.html`) article:
+**Zero tolerance for language mixing**: No Swedish text may appear in non-Swedish articles. Each article must be 100% in its target language (English, German, Arabic, etc.).
 
-1. **Read the article file**
-2. **Find ALL elements with `data-translate="true"`** — these contain Swedish text from the Riksdag API
-3. **Translate the Swedish text** to the article's target language (determined by the `lang` attribute on `<html>`)
-4. **Remove the `data-translate="true"` and `lang="sv"` attributes** after translation
-5. **Write the updated file**
+#### Translation Process (FOLLOW EXACTLY)
+
+For **EACH generated article file** in `news/` that is **NOT** a Swedish (`-sv.html`) article:
+
+**Step 5.1: Identify articles needing translation**
+```bash
+# List all newly generated non-Swedish articles
+for article in news/*-en.html news/*-da.html news/*-no.html news/*-fi.html news/*-de.html news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html; do
+  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+    echo "NEEDS TRANSLATION: $article"
+  fi
+done
+```
+
+**Step 5.2: Translate EACH file**
+
+For each file identified above:
+
+1. **Read the entire article file** into memory
+2. **Identify the target language** from the `<html lang="XX">` attribute (e.g., `lang="de"` means German)
+3. **Find ALL `<span data-translate="true" lang="sv">...</span>` elements** (there may be 10-20 per file)
+4. **Translate EACH Swedish text** to the target language:
+   - Use the reference materials (TRANSLATION_GUIDE.md, swedish-political-system SKILL) for terminology
+   - Keep proper nouns unchanged (Riksdag, Hack23, party abbreviations S/M/SD/V/MP/C/L/KD)
+   - Translate committee names but keep abbreviations (FiU, SoU, JuU, etc.)
+   - Use natural, fluent language appropriate for political journalism
+5. **Replace the entire span** with the translated text (remove `<span data-translate="true" lang="sv">` and `</span>`)
+6. **Write the updated file** back to disk
+
+**Example transformation:**
+```html
+BEFORE (German article with Swedish content):
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+
+AFTER (fully translated):
+<h3>Bessere Voraussetzungen für die Entsendung staatlichen Personals</h3>
+```
 
 ```bash
 # Identify all non-SV articles that need translation post-processing
@@ -471,33 +529,201 @@ for lang_code in en da no fi de fr es nl ar he ja ko zh; do
       # Check if file contains data-translate markers
       if grep -q 'data-translate="true"' "$article"; then
         echo "    📝 Translating: $(basename $article)"
-        # Read file content and translate markers
-        # (The LLM agent performs the translation by reading/writing the file)
+        # The LLM agent (you) MUST now:
+        # 1. Read the file
+        # 2. Translate all Swedish content marked with data-translate
+        # 3. Remove the data-translate spans
+        # 4. Write the updated file
+        # 
+        # DO THIS NOW before continuing to the next file
       fi
     done
   fi
 done
 ```
 
-#### Translation Rules
+**Step 5.3: Practical Translation Instructions**
 
-1. **Translate document titles** (`<h3><span data-translate="true" lang="sv">Swedish title</span></h3>`) — translate the Swedish title text to the target language
-2. **Translate summaries** (paragraphs containing `<span data-translate="true" lang="sv">Swedish summary</span>`) — translate the full Swedish paragraph
-3. **Keep proper nouns** — "Riksdag", "Hack23", party abbreviations (S, M, SD, V, MP, C, L, KD), committee codes (SoU, CU, FiU, etc.) should NOT be translated
-4. **Keep URLs and document IDs** unchanged
-5. **For English articles**: Translate Swedish titles to clear, professional English (e.g., "Bättre förutsättningar att sända ut statlig personal" → "Better conditions for deploying government personnel abroad")
-6. **For RTL languages (ar, he)**: Ensure translated text reads naturally in RTL direction
-7. **For CJK languages (ja, ko, zh)**: Use appropriate formal parliamentary/political terminology
+When you find `<span data-translate="true" lang="sv">Swedish text</span>`:
 
-#### Per-Language Translation Examples
+1. **Identify the Swedish source text** inside the span
+2. **Consult translation references**:
+   - Check `TRANSLATION_GUIDE.md` section E for document type translations
+   - Check `.github/skills/swedish-political-system/SKILL.md` for vocabulary
+   - Check `.github/skills/language-expertise/SKILL.md` for target language style
+3. **Translate appropriately**:
+   - For document titles: Translate the full meaning, maintaining political terminology
+   - For summaries: Translate the full paragraph, preserving tone and formality
+   - For technical terms: Use the exact translations from TRANSLATION_GUIDE.md
+4. **Replace the span with plain text**: `<span data-translate="true" lang="sv">Swedish</span>` → `Translated Text`
 
-| Swedish (source) | English | German | French | Arabic |
-|---|---|---|---|---|
-| Bättre förutsättningar att sända ut statlig personal | Better conditions for deploying government personnel | Bessere Voraussetzungen für die Entsendung staatlichen Personals | Meilleures conditions pour l'envoi de personnel gouvernemental | ظروف أفضل لإرسال الموظفين الحكوميين |
-| Ett register för alla bostadsrätter | A registry for all housing cooperatives | Ein Register für alle Wohnungsgenossenschaften | Un registre pour toutes les copropriétés | سجل لجميع الشقق التعاونية |
-| Djurskydd | Animal protection | Tierschutz | Protection des animaux | حماية الحيوانات |
+**Concrete Examples by Language:**
 
-#### Validation After Translation
+**English (en)**:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>Better conditions for deploying government personnel abroad</h3>
+
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Ett register för alla bostadsrätter</span></h3>
+<!-- AFTER -->
+<h3>A registry for all housing cooperatives</h3>
+
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Djurskydd</span></h3>
+<!-- AFTER -->
+<h3>Animal protection</h3>
+```
+
+**German (de)**:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>Bessere Voraussetzungen für die Entsendung staatlichen Personals</h3>
+
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Handelspolitik</span></h3>
+<!-- AFTER -->
+<h3>Handelspolitik</h3>
+```
+
+**French (fr)**:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>Meilleures conditions pour le déploiement du personnel gouvernemental à l'étranger</h3>
+```
+
+**Arabic (ar)** - RTL direction:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>ظروف أفضل لإرسال الموظفين الحكوميين إلى الخارج</h3>
+```
+
+**Japanese (ja)**:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>政府職員を海外に派遣するためのより良い条件</h3>
+```
+
+#### Translation Rules (Must Follow)
+
+1. **Translate document titles** — translate the Swedish title text to the target language, remove the span tags entirely
+2. **Translate summaries** — translate the full Swedish paragraph, remove the span tags entirely
+3. **Keep proper nouns UNCHANGED**:
+   - "Riksdag" (Swedish Parliament)
+   - "Hack23" (company name)
+   - Party abbreviations: S, M, SD, V, MP, C, L, KD
+   - Committee codes: SoU, CU, FiU, JuU, MJU, NU, TU, UbU, etc.
+   - Document reference formats: Bet., Prop., Mot.
+4. **Keep URLs and document IDs unchanged**
+5. **Use appropriate formality** for target language (formal political/journalistic register)
+6. **For RTL languages (ar, he)**: Ensure translated text reads naturally in RTL direction (but keep Latin script elements like "Riksdag", URLs in LTR)
+7. **For CJK languages (ja, ko, zh)**: Use formal parliamentary/political terminology appropriate for each language
+
+#### Step 5.4: Validation After Translation (MANDATORY)
+
+After translating all articles, you MUST verify no Swedish markers remain:
+
+```bash
+echo "🔍 Verifying translation completeness..."
+UNTRANSLATED=0
+TOTAL_ARTICLES=0
+
+for lang_code in en da no fi de fr es nl ar he ja ko zh; do
+  for article in news/*-${lang_code}.html; do
+    if [ -f "$article" ]; then
+      TOTAL_ARTICLES=$((TOTAL_ARTICLES + 1))
+      if grep -q 'data-translate="true"' "$article"; then
+        echo "  ❌ UNTRANSLATED content in: $(basename $article)"
+        # Show the actual Swedish text that needs translation
+        grep -o '<span data-translate="true"[^>]*>[^<]*</span>' "$article" | head -3
+        UNTRANSLATED=$((UNTRANSLATED + 1))
+      fi
+    fi
+  done
+done
+
+if [ $UNTRANSLATED -gt 0 ]; then
+  echo ""
+  echo "❌ TRANSLATION VALIDATION FAILED"
+  echo "   $UNTRANSLATED of $TOTAL_ARTICLES articles still contain untranslated Swedish content!"
+  echo "   You MUST go back and translate the marked content."
+  echo "   DO NOT proceed to Step 6 until all articles are translated."
+  exit 1
+else
+  echo ""
+  echo "✅ TRANSLATION VALIDATION PASSED"
+  echo "   All $TOTAL_ARTICLES articles fully translated - no Swedish markers remaining"
+fi
+```
+
+**If validation fails**: GO BACK to Step 5.2 and translate the remaining articles. Do not skip this step. Do not proceed to Step 6.
+
+**English (en)**:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>Better conditions for deploying government personnel abroad</h3>
+
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Ett register för alla bostadsrätter</span></h3>
+<!-- AFTER -->
+<h3>A registry for all housing cooperatives</h3>
+
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Djurskydd</span></h3>
+<!-- AFTER -->
+<h3>Animal protection</h3>
+```
+
+**German (de)**:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>Bessere Voraussetzungen für die Entsendung staatlichen Personals</h3>
+
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Handelspolitik</span></h3>
+<!-- AFTER -->
+<h3>Handelspolitik</h3>
+```
+
+**French (fr)**:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>Meilleures conditions pour le déploiement du personnel gouvernemental à l'étranger</h3>
+```
+
+**Arabic (ar)** - RTL direction:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>ظروف أفضل لإرسال الموظفين الحكوميين إلى الخارج</h3>
+```
+
+**Japanese (ja)**:
+```html
+<!-- BEFORE -->
+<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+<!-- AFTER -->
+<h3>政府職員を海外に派遣するためのより良い条件</h3>
+```
+
+#### Translation Rules (Must Follow)
 
 After translating all articles, verify no Swedish markers remain:
 
