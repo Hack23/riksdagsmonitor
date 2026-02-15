@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-15T06:10:00Z",
+  "types": ["committee-reports", "propositions", "motions"],
+  "generated": 42,
+  "errors": 0,
+  "articles": [
+    {
+      "slug": "2026-02-15-committee-reports",
+      "type": "committee-reports",
+      "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+      "sources": ["get_betankanden"]
+    },
+    {
+      "slug": "2026-02-15-government-propositions",
+      "type": "propositions",
+      "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+      "sources": ["get_propositioner"]
+    },
+    {
+      "slug": "2026-02-15-opposition-motions",
+      "type": "motions",
+      "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+      "sources": ["get_motioner"]
+    }
+  ]
+}
