@@ -278,7 +278,13 @@ CREATE TABLE documents (
 CREATE INDEX idx_documents_type ON documents(document_type);
 CREATE INDEX idx_documents_date ON documents(published_date DESC);
 CREATE INDEX idx_documents_organ ON documents(organ);
-CREATE FULLTEXT INDEX idx_documents_fulltext ON documents(title, summary, fulltext);
+CREATE INDEX idx_documents_fulltext ON documents USING GIN (
+    to_tsvector('simple', 
+        coalesce(title, '') || ' ' || 
+        coalesce(summary, '') || ' ' || 
+        coalesce(fulltext, '')
+    )
+);
 ```
 
 **Votes Table**
@@ -711,6 +717,17 @@ const kbConfig = {
 
 **Query Knowledge Base**
 ```javascript
+// Required imports
+import { 
+  BedrockAgentRuntimeClient, 
+  RetrieveAndGenerateCommand 
+} from "@aws-sdk/client-bedrock-agent-runtime";
+
+// Initialize Bedrock Agent Runtime client
+const bedrockAgent = new BedrockAgentRuntimeClient({ 
+  region: "us-east-1" 
+});
+
 async function queryKnowledgeBase(question) {
   const command = new RetrieveAndGenerateCommand({
     input: {
@@ -720,7 +737,7 @@ async function queryKnowledgeBase(question) {
       type: "KNOWLEDGE_BASE",
       knowledgeBaseConfiguration: {
         knowledgeBaseId: "KB12345",
-        modelArn: "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0",
+        modelArn: "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-opus-4-20260208-v1:0",
         retrievalConfiguration: {
           vectorSearchConfiguration: {
             numberOfResults: 5
@@ -1020,8 +1037,6 @@ erDiagram
     
     DOCUMENT }o--|| COMMITTEE : processed_by
     DOCUMENT ||--o{ VOTE : triggers
-    
-    VOTE }o--|| BALLOT : in_ballot
     
     POLITICIAN {
         string person_id PK "0479479309"
@@ -1572,7 +1587,7 @@ stateDiagram-v2
 
 ---
 
-## Document Control
+## 📋 Document Control
 
 **Document Information:**
 - **Repository:** [github.com/Hack23/riksdagsmonitor](https://github.com/Hack23/riksdagsmonitor)
