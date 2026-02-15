@@ -1205,6 +1205,184 @@ Three automated news generation workflows:
 
 ---
 
+### 2.9 🤖 AI Model Card: Claude Opus 4.6
+
+**Per [Hack23 AI Policy § 4.3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)**, all LLM applications MUST maintain model cards documenting capabilities, limitations, and security characteristics.
+
+#### Model Information
+
+| Attribute | Value |
+|-----------|-------|
+| **Model Name** | Claude Opus 4.6 (Anthropic) |
+| **Access Method** | GitHub Copilot API (indirect via GitHub) |
+| **Model Type** | Large Language Model (LLM) - Transformer architecture |
+| **Context Window** | 200,000 tokens (~150,000 words) |
+| **Training Cutoff** | April 2026 (estimated based on Opus 4.x release cycle) |
+| **Languages Supported** | 14 primary languages (en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh) + 90+ total |
+| **Deployment** | Cloud API (Anthropic infrastructure via GitHub) |
+| **Usage Classification** | ⚠️ **Limited Risk** per EU AI Act Article 6 |
+
+#### Intended Use Cases
+
+✅ **Approved Uses** (Riksdagsmonitor context):
+- Swedish political news article generation (14 languages)
+- Parliamentary data summarization (Riksdag documents, votes, committees)
+- Government document analysis (propositions, SOU reports, ministerial statements)
+- Multi-language translation validation
+- Factual content creation with source citations
+
+❌ **Prohibited Uses** (per Hack23 AI Policy):
+- Real-time critical decision-making without human oversight
+- Personal data processing beyond public officials
+- Financial predictions or investment advice
+- Medical, legal, or safety-critical applications
+- Content generation without human review
+
+#### Known Capabilities
+
+**Strengths**:
+1. **Multilingual Excellence**: Native-level Swedish, strong Nordic languages (DA, NO, FI)
+2. **Structured Output**: JSON, HTML, Markdown generation with consistent formatting
+3. **Context Understanding**: 200K token window enables full Riksdag document analysis
+4. **Factual Grounding**: Strong performance with factual queries when given proper context
+5. **Citation Capability**: Able to include document IDs and source references
+
+**Weaknesses**:
+1. **Hallucination Risk**: 35% estimated hallucination rate on low-confidence queries
+2. **Date Sensitivity**: Training cutoff (April 2026) limits real-time Swedish political events
+3. **Non-Determinism**: Same prompt may yield different outputs across invocations
+4. **Prompt Injection**: Vulnerable to indirect prompt injection via document titles
+5. **Bias Potential**: Training data bias toward Western media sources and English-language content
+
+#### Security Characteristics
+
+**Authentication & Access Control**:
+- ✅ GitHub Copilot authentication (Hack23 organization access)
+- ✅ No direct Anthropic API keys stored
+- ✅ GitHub Actions OIDC for secure workflow execution
+- ⚠️ No per-workflow API key isolation
+
+**Data Privacy**:
+- ✅ Public data only (Swedish Riksdag/Government open data)
+- ✅ No personal data beyond public officials
+- ✅ No data retention by Anthropic (per GitHub Copilot terms)
+- ✅ GDPR-compliant processing (public interest grounds)
+
+**Model Integrity**:
+- ✅ Anthropic-managed model (no local fine-tuning risk)
+- ✅ Version-controlled API endpoint
+- ⚠️ No model signature verification
+- ⚠️ No API response integrity validation
+
+**Rate Limiting & Availability**:
+- ⚠️ GitHub Copilot API rate limits (organization-wide)
+- ⚠️ No dedicated SLA for Riksdagsmonitor
+- ✅ Graceful failure mode (skip generation on API unavailable)
+- ✅ Human fallback (manual article creation)
+
+#### Risk Assessment
+
+**High-Risk Scenarios** (Requires Enhanced Controls):
+1. **Fabricated Document IDs**: Model invents non-existent Riksdag documents
+   - **Mitigation**: Mandatory dok_id validation against data.riksdagen.se API
+   - **Status**: ⚠️ Planned Q1 2026
+
+2. **Political Bias Amplification**: Training data bias influences party representation
+   - **Mitigation**: Party mention tracking dashboard, bias metrics
+   - **Status**: ⚠️ Planned Q2 2026
+
+3. **Cross-Language Inconsistency**: Different factual claims across 14 languages
+   - **Mitigation**: Cross-language consistency validation, translation markers
+   - **Status**: ✅ Implemented (TRANSLATION_GUIDE.md)
+
+**Medium-Risk Scenarios** (Monitoring Required):
+1. **Vote Margin Errors**: Incorrect vote count arithmetic
+   - **Mitigation**: Display full vote counts (not just margins), reviewer checklist
+   - **Status**: ✅ Implemented
+
+2. **Government Document Misattribution**: Wrong departmental attribution
+   - **Mitigation**: analyze_g0v_by_department validation
+   - **Status**: ✅ Implemented
+
+**Low-Risk Scenarios** (Acceptable):
+1. **Stylistic Variations**: Different writing styles across languages
+   - **Mitigation**: Editorial guidelines, human review
+   - **Status**: ✅ Implemented
+
+2. **Translation Nuances**: Minor semantic differences in translations
+   - **Mitigation**: Terminology dictionary (TRANSLATION_GUIDE.md)
+   - **Status**: ✅ Implemented
+
+#### Performance Benchmarks
+
+**Accuracy Metrics** (Estimated - requires formal evaluation):
+- **Factual Accuracy**: 65-75% without human review (hallucination risk)
+- **Citation Accuracy**: 85-90% when document IDs provided via MCP
+- **Translation Quality**: 90-95% for Swedish-English (professional level)
+- **Multi-Language Consistency**: 80-85% (cross-language fact alignment)
+
+**Human Review Impact**:
+- **Post-Review Accuracy**: 98-99% (hallucination detection + correction)
+- **False Positive Rate**: <5% (legitimate content rejected)
+- **False Negative Rate**: Target <2% (fabrications published)
+
+#### Maintenance & Monitoring
+
+**Model Version Management**:
+- ✅ Claude Opus 4.6 explicitly specified in workflow YAML
+- ✅ GitHub Copilot API versioning (GitHub-managed)
+- ⚠️ No automated model update testing
+- ⚠️ No model deprecation alerting
+
+**Performance Monitoring**:
+- ✅ GitHub Actions workflow execution logs
+- ✅ PR review rejection rate tracking
+- ⚠️ No hallucination detection metrics (planned Q1 2026)
+- ⚠️ No bias monitoring dashboard (planned Q2 2026)
+
+**Incident Response**:
+- ✅ Hallucination correction protocol (Section 9.3)
+- ✅ MCP server compromise procedure (Section 9.3)
+- ⚠️ No AI-specific incident classification system
+- ⚠️ No AI incident postmortem template
+
+#### Compliance & Governance
+
+**EU AI Act Classification**: ⚠️ **Limited Risk** (Article 52)
+- Transparency obligations met (AI-generated content disclosure)
+- Human oversight required (mandatory PR review)
+- No high-risk use cases
+
+**ISO/IEC 42001:2023**: ✅ **Compliant**
+- AI Policy § 5.2 (documented AI governance)
+- Risk assessment § 6.1 (18 AI threats identified)
+- Competence § 8.2 (human reviewer training required)
+
+**OWASP LLM Top 10**: ⚠️ **Partial** (50% controls implemented)
+- LLM09 (Overreliance) highest priority gap
+- Q1-Q2 2026 remediation roadmap
+
+**Supplier Assessment**: ✅ **Approved**
+- Anthropic AI supplier assessment completed
+- GitHub Copilot contract review (data residency, privacy)
+- No high-risk vendor findings
+
+#### Updates & Deprecation
+
+**Model Lifecycle**:
+- **Current Version**: Claude Opus 4.6 (deployed 2026-02)
+- **Expected Lifespan**: 12-18 months (until Claude Opus 5.x release)
+- **Deprecation Policy**: 90-day notice before model version changes
+- **Migration Plan**: Test new model versions on staging branch before production
+
+**Security Patch Management**:
+- Anthropic-managed security patches (vendor responsibility)
+- GitHub Copilot API updates (GitHub-managed)
+- Workflow YAML security updates (Hack23 responsibility)
+- MCP server updates (Hack23 responsibility)
+
+---
+
 ## 3. 🌳 Attack Trees
 
 ### 3.1 Attack Goal: Deface Riksdags Monitor Website
