@@ -27,10 +27,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - name: Setup GitHub CLI
-        run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-
       - name: Remove existing labels (if requested)
         if: github.event.inputs.recreate_all == 'true'
         run: |
@@ -173,8 +169,8 @@ jobs:
           label_count=$(gh label list --json name --jq '. | length')
           echo "📊 Total labels created: $label_count"
           
-          if [ "$label_count" -lt 35 ]; then
-            echo "⚠️ Warning: Expected at least 35 labels, but found only $label_count"
+          if [ "$label_count" -ne 46 ]; then
+            echo "⚠️ Error: Expected 46 labels, but found $label_count"
             exit 1
           else
             echo "✅ Label verification passed"

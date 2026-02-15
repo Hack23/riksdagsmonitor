@@ -13,7 +13,7 @@ The riksdagsmonitor repository uses an automated labeling system powered by GitH
 
 ### Key Features
 - ✅ **Automatic labeling** based on file paths, PR titles, and descriptions
-- ✅ **35+ labels** covering all aspects of the project
+- ✅ **46 labels** covering all aspects of the project
 - ✅ **Size labels** automatically calculated from PR diff
 - ✅ **Security hardened** workflows with SHA pinning
 - ✅ **Status tracking** with priority and progress labels

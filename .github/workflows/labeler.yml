@@ -166,8 +166,11 @@ jobs:
           For more information, see [`.github/labeler.yml`](https://github.com/${{ github.repository }}/blob/main/.github/labeler.yml).
           EOF
           
-          # Replace placeholder with actual labels
-          sed -i "s/\$LABELS/$LABELS/" /tmp/comment.md
+          # Replace placeholder with actual labels (escape special characters for sed)
+          ESCAPED_LABELS=${LABELS//\\/\\\\}
+          ESCAPED_LABELS=${ESCAPED_LABELS//&/\\&}
+          ESCAPED_LABELS=${ESCAPED_LABELS//\//\\/}
+          sed -i "s/\$LABELS/$ESCAPED_LABELS/" /tmp/comment.md
           
           # Post comment
           gh pr comment "$PR_NUMBER" --body-file /tmp/comment.md || echo "⚠️ Failed to post comment"
