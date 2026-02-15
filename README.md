@@ -454,6 +454,7 @@ npm run htmlhint && npm test && npm run build
 - [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows and automation
 - [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture and design
 - [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Future security roadmap
+- [LABELS.md](LABELS.md) - Automatic labeling system and label definitions ✨ **NEW**
 - [LICENSE](LICENSE) - Apache License 2.0
 
 ### GitHub Copilot Integration

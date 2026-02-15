@@ -10,6 +10,52 @@ permissions:
   contents: read
 
 jobs:
+  javascript-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: |
+          echo "🔍 Running ESLint on JavaScript files..."
+          echo ""
+          
+          # Run ESLint and capture results
+          if npm run lint > eslint-report.txt 2>&1; then
+            echo "✅ All JavaScript files passed linting"
+            cat eslint-report.txt
+          else
+            echo "⚠️ JavaScript linting found issues:"
+            cat eslint-report.txt
+            echo ""
+            echo "📊 Linting completed with warnings/errors"
+            # Don't fail the build on linting issues initially - just report them
+            # exit 1
+          fi
+          
+      - name: Upload ESLint Report
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: eslint-report
+          path: eslint-report.txt
+          retention-days: 30
+
   html-validation:
     runs-on: ubuntu-latest
     steps:
@@ -192,7 +238,7 @@ jobs:
 
   summary:
     runs-on: ubuntu-latest
-    needs: [html-validation, link-checker]
+    needs: [javascript-lint, html-validation, link-checker]
     if: always()
     steps:
       - name: Harden the runner (Audit all outbound calls)
@@ -206,10 +252,12 @@ jobs:
           echo "   Quality Checks Completed"
           echo "=========================================="
           echo ""
+          echo "✅ JavaScript linting completed"
           echo "✅ HTML validation completed"
           echo "✅ Link checking completed"
           echo ""
           echo "📊 Check artifacts for detailed reports:"
+          echo "   - eslint-report"
           echo "   - htmlhint-report"
           echo "   - link-checker-reports"
           echo ""

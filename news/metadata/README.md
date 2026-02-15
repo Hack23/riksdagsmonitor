@@ -31,7 +31,7 @@ Structured error logging for workflow failures.
 {
   "lastError": {
     "timestamp": "2026-02-14T12:00:00Z",
-    "workflow": "news-generation.yml",
+    "workflow": "news-article-generator.lock.yml",
     "errorType": "script_missing",
     "message": "scripts/generate-news-enhanced.js not found",
     "severity": "critical",
@@ -68,7 +68,7 @@ Structured error logging for workflow failures.
 - Error pattern analysis for workflow improvements
 
 ### `workflow-state.json`
-Coordination between agentic and traditional workflows.
+Coordination between agentic workflows.
 
 **Schema:**
 ```json
@@ -89,15 +89,14 @@ Coordination between agentic and traditional workflows.
       "data": []
     }
   },
-  "note": "This file is used for coordination between agentic and traditional workflows"
+  "note": "This file is used for coordination between agentic workflows"
 }
 ```
 
 **Purpose:**
-- Prevents duplicate work between agentic and traditional workflows
+- Prevents duplicate work between agentic workflows
 - MCP query caching (2-hour TTL) to reduce API calls
 - Recent article tracking for similarity-based deduplication
-- Traditional workflow skips if agentic activity recent (<2 hours)
 
 ### `generation-result.json`
 Output from news generation script.
@@ -127,26 +126,14 @@ Output from news generation script.
 
 ## Workflow Integration
 
-### Traditional Workflow (news-generation.yml)
-```yaml
-# 1. Check last generation time (last-generation.json)
-# 2. Check agentic workflow activity (workflow-state.json)
-# 3. Generate articles if needed
-# 4. Log errors to errors.json on failure
-# 5. Update last-generation.json on success/failure
-# 6. Commit timestamp if 0 articles generated
-# 7. Create PR if articles > 0
-```
-
 ### Agentic Workflows
-- `news-realtime-monitor.md` - Real-time breaking news
-- `news-evening-analysis.md` - Evening comprehensive analysis
-- `news-article-generator.md` - Batch article generation
+- `news-article-generator.md` → `.lock.yml` — General article generation (daily ~05:51 UTC)
+- `news-realtime-monitor.md` → `.lock.yml` — Breaking news (10:00 + 14:00 UTC Mon-Fri)
+- `news-evening-analysis.md` → `.lock.yml` — Evening analysis (18:00 UTC Mon-Fri)
 
 **Coordination:**
 - Agentic workflows update workflow-state.json with lastUpdate
-- Traditional workflow checks lastUpdate and skips if < 2 hours
-- Prevents duplicate articles when both workflows active
+- Prevents duplicate articles across the three workflows
 
 ## Error Notification
 
@@ -173,6 +160,5 @@ Critical errors (severity=critical) trigger GitHub issue comments:
 
 ## References
 
-- Workflow: `.github/workflows/news-generation.yml`
-- Tests: `tests/workflows/news-generation.test.js`
-- Issue: #161
+- Agentic workflows: `.github/workflows/news-*.md` (source) → `.lock.yml` (compiled)
+- Tests: `tests/news-*.test.js`

@@ -36,7 +36,7 @@ const dryRunArg = args.includes('--dry-run');
 const VALID_ARTICLE_TYPES = ['week-ahead', 'committee-reports', 'propositions', 'motions', 'breaking'];
 
 const articleTypes = typesArg 
-  ? typesArg.split('=')[1].split(',')
+  ? typesArg.split('=')[1].split(',').map(t => t.trim())
   : ['week-ahead'];
 
 // Language preset expansion
@@ -47,14 +47,14 @@ const LANGUAGE_PRESETS = {
   'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl']
 };
 
-let languagesInput = languagesArg ? languagesArg.split('=')[1] : 'en,sv';
+let languagesInput = languagesArg ? languagesArg.split('=')[1].trim().toLowerCase() : 'en,sv';
 
-// Expand presets
+// Expand presets (after trimming and normalizing)
 if (LANGUAGE_PRESETS[languagesInput]) {
   languagesInput = LANGUAGE_PRESETS[languagesInput].join(',');
 }
 
-const languages = languagesInput.split(',').filter(l => ALL_LANGUAGES.includes(l.trim()));
+const languages = languagesInput.split(',').map(l => l.trim()).filter(l => ALL_LANGUAGES.includes(l));
 
 if (languages.length === 0) {
   console.error('❌ No valid language codes provided. Valid codes:', ALL_LANGUAGES.join(', '));

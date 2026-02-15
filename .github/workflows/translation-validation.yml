@@ -5,6 +5,7 @@ on:
     branches: [ master, main ]
     paths:
       - 'index*.html'
+      - 'news/*.html'
       - 'scripts/validate-translations.js'
       - '.github/workflows/translation-validation.yml'
       - 'TRANSLATION_GUIDE.md'
@@ -12,6 +13,7 @@ on:
     branches: [ master, main ]
     paths:
       - 'index*.html'
+      - 'news/*.html'
       - 'scripts/validate-translations.js'
       - '.github/workflows/translation-validation.yml'
       - 'TRANSLATION_GUIDE.md'
@@ -98,6 +100,48 @@ jobs:
             fi
           done
 
+      - name: Validate news article language purity
+        id: news_purity
+        run: |
+          echo ""
+          echo "📰 Validating news article language purity..."
+          echo ""
+          
+          PURITY_ERRORS=0
+          ARTICLES_CHECKED=0
+          
+          # Check each non-Swedish news article for Swedish content leakage
+          for lang_code in en da no fi de fr es nl ar he ja ko zh; do
+            for article in news/*-${lang_code}.html; do
+              if [ ! -f "$article" ]; then continue; fi
+              ARTICLES_CHECKED=$((ARTICLES_CHECKED + 1))
+              
+              # Check for untranslated data-translate markers
+              if grep -q 'data-translate="true"' "$article"; then
+                echo "  ❌ UNTRANSLATED content in: $(basename $article)"
+                grep -n 'data-translate="true"' "$article" | head -3
+                PURITY_ERRORS=$((PURITY_ERRORS + 1))
+              fi
+              
+              # Check for Swedish characters in h3 tags (document titles)
+              # å, ä, ö are strong indicators of untranslated Swedish
+              swedish_h3=$(grep -oP '<h3[^>]*>[^<]*[åäöÅÄÖ][^<]*</h3>' "$article" 2>/dev/null | wc -l)
+              if [ "$swedish_h3" -gt 0 ]; then
+                echo "  ⚠️  Possible Swedish in <h3> of: $(basename $article) ($swedish_h3 matches)"
+                PURITY_ERRORS=$((PURITY_ERRORS + 1))
+              fi
+            done
+          done
+          
+          echo ""
+          echo "  Articles checked: $ARTICLES_CHECKED"
+          
+          if [ $PURITY_ERRORS -gt 0 ]; then
+            echo "  ⚠️  Language purity issues: $PURITY_ERRORS (warning only)"
+          else
+            echo "  ✅ Language purity: All articles clean"
+          fi
+
       - name: Translation validation summary
         if: always()
         run: |
@@ -130,6 +174,12 @@ jobs:
             echo "✅ Hreflang tags: PASSED"
           else
             echo "❌ Hreflang tags: FAILED"
+          fi
+          
+          if [ "${{ steps.news_purity.outcome }}" = "success" ]; then
+            echo "✅ News article language purity: PASSED"
+          else
+            echo "⚠️  News article language purity: WARNINGS"
           fi
           
           echo ""

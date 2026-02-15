@@ -51,7 +51,8 @@ describe('MCPClient Part 2', () => {
 
       await client.fetchMotions();
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body.params.name).toBe('riksdag-regering--get_motioner');
+      // Direct server URL: unprefixed tool name
+      expect(body.params.name).toBe('get_motioner');
     });
 
     it('should return empty array when response has no motions key', async () => {
@@ -86,7 +87,8 @@ describe('MCPClient Part 2', () => {
 
       await client.searchDocuments({ sok: 'test' });
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body.params.name).toBe('riksdag-regering--search_dokument');
+      // Direct server URL: unprefixed tool name
+      expect(body.params.name).toBe('search_dokument');
     });
 
     it('should return empty array when response has no documents key', async () => {
@@ -121,7 +123,8 @@ describe('MCPClient Part 2', () => {
 
       await client.searchSpeeches({ sok: 'test' });
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body.params.name).toBe('riksdag-regering--search_anforanden');
+      // Direct server URL: unprefixed tool name
+      expect(body.params.name).toBe('search_anforanden');
     });
 
     it('should return empty array when response has no speeches key', async () => {
@@ -155,7 +158,8 @@ describe('MCPClient Part 2', () => {
 
       await client.fetchMPs();
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body.params.name).toBe('riksdag-regering--search_ledamoter');
+      // Direct server URL: unprefixed tool name
+      expect(body.params.name).toBe('search_ledamoter');
     });
 
     it('should pass empty object when no filters provided', async () => {
@@ -200,7 +204,8 @@ describe('MCPClient Part 2', () => {
 
       await client.fetchVotingRecords({ rm: '2025/26' });
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body.params.name).toBe('riksdag-regering--search_voteringar');
+      // Direct server URL: unprefixed tool name
+      expect(body.params.name).toBe('search_voteringar');
     });
 
     it('should return empty array when response has no votes key', async () => {
@@ -235,7 +240,8 @@ describe('MCPClient Part 2', () => {
 
       await client.fetchGovernmentDocuments({ type: 'press' });
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body.params.name).toBe('riksdag-regering--search_regering');
+      // Direct server URL: unprefixed tool name
+      expect(body.params.name).toBe('search_regering');
     });
 
     it('should return empty array when response has no documents key', async () => {

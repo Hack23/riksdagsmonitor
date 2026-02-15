@@ -1,6 +1,6 @@
 ---
 name: swedish-political-system
-description: Swedish Riksdag structure, 8 parties, electoral system, government formation, coalition patterns
+description: Swedish Riksdag structure, 8 parties, electoral system, government formation, coalition patterns, and comprehensive political vocabulary for translation
 license: Apache-2.0
 ---
 
@@ -8,7 +8,7 @@ license: Apache-2.0
 
 ## Purpose
 
-Comprehensive knowledge of Swedish political system for accurate interpretation of political data in Riksdagsmonitor.
+Comprehensive knowledge of Swedish political system for accurate interpretation of political data in Riksdagsmonitor, including authoritative vocabulary for translating Riksdag API data across all 14 supported languages.
 
 ## Riksdag Structure
 
@@ -51,6 +51,151 @@ Comprehensive knowledge of Swedish political system for accurate interpretation 
 - **Modified Sainte-Laguë**: Allocation method
 - **4% Threshold**: National OR 12% in one constituency
 
+---
+
+## Swedish Political Vocabulary (Riksdag API Translation Glossary)
+
+This vocabulary is the **authoritative reference** for translating Swedish political terms from the Riksdag API into all 14 supported languages. LLM agents generating news articles MUST consult this glossary.
+
+### Document Types (Dokumenttyper)
+
+These are the `doktyp` values returned by the Riksdag API:
+
+| Swedish | Abbreviation | English | Definition |
+|---------|-------------|---------|------------|
+| Betänkande | bet | Committee report | A committee's recommendation to the Riksdag on a matter |
+| Proposition | prop | Government bill | A legislative proposal from the government to the Riksdag |
+| Motion | mot | Parliamentary motion | A proposal submitted by one or more MPs |
+| Interpellation | ip | Interpellation | A formal question from an MP to a minister requiring debate |
+| Skriftlig fråga | fr | Written question | A written question from an MP to a minister |
+| Utskottsbetänkande | bet | Committee report | Synonym for betänkande |
+| Protokoll | prot | Minutes/Protocol | Record of proceedings in the chamber |
+| Yttrande | ytt | Statement/Opinion | A committee's opinion on a matter referred by another committee |
+| Utlåtande | utl | Statement | Used for EU matters referred to committees |
+| Förordning | — | Regulation/Ordinance | Government regulation |
+| Riksdagsskrivelse | rskr | Parliamentary communication | The Riksdag's formal decisions communicated to the government |
+| Statens offentliga utredningar | SOU | Government inquiry report | Thorough investigation reports |
+| Departementsserien | Ds | Ministry series | Ministry publication series |
+
+### Document Reference Formats
+
+| Format | Example | Meaning |
+|--------|---------|---------|
+| Prop. YYYY/YY:NNN | Prop. 2025/26:123 | Government bill 123 of term 2025/26 |
+| Bet. YYYY/YY:XxUNN | Bet. 2025/26:FiU10 | Finance Committee report 10 of term 2025/26 |
+| Mot. YYYY/YY:NNNN | Mot. 2025/26:1234 | Motion 1234 of term 2025/26 |
+| Rskr. YYYY/YY:NNN | Rskr. 2025/26:45 | Parliamentary communication 45 |
+| SOU YYYY:NN | SOU 2026:15 | Government inquiry report 15 of 2026 |
+| Ds YYYY:NN | Ds 2026:8 | Ministry series publication 8 of 2026 |
+
+### 15 Standing Committees (Utskott)
+
+| Swedish Name | Abbreviation | English | Key Policy Areas |
+|-------------|-------------|---------|-----------------|
+| Finansutskottet | FiU | Finance Committee | Budget, taxation, financial regulation |
+| Socialutskottet | SoU | Social Affairs Committee | Healthcare, social services, elderly care |
+| Justitieutskottet | JuU | Justice Committee | Criminal law, police, courts |
+| Civilutskottet | CU | Civil Affairs Committee | Civil law, housing, consumer protection |
+| Utrikesutskottet | UU | Foreign Affairs Committee | Foreign policy, international aid |
+| Försvarsutskottet | FöU | Defence Committee | Military, civil defence, security policy |
+| Konstitutionsutskottet | KU | Constitutional Committee | Constitution, government accountability |
+| Kulturutskottet | KrU | Cultural Affairs Committee | Culture, media, religious communities |
+| Miljö- och jordbruksutskottet | MJU | Environment and Agriculture Committee | Environment, agriculture, food |
+| Näringsutskottet | NU | Industry Committee | Business, energy, regional growth |
+| Skatteutskottet | SkU | Tax Committee | Tax legislation |
+| Socialförsäkringsutskottet | SfU | Social Insurance Committee | Social insurance, pensions, migration |
+| Trafikutskottet | TU | Transport Committee | Transport, IT, postal services |
+| Utbildningsutskottet | UbU | Education Committee | Education, research, students |
+| Arbetsmarknadsutskottet | AU | Labour Market Committee | Employment, working conditions, equality |
+
+### Parliamentary Proceedings Vocabulary
+
+| Swedish | English | Context |
+|---------|---------|---------|
+| Riksmöte | Parliamentary session/term | The annual session (Sept–June), e.g. "riksmötet 2025/26" |
+| Votering | Division/Vote | A formal vote in the chamber |
+| Anförande | Speech/Address | A speech delivered in the chamber |
+| Debatt | Debate | Parliamentary debate on a matter |
+| Kammare | Chamber | The plenary chamber of the Riksdag |
+| Talman | Speaker | The Speaker of the Riksdag (Andreas Norlén) |
+| Andre vice talman | Second Deputy Speaker | Deputy speaker role |
+| Utskottssammanträde | Committee meeting | Committee session |
+| Allmän motionstid | General motion period | Period when all MPs may file motions |
+| Statsbudget | National budget | The annual government budget |
+
+### Political & Policy Terms
+
+| Swedish | English | Context |
+|---------|---------|---------|
+| Tidöavtalet | The Tidö Agreement | The 2022 governing agreement between M, KD, L and SD |
+| Januariavtalet | The January Agreement | The 2019 agreement between S, MP, C, L (historical) |
+| Decemberöverenskommelsen | The December Agreement | The 2014 budget deal (historical) |
+| Föräldrapenning | Parental allowance | Social insurance benefit |
+| Bostadsrätt | Tenant-ownership | Swedish form of housing cooperative |
+| Fribeloppet | Freehold amount/Earning threshold | Amount students or pensioners may earn tax-free |
+| Statlig personal | Government personnel | Civil servants employed by the state |
+| Djurskydd | Animal welfare/protection | Animal welfare regulation |
+| Riksrevisionen | Swedish National Audit Office | Parliamentary audit authority |
+| Riksbanken | Sveriges Riksbank | Sweden's central bank |
+| Statsråd | Cabinet minister | Member of the government/cabinet |
+| Regeringskansliet | Government Offices | The Swedish Government administrative apparatus |
+
+### Multi-Language Document Type Translations
+
+| Swedish | English | German | French | Spanish |
+|---------|---------|--------|--------|---------|
+| Betänkande | Committee report | Ausschussbericht | Rapport de commission | Informe de comité |
+| Proposition | Government bill | Regierungsvorlage | Projet de loi du gouvernement | Proyecto de ley gubernamental |
+| Motion | Parliamentary motion | Parlamentarischer Antrag | Motion parlementaire | Moción parlamentaria |
+| Interpellation | Interpellation | Interpellation | Interpellation | Interpelación |
+| Skriftlig fråga | Written question | Schriftliche Anfrage | Question écrite | Pregunta escrita |
+| Votering | Division/Vote | Abstimmung | Vote/Scrutin | Votación |
+| Anförande | Parliamentary speech | Parlamentsrede | Discours parlementaire | Discurso parlamentario |
+
+| Swedish | Danish | Norwegian | Finnish | Dutch |
+|---------|--------|-----------|---------|-------|
+| Betänkande | Udvalgsbetænkning | Komitéinnstilling | Valiokunnan mietintö | Commissieverslag |
+| Proposition | Regeringsforslag | Regjeringsforslag | Hallituksen esitys | Wetsvoorstel |
+| Motion | Beslutningsforslag | Representantforslag | Lakialoite | Parlementaire motie |
+| Interpellation | Forespørgsel | Interpellasjon | Välikysymys | Interpellatie |
+| Skriftlig fråga | Skriftligt spørgsmål | Skriftlig spørsmål | Kirjallinen kysymys | Schriftelijke vraag |
+| Votering | Afstemning | Votering | Äänestys | Stemming |
+| Anförande | Tale | Innlegg | Puheenvuoro | Toespraak |
+
+| Swedish | Arabic | Hebrew | Japanese | Korean | Chinese |
+|---------|--------|--------|----------|--------|---------|
+| Betänkande | تقرير اللجنة | דוח ועדה | 委員会報告 | 위원회 보고서 | 委员会报告 |
+| Proposition | مشروع قانون حكومي | הצעת חוק ממשלתית | 政府法案 | 정부 법안 | 政府法案 |
+| Motion | اقتراح برلماني | הצעה פרלמנטרית | 議会動議 | 의회 동의 | 议会动议 |
+| Interpellation | استجواب | אינטרפלציה | 質問主意書 | 대정부질문 | 质询 |
+| Skriftlig fråga | سؤال مكتوب | שאילתה | 書面質問 | 서면질의 | 书面质询 |
+| Votering | تصويت | הצבעה | 採決 | 표결 | 表决 |
+| Anförande | خطاب برلماني | נאום פרלמנטרי | 国会演説 | 의회 연설 | 议会发言 |
+
+### Article Type Classification Keywords (All 14 Languages)
+
+Used by `classifyArticleType()` in `generate-news-indexes.js` to determine article type from content:
+
+| Type | English | Swedish | Danish | Norwegian |
+|------|---------|---------|--------|-----------|
+| prospective | Week Ahead, upcoming, preview, preview, look ahead | Veckan som kommer, kommande, framåtblick | Ugen der kommer, kommende, fremadrettet | Uken som kommer, kommende, fremtidsrettet |
+| analysis | Committee Reports, analysis, review, assessment | Utskottsbetänkanden, analys, granskning | Udvalgsrapporter, analyse, gennemgang | Komitérapporter, analyse, gjennomgang |
+| breaking | Breaking, urgent, alert, flash | Senaste nytt, akut, brådskande | Seneste nyt, urgent, hastesag | Siste nytt, haster, pressemelding |
+
+| Type | Finnish | German | French | Spanish |
+|------|---------|--------|--------|---------|
+| prospective | Tuleva viikko, tulevat, ennakko | Woche voraus, kommende, Vorschau | Semaine à venir, à venir, aperçu | Semana por delante, próximo, adelanto |
+| analysis | Valiokuntaraportit, analyysi, katsaus | Ausschussberichte, Analyse, Überprüfung | Rapports de commission, analyse, examen | Informes de comité, análisis, revisión |
+| breaking | Viimeisimmät, kiireellinen, hälytys | Eilmeldungen, dringend, Alarm | Dernières nouvelles, urgent, alerte | Última hora, urgente, alerta |
+
+| Type | Dutch | Arabic | Hebrew | Japanese | Korean | Chinese |
+|------|-------|--------|--------|----------|--------|---------|
+| prospective | Week vooruit, komende, vooruitblik | الأسبوع المقبل, القادم | השבוע הבא, הקרוב | 来週の展望, 今後 | 주간 전망, 다가오는 | 一周展望, 即将 |
+| analysis | Commissierapporten, analyse, beoordeling | تقارير اللجان, تحليل | דוחות ועדות, ניתוח | 委員会報告, 分析 | 위원회 보고서, 분석 | 委员会报告, 分析 |
+| breaking | Laatste nieuws, dringend, alert | أخبار عاجلة, عاجل | חדשות אחרונות, דחוף | 速報, 緊急 | 속보, 긴급 | 突发新闻, 紧急 |
+
+---
+
 ## ISMS Compliance
 
 ### ISO 27001:2022
@@ -62,3 +207,132 @@ Comprehensive knowledge of Swedish political system for accurate interpretation 
 - **Riksdagen**: https://www.riksdagen.se/
 - **Constitution**: https://www.riksdagen.se/en/how-the-riksdag-works/democracy/the-constitution/
 - **Election Authority**: https://www.val.se/
+- **Riksdag Open Data API**: https://data.riksdagen.se/
+- **TRANSLATION_GUIDE.md**: See repository root for cross-language terminology tables
+
+---
+
+## Real-World Translation Examples (From News Articles)
+
+This section provides proven translations extracted from actual translated news articles (Feb 2026), showing how political terms are used in context.
+
+### Committee Report Titles (Real Examples)
+
+These are actual committee report titles from news articles, showing natural translations:
+
+**"Better conditions for deploying government personnel abroad"**
+- 🇸🇪 Swedish: "Bättre förutsättningar att sända ut statlig personal"
+- 🇩🇪 German: "Bessere Voraussetzungen für die Entsendung staatlichen Personals"
+- 🇫🇷 French: "Meilleures conditions pour le déploiement du personnel gouvernemental"
+- 🇪🇸 Spanish: "Mejores condiciones para el despliegue de personal estatal"
+- 🇳🇱 Dutch: "Betere voorwaarden voor de uitzending van overheidspersoneel"
+- 🇸🇦 Arabic: "ظروف أفضل لإرسال الموظفين الحكوميين"
+- 🇮🇱 Hebrew: "תנאים טובים יותר לשליחת עובדי מדינה"
+- 🇯🇵 Japanese: "国家公務員の海外派遣条件の改善"
+- 🇰🇷 Korean: "국가 공무원 파견 조건 개선"
+- 🇨🇳 Chinese: "改善国家工作人员外派条件"
+
+**"A register for all condominiums"**
+- 🇸🇪 Swedish: "Ett register för alla bostadsrätter"
+- 🇩🇪 German: "Ein Register für alle Eigentumswohnungen"
+- 🇫🇷 French: "Un registre pour toutes les copropriétés"
+- 🇪🇸 Spanish: "Un registro para todas las viviendas en régimen de propiedad"
+- 🇳🇱 Dutch: "Een register voor alle appartementsrechten"
+- 🇸🇦 Arabic: "سجل لجميع حقوق الملكية السكنية"
+- 🇮🇱 Hebrew: "מרשם לכל דירות הבעלות"
+- 🇯🇵 Japanese: "全分譲住宅の登録制度"
+- 🇰🇷 Korean: "모든 분양주택 등록 제도"
+- 🇨🇳 Chinese: "所有产权公寓登记制度"
+
+**"Animal welfare"**
+- 🇸🇪 Swedish: "Djurskydd"
+- 🇩🇪 German: "Tierschutz"
+- 🇫🇷 French: "Protection des animaux"
+- 🇪🇸 Spanish: "Bienestar animal"
+- 🇳🇱 Dutch: "Dierenwelzijn"
+- 🇸🇦 Arabic: "رعاية الحيوان"
+- 🇮🇱 Hebrew: "רווחת בעלי חיים"
+
+**"Trade policy"**
+- 🇸🇪 Swedish: "Handelspolitik"
+- 🇩🇪 German: "Handelspolitik"
+- 🇫🇷 French: "Politique commerciale"
+- 🇪🇸 Spanish: "Política comercial"
+- 🇳🇱 Dutch: "Handelsbeleid"
+
+**"Planning and construction"**
+- 🇸🇪 Swedish: "Planering och byggande"
+- 🇩🇪 German: "Planung und Bauwesen"
+- 🇫🇷 French: "Planification et construction"
+- 🇪🇸 Spanish: "Planificación y construcción"
+- 🇳🇱 Dutch: "Planning en bouw"
+
+### Evening Analysis Headlines (Real Examples)
+
+From February 2026 evening analysis articles:
+
+**"Sweden's Riksdag Enters Spring Recess: A Mid-Session Assessment"**
+- 🇸🇪 Swedish: "Sveriges riksdag går in i våruppehåll: En halvtidsbedömning"
+- 🇩🇪 German: "Schwedens Riksdag in der Frühjahrspause: Eine Halbzeitbewertung"
+- 🇫🇷 French: "Le Riksdag suédois entre en pause de printemps: Une évaluation à mi-parcours"
+
+### News Article UI Labels (Validated Translations)
+
+Labels extracted from 81 translated news articles:
+
+**"What to Watch This Week"**
+- 🇸🇪 Swedish: "Vad man ska följa denna vecka"
+- 🇩🇪 German: "Was diese Woche zu beobachten"
+- 🇫🇷 French: "À surveiller cette semaine"
+- 🇪🇸 Spanish: "Qué observar esta semana"
+- 🇳🇱 Dutch: "Te volgen deze week"
+- 🇩🇰 Danish: "Hvad man skal følge denne uge"
+- 🇳🇴 Norwegian: "Hva man skal følge denne uken"
+- 🇫🇮 Finnish: "Mitä seurata tällä viikolla"
+
+**"Committee"**
+- 🇸🇪 Swedish: "Kommitté"
+- 🇩🇪 German: "Ausschuss"
+- 🇫🇷 French: "Commission"
+- 🇪🇸 Spanish: "Comisión"
+- 🇳🇱 Dutch: "Commissie"
+- 🇩🇰 Danish: "Udvalg"
+- 🇳🇴 Norwegian: "Komité"
+- 🇫🇮 Finnish: "Valiokunta"
+
+**"Document"**
+- 🇸🇪 Swedish: "Dokument"
+- 🇩🇪 German: "Dokument"
+- 🇫🇷 French: "Document"
+- 🇪🇸 Spanish: "Documento"
+- 🇳🇱 Dutch: "Document"
+- 🇩🇰 Danish: "Dokument"
+- 🇳🇴 Norwegian: "Dokument"
+- 🇫🇮 Finnish: "Asiakirja"
+
+### Usage Guidelines
+
+**When translating committee reports:**
+1. Use these proven translations as templates
+2. Maintain formal register (journalistic third-person)
+3. Keep Swedish committee codes (SoU, FiU, CU, etc.) in references
+4. Translate committee NAMES in running text
+5. Never translate party abbreviations (S, M, SD, V, MP, C, L, KD)
+
+**When translating analysis articles:**
+1. Use formal political terminology
+2. Maintain The Economist style
+3. Adapt cultural references appropriately
+4. Keep proper nouns in Swedish (Riksdag, Tidö Agreement)
+
+**Quality assurance:**
+- Compare your translation with examples above
+- Maintain consistent terminology across articles
+- Use TRANSLATION_GUIDE.md for additional reference
+- Consult language-expertise skill for style guidelines
+
+---
+
+**Data Source**: Extracted from 81 translated news articles (2026-02-10 to 2026-02-14)  
+**Languages Analyzed**: All 14 supported languages  
+**Last Updated**: 2026-02-15

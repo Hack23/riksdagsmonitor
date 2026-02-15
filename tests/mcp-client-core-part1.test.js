@@ -104,8 +104,9 @@ describe('MCPClient', () => {
       expect(body.jsonrpc).toBe('2.0');
       expect(body.id).toBeDefined();
       expect(body.method).toBe('tools/call');
+      // Direct server URL: tool names are NOT prefixed
       expect(body.params).toEqual({
-        name: 'riksdag-regering--test_tool',
+        name: 'test_tool',
         arguments: { key: 'val' }
       });
     });
@@ -233,18 +234,44 @@ describe('MCPClient', () => {
       expect(body.params.arguments).toEqual({});
     });
 
-    it('should try without prefix if tool not found with prefix', async () => {
+    it('should not add prefix when using direct server URL', async () => {
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { success: true } })
+      }));
+
+      await client.request('test_tool', {});
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      // Direct server URL: no prefix
+      expect(body.params.name).toBe('test_tool');
+    });
+
+    it('should add prefix when using MCP gateway URL', async () => {
+      const gatewayClient = new MCPClient({ baseURL: 'http://host.docker.internal:80/mcp/riksdag-regering' });
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { success: true } })
+      }));
+
+      await gatewayClient.request('test_tool', {});
+      const body = JSON.parse(global.fetch.mock.calls[0][1].body);
+      // Gateway URL: prefix added
+      expect(body.params.name).toBe('riksdag-regering--test_tool');
+    });
+
+    it('should try without prefix if gateway returns Internal error', async () => {
+      const gatewayClient = new MCPClient({ baseURL: 'http://host.docker.internal:80/mcp/riksdag-regering' });
       let callCount = 0;
       global.fetch = vi.fn(() => {
         callCount++;
         if (callCount === 1) {
-          // First call with prefix fails
+          // First call with prefix fails with Internal error
           return Promise.resolve({
             ok: true,
             json: () => Promise.resolve({
               jsonrpc: '2.0',
               id: 1,
-              error: { code: -32601, message: 'Tool riksdag-regering--test_tool not found' }
+              error: { code: -32603, message: 'Internal error' }
             })
           });
         }
@@ -255,7 +282,7 @@ describe('MCPClient', () => {
         });
       });
 
-      const result = await client.request('test_tool', {});
+      const result = await gatewayClient.request('test_tool', {});
       expect(result).toEqual({ success: true });
       expect(global.fetch).toHaveBeenCalledTimes(2);
       
@@ -388,7 +415,8 @@ describe('MCPClient', () => {
 
       await client.fetchPropositions();
       const body = JSON.parse(global.fetch.mock.calls[0][1].body);
-      expect(body.params.name).toBe('riksdag-regering--get_propositioner');
+      // Direct server URL: unprefixed tool name
+      expect(body.params.name).toBe('get_propositioner');
     });
 
     it('should return empty array when response has no propositions key', async () => {

@@ -29,7 +29,7 @@ const LANGUAGES = {
     name: 'English', code: 'en', locale: 'en_US',
     title: 'News',
     subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
-    keywords: 'riksdag news, swedish parliament, government analysis, political journalism, transparency, democracy',
+    keywords: 'riksdag news, swedish parliament, government bills, committee reports, propositions, motions, parliamentary votes, political analysis, Sweden Democrats, Social Democrats, Moderaterna, coalition politics, transparency, democracy',
     breadcrumbs: { home: 'Home', news: 'News' },
     backLink: 'Back to Main',
     filters: {
@@ -38,13 +38,14 @@ const LANGUAGES = {
       sort: 'Sort:', newest: 'Newest First', oldest: 'Oldest First', titleSort: 'Title'
     },
     noResults: 'No articles matched the filters',
-    i18n: { noArticles: 'No articles available', loading: 'Loading articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'' }
+    i18n: { noArticles: 'No articles available', loading: 'Loading articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'' },
+    schemaDescription: 'Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency'
   },
   sv: {
     name: 'Svenska', code: 'sv', locale: 'sv_SE',
     title: 'Nyheter',
     subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.',
-    keywords: 'riksdag nyheter, svenska riksdagen, regeringsanalys, politisk journalistik, öppenhet, demokrati',
+    keywords: 'riksdag nyheter, svenska riksdagen, propositioner, betänkanden, motioner, utskott, voteringar, politisk analys, Socialdemokraterna, Moderaterna, Sverigedemokraterna, koalitionspolitik, öppenhet, demokrati',
     breadcrumbs: { home: 'Hem', news: 'Nyheter' },
     backLink: 'Tillbaka till huvudsidan',
     filters: {
@@ -53,13 +54,14 @@ const LANGUAGES = {
       sort: 'Sortera:', newest: 'Nyast först', oldest: 'Äldst först', titleSort: 'Titel'
     },
     noResults: 'Inga artiklar matchade filtren',
-    i18n: { noArticles: 'Inga artiklar tillgängliga', loading: 'Laddar artiklar...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artiklar\'' }
+    i18n: { noArticles: 'Inga artiklar tillgängliga', loading: 'Laddar artiklar...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artiklar\'' },
+    schemaDescription: 'Svensk riksdagsbevakning - Övervaka politisk aktivitet med systematisk transparens'
   },
   da: {
     name: 'Dansk', code: 'da', locale: 'da_DK',
     title: 'Nyheder',
     subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.',
-    keywords: 'riksdag nyheder, svensk parlament, regeringsanalyse, politisk journalistik, gennemsigtighed, demokrati',
+    keywords: 'riksdag nyheder, svensk parlament, regeringsforslag, udvalgsbetænkninger, afstemninger, politisk analyse, svenske partier, gennemsigtighed, demokrati',
     breadcrumbs: { home: 'Hjem', news: 'Nyheder' },
     backLink: 'Tilbage til hovedsiden',
     filters: {
@@ -68,13 +70,14 @@ const LANGUAGES = {
       sort: 'Sorter:', newest: 'Nyeste først', oldest: 'Ældste først', titleSort: 'Titel'
     },
     noResults: 'Ingen artikler matchede filtrene',
-    i18n: { noArticles: 'Ingen artikler tilgængelige', loading: 'Indlæser artikler...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikler\'' }
+    i18n: { noArticles: 'Ingen artikler tilgængelige', loading: 'Indlæser artikler...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikler\'' },
+    schemaDescription: 'Svensk parlamentsovervågning - Overvåg politisk aktivitet med systematisk gennemsigtighed'
   },
   no: {
     name: 'Norsk', code: 'no', locale: 'no_NO',
     title: 'Nyheter',
     subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.',
-    keywords: 'riksdag nyheter, svensk parlament, regjeringsanalyse, politisk journalistikk, åpenhet, demokrati',
+    keywords: 'riksdag nyheter, svensk parlament, regjeringsforslag, komitéinnstillinger, voteringer, politisk analyse, svenske partier, åpenhet, demokrati',
     breadcrumbs: { home: 'Hjem', news: 'Nyheter' },
     backLink: 'Tilbake til hovedsiden',
     filters: {
@@ -83,13 +86,14 @@ const LANGUAGES = {
       sort: 'Sorter:', newest: 'Nyeste først', oldest: 'Eldste først', titleSort: 'Tittel'
     },
     noResults: 'Ingen artikler matchet filtrene',
-    i18n: { noArticles: 'Ingen artikler tilgjengelige', loading: 'Laster artikler...', articleCount: '(n) => n === 1 ? \'1 artikkel\' : \'\' + n + \' artikler\'' }
+    i18n: { noArticles: 'Ingen artikler tilgjengelige', loading: 'Laster artikler...', articleCount: '(n) => n === 1 ? \'1 artikkel\' : \'\' + n + \' artikler\'' },
+    schemaDescription: 'Svensk parlamentsovervåking - Overvåk politisk aktivitet med systematisk åpenhet'
   },
   fi: {
     name: 'Suomi', code: 'fi', locale: 'fi_FI',
     title: 'Uutiset',
     subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.',
-    keywords: 'riksdag uutiset, ruotsin parlamentti, hallitusanalyysi, poliittinen journalismi, avoimuus, demokratia',
+    keywords: 'riksdag uutiset, ruotsin parlamentti, hallituksen esitykset, valiokunnan mietinnöt, äänestykset, poliittinen analyysi, ruotsin puolueet, avoimuus, demokratia',
     breadcrumbs: { home: 'Etusivu', news: 'Uutiset' },
     backLink: 'Takaisin etusivulle',
     filters: {
@@ -98,13 +102,14 @@ const LANGUAGES = {
       sort: 'Järjestä:', newest: 'Uusimmat ensin', oldest: 'Vanhimmat ensin', titleSort: 'Otsikko'
     },
     noResults: 'Mikään artikkeli ei vastannut suodattimia',
-    i18n: { noArticles: 'Ei artikkeleita saatavilla', loading: 'Ladataan artikkeleita...', articleCount: '(n) => n === 1 ? \'1 artikkeli\' : \'\' + n + \' artikkelia\'' }
+    i18n: { noArticles: 'Ei artikkeleita saatavilla', loading: 'Ladataan artikkeleita...', articleCount: '(n) => n === 1 ? \'1 artikkeli\' : \'\' + n + \' artikkelia\'' },
+    schemaDescription: 'Ruotsin parlamenttiseuranta - Seuraa poliittista toimintaa järjestelmällisellä avoimuudella'
   },
   de: {
     name: 'Deutsch', code: 'de', locale: 'de_DE',
     title: 'Nachrichten',
     subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.',
-    keywords: 'riksdag nachrichten, schwedisches parlament, regierungsanalyse, politischer journalismus, transparenz, demokratie',
+    keywords: 'riksdag nachrichten, schwedisches parlament, regierungsvorlagen, ausschussberichte, abstimmungen, politische analyse, schwedische parteien, transparenz, demokratie',
     breadcrumbs: { home: 'Startseite', news: 'Nachrichten' },
     backLink: 'Zurück zur Hauptseite',
     filters: {
@@ -113,13 +118,14 @@ const LANGUAGES = {
       sort: 'Sortieren:', newest: 'Neueste zuerst', oldest: 'Älteste zuerst', titleSort: 'Titel'
     },
     noResults: 'Keine Artikel entsprachen den Filtern',
-    i18n: { noArticles: 'Keine Artikel verfügbar', loading: 'Artikel werden geladen...', articleCount: '(n) => n === 1 ? \'1 Artikel\' : \'\' + n + \' Artikel\'' }
+    i18n: { noArticles: 'Keine Artikel verfügbar', loading: 'Artikel werden geladen...', articleCount: '(n) => n === 1 ? \'1 Artikel\' : \'\' + n + \' Artikel\'' },
+    schemaDescription: 'Schwedische Parlamentsüberwachung - Politische Aktivitäten mit systematischer Transparenz verfolgen'
   },
   fr: {
     name: 'Français', code: 'fr', locale: 'fr_FR',
     title: 'Actualités',
     subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.',
-    keywords: 'riksdag actualités, parlement suédois, analyse gouvernementale, journalisme politique, transparence, démocratie',
+    keywords: 'riksdag actualités, parlement suédois, projets de loi, rapports de commission, motions parlementaires, votes, analyse politique, partis suédois, transparence, démocratie',
     breadcrumbs: { home: 'Accueil', news: 'Actualités' },
     backLink: 'Retour à l\'accueil',
     filters: {
@@ -128,13 +134,14 @@ const LANGUAGES = {
       sort: 'Trier :', newest: 'Plus récent', oldest: 'Plus ancien', titleSort: 'Titre'
     },
     noResults: 'Aucun article ne correspond aux filtres',
-    i18n: { noArticles: 'Aucun article disponible', loading: 'Chargement des articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'' }
+    i18n: { noArticles: 'Aucun article disponible', loading: 'Chargement des articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'' },
+    schemaDescription: 'Surveillance du Parlement suédois - Suivre l\'activité politique avec une transparence systématique'
   },
   es: {
     name: 'Español', code: 'es', locale: 'es_ES',
     title: 'Noticias',
     subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.',
-    keywords: 'riksdag noticias, parlamento sueco, análisis gubernamental, periodismo político, transparencia, democracia',
+    keywords: 'riksdag noticias, parlamento sueco, proyectos de ley, informes de comité, mociones parlamentarias, votaciones, análisis político, partidos suecos, transparencia, democracia',
     breadcrumbs: { home: 'Inicio', news: 'Noticias' },
     backLink: 'Volver a la página principal',
     filters: {
@@ -143,13 +150,14 @@ const LANGUAGES = {
       sort: 'Ordenar:', newest: 'Más reciente', oldest: 'Más antiguo', titleSort: 'Título'
     },
     noResults: 'Ningún artículo coincidió con los filtros',
-    i18n: { noArticles: 'No hay artículos disponibles', loading: 'Cargando artículos...', articleCount: '(n) => n === 1 ? \'1 artículo\' : \'\' + n + \' artículos\'' }
+    i18n: { noArticles: 'No hay artículos disponibles', loading: 'Cargando artículos...', articleCount: '(n) => n === 1 ? \'1 artículo\' : \'\' + n + \' artículos\'' },
+    schemaDescription: 'Monitoreo del Parlamento sueco - Seguimiento de la actividad política con transparencia sistemática'
   },
   nl: {
     name: 'Nederlands', code: 'nl', locale: 'nl_NL',
     title: 'Nieuws',
     subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.',
-    keywords: 'riksdag nieuws, zweeds parlement, regeringsanalyse, politieke journalistiek, transparantie, democratie',
+    keywords: 'riksdag nieuws, zweeds parlement, wetsvoorstellen, commissieverslagen, parlementaire moties, stemmingen, politieke analyse, zweedse partijen, transparantie, democratie',
     breadcrumbs: { home: 'Home', news: 'Nieuws' },
     backLink: 'Terug naar hoofdpagina',
     filters: {
@@ -158,13 +166,14 @@ const LANGUAGES = {
       sort: 'Sorteren:', newest: 'Nieuwste eerst', oldest: 'Oudste eerst', titleSort: 'Titel'
     },
     noResults: 'Geen artikelen voldeden aan de filters',
-    i18n: { noArticles: 'Geen artikelen beschikbaar', loading: 'Artikelen laden...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikelen\'' }
+    i18n: { noArticles: 'Geen artikelen beschikbaar', loading: 'Artikelen laden...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikelen\'' },
+    schemaDescription: 'Zweeds parlementair toezicht - Volg politieke activiteit met systematische transparantie'
   },
   ar: {
     name: 'العربية', code: 'ar', locale: 'ar_SA', rtl: true,
     title: 'أخبار',
     subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.',
-    keywords: 'أخبار البرلمان, البرلمان السويدي, تحليل حكومي, صحافة سياسية, شفافية, ديمقراطية',
+    keywords: 'أخبار البرلمان, البرلمان السويدي, مشاريع القوانين, تقارير اللجان, التصويت, تحليل سياسي, الأحزاب السويدية, شفافية, ديمقراطية',
     breadcrumbs: { home: 'الرئيسية', news: 'أخبار' },
     backLink: 'العودة إلى الصفحة الرئيسية',
     filters: {
@@ -173,13 +182,14 @@ const LANGUAGES = {
       sort: 'الترتيب:', newest: 'الأحدث أولاً', oldest: 'الأقدم أولاً', titleSort: 'العنوان'
     },
     noResults: 'لا توجد مقالات تطابق الفلاتر',
-    i18n: { noArticles: 'لا توجد مقالات متاحة', loading: 'جارٍ تحميل المقالات...', articleCount: '(n) => n === 1 ? \'مقال واحد\' : \'\' + n + \' مقالات\'' }
+    i18n: { noArticles: 'لا توجد مقالات متاحة', loading: 'جارٍ تحميل المقالات...', articleCount: '(n) => n === 1 ? \'مقال واحد\' : \'\' + n + \' مقالات\'' },
+    schemaDescription: 'مراقبة البرلمان السويدي - متابعة النشاط السياسي بشفافية منهجية'
   },
   he: {
     name: 'עברית', code: 'he', locale: 'he_IL', rtl: true,
     title: 'חדשות',
     subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.',
-    keywords: 'חדשות הפרלמנט, הפרלמנט השוודי, ניתוח ממשלתי, עיתונות פוליטית, שקיפות, דמוקרטיה',
+    keywords: 'חדשות הפרלמנט, הפרלמנט השוודי, הצעות חוק, דוחות ועדות, הצבעות, ניתוח פוליטי, מפלגות שוודיות, שקיפות, דמוקרטיה',
     breadcrumbs: { home: 'בית', news: 'חדשות' },
     backLink: 'חזרה לדף הבית',
     filters: {
@@ -188,13 +198,14 @@ const LANGUAGES = {
       sort: 'מיון:', newest: 'החדש ביותר', oldest: 'הישן ביותר', titleSort: 'כותרת'
     },
     noResults: 'אין מאמרים שתואמים את הסינון',
-    i18n: { noArticles: 'אין מאמרים זמינים', loading: 'טוען מאמרים...', articleCount: '(n) => n === 1 ? \'מאמר אחד\' : \'\' + n + \' מאמרים\'' }
+    i18n: { noArticles: 'אין מאמרים זמינים', loading: 'טוען מאמרים...', articleCount: '(n) => n === 1 ? \'מאמר אחד\' : \'\' + n + \' מאמרים\'' },
+    schemaDescription: 'ניטור הפרלמנט השוודי - מעקב אחר פעילות פוליטית בשקיפות שיטתית'
   },
   ja: {
     name: '日本語', code: 'ja', locale: 'ja_JP',
     title: 'ニュース',
     subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。',
-    keywords: '国会ニュース, スウェーデン議会, 政府分析, 政治ジャーナリズム, 透明性, 民主主義',
+    keywords: '国会ニュース, スウェーデン議会, 政府法案, 委員会報告, 採決, 政治分析, スウェーデン政党, 透明性, 民主主義',
     breadcrumbs: { home: 'ホーム', news: 'ニュース' },
     backLink: 'ホームページに戻る',
     filters: {
@@ -203,13 +214,14 @@ const LANGUAGES = {
       sort: '並び替え：', newest: '最新順', oldest: '古い順', titleSort: 'タイトル'
     },
     noResults: 'フィルターに一致する記事がありません',
-    i18n: { noArticles: '記事がありません', loading: '記事を読み込み中...', articleCount: '(n) => n === 1 ? \'1件の記事\' : \'\' + n + \'件の記事\'' }
+    i18n: { noArticles: '記事がありません', loading: '記事を読み込み中...', articleCount: '(n) => n === 1 ? \'1件の記事\' : \'\' + n + \'件の記事\'' },
+    schemaDescription: 'スウェーデン議会監視プラットフォーム - 体系的な透明性で政治活動を監視'
   },
   ko: {
     name: '한국어', code: 'ko', locale: 'ko_KR',
     title: '뉴스',
     subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.',
-    keywords: '의회 뉴스, 스웨덴 의회, 정부 분석, 정치 저널리즘, 투명성, 민주주의',
+    keywords: '의회 뉴스, 스웨덴 의회, 정부 법안, 위원회 보고서, 표결, 정치 분석, 스웨덴 정당, 투명성, 민주주의',
     breadcrumbs: { home: '홈', news: '뉴스' },
     backLink: '홈페이지로 돌아가기',
     filters: {
@@ -218,13 +230,14 @@ const LANGUAGES = {
       sort: '정렬:', newest: '최신순', oldest: '오래된 순', titleSort: '제목'
     },
     noResults: '필터와 일치하는 기사가 없습니다',
-    i18n: { noArticles: '기사가 없습니다', loading: '기사 로딩 중...', articleCount: '(n) => n === 1 ? \'1개의 기사\' : \'\' + n + \'개의 기사\'' }
+    i18n: { noArticles: '기사가 없습니다', loading: '기사 로딩 중...', articleCount: '(n) => n === 1 ? \'1개의 기사\' : \'\' + n + \'개의 기사\'' },
+    schemaDescription: '스웨덴 의회 모니터링 플랫폼 - 체계적인 투명성으로 정치 활동 감시'
   },
   zh: {
     name: '中文', code: 'zh', locale: 'zh_CN',
     title: '新闻',
     subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。',
-    keywords: '议会新闻, 瑞典议会, 政府分析, 政治新闻, 透明度, 民主',
+    keywords: '议会新闻, 瑞典议会, 政府法案, 委员会报告, 表决, 政治分析, 瑞典政党, 透明度, 民主',
     breadcrumbs: { home: '主页', news: '新闻' },
     backLink: '返回主页',
     filters: {
@@ -233,7 +246,8 @@ const LANGUAGES = {
       sort: '排序：', newest: '最新优先', oldest: '最旧优先', titleSort: '标题'
     },
     noResults: '没有与过滤器匹配的文章',
-    i18n: { noArticles: '没有可用的文章', loading: '正在加载文章...', articleCount: '(n) => n === 1 ? \'1篇文章\' : \'\' + n + \'篇文章\'' }
+    i18n: { noArticles: '没有可用的文章', loading: '正在加载文章...', articleCount: '(n) => n === 1 ? \'1篇文章\' : \'\' + n + \'篇文章\'' },
+    schemaDescription: '瑞典议会监督平台 - 以系统化透明度监测政治活动'
   }
 };
 
@@ -364,29 +378,85 @@ function extractFromFilename(fileName) {
 }
 
 /**
- * Classify article type based on content and filename
+ * Classify article type based on content and filename.
+ * Supports detection keywords in all 14 languages.
  */
 function classifyArticleType(content, fileName) {
-  if (fileName.includes('week-ahead') || content.includes('Week Ahead') || content.includes('Veckan som kommer')) {
+  const lowerContent = content.toLowerCase();
+  
+  // Prospective: week-ahead / upcoming previews
+  const prospectiveKeywords = [
+    'week ahead', 'week-ahead', 'upcoming', 'preview', 'look ahead',           // en
+    'veckan som kommer', 'kommande', 'framåtblick',                             // sv
+    'ugen der kommer', 'kommende', 'fremadrettet',                              // da
+    'uken som kommer', 'fremtidsrettet',                                        // no
+    'tuleva viikko', 'tulevat', 'ennakko',                                      // fi
+    'woche voraus', 'vorschau',                                                 // de
+    'semaine à venir', 'aperçu',                                                // fr
+    'semana por delante', 'adelanto',                                            // es
+    'week vooruit', 'vooruitblik',                                               // nl
+    'الأسبوع المقبل', 'القادم',                                                  // ar
+    'השבוע הבא', 'הקרוב',                                                       // he
+    '来週の展望', '今後',                                                          // ja
+    '주간 전망', '다가오는',                                                       // ko
+    '一周展望', '即将'                                                             // zh
+  ];
+  
+  if (fileName.includes('week-ahead') || prospectiveKeywords.some(kw => lowerContent.includes(kw.toLowerCase()))) {
     return 'prospective';
   }
-  if (fileName.includes('committee-reports') || content.includes('Committee Reports') || content.includes('Utskottsbetänkanden')) {
+  
+  // Analysis: committee reports, propositions, motions
+  const analysisKeywords = [
+    'committee reports', 'analysis', 'review', 'assessment',                     // en
+    'utskottsbetänkanden', 'analys', 'granskning', 'betänkande',                // sv
+    'udvalgsrapporter', 'analyse', 'gennemgang', 'udvalgsbetænkning',           // da
+    'komitérapporter', 'gjennomgang', 'komitéinnstilling',                      // no
+    'valiokuntaraportit', 'analyysi', 'katsaus', 'valiokunnan mietintö',        // fi
+    'ausschussberichte', 'überprüfung', 'ausschussbericht',                     // de
+    'rapports de commission', 'examen', 'rapport de commission',                 // fr
+    'informes de comité', 'análisis', 'revisión', 'informe de comité',          // es
+    'commissierapporten', 'beoordeling', 'commissieverslag',                     // nl
+    'تقارير اللجان', 'تحليل', 'تقرير اللجنة',                                  // ar
+    'דוחות ועדות', 'ניתוח', 'דוח ועדה',                                         // he
+    '委員会報告', '分析',                                                          // ja
+    '위원회 보고서', '분석',                                                       // ko
+    '委员会报告', '分析'                                                           // zh
+  ];
+  
+  if (fileName.includes('committee-reports') || fileName.includes('propositions') || fileName.includes('motions') ||
+      analysisKeywords.some(kw => lowerContent.includes(kw.toLowerCase()))) {
     return 'analysis';
   }
-  if (fileName.includes('propositions') || content.includes('Propositions') || content.includes('Propositioner')) {
-    return 'analysis';
-  }
-  if (fileName.includes('motions') || content.includes('Motions') || content.includes('Motioner')) {
-    return 'analysis';
-  }
-  if (fileName.includes('breaking') || content.includes('Breaking') || content.includes('Senaste nytt')) {
+  
+  // Breaking: urgent/alert news
+  const breakingKeywords = [
+    'breaking', 'urgent', 'alert', 'flash',                                      // en
+    'senaste nytt', 'akut', 'brådskande',                                        // sv
+    'seneste nyt', 'hastesag',                                                   // da
+    'siste nytt', 'haster',                                                      // no
+    'viimeisimmät', 'kiireellinen', 'hälytys',                                   // fi
+    'eilmeldungen', 'dringend', 'alarm',                                         // de
+    'dernières nouvelles', 'alerte',                                              // fr
+    'última hora', 'urgente', 'alerta',                                           // es
+    'laatste nieuws', 'alert',                                                    // nl
+    'أخبار عاجلة', 'عاجل',                                                       // ar
+    'חדשות אחרונות', 'דחוף',                                                     // he
+    '速報', '緊急',                                                               // ja
+    '속보', '긴급',                                                               // ko
+    '突发新闻', '紧急'                                                             // zh
+  ];
+  
+  if (fileName.includes('breaking') || breakingKeywords.some(kw => lowerContent.includes(kw.toLowerCase()))) {
     return 'breaking';
   }
+  
   return 'retrospective';
 }
 
 /**
- * Extract topics from article tags
+ * Extract topics from article tags.
+ * Supports topic detection keywords in all 14 languages.
  */
 function extractTopics(content) {
   const topics = [];
@@ -396,12 +466,12 @@ function extractTopics(content) {
   while ((match = tagPattern.exec(content)) !== null) {
     const tag = match[1].toLowerCase();
     if (tag.includes('eu')) topics.push('eu');
-    if (tag.includes('parliament') || tag.includes('riksdag')) topics.push('parliament');
-    if (tag.includes('government') || tag.includes('regering')) topics.push('government');
-    if (tag.includes('defense') || tag.includes('försvar')) topics.push('defense');
-    if (tag.includes('environment') || tag.includes('miljö')) topics.push('environment');
-    if (tag.includes('committee') || tag.includes('utskott')) topics.push('committees');
-    if (tag.includes('legislation') || tag.includes('lagstiftning')) topics.push('legislation');
+    if (tag.includes('parliament') || tag.includes('riksdag') || tag.includes('parlamentet') || tag.includes('議会') || tag.includes('의회') || tag.includes('议会') || tag.includes('البرلمان') || tag.includes('פרלמנט')) topics.push('parliament');
+    if (tag.includes('government') || tag.includes('regering') || tag.includes('regjeringen') || tag.includes('hallitus') || tag.includes('regierung') || tag.includes('gouvernement') || tag.includes('gobierno') || tag.includes('政府') || tag.includes('정부') || tag.includes('الحكومة') || tag.includes('ממשלה')) topics.push('government');
+    if (tag.includes('defense') || tag.includes('defence') || tag.includes('försvar') || tag.includes('forsvar') || tag.includes('puolustus') || tag.includes('verteidigung') || tag.includes('défense') || tag.includes('defensa') || tag.includes('defensie') || tag.includes('الدفاع') || tag.includes('הגנה') || tag.includes('防衛') || tag.includes('국방') || tag.includes('国防')) topics.push('defense');
+    if (tag.includes('environment') || tag.includes('miljö') || tag.includes('miljø') || tag.includes('ympäristö') || tag.includes('umwelt') || tag.includes('environnement') || tag.includes('medio ambiente') || tag.includes('milieu') || tag.includes('البيئة') || tag.includes('סביבה') || tag.includes('環境') || tag.includes('환경') || tag.includes('环境')) topics.push('environment');
+    if (tag.includes('committee') || tag.includes('utskott') || tag.includes('udvalg') || tag.includes('utvalg') || tag.includes('valiokunt') || tag.includes('ausschuss') || tag.includes('commission') || tag.includes('comité') || tag.includes('commissie') || tag.includes('لجنة') || tag.includes('ועדה') || tag.includes('委員会') || tag.includes('위원회') || tag.includes('委员会')) topics.push('committees');
+    if (tag.includes('legislation') || tag.includes('lagstiftning') || tag.includes('lovgivning') || tag.includes('lainsäädäntö') || tag.includes('gesetzgebung') || tag.includes('législation') || tag.includes('legislación') || tag.includes('wetgeving') || tag.includes('التشريعات') || tag.includes('חקיקה') || tag.includes('立法') || tag.includes('입법')) topics.push('legislation');
   }
   
   return [...new Set(topics)].slice(0, 5); // Unique, max 5
@@ -628,7 +698,26 @@ ${generateHreflangTags()}
           "url": "https://riksdagsmonitor.com/news/${article.slug}",
           "datePublished": "${article.date}",
           "description": "${escapeHtml(article.description).substring(0, 150)}",
-          "inLanguage": "${article.lang || lang.code}"
+          "inLanguage": "${article.lang || lang.code}",
+          "author": {
+            "@type": "Organization",
+            "name": "Riksdagsmonitor"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hack23 AB",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://hack23.com/cia-icon-140.webp"
+            }
+          },
+          "articleSection": "${escapeHtml(lang.breadcrumbs.news)}",
+          "about": {
+            "@type": "GovernmentOrganization",
+            "name": "Riksdag",
+            "alternateName": "Swedish Parliament",
+            "url": "https://www.riksdagen.se/"
+          }
         }
       }`).join(',')}
     ]
@@ -664,7 +753,8 @@ ${generateHreflangTags()}
     "@type": "WebSite",
     "name": "Riksdagsmonitor",
     "url": "https://riksdagsmonitor.com",
-    "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+    "description": "${escapeHtml(lang.schemaDescription || 'Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency')}",
+    "inLanguage": "${lang.code}",
     "publisher": {
       "@type": "Organization",
       "name": "Hack23 AB",
@@ -923,7 +1013,7 @@ function generateHreflangTags() {
     tags.push(`  <link rel="alternate" hreflang="${hrefLang}" href="https://riksdagsmonitor.com/news/${filename}">`);
   });
   
-  tags.push(`  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/">`);
+  tags.push(`  <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/index.html">`);
   
   return tags.join('\n');
 }

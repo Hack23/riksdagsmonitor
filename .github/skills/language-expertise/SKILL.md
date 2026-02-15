@@ -565,3 +565,135 @@ grep 'dir="rtl"' index_ar.html index_he.html
 
 **Last Updated**: 2026-02-11  
 **Maintained by**: Hack23 AB
+
+---
+
+## Political Journalism Style (The Economist-Inspired)
+
+### Formal Register Requirements
+
+All political news articles use **formal register** across all languages. This is mandatory for political intelligence journalism.
+
+**Pronouns (Second Person "You"):**
+- 🇸🇪 Swedish: **"ni"** (not "du")
+- 🇩🇪 German: **"Sie"** (not "du")
+- 🇫🇷 French: **"vous"** (not "tu")
+- 🇪🇸 Spanish: **"usted"** (not "tú")
+- 🇳🇱 Dutch: **"u"** (not "je/jij")
+- 🇩🇰 Danish: **"De"** (not "du")
+- 🇳🇴 Norwegian: **"De"** (not "du")
+- 🇫🇮 Finnish: **"Te"** (not "sinä")
+
+**Note**: Most political articles use third-person perspective and avoid direct address, but when necessary, always use formal register.
+
+### The Economist Style Adaptation
+
+**English (Master Style)**:
+- Crisp, analytical prose
+- Active voice preferred
+- Short sentences (15-20 words average)
+- Avoiding jargon unless necessary
+- Data-driven assertions
+- Understated wit acceptable
+
+**Nordic Languages (SV, DA, NO, FI)**:
+- Slightly longer sentences acceptable (compound sentences common)
+- More formal tone than English
+- Direct translation of wit may not work - adapt or omit
+- Compound words common (especially Swedish/German) - maintain
+
+**Germanic Languages (DE, NL)**:
+- Longer, more complex sentences acceptable
+- More structured paragraph organization
+- Technical precision valued
+- Compound nouns frequent - maintain accuracy
+
+**Romance Languages (FR, ES)**:
+- Elegant, flowing sentences
+- Subjunctive mood for nuance
+- More elaborate style than English
+- Formal constructions preferred
+
+**CJK Languages (JA, KO, ZH)**:
+- Formal political register (敬語 in Japanese, 높임말 in Korean)
+- Chinese: Maintain simplified characters (简体中文) not traditional
+- Japanese: Use formal written style (です・ます体)
+- Korean: Use formal endings (-습니다, -ㅂ니다)
+
+**RTL Languages (AR, HE)**:
+- Formal Modern Standard Arabic (not colloquial)
+- Hebrew: Formal register with full vowel marking optional
+- Maintain right-to-left flow in all elements
+
+### Punctuation and Typography
+
+**Quotation Marks**:
+- 🇬🇧 English: "double quotes"
+- 🇸🇪 Swedish: "dubbla citattecken" or »guillemets»
+- 🇩🇪 German: „German quotes" or »Guillemets«
+- 🇫🇷 French: « guillemets français »
+- 🇪🇸 Spanish: «comillas españolas» or "comillas inglesas"
+- 🇯🇵 Japanese: 「brackets」or『double brackets』
+- 🇨🇳 Chinese: "中文引号" or 「书名号」
+- 🇰🇷 Korean: "따옴표"
+- 🇸🇦 Arabic: «علامات تنصيص»
+- 🇮🇱 Hebrew: "מרכאות"
+
+**Em Dashes and Hyphens**:
+- English: Use em dash — sparingly
+- German: Use Gedankenstrich – with spaces
+- French: Use tiret long — with spaces
+- Nordic: Use tankstreck – with spaces
+
+**Ellipsis**:
+- English: ... (three dots, no spaces)
+- French: … (with non-breaking spaces: word…word)
+- German: … (three dots or single ellipsis character)
+
+### Real-World Style Examples
+
+**Evening Analysis Opening (English)**:
+> "Sweden's Riksdag enters its spring recess with mixed legislative accomplishments. The Tidö government has passed key reforms on immigration and energy policy, but falters on housing and healthcare. Coalition tensions simmer beneath parliamentary decorum."
+
+**Evening Analysis Opening (German)**:
+> "Schwedens Riksdag geht in die Frühjahrspause mit gemischten gesetzgeberischen Erfolgen. Die Tidö-Regierung hat wichtige Reformen in den Bereichen Einwanderung und Energiepolitik verabschiedet, scheitert jedoch bei Wohnungsbau und Gesundheitswesen. Koalitionsspannungen brodeln unter dem parlamentarischen Anstand."
+
+**Evening Analysis Opening (French)**:
+> "Le Riksdag suédois entre en pause de printemps avec des réalisations législatives mitigées. Le gouvernement Tidö a adopté des réformes clés sur l'immigration et la politique énergétique, mais échoue sur le logement et la santé. Les tensions au sein de la coalition couvent sous le décorum parlementaire."
+
+### Tone and Voice Guidelines
+
+**Analytical, Not Advocacy**:
+- ✅ "The opposition criticized the proposal"
+- ❌ "The opposition rightly pointed out flaws"
+
+**Data-Driven**:
+- ✅ "Support dropped 3 percentage points"
+- ❌ "Support plummeted dramatically"
+
+**Contextual Nuance**:
+- ✅ "The vote revealed coalition fractures"
+- ❌ "The vote showed the coalition is falling apart"
+
+**Cultural Sensitivity**:
+- Avoid idioms that don't translate (e.g., "kicked the can down the road")
+- Be aware of cultural connotations (colors, numbers, symbols)
+- Adapt metaphors to target culture
+
+### Quality Checklist
+
+For each translated article, verify:
+- [ ] Formal register maintained throughout
+- [ ] Political terminology consistent with swedish-political-system skill
+- [ ] Punctuation matches target language conventions
+- [ ] Quotation marks correct for language
+- [ ] No machine translation artifacts
+- [ ] Natural flow in target language
+- [ ] Cultural references adapted or explained
+- [ ] The Economist tone preserved (analytical, crisp, data-driven)
+
+---
+
+**Data Source**: Analysis of 81 translated news articles (Feb 2026)  
+**Style Guide**: The Economist Style Guide (adapted for 14 languages)  
+**Last Updated**: 2026-02-15

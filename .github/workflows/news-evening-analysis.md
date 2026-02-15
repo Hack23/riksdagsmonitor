@@ -1,10 +1,13 @@
 ---
 name: News Evening Analysis
-description: Generates comprehensive evening analysis articles summarizing the day's parliamentary activity with deeper analytical coverage and Playwright validation
+description: Generates comprehensive evening analysis articles summarizing parliamentary and government activity with deeper analytical coverage and Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
+strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule:
     # Run weekday evenings at 18:00 UTC (19:00 CET)
     - cron: '0 18 * * 1-5'
+    # Saturday: weekly wrap-up summarizing the full parliamentary week
+    - cron: '0 16 * * 6'
   workflow_dispatch:
     inputs:
       coverage_depth:
@@ -75,15 +78,55 @@ engine:
 
 # 🌆 Evening Parliamentary Analysis
 
-You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to produce a comprehensive daily wrap-up of Swedish parliamentary and government activity, written in **The Economist style** with deeper analytical depth than breaking coverage.
+You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to produce a comprehensive wrap-up of Swedish parliamentary and government activity, written in **The Economist style** with deeper analytical depth than breaking coverage.
+
+## ⚠️ CRITICAL REQUIREMENT: Multi-Language Translation
+
+**YOU MUST TRANSLATE ALL SWEDISH CONTENT INTO EACH TARGET LANGUAGE. THIS IS MANDATORY.**
+
+The Riksdag API returns data in **Swedish only**. When you generate articles in languages other than Swedish:
+
+1. **ALL Swedish document titles** (e.g., "Bättre förutsättningar att sända ut statlig personal") **MUST be translated**
+2. **ALL Swedish summaries** and descriptions **MUST be translated**
+3. **ZERO TOLERANCE** for language mixing - no Swedish in non-Swedish articles
+4. **Translation markers** (`data-translate="true" lang="sv"`) indicate Swedish content that needs translation - these MUST be removed after translation
+5. **Validation is mandatory** - check every article to ensure no Swedish content remains
+
+**See Step 5: Translation Post-Processing** below for detailed mandatory instructions.
+
+## Required Reference Materials
+
+Before generating or translating articles, consult these authoritative references:
+
+1. **`.github/skills/swedish-political-system/SKILL.md`** — Authoritative vocabulary for translating Riksdag API document types (betänkande, proposition, motion, etc.), committee abbreviations (FiU, SoU, JuU, etc.), and parliamentary proceedings terms across all 14 languages
+2. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines, political terminology translations, date/number formatting, and formality registers
+3. **`.github/skills/multi-language-localization/SKILL.md`** — Multi-language file structure, RTL support for Arabic/Hebrew, hreflang SEO requirements
+4. **`TRANSLATION_GUIDE.md`** — Cross-language terminology tables for parliamentary document types, policy terms, and committee names
+
+**Critical Translation Rules:**
+- Swedish API titles (e.g., "Bättre förutsättningar att sända ut statlig personal") MUST be translated to the target language — never left in Swedish
+- Committee abbreviations (FiU, SoU) are kept as-is in document references (e.g., "Bet. 2025/26:FiU10") but committee NAMES are translated in running text
+- Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
+- Document reference formats (Prop., Bet., Mot.) are kept as-is
 
 ## Your Task
 
-Generate an evening analysis article that synthesizes the day's parliamentary activity into a coherent analytical narrative. This is the flagship daily product.
+Generate an analysis article that synthesizes parliamentary and government activity into a coherent analytical narrative. This is the flagship analysis product.
+
+### Saturday Weekly Wrap-Up
+
+**On Saturdays** (day-of-week = 6), produce a **Weekly Parliamentary Review** instead of a daily wrap-up:
+- Look back over the **entire parliamentary week** (Monday–Friday, ~120 hours)
+- Use `coverage_depth: comprehensive` regardless of input
+- Structure as a weekly review: key votes, major debates, government announcements, opposition dynamics, and the week-ahead outlook
+- Title format: "The Week in Swedish Politics: {key theme}" or similar
+- Article type: `weekly-review` (use slug pattern `YYYY-MM-DD-weekly-review-{lang}.html`)
+
+**On weekdays** (Monday–Friday), produce the standard **daily evening analysis**.
 
 ### Coverage Depth
 
-Check the `coverage_depth` input:
+Check the `coverage_depth` input (overridden to `comprehensive` on Saturdays):
 - **standard** - Day's key events with brief analysis (800-1200 words)
 - **deep** - Extended analysis with historical context (1500-2500 words)
 - **comprehensive** - Full coverage including minor events (2500-4000 words)
@@ -100,52 +143,65 @@ Generate article versions for each requested language with culturally appropriat
 
 ## Analysis Workflow
 
-### Step 1: Gather Day's Data
+### Step 1: Gather Data
 
-Query riksdag-regering-mcp comprehensively:
+Determine the lookback period based on day of week:
 
 ```javascript
 const today = new Date().toISOString().split('T')[0];
-const lookback = github.event.inputs.lookback_hours || 12;
+const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
+
+// Saturday = weekly wrap-up (look back 5 days), weekday = daily (lookback_hours input)
+const lookbackHours = dayOfWeek === 6 ? 120 : (github.event.inputs.lookback_hours || 12);
+const fromDate = dayOfWeek === 6
+  ? new Date(Date.now() - 5 * 86400000).toISOString().split('T')[0]  // Monday
+  : today;
 
 // === PARLIAMENTARY ACTIVITY ===
 
-// Today's calendar events (what was scheduled vs what happened)
-get_calendar_events({ from: today, tom: today, limit: 100 })
+// Calendar events (today for daily, Mon-Fri for weekly)
+get_calendar_events({ from: fromDate, tom: today, limit: 100 })
 
-// Votes taken today
-search_voteringar({ rm: "2025/26", limit: 50 })
+// Votes (weekly wrap-up gets higher limit for full week)
+search_voteringar({ rm: "2025/26", limit: dayOfWeek === 6 ? 100 : 50 })
 get_voting_group({ rm: "2025/26", groupBy: "parti" })
 
 // Committee reports published
-get_betankanden({ rm: "2025/26", limit: 20 })
+get_betankanden({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
 
 // Speeches and debates
-search_anforanden({ rm: "2025/26", limit: 50 })
+search_anforanden({ rm: "2025/26", limit: dayOfWeek === 6 ? 100 : 50 })
 
 // === GOVERNMENT ACTIVITY ===
 
-// Government documents published today
-search_regering({ from_date: today, limit: 30 })
+// Government documents published (press releases, SOU, crisis, etc.)
+search_regering({ from_date: fromDate, limit: dayOfWeek === 6 ? 50 : 30 })
 
 // New propositions
-get_propositioner({ rm: "2025/26", limit: 10 })
+get_propositioner({ rm: "2025/26", limit: dayOfWeek === 6 ? 20 : 10 })
 
 // Opposition motions
-get_motioner({ rm: "2025/26", limit: 20 })
+get_motioner({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
 
 // Ministerial questions and interpellations
-get_fragor({ rm: "2025/26", limit: 20 })
-get_interpellationer({ rm: "2025/26", limit: 10 })
+get_fragor({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
+get_interpellationer({ rm: "2025/26", limit: dayOfWeek === 6 ? 20 : 10 })
 
-// === TOMORROW'S PREVIEW ===
-const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
-get_calendar_events({ from: tomorrow, tom: tomorrow, limit: 50 })
+// === NEXT WEEK PREVIEW (Saturday) / TOMORROW (weekday) ===
+const nextMonday = dayOfWeek === 6
+  ? new Date(Date.now() + 2 * 86400000).toISOString().split('T')[0]
+  : new Date(Date.now() + 86400000).toISOString().split('T')[0];
+const previewEnd = dayOfWeek === 6
+  ? new Date(Date.now() + 7 * 86400000).toISOString().split('T')[0]  // Full next week
+  : nextMonday;
+get_calendar_events({ from: nextMonday, tom: previewEnd, limit: 50 })
 ```
 
 ### Step 2: Synthesize and Analyze
 
 Structure the analysis around these editorial pillars:
+
+**Weekday (daily wrap-up):**
 
 1. **Lead Story** - The most significant development of the day
    - What happened and why it matters
@@ -171,6 +227,32 @@ Structure the analysis around these editorial pillars:
    - Scheduled votes and debates
    - Upcoming committee meetings
    - Expected government announcements
+
+**Saturday (weekly wrap-up):**
+
+1. **The Week's Defining Moment** - The single most significant development
+   - Why it mattered more than anything else this week
+   - How it shifted the political landscape
+
+2. **Legislative Scorecard** - Full week's parliamentary output
+   - Total votes, passage rates, notable defeats
+   - Key committee reports and their implications
+   - Government bills advanced or stalled
+
+3. **Government in Review** - Executive branch activity summary
+   - Policy announcements and SOU reports published
+   - Ministerial accountability (questions, interpellations answered)
+   - Press releases and public communications
+
+4. **Party Power Dynamics** - Cross-party week-in-review
+   - Coalition stability indicators
+   - Opposition strategy patterns
+   - Notable cross-party collaboration or conflict
+
+5. **The Week Ahead** - Preview of next week's parliamentary calendar
+   - Scheduled votes, debates, and committee meetings
+   - Expected government announcements
+   - Key dates and deadlines
 
 ### Step 3: Write the Article
 
@@ -310,7 +392,53 @@ For each language in the requested set:
 7. Use culturally appropriate date formatting
 8. Adapt analytical tone to target language conventions
 
-### Step 5: Regenerate Indexes and Sitemap
+### Step 5: Translate Swedish Content (CRITICAL - MANDATORY)
+
+🚨 **THIS STEP IS ABSOLUTELY MANDATORY. DO NOT SKIP. DO NOT PROCEED TO STEP 6 WITHOUT COMPLETING THIS.** 🚨
+
+**The Problem**: If you used the generation script or included Swedish API data, the articles contain Swedish content marked with `data-translate="true" lang="sv"` attributes that MUST be translated.
+
+**Process**: For EACH non-Swedish article:
+
+1. **Identify articles needing translation**:
+```bash
+for article in news/*-evening-analysis-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+    echo "NEEDS TRANSLATION: $article"
+  fi
+done
+```
+
+2. **Translate EACH file**:
+   - Read the article file
+   - Find all `<span data-translate="true" lang="sv">Swedish text</span>`
+   - Translate the Swedish text to the article's target language (check `<html lang="">`)
+   - Replace the span with plain translated text
+   - Consult `TRANSLATION_GUIDE.md` and `.github/skills/swedish-political-system/SKILL.md` for correct terminology
+   - Write the updated file back
+
+3. **Validation (MANDATORY)**:
+```bash
+UNTRANSLATED=0
+for article in news/*-evening-analysis-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+    echo "❌ UNTRANSLATED: $(basename $article)"
+    UNTRANSLATED=$((UNTRANSLATED + 1))
+  fi
+done
+
+if [ $UNTRANSLATED -gt 0 ]; then
+  echo "❌ $UNTRANSLATED articles contain untranslated Swedish content!"
+  echo "GO BACK and translate them. DO NOT proceed to Step 6."
+  exit 1
+else
+  echo "✅ All articles fully translated"
+fi
+```
+
+**See `.github/workflows/news-article-generator.md` Step 5 for detailed translation examples and rules.**
+
+### Step 6: Regenerate Indexes and Sitemap
 
 ```bash
 # Regenerate all 14 language news index files
@@ -320,13 +448,50 @@ node scripts/generate-news-indexes.js
 node scripts/generate-sitemap.js
 ```
 
-### Step 6: Create PR
+### Step 7: Create Pull Request
 
-Create a PR with the evening analysis:
+**IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
+
+In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead, you MUST use the **safeoutputs MCP tools** available through the MCP gateway. These tools are already registered and available to you:
+
+#### Available Safe-Output MCP Tools
+
+1. **`safeoutputs___create_pull_request`** - Create a PR with your changes
+   ```json
+   {
+     "title": "🌆 Evening Analysis: {Lead headline} - {date}",
+     "body": "## Evening Parliamentary Analysis\n\nThis PR contains...",
+     "labels": ["automated-news", "evening-analysis", "needs-editorial-review"]
+   }
+   ```
+
+2. **`safeoutputs___add_comment`** - Add a comment to the triggering issue/PR
+   ```json
+   {
+     "body": "Evening analysis completed successfully. {count} articles generated.",
+     "item_number": 123
+   }
+   ```
+
+3. **`safeoutputs___noop`** - Log a status message when no action is needed
+   ```json
+   {
+     "message": "No significant parliamentary activity detected today. Metadata updated."
+   }
+   ```
+
+4. **`safeoutputs___missing_tool`** - Report missing capabilities
+5. **`safeoutputs___missing_data`** - Report missing data
+
+#### How to Create the PR
+
+After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool with:
 
 **Title:** `🌆 Evening Analysis: {Lead headline} - {date}`
 **Branch:** `news-evening/{date}`
 **Labels:** `automated-news`, `evening-analysis`, `needs-editorial-review`
+
+**⚠️ NEVER use `git push` directly** - it will fail in the sandbox. Always use `safeoutputs___create_pull_request` MCP tool to create PRs.
 
 **PR Body should include:**
 - Summary of articles generated
@@ -334,6 +499,14 @@ Create a PR with the evening analysis:
 - List of riksdag-regering-mcp tools used
 - Quality validation results
 - Count of language versions generated
+
+#### If No Significant Activity
+
+If no noteworthy parliamentary activity occurred today:
+1. Update `news/metadata/last-generation.json` with timestamp
+2. Call the `safeoutputs___noop` MCP tool with a status message
+3. Do not create a PR
+4. Exit gracefully
 
 ## Writing Guidelines (The Economist Style)
 
@@ -407,7 +580,14 @@ For deeper evening analysis, combine data from multiple riksdag-regering-mcp too
 2. `get_motioner` - opposition motions on same topic
 3. `search_dokument_fulltext` - find related documents
 4. `get_dokument` - get full text of key documents
-- ✅ Mobile-responsive layout
-- ✅ RTL support for Arabic and Hebrew versions
 
-🎯 **Now begin: Gather today's comprehensive parliamentary data, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR.**
+🎯 **Now begin: Gather today's comprehensive parliamentary data, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
+
+### ⚠️ Sandbox Networking Reminder
+
+The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
+
+1. **For any Node.js scripts that use mcp-client.js**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running them
+2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
+3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool
+4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name

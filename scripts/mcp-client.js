@@ -13,7 +13,9 @@
  * MCP Protocol:
  *   - POST to /mcp endpoint (not /mcp/tools/{tool})
  *   - JSON-RPC 2.0 format with method: 'tools/call'
- *   - Tool names: 'riksdag-regering--{tool}' (e.g., 'riksdag-regering--get_calendar_events')
+ *   - Direct server: use unprefixed tool names (e.g., 'get_calendar_events')
+ *   - MCP Gateway: use prefixed tool names (e.g., 'riksdag-regering--get_calendar_events')
+ *   - Client auto-detects which mode based on URL
  * 
  * Usage:
  *   import { MCPClient } from './mcp-client.js';
@@ -27,9 +29,20 @@
  */
 
 const DEFAULT_MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp';
-const DEFAULT_REQUEST_TIMEOUT = 30000; // 30 seconds
+const DEFAULT_MCP_AUTH_TOKEN = process.env.MCP_AUTH_TOKEN || '';
 const DEFAULT_MAX_RETRIES = 3;
-const RETRY_DELAY = 1000; // 1 second
+const RETRY_DELAY = 2000; // 2 seconds (increased for server spin-up)
+
+/**
+ * Get default request timeout from environment or use 30s default
+ * @returns {number} Timeout in milliseconds
+ */
+function getDefaultTimeout() {
+  // Default 30s timeout to match existing tests; override via MCP_CLIENT_TIMEOUT_MS (e.g., 60000 for cold starts)
+  return process.env.MCP_CLIENT_TIMEOUT_MS
+    ? (Number.parseInt(process.env.MCP_CLIENT_TIMEOUT_MS, 10) || 30000)
+    : 30000;
+}
 
 // JSON-RPC 2.0 request ID counter
 let jsonRpcId = 1;
@@ -42,16 +55,18 @@ export class MCPClient {
     // Support both object config and string URL for backwards compatibility
     if (typeof config === 'string') {
       this.baseURL = config;
-      this.timeout = DEFAULT_REQUEST_TIMEOUT;
+      this.timeout = getDefaultTimeout();
       this.maxRetries = DEFAULT_MAX_RETRIES;
     } else {
       this.baseURL = config.baseURL || config.serverUrl || DEFAULT_MCP_SERVER_URL;
-      this.timeout = config.timeout || DEFAULT_REQUEST_TIMEOUT;
+      this.timeout = config.timeout || getDefaultTimeout();
       this.maxRetries = config.maxRetries || DEFAULT_MAX_RETRIES;
     }
     
     this.requestCount = 0;
     this.errorCount = 0;
+    this.authToken = (typeof config === 'object' && config.authToken) || DEFAULT_MCP_AUTH_TOKEN;
+    this.sessionId = null;
   }
 
   /**
@@ -62,14 +77,14 @@ export class MCPClient {
    * @param {number} retryCount - Current retry attempt
    * @returns {Promise<Object>} Tool response
    */
-  async request(tool, params = {}, retryCount = 0) {
+  async request(tool, params = {}, retryCount = 0, skipPrefix = false) {
     // Validate tool name to prevent path traversal
     if (!tool || typeof tool !== 'string' || !/^[a-zA-Z0-9_-]+$/.test(tool)) {
       throw new Error(`Invalid tool name: ${tool}. Tool names must contain only alphanumeric characters, hyphens, and underscores.`);
     }
     
     // Only count the initial request, not retries
-    if (retryCount === 0) {
+    if (retryCount === 0 && !skipPrefix) {
       this.requestCount++;
     }
     
@@ -79,9 +94,14 @@ export class MCPClient {
     try {
       // MCP uses JSON-RPC 2.0 protocol
       // Call the tool using tools/call method
-      // Try with server prefix first (riksdag-regering--tool_name)
-      // If that fails with "tool not found", try without prefix
-      const toolName = tool.includes('--') ? tool : `riksdag-regering--${tool}`;
+      // 
+      // Tool name prefixing rules:
+      // - MCP Gateway (host.docker.internal) expects prefixed names: "riksdag-regering--tool_name"
+      // - Direct MCP Server (onrender.com) expects unprefixed names: "tool_name"
+      // - skipPrefix is set to true on fallback retry to prevent infinite recursion
+      const isGateway = this.baseURL.includes('host.docker.internal') || this.baseURL.includes('/mcp/riksdag-regering');
+      const shouldPrefix = isGateway && !skipPrefix && !tool.includes('--');
+      const toolName = shouldPrefix ? `riksdag-regering--${tool}` : tool;
       
       const jsonRpcRequest = {
         jsonrpc: '2.0',
@@ -93,11 +113,22 @@ export class MCPClient {
         }
       };
       
+      // Initialize session if needed (Streamable HTTP MCP transport)
+      if (this.authToken && !this.sessionId) {
+        try {
+          await this.initializeSession();
+        } catch (e) {
+          // Session init is optional - continue without it
+        }
+      }
+      
+      const headers = { 'Content-Type': 'application/json' };
+      if (this.authToken) headers['Authorization'] = this.authToken;
+      if (this.sessionId) headers['Mcp-Session-Id'] = this.sessionId;
+      
       const response = await fetch(this.baseURL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers,
         body: JSON.stringify(jsonRpcRequest),
         signal: controller.signal
       });
@@ -113,25 +144,56 @@ export class MCPClient {
         throw new Error(`MCP server error: ${response.status} ${response.statusText}${errorBody ? ' - ' + errorBody : ''}`);
       }
       
-      const jsonRpcResponse = await response.json();
+      // Parse response - handle both JSON and SSE (text/event-stream) formats
+      const contentType = (response.headers && typeof response.headers.get === 'function') 
+        ? (response.headers.get('content-type') || '') 
+        : '';
+      let jsonRpcResponse;
+      if (contentType.includes('text/event-stream')) {
+        const text = await response.text();
+        jsonRpcResponse = this.parseSSEResponse(text);
+      } else {
+        jsonRpcResponse = await response.json();
+      }
       
       // Check for JSON-RPC error
       if (jsonRpcResponse.error) {
         const errorMsg = jsonRpcResponse.error.message || JSON.stringify(jsonRpcResponse.error);
         
-        // If tool not found and we used prefix, try without prefix
-        // Guard against infinite recursion by checking if tool already doesn't have prefix
-        if (errorMsg.includes('not found') && toolName.startsWith('riksdag-regering--')) {
-          console.warn(`⚠️ Tool not found with prefix, retrying without prefix...`);
-          // Recursive call without prefix
-          return this.request(tool.replace(/^riksdag-regering--/, ''), params, retryCount);
+        // If tool error and we used prefix, try without prefix
+        // Server returns "not found" or "Internal error" for unrecognized prefixed tool names
+        // skipPrefix flag prevents infinite recursion on the fallback attempt
+        const isToolLookupError = errorMsg.includes('not found') || errorMsg.includes('Internal error') || errorMsg.includes('Unknown tool') || errorMsg.includes('unknown tool');
+        if (isToolLookupError && toolName.startsWith('riksdag-regering--') && !skipPrefix) {
+          const bareTool = toolName.replace(/^riksdag-regering--/, '');
+          console.warn(`⚠️ Tool '${toolName}' not found, retrying as '${bareTool}'...`);
+          return this.request(bareTool, params, retryCount, true);
+        }
+        
+        // Handle session initialization error (Streamable HTTP transport)
+        if (errorMsg.includes('session initialization')) {
+          this.sessionId = null;
+          if (retryCount === 0) {
+            console.warn('⚠️ Session expired, re-initializing...');
+            await this.initializeSession();
+            return this.request(tool, params, retryCount + 1, skipPrefix);
+          }
         }
         
         throw new Error(`MCP tool error: ${errorMsg}`);
       }
       
       // Extract result from JSON-RPC response
-      return jsonRpcResponse.result || {};
+      // MCP tools/call returns content array with text field containing JSON
+      const result = jsonRpcResponse.result || {};
+      if (result.content && Array.isArray(result.content) && result.content[0]?.text) {
+        try {
+          return JSON.parse(result.content[0].text);
+        } catch (e) {
+          return { text: result.content[0].text };
+        }
+      }
+      return result;
       
     } catch (error) {
       // Retry on network errors (case-insensitive check)
@@ -144,13 +206,30 @@ export class MCPClient {
       )) {
         console.warn(`⚠️ Request failed, retrying (${retryCount + 1}/${this.maxRetries - 1})...`);
         await this.sleep(RETRY_DELAY * Math.pow(2, retryCount)); // Exponential backoff
-        return this.request(tool, params, retryCount + 1);
+        return this.request(tool, params, retryCount + 1, skipPrefix);
       }
       
       // Only increment error count on final failure (not retries)
       this.errorCount++;
       
-      throw new Error(`MCP request failed: ${error.message}`);
+      // Provide helpful error message with troubleshooting hints
+      let errorMessage = `MCP request failed: ${error.message}`;
+      
+      if (error.name === 'AbortError' || errorMsg.includes('timeout')) {
+        errorMessage += `\n\n💡 Troubleshooting tips:
+  - The MCP server may be cold starting (Render.com free tier)
+  - Try increasing timeout or waiting a few minutes
+  - Server URL: ${this.baseURL}
+  - Consider running workflow again in 5-10 minutes`;
+      } else if (errorMsg.includes('network') || errorMsg.includes('econnrefused') || errorMsg.includes('fetch failed')) {
+        errorMessage += `\n\n💡 Troubleshooting tips:
+  - Check if MCP server is accessible: ${this.baseURL}
+  - Verify network connectivity
+  - The server may be temporarily unavailable
+  - Try manual workflow dispatch with force_generation=true`;
+      }
+      
+      throw new Error(errorMessage);
     } finally {
       // Always clear timeout to prevent timer leak
       clearTimeout(timeoutId);
@@ -162,6 +241,65 @@ export class MCPClient {
    */
   async sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  /**
+   * Parse SSE (text/event-stream) response body into JSON-RPC response
+   */
+  parseSSEResponse(text) {
+    const lines = text.split('\n');
+    for (const line of lines) {
+      if (line.startsWith('data: ')) {
+        return JSON.parse(line.substring(6));
+      }
+    }
+    // If no SSE format, try direct JSON parse
+    return JSON.parse(text);
+  }
+
+  /**
+   * Initialize MCP session for Streamable HTTP transport
+   */
+  async initializeSession() {
+    if (this.sessionId || !this.authToken) return;
+    
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), this.timeout);
+    
+    try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (this.authToken) headers['Authorization'] = this.authToken;
+      
+      const response = await fetch(this.baseURL, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          id: jsonRpcId++,
+          method: 'initialize',
+          params: {
+            protocolVersion: '2025-03-26',
+            capabilities: {},
+            clientInfo: { name: 'riksdagsmonitor-news', version: '1.0.0' }
+          }
+        }),
+        signal: controller.signal
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Session init failed: ${response.status} ${response.statusText}`);
+      }
+      
+      const sessionId = (response.headers && typeof response.headers.get === 'function') 
+        ? response.headers.get('Mcp-Session-Id') 
+        : null;
+      if (sessionId) {
+        this.sessionId = sessionId;
+        console.log(`  🔗 MCP session initialized: ${sessionId.substring(0, 8)}...`);
+      }
+    } finally {
+      clearTimeout(timeoutId);
+    }
   }
 
   /**
@@ -179,7 +317,7 @@ export class MCPClient {
     if (akt) params.akt = akt;
     
     const response = await this.request('get_calendar_events', params);
-    return response.events || [];
+    return response.kalender || response.events || [];
   }
 
   /**
@@ -196,7 +334,7 @@ export class MCPClient {
     if (organ) params.organ = organ;
     
     const response = await this.request('get_betankanden', params);
-    return response.reports || [];
+    return response.dokument || response.reports || [];
   }
 
   /**
@@ -211,7 +349,7 @@ export class MCPClient {
     if (rm) params.rm = rm;
     
     const response = await this.request('get_propositioner', params);
-    return response.propositions || [];
+    return response.dokument || response.propositions || [];
   }
 
   /**
@@ -226,7 +364,7 @@ export class MCPClient {
     if (rm) params.rm = rm;
     
     const response = await this.request('get_motioner', params);
-    return response.motions || [];
+    return response.dokument || response.motions || [];
   }
 
   /**

@@ -111,6 +111,35 @@ function sanitizeArticleBody(htmlContent) {
  * @param {Array} data.tags - Article tags for display
  * @returns {string} Complete HTML article
  */
+/**
+ * Site tagline translations for all 14 languages
+ */
+const SITE_TAGLINE = {
+  en: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
+  sv: 'Senaste nyheter och analyser från Sveriges riksdag. Politisk journalistik i The Economist-stil som bevakar riksdagen, regeringen och myndigheter med systematisk transparens.',
+  da: 'Seneste nyheder og analyser fra Sveriges Riksdag. Politisk journalistik i The Economist-stil, der dækker parlament, regering og myndigheder med systematisk gennemsigtighed.',
+  no: 'Siste nyheter og analyser fra Sveriges riksdag. Politisk journalistikk i The Economist-stil som dekker parlament, regjering og myndigheter med systematisk åpenhet.',
+  fi: 'Uusimmat uutiset ja analyysit Ruotsin valtiopäiviltä. The Economist -tyylinen poliittinen journalismi, joka kattaa eduskunnan, hallituksen ja viranomaiset järjestelmällisellä läpinäkyvyydellä.',
+  de: 'Aktuelle Nachrichten und Analysen aus dem schwedischen Riksdag. Politischer Journalismus im Economist-Stil über Parlament, Regierung und Behörden mit systematischer Transparenz.',
+  fr: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique de style The Economist couvrant le parlement, le gouvernement et les agences avec une transparence systématique.',
+  es: 'Últimas noticias y análisis del Riksdag sueco. Periodismo político al estilo The Economist que cubre el parlamento, el gobierno y las agencias con transparencia sistemática.',
+  nl: 'Laatste nieuws en analyses van de Zweedse Riksdag. Politieke journalistiek in Economist-stijl over parlement, regering en instanties met systematische transparantie.',
+  ar: 'أحدث الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية بأسلوب ذا إيكونوميست تغطي البرلمان والحكومة والوكالات بشفافية منهجية.',
+  he: 'חדשות ניתוחים אחרונים מהריקסדאג השוודי. עיתונות פוליטית בסגנון האקונומיסט המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.',
+  ja: 'スウェーデン議会リクスダーグの最新ニュースと分析。議会、政府、機関を体系的な透明性で報道するエコノミスト・スタイルの政治ジャーナリズム。',
+  ko: '스웨덴 의회 릭스다그의 최신 뉴스와 분석. 체계적인 투명성으로 의회, 정부, 기관을 다루는 이코노미스트 스타일의 정치 저널리즘.',
+  zh: '来自瑞典议会的最新新闻和分析。以经济学人风格的政治新闻，以系统性透明度报道议会、政府和机构。'
+};
+
+/**
+ * OG locale map for all 14 languages
+ */
+const OG_LOCALE_MAP = {
+  en: 'en_US', sv: 'sv_SE', da: 'da_DK', no: 'nb_NO', fi: 'fi_FI',
+  de: 'de_DE', fr: 'fr_FR', es: 'es_ES', nl: 'nl_NL', ar: 'ar_SA',
+  he: 'he_IL', ja: 'ja_JP', ko: 'ko_KR', zh: 'zh_CN'
+};
+
 export function generateArticleHTML(data) {
   const {
     slug,
@@ -120,7 +149,7 @@ export function generateArticleHTML(data) {
     type,
     readTime = '5 min read',
     lang = 'en',
-    locale = 'en_US',
+    locale,
     content,
     events = [],
     watchPoints = [],
@@ -128,6 +157,9 @@ export function generateArticleHTML(data) {
     keywords = [],
     tags = []
   } = data;
+  
+  // Use proper OG locale for the language
+  const ogLocale = locale || OG_LOCALE_MAP[lang] || 'en_US';
   
   const dateObj = new Date(date);
   const formattedDate = formatDate(dateObj, lang);
@@ -156,12 +188,14 @@ export function generateArticleHTML(data) {
   
   // Generate hreflang tags for all available language variants
   const ALL_LANG_CODES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+  const isRTL = lang === 'ar' || lang === 'he';
+  const dirAttr = isRTL ? ' dir="rtl"' : '';
   const baseSlug = slug.replace(`-${lang}.html`, '');
   const altLang = lang === 'en' ? 'sv' : 'en';
   const altSlug = slug.replace(`-${lang}.html`, `-${altLang}.html`);
   
   return `<!DOCTYPE html>
-<html lang="${lang}">
+<html lang="${lang}"${dirAttr}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -180,7 +214,7 @@ export function generateArticleHTML(data) {
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
-  <meta property="og:locale" content="${locale}">
+  <meta property="og:locale" content="${ogLocale}">
   <meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta property="article:published_time" content="${dateObj.toISOString()}">
   <meta property="article:modified_time" content="${dateObj.toISOString()}">
@@ -251,7 +285,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
       "height": 630
     },
     "articleSection": "${typeLabel}",
-    "articleBody": "${escapeHtml(content).replace(/\n/g, ' ').replace(/\s+/g, ' ').substring(0, 500)}...",
+    "articleBody": "${sanitizeArticleBody(escapeHtml(content))}...",
     "wordCount": ${Math.ceil(content.length / 5)},
     "inLanguage": "${lang}",
     "keywords": "${keywords.join(', ')}",
@@ -295,7 +329,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
         "@type": "ListItem",
         "position": 2,
         "name": "${getBreadcrumbName(lang, 'news')}",
-        "item": "https://riksdagsmonitor.com/news/"
+        "item": "https://riksdagsmonitor.com/news/index.html"
       },
       {
         "@type": "ListItem",
@@ -332,14 +366,11 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
   }
   </script>
   
-  ${generateArticleCSS()}
 </head>
 <body>
-<!-- Article styles are now in styles.css under .news-article namespace.
-     No embedded CSS needed - promotes consistency and maintainability. -->
 <article class="news-article">
   <header class="article-header">
-    <div class="site-tagline"${lang !== 'en' ? ' lang="en"' : ''}>Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.</div>
+    <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
     <h1>${title}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>
@@ -386,8 +417,25 @@ ${watchPoints.length > 0 ? generateWatchSection(watchPoints, lang) : ''}
 /**
  * Generate event calendar section
  */
+const EVENT_CALENDAR_TITLES = {
+  en: 'Event Calendar',
+  sv: 'Veckans händelser',
+  da: 'Ugens begivenheder',
+  no: 'Ukens hendelser',
+  fi: 'Viikon tapahtumat',
+  de: 'Veranstaltungskalender',
+  fr: 'Calendrier des événements',
+  es: 'Calendario de eventos',
+  nl: 'Evenementenkalender',
+  ar: 'تقويم الأحداث',
+  he: 'לוח אירועים',
+  ja: 'イベントカレンダー',
+  ko: '일정 캘린더',
+  zh: '活动日历'
+};
+
 function generateEventCalendar(events, lang = 'en') {
-  const title = lang === 'sv' ? 'Veckans händelser' : 'Event Calendar';
+  const title = EVENT_CALENDAR_TITLES[lang] || EVENT_CALENDAR_TITLES.en;
   const weekLabel = events.length > 0 && events[0].date ? 
     `${formatDateRange(events, lang)}` : '';
   
@@ -412,8 +460,25 @@ ${event.items.map(item => `          <li class="event-item">
 /**
  * Generate "Watch Section" with key points
  */
+const WATCH_SECTION_TITLES = {
+  en: 'What to Watch This Week',
+  sv: 'Vad man ska följa denna vecka',
+  da: 'Hvad man skal følge denne uge',
+  no: 'Hva man bør følge denne uken',
+  fi: 'Mitä seurata tällä viikolla',
+  de: 'Worauf diese Woche zu achten ist',
+  fr: 'À suivre cette semaine',
+  es: 'Qué observar esta semana',
+  nl: 'Wat te volgen deze week',
+  ar: 'ما يجب متابعته هذا الأسبوع',
+  he: 'מה לעקוב אחריו השבוע',
+  ja: '今週の注目ポイント',
+  ko: '이번 주 주목할 사항',
+  zh: '本周关注要点'
+};
+
 function generateWatchSection(watchPoints, lang = 'en') {
-  const title = lang === 'sv' ? 'Vad man ska följa denna vecka' : 'What to Watch This Week';
+  const title = WATCH_SECTION_TITLES[lang] || WATCH_SECTION_TITLES.en;
   
   return `
     <section class="watch-section">
@@ -426,355 +491,7 @@ ${watchPoints.map(point => `        <li>
     </section>`;
 }
 
-/**
- * Generate article-specific CSS
- */
-function generateArticleCSS() {
-  return `  <style>
-${getArticleStyles()}
-  </style>`;
-}
 
-/**
- * Get article CSS styles (matching existing articles)
- */
-function getArticleStyles() {
-  return `body {
-  font-family: var(--font-main, 'Inter', sans-serif);
-  background: var(--bg-color, #f8f9fa);
-  color: var(--text-color, #1a1a1a);
-  line-height: 1.7;
-  margin: 0;
-  padding: 0;
-}
-
-.news-article {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
-}
-
-.article-header {
-  border-bottom: 3px solid var(--primary-color, #006633);
-  padding-bottom: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.article-header h1 {
-  font-size: 2.25rem;
-  line-height: 1.2;
-  margin: 0 0 0.75rem 0;
-  color: var(--header-color, #006633);
-  font-weight: 700;
-}
-
-.article-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: var(--text-secondary, #4a4a4a);
-  align-items: center;
-}
-
-.article-meta time {
-  font-weight: 600;
-}
-
-.article-meta .separator {
-  color: var(--border-color, #ccc);
-}
-
-/* Event Calendar */
-.event-calendar {
-  background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
-  color: white;
-  border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
-  margin: 2rem 0;
-  box-shadow: 0 4px 6px var(--card-shadow, rgba(0, 102, 51, 0.08));
-}
-
-.event-calendar h2 {
-  font-size: 1.5rem;
-  margin: 0 0 1.5rem 0;
-  font-weight: 700;
-  text-align: center;
-}
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.calendar-day {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: var(--border-radius, 8px);
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.calendar-day:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-.calendar-day.today {
-  background: rgba(255, 255, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-.day-header {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.9;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
-}
-
-.day-date {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  display: block;
-}
-
-.event-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.event-item {
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.event-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.event-time {
-  display: block;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
-}
-
-.event-title {
-  display: block;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Article Content */
-.article-content {
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-.lede {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  font-weight: 500;
-  color: var(--text-color, #1a1a1a);
-  margin-bottom: 2rem;
-  padding-left: 1rem;
-  border-left: 4px solid var(--primary-color, #006633);
-}
-
-.article-content h2 {
-  font-size: 1.75rem;
-  color: var(--header-color, #006633);
-  margin: 2.5rem 0 1rem 0;
-  font-weight: 700;
-}
-
-.article-content h3 {
-  font-size: 1.35rem;
-  color: var(--primary-color, #006633);
-  margin: 2rem 0 0.75rem 0;
-  font-weight: 600;
-}
-
-.article-content p {
-  margin-bottom: 1.25rem;
-}
-
-.article-content ul,
-.article-content ol {
-  margin: 1.25rem 0;
-  padding-left: 2rem;
-}
-
-.article-content li {
-  margin-bottom: 0.75rem;
-}
-
-.article-content a {
-  color: var(--link-color, #007744);
-  text-decoration: underline;
-  text-decoration-color: rgba(0, 119, 68, 0.3);
-  text-underline-offset: 2px;
-  transition: all 0.2s ease;
-}
-
-.article-content a:hover {
-  color: var(--link-hover, #006633);
-  text-decoration-color: var(--link-hover, #006633);
-}
-
-.context-box {
-  background: var(--badge-bg, #f8f9fa);
-  border-left: 4px solid var(--primary-color, #006633);
-  padding: 1.5rem;
-  margin: 2rem 0;
-  border-radius: var(--border-radius-sm, 4px);
-}
-
-.context-box h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: var(--primary-color, #006633);
-}
-
-/* Watch Section */
-.watch-section {
-  background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
-  color: white;
-  border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
-  margin: 2rem 0;
-}
-
-.watch-section h2 {
-  font-size: 1.5rem;
-  margin: 0 0 1.5rem 0;
-  font-weight: 700;
-  text-align: center;
-}
-
-.watch-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.watch-list li {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  line-height: 1.6;
-}
-
-.watch-list li:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.watch-list strong {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-}
-
-/* Article Footer */
-.article-footer {
-  border-top: 2px solid var(--section-border, #e9ecef);
-  margin-top: 3rem;
-  padding-top: 2rem;
-}
-
-.article-sources {
-  background: var(--badge-bg, #f8f9fa);
-  padding: 1.5rem;
-  border-radius: var(--border-radius, 8px);
-  margin-bottom: 1.5rem;
-}
-
-.article-sources h3 {
-  margin-top: 0;
-  color: var(--primary-color, #006633);
-  font-size: 1.2rem;
-}
-
-.article-sources p {
-  margin: 0.75rem 0;
-  font-size: 0.95rem;
-  color: var(--text-secondary, #4a4a4a);
-}
-
-.article-nav {
-  text-align: center;
-}
-
-.back-to-news {
-  display: inline-block;
-  color: var(--link-color, #007744);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid var(--link-color, #007744);
-  border-radius: var(--border-radius, 8px);
-  transition: all 0.3s ease;
-}
-
-.back-to-news:hover {
-  background: var(--link-color, #007744);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 119, 68, 0.2);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .news-article {
-    padding: 0 1rem;
-  }
-  
-  .article-header h1 {
-    font-size: 1.75rem;
-  }
-  
-  .article-content {
-    font-size: 1rem;
-  }
-  
-  .calendar-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Print Styles */
-@media print {
-  body {
-    background: white;
-  }
-  
-  .event-calendar,
-  .watch-section {
-    background: white;
-    color: black;
-    border: 2px solid #006633;
-  }
-  
-  .back-to-news {
-    display: none;
-  }
-}`;
-}
 
 /**
  * Locale map for all 14 supported languages
