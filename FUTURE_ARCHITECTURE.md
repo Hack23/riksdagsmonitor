@@ -76,27 +76,6 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 - ✅ AWS CloudFront + S3 (current hosting)
 - ✅ ISMS compliant (ISO 27001, NIST CSF 2.0, CIS Controls)
 
-### 🚀 Bleeding-Edge AI Strategy
-
-**Hack23's Technology Philosophy:** Per [Information Security Strategy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Strategy.md), Hack23 operates as an **AI-augmented innovation hub** where bleeding-edge technology enables competitive advantage. This FUTURE architecture (2026-2032) references **only state-of-the-art models available in 2026 and beyond**—never legacy models from 2023-2024.
-
-**Why Claude Opus 4.6 (2026), not Claude 3.5 (2024)?**
-
-| Strategic Pillar | Business Impact | Technology Choice |
-|------------------|----------------|-------------------|
-| **🏆 Innovation Enablement** | "Security-by-design accelerates all four business lines" | Latest models (Opus 4.6, Llama 4 405B) enable superior AI journalism |
-| **🤝 Competitive Advantage** | "Industry-first transparency creates barrier competitors cannot replicate" | Bleeding-edge AI demonstrates thought leadership |
-| **💡 AI-Enabled Operations** | "Curated AI agent ecosystem with <1 FTE overhead" | Latest models reduce hallucination, improve accuracy |
-| **📊 Decision Quality** | "Data-driven governance, not fear-based" | Superior models = better political analysis, forecasting |
-
-**Model Selection Criteria (2026-2032):**
-- ✅ **Always Latest Bedrock Models** - Claude Opus 4.6 (2026), Opus 5.x (2027-2028), Opus 6.x (2028+)
-- ✅ **Open-Source SOTA** - Llama 4 405B (2026), Llama 5 (2027+) for cost-sensitive workloads
-- ✅ **AWS-Native Innovation** - Nova Premier (2026 multimodal), future Bedrock models
-- ✅ **Amazon Bedrock Only** - All AI via Bedrock (IAM auth, data stays in AWS, guardrails enabled)
-
-**Rationale:** This is a **FUTURE architecture document** (2026-2032+). Referencing 2024 models in a 2026+ roadmap contradicts Hack23's **bleeding-edge strategy** and **innovation enablement** principles. Future docs should reference future technology.
-
 ---
 
 ## 📋 Table of Contents
@@ -139,17 +118,17 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 **Architecture Strengths:**
 - 🟢 **Low infrastructure cost** - Static hosting on CloudFront + S3 (~$50/month)
 - 🟢 **High availability** - 99.999% CloudFront SLA + S3 11 9's durability
-- 🟢 **Security by simplicity** - No server-side code, minimal attack surface
-- 🟢 **AWS foundation** - Already using AWS CloudFront + S3
+- 🟢 **Simple security model** - Client-side rendering, minimal attack surface
+- 🟢 **AWS foundation** - CloudFront + S3 deployment
 - 🟢 **ISMS compliant** - ISO 27001, NIST CSF 2.0, CIS Controls
 
-**Current Limitations:**
-- ⚠️ **Static content only** - No dynamic server-side processing
-- ⚠️ **Manual content updates** - No automated news generation
-- ⚠️ **Client-side data loading** - CSV parsing in browser
-- ⚠️ **No predictive features** - Historical analysis only
-- ⚠️ **No user accounts** - No personalization or saved preferences
-- ⚠️ **No API** - No programmatic access for researchers
+**Current Characteristics:**
+- 📊 **Static content** - Pre-rendered HTML/CSS for maximum performance
+- ✍️ **Manual updates** - Curated content with human oversight
+- 🌐 **Client-side data** - CSV parsing in browser for simplicity
+- 📈 **Historical analysis** - 50+ years of political data visualization
+- 🔓 **Open access** - Public website, no login required
+- 📂 **Direct access** - CSV data files available for download
 
 ---
 
@@ -346,12 +325,12 @@ C4Component
 - ✅ Hack23 AI Policy compliant (transparency, human oversight, bias mitigation)
 - ✅ Journalistic standards (AP/Reuters style, inverted pyramid structure)
 
-**AWS Bedrock Advantages:**
-- ✅ **No API keys to manage** - IAM roles only, no exposed credentials
-- ✅ **Data stays in AWS** - No data sent to OpenAI/Anthropic directly
+**Amazon Bedrock Advantages:**
+- ✅ **IAM-based authentication** - Role-based access, zero credential exposure
+- ✅ **AWS data residency** - All processing within AWS infrastructure
 - ✅ **Built-in guardrails** - Bedrock Guardrails for content filtering
-- ✅ **Model choice** - Claude Opus 4.6, Llama 4 405B, Nova Premier (switch models via Bedrock API)
-- ✅ **Pay-per-token** - No monthly subscriptions, true usage-based pricing
+- ✅ **Model flexibility** - Claude Opus 4.6, Llama 4 405B, Nova Premier via unified API
+- ✅ **Usage-based pricing** - Pay per token, automatic cost optimization
 
 ### 3.2 Phase 2: Predictive Analytics (2026 Q4-2027 Q1)
 
