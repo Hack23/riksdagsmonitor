@@ -2256,8 +2256,8 @@ Assessment of Riksdagsmonitor threat modeling maturity per [Hack23 Threat Modeli
 |-------|-------------|----------------------|----------|
 | **Level 0: Ad-Hoc** | No systematic threat analysis | ❌ Not Applicable | N/A |
 | **Level 1: Initial** | Basic threat identification, no formal process | ❌ Not Applicable | N/A |
-| **Level 2: Managed** | STRIDE analysis, threat documentation | ❌ Superseded | Previous v1.x threat models (numbered sections) |
-| **Level 3: Defined** | Formal methodology (ISMS-aligned), multi-strategy approach | ✅ **CURRENT LEVEL** | This v2.0 threat model (18 thematic sections) |
+| **Level 2: Managed** | STRIDE analysis, threat documentation | ❌ Superseded | Previous threat models (numbered sections) |
+| **Level 3: Defined** | Formal methodology (ISMS-aligned), multi-strategy approach | ✅ **CURRENT LEVEL** | This threat model (18 thematic sections) |
 | **Level 4: Quantitative** | Risk scoring, business value quantification, metrics | ✅ **CURRENT LEVEL** | Risk scores, cost avoidance ($180K), ROI 682% |
 | **Level 5: Optimizing** | Continuous improvement, automated validation, AI-assisted threat modeling | 🟡 **PARTIAL** | Continuous monitoring (✅), automated validation gaps (Q1-Q2 2026) |
 
@@ -2285,7 +2285,7 @@ Assessment of Riksdagsmonitor threat modeling maturity per [Hack23 Threat Modeli
 
 ### **Comparison to Reference Implementations**
 
-| Metric | Riksdagsmonitor v2.0 | CIA (Reference) | Black Trigram (Reference) | Industry Average (Static Websites) |
+| Metric | Riksdagsmonitor | CIA (Reference) | Black Trigram (Reference) | Industry Average (Static Websites) |
 |--------|---------------------|-----------------|--------------------------|----------------------------------|
 | **Document Length** | 2,134+ lines | 943 lines | 880 lines | ~300 lines |
 | **Thematic Sections** | 19 sections ✅ | 18 sections | 16 sections | 5-8 sections |
@@ -2297,7 +2297,7 @@ Assessment of Riksdagsmonitor threat modeling maturity per [Hack23 Threat Modeli
 | **Annual Cost Avoidance** | $180,000 | $200,000+ | $150,000 | Not quantified |
 
 **Analysis:**
-- Riksdagsmonitor v2.0 achieves **industry-leading maturity** for static website threat models
+- Riksdagsmonitor achieves **industry-leading maturity** for static website threat models
 - Document length exceeds CIA (943 lines) and Black Trigram (880 lines) due to domain-specific sections (Democratic Threat Catalog, Frontend-Specific Security)
 - Control effectiveness (93.1%) is comparable to reference implementations (92.3-95.8%)
 - Maturity Level 4.25 positions Riksdagsmonitor between CIA (Level 5, mature full-stack app) and Black Trigram (Level 4.5, frontend-only game)
@@ -2389,24 +2389,6 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 - 99.998% availability target met
 - <5 minute recovery from regional failures
 - Maintains transparency during high-stakes political events
-
-### **Lessons Learned from v1.x Threat Models**
-
-| Issue in v1.x | Root Cause | v2.0 Improvement |
-|--------------|-----------|------------------|
-| **Numbered sections** | Did not follow Hack23 thematic structure | ✅ **Fixed:** 19 thematic emoji sections (no numbers) |
-| **Missing domain sections** | Generic web app threat model | ✅ **Added:** Democratic Threat Catalog, Frontend-Specific Security |
-| **STRIDE not integrated** | Standalone section, not per-element | ✅ **Fixed:** STRIDE per DFD element in § Data Flow Analysis |
-| **Attack trees separate** | Not embedded in scenarios | ✅ **Fixed:** Attack trees in § Priority Threat Scenarios |
-| **No control effectiveness** | Controls listed without scoring | ✅ **Fixed:** % effectiveness, MTTD/MTTR metrics |
-| **No business value** | Security costs not quantified | ✅ **Fixed:** $180K annual cost avoidance, 682% ROI |
-| **Incomplete OWASP LLM** | Missing sub-techniques | ✅ **Fixed:** Complete OWASP LLM Top 10 with sub-technique analysis |
-
-**v2.0 Transformation Impact:**
-- Document length: 2,397 lines (v1.2) → **2,134+ lines (v2.0)** (more comprehensive despite fewer lines due to better organization)
-- Structure: Numbered sections (v1.x) → **Thematic emoji sections (v2.0)** ✅
-- Domain-specific: Generic (v1.x) → **Democratic + Frontend sections (v2.0)** ✅
-- Maturity: Level 3 (v1.x) → **Level 4.25 (v2.0)** ✅
 
 ---
 
@@ -2507,7 +2489,7 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 3. **Threat Identification (Week 2-3):** STRIDE per element, MITRE ATT&CK mapping, attack tree development, OWASP LLM Top 10 analysis
 4. **Risk Assessment (Week 3):** Quantitative risk scoring, business impact analysis, cost avoidance calculation
 5. **Mitigation Planning (Week 3-4):** Control mapping, effectiveness scoring, gap analysis, Q1-Q2 2026 remediation roadmap
-6. **Documentation (Week 4):** v2.0 complete rewrite per Hack23 thematic structure, Mermaid diagram creation, CEO review
+6. **Documentation (Week 4):** Comprehensive documentation per Hack23 thematic structure, Mermaid diagram creation, CEO review
 7. **Approval (2026-02-15):** CEO James Pether Sörling formal approval
 
 **Development Team:**
@@ -2542,7 +2524,7 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 
 ---
 
-**🎯 END OF THREAT MODEL v2.0**
+**🎯 END OF THREAT MODEL**
 
 **Document Hash (SHA-256):** *[To be generated post-publication]*  
 **Git Commit:** *[To be recorded post-commit]*  
