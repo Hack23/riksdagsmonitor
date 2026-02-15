@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-15  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -82,14 +82,14 @@ Additionally aligned with [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBL
 
 ### **📊 Executive Summary**
 
-This threat model v2.0 completely rewrites the security analysis for Riksdagsmonitor using thematic Hack23 structure (not numbered sections), identifies 52 threats across 6 STRIDE categories + 18 AI-specific threats (OWASP LLM Top 10), and documents comprehensive mitigations aligned with Hack23 AB's ISMS.
+This threat model systematically analyzes security for Riksdagsmonitor using thematic Hack23 structure, identifies 52 threats across 6 STRIDE categories + 18 AI-specific threats (OWASP LLM Top 10), and documents comprehensive mitigations aligned with Hack23 AB's ISMS.
 
 **Key Findings:**
 - **Critical-Risk Threats:** 0 (All critical threats mitigated)
 - **High-Risk Threats:** 2 (Enhanced monitoring + Q1 2026 remediation)
 - **Medium-Risk Threats:** 8 (Controls in place, continuous monitoring)
 - **Low-Risk Threats:** 42 (Accepted with controls)
-- **AI-Specific Threats (NEW v2.0):** 18 (OWASP LLM Top 10 coverage)
+- **AI-Specific Threats:** 18 (OWASP LLM Top 10 coverage)
 - **Attack Trees:** 6 comprehensive scenarios (3 traditional + 3 AI/LLM)
 - **MITRE ATT&CK Techniques:** 23 mapped
 - **Residual Risk:** LOW (3.2/10.0) - Acceptable for public civic transparency platform
@@ -98,18 +98,6 @@ This threat model v2.0 completely rewrites the security analysis for Riksdagsmon
 1. **AI-H1 (LLM09 Overreliance):** Hallucinated parliamentary data - Risk Score 3.2/10
 2. **T1 (Tampering):** Repository content tampering - Risk Score 2.4/10
 3. **AI-P1 (LLM01 Prompt Injection):** Indirect prompt injection - Risk Score 2.8/10
-
-**Version 2.0 Changes (2026-02-15):**
-- ✅ Complete restructure to Hack23 thematic emoji sections (18 total)
-- ✅ Comprehensive AI/LLM threat analysis (OWASP LLM Top 10)
-- ✅ AI Model Card for Claude Opus 4.6
-- ✅ 3 new AI-specific attack trees
-- ✅ Democratic Threat Catalog Framework
-- ✅ Frontend-Specific Security Architecture section
-- ✅ Enhanced Data Flow Diagrams with trust boundaries
-- ✅ Per-element STRIDE integration in DFD analysis
-- ✅ Threat Agent profiles (Nation-state, Cybercriminal, Hacktivist, Insider, Script kiddie)
-- ✅ Control effectiveness scoring (% risk reduction)
 
 ---
 
