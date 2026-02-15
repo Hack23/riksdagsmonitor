@@ -133,7 +133,7 @@ Following [Hack23 AB Asset-Centric Threat Modeling](https://github.com/Hack23/IS
 
 ## 1. 🏗️ System Boundary and Assets
 
-### 1.1 System Components
+### 1.1 📐 System Components
 
 ```mermaid
 graph TB
@@ -160,7 +160,7 @@ graph TB
     style CIA fill:#9c27b0
 ```
 
-### 1.2 Assets
+### 1.2 💎 Assets
 
 | Asset | Type | Classification | Value |
 |-------|------|----------------|-------|
@@ -175,7 +175,7 @@ graph TB
 | AWS OIDC Configuration | Credentials | Confidential | HIGH |
 | Riksdagsmonitor Brand | Reputation | Public | MEDIUM |
 
-### 1.3 Trust Boundaries
+### 1.3 🛡️ Trust Boundaries
 
 1. **External → AWS CloudFront:** User browsers accessing via HTTPS (primary)
 2. **CloudFront → S3:** Internal AWS service communication
@@ -187,7 +187,7 @@ graph TB
 
 ## 2. 🔍 STRIDE Threat Analysis
 
-### 2.1 Spoofing Identity
+### 2.1 🎭 Spoofing Identity
 
 **S1: Attacker Impersonates Riksdags Monitor Website**
 
@@ -217,7 +217,7 @@ graph TB
 - **Residual Risk:** LOW (Strong controls in place)
 - **MITRE ATT&CK:** T1078.004 (Valid Accounts: Cloud Accounts)
 
-### 2.2 Tampering with Data
+### 2.2 ⚠️ Tampering with Data
 
 **T1: Repository Content Tampering**
 
@@ -266,7 +266,7 @@ graph TB
 - **Residual Risk:** LOW (SRI validation and manual version reviews)
 - **MITRE ATT&CK:** T1195.002 (Supply Chain Compromise: Compromise Software Supply Chain)
 
-### 2.3 Repudiation
+### 2.3 🚫 Repudiation
 
 **R1: Unattributed Changes to Content**
 
@@ -282,7 +282,7 @@ graph TB
 - **Residual Risk:** VERY LOW (Comprehensive logging)
 - **MITRE ATT&CK:** T1070.004 (Indicator Removal: File Deletion)
 
-### 2.4 Information Disclosure
+### 2.4 📢 Information Disclosure
 
 **I1: Exposure of GitHub Secrets**
 
@@ -330,7 +330,7 @@ graph TB
 - **Residual Risk:** LOW (Defense-in-depth)
 - **MITRE ATT&CK:** T1056.004 (Input Capture: Credential API Hooking)
 
-### 2.5 Denial of Service
+### 2.5 🚨 Denial of Service
 
 **D1: AWS Infrastructure Outage**
 
@@ -391,7 +391,7 @@ graph TB
 - **Residual Risk:** LOW (Client-side only)
 - **MITRE ATT&CK:** T1499.004 (Endpoint DoS: Application or System Exploitation)
 
-### 2.6 Elevation of Privilege
+### 2.6 ⬆️ Elevation of Privilege
 
 **E1: GitHub Actions Privilege Escalation**
 
@@ -1385,7 +1385,7 @@ Three automated news generation workflows:
 
 ## 3. 🌳 Attack Trees
 
-### 3.1 Attack Goal: Deface Riksdags Monitor Website
+### 3.1 🎯 Attack Goal: Deface Riksdags Monitor Website
 
 ```
 Goal: Deface Website [MEDIUM RISK]
@@ -1410,7 +1410,7 @@ OVERALL RISK: LOW (Multiple mitigation layers)
 - Branch protection + code review: 95% reduction
 - Combined: 99.7% risk reduction
 
-### 3.2 Attack Goal: Steal GitHub Secrets
+### 3.2 🎯 Attack Goal: Steal GitHub Secrets
 
 ```
 Goal: Steal GitHub Secrets [MEDIUM RISK]
@@ -1432,7 +1432,7 @@ OVERALL RISK: LOW (Strong preventive controls)
 - Secrets management: 99% isolation
 - Combined: 99.9% risk reduction
 
-### 3.3 Attack Goal: AI Hallucination Misinformation (NEW v1.2)
+### 3.3 🎯 Attack Goal: AI Hallucination Misinformation (NEW v1.2)
 
 ```mermaid
 graph TB
@@ -1499,7 +1499,7 @@ graph TB
 - Fact-checking protocol: 98% verification
 - Combined: 99.8% risk reduction (residual: 0.2%)
 
-### 3.4 Attack Goal: Prompt Injection via Riksdag API (NEW v1.2)
+### 3.4 🎯 Attack Goal: Prompt Injection via Riksdag API (NEW v1.2)
 
 ```mermaid
 graph TB
@@ -1568,7 +1568,7 @@ graph TB
 - Sandbox isolation: 100% network restriction
 - Combined: 99.99% risk reduction
 
-### 3.5 Attack Goal: Multi-Language Translation Attack (NEW v1.2)
+### 3.5 🎯 Attack Goal: Multi-Language Translation Attack (NEW v1.2)
 
 ```mermaid
 graph TB
@@ -1638,7 +1638,7 @@ graph TB
 - Consistency checks: 80% cross-language alignment
 - Combined: 99.7% risk reduction (residual: 0.3%)
 
-### 3.6 Attack Goal: MCP Server Compromise (NEW v1.2)
+### 3.6 🎯 Attack Goal: MCP Server Compromise (NEW v1.2)
 
 ```mermaid
 graph TB
@@ -1710,7 +1710,7 @@ graph TB
 
 ## 4. 🎯 MITRE ATT&CK Mapping
 
-### 4.1 Attack Lifecycle Coverage
+### 4.1 🔄 Attack Lifecycle Coverage
 
 | Tactic | Technique | Riksdags Monitor Context | Mitigation |
 |--------|-----------|--------------------------|------------|
@@ -1726,7 +1726,7 @@ graph TB
 | **Impact** | T1565.001 (Stored Data Manipulation) | Content defacement | Branch protection, code review |
 | **Impact** | T1499 (Endpoint DoS) | Website unavailability | GitHub CDN, infrastructure DDoS protection |
 
-### 4.2 AI-Specific MITRE ATT&CK Techniques (NEW v1.2)
+### 4.2 🤖 AI-Specific MITRE ATT&CK Techniques (NEW v1.2)
 
 | Tactic | Technique | AI Workflow Context | Mitigation |
 |--------|-----------|---------------------|------------|
@@ -1743,7 +1743,7 @@ graph TB
 | **Impact** | T1499 (Endpoint DoS) | Claude rate limiting, MCP server downtime | Graceful degradation, workflow timeout |
 | **Impact** | T1656 (Impersonation) | AI fabricates government statements | regeringen.se URL validation, cross-reference |
 
-### 4.3 Defensive Layers
+### 4.3 🛡️ Defensive Layers
 
 ```
 LAYER 1: Preventive Controls
@@ -1792,7 +1792,7 @@ LAYER 4: Recovery Controls
 
 ## 5. 📊 Risk Quantification
 
-### 5.1 Risk Matrix
+### 5.1 📊 Risk Matrix
 
 #### Traditional Infrastructure Threats
 
@@ -1860,7 +1860,7 @@ LAYER 4: Recovery Controls
 - **P3 (Medium):** Risk Score 0.5-2.0 → Address within 90 days
 - **P4 (Low):** Risk Score < 0.5 → Monitor and accept
 
-### 5.2 Aggregate Risk Assessment
+### 5.2 📈 Aggregate Risk Assessment
 
 **Current Risk Posture:**
 - **Traditional Infrastructure Risk Score:** 7.21
@@ -1876,7 +1876,7 @@ LAYER 4: Recovery Controls
 
 **Conclusion:** ✅ Acceptable risk level for public web platform with comprehensive security controls, dual-deployment architecture, and mandatory human review of all AI-generated content.
 
-### 5.3 AI Risk Heatmap (NEW v1.2)
+### 5.3 🔥 AI Risk Heatmap (NEW v1.2)
 
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#f44336','primaryTextColor':'#fff','primaryBorderColor':'#000','lineColor':'#000','secondaryColor':'#ff9800','tertiaryColor':'#ffc107'}}}%%
@@ -1914,7 +1914,7 @@ quadrantChart
 
 ## 5.4 AI Compliance Mapping (NEW v1.2)
 
-### EU AI Act Compliance
+### 🇪🇺 EU AI Act Compliance
 
 | EU AI Act Requirement | Implementation | Evidence |
 |----------------------|----------------|----------|
@@ -1926,7 +1926,7 @@ quadrantChart
 
 **AI System Classification:** ⚠️ **Limited Risk** (Article 52 - transparency requirements)
 
-### ISO/IEC 42001:2023 (AI Management System)
+### 📋 ISO/IEC 42001:2023 (AI Management System)
 
 | Control | Requirement | Implementation |
 |---------|-------------|----------------|
@@ -1937,7 +1937,7 @@ quadrantChart
 | **9.1 Monitoring** | AI performance metrics | GitHub Actions logs, PR review metrics |
 | **10.2 Incident Management** | AI incident response procedures | Section 9.3 (MCP compromise, hallucination correction) |
 
-### ISO 27001:2022 AI-Relevant Controls
+### 🔐 ISO 27001:2022 AI-Relevant Controls
 
 | Control | Requirement | AI Implementation |
 |---------|-------------|------------------|
@@ -1950,7 +1950,7 @@ quadrantChart
 | **A.16.1.4 Assessment of Information Security Events** | AI incident classification | Hallucination, prompt injection, bias incidents defined |
 | **A.17.1.2 Implementing Information Security Continuity** | AI failover procedures | MCP server unavailable → skip generation (graceful failure) |
 
-### NIST Cybersecurity Framework 2.0
+### 🛡️ NIST Cybersecurity Framework 2.0
 
 | Function | Category | AI Implementation |
 |----------|----------|------------------|
@@ -1965,7 +1965,7 @@ quadrantChart
 | **RESPOND (RS)** | RS.RP-1 (Response plan executed) | MCP compromise procedure, hallucination correction protocol |
 | **RECOVER (RC)** | RC.RP-1 (Recovery plan executed) | Article retraction, manual generation fallback |
 
-### CIS Controls v8.1
+### ⚙️ CIS Controls v8.1
 
 | Control | Requirement | AI Implementation |
 |---------|-------------|------------------|
@@ -1978,7 +1978,7 @@ quadrantChart
 | **16.1 Secure Application Development** | AI secure development lifecycle | Input validation, output sanitization, translation validation |
 | **16.10 Application Security Testing** | AI output validation | Playwright visual validation, cross-language consistency checks |
 
-### NIST AI Risk Management Framework (AI RMF 1.0)
+### 🎯 NIST AI Risk Management Framework (AI RMF 1.0)
 
 | Function | Category | AI Implementation |
 |----------|----------|------------------|
@@ -1994,7 +1994,7 @@ quadrantChart
 
 ## 6. 🚨 Threat Scenarios
 
-### 6.1 Scenario 1: Typosquatting Attack
+### 6.1 💥 Scenario 1: Typosquatting Attack
 
 **Narrative:**
 Attacker registers `riksdagsmoniter.com` (typo) and hosts phishing site mimicking Riksdags Monitor.
@@ -2023,7 +2023,7 @@ Attacker registers `riksdagsmoniter.com` (typo) and hosts phishing site mimickin
 - Monitor domain registration databases
 - Implement clear branding and user education
 
-### 6.2 Scenario 2: Compromised CI/CD Pipeline
+### 6.2 💥 Scenario 2: Compromised CI/CD Pipeline
 
 **Narrative:**
 Attacker compromises GitHub Actions workflow to inject malicious content during deployment.
@@ -2055,7 +2055,7 @@ Attacker compromises GitHub Actions workflow to inject malicious content during 
 - Separate secrets by environment
 - Implement workflow approval gates
 
-### 6.3 Scenario 3: AI Hallucination Misinformation Attack (NEW v1.2)
+### 6.3 💥 Scenario 3: AI Hallucination Misinformation Attack (NEW v1.2)
 
 **Narrative:**
 Claude Opus 4.6 generates a news article claiming a narrow vote defeat for the Swedish government on a critical budget amendment, but the vote never occurred. The fabricated article is published across 14 languages before detection.
@@ -2098,7 +2098,7 @@ Claude Opus 4.6 generates a news article claiming a narrow vote defeat for the S
 
 **Estimated Likelihood After Mitigation:** 5% (was 35%)
 
-### 6.4 Scenario 4: MCP Server Compromise and Data Poisoning (NEW v1.2)
+### 6.4 �� Scenario 4: MCP Server Compromise and Data Poisoning (NEW v1.2)
 
 **Narrative:**
 Attacker compromises riksdag-regering-ai.onrender.com MCP server and systematically injects false data into all responses, undetected for 72 hours.
@@ -2145,7 +2145,7 @@ Attacker compromises riksdag-regering-ai.onrender.com MCP server and systematica
 
 **Estimated Likelihood After Mitigation:** 1% (was 5%)
 
-### 6.5 Scenario 5: Multi-Language Translation Bias Attack (NEW v1.2)
+### 6.5 💥 Scenario 5: Multi-Language Translation Bias Attack (NEW v1.2)
 
 **Narrative:**
 AI systematically mistranslates Swedish political party positions in non-Swedish languages, subtly favoring Socialdemokraterna (S) over Moderaterna (M) across 200+ articles over 2 months.
@@ -2189,7 +2189,7 @@ AI systematically mistranslates Swedish political party positions in non-Swedish
 
 ## 7. 📈 Security Metrics
 
-### 7.1 Key Risk Indicators (KRIs)
+### 7.1 📊 Key Risk Indicators (KRIs)
 
 #### Traditional Infrastructure KRIs
 
@@ -2222,7 +2222,7 @@ Three critical AI metrics are not currently tracked because the required tooling
 
 Until these metrics are operational, human reviewers must manually assess these risk areas during PR review as documented in fact-checking protocols.
 
-### 7.2 Security Control Effectiveness
+### 7.2 ✅ Security Control Effectiveness
 
 #### Traditional Infrastructure Controls
 
@@ -2258,7 +2258,7 @@ Until these metrics are operational, human reviewers must manually assess these 
 
 ## 8. 📝 Assumptions and Constraints
 
-### 8.1 Security Assumptions
+### 8.1 ✔️ Security Assumptions
 
 1. **GitHub Security:** GitHub infrastructure is secure and trusted
 2. **TLS Security:** TLS 1.3 cryptography is secure
@@ -2266,7 +2266,7 @@ Until these metrics are operational, human reviewers must manually assess these 
 4. **CIA Platform:** External CIA platform maintains its own security posture
 5. **Public Data:** All content is intentionally public (no confidentiality requirements)
 
-### 8.2 Out of Scope
+### 8.2 ❌ Out of Scope
 
 1. **User Device Security:** End-user endpoint protection
 2. **Network Infrastructure:** ISP and network-level security
@@ -2275,7 +2275,7 @@ Until these metrics are operational, human reviewers must manually assess these 
 
 ## 9. 💡 Recommendations
 
-### 9.1 Immediate Actions (0-30 days)
+### 9.1 ⚡ Immediate Actions (0-30 days)
 
 #### Traditional Infrastructure (Implemented)
 1. ✅ **Implemented:** GitHub MFA enforcement
@@ -2291,7 +2291,7 @@ Until these metrics are operational, human reviewers must manually assess these 
 4. ⚠️ **Required:** Deploy MCP server health monitoring with baseline response time alerts
 5. ⚠️ **Required:** Document MCP server compromise incident response procedure (Section 6.4)
 
-### 9.2 Short-Term Actions (30-90 days)
+### 9.2 📅 Short-Term Actions (30-90 days)
 
 #### Traditional Infrastructure
 1. **Monitor:** Register common typosquatting domains (riksdagsmoniter.com, etc.)
@@ -2308,7 +2308,7 @@ Until these metrics are operational, human reviewers must manually assess these 
 6. **Add:** Canary queries to MCP server with known expected results (test integrity)
 7. **Enable:** Render.com 2FA and deployment approval workflows for riksdag-regering-mcp
 
-### 9.3 Long-Term Actions (90+ days)
+### 9.3 🔮 Long-Term Actions (90+ days)
 
 #### Traditional Infrastructure
 1. **Consider:** Content delivery optimization for global users
@@ -2327,7 +2327,7 @@ Until these metrics are operational, human reviewers must manually assess these 
 
 ## 10. ✅ Approval and Review
 
-### 10.1 Document Control
+### 10.1 📋 Document Control
 
 | Role | Name | Date | Action |
 |------|------|------|--------|
@@ -2340,7 +2340,7 @@ Until these metrics are operational, human reviewers must manually assess these 
 - **v1.1 (2026-02-10):** Updated for dual-deployment architecture (AWS + GitHub Pages DR).
 - **v1.0 (Initial):** Static website threat model.
 
-### 10.2 Review Schedule
+### 10.2 🔄 Review Schedule
 
 - **Threat Model Update:** Quarterly or after significant changes (especially AI workflow modifications)
 - **Risk Assessment:** Annual or after security incidents (including AI incidents)
