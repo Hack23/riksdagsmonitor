@@ -2,7 +2,7 @@
   <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
 </p>
 
-<h1 align="center">🎯 Riksdagsmonitor — Threat Model</h1>
+<h1 align="center">🎯 Hack23 AB — Riksdagsmonitor Threat Model</h1>
 
 <p align="center">
   <strong>🛡️ Systematic Threat Analysis for Democratic Transparency Platform</strong><br>
@@ -22,7 +22,54 @@
 
 ---
 
-## 🎯 Executive Summary
+## 🎯 Purpose & Scope
+
+Establish a comprehensive threat model for Riksdagsmonitor, a democratic transparency platform monitoring Swedish Parliament activity. This systematic threat analysis integrates multiple threat modeling frameworks to ensure proactive security through structured analysis of the static website infrastructure with interactive Chart.js/D3.js dashboards and AI-powered content generation.
+
+### **🌟 Transparency Commitment**
+
+This threat model demonstrates **🛡️ cybersecurity consulting expertise** through public documentation of advanced threat assessment methodologies for civic transparency platforms, showcasing our **🏆 competitive advantage** via systematic risk management and **🤝 customer trust** through transparent security practices.
+
+> *"At Hack23, we believe that true security comes through transparency and demonstrable practices. This threat model is publicly available to showcase our proactive security posture, allowing clients and stakeholders to verify our commitment to security excellence. By openly documenting our threat analysis for Riksdagsmonitor, we demonstrate not just what we protect, but how we protect it—reinforcing democratic accountability through secure civic technology."*
+>
+> *— James Pether Sörling, CEO & CISO, Hack23 AB*
+
+### **📚 Framework Integration**
+
+- **🎭 STRIDE per architecture element:** Systematic threat categorization for static hosting, CDN, and dashboards
+- **🎖️ MITRE ATT&CK mapping:** Infrastructure and supply chain attack techniques
+- **🏗️ Asset-centric analysis:** Democratic transparency data and Swedish Parliament content protection
+- **🎯 Scenario-centric modeling:** Real-world attack simulation for civic platforms
+- **⚖️ Risk-centric assessment:** Business impact quantification and democratic accountability
+
+### **🔍 Scope Definition**
+
+**Included Systems:**
+
+- 🌐 Static HTML/CSS website (14-language support)
+- 📊 Chart.js/D3.js interactive dashboards (4 functional, 5 placeholders)
+- ☁️ AWS CloudFront CDN + S3 storage (us-east-1, eu-west-1)
+- 🔀 Route 53 DNS configuration
+- 🔄 GitHub Pages DR (disaster recovery)
+- 🤖 AI agentic workflows (Claude Opus 4.6 news generation via riksdag-regering-mcp)
+- 🏭 CI/CD security pipeline (GitHub Actions)
+- 📦 Dependency management and supply chain (Chart.js, D3.js, Vite)
+
+**Out of Scope:**
+
+- Backend services (none exist—frontend-only architecture)
+- User data persistence (public read-only platform)
+- CIA platform backend security (external data source)
+- Third-party CDN infrastructure security (jsDelivr dependency)
+- End-user device security beyond browser environment
+
+### **🔗 Policy Alignment**
+
+Integrated with [🎯 Hack23 AB Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) methodology and frameworks, following the five-strategy integrated approach: Attacker-centric (MITRE ATT&CK), Asset-centric (Crown Jewels), Architecture-centric (STRIDE per element), Scenario-centric (Misuse cases), and Risk-centric (Quantitative assessment).
+
+---
+
+## 📊 Executive Summary
 
 This threat model analyzes security risks for Riksdagsmonitor using the STRIDE framework, attack trees, and MITRE ATT&CK mapping. The analysis identifies threats to the web platform infrastructure (AWS CloudFront, S3, Route 53, GitHub Pages DR) with 9 dashboard sections (4 functional Chart.js/D3.js dashboards, 5 placeholders), evaluates their likelihood and impact, and documents mitigations aligned with Hack23 AB's ISMS.
 
@@ -34,6 +81,55 @@ This threat model analyzes security risks for Riksdagsmonitor using the STRIDE f
 - **Residual Risk:** LOW (Acceptable for public web platform with interactive dashboards and AI-generated news)
 
 **New in v1.2 (2026-02-15):** Comprehensive AI threat analysis for three agentic news generation workflows using Claude Opus 4.6 and riksdag-regering-mcp server, aligned with [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) requirements.
+
+---
+
+## 📊 System Classification & Operating Profile
+
+### **🏷️ Security Classification Matrix**
+
+| Dimension | Level | Rationale | Business Impact |
+|----------|-------|-----------|----------------|
+| **🔐 Confidentiality** | [![Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) | All content intentionally disclosed (Swedish Riksdag open data, website content) | [![Trust Enhancement](https://img.shields.io/badge/Value-Trust_Enhancement-darkgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| **🔒 Integrity** | [![High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) | Automated validation, digital signatures (Git commits), accurate political data required | [![Operational Excellence](https://img.shields.io/badge/Value-Operational_Excellence-blue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| **⚡ Availability** | [![High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels) | 99.998% design availability target (AWS CloudFront 99.9% SLA), automated failover (AWS multi-region, GitHub Pages DR) | [![Revenue Protection](https://img.shields.io/badge/Value-Revenue_Protection-red?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+
+### **⚖️ Regulatory & Compliance Profile**
+
+| Compliance Area | Classification | Implementation Status |
+|-----------------|----------------|----------------------|
+| **📋 Regulatory Exposure** | Low | Public information dissemination only; GDPR applies for public-official data processing (public interest/legitimate interest grounds) |
+| **🇪🇺 CRA (EU Cyber Resilience Act)** | Standard classification | Non-commercial OSS civic transparency platform; self-assessment approach |
+| **📊 GDPR Data Processing** | Public Officials Only | Personal data (names, roles, voting records, person identifiers) from Swedish Riksdag open data; no special-category data or private individuals |
+| **🔄 RPO / RTO** | RPO: 4-24h / RTO: 1-4h | Daily data pipeline updates, Git version control, S3 versioning; automated multi-region failover |
+
+### **💰 Business Impact Analysis**
+
+| Impact Category | Level | Description |
+|-----------------|-------|-------------|
+| **Financial** | [![Low](https://img.shields.io/badge/Low-lightgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#financial-impact-levels) | Minimal financial impact (<$500 daily) - Open-source project, no revenue dependency |
+| **Operational** | [![Moderate](https://img.shields.io/badge/Moderate-yellow?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#operational-impact-levels) | Partial service impact - Swedish political transparency temporarily unavailable |
+| **Reputational** | [![Moderate](https://img.shields.io/badge/Moderate-yellow?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#reputational-impact-levels) | Industry attention - Transparency advocates may notice outage |
+| **Regulatory** | [![Low](https://img.shields.io/badge/Low-lightgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#regulatory-impact-levels) | No regulatory impact - Public information dissemination only |
+
+---
+
+## 💎 Critical Assets & Protection Goals
+
+### **🏗️ Asset-Centric Threat Analysis**
+
+Following [Hack23 AB Asset-Centric Threat Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md#asset-centric-threat-modeling) methodology:
+
+| Asset Category | Why Valuable | Threat Goals | Key Controls | Business Value |
+|----------------|--------------|-------------|-------------|----------------|
+| **📊 Dashboard Integrity** | Political data accuracy and user trust | Content manipulation, data tampering | CSP headers, SRI, Git immutability, dual deployment | [![Trust Enhancement](https://img.shields.io/badge/Value-Trust_Enhancement-darkgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| **🗳️ Parliamentary Data** | Swedish Riksdag transparency and democratic accountability | Data falsification, integrity compromise | CIA platform validation, daily pipeline updates, version control | [![Competitive Advantage](https://img.shields.io/badge/Value-Competitive_Advantage-gold?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| **🧠 Source Code** | Dashboard algorithms, visualization logic | IP theft, malicious injection | Private repo controls, dependency scanning, GPG signing | [![Operational Excellence](https://img.shields.io/badge/Value-Operational_Excellence-blue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| **🌐 Riksdagsmonitor Brand** | Market reputation and stakeholder trust | Domain hijacking, phishing, brand impersonation | Domain monitoring, HTTPS enforcement, DNSSEC | [![Risk Reduction](https://img.shields.io/badge/Value-Risk_Reduction-green?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| **☁️ Infrastructure Config** | AWS CloudFront, S3, Route 53 security baseline | Infrastructure compromise, misconfigurastion | IAM least privilege, OIDC (no long-lived keys), AWS Config rules | [![Security Excellence](https://img.shields.io/badge/Value-Security_Excellence-purple?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| **🤖 AI News Content** | Automated journalism credibility | Prompt injection, hallucination, bias | Claude Opus 4.6 with guardrails, riksdag-regering-mcp validation, editorial review | [![Innovation Enablement](https://img.shields.io/badge/Value-Innovation_Enablement-lightblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+
+---
 
 ## 1. 🏗️ System Boundary and Assets
 
