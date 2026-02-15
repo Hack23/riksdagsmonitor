@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>🏗️ AWS Serverless Evolution: Zero-Infrastructure AI-Enhanced Political Intelligence</strong><br>
-  <em>🎯 Amazon Bedrock · Serverless First · AWS Well-Architected · No Kubernetes</em>
+  <em>🎯 Amazon Bedrock · Serverless First · AWS Well-Architected</em>
 </p>
 
 <p align="center">
@@ -37,8 +37,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 **AWS Serverless Strategy:**
 - ☁️ **Single Cloud Provider** - AWS only per [Hack23 ISMS SUPPLIER.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/SUPPLIER.md)
 - 🤖 **Amazon Bedrock First** - All AI via Bedrock (Claude Opus 4.6, Llama 4 405B, Nova Premier) - bleeding-edge models only
-- 🚫 **No Kubernetes** - Pure serverless (Lambda, AppSync, Step Functions, EventBridge)
-- 📦 **No Container Orchestration** - No ECS, no EKS, no Fargate for long-running tasks
+- ⚡ **Pure Serverless** - AWS Lambda, AppSync, Step Functions, EventBridge for all compute
 - 💰 **Pay-Per-Use** - Zero idle costs, automatic scaling from 0 to millions
 - 🏗️ **AWS Well-Architected** - Operational Excellence, Security, Reliability, Performance, Cost Optimization
 
@@ -94,8 +93,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 - ✅ **Always Latest Bedrock Models** - Claude Opus 4.6 (2026), Opus 5.x (2027-2028), Opus 6.x (2028+)
 - ✅ **Open-Source SOTA** - Llama 4 405B (2026), Llama 5 (2027+) for cost-sensitive workloads
 - ✅ **AWS-Native Innovation** - Nova Premier (2026 multimodal), future Bedrock models
-- ❌ **No Legacy Models** - No Claude 3.5 (2024), no GPT-4 (2023), no outdated tech
-- ❌ **No Non-Bedrock APIs** - All AI via Amazon Bedrock (IAM auth, data stays in AWS)
+- ✅ **Amazon Bedrock Only** - All AI via Bedrock (IAM auth, data stays in AWS, guardrails enabled)
 
 **Rationale:** This is a **FUTURE architecture document** (2026-2032+). Referencing 2024 models in a 2026+ roadmap contradicts Hack23's **bleeding-edge strategy** and **innovation enablement** principles. Future docs should reference future technology.
 
@@ -396,10 +394,10 @@ C4Component
    - **Output:** Vote likelihood (yes/no/abstain probabilities)
    - **Accuracy Target:** 85% vote prediction accuracy
 
-**No TensorFlow.js / ONNX:**
-- ❌ **Remove client-side ML** - All ML on AWS backend (Lambda + SageMaker)
-- ✅ **Serverless inference** - SageMaker Serverless Inference endpoints
-- ✅ **Auto-scaling** - Automatic capacity management, zero idle costs
+**Serverless ML Architecture:**
+- ✅ **Backend ML Inference** - All ML on AWS backend (Lambda + SageMaker)
+- ✅ **Serverless Endpoints** - SageMaker Serverless Inference endpoints
+- ✅ **Auto-Scaling** - Automatic capacity management, zero idle costs
 
 ### 3.3 Phase 3: Semantic Intelligence (2027 Q2-Q4)
 
@@ -434,11 +432,11 @@ C4Component
 4. **Retrieve:** Bedrock retrieves relevant documents (RAG pattern)
 5. **Generate:** Bedrock Claude Opus 4.6 generates answer with citations
 
-**No Neo4j / Pinecone / Weaviate:**
-- ❌ **Remove third-party graph DB** - Neptune Serverless only
-- ❌ **Remove third-party vector DB** - Bedrock Knowledge Bases only
-- ✅ **Fully managed** - Zero database administration, automatic backups
-- ✅ **AWS-native** - IAM integration, VPC isolation, CloudWatch monitoring
+**AWS-Native Data Services:**
+- ✅ **Graph Database** - Amazon Neptune Serverless only
+- ✅ **Vector Search** - Amazon Bedrock Knowledge Bases only
+- ✅ **Fully Managed** - Zero database administration, automatic backups
+- ✅ **AWS-Native** - IAM integration, VPC isolation, CloudWatch monitoring
 
 ### 3.4 Phase 4: Conversational AI (2028+)
 
@@ -466,11 +464,10 @@ C4Component
 4. **Coalition Analysis** - "Most likely coalitions after 2026 election?" (SageMaker + Claude Opus 4.6)
 5. **Transparency Monitoring** - "Which MPs have risk violations?" (Aurora + Claude Opus 4.6)
 
-**No Google Assistant / Alexa / Siri:**
-- ❌ **Remove third-party voice platforms** - AWS-native voice interfaces only
+**AWS-Native Voice Interfaces:**
 - ✅ **Amazon Lex** - Conversational AI with automatic speech recognition
-- ✅ **AppSync real-time** - Push notifications via GraphQL subscriptions
-- ✅ **Amplify mobile SDK** - Native voice interfaces in iOS/Android apps
+- ✅ **AppSync Real-Time** - Push notifications via GraphQL subscriptions
+- ✅ **Amplify Mobile SDK** - Native voice interfaces in iOS/Android apps
 
 ---
 
@@ -508,10 +505,10 @@ C4Component
 - **Fallback:** Amazon Translate Neural (99 languages, fast batch translation)
 - **Quality Control:** Bedrock Claude Opus 4.6 (translation validation)
 
-**No Google Translate / DeepL:**
-- ❌ **Remove third-party translation services**
-- ✅ **Bedrock-first** - Claude Opus 4.6 for political terminology nuance
-- ✅ **Amazon Translate** - Fallback for simple content, 99 languages
+**AWS Translation Services:**
+- ✅ **Primary:** Amazon Bedrock Claude Opus 4.6 for political terminology nuance
+- ✅ **Fallback:** Amazon Translate Neural (99 languages, fast batch translation)
+- ✅ **Quality Control:** Bedrock Claude Opus 4.6 (translation validation)
 
 ### 4.3 Data Scaling
 
@@ -535,10 +532,13 @@ C4Component
 - **Notifications:** AppSync subscriptions (push to clients)
 - **Storage:** DynamoDB Streams (change data capture)
 
-**No Kafka / Flink:**
-- ❌ **Remove Apache Kafka** - Kinesis Data Streams only
-- ❌ **Remove Apache Flink** - Lambda + Kinesis Analytics only
-- ✅ **Fully managed** - Zero cluster management
+**AWS Real-Time Stack:**
+- **Streaming:** Amazon Kinesis Data Streams (ingest)
+- **Processing:** Lambda (consume Kinesis records)
+- **Analytics:** Kinesis Analytics (SQL on streaming data)
+- **Notifications:** AppSync subscriptions (push to clients)
+- **Storage:** DynamoDB Streams (change data capture)
+- **Fully Managed:** Zero cluster management, auto-scaling
 
 ---
 
@@ -631,23 +631,7 @@ Amplify Hosting (SSR) → CloudFront
 | None | CloudWatch Metrics + Alarms | Auto-scaling triggers, alerting |
 | None | AWS X-Ray | Distributed tracing, latency analysis |
 
-### 5.3 No Kubernetes, No Containers
-
-**Explicit Removals:**
-- ❌ **Kubernetes (EKS)** - Removed entirely, serverless only
-- ❌ **Docker containers (ECS/Fargate)** - Removed, Lambda only
-- ❌ **Helm charts** - Not applicable
-- ❌ **kubectl** - Not applicable
-- ❌ **Container image management** - Not applicable
-
-**Rationale:**
-- ✅ **Zero infrastructure management** - No cluster upgrades, no node patching
-- ✅ **Lower operational burden** - No DevOps team required for infrastructure
-- ✅ **Cost efficiency** - No idle EC2 instances, pay only for actual compute
-- ✅ **Faster iteration** - Deploy Lambda functions in seconds, not minutes
-- ✅ **AWS Well-Architected** - Follows serverless best practices
-
-### 5.4 AWS Cost Model (Serverless)
+### 5.3 AWS Cost Model (Serverless)
 
 **Current Costs (Static Site - 2026 Q1):**
 - CloudFront: $20/month (50 GB transfer)
