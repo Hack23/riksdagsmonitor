@@ -5,7 +5,7 @@
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 
 **Document Version:** 3.0  
-**Last Updated:** 2026-02-12  
+**Last Updated:** 2026-02-15  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -13,7 +13,7 @@
 
 This document describes the Continuous Integration and Continuous Deployment (CI/CD) workflows for Riksdagsmonitor. All workflows are implemented using GitHub Actions and follow Hack23 AB's [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md).
 
-**Total Workflows: 14** (12 existing + 2 new)  
+**Total Workflows: 17** ⬆️ (15 existing + 2 new: setup-labels, labeler)  
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 
 ## Workflow Overview
@@ -897,7 +897,7 @@ node scripts/validate-evening-analysis.js news/YYYY-MM-DD-evening-analysis-en.ht
 - [ ] Newsletter compilation
 - [ ] Podcast script generation
 
-## Workflow Inventory (15 Total)
+## Workflow Inventory (17 Total)
 
 | # | Workflow | Status | Security | Schedule | Purpose |
 |---|----------|--------|----------|----------|---------|
@@ -916,6 +916,8 @@ node scripts/validate-evening-analysis.js news/YYYY-MM-DD-evening-analysis-en.ht
 | 13 | **news-article-generator.lock.yml** | ✅ | SHA+HR | Daily 05:51 | AI news generation (agentic) |
 | 14 | **news-evening-analysis.lock.yml** | ✅ | SHA+HR | Weekday 18:00 UTC | Evening wrap-up (agentic) |
 | 15 | **news-realtime-monitor.lock.yml** | ✅ | SHA+HR | 10:00+14:00 Mon-Fri | Breaking news (agentic) |
+| 16 | **setup-labels.yml** | ✨ NEW | SHA+HR | On-demand | Label creation/management |
+| 17 | **labeler.yml** | ✨ NEW | SHA+HR | PR events | Automatic PR labeling |
 
 **Legend:**
 - SHA: SHA-pinned actions
@@ -1419,6 +1421,273 @@ gh api repos/<org>/<repo>/actions/runs \
 
 *Note: Metrics are examples. Track real metrics via GitHub Actions dashboard.*
 
+## 16. Automatic PR Labeling System ✨ **NEW**
+
+**File:** `.github/workflows/setup-labels.yml`, `.github/workflows/labeler.yml`  
+**Configuration:** `.github/labeler.yml`  
+**Documentation:** [LABELS.md](LABELS.md)
+
+### Overview
+
+Riksdagsmonitor implements an automated labeling system that categorizes pull requests based on file changes, titles, and descriptions. This improves organization, searchability, and provides quick visual context about changes.
+
+### 16.1 Setup Labels Workflow
+
+**File:** `.github/workflows/setup-labels.yml`  
+**Trigger:** Manual (`workflow_dispatch`)  
+**Purpose:** Create or update repository labels
+
+#### Features
+
+- **46 Labels:** Covering all aspects of the project
+- **Categorized:** Content, technology, data, i18n, ISMS, infrastructure, quality, AI
+- **Idempotent:** Can be run multiple times safely
+- **Recreate Option:** Optional flag to delete all labels and recreate
+
+#### Security Configuration
+
+```yaml
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+steps:
+  - name: Harden Runner
+    uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+    with:
+      egress-policy: audit
+
+  - name: Checkout repository
+    uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+```
+
+#### Label Categories
+
+| Category | Labels | Examples |
+|----------|--------|----------|
+| **Content** | 4 | `news`, `dashboard`, `visualization`, `intelligence` |
+| **Technology** | 4 | `html-css`, `javascript`, `workflow`, `security` |
+| **Data** | 4 | `cia-data`, `riksdag-data`, `data-pipeline`, `schema` |
+| **I18n** | 3 | `i18n`, `translation`, `rtl` |
+| **ISMS** | 4 | `isms`, `iso-27001`, `nist-csf`, `cis-controls` |
+| **Infrastructure** | 4 | `ci-cd`, `deployment`, `performance`, `monitoring` |
+| **Quality** | 4 | `testing`, `accessibility`, `documentation`, `refactor` |
+| **Standard** | 3 | `bug`, `enhancement`, `dependencies` |
+| **AI** | 3 | `agent`, `skill`, `agentic-workflow` |
+| **Priority** | 4 | `priority-critical/high/medium/low` |
+| **Size** | 5 | `size-xs/s/m/l/xl` |
+| **Status** | 4 | `status-needs-review/in-progress/blocked/ready` |
+
+#### Usage
+
+1. Go to **Actions** → **Setup Repository Labels**
+2. Click **Run workflow**
+3. (Optional) Check "Recreate all labels" to delete existing labels
+4. Wait for completion (< 1 minute)
+
+#### Label Creation Process
+
+```bash
+# Function to create or update label
+create_or_update_label() {
+  local name="$1"
+  local color="$2"
+  local description="$3"
+  
+  if gh label list --search "$name" --limit 1 | grep -q "^$name"; then
+    echo "📝 Updating label: $name"
+    gh label edit "$name" --color "$color" --description "$description"
+  else
+    echo "✨ Creating label: $name"
+    gh label create "$name" --color "$color" --description "$description"
+  fi
+}
+```
+
+### 16.2 Automatic Labeler Workflow
+
+**File:** `.github/workflows/labeler.yml`  
+**Trigger:** `pull_request_target` (opened, synchronize, reopened, edited)  
+**Purpose:** Automatically label PRs based on changes
+
+#### Features
+
+- **Automatic labeling** based on file paths, PR titles, descriptions
+- **Size labels** calculated from diff statistics
+- **Label validation** checks if required labels exist
+- **PR comment** with label summary on new PRs
+- **Continuous monitoring** on PR updates
+
+#### Security Configuration
+
+```yaml
+permissions: read-all
+
+jobs:
+  labeler:
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e
+        with:
+          egress-policy: audit
+```
+
+#### Labeling Logic
+
+**File Path Matching:**
+```yaml
+news:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "news/**/*.html"
+          - "scripts/article-template.js"
+```
+
+**PR Title Matching:**
+```yaml
+news:
+  - title: "news:*"
+  - title: "content:*"
+```
+
+**PR Body Matching:**
+```yaml
+news:
+  - body: "- [x] 📰 News Content"
+```
+
+#### Size Label Calculation
+
+```bash
+# Calculate PR size
+ADDITIONS=$(gh pr view "$PR_NUMBER" --json additions --jq '.additions')
+DELETIONS=$(gh pr view "$PR_NUMBER" --json deletions --jq '.deletions')
+TOTAL_CHANGES=$((ADDITIONS + DELETIONS))
+
+# Determine size label
+if [ "$TOTAL_CHANGES" -lt 10 ]; then SIZE_LABEL="size-xs"
+elif [ "$TOTAL_CHANGES" -lt 50 ]; then SIZE_LABEL="size-s"
+elif [ "$TOTAL_CHANGES" -lt 250 ]; then SIZE_LABEL="size-m"
+elif [ "$TOTAL_CHANGES" -lt 1000 ]; then SIZE_LABEL="size-l"
+else SIZE_LABEL="size-xl"
+fi
+```
+
+#### Workflow Process
+
+```mermaid
+graph TD
+    A[PR Created/Updated] --> B[Check Labels Exist]
+    B -->|Missing| C[Post Warning]
+    B -->|OK| D[Apply Labels]
+    D --> E[Calculate Size]
+    E --> F[Add Size Label]
+    F --> G{New PR?}
+    G -->|Yes| H[Post Summary Comment]
+    G -->|No| I[Update Complete]
+    H --> I
+    
+    style A fill:#2196f3
+    style D fill:#4caf50
+    style E fill:#ff9800
+    style F fill:#4caf50
+    style H fill:#9c27b0
+    style I fill:#4caf50
+```
+
+#### Label Application Examples
+
+**Example 1: News Article**
+- Files: `news/2026-02-15-riksdag-vote-en.html`, `news/2026-02-15-riksdag-vote-sv.html`
+- Labels: `news`, `html-css`, `i18n`, `translation`, `size-s`
+
+**Example 2: Dashboard Enhancement**
+- Files: `js/politician-dashboard.js`, `politician-dashboard.html`, `cia-data/politician/*.csv`
+- Title: `feat: Add politician influence network visualization`
+- Labels: `dashboard`, `visualization`, `javascript`, `html-css`, `cia-data`, `enhancement`, `size-m`
+
+**Example 3: Security Update**
+- Files: `SECURITY_ARCHITECTURE.md`, `THREAT_MODEL.md`, `.github/skills/iso-27001-controls/SKILL.md`
+- Title: `security: Update ISO 27001 control mapping`
+- Labels: `security`, `isms`, `iso-27001`, `documentation`, `skill`, `size-m`
+
+**Example 4: CI/CD Workflow**
+- Files: `.github/workflows/data-pipeline.yml`, `.github/workflows/quality-checks.yml`
+- Title: `ci: Optimize data pipeline workflow`
+- Labels: `workflow`, `ci-cd`, `data-pipeline`, `performance`, `size-s`
+
+#### PR Comment Example
+
+```markdown
+## 🏷️ Automatic Labeling Summary
+
+This PR has been automatically labeled based on the files changed and PR metadata.
+
+**Applied Labels:** news, html-css, i18n, translation, size-s
+
+### Label Categories
+- 🗳️ **Content**: news, dashboard, visualization, intelligence
+- 💻 **Technology**: html-css, javascript, workflow, security
+- 📊 **Data**: cia-data, riksdag-data, data-pipeline, schema
+- 🌍 **I18n**: i18n, translation, rtl
+- 🔒 **ISMS**: isms, iso-27001, nist-csf, cis-controls
+- 🏗️ **Infrastructure**: ci-cd, deployment, performance, monitoring
+- 🔄 **Quality**: testing, accessibility, documentation, refactor
+- 🤖 **AI**: agent, skill, agentic-workflow
+
+For more information, see `.github/labeler.yml`.
+```
+
+### Benefits
+
+- ✅ **Improved organization** - Easy filtering and searching
+- ✅ **Quick context** - Visual indicators of PR content
+- ✅ **Workflow automation** - Automated categorization
+- ✅ **Consistency** - Standard labeling across PRs
+- ✅ **Searchability** - Find related PRs by label
+- ✅ **Metrics** - Track PR types and sizes over time
+
+### Maintenance
+
+**Adding New Labels:**
+1. Edit `.github/workflows/setup-labels.yml` to add label definition
+2. Edit `.github/labeler.yml` to add labeling rules
+3. Run setup-labels workflow
+4. Update [LABELS.md](LABELS.md) documentation
+
+**Modifying Label Rules:**
+1. Edit `.github/labeler.yml`
+2. Test on a new PR
+3. Adjust rules as needed
+4. Document changes in [LABELS.md](LABELS.md)
+
+### Troubleshooting
+
+**Labels Not Applied:**
+- Check if labels exist: Run setup-labels workflow
+- Verify labeler workflow ran: Check Actions tab
+- Check workflow logs for errors
+- Ensure `.github/labeler.yml` is valid YAML
+
+**Size Label Incorrect:**
+- Size is based on total changes (additions + deletions)
+- Regenerated files may have large diffs
+- Manual adjustment of size label is allowed
+
+### References
+
+- **Documentation:** [LABELS.md](LABELS.md)
+- **Configuration:** [`.github/labeler.yml`](.github/labeler.yml)
+- **Setup Workflow:** [`.github/workflows/setup-labels.yml`](.github/workflows/setup-labels.yml)
+- **Labeler Workflow:** [`.github/workflows/labeler.yml`](.github/workflows/labeler.yml)
+- **GitHub Labeler Action:** https://github.com/actions/labeler
+
 ## References
 
 ### ISMS Documentation
@@ -1435,6 +1704,7 @@ gh api repos/<org>/<repo>/actions/runs \
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security controls
 - [THREAT_MODEL.md](THREAT_MODEL.md) - Risk analysis
 - [ARCHITECTURE.md](ARCHITECTURE.md) - System design
+- [LABELS.md](LABELS.md) - Label system and definitions ✨ **NEW**
 - [AGENTS.md](AGENTS.md) - GitHub Copilot agents (13 total)
 - [SKILLS.md](SKILLS.md) - Agent skills library (40 total)
 
@@ -1452,7 +1722,7 @@ gh api repos/<org>/<repo>/actions/runs \
 - **Path:** /WORKFLOWS.md
 - **Format:** Markdown
 - **Classification:** Public
-- **Version:** 2.0
-- **Last Updated:** 2026-02-10
-- **Next Review:** 2026-05-10 (Quarterly)
+- **Version:** 3.0
+- **Last Updated:** 2026-02-15
+- **Next Review:** 2026-05-15 (Quarterly)
 - **Maintained by:** devops-engineer agent
