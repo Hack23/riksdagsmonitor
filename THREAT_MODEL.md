@@ -876,6 +876,335 @@ Three automated news generation workflows:
 - **MITRE ATT&CK:** T1068 (Exploitation for Privilege Escalation)
 - **ISO 27001:** A.9.4.1 (Information access restriction)
 
+---
+
+### 2.8 🛡️ OWASP LLM Top 10 Security Mapping
+
+**Per [Hack23 OWASP LLM Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md)**, all LLM applications MUST be assessed against OWASP Top 10 for LLM Applications 2025 vulnerabilities.
+
+**Riksdagsmonitor LLM Application Classification:**
+- **System:** AI-powered news generation for Swedish political transparency
+- **Model:** Claude Opus 4.6 (Anthropic via GitHub Copilot)
+- **Risk Classification:** ⚠️ **LIMITED RISK** per EU AI Act Article 6
+- **Data Classification:** 🔓 **Public** (Swedish Riksdag open data only)
+- **Human Oversight:** ✅ **Required** (mandatory PR review before publication)
+
+#### 2.8.1 LLM01: Prompt Injection
+
+**Vulnerability**: Attacker manipulates LLM via crafted inputs to override system instructions or produce unintended behavior.
+
+**Riksdagsmonitor Exposure**: 🟨 **MEDIUM**
+
+**Attack Vectors**:
+1. **Direct Injection**: Malicious prompts in workflow instructions
+2. **Indirect Injection**: Poisoned riksdag-regering-mcp responses
+3. **Document Title Injection**: Swedish Riksdag document titles containing embedded instructions
+
+**Current Controls**: ✅ Implemented
+- Input sanitization for document titles (escape special characters)
+- Restricted workflow triggers (schedule + workflow_dispatch only, no PR triggers)
+- Network allowlist (riksdag-regering-mcp server only)
+- Human review (mandatory PR approval)
+- Output validation (pattern detection for suspicious content)
+
+**Gaps**: ⚠️
+- No explicit prompt templates with fixed system instructions
+- No LLM input/output monitoring and alerting
+- No automated prompt injection pattern detection
+
+**Risk Score**: **2.8/10** (Medium Likelihood: 35%, Medium Impact: 8)
+
+**Recommendations**:
+1. **Q1 2026**: Implement prompt templates with version control
+2. **Q1 2026**: Add automated pattern detection for common injection attempts
+3. **Q2 2026**: Deploy LLM input/output logging and anomaly detection
+
+**OWASP LLM Policy Ref**: Section 3.1 (LLM01 Controls)
+
+---
+
+#### 2.8.2 LLM02: Insecure Output Handling
+
+**Vulnerability**: LLM-generated output not properly validated before downstream use, enabling XSS, SSRF, or privilege escalation.
+
+**Riksdagsmonitor Exposure**: 🟩 **LOW**
+
+**Attack Vectors**:
+1. **XSS via Generated HTML**: Malicious `<script>` tags in news articles
+2. **URL Injection**: Malicious links in generated content
+3. **Command Injection**: Shell commands in CI/CD workflow outputs
+
+**Current Controls**: ✅ Implemented
+- Content Security Policy (CSP) headers block inline scripts
+- Output sanitization (no `<script>` tags or `javascript:` URLs allowed)
+- HTML validation in PR review process
+- Playwright browser testing validates rendered output
+- Static content (no server-side execution)
+
+**Gaps**: ✅ None identified
+
+**Risk Score**: **0.4/10** (Very Low Likelihood: 5%, Low Impact: 8)
+
+**Recommendations**: ✅ Adequate controls in place
+
+**OWASP LLM Policy Ref**: Section 3.2 (LLM02 Controls)
+
+---
+
+#### 2.8.3 LLM03: Training Data Poisoning
+
+**Vulnerability**: Attacker manipulates LLM training data to introduce backdoors, biases, or vulnerabilities.
+
+**Riksdagsmonitor Exposure**: 🟦 **NOT APPLICABLE**
+
+**Rationale**: Claude Opus 4.6 is a third-party model (Anthropic). Hack23 does not train or fine-tune models.
+
+**Vendor Risk Assessment**: ✅ Completed
+- Anthropic AI supplier assessment per [Third Party Management Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Third_Party_Management.md)
+- Reputable vendor with strong security practices
+- No access to training data or fine-tuning capabilities
+
+**Residual Risk**: **Accepted** (Vendor dependency)
+
+**OWASP LLM Policy Ref**: Section 3.3 (LLM03 Controls - N/A for third-party models)
+
+---
+
+#### 2.8.4 LLM04: Model Denial of Service
+
+**Vulnerability**: Attacker causes resource exhaustion through expensive LLM queries or excessive API calls.
+
+**Riksdagsmonitor Exposure**: 🟨 **MEDIUM**
+
+**Attack Vectors**:
+1. **Rate Limit Exhaustion**: GitHub Copilot API quota depletion
+2. **Long-Running Workflows**: 30-minute workflow timeouts
+3. **MCP Server Overload**: Excessive riksdag-regering-mcp tool calls
+
+**Current Controls**: ✅ Implemented
+- Workflow timeout limits (30 minutes maximum)
+- Scheduled execution (not user-triggered)
+- MCP server rate limiting (per-tool request limits)
+- Workflow concurrency limits (1 concurrent run per workflow)
+
+**Gaps**: ⚠️
+- No monitoring of GitHub Copilot API rate limit consumption
+- No MCP server health monitoring or baseline response times
+- No automated alerts for workflow execution anomalies
+
+**Risk Score**: **2.1/10** (Medium Likelihood: 30%, Medium Impact: 7)
+
+**Recommendations**:
+1. **Q1 2026**: Implement GitHub Copilot API usage monitoring
+2. **Q1 2026**: Add MCP server health checks and response time baselines
+3. **Q2 2026**: Deploy workflow execution anomaly detection
+
+**OWASP LLM Policy Ref**: Section 3.4 (LLM04 Controls)
+
+---
+
+#### 2.8.5 LLM05: Supply Chain Vulnerabilities
+
+**Vulnerability**: Compromised third-party components (plugins, datasets, models) introduce vulnerabilities.
+
+**Riksdagsmonitor Exposure**: 🟨 **MEDIUM**
+
+**Attack Vectors**:
+1. **Compromised MCP Server**: riksdag-regering-mcp server on Render.com
+2. **GitHub Actions Dependencies**: actions/setup-node, actions/checkout, etc.
+3. **Claude Opus 4.6 API**: Anthropic API via GitHub Copilot
+4. **npm Dependencies**: Vite, Chart.js, D3.js build dependencies
+
+**Current Controls**: ✅ Implemented
+- SHA-pinned GitHub Actions (commit SHAs, not tags)
+- Dependabot automated vulnerability scanning
+- FOSSA license and vulnerability scanning
+- MCP server HTTPS-only access
+- Network allowlist (restricted domains)
+
+**Gaps**: ⚠️
+- No TLS certificate pinning for riksdag-regering-mcp server
+- No MCP server integrity validation (SRI-equivalent for API responses)
+- No automated MCP server health monitoring
+
+**Risk Score**: **2.4/10** (Medium Likelihood: 30%, Medium Impact: 8)
+
+**Recommendations**:
+1. **Q1 2026**: Implement TLS certificate pinning for MCP server
+2. **Q1 2026**: Add MCP server response integrity checks
+3. **Q2 2026**: Deploy automated MCP server health monitoring
+
+**OWASP LLM Policy Ref**: Section 3.5 (LLM05 Controls)
+
+---
+
+#### 2.8.6 LLM06: Sensitive Information Disclosure
+
+**Vulnerability**: LLM inadvertently reveals confidential data from training data, prompts, or context.
+
+**Riksdagsmonitor Exposure**: 🟩 **LOW**
+
+**Attack Vectors**:
+1. **Prompt Leakage**: System instructions revealed in generated articles
+2. **Training Data Extraction**: Memorized personal data from Claude Opus 4.6 training
+3. **Context Window Leakage**: Previous conversation data exposed
+
+**Current Controls**: ✅ Implemented
+- Public data only (Swedish Riksdag open data)
+- No personal data collection
+- No sensitive credentials in prompts
+- Stateless workflows (no conversation history)
+- Human review before publication
+
+**Gaps**: ✅ None identified (public data platform)
+
+**Risk Score**: **0.8/10** (Low Likelihood: 10%, Medium Impact: 8)
+
+**Recommendations**: ✅ Adequate controls for public data platform
+
+**OWASP LLM Policy Ref**: Section 3.6 (LLM06 Controls)
+
+---
+
+#### 2.8.7 LLM07: Insecure Plugin Design
+
+**Vulnerability**: LLM plugins lack proper input validation, authorization, or access controls.
+
+**Riksdagsmonitor Exposure**: 🟨 **MEDIUM**
+
+**Attack Vectors**:
+1. **MCP Tool Abuse**: riksdag-regering-mcp server's 32 tools lack fine-grained authorization
+2. **Tool Injection**: Malicious tool parameters
+3. **Tool Chaining Attacks**: Combining tools for unintended effects
+
+**Current Controls**: ✅ Implemented
+- Network allowlist (riksdag-regering-mcp server only)
+- Tool input validation (riksdag-regering-mcp server-side)
+- Read-only data access (Riksdag API is public and read-only)
+- Human oversight (PR review)
+
+**Gaps**: ⚠️
+- No tool-level authorization (all 32 tools accessible)
+- No tool usage monitoring per workflow
+- No rate limiting per tool
+- No tool call audit logging
+
+**Risk Score**: **2.4/10** (Medium Likelihood: 30%, Medium Impact: 8)
+
+**Recommendations**:
+1. **Q1 2026**: Implement tool-level authorization (least privilege per workflow)
+2. **Q1 2026**: Add tool usage monitoring and alerting
+3. **Q2 2026**: Deploy tool call audit logging
+
+**OWASP LLM Policy Ref**: Section 3.7 (LLM07 Controls)
+
+---
+
+#### 2.8.8 LLM08: Excessive Agency
+
+**Vulnerability**: LLM system granted too much autonomy, enabling unintended actions or privilege escalation.
+
+**Riksdagsmonitor Exposure**: 🟩 **LOW**
+
+**Attack Vectors**:
+1. **Unauthorized PR Merging**: AI bypasses human review
+2. **Repository Modification**: Direct write access to main branch
+3. **Workflow Modification**: AI alters GitHub Actions workflows
+
+**Current Controls**: ✅ Implemented
+- Human-in-the-loop (mandatory PR review)
+- Read-only workflow permissions (contents:read, no write)
+- Branch protection rules (no direct commits to main)
+- No GitHub Actions write permissions
+- PR approval required before merge
+
+**Gaps**: ✅ None identified (strong human oversight)
+
+**Risk Score**: **0.5/10** (Very Low Likelihood: 5%, Low Impact: 10)
+
+**Recommendations**: ✅ Adequate controls in place
+
+**OWASP LLM Policy Ref**: Section 3.8 (LLM08 Controls)
+
+---
+
+#### 2.8.9 LLM09: Overreliance
+
+**Vulnerability**: Users or systems trust LLM outputs without verification, leading to misinformation or errors.
+
+**Riksdagsmonitor Exposure**: 🟧 **HIGH**
+
+**Attack Vectors**:
+1. **Hallucination Acceptance**: Reviewers approve fabricated Swedish Riksdag data
+2. **Factual Error Propagation**: Incorrect vote margins or party positions published
+3. **Bias Amplification**: Swedish party representation imbalances go unnoticed
+
+**Current Controls**: ✅ Implemented
+- Mandatory human review (PR approval process)
+- Source citation requirements (dok_id validation)
+- Fact-checking guidelines (PR review checklist)
+- Multi-language cross-validation (14 languages)
+
+**Gaps**: ⚠️
+- No formal reviewer training on LLM limitations
+- No hallucination detection tools
+- No automated fact-checking against Riksdag API
+- No bias metrics dashboard
+
+**Risk Score**: **3.2/10** (High Likelihood: 40%, Medium Impact: 8)
+
+**Recommendations**:
+1. **Immediate**: Develop reviewer training on LLM hallucination detection
+2. **Q1 2026**: Implement automated dok_id verification against data.riksdagen.se API
+3. **Q2 2026**: Deploy bias monitoring dashboard (party mention tracking)
+4. **Q2 2026**: Add cross-language consistency validation
+
+**OWASP LLM Policy Ref**: Section 3.9 (LLM09 Controls)
+
+---
+
+#### 2.8.10 LLM10: Model Theft
+
+**Vulnerability**: Attacker exfiltrates proprietary LLM model via API queries or unauthorized access.
+
+**Riksdagsmonitor Exposure**: 🟦 **NOT APPLICABLE**
+
+**Rationale**: Claude Opus 4.6 is a third-party API service (Anthropic). Hack23 does not host or own the model.
+
+**Vendor Risk Assessment**: ✅ Completed
+- Anthropic responsible for model security
+- No local model copies or fine-tuned versions
+- API access only (no model weights)
+
+**Residual Risk**: **Accepted** (Vendor dependency)
+
+**OWASP LLM Policy Ref**: Section 3.10 (LLM10 Controls - N/A for API-based models)
+
+---
+
+### 2.8.11 OWASP LLM Top 10 Risk Summary
+
+| OWASP LLM Vulnerability | Riksdagsmonitor Risk | Risk Score | Controls Status | Priority |
+|-------------------------|----------------------|------------|-----------------|----------|
+| **LLM01: Prompt Injection** | 🟨 MEDIUM | 2.8/10 | ⚠️ Partial | HIGH |
+| **LLM02: Insecure Output** | 🟩 LOW | 0.4/10 | ✅ Adequate | LOW |
+| **LLM03: Training Data Poisoning** | 🟦 N/A | N/A | ✅ Vendor | N/A |
+| **LLM04: Model DoS** | 🟨 MEDIUM | 2.1/10 | ⚠️ Partial | MEDIUM |
+| **LLM05: Supply Chain** | 🟨 MEDIUM | 2.4/10 | ⚠️ Partial | HIGH |
+| **LLM06: Info Disclosure** | 🟩 LOW | 0.8/10 | ✅ Adequate | LOW |
+| **LLM07: Insecure Plugin** | 🟨 MEDIUM | 2.4/10 | ⚠️ Partial | MEDIUM |
+| **LLM08: Excessive Agency** | 🟩 LOW | 0.5/10 | ✅ Adequate | LOW |
+| **LLM09: Overreliance** | 🟧 HIGH | 3.2/10 | ⚠️ Partial | **CRITICAL** |
+| **LLM10: Model Theft** | 🟦 N/A | N/A | ✅ Vendor | N/A |
+
+**Overall OWASP LLM Risk**: 🟨 **MEDIUM** (Average Risk Score: 1.8/10 across applicable vulnerabilities)
+
+**Highest Priority**: **LLM09 (Overreliance)** - Risk Score 3.2/10 - Requires immediate reviewer training and automated fact-checking
+
+**Compliance Status**: ⚠️ **PARTIAL** - 50% controls fully implemented, 50% gaps identified with Q1-Q2 2026 remediation plan
+
+---
+
 ## 3. 🌳 Attack Trees
 
 ### 3.1 Attack Goal: Deface Riksdags Monitor Website
