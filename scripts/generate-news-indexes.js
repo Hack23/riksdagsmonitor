@@ -688,7 +688,7 @@ ${generateHreflangTags()}
     "name": "${escapeHtml(lang.title)}",
     "description": "${escapedSubtitle}",
     "numberOfItems": ${displayArticles.length},
-    "itemListElement": [${displayArticles.map((article, index) => `
+    "itemListElement": [${displayArticles.slice(0, 10).map((article, index) => `
       {
         "@type": "ListItem",
         "position": ${index + 1},
