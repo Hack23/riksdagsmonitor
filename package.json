@@ -67,7 +67,7 @@
     "@eslint/js": "^10.0.1",
     "@vitest/coverage-v8": "^4.0.18",
     "@vitest/ui": "^4.0.18",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "globals": "^17.3.0",
     "happy-dom": "^20.6.1",
     "htmlhint": "^1.9.1",
