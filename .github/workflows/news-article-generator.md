@@ -668,62 +668,11 @@ fi
 
 **If validation fails**: GO BACK to Step 5.2 and translate the remaining articles. Do not skip this step. Do not proceed to Step 6.
 
-**English (en)**:
-```html
-<!-- BEFORE -->
-<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
-<!-- AFTER -->
-<h3>Better conditions for deploying government personnel abroad</h3>
+**Translation Examples**:
 
-<!-- BEFORE -->
-<h3><span data-translate="true" lang="sv">Ett register för alla bostadsrätter</span></h3>
-<!-- AFTER -->
-<h3>A registry for all housing cooperatives</h3>
+Use the before/after HTML translation examples described earlier in **Step 5.3** (lines 560-615). Apply those patterns to translate committee report titles and other Swedish content in non-Swedish language files.
 
-<!-- BEFORE -->
-<h3><span data-translate="true" lang="sv">Djurskydd</span></h3>
-<!-- AFTER -->
-<h3>Animal protection</h3>
-```
-
-**German (de)**:
-```html
-<!-- BEFORE -->
-<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
-<!-- AFTER -->
-<h3>Bessere Voraussetzungen für die Entsendung staatlichen Personals</h3>
-
-<!-- BEFORE -->
-<h3><span data-translate="true" lang="sv">Handelspolitik</span></h3>
-<!-- AFTER -->
-<h3>Handelspolitik</h3>
-```
-
-**French (fr)**:
-```html
-<!-- BEFORE -->
-<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
-<!-- AFTER -->
-<h3>Meilleures conditions pour le déploiement du personnel gouvernemental à l'étranger</h3>
-```
-
-**Arabic (ar)** - RTL direction:
-```html
-<!-- BEFORE -->
-<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
-<!-- AFTER -->
-<h3>ظروف أفضل لإرسال الموظفين الحكوميين إلى الخارج</h3>
-```
-
-**Japanese (ja)**:
-```html
-<!-- BEFORE -->
-<h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
-<!-- AFTER -->
-<h3>政府職員を海外に派遣するためのより良い条件</h3>
-```
-
-#### Translation Rules (Must Follow)
+#### Translation Validation (Must Run)
 
 After translating all articles, verify no Swedish markers remain:
 

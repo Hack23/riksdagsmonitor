@@ -135,6 +135,28 @@ describe('extract-vocabulary.js', () => {
       
       expect(output).toContain('"What to Watch": What to Watch This Week');
     });
+
+    it('should extract h3 titles with nested span tags', () => {
+      const content = `
+        <html><body>
+          <h3><span data-translate="true" lang="sv">Bättre förutsättningar att sända ut statlig personal</span></h3>
+          <h3>Plain text title</h3>
+          <h3><span class="highlight">Highlighted title</span></h3>
+          <strong>Committee:</strong> Test
+        </body></html>
+      `;
+      
+      writeFileSync(`${testDir}/test-en.html`, content);
+      
+      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+        encoding: 'utf-8'
+      });
+      
+      // Should extract clean text from all h3 tags
+      expect(output).toContain('Bättre förutsättningar att sända ut statlig personal');
+      expect(output).toContain('Plain text title');
+      expect(output).toContain('Highlighted title');
+    });
   });
 
   describe('CLI arguments', () => {

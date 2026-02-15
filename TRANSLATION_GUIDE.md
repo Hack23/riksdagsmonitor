@@ -375,7 +375,7 @@ grep -r 'data-translate="true"' news/*.html
 
 **Expected output if validation passes**:
 ```
-✓ Fully translated: 66
+✓ Fully translated: N (number of articles)
 ✅ ALL ARTICLES FULLY TRANSLATED
 ```
 

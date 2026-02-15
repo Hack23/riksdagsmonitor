@@ -14,7 +14,7 @@
  */
 
 import { readFileSync, readdirSync } from 'fs';
-import { basename } from 'path';
+import { basename, join } from 'path';
 
 const LANGUAGES = {
   en: 'English', sv: 'Swedish', da: 'Danish', no: 'Norwegian', fi: 'Finnish',
@@ -32,8 +32,16 @@ function extractTerms(content, lang) {
   const terms = {};
   
   // Extract titles (main political terminology)
-  const h3Matches = content.match(/<h3>([^<]+)<\/h3>/g) || [];
-  terms.titles = h3Matches.map(m => m.replace(/<\/?h3>/g, '').trim()).slice(0, 10);
+  // Handle both plain text and <span> wrapped titles
+  const h3Pattern = /<h3>(.*?)<\/h3>/g;
+  const h3Matches = [];
+  let h3Match;
+  while ((h3Match = h3Pattern.exec(content)) !== null) {
+    // Strip any inner tags (like <span>) to get clean text
+    const cleanText = h3Match[1].replace(/<[^>]+>/g, '').trim();
+    if (cleanText) h3Matches.push(cleanText);
+  }
+  terms.titles = h3Matches.slice(0, 10);
   
   // Extract "What to Watch" heading (any language) - structure-based
   const h2Pattern = /<h2[^>]*>([^<]+)<\/h2>/g;
@@ -113,7 +121,7 @@ function analyzeArticles(directory = 'news', datePrefix = null) {
       }
       
       try {
-        const content = readFileSync(`${directory}/${file}`, 'utf-8');
+        const content = readFileSync(join(directory, file), 'utf-8');
         const terms = extractTerms(content, lang);
         
         // Determine article type
@@ -223,7 +231,7 @@ for (let i = 0; i < args.length; i++) {
     i++;
   } else if (args[i] === '--help' || args[i] === '-h') {
     console.log(`
-Usage: node extract-vocabulary.js [options]
+Usage: node scripts/extract-vocabulary.js [options]
 
 Options:
   --date-prefix <prefix>   Filter files by date prefix (e.g., "2026-02-")
@@ -231,9 +239,9 @@ Options:
   --help, -h              Show this help message
 
 Examples:
-  node extract-vocabulary.js
-  node extract-vocabulary.js --date-prefix 2026-02-
-  node extract-vocabulary.js --directory news --date-prefix 2026-03-
+  node scripts/extract-vocabulary.js
+  node scripts/extract-vocabulary.js --date-prefix 2026-02-
+  node scripts/extract-vocabulary.js --directory news --date-prefix 2026-03-
 `);
     process.exit(0);
   }
