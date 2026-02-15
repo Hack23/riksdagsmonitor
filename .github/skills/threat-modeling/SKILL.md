@@ -1,6 +1,6 @@
 ---
 name: threat-modeling
-description: Systematic threat analysis using STRIDE, MITRE ATT&CK, attack trees, and risk-based security control validation
+description: Comprehensive Hack23 threat modeling process using STRIDE, MITRE ATT&CK, attack trees, and quantitative risk assessment per ISMS Threat_Modeling.md policy
 license: Apache-2.0
 ---
 
@@ -8,26 +8,73 @@ license: Apache-2.0
 
 ## Purpose
 
-This skill provides comprehensive threat modeling methodologies for proactive security threat identification, risk analysis, and control validation across all system types. Integrates STRIDE framework, MITRE ATT&CK, attack trees, and quantitative risk assessment.
+This skill embodies the complete Hack23 AB threat modeling methodology as defined in [ISMS Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md). It provides systematic threat identification, risk quantification, and security control validation for proactive security assurance across all Hack23 projects.
 
-## Core Principles
+**Key Philosophy**: "Security through transparency" - All threat models are publicly documented to demonstrate security excellence to clients, regulators, and the open-source community.
 
-### 1. Security by Design Through Threat Analysis
-- **Classification-Driven**: Align threat analysis with business impact classification
-- **STRIDE Framework**: Systematic threat categorization
-- **Defense-in-Depth**: Multi-layer security control verification
+## Hack23 Threat Modeling Process (ISMS § 4)
 
-### 2. Transparency Through Structured Analysis
-- **MITRE ATT&CK Integration**: Industry-standard threat intelligence
-- **Public Security Architecture**: Open threat model documentation
-- **Continuous Assessment**: Regular threat landscape evaluation
+Per [ISMS Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md), Hack23 employs a **five-strategy integrated approach**:
 
-### 3. Multi-Strategy Approach
-- **Attacker-Centric**: MITRE ATT&CK, attack trees, red team perspective
-- **Asset-Centric**: Critical asset protection, data flow mapping
-- **Architecture-Centric**: STRIDE per element, DFDs, trust boundaries
-- **Scenario-Centric**: Use case abuse, misuse cases
-- **Risk-Centric**: Quantitative risk, threat intelligence
+### 1. 🎯 Attacker-Centric (ISMS § 4.1)
+**MITRE ATT&CK Framework Integration**
+- Map attack tactics and techniques to system components
+- Identify threat agents (Nation-state APTs, Cybercriminals, Hacktivists, Malicious Insiders)
+- Analyze attack scenarios based on current threat intelligence (ENISA Threat Landscape 2024)
+- Red team perspective: "How would I compromise this system?"
+
+**Required Outputs:**
+- MITRE ATT&CK technique mapping per system component
+- Threat agent capability and motivation analysis
+- Attack scenario documentation
+
+### 2. 🏰 Asset-Centric (ISMS § 4.2)
+**Crown Jewel Protection**
+- Identify critical assets from Asset Register
+- Apply Data Classification Policy (Public, Internal, Confidential, Restricted)
+- Map data flows and asset dependencies
+- Prioritize threats by asset criticality
+
+**Required Outputs:**
+- Asset inventory with CIA triad classification
+- Data flow diagrams (DFDs) showing trust boundaries
+- Crown jewel identification and protection strategies
+
+### 3. 🏗️ Architecture-Centric (ISMS § 4.3)
+**STRIDE Per Element Analysis**
+- Apply STRIDE framework to each system component
+- Identify trust boundaries and crossing points
+- Analyze external entity, process, data store, data flow threats
+- Validate security controls per architectural layer
+
+**Required Outputs:**
+- Complete DFD with trust boundaries
+- STRIDE threat enumeration per DFD element
+- Control gap identification
+
+### 4. 📖 Scenario-Centric (ISMS § 4.4)
+**Use Case Abuse Modeling**
+- Develop misuse cases from legitimate use cases
+- Model attacker goals and sub-goals
+- Identify abuse scenarios specific to business logic
+- Analyze social engineering attack paths
+
+**Required Outputs:**
+- Misuse case diagrams
+- Business logic abuse scenarios
+- Social engineering attack paths
+
+### 5. 📊 Risk-Centric (ISMS § 4.5)
+**Quantitative Risk Assessment**
+- Calculate risk scores: **Risk = Likelihood × Impact**
+- Use Classification Framework for impact scoring
+- Apply risk matrix for prioritization
+- Document risk treatment decisions (Avoid, Mitigate, Transfer, Accept)
+
+**Required Outputs:**
+- Quantitative risk scores per threat
+- Risk matrix visualization
+- Risk treatment plan with ownership
 
 ## Security Foundations
 
@@ -130,31 +177,61 @@ This skill provides comprehensive threat modeling methodologies for proactive se
 | **6** | Information Manipulation | Competitive advantage | Medium |
 | **7** | Supply Chain Attacks | Partnership value | High |
 
-## Attack Tree Analysis
+## Attack Tree Analysis (ISMS § 4.6)
+
+Attack trees are **mandatory** for all Hack23 threat models per ISMS policy. They provide:
 
 ### Purpose
-Graphical decomposition of attack paths showing AND/OR relationships between attack steps.
+- Visual decomposition of attack paths from goal to sub-goals
+- AND/OR relationship mapping between attack steps
+- Success probability calculation for attack paths
+- Critical path identification for mitigation prioritization
 
-### Attack Tree Elements
-- **Root Node**: Attack goal
-- **AND Nodes**: All child attacks must succeed
-- **OR Nodes**: Any child attack can succeed
-- **Leaf Nodes**: Individual attack steps with success likelihood
+### Attack Tree Structure
 
-### Example: Web Application Compromise
 ```
-Root: Compromise Web Application
-├── OR: Exploit Application Vulnerability
-│   ├── AND: SQL Injection
-│   │   ├── Find SQL injection point
-│   │   └── Bypass input validation
-│   └── AND: XSS Attack
-│       ├── Inject malicious script
-│       └── Trick user into clicking
-└── OR: Compromise Credentials
-    ├── Phishing attack
-    └── Brute force login
+Root: Attack Goal (e.g., "Compromise Application")
+├── OR Gate: Any child succeeds → parent succeeds
+│   ├── AND Gate: All children must succeed → parent succeeds
+│   │   ├── Leaf: Individual attack step (Likelihood: 40%, Impact: High)
+│   │   └── Leaf: Individual attack step (Likelihood: 60%, Impact: Medium)
+│   └── AND Gate: Alternative attack path
+│       ├── Leaf: Attack step 1
+│       └── Leaf: Attack step 2
+└── OR Gate: Second major attack vector
+    └── Leaf: Direct attack
 ```
+
+### Example: Static Website Compromise (from Riksdagsmonitor)
+```
+Root: Compromise Riksdagsmonitor Platform
+├── OR: Infrastructure Attack
+│   ├── AND: DNS Hijacking
+│   │   ├── Compromise Route 53 credentials (Likelihood: 10%, Impact: Critical)
+│   │   └── Modify DNS records (Likelihood: 95%, Impact: Critical)
+│   └── AND: S3 Bucket Compromise
+│       ├── Find misconfigured bucket (Likelihood: 5%, Impact: High)
+│       └── Upload malicious content (Likelihood: 90%, Impact: High)
+└── OR: Supply Chain Attack
+    ├── AND: Compromise GitHub Account
+    │   ├── Steal developer credentials (Likelihood: 15%, Impact: Critical)
+    │   └── Bypass MFA (Likelihood: 20%, Impact: Critical)
+    └── AND: Malicious Dependency Injection
+        ├── Compromise npm package (Likelihood: 5%, Impact: High)
+        └── Inject malicious code (Likelihood: 80%, Impact: Critical)
+```
+
+### Attack Tree Analysis Steps
+1. **Goal Identification**: Define attacker objectives
+2. **Path Decomposition**: Break down into AND/OR sub-goals
+3. **Leaf Node Likelihood**: Assign success probability (1-100%)
+4. **Impact Assessment**: Use Classification Framework
+5. **Path Calculation**: Calculate cumulative success likelihood
+6. **Critical Path**: Identify highest risk paths
+7. **Mitigation Priority**: Focus on high-likelihood, high-impact leaves
+
+### Integration with STRIDE
+Each STRIDE threat should have corresponding attack tree showing exploitation paths.
 
 ## Data Flow Diagrams (DFD)
 
@@ -255,85 +332,484 @@ Every repository **MUST** maintain **THREAT_MODEL.md** with:
 - Medium-term enhancements (3-12 months)
 - Long-term roadmap (12+ months)
 
-## Threat Modeling Workflow
+## Threat Modeling Workflow (ISMS § 6)
 
-### 1. Planning Phase
-- [ ] Define scope and objectives
-- [ ] Identify stakeholders
-- [ ] Select modeling strategies
-- [ ] Schedule threat modeling session
+Follow this structured 7-phase process for all Hack23 threat models:
 
-### 2. Data Collection
-- [ ] Review architecture documentation
-- [ ] Create/update Data Flow Diagrams
-- [ ] Identify assets and classifications
-- [ ] Map trust boundaries
+### Phase 1: Planning (Week 1)
+- [ ] Define scope (What systems/components are in scope?)
+- [ ] Identify stakeholders (Who needs to be involved?)
+- [ ] Select modeling strategies (Which of 5 strategies apply?)
+- [ ] Schedule threat modeling session (2-4 hours for initial, 1-2 hours for updates)
+- [ ] Gather prerequisites (Architecture diagrams, Asset Register, Classification Framework)
 
-### 3. Threat Identification
-- [ ] Apply STRIDE per element
-- [ ] Map MITRE ATT&CK tactics
-- [ ] Develop attack trees
-- [ ] Brainstorm attack scenarios
+### Phase 2: Data Collection (Week 1-2)
+- [ ] Review architecture documentation (ARCHITECTURE.md, SECURITY_ARCHITECTURE.md)
+- [ ] Create/update Data Flow Diagrams (DFDs) with trust boundaries
+- [ ] Identify assets and apply classifications (per Classification Framework)
+- [ ] Map data flows and external dependencies
+- [ ] Document system components and interfaces
 
-### 4. Risk Assessment
-- [ ] Calculate likelihood and impact
-- [ ] Assign risk scores
-- [ ] Prioritize threats
-- [ ] Identify critical paths
+### Phase 3: Threat Identification (Week 2-3)
+- [ ] Apply STRIDE per DFD element (External Entity, Process, Data Store, Data Flow)
+- [ ] Map MITRE ATT&CK tactics to system components
+- [ ] Develop attack trees for major threat scenarios (minimum 3-5)
+- [ ] Brainstorm attack scenarios (misuse cases, business logic abuse)
+- [ ] Identify threat agents and capabilities
 
-### 5. Mitigation Planning
-- [ ] Review existing controls
+### Phase 4: Risk Assessment (Week 3)
+- [ ] Calculate likelihood per threat (1-5 scale per ISMS § 3.5.1)
+- [ ] Calculate impact per threat (1-5 scale per Classification Framework)
+- [ ] Compute risk scores (Risk = Likelihood × Impact)
+- [ ] Plot risks on risk matrix
+- [ ] Identify critical attack paths in attack trees
+- [ ] Prioritize threats by risk score
+
+### Phase 5: Mitigation Planning (Week 3-4)
+- [ ] Review existing controls from SECURITY_ARCHITECTURE.md
+- [ ] Assess control effectiveness against identified threats
 - [ ] Identify control gaps
-- [ ] Recommend new controls
-- [ ] Document risk treatment
+- [ ] Recommend new controls (prioritized by risk reduction)
+- [ ] Document risk treatment decisions (Avoid, Mitigate, Transfer, Accept)
+- [ ] Assign risk owners
 
-### 6. Documentation
-- [ ] Update THREAT_MODEL.md
-- [ ] Update SECURITY_ARCHITECTURE.md
-- [ ] Update Risk Register
-- [ ] Create action items
+### Phase 6: Documentation (Week 4)
+- [ ] Create/update THREAT_MODEL.md per mandatory structure (§ 5)
+- [ ] Update SECURITY_ARCHITECTURE.md with new controls
+- [ ] Update Risk_Register.md in ISMS repository
+- [ ] Cross-reference documents (Related Documents section)
+- [ ] Add Mermaid diagrams with ISMS color palette
+- [ ] Include business value quantification
 
-### 7. Review & Update
-- [ ] Quarterly threat landscape review
-- [ ] Post-incident threat model update
-- [ ] Architecture change triggers
-- [ ] Annual comprehensive review
+### Phase 7: Review & Continuous Improvement (Ongoing)
+- [ ] CEO approval (James Pether Sörling)
+- [ ] Quarterly threat landscape review (ENISA, MITRE ATT&CK updates)
+- [ ] Post-incident threat model update (within 1 week of incidents)
+- [ ] Architecture change triggers (new components, trust boundaries)
+- [ ] Annual comprehensive review (full STRIDE re-analysis)
+- [ ] Lessons learned integration
 
-## Integration with ISMS
+## Best Practices & Quality Standards
 
-### Access Control Policy
-- Authentication threats → MFA implementation
-- Authorization threats → RBAC design
-- Credential threats → Password policies
+### ✅ Do's
+1. **Start Early**: Threat model during design phase, not after implementation
+2. **Use All 5 Strategies**: Attacker, Asset, Architecture, Scenario, Risk-centric
+3. **Quantify Risk**: Use likelihood × impact matrix, not just qualitative assessment
+4. **Document Visually**: Mermaid DFDs, attack trees, risk matrices
+5. **Link Everything**: Cross-reference SECURITY_ARCHITECTURE.md, Risk_Register.md
+6. **Business Value**: Quantify cost avoidance, competitive advantage
+7. **Public Transparency**: All threat models public (security through transparency)
+8. **Continuous Updates**: Threat landscape evolves, models must too
+9. **Attack Trees Mandatory**: Minimum 3-5 trees per ISMS § 4.6
+10. **MITRE ATT&CK Required**: Map tactics/techniques per ISMS § 4.6
 
-### Secure Development Policy
-- Application threats → SAST/DAST requirements
-- Supply chain threats → Dependency scanning
-- Code injection threats → Secure coding standards
+### ❌ Don'ts
+1. **Skip Attack Trees**: ISMS § 4.6 requires attack tree analysis
+2. **Generic Threats**: Customize to actual system architecture
+3. **Ignore Low Risks**: Document all risks, even accepted ones
+4. **One-Time Activity**: Threat modeling is continuous, not one-and-done
+5. **Missing Controls**: Every threat needs control or risk acceptance
+6. **No Quantification**: Risk scores required, not just High/Medium/Low
+7. **Siloed Analysis**: Integrate with ISMS policies (Access Control, Crypto, Network)
+8. **Forget Business Value**: Security is business enabler, quantify benefits
+9. **Incomplete Documentation**: Follow mandatory structure § 5 completely
+10. **No CEO Approval**: All threat models require CEO sign-off
 
-### Incident Response Plan
-- Detection requirements → SIEM configuration
-- Response procedures → Playbook development
-- Recovery objectives → RTO/RPO alignment
+## Integration with Hack23 ISMS
 
-### Business Continuity Plan
-- Availability threats → Redundancy design
-- Disaster scenarios → DR procedures
-- Service criticality → Priority ranking
+### Required Policy Cross-References
+Every THREAT_MODEL.md must reference and align with:
 
-## Example Implementations
+1. **[Information_Security_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md)**
+   - Overall security governance framework
+   - Management commitment to security
 
-### Static Website (Riksdagsmonitor)
-- [THREAT_MODEL.md](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md) - Static site threat analysis
-- [SECURITY_ARCHITECTURE.md](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md) - Controls implementation
+2. **[Access_Control_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md)**
+   - Authentication threats → MFA requirements
+   - Authorization threats → RBAC design
+   - Credential threats → Password policies
 
-### Web Application (CIA)
-- [THREAT_MODEL.md](https://github.com/Hack23/cia/blob/master/THREAT_MODEL.md) - Full application threat model
-- [SECURITY_ARCHITECTURE.md](https://github.com/Hack23/cia/blob/master/SECURITY_ARCHITECTURE.md) - Defense-in-depth architecture
+3. **[Data_Classification_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Data_Classification_Policy.md)**
+   - Asset classification (Public, Internal, Confidential, Restricted)
+   - Data handling requirements per classification
+   - Information disclosure threat impact assessment
 
-### Gaming Application (Black Trigram)
-- [THREAT_MODEL.md](https://github.com/Hack23/blacktrigram/blob/main/THREAT_MODEL.md) - Gaming-specific threats
-- [SECURITY_ARCHITECTURE.md](https://github.com/Hack23/blacktrigram/blob/main/SECURITY_ARCHITECTURE.md) - Frontend security
+4. **[Network_Security_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Network_Security_Policy.md)**
+   - Network-based threats and controls
+   - Zero-trust architecture requirements
+   - TLS 1.3 enforcement
+
+5. **[Cryptography_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md)**
+   - Encryption requirements for data in transit/rest
+   - Key management threats
+   - Cryptographic algorithm standards
+
+6. **[Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)**
+   - Application security threats → SAST/DAST requirements
+   - Supply chain threats → Dependency scanning (Dependabot, FOSSA)
+   - Code injection threats → Secure coding standards
+   - Security architecture documentation requirements
+
+7. **[Vulnerability_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md)**
+   - Vulnerability scanning requirements (SonarCloud, Trivy, OWASP ZAP)
+   - Remediation SLAs per severity
+   - Patch management process
+
+8. **[Incident_Response_Plan.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md)**
+   - Detection requirements → SIEM/monitoring configuration
+   - Response procedures → Playbook development
+   - Recovery objectives → RTO/RPO alignment
+
+9. **[Business_Continuity_Plan.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Business_Continuity_Plan.md)**
+   - Availability threats → Redundancy design
+   - Disaster scenarios → DR procedures
+   - Service criticality → Priority ranking
+
+10. **[CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)**
+    - CIA triad definitions (Confidentiality, Integrity, Availability)
+    - RTO/RPO classifications for availability impact
+    - Business impact analysis for risk quantification
+
+11. **[Risk_Register.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Register.md)**
+    - Enterprise-wide risk tracking
+    - Risk treatment decisions
+    - Risk ownership and accountability
+
+### Compliance Framework Mapping
+Map all threats and controls to:
+
+**ISO 27001:2022 Annex A Controls:**
+- A.5.7: Threat Intelligence
+- A.8.1-8.34: Technology Controls (per threat category)
+- A.5.12: Classification of Information
+- A.5.24: Information Security Risk Assessment
+- A.5.25: Information Security Risk Treatment
+
+**NIST CSF 2.0 Functions:**
+- **ID**: Asset identification, threat intelligence
+- **PR**: Security architecture, access control
+- **DE**: Monitoring, anomaly detection
+- **RS**: Incident response, communications
+- **RC**: Recovery planning, improvements
+
+**CIS Controls v8.1:**
+- Control 1: Inventory and Control of Enterprise Assets
+- Control 4: Secure Configuration of Enterprise Assets
+- Control 5: Account Management
+- Control 10: Malware Defenses
+- Control 13: Network Monitoring and Defense
+- Control 16: Application Software Security
+
+### AWS Well-Architected Framework (for AWS projects)
+- **Security Pillar**: Identity, detective controls, infrastructure protection
+- **Reliability Pillar**: Fault isolation, DR planning
+- **Performance Efficiency**: Monitoring, selection
+
+## Mermaid Diagram Standards for Threat Models
+
+Use ISMS color palette (per STYLE_GUIDE.md v2.3):
+
+### Classification Colors
+```yaml
+Critical/Extreme:  #D32F2F  # Red
+High/Very High:    #FF9800  # Orange  
+Medium/Moderate:   #FFC107  # Amber
+Low/Standard:      #4CAF50  # Green
+Public/Minimal:    #9E9E9E  # Grey
+```
+
+### Trust Boundary Colors
+```yaml
+External (Untrusted):  #D32F2F  # Red
+DMZ (Partially Trusted): #FF9800  # Orange
+Internal (Trusted):    #4CAF50  # Green
+Secure (Highly Trusted): #2196F3  # Blue
+```
+
+### Example DFD with Trust Boundaries
+```mermaid
+graph TB
+    User[End Users<br/>🌐 External] 
+    CDN[CloudFront CDN<br/>🔒 Edge Security]
+    S3[S3 Buckets<br/>💾 Static Content]
+    GitHub[GitHub Actions<br/>⚙️ CI/CD]
+    
+    User -->|HTTPS TLS 1.3| CDN
+    CDN -->|Serves| S3
+    GitHub -->|Deploy OIDC| S3
+    
+    subgraph External["🔴 Untrusted Zone"]
+        User
+    end
+    
+    subgraph Edge["🟠 Edge Security Zone"]
+        CDN
+    end
+    
+    subgraph Internal["🟢 Trusted AWS Zone"]
+        S3
+        GitHub
+    end
+    
+    style User fill:#D32F2F,color:#fff
+    style CDN fill:#FF9800,color:#000
+    style S3 fill:#4CAF50,color:#000
+    style GitHub fill:#4CAF50,color:#000
+```
+
+## Remember: Hack23 Threat Modeling Philosophy
+
+1. **🔍 Proactive Not Reactive**: Identify threats before they materialize
+2. **🏰 Defense in Depth**: Multiple security layers reduce single point of failure
+3. **📊 Risk-Based Prioritization**: Focus resources on high-impact threats first
+4. **🔄 Continuous Process**: Threat landscape evolves, models must evolve too
+5. **📝 Documentation Essential**: THREAT_MODEL.md is mandatory, not optional
+6. **🔗 Integration Critical**: Align with all ISMS policies for consistency
+7. **🌟 Transparency Advantage**: Public threat models demonstrate security expertise
+8. **💹 Quantitative Assessment**: Numbers drive decisions, not gut feelings
+9. **🎯 Business Value**: Security enables business, quantify the benefits
+10. **✅ CEO Accountability**: James Pether Sörling approves all threat models
+
+**"Security through transparency" - Hack23 AB**
+
+## Hack23 Threat Model Examples
+
+Per ISMS Threat_Modeling.md § 7, all Hack23 projects maintain comprehensive threat models demonstrating security excellence through transparency.
+
+### 1. 🏛️ Citizen Intelligence Agency (CIA)
+**Repository**: [Hack23/cia](https://github.com/Hack23/cia)  
+**Threat Model**: [THREAT_MODEL.md](https://github.com/Hack23/cia/blob/master/THREAT_MODEL.md)  
+**Architecture**: Full-stack web application (Java/Spring Boot + PostgreSQL + AWS)
+
+**Key Characteristics:**
+- **System Type**: Multi-tier web application with database and external integrations
+- **Data Classification**: Public (parliamentary data) + Internal (system credentials)
+- **Threats**: STRIDE analysis across 6 layers (Frontend, Backend, Database, AWS, CI/CD, Supply Chain)
+- **MITRE ATT&CK**: 14 tactics mapped with 40+ techniques
+- **Attack Trees**: 8 comprehensive trees for major attack scenarios
+- **Risk Level**: MEDIUM (6.5/10.0) after controls, 92.3% risk reduction
+- **Controls**: Defense-in-depth with AWS Well-Architected Framework alignment
+
+**Notable Sections:**
+- Comprehensive DFD with 5 trust boundaries
+- Quantitative risk matrix (Likelihood × Impact)
+- PostgreSQL-specific tampering and DoS threats
+- Supply chain attack trees (npm, Maven dependencies)
+- Detailed MITRE ATT&CK technique mapping per component
+- Business value integration (€200K+ cost avoidance through proactive security)
+
+**Use CIA as reference for:**
+- Multi-tier application threat modeling
+- Database security threat analysis
+- Complex supply chain threat modeling
+- Comprehensive MITRE ATT&CK integration
+
+### 2. 🎮 Black Trigram (흑괘)
+**Repository**: [Hack23/blacktrigram](https://github.com/Hack23/blacktrigram)  
+**Threat Model**: [THREAT_MODEL.md](https://github.com/Hack23/blacktrigram/blob/main/THREAT_MODEL.md)  
+**Architecture**: Frontend-only gaming application (React + Vite + Phaser.js)
+
+**Key Characteristics:**
+- **System Type**: Client-side gaming application with no backend
+- **Data Classification**: Public (game content) + Internal (GitHub credentials)
+- **Threats**: STRIDE analysis focused on frontend, CI/CD, and CDN
+- **MITRE ATT&CK**: 12 tactics with gaming-specific techniques
+- **Attack Trees**: 6 trees covering game hacking, cheating, and infrastructure
+- **Risk Level**: LOW (4.2/10.0) after controls, 95.8% risk reduction
+- **Controls**: CSP, SRI, no sensitive data storage, immutable game state
+
+**Notable Sections:**
+- Game-specific threats (cheating, save game manipulation, asset theft)
+- Client-side security analysis (XSS, prototype pollution, memory manipulation)
+- React and Vite supply chain risks
+- Browser-based attack scenarios
+- Phaser.js framework-specific vulnerabilities
+
+**Use Black Trigram as reference for:**
+- Frontend-only application threat modeling
+- Gaming application security analysis
+- Client-side attack scenarios
+- No-backend architecture threats
+
+### 3. 🗳️ Riksdagsmonitor (Current Project)
+**Repository**: [Hack23/riksdagsmonitor](https://github.com/Hack23/riksdagsmonitor)  
+**Threat Model**: [THREAT_MODEL.md](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md)  
+**Architecture**: Static HTML/CSS website with Chart.js/D3.js dashboards + AWS CloudFront CDN
+
+**Key Characteristics:**
+- **System Type**: Static website with interactive JavaScript dashboards
+- **Data Classification**: Public (all content, Swedish Parliament data)
+- **Threats**: STRIDE analysis for static hosting, CDN, and external data links
+- **MITRE ATT&CK**: 11 tactics focusing on infrastructure and supply chain
+- **Attack Trees**: Required expansion per this issue
+- **Risk Level**: LOW (5.52/10.0) after controls, 99.7% risk reduction
+- **Controls**: HTTPS-only, CSP, SRI, GitHub Pages DR, CloudFront distribution
+
+**Notable Sections:**
+- Static site-specific threats (domain hijacking, CDN compromise, typosquatting)
+- Multi-language website security (14 languages)
+- Chart.js/D3.js dashboard vulnerabilities
+- CSV data integrity threats (CIA platform data)
+- AWS CloudFront and S3 infrastructure threats
+- Agentic workflow threats (Claude Opus 4.6 news generation)
+
+**Use Riksdagsmonitor as reference for:**
+- Static website threat modeling
+- CDN security analysis
+- Multi-language site threats
+- Data visualization security
+- AI agentic workflow security
+
+### 4. 📊 CIA Compliance Manager
+**Repository**: [Hack23/cia-compliance-manager](https://github.com/Hack23/cia-compliance-manager) (referenced in ISMS policy)  
+**Threat Model**: [THREAT_MODEL.md](https://github.com/Hack23/cia-compliance-manager/blob/main/THREAT_MODEL.md)  
+**Architecture**: Static HTML/CSS compliance dashboard
+
+**Key Characteristics:**
+- **System Type**: Static compliance visualization platform
+- **Data Classification**: Public (compliance frameworks) + Internal (API tokens)
+- **Threats**: Similar to riksdagsmonitor but focused on compliance data integrity
+- **Risk Level**: LOW (targeted at auditors and compliance teams)
+- **Controls**: Read-only public data, no user authentication
+
+**Use CIA Compliance Manager as reference for:**
+- Compliance dashboard threat modeling
+- Read-only platform security
+- Framework mapping security
+
+## Mandatory THREAT_MODEL.md Structure (ISMS § 5)
+
+Every Hack23 project repository **MUST** include **THREAT_MODEL.md** with this structure:
+
+### 1. Header Section (per STYLE_GUIDE.md v2.3)
+```markdown
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">🎯 [Project Name] — Threat Model</h1>
+
+<p align="center">
+  <strong>🛡️ Proactive Security Through Structured Threat Analysis</strong><br>
+  <em>🔍 STRIDE • MITRE ATT&CK • [Architecture Type] • [Key Security Focus]</em>
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-YYYY--MM--DD-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** YYYY-MM-DD (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** YYYY-MM-DD  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+```
+
+### 2. CEO Purpose Statement
+Quote from CEO James Pether Sörling connecting threat modeling to Hack23's transparency and security excellence principles:
+
+> *"At Hack23, we believe that true security comes through transparency and demonstrable practices. This threat model is publicly available to showcase our proactive security posture, allowing clients and stakeholders to verify our commitment to security excellence. By openly documenting our threat analysis, we demonstrate not just what we protect, but how we protect it."*
+
+### 3. Executive Summary
+- High-level threat overview
+- Key risk metrics (High/Medium/Low threat counts)
+- Residual risk level
+- Major findings and recommendations
+
+### 4. System Boundary and Assets (ISMS § 5.1)
+- **System Components**: Mermaid diagram showing architecture with trust boundaries
+- **Assets**: Table with Asset, Type, Classification (per Classification Framework), Value
+- **Trust Boundaries**: List all trust boundary crossings
+
+### 5. STRIDE Threat Analysis (ISMS § 5.2)
+For each STRIDE category (Spoofing, Tampering, Repudiation, Information Disclosure, DoS, Elevation of Privilege):
+- **Threat Description**: What the threat is
+- **Attack Vector**: How it's exploited
+- **Likelihood**: Low/Medium/High/Critical (1-5 score)
+- **Impact**: Based on Classification Framework (1-5 score)
+- **Risk Score**: Likelihood × Impact
+- **Current Controls**: Existing mitigations
+- **Residual Risk**: After controls
+- **Recommendations**: Additional mitigations needed
+
+### 6. Attack Tree Analysis (ISMS § 5.3) - **MANDATORY**
+Minimum 3-5 attack trees showing major attack scenarios:
+- Root goal (e.g., "Compromise Application")
+- AND/OR gate structure
+- Leaf nodes with success likelihood
+- Visual representation in Mermaid or text format
+- Critical path identification
+
+### 7. MITRE ATT&CK Mapping (ISMS § 5.4) - **MANDATORY**
+Map applicable tactics and techniques:
+- **Tactic**: MITRE ATT&CK tactic (e.g., Initial Access, Execution)
+- **Technique**: Specific technique ID (e.g., T1566 - Phishing)
+- **Sub-Technique**: If applicable
+- **System Component**: Where it applies
+- **Detection**: How to detect
+- **Mitigation**: How to prevent
+
+### 8. Risk Assessment Summary (ISMS § 5.5)
+- **Risk Matrix**: Visual Likelihood × Impact matrix
+- **Risk Distribution**: Count of Critical/High/Medium/Low risks
+- **Risk Treatment Decisions**: Per threat (Avoid, Mitigate, Transfer, Accept)
+- **Residual Risk Justification**: Why remaining risk is acceptable
+
+### 9. Security Controls (ISMS § 5.6)
+Reference **SECURITY_ARCHITECTURE.md** with:
+- Control categories (Preventive, Detective, Corrective)
+- Implementation status
+- Control effectiveness rating
+- Control gaps and roadmap
+
+### 10. Business Value Integration (ISMS § 5.7) - **REQUIRED**
+Quantify security business value:
+- 🏆 **Competitive Advantage**: Market differentiation through transparent security
+- 🤝 **Customer Trust**: Demonstrable security posture
+- 💰 **Cost Avoidance**: Prevented incident costs (quantify)
+- 🔄 **Operational Excellence**: Reduced security overhead
+- 💡 **Innovation Enablement**: Secure experimentation
+- 🛡️ **Risk Reduction**: Quantitative risk reduction percentage
+
+### 11. Compliance Mapping (ISMS § 5.8)
+Map threats and controls to:
+- **ISO 27001:2022**: Relevant Annex A controls
+- **NIST CSF 2.0**: Functions and categories
+- **CIS Controls v8.1**: Applicable controls
+- **AWS Well-Architected**: For AWS projects
+
+### 12. Related Documents (ISMS § 5.9)
+```markdown
+## 📚 Related Documents
+
+- [🏛️ Architecture](./ARCHITECTURE.md) - System architecture with C4 models
+- [🔐 Security Architecture](./SECURITY_ARCHITECTURE.md) - Security controls implementation
+- [📊 Data Model](./DATA_MODEL.md) - Data entities and relationships
+- [🔄 Workflows](./WORKFLOWS.md) - CI/CD security workflows
+- [📋 ISMS Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) - Comprehensive methodology
+- [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) - Business impact analysis
+- [📉 Risk Register](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Register.md) - Enterprise risk management
+- [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - SDLC security requirements
+
+**Reference Implementations:**
+- [🏛️ CIA Threat Model](https://github.com/Hack23/cia/blob/master/THREAT_MODEL.md) - Full-stack web application
+- [🎮 Black Trigram Threat Model](https://github.com/Hack23/blacktrigram/blob/main/THREAT_MODEL.md) - Frontend gaming application
+- [📊 CIA Compliance Manager](https://github.com/Hack23/cia-compliance-manager/blob/main/THREAT_MODEL.md) - Compliance dashboard
+```
+
+### 13. Document Control Footer (ISMS § 5.10)
+```markdown
+---
+
+**📋 Document Control:**  
+**✅ Approved by:** James Pether Sörling, CEO  
+**📤 Distribution:** Public  
+**🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
+**📅 Effective Date:** YYYY-MM-DD  
+**⏰ Next Review:** YYYY-MM-DD  
+**🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+```
 
 ## References
 
