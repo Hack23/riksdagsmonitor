@@ -1955,15 +1955,6 @@ Following [Hack23 Threat Modeling Policy § 6.7](https://github.com/Hack23/ISMS-
 | **CVE Database (NVD)** | Vulnerability disclosures | Daily | Dependabot + manual review | Free |
 | **Swedish CERT-SE** | National threat intelligence | Ad-hoc | Email alerts | Free |
 
-### **Threat Model Versioning**
-
-| Version | Date | Major Changes | Rationale |
-|---------|------|--------------|-----------|
-| **2.0** | 2026-02-15 | Complete rewrite to Hack23 thematic structure; OWASP LLM Top 10; AI Model Card; domain-specific sections | CEO directive for ISMS compliance alignment |
-| **1.2** | 2026-02-10 (deprecated) | Added AI-specific threats (18 threats) for Claude Opus 4.6 workflows | AI workflow deployment |
-| **1.1** | 2025-11-20 (deprecated) | Added Chart.js/D3.js dashboard threats | Dashboard feature launch |
-| **1.0** | 2025-09-15 (deprecated) | Initial threat model (numbered sections - incorrect structure) | Initial documentation |
-
 **Next Review:** 2026-05-15 (Quarterly schedule)
 
 ---
@@ -2444,7 +2435,7 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 ## 📋 Document Control
 
 **📋 Document Owner:** James Pether Sörling, CEO & CISO  
-**📄 Version:** 2.0  
+**📄 Version:** 1.0  
 **📅 Last Updated:** 2026-02-15 (UTC)  
 **✅ Approved by:** James Pether Sörling, CEO  
 **🔄 Review Cycle:** Quarterly (Feb, May, Aug, Nov)  
@@ -2452,15 +2443,6 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
-
-### **Version History**
-
-| Version | Date | Author | Major Changes | Approval |
-|---------|------|--------|--------------|----------|
-| **2.0** | 2026-02-15 | James Pether Sörling (CEO) | **Complete rewrite:** Hack23 thematic emoji sections (19 total); OWASP LLM Top 10 comprehensive analysis; AI Model Card for Claude Opus 4.6; Democratic Threat Catalog Framework; Frontend-Specific Security Architecture; STRIDE per DFD element integration; Attack trees embedded in scenarios; Control effectiveness scoring; Threat agent profiles; Quantitative risk analysis with business value ($180K annual cost avoidance) | ✅ **CEO Approved** |
-| **1.2** | 2026-02-10 | Security Team | Added AI-specific threats (18 threats) for Claude Opus 4.6 agentic workflows | ✅ CEO Approved |
-| **1.1** | 2025-11-20 | Security Team | Added Chart.js/D3.js dashboard threats | ✅ CEO Approved |
-| **1.0** | 2025-09-15 | Security Team | Initial threat model (numbered sections - incorrect structure) | ✅ CEO Approved |
 
 ### **Framework Compliance**
 
