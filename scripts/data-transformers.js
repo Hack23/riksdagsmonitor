@@ -559,8 +559,13 @@ function generateWeekAheadContent(data, lang) {
       const eventTime = event.time || event.tid || 'Expected';
       const eventTitle = event.title || event.titel || 'Event';
       
+      // Mark Swedish API titles for LLM translation post-processing
+      const titleHtml = (event.titel && !event.title) 
+        ? `<span data-translate="true" lang="sv">${eventTitle}</span>` 
+        : eventTitle;
+      
       content += `
-    <h3>${dayName ? dayName + ' - ' : ''}${eventTitle}</h3>
+    <h3>${dayName ? dayName + ' - ' : ''}${titleHtml}</h3>
     <p>${event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`}</p>
 `;
     });
@@ -610,11 +615,20 @@ function generateCommitteeContent(data, lang) {
   }
   
   reports.forEach(report => {
+    // Mark Swedish API titles/summaries for LLM translation post-processing
+    const titleText = report.titel || report.title || '';
+    const titleHtml = `<span data-translate="true" lang="sv">${titleText}</span>`;
+    const docName = report.dokumentnamn || report.dok_id || titleText;
+    const summaryText = report.summary || '';
+    const summaryHtml = summaryText 
+      ? `<span data-translate="true" lang="sv">${summaryText}</span>` 
+      : L(lang, 'reportDefault');
+    
     content += `
-    <h3>${report.titel || report.title}</h3>
+    <h3>${titleHtml}</h3>
     <p><strong>${L(lang, 'committee')}:</strong> ${report.organ}</p>
-    <p><strong>${L(lang, 'document')}:</strong> <a href="${report.url}" class="document-link" rel="noopener noreferrer">${report.dokumentnamn}</a></p>
-    <p>${report.summary || L(lang, 'reportDefault')}</p>
+    <p><strong>${L(lang, 'document')}:</strong> <a href="${report.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
+    <p>${summaryHtml}</p>
 `;
   });
   
@@ -635,10 +649,19 @@ function generatePropositionsContent(data, lang) {
   }
   
   propositions.forEach(prop => {
+    // Mark Swedish API titles/summaries for LLM translation post-processing
+    const titleText = prop.titel || prop.title || '';
+    const titleHtml = `<span data-translate="true" lang="sv">${titleText}</span>`;
+    const docName = prop.dokumentnamn || prop.dok_id || titleText;
+    const summaryText = prop.summary || '';
+    const summaryHtml = summaryText 
+      ? `<span data-translate="true" lang="sv">${summaryText}</span>` 
+      : L(lang, 'propDefault');
+    
     content += `
-    <h3>${prop.titel || prop.title}</h3>
-    <p><strong>${L(lang, 'document')}:</strong> <a href="${prop.url}" class="document-link" rel="noopener noreferrer">${prop.dokumentnamn}</a></p>
-    <p>${prop.summary || L(lang, 'propDefault')}</p>
+    <h3>${titleHtml}</h3>
+    <p><strong>${L(lang, 'document')}:</strong> <a href="${prop.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
+    <p>${summaryHtml}</p>
 `;
   });
   
@@ -659,12 +682,21 @@ function generateMotionsContent(data, lang) {
   }
   
   motions.forEach(motion => {
+    // Mark Swedish API titles/summaries for LLM translation post-processing
+    const titleText = motion.titel || motion.title || '';
+    const titleHtml = `<span data-translate="true" lang="sv">${titleText}</span>`;
+    const docName = motion.dokumentnamn || motion.dok_id || titleText;
+    const summaryText = motion.summary || '';
+    const summaryHtml = summaryText 
+      ? `<span data-translate="true" lang="sv">${summaryText}</span>` 
+      : L(lang, 'motionDefault');
+    
     content += `
-    <h3>${motion.titel || motion.title}</h3>
+    <h3>${titleHtml}</h3>
     <p><strong>${L(lang, 'author')}:</strong> ${motion.intressent_namn || motion.author}</p>
     <p><strong>${L(lang, 'party')}:</strong> ${motion.parti}</p>
-    <p><strong>${L(lang, 'document')}:</strong> <a href="${motion.url}" class="document-link" rel="noopener noreferrer">${motion.dokumentnamn}</a></p>
-    <p>${motion.summary || L(lang, 'motionDefault')}</p>
+    <p><strong>${L(lang, 'document')}:</strong> <a href="${motion.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
+    <p>${summaryHtml}</p>
 `;
   });
   
@@ -696,8 +728,13 @@ export function extractWatchPoints(data, lang = 'en') {
       const dayName = event.dayName || (event.datum || event.from || event.start ? formatDayName(new Date((event.datum || event.from || event.start).split('T')[0]), lang) : '');
       const eventTitle = event.title || event.titel || 'Event';
       
+      // Mark Swedish API titles for LLM translation post-processing
+      const titleDisplay = (event.titel && !event.title)
+        ? `<span data-translate="true" lang="sv">${eventTitle}</span>`
+        : eventTitle;
+      
       watchPoints.push({
-        title: dayName ? `${dayName}: ${eventTitle}` : eventTitle,
+        title: dayName ? `${dayName}: ${titleDisplay}` : titleDisplay,
         description: event.description || L(lang, 'monitorDev')
       });
     });

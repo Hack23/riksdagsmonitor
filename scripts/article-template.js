@@ -111,6 +111,35 @@ function sanitizeArticleBody(htmlContent) {
  * @param {Array} data.tags - Article tags for display
  * @returns {string} Complete HTML article
  */
+/**
+ * Site tagline translations for all 14 languages
+ */
+const SITE_TAGLINE = {
+  en: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
+  sv: 'Senaste nyheter och analyser från Sveriges riksdag. Politisk journalistik i The Economist-stil som bevakar riksdagen, regeringen och myndigheter med systematisk transparens.',
+  da: 'Seneste nyheder og analyser fra Sveriges Riksdag. Politisk journalistik i The Economist-stil, der dækker parlament, regering og myndigheder med systematisk gennemsigtighed.',
+  no: 'Siste nyheter og analyser fra Sveriges riksdag. Politisk journalistikk i The Economist-stil som dekker parlament, regjering og myndigheter med systematisk åpenhet.',
+  fi: 'Uusimmat uutiset ja analyysit Ruotsin valtiopäiviltä. The Economist -tyylinen poliittinen journalismi, joka kattaa eduskunnan, hallituksen ja viranomaiset järjestelmällisellä läpinäkyvyydellä.',
+  de: 'Aktuelle Nachrichten und Analysen aus dem schwedischen Riksdag. Politischer Journalismus im Economist-Stil über Parlament, Regierung und Behörden mit systematischer Transparenz.',
+  fr: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique de style The Economist couvrant le parlement, le gouvernement et les agences avec une transparence systématique.',
+  es: 'Últimas noticias y análisis del Riksdag sueco. Periodismo político al estilo The Economist que cubre el parlamento, el gobierno y las agencias con transparencia sistemática.',
+  nl: 'Laatste nieuws en analyses van de Zweedse Riksdag. Politieke journalistiek in Economist-stijl over parlement, regering en instanties met systematische transparantie.',
+  ar: 'أحدث الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية بأسلوب ذا إيكونوميست تغطي البرلمان والحكومة والوكالات بشفافية منهجية.',
+  he: 'חדשות ניתוחים אחרונים מהריקסדאג השוודי. עיתונות פוליטית בסגנון האקונומיסט המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.',
+  ja: 'スウェーデン議会リクスダーグの最新ニュースと分析。議会、政府、機関を体系的な透明性で報道するエコノミスト・スタイルの政治ジャーナリズム。',
+  ko: '스웨덴 의회 릭스다그의 최신 뉴스와 분석. 체계적인 투명성으로 의회, 정부, 기관을 다루는 이코노미스트 스타일의 정치 저널리즘.',
+  zh: '来自瑞典议会的最新新闻和分析。以经济学人风格的政治新闻，以系统性透明度报道议会、政府和机构。'
+};
+
+/**
+ * OG locale map for all 14 languages
+ */
+const OG_LOCALE_MAP = {
+  en: 'en_US', sv: 'sv_SE', da: 'da_DK', no: 'nb_NO', fi: 'fi_FI',
+  de: 'de_DE', fr: 'fr_FR', es: 'es_ES', nl: 'nl_NL', ar: 'ar_SA',
+  he: 'he_IL', ja: 'ja_JP', ko: 'ko_KR', zh: 'zh_CN'
+};
+
 export function generateArticleHTML(data) {
   const {
     slug,
@@ -120,7 +149,7 @@ export function generateArticleHTML(data) {
     type,
     readTime = '5 min read',
     lang = 'en',
-    locale = 'en_US',
+    locale,
     content,
     events = [],
     watchPoints = [],
@@ -128,6 +157,9 @@ export function generateArticleHTML(data) {
     keywords = [],
     tags = []
   } = data;
+  
+  // Use proper OG locale for the language
+  const ogLocale = locale || OG_LOCALE_MAP[lang] || 'en_US';
   
   const dateObj = new Date(date);
   const formattedDate = formatDate(dateObj, lang);
@@ -182,7 +214,7 @@ export function generateArticleHTML(data) {
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
-  <meta property="og:locale" content="${locale}">
+  <meta property="og:locale" content="${ogLocale}">
   <meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta property="article:published_time" content="${dateObj.toISOString()}">
   <meta property="article:modified_time" content="${dateObj.toISOString()}">
@@ -338,7 +370,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
 <body>
 <article class="news-article">
   <header class="article-header">
-    <div class="site-tagline"${lang !== 'en' ? ' lang="en"' : ''}>Latest news and analysis from Sweden's Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.</div>
+    <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
     <h1>${title}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>
@@ -385,8 +417,25 @@ ${watchPoints.length > 0 ? generateWatchSection(watchPoints, lang) : ''}
 /**
  * Generate event calendar section
  */
+const EVENT_CALENDAR_TITLES = {
+  en: 'Event Calendar',
+  sv: 'Veckans händelser',
+  da: 'Ugens begivenheder',
+  no: 'Ukens hendelser',
+  fi: 'Viikon tapahtumat',
+  de: 'Veranstaltungskalender',
+  fr: 'Calendrier des événements',
+  es: 'Calendario de eventos',
+  nl: 'Evenementenkalender',
+  ar: 'تقويم الأحداث',
+  he: 'לוח אירועים',
+  ja: 'イベントカレンダー',
+  ko: '일정 캘린더',
+  zh: '活动日历'
+};
+
 function generateEventCalendar(events, lang = 'en') {
-  const title = lang === 'sv' ? 'Veckans händelser' : 'Event Calendar';
+  const title = EVENT_CALENDAR_TITLES[lang] || EVENT_CALENDAR_TITLES.en;
   const weekLabel = events.length > 0 && events[0].date ? 
     `${formatDateRange(events, lang)}` : '';
   
@@ -411,8 +460,25 @@ ${event.items.map(item => `          <li class="event-item">
 /**
  * Generate "Watch Section" with key points
  */
+const WATCH_SECTION_TITLES = {
+  en: 'What to Watch This Week',
+  sv: 'Vad man ska följa denna vecka',
+  da: 'Hvad man skal følge denne uge',
+  no: 'Hva man bør følge denne uken',
+  fi: 'Mitä seurata tällä viikolla',
+  de: 'Worauf diese Woche zu achten ist',
+  fr: 'À suivre cette semaine',
+  es: 'Qué observar esta semana',
+  nl: 'Wat te volgen deze week',
+  ar: 'ما يجب متابعته هذا الأسبوع',
+  he: 'מה לעקוב אחריו השבוע',
+  ja: '今週の注目ポイント',
+  ko: '이번 주 주목할 사항',
+  zh: '本周关注要点'
+};
+
 function generateWatchSection(watchPoints, lang = 'en') {
-  const title = lang === 'sv' ? 'Vad man ska följa denna vecka' : 'What to Watch This Week';
+  const title = WATCH_SECTION_TITLES[lang] || WATCH_SECTION_TITLES.en;
   
   return `
     <section class="watch-section">
