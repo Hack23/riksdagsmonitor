@@ -1668,3 +1668,142 @@ Apply this skill when:
 **Last Updated:** 2026-02-11  
 **Maintained by:** Hack23 AB  
 **License:** Apache-2.0
+
+## 🌐 Multi-Language Translation Pattern
+
+### Problem: API Data in Single Language
+
+When building multi-language content from APIs that return data in only one language (e.g., Swedish Riksdag API), automated scripts can translate UI chrome but cannot translate dynamic content. Only LLMs can provide natural, context-aware translations.
+
+### Solution: Translation Markers + LLM Post-Processing
+
+**Pattern Implementation:**
+
+1. **Generation Script** marks untranslated content:
+```javascript
+// scripts/data-transformers.js
+const titleHtml = (report.titel && !report.title)
+  ? `<span data-translate="true" lang="sv">${escapeHtml(report.titel)}</span>`
+  : escapeHtml(report.title || report.titel);
+```
+
+2. **Agentic Workflow** translates marked content:
+```markdown
+### Step 5: Translate Swedish Content (CRITICAL - MANDATORY)
+
+🚨 **THIS STEP IS ABSOLUTELY MANDATORY. DO NOT SKIP.** 🚨
+
+For EACH non-Swedish article:
+
+1. **Identify articles needing translation**:
+```bash
+for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+    echo "NEEDS TRANSLATION: $article"
+  fi
+done
+```
+
+2. **Translate EACH file**:
+   - Read the article file
+   - Find all `<span data-translate="true" lang="sv">Swedish text</span>`
+   - Translate the Swedish text to the article's target language
+   - Replace the span with plain translated text
+   - Consult `TRANSLATION_GUIDE.md` for correct terminology
+   - Write the updated file back
+
+3. **Validation (MANDATORY)**:
+```bash
+UNTRANSLATED=0
+for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+    echo "❌ UNTRANSLATED: $(basename $article)"
+    UNTRANSLATED=$((UNTRANSLATED + 1))
+  fi
+done
+
+if [ $UNTRANSLATED -gt 0 ]; then
+  echo "❌ $UNTRANSLATED articles contain untranslated Swedish content!"
+  exit 1
+else
+  echo "✅ All articles fully translated"
+fi
+```
+```
+
+3. **Validation Script** catches missed translations:
+```javascript
+// scripts/validate-news-translations.js
+function checkFileForUntranslatedContent(filepath) {
+  const content = readFileSync(filepath, 'utf-8');
+  const markers = content.match(/data-translate="true"/g);
+  return markers ? { passed: false, markerCount: markers.length } : { passed: true };
+}
+```
+
+### Translation Workflow Best Practices
+
+**✅ DO:**
+- Mark ALL foreign-language content with `data-translate="true" lang="XX"`
+- Add translation step as **BLOCKING** requirement in workflow
+- Use exit codes to prevent proceeding with untranslated content
+- Provide concrete before/after translation examples
+- Reference terminology guides (`TRANSLATION_GUIDE.md`, skills)
+- Validate ALL files before creating PR
+- Show samples of untranslated content to help agent identify issues
+
+**❌ DON'T:**
+- Leave translation as optional or "nice to have"
+- Use weak language like "should" or "consider"
+- Skip validation - always verify no markers remain
+- Proceed to next step if untranslated content exists
+- Assume the agent will "figure it out" without explicit examples
+
+### Example: Riksdagsmonitor News Generation
+
+**Challenge**: Generate news articles in 14 languages from Swedish-only Riksdag API
+
+**Implementation**:
+
+1. **Generation** (`scripts/generate-news-enhanced.js`):
+   - Creates articles in all languages
+   - Marks Swedish API data with `data-translate="true" lang="sv"`
+   - Translates UI labels/headers but NOT dynamic content
+
+2. **Translation** (`.github/workflows/news-article-generator.md`):
+   - Step 5 (MANDATORY): LLM reads each file, translates Swedish spans, writes back
+   - Provides examples: `"Bättre förutsättningar..." → "Better conditions..."`
+   - Exit code 1 if any untranslated markers remain
+
+3. **Validation** (`scripts/validate-news-translations.js`):
+   - Run as CI check: `npm run validate-news`
+   - Scans all non-Swedish articles for markers
+   - Fails build if untranslated content found
+   - Shows samples to help debug
+
+**Results**:
+- ✅ Zero tolerance for language mixing
+- ✅ Natural, context-aware translations
+- ✅ Automated detection of issues
+- ✅ Clear process for fixing problems
+
+### Key Success Factors
+
+1. **Prominent Placement**: Translation requirement at TOP of workflow, not buried
+2. **Blocking Validation**: Exit codes prevent proceeding
+3. **Concrete Examples**: Before/after HTML showing exact transformations
+4. **Clear Process**: Read → Find → Translate → Remove → Write
+5. **Zero Ambiguity**: "DO NOT proceed" language, not "please consider"
+
+### Reference Implementation
+
+See [`Hack23/riksdagsmonitor`](https://github.com/Hack23/riksdagsmonitor):
+- `.github/workflows/news-article-generator.md` - Translation instructions
+- `scripts/data-transformers.js` - Marker generation
+- `scripts/validate-news-translations.js` - Validation script
+- `TRANSLATION_GUIDE.md` - Terminology reference
+
+---
+
+**Last Updated**: 2026-02-15  
+**Maintained by**: Hack23 AB
