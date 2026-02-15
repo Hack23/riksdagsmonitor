@@ -310,7 +310,7 @@ When creating new article types or templates:
 
 - **Template**: `scripts/article-template.js`
 - **Styles**: `styles.css` (lines ~8705-9200)
-- **Sample**: `news/sample-economist-style.html`
+- **Examples**: See any article in `news/` directory
 - **Commit**: 421fc56 (2026-02-14)
 
 ## Questions?
