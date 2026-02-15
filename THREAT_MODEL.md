@@ -1843,22 +1843,41 @@ Until these metrics are operational, human reviewers must manually assess these 
 
 ## 📚 Related Documents
 
-- [🏛️ Architecture](./ARCHITECTURE.md) - C4 system architecture models
-- [📊 Data Model](./DATA_MODEL.md) - Political data entities and relationships
-- [🔄 Flowchart](./FLOWCHART.md) - Data pipelines and workflows
-- [📈 State Diagram](./STATEDIAGRAM.md) - System state transitions
-- [💼 SWOT](./SWOT.md) - Strategic analysis and positioning
-- [🔐 Security Architecture](./SECURITY_ARCHITECTURE.md) - Current security controls
-- [🚀 Future Security Architecture](./FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap
-- [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - Hack23 SDLC requirements
-- [🤖 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) - Hack23 AI Governance Policy v2.1
-- [🎯 Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) - Hack23 threat modeling standards
-- [🔍 Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) - Vulnerability remediation procedures
+### 🎯 Riksdagsmonitor Project Documentation
+- [🏛️ Architecture](./ARCHITECTURE.md) - C4 system architecture models with container and component views
+- [🔐 Security Architecture](./SECURITY_ARCHITECTURE.md) - Current security controls implementation and defense-in-depth
+- [🚀 Future Security Architecture](./FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap and planned enhancements
+- [📊 Data Model](./DATA_MODEL.md) - Political data entities, relationships, and CIA integration
+- [🔄 Flowchart](./FLOWCHART.md) - Data pipelines and workflows visualization
+- [📈 State Diagram](./STATEDIAGRAM.md) - System state transitions and lifecycle management
+- [💼 SWOT](./SWOT.md) - Strategic analysis, positioning, and competitive advantages
+- [⚙️ Workflows](./WORKFLOWS.md) - CI/CD security workflows and automation
 
-### AI Workflows
-- [📰 News Article Generator](./.github/workflows/news-article-generator.md) - Daily news generation
-- [🌆 News Evening Analysis](./.github/workflows/news-evening-analysis.md) - Evening analysis & weekly review
-- [⚡ News Realtime Monitor](./.github/workflows/news-realtime-monitor.md) - Real-time breaking news
+### 🛠️ Hack23 AB ISMS Policies
+- [🎯 Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) - Comprehensive threat modeling methodology and standards
+- [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - SDLC security requirements and architecture documentation
+- [🤖 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) - AI governance, EU AI Act compliance, and LLM security (v2.1)
+- [🔐 Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) - Overall security governance framework
+- [🔑 Access Control Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md) - Authentication, authorization, and credential management
+- [🌐 Network Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Network_Security_Policy.md) - Network protection, zero-trust architecture, TLS standards
+- [🏷️ Data Classification Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Data_Classification_Policy.md) - Information categorization and handling requirements
+- [🔒 Cryptography Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) - Encryption standards and key management
+- [🔍 Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) - SAST/DAST requirements and remediation SLAs
+- [🚨 Incident Response Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) - Security incident detection, response, and recovery
+- [🔄 Business Continuity Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Business_Continuity_Plan.md) - Business impact analysis and continuity strategies
+- [💾 Backup & Recovery Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Backup_Recovery_Policy.md) - Backup strategies and restoration procedures
+- [📉 Risk Register](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Register.md) - Enterprise risk management and treatment tracking
+- [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) - CIA triad, RTO/RPO definitions, business impact analysis
+
+### 🎯 Reference Threat Models (Hack23 Examples)
+- [🏛️ CIA Threat Model](https://github.com/Hack23/cia/blob/master/THREAT_MODEL.md) - Full-stack web application (Java/Spring Boot/PostgreSQL/AWS)
+- [🎮 Black Trigram Threat Model](https://github.com/Hack23/blacktrigram/blob/main/THREAT_MODEL.md) - Frontend gaming application (React/Phaser.js)
+- [📊 CIA Compliance Manager Threat Model](https://github.com/Hack23/cia-compliance-manager/blob/main/THREAT_MODEL.md) - Compliance dashboard (static site)
+
+### 🤖 AI Agentic Workflows
+- [📰 News Article Generator](./.github/workflows/news-article-generator.md) - Daily automated news generation with Claude Opus 4.6
+- [🌆 News Evening Analysis](./.github/workflows/news-evening-analysis.md) - Evening analysis and weekly review automation
+- [⚡ News Realtime Monitor](./.github/workflows/news-realtime-monitor.md) - Real-time breaking news monitoring and alerting
 
 ---
 
