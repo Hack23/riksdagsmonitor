@@ -1,0 +1,178 @@
+name: "Pull Request Automatic Labeler"
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited]
+
+# Set default permissions to read-only
+permissions: read-all
+
+jobs:
+  labeler:
+    name: Label Pull Request
+    runs-on: ubuntu-latest
+    # Enhanced permissions for label management
+    permissions:
+      contents: read # Required to check out the code
+      pull-requests: write # Required to apply labels to PRs
+      issues: write # Required to create and manage labels
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Check if labels exist
+        id: check-labels
+        run: |
+          echo "🔍 Checking if required labels exist..."
+          missing_labels=()
+
+          # Key labels that should exist for riksdagsmonitor
+          key_labels=(
+            "news" "dashboard" "visualization" "intelligence"
+            "html-css" "javascript" "workflow" "security"
+            "cia-data" "riksdag-data" "data-pipeline" "schema"
+            "i18n" "translation" "rtl"
+            "isms" "iso-27001" "nist-csf" "cis-controls"
+            "ci-cd" "deployment" "performance" "monitoring"
+            "testing" "accessibility" "documentation" "refactor"
+            "bug" "enhancement" "dependencies"
+            "agent" "skill" "agentic-workflow"
+          )
+
+          for label in "${key_labels[@]}"; do
+            if ! gh label list --search "$label" --limit 1 | grep -q "^$label"; then
+              missing_labels+=("$label")
+            fi
+          done
+
+          if [ ${#missing_labels[@]} -gt 0 ]; then
+            echo "⚠️ Missing labels: ${missing_labels[*]}"
+            echo "missing_labels=true" >> $GITHUB_OUTPUT
+            echo "missing_count=${#missing_labels[@]}" >> $GITHUB_OUTPUT
+            echo "Run the 'Setup Repository Labels' workflow first to create all required labels."
+          else
+            echo "✅ All key labels exist (${#key_labels[@]} labels checked)"
+            echo "missing_labels=false" >> $GITHUB_OUTPUT
+            echo "missing_count=0" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Apply PR Labels
+        uses: actions/labeler@634933edcd8ababfe52f92936142cc22ac488b1b # v6.0.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          sync-labels: false # Don't sync labels to avoid removing manually added labels
+          configuration-path: .github/labeler.yml
+          dot: true # Enable dotfiles processing
+        continue-on-error: true # Continue even if some labels can't be created
+
+      - name: Add size label
+        run: |
+          echo "📏 Calculating PR size..."
+          
+          # Get PR number from context
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          
+          # Get additions and deletions
+          ADDITIONS=$(gh pr view "$PR_NUMBER" --json additions --jq '.additions')
+          DELETIONS=$(gh pr view "$PR_NUMBER" --json deletions --jq '.deletions')
+          TOTAL_CHANGES=$((ADDITIONS + DELETIONS))
+          
+          echo "📊 PR Stats:"
+          echo "  Additions: $ADDITIONS"
+          echo "  Deletions: $DELETIONS"
+          echo "  Total changes: $TOTAL_CHANGES"
+          
+          # Determine size label
+          if [ "$TOTAL_CHANGES" -lt 10 ]; then
+            SIZE_LABEL="size-xs"
+          elif [ "$TOTAL_CHANGES" -lt 50 ]; then
+            SIZE_LABEL="size-s"
+          elif [ "$TOTAL_CHANGES" -lt 250 ]; then
+            SIZE_LABEL="size-m"
+          elif [ "$TOTAL_CHANGES" -lt 1000 ]; then
+            SIZE_LABEL="size-l"
+          else
+            SIZE_LABEL="size-xl"
+          fi
+          
+          echo "🏷️ Adding size label: $SIZE_LABEL"
+          gh pr edit "$PR_NUMBER" --add-label "$SIZE_LABEL" || echo "⚠️ Failed to add size label"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Label application status
+        run: |
+          if [ "${{ steps.check-labels.outputs.missing_labels }}" = "true" ]; then
+            echo "⚠️ Some labels could not be applied because ${{ steps.check-labels.outputs.missing_count }} labels don't exist yet."
+            echo ""
+            echo "📝 To fix this:"
+            echo "   1. Go to Actions → Setup Repository Labels"
+            echo "   2. Click 'Run workflow'"
+            echo "   3. Wait for completion"
+            echo "   4. Re-run this labeler workflow"
+            echo ""
+            echo "🔗 Quick link: ${{ github.server_url }}/${{ github.repository }}/actions/workflows/setup-labels.yml"
+          else
+            echo "✅ Labeler completed successfully"
+            echo ""
+            echo "📋 Applied labels:"
+            gh pr view "${{ github.event.pull_request.number }}" --json labels --jq '.labels[].name' | while read label; do
+              echo "  • $label"
+            done
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on PR with label summary
+        if: github.event.action == 'opened'
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          
+          # Get applied labels
+          LABELS=$(gh pr view "$PR_NUMBER" --json labels --jq '.labels[].name' | tr '\n' ', ' | sed 's/,$//')
+          
+          if [ -z "$LABELS" ]; then
+            LABELS="No labels applied yet"
+          fi
+          
+          # Create comment body
+          cat > /tmp/comment.md << 'EOF'
+          ## 🏷️ Automatic Labeling Summary
+
+          This PR has been automatically labeled based on the files changed and PR metadata.
+
+          **Applied Labels:** $LABELS
+
+          ### Label Categories
+          - 🗳️ **Content**: news, dashboard, visualization, intelligence
+          - 💻 **Technology**: html-css, javascript, workflow, security
+          - 📊 **Data**: cia-data, riksdag-data, data-pipeline, schema
+          - 🌍 **I18n**: i18n, translation, rtl
+          - 🔒 **ISMS**: isms, iso-27001, nist-csf, cis-controls
+          - 🏗️ **Infrastructure**: ci-cd, deployment, performance, monitoring
+          - 🔄 **Quality**: testing, accessibility, documentation, refactor
+          - 🤖 **AI**: agent, skill, agentic-workflow
+
+          For more information, see [`.github/labeler.yml`](https://github.com/${{ github.repository }}/blob/main/.github/labeler.yml).
+          EOF
+          
+          # Replace placeholder with actual labels (escape special characters for sed)
+          ESCAPED_LABELS=${LABELS//\\/\\\\}
+          ESCAPED_LABELS=${ESCAPED_LABELS//&/\\&}
+          ESCAPED_LABELS=${ESCAPED_LABELS//\//\\/}
+          sed -i "s/\$LABELS/$ESCAPED_LABELS/" /tmp/comment.md
+          
+          # Post comment
+          gh pr comment "$PR_NUMBER" --body-file /tmp/comment.md || echo "⚠️ Failed to post comment"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
