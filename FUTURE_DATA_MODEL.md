@@ -22,7 +22,7 @@
 
 ---
 
-## Executive Summary
+## 📊 Executive Summary
 
 Riksdagsmonitor's data architecture evolves over 2026-2032 from static CSV files to a **fully-managed AWS Serverless intelligence platform**. This transformation enables real-time political analytics, AI-powered insights, and scalable processing of Swedish parliamentary data.
 
@@ -54,7 +54,7 @@ Riksdagsmonitor's data architecture evolves over 2026-2032 from static CSV files
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents
 
 1. [Current State vs Future State](#1-current-state-vs-future-state)
 2. [AWS Serverless Data Architecture](#2-aws-serverless-data-architecture)
@@ -74,7 +74,7 @@ Riksdagsmonitor's data architecture evolves over 2026-2032 from static CSV files
 
 ---
 
-## 1. Current State vs Future State
+## 🔄 1. Current State vs Future State
 
 ### 1.1 Architecture Comparison
 
@@ -104,7 +104,7 @@ Riksdagsmonitor's data architecture evolves over 2026-2032 from static CSV files
 
 ---
 
-## 2. AWS Serverless Data Architecture
+## ☁️ 2. AWS Serverless Data Architecture
 
 ### 2.1 Amazon Neptune Serverless (Graph Database)
 
@@ -186,12 +186,11 @@ g.V().has('Politician','person_id','P1').
 
 **Example 1: Find MPs with highest rebellion rate**
 ```gremlin
-g.V().hasLabel('Politician').as('politician').
-  outE('CAST_VOTE').has('is_rebel', true).
-  count().as('rebel_count').
-  select('politician').
-  values('first_name','last_name','party').as('name','party').
-  select('rebel_count','name','party').
+g.V().hasLabel('Politician').
+  project('name','party','rebel_count').
+    by(values('first_name','last_name').fold()).
+    by(values('party')).
+    by(outE('CAST_VOTE').has('is_rebel', true).count()).
   order().by('rebel_count', desc).
   limit(10)
 ```
@@ -488,7 +487,7 @@ const result = await dynamodb.query(params).promise();
         "dimension": 8192,
         "method": {
           "name": "hnsw",
-          "space_type": "cosinesimil",
+          "space_type": "cosinesimilarity",
           "engine": "nmslib"
         }
       }
@@ -742,7 +741,7 @@ async function queryKnowledgeBase(question) {
 
 ---
 
-## 3. CIA JSON API Gateway Integration
+## 🔗 3. CIA JSON API Gateway Integration
 
 ### 3.1 Current State: CSV Exports (Temporary)
 
@@ -845,7 +844,7 @@ CIA Platform → Kinesis Stream → Lambda/Firehose → S3/Aurora/OpenSearch
 
 ---
 
-## 4. GraphQL API Schema
+## 🔌 4. GraphQL API Schema
 
 ### 4.1 Core Types
 
@@ -1005,7 +1004,7 @@ type Subscription {
 
 ---
 
-## 5. Data Model Diagrams
+## 📐 5. Data Model Diagrams
 
 ### 5.1 Political Entities ERD
 
@@ -1315,7 +1314,7 @@ graph TB
 
 ---
 
-## 6. Implementation Roadmap
+## 🗓️ 6. Implementation Roadmap
 
 ### 6.1 Four-Phase Evolution (2026-2032)
 
@@ -1411,7 +1410,7 @@ gantt
 
 ---
 
-## 7. Technology Stack Evolution
+## 🔧 7. Technology Stack Evolution
 
 ### 7.1 Current vs Future Stack
 
@@ -1464,7 +1463,7 @@ gantt
 
 ---
 
-## 8. ISMS Compliance & Data Governance
+## 🔐 8. ISMS Compliance & Data Governance
 
 ### 8.1 ISO 27001:2022 Controls
 
@@ -1545,19 +1544,18 @@ stateDiagram-v2
 
 ---
 
-## 9. Related Documentation
+## 📚 9. Related Documentation
 
 ### 9.1 Architecture Documentation
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** - Current static site architecture
-- **[FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md)** - Future AWS Serverless architecture
 - **[DATA_MODEL.md](DATA_MODEL.md)** - Current data model (CSV-based)
-- **[FLOWCHART.md](FLOWCHART.md)** - Current data flow diagrams
+- **[FUTURE_FLOWCHART.md](FUTURE_FLOWCHART.md)** - Current data flow diagrams
 
 ### 9.2 Security Documentation
 - **[SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md)** - Current security controls
 - **[FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md)** - Future AWS security architecture
 - **[THREAT_MODEL.md](THREAT_MODEL.md)** - STRIDE threat analysis
-- **[Hack23 ISMS](https://github.com/Hack23/ISMS)** - Organization-wide ISMS policies
+- **[Hack23 ISMS](https://github.com/Hack23/ISMS-PUBLIC)** - Organization-wide ISMS policies
 
 ### 9.3 Technical Documentation
 - **[TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md)** - Multi-language support (14 languages)
