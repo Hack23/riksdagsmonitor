@@ -1,9 +1,26 @@
-# 🔄 Riksdagsmonitor - State Diagrams
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-02-15  
-**Classification:** Public  
-**Owner:** Hack23 AB (Org.nr 5595347807)
+<h1 align="center">🔄 Riksdagsmonitor — State Diagrams</h1>
+
+<p align="center">
+  <strong>🎭 System Behavior and State Transitions for Democratic Transparency</strong><br>
+  <em>📊 Lifecycle Management · Workflow States · AI-Driven Processes</em>
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-15  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
 
 ## Executive Summary
 
@@ -1095,22 +1112,20 @@ All state transitions MUST be logged with:
 - Automated rollback on production error thresholds
 - Self-healing workflows for common failure scenarios
 
----
+## 📚 Related Documents
 
-## 📚 References
-
-### Hack23 ISMS Policies
-- [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
-- [Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md)
-- [AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)
-- [Incident Response](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response.md)
-
-### Repository Documentation
-- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture
-- [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows
-- [THREAT_MODEL.md](THREAT_MODEL.md) - Security threat model
-- [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) - Multi-language translation
-- [MODULAR_NEWS_ARCHITECTURE.md](MODULAR_NEWS_ARCHITECTURE.md) - News generation
+- [🏛️ Architecture](./ARCHITECTURE.md) - C4 system architecture models
+- [📊 Data Model](./DATA_MODEL.md) - Political data entities
+- [🔄 Flowchart](./FLOWCHART.md) - Data pipelines and workflows
+- [💼 SWOT](./SWOT.md) - Strategic analysis
+- [🎯 Threat Model](./THREAT_MODEL.md) - Security threat analysis
+- [🔧 Workflows](./WORKFLOWS.md) - CI/CD automation processes
+- [🗣️ Translation Guide](./TRANSLATION_GUIDE.md) - Multi-language translation
+- [📰 Modular News Architecture](./MODULAR_NEWS_ARCHITECTURE.md) - News generation
+- [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - Hack23 SDLC requirements
+- [🔄 Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) - Change control procedures
+- [🤖 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) - AI governance requirements
+- [🚨 Incident Response](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response.md) - Security incident handling
 
 ### External Standards
 - [Mermaid State Diagrams](https://mermaid.js.org/syntax/stateDiagram.html)
@@ -1119,28 +1134,10 @@ All state transitions MUST be logged with:
 
 ---
 
-## 📝 Document Control
-
-**Version History:**
-
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2026-02-15 | Copilot Agent (documentation-architect) | Initial creation with 6 state diagrams |
-
-**Review Schedule:**
-- **Next Review:** 2026-05-15 (quarterly)
-- **Reviewer:** Documentation Architect Agent
-- **Approval Required:** Yes (team lead sign-off)
-
-**Change Management:**
-- All state diagram changes MUST be reviewed by security-architect agent
-- New states MUST include security risk assessment
-- AI-related states MUST comply with Hack23 AI Policy
-- State invariants MUST be validated before deployment
-
----
-
-**Document Classification:** Public  
-**Document Owner:** Hack23 AB (Org.nr 5595347807)  
-**Last Updated:** 2026-02-15  
-**Next Review:** 2026-05-15
+**📋 Document Control:**  
+**✅ Approved by:** James Pether Sörling, CEO  
+**📤 Distribution:** Public  
+**🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square&logo=unlock&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
+**📅 Effective Date:** 2026-02-15  
+**⏰ Next Review:** 2026-05-15  
+**🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)

@@ -1,9 +1,26 @@
-# ⚠️ Riksdagsmonitor - Threat Model
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
 
-**Document Version:** 1.2  
-**Last Updated:** 2026-02-15  
-**Classification:** Public  
-**Owner:** Hack23 AB (Org.nr 5595347807)
+<h1 align="center">🎯 Riksdagsmonitor — Threat Model</h1>
+
+<p align="center">
+  <strong>🛡️ Systematic Threat Analysis for Democratic Transparency Platform</strong><br>
+  <em>🔍 STRIDE Framework · MITRE ATT&CK Integration · AI Threat Assessment</em>
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-02-15 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-15  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
 
 ## 🎯 Executive Summary
 
@@ -1728,30 +1745,31 @@ Until these metrics are operational, human reviewers must manually assess these 
 - **Control Effectiveness:** Continuous monitoring via GitHub
 - **Next Review Date:** 2026-05-15 (Q2 2026) - Include AI metrics assessment
 
-### 10.3 Related Documentation
+## 📚 Related Documents
 
-- [SECURITY_ARCHITECTURE.md](./SECURITY_ARCHITECTURE.md) - Security architecture documentation
-- [FUTURE_SECURITY_ARCHITECTURE.md](./FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap including AI enhancements
-- [Hack23 ISMS](https://github.com/Hack23/ISMS) - Information Security Management System
-- [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) - AI Governance Policy (v2.1)
-- [Hack23 Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - Secure SDLC requirements
-- [Threat Modeling Policy](https://github.com/Hack23/ISMS/blob/main/Threat_Modeling.md) - Organizational threat modeling standards
-- [Vulnerability Management](https://github.com/Hack23/ISMS/blob/main/Vulnerability_Management.md) - Vulnerability remediation procedures
-- **AI Workflows:**
-  - [news-article-generator.md](./.github/workflows/news-article-generator.md) - Daily news generation
-  - [news-evening-analysis.md](./.github/workflows/news-evening-analysis.md) - Evening analysis & weekly review
-  - [news-realtime-monitor.md](./.github/workflows/news-realtime-monitor.md) - Real-time breaking news
+- [🏛️ Architecture](./ARCHITECTURE.md) - C4 system architecture models
+- [📊 Data Model](./DATA_MODEL.md) - Political data entities and relationships
+- [🔄 Flowchart](./FLOWCHART.md) - Data pipelines and workflows
+- [📈 State Diagram](./STATEDIAGRAM.md) - System state transitions
+- [💼 SWOT](./SWOT.md) - Strategic analysis and positioning
+- [🔐 Security Architecture](./SECURITY_ARCHITECTURE.md) - Current security controls
+- [🚀 Future Security Architecture](./FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap
+- [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - Hack23 SDLC requirements
+- [🤖 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) - Hack23 AI Governance Policy v2.1
+- [🎯 Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) - Hack23 threat modeling standards
+- [🔍 Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) - Vulnerability remediation procedures
+
+### AI Workflows
+- [📰 News Article Generator](./.github/workflows/news-article-generator.md) - Daily news generation
+- [🌆 News Evening Analysis](./.github/workflows/news-evening-analysis.md) - Evening analysis & weekly review
+- [⚡ News Realtime Monitor](./.github/workflows/news-realtime-monitor.md) - Real-time breaking news
 
 ---
 
-**Document Metadata:**
-- **Repository:** https://github.com/Hack23/riksdagsmonitor
-- **Path:** /THREAT_MODEL.md
-- **Format:** Markdown
-- **Classification:** Public
-- **Version:** 1.2
-- **Last Updated:** 2026-02-15
-- **Next Review:** 2026-05-15
-- **AI Threat Analysis Added:** 2026-02-15 (Section 2.7, 18 new threats)
-- **Total Threats:** 34 (16 traditional infrastructure + 18 AI-specific)
-- **Compliance Frameworks:** ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, EU AI Act, ISO 42001:2023, NIST AI RMF 1.0
+**📋 Document Control:**  
+**✅ Approved by:** James Pether Sörling, CEO  
+**📤 Distribution:** Public  
+**🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square&logo=unlock&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
+**📅 Effective Date:** 2026-02-15  
+**⏰ Next Review:** 2026-05-15  
+**🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-2024_Aligned-blue?style=flat-square&logo=european-union&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) [![ISO 42001](https://img.shields.io/badge/ISO_42001-2023_Aligned-green?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) [![NIST AI RMF](https://img.shields.io/badge/NIST_AI_RMF-1.0_Aligned-purple?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)
