@@ -677,9 +677,31 @@ Per ISMS Threat_Modeling.md § 7, all Hack23 projects maintain comprehensive thr
 - Read-only platform security
 - Framework mapping security
 
-## Mandatory THREAT_MODEL.md Structure (ISMS § 5)
+## ❌ WRONG STRUCTURE (Do NOT Use)
 
-Every Hack23 project repository **MUST** include **THREAT_MODEL.md** with this structure:
+**NEVER use numbered sections (1-10) like this:**
+```markdown
+## 1. System Boundary and Assets
+## 2. STRIDE Threat Analysis
+## 3. Attack Trees
+## 4. MITRE ATT&CK Mapping
+## 5. Risk Quantification
+## 6. Threat Scenarios
+## 7. Security Metrics
+## 8. Assumptions and Constraints
+## 9. Recommendations
+## 10. Approval and Review
+```
+
+**Why wrong**: This generic structure is NOT aligned with Hack23 ISMS Threat_Modeling.md policy and does NOT demonstrate the 5-strategy integrated approach or domain expertise.
+
+---
+
+## ✅ CORRECT STRUCTURE: Hack23 Thematic Sections
+
+All Hack23 threat models use **thematic sections** (not numbered) that demonstrate comprehensive threat modeling maturity. Structure varies by project domain but core sections are mandatory.
+
+## Mandatory Core Sections (All Projects)
 
 ### 1. Header Section (per STYLE_GUIDE.md v2.3)
 ```markdown
