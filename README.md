@@ -449,11 +449,12 @@ npm run htmlhint && npm test && npm run build
 ### Project Documentation
 - [README.md](README.md) - This file
 - [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) - Multi-language translation standards and glossary
+- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture and design
+- [FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md) - Architectural evolution roadmap (2026-2028+) ✨ **NEW 2026-02-15**
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security architecture and controls
+- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Future security roadmap
 - [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis and risk assessment
 - [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows and automation
-- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture and design
-- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Future security roadmap
 - [LABELS.md](LABELS.md) - Automatic labeling system and label definitions ✨ **NEW**
 - [LICENSE](LICENSE) - Apache License 2.0
 
