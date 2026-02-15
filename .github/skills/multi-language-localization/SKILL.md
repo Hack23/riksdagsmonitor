@@ -142,7 +142,7 @@ This section provides **validated formatting** from actual translated news artic
 
 **Implementation**:
 ```javascript
-// Format numbers for language
+// Format numbers for language with documented separators
 function formatNumber(num, lang) {
   const formats = {
     'en': { thousands: ',', decimal: '.' },
@@ -161,11 +161,29 @@ function formatNumber(num, lang) {
     'he': { thousands: ',', decimal: '.' }
   };
   const fmt = formats[lang] || formats['en'];
-  return num.toLocaleString(lang, { 
-    useGrouping: true,
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2
-  });
+  
+  // Normalize to two decimals, then trim to 0–2 as needed
+  const isNegative = num < 0;
+  const absolute = Math.abs(num);
+  const fixed = absolute.toFixed(2);
+  let [intPart, fracPart] = fixed.split('.');
+  
+  // Insert thousands separators in the integer part
+  intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, fmt.thousands);
+  
+  // Trim trailing zeros from fractional part to allow 0–2 decimals
+  fracPart = fracPart.replace(/0+$/, '');
+  
+  let result = intPart;
+  if (fracPart.length > 0) {
+    result += fmt.decimal + fracPart;
+  }
+  
+  if (isNegative) {
+    result = '-' + result;
+  }
+  
+  return result;
 }
 ```
 
@@ -265,7 +283,12 @@ function formatDate(date, lang) {
     en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     sv: ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'],
     de: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
-    fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+    fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
+    es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+    da: ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december'],
+    no: ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
+    nl: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
+    fi: ['tammikuuta', 'helmikuuta', 'maaliskuuta', 'huhtikuuta', 'toukokuuta', 'kesäkuuta', 'heinäkuuta', 'elokuuta', 'syyskuuta', 'lokakuuta', 'marraskuuta', 'joulukuuta']
   };
   
   const d = date.getDate();
@@ -275,10 +298,11 @@ function formatDate(date, lang) {
   if (lang === 'en') return `${months[lang][m]} ${d}, ${y}`;
   if (lang === 'de' || lang === 'da' || lang === 'no') return `${d}. ${months[lang][m]} ${y}`;
   if (lang === 'es') return `${d} de ${months[lang][m]} de ${y}`;
+  if (lang === 'fi') return `${d}. ${months[lang][m]} ${y}`;
   if (lang === 'ja') return `${y}年${m+1}月${d}日`;
   if (lang === 'ko') return `${y}년 ${m+1}월 ${d}일`;
   if (lang === 'zh') return `${y}年${m+1}月${d}日`;
-  return `${d} ${months[lang][m]} ${y}`; // Default format
+  return `${d} ${months[lang]?.[m] || months['en'][m]} ${y}`; // Default format with fallback
 }
 ```
 

@@ -516,7 +516,7 @@ Time-related vocabulary from news articles:
 | This week | Denna vecka | Diese Woche | Cette semaine | Esta semana | Deze week |
 | Next week | Nästa vecka | Nächste Woche | La semaine prochaine | La próxima semana | Volgende week |
 | Last week | Förra veckan | Letzte Woche | La semaine dernière | La semana pasada | Vorige week |
-| Spring recess | Våruppehåll | Frühjahrspaüse | Pause de printemps | Receso de primavera | Voorjaarsreces |
+| Spring recess | Våruppehåll | Frühjahrspause | Pause de printemps | Receso de primavera | Voorjaarsreces |
 | Mid-session | Halvtid | Halbzeit | Mi-session | Mitad de período | Halverweg |
 | Parliamentary week | Parlamentsvecka | Parlamentswoche | Semaine parlementaire | Semana parlamentaria | Parlementaire week |
 

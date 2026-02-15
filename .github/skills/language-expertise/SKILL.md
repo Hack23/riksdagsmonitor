@@ -656,7 +656,7 @@ All political news articles use **formal register** across all languages. This i
 > "Sweden's Riksdag enters its spring recess with mixed legislative accomplishments. The Tidö government has passed key reforms on immigration and energy policy, but falters on housing and healthcare. Coalition tensions simmer beneath parliamentary decorum."
 
 **Evening Analysis Opening (German)**:
-> "Schwedens Riksdag geht in die Frühjahrspaüse mit gemischten gesetzgeberischen Erfolgen. Die Tidö-Regierung hat wichtige Reformen in den Bereichen Einwanderung und Energiepolitik verabschiedet, scheitert jedoch bei Wohnungsbau und Gesundheitswesen. Koalitionsspannungen brodeln unter dem parlamentarischen Anstand."
+> "Schwedens Riksdag geht in die Frühjahrspause mit gemischten gesetzgeberischen Erfolgen. Die Tidö-Regierung hat wichtige Reformen in den Bereichen Einwanderung und Energiepolitik verabschiedet, scheitert jedoch bei Wohnungsbau und Gesundheitswesen. Koalitionsspannungen brodeln unter dem parlamentarischen Anstand."
 
 **Evening Analysis Opening (French)**:
 > "Le Riksdag suédois entre en pause de printemps avec des réalisations législatives mitigées. Le gouvernement Tidö a adopté des réformes clés sur l'immigration et la politique énergétique, mais échoue sur le logement et la santé. Les tensions au sein de la coalition couvent sous le décorum parlementaire."

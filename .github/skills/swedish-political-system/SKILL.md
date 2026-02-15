@@ -240,7 +240,7 @@ These are actual committee report titles from news articles, showing natural tra
 - 🇳🇱 Dutch: "Een register voor alle appartementsrechten"
 - 🇸🇦 Arabic: "سجل لجميع حقوق الملكية السكنية"
 - 🇮🇱 Hebrew: "מרשם לכל דירות הבעלות"
-- 🇯�� Japanese: "全分譲住宅の登録制度"
+- 🇯🇵 Japanese: "全分譲住宅の登録制度"
 - 🇰🇷 Korean: "모든 분양주택 등록 제도"
 - 🇨🇳 Chinese: "所有产权公寓登记制度"
 
@@ -263,7 +263,7 @@ These are actual committee report titles from news articles, showing natural tra
 **"Planning and construction"**
 - 🇸🇪 Swedish: "Planering och byggande"
 - 🇩🇪 German: "Planung und Bauwesen"
-- 🇫�� French: "Planification et construction"
+- 🇫🇷 French: "Planification et construction"
 - 🇪🇸 Spanish: "Planificación y construcción"
 - 🇳🇱 Dutch: "Planning en bouw"
 
@@ -273,7 +273,7 @@ From February 2026 evening analysis articles:
 
 **"Sweden's Riksdag Enters Spring Recess: A Mid-Session Assessment"**
 - 🇸🇪 Swedish: "Sveriges riksdag går in i våruppehåll: En halvtidsbedömning"
-- 🇩🇪 German: "Schwedens Riksdag in der Frühjahrspaüse: Eine Halbzeitbewertung"
+- 🇩🇪 German: "Schwedens Riksdag in der Frühjahrspause: Eine Halbzeitbewertung"
 - 🇫🇷 French: "Le Riksdag suédois entre en pause de printemps: Une évaluation à mi-parcours"
 
 ### News Article UI Labels (Validated Translations)

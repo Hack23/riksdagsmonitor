@@ -1688,48 +1688,49 @@ const titleHtml = (report.titel && !report.title)
 ```
 
 2. **Agentic Workflow** translates marked content:
-```markdown
-### Step 5: Translate Swedish Content (CRITICAL - MANDATORY)
 
-🚨 **THIS STEP IS ABSOLUTELY MANDATORY. DO NOT SKIP.** 🚨
-
-For EACH non-Swedish article:
-
-1. **Identify articles needing translation**:
-```bash
-for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
-  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
-    echo "NEEDS TRANSLATION: $article"
-  fi
-done
-```
-
-2. **Translate EACH file**:
-   - Read the article file
-   - Find all `<span data-translate="true" lang="sv">Swedish text</span>`
-   - Translate the Swedish text to the article's target language
-   - Replace the span with plain translated text
-   - Consult `TRANSLATION_GUIDE.md` for correct terminology
-   - Write the updated file back
-
-3. **Validation (MANDATORY)**:
-```bash
-UNTRANSLATED=0
-for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
-  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
-    echo "❌ UNTRANSLATED: $(basename $article)"
-    UNTRANSLATED=$((UNTRANSLATED + 1))
-  fi
-done
-
-if [ $UNTRANSLATED -gt 0 ]; then
-  echo "❌ $UNTRANSLATED articles contain untranslated Swedish content!"
-  exit 1
-else
-  echo "✅ All articles fully translated"
-fi
-```
-```
+   ### Step 5: Translate Swedish Content (CRITICAL - MANDATORY)
+   
+   🚨 **THIS STEP IS ABSOLUTELY MANDATORY. DO NOT SKIP.** 🚨
+   
+   For EACH non-Swedish article:
+   
+   1. **Identify articles needing translation**:
+   
+      ```bash
+      for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+        if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+          echo "NEEDS TRANSLATION: $article"
+        fi
+      done
+      ```
+   
+   2. **Translate EACH file**:
+      - Read the article file
+      - Find all `<span data-translate="true" lang="sv">Swedish text</span>`
+      - Translate the Swedish text to the article's target language
+      - Replace the span with plain translated text
+      - Consult `TRANSLATION_GUIDE.md` for correct terminology
+      - Write the updated file back
+   
+   3. **Validation (MANDATORY)**:
+   
+      ```bash
+      UNTRANSLATED=0
+      for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+        if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+          echo "❌ UNTRANSLATED: $(basename $article)"
+          UNTRANSLATED=$((UNTRANSLATED + 1))
+        fi
+      done
+      
+      if [ $UNTRANSLATED -gt 0 ]; then
+        echo "❌ $UNTRANSLATED articles contain untranslated Swedish content!"
+        exit 1
+      else
+        echo "✅ All articles fully translated"
+      fi
+      ```
 
 3. **Validation Script** catches missed translations:
 ```javascript

@@ -1,10 +1,16 @@
 #!/usr/bin/env node
 
 /**
- * Vocabulary Extraction Script
+ * Enhanced Vocabulary Extraction Script
  * 
  * Analyzes translated news articles to extract political terminology patterns
  * across all 14 supported languages for vocabulary enhancement.
+ * 
+ * Features:
+ * - Structure-based label extraction (language-agnostic)
+ * - CLI-configurable date filter
+ * - Comprehensive error reporting
+ * - Support for all language scripts (Latin, CJK, RTL)
  */
 
 import { readFileSync, readdirSync } from 'fs';
@@ -16,8 +22,11 @@ const LANGUAGES = {
   ar: 'Arabic', he: 'Hebrew', ja: 'Japanese', ko: 'Korean', zh: 'Chinese'
 };
 
+// Track skipped files for warning summary
+const skippedFiles = [];
+
 /**
- * Extract political terms from HTML content
+ * Extract political terms from HTML content using structure-based approach
  */
 function extractTerms(content, lang) {
   const terms = {};
@@ -26,20 +35,36 @@ function extractTerms(content, lang) {
   const h3Matches = content.match(/<h3>([^<]+)<\/h3>/g) || [];
   terms.titles = h3Matches.map(m => m.replace(/<\/?h3>/g, '').trim()).slice(0, 10);
   
-  // Extract "What to Watch" / "Vad man ska följa" etc.
-  const watchPattern = /<h2>([^<]*(?:[Ww]atch|[Ff]ölja|[Bb]eobachten|[Ss]uivre|[Ss]eguir)[^<]*)<\/h2>/i;
-  const watchMatch = content.match(watchPattern);
-  if (watchMatch) terms.watchLabel = watchMatch[1].trim();
+  // Extract "What to Watch" heading (any language) - structure-based
+  const h2Pattern = /<h2[^>]*>([^<]+)<\/h2>/g;
+  const h2Matches = [];
+  let h2Match;
+  while ((h2Match = h2Pattern.exec(content)) !== null) {
+    const text = h2Match[1].trim();
+    // Heuristic: "What to Watch" headings often contain these keywords
+    if (text.length > 5 && text.length < 100) {
+      h2Matches.push(text);
+    }
+  }
+  if (h2Matches.length > 0) {
+    // Assume first h2 is "What to Watch" if present
+    terms.watchLabel = h2Matches[0];
+  }
   
-  // Extract "Committee" / "Kommitté" / "Ausschuss" etc.
-  const committeePattern = /<strong>([^<]*(?:[Cc]ommittee|[Kk]ommitté|[Aa]usschuss|[Cc]ommission|[Uu]dvalg|[Vv]aliokunta)[^<]*):?<\/strong>/i;
-  const committeeMatch = content.match(committeePattern);
-  if (committeeMatch) terms.committeeLabel = committeeMatch[1].trim();
+  // Extract structured labels from <strong>…:</strong> (language-agnostic)
+  const strongLabelPattern = /<strong>\s*([^:<]+?)\s*:\s*<\/strong>/g;
+  const strongLabels = [];
+  let strongMatch;
+  while ((strongMatch = strongLabelPattern.exec(content)) !== null) {
+    const label = strongMatch[1].trim();
+    if (label.length > 0 && label.length < 50) {
+      strongLabels.push(label);
+    }
+  }
   
-  // Extract "Document" / "Dokument" etc.
-  const documentPattern = /<strong>([^<]*(?:[Dd]ocument|[Dd]okument)[^<]*):?<\/strong>/i;
-  const documentMatch = content.match(documentPattern);
-  if (documentMatch) terms.documentLabel = documentMatch[1].trim();
+  // Convention: first label is often committee, second is document
+  if (strongLabels[0]) terms.committeeLabel = strongLabels[0];
+  if (strongLabels[1]) terms.documentLabel = strongLabels[1];
   
   // Extract article type from title
   const titleMatch = content.match(/<h1>([^<]+)<\/h1>/);
@@ -51,7 +76,7 @@ function extractTerms(content, lang) {
 /**
  * Analyze all news articles
  */
-function analyzeArticles(directory = 'news') {
+function analyzeArticles(directory = 'news', datePrefix = null) {
   const results = {};
   
   for (const lang of Object.keys(LANGUAGES)) {
@@ -63,14 +88,29 @@ function analyzeArticles(directory = 'news') {
   }
   
   try {
-    const files = readdirSync(directory).filter(f => f.endsWith('.html') && f.includes('2026-02-'));
+    const files = readdirSync(directory).filter(f => {
+      if (!f.endsWith('.html')) return false;
+      if (datePrefix && !f.includes(datePrefix)) return false;
+      return true;
+    });
+    
+    console.log(`\nScanning ${files.length} HTML files in ${directory}/`);
+    if (datePrefix) {
+      console.log(`Filtering by date prefix: "${datePrefix}"\n`);
+    }
     
     for (const file of files) {
       const match = file.match(/-([a-z]{2})\.html$/);
-      if (!match) continue;
+      if (!match) {
+        skippedFiles.push({ file, reason: 'No language code in filename' });
+        continue;
+      }
       
       const lang = match[1];
-      if (!results[lang]) continue;
+      if (!results[lang]) {
+        skippedFiles.push({ file, reason: `Unknown language code: ${lang}` });
+        continue;
+      }
       
       try {
         const content = readFileSync(`${directory}/${file}`, 'utf-8');
@@ -90,11 +130,12 @@ function analyzeArticles(directory = 'news') {
           terms
         });
       } catch (error) {
-        // Skip files that can't be read
+        skippedFiles.push({ file, reason: `Read error: ${error.message}` });
       }
     }
   } catch (error) {
     console.error(`Error reading directory: ${error.message}`);
+    process.exit(1);
   }
   
   return results;
@@ -133,40 +174,71 @@ function generateReport(results) {
     
     // Show sample titles from committee reports
     const committeeReports = data.samples.filter(s => s.type === 'committee-reports');
-    if (committeeReports.length > 0 && committeeReports[0].terms.titles) {
-      console.log(`\n  Sample titles (committee reports):`);
-      committeeReports[0].terms.titles.slice(0, 3).forEach(title => {
-        console.log(`    - ${title}`);
-      });
+    if (committeeReports.length > 0 && committeeReports[0].terms.titles.length > 0) {
+      console.log(`  Sample titles: ${committeeReports[0].terms.titles.slice(0, 3).join(', ')}`);
     }
   }
   
-  console.log('\n========================================\n');
-}
-
-/**
- * Generate vocabulary tables for documentation
- */
-function generateVocabularyTables(results) {
-  console.log('\n### Key Political Terms by Language\n');
-  
-  console.log('| Language | Committee | Document | What to Watch |');
-  console.log('|----------|-----------|----------|---------------|');
-  
-  for (const [code, data] of Object.entries(results)) {
-    if (data.samples.length === 0) continue;
+  // Warning summary
+  if (skippedFiles.length > 0) {
+    console.log('\n\n⚠️  WARNING: Skipped Files Summary');
+    console.log('=====================================');
+    console.log(`Total skipped: ${skippedFiles.length}\n`);
     
-    const committeeLabel = data.samples.find(s => s.terms.committeeLabel)?.terms.committeeLabel || '-';
-    const documentLabel = data.samples.find(s => s.terms.documentLabel)?.terms.documentLabel || '-';
-    const watchLabel = data.samples.find(s => s.terms.watchLabel)?.terms.watchLabel || '-';
+    // Group by reason
+    const byReason = {};
+    for (const { file, reason } of skippedFiles) {
+      if (!byReason[reason]) byReason[reason] = [];
+      byReason[reason].push(file);
+    }
     
-    console.log(`| ${data.language} (${code}) | ${committeeLabel} | ${documentLabel} | ${watchLabel} |`);
+    for (const [reason, files] of Object.entries(byReason)) {
+      console.log(`${reason}: ${files.length} file(s)`);
+      if (files.length <= 5) {
+        files.forEach(f => console.log(`  - ${f}`));
+      } else {
+        files.slice(0, 3).forEach(f => console.log(`  - ${f}`));
+        console.log(`  ... and ${files.length - 3} more`);
+      }
+      console.log();
+    }
   }
   
-  console.log('');
+  console.log('\n========================================');
+  console.log('Analysis complete!');
+  console.log('========================================\n');
+}
+
+// Parse CLI arguments
+const args = process.argv.slice(2);
+let datePrefix = null;
+let directory = 'news';
+
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--date-prefix' && args[i + 1]) {
+    datePrefix = args[i + 1];
+    i++;
+  } else if (args[i] === '--directory' && args[i + 1]) {
+    directory = args[i + 1];
+    i++;
+  } else if (args[i] === '--help' || args[i] === '-h') {
+    console.log(`
+Usage: node extract-vocabulary.js [options]
+
+Options:
+  --date-prefix <prefix>   Filter files by date prefix (e.g., "2026-02-")
+  --directory <path>       Directory to scan (default: "news")
+  --help, -h              Show this help message
+
+Examples:
+  node extract-vocabulary.js
+  node extract-vocabulary.js --date-prefix 2026-02-
+  node extract-vocabulary.js --directory news --date-prefix 2026-03-
+`);
+    process.exit(0);
+  }
 }
 
 // Run analysis
-const results = analyzeArticles('news');
+const results = analyzeArticles(directory, datePrefix);
 generateReport(results);
-generateVocabularyTables(results);
