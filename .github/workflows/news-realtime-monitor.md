@@ -519,34 +519,14 @@ After committing your changes locally with `git add` and `git commit`, call the 
 
 When no breaking news is detected, you MUST:
 
-1. Update `news/metadata/last-generation.json` with timestamp:
-   ```bash
-   cat > news/metadata/last-generation.json <<EOF
-   {
-     "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-     "check_type": "realtime-monitor",
-     "events_detected": 0,
-     "articles_generated": 0,
-     "next_check": "Next scheduled run (see cron)",
-     "status": "no-significant-events"
-   }
-   EOF
-   ```
-
-2. Commit the metadata update:
-   ```bash
-   git add news/metadata/last-generation.json
-   git commit -m "chore: update realtime monitor metadata (no significant events)"
-   ```
-
-3. **MANDATORY:** Call `safeoutputs___noop` MCP tool:
+1. **MANDATORY:** Call `safeoutputs___noop` MCP tool:
    ```javascript
    safeoutputs___noop({
-     message: "Real-time monitor check completed. No significant parliamentary events detected during this window. Metadata updated. Next check: [schedule time]"
+     message: "Real-time monitor check completed. No significant parliamentary events detected during this window. Next check: [schedule time]"
    })
    ```
 
-4. Exit gracefully
+2. Exit gracefully
 
 **⚠️ CRITICAL:** Calling `safeoutputs___noop` is **MANDATORY** even when no articles are generated. This signals successful completion to the workflow system. **Failure to call this will cause the workflow to appear as failed.**
 

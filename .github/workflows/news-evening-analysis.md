@@ -617,10 +617,10 @@ After committing your changes locally with `git add` and `git commit`, call the 
 #### If No Significant Activity
 
 If no noteworthy parliamentary activity occurred today:
-1. Update `news/metadata/last-generation.json` with timestamp
-2. Call the `safeoutputs___noop` MCP tool with a status message
-3. Do not create a PR
-4. Exit gracefully
+1. Call the `safeoutputs___noop` MCP tool with a status message
+2. Exit gracefully
+
+**Note**: Do not commit metadata updates when calling noop - they won't be published.
 
 ## Writing Guidelines (The Economist Style)
 
