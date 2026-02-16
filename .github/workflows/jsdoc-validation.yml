@@ -58,7 +58,14 @@ jobs:
           npm run jsdoc
           echo "✅ JSDoc generation complete"
           
-      - name: Commit API Documentation
+      - name: Update Sitemap
+        id: update_sitemap
+        run: |
+          echo "🗺️ Updating sitemap.xml with API documentation..."
+          npm run generate-sitemap
+          echo "✅ Sitemap updated"
+          
+      - name: Commit API Documentation and Sitemap
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/copilot/'))
         run: |
           # Configure git
@@ -66,22 +73,23 @@ jobs:
           git config --local user.name "github-actions[bot]"
           
           # Check if there are changes to commit
-          git add api/
+          git add api/ sitemap.xml
           
           if git diff --staged --quiet; then
-            echo "📝 No changes to API documentation"
+            echo "📝 No changes to API documentation or sitemap"
           else
-            echo "📝 Committing updated API documentation..."
-            git commit -m "docs: Update JSDoc API documentation [skip ci]
+            echo "📝 Committing updated API documentation and sitemap..."
+            git commit -m "docs: Update JSDoc API documentation and sitemap.xml [skip ci]
             
             - Generated from latest JavaScript source code
+            - Updated sitemap.xml with API documentation URLs
             - Includes intelligence operative perspective
             - Deployed via GitHub Pages
             
             Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
             
             git push
-            echo "✅ API documentation committed and pushed"
+            echo "✅ API documentation and sitemap committed and pushed"
           fi
           
       - name: Verify api/ Directory Created

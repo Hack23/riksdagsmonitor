@@ -142,6 +142,11 @@ jobs:
           echo "✅ Deploy with cache headers completed"
       
       # Invalidate CloudFront cache to ensure latest content is served
+      # Note: Using blanket "/*" invalidation is optimal for this use case:
+      # - Site has ~500 files (well within 1000 free invalidations/month)
+      # - Deployment frequency is low (PR-based, not continuous)
+      # - Simplicity trumps optimization at this scale
+      # - Cache headers already optimized (1hr HTML, 1yr assets, 24hr metadata)
       - name: Invalidate CloudFront
         run: |
           echo "🔍 Discovering CloudFront distribution ID from stack: ${{ env.CLOUDFRONT_STACK_NAME }}"
