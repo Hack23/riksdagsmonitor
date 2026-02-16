@@ -150,88 +150,78 @@ Parse the `article_types` input (comma-separated list) and generate the requeste
 
 ## Available MCP Tools (riksdag-regering-mcp)
 
-### 🔌 MCP Server Integration - Quick Start
+## 🔌 MCP Tools: Swedish Political Data
 
-**The riksdag-regering-mcp server is pre-configured and ready to use.** No setup required!
+### ⚡ Quick Start - Use MCP Tools Directly
 
-**Server Details:**
-- **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
-- **Protocol**: JSON-RPC 2.0 (HTTP transport)
-- **Authentication**: Handled automatically by framework
-- **Tools**: 32 tools automatically available
+**You have 32 specialized tools for Swedish political data ready to use.**
 
-### 🔌 MCP Server: riksdag-regering
+**IMPORTANT:** Call the tools using their simple names directly:
 
-You have access to the **riksdag-regering-mcp** server with 32 specialized tools.
-
-**Configuration** (in workflow frontmatter):
-```yaml
-mcp-servers:
-  riksdag-regering:
-    url: https://riksdag-regering-ai.onrender.com/mcp
-```
-
-**How It Works:**
-1. Configuration compiles into `.lock.yml` with embedded MCP gateway
-2. Gateway proxy handles protocol, auth, sessions automatically
-3. All tools available via `mcp["riksdag-regering"]["riksdag-regering--tool_name"]` syntax
-
-**Tool Naming:** All tool names MUST be prefixed with `riksdag-regering--`
-
-**Quick Start:**
 ```javascript
-// Fetch calendar events
-const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
-  from: "2026-02-16",
-  tom: "2026-02-16",
-  limit: 50
-});
+// Calendar events
+get_calendar_events({ from: "2026-02-16", tom: "2026-02-16", limit: 50 })
 
-// Search documents
-const docs = await mcp["riksdag-regering"]["riksdag-regering--search_dokument"]({
-  from_date: "2026-02-16",
-  limit: 30
-});
+// Recent documents
+search_dokument({ from_date: "2026-02-16", limit: 30 })
+
+// Check data freshness
+get_sync_status({})
+
+// Recent votes
+search_voteringar({ rm: "2025/26", limit: 20 })
 ```
 
-### 🚨 Cold Start Warning
+**Tool Naming:** Use simple names like `get_calendar_events()`, `search_dokument()` - the framework handles routing automatically.
 
-**Important**: Server may take 30-60s on first request. Framework retries automatically (3 attempts, 2s delays).
+### 🚫 DO NOT Try to Call MCP Manually From Prompts
 
-**Best Practices:**
-1. ✅ Start with a simple warm-up query
-2. ✅ Batch multiple queries after warm-up
-3. ✅ Check data freshness: `riksdag-regering--get_sync_status` before generating articles
+**These approaches DO NOT WORK for calling MCP tools from the agent prompt:**
+- ❌ Manual bash/curl commands to call MCP endpoints
+- ❌ Using `mcp["server"]["tool"]` wrapper syntax in prompts
+- ❌ Importing `MCPClient` from scripts in prompt code
+- ❌ Trying to manage authentication/sessions yourself in prompts
+- ❌ Direct HTTP calls to MCP server from prompt code
 
-### 🐛 Troubleshooting
+**✅ For MCP tool calls in prompts, ALWAYS do this:**
+- ✅ Use simple tool names: `get_calendar_events({ params })`, `search_dokument({ params })`
+- ✅ Let the framework handle all routing, authentication and session management
+- ✅ Trust the automatic retry logic for cold starts
 
-**Issue: Request times out**
-- **Cause**: Cold start (30-60s)
-- **Solution**: Wait and retry - framework handles retries automatically
+**✅ For running generation scripts (like `node scripts/generate-news-enhanced.js`):**
+- ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
+- ✅ Scripts ARE used by agentic workflows - see Sandbox Networking Reminder section below
 
-**Issue: Tool not found error**
-- **Cause**: Missing `riksdag-regering--` prefix
-- **Solution**: Always use full prefix: `mcp["riksdag-regering"]["riksdag-regering--tool_name"]`
+### 🚨 Cold Start Handling
 
-**Issue: Agent spent 10+ minutes on manual attempts**
-- **Cause**: Tried bash/curl/python instead of framework
-- **Solution**: Always use `mcp["server"]["tool"]` syntax
+The MCP server may take 30-60 seconds on first request (cold start). **The framework handles this automatically with retries.** Just make your call normally and wait.
+
+**Best Practice:** Start with a simple query to warm up the server, then batch multiple queries.
+
+### 🐛 If You Get Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| Tool not found | Wrong tool name | Use exact names: `get_calendar_events`, `search_dokument` |
+| Empty results | No data in timeframe | Check `get_sync_status`, widen date range |
+| Timeout | Cold start (30-60s) | Wait - framework retries automatically |
+| Swedish-only results | Riksdag API returns Swedish | YOU must translate to target languages |
 
 ### 📋 Available Tools by Category
 
 You have access to 32 specialized tools for Swedish political data:
 
 ### Document Search
-- `riksdag-regering--search_dokument` - Search all Riksdag documents
-- `riksdag-regering--get_dokument` - Get specific document with full text
-- `riksdag-regering--search_dokument_fulltext` - Full-text search
+- `search_dokument` - Search all Riksdag documents
+- `get_dokument` - Get specific document with full text
+- `search_dokument_fulltext` - Full-text search
 
 ### Parliament Activity
-- `riksdag-regering--get_propositioner` - Latest government bills
-- `riksdag-regering--get_betankanden` - Latest committee reports
-- `riksdag-regering--get_motioner` - Latest opposition motions
-- `riksdag-regering--get_fragor` - Written questions
-- `riksdag-regering--get_interpellationer` - Interpellations
+- `get_propositioner` - Latest government bills
+- `get_betankanden` - Latest committee reports
+- `get_motioner` - Latest opposition motions
+- `get_fragor` - Written questions
+- `get_interpellationer` - Interpellations
 
 ### Calendar & Events
 - `get_calendar_events` - Upcoming parliamentary events (next 7 days)
@@ -1307,7 +1297,7 @@ For each generated article, create:
 
 Remember: You are producing world-class political journalism that informs Swedish citizens and holds power accountable. Maintain the highest standards of accuracy, balance, and analytical depth.
 
-🎯 **Now begin: Check for recent generation, query riksdag-regering-mcp, analyze data, generate articles, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
+🎯 **Now begin: Check for recent generation, query riksdag-regering-mcp using MCP tools, analyze data, generate articles, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
 
 ### ⚠️ Sandbox Networking Reminder
 
