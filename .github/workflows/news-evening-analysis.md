@@ -448,6 +448,35 @@ node scripts/generate-news-indexes.js
 node scripts/generate-sitemap.js
 ```
 
+### Step 6.5: Validate Generated Content (BLOCKING)
+
+**CRITICAL**: Run comprehensive quality validation BEFORE creating PR:
+
+```bash
+bash scripts/validate-news-generation.sh
+
+if [ $? -ne 0 ]; then
+  echo "❌ Validation failed - DO NOT create PR"
+  echo "Review errors above and fix issues before proceeding"
+  exit 1
+fi
+
+echo "✅ Validation passed - safe to create PR"
+```
+
+This validation checks:
+1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes
+2. ✅ No untranslated Swedish markers (data-translate)
+3. ✅ Localized taglines in non-English articles
+4. ⚠️  BreadcrumbList localization (warning level)
+5. ⚠️  Index file freshness (< 24 hours)
+6. ✅ Index files have content (> 1KB)
+7. ✅ Sitemap includes news articles (> 10)
+
+**Exit code 0** = pass (proceed to Step 7), **exit code 1** = fail (STOP, do not create PR).
+
+If validation fails, review the error messages, fix the issues, regenerate indexes if needed, and run validation again.
+
 ### Step 7: Create Pull Request
 
 **IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
