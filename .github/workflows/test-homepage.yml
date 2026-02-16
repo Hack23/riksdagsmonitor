@@ -1,0 +1,139 @@
+name: Test Homepage
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'index*.html'
+      - 'styles.css'
+      - 'js/main.js'
+      - 'js/language-switcher.js'
+      - 'cypress/e2e/homepage.cy.js'
+      - 'cypress/e2e/accessibility.cy.js'
+      - '.github/workflows/test-homepage.yml'
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'index*.html'
+      - 'styles.css'
+      - 'js/main.js'
+      - 'js/language-switcher.js'
+      - 'cypress/e2e/homepage.cy.js'
+      - 'cypress/e2e/accessibility.cy.js'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build for Homepage Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+      
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build with Vite
+        run: npm run build
+      
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: homepage-build
+          path: dist/
+          retention-days: 1 # Short retention for speed
+  
+  test-homepage:
+    name: Homepage & Accessibility Tests
+    runs-on: ubuntu-latest
+    needs: build
+    timeout-minutes: 5 # Max 5 minutes
+    strategy:
+      fail-fast: true # Stop immediately on failure
+      matrix:
+        spec:
+          - 'cypress/e2e/homepage.cy.js'
+          - 'cypress/e2e/accessibility.cy.js'
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+      
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Download build artifacts
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: homepage-build
+          path: dist/
+      
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@84d178e4bbce871e23f2ffa3085898cde0e4f0ec # v7.1.2
+        with:
+          start: npm run preview
+          wait-on: 'http://localhost:4173'
+          wait-on-timeout: 30 # Reduced from 60 for speed
+          browser: chrome
+          spec: ${{ matrix.spec }}
+          config: video=false
+          quiet: true # Faster output
+      
+      - name: Archive screenshots
+        if: failure()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: homepage-screenshots-${{ strategy.job-index }}
+          path: cypress/screenshots/
+          retention-days: 7
+  
+  summary:
+    name: Homepage Test Summary
+    runs-on: ubuntu-latest
+    needs: [build, test-homepage]
+    if: always()
+    
+    steps:
+      - name: Test Summary
+        run: |
+          echo "## 🏠 Homepage Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Build: ${{ needs.build.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "Tests: ${{ needs.test-homepage.result }}" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.test-homepage.result }}" == "success" ]; then
+            echo "### ✅ All homepage tests passed!" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ❌ Homepage tests failed" >> $GITHUB_STEP_SUMMARY
+          fi

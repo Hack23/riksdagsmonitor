@@ -211,6 +211,11 @@
  * @see {@link ./THREAT_MODEL.md|Threat Model Documentation}
  * @see {@link ./SECURITY_ARCHITECTURE.md|Security Architecture}
  */
+
+// Data source base paths
+const LOCAL_DATA_BASE = 'cia-data';
+const CIA_DATA_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data';
+
 const DATA_SOURCES = {
   riskSummary: [
     `${LOCAL_DATA_BASE}/politician/view_politician_risk_summary_sample.csv`,
