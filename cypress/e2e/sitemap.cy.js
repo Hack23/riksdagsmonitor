@@ -175,9 +175,8 @@ describe('Sitemap Pages', () => {
           bodyHtml.includes('_da') ||
           bodyHtml.includes('_no');
         
-        if (hasLanguageLinks) {
-          cy.log('Found language variant links');
-        }
+        // Assert that language links exist
+        expect(hasLanguageLinks, 'Expected sitemap to contain links to language variants (e.g., _sv, _da, _no)').to.be.true;
       });
     });
   });
@@ -232,13 +231,20 @@ describe('Sitemap Pages', () => {
         expect(internalLinks.length).to.be.greaterThan(5);
         
         if (internalLinks.length > 0) {
-          // Test first 3 internal links
+          // Test first 3 internal links by requesting them
           const linksToTest = internalLinks.slice(0, 3);
           
           linksToTest.each((index, link) => {
             const href = Cypress.$(link).attr('href');
             cy.log(`Testing internal link: ${href}`);
-            // We can't actually visit all links, but we verify they exist
+            
+            // Verify link is not broken (returns non-404)
+            cy.request({
+              url: href,
+              failOnStatusCode: false
+            }).then((response) => {
+              expect(response.status, `Link ${href} should not return 404`).to.not.equal(404);
+            });
           });
         }
       });
@@ -274,9 +280,8 @@ describe('Sitemap Pages', () => {
           $body.find('a[href="index.html"]').length > 0 ||
           $body.find('a[href="./index.html"]').length > 0;
         
-        if (hasHomeLink) {
-          cy.log('Found link back to homepage');
-        }
+        // Assert that homepage link exists
+        expect(hasHomeLink, 'Expected sitemap to have a link back to homepage (/, index.html, or ./index.html)').to.be.true;
       });
     });
 

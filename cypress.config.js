@@ -59,12 +59,12 @@ export default defineConfig({
     numTestsKeptInMemory: 10, // Reduced from default 50
     
     setupNodeEvents(on, config) {
-      // Fail-fast: Exit on first failure in spec
+      // Log failures after each spec (use --bail in CI for true fail-fast runs)
       on('after:spec', (spec, results) => {
         if (results && results.stats.failures > 0) {
-          console.log('❌ Test failures detected - failing fast');
-          // Note: Individual spec will fail, runner continues to next spec
-          // Use --bail flag in CLI to stop entire run
+          console.log('❌ Test failures detected in spec. Use the --bail flag to stop the run on first failing spec.');
+          // Note: The individual spec fails, but the runner continues to the next spec
+          // To stop the entire run on first failure, configure Cypress with the --bail flag
         }
       });
       

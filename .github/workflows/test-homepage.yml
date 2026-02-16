@@ -7,7 +7,7 @@ on:
       - develop
     paths:
       - 'index*.html'
-      - 'css/**'
+      - 'styles.css'
       - 'js/main.js'
       - 'js/language-switcher.js'
       - 'cypress/e2e/homepage.cy.js'
@@ -19,7 +19,7 @@ on:
       - develop
     paths:
       - 'index*.html'
-      - 'css/**'
+      - 'styles.css'
       - 'js/main.js'
       - 'js/language-switcher.js'
       - 'cypress/e2e/homepage.cy.js'

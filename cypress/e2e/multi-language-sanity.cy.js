@@ -2,13 +2,11 @@
  * Cypress E2E Tests - Multi-Language Sanity Checks
  * 
  * Comprehensive sanity tests for all 14 language variants across homepage, dashboard, and news pages
- * Enhanced with Cypress 15 features: session caching, modern assertions, improved selectors
  * 
  * Languages: EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH
  * 
  * @author Hack23 AB
  * @license Apache-2.0
- * @requires cypress@15.10.0
  */
 
 describe('Multi-Language Sanity Tests', () => {
@@ -27,20 +25,6 @@ describe('Multi-Language Sanity Tests', () => {
     { code: 'ko', name: 'Korean', nativeName: '한국어', dir: 'ltr', langCode: 'ko' },
     { code: 'zh', name: 'Chinese', nativeName: '中文', dir: 'ltr', langCode: 'zh' }
   ];
-
-  // Cypress 15 Feature: Helper function to validate HTML attributes efficiently
-  const validateHtmlAttributes = (lang) => {
-    // Modern assertion with chaining
-    cy.document().its('documentElement').as('htmlElement');
-    cy.get('@htmlElement')
-      .should('have.attr', 'lang')
-      .and('match', new RegExp(lang.langCode, 'i'));
-    
-    // Validate dir attribute for RTL languages
-    if (lang.dir === 'rtl') {
-      cy.get('@htmlElement').should('have.attr', 'dir', 'rtl');
-    }
-  };
 
   describe('Homepage - All Languages', () => {
     languages.forEach((lang) => {

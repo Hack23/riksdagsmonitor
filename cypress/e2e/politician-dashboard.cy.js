@@ -85,14 +85,12 @@ describe('Politician Dashboard', () => {
     });
 
     it('should render canvas elements for charts', () => {
-      // Wait a bit for charts to potentially render
-      cy.wait(1000);
-      
-      cy.get('body').then(($body) => {
-        const canvases = $body.find('canvas');
-        if (canvases.length > 0) {
-          cy.log(`Found ${canvases.length} canvas elements`);
-          cy.get('canvas').first().should('be.visible');
+      // Wait for any canvas elements to render using Cypress' retry mechanism
+      cy.get('canvas', { timeout: 10000 }).then(($canvases) => {
+        const canvasCount = $canvases.length;
+        if (canvasCount > 0) {
+          cy.log(`Found ${canvasCount} canvas elements`);
+          cy.wrap($canvases.first()).should('be.visible');
         } else {
           cy.log('No canvas elements found - charts may not have rendered yet');
         }
@@ -108,20 +106,23 @@ describe('Politician Dashboard', () => {
         const hasCards = $body.find('.politician-card, .mp-card').length > 0;
         const hasList = $body.find('.politician-list, .mp-list').length > 0;
         
-        if (hasTable || hasCards || hasList) {
-          cy.log('Found politician data display elements');
-        } else {
-          cy.log('Politician data display may be dynamically loaded');
-        }
+        // Assert that at least one politician data display element exists
+        expect(
+          hasTable || hasCards || hasList,
+          'Expected at least one politician data display element (table, cards, or list) to exist'
+        ).to.be.true;
       });
     });
 
     it('should have top rankings section', () => {
       cy.get('body').then(($body) => {
-        const bodyText = $body.text();
-        if (bodyText.includes('Top') || bodyText.includes('Ranking')) {
-          cy.log('Found ranking-related content');
-        }
+        const bodyText = $body.text().toLowerCase();
+
+        // Assert that some ranking-related content is present on the page
+        expect(
+          bodyText.includes('top') || bodyText.includes('ranking'),
+          'Expected ranking-related content (e.g., "Top" or "Ranking") to be present in the page text'
+        ).to.be.true;
       });
     });
   });
