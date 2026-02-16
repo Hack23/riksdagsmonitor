@@ -629,7 +629,7 @@ export class MCPClient {
   - Try manual workflow dispatch with force_generation=true`;
       }
       
-      throw new Error(errorMessage);
+      throw new Error(errorMessage, { cause: error });
     } finally {
       // Always clear timeout to prevent timer leak
       clearTimeout(timeoutId);
