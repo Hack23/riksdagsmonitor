@@ -174,20 +174,23 @@ search_voteringar({ rm: "2025/26", limit: 20 })
 
 **Tool Naming:** Use simple names like `get_calendar_events()`, `search_dokument()` - the framework handles routing automatically.
 
-### 🚫 DO NOT Use Manual Approaches
+### 🚫 DO NOT Try to Call MCP Manually From Prompts
 
-**❌ NEVER do any of these:**
-- ❌ Manual bash/curl/node scripts to call MCP
-- ❌ Setting `MCP_SERVER_URL` environment variables
-- ❌ Importing `MCPClient` from scripts
-- ❌ Trying to manage authentication/sessions yourself
-- ❌ Direct HTTP calls to the MCP server
-- ❌ Using `mcp["server"]["tool"]` wrapper syntax
+**These approaches DO NOT WORK for calling MCP tools from the agent prompt:**
+- ❌ Manual bash/curl commands to call MCP endpoints
+- ❌ Using `mcp["server"]["tool"]` wrapper syntax in prompts
+- ❌ Importing `MCPClient` from scripts in prompt code
+- ❌ Trying to manage authentication/sessions yourself in prompts
+- ❌ Direct HTTP calls to MCP server from prompt code
 
-**✅ ALWAYS do this:**
+**✅ For MCP tool calls in prompts, ALWAYS do this:**
 - ✅ Use simple tool names: `get_calendar_events({ params })`, `search_dokument({ params })`
 - ✅ Let the framework handle all routing, authentication and session management
 - ✅ Trust the automatic retry logic for cold starts
+
+**✅ For running generation scripts (like `node scripts/generate-news-enhanced.js`):**
+- ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
+- ✅ Scripts ARE used by agentic workflows - see Sandbox Networking Reminder section below
 
 ### 🚨 Cold Start Handling
 
