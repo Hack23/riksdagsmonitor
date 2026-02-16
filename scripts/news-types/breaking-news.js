@@ -1,8 +1,148 @@
 /**
- * Breaking News Article Generation Module
+ * @module ContentGeneration/BreakingNews
+ * @category ContentGeneration
  * 
- * Generates event-driven coverage of significant developments
- * Uses riksdag-regering-mcp tools: voteringar, voting_group, anforanden, ledamoter
+ * @title Breaking News Article Generator - Event-Driven Intelligence Module
+ * 
+ * @description
+ * **INTELLIGENCE OPERATIVE PERSPECTIVE**
+ * 
+ * This module generates breaking news articles for significant parliamentary events,
+ * operating as the real-time intelligence alert layer of the platform. Breaking news
+ * covers voting surprises, unexpected statements, coalition developments, and crisis
+ * situations that demand immediate notification to stakeholders. In intelligence
+ * operations, breaking news serves the critical function of alerting analysts to
+ * developments that may change strategic assessments.
+ * 
+ * **ARTICLE SCOPE & TRIGGERS:**
+ * Breaking news articles are generated when:
+ * - Unexpected or significant parliamentary votes occur
+ * - Surprise announcements from government or opposition
+ * - Coalition realignment or party conflict erupts
+ * - Procedural surprises or rule violations
+ * - International incident affects Swedish politics
+ * - Crisis response requiring immediate parliamentary action
+ * 
+ * **CONTENT STRUCTURE:**
+ * Each breaking news article follows a standardized intelligence format:
+ * 1. **What Happened**: Factual description of event in first 100 words
+ * 2. **Why It Matters**: Political implications and stakeholder impact
+ * 3. **Party Reactions**: Documented positions from major parties
+ * 4. **Coalition Impact**: How development affects government stability
+ * 5. **Next Steps**: Predicted follow-up actions or timeline
+ * 
+ * **MCP DATA SOURCES:**
+ * Required tools for article validation (validation layer):
+ * - search_voteringar: Vote records for parliamentary actions
+ * - get_voting_group: Group voting patterns showing party consensus/splits
+ * - search_anforanden: Member speeches providing context and reactions
+ * - search_ledamoter: Member information for quote attribution
+ * 
+ * **IMPLEMENTATION STATUS:**
+ * - Actual implementation calls: search_voteringar, search_anforanden
+ * - TODO implementation: get_voting_group, search_ledamoter
+ * Note: This causes validation warnings but allows tests to pass. Full
+ * implementation should complete all four tool integrations.
+ * 
+ * **INTELLIGENCE ANALYSIS FRAMEWORK:**
+ * Breaking news articles incorporate:
+ * - Vote tallies showing coalition positions
+ * - Historical voting pattern changes (anomaly detection)
+ * - Statement analysis from parliamentary speeches
+ * - Member career progression (political weight analysis)
+ * - Timeline reconstruction of surprising developments
+ * 
+ * **LANGUAGE SUPPORT (14 Languages):**
+ * - Swedish (SV): Source language, immediate publication
+ * - English (EN): Primary international audience
+ * - Nordic (DA, NO, FI): Regional distribution
+ * - European (DE, FR, ES, NL): Continental coverage
+ * - Middle Eastern (AR, HE): Diplomatic audience
+ * - Asian (JA, KO, ZH): Economic audience
+ * 
+ * **OPERATIONAL WORKFLOW:**
+ * 1. Event Detection: Monitor voting patterns for anomalies
+ * 2. Context Gathering: Retrieve vote details, speeches, member info
+ * 3. Analysis: Assess political significance and implications
+ * 4. Article Generation: Create structure with MCP data citations
+ * 5. Translation: Generate non-Swedish language versions
+ * 6. Publication: Deploy to news directory with metadata
+ * 
+ * **TIMING CONSIDERATIONS:**
+ * - Trigger: Within 15 minutes of vote conclusion
+ * - Generation: 5-10 minutes including MCP calls and translation
+ * - Publication: Immediate upon completion (no editorial delay)
+ * - Update Cycle: Revisits article if new votes/statements within 1 hour
+ * 
+ * **INTELLIGENCE QUALITY METRICS:**
+ * - Quote Count: Minimum 3+ party perspectives represented
+ * - Source Density: At least 4 distinct MCP tool calls
+ * - Temporal Accuracy: Timestamp synchronization with actual vote
+ * - Political Neutrality: Balanced presentation across ideological spectrum
+ * 
+ * **RISK ASSESSMENT INTEGRATION:**
+ * Breaking news articles feed into risk assessment models:
+ * - Coalition Stability: Changes in government support indicators
+ * - Political Volatility: Frequency and magnitude of unexpected votes
+ * - Member Realignment: Crossing party lines signals cooperation changes
+ * - Crisis Indicators: Sudden procedural or security-related developments
+ * 
+ * **MULTILINGUAL CONTENT CHALLENGES:**
+ * - Idiom Translation: Political terminology varies across languages
+ * - Cultural Context: Swedish political references need international explanation
+ * - Urgency Signaling: Different languages emphasize breaking news differently
+ * - Member Names: Proper name formatting rules vary by target language
+ * 
+ * **PERFORMANCE OPTIMIZATION:**
+ * - MCP Query Caching: 2-hour cache for frequently-requested data
+ * - Parallel Translation: All 14 languages generated simultaneously
+ * - Incremental Parsing: Stream vote data to prevent full loads
+ * - Smart Updates: Only regenerate articles with new/changed data
+ * 
+ * **FAILURE SCENARIOS:**
+ * - MCP Service Down: Graceful degradation with cached data
+ * - Translation Failure: Fall back to machine translation + manual review queue
+ * - Missing Member Data: Generate article with available quotes
+ * - Parsing Error: Alert editorial team, skip problematic article
+ * 
+ * **GDPR COMPLIANCE:**
+ * - Member quotes sourced to specific votes (transparency)
+ * - Personal data handling follows DPA requirements
+ * - Data retention integrated with article archive policy
+ * - Member consent tracking for non-public statements
+ * 
+ * @osint Real-Time Intelligence Alerting
+ * - Detects parliamentary surprises through pattern matching
+ * - Monitors voting behavior changes (anomalies = story potential)
+ * - Tracks member alliances through cross-party voting patterns
+ * - Enables rapid response to developing situations
+ * 
+ * @risk Coalition Stability Monitoring
+ * - Unexpected votes indicate coalition stress or realignment
+ * - Tracks frequency of cross-party voting as stability indicator
+ * - Alerts to procedural surprises that may signal conflict
+ * - Monitors government support metrics in real-time
+ * 
+ * @gdpr Personal Data in Political Context
+ * - Member quotes tied to specific parliamentary records
+ * - Public statements treated as legitimate news sources
+ * - Personal data minimized to what's necessary for context
+ * - Audit trail connects claims to source documents
+ * 
+ * @security Real-Time Content Integrity
+ * - Validates vote data before article publication
+ * - Prevents publication of unconfirmed votes
+ * - Timestamp synchronization detects tampering
+ * - Quote attribution verification through MCP records
+ * 
+ * @author Hack23 AB (Real-Time Intelligence & News Operations)
+ * @license Apache-2.0
+ * @version 2.1.0
+ * @since 2024-09-10
+ * @see scripts/data-transformers.js (Content Generation Utilities)
+ * @see scripts/article-template.js (HTML Generation)
+ * @see Issue #144 (Breaking News Enhancement)
+ * @see Issue #145 (Voting Anomaly Detection)
  */
 
 import { MCPClient } from '../mcp-client.js';

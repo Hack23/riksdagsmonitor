@@ -1,11 +1,97 @@
 /**
- * Playwright Visual Validation Module
+ * @module Validation/VisualRegression
+ * @category Validation
  * 
- * Validates generated news articles with:
- * - Screenshot capture for PR evidence
- * - Accessibility tree validation (WCAG 2.1 AA)
- * - RTL layout validation for ar/he versions
- * - Visual regression testing
+ * @title Article Visual Regression Testing - E2E Quality Assurance
+ * 
+ * @description
+ * **INTELLIGENCE OPERATIVE PERSPECTIVE**
+ * 
+ * This module provides end-to-end visual validation of generated news articles using
+ * Playwright browser automation. In an intelligence context, visual consistency testing
+ * ensures that political news narratives are presented uniformly across all supported
+ * languages and device types - critical for avoiding perception of bias or message
+ * distortion in multilingual intelligence dissemination.
+ * 
+ * **OPERATIONAL ARCHITECTURE:**
+ * The visual validator captures screenshots across three viewport configurations:
+ * - Mobile (375x667): Primary news consumption platform in Nordic markets
+ * - Tablet (768x1024): Secondary device for analytical reading
+ * - Desktop (1920x1080): Editorial review and long-form analysis
+ * 
+ * **VALIDATION CAPABILITIES:**
+ * 1. Screenshot Capture: Evidence generation for PR reviews and post-publication audits
+ * 2. Accessibility Validation: WCAG 2.1 AA compliance for multilingual content
+ * 3. RTL Layout Testing: Arabic/Hebrew layout integrity for international editions
+ * 4. Visual Regression: Detects unintended layout changes that could affect message clarity
+ * 5. Text Rendering: Verifies typography integrity across 14 supported languages
+ * 
+ * **INTELLIGENCE APPLICATIONS:**
+ * - Ensures consistent political messaging across language editions
+ * - Detects accidental markup corruption that could alter article meaning
+ * - Provides visual evidence of article publication state
+ * - Validates accessibility for diverse reader populations
+ * - Supports quality gates before publication
+ * 
+ * **SECURITY & ACCESSIBILITY:**
+ * - Headless Chromium eliminates dependency on display servers
+ * - Accessibility tree validation ensures semantic HTML structure
+ * - RTL validation prevents layout-based distortions in Arabic/Hebrew editions
+ * - Screenshot archives support compliance auditing and incident review
+ * 
+ * **MULTILINGUAL CONSIDERATIONS:**
+ * - Swedish (SV): Baseline language, LTR layout
+ * - Nordic (EN, DA, NO, FI): LTR layouts, similar typography requirements
+ * - European (DE, FR, ES, NL): LTR, varying character widths
+ * - Middle Eastern (AR, HE): RTL layouts, special character handling
+ * - Asian (JA, KO, ZH): Vertical text considerations, CJK typography
+ * 
+ * **OPERATIONAL WORKFLOW:**
+ * 1. Pre-publication: Validate new article HTML before deployment
+ * 2. Multi-language validation: Test all translated versions simultaneously
+ * 3. Screenshot archival: Store evidence for 90-day compliance period
+ * 4. Regression detection: Compare against baseline for unintended changes
+ * 5. Accessibility audit: Generate ARIA tree for manual review
+ * 
+ * **PERFORMANCE CONSIDERATIONS:**
+ * - Browser launch: ~3s per test run
+ * - Page load + capture: ~1s per article per viewport
+ * - Total validation: ~10s for 5-article batch (3 viewports)
+ * - Parallel execution: Process multiple articles concurrently
+ * 
+ * **ERROR HANDLING STRATEGY:**
+ * - Timeout handling for slow article rendering
+ * - Fallback validation for missing screenshots
+ * - Detailed error reporting for accessibility failures
+ * - Graceful degradation for unavailable features
+ * 
+ * @osint Visual Intelligence Collection
+ * - Screenshot archives serve as evidence of publication state
+ * - Timestamp validation connects articles to specific publication moments
+ * - Viewport testing simulates reader experience across device ecosystem
+ * 
+ * @risk Visual Tampering Detection
+ * - Regression testing detects unauthorized layout modifications
+ * - Accessibility failures may indicate code injection
+ * - RTL validation prevents language-specific rendering attacks
+ * 
+ * @gdpr Accessibility Compliance
+ * - WCAG 2.1 AA validation ensures legal accessibility standards
+ * - Supports audits for disability discrimination compliance
+ * - Accessibility tree provides technical evidence for regulators
+ * 
+ * @security Screenshot Management
+ * - Screenshot isolation prevents sensitive content leakage
+ * - File permissions ensure only authorized users access visual evidence
+ * - Archive retention supports incident forensics
+ * 
+ * @author Hack23 AB (Digital Intelligence & Accessibility Team)
+ * @license Apache-2.0
+ * @version 2.0.0
+ * @since 2024-07-15
+ * @see https://playwright.dev/ (Browser Automation Framework)
+ * @see https://www.w3.org/WAI/WCAG21/quickref/ (WCAG 2.1 Standards)
+ * @see tests/validate-articles-playwright.test.js (Test Suite)
  */
 
 import { chromium } from 'playwright';

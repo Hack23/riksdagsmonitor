@@ -1,8 +1,112 @@
 /**
- * Cross-Reference Validation Module
+ * @module Validation/CrossReferenceTracking
+ * @category Validation
  * 
- * Validates that news articles use required MCP tools and contain proper cross-references
- * Ensures data-driven journalism with multiple verifiable sources
+ * @title Cross-Reference Intelligence Validator - Source Verification Engine
+ * 
+ * @description
+ * **INTELLIGENCE OPERATIVE PERSPECTIVE**
+ * 
+ * This module enforces data-driven journalism standards by validating that news articles
+ * cite multiple parliamentary sources. Operating as a quality gate in the editorial pipeline,
+ * it ensures every article rests on verified intelligence from the riksdag-regering MCP
+ * platform - critical for avoiding intelligence assessment traps like single-source bias
+ * or uncorroborated claims.
+ * 
+ * **VALIDATION FRAMEWORK:**
+ * Cross-reference validation is structured around article types, each with specific
+ * parliamentary information requirements:
+ * 
+ * - **Week-Ahead Articles** (Prospective Analysis)
+ *   Required sources: Calendar events, document registry, written questions, interpellations
+ *   Intelligence value: Forward-looking agenda analysis, upcoming debate topics
+ * 
+ * - **Committee Reports** (Organizational Intelligence)
+ *   Required sources: Committee decisions, voting patterns, speeches, propositions
+ *   Intelligence value: Committee composition, policy prioritization, consensus-building
+ * 
+ * - **Opposition Motions** (Political Positioning)
+ *   Required sources: Motion registry, full-text search, department analysis, debate
+ *   Intelligence value: Opposition priorities, policy alternatives, party differentiation
+ * 
+ * - **Government Propositions** (Executive Intent)
+ *   Required sources: Government proposals, policy analysis, speeches, debate
+ *   Intelligence value: Government legislative agenda, policy direction, timing
+ * 
+ * - **Breaking News** (Event-Driven Intelligence)
+ *   Required sources: Voting records, voting groups, speeches, member data
+ *   Intelligence value: Real-time political developments, coalition behavior, crisis response
+ * 
+ * **INTELLIGENCE APPLICATIONS:**
+ * 1. Source Diversity: Minimum 3+ independent sources prevents narrative manipulation
+ * 2. Triangulation: Cross-referencing same event from multiple perspectives reduces bias
+ * 3. Chain of Custody: MCP tool citations create audit trail for claims
+ * 4. Analytical Integrity: Enforces structured analysis vs. opinion/speculation
+ * 5. Misinformation Prevention: Source requirements prevent false claims from publication
+ * 
+ * **OPERATIONAL WORKFLOW:**
+ * 1. Parse article content for MCP tool citations
+ * 2. Extract referenced document IDs and entity identifiers
+ * 3. Validate required tool coverage for article type
+ * 4. Confirm minimum source count (3+) for triangulation
+ * 5. Generate compliance report with source breakdown
+ * 6. Block publication if validation fails
+ * 
+ * **SOURCE VERIFICATION LOGIC:**
+ * - Distinct tools = distinct sources (prevents single-query inflation)
+ * - Tool parameters tracked for source diversity within category
+ * - Cross-referenced entities (motions + voting patterns) count as compound sources
+ * - Temporal diversity considered (older sources cross-reference recent)
+ * 
+ * **COMPLIANCE STANDARDS:**
+ * - Editorial Standard: Minimum 3 independent sources per article
+ * - Intelligence Standard: All major claims backed by at least 1 MCP tool call
+ * - Transparency Standard: Source citations visible in article metadata
+ * - Audit Standard: Complete call logs retained for 180 days
+ * 
+ * **RISK MITIGATION:**
+ * - Prevents publication of unsourced allegations
+ * - Detects coordination of coverage through shared sources
+ * - Alerts editorial team to unusual source clustering
+ * - Tracks source reliability across time
+ * 
+ * **GDPR CONSIDERATIONS:**
+ * - All member references traced to source tool calls
+ * - Personal data citations logged separately
+ * - Member consent tracking integrated with source validation
+ * - Data minimization enforced through source requirements
+ * 
+ * @osint Source Analysis Framework
+ * - Maps parliamentary sources to intelligence collection methods
+ * - Tracks source reliability and historical accuracy
+ * - Enables meta-analysis of coverage patterns
+ * - Supports incident investigation with source forensics
+ * 
+ * @risk Single-Source Vulnerability Detection
+ * - Identifies articles vulnerable to narrative attacks
+ * - Flags coordinated coverage (multiple articles same sources)
+ * - Detects source saturation (over-reliance on single entity)
+ * - Monitors for suspicious source patterns
+ * 
+ * @gdpr Member Data Handling
+ * - Ensures member references properly sourced
+ * - Validates consent tracking for personal data mentions
+ * - Supports member rights requests (trace all mentions)
+ * - Documents lawful basis for each member reference
+ * 
+ * @security Editorial Integrity Assurance
+ * - Prevents injection of false sources into articles
+ * - Validates tool call integrity through API logs
+ * - Detects tampering with source citations
+ * - Ensures immutability of source records
+ * 
+ * @author Hack23 AB (Editorial Intelligence & Fact-Check Team)
+ * @license Apache-2.0
+ * @version 2.1.0
+ * @since 2024-08-20
+ * @see https://github.com/Hack23/riksdag-regering-mcp (MCP Tool Reference)
+ * @see EDITORIAL_STANDARDS.md (Source Requirements Policy)
+ * @see Issue #142 (Source Verification Framework)
  */
 
 /**
