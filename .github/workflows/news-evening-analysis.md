@@ -309,6 +309,24 @@ Structure the analysis around these editorial pillars:
   <script type="application/ld+json">{...}</script>
 </head>
 <body>
+  <!-- Language switcher (REQUIRED - add after body, before article) -->
+  <nav class="language-switcher" role="navigation" aria-label="Language switcher">
+    <a href="{baseSlug}-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
+    <a href="{baseSlug}-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
+    <a href="{baseSlug}-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
+    <a href="{baseSlug}-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+    <a href="{baseSlug}-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
+    <a href="{baseSlug}-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
+    <a href="{baseSlug}-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
+    <a href="{baseSlug}-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
+    <a href="{baseSlug}-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
+    <a href="{baseSlug}-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
+    <a href="{baseSlug}-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
+    <a href="{baseSlug}-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
+    <a href="{baseSlug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
+    <a href="{baseSlug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+  </nav>
+  
   <div class="news-article">
     <header class="article-header">
       <h1>{Analytical headline capturing day's key theme}</h1>

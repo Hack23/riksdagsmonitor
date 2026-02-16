@@ -202,6 +202,7 @@ For HIGH significance events, generate articles following **The Economist style*
 - Hreflang alternates for all generated languages
 - Use semantic HTML5: `<article>`, `<header>`, `<section>`, `<footer>`
 - Mobile-responsive (handled by styles.css)
+- **Language switcher navigation** (add after `<body>`, before `<article>` - see example in news-article-generator.md Step 4, item 6)
 
 **Available CSS Classes in styles.css:**
 - `.news-article` - Main container

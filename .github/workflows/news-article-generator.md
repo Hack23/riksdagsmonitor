@@ -411,6 +411,7 @@ The script creates articles with:
    - Semantic HTML5: `<article>`, `<header>`, `<section>`, `<footer>`
    - Proper `<html lang="{lang}">` and `dir="rtl"` for Arabic/Hebrew
    - Mobile-responsive (handled by styles.css)
+   - **Language switcher navigation** (added after opening `<body>`, before `<article>`)
 
 2. **Metadata Structure** (automatically handled):
    - SEO metadata (title, description, keywords)
@@ -418,7 +419,8 @@ The script creates articles with:
    - Twitter Card tags
    - Schema.org NewsArticle structured data
    - YAML frontmatter (in HTML comment)
-   - Hreflang tags for all language alternatives
+   - Hreflang tags for all language alternatives (in `<head>`)
+   - Visible language switcher navigation (in `<body>`)
 
 3. **Content Structure** (The Economist style):
    - **Lead paragraph** (50 words): Who, what, when, where, why
@@ -445,6 +447,37 @@ The script creates articles with:
    - Cites government sources
    - References MCP tool calls
    - Includes data timestamps
+
+6. **Language Switcher Navigation** (REQUIRED):
+   
+   Add immediately after `<body>` opening, before `<article>` element:
+   
+   ```html
+   <nav class="language-switcher" role="navigation" aria-label="Language switcher">
+     <a href="2026-02-16-{slug}-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
+     <a href="2026-02-16-{slug}-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
+     <a href="2026-02-16-{slug}-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
+     <a href="2026-02-16-{slug}-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+     <a href="2026-02-16-{slug}-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
+     <a href="2026-02-16-{slug}-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
+     <a href="2026-02-16-{slug}-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
+     <a href="2026-02-16-{slug}-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
+     <a href="2026-02-16-{slug}-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
+     <a href="2026-02-16-{slug}-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
+     <a href="2026-02-16-{slug}-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
+     <a href="2026-02-16-{slug}-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
+     <a href="2026-02-16-{slug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
+     <a href="2026-02-16-{slug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+   </nav>
+   ```
+   
+   **Requirements**:
+   - Use same flag emojis as news indexes
+   - Include all 14 languages (even if not all variants exist)
+   - Use `.lang-link` class for consistent styling
+   - Position above article content for easy access
+   - Links use relative paths (same directory as article)
+   - Current language link can be styled as `.lang-link.active` (optional)
 
 #### Language Support
 
