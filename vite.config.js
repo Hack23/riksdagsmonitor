@@ -186,7 +186,21 @@ export default defineConfig({
         'news/2026-02-parliament-agenda-en': './news/2026-02-parliament-agenda-en.html',
         'news/2026-02-parliament-agenda-sv': './news/2026-02-parliament-agenda-sv.html',
         'news/2026-02-week-ahead-en': './news/2026-02-week-ahead-en.html',
-        'news/2026-02-week-ahead-sv': './news/2026-02-week-ahead-sv.html'
+        'news/2026-02-week-ahead-sv': './news/2026-02-week-ahead-sv.html',
+        'news/2026-02-16-opposition-interpellations-offensive-en': './news/2026-02-16-opposition-interpellations-offensive-en.html',
+        'news/2026-02-16-opposition-interpellations-offensive-sv': './news/2026-02-16-opposition-interpellations-offensive-sv.html',
+        'news/2026-02-16-opposition-interpellations-offensive-da': './news/2026-02-16-opposition-interpellations-offensive-da.html',
+        'news/2026-02-16-opposition-interpellations-offensive-no': './news/2026-02-16-opposition-interpellations-offensive-no.html',
+        'news/2026-02-16-opposition-interpellations-offensive-fi': './news/2026-02-16-opposition-interpellations-offensive-fi.html',
+        'news/2026-02-16-opposition-interpellations-offensive-de': './news/2026-02-16-opposition-interpellations-offensive-de.html',
+        'news/2026-02-16-opposition-interpellations-offensive-fr': './news/2026-02-16-opposition-interpellations-offensive-fr.html',
+        'news/2026-02-16-opposition-interpellations-offensive-es': './news/2026-02-16-opposition-interpellations-offensive-es.html',
+        'news/2026-02-16-opposition-interpellations-offensive-nl': './news/2026-02-16-opposition-interpellations-offensive-nl.html',
+        'news/2026-02-16-opposition-interpellations-offensive-ar': './news/2026-02-16-opposition-interpellations-offensive-ar.html',
+        'news/2026-02-16-opposition-interpellations-offensive-he': './news/2026-02-16-opposition-interpellations-offensive-he.html',
+        'news/2026-02-16-opposition-interpellations-offensive-ja': './news/2026-02-16-opposition-interpellations-offensive-ja.html',
+        'news/2026-02-16-opposition-interpellations-offensive-ko': './news/2026-02-16-opposition-interpellations-offensive-ko.html',
+        'news/2026-02-16-opposition-interpellations-offensive-zh': './news/2026-02-16-opposition-interpellations-offensive-zh.html'
       },
       output: {
         // Manual chunk splitting for optimal loading

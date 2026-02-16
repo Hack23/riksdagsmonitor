@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-02-16T10:22:29.905Z",
+  "monitor_type": "realtime",
+  "focus": "all",
+  "events_detected": [
+    {
+      "type": "interpellation_cluster",
+      "significance": "MEDIUM-HIGH",
+      "title": "Opposition multi-front interpellation offensive",
+      "description": "8 interpellations filed Feb 11-16 by S and MP targeting foreign policy and social welfare",
+      "document_ids": ["HD10339", "HD10340", "HD10333", "HD10335", "HD10338", "HD10336", "HD10332", "HD10341"],
+      "article_generated": true,
+      "article_slug": "2026-02-16-opposition-interpellations-offensive"
+    },
+    {
+      "type": "interpellation_debate",
+      "significance": "MEDIUM",
+      "title": "National security adviser damage assessment debate",
+      "description": "Justice Minister Strömmer (M) vs Naraghi (S) on ip 2025/26:286",
+      "document_ids": ["HD10286"],
+      "article_generated": false,
+      "reason": "Speech text not available from API; debate already partially referenced in generated article"
+    },
+    {
+      "type": "committee_reports",
+      "significance": "MEDIUM",
+      "title": "10 committee reports published Feb 9-11",
+      "description": "Reports on trade policy, animal welfare, education, housing, personnel deployment",
+      "document_ids": ["HD01SoU36", "HD01NU11", "HD01MJU9", "HD01SfU20", "HD01CU28"],
+      "article_generated": false,
+      "reason": "Already covered by existing 2026-02-16-committee-reports articles"
+    },
+    {
+      "type": "government_propositions",
+      "significance": "MEDIUM",
+      "title": "6 government propositions Feb 3-10",
+      "description": "EU financial access, IMF reporting, renewable energy, waste reform, housing registry, death estates",
+      "document_ids": ["HD03124", "HD03113", "HD03117", "HD03112", "HD03119", "HD03118"],
+      "article_generated": false,
+      "reason": "Already covered by existing 2026-02-16-government-propositions articles"
+    }
+  ],
+  "articles_generated": {
+    "count": 14,
+    "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+    "slug": "2026-02-16-opposition-interpellations-offensive"
+  },
+  "data_sources": {
+    "riksdag_api": true,
+    "regering_api": true,
+    "mcp_server": "riksdag-regering-ai.onrender.com"
+  },
+  "next_check": "2026-02-16T16:22:29.905Z"
+}
