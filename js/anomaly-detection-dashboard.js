@@ -1,14 +1,107 @@
 /**
- * Anomaly Detection & Early Warning Dashboard
+ * @module BehavioralAnalysis/AnomalyDetection
+ * @category Intelligence Analysis - Statistical Outlier Detection & Early Warning
  * 
- * Statistical outlier identification for Swedish Parliament activity (2002-2025)
- * Uses Z-score analysis to detect anomalies in voting, document production, and attendance
+ * @description
+ * **Anomaly Detection & Early Warning Intelligence Dashboard**
  * 
- * Data Source: CIA Platform - Seasonal Anomaly Detection
- * Update Frequency: 1-hour cache (monitoring frequency)
+ * Advanced statistical intelligence module implementing **Z-score analysis** for 
+ * behavioral anomaly detection across Swedish Parliament activity (2002-2025).
+ * Provides real-time early warning capability for unusual patterns in voting,
+ * document production, and attendance metrics.
  * 
- * @author Hack23 AB
+ * ## Intelligence Methodology
+ * 
+ * **Z-Score Statistical Analysis**:
+ * - **Detection Threshold**: |Z| ≥ 2.0 (2 standard deviations)
+ * - **Severity Classification**: CRITICAL (>3σ), HIGH (2-3σ), MODERATE (1-2σ), LOW (<1σ)
+ * - **Direction Detection**: UNUSUALLY_HIGH, UNUSUALLY_LOW, WITHIN_NORMAL_RANGE
+ * - **Temporal Coverage**: 23 years × 4 quarters = 92 time periods
+ * 
+ * ## Anomaly Categories
+ * 
+ * **Three Primary Anomaly Types**:
+ * 1. **BALLOT_ANOMALY**: Unusual voting patterns (frequency, participation, outcomes)
+ * 2. **DOCUMENT_ANOMALY**: Abnormal document production (motions, questions, bills)
+ * 3. **ATTENDANCE_ANOMALY**: Irregular attendance patterns (chamber, committee)
+ * 
+ * ## Early Warning System
+ * 
+ * **Automated Alert Mechanism**:
+ * - **CRITICAL Alerts**: |Z| > 3.0, immediate notification (red banner)
+ * - **HIGH Alerts**: |Z| > 2.5, elevated monitoring (orange banner)
+ * - **Alert Persistence**: 24-hour dismissal period
+ * - **Alert History**: Tracked in localStorage for pattern analysis
+ * 
+ * ## Data Pipeline Architecture
+ * 
+ * **OSINT Data Sources**:
+ * - Primary: `cia-data/seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv`
+ * - Fallback: CIA GitHub repository (authoritative source)
+ * - Update Frequency: 1-hour cache with real-time monitoring
+ * 
+ * **Data Validation**:
+ * - CSV schema validation (year, quarter, z_score, severity, type)
+ * - Range validation (years: 2002-2025, quarters: 1-4, z_score: numeric)
+ * - Missing data handling with graceful degradation
+ * 
+ * ## Visualization Intelligence
+ * 
+ * **Chart.js Analytics** (6 visualizations):
+ * 1. **Timeline**: Chronological anomaly progression (scatter plot)
+ * 2. **Distribution**: Z-score normal curve with outlier markers
+ * 3. **Type Breakdown**: Pie chart (Ballot vs Document anomalies)
+ * 4. **Severity Heatmap**: Year × Quarter grid with color intensity
+ * 5. **Quarterly Trends**: Bar chart (Q1-Q4 anomaly frequency)
+ * 6. **Recent Anomalies**: Table of last 5 critical/high anomalies
+ * 
+ * ## Analytical Use Cases
+ * 
+ * **Intelligence Applications**:
+ * - **Crisis Detection**: Identify sudden activity spikes (scandals, emergencies)
+ * - **Electoral Cycles**: Detect pre-election behavioral shifts
+ * - **Policy Deadlines**: Monitor document submission anomalies
+ * - **Attendance Monitoring**: Track participation irregularities
+ * - **Historical Comparison**: Benchmark current vs. past patterns
+ * 
+ * ## GDPR & Privacy Compliance
+ * 
+ * @gdpr Aggregate statistical data only, no individual MP identification
+ * All anomaly detection operates on aggregated parliamentary activity metrics.
+ * No personal data processing, uses only public parliamentary records.
+ * 
+ * ## Security & Performance
+ * 
+ * @security Medium risk - Exposes analytical algorithms in client code
+ * @risk Z-score calculation logic visible, may reveal detection thresholds
+ * 
+ * **Performance Optimization**:
+ * - localStorage caching (1-hour TTL) reduces API calls
+ * - Lazy chart rendering on tab activation
+ * - Virtual scrolling for large datasets (92 time periods)
+ * - Debounced filter updates (250ms delay)
+ * 
+ * ## Multi-Language Support
+ * 
+ * **14 Languages Supported**:
+ * - Western: EN, SV, DA, NO, FI, DE, FR, ES, NL
+ * - Middle Eastern: AR, HE (RTL layout support)
+ * - East Asian: JA, KO, ZH
+ * 
+ * @intelligence Z-score statistical analysis, threshold-based classification
+ * @osint CIA Platform seasonal anomaly detection CSV exports
+ * @risk Behavioral pattern exposure, detection threshold visibility
+ * 
+ * @author Hack23 AB - Political Intelligence Team
  * @license Apache-2.0
+ * @version 1.0.0
+ * @since 2024
+ * 
+ * @requires Chart.js Chart.js v4.4.1 for analytics visualizations
+ * 
+ * @see {@link https://github.com/Hack23/cia|CIA Platform Data Pipeline}
+ * @see {@link ../../THREAT_MODEL.md|STRIDE Threat Analysis}
+ * @see {@link ../../SECURITY_ARCHITECTURE.md|ISO 27001 Security Controls}
  */
 
 (function() {
