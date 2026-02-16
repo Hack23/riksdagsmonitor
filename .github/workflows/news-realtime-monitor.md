@@ -113,6 +113,40 @@ Parse the `languages` input and expand presets:
 
 ## 🔌 MCP Server Integration Guide
 
+### ⚠️ CRITICAL: Use MCP Tools Directly, NOT Manual Scripts
+
+**DO NOT waste time with manual bash/curl/python scripts to call MCP!**
+
+❌ **WRONG APPROACH** (wastes 10+ minutes with authentication trial-and-error):
+```bash
+# DON'T DO THIS - Agent spent 10+ minutes on this in run #63771890188
+export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
+node -e "import MCPClient from './scripts/mcp-client.js'; ..."
+curl -X POST "http://host.docker.internal:80/mcp/riksdag-regering" ...
+python3 << 'PYEOF' ... # Manual session management, header auth, etc.
+```
+
+✅ **CORRECT APPROACH** (works immediately):
+```javascript
+// MCP tools are pre-configured and ready to use - just call them directly!
+const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
+  from: "2026-02-16",
+  tom: "2026-02-16",
+  limit: 50
+});
+
+const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar"]({
+  rm: "2025/26",
+  limit: 20
+});
+```
+
+**Why This Matters:**
+- In run #63771890188, the agent wasted ~10 minutes trying manual MCP calls
+- Tried ESM vs CommonJS exports, 401 errors, session IDs, persistent connections
+- Eventually worked but timeout risk increased significantly
+- **The MCP framework handles ALL of this automatically!**
+
 ### Overview
 
 You have access to the **riksdag-regering-mcp** server, which provides 32 specialized tools for Swedish parliamentary and government data. The server is pre-configured and ready to use.
@@ -120,7 +154,8 @@ You have access to the **riksdag-regering-mcp** server, which provides 32 specia
 **Server Configuration:**
 - **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
 - **Protocol**: JSON-RPC 2.0 (HTTP transport)
-- **Authentication**: None required (public API)
+- **Authentication**: Handled automatically by the framework (no manual auth needed)
+- **Session Management**: Handled automatically (no session ID headers needed)
 - **Tools**: 32 tools automatically available via MCP
 
 ### 🏗️ Architecture: Gateway vs Direct Access
@@ -132,12 +167,14 @@ You have access to the **riksdag-regering-mcp** server, which provides 32 specia
 1. **🛡️ Gateway/Proxy Mode (Agentic Workflows - Current)**
    - **Route**: Agent → Firewall Container (`host.docker.internal`) → External MCP Server
    - **Tool Names**: **MUST be prefixed** with `riksdag-regering--` (e.g., `riksdag-regering--get_calendar_events`)
+   - **Authentication**: Handled automatically by framework (Authorization headers managed internally)
+   - **Session Management**: Handled automatically (Mcp-Session-Id headers managed internally)
    - **Advantages**: Security filtering, network audit logs, rate limiting
-   - **Disadvantages**: Additional latency (~50-200ms per request), more complex authentication
+   - **Disadvantages**: Additional latency (~50-200ms per request), more complex (but abstracted away!)
    - **When Used**: Inside GitHub Actions agentic workflow sandbox
    
    ```javascript
-   // Gateway mode - tool names MUST be prefixed
+   // Gateway mode - tool names MUST be prefixed (framework handles session/auth)
    const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
      from: "2026-02-16",
      tom: "2026-02-16"
@@ -147,7 +184,8 @@ You have access to the **riksdag-regering-mcp** server, which provides 32 specia
 2. **⚡ Direct Access Mode (Recommended for Future)**
    - **Route**: Agent → External MCP Server (direct HTTPS)
    - **Tool Names**: **Unprefixed** (e.g., `get_calendar_events`)
-   - **Advantages**: Lower latency, simpler authentication, faster cold start recovery
+   - **Authentication**: None required (public API)
+   - **Advantages**: Lower latency, simpler, faster cold start recovery
    - **Disadvantages**: Less network control, requires explicit domain allowlist
    - **When Used**: Direct MCP server configuration in `.github/copilot-mcp.json`
    
@@ -185,10 +223,12 @@ network:
 
 **You can call MCP tools directly without any setup code.** The MCP server is already configured in this workflow's YAML frontmatter.
 
+**Lesson from Run #63771890188**: Don't try to manually call MCP via curl/python/bash - use the framework!
+
 **Example - Check Today's Calendar:**
 ```javascript
-// Just use the tool name directly via MCP
-const events = await mcp["riksdag-regering"].get_calendar_events({
+// Gateway mode (current) - note the riksdag-regering-- prefix
+const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
   from: "2026-02-16",
   tom: "2026-02-16",
   limit: 50
@@ -197,10 +237,19 @@ const events = await mcp["riksdag-regering"].get_calendar_events({
 
 **Example - Search Recent Documents:**
 ```javascript
-// No client initialization needed
-const docs = await mcp["riksdag-regering"].search_dokument({
+// Gateway mode - prefix required
+const docs = await mcp["riksdag-regering"]["riksdag-regering--search_dokument"]({
   from_date: "2026-02-16",
   limit: 30
+});
+```
+
+**Example - Get Recent Votes:**
+```javascript
+// Gateway mode - prefix required
+const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar"]({
+  rm: "2025/26",
+  limit: 20
 });
 ```
 
