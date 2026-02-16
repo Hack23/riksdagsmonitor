@@ -141,6 +141,89 @@ Parse `languages` input (default: `all` for evening coverage):
 
 Generate article versions for each requested language with culturally appropriate tone and proper localization.
 
+## 🔌 MCP Server Integration Guide
+
+### Overview
+
+You have access to the **riksdag-regering-mcp** server with 32 specialized tools for Swedish political data. The server is pre-configured and ready to use.
+
+**Server Configuration:**
+- **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
+- **Protocol**: JSON-RPC 2.0 (HTTP transport)
+- **Authentication**: None required (public API)
+- **Tools**: 32 tools automatically available via MCP
+
+### ⚡ Quick Start - Direct Tool Usage
+
+Call MCP tools directly without any setup code:
+
+```javascript
+// Just use the tool name - no initialization needed!
+const events = await mcp["riksdag-regering"].get_calendar_events({
+  from: "2026-02-16",
+  tom: "2026-02-16",
+  limit: 50
+});
+
+const votes = await mcp["riksdag-regering"].search_voteringar({
+  rm: "2025/26",
+  limit: 50
+});
+```
+
+### 🚨 Cold Start Handling
+
+**Important**: The MCP server runs on Render.com serverless infrastructure and may experience **cold starts (30-60 seconds)** if inactive.
+
+**Built-in Retry Logic:**
+- Automatic retries (3 attempts max)
+- Exponential backoff with 2-second delays
+- 30-second timeout per request
+
+**Best Practices:**
+1. ✅ **Start with a simple query** to warm up the server
+2. ✅ **Batch multiple queries** after warm-up for efficiency
+3. ✅ **Check data freshness** using `get_sync_status()` before generating articles
+4. ✅ **Handle timeouts gracefully** - retry or fall back to cached data
+
+### 📋 Key MCP Tools for Evening Analysis
+
+**Parliamentary Activity:**
+- `get_calendar_events` - Events for the period
+- `search_voteringar` - Voting records
+- `get_voting_group` - Party voting analysis
+- `search_anforanden` - Debate speeches
+- `get_betankanden` - Committee reports
+
+**Document Discovery:**
+- `search_dokument` - Document search by date
+- `get_propositioner` - Government proposals
+- `get_motioner` - Parliamentary motions
+- `get_fragor` / `get_interpellationer` - Questions
+
+**Government Activity:**
+- `search_regering` - Government documents
+- `analyze_g0v_by_department` - Department analysis
+- `enhanced_government_search` - Combined search
+
+**Metadata:**
+- `get_sync_status` - Check data freshness
+- `get_utskott` - Committee information
+
+### 🐛 Troubleshooting
+
+**Issue: Request times out**
+- **Cause**: Cold start or server overload
+- **Solution**: Wait 60 seconds and retry
+
+**Issue: Empty results**
+- **Cause**: No activity in timeframe or wrong riksmöte (rm)
+- **Solution**: Check `get_sync_status()`, widen search parameters
+
+**Issue: Swedish-only results**
+- **Cause**: Riksdag API returns Swedish data natively
+- **Solution**: YOU must translate to target languages (see translation guide)
+
 ## Analysis Workflow
 
 ### Step 1: Gather Data

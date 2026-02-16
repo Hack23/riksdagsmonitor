@@ -27,7 +27,7 @@ permissions:
   issues: read
   pull-requests: read
 
-timeout-minutes: 20
+timeout-minutes: 30
 
 network:
   allowed:
@@ -110,6 +110,149 @@ Parse the `languages` input and expand presets:
 - **all** (default) - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
 - **nordic** → en,sv,da,no,fi
 - **eu-core** → en,sv,de,fr,es,nl
+
+## 🔌 MCP Server Integration Guide
+
+### Overview
+
+You have access to the **riksdag-regering-mcp** server, which provides 32 specialized tools for Swedish parliamentary and government data. The server is pre-configured and ready to use.
+
+**Server Configuration:**
+- **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
+- **Protocol**: JSON-RPC 2.0 (HTTP transport)
+- **Authentication**: None required (public API)
+- **Tools**: 32 tools automatically available via MCP
+
+### ⚡ Quick Start - Direct Tool Usage
+
+**You can call MCP tools directly without any setup code.** The MCP server is already configured in this workflow's YAML frontmatter.
+
+**Example - Check Today's Calendar:**
+```javascript
+// Just use the tool name directly via MCP
+const events = await mcp.riksdag-regering.get_calendar_events({
+  from: "2026-02-16",
+  tom: "2026-02-16",
+  limit: 50
+});
+```
+
+**Example - Search Recent Documents:**
+```javascript
+// No client initialization needed
+const docs = await mcp["riksdag-regering"].search_dokument({
+  from_date: "2026-02-16",
+  limit: 30
+});
+```
+
+### 🔧 Using the MCP Client Helper (scripts/mcp-client.js)
+
+If you prefer a typed JavaScript client with helper methods, use `scripts/mcp-client.js`:
+
+```javascript
+// Import the MCP client helper
+import MCPClient from './scripts/mcp-client.js';
+
+// Create client instance (uses environment config automatically)
+const client = new MCPClient();
+
+// Use high-level helper methods
+const events = await client.fetchCalendarEvents({ from: today, tom: today });
+const votes = await client.fetchVotingRecords({ rm: "2025/26", limit: 20 });
+const docs = await client.searchDocuments({ from_date: today, limit: 30 });
+```
+
+**Available Helper Methods:**
+- `fetchCalendarEvents(params)` - Parliamentary calendar
+- `fetchVotingRecords(params)` - Voting results
+- `searchDocuments(params)` - Document search
+- `searchSpeeches(params)` - Debate transcripts
+- `fetchMPs(params)` - Member information
+- `fetchGovernmentDocuments(params)` - Government publications
+
+### 🚨 Cold Start Handling
+
+**Important**: The MCP server runs on Render.com serverless infrastructure and may experience **cold starts (30-60 seconds)** if inactive.
+
+**Built-in Retry Logic:**
+- The MCP client automatically retries failed requests (3 attempts max)
+- Exponential backoff with 2-second delays
+- Timeout: 30 seconds per request (configurable via `MCP_CLIENT_TIMEOUT_MS`)
+
+**Cold Start Detection:**
+```javascript
+// First request may be slow due to cold start
+console.log("⏳ Fetching data (may take 30-60s on cold start)...");
+const data = await client.fetchCalendarEvents({ from: today, tom: today });
+// Subsequent requests will be fast (< 2s)
+```
+
+**Best Practices:**
+1. ✅ **Start with a simple query** to warm up the server (e.g., `get_calendar_events` with small limit)
+2. ✅ **Batch multiple queries** after warm-up for efficiency
+3. ✅ **Check data freshness** using `get_sync_status()` before generating articles
+4. ✅ **Handle timeouts gracefully** - retry or fall back to cached data
+5. ❌ **Don't make 50+ sequential requests** - batch where possible
+
+### 📋 32 Available MCP Tools
+
+**Riksdag (Parliament) Tools (15):**
+- `get_ledamoter` / `search_ledamoter` - MPs and member search
+- `get_motioner` / `search_motioner` - Parliamentary motions
+- `get_propositioner` / `search_propositioner` - Government proposals
+- `get_dokument` / `search_dokument` / `search_dokument_fulltext` - Document retrieval
+- `get_voteringar` / `search_voteringar` - Voting records
+- `get_anforanden` / `search_anforanden` - Speeches and debates
+- `get_fragor` / `get_interpellationer` - Questions and interpellations
+- `get_calendar_events` - Parliamentary schedule
+- `get_betankanden` - Committee reports
+
+**Government (Regering) Tools (7):**
+- `search_regering` - Government document search
+- `get_regering_document` - Retrieve specific government doc
+- `get_g0v_document_content` - Get document in Markdown format
+- `summarize_regering_document` - AI summarization
+- `analyze_g0v_by_department` - Department analysis
+- `get_g0v_document_types` - List document categories
+
+**Metadata & Statistics (5):**
+- `get_utskott` - Committee information
+- `get_voting_group` - Voting analysis by party/constituency
+- `fetch_report` - Statistical reports
+- `get_sync_status` - Data freshness check
+- `get_data_dictionary` - Schema definitions
+
+**Utility (5):**
+- `batch_fetch_documents` - Efficient bulk retrieval
+- `fetch_paginated_documents` - Pagination support
+- `list_reports` - Available report types
+- `get_latest_update` - Last data sync timestamp
+- `enhanced_government_search` - Combined Riksdag + Government search
+
+### 🐛 Troubleshooting
+
+**Issue: Request times out after 30 seconds**
+- **Cause**: Cold start or server overload
+- **Solution**: Wait 60 seconds and retry, or use `MCP_CLIENT_TIMEOUT_MS=60000` env var
+
+**Issue: Tool returns empty results**
+- **Cause**: No activity in queried timeframe, or wrong riksmöte (rm)
+- **Solution**: Check `get_sync_status()` for last update, widen search parameters
+
+**Issue: Swedish-only results returned**
+- **Cause**: Riksdag API returns Swedish data natively
+- **Solution**: YOU must translate to target languages (see translation guide above)
+
+**Issue: 401 Unauthorized or connection refused**
+- **Cause**: Network restrictions or server maintenance
+- **Solution**: Check workflow's `network.allowed` section includes `riksdag-regering-ai.onrender.com`
+
+### 📚 Documentation References
+
+- **MCP Client Source**: `scripts/mcp-client.js` (777 lines, comprehensive JSDoc)
+- **MCP Server Repo**: [riksdag-regering-mcp on npm](https://www.npmjs.com/package/riksdag-regering-mcp)
+- **API Examples**: See `scripts/mcp-client.js` lines 77-101 for intelligence use cases
 
 ## Detection Workflow
 

@@ -19,6 +19,55 @@
  * Deployment: Render.com serverless platform
  * Authentication: Optional token-based via MCP_AUTH_TOKEN
  * 
+ * @example Quick Start for GitHub Copilot Agents
+ * 
+ * // In GitHub Actions workflows with MCP configured, use tools directly:
+ * const events = await mcp["riksdag-regering"].get_calendar_events({
+ *   from: "2026-02-16",
+ *   tom: "2026-02-16",
+ *   limit: 50
+ * });
+ * 
+ * // Or use this helper client for typed methods:
+ * import MCPClient from './scripts/mcp-client.js';
+ * const client = new MCPClient();
+ * const events = await client.fetchCalendarEvents({ from: today, tom: today });
+ * 
+ * @example Handling Cold Starts (30-60 seconds)
+ * 
+ * // Render.com serverless may have cold starts
+ * console.log("⏳ Warming up MCP server (may take 30-60s)...");
+ * 
+ * // Start with a simple query to warm up
+ * const status = await client.request('get_sync_status', {});
+ * console.log("✅ MCP server ready");
+ * 
+ * // Now batch your main queries (will be fast)
+ * const [events, votes, docs] = await Promise.all([
+ *   client.fetchCalendarEvents({ from: today, tom: today }),
+ *   client.fetchVotingRecords({ rm: "2025/26", limit: 20 }),
+ *   client.searchDocuments({ from_date: today, limit: 30 })
+ * ]);
+ * 
+ * @example Error Handling Strategy
+ * 
+ * try {
+ *   const data = await client.fetchCalendarEvents({ from: today, tom: today });
+ * } catch (error) {
+ *   if (error.message.includes('timeout')) {
+ *     // Cold start or server overload - retry after 60s
+ *     console.log("⏳ Server cold start detected, retrying...");
+ *     await new Promise(resolve => setTimeout(resolve, 60000));
+ *     const data = await client.fetchCalendarEvents({ from: today, tom: today });
+ *   } else if (error.message.includes('503')) {
+ *     // Server maintenance - fall back to cached data
+ *     console.log("⚠️ MCP server unavailable, using cached data");
+ *     // Load from cache...
+ *   } else {
+ *     throw error;
+ *   }
+ * }
+ * 
  * MCP Tool Categories (32 Total Tools):
  * 
  * Riksdag Tools (15 tools):

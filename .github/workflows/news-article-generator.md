@@ -150,6 +150,46 @@ Parse the `article_types` input (comma-separated list) and generate the requeste
 
 ## Available MCP Tools (riksdag-regering-mcp)
 
+### 🔌 MCP Server Integration - Quick Start
+
+**The riksdag-regering-mcp server is pre-configured and ready to use.** No setup required!
+
+**Server Details:**
+- **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
+- **Protocol**: JSON-RPC 2.0 (HTTP transport)
+- **Authentication**: None required (public API)
+- **Tools**: 32 tools automatically available
+
+### ⚡ Direct Tool Usage (Recommended)
+
+Call MCP tools directly without any setup:
+
+```javascript
+// Just use the tool name - it's that simple!
+const events = await mcp["riksdag-regering"].get_calendar_events({
+  from: "2026-02-16",
+  tom: "2026-02-23",
+  limit: 50
+});
+
+const docs = await mcp["riksdag-regering"].search_dokument({
+  from_date: "2026-02-16",
+  limit: 30
+});
+```
+
+### 🚨 Cold Start Warning
+
+**Important**: The server runs on Render.com serverless and may have **30-60 second cold starts**.
+
+**Best Practices:**
+1. ✅ Start with a simple warm-up query (e.g., `get_calendar_events` with small limit)
+2. ✅ Batch multiple queries after warm-up
+3. ✅ Handle timeouts gracefully (built-in retry logic: 3 attempts, 2s delays)
+4. ✅ Check data freshness: `get_sync_status()` before generating articles
+
+### 📋 Available Tools by Category
+
 You have access to 32 specialized tools for Swedish political data:
 
 ### Document Search
