@@ -48,103 +48,7 @@ URL: https://riksdag-regering-ai.onrender.com/mcp
 Protocol: JSON-RPC 2.0 (https://www.jsonrpc.org/specification)
 Tools: 32 specialized intelligence functions for Swedish political data
 Deployment: Render.com serverless platform
-Authentication: Optional token-based via MCP_AUTH_TOKEN</p>
-<p>MCP Tool Categories (32 Total Tools):</p>
-<p>Riksdag Tools (15 tools):</p>
-<ul>
-<li>get_ledamoter: Retrieve parliament member list with party affiliation</li>
-<li>get_ledamot_details: Detailed biography and service history</li>
-<li>search_ledamoter: Member search by name, party, constituency</li>
-<li>get_motioner: All parliamentary motions with sponsorship</li>
-<li>search_motioner: Full-text motion search</li>
-<li>get_propositioner: Government legislative proposals</li>
-<li>search_propositioner: Proposal search by type, status</li>
-<li>get_dokument: Specific document retrieval</li>
-<li>search_dokument: Document discovery with metadata</li>
-<li>search_dokument_fulltext: Full-text document search</li>
-<li>get_voteringar: Voting records and roll-call results</li>
-<li>search_voteringar: Vote analysis by party, member, timeframe</li>
-<li>get_anforanden: Parliamentary speeches and debates</li>
-<li>search_anforanden: Speech search by speaker, topic, date</li>
-<li>get_calendar_events: Parliamentary calendar and scheduling</li>
-</ul>
-<p>Government Tools (7 tools):</p>
-<ul>
-<li>get_regering_document: Retrieve government documents</li>
-<li>search_regering: Government document search</li>
-<li>search_regering_by_department: Department-specific searches</li>
-<li>summarize_regering_document: Automated government document summarization</li>
-<li>get_g0v_document_content: Markdown conversion of government documents</li>
-<li>get_g0v_document_types: List available document type categories</li>
-<li>analyze_g0v_by_department: Department-level document analysis</li>
-</ul>
-<p>Statistical &amp; Metadata Tools (5 tools):</p>
-<ul>
-<li>get_utskott: Committee list and composition</li>
-<li>get_betankanden: Committee reports and decisions</li>
-<li>fetch_report: Statistical reports (demographics, activity metrics)</li>
-<li>get_voting_group: Voting pattern analysis by party/constituency</li>
-<li>get_sync_status: Data freshness and update schedule status</li>
-</ul>
-<p>Utility Tools (5 tools):</p>
-<ul>
-<li>get_data_dictionary: Schema definitions for all data types</li>
-<li>get_latest_update: Last successful data synchronization</li>
-<li>list_reports: Available statistical report types</li>
-<li>batch_fetch_documents: Efficient bulk document retrieval</li>
-<li>fetch_paginated_documents: Pagination-based result streaming</li>
-</ul>
-<p>Protocol Details:</p>
-<p>Direct Server Mode:</p>
-<ul>
-<li>POST to /mcp endpoint</li>
-<li>Use unprefixed tool names (e.g., 'get_calendar_events')</li>
-<li>JSON-RPC 2.0 request format</li>
-<li>Automatic timeout handling and retries</li>
-</ul>
-<p>MCP Gateway Mode (optional):</p>
-<ul>
-<li>For gateway deployments, use prefixed tool names</li>
-<li>Format: 'riksdag-regering--{tool_name}'</li>
-<li>Auto-detection based on error responses</li>
-</ul>
-<p>Intelligence Application Examples:</p>
-<p>Automated News Generation:</p>
-<ul>
-<li>get_calendar_events → Week-ahead parliamentary schedule</li>
-<li>search_dokument → Recent propositions and motions</li>
-<li>search_anforanden → Parliamentary debate summaries</li>
-<li>get_voteringar → Party voting patterns and consensus analysis</li>
-</ul>
-<p>Statistical Intelligence:</p>
-<ul>
-<li>get_ledamoter → Member demographics (age, gender, party)</li>
-<li>get_utskott → Committee composition and specialization</li>
-<li>fetch_report → Aggregated voting and productivity statistics</li>
-<li>get_voting_group → Coalition formation and party dynamics</li>
-</ul>
-<p>Government Transparency:</p>
-<ul>
-<li>search_regering → Government policy announcements</li>
-<li>get_regering_document → Complete policy documentation</li>
-<li>summarize_regering_document → Automated policy summarization</li>
-<li>analyze_g0v_by_department → Department-specific tracking</li>
-</ul>
-<p>Advanced Analysis:</p>
-<ul>
-<li>search_dokument_fulltext → Cross-document pattern matching</li>
-<li>search_voteringar → Historical voting pattern analysis</li>
-<li>get_anforanden → Debate transcript analysis</li>
-<li>batch_fetch_documents → Bulk data collection for trend analysis</li>
-</ul>
-<p>Error Handling Strategy:</p>
-<ul>
-<li>Network errors: Automatic retries with exponential backoff (max 3 attempts)</li>
-<li>Timeout: 30-second default (adjustable via MCP_CLIENT_TIMEOUT_MS)</li>
-<li>Tool not found: Fallback from prefixed to non-prefixed names</li>
-<li>Rate limits: Respect server 429 responses with adaptive delays</li>
-<li>Server unavailable: Return cached data if available, else error</li>
-</ul></div>
+Authentication: Optional token-based via MCP_AUTH_TOKEN</p></div>
         
 
         
@@ -256,6 +160,164 @@ Authentication: Optional token-based via MCP_AUTH_TOKEN</p>
 
 
 
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Quick Start for GitHub Copilot Agents
+
+// In GitHub Actions workflows with MCP configured, use tools directly:
+const events = await mcp["riksdag-regering"].get_calendar_events({
+  from: "2026-02-16",
+  tom: "2026-02-16",
+  limit: 50
+});
+
+// Or use this helper client for typed methods:
+import MCPClient from './scripts/mcp-client.js';
+const client = new MCPClient();
+const events = await client.fetchCalendarEvents({ from: today, tom: today });</code></pre>
+
+    <pre class="prettyprint"><code>Handling Cold Starts (30-60 seconds)
+
+// Render.com serverless may have cold starts
+console.log("⏳ Warming up MCP server (may take 30-60s)...");
+
+// Start with a simple query to warm up
+const status = await client.request('get_sync_status', {});
+console.log("✅ MCP server ready");
+
+// Now batch your main queries (will be fast)
+const [events, votes, docs] = await Promise.all([
+  client.fetchCalendarEvents({ from: today, tom: today }),
+  client.fetchVotingRecords({ rm: "2025/26", limit: 20 }),
+  client.searchDocuments({ from_date: today, limit: 30 })
+]);</code></pre>
+
+    <pre class="prettyprint"><code>Error Handling Strategy
+
+try {
+  const data = await client.fetchCalendarEvents({ from: today, tom: today });
+} catch (error) {
+  if (error.message.includes('timeout')) {
+    // Cold start or server overload - retry after 60s
+    console.log("⏳ Server cold start detected, retrying...");
+    await new Promise(resolve => setTimeout(resolve, 60000));
+    const data = await client.fetchCalendarEvents({ from: today, tom: today });
+  } else if (error.message.includes('503')) {
+    // Server maintenance - fall back to cached data
+    console.log("⚠️ MCP server unavailable, using cached data");
+    // Load from cache...
+  } else {
+    throw error;
+  }
+}
+
+MCP Tool Categories (32 Total Tools):
+
+Riksdag Tools (15 tools):
+- get_ledamoter: Retrieve parliament member list with party affiliation
+- get_ledamot_details: Detailed biography and service history
+- search_ledamoter: Member search by name, party, constituency
+- get_motioner: All parliamentary motions with sponsorship
+- search_motioner: Full-text motion search
+- get_propositioner: Government legislative proposals
+- search_propositioner: Proposal search by type, status
+- get_dokument: Specific document retrieval
+- search_dokument: Document discovery with metadata
+- search_dokument_fulltext: Full-text document search
+- get_voteringar: Voting records and roll-call results
+- search_voteringar: Vote analysis by party, member, timeframe
+- get_anforanden: Parliamentary speeches and debates
+- search_anforanden: Speech search by speaker, topic, date
+- get_calendar_events: Parliamentary calendar and scheduling
+
+Government Tools (7 tools):
+- get_regering_document: Retrieve government documents
+- search_regering: Government document search
+- search_regering_by_department: Department-specific searches
+- summarize_regering_document: Automated government document summarization
+- get_g0v_document_content: Markdown conversion of government documents
+- get_g0v_document_types: List available document type categories
+- analyze_g0v_by_department: Department-level document analysis
+
+Statistical &amp; Metadata Tools (5 tools):
+- get_utskott: Committee list and composition
+- get_betankanden: Committee reports and decisions
+- fetch_report: Statistical reports (demographics, activity metrics)
+- get_voting_group: Voting pattern analysis by party/constituency
+- get_sync_status: Data freshness and update schedule status
+
+Utility Tools (5 tools):
+- get_data_dictionary: Schema definitions for all data types
+- get_latest_update: Last successful data synchronization
+- list_reports: Available statistical report types
+- batch_fetch_documents: Efficient bulk document retrieval
+- fetch_paginated_documents: Pagination-based result streaming
+
+Protocol Details:
+
+Direct Server Mode (Recommended):
+- POST to https://riksdag-regering-ai.onrender.com/mcp
+- Use unprefixed tool names (e.g., 'get_calendar_events')
+- JSON-RPC 2.0 request format
+- Automatic timeout handling and retries
+- Lower latency (~200-500ms per request)
+
+MCP Gateway Mode (Agentic Workflows):
+- For agentic workflow sandbox environments with firewall container
+- POST to http://host.docker.internal:80/mcp/riksdag-regering
+- Use prefixed tool names: 'riksdag-regering--{tool_name}'
+- Additional proxy latency (~50-200ms overhead per request)
+- Auto-detection based on URL (checks for 'host.docker.internal')
+- Client automatically handles prefixing - no manual changes needed
+
+Architecture Comparison:
+
+Direct Mode:
+  Agent → HTTPS → MCP Server (riksdag-regering-ai.onrender.com)
+  - Pros: Lower latency, simpler auth, faster cold start recovery
+  - Cons: Less network control, requires explicit domain allowlist
+
+Gateway Mode:
+  Agent → Firewall → HTTP → Proxy → HTTPS → MCP Server
+  - Pros: Security filtering, network audit, rate limiting
+  - Cons: Higher latency, complex session mgmt, gateway timeout cascade
+
+Auto-detection based on error responses
+
+Intelligence Application Examples:
+
+Automated News Generation:
+- get_calendar_events → Week-ahead parliamentary schedule
+- search_dokument → Recent propositions and motions
+- search_anforanden → Parliamentary debate summaries
+- get_voteringar → Party voting patterns and consensus analysis
+
+Statistical Intelligence:
+- get_ledamoter → Member demographics (age, gender, party)
+- get_utskott → Committee composition and specialization
+- fetch_report → Aggregated voting and productivity statistics
+- get_voting_group → Coalition formation and party dynamics
+
+Government Transparency:
+- search_regering → Government policy announcements
+- get_regering_document → Complete policy documentation
+- summarize_regering_document → Automated policy summarization
+- analyze_g0v_by_department → Department-specific tracking
+
+Advanced Analysis:
+- search_dokument_fulltext → Cross-document pattern matching
+- search_voteringar → Historical voting pattern analysis
+- get_anforanden → Debate transcript analysis
+- batch_fetch_documents → Bulk data collection for trend analysis
+
+Error Handling Strategy:
+- Network errors: Automatic retries with exponential backoff (max 3 attempts)
+- Timeout: 30-second default (adjustable via MCP_CLIENT_TIMEOUT_MS)
+- Tool not found: Fallback from prefixed to non-prefixed names
+- Rate limits: Respect server 429 responses with adaptive delays
+- Server unavailable: Return cached data if available, else error</code></pre>
+
+
 
         
     
@@ -329,7 +391,7 @@ Authentication: Optional token-based via MCP_AUTH_TOKEN</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line729">line 729</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line853">line 853</a>
     </li></ul></dd>
     
 
@@ -409,7 +471,7 @@ Authentication: Optional token-based via MCP_AUTH_TOKEN</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line741">line 741</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line865">line 865</a>
     </li></ul></dd>
     
 
@@ -497,7 +559,7 @@ Authentication: Optional token-based via MCP_AUTH_TOKEN</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line294">line 294</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line361">line 361</a>
     </li></ul></dd>
     
 

@@ -29,7 +29,7 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a>.</span>MCPClient<span class="signature">()</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a>.</span>MCPClient<span class="signature">(config)</span><span class="type-signature"></span></h2>
         
             <div class="class-description"><p>MCP Client Class</p></div>
         
@@ -46,19 +46,301 @@
     
 
     
-    <h4 class="name" id="MCPClient"><span class="type-signature"></span>new MCPClient<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="MCPClient"><span class="type-signature"></span>new MCPClient<span class="signature">(config)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>Create a new MCP client</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Configuration object or URL string</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>baseURL</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>MCP server base URL</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>serverUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Alias for baseURL</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Request timeout in milliseconds (default: 30000)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxRetries</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Maximum retry attempts (default: 3)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>authToken</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional authentication token</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Custom HTTP headers to include in all requests</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -94,7 +376,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line307">line 307</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line405">line 405</a>
     </li></ul></dd>
     
 
@@ -121,6 +403,40 @@
 
 
 
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Basic usage with default configuration
+const client = new MCPClient();</code></pre>
+
+    <pre class="prettyprint"><code>With custom configuration
+const client = new MCPClient({
+  baseURL: 'https://custom-mcp-server.com/mcp',
+  timeout: 60000,
+  maxRetries: 5,
+  authToken: 'Bearer xyz...',
+  headers: {
+    'X-Custom-Header': 'value',
+    'X-API-Key': 'abc123'
+  }
+});</code></pre>
+
+    <pre class="prettyprint"><code>With headers from .github/copilot-mcp.json
+// Configuration in .github/copilot-mcp.json:
+// {
+//   "mcpServers": {
+//     "github": {
+//       "type": "http",
+//       "url": "https://api.githubcopilot.com/mcp/insiders",
+//       "headers": {
+//         "Authorization": "Bearer ${{ secrets.TOKEN }}",
+//         "X-MCP-Toolsets": "all"
+//       }
+//     }
+//   }
+// }
+// The client will automatically use these headers when configured via MCP</code></pre>
 
 
 
@@ -342,7 +658,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line568">line 568</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line692">line 692</a>
     </li></ul></dd>
     
 
@@ -567,7 +883,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line585">line 585</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line709">line 709</a>
     </li></ul></dd>
     
 
@@ -867,7 +1183,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line697">line 697</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line821">line 821</a>
     </li></ul></dd>
     
 
@@ -1144,7 +1460,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line667">line 667</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line791">line 791</a>
     </li></ul></dd>
     
 
@@ -1340,7 +1656,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line616">line 616</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line740">line 740</a>
     </li></ul></dd>
     
 
@@ -1536,7 +1852,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line601">line 601</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line725">line 725</a>
     </li></ul></dd>
     
 
@@ -1790,7 +2106,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line681">line 681</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line805">line 805</a>
     </li></ul></dd>
     
 
@@ -1900,7 +2216,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line707">line 707</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line831">line 831</a>
     </li></ul></dd>
     
 
@@ -2010,7 +2326,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line517">line 517</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line635">line 635</a>
     </li></ul></dd>
     
 
@@ -2098,7 +2414,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line503">line 503</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line621">line 621</a>
     </li></ul></dd>
     
 
@@ -2297,7 +2613,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line334">line 334</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line446">line 446</a>
     </li></ul></dd>
     
 
@@ -2407,7 +2723,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line720">line 720</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line844">line 844</a>
     </li></ul></dd>
     
 
@@ -2708,7 +3024,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line636">line 636</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line760">line 760</a>
     </li></ul></dd>
     
 
@@ -3008,7 +3324,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line652">line 652</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line776">line 776</a>
     </li></ul></dd>
     
 
@@ -3118,7 +3434,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line496">line 496</a>
+        <a href="scripts_mcp-client.js.html">scripts/mcp-client.js</a>, <a href="scripts_mcp-client.js.html#line614">line 614</a>
     </li></ul></dd>
     
 

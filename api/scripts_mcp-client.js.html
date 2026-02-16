@@ -47,6 +47,55 @@
  * Deployment: Render.com serverless platform
  * Authentication: Optional token-based via MCP_AUTH_TOKEN
  * 
+ * @example Quick Start for GitHub Copilot Agents
+ * 
+ * // In GitHub Actions workflows with MCP configured, use tools directly:
+ * const events = await mcp["riksdag-regering"].get_calendar_events({
+ *   from: "2026-02-16",
+ *   tom: "2026-02-16",
+ *   limit: 50
+ * });
+ * 
+ * // Or use this helper client for typed methods:
+ * import MCPClient from './scripts/mcp-client.js';
+ * const client = new MCPClient();
+ * const events = await client.fetchCalendarEvents({ from: today, tom: today });
+ * 
+ * @example Handling Cold Starts (30-60 seconds)
+ * 
+ * // Render.com serverless may have cold starts
+ * console.log("⏳ Warming up MCP server (may take 30-60s)...");
+ * 
+ * // Start with a simple query to warm up
+ * const status = await client.request('get_sync_status', {});
+ * console.log("✅ MCP server ready");
+ * 
+ * // Now batch your main queries (will be fast)
+ * const [events, votes, docs] = await Promise.all([
+ *   client.fetchCalendarEvents({ from: today, tom: today }),
+ *   client.fetchVotingRecords({ rm: "2025/26", limit: 20 }),
+ *   client.searchDocuments({ from_date: today, limit: 30 })
+ * ]);
+ * 
+ * @example Error Handling Strategy
+ * 
+ * try {
+ *   const data = await client.fetchCalendarEvents({ from: today, tom: today });
+ * } catch (error) {
+ *   if (error.message.includes('timeout')) {
+ *     // Cold start or server overload - retry after 60s
+ *     console.log("⏳ Server cold start detected, retrying...");
+ *     await new Promise(resolve => setTimeout(resolve, 60000));
+ *     const data = await client.fetchCalendarEvents({ from: today, tom: today });
+ *   } else if (error.message.includes('503')) {
+ *     // Server maintenance - fall back to cached data
+ *     console.log("⚠️ MCP server unavailable, using cached data");
+ *     // Load from cache...
+ *   } else {
+ *     throw error;
+ *   }
+ * }
+ * 
  * MCP Tool Categories (32 Total Tools):
  * 
  * Riksdag Tools (15 tools):
@@ -91,16 +140,34 @@
  * 
  * Protocol Details:
  * 
- * Direct Server Mode:
- * - POST to /mcp endpoint
+ * Direct Server Mode (Recommended):
+ * - POST to https://riksdag-regering-ai.onrender.com/mcp
  * - Use unprefixed tool names (e.g., 'get_calendar_events')
  * - JSON-RPC 2.0 request format
  * - Automatic timeout handling and retries
+ * - Lower latency (~200-500ms per request)
  * 
- * MCP Gateway Mode (optional):
- * - For gateway deployments, use prefixed tool names
- * - Format: 'riksdag-regering--{tool_name}'
- * - Auto-detection based on error responses
+ * MCP Gateway Mode (Agentic Workflows):
+ * - For agentic workflow sandbox environments with firewall container
+ * - POST to http://host.docker.internal:80/mcp/riksdag-regering
+ * - Use prefixed tool names: 'riksdag-regering--{tool_name}'
+ * - Additional proxy latency (~50-200ms overhead per request)
+ * - Auto-detection based on URL (checks for 'host.docker.internal')
+ * - Client automatically handles prefixing - no manual changes needed
+ * 
+ * Architecture Comparison:
+ * 
+ * Direct Mode:
+ *   Agent → HTTPS → MCP Server (riksdag-regering-ai.onrender.com)
+ *   - Pros: Lower latency, simpler auth, faster cold start recovery
+ *   - Cons: Less network control, requires explicit domain allowlist
+ * 
+ * Gateway Mode:
+ *   Agent → Firewall → HTTP → Proxy → HTTPS → MCP Server
+ *   - Pros: Security filtering, network audit, rate limiting
+ *   - Cons: Higher latency, complex session mgmt, gateway timeout cascade
+ * 
+ * Auto-detection based on error responses
  * 
  * Intelligence Application Examples:
  * 
@@ -331,18 +398,63 @@ let jsonRpcId = 1;
 
 /**
  * MCP Client Class
+ * 
+ * @example Basic usage with default configuration
+ * const client = new MCPClient();
+ * 
+ * @example With custom configuration
+ * const client = new MCPClient({
+ *   baseURL: 'https://custom-mcp-server.com/mcp',
+ *   timeout: 60000,
+ *   maxRetries: 5,
+ *   authToken: 'Bearer xyz...',
+ *   headers: {
+ *     'X-Custom-Header': 'value',
+ *     'X-API-Key': 'abc123'
+ *   }
+ * });
+ * 
+ * @example With headers from .github/copilot-mcp.json
+ * // Configuration in .github/copilot-mcp.json:
+ * // {
+ * //   "mcpServers": {
+ * //     "github": {
+ * //       "type": "http",
+ * //       "url": "https://api.githubcopilot.com/mcp/insiders",
+ * //       "headers": {
+ * //         "Authorization": "Bearer ${{ secrets.TOKEN }}",
+ * //         "X-MCP-Toolsets": "all"
+ * //       }
+ * //     }
+ * //   }
+ * // }
+ * // The client will automatically use these headers when configured via MCP
  */
 export class MCPClient {
+  /**
+   * Create a new MCP client
+   * 
+   * @param {Object|string} config - Configuration object or URL string
+   * @param {string} [config.baseURL] - MCP server base URL
+   * @param {string} [config.serverUrl] - Alias for baseURL
+   * @param {number} [config.timeout] - Request timeout in milliseconds (default: 30000)
+   * @param {number} [config.maxRetries] - Maximum retry attempts (default: 3)
+   * @param {string} [config.authToken] - Optional authentication token
+   * @param {Object} [config.headers] - Custom HTTP headers to include in all requests
+   */
   constructor(config = {}) {
     // Support both object config and string URL for backwards compatibility
     if (typeof config === 'string') {
       this.baseURL = config;
       this.timeout = getDefaultTimeout();
       this.maxRetries = DEFAULT_MAX_RETRIES;
+      this.customHeaders = {};
     } else {
       this.baseURL = config.baseURL || config.serverUrl || DEFAULT_MCP_SERVER_URL;
       this.timeout = config.timeout || getDefaultTimeout();
       this.maxRetries = config.maxRetries || DEFAULT_MAX_RETRIES;
+      // Support custom headers from config (e.g., from .github/copilot-mcp.json)
+      this.customHeaders = config.headers || {};
     }
     
     this.requestCount = 0;
@@ -404,7 +516,13 @@ export class MCPClient {
         }
       }
       
-      const headers = { 'Content-Type': 'application/json' };
+      // Build headers: custom headers from config + runtime headers
+      const headers = {
+        'Content-Type': 'application/json',
+        ...this.customHeaders  // Spread custom headers from config first
+      };
+      
+      // Runtime headers (override custom headers if present)
       if (this.authToken) headers['Authorization'] = this.authToken;
       if (this.sessionId) headers['Mcp-Session-Id'] = this.sessionId;
       
@@ -549,7 +667,13 @@ export class MCPClient {
     const timeoutId = setTimeout(() => controller.abort(), this.timeout);
     
     try {
-      const headers = { 'Content-Type': 'application/json' };
+      // Build headers: custom headers from config + runtime headers
+      const headers = {
+        'Content-Type': 'application/json',
+        ...this.customHeaders  // Spread custom headers from config first
+      };
+      
+      // Runtime headers (override custom headers if present)
       if (this.authToken) headers['Authorization'] = this.authToken;
       
       const response = await fetch(this.baseURL, {
