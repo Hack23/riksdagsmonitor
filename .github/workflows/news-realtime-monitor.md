@@ -111,134 +111,56 @@ Parse the `languages` input and expand presets:
 - **nordic** → en,sv,da,no,fi
 - **eu-core** → en,sv,de,fr,es,nl
 
-## 🔌 MCP Server Integration Guide
+## 🔌 MCP Tools: Swedish Political Data
 
-### ⚠️ CRITICAL: Use MCP Tools Directly, NOT Manual Scripts
+### ⚡ Quick Start - Use MCP Tools Directly
 
-**DO NOT waste time with manual bash/curl/python scripts to call MCP!**
+**You have 32 specialized tools for Swedish political data ready to use.**
 
-❌ **WRONG APPROACH** (wastes 10+ minutes with authentication trial-and-error):
-```bash
-# DON'T DO THIS - Agent spent 10+ minutes on this in run #63771890188
-export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
-node -e "import MCPClient from './scripts/mcp-client.js'; ..."
-curl -X POST "http://host.docker.internal:80/mcp/riksdag-regering" ...
-python3 << 'PYEOF' ... # Manual session management, header auth, etc.
-```
+**IMPORTANT:** Just call the tools directly using this syntax:
 
-✅ **CORRECT APPROACH** (works immediately):
 ```javascript
-// MCP tools are pre-configured and ready to use - just call them directly!
+// Calendar events
 const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
   from: "2026-02-16",
   tom: "2026-02-16",
   limit: 50
 });
 
+// Recent votes
 const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar"]({
   rm: "2025/26",
   limit: 20
 });
-```
 
-**Why This Matters:**
-- In run #63771890188, the agent wasted ~10 minutes trying manual MCP calls
-- Tried ESM vs CommonJS exports, 401 errors, session IDs, persistent connections
-- Eventually worked but timeout risk increased significantly
-- **The MCP framework handles ALL of this automatically!**
-
-### How Agentic Workflows Access MCP Servers
-
-**Configuration in Workflow Frontmatter:**
-```yaml
----
-mcp-servers:
-  riksdag-regering:
-    url: https://riksdag-regering-ai.onrender.com/mcp
-    
-network:
-  allowed:
-    - riksdag-regering-ai.onrender.com
----
-```
-
-**What Happens at Runtime:**
-1. Workflow compiles to `.lock.yml` file with embedded MCP configuration
-2. GitHub Actions infrastructure creates **MCP Gateway** (transparent proxy via `host.docker.internal`)
-3. Gateway handles: protocol translation, authentication, session management, health monitoring
-4. All MCP tools become available via `mcp["server-name"]["tool-name"]` syntax
-
-**Key Points:**
-- ⚠️ `.github/copilot-mcp.json` is **NOT** used by agentic workflows (that's for Copilot Chat only)
-- ✅ Configuration is in workflow YAML frontmatter `mcp-servers:` section
-- ✅ Gateway mode is automatic - you don't configure it, it just happens
-- ✅ Tool names **MUST be prefixed** with server name + `--` (e.g., `riksdag-regering--get_calendar_events`)
-
-### ⚡ Quick Start - MCP Tool Usage
-
-**Tool Naming Convention:**
-```
-mcp["server-name"]["server-name--tool_name"]({ params })
-```
-
-**Example - Check Today's Calendar:**
-```javascript
-// Correct format: riksdag-regering--get_calendar_events
-const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
-  from: "2026-02-16",
-  tom: "2026-02-16",
-  limit: 50
-});
-```
-
-**Example - Search Recent Documents:**
-```javascript
-// Correct format: riksdag-regering--search_dokument
+// Recent documents
 const docs = await mcp["riksdag-regering"]["riksdag-regering--search_dokument"]({
   from_date: "2026-02-16",
   limit: 30
 });
 ```
 
-**Example - Get Recent Votes:**
-```javascript
-// Correct format: riksdag-regering--search_voteringar
-const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar"]({
-  rm: "2025/26",
-  limit: 20
-});
-```
+**Tool Naming Rule:** ALL tool names MUST have the `riksdag-regering--` prefix.
 
-### 🔧 Using the MCP Client Helper (scripts/mcp-client.js)
+### 🚫 DO NOT Use Manual Approaches
 
-**⚠️ Important**: The MCP client helper script is for **manual testing** and **non-agentic workflows only**. 
+**❌ NEVER do any of these:**
+- ❌ Manual bash/curl/node scripts to call MCP
+- ❌ Setting `MCP_SERVER_URL` environment variables
+- ❌ Importing `MCPClient` from scripts
+- ❌ Trying to manage authentication/sessions yourself
+- ❌ Direct HTTP calls to the MCP server
 
-**In agentic workflows**: Always use the framework's `mcp["server"]["tool"]` syntax shown above.
-
-If you need to test MCP tools outside of agentic workflows:
-
-```javascript
-// For manual testing/debugging only
-import MCPClient from './scripts/mcp-client.js';
-const client = new MCPClient();
-const events = await client.fetchCalendarEvents({ from: today, tom: today });
-```
+**✅ ALWAYS do this:**
+- ✅ Use `mcp["riksdag-regering"]["riksdag-regering--tool_name"]({ params })` syntax
+- ✅ Let the framework handle all authentication and session management
+- ✅ Trust the automatic retry logic for cold starts
 
 ### 🚨 Cold Start Handling
 
-**Important**: The MCP server runs on Render.com serverless infrastructure and may experience **cold starts (30-60 seconds)** if inactive.
+The MCP server may take 30-60 seconds on first request (cold start). **The framework handles this automatically with retries.** Just make your call normally and wait.
 
-**Built-in Retry Logic:**
-- The MCP framework automatically retries failed requests (3 attempts max)
-- Exponential backoff with 2-second delays
-- Timeout: 30 seconds per request
-
-**Best Practices:**
-1. ✅ **Start with a simple query** to warm up the server
-2. ✅ **Batch multiple queries** after warm-up for efficiency
-3. ✅ **Check data freshness** using `riksdag-regering--get_sync_status` before generating articles
-4. ✅ **Handle timeouts gracefully** - the framework retries automatically
-5. ❌ **Don't make 50+ sequential requests** - batch where possible
+**Best Practice:** Start with a simple query to warm up the server, then batch multiple queries.
 
 ### 📋 32 Available MCP Tools
 
@@ -619,13 +541,4 @@ If articles are generated, validate with Playwright before creating PR:
 - If no significant events: update metadata timestamp, exit cleanly (no PR)
 - If partial data: generate articles for available data, note gaps in metadata
 
-🎯 **Now begin: Query riksdag-regering-mcp for real-time data, assess significance, and generate breaking news if warranted. Use `safeoutputs___create_pull_request` to create PRs.**
-
-### ⚠️ Sandbox Networking Reminder
-
-The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
-
-1. **For any Node.js scripts that use mcp-client.js**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running them
-2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
-3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool
-4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name
+🎯 **Now begin: Query riksdag-regering-mcp for real-time data using MCP tools, assess significance, and generate breaking news if warranted. Use `safeoutputs___create_pull_request` to create PRs.**

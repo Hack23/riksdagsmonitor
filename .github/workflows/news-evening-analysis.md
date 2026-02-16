@@ -141,78 +141,65 @@ Parse `languages` input (default: `all` for evening coverage):
 
 Generate article versions for each requested language with culturally appropriate tone and proper localization.
 
-## 🔌 MCP Server Integration Guide
+## 🔌 MCP Tools: Swedish Political Data
 
-### Overview
+### ⚡ Quick Start - Use MCP Tools Directly
 
-You have access to the **riksdag-regering-mcp** server with 32 specialized tools for Swedish political data. The server is pre-configured and ready to use.
+**You have 32 specialized tools for Swedish political data ready to use.**
 
-**Server Configuration:**
-- **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
-- **Protocol**: JSON-RPC 2.0 (HTTP transport)
-- **Authentication**: None required (public API)
-- **Tools**: 32 tools automatically available via MCP
+**IMPORTANT:** Just call the tools directly using this syntax:
 
-### 🔌 MCP Server: riksdag-regering
-
-You have access to the **riksdag-regering-mcp** server with 32 specialized tools.
-
-**Configuration** (in workflow frontmatter):
-```yaml
-mcp-servers:
-  riksdag-regering:
-    url: https://riksdag-regering-ai.onrender.com/mcp
-```
-
-**How It Works:**
-1. Configuration compiles into `.lock.yml` with embedded MCP gateway
-2. Gateway proxy handles protocol, auth, sessions automatically
-3. All tools available via `mcp["riksdag-regering"]["riksdag-regering--tool_name"]` syntax
-
-**Tool Naming:** All tool names MUST be prefixed with `riksdag-regering--`
-
-**Quick Start:**
 ```javascript
-// Fetch calendar events
+// Calendar events
 const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
   from: "2026-02-16",
   tom: "2026-02-16",
   limit: 50
 });
 
-// Search documents
+// Recent votes
 const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar"]({
   rm: "2025/26",
   limit: 50
 });
+
+// Committee reports
+const reports = await mcp["riksdag-regering"]["riksdag-regering--get_betankanden"]({
+  rm: "2025/26",
+  limit: 20
+});
 ```
+
+**Tool Naming Rule:** ALL tool names MUST have the `riksdag-regering--` prefix.
+
+### 🚫 DO NOT Use Manual Approaches
+
+**❌ NEVER do any of these:**
+- ❌ Manual bash/curl/node scripts to call MCP
+- ❌ Setting `MCP_SERVER_URL` environment variables
+- ❌ Importing `MCPClient` from scripts
+- ❌ Trying to manage authentication/sessions yourself
+- ❌ Direct HTTP calls to the MCP server
+
+**✅ ALWAYS do this:**
+- ✅ Use `mcp["riksdag-regering"]["riksdag-regering--tool_name"]({ params })` syntax
+- ✅ Let the framework handle all authentication and session management
+- ✅ Trust the automatic retry logic for cold starts
 
 ### 🚨 Cold Start Handling
 
-**Important**: Server may take 30-60s on first request. Framework retries automatically (3 attempts, 2s delays).
+The MCP server may take 30-60 seconds on first request (cold start). **The framework handles this automatically with retries.** Just make your call normally and wait.
 
-**Best Practices:**
-1. ✅ Start with a simple query to warm up the server
-2. ✅ Batch multiple queries after warm-up
-3. ✅ Check data freshness using `riksdag-regering--get_sync_status`
+**Best Practice:** Start with a simple query to warm up the server, then batch multiple queries.
 
-### 🐛 Troubleshooting
+### 🐛 If You Get Errors
 
-**Issue: Request times out**
-- **Cause**: Cold start (30-60s)
-- **Solution**: Wait and retry - framework handles retries automatically
-
-**Issue: Tool not found error**
-- **Cause**: Missing `riksdag-regering--` prefix
-- **Solution**: Always use full prefix: `mcp["riksdag-regering"]["riksdag-regering--tool_name"]`
-
-**Issue: Empty results**
-- **Cause**: No activity in timeframe or wrong riksmöte (rm)
-- **Solution**: Check `riksdag-regering--get_sync_status`, widen search
-
-**Issue: Swedish-only results**
-- **Cause**: Riksdag API returns Swedish data natively
-- **Solution**: YOU must translate to target languages
+| Error | Cause | Fix |
+|-------|-------|-----|
+| Tool not found | Missing `riksdag-regering--` prefix | Add prefix: `riksdag-regering--get_calendar_events` |
+| Empty results | No data in timeframe | Check `riksdag-regering--get_sync_status`, widen search |
+| Timeout | Cold start (30-60s) | Wait - framework retries automatically |
+| Swedish-only results | Riksdag API returns Swedish | YOU must translate to target languages |
 
 ## Analysis Workflow
 
@@ -702,13 +689,4 @@ For deeper evening analysis, combine data from multiple riksdag-regering-mcp too
 3. `search_dokument_fulltext` - find related documents
 4. `get_dokument` - get full text of key documents
 
-🎯 **Now begin: Gather today's comprehensive parliamentary data, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
-
-### ⚠️ Sandbox Networking Reminder
-
-The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
-
-1. **For any Node.js scripts that use mcp-client.js**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running them
-2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
-3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool
-4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name
+🎯 **Now begin: Gather today's comprehensive parliamentary data using MCP tools, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
