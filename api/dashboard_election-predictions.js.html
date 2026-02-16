@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: dashboard/election-predictions.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: dashboard/election-predictions.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Election 2026 Predictions Module
+ * Renders Swedish election forecasting and coalition scenarios
+ */
+
+export class Election2026Predictions {
+  constructor(electionData) {
+    this.data = electionData;
+  }
+
+  /**
+   * Render seat predictions for all parties
+   */
+  renderSeatPredictions() {
+    const container = document.getElementById('seat-predictions');
+    
+    if (!container) return;
+    
+    // Defensive checks for data structure
+    if (!this.data || !this.data.forecast || !Array.isArray(this.data.forecast.parties)) {
+      console.warn('Invalid or missing election forecast data');
+      return;
+    }
+    
+    const { parties } = this.data.forecast;
+    
+    // Clear existing content safely
+    container.textContent = '';
+    
+    const fragment = document.createDocumentFragment();
+
+    parties.forEach(party => {
+      const changeClass = party.change >= 0 ? 'positive' : 'negative';
+      const changeSymbol = party.change >= 0 ? '+' : '';
+      const cardClass = party.change >= 0 ? 'gain' : 'loss';
+
+      const card = document.createElement('div');
+      card.className = `prediction-card ${cardClass}`;
+
+      const partyName = document.createElement('h3');
+      partyName.className = 'prediction-party';
+      partyName.textContent = party.name;
+
+      const seatsDiv = document.createElement('div');
+      seatsDiv.className = 'prediction-seats';
+
+      // Current seats
+      const currentDiv = document.createElement('div');
+      currentDiv.className = 'seats-current';
+      const currentLabel = document.createElement('div');
+      currentLabel.className = 'seats-label';
+      currentLabel.textContent = 'Current';
+      const currentValue = document.createElement('strong');
+      currentValue.textContent = party.currentSeats;
+      currentDiv.appendChild(currentLabel);
+      currentDiv.appendChild(currentValue);
+
+      // Arrow
+      const arrowDiv = document.createElement('div');
+      arrowDiv.className = 'seats-arrow';
+      arrowDiv.textContent = '→';
+
+      // Predicted seats
+      const predictedDiv = document.createElement('div');
+      predictedDiv.className = 'seats-predicted';
+      const predictedLabel = document.createElement('div');
+      predictedLabel.className = 'seats-label';
+      predictedLabel.textContent = 'Predicted';
+      const predictedValue = document.createElement('strong');
+      predictedValue.textContent = party.predictedSeats;
+      predictedDiv.appendChild(predictedLabel);
+      predictedDiv.appendChild(predictedValue);
+
+      seatsDiv.appendChild(currentDiv);
+      seatsDiv.appendChild(arrowDiv);
+      seatsDiv.appendChild(predictedDiv);
+
+      // Change
+      const changeDiv = document.createElement('div');
+      changeDiv.className = `seats-change ${changeClass}`;
+      changeDiv.textContent = `${changeSymbol}${party.change} seats (${party.voteShare}%)`;
+
+      // Confidence interval with defensive check
+      const confidenceDiv = document.createElement('div');
+      confidenceDiv.className = 'confidence-interval';
+      let ciText = '95% CI: N/A';
+      if (
+        party.confidenceInterval &amp;&amp;
+        typeof party.confidenceInterval.min === 'number' &amp;&amp;
+        typeof party.confidenceInterval.max === 'number'
+      ) {
+        ciText = `95% CI: ${party.confidenceInterval.min}-${party.confidenceInterval.max} seats`;
+      } else {
+        console.warn('Missing or invalid confidenceInterval for party', party.name, party);
+      }
+      confidenceDiv.textContent = ciText;
+
+      card.appendChild(partyName);
+      card.appendChild(seatsDiv);
+      card.appendChild(changeDiv);
+      card.appendChild(confidenceDiv);
+
+      fragment.appendChild(card);
+    });
+
+    container.appendChild(fragment);
+  }
+
+  /**
+   * Render coalition scenarios
+   */
+  renderCoalitionScenarios() {
+    const container = document.getElementById('coalition-scenarios');
+    
+    if (!container) return;
+    
+    // Defensive check for data structure
+    if (!this.data || !Array.isArray(this.data.coalitionScenarios)) {
+      console.warn('Invalid or missing coalition scenarios data');
+      return;
+    }
+    
+    const { coalitionScenarios } = this.data;
+    
+    // Clear existing content safely
+    container.textContent = '';
+    
+    const fragment = document.createDocumentFragment();
+
+    coalitionScenarios.forEach(scenario => {
+      const majorityClass = scenario.majority ? 'yes' : 'no';
+      const majorityText = scenario.majority ? 'Majority ✓' : 'No Majority';
+
+      const card = document.createElement('div');
+      card.className = 'scenario-card';
+
+      const probability = document.createElement('div');
+      probability.className = 'scenario-probability';
+      probability.textContent = `${scenario.probability}%`;
+
+      const name = document.createElement('h3');
+      name.className = 'scenario-name';
+      name.textContent = scenario.name;
+
+      const composition = document.createElement('div');
+      composition.className = 'scenario-composition';
+      
+      // Defensive check for composition array
+      if (Array.isArray(scenario.composition)) {
+        scenario.composition.forEach(partyId => {
+          const badge = document.createElement('span');
+          badge.className = 'party-badge';
+          badge.textContent = partyId;
+          composition.appendChild(badge);
+        });
+      } else {
+        console.warn('Missing or invalid composition for scenario', scenario.name);
+      }
+
+      const seats = document.createElement('div');
+      seats.className = 'scenario-seats';
+      const seatsStrong = document.createElement('strong');
+      seatsStrong.textContent = scenario.totalSeats;
+      seats.appendChild(seatsStrong);
+      seats.appendChild(document.createTextNode(' seats (175 required for majority)'));
+
+      const majority = document.createElement('span');
+      majority.className = `scenario-majority ${majorityClass}`;
+      majority.textContent = majorityText;
+
+      const riskLevel = document.createElement('div');
+      riskLevel.className = 'scenario-risk-level';
+      riskLevel.textContent = 'Risk Level: ';
+      const riskStrong = document.createElement('strong');
+      riskStrong.textContent = scenario.riskLevel;
+      riskLevel.appendChild(riskStrong);
+
+      card.appendChild(probability);
+      card.appendChild(name);
+      card.appendChild(composition);
+      card.appendChild(seats);
+      card.appendChild(majority);
+      card.appendChild(riskLevel);
+
+      fragment.appendChild(card);
+    });
+
+    container.appendChild(fragment);
+  }
+
+  /**
+   * Render key factors affecting the election
+   * NOTE: Reserved for future implementation - requires adding &lt;div id="key-factors">&lt;/div> to HTML
+   * and calling this method from dashboard-init.js. The data is available in election-analysis.json.
+   */
+  renderKeyFactors() {
+    const container = document.getElementById('key-factors');
+
+    if (!container) {
+      return;
+    }
+    
+    // Defensive check for keyFactors
+    if (!this.data || !Array.isArray(this.data.keyFactors)) {
+      console.warn('Invalid or missing key factors data');
+      return;
+    }
+    
+    const { keyFactors } = this.data;
+
+    // Clear existing content safely
+    container.textContent = '';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'key-factors';
+
+    const heading = document.createElement('h3');
+    heading.textContent = 'Key Election Factors';
+    wrapper.appendChild(heading);
+
+    const list = document.createElement('ul');
+
+    keyFactors.forEach(factor => {
+      const listItem = document.createElement('li');
+      // Use textContent to prevent XSS from untrusted factor values
+      listItem.textContent = String(factor);
+      list.appendChild(listItem);
+    });
+
+    wrapper.appendChild(list);
+    container.appendChild(wrapper);
+  }
+
+  /**
+   * Get election date formatted
+   * NOTE: Reserved for future implementation - can be used to display election date in dashboard header.
+   * The data is available as electionDate in election-analysis.json.
+   * @returns {string} Formatted election date or empty string if invalid
+   */
+  getFormattedElectionDate() {
+    // Defensive checks for election date data
+    if (!this.data || !this.data.electionDate) {
+      console.warn('Invalid or missing election date data');
+      return '';
+    }
+
+    const date = new Date(this.data.electionDate);
+
+    // Validate that the constructed date is valid
+    if (Number.isNaN(date.getTime())) {
+      console.warn('Election date is not a valid date:', this.data.electionDate);
+      return '';
+    }
+
+    try {
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (error) {
+      console.warn('Failed to format election date', error);
+      return '';
+    }
+  }
+
+  /**
+   * Calculate and return summary statistics
+   * NOTE: Reserved for future implementation - can be used to display election summary metrics.
+   * Calculates total seats, gainers/losers/stable parties, and biggest changes.
+   * @returns {Object} Summary statistics object
+   */
+  getSummaryStats() {
+    // Defensive check for forecast and parties structure
+    if (!this.data || !this.data.forecast || !Array.isArray(this.data.forecast.parties)) {
+      console.warn('Invalid or missing election forecast data for summary stats');
+      return {
+        totalSeats: 0,
+        gainers: 0,
+        losers: 0,
+        stable: 0,
+        biggestGain: null,
+        biggestLoss: null
+      };
+    }
+    
+    const { parties } = this.data.forecast;
+    
+    // Handle empty parties array defensively
+    if (parties.length === 0) {
+      return {
+        totalSeats: 0,
+        gainers: 0,
+        losers: 0,
+        stable: 0,
+        biggestGain: null,
+        biggestLoss: null
+      };
+    }
+    
+    return {
+      totalSeats: parties.reduce((sum, p) => sum + p.predictedSeats, 0),
+      gainers: parties.filter(p => p.change > 0).length,
+      losers: parties.filter(p => p.change &lt; 0).length,
+      stable: parties.filter(p => p.change === 0).length,
+      biggestGain: parties.reduce((max, p) => p.change > max.change ? p : max, parties[0]),
+      biggestLoss: parties.reduce((min, p) => p.change &lt; min.change ? p : min, parties[0])
+    };
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

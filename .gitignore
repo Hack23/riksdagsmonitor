@@ -33,8 +33,8 @@ cypress/downloads/
 .vite/
 .cache/
 
-# JSDoc generated documentation (build artifact)
-api/
+# JSDoc generated documentation (committed for GitHub Pages deployment)
+# api/ - Now committed to enable GitHub Pages documentation hosting
 
 # Environment variables
 .env

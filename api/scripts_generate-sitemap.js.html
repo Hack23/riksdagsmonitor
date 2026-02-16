@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/generate-sitemap.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/generate-sitemap.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>#!/usr/bin/env node
+
+/**
+ * Sitemap Generation Script
+ * 
+ * Automatically generates sitemap.xml from news articles and index pages
+ * Includes proper hreflang tags and multi-language support
+ * 
+ * Usage: node generate-sitemap.js
+ */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+console.log('🗺️ Sitemap Generation Script');
+
+// Configuration
+const BASE_URL = 'https://riksdagsmonitor.com';
+const NEWS_DIR = path.join(__dirname, '..', 'news');
+const ROOT_DIR = path.join(__dirname, '..');
+const SITEMAP_FILE = path.join(ROOT_DIR, 'sitemap.xml');
+
+// Language codes
+const LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+
+/**
+ * Get news articles with metadata
+ */
+function getNewsArticles() {
+  console.log('📰 Scanning news directory...');
+  
+  if (!fs.existsSync(NEWS_DIR)) {
+    console.warn('⚠️ News directory not found');
+    return [];
+  }
+  
+  const files = fs.readdirSync(NEWS_DIR)
+    .filter(file => file.endsWith('.html') &amp;&amp; file !== 'index.html' &amp;&amp; !file.startsWith('index_'));
+  
+  console.log(`  Found ${files.length} news articles`);
+  
+  // Group articles by base slug (without language suffix)
+  const articles = new Map();
+  
+  files.forEach(file => {
+    // Extract base slug and language
+    const match = file.match(/^(.+?)-(en|sv)\.html$/);
+    if (match) {
+      const [, baseSlug, lang] = match;
+      const filePath = path.join(NEWS_DIR, file);
+      const fileModTime = getFileModTime(filePath);
+      
+      if (!articles.has(baseSlug)) {
+        articles.set(baseSlug, {
+          baseSlug,
+          languages: [],
+          lastmod: fileModTime
+        });
+      } else {
+        const article = articles.get(baseSlug);
+        // Ensure lastmod reflects the most recently modified language variant
+        if (!article.lastmod || new Date(fileModTime) > new Date(article.lastmod)) {
+          article.lastmod = fileModTime;
+        }
+      }
+      
+      articles.get(baseSlug).languages.push(lang);
+    }
+  });
+  
+  return Array.from(articles.values());
+}
+
+/**
+ * Get file modification time
+ */
+function getFileModTime(filePath) {
+  try {
+    const stats = fs.statSync(filePath);
+    return stats.mtime.toISOString();
+  } catch (error) {
+    return new Date().toISOString();
+  }
+}
+
+/**
+ * Generate XML for a URL entry
+ */
+function generateUrlEntry(loc, lastmod, changefreq, priority, alternates = []) {
+  let xml = `
+&lt;url>
+  &lt;loc>${BASE_URL}/${loc}&lt;/loc>
+  &lt;lastmod>${lastmod}&lt;/lastmod>
+  &lt;changefreq>${changefreq}&lt;/changefreq>
+  &lt;priority>${priority}&lt;/priority>`;
+  
+  // Add hreflang alternates
+  alternates.forEach(alt => {
+    xml += `
+  &lt;xhtml:link rel="alternate" hreflang="${alt.lang}" href="${BASE_URL}/${alt.href}"/>`;
+  });
+  
+  xml += `
+&lt;/url>`;
+  
+  return xml;
+}
+
+/**
+ * Generate sitemap XML
+ */
+function generateSitemap() {
+  console.log('🔨 Generating sitemap...');
+  
+  let xml = `&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">`;
+  
+  // Main index page with all language alternates (canonical is index.html based on &lt;link rel="canonical">)
+  const indexAlternates = LANGUAGES.map(lang => ({
+    lang,
+    href: lang === 'en' ? 'index.html' : `index_${lang}.html`
+  }));
+  
+  // Use actual file mtime for main index
+  const indexMtime = getFileModTime(path.join(ROOT_DIR, 'index.html'));
+  xml += generateUrlEntry('index.html', indexMtime, 'daily', '1.0', indexAlternates);
+  
+  // Individual language index pages (excluding English since it's the canonical above)
+  LANGUAGES.filter(lang => lang !== 'en').forEach(lang => {
+    const loc = `index_${lang}.html`;
+    const lastmod = getFileModTime(path.join(ROOT_DIR, loc));
+    const priority = lang === 'sv' ? '0.9' : '0.7';
+    
+    xml += generateUrlEntry(loc, lastmod, 'daily', priority);
+  });
+  
+  // Politician dashboard page
+  const politicianDashboardMtime = getFileModTime(path.join(ROOT_DIR, 'politician-dashboard.html'));
+  xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
+  
+  // Dashboard pages with language alternates
+  const dashboardAlternates = [
+    { lang: 'en', href: 'dashboard/index.html' },
+    { lang: 'sv', href: 'dashboard/index_sv.html' }
+  ];
+  
+  const dashboardEnMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index.html'));
+  xml += generateUrlEntry('dashboard/index.html', dashboardEnMtime, 'weekly', '0.8', dashboardAlternates);
+  
+  const dashboardSvMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index_sv.html'));
+  xml += generateUrlEntry('dashboard/index_sv.html', dashboardSvMtime, 'weekly', '0.8');
+  
+  // Sitemap HTML pages with language alternates
+  const sitemapAlternates = [
+    { lang: 'en', href: 'sitemap.html' },
+    { lang: 'sv', href: 'sitemap_sv.html' },
+    { lang: 'da', href: 'sitemap_da.html' },
+    { lang: 'no', href: 'sitemap_no.html' },
+    { lang: 'fi', href: 'sitemap_fi.html' },
+    { lang: 'de', href: 'sitemap_de.html' },
+    { lang: 'fr', href: 'sitemap_fr.html' },
+    { lang: 'es', href: 'sitemap_es.html' },
+    { lang: 'nl', href: 'sitemap_nl.html' },
+    { lang: 'ar', href: 'sitemap_ar.html' },
+    { lang: 'he', href: 'sitemap_he.html' },
+    { lang: 'ja', href: 'sitemap_ja.html' },
+    { lang: 'ko', href: 'sitemap_ko.html' },
+    { lang: 'zh', href: 'sitemap_zh.html' },
+    { lang: 'x-default', href: 'sitemap.html' }
+  ];
+  
+  const sitemapEnMtime = getFileModTime(path.join(ROOT_DIR, 'sitemap.html'));
+  xml += generateUrlEntry('sitemap.html', sitemapEnMtime, 'monthly', '0.6', sitemapAlternates);
+  
+  // Individual sitemap language pages (excluding English)
+  const sitemapLangPages = [
+    { file: 'sitemap_sv.html', priority: '0.5' },
+    { file: 'sitemap_da.html', priority: '0.4' },
+    { file: 'sitemap_no.html', priority: '0.4' },
+    { file: 'sitemap_fi.html', priority: '0.4' },
+    { file: 'sitemap_de.html', priority: '0.4' },
+    { file: 'sitemap_fr.html', priority: '0.4' },
+    { file: 'sitemap_es.html', priority: '0.4' },
+    { file: 'sitemap_nl.html', priority: '0.4' },
+    { file: 'sitemap_ar.html', priority: '0.4' },
+    { file: 'sitemap_he.html', priority: '0.4' },
+    { file: 'sitemap_ja.html', priority: '0.4' },
+    { file: 'sitemap_ko.html', priority: '0.4' },
+    { file: 'sitemap_zh.html', priority: '0.4' }
+  ];
+  
+  sitemapLangPages.forEach(({ file, priority }) => {
+    const lastmod = getFileModTime(path.join(ROOT_DIR, file));
+    xml += generateUrlEntry(file, lastmod, 'monthly', priority);
+  });
+  
+  // News index pages (canonical is news/ for English, based on &lt;link rel="canonical">)
+  // Calculate lastmod using all news language files
+  const newsLangFiles = ['index.html', 'index_sv.html', 'index_da.html', 'index_no.html', 'index_fi.html', 'index_de.html', 'index_fr.html', 'index_es.html', 'index_nl.html', 'index_ar.html', 'index_he.html'];
+  const newsIndexMtimes = newsLangFiles.map(file => {
+    try {
+      return new Date(getFileModTime(path.join(NEWS_DIR, file)));
+    } catch (e) {
+      return new Date(0); // File doesn't exist yet
+    }
+  });
+  const newsIndexMaxMtime = new Date(Math.max(...newsIndexMtimes)).toISOString();
+  
+  // Build alternates for news index pages that actually exist
+  const newsIndexAlternates = [
+    { lang: 'en', href: 'news/' },
+    { lang: 'sv', href: 'news/index_sv.html' },
+    { lang: 'da', href: 'news/index_da.html' },
+    { lang: 'no', href: 'news/index_no.html' },
+    { lang: 'fi', href: 'news/index_fi.html' },
+    { lang: 'de', href: 'news/index_de.html' },
+    { lang: 'fr', href: 'news/index_fr.html' },
+    { lang: 'es', href: 'news/index_es.html' },
+    { lang: 'nl', href: 'news/index_nl.html' },
+    { lang: 'ar', href: 'news/index_ar.html' },
+    { lang: 'he', href: 'news/index_he.html' },
+    { lang: 'x-default', href: 'news/' }
+  ];
+  
+  xml += generateUrlEntry('news/', newsIndexMaxMtime, 'daily', '0.9', newsIndexAlternates);
+  
+  // Add individual entries for each news language page (excluding EN which is canonical news/)
+  const newsLanguagePages = [
+    { file: 'index_sv.html', priority: '0.9' },
+    { file: 'index_da.html', priority: '0.7' },
+    { file: 'index_no.html', priority: '0.7' },
+    { file: 'index_fi.html', priority: '0.7' },
+    { file: 'index_de.html', priority: '0.7' },
+    { file: 'index_fr.html', priority: '0.7' },
+    { file: 'index_es.html', priority: '0.7' },
+    { file: 'index_nl.html', priority: '0.7' },
+    { file: 'index_ar.html', priority: '0.7' },
+    { file: 'index_he.html', priority: '0.7' }
+  ];
+  
+  newsLanguagePages.forEach(({ file, priority }) => {
+    try {
+      const lastmod = getFileModTime(path.join(NEWS_DIR, file));
+      xml += generateUrlEntry(`news/${file}`, lastmod, 'daily', priority);
+    } catch (e) {
+      // File doesn't exist yet, skip
+    }
+  });
+  
+  // News articles
+  const articles = getNewsArticles();
+  console.log(`  Processing ${articles.length} article groups...`);
+  
+  articles.forEach(article => {
+    // Sort languages to ensure 'en' is first for stable x-default
+    const sortedLanguages = [...article.languages].sort((a, b) => {
+      if (a === 'en') return -1;
+      if (b === 'en') return 1;
+      return a.localeCompare(b);
+    });
+    
+    // Build alternates list once for all language entries
+    const alternates = sortedLanguages.map(altLang => ({
+      lang: altLang,
+      href: `news/${article.baseSlug}-${altLang}.html`
+    }));
+    
+    // Add x-default pointing to English if available, otherwise first sorted language
+    alternates.push({
+      lang: 'x-default',
+      href: `news/${article.baseSlug}-${sortedLanguages[0]}.html`
+    });
+    
+    sortedLanguages.forEach(lang => {
+      const loc = `news/${article.baseSlug}-${lang}.html`;
+      xml += generateUrlEntry(loc, article.lastmod, 'monthly', '0.8', alternates);
+    });
+  });
+  
+  xml += `
+  
+&lt;/urlset>`;
+  
+  return xml;
+}
+
+/**
+ * Validate sitemap XML
+ */
+function validateSitemap(xml) {
+  console.log('✅ Validating sitemap...');
+  
+  // Basic validation
+  if (!xml.includes('&lt;?xml version="1.0"')) {
+    throw new Error('Invalid XML declaration');
+  }
+  
+  if (!xml.includes('&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')) {
+    throw new Error('Invalid sitemap namespace');
+  }
+  
+  // Count URLs
+  const urlCount = (xml.match(/&lt;url>/g) || []).length;
+  console.log(`  Found ${urlCount} URLs in sitemap`);
+  
+  if (urlCount === 0) {
+    throw new Error('No URLs in sitemap');
+  }
+  
+  // Check for required tags
+  if (!xml.includes('&lt;loc>')) {
+    throw new Error('Missing &lt;loc> tags');
+  }
+  
+  console.log('  ✅ Sitemap validation passed');
+  return true;
+}
+
+/**
+ * Main function
+ */
+function main() {
+  try {
+    console.log('🚀 Starting sitemap generation...\n');
+    
+    // Generate sitemap
+    const sitemap = generateSitemap();
+    
+    // Validate
+    validateSitemap(sitemap);
+    
+    // Write to file
+    fs.writeFileSync(SITEMAP_FILE, sitemap, 'utf8');
+    console.log(`\n✅ Sitemap written to: ${SITEMAP_FILE}`);
+    
+    // Show file size
+    const stats = fs.statSync(SITEMAP_FILE);
+    console.log(`   File size: ${(stats.size / 1024).toFixed(2)} KB`);
+    
+    return 0;
+  } catch (error) {
+    console.error('❌ Error generating sitemap:', error.message);
+    return 1;
+  }
+}
+
+// Run if called directly
+const exitCode = main();
+process.exit(exitCode);
+
+export { generateSitemap, validateSitemap };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

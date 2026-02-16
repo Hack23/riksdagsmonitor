@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/workflow-state-coordinator.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/workflow-state-coordinator.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>#!/usr/bin/env node
+
+/**
+ * Workflow State Coordinator
+ * 
+ * Manages coordination between multiple news generation workflows to prevent
+ * duplicate work and improve efficiency:
+ * - news-realtime-monitor.md (2x daily)
+ * - news-evening-analysis.md (daily)
+ * - news-article-generator.md (various schedules)
+ * 
+ * Features:
+ * - MCP query caching (2-hour TTL)
+ * - Similarity-based article deduplication (>70% threshold)
+ * - Recent article tracking (last 6 hours)
+ * - Workflow coordination metadata
+ * 
+ * Usage:
+ *   import { WorkflowStateCoordinator } from './workflow-state-coordinator.js';
+ *   const coordinator = new WorkflowStateCoordinator();
+ *   await coordinator.load();
+ *   const isDuplicate = await coordinator.checkDuplicateArticle(title, topics);
+ * 
+ * @see Issue #150 (News Realtime Monitor Enhancement)
+ */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import crypto from 'crypto';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const STATE_FILE = path.join(__dirname, '..', 'news', 'metadata', 'workflow-state.json');
+const MCP_CACHE_TTL_SECONDS = 2 * 60 * 60; // 2 hours
+const RECENT_ARTICLE_TTL_SECONDS = 6 * 60 * 60; // 6 hours
+const SIMILARITY_THRESHOLD = 0.70; // 70% similarity triggers deduplication
+
+/**
+ * Workflow State Coordinator
+ */
+export class WorkflowStateCoordinator {
+  constructor(stateFilePath = STATE_FILE) {
+    this.stateFilePath = stateFilePath;
+    this.state = {
+      lastUpdate: null,
+      recentArticles: [],
+      mcpQueryCache: {},
+      workflows: {}
+    };
+  }
+
+  /**
+   * Load state from disk
+   */
+  async load() {
+    try {
+      if (fs.existsSync(this.stateFilePath)) {
+        const content = fs.readFileSync(this.stateFilePath, 'utf-8');
+        this.state = JSON.parse(content);
+        this.cleanupExpiredEntries();
+      } else {
+        // Initialize empty state
+        await this.save();
+      }
+    } catch (error) {
+      console.warn('Warning: Could not load workflow state:', error.message);
+      // Continue with empty state
+    }
+  }
+
+  /**
+   * Save state to disk
+   */
+  async save() {
+    try {
+      const dir = path.dirname(this.stateFilePath);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+      
+      this.state.lastUpdate = new Date().toISOString();
+      fs.writeFileSync(this.stateFilePath, JSON.stringify(this.state, null, 2), 'utf-8');
+    } catch (error) {
+      console.error('Error saving workflow state:', error.message);
+      throw error;
+    }
+  }
+
+  /**
+   * Clean up expired cache entries and old articles
+   */
+  cleanupExpiredEntries() {
+    const now = Date.now();
+    
+    // Clean MCP cache using per-entry TTL (default: 2 hours)
+    Object.keys(this.state.mcpQueryCache).forEach(key => {
+      const entry = this.state.mcpQueryCache[key];
+      const entryTime = new Date(entry.timestamp).getTime();
+      
+      // If timestamp is invalid (NaN), treat as expired and delete
+      if (isNaN(entryTime)) {
+        delete this.state.mcpQueryCache[key];
+        return;
+      }
+      
+      const effectiveTtlSeconds =
+        typeof entry.ttl === 'number' &amp;&amp; entry.ttl > 0
+          ? entry.ttl
+          : MCP_CACHE_TTL_SECONDS;
+      if (now - entryTime > effectiveTtlSeconds * 1000) {
+        delete this.state.mcpQueryCache[key];
+      }
+    });
+    
+    // Clean recent articles (6-hour TTL)
+    this.state.recentArticles = this.state.recentArticles.filter(article => {
+      const articleTime = new Date(article.timestamp).getTime();
+      
+      // If timestamp is invalid (NaN), treat as expired and exclude
+      if (isNaN(articleTime)) {
+        return false;
+      }
+      
+      return (now - articleTime) &lt;= RECENT_ARTICLE_TTL_SECONDS * 1000;
+    });
+  }
+
+  /**
+   * Cache MCP query result
+   * 
+   * @param {string} queryKey - Unique identifier for the query
+   * @param {any} result - Query result to cache
+   * @param {number} ttl - Time to live in seconds (default: 2 hours)
+   */
+  async cacheMCPQuery(queryKey, result, ttl = MCP_CACHE_TTL_SECONDS) {
+    const resultHash = this.hashObject(result);
+    
+    this.state.mcpQueryCache[queryKey] = {
+      timestamp: new Date().toISOString(),
+      ttl,
+      resultHash,
+      result
+    };
+    
+    await this.save();
+  }
+
+  /**
+   * Get cached MCP query result
+   * 
+   * @param {string} queryKey - Unique identifier for the query
+   * @returns {any|null} Cached result or null if expired/missing
+   */
+  getCachedMCPQuery(queryKey) {
+    this.cleanupExpiredEntries();
+    
+    const entry = this.state.mcpQueryCache[queryKey];
+    if (!entry) return null;
+    
+    const now = Date.now();
+    const entryTime = new Date(entry.timestamp).getTime();
+    
+    // Use per-entry TTL with fallback to default constant
+    const effectiveTtlSeconds =
+      typeof entry.ttl === 'number' &amp;&amp; entry.ttl > 0
+        ? entry.ttl
+        : MCP_CACHE_TTL_SECONDS;
+    
+    if (now - entryTime > effectiveTtlSeconds * 1000) {
+      delete this.state.mcpQueryCache[queryKey];
+      return null;
+    }
+    
+    return entry.result;
+  }
+
+  /**
+   * Add recent article to tracking
+   * 
+   * @param {Object} article - Article metadata
+   */
+  async addRecentArticle(article) {
+    const articleEntry = {
+      slug: article.slug,
+      timestamp: new Date().toISOString(),
+      workflow: article.workflow || 'unknown',
+      title: article.title,
+      topics: article.topics || [],
+      mcpQueries: article.mcpQueries || []
+    };
+    
+    this.state.recentArticles.push(articleEntry);
+    await this.save();
+  }
+
+  /**
+   * Check if article is duplicate based on similarity
+   * 
+   * @param {string} title - Article title
+   * @param {string[]} topics - Article topics
+   * @param {string[]} mcpQueries - MCP query keys used for this article
+   * @returns {Object} { isDuplicate: boolean, matchedArticle: Object|null, similarityScore: number }
+   */
+  async checkDuplicateArticle(title, topics = [], mcpQueries = []) {
+    this.cleanupExpiredEntries();
+    
+    let maxSimilarity = 0;
+    let matchedArticle = null;
+    
+    for (const recentArticle of this.state.recentArticles) {
+      const similarity = this.calculateSimilarity(
+        title,
+        topics,
+        mcpQueries,
+        recentArticle.title,
+        recentArticle.topics,
+        recentArticle.mcpQueries
+      );
+      
+      if (similarity > maxSimilarity) {
+        maxSimilarity = similarity;
+        matchedArticle = recentArticle;
+      }
+    }
+    
+    const isDuplicate = maxSimilarity >= SIMILARITY_THRESHOLD;
+    
+    return {
+      isDuplicate,
+      matchedArticle: isDuplicate ? matchedArticle : null,
+      similarityScore: maxSimilarity
+    };
+  }
+
+  /**
+   * Calculate similarity between two articles
+   * 
+   * Uses weighted combination of:
+   * - Title similarity (50%)
+   * - Topic overlap (30%)
+   * - MCP query overlap (20%)
+   * 
+   * @returns {number} Similarity score 0.0-1.0
+   */
+  calculateSimilarity(title1, topics1, mcpQueries1, title2, topics2, mcpQueries2) {
+    const titleSim = this.stringSimilarity(title1, title2);
+    const topicSim = this.setOverlap(topics1, topics2);
+    const sourceSim = this.setOverlap(mcpQueries1, mcpQueries2);
+    
+    return (titleSim * 0.5) + (topicSim * 0.3) + (sourceSim * 0.2);
+  }
+
+  /**
+   * Calculate string similarity using Jaccard similarity of word sets
+   * 
+   * @param {string} str1 - First string
+   * @param {string} str2 - Second string
+   * @returns {number} Similarity 0.0-1.0
+   */
+  stringSimilarity(str1, str2) {
+    if (!str1 || !str2) return 0;
+    
+    const words1 = new Set(str1.toLowerCase().split(/\s+/).filter(w => w.length > 2));
+    const words2 = new Set(str2.toLowerCase().split(/\s+/).filter(w => w.length > 2));
+    
+    return this.setOverlap([...words1], [...words2]);
+  }
+
+  /**
+   * Calculate set overlap (Jaccard similarity)
+   * 
+   * @param {Array} set1 - First set
+   * @param {Array} set2 - Second set
+   * @returns {number} Overlap 0.0-1.0
+   */
+  setOverlap(set1, set2) {
+    if (!set1 || !set2 || set1.length === 0 || set2.length === 0) return 0;
+    
+    const s1 = new Set(set1.map(x => String(x).toLowerCase()));
+    const s2 = new Set(set2.map(x => String(x).toLowerCase()));
+    
+    const intersection = new Set([...s1].filter(x => s2.has(x)));
+    const union = new Set([...s1, ...s2]);
+    
+    return intersection.size / union.size;
+  }
+
+  /**
+   * Hash object for cache comparison
+   * 
+   * @param {any} obj - Object to hash
+   * @returns {string} SHA-256 hash
+   */
+  hashObject(obj) {
+    // Handle null/undefined and non-object inputs safely
+    // Only use Object.keys for non-null objects, otherwise let JSON.stringify
+    // use its default behavior
+    const replacer = (obj !== null &amp;&amp; typeof obj === 'object' &amp;&amp; !Array.isArray(obj))
+      ? Object.keys(obj).sort()
+      : undefined;
+    
+    const str = JSON.stringify(obj, replacer);
+    return crypto.createHash('sha256').update(str).digest('hex').substring(0, 16);
+  }
+
+  /**
+   * Record workflow execution
+   * 
+   * @param {string} workflowName - Name of workflow
+   * @param {Object} metadata - Execution metadata
+   */
+  async recordWorkflowExecution(workflowName, metadata = {}) {
+    if (!this.state.workflows[workflowName]) {
+      this.state.workflows[workflowName] = {
+        lastRun: null,
+        runCount: 0,
+        articlesGenerated: 0
+      };
+    }
+    
+    this.state.workflows[workflowName].lastRun = new Date().toISOString();
+    this.state.workflows[workflowName].runCount++;
+    
+    if (metadata.articlesGenerated) {
+      this.state.workflows[workflowName].articlesGenerated += metadata.articlesGenerated;
+    }
+    
+    await this.save();
+  }
+
+  /**
+   * Get recent articles from last N hours
+   * 
+   * @param {number} hours - Hours to look back
+   * @returns {Array} Recent articles
+   */
+  getRecentArticles(hours = 6) {
+    this.cleanupExpiredEntries();
+    
+    const cutoff = new Date(Date.now() - hours * 60 * 60 * 1000);
+    
+    return this.state.recentArticles.filter(article => {
+      return new Date(article.timestamp) >= cutoff;
+    });
+  }
+
+  /**
+   * Get workflow statistics
+   * 
+   * @returns {Object} Statistics by workflow
+   */
+  getWorkflowStatistics() {
+    return {
+      ...this.state.workflows,
+      cacheSize: Object.keys(this.state.mcpQueryCache).length,
+      recentArticlesCount: this.state.recentArticles.length
+    };
+  }
+}
+
+// Export for direct usage
+export {
+  MCP_CACHE_TTL_SECONDS,
+  RECENT_ARTICLE_TTL_SECONDS,
+  SIMILARITY_THRESHOLD
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

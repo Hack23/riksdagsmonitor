@@ -22,7 +22,7 @@ on:
   workflow_dispatch: # Allow manual trigger
 
 permissions:
-  contents: read
+  contents: write  # Allow committing generated API docs
   pull-requests: read
 
 jobs:
@@ -57,6 +57,32 @@ jobs:
           echo "🔍 Generating JSDoc API documentation..."
           npm run jsdoc
           echo "✅ JSDoc generation complete"
+          
+      - name: Commit API Documentation
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/copilot/'))
+        run: |
+          # Configure git
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if there are changes to commit
+          git add api/
+          
+          if git diff --staged --quiet; then
+            echo "📝 No changes to API documentation"
+          else
+            echo "📝 Committing updated API documentation..."
+            git commit -m "docs: Update JSDoc API documentation [skip ci]
+            
+            - Generated from latest JavaScript source code
+            - Includes intelligence operative perspective
+            - Deployed via GitHub Pages
+            
+            Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+            
+            git push
+            echo "✅ API documentation committed and pushed"
+          fi
           
       - name: Verify api/ Directory Created
         run: |

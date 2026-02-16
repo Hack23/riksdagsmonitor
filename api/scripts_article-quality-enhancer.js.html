@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/article-quality-enhancer.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/article-quality-enhancer.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>#!/usr/bin/env node
+
+/**
+ * Article Quality Enhancer - Economist-Style Quality Framework
+ * 
+ * Implements The Economist-style quality standards for political journalism:
+ * - Analytical depth assessment (min 0.6)
+ * - Source quality validation (min 3 cross-references)
+ * - Party perspective counting (min 4 parties)
+ * - "Why This Matters" section detection
+ * - Historical context validation
+ * - Quality score calculation (0.0-1.0, min 0.75)
+ * 
+ * Usage: 
+ *   import { enhanceArticleQuality } from './article-quality-enhancer.js';
+ *   const result = await enhanceArticleQuality(articlePath, options);
+ * 
+ * @see Issue #150 (News Realtime Monitor Enhancement)
+ */
+
+import fs from 'fs';
+
+/**
+ * Default quality thresholds based on The Economist standards
+ */
+const DEFAULT_THRESHOLDS = {
+  minQualityScore: 0.75,
+  minAnalyticalDepth: 0.6,
+  minPartySources: 4,
+  minCrossReferences: 3,
+  requireWhyThisMatters: true,
+  recommendHistoricalContext: true,
+  recommendInternationalComparison: false
+};
+
+/**
+ * Map of normalized party codes to their common name variants
+ * This prevents double-counting when both full names and abbreviations appear
+ */
+const PARTY_VARIANTS = {
+  S: ['Socialdemokraterna', 'Social Democrats', 'S'],
+  M: ['Moderaterna', 'Moderate', 'M'],
+  SD: ['Sverigedemokraterna', 'Sweden Democrats', 'SD'],
+  C: ['Centerpartiet', 'Centre Party', 'C'],
+  V: ['Vänsterpartiet', 'Left Party', 'V'],
+  KD: ['Kristdemokraterna', 'Christian Democrats', 'KD'],
+  L: ['Liberalerna', 'Liberals', 'L'],
+  MP: ['Miljöpartiet', 'Green Party', 'MP']
+};
+
+/**
+ * Riksdag/Regering document ID patterns
+ */
+const DOCUMENT_ID_PATTERNS = [
+  /\b[A-Z]{1,3}\d{1,4}\/\d{2}:\d+\b/g,  // Committee reports: AU10/24:1
+  /\bProp\.\s*\d{4}\/\d{2}:\d+\b/gi,     // Propositions: Prop. 2024/25:1
+  /\bBet\.\s*\d{4}\/\d{2}:[A-Z]{1,3}\d+\b/gi,  // Committee reports: Bet. 2024/25:FiU10
+  /\bMot\.\s*\d{4}\/\d{2}:\d+\b/gi,      // Motions: Mot. 2024/25:123
+  /\bIP\s*\d{4}\/\d{2}:\d+\b/gi,         // Interpellations: IP 2024/25:45
+  /\bFr\.\s*\d{4}\/\d{2}:\d+\b/gi        // Questions: Fr. 2024/25:67
+];
+
+/**
+ * Assess analytical depth of article content
+ * 
+ * Looks for:
+ * - Causal reasoning ("because", "therefore", "as a result")
+ * - Comparative analysis ("compared to", "in contrast", "while")
+ * - Trend analysis ("trend", "pattern", "shift")
+ * - Evidence-based claims (references to data, studies, reports)
+ * - Multiple perspectives (quotes from different actors)
+ * 
+ * @param {string} content - HTML content of article
+ * @returns {number} Score 0.0-1.0
+ */
+function assessAnalyticalDepth(content) {
+  const text = stripHtml(content).toLowerCase();
+  let score = 0.0;
+  
+  // Causal reasoning indicators (0.2 max)
+  const causalWords = ['because', 'therefore', 'as a result', 'consequently', 'due to', 'leads to', 'caused by'];
+  const causalCount = causalWords.filter(word => text.includes(word)).length;
+  score += Math.min(causalCount * 0.04, 0.2);
+  
+  // Comparative analysis (0.2 max)
+  const comparativeWords = ['compared to', 'in contrast', 'while', 'whereas', 'on the other hand', 'however'];
+  const comparativeCount = comparativeWords.filter(word => text.includes(word)).length;
+  score += Math.min(comparativeCount * 0.04, 0.2);
+  
+  // Trend/pattern analysis (0.2 max)
+  const trendWords = ['trend', 'pattern', 'shift', 'change', 'evolution', 'development'];
+  const trendCount = trendWords.filter(word => text.includes(word)).length;
+  score += Math.min(trendCount * 0.04, 0.2);
+  
+  // Evidence-based claims (0.2 max)
+  const evidenceWords = ['data shows', 'according to', 'study', 'report', 'statistics', 'evidence'];
+  const evidenceCount = evidenceWords.filter(word => text.includes(word)).length;
+  score += Math.min(evidenceCount * 0.04, 0.2);
+  
+  // Multiple perspectives (0.2 max) - count quotes
+  const quoteCount = (content.match(/&lt;blockquote>/gi) || []).length + 
+                     (text.match(/"\w/g) || []).length / 2;
+  score += Math.min(quoteCount * 0.04, 0.2);
+  
+  return Math.min(score, 1.0);
+}
+
+/**
+ * Count unique party perspectives mentioned in article
+ * 
+ * Uses PARTY_VARIANTS pattern to prevent double-counting when both
+ * full names and abbreviations appear in the same text.
+ * 
+ * @param {string} content - HTML content of article
+ * @returns {number} Number of unique parties mentioned
+ */
+function countPartyPerspectives(content) {
+  const text = content;
+  const partiesFound = new Set();
+  
+  // Iterate through party codes and check all variants
+  Object.entries(PARTY_VARIANTS).forEach(([code, variants]) => {
+    // Check if any variant of this party is mentioned
+    for (const variant of variants) {
+      const regex = new RegExp(`\\b${variant}\\b`, 'gi');
+      if (regex.test(text)) {
+        partiesFound.add(code);
+        break; // Stop checking variants once party is found
+      }
+    }
+  });
+  
+  return partiesFound.size;
+}
+
+/**
+ * Count cross-referenced Riksdag/Regering documents
+ * 
+ * @param {string} content - HTML content of article
+ * @returns {number} Number of unique document IDs found
+ */
+function countCrossReferences(content) {
+  const documentIds = new Set();
+  
+  DOCUMENT_ID_PATTERNS.forEach(pattern => {
+    const matches = content.match(pattern) || [];
+    matches.forEach(match => documentIds.add(match));
+  });
+  
+  return documentIds.size;
+}
+
+/**
+ * Detect "Why This Matters" section
+ * 
+ * @param {string} content - HTML content of article
+ * @returns {boolean} True if section exists
+ */
+function hasWhyThisMatters(content) {
+  const patterns = [
+    /why\s+this\s+matters/i,
+    /varför\s+detta\s+betyder/i,
+    /betydelse/i,
+    /implications/i,
+    /konsekvenser/i
+  ];
+  
+  return patterns.some(pattern => pattern.test(content));
+}
+
+/**
+ * Detect historical context
+ * 
+ * @param {string} content - HTML content of article
+ * @returns {boolean} True if historical context present
+ */
+function hasHistoricalContext(content) {
+  const text = stripHtml(content).toLowerCase();
+  const patterns = [
+    /historically/i,
+    /in \d{4}/,
+    /since \d{4}/,
+    /tidigare/i,
+    /historiskt/i
+  ];
+  
+  return patterns.some(pattern => pattern.test(text));
+}
+
+/**
+ * Detect international comparison
+ * 
+ * @param {string} content - HTML content of article
+ * @returns {boolean} True if international comparison present
+ */
+function hasInternationalComparison(content) {
+  const text = stripHtml(content).toLowerCase();
+  const patterns = [
+    /compared to.*country/i,
+    /international.*comparison/i,
+    /other.*countries/i,
+    /jämfört med.*länder/i,
+    /internationell.*jämförelse/i
+  ];
+  
+  return patterns.some(pattern => pattern.test(text));
+}
+
+/**
+ * Strip HTML tags from content
+ * 
+ * @param {string} html - HTML content
+ * @returns {string} Plain text
+ */
+function stripHtml(html) {
+  return html.replace(/&lt;[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Calculate overall quality score
+ * 
+ * Weights:
+ * - Analytical depth: 30%
+ * - Party perspectives: 25%
+ * - Cross-references: 25%
+ * - "Why This Matters": 10%
+ * - Historical context: 5%
+ * - International comparison: 5%
+ * 
+ * @param {Object} metrics - Individual quality metrics
+ * @returns {number} Overall score 0.0-1.0
+ */
+function calculateQualityScore(metrics) {
+  const weights = {
+    analyticalDepth: 0.30,
+    partyPerspectives: 0.25,
+    crossReferences: 0.25,
+    whyThisMatters: 0.10,
+    historicalContext: 0.05,
+    internationalComparison: 0.05
+  };
+  
+  let score = 0.0;
+  
+  // Analytical depth (already 0-1)
+  score += metrics.analyticalDepth * weights.analyticalDepth;
+  
+  // Party perspectives (normalize: 4+ parties = 1.0)
+  score += Math.min(metrics.partyCount / 4, 1.0) * weights.partyPerspectives;
+  
+  // Cross-references (normalize: 3+ refs = 1.0)
+  score += Math.min(metrics.crossReferences / 3, 1.0) * weights.crossReferences;
+  
+  // Binary checks
+  score += (metrics.hasWhyThisMatters ? 1.0 : 0.0) * weights.whyThisMatters;
+  score += (metrics.hasHistoricalContext ? 1.0 : 0.0) * weights.historicalContext;
+  score += (metrics.hasInternationalComparison ? 1.0 : 0.0) * weights.internationalComparison;
+  
+  return Math.min(score, 1.0);
+}
+
+/**
+ * Enhance article quality and validate against thresholds
+ * 
+ * @param {string} articlePath - Path to article HTML file
+ * @param {Object} thresholds - Quality thresholds (optional)
+ * @returns {Object} Quality assessment result
+ */
+export async function enhanceArticleQuality(articlePath, thresholds = {}) {
+  const options = { ...DEFAULT_THRESHOLDS, ...thresholds };
+  
+  if (!fs.existsSync(articlePath)) {
+    return {
+      passed: false,
+      error: 'Article file not found',
+      articlePath
+    };
+  }
+  
+  const content = fs.readFileSync(articlePath, 'utf-8');
+  
+  // Collect metrics
+  const metrics = {
+    analyticalDepth: assessAnalyticalDepth(content),
+    partyCount: countPartyPerspectives(content),
+    crossReferences: countCrossReferences(content),
+    hasWhyThisMatters: hasWhyThisMatters(content),
+    hasHistoricalContext: hasHistoricalContext(content),
+    hasInternationalComparison: hasInternationalComparison(content)
+  };
+  
+  // Calculate overall score
+  const qualityScore = calculateQualityScore(metrics);
+  
+  // Validate against thresholds
+  const issues = [];
+  
+  if (qualityScore &lt; options.minQualityScore) {
+    issues.push(`Quality score ${qualityScore.toFixed(2)} below threshold ${options.minQualityScore}`);
+  }
+  
+  if (metrics.analyticalDepth &lt; options.minAnalyticalDepth) {
+    issues.push(`Analytical depth ${metrics.analyticalDepth.toFixed(2)} below threshold ${options.minAnalyticalDepth}`);
+  }
+  
+  if (metrics.partyCount &lt; options.minPartySources) {
+    issues.push(`Only ${metrics.partyCount} party perspectives (need ${options.minPartySources})`);
+  }
+  
+  if (metrics.crossReferences &lt; options.minCrossReferences) {
+    issues.push(`Only ${metrics.crossReferences} cross-references (need ${options.minCrossReferences})`);
+  }
+  
+  if (options.requireWhyThisMatters &amp;&amp; !metrics.hasWhyThisMatters) {
+    issues.push('Missing "Why This Matters" section');
+  }
+  
+  // Separate warnings (recommendations) from blocking failures
+  const warnings = [];
+  
+  if (options.recommendHistoricalContext &amp;&amp; !metrics.hasHistoricalContext) {
+    warnings.push('Recommended: Add historical context');
+  }
+  
+  if (options.recommendInternationalComparison &amp;&amp; !metrics.hasInternationalComparison) {
+    warnings.push('Recommended: Add international comparison');
+  }
+  
+  return {
+    passed: issues.length === 0, // Only blocking issues affect passed status
+    qualityScore,
+    metrics,
+    issues,
+    warnings, // Non-blocking recommendations
+    thresholds: options,
+    articlePath
+  };
+}
+
+/**
+ * Batch enhance multiple articles
+ * 
+ * @param {string[]} articlePaths - Array of article paths
+ * @param {Object} thresholds - Quality thresholds
+ * @returns {Object[]} Array of quality results
+ */
+export async function batchEnhanceQuality(articlePaths, thresholds = {}) {
+  const results = [];
+  
+  for (const articlePath of articlePaths) {
+    const result = await enhanceArticleQuality(articlePath, thresholds);
+    results.push(result);
+  }
+  
+  return results;
+}
+
+// Export individual assessment functions for testing
+export {
+  assessAnalyticalDepth,
+  countPartyPerspectives,
+  countCrossReferences,
+  hasWhyThisMatters,
+  hasHistoricalContext,
+  hasInternationalComparison,
+  calculateQualityScore,
+  DEFAULT_THRESHOLDS
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
