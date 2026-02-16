@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: Analytics/CoalitionIntelligence</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: Analytics/CoalitionIntelligence</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p><strong>INTELLIGENCE OPERATIVE PERSPECTIVE</strong></p>
+<p>This dashboard module provides interactive visualization of Swedish political
+coalition dynamics and voting pattern analysis. Operating as a data intelligence
+interface, the coalition dashboard transforms raw voting records into pattern
+intelligence revealing party alliances, behavioral anomalies, and political
+realignments that may indicate upcoming coalition changes.</p>
+<p><strong>ANALYTICAL DASHBOARDS:</strong>
+The dashboard provides four complementary intelligence views:</p>
+<ol>
+<li>
+<p><strong>Coalition Network Diagram (D3.js Force-Directed Graph)</strong>
+Visualizes: Party relationships and alliance strength
+Algorithm: Force-directed layout shows proximity = alliance strength
+Intelligence value: Coalition structure visualization
+Metrics: Link strength represents voting agreement percentage</p>
+</li>
+<li>
+<p><strong>Voting Anomaly Scatter Plot (Chart.js)</strong>
+Visualizes: Unusual voting patterns by party and vote
+Metrics: X=deviation from expected, Y=party, Color=magnitude
+Intelligence value: Identifies cross-party voting (anomalies)
+Use case: Detect coalition stress (members voting against leadership)</p>
+</li>
+<li>
+<p><strong>Party Alignment Heat Map (D3.js Heatmap)</strong>
+Visualizes: Pairwise agreement matrix between all parties
+Metrics: Cell color = voting agreement percentage (0-100%)
+Intelligence value: Shows which parties naturally align
+Use case: Predict coalition arrangements in future governments</p>
+</li>
+<li>
+<p><strong>Behavioral Patterns Bar Chart (Chart.js)</strong>
+Visualizes: Party-specific voting characteristics
+Metrics: Absence rate, flip rate, abstention rate by party
+Intelligence value: Party discipline and reliability indicators
+Use case: Assess coalition partner reliability</p>
+</li>
+<li>
+<p><strong>Decision Trends Timeline (Chart.js Line Chart)</strong>
+Visualizes: Coalition voting success over time
+Metrics: Government vote success rate, opposition effectiveness
+Intelligence value: Coalition health trending
+Use case: Track coalition stability/deterioration</p>
+</li>
+</ol>
+<p><strong>DATA SOURCES:</strong>
+The dashboard integrates CIA platform data:</p>
+<ul>
+<li><strong>distribution_coalition_alignment.csv</strong>: Party cooperation metrics</li>
+<li><strong>view_riksdagen_committee_decisions.csv</strong>: Committee voting patterns</li>
+<li><strong>percentile_seasonal_activity_patterns.csv</strong>: Activity level trends</li>
+<li><strong>distribution_annual_votes.csv</strong>: Long-term voting trends</li>
+</ul>
+<p><strong>DATA CACHING STRATEGY:</strong>
+Implements intelligent caching for performance:</p>
+<ul>
+<li>Cache Enabled: 24-hour local browser cache</li>
+<li>Data Sources: Local files (first) with GitHub remote fallback</li>
+<li>TTL: 24 hours, automatic refresh</li>
+<li>Cache Key Prefix: riksdag_coalition_ (avoids conflicts)</li>
+</ul>
+<p><strong>COALITION DEFINITIONS:</strong>
+The dashboard recognizes Swedish coalition structures:</p>
+<p><strong>Current Coalition (2022-present):</strong></p>
+<ul>
+<li>Government: Moderates (M), Sweden Democrats (SD), Christian Democrats (KD), Liberals (L)</li>
+<li>Confidence &amp; Supply: (support specific votes without being in government)</li>
+<li>Opposition: Social Democrats (S), Left Party (V), Green Party (MP), Centre (C), Finland Swedes (FI)</li>
+</ul>
+<p>Visualization automatically adjusts to actual coalition composition:</p>
+<ul>
+<li>Color-codes parties by coalition affiliation</li>
+<li>Highlights key alliance partners</li>
+<li>Shows confidence &amp; supply arrangements</li>
+<li>Displays opposition bloc structure</li>
+</ul>
+<p><strong>PARTY DEFINITIONS:</strong>
+Eight major parties tracked:</p>
+<ul>
+<li><strong>S</strong> (Socialdemokraterna): Center-left, largest opposition</li>
+<li><strong>M</strong> (Moderaterna): Center-right, coalition leader (2022+)</li>
+<li><strong>SD</strong> (Sverigedemokraterna): Right-wing populist, coalition partner</li>
+<li><strong>V</strong> (Vänsterpartiet): Far-left, traditional opposition</li>
+<li><strong>MP</strong> (Miljöpartiet): Green party, usually opposition</li>
+<li><strong>C</strong> (Centerpartiet): Centrist, coalition-flexible</li>
+<li><strong>L</strong> (Liberalerna): Classical liberal, coalition supporter</li>
+<li><strong>KD</strong> (Kristdemokraterna): Christian conservative, coalition partner</li>
+</ul>
+<p><strong>INTELLIGENCE APPLICATIONS:</strong></p>
+<ol>
+<li><strong>Coalition Stability Assessment</strong>: Voting agreement trends indicate stability</li>
+<li><strong>Member Discipline Analysis</strong>: Anomalies indicate party discipline issues</li>
+<li><strong>Emerging Coalitions</strong>: Alignment patterns predict future governments</li>
+<li><strong>Cross-Party Cooperation</strong>: Identify informal alliances on specific issues</li>
+<li><strong>Negotiation Prediction</strong>: Historical patterns inform future negotiations</li>
+</ol>
+<p><strong>BEHAVIORAL PATTERN METRICS:</strong>
+Dashboard calculates party-specific metrics:</p>
+<ul>
+<li><strong>Absence Rate</strong>: Percentage of members absent from votes (party leadership?)</li>
+<li><strong>Flip Rate</strong>: Percentage of votes where party changes position</li>
+<li><strong>Abstention Rate</strong>: Percentage of non-votes (abstain or absence)</li>
+<li><strong>Consensus Rate</strong>: How often party votes unified across members</li>
+<li><strong>Government Agreement</strong>: Percentage of votes with government coalition</li>
+</ul>
+<p><strong>VOTING ANOMALY DETECTION:</strong>
+Identifies unusual voting patterns:</p>
+<ul>
+<li><strong>Party Deviations</strong>: Members voting differently from party position</li>
+<li><strong>Coalition Splits</strong>: Party votes differ from coalition partners</li>
+<li><strong>Cross-Party Coalitions</strong>: Unexpected party agreements on specific votes</li>
+<li><strong>Member-Level Anomalies</strong>: Specific members consistently deviating</li>
+</ul>
+<p><strong>ACCESSIBILITY FEATURES:</strong>
+Dashboard designed for WCAG 2.1 AA compliance:</p>
+<ul>
+<li>Color-blind friendly palette (not relying on color alone)</li>
+<li>Text labels on all data points</li>
+<li>Keyboard navigation support</li>
+<li>ARIA labels for screen readers</li>
+<li>High contrast mode support</li>
+</ul>
+<p><strong>MULTILINGUAL SUPPORT (14 Languages):</strong>
+Dashboard UI supports all platform languages:</p>
+<ul>
+<li>Swedish (SV): Default, full terminology</li>
+<li>English (EN): International audience</li>
+<li>Nordic (DA, NO, FI): Regional users</li>
+<li>European (DE, FR, ES, NL): Continental users</li>
+<li>Middle Eastern (AR, HE): Diplomatic audience</li>
+<li>Asian (JA, KO, ZH): Economic audience</li>
+</ul>
+<p>Party names and terminology translated appropriately for each language.</p>
+<p><strong>PERFORMANCE OPTIMIZATION:</strong>
+Dashboard optimized for responsive interactivity:</p>
+<ul>
+<li>Data Caching: 24-hour local cache prevents repeated API calls</li>
+<li>Remote Fallback: GitHub provides data if local files unavailable</li>
+<li>Parallel Loading: Multiple data sources loaded simultaneously</li>
+<li>SVG Rendering: D3.js uses efficient vector graphics</li>
+<li>Chart.js: Optimized rendering for 8-party visualizations</li>
+</ul>
+<p><strong>FAILURE HANDLING:</strong>
+Graceful degradation if data sources fail:</p>
+<ul>
+<li>Local Cache Hit: Use cached data if available</li>
+<li>Remote Fallback: Load from GitHub if local fails</li>
+<li>Graceful Errors: Display &quot;Data unavailable&quot; rather than breaking</li>
+<li>Retry Logic: Automatic retry on network failures</li>
+</ul>
+<p><strong>GDPR COMPLIANCE:</strong>
+Dashboard handles voting data (public records):</p>
+<ul>
+<li>Member votes are published in parliament records</li>
+<li>Individual member names included (public official roles)</li>
+<li>Aggregation supports privacy (voting patterns, not individuals)</li>
+<li>Data retention follows parliamentary archive standards</li>
+</ul></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>2.0.0</li></ul></dd>
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2024-07-05</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB (Political Intelligence &amp; Coalition Analysis)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_coalition-dashboard.js.html">scripts/coalition-dashboard.js</a>, <a href="scripts_coalition-dashboard.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://d3js.org/%20(D3.js%20Data%20Visualization)">https://d3js.org/ (D3.js Data Visualization)</a></li>
+        
+            <li><a href="https://www.chartjs.org/%20(Chart.js%20Charting)">https://www.chartjs.org/ (Chart.js Charting)</a></li>
+        
+            <li><a href="https://github.com/Hack23/cia%20(CIA%20Platform%20Data)">https://github.com/Hack23/cia (CIA Platform Data)</a></li>
+        
+            <li>Issue #107 (Coalition Dashboard Enhancement)</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,21 +1,67 @@
 #!/usr/bin/env node
 
 /**
- * Article Quality Enhancer - Economist-Style Quality Framework
+ * @module Intelligence/ContentQuality
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Article Quality Enhancer - Economist-Style Content Validation Framework
  * 
- * Implements The Economist-style quality standards for political journalism:
- * - Analytical depth assessment (min 0.6)
- * - Source quality validation (min 3 cross-references)
- * - Party perspective counting (min 4 parties)
- * - "Why This Matters" section detection
- * - Historical context validation
- * - Quality score calculation (0.0-1.0, min 0.75)
+ * @description
+ * Comprehensive content quality assurance system implementing The Economist-style editorial standards
+ * for political journalism. This utility validates article structure, analytical depth, source attribution,
+ * and perspective diversity to ensure intelligence reporting meets rigorous transparency requirements.
  * 
- * Usage: 
+ * Core Functionality:
+ * - Validates analytical depth scoring (min 0.6 threshold) assessing complexity of political analysis
+ * - Enforces source quality standards requiring minimum 3 cross-referenced government documents/debates
+ * - Counts unique party perspectives (min 4 parties) ensuring balanced coverage across Swedish coalition
+ * - Detects "Why This Matters" contextual sections explaining political significance for readers
+ * - Validates historical context references connecting current events to parliamentary timeline
+ * - Calculates composite quality score (0.0-1.0 scale, min 0.75 threshold) for publication readiness
+ * 
+ * Intelligence Operations Integration:
+ * - Supports ongoing parliamentary monitoring by maintaining content quality standards
+ * - Enables identification of systematic bias in coverage across party spectrum
+ * - Tracks journalistic methodology compliance with editorial guidelines
+ * - Documents source diversity for audit trails and GDPR data provenance
+ * 
+ * Content Quality Standards:
+ * - Minimum analytical depth: 0.6 (evaluates substantive policy discussion)
+ * - Minimum cross-references: 3 (government documents, committee reports, voting records)
+ * - Minimum party perspectives: 4 (ensures broad political spectrum coverage)
+ * - Requires "Why This Matters" section for context and reader understanding
+ * - Recommends historical context linking current developments to past decisions
+ * - Minimum publication quality score: 0.75 (composite metric of all dimensions)
+ * 
+ * Integration Points:
+ * - Consumed by news generation pipeline for automated quality gates
+ * - Referenced in editorial workflows for manual content enhancement
+ * - Used by CI/CD validation scripts (validate-news-translations.js, validate-articles-playwright.js)
+ * - Feeds metrics into intelligence dashboard for quality trending
+ * 
+ * Data Handling:
+ * - Processes publicly available parliamentary records and published journalism
+ * - No processing of personal data (operates on aggregated article metrics)
+ * - Complies with ISO 27001:2022 A.14.2.1 (supply chain controls on content quality)
+ * - Supports GDPR Article 5 (transparency: all quality metrics documented)
+ * 
+ * Usage:
  *   import { enhanceArticleQuality } from './article-quality-enhancer.js';
  *   const result = await enhanceArticleQuality(articlePath, options);
+ *   // Returns: { qualityScore, analyticalDepth, partyCount, hasWhyThis, issues }
  * 
+ * @intelligence Core utility for content validation in political journalism platform
+ * @osint Validates open-source political documentation (government records, voting history)
+ * @risk Content quality failure may result in publication of unsubstantiated claims
+ * @gdpr No personal data processing; operates on published content only
+ * @security HTML/JavaScript injection prevented through article parsing
+ * 
+ * @author Hack23 AB (Content Intelligence Team)
+ * @license Apache-2.0
+ * @version 2.0.0
  * @see Issue #150 (News Realtime Monitor Enhancement)
+ * @see The Economist Editorial Standards
+ * @see GDPR Article 6(1)(e) - Public Interest Processing for political transparency
+ * @see ISO 27001:2022 A.14.2.1 - Supply chain information security
  */
 
 import fs from 'fs';

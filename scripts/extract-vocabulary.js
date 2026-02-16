@@ -1,16 +1,113 @@
 #!/usr/bin/env node
 
 /**
- * Enhanced Vocabulary Extraction Script
+ * @module Intelligence/Terminology
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Vocabulary Extraction - Political Terminology Pattern Analysis
  * 
- * Analyzes translated news articles to extract political terminology patterns
- * across all 14 supported languages for vocabulary enhancement.
+ * @description
+ * Advanced terminology extraction system analyzing translated news articles across
+ * all 14 supported languages to identify and catalog political terminology patterns.
+ * Supports intelligence operatives in understanding how political concepts translate
+ * across linguistic and cultural contexts.
  * 
- * Features:
- * - Structure-based label extraction (language-agnostic)
- * - CLI-configurable date filter
- * - Comprehensive error reporting
- * - Support for all language scripts (Latin, CJK, RTL)
+ * Core Mission:
+ * Automatic extraction of political terminology from published news articles,
+ * enabling vocabulary enrichment across 14 language variants. Identifies key political
+ * terms, party names, committee references, legislative concepts, and institutional
+ * terminology used in Riksdag coverage. Supports linguistic analysis for translation
+ * quality assurance and political concept comparison across Nordic/European contexts.
+ * 
+ * Supported Languages (14):
+ * - Latin Scripts: English (en), Swedish (sv), Danish (da), Norwegian (no), Finnish (fi),
+ *   German (de), French (fr), Spanish (es), Dutch (nl)
+ * - Non-Latin Scripts: Arabic (ar - RTL), Hebrew (he - RTL), 
+ *   Japanese (ja - Kanji/Hiragana/Katakana), Korean (ko - Hangul), Chinese (zh - Hanzi)
+ * 
+ * Terminology Categories Extracted:
+ * - Political titles and roles (e.g., "Riksdagsledamot", "Statsminister", "Minister")
+ * - Committee references (e.g., "Försvarsutskottet", "Finansutskottet")
+ * - Party mentions and abbreviations (S, M, SD, V, MP, C, L, KD)
+ * - Legislative terms (propositioner, motioner, betänkanden, skrivelser)
+ * - Institutional acronyms (EU, NATO, UN, etc.)
+ * - Policy domains (försvar, miljö, ekonomi, välfärd)
+ * 
+ * Extraction Methodology:
+ * - Structure-based extraction using HTML element analysis (language-agnostic)
+ * - Parses article titles (h3 elements) as primary terminology source
+ * - Extracts "What to Watch" and key context headings
+ * - Handles "Why This Matters" explanatory sections
+ * - Cross-references historical context and related articles
+ * - Supports all character encodings (UTF-8 with proper multi-byte handling)
+ * 
+ * Technical Architecture:
+ * - CLI-configurable date filtering for temporal analysis
+ * - Comprehensive error reporting with file-level granularity
+ * - Support for all Unicode scripts (Latin, CJK, Arabic/Hebrew bidirectional)
+ * - Handles HTML entity encoding and special character sequences
+ * - Generates JSON output for downstream linguistic analysis
+ * 
+ * Intelligence Applications:
+ * - Terminology pattern analysis for translation consistency
+ * - Identification of emerging political concepts and terminology
+ * - Cross-language comparison of political discourse
+ * - Support for cultural intelligence analysis
+ * - Input to automated translation quality assurance
+ * - Political terminology reference for analyst briefings
+ * 
+ * Data Processing Pipeline:
+ * - Scans news/ directory for published articles
+ * - Filters by date range (--from-date, --to-date parameters)
+ * - Extracts terminology from HTML structure
+ * - Deduplicates and normalizes extracted terms
+ * - Generates comprehensive terminology report
+ * - Logs skipped files and processing errors
+ * 
+ * Output Format:
+ * JSON file containing:
+ * - titles: Array of extracted h3 titles (primary terminology)
+ * - headings: Array of h2 section headings
+ * - whyMatters: Content from "Why This Matters" sections
+ * - context: Historical context and reference sections
+ * - metadata: Extraction statistics and processing info
+ * 
+ * Usage:
+ *   node scripts/extract-vocabulary.js
+ *   node scripts/extract-vocabulary.js --from-date=2026-01-01 --to-date=2026-02-01
+ *   node scripts/extract-vocabulary.js --lang=sv
+ * 
+ * Integration Points:
+ * - Consumed by automated translation quality assurance systems
+ * - Used in terminology glossary maintenance workflows
+ * - Feeds political concept mapping for intelligence dashboards
+ * - Referenced in editorial consistency validation
+ * 
+ * GDPR & Data Protection:
+ * - Processes only published, public articles
+ * - Extracts terminology only (no personal identifiers)
+ * - Complies with GDPR Article 5 (transparency)
+ * - No storage of personal data in terminology output
+ * - Audit trail of extraction dates and processing
+ * 
+ * Linguistic Considerations:
+ * - Preserves non-Latin character scripts exactly as published
+ * - Handles right-to-left languages (Arabic, Hebrew) properly
+ * - Supports CJK character analysis without segmentation
+ * - Respects linguistic conventions for each language
+ * 
+ * @intelligence Core tool for political terminology analysis across languages
+ * @osint Analyzes published public government documents and articles
+ * @risk Incomplete terminology extraction may omit emerging political concepts
+ * @gdpr No personal data extraction (terminology/concepts only)
+ * @security File access restricted to article directory; no system-wide scanning
+ * 
+ * @author Hack23 AB (Linguistic Intelligence Team)
+ * @license Apache-2.0
+ * @version 2.5.0
+ * @see extract-vocabulary.js (this file)
+ * @see political terminology references for each language
+ * @see Unicode Standard for multi-script support
+ * @see GDPR Article 5 - Principles relating to processing
  */
 
 import { readFileSync, readdirSync } from 'fs';

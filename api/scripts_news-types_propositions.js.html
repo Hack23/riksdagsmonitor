@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/news-types/propositions.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/news-types/propositions.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module ContentGeneration/GovernmentPolicy
+ * @category ContentGeneration
+ * 
+ * @title Government Propositions Article Generator - Executive Policy Intelligence
+ * 
+ * @description
+ * **INTELLIGENCE OPERATIVE PERSPECTIVE**
+ * 
+ * This module generates analysis articles on government propositions (propositioner),
+ * which are formal legislative proposals submitted by the executive branch. Government
+ * propositions represent the official government agenda and serve as the primary
+ * mechanism for implementing government policy. Systematic tracking of propositions
+ * provides a forward-looking view of government priorities, policy direction, and
+ * coalition stability.
+ * 
+ * **GOVERNMENT PROPOSITION ROLE IN SWEDISH PARLIAMENT:**
+ * Sweden's legislative process is government-driven, with ~80% of passed laws originating
+ * as government propositions. This makes propositions:
+ * 1. **Clearest Signal of Government Intent**: What coalition plans to actually do
+ * 2. **Most Likely to Pass**: Government usually has parliament majority
+ * 3. **Forward-Looking Agenda**: Signals coming policy debates and conflicts
+ * 4. **Coalition Stress Indicator**: Delayed/withdrawn propositions signal problems
+ * 5. **International Commitments**: EU directives implemented via propositions
+ * 
+ * **PROPOSITION TYPES &amp; CHARACTERISTICS:**
+ * - **Budget Propositions**: Annual government budget (largest single proposition)
+ * - **Legislation**: New laws or amendments to existing law
+ * - **Treaty Ratifications**: International agreements needing parliament approval
+ * - **Appropriations**: Changes to government spending allocations
+ * - **Constitutional Amendments**: Changes requiring supermajority (requires propositions)
+ * 
+ * **ARTICLE STRUCTURE:**
+ * Each government proposition article includes:
+ * 1. **Proposition Summary**: Official government proposal and objectives
+ * 2. **Policy Problem**: What problem or commitment proposition addresses
+ * 3. **Proposed Solution**: Specific legislation and implementation approach
+ * 4. **Budget Impact**: Cost estimates and revenue implications (if applicable)
+ * 5. **Party Positions**: Stance from all major parties on proposition
+ * 6. **Implementation Timeline**: When policy takes effect, phased deployment
+ * 7. **International Context**: EU/international dimension if applicable
+ * 
+ * **MCP DATA SOURCE:**
+ * Primary tool: get_propositioner
+ * - Retrieves government proposition records from riksdag platform
+ * - Includes full proposition text, budget impact, department information
+ * - Enables systematic government agenda tracking
+ * 
+ * TODO: Implement additional tools for comprehensive analysis:
+ * - search_dokument_fulltext: Full policy analysis from proposition
+ * - analyze_g0v_by_department: Department-by-department impact
+ * - search_anforanden: Parliamentary debate on proposition
+ * 
+ * **OPERATIONAL WORKFLOW:**
+ * 1. Query MCP: Fetch recent propositions (default: 10 most recent)
+ * 2. Importance Assessment: Identify major vs. routine propositions
+ * 3. Coalition Impact Analysis: Identify potential conflict points
+ * 4. Budget Analysis: Extract financial implications
+ * 5. Article Generation: Create narrative with context
+ * 6. Multilingual Creation: Generate 14-language editions
+ * 7. Publication: Deploy to news directory with calendar integration
+ * 
+ * **BUDGET PROPOSITION SPECIAL HANDLING:**
+ * The annual budget proposition is the largest government document:
+ * - **Publication**: Typically mid-September
+ * - **Parliament Debate**: September-October
+ * - **Vote**: October/November
+ * - **Implementation**: January 1 following year
+ * 
+ * Budget analysis includes:
+ * - Revenue and expenditure totals
+ * - Major spending areas (defense, healthcare, education, welfare)
+ * - Tax changes and revenue measures
+ * - Coalition compromise points (visible in allocations)
+ * - Economic assumptions and forecasts
+ * 
+ * **PROPOSITION STATUS TRACKING:**
+ * Government propositions move through parliamentary stages:
+ * 1. **Submitted**: Government formally submits to parliament
+ * 2. **First Reading**: Parliament receives and initial debate
+ * 3. **Committee Review**: Specialized committee analyzes
+ * 4. **Second Reading**: General debate on committee recommendations
+ * 5. **Final Reading**: Amendment proposals and final vote
+ * 6. **Passed/Rejected**: Final outcome
+ * 
+ * Articles track where propositions are in this process.
+ * 
+ * **GOVERNMENT COALITION ANALYSIS:**
+ * Government propositions reveal coalition dynamics:
+ * - **Compromise Indicators**: Proposition content shows coalition deals
+ * - **Pressure Points**: Delayed propositions indicate coalition conflict
+ * - **Distribution of Wins**: Budget allocations show party influence
+ * - **Minority Support**: Some governments require opposition support
+ * 
+ * **INTELLIGENCE APPLICATIONS:**
+ * 1. **Government Agenda Tracking**: What coalition prioritizes
+ * 2. **Coalition Stability**: Ability to pass propositions on schedule
+ * 3. **Policy Direction**: Where government moving country
+ * 4. **International Alignment**: Sweden's commitment to EU/international goals
+ * 5. **Timeline Prediction**: When major policy changes take effect
+ * 
+ * **ECONOMIC IMPACT ANALYSIS:**
+ * Government propositions with fiscal impact are analyzed for:
+ * - **GDP Growth Impact**: Estimated effect on economic growth
+ * - **Employment Effects**: Job creation or losses by sector
+ * - **Inflation Impact**: Effect on price levels
+ * - **Debt Position**: Impact on government borrowing
+ * - **Sectoral Effects**: Winners and losers by industry
+ * 
+ * **PERFORMANCE CHARACTERISTICS:**
+ * - MCP Query: ~500ms for 10 latest propositions
+ * - Article Generation: ~2.5 seconds per proposition
+ * - Translation: ~5 seconds per proposition (parallel)
+ * - Total: ~15 seconds for batch (10 propositions, 14 languages)
+ * 
+ * **LANGUAGE CONSIDERATIONS:**
+ * Government propositions include:
+ * - Complex legal language (difficult to translate)
+ * - Technical policy terminology (domain-specific)
+ * - Budget figures and statistical data (language-neutral)
+ * - International commitments (standardized terminology)
+ * 
+ * **FAILURE HANDLING:**
+ * - Missing Proposition Text: Generate article with summary only
+ * - Committee Report Unavailable: Continue with available data
+ * - Budget Analysis Failure: Note that analysis pending
+ * - MCP Service Down: Skip batch, retry on schedule
+ * 
+ * **GDPR COMPLIANCE:**
+ * - Government propositions are public documents
+ * - Department official names published (public roles)
+ * - Data retention follows parliamentary archive standards
+ * - Supporting audit trail for democratic transparency
+ * 
+ * @osint Government Strategy Intelligence
+ * - Maps government policy priorities through proposition agenda
+ * - Tracks coalition compatibility on major policy issues
+ * - Identifies emerging government challenges
+ * - Analyzes EU influence on Swedish policy
+ * 
+ * @risk Government Stability Assessment
+ * - Proposition passage rates indicate coalition cohesion
+ * - Delayed propositions signal coalition stress
+ * - Controversial propositions show political divisions
+ * - Budget battles reveal party power distribution
+ * 
+ * @gdpr Policy Documentation
+ * - Government propositions publicly documented
+ * - Data retention follows parliamentary standards
+ * - Supporting transparency in democratic process
+ * - Audit trail for regulatory compliance
+ * 
+ * @security Executive Intent Verification
+ * - Propositions verified through official MCP source
+ * - Originating department verified
+ * - Budget figures validated against official documents
+ * - Timestamp prevents tampering
+ * 
+ * @author Hack23 AB (Government Intelligence &amp; Policy Analysis)
+ * @license Apache-2.0
+ * @version 2.0.0
+ * @since 2024-08-28
+ * @see scripts/data-transformers.js (Content Generation)
+ * @see scripts/article-template.js (HTML Rendering)
+ * @see Issue #140 (Government Proposition Tracking)
+ * @see https://www.riksdagen.se/ (Parliamentary Records)
+ * @see https://www.regeringen.se/ (Government Official Site)
+ */
+
+import { MCPClient } from '../mcp-client.js';
+import {
+  generateArticleContent,
+  extractWatchPoints,
+  generateMetadata,
+  calculateReadTime,
+  generateSources
+} from '../data-transformers.js';
+import { generateArticleHTML } from '../article-template.js';
+
+/**
+ * Required MCP tools for propositions articles
+ * 
+ * REQUIRED_TOOLS UPDATE (2026-02-14):
+ * Initially set to 4 tools ['get_propositioner', 'search_dokument_fulltext', 'analyze_g0v_by_department', 'search_anforanden']
+ * to match tests/validation expectations. However, this caused runtime validation failures
+ * since the implementation only calls get_propositioner (line 56).
+ * 
+ * Reverted to actual implementation (1 tool) to prevent validation failures.
+ * When additional tools are implemented in generatePropositions(), add them back here.
+ */
+export const REQUIRED_TOOLS = [
+  'get_propositioner'
+];
+
+/**
+ * Format date for article slug
+ */
+export function formatDateForSlug(date = new Date()) {
+  return date.toISOString().split('T')[0];
+}
+
+/**
+ * Generate Government Propositions article
+ */
+export async function generatePropositions(options = {}) {
+  const { languages = ['en', 'sv'], limit = 10, writeArticle = null } = options;
+  
+  console.log('📜 Generating Government Propositions article...');
+  
+  const mcpCalls = [];
+  
+  try {
+    const client = new MCPClient();
+    
+    console.log('  🔄 Fetching propositions from riksdag-regering-mcp...');
+    const propositions = await client.fetchPropositions(limit);
+    mcpCalls.push({ tool: 'get_propositioner', result: propositions });
+    console.log(`  📊 Found ${propositions.length} propositions`);
+    
+    if (propositions.length === 0) {
+      console.log('  ℹ️ No new propositions found, skipping');
+      return { success: true, files: 0, mcpCalls };
+    }
+    
+    const today = new Date();
+    const slug = `${formatDateForSlug(today)}-government-propositions`;
+    const articles = [];
+    
+    for (const lang of languages) {
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+      
+      const content = generateArticleContent({ propositions }, 'propositions', lang);
+      const watchPoints = extractWatchPoints({ propositions }, lang);
+      const metadata = generateMetadata({ propositions }, 'propositions', lang);
+      const readTime = calculateReadTime(content);
+      const sources = generateSources(['get_propositioner']);
+      
+      const titles = getTitles(lang, propositions.length);
+      
+      const html = generateArticleHTML({
+        slug: `${slug}-${lang}.html`,
+        title: titles.title,
+        subtitle: titles.subtitle,
+        date: today.toISOString().split('T')[0],
+        type: 'analysis',
+        readTime,
+        lang,
+        content,
+        watchPoints,
+        sources,
+        keywords: metadata.keywords,
+        topics: metadata.topics,
+        tags: metadata.tags
+      });
+      
+      articles.push({
+        lang,
+        html,
+        filename: `${slug}-${lang}.html`,
+        slug: `${slug}-${lang}`
+      });
+      
+      if (writeArticle) {
+        await writeArticle(html, `${slug}-${lang}.html`);
+        console.log(`  ✅ ${lang.toUpperCase()} version generated`);
+      }
+    }
+    
+    return {
+      success: true,
+      files: languages.length,
+      slug,
+      articles,
+      mcpCalls,
+      crossReferences: {
+        propositions: propositions.length,
+        sources: ['propositioner']
+      }
+    };
+    
+  } catch (error) {
+    console.error('❌ Error generating Propositions:', error.message);
+    return {
+      success: false,
+      error: error.message,
+      mcpCalls
+    };
+  }
+}
+
+function getTitles(lang, count) {
+  const titles = {
+    en: {
+      title: `Government Propositions: Policy Priorities This Week`,
+      subtitle: `Analysis of ${count} government propositions shaping the legislative agenda`
+    },
+    sv: {
+      title: `Regeringens propositioner: Veckans prioriteringar`,
+      subtitle: `Analys av ${count} propositioner som formar den lagstiftande agendan`
+    },
+    da: {
+      title: `Regeringsforslag: Politiske prioriteringer denne uge`,
+      subtitle: `Analyse af ${count} regeringsforslag`
+    },
+    no: {
+      title: `Regjeringens proposisjoner: Politiske prioriteringer denne uken`,
+      subtitle: `Analyse av ${count} regjeringsproposisjoner`
+    },
+    fi: {
+      title: `Hallituksen esitykset: Viikon poliittiset prioriteetit`,
+      subtitle: `Analyysi ${count} hallituksen esityksestä`
+    },
+    de: {
+      title: `Regierungsvorlagen: Politische Prioritäten diese Woche`,
+      subtitle: `Analyse von ${count} Regierungsvorlagen`
+    },
+    fr: {
+      title: `Propositions gouvernementales: Priorités politiques cette semaine`,
+      subtitle: `Analyse de ${count} propositions gouvernementales`
+    },
+    es: {
+      title: `Proposiciones gubernamentales: Prioridades políticas esta semana`,
+      subtitle: `Análisis de ${count} proposiciones gubernamentales`
+    },
+    nl: {
+      title: `Regeringsvoorstellen: Politieke prioriteiten deze week`,
+      subtitle: `Analyse van ${count} regeringsvoorstellen`
+    },
+    ar: {
+      title: `مقترحات الحكومة: الأولويات السياسية هذا الأسبوع`,
+      subtitle: `تحليل ${count} مقترحات حكومية`
+    },
+    he: {
+      title: `הצעות ממשלה: סדרי עדיפויות מדיניים השבוע`,
+      subtitle: `ניתוח ${count} הצעות ממשלה`
+    },
+    ja: {
+      title: `政府提案：今週の政策優先事項`,
+      subtitle: `${count}件の政府提案の分析`
+    },
+    ko: {
+      title: `정부 법안: 이번 주 정책 우선순위`,
+      subtitle: `${count}개 정부 법안 분석`
+    },
+    zh: {
+      title: `政府提案：本周政策优先事项`,
+      subtitle: `${count}份政府提案分析`
+    }
+  };
+  
+  return titles[lang] || titles.en;
+}
+
+export function validatePropositions(article) {
+  const hasPropositions = checkPropositions(article);
+  const hasMinimumSources = countSources(article) >= 3;
+  const hasPolicyAnalysis = checkPolicyAnalysis(article);
+  
+  return {
+    hasPropositions,
+    hasMinimumSources,
+    hasPolicyAnalysis,
+    passed: hasPropositions &amp;&amp; hasMinimumSources &amp;&amp; hasPolicyAnalysis
+  };
+}
+
+function checkPropositions(article) {
+  if (!article || !article.content) return false;
+  return article.content.toLowerCase().includes('proposition') ||
+         article.content.toLowerCase().includes('government');
+}
+
+function countSources(article) {
+  if (!article || !article.sources) return 0;
+  return Array.isArray(article.sources) ? article.sources.length : 0;
+}
+
+function checkPolicyAnalysis(article) {
+  if (!article || !article.content) return false;
+  const keywords = ['policy', 'legislative', 'agenda', 'priorities'];
+  return keywords.some(keyword =>
+    article.content.toLowerCase().includes(keyword)
+  );
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/take-screenshot.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/take-screenshot.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module Infrastructure/VisualEvidence
+ * @category Infrastructure
+ * 
+ * @title Screenshot Capture Utility - Visual Evidence &amp; Quality Validation
+ * 
+ * @description
+ * **INTELLIGENCE OPERATIVE PERSPECTIVE**
+ * 
+ * This utility captures screenshots of articles at specified viewport sizes,
+ * providing visual evidence of article publication state and enabling visual
+ * regression testing. In intelligence operations, visual evidence archives
+ * serve as contemporaneous documentation of what was published and when,
+ * supporting incident investigation and regulatory compliance.
+ * 
+ * **SCREENSHOT PURPOSES:**
+ * Visual capture serves multiple operational functions:
+ * 1. **Publication Evidence**: Screenshot timestamp proves when article published
+ * 2. **Quality Validation**: Visual check that formatting is correct
+ * 3. **Accessibility Verification**: Visual representation of actual rendering
+ * 4. **Regression Testing**: Comparison against previous versions
+ * 5. **PR Evidence**: Screenshots included in pull requests show visual changes
+ * 6. **Incident Investigation**: Archive shows what was published if dispute arises
+ * 
+ * **VIEWPORT CONFIGURATIONS:**
+ * Captures at standard responsive design breakpoints:
+ * - **Mobile** (375x667): Primary device for news consumption
+ * - **Tablet** (768x1024): Secondary device for analytical reading
+ * - **Desktop** (1920x1080): Full-featured reading on workstations
+ * 
+ * Each viewport captures how content appears on that device class.
+ * 
+ * **CAPTURE WORKFLOW:**
+ * 1. Launch Chromium headless browser
+ * 2. Navigate to article HTML file via file:// protocol
+ * 3. Set viewport size
+ * 4. Wait for page load completion
+ * 5. Capture screenshot to PNG file
+ * 6. Close browser
+ * 7. Log capture result
+ * 
+ * **FILENAME CONVENTION:**
+ * Screenshots named: `{article-date}-{lang}-{viewport}.png`
+ * Example: `2026-02-13-evening-analysis-en-mobile.png`
+ * 
+ * **OUTPUT DIRECTORY:**
+ * Screenshots saved to: `screenshots/` directory
+ * - Created if doesn't exist
+ * - Organized by date and language
+ * - Suitable for retention in git LFS or artifact storage
+ * 
+ * **PERFORMANCE CHARACTERISTICS:**
+ * - Browser launch: ~3 seconds (one-time per run)
+ * - Page load: ~1 second per article
+ * - Screenshot capture: ~500ms per viewport
+ * - Total: ~5 seconds per article (3 viewports)
+ * 
+ * **HEADLESS BROWSER ADVANTAGES:**
+ * Using Playwright with Chromium headless:
+ * - No display server required (runs in CI/CD)
+ * - Deterministic rendering (consistent output)
+ * - Fast execution (no UI overhead)
+ * - Resource efficient (minimal memory)
+ * - Works in containerized environments
+ * 
+ * **INTELLIGENCE APPLICATIONS:**
+ * 1. **Publication Verification**: Prove article was published as expected
+ * 2. **Quality Audit**: Visual check of formatting consistency
+ * 3. **Regression Detection**: Unintended layout changes visible immediately
+ * 4. **Incident Timeline**: Screenshot timestamps prove publication sequence
+ * 5. **Dispute Resolution**: Visual evidence in publication disputes
+ * 
+ * **COMPLIANCE &amp; AUDIT TRAIL:**
+ * Screenshot archives support regulatory compliance:
+ * - **Evidence Preservation**: Timestamps prove publication state
+ * - **Audit Trail**: Screenshot progression shows editorial changes
+ * - **Regulatory Compliance**: Supports GDPR article preservation requirements
+ * - **Dispute Resolution**: Visual evidence in copyright/licensing disputes
+ * 
+ * **ACCESSIBILITY VERIFICATION:**
+ * Screenshots enable visual accessibility checking:
+ * - Color contrast visibility
+ * - Text rendering quality
+ * - Layout integrity across languages
+ * - Special character rendering (CJK, RTL)
+ * 
+ * **RTL LANGUAGE CONSIDERATIONS:**
+ * Hebrew and Arabic articles displayed with RTL layout:
+ * - Screenshot captures actual RTL rendering
+ * - Validates right-to-left text flow
+ * - Confirms punctuation/number placement
+ * - Checks overall document flow direction
+ * 
+ * **ARCHIVAL &amp; STORAGE:**
+ * Screenshot files support long-term archival:
+ * - PNG format: Lossless, standard format, browser-compatible
+ * - Timestamps: Embedded in filename and metadata
+ * - Retention: 180-day minimum for compliance
+ * - Organization: Structured by date and language
+ * 
+ * **FAILURE HANDLING:**
+ * - Browser launch failure: Clear error message, exit code 1
+ * - Page load timeout: Report timeout, skip screenshot
+ * - Screenshot write error: Log disk/permission issue
+ * - File:// protocol issues: Report path resolution problem
+ * 
+ * **INTEGRATION WITH CI/CD:**
+ * Screenshots automatically captured during:
+ * - Pull request validation (visual regression check)
+ * - Pre-publication verification
+ * - Deployment validation
+ * - Incident investigation
+ * 
+ * **GDPR COMPLIANCE ASPECTS:**
+ * Archival of screenshots supports data governance:
+ * - **Data Subject Access Requests**: Screenshots show what data published about person
+ * - **Right to Erasure**: Screenshot archive shows when content was removed
+ * - **Breach Notification**: Screenshots document what was exposed
+ * - **Audit Trails**: Screenshots support accountability
+ * 
+ * **SECURITY IMPLICATIONS:**
+ * Screenshot management requires care:
+ * - **Access Control**: Restrict who can view screenshots
+ * - **Sensitive Data**: Ensure no passwords/keys in images
+ * - **Integrity**: Checksums verify screenshots unmodified
+ * - **Deletion**: Secure deletion for sensitive content
+ * 
+ * @osint Visual Intelligence Collection
+ * - Screenshots serve as intelligence evidence
+ * - Timestamps create publication timeline
+ * - Visual details reveal editorial decisions
+ * - Archives support historical analysis
+ * 
+ * @risk Visual Tampering Detection
+ * - Screenshot comparison detects unauthorized changes
+ * - Timestamp validation prevents backdated screenshots
+ * - File integrity checking prevents modification
+ * - Regression testing catches subtle changes
+ * 
+ * @gdpr Data Visibility Documentation
+ * - Screenshots show what personal data visible
+ * - Supports data subject access requests
+ * - Documents data retention practices
+ * - Audit trail for compliance review
+ * 
+ * @security Content Integrity Verification
+ * - Validates article HTML renders correctly
+ * - Detects CSS/layout tampering
+ * - Verifies expected content displays
+ * - Timestamp prevents false-dated screenshots
+ * 
+ * @author Hack23 AB (Visual Quality &amp; Evidence Management)
+ * @license Apache-2.0
+ * @version 2.0.0
+ * @since 2024-07-10
+ * @see https://playwright.dev/ (Browser Automation Framework)
+ * @see tests/visual-regression.test.js (Visual Regression Tests)
+ * @see Issue #119 (Screenshot Management)
+ */
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

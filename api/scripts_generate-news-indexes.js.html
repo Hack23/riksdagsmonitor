@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/generate-news-indexes.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/generate-news-indexes.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>#!/usr/bin/env node
+
+/**
+ * @module Intelligence/NewsGeneration
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Dynamic News Index Generation - Multi-Language Article Aggregation
+ * 
+ * @description
+ * Automated news index generation system that dynamically scans published news articles
+ * across all 14 supported languages and generates corresponding index pages with proper
+ * metadata, filtering capabilities, and SEO optimization for parliamentary intelligence.
+ * 
+ * Operational Context:
+ * This script solves the critical maintenance problem of hardcoded article arrays in
+ * static index HTML files. Instead of manually updating article lists for 14 language
+ * variants, the system autonomously discovers published articles and generates index
+ * pages with consistent structure, metadata, and search optimization.
+ * 
+ * Multi-Language Support (14 languages):
+ * - English (en), Swedish (sv), Danish (da), Norwegian (no), Finnish (fi)
+ * - German (de), French (fr), Spanish (es), Dutch (nl)
+ * - Arabic (ar), Hebrew (he), Japanese (ja), Korean (ko), Chinese (zh)
+ * - Each language includes localized titles, keywords, breadcrumbs, filtering UI
+ * 
+ * Core Functionality:
+ * - Scans news/ directory recursively for published HTML article files
+ * - Extracts article metadata: title, date, description, language, category tags
+ * - Aggregates articles by language code for proper index organization
+ * - Generates dynamic filter controls: article type, topic category, sort order
+ * - Creates SEO-optimized index pages with proper JSON-LD schema markup
+ * - Implements responsive UI with accessibility features (WCAG 2.1 AA)
+ * 
+ * Intelligence Integration:
+ * - Enables real-time tracking of parliamentary activity coverage
+ * - Identifies news gaps and coverage imbalances across political topics
+ * - Supports rapid content discovery for international audience segments
+ * - Maintains consistent intelligence narrative across language variants
+ * 
+ * Article Discovery &amp; Categorization:
+ * - Prospective news: Upcoming parliamentary events (week-ahead, committee agendas)
+ * - Retrospective news: Completed parliamentary activities (votes, decisions)
+ * - Analysis pieces: Strategic interpretation of political developments
+ * - Breaking news: Urgent parliamentary developments and emergency situations
+ * 
+ * Topic Categories:
+ * - Parliament (Riksdag structure, committee reports, legislative process)
+ * - Government (cabinet decisions, ministry statements, regulatory actions)
+ * - Defense (national security, military policy, NATO/EU coordination)
+ * - Environment (climate policy, emissions trading, sustainability)
+ * - Committees (specific committee activities and cross-committee coordination)
+ * - Legislation (bill tracking, proposal analysis, amendments)
+ * 
+ * SEO &amp; Accessibility:
+ * - Implements Open Graph meta tags for social media sharing
+ * - Generates JSON-LD structured data for search engine indexing
+ * - Provides hreflang tags for multi-language version discovery
+ * - Includes alt text for all images and proper heading hierarchy
+ * - Mobile-responsive design with proper viewport configuration
+ * 
+ * Localization Features:
+ * - Translated UI elements: filter labels, breadcrumbs, no-results messages
+ * - Localized date formats and sort options
+ * - Language-specific keyword optimization for search engines
+ * - Proper locale configuration (en_US, sv_SE, etc.)
+ * 
+ * Integration Points:
+ * - Invoked by CI/CD pipeline after news generation scripts
+ * - Feeds article discovery service for dashboard widgets
+ * - Consumed by search functionality and site navigation
+ * - Referenced by analytics tracking for page visit metrics
+ * 
+ * Data Integrity:
+ * - Validates article file existence before inclusion
+ * - Handles missing or malformed metadata gracefully
+ * - Provides diagnostic output for troubleshooting
+ * - Complies with ISO 27001:2022 A.12.6.1 (change management)
+ * 
+ * Usage:
+ *   node scripts/generate-news-indexes.js
+ *   # Generates: news/index.html, news/index_sv.html, ... news/index_zh.html
+ * 
+ * @intelligence Core infrastructure for maintaining searchable intelligence archive
+ * @osint Aggregates published political intelligence across global audience
+ * @risk Incomplete article discovery may result in search visibility gaps
+ * @gdpr No personal data processing (aggregation of published articles only)
+ * @security HTML generation uses html-utils.js escaping to prevent XSS
+ * 
+ * @author Hack23 AB (Content Infrastructure Team)
+ * @license Apache-2.0
+ * @version 3.0.0
+ * @see NEWS_WORKFLOW_EXECUTIVE_SUMMARY.md for context
+ * @see generate-news-enhanced.js (produces articles consumed by this indexer)
+ * @see html-utils.js (provides HTML entity escaping)
+ * @see WCAG 2.1 AA accessibility standards
+ */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { escapeHtml } from './html-utils.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Configuration
+const NEWS_DIR = path.join(__dirname, '..', 'news');
+
+const LANGUAGES = {
+  en: {
+    name: 'English', code: 'en', locale: 'en_US',
+    title: 'News',
+    subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
+    keywords: 'riksdag news, swedish parliament, government bills, committee reports, propositions, motions, parliamentary votes, political analysis, Sweden Democrats, Social Democrats, Moderaterna, coalition politics, transparency, democracy',
+    breadcrumbs: { home: 'Home', news: 'News' },
+    backLink: 'Back to Main',
+    filters: {
+      type: 'Type:', allTypes: 'All types', prospective: 'Prospective', retrospective: 'Retrospective', analysis: 'Analysis', breaking: 'Breaking news',
+      topic: 'Topic:', allTopics: 'All Topics', parliament: 'Parliament', government: 'Government', defense: 'Defense', environment: 'Environment', committees: 'Committees', legislation: 'Legislation',
+      sort: 'Sort:', newest: 'Newest First', oldest: 'Oldest First', titleSort: 'Title'
+    },
+    noResults: 'No articles matched the filters',
+    i18n: { noArticles: 'No articles available', loading: 'Loading articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'' },
+    schemaDescription: 'Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency'
+  },
+  sv: {
+    name: 'Svenska', code: 'sv', locale: 'sv_SE',
+    title: 'Nyheter',
+    subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.',
+    keywords: 'riksdag nyheter, svenska riksdagen, propositioner, betänkanden, motioner, utskott, voteringar, politisk analys, Socialdemokraterna, Moderaterna, Sverigedemokraterna, koalitionspolitik, öppenhet, demokrati',
+    breadcrumbs: { home: 'Hem', news: 'Nyheter' },
+    backLink: 'Tillbaka till huvudsidan',
+    filters: {
+      type: 'Typ:', allTypes: 'Alla typer', prospective: 'Framåtblickande', retrospective: 'Återblickande', analysis: 'Analys', breaking: 'Senaste nytt',
+      topic: 'Ämne:', allTopics: 'Alla ämnen', parliament: 'Riksdagen', government: 'Regeringen', defense: 'Försvar', environment: 'Miljö', committees: 'Utskott', legislation: 'Lagstiftning',
+      sort: 'Sortera:', newest: 'Nyast först', oldest: 'Äldst först', titleSort: 'Titel'
+    },
+    noResults: 'Inga artiklar matchade filtren',
+    i18n: { noArticles: 'Inga artiklar tillgängliga', loading: 'Laddar artiklar...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artiklar\'' },
+    schemaDescription: 'Svensk riksdagsbevakning - Övervaka politisk aktivitet med systematisk transparens'
+  },
+  da: {
+    name: 'Dansk', code: 'da', locale: 'da_DK',
+    title: 'Nyheder',
+    subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.',
+    keywords: 'riksdag nyheder, svensk parlament, regeringsforslag, udvalgsbetænkninger, afstemninger, politisk analyse, svenske partier, gennemsigtighed, demokrati',
+    breadcrumbs: { home: 'Hjem', news: 'Nyheder' },
+    backLink: 'Tilbage til hovedsiden',
+    filters: {
+      type: 'Type:', allTypes: 'Alle typer', prospective: 'Fremadrettet', retrospective: 'Tilbageblik', analysis: 'Analyse', breaking: 'Seneste nyt',
+      topic: 'Emne:', allTopics: 'Alle emner', parliament: 'Parlamentet', government: 'Regeringen', defense: 'Forsvar', environment: 'Miljø', committees: 'Udvalg', legislation: 'Lovgivning',
+      sort: 'Sorter:', newest: 'Nyeste først', oldest: 'Ældste først', titleSort: 'Titel'
+    },
+    noResults: 'Ingen artikler matchede filtrene',
+    i18n: { noArticles: 'Ingen artikler tilgængelige', loading: 'Indlæser artikler...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikler\'' },
+    schemaDescription: 'Svensk parlamentsovervågning - Overvåg politisk aktivitet med systematisk gennemsigtighed'
+  },
+  no: {
+    name: 'Norsk', code: 'no', locale: 'no_NO',
+    title: 'Nyheter',
+    subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.',
+    keywords: 'riksdag nyheter, svensk parlament, regjeringsforslag, komitéinnstillinger, voteringer, politisk analyse, svenske partier, åpenhet, demokrati',
+    breadcrumbs: { home: 'Hjem', news: 'Nyheter' },
+    backLink: 'Tilbake til hovedsiden',
+    filters: {
+      type: 'Type:', allTypes: 'Alle typer', prospective: 'Fremtidsrettet', retrospective: 'Tilbakeblikk', analysis: 'Analyse', breaking: 'Siste nytt',
+      topic: 'Emne:', allTopics: 'Alle emner', parliament: 'Parlamentet', government: 'Regjeringen', defense: 'Forsvar', environment: 'Miljø', committees: 'Utvalg', legislation: 'Lovgivning',
+      sort: 'Sorter:', newest: 'Nyeste først', oldest: 'Eldste først', titleSort: 'Tittel'
+    },
+    noResults: 'Ingen artikler matchet filtrene',
+    i18n: { noArticles: 'Ingen artikler tilgjengelige', loading: 'Laster artikler...', articleCount: '(n) => n === 1 ? \'1 artikkel\' : \'\' + n + \' artikler\'' },
+    schemaDescription: 'Svensk parlamentsovervåking - Overvåk politisk aktivitet med systematisk åpenhet'
+  },
+  fi: {
+    name: 'Suomi', code: 'fi', locale: 'fi_FI',
+    title: 'Uutiset',
+    subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.',
+    keywords: 'riksdag uutiset, ruotsin parlamentti, hallituksen esitykset, valiokunnan mietinnöt, äänestykset, poliittinen analyysi, ruotsin puolueet, avoimuus, demokratia',
+    breadcrumbs: { home: 'Etusivu', news: 'Uutiset' },
+    backLink: 'Takaisin etusivulle',
+    filters: {
+      type: 'Tyyppi:', allTypes: 'Kaikki tyypit', prospective: 'Ennakoiva', retrospective: 'Takautuva', analysis: 'Analyysi', breaking: 'Viimeisimmät',
+      topic: 'Aihe:', allTopics: 'Kaikki aiheet', parliament: 'Parlamentti', government: 'Hallitus', defense: 'Puolustus', environment: 'Ympäristö', committees: 'Valiokunnat', legislation: 'Lainsäädäntö',
+      sort: 'Järjestä:', newest: 'Uusimmat ensin', oldest: 'Vanhimmat ensin', titleSort: 'Otsikko'
+    },
+    noResults: 'Mikään artikkeli ei vastannut suodattimia',
+    i18n: { noArticles: 'Ei artikkeleita saatavilla', loading: 'Ladataan artikkeleita...', articleCount: '(n) => n === 1 ? \'1 artikkeli\' : \'\' + n + \' artikkelia\'' },
+    schemaDescription: 'Ruotsin parlamenttiseuranta - Seuraa poliittista toimintaa järjestelmällisellä avoimuudella'
+  },
+  de: {
+    name: 'Deutsch', code: 'de', locale: 'de_DE',
+    title: 'Nachrichten',
+    subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.',
+    keywords: 'riksdag nachrichten, schwedisches parlament, regierungsvorlagen, ausschussberichte, abstimmungen, politische analyse, schwedische parteien, transparenz, demokratie',
+    breadcrumbs: { home: 'Startseite', news: 'Nachrichten' },
+    backLink: 'Zurück zur Hauptseite',
+    filters: {
+      type: 'Typ:', allTypes: 'Alle Typen', prospective: 'Vorausschauend', retrospective: 'Rückblickend', analysis: 'Analyse', breaking: 'Eilmeldungen',
+      topic: 'Thema:', allTopics: 'Alle Themen', parliament: 'Parlament', government: 'Regierung', defense: 'Verteidigung', environment: 'Umwelt', committees: 'Ausschüsse', legislation: 'Gesetzgebung',
+      sort: 'Sortieren:', newest: 'Neueste zuerst', oldest: 'Älteste zuerst', titleSort: 'Titel'
+    },
+    noResults: 'Keine Artikel entsprachen den Filtern',
+    i18n: { noArticles: 'Keine Artikel verfügbar', loading: 'Artikel werden geladen...', articleCount: '(n) => n === 1 ? \'1 Artikel\' : \'\' + n + \' Artikel\'' },
+    schemaDescription: 'Schwedische Parlamentsüberwachung - Politische Aktivitäten mit systematischer Transparenz verfolgen'
+  },
+  fr: {
+    name: 'Français', code: 'fr', locale: 'fr_FR',
+    title: 'Actualités',
+    subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.',
+    keywords: 'riksdag actualités, parlement suédois, projets de loi, rapports de commission, motions parlementaires, votes, analyse politique, partis suédois, transparence, démocratie',
+    breadcrumbs: { home: 'Accueil', news: 'Actualités' },
+    backLink: 'Retour à l\'accueil',
+    filters: {
+      type: 'Type :', allTypes: 'Tous types', prospective: 'Prospectif', retrospective: 'Rétrospectif', analysis: 'Analyse', breaking: 'Dernières nouvelles',
+      topic: 'Sujet :', allTopics: 'Tous sujets', parliament: 'Parlement', government: 'Gouvernement', defense: 'Défense', environment: 'Environnement', committees: 'Comités', legislation: 'Législation',
+      sort: 'Trier :', newest: 'Plus récent', oldest: 'Plus ancien', titleSort: 'Titre'
+    },
+    noResults: 'Aucun article ne correspond aux filtres',
+    i18n: { noArticles: 'Aucun article disponible', loading: 'Chargement des articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'' },
+    schemaDescription: 'Surveillance du Parlement suédois - Suivre l\'activité politique avec une transparence systématique'
+  },
+  es: {
+    name: 'Español', code: 'es', locale: 'es_ES',
+    title: 'Noticias',
+    subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.',
+    keywords: 'riksdag noticias, parlamento sueco, proyectos de ley, informes de comité, mociones parlamentarias, votaciones, análisis político, partidos suecos, transparencia, democracia',
+    breadcrumbs: { home: 'Inicio', news: 'Noticias' },
+    backLink: 'Volver a la página principal',
+    filters: {
+      type: 'Tipo:', allTypes: 'Todos los tipos', prospective: 'Prospectivo', retrospective: 'Retrospectivo', analysis: 'Análisis', breaking: 'Última hora',
+      topic: 'Tema:', allTopics: 'Todos los temas', parliament: 'Parlamento', government: 'Gobierno', defense: 'Defensa', environment: 'Medio ambiente', committees: 'Comités', legislation: 'Legislación',
+      sort: 'Ordenar:', newest: 'Más reciente', oldest: 'Más antiguo', titleSort: 'Título'
+    },
+    noResults: 'Ningún artículo coincidió con los filtros',
+    i18n: { noArticles: 'No hay artículos disponibles', loading: 'Cargando artículos...', articleCount: '(n) => n === 1 ? \'1 artículo\' : \'\' + n + \' artículos\'' },
+    schemaDescription: 'Monitoreo del Parlamento sueco - Seguimiento de la actividad política con transparencia sistemática'
+  },
+  nl: {
+    name: 'Nederlands', code: 'nl', locale: 'nl_NL',
+    title: 'Nieuws',
+    subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.',
+    keywords: 'riksdag nieuws, zweeds parlement, wetsvoorstellen, commissieverslagen, parlementaire moties, stemmingen, politieke analyse, zweedse partijen, transparantie, democratie',
+    breadcrumbs: { home: 'Home', news: 'Nieuws' },
+    backLink: 'Terug naar hoofdpagina',
+    filters: {
+      type: 'Type:', allTypes: 'Alle types', prospective: 'Vooruitziend', retrospective: 'Terugblik', analysis: 'Analyse', breaking: 'Laatste nieuws',
+      topic: 'Onderwerp:', allTopics: 'Alle onderwerpen', parliament: 'Parlement', government: 'Regering', defense: 'Defensie', environment: 'Milieu', committees: 'Commissies', legislation: 'Wetgeving',
+      sort: 'Sorteren:', newest: 'Nieuwste eerst', oldest: 'Oudste eerst', titleSort: 'Titel'
+    },
+    noResults: 'Geen artikelen voldeden aan de filters',
+    i18n: { noArticles: 'Geen artikelen beschikbaar', loading: 'Artikelen laden...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikelen\'' },
+    schemaDescription: 'Zweeds parlementair toezicht - Volg politieke activiteit met systematische transparantie'
+  },
+  ar: {
+    name: 'العربية', code: 'ar', locale: 'ar_SA', rtl: true,
+    title: 'أخبار',
+    subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.',
+    keywords: 'أخبار البرلمان, البرلمان السويدي, مشاريع القوانين, تقارير اللجان, التصويت, تحليل سياسي, الأحزاب السويدية, شفافية, ديمقراطية',
+    breadcrumbs: { home: 'الرئيسية', news: 'أخبار' },
+    backLink: 'العودة إلى الصفحة الرئيسية',
+    filters: {
+      type: 'النوع:', allTypes: 'جميع الأنواع', prospective: 'استشرافي', retrospective: 'استعادي', analysis: 'تحليل', breaking: 'أخبار عاجلة',
+      topic: 'الموضوع:', allTopics: 'جميع المواضيع', parliament: 'البرلمان', government: 'الحكومة', defense: 'الدفاع', environment: 'البيئة', committees: 'اللجان', legislation: 'التشريعات',
+      sort: 'الترتيب:', newest: 'الأحدث أولاً', oldest: 'الأقدم أولاً', titleSort: 'العنوان'
+    },
+    noResults: 'لا توجد مقالات تطابق الفلاتر',
+    i18n: { noArticles: 'لا توجد مقالات متاحة', loading: 'جارٍ تحميل المقالات...', articleCount: '(n) => n === 1 ? \'مقال واحد\' : \'\' + n + \' مقالات\'' },
+    schemaDescription: 'مراقبة البرلمان السويدي - متابعة النشاط السياسي بشفافية منهجية'
+  },
+  he: {
+    name: 'עברית', code: 'he', locale: 'he_IL', rtl: true,
+    title: 'חדשות',
+    subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.',
+    keywords: 'חדשות הפרלמנט, הפרלמנט השוודי, הצעות חוק, דוחות ועדות, הצבעות, ניתוח פוליטי, מפלגות שוודיות, שקיפות, דמוקרטיה',
+    breadcrumbs: { home: 'בית', news: 'חדשות' },
+    backLink: 'חזרה לדף הבית',
+    filters: {
+      type: 'סוג:', allTypes: 'כל הסוגים', prospective: 'פרוספקטיבי', retrospective: 'רטרוספקטיבי', analysis: 'ניתוח', breaking: 'חדשות אחרונות',
+      topic: 'נושא:', allTopics: 'כל הנושאים', parliament: 'פרלמנט', government: 'ממשלה', defense: 'הגנה', environment: 'סביבה', committees: 'ועדות', legislation: 'חקיקה',
+      sort: 'מיון:', newest: 'החדש ביותר', oldest: 'הישן ביותר', titleSort: 'כותרת'
+    },
+    noResults: 'אין מאמרים שתואמים את הסינון',
+    i18n: { noArticles: 'אין מאמרים זמינים', loading: 'טוען מאמרים...', articleCount: '(n) => n === 1 ? \'מאמר אחד\' : \'\' + n + \' מאמרים\'' },
+    schemaDescription: 'ניטור הפרלמנט השוודי - מעקב אחר פעילות פוליטית בשקיפות שיטתית'
+  },
+  ja: {
+    name: '日本語', code: 'ja', locale: 'ja_JP',
+    title: 'ニュース',
+    subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。',
+    keywords: '国会ニュース, スウェーデン議会, 政府法案, 委員会報告, 採決, 政治分析, スウェーデン政党, 透明性, 民主主義',
+    breadcrumbs: { home: 'ホーム', news: 'ニュース' },
+    backLink: 'ホームページに戻る',
+    filters: {
+      type: '種類：', allTypes: 'すべてのタイプ', prospective: '予測', retrospective: '振り返り', analysis: '分析', breaking: '速報',
+      topic: 'トピック：', allTopics: 'すべてのトピック', parliament: '議会', government: '政府', defense: '防衛', environment: '環境', committees: '委員会', legislation: '立法',
+      sort: '並び替え：', newest: '最新順', oldest: '古い順', titleSort: 'タイトル'
+    },
+    noResults: 'フィルターに一致する記事がありません',
+    i18n: { noArticles: '記事がありません', loading: '記事を読み込み中...', articleCount: '(n) => n === 1 ? \'1件の記事\' : \'\' + n + \'件の記事\'' },
+    schemaDescription: 'スウェーデン議会監視プラットフォーム - 体系的な透明性で政治活動を監視'
+  },
+  ko: {
+    name: '한국어', code: 'ko', locale: 'ko_KR',
+    title: '뉴스',
+    subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.',
+    keywords: '의회 뉴스, 스웨덴 의회, 정부 법안, 위원회 보고서, 표결, 정치 분석, 스웨덴 정당, 투명성, 민주주의',
+    breadcrumbs: { home: '홈', news: '뉴스' },
+    backLink: '홈페이지로 돌아가기',
+    filters: {
+      type: '유형:', allTypes: '모든 유형', prospective: '전망', retrospective: '회고', analysis: '분석', breaking: '속보',
+      topic: '주제:', allTopics: '모든 주제', parliament: '의회', government: '정부', defense: '국방', environment: '환경', committees: '위원회', legislation: '입법',
+      sort: '정렬:', newest: '최신순', oldest: '오래된 순', titleSort: '제목'
+    },
+    noResults: '필터와 일치하는 기사가 없습니다',
+    i18n: { noArticles: '기사가 없습니다', loading: '기사 로딩 중...', articleCount: '(n) => n === 1 ? \'1개의 기사\' : \'\' + n + \'개의 기사\'' },
+    schemaDescription: '스웨덴 의회 모니터링 플랫폼 - 체계적인 투명성으로 정치 활동 감시'
+  },
+  zh: {
+    name: '中文', code: 'zh', locale: 'zh_CN',
+    title: '新闻',
+    subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。',
+    keywords: '议会新闻, 瑞典议会, 政府法案, 委员会报告, 表决, 政治分析, 瑞典政党, 透明度, 民主',
+    breadcrumbs: { home: '主页', news: '新闻' },
+    backLink: '返回主页',
+    filters: {
+      type: '类型：', allTypes: '所有类型', prospective: '前瞻', retrospective: '回顾', analysis: '分析', breaking: '最新消息',
+      topic: '主题：', allTopics: '所有主题', parliament: '议会', government: '政府', defense: '国防', environment: '环境', committees: '委员会', legislation: '立法',
+      sort: '排序：', newest: '最新优先', oldest: '最旧优先', titleSort: '标题'
+    },
+    noResults: '没有与过滤器匹配的文章',
+    i18n: { noArticles: '没有可用的文章', loading: '正在加载文章...', articleCount: '(n) => n === 1 ? \'1篇文章\' : \'\' + n + \'篇文章\'' },
+    schemaDescription: '瑞典议会监督平台 - 以系统化透明度监测政治活动'
+  }
+};
+
+// Language flags mapping for badges
+const LANGUAGE_FLAGS = {
+  en: '🇬🇧', sv: '🇸🇪', da: '🇩🇰', no: '🇳🇴', fi: '🇫🇮',
+  de: '🇩🇪', fr: '🇫🇷', es: '🇪🇸', nl: '🇳🇱', ar: '🇸🇦',
+  he: '🇮🇱', ja: '🇯🇵', ko: '🇰🇷', zh: '🇨🇳'
+};
+
+// "Available in" translations for each language
+const AVAILABLE_IN_TRANSLATIONS = {
+  en: 'Available in', sv: 'Tillgänglig på', da: 'Tilgængelig på', no: 'Tilgjengelig på', fi: 'Saatavilla kielellä',
+  de: 'Verfügbar in', fr: 'Disponible en', es: 'Disponible en', nl: 'Beschikbaar in', ar: 'متاح في',
+  he: 'זמין ב', ja: '利用可能な言語', ko: '사용 가능 언어', zh: '可用语言'
+};
+
+/**
+ * Generate language badge HTML for an article
+ * @param {string} lang - Language code (e.g., 'en', 'sv')
+ * @param {boolean} isRTL - Whether the current display language is RTL
+ * @returns {string} HTML for language badge
+ */
+function generateLanguageBadge(lang, isRTL = false) {
+  const flag = LANGUAGE_FLAGS[lang] || '🌐';
+  const langUpper = lang.toUpperCase();
+  const dirAttr = isRTL ? ' dir="ltr"' : '';
+  return `&lt;span class="language-badge"${dirAttr} aria-label="${LANGUAGES[lang]?.name || lang} language">&lt;span aria-hidden="true">${flag}&lt;/span> ${langUpper}&lt;/span>`;
+}
+
+/**
+ * Generate "Available in" text with language badges
+ * @param {Array} languages - Array of language codes
+ * @param {string} currentLang - Current display language
+ * @returns {string} HTML for available languages display
+ */
+function generateAvailableLanguages(languages, currentLang) {
+  if (!languages || languages.length &lt;= 1) return '';
+  
+  const isRTL = ['ar', 'he'].includes(currentLang);
+  const availableText = AVAILABLE_IN_TRANSLATIONS[currentLang] || 'Available in';
+  const badges = languages.map(lang => generateLanguageBadge(lang, isRTL)).join(' ');
+  
+  return `&lt;p class="available-languages">&lt;strong>${availableText}:&lt;/strong> ${badges}&lt;/p>`;
+}
+
+console.log('🗂️ Dynamic News Index Generation');
+console.log('📍 Scanning news directory:', NEWS_DIR);
+
+/**
+ * Parse HTML file to extract article metadata
+ */
+function parseArticleMetadata(filePath) {
+  try {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const fileName = path.basename(filePath);
+    
+    // Extract language from filename (e.g., article-en.html → en, article-da.html → da)
+    const langMatch = fileName.match(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
+    if (!langMatch) {
+      console.warn(`  ⚠️ Skipping ${fileName}: no language suffix`);
+      return null;
+    }
+    
+    const lang = langMatch[1];
+    
+    // Extract metadata from HTML meta tags
+    const metadata = {
+      slug: fileName,
+      lang,
+      title: extractMetaContent(content, 'og:title') || extractTitle(content) || 'Untitled',
+      description: extractMetaContent(content, 'og:description') || extractMetaContent(content, 'description') || '',
+      date: extractMetaContent(content, 'article:published_time') || extractFromFilename(fileName),
+      type: classifyArticleType(content, fileName),
+      topics: extractTopics(content),
+      tags: extractTags(content)
+    };
+    
+    return metadata;
+  } catch (error) {
+    console.error(`  ❌ Error parsing ${path.basename(filePath)}:`, error.message);
+    return null;
+  }
+}
+
+/**
+ * Extract content from meta tags
+ * 
+ * Fixed: regex now properly handles apostrophes and special characters in content
+ */
+function extractMetaContent(html, property) {
+  // Match double-quoted attributes
+  const doubleQuotePattern = new RegExp(`&lt;meta\\s+(?:property|name)="${property}"\\s+content="([^"]+)"`, 'i');
+  const doubleQuoteMatch = html.match(doubleQuotePattern);
+  if (doubleQuoteMatch) return doubleQuoteMatch[1];
+  
+  // Match single-quoted attributes
+  const singleQuotePattern = new RegExp(`&lt;meta\\s+(?:property|name)='${property}'\\s+content='([^']+)'`, 'i');
+  const singleQuoteMatch = html.match(singleQuotePattern);
+  if (singleQuoteMatch) return singleQuoteMatch[1];
+  
+  // Try reversed order (content before property/name)
+  const reversedDoublePattern = new RegExp(`&lt;meta\\s+content="([^"]+)"\\s+(?:property|name)="${property}"`, 'i');
+  const reversedDoubleMatch = html.match(reversedDoublePattern);
+  if (reversedDoubleMatch) return reversedDoubleMatch[1];
+  
+  const reversedSinglePattern = new RegExp(`&lt;meta\\s+content='([^']+)'\\s+(?:property|name)='${property}'`, 'i');
+  const reversedSingleMatch = html.match(reversedSinglePattern);
+  if (reversedSingleMatch) return reversedSingleMatch[1];
+  
+  return null;
+}
+
+/**
+ * Extract title from &lt;title> tag
+ */
+function extractTitle(html) {
+  const match = html.match(/&lt;title>([^&lt;]+)&lt;\/title>/i);
+  return match ? match[1].replace(' - Riksdagsmonitor', '').trim() : null;
+}
+
+/**
+ * Extract date from filename (YYYY-MM-DD format)
+ */
+function extractFromFilename(fileName) {
+  const match = fileName.match(/^(\d{4}-\d{2}-\d{2})/);
+  return match ? match[1] : new Date().toISOString().split('T')[0];
+}
+
+/**
+ * Classify article type based on content and filename.
+ * Supports detection keywords in all 14 languages.
+ */
+function classifyArticleType(content, fileName) {
+  const lowerContent = content.toLowerCase();
+  
+  // Prospective: week-ahead / upcoming previews
+  const prospectiveKeywords = [
+    'week ahead', 'week-ahead', 'upcoming', 'preview', 'look ahead',           // en
+    'veckan som kommer', 'kommande', 'framåtblick',                             // sv
+    'ugen der kommer', 'kommende', 'fremadrettet',                              // da
+    'uken som kommer', 'fremtidsrettet',                                        // no
+    'tuleva viikko', 'tulevat', 'ennakko',                                      // fi
+    'woche voraus', 'vorschau',                                                 // de
+    'semaine à venir', 'aperçu',                                                // fr
+    'semana por delante', 'adelanto',                                            // es
+    'week vooruit', 'vooruitblik',                                               // nl
+    'الأسبوع المقبل', 'القادم',                                                  // ar
+    'השבוע הבא', 'הקרוב',                                                       // he
+    '来週の展望', '今後',                                                          // ja
+    '주간 전망', '다가오는',                                                       // ko
+    '一周展望', '即将'                                                             // zh
+  ];
+  
+  if (fileName.includes('week-ahead') || prospectiveKeywords.some(kw => lowerContent.includes(kw.toLowerCase()))) {
+    return 'prospective';
+  }
+  
+  // Analysis: committee reports, propositions, motions
+  const analysisKeywords = [
+    'committee reports', 'analysis', 'review', 'assessment',                     // en
+    'utskottsbetänkanden', 'analys', 'granskning', 'betänkande',                // sv
+    'udvalgsrapporter', 'analyse', 'gennemgang', 'udvalgsbetænkning',           // da
+    'komitérapporter', 'gjennomgang', 'komitéinnstilling',                      // no
+    'valiokuntaraportit', 'analyysi', 'katsaus', 'valiokunnan mietintö',        // fi
+    'ausschussberichte', 'überprüfung', 'ausschussbericht',                     // de
+    'rapports de commission', 'examen', 'rapport de commission',                 // fr
+    'informes de comité', 'análisis', 'revisión', 'informe de comité',          // es
+    'commissierapporten', 'beoordeling', 'commissieverslag',                     // nl
+    'تقارير اللجان', 'تحليل', 'تقرير اللجنة',                                  // ar
+    'דוחות ועדות', 'ניתוח', 'דוח ועדה',                                         // he
+    '委員会報告', '分析',                                                          // ja
+    '위원회 보고서', '분석',                                                       // ko
+    '委员会报告', '分析'                                                           // zh
+  ];
+  
+  if (fileName.includes('committee-reports') || fileName.includes('propositions') || fileName.includes('motions') ||
+      analysisKeywords.some(kw => lowerContent.includes(kw.toLowerCase()))) {
+    return 'analysis';
+  }
+  
+  // Breaking: urgent/alert news
+  const breakingKeywords = [
+    'breaking', 'urgent', 'alert', 'flash',                                      // en
+    'senaste nytt', 'akut', 'brådskande',                                        // sv
+    'seneste nyt', 'hastesag',                                                   // da
+    'siste nytt', 'haster',                                                      // no
+    'viimeisimmät', 'kiireellinen', 'hälytys',                                   // fi
+    'eilmeldungen', 'dringend', 'alarm',                                         // de
+    'dernières nouvelles', 'alerte',                                              // fr
+    'última hora', 'urgente', 'alerta',                                           // es
+    'laatste nieuws', 'alert',                                                    // nl
+    'أخبار عاجلة', 'عاجل',                                                       // ar
+    'חדשות אחרונות', 'דחוף',                                                     // he
+    '速報', '緊急',                                                               // ja
+    '속보', '긴급',                                                               // ko
+    '突发新闻', '紧急'                                                             // zh
+  ];
+  
+  if (fileName.includes('breaking') || breakingKeywords.some(kw => lowerContent.includes(kw.toLowerCase()))) {
+    return 'breaking';
+  }
+  
+  return 'retrospective';
+}
+
+/**
+ * Extract topics from article tags.
+ * Supports topic detection keywords in all 14 languages.
+ */
+function extractTopics(content) {
+  const topics = [];
+  const tagPattern = /&lt;meta\s+property=["']article:tag["']\s+content=["']([^"']+)["']/gi;
+  let match;
+  
+  while ((match = tagPattern.exec(content)) !== null) {
+    const tag = match[1].toLowerCase();
+    if (tag.includes('eu')) topics.push('eu');
+    if (tag.includes('parliament') || tag.includes('riksdag') || tag.includes('parlamentet') || tag.includes('議会') || tag.includes('의회') || tag.includes('议会') || tag.includes('البرلمان') || tag.includes('פרלמנט')) topics.push('parliament');
+    if (tag.includes('government') || tag.includes('regering') || tag.includes('regjeringen') || tag.includes('hallitus') || tag.includes('regierung') || tag.includes('gouvernement') || tag.includes('gobierno') || tag.includes('政府') || tag.includes('정부') || tag.includes('الحكومة') || tag.includes('ממשלה')) topics.push('government');
+    if (tag.includes('defense') || tag.includes('defence') || tag.includes('försvar') || tag.includes('forsvar') || tag.includes('puolustus') || tag.includes('verteidigung') || tag.includes('défense') || tag.includes('defensa') || tag.includes('defensie') || tag.includes('الدفاع') || tag.includes('הגנה') || tag.includes('防衛') || tag.includes('국방') || tag.includes('国防')) topics.push('defense');
+    if (tag.includes('environment') || tag.includes('miljö') || tag.includes('miljø') || tag.includes('ympäristö') || tag.includes('umwelt') || tag.includes('environnement') || tag.includes('medio ambiente') || tag.includes('milieu') || tag.includes('البيئة') || tag.includes('סביבה') || tag.includes('環境') || tag.includes('환경') || tag.includes('环境')) topics.push('environment');
+    if (tag.includes('committee') || tag.includes('utskott') || tag.includes('udvalg') || tag.includes('utvalg') || tag.includes('valiokunt') || tag.includes('ausschuss') || tag.includes('commission') || tag.includes('comité') || tag.includes('commissie') || tag.includes('لجنة') || tag.includes('ועדה') || tag.includes('委員会') || tag.includes('위원회') || tag.includes('委员会')) topics.push('committees');
+    if (tag.includes('legislation') || tag.includes('lagstiftning') || tag.includes('lovgivning') || tag.includes('lainsäädäntö') || tag.includes('gesetzgebung') || tag.includes('législation') || tag.includes('legislación') || tag.includes('wetgeving') || tag.includes('التشريعات') || tag.includes('חקיקה') || tag.includes('立法') || tag.includes('입법')) topics.push('legislation');
+  }
+  
+  return [...new Set(topics)].slice(0, 5); // Unique, max 5
+}
+
+/**
+ * Extract tags from article:tag meta tags
+ */
+function extractTags(content) {
+  const tags = [];
+  const tagPattern = /&lt;meta\s+property=["']article:tag["']\s+content=["']([^"']+)["']/gi;
+  let match;
+  
+  while ((match = tagPattern.exec(content)) !== null) {
+    tags.push(match[1]);
+  }
+  
+  return tags.slice(0, 4); // Max 4 tags for display
+}
+
+/**
+ * Scan news directory and group articles by language
+ */
+function scanNewsArticles() {
+  console.log('\n📰 Scanning for articles...');
+  
+  const files = fs.readdirSync(NEWS_DIR)
+    .filter(file => file.endsWith('.html'))
+    .filter(file => !file.startsWith('index')); // Exclude index files
+  
+  console.log(`  Found ${files.length} article files`);
+  
+  // Initialize buckets for all 14 supported languages
+  const articlesByLang = Object.fromEntries(
+    Object.keys(LANGUAGES).map(lang => [lang, []])
+  );
+  
+  files.forEach(file => {
+    const filePath = path.join(NEWS_DIR, file);
+    const metadata = parseArticleMetadata(filePath);
+    
+    if (metadata &amp;&amp; articlesByLang[metadata.lang]) {
+      articlesByLang[metadata.lang].push(metadata);
+    }
+  });
+  
+  // Sort by date descending (newest first)
+  Object.keys(articlesByLang).forEach(lang => {
+    articlesByLang[lang].sort((a, b) => new Date(b.date) - new Date(a.date));
+  });
+  
+  const langCounts = Object.entries(articlesByLang)
+    .filter(([, arr]) => arr.length > 0)
+    .map(([lang, arr]) => `${lang.toUpperCase()} ${arr.length}`);
+  console.log(`  📊 Articles by language: ${langCounts.length > 0 ? langCounts.join(', ') : 'none found'}`);
+  
+  return articlesByLang;
+}
+
+/**
+ * Build map of base slugs to available languages for cross-language discovery
+ * 
+ * Detects articles with the same base slug (e.g., "2026-02-14-week-ahead")
+ * across different languages and maps slug -> [language codes].
+ * 
+ * @param {Object} articlesByLang - Articles grouped by language
+ * @returns {Object} Map of slug -> array of language codes
+ */
+function buildSlugToLanguagesMap(articlesByLang) {
+  const slugToLanguages = {};
+  
+  // Iterate through all articles in all languages
+  Object.entries(articlesByLang).forEach(([lang, articles]) => {
+    articles.forEach(article => {
+      // Strip language suffix from slug to get base slug
+      // e.g., "2026-02-14-article-en.html" -> "2026-02-14-article.html"
+      const baseSlug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '.html');
+      
+      if (!slugToLanguages[article.slug]) {
+        // Initialize with base slug mapping
+        slugToLanguages[article.slug] = [];
+      }
+      
+      // Find all articles with the same base slug across languages
+      Object.entries(articlesByLang).forEach(([otherLang, otherArticles]) => {
+        otherArticles.forEach(otherArticle => {
+          const otherBaseSlug = otherArticle.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '.html');
+          
+          if (baseSlug === otherBaseSlug &amp;&amp; !slugToLanguages[article.slug].includes(otherLang)) {
+            slugToLanguages[article.slug].push(otherLang);
+          }
+        });
+      });
+    });
+  });
+  
+  return slugToLanguages;
+}
+
+/**
+ * Get all articles with language information for cross-language discovery
+ * 
+ * NOTE: This function is currently UNUSED in production but preserved for potential
+ * future use. It was implemented for Issue #155's cross-language discovery feature
+ * but the requirement changed to language-specific filtering (each index shows only
+ * articles in its target language).
+ * 
+ * If cross-language discovery is needed again, this function can be used instead of
+ * passing articlesByLang[langKey] to generateIndexHTML() on line 958.
+ * 
+ * This function collects ALL articles from all languages and enriches each
+ * with metadata about which language versions are available for the same slug.
+ * 
+ * @param {Object} articlesByLang - Articles grouped by language
+ * @returns {Array} All articles with availableLanguages field
+ * @deprecated Currently unused - kept for potential future cross-language discovery
+ */
+function getAllArticlesWithLanguageInfo(articlesByLang) {
+  // Build a map of slugs to available languages
+  const slugToLanguages = new Map();
+  
+  Object.entries(articlesByLang).forEach(([lang, articles]) => {
+    articles.forEach(article => {
+      // Extract base slug (remove language suffix)
+      const baseSlug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '');
+      
+      if (!slugToLanguages.has(baseSlug)) {
+        slugToLanguages.set(baseSlug, []);
+      }
+      slugToLanguages.get(baseSlug).push(lang);
+    });
+  });
+  
+  // Collect all articles and enrich with language info
+  const allArticles = [];
+  
+  Object.entries(articlesByLang).forEach(([lang, articles]) => {
+    articles.forEach(article => {
+      const baseSlug = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '');
+      const availableLanguages = slugToLanguages.get(baseSlug) || [lang];
+      
+      allArticles.push({
+        ...article,
+        availableLanguages: availableLanguages.sort(),
+        baseSlug
+      });
+    });
+  });
+  
+  // Sort by date descending (newest first)
+  allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  return allArticles;
+}
+
+/**
+ * Generate index HTML for a specific language
+ * 
+ * Each language index displays only articles in that specific language.
+ * Articles include metadata about which other languages they're available in
+ * for cross-language discovery indicators.
+ * 
+ * @param {string} langKey - Language code (en, sv, etc.)
+ * @param {Array} languageArticles - Articles in the target language only
+ * @param {Object} allArticlesByLang - All articles grouped by language
+ */
+function generateIndexHTML(langKey, languageArticles, allArticlesByLang) {
+  const lang = LANGUAGES[langKey];
+  const f = lang.filters;
+  const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
+  const mainIndex = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
+  const isRTL = ['ar', 'he'].includes(langKey);
+  
+  // Display only articles in this language
+  const displayArticles = languageArticles;
+  const needsLanguageNotice = languageArticles.length === 0;
+  
+  const escapedSubtitle = escapeHtml(lang.subtitle);
+
+  const html = `&lt;!DOCTYPE html>
+&lt;html lang="${lang.code}"${lang.rtl ? ' dir="rtl"' : ''}>
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  &lt;title>${escapeHtml(lang.title)} - Riksdagsmonitor&lt;/title>
+  &lt;meta name="description" content="${escapedSubtitle}">
+  &lt;meta name="keywords" content="${escapeHtml(lang.keywords)}">
+  &lt;meta name="author" content="James Pether Sörling, CISSP, CISM">
+  &lt;link rel="canonical" href="https://riksdagsmonitor.com/news/${filename}">
+  
+  &lt;!-- Open Graph -->
+  &lt;meta property="og:title" content="${escapeHtml(lang.title)} - Riksdagsmonitor">
+  &lt;meta property="og:description" content="${escapedSubtitle}">
+  &lt;meta property="og:type" content="website">
+  &lt;meta property="og:url" content="https://riksdagsmonitor.com/news/${filename}">
+  &lt;meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
+  &lt;meta property="og:site_name" content="Riksdagsmonitor">
+  &lt;meta property="og:locale" content="${lang.locale}">
+  
+  &lt;!-- Twitter Card -->
+  &lt;meta name="twitter:card" content="summary">
+  &lt;meta name="twitter:title" content="${escapeHtml(lang.title)} - Riksdagsmonitor">
+  &lt;meta name="twitter:description" content="${escapedSubtitle}">
+  &lt;meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+  
+  &lt;!-- Hreflang -->
+${generateHreflangTags()}
+  
+  &lt;!-- Schema.org ItemList structured data for article aggregation -->
+  &lt;script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "${escapeHtml(lang.title)}",
+    "description": "${escapedSubtitle}",
+    "numberOfItems": ${displayArticles.length},
+    "itemListElement": [${displayArticles.slice(0, 10).map((article, index) => `
+      {
+        "@type": "ListItem",
+        "position": ${index + 1},
+        "item": {
+          "@type": "NewsArticle",
+          "headline": "${escapeHtml(article.title)}",
+          "url": "https://riksdagsmonitor.com/news/${article.slug}",
+          "datePublished": "${article.date}",
+          "description": "${escapeHtml(article.description).substring(0, 150)}",
+          "inLanguage": "${article.lang || lang.code}",
+          "author": {
+            "@type": "Organization",
+            "name": "Riksdagsmonitor"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hack23 AB",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://hack23.com/cia-icon-140.webp"
+            }
+          },
+          "articleSection": "${escapeHtml(lang.breadcrumbs.news)}",
+          "about": {
+            "@type": "GovernmentOrganization",
+            "name": "Riksdag",
+            "alternateName": "Swedish Parliament",
+            "url": "https://www.riksdagen.se/"
+          }
+        }
+      }`).join(',')}
+    ]
+  }
+  &lt;/script>
+  
+  &lt;!-- BreadcrumbList structured data -->
+  &lt;script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "${escapeHtml(lang.breadcrumbs.home)}",
+        "item": "https://riksdagsmonitor.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "${escapeHtml(lang.breadcrumbs.news)}",
+        "item": "https://riksdagsmonitor.com/news/${filename}"
+      }
+    ]
+  }
+  &lt;/script>
+  
+  &lt;!-- WebSite structured data -->
+  &lt;script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Riksdagsmonitor",
+    "url": "https://riksdagsmonitor.com",
+    "description": "${escapeHtml(lang.schemaDescription || 'Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency')}",
+    "inLanguage": "${lang.code}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hack23 AB",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hack23.com/cia-icon-140.webp"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://riksdagsmonitor.com/news/${filename}?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  &lt;/script>
+  
+  &lt;!-- Fonts -->
+  &lt;link rel="preconnect" href="https://fonts.googleapis.com">
+  &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Orbitron:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  
+  &lt;link rel="stylesheet" href="../styles.css">
+  ${generateRTLStyles(lang.rtl)}
+&lt;/head>
+&lt;body class="news-page">
+  &lt;header class="header-section">
+    &lt;div class="header-content">
+      &lt;h1>${escapeHtml(lang.title)}&lt;/h1>
+      &lt;p class="subtitle">${lang.subtitle}&lt;/p>
+      &lt;a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}&lt;/a>
+    &lt;/div>
+  &lt;/header>
+  
+  &lt;div class="container">
+${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
+    
+    &lt;!-- Filter Bar -->
+    &lt;div class="filter-bar">
+      &lt;div class="filter-group">
+        &lt;label for="filter-type">${f.type}&lt;/label>
+        &lt;select id="filter-type">
+          &lt;option value="all">${escapeHtml(f.allTypes)}&lt;/option>
+          &lt;option value="prospective">${escapeHtml(f.prospective)}&lt;/option>
+          &lt;option value="retrospective">${escapeHtml(f.retrospective)}&lt;/option>
+          &lt;option value="analysis">${escapeHtml(f.analysis)}&lt;/option>
+          &lt;option value="breaking">${escapeHtml(f.breaking)}&lt;/option>
+        &lt;/select>
+      &lt;/div>
+      
+      &lt;div class="filter-group">
+        &lt;label for="filter-topic">${f.topic}&lt;/label>
+        &lt;select id="filter-topic">
+          &lt;option value="all">${escapeHtml(f.allTopics)}&lt;/option>
+          &lt;option value="parliament">${escapeHtml(f.parliament)}&lt;/option>
+          &lt;option value="government">${escapeHtml(f.government)}&lt;/option>
+          &lt;option value="eu">EU&lt;/option>
+          &lt;option value="defense">${escapeHtml(f.defense)}&lt;/option>
+          &lt;option value="environment">${escapeHtml(f.environment)}&lt;/option>
+          &lt;option value="committees">${escapeHtml(f.committees)}&lt;/option>
+          &lt;option value="legislation">${escapeHtml(f.legislation)}&lt;/option>
+        &lt;/select>
+      &lt;/div>
+      
+      &lt;div class="filter-group">
+        &lt;label for="filter-sort">${f.sort}&lt;/label>
+        &lt;select id="filter-sort">
+          &lt;option value="date-desc">${escapeHtml(f.newest)}&lt;/option>
+          &lt;option value="date-asc">${escapeHtml(f.oldest)}&lt;/option>
+          &lt;option value="title">${escapeHtml(f.titleSort)}&lt;/option>
+        &lt;/select>
+      &lt;/div>
+    &lt;/div>
+    
+    &lt;!-- Articles Grid -->
+    &lt;div class="articles-grid" id="articles-grid">&lt;/div>
+    
+    &lt;div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
+      ${escapeHtml(lang.noResults)}
+    &lt;/div>
+  &lt;/div>
+  
+  &lt;script>
+    // Language flags mapping (shared with server-side)
+    const LANGUAGE_FLAGS = ${JSON.stringify(LANGUAGE_FLAGS)};
+    
+    // Available in translation (for current language)
+    const AVAILABLE_IN_TEXT = '${escapeHtml(AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in')}';
+    
+    // Dynamic articles array - generated from news/ directory
+    const articles = ${JSON.stringify(displayArticles.map(a => ({
+      title: a.title,
+      date: a.date,
+      type: a.type,
+      slug: a.slug,
+      lang: a.lang,
+      availableLanguages: a.availableLanguages || [a.lang],
+      excerpt: a.description.substring(0, 200),
+      topics: a.topics,
+      tags: a.tags
+    })), null, 2)};
+    
+    let filteredArticles = [...articles];
+    
+    function renderArticles(articlesToRender) {
+      const grid = document.getElementById('articles-grid');
+      const noResults = document.getElementById('no-results');
+      
+      if (articlesToRender.length === 0) {
+        grid.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+      
+      noResults.style.display = 'none';
+      
+      grid.innerHTML = articlesToRender.map(article => {
+        // Generate language badge for the article using shared LANGUAGE_FLAGS
+        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
+        const langBadge = \`&lt;span class="language-badge" aria-label="\${article.lang} language">&lt;span aria-hidden="true">\${flag}&lt;/span> \${article.lang.toUpperCase()}&lt;/span>\`;
+        
+        // Generate available languages display if multiple languages exist
+        const availableLangs = article.availableLanguages || [article.lang];
+        let availableDisplay = '';
+        if (availableLangs.length > 1) {
+          const availableBadges = availableLangs.map(l => {
+            const f = LANGUAGE_FLAGS[l] || '🌐';
+            return \`&lt;span class="lang-badge-sm">&lt;span aria-hidden="true">\${f}&lt;/span> \${l.toUpperCase()}&lt;/span>\`;
+          }).join(' ');
+          availableDisplay = \`&lt;p class="available-languages">&lt;strong>\${AVAILABLE_IN_TEXT}:&lt;/strong> \${availableBadges}&lt;/p>\`;
+        }
+        
+        return \`
+        &lt;article class="article-card">
+          &lt;div class="article-meta">
+            &lt;time class="article-date" datetime="\${article.date}">\${formatDate(article.date)}&lt;/time>
+            &lt;span class="article-type">\${localizeType(article.type)}&lt;/span>
+            \${langBadge}
+          &lt;/div>
+          &lt;h2 class="article-title">
+            &lt;a href="\${article.slug}">\${article.title}&lt;/a>
+          &lt;/h2>
+          &lt;p class="article-excerpt">\${article.excerpt}&lt;/p>
+          \${availableDisplay}
+          &lt;div class="article-tags">
+            \${article.tags.map(tag => \`&lt;span class="tag">\${tag}&lt;/span>\`).join('')}
+          &lt;/div>
+        &lt;/article>
+      \`;
+      }).join('');
+    }
+    
+    const typeLabels = ${JSON.stringify({
+      prospective: f.prospective,
+      retrospective: f.retrospective,
+      analysis: f.analysis,
+      breaking: f.breaking
+    })};
+    
+    function localizeType(type) {
+      return typeLabels[type] || type;
+    }
+    
+    function formatDate(dateStr) {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('${lang.code}', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+    
+    function filterArticles() {
+      const typeFilter = document.getElementById('filter-type').value;
+      const topicFilter = document.getElementById('filter-topic').value;
+      const sortFilter = document.getElementById('filter-sort').value;
+      
+      let filtered = [...articles];
+      
+      // Apply type filter
+      if (typeFilter !== 'all') {
+        filtered = filtered.filter(article => article.type === typeFilter);
+      }
+      
+      // Apply topic filter
+      if (topicFilter !== 'all') {
+        filtered = filtered.filter(article => article.topics.includes(topicFilter));
+      }
+      
+      // Apply sorting
+      switch(sortFilter) {
+        case 'date-desc':
+          filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+          break;
+        case 'date-asc':
+          filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+          break;
+        case 'title':
+          filtered.sort((a, b) => a.title.localeCompare(b.title));
+          break;
+      }
+      
+      filteredArticles = filtered;
+      renderArticles(filteredArticles);
+    }
+    
+    // Event listeners
+    document.getElementById('filter-type').addEventListener('change', filterArticles);
+    document.getElementById('filter-topic').addEventListener('change', filterArticles);
+    document.getElementById('filter-sort').addEventListener('change', filterArticles);
+    
+    // Initial render
+    filterArticles();
+  &lt;/script>
+
+  &lt;!-- Dynamic Content Loader -->
+  &lt;script>
+    // Localization data
+    const i18n = {
+      noArticles: '${lang.i18n.noArticles}',
+      loading: '${lang.i18n.loading}',
+      articleCount: ${lang.i18n.articleCount}
+    };
+    
+    // Dynamic content loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const articlesGrid = document.querySelector('.articles-grid');
+      if (!articlesGrid) return;
+      
+      const articleCards = articlesGrid.querySelectorAll('.article-card');
+      const articleCount = articleCards.length;
+      
+      // Update article count if element exists
+      const countElement = document.querySelector('.article-count');
+      if (countElement) {
+        countElement.textContent = i18n.articleCount(articleCount);
+      }
+      
+      // Show no articles message if empty
+      if (articleCount === 0) {
+        articlesGrid.innerHTML = \`&lt;p class="no-articles">\${i18n.noArticles}&lt;/p>\`;
+      }
+    });
+  &lt;/script>
+
+&lt;/body>
+&lt;/html>`;
+  
+  return html;
+}
+
+/**
+ * Generate hreflang tags for all languages
+ */
+function generateHreflangTags() {
+  const tags = [];
+  
+  Object.keys(LANGUAGES).forEach(langKey => {
+    const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
+    const hrefLang = LANGUAGES[langKey].code;
+    tags.push(`  &lt;link rel="alternate" hreflang="${hrefLang}" href="https://riksdagsmonitor.com/news/${filename}">`);
+  });
+  
+  tags.push(`  &lt;link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/index.html">`);
+  
+  return tags.join('\n');
+}
+
+/**
+ * Generate inline CSS
+ */
+/**
+ * Generate minimal RTL-specific styles
+ * All other styles are now in styles.css under .news-page scope
+ */
+function generateRTLStyles(isRTL) {
+  if (!isRTL) return '';
+  
+  return `
+  &lt;style>
+    /* RTL-specific overrides for Arabic and Hebrew */
+    .news-page .language-notice {
+      border-left: none;
+      border-right: 4px solid var(--primary-yellow, #ffbe0b);
+    }
+    
+    .news-page .language-badge {
+      margin-left: 0;
+      margin-right: 0.5rem;
+    }
+    
+    .news-page .back-link:hover {
+      transform: translateX(5px); /* Reverse direction for RTL */
+    }
+  &lt;/style>`;
+}
+
+/**
+ * Generate language availability notice for non-EN/SV indexes
+ */
+function generateLanguageNotice(langKey) {
+  const messages = {
+    da: { title: 'Artikler tilgængelige på engelsk', text: 'Artikler er i øjeblikket kun tilgængelige på engelsk og svensk. Automatisk oversættelse til dansk kommer snart.' },
+    no: { title: 'Artikler tilgjengelige på engelsk', text: 'Artikler er for tiden kun tilgjengelige på engelsk og svensk. Automatisk oversettelse til norsk kommer snart.' },
+    fi: { title: 'Artikkelit saatavilla englanniksi', text: 'Artikkelit ovat tällä hetkellä saatavilla vain englanniksi ja ruotsiksi. Automaattinen käännös suomeksi tulossa pian.' },
+    de: { title: 'Artikel auf Englisch verfügbar', text: 'Artikel sind derzeit nur auf Englisch und Schwedisch verfügbar. Automatische Übersetzung ins Deutsche folgt in Kürze.' },
+    fr: { title: 'Articles disponibles en anglais', text: 'Les articles ne sont actuellement disponibles qu\'en anglais et en suédois. La traduction automatique en français arrive bientôt.' },
+    es: { title: 'Artículos disponibles en inglés', text: 'Los artículos actualmente solo están disponibles en inglés y sueco. La traducción automática al español estará disponible pronto.' },
+    nl: { title: 'Artikelen beschikbaar in het Engels', text: 'Artikelen zijn momenteel alleen beschikbaar in het Engels en Zweeds. Automatische vertaling naar het Nederlands komt binnenkort.' },
+    ar: { title: 'المقالات متاحة بالإنجليزية', text: 'المقالات متاحة حالياً باللغتين الإنجليزية والسويدية فقط. الترجمة الآلية إلى العربية قريباً.' },
+    he: { title: 'מאמרים זמינים באנגלית', text: 'מאמרים זמינים כעת רק באנגלית ובשוודית. תרגום אוטומטי לעברית בקרוב.' },
+    ja: { title: '英語で利用可能な記事', text: '記事は現在、英語とスウェーデン語のみで利用可能です。日本語への自動翻訳は近日公開予定です。' },
+    ko: { title: '영어로 제공되는 기사', text: '기사는 현재 영어와 스웨덴어로만 제공됩니다. 한국어 자동 번역이 곧 제공될 예정입니다.' },
+    zh: { title: '文章以英文提供', text: '文章目前仅提供英文和瑞典文版本。中文自动翻译即将推出。' }
+  };
+  
+  const msg = messages[langKey];
+  if (!msg) return '';
+  
+  const isRTL = ['ar', 'he'].includes(langKey);
+  
+  return `    &lt;div class="language-notice">
+      &lt;h2>${msg.title}&lt;/h2>
+      &lt;p>${msg.text} &lt;span class="language-badge"${isRTL ? ' dir="ltr"' : ''} aria-label="English language">&lt;span aria-hidden="true">🇬🇧&lt;/span> EN&lt;/span>&lt;/p>
+    &lt;/div>
+`;
+}
+
+/**
+ * Main generation function
+ */
+function generateAllIndexes() {
+  console.log('\n🚀 Generating dynamic news indexes...');
+  
+  // Scan news directory
+  const articlesByLang = scanNewsArticles();
+  
+  // Build slug-to-languages map for cross-language discovery
+  const slugToLanguages = buildSlugToLanguagesMap(articlesByLang);
+  
+  // Generate index for each language
+  console.log('\n📝 Generating index files...');
+  
+  let successCount = 0;
+  let errorCount = 0;
+  
+  Object.keys(LANGUAGES).forEach(langKey => {
+    try {
+      const filename = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
+      const filePath = path.join(NEWS_DIR, filename);
+      
+      // Use language-specific articles and enrich with availableLanguages
+      const languageArticles = articlesByLang[langKey] || [];
+      
+      // Enrich each article with availableLanguages for cross-language discovery
+      const enrichedArticles = languageArticles.map(article => ({
+        ...article,
+        availableLanguages: slugToLanguages[article.slug] || [article.lang]
+      }));
+      
+      const html = generateIndexHTML(langKey, enrichedArticles, articlesByLang);
+      fs.writeFileSync(filePath, html, 'utf-8');
+      
+      console.log(`  ✅ Generated: ${filename} (${languageArticles.length} articles)`);
+      successCount++;
+    } catch (error) {
+      console.error(`  ❌ Failed to generate ${langKey}:`, error.message);
+      errorCount++;
+    }
+  });
+  
+  console.log('\n✨ Generation complete!');
+  console.log(`  ✅ Success: ${successCount} files`);
+  console.log(`  ❌ Errors: ${errorCount} files`);
+  const totalArticles = Object.values(articlesByLang).reduce((sum, arr) => sum + arr.length, 0);
+  console.log(`  📊 Total articles: ${totalArticles}`);
+  
+  return {
+    success: errorCount === 0,
+    successCount,
+    errorCount,
+    articles: articlesByLang
+  };
+}
+
+// Run if called directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  try {
+    const result = generateAllIndexes();
+    process.exit(result.success ? 0 : 1);
+  } catch (error) {
+    console.error('\n❌ Fatal error:', error.message);
+    console.error(error.stack);
+    process.exit(1);
+  }
+}
+
+export { 
+  generateAllIndexes, 
+  parseArticleMetadata, 
+  scanNewsArticles,
+  getAllArticlesWithLanguageInfo,
+  generateLanguageBadge,
+  generateAvailableLanguages
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

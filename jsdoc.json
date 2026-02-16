@@ -1,0 +1,36 @@
+{
+  "source": {
+    "include": [
+      "js/",
+      "dashboard/",
+      "scripts/"
+    ],
+    "includePattern": ".+\\.js$",
+    "excludePattern": "(node_modules|tests|cypress|dist|lib)"
+  },
+  "opts": {
+    "template": "templates/default",
+    "encoding": "utf8",
+    "destination": "./api/",
+    "recurse": true,
+    "verbose": true,
+    "readme": "./docs/JSDOC_README.md"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true,
+      "includeDate": false
+    }
+  },
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+  },
+  "metadata": {
+    "title": "Riksdagsmonitor Intelligence Platform API Documentation",
+    "description": "Political intelligence analysis and OSINT platform for Swedish Parliament monitoring"
+  }
+}

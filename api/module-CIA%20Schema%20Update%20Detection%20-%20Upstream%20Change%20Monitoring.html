@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: CIA Schema Update Detection - Upstream Change Monitoring</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: CIA Schema Update Detection - Upstream Change Monitoring</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Automated schema update detection system continuously monitoring the CIA GitHub
+repository for changes to published JSON export specifications. Identifies when
+CIA data structure versions diverge from local cached versions, triggering
+synchronization workflows for data product consistency.</p>
+<p>Operational Purpose:
+Ensures riksdagsmonitor maintains compatibility with CIA platform's 19 data products
+by detecting upstream schema modifications before they break data pipelines. Implements
+change detection through cryptographic checksums, enabling rapid identification of
+schema evolution without manual polling.</p>
+<p>CIA Data Products Monitored (19 schemas):</p>
+<ul>
+<li>overview-dashboard: Parliamentary activity summary</li>
+<li>party-performance: Party voting and activity metrics</li>
+<li>cabinet-scorecard: Government performance tracking</li>
+<li>election-analysis: Electoral outcomes and trends</li>
+<li>top10-influential-mps: Parliamentary power analysis</li>
+<li>top10-productive-mps: Legislation productivity metrics</li>
+<li>top10-controversial-mps: Political controversy tracking</li>
+<li>top10-absent-mps: Attendance pattern analysis</li>
+<li>top10-rebels: Party discipline violations</li>
+<li>top10-coalition-brokers: Coalition dynamics influencers</li>
+<li>top10-rising-stars: Career trajectory identification</li>
+<li>top10-electoral-risk: Election vulnerability analysis</li>
+<li>top10-ethics-concerns: Ethics violation tracking</li>
+<li>top10-media-presence: Political media prominence</li>
+<li>committee-network: Committee membership networks</li>
+<li>politician-career: Career progression analysis</li>
+<li>party-longitudinal: Historical party data trends</li>
+<li>riksdag-overview: Parliamentary structure and history</li>
+<li>ministry-performance: Government ministry effectiveness</li>
+</ul>
+<p>Change Detection Architecture:</p>
+<ul>
+<li>Fetches remote schema files from CIA GitHub repository</li>
+<li>Computes SHA-256 checksums of remote files</li>
+<li>Compares checksums with locally cached metadata</li>
+<li>Identifies added, modified, or deleted schemas</li>
+<li>Generates change report for action planning</li>
+</ul>
+<p>Remote Data Source:</p>
+<ul>
+<li>CIA Repository: https://github.com/Hack23/cia</li>
+<li>Schema Location: /json-export-specs/schemas/</li>
+<li>Access Method: GitHub raw content CDN (no authentication required)</li>
+<li>Data License: Apache-2.0 (compatible with riksdagsmonitor)</li>
+</ul>
+<p>Local Cache Structure:</p>
+<ul>
+<li>Schemas Directory: ./schemas/cia/</li>
+<li>Metadata Directory: ./schemas/metadata/</li>
+<li>Stores: Downloaded schema files, checksum verification data</li>
+<li>Updated by: sync-cia-schemas.js (separate synchronization script)</li>
+</ul>
+<p>Metadata Management:</p>
+<ul>
+<li>Checksums: SHA-256 hashes for change detection</li>
+<li>Update timestamps: ISO 8601 format with timezone</li>
+<li>Fetch status: Success/failure/error indicators</li>
+<li>Version tracking: Schema version numbers if available</li>
+</ul>
+<p>Detection Workflow:</p>
+<ol>
+<li>Fetch remote schema file list from CIA GitHub</li>
+<li>Compute SHA-256 checksum of each remote file</li>
+<li>Load local metadata (previous checksums)</li>
+<li>Compare remote vs. local checksums</li>
+<li>Identify differences: new, modified, deleted</li>
+<li>Generate change report with details</li>
+<li>Trigger downstream actions if changes detected</li>
+</ol>
+<p>Update Triggers &amp; Actions:</p>
+<ul>
+<li>If schema added: Notify administrator for evaluation</li>
+<li>If schema modified: Trigger validate-against-cia-schemas.js</li>
+<li>If schema deleted: Update local cache, assess impact</li>
+<li>If validation fails: Alert operations team, prevent deployment</li>
+</ul>
+<p>Error Handling:</p>
+<ul>
+<li>Network failures: Retry with exponential backoff</li>
+<li>Malformed schemas: Log and skip with alert</li>
+<li>File access errors: Report with detailed diagnostics</li>
+<li>Partial failures: Complete check for other schemas</li>
+</ul>
+<p>Output Report Structure:
+{
+timestamp: ISO 8601,
+status: 'success' | 'failure',
+summary: { total, added, modified, deleted },
+details: [
+{ schema: 'name', change: 'added|modified|deleted', ... }
+],
+errors: [ ... ]
+}</p>
+<p>Integration Points:</p>
+<ul>
+<li>CI/CD pipeline: Scheduled check during build process</li>
+<li>sync-cia-schemas.js: Triggered to download new/updated schemas</li>
+<li>validate-against-cia-schemas.js: Validates local data against updated schemas</li>
+<li>Intelligence dashboards: Alerts for schema compatibility issues</li>
+</ul>
+<p>Network Security:</p>
+<ul>
+<li>HTTPS only (GitHub raw content CDN)</li>
+<li>No authentication required (public repository)</li>
+<li>Rate limiting: GitHub allows 60 requests/hour unauthenticated</li>
+<li>Implements delay between requests to respect rate limits</li>
+</ul>
+<p>Performance Characteristics:</p>
+<ul>
+<li>Fetches ~19 schema files (avg 2-5 KB each)</li>
+<li>Checksum computation: &lt; 100ms per file</li>
+<li>Total execution time: 3-5 seconds typical</li>
+<li>Can be scheduled hourly without performance impact</li>
+</ul>
+<p>Data Integrity:</p>
+<ul>
+<li>Checksums enable detection of file corruption</li>
+<li>Change log maintains audit trail of schema evolution</li>
+<li>Version control in git for local metadata tracking</li>
+<li>Complies with data integrity principles</li>
+</ul>
+<p>ISMS Compliance:</p>
+<ul>
+<li>ISO 27001:2022 A.8.1 - Asset management (track schema versions)</li>
+<li>ISO 27001:2022 A.12.6.1 - Change management (schema version tracking)</li>
+<li>NIST CSF 2.0 RC.IM-2 - Incident management and improvements</li>
+<li>CIS Control 5.3 - Configuration change control</li>
+</ul>
+<p>Usage:
+node scripts/check-cia-schema-updates.js</p>
+<h1>Reports: New schemas, modified schemas, deleted schemas</h1>
+<h1>Triggers: sync-cia-schemas.js if updates detected</h1></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.3.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB (Data Infrastructure Team)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_check-cia-schema-updates.js.html">scripts/check-cia-schema-updates.js</a>, <a href="scripts_check-cia-schema-updates.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>sync-cia-schemas.js (schema download and cache management)</li>
+        
+            <li>validate-against-cia-schemas.js (data validation against schemas)</li>
+        
+            <li>CIA Repository: https://github.com/Hack23/cia</li>
+        
+            <li>ISO 27001:2022 A.12.6.1 - Change management</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

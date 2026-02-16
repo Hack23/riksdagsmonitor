@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: Analytics/CommitteeIntelligence</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: Analytics/CommitteeIntelligence</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p><strong>INTELLIGENCE OPERATIVE PERSPECTIVE</strong></p>
+<p>This dashboard module provides interactive visualization and analysis of Swedish
+Riksdag committee structure, productivity, and decision patterns. Committees are
+where legislative power actually accumulates and policy details get hammered out,
+making committee-level intelligence critical for understanding parliamentary
+dynamics. The dashboard transforms committee data into organizational intelligence
+revealing power distribution, policy priorities, and committee effectiveness.</p>
+<p><strong>STRATEGIC IMPORTANCE OF COMMITTEE ANALYSIS:</strong>
+Swedish parliament operates on a committee-based legislative model where:</p>
+<ol>
+<li><strong>Committee Pre-Process</strong>: Bills typically go through committee first</li>
+<li><strong>Committee Bottleneck</strong>: Strong committees can delay/modify legislation</li>
+<li><strong>Committee Expertise</strong>: Subject-matter expertise concentrated in committees</li>
+<li><strong>Committee Power</strong>: Committee chairs wield significant influence</li>
+<li><strong>Committee Compromise</strong>: Coalition deals often negotiated in committees</li>
+</ol>
+<p>Committee analysis reveals the legislative power structure beneath the party structure.</p>
+<p><strong>COMMITTEE DEFINITIONS (15 Swedish Committees):</strong>
+Dashboard tracks all major Riksdag committees with specialized domains:</p>
+<p><strong>Security &amp; Foreign Policy:</strong></p>
+<ul>
+<li>AU (Utrikesutskottet): Foreign Affairs Committee</li>
+<li>FöU (Försvarsutskottet): Defense Committee</li>
+<li>KU (Konstitutionsutskottet): Constitutional Committee</li>
+</ul>
+<p><strong>Economic &amp; Fiscal:</strong></p>
+<ul>
+<li>FiU (Finansutskottet): Finance Committee (budget authority)</li>
+<li>NU (Näringsutskottet): Industry Committee</li>
+<li>TU (Trafikutskottet): Transport Committee</li>
+</ul>
+<p><strong>Social Policy:</strong></p>
+<ul>
+<li>SoU (Socialutskottet): Social Affairs Committee</li>
+<li>MU (Miljöutskottet): Environment Committee</li>
+<li>KrU (Kulturutskottet): Cultural Affairs Committee</li>
+</ul>
+<p><strong>Justice &amp; Administration:</strong></p>
+<ul>
+<li>JuU (Justitieutskottet): Justice Committee</li>
+<li>CU (Civilutskottet): Civil Affairs Committee</li>
+</ul>
+<p><strong>Health &amp; Education:</strong></p>
+<ul>
+<li>HsU (Hälso- och sjukvårdsutskottet): Health &amp; Welfare Committee</li>
+<li>UU (Utbildningsutskottet): Education Committee</li>
+</ul>
+<p><strong>Other:</strong></p>
+<ul>
+<li>EU-nämnden: EU Affairs Committee</li>
+<li>StU (Statsutskottet): State Committee</li>
+</ul>
+<p>Each committee configured with:</p>
+<ul>
+<li>Swedish abbreviation (AU, FiU, etc.)</li>
+<li>English and Swedish full names</li>
+<li>Color coding for visual distinction</li>
+<li>Policy domain classification</li>
+</ul>
+<p><strong>ANALYTICAL DASHBOARDS:</strong>
+The dashboard provides four intelligence views:</p>
+<ol>
+<li>
+<p><strong>Committee Network Diagram (D3.js Force-Directed Graph)</strong>
+Visualizes: Committee relationships and information flow
+Algorithm: Force-directed layout shows proximity = collaboration
+Intelligence value: Identifies committee clusters and power hubs
+Use case: Find interconnected committee structures</p>
+</li>
+<li>
+<p><strong>Productivity Heat Map (D3.js Heatmap)</strong>
+Visualizes: Committee activity and productivity over time
+Metrics: Document production, meeting frequency, decision rate
+Intelligence value: Identifies busy vs. dormant committees
+Use case: Track committee workload and priorities</p>
+</li>
+<li>
+<p><strong>Voting Pattern Analysis (Chart.js Multiple Charts)</strong>
+Visualizes: Committee decision patterns and unanimity rates
+Metrics: Agreement rates, dissent frequency, consensus strength
+Intelligence value: Committee consensus/conflict assessment
+Use case: Identify contentious policy areas</p>
+</li>
+<li>
+<p><strong>Seasonal Activity Patterns (Chart.js Line Chart)</strong>
+Visualizes: Committee activity variation by season
+Metrics: Meeting frequency, document volume by month
+Intelligence value: Budget cycle and legislative timing
+Use case: Predict when committees will be active</p>
+</li>
+</ol>
+<p><strong>DATA SOURCES:</strong>
+CIA Platform provides committee intelligence:</p>
+<ul>
+<li>distribution_committee_productivity_matrix.csv
+Committee productivity metrics and activity levels</li>
+<li>view_riksdagen_committee_decisions.csv
+Committee voting records and decision patterns</li>
+<li>distribution_annual_committee_documents.csv
+Document production by committee and year</li>
+<li>view_riksdagen_committee_ballot_decision_party_summary.csv
+Party-specific voting patterns within committees</li>
+<li>percentile_seasonal_activity_patterns.csv
+Seasonal variations in committee activity</li>
+</ul>
+<p><strong>CACHING STRATEGY:</strong>
+Dashboard implements efficient multi-level caching:</p>
+<ul>
+<li><strong>Browser Cache</strong>: 24-hour local storage</li>
+<li><strong>Data Sources</strong>: Local files first, GitHub fallback</li>
+<li><strong>Automatic Refresh</strong>: Stale cache invalidated after 24h</li>
+<li><strong>Cache Key Prefix</strong>: riksdag_committee_ (avoids conflicts)</li>
+<li><strong>Parallel Loading</strong>: Multiple sources loaded simultaneously</li>
+</ul>
+<p><strong>INTELLIGENCE APPLICATIONS:</strong></p>
+<ol>
+<li><strong>Power Distribution</strong>: Identify which committees wield most influence</li>
+<li><strong>Productivity Analysis</strong>: Track committee effectiveness over time</li>
+<li><strong>Coalition Control</strong>: Assess coalition's hold on key committees</li>
+<li><strong>Policy Priority Detection</strong>: Identify committees getting resources</li>
+<li><strong>Committee Conflicts</strong>: Track contentious committee decisions</li>
+<li><strong>Member Influence</strong>: Identify powerful committee chairs/members</li>
+<li><strong>Timeline Prediction</strong>: Predict when committee actions occur</li>
+</ol>
+<p><strong>PARTY CONTROL ANALYSIS:</strong>
+Dashboard tracks party composition of committees:</p>
+<ul>
+<li>Committee chair parties (indicates committee control)</li>
+<li>Party representation by committee</li>
+<li>Coalition vs. opposition committee balance</li>
+<li>Coalition's control of key committees (Finance, Justice, Defense)</li>
+</ul>
+<p><strong>PERFORMANCE METRICS:</strong>
+Dashboard calculates committee-level KPIs:</p>
+<ul>
+<li><strong>Productivity Index</strong>: Documents produced per meeting</li>
+<li><strong>Decision Frequency</strong>: Decisions per unit time</li>
+<li><strong>Meeting Frequency</strong>: Regular schedule compliance</li>
+<li><strong>Unanimity Rate</strong>: Percentage of unanimous decisions</li>
+<li><strong>Dissent Frequency</strong>: Cross-party voting patterns</li>
+</ul>
+<p><strong>ACCESSIBILITY FEATURES:</strong>
+WCAG 2.1 AA compliance:</p>
+<ul>
+<li>Color-blind friendly palette</li>
+<li>Text labels on all visualizations</li>
+<li>Keyboard navigation support</li>
+<li>ARIA labels for screen readers</li>
+<li>High contrast mode</li>
+<li>Responsive design (320px-1440px+)</li>
+</ul>
+<p><strong>MULTILINGUAL SUPPORT (14 Languages):</strong>
+Complete internationalization:</p>
+<ul>
+<li>Swedish: Detailed terminology</li>
+<li>English: International audience</li>
+<li>Nordic: Regional users</li>
+<li>European: Continental coverage</li>
+<li>Middle Eastern: Diplomatic audience</li>
+<li>Asian: Economic representation</li>
+</ul>
+<p>Committee names and explanations translated appropriately.</p>
+<p><strong>RESPONSIVE DESIGN:</strong>
+Dashboard adapts to all screen sizes:</p>
+<ul>
+<li><strong>Mobile (320px)</strong>: Stacked layout, single chart per view</li>
+<li><strong>Tablet (768px)</strong>: Two-column layout, selectable views</li>
+<li><strong>Desktop (1920px)</strong>: Four-chart dashboard, detailed annotations</li>
+<li><strong>UltraHD (2560px)</strong>: Detailed network graphs with zoom capability</li>
+</ul>
+<p><strong>FAILURE HANDLING:</strong>
+Graceful degradation:</p>
+<ul>
+<li>Local Cache Hit: Use cached data (24h TTL)</li>
+<li>Remote Fallback: GitHub data if local unavailable</li>
+<li>Error Display: &quot;Data unavailable&quot; vs. breaking UI</li>
+<li>Retry Logic: Automatic retry on network failures</li>
+<li>Partial Data: Display available data even if incomplete</li>
+</ul>
+<p><strong>GDPR COMPLIANCE:</strong>
+Committee data handling (public parliamentary records):</p>
+<ul>
+<li>Committee member names published (public roles)</li>
+<li>Voting records public (parliamentary transparency)</li>
+<li>Aggregation respects privacy (committee-level, not member-level)</li>
+<li>Data retention follows parliamentary archive standards</li>
+</ul>
+<p><strong>SECURITY CONSIDERATIONS:</strong>
+Data integrity and authenticity:</p>
+<ul>
+<li>Data Validation: Checksums verify source data</li>
+<li>Timestamp Validation: Ensures data freshness</li>
+<li>Source Verification: CIA platform authentication</li>
+<li>Anomaly Detection: Unusual data patterns trigger review</li>
+<li>Access Control: Committee analysis logged for audit</li>
+</ul></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>2.1.0</li></ul></dd>
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2024-07-12</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB (Committee Intelligence &amp; Governance Analytics)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_committees-dashboard.js.html">scripts/committees-dashboard.js</a>, <a href="scripts_committees-dashboard.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://d3js.org/%20(D3.js%20Data%20Visualization)">https://d3js.org/ (D3.js Data Visualization)</a></li>
+        
+            <li><a href="https://www.chartjs.org/%20(Chart.js%20Charting)">https://www.chartjs.org/ (Chart.js Charting)</a></li>
+        
+            <li><a href="https://github.com/Hack23/cia%20(CIA%20Platform)">https://github.com/Hack23/cia (CIA Platform)</a></li>
+        
+            <li>Issue #111 (Committee Dashboard Enhancement)</li>
+        
+            <li><a href="https://www.riksdagen.se/sv/sa-funkar-riksdagen/utskott/%20(Committee%20Information)">https://www.riksdagen.se/sv/sa-funkar-riksdagen/utskott/ (Committee Information)</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

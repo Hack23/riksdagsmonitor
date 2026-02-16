@@ -1,17 +1,129 @@
 #!/usr/bin/env node
 
 /**
- * Backport News Generation Script
+ * @module Intelligence/DataMigration
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name News Backport Generation - Historical Article Migration System
  * 
- * Generates historical news articles for 2026 by querying riksdag-regering-mcp
- * with past date ranges. Creates weekly and daily articles for dates that
- * don't already have coverage.
+ * @description
+ * Automated legacy article generation system creating historical news coverage for
+ * past dates by querying the riksdag-regering-mcp (MCP) client for parliamentary
+ * activities, government actions, and committee developments. Enables comprehensive
+ * historical intelligence archive for retrospective analysis and trend identification.
  * 
- * Usage:
+ * Operational Context:
+ * Generates news articles for historical date ranges by querying publicly available
+ * parliamentary data. Creates weekly week-ahead articles and daily articles for dates
+ * lacking coverage. Supports intelligence platform's requirement for comprehensive
+ * historical context when analyzing political developments.
+ * 
+ * Historical Data Sourcing:
+ * - Queries riksdag-regering-mcp (Riksdag-Regering MCP server) for past dates
+ * - Retrieves: propositions (propositioner), motions (motioner), committee reports (betänkanden)
+ * - Accesses: written questions, interpellations, voting records, calendar events
+ * - All data sourced from public Swedish government APIs (riksdagen.se, regeringen.se)
+ * 
+ * Article Generation Modes:
+ * - Weekly mode: Generates "week-ahead" prospective articles for Mondays
+ * - Daily mode: Generates individual daily activity summaries
+ * - Committee-focused: Highlights committee activities and reports
+ * - Proposition tracking: Legislative bill introduction and status updates
+ * - Motion monitoring: Parliament member initiatives and amendments
+ * 
+ * Date Range Flexibility:
+ * - Accepts configurable --from and --to date parameters
+ * - Supports backfilling of specific date gaps
+ * - Default range: 2026-01-01 to current date
+ * - CLI examples:
+ *   node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10
+ *   node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --mode=weekly
+ *   node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --languages=all
+ * 
+ * Multi-Language Generation:
+ * - Generates articles for all 14 languages or specified subset
+ * - Supports language codes: en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh
+ * - Uses automated translation or language-specific templates
+ * - Maintains terminology consistency across language variants
+ * 
+ * Content Generation Workflow:
+ * - Fetches parliamentary data from MCP server for date range
+ * - Extracts: watch points, key decisions, committee reports, voting patterns
+ * - Generates article metadata: title, summary, category, author attribution
+ * - Creates HTML content with proper markup and links
+ * - Applies data-transformers.js for content enhancement
+ * - Generates article-template.js formatted output
+ * - Produces valid HTML with proper meta tags and structured data
+ * 
+ * Data Transformation Pipeline:
+ * - generateArticleContent(): Creates article narrative from parliamentary data
+ * - extractWatchPoints(): Identifies significant developments to monitor
+ * - generateMetadata(): Creates article frontmatter with publication metadata
+ * - calculateReadTime(): Estimates reading duration for accessibility
+ * - generateSources(): Documents data sources for transparency/OSINT audit
+ * 
+ * Intelligence Integration:
+ * - Enables trend analysis across historical date ranges
+ * - Supports pattern identification in parliamentary activity
+ * - Facilitates identification of policy shift timing
+ * - Documents decision-making chronology for case studies
+ * - Maintains comprehensive intelligence archive
+ * 
+ * Rate Limiting & Performance:
+ * - Configurable delay (--delay parameter, default 2000ms) between MCP calls
+ * - Prevents MCP server overload during bulk generation
+ * - Dry-run mode (--dry-run flag) for validation without file output
+ * - Progress reporting and error summarization
+ * 
+ * Output Structure:
+ * - Generated files: news/article_{slug}_{lang}.html
+ * - Includes article metadata, body content, references
+ * - JSON-LD structured data for search engines
+ * - Open Graph tags for social media sharing
+ * - Proper language attributes for multi-language support
+ * 
+ * Error Handling:
+ * - Validates article data before generation
+ * - Skips articles with insufficient data (graceful degradation)
+ * - Reports skipped files and processing errors
+ * - Maintains processing statistics and metrics
+ * 
+ * OSINT & Data Sourcing:
+ * - All data from public Swedish government sources
+ * - Complies with Offentlighetsprincipen (public access principle)
+ * - Proper attribution of government sources
+ * - Audit trail of information sources
+ * 
+ * Usage Examples:
  *   node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10
  *   node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --types=week-ahead
  *   node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --languages=all --dry-run
  *   node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --mode=weekly
+ * 
+ * ISMS Compliance:
+ * - ISO 27001:2022 A.5.33 - Protection of records (audit trail of data sources)
+ * - ISO 27001:2022 A.12.1.1 - Change management (version control of articles)
+ * - NIST CSF 2.0 RC.IM-2 (incident management and reporting)
+ * 
+ * Data Protection:
+ * - Processes only public government data
+ * - GDPR Article 6(1)(e) - Public interest processing
+ * - No personal data in generated articles (politicians only in official capacity)
+ * - Complies with transparency principles
+ * 
+ * @intelligence Historical intelligence archive construction tool
+ * @osint Aggregates public government data from multiple sources
+ * @risk Data accuracy depends on MCP server data quality
+ * @gdpr Processes public government data only (no sensitive personal data)
+ * @security MCP server connection should use HTTPS; validate data before output
+ * 
+ * @author Hack23 AB (Intelligence Archive Team)
+ * @license Apache-2.0
+ * @version 1.5.0
+ * @see MCP Client implementation (mcp-client.js)
+ * @see Data Transformers (data-transformers.js)
+ * @see Article Template (article-template.js)
+ * @see riksdagen.se - Swedish Parliament official source
+ * @see regeringen.se - Swedish Government official source
  */
 
 import fs from 'fs';

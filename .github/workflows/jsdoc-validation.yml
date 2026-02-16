@@ -1,0 +1,224 @@
+name: JSDoc Documentation Validation
+
+# Trigger on changes to JavaScript files in key directories
+on:
+  push:
+    branches: [main, develop, 'copilot/**']
+    paths:
+      - 'js/**/*.js'
+      - 'dashboard/**/*.js'
+      - 'scripts/**/*.js'
+      - 'jsdoc.json'
+      - 'tests/jsdoc-validation.test.js'
+      - '.github/workflows/jsdoc-validation.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'js/**/*.js'
+      - 'dashboard/**/*.js'
+      - 'scripts/**/*.js'
+      - 'jsdoc.json'
+      - 'tests/jsdoc-validation.test.js'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write  # Allow committing generated API docs
+  pull-requests: read
+
+jobs:
+  jsdoc-generation:
+    name: Generate & Validate JSDoc
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        with:
+          egress-policy: audit
+          
+      - name: Checkout Repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        
+      - name: Setup Node.js 24
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+          
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npm list jsdoc || echo "JSDoc not yet installed"
+          
+      - name: Generate JSDoc Documentation
+        id: generate
+        run: |
+          echo "🔍 Generating JSDoc API documentation..."
+          npm run jsdoc
+          echo "✅ JSDoc generation complete"
+          
+      - name: Commit API Documentation
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/copilot/'))
+        run: |
+          # Configure git
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if there are changes to commit
+          git add api/
+          
+          if git diff --staged --quiet; then
+            echo "📝 No changes to API documentation"
+          else
+            echo "📝 Committing updated API documentation..."
+            git commit -m "docs: Update JSDoc API documentation [skip ci]
+            
+            - Generated from latest JavaScript source code
+            - Includes intelligence operative perspective
+            - Deployed via GitHub Pages
+            
+            Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+            
+            git push
+            echo "✅ API documentation committed and pushed"
+          fi
+          
+      - name: Verify api/ Directory Created
+        run: |
+          if [ ! -d "api" ]; then
+            echo "❌ ERROR: api/ directory not created by JSDoc"
+            exit 1
+          fi
+          echo "✅ api/ directory exists"
+          
+          # Count generated files
+          HTML_COUNT=$(find api -name "*.html" | wc -l)
+          echo "📄 Generated $HTML_COUNT HTML documentation files"
+          
+          if [ "$HTML_COUNT" -lt 5 ]; then
+            echo "⚠️ WARNING: Expected at least 5 HTML files, found $HTML_COUNT"
+            exit 1
+          fi
+          
+          echo "✅ JSDoc generated sufficient documentation files"
+          
+      - name: List Generated Documentation
+        run: |
+          echo "📋 Generated JSDoc Files:"
+          ls -lh api/ | head -20
+          
+      - name: Check for index.html
+        run: |
+          if [ ! -f "api/index.html" ]; then
+            echo "❌ ERROR: api/index.html not found"
+            exit 1
+          fi
+          
+          FILE_SIZE=$(stat -f%z "api/index.html" 2>/dev/null || stat -c%s "api/index.html")
+          echo "✅ api/index.html exists (${FILE_SIZE} bytes)"
+          
+      - name: Validate Intelligence Terminology
+        run: |
+          echo "🔍 Validating intelligence operative perspective in docs..."
+          
+          # Check for key intelligence terms in index.html
+          INTELLIGENCE_FOUND=false
+          OSINT_FOUND=false
+          RISK_FOUND=false
+          
+          if grep -qi "intelligence" api/index.html; then
+            INTELLIGENCE_FOUND=true
+            echo "✅ Found 'intelligence' terminology"
+          fi
+          
+          if grep -qi "osint\|open-source intelligence" api/index.html; then
+            OSINT_FOUND=true
+            echo "✅ Found 'OSINT' terminology"
+          fi
+          
+          if grep -qi "risk assessment\|risk analysis" api/index.html; then
+            RISK_FOUND=true
+            echo "✅ Found 'risk assessment' terminology"
+          fi
+          
+          if [ "$INTELLIGENCE_FOUND" = false ] && [ "$OSINT_FOUND" = false ]; then
+            echo "⚠️ WARNING: Intelligence terminology not prominent in documentation"
+          fi
+          
+      - name: Run JSDoc Validation Tests
+        run: |
+          echo "🧪 Running JSDoc validation test suite..."
+          npm run jsdoc:validate || npm run test tests/jsdoc-validation.test.js
+          
+      - name: Check JSDoc Coverage in Source Files
+        run: |
+          echo "📊 Checking JSDoc coverage in source files..."
+          
+          # Count JavaScript files
+          TOTAL_JS=$(find js dashboard scripts -name "*.js" ! -name "*.min.js" ! -path "*/lib/*" | wc -l)
+          
+          # Count files with JSDoc (/** */)
+          FILES_WITH_JSDOC=$(find js dashboard scripts -name "*.js" ! -name "*.min.js" ! -path "*/lib/*" -exec grep -l "/\*\*" {} \; | wc -l)
+          
+          echo "📈 JSDoc Coverage: $FILES_WITH_JSDOC / $TOTAL_JS files"
+          
+          if [ "$TOTAL_JS" -gt 0 ]; then
+            COVERAGE_PERCENT=$((FILES_WITH_JSDOC * 100 / TOTAL_JS))
+            echo "📊 Coverage: ${COVERAGE_PERCENT}%"
+            
+            if [ "$COVERAGE_PERCENT" -lt 50 ]; then
+              echo "⚠️ WARNING: JSDoc coverage below 50%"
+            elif [ "$COVERAGE_PERCENT" -ge 80 ]; then
+              echo "✅ Excellent JSDoc coverage (≥80%)"
+            else
+              echo "✓ Acceptable JSDoc coverage (≥50%)"
+            fi
+          fi
+          
+      - name: Upload JSDoc Artifacts
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        if: always()
+        with:
+          name: jsdoc-api-docs
+          path: api/
+          retention-days: 30
+          
+      - name: Generate Summary
+        if: always()
+        run: |
+          echo "## 📚 JSDoc Documentation Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Generation Status" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -d "api" ]; then
+            HTML_COUNT=$(find api -name "*.html" | wc -l)
+            echo "✅ **JSDoc Generation**: Success" >> $GITHUB_STEP_SUMMARY
+            echo "📄 **Generated Files**: $HTML_COUNT HTML documents" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **JSDoc Generation**: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Intelligence Perspective" >> $GITHUB_STEP_SUMMARY
+          echo "Documentation reflects political analyst and intelligence operative perspective." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "📦 Generated documentation uploaded as workflow artifact (30-day retention)" >> $GITHUB_STEP_SUMMARY
+          
+  # Optional: Deploy to GitHub Pages (requires separate branch setup)
+  # deploy-docs:
+  #   name: Deploy to GitHub Pages
+  #   needs: jsdoc-generation
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main'
+  #   steps:
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         name: jsdoc-api-docs
+  #         path: api/
+  #     - uses: peaceiris/actions-gh-pages@v4
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         publish_dir: ./api
+  #         destination_dir: api

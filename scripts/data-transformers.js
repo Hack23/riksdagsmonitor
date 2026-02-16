@@ -1,13 +1,196 @@
 #!/usr/bin/env node
 
 /**
- * Data Transformers for News Article Generation
+ * @module Intelligence Operations/Data Transformation Pipeline
+ * @category Intelligence Operations - Intelligence Data Transformation
  * 
- * Transforms MCP server responses into structured article content.
- * Handles calendar events, documents, debates, and more.
+ * @description
+ * Core data transformation pipeline converting raw MCP server responses into
+ * structured intelligence article content. This module implements advanced semantic
+ * processing algorithms for legislative data, parliamentary event analysis, and
+ * multi-dimensional data mapping for automated journalism.
  * 
- * Usage:
- *   import { transformCalendarToEventGrid, generateArticleContent } from './data-transformers.js';
+ * The transformation pipeline provides four specialized processing stages:
+ * 
+ * Stage 1 - Calendar Event Processing (transformCalendarToEventGrid):
+ * Transforms raw calendar data from riksdag-regering-mcp into structured event grid
+ * suitable for visual presentation. Handles multiple timestamp formats (MCP responses
+ * may use 'datum', 'from', 'start' fields), performs temporal normalization, and
+ * groups events by date for calendar visualization. Implements date comparison logic
+ * for marking "today" events with visual indicators.
+ * 
+ * Stage 2 - Document Content Generation (generateArticleContent):
+ * Processes structured parliamentary documents into narrative article prose. Maps
+ * document types (propositions, motions, reports) to narrative structures, extracts
+ * semantic meaning from legislative language, and generates coherent paragraphs
+ * suitable for journalist review. Applies natural language processing techniques
+ * for readability optimization and audience targeting.
+ * 
+ * Stage 3 - Intelligence Extraction (extractWatchPoints):
+ * Performs analytical extraction of critical intelligence points from parliamentary
+ * data. Identifies policy implications, fiscal impacts, timeline constraints, and
+ * political risk factors. Uses rule-based analysis for common legislative patterns
+ * (votes, committee decisions, government actions) and produces structured watch
+ * points for inclusion in article "watch sections".
+ * 
+ * Stage 4 - Metadata Generation (generateMetadata, calculateReadTime, generateSources):
+ * Synthesizes article metadata including publication date, author attribution, reading
+ * time estimates, source citations, and SEO keywords. Generates machine-readable
+ * metadata for structured data (Schema.org JSON-LD) and social media sharing.
+ * 
+ * Supported Data Types:
+ * - Calendar events (committee meetings, plenary sessions, parliamentary breaks)
+ * - Legislative documents (propositions, motions, parliamentary inquiries)
+ * - Voting records (roll-call votes with party/member positions)
+ * - Government announcements (press releases, policy documents, ministerial statements)
+ * - Committee reports (analysis, recommendations, decisions)
+ * - Debate transcripts (parliamentary speeches with speaker context)
+ * 
+ * Multi-Language Processing:
+ * - Swedish source content transformation into 14 target languages
+ * - Terminology mapping for political/legal concepts
+ * - Date formatting and timezone adjustment per target language
+ * - Pluralization and grammatical agreement handling
+ * - RTL language support for Arabic and Hebrew output
+ * 
+ * Data Validation & Quality Assurance:
+ * - Schema validation against CIA data model definitions
+ * - Null/undefined field handling with intelligent fallbacks
+ * - Temporal consistency checking (dates in correct order)
+ * - Cross-reference validation (referenced documents exist)
+ * - Semantic completeness assessment
+ * 
+ * @intelligence
+ * Semantic Processing Methodology:
+ * 
+ * Legislative Intent Analysis:
+ * Extracts implicit meaning from formal parliamentary language through:
+ * - Keyword detection for policy domains (fiscal, healthcare, defense, etc.)
+ * - Stakeholder identification (ministries, agencies, party groups)
+ * - Impact type classification (regulatory, fiscal, social)
+ * - Timeline extraction (implementation dates, decision deadlines)
+ * - Precedent linking (related historical legislative actions)
+ * 
+ * Party Position Inference:
+ * Maps voting records and committee recommendations to political positions:
+ * - Consensus detection (all parties agree vs. split votes)
+ * - Coalition formation analysis (which parties vote together)
+ * - Opposition mapping (which parties consistently oppose)
+ * - Swing vote identification (MPs changing position across votes)
+ * 
+ * Risk Indicator Extraction:
+ * Identifies critical intelligence points:
+ * - Fiscal implications and budget impacts
+ * - Timeline constraints and urgent decisions
+ * - Stakeholder conflicts and controversy indicators
+ * - Implementation risks and dependency chains
+ * - Political feasibility assessments
+ * 
+ * Content Generation Patterns:
+ * - Inverted pyramid structure (most important facts first)
+ * - Narrative coherence preservation across transformations
+ * - Tone consistency (journalistic neutrality in automated output)
+ * - Rhetorical device detection and adaptation
+ * 
+ * @osint
+ * Source Data Processing Strategies:
+ * 
+ * MCP API Response Handling:
+ * - Graceful handling of incomplete or malformed MCP responses
+ * - Field mapping flexibility for varying API versions
+ * - Timestamp normalization across multiple formats
+ * - Array and object structure flattening for template consumption
+ * 
+ * Data Quality Assessment:
+ * - Completeness scoring (what percentage of fields populated?)
+ * - Freshness validation (data collection timestamp vs. processing time)
+ * - Consistency checking (cross-field validation)
+ * - Accuracy verification (comparison against official sources where possible)
+ * 
+ * Source Attribution:
+ * - MCP tool reference tracking (which API call produced this data?)
+ * - Data timestamp preservation (when was this data collected?)
+ * - Source URL generation for primary documents
+ * - Author/department attribution for government documents
+ * 
+ * @risk
+ * Data Transformation Risks & Mitigations:
+ * 
+ * Threat: Semantic Loss in Translation
+ * - Complex political concepts losing nuance in transformation
+ * - Mitigation: Preserve original language for key terms, human review process
+ * 
+ * Threat: Data Hallucination
+ * - Algorithm generating plausible but incorrect inferences
+ * - Mitigation: Strict fact-based extraction, no speculative inference
+ * 
+ * Threat: Timestamp Ambiguity
+ * - Multiple timestamp fields with different meanings causing confusion
+ * - Mitigation: Explicit field mapping, validation against known formats
+ * 
+ * Threat: Array Data Loss
+ * - Simplified array flattening losing important structure
+ * - Mitigation: Preserve hierarchical structure in intermediate representations
+ * 
+ * Threat: Language Pair Incompleteness
+ * - Missing translations causing incomplete or English article fallback
+ * - Mitigation: Fallback chain (target > Swedish > English), quality validation
+ * 
+ * @gdpr
+ * Data Processing Compliance:
+ * 
+ * - Personal Data Exclusion:
+ *   * Exclude contact information, addresses, phone numbers
+ *   * Exclude email addresses and social media handles
+ *   * Process public officials in official capacity only
+ * 
+ * - Data Minimization:
+ *   * Extract only necessary fields for article generation
+ *   * Remove internal government identifiers and batch IDs
+ *   * Exclude audit logs and technical metadata
+ * 
+ * - Purpose Limitation:
+ *   * Generate public articles only
+ *   * No profiling or behavioral analysis
+ *   * No commercial use beyond journalism platform
+ * 
+ * - Processing Transparency:
+ *   * Document all transformation rules
+ *   * Publish source attribution with articles
+ *   * Maintain audit trail via Git
+ * 
+ * @security
+ * Content Security Implementation:
+ * 
+ * Input Validation:
+ * - Type checking for all input parameters
+ * - Array/object structure validation before processing
+ * - String content sanitization via escapeHtml()
+ * - Numeric field validation (dates, counts, percentages)
+ * 
+ * Output Encoding:
+ * - HTML entity escaping for all narrative text
+ * - URL encoding for generated links
+ * - No code injection vectors in generated content
+ * - CSS selector sanitization for class/ID generation
+ * 
+ * Dependency Security:
+ * - html-utils module provides sanitization
+ * - No eval() or Function() constructor usage
+ * - No dynamic require() or import() patterns
+ * - Direct module imports only
+ * 
+ * @author Hack23 AB - Intelligence Operations Team
+ * @license Apache-2.0
+ * @version 2.0.0
+ * 
+ * @see {@link ./mcp-client.js} MCP API client providing raw data
+ * @see {@link ./article-template.js} Template rendering consuming transformed data
+ * @see {@link ./generate-news-enhanced.js} Article generation orchestration
+ * @see {@link ./html-utils.js} HTML sanitization (escapeHtml)
+ * @see {@link docs/DATA_TRANSFORMATION_GUIDE.md} Detailed transformation algorithms
+ * @see {@link docs/MCP_DATA_SCHEMA.md} MCP response schema definitions
+ * @see {@link docs/INTELLIGENCE_EXTRACTION.md} Intelligence analysis methodology
  */
 
 import { escapeHtml } from './html-utils.js';
