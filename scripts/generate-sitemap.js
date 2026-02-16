@@ -104,6 +104,7 @@ console.log('🗺️ Sitemap Generation Script');
 // Configuration
 const BASE_URL = 'https://riksdagsmonitor.com';
 const NEWS_DIR = path.join(__dirname, '..', 'news');
+const API_DIR = path.join(__dirname, '..', 'api');
 const ROOT_DIR = path.join(__dirname, '..');
 const SITEMAP_FILE = path.join(ROOT_DIR, 'sitemap.xml');
 
@@ -130,8 +131,8 @@ function getNewsArticles() {
   const articles = new Map();
   
   files.forEach(file => {
-    // Extract base slug and language
-    const match = file.match(/^(.+?)-(en|sv)\.html$/);
+    // Extract base slug and language (support all 14 languages)
+    const match = file.match(/^(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
     if (match) {
       const [, baseSlug, lang] = match;
       const filePath = path.join(NEWS_DIR, file);
@@ -156,6 +157,29 @@ function getNewsArticles() {
   });
   
   return Array.from(articles.values());
+}
+
+/**
+ * Get API documentation files
+ */
+function getApiDocs() {
+  console.log('📚 Scanning API documentation directory...');
+  
+  if (!fs.existsSync(API_DIR)) {
+    console.warn('⚠️ API directory not found');
+    return [];
+  }
+  
+  const files = fs.readdirSync(API_DIR)
+    .filter(file => file.endsWith('.html'));
+  
+  console.log(`  Found ${files.length} API documentation files`);
+  
+  return files.map(file => ({
+    file,
+    path: path.join(API_DIR, file),
+    lastmod: getFileModTime(path.join(API_DIR, file))
+  }));
 }
 
 /**
@@ -226,17 +250,26 @@ function generateSitemap() {
   const politicianDashboardMtime = getFileModTime(path.join(ROOT_DIR, 'politician-dashboard.html'));
   xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
   
-  // Dashboard pages with language alternates
-  const dashboardAlternates = [
-    { lang: 'en', href: 'dashboard/index.html' },
-    { lang: 'sv', href: 'dashboard/index_sv.html' }
-  ];
+  // Dashboard pages with all language alternates
+  const dashboardAlternates = LANGUAGES.map(lang => ({
+    lang,
+    href: lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${lang}.html`
+  }));
   
+  // English dashboard (canonical)
   const dashboardEnMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index.html'));
   xml += generateUrlEntry('dashboard/index.html', dashboardEnMtime, 'weekly', '0.8', dashboardAlternates);
   
-  const dashboardSvMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index_sv.html'));
-  xml += generateUrlEntry('dashboard/index_sv.html', dashboardSvMtime, 'weekly', '0.8');
+  // All other language dashboard pages
+  LANGUAGES.filter(lang => lang !== 'en').forEach(lang => {
+    const loc = `dashboard/index_${lang}.html`;
+    const dashboardPath = path.join(ROOT_DIR, 'dashboard', `index_${lang}.html`);
+    if (fs.existsSync(dashboardPath)) {
+      const lastmod = getFileModTime(dashboardPath);
+      const priority = lang === 'sv' ? '0.8' : '0.7';
+      xml += generateUrlEntry(loc, lastmod, 'weekly', priority);
+    }
+  });
   
   // Sitemap HTML pages with language alternates
   const sitemapAlternates = [
@@ -364,6 +397,19 @@ function generateSitemap() {
       xml += generateUrlEntry(loc, article.lastmod, 'monthly', '0.8', alternates);
     });
   });
+  
+  // API Documentation (JSDoc generated)
+  const apiDocs = getApiDocs();
+  if (apiDocs.length > 0) {
+    console.log(`  Processing ${apiDocs.length} API documentation files...`);
+    
+    apiDocs.forEach(doc => {
+      const loc = `api/${doc.file}`;
+      // API docs have lower priority but are useful for developers
+      const priority = doc.file === 'index.html' ? '0.7' : '0.5';
+      xml += generateUrlEntry(loc, doc.lastmod, 'weekly', priority);
+    });
+  }
   
   xml += `
   
