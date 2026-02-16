@@ -18,9 +18,9 @@ Skills are:
 - ✅ **Reusable**: Apply across multiple tasks
 - ✅ **Context-Aware**: Load only when relevant
 
-## Available Skills (56 Total) ✨ **UPDATED 2026-02-11**
+## Available Skills (57 Total) ✨ **UPDATED 2026-02-11**
 
-### Core Infrastructure (7 skills)
+### Core Infrastructure (8 skills) ⬆️ **EXPANDED**
 1. hack23-isms-compliance
 2. security-by-design
 3. static-site-security
@@ -28,6 +28,7 @@ Skills are:
 5. documentation-standards
 6. html-accessibility
 7. multi-language-localization
+8. **hack23-future-architecture-standards** ✨ **NEW** (2026-02-11) - Complete standards for FUTURE_ARCHITECTURE.md documents
 
 ### Political Intelligence (11 skills)
 8. political-science-analysis
@@ -51,37 +52,37 @@ Skills are:
 24. security-documentation
 
 ### Development & Operations (11 skills)
-25. c4-architecture-documentation
-26. github-actions-workflows
-27. code-quality-checks
-28. secrets-management
-29. data-pipeline-engineering
-30. automated-content-generation
-31. performance-optimization
-32. api-integration
-33. github-agentic-workflows
+26. c4-architecture-documentation
+27. github-actions-workflows
+28. code-quality-checks
+29. secrets-management
+30. data-pipeline-engineering
+31. automated-content-generation
+32. performance-optimization
+33. api-integration
+34. github-agentic-workflows
 
 ### UI/UX & Design (5 skills) ⬆️ **EXPANDED** ✨
-34. responsive-design
-35. design-system-management
-36. political-data-visualization
-37. advanced-data-visualization
-38. **ui-ux-design** ✨ **NEW** (2026-02-11) - Comprehensive UX, usability, accessibility
+35. responsive-design
+36. design-system-management
+37. political-data-visualization
+38. advanced-data-visualization
+39. **ui-ux-design** ✨ **NEW** (2026-02-11) - Comprehensive UX, usability, accessibility
 
 ### Testing & Quality Assurance (2 skills)
-39. playwright-testing
-40. issue-management
+40. playwright-testing
+41. issue-management
 
 ### Data Integration (2 skills)
-41. riksdag-regering-mcp
-42. cia-data-integration
+42. riksdag-regering-mcp
+43. cia-data-integration
 
 ### Business & Marketing (2 skills) ✨ **NEW CATEGORY** (2026-02-11)
-43. **marketing** ✨ **NEW** - Digital marketing, SEO, content, social media, analytics
-44. **business-development** ✨ **NEW** - Partnerships, revenue models, stakeholder engagement
+44. **marketing** ✨ **NEW** - Digital marketing, SEO, content, social media, analytics
+45. **business-development** ✨ **NEW** - Partnerships, revenue models, stakeholder engagement
 
 ### Language & Localization (1 skill) ✨ **NEW CATEGORY** (2026-02-11)
-45. **language-expertise** ✨ **NEW** - Comprehensive expertise for all 14 languages (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
+46. **language-expertise** ✨ **NEW** - Comprehensive expertise for all 14 languages (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
 
 ---
 
@@ -262,7 +263,50 @@ Skills are:
 - SEO optimization
 - Cultural adaptation
 
-### 8. political-science-analysis
+### 8. hack23-future-architecture-standards ✨ **NEW** (2026-02-11)
+**Purpose**: Complete standards for creating FUTURE_ARCHITECTURE.md documents following CIA Compliance Manager gold standard
+
+**Key Principles**:
+- Comprehensive Future State Planning
+- C4 Model Architecture (Context + Container diagrams)
+- AWS Well-Architected Framework Alignment (5 pillars)
+- Multi-Region Strategy Documentation
+- Pure Technical Architecture (no business/monetary content)
+
+**Enforces**:
+- Document structure: minimum 800 lines (target 1,000-1,300)
+- Related documentation table: 16 documents (8 current + 8 future)
+- C4 diagrams: Context + Container with focus statements
+- AWS Well-Architected: All 5 pillars (Security, Reliability, Performance, Cost Optimization, Operational Excellence)
+- AWS Security Services: 7 core services (IAM, Cognito, GuardDuty, Security Hub, WAF, KMS, CloudTrail)
+- Multi-region architecture: Active-Active or Active-Passive with DynamoDB Global Tables
+- Mermaid diagrams: Minimum 8 diagrams with consistent color scheme
+- Migration roadmap: 4-phase plan with timeline and technical milestones
+- Comprehensive conclusion: 400-600 words summarizing technical vision
+
+**Standards Include**:
+- Header format with version, date, status (X.X-DRAFT)
+- Executive summary (100-200 words)
+- Current vs Future comparison (v1.0 → v2.0)
+- Architectural vision with core principles (8-12 principles)
+- Security services integration diagrams
+- Multi-region deployment topology
+- DynamoDB Global Tables configuration
+- Route 53 health checks and failover
+- Risk mitigation strategies
+
+**Reference Implementation**:
+- CIA Compliance Manager: 1,326 lines, 65 KB, 15+ diagrams
+- URL: https://github.com/Hack23/cia-compliance-manager/blob/main/docs/architecture/FUTURE_ARCHITECTURE.md
+
+**When to Use**:
+- Creating new FUTURE_ARCHITECTURE.md documents
+- Updating existing future architecture documentation
+- Planning AWS serverless migrations
+- Documenting multi-region strategies
+- Compliance with Hack23 documentation standards
+
+### 9. political-science-analysis
 **Purpose**: Apply comparative politics, political behavior, public policy analysis frameworks to Swedish political data
 
 **Key Principles**:
@@ -286,7 +330,7 @@ Skills are:
 - Policy impact evaluation
 - Democratic accountability metrics
 
-### 9. osint-methodologies
+### 10. osint-methodologies
 **Purpose**: OSINT collection, source evaluation, data integration for Swedish political intelligence
 
 **Key Principles**:
@@ -309,7 +353,7 @@ Skills are:
 - Source credibility assessment
 - OSINT collection strategies
 
-### 10. intelligence-analysis-techniques
+### 11. intelligence-analysis-techniques
 **Purpose**: Structured analytic techniques (ACH, SWOT, Devil's Advocacy) for political intelligence
 
 **Key Principles**:
@@ -332,7 +376,7 @@ Skills are:
 - Policy outcome assessment
 - Crisis analysis
 
-### 11. swedish-political-system
+### 12. swedish-political-system
 **Purpose**: Swedish Riksdag structure, 8 parties, electoral system, government formation
 
 **Key Principles**:
@@ -355,7 +399,7 @@ Skills are:
 - Electoral analysis
 - Government formation
 
-### 12. electoral-analysis
+### 13. electoral-analysis
 **Purpose**: Election forecasting, campaign analysis, coalition prediction
 
 **Key Principles**:
@@ -377,7 +421,7 @@ Skills are:
 - Coalition predictions
 - Voter behavior modeling
 
-### 13. behavioral-analysis
+### 14. behavioral-analysis
 **Purpose**: Political psychology, cognitive biases, leadership analysis
 
 **Key Principles**:
@@ -399,7 +443,7 @@ Skills are:
 - Coalition dynamics
 - Decision-making analysis
 
-### 14. strategic-communication-analysis
+### 15. strategic-communication-analysis
 **Purpose**: Narrative analysis, media bias detection, information operations
 
 **Key Principles**:
@@ -421,7 +465,7 @@ Skills are:
 - Disinformation detection
 - Communication strategy assessment
 
-### 15. legislative-monitoring
+### 16. legislative-monitoring
 **Purpose**: Voting patterns, bill tracking, committee effectiveness, parliamentary oversight
 
 **Key Principles**:
@@ -443,7 +487,7 @@ Skills are:
 - Committee analysis
 - Oversight effectiveness
 
-### 16. risk-assessment-frameworks
+### 17. risk-assessment-frameworks
 **Purpose**: Political risk indicators, corruption detection, early warning systems
 
 **Key Principles**:
@@ -465,7 +509,7 @@ Skills are:
 - Democratic stability
 - Accountability gaps
 
-### 17. data-science-for-intelligence
+### 18. data-science-for-intelligence
 **Purpose**: Statistical analysis, data visualization, pattern recognition for political intelligence
 
 **Key Principles**:
@@ -487,7 +531,7 @@ Skills are:
 - Pattern analysis
 - Statistical modeling
 
-### 18. gdpr-compliance
+### 19. gdpr-compliance
 **Purpose**: GDPR compliance for political data processing, privacy-by-design
 
 **Key Principles**:
@@ -510,7 +554,7 @@ Skills are:
 - Data collection strategies
 - Compliance verification
 
-### 19. cis-controls ✨ NEW
+### 20. cis-controls ✨ NEW
 **Purpose**: CIS Controls v8.1 critical security controls for static HTML/CSS websites on GitHub Pages
 
 **Key Principles**:
@@ -533,7 +577,7 @@ Skills are:
 - GitHub Pages configuration
 - Security baseline establishment
 
-### 20. iso-27001-controls ✨ NEW
+### 21. iso-27001-controls ✨ NEW
 **Purpose**: ISO 27001:2022 Annex A controls for static HTML/CSS websites
 
 **Key Principles**:
@@ -555,7 +599,7 @@ Skills are:
 - ISO 27001 certification prep
 - Control implementation verification
 
-### 21. nist-csf-mapping ✨ NEW
+### 22. nist-csf-mapping ✨ NEW
 **Purpose**: NIST Cybersecurity Framework 2.0 mapping for static sites
 
 **Key Principles**:
@@ -578,7 +622,7 @@ Skills are:
 - Risk management
 - Control mapping
 
-### 22. threat-modeling ✨ NEW
+### 23. threat-modeling ✨ NEW
 **Purpose**: STRIDE threat modeling for static HTML/CSS websites on GitHub Pages
 
 **Key Principles**:
@@ -603,7 +647,7 @@ Skills are:
 - Risk assessments
 - ISMS compliance (ISO A.12.6)
 
-### 23. secure-code-review ✨ NEW
+### 24. secure-code-review ✨ NEW
 **Purpose**: Security code review for HTML/CSS/JavaScript in static websites
 
 **Key Principles**:
@@ -625,7 +669,7 @@ Skills are:
 - Code contributions
 - XSS prevention
 
-### 24. security-documentation ✨ NEW
+### 25. security-documentation ✨ NEW
 **Purpose**: ISMS security documentation standards for Hack23 projects
 
 **Key Principles**:
@@ -648,7 +692,7 @@ Skills are:
 - ISMS audits
 - Compliance documentation
 
-### 25. c4-architecture-documentation ✨ NEW
+### 26. c4-architecture-documentation ✨ NEW
 **Purpose**: C4 architecture model for documenting static sites with MCP integrations
 
 **Key Principles**:
@@ -669,7 +713,7 @@ Skills are:
 - MCP server integration
 - Technology decisions
 
-### 26. github-actions-workflows ✨ NEW
+### 27. github-actions-workflows ✨ NEW
 **Purpose**: GitHub Actions workflow patterns for static site CI/CD
 
 **Key Principles**:
@@ -692,7 +736,7 @@ Skills are:
 - Security hardening
 - Quality gate implementation
 
-### 27. code-quality-checks ✨ NEW
+### 28. code-quality-checks ✨ NEW
 **Purpose**: Quality gates for static HTML/CSS websites
 
 **Key Principles**:
@@ -715,7 +759,7 @@ Skills are:
 - Pre-deployment checks
 - Continuous monitoring
 
-### 28. secrets-management ✨ NEW
+### 29. secrets-management ✨ NEW
 **Purpose**: GitHub secrets and environment variables for MCP servers and CI/CD
 
 **Key Principles**:
@@ -1283,7 +1327,7 @@ Skills enforce compliance with:
 **Last Major Update**: 2026-02-06  
 **New Skills Added**: data-pipeline-engineering, automated-content-generation, performance-optimization, api-integration, advanced-data-visualization, cia-data-integration
 
-### 33. github-agentic-workflows ✨ **NEW** (2026-02-11)
+### 34. github-agentic-workflows ✨ **NEW** (2026-02-11)
 **Purpose**: Master GitHub Agentic Workflows - AI-powered repository automation hosted in GitHub Actions
 
 **Key Capabilities**:
@@ -1405,7 +1449,7 @@ gh aw init                         # Initialize repository
 
 **Related Skills**: responsive-design, design-system-management, html-accessibility, multi-language-localization
 
-### 43. marketing ✨ NEW
+### 44. marketing ✨ NEW
 **Purpose**: Strategic marketing for promoting political transparency platforms and driving adoption
 
 **Key Capabilities**:
@@ -1429,7 +1473,7 @@ gh aw init                         # Initialize repository
 
 **Target Audiences**: Citizens, journalists, researchers, policymakers, international users
 
-### 44. business-development ✨ NEW
+### 45. business-development ✨ NEW
 **Purpose**: Strategic growth, partnerships, and sustainable revenue models for open-source platforms
 
 **Key Capabilities**:
@@ -1452,7 +1496,7 @@ gh aw init                         # Initialize repository
 
 **Revenue Streams**: Enterprise licenses, research grants, consulting, partnerships, ethical sponsorships
 
-### 45. language-expertise ✨ NEW
+### 46. language-expertise ✨ NEW
 **Purpose**: Comprehensive linguistic and cultural expertise for all 14 supported languages
 
 **Supported Languages**:
