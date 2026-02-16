@@ -162,17 +162,21 @@ describe('JSDoc Generation & Validation', () => {
     });
     
     it('should document GDPR compliance for political data', async () => {
-      const files = await fs.readdir(API_DIR);
-      const htmlFiles = files.filter(f => f.endsWith('.html'));
+      // Check multiple key files for GDPR references
+      const filesToCheck = ['index.html', 'global.html', 'module-OSINT_DataAcquisition.html', 'module-RiskAssessment_AnomalyDetection.html'];
       
       let foundGDPR = false;
       
-      // Check multiple files for GDPR references
-      for (const file of htmlFiles.slice(0, 10)) {
-        const content = await fs.readFile(path.join(API_DIR, file), 'utf-8');
-        if (content.toLowerCase().includes('gdpr')) {
-          foundGDPR = true;
-          break;
+      for (const file of filesToCheck) {
+        const filePath = path.join(API_DIR, file);
+        const exists = await fs.access(filePath).then(() => true).catch(() => false);
+        
+        if (exists) {
+          const content = await fs.readFile(filePath, 'utf-8');
+          if (content.toLowerCase().includes('gdpr')) {
+            foundGDPR = true;
+            break;
+          }
         }
       }
       

@@ -33,6 +33,9 @@ cypress/downloads/
 .vite/
 .cache/
 
+# JSDoc generated documentation (build artifact)
+api/
+
 # Environment variables
 .env
 .env.local
