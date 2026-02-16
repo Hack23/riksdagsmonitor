@@ -156,27 +156,23 @@ Parse the `article_types` input (comma-separated list) and generate the requeste
 
 **You have 32 specialized tools for Swedish political data ready to use.**
 
-**IMPORTANT:** Just call the tools directly using this syntax:
+**IMPORTANT:** Call the tools using their simple names directly:
 
 ```javascript
 // Calendar events
-const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
-  from: "2026-02-16",
-  tom: "2026-02-16",
-  limit: 50
-});
+get_calendar_events({ from: "2026-02-16", tom: "2026-02-16", limit: 50 })
 
 // Recent documents
-const docs = await mcp["riksdag-regering"]["riksdag-regering--search_dokument"]({
-  from_date: "2026-02-16",
-  limit: 30
-});
+search_dokument({ from_date: "2026-02-16", limit: 30 })
 
 // Check data freshness
-const status = await mcp["riksdag-regering"]["riksdag-regering--get_sync_status"]({});
+get_sync_status({})
+
+// Recent votes
+search_voteringar({ rm: "2025/26", limit: 20 })
 ```
 
-**Tool Naming Rule:** ALL tool names MUST have the `riksdag-regering--` prefix.
+**Tool Naming:** Use simple names like `get_calendar_events()`, `search_dokument()` - the framework handles routing automatically.
 
 ### 🚫 DO NOT Use Manual Approaches
 
@@ -186,10 +182,11 @@ const status = await mcp["riksdag-regering"]["riksdag-regering--get_sync_status"
 - ❌ Importing `MCPClient` from scripts
 - ❌ Trying to manage authentication/sessions yourself
 - ❌ Direct HTTP calls to the MCP server
+- ❌ Using `mcp["server"]["tool"]` wrapper syntax
 
 **✅ ALWAYS do this:**
-- ✅ Use `mcp["riksdag-regering"]["riksdag-regering--tool_name"]({ params })` syntax
-- ✅ Let the framework handle all authentication and session management
+- ✅ Use simple tool names: `get_calendar_events({ params })`, `search_dokument({ params })`
+- ✅ Let the framework handle all routing, authentication and session management
 - ✅ Trust the automatic retry logic for cold starts
 
 ### 🚨 Cold Start Handling
@@ -202,8 +199,8 @@ The MCP server may take 30-60 seconds on first request (cold start). **The frame
 
 | Error | Cause | Fix |
 |-------|-------|-----|
-| Tool not found | Missing `riksdag-regering--` prefix | Add prefix: `riksdag-regering--get_calendar_events` |
-| Empty results | No data in timeframe | Check `riksdag-regering--get_sync_status`, widen search |
+| Tool not found | Wrong tool name | Use exact names: `get_calendar_events`, `search_dokument` |
+| Empty results | No data in timeframe | Check `get_sync_status`, widen date range |
 | Timeout | Cold start (30-60s) | Wait - framework retries automatically |
 | Swedish-only results | Riksdag API returns Swedish | YOU must translate to target languages |
 
@@ -212,16 +209,16 @@ The MCP server may take 30-60 seconds on first request (cold start). **The frame
 You have access to 32 specialized tools for Swedish political data:
 
 ### Document Search
-- `riksdag-regering--search_dokument` - Search all Riksdag documents
-- `riksdag-regering--get_dokument` - Get specific document with full text
-- `riksdag-regering--search_dokument_fulltext` - Full-text search
+- `search_dokument` - Search all Riksdag documents
+- `get_dokument` - Get specific document with full text
+- `search_dokument_fulltext` - Full-text search
 
 ### Parliament Activity
-- `riksdag-regering--get_propositioner` - Latest government bills
-- `riksdag-regering--get_betankanden` - Latest committee reports
-- `riksdag-regering--get_motioner` - Latest opposition motions
-- `riksdag-regering--get_fragor` - Written questions
-- `riksdag-regering--get_interpellationer` - Interpellations
+- `get_propositioner` - Latest government bills
+- `get_betankanden` - Latest committee reports
+- `get_motioner` - Latest opposition motions
+- `get_fragor` - Written questions
+- `get_interpellationer` - Interpellations
 
 ### Calendar & Events
 - `get_calendar_events` - Upcoming parliamentary events (next 7 days)
