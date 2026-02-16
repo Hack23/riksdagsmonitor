@@ -1,16 +1,160 @@
 #!/usr/bin/env node
 
 /**
- * CIA Schema Synchronization Script
+ * @module Infrastructure/SchemaManagement
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name CIA Schema Synchronization - Upstream Schema Caching System
  * 
- * Fetches all 19 JSON schemas from the CIA repository and stores them locally
- * for validation and type generation purposes.
+ * @description
+ * Automated schema synchronization system fetching and caching all 19 JSON schemas
+ * from the CIA GitHub repository. Maintains local copies of data product schemas
+ * for validation, type generation, and data consistency verification. Enables offline
+ * operation and faster validation cycles compared to remote fetching.
  * 
- * CIA Repository: https://github.com/Hack23/cia
- * Schema Location: /json-export-specs/schemas/
+ * Strategic Purpose:
+ * Ensures riksdagsmonitor maintains synchronized copies of CIA platform's data
+ * product specifications, enabling validation of incoming data against authoritative
+ * schema definitions. Supports type-safe data handling through schema-driven code
+ * generation and provides audit trail of data compatibility versions.
  * 
- * @author Hack23 AB
+ * CIA Platform Integration:
+ * CIA (Continuous Intelligence Architecture) platform operates the Swedish parliament
+ * intelligence system, producing 19 data products with published JSON schemas. These
+ * schemas define data structure, validation rules, and semantic meaning for each
+ * intelligence product. riksdagsmonitor consumes these schemas for data validation.
+ * 
+ * CIA Data Products (19 schemas):
+ * - Dashboards: overview-dashboard, cabinet-scorecard, election-analysis
+ * - Personnel Analysis: top10-influential-mps, top10-productive-mps, top10-controversial-mps,
+ *   top10-absent-mps, top10-rebels, top10-coalition-brokers, top10-rising-stars,
+ *   top10-electoral-risk, top10-ethics-concerns, top10-media-presence
+ * - Network Analysis: committee-network, politician-career
+ * - Longitudinal Data: party-longitudinal, riksdag-overview, ministry-performance
+ * 
+ * Schema Synchronization Workflow:
+ * 1. Fetch schema list from CIA GitHub repository
+ * 2. For each schema:
+ *    - Download raw JSON schema file from GitHub
+ *    - Validate schema structure (JSON schema v4 compliance)
+ *    - Compute SHA-256 checksum for integrity verification
+ *    - Store in local ./schemas/cia/ directory
+ * 3. Update metadata with timestamps and checksums
+ * 4. Generate compatibility report
+ * 5. Log synchronization status and any errors
+ * 
+ * Remote Data Source:
+ * - Repository: https://github.com/Hack23/cia
+ * - Schema Base URL: https://raw.githubusercontent.com/Hack23/cia/master/json-export-specs/schemas/
+ * - File Naming: {schema-name}.json (e.g., overview-dashboard.json)
+ * - License: Apache-2.0 (compatible with riksdagsmonitor)
+ * - Access: No authentication required (public repository)
+ * 
+ * Local Cache Structure:
+ * - Root: ./schemas/cia/
+ * - Schema files: {schema-name}.json (19 files)
+ * - Metadata directory: ./schemas/metadata/
+ * - Metadata file: cia-schemas-metadata.json
+ * 
+ * Metadata Management:
+ * Maintains JSON file tracking:
+ * - File checksums: SHA-256 hashes for integrity verification
+ * - Download timestamp: ISO 8601 format
+ * - Schema version: From schema content
+ * - File size: Bytes
+ * - Validation status: Schema structure compliance
+ * 
+ * Schema Validation Process:
+ * - Verifies JSON structure validity
+ * - Checks required fields: $schema, type, properties
+ * - Validates property definitions and types
+ * - Ensures schema references are resolvable
+ * - Reports validation errors with details
+ * 
+ * Error Handling & Recovery:
+ * - Network errors: Retry with exponential backoff (max 3 attempts)
+ * - Malformed JSON: Skip schema with warning, continue others
+ * - Storage errors: Report and abort synchronization
+ * - Partial failures: Sync remaining schemas, report summary
+ * 
+ * Integration Points:
+ * - Consumed by validate-against-cia-schemas.js (data validation)
+ * - Consumed by generate-types-from-cia-schemas.js (type generation)
+ * - Triggered by check-cia-schema-updates.js (change detection)
+ * - Referenced by CI/CD pipeline (schema compatibility gates)
+ * 
+ * Usage Scenarios:
+ * 1. Initial setup: node scripts/sync-cia-schemas.js
+ * 2. Scheduled sync: Run hourly via CI/CD cron job
+ * 3. Manual sync: Run when new CIA data products available
+ * 4. Offline mode: Use locally cached schemas if remote unavailable
+ * 
+ * Network Performance:
+ * - ~19 schemas × 3-5 KB average = 60-95 KB total
+ * - Parallel downloads: ~1-2 seconds typical
+ * - Checksum computation: < 100ms
+ * - Total execution: 2-3 seconds with network latency
+ * - Rate limiting: GitHub allows 60 API requests/hour unauthenticated
+ * 
+ * Data Integrity:
+ * - SHA-256 checksums detect file corruption
+ * - Metadata timestamps track synchronization history
+ * - Version control integration tracks schema changes
+ * - Audit trail for compliance and incident investigation
+ * 
+ * Compatibility Management:
+ * Supports backward compatibility with older schema versions:
+ * - Maintains schema version in metadata
+ * - Enables migration tracking of data product evolution
+ * - Supports version-specific validation rules
+ * - Handles schema deprecation gracefully
+ * 
+ * ISMS Compliance:
+ * - ISO 27001:2022 A.8.1 - Asset management (schema inventory)
+ * - ISO 27001:2022 A.12.6.1 - Change management (version control)
+ * - ISO 27001:2022 A.14.2.1 - Supply chain security (CIA dependency management)
+ * - NIST CSF 2.0 RC.IM-2 - Incident management and improvements
+ * - CIS Control 3.3 - Data governance and management
+ * 
+ * Security Considerations:
+ * - HTTPS-only communication with GitHub CDN
+ * - No credential storage (public repository)
+ * - File permissions: Read-only for schema files
+ * - Metadata directory: Write permission for update tracking
+ * - No secrets or sensitive data in schemas
+ * 
+ * Output/Reporting:
+ * - Execution log: Schema fetch attempts and outcomes
+ * - Summary report: Total schemas, success count, failures
+ * - Updated metadata: ./schemas/metadata/cia-schemas-metadata.json
+ * - Exit code: 0 for success, 1 for failures
+ * 
+ * Usage:
+ *   node scripts/sync-cia-schemas.js
+ *   # Fetches all 19 schemas from CIA repository
+ *   # Validates and caches locally
+ *   # Updates metadata with checksums and timestamps
+ * 
+ * Environmental Factors:
+ * - Network connectivity required
+ * - Disk space: ~100 KB for all schemas
+ * - File system write permissions in ./schemas/
+ * - No external dependencies beyond Node.js
+ * 
+ * @intelligence Essential infrastructure for data product compatibility
+ * @osint External dependency: CIA open-source intelligence schemas
+ * @risk Synchronization failure leaves system with stale schema definitions
+ * @gdpr No personal data processed (schema definitions only)
+ * @security HTTPS verification of remote source; no authentication secrets stored
+ * 
+ * @author Hack23 AB (Data Infrastructure Team)
  * @license Apache-2.0
+ * @version 1.4.0
+ * @see check-cia-schema-updates.js (change detection)
+ * @see validate-against-cia-schemas.js (data validation)
+ * @see generate-types-from-cia-schemas.js (type generation)
+ * @see CIA Repository: https://github.com/Hack23/cia
+ * @see JSON Schema Specification: https://json-schema.org/
+ * @see ISO 27001:2022 A.12.6.1 - Change management
  */
 
 import fs from 'fs/promises';

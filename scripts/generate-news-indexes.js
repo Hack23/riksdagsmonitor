@@ -1,16 +1,97 @@
 #!/usr/bin/env node
 
 /**
- * Dynamic News Index Generation Script
+ * @module Intelligence/NewsGeneration
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Dynamic News Index Generation - Multi-Language Article Aggregation
  * 
- * Scans news/ directory for article HTML files and generates dynamic index pages
- * for all 14 languages with proper article aggregation and metadata.
+ * @description
+ * Automated news index generation system that dynamically scans published news articles
+ * across all 14 supported languages and generates corresponding index pages with proper
+ * metadata, filtering capabilities, and SEO optimization for parliamentary intelligence.
  * 
- * Solves the critical problem of hardcoded article arrays in news/index*.html files.
+ * Operational Context:
+ * This script solves the critical maintenance problem of hardcoded article arrays in
+ * static index HTML files. Instead of manually updating article lists for 14 language
+ * variants, the system autonomously discovers published articles and generates index
+ * pages with consistent structure, metadata, and search optimization.
  * 
- * Usage: node scripts/generate-news-indexes.js
+ * Multi-Language Support (14 languages):
+ * - English (en), Swedish (sv), Danish (da), Norwegian (no), Finnish (fi)
+ * - German (de), French (fr), Spanish (es), Dutch (nl)
+ * - Arabic (ar), Hebrew (he), Japanese (ja), Korean (ko), Chinese (zh)
+ * - Each language includes localized titles, keywords, breadcrumbs, filtering UI
  * 
+ * Core Functionality:
+ * - Scans news/ directory recursively for published HTML article files
+ * - Extracts article metadata: title, date, description, language, category tags
+ * - Aggregates articles by language code for proper index organization
+ * - Generates dynamic filter controls: article type, topic category, sort order
+ * - Creates SEO-optimized index pages with proper JSON-LD schema markup
+ * - Implements responsive UI with accessibility features (WCAG 2.1 AA)
+ * 
+ * Intelligence Integration:
+ * - Enables real-time tracking of parliamentary activity coverage
+ * - Identifies news gaps and coverage imbalances across political topics
+ * - Supports rapid content discovery for international audience segments
+ * - Maintains consistent intelligence narrative across language variants
+ * 
+ * Article Discovery & Categorization:
+ * - Prospective news: Upcoming parliamentary events (week-ahead, committee agendas)
+ * - Retrospective news: Completed parliamentary activities (votes, decisions)
+ * - Analysis pieces: Strategic interpretation of political developments
+ * - Breaking news: Urgent parliamentary developments and emergency situations
+ * 
+ * Topic Categories:
+ * - Parliament (Riksdag structure, committee reports, legislative process)
+ * - Government (cabinet decisions, ministry statements, regulatory actions)
+ * - Defense (national security, military policy, NATO/EU coordination)
+ * - Environment (climate policy, emissions trading, sustainability)
+ * - Committees (specific committee activities and cross-committee coordination)
+ * - Legislation (bill tracking, proposal analysis, amendments)
+ * 
+ * SEO & Accessibility:
+ * - Implements Open Graph meta tags for social media sharing
+ * - Generates JSON-LD structured data for search engine indexing
+ * - Provides hreflang tags for multi-language version discovery
+ * - Includes alt text for all images and proper heading hierarchy
+ * - Mobile-responsive design with proper viewport configuration
+ * 
+ * Localization Features:
+ * - Translated UI elements: filter labels, breadcrumbs, no-results messages
+ * - Localized date formats and sort options
+ * - Language-specific keyword optimization for search engines
+ * - Proper locale configuration (en_US, sv_SE, etc.)
+ * 
+ * Integration Points:
+ * - Invoked by CI/CD pipeline after news generation scripts
+ * - Feeds article discovery service for dashboard widgets
+ * - Consumed by search functionality and site navigation
+ * - Referenced by analytics tracking for page visit metrics
+ * 
+ * Data Integrity:
+ * - Validates article file existence before inclusion
+ * - Handles missing or malformed metadata gracefully
+ * - Provides diagnostic output for troubleshooting
+ * - Complies with ISO 27001:2022 A.12.6.1 (change management)
+ * 
+ * Usage:
+ *   node scripts/generate-news-indexes.js
+ *   # Generates: news/index.html, news/index_sv.html, ... news/index_zh.html
+ * 
+ * @intelligence Core infrastructure for maintaining searchable intelligence archive
+ * @osint Aggregates published political intelligence across global audience
+ * @risk Incomplete article discovery may result in search visibility gaps
+ * @gdpr No personal data processing (aggregation of published articles only)
+ * @security HTML generation uses html-utils.js escaping to prevent XSS
+ * 
+ * @author Hack23 AB (Content Infrastructure Team)
+ * @license Apache-2.0
+ * @version 3.0.0
  * @see NEWS_WORKFLOW_EXECUTIVE_SUMMARY.md for context
+ * @see generate-news-enhanced.js (produces articles consumed by this indexer)
+ * @see html-utils.js (provides HTML entity escaping)
+ * @see WCAG 2.1 AA accessibility standards
  */
 
 import fs from 'fs';
