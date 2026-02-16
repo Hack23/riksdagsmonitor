@@ -1,31 +1,285 @@
 #!/usr/bin/env node
 
 /**
- * MCP Client for riksdag-regering-mcp Server
+ * @module Intelligence Operations/MCP Intelligence Server Client
+ * @category Intelligence Operations - MCP Intelligence Server Client
  * 
- * JSON-RPC 2.0 client for accessing Swedish Parliament and Government data
- * via the riksdag-regering-mcp server (32 specialized tools).
+ * @description
+ * JSON-RPC 2.0 client for the riksdag-regering-mcp server providing access to
+ * 32 specialized intelligence tools for Swedish parliamentary and government data.
+ * This module implements the MCP protocol layer enabling automated OSINT collection
+ * from the world's first parliament/government intelligence API.
  * 
- * Server: https://riksdag-regering-ai.onrender.com/mcp
+ * Intelligence Server Architecture:
+ * 
+ * MCP Server: riksdag-regering-mcp
+ * URL: https://riksdag-regering-ai.onrender.com/mcp
  * Protocol: JSON-RPC 2.0 (https://www.jsonrpc.org/specification)
- * Tools: 32 tools for Swedish political data (Riksdag, Regering, MPs, votes, documents)
+ * Tools: 32 specialized intelligence functions for Swedish political data
+ * Deployment: Render.com serverless platform
+ * Authentication: Optional token-based via MCP_AUTH_TOKEN
  * 
- * MCP Protocol:
- *   - POST to /mcp endpoint (not /mcp/tools/{tool})
- *   - JSON-RPC 2.0 format with method: 'tools/call'
- *   - Direct server: use unprefixed tool names (e.g., 'get_calendar_events')
- *   - MCP Gateway: use prefixed tool names (e.g., 'riksdag-regering--get_calendar_events')
- *   - Client auto-detects which mode based on URL
+ * MCP Tool Categories (32 Total Tools):
  * 
- * Usage:
- *   import { MCPClient } from './mcp-client.js';
- *   const client = new MCPClient();
- *   const events = await client.fetchCalendarEvents('2026-02-10', '2026-02-17');
+ * Riksdag Tools (15 tools):
+ * - get_ledamoter: Retrieve parliament member list with party affiliation
+ * - get_ledamot_details: Detailed biography and service history
+ * - search_ledamoter: Member search by name, party, constituency
+ * - get_motioner: All parliamentary motions with sponsorship
+ * - search_motioner: Full-text motion search
+ * - get_propositioner: Government legislative proposals
+ * - search_propositioner: Proposal search by type, status
+ * - get_dokument: Specific document retrieval
+ * - search_dokument: Document discovery with metadata
+ * - search_dokument_fulltext: Full-text document search
+ * - get_voteringar: Voting records and roll-call results
+ * - search_voteringar: Vote analysis by party, member, timeframe
+ * - get_anforanden: Parliamentary speeches and debates
+ * - search_anforanden: Speech search by speaker, topic, date
+ * - get_calendar_events: Parliamentary calendar and scheduling
+ * 
+ * Government Tools (7 tools):
+ * - get_regering_document: Retrieve government documents
+ * - search_regering: Government document search
+ * - search_regering_by_department: Department-specific searches
+ * - summarize_regering_document: Automated government document summarization
+ * - get_g0v_document_content: Markdown conversion of government documents
+ * - get_g0v_document_types: List available document type categories
+ * - analyze_g0v_by_department: Department-level document analysis
+ * 
+ * Statistical & Metadata Tools (5 tools):
+ * - get_utskott: Committee list and composition
+ * - get_betankanden: Committee reports and decisions
+ * - fetch_report: Statistical reports (demographics, activity metrics)
+ * - get_voting_group: Voting pattern analysis by party/constituency
+ * - get_sync_status: Data freshness and update schedule status
+ * 
+ * Utility Tools (5 tools):
+ * - get_data_dictionary: Schema definitions for all data types
+ * - get_latest_update: Last successful data synchronization
+ * - list_reports: Available statistical report types
+ * - batch_fetch_documents: Efficient bulk document retrieval
+ * - fetch_paginated_documents: Pagination-based result streaming
+ * 
+ * Protocol Details:
+ * 
+ * Direct Server Mode:
+ * - POST to /mcp endpoint
+ * - Use unprefixed tool names (e.g., 'get_calendar_events')
+ * - JSON-RPC 2.0 request format
+ * - Automatic timeout handling and retries
+ * 
+ * MCP Gateway Mode (optional):
+ * - For gateway deployments, use prefixed tool names
+ * - Format: 'riksdag-regering--{tool_name}'
+ * - Auto-detection based on error responses
+ * 
+ * Intelligence Application Examples:
+ * 
+ * Automated News Generation:
+ * - get_calendar_events → Week-ahead parliamentary schedule
+ * - search_dokument → Recent propositions and motions
+ * - search_anforanden → Parliamentary debate summaries
+ * - get_voteringar → Party voting patterns and consensus analysis
+ * 
+ * Statistical Intelligence:
+ * - get_ledamoter → Member demographics (age, gender, party)
+ * - get_utskott → Committee composition and specialization
+ * - fetch_report → Aggregated voting and productivity statistics
+ * - get_voting_group → Coalition formation and party dynamics
+ * 
+ * Government Transparency:
+ * - search_regering → Government policy announcements
+ * - get_regering_document → Complete policy documentation
+ * - summarize_regering_document → Automated policy summarization
+ * - analyze_g0v_by_department → Department-specific tracking
+ * 
+ * Advanced Analysis:
+ * - search_dokument_fulltext → Cross-document pattern matching
+ * - search_voteringar → Historical voting pattern analysis
+ * - get_anforanden → Debate transcript analysis
+ * - batch_fetch_documents → Bulk data collection for trend analysis
+ * 
+ * Error Handling Strategy:
+ * - Network errors: Automatic retries with exponential backoff (max 3 attempts)
+ * - Timeout: 30-second default (adjustable via MCP_CLIENT_TIMEOUT_MS)
+ * - Tool not found: Fallback from prefixed to non-prefixed names
+ * - Rate limits: Respect server 429 responses with adaptive delays
+ * - Server unavailable: Return cached data if available, else error
+ * 
+ * @intelligence
+ * OSINT Collection Methodology:
+ * 
+ * Continuous Monitoring Patterns:
+ * - Calendar-based collection: Daily checks for new parliamentary events
+ * - Document discovery: Automated searches for recent legislative action
+ * - Voting analysis: Pattern recognition across roll-call votes
+ * - Debate monitoring: Transcript collection for opinion tracking
+ * - Government watch: Policy announcement aggregation and analysis
+ * 
+ * Data Correlation & Analysis:
+ * - Cross-reference voting records with parliamentary speeches
+ * - Link government documents to implementing legislation
+ * - Track committee work on government proposals
+ * - Analyze debate patterns for consensus/conflict identification
+ * - Map party positions across multiple votes and statements
+ * 
+ * Source Validation Techniques:
+ * - Verify member information against parliament roster
+ * - Check document metadata against official Riksdagen database
+ * - Validate vote counts against parliamentary records
+ * - Cross-reference speeches with parliamentary debate archives
+ * - Confirm government document authenticity via Regeringen.se
+ * 
+ * Intelligence Product Generation:
+ * - News article generation (weeks ahead, breaking analysis)
+ * - Trend analysis (voting pattern shifts, policy evolution)
+ * - Risk assessment (legislative timeline risks, coalition stability)
+ * - Forecasting (likely outcomes, coalition formations)
+ * - Comparative analysis (Sweden vs. other parliaments)
+ * 
+ * @osint
+ * OSINT Collection Framework:
+ * 
+ * Primary Intelligence Source: riksdag-regering-mcp
+ * - Official Swedish Parliament API (Riksdagen.se foundation)
+ * - Official Swedish Government API (Regeringen.se foundation)
+ * - Real-time parliamentary data (updated daily)
+ * - Complete historical records (from Riksdagen founding)
+ * 
+ * Data Quality Assessment:
+ * - Source authenticity: Official parliament/government APIs
+ * - Data freshness: Check sync status before use
+ * - Completeness: Validate expected fields populated
+ * - Consistency: Cross-field validation (e.g., vote counts)
+ * 
+ * Collection Prioritization:
+ * - Real-time: Calendar events (schedule changes)
+ * - Daily: Documents, votes, debates (legislative activity)
+ * - Weekly: Committee reports, government announcements
+ * - Monthly: Statistical analysis, trend reports
+ * 
+ * Source Diversity Strategy:
+ * - Primary: MCP server (authoritative)
+ * - Secondary: Riksdagen.se direct access (validation)
+ * - Tertiary: News archives (context and verification)
+ * 
+ * @risk
+ * Intelligence Threats & Risk Mitigations:
+ * 
+ * Threat: MCP Server Unavailability
+ * - Render.com cold start or outage impacts news generation
+ * - Mitigation: Implement cache fallback, health checks, graceful degradation
+ * - Impact: Unable to generate new articles; fallback to cached data
+ * 
+ * Threat: Stale Data
+ * - MCP data older than 24 hours for some information types
+ * - Mitigation: Check sync status, publish timestamps, verify freshness
+ * - Impact: Articles based on outdated information
+ * 
+ * Threat: API Schema Drift
+ * - MCP response format changes breaking parser
+ * - Mitigation: Schema versioning, changelog monitoring, flexible parsing
+ * - Impact: Article generation failures without manual intervention
+ * 
+ * Threat: Rate Limiting
+ * - Aggressive rate limiting during bulk data collection
+ * - Mitigation: Implement request throttling, exponential backoff
+ * - Impact: Delayed news generation during high-traffic periods
+ * 
+ * Threat: Data Injection / Poisoning
+ * - Compromised MCP server returning modified data
+ * - Mitigation: Schema validation, integrity checking, source monitoring
+ * - Impact: Misinformation propagation in generated articles
+ * 
+ * Threat: Intelligence Leakage
+ * - Pre-publication political intelligence leaked via API calls
+ * - Mitigation: HTTPS-only, authentication tokens, audit logging
+ * - Impact: Unauthorized disclosure of strategic intelligence
+ * 
+ * Threat: Dependency on Single Source
+ * - Over-reliance on MCP for all parliamentary data
+ * - Mitigation: Maintain Riksdagen.se fallback, diversify sources
+ * - Impact: Limited operational resilience
+ * 
+ * @gdpr
+ * GDPR Compliance in MCP Client:
+ * 
+ * Data Processing Context:
+ * - Processes public parliamentary data only (Article 6(1)(e) public interest)
+ * - Public officials in official capacity (Article 9(2)(e) manifestly public)
+ * - No special category data beyond public voting records
+ * - Journalist/OSINT platform purpose (freedom of information)
+ * 
+ * Data Subject Rights:
+ * - Right to access: Not applicable (aggregated public data)
+ * - Right to rectification: Not applicable (historical records)
+ * - Right to erasure: Not applicable (parliamentary records must be retained)
+ * - Right to data portability: Not applicable (not personally targeted)
+ * 
+ * API Usage Constraints:
+ * - No personal data extraction beyond official records
+ * - No profiling or behavioral analysis
+ * - No linking with personal data from other sources
+ * - Clear separation: public officials vs. private individuals
+ * 
+ * Transparency & Documentation:
+ * - Published source attribution in articles
+ * - API integration documented in privacy policy
+ * - MCP server terms of service reviewed (public API)
+ * - Processing impact assessment (low-risk: public data)
+ * 
+ * @security
+ * Security Architecture & Controls:
+ * 
+ * Transport Security:
+ * - HTTPS-only communication (TLS 1.2+)
+ * - Certificate pinning (optional for critical deployments)
+ * - No HTTP downgrade attacks
+ * - HSTS headers (if MCP server supports)
+ * 
+ * Authentication & Authorization:
+ * - Optional bearer token via MCP_AUTH_TOKEN
+ * - Token rotation policies (if required by server)
+ * - No credentials in request URLs
+ * - Secure token storage (environment variables only)
+ * 
+ * Input Validation:
+ * - Tool names validated against whitelist (32 known tools)
+ * - Parameter types checked before API calls
+ * - String inputs sanitized (no injection vectors)
+ * - Date inputs validated (ISO 8601 format)
+ * 
+ * Output Sanitization:
+ * - Response schema validation
+ * - HTML entity escaping for content fields
+ * - No eval() or dynamic code execution
+ * - Response size limits (prevent DoS)
  * 
  * Error Handling:
- *   - Automatic retries on network errors (max 3 attempts with exponential backoff)
- *   - Fallback from prefixed to non-prefixed tool names
- *   - Detailed error messages with troubleshooting hints
+ * - Detailed error logging (non-production only)
+ * - User-friendly error messages (no stack traces)
+ * - Structured error responses (JSON-RPC 2.0 format)
+ * - Rate limit respect (don't hammer server)
+ * 
+ * Dependency Security:
+ * - No external dependencies (native Node.js fetch)
+ * - pinned package versions
+ * - Regular vulnerability scanning
+ * - Minimal trust chain
+ * 
+ * @author Hack23 AB - Intelligence Operations Team
+ * @license Apache-2.0
+ * @version 2.0.0
+ * 
+ * @see {@link https://riksdag-regering-ai.onrender.com/mcp} MCP Server
+ * @see {@link https://github.com/Hack23/riksdag-regering-mcp} MCP Server Repository
+ * @see {@link ./generate-news-enhanced.js} News generation using MCP client
+ * @see {@link ./data-transformers.js} Data transformation pipeline
+ * @see {@link docs/MCP_INTEGRATION.md} MCP integration guide
+ * @see {@link docs/INTELLIGENCE_API_GUIDE.md} API reference documentation
+ * @see {@link docs/OSINT_COLLECTION.md} OSINT collection methodology
+ * @see {@link https://www.jsonrpc.org/specification} JSON-RPC 2.0 Specification
  */
 
 const DEFAULT_MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp';

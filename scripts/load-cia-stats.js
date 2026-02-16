@@ -1,27 +1,234 @@
 #!/usr/bin/env node
 /**
- * CIA Production Statistics Loader
+ * @module Intelligence Operations/CIA Statistical Intelligence
+ * @category Intelligence Operations - CIA Statistical Intelligence
  * 
- * Fetches and parses extraction_summary_report.csv from CIA production database
- * to provide accurate statistics for riksdagsmonitor website.
+ * @description
+ * Statistical intelligence data loader providing comprehensive parliamentary and
+ * government statistics from the CIA production database. This module implements
+ * automated extraction of aggregated political intelligence metrics including
+ * member demographics, voting patterns, committee composition, and legislative
+ * productivity. Data feeds the riksdagsmonitor homepage and statistical dashboards.
  * 
- * Data Source: https://github.com/Hack23/cia/master/service.data.impl/sample-data/extraction_summary_report.csv
- * Update Schedule: Daily at 02:57 CET (CIA extraction time)
+ * Data Source: CIA (Consolidation of Intelligence Architecture) Production Database
+ * URL: https://github.com/Hack23/cia/master/service.data.impl/sample-data/extraction_summary_report.csv
+ * Update Schedule: Daily at 02:57 CET (following CIA extraction jobs)
+ * Format: CSV with aggregated statistics (no personal data)
+ * Freshness: 24-hour update window with fallback caching
  * 
- * ISMS Compliance:
- * - ISO 27001:2022 A.5.33 - Protection of records (source attribution, audit trails via Git)
- * - ISO 27001:2022 A.5.34 - Privacy and PII protection (public officials in official capacity only)
- * - ISO 27001:2022 A.8.10 - Information deletion (documented retention policies, no excessive storage)
- * - ISO 27001:2022 A.8.19 - Security in use (HTTPS-only, CSP headers)
- * - NIST CSF 2.0 PR.DS-5 - Protections against data leaks (HTTPS-only, public data only)
- * - NIST CSF 2.0 ID.AM-5 - Resources prioritized (data classified as PUBLIC)
- * - CIS Control 3.1 - Data inventory (documented public data sources)
- * - GDPR Article 6(1)(e) - Public interest processing (democratic transparency)
- * - GDPR Article 9(2)(e) - Political opinions manifestly made public (voting records, party affiliation)
- * - Swedish Offentlighetsprincipen - Public access to government information (Tryckfrihetsförordningen)
- *
- * Note: A.8.11 (Data Masking) NOT applicable - processes only public government data,
- * no sensitive data requiring masking. Journalist/OSINT platform covering public officials.
+ * Statistical Metrics Provided:
+ * - Parliamentary Member Demographics: Age distribution, gender balance, party affiliation
+ * - Legislative Productivity: Bills introduced, passed, rejected, pending by type
+ * - Committee Composition: Members per committee, party representation, attendance
+ * - Voting Patterns: Party consensus, polarization indices, coalition behavior
+ * - Government Performance: Policy implementation status, regulatory actions, spending
+ * - Public Opinion Indicators: Survey data links (when available from CIA)
+ * - Historical Trends: Year-over-year statistical comparisons
+ * 
+ * Intelligence Applications:
+ * - Homepage Statistics: Display current-term parliamentary statistics
+ * - Dashboard Visualization: Trend analysis and comparative metrics
+ * - Report Generation: Statistical context for news articles
+ * - Predictive Modeling: Historical pattern analysis for forecasting
+ * - Bench-marking: Compare Swedish Parliament against other legislatures
+ * 
+ * Data Processing Pipeline:
+ * 
+ * Stage 1 - Data Fetching:
+ * Downloads extraction_summary_report.csv from CIA GitHub repository via HTTPS.
+ * Implements cache management with 24-hour TTL to minimize network requests.
+ * Supports fallback to cached data during network outages or API unavailability.
+ * Includes health checks validating data freshness and file format.
+ * 
+ * Stage 2 - CSV Parsing:
+ * Parses CSV text into structured JavaScript objects. Handles:
+ * - Multiple header formats (legacy CIA versions)
+ * - Missing values and sparse data
+ * - Type coercion for numeric fields
+ * - Date format normalization
+ * - Character encoding (UTF-8 with BOM handling)
+ * 
+ * Stage 3 - Data Validation:
+ * Validates parsed statistics against expected ranges and patterns:
+ * - Completeness checks (all required fields populated)
+ * - Semantic validation (member count > 0, percentages 0-100)
+ * - Temporal ordering (dates in correct sequence)
+ * - Cross-field consistency (e.g., counts sum correctly)
+ * - Freshness validation (data not older than X days)
+ * 
+ * Stage 4 - Cache Management:
+ * Persists validated data to local cache (cia-data/production-stats.json) with
+ * metadata including parse timestamp, source version, and validation status.
+ * Implements intelligent cache invalidation on format changes or major updates.
+ * 
+ * ISMS Compliance Matrix:
+ * 
+ * ISO 27001:2022 Controls:
+ * - A.5.33 (Protection of Records): Source attribution and audit via Git
+ * - A.5.34 (Privacy/PII): Public officials only, no sensitive attributes
+ * - A.8.10 (Information Deletion): Documented retention, no excessive storage
+ * - A.8.19 (Security in Use): HTTPS-only, CSP headers, no cleartext
+ * - A.5.23 (Access Control): GitHub authentication, branch protection
+ * 
+ * NIST CSF 2.0 Categories:
+ * - PR.DS-5 (Protections Against Data Leaks): Public data only, HTTPS
+ * - ID.AM-5 (Resources Prioritized): Classified as PUBLIC data
+ * - GV.RK-01 (Governance): Data classification, retention policies
+ * 
+ * CIS Controls v8.1:
+ * - Control 3.1 (Data Inventory): Documented public data sources
+ * - Control 14.2 (Security in Development): No hardcoded secrets
+ * 
+ * GDPR Compliance:
+ * - Article 6(1)(e): Processing for public interest (democratic transparency)
+ * - Article 9(2)(e): Political opinions manifestly made public (voting records)
+ * - Article 17 (Right to Erasure): Not applicable (historical records)
+ * 
+ * Swedish Transparency Law:
+ * - Tryckfrihetsförordningen (TryF): Public access to government information
+ * - Offentlighetsprincipen: Democratic principle of transparency
+ * - Riksdagen.se: Official access to parliamentary data
+ * 
+ * @intelligence
+ * Statistical Intelligence Methodology:
+ * 
+ * Aggregated Metrics Analysis:
+ * - Polarization index: Measure of party consensus/conflict
+ * - Coalition stability: Track voting alignment patterns
+ * - Legislative efficiency: Track time from bill introduction to passage
+ * - Member engagement: Attendance rates, question submissions, speech frequency
+ * - Committee specialization: Which parties dominate which committees
+ * 
+ * Trend Analysis Patterns:
+ * - Year-over-year comparisons (productivity, diversity metrics)
+ * - Seasonal patterns (Riksdag session calendar)
+ * - Long-term trends (institutional change over decades)
+ * - Anomaly detection (unusual voting patterns, record activity)
+ * 
+ * Comparative Intelligence:
+ * - Benchmarking against other Nordic parliaments
+ * - International comparison where CIA provides global data
+ * - Historical comparison to prior parliamentary terms
+ * - Party-internal consistency analysis (are party members voting together?)
+ * 
+ * Predictive Applications:
+ * - Legislative success rate modeling (likelihood a bill passes)
+ * - Coalition formation predictions (based on voting patterns)
+ * - Government longevity assessment (stability indicators)
+ * - Election outcome forecasting (from opinion polling)
+ * 
+ * @osint
+ * Statistical Data Source Strategy:
+ * 
+ * Primary Source: CIA Database
+ * - Consolidated repository of Swedish political data
+ * - Updated daily via automated extraction from official sources
+ * - Authoritative for aggregated statistics
+ * - Open-source data with clear attribution
+ * 
+ * Source Validation:
+ * - Cross-reference against Riksdagen.se official statistics
+ * - Validate member counts against parliament roster
+ * - Verify date ranges against Riksdag session calendar
+ * - Check for data anomalies (sudden changes suggesting errors)
+ * 
+ * Data Freshness Requirements:
+ * - 24-hour maximum staleness for real-time dashboards
+ * - 7-day acceptable for historical trends
+ * - Immediate flag if data older than 30 days
+ * - Clear communication of data collection timestamp
+ * 
+ * @risk
+ * Statistical Intelligence Risks:
+ * 
+ * Threat: Data Staleness
+ * - Cached data from prior parliament session used for current analysis
+ * - Mitigation: Strict timestamp validation, visible data age indicators
+ * 
+ * Threat: Statistical Misinterpretation
+ * - Raw statistics misleading without context (e.g., raw vote counts vs. percentages)
+ * - Mitigation: Require context documentation with all statistics
+ * 
+ * Threat: Missing Data Handling
+ * - Sparse data suggesting false trends
+ * - Mitigation: Explicit missing data marking, confidence intervals
+ * 
+ * Threat: CIA Database Lag
+ * - Significant processing delay between event and statistical availability
+ * - Mitigation: Publish data collection timestamp, not update timestamp
+ * 
+ * Threat: Format Evolution
+ * - CIA CSV format changes breaking parser
+ * - Mitigation: Schema versioning, changelog monitoring
+ * 
+ * Threat: Over-Reliance on Single Source
+ * - CIA database as sole statistical source
+ * - Mitigation: Cross-reference against official sources, multiple data feeds
+ * 
+ * @gdpr
+ * GDPR Compliance Framework (Article 6(1)(e) - Public Interest Processing):
+ * 
+ * Personal Data Exclusion:
+ * - Statistics are aggregated (no individual-level data)
+ * - Public officials only in official capacity
+ * - No contact information, addresses, or sensitive attributes
+ * - Member identifiers used only for cross-referencing official documents
+ * 
+ * Data Minimization:
+ * - Extract only statistics required for dashboards
+ * - Exclude debugging data and processing logs
+ * - No storage of personally identifiable information
+ * - Aggregate to party/committee level for analysis
+ * 
+ * Purpose Limitation:
+ * - Public information and democratic transparency only
+ * - Journalism platform and statistical research
+ * - No commercial use or data broker resale
+ * - No surveillance or behavioral targeting
+ * 
+ * Retention Policy:
+ * - Statistics retained indefinitely (cultural heritage importance)
+ * - Processing logs retained 90 days (audit trail)
+ * - Cache files retain only current and prior term data
+ * - No personal data retention beyond aggregated statistics
+ * 
+ * @security
+ * Data Integrity & Confidentiality:
+ * 
+ * Transport Security:
+ * - HTTPS-only communication with GitHub (no HTTP fallback)
+ * - Certificate verification (no MITM attacks)
+ * - TLS 1.2+ minimum
+ * 
+ * Data Validation:
+ * - Schema validation of CSV structure
+ * - Type checking for numeric fields
+ * - Semantic range validation (percentages 0-100, counts > 0)
+ * - File integrity checking (size, format validation)
+ * 
+ * Access Control:
+ * - GitHub authentication required for writes
+ * - Branch protection for main/master
+ * - Code review requirement for changes
+ * - Audit logging via Git history
+ * 
+ * Supply Chain Security:
+ * - Dependencies specified with version pinning
+ * - No external downloads (CSV origin verification)
+ * - Build reproducibility via GitHub Actions
+ * - Artifact signing where applicable
+ * 
+ * @author Hack23 AB - Intelligence Operations Team
+ * @license Apache-2.0
+ * @version 2.0.0
+ * 
+ * @see {@link https://github.com/Hack23/cia} CIA Project - Consolidation of Intelligence Architecture
+ * @see {@link https://riksdagen.se} Swedish Parliament Official Website
+ * @see {@link https://regeringen.se} Swedish Government Official Website
+ * @see {@link ./mcp-client.js} MCP client for real-time data
+ * @see {@link docs/STATISTICAL_INTELLIGENCE.md} Statistical analysis methodology
+ * @see {@link docs/CIA_DATA_INTEGRATION.md} CIA data pipeline documentation
+ * @see {@link docs/COMPLIANCE_MATRIX.md} ISMS/GDPR compliance mapping
  */
 
 import https from 'https';
