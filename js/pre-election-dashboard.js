@@ -1,13 +1,190 @@
 /**
- * Pre-Election Monitoring Dashboard
+ * @module ElectionIntelligence/PreElectionMonitoring
+ * @category Intelligence Analysis - Pre-Election Activity Monitoring & Behavior Anomaly Detection
  * 
- * Tracks Q4 parliamentary activity in the critical 12-24 months before Swedish elections.
- * Compares election years vs. non-election years, detects activity shifts, and provides
- * early warning indicators for election-driven behavior changes.
+ * @description
+ * **Swedish Pre-Election Activity Monitoring & Electoral Behavior Intelligence Dashboard**
  * 
- * @version 1.0.0
- * @author Hack23 AB
+ * Advanced intelligence analysis platform implementing **critical pre-election period monitoring**
+ * (12-24 months before elections) with real-time activity anomaly detection. Detects 
+ * election-driven behavior changes through quarterly comparison and establishes early warning 
+ * indicators for coalition formation, government dissolution, and electoral campaign intensity.
+ * Uses comparative analytics to distinguish Q4 normal-year baseline from election-year surge patterns.
+ * 
+ * ## Intelligence Methodology
+ * 
+ * This module implements **pre-election period intelligence monitoring**:
+ * - **Critical Period**: Q4 (October-December) in years preceding elections (2022, 2026, 2030)
+ * - **Comparison Baseline**: Non-election years to establish normal-year Q4 patterns
+ * - **Activity Metrics**: Ballots, documents, committee decisions, parliamentary attendance
+ * - **Anomaly Detection**: Z-score and percentage-change thresholds for alerting
+ * 
+ * ## Pre-Election Intelligence Framework
+ * 
+ * **Three-Dimensional Analysis Taxonomy**:
+ * 
+ * 1. **Quarterly Activity Metrics** (Baseline Comparison)
+ *    - Ballot volume (votes in parliamentary chambers)
+ *    - Document production (government proposals, motions)
+ *    - Committee decision output
+ *    - Parliamentary attendance and participation rates
+ *    - Speech frequency and debate intensity
+ * 
+ * 2. **Election-Year vs. Non-Election Comparison** (Anomaly Detection)
+ *    - Q4 activity deltas (election years vs. baseline years)
+ *    - Percentage change from historical average
+ *    - Statistical significance testing (Z-scores)
+ *    - Confidence intervals on normal-year patterns
+ * 
+ * 3. **Pre-Election Behavior Patterns** (Campaign Indicator)
+ *    - Increased legislative activity (bills, amendments)
+ *    - Coalition positioning behaviors
+ *    - Government confidence votes and stability tests
+ *    - Media attention surge and political discourse intensity
+ *    - Campaign messaging through parliamentary statements
+ * 
+ * ## Data Sources (CIA Platform)
+ * 
+ * **Primary Intelligence Feeds**:
+ * - `view_riksdagen_pre_election_quarterly_activity_sample.csv`
+ *   * Fields: year, quarter, ballot_count, document_count, attendance_rate, decision_count
+ *   * Scope: Quarterly data spanning 20+ years (2002-2025)
+ *   * Use: Historical pattern baseline establishment, trend analysis
+ * 
+ * - `view_riksdagen_q4_election_year_comparison_sample.csv`
+ *   * Fields: metric_name, q4_election_year, q4_baseline_avg, percent_delta, z_score, significance
+ *   * Scope: Comparative analysis across election/non-election years
+ *   * Use: Anomaly identification, early warning detection
+ * 
+ * ## OSINT Collection Strategy
+ * 
+ * **Pre-Election Intelligence Monitoring**:
+ * 1. **Parliamentary Activity Tracking**: Real-time Riksdag API feeds
+ * 2. **Government Statements**: Official announcements and press releases
+ * 3. **Coalition Communications**: Party leader statements and negotiations
+ * 4. **Media Monitoring**: Campaign coverage volume and intensity
+ * 5. **Electoral Board**: Official election date announcements
+ * 6. **Polling Data**: Pre-election polls with trend tracking
+ * 7. **Social Media**: Campaign activity and engagement surge detection
+ * 
+ * ## Visualization Intelligence
+ * 
+ * **Chart.js Quarterly Activity Trends** (Primary):
+ * - **20-Year Q4 Activity Timeline**: Baseline vs. election year comparison
+ *   * Multi-line chart with election-year Q4s highlighted
+ *   * Separate lines for: ballots, documents, attendance, decisions
+ *   * Color coding: Normal years (blue) vs. Election years (red/orange)
+ *   * Interactive: Hover reveals detailed metrics and year identification
+ * 
+ * **Chart.js Election-Year Comparison** (Anomaly):
+ * - **Pre-Election Surge Indicators**: Percentage change from baseline
+ *   * Bar chart showing positive/negative deltas for each metric
+ *   * Color-coded by significance level (green/yellow/red)
+ *   * Threshold lines showing warning (20%) and alert (50%) thresholds
+ * 
+ * **Chart.js Early Warning System** (Alert):
+ * - **Statistical Anomaly Flags**: Z-score heat map
+ *   * Metrics ordered by statistical significance
+ *   * Color intensity represents deviation magnitude
+ *   * Identifies which metrics show strongest election-year signals
+ * 
+ * **Chart.js Year-Over-Year Comparison** (Temporal):
+ * - **Q4 by Year Heatmap**: Multi-year quarterly comparison
+ *   * 20 years × 4 metrics = 80-cell matrix
+ *   * Color intensity shows activity level
+ *   * Diagonal highlights show election-year concentrations
+ * 
+ * ## Intelligence Analysis Frameworks Applied
+ * 
+ * @intelligence
+ * - **Temporal Anomaly Detection**: Statistical deviation identification
+ * - **Baseline Establishment**: Non-election year patterns as control
+ * - **Comparative Analysis**: Election vs. non-election behavior patterns
+ * - **Threshold-Based Alerting**: Pre-defined deviation triggers
+ * - **Time-Series Decomposition**: Separating trend, seasonal, and anomaly components
+ * 
+ * @osint
+ * - **Activity Intelligence**: Real-time parliamentary activity monitoring
+ * - **Pattern Recognition**: Historical election-year signatures identification
+ * - **Confidence Quantification**: Statistical bounds on anomaly significance
+ * - **Multi-Source Correlation**: Linking government, parliamentary, and media signals
+ * 
+ * @risk
+ * - **Government Dissolution Risk**: Q4 confidence vote surge indicators
+ * - **Coalition Collapse Risk**: Increased legislative maneuvering signals
+ * - **Election Timing Uncertainty**: Activity shifts suggest government instability
+ * - **Campaign Intensity Risk**: Media/parliamentary surge indicates polarization
+ * 
+ * ## GDPR Compliance
+ * 
+ * @gdpr Pre-election monitoring uses only public parliamentary data (Article 9(2)(e)):
+ * - Official voting records (public parliamentary records)
+ * - Document counts (publicly filed legislative proposals)
+ * - Attendance data (public parliamentary records)
+ * - Published government announcements (public domain)
+ * No personal behavioral tracking or individual-level prediction.
+ * No voter data or campaign finance details processed.
+ * Aggregate activity analysis only; no personal political affiliation data.
+ * 
+ * ## Security Architecture
+ * 
+ * @security Chart.js rendering with XSS-safe data binding
+ * @security All CSV data validated with type checking and range enforcement
+ * @security No real-time API tokens or credentials exposed
+ * @security Historical data immutable; only new quarterly data added
+ * @security Statistical thresholds disclosed transparently
+ * @risk Medium - Early warning of government instability may be sensitive
+ * 
+ * ## Performance Characteristics
+ * 
+ * - **Data Volume**: 20 years × 4 quarters × 4-6 metrics = ~320-480 data points
+ * - **Rendering**: Chart.js with 4 separate visualizations
+ * - **Memory**: <1MB for complete pre-election monitoring dataset
+ * - **Update Frequency**: Quarterly (at end of Q1, Q2, Q3, Q4)
+ * - **Calculation**: Z-scores, percentile ranges, confidence intervals
+ * 
+ * ## Data Transformation Pipeline
+ * 
+ * **Load Strategy**:
+ * 1. Attempt local cache load (`cia-data/pre-election/`)
+ * 2. Parse CSV files into quarterly time-series structure
+ * 3. Fallback to remote GitHub repository if local unavailable
+ * 4. Identify election years (2022, 2026, 2030, etc.)
+ * 5. Calculate baseline averages for non-election Q4s
+ * 6. Compute delta percentages and Z-scores
+ * 7. Cache results with 24-hour expiry
+ * 8. Render visualizations with aggregated/transformed data
+ * 
+ * **Data Aggregation**:
+ * - Baseline: Average non-election Q4 values by metric
+ * - Election Delta: (Election_Q4 - Baseline) / Baseline × 100%
+ * - Z-Score: (Election_Q4 - Baseline_Mean) / Baseline_StdDev
+ * - Significance: Z-score > 2 = significant (p<0.05)
+ * - Alert Trigger: Delta > threshold OR Z-score > 2.0
+ * 
+ * ## Alert Thresholds
+ * 
+ * **Warning Level** (20% deviation):
+ * - Ballot volume: -30% or +20% from baseline
+ * - Document count: +20% from baseline
+ * - Committee decisions: +30% from baseline
+ * - Attendance: -2% from baseline
+ * 
+ * **Critical Level** (50% deviation):
+ * - Ballot volume: -50% or +50% from baseline
+ * - Document count: +50% from baseline
+ * - Committee decisions: +50% from baseline
+ * - Attendance: -5% from baseline
+ * 
+ * @author Hack23 AB - Pre-Election Intelligence Team
  * @license Apache-2.0
+ * @version 1.0.0
+ * @since 2024
+ * 
+ * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
+ * @see {@link https://data.riksdagen.se|Riksdag Open Data API}
+ * @see {@link ./THREAT_MODEL.md|Threat Model Documentation}
+ * @see {@link ./SECURITY_ARCHITECTURE.md|Security Architecture}
  */
 
 (function() {
