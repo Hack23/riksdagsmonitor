@@ -297,13 +297,14 @@ echo "✅ Validation passed - safe to create PR"
 ```
 
 This validation checks:
-1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes
-2. ✅ No untranslated Swedish markers (data-translate)
-3. ✅ Localized taglines in non-English articles
+1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes (blocking)
+2. ✅ No untranslated Swedish markers (data-translate) (blocking)
+3. ✅ Localized taglines in non-English articles (blocking)
 4. ⚠️  BreadcrumbList localization (warning level)
-5. ⚠️  Index file freshness (< 24 hours)
-6. ✅ Index files have content (> 1KB)
-7. ✅ Sitemap includes news articles (> 10)
+5. ⚠️  Index file freshness (< 24 hours) (warning level)
+6. ✅ Index files have content (> 1KB) (blocking)
+7. ⚠️  Sitemap news-URL coverage (> 10 recommended; missing sitemap.xml = blocking error)
+8. ⚠️  Language switcher consistency across all 14 languages (warning level)
 
 **Exit code 0** = pass (proceed to Step 6), **exit code 1** = fail (STOP, do not create PR).
 

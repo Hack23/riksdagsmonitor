@@ -453,21 +453,21 @@ The script creates articles with:
    Add immediately after `<body>` opening, before `<article>` element:
    
    ```html
-   <nav class="language-switcher" role="navigation" aria-label="Language switcher">
-     <a href="2026-02-16-{slug}-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
-     <a href="2026-02-16-{slug}-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
-     <a href="2026-02-16-{slug}-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-     <a href="2026-02-16-{slug}-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
-     <a href="2026-02-16-{slug}-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
-     <a href="2026-02-16-{slug}-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
-     <a href="2026-02-16-{slug}-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
-     <a href="2026-02-16-{slug}-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
-     <a href="2026-02-16-{slug}-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
-     <a href="2026-02-16-{slug}-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
-     <a href="2026-02-16-{slug}-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
-     <a href="2026-02-16-{slug}-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
-     <a href="2026-02-16-{slug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
-     <a href="2026-02-16-{slug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+   <nav class="language-switcher" role="navigation" aria-label="{localized-label}">
+     <a href="{YYYY-MM-DD}-{baseSlug}-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
    </nav>
    ```
    
@@ -477,6 +477,7 @@ The script creates articles with:
    - Use `.lang-link` class for consistent styling
    - Position above article content for easy access
    - Links use relative paths (same directory as article)
+   - **Localize aria-label**: EN="Language switcher", SV="Språkväxlare", DA="Sprogvælger", NO="Språkvelger", FI="Kielenvalitsin", DE="Sprachwechsler", FR="Sélecteur de langue", ES="Selector de idioma", NL="Taalwisselaar", AR="محدد اللغة", HE="בורר שפה", JA="言語切り替え", KO="언어 선택기", ZH="语言切换器"
    - Current language link can be styled as `.lang-link.active` (optional)
 
 #### Language Support
@@ -779,13 +780,14 @@ echo "✅ Validation passed - safe to create PR"
 ```
 
 This validation checks:
-1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes
-2. ✅ No untranslated Swedish markers (data-translate)
-3. ✅ Localized taglines in non-English articles
+1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes (blocking)
+2. ✅ No untranslated Swedish markers (data-translate) (blocking)
+3. ✅ Localized taglines in non-English articles (blocking)
 4. ⚠️  BreadcrumbList localization (warning level)
-5. ⚠️  Index file freshness (< 24 hours)
-6. ✅ Index files have content (> 1KB)
-7. ✅ Sitemap includes news articles (> 10)
+5. ⚠️  Index file freshness (< 24 hours) (warning level)
+6. ✅ Index files have content (> 1KB) (blocking)
+7. ⚠️  Sitemap news-URL coverage (> 10 recommended; missing sitemap.xml = blocking error)
+8. ⚠️  Language switcher consistency across all 14 languages (warning level)
 
 **Exit code 0** = pass (proceed to Step 8), **exit code 1** = fail (STOP, do not create PR).
 

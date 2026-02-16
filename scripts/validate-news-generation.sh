@@ -214,8 +214,13 @@ echo ""
 echo "📋 Check 8: Articles have visible language switcher"
 ARTICLES_WITHOUT_SWITCHER=0
 
-# Check recent articles (2026-* pattern to catch current year articles)
-for article in news/2026-*-en.html news/2026-*-sv.html; do
+# Check articles year-agnostically (all news/*-{en,sv}.html files)
+for article in news/*-en.html news/*-sv.html; do
+  # Skip index files
+  if [[ "$article" == news/index*.html ]]; then
+    continue
+  fi
+  
   if [ -f "$article" ]; then
     if ! grep -q '<nav class="language-switcher"' "$article"; then
       ARTICLES_WITHOUT_SWITCHER=$((ARTICLES_WITHOUT_SWITCHER + 1))
@@ -229,11 +234,11 @@ if [ $ARTICLES_WITHOUT_SWITCHER -gt 0 ]; then
   WARNINGS=$((WARNINGS + 1))
 else
   # Check if there are any articles to validate
-  ARTICLE_COUNT=$(ls news/2026-*-en.html news/2026-*-sv.html 2>/dev/null | wc -l)
+  ARTICLE_COUNT=$(find news -name '*-en.html' -o -name '*-sv.html' | grep -v 'index' | wc -l)
   if [ $ARTICLE_COUNT -gt 0 ]; then
     echo -e "${GREEN}✅ All checked articles have language switcher${NC}"
   else
-    echo -e "${YELLOW}⚠️ No recent articles found to check${NC}"
+    echo -e "${YELLOW}⚠️ No articles found to check${NC}"
   fi
 fi
 echo ""
