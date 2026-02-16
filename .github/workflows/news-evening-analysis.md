@@ -28,7 +28,7 @@ permissions:
   issues: read
   pull-requests: read
 
-timeout-minutes: 30
+timeout-minutes: 45
 
 network:
   allowed:
@@ -102,34 +102,20 @@ The workflow will **FAIL** if no safe output is generated. This is by design to 
 
 You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to produce a comprehensive wrap-up of Swedish parliamentary and government activity, written in **The Economist style** with deeper analytical depth than breaking coverage.
 
-## ⚠️ CRITICAL REQUIREMENT: Multi-Language Translation
+## Translation Rules (Quick Reference)
 
-**YOU MUST TRANSLATE ALL SWEDISH CONTENT INTO EACH TARGET LANGUAGE. THIS IS MANDATORY.**
+**CRITICAL**: Riksdag API returns Swedish-only data. YOU MUST translate ALL Swedish content to target languages.
 
-The Riksdag API returns data in **Swedish only**. When you generate articles in languages other than Swedish:
+**What to translate:**
+- Document titles: "Bättre förutsättningar att sända ut statlig personal" → translate to English, etc.
+- Summaries, descriptions, all text content
 
-1. **ALL Swedish document titles** (e.g., "Bättre förutsättningar att sända ut statlig personal") **MUST be translated**
-2. **ALL Swedish summaries** and descriptions **MUST be translated**
-3. **ZERO TOLERANCE** for language mixing - no Swedish in non-Swedish articles
-4. **Translation markers** (`data-translate="true" lang="sv"`) indicate Swedish content that needs translation - these MUST be removed after translation
-5. **Validation is mandatory** - check every article to ensure no Swedish content remains
+**What NOT to translate:**
+- Party abbreviations: S, M, SD, V, MP, C, L, KD
+- Document reference formats: Prop., Bet., Mot.
+- Committee abbreviations in references: "Bet. 2025/26:FiU10"
 
-**See Step 5: Translation Post-Processing** below for detailed mandatory instructions.
-
-## Required Reference Materials
-
-Before generating or translating articles, consult these authoritative references:
-
-1. **`.github/skills/swedish-political-system/SKILL.md`** — Authoritative vocabulary for translating Riksdag API document types (betänkande, proposition, motion, etc.), committee abbreviations (FiU, SoU, JuU, etc.), and parliamentary proceedings terms across all 14 languages
-2. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines, political terminology translations, date/number formatting, and formality registers
-3. **`.github/skills/multi-language-localization/SKILL.md`** — Multi-language file structure, RTL support for Arabic/Hebrew, hreflang SEO requirements
-4. **`TRANSLATION_GUIDE.md`** — Cross-language terminology tables for parliamentary document types, policy terms, and committee names
-
-**Critical Translation Rules:**
-- Swedish API titles (e.g., "Bättre förutsättningar att sända ut statlig personal") MUST be translated to the target language — never left in Swedish
-- Committee abbreviations (FiU, SoU) are kept as-is in document references (e.g., "Bet. 2025/26:FiU10") but committee NAMES are translated in running text
-- Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
-- Document reference formats (Prop., Bet., Mot.) are kept as-is
+**Reference files** (consult if needed): `.github/skills/swedish-political-system/SKILL.md`, `.github/skills/language-expertise/SKILL.md`, `TRANSLATION_GUIDE.md`
 
 ## Your Task
 
@@ -675,39 +661,17 @@ Before creating the PR:
 - ✅ Mobile-responsive layout
 - ✅ RTL support for Arabic and Hebrew versions
 
-### Playwright Visual Validation
+### Playwright Visual Validation (Optional)
 
-Use the **microsoft/playwright** MCP tool to visually validate generated articles before creating the PR:
+Optionally use the **microsoft/playwright** MCP tool to validate articles:
+- Start server: `npx http-server . -p 8080 &`
+- Use `browser_navigate` + `browser_snapshot` to check accessibility
+- Use `browser_screenshot` for visual evidence in PR
+- Stop server: `kill %1 2>/dev/null || true`
 
-1. Start a local server: `npx http-server . -p 8080 &`
-2. Use `browser_navigate` to open each generated article
-3. Use `browser_snapshot` to verify the accessibility tree structure
-4. Use `browser_screenshot` to capture visual evidence for the PR
-5. Verify heading hierarchy, content sections, and source citations render correctly
-6. For RTL languages (ar, he): verify text direction and layout
-7. Stop the server: `kill %1 2>/dev/null || true`
+### Cross-Referencing Strategy (Optional)
 
-### Cross-Referencing Strategy
-
-For deeper evening analysis, combine data from multiple riksdag-regering-mcp tools:
-
-**Vote Analysis Pattern:**
-1. `search_voteringar` - get vote results
-2. `get_voting_group` - party-level breakdown
-3. `search_anforanden` - speeches during the debate
-4. `search_ledamoter` - MP profiles for context
-
-**Government Activity Pattern:**
-1. `search_regering` - government documents published today
-2. `get_propositioner` - new government bills
-3. `analyze_g0v_by_department` - departmental breakdown
-4. `enhanced_government_search` - combined search
-
-**Legislative Tracking Pattern:**
-1. `get_betankanden` - committee reports
-2. `get_motioner` - opposition motions on same topic
-3. `search_dokument_fulltext` - find related documents
-4. `get_dokument` - get full text of key documents
+For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_group` → `search_anforanden` for vote analysis. Or `search_regering` → `get_propositioner` → `analyze_g0v_by_department` for government activity.
 
 🎯 **Now begin: Gather today's comprehensive parliamentary data using MCP tools, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
 
