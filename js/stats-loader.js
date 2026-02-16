@@ -1,31 +1,115 @@
 /**
- * Dynamic Stats Loader
- * Riksdagsmonitor - Swedish Parliament Intelligence Platform
- *
- * Loads ALL statistics directly from extraction_summary_report.csv
- * (CIA Platform production database export, updated nightly).
- *
- * Data Source:
- *   extraction_summary_report.csv — columns: object_type, object_name, status, row_count, error_message, extraction_time
- *   Each row represents a database table or view with its current row count.
- *
- * The CSV is the single source of truth. No JSON intermediary.
- * Hero stats and intelligence section stats are populated from this CSV.
- *
- * Updates DOM elements with data-stat-id attributes.
- *
- * License: Apache 2.0
+ * @module OSINT/DataAcquisition
+ * @category Intelligence Platform - Data Collection
+ * 
+ * @description
+ * **Dynamic Political Intelligence Statistics Loader**
+ * 
+ * Core OSINT data acquisition module for the Riksdagsmonitor Intelligence Platform.
+ * Implements automated statistical intelligence collection from the CIA Platform
+ * (Citizen Intelligence Agency) production database exports.
+ * 
+ * ## Intelligence Methodology
+ * 
+ * This module implements **systematic intelligence collection** following OSINT best practices:
+ * - **Source Authority**: Direct database exports from CIA Platform (verified source)
+ * - **Data Freshness**: Nightly updates ensure 24-hour maximum staleness
+ * - **Data Integrity**: CSV parsing with validation and error handling
+ * - **Fallback Strategy**: Local-first with remote fallback for resilience
+ * 
+ * ## Data Source Intelligence
+ * 
+ * **Primary Source**: `extraction_summary_report.csv` (CIA Platform ETL report)
+ * - **Columns**: object_type, object_name, status, row_count, error_message, extraction_time
+ * - **Scope**: 349 MPs, 8 parties, 50+ years of parliamentary data
+ * - **Update Frequency**: Nightly automated ETL pipeline
+ * - **Data Coverage**: Votes, documents, committees, government proposals, risk violations
+ * 
+ * ## OSINT Collection Strategy
+ * 
+ * 1. **Local-First Acquisition**: Attempt local cached data (cia-data/)
+ * 2. **Remote Fallback**: GitHub raw content as backup source
+ * 3. **Validation**: Parse and verify data structure before use
+ * 4. **Error Resilience**: Graceful degradation if sources unavailable
+ * 
+ * ## Intelligence Metrics Tracked
+ * 
+ * **Hero Statistics** (Homepage dashboard):
+ * - Historical political figures (person_data)
+ * - Total recorded votes (view_riksdagen_vote_data_ballot_politician_summary)
+ * - Parliamentary documents (document_data)
+ * - Rule violations detected (rule_violation)
+ * - Government proposals (view_riksdagen_goverment_proposals)
+ * - Committee decisions (view_riksdagen_committee_decisions)
+ * 
+ * **Detailed Intelligence** (Analysis sections):
+ * - Committee activities and proposals
+ * - Document lifecycle tracking
+ * - Party membership and voting blocs
+ * - Government role assignments
+ * - Ballot summaries and voting patterns
+ * 
+ * ## GDPR Compliance
+ * 
+ * @gdpr Political data processing compliant with Article 9(2)(e) - "manifestly made public"
+ * All data sourced from official Riksdag public records and parliamentary proceedings.
+ * No personal data beyond public official roles.
+ * 
+ * ## Security Architecture
+ * 
+ * @risk Low - Read-only data acquisition from public sources
+ * @security CSP-compliant fetch operations, no user input, XSS-safe number formatting
+ * 
+ * @author Hack23 AB - Intelligence Platform Team
+ * @license Apache-2.0
+ * @version 1.0.0
+ * @since 2024
+ * 
+ * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
+ * @see {@link https://data.riksdagen.se|Riksdag Open Data API}
  */
 
 (function () {
   'use strict';
 
+  /**
+   * @constant {string} REMOTE_CSV
+   * @description
+   * Remote OSINT data source URL (CIA Platform GitHub repository)
+   * Used as fallback when local cached data is unavailable.
+   * 
+   * @intelligence Backup source for resilient data acquisition
+   */
   const REMOTE_CSV = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/extraction_summary_report.csv';
+  
+  /**
+   * @constant {string} LOCAL_CSV
+   * @description
+   * Local cached OSINT data path for faster load times and offline resilience.
+   * Primary source in local-first acquisition strategy.
+   * 
+   * @intelligence Primary source with sub-second response time
+   */
   const LOCAL_CSV = 'cia-data/extraction_summary_report.csv';
 
   /**
-   * Mapping from data-stat-id attribute → object_name in extraction_summary_report.csv
-   * Each entry: stat DOM identifier → CSV object_name whose row_count provides the value
+   * @constant {Object.<string, string>} STAT_MAPPINGS
+   * @description
+   * Intelligence metric mapping: DOM identifier → CIA database object name
+   * 
+   * Each entry connects a UI statistic element to its authoritative data source
+   * in the CIA Platform extraction report. This mapping ensures traceability
+   * from displayed intelligence to source data.
+   * 
+   * @property {string} stat-historical-persons - Total political figures tracked
+   * @property {string} stat-total-votes - Comprehensive voting record count
+   * @property {string} stat-total-documents - Parliamentary document archive size
+   * @property {string} stat-rule-violations - Detected anomalies and rule breaches
+   * @property {string} stat-government-proposals - Executive branch legislative initiatives
+   * @property {string} stat-committee-decisions - Committee-level decision tracking
+   * 
+   * @intelligence Maps UI intelligence indicators to authoritative database sources
+   * @osint Single source of truth principle - all metrics traceable to CIA Platform
    */
   const STAT_MAPPINGS = {
     // Hero stats
@@ -56,8 +140,44 @@
   };
 
   /**
-   * Fetch CSV text from local path first, then remote
-   * @returns {Promise<string|null>} CSV text or null
+   * @function fetchCSV
+   * @async
+   * @category OSINT Data Acquisition
+   * 
+   * @description
+   * Multi-source CSV fetch with intelligent fallback strategy.
+   * Implements **resilient OSINT collection** by attempting local cached data first,
+   * then falling back to remote GitHub source if local is unavailable.
+   * 
+   * ## Intelligence Collection Strategy
+   * 
+   * 1. **Primary**: Local cached data (cia-data/ directory)
+   *    - Advantage: Sub-second response, offline capability
+   *    - Source: Nightly automated data pipeline
+   * 
+   * 2. **Fallback**: Remote GitHub raw content
+   *    - Advantage: Always available, continuously updated
+   *    - Source: CIA Platform master branch
+   * 
+   * ## Validation Logic
+   * 
+   * - HTTP 200 response required
+   * - Non-empty text content
+   * - Minimum 3 lines (header + 2 data rows) for validity
+   * 
+   * @returns {Promise<string|null>} CSV text content or null if all sources fail
+   * 
+   * @throws {Error} Silently catches and logs fetch errors, continues to next source
+   * 
+   * @intelligence Implements source redundancy for intelligence platform availability
+   * @osint Local-first acquisition reduces dependency on external network
+   * 
+   * @example
+   * const csvData = await fetchCSV();
+   * if (csvData) {
+   *   const intelligence = parseCSV(csvData);
+   *   updateDashboard(intelligence);
+   * }
    */
   async function fetchCSV() {
     const urls = [LOCAL_CSV, REMOTE_CSV];
@@ -77,7 +197,35 @@
   }
 
   /**
-   * Simple CSV parser (header + rows)
+   * @function parseCSV
+   * @category Data Transformation
+   * 
+   * @description
+   * Lightweight CSV parser for intelligence data transformation.
+   * Converts raw CSV text into structured intelligence objects for analysis.
+   * 
+   * ## Parsing Logic
+   * 
+   * 1. Split text into lines (newline-delimited)
+   * 2. Extract header row (first line defines schema)
+   * 3. Parse data rows (comma-separated values)
+   * 4. Map values to header keys for object creation
+   * 
+   * ## Data Integrity
+   * 
+   * - Handles empty cells gracefully
+   * - Trims whitespace from all values
+   * - Returns empty array if invalid input
+   * 
+   * @param {string} text - Raw CSV text content
+   * @returns {Array<Object>} Array of intelligence data objects with properties matching CSV headers
+   * 
+   * @intelligence Transforms unstructured OSINT data into analyzable intelligence format
+   * 
+   * @example
+   * const csvText = "object_name,row_count,status\nperson_data,45678,success";
+   * const data = parseCSV(csvText);
+   * // Returns: [{ object_name: 'person_data', row_count: '45678', status: 'success' }]
    */
   function parseCSV(text) {
     if (!text) return [];
@@ -95,9 +243,41 @@
   }
 
   /**
-   * Update ALL DOM elements matching an identifier
-   * Supports both id-based and data-stat-id attribute selectors
-   * Uses querySelectorAll to update ALL matching elements (e.g. hero stats + intelligence section)
+   * @function updateStat
+   * @category UI Intelligence Display
+   * 
+   * @description
+   * Updates all DOM elements displaying a specific intelligence metric.
+   * Implements **multi-element synchronization** to ensure consistency across
+   * hero statistics, dashboard panels, and intelligence sections.
+   * 
+   * ## Update Strategy
+   * 
+   * 1. **Number Formatting**: Locale-aware formatting with thousands separators
+   *    - Raw: 45678 → Display: "45,678"
+   * 2. **Multi-Element**: Updates both ID-based and data-attribute selectors
+   *    - `<span id="stat-total-votes">...</span>`
+   *    - `<span data-stat-id="stat-total-votes">...</span>`
+   * 3. **Safe Updates**: Validates value before DOM manipulation
+   * 
+   * ## Intelligence Display Principles
+   * 
+   * - **Readability**: Human-friendly number formatting
+   * - **Consistency**: Same metric shown identically across UI
+   * - **Accessibility**: Text content updates for screen readers
+   * 
+   * @param {string} identifier - Stat identifier (matches data-stat-id attribute or element ID)
+   * @param {number|string} value - Intelligence metric value to display
+   * 
+   * @returns {void}
+   * 
+   * @intelligence Ensures intelligence metrics are displayed consistently across platform
+   * @accessibility Updates textContent for screen reader compatibility
+   * 
+   * @example
+   * updateStat('stat-total-votes', 1234567);
+   * // Updates all elements: <span id="stat-total-votes">1,234,567</span>
+   * // And: <span data-stat-id="stat-total-votes">1,234,567</span>
    */
   function updateStat(identifier, value) {
     if (value === null || value === undefined) return;
@@ -127,8 +307,51 @@
   }
 
   /**
-   * Load statistics from extraction_summary_report.csv
-   * Parses CSV, builds lookup by object_name, and updates all mapped DOM elements
+   * @function loadStats
+   * @async
+   * @category Intelligence Platform Initialization
+   * 
+   * @description
+   * **Master Intelligence Statistics Loader**
+   * 
+   * Orchestrates the complete intelligence data acquisition, parsing, and display pipeline.
+   * This is the main entry point for populating the platform with real-time political
+   * intelligence metrics from the CIA Platform database.
+   * 
+   * ## Intelligence Pipeline
+   * 
+   * ```
+   * 1. ACQUISITION  → fetchCSV() - Multi-source data retrieval
+   * 2. PARSING      → parseCSV() - CSV to structured objects
+   * 3. VALIDATION   → Filter by status === 'success'
+   * 4. MAPPING      → Apply STAT_MAPPINGS lookup
+   * 5. DISPLAY      → updateStat() for each metric
+   * ```
+   * 
+   * ## Data Validation
+   * 
+   * Only processes extraction records with:
+   * - `status === 'success'` (successful ETL extraction)
+   * - Non-empty `object_name` (valid data source identifier)
+   * - Non-empty `row_count` (actual metric value)
+   * 
+   * ## Intelligence Quality Control
+   * 
+   * - Logs successful load with update count
+   * - Warns on fetch failures (graceful degradation)
+   * - Tracks coverage: updated stats / total mapped stats
+   * 
+   * @returns {Promise<void>} Completes when all intelligence metrics are updated
+   * 
+   * @throws {Error} Catches and logs all errors, never crashes platform
+   * 
+   * @intelligence Implements end-to-end intelligence data pipeline with error resilience
+   * @osint Single source of truth from CIA Platform extraction report
+   * 
+   * @example
+   * // Automatically called on DOMContentLoaded
+   * await loadStats();
+   * // Console: "✅ Stats loaded from extraction_summary_report.csv (24/24 stats updated)"
    */
   async function loadStats() {
     try {

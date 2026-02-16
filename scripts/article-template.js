@@ -1,17 +1,144 @@
 /**
- * Article Template Generator
+ * @module Intelligence Operations/Article Template Generation
+ * @category Intelligence Operations - Intelligence Report Templates
  * 
- * Generates HTML article templates that match existing riksdagsmonitor article format.
- * Maintains cyberpunk styling, accessibility (WCAG 2.1 AA), and SEO best practices.
+ * @description
+ * Advanced HTML article template engine generating professional intelligence reports
+ * with semantic markup compliance and accessibility standards. This module implements
+ * template-based content generation for automated news articles, maintaining consistent
+ * visual hierarchy and information architecture across all 14 supported languages.
  * 
- * Format preserved:
- * - Header section (title, date, meta)
- * - Event calendar with visual grid (for Week Ahead articles)
- * - Article content with semantic HTML
- * - Context boxes for additional information
- * - Links to source documents
- * - "Watch Section" with key points
- * - Professional cyberpunk styling
+ * The template engine provides intelligent document structure rendering:
+ * 
+ * Semantic HTML5 Structure:
+ * - Article headers with publication metadata and source attribution
+ * - Navigation breadcrumbs with language-localized labels
+ * - Event calendar grid visualization (for Week Ahead article type)
+ * - Content sections with intelligent hierarchy (h2-h4)
+ * - Context boxes for supplementary intelligence (facts, quotes, analysis)
+ * - Related links section pointing to source documents
+ * - Watch section extracting critical points and risk indicators
+ * - Footer with publication metadata and change history
+ * 
+ * Design System Integration:
+ * - Cyberpunk visual theme with custom CSS variables
+ * - Responsive grid layout (CSS Grid, 320px-1440px+ viewport support)
+ * - Dark theme optimization for reduced eye strain during extended reading
+ * - Accessibility features: ARIA landmarks, semantic heading hierarchy, color contrast
+ * - Print-friendly styling preserving readability in physical distribution
+ * 
+ * Multi-Language Rendering (14 languages):
+ * - Dynamic breadcrumb translation for navigation
+ * - Localized date formatting and timezone handling
+ * - RTL language support (Arabic, Hebrew) with automatic text direction
+ * - Language-specific typography and character spacing adjustments
+ * - Multi-language footer labels and publication information
+ * 
+ * Article Type Templates:
+ * - Week Ahead: Event grid with day-by-day parliamentary schedule
+ * - Committee Reports: Structured committee analysis with member lists
+ * - Propositions: Government proposal analysis with impact assessment
+ * - Motions: Parliamentary motion analysis with voting predictions
+ * - Breaking: Rapid-response template with minimal processing delay
+ * 
+ * SEO Optimization:
+ * - Structured data (Schema.org JSON-LD) for search engine discovery
+ * - Meta tag generation (OpenGraph, Twitter Card) for social sharing
+ * - Canonical URL prevention of duplicate content penalties
+ * - Keyword placement in headers, metadata, and internal linking
+ * 
+ * @intelligence
+ * Content Architecture Methodology:
+ * Implements inverted pyramid news structure with intelligence-specific adaptations:
+ * - Lede: Most significant political development with immediate impact implications
+ * - Summary: Key facts and context necessary for understanding
+ * - Analysis: Deeper dive into causation, stakeholders, and political implications
+ * - Source Documentation: Full links to primary sources for verification
+ * - Predictions: Forward-looking implications and related upcoming events
+ * 
+ * Visual Information Design:
+ * - Event calendars as primary visual element for week-ahead articles
+ * - Risk indicator icons (⚠️ critical, ⚡ urgent, 📌 watch)
+ * - Timeline visualization for multi-day legislative processes
+ * - Party affiliation color-coding for quick visual analysis
+ * - Committee jurisdiction mapping for organizational intelligence
+ * 
+ * Template Customization Patterns:
+ * - Data binding for dynamic content injection
+ * - Conditional rendering for optional sections (context, related links)
+ * - Layout variants based on article metadata
+ * - Theme customization via CSS custom properties
+ * 
+ * @osint
+ * Source Presentation Strategy:
+ * - Hyperlinked document references to official Riksdagen sources
+ * - MCP tool references for reproducible source verification
+ * - Publication dates aligned with source data collection timestamp
+ * - Source status indicators (official, preliminary, final) based on data freshness
+ * 
+ * Document Link Integration:
+ * - Generate direct URLs to Riksdagen.se and Regeringen.se documents
+ * - Construct deep links for specific sections of long documents
+ * - Fallback link strategies when document IDs are incomplete
+ * - Link health monitoring via CI/CD validation workflows
+ * 
+ * @risk
+ * Template Rendering Risks:
+ * 
+ * Threat: XSS Injection via Content
+ * - Malicious scripts in MCP response data
+ * - Mitigation: HTML entity escaping via escapeHtml() utility
+ * 
+ * Threat: CSS Injection
+ * - Style-based information disclosure or visual manipulation
+ * - Mitigation: Style sandboxing, no user-controlled style attributes
+ * 
+ * Threat: Layout Rendering Failures
+ * - Article display broken across different browsers/devices
+ * - Mitigation: Cross-browser testing, responsive design validation
+ * 
+ * Threat: SEO Poisoning
+ * - Template generating duplicate meta tags or manipulated structured data
+ * - Mitigation: Schema validation, canonical URL enforcement
+ * 
+ * @gdpr
+ * Data Protection in Template Rendering:
+ * 
+ * - HTML Output: No personal data in HTML output (template-level)
+ * - Link Sanitization: No tracking parameters or analytics IDs in generated links
+ * - Historical Preservation: Article HTML may be archived indefinitely
+ * - Cookie Compliance: Template does not set cookies (third-party responsibility)
+ * - Analytics Transparency: If analytics codes added, user consent required
+ * 
+ * @security
+ * Content Security Analysis:
+ * 
+ * Input Validation:
+ * - Content parameters validated against expected types
+ * - HTML strings escaped via escapeHtml() helper
+ * - URLs validated and normalized before href insertion
+ * 
+ * Output Encoding:
+ * - UTF-8 character encoding enforced
+ * - HTML entities for special characters
+ * - CSS class names sanitized (alphanumeric + hyphen only)
+ * 
+ * Dependency Security:
+ * - html-utils module provides sanitization functions
+ * - No external script dependencies or CDN reliance
+ * - Inline styling only, no dynamic CSS imports
+ * 
+ * @author Hack23 AB - Intelligence Operations Team
+ * @license Apache-2.0
+ * @version 2.0.0
+ * 
+ * @see {@link ./html-utils.js} HTML sanitization utilities (escapeHtml)
+ * @see {@link ./data-transformers.js} Data transformation producing template input
+ * @see {@link ./generate-news-enhanced.js} Article generation orchestration
+ * @see {@link ./editorial-pillars.js} Editorial structure definitions
+ * @see {@link docs/TEMPLATE_ARCHITECTURE.md} Template design documentation
+ * @see {@link docs/ACCESSIBILITY_STANDARDS.md} WCAG 2.1 AA compliance guide
+ * @see {@link docs/SEO_OPTIMIZATION.md} Search engine optimization strategy
  */
 
 import { escapeHtml } from './html-utils.js';

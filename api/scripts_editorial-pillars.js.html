@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/editorial-pillars.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/editorial-pillars.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module Intelligence Operations/Editorial Intelligence Framework
+ * @category Intelligence Operations - Editorial Intelligence Framework
+ * 
+ * @description
+ * Editorial intelligence framework defining the five-pillar content strategy for
+ * automated news generation and evening analysis articles. This module provides
+ * standardized heading structures across all 14 supported languages, enabling
+ * consistent editorial organization for complex political intelligence reporting.
+ * 
+ * The 5 Editorial Pillars Framework:
+ * 
+ * Pillar 1 - Lead Story / Parliamentary Pulse:
+ * The primary news peg identifying the most significant parliamentary development
+ * of the day. Represents the journalist's assessment of news importance within
+ * the broader political context. May be a plenary vote, committee decision,
+ * government announcement, or cross-party agreement. Demands strongest analytical
+ * context explaining "why this matters now" to the reader.
+ * 
+ * Pillar 2 - Parliamentary Pulse (Secondary):
+ * Captures secondary parliamentary activities and legislative developments beyond
+ * the lead story. Includes committee meetings, document submissions, procedural
+ * motions, and other parliamentary events. Organized chronologically with emphasis
+ * on legislative progress and institutional activity. Provides context for ongoing
+ * legislative processes and parliamentary workload tracking.
+ * 
+ * Pillar 3 - Government Watch:
+ * Dedicated focus on executive branch activities: ministerial announcements,
+ * government policy documents, cabinet decisions, and regulatory actions. Tracks
+ * implementation of existing policies and signals for future initiatives. Enables
+ * readers to separately assess executive and legislative branches of government.
+ * 
+ * Pillar 4 - Opposition Dynamics:
+ * Cross-party political analysis examining consensus/conflict patterns, coalition
+ * signals, and opposition strategy. Tracks party positioning across multiple votes
+ * and documents, identifies emerging alliances or conflicts, and assesses political
+ * feasibility of government initiatives. Critical for understanding power dynamics
+ * beyond simple majority/opposition binary.
+ * 
+ * Pillar 5 - Looking Ahead:
+ * Forward-looking analysis of tomorrow's scheduled events and next week's political
+ * agenda. Includes calendar previews, anticipated votes, committee meetings, and
+ * known future developments. Enables proactive reader engagement and supports
+ * news planning for journalists. May include expert commentary on expected outcomes.
+ * 
+ * Multi-Language Implementation:
+ * Provides heading translations for all 14 supported languages enabling consistent
+ * article structure and reader familiarity across language boundaries. Translation
+ * maintains semantic meaning while adapting to language-specific idioms and
+ * journalistic conventions.
+ * 
+ * Content Organization Patterns:
+ * - Chronological ordering (for Parliamentary/Government sections)
+ * - Thematic clustering (for Opposition section)
+ * - Inverted importance (for Looking Ahead section)
+ * - Visual hierarchy (editorial headings guide reader attention)
+ * - Cross-reference links (connecting related developments across pillars)
+ * 
+ * @intelligence
+ * Editorial Intelligence Methodology:
+ * 
+ * Content Curation Analysis:
+ * The 5-pillar framework operationalizes editorial intelligence judgment:
+ * - Newsworthiness assessment (which events meet publication threshold?)
+ * - Context provision (how to explain development to diverse audiences?)
+ * - Balance verification (proportional coverage of different political actors?)
+ * - Narrative coherence (do events form meaningful story arc?)
+ * - Reader relevance (why should target audience care about this development?)
+ * 
+ * Political Intelligence Assessment:
+ * - Party positioning analysis (coalition signals, opposition strategy)
+ * - Legislative feasibility determination (likelihood of bill passage)
+ * - Risk factor identification (fiscal, political, implementation risks)
+ * - Timeline tracking (deadline-driven decision pressure)
+ * - Stakeholder impact analysis (who benefits/loses from this development?)
+ * 
+ * Narrative Structure Design:
+ * - Lead story contextualization (framing development within broader issues)
+ * - Fact-based reporting (separation of reporting from analysis)
+ * - Multiple perspective inclusion (all major party viewpoints)
+ * - Source attribution and transparency
+ * - Predictive analysis (likely implications and next steps)
+ * 
+ * Content Strategy Integration:
+ * - Coverage breadth (representation of all major political actors)
+ * - Coverage depth (appropriate detail for reader comprehension)
+ * - Temporal balance (historical context vs. immediate news)
+ * - Geographic scope (national focus with regional implications)
+ * - Topic diversity (avoiding overemphasis on single policy area)
+ * 
+ * @osint
+ * Editorial Source Strategy:
+ * 
+ * Primary Source Integration:
+ * - Riksdagen voting records and debate transcripts
+ * - Government press releases and policy documents
+ * - Committee reports and decisions
+ * - Official party position statements
+ * - Parliamentary calendar and scheduling documents
+ * 
+ * Source Verification Framework:
+ * - Compare reported facts against official parliamentary records
+ * - Cross-reference government announcements with Regeringen.se
+ * - Validate party positions against actual voting behavior
+ * - Check temporal accuracy of event descriptions
+ * - Confirm attributed quotes against speech transcripts
+ * 
+ * Intelligence Assessment Inputs:
+ * - Historical precedent (similar situations and outcomes)
+ * - Party manifesto alignment (policy consistency checks)
+ * - Coalition behavior patterns (predictive modeling)
+ * - Expert commentary (when available from official sources)
+ * - Public opinion indicators (when relevant to story)
+ * 
+ * @risk
+ * Editorial Intelligence Risks:
+ * 
+ * Threat: Editorial Bias
+ * - Pillar selection emphasizing certain political views
+ * - Mitigation: Structured framework enforcing balanced coverage
+ * 
+ * Threat: False Balance
+ * - Equivalent coverage of consensus vs. fringe positions
+ * - Mitigation: Editorial judgment weighted by factual support
+ * 
+ * Threat: Importance Misjudgment
+ * - Lead story selection missing major developments
+ * - Mitigation: Multiple editorial review, reader engagement metrics
+ * 
+ * Threat: Context Deficiency
+ * - Historical context missing for reader understanding
+ * - Mitigation: Template-enforced context inclusion
+ * 
+ * Threat: Source Verification Failure
+ * - Propagating unverified claims or misinformation
+ * - Mitigation: Source attribution requirements, fact-checking
+ * 
+ * @gdpr
+ * GDPR Compliance in Editorial Framework:
+ * 
+ * - Public Officials: Process only in official capacity
+ * - Political Opinions: Article about political positions and party affiliations
+ * - Personal Data Exclusion: No phone, email, addresses, family info
+ * - Retention Policy: Articles kept indefinitely (cultural heritage), but no personal data
+ * - Transparency: Clear source attribution for all claims
+ * - Right to Erasure: Not applicable (historical parliamentary records)
+ * 
+ * @security
+ * Editorial Framework Security:
+ * 
+ * - Data Integrity:
+ *   * Pillar definitions stored in version control
+ *   * Change tracking for editorial standard modifications
+ *   * No dynamic code execution in heading definitions
+ * 
+ * - Localization Security:
+ *   * Language codes validated (14-language whitelist)
+ *   * Fallback mechanisms for missing translations
+ *   * No script injection in localized text
+ * 
+ * - Configuration Management:
+ *   * Centralized heading definitions reduce duplication
+ *   * Consistent export format across all modules
+ *   * Automated validation against schema definitions
+ * 
+ * @author Hack23 AB - Intelligence Operations Team
+ * @license Apache-2.0
+ * @version 2.0.0
+ * 
+ * @see {@link ./generate-news-enhanced.js} Article generation using pillars
+ * @see {@link ./article-template.js} Template incorporating pillar structure
+ * @see {@link tests/news-evening-analysis.test.js} Testing pillar integration
+ * @see {@link scripts/validate-evening-analysis.js} Validation against pillar headings
+ * @see {@link docs/EDITORIAL_STRATEGY.md} Editorial intelligence strategy
+ * @see {@link docs/CONTENT_CURATION.md} Content curation framework
+ * @see {@link docs/JOURNALISTIC_STANDARDS.md} Journalism standards and practices
+ */
+
+export const EDITORIAL_PILLAR_HEADINGS = {
+  en: {
+    parliamentaryPulse: 'Parliamentary Pulse',
+    governmentWatch: 'Government Watch',
+    oppositionDynamics: 'Opposition Dynamics',
+    lookingAhead: 'Looking Ahead'
+  },
+  sv: {
+    parliamentaryPulse: 'Riksdagspulsen',
+    governmentWatch: 'Regeringsbevakning',
+    oppositionDynamics: 'Oppositionsdynamik',
+    lookingAhead: 'Vad händer imorgon'
+  },
+  da: {
+    parliamentaryPulse: 'Parlamentarisk Puls',
+    governmentWatch: 'Regeringsovervågning',
+    oppositionDynamics: 'Oppositionsdynamik',
+    lookingAhead: 'Hvad sker i morgen'
+  },
+  no: {
+    parliamentaryPulse: 'Parlamentarisk Puls',
+    governmentWatch: 'Regjeringsovervåking',
+    oppositionDynamics: 'Opposisjonsdynamikk',
+    lookingAhead: 'Hva skjer i morgen'
+  },
+  fi: {
+    parliamentaryPulse: 'Parlamentaarinen Pulssi',
+    governmentWatch: 'Hallituksen Valvonta',
+    oppositionDynamics: 'Opposition Dynamiikka',
+    lookingAhead: 'Mitä tapahtuu huomenna'
+  },
+  de: {
+    parliamentaryPulse: 'Parlamentarischer Puls',
+    governmentWatch: 'Regierungsbeobachtung',
+    oppositionDynamics: 'Oppositionsdynamik',
+    lookingAhead: 'Was passiert morgen'
+  },
+  fr: {
+    parliamentaryPulse: 'Pouls Parlementaire',
+    governmentWatch: 'Surveillance Gouvernementale',
+    oppositionDynamics: 'Dynamique de l\'Opposition',
+    lookingAhead: 'Ce qui se passe demain'
+  },
+  es: {
+    parliamentaryPulse: 'Pulso Parlamentario',
+    governmentWatch: 'Vigilancia Gubernamental',
+    oppositionDynamics: 'Dinámica de la Oposición',
+    lookingAhead: 'Qué sucede mañana'
+  },
+  nl: {
+    parliamentaryPulse: 'Parlementaire Pols',
+    governmentWatch: 'Regeringstoezicht',
+    oppositionDynamics: 'Oppositiedynamiek',
+    lookingAhead: 'Wat gebeurt er morgen'
+  },
+  ar: {
+    parliamentaryPulse: 'النبض البرلماني',
+    governmentWatch: 'مراقبة الحكومة',
+    oppositionDynamics: 'ديناميكية المعارضة',
+    lookingAhead: 'ماذا يحدث غداً'
+  },
+  he: {
+    parliamentaryPulse: 'הדופק הפרלמנטרי',
+    governmentWatch: 'מעקב אחר הממשלה',
+    oppositionDynamics: 'דינמיקת האופוזיציה',
+    lookingAhead: 'מה קורה מחר'
+  },
+  ja: {
+    parliamentaryPulse: '議会の脈動',
+    governmentWatch: '政府監視',
+    oppositionDynamics: '野党の動き',
+    lookingAhead: '明日の予定'
+  },
+  ko: {
+    parliamentaryPulse: '의회 동향',
+    governmentWatch: '정부 감시',
+    oppositionDynamics: '야당 역학',
+    lookingAhead: '내일 일정'
+  },
+  zh: {
+    parliamentaryPulse: '议会脉动',
+    governmentWatch: '政府监督',
+    oppositionDynamics: '反对派动态',
+    lookingAhead: '明天会发生什么'
+  }
+};
+
+/**
+ * Detect article language from HTML content
+ * @param {string} html - HTML content
+ * @returns {string} - Language code (fallback to 'en')
+ */
+export function detectArticleLanguage(html) {
+  if (!html) {
+    return 'en';
+  }
+  const match = html.match(/&lt;html[^>]*lang="([^"]+)"/i);
+  if (match &amp;&amp; match[1]) {
+    // Normalize language code: lowercase and strip region (e.g., "EN" or "no-NO" -> "en", "no")
+    const primaryLang = match[1].toLowerCase().split('-')[0];
+    if (EDITORIAL_PILLAR_HEADINGS[primaryLang]) {
+      return primaryLang;
+    }
+  }
+  // Fallback to English
+  return 'en';
+}
+
+/**
+ * Get localized heading for a pillar
+ * @param {string} lang - Language code
+ * @param {string} pillar - Pillar name
+ * @returns {string} - Localized heading
+ */
+export function getLocalizedHeading(lang, pillar) {
+  const headings = EDITORIAL_PILLAR_HEADINGS[lang] || EDITORIAL_PILLAR_HEADINGS.en;
+  return headings[pillar];
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

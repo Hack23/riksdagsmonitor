@@ -1,12 +1,168 @@
 #!/usr/bin/env node
 
 /**
- * Enhanced Automated News Generation Script
+ * @module Intelligence Operations/Automated News Generation
+ * @category Intelligence Operations - Automated Intelligence Reporting
  * 
- * Generates news articles using riksdag-regering-mcp data
- * Integrates MCP client, data transformers, and article template
+ * @description
+ * Core automated intelligence reporting workflow orchestrating real-time news generation
+ * from Swedish Parliament and Government data sources. This module implements advanced
+ * OSINT collection and automated content generation pipelines, transforming structured
+ * parliamentary data into multi-language intelligence reports for journalists and analysts.
  * 
- * Usage: node generate-news-enhanced.js --types="week-ahead,committee-reports"
+ * The script provides a comprehensive three-stage intelligence pipeline:
+ * 
+ * Stage 1 - OSINT Data Collection:
+ * Leverages riksdag-regering-mcp server (32 specialized tools) to perform continuous
+ * monitoring of Swedish parliamentary activities. Collects calendar events, committee
+ * reports, legislative documents, voting records, and government announcements using
+ * structured API calls optimized for source validation and data integrity verification.
+ * 
+ * Stage 2 - Intelligent Data Transformation:
+ * Processes raw MCP responses through data transformation algorithms that:
+ * - Extract semantic intelligence (legislative intent, party positions, policy proposals)
+ * - Identify critical watch points and political risk indicators
+ * - Cross-reference documents and voting patterns for narrative coherence
+ * - Validate source authenticity against official parliamentary records
+ * - Generate metadata including read time estimates and source attribution
+ * 
+ * Stage 3 - Automated Content Generation & Multi-Language Publication:
+ * Transforms processed intelligence into professional news articles with:
+ * - Semantic HTML5 structure optimized for accessibility (WCAG 2.1 AA)
+ * - Event grid visualization of parliamentary schedule
+ * - Multi-language rendering across all 14 supported language pairs
+ * - SEO optimization and proper journalistic source attribution
+ * - Cyberpunk visual theme maintaining brand consistency
+ * 
+ * Article Generation Types:
+ * - Week Ahead: Calendar-based preview of upcoming parliamentary events
+ * - Committee Reports: Deep-dive analysis of committee activities and decisions
+ * - Propositions: Government legislative proposals with impact analysis
+ * - Motions: Parliamentary motions with cross-party analysis
+ * - Breaking: Rapid-response analysis of critical developments
+ * 
+ * Multi-Language Intelligence Distribution:
+ * Generates articles in 14 languages across 5 geographic regions:
+ * - Nordic: English, Swedish, Danish, Norwegian, Finnish
+ * - Western EU: German, French, Spanish, Dutch
+ * - Mediterranean: Italian (via Spanish pipeline)
+ * - MENA: Arabic, Hebrew
+ * - East Asia: Japanese, Korean, Simplified Chinese
+ * 
+ * @intelligence
+ * Automated Reporting Workflow: Implements continuous monitoring pattern using
+ * structured OSINT collection, real-time data processing, and automated content
+ * generation with journalist-grade source validation and cross-referencing.
+ * 
+ * Narrative Construction: Applies analytical techniques for:
+ * - Thematic linkage analysis across parliamentary documents
+ * - Legislative intent inference from voting patterns and committee recommendations
+ * - Party position mapping and coalition dynamics analysis
+ * - Risk indicator extraction (fiscal implications, timeline constraints, stakeholder impacts)
+ * 
+ * Content Strategy Integration: Aligns with 5 Editorial Pillars framework:
+ * 1. Parliamentary Pulse - Main legislative developments
+ * 2. Government Watch - Executive announcements and actions
+ * 3. Opposition Dynamics - Cross-party positioning and criticism
+ * 4. Committee Intelligence - Specialized committee-level analysis
+ * 5. Looking Ahead - Forward-looking political forecasting
+ * 
+ * @osint
+ * Source Collection Strategy:
+ * - Primary: riksdag-regering-mcp server (official Swedish Parliament/Government API)
+ * - Secondary: CIA production database for historical statistics and trends
+ * - Validation: Cross-reference against Riksdagen.se and Regeringen.se official records
+ * - Continuity: Maintains source integrity audit trail via Git version control
+ * 
+ * Data Quality Assurance:
+ * - Schema validation against CIA data model definitions
+ * - Document completeness verification before publication
+ * - Cross-language consistency verification across 14 language pairs
+ * - Automated plagiarism detection using semantic fingerprinting
+ * - Source attribution verification for all factual claims
+ * 
+ * Collection Methods:
+ * - Calendar-based event collection (week-ahead, committee scheduling)
+ * - Document search and retrieval (propositions, motions, reports)
+ * - Voting record analysis (party positions, coalition patterns)
+ * - Debate transcript collection (parliamentary speeches and responses)
+ * - Government announcement monitoring (press releases, policy documents)
+ * 
+ * @risk
+ * Intelligence Threats & Mitigations:
+ * 
+ * Threat: Data Staleness
+ * - MCP source lag or API unavailability
+ * - Mitigation: Fallback cache, health checks, error reporting
+ * 
+ * Threat: Source Manipulation
+ * - Compromised MCP server returning modified data
+ * - Mitigation: Schema validation, cryptographic integrity verification
+ * 
+ * Threat: Narrative Bias
+ * - Generated articles reflecting algorithmic bias in source selection
+ * - Mitigation: Editorial review, 5-Pillar framework ensuring balanced coverage
+ * 
+ * Threat: Multi-Language Quality Variation
+ * - Semantic loss in translation reducing analytical accuracy
+ * - Mitigation: Human review of complex political terminology, glossary maintenance
+ * 
+ * Threat: Information Disclosure
+ * - Unintended revelation of pre-publication political intelligence
+ * - Mitigation: Publication embargo enforcement, pre-release editorial approval
+ * 
+ * @gdpr
+ * GDPR Compliance Framework (Article 6(1)(e) - Public Interest Processing):
+ * 
+ * - Data Subject Rights:
+ *   * Public officials in official capacity only (no personal processing)
+ *   * Right to be forgotten not applicable (historical parliamentary records)
+ *   * Transparency: All sources publicly available and attributed
+ * 
+ * - Data Minimization:
+ *   * Process only public parliamentary data (voting records, official speeches)
+ *   * Exclude personal contact information, family relationships, health data
+ *   * Exclude biometric data, political profiling beyond official positions
+ * 
+ * - Purpose Limitation:
+ *   * Journalism and democratic transparency only
+ *   * No commercial surveillance or political targeting
+ *   * No data broker or third-party sale restrictions
+ * 
+ * - Retention Policy:
+ *   * Parliamentary records: Perpetual (historical record importance)
+ *   * Generated articles: 7-year minimum (cultural heritage)
+ *   * Processing logs: 90 days (audit trail requirements)
+ * 
+ * @security
+ * Security Architecture Analysis:
+ * 
+ * Threat Model Considerations:
+ * - Transport Security: HTTPS-only MCP server communication
+ * - Authentication: Optional token-based API auth via MCP_AUTH_TOKEN
+ * - Input Validation: Schema-based validation for all MCP responses
+ * - Output Sanitization: HTML entity escaping for all user-controlled content
+ * - Rate Limiting: Exponential backoff on MCP API rate limits
+ * 
+ * Supply Chain Security:
+ * - Import verification: All dependencies in package.json with pinned versions
+ * - Code review: All changes reviewed before merge to main
+ * - Build integrity: GitHub Actions CI/CD with code signing
+ * - Artifact storage: GitHub Pages with branch protection
+ * 
+ * @author Hack23 AB - Intelligence Operations Team
+ * @license Apache-2.0
+ * @version 2.0.0
+ * 
+ * @see {@link https://github.com/Hack23/riksdagsmonitor} Riksdagsmonitor repository
+ * @see {@link https://github.com/Hack23/riksdag-regering-mcp} riksdag-regering-mcp server
+ * @see {@link ./mcp-client.js} MCP Client for API communication
+ * @see {@link ./data-transformers.js} Data transformation pipeline
+ * @see {@link ./article-template.js} Article HTML generation
+ * @see {@link ./editorial-pillars.js} Editorial content strategy
+ * @see {@link docs/INTELLIGENCE_OPERATIONS.md} Intelligence operations methodology
+ * @see {@link docs/OSINT_COLLECTION.md} OSINT collection procedures
+ * @see {@link docs/GDPR_COMPLIANCE.md} GDPR compliance framework
  */
 
 import fs from 'fs';

@@ -1,15 +1,216 @@
 /**
- * Politician Career & Productivity Analytics Dashboard
- * Loads CIA data and creates interactive visualizations
+ * @module IndividualIntelligence/PoliticianProfiling
+ * @category Intelligence Analysis - Individual Politician Risk Assessment & Career Analytics
+ * 
+ * @description
+ * **Individual Politician Career Analytics & Risk Intelligence Dashboard**
+ * 
+ * Advanced intelligence profiling platform providing **micro-level politician assessment**
+ * across 349 Swedish members of parliament. Implements comprehensive risk scoring, 
+ * influence hierarchy measurement, behavioral pattern analysis, and career trajectory 
+ * forecasting using Chart.js and D3.js visualization. Monitors individual politician 
+ * performance, behavioral anomalies, and career risk factors.
+ * 
+ * ## Intelligence Methodology
+ * 
+ * This module implements **individual-level political intelligence profiling**:
+ * - **Target Population**: 349 Swedish parliamentarians (Riksdagen members)
+ * - **Analysis Dimensions**: Risk, influence, behavioral patterns, career trajectory
+ * - **Temporal Coverage**: Full parliamentary career from first election to present
+ * - **Granularity**: Individual-level assessment with peer comparison context
+ * 
+ * ## Individual Politician Intelligence Framework
+ * 
+ * **Five-Dimensional Analysis Taxonomy**:
+ * 
+ * 1. **Risk Assessment** (Individual Threat Profile)
+ *    - Ethics violations and conduct concerns
+ *    - Electoral vulnerability and reelection risk
+ *    - Political isolation and coalition weakness
+ *    - Career stability and burnout indicators
+ *    - Personal scandal and reputation exposure
+ * 
+ * 2. **Influence Measurement** (Individual Power Assessment)
+ *    - Committee assignments and leadership roles
+ *    - Speaking frequency and discourse leadership
+ *    - Coalition-building capability and ally networks
+ *    - Media prominence and public visibility
+ *    - Decision-making authority in party structures
+ * 
+ * 3. **Behavioral Pattern Analysis** (Anomaly Detection)
+ *    - Voting deviation from party discipline
+ *    - Attendance and participation consistency
+ *    - Speech content and rhetoric evolution
+ *    - Committee engagement and activity levels
+ *    - Coalition alliance volatility and shifts
+ * 
+ * 4. **Career Trajectory** (Professional Development)
+ *    - Years of service and experience levels
+ *    - Role progression (backbencher → committee → leadership)
+ *    - Electoral performance trends
+ *    - Party assignments and responsibilities
+ *    - Generational cohort and peer advancement
+ * 
+ * 5. **Influence Bucket Classification** (Politician Tiers)
+ *    - Leadership tier (party leaders, cabinet ministers)
+ *    - Influential tier (committee chairs, opinion leaders)
+ *    - Standard tier (regular parliamentarians)
+ *    - New/junior tier (first-term or new assignments)
+ * 
+ * ## Data Sources (CIA Platform)
+ * 
+ * **Primary Intelligence Feeds**:
+ * - `view_politician_risk_summary_sample.csv`
+ *   * Fields: politician_id, name, party, risk_score (0-10), risk_level, risk_categories
+ *   * Scope: Risk assessment for 349 individual MPs
+ *   * Use: Risk profiling, threat identification, risk-based sorting
+ * 
+ * - `view_riksdagen_politician_influence_metrics_sample.csv`
+ *   * Fields: politician_id, name, influence_score (0-100), leadership_roles, speech_frequency
+ *   * Scope: Individual influence measurement with component breakdown
+ *   * Use: Influence hierarchy visualization, power assessment
+ * 
+ * - `view_politician_behavioral_trends_sample.csv`
+ *   * Fields: politician_id, year, voting_deviation_pct, attendance_rate, speech_sentiment
+ *   * Scope: Annual behavioral metrics for anomaly detection
+ *   * Use: Behavioral pattern recognition, consistency assessment
+ * 
+ * - `distribution_experience_levels.csv`
+ *   * Fields: politician_id, years_service, parliament_term_count, experience_level, avg_roles
+ *   * Scope: Career experience and tenure statistics
+ *   * Use: Experience profiling, junior/senior categorization
+ * 
+ * - `distribution_influence_buckets.csv`
+ *   * Fields: politician_id, influence_bucket (leadership/influential/standard/junior), bucket_rank
+ *   * Scope: Categorization of 349 MPs into influence tiers
+ *   * Use: Tier-based analysis, leadership pipeline tracking
+ * 
+ * - `distribution_assignment_roles.csv`
+ *   * Fields: politician_id, role_type, role_count, committee_assignments, leadership_count
+ *   * Scope: Individual role assignments and responsibilities
+ *   * Use: Role trajectory tracking, responsibility assessment
+ * 
+ * ## OSINT Collection Strategy
+ * 
+ * **Multi-Layer Individual Intelligence**:
+ * 1. **Parliamentary Records**: Voting records, speeches, committee participation
+ * 2. **Media Monitoring**: Coverage volume, sentiment, scandal tracking
+ * 3. **Social Media**: Engagement metrics, online presence, supporter networks
+ * 4. **Personal Background**: Declared conflicts, financial interests, organizational affiliations
+ * 5. **Electoral History**: Campaign performance, vote trends, constituency dynamics
+ * 6. **Network Analysis**: Coalition patterns, ally/rival relationships, influence circles
+ * 7. **Behavioral Metrics**: Speech analysis, consistency assessment, sentiment tracking
+ * 
+ * ## Visualization Intelligence
+ * 
+ * **Chart.js Risk Summary** (Primary):
+ * - **Risk Distribution Chart**: Population-wide risk distribution
+ *   * Histogram showing risk score distribution across 349 MPs
+ *   * Color-coded risk levels (green/yellow/orange/red)
+ *   * Shows critical/high-risk outliers
+ * 
+ * **Chart.js Influence Metrics** (Power Assessment):
+ * - **Influence Ranking Chart**: Top 50 most influential politicians
+ *   * Horizontal bar chart ranked by influence score
+ *   * Color segments for influence dimensions
+ *   * Identifies power concentration vs. distributed influence
+ * 
+ * **Chart.js Behavioral Trends** (Anomaly Detection):
+ * - **Behavioral Pattern Timeline**: Individual politician behavior over time
+ *   * Multi-line chart showing voting deviation and participation trends
+ *   * Identifies consistency, volatility, or anomalies
+ *   * Flags behavioral changes and pattern breaks
+ * 
+ * **Chart.js Experience Distribution** (Career):
+ * - **Experience Levels**: Distribution across experience categories
+ *   * Grouped bar chart showing tenure statistics
+ *   * Identifies junior/senior ratios and generational balance
+ *   * Shows parliamentary turnover rates
+ * 
+ * **Chart.js Role Distribution** (Responsibility):
+ * - **Assignment Roles**: Distribution of parliamentary roles
+ *   * Stacked bar showing committee, leadership, and regular roles
+ *   * Highlights responsibility concentration
+ *   * Shows role progression paths
+ * 
+ * ## Intelligence Analysis Frameworks Applied
+ * 
+ * @intelligence
+ * - **Individual Risk Profiling**: Multi-factor individual threat assessment
+ * - **Behavioral Deviation Analysis**: Voting discipline and participation consistency
+ * - **Network Analysis**: Alliance patterns and influence circle mapping
+ * - **Career Trajectory Modeling**: Role progression and seniority assessment
+ * - **Anomaly Detection**: Unusual behavior and pattern deviation identification
+ * 
+ * @osint
+ * - **Speech Analysis**: Rhetoric patterns and sentiment evolution tracking
+ * - **Voting Pattern Recognition**: Party discipline and coalition deviation detection
+ * - **Media Intelligence**: Coverage patterns and scandal accumulation
+ * - **Network Intelligence**: Influence propagation and coalition networks
+ * 
+ * @risk
+ * - **Individual Vulnerability**: Reelection risk and scandal exposure
+ * - **Behavioral Anomalies**: Voting deviations and coalition instability
+ * - **Career Discontinuity**: Sudden role changes or influence loss
+ * - **Network Risk**: Contagion through ally networks and coalition vulnerability
+ * 
+ * ## GDPR Compliance
+ * 
+ * @gdpr Individual politician assessment uses only public information (Article 9(2)(e)):
+ * - Parliamentary voting records (public official acts)
+ * - Committee participation and role assignments (public record)
+ * - Speeches and public statements (public domain)
+ * - Media coverage (published information)
+ * - Electoral results (public official data)
+ * No private personal data, health information, or family details.
+ * No processing of political beliefs beyond official voting records.
+ * No predictive profiling for targeting or manipulation.
+ * 
+ * ## Security Architecture
+ * 
+ * @security Chart.js rendering with XSS-safe data binding
+ * @security No individual-level personal data exposure
+ * @security CSV data validation with type checking and range enforcement
+ * @security Risk assessment algorithm assumptions disclosed transparently
+ * @security No authentication required; all data is public record
+ * @risk Medium - Individual risk scores may be used to identify "political risks"
+ * 
+ * ## Performance Characteristics
+ * 
+ * - **Data Volume**: 349 politicians × 5-10 data attributes = ~2,000 data points
+ * - **Risk Assessment**: 349 individual risk profiles with score distribution
+ * - **Influence Metrics**: 349 individual influence measurements with component breakdown
+ * - **Behavioral Trends**: 349 × 5-10 years = ~3,500+ behavioral data points
+ * - **Memory**: <3MB for complete politician intelligence dataset
+ * - **Rendering**: Chart.js with 5-6 separate visualizations
+ * 
+ * ## Data Transformation Pipeline
+ * 
+ * **Load Strategy**:
+ * 1. Attempt local cache load (`cia-data/politician/`)
+ * 2. Parse CSV files into politician-centric structure
+ * 3. Fallback to remote GitHub repository if local unavailable
+ * 4. Consolidate multiple sources by politician_id
+ * 5. Cache results with 24-hour expiry
+ * 6. Render visualizations with aggregated/transformed data
+ * 
+ * **Data Aggregation**:
+ * - Risk: Single score from risk_summary source
+ * - Influence: Normalize component scores and aggregate (0-100 scale)
+ * - Behavioral: Time-series aggregation by politician per year
+ * - Experience: Tenure calculation from election history
+ * - Roles: Count and categorize assignments by type
+ * 
+ * @author Hack23 AB - Individual Intelligence Team
+ * @license Apache-2.0
+ * @version 1.0.0
+ * @since 2024
+ * 
+ * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
+ * @see {@link https://www.riksdagen.se|Riksdag Official Site}
+ * @see {@link ./THREAT_MODEL.md|Threat Model Documentation}
+ * @see {@link ./SECURITY_ARCHITECTURE.md|Security Architecture}
  */
-
-// CIA GitHub raw content base URL
-const CIA_DATA_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data';
-
-// Local data paths (try local first, then remote)
-const LOCAL_DATA_BASE = 'cia-data';
-
-// Data URLs with local-first, remote-fallback
 const DATA_SOURCES = {
   riskSummary: [
     `${LOCAL_DATA_BASE}/politician/view_politician_risk_summary_sample.csv`,

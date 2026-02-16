@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: ContentGeneration/ProspectiveAnalysis</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: ContentGeneration/ProspectiveAnalysis</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p><strong>INTELLIGENCE OPERATIVE PERSPECTIVE</strong></p>
+<p>This module generates &quot;Week Ahead&quot; articles that provide prospective coverage
+of upcoming parliamentary activity. Unlike reactive news (breaking news, evening
+analysis), week-ahead articles are forward-looking intelligence briefings that
+help stakeholders prepare for expected developments and anticipate parliamentary
+agenda. This prospective focus represents a critical intelligence function:
+helping analysts prepare rather than merely react.</p>
+<p><strong>INTELLIGENCE VALUE OF PROSPECTIVE ANALYSIS:</strong>
+Forward-looking coverage serves intelligence objectives:</p>
+<ol>
+<li><strong>Situational Awareness</strong>: Stakeholders know what to expect</li>
+<li><strong>Preparation</strong>: Organizations can prepare positions/responses</li>
+<li><strong>Pattern Recognition</strong>: Identifies patterns in parliamentary schedule</li>
+<li><strong>Trend Analysis</strong>: Connects planned activity to broader government agenda</li>
+<li><strong>Risk Assessment</strong>: Upcoming events flagged for potential controversy</li>
+</ol>
+<p><strong>COVERAGE SCOPE - 7-DAY CALENDAR:</strong>
+Week-ahead articles cover the next 7 days of parliamentary activity:</p>
+<ul>
+<li><strong>Parliamentary Plenum Sessions</strong>: Full-house debates and votes</li>
+<li><strong>Committee Meetings</strong>: Specialized committee work and reviews</li>
+<li><strong>Government Actions</strong>: Announced government activities</li>
+<li><strong>Scheduled Votes</strong>: Pre-announced parliamentary voting sessions</li>
+<li><strong>Public Hearings</strong>: Committee hearings with expert testimony</li>
+<li><strong>International Events</strong>: EU parliament, Nordic cooperation meetings</li>
+</ul>
+<p><strong>ARTICLE STRUCTURE:</strong>
+Each week-ahead article includes:</p>
+<ol>
+<li><strong>Week Overview</strong>: Summary of major upcoming events</li>
+<li><strong>Day-by-Day Breakdown</strong>: Specific activities and scheduled times</li>
+<li><strong>Key Topics</strong>: Policy areas being debated this week</li>
+<li><strong>Watch Points</strong>: Items likely to generate controversy or surprise</li>
+<li><strong>Committee Focus</strong>: Which committees have significant meetings</li>
+<li><strong>Party Positioning</strong>: Known party stances on upcoming votes</li>
+<li><strong>International Context</strong>: EU/Nordic cooperation dimensions</li>
+</ol>
+<p><strong>MCP DATA SOURCE:</strong>
+Primary tool: get_calendar_events</p>
+<ul>
+<li>Retrieves riksdag calendar for specified date range</li>
+<li>Includes session times, committee assignments, topics</li>
+<li>Enables systematic prospective coverage</li>
+</ul>
+<p>TODO: Implement additional tools for comprehensive analysis:</p>
+<ul>
+<li>search_dokument: Find related policy documents for calendar items</li>
+<li>get_fragor: Written questions related to upcoming debates</li>
+<li>get_interpellationer: Interpellations (parliamentary questions) for upcoming sessions</li>
+</ul>
+<p><strong>OPERATIONAL WORKFLOW:</strong></p>
+<ol>
+<li>Calculate Date Range: Get calendar for next 7 calendar days</li>
+<li>Query MCP: Fetch all scheduled parliamentary activity</li>
+<li>Filter &amp; Categorize: Group activities by type and importance</li>
+<li>Context Gathering: Look up related documents and questions</li>
+<li>Watch Point Analysis: Identify controversial or significant items</li>
+<li>Article Generation: Create narrative structure with calendar</li>
+<li>Multilingual Creation: Generate 14-language editions</li>
+<li>Publication: Deploy immediately (updated daily)</li>
+</ol>
+<p><strong>CALENDAR STRUCTURE:</strong>
+Swedish parliament operates on structured schedule:</p>
+<p><strong>Riksdag Plenum (Full Parliament):</strong></p>
+<ul>
+<li>Typically: Tuesday-Thursday weekly</li>
+<li>Time: 10:00-17:00 with lunch break</li>
+<li>Activity: Government statements, main debates, votes</li>
+<li>Advance Notice: Schedule released 3 weeks ahead</li>
+</ul>
+<p><strong>Committees:</strong></p>
+<ul>
+<li>Schedule: Varies by committee</li>
+<li>Timing: Mix of morning and afternoon meetings</li>
+<li>Frequency: Weekly to monthly depending on workload</li>
+<li>Public: Many meetings open to public observation</li>
+</ul>
+<p><strong>Special Sessions:</strong></p>
+<ul>
+<li>Budget Process: September-November intensive schedule</li>
+<li>Emergency Sessions: Called for crisis situations</li>
+<li>International Meetings: Nordic and EU cooperation</li>
+</ul>
+<p><strong>WATCH POINT ANALYSIS:</strong>
+Week-ahead articles highlight items likely to be contentious:</p>
+<ul>
+<li><strong>Coalition Conflict</strong>: Items dividing government coalition</li>
+<li><strong>Opposition Challenges</strong>: Strong opposition-sponsored motions</li>
+<li><strong>Public Controversy</strong>: Items with public/media attention</li>
+<li><strong>International Pressure</strong>: EU directives or international commitments</li>
+<li><strong>Economic Impact</strong>: Items affecting fiscal or monetary policy</li>
+<li><strong>Rights &amp; Freedoms</strong>: Civil liberties and human rights votes</li>
+</ul>
+<p><strong>PARTY STRATEGY ANALYSIS:</strong>
+Upcoming parliamentary schedule reveals party strategies:</p>
+<ul>
+<li>Which issues parties prioritizing (based on speaker slots)</li>
+<li>Which coalitions forming (based on motion sponsorship)</li>
+<li>Which committees are battlegrounds</li>
+<li>Which government ministers may face challenges</li>
+</ul>
+<p><strong>TIMING &amp; PUBLICATION:</strong></p>
+<ul>
+<li>Publication Time: Monday morning, 08:00 Swedish time</li>
+<li>Refresh Schedule: Daily updates if new items added</li>
+<li>Archive: Weeks archived for pattern analysis</li>
+<li>Accuracy: Based on official riksdag calendar</li>
+</ul>
+<p><strong>INTERNATIONAL CONTEXT:</strong>
+Week-ahead articles include international parliamentary activity:</p>
+<ul>
+<li><strong>EU Parliament Sessions</strong>: Relevant Swedish MEP activities</li>
+<li><strong>Nordic Council</strong>: Swedish participation in Nordic cooperation</li>
+<li><strong>Bilateral Events</strong>: International parliamentary delegations</li>
+<li><strong>Treaty Ratifications</strong>: International agreements for vote</li>
+</ul>
+<p><strong>INTELLIGENCE APPLICATIONS:</strong></p>
+<ol>
+<li><strong>Agenda Tracking</strong>: What parliament will debate</li>
+<li><strong>Coalition Health</strong>: Scheduled votes reveal coalition confidence</li>
+<li><strong>Party Focus</strong>: Which issues parties emphasizing</li>
+<li><strong>Timeline Prediction</strong>: When major votes will occur</li>
+<li><strong>Crisis Preparation</strong>: Advance notice of sensitive votes</li>
+</ol>
+<p><strong>PERFORMANCE CHARACTERISTICS:</strong></p>
+<ul>
+<li>MCP Query: ~300ms for 7-day calendar</li>
+<li>Article Generation: ~3 seconds (includes calendar formatting)</li>
+<li>Translation: ~6 seconds (parallel)</li>
+<li>Total: ~10 seconds for batch (all languages)</li>
+</ul>
+<p><strong>DATE RANGE HANDLING:</strong>
+Week-ahead uses UTC-based date calculation to avoid timezone issues:</p>
+<ul>
+<li>Tomorrow start: Tomorrow at 00:00 UTC</li>
+<li>One week ahead: 7 days from tomorrow</li>
+<li>Handles daylight saving transitions</li>
+<li>Consistent across timezones</li>
+</ul>
+<p><strong>FAILURE HANDLING:</strong></p>
+<ul>
+<li>Empty Calendar: Generate article noting light schedule</li>
+<li>MCP Service Down: Use cached previous week's structure</li>
+<li>Missing Committee Times: Exclude committees without times</li>
+<li>Parse Error: Continue with available data</li>
+</ul>
+<p><strong>GDPR COMPLIANCE:</strong></p>
+<ul>
+<li>Calendar events are public parliamentary records</li>
+<li>No personal data beyond member names (public roles)</li>
+<li>Data retention follows parliamentary archive standards</li>
+<li>Supporting transparency in democratic process</li>
+</ul></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>2.1.0</li></ul></dd>
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2024-09-05</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB (Prospective Intelligence &amp; Agenda Analysis)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_news-types_week-ahead.js.html">scripts/news-types/week-ahead.js</a>, <a href="scripts_news-types_week-ahead.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>scripts/data-transformers.js (Calendar Transformation)</li>
+        
+            <li>scripts/article-template.js (HTML Rendering)</li>
+        
+            <li>Issue #151 (Week-Ahead Enhancement)</li>
+        
+            <li><a href="https://www.riksdagen.se/sv/sa-funkar-riksdagen/%20(Parliament%20Procedure)">https://www.riksdagen.se/sv/sa-funkar-riksdagen/ (Parliament Procedure)</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".REQUIRED_TOOLS"><span class="type-signature">(static, constant) </span>REQUIRED_TOOLS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Required MCP tools for week-ahead articles</p>
+<p>REQUIRED_TOOLS UPDATE (2026-02-14):
+Initially set to 4 tools ['get_calendar_events', 'search_dokument', 'get_fragor', 'get_interpellationer']
+to match tests/validation expectations. However, this caused runtime validation failures
+since the implementation only calls get_calendar_events (line 81).</p>
+<p>Reverted to actual implementation (1 tool) to prevent validation failures.
+When additional tools are implemented in generateWeekAhead(), add them back here.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_news-types_week-ahead.js.html">scripts/news-types/week-ahead.js</a>, <a href="scripts_news-types_week-ahead.js.html#line202">line 202</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".formatDateForSlug"><span class="type-signature">(static) </span>formatDateForSlug<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Format date for article slug</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_news-types_week-ahead.js.html">scripts/news-types/week-ahead.js</a>, <a href="scripts_news-types_week-ahead.js.html#line227">line 227</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".generateWeekAhead"><span class="type-signature">(static) </span>generateWeekAhead<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generate Week Ahead article in specified languages</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Generation options</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>languages</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Languages to generate (default: ['en', 'sv'])</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dateRange</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional custom date range</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>writeArticle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Function to write article to file</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_news-types_week-ahead.js.html">scripts/news-types/week-ahead.js</a>, <a href="scripts_news-types_week-ahead.js.html#line240">line 240</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Generation result with success, files, slug, mcpCalls</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getWeekAheadDateRange"><span class="type-signature">(static) </span>getWeekAheadDateRange<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Get date range for Week Ahead (next 7 days)<br>
+Uses UTC to avoid timezone boundary issues with toISOString()</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_news-types_week-ahead.js.html">scripts/news-types/week-ahead.js</a>, <a href="scripts_news-types_week-ahead.js.html#line210">line 210</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".validateWeekAhead"><span class="type-signature">(static) </span>validateWeekAhead<span class="signature">(article)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Validate week-ahead article structure</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>article</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Article object with content and metadata</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_news-types_week-ahead.js.html">scripts/news-types/week-ahead.js</a>, <a href="scripts_news-types_week-ahead.js.html#line411">line 411</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Validation result</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getTitles"><span class="type-signature">(inner) </span>getTitles<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Get language-specific titles</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_news-types_week-ahead.js.html">scripts/news-types/week-ahead.js</a>, <a href="scripts_news-types_week-ahead.js.html#line342">line 342</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
