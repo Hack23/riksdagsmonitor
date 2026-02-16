@@ -450,11 +450,11 @@ MP,t`;
       // Store invalid JSON
       localStorage.setItem(cacheKey, 'invalid json{');
       
-      let data = null;
+      let data;
       try {
         const cached = localStorage.getItem(cacheKey);
         data = JSON.parse(cached);
-      } catch (e) {
+      } catch (_e) {
         // Handle error
         data = null;
       }

@@ -211,7 +211,7 @@ class CIASchemaUpdateChecker {
       
       return { content, hash };
     } catch (error) {
-      throw new Error(`Failed to fetch ${schemaName}: ${error.message}`);
+      throw new Error(`Failed to fetch ${schemaName}: ${error.message}`, { cause: error });
     }
   }
 

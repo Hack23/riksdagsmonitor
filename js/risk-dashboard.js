@@ -416,7 +416,8 @@
       .on('keydown', function(event, d) {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          showRiskDetails(d, this);
+          // Trigger click behavior for keyboard navigation
+          d3.select(this).dispatch('click', { detail: { d, element: this } });
         }
       })
       .on('mouseover', function(event, d) {

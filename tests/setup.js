@@ -8,7 +8,7 @@
  * @license Apache-2.0
  */
 
-import { expect, vi } from 'vitest';
+import { expect, vi, beforeEach, afterEach } from 'vitest';
 
 // Global test utilities
 global.expect = expect;

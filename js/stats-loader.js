@@ -126,7 +126,6 @@
     'stat-riksdag-parties':       'view_riksdagen_party',
     'stat-against-proposals':     'view_riksdagen_vote_data_ballot_summary',
     'stat-committee-proposals':   'view_riksdagen_committee_decision_type_org_summary',
-    'stat-government-proposals':  'view_riksdagen_goverment_proposals',
     'stat-government-roles':      'view_riksdagen_goverment_roles',
     'stat-government-role-members': 'view_riksdagen_goverment_role_member',
     'stat-member-proposals':      'view_riksdagen_person_signed_document_summary',
