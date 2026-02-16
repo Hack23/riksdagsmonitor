@@ -147,87 +147,43 @@ const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar
 - Eventually worked but timeout risk increased significantly
 - **The MCP framework handles ALL of this automatically!**
 
-### Overview
+### How Agentic Workflows Access MCP Servers
 
-You have access to the **riksdag-regering-mcp** server, which provides 32 specialized tools for Swedish parliamentary and government data. The server is pre-configured and ready to use.
-
-**Server Configuration:**
-- **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
-- **Protocol**: JSON-RPC 2.0 (HTTP transport)
-- **Authentication**: Handled automatically by the framework (no manual auth needed)
-- **Session Management**: Handled automatically (no session ID headers needed)
-- **Tools**: 32 tools automatically available via MCP
-
-### 🏗️ Architecture: Gateway vs Direct Access
-
-**Important**: Agentic workflows use a **gateway/proxy architecture** for security and network control.
-
-**Two Access Patterns:**
-
-1. **🛡️ Gateway/Proxy Mode (Agentic Workflows - Current)**
-   - **Route**: Agent → Firewall Container (`host.docker.internal`) → External MCP Server
-   - **Tool Names**: **MUST be prefixed** with `riksdag-regering--` (e.g., `riksdag-regering--get_calendar_events`)
-   - **Authentication**: Handled automatically by framework (Authorization headers managed internally)
-   - **Session Management**: Handled automatically (Mcp-Session-Id headers managed internally)
-   - **Advantages**: Security filtering, network audit logs, rate limiting
-   - **Disadvantages**: Additional latency (~50-200ms per request), more complex (but abstracted away!)
-   - **When Used**: Inside GitHub Actions agentic workflow sandbox
-   
-   ```javascript
-   // Gateway mode - tool names MUST be prefixed (framework handles session/auth)
-   const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
-     from: "2026-02-16",
-     tom: "2026-02-16"
-   });
-   ```
-
-2. **⚡ Direct Access Mode (Recommended for Future)**
-   - **Route**: Agent → External MCP Server (direct HTTPS)
-   - **Tool Names**: **Unprefixed** (e.g., `get_calendar_events`)
-   - **Authentication**: None required (public API)
-   - **Advantages**: Lower latency, simpler, faster cold start recovery
-   - **Disadvantages**: Less network control, requires explicit domain allowlist
-   - **When Used**: Direct MCP server configuration in `.github/copilot-mcp.json`
-   
-   ```javascript
-   // Direct mode - tool names are unprefixed (simpler!)
-   const events = await mcp["riksdag-regering"].get_calendar_events({
-     from: "2026-02-16",
-     tom: "2026-02-16"
-   });
-   ```
-
-**Current Configuration** (in `.github/copilot-mcp.json`):
-```json
-{
-  "mcpServers": {
-    "riksdag-regering": {
-      "type": "http",
-      "url": "https://riksdag-regering-ai.onrender.com/mcp",  // Direct URL
-      "tools": ["*"]
-    }
-  }
-}
-```
-
-**Network Allowlist** (in workflow YAML):
+**Configuration in Workflow Frontmatter:**
 ```yaml
+---
+mcp-servers:
+  riksdag-regering:
+    url: https://riksdag-regering-ai.onrender.com/mcp
+    
 network:
   allowed:
-    - defaults
-    - node
-    - riksdag-regering-ai.onrender.com  # Must be explicitly allowed
+    - riksdag-regering-ai.onrender.com
+---
 ```
 
-### ⚡ Quick Start - Direct Tool Usage
+**What Happens at Runtime:**
+1. Workflow compiles to `.lock.yml` file with embedded MCP configuration
+2. GitHub Actions infrastructure creates **MCP Gateway** (transparent proxy via `host.docker.internal`)
+3. Gateway handles: protocol translation, authentication, session management, health monitoring
+4. All MCP tools become available via `mcp["server-name"]["tool-name"]` syntax
 
-**You can call MCP tools directly without any setup code.** The MCP server is already configured in this workflow's YAML frontmatter.
+**Key Points:**
+- ⚠️ `.github/copilot-mcp.json` is **NOT** used by agentic workflows (that's for Copilot Chat only)
+- ✅ Configuration is in workflow YAML frontmatter `mcp-servers:` section
+- ✅ Gateway mode is automatic - you don't configure it, it just happens
+- ✅ Tool names **MUST be prefixed** with server name + `--` (e.g., `riksdag-regering--get_calendar_events`)
 
-**Lesson from Run #63771890188**: Don't try to manually call MCP via curl/python/bash - use the framework!
+### ⚡ Quick Start - MCP Tool Usage
+
+**Tool Naming Convention:**
+```
+mcp["server-name"]["server-name--tool_name"]({ params })
+```
 
 **Example - Check Today's Calendar:**
 ```javascript
-// Gateway mode (current) - note the riksdag-regering-- prefix
+// Correct format: riksdag-regering--get_calendar_events
 const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
   from: "2026-02-16",
   tom: "2026-02-16",
@@ -237,7 +193,7 @@ const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_eve
 
 **Example - Search Recent Documents:**
 ```javascript
-// Gateway mode - prefix required
+// Correct format: riksdag-regering--search_dokument
 const docs = await mcp["riksdag-regering"]["riksdag-regering--search_dokument"]({
   from_date: "2026-02-16",
   limit: 30
@@ -246,7 +202,7 @@ const docs = await mcp["riksdag-regering"]["riksdag-regering--search_dokument"](
 
 **Example - Get Recent Votes:**
 ```javascript
-// Gateway mode - prefix required
+// Correct format: riksdag-regering--search_voteringar
 const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar"]({
   rm: "2025/26",
   limit: 20
@@ -255,155 +211,93 @@ const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar
 
 ### 🔧 Using the MCP Client Helper (scripts/mcp-client.js)
 
-If you prefer a typed JavaScript client with helper methods, use `scripts/mcp-client.js`:
+**⚠️ Important**: The MCP client helper script is for **manual testing** and **non-agentic workflows only**. 
+
+**In agentic workflows**: Always use the framework's `mcp["server"]["tool"]` syntax shown above.
+
+If you need to test MCP tools outside of agentic workflows:
 
 ```javascript
-// Import the MCP client helper
+// For manual testing/debugging only
 import MCPClient from './scripts/mcp-client.js';
-
-// Create client instance (auto-detects gateway vs direct)
 const client = new MCPClient();
-
-// Use high-level helper methods
 const events = await client.fetchCalendarEvents({ from: today, tom: today });
-const votes = await client.fetchVotingRecords({ rm: "2025/26", limit: 20 });
-const docs = await client.searchDocuments({ from_date: today, limit: 30 });
 ```
-
-**The client automatically handles:**
-- ✅ Gateway vs direct mode detection (checks URL for `host.docker.internal`)
-- ✅ Tool name prefixing (adds `riksdag-regering--` prefix in gateway mode)
-- ✅ Retry logic with exponential backoff (3 attempts, 2s delays)
-- ✅ Timeout handling (30s default, configurable)
-
-**Available Helper Methods:**
-- `fetchCalendarEvents(params)` - Parliamentary calendar
-- `fetchVotingRecords(params)` - Voting results
-- `searchDocuments(params)` - Document search
-- `searchSpeeches(params)` - Debate transcripts
-- `fetchMPs(params)` - Member information
-- `fetchGovernmentDocuments(params)` - Government publications
 
 ### 🚨 Cold Start Handling
 
 **Important**: The MCP server runs on Render.com serverless infrastructure and may experience **cold starts (30-60 seconds)** if inactive.
 
 **Built-in Retry Logic:**
-- The MCP client automatically retries failed requests (3 attempts max)
+- The MCP framework automatically retries failed requests (3 attempts max)
 - Exponential backoff with 2-second delays
-- Timeout: 30 seconds per request (configurable via `MCP_CLIENT_TIMEOUT_MS`)
-
-**Cold Start Detection:**
-```javascript
-// First request may be slow due to cold start
-console.log("⏳ Fetching data (may take 30-60s on cold start)...");
-const data = await client.fetchCalendarEvents({ from: today, tom: today });
-// Subsequent requests will be fast (< 2s)
-```
+- Timeout: 30 seconds per request
 
 **Best Practices:**
-1. ✅ **Start with a simple query** to warm up the server (e.g., `get_calendar_events` with small limit)
+1. ✅ **Start with a simple query** to warm up the server
 2. ✅ **Batch multiple queries** after warm-up for efficiency
-3. ✅ **Check data freshness** using `get_sync_status()` before generating articles
-4. ✅ **Handle timeouts gracefully** - retry or fall back to cached data
+3. ✅ **Check data freshness** using `riksdag-regering--get_sync_status` before generating articles
+4. ✅ **Handle timeouts gracefully** - the framework retries automatically
 5. ❌ **Don't make 50+ sequential requests** - batch where possible
 
 ### 📋 32 Available MCP Tools
 
+**Remember**: All tool names must be prefixed with `riksdag-regering--` when calling from agentic workflows.
+
 **Riksdag (Parliament) Tools (15):**
-- `get_ledamoter` / `search_ledamoter` - MPs and member search
-- `get_motioner` / `search_motioner` - Parliamentary motions
-- `get_propositioner` / `search_propositioner` - Government proposals
-- `get_dokument` / `search_dokument` / `search_dokument_fulltext` - Document retrieval
-- `get_voteringar` / `search_voteringar` - Voting records
-- `get_anforanden` / `search_anforanden` - Speeches and debates
-- `get_fragor` / `get_interpellationer` - Questions and interpellations
-- `get_calendar_events` - Parliamentary schedule
-- `get_betankanden` - Committee reports
+- `riksdag-regering--get_ledamoter` / `riksdag-regering--search_ledamoter` - MPs and member search
+- `riksdag-regering--get_motioner` / `riksdag-regering--search_motioner` - Parliamentary motions
+- `riksdag-regering--get_propositioner` / `riksdag-regering--search_propositioner` - Government proposals
+- `riksdag-regering--get_dokument` / `riksdag-regering--search_dokument` / `riksdag-regering--search_dokument_fulltext` - Documents
+- `riksdag-regering--get_voteringar` / `riksdag-regering--search_voteringar` - Voting records
+- `riksdag-regering--get_anforanden` / `riksdag-regering--search_anforanden` - Speeches and debates
+- `riksdag-regering--get_fragor` / `riksdag-regering--get_interpellationer` - Questions and interpellations
+- `riksdag-regering--get_calendar_events` - Parliamentary schedule
+- `riksdag-regering--get_betankanden` - Committee reports
 
 **Government (Regering) Tools (7):**
-- `search_regering` - Government document search
-- `get_regering_document` - Retrieve specific government doc
-- `get_g0v_document_content` - Get document in Markdown format
-- `summarize_regering_document` - AI summarization
-- `analyze_g0v_by_department` - Department analysis
-- `get_g0v_document_types` - List document categories
+- `riksdag-regering--search_regering` - Government document search
+- `riksdag-regering--get_regering_document` - Retrieve specific government doc
+- `riksdag-regering--get_g0v_document_content` - Get document in Markdown format
+- `riksdag-regering--summarize_regering_document` - AI summarization
+- `riksdag-regering--analyze_g0v_by_department` - Department analysis
+- `riksdag-regering--get_g0v_document_types` - List document categories
 
 **Metadata & Statistics (5):**
-- `get_utskott` - Committee information
-- `get_voting_group` - Voting analysis by party/constituency
-- `fetch_report` - Statistical reports
-- `get_sync_status` - Data freshness check
-- `get_data_dictionary` - Schema definitions
+- `riksdag-regering--get_utskott` - Committee information
+- `riksdag-regering--get_voting_group` - Voting analysis by party/constituency
+- `riksdag-regering--fetch_report` - Statistical reports
+- `riksdag-regering--get_sync_status` - Data freshness check
+- `riksdag-regering--get_data_dictionary` - Schema definitions
 
 **Utility (5):**
-- `batch_fetch_documents` - Efficient bulk retrieval
-- `fetch_paginated_documents` - Pagination support
-- `list_reports` - Available report types
-- `get_latest_update` - Last data sync timestamp
-- `enhanced_government_search` - Combined Riksdag + Government search
+- `riksdag-regering--batch_fetch_documents` - Efficient bulk retrieval
+- `riksdag-regering--fetch_paginated_documents` - Pagination support
+- `riksdag-regering--list_reports` - Available report types
+- `riksdag-regering--get_latest_update` - Last data sync timestamp
+- `riksdag-regering--enhanced_government_search` - Combined Riksdag + Government search
 
 ### 🐛 Troubleshooting
 
-**Issue: Request times out after 30 seconds**
-- **Cause**: Cold start or server overload
-- **Gateway Impact**: Additional 50-200ms latency per request through proxy
-- **Solution**: Wait 60 seconds and retry, or use `MCP_CLIENT_TIMEOUT_MS=60000` env var
+**Issue: Request times out**
+- **Cause**: Cold start (30-60s) or server overload
+- **Solution**: Wait and retry - framework handles retries automatically
 
-**Issue: Tool not found / Method not found**
-- **Cause**: Tool name prefixing mismatch (gateway vs direct mode)
-- **Symptoms**: Error like "Tool 'get_calendar_events' not found" or "Method 'riksdag-regering--get_calendar_events' not found"
-- **Solution**: 
-  - In gateway mode: Use prefixed names (`riksdag-regering--get_calendar_events`)
-  - In direct mode: Use unprefixed names (`get_calendar_events`)
-  - The MCP client helper automatically handles this
+**Issue: Tool not found error**
+- **Cause**: Missing `riksdag-regering--` prefix
+- **Solution**: Always use full prefix: `mcp["riksdag-regering"]["riksdag-regering--tool_name"]`
 
-**Issue: Tool returns empty results**
-- **Cause**: No activity in queried timeframe, or wrong riksmöte (rm)
-- **Solution**: Check `get_sync_status()` for last update, widen search parameters
+**Issue: Empty results**
+- **Cause**: No activity in timeframe or wrong riksmöte (rm)
+- **Solution**: Check `riksdag-regering--get_sync_status` for last update, widen search
 
-**Issue: Swedish-only results returned**
+**Issue: Swedish-only results**
 - **Cause**: Riksdag API returns Swedish data natively
-- **Solution**: YOU must translate to target languages (see translation guide above)
+- **Solution**: YOU must translate to target languages
 
-**Issue: 401 Unauthorized or connection refused**
-- **Cause**: Network restrictions or server maintenance
-- **Solution**: 
-  - Check workflow's `network.allowed` section includes `riksdag-regering-ai.onrender.com`
-  - In gateway mode, ensure firewall container is running (`host.docker.internal` accessible)
-
-**Issue: Agent spent 10+ minutes on authentication trial-and-error**
-- **Cause**: Unclear MCP authentication requirements (none needed!)
-- **Solution**: Documentation now clarifies: **No authentication required** for riksdag-regering-mcp
-- **Future Improvement**: Direct access mode eliminates gateway complexity
-
-### 💡 Recommendation: Migrate to Direct Access (Future)
-
-**Current**: Gateway/proxy architecture adds complexity and latency  
-**Proposal**: Use direct HTTPS connection to MCP server  
-**Benefits**:
-- ✅ **50-200ms faster** per request (no proxy overhead)
-- ✅ **Simpler authentication** (none required, vs gateway session management)
-- ✅ **Faster cold start recovery** (direct retry vs proxy timeout cascade)
-- ✅ **Clearer error messages** (no gateway translation layer)
-- ✅ **Reduced timeout issues** (fewer network hops)
-
-**Configuration Change Needed**:
-```yaml
-# In workflow YAML frontmatter
-mcp-servers:
-  riksdag-regering:
-    url: https://riksdag-regering-ai.onrender.com/mcp  # Already configured correctly!
-
-network:
-  allowed:
-    - defaults
-    - riksdag-regering-ai.onrender.com  # Ensure explicit allowlist
-
-# No additional proxy/gateway configuration needed
-```
-
-**Migration Impact**: Low - MCP client helper already supports both modes and auto-detects based on URL.
+**Issue: Agent spent 10+ minutes on manual attempts**
+- **Cause**: Tried bash/curl/python instead of using framework
+- **Solution**: Always use `mcp["riksdag-regering"]["riksdag-regering--tool_name"]` syntax
 
 ### 📚 Documentation References
 
