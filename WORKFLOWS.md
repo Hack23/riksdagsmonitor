@@ -4,8 +4,8 @@
 [![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 
-**Document Version:** 3.0  
-**Last Updated:** 2026-02-15  
+**Document Version:** 3.1  
+**Last Updated:** 2026-02-16  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -1265,6 +1265,94 @@ gh issue list --label incident,uptime-monitor --state open
 2. If duplicates exist, close manually and re-run workflow
 3. Verify GitHub Actions script permissions (issues: write)
 
+#### Issue: Agentic Workflow - No Safe Outputs Generated
+
+**Symptoms:** Agentic workflow (news-realtime-monitor, news-evening-analysis, news-article-generator) succeeds but shows as "failed" with message "No Safe Outputs Generated"
+
+**Diagnosis:**
+```bash
+# Check workflow run details
+gh run view <run-id>
+
+# Look for:
+# - Agent job: succeeded ✅
+# - Safe outputs: skipped ❌
+# - Detection job: skipped ❌
+```
+
+**Root Cause:** Agent completed execution but did not call a safe output tool (`safeoutputs___noop` or `safeoutputs___create_pull_request`) to signal completion.
+
+**Solutions:**
+1. **Review agent behavior** - Agent must ALWAYS call one safe output tool:
+   - `safeoutputs___noop` when no significant events detected (most common for realtime monitor)
+   - `safeoutputs___create_pull_request` when articles generated
+   
+2. **Re-run workflow** - Use workflow_dispatch to trigger manually:
+   ```bash
+   gh workflow run news-realtime-monitor.lock.yml
+   ```
+
+3. **Verify workflow instructions** - Check for CRITICAL REQUIREMENTS section ensuring:
+   - Date validation at start
+   - Mandatory safe output call at end
+   - Clear execution summary pattern
+
+**Prevention:** All agentic workflows now include mandatory safe output requirements (added 2026-02-16). The agent will follow a 7-step execution pattern with safe output call as Step 6.
+
+**Reference:** Issue #245, Commit bfde78a
+
+#### Issue: Agentic Workflow - Date Detection Error
+
+**Symptoms:** Agent logs show incorrect date (e.g., claims Sunday when it's Monday)
+
+**Diagnosis:**
+```bash
+# Check agent logs for date validation output
+gh run view <run-id> --log | grep -A 5 "Date Validation"
+```
+
+**Root Cause:** Missing date validation at workflow start, or timezone confusion.
+
+**Solutions:**
+1. **Date validation is now mandatory** - All workflows start with:
+   ```bash
+   date -u "+Current UTC: %A %Y-%m-%d %H:%M:%S"
+   date +"%Z: %A %Y-%m-%d %H:%M:%S"
+   ```
+
+2. **Verify schedule configuration**:
+   - news-realtime-monitor: Mon-Fri 10:00+14:00 UTC, Sat-Sun 12:00 UTC
+   - news-evening-analysis: Mon-Fri 18:00 UTC, Sat 16:00 UTC
+   - news-article-generator: Daily at 05:51 UTC
+
+3. **Re-compile workflows** if schedule modified:
+   ```bash
+   gh aw compile .github/workflows/news-*.md
+   ```
+
+**Prevention:** Date validation logging is now mandatory at the start of all agentic workflows (added 2026-02-16).
+
+**Reference:** Issue #245
+
+#### Issue: Agentic Workflow - MCP Cold Start Timeout
+
+**Symptoms:** MCP tool calls timing out after 30-60 seconds
+
+**Diagnosis:**
+```bash
+# Check for cold start indicators in logs
+gh run view <run-id> --log | grep -i "cold start\|timeout\|retry"
+```
+
+**Root Cause:** MCP server (riksdag-regering-ai.onrender.com) takes 30-60s to wake up on first request.
+
+**Solutions:**
+1. **Framework handles retries automatically** - No action needed, just wait
+2. **Warm-up strategy** - First query warms server, subsequent queries are fast
+3. **Batch queries** - Make multiple queries in sequence after warm-up
+
+**Prevention:** MCP documentation now includes cold start handling guidance with automatic retry information.
+
 #### Issue: Translation validation failing
 
 **Symptoms:** Translation validation reports missing og:locale tags
@@ -1722,7 +1810,7 @@ For more information, see `.github/labeler.yml`.
 - **Path:** /WORKFLOWS.md
 - **Format:** Markdown
 - **Classification:** Public
-- **Version:** 3.0
-- **Last Updated:** 2026-02-15
-- **Next Review:** 2026-05-15 (Quarterly)
+- **Version:** 3.1
+- **Last Updated:** 2026-02-16
+- **Next Review:** 2026-05-16 (Quarterly)
 - **Maintained by:** devops-engineer agent
