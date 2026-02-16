@@ -114,51 +114,54 @@ describe('Multi-Language Sanity Tests', () => {
 
   describe('News - All Languages', () => {
     languages.forEach((lang) => {
-      // Cypress 15 Feature: Use beforeEach with optimized page visit
-      beforeEach(() => {
-        cy.visit(`/news/index_${lang.code}.html`, {
-          // Cypress 15: Improved visit options
-          failOnStatusCode: true,
-          timeout: 10000
+      // Fix: Wrap each language in its own describe block to avoid closure issues
+      describe(`${lang.name} (${lang.code})`, () => {
+        // Cypress 15 Feature: Use beforeEach with optimized page visit
+        beforeEach(() => {
+          cy.visit(`/news/index_${lang.code}.html`, {
+            // Cypress 15: Improved visit options
+            failOnStatusCode: true,
+            timeout: 10000
+          });
         });
-      });
 
-      it(`should load ${lang.name} (${lang.code}) news page`, () => {
-        // Cypress 15: Modern selector and assertion chaining
-        cy.get('body').should('be.visible');
-        cy.title().should('exist').and('not.be.empty');
-      });
-      
-      it(`should have proper lang attribute for ${lang.name} news`, () => {
-        // Cypress 15: Use document API for more reliable attribute checking
-        cy.document().its('documentElement').should('have.attr', 'lang');
-        cy.document()
-          .its('documentElement')
-          .invoke('getAttribute', 'lang')
-          .should('match', new RegExp(lang.langCode, 'i'));
-      });
-      
-      it(`should have correct text direction for ${lang.name} news`, () => {
-        if (lang.dir === 'rtl') {
-          // Cypress 15: Improved assertion with better error messages
+        it(`should load news page`, () => {
+          // Cypress 15: Modern selector and assertion chaining
+          cy.get('body').should('be.visible');
+          cy.title().should('exist').and('not.be.empty');
+        });
+        
+        it(`should have proper lang attribute`, () => {
+          // Cypress 15: Use document API for more reliable attribute checking
+          cy.document().its('documentElement').should('have.attr', 'lang');
           cy.document()
             .its('documentElement')
-            .should('have.attr', 'dir', 'rtl');
-        } else {
-          // Cypress 15: Modern then() with improved assertion
-          cy.document().its('documentElement').then(($html) => {
-            const dirAttr = $html.getAttribute('dir');
-            expect(dirAttr === 'ltr' || dirAttr === null || dirAttr === undefined, 
-              `Expected dir to be 'ltr', null, or undefined but got '${dirAttr}'`).to.be.true;
-          });
-        }
-      });
-      
-      it(`should have basic page structure for ${lang.name} news`, () => {
-        // Cypress 15: Improved selector chaining
-        cy.get('header').should('exist').and('be.visible');
-        cy.get('main').should('exist').and('be.visible');
-        cy.get('footer').should('exist');
+            .invoke('getAttribute', 'lang')
+            .should('match', new RegExp(lang.langCode, 'i'));
+        });
+        
+        it(`should have correct text direction`, () => {
+          if (lang.dir === 'rtl') {
+            // Cypress 15: Improved assertion with better error messages
+            cy.document()
+              .its('documentElement')
+              .should('have.attr', 'dir', 'rtl');
+          } else {
+            // Cypress 15: Modern then() with improved assertion
+            cy.document().its('documentElement').then(($html) => {
+              const dirAttr = $html.getAttribute('dir');
+              expect(dirAttr === 'ltr' || dirAttr === null || dirAttr === undefined, 
+                `Expected dir to be 'ltr', null, or undefined but got '${dirAttr}'`).to.be.true;
+            });
+          }
+        });
+        
+        it(`should have basic page structure`, () => {
+          // Cypress 15: Improved selector chaining
+          cy.get('header').should('exist').and('be.visible');
+          cy.get('main').should('exist').and('be.visible');
+          cy.get('footer').should('exist');
+        });
       });
     });
   });
