@@ -993,9 +993,9 @@
         .on('keydown', (event, d) => {
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            const i = data.indexOf(d);
+            const i = this.data.indexOf(d);
             const ministry = ministries[i];
-            const ministryName = ministryTranslations[ministry] || ministry;
+            const ministryName = this.translations[ministry] || ministry;
             
             // Show accessible dialog instead of tooltip
             const riskLevel = parseFloat(d.riskScore);
@@ -1774,19 +1774,6 @@
       return impactEntries;
     }
     
-    /**
-     * Cleanup method to remove tooltips and event listeners
-     */
-    destroy() {
-      // Remove tooltip if it exists
-      if (this.charts.riskHeatMap && this.charts.riskHeatMap.tooltip) {
-        this.charts.riskHeatMap.tooltip.remove();
-      }
-      
-      // Clean up other resources
-      this.charts = {};
-    }
-
     /**
      * Generate fallback data when CIA data is completely unavailable
      * Uses realistic ministry names and conservative default values

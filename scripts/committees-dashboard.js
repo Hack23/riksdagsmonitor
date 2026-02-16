@@ -352,8 +352,8 @@
      * @returns {Array|null} Cached data or null
      */
     getCached(key) {
+      const cacheKey = CONFIG.cache.prefix + key;
       try {
-        const cacheKey = CONFIG.cache.prefix + key;
         const cached = localStorage.getItem(cacheKey);
         
         if (!cached) return null;

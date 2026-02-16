@@ -8,7 +8,7 @@
  * @license Apache-2.0
  */
 
-import { expect, vi } from 'vitest';
+import { expect, vi, beforeEach, afterEach } from 'vitest';
 
 // Global test utilities
 global.expect = expect;
@@ -77,7 +77,7 @@ global.d3 = {
 };
 
 // Mock fetch globally
-global.fetch = vi.fn((url) => {
+global.fetch = vi.fn((_url) => {
   return Promise.resolve({
     ok: true,
     status: 200,
@@ -90,17 +90,17 @@ global.fetch = vi.fn((url) => {
 
 // Mock localStorage
 global.localStorage = {
-  getItem: vi.fn((key) => null),
-  setItem: vi.fn((key, value) => {}),
-  removeItem: vi.fn((key) => {}),
+  getItem: vi.fn((_key) => null),
+  setItem: vi.fn((_key, _value) => {}),
+  removeItem: vi.fn((_key) => {}),
   clear: vi.fn()
 };
 
 // Mock sessionStorage
 global.sessionStorage = {
-  getItem: vi.fn((key) => null),
-  setItem: vi.fn((key, value) => {}),
-  removeItem: vi.fn((key) => {}),
+  getItem: vi.fn((_key) => null),
+  setItem: vi.fn((_key, _value) => {}),
+  removeItem: vi.fn((_key) => {}),
   clear: vi.fn()
 };
 

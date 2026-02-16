@@ -122,7 +122,7 @@ class CIASchemaValidator {
       return JSON.parse(schemaContent);
     } catch (error) {
       if (error.code === 'ENOENT') {
-        throw new Error(`Schema not found: ${productName}.schema.json (run npm run sync-schemas first)`);
+        throw new Error(`Schema not found: ${productName}.schema.json (run npm run sync-schemas first)`, { cause: error });
       }
       throw error;
     }
