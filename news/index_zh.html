@@ -48,11 +48,42 @@
     "@type": "ItemList",
     "name": "新闻",
     "description": "来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。",
-    "numberOfItems": 7,
+    "numberOfItems": 8,
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
+        "item": {
+          "@type": "NewsArticle",
+          "headline": "反对党就外交和社会福利政策发起多方面质询攻势",
+          "url": "https://riksdagsmonitor.com/news/2026-02-16-opposition-interpellations-offensive-zh.html",
+          "datePublished": "2026-02-16T10:00:00.000Z",
+          "description": "社会民主党和绿党在五天内提交八项质询，就叙利亚、古巴、加沙、西撒哈拉、社会倾销和无家可归问题向蒂多政府发起挑战",
+          "inLanguage": "zh",
+          "author": {
+            "@type": "Organization",
+            "name": "Riksdagsmonitor"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hack23 AB",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://hack23.com/cia-icon-140.webp"
+            }
+          },
+          "articleSection": "新闻",
+          "about": {
+            "@type": "GovernmentOrganization",
+            "name": "Riksdag",
+            "alternateName": "Swedish Parliament",
+            "url": "https://www.riksdagen.se/"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
         "item": {
           "@type": "NewsArticle",
           "headline": "委员会报告：本周议会优先事项",
@@ -83,7 +114,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 2,
+        "position": 3,
         "item": {
           "@type": "NewsArticle",
           "headline": "政府提案：本周政策优先事项",
@@ -114,7 +145,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 3,
+        "position": 4,
         "item": {
           "@type": "NewsArticle",
           "headline": "反对党动议：本周对立格局",
@@ -145,7 +176,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 5,
         "item": {
           "@type": "NewsArticle",
           "headline": "委员会报告：本周议会优先事项",
@@ -176,7 +207,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 5,
+        "position": 6,
         "item": {
           "@type": "NewsArticle",
           "headline": "政府提案：本周政策优先事项",
@@ -207,7 +238,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 7,
         "item": {
           "@type": "NewsArticle",
           "headline": "反对党动议：本周对立格局",
@@ -238,7 +269,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 7,
+        "position": 8,
         "item": {
           "@type": "NewsArticle",
           "headline": "瑞典议会进入春季休会：蒂德政府立法记录的中期评估",
@@ -335,25 +366,7 @@
     </div>
   </header>
   
-  <nav class="language-switcher" role="navigation" aria-label="Language switcher">
-    <a href="index.html" class="lang-link" hreflang="en">🇬🇧 English</a>
-    <a href="index_sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
-    <a href="index_da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="index_no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
-    <a href="index_fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
-    <a href="index_de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
-    <a href="index_fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
-    <a href="index_es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
-    <a href="index_nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
-    <a href="index_ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
-    <a href="index_he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
-    <a href="index_ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
-    <a href="index_ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
-    <a href="index_zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
-  </nav>
-  
-  <main role="main">
-    <div class="container">
+  <div class="container">
 
     
     <!-- Filter Bar -->
@@ -399,14 +412,7 @@
     <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
       没有与过滤器匹配的文章
     </div>
-    </div>
-  </main>
-  
-  <footer class="footer-section" role="contentinfo">
-    <div class="footer-content">
-      <p>&copy; 2026 Riksdagsmonitor by Hack23 AB | <a href="../index.html">Home</a> | <a href="../dashboard/index.html">Dashboard</a></p>
-    </div>
-  </footer>
+  </div>
   
   <script>
     // Language flags mapping (shared with server-side)
@@ -417,6 +423,36 @@
     
     // Dynamic articles array - generated from news/ directory
     const articles = [
+  {
+    "title": "反对党就外交和社会福利政策发起多方面质询攻势",
+    "date": "2026-02-16T10:00:00.000Z",
+    "type": "analysis",
+    "slug": "2026-02-16-opposition-interpellations-offensive-zh.html",
+    "lang": "zh",
+    "availableLanguages": [
+      "en",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "ar",
+      "he",
+      "ja",
+      "ko",
+      "zh"
+    ],
+    "excerpt": "社会民主党和绿党在五天内提交八项质询，就叙利亚、古巴、加沙、西撒哈拉、社会倾销和无家可归问题向蒂多政府发起挑战",
+    "topics": [],
+    "tags": [
+      "Interpellations",
+      "Foreign Policy",
+      "Social Welfare"
+    ]
+  },
   {
     "title": "委员会报告：本周议会优先事项",
     "date": "2026-02-16T00:00:00.000Z",

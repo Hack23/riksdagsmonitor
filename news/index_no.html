@@ -48,11 +48,42 @@
     "@type": "ItemList",
     "name": "Nyheter",
     "description": "Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.",
-    "numberOfItems": 8,
+    "numberOfItems": 9,
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
+        "item": {
+          "@type": "NewsArticle",
+          "headline": "Opposisjonen åpner interpellasjonsoffensiv på flere fronter om utenrikspolitikk og sosialpolitikk",
+          "url": "https://riksdagsmonitor.com/news/2026-02-16-opposition-interpellations-offensive-no.html",
+          "datePublished": "2026-02-16T10:00:00.000Z",
+          "description": "Sosialdemokratene og Miljøpartiet leverer åtte interpellasjoner på fem dager og utfordrer Tidö-regjeringen om Syria, Cuba, Gaza, Vest-Sahara, sosial d",
+          "inLanguage": "no",
+          "author": {
+            "@type": "Organization",
+            "name": "Riksdagsmonitor"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hack23 AB",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://hack23.com/cia-icon-140.webp"
+            }
+          },
+          "articleSection": "Nyheter",
+          "about": {
+            "@type": "GovernmentOrganization",
+            "name": "Riksdag",
+            "alternateName": "Swedish Parliament",
+            "url": "https://www.riksdagen.se/"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
         "item": {
           "@type": "NewsArticle",
           "headline": "Komitéinnstillinger: Stortingets prioriteringer denne uken",
@@ -83,7 +114,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 2,
+        "position": 3,
         "item": {
           "@type": "NewsArticle",
           "headline": "Regjeringens proposisjoner: Politiske prioriteringer denne uken",
@@ -114,7 +145,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 3,
+        "position": 4,
         "item": {
           "@type": "NewsArticle",
           "headline": "Opposisjonsforslag: Ukens kamplinjer",
@@ -145,7 +176,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 5,
         "item": {
           "@type": "NewsArticle",
           "headline": "Uken som kommer: Sosial dumping-offensiv, atomvåpenuro og finanspolitisk oppgjør",
@@ -176,7 +207,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 5,
+        "position": 6,
         "item": {
           "@type": "NewsArticle",
           "headline": "Komitéinnstillinger: Stortingets prioriteringer denne uken",
@@ -207,7 +238,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 7,
         "item": {
           "@type": "NewsArticle",
           "headline": "Regjeringens proposisjoner: Politiske prioriteringer denne uken",
@@ -238,7 +269,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 7,
+        "position": 8,
         "item": {
           "@type": "NewsArticle",
           "headline": "Opposisjonsforslag: Ukens kamplinjer",
@@ -269,7 +300,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 8,
+        "position": 9,
         "item": {
           "@type": "NewsArticle",
           "headline": "Sveriges Riksdag i vårpause: En midtveisevaluering av Tidö-regjeringens lovgivningsarbeid",
@@ -366,25 +397,7 @@
     </div>
   </header>
   
-  <nav class="language-switcher" role="navigation" aria-label="Language switcher">
-    <a href="index.html" class="lang-link" hreflang="en">🇬🇧 English</a>
-    <a href="index_sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
-    <a href="index_da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="index_no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
-    <a href="index_fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
-    <a href="index_de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
-    <a href="index_fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
-    <a href="index_es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
-    <a href="index_nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
-    <a href="index_ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
-    <a href="index_he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
-    <a href="index_ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
-    <a href="index_ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
-    <a href="index_zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
-  </nav>
-  
-  <main role="main">
-    <div class="container">
+  <div class="container">
 
     
     <!-- Filter Bar -->
@@ -430,14 +443,7 @@
     <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
       Ingen artikler matchet filtrene
     </div>
-    </div>
-  </main>
-  
-  <footer class="footer-section" role="contentinfo">
-    <div class="footer-content">
-      <p>&copy; 2026 Riksdagsmonitor by Hack23 AB | <a href="../index.html">Home</a> | <a href="../dashboard/index.html">Dashboard</a></p>
-    </div>
-  </footer>
+  </div>
   
   <script>
     // Language flags mapping (shared with server-side)
@@ -448,6 +454,36 @@
     
     // Dynamic articles array - generated from news/ directory
     const articles = [
+  {
+    "title": "Opposisjonen åpner interpellasjonsoffensiv på flere fronter om utenrikspolitikk og sosialpolitikk",
+    "date": "2026-02-16T10:00:00.000Z",
+    "type": "analysis",
+    "slug": "2026-02-16-opposition-interpellations-offensive-no.html",
+    "lang": "no",
+    "availableLanguages": [
+      "en",
+      "sv",
+      "da",
+      "no",
+      "fi",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "ar",
+      "he",
+      "ja",
+      "ko",
+      "zh"
+    ],
+    "excerpt": "Sosialdemokratene og Miljøpartiet leverer åtte interpellasjoner på fem dager og utfordrer Tidö-regjeringen om Syria, Cuba, Gaza, Vest-Sahara, sosial dumping og hjemløshet",
+    "topics": [],
+    "tags": [
+      "Interpellations",
+      "Foreign Policy",
+      "Social Welfare"
+    ]
+  },
   {
     "title": "Komitéinnstillinger: Stortingets prioriteringer denne uken",
     "date": "2026-02-16T00:00:00.000Z",
