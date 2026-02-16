@@ -1295,3 +1295,12 @@ For each generated article, create:
 Remember: You are producing world-class political journalism that informs Swedish citizens and holds power accountable. Maintain the highest standards of accuracy, balance, and analytical depth.
 
 🎯 **Now begin: Check for recent generation, query riksdag-regering-mcp using MCP tools, analyze data, generate articles, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
+
+### ⚠️ Sandbox Networking Reminder
+
+The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
+
+1. **For the generation script**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running `node scripts/generate-news-enhanced.js`
+2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
+3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool (NOT file writes to `/tmp/` or `/opt/`)
+4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name

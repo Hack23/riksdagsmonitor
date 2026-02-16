@@ -536,3 +536,12 @@ If articles are generated, validate with Playwright before creating PR:
 - If partial data: generate articles for available data, note gaps in metadata
 
 🎯 **Now begin: Query riksdag-regering-mcp for real-time data using MCP tools, assess significance, and generate breaking news if warranted. Use `safeoutputs___create_pull_request` to create PRs.**
+
+### ⚠️ Sandbox Networking Reminder
+
+The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
+
+1. **For any Node.js scripts that use mcp-client.js**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running them
+2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
+3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool
+4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name
