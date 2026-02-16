@@ -3,32 +3,37 @@
  * @description Validates sitemap.xml generation includes all content types and languages
  */
 
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.join(__dirname, '..');
-const sitemapPath = path.join(rootDir, 'sitemap.xml');
 
 describe('Sitemap Generation', () => {
   let sitemapContent;
+  let generateSitemap;
 
-  beforeAll(() => {
-    // Generate fresh sitemap
-    console.log('Generating fresh sitemap for tests...');
-    execSync('npm run generate-sitemap', { cwd: rootDir, stdio: 'inherit' });
+  beforeAll(async () => {
+    // Prevent process.exit from terminating tests
+    const originalExit = process.exit;
+    process.exit = vi.fn();
     
-    // Read sitemap content
-    sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+    // Import and generate sitemap directly
+    const module = await import('../scripts/generate-sitemap.js');
+    generateSitemap = module.generateSitemap;
+    sitemapContent = generateSitemap();
+    
+    // Restore process.exit
+    process.exit = originalExit;
   });
 
   describe('Basic Structure', () => {
-    it('should exist at root directory', () => {
-      expect(fs.existsSync(sitemapPath)).toBe(true);
+    it('should generate valid XML string', () => {
+      expect(sitemapContent).toBeTruthy();
+      expect(sitemapContent.length).toBeGreaterThan(1000);
     });
 
     it('should be valid XML', () => {
@@ -76,10 +81,21 @@ describe('Sitemap Generation', () => {
 
     it('should include dashboard pages for all languages', () => {
       const languages = ['sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
-      const dashboardUrls = sitemapContent.match(/dashboard\/index_\w+\.html/g) || [];
       
+      // Assert that each expected language-specific dashboard page is present
+      languages.forEach((lang) => {
+        const expectedLoc = `<loc>https://riksdagsmonitor.com/dashboard/index_${lang}.html</loc>`;
+        expect(
+          sitemapContent,
+          `Missing dashboard page for language: ${lang}`
+        ).toContain(expectedLoc);
+      });
+
+      // Additionally ensure the sitemap doesn't silently drop or add language dashboards
+      // Match only <loc> tags, not xhtml:link alternates
+      const dashboardUrls = sitemapContent.match(/<loc>https:\/\/riksdagsmonitor\.com\/dashboard\/index_\w+\.html<\/loc>/g) || [];
       console.log(`  ✓ Found ${dashboardUrls.length} non-English dashboard pages`);
-      expect(dashboardUrls.length).toBeGreaterThan(0);
+      expect(dashboardUrls.length).toBe(languages.length);
     });
   });
 
@@ -89,18 +105,18 @@ describe('Sitemap Generation', () => {
     });
 
     it('should include news articles', () => {
-      const newsUrls = sitemapContent.match(/news\/2026-\d{2}-\d{2}-.+?\.html/g) || [];
+      const newsUrls = sitemapContent.match(/<loc>https:\/\/riksdagsmonitor\.com\/news\/\d{4}-\d{2}-\d{2}-.+?\.html<\/loc>/g) || [];
       console.log(`  ✓ Found ${newsUrls.length} news article URLs`);
       expect(newsUrls.length).toBeGreaterThan(50);
     });
 
     it('should include articles in multiple languages', () => {
-      // Check for language-specific news articles
+      // Check for language-specific news articles (year-agnostic)
       const languages = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
       const foundLanguages = new Set();
 
       languages.forEach(lang => {
-        const pattern = new RegExp(`news/2026-\\d{2}-\\d{2}-.+-${lang}\\.html`);
+        const pattern = new RegExp(`news/\\d{4}-\\d{2}-\\d{2}-.+-${lang}\\.html`);
         if (pattern.test(sitemapContent)) {
           foundLanguages.add(lang);
         }
@@ -188,8 +204,8 @@ describe('Sitemap Generation', () => {
 
   describe('File Size and Performance', () => {
     it('should be under 50MB (sitemap limit)', () => {
-      const stats = fs.statSync(sitemapPath);
-      const sizeMB = stats.size / (1024 * 1024);
+      const sizeBytes = Buffer.byteLength(sitemapContent, 'utf8');
+      const sizeMB = sizeBytes / (1024 * 1024);
       console.log(`  ✓ Sitemap size: ${sizeMB.toFixed(2)} MB`);
       expect(sizeMB).toBeLessThan(50);
     });

@@ -250,11 +250,13 @@ function generateSitemap() {
   const politicianDashboardMtime = getFileModTime(path.join(ROOT_DIR, 'politician-dashboard.html'));
   xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
   
-  // Dashboard pages with all language alternates
-  const dashboardAlternates = LANGUAGES.map(lang => ({
-    lang,
-    href: lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${lang}.html`
-  }));
+  // Dashboard pages with all language alternates (only for existing files)
+  const dashboardAlternates = LANGUAGES
+    .map(lang => ({
+      lang,
+      href: lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${lang}.html`
+    }))
+    .filter(alt => fs.existsSync(path.join(ROOT_DIR, alt.href)));
   
   // English dashboard (canonical)
   const dashboardEnMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index.html'));
