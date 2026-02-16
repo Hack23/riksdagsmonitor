@@ -540,8 +540,6 @@ When no breaking news is detected, you MUST:
 4. Exit gracefully
 
 **⚠️ CRITICAL:** Calling `safeoutputs___noop` is **MANDATORY** even when no articles are generated. This signals successful completion to the workflow system. **Failure to call this will cause the workflow to appear as failed.**
-3. Do not create a PR
-4. Exit gracefully
 
 ## Available MCP Tools
 
