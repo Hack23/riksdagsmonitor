@@ -189,7 +189,7 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 
 **✅ For running Node.js scripts via bash:**
 - ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
-- ✅ Scripts ARE used by agentic workflows - see Sandbox Networking Reminder section below
+- ✅ Scripts ARE used by agentic workflows and work perfectly
 - ✅ Trust the automatic retry logic for cold starts
 
 ### 🚨 Cold Start Handling
@@ -675,11 +675,20 @@ For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_grou
 
 🎯 **Now begin: Gather today's comprehensive parliamentary data using MCP tools, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
 
-### ⚠️ Sandbox Networking Reminder
+### ✅ MCP Tools Are Accessible and Working
 
-The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
+**IMPORTANT:** MCP tools (riksdag-regering) ARE fully accessible and working in this workflow. The framework handles all connectivity automatically.
 
-1. **For any Node.js scripts that use mcp-client.js**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running them
-2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
-3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool
-4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name
+**For MCP tool calls** (most common):
+- ✅ Call tools directly: `get_calendar_events()`, `search_voteringar()`, `search_dokument()`
+- ✅ Framework routes through gateway automatically
+- ✅ No manual configuration needed
+- ✅ Cold starts (30-60s) handled with automatic retries
+
+**For Node.js scripts** (if using generation scripts):
+- Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running
+- Scripts are a normal part of agentic workflow operation
+
+**For safe outputs** (MANDATORY):
+- Use `safeoutputs___create_pull_request` MCP tool to create PRs (NOT `git push`)
+- Use `safeoutputs___noop` MCP tool when no significant events detected

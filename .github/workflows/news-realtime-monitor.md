@@ -87,10 +87,15 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Your mission is
 echo "=== Date Validation Check ==="
 date -u "+Current UTC: %A %Y-%m-%d %H:%M:%S"
 date +"%Z: %A %Y-%m-%d %H:%M:%S"
+echo "Schedule: Mon-Fri 10:00+14:00 UTC | Sat-Sun 12:00 UTC"
 echo "============================"
 ```
 
-This prevents date detection errors and provides audit trail.
+**CRITICAL:** This prevents date detection errors (e.g., thinking Monday is Sunday). **Read the output carefully** before making assumptions about weekday/weekend schedule.
+
+**After running the date check:**
+- ✅ If output shows Monday-Friday → Expect regular parliamentary activity
+- ✅ If output shows Saturday-Sunday → Expect limited activity (government press only)
 
 ### 2. MANDATORY Safe Output Call (Final Step)
 **YOU MUST ALWAYS call ONE of these safe output tools before completing:**
@@ -137,7 +142,11 @@ Parse the `languages` input and expand presets:
 
 ### ⚡ Quick Start - Use MCP Tools Directly
 
+## 🟢 MCP Tools: Fully Operational
+
 **You have 32 specialized tools for Swedish political data ready to use.**
+
+**✅ MCP tools ARE accessible and working perfectly.** Call them directly - the framework handles everything.
 
 **IMPORTANT:** Call the tools using their simple names directly:
 
@@ -173,7 +182,7 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 
 **✅ For running Node.js scripts via bash:**
 - ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
-- ✅ Scripts ARE used by agentic workflows - see Sandbox Networking Reminder section below
+- ✅ Scripts ARE used by agentic workflows and work perfectly
 
 ### 🚨 Cold Start Handling
 
@@ -625,11 +634,20 @@ If articles are generated, validate with Playwright before creating PR:
 
 🎯 **Now begin: Query riksdag-regering-mcp for real-time data using MCP tools, assess significance, and generate breaking news if warranted. ALWAYS call a safe output tool at the end.**
 
-### ⚠️ Sandbox Networking Reminder
+### ✅ MCP Tools Are Accessible and Working
 
-The agentic workflow sandbox uses a transparent Squid proxy that intercepts HTTPS traffic. Direct HTTPS requests to external servers will fail. Always:
+**IMPORTANT:** MCP tools (riksdag-regering) ARE fully accessible and working in this workflow. The framework handles all connectivity automatically.
 
-1. **For any Node.js scripts that use mcp-client.js**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running them
-2. **For creating PRs**: Use `safeoutputs___create_pull_request` MCP tool (NOT `git push`)
-3. **For logging no-ops**: Use `safeoutputs___noop` MCP tool
-4. **For MCP tool calls in the prompt**: The MCP gateway routes riksdag-regering tools automatically - just call them by name
+**For MCP tool calls** (most common):
+- ✅ Call tools directly: `get_calendar_events()`, `search_voteringar()`, `search_dokument()`
+- ✅ Framework routes through gateway automatically
+- ✅ No manual configuration needed
+- ✅ Cold starts (30-60s) handled with automatic retries
+
+**For Node.js scripts** (if using `scripts/generate-news-enhanced.js`):
+- Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running
+- Scripts are a normal part of agentic workflow operation
+
+**For safe outputs** (MANDATORY):
+- Use `safeoutputs___create_pull_request` MCP tool to create PRs (NOT `git push`)
+- Use `safeoutputs___noop` MCP tool when no significant events detected
