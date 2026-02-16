@@ -246,8 +246,8 @@ jobs:
             
             // Check if there's already an open incident
             const issues = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.name,
+              owner: 'Hack23',
+              repo: 'riksdagsmonitor',
               state: 'open',
               labels: 'incident,uptime-monitor'
             });
@@ -255,10 +255,10 @@ jobs:
             if (issues.data.length === 0) {
               // Create new incident issue
               await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.name,
+                owner: 'Hack23',
+                repo: 'riksdagsmonitor',
                 title: '🚨 Site Down - HTTP ' + httpCode + ' - ' + timestamp,
-                body: '## Incident Report\n\n**Status**: 🔴 SITE DOWN\n**Timestamp**: ' + timestamp + '\n**HTTP Code**: ' + httpCode + '\n**Detected by**: Uptime Monitor Workflow\n\n### Details\nHomepage is returning HTTP ' + httpCode + ' instead of expected 200.\n\n### Action Required\n1. Check deployment status\n2. Review GitHub Pages configuration\n3. Verify DNS settings\n4. Check CDN status\n\n### Logs\n[Workflow Run](https://github.com/' + context.repo.owner + '/' + context.repo.name + '/actions/runs/' + context.runId + ')\n\n---\nThis issue was automatically created by the uptime monitor workflow',
+                body: '## Incident Report\n\n**Status**: 🔴 SITE DOWN\n**Timestamp**: ' + timestamp + '\n**HTTP Code**: ' + httpCode + '\n**Detected by**: Uptime Monitor Workflow\n\n### Details\nHomepage is returning HTTP ' + httpCode + ' instead of expected 200.\n\n### Action Required\n1. Check deployment status\n2. Review GitHub Pages configuration\n3. Verify DNS settings\n4. Check CDN status\n\n### Logs\n[Workflow Run](https://github.com/Hack23/riksdagsmonitor/actions/runs/' + context.runId + ')\n\n---\nThis issue was automatically created by the uptime monitor workflow',
                 labels: ['incident', 'uptime-monitor', 'critical']
               });
               
@@ -267,10 +267,10 @@ jobs:
               // Update existing incident
               const issueNumber = issues.data[0].number;
               await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.name,
+                owner: 'Hack23',
+                repo: 'riksdagsmonitor',
                 issue_number: issueNumber,
-                body: 'Update: ' + timestamp + '\n\nSite still down - HTTP ' + httpCode + '\n\n[Latest workflow run](https://github.com/' + context.repo.owner + '/' + context.repo.name + '/actions/runs/' + context.runId + ')'
+                body: 'Update: ' + timestamp + '\n\nSite still down - HTTP ' + httpCode + '\n\n[Latest workflow run](https://github.com/Hack23/riksdagsmonitor/actions/runs/' + context.runId + ')'
               });
               
               console.log('Incident issue updated');
@@ -283,8 +283,8 @@ jobs:
           script: |
             // Find open incident issues
             const issues = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.name,
+              owner: 'Hack23',
+              repo: 'riksdagsmonitor',
               state: 'open',
               labels: 'incident,uptime-monitor'
             });
@@ -292,15 +292,15 @@ jobs:
             for (const issue of issues.data) {
               // Close and comment
               await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.name,
+                owner: 'Hack23',
+                repo: 'riksdagsmonitor',
                 issue_number: issue.number,
-                body: '### ✅ Incident Resolved\n\nSite is now operational.\n\n**Resolved at**: ' + new Date().toISOString() + '\n**Duration**: From ' + issue.created_at + ' to now\n\n[Verification workflow run](https://github.com/' + context.repo.owner + '/' + context.repo.name + '/actions/runs/' + context.runId + ')'
+                body: '### ✅ Incident Resolved\n\nSite is now operational.\n\n**Resolved at**: ' + new Date().toISOString() + '\n**Duration**: From ' + issue.created_at + ' to now\n\n[Verification workflow run](https://github.com/Hack23/riksdagsmonitor/actions/runs/' + context.runId + ')'
               });
               
               await github.rest.issues.update({
-                owner: context.repo.owner,
-                repo: context.repo.name,
+                owner: 'Hack23',
+                repo: 'riksdagsmonitor',
                 issue_number: issue.number,
                 state: 'closed',
                 labels: ['incident', 'uptime-monitor', 'resolved']
