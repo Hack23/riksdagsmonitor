@@ -67,6 +67,29 @@ describe('MCPClient', () => {
       expect(client.requestCount).toBe(0);
       expect(client.errorCount).toBe(0);
     });
+
+    it('should accept custom headers in config', () => {
+      const customClient = new MCPClient({
+        baseURL: 'https://custom.example.com',
+        headers: {
+          'X-Custom-Header': 'custom-value',
+          'X-API-Key': 'abc123'
+        }
+      });
+      expect(customClient.customHeaders).toEqual({
+        'X-Custom-Header': 'custom-value',
+        'X-API-Key': 'abc123'
+      });
+    });
+
+    it('should initialize empty customHeaders when no headers provided', () => {
+      expect(client.customHeaders).toEqual({});
+    });
+
+    it('should initialize empty customHeaders for string URL config', () => {
+      const stringClient = new MCPClient('https://test.com');
+      expect(stringClient.customHeaders).toEqual({});
+    });
   });
 
   describe('request', () => {
@@ -109,6 +132,56 @@ describe('MCPClient', () => {
         name: 'test_tool',
         arguments: { key: 'val' }
       });
+    });
+
+    it('should include custom headers from config in requests', async () => {
+      const clientWithHeaders = new MCPClient({
+        baseURL: 'https://test.example.com',
+        headers: {
+          'X-Custom-Header': 'custom-value',
+          'X-API-Key': 'secret123'
+        }
+      });
+
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: {} })
+      }));
+
+      await clientWithHeaders.request('test_tool', {});
+      
+      const callArgs = global.fetch.mock.calls[0];
+      const headers = callArgs[1].headers;
+      
+      // Should include both custom headers and Content-Type
+      expect(headers['Content-Type']).toBe('application/json');
+      expect(headers['X-Custom-Header']).toBe('custom-value');
+      expect(headers['X-API-Key']).toBe('secret123');
+    });
+
+    it('should not override runtime headers with custom headers', async () => {
+      const clientWithHeaders = new MCPClient({
+        baseURL: 'https://test.example.com',
+        authToken: 'runtime-token',
+        headers: {
+          'Authorization': 'config-token',  // Should be overridden
+          'X-Custom': 'value'
+        }
+      });
+
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: {} })
+      }));
+
+      await clientWithHeaders.request('test_tool', {});
+      
+      const callArgs = global.fetch.mock.calls[0];
+      const headers = callArgs[1].headers;
+      
+      // Runtime authToken should override config Authorization header
+      expect(headers['Authorization']).toBe('runtime-token');
+      expect(headers['X-Custom']).toBe('value');
     });
 
     it('should handle JSON-RPC error responses', async () => {

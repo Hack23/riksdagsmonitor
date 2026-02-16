@@ -150,19 +150,88 @@ Parse the `article_types` input (comma-separated list) and generate the requeste
 
 ## Available MCP Tools (riksdag-regering-mcp)
 
+### 🔌 MCP Server Integration - Quick Start
+
+**The riksdag-regering-mcp server is pre-configured and ready to use.** No setup required!
+
+**Server Details:**
+- **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
+- **Protocol**: JSON-RPC 2.0 (HTTP transport)
+- **Authentication**: Handled automatically by framework
+- **Tools**: 32 tools automatically available
+
+### 🔌 MCP Server: riksdag-regering
+
+You have access to the **riksdag-regering-mcp** server with 32 specialized tools.
+
+**Configuration** (in workflow frontmatter):
+```yaml
+mcp-servers:
+  riksdag-regering:
+    url: https://riksdag-regering-ai.onrender.com/mcp
+```
+
+**How It Works:**
+1. Configuration compiles into `.lock.yml` with embedded MCP gateway
+2. Gateway proxy handles protocol, auth, sessions automatically
+3. All tools available via `mcp["riksdag-regering"]["riksdag-regering--tool_name"]` syntax
+
+**Tool Naming:** All tool names MUST be prefixed with `riksdag-regering--`
+
+**Quick Start:**
+```javascript
+// Fetch calendar events
+const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
+  from: "2026-02-16",
+  tom: "2026-02-16",
+  limit: 50
+});
+
+// Search documents
+const docs = await mcp["riksdag-regering"]["riksdag-regering--search_dokument"]({
+  from_date: "2026-02-16",
+  limit: 30
+});
+```
+
+### 🚨 Cold Start Warning
+
+**Important**: Server may take 30-60s on first request. Framework retries automatically (3 attempts, 2s delays).
+
+**Best Practices:**
+1. ✅ Start with a simple warm-up query
+2. ✅ Batch multiple queries after warm-up
+3. ✅ Check data freshness: `riksdag-regering--get_sync_status` before generating articles
+
+### 🐛 Troubleshooting
+
+**Issue: Request times out**
+- **Cause**: Cold start (30-60s)
+- **Solution**: Wait and retry - framework handles retries automatically
+
+**Issue: Tool not found error**
+- **Cause**: Missing `riksdag-regering--` prefix
+- **Solution**: Always use full prefix: `mcp["riksdag-regering"]["riksdag-regering--tool_name"]`
+
+**Issue: Agent spent 10+ minutes on manual attempts**
+- **Cause**: Tried bash/curl/python instead of framework
+- **Solution**: Always use `mcp["server"]["tool"]` syntax
+
+### 📋 Available Tools by Category
+
 You have access to 32 specialized tools for Swedish political data:
 
 ### Document Search
-- `search_dokument` - Search all Riksdag documents
-- `get_dokument` - Get specific document with full text
-- `search_dokument_fulltext` - Full-text search in documents
+- `riksdag-regering--search_dokument` - Search all Riksdag documents
+- `riksdag-regering--get_dokument` - Get specific document with full text
+- `riksdag-regering--search_dokument_fulltext` - Full-text search
 
 ### Parliament Activity
-- `get_propositioner` - Latest government bills
-- `get_betankanden` - Latest committee reports
-- `get_motioner` - Latest opposition motions
-- `get_fragor` - Written questions to ministers
-- `get_interpellationer` - Interpellations
+- `riksdag-regering--get_propositioner` - Latest government bills
+- `riksdag-regering--get_betankanden` - Latest committee reports
+- `riksdag-regering--get_motioner` - Latest opposition motions
+- `riksdag-regering--get_fragor` - Written questions
+- `riksdag-regering--get_interpellationer` - Interpellations
 
 ### Calendar & Events
 - `get_calendar_events` - Upcoming parliamentary events (next 7 days)
