@@ -10,7 +10,7 @@
 # Author: Hack23 AB
 # License: Apache-2.0
 
-set -e  # Exit on error
+set -e  # Exit on unexpected errors; expected validation failures are guarded (if/||) and won't trigger this
 set -u  # Exit on undefined variable
 
 echo "🔍 Validating news generation output..."
@@ -84,7 +84,7 @@ echo ""
 echo "📋 Check 3: Localized taglines in non-English articles"
 
 ENGLISH_TAGLINES=0
-for file in news/*-{ar,he,ja,ko,zh}.html; do
+for file in news/*-{da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
   if [ -f "$file" ] && grep -q 'class="site-tagline">Latest news and analysis' "$file"; then
     echo -e "${RED}❌ English tagline in non-English article: $(basename $file)${NC}"
     ENGLISH_TAGLINES=$((ENGLISH_TAGLINES + 1))
@@ -93,7 +93,7 @@ for file in news/*-{ar,he,ja,ko,zh}.html; do
 done
 
 # Also check news indexes
-for file in news/index_{ar,he,ja,ko,zh}.html; do
+for file in news/index_{da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
   if [ -f "$file" ] && grep -q 'class="site-tagline">Latest news and analysis' "$file"; then
     echo -e "${RED}❌ English tagline in non-English index: $(basename $file)${NC}"
     ENGLISH_TAGLINES=$((ENGLISH_TAGLINES + 1))
@@ -223,12 +223,13 @@ if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
   exit 0
 elif [ $ERRORS -eq 0 ]; then
   echo -e "${YELLOW}⚠️ $WARNINGS warning(s) found${NC}"
-  echo -e "${RED}❌ $ERRORS error(s) found${NC}"
   echo ""
   echo "⚠️ Warnings only - PR can be created but review recommended"
   exit 0
 else
-  echo -e "${YELLOW}⚠️ $WARNINGS warning(s) found${NC}"
+  if [ $WARNINGS -gt 0 ]; then
+    echo -e "${YELLOW}⚠️ $WARNINGS warning(s) found${NC}"
+  fi
   echo -e "${RED}❌ $ERRORS error(s) found${NC}"
   echo ""
   echo "❌ DO NOT create PR - fix errors first"
