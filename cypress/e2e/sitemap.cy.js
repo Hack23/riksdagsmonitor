@@ -220,18 +220,25 @@ describe('Sitemap Pages', () => {
     it('should not have broken internal links (sample)', () => {
       cy.visit('/sitemap.html');
       
-      // Test a few links to ensure they exist
-      cy.get('a[href^="/"], a[href^="./"]').then(($links) => {
-        if ($links.length > 0) {
-          // Test first 3 links
-          const linksToTest = $links.slice(0, 3);
+      // Test for internal links (relative paths or paths starting with / or ./)
+      cy.get('a[href]').then(($links) => {
+        // Filter for internal links (not external http/https and not just anchors)
+        const internalLinks = $links.filter((i, el) => {
+          const href = Cypress.$(el).attr('href');
+          return href && !href.startsWith('http') && !href.startsWith('#');
+        });
+        
+        // Should have at least some internal links
+        expect(internalLinks.length).to.be.greaterThan(5);
+        
+        if (internalLinks.length > 0) {
+          // Test first 3 internal links
+          const linksToTest = internalLinks.slice(0, 3);
           
           linksToTest.each((index, link) => {
             const href = Cypress.$(link).attr('href');
-            if (href && !href.includes('http') && !href.includes('#')) {
-              cy.log(`Testing link: ${href}`);
-              // We can't actually visit all links, but we log them
-            }
+            cy.log(`Testing internal link: ${href}`);
+            // We can't actually visit all links, but we verify they exist
           });
         }
       });
