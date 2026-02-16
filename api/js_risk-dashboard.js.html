@@ -1,9 +1,37 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/risk-dashboard.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/risk-dashboard.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @module RiskAssessment/AnomalyDetection
- * @category Intelligence Analysis - Risk Scoring & Behavioral Anomalies
+ * @category Intelligence Analysis - Risk Scoring &amp; Behavioral Anomalies
  * 
  * @description
- * **Political Risk Assessment & Anomaly Detection Intelligence Dashboard**
+ * **Political Risk Assessment &amp; Anomaly Detection Intelligence Dashboard**
  * 
  * Advanced intelligence analysis module implementing a **45-rule risk scoring engine**
  * for comprehensive assessment of 349 Swedish MPs across multiple risk dimensions.
@@ -29,7 +57,7 @@
  * ## Risk Dimensions Analyzed
  * 
  * **45 Risk Rules** covering:
- * 1. **Ethics & Conduct**: Conflict of interest, financial disclosures, ethics violations
+ * 1. **Ethics &amp; Conduct**: Conflict of interest, financial disclosures, ethics violations
  * 2. **Electoral Risk**: Constituency support, approval ratings, scandal exposure
  * 3. **Coalition Behavior**: Party loyalty, voting discipline, coalition stability
  * 4. **Policy Performance**: Legislative productivity, committee attendance, debate participation
@@ -98,7 +126,7 @@
  * - **Data Volume**: 15,705 risk assessments (349 MPs × 45 rules)
  * - **Rendering**: D3.js virtual scrolling for 349-row heat map
  * - **Memory**: ~2MB for full risk matrix in browser memory
- * - **Load Time**: <3 seconds for complete data fetch + render
+ * - **Load Time**: &lt;3 seconds for complete data fetch + render
  * 
  * @author Hack23 AB - Political Intelligence Team
  * @license Apache-2.0
@@ -117,7 +145,7 @@
   'use strict';
   
   // ============================================================================
-  // CONFIGURATION & CONSTANTS
+  // CONFIGURATION &amp; CONSTANTS
   // ============================================================================
   
   const RISK_LEVELS = {
@@ -151,7 +179,7 @@
   };
   
   // ============================================================================
-  // DATA GENERATION & UTILITIES
+  // DATA GENERATION &amp; UTILITIES
   // ============================================================================
   
   function classifyRiskLevel(score) {
@@ -171,22 +199,22 @@
     const data = [];
     const parties = Object.keys(PARTY_COLORS);
     
-    for (let mpIdx = 0; mpIdx < 349; mpIdx++) { // Current MPs
+    for (let mpIdx = 0; mpIdx &lt; 349; mpIdx++) { // Current MPs
       const party = parties[mpIdx % parties.length];
       const mpName = `MP_${String(mpIdx + 1).padStart(3, '0')}`;
       
-      for (let ruleIdx = 0; ruleIdx < 45; ruleIdx++) {
+      for (let ruleIdx = 0; ruleIdx &lt; 45; ruleIdx++) {
         const ruleId = `Rule_${String(ruleIdx + 1).padStart(2, '0')}`;
         
         // Generate realistic risk distribution
         // 70% low (0-4), 20% medium (4-6), 8% high (6-8), 2% critical (8-10)
         const rand = Math.random();
         let score;
-        if (rand < 0.70) {
+        if (rand &lt; 0.70) {
           score = Math.random() * 4; // Low
-        } else if (rand < 0.90) {
+        } else if (rand &lt; 0.90) {
           score = 4 + Math.random() * 2; // Medium
-        } else if (rand < 0.98) {
+        } else if (rand &lt; 0.98) {
           score = 6 + Math.random() * 2; // High
         } else {
           score = 8 + Math.random() * 2; // Critical
@@ -234,7 +262,7 @@
     const [riskLevels, riskByParty, crisisResilience] = datasets;
     
     // Transform CIA CSV data to risk matrix format
-    if (riskLevels && riskLevels.length > 0) {
+    if (riskLevels &amp;&amp; riskLevels.length > 0) {
       console.log('Transforming CIA risk data...');
       const transformed = [];
       const parties = Object.keys(PARTY_COLORS);
@@ -246,7 +274,7 @@
         const count = parseInt(entry.politician_count) || 0;
         
         // Generate mock politicians for each risk level
-        for (let i = 0; i < Math.min(count, 50); i++) { // Limit to 50 per level for performance
+        for (let i = 0; i &lt; Math.min(count, 50); i++) { // Limit to 50 per level for performance
           const politicianId = `MP_${String(idx * 50 + i + 1).padStart(3, '0')}`;
           const party = parties[Math.floor(Math.random() * parties.length)];
           
@@ -313,15 +341,15 @@
     } else if (highRiskMPs.length > 100) {
       warningBanner.className = 'alert-banner high';
       warningBanner.innerHTML = `
-        <strong>⚠️ HIGH:</strong> Elevated risk detected across ${highRiskMPs.length} violations (≥6.0)
-        <span class="alert-details">Monitoring advised</span>
+        &lt;strong>⚠️ HIGH:&lt;/strong> Elevated risk detected across ${highRiskMPs.length} violations (≥6.0)
+        &lt;span class="alert-details">Monitoring advised&lt;/span>
       `;
       warningBanner.setAttribute('aria-live', 'polite');
     } else {
       warningBanner.className = 'alert-banner normal';
       warningBanner.innerHTML = `
-        <strong>✓ NORMAL:</strong> Risk levels within acceptable parameters
-        <span class="alert-details">Routine monitoring active</span>
+        &lt;strong>✓ NORMAL:&lt;/strong> Risk levels within acceptable parameters
+        &lt;span class="alert-details">Routine monitoring active&lt;/span>
       `;
       warningBanner.setAttribute('aria-live', 'polite');
     }
@@ -422,10 +450,10 @@
       .on('mouseover', function(event, d) {
         tooltip.style('visibility', 'visible')
           .html(`
-            <strong>${d.politician}</strong> (${d.party})<br>
-            <strong>${d.ruleName}</strong><br>
-            Risk Score: <strong>${d.score.toFixed(2)}</strong><br>
-            Level: <strong>${d.level}</strong>
+            &lt;strong>${d.politician}&lt;/strong> (${d.party})&lt;br>
+            &lt;strong>${d.ruleName}&lt;/strong>&lt;br>
+            Risk Score: &lt;strong>${d.score.toFixed(2)}&lt;/strong>&lt;br>
+            Level: &lt;strong>${d.level}&lt;/strong>
           `);
         d3.select(this).attr('stroke', '#000').attr('stroke-width', 2);
       })
@@ -604,9 +632,9 @@
     
     // Group by score buckets
     const buckets = {
-      '0-4': data.filter(d => d.score < 4).length,
-      '4-6': data.filter(d => d.score >= 4 && d.score < 6).length,
-      '6-8': data.filter(d => d.score >= 6 && d.score < 8).length,
+      '0-4': data.filter(d => d.score &lt; 4).length,
+      '4-6': data.filter(d => d.score >= 4 &amp;&amp; d.score &lt; 6).length,
+      '6-8': data.filter(d => d.score >= 6 &amp;&amp; d.score &lt; 8).length,
       '8-10': data.filter(d => d.score >= 8).length
     };
     
@@ -694,7 +722,7 @@
     // Now update classification based on actual percentiles
     anomalies.forEach(a => {
       a.isCritical = a.y > p99;
-      a.isWarning = a.y > p90 && a.y <= p99;
+      a.isWarning = a.y > p90 &amp;&amp; a.y &lt;= p99;
     });
     
     new Chart(ctx, {
@@ -703,7 +731,7 @@
         datasets: [
           {
             label: 'Normal',
-            data: anomalies.filter(a => !a.isCritical && !a.isWarning),
+            data: anomalies.filter(a => !a.isCritical &amp;&amp; !a.isWarning),
             backgroundColor: RISK_LEVELS.LOW.color,
             borderColor: RISK_LEVELS.LOW.color,
             pointRadius: 4
@@ -849,9 +877,9 @@
     const years = [];
     const currentYear = new Date().getFullYear();
     
-    for (let year = 2020; year <= currentYear; year++) {
-      for (let month = 0; month < 12; month++) {
-        if (year === currentYear && month > new Date().getMonth()) break;
+    for (let year = 2020; year &lt;= currentYear; year++) {
+      for (let month = 0; month &lt; 12; month++) {
+        if (year === currentYear &amp;&amp; month > new Date().getMonth()) break;
         years.push(new Date(year, month, 1));
       }
     }
@@ -936,7 +964,7 @@
     
     if (ethicsData.length === 0) {
       // Mock data if no real data
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i &lt;= 10; i++) {
         const li = document.createElement('li');
         const strong = document.createElement('strong');
         strong.textContent = `MP_${String(i).padStart(3, '0')}`;
@@ -947,7 +975,7 @@
     } else {
       ethicsData.forEach(d => {
         const li = document.createElement('li');
-        li.innerHTML = `<strong>${d.politician}</strong> (${d.party}) - Risk Score: ${d.score.toFixed(2)}`;
+        li.innerHTML = `&lt;strong>${d.politician}&lt;/strong> (${d.party}) - Risk Score: ${d.score.toFixed(2)}`;
         ethicsList.appendChild(li);
       });
     }
@@ -960,16 +988,16 @@
     
     if (electoralData.length === 0) {
       // Mock data if no real data
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i &lt;= 10; i++) {
         const li = document.createElement('li');
-        li.innerHTML = `<strong>MP_${String(i + 10).padStart(3, '0')}</strong> - Electoral Risk: ${(85 - i * 3)}%`;
+        li.innerHTML = `&lt;strong>MP_${String(i + 10).padStart(3, '0')}&lt;/strong> - Electoral Risk: ${(85 - i * 3)}%`;
         electoralList.appendChild(li);
       }
     } else {
       electoralData.forEach(d => {
         const li = document.createElement('li');
         const riskPercent = ((d.score / 10) * 100).toFixed(0);
-        li.innerHTML = `<strong>${d.politician}</strong> (${d.party}) - Electoral Risk: ${riskPercent}%`;
+        li.innerHTML = `&lt;strong>${d.politician}&lt;/strong> (${d.party}) - Electoral Risk: ${riskPercent}%`;
         electoralList.appendChild(li);
       });
     }
@@ -989,7 +1017,7 @@
       const loadedData = await loadCIAData();
       
       // Check if we got valid data
-      if (loadedData && Array.isArray(loadedData) && loadedData.length > 0) {
+      if (loadedData &amp;&amp; Array.isArray(loadedData) &amp;&amp; loadedData.length > 0) {
         console.log('Successfully loaded CIA data:', loadedData.length, 'records');
         riskData = loadedData;
       } else {
@@ -1023,3 +1051,26 @@
     initDashboard();
   }
 })();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
