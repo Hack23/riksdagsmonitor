@@ -160,6 +160,16 @@ Parse the `article_types` input (comma-separated list) and generate the requeste
 - **Authentication**: None required (public API)
 - **Tools**: 32 tools automatically available
 
+### 🏗️ Architecture Note: Gateway vs Direct Access
+
+Agentic workflows use a **gateway/proxy architecture** for security:
+- **Route**: Agent → Firewall (`host.docker.internal`) → MCP Server
+- **Tool Naming**: The MCP client helper automatically handles prefixing (`riksdag-regering--` prefix in gateway mode)
+- **Latency**: Additional 50-200ms per request through proxy
+- **Future**: Direct HTTPS access recommended for 50-200ms faster requests
+
+**Good News**: The MCP client helper (`scripts/mcp-client.js`) automatically detects and handles both modes!
+
 ### ⚡ Direct Tool Usage (Recommended)
 
 Call MCP tools directly without any setup:
@@ -187,6 +197,20 @@ const docs = await mcp["riksdag-regering"].search_dokument({
 2. ✅ Batch multiple queries after warm-up
 3. ✅ Handle timeouts gracefully (built-in retry logic: 3 attempts, 2s delays)
 4. ✅ Check data freshness: `get_sync_status()` before generating articles
+
+### 🐛 Troubleshooting
+
+**Issue: Request times out**
+- **Cause**: Cold start + gateway proxy latency
+- **Solution**: Wait 60 seconds and retry
+
+**Issue: Tool not found error**
+- **Cause**: Tool name prefixing mismatch (gateway vs direct)
+- **Solution**: Use the MCP client helper - it auto-detects and handles prefixing
+
+**Issue: Agent spent 10+ minutes on authentication**
+- **Solution**: Documentation now clarifies **no authentication required**
+- **Future**: Direct access eliminates gateway complexity
 
 ### 📋 Available Tools by Category
 

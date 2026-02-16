@@ -153,6 +153,14 @@ You have access to the **riksdag-regering-mcp** server with 32 specialized tools
 - **Authentication**: None required (public API)
 - **Tools**: 32 tools automatically available via MCP
 
+### 🏗️ Architecture: Gateway vs Direct Access
+
+Agentic workflows use a **gateway/proxy architecture** for network security:
+- **Route**: Agent → Firewall Container (`host.docker.internal`) → External MCP Server
+- **Tool Naming**: MCP client helper automatically handles prefixing in gateway mode
+- **Latency**: Additional 50-200ms per request through proxy
+- **Future Recommendation**: Direct HTTPS access for better performance
+
 ### ⚡ Quick Start - Direct Tool Usage
 
 Call MCP tools directly without any setup code:
@@ -186,35 +194,15 @@ const votes = await mcp["riksdag-regering"].search_voteringar({
 3. ✅ **Check data freshness** using `get_sync_status()` before generating articles
 4. ✅ **Handle timeouts gracefully** - retry or fall back to cached data
 
-### 📋 Key MCP Tools for Evening Analysis
-
-**Parliamentary Activity:**
-- `get_calendar_events` - Events for the period
-- `search_voteringar` - Voting records
-- `get_voting_group` - Party voting analysis
-- `search_anforanden` - Debate speeches
-- `get_betankanden` - Committee reports
-
-**Document Discovery:**
-- `search_dokument` - Document search by date
-- `get_propositioner` - Government proposals
-- `get_motioner` - Parliamentary motions
-- `get_fragor` / `get_interpellationer` - Questions
-
-**Government Activity:**
-- `search_regering` - Government documents
-- `analyze_g0v_by_department` - Department analysis
-- `enhanced_government_search` - Combined search
-
-**Metadata:**
-- `get_sync_status` - Check data freshness
-- `get_utskott` - Committee information
-
 ### 🐛 Troubleshooting
 
 **Issue: Request times out**
-- **Cause**: Cold start or server overload
+- **Cause**: Cold start + gateway proxy latency (50-200ms overhead)
 - **Solution**: Wait 60 seconds and retry
+
+**Issue: Tool not found / Method not found error**
+- **Cause**: Tool name prefixing mismatch (gateway vs direct mode)
+- **Solution**: Use `scripts/mcp-client.js` helper - auto-detects and handles prefixing
 
 **Issue: Empty results**
 - **Cause**: No activity in timeframe or wrong riksmöte (rm)
@@ -223,6 +211,10 @@ const votes = await mcp["riksdag-regering"].search_voteringar({
 **Issue: Swedish-only results**
 - **Cause**: Riksdag API returns Swedish data natively
 - **Solution**: YOU must translate to target languages (see translation guide)
+
+**Issue: Agent authentication trial-and-error**
+- **Solution**: Documentation now clarifies **no authentication required**
+- **Future**: Direct access mode eliminates gateway session complexity
 
 ## Analysis Workflow
 

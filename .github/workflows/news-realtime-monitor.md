@@ -123,6 +123,64 @@ You have access to the **riksdag-regering-mcp** server, which provides 32 specia
 - **Authentication**: None required (public API)
 - **Tools**: 32 tools automatically available via MCP
 
+### 🏗️ Architecture: Gateway vs Direct Access
+
+**Important**: Agentic workflows use a **gateway/proxy architecture** for security and network control.
+
+**Two Access Patterns:**
+
+1. **🛡️ Gateway/Proxy Mode (Agentic Workflows - Current)**
+   - **Route**: Agent → Firewall Container (`host.docker.internal`) → External MCP Server
+   - **Tool Names**: **MUST be prefixed** with `riksdag-regering--` (e.g., `riksdag-regering--get_calendar_events`)
+   - **Advantages**: Security filtering, network audit logs, rate limiting
+   - **Disadvantages**: Additional latency (~50-200ms per request), more complex authentication
+   - **When Used**: Inside GitHub Actions agentic workflow sandbox
+   
+   ```javascript
+   // Gateway mode - tool names MUST be prefixed
+   const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
+     from: "2026-02-16",
+     tom: "2026-02-16"
+   });
+   ```
+
+2. **⚡ Direct Access Mode (Recommended for Future)**
+   - **Route**: Agent → External MCP Server (direct HTTPS)
+   - **Tool Names**: **Unprefixed** (e.g., `get_calendar_events`)
+   - **Advantages**: Lower latency, simpler authentication, faster cold start recovery
+   - **Disadvantages**: Less network control, requires explicit domain allowlist
+   - **When Used**: Direct MCP server configuration in `.github/copilot-mcp.json`
+   
+   ```javascript
+   // Direct mode - tool names are unprefixed (simpler!)
+   const events = await mcp["riksdag-regering"].get_calendar_events({
+     from: "2026-02-16",
+     tom: "2026-02-16"
+   });
+   ```
+
+**Current Configuration** (in `.github/copilot-mcp.json`):
+```json
+{
+  "mcpServers": {
+    "riksdag-regering": {
+      "type": "http",
+      "url": "https://riksdag-regering-ai.onrender.com/mcp",  // Direct URL
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+**Network Allowlist** (in workflow YAML):
+```yaml
+network:
+  allowed:
+    - defaults
+    - node
+    - riksdag-regering-ai.onrender.com  # Must be explicitly allowed
+```
+
 ### ⚡ Quick Start - Direct Tool Usage
 
 **You can call MCP tools directly without any setup code.** The MCP server is already configured in this workflow's YAML frontmatter.
@@ -130,7 +188,7 @@ You have access to the **riksdag-regering-mcp** server, which provides 32 specia
 **Example - Check Today's Calendar:**
 ```javascript
 // Just use the tool name directly via MCP
-const events = await mcp.riksdag-regering.get_calendar_events({
+const events = await mcp["riksdag-regering"].get_calendar_events({
   from: "2026-02-16",
   tom: "2026-02-16",
   limit: 50
@@ -154,7 +212,7 @@ If you prefer a typed JavaScript client with helper methods, use `scripts/mcp-cl
 // Import the MCP client helper
 import MCPClient from './scripts/mcp-client.js';
 
-// Create client instance (uses environment config automatically)
+// Create client instance (auto-detects gateway vs direct)
 const client = new MCPClient();
 
 // Use high-level helper methods
@@ -162,6 +220,12 @@ const events = await client.fetchCalendarEvents({ from: today, tom: today });
 const votes = await client.fetchVotingRecords({ rm: "2025/26", limit: 20 });
 const docs = await client.searchDocuments({ from_date: today, limit: 30 });
 ```
+
+**The client automatically handles:**
+- ✅ Gateway vs direct mode detection (checks URL for `host.docker.internal`)
+- ✅ Tool name prefixing (adds `riksdag-regering--` prefix in gateway mode)
+- ✅ Retry logic with exponential backoff (3 attempts, 2s delays)
+- ✅ Timeout handling (30s default, configurable)
 
 **Available Helper Methods:**
 - `fetchCalendarEvents(params)` - Parliamentary calendar
@@ -234,7 +298,16 @@ const data = await client.fetchCalendarEvents({ from: today, tom: today });
 
 **Issue: Request times out after 30 seconds**
 - **Cause**: Cold start or server overload
+- **Gateway Impact**: Additional 50-200ms latency per request through proxy
 - **Solution**: Wait 60 seconds and retry, or use `MCP_CLIENT_TIMEOUT_MS=60000` env var
+
+**Issue: Tool not found / Method not found**
+- **Cause**: Tool name prefixing mismatch (gateway vs direct mode)
+- **Symptoms**: Error like "Tool 'get_calendar_events' not found" or "Method 'riksdag-regering--get_calendar_events' not found"
+- **Solution**: 
+  - In gateway mode: Use prefixed names (`riksdag-regering--get_calendar_events`)
+  - In direct mode: Use unprefixed names (`get_calendar_events`)
+  - The MCP client helper automatically handles this
 
 **Issue: Tool returns empty results**
 - **Cause**: No activity in queried timeframe, or wrong riksmöte (rm)
@@ -246,7 +319,42 @@ const data = await client.fetchCalendarEvents({ from: today, tom: today });
 
 **Issue: 401 Unauthorized or connection refused**
 - **Cause**: Network restrictions or server maintenance
-- **Solution**: Check workflow's `network.allowed` section includes `riksdag-regering-ai.onrender.com`
+- **Solution**: 
+  - Check workflow's `network.allowed` section includes `riksdag-regering-ai.onrender.com`
+  - In gateway mode, ensure firewall container is running (`host.docker.internal` accessible)
+
+**Issue: Agent spent 10+ minutes on authentication trial-and-error**
+- **Cause**: Unclear MCP authentication requirements (none needed!)
+- **Solution**: Documentation now clarifies: **No authentication required** for riksdag-regering-mcp
+- **Future Improvement**: Direct access mode eliminates gateway complexity
+
+### 💡 Recommendation: Migrate to Direct Access (Future)
+
+**Current**: Gateway/proxy architecture adds complexity and latency  
+**Proposal**: Use direct HTTPS connection to MCP server  
+**Benefits**:
+- ✅ **50-200ms faster** per request (no proxy overhead)
+- ✅ **Simpler authentication** (none required, vs gateway session management)
+- ✅ **Faster cold start recovery** (direct retry vs proxy timeout cascade)
+- ✅ **Clearer error messages** (no gateway translation layer)
+- ✅ **Reduced timeout issues** (fewer network hops)
+
+**Configuration Change Needed**:
+```yaml
+# In workflow YAML frontmatter
+mcp-servers:
+  riksdag-regering:
+    url: https://riksdag-regering-ai.onrender.com/mcp  # Already configured correctly!
+
+network:
+  allowed:
+    - defaults
+    - riksdag-regering-ai.onrender.com  # Ensure explicit allowlist
+
+# No additional proxy/gateway configuration needed
+```
+
+**Migration Impact**: Low - MCP client helper already supports both modes and auto-detects based on URL.
 
 ### 📚 Documentation References
 
