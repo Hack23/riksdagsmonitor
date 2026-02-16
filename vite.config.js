@@ -58,8 +58,24 @@ export default defineConfig({
         no: './index_no.html',
         sv: './index_sv.html',
         zh: './index_zh.html',
+        // Sitemaps
+        'sitemap': './sitemap.html',
+        'sitemap_sv': './sitemap_sv.html',
+        'sitemap_da': './sitemap_da.html',
+        'sitemap_no': './sitemap_no.html',
+        'sitemap_fi': './sitemap_fi.html',
+        'sitemap_de': './sitemap_de.html',
+        'sitemap_fr': './sitemap_fr.html',
+        'sitemap_es': './sitemap_es.html',
+        'sitemap_nl': './sitemap_nl.html',
+        'sitemap_ar': './sitemap_ar.html',
+        'sitemap_he': './sitemap_he.html',
+        'sitemap_ja': './sitemap_ja.html',
+        'sitemap_ko': './sitemap_ko.html',
+        'sitemap_zh': './sitemap_zh.html',
         // Additional pages
         'politician-dashboard': './politician-dashboard.html',
+        // Dashboard pages
         'dashboard/index': './dashboard/index.html',
         'dashboard/index_sv': './dashboard/index_sv.html',
         'dashboard/index_da': './dashboard/index_da.html',
@@ -73,7 +89,22 @@ export default defineConfig({
         'dashboard/index_he': './dashboard/index_he.html',
         'dashboard/index_ja': './dashboard/index_ja.html',
         'dashboard/index_ko': './dashboard/index_ko.html',
-        'dashboard/index_zh': './dashboard/index_zh.html'
+        'dashboard/index_zh': './dashboard/index_zh.html',
+        // News index pages
+        'news/index': './news/index.html',
+        'news/index_sv': './news/index_sv.html',
+        'news/index_da': './news/index_da.html',
+        'news/index_no': './news/index_no.html',
+        'news/index_fi': './news/index_fi.html',
+        'news/index_de': './news/index_de.html',
+        'news/index_fr': './news/index_fr.html',
+        'news/index_es': './news/index_es.html',
+        'news/index_nl': './news/index_nl.html',
+        'news/index_ar': './news/index_ar.html',
+        'news/index_he': './news/index_he.html',
+        'news/index_ja': './news/index_ja.html',
+        'news/index_ko': './news/index_ko.html',
+        'news/index_zh': './news/index_zh.html'
       },
       output: {
         // Manual chunk splitting for optimal loading
