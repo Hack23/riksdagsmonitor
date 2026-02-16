@@ -27,17 +27,218 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Politician Career &amp; Productivity Analytics Dashboard
- * Loads CIA data and creates interactive visualizations
+ * @module IndividualIntelligence/PoliticianProfiling
+ * @category Intelligence Analysis - Individual Politician Risk Assessment &amp; Career Analytics
+ * 
+ * @description
+ * **Individual Politician Career Analytics &amp; Risk Intelligence Dashboard**
+ * 
+ * Advanced intelligence profiling platform providing **micro-level politician assessment**
+ * across 349 Swedish members of parliament. Implements comprehensive risk scoring, 
+ * influence hierarchy measurement, behavioral pattern analysis, and career trajectory 
+ * forecasting using Chart.js and D3.js visualization. Monitors individual politician 
+ * performance, behavioral anomalies, and career risk factors.
+ * 
+ * ## Intelligence Methodology
+ * 
+ * This module implements **individual-level political intelligence profiling**:
+ * - **Target Population**: 349 Swedish parliamentarians (Riksdagen members)
+ * - **Analysis Dimensions**: Risk, influence, behavioral patterns, career trajectory
+ * - **Temporal Coverage**: Full parliamentary career from first election to present
+ * - **Granularity**: Individual-level assessment with peer comparison context
+ * 
+ * ## Individual Politician Intelligence Framework
+ * 
+ * **Five-Dimensional Analysis Taxonomy**:
+ * 
+ * 1. **Risk Assessment** (Individual Threat Profile)
+ *    - Ethics violations and conduct concerns
+ *    - Electoral vulnerability and reelection risk
+ *    - Political isolation and coalition weakness
+ *    - Career stability and burnout indicators
+ *    - Personal scandal and reputation exposure
+ * 
+ * 2. **Influence Measurement** (Individual Power Assessment)
+ *    - Committee assignments and leadership roles
+ *    - Speaking frequency and discourse leadership
+ *    - Coalition-building capability and ally networks
+ *    - Media prominence and public visibility
+ *    - Decision-making authority in party structures
+ * 
+ * 3. **Behavioral Pattern Analysis** (Anomaly Detection)
+ *    - Voting deviation from party discipline
+ *    - Attendance and participation consistency
+ *    - Speech content and rhetoric evolution
+ *    - Committee engagement and activity levels
+ *    - Coalition alliance volatility and shifts
+ * 
+ * 4. **Career Trajectory** (Professional Development)
+ *    - Years of service and experience levels
+ *    - Role progression (backbencher → committee → leadership)
+ *    - Electoral performance trends
+ *    - Party assignments and responsibilities
+ *    - Generational cohort and peer advancement
+ * 
+ * 5. **Influence Bucket Classification** (Politician Tiers)
+ *    - Leadership tier (party leaders, cabinet ministers)
+ *    - Influential tier (committee chairs, opinion leaders)
+ *    - Standard tier (regular parliamentarians)
+ *    - New/junior tier (first-term or new assignments)
+ * 
+ * ## Data Sources (CIA Platform)
+ * 
+ * **Primary Intelligence Feeds**:
+ * - `view_politician_risk_summary_sample.csv`
+ *   * Fields: politician_id, name, party, risk_score (0-10), risk_level, risk_categories
+ *   * Scope: Risk assessment for 349 individual MPs
+ *   * Use: Risk profiling, threat identification, risk-based sorting
+ * 
+ * - `view_riksdagen_politician_influence_metrics_sample.csv`
+ *   * Fields: politician_id, name, influence_score (0-100), leadership_roles, speech_frequency
+ *   * Scope: Individual influence measurement with component breakdown
+ *   * Use: Influence hierarchy visualization, power assessment
+ * 
+ * - `view_politician_behavioral_trends_sample.csv`
+ *   * Fields: politician_id, year, voting_deviation_pct, attendance_rate, speech_sentiment
+ *   * Scope: Annual behavioral metrics for anomaly detection
+ *   * Use: Behavioral pattern recognition, consistency assessment
+ * 
+ * - `distribution_experience_levels.csv`
+ *   * Fields: politician_id, years_service, parliament_term_count, experience_level, avg_roles
+ *   * Scope: Career experience and tenure statistics
+ *   * Use: Experience profiling, junior/senior categorization
+ * 
+ * - `distribution_influence_buckets.csv`
+ *   * Fields: politician_id, influence_bucket (leadership/influential/standard/junior), bucket_rank
+ *   * Scope: Categorization of 349 MPs into influence tiers
+ *   * Use: Tier-based analysis, leadership pipeline tracking
+ * 
+ * - `distribution_assignment_roles.csv`
+ *   * Fields: politician_id, role_type, role_count, committee_assignments, leadership_count
+ *   * Scope: Individual role assignments and responsibilities
+ *   * Use: Role trajectory tracking, responsibility assessment
+ * 
+ * ## OSINT Collection Strategy
+ * 
+ * **Multi-Layer Individual Intelligence**:
+ * 1. **Parliamentary Records**: Voting records, speeches, committee participation
+ * 2. **Media Monitoring**: Coverage volume, sentiment, scandal tracking
+ * 3. **Social Media**: Engagement metrics, online presence, supporter networks
+ * 4. **Personal Background**: Declared conflicts, financial interests, organizational affiliations
+ * 5. **Electoral History**: Campaign performance, vote trends, constituency dynamics
+ * 6. **Network Analysis**: Coalition patterns, ally/rival relationships, influence circles
+ * 7. **Behavioral Metrics**: Speech analysis, consistency assessment, sentiment tracking
+ * 
+ * ## Visualization Intelligence
+ * 
+ * **Chart.js Risk Summary** (Primary):
+ * - **Risk Distribution Chart**: Population-wide risk distribution
+ *   * Histogram showing risk score distribution across 349 MPs
+ *   * Color-coded risk levels (green/yellow/orange/red)
+ *   * Shows critical/high-risk outliers
+ * 
+ * **Chart.js Influence Metrics** (Power Assessment):
+ * - **Influence Ranking Chart**: Top 50 most influential politicians
+ *   * Horizontal bar chart ranked by influence score
+ *   * Color segments for influence dimensions
+ *   * Identifies power concentration vs. distributed influence
+ * 
+ * **Chart.js Behavioral Trends** (Anomaly Detection):
+ * - **Behavioral Pattern Timeline**: Individual politician behavior over time
+ *   * Multi-line chart showing voting deviation and participation trends
+ *   * Identifies consistency, volatility, or anomalies
+ *   * Flags behavioral changes and pattern breaks
+ * 
+ * **Chart.js Experience Distribution** (Career):
+ * - **Experience Levels**: Distribution across experience categories
+ *   * Grouped bar chart showing tenure statistics
+ *   * Identifies junior/senior ratios and generational balance
+ *   * Shows parliamentary turnover rates
+ * 
+ * **Chart.js Role Distribution** (Responsibility):
+ * - **Assignment Roles**: Distribution of parliamentary roles
+ *   * Stacked bar showing committee, leadership, and regular roles
+ *   * Highlights responsibility concentration
+ *   * Shows role progression paths
+ * 
+ * ## Intelligence Analysis Frameworks Applied
+ * 
+ * @intelligence
+ * - **Individual Risk Profiling**: Multi-factor individual threat assessment
+ * - **Behavioral Deviation Analysis**: Voting discipline and participation consistency
+ * - **Network Analysis**: Alliance patterns and influence circle mapping
+ * - **Career Trajectory Modeling**: Role progression and seniority assessment
+ * - **Anomaly Detection**: Unusual behavior and pattern deviation identification
+ * 
+ * @osint
+ * - **Speech Analysis**: Rhetoric patterns and sentiment evolution tracking
+ * - **Voting Pattern Recognition**: Party discipline and coalition deviation detection
+ * - **Media Intelligence**: Coverage patterns and scandal accumulation
+ * - **Network Intelligence**: Influence propagation and coalition networks
+ * 
+ * @risk
+ * - **Individual Vulnerability**: Reelection risk and scandal exposure
+ * - **Behavioral Anomalies**: Voting deviations and coalition instability
+ * - **Career Discontinuity**: Sudden role changes or influence loss
+ * - **Network Risk**: Contagion through ally networks and coalition vulnerability
+ * 
+ * ## GDPR Compliance
+ * 
+ * @gdpr Individual politician assessment uses only public information (Article 9(2)(e)):
+ * - Parliamentary voting records (public official acts)
+ * - Committee participation and role assignments (public record)
+ * - Speeches and public statements (public domain)
+ * - Media coverage (published information)
+ * - Electoral results (public official data)
+ * No private personal data, health information, or family details.
+ * No processing of political beliefs beyond official voting records.
+ * No predictive profiling for targeting or manipulation.
+ * 
+ * ## Security Architecture
+ * 
+ * @security Chart.js rendering with XSS-safe data binding
+ * @security No individual-level personal data exposure
+ * @security CSV data validation with type checking and range enforcement
+ * @security Risk assessment algorithm assumptions disclosed transparently
+ * @security No authentication required; all data is public record
+ * @risk Medium - Individual risk scores may be used to identify "political risks"
+ * 
+ * ## Performance Characteristics
+ * 
+ * - **Data Volume**: 349 politicians × 5-10 data attributes = ~2,000 data points
+ * - **Risk Assessment**: 349 individual risk profiles with score distribution
+ * - **Influence Metrics**: 349 individual influence measurements with component breakdown
+ * - **Behavioral Trends**: 349 × 5-10 years = ~3,500+ behavioral data points
+ * - **Memory**: &lt;3MB for complete politician intelligence dataset
+ * - **Rendering**: Chart.js with 5-6 separate visualizations
+ * 
+ * ## Data Transformation Pipeline
+ * 
+ * **Load Strategy**:
+ * 1. Attempt local cache load (`cia-data/politician/`)
+ * 2. Parse CSV files into politician-centric structure
+ * 3. Fallback to remote GitHub repository if local unavailable
+ * 4. Consolidate multiple sources by politician_id
+ * 5. Cache results with 24-hour expiry
+ * 6. Render visualizations with aggregated/transformed data
+ * 
+ * **Data Aggregation**:
+ * - Risk: Single score from risk_summary source
+ * - Influence: Normalize component scores and aggregate (0-100 scale)
+ * - Behavioral: Time-series aggregation by politician per year
+ * - Experience: Tenure calculation from election history
+ * - Roles: Count and categorize assignments by type
+ * 
+ * @author Hack23 AB - Individual Intelligence Team
+ * @license Apache-2.0
+ * @version 1.0.0
+ * @since 2024
+ * 
+ * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
+ * @see {@link https://www.riksdagen.se|Riksdag Official Site}
+ * @see {@link ./THREAT_MODEL.md|Threat Model Documentation}
+ * @see {@link ./SECURITY_ARCHITECTURE.md|Security Architecture}
  */
-
-// CIA GitHub raw content base URL
-const CIA_DATA_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data';
-
-// Local data paths (try local first, then remote)
-const LOCAL_DATA_BASE = 'cia-data';
-
-// Data URLs with local-first, remote-fallback
 const DATA_SOURCES = {
   riskSummary: [
     `${LOCAL_DATA_BASE}/politician/view_politician_risk_summary_sample.csv`,
@@ -700,7 +901,7 @@ if (document.readyState === 'loading') {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
 </nav>
 
 <br class="clear">

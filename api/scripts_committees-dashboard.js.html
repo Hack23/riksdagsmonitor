@@ -27,20 +27,222 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Committee Performance &amp; Network Analytics Dashboard
+ * @module Analytics/CommitteeIntelligence
+ * @category Analytics
  * 
- * Purpose: Interactive D3.js/Chart.js dashboard for Swedish Riksdag committee analysis
- * Version: 1.0.0
- * Author: Hack23 AB
- * License: Apache-2.0
+ * @title Committee Performance &amp; Network Analytics Dashboard - Organizational Intelligence
  * 
- * Features:
- * - D3.js force-directed network diagram
- * - D3.js productivity heat map
- * - Chart.js bar/stacked/line charts
- * - WCAG 2.1 AA accessibility
- * - Multi-language support (14 languages)
+ * @description
+ * **INTELLIGENCE OPERATIVE PERSPECTIVE**
+ * 
+ * This dashboard module provides interactive visualization and analysis of Swedish
+ * Riksdag committee structure, productivity, and decision patterns. Committees are
+ * where legislative power actually accumulates and policy details get hammered out,
+ * making committee-level intelligence critical for understanding parliamentary
+ * dynamics. The dashboard transforms committee data into organizational intelligence
+ * revealing power distribution, policy priorities, and committee effectiveness.
+ * 
+ * **STRATEGIC IMPORTANCE OF COMMITTEE ANALYSIS:**
+ * Swedish parliament operates on a committee-based legislative model where:
+ * 1. **Committee Pre-Process**: Bills typically go through committee first
+ * 2. **Committee Bottleneck**: Strong committees can delay/modify legislation
+ * 3. **Committee Expertise**: Subject-matter expertise concentrated in committees
+ * 4. **Committee Power**: Committee chairs wield significant influence
+ * 5. **Committee Compromise**: Coalition deals often negotiated in committees
+ * 
+ * Committee analysis reveals the legislative power structure beneath the party structure.
+ * 
+ * **COMMITTEE DEFINITIONS (15 Swedish Committees):**
+ * Dashboard tracks all major Riksdag committees with specialized domains:
+ * 
+ * **Security &amp; Foreign Policy:**
+ * - AU (Utrikesutskottet): Foreign Affairs Committee
+ * - FöU (Försvarsutskottet): Defense Committee
+ * - KU (Konstitutionsutskottet): Constitutional Committee
+ * 
+ * **Economic &amp; Fiscal:**
+ * - FiU (Finansutskottet): Finance Committee (budget authority)
+ * - NU (Näringsutskottet): Industry Committee
+ * - TU (Trafikutskottet): Transport Committee
+ * 
+ * **Social Policy:**
+ * - SoU (Socialutskottet): Social Affairs Committee
+ * - MU (Miljöutskottet): Environment Committee
+ * - KrU (Kulturutskottet): Cultural Affairs Committee
+ * 
+ * **Justice &amp; Administration:**
+ * - JuU (Justitieutskottet): Justice Committee
+ * - CU (Civilutskottet): Civil Affairs Committee
+ * 
+ * **Health &amp; Education:**
+ * - HsU (Hälso- och sjukvårdsutskottet): Health &amp; Welfare Committee
+ * - UU (Utbildningsutskottet): Education Committee
+ * 
+ * **Other:**
+ * - EU-nämnden: EU Affairs Committee
+ * - StU (Statsutskottet): State Committee
+ * 
+ * Each committee configured with:
+ * - Swedish abbreviation (AU, FiU, etc.)
+ * - English and Swedish full names
+ * - Color coding for visual distinction
+ * - Policy domain classification
+ * 
+ * **ANALYTICAL DASHBOARDS:**
+ * The dashboard provides four intelligence views:
+ * 
+ * 1. **Committee Network Diagram (D3.js Force-Directed Graph)**
+ *    Visualizes: Committee relationships and information flow
+ *    Algorithm: Force-directed layout shows proximity = collaboration
+ *    Intelligence value: Identifies committee clusters and power hubs
+ *    Use case: Find interconnected committee structures
+ * 
+ * 2. **Productivity Heat Map (D3.js Heatmap)**
+ *    Visualizes: Committee activity and productivity over time
+ *    Metrics: Document production, meeting frequency, decision rate
+ *    Intelligence value: Identifies busy vs. dormant committees
+ *    Use case: Track committee workload and priorities
+ * 
+ * 3. **Voting Pattern Analysis (Chart.js Multiple Charts)**
+ *    Visualizes: Committee decision patterns and unanimity rates
+ *    Metrics: Agreement rates, dissent frequency, consensus strength
+ *    Intelligence value: Committee consensus/conflict assessment
+ *    Use case: Identify contentious policy areas
+ * 
+ * 4. **Seasonal Activity Patterns (Chart.js Line Chart)**
+ *    Visualizes: Committee activity variation by season
+ *    Metrics: Meeting frequency, document volume by month
+ *    Intelligence value: Budget cycle and legislative timing
+ *    Use case: Predict when committees will be active
+ * 
+ * **DATA SOURCES:**
+ * CIA Platform provides committee intelligence:
+ * - distribution_committee_productivity_matrix.csv
+ *   Committee productivity metrics and activity levels
+ * - view_riksdagen_committee_decisions.csv
+ *   Committee voting records and decision patterns
+ * - distribution_annual_committee_documents.csv
+ *   Document production by committee and year
+ * - view_riksdagen_committee_ballot_decision_party_summary.csv
+ *   Party-specific voting patterns within committees
+ * - percentile_seasonal_activity_patterns.csv
+ *   Seasonal variations in committee activity
+ * 
+ * **CACHING STRATEGY:**
+ * Dashboard implements efficient multi-level caching:
+ * - **Browser Cache**: 24-hour local storage
+ * - **Data Sources**: Local files first, GitHub fallback
+ * - **Automatic Refresh**: Stale cache invalidated after 24h
+ * - **Cache Key Prefix**: riksdag_committee_ (avoids conflicts)
+ * - **Parallel Loading**: Multiple sources loaded simultaneously
+ * 
+ * **INTELLIGENCE APPLICATIONS:**
+ * 1. **Power Distribution**: Identify which committees wield most influence
+ * 2. **Productivity Analysis**: Track committee effectiveness over time
+ * 3. **Coalition Control**: Assess coalition's hold on key committees
+ * 4. **Policy Priority Detection**: Identify committees getting resources
+ * 5. **Committee Conflicts**: Track contentious committee decisions
+ * 6. **Member Influence**: Identify powerful committee chairs/members
+ * 7. **Timeline Prediction**: Predict when committee actions occur
+ * 
+ * **PARTY CONTROL ANALYSIS:**
+ * Dashboard tracks party composition of committees:
+ * - Committee chair parties (indicates committee control)
+ * - Party representation by committee
+ * - Coalition vs. opposition committee balance
+ * - Coalition's control of key committees (Finance, Justice, Defense)
+ * 
+ * **PERFORMANCE METRICS:**
+ * Dashboard calculates committee-level KPIs:
+ * - **Productivity Index**: Documents produced per meeting
+ * - **Decision Frequency**: Decisions per unit time
+ * - **Meeting Frequency**: Regular schedule compliance
+ * - **Unanimity Rate**: Percentage of unanimous decisions
+ * - **Dissent Frequency**: Cross-party voting patterns
+ * 
+ * **ACCESSIBILITY FEATURES:**
+ * WCAG 2.1 AA compliance:
+ * - Color-blind friendly palette
+ * - Text labels on all visualizations
+ * - Keyboard navigation support
+ * - ARIA labels for screen readers
+ * - High contrast mode
  * - Responsive design (320px-1440px+)
+ * 
+ * **MULTILINGUAL SUPPORT (14 Languages):**
+ * Complete internationalization:
+ * - Swedish: Detailed terminology
+ * - English: International audience
+ * - Nordic: Regional users
+ * - European: Continental coverage
+ * - Middle Eastern: Diplomatic audience
+ * - Asian: Economic representation
+ * 
+ * Committee names and explanations translated appropriately.
+ * 
+ * **RESPONSIVE DESIGN:**
+ * Dashboard adapts to all screen sizes:
+ * - **Mobile (320px)**: Stacked layout, single chart per view
+ * - **Tablet (768px)**: Two-column layout, selectable views
+ * - **Desktop (1920px)**: Four-chart dashboard, detailed annotations
+ * - **UltraHD (2560px)**: Detailed network graphs with zoom capability
+ * 
+ * **FAILURE HANDLING:**
+ * Graceful degradation:
+ * - Local Cache Hit: Use cached data (24h TTL)
+ * - Remote Fallback: GitHub data if local unavailable
+ * - Error Display: "Data unavailable" vs. breaking UI
+ * - Retry Logic: Automatic retry on network failures
+ * - Partial Data: Display available data even if incomplete
+ * 
+ * **GDPR COMPLIANCE:**
+ * Committee data handling (public parliamentary records):
+ * - Committee member names published (public roles)
+ * - Voting records public (parliamentary transparency)
+ * - Aggregation respects privacy (committee-level, not member-level)
+ * - Data retention follows parliamentary archive standards
+ * 
+ * **SECURITY CONSIDERATIONS:**
+ * Data integrity and authenticity:
+ * - Data Validation: Checksums verify source data
+ * - Timestamp Validation: Ensures data freshness
+ * - Source Verification: CIA platform authentication
+ * - Anomaly Detection: Unusual data patterns trigger review
+ * - Access Control: Committee analysis logged for audit
+ * 
+ * @osint Organizational Intelligence Analysis
+ * - Maps committee power distribution
+ * - Tracks policy prioritization through committee resources
+ * - Identifies policy bottlenecks in specific committees
+ * - Analyzes coalition control of critical committees
+ * 
+ * @risk Governance Structure Assessment
+ * - Committee effectiveness indicates government functioning
+ * - Productivity trends show policy momentum
+ * - Coalition control of committees affects policy implementation
+ * - Committee conflicts indicate policy disputes
+ * 
+ * @gdpr Public Committee Records
+ * - Committee decisions are public
+ * - Member participation public (published records)
+ * - Aggregation protects individual privacy
+ * - Retention follows parliamentary archive standards
+ * 
+ * @security Committee Data Integrity
+ * - Data sourced from official CIA platform
+ * - Timestamps prevent tampering
+ * - Checksums validate authenticity
+ * - Anomaly detection identifies corruption
+ * 
+ * @author Hack23 AB (Committee Intelligence &amp; Governance Analytics)
+ * @license Apache-2.0
+ * @version 2.1.0
+ * @since 2024-07-12
+ * @see https://d3js.org/ (D3.js Data Visualization)
+ * @see https://www.chartjs.org/ (Chart.js Charting)
+ * @see https://github.com/Hack23/cia (CIA Platform)
+ * @see Issue #111 (Committee Dashboard Enhancement)
+ * @see https://www.riksdagen.se/sv/sa-funkar-riksdagen/utskott/ (Committee Information)
  */
 
 (function() {
@@ -1347,7 +1549,7 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
 </nav>
 
 <br class="clear">

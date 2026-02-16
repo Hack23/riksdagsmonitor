@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: News Backport Generation - Historical Article Migration System</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: News Backport Generation - Historical Article Migration System</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Automated legacy article generation system creating historical news coverage for
+past dates by querying the riksdag-regering-mcp (MCP) client for parliamentary
+activities, government actions, and committee developments. Enables comprehensive
+historical intelligence archive for retrospective analysis and trend identification.</p>
+<p>Operational Context:
+Generates news articles for historical date ranges by querying publicly available
+parliamentary data. Creates weekly week-ahead articles and daily articles for dates
+lacking coverage. Supports intelligence platform's requirement for comprehensive
+historical context when analyzing political developments.</p>
+<p>Historical Data Sourcing:</p>
+<ul>
+<li>Queries riksdag-regering-mcp (Riksdag-Regering MCP server) for past dates</li>
+<li>Retrieves: propositions (propositioner), motions (motioner), committee reports (betänkanden)</li>
+<li>Accesses: written questions, interpellations, voting records, calendar events</li>
+<li>All data sourced from public Swedish government APIs (riksdagen.se, regeringen.se)</li>
+</ul>
+<p>Article Generation Modes:</p>
+<ul>
+<li>Weekly mode: Generates &quot;week-ahead&quot; prospective articles for Mondays</li>
+<li>Daily mode: Generates individual daily activity summaries</li>
+<li>Committee-focused: Highlights committee activities and reports</li>
+<li>Proposition tracking: Legislative bill introduction and status updates</li>
+<li>Motion monitoring: Parliament member initiatives and amendments</li>
+</ul>
+<p>Date Range Flexibility:</p>
+<ul>
+<li>Accepts configurable --from and --to date parameters</li>
+<li>Supports backfilling of specific date gaps</li>
+<li>Default range: 2026-01-01 to current date</li>
+<li>CLI examples:
+node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10
+node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --mode=weekly
+node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --languages=all</li>
+</ul>
+<p>Multi-Language Generation:</p>
+<ul>
+<li>Generates articles for all 14 languages or specified subset</li>
+<li>Supports language codes: en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh</li>
+<li>Uses automated translation or language-specific templates</li>
+<li>Maintains terminology consistency across language variants</li>
+</ul>
+<p>Content Generation Workflow:</p>
+<ul>
+<li>Fetches parliamentary data from MCP server for date range</li>
+<li>Extracts: watch points, key decisions, committee reports, voting patterns</li>
+<li>Generates article metadata: title, summary, category, author attribution</li>
+<li>Creates HTML content with proper markup and links</li>
+<li>Applies data-transformers.js for content enhancement</li>
+<li>Generates article-template.js formatted output</li>
+<li>Produces valid HTML with proper meta tags and structured data</li>
+</ul>
+<p>Data Transformation Pipeline:</p>
+<ul>
+<li>generateArticleContent(): Creates article narrative from parliamentary data</li>
+<li>extractWatchPoints(): Identifies significant developments to monitor</li>
+<li>generateMetadata(): Creates article frontmatter with publication metadata</li>
+<li>calculateReadTime(): Estimates reading duration for accessibility</li>
+<li>generateSources(): Documents data sources for transparency/OSINT audit</li>
+</ul>
+<p>Intelligence Integration:</p>
+<ul>
+<li>Enables trend analysis across historical date ranges</li>
+<li>Supports pattern identification in parliamentary activity</li>
+<li>Facilitates identification of policy shift timing</li>
+<li>Documents decision-making chronology for case studies</li>
+<li>Maintains comprehensive intelligence archive</li>
+</ul>
+<p>Rate Limiting &amp; Performance:</p>
+<ul>
+<li>Configurable delay (--delay parameter, default 2000ms) between MCP calls</li>
+<li>Prevents MCP server overload during bulk generation</li>
+<li>Dry-run mode (--dry-run flag) for validation without file output</li>
+<li>Progress reporting and error summarization</li>
+</ul>
+<p>Output Structure:</p>
+<ul>
+<li>Generated files: news/article_{slug}_{lang}.html</li>
+<li>Includes article metadata, body content, references</li>
+<li>JSON-LD structured data for search engines</li>
+<li>Open Graph tags for social media sharing</li>
+<li>Proper language attributes for multi-language support</li>
+</ul>
+<p>Error Handling:</p>
+<ul>
+<li>Validates article data before generation</li>
+<li>Skips articles with insufficient data (graceful degradation)</li>
+<li>Reports skipped files and processing errors</li>
+<li>Maintains processing statistics and metrics</li>
+</ul>
+<p>OSINT &amp; Data Sourcing:</p>
+<ul>
+<li>All data from public Swedish government sources</li>
+<li>Complies with Offentlighetsprincipen (public access principle)</li>
+<li>Proper attribution of government sources</li>
+<li>Audit trail of information sources</li>
+</ul>
+<p>Usage Examples:
+node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10
+node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --types=week-ahead
+node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --languages=all --dry-run
+node scripts/generate-news-backport.js --from=2026-01-01 --to=2026-02-10 --mode=weekly</p>
+<p>ISMS Compliance:</p>
+<ul>
+<li>ISO 27001:2022 A.5.33 - Protection of records (audit trail of data sources)</li>
+<li>ISO 27001:2022 A.12.1.1 - Change management (version control of articles)</li>
+<li>NIST CSF 2.0 RC.IM-2 (incident management and reporting)</li>
+</ul>
+<p>Data Protection:</p>
+<ul>
+<li>Processes only public government data</li>
+<li>GDPR Article 6(1)(e) - Public interest processing</li>
+<li>No personal data in generated articles (politicians only in official capacity)</li>
+<li>Complies with transparency principles</li>
+</ul></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.5.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB (Intelligence Archive Team)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_generate-news-backport.js.html">scripts/generate-news-backport.js</a>, <a href="scripts_generate-news-backport.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>MCP Client implementation (mcp-client.js)</li>
+        
+            <li>Data Transformers (data-transformers.js)</li>
+        
+            <li>Article Template (article-template.js)</li>
+        
+            <li>riksdagen.se - Swedish Parliament official source</li>
+        
+            <li>regeringen.se - Swedish Government official source</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

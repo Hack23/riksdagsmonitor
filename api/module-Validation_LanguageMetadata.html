@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: Validation/LanguageMetadata</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: Validation/LanguageMetadata</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p><strong>INTELLIGENCE OPERATIVE PERSPECTIVE</strong></p>
+<p>This validator ensures the homepage and main content pages maintain proper
+language metadata across all 14 supported language editions. While appearing
+as a technical SEO task, language validation serves critical intelligence
+functions: ensuring international readers can discover content in their
+language, preventing search engine deindexing, and maintaining consistent
+information architecture across the multilingual platform.</p>
+<p><strong>METADATA VALIDATION FRAMEWORK:</strong>
+The validator checks seven critical metadata elements for each language:</p>
+<ol>
+<li>
+<p><strong>HTML lang Attribute Correctness</strong></p>
+<ul>
+<li>Validates lang=&quot;xx&quot; matches ISO 639-1 language codes</li>
+<li>Detects mismatches (e.g., Swedish content with lang=&quot;en&quot;)</li>
+<li>Critical for: Screen readers, search engines, browser font selection
+Intelligence impact: Accessibility for visually-impaired international readers</li>
+</ul>
+</li>
+<li>
+<p><strong>dir=&quot;rtl&quot; for Right-to-Left Languages</strong></p>
+<ul>
+<li>Validates Arabic (AR) and Hebrew (HE) have dir=&quot;rtl&quot; attribute</li>
+<li>Detects LTR incorrectly applied to RTL content</li>
+<li>Critical for: Text layout, number display, punctuation handling
+Intelligence impact: Readability for Middle Eastern audience</li>
+</ul>
+</li>
+<li>
+<p><strong>Title Tag Presence &amp; Uniqueness</strong></p>
+<ul>
+<li>Ensures <title> tag exists and is language-appropriate</li>
+<li>Detects duplicate titles across language versions</li>
+<li>Critical for: Browser tab display, search engine indexing
+Intelligence impact: Click-through rates from search results</li>
+</ul>
+</li>
+<li>
+<p><strong>Meta Description Presence</strong></p>
+<ul>
+<li>Validates meta description tag for SEO preview</li>
+<li>Detects missing or placeholder descriptions</li>
+<li>Critical for: Google snippet display, CTR optimization
+Intelligence impact: Search engine visibility for each language</li>
+</ul>
+</li>
+<li>
+<p><strong>Canonical URL Correctness</strong></p>
+<ul>
+<li>Ensures canonical URL points to correct language version</li>
+<li>Detects broken or missing canonical tags</li>
+<li>Critical for: Preventing search engine penalization
+Intelligence impact: Prevents duplicate content SEO issues</li>
+</ul>
+</li>
+<li>
+<p><strong>Hreflang Tag Completeness</strong></p>
+<ul>
+<li>Validates presence of hreflang tags for all language versions</li>
+<li>Checks all target languages are represented</li>
+<li>Critical for: Search engine language targeting
+Intelligence impact: Users find correct language version</li>
+</ul>
+</li>
+<li>
+<p><strong>Open Graph Protocol for Social Media</strong></p>
+<ul>
+<li>Ensures og:locale matches language code</li>
+<li>Validates og:title and og:description presence</li>
+<li>Critical for: Social media preview appearance
+Intelligence impact: Engagement rates when articles shared</li>
+</ul>
+</li>
+<li>
+<p><strong>Schema.org Structured Data</strong></p>
+<ul>
+<li>Validates JSON-LD for news articles and organizations</li>
+<li>Ensures @language property matches content language</li>
+<li>Critical for: Rich snippets, knowledge graph integration
+Intelligence impact: Enhanced search visibility and credibility</li>
+</ul>
+</li>
+</ol>
+<p><strong>LANGUAGE CONFIGURATIONS (14 Total):</strong></p>
+<ul>
+<li>EN: English (Primary international language)</li>
+<li>SV: Swedish (Source/development language)</li>
+<li>DA: Danish (Nordic coverage)</li>
+<li>NO: Norwegian (Nordic coverage)</li>
+<li>FI: Finnish (Nordic coverage)</li>
+<li>DE: German (European coverage)</li>
+<li>FR: French (European coverage)</li>
+<li>ES: Spanish (European coverage)</li>
+<li>NL: Dutch (European coverage)</li>
+<li>AR: Arabic (Middle Eastern coverage, RTL)</li>
+<li>HE: Hebrew (Middle Eastern coverage, RTL)</li>
+<li>JA: Japanese (Asian coverage, special encoding)</li>
+<li>KO: Korean (Asian coverage, special encoding)</li>
+<li>ZH: Chinese Simplified (Asian coverage, special encoding)</li>
+</ul>
+<p><strong>VALIDATION ALGORITHM:</strong></p>
+<ol>
+<li>Load each language version HTML file</li>
+<li>Parse metadata fields (lang, dir, title, meta, canonical, etc.)</li>
+<li>Validate against language configuration rules</li>
+<li>Cross-validate hreflang consistency across all versions</li>
+<li>Report validation results with specific errors</li>
+<li>Exit code 0 if all valid, 1 if any failures</li>
+</ol>
+<p><strong>OPERATIONAL INTEGRATION:</strong></p>
+<ul>
+<li>Pre-deployment CI/CD validation (blocks bad metadata)</li>
+<li>Automated homepage generation pipeline</li>
+<li>Monthly SEO audit to detect drift</li>
+<li>Search console monitoring for indexing issues</li>
+</ul>
+<p><strong>SEARCH ENGINE OPTIMIZATION IMPACT:</strong></p>
+<ul>
+<li>Proper metadata prevents Google search penalties</li>
+<li>Hreflang tags direct users to correct language version</li>
+<li>Canonical tags prevent duplicate content issues</li>
+<li>Structured data improves SERP visibility</li>
+</ul>
+<p><strong>ACCESSIBILITY COMPLIANCE:</strong></p>
+<ul>
+<li>lang attribute critical for screen reader language detection</li>
+<li>dir=&quot;rtl&quot; essential for RTL language navigation</li>
+<li>Meta descriptions describe page purpose for users</li>
+<li>Structured data supports assistive technology</li>
+</ul>
+<p><strong>KNOWN LIMITATIONS:</strong></p>
+<ul>
+<li>Does not validate hreflang URLs correctness (only counts tags)</li>
+<li>Does not verify that hreflang URLs actually exist or are reachable</li>
+<li>Does not check translation quality of meta descriptions</li>
+<li>Does not validate Open Graph image URLs</li>
+</ul>
+<p><strong>PERFORMANCE:</strong></p>
+<ul>
+<li>File read + parse: ~5ms per language</li>
+<li>Full validation: ~70ms total (14 languages)</li>
+<li>Memory usage: Minimal (streaming parser)</li>
+</ul>
+<p><strong>GDPR COMPLIANCE:</strong></p>
+<ul>
+<li>No personal data processing</li>
+<li>Meta description validation supports transparency</li>
+<li>Language targeting respects user preferences</li>
+<li>Cookie consent metadata validation (future enhancement)</li>
+</ul></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>2.0.0</li></ul></dd>
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2024-07-20</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB (Multilingual Platform &amp; SEO)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_validate-translations.js.html">scripts/validate-translations.js</a>, <a href="scripts_validate-translations.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://schema.org/%20(Structured%20Data%20Standard)">https://schema.org/ (Structured Data Standard)</a></li>
+        
+            <li><a href="https://www.w3.org/International/%20(W3C%20Internationalization)">https://www.w3.org/International/ (W3C Internationalization)</a></li>
+        
+            <li>tests/validate-translations.test.js (Test Suite)</li>
+        
+            <li>Issue #98 (Hreflang Implementation)</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -27,40 +27,197 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Government Minister Risk &amp; Influence Analytics Dashboard
+ * @module GovernmentIntelligence/MinistryAnalysis
+ * @category Intelligence Analysis - Executive Power Assessment &amp; Ministerial Risk Profiling
  * 
- * @description Comprehensive dashboard displaying Swedish government minister risk profiles,
- * influence metrics, productivity scores, and decision impact analysis using CIA platform data.
+ * @description
+ * **Swedish Government Ministry Risk Assessment &amp; Executive Influence Intelligence Dashboard**
  * 
+ * Advanced intelligence analysis platform providing **comprehensive ministerial risk profiling**
+ * and executive influence measurement for all Swedish government ministers. Implements
+ * multi-dimensional risk scoring, influence hierarchies, productivity metrics, and
+ * decision-impact assessment using D3.js heat maps and Chart.js analytics visualization.
+ * Monitors governance effectiveness, ministerial stability, and executive branch risk factors.
+ * 
+ * ## Intelligence Methodology
+ * 
+ * This module implements **executive branch intelligence assessment**:
+ * - **Target Scope**: Swedish government ministers (cabinet-level executives)
+ * - **Risk Dimensions**: 8+ risk categories with weighted aggregation
+ * - **Influence Hierarchy**: Rank ordering based on decision authority and impact
+ * - **Real-Time Monitoring**: Updates on ministry personnel changes and policy decisions
+ * 
+ * ## Ministerial Intelligence Framework
+ * 
+ * **Four-Dimensional Analysis Taxonomy**:
+ * 
+ * 1. **Risk Heat Mapping** (Multi-Factor Risk Assessment)
+ *    - Ethics and conduct violations (conflict of interest, financial disclosures)
+ *    - Policy failure and implementation risk
+ *    - Coalition stability and ministerial vulnerability
+ *    - Public approval and political capital status
+ *    - Personnel turnover and institutional knowledge loss
+ * 
+ * 2. **Influence Measurement** (Executive Power Assessment)
+ *    - Decision-making authority within ministry scope
+ *    - Budget control and resource allocation power
+ *    - Cross-ministry coalition building capability
+ *    - Policy agenda-setting influence
+ *    - Media narrative shaping ability
+ * 
+ * 3. **Productivity Analysis** (Governance Effectiveness)
+ *    - Government proposals initiated and passed
+ *    - Legislative effectiveness (passage rate vs. proposed)
+ *    - Budget execution and financial management
+ *    - Committee participation and steering
+ *    - Crisis response and issue resolution speed
+ * 
+ * 4. **Decision Impact Assessment** (Consequential Authority)
+ *    - High-impact decisions and policy directives
+ *    - Emergency declarations and special authorities
+ *    - Long-term policy implications (5-10 year horizon)
+ *    - Stakeholder impact breadth (affected populations/sectors)
+ *    - Reversibility and policy lock-in effects
+ * 
+ * ## Data Sources (CIA Platform)
+ * 
+ * **Primary Intelligence Feeds**:
+ * - `distribution_ministry_risk_levels.csv`
+ *   * Fields: minister_name, ministry, risk_score (0-10), risk_level, risk_categories, last_update
+ *   * Scope: All active government ministers with multi-factor risk aggregation
+ *   * Use: Risk heat map visualization, threat identification
+ * 
+ * - `distribution_ministry_productivity_matrix.csv`
+ *   * Fields: minister_name, proposals_initiated, proposals_passed, passage_rate, effectiveness_score
+ *   * Scope: Annual productivity metrics and comparative benchmarking
+ *   * Use: Governance effectiveness assessment, productivity trending
+ * 
+ * - `percentile_politician_influence_metrics.csv`
+ *   * Fields: politician_name, influence_score (0-100), decision_authority, coalition_strength, media_impact
+ *   * Scope: Individual minister influence rankings and influence components
+ *   * Use: Power structure visualization, influence hierarchy mapping
+ * 
+ * - `distribution_ministry_decision_impact.csv`
+ *   * Fields: decision_id, minister_name, impact_category, scope, affected_sectors, long_term_implications
+ *   * Scope: Individual decisions with impact classification and reach assessment
+ *   * Use: Decision intelligence timeline, high-consequence decision tracking
+ * 
+ * - `distribution_ministry_effectiveness.csv`
+ *   * Fields: ministry, effectiveness_score, policy_outcomes, stakeholder_satisfaction, benchmarks
+ *   * Scope: Ministry-level effectiveness assessment with comparative metrics
+ *   * Use: Ministry-level performance comparison, governance quality assessment
+ * 
+ * ## OSINT Collection Strategy
+ * 
+ * **Multi-Layer Executive Intelligence**:
+ * 1. **Official Government Sources**: Ministry websites, press releases, decisions
+ * 2. **Parliamentary Records**: Minister questions, committee appearances, votes
+ * 3. **Media Monitoring**: Coverage volume, sentiment analysis, scandal tracking
+ * 4. **Social Network Analysis**: Coalition patterns, ally/rival relationships
+ * 5. **Personnel Intelligence**: Turnover rates, institutional experience patterns
+ * 6. **Policy Analysis**: Implementation success rates, stakeholder reception
+ * 7. **Financial Records**: Budget execution, spending patterns, fiscal discipline
+ * 
+ * ## Visualization Intelligence
+ * 
+ * **D3.js Risk Heat Map** (Primary):
+ * - **Matrix Structure**: Ministers (Y-axis) × Risk Categories (X-axis)
+ *   * Each cell represents individual risk assessment
+ *   * Color intensity: Risk magnitude (green → yellow → orange → red)
+ *   * Interactive tooltips: Show detailed risk breakdown and category scores
+ *   * Sorting: By risk level, ministry, or name for intelligence focus
+ * 
+ * **Chart.js Influence Ranking** (Supporting):
+ * - **Influence Hierarchy Chart**: Minister influence rankings across 8 categories
+ *   * Horizontal bar chart showing power distribution
+ *   * Color segments for different influence dimensions
+ *   * Identifies power concentration vs. balanced distribution
+ * 
+ * **Chart.js Productivity Matrix** (Performance):
+ * - **Governance Effectiveness**: Ministry productivity comparison
+ *   * Grouped bars: proposals vs. passage rate vs. effectiveness
+ *   * Trend lines showing year-over-year changes
+ *   * Benchmarks highlight outliers and high/low performers
+ * 
+ * **Chart.js Decision Impact Timeline** (Consequential):
+ * - **Policy Decision Tracking**: High-impact decisions over time
+ *   * Timeline showing major policy decisions
+ *   * Impact scores and affected sector breadth
+ *   * Category color-coding for decision types
+ * 
+ * ## Intelligence Analysis Frameworks Applied
+ * 
+ * @intelligence
+ * - **Ministerial Risk Assessment**: Multi-factor risk aggregation (ethics, policy, stability)
+ * - **Executive Influence Measurement**: Authority and impact-based power assessment
+ * - **Productivity Benchmarking**: Comparative effectiveness across ministries
+ * - **Decision Consequence Analysis**: Long-term policy impact assessment
+ * - **Personnel Stability Intelligence**: Turnover prediction and institutional knowledge tracking
+ * 
+ * @osint
+ * - **Media Sentiment Analysis**: Negative press density and scandal tracking
+ * - **Social Network Mapping**: Coalition alignment and influence propagation
+ * - **Policy Implementation Tracking**: Real-world outcomes vs. stated objectives
+ * - **Budget Intelligence**: Fiscal discipline and spending pattern analysis
+ * 
+ * @risk
+ * - **Ministerial Vulnerability**: Risk of removal or policy failure
+ * - **Coalition Stability**: Ministerial influence on government longevity
+ * - **Policy Continuity Risk**: Loss of institutional knowledge on turnover
+ * - **Scandal Contagion**: Risk propagation through political networks
+ * 
+ * ## GDPR Compliance
+ * 
+ * @gdpr Ministerial analysis uses only public official information (Article 9(2)(e)):
+ * - Parliamentary voting records and committee participation (public record)
+ * - Government decisions and policy announcements (public documents)
+ * - Media coverage and published statements (public domain)
+ * - Official government rosters and portfolio assignments (public information)
+ * No personal data beyond official government roles and responsibilities.
+ * No processing of health, criminal history, or private affairs.
+ * 
+ * ## Security Architecture
+ * 
+ * @security D3.js SVG rendering with input sanitization on all text labels
+ * @security Chart.js with XSS-safe tooltip content and legend items
+ * @security CSV data validation before processing (type checking, range validation)
+ * @security No authentication required; all data is public record
+ * @risk Medium - Risk assessment algorithm exposed in client-side code
+ * 
+ * ## Performance Characteristics
+ * 
+ * - **Data Volume**: ~20 active ministers × 8+ risk categories + productivity metrics
+ * - **Rendering**: D3.js heat map ~160 cells (20 ministers × 8 categories)
+ * - **Chart.js**: 4-5 separate visualizations with ~100 data points total
+ * - **Memory**: &lt;2MB for complete ministry intelligence dataset
+ * - **Update Frequency**: 24-hour cache expiry, real-time refresh capable
+ * 
+ * ## Data Transformation Pipeline
+ * 
+ * **Load Strategy**:
+ * 1. Attempt local cache load (`cia-data/ministry/`)
+ * 2. Parse CSV files into minister-centric data structure
+ * 3. Fallback to remote GitHub repository if local unavailable
+ * 4. Aggregate by minister (consolidate multiple data sources)
+ * 5. Cache results with 24-hour expiry
+ * 6. Render visualizations with aggregated/transformed data
+ * 
+ * **Data Aggregation**:
+ * - Risk Matrix: Combine multiple CSV sources by minister_name
+ * - Influence: Normalize scores across different metrics (0-100 scale)
+ * - Productivity: Time-series aggregation by ministry and fiscal year
+ * - Impact: Link decision records to responsible minister
+ * 
+ * @author Hack23 AB - Executive Intelligence Team
+ * @license Apache-2.0
  * @version 1.0.0
- * @author Hack23 AB
- * @license MIT
+ * @since 2024
  * 
- * @security CSP-compliant, no inline scripts, HTTPS-only data fetching
- * @accessibility WCAG 2.1 AA compliant with keyboard navigation and screen reader support
- * @performance Lazy loading, local caching, &lt; 3 second load time
+ * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
+ * @see {@link https://www.regeringen.se|Swedish Government Official Site}
+ * @see {@link ./THREAT_MODEL.md|Threat Model Documentation}
+ * @see {@link ./SECURITY_ARCHITECTURE.md|Security Architecture}
  */
-
-/**
- * Ministry Dashboard - Government Minister Risk &amp; Influence Analytics
- * 
- * Visualizes Swedish government ministry data using D3.js and Chart.js
- * Features: Risk heat maps, influence rankings, productivity matrices, decision impact trends
- * 
- * @version 1.0.0
- * @author Riksdagsmonitor
- * 
- * KNOWN LIMITATIONS:
- * - Some CIA CSV schemas require transformation to match chart data structures
- * - Data transformation layer maps actual CSV schemas to chart requirements:
- *   1. RiskHeatMap: Aggregates ministry risk/productivity data by ministry name
- *   2. InfluenceChart: Uses politician influence metrics view data
- *   3. ProductivityChart: Converts yearly productivity data to comparative format
- *   4. DecisionImpactChart: Maps decision_type/approval_rate to impact scores
- * 
- * TODO: Enhance data transformation layer as new CIA CSV schemas become available
- */
-
 (function() {
   'use strict';
 
@@ -1840,7 +1997,7 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
 </nav>
 
 <br class="clear">

@@ -27,23 +27,208 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Seasonal Activity Patterns Dashboard
+ * @module TemporalIntelligence/SeasonalAnalysis
+ * @category Intelligence Analysis - Seasonal Parliamentary Patterns &amp; Anomaly Detection
  * 
- * Visualizes quarterly parliamentary activity from 2002-2025 with:
- * - Quarterly activity heat map (23 years × 4 quarters)
- * - Z-score anomaly detection
- * - Seasonal pattern classification
- * - Cross-year quarter comparison
- * - Activity quartile tracking
+ * @description
+ * **Swedish Parliamentary Seasonal Activity Analysis &amp; Quarterly Pattern Intelligence Dashboard**
  * 
- * Data Source: CIA Platform
- * CSV: view_riksdagen_seasonal_activity_patterns_sample.csv
+ * Advanced intelligence analysis platform implementing **23-year temporal pattern analysis**
+ * (2002-2025) of Swedish parliamentary quarterly activity with sophisticated Z-score anomaly 
+ * detection and seasonal pattern classification. Identifies systematic quarterly variations,
+ * detects activity anomalies, and classifies seasonal patterns through multi-year aggregation
+ * and cross-quarter comparative analysis using D3.js and Chart.js visualization.
  * 
- * @author Hack23 AB
- * @version 1.0.0
+ * ## Intelligence Methodology
+ * 
+ * This module implements **temporal pattern intelligence analysis**:
+ * - **Historical Scope**: 23 years × 4 quarters = 92 quarterly data points
+ * - **Analysis Approach**: Seasonal decomposition with Z-score anomaly detection
+ * - **Granularity**: Quarterly activity aggregation across parliamentary entities
+ * - **Anomaly Threshold**: Z-score ≥ 2.0 (p&lt;0.05) for statistical significance
+ * 
+ * ## Seasonal Intelligence Framework
+ * 
+ * **Four-Dimensional Analysis Taxonomy**:
+ * 
+ * 1. **Quarterly Activity Patterns** (Seasonal Decomposition)
+ *    - Q1 (January-March): Spring session, budget discussions beginning
+ *    - Q2 (April-June): Legislative focus, committee work intensification
+ *    - Q3 (July-September): Summer recess, reduced activity baseline
+ *    - Q4 (October-December): Fall session, pre-election activity surge
+ *    - Activity types: Ballots, documents, committee decisions, attendance
+ * 
+ * 2. **Z-Score Anomaly Detection** (Statistical Outlier Identification)
+ *    - Baseline: Mean and standard deviation per quarter (23 years)
+ *    - Z-score calculation: (Value - Mean) / StdDev
+ *    - Anomaly threshold: |Z-score| ≥ 2.0 (95% confidence)
+ *    - Classification: Normal, Elevated, Anomaly, Critical
+ * 
+ * 3. **Seasonal Pattern Classification** (Behavioral Categorization)
+ *    - Normal: Activity within ±1 StdDev of quarterly average
+ *    - Elevated: Activity 1-2 StdDev above/below average
+ *    - Anomaly: Activity >2 StdDev from average (statistical outlier)
+ *    - Critical: Extreme anomaly >3 StdDev (very rare events)
+ * 
+ * 4. **Cross-Year Quarter Comparison** (Temporal Consistency)
+ *    - Year-over-year quarter consistency analysis
+ *    - Trend identification within same quarter across years
+ *    - Activity volatility assessment by quarter
+ *    - Quarter-to-quarter transition patterns
+ * 
+ * ## Data Sources (CIA Platform)
+ * 
+ * **Primary Intelligence Feeds**:
+ * - `view_riksdagen_seasonal_activity_patterns_sample.csv`
+ *   * Fields: year, quarter, ballot_count, document_count, decision_count, attendance_rate, 
+ *            avg_speech_length, committee_meetings, anomaly_score, anomaly_class
+ *   * Scope: 23 years (2002-2025) × 4 quarters = 92 quarterly records
+ *   * Use: Seasonal pattern baseline, anomaly detection, quarterly benchmarking
+ *   * Coverage: Full spectrum of parliamentary activity metrics
+ * 
+ * ## OSINT Collection Strategy
+ * 
+ * **Temporal Pattern Intelligence**:
+ * 1. **Parliamentary Activity Tracking**: Vote counts, document filings, committee meetings
+ * 2. **Attendance Intelligence**: Member participation rates, session attendance patterns
+ * 3. **Speech Analytics**: Contribution frequency, speech length, rhetoric intensity
+ * 4. **Calendar Intelligence**: Recess periods, session schedules, emergency sessions
+ * 5. **Budget Cycles**: Fiscal year boundaries and budget discussion phases
+ * 6. **Electoral Calendars**: Election-adjacent activity surge patterns
+ * 7. **Government Transitions**: Cabinet change and policy uncertainty impact on activity
+ * 
+ * ## Visualization Intelligence
+ * 
+ * **D3.js Quarterly Heat Map** (Primary):
+ * - **23×4 Matrix Visualization**: Years (Y-axis) × Quarters (X-axis)
+ *   * Each cell represents quarterly activity level
+ *   * Color intensity: Activity magnitude (blue/low → red/high)
+ *   * Color saturation: Anomaly magnitude (white/normal → black/critical)
+ *   * Interactive: Tooltip reveals detailed metrics (count, Z-score, classification)
+ *   * Scrollable: 23 years with year labels and Q1-Q4 grid
+ *   * Sortable: By activity level, anomaly score, or time sequence
+ * 
+ * **Chart.js Seasonal Decomposition** (Pattern Analysis):
+ * - **Box-and-Whisker Plot** by quarter across 23 years:
+ *   * X-axis: 4 quarters (Q1, Q2, Q3, Q4)
+ *   * Y-axis: Activity metric value
+ *   * Box: Interquartile range (25th-75th percentile)
+ *   * Line: Median (50th percentile)
+ *   * Whiskers: 1.5×IQR range
+ *   * Points: Outliers beyond whiskers (statistical anomalies)
+ *   * Shows quarterly pattern consistency and outlier years
+ * 
+ * **Chart.js Anomaly Timeline** (Outlier Tracking):
+ * - **Anomaly Score Time Series**: Z-scores for all quarters
+ *   * Multi-line chart with threshold bands
+ *   * Separate lines for different activity types
+ *   * Horizontal reference lines at Z=0, Z=2, Z=-2, Z=3, Z=-3
+ *   * Color-coded zones: Green (normal), Yellow (elevated), Red (anomaly)
+ *   * Identifies anomalous quarters and their characteristics
+ * 
+ * **Chart.js Quarter Comparison** (Relative Strength):
+ * - **Average Activity by Quarter**: Multi-year aggregated pattern
+ *   * Bar chart showing Q1, Q2, Q3, Q4 average activities
+ *   * Error bars showing ±1 StdDev confidence bands
+ *   * Shows expected seasonal variation
+ *   * Identifies which quarters are typically high/low activity
+ * 
+ * **Chart.js Activity Quartile Distribution** (Ranking):
+ * - **Quartile Membership Heat Map**: Each quarter's historical ranking
+ *   * Shows frequency of each quarter landing in quartiles
+ *   * Q1 column: How often Q1s rank in top/bottom quartiles
+ *   * Helps identify most/least reliable quarters
+ * 
+ * ## Intelligence Analysis Frameworks Applied
+ * 
+ * @intelligence
+ * - **Temporal Decomposition**: Separating trend, seasonal, and anomaly components
+ * - **Statistical Anomaly Detection**: Z-score methodology with confidence intervals
+ * - **Seasonal Pattern Classification**: Normal/elevated/anomaly/critical taxonomy
+ * - **Year-Over-Year Analysis**: Consistency assessment and trend identification
+ * - **Outlier Investigation**: Identification of anomalous quarters and causes
+ * 
+ * @osint
+ * - **Activity Intelligence**: Real-time parliamentary activity monitoring
+ * - **Pattern Recognition**: Historical seasonal signatures and exception detection
+ * - **Confidence Quantification**: Statistical bounds on anomaly identification
+ * - **Root Cause Analysis**: Linking anomalies to external events (elections, crises)
+ * 
+ * @risk
+ * - **Seasonal Activity Disruption**: Anomalous activity surge/decline risks
+ * - **Summer Recess Risk**: Reduced oversight during Q3 periods
+ * - **Pre-Election Volatility**: Q4 election-year activity unpredictability
+ * - **Activity Concentration Risk**: Uneven quarterly distribution affecting oversight
+ * 
+ * ## GDPR Compliance
+ * 
+ * @gdpr Seasonal activity analysis uses only aggregate parliamentary data (Article 9(2)(e)):
+ * - Aggregate activity counts (ballots, documents, decisions)
+ * - No individual parliamentary member tracking
+ * - No personal behavioral data or voting pattern surveillance
+ * - No content analysis of speeches or documents
+ * - Purely temporal pattern analysis of aggregate activity volumes
+ * 
+ * ## Security Architecture
+ * 
+ * @security D3.js SVG rendering with input sanitization on all text labels
+ * @security Chart.js with XSS-safe tooltip content and axis labels
+ * @security All CSV data validated with type checking and range enforcement
+ * @security Z-score calculation algorithm transparent and reproducible
+ * @security No authentication required; all data is public record
+ * @risk Low - Temporal activity patterns are public aggregate data
+ * 
+ * ## Performance Characteristics
+ * 
+ * - **Data Volume**: 23 years × 4 quarters × 6-8 metrics = ~552-736 data points
+ * - **Rendering**: D3.js heat map (23×4 = 92 cells) + Chart.js (5 visualizations)
+ * - **Calculations**: Z-scores, percentiles, quartile calculations
+ * - **Memory**: &lt;1.5MB for complete seasonal analysis dataset
+ * - **Cache Duration**: 24-hour expiry; weekly updates typical
+ * 
+ * ## Data Transformation Pipeline
+ * 
+ * **Load Strategy**:
+ * 1. Attempt local cache load (`cia-data/seasonal/`)
+ * 2. Parse CSV file into quarterly time-series structure
+ * 3. Fallback to remote GitHub repository if local unavailable
+ * 4. Calculate Z-scores for each metric by quarter
+ * 5. Classify quarters: Normal/Elevated/Anomaly/Critical
+ * 6. Compute quarterly aggregates (means, std dev) across 23 years
+ * 7. Cache results with 24-hour expiry
+ * 8. Render visualizations with aggregated/transformed data
+ * 
+ * **Statistical Processing**:
+ * - **Per-Quarter Statistics**: Mean and StdDev for each Q1/Q2/Q3/Q4 across 23 years
+ * - **Z-Score**: (Current_Value - Quarter_Mean) / Quarter_StdDev
+ * - **Percentile**: Ranking within historical distribution for that quarter
+ * - **Anomaly Class**: Normal (|Z|&lt;1), Elevated (1≤|Z|&lt;2), Anomaly (|Z|≥2)
+ * - **Confidence**: 95% confidence interval on quarterly means
+ * 
+ * ## Anomaly Thresholds
+ * 
+ * **Classification Levels**:
+ * - **Normal**: Z-score between -1.0 and +1.0 (68% of data expected)
+ * - **Elevated**: Z-score between -2.0 and -1.0 OR +1.0 and +2.0 (27% of data)
+ * - **Anomaly**: Z-score &lt; -2.0 OR > +2.0 (5% of data, statistical outliers)
+ * - **Critical**: Z-score &lt; -3.0 OR > +3.0 (&lt;1% of data, extreme events)
+ * 
+ * **Activity-Specific Thresholds**:
+ * - **Ballots**: >500 votes per quarter = high activity, &lt;200 = low activity
+ * - **Documents**: >150 documents per quarter = high legislative activity
+ * - **Decisions**: >80 committee decisions per quarter = normal workload
+ * - **Attendance**: >85% average attendance = high participation, &lt;75% = concerning
+ * 
+ * @author Hack23 AB - Temporal Intelligence Team
  * @license Apache-2.0
+ * @version 1.0.0
+ * @since 2024
+ * 
+ * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
+ * @see {@link https://data.riksdagen.se|Riksdag Open Data API}
+ * @see {@link ./THREAT_MODEL.md|Threat Model Documentation}
+ * @see {@link ./SECURITY_ARCHITECTURE.md|Security Architecture}
  */
-
 (function() {
   'use strict';
 
@@ -1555,7 +1740,7 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li></ul><h3>Classes</h3><ul><li><a href="AccessibilityTable.html">AccessibilityTable</a></li><li><a href="AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="CIADashboardRenderer.html">CIADashboardRenderer</a></li><li><a href="CIADataLoader.html">CIADataLoader</a></li><li><a href="DataCache.html">DataCache</a></li><li><a href="DataFetcher.html">DataFetcher</a></li><li><a href="DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="Election2026Predictions.html">Election2026Predictions</a></li><li><a href="ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="InfluenceChart.html">InfluenceChart</a></li><li><a href="MCPClient.html">MCPClient</a></li><li><a href="MinistryDashboard.html">MinistryDashboard</a></li><li><a href="ProductivityChart.html">ProductivityChart</a></li><li><a href="RiskHeatMap.html">RiskHeatMap</a></li><li><a href="WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BREADCRUMB_TRANSLATIONS">BREADCRUMB_TRANSLATIONS</a></li><li><a href="global.html#CONTENT_LABELS">CONTENT_LABELS</a></li><li><a href="global.html#DEFAULT_CONFIG">DEFAULT_CONFIG</a></li><li><a href="global.html#DEFAULT_MCP_SERVER_URL">DEFAULT_MCP_SERVER_URL</a></li><li><a href="global.html#DEFAULT_THRESHOLDS">DEFAULT_THRESHOLDS</a></li><li><a href="global.html#DOCUMENT_ID_PATTERNS">DOCUMENT_ID_PATTERNS</a></li><li><a href="global.html#EDITORIAL_PILLAR_HEADINGS">EDITORIAL_PILLAR_HEADINGS</a></li><li><a href="global.html#EVENT_CALENDAR_TITLES">EVENT_CALENDAR_TITLES</a></li><li><a href="global.html#FOOTER_LABELS">FOOTER_LABELS</a></li><li><a href="global.html#L">L</a></li><li><a href="global.html#LOCALE_MAP">LOCALE_MAP</a></li><li><a href="global.html#MINIMUM_SOURCES">MINIMUM_SOURCES</a></li><li><a href="global.html#OG_LOCALE_MAP">OG_LOCALE_MAP</a></li><li><a href="global.html#PARTY_VARIANTS">PARTY_VARIANTS</a></li><li><a href="global.html#REQUIRED_TOOLS">REQUIRED_TOOLS</a></li><li><a href="global.html#REQUIRED_TOOLS_PER_TYPE">REQUIRED_TOOLS_PER_TYPE</a></li><li><a href="global.html#RTL_LANGUAGES">RTL_LANGUAGES</a></li><li><a href="global.html#SITE_TAGLINE">SITE_TAGLINE</a></li><li><a href="global.html#WATCH_SECTION_TITLES">WATCH_SECTION_TITLES</a></li><li><a href="global.html#analyzeArticles">analyzeArticles</a></li><li><a href="global.html#assessAnalyticalDepth">assessAnalyticalDepth</a></li><li><a href="global.html#batchEnhanceQuality">batchEnhanceQuality</a></li><li><a href="global.html#buildSlugToLanguagesMap">buildSlugToLanguagesMap</a></li><li><a href="global.html#calculateAnalyticalDepth">calculateAnalyticalDepth</a></li><li><a href="global.html#calculateQualityScore">calculateQualityScore</a></li><li><a href="global.html#calculateReadTime">calculateReadTime</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#checkFileForUntranslatedContent">checkFileForUntranslatedContent</a></li><li><a href="global.html#classifyArticleType">classifyArticleType</a></li><li><a href="global.html#countCrossReferences">countCrossReferences</a></li><li><a href="global.html#countPartyPerspectives">countPartyPerspectives</a></li><li><a href="global.html#countWords">countWords</a></li><li><a href="global.html#createCareerTrajectoryChart">createCareerTrajectoryChart</a></li><li><a href="global.html#createExperienceDistributionChart">createExperienceDistributionChart</a></li><li><a href="global.html#createProductivityInfluenceChart">createProductivityInfluenceChart</a></li><li><a href="global.html#defaultClient">defaultClient</a></li><li><a href="global.html#detectArticleLanguage">detectArticleLanguage</a></li><li><a href="global.html#detectHistoricalContext">detectHistoricalContext</a></li><li><a href="global.html#enhanceArticleQuality">enhanceArticleQuality</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#exportCISummary">exportCISummary</a></li><li><a href="global.html#extractCrossReferences">extractCrossReferences</a></li><li><a href="global.html#extractFromFilename">extractFromFilename</a></li><li><a href="global.html#extractLanguage">extractLanguage</a></li><li><a href="global.html#extractLeadParagraph">extractLeadParagraph</a></li><li><a href="global.html#extractMetaContent">extractMetaContent</a></li><li><a href="global.html#extractPartyMentions">extractPartyMentions</a></li><li><a href="global.html#extractSection">extractSection</a></li><li><a href="global.html#extractSections">extractSections</a></li><li><a href="global.html#extractStatistics">extractStatistics</a></li><li><a href="global.html#extractTags">extractTags</a></li><li><a href="global.html#extractTerms">extractTerms</a></li><li><a href="global.html#extractTitle">extractTitle</a></li><li><a href="global.html#extractTopics">extractTopics</a></li><li><a href="global.html#extractWatchPoints">extractWatchPoints</a></li><li><a href="global.html#fetchCIAData">fetchCIAData</a></li><li><a href="global.html#fetchCSV">fetchCSV</a></li><li><a href="global.html#fetchCalendarEvents">fetchCalendarEvents</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateForSlug">formatDateForSlug</a></li><li><a href="global.html#formatDateRange">formatDateRange</a></li><li><a href="global.html#formatDayLabel">formatDayLabel</a></li><li><a href="global.html#formatDayName">formatDayName</a></li><li><a href="global.html#generateAllIndexes">generateAllIndexes</a></li><li><a href="global.html#generateArticleContent">generateArticleContent</a></li><li><a href="global.html#generateAvailableLanguages">generateAvailableLanguages</a></li><li><a href="global.html#generateBreakingNews">generateBreakingNews</a></li><li><a href="global.html#generateCommitteeContent">generateCommitteeContent</a></li><li><a href="global.html#generateCommitteeReports">generateCommitteeReports</a></li><li><a href="global.html#generateGenericContent">generateGenericContent</a></li><li><a href="global.html#generateHreflangTags">generateHreflangTags</a></li><li><a href="global.html#generateIndexHTML">generateIndexHTML</a></li><li><a href="global.html#generateLanguageBadge">generateLanguageBadge</a></li><li><a href="global.html#generateLanguageNotice">generateLanguageNotice</a></li><li><a href="global.html#generateMetadata">generateMetadata</a></li><li><a href="global.html#generateMotions">generateMotions</a></li><li><a href="global.html#generateMotionsContent">generateMotionsContent</a></li><li><a href="global.html#generateNews">generateNews</a></li><li><a href="global.html#generatePRComment">generatePRComment</a></li><li><a href="global.html#generatePropositions">generatePropositions</a></li><li><a href="global.html#generatePropositionsContent">generatePropositionsContent</a></li><li><a href="global.html#generateRTLStyles">generateRTLStyles</a></li><li><a href="global.html#generateReport">generateReport</a></li><li><a href="global.html#generateSitemap">generateSitemap</a></li><li><a href="global.html#generateSources">generateSources</a></li><li><a href="global.html#generateUrlEntry">generateUrlEntry</a></li><li><a href="global.html#generateValidationReport">generateValidationReport</a></li><li><a href="global.html#generateWeekAhead">generateWeekAhead</a></li><li><a href="global.html#getAllArticlesWithLanguageInfo">getAllArticlesWithLanguageInfo</a></li><li><a href="global.html#getAllHtmlFiles">getAllHtmlFiles</a></li><li><a href="global.html#getBreadcrumbName">getBreadcrumbName</a></li><li><a href="global.html#getCachedData">getCachedData</a></li><li><a href="global.html#getDefaultTimeout">getDefaultTimeout</a></li><li><a href="global.html#getFileModTime">getFileModTime</a></li><li><a href="global.html#getLanguageCode">getLanguageCode</a></li><li><a href="global.html#getLocalizedHeading">getLocalizedHeading</a></li><li><a href="global.html#getNewsArticles">getNewsArticles</a></li><li><a href="global.html#getTitles">getTitles</a></li><li><a href="global.html#getWeekAheadDateRange">getWeekAheadDateRange</a></li><li><a href="global.html#hasForwardLooking">hasForwardLooking</a></li><li><a href="global.html#hasHistoricalContext">hasHistoricalContext</a></li><li><a href="global.html#hasInternationalComparison">hasInternationalComparison</a></li><li><a href="global.html#hasWhyThisMatters">hasWhyThisMatters</a></li><li><a href="global.html#isHighPriority">isHighPriority</a></li><li><a href="global.html#isTodayDate">isTodayDate</a></li><li><a href="global.html#loadDashboardData">loadDashboardData</a></li><li><a href="global.html#loadStats">loadStats</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#parseArticle">parseArticle</a></li><li><a href="global.html#parseArticleMetadata">parseArticleMetadata</a></li><li><a href="global.html#parseCSV">parseCSV</a></li><li><a href="global.html#parseCSVLine">parseCSVLine</a></li><li><a href="global.html#printValidation">printValidation</a></li><li><a href="global.html#renderTop10List">renderTop10List</a></li><li><a href="global.html#sanitizeArticleBody">sanitizeArticleBody</a></li><li><a href="global.html#saveCache">saveCache</a></li><li><a href="global.html#scanNewsArticles">scanNewsArticles</a></li><li><a href="global.html#showError">showError</a></li><li><a href="global.html#stripHtml">stripHtml</a></li><li><a href="global.html#transformCalendarToEventGrid">transformCalendarToEventGrid</a></li><li><a href="global.html#updateHTMLFile">updateHTMLFile</a></li><li><a href="global.html#validateAccessibility">validateAccessibility</a></li><li><a href="global.html#validateAndSave">validateAndSave</a></li><li><a href="global.html#validateArticleBatch">validateArticleBatch</a></li><li><a href="global.html#validateArticlesWithPlaywright">validateArticlesWithPlaywright</a></li><li><a href="global.html#validateColorContrast">validateColorContrast</a></li><li><a href="global.html#validateCommitteeReports">validateCommitteeReports</a></li><li><a href="global.html#validateCrossReferences">validateCrossReferences</a></li><li><a href="global.html#validateEveningAnalysis">validateEveningAnalysis</a></li><li><a href="global.html#validateHeadingHierarchy">validateHeadingHierarchy</a></li><li><a href="global.html#validateNewsTranslations">validateNewsTranslations</a></li><li><a href="global.html#validateRTL">validateRTL</a></li><li><a href="global.html#validateSingleArticle">validateSingleArticle</a></li><li><a href="global.html#validateSitemap">validateSitemap</a></li><li><a href="global.html#validateSources">validateSources</a></li><li><a href="global.html#validateStructure">validateStructure</a></li><li><a href="global.html#validateWeekAhead">validateWeekAhead</a></li><li><a href="global.html#writeArticle">writeArticle</a></li><li><a href="global.html#writeArticlePair">writeArticlePair</a></li><li><a href="global.html#writeSingleArticle">writeSingleArticle</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
 </nav>
 
 <br class="clear">

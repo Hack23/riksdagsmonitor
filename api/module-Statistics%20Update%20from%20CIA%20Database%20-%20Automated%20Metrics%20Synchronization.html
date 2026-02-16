@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: Statistics Update from CIA Database - Automated Metrics Synchronization</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: Statistics Update from CIA Database - Automated Metrics Synchronization</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Automated statistics synchronization system updating riksdagsmonitor website with
+current parliamentary and historical statistics from CIA production database.
+Maintains accurate metrics for website index pages describing parliament size,
+politician tracking scope, and legislative activity volumes. Supports data-driven
+transparency and audience understanding of Swedish political system.</p>
+<p>Operational Purpose:
+Synchronizes public statistics from CIA production database to all 14 language
+variants of riksdagsmonitor website (index.html, index_sv.html, ..., index_zh.html).
+Ensures website accurately reflects current parliamentary composition and tracking scope.
+Automates what would otherwise require manual updates across 14 files.</p>
+<p>Statistics Categories Maintained:</p>
+<ul>
+<li>Current MP Count: 349 (standard Swedish Riksdag size)</li>
+<li>Historical Politicians: 2,494 (all politicians since 1971, ~50+ years)</li>
+<li>Riksdag Establishment: 1971 (founding of modern parliament)</li>
+<li>Coverage Scope: All legislative sessions and government activities</li>
+<li>Tracked Parties: 8 major parties plus historic parties</li>
+<li>Committee System: 15-16 standing committees</li>
+</ul>
+<p>Data Strategy:
+The system distinguishes between two key metrics:</p>
+<ul>
+<li>current_mps = 349: Active members in current Riksdag session</li>
+<li>person_data = 2,494: Total unique politicians tracked historically</li>
+</ul>
+<p>This dual approach answers two audience questions:
+&quot;How many MPs are currently in parliament?&quot; → 349 (current composition)
+&quot;How much parliamentary history do you track?&quot; → 2,494+ politicians (temporal scope)</p>
+<p>Website Pages Updated (14 language variants):</p>
+<ul>
+<li>index.html: English version</li>
+<li>index_sv.html: Swedish version</li>
+<li>index_da.html: Danish version</li>
+<li>index_no.html: Norwegian version</li>
+<li>index_fi.html: Finnish version</li>
+<li>index_de.html: German version</li>
+<li>index_fr.html: French version</li>
+<li>index_es.html: Spanish version</li>
+<li>index_nl.html: Dutch version</li>
+<li>index_ar.html: Arabic version</li>
+<li>index_he.html: Hebrew version</li>
+<li>index_ja.html: Japanese version</li>
+<li>index_ko.html: Korean version</li>
+<li>index_zh.html: Chinese version</li>
+</ul>
+<p>Data Source:</p>
+<ul>
+<li>CIA Production Database: Official Swedish parliament intelligence system</li>
+<li>Data Path: ./cia-data/production-stats.json</li>
+<li>Update Frequency: Typically daily from CIA production environment</li>
+<li>Data Integrity: Validated against official parliament records</li>
+</ul>
+<p>Statistics Update Methodology:</p>
+<ol>
+<li>Load production statistics from CIA data JSON file</li>
+<li>For each website index file:
+<ul>
+<li>Read current HTML content</li>
+<li>Locate statistics placeholders (e.g., <span id="mp-count">)</li>
+<li>Replace with current values from production database</li>
+<li>Update descriptive text with scope explanation</li>
+<li>Preserve all other HTML structure</li>
+</ul>
+</li>
+<li>Write updated files back to filesystem</li>
+<li>Log changes and generate summary report</li>
+</ol>
+<p>Statistics Presentation:
+Website descriptions follow this pattern:
+&quot;Monitor [NUMBER] current Members of Parliament (MPs) from [NUMBER]+ historical politicians
+tracked across [SCOPE] in the Swedish Riksdag and government system.&quot;</p>
+<p>Example English:
+&quot;Monitor 349 current Members of Parliament (MPs) from 2,494+ historical politicians
+tracked across 50+ years in the Swedish Riksdag and government system.&quot;</p>
+<p>The format explains:</p>
+<ul>
+<li>349: Current active MPs (relevant to today's coverage)</li>
+<li>2,494+: Historical tracking scope (demonstrates data comprehensiveness)</li>
+<li>50+ years: Temporal range of parliament tracking</li>
+</ul>
+<p>Integration Points:</p>
+<ul>
+<li>CI/CD Pipeline: Runs after news generation and schema synchronization</li>
+<li>Homepage Display: Statistics on landing page (all languages)</li>
+<li>SEO Metadata: Statistics in page meta descriptions</li>
+<li>Analytics: Tracks audience engagement with parliament data</li>
+<li>Data Dictionary: Documents what statistics are tracked</li>
+</ul>
+<p>Change Detection &amp; Reporting:</p>
+<ul>
+<li>Tracks which files were actually modified</li>
+<li>Reports statistics before/after for audit trail</li>
+<li>Logs only files with substantive changes (avoids churn)</li>
+<li>Provides summary of update scope</li>
+</ul>
+<p>Error Handling:</p>
+<ul>
+<li>Validates production-stats.json format</li>
+<li>Gracefully handles missing statistics (uses defaults)</li>
+<li>Validates HTML file structure before updates</li>
+<li>Reports files that couldn't be processed</li>
+<li>Maintains backup of original files if needed</li>
+</ul>
+<p>ISMS Compliance - Data Integrity &amp; Source Attribution:</p>
+<ul>
+<li>
+<p>ISO 27001:2022 A.5.33 - Protection of records
+Ensures statistics maintain proper source attribution to CIA database
+Documented chain of custody from CIA production to website</p>
+</li>
+<li>
+<p>ISO 27001:2022 A.8.3 - Information lifecycle management
+Automated update process maintains current information
+Deprecates stale statistics automatically via synchronization</p>
+</li>
+<li>
+<p>ISO 27001:2022 A.8.10 - Information deletion
+When parliament composition changes, old statistics properly retained in version history
+Enables historical analysis and trend tracking</p>
+</li>
+<li>
+<p>NIST CSF 2.0 PR.DS-5 - Data integrity
+Validation checks ensure statistics match source database
+Change logs provide audit trail of modifications</p>
+</li>
+<li>
+<p>CIS Control 3.14 - Data integrity validation
+Automated verification that website statistics match database source
+Prevents manual transcription errors</p>
+</li>
+</ul>
+<p>Data Protection Considerations:</p>
+<ul>
+<li>Processes only public government data (Offentlighetsprincipen)</li>
+<li>Journalists/OSINT platform covering public officials in official capacity</li>
+<li>Statistics aggregated (no individual politician data exposed)</li>
+<li>Complies with GDPR Article 6(1)(e) - Public interest processing</li>
+<li>No personal data processing (statistical aggregates only)</li>
+</ul>
+<p>Search Engine Optimization:</p>
+<ul>
+<li>Meta descriptions include current statistics for search results</li>
+<li>Open Graph tags include statistics for social media previews</li>
+<li>Schema.org markup documents organization metrics</li>
+<li>Improves click-through rates for searches about Swedish parliament</li>
+</ul>
+<p>Performance Characteristics:</p>
+<ul>
+<li>Loads production-stats.json: &lt; 10ms</li>
+<li>Per-file update: 2-5ms (regex replacement)</li>
+<li>14 files × 5ms = ~70ms total execution</li>
+<li>Negligible performance impact on build pipeline</li>
+</ul>
+<p>Usage:
+node scripts/update-stats-from-cia.js</p>
+<h1>Updates all 14 index files with current statistics</h1>
+<h1>Logs changes and generates summary report</h1>
+<p>Environmental Setup:</p>
+<ul>
+<li>CIA data file: ./cia-data/production-stats.json (required)</li>
+<li>Index files: ./index.html through ./index_zh.html (required)</li>
+<li>File permissions: Read/write access to index files</li>
+<li>No external dependencies beyond Node.js</li>
+</ul>
+<p>Troubleshooting:</p>
+<ul>
+<li>No CIA data file: Check production-stats.json exists and is valid JSON</li>
+<li>Index files not found: Verify website root directory structure</li>
+<li>Statistics not updating: Check file write permissions</li>
+<li>Wrong statistics: Verify CIA database is current</li>
+</ul>
+<p>Future Enhancements:</p>
+<ul>
+<li>Support for additional statistics (committee counts, bill volumes, etc.)</li>
+<li>Multi-level statistics (party breakdown, committee composition)</li>
+<li>Historical statistics tracking for trend analysis</li>
+<li>Real-time API endpoint for statistics (vs. static files)</li>
+</ul></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.6.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB (Intelligence Metrics Team)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_update-stats-from-cia.js.html">scripts/update-stats-from-cia.js</a>, <a href="scripts_update-stats-from-cia.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>CIA Production Database (upstream data source)</li>
+        
+            <li>GDPR Article 6(1)(e) - Public interest processing</li>
+        
+            <li>ISO 27001:2022 A.5.33 - Protection of records</li>
+        
+            <li>Offentlighetsprincipen (Swedish public access principle)</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~loadStats"><span class="type-signature">(inner) </span>loadStats<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Load production statistics</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_update-stats-from-cia.js.html">scripts/update-stats-from-cia.js</a>, <a href="scripts_update-stats-from-cia.js.html#line212">line 212</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Statistics data</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~main"><span class="type-signature">(async, inner) </span>main<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Main execution</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_update-stats-from-cia.js.html">scripts/update-stats-from-cia.js</a>, <a href="scripts_update-stats-from-cia.js.html#line449">line 449</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~updateHTMLFile"><span class="type-signature">(inner) </span>updateHTMLFile<span class="signature">(filePath, stats)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Update HTML file with new statistics</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>filePath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Path to HTML file</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stats</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Statistics data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_update-stats-from-cia.js.html">scripts/update-stats-from-cia.js</a>, <a href="scripts_update-stats-from-cia.js.html#line228">line 228</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Update summary</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
