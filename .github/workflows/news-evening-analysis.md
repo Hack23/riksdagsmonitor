@@ -153,27 +153,35 @@ You have access to the **riksdag-regering-mcp** server with 32 specialized tools
 - **Authentication**: None required (public API)
 - **Tools**: 32 tools automatically available via MCP
 
-### 🏗️ Architecture: Gateway vs Direct Access
+### 🔌 MCP Server: riksdag-regering
 
-Agentic workflows use a **gateway/proxy architecture** for network security:
-- **Route**: Agent → Firewall Container (`host.docker.internal`) → External MCP Server
-- **Tool Naming**: MCP client helper automatically handles prefixing in gateway mode
-- **Latency**: Additional 50-200ms per request through proxy
-- **Future Recommendation**: Direct HTTPS access for better performance
+You have access to the **riksdag-regering-mcp** server with 32 specialized tools.
 
-### ⚡ Quick Start - Direct Tool Usage
+**Configuration** (in workflow frontmatter):
+```yaml
+mcp-servers:
+  riksdag-regering:
+    url: https://riksdag-regering-ai.onrender.com/mcp
+```
 
-Call MCP tools directly without any setup code:
+**How It Works:**
+1. Configuration compiles into `.lock.yml` with embedded MCP gateway
+2. Gateway proxy handles protocol, auth, sessions automatically
+3. All tools available via `mcp["riksdag-regering"]["riksdag-regering--tool_name"]` syntax
 
+**Tool Naming:** All tool names MUST be prefixed with `riksdag-regering--`
+
+**Quick Start:**
 ```javascript
-// Just use the tool name - no initialization needed!
-const events = await mcp["riksdag-regering"].get_calendar_events({
+// Fetch calendar events
+const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
   from: "2026-02-16",
   tom: "2026-02-16",
   limit: 50
 });
 
-const votes = await mcp["riksdag-regering"].search_voteringar({
+// Search documents
+const votes = await mcp["riksdag-regering"]["riksdag-regering--search_voteringar"]({
   rm: "2025/26",
   limit: 50
 });
@@ -181,40 +189,30 @@ const votes = await mcp["riksdag-regering"].search_voteringar({
 
 ### 🚨 Cold Start Handling
 
-**Important**: The MCP server runs on Render.com serverless infrastructure and may experience **cold starts (30-60 seconds)** if inactive.
-
-**Built-in Retry Logic:**
-- Automatic retries (3 attempts max)
-- Exponential backoff with 2-second delays
-- 30-second timeout per request
+**Important**: Server may take 30-60s on first request. Framework retries automatically (3 attempts, 2s delays).
 
 **Best Practices:**
-1. ✅ **Start with a simple query** to warm up the server
-2. ✅ **Batch multiple queries** after warm-up for efficiency
-3. ✅ **Check data freshness** using `get_sync_status()` before generating articles
-4. ✅ **Handle timeouts gracefully** - retry or fall back to cached data
+1. ✅ Start with a simple query to warm up the server
+2. ✅ Batch multiple queries after warm-up
+3. ✅ Check data freshness using `riksdag-regering--get_sync_status`
 
 ### 🐛 Troubleshooting
 
 **Issue: Request times out**
-- **Cause**: Cold start + gateway proxy latency (50-200ms overhead)
-- **Solution**: Wait 60 seconds and retry
+- **Cause**: Cold start (30-60s)
+- **Solution**: Wait and retry - framework handles retries automatically
 
-**Issue: Tool not found / Method not found error**
-- **Cause**: Tool name prefixing mismatch (gateway vs direct mode)
-- **Solution**: Use `scripts/mcp-client.js` helper - auto-detects and handles prefixing
+**Issue: Tool not found error**
+- **Cause**: Missing `riksdag-regering--` prefix
+- **Solution**: Always use full prefix: `mcp["riksdag-regering"]["riksdag-regering--tool_name"]`
 
 **Issue: Empty results**
 - **Cause**: No activity in timeframe or wrong riksmöte (rm)
-- **Solution**: Check `get_sync_status()`, widen search parameters
+- **Solution**: Check `riksdag-regering--get_sync_status`, widen search
 
 **Issue: Swedish-only results**
 - **Cause**: Riksdag API returns Swedish data natively
-- **Solution**: YOU must translate to target languages (see translation guide)
-
-**Issue: Agent authentication trial-and-error**
-- **Solution**: Documentation now clarifies **no authentication required**
-- **Future**: Direct access mode eliminates gateway session complexity
+- **Solution**: YOU must translate to target languages
 
 ## Analysis Workflow
 

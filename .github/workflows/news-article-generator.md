@@ -157,32 +157,38 @@ Parse the `article_types` input (comma-separated list) and generate the requeste
 **Server Details:**
 - **URL**: `https://riksdag-regering-ai.onrender.com/mcp`
 - **Protocol**: JSON-RPC 2.0 (HTTP transport)
-- **Authentication**: None required (public API)
+- **Authentication**: Handled automatically by framework
 - **Tools**: 32 tools automatically available
 
-### 🏗️ Architecture Note: Gateway vs Direct Access
+### 🔌 MCP Server: riksdag-regering
 
-Agentic workflows use a **gateway/proxy architecture** for security:
-- **Route**: Agent → Firewall (`host.docker.internal`) → MCP Server
-- **Tool Naming**: The MCP client helper automatically handles prefixing (`riksdag-regering--` prefix in gateway mode)
-- **Latency**: Additional 50-200ms per request through proxy
-- **Future**: Direct HTTPS access recommended for 50-200ms faster requests
+You have access to the **riksdag-regering-mcp** server with 32 specialized tools.
 
-**Good News**: The MCP client helper (`scripts/mcp-client.js`) automatically detects and handles both modes!
+**Configuration** (in workflow frontmatter):
+```yaml
+mcp-servers:
+  riksdag-regering:
+    url: https://riksdag-regering-ai.onrender.com/mcp
+```
 
-### ⚡ Direct Tool Usage (Recommended)
+**How It Works:**
+1. Configuration compiles into `.lock.yml` with embedded MCP gateway
+2. Gateway proxy handles protocol, auth, sessions automatically
+3. All tools available via `mcp["riksdag-regering"]["riksdag-regering--tool_name"]` syntax
 
-Call MCP tools directly without any setup:
+**Tool Naming:** All tool names MUST be prefixed with `riksdag-regering--`
 
+**Quick Start:**
 ```javascript
-// Just use the tool name - it's that simple!
-const events = await mcp["riksdag-regering"].get_calendar_events({
+// Fetch calendar events
+const events = await mcp["riksdag-regering"]["riksdag-regering--get_calendar_events"]({
   from: "2026-02-16",
-  tom: "2026-02-23",
+  tom: "2026-02-16",
   limit: 50
 });
 
-const docs = await mcp["riksdag-regering"].search_dokument({
+// Search documents
+const docs = await mcp["riksdag-regering"]["riksdag-regering--search_dokument"]({
   from_date: "2026-02-16",
   limit: 30
 });
@@ -190,43 +196,42 @@ const docs = await mcp["riksdag-regering"].search_dokument({
 
 ### 🚨 Cold Start Warning
 
-**Important**: The server runs on Render.com serverless and may have **30-60 second cold starts**.
+**Important**: Server may take 30-60s on first request. Framework retries automatically (3 attempts, 2s delays).
 
 **Best Practices:**
-1. ✅ Start with a simple warm-up query (e.g., `get_calendar_events` with small limit)
+1. ✅ Start with a simple warm-up query
 2. ✅ Batch multiple queries after warm-up
-3. ✅ Handle timeouts gracefully (built-in retry logic: 3 attempts, 2s delays)
-4. ✅ Check data freshness: `get_sync_status()` before generating articles
+3. ✅ Check data freshness: `riksdag-regering--get_sync_status` before generating articles
 
 ### 🐛 Troubleshooting
 
 **Issue: Request times out**
-- **Cause**: Cold start + gateway proxy latency
-- **Solution**: Wait 60 seconds and retry
+- **Cause**: Cold start (30-60s)
+- **Solution**: Wait and retry - framework handles retries automatically
 
 **Issue: Tool not found error**
-- **Cause**: Tool name prefixing mismatch (gateway vs direct)
-- **Solution**: Use the MCP client helper - it auto-detects and handles prefixing
+- **Cause**: Missing `riksdag-regering--` prefix
+- **Solution**: Always use full prefix: `mcp["riksdag-regering"]["riksdag-regering--tool_name"]`
 
-**Issue: Agent spent 10+ minutes on authentication**
-- **Solution**: Documentation now clarifies **no authentication required**
-- **Future**: Direct access eliminates gateway complexity
+**Issue: Agent spent 10+ minutes on manual attempts**
+- **Cause**: Tried bash/curl/python instead of framework
+- **Solution**: Always use `mcp["server"]["tool"]` syntax
 
 ### 📋 Available Tools by Category
 
 You have access to 32 specialized tools for Swedish political data:
 
 ### Document Search
-- `search_dokument` - Search all Riksdag documents
-- `get_dokument` - Get specific document with full text
-- `search_dokument_fulltext` - Full-text search in documents
+- `riksdag-regering--search_dokument` - Search all Riksdag documents
+- `riksdag-regering--get_dokument` - Get specific document with full text
+- `riksdag-regering--search_dokument_fulltext` - Full-text search
 
 ### Parliament Activity
-- `get_propositioner` - Latest government bills
-- `get_betankanden` - Latest committee reports
-- `get_motioner` - Latest opposition motions
-- `get_fragor` - Written questions to ministers
-- `get_interpellationer` - Interpellations
+- `riksdag-regering--get_propositioner` - Latest government bills
+- `riksdag-regering--get_betankanden` - Latest committee reports
+- `riksdag-regering--get_motioner` - Latest opposition motions
+- `riksdag-regering--get_fragor` - Written questions
+- `riksdag-regering--get_interpellationer` - Interpellations
 
 ### Calendar & Events
 - `get_calendar_events` - Upcoming parliamentary events (next 7 days)
