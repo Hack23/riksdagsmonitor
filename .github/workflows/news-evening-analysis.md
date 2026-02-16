@@ -309,6 +309,24 @@ Structure the analysis around these editorial pillars:
   <script type="application/ld+json">{...}</script>
 </head>
 <body>
+  <!-- Language switcher (REQUIRED - add after body, before article) -->
+  <nav class="language-switcher" role="navigation" aria-label="{localized-label}">
+    <a href="{YYYY-MM-DD}-{baseSlug}-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
+    <a href="{baseSlug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
+    <a href="{baseSlug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+  </nav>
+  
   <div class="news-article">
     <header class="article-header">
       <h1>{Analytical headline capturing day's key theme}</h1>
@@ -447,6 +465,36 @@ node scripts/generate-news-indexes.js
 # Update sitemap
 node scripts/generate-sitemap.js
 ```
+
+### Step 6.5: Validate Generated Content (BLOCKING)
+
+**CRITICAL**: Run comprehensive quality validation BEFORE creating PR:
+
+```bash
+bash scripts/validate-news-generation.sh
+
+if [ $? -ne 0 ]; then
+  echo "❌ Validation failed - DO NOT create PR"
+  echo "Review errors above and fix issues before proceeding"
+  exit 1
+fi
+
+echo "✅ Validation passed - safe to create PR"
+```
+
+This validation checks:
+1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes (blocking)
+2. ✅ No untranslated Swedish markers (data-translate) (blocking)
+3. ✅ Localized taglines in non-English articles (blocking)
+4. ⚠️  BreadcrumbList localization (warning level)
+5. ⚠️  Index file freshness (< 24 hours) (warning level)
+6. ✅ Index files have content (> 1KB) (blocking)
+7. ⚠️  Sitemap news-URL coverage (> 10 recommended; missing sitemap.xml = blocking error)
+8. ⚠️  Language switcher consistency across all 14 languages (warning level)
+
+**Exit code 0** = pass (proceed to Step 7), **exit code 1** = fail (STOP, do not create PR).
+
+If validation fails, review the error messages, fix the issues, regenerate indexes if needed, and run validation again.
 
 ### Step 7: Create Pull Request
 

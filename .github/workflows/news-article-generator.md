@@ -411,6 +411,7 @@ The script creates articles with:
    - Semantic HTML5: `<article>`, `<header>`, `<section>`, `<footer>`
    - Proper `<html lang="{lang}">` and `dir="rtl"` for Arabic/Hebrew
    - Mobile-responsive (handled by styles.css)
+   - **Language switcher navigation** (added after opening `<body>`, before `<article>`)
 
 2. **Metadata Structure** (automatically handled):
    - SEO metadata (title, description, keywords)
@@ -418,7 +419,8 @@ The script creates articles with:
    - Twitter Card tags
    - Schema.org NewsArticle structured data
    - YAML frontmatter (in HTML comment)
-   - Hreflang tags for all language alternatives
+   - Hreflang tags for all language alternatives (in `<head>`)
+   - Visible language switcher navigation (in `<body>`)
 
 3. **Content Structure** (The Economist style):
    - **Lead paragraph** (50 words): Who, what, when, where, why
@@ -445,6 +447,38 @@ The script creates articles with:
    - Cites government sources
    - References MCP tool calls
    - Includes data timestamps
+
+6. **Language Switcher Navigation** (REQUIRED):
+   
+   Add immediately after `<body>` opening, before `<article>` element:
+   
+   ```html
+   <nav class="language-switcher" role="navigation" aria-label="{localized-label}">
+     <a href="{YYYY-MM-DD}-{baseSlug}-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
+     <a href="{YYYY-MM-DD}-{baseSlug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+   </nav>
+   ```
+   
+   **Requirements**:
+   - Use same flag emojis as news indexes
+   - Include all 14 languages (even if not all variants exist)
+   - Use `.lang-link` class for consistent styling
+   - Position above article content for easy access
+   - Links use relative paths (same directory as article)
+   - **Localize aria-label**: EN="Language switcher", SV="Språkväxlare", DA="Sprogvælger", NO="Språkvelger", FI="Kielenvalitsin", DE="Sprachwechsler", FR="Sélecteur de langue", ES="Selector de idioma", NL="Taalwisselaar", AR="محدد اللغة", HE="בורר שפה", JA="言語切り替え", KO="언어 선택기", ZH="语言切换器"
+   - Current language link can be styled as `.lang-link.active` (optional)
 
 #### Language Support
 
@@ -728,6 +762,36 @@ This will:
 - Scan `news/` directory for all HTML files
 - Generate `sitemap.xml` with proper hreflang tags
 - Include all 32 URLs (14 language index pages + news articles)
+
+### Step 7.5: Validate Generated Content (BLOCKING)
+
+**CRITICAL**: Run comprehensive quality validation BEFORE creating PR:
+
+```bash
+bash scripts/validate-news-generation.sh
+
+if [ $? -ne 0 ]; then
+  echo "❌ Validation failed - DO NOT create PR"
+  echo "Review errors above and fix issues before proceeding"
+  exit 1
+fi
+
+echo "✅ Validation passed - safe to create PR"
+```
+
+This validation checks:
+1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes (blocking)
+2. ✅ No untranslated Swedish markers (data-translate) (blocking)
+3. ✅ Localized taglines in non-English articles (blocking)
+4. ⚠️  BreadcrumbList localization (warning level)
+5. ⚠️  Index file freshness (< 24 hours) (warning level)
+6. ✅ Index files have content (> 1KB) (blocking)
+7. ⚠️  Sitemap news-URL coverage (> 10 recommended; missing sitemap.xml = blocking error)
+8. ⚠️  Language switcher consistency across all 14 languages (warning level)
+
+**Exit code 0** = pass (proceed to Step 8), **exit code 1** = fail (STOP, do not create PR).
+
+If validation fails, review the error messages, fix the issues, regenerate indexes if needed, and run validation again.
 
 ### Step 8: Create Metadata
 
