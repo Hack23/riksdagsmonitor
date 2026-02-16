@@ -105,26 +105,13 @@ jobs:
           path: dist/
           retention-days: 30
   
-  # Cypress E2E Tests (Optimized for Fail-Fast and Performance)
-  e2e-tests:
-    name: E2E Tests (Cypress)
+  # Multi-Language Sanity Tests
+  # (Other E2E tests moved to separate workflows: test-homepage.yml, test-dashboard.yml, test-news.yml)
+  multi-language-tests:
+    name: Multi-Language Sanity Tests
     runs-on: ubuntu-latest
     needs: build-test
-    timeout-minutes: 15 # Prevent hanging jobs
-    strategy:
-      fail-fast: true # Stop all jobs immediately on first failure
-      matrix:
-        # Parallel execution: Split tests by spec pattern for faster feedback
-        spec:
-          - 'cypress/e2e/homepage.cy.js' # Critical path - run first
-          - 'cypress/e2e/accessibility.cy.js' # Critical - WCAG compliance
-          - 'cypress/e2e/dashboard-page.cy.js'
-          - 'cypress/e2e/dashboards.cy.js'
-          - 'cypress/e2e/news-page.cy.js'
-          - 'cypress/e2e/news-articles.cy.js'
-          - 'cypress/e2e/politician-dashboard.cy.js'
-          - 'cypress/e2e/sitemap.cy.js'
-          - 'cypress/e2e/multi-language-sanity.cy.js' # Slowest - run in parallel
+    timeout-minutes: 5 # Max 5 minutes
     
     steps:
       - name: Harden Runner
@@ -150,30 +137,30 @@ jobs:
           name: build-dist
           path: dist/
       
-      - name: Run Cypress E2E tests
+      - name: Run Multi-Language Tests
         uses: cypress-io/github-action@84d178e4bbce871e23f2ffa3085898cde0e4f0ec # v7.1.2
         with:
           start: npm run preview
           wait-on: 'http://localhost:4173'
-          wait-on-timeout: 60
+          wait-on-timeout: 30
           browser: chrome
-          spec: ${{ matrix.spec }}
-          config: video=false # Disable video for performance (screenshots on failure only)
-          quiet: false
+          spec: 'cypress/e2e/multi-language-sanity.cy.js'
+          config: video=false
+          quiet: true
       
-      - name: Archive Cypress screenshots
+      - name: Archive screenshots
         if: failure()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
-          name: cypress-screenshots-${{ strategy.job-index }}
+          name: multi-language-screenshots
           path: cypress/screenshots/
-          retention-days: 7 # Reduced from 30 to 7 days
+          retention-days: 7
   
   # Summary Report
   test-summary:
     name: Test Summary
     runs-on: ubuntu-latest
-    needs: [unit-tests, build-test, e2e-tests]
+    needs: [unit-tests, build-test, multi-language-tests]
     if: always()
     
     steps:
@@ -184,7 +171,7 @@ jobs:
       
       - name: Test Results Summary
         run: |
-          echo "## 🧪 Test Results Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🧪 Core Test Results Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Unit Tests (Vitest)" >> $GITHUB_STEP_SUMMARY
           echo "Status: ${{ needs.unit-tests.result }}" >> $GITHUB_STEP_SUMMARY
@@ -192,14 +179,21 @@ jobs:
           echo "### Build Test (Vite)" >> $GITHUB_STEP_SUMMARY
           echo "Status: ${{ needs.build-test.result }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### E2E Tests (Cypress)" >> $GITHUB_STEP_SUMMARY
-          echo "Status: ${{ needs.e2e-tests.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "### Multi-Language Tests" >> $GITHUB_STEP_SUMMARY
+          echo "Status: ${{ needs.multi-language-tests.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Note:** Section-specific E2E tests run in separate workflows:" >> $GITHUB_STEP_SUMMARY
+          echo "- 🏠 Homepage: test-homepage.yml" >> $GITHUB_STEP_SUMMARY
+          echo "- 📊 Dashboard: test-dashboard.yml" >> $GITHUB_STEP_SUMMARY
+          echo "- 📰 News: test-news.yml" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ "${{ needs.unit-tests.result }}" == "success" ] && \
              [ "${{ needs.build-test.result }}" == "success" ] && \
-             [ "${{ needs.e2e-tests.result }}" == "success" ]; then
-            echo "### ✅ All tests passed!" >> $GITHUB_STEP_SUMMARY
+             [ "${{ needs.multi-language-tests.result }}" == "success" ]; then
+            echo "### ✅ All core tests passed!" >> $GITHUB_STEP_SUMMARY
           else
             echo "### ❌ Some tests failed" >> $GITHUB_STEP_SUMMARY
           fi
