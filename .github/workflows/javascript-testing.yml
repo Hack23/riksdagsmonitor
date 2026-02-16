@@ -105,11 +105,26 @@ jobs:
           path: dist/
           retention-days: 30
   
-  # Cypress E2E Tests
+  # Cypress E2E Tests (Optimized for Fail-Fast and Performance)
   e2e-tests:
     name: E2E Tests (Cypress)
     runs-on: ubuntu-latest
     needs: build-test
+    timeout-minutes: 15 # Prevent hanging jobs
+    strategy:
+      fail-fast: true # Stop all jobs immediately on first failure
+      matrix:
+        # Parallel execution: Split tests by spec pattern for faster feedback
+        spec:
+          - 'cypress/e2e/homepage.cy.js' # Critical path - run first
+          - 'cypress/e2e/accessibility.cy.js' # Critical - WCAG compliance
+          - 'cypress/e2e/dashboard-page.cy.js'
+          - 'cypress/e2e/dashboards.cy.js'
+          - 'cypress/e2e/news-page.cy.js'
+          - 'cypress/e2e/news-articles.cy.js'
+          - 'cypress/e2e/politician-dashboard.cy.js'
+          - 'cypress/e2e/sitemap.cy.js'
+          - 'cypress/e2e/multi-language-sanity.cy.js' # Slowest - run in parallel
     
     steps:
       - name: Harden Runner
@@ -142,22 +157,17 @@ jobs:
           wait-on: 'http://localhost:4173'
           wait-on-timeout: 60
           browser: chrome
+          spec: ${{ matrix.spec }}
+          config: video=false # Disable video for performance (screenshots on failure only)
+          quiet: false
       
       - name: Archive Cypress screenshots
         if: failure()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
-          name: cypress-screenshots
+          name: cypress-screenshots-${{ strategy.job-index }}
           path: cypress/screenshots/
-          retention-days: 30
-      
-      - name: Archive Cypress videos
-        if: always()
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
-        with:
-          name: cypress-videos
-          path: cypress/videos/
-          retention-days: 30
+          retention-days: 7 # Reduced from 30 to 7 days
   
   # Summary Report
   test-summary:
