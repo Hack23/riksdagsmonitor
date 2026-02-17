@@ -24,9 +24,9 @@ on:
         default: '12'
 
 permissions:
-  contents: read
-  issues: read
-  pull-requests: read
+  issues: write
+  contents: write
+  pull-requests: write
 
 timeout-minutes: 45
 
@@ -43,7 +43,7 @@ mcp-servers:
 tools:
   github:
     toolsets:
-      - default
+      - all
   bash: true
   microsoft/playwright:
     command: npx
