@@ -205,17 +205,16 @@ Generate article versions for each requested language with culturally appropriat
 **IMPORTANT:** Call the tools using their simple names directly:
 
 ```javascript
-// Calendar events
+// STEP 1: ALWAYS check data freshness first
+get_sync_status({})  // Returns last_updated timestamp
+
+// STEP 2: Query with explicit date ranges where supported
 get_calendar_events({ from: "2026-02-16", tom: "2026-02-16", limit: 50 })
+search_regering({ from_date: "2026-02-16", to_date: "2026-02-17", limit: 30 })
 
-// Recent votes
-search_voteringar({ rm: "2025/26", limit: 50 })
-
-// Committee reports
-get_betankanden({ rm: "2025/26", limit: 20 })
-
-// Government documents
-search_regering({ from_date: "2026-02-16", limit: 30 })
+// STEP 3: For tools without date filters, use rm + limit and filter results by date
+get_betankanden({ rm: "2025/26", limit: 20 })  // Then filter by publicerad date
+search_voteringar({ rm: "2025/26", limit: 50 })  // Then filter by datum
 ```
 
 **Tool Naming:** Use simple names like `get_calendar_events()`, `search_voteringar()` - the framework handles routing automatically.
@@ -233,6 +232,9 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 - ✅ Use simple tool names: `get_calendar_events({ params })`, `search_voteringar({ params })`
 - ✅ Let the framework handle all routing, authentication and session management
 - ✅ Trust the automatic retry logic for cold starts
+- ✅ **CRITICAL**: Check `get_sync_status()` first to verify data freshness
+- ✅ **CRITICAL**: Use explicit date parameters where available (from_date, to_date, from, tom)
+- ✅ **CRITICAL**: Filter results by date in your analysis when tools don't support date params
 
 **✅ For running Node.js scripts via bash:**
 - ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
@@ -244,55 +246,137 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 
 The MCP server may take 30-60 seconds on first request (cold start). **The framework handles this automatically with retries.** Just make your call normally and wait.
 
-**Best Practice:** Start with a simple query to warm up the server, then batch multiple queries.
+**Best Practice:** 
+1. Call `get_sync_status()` first to warm up the server AND check data freshness
+2. Batch multiple queries after warmup
 
 ### 🐛 If You Get Errors
 
 | Error | Cause | Fix |
 |-------|-------|-----|
 | Tool not found | Wrong tool name | Use exact names: `get_calendar_events`, `search_voteringar` |
-| Empty results | No data in timeframe | Check `get_sync_status`, widen date range |
+| Empty results | No data in timeframe | Check `get_sync_status`, widen date range, verify rm parameter |
+| Stale data | Last sync >48h ago | Note in analysis, use available data with disclaimer |
 | Timeout | Cold start (30-60s) | Wait - framework retries automatically |
 | Swedish-only results | Riksdag API returns Swedish | YOU must translate to target languages |
+| Too broad results | No date filtering | Add from_date/to_date params OR filter results by date in code |
 
 ### 📋 32 Available MCP Tools
 
 **Riksdag (Parliament) Tools (15):**
 - `get_ledamoter` / `search_ledamoter` - MPs and member search
-- `get_motioner` / `search_motioner` - Parliamentary motions
-- `get_propositioner` / `search_propositioner` - Government proposals
+- `get_motioner` / `search_motioner` - Parliamentary motions (filter by inlämnad date)
+- `get_propositioner` / `search_propositioner` - Government proposals (filter by publicerad date)
 - `get_dokument` / `search_dokument` / `search_dokument_fulltext` - Documents
-- `get_voteringar` / `search_voteringar` - Voting records
-- `get_anforanden` / `search_anforanden` - Speeches and debates
-- `get_fragor` / `get_interpellationer` - Questions and interpellations
-- `get_calendar_events` - Parliamentary schedule
-- `get_betankanden` - Committee reports
+- `get_voteringar` / `search_voteringar` - Voting records (filter by datum)
+- `get_anforanden` / `search_anforanden` - Speeches and debates (filter by datum)
+- `get_fragor` / `get_interpellationer` - Questions and interpellations (filter by inlämnad date)
+- `get_calendar_events` - Parliamentary schedule (**supports from/tom date params**)
+- `get_betankanden` - Committee reports (filter by publicerad date)
 
 **Government (Regering) Tools (7):**
-- `search_regering` - Government document search
+- `search_regering` - Government document search (**supports from_date/to_date params**)
 - `get_regering_document` - Retrieve specific government doc
 - `get_g0v_document_content` - Get document in Markdown format
 - `summarize_regering_document` - AI summarization
-- `analyze_g0v_by_department` - Department analysis
+- `analyze_g0v_by_department` - Department analysis (**supports dateFrom/dateTo params**)
 - `get_g0v_document_types` - List document categories
 
 **Metadata & Statistics (5):**
 - `get_utskott` - Committee information
 - `get_voting_group` - Voting analysis by party/constituency
 - `fetch_report` - Statistical reports
-- `get_sync_status` - Data freshness check
+- `get_sync_status` - **Data freshness check (CALL THIS FIRST)**
 - `get_data_dictionary` - Schema definitions
 
 **Utility (5):**
 - `batch_fetch_documents` - Efficient bulk retrieval
 - `fetch_paginated_documents` - Pagination support
 - `list_reports` - Available report types
-- `get_latest_update` - Last data sync timestamp
+- `get_latest_update` - Last data sync timestamp (alias for get_sync_status)
 - `enhanced_government_search` - Combined Riksdag + Government search
+
+### 🔗 Cross-Referencing Strategy (Use Multiple Tools Together)
+
+For richer analysis, combine data from multiple tools:
+
+**Example 1: Committee Report Deep Dive**
+```javascript
+// 1. Get recent committee reports
+const betankanden = get_betankanden({ rm: "2025/26", limit: 20 });
+const recentBet = betankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+
+// 2. For each report, get full details
+const reportDetails = recentBet.map(bet => 
+  get_dokument({ dok_id: bet.dok_id, include_full_text: false })
+);
+
+// 3. Check related votes
+const relatedVotes = search_voteringar({ rm: "2025/26", limit: 50 })
+  .filter(v => recentBet.some(bet => v.bet === bet.beteckning));
+
+// 4. Find committee members' speeches
+const committeeSpeeches = search_anforanden({ rm: "2025/26", limit: 100 })
+  .filter(a => recentBet.some(bet => a.dokument_hangar_samman === bet.dok_id));
+```
+
+**Example 2: Government Activity Analysis**
+```javascript
+// 1. Get government documents in date range
+const govDocs = search_regering({ from_date: fromDate, to_date: today, limit: 30 });
+
+// 2. Get related propositions
+const propositions = get_propositioner({ rm: "2025/26", limit: 20 })
+  .filter(p => new Date(p.publicerad) >= new Date(fromDate));
+
+// 3. Check ministerial questions on same topics
+const questions = get_fragor({ rm: "2025/26", limit: 50 })
+  .filter(q => new Date(q.inlämnad) >= new Date(fromDate));
+
+// 4. Department analysis
+const deptAnalysis = analyze_g0v_by_department({ 
+  dateFrom: fromDate, 
+  dateTo: today 
+});
+```
+
+**Example 3: Party Behavior Analysis**
+```javascript
+// 1. Get voting patterns
+const voteGroups = get_voting_group({ rm: "2025/26", groupBy: "parti" });
+
+// 2. Get recent votes
+const recentVotes = search_voteringar({ rm: "2025/26", limit: 100 })
+  .filter(v => new Date(v.datum) >= new Date(fromDate));
+
+// 3. Get party motions
+const partyMotions = get_motioner({ rm: "2025/26", limit: 50 })
+  .filter(m => new Date(m.inlämnad) >= new Date(fromDate));
+
+// 4. Get speeches by party members
+const partySpeeches = search_anforanden({ rm: "2025/26", limit: 100 })
+  .filter(a => new Date(a.datum) >= new Date(fromDate));
+```
 
 ## Analysis Workflow
 
 ### Step 1: Gather Data
+
+**🚨 CRITICAL: Always check data freshness first**
+
+```javascript
+// === DATA FRESHNESS CHECK ===
+// ALWAYS start by checking when MCP server last synced data
+const syncStatus = get_sync_status({});
+console.log("MCP Data Sync Status:", syncStatus);
+
+// If data is stale (>48 hours), note this in the analysis
+const lastSync = new Date(syncStatus.last_updated);
+const hoursSinceSync = (Date.now() - lastSync.getTime()) / 3600000;
+if (hoursSinceSync > 48) {
+  console.warn(`⚠️ Data may be stale: ${hoursSinceSync.toFixed(1)} hours since last sync`);
+}
+```
 
 Determine the lookback period based on day of week:
 
@@ -304,37 +388,55 @@ const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
 const lookbackHours = dayOfWeek === 6 ? 120 : (github.event.inputs.lookback_hours || 12);
 const fromDate = dayOfWeek === 6
   ? new Date(Date.now() - 5 * 86400000).toISOString().split('T')[0]  // Monday
-  : today;
+  : new Date(Date.now() - lookbackHours * 3600000).toISOString().split('T')[0];
 
 // === PARLIAMENTARY ACTIVITY ===
 
-// Calendar events (today for daily, Mon-Fri for weekly)
+// Calendar events (explicit date range - DO NOT rely on implicit "latest")
 get_calendar_events({ from: fromDate, tom: today, limit: 100 })
 
-// Votes (weekly wrap-up gets higher limit for full week)
-search_voteringar({ rm: "2025/26", limit: dayOfWeek === 6 ? 100 : 50 })
+// Votes (IMPORTANT: Use from_date parameter when searching, not just rm)
+// The riksdag-regering-mcp server returns votes sorted by date DESC
+// but we should be explicit about our date range
+search_voteringar({ 
+  rm: "2025/26", 
+  limit: dayOfWeek === 6 ? 100 : 50 
+  // Note: search_voteringar doesn't support from_date, so we rely on rm + limit
+  // and then filter results by date in our analysis
+})
+
+// Party voting patterns (contextual data - no date filter available)
 get_voting_group({ rm: "2025/26", groupBy: "parti" })
 
-// Committee reports published
+// Committee reports published (specify riksmöte explicitly)
 get_betankanden({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
+// Note: Filter results by publicerad date >= fromDate in analysis
 
-// Speeches and debates
+// Speeches and debates (specify riksmöte explicitly)
 search_anforanden({ rm: "2025/26", limit: dayOfWeek === 6 ? 100 : 50 })
+// Note: Filter results by datum >= fromDate in analysis
 
 // === GOVERNMENT ACTIVITY ===
 
-// Government documents published (press releases, SOU, crisis, etc.)
-search_regering({ from_date: fromDate, limit: dayOfWeek === 6 ? 50 : 30 })
+// Government documents published (CRITICAL: Always use from_date parameter)
+search_regering({ 
+  from_date: fromDate, 
+  to_date: today,
+  limit: dayOfWeek === 6 ? 50 : 30 
+})
 
-// New propositions
+// New propositions (specify riksmöte)
 get_propositioner({ rm: "2025/26", limit: dayOfWeek === 6 ? 20 : 10 })
+// Note: Filter results by publicerad date >= fromDate in analysis
 
-// Opposition motions
+// Opposition motions (specify riksmöte)
 get_motioner({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
+// Note: Filter results by inlämnad date >= fromDate in analysis
 
-// Ministerial questions and interpellations
+// Ministerial questions and interpellations (specify riksmöte)
 get_fragor({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
 get_interpellationer({ rm: "2025/26", limit: dayOfWeek === 6 ? 20 : 10 })
+// Note: Filter results by inlämnad date >= fromDate in analysis
 
 // === NEXT WEEK PREVIEW (Saturday) / TOMORROW (weekday) ===
 const nextMonday = dayOfWeek === 6
@@ -343,8 +445,29 @@ const nextMonday = dayOfWeek === 6
 const previewEnd = dayOfWeek === 6
   ? new Date(Date.now() + 7 * 86400000).toISOString().split('T')[0]  // Full next week
   : nextMonday;
+
+// Future calendar events (explicit date range)
 get_calendar_events({ from: nextMonday, tom: previewEnd, limit: 50 })
 ```
+
+**⚠️ IMPORTANT: Date Filtering in Analysis**
+
+Many riksdag-regering-mcp tools (search_voteringar, get_betankanden, get_propositioner, etc.) don't support `from_date` parameters. They return results sorted by date DESC with a limit.
+
+**YOU MUST filter results by date in your analysis code:**
+```javascript
+// Example: Filter betänkanden by publication date
+const recentBetankanden = betankanden.filter(bet => 
+  new Date(bet.publicerad) >= new Date(fromDate)
+);
+
+// Example: Filter motions by submission date
+const recentMotions = motions.filter(mot => 
+  new Date(mot.inlämnad) >= new Date(fromDate)
+);
+```
+
+This ensures you're analyzing the **specific time period** requested, not just the "latest" documents from the MCP server.
 
 ### Step 2: Synthesize and Analyze
 

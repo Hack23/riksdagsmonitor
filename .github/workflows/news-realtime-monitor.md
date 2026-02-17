@@ -222,6 +222,10 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 **✅ For MCP tool calls in prompts, ALWAYS do this:**
 - ✅ Use simple tool names: `get_calendar_events({ params })`, `search_voteringar({ params })`
 - ✅ Let the framework handle all routing, authentication and session management
+- ✅ **CRITICAL: ALWAYS call `get_sync_status()` FIRST** to check data freshness and warm up server
+- ✅ Check for stale data (>48 hours since last sync) and note in articles with disclaimer
+- ✅ Use explicit date parameters where supported (from_date, to_date, from, tom)
+- ✅ Filter results by date when tools don't support date parameters
 - ✅ Trust the automatic retry logic for cold starts
 
 **✅ For running Node.js scripts via bash:**
@@ -229,11 +233,45 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 - ✅ Set `export MCP_CLIENT_TIMEOUT_MS=90000` for cold start tolerance
 - ✅ Scripts ARE used by agentic workflows and work perfectly
 
+**❌ DO NOT:**
+- ❌ Rely on implicit "latest" data without checking freshness
+- ❌ Skip data freshness validation
+- ❌ Use tools without understanding date parameter support
+
+### 🚨 DATA FRESHNESS CHECK (MANDATORY FIRST STEP)
+
+**ALWAYS start by checking when MCP server last synced data:**
+
+```javascript
+// === DATA FRESHNESS CHECK ===
+// CALL THIS FIRST - validates data freshness and warms up MCP server
+const syncStatus = get_sync_status({});
+console.log("MCP Data Sync Status:", syncStatus);
+
+// Calculate hours since last sync
+const lastSync = new Date(syncStatus.last_updated);
+const hoursSinceSync = (Date.now() - lastSync.getTime()) / 3600000;
+
+// Warn if data is stale (>48 hours)
+if (hoursSinceSync > 48) {
+  console.warn(`⚠️ DATA MAY BE STALE: ${hoursSinceSync.toFixed(1)} hours since last sync`);
+  console.warn(`⚠️ Include disclaimer in articles about data freshness`);
+}
+```
+
+**Why this matters:**
+1. **Data Freshness**: Ensures breaking news uses recent data, not stale information
+2. **Server Warmup**: Warms up MCP server (avoids 30-60s cold start on first data query)
+3. **User Transparency**: Readers know when data was last updated
+4. **Quality Control**: Prevents publishing breaking news with outdated information
+
 ### 🚨 Cold Start Handling
 
 The MCP server may take 30-60 seconds on first request (cold start). **The framework handles this automatically with retries.** Just make your call normally and wait.
 
-**Best Practice:** Start with a simple query to warm up the server, then batch multiple queries.
+**Best Practice:** 
+1. Call `get_sync_status()` first (warms server AND checks freshness)
+2. Batch subsequent queries after warmup
 
 ### 📋 32 Available MCP Tools
 
@@ -241,42 +279,60 @@ The MCP server may take 30-60 seconds on first request (cold start). **The frame
 
 **Riksdag (Parliament) Tools (15):**
 - `get_ledamoter` / `search_ledamoter` - MPs and member search
-- `get_motioner` / `search_motioner` - Parliamentary motions
-- `get_propositioner` / `search_propositioner` - Government proposals
+- `get_motioner` / `search_motioner` - Parliamentary motions (filter by inlämnad date post-query)
+- `get_propositioner` / `search_propositioner` - Government proposals (filter by publicerad date post-query)
 - `get_dokument` / `search_dokument` / `search_dokument_fulltext` - Documents
-- `get_voteringar` / `search_voteringar` - Voting records
-- `get_anforanden` / `search_anforanden` - Speeches and debates
-- `get_fragor` / `get_interpellationer` - Questions and interpellations
-- `get_calendar_events` - Parliamentary schedule
-- `get_betankanden` - Committee reports
+- `get_voteringar` / `search_voteringar` - Voting records (filter by datum post-query)
+- `get_anforanden` / `search_anforanden` - Speeches and debates (filter by datum post-query)
+- `get_fragor` / `get_interpellationer` - Questions and interpellations (filter by inlämnad date post-query)
+- `get_calendar_events` - Parliamentary schedule (**supports from/tom date params**)
+- `get_betankanden` - Committee reports (filter by publicerad date post-query)
 
 **Government (Regering) Tools (7):**
-- `search_regering` - Government document search
+- `search_regering` - Government document search (**supports from_date/to_date params**)
 - `get_regering_document` - Retrieve specific government doc
 - `get_g0v_document_content` - Get document in Markdown format
 - `summarize_regering_document` - AI summarization
-- `analyze_g0v_by_department` - Department analysis
+- `analyze_g0v_by_department` - Department analysis (**supports dateFrom/dateTo params**)
 - `get_g0v_document_types` - List document categories
 
 **Metadata & Statistics (5):**
 - `get_utskott` - Committee information
 - `get_voting_group` - Voting analysis by party/constituency
 - `fetch_report` - Statistical reports
-- `get_sync_status` - Data freshness check
+- `get_sync_status` - **Data freshness check (CALL THIS FIRST)**
 - `get_data_dictionary` - Schema definitions
 
 **Utility (5):**
 - `batch_fetch_documents` - Efficient bulk retrieval
 - `fetch_paginated_documents` - Pagination support
 - `list_reports` - Available report types
-- `get_latest_update` - Last data sync timestamp
+- `get_latest_update` - Last data sync timestamp (alias for get_sync_status)
 - `enhanced_government_search` - Combined Riksdag + Government search
+
+**⚠️ Date Parameter Support:**
+- **3 tools support explicit date parameters**: `get_calendar_events`, `search_regering`, `analyze_g0v_by_department`
+- **All other tools require post-query filtering** by date fields: `datum`, `publicerad`, `inlämnad`
+- **Example filtering**: 
+  ```javascript
+  const recentBetankanden = betankanden.filter(bet => 
+    new Date(bet.publicerad) >= new Date(fromDate)
+  );
+  ```
 
 ### 🐛 Troubleshooting
 
 **Issue: Request times out**
 - **Cause**: Cold start (30-60s) or server overload
 - **Solution**: Wait and retry - framework handles retries automatically
+
+**Issue: Data seems stale or outdated**
+- **Cause**: MCP server last synced >48 hours ago
+- **Solution**: Check `get_sync_status()`, note in articles with disclaimer, use available data
+
+**Issue: Too many results returned**
+- **Cause**: No date filtering applied
+- **Solution**: Add from_date/to_date params OR filter results by date in code
 
 **Issue: Tool not found error**
 - **Cause**: Wrong tool name

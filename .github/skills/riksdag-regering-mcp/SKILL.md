@@ -217,7 +217,242 @@ const allVotes = await riksdag_regering_mcp.fetch_paginated_documents({
 });
 ```
 
+## 🔥 MCP Query Best Practices
+
+### ⚡ CRITICAL: Always Check Data Freshness First
+
+**RULE #1: Call `get_sync_status()` before any data queries**
+
+```javascript
+// === DATA FRESHNESS CHECK ===
+// ALWAYS call this FIRST - validates freshness and warms up server
+const syncStatus = get_sync_status({});
+console.log("Last data sync:", syncStatus.last_updated);
+
+// Calculate hours since last sync
+const lastSync = new Date(syncStatus.last_updated);
+const hoursSinceSync = (Date.now() - lastSync.getTime()) / 3600000;
+
+// Warn if data is stale (>48 hours)
+if (hoursSinceSync > 48) {
+  console.warn(`⚠️ DATA MAY BE STALE: ${hoursSinceSync.toFixed(1)} hours since last sync`);
+  // Include disclaimer in analysis/articles
+}
+```
+
+**Why this matters:**
+1. **Data Quality**: Ensures analysis uses recent data, not stale information
+2. **Server Warmup**: Warms up MCP server (avoids 30-60s cold start on first query)
+3. **User Transparency**: Readers/stakeholders know when data was last updated
+4. **Quality Control**: Prevents publishing analysis with outdated information
+
+### 📅 Date Parameter Support Matrix
+
+**Only 3 of 32 tools support explicit date parameters:**
+
+| Tool | Date Parameters | Example |
+|------|----------------|---------|
+| `get_calendar_events` | `from`, `tom` | `{ from: "2026-02-17", tom: "2026-02-23" }` |
+| `search_regering` | `from_date`, `to_date` | `{ from_date: "2026-02-01", to_date: "2026-02-17" }` |
+| `analyze_g0v_by_department` | `dateFrom`, `dateTo` | `{ dateFrom: "2026-02-01", dateTo: "2026-02-17" }` |
+
+**All other 29 tools require post-query date filtering by:**
+- `datum` - votes, speeches (voting/speech date)
+- `publicerad` - committee reports, propositions (publication date)
+- `inlämnad` - motions, questions, interpellations (submission date)
+
+### ✅ Good Pattern: Explicit Date Filtering
+
+```javascript
+// === STEP 1: Check data freshness ===
+const syncStatus = get_sync_status({});
+
+// === STEP 2: Query with explicit dates (where supported) ===
+const govDocs = search_regering({
+  from_date: "2026-02-01",
+  to_date: "2026-02-17",
+  limit: 50
+});
+
+// === STEP 3: Filter by date for tools without date params ===
+const betankanden = get_betankanden({ rm: "2025/26", limit: 100 });
+
+// Filter results by publication date
+const fromDate = new Date("2026-02-01");
+const recentBetankanden = betankanden.filter(bet => 
+  new Date(bet.publicerad) >= fromDate
+);
+
+console.log(`Found ${recentBetankanden.length} committee reports from ${fromDate.toISOString().split('T')[0]}`);
+```
+
+### ❌ Anti-Pattern: Implicit "Latest" Reliance
+
+```javascript
+// ❌ BAD: Relies on implicit sorting without date awareness
+const votes = search_voteringar({ rm: "2025/26", limit: 50 });
+// Problem: No idea when votes occurred, might be months old
+
+// ✅ GOOD: Explicit date filtering
+const votes = search_voteringar({ rm: "2025/26", limit: 50 });
+const recentVotes = votes.filter(v => 
+  new Date(v.datum) >= new Date("2026-02-01")
+);
+console.log(`Found ${recentVotes.length} votes since 2026-02-01`);
+```
+
+### 🔗 Cross-Referencing Strategy
+
+Combine multiple tools for richer analysis:
+
+#### Pattern 1: Committee Report Deep Dive
+```javascript
+// 1. Get recent committee reports
+const betankanden = get_betankanden({ rm: "2025/26", limit: 20 });
+const recentBet = betankanden.filter(b => 
+  new Date(b.publicerad) >= new Date("2026-02-01")
+);
+
+// 2. Get full details for each report
+const reportDetails = recentBet.map(bet => 
+  get_dokument({ dok_id: bet.dok_id })
+);
+
+// 3. Find related votes
+const votes = search_voteringar({ rm: "2025/26", limit: 100 });
+const relatedVotes = votes.filter(v => 
+  recentBet.some(bet => v.bet === bet.beteckning)
+);
+
+// 4. Get committee members' speeches
+const speeches = search_anforanden({ rm: "2025/26", limit: 100 });
+const committeeSpeeches = speeches.filter(a =>
+  recentBet.some(bet => a.dokument_hangar_samman === bet.dok_id)
+);
+
+// Now you have: reports + details + votes + speeches
+```
+
+#### Pattern 2: Party Behavior Analysis
+```javascript
+// 1. Get voting patterns by party
+const voteGroups = get_voting_group({ rm: "2025/26", groupBy: "parti" });
+
+// 2. Get recent votes
+const votes = search_voteringar({ rm: "2025/26", limit: 200 });
+const recentVotes = votes.filter(v => 
+  new Date(v.datum) >= new Date("2026-02-01")
+);
+
+// 3. Get party motions
+const motions = get_motioner({ rm: "2025/26", limit: 100 });
+const partyMotions = motions.filter(m => 
+  new Date(m.inlämnad) >= new Date("2026-02-01")
+);
+
+// 4. Calculate party cohesion
+const partyDiscipline = calculateCohesion(voteGroups, recentVotes);
+```
+
+### 🐛 Troubleshooting Guide
+
+| Issue | Cause | Solution |
+|-------|-------|----------|
+| **Tool not found** | Wrong tool name | Use exact names: `get_calendar_events`, `search_voteringar` |
+| **Empty results** | No data in timeframe | Check `get_sync_status()`, widen date range, verify `rm` parameter |
+| **Stale data** | Last sync >48h ago | Note in analysis with disclaimer, use available data |
+| **Timeout** | Cold start (30-60s) | Wait - MCP framework retries automatically |
+| **Too broad results** | No date filtering | Add date params OR filter by datum/publicerad/inlämnad |
+| **Swedish-only results** | Riksdag API returns Swedish | Must translate to target languages |
+| **Missing documents** | Wrong riksmöte (rm) | Verify rm parameter (e.g., "2025/26") |
+
+### 🚀 Performance Tips
+
+1. **Batch Queries After Warmup**: Call `get_sync_status()` first, then batch data queries
+2. **Use Pagination Wisely**: Use `fetch_paginated_documents` for large datasets
+3. **Filter Early**: Apply date filters as early as possible
+4. **Cache Results**: MCP server data updates daily, cache results when appropriate
+5. **Parallel Queries**: Independent queries can run in parallel after server warmup
+
+### 📊 Query Pattern Templates
+
+**Template 1: Daily News Monitoring**
+```javascript
+const syncStatus = get_sync_status({});
+const today = new Date().toISOString().split('T')[0];
+const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+
+// Government activity
+const govDocs = search_regering({ 
+  from_date: yesterday, 
+  to_date: today, 
+  limit: 50 
+});
+
+// Parliamentary calendar
+const events = get_calendar_events({ 
+  from: today, 
+  tom: today, 
+  limit: 50 
+});
+
+// Recent votes (filter by date)
+const votes = search_voteringar({ rm: "2025/26", limit: 50 });
+const todayVotes = votes.filter(v => v.datum === today);
+```
+
+**Template 2: Weekly Analysis**
+```javascript
+const syncStatus = get_sync_status({});
+const today = new Date();
+const weekAgo = new Date(Date.now() - 7 * 86400000);
+
+// Committee reports (filter by publicerad)
+const reports = get_betankanden({ rm: "2025/26", limit: 100 });
+const weeklyReports = reports.filter(r => 
+  new Date(r.publicerad) >= weekAgo
+);
+
+// Propositions (filter by publicerad)
+const props = get_propositioner({ rm: "2025/26", limit: 50 });
+const weeklyProps = props.filter(p => 
+  new Date(p.publicerad) >= weekAgo
+);
+
+// Questions (filter by inlämnad)
+const questions = get_fragor({ rm: "2025/26", limit: 100 });
+const weeklyQuestions = questions.filter(q => 
+  new Date(q.inlämnad) >= weekAgo
+);
+```
+
+**Template 3: MP Activity Analysis**
+```javascript
+const syncStatus = get_sync_status({});
+
+// Get MP profile
+const mp = get_ledamot({ intressent_id: "XXXXXXXX" });
+
+// Get MP's motions
+const allMotions = get_motioner({ rm: "2025/26", limit: 200 });
+const mpMotions = allMotions.filter(m => 
+  m.intressent_id === mp.intressent_id
+);
+
+// Get MP's speeches
+const speeches = search_anforanden({ 
+  rm: "2025/26", 
+  talare: mp.tilltalsnamn + " " + mp.efternamn,
+  limit: 100
+});
+
+// Get MP's voting record
+const votes = search_voteringar({ rm: "2025/26", limit: 200 });
+// Requires cross-referencing with ledamöter data
+```
+
 ## MCP Server Configuration
+
 
 ### HTTP Endpoint (Production)
 ```json
