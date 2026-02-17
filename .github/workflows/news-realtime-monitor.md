@@ -23,9 +23,9 @@ on:
         default: all
 
 permissions:
-  issues: write
-  contents: write
-  pull-requests: write
+  contents: read
+  issues: read
+  pull-requests: read
 
 timeout-minutes: 30
 
@@ -42,7 +42,7 @@ mcp-servers:
 tools:
   github:
     toolsets:
-      - all
+      - default
   bash: true
   microsoft/playwright:
     command: npx
@@ -97,9 +97,15 @@ echo "============================"
 - ✅ If output shows Monday-Friday → Expect regular parliamentary activity
 - ✅ If output shows Saturday-Sunday → Expect limited activity (government press only)
 
-### 2. MANDATORY Safe Output Call (Final Step)
-**YOU MUST ALWAYS call ONE of these safe output tools before completing:**
-- ✅ `safeoutputs___noop` - When no significant events detected
+### 2. MANDATORY Pull Request Creation (Final Step)
+
+**CRITICAL: Workflow behavior depends on whether events found**
+
+- ✅ **If significant events found:** Generate articles → `safeoutputs___create_pull_request` (MUST succeed or FAIL)
+- ✅ **If genuinely no events:** `safeoutputs___noop` → Workflow succeeds (legitimate)
+- ❌ **NEVER use `noop` as fallback for PR failures:** If articles generated but PR fails → FAIL
+
+**⚠️ From reader's perspective: No PR when articles exist = FAILURE**
 - ✅ `safeoutputs___create_pull_request` - When articles generated
 
 **⚠️ FAILURE TO CALL A SAFE OUTPUT TOOL = WORKFLOW FAILURE**
@@ -118,6 +124,33 @@ The Riksdag API returns data in **Swedish only**. When you generate breaking new
 4. **Validation is mandatory** - check every article to ensure no Swedish content remains
 
 **See Step 3.5: Translation Post-Processing** below for detailed mandatory instructions.
+
+## Available Skills & Reference Materials
+
+### 📚 Core Language & Political Skills
+
+1. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology, real-time event interpretation
+2. **`.github/skills/language-expertise/SKILL.md`** — 14-language support, breaking news tone adaptation
+3. **`.github/skills/multi-language-localization/SKILL.md`** — Multi-language publishing, RTL support
+
+### 📰 Breaking News & Journalism Skills
+
+4. **`.github/skills/editorial-standards/SKILL.md`** — Breaking news verification, fact-checking protocols
+5. **`.github/skills/investigative-journalism/SKILL.md`** — Source verification, real-time reporting
+6. **`.github/skills/prospective-news-coverage/SKILL.md`** — Event anticipation, calendar monitoring
+7. **`.github/skills/strategic-communication-analysis/SKILL.md`** — Political messaging, crisis communications
+
+### 🔌 Data & Technical Skills
+
+8. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — Real-time data access (32 MCP tools)
+9. **`.github/skills/osint-methodologies/SKILL.md`** — Real-time intelligence gathering, source evaluation
+10. **`.github/skills/automated-content-generation/SKILL.md`** — Rapid article generation for breaking news
+
+### 🔐 Workflow & Security Skills
+
+11. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — PR creation, noop handling for quiet periods
+12. **`.github/skills/gh-aw-workflow-authoring/SKILL.md`** — Real-time monitoring patterns
+13. **`.github/skills/gdpr-compliance/SKILL.md`** — Real-time data processing compliance
 
 ## Your Task
 
@@ -494,42 +527,65 @@ In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead
    }
    ```
 
-3. **`safeoutputs___noop`** - Log a status message when no action is needed
+3. **`safeoutputs___noop`** - ONLY when genuinely no events detected
    ```json
    {
-     "message": "No significant events detected during this monitoring window. Metadata updated."
+     "message": "Real-time monitor: No significant parliamentary events in this window. Checked: votes, debates, questions, documents, calendar. Next check: {schedule}."
    }
    ```
+   
+   **⚠️ CRITICAL: Only use noop if:**
+   - You monitored all sources and found NO significant events
+   - No articles were generated
+   - This is the legitimate "quiet period" case
+   
+   **❌ NEVER use noop if:**
+   - Articles were generated but PR creation failed
+   - You encountered errors after creating content
+   - In those cases, let the workflow FAIL
 
 4. **`safeoutputs___missing_tool`** - Report missing capabilities
 5. **`safeoutputs___missing_data`** - Report missing data
 
 #### How to Create the PR
 
+**CRITICAL: Understanding the Container Isolation Bug**
+
+Due to a known bug in safe-outputs, `create_pull_request` may fail with "no-commits-found". If this happens:
+- ❌ **DO NOT call `safeoutputs___noop`** - this hides the failure
+- ✅ **Let the workflow FAIL** - readers need the article
+
 After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool.
+
+**Example failure handling:**
+```javascript
+const result = await safeoutputs___create_pull_request({
+  title: "🔴 Breaking: Coalition Crisis - 2026-02-17",
+  body: prBody,
+  labels: ["automated-news", "breaking-news"]
+});
+
+if (!result || result.error) {
+  throw new Error("Failed to create PR after generating breaking news - workflow must fail");
+}
+```
 
 **Title:** `🔴 Breaking: {primary headline} - {date}`
 **Branch:** `news-realtime/{timestamp}`
 **Labels:** `automated-news`, `breaking-news`, `needs-editorial-review`
 
-**⚠️ NEVER use `git push` directly** - it will fail in the sandbox. Always use `safeoutputs___create_pull_request` MCP tool to create PRs.
-
-#### If No Significant Events Detected (MANDATORY FLOW)
+#### If No Significant Events Detected (LEGITIMATE NOOP CASE)
 
 **THIS IS THE MOST COMMON OUTCOME** - Parliament is often inactive between sessions.
 
-When no breaking news is detected, you MUST:
+When genuinely no breaking news is detected:
 
-1. **MANDATORY:** Call `safeoutputs___noop` MCP tool:
-   ```javascript
-   safeoutputs___noop({
-     message: "Real-time monitor check completed. No significant parliamentary events detected during this window. Next check: [schedule time]"
-   })
-   ```
+1. Verify you monitored all sources (votes, debates, questions, documents, calendar)
+2. Document what was checked
+3. Call `safeoutputs___noop` with detailed message
+4. Workflow succeeds (legitimate quiet period)
 
-2. Exit gracefully
-
-**⚠️ CRITICAL:** Calling `safeoutputs___noop` is **MANDATORY** even when no articles are generated. This signals successful completion to the workflow system. **Failure to call this will cause the workflow to appear as failed.**
+**⚠️ But if articles were generated and PR fails:** workflow MUST FAIL, not noop.
 
 ## Available MCP Tools
 
@@ -590,9 +646,10 @@ If articles are generated, validate with Playwright before creating PR:
 
 ## Error Handling
 
-- **MCP server unavailable**: Log error, call `safeoutputs___noop` with error message, exit gracefully
-- **No significant events**: Update metadata, call `safeoutputs___noop` (MANDATORY), exit cleanly  
+- **MCP server unavailable**: Log error, document what failed, let workflow FAIL (don't use noop)
+- **No significant events**: Verify all sources checked, call `safeoutputs___noop` (LEGITIMATE), workflow succeeds
 - **Partial data**: Generate articles for available data, note gaps in metadata, call `safeoutputs___create_pull_request`
+- **PR creation fails after articles generated**: Let workflow FAIL (don't use noop)
 - **Any other error**: Log error details, call `safeoutputs___noop` or `safeoutputs___missing_tool` as appropriate
 
 **⚠️ ALWAYS call a safe output tool before completing - this is non-negotiable.**

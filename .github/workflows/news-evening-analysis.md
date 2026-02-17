@@ -24,9 +24,9 @@ on:
         default: '12'
 
 permissions:
-  issues: write
-  contents: write
-  pull-requests: write
+  contents: read
+  issues: read
+  pull-requests: read
 
 timeout-minutes: 45
 
@@ -43,7 +43,7 @@ mcp-servers:
 tools:
   github:
     toolsets:
-      - all
+      - default
   bash: true
   microsoft/playwright:
     command: npx
@@ -91,12 +91,19 @@ date +"%Z: %A %Y-%m-%d %H:%M:%S"
 echo "============================"
 ```
 
-### 2. MANDATORY Safe Output Call (Final Step)
-**YOU MUST ALWAYS call ONE of these safe output tools before completing:**
-- ✅ `safeoutputs___create_pull_request` - When articles generated (normal case)
-- ✅ `safeoutputs___noop` - When insufficient data for analysis (rare)
+### 2. MANDATORY Pull Request Creation (Final Step)
 
-**⚠️ FAILURE TO CALL A SAFE OUTPUT TOOL = WORKFLOW FAILURE**
+**CRITICAL: Workflow MUST create a PR with analysis or FAIL**
+
+From a reader's perspective: **Where's the analysis?**
+
+- ✅ **REQUIRED:** `safeoutputs___create_pull_request` - When analysis articles generated
+- ✅ **ONLY USE `noop` if genuinely insufficient data** (checked riksdag-regering-mcp, found no votes, no debates, no documents, no calendar events for the lookback period)
+- ❌ **NEVER use `noop` as a fallback for PR creation failures** - If articles were generated but PR fails, the workflow MUST FAIL
+
+**⚠️ If you generated analysis articles but cannot create PR → workflow FAILS (not noop)**
+
+Readers expect analysis. No PR = No analysis = FAILURE.
 
 The workflow will **FAIL** if no safe output is generated. This is by design to ensure all runs produce actionable output.
 
@@ -116,6 +123,35 @@ You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to 
 - Committee abbreviations in references: "Bet. 2025/26:FiU10"
 
 **Reference files** (consult if needed): `.github/skills/swedish-political-system/SKILL.md`, `.github/skills/language-expertise/SKILL.md`, `TRANSLATION_GUIDE.md`
+
+## Available Skills & Reference Materials
+
+### 📚 Core Language & Political Skills
+
+1. **`.github/skills/swedish-political-system/SKILL.md`** — Authoritative parliamentary terminology, committee structures, document types
+2. **`.github/skills/language-expertise/SKILL.md`** — 14-language style guidelines, political terminology, cultural adaptation
+3. **`.github/skills/multi-language-localization/SKILL.md`** — RTL support, hreflang SEO, multi-language architecture
+4. **`.github/skills/political-science-analysis/SKILL.md`** — Analytical frameworks for synthesis and deeper analysis
+
+### 📰 Journalism & Editorial Skills
+
+5. **`.github/skills/editorial-standards/SKILL.md`** — The Economist-style standards, fact-checking, editorial ethics
+6. **`.github/skills/investigative-journalism/SKILL.md`** — In-depth reporting, source verification, document analysis
+7. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, bill tracking, committee effectiveness
+8. **`.github/skills/comparative-politics-reporting/SKILL.md`** — International context, cross-country analysis
+9. **`.github/skills/economic-policy-analysis/SKILL.md`** — Fiscal policy, budget analysis, economic forecasting
+
+### 🔌 Data & Technical Skills
+
+10. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — Complete MCP tool documentation (32 tools)
+11. **`.github/skills/automated-content-generation/SKILL.md`** — Template-based generation, quality validation
+12. **`.github/skills/data-science-for-intelligence/SKILL.md`** — Statistical analysis, pattern recognition
+
+### 🔐 Workflow & Security Skills
+
+13. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe-outputs tools, PR creation, container isolation fixes
+14. **`.github/skills/gh-aw-workflow-authoring/SKILL.md`** — Workflow patterns, best practices
+15. **`.github/skills/gdpr-compliance/SKILL.md`** — Political data privacy, data protection
 
 ## Your Task
 
@@ -623,17 +659,34 @@ In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead
    }
    ```
 
-3. **`safeoutputs___noop`** - Log a status message when no action is needed
+3. **`safeoutputs___noop`** - ONLY when genuinely no data exists
    ```json
    {
-     "message": "No significant parliamentary activity detected today. Metadata updated."
+     "message": "No significant parliamentary activity for evening analysis. Checked riksdag-regering-mcp: no votes, debates, documents, or calendar events in last {lookback_hours} hours. Last analysis: {timestamp}."
    }
    ```
+   
+   **⚠️ CRITICAL: Only use noop if:**
+   - You checked riksdag-regering-mcp and found NO parliamentary activity
+   - No analysis articles were generated
+   - The day was genuinely quiet (no votes, no debates, no documents)
+   
+   **❌ NEVER use noop if:**
+   - Articles were generated but PR creation failed
+   - You encountered errors after creating content
+   - In those cases, let the workflow FAIL
 
 4. **`safeoutputs___missing_tool`** - Report missing capabilities
 5. **`safeoutputs___missing_data`** - Report missing data
 
 #### How to Create the PR
+
+**CRITICAL: Understanding the Container Isolation Bug**
+
+Due to a known bug in safe-outputs, `create_pull_request` may fail with "no-commits-found" even though you've committed changes. If this happens:
+- ❌ **DO NOT call `safeoutputs___noop`** - this hides the failure
+- ✅ **Let the workflow FAIL** by throwing an error
+- From reader's perspective: No PR = No analysis = FAILURE
 
 After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool with:
 
@@ -641,7 +694,18 @@ After committing your changes locally with `git add` and `git commit`, call the 
 **Branch:** `news-evening/{date}`
 **Labels:** `automated-news`, `evening-analysis`, `needs-editorial-review`
 
-**⚠️ NEVER use `git push` directly** - it will fail in the sandbox. Always use `safeoutputs___create_pull_request` MCP tool to create PRs.
+**Example failure handling:**
+```javascript
+const result = await safeoutputs___create_pull_request({
+  title: "🌆 Evening Analysis: Coalition Tensions - 2026-02-17",
+  body: prBody,
+  labels: ["automated-news", "evening-analysis"]
+});
+
+if (!result || result.error) {
+  throw new Error("Failed to create PR after generating analysis - workflow must fail");
+}
+```
 
 **PR Body should include:**
 - Summary of articles generated
@@ -650,11 +714,15 @@ After committing your changes locally with `git add` and `git commit`, call the 
 - Quality validation results
 - Count of language versions generated
 
-#### If No Significant Activity
+#### If No Significant Activity (LEGITIMATE NOOP CASE)
 
-If no noteworthy parliamentary activity occurred today:
-1. Call the `safeoutputs___noop` MCP tool with a status message
-2. Exit gracefully
+If genuinely no noteworthy parliamentary activity occurred:
+1. Verify you checked all sources (votes, debates, documents, calendar)
+2. Document what was checked and found empty
+3. Call `safeoutputs___noop` with detailed message
+4. Workflow succeeds (legitimate case)
+
+**⚠️ But if articles were generated and PR fails:** workflow MUST FAIL, not noop.
 
 **Note**: Do not commit metadata updates when calling noop - they won't be published.
 
@@ -711,6 +779,8 @@ For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_grou
 
 🎯 **Now begin: Gather today's comprehensive parliamentary data using MCP tools, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
 
+**CRITICAL:** Only use `safeoutputs___noop` if genuinely no parliamentary activity. If articles generated, PR MUST be created or workflow FAILS.
+
 ### ✅ MCP Connectivity Summary
 
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
@@ -718,4 +788,7 @@ The riksdag-regering MCP server is configured in the workflow frontmatter and ac
 - **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_dokument()`, etc.)
 - **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and `export MCP_CLIENT_TIMEOUT_MS=90000` before running
 - **Cold starts**: 30-60s on first call — framework retries automatically
-- **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated) or `safeoutputs___noop` (no significant events)
+- **Safe outputs** (MANDATORY final step): 
+  - `safeoutputs___create_pull_request` when analysis generated (must succeed or workflow fails)
+  - `safeoutputs___noop` ONLY when genuinely no parliamentary activity found
+  - ❌ Never use noop if articles generated - PR must be created or workflow FAILS
