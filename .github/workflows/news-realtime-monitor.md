@@ -33,7 +33,6 @@ network:
   allowed:
     - node
     - riksdag-regering-ai.onrender.com
-    - github.com
     - *.se
     - *.com
     - *.org
