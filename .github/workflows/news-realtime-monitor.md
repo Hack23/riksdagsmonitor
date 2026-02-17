@@ -33,10 +33,10 @@ network:
   allowed:
     - node
     - riksdag-regering-ai.onrender.com
-    - *.se
-    - *.com
-    - *.org
-    - *.io
+    - .se
+    - .com
+    - .org
+    - .io
 
 mcp-servers:
   riksdag-regering:
