@@ -241,7 +241,10 @@ get_sync_status({})
 **DO:**
 - ✅ Call tools by simple name: `get_calendar_events()`, `search_dokument()`
 - ✅ Let the framework handle routing, auth, and retries
-- ✅ Start with a lightweight warm-up query (e.g., `get_sync_status({})`) before batching
+- ✅ **CRITICAL: ALWAYS call `get_sync_status()` FIRST** to check data freshness and warm up server
+- ✅ Check for stale data (>48 hours since last sync) and note in articles with disclaimer
+- ✅ Use explicit date parameters where supported (from_date, to_date, from, tom)
+- ✅ Filter results by date when tools don't support date parameters
 - ✅ For Node.js scripts: set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running
 
 **DO NOT:**
@@ -249,10 +252,42 @@ get_sync_status({})
 - ❌ Import `MCPClient` or manage sessions yourself
 - ❌ Use `mcp["server"]["tool"]` wrapper syntax
 - ❌ Try to authenticate or handle cold starts manually
+- ❌ Rely on implicit "latest" data without checking freshness
+
+### 🚨 DATA FRESHNESS CHECK (MANDATORY FIRST STEP)
+
+**ALWAYS start by checking when MCP server last synced data:**
+
+```javascript
+// === DATA FRESHNESS CHECK ===
+// CALL THIS FIRST - validates data freshness and warms up MCP server
+const syncStatus = get_sync_status({});
+console.log("MCP Data Sync Status:", syncStatus);
+
+// Calculate hours since last sync
+const lastSync = new Date(syncStatus.last_updated);
+const hoursSinceSync = (Date.now() - lastSync.getTime()) / 3600000;
+
+// Warn if data is stale (>48 hours)
+if (hoursSinceSync > 48) {
+  console.warn(`⚠️ DATA MAY BE STALE: ${hoursSinceSync.toFixed(1)} hours since last sync`);
+  console.warn(`⚠️ Include disclaimer in articles about data freshness`);
+}
+```
+
+**Why this matters:**
+1. **Data Freshness**: Ensures articles use recent data, not stale information
+2. **Server Warmup**: Warms up MCP server (avoids 30-60s cold start on first data query)
+3. **User Transparency**: Readers know when data was last updated
+4. **Quality Control**: Prevents publishing articles with outdated information
 
 ### Cold Start Handling
 
-The riksdag-regering-mcp server runs on Render.com and may take 30-60 seconds on first request (cold start). The gh-aw framework retries automatically. Best practice: call `get_sync_status({})` first to warm the server before making data queries.
+The riksdag-regering-mcp server runs on Render.com and may take 30-60 seconds on first request (cold start). The gh-aw framework retries automatically. 
+
+**Best Practice:** 
+1. Call `get_sync_status()` first (warms server AND checks freshness)
+2. Batch subsequent queries after warmup
 
 ### Error Recovery
 
@@ -260,8 +295,10 @@ The riksdag-regering-mcp server runs on Render.com and may take 30-60 seconds on
 |-------|-------|-----|
 | Tool not found | Wrong tool name | Use exact names from the tool list below |
 | Empty results | No data in timeframe | Widen date range or check `get_sync_status()` |
+| **Stale data** | **Last sync >48h ago** | **Note in articles with disclaimer, use available data** |
 | Timeout | Cold start (30-60s) | Framework retries automatically — just wait |
 | Swedish-only results | Riksdag API returns Swedish | YOU must translate in Step 5 |
+| Too broad results | No date filtering | Add from_date/to_date params OR filter results by date |
 
 ### 📋 Available Tools by Category
 
@@ -269,25 +306,46 @@ You have access to 32 specialized tools for Swedish political data:
 
 **Riksdag (Parliament) Tools (15):**
 - `get_ledamoter` / `search_ledamoter` - MPs and member search
-- `get_motioner` / `search_motioner` - Parliamentary motions
-- `get_propositioner` / `search_propositioner` - Government proposals
+- `get_motioner` / `search_motioner` - Parliamentary motions (filter by inlämnad date post-query)
+- `get_propositioner` / `search_propositioner` - Government proposals (filter by publicerad date post-query)
 - `get_dokument` / `search_dokument` / `search_dokument_fulltext` - Documents
-- `get_voteringar` / `search_voteringar` - Voting records
-- `get_anforanden` / `search_anforanden` - Speeches and debates
-- `get_fragor` / `get_interpellationer` - Questions and interpellations
-- `get_calendar_events` - Parliamentary schedule
-- `get_betankanden` - Committee reports
+- `get_voteringar` / `search_voteringar` - Voting records (filter by datum post-query)
+- `get_anforanden` / `search_anforanden` - Speeches and debates (filter by datum post-query)
+- `get_fragor` / `get_interpellationer` - Questions and interpellations (filter by inlämnad date post-query)
+- `get_calendar_events` - Parliamentary schedule (**supports from/tom date params**)
+- `get_betankanden` - Committee reports (filter by publicerad date post-query)
 
 **Government (Regering) Tools (7):**
-- `search_regering` - Government document search
+- `search_regering` - Government document search (**supports from_date/to_date params**)
 - `get_regering_document` - Retrieve specific government doc
 - `get_g0v_document_content` - Get document in Markdown format
 - `summarize_regering_document` - AI summarization
-- `analyze_g0v_by_department` - Department analysis
+- `analyze_g0v_by_department` - Department analysis (**supports dateFrom/dateTo params**)
 - `get_g0v_document_types` - List document categories
 
 **Metadata & Statistics (5):**
 - `get_utskott` - Committee information
+- `get_voting_group` - Voting analysis by party/constituency
+- `fetch_report` - Statistical reports
+- `get_sync_status` - **Data freshness check (CALL THIS FIRST)**
+- `get_data_dictionary` - Schema definitions
+
+**Utility (5):**
+- `batch_fetch_documents` - Efficient bulk retrieval
+- `fetch_paginated_documents` - Pagination support
+- `list_reports` - Available report types
+- `get_latest_update` - Last data sync timestamp (alias for get_sync_status)
+- `enhanced_government_search` - Combined Riksdag + Government search
+
+**⚠️ Date Parameter Support:**
+- **3 tools support explicit date parameters**: `get_calendar_events`, `search_regering`, `analyze_g0v_by_department`
+- **All other tools require post-query filtering** by date fields: `datum`, `publicerad`, `inlämnad`
+- **Example filtering**: 
+  ```javascript
+  const recentBetankanden = betankanden.filter(bet => 
+    new Date(bet.publicerad) >= new Date(fromDate)
+  );
+  ```
 - `get_voting_group` - Voting analysis by party/constituency
 - `fetch_report` - Statistical reports
 - `get_sync_status` - Data freshness check
