@@ -274,14 +274,12 @@ Before deploying a new agentic workflow:
 - [ ] Validate lock file is up to date
 
 ### CI/CD Integration
-Add to `.github/workflows/javascript-testing.yml`:
 
-```yaml
-- name: Run Agentic Workflow Validation Tests
-  run: npm test -- tests/agentic-workflow-validation.test.js
-```
+In this repository, the agentic workflow validation tests are already executed as part of the existing `npm run test:coverage` step in `.github/workflows/javascript-testing.yml`. No additional, dedicated CI step is required.
 
-This ensures tests run on every PR and push to main.
+If you adapt these tests in another project or workflow file, ensure that your CI configuration runs either `npm run test:coverage` (including `tests/agentic-workflow-validation.test.js`) or an equivalent command that executes the full agentic workflow validation test suite on every PR and push to `main`.
+
+This alignment avoids redundant steps while still guaranteeing that all agentic workflow validation tests run consistently in CI.
 
 ## 📚 Related Documentation
 

@@ -32,7 +32,7 @@ describe('Agentic Workflow Validation', () => {
         let frontmatter;
         let instructions;
 
-        beforeAll(() => {
+        beforeEach(() => {
           const workflowPath = join(WORKFLOWS_DIR, workflowFile);
           if (!existsSync(workflowPath)) {
             throw new Error(`Workflow file not found: ${workflowPath}`);
@@ -459,6 +459,21 @@ describe('Regression Prevention', () => {
         
         expect(documentedScenarios.length).toBeGreaterThanOrEqual(2);
       });
+    });
+  });
+
+  describe('CI Workflow Triggers', () => {
+    it('should ensure javascript-testing workflow validates workflow markdown changes', () => {
+      const workflowFile = join('.github', 'workflows', 'javascript-testing.yml');
+      const workflowContent = readFileSync(workflowFile, 'utf-8');
+
+      // Basic sanity check that the workflow file is present and non-empty
+      expect(workflowContent.length).toBeGreaterThan(0);
+
+      // The javascript-testing workflow should be configured to run on changes
+      // to workflow markdown files, so that these validation tests are executed.
+      // We check for the explicit path pattern here to prevent regressions.
+      expect(workflowContent).toContain('.github/workflows/*.md');
     });
   });
 });
