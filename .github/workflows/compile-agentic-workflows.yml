@@ -4,9 +4,6 @@ name: Compile Agentic Workflows
 # This ensures the lock files stay in sync with their markdown sources
 
 on:
-  push:
-    paths:
-      - '.github/workflows/*.md'
   pull_request:
     paths:
       - '.github/workflows/*.md'
