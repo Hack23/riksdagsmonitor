@@ -124,6 +124,35 @@ You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to 
 
 **Reference files** (consult if needed): `.github/skills/swedish-political-system/SKILL.md`, `.github/skills/language-expertise/SKILL.md`, `TRANSLATION_GUIDE.md`
 
+## Available Skills & Reference Materials
+
+### 📚 Core Language & Political Skills
+
+1. **`.github/skills/swedish-political-system/SKILL.md`** — Authoritative parliamentary terminology, committee structures, document types
+2. **`.github/skills/language-expertise/SKILL.md`** — 14-language style guidelines, political terminology, cultural adaptation
+3. **`.github/skills/multi-language-localization/SKILL.md`** — RTL support, hreflang SEO, multi-language architecture
+4. **`.github/skills/political-science-analysis/SKILL.md`** — Analytical frameworks for synthesis and deeper analysis
+
+### 📰 Journalism & Editorial Skills
+
+5. **`.github/skills/editorial-standards/SKILL.md`** — The Economist-style standards, fact-checking, editorial ethics
+6. **`.github/skills/investigative-journalism/SKILL.md`** — In-depth reporting, source verification, document analysis
+7. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, bill tracking, committee effectiveness
+8. **`.github/skills/comparative-politics-reporting/SKILL.md`** — International context, cross-country analysis
+9. **`.github/skills/economic-policy-analysis/SKILL.md`** — Fiscal policy, budget analysis, economic forecasting
+
+### 🔌 Data & Technical Skills
+
+10. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — Complete MCP tool documentation (32 tools)
+11. **`.github/skills/automated-content-generation/SKILL.md`** — Template-based generation, quality validation
+12. **`.github/skills/data-science-for-intelligence/SKILL.md`** — Statistical analysis, pattern recognition
+
+### 🔐 Workflow & Security Skills
+
+13. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe-outputs tools, PR creation, container isolation fixes
+14. **`.github/skills/gh-aw-workflow-authoring/SKILL.md`** — Workflow patterns, best practices
+15. **`.github/skills/gdpr-compliance/SKILL.md`** — Political data privacy, data protection
+
 ## Your Task
 
 Generate an analysis article that synthesizes parliamentary and government activity into a coherent analytical narrative. This is the flagship analysis product.

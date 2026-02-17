@@ -125,6 +125,33 @@ The Riksdag API returns data in **Swedish only**. When you generate breaking new
 
 **See Step 3.5: Translation Post-Processing** below for detailed mandatory instructions.
 
+## Available Skills & Reference Materials
+
+### 📚 Core Language & Political Skills
+
+1. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology, real-time event interpretation
+2. **`.github/skills/language-expertise/SKILL.md`** — 14-language support, breaking news tone adaptation
+3. **`.github/skills/multi-language-localization/SKILL.md`** — Multi-language publishing, RTL support
+
+### 📰 Breaking News & Journalism Skills
+
+4. **`.github/skills/editorial-standards/SKILL.md`** — Breaking news verification, fact-checking protocols
+5. **`.github/skills/investigative-journalism/SKILL.md`** — Source verification, real-time reporting
+6. **`.github/skills/prospective-news-coverage/SKILL.md`** — Event anticipation, calendar monitoring
+7. **`.github/skills/strategic-communication-analysis/SKILL.md`** — Political messaging, crisis communications
+
+### 🔌 Data & Technical Skills
+
+8. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — Real-time data access (32 MCP tools)
+9. **`.github/skills/osint-methodologies/SKILL.md`** — Real-time intelligence gathering, source evaluation
+10. **`.github/skills/automated-content-generation/SKILL.md`** — Rapid article generation for breaking news
+
+### 🔐 Workflow & Security Skills
+
+11. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — PR creation, noop handling for quiet periods
+12. **`.github/skills/gh-aw-workflow-authoring/SKILL.md`** — Real-time monitoring patterns
+13. **`.github/skills/gdpr-compliance/SKILL.md`** — Real-time data processing compliance
+
 ## Your Task
 
 Monitor real-time parliamentary data and generate **breaking news** or **update** articles when significant events are detected.

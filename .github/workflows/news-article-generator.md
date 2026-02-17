@@ -100,14 +100,37 @@ From a reader's perspective: **Where's the article?**
 
 Readers expect articles. No PR = No articles = FAILURE.
 
-## Required Reference Materials
+## Required Reference Materials & Available Skills
 
 Before generating or translating articles, consult these authoritative references:
 
+### 📚 Core Language & Political Skills
+
 1. **`.github/skills/swedish-political-system/SKILL.md`** — Authoritative vocabulary for translating Riksdag API document types (betänkande, proposition, motion, etc.), committee abbreviations (FiU, SoU, JuU, etc.), and parliamentary proceedings terms across all 14 languages
-2. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines, political terminology translations, date/number formatting, and formality registers
+2. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines, political terminology translations, date/number formatting, and formality registers (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
 3. **`.github/skills/multi-language-localization/SKILL.md`** — Multi-language file structure, RTL support for Arabic/Hebrew, hreflang SEO requirements
 4. **`TRANSLATION_GUIDE.md`** — Cross-language terminology tables for parliamentary document types, policy terms, and committee names
+
+### 📰 Journalism & Editorial Skills
+
+5. **`.github/skills/editorial-standards/SKILL.md`** — The Economist-style journalism standards, fact-checking protocols, AP/Reuters guidelines, editorial ethics
+6. **`.github/skills/political-science-analysis/SKILL.md`** — Comparative politics frameworks, political behavior analysis, democratic theory, institutional analysis
+7. **`.github/skills/investigative-journalism/SKILL.md`** — In-depth reporting techniques, source verification, document analysis, FOI requests
+8. **`.github/skills/prospective-news-coverage/SKILL.md`** — Future event coverage, agenda analysis, calendar tracking, predictive reporting
+9. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, bill tracking, committee effectiveness, parliamentary oversight
+
+### 🔌 Data & Technical Skills
+
+10. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — Complete documentation for 32 MCP tools (ledamöter, dokument, voteringar, anföranden, calendar, regering)
+11. **`.github/skills/automated-content-generation/SKILL.md`** — Template-based generation, data-to-narrative transformation, quality validation
+12. **`.github/skills/osint-methodologies/SKILL.md`** — OSINT collection, source evaluation, data verification, ethical intelligence gathering
+13. **`.github/skills/api-integration/SKILL.md`** — REST/GraphQL patterns, rate limiting, error handling, retry logic
+
+### 🔐 Security & Workflow Skills
+
+14. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe-outputs MCP server, create_pull_request tool, container isolation workarounds, noop vs failure handling
+15. **`.github/skills/gh-aw-workflow-authoring/SKILL.md`** — Markdown syntax, YAML frontmatter, natural language instructions, compilation
+16. **`.github/skills/gdpr-compliance/SKILL.md`** — Political data processing, privacy-by-design, data subject rights
 
 **Critical Translation Rules:**
 - Swedish API titles (e.g., "Bättre förutsättningar att sända ut statlig personal") MUST be translated to the target language — never left in Swedish
