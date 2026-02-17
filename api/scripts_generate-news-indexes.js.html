@@ -388,6 +388,22 @@ function generateLanguageBadge(lang, isRTL = false) {
 }
 
 /**
+ * Generate language switcher navigation for news index pages
+ * @param {string} currentLang - Current language code
+ * @returns {string} HTML for language switcher nav
+ */
+function generateLanguageSwitcherNav(currentLang) {
+  const langEntries = Object.entries(LANGUAGES);
+  const links = langEntries.map(([code, data]) => {
+    const flag = LANGUAGE_FLAGS[code] || '🌐';
+    const filename = code === 'en' ? 'index.html' : `index_${code}.html`;
+    const activeClass = code === currentLang ? ' active' : '';
+    return `  &lt;a href="${filename}" class="lang-link${activeClass}" hreflang="${code}">${flag} ${data.name}&lt;/a>`;
+  }).join('\n');
+  return `&lt;nav class="language-switcher" role="navigation" aria-label="Language selection">\n${links}\n&lt;/nav>`;
+}
+
+/**
  * Generate "Available in" text with language badges
  * @param {Array} languages - Array of language codes
  * @param {string} currentLang - Current display language
@@ -896,7 +912,8 @@ ${generateHreflangTags()}
       &lt;a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}&lt;/a>
     &lt;/div>
   &lt;/header>
-  
+  ${generateLanguageSwitcherNav(langKey)}
+  &lt;main role="main">
   &lt;div class="container">
 ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
@@ -1104,6 +1121,10 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     });
   &lt;/script>
 
+  &lt;/main>
+  &lt;footer class="footer-section">
+    &lt;p>&amp;copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence&lt;/p>
+  &lt;/footer>
 &lt;/body>
 &lt;/html>`;
   
