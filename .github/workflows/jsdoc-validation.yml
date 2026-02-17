@@ -2,23 +2,6 @@ name: JSDoc Documentation Validation
 
 # Trigger on changes to JavaScript files in key directories
 on:
-  push:
-    branches: [main, develop, 'copilot/**']
-    paths:
-      - 'js/**/*.js'
-      - 'dashboard/**/*.js'
-      - 'scripts/**/*.js'
-      - 'jsdoc.json'
-      - 'tests/jsdoc-validation.test.js'
-      - '.github/workflows/jsdoc-validation.yml'
-  pull_request:
-    branches: [main, develop]
-    paths:
-      - 'js/**/*.js'
-      - 'dashboard/**/*.js'
-      - 'scripts/**/*.js'
-      - 'jsdoc.json'
-      - 'tests/jsdoc-validation.test.js'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
