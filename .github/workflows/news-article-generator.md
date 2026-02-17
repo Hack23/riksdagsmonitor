@@ -29,9 +29,8 @@ timeout-minutes: 30
 network:
   allowed:
     - defaults
-    - "*.com"
-    - "*.se"
-    - "*.org"
+    - node
+    - riksdag-regering-ai.onrender.com
 
 mcp-servers:
   riksdag-regering:
@@ -50,9 +49,11 @@ tools:
 
 safe-outputs:
   allowed-domains:
-    - "*.com"
-    - "*.se"
-    - "*.org"
+    - riksdag-regering-ai.onrender.com
+    - data.riksdagen.se
+    - www.riksdagen.se
+    - www.regeringen.se
+    - github.com
   create-pull-request: {}
   add-comment: {}
 
@@ -168,107 +169,96 @@ Parse the `article_types` input (comma-separated list) and generate the requeste
 4. **motions** - Analysis of opposition motions
 5. **breaking** - Event-driven coverage of significant developments
 
-## Available MCP Tools (riksdag-regering-mcp)
+## 🔌 MCP Tools: riksdag-regering-mcp Server
 
-## 🔌 MCP Tools: Swedish Political Data
+You have access to the **riksdag-regering-mcp** MCP server configured in the workflow frontmatter. The gh-aw framework handles all connectivity, authentication, and session management automatically through the MCP gateway.
 
-### ⚡ Quick Start - Use MCP Tools Directly
+### How MCP Tool Calls Work in Agentic Workflows
 
-**You have 32 specialized tools for Swedish political data ready to use.**
-
-**IMPORTANT:** Call the tools using their simple names directly:
-
-```javascript
-// Calendar events
-get_calendar_events({ from: "2026-02-16", tom: "2026-02-16", limit: 50 })
-
-// Recent documents
-search_dokument({ from_date: "2026-02-16", limit: 30 })
-
-// Check data freshness
-get_sync_status({})
-
-// Recent votes
-search_voteringar({ rm: "2025/26", limit: 20 })
+The `mcp-servers` frontmatter declares the riksdag-regering server:
+```yaml
+mcp-servers:
+  riksdag-regering:
+    url: https://riksdag-regering-ai.onrender.com/mcp
 ```
 
-**Tool Naming:** Use simple names like `get_calendar_events()`, `search_dokument()` - the framework handles routing automatically.
+At runtime, gh-aw:
+1. Starts the MCP gateway on `host.docker.internal:80`
+2. Routes tool calls through `http://host.docker.internal:80/mcp/riksdag-regering`
+3. Handles HTTPS termination, retries, and cold start warmup automatically
+4. Exposes all 32 riksdag-regering tools as native tool calls
 
-### 🚫 DO NOT Try to Call MCP Manually From Prompts
+**Call tools by their simple names — the framework routes automatically:**
 
-**These approaches DO NOT WORK for calling MCP tools from the agent prompt:**
-- ❌ Manual bash/curl commands to call MCP endpoints
-- ❌ Using `mcp["server"]["tool"]` wrapper syntax in prompts
-- ❌ Importing `MCPClient` from scripts in prompt code
-- ❌ Trying to manage authentication/sessions yourself in prompts
-- ❌ Direct HTTP calls to MCP server from prompt code
+```javascript
+get_calendar_events({ from: "2026-02-17", tom: "2026-02-23", limit: 50 })
+search_dokument({ from_date: "2026-02-17", limit: 30 })
+search_voteringar({ rm: "2025/26", limit: 20 })
+get_sync_status({})
+```
 
-**✅ For MCP tool calls in prompts, ALWAYS do this:**
-- ✅ Use simple tool names: `get_calendar_events({ params })`, `search_dokument({ params })`
-- ✅ Let the framework handle all routing, authentication and session management
-- ✅ Trust the automatic retry logic for cold starts
+### ⚠️ MCP Tool Call Rules
 
-**✅ For running generation scripts (like `node scripts/generate-news-enhanced.js`):**
-- ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
-- ✅ Scripts ARE used by agentic workflows and work perfectly
+**DO:**
+- ✅ Call tools by simple name: `get_calendar_events()`, `search_dokument()`
+- ✅ Let the framework handle routing, auth, and retries
+- ✅ Start with a lightweight warm-up query (e.g., `get_sync_status({})`) before batching
+- ✅ For Node.js scripts: set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running
 
-### 🚨 Cold Start Handling
+**DO NOT:**
+- ❌ Use `curl` or manual HTTP calls to MCP endpoints
+- ❌ Import `MCPClient` or manage sessions yourself
+- ❌ Use `mcp["server"]["tool"]` wrapper syntax
+- ❌ Try to authenticate or handle cold starts manually
 
-The MCP server may take 30-60 seconds on first request (cold start). **The framework handles this automatically with retries.** Just make your call normally and wait.
+### Cold Start Handling
 
-**Best Practice:** Start with a simple query to warm up the server, then batch multiple queries.
+The riksdag-regering-mcp server runs on Render.com and may take 30-60 seconds on first request (cold start). The gh-aw framework retries automatically. Best practice: call `get_sync_status({})` first to warm the server before making data queries.
 
-### 🐛 If You Get Errors
+### Error Recovery
 
 | Error | Cause | Fix |
 |-------|-------|-----|
-| Tool not found | Wrong tool name | Use exact names: `get_calendar_events`, `search_dokument` |
-| Empty results | No data in timeframe | Check `get_sync_status`, widen date range |
-| Timeout | Cold start (30-60s) | Wait - framework retries automatically |
-| Swedish-only results | Riksdag API returns Swedish | YOU must translate to target languages |
+| Tool not found | Wrong tool name | Use exact names from the tool list below |
+| Empty results | No data in timeframe | Widen date range or check `get_sync_status()` |
+| Timeout | Cold start (30-60s) | Framework retries automatically — just wait |
+| Swedish-only results | Riksdag API returns Swedish | YOU must translate in Step 5 |
 
 ### 📋 Available Tools by Category
 
 You have access to 32 specialized tools for Swedish political data:
 
-### Document Search
-- `search_dokument` - Search all Riksdag documents
-- `get_dokument` - Get specific document with full text
-- `search_dokument_fulltext` - Full-text search
+**Riksdag (Parliament) Tools (15):**
+- `get_ledamoter` / `search_ledamoter` - MPs and member search
+- `get_motioner` / `search_motioner` - Parliamentary motions
+- `get_propositioner` / `search_propositioner` - Government proposals
+- `get_dokument` / `search_dokument` / `search_dokument_fulltext` - Documents
+- `get_voteringar` / `search_voteringar` - Voting records
+- `get_anforanden` / `search_anforanden` - Speeches and debates
+- `get_fragor` / `get_interpellationer` - Questions and interpellations
+- `get_calendar_events` - Parliamentary schedule
+- `get_betankanden` - Committee reports
 
-### Parliament Activity
-- `get_propositioner` - Latest government bills
-- `get_betankanden` - Latest committee reports
-- `get_motioner` - Latest opposition motions
-- `get_fragor` - Written questions
-- `get_interpellationer` - Interpellations
+**Government (Regering) Tools (7):**
+- `search_regering` - Government document search
+- `get_regering_document` - Retrieve specific government doc
+- `get_g0v_document_content` - Get document in Markdown format
+- `summarize_regering_document` - AI summarization
+- `analyze_g0v_by_department` - Department analysis
+- `get_g0v_document_types` - List document categories
 
-### Calendar & Events
-- `get_calendar_events` - Upcoming parliamentary events (next 7 days)
-- `list_reports` - Available reports
-- `fetch_report` - Get specific report
+**Metadata & Statistics (5):**
+- `get_utskott` - Committee information
+- `get_voting_group` - Voting analysis by party/constituency
+- `fetch_report` - Statistical reports
+- `get_sync_status` - Data freshness check
+- `get_data_dictionary` - Schema definitions
 
-### MPs & Voting
-- `search_ledamoter` - Search MPs by name, party, status
-- `get_ledamot` - Get MP details
-- `search_voteringar` - Search votes by session, bill, party
-- `get_voting_group` - Votes grouped by party/district
-
-### Debates & Speeches
-- `search_anforanden` - Search speeches by speaker, topic, date
-
-### Government Documents
-- `search_regering` - Search government documents
-- `get_g0v_document_content` - Get full document content in Markdown
-- `list_g0v_document_types` - Available document types
-- `analyze_g0v_by_department` - Department-wise analysis
-
-### Batch Operations
-- `batch_fetch_documents` - Multiple session fetching
-- `fetch_paginated_documents` - Large result sets
-- `fetch_paginated_anforanden` - Large debate sets
-
-### Enhanced Search
+**Utility (5):**
+- `batch_fetch_documents` - Efficient bulk retrieval
+- `fetch_paginated_documents` - Pagination support
+- `list_reports` - Available report types
+- `get_latest_update` - Last data sync timestamp
 - `enhanced_government_search` - Combined Riksdag + Government search
 
 ### Cross-Referencing Strategy (Use Multiple Tools Together)
@@ -323,7 +313,13 @@ Use these tools in **Step 8 (Validate Generated Articles)** to visually verify g
 
 ### Step 2: Query riksdag-regering-mcp
 
-For each requested article type, query relevant tools:
+**First, warm up the MCP server** to avoid cold start delays on subsequent queries:
+```javascript
+// Warm-up call — triggers server startup if cold (30-60s). Framework retries automatically.
+get_sync_status({})
+```
+
+Once warm, query tools for each requested article type:
 
 **Week Ahead:**
 ```javascript
@@ -427,9 +423,9 @@ esac
 echo "📋 Final languages: $LANG_ARG"
 ```
 
-#### Run Automated News Generation Script
+#### Run Automated News Generation Script (Batched)
 
-Use the `generate-news-enhanced.js` script to generate articles for the appropriate types and languages:
+The `generate-news-enhanced.js` script supports **batch mode** to avoid generating all 14 languages at once (which is too complex for a single pass). Use `--batch-size=5` and `--skip-existing` to process languages in manageable batches:
 
 ```bash
 # Get article types input — use day-of-week schedule if not manually specified
@@ -466,11 +462,83 @@ echo "  Languages: $LANG_ARG"
 # The gateway handles the external connection and exposes it over plain HTTP
 export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
 
-# Run generation script
-node scripts/generate-news-enhanced.js \
-  --types="$ARTICLE_TYPES" \
-  --languages="$LANG_ARG"
+# Extended timeout for Render.com cold starts (server may take 30-60s to spin up)
+export MCP_CLIENT_TIMEOUT_MS=90000
+
+# === BATCHED GENERATION ===
+# Generate articles in batches of 5 languages per run.
+# --skip-existing resumes from where the previous batch left off.
+# --batch-size=5 limits each run to 5 languages (e.g., batch 1: en,sv,da,no,fi; batch 2: de,fr,es,nl,ar; batch 3: he,ja,ko,zh).
+# The script writes news/metadata/batch-status.json so you can check progress.
+
+BATCH_NUM=1
+while true; do
+  echo ""
+  echo "🔄 Running batch $BATCH_NUM..."
+  
+  node scripts/generate-news-enhanced.js \
+    --types="$ARTICLE_TYPES" \
+    --languages="$LANG_ARG" \
+    --batch-size=5 \
+    --skip-existing
+  
+  EXIT_CODE=$?
+  
+  if [ $EXIT_CODE -ne 0 ]; then
+    echo "❌ Batch $BATCH_NUM failed with exit code $EXIT_CODE"
+    break
+  fi
+  
+  # Check if all languages are done
+  if [ -f "news/metadata/batch-status.json" ]; then
+    ALL_DONE=$(node -e "const s=JSON.parse(require('fs').readFileSync('news/metadata/batch-status.json','utf8')); console.log(s.complete)")
+    
+    if [ "$ALL_DONE" = "true" ]; then
+      echo "✅ All languages generated!"
+      break
+    fi
+  fi
+  
+  BATCH_NUM=$((BATCH_NUM + 1))
+  
+  # Safety: don't run more than 5 batches (14 langs / 5 per batch = 3 batches normally)
+  if [ $BATCH_NUM -gt 5 ]; then
+    echo "⚠️ Exceeded maximum batch count (5). Check batch-status.json for remaining languages."
+    break
+  fi
+  
+  # === TRANSLATE THIS BATCH BEFORE CONTINUING ===
+  # After each batch, translate the newly generated non-Swedish articles
+  # before generating the next batch. This keeps the work manageable.
+  echo ""
+  echo "📝 Translate newly generated articles for this batch before continuing..."
+  echo "   (See Step 5: LLM Translation Post-Processing)"
+  
+  # Identify and translate untranslated articles from this batch
+  for article in news/*-*.html; do
+    if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+      echo "  🔄 Needs translation: $(basename $article)"
+      # The LLM agent (you) MUST translate each file here
+      # before proceeding to the next batch
+    fi
+  done
+done
 ```
+
+**How batch mode works:**
+1. **First run**: Generates articles for languages 1-5 (e.g., en, sv, da, no, fi)
+2. **Translate**: LLM translates Swedish content in those 5 × N articles
+3. **Second run**: `--skip-existing` skips done languages, generates next 5 (e.g., de, fr, es, nl, ar)
+4. **Translate**: LLM translates this batch
+5. **Third run**: Generates remaining languages (e.g., he, ja, ko, zh)
+6. **Translate**: LLM translates final batch
+7. **Script exits with** `All requested languages already generated` when complete
+
+**Benefits of batching:**
+- Each batch is small enough for the agent to handle (5 languages × N article types)
+- Translation work is distributed across batches instead of all at once
+- `--skip-existing` makes it safe to re-run — won't duplicate work
+- `batch-status.json` tracks progress across runs
 
 **What the script does**:
 - Connects to riksdag-regering-mcp server
@@ -1317,22 +1385,15 @@ For each generated article, create:
 
 Remember: You are producing world-class political journalism that informs Swedish citizens and holds power accountable. Maintain the highest standards of accuracy, balance, and analytical depth.
 
-🎯 **Now begin: Check for recent generation, query riksdag-regering-mcp using MCP tools, analyze data, generate articles, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
+🎯 **Now begin: Warm up MCP with `get_sync_status({})`, check for recent generation, query riksdag-regering-mcp tools, analyze data, generate articles, and finalize with `safeoutputs___create_pull_request` or `safeoutputs___noop`.**
 
-### ✅ MCP Tools Are Accessible and Working
+### ✅ MCP Connectivity Summary
 
-**IMPORTANT:** MCP tools (riksdag-regering) ARE fully accessible and working in this workflow. The framework handles all connectivity automatically.
+The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
-**For MCP tool calls** (most common):
-- ✅ Call tools directly: `get_calendar_events()`, `search_voteringar()`, `search_dokument()`
-- ✅ Framework routes through gateway automatically
-- ✅ No manual configuration needed
-- ✅ Cold starts (30-60s) handled with automatic retries
-
-**For Node.js scripts** (if using `scripts/generate-news-enhanced.js`):
-- Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running
-- Scripts are a normal part of agentic workflow operation
-
-**For safe outputs** (MANDATORY):
-- Use `safeoutputs___create_pull_request` MCP tool to create PRs (NOT `git push`)
-- Use `safeoutputs___noop` MCP tool when no significant events detected (NOT file writes)
+- **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_dokument()`, etc.)
+- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and `export MCP_CLIENT_TIMEOUT_MS=90000` before running
+- **Cold starts**: 30-60s on first call — framework retries automatically; script auto-warms with `get_sync_status({})` before data queries
+- **Session reuse**: Script uses a shared MCPClient across all generators (warm-up benefits all subsequent calls)
+- **Batch mode**: Use `--batch-size=5 --skip-existing` to process languages in manageable batches (recommended for `--languages=all`)
+- **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated) or `safeoutputs___noop` (no significant events)

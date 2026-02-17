@@ -34,10 +34,14 @@ const { mockClientInstance, mockCalendarEvents, mockCommitteeReports, mockPropos
     fetchCalendarEvents: vi.fn(),
     fetchCommitteeReports: vi.fn(),
     fetchPropositions: vi.fn(),
-    fetchMotions: vi.fn()
+    fetchMotions: vi.fn(),
+    request: vi.fn(),
+    timeout: 30000,
+    baseURL: 'https://riksdag-regering-ai.onrender.com/mcp'
   };
   // Use a regular function (not arrow) so it can be called with `new`
-  function MockMCPClient() {
+  function MockMCPClient(config) {
+    if (config && config.timeout) mockClientInstance.timeout = config.timeout;
     return mockClientInstance;
   }
   return { mockClientInstance, mockCalendarEvents, mockCommitteeReports, mockPropositions, mockMotions, MockMCPClient };
@@ -60,6 +64,7 @@ function resetMockClient() {
   mockClientInstance.fetchCommitteeReports.mockReset().mockResolvedValue(mockCommitteeReports);
   mockClientInstance.fetchPropositions.mockReset().mockResolvedValue(mockPropositions);
   mockClientInstance.fetchMotions.mockReset().mockResolvedValue(mockMotions);
+  mockClientInstance.request.mockReset().mockResolvedValue({ last_sync: '2026-02-16T12:00:00Z' });
 }
 
 beforeAll(async () => {

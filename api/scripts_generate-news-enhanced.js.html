@@ -215,6 +215,9 @@ const args = process.argv.slice(2);
 const typesArg = args.find(arg => arg.startsWith('--types='));
 const languagesArg = args.find(arg => arg.startsWith('--languages='));
 const dryRunArg = args.includes('--dry-run');
+const batchSizeArg = args.find(arg => arg.startsWith('--batch-size='));
+const skipExistingArg = args.includes('--skip-existing');
+const batchSize = batchSizeArg ? parseInt(batchSizeArg.split('=')[1], 10) : 0;
 
 // Valid article types
 const VALID_ARTICLE_TYPES = ['week-ahead', 'committee-reports', 'propositions', 'motions', 'breaking'];
@@ -238,7 +241,7 @@ if (LANGUAGE_PRESETS[languagesInput]) {
   languagesInput = LANGUAGE_PRESETS[languagesInput].join(',');
 }
 
-const languages = languagesInput.split(',').map(l => l.trim()).filter(l => ALL_LANGUAGES.includes(l));
+let languages = languagesInput.split(',').map(l => l.trim()).filter(l => ALL_LANGUAGES.includes(l));
 
 if (languages.length === 0) {
   console.error('❌ No valid language codes provided. Valid codes:', ALL_LANGUAGES.join(', '));
@@ -251,14 +254,93 @@ if (invalidTypes.length > 0) {
   console.warn(`⚠️ Unknown article types ignored: ${invalidTypes.join(', ')}`);
 }
 
-console.log('📰 Enhanced News Generation Script');
-console.log('Article types:', articleTypes.join(', '));
-console.log('Languages:', languages.join(', '));
-console.log('Dry run:', dryRunArg ? 'Yes (no files written)' : 'No');
-
 // Configuration
 const NEWS_DIR = path.join(__dirname, '..', 'news');
 const METADATA_DIR = path.join(NEWS_DIR, 'metadata');
+
+// Track full requested set before any filtering
+const allRequestedLanguages = [...languages];
+
+// Apply --skip-existing: remove languages that already have today's articles
+if (skipExistingArg) {
+  const today = new Date().toISOString().split('T')[0];
+  const existingFiles = fs.existsSync(NEWS_DIR)
+    ? fs.readdirSync(NEWS_DIR).filter(f => f.startsWith(today) &amp;&amp; f.endsWith('.html'))
+    : [];
+  const doneLangs = languages.filter(lang =>
+    existingFiles.some(f => f.endsWith(`-${lang}.html`))
+  );
+  if (doneLangs.length > 0) {
+    console.log(`⏭️  Skipping already-generated languages: ${doneLangs.join(', ')}`);
+    languages = languages.filter(l => !doneLangs.includes(l));
+  }
+}
+
+// Apply --batch-size: limit to N languages per run
+if (batchSize > 0 &amp;&amp; languages.length > batchSize) {
+  const remaining = languages.slice(batchSize);
+  languages = languages.slice(0, batchSize);
+  console.log(`📦 Batch mode: processing ${languages.length} of ${allRequestedLanguages.length} requested languages`);
+  console.log(`   This batch: ${languages.join(', ')}`);
+  console.log(`   Remaining for next run(s): ${remaining.join(', ')}`);
+}
+
+if (languages.length === 0) {
+  console.log('✅ All requested languages already generated. Nothing to do.');
+  // Write a status metadata file so the workflow knows we're done
+  if (!fs.existsSync(METADATA_DIR)) {
+    fs.mkdirSync(METADATA_DIR, { recursive: true });
+  }
+  fs.writeFileSync(
+    path.join(METADATA_DIR, 'batch-status.json'),
+    JSON.stringify({ complete: true, allDone: allRequestedLanguages, timestamp: new Date().toISOString() }, null, 2)
+  );
+  process.exit(0);
+}
+
+console.log('📰 Enhanced News Generation Script');
+console.log('Article types:', articleTypes.join(', '));
+console.log('Languages:', languages.join(', '));
+console.log('Batch size:', batchSize > 0 ? batchSize : 'all at once');
+console.log('Skip existing:', skipExistingArg ? 'Yes' : 'No');
+console.log('Dry run:', dryRunArg ? 'Yes (no files written)' : 'No');
+
+// Shared MCP client (reuses connection/session across all generators)
+let sharedClient = null;
+
+/**
+ * Get or create the shared MCPClient instance.
+ * On first call, warms up the MCP server with a lightweight get_sync_status
+ * request using an extended timeout to handle Render.com cold starts (30-60s).
+ * 
+ * @returns {Promise&lt;MCPClient>} Warmed-up shared client
+ */
+async function getSharedClient() {
+  if (sharedClient) return sharedClient;
+  
+  // Use extended timeout for initial connection (cold start can take 30-60s)
+  const coldStartTimeout = parseInt(process.env.MCP_CLIENT_TIMEOUT_MS, 10) || 90000;
+  sharedClient = new MCPClient({ timeout: coldStartTimeout });
+  
+  // Warm up the MCP server before any data queries
+  console.log('⏳ Warming up MCP server (may take 30-60s on cold start)...');
+  console.log(`  🔗 Server: ${sharedClient.baseURL}`);
+  try {
+    const status = await sharedClient.request('get_sync_status', {});
+    console.log('✅ MCP server ready');
+    if (status &amp;&amp; status.last_sync) {
+      console.log(`  📊 Last sync: ${status.last_sync}`);
+    }
+  } catch (error) {
+    console.warn(`⚠️ MCP warm-up failed: ${error.message}`);
+    console.warn('  Continuing anyway — individual requests will retry with backoff');
+  }
+  
+  // After warm-up succeeds, reduce timeout for normal requests
+  sharedClient.timeout = parseInt(process.env.MCP_CLIENT_TIMEOUT_MS, 10) || 30000;
+  
+  return sharedClient;
+}
 
 // Ensure directories exist
 if (!fs.existsSync(METADATA_DIR)) {
@@ -338,7 +420,7 @@ async function generateWeekAhead() {
   console.log('📅 Generating Week Ahead article...');
   
   try {
-    const client = new MCPClient();
+    const client = await getSharedClient();
     const dateRange = getWeekAheadDateRange();
     
     console.log(`  📆 Date range: ${dateRange.start} to ${dateRange.end}`);
@@ -424,7 +506,7 @@ async function generateCommitteeReports() {
   console.log('📋 Generating Committee Reports article...');
   
   try {
-    const client = new MCPClient();
+    const client = await getSharedClient();
     
     console.log('  🔄 Fetching committee reports from riksdag-regering-mcp...');
     const reports = await client.fetchCommitteeReports(10);
@@ -501,7 +583,7 @@ async function generatePropositions() {
   console.log('📜 Generating Government Propositions article...');
   
   try {
-    const client = new MCPClient();
+    const client = await getSharedClient();
     
     console.log('  🔄 Fetching propositions from riksdag-regering-mcp...');
     const propositions = await client.fetchPropositions(10);
@@ -578,7 +660,7 @@ async function generateMotions() {
   console.log('📝 Generating Opposition Motions article...');
   
   try {
-    const client = new MCPClient();
+    const client = await getSharedClient();
     
     console.log('  🔄 Fetching motions from riksdag-regering-mcp...');
     const motions = await client.fetchMotions(10);
@@ -682,17 +764,41 @@ async function generateNews() {
   fs.writeFileSync(metadataFile, JSON.stringify({
     timestamp: stats.timestamp,
     types: articleTypes,
-    languages: languages,
+    languagesGenerated: languages,
+    allRequestedLanguages: allRequestedLanguages,
+    batchSize: batchSize || 'all',
+    skipExisting: skipExistingArg,
     generated: stats.generated,
     errors: stats.errors,
     articles: stats.articles,
     status: 'enhanced',
-    note: 'Enhanced script with MCP integration and multi-language support'
+    note: 'Enhanced script with MCP integration, multi-language support, and batch mode'
   }, null, 2));
   
   // Save detailed results
   const resultFile = path.join(METADATA_DIR, 'generation-result.json');
   fs.writeFileSync(resultFile, JSON.stringify(stats, null, 2));
+  
+  // Write batch status for workflow orchestration
+  const today = new Date().toISOString().split('T')[0];
+  const existingFiles = fs.existsSync(NEWS_DIR)
+    ? fs.readdirSync(NEWS_DIR).filter(f => f.startsWith(today) &amp;&amp; f.endsWith('.html'))
+    : [];
+  const completedLangs = allRequestedLanguages.filter(lang =>
+    existingFiles.some(f => f.endsWith(`-${lang}.html`))
+  );
+  const remainingLangs = allRequestedLanguages.filter(l => !completedLangs.includes(l));
+  
+  fs.writeFileSync(
+    path.join(METADATA_DIR, 'batch-status.json'),
+    JSON.stringify({
+      complete: remainingLangs.length === 0,
+      completedLanguages: completedLangs,
+      remainingLanguages: remainingLangs,
+      allRequestedLanguages: allRequestedLanguages,
+      timestamp: new Date().toISOString()
+    }, null, 2)
+  );
   
   console.log('\n✅ Enhanced news generation complete');
   console.log(`Generated: ${stats.generated} articles`);
@@ -701,6 +807,14 @@ async function generateNews() {
   if (stats.articles.length > 0) {
     console.log('\nArticles generated:');
     stats.articles.forEach(article => console.log(`  - ${article}`));
+  }
+  
+  if (remainingLangs.length > 0) {
+    console.log(`\n📦 Batch progress: ${completedLangs.length}/${allRequestedLanguages.length} languages done`);
+    console.log(`   Remaining: ${remainingLangs.join(', ')}`);
+    console.log('   Re-run with --skip-existing to continue with next batch');
+  } else {
+    console.log(`\n🎉 All ${allRequestedLanguages.length} languages generated!`);
   }
   
   return stats;

@@ -182,6 +182,7 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 
 **✅ For running Node.js scripts via bash:**
 - ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
+- ✅ Set `export MCP_CLIENT_TIMEOUT_MS=90000` for cold start tolerance
 - ✅ Scripts ARE used by agentic workflows and work perfectly
 
 ### 🚨 Cold Start Handling
@@ -225,7 +226,7 @@ The MCP server may take 30-60 seconds on first request (cold start). **The frame
 - `fetch_paginated_documents` - Pagination support
 - `list_reports` - Available report types
 - `get_latest_update` - Last data sync timestamp
-- `riksdag-regering--enhanced_government_search` - Combined Riksdag + Government search
+- `enhanced_government_search` - Combined Riksdag + Government search
 
 ### 🐛 Troubleshooting
 
@@ -614,20 +615,11 @@ If articles are generated, validate with Playwright before creating PR:
 
 🎯 **Now begin: Query riksdag-regering-mcp for real-time data using MCP tools, assess significance, and generate breaking news if warranted. ALWAYS call a safe output tool at the end.**
 
-### ✅ MCP Tools Are Accessible and Working
+### ✅ MCP Connectivity Summary
 
-**IMPORTANT:** MCP tools (riksdag-regering) ARE fully accessible and working in this workflow. The framework handles all connectivity automatically.
+The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
-**For MCP tool calls** (most common):
-- ✅ Call tools directly: `get_calendar_events()`, `search_voteringar()`, `search_dokument()`
-- ✅ Framework routes through gateway automatically
-- ✅ No manual configuration needed
-- ✅ Cold starts (30-60s) handled with automatic retries
-
-**For Node.js scripts** (if using `scripts/generate-news-enhanced.js`):
-- Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running
-- Scripts are a normal part of agentic workflow operation
-
-**For safe outputs** (MANDATORY):
-- Use `safeoutputs___create_pull_request` MCP tool to create PRs (NOT `git push`)
-- Use `safeoutputs___noop` MCP tool when no significant events detected
+- **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_voteringar()`, etc.)
+- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and `export MCP_CLIENT_TIMEOUT_MS=90000` before running
+- **Cold starts**: 30-60s on first call — framework retries automatically
+- **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated) or `safeoutputs___noop` (no significant events)

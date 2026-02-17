@@ -189,6 +189,7 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 
 **✅ For running Node.js scripts via bash:**
 - ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
+- ✅ Set `export MCP_CLIENT_TIMEOUT_MS=90000` for cold start tolerance
 - ✅ Scripts ARE used by agentic workflows and work perfectly
 - ✅ Trust the automatic retry logic for cold starts
 
@@ -206,6 +207,41 @@ The MCP server may take 30-60 seconds on first request (cold start). **The frame
 | Empty results | No data in timeframe | Check `get_sync_status`, widen date range |
 | Timeout | Cold start (30-60s) | Wait - framework retries automatically |
 | Swedish-only results | Riksdag API returns Swedish | YOU must translate to target languages |
+
+### 📋 32 Available MCP Tools
+
+**Riksdag (Parliament) Tools (15):**
+- `get_ledamoter` / `search_ledamoter` - MPs and member search
+- `get_motioner` / `search_motioner` - Parliamentary motions
+- `get_propositioner` / `search_propositioner` - Government proposals
+- `get_dokument` / `search_dokument` / `search_dokument_fulltext` - Documents
+- `get_voteringar` / `search_voteringar` - Voting records
+- `get_anforanden` / `search_anforanden` - Speeches and debates
+- `get_fragor` / `get_interpellationer` - Questions and interpellations
+- `get_calendar_events` - Parliamentary schedule
+- `get_betankanden` - Committee reports
+
+**Government (Regering) Tools (7):**
+- `search_regering` - Government document search
+- `get_regering_document` - Retrieve specific government doc
+- `get_g0v_document_content` - Get document in Markdown format
+- `summarize_regering_document` - AI summarization
+- `analyze_g0v_by_department` - Department analysis
+- `get_g0v_document_types` - List document categories
+
+**Metadata & Statistics (5):**
+- `get_utskott` - Committee information
+- `get_voting_group` - Voting analysis by party/constituency
+- `fetch_report` - Statistical reports
+- `get_sync_status` - Data freshness check
+- `get_data_dictionary` - Schema definitions
+
+**Utility (5):**
+- `batch_fetch_documents` - Efficient bulk retrieval
+- `fetch_paginated_documents` - Pagination support
+- `list_reports` - Available report types
+- `get_latest_update` - Last data sync timestamp
+- `enhanced_government_search` - Combined Riksdag + Government search
 
 ## Analysis Workflow
 
@@ -389,8 +425,8 @@ Structure the analysis around these editorial pillars:
     <a href="{YYYY-MM-DD}-{baseSlug}-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
     <a href="{YYYY-MM-DD}-{baseSlug}-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
     <a href="{YYYY-MM-DD}-{baseSlug}-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
-    <a href="{baseSlug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
-    <a href="{baseSlug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
+    <a href="{YYYY-MM-DD}-{baseSlug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
   
   <div class="news-article">
@@ -675,20 +711,11 @@ For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_grou
 
 🎯 **Now begin: Gather today's comprehensive parliamentary data using MCP tools, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
 
-### ✅ MCP Tools Are Accessible and Working
+### ✅ MCP Connectivity Summary
 
-**IMPORTANT:** MCP tools (riksdag-regering) ARE fully accessible and working in this workflow. The framework handles all connectivity automatically.
+The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
-**For MCP tool calls** (most common):
-- ✅ Call tools directly: `get_calendar_events()`, `search_voteringar()`, `search_dokument()`
-- ✅ Framework routes through gateway automatically
-- ✅ No manual configuration needed
-- ✅ Cold starts (30-60s) handled with automatic retries
-
-**For Node.js scripts** (if using generation scripts):
-- Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running
-- Scripts are a normal part of agentic workflow operation
-
-**For safe outputs** (MANDATORY):
-- Use `safeoutputs___create_pull_request` MCP tool to create PRs (NOT `git push`)
-- Use `safeoutputs___noop` MCP tool when no significant events detected
+- **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_dokument()`, etc.)
+- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and `export MCP_CLIENT_TIMEOUT_MS=90000` before running
+- **Cold starts**: 30-60s on first call — framework retries automatically
+- **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated) or `safeoutputs___noop` (no significant events)
