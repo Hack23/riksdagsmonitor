@@ -32,7 +32,11 @@ timeout-minutes: 30
 network:
   allowed:
     - node
+    - github.com
+    - api.github.com
     - riksdag-regering-ai.onrender.com
+    - data.riksdagen.se
+    - regeringen.se
     - .se
     - .com
     - .org
