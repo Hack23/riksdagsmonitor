@@ -23,14 +23,25 @@ permissions:
   contents: read
   issues: read
   pull-requests: read
-
+  actions: read
+  discussions: read
+  security-events: read
+  
 timeout-minutes: 30
 
 network:
   allowed:
-    - defaults
     - node
+    - github.com
+    - api.github.com
     - riksdag-regering-ai.onrender.com
+    - data.riksdagen.se
+    - regeringen.se
+    - "*.se"
+    - "*.com"
+    - "*.org"
+    - "*.io"
+    - default
 
 mcp-servers:
   riksdag-regering:
@@ -39,7 +50,7 @@ mcp-servers:
 tools:
   github:
     toolsets:
-      - default  # Changed from 'all' to reduce permission requirements
+      - all
   bash: true
   microsoft/playwright:
     command: npx

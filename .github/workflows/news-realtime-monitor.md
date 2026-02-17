@@ -26,7 +26,10 @@ permissions:
   contents: read
   issues: read
   pull-requests: read
-
+  actions: read
+  discussions: read
+  security-events: read
+  
 timeout-minutes: 30
 
 network:
@@ -37,10 +40,11 @@ network:
     - riksdag-regering-ai.onrender.com
     - data.riksdagen.se
     - regeringen.se
-    - .se
-    - .com
-    - .org
-    - .io
+    - "*.se"
+    - "*.com"
+    - "*.org"
+    - "*.io"
+    - default
 
 mcp-servers:
   riksdag-regering:
@@ -49,7 +53,7 @@ mcp-servers:
 tools:
   github:
     toolsets:
-      - default
+      - all
   bash: true
   microsoft/playwright:
     command: npx
