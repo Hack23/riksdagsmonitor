@@ -360,6 +360,22 @@ function generateLanguageBadge(lang, isRTL = false) {
 }
 
 /**
+ * Generate language switcher navigation for news index pages
+ * @param {string} currentLang - Current language code
+ * @returns {string} HTML for language switcher nav
+ */
+function generateLanguageSwitcherNav(currentLang) {
+  const langEntries = Object.entries(LANGUAGES);
+  const links = langEntries.map(([code, data]) => {
+    const flag = LANGUAGE_FLAGS[code] || '🌐';
+    const filename = code === 'en' ? 'index.html' : `index_${code}.html`;
+    const activeClass = code === currentLang ? ' active' : '';
+    return `  <a href="${filename}" class="lang-link${activeClass}" hreflang="${code}">${flag} ${data.name}</a>`;
+  }).join('\n');
+  return `<nav class="language-switcher" role="navigation" aria-label="Language selection">\n${links}\n</nav>`;
+}
+
+/**
  * Generate "Available in" text with language badges
  * @param {Array} languages - Array of language codes
  * @param {string} currentLang - Current display language
@@ -868,7 +884,8 @@ ${generateHreflangTags()}
       <a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}</a>
     </div>
   </header>
-  
+  ${generateLanguageSwitcherNav(langKey)}
+  <main role="main">
   <div class="container">
 ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
@@ -1076,6 +1093,10 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     });
   </script>
 
+  </main>
+  <footer class="footer-section">
+    <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence</p>
+  </footer>
 </body>
 </html>`;
   

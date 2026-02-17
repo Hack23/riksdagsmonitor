@@ -1,54 +1,43 @@
 {
-  "timestamp": "2026-02-16T10:22:29.905Z",
-  "monitor_type": "realtime",
-  "focus": "all",
-  "events_detected": [
+  "timestamp": "2026-02-17T16:57:00Z",
+  "type": "realtime-monitor",
+  "eventsDetected": {
+    "government_press_releases": 11,
+    "propositions": 1,
+    "departmental_series": 1,
+    "remisser": 6,
+    "total_significant": 5
+  },
+  "significanceLevels": {
+    "high": [
+      "New Eastern Europe reform cooperation strategy",
+      "Defence Minister meeting Slovakia's defence minister",
+      "High-level meeting for Ukraine transport sector",
+      "Digital sovereignty procurement system",
+      "Afghanistan migration project funding extension"
+    ],
+    "medium": [
+      "ECOFIN Council participation",
+      "Private school sector stricter conditions consultation",
+      "Consumer complaint oversight strengthening"
+    ]
+  },
+  "articlesGenerated": [
     {
-      "type": "interpellation_cluster",
-      "significance": "MEDIUM-HIGH",
-      "title": "Opposition multi-front interpellation offensive",
-      "description": "8 interpellations filed Feb 11-16 by S and MP targeting foreign policy and social welfare",
-      "document_ids": ["HD10339", "HD10340", "HD10333", "HD10335", "HD10338", "HD10336", "HD10332", "HD10341"],
-      "article_generated": true,
-      "article_slug": "2026-02-16-opposition-interpellations-offensive"
-    },
-    {
-      "type": "interpellation_debate",
-      "significance": "MEDIUM",
-      "title": "National security adviser damage assessment debate",
-      "description": "Justice Minister Strömmer (M) vs Naraghi (S) on ip 2025/26:286",
-      "document_ids": ["HD10286"],
-      "article_generated": false,
-      "reason": "Speech text not available from API; debate already partially referenced in generated article"
-    },
-    {
-      "type": "committee_reports",
-      "significance": "MEDIUM",
-      "title": "10 committee reports published Feb 9-11",
-      "description": "Reports on trade policy, animal welfare, education, housing, personnel deployment",
-      "document_ids": ["HD01SoU36", "HD01NU11", "HD01MJU9", "HD01SfU20", "HD01CU28"],
-      "article_generated": false,
-      "reason": "Already covered by existing 2026-02-16-committee-reports articles"
-    },
-    {
-      "type": "government_propositions",
-      "significance": "MEDIUM",
-      "title": "6 government propositions Feb 3-10",
-      "description": "EU financial access, IMF reporting, renewable energy, waste reform, housing registry, death estates",
-      "document_ids": ["HD03124", "HD03113", "HD03117", "HD03112", "HD03119", "HD03118"],
-      "article_generated": false,
-      "reason": "Already covered by existing 2026-02-16-government-propositions articles"
+      "slug": "2026-02-17-foreign-policy-security-push",
+      "type": "breaking",
+      "languages": 14,
+      "topic": "Multi-front foreign policy and security offensive"
     }
   ],
-  "articles_generated": {
-    "count": 14,
-    "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-    "slug": "2026-02-16-opposition-interpellations-offensive"
-  },
-  "data_sources": {
-    "riksdag_api": true,
-    "regering_api": true,
-    "mcp_server": "riksdag-regering-ai.onrender.com"
-  },
-  "next_check": "2026-02-16T16:22:29.905Z"
+  "sourcesChecked": [
+    "search_voteringar (2025/26)",
+    "search_dokument (from 2026-02-16)",
+    "search_anforanden (2025/26)",
+    "search_regering (from 2026-02-14)",
+    "get_calendar_events (2026-02-17)",
+    "get_fragor (2025/26)",
+    "get_interpellationer (2025/26)"
+  ],
+  "nextExpectedCheck": "2026-02-18T10:00:00Z"
 }
