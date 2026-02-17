@@ -24,9 +24,12 @@ on:
         default: '12'
 
 permissions:
-  issues: write
-  contents: write
-  pull-requests: write
+  contents: read
+  issues: read
+  pull-requests: read
+  actions: read
+  discussions: read
+  security-events: read
 
 timeout-minutes: 45
 
