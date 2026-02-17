@@ -31,9 +31,13 @@ timeout-minutes: 30
 
 network:
   allowed:
-    - defaults
     - node
     - riksdag-regering-ai.onrender.com
+    - github.com
+    - *.se
+    - *.com
+    - *.org
+    - *.io
 
 mcp-servers:
   riksdag-regering:
