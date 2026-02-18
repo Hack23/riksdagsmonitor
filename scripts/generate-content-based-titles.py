@@ -433,6 +433,98 @@ class TitleGenerator:
             print(f"  ❌ Error updating {filepath.name}: {e}")
             return False
     
+    def translate_text(self, text: str, target_lang: str, context: str = "title") -> str:
+        """
+        Translate text to target language.
+        Uses simple translation patterns for Swedish and keeps English for others.
+        Note: In production, integrate with Azure Translator API or Google Cloud Translation.
+        """
+        
+        # Language name mapping
+        lang_names = {
+            'sv': 'Swedish', 'da': 'Danish', 'no': 'Norwegian', 'fi': 'Finnish',
+            'de': 'German', 'fr': 'French', 'es': 'Spanish', 'nl': 'Dutch',
+            'ar': 'Arabic', 'he': 'Hebrew', 'ja': 'Japanese', 'ko': 'Korean', 'zh': 'Chinese'
+        }
+        
+        if target_lang == 'en':
+            return text
+        
+        # Comprehensive Swedish translations for political/government terminology
+        if target_lang == 'sv':
+            # Word-level translations (order matters - longer phrases first)
+            translations = {
+                # Article types
+                'Committee Reports': 'Utskottsrapporter',
+                'Government Propositions': 'Regeringspropositioner',
+                'Opposition Motions': 'Oppositionsmotioner',
+                
+                # Action phrases
+                'Dominate Committee Agenda': 'Dominerar Utskottsagendan',
+                'Lead Government Legislative Push': 'Leder Regeringens Lagstiftningsoffensiv',
+                'in Focus': 'i Fokus',
+                'Opposition Challenges': 'Oppositionen Utmanar',
+                'Opposition Unites Against': 'Oppositionen Enar sig Mot',
+                'Splits on': 'Delar sig om',
+                
+                # Policy areas (capitalized)
+                'Border': 'Gränskontroll',
+                'Customs': 'Tull',
+                'Appropriations': 'Anslag',
+                'Tax': 'Skatt',
+                'Vat': 'Moms',
+                'Weapons': 'Vapen',
+                'Audit': 'Revision',
+                'Financial': 'Finansiell',
+                'Detention': 'Frihetsberövande',
+                'Elderly Care': 'Äldreomsorg',
+                'Government Personnel': 'Regeringspersonal',
+                'Animal': 'Djur',
+                'Data Protection': 'Dataskydd',
+                'Security': 'Säkerhet',
+                'Defense': 'Försvar',
+                
+                # Policy areas (lowercase for descriptions)
+                'border': 'gränskontroll',
+                'customs': 'tull',
+                'appropriations': 'anslag',
+                'tax': 'skatt',
+                'vat': 'moms',
+                'weapons': 'vapen',
+                'audit': 'revision',
+                'financial': 'finansiella',
+                'detention': 'frihetsberövande',
+                'elderly care': 'äldreomsorg',
+                'government personnel': 'regeringspersonal',
+                'animal': 'djur',
+                'data protection': 'dataskydd',
+                'security': 'säkerhet',
+                'defense': 'försvar',
+                'renewable energy': 'förnybar energi',
+                
+                # Description phrases
+                'Analysis of': 'Analys av',
+                'committee reports': 'utskottsrapporter',
+                'government propositions': 'regeringspropositioner',
+                'opposition motions': 'oppositionsmotioner',
+                'covering': 'som omfattar',
+                'shaping legislative agenda': 'formar lagstiftningsagendan',
+                'challenging government policy': 'utmanar regeringens politik',
+                'in parliamentary committees': 'i riksdagens utskott',
+                'key policy areas': 'centrala politikområden',
+                'legislative priorities': 'lagstiftningsprioriteringar',
+                'and': 'och',
+            }
+            
+            translated = text
+            for eng, swe in translations.items():
+                translated = translated.replace(eng, swe)
+            return translated
+        
+        # For other languages, keep English
+        # Production would use Azure Translator API for proper translations
+        return text
+    
     def process_article_set(self, base_filename: str, dry_run: bool = False) -> int:
         """Process all language versions of an article"""
         
@@ -487,17 +579,25 @@ class TitleGenerator:
         if self.update_article_metadata(en_file, en_title, en_description, dry_run):
             updated_count += 1
         
-        # For now, we'll use English titles for all languages
-        # In a production system, these would be translated
-        # Process other language versions
+        # Translate and update other language versions
         for lang in self.LANGUAGES:
             if lang == 'en':
                 continue
             
             lang_file = self.news_dir / f"{base_filename}-{lang}.html"
             if lang_file.exists():
-                # Use same title/description (would be translated in production)
-                if self.update_article_metadata(lang_file, en_title, en_description, dry_run):
+                # Translate title and description to target language
+                lang_title = self.translate_text(en_title, lang, context="title")
+                lang_description = self.translate_text(en_description, lang, context="description")
+                
+                # Store translated version
+                self.title_mapping[base_filename][lang] = {
+                    'title': lang_title,
+                    'description': lang_description
+                }
+                
+                # Update article with translated metadata
+                if self.update_article_metadata(lang_file, lang_title, lang_description, dry_run):
                     updated_count += 1
         
         return updated_count
