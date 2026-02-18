@@ -1,0 +1,111 @@
+name-template: 'Riksdagsmonitor $RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+  - title: '🔒 Security'
+    labels:
+      - 'security'
+  - title: '📚 Documentation'
+    labels:
+      - 'documentation'
+      - 'docs'
+  - title: '🧪 Testing'
+    labels:
+      - 'test'
+      - 'testing'
+  - title: '⚡ Performance'
+    labels:
+      - 'performance'
+  - title: '🏗️ Infrastructure'
+    labels:
+      - 'infrastructure'
+      - 'ci'
+      - 'cd'
+  - title: '🎨 UI/UX'
+    labels:
+      - 'ui'
+      - 'ux'
+      - 'design'
+  - title: '♿ Accessibility'
+    labels:
+      - 'accessibility'
+      - 'a11y'
+  - title: '🌐 Internationalization'
+    labels:
+      - 'i18n'
+      - 'l10n'
+      - 'translation'
+  - title: '🔧 Maintenance'
+    labels:
+      - 'chore'
+      - 'maintenance'
+      - 'dependencies'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+version-resolver:
+  major:
+    labels:
+      - 'major'
+      - 'breaking'
+  minor:
+    labels:
+      - 'minor'
+      - 'feature'
+      - 'enhancement'
+  patch:
+    labels:
+      - 'patch'
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+      - 'chore'
+  default: patch
+template: |
+  ## What's Changed
+
+  $CHANGES
+
+  ## 📊 Release Metrics
+  
+  - **Test Coverage**: See [Coverage Report](https://riksdagsmonitor.com/docs/coverage/)
+  - **API Documentation**: See [API Docs](https://riksdagsmonitor.com/docs/api/)
+  - **E2E Tests**: See [E2E Reports](https://riksdagsmonitor.com/docs/cypress/)
+  
+  ## 🔐 Security & Supply Chain
+  
+  This release includes:
+  - ✅ SLSA Build Provenance Attestations
+  - ✅ Software Bill of Materials (SBOM) in SPDX format
+  - ✅ SHA-256 checksums for all artifacts
+  - ✅ CodeQL security scanning
+  - ✅ Dependency vulnerability scanning
+  
+  Verify attestations:
+  ```bash
+  gh attestation verify riksdagsmonitor-$RESOLVED_VERSION.zip -R Hack23/riksdagsmonitor
+  ```
+  
+  ## 📦 Artifacts
+  
+  - `riksdagsmonitor-$RESOLVED_VERSION.zip` - Production build
+  - `riksdagsmonitor-$RESOLVED_VERSION.zip.sha256` - Checksum
+  - `riksdagsmonitor-$RESOLVED_VERSION.spdx.json` - SBOM
+  - `*.intoto.jsonl` - Attestations
+  
+  ## 🚀 Deployment
+  
+  - **Primary**: https://riksdagsmonitor.com (AWS S3/CloudFront)
+  - **Backup**: GitHub Pages
+  - **Documentation**: https://riksdagsmonitor.com/docs/
+  
+  ## 👥 Contributors
+  
+  $CONTRIBUTORS

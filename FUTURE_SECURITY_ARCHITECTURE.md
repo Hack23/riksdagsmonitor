@@ -11,8 +11,8 @@
 
 ---
 
-**Document Version:** 1.1  
-**Last Updated:** 2026-02-10  
+**Document Version:** 1.2  
+**Last Updated:** 2026-02-18  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)  
 **Review Cycle:** Quarterly
@@ -81,6 +81,9 @@ graph TB
 - ✅ Interactive dashboards with SRI hash validation
 - ✅ Comprehensive ISMS documentation
 - ✅ AWS OIDC authentication (no long-lived credentials)
+- ✅ **NEW (2026-02-18): SLSA Level 2+ Build Provenance attestations**
+- ✅ **NEW (2026-02-18): SBOM generation in SPDX format**
+- ✅ **NEW (2026-02-18): Documentation as code (API, coverage, E2E reports)**
 
 **Limitations:**
 - ⚠️ CSP `'unsafe-inline'` required for Chart.js/D3.js (future: nonce-based CSP)
@@ -285,8 +288,9 @@ graph TB
 - Behavior-based access policies
 
 **Infrastructure Verification (2027 Q4)**
-- GitHub Actions attestations (SLSA Level 3)
-- Provenance verification for all artifacts
+- ✅ **IMPLEMENTED (2026-02-18): GitHub Actions attestations (SLSA Level 2+)**
+- ✅ **IMPLEMENTED (2026-02-18): Build Provenance verification**
+- **Future Goal:** SLSA Level 3 (hermetic builds, non-falsifiable provenance)
 - Binary authorization for deployments
 - Reproducible builds
 
@@ -580,7 +584,7 @@ graph TB
 | Risk ID | Future Threat | Likelihood (2030) | Impact | Mitigation | Timeline |
 |---------|---------------|-------------------|--------|------------|----------|
 | FR-01 | Quantum decryption of TLS | HIGH | CRITICAL | PQC migration | 2027-2028 |
-| FR-02 | AI-powered supply chain attack (Chart.js/D3.js) | MEDIUM | HIGH | SLSA Level 3, SBOM, SRI | 2027 |
+| FR-02 | AI-powered supply chain attack (Chart.js/D3.js) | MEDIUM | HIGH | ✅ SLSA Level 2+ (2026), SBOM, SRI | 2027 Q4 (Level 3) |
 | FR-03 | AWS infrastructure compromise | LOW | HIGH | Multi-CDN strategy, AWS security best practices | 2028 |
 | FR-04 | DNS hijacking via Route 53 | MEDIUM | MEDIUM | DNSSEC, DoH, IAM least privilege | 2027 |
 | FR-05 | Deepfake social engineering | MEDIUM | MEDIUM | MFA, training | 2026 |

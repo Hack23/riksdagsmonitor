@@ -1,0 +1,714 @@
+name: Release with Attestations
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (vX.Y.Z format)"
+        required: true
+        default: "v1.0.0"
+      prerelease:
+        description: "Is this a pre-release?"
+        type: boolean
+        default: false
+  push:
+    tags:
+      - "v*"
+
+# Restrict top-level permissions to minimum required defaults
+permissions: read-all
+
+jobs:
+  prepare:
+    name: Prepare Release
+    runs-on: ubuntu-latest
+    # Only prepare job needs write permissions for commit and tagging
+    permissions:
+      contents: write # Required for git auto-commit
+    outputs:
+      version: ${{ steps.get-version.outputs.version }}
+      is_prerelease: ${{ github.event.inputs.prerelease || 'false' }}
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Get version
+        id: get-version
+        run: |
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            VERSION=${GITHUB_REF#refs/tags/}
+          else
+            VERSION=${{ github.event.inputs.version }}
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "Version: ${VERSION}"
+
+      - name: Cache APT packages
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: /var/cache/apt/archives
+          key: ${{ runner.os }}-apt-${{ hashFiles('.github/workflows/release.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-apt-
+
+      - name: Setup Web Test Environment (Chrome + Xvfb + Dependencies)
+        run: |
+          echo "🔧 Setting up complete Web test environment..."
+
+          # Install system dependencies for Web rendering
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            xvfb dbus-x11 x11-utils \
+            libgtk2.0-0 libgtk-3-0 libgbm-dev libgbm1 \
+            libnotify-dev libnss3 libxss1 \
+            libxtst6 xauth \
+            graphviz ffmpeg \
+            fonts-noto fonts-noto-cjk fonts-noto-cjk-extra \
+            ca-certificates fonts-liberation \
+            libatk-bridge2.0-0 libatk1.0-0 libcups2 \
+            libdbus-1-3 libdrm2 libnspr4 \
+            libx11-xcb1 libxcomposite1 libxdamage1 \
+            libxfixes3 libxrandr2 libxrender1 \
+            libxshmfence1 xdg-utils wget libxkbcommon0 xkb-data
+
+          # Install Google Chrome Stable for Web WebGL support
+          wget -qO- https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+          # Setup D-Bus for Chrome
+          sudo mkdir -p /var/run/dbus
+          sudo dbus-daemon --system --fork || true
+          
+          # Verify Chrome installation
+          google-chrome --version
+          echo "✅ Web test environment setup complete"
+        env:
+          DISPLAY: ":99"
+          XKB_DEFAULT_RULES: evdev
+          XKB_DEFAULT_MODEL: pc105
+          XKB_DEFAULT_LAYOUT: us
+
+      - name: Start Xvfb
+        run: |
+          echo "🖥️ Starting Xvfb virtual display..."
+          Xvfb :99 -screen 0 1920x1080x24 &
+          sleep 2
+          echo "DISPLAY=:99" >> $GITHUB_ENV
+          echo "✅ Xvfb started on display :99"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Cache dependencies
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Cache Cypress binary
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cypress-${{ runner.os }}-
+
+      - name: Cache build artifacts
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: .tsbuildinfo
+          key: ${{ runner.os }}-tsbuild-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('js/**/*.js', 'dashboard/**/*.js', 'scripts/**/*.js') }}
+          restore-keys: |
+            ${{ runner.os }}-tsbuild-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-tsbuild-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Set Version for release
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          PLAIN_VERSION="${{ github.event.inputs.version }}"
+          # Remove 'v' prefix if present
+          PLAIN_VERSION="${PLAIN_VERSION#v}"
+          npm version $PLAIN_VERSION --no-git-tag-version
+
+      - uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          commit_message: "chore(release): bump version to ${{ github.event.inputs.version }}"
+          tagging_message: "${{ github.event.inputs.version }}"
+
+      - name: Verify Cypress
+        run: npx cypress verify
+
+      - name: Run unit tests with coverage
+        run: npm run coverage
+
+      - name: Start app and run E2E tests
+        env:
+          CYPRESS_VIDEO: false
+          NODE_OPTIONS: "--max-old-space-size=4096"
+          XKB_DEFAULT_RULES: evdev
+          XKB_DEFAULT_MODEL: pc105
+          XKB_DEFAULT_LAYOUT: us
+          TERM: dumb
+        run: |
+          echo "🚀 Running E2E tests for release validation..."
+          NODE_OPTIONS="--max-old-space-size=4096" xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24 -ac +extension GLX +extension RANDR +render -nolisten tcp" npm run e2e || TEST_EXIT_CODE=$?
+          exit ${TEST_EXIT_CODE:-0}
+
+      - name: Clean old docs
+        run: |
+          echo "🧹 Cleaning old documentation..."
+          rm -rf docs/api/* || true
+          rm -rf docs/cypress/* || true
+          rm -rf docs/test-results/* || true
+          rm -rf docs/coverage/* || true
+          rm -rf docs/dependencies/* || true
+          echo "✅ Old documentation cleaned"
+
+      - name: Generate API documentation
+        run: |
+          echo "📚 Generating JSDoc API documentation..."
+          npm run jsdoc
+          echo "✅ API documentation generated in api/"
+          
+          echo "📁 Syncing API documentation to docs/api/..."
+          mkdir -p docs/api
+          if [ -d "api" ]; then
+            cp -r api/* docs/api/ || true
+            echo "✅ API documentation available in docs/api/"
+          else
+            echo "⚠️ JSDoc output directory 'api' not found; skipping copy to docs/api/"
+          fi
+
+      - name: Generate dependencies documentation
+        run: |
+          echo "📦 Generating dependency tree documentation..."
+          npm run docs:dependencies
+          echo "✅ Dependency documentation generated in docs/dependencies/"
+
+      - name: Copy test reports to docs
+        run: |
+          echo "📊 Copying test reports to docs/..."
+          npm run build:test-reports
+          
+          # Copy Cypress reports if they exist
+          if [ -d "cypress/reports" ]; then
+            cp -r cypress/reports/* docs/cypress/ || true
+          fi
+          
+          # Create test results index if coverage exists
+          if [ -d "docs/coverage" ]; then
+            echo "✅ Coverage report available at docs/coverage/index.html"
+          fi
+          
+          echo "✅ Test reports copied to docs/"
+
+      - name: Create documentation index
+        run: |
+          echo "📝 Creating documentation index..."
+          cat > docs/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Riksdagsmonitor Documentation Hub</title>
+            <style>
+              * { margin: 0; padding: 0; box-sizing: border-box; }
+              body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #e0e0e0;
+                background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
+                min-height: 100vh;
+                padding: 2rem;
+              }
+              .container {
+                max-width: 1200px;
+                margin: 0 auto;
+              }
+              h1 {
+                color: #00d9ff;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+              }
+              .subtitle {
+                color: #ff006e;
+                font-size: 1.2rem;
+                margin-bottom: 3rem;
+              }
+              .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-bottom: 3rem;
+              }
+              .card {
+                background: rgba(26, 30, 61, 0.6);
+                border: 1px solid rgba(0, 217, 255, 0.3);
+                border-radius: 8px;
+                padding: 2rem;
+                transition: all 0.3s ease;
+              }
+              .card:hover {
+                border-color: #00d9ff;
+                box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+                transform: translateY(-5px);
+              }
+              .card h2 {
+                color: #ffbe0b;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+              }
+              .card p {
+                margin-bottom: 1.5rem;
+                color: #b0b0b0;
+              }
+              .card a {
+                display: inline-block;
+                padding: 0.75rem 1.5rem;
+                background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+                color: #0a0e27;
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: bold;
+                transition: all 0.3s ease;
+              }
+              .card a:hover {
+                background: linear-gradient(135deg, #00ffff 0%, #00d9ff 100%);
+                box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+              }
+              .footer {
+                text-align: center;
+                color: #808080;
+                margin-top: 3rem;
+                padding-top: 2rem;
+                border-top: 1px solid rgba(0, 217, 255, 0.2);
+              }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <h1>📚 Riksdagsmonitor Documentation Hub</h1>
+              <p class="subtitle">Swedish Parliament Intelligence Platform - Technical Documentation</p>
+              
+              <div class="grid">
+                <div class="card">
+                  <h2>📖 API Documentation</h2>
+                  <p>Comprehensive JSDoc-generated API reference for all JavaScript modules, dashboard components, and utility functions.</p>
+                  <a href="api/index.html">View API Docs →</a>
+                </div>
+                
+                <div class="card">
+                  <h2>📊 Test Coverage</h2>
+                  <p>Vitest coverage report showing line, branch, function, and statement coverage across the codebase.</p>
+                  <a href="coverage/index.html">View Coverage →</a>
+                </div>
+                
+                <div class="card">
+                  <h2>🧪 Test Results</h2>
+                  <p>Detailed unit test results from Vitest, including all test suites and individual test cases.</p>
+                  <a href="test-results/">View Test Results →</a>
+                </div>
+                
+                <div class="card">
+                  <h2>🎭 E2E Tests (Cypress)</h2>
+                  <p>End-to-end test reports from Cypress, validating dashboard functionality and user interactions.</p>
+                  <a href="cypress/">View E2E Reports →</a>
+                </div>
+                
+                <div class="card">
+                  <h2>📦 Dependencies</h2>
+                  <p>Complete dependency tree showing all npm packages and their versions used in the project.</p>
+                  <a href="dependencies/dependency-tree.txt">View Dependency Tree →</a>
+                </div>
+                
+                <div class="card">
+                  <h2>🏠 Back to Main Site</h2>
+                  <p>Return to the main Riksdagsmonitor platform to explore Swedish Parliament intelligence dashboards.</p>
+                  <a href="../index.html">Go to Main Site →</a>
+                </div>
+              </div>
+              
+              <div class="footer">
+                <p>Generated during release workflow | Riksdagsmonitor by Hack23 AB</p>
+                <p>Licensed under Apache License 2.0</p>
+              </div>
+            </div>
+          </body>
+          </html>
+          EOF
+          echo "✅ Documentation index created at docs/index.html"
+
+      - name: Create .nojekyll file
+        run: |
+          echo "🔧 Creating .nojekyll file to bypass Jekyll processing..."
+          touch docs/.nojekyll
+          echo "✅ .nojekyll file created"
+
+      - name: Update sitemap
+        run: |
+          echo "🗺️ Updating sitemap.xml..."
+          npm run docs:sitemap
+          echo "✅ Sitemap updated"
+
+      - name: Deploy Documentation to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
+        with:
+          folder: docs
+          target-folder: docs
+          branch: main
+          clean: false
+          commit-message: "docs: update documentation for ${{ steps.get-version.outputs.version || 'development' }}"
+
+  build:
+    name: Build Release Package
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    # Build job needs specific permissions for attestations
+    permissions:
+      contents: read
+      id-token: write # Required for OIDC
+      attestations: write # Required for SBOM and build attestations
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          # Use GITHUB_REF directly for tag events
+          ref: ${{ github.event_name == 'push' && github.ref || github.event_name == 'workflow_dispatch' && github.event.inputs.version || '' }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Cache dependencies
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Cache Vite build cache
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: node_modules/.vite
+          key: ${{ runner.os }}-vite-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-vite-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Create release artifacts
+        run: |
+          echo "📦 Creating release artifacts..."
+          # Create the zip file from the dist directory
+          cd dist
+          zip -r ../riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip .
+          cd ..
+          
+          # Create checksums
+          sha256sum riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip > riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256
+          
+          echo "✅ Release artifacts created"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: build-artifacts
+          path: |
+            dist/
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256
+          if-no-files-found: error
+
+      - name: Generate SBOM
+        uses: anchore/sbom-action@28d71544de8eaf1b958d335707167c5f783590ad # v0.22.2
+        id: sbom
+        with:
+          format: spdx-json
+          output-file: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
+          artifact-name: riksdagsmonitor-${{ needs.prepare.outputs.version }}
+
+      - name: Generate artifact attestation
+        uses: actions/attest-build-provenance@96278af6caaf10aea03fd8d33a09a777ca52d62f # v3.2.0
+        id: attest
+        with:
+          subject-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
+
+      - name: Copy artifact attestation for zip
+        run: cp ${{ steps.attest.outputs.bundle-path }} riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
+
+      - name: Generate SBOM attestation
+        id: attestsbom
+        uses: actions/attest-sbom@4651f806c01d8637787e274ac3bdf724ef169f34 # v3.0.0
+        with:
+          subject-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
+          sbom-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
+
+      - name: Copy SBOM attestation for zip
+        run: cp ${{ steps.attestsbom.outputs.bundle-path }} riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
+
+      - name: Upload security artifacts
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: security-artifacts
+          path: |
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
+          if-no-files-found: error
+
+  release:
+    name: Create Release and Deploy
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    # Release job needs specific permissions to create GitHub releases and deploy
+    permissions:
+      contents: write # Required to create releases
+      id-token: write # Required for OIDC/AWS
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+
+      # Checkout main branch to get latest documentation
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          ref: main # Always use main branch for deployment
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: build-artifacts
+          path: artifacts/build
+
+      - name: Download security artifacts
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: security-artifacts
+          path: artifacts/security
+
+      - name: Draft Release Notes
+        id: release-drafter
+        uses: release-drafter/release-drafter@6db134d15f3909ccc9eefd369f02bd1e9cffdf97 # v6.2.0
+        with:
+          version: ${{ needs.prepare.outputs.version }}
+          tag: ${{ needs.prepare.outputs.version }}
+          name: Riksdagsmonitor ${{ needs.prepare.outputs.version }}
+          publish: false
+          prerelease: ${{ needs.prepare.outputs.is_prerelease }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Create GitHub Release with all artifacts
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # v1.20.0
+        with:
+          tag: ${{ needs.prepare.outputs.version }}
+          name: Riksdagsmonitor ${{ needs.prepare.outputs.version }}
+          body: |
+            ${{ steps.release-drafter.outputs.body }}
+            
+            ## 📦 Release Artifacts
+            
+            - `riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip` - Production build
+            - `riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256` - Checksum for verification
+            - `riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json` - SBOM (Software Bill of Materials)
+            - `*.intoto.jsonl` - SLSA Build Provenance Attestations
+            
+            ## 📚 Documentation
+            
+            - [API Documentation](https://riksdagsmonitor.com/docs/api/)
+            - [Test Coverage Report](https://riksdagsmonitor.com/docs/coverage/)
+            - [E2E Test Reports](https://riksdagsmonitor.com/docs/cypress/)
+            - [Documentation Hub](https://riksdagsmonitor.com/docs/)
+            
+            ## 🔐 Security
+            
+            All artifacts include SLSA Build Provenance attestations and SBOM for supply chain security.
+            Verify attestations using the GitHub CLI:
+            
+            ```bash
+            gh attestation verify riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip -R Hack23/riksdagsmonitor
+            ```
+          generateReleaseNotes: false
+          immutableCreate: true
+          draft: false
+          prerelease: ${{ needs.prepare.outputs.is_prerelease }}
+          artifacts: |
+            artifacts/build/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
+            artifacts/build/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256
+            artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
+            artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
+            artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Deploy to S3/CloudFront (primary deployment)
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
+        with:
+          role-to-assume: arn:aws:iam::172017021075:role/GithubWorkFlowRole
+          role-session-name: githubworkflowrolesession-release
+          aws-region: us-east-1
+
+      - name: Restore file modification times from git
+        run: |
+          # Restore mtimes to git commit time for accurate change detection
+          git ls-tree -r --name-only HEAD | while read filename; do
+            TIME=$(git log -1 --format="%ai" -- "$filename")
+            touch -d "$TIME" "$filename"
+          done
+          echo "✅ Restored mtimes for $(git ls-tree -r --name-only HEAD | wc -l) files"
+
+      - name: Extract build to repository root
+        run: |
+          echo "📦 Extracting release build to repository root..."
+          # Remove old build artifacts
+          find . -maxdepth 1 -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.json" \) ! -name "package*.json" -delete
+          rm -rf styles/ js/ dashboard/ api/ || true
+          
+          # Extract new build
+          unzip -o artifacts/build/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip -d .
+          
+          # Create version marker
+          echo "Version ${{ needs.prepare.outputs.version }} deployed at $(date)" > version.txt
+          echo "✅ Build extracted and ready for deployment"
+
+      - name: Deploy to S3 with cache headers
+        run: |
+          BUCKET="s3://riksdagsmonitor-frontend-us-east-1-172017021075"
+          SRC="."
+
+          echo "🚀 Deploying to S3..."
+
+          # HTML files - short cache, must-revalidate
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.html' \
+            --cache-control 'public, max-age=3600, must-revalidate' \
+            --content-type 'text/html; charset=utf-8' \
+            --exclude 'screenshots/*' --exclude '.git/*' --exclude 'node_modules/*' \
+            --exclude 'artifacts/*' --exclude 'tests/*' --exclude 'cypress/*'
+
+          # CSS files - long cache, immutable
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.css' \
+            --cache-control 'public, max-age=31536000, immutable' \
+            --content-type 'text/css' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # JS files - long cache, immutable
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.js' \
+            --cache-control 'public, max-age=31536000, immutable' \
+            --content-type 'application/javascript' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # Image files - long cache, immutable
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
+            --include '*.webp' --include '*.png' --include '*.jpg' --include '*.jpeg' \
+            --include '*.gif' --include '*.svg' --include '*.ico' \
+            --cache-control 'public, max-age=31536000, immutable' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # Font files - long cache, immutable
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
+            --include '*.woff' --include '*.woff2' --include '*.ttf' --include '*.eot' --include '*.otf' \
+            --cache-control 'public, max-age=31536000, immutable' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # Metadata files - medium cache (1 day)
+          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
+            --include '*.xml' --include 'version.txt' \
+            --cache-control 'public, max-age=86400' \
+            --exclude 'screenshots/*' --exclude '.git/*'
+
+          # Docs directory - documentation
+          aws s3 sync "$SRC/docs" "$BUCKET/docs" \
+            --cache-control 'public, max-age=86400' \
+            --exclude 'screenshots/*'
+
+          echo "✅ S3 deployment completed"
+
+      - name: Invalidate CloudFront
+        run: |
+          echo "🔍 Discovering CloudFront distribution ID..."
+          CloudFrontDistId=$(aws cloudformation describe-stacks \
+            --stack-name riksdagsmonitor-frontend \
+            --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue" \
+            --output text 2>/dev/null || echo "")
+          
+          if [ -z "$CloudFrontDistId" ]; then
+            echo "⚠️  Warning: CloudFront distribution ID not found in stack outputs"
+            echo "Attempting to find distribution by S3 origin domain..."
+            CloudFrontDistId=$(aws cloudfront list-distributions \
+              --output json 2>/dev/null | \
+              jq -r ".DistributionList.Items[] | select(.Origins.Items[].DomainName | contains(\"riksdagsmonitor-frontend\")) | .Id" | \
+              head -n 1 || echo "")
+          fi
+          
+          if [ -z "$CloudFrontDistId" ] || [ "$CloudFrontDistId" = "None" ]; then
+            echo "❌ Error: Could not discover CloudFront distribution ID"
+            exit 1
+          fi
+          
+          echo "✅ Found CloudFront distribution: $CloudFrontDistId"
+          echo "🔄 Creating cache invalidation..."
+          
+          aws cloudfront create-invalidation \
+            --distribution-id $CloudFrontDistId \
+            --paths "/*"
+          
+          echo "✅ CloudFront cache invalidation completed"
+
+      - name: Deployment Summary
+        run: |
+          echo "🎉 Release ${{ needs.prepare.outputs.version }} deployment complete!"
+          echo ""
+          echo "📍 Deployments:"
+          echo "  - Primary: https://riksdagsmonitor.com (S3/CloudFront)"
+          echo "  - Backup: GitHub Pages (main branch)"
+          echo ""
+          echo "📚 Documentation:"
+          echo "  - https://riksdagsmonitor.com/docs/"
+          echo "  - API: https://riksdagsmonitor.com/docs/api/"
+          echo "  - Coverage: https://riksdagsmonitor.com/docs/coverage/"
+          echo ""
+          echo "🔐 Security Artifacts:"
+          echo "  - SBOM: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json"
+          echo "  - Attestations: *.intoto.jsonl files"
+          echo ""
+          echo "✅ All deployment steps completed successfully!"

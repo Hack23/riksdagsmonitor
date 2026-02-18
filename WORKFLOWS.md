@@ -1,11 +1,23 @@
 # 🔄 Riksdagsmonitor - CI/CD Workflows
 
+### CI/CD & Security
 [![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
 [![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
+[![CodeQL](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 
-**Document Version:** 3.1  
-**Last Updated:** 2026-02-16  
+### Testing
+[![JavaScript Testing](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml)
+[![JSDoc Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml)
+[![Translation Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml)
+
+### Documentation & Release
+[![Release](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml)
+[![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=javascript)](https://riksdagsmonitor.com/docs/api/)
+[![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest)](https://riksdagsmonitor.com/docs/coverage/)
+
+**Document Version:** 4.0  
+**Last Updated:** 2026-02-18  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -13,8 +25,16 @@
 
 This document describes the Continuous Integration and Continuous Deployment (CI/CD) workflows for Riksdagsmonitor. All workflows are implemented using GitHub Actions and follow Hack23 AB's [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md).
 
-**Total Workflows: 17** ⬆️ (15 existing + 2 new: setup-labels, labeler)  
-**Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
+**Total Workflows: 26** ⬆️ (updated from 17)  
+**Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled where applicable)  
+**ISMS Compliance:** ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1
+
+### Compliance Frameworks
+- **ISO 27001:2022:** A.8.31 (Separation of dev/test/prod), A.8.32 (Change management), A.5.37 (Documented operating procedures)
+- **NIST CSF 2.0:** ID.RA (Risk Assessment), PR.DS (Data Security), DE.CM (Continuous Monitoring)
+- **CIS Controls v8.1:** 16.6 (Application Software Security), 16.10 (Vulnerability Remediation)
+
+See [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) for complete framework documentation.
 
 ## Workflow Overview
 
@@ -23,6 +43,8 @@ graph TD
     A[Developer Push/PR] --> B{Workflow Type}
     B -->|Quality| C[Quality Checks]
     B -->|Security| D[Dependency Review]
+    B -->|Testing| T[Testing Suite]
+    B -->|Release| R[Release Pipeline]
     B -->|Agent| E[Copilot Setup]
     
     C --> F[HTML Validation]
@@ -30,6 +52,15 @@ graph TD
     
     D --> H[Dependency Scan]
     D --> I[Vulnerability Check]
+    D --> CodeQL[CodeQL Analysis]
+    
+    T --> JS[JavaScript Testing]
+    T --> JSDoc[JSDoc Validation]
+    T --> Trans[Translation Check]
+    
+    R --> Build[Build & Test]
+    R --> Attest[SLSA Attestations]
+    R --> Deploy[Dual Deploy]
     
     E --> J[MCP Server Init]
     E --> K[Agent Environment]
@@ -42,16 +73,216 @@ graph TD
     L -->|Yes| M[Approve]
     L -->|No| N[Block/Alert]
     
-    M --> O[GitHub Pages Deploy]
+    M --> O[Deploy to AWS S3/CloudFront + GitHub Pages]
     
     style C fill:#4caf50
     style D fill:#ff9800
+    style T fill:#00bcd4
+    style R fill:#9c27b0
     style E fill:#2196f3
     style M fill:#4caf50
     style N fill:#f44336
 ```
 
-## 1. Quality Checks Workflow
+## Complete Workflow Inventory
+
+### 🔐 Security & Compliance (5 workflows)
+
+#### 1.1 CodeQL Analysis
+- **File:** `.github/workflows/codeql.yml`
+- **Trigger:** Push to main, PR, Schedule (weekly)
+- **Purpose:** Static code analysis for security vulnerabilities
+- **ISMS Controls:** ISO 27001 A.8.8, NIST CSF PR.DS-6, CIS 16.6
+- **Evidence:** [Hack23 ISMS - Security Testing](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#security-testing)
+
+#### 1.2 Dependency Review
+- **File:** `.github/workflows/dependency-review.yml`
+- **Trigger:** Pull requests
+- **Purpose:** Vulnerability scanning for dependencies
+- **ISMS Controls:** ISO 27001 A.8.8, NIST CSF ID.RA-1, CIS 16.10
+- **Evidence:** [Hack23 ISMS - Dependency Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#dependency-management)
+
+#### 1.3 OpenSSF Scorecard
+- **File:** `.github/workflows/scorecards.yml`
+- **Trigger:** Schedule (weekly), Push to main
+- **Purpose:** Supply chain security assessment
+- **ISMS Controls:** ISO 27001 A.8.30, NIST CSF ID.SC-3, CIS 16.6
+- **Evidence:** [Hack23 ISMS - Supply Chain Security](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#supply-chain-security)
+
+#### 1.4 Setup Labels
+- **File:** `.github/workflows/setup-labels.yml`
+- **Trigger:** Workflow dispatch
+- **Purpose:** Initialize repository labels for issue management
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+#### 1.5 Labeler
+- **File:** `.github/workflows/labeler.yml`
+- **Trigger:** Pull requests
+- **Purpose:** Automatic PR labeling based on file changes
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+### 🧪 Testing & Validation (7 workflows)
+
+#### 2.1 JavaScript Testing
+- **File:** `.github/workflows/javascript-testing.yml`
+- **Trigger:** Push, PR, Schedule (daily)
+- **Purpose:** Unit tests, E2E tests with Cypress, build validation
+- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12, CIS 16.1
+- **Evidence:** [Hack23 ISMS - Testing Standards](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#testing-requirements)
+
+#### 2.2 JSDoc Validation
+- **File:** `.github/workflows/jsdoc-validation.yml`
+- **Trigger:** Push, PR
+- **Purpose:** API documentation generation and validation
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+#### 2.3 Quality Checks
+- **File:** `.github/workflows/quality-checks.yml`
+- **Trigger:** Push, PR
+- **Purpose:** HTML validation, link checking
+- **ISMS Controls:** ISO 27001 A.14.2, NIST CSF PR.IP-12, CIS 16.1
+
+#### 2.4 Translation Validation
+- **File:** `.github/workflows/translation-validation.yml`
+- **Trigger:** Push, PR
+- **Purpose:** Validate 14-language content consistency
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+#### 2.5 Test Dashboard
+- **File:** `.github/workflows/test-dashboard.yml`
+- **Trigger:** Push, PR
+- **Purpose:** Dashboard functionality validation
+- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12
+
+#### 2.6 Test Homepage
+- **File:** `.github/workflows/test-homepage.yml`
+- **Trigger:** Push, PR
+- **Purpose:** Homepage functionality validation
+- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12
+
+#### 2.7 Test News
+- **File:** `.github/workflows/test-news.yml`
+- **Trigger:** Push, PR
+- **Purpose:** News article functionality validation
+- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12
+
+### 📦 Data Pipeline & CIA Integration (5 workflows)
+
+#### 3.1 Data Pipeline
+- **File:** `.github/workflows/data-pipeline.yml`
+- **Trigger:** Schedule (nightly 02:00 CET), Workflow dispatch
+- **Purpose:** Fetch and process CIA platform data
+- **ISMS Controls:** ISO 27001 A.8.16, NIST CSF PR.DS-5, CIS 8.2
+
+#### 3.2 Check CIA Schema Updates
+- **File:** `.github/workflows/check-cia-schema-updates.yml`
+- **Trigger:** Schedule (weekly)
+- **Purpose:** Monitor CIA schema changes
+- **ISMS Controls:** ISO 27001 A.8.31, NIST CSF ID.RA-1
+
+#### 3.3 Sync CIA Schemas
+- **File:** `.github/workflows/sync-cia-schemas.yml`
+- **Trigger:** Workflow dispatch
+- **Purpose:** Synchronize CIA JSON schemas
+- **ISMS Controls:** ISO 27001 A.8.31, NIST CSF ID.RA-1
+
+#### 3.4 Update CIA Stats
+- **File:** `.github/workflows/update-cia-stats.yml`
+- **Trigger:** Schedule, Workflow dispatch
+- **Purpose:** Update statistics from CIA platform
+- **ISMS Controls:** ISO 27001 A.8.16, NIST CSF PR.DS-5
+
+#### 3.5 Validate CIA Data
+- **File:** `.github/workflows/validate-cia-data.yml`
+- **Trigger:** Push, PR
+- **Purpose:** Validate CIA data integrity
+- **ISMS Controls:** ISO 27001 A.8.24, NIST CSF PR.DS-8, CIS 3.12
+
+### 🚀 Release & Deployment (3 workflows)
+
+#### 4.1 Release with Attestations
+- **File:** `.github/workflows/release.yml`
+- **Trigger:** Workflow dispatch, Tag push (v*.*.*)
+- **Purpose:** Build, test, generate SLSA attestations, deploy
+- **Jobs:** Prepare (15-20min) → Build (5min) → Release (5-10min)
+- **Attestations:** SLSA Build Provenance + SBOM (SPDX)
+- **Deployment:** Dual (AWS S3/CloudFront + GitHub Pages)
+- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.DS-6, CIS 16.6
+- **Evidence:** [Hack23 ISMS - Release Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#release-management)
+- **Documentation:** See [RELEASE_PROCESS.md](RELEASE_PROCESS.md)
+
+#### 4.2 Deploy to S3
+- **File:** `.github/workflows/deploy-s3.yml`
+- **Trigger:** Push to main
+- **Purpose:** Deploy to AWS S3/CloudFront
+- **ISMS Controls:** ISO 27001 A.8.31, NIST CSF PR.DS-6, CIS 16.11
+
+#### 4.3 Lighthouse CI
+- **File:** `.github/workflows/lighthouse-ci.yml`
+- **Trigger:** Push, PR
+- **Purpose:** Performance and accessibility audits
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+### 🤖 Agentic Workflows (4 workflows)
+
+#### 5.1 News Article Generator
+- **File:** `.github/workflows/news-article-generator.lock.yml`
+- **Trigger:** Schedule (daily), Workflow dispatch
+- **Purpose:** Automated news article generation
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+#### 5.2 News Evening Analysis
+- **File:** `.github/workflows/news-evening-analysis.lock.yml`
+- **Trigger:** Schedule (nightly 21:00 CET), Workflow dispatch
+- **Purpose:** Daily political intelligence analysis
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+#### 5.3 News Realtime Monitor
+- **File:** `.github/workflows/news-realtime-monitor.lock.yml`
+- **Trigger:** Schedule (hourly), Workflow dispatch
+- **Purpose:** Real-time political event monitoring
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+#### 5.4 Compile Agentic Workflows
+- **File:** `.github/workflows/compile-agentic-workflows.yml`
+- **Trigger:** Push to .github/workflows/*.md
+- **Purpose:** Compile markdown agentic workflows to YAML
+- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12
+
+### 📊 Monitoring & Uptime (2 workflows)
+
+#### 6.1 Uptime Monitor
+- **File:** `.github/workflows/uptime-monitor.yml`
+- **Trigger:** Schedule (every 5 minutes)
+- **Purpose:** Monitor site availability and performance
+- **Targets:** Primary (AWS) + DR (GitHub Pages)
+- **ISMS Controls:** ISO 27001 A.8.6, NIST CSF DE.CM-7, CIS 8.11
+
+#### 6.2 Copilot Setup Steps
+- **File:** `.github/workflows/copilot-setup-steps.yml`
+- **Trigger:** Workflow dispatch
+- **Purpose:** GitHub Copilot agent environment setup
+- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+
+---
+
+## Workflow Security Summary
+
+**All workflows implement:**
+- ✅ SHA-pinned GitHub Actions (supply chain security)
+- ✅ step-security/harden-runner (egress auditing)
+- ✅ Least-privilege permissions (contents: read default)
+- ✅ OIDC authentication (no long-lived credentials)
+- ✅ Secrets management (GitHub Secrets, AWS IAM OIDC)
+
+**Compliance Mapping:**
+- **ISO 27001:2022:** A.8.31 (Environment separation), A.8.32 (Change management), A.14.2 (Security in development)
+- **NIST CSF 2.0:** ID.RA (Risk Assessment), PR.DS (Data Security), DE.CM (Continuous Monitoring)
+- **CIS Controls v8.1:** 16.1 (Secure development), 16.6 (Application security), 16.10 (Vulnerability remediation)
+
+---
+
+## 1. Quality Checks Workflow (Detailed)
 
 **File:** `.github/workflows/quality-checks.yml`  
 **Trigger:** Push to master/main, Pull requests  

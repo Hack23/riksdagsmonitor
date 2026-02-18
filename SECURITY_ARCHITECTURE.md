@@ -1,7 +1,7 @@
 # 🛡️ Riksdagsmonitor - Security Architecture
 
-**Document Version:** 1.3  
-**Last Updated:** 2026-02-10  
+**Document Version:** 1.4  
+**Last Updated:** 2026-02-18  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -9,7 +9,9 @@
 
 Riksdagsmonitor is a web platform providing Swedish Parliament intelligence and election monitoring capabilities. This document outlines the security architecture aligned with Hack23 AB's Information Security Management System (ISMS), [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md), and compliance frameworks (ISO 27001, NIST CSF 2.0, CIS Controls v8.1).
 
-**Security Posture:** Defense-in-depth architecture with dual-deployment (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access, and comprehensive CI/CD security controls.
+**Security Posture:** Defense-in-depth architecture with dual-deployment (AWS CloudFront/S3 multi-region primary, GitHub Pages disaster recovery), HTTPS-only access, comprehensive CI/CD security controls, and SLSA Build Provenance attestations.
+
+**For complete CI/CD workflow documentation, see [WORKFLOWS.md](WORKFLOWS.md).**
 
 ## 1. 🏗️ System Overview
 
@@ -337,6 +339,80 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - ISO 27001: A.16.1 Management of Information Security Incidents
 - NIST CSF 2.0: RS.CO-1 (Personnel know their roles and order of operations)
 - CIS Controls v8.1: 17.1 (Designate Personnel to Manage Incident Handling)
+
+### 2.8 Release Security & Supply Chain Protection
+
+**SLSA Build Provenance Attestations:**
+- **Framework:** SLSA (Supply Chain Levels for Software Artifacts) Level 2+
+- **Implementation:** GitHub Actions Attestations (`actions/attest-build-provenance@v3.2.0`)
+- **Purpose:** Cryptographically prove artifacts were built by trusted CI/CD pipeline
+- **Verification:** `gh attestation verify riksdagsmonitor-vX.Y.Z.zip -R Hack23/riksdagsmonitor`
+- **Format:** in-toto attestations (*.intoto.jsonl)
+
+**Software Bill of Materials (SBOM):**
+- **Format:** SPDX (Software Package Data Exchange)
+- **Generator:** Anchore SBOM Action (`anchore/sbom-action@v0.22.2`)
+- **Contents:** Complete dependency inventory with versions and licenses
+- **Attestation:** SBOM also cryptographically signed (`actions/attest-sbom@v3.0.0`)
+- **Purpose:** Vulnerability tracking, license compliance, supply chain transparency
+
+**Release Pipeline Security (3-job workflow):**
+
+1. **Prepare Job (15-20min):**
+   - Run comprehensive test suite (unit + E2E)
+   - Generate all documentation (API, coverage, E2E reports, dependencies)
+   - Deploy docs to GitHub Pages
+   - Security: Read-only permissions, harden-runner enabled
+
+2. **Build Job (5min):**
+   - Build production artifacts
+   - Generate SBOM in SPDX format
+   - Create SLSA Build Provenance attestation
+   - Create SBOM attestation
+   - Generate SHA-256 checksums
+   - Security: Minimal write permissions (contents: write, attestations: write, id-token: write)
+
+3. **Release Job (5-10min):**
+   - Create GitHub Release with all artifacts
+   - Deploy to AWS S3/CloudFront (OIDC authentication)
+   - Deploy to GitHub Pages (disaster recovery)
+   - Invalidate CloudFront cache
+   - Security: OIDC for AWS (no long-lived credentials), least-privilege IAM roles
+
+**Release Artifacts (per version):**
+- `riksdagsmonitor-vX.Y.Z.zip` - Production build
+- `riksdagsmonitor-vX.Y.Z.zip.sha256` - Integrity checksum
+- `riksdagsmonitor-vX.Y.Z.spdx.json` - SBOM
+- `riksdagsmonitor-vX.Y.Z.zip.intoto.jsonl` - Build provenance attestation
+- `riksdagsmonitor-vX.Y.Z.spdx.json.intoto.jsonl` - SBOM attestation
+
+**Documentation as Code:**
+All technical reports automatically generated and committed to `docs/` on each release:
+- `docs/api/` - JSDoc API documentation
+- `docs/coverage/` - Vitest test coverage (HTML + lcov)
+- `docs/test-results/` - Vitest test results (JSON + HTML)
+- `docs/cypress/` - Cypress E2E test reports
+- `docs/dependencies/` - npm dependency tree (JSON + TXT)
+- `docs/index.html` - Documentation hub (cyberpunk-themed)
+
+**Verification Procedures:**
+```bash
+# Verify build provenance attestation
+gh attestation verify riksdagsmonitor-vX.Y.Z.zip -R Hack23/riksdagsmonitor
+
+# Verify SBOM attestation
+gh attestation verify riksdagsmonitor-vX.Y.Z.spdx.json -R Hack23/riksdagsmonitor
+
+# Verify artifact integrity
+sha256sum -c riksdagsmonitor-vX.Y.Z.zip.sha256
+```
+
+**Control Mapping:**
+- ISO 27001: A.8.30 (Secure coding), A.8.32 (Change management), A.14.2 (Security in development)
+- NIST CSF 2.0: PR.DS-6 (Integrity verification mechanisms), ID.SC-3 (Supply chain risk assessment)
+- CIS Controls v8.1: 16.6 (Application software security), 16.10 (Vulnerability remediation)
+
+**For complete release process documentation, see [RELEASE_PROCESS.md](RELEASE_PROCESS.md) and [WORKFLOWS.md](WORKFLOWS.md#41-release-with-attestations).**
 
 ## 3. 📋 Compliance Mapping
 

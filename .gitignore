@@ -17,14 +17,22 @@ htmlhint-report.txt
 internal-links-report.json
 external-links-report.json
 
-# Test coverage
+# Test coverage (generated during development, committed during release)
 coverage/
 .nyc_output/
+
+# Test reports (generated during development, committed during release)
+docs/coverage/
+docs/test-results/
+docs/cypress/
+docs/dependencies/
+docs/diagrams/
 
 # Cypress
 cypress/screenshots/
 cypress/videos/
 cypress/downloads/
+cypress/reports/
 
 # Vitest
 .vitest/
