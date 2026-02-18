@@ -153,9 +153,16 @@
 import { CIADataLoader } from './cia-data-loader.js';
 import { CIADashboardRenderer } from './cia-visualizations.js';
 import { Election2026Predictions } from './election-predictions.js';
+import { t } from './i18n-translations.js';
 
 async function initDashboard() {
   const loader = new CIADataLoader();
+  
+  // Update loading text with i18n
+  const loadingText = document.querySelector('#loading-state p');
+  if (loadingText) {
+    loadingText.textContent = t('loadingData');
+  }
   
   try {
     // Load all CIA exports using the loadAll method
@@ -192,11 +199,15 @@ async function initDashboard() {
     console.error('Dashboard initialization error:', error);
     document.getElementById('loading-state').classList.add('hidden');
     document.getElementById('error-state').classList.remove('hidden');
-    document.getElementById('error-message').textContent =
-      (error && error.message) || 'An unknown error occurred while loading dashboard data.';
     
-    // Retry button handler
-    document.getElementById('retry-button').addEventListener('click', () => {
+    // Use i18n for user-facing error message, log technical details to console
+    const errorMessage = t('errorLoadingData');
+    document.getElementById('error-message').textContent = errorMessage;
+    
+    // Retry button with i18n text
+    const retryButton = document.getElementById('retry-button');
+    retryButton.textContent = t('retryButton');
+    retryButton.addEventListener('click', () => {
       location.reload();
     });
   }

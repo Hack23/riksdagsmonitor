@@ -164,6 +164,30 @@
 }
 
 /* ==================================================
+   LANGUAGE-SPECIFIC FONT SUPPORT
+   ================================================== */
+/* CJK (Chinese, Japanese, Korean) and RTL (Arabic, Hebrew) Language Support */
+:lang(ja) {
+  font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:lang(ko) {
+  font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:lang(zh) {
+  font-family: 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:lang(ar) {
+  font-family: 'Noto Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:lang(he) {
+  font-family: 'Noto Sans Hebrew', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==================================================
    BLACK TRIGRAM THEME (Martial Arts Red)
    ================================================== */
 .theme-black-trigram {
