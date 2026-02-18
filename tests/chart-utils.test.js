@@ -1,8 +1,4 @@
 /**
- * @jest-environment jsdom
- */
-
-/**
  * Chart Utilities Test Suite
  * 
  * Tests for the ChartUtils module including:
@@ -11,15 +7,26 @@
  * - Accessibility helpers
  * - Formatting utilities
  * - Performance utilities
+ * 
+ * Note: Uses Vitest with happy-dom environment (configured in vitest.config.js)
  */
+
+import { describe, it, expect, beforeAll, beforeEach, vi } from 'vitest';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 describe('ChartUtils', () => {
   let container;
   
   beforeAll(() => {
     // Mock getComputedStyle before loading the module
-    global.getComputedStyle = jest.fn(() => ({
-      getPropertyValue: jest.fn(() => '')
+    global.getComputedStyle = vi.fn(() => ({
+      getPropertyValue: vi.fn(() => '')
     }));
     
     // Mock window dimensions
@@ -27,10 +34,8 @@ describe('ChartUtils', () => {
     global.innerHeight = 768;
     
     // Load the ChartUtils module by executing it in the global context
-    const fs = require('fs');
-    const path = require('path');
-    const chartUtilsPath = path.join(__dirname, '../js/chart-utils.js');
-    const chartUtilsCode = fs.readFileSync(chartUtilsPath, 'utf8');
+    const chartUtilsPath = join(__dirname, '../js/chart-utils.js');
+    const chartUtilsCode = readFileSync(chartUtilsPath, 'utf8');
     
     // Execute the code in the context of the window object
     const script = new Function('window', chartUtilsCode);
@@ -54,7 +59,7 @@ describe('ChartUtils', () => {
   });
   
   describe('getResponsiveOptions()', () => {
-    test('should return responsive options for bar chart', () => {
+    it('should return responsive options for bar chart', () => {
       const options = window.ChartUtils.getResponsiveOptions('bar');
       
       expect(options).toHaveProperty('responsive', true);
@@ -63,21 +68,21 @@ describe('ChartUtils', () => {
       expect(options.plugins).toHaveProperty('tooltip');
     });
     
-    test('should position legend at top on desktop', () => {
+    it('should position legend at top on desktop', () => {
       global.innerWidth = 1024;
       const options = window.ChartUtils.getResponsiveOptions('bar');
       
       expect(options.plugins.legend.position).toBe('top');
     });
     
-    test('should position legend at bottom on mobile', () => {
+    it('should position legend at bottom on mobile', () => {
       global.innerWidth = 375;
       const options = window.ChartUtils.getResponsiveOptions('bar');
       
       expect(options.plugins.legend.position).toBe('bottom');
     });
     
-    test('should include scales for bar/line/scatter charts', () => {
+    it('should include scales for bar/line/scatter charts', () => {
       const options = window.ChartUtils.getResponsiveOptions('bar');
       
       expect(options).toHaveProperty('scales');
@@ -85,13 +90,13 @@ describe('ChartUtils', () => {
       expect(options.scales).toHaveProperty('y');
     });
     
-    test('should not include scales for pie/doughnut charts', () => {
+    it('should not include scales for pie/doughnut charts', () => {
       const options = window.ChartUtils.getResponsiveOptions('pie');
       
       expect(options.scales).toBeUndefined();
     });
     
-    test('should merge custom options', () => {
+    it('should merge custom options', () => {
       const customOptions = {
         plugins: {
           title: {
@@ -110,7 +115,7 @@ describe('ChartUtils', () => {
   });
   
   describe('State Management', () => {
-    test('showLoadingState() should create loading overlay', () => {
+    it('showLoadingState() should create loading overlay', () => {
       window.ChartUtils.showLoadingState('test-chart-container');
       
       const loadingState = document.querySelector('.chart-loading-state');
@@ -122,7 +127,7 @@ describe('ChartUtils', () => {
       expect(spinner).toBeTruthy();
     });
     
-    test('showEmptyState() should create empty overlay', () => {
+    it('showEmptyState() should create empty overlay', () => {
       const message = 'No data available';
       window.ChartUtils.showEmptyState('test-chart-container', message);
       
@@ -132,7 +137,7 @@ describe('ChartUtils', () => {
       expect(emptyState.getAttribute('role')).toBe('status');
     });
     
-    test('showErrorState() should create error overlay', () => {
+    it('showErrorState() should create error overlay', () => {
       const error = 'Failed to load data';
       window.ChartUtils.showErrorState('test-chart-container', error);
       
@@ -145,7 +150,7 @@ describe('ChartUtils', () => {
       expect(retryButton).toBeTruthy();
     });
     
-    test('hideStateOverlays() should remove all state overlays', () => {
+    it('hideStateOverlays() should remove all state overlays', () => {
       window.ChartUtils.showLoadingState('test-chart-container');
       window.ChartUtils.hideStateOverlays('test-chart-container');
       
@@ -153,7 +158,7 @@ describe('ChartUtils', () => {
       expect(loadingState).toBeFalsy();
     });
     
-    test('should handle non-existent container gracefully', () => {
+    it('should handle non-existent container gracefully', () => {
       // Should not throw error
       expect(() => {
         window.ChartUtils.showLoadingState('non-existent-container');
@@ -162,28 +167,28 @@ describe('ChartUtils', () => {
   });
   
   describe('Formatting Utilities', () => {
-    test('formatNumber() should format with Swedish locale', () => {
+    it('formatNumber() should format with Swedish locale', () => {
       const formatted = window.ChartUtils.formatNumber(1234567);
       
       // Swedish locale uses space as thousands separator
       expect(formatted).toMatch(/1[\s\u00A0]234[\s\u00A0]567/);
     });
     
-    test('formatNumber() should handle decimals', () => {
+    it('formatNumber() should handle decimals', () => {
       const formatted = window.ChartUtils.formatNumber(1234.5678, 2);
       
       expect(formatted).toContain('1');
       expect(formatted).toContain('234');
-      expect(formatted).toContain(',56'); // Swedish uses comma for decimals
+      expect(formatted).toContain(',57'); // Swedish uses comma for decimals, rounds to 2 decimals
     });
     
-    test('formatNumber() should handle null/undefined', () => {
+    it('formatNumber() should handle null/undefined', () => {
       expect(window.ChartUtils.formatNumber(null)).toBe('N/A');
       expect(window.ChartUtils.formatNumber(undefined)).toBe('N/A');
       expect(window.ChartUtils.formatNumber(NaN)).toBe('N/A');
     });
     
-    test('formatPercent() should format as percentage', () => {
+    it('formatPercent() should format as percentage', () => {
       const formatted = window.ChartUtils.formatPercent(0.755);
       
       expect(formatted).toContain('75');
@@ -192,8 +197,8 @@ describe('ChartUtils', () => {
   });
   
   describe('Performance Utilities', () => {
-    test('debounce() should delay function execution', (done) => {
-      const mockFn = jest.fn();
+    it('debounce() should delay function execution', (done) => {
+      const mockFn = vi.fn();
       const debouncedFn = window.ChartUtils.debounce(mockFn, 100);
       
       debouncedFn();
@@ -210,14 +215,14 @@ describe('ChartUtils', () => {
       }, 150);
     });
     
-    test('createResizeHandler() should return debounced function', () => {
+    it('createResizeHandler() should return debounced function', () => {
       const mockChart = {
         options: {
           plugins: {
             legend: {}
           }
         },
-        update: jest.fn()
+        update: vi.fn()
       };
       
       const handler = window.ChartUtils.createResizeHandler([mockChart]);
@@ -227,14 +232,14 @@ describe('ChartUtils', () => {
   });
   
   describe('Theme Colors', () => {
-    test('should expose theme colors', () => {
+    it('should expose theme colors', () => {
       expect(window.ChartUtils.THEME_COLORS).toBeDefined();
       expect(window.ChartUtils.THEME_COLORS.cyan).toBeTruthy();
       expect(window.ChartUtils.THEME_COLORS.magenta).toBeTruthy();
       expect(window.ChartUtils.THEME_COLORS.yellow).toBeTruthy();
     });
     
-    test('should expose party colors', () => {
+    it('should expose party colors', () => {
       expect(window.ChartUtils.THEME_COLORS.parties).toBeDefined();
       expect(window.ChartUtils.THEME_COLORS.parties.S).toBeTruthy(); // Socialdemokraterna
       expect(window.ChartUtils.THEME_COLORS.parties.M).toBeTruthy(); // Moderaterna
@@ -243,7 +248,7 @@ describe('ChartUtils', () => {
   });
   
   describe('Responsive Breakpoints', () => {
-    test('should expose breakpoint constants', () => {
+    it('should expose breakpoint constants', () => {
       expect(window.ChartUtils.BREAKPOINTS).toBeDefined();
       expect(window.ChartUtils.BREAKPOINTS.mobile).toBe(320);
       expect(window.ChartUtils.BREAKPOINTS.tablet).toBe(768);
@@ -253,7 +258,7 @@ describe('ChartUtils', () => {
   });
   
   describe('Accessibility', () => {
-    test('addKeyboardNavigation() should add keyboard event listener', () => {
+    it('addKeyboardNavigation() should add keyboard event listener', () => {
       const canvas = document.createElement('canvas');
       canvas.id = 'test-canvas';
       document.body.appendChild(canvas);
@@ -273,7 +278,7 @@ describe('ChartUtils', () => {
       expect(canvas.getAttribute('role')).toBe('img');
     });
     
-    test('announceDataPoint() should create live region', () => {
+    it('announceDataPoint() should create live region', () => {
       const mockChart = {
         data: {
           labels: ['A', 'B', 'C'],
