@@ -996,7 +996,9 @@ function generateCommitteeContent(data, lang) {
     
     // Use enriched summary, enhanced summary based on metadata, or fallback to default
     const summaryText = generateEnhancedSummary(report, 'report', lang);
-    const summaryHtml = (report.titel && !report.title && summaryText !== L(lang, 'reportDefault')) 
+    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
+    const isFromAPI = report.summary || report.notis;
+    const summaryHtml = (report.titel && !report.title && isFromAPI && summaryText !== L(lang, 'reportDefault')) 
       ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` 
       : escapeHtml(summaryText);
     
@@ -1036,7 +1038,9 @@ function generatePropositionsContent(data, lang) {
     
     // Use enhanced summary based on metadata
     const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
-    const summaryHtml = (prop.titel && !prop.title && summaryText !== L(lang, 'propDefault'))
+    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
+    const isFromAPI = prop.summary || prop.notis;
+    const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== L(lang, 'propDefault'))
       ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
       : escapeHtml(summaryText);
     
@@ -1079,7 +1083,9 @@ function generateMotionsContent(data, lang) {
     
     // Use enhanced summary based on metadata
     const summaryText = generateEnhancedSummary(motion, 'motion', lang);
-    const summaryHtml = (motion.titel && !motion.title && summaryText !== L(lang, 'motionDefault'))
+    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
+    const isFromAPI = motion.summary || motion.notis;
+    const summaryHtml = (motion.titel && !motion.title && isFromAPI && summaryText !== L(lang, 'motionDefault'))
       ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
       : escapeHtml(summaryText);
     
