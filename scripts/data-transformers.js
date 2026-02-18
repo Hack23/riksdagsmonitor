@@ -809,14 +809,16 @@ function generateCommitteeContent(data, lang) {
       ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
       : escapedTitle;
     const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
-    const summaryText = report.summary || '';
+    
+    // Use enriched summary from content fetching, fallback to notis, then default
+    const summaryText = report.summary || report.notis || '';
     const summaryHtml = summaryText 
       ? ((report.titel && !report.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
       : L(lang, 'reportDefault');
     
     content += `
     <h3>${titleHtml}</h3>
-    <p><strong>${L(lang, 'committee')}:</strong> ${report.organ}</p>
+    <p><strong>${L(lang, 'committee')}:</strong> ${report.organ || 'Unknown'}</p>
     <p><strong>${L(lang, 'document')}:</strong> <a href="${report.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
     <p>${summaryHtml}</p>
 `;
@@ -847,7 +849,9 @@ function generatePropositionsContent(data, lang) {
       ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
       : escapedTitle;
     const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
-    const summaryText = prop.summary || '';
+    
+    // Use enriched summary from content fetching, fallback to notis, then default
+    const summaryText = prop.summary || prop.notis || '';
     const summaryHtml = summaryText 
       ? ((prop.titel && !prop.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
       : L(lang, 'propDefault');
@@ -884,15 +888,21 @@ function generateMotionsContent(data, lang) {
       ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
       : escapedTitle;
     const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
-    const summaryText = motion.summary || '';
+    
+    // Use enriched summary from content fetching, fallback to notis, then default
+    const summaryText = motion.summary || motion.notis || '';
     const summaryHtml = summaryText 
       ? ((motion.titel && !motion.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
       : L(lang, 'motionDefault');
     
+    // Use enriched author and party data from document fetching
+    const authorName = motion.intressent_namn || motion.author || 'Unknown';
+    const partyName = motion.parti || 'Unknown';
+    
     content += `
     <h3>${titleHtml}</h3>
-    <p><strong>${L(lang, 'author')}:</strong> ${motion.intressent_namn || motion.author}</p>
-    <p><strong>${L(lang, 'party')}:</strong> ${motion.parti}</p>
+    <p><strong>${L(lang, 'author')}:</strong> ${authorName}</p>
+    <p><strong>${L(lang, 'party')}:</strong> ${partyName}</p>
     <p><strong>${L(lang, 'document')}:</strong> <a href="${motion.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
     <p>${summaryHtml}</p>
 `;

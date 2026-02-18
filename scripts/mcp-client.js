@@ -824,6 +824,92 @@ export class MCPClient {
   }
 
   /**
+   * Fetch detailed document with full content
+   * 
+   * @param {string} dok_id - Document ID
+   * @param {boolean} include_full_text - Include full document text (default: true)
+   * @returns {Promise<Object>} Document with content
+   */
+  async fetchDocumentDetails(dok_id, include_full_text = true) {
+    const response = await this.request('get_dokument_innehall', { 
+      dok_id, 
+      include_full_text 
+    });
+    return response || {};
+  }
+
+  /**
+   * Batch fetch document details for multiple documents
+   * Fetches in parallel with rate limiting to avoid overwhelming the server
+   * 
+   * @param {Array<Object>} documents - Array of document objects with dok_id
+   * @param {number} concurrency - Max parallel requests (default: 3)
+   * @returns {Promise<Array>} Documents with enriched content
+   */
+  async enrichDocumentsWithContent(documents, concurrency = 3) {
+    const enriched = [];
+    
+    // Process in batches to avoid overwhelming the MCP server
+    for (let i = 0; i < documents.length; i += concurrency) {
+      const batch = documents.slice(i, i + concurrency);
+      
+      const batchResults = await Promise.allSettled(
+        batch.map(async (doc) => {
+          try {
+            const dok_id = doc.dokumentnamn || doc.dok_id || doc.id;
+            if (!dok_id) {
+              console.warn('⚠️ Document missing ID:', doc);
+              return { ...doc, contentFetchError: 'No document ID' };
+            }
+            
+            const details = await this.fetchDocumentDetails(dok_id, false); // Start with metadata only
+            
+            // Extract author and party information from document metadata
+            const intressent = details.intressent || {};
+            const author = intressent.tilltalsnamn 
+              ? `${intressent.tilltalsnamn} ${intressent.efternamn}`.trim()
+              : (doc.intressent_namn || intressent.namn || 'Unknown');
+            const party = intressent.parti || doc.parti || 'Unknown';
+            
+            // Get summary from existing field or generate placeholder
+            const summary = details.summary || doc.summary || details.notis || doc.notis || '';
+            
+            return {
+              ...doc,
+              ...details,
+              author,
+              parti: party,
+              intressent_namn: author,
+              summary,
+              contentFetched: true
+            };
+          } catch (error) {
+            console.error(`❌ Failed to enrich document ${doc.dok_id}:`, error.message);
+            return { ...doc, contentFetchError: error.message };
+          }
+        })
+      );
+      
+      // Extract successful results
+      batchResults.forEach((result, idx) => {
+        if (result.status === 'fulfilled') {
+          enriched.push(result.value);
+        } else {
+          console.error(`❌ Batch enrichment failed for document ${batch[idx].dok_id}:`, result.reason);
+          enriched.push({ ...batch[idx], contentFetchError: result.reason.message });
+        }
+      });
+      
+      // Small delay between batches to be respectful to the MCP server
+      if (i + concurrency < documents.length) {
+        await new Promise(resolve => setTimeout(resolve, 200));
+      }
+    }
+    
+    return enriched;
+  }
+
+  /**
    * Get request statistics
    * 
    * @returns {Object} Statistics
@@ -896,6 +982,14 @@ export async function fetchVotingRecords(...args) {
 
 export async function fetchGovernmentDocuments(...args) {
   return getDefaultClient().fetchGovernmentDocuments(...args);
+}
+
+export async function fetchDocumentDetails(...args) {
+  return getDefaultClient().fetchDocumentDetails(...args);
+}
+
+export async function enrichDocumentsWithContent(...args) {
+  return getDefaultClient().enrichDocumentsWithContent(...args);
 }
 
 export default MCPClient;
