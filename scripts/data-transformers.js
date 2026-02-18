@@ -788,6 +788,64 @@ function isHighPriority(event) {
 }
 
 /**
+ * Generate enhanced summary from document metadata when summary field is missing
+ * Uses document type, subtype, organ, and other metadata to create informative placeholder
+ * 
+ * @param {Object} doc - Document object
+ * @param {string} type - Document type (report, proposition, motion)
+ * @param {string} lang - Language code
+ * @returns {string} Enhanced summary text
+ */
+function generateEnhancedSummary(doc, type, lang) {
+  // If we have a real summary or notis, use it
+  if (doc.summary || doc.notis) {
+    return doc.summary || doc.notis;
+  }
+  
+  // Generate enhanced summary based on metadata
+  const organ = doc.organ || doc.committee;
+  const subtyp = doc.subtyp || doc.subtype;
+  const doktyp = doc.doktyp || doc.documentType;
+  
+  // Build contextual summary based on available metadata
+  const parts = [];
+  
+  if (type === 'report' && organ) {
+    parts.push(`${organ} committee report`);
+    if (subtyp) parts.push(`on ${subtyp}`);
+  } else if (type === 'proposition') {
+    parts.push('Government proposition');
+    if (subtyp) parts.push(`regarding ${subtyp}`);
+    if (organ) parts.push(`referred to ${organ}`);
+  } else if (type === 'motion') {
+    const author = doc.intressent_namn || doc.author;
+    const party = doc.parti;
+    if (author && party) {
+      parts.push(`Motion by ${author} (${party})`);
+    } else if (author) {
+      parts.push(`Motion by ${author}`);
+    } else {
+      parts.push('Parliamentary motion');
+    }
+    if (subtyp) parts.push(`on ${subtyp}`);
+  }
+  
+  // Add document type information if useful
+  if (doktyp && doktyp !== type) {
+    parts.push(`(${doktyp})`);
+  }
+  
+  // Fallback to default if no useful metadata
+  if (parts.length === 0) {
+    return type === 'report' ? L(lang, 'reportDefault') :
+           type === 'proposition' ? L(lang, 'propDefault') :
+           L(lang, 'motionDefault');
+  }
+  
+  return parts.join(' ') + '.';
+}
+
+/**
  * Generate Committee Reports content
  */
 function generateCommitteeContent(data, lang) {
@@ -810,11 +868,11 @@ function generateCommitteeContent(data, lang) {
       : escapedTitle;
     const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
     
-    // Use enriched summary from content fetching, fallback to notis, then default
-    const summaryText = report.summary || report.notis || '';
-    const summaryHtml = summaryText 
-      ? ((report.titel && !report.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
-      : L(lang, 'reportDefault');
+    // Use enriched summary, enhanced summary based on metadata, or fallback to default
+    const summaryText = generateEnhancedSummary(report, 'report', lang);
+    const summaryHtml = (report.titel && !report.title && summaryText !== L(lang, 'reportDefault')) 
+      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` 
+      : escapeHtml(summaryText);
     
     content += `
     <h3>${titleHtml}</h3>
@@ -850,11 +908,11 @@ function generatePropositionsContent(data, lang) {
       : escapedTitle;
     const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
     
-    // Use enriched summary from content fetching, fallback to notis, then default
-    const summaryText = prop.summary || prop.notis || '';
-    const summaryHtml = summaryText 
-      ? ((prop.titel && !prop.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
-      : L(lang, 'propDefault');
+    // Use enhanced summary based on metadata
+    const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
+    const summaryHtml = (prop.titel && !prop.title && summaryText !== L(lang, 'propDefault'))
+      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+      : escapeHtml(summaryText);
     
     content += `
     <h3>${titleHtml}</h3>
@@ -889,15 +947,15 @@ function generateMotionsContent(data, lang) {
       : escapedTitle;
     const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
     
-    // Use enriched summary from content fetching, fallback to notis, then default
-    const summaryText = motion.summary || motion.notis || '';
-    const summaryHtml = summaryText 
-      ? ((motion.titel && !motion.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
-      : L(lang, 'motionDefault');
-    
     // Use enriched author and party data from document fetching
     const authorName = motion.intressent_namn || motion.author || 'Unknown';
     const partyName = motion.parti || 'Unknown';
+    
+    // Use enhanced summary based on metadata
+    const summaryText = generateEnhancedSummary(motion, 'motion', lang);
+    const summaryHtml = (motion.titel && !motion.title && summaryText !== L(lang, 'motionDefault'))
+      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+      : escapeHtml(summaryText);
     
     content += `
     <h3>${titleHtml}</h3>
