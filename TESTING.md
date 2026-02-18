@@ -26,8 +26,8 @@ Comprehensive testing strategy covering unit tests (Vitest), E2E tests (Cypress)
 
 ```
 tests/
-├── csv-validation.test.js              # CIA CSV data validation (159 tests)
-├── party-dashboard.test.js             # Party dashboard unit tests (12 tests)
+├── csv-validation.test.js              # CIA CSV data validation
+├── party-dashboard.test.js             # Party dashboard unit tests
 ├── risk-dashboard.test.js              # Risk dashboard unit tests (existing)
 ├── coalition-dashboard.test.js         # Coalition dashboard (existing)
 ├── committees-dashboard.test.js        # Committee dashboard (existing)
@@ -35,7 +35,7 @@ tests/
 └── [... 27 more test files]            # News, sitemap, MCP, etc.
 
 cypress/e2e/
-├── all-dashboards.cy.js                # Comprehensive 9 dashboard tests (150+ tests)
+├── all-dashboards.cy.js                # Comprehensive 9 dashboard tests
 ├── dashboards.cy.js                    # Individual dashboard tests (updated)
 ├── dashboard-page.cy.js                # Dashboard page tests (updated)
 ├── politician-dashboard.cy.js          # Politician-specific tests
@@ -51,7 +51,7 @@ cypress/e2e/
 
 ### CSV Data Validation
 
-**File**: `tests/csv-validation.test.js` (159 tests)
+**File**: `tests/csv-validation.test.js`
 
 Validates CIA Platform CSV exports for data quality:
 
@@ -87,7 +87,7 @@ describe('CIA CSV Data Validation', () => {
 
 ### Dashboard Unit Tests
 
-**File**: `tests/party-dashboard.test.js` (26 tests)
+**File**: `tests/party-dashboard.test.js`
 
 Tests dashboard DOM structure and configuration:
 
@@ -360,30 +360,44 @@ on: [push, pull_request]
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+          
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
         with:
           node-version: '24'
       - run: npm ci
       - run: npm test
       - run: npm run test:coverage
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4.5.0
         with:
           name: coverage-report
           path: coverage/
   
   e2e-tests:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+          
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
         with:
           node-version: '24'
       - run: npm ci
       - run: npm run build
       - run: npm run cypress:run
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4.5.0
         if: failure()
         with:
           name: cypress-screenshots

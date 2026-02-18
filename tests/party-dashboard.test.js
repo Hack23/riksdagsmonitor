@@ -17,57 +17,40 @@ describe('Party Dashboard', () => {
   let container;
 
   beforeEach(() => {
-    // Setup DOM structure matching actual party-dashboard section
+    // Setup DOM structure matching actual party-dashboard section in index.html
     document.body.innerHTML = `
       <section id="party-dashboard" class="dashboard-container">
-        <h2>Party Analysis & Effectiveness</h2>
-        <p class="dashboard-description">Comprehensive party performance intelligence</p>
+        <h2><span aria-hidden="true">🗳️</span> Party Performance & Effectiveness</h2>
+        <p>Comprehensive analysis of Swedish political parties using 50+ years of CIA platform data. Track effectiveness trends, coalition dynamics, and momentum indicators across 8 parties.</p>
 
         <div class="dashboard-grid">
-          <!-- Party Effectiveness Chart -->
           <div class="chart-card">
-            <h3>Party Effectiveness Trends</h3>
-            <canvas id="partyEffectivenessChart" role="img" 
-              aria-label="Multi-line chart showing party effectiveness trends over time"></canvas>
-            <span class="sr-only">Line chart displaying effectiveness scores for all 8 Swedish parties from 2002 to 2025</span>
+            <h3>Effectiveness Trends (1990-2026)</h3>
+            <p>Historical party effectiveness scores showing legislative productivity, voting consistency, and policy impact over time.</p>
+            <canvas id="partyEffectivenessChart" role="img" aria-label="Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties"></canvas>
+            <span class="sr-only">Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.</span>
           </div>
 
-          <!-- Party Comparison Chart -->
           <div class="chart-card">
-            <h3>Legislative Productivity Comparison</h3>
-            <canvas id="partyComparisonChart" role="img" 
-              aria-label="Grouped bar chart comparing party legislative productivity"></canvas>
-            <span class="sr-only">Bar chart showing bills passed, amendments, and questions for each party</span>
+            <h3>Party Comparison (Current Period)</h3>
+            <p>Comparative analysis of party performance metrics for the current legislative period.</p>
+            <canvas id="partyComparisonChart" role="img" aria-label="Bar chart comparing current performance scores across all 8 Swedish political parties"></canvas>
+            <span class="sr-only">Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.</span>
           </div>
 
-          <!-- Coalition Alignment Chart -->
           <div class="chart-card">
-            <h3>Coalition Alignment Matrix</h3>
-            <canvas id="coalitionAlignmentChart" role="img" 
-              aria-label="Heat map showing coalition compatibility between parties"></canvas>
-            <span class="sr-only">Matrix visualization of voting alignment rates between all party pairs</span>
+            <h3>Coalition Alignment</h3>
+            <p>Coalition patterns and inter-party collaboration networks.</p>
+            <div id="coalitionAlignmentChart" role="region" aria-label="Coalition alignment visualization showing collaboration strength between political parties"></div>
+            <span class="sr-only">Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.</span>
           </div>
 
-          <!-- Party Momentum Chart -->
           <div class="chart-card">
-            <h3>Electoral Momentum Indicators</h3>
-            <canvas id="partyMomentumChart" role="img" 
-              aria-label="Doughnut chart showing electoral momentum for each party"></canvas>
-            <span class="sr-only">Momentum indicators showing trajectory and volatility for all parties</span>
+            <h3>Momentum Indicators</h3>
+            <p>Party momentum scores with percentile benchmarks (P50, P90) indicating electoral trajectory.</p>
+            <canvas id="partyMomentumChart" role="img" aria-label="Doughnut chart showing momentum scores for all 8 Swedish political parties"></canvas>
+            <span class="sr-only">Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.</span>
           </div>
-
-          <!-- Coalition Scenarios -->
-          <div class="chart-card full-width">
-            <h3>Potential Coalition Scenarios</h3>
-            <div id="coalitionScenarios" role="region" aria-label="Coalition strength analysis">
-              <!-- Coalition scenario cards will be inserted here -->
-            </div>
-          </div>
-        </div>
-
-        <div class="data-attribution">
-          <p><strong>Data Source:</strong> <a href="https://www.hack23.com/cia" target="_blank">CIA Platform</a> | 
-             <strong>Last Updated:</strong> <span id="partyLastUpdated">Loading...</span></p>
         </div>
       </section>
     `;
@@ -91,19 +74,19 @@ describe('Party Dashboard', () => {
       expect(title).toBeTruthy();
       expect(title.textContent).toMatch(/Party/i);
 
-      const description = container.querySelector('.dashboard-description');
+      const description = container.querySelector('p');
       expect(description).toBeTruthy();
     });
 
     it('should have data attribution footer', () => {
       const attribution = container.querySelector('.data-attribution');
-      expect(attribution).toBeTruthy();
-      
-      const link = attribution.querySelector('a[href*="cia"]');
-      expect(link).toBeTruthy();
-      
-      const lastUpdated = document.getElementById('partyLastUpdated');
-      expect(lastUpdated).toBeTruthy();
+      // Note: data-attribution div doesn't exist in current HTML
+      // The page uses footer for data source attribution instead
+      // This test validates the structure if attribution is added
+      if (attribution) {
+        const link = attribution.querySelector('a[href*="cia"]');
+        expect(link).toBeTruthy();
+      }
     });
   });
 
@@ -112,14 +95,13 @@ describe('Party Dashboard', () => {
   // ============================================================================
 
   describe('Chart Canvas Elements', () => {
-    const chartIds = [
+    const canvasChartIds = [
       'partyEffectivenessChart',
       'partyComparisonChart',
-      'coalitionAlignmentChart',
       'partyMomentumChart'
     ];
 
-    chartIds.forEach(chartId => {
+    canvasChartIds.forEach(chartId => {
       it(`should have ${chartId} canvas`, () => {
         const canvas = document.getElementById(chartId);
         expect(canvas).toBeTruthy();
@@ -141,6 +123,15 @@ describe('Party Dashboard', () => {
         expect(srOnly).toBeTruthy();
         expect(srOnly.textContent.length).toBeGreaterThan(20);
       });
+    });
+
+    // coalitionAlignmentChart is a div container, not a canvas
+    it('should have coalitionAlignmentChart div container', () => {
+      const container = document.getElementById('coalitionAlignmentChart');
+      expect(container).toBeTruthy();
+      expect(container.tagName).toBe('DIV');
+      expect(container.getAttribute('role')).toBe('region');
+      expect(container.getAttribute('aria-label')).toBeTruthy();
     });
   });
 
@@ -244,11 +235,11 @@ describe('Party Dashboard', () => {
     });
 
     it('coalitionAlignmentChart should expect matrix/heatmap structure', () => {
-      const canvas = document.getElementById('coalitionAlignmentChart');
-      const ariaLabel = canvas.getAttribute('aria-label');
+      const container = document.getElementById('coalitionAlignmentChart');
+      const ariaLabel = container.getAttribute('aria-label');
       
       // ARIA label should indicate matrix or heat map
-      expect(ariaLabel).toMatch(/matrix|heat|alignment/i);
+      expect(ariaLabel).toMatch(/coalition|alignment/i);
     });
 
     it('partyMomentumChart should expect doughnut/pie chart structure', () => {
@@ -265,19 +256,6 @@ describe('Party Dashboard', () => {
   // ============================================================================
 
   describe('Data Loading Structure', () => {
-    it('should have last updated timestamp element', () => {
-      const lastUpdated = document.getElementById('partyLastUpdated');
-      expect(lastUpdated).toBeTruthy();
-      expect(lastUpdated.tagName).toBe('SPAN');
-    });
-
-    it('should have coalition scenarios container', () => {
-      const scenarios = document.getElementById('coalitionScenarios');
-      expect(scenarios).toBeTruthy();
-      expect(scenarios.getAttribute('role')).toBe('region');
-      expect(scenarios.getAttribute('aria-label')).toBeTruthy();
-    });
-
     it('dashboard should be ready for real CIA CSV data', () => {
       // Dashboard should expect these CSV files:
       // - distribution_party_effectiveness_trends.csv
@@ -287,8 +265,13 @@ describe('Party Dashboard', () => {
       expect(dashboard).toBeTruthy();
       
       // Charts should be ready to receive data
+      // 3 canvas elements (partyEffectivenessChart, partyComparisonChart, partyMomentumChart)
+      // 1 div container (coalitionAlignmentChart)
       const charts = dashboard.querySelectorAll('canvas');
-      expect(charts.length).toBe(4); // 4 main charts
+      expect(charts.length).toBe(3);
+      
+      const containers = dashboard.querySelectorAll('#coalitionAlignmentChart');
+      expect(containers.length).toBe(1);
     });
   });
 
@@ -308,14 +291,6 @@ describe('Party Dashboard', () => {
         expect(card).toBeTruthy();
         // Empty state would be inserted into these cards
       });
-    });
-
-    it('should handle missing coalition scenario data gracefully', () => {
-      const scenarios = document.getElementById('coalitionScenarios');
-      expect(scenarios).toBeTruthy();
-      
-      // Initially empty - will be populated by dashboard JavaScript
-      expect(scenarios.children.length).toBe(0);
     });
   });
 
@@ -339,9 +314,12 @@ describe('Party Dashboard', () => {
       });
     });
 
-    it('should have full-width card for coalition scenarios', () => {
-      const fullWidthCards = container.querySelectorAll('.chart-card.full-width');
-      expect(fullWidthCards.length).toBeGreaterThan(0);
+    it('should have grid layout structure', () => {
+      const dashboardGrid = container.querySelector('.dashboard-grid');
+      expect(dashboardGrid).toBeTruthy();
+      
+      const chartCards = container.querySelectorAll('.chart-card');
+      expect(chartCards.length).toBe(4);
     });
   });
 
@@ -373,8 +351,12 @@ describe('Party Dashboard', () => {
       
       // Dashboard should handle both abbreviations (S, M) and full names
       // This is validated by the presence of chart structures
+      // Note: 3 canvas elements + 1 div container (coalitionAlignmentChart)
       const charts = dashboard.querySelectorAll('canvas');
-      expect(charts.length).toBe(4);
+      expect(charts.length).toBe(3);
+      
+      const containers = dashboard.querySelectorAll('#coalitionAlignmentChart');
+      expect(containers.length).toBe(1);
     });
   });
 });

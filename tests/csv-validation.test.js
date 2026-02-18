@@ -6,7 +6,7 @@
  * - Proper CSV structure with headers
  * - Required columns per schema
  * - Valid data types (numbers not NaN)
- * - Minimum file sizes (>5KB for full exports)
+ * - Minimum file sizes (>1KB for full exports, >0.05KB for small exports)
  * - Column count consistency
  * 
  * @author Hack23 AB

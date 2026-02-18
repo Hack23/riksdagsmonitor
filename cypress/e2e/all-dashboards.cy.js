@@ -29,8 +29,9 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     {
       id: 'party-dashboard',
       name: 'Party Dashboard',
-      charts: ['partyEffectivenessChart', 'partyComparisonChart', 'coalitionAlignmentChart', 'partyMomentumChart'],
-      hasD3: false
+      charts: ['partyEffectivenessChart', 'partyComparisonChart', 'partyMomentumChart'],
+      hasD3: true, // coalitionAlignmentChart is a div container, not a canvas
+      d3Container: 'coalitionAlignmentChart'
     },
     {
       id: 'election-cycle-dashboard',
@@ -63,8 +64,8 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     {
       id: 'pre-election-dashboard',
       name: 'Pre-Election Dashboard',
-      charts: ['q4-timeline-chart', 'election-comparison-chart', 'deviation-radar-chart', 'party-tier-chart'],
-      hasD3: false
+      charts: ['q4-timeline-chart', 'election-comparison-chart', 'deviation-radar-chart', 'party-trends-chart', 'yoy-waterfall-chart'],
+      hasD3: false // warning-matrix is a non-canvas region, not a D3 container
     },
     {
       id: 'anomaly-detection-dashboard',
@@ -118,12 +119,12 @@ describe('All Dashboards - Comprehensive Coverage', () => {
         describe('Chart.js Charts', () => {
           dashboard.charts.forEach(chartId => {
             it(`should have ${chartId} canvas`, () => {
-              cy.get(`#${chartId}`).should('exist');
+              cy.get(`#${dashboard.id}`).find(`#${chartId}`).should('exist');
             });
             
             it(`${chartId} should have Chart.js render monitor class`, () => {
               // Chart.js adds this class after rendering
-              cy.get(`#${chartId}`, { timeout: 10000 }).should(($canvas) => {
+              cy.get(`#${dashboard.id}`).find(`#${chartId}`, { timeout: 10000 }).should(($canvas) => {
                 // Canvas should exist and have dimensions
                 expect($canvas[0]).to.exist;
                 expect($canvas[0].width).to.be.greaterThan(0);
@@ -137,15 +138,15 @@ describe('All Dashboards - Comprehensive Coverage', () => {
       if (dashboard.hasD3 && dashboard.d3Container) {
         describe('D3.js Visualizations', () => {
           it(`should have ${dashboard.d3Container} container`, () => {
-            cy.get(`#${dashboard.d3Container}`).should('exist');
+            cy.get(`#${dashboard.id}`).find(`#${dashboard.d3Container}`).should('exist');
           });
           
           it(`${dashboard.d3Container} should render D3 SVG`, () => {
-            cy.get(`#${dashboard.d3Container} svg`, { timeout: 10000 }).should('exist');
+            cy.get(`#${dashboard.id}`).find(`#${dashboard.d3Container} svg`, { timeout: 10000 }).should('exist');
           });
           
           it(`${dashboard.d3Container} SVG should have content`, () => {
-            cy.get(`#${dashboard.d3Container} svg`, { timeout: 10000 }).should(($svg) => {
+            cy.get(`#${dashboard.id}`).find(`#${dashboard.d3Container} svg`, { timeout: 10000 }).should(($svg) => {
               expect($svg.children().length).to.be.greaterThan(0);
             });
           });
@@ -154,9 +155,23 @@ describe('All Dashboards - Comprehensive Coverage', () => {
       
       describe('Accessibility', () => {
         it('should have ARIA labels on charts', () => {
-          cy.get(`#${dashboard.id} canvas[role="img"]`).each($canvas => {
-            expect($canvas.attr('aria-label')).to.exist;
-            expect($canvas.attr('aria-label').length).to.be.greaterThan(10);
+          cy.get(`#${dashboard.id}`).then($dashboard => {
+            // Find canvases with aria-label
+            const $canvasesWithAria = $dashboard.find('canvas[aria-label]');
+            // Require at least one labeled chart canvas within the dashboard
+            expect($canvasesWithAria.length).to.be.greaterThan(0);
+
+            $canvasesWithAria.each((_, canvas) => {
+              const ariaLabel = canvas.getAttribute('aria-label');
+              expect(ariaLabel).to.exist;
+              expect(ariaLabel.length).to.be.greaterThan(10);
+            });
+
+            // Where a role is present on canvas, enforce that it is "img"
+            const $canvasesWithRole = $dashboard.find('canvas[role]');
+            $canvasesWithRole.each((_, canvas) => {
+              expect(canvas.getAttribute('role')).to.equal('img');
+            });
           });
         });
         
@@ -203,17 +218,18 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     });
     
     it('should load all dashboards without console errors', () => {
-      cy.window().then((win) => {
-        cy.spy(win.console, 'error');
+      // Attach console.error spy before page load
+      cy.visit('/', {
+        onBeforeLoad(win) {
+          cy.spy(win.console, 'error').as('consoleError');
+        }
       });
       
-      // Visit page and wait for dashboards to load
+      // Wait for dashboards to load
       cy.get('#party-dashboard', { timeout: 10000 }).should('be.visible');
       
-      // Check no console errors
-      cy.window().then((win) => {
-        expect(win.console.error).to.not.be.called;
-      });
+      // Check no console errors occurred during load
+      cy.get('@consoleError').should('not.be.called');
     });
   });
   
