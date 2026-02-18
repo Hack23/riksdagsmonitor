@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: AccessibilityTable</title>
+    <title>JSDoc: Module: ChartUtils</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: AccessibilityTable</h1>
+    <h1 class="page-title">Module: ChartUtils</h1>
 
     
 
@@ -28,10 +28,8 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a>~</span>AccessibilityTable<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>Accessibility Table Generator</p></div>
+            
         
     
 </header>
@@ -40,16 +38,39 @@
     <div class="container-overview">
     
         
+            <div class="description"><p><strong>Shared Chart Configuration &amp; Utility Functions</strong></p>
+<p>Centralized utility module for Chart.js and D3.js visualizations across all
+9 dashboard sections. Provides responsive configuration, empty/loading states,
+accessibility helpers, and cyberpunk theme integration.</p>
+<h2>Features</h2>
+<ol>
+<li><strong>Responsive Chart Configuration</strong>: Mobile-first responsive options for Chart.js</li>
+<li><strong>Empty/Loading States</strong>: User-friendly fallback UI components</li>
+<li><strong>Accessibility Helpers</strong>: ARIA labels, keyboard navigation, screen reader support</li>
+<li><strong>Theme Integration</strong>: Cyberpunk color palette with CSS custom properties</li>
+<li><strong>Number Formatting</strong>: Swedish locale formatting (1,234,567)</li>
+<li><strong>Performance</strong>: Debounced resize handlers, lazy rendering</li>
+</ol>
+<h2>Usage Examples</h2>
+<pre class="prettyprint source lang-javascript"><code>// Responsive Chart.js configuration
+const chart = new Chart(ctx, {
+  ...ChartUtils.getResponsiveOptions('bar'),
+  data: { ... }
+});
 
-    
-    <h2>Constructor</h2>
-    
+// Show loading state
+ChartUtils.showLoadingState('partyEffectivenessChart');
 
-    
-    <h4 class="name" id="AccessibilityTable"><span class="type-signature"></span>new AccessibilityTable<span class="signature">()</span><span class="type-signature"></span></h4>
-    
+// Handle empty data
+if (!data || data.length === 0) {
+  ChartUtils.showEmptyState('partyEffectivenessChart', 'No party data available');
+  return;
+}
+</code></pre></div>
+        
 
-    
+        
+            
 
 
 
@@ -68,7 +89,13 @@
 <dl class="details">
 
     
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.0.0</li></ul></dd>
+    
 
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2026</li></ul></dd>
     
 
     
@@ -84,9 +111,19 @@
     
 
     
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB - Political Intelligence Team</li>
+        </ul>
+    </dd>
+    
 
     
 
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
     
 
     
@@ -94,7 +131,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_ministry-dashboard.js.html">js/ministry-dashboard.js</a>, <a href="js_ministry-dashboard.js.html#line1421">line 1421</a>
+        <a href="js_chart-utils.js.html">js/chart-utils.js</a>, <a href="js_chart-utils.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -124,11 +161,18 @@
 
 
 
+        
     
     </div>
 
     
 
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:Chart.js</li>
+        </ul>
     
 
     
