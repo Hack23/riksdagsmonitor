@@ -57,7 +57,7 @@ Validates CIA Platform CSV exports for data quality:
 
 ```javascript
 describe('CIA CSV Data Validation', () => {
-  // File existence (26 required files)
+  // File existence (18 required files)
   it('should have distribution_politician_risk_levels.csv');
   
   // Encoding validation (UTF-8/ASCII, no � characters)
@@ -73,17 +73,17 @@ describe('CIA CSV Data Validation', () => {
   // Column consistency (handles quoted fields)
   it('should have consistent column counts');
   
-  // Data freshness (<90 days)
-  it('CSV files should not be older than 30 days');
+  // Data freshness (warns at 30 days, fails at 90 days)
+  it('CSV files should not be older than 90 days');
 });
 ```
 
 **Coverage**:
-- ✅ 26 required CSV files validated
+- ✅ 18 required CSV files validated
 - ✅ UTF-8 encoding checks
 - ✅ Schema validation with actual column names
 - ✅ Numeric data type validation
-- ✅ Data freshness warnings
+- ✅ Data freshness warnings (30 days) and enforcement (90 days)
 
 ### Dashboard Unit Tests
 
@@ -112,7 +112,6 @@ describe('Party Dashboard', () => {
   
   // Responsive design
   it('should use dashboard-grid for responsive layout');
-  it('should have full-width card for coalition scenarios');
 });
 ```
 

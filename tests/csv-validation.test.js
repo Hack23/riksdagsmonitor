@@ -285,9 +285,10 @@ describe('CIA CSV Data Validation', () => {
   });
   
   describe('Data Freshness', () => {
-    it('CSV files should not be older than 30 days', () => {
+    it('CSV files should not be older than 90 days (warns at 30 days)', () => {
       const now = new Date();
       const thirtyDaysAgo = new Date(now.getTime() - (30 * 24 * 60 * 60 * 1000));
+      const ninetyDaysAgo = new Date(now.getTime() - (90 * 24 * 60 * 60 * 1000));
       
       let oldestFile = null;
       let oldestMtime = now;
@@ -304,13 +305,13 @@ describe('CIA CSV Data Validation', () => {
       });
       
       if (oldestFile) {
-        // Log warning if data is stale (not a hard failure)
+        // Log warning if data is older than 30 days
         if (oldestMtime < thirtyDaysAgo) {
           console.warn(`⚠️  Data freshness warning: ${oldestFile} is older than 30 days (${oldestMtime.toISOString()})`);
+          console.warn(`   Note: Filesystem mtime may not reflect actual data age in CI. Consider validating against a timestamp in the dataset/manifest.`);
         }
         
         // Only fail if data is extremely old (>90 days)
-        const ninetyDaysAgo = new Date(now.getTime() - (90 * 24 * 60 * 60 * 1000));
         expect(oldestMtime.getTime()).toBeGreaterThan(ninetyDaysAgo.getTime());
       }
     });

@@ -78,15 +78,11 @@ describe('Party Dashboard', () => {
       expect(description).toBeTruthy();
     });
 
-    it('should have data attribution footer', () => {
-      const attribution = container.querySelector('.data-attribution');
-      // Note: data-attribution div doesn't exist in current HTML
-      // The page uses footer for data source attribution instead
-      // This test validates the structure if attribution is added
-      if (attribution) {
-        const link = attribution.querySelector('a[href*="cia"]');
-        expect(link).toBeTruthy();
-      }
+    it('should have footer with data source attribution', () => {
+      // Verify the page has a footer with CIA attribution link
+      const footer = document.body.querySelector('footer');
+      expect(footer).toBeTruthy();
+      expect(footer.textContent).toMatch(/CIA|Hack23/i);
     });
   });
 
