@@ -42,40 +42,43 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     {
       id: 'committee-dashboard',
       name: 'Committee Dashboard',
-      charts: ['committee-productivity-chart', 'committee-comparison-chart'],
-      hasD3: false
+      charts: ['committeeComparisonChart', 'decisionEffectivenessChart', 'seasonalPatternsChart'],
+      hasD3: true,
+      d3Container: 'committeeNetwork'
     },
     {
       id: 'coalition-dashboard',
       name: 'Coalition Dashboard',
-      charts: ['coalition-strength-chart', 'coalition-stability-chart'],
+      charts: ['votingAnomalyChart', 'behavioralPatternsChart', 'decisionTrendsChart'],
       hasD3: true,
       d3Container: 'coalitionNetwork'
     },
     {
       id: 'seasonal-patterns-dashboard',
       name: 'Seasonal Patterns Dashboard',
-      charts: ['seasonal-trends-chart', 'quarterly-patterns-chart'],
-      hasD3: false
+      charts: ['zscore-timeline-chart', 'quarter-comparison-chart', 'classification-chart', 'qoq-change-chart'],
+      hasD3: true,
+      d3Container: 'seasonal-heatmap'
     },
     {
       id: 'pre-election-dashboard',
       name: 'Pre-Election Dashboard',
-      charts: ['pre-election-momentum-chart', 'pre-election-risk-chart'],
+      charts: ['q4-timeline-chart', 'election-comparison-chart', 'deviation-radar-chart', 'party-tier-chart'],
       hasD3: false
     },
     {
       id: 'anomaly-detection-dashboard',
       name: 'Anomaly Detection Dashboard',
-      charts: ['anomaly-timeline-chart', 'anomaly-scatter-chart'],
+      charts: ['anomaly-timeline-chart', 'zscore-distribution-chart', 'anomaly-type-chart', 'quarterly-frequency-chart'],
       hasD3: true,
       d3Container: 'severity-heatmap'
     },
     {
       id: 'ministry-dashboard',
       name: 'Ministry Dashboard',
-      charts: ['ministry-effectiveness-chart', 'ministry-productivity-chart'],
-      hasD3: false
+      charts: ['ministerInfluenceChart', 'ministryProductivityChart', 'decisionImpactChart'],
+      hasD3: true,
+      d3Container: 'ministryRiskHeatMap'
     },
     {
       id: 'risk-dashboard',

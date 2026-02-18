@@ -87,7 +87,7 @@ describe('CIA CSV Data Validation', () => {
 
 ### Dashboard Unit Tests
 
-**File**: `tests/party-dashboard.test.js` (12 tests)
+**File**: `tests/party-dashboard.test.js` (26 tests)
 
 Tests dashboard DOM structure and configuration:
 
