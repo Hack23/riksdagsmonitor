@@ -2,29 +2,129 @@
 
 This directory contains CSV data files downloaded from the [CIA Platform](https://github.com/Hack23/cia) for use in Riksdagsmonitor dashboards.
 
+## 📊 Data Quality Upgrade (2026-02-18)
+
+**Comprehensive CIA Intelligence Data Integration**
+- ✅ **69 total files** (was 36) 
+- ✅ **33 new files added**: Risk views, anomaly detection, percentile time-series, committee data
+- ✅ **403 real politicians** with complete risk assessment (was 3 aggregated rows)
+- ✅ **All files validated**: 0 errors, 0 warnings
+- ✅ **Mock data removed**: Dashboards now use authentic CIA Platform intelligence
+
+### Key Improvements
+1. **Risk Assessment**: 69KB detailed politician risk data (403 MPs × 45 rules)
+2. **Anomaly Detection**: 13KB seasonal patterns + voting anomaly detection
+3. **Temporal Analysis**: 23 percentile files for trend visualization
+4. **Committee Intelligence**: 2.8MB of committee decision data (10,000+ records)
+5. **Data Validation**: Automated validation script ensures quality
+
 ## Purpose
 
 - **Improved Performance**: Local data loading is faster than remote fetches
 - **Reliability**: Reduces dependency on external network availability
 - **Offline Capability**: Dashboards work even without internet connection
 - **Development**: Enables local testing without API rate limits
+- **Data Quality**: Real CIA Platform intelligence (no synthetic mock data)
 
 ## Directory Structure
 
 ```
 cia-data/
-├── election-cycle/          # Election cycle analysis (1994-2034)
+├── README.md                                      # This file
+├── data-manifest.json                             # File metadata (v2.0)
+├── download-csv.sh                                # Automated download (69 files)
+├── validate-csv.sh                                # Data validation script
+│
+├── risk/                                          # Risk Assessment (69KB)
+│   ├── distribution_ministry_risk_levels.csv     # Ministry risk aggregation (91 bytes)
+│   ├── distribution_ministry_risk_quarterly.csv  # Quarterly trends (405 bytes)
+│   ├── distribution_crisis_resilience.csv        # Crisis resilience (441 bytes)
+│   ├── view_politician_risk_summary_sample.csv   # 403 politicians (69KB) ★
+│   ├── view_ministry_risk_evolution_sample.csv   # Ministry temporal risk (1.8KB)
+│   └── view_risk_score_evolution_sample.csv      # Risk evolution (5.5KB)
+│
+├── anomaly/                                       # Anomaly Detection (13KB)
+│   ├── distribution_anomaly_by_party.csv         # Party anomaly patterns (61 bytes)
+│   ├── view_riksdagen_voting_anomaly_detection_sample.csv      # Voting anomalies (197 bytes)
+│   ├── view_riksdagen_seasonal_anomaly_detection_sample.csv    # Seasonal patterns (13KB) ★
+│   └── view_election_cycle_anomaly_pattern_sample.csv          # Election cycle anomalies (4.1KB)
+│
+├── percentile/                                    # Temporal Analysis (23 files)
+│   ├── percentile_risk_score_evolution.csv       # Risk percentiles
+│   ├── percentile_voting_anomaly_detection.csv   # Anomaly percentiles
+│   ├── percentile_crisis_resilience_indicators.csv
+│   ├── percentile_seasonal_activity_patterns.csv
+│   ├── percentile_committee_productivity*.csv    # Committee percentiles (2 files)
+│   ├── percentile_ministry_*.csv                 # Ministry percentiles (4 files)
+│   ├── percentile_party_*.csv                    # Party percentiles (3 files)
+│   ├── percentile_politician_*.csv               # Politician percentiles (8 files)
+│   └── percentile_election_proximity_trends.csv
+│
+├── committee/                                     # Committee Data (2.8MB)
+│   ├── distribution_committee_activity.csv
+│   ├── distribution_committee_productivity.csv
+│   ├── distribution_committee_productivity_matrix.csv
+│   ├── distribution_annual_committee_assignments.csv
+│   ├── distribution_annual_committee_documents.csv
+│   ├── view_riksdagen_committee_decisions_sample.csv                  # 1.1MB, 5,006 records ★
+│   └── view_riksdagen_committee_ballot_decision_party_summary_sample.csv # 1.7MB, 5,028 records ★
+│
+├── party/                                         # Party Performance
+│   ├── distribution_party_performance.csv
+│   ├── distribution_party_effectiveness_trends.csv
+│   ├── distribution_party_momentum.csv
+│   ├── distribution_coalition_alignment.csv
+│   ├── distribution_annual_party_members.csv
+│   ├── distribution_gender_by_party.csv
+│   ├── distribution_experience_by_party.csv
+│   ├── distribution_behavioral_patterns_by_party.csv
+│   └── distribution_decision_patterns_by_party.csv
+│
+├── politician/                                    # Politician Data
+│   ├── distribution_experience_levels.csv
+│   ├── distribution_assignment_roles.csv
+│   ├── distribution_influence_buckets.csv
+│   └── distribution_person_status.csv
+│
+├── ministry/                                      # Ministry Effectiveness
+│   ├── distribution_ministry_effectiveness.csv
+│   ├── distribution_ministry_productivity_matrix.csv
+│   ├── distribution_ministry_decision_impact.csv
+│   └── distribution_annual_ministry_assignments.csv
+│
+├── voting/                                        # Voting & Ballot Data
+│   ├── distribution_annual_party_votes.csv
+│   ├── distribution_annual_ballots.csv
+│   ├── distribution_decision_trends.csv
+│   ├── distribution_document_types.csv
+│   ├── distribution_annual_document_types.csv
+│   ├── distribution_document_status.csv
+│   └── distribution_annual_document_status.csv
+│
+├── election/                                      # Election Data
+│   └── distribution_election_regions.csv
+│
+├── election-cycle/                                # Election Cycle Analysis
 │   ├── view_election_cycle_comparative_analysis_sample.csv
 │   ├── view_election_cycle_decision_intelligence_sample.csv
 │   ├── view_election_cycle_predictive_intelligence_sample.csv
 │   └── view_election_cycle_temporal_trends_sample.csv
-├── README.md                # This file
-├── download-csv.sh          # Automated download script
-├── data-manifest.json       # File metadata and field descriptions
-└── seasonal/                # Seasonal activity patterns data
-    ├── README.md
-    └── view_riksdagen_seasonal_activity_patterns_sample.csv
+│
+├── seasonal/                                      # Seasonal Activity
+│   └── view_riksdagen_seasonal_activity_patterns_sample.csv
+│
+└── Root-Level Files                               # Large detailed datasets
+    ├── view_riksdagen_politician_sample.csv                      # 540KB
+    ├── view_riksdagen_politician_experience_summary_sample.csv   # 5.7MB
+    ├── view_riksdagen_party_summary_sample.csv                   # 3.6KB
+    ├── view_riksdagen_party_role_member_sample.csv               # 42KB
+    ├── view_riksdagen_party_document_summary_sample.csv          # 1.5KB
+    ├── view_riksdagen_committee_decisions.csv                    # 111KB (existing)
+    ├── view_riksdagen_committee_ballot_decision_party_summary.csv # 172KB (existing)
+    └── extraction_summary_report.csv                             # 16KB
 ```
+
+★ = New high-value files added in 2026-02-18 upgrade
 
 ## Data Files
 
@@ -339,6 +439,61 @@ Statistical outlier identification in parliament activity (2002-2026):
 - **Updates**: Data refreshed periodically from CIA platform
 - **Integrity**: Files include checksums in data-manifest.json
 
+## New High-Value Datasets (2026-02-18)
+
+### Risk Assessment - view_politician_risk_summary_sample.csv
+
+**Size**: 69KB | **Records**: 403 politicians  
+**Dashboard**: Risk Assessment Dashboard (`js/risk-dashboard.js`)  
+**Source**: CIA Platform 45-rule risk scoring engine
+
+**Purpose**: Complete risk assessment for all 403 current Swedish MPs with detailed violation tracking and risk classification.
+
+**Key Fields**:
+- `person_id`: Unique politician identifier
+- `first_name`, `last_name`, `party`: Politician details
+- `status`: Current status (e.g., "Tjänstgörande riksdagsledamot")
+- `total_violations`: Total number of policy/conduct violations
+- `latest_violation_date`: Most recent violation timestamp
+- `risk_score`: Overall risk score (0-100 scale)
+- `risk_level`: Classification (LOW, MEDIUM, HIGH, CRITICAL)
+- `risk_assessment`: Textual assessment summary
+
+**Heat Map Transformation**:
+Each politician generates 45 data points: `403 politicians × 45 rules = 18,135 risk assessment data points`
+
+### Anomaly Detection - view_riksdagen_seasonal_anomaly_detection_sample.csv
+
+**Size**: 13KB | **Records**: 42 seasonal patterns  
+**Purpose**: Detect unusual parliamentary activity using z-score statistical analysis
+
+**Key Fields**:
+- `ballot_z_score`, `doc_z_score`, `attendance_z_score`: Statistical deviations
+- `anomaly_type`: NO_ANOMALY, DOCUMENT_ANOMALY, etc.
+- `anomaly_severity`: LOW, CRITICAL, etc.
+
+### Committee Intelligence Files
+
+**view_riksdagen_committee_decisions_sample.csv**: 1.1MB, 5,006 decisions  
+**view_riksdagen_committee_ballot_decision_party_summary_sample.csv**: 1.7MB, 5,028 party votes
+
+**Purpose**: Complete committee decision tracking with party voting patterns
+
+## Data Validation
+
+Run validation: `./cia-data/validate-csv.sh`
+
+**Checks**: UTF-8/ASCII encoding, CSV structure, file sizes, column consistency
+
+## Dashboard → CSV Mapping
+
+| Dashboard | Primary CSV Files |
+|-----------|------------------|
+| **Risk Assessment** | `risk/view_politician_risk_summary_sample.csv` (403 politicians) |
+| **Committee** | `committee/view_riksdagen_committee_decisions_sample.csv` (5,006 records) |
+| **Coalition** | `party/distribution_coalition_alignment.csv` |
+| **Ministry** | `risk/view_ministry_risk_evolution_sample.csv` |
+
 ## License
 
 Data sourced from CIA Platform (Citizen Intelligence Agency):
@@ -355,5 +510,5 @@ For questions about the data or CIA platform:
 
 ---
 
-**Last Updated**: 2026-02-09  
+**Last Updated**: 2026-02-18  
 **Maintained by**: Hack23 AB
