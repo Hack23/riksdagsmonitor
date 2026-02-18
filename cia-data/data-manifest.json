@@ -1,8 +1,8 @@
 {
-  "version": "1.0",
-  "lastUpdated": "2026-02-09",
-  "totalFiles": 33,
-  "totalSize": "260KB",
+  "version": "2.0",
+  "lastUpdated": "2026-02-18",
+  "totalFiles": 69,
+  "totalSize": "510KB",
   "sourceRepository": "https://github.com/Hack23/cia",
   "sourcePath": "service.data.impl/sample-data",
   "dataCategories": {
@@ -241,7 +241,7 @@
       ]
     },
     "anomaly": {
-      "fileCount": 1,
+      "fileCount": 4,
       "description": "Anomaly detection patterns",
       "files": [
         {
@@ -249,6 +249,195 @@
           "description": "Anomaly patterns by party",
           "fields": ["party", "anomaly_type", "frequency", "severity"],
           "dashboard": "outlier-detection"
+        },
+        {
+          "name": "view_riksdagen_voting_anomaly_detection_sample.csv",
+          "description": "Detailed voting anomaly detection (197 bytes)",
+          "fields": ["person_id", "anomaly_type", "anomaly_score", "detection_date"],
+          "dashboard": "risk-dashboard"
+        },
+        {
+          "name": "view_riksdagen_seasonal_anomaly_detection_sample.csv",
+          "description": "Seasonal activity anomaly detection (13KB, 42 records)",
+          "fields": ["year", "quarter", "is_election_year", "total_ballots", "active_politicians", "attendance_rate", "documents_produced", "anomaly_type", "anomaly_severity"],
+          "dashboard": "risk-dashboard"
+        },
+        {
+          "name": "view_election_cycle_anomaly_pattern_sample.csv",
+          "description": "Election cycle anomaly patterns (4.1KB)",
+          "fields": ["election_year", "pattern_type", "anomaly_score", "significance"],
+          "dashboard": "election-analytics"
+        }
+      ]
+    },
+    "riskViews": {
+      "fileCount": 3,
+      "description": "Detailed risk assessment view files (replace sparse distribution files)",
+      "files": [
+        {
+          "name": "view_politician_risk_summary_sample.csv",
+          "description": "Complete politician risk assessment (69KB, 403 politicians)",
+          "fields": ["person_id", "first_name", "last_name", "party", "status", "total_violations", "latest_violation_date", "absenteeism_violations", "effectiveness_violations", "discipline_violations", "productivity_violations", "collaboration_violations", "avg_attendance_rate", "avg_effectiveness_score", "days_active", "committee_changes", "risk_score", "risk_level", "risk_assessment"],
+          "dashboard": "risk-dashboard",
+          "replaces": "distribution_politician_risk_levels.csv"
+        },
+        {
+          "name": "view_ministry_risk_evolution_sample.csv",
+          "description": "Ministry risk evolution over time (1.8KB)",
+          "fields": ["ministry", "period", "risk_score", "risk_level", "trend"],
+          "dashboard": "risk-dashboard",
+          "replaces": "distribution_ministry_risk_levels.csv"
+        },
+        {
+          "name": "view_risk_score_evolution_sample.csv",
+          "description": "Risk score temporal evolution (5.5KB)",
+          "fields": ["period", "avg_risk_score", "critical_count", "high_count", "medium_count", "low_count"],
+          "dashboard": "risk-dashboard",
+          "replaces": "percentile_risk_score_evolution.csv"
+        }
+      ]
+    },
+    "percentile": {
+      "fileCount": 23,
+      "description": "Percentile-based temporal analysis across all domains",
+      "files": [
+        {
+          "name": "percentile_risk_score_evolution.csv",
+          "description": "Risk score percentile evolution (520 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "risk-dashboard"
+        },
+        {
+          "name": "percentile_voting_anomaly_detection.csv",
+          "description": "Voting anomaly percentiles (278 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "risk-dashboard"
+        },
+        {
+          "name": "percentile_crisis_resilience_indicators.csv",
+          "description": "Crisis resilience percentiles (519 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "stability-assessment"
+        },
+        {
+          "name": "percentile_seasonal_activity_patterns.csv",
+          "description": "Seasonal activity percentiles (3.1KB)",
+          "fields": ["season", "quarter", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "seasonal-analytics"
+        },
+        {
+          "name": "percentile_seasonal_anomaly_detection.csv",
+          "description": "Seasonal anomaly percentiles (1.9KB)",
+          "fields": ["season", "quarter", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "seasonal-analytics"
+        },
+        {
+          "name": "percentile_committee_productivity.csv",
+          "description": "Committee productivity percentiles (1.2KB)",
+          "fields": ["committee", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "committee-dashboard"
+        },
+        {
+          "name": "percentile_committee_productivity_matrix.csv",
+          "description": "Committee productivity matrix percentiles (1.3KB)",
+          "fields": ["committee", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "committee-dashboard"
+        },
+        {
+          "name": "percentile_ministry_risk_evolution.csv",
+          "description": "Ministry risk percentiles (599 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "ministry-dashboard"
+        },
+        {
+          "name": "percentile_ministry_effectiveness_trend.csv",
+          "description": "Ministry effectiveness percentiles (87 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "ministry-dashboard"
+        },
+        {
+          "name": "percentile_ministry_productivity_matrix.csv",
+          "description": "Ministry productivity matrix percentiles (799 bytes)",
+          "fields": ["ministry", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "ministry-dashboard"
+        },
+        {
+          "name": "percentile_ministry_decision_impact.csv",
+          "description": "Ministry decision impact percentiles (667 bytes)",
+          "fields": ["ministry", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "ministry-dashboard"
+        },
+        {
+          "name": "percentile_party_performance_metrics.csv",
+          "description": "Party performance percentiles (1.1KB)",
+          "fields": ["party", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "party-dashboard"
+        },
+        {
+          "name": "percentile_party_momentum_analysis.csv",
+          "description": "Party momentum percentiles (559 bytes)",
+          "fields": ["party", "period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "party-dashboard"
+        },
+        {
+          "name": "percentile_party_effectiveness_trends.csv",
+          "description": "Party effectiveness percentiles (87 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "party-dashboard"
+        },
+        {
+          "name": "percentile_politician_risk_summary.csv",
+          "description": "Politician risk percentiles (660 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "risk-dashboard"
+        },
+        {
+          "name": "percentile_politician_behavioral_trends.csv",
+          "description": "Politician behavioral percentiles (1.2KB)",
+          "fields": ["period", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "behavioral-analytics"
+        },
+        {
+          "name": "percentile_politician_career_trajectory.csv",
+          "description": "Politician career trajectory percentiles (87 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "career-analytics"
+        },
+        {
+          "name": "percentile_politician_decision_pattern.csv",
+          "description": "Politician decision pattern percentiles (564 bytes)",
+          "fields": ["period", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "decision-analytics"
+        },
+        {
+          "name": "percentile_politician_experience_summary.csv",
+          "description": "Politician experience percentiles (726 bytes)",
+          "fields": ["experience_level", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "competency-analysis"
+        },
+        {
+          "name": "percentile_politician_influence_metrics.csv",
+          "description": "Politician influence percentiles (228 bytes)",
+          "fields": ["period", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "influence-network"
+        },
+        {
+          "name": "percentile_politician_longevity_analysis.csv",
+          "description": "Politician longevity percentiles (980 bytes)",
+          "fields": ["period", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "career-analytics"
+        },
+        {
+          "name": "percentile_politician_role_evolution.csv",
+          "description": "Politician role evolution percentiles (792 bytes)",
+          "fields": ["period", "role_type", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "career-analytics"
+        },
+        {
+          "name": "percentile_election_proximity_trends.csv",
+          "description": "Election proximity trend percentiles (2.8KB)",
+          "fields": ["election_year", "quarters_before", "metric", "p10", "p25", "p50", "p75", "p90"],
+          "dashboard": "election-analytics"
         }
       ]
     }
@@ -256,7 +445,7 @@
   "updateProcedure": {
     "command": "./cia-data/download-csv.sh",
     "frequency": "weekly",
-    "lastRun": "2026-02-09"
+    "lastRun": "2026-02-18"
   },
   "integrations": {
     "dashboards": [
