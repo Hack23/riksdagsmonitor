@@ -18,15 +18,8 @@ internal-links-report.json
 external-links-report.json
 
 # Test coverage (generated during development, committed during release)
-coverage/
-.nyc_output/
 
-# Test reports (generated during development, committed during release)
-docs/coverage/
-docs/test-results/
-docs/cypress/
-docs/dependencies/
-docs/diagrams/
+.nyc_output/
 
 # Cypress
 cypress/screenshots/
