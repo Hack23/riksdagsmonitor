@@ -157,8 +157,8 @@ curl -s -o "$CIA_DATA_DIR/percentile/percentile_election_proximity_trends.csv" "
 # Committee decision files (additional detailed data)
 echo ""
 echo "📥 Downloading Committee decision data..."
-curl -s -o "$CIA_DATA_DIR/committee/view_riksdagen_committee_decisions.csv" "$BASE_URL/view_riksdagen_committee_decisions.csv" && echo "  ✓ view_riksdagen_committee_decisions.csv"
-curl -s -o "$CIA_DATA_DIR/committee/view_riksdagen_committee_ballot_decision_party_summary.csv" "$BASE_URL/view_riksdagen_committee_ballot_decision_party_summary.csv" && echo "  ✓ view_riksdagen_committee_ballot_decision_party_summary.csv"
+curl -s -o "$CIA_DATA_DIR/committee/view_riksdagen_committee_decisions_sample.csv" "$BASE_URL/view_riksdagen_committee_decisions_sample.csv" && echo "  ✓ view_riksdagen_committee_decisions_sample.csv"
+curl -s -o "$CIA_DATA_DIR/committee/view_riksdagen_committee_ballot_decision_party_summary_sample.csv" "$BASE_URL/view_riksdagen_committee_ballot_decision_party_summary_sample.csv" && echo "  ✓ view_riksdagen_committee_ballot_decision_party_summary_sample.csv"
 
 # Person status distribution
 echo ""
