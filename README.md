@@ -13,14 +13,32 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
 
 ## 📊 Quality Metrics
 
+### CI/CD & Security
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 [![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
 [![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
+[![CodeQL](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml)
+
+### Testing
+[![JavaScript Testing](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml)
+[![JSDoc Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml)
+[![Translation Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml)
+
+### Documentation & Release
+[![Release](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml)
+[![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=javascript)](https://riksdagsmonitor.com/docs/api/)
+[![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest)](https://riksdagsmonitor.com/docs/coverage/)
+[![E2E Reports](https://img.shields.io/badge/E2E-Cypress_Reports-green?logo=cypress)](https://riksdagsmonitor.com/docs/cypress/)
+
+### Compliance & Standards
 [![License](https://img.shields.io/github/license/Hack23/riksdagsmonitor)](LICENSE)
-[![ISMS](https://img.shields.io/badge/Hack23-ISMS-blue)](https://github.com/Hack23/ISMS-PUBLIC)
+[![ISMS](https://img.shields.io/badge/Hack23-ISMS-blue?logo=shield)](https://github.com/Hack23/ISMS-PUBLIC)
+[![ISO 27001](https://img.shields.io/badge/ISO-27001:2022-purple?logo=iso)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+[![NIST CSF](https://img.shields.io/badge/NIST-CSF_2.0-orange?logo=nist)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+[![CIS Controls](https://img.shields.io/badge/CIS-Controls_v8.1-red?logo=cisecurity)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Hack23/riksdagsmonitor)
 
-**Security Policy:** Per [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), we maintain defense-in-depth architecture with comprehensive security controls and documentation
+**Security Policy:** Per [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), we maintain defense-in-depth architecture with comprehensive security controls and documentation. See [WORKFLOWS.md](WORKFLOWS.md) for complete CI/CD pipeline documentation and [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for security controls.
 
 ## 📊 Project Classification
 
