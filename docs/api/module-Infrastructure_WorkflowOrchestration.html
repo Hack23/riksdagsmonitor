@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: Infrastructure/WorkflowOrchestration</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: Infrastructure/WorkflowOrchestration</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p><strong>INTELLIGENCE OPERATIVE PERSPECTIVE</strong></p>
+<p>This module orchestrates coordination between three independent news generation
+workflows operating on different schedules, preventing wasted computational
+resources on duplicate article generation and maintaining editorial consistency.
+In intelligence operations, workflow state management prevents information
+redundancy and ensures efficient use of computational and editorial resources.</p>
+<p><strong>WORKFLOW ARCHITECTURE:</strong>
+The platform operates three independent content generation workflows:</p>
+<ol>
+<li>
+<p><strong>Realtime Monitor (news-realtime-monitor.md)</strong>
+Schedule: 2x daily (morning + afternoon)
+Content: Event-driven breaking news, voting updates, crisis response
+Intelligence value: Rapid notification of parliamentary surprises
+Latency: Real-time (5-15 minute response to events)</p>
+</li>
+<li>
+<p><strong>Evening Analysis (news-evening-analysis.md)</strong>
+Schedule: Daily at 17:00 (5 PM Swedish time)
+Content: Deep analytical synthesis, international context, forward assessment
+Intelligence value: End-of-day intelligence briefing format
+Latency: Structured analysis (1-2 hour research + writing)</p>
+</li>
+<li>
+<p><strong>Article Generators (news-article-generator.md)</strong>
+Schedule: Variable (triggered by content calendar or on-demand)
+Content: Committee reports, motions, propositions, week-ahead
+Intelligence value: Systematic coverage of all parliamentary products
+Latency: Scheduled batch processing (hourly to daily)</p>
+</li>
+</ol>
+<p><strong>DEDUPLICATION FRAMEWORK:</strong>
+The coordinator prevents duplicate article generation using similarity analysis:</p>
+<ul>
+<li>
+<p><strong>Similarity Threshold: 70%</strong>
+Computes Levenshtein distance on article titles and keyword sets
+Articles &gt;70% similar are considered duplicates
+Prevents wasted generation of already-covered topics</p>
+</li>
+<li>
+<p><strong>Time-Window Filtering: 6 hours</strong>
+Checks if similar article was generated in last 6 hours
+Allows coverage of same topic if sufficient time has passed
+Prevents rapid-fire duplicates while allowing topic revisits</p>
+</li>
+<li>
+<p><strong>Topic-Based Tracking</strong>
+Logs article topics (votes, bills, committees, etc.)
+Enables intelligent filtering at generation time
+Supports trending topic analysis</p>
+</li>
+</ul>
+<p><strong>MCP QUERY CACHING:</strong>
+To avoid redundant API calls to riksdag-regering MCP platform:</p>
+<ul>
+<li>
+<p><strong>Cache TTL: 2 hours</strong>
+Stores results of expensive queries (voting patterns, full-text search)
+Reduces MCP server load during peak hours
+Ensures consistency across multiple workflow invocations</p>
+</li>
+<li>
+<p><strong>Query Fingerprinting</strong>
+Creates deterministic hash of MCP query parameters
+Enables cache hits even if queries structured differently
+Supports query normalization</p>
+</li>
+<li>
+<p><strong>Staleness Handling</strong>
+Fresh data (within 2 hours) used for analysis
+Older data triggers MCP refresh
+Prevents stale intelligence from being published</p>
+</li>
+</ul>
+<p><strong>STATE MANAGEMENT:</strong>
+Persistent state file (news/metadata/workflow-state.json) tracks:</p>
+<ul>
+<li>Last workflow execution timestamp and results</li>
+<li>Recently generated articles (content + timestamp)</li>
+<li>MCP query cache with expiration times</li>
+<li>Workflow coordination metadata</li>
+<li>Running task list for cross-workflow visibility</li>
+</ul>
+<p><strong>OPERATIONAL WORKFLOW:</strong></p>
+<ol>
+<li>Workflow begins: Load current state from persistent storage</li>
+<li>Query Analysis: Check if similar article was recently generated</li>
+<li>Cache Check: Retrieve cached MCP queries if available (&lt;2hr old)</li>
+<li>Generation: Create new article (or skip if duplicate)</li>
+<li>State Update: Log article and update cache</li>
+<li>Persistence: Write updated state for next workflow invocation</li>
+</ol>
+<p><strong>INCIDENT SCENARIOS:</strong></p>
+<ul>
+<li>
+<p><strong>Double-Generation</strong>: Realtime Monitor and Article Generator both cover voting
+Solution: Similarity detection blocks duplicate, tracks in state</p>
+</li>
+<li>
+<p><strong>Stale Analysis</strong>: Evening Analysis uses MCP data from morning
+Solution: 2-hour cache expiration triggers fresh queries</p>
+</li>
+<li>
+<p><strong>Missed Coverage</strong>: Topic isn't covered by any workflow
+Solution: State logs enable gap analysis, manual workflow triggers</p>
+</li>
+<li>
+<p><strong>Cache Corruption</strong>: Stale query results cause analytical errors
+Solution: TTL-based expiration automatically refreshes</p>
+</li>
+</ul>
+<p><strong>INTELLIGENCE APPLICATIONS:</strong></p>
+<ul>
+<li>Prevents topic redundancy (editorial efficiency)</li>
+<li>Ensures consistent coverage across workflows</li>
+<li>Enables gap analysis (which topics are missed?)</li>
+<li>Supports workflow optimization (timing, triggers)</li>
+<li>Provides audit trail for editorial decisions</li>
+</ul>
+<p><strong>PERFORMANCE OPTIMIZATION:</strong></p>
+<ul>
+<li>MCP cache reduces API calls by estimated 60-70%</li>
+<li>Reduces computational load on MCP platform during peaks</li>
+<li>Faster generation cycles (cache lookups faster than API calls)</li>
+<li>Enables more frequent workflow execution</li>
+</ul>
+<p><strong>FAILURE MODES &amp; RECOVERY:</strong></p>
+<ul>
+<li>State file corruption: Graceful fallback to generation without deduplication</li>
+<li>Cache miss during load: Automatic MCP refresh triggered</li>
+<li>Timestamp drift: UTC normalization prevents timezone confusion</li>
+<li>Concurrent workflow execution: Lock-based synchronization</li>
+</ul>
+<p><strong>SCALABILITY CONSIDERATIONS:</strong></p>
+<ul>
+<li>State file size grows ~50KB per month (manageable)</li>
+<li>Cache memory: ~5MB typical, scales with coverage breadth</li>
+<li>Similarity computation: O(n) in articles, automated pruning at 180 days</li>
+<li>MCP query cache: Automatic cleanup of expired entries</li>
+</ul>
+<p><strong>GDPR COMPLIANCE:</strong></p>
+<ul>
+<li>Member mentions in articles tracked in state</li>
+<li>Data retention policies enforced (180-day pruning)</li>
+<li>Audit trail supports member rights requests</li>
+<li>No personal data stored in cache beyond article references</li>
+</ul></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>2.2.0</li></ul></dd>
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2024-10-15</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB (Editorial Operations &amp; Workflow Optimization)</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_workflow-state-coordinator.js.html">scripts/workflow-state-coordinator.js</a>, <a href="scripts_workflow-state-coordinator.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>news/metadata/workflow-state.json (State Persistence)</li>
+        
+            <li>Issue #150 (Workflow Coordination Enhancement)</li>
+        
+            <li>docs/WORKFLOW_ARCHITECTURE.md (Complete Architecture)</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

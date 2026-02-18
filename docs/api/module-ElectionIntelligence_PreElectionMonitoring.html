@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: ElectionIntelligence/PreElectionMonitoring</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: ElectionIntelligence/PreElectionMonitoring</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p><strong>Swedish Pre-Election Activity Monitoring &amp; Electoral Behavior Intelligence Dashboard</strong></p>
+<p>Advanced intelligence analysis platform implementing <strong>critical pre-election period monitoring</strong>
+(12-24 months before elections) with real-time activity anomaly detection. Detects
+election-driven behavior changes through quarterly comparison and establishes early warning
+indicators for coalition formation, government dissolution, and electoral campaign intensity.
+Uses comparative analytics to distinguish Q4 normal-year baseline from election-year surge patterns.</p>
+<h2>Intelligence Methodology</h2>
+<p>This module implements <strong>pre-election period intelligence monitoring</strong>:</p>
+<ul>
+<li><strong>Critical Period</strong>: Q4 (October-December) in years preceding elections (2022, 2026, 2030)</li>
+<li><strong>Comparison Baseline</strong>: Non-election years to establish normal-year Q4 patterns</li>
+<li><strong>Activity Metrics</strong>: Ballots, documents, committee decisions, parliamentary attendance</li>
+<li><strong>Anomaly Detection</strong>: Z-score and percentage-change thresholds for alerting</li>
+</ul>
+<h2>Pre-Election Intelligence Framework</h2>
+<p><strong>Three-Dimensional Analysis Taxonomy</strong>:</p>
+<ol>
+<li>
+<p><strong>Quarterly Activity Metrics</strong> (Baseline Comparison)</p>
+<ul>
+<li>Ballot volume (votes in parliamentary chambers)</li>
+<li>Document production (government proposals, motions)</li>
+<li>Committee decision output</li>
+<li>Parliamentary attendance and participation rates</li>
+<li>Speech frequency and debate intensity</li>
+</ul>
+</li>
+<li>
+<p><strong>Election-Year vs. Non-Election Comparison</strong> (Anomaly Detection)</p>
+<ul>
+<li>Q4 activity deltas (election years vs. baseline years)</li>
+<li>Percentage change from historical average</li>
+<li>Statistical significance testing (Z-scores)</li>
+<li>Confidence intervals on normal-year patterns</li>
+</ul>
+</li>
+<li>
+<p><strong>Pre-Election Behavior Patterns</strong> (Campaign Indicator)</p>
+<ul>
+<li>Increased legislative activity (bills, amendments)</li>
+<li>Coalition positioning behaviors</li>
+<li>Government confidence votes and stability tests</li>
+<li>Media attention surge and political discourse intensity</li>
+<li>Campaign messaging through parliamentary statements</li>
+</ul>
+</li>
+</ol>
+<h2>Data Sources (CIA Platform)</h2>
+<p><strong>Primary Intelligence Feeds</strong>:</p>
+<ul>
+<li>
+<p><code>view_riksdagen_pre_election_quarterly_activity_sample.csv</code></p>
+<ul>
+<li>Fields: year, quarter, ballot_count, document_count, attendance_rate, decision_count</li>
+<li>Scope: Quarterly data spanning 20+ years (2002-2025)</li>
+<li>Use: Historical pattern baseline establishment, trend analysis</li>
+</ul>
+</li>
+<li>
+<p><code>view_riksdagen_q4_election_year_comparison_sample.csv</code></p>
+<ul>
+<li>Fields: metric_name, q4_election_year, q4_baseline_avg, percent_delta, z_score, significance</li>
+<li>Scope: Comparative analysis across election/non-election years</li>
+<li>Use: Anomaly identification, early warning detection</li>
+</ul>
+</li>
+</ul>
+<h2>OSINT Collection Strategy</h2>
+<p><strong>Pre-Election Intelligence Monitoring</strong>:</p>
+<ol>
+<li><strong>Parliamentary Activity Tracking</strong>: Real-time Riksdag API feeds</li>
+<li><strong>Government Statements</strong>: Official announcements and press releases</li>
+<li><strong>Coalition Communications</strong>: Party leader statements and negotiations</li>
+<li><strong>Media Monitoring</strong>: Campaign coverage volume and intensity</li>
+<li><strong>Electoral Board</strong>: Official election date announcements</li>
+<li><strong>Polling Data</strong>: Pre-election polls with trend tracking</li>
+<li><strong>Social Media</strong>: Campaign activity and engagement surge detection</li>
+</ol>
+<h2>Visualization Intelligence</h2>
+<p><strong>Chart.js Quarterly Activity Trends</strong> (Primary):</p>
+<ul>
+<li><strong>20-Year Q4 Activity Timeline</strong>: Baseline vs. election year comparison
+<ul>
+<li>Multi-line chart with election-year Q4s highlighted</li>
+<li>Separate lines for: ballots, documents, attendance, decisions</li>
+<li>Color coding: Normal years (blue) vs. Election years (red/orange)</li>
+<li>Interactive: Hover reveals detailed metrics and year identification</li>
+</ul>
+</li>
+</ul>
+<p><strong>Chart.js Election-Year Comparison</strong> (Anomaly):</p>
+<ul>
+<li><strong>Pre-Election Surge Indicators</strong>: Percentage change from baseline
+<ul>
+<li>Bar chart showing positive/negative deltas for each metric</li>
+<li>Color-coded by significance level (green/yellow/red)</li>
+<li>Threshold lines showing warning (20%) and alert (50%) thresholds</li>
+</ul>
+</li>
+</ul>
+<p><strong>Chart.js Early Warning System</strong> (Alert):</p>
+<ul>
+<li><strong>Statistical Anomaly Flags</strong>: Z-score heat map
+<ul>
+<li>Metrics ordered by statistical significance</li>
+<li>Color intensity represents deviation magnitude</li>
+<li>Identifies which metrics show strongest election-year signals</li>
+</ul>
+</li>
+</ul>
+<p><strong>Chart.js Year-Over-Year Comparison</strong> (Temporal):</p>
+<ul>
+<li><strong>Q4 by Year Heatmap</strong>: Multi-year quarterly comparison
+<ul>
+<li>20 years × 4 metrics = 80-cell matrix</li>
+<li>Color intensity shows activity level</li>
+<li>Diagonal highlights show election-year concentrations</li>
+</ul>
+</li>
+</ul>
+<h2>Intelligence Analysis Frameworks Applied</h2></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.0.0</li></ul></dd>
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2024</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB - Pre-Election Intelligence Team</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_pre-election-dashboard.js.html">js/pre-election-dashboard.js</a>, <a href="js_pre-election-dashboard.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://github.com/Hack23/cia">CIA Platform Data Source</a></li>
+        
+            <li><a href="https://data.riksdagen.se">Riksdag Open Data API</a></li>
+        
+            <li>Threat Model Documentation</li>
+        
+            <li>Security Architecture</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

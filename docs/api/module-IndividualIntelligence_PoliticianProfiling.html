@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: IndividualIntelligence/PoliticianProfiling</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: IndividualIntelligence/PoliticianProfiling</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p><strong>Individual Politician Career Analytics &amp; Risk Intelligence Dashboard</strong></p>
+<p>Advanced intelligence profiling platform providing <strong>micro-level politician assessment</strong>
+across 349 Swedish members of parliament. Implements comprehensive risk scoring,
+influence hierarchy measurement, behavioral pattern analysis, and career trajectory
+forecasting using Chart.js and D3.js visualization. Monitors individual politician
+performance, behavioral anomalies, and career risk factors.</p>
+<h2>Intelligence Methodology</h2>
+<p>This module implements <strong>individual-level political intelligence profiling</strong>:</p>
+<ul>
+<li><strong>Target Population</strong>: 349 Swedish parliamentarians (Riksdagen members)</li>
+<li><strong>Analysis Dimensions</strong>: Risk, influence, behavioral patterns, career trajectory</li>
+<li><strong>Temporal Coverage</strong>: Full parliamentary career from first election to present</li>
+<li><strong>Granularity</strong>: Individual-level assessment with peer comparison context</li>
+</ul>
+<h2>Individual Politician Intelligence Framework</h2>
+<p><strong>Five-Dimensional Analysis Taxonomy</strong>:</p>
+<ol>
+<li>
+<p><strong>Risk Assessment</strong> (Individual Threat Profile)</p>
+<ul>
+<li>Ethics violations and conduct concerns</li>
+<li>Electoral vulnerability and reelection risk</li>
+<li>Political isolation and coalition weakness</li>
+<li>Career stability and burnout indicators</li>
+<li>Personal scandal and reputation exposure</li>
+</ul>
+</li>
+<li>
+<p><strong>Influence Measurement</strong> (Individual Power Assessment)</p>
+<ul>
+<li>Committee assignments and leadership roles</li>
+<li>Speaking frequency and discourse leadership</li>
+<li>Coalition-building capability and ally networks</li>
+<li>Media prominence and public visibility</li>
+<li>Decision-making authority in party structures</li>
+</ul>
+</li>
+<li>
+<p><strong>Behavioral Pattern Analysis</strong> (Anomaly Detection)</p>
+<ul>
+<li>Voting deviation from party discipline</li>
+<li>Attendance and participation consistency</li>
+<li>Speech content and rhetoric evolution</li>
+<li>Committee engagement and activity levels</li>
+<li>Coalition alliance volatility and shifts</li>
+</ul>
+</li>
+<li>
+<p><strong>Career Trajectory</strong> (Professional Development)</p>
+<ul>
+<li>Years of service and experience levels</li>
+<li>Role progression (backbencher → committee → leadership)</li>
+<li>Electoral performance trends</li>
+<li>Party assignments and responsibilities</li>
+<li>Generational cohort and peer advancement</li>
+</ul>
+</li>
+<li>
+<p><strong>Influence Bucket Classification</strong> (Politician Tiers)</p>
+<ul>
+<li>Leadership tier (party leaders, cabinet ministers)</li>
+<li>Influential tier (committee chairs, opinion leaders)</li>
+<li>Standard tier (regular parliamentarians)</li>
+<li>New/junior tier (first-term or new assignments)</li>
+</ul>
+</li>
+</ol>
+<h2>Data Sources (CIA Platform)</h2>
+<p><strong>Primary Intelligence Feeds</strong>:</p>
+<ul>
+<li>
+<p><code>view_politician_risk_summary_sample.csv</code></p>
+<ul>
+<li>Fields: politician_id, name, party, risk_score (0-10), risk_level, risk_categories</li>
+<li>Scope: Risk assessment for 349 individual MPs</li>
+<li>Use: Risk profiling, threat identification, risk-based sorting</li>
+</ul>
+</li>
+<li>
+<p><code>view_riksdagen_politician_influence_metrics_sample.csv</code></p>
+<ul>
+<li>Fields: politician_id, name, influence_score (0-100), leadership_roles, speech_frequency</li>
+<li>Scope: Individual influence measurement with component breakdown</li>
+<li>Use: Influence hierarchy visualization, power assessment</li>
+</ul>
+</li>
+<li>
+<p><code>view_politician_behavioral_trends_sample.csv</code></p>
+<ul>
+<li>Fields: politician_id, year, voting_deviation_pct, attendance_rate, speech_sentiment</li>
+<li>Scope: Annual behavioral metrics for anomaly detection</li>
+<li>Use: Behavioral pattern recognition, consistency assessment</li>
+</ul>
+</li>
+<li>
+<p><code>distribution_experience_levels.csv</code></p>
+<ul>
+<li>Fields: politician_id, years_service, parliament_term_count, experience_level, avg_roles</li>
+<li>Scope: Career experience and tenure statistics</li>
+<li>Use: Experience profiling, junior/senior categorization</li>
+</ul>
+</li>
+<li>
+<p><code>distribution_influence_buckets.csv</code></p>
+<ul>
+<li>Fields: politician_id, influence_bucket (leadership/influential/standard/junior), bucket_rank</li>
+<li>Scope: Categorization of 349 MPs into influence tiers</li>
+<li>Use: Tier-based analysis, leadership pipeline tracking</li>
+</ul>
+</li>
+<li>
+<p><code>distribution_assignment_roles.csv</code></p>
+<ul>
+<li>Fields: politician_id, role_type, role_count, committee_assignments, leadership_count</li>
+<li>Scope: Individual role assignments and responsibilities</li>
+<li>Use: Role trajectory tracking, responsibility assessment</li>
+</ul>
+</li>
+</ul>
+<h2>OSINT Collection Strategy</h2>
+<p><strong>Multi-Layer Individual Intelligence</strong>:</p>
+<ol>
+<li><strong>Parliamentary Records</strong>: Voting records, speeches, committee participation</li>
+<li><strong>Media Monitoring</strong>: Coverage volume, sentiment, scandal tracking</li>
+<li><strong>Social Media</strong>: Engagement metrics, online presence, supporter networks</li>
+<li><strong>Personal Background</strong>: Declared conflicts, financial interests, organizational affiliations</li>
+<li><strong>Electoral History</strong>: Campaign performance, vote trends, constituency dynamics</li>
+<li><strong>Network Analysis</strong>: Coalition patterns, ally/rival relationships, influence circles</li>
+<li><strong>Behavioral Metrics</strong>: Speech analysis, consistency assessment, sentiment tracking</li>
+</ol>
+<h2>Visualization Intelligence</h2>
+<p><strong>Chart.js Risk Summary</strong> (Primary):</p>
+<ul>
+<li><strong>Risk Distribution Chart</strong>: Population-wide risk distribution
+<ul>
+<li>Histogram showing risk score distribution across 349 MPs</li>
+<li>Color-coded risk levels (green/yellow/orange/red)</li>
+<li>Shows critical/high-risk outliers</li>
+</ul>
+</li>
+</ul>
+<p><strong>Chart.js Influence Metrics</strong> (Power Assessment):</p>
+<ul>
+<li><strong>Influence Ranking Chart</strong>: Top 50 most influential politicians
+<ul>
+<li>Horizontal bar chart ranked by influence score</li>
+<li>Color segments for influence dimensions</li>
+<li>Identifies power concentration vs. distributed influence</li>
+</ul>
+</li>
+</ul>
+<p><strong>Chart.js Behavioral Trends</strong> (Anomaly Detection):</p>
+<ul>
+<li><strong>Behavioral Pattern Timeline</strong>: Individual politician behavior over time
+<ul>
+<li>Multi-line chart showing voting deviation and participation trends</li>
+<li>Identifies consistency, volatility, or anomalies</li>
+<li>Flags behavioral changes and pattern breaks</li>
+</ul>
+</li>
+</ul>
+<p><strong>Chart.js Experience Distribution</strong> (Career):</p>
+<ul>
+<li><strong>Experience Levels</strong>: Distribution across experience categories
+<ul>
+<li>Grouped bar chart showing tenure statistics</li>
+<li>Identifies junior/senior ratios and generational balance</li>
+<li>Shows parliamentary turnover rates</li>
+</ul>
+</li>
+</ul>
+<p><strong>Chart.js Role Distribution</strong> (Responsibility):</p>
+<ul>
+<li><strong>Assignment Roles</strong>: Distribution of parliamentary roles
+<ul>
+<li>Stacked bar showing committee, leadership, and regular roles</li>
+<li>Highlights responsibility concentration</li>
+<li>Shows role progression paths</li>
+</ul>
+</li>
+</ul>
+<h2>Intelligence Analysis Frameworks Applied</h2></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.0.0</li></ul></dd>
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>2024</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB - Individual Intelligence Team</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://github.com/Hack23/cia">CIA Platform Data Source</a></li>
+        
+            <li><a href="https://www.riksdagen.se">Riksdag Official Site</a></li>
+        
+            <li>Threat Model Documentation</li>
+        
+            <li>Security Architecture</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~createCareerTrajectoryChart"><span class="type-signature">(inner) </span>createCareerTrajectoryChart<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create career trajectory line chart from behavioral trends data
+Shows attendance, effectiveness, and discipline trends over time</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Behavioral trends data from CIA CSV</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line408">line 408</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~createExperienceDistributionChart"><span class="type-signature">(inner) </span>createExperienceDistributionChart<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create experience distribution bar chart from real CIA data</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Experience distribution data from distribution_experience_levels.csv</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line671">line 671</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~createProductivityInfluenceChart"><span class="type-signature">(inner) </span>createProductivityInfluenceChart<span class="signature">(riskData, influenceData)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create productivity vs influence scatter chart from real CIA data
+Uses risk_summary (productivity proxy via documents/votes) and influence_metrics</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>riskData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Risk summary data with vote counts and documents</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>influenceData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Influence metrics with network connections</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line536">line 536</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~fetchCIAData"><span class="type-signature">(async, inner) </span>fetchCIAData<span class="signature">(urls)</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Fetch CSV data with local-first, remote-fallback strategy</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>urls</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of [localUrl, remoteUrl]</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line261">line 261</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Parsed CSV data</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~loadDashboardData"><span class="type-signature">(async, inner) </span>loadDashboardData<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Load all dashboard data from real CIA CSV files
+Uses local-first with remote-fallback for each data source</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line757">line 757</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~parseCSV"><span class="type-signature">(inner) </span>parseCSV<span class="signature">(csvText)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parse CSV text to array of objects</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>csvText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSV text content</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line289">line 289</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Parsed data</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~parseCSVLine"><span class="type-signature">(inner) </span>parseCSVLine<span class="signature">(line)</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parse a single CSV line handling quoted fields</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>line</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSV line</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line318">line 318</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Parsed values</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~renderTop10List"><span class="type-signature">(inner) </span>renderTop10List<span class="signature">(containerId, data, scoreLabel)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Render Top 10 list</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>containerId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Container element ID</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Top 10 data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scoreLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    Score
+                
+                </td>
+            
+
+            <td class="description last"><p>Label for score column</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line352">line 352</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~showError"><span class="type-signature">(inner) </span>showError<span class="signature">(message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Show error message</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error message</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_politician-dashboard.js.html">js/politician-dashboard.js</a>, <a href="js_politician-dashboard.js.html#line841">line 841</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

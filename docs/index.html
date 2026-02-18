@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riksdagsmonitor Documentation Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #e0e0e0;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #00d9ff;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    }
+    .subtitle {
+      color: #ff006e;
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .card {
+      background: rgba(26, 30, 61, 0.6);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      border-color: #00d9ff;
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+      transform: translateY(-5px);
+    }
+    .card h2 {
+      color: #ffbe0b;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card p {
+      margin-bottom: 1.5rem;
+      color: #b0b0b0;
+    }
+    .card a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+      color: #0a0e27;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .card a:hover {
+      background: linear-gradient(135deg, #00ffff 0%, #00d9ff 100%);
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+    }
+    .footer {
+      text-align: center;
+      color: #808080;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0, 217, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Riksdagsmonitor Documentation Hub</h1>
+    <p class="subtitle">Swedish Parliament Intelligence Platform - Technical Documentation</p>
+    
+    <div class="grid">
+      <div class="card">
+        <h2>📖 API Documentation</h2>
+        <p>Comprehensive JSDoc-generated API reference for all JavaScript modules, dashboard components, and utility functions.</p>
+        <a href="api/index.html">View API Docs →</a>
+      </div>
+      
+      <div class="card">
+        <h2>📊 Test Coverage</h2>
+        <p>Vitest coverage report showing line, branch, function, and statement coverage across the codebase.</p>
+        <a href="coverage/index.html">View Coverage →</a>
+      </div>
+      
+      <div class="card">
+        <h2>🧪 Test Results</h2>
+        <p>Detailed unit test results from Vitest, including all test suites and individual test cases.</p>
+        <a href="test-results/">View Test Results →</a>
+      </div>
+      
+      <div class="card">
+        <h2>🎭 E2E Tests (Cypress)</h2>
+        <p>End-to-end test reports from Cypress, validating dashboard functionality and user interactions.</p>
+        <a href="cypress/">View E2E Reports →</a>
+      </div>
+      
+      <div class="card">
+        <h2>📦 Dependencies</h2>
+        <p>Complete dependency tree showing all npm packages and their versions used in the project.</p>
+        <a href="dependencies/dependency-tree.txt">View Dependency Tree →</a>
+      </div>
+      
+      <div class="card">
+        <h2>🏠 Back to Main Site</h2>
+        <p>Return to the main Riksdagsmonitor platform to explore Swedish Parliament intelligence dashboards.</p>
+        <a href="../index.html">Go to Main Site →</a>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>Generated during release workflow | Riksdagsmonitor by Hack23 AB</p>
+      <p>Licensed under Apache License 2.0</p>
+    </div>
+  </div>
+</body>
+</html>

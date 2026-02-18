@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/party-variants.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/party-variants.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module Intelligence/PartyAnalysis
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Party Variants - Political Party Name Normalization Framework
+ * 
+ * @description
+ * Essential party name normalization utility providing canonical mappings of Swedish
+ * political party names to their abbreviated codes. Prevents double-counting and
+ * analytical bias when multiple party name variants appear in the same content.
+ * Critical infrastructure for accurate party perspective analysis and coalition dynamics tracking.
+ * 
+ * Political Party Context (Swedish Riksdag - 8 parties):
+ * - Socialdemokraterna (S): Left-wing social democratic party
+ * - Moderaterna (M): Right-wing conservative/liberal party
+ * - Sverigedemokraterna (SD): Right-wing populist/nationalist party
+ * - Vänsterpartiet (V): Far-left communist party
+ * - Miljöpartiet (MP): Green party (left-wing)
+ * - Centerpartiet (C): Centrist/rural representation party
+ * - Liberalerna (L): Classical liberal party
+ * - Kristdemokraterna (KD): Christian democratic party
+ * 
+ * Party Naming Challenges:
+ * Articles often reference parties by multiple name variants (full Swedish name,
+ * English translation, formal abbreviation). Example: "Moderaterna" = "Moderate Party" = "M".
+ * Without normalization, party mention counting becomes inaccurate, leading to:
+ * - Overstated party perspective counts (same party counted multiple times)
+ * - Analytical bias (some parties may use translated names more frequently)
+ * - Quality metrics misalignment (perspective diversity falsely inflated)
+ * 
+ * Normalization Strategy:
+ * - Maps all party name variants to single canonical party code (S, M, SD, V, MP, C, L, KD)
+ * - Prevents double-counting when both full names and abbreviations appear
+ * - Ensures consistent party perspective analysis across content
+ * - Enables reliable coalition analysis based on party groupings
+ * 
+ * Core Data Structure:
+ * PARTY_VARIANTS object maps canonical codes to arrays of name variants:
+ * {
+ *   'S': ['Socialdemokraterna', 'S'],
+ *   'M': ['Moderaterna', 'M'],
+ *   'SD': ['Sverigedemokraterna', 'SD'],
+ *   // ... etc for all 8 parties
+ * }
+ * 
+ * Text Matching Implementation:
+ * extractPartyMentions() function implements robust text search:
+ * - Uses Unicode-aware regex boundaries (\p{L}\p{N}) for proper word detection
+ * - Handles non-ASCII characters: ä, ö, å in Swedish names
+ * - Prevents false matches: searching "M" doesn't match "Moderaterna"'s M
+ * - Searches HTML content directly (works with generated articles)
+ * - Returns Set&lt;string> of canonical party codes found
+ * 
+ * Integration Usage Across Codebase:
+ * - article-quality-enhancer.js: Counts unique parties for perspective diversity metric
+ * - validate-evening-analysis.js: Extracts party mentions for analytical scoring
+ * - news-evening-analysis.test.js: Tests party mention extraction accuracy
+ * - Intelligence dashboards: Party affiliation tracking and coalition analysis
+ * 
+ * Intelligence Applications:
+ * - Coalition dynamics analysis: Track party alliances and opposition blocs
+ * - Perspective diversity measurement: Ensure balanced party coverage
+ * - Political polarization tracking: Identify party positioning shifts
+ * - Media bias detection: Identify systematic under/over-coverage of parties
+ * - Electoral analysis: Monitor party popularity and messaging
+ * 
+ * Unicode Handling for Swedish Characters:
+ * Pattern: (?:^|[^\p{L}\p{N}])VARIANT(?=$|[^\p{L}\p{N}])
+ * - \p{L}: Unicode letter (handles ä, ö, å, and all other scripts)
+ * - \p{N}: Unicode number
+ * - Prevents matching party codes inside word boundaries
+ * - Works across all languages despite Swedish character specifics
+ * 
+ * Boolean Flags for Language Variety:
+ * If future expansion includes English translations or other languages:
+ * - S: ['Socialdemokraterna', 'S', 'Social Democrats'] (if needed)
+ * - M: ['Moderaterna', 'M', 'Moderate Party']
+ * - Extension maintains backward compatibility
+ * 
+ * Data Protection:
+ * - No personal identifiers stored or processed
+ * - Operates on published party entity references only
+ * - Complies with GDPR by not identifying individual politicians
+ * - Audit trail of political party mentions in articles
+ * 
+ * ISMS Compliance:
+ * - ISO 27001:2022 A.12.2.1 (change log maintenance - version control)
+ * - NIST CSF 2.0 PR.DS-1 (data classification - public content)
+ * 
+ * Functions:
+ * - extractPartyMentions(html): Searches HTML content for party references
+ *   Input: HTML string from article
+ *   Output: Set&lt;string> of canonical party codes (e.g., new Set(['S', 'M', 'SD']))
+ * 
+ * Usage Example:
+ *   import { extractPartyMentions } from './party-variants.js';
+ *   const parties = extractPartyMentions(articleHtml);
+ *   const uniquePartyCount = parties.size;  // 0-8
+ *   const hasBalancedCoverage = uniquePartyCount >= 4;  // Min 4 parties threshold
+ * 
+ * @intelligence Core utility for accurate party perspective analysis
+ * @osint Analyzes public political party references from news coverage
+ * @risk Inaccurate normalization leads to biased party perspective counts
+ * @gdpr No personal data processing (political entity references only)
+ * @security Case-sensitive matching for proper abbreviation detection
+ * 
+ * @author Hack23 AB (Political Intelligence Team)
+ * @license Apache-2.0
+ * @version 1.8.0
+ * @see article-quality-enhancer.js (primary consumer)
+ * @see validate-evening-analysis.js (party mention validation)
+ * @see Swedish political party system structure
+ */
+
+export const PARTY_VARIANTS = {
+  S: ['Socialdemokraterna', 'S'],
+  M: ['Moderaterna', 'M'],
+  SD: ['Sverigedemokraterna', 'SD'],
+  V: ['Vänsterpartiet', 'V'],
+  MP: ['Miljöpartiet', 'MP'],
+  C: ['Centerpartiet', 'C'],
+  L: ['Liberalerna', 'L'],
+  KD: ['Kristdemokraterna', 'KD']
+};
+
+/**
+ * Extract unique party mentions from HTML content
+ * @param {string} html - HTML content to search
+ * @returns {Set&lt;string>} - Set of canonical party codes found
+ */
+export function extractPartyMentions(html) {
+  const parties = new Set();
+  
+  if (!html) {
+    return parties;
+  }
+  
+  for (const [canonicalCode, variants] of Object.entries(PARTY_VARIANTS)) {
+    for (const variant of variants) {
+      // Escape special regex characters in variant
+      const escapedVariant = variant.replace(/[.*+?^${}()|[\]\\]/g, '\\$&amp;');
+      
+      // Use Unicode-aware non-letter/non-number boundary for ALL variants.
+      // This handles HTML tags (>), parentheses, punctuation, whitespace etc.
+      // \b doesn't work well with non-ASCII (ä, ö, å) so we use [^\p{L}\p{N}].
+      // For short codes (S, M, V, C, L, MP, SD, KD), this prevents matching
+      // inside words like "Sörling", "USA", or "MP" when looking for "M".
+      const pattern = new RegExp(
+        `(?:^|[^\\p{L}\\p{N}])${escapedVariant}(?=$|[^\\p{L}\\p{N}])`, 'ui'
+      );
+      if (pattern.test(html)) {
+        parties.add(canonicalCode);
+        break;
+      }
+    }
+  }
+  
+  return parties;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

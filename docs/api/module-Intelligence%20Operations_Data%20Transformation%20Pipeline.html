@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: Intelligence Operations/Data Transformation Pipeline</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: Intelligence Operations/Data Transformation Pipeline</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Core data transformation pipeline converting raw MCP server responses into
+structured intelligence article content. This module implements advanced semantic
+processing algorithms for legislative data, parliamentary event analysis, and
+multi-dimensional data mapping for automated journalism.</p>
+<p>The transformation pipeline provides four specialized processing stages:</p>
+<p>Stage 1 - Calendar Event Processing (transformCalendarToEventGrid):
+Transforms raw calendar data from riksdag-regering-mcp into structured event grid
+suitable for visual presentation. Handles multiple timestamp formats (MCP responses
+may use 'datum', 'from', 'start' fields), performs temporal normalization, and
+groups events by date for calendar visualization. Implements date comparison logic
+for marking &quot;today&quot; events with visual indicators.</p>
+<p>Stage 2 - Document Content Generation (generateArticleContent):
+Processes structured parliamentary documents into narrative article prose. Maps
+document types (propositions, motions, reports) to narrative structures, extracts
+semantic meaning from legislative language, and generates coherent paragraphs
+suitable for journalist review. Applies natural language processing techniques
+for readability optimization and audience targeting.</p>
+<p>Stage 3 - Intelligence Extraction (extractWatchPoints):
+Performs analytical extraction of critical intelligence points from parliamentary
+data. Identifies policy implications, fiscal impacts, timeline constraints, and
+political risk factors. Uses rule-based analysis for common legislative patterns
+(votes, committee decisions, government actions) and produces structured watch
+points for inclusion in article &quot;watch sections&quot;.</p>
+<p>Stage 4 - Metadata Generation (generateMetadata, calculateReadTime, generateSources):
+Synthesizes article metadata including publication date, author attribution, reading
+time estimates, source citations, and SEO keywords. Generates machine-readable
+metadata for structured data (Schema.org JSON-LD) and social media sharing.</p>
+<p>Supported Data Types:</p>
+<ul>
+<li>Calendar events (committee meetings, plenary sessions, parliamentary breaks)</li>
+<li>Legislative documents (propositions, motions, parliamentary inquiries)</li>
+<li>Voting records (roll-call votes with party/member positions)</li>
+<li>Government announcements (press releases, policy documents, ministerial statements)</li>
+<li>Committee reports (analysis, recommendations, decisions)</li>
+<li>Debate transcripts (parliamentary speeches with speaker context)</li>
+</ul>
+<p>Multi-Language Processing:</p>
+<ul>
+<li>Swedish source content transformation into 14 target languages</li>
+<li>Terminology mapping for political/legal concepts</li>
+<li>Date formatting and timezone adjustment per target language</li>
+<li>Pluralization and grammatical agreement handling</li>
+<li>RTL language support for Arabic and Hebrew output</li>
+</ul>
+<p>Data Validation &amp; Quality Assurance:</p>
+<ul>
+<li>Schema validation against CIA data model definitions</li>
+<li>Null/undefined field handling with intelligent fallbacks</li>
+<li>Temporal consistency checking (dates in correct order)</li>
+<li>Cross-reference validation (referenced documents exist)</li>
+<li>Semantic completeness assessment</li>
+</ul></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>2.0.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Hack23 AB - Intelligence Operations Team</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Apache-2.0</li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>./mcp-client.js MCP API client providing raw data</li>
+        
+            <li>./article-template.js Template rendering consuming transformed data</li>
+        
+            <li>./generate-news-enhanced.js Article generation orchestration</li>
+        
+            <li>./html-utils.js HTML sanitization (escapeHtml)</li>
+        
+            <li>docs/DATA_TRANSFORMATION_GUIDE.md Detailed transformation algorithms</li>
+        
+            <li>docs/MCP_DATA_SCHEMA.md MCP response schema definitions</li>
+        
+            <li>docs/INTELLIGENCE_EXTRACTION.md Intelligence analysis methodology</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".CONTENT_LABELS"><span class="type-signature">(static, constant) </span>CONTENT_LABELS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Generate Week Ahead article content</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line362">line 362</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~LOCALE_MAP"><span class="type-signature">(inner, constant) </span>LOCALE_MAP<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Map of custom locale codes to Intl-compatible locale strings</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line262">line 262</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".L"><span class="type-signature">(static) </span>L<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Get localized label with fallback to English</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line718">line 718</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".calculateReadTime"><span class="type-signature">(static) </span>calculateReadTime<span class="signature">(content)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Calculate estimated read time</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Article HTML content</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line1022">line 1022</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Read time (e.g., &quot;5 min read&quot;)</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".extractTopics"><span class="type-signature">(static) </span>extractTopics<span class="signature">(documents)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Extract key topics from documents</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>documents</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Documents from MCP server</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line302">line 302</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Topic tags</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".extractWatchPoints"><span class="type-signature">(static) </span>extractWatchPoints<span class="signature">(data, lang)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Extract &quot;Watch Points&quot; from data</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>MCP data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lang</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Language code</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line918">line 918</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Watch points for article</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".generateArticleContent"><span class="type-signature">(static) </span>generateArticleContent<span class="signature">(data, type, lang)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generate article content from MCP data</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>MCP data (events, documents, etc.)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Article type (week-ahead, committee-reports, etc.)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lang</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Language code</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line343">line 343</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Article HTML content</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".generateMetadata"><span class="type-signature">(static) </span>generateMetadata<span class="signature">(data, type, lang)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generate article metadata</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Article data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Article type</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lang</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Language code</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line969">line 969</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Article metadata</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".generateSources"><span class="type-signature">(static) </span>generateSources<span class="signature">(tools)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generate article sources list</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tools</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>MCP tools used</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line1039">line 1039</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Sources list</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".transformCalendarToEventGrid"><span class="type-signature">(static) </span>transformCalendarToEventGrid<span class="signature">(events, lang)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Transform calendar events into event grid structure for template</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>events</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Calendar events from MCP server</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lang</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Language code (en, sv)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line205">line 205</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Event grid structure for article template</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~formatDayLabel"><span class="type-signature">(inner) </span>formatDayLabel<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Format day label (e.g., &quot;February 10 - Monday&quot;) using Intl for all 14 languages</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line283">line 283</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~formatDayName"><span class="type-signature">(inner) </span>formatDayName<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Format day name (Monday, Tuesday, etc.) using Intl for all 14 languages</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line271">line 271</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generateCommitteeContent"><span class="type-signature">(inner) </span>generateCommitteeContent<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generate Committee Reports content</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line793">line 793</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generateGenericContent"><span class="type-signature">(inner) </span>generateGenericContent<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generate generic content</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line907">line 907</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generateMotionsContent"><span class="type-signature">(inner) </span>generateMotionsContent<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generate Motions content</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line868">line 868</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generatePropositionsContent"><span class="type-signature">(inner) </span>generatePropositionsContent<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generate Propositions content</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line831">line 831</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isHighPriority"><span class="type-signature">(inner) </span>isHighPriority<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determine if event is high priority</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line777">line 777</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isTodayDate"><span class="type-signature">(inner) </span>isTodayDate<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Check if date is today</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_data-transformers.js.html">scripts/data-transformers.js</a>, <a href="scripts_data-transformers.js.html#line252">line 252</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

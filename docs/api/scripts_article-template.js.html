@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts/article-template.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/article-template.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module Intelligence Operations/Article Template Generation
+ * @category Intelligence Operations - Intelligence Report Templates
+ * 
+ * @description
+ * Advanced HTML article template engine generating professional intelligence reports
+ * with semantic markup compliance and accessibility standards. This module implements
+ * template-based content generation for automated news articles, maintaining consistent
+ * visual hierarchy and information architecture across all 14 supported languages.
+ * 
+ * The template engine provides intelligent document structure rendering:
+ * 
+ * Semantic HTML5 Structure:
+ * - Article headers with publication metadata and source attribution
+ * - Navigation breadcrumbs with language-localized labels
+ * - Event calendar grid visualization (for Week Ahead article type)
+ * - Content sections with intelligent hierarchy (h2-h4)
+ * - Context boxes for supplementary intelligence (facts, quotes, analysis)
+ * - Related links section pointing to source documents
+ * - Watch section extracting critical points and risk indicators
+ * - Footer with publication metadata and change history
+ * 
+ * Design System Integration:
+ * - Cyberpunk visual theme with custom CSS variables
+ * - Responsive grid layout (CSS Grid, 320px-1440px+ viewport support)
+ * - Dark theme optimization for reduced eye strain during extended reading
+ * - Accessibility features: ARIA landmarks, semantic heading hierarchy, color contrast
+ * - Print-friendly styling preserving readability in physical distribution
+ * 
+ * Multi-Language Rendering (14 languages):
+ * - Dynamic breadcrumb translation for navigation
+ * - Localized date formatting and timezone handling
+ * - RTL language support (Arabic, Hebrew) with automatic text direction
+ * - Language-specific typography and character spacing adjustments
+ * - Multi-language footer labels and publication information
+ * 
+ * Article Type Templates:
+ * - Week Ahead: Event grid with day-by-day parliamentary schedule
+ * - Committee Reports: Structured committee analysis with member lists
+ * - Propositions: Government proposal analysis with impact assessment
+ * - Motions: Parliamentary motion analysis with voting predictions
+ * - Breaking: Rapid-response template with minimal processing delay
+ * 
+ * SEO Optimization:
+ * - Structured data (Schema.org JSON-LD) for search engine discovery
+ * - Meta tag generation (OpenGraph, Twitter Card) for social sharing
+ * - Canonical URL prevention of duplicate content penalties
+ * - Keyword placement in headers, metadata, and internal linking
+ * 
+ * @intelligence
+ * Content Architecture Methodology:
+ * Implements inverted pyramid news structure with intelligence-specific adaptations:
+ * - Lede: Most significant political development with immediate impact implications
+ * - Summary: Key facts and context necessary for understanding
+ * - Analysis: Deeper dive into causation, stakeholders, and political implications
+ * - Source Documentation: Full links to primary sources for verification
+ * - Predictions: Forward-looking implications and related upcoming events
+ * 
+ * Visual Information Design:
+ * - Event calendars as primary visual element for week-ahead articles
+ * - Risk indicator icons (⚠️ critical, ⚡ urgent, 📌 watch)
+ * - Timeline visualization for multi-day legislative processes
+ * - Party affiliation color-coding for quick visual analysis
+ * - Committee jurisdiction mapping for organizational intelligence
+ * 
+ * Template Customization Patterns:
+ * - Data binding for dynamic content injection
+ * - Conditional rendering for optional sections (context, related links)
+ * - Layout variants based on article metadata
+ * - Theme customization via CSS custom properties
+ * 
+ * @osint
+ * Source Presentation Strategy:
+ * - Hyperlinked document references to official Riksdagen sources
+ * - MCP tool references for reproducible source verification
+ * - Publication dates aligned with source data collection timestamp
+ * - Source status indicators (official, preliminary, final) based on data freshness
+ * 
+ * Document Link Integration:
+ * - Generate direct URLs to Riksdagen.se and Regeringen.se documents
+ * - Construct deep links for specific sections of long documents
+ * - Fallback link strategies when document IDs are incomplete
+ * - Link health monitoring via CI/CD validation workflows
+ * 
+ * @risk
+ * Template Rendering Risks:
+ * 
+ * Threat: XSS Injection via Content
+ * - Malicious scripts in MCP response data
+ * - Mitigation: HTML entity escaping via escapeHtml() utility
+ * 
+ * Threat: CSS Injection
+ * - Style-based information disclosure or visual manipulation
+ * - Mitigation: Style sandboxing, no user-controlled style attributes
+ * 
+ * Threat: Layout Rendering Failures
+ * - Article display broken across different browsers/devices
+ * - Mitigation: Cross-browser testing, responsive design validation
+ * 
+ * Threat: SEO Poisoning
+ * - Template generating duplicate meta tags or manipulated structured data
+ * - Mitigation: Schema validation, canonical URL enforcement
+ * 
+ * @gdpr
+ * Data Protection in Template Rendering:
+ * 
+ * - HTML Output: No personal data in HTML output (template-level)
+ * - Link Sanitization: No tracking parameters or analytics IDs in generated links
+ * - Historical Preservation: Article HTML may be archived indefinitely
+ * - Cookie Compliance: Template does not set cookies (third-party responsibility)
+ * - Analytics Transparency: If analytics codes added, user consent required
+ * 
+ * @security
+ * Content Security Analysis:
+ * 
+ * Input Validation:
+ * - Content parameters validated against expected types
+ * - HTML strings escaped via escapeHtml() helper
+ * - URLs validated and normalized before href insertion
+ * 
+ * Output Encoding:
+ * - UTF-8 character encoding enforced
+ * - HTML entities for special characters
+ * - CSS class names sanitized (alphanumeric + hyphen only)
+ * 
+ * Dependency Security:
+ * - html-utils module provides sanitization functions
+ * - No external script dependencies or CDN reliance
+ * - Inline styling only, no dynamic CSS imports
+ * 
+ * @author Hack23 AB - Intelligence Operations Team
+ * @license Apache-2.0
+ * @version 2.0.0
+ * 
+ * @see {@link ./html-utils.js} HTML sanitization utilities (escapeHtml)
+ * @see {@link ./data-transformers.js} Data transformation producing template input
+ * @see {@link ./generate-news-enhanced.js} Article generation orchestration
+ * @see {@link ./editorial-pillars.js} Editorial structure definitions
+ * @see {@link docs/TEMPLATE_ARCHITECTURE.md} Template design documentation
+ * @see {@link docs/ACCESSIBILITY_STANDARDS.md} WCAG 2.1 AA compliance guide
+ * @see {@link docs/SEO_OPTIMIZATION.md} Search engine optimization strategy
+ */
+
+import { escapeHtml } from './html-utils.js';
+
+/**
+ * Breadcrumb translations for all supported languages
+ */
+const BREADCRUMB_TRANSLATIONS = {
+  en: { home: 'Home', news: 'News' },
+  sv: { home: 'Hem', news: 'Nyheter' },
+  da: { home: 'Hjem', news: 'Nyheder' },
+  no: { home: 'Hjem', news: 'Nyheter' },
+  fi: { home: 'Etusivu', news: 'Uutiset' },
+  de: { home: 'Startseite', news: 'Nachrichten' },
+  fr: { home: 'Accueil', news: 'Actualités' },
+  es: { home: 'Inicio', news: 'Noticias' },
+  nl: { home: 'Home', news: 'Nieuws' },
+  ar: { home: 'الرئيسية', news: 'أخبار' },
+  he: { home: 'בית', news: 'חדשות' },
+  ja: { home: 'ホーム', news: 'ニュース' },
+  ko: { home: '홈', news: '뉴스' },
+  zh: { home: '主页', news: '新闻' }
+};
+
+/**
+ * Get breadcrumb name for a given language
+ * @param {string} lang - Language code
+ * @param {string} type - Breadcrumb type ('home' or 'news')
+ * @returns {string} Translated breadcrumb name
+ */
+function getBreadcrumbName(lang, type) {
+  return BREADCRUMB_TRANSLATIONS[lang]?.[type] || BREADCRUMB_TRANSLATIONS.en[type];
+}
+
+/**
+ * Footer label translations for all 14 languages
+ */
+const FOOTER_LABELS = {
+  en: { sourcesTitle: 'Sources and Data', dataSources: 'Data Sources', generatedBy: 'Generated by', generatedByValue: 'Automated News System using riksdag-regering-mcp', analysisTools: 'Analysis Tools', analysisToolsValue: 'AI-assisted journalism with human editorial oversight', backToNews: 'Back to News' },
+  sv: { sourcesTitle: 'Källor och data', dataSources: 'Datakällor', generatedBy: 'Genererad av', generatedByValue: 'Automatiserat nyhetssystem med riksdag-regering-mcp', analysisTools: 'Analysverktyg', analysisToolsValue: 'AI-assisterad journalistik med mänsklig granskning', backToNews: 'Tillbaka till nyheter' },
+  da: { sourcesTitle: 'Kilder og data', dataSources: 'Datakilder', generatedBy: 'Genereret af', generatedByValue: 'Automatiseret nyhedssystem med riksdag-regering-mcp', analysisTools: 'Analyseværktøjer', analysisToolsValue: 'AI-assisteret journalistik med redaktionel gennemgang', backToNews: 'Tilbage til nyheder' },
+  no: { sourcesTitle: 'Kilder og data', dataSources: 'Datakilder', generatedBy: 'Generert av', generatedByValue: 'Automatisert nyhetssystem med riksdag-regering-mcp', analysisTools: 'Analyseverktøy', analysisToolsValue: 'AI-assistert journalistikk med redaksjonell gjennomgang', backToNews: 'Tilbake til nyheter' },
+  fi: { sourcesTitle: 'Lähteet ja data', dataSources: 'Datalähteet', generatedBy: 'Luonut', generatedByValue: 'Automatisoitu uutisjärjestelmä riksdag-regering-mcp:llä', analysisTools: 'Analyysityökalut', analysisToolsValue: 'Tekoälyavusteinen journalismi toimituksellisella valvonnalla', backToNews: 'Takaisin uutisiin' },
+  de: { sourcesTitle: 'Quellen und Daten', dataSources: 'Datenquellen', generatedBy: 'Erstellt von', generatedByValue: 'Automatisiertes Nachrichtensystem mit riksdag-regering-mcp', analysisTools: 'Analysewerkzeuge', analysisToolsValue: 'KI-gestützter Journalismus mit redaktioneller Aufsicht', backToNews: 'Zurück zu Nachrichten' },
+  fr: { sourcesTitle: 'Sources et données', dataSources: 'Sources de données', generatedBy: 'Généré par', generatedByValue: 'Système automatisé avec riksdag-regering-mcp', analysisTools: 'Outils d\'analyse', analysisToolsValue: 'Journalisme assisté par IA avec supervision rédactionnelle', backToNews: 'Retour aux actualités' },
+  es: { sourcesTitle: 'Fuentes y datos', dataSources: 'Fuentes de datos', generatedBy: 'Generado por', generatedByValue: 'Sistema automatizado con riksdag-regering-mcp', analysisTools: 'Herramientas de análisis', analysisToolsValue: 'Periodismo asistido por IA con supervisión editorial', backToNews: 'Volver a noticias' },
+  nl: { sourcesTitle: 'Bronnen en data', dataSources: 'Databronnen', generatedBy: 'Gegenereerd door', generatedByValue: 'Geautomatiseerd nieuwssysteem met riksdag-regering-mcp', analysisTools: 'Analysetools', analysisToolsValue: 'AI-ondersteunde journalistiek met redactioneel toezicht', backToNews: 'Terug naar nieuws' },
+  ar: { sourcesTitle: 'المصادر والبيانات', dataSources: 'مصادر البيانات', generatedBy: 'تم إنشاؤه بواسطة', generatedByValue: 'نظام أخبار آلي مع riksdag-regering-mcp', analysisTools: 'أدوات التحليل', analysisToolsValue: 'صحافة بمساعدة الذكاء الاصطناعي مع إشراف تحريري', backToNews: 'العودة إلى الأخبار' },
+  he: { sourcesTitle: 'מקורות ונתונים', dataSources: 'מקורות נתונים', generatedBy: 'נוצר על ידי', generatedByValue: 'מערכת חדשות אוטומטית עם riksdag-regering-mcp', analysisTools: 'כלי ניתוח', analysisToolsValue: 'עיתונות בסיוע AI עם פיקוח עריכתי', backToNews: 'חזרה לחדשות' },
+  ja: { sourcesTitle: 'ソースとデータ', dataSources: 'データソース', generatedBy: '生成者', generatedByValue: 'riksdag-regering-mcpによる自動ニュースシステム', analysisTools: '分析ツール', analysisToolsValue: 'AI支援ジャーナリズム（編集監督付き）', backToNews: 'ニュースに戻る' },
+  ko: { sourcesTitle: '출처 및 데이터', dataSources: '데이터 소스', generatedBy: '생성자', generatedByValue: 'riksdag-regering-mcp 자동 뉴스 시스템', analysisTools: '분석 도구', analysisToolsValue: '편집 감독이 있는 AI 지원 저널리즘', backToNews: '뉴스로 돌아가기' },
+  zh: { sourcesTitle: '来源和数据', dataSources: '数据来源', generatedBy: '生成者', generatedByValue: '使用riksdag-regering-mcp的自动新闻系统', analysisTools: '分析工具', analysisToolsValue: '人工编辑监督下的AI辅助新闻', backToNews: '返回新闻' }
+};
+
+function getFooterLabel(lang, key) {
+  return FOOTER_LABELS[lang]?.[key] || FOOTER_LABELS.en[key];
+}
+
+function getNewsIndexFilename(lang) {
+  if (lang === 'en') return 'index.html';
+  return `index_${lang}.html`;
+}
+
+/**
+ * Sanitize article body content for JSON-LD structured data
+ * Removes newlines and normalizes whitespace to prevent invalid JSON
+ * @param {string} htmlContent - Article HTML content
+ * @returns {string} Sanitized content suitable for JSON-LD
+ */
+function sanitizeArticleBody(htmlContent) {
+  return htmlContent
+    .substring(0, 500)
+    .replace(/\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Generate complete article HTML
+ * 
+ * @param {Object} data - Article data
+ * @param {string} data.slug - Article slug (e.g., "2026-02-12-week-ahead")
+ * @param {string} data.title - Article title
+ * @param {string} data.subtitle - Article subtitle/lede
+ * @param {string} data.date - Publication date (ISO format)
+ * @param {string} data.type - Article type (prospective, retrospective, analysis, breaking)
+ * @param {string} data.readTime - Estimated read time (e.g., "6 min read")
+ * @param {string} data.lang - Language code (en, sv)
+ * @param {string} data.langFull - Full language name (English, Svenska)
+ * @param {string} data.locale - Locale code (en_US, sv_SE)
+ * @param {string} data.content - Main article HTML content
+ * @param {Array} data.events - Calendar events (for Week Ahead articles)
+ * @param {Array} data.watchPoints - Key points to watch
+ * @param {Array} data.sources - Data sources/tools used
+ * @param {Array} data.keywords - SEO keywords
+ * @param {Array} data.topics - Article topics for categorization
+ * @param {Array} data.tags - Article tags for display
+ * @returns {string} Complete HTML article
+ */
+/**
+ * Site tagline translations for all 14 languages
+ */
+const SITE_TAGLINE = {
+  en: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
+  sv: 'Senaste nyheter och analyser från Sveriges riksdag. Politisk journalistik i The Economist-stil som bevakar riksdagen, regeringen och myndigheter med systematisk transparens.',
+  da: 'Seneste nyheder og analyser fra Sveriges Riksdag. Politisk journalistik i The Economist-stil, der dækker parlament, regering og myndigheder med systematisk gennemsigtighed.',
+  no: 'Siste nyheter og analyser fra Sveriges riksdag. Politisk journalistikk i The Economist-stil som dekker parlament, regjering og myndigheter med systematisk åpenhet.',
+  fi: 'Uusimmat uutiset ja analyysit Ruotsin valtiopäiviltä. The Economist -tyylinen poliittinen journalismi, joka kattaa eduskunnan, hallituksen ja viranomaiset järjestelmällisellä läpinäkyvyydellä.',
+  de: 'Aktuelle Nachrichten und Analysen aus dem schwedischen Riksdag. Politischer Journalismus im Economist-Stil über Parlament, Regierung und Behörden mit systematischer Transparenz.',
+  fr: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique de style The Economist couvrant le parlement, le gouvernement et les agences avec une transparence systématique.',
+  es: 'Últimas noticias y análisis del Riksdag sueco. Periodismo político al estilo The Economist que cubre el parlamento, el gobierno y las agencias con transparencia sistemática.',
+  nl: 'Laatste nieuws en analyses van de Zweedse Riksdag. Politieke journalistiek in Economist-stijl over parlement, regering en instanties met systematische transparantie.',
+  ar: 'أحدث الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية بأسلوب ذا إيكونوميست تغطي البرلمان والحكومة والوكالات بشفافية منهجية.',
+  he: 'חדשות ניתוחים אחרונים מהריקסדאג השוודי. עיתונות פוליטית בסגנון האקונומיסט המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.',
+  ja: 'スウェーデン議会リクスダーグの最新ニュースと分析。議会、政府、機関を体系的な透明性で報道するエコノミスト・スタイルの政治ジャーナリズム。',
+  ko: '스웨덴 의회 릭스다그의 최신 뉴스와 분석. 체계적인 투명성으로 의회, 정부, 기관을 다루는 이코노미스트 스타일의 정치 저널리즘.',
+  zh: '来自瑞典议会的最新新闻和分析。以经济学人风格的政治新闻，以系统性透明度报道议会、政府和机构。'
+};
+
+/**
+ * OG locale map for all 14 languages
+ */
+const OG_LOCALE_MAP = {
+  en: 'en_US', sv: 'sv_SE', da: 'da_DK', no: 'nb_NO', fi: 'fi_FI',
+  de: 'de_DE', fr: 'fr_FR', es: 'es_ES', nl: 'nl_NL', ar: 'ar_SA',
+  he: 'he_IL', ja: 'ja_JP', ko: 'ko_KR', zh: 'zh_CN'
+};
+
+export function generateArticleHTML(data) {
+  const {
+    slug,
+    title,
+    subtitle,
+    date,
+    type,
+    readTime = '5 min read',
+    lang = 'en',
+    locale,
+    content,
+    events = [],
+    watchPoints = [],
+    sources = [],
+    keywords = [],
+    tags = []
+  } = data;
+  
+  // Use proper OG locale for the language
+  const ogLocale = locale || OG_LOCALE_MAP[lang] || 'en_US';
+  
+  const dateObj = new Date(date);
+  const formattedDate = formatDate(dateObj, lang);
+  const isoDate = dateObj.toISOString().split('T')[0];
+  
+  // Determine type label with fallback to English for unsupported languages
+  const typeLabels = {
+    en: { prospective: 'The Week Ahead', retrospective: 'Weekly Review', analysis: 'Analysis', breaking: 'Breaking News' },
+    sv: { prospective: 'Veckan som kommer', retrospective: 'Veckans återblick', analysis: 'Analys', breaking: 'Senaste nytt' },
+    da: { prospective: 'Ugen fremover', retrospective: 'Ugens tilbageblik', analysis: 'Analyse', breaking: 'Seneste nyt' },
+    no: { prospective: 'Uka som kommer', retrospective: 'Ukens tilbakeblikk', analysis: 'Analyse', breaking: 'Siste nytt' },
+    fi: { prospective: 'Tuleva viikko', retrospective: 'Viikon katsaus', analysis: 'Analyysi', breaking: 'Viimeisimmät' },
+    de: { prospective: 'Woche voraus', retrospective: 'Wochenrückblick', analysis: 'Analyse', breaking: 'Eilmeldung' },
+    fr: { prospective: 'Semaine à venir', retrospective: 'Revue de la semaine', analysis: 'Analyse', breaking: 'Dernière heure' },
+    es: { prospective: 'Semana próxima', retrospective: 'Revisión semanal', analysis: 'Análisis', breaking: 'Última hora' },
+    nl: { prospective: 'Week vooruit', retrospective: 'Weekoverzicht', analysis: 'Analyse', breaking: 'Laatste nieuws' },
+    ar: { prospective: 'الأسبوع القادم', retrospective: 'مراجعة الأسبوع', analysis: 'تحليل', breaking: 'أخبار عاجلة' },
+    he: { prospective: 'השבוע הקרוב', retrospective: 'סיכום שבועי', analysis: 'ניתוח', breaking: 'חדשות אחרונות' },
+    ja: { prospective: '来週の展望', retrospective: '週間レビュー', analysis: '分析', breaking: '速報' },
+    ko: { prospective: '다음 주 전망', retrospective: '주간 리뷰', analysis: '분석', breaking: '속보' },
+    zh: { prospective: '下周展望', retrospective: '每周回顾', analysis: '分析', breaking: '突发新闻' }
+  };
+  
+  // Fall back to English labels if language not supported
+  const typeLabel = typeLabels[lang]?.[type] || typeLabels.en[type] || 'News';
+  
+  // Generate hreflang tags for all available language variants
+  const ALL_LANG_CODES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+  const isRTL = lang === 'ar' || lang === 'he';
+  const dirAttr = isRTL ? ' dir="rtl"' : '';
+  const baseSlug = slug.replace(`-${lang}.html`, '');
+  const altLang = lang === 'en' ? 'sv' : 'en';
+  const altSlug = slug.replace(`-${lang}.html`, `-${altLang}.html`);
+  
+  return `&lt;!DOCTYPE html>
+&lt;html lang="${lang}"${dirAttr}>
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  &lt;title>${title}&lt;/title>
+  &lt;meta name="description" content="${escapeHtml(subtitle).substring(0, 160)}">
+  &lt;meta name="keywords" content="${keywords.join(', ')}">
+  &lt;meta name="author" content="James Pether Sörling, CISSP, CISM">
+  &lt;link rel="canonical" href="https://riksdagsmonitor.com/news/${slug}">
+  
+  &lt;!-- Open Graph / Social Media -->
+  &lt;meta property="og:title" content="${escapeHtml(title)}">
+  &lt;meta property="og:description" content="${escapeHtml(subtitle).substring(0, 200)}">
+  &lt;meta property="og:type" content="article">
+  &lt;meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
+  &lt;meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
+  &lt;meta property="og:image:width" content="1200">
+  &lt;meta property="og:image:height" content="630">
+  &lt;meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
+  &lt;meta property="og:locale" content="${ogLocale}">
+  &lt;meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
+  &lt;meta property="article:published_time" content="${dateObj.toISOString()}">
+  &lt;meta property="article:modified_time" content="${dateObj.toISOString()}">
+  &lt;meta property="article:author" content="James Pether Sörling">
+  &lt;meta property="article:section" content="${typeLabel}">
+${tags.map(tag => `  &lt;meta property="article:tag" content="${escapeHtml(tag)}">`).join('\n')}
+  
+  &lt;!-- Twitter Card -->
+  &lt;meta name="twitter:card" content="summary_large_image">
+  &lt;meta name="twitter:title" content="${escapeHtml(title)}">
+  &lt;meta name="twitter:description" content="${escapeHtml(subtitle).substring(0, 200)}">
+  &lt;meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+  &lt;meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
+  &lt;meta name="twitter:site" content="@riksdagsmonitor">
+  &lt;meta name="twitter:creator" content="@jamessorling">
+  &lt;meta name="twitter:label1" content="Reading time">
+  &lt;meta name="twitter:data1" content="${readTime}">
+  &lt;meta name="twitter:label2" content="Article type">
+  &lt;meta name="twitter:data2" content="${typeLabel}">
+  
+  &lt;!-- Hreflang for language alternatives -->
+${ALL_LANG_CODES.map(l => `  &lt;link rel="alternate" hreflang="${l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
+  &lt;link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/${baseSlug}-en.html">
+  
+  &lt;!-- Google Fonts -->
+  &lt;link rel="preconnect" href="https://fonts.googleapis.com">
+  &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Orbitron:wght@400;500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+  
+  &lt;!-- Main stylesheet - contains all article styles -->
+  &lt;link rel="stylesheet" href="../styles.css">
+  
+  &lt;!-- Schema.org NewsArticle structured data -->
+  &lt;script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "${escapeHtml(title)}",
+    "alternativeHeadline": "${escapeHtml(subtitle).substring(0, 100)}",
+    "description": "${escapeHtml(subtitle).substring(0, 200)}",
+    "datePublished": "${dateObj.toISOString()}",
+    "dateModified": "${dateObj.toISOString()}",
+    "author": {
+      "@type": "Person",
+      "name": "James Pether Sörling",
+      "jobTitle": "Political Intelligence Analyst",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Hack23 AB"
+      },
+      "url": "https://riksdagsmonitor.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Riksdagsmonitor",
+      "url": "https://riksdagsmonitor.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hack23.com/cia-icon-140.webp",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://hack23.com/cia-icon-140.webp",
+      "width": 1200,
+      "height": 630
+    },
+    "articleSection": "${typeLabel}",
+    "articleBody": "${sanitizeArticleBody(escapeHtml(content))}...",
+    "wordCount": ${Math.ceil(content.length / 5)},
+    "inLanguage": "${lang}",
+    "keywords": "${keywords.join(', ')}",
+    "about": {
+      "@type": "Thing",
+      "name": "Swedish Parliament",
+      "sameAs": "https://www.wikidata.org/wiki/Q1968818"
+    },
+    "isAccessibleForFree": true,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Riksdagsmonitor",
+      "url": "https://riksdagsmonitor.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://riksdagsmonitor.com/news/${slug}"
+    }${tags.length > 0 ? `,
+    "mentions": [${tags.map(tag => `
+      {
+        "@type": "Thing",
+        "name": "${escapeHtml(tag)}"
+      }`).join(',')}
+    ]` : ''}
+  }
+  &lt;/script>
+  
+  &lt;!-- BreadcrumbList structured data -->
+  &lt;script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "${getBreadcrumbName(lang, 'home')}",
+        "item": "https://riksdagsmonitor.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "${getBreadcrumbName(lang, 'news')}",
+        "item": "https://riksdagsmonitor.com/news/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "${escapeHtml(title).substring(0, 50)}",
+        "item": "https://riksdagsmonitor.com/news/${slug}"
+      }
+    ]
+  }
+  &lt;/script>
+  
+  &lt;!-- Organization structured data -->
+  &lt;script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Riksdagsmonitor",
+    "url": "https://riksdagsmonitor.com",
+    "logo": "https://hack23.com/cia-icon-140.webp",
+    "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+    "foundingDate": "2020",
+    "founder": {
+      "@type": "Person",
+      "name": "James Pether Sörling"
+    },
+    "sameAs": [
+      "https://github.com/Hack23/riksdagsmonitor"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Technical Support",
+      "url": "https://github.com/Hack23/riksdagsmonitor/issues"
+    }
+  }
+  &lt;/script>
+  
+&lt;/head>
+&lt;body>
+&lt;article class="news-article">
+  &lt;header class="article-header">
+    &lt;div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}&lt;/div>
+    &lt;h1>${title}&lt;/h1>
+    &lt;div class="article-meta">
+      &lt;time datetime="${isoDate}">${formattedDate}&lt;/time>
+      &lt;span class="separator">•&lt;/span>
+      &lt;span>${typeLabel}&lt;/span>
+      &lt;span class="separator">•&lt;/span>
+      &lt;span>${readTime}&lt;/span>
+    &lt;/div>
+  &lt;/header>
+
+${events.length > 0 ? generateEventCalendar(events, lang) : ''}
+
+  &lt;div class="article-content">
+    &lt;p class="lede">
+      ${subtitle}
+    &lt;/p>
+
+${content}
+
+${watchPoints.length > 0 ? generateWatchSection(watchPoints, lang) : ''}
+  &lt;/div>
+
+  &lt;footer class="article-footer">
+    &lt;div class="article-sources">
+      &lt;h3>${getFooterLabel(lang, 'sourcesTitle')}&lt;/h3>
+      &lt;p>&lt;strong>${getFooterLabel(lang, 'dataSources')}:&lt;/strong> ${sources.join(', ')}&lt;/p>
+      &lt;p>&lt;strong>${getFooterLabel(lang, 'generatedBy')}:&lt;/strong> ${getFooterLabel(lang, 'generatedByValue')}&lt;/p>
+      &lt;p>&lt;strong>${getFooterLabel(lang, 'analysisTools')}:&lt;/strong> ${getFooterLabel(lang, 'analysisToolsValue')}&lt;/p>
+    &lt;/div>
+    
+    &lt;div class="article-nav">
+      &lt;a href="${getNewsIndexFilename(lang)}" class="back-to-news">
+        \u2190 ${getFooterLabel(lang, 'backToNews')}
+      &lt;/a>
+    &lt;/div>
+  &lt;/footer>
+&lt;/article>
+
+&lt;script src="../scripts/back-to-top.js">&lt;/script>
+&lt;/body>
+&lt;/html>`;
+}
+
+/**
+ * Generate event calendar section
+ */
+const EVENT_CALENDAR_TITLES = {
+  en: 'Event Calendar',
+  sv: 'Veckans händelser',
+  da: 'Ugens begivenheder',
+  no: 'Ukens hendelser',
+  fi: 'Viikon tapahtumat',
+  de: 'Veranstaltungskalender',
+  fr: 'Calendrier des événements',
+  es: 'Calendario de eventos',
+  nl: 'Evenementenkalender',
+  ar: 'تقويم الأحداث',
+  he: 'לוח אירועים',
+  ja: 'イベントカレンダー',
+  ko: '일정 캘린더',
+  zh: '活动日历'
+};
+
+function generateEventCalendar(events, lang = 'en') {
+  const title = EVENT_CALENDAR_TITLES[lang] || EVENT_CALENDAR_TITLES.en;
+  const weekLabel = events.length > 0 &amp;&amp; events[0].date ? 
+    `${formatDateRange(events, lang)}` : '';
+  
+  return `
+  &lt;section class="event-calendar" aria-label="${title}">
+    &lt;h2>${title}${weekLabel ? `: ${weekLabel}` : ''}&lt;/h2>
+    &lt;div class="calendar-grid">
+${events.map(event => `      &lt;div class="calendar-day${event.isToday ? ' today' : ''}" aria-label="${event.dayLabel}">
+        &lt;div class="day-header">${event.dayName}&lt;/div>
+        &lt;span class="day-date">${event.dayNumber}&lt;/span>
+        &lt;ul class="event-list">
+${event.items.map(item => `          &lt;li class="event-item">
+            &lt;span class="event-time">${item.time}&lt;/span>
+            &lt;span class="event-title">${item.title}&lt;/span>
+          &lt;/li>`).join('\n')}
+        &lt;/ul>
+      &lt;/div>`).join('\n')}
+    &lt;/div>
+  &lt;/section>`;
+}
+
+/**
+ * Generate "Watch Section" with key points
+ */
+const WATCH_SECTION_TITLES = {
+  en: 'What to Watch This Week',
+  sv: 'Vad man ska följa denna vecka',
+  da: 'Hvad man skal følge denne uge',
+  no: 'Hva man bør følge denne uken',
+  fi: 'Mitä seurata tällä viikolla',
+  de: 'Worauf diese Woche zu achten ist',
+  fr: 'À suivre cette semaine',
+  es: 'Qué observar esta semana',
+  nl: 'Wat te volgen deze week',
+  ar: 'ما يجب متابعته هذا الأسبوع',
+  he: 'מה לעקוב אחריו השבוע',
+  ja: '今週の注目ポイント',
+  ko: '이번 주 주목할 사항',
+  zh: '本周关注要点'
+};
+
+function generateWatchSection(watchPoints, lang = 'en') {
+  const title = WATCH_SECTION_TITLES[lang] || WATCH_SECTION_TITLES.en;
+  
+  return `
+    &lt;section class="watch-section">
+      &lt;h2>${title}&lt;/h2>
+      &lt;ul class="watch-list">
+${watchPoints.map(point => `        &lt;li>
+          &lt;strong>${point.title}:&lt;/strong> ${point.description}
+        &lt;/li>`).join('\n')}
+      &lt;/ul>
+    &lt;/section>`;
+}
+
+
+
+/**
+ * Locale map for all 14 supported languages
+ */
+const LOCALE_MAP = {
+  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'no-NO', fi: 'fi-FI',
+  de: 'de-DE', fr: 'fr-FR', es: 'es-ES', nl: 'nl-NL', ar: 'ar-SA',
+  he: 'he-IL', ja: 'ja-JP', ko: 'ko-KR', zh: 'zh-CN'
+};
+
+/**
+ * Helper: Format date for display using locale-appropriate formatting
+ */
+function formatDate(date, lang = 'en') {
+  const locale = LOCALE_MAP[lang] || 'en-GB';
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  try {
+    return date.toLocaleDateString(locale, options);
+  } catch {
+    return date.toLocaleDateString('en-GB', options);
+  }
+}
+
+/**
+ * Helper: Format date range for calendar title
+ */
+function formatDateRange(events, lang = 'en') {
+  if (events.length === 0) return '';
+  
+  const firstEvent = events[0];
+  const lastEvent = events[events.length - 1];
+  
+  if (!firstEvent.date || !lastEvent.date) return '';
+  
+  const locale = LOCALE_MAP[lang] || 'en-GB';
+  const longOptions = { month: 'long', day: 'numeric', year: 'numeric' };
+  const shortOptions = { month: 'long', day: 'numeric' };
+  
+  try {
+    const startDate = new Date(firstEvent.date).toLocaleDateString(locale, longOptions);
+    const endDate = new Date(lastEvent.date).toLocaleDateString(locale, shortOptions);
+    return `${startDate} – ${endDate}`;
+  } catch {
+    const startDate = new Date(firstEvent.date).toLocaleDateString('en-GB', longOptions);
+    const endDate = new Date(lastEvent.date).toLocaleDateString('en-GB', shortOptions);
+    return `${startDate} – ${endDate}`;
+  }
+}
+
+export default {
+  generateArticleHTML,
+  generateEventCalendar,
+  generateWatchSection
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
