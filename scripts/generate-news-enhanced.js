@@ -481,13 +481,18 @@ async function generateCommitteeReports() {
     const client = await getSharedClient();
     
     console.log('  🔄 Fetching committee reports from riksdag-regering-mcp...');
-    const reports = await client.fetchCommitteeReports(10);
+    let reports = await client.fetchCommitteeReports(10);
     console.log(`  📊 Found ${reports.length} committee reports`);
     
     if (reports.length === 0) {
       console.log('  ℹ️ No new committee reports found, skipping');
       return { success: true, files: 0 };
     }
+    
+    // Enrich documents with content and metadata
+    console.log('  🔍 Enriching documents with detailed content...');
+    reports = await client.enrichDocumentsWithContent(reports, 3);
+    console.log(`  ✅ Enriched ${reports.filter(r => r.contentFetched).length}/${reports.length} reports with content`);
     
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-committee-reports`;
@@ -499,7 +504,7 @@ async function generateCommitteeReports() {
       const watchPoints = extractWatchPoints({ reports }, lang);
       const metadata = generateMetadata({ reports }, 'committee-reports', lang);
       const readTime = calculateReadTime(content);
-      const sources = generateSources(['get_betankanden']);
+      const sources = generateSources(['get_betankanden', 'get_dokument_innehall']);
       
       const titles = {
         en: { title: `Committee Reports: Parliamentary Priorities This Week`, subtitle: `Analysis of ${reports.length} committee reports revealing Riksdag priorities for the current session` },
@@ -558,13 +563,18 @@ async function generatePropositions() {
     const client = await getSharedClient();
     
     console.log('  🔄 Fetching propositions from riksdag-regering-mcp...');
-    const propositions = await client.fetchPropositions(10);
+    let propositions = await client.fetchPropositions(10);
     console.log(`  📊 Found ${propositions.length} propositions`);
     
     if (propositions.length === 0) {
       console.log('  ℹ️ No new propositions found, skipping');
       return { success: true, files: 0 };
     }
+    
+    // Enrich documents with content and metadata
+    console.log('  🔍 Enriching documents with detailed content...');
+    propositions = await client.enrichDocumentsWithContent(propositions, 3);
+    console.log(`  ✅ Enriched ${propositions.filter(p => p.contentFetched).length}/${propositions.length} propositions with content`);
     
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-government-propositions`;
@@ -576,7 +586,7 @@ async function generatePropositions() {
       const watchPoints = extractWatchPoints({ propositions }, lang);
       const metadata = generateMetadata({ propositions }, 'propositions', lang);
       const readTime = calculateReadTime(content);
-      const sources = generateSources(['get_propositioner']);
+      const sources = generateSources(['get_propositioner', 'get_dokument_innehall']);
       
       const titles = {
         en: { title: `Government Propositions: Policy Priorities This Week`, subtitle: `Analysis of ${propositions.length} government propositions shaping the legislative agenda` },
@@ -635,13 +645,18 @@ async function generateMotions() {
     const client = await getSharedClient();
     
     console.log('  🔄 Fetching motions from riksdag-regering-mcp...');
-    const motions = await client.fetchMotions(10);
+    let motions = await client.fetchMotions(10);
     console.log(`  📊 Found ${motions.length} motions`);
     
     if (motions.length === 0) {
       console.log('  ℹ️ No new motions found, skipping');
       return { success: true, files: 0 };
     }
+    
+    // Enrich documents with content and metadata
+    console.log('  🔍 Enriching documents with detailed content...');
+    motions = await client.enrichDocumentsWithContent(motions, 3);
+    console.log(`  ✅ Enriched ${motions.filter(m => m.contentFetched).length}/${motions.length} motions with content`);
     
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-opposition-motions`;
@@ -653,7 +668,7 @@ async function generateMotions() {
       const watchPoints = extractWatchPoints({ motions }, lang);
       const metadata = generateMetadata({ motions }, 'motions', lang);
       const readTime = calculateReadTime(content);
-      const sources = generateSources(['get_motioner']);
+      const sources = generateSources(['get_motioner', 'get_dokument_innehall']);
       
       const titles = {
         en: { title: `Opposition Motions: Battle Lines This Week`, subtitle: `Analysis of ${motions.length} opposition motions revealing parliamentary fault lines` },

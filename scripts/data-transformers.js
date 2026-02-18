@@ -383,7 +383,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Government Proposals',
     govProposalsDesc: (n) => `${n} new government propositions under review`,
     weekAhead: 'Week Ahead', committeeReportsTag: 'Committee Reports',
-    govPropsTag: 'Government Propositions', oppMotionsTag: 'Opposition Motions'
+    govPropsTag: 'Government Propositions', oppMotionsTag: 'Opposition Motions',
+    // Enhanced summary labels
+    committeeReport: 'committee report',
+    on: 'on',
+    governmentProposition: 'Government proposition',
+    regarding: 'regarding',
+    referredTo: 'referred to',
+    motionBy: 'Motion by',
+    parliamentaryMotion: 'Parliamentary motion',
+    unknown: 'Unknown'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -408,7 +417,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Regeringsförslag',
     govProposalsDesc: (n) => `${n} nya regeringspropositioner under granskning`,
     weekAhead: 'Veckan som kommer', committeeReportsTag: 'Kommittérapporter',
-    govPropsTag: 'Regeringens propositioner', oppMotionsTag: 'Oppositionens motioner'
+    govPropsTag: 'Regeringens propositioner', oppMotionsTag: 'Oppositionens motioner',
+    // Enhanced summary labels
+    committeeReport: 'kommittérapport',
+    on: 'om',
+    governmentProposition: 'Regeringens proposition',
+    regarding: 'angående',
+    referredTo: 'hänvisad till',
+    motionBy: 'Motion av',
+    parliamentaryMotion: 'Riksdagsmotion',
+    unknown: 'Okänd'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -433,7 +451,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Regeringsforslag',
     govProposalsDesc: (n) => `${n} nye regeringsforslag under behandling`,
     weekAhead: 'Ugen fremover', committeeReportsTag: 'Udvalgsbetænkninger',
-    govPropsTag: 'Regeringsforslag', oppMotionsTag: 'Oppositionsforslag'
+    govPropsTag: 'Regeringsforslag', oppMotionsTag: 'Oppositionsforslag',
+    // Enhanced summary labels
+    committeeReport: 'udvalgsbetænkning',
+    on: 'om',
+    governmentProposition: 'Regeringsforslag',
+    regarding: 'vedrørende',
+    referredTo: 'henvist til',
+    motionBy: 'Forslag fra',
+    parliamentaryMotion: 'Parlamentarisk forslag',
+    unknown: 'Ukendt'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -458,7 +485,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Regjeringsforslag',
     govProposalsDesc: (n) => `${n} nye regjeringsproposisjoner under vurdering`,
     weekAhead: 'Uke fremover', committeeReportsTag: 'Komitéinnstillinger',
-    govPropsTag: 'Regjeringens proposisjoner', oppMotionsTag: 'Opposisjonsforslag'
+    govPropsTag: 'Regjeringens proposisjoner', oppMotionsTag: 'Opposisjonsforslag',
+    // Enhanced summary labels
+    committeeReport: 'komitéinnstilling',
+    on: 'om',
+    governmentProposition: 'Regjeringens proposisjon',
+    regarding: 'vedrørende',
+    referredTo: 'henvist til',
+    motionBy: 'Forslag fra',
+    parliamentaryMotion: 'Parlamentarisk forslag',
+    unknown: 'Ukjent'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -483,7 +519,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Hallituksen esitykset',
     govProposalsDesc: (n) => `${n} uutta hallituksen esitystä käsittelyssä`,
     weekAhead: 'Tuleva viikko', committeeReportsTag: 'Valiokuntamietinnöt',
-    govPropsTag: 'Hallituksen esitykset', oppMotionsTag: 'Opposition aloitteet'
+    govPropsTag: 'Hallituksen esitykset', oppMotionsTag: 'Opposition aloitteet',
+    // Enhanced summary labels
+    committeeReport: 'valiokunnan mietintö',
+    on: 'aiheesta',
+    governmentProposition: 'Hallituksen esitys',
+    regarding: 'koskien',
+    referredTo: 'lähetetty valiokuntaan',
+    motionBy: 'Aloite',
+    parliamentaryMotion: 'Eduskunnan aloite',
+    unknown: 'Tuntematon'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -508,7 +553,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Regierungsvorlagen',
     govProposalsDesc: (n) => `${n} neue Regierungsvorlagen in Prüfung`,
     weekAhead: 'Woche Voraus', committeeReportsTag: 'Ausschussberichte',
-    govPropsTag: 'Regierungsvorlagen', oppMotionsTag: 'Oppositionsanträge'
+    govPropsTag: 'Regierungsvorlagen', oppMotionsTag: 'Oppositionsanträge',
+    // Enhanced summary labels
+    committeeReport: 'Ausschussbericht',
+    on: 'über',
+    governmentProposition: 'Regierungsvorlage',
+    regarding: 'bezüglich',
+    referredTo: 'verwiesen an',
+    motionBy: 'Antrag von',
+    parliamentaryMotion: 'Parlamentarischer Antrag',
+    unknown: 'Unbekannt'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -533,7 +587,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Propositions gouvernementales',
     govProposalsDesc: (n) => `${n} nouvelles propositions gouvernementales à l'examen`,
     weekAhead: 'Semaine à venir', committeeReportsTag: 'Rapports de commission',
-    govPropsTag: 'Propositions gouvernementales', oppMotionsTag: 'Motions d\'opposition'
+    govPropsTag: 'Propositions gouvernementales', oppMotionsTag: 'Motions d\'opposition',
+    // Enhanced summary labels
+    committeeReport: 'rapport de commission',
+    on: 'sur',
+    governmentProposition: 'Proposition gouvernementale',
+    regarding: 'concernant',
+    referredTo: 'renvoyée à',
+    motionBy: 'Motion de',
+    parliamentaryMotion: 'Motion parlementaire',
+    unknown: 'Inconnu'
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -558,7 +621,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Propuestas gubernamentales',
     govProposalsDesc: (n) => `${n} nuevas proposiciones gubernamentales en revisión`,
     weekAhead: 'Semana próxima', committeeReportsTag: 'Informes de comisión',
-    govPropsTag: 'Proposiciones gubernamentales', oppMotionsTag: 'Mociones de oposición'
+    govPropsTag: 'Proposiciones gubernamentales', oppMotionsTag: 'Mociones de oposición',
+    // Enhanced summary labels
+    committeeReport: 'informe de comisión',
+    on: 'sobre',
+    governmentProposition: 'Proposición gubernamental',
+    regarding: 'referente a',
+    referredTo: 'remitida a',
+    motionBy: 'Moción de',
+    parliamentaryMotion: 'Moción parlamentaria',
+    unknown: 'Desconocido'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -583,7 +655,16 @@ export const CONTENT_LABELS = {
     govProposals: 'Regeringsvoorstellen',
     govProposalsDesc: (n) => `${n} nieuwe regeringsvoorstellen in behandeling`,
     weekAhead: 'Week vooruit', committeeReportsTag: 'Commissierapporten',
-    govPropsTag: 'Regeringsvoorstellen', oppMotionsTag: 'Oppositiemoties'
+    govPropsTag: 'Regeringsvoorstellen', oppMotionsTag: 'Oppositiemoties',
+    // Enhanced summary labels
+    committeeReport: 'commissierapport',
+    on: 'over',
+    governmentProposition: 'Regeringsvoorstel',
+    regarding: 'betreffende',
+    referredTo: 'doorverwezen naar',
+    motionBy: 'Motie van',
+    parliamentaryMotion: 'Parlementaire motie',
+    unknown: 'Onbekend'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -608,7 +689,16 @@ export const CONTENT_LABELS = {
     govProposals: 'مقترحات حكومية',
     govProposalsDesc: (n) => `${n} مقترحات حكومية جديدة قيد المراجعة`,
     weekAhead: 'الأسبوع القادم', committeeReportsTag: 'تقارير اللجان',
-    govPropsTag: 'مقترحات الحكومة', oppMotionsTag: 'اقتراحات المعارضة'
+    govPropsTag: 'مقترحات الحكومة', oppMotionsTag: 'اقتراحات المعارضة',
+    // Enhanced summary labels
+    committeeReport: 'تقرير لجنة',
+    on: 'بشأن',
+    governmentProposition: 'مقترح حكومي',
+    regarding: 'فيما يتعلق بـ',
+    referredTo: 'محال إلى',
+    motionBy: 'اقتراح من',
+    parliamentaryMotion: 'اقتراح برلماني',
+    unknown: 'غير معروف'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -633,7 +723,16 @@ export const CONTENT_LABELS = {
     govProposals: 'הצעות ממשלה',
     govProposalsDesc: (n) => `${n} הצעות ממשלה חדשות בבחינה`,
     weekAhead: 'השבוע הקרוב', committeeReportsTag: 'דוחות ועדה',
-    govPropsTag: 'הצעות ממשלה', oppMotionsTag: 'הצעות אופוזיציה'
+    govPropsTag: 'הצעות ממשלה', oppMotionsTag: 'הצעות אופוזיציה',
+    // Enhanced summary labels
+    committeeReport: 'דוח ועדה',
+    on: 'על',
+    governmentProposition: 'הצעת ממשלה',
+    regarding: 'בנוגע ל',
+    referredTo: 'הועבר ל',
+    motionBy: 'הצעה של',
+    parliamentaryMotion: 'הצעה פרלמנטרית',
+    unknown: 'לא ידוע'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -658,7 +757,16 @@ export const CONTENT_LABELS = {
     govProposals: '政府提案',
     govProposalsDesc: (n) => `${n}件の新しい政府提案が審議中`,
     weekAhead: '来週の展望', committeeReportsTag: '委員会報告',
-    govPropsTag: '政府提案', oppMotionsTag: '野党動議'
+    govPropsTag: '政府提案', oppMotionsTag: '野党動議',
+    // Enhanced summary labels
+    committeeReport: '委員会報告',
+    on: 'について',
+    governmentProposition: '政府提案',
+    regarding: 'に関する',
+    referredTo: 'に付託',
+    motionBy: '動議提出者',
+    parliamentaryMotion: '議会動議',
+    unknown: '不明'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -683,7 +791,16 @@ export const CONTENT_LABELS = {
     govProposals: '정부 법안',
     govProposalsDesc: (n) => `${n}개 새 정부 법안 검토 중`,
     weekAhead: '다음 주 전망', committeeReportsTag: '위원회 보고서',
-    govPropsTag: '정부 법안', oppMotionsTag: '야당 동의'
+    govPropsTag: '정부 법안', oppMotionsTag: '야당 동의',
+    // Enhanced summary labels
+    committeeReport: '위원회 보고서',
+    on: '에 관한',
+    governmentProposition: '정부 법안',
+    regarding: '에 관하여',
+    referredTo: '에 회부',
+    motionBy: '동의 제안자',
+    parliamentaryMotion: '의회 동의',
+    unknown: '알 수 없음'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -708,7 +825,16 @@ export const CONTENT_LABELS = {
     govProposals: '政府提案',
     govProposalsDesc: (n) => `${n}项新政府提案正在审查中`,
     weekAhead: '下周展望', committeeReportsTag: '委员会报告',
-    govPropsTag: '政府提案', oppMotionsTag: '反对党动议'
+    govPropsTag: '政府提案', oppMotionsTag: '反对党动议',
+    // Enhanced summary labels
+    committeeReport: '委员会报告',
+    on: '关于',
+    governmentProposition: '政府提案',
+    regarding: '关于',
+    referredTo: '提交至',
+    motionBy: '动议提出者',
+    parliamentaryMotion: '议会动议',
+    unknown: '未知'
   }
 };
 
@@ -788,6 +914,64 @@ function isHighPriority(event) {
 }
 
 /**
+ * Generate enhanced summary from document metadata when summary field is missing
+ * Uses document type, subtype, organ, and other metadata to create informative placeholder
+ * 
+ * @param {Object} doc - Document object
+ * @param {string} type - Document type (report, proposition, motion)
+ * @param {string} lang - Language code
+ * @returns {string} Enhanced summary text
+ */
+function generateEnhancedSummary(doc, type, lang) {
+  // If we have a real summary or notis, use it
+  if (doc.summary || doc.notis) {
+    return doc.summary || doc.notis;
+  }
+  
+  // Generate enhanced summary based on metadata
+  const organ = doc.organ || doc.committee;
+  const subtyp = doc.subtyp || doc.subtype;
+  const doktyp = doc.doktyp || doc.documentType;
+  
+  // Build contextual summary based on available metadata
+  const parts = [];
+  
+  if (type === 'report' && organ) {
+    parts.push(`${organ} ${L(lang, 'committeeReport')}`);
+    if (subtyp) parts.push(`${L(lang, 'on')} ${subtyp}`);
+  } else if (type === 'proposition') {
+    parts.push(L(lang, 'governmentProposition'));
+    if (subtyp) parts.push(`${L(lang, 'regarding')} ${subtyp}`);
+    if (organ) parts.push(`${L(lang, 'referredTo')} ${organ}`);
+  } else if (type === 'motion') {
+    const author = doc.intressent_namn || doc.author;
+    const party = doc.parti;
+    if (author && party) {
+      parts.push(`${L(lang, 'motionBy')} ${author} (${party})`);
+    } else if (author) {
+      parts.push(`${L(lang, 'motionBy')} ${author}`);
+    } else {
+      parts.push(L(lang, 'parliamentaryMotion'));
+    }
+    if (subtyp) parts.push(`${L(lang, 'on')} ${subtyp}`);
+  }
+  
+  // Add document type information if useful
+  if (doktyp && doktyp !== type) {
+    parts.push(`(${doktyp})`);
+  }
+  
+  // Fallback to default if no useful metadata
+  if (parts.length === 0) {
+    return type === 'report' ? L(lang, 'reportDefault') :
+           type === 'proposition' ? L(lang, 'propDefault') :
+           L(lang, 'motionDefault');
+  }
+  
+  return parts.join(' ') + '.';
+}
+
+/**
  * Generate Committee Reports content
  */
 function generateCommitteeContent(data, lang) {
@@ -809,14 +993,18 @@ function generateCommitteeContent(data, lang) {
       ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
       : escapedTitle;
     const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
-    const summaryText = report.summary || '';
-    const summaryHtml = summaryText 
-      ? ((report.titel && !report.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
-      : L(lang, 'reportDefault');
+    
+    // Use enriched summary, enhanced summary based on metadata, or fallback to default
+    const summaryText = generateEnhancedSummary(report, 'report', lang);
+    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
+    const isFromAPI = report.summary || report.notis;
+    const summaryHtml = (report.titel && !report.title && isFromAPI && summaryText !== L(lang, 'reportDefault')) 
+      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` 
+      : escapeHtml(summaryText);
     
     content += `
     <h3>${titleHtml}</h3>
-    <p><strong>${L(lang, 'committee')}:</strong> ${report.organ}</p>
+    <p><strong>${L(lang, 'committee')}:</strong> ${report.organ || report.committee || L(lang, 'unknown')}</p>
     <p><strong>${L(lang, 'document')}:</strong> <a href="${report.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
     <p>${summaryHtml}</p>
 `;
@@ -847,10 +1035,14 @@ function generatePropositionsContent(data, lang) {
       ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
       : escapedTitle;
     const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
-    const summaryText = prop.summary || '';
-    const summaryHtml = summaryText 
-      ? ((prop.titel && !prop.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
-      : L(lang, 'propDefault');
+    
+    // Use enhanced summary based on metadata
+    const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
+    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
+    const isFromAPI = prop.summary || prop.notis;
+    const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== L(lang, 'propDefault'))
+      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+      : escapeHtml(summaryText);
     
     content += `
     <h3>${titleHtml}</h3>
@@ -884,15 +1076,23 @@ function generateMotionsContent(data, lang) {
       ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
       : escapedTitle;
     const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
-    const summaryText = motion.summary || '';
-    const summaryHtml = summaryText 
-      ? ((motion.titel && !motion.title) ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` : escapeHtml(summaryText))
-      : L(lang, 'motionDefault');
+    
+    // Use enriched author and party data from document fetching
+    const authorName = motion.intressent_namn || motion.author || L(lang, 'unknown');
+    const partyName = motion.parti || L(lang, 'unknown');
+    
+    // Use enhanced summary based on metadata
+    const summaryText = generateEnhancedSummary(motion, 'motion', lang);
+    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
+    const isFromAPI = motion.summary || motion.notis;
+    const summaryHtml = (motion.titel && !motion.title && isFromAPI && summaryText !== L(lang, 'motionDefault'))
+      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+      : escapeHtml(summaryText);
     
     content += `
     <h3>${titleHtml}</h3>
-    <p><strong>${L(lang, 'author')}:</strong> ${motion.intressent_namn || motion.author}</p>
-    <p><strong>${L(lang, 'party')}:</strong> ${motion.parti}</p>
+    <p><strong>${L(lang, 'author')}:</strong> ${authorName}</p>
+    <p><strong>${L(lang, 'party')}:</strong> ${partyName}</p>
     <p><strong>${L(lang, 'document')}:</strong> <a href="${motion.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
     <p>${summaryHtml}</p>
 `;
@@ -1053,6 +1253,9 @@ export function generateSources(tools = []) {
   }
   if (tools.includes('search_dokument')) {
     sources.push('Riksdagen Documents');
+  }
+  if (tools.includes('get_dokument_innehall')) {
+    sources.push('Riksdagen Document Content');
   }
   
   return sources;
