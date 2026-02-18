@@ -34,6 +34,13 @@
     "lint:fix": "eslint . --fix",
     "jsdoc": "jsdoc -c jsdoc.json",
     "jsdoc:validate": "npm run jsdoc && vitest run tests/jsdoc-validation.test.js",
+    "coverage": "vitest run --coverage",
+    "docs:dependencies": "mkdir -p docs/dependencies && (npm list --all --json > docs/dependencies/dependency-tree.json 2>&1 || true) && (npm list --all > docs/dependencies/dependency-tree.txt 2>&1 || true)",
+    "docs:diagrams": "echo 'Architecture diagrams generation placeholder - implement with graphviz if needed'",
+    "test:e2ereportmerge": "echo 'Cypress report merge placeholder - mochawesome-merge if multi-spec reports exist'",
+    "test:e2ereporthtmlall": "echo 'Cypress HTML report generation placeholder - mochawesome-report-generator'",
+    "build:test-reports": "mkdir -p docs/test-results docs/cypress && ([ -d coverage ] && cp -r coverage docs/ || echo 'No coverage directory to copy') && echo 'Test reports copied to docs/'",
+    "docs:sitemap": "node scripts/generate-sitemap.js",
     "serve": "python3 -m http.server 8080",
     "linkcheck": "linkinator http://localhost:8080/ --recurse"
   },
