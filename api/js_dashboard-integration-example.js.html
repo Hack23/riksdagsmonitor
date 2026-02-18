@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/dashboard-integration-example.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/dashboard-integration-example.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module DashboardIntegration
+ * @category Example - How to Integrate ChartUtils into Existing Dashboards
+ * 
+ * @description
+ * **Example Pattern for Integrating ChartUtils into Dashboard Files**
+ * 
+ * This file demonstrates the pattern for updating existing dashboard JavaScript
+ * files to use the new ChartUtils module for:
+ * - Responsive Chart.js configuration
+ * - Empty/loading/error states
+ * - Accessibility features
+ * - Performance optimization
+ * 
+ * ## Integration Steps
+ * 
+ * 1. **Add Loading State**: Show loading indicator before data fetch
+ * 2. **Handle Empty Data**: Display user-friendly empty state
+ * 3. **Handle Errors**: Show error state with retry option
+ * 4. **Use Responsive Options**: Apply ChartUtils.getResponsiveOptions()
+ * 5. **Add Keyboard Nav**: Enable keyboard navigation for charts
+ * 6. **Add Resize Handler**: Create debounced resize handler
+ * 
+ * ## Before (Original Code)
+ * 
+ * ```javascript
+ * function createChart(data) {
+ *   const ctx = document.getElementById('myChart');
+ *   
+ *   new Chart(ctx, {
+ *     type: 'bar',
+ *     data: {
+ *       labels: data.labels,
+ *       datasets: [{
+ *         label: 'My Dataset',
+ *         data: data.values
+ *       }]
+ *     },
+ *     options: {
+ *       responsive: true,
+ *       // ... basic options
+ *     }
+ *   });
+ * }
+ * ```
+ * 
+ * ## After (With ChartUtils)
+ * 
+ * ```javascript
+ * function createChart(data) {
+ *   const ctx = document.getElementById('myChart');
+ *   
+ *   // Hide loading state
+ *   ChartUtils.hideStateOverlays('myChart');
+ *   
+ *   // Handle empty data
+ *   if (!data || data.values.length === 0) {
+ *     ChartUtils.showEmptyState('myChart', 'No data available for selected period');
+ *     return;
+ *   }
+ *   
+ *   // Create chart with responsive options
+ *   const chart = new Chart(ctx, {
+ *     type: 'bar',
+ *     data: {
+ *       labels: data.labels,
+ *       datasets: [{
+ *         label: 'My Dataset',
+ *         data: data.values,
+ *         backgroundColor: ChartUtils.THEME_COLORS.cyan
+ *       }]
+ *     },
+ *     options: ChartUtils.getResponsiveOptions('bar', {
+ *       plugins: {
+ *         tooltip: {
+ *           callbacks: {
+ *             label: (context) => {
+ *               return `${context.dataset.label}: ${ChartUtils.formatNumber(context.parsed.y)}`;
+ *             }
+ *           }
+ *         }
+ *       }
+ *     })
+ *   });
+ *   
+ *   // Add keyboard navigation
+ *   ChartUtils.addKeyboardNavigation(ctx, chart);
+ * }
+ * 
+ * // Main initialization function
+ * async function initDashboard() {
+ *   // Show loading state
+ *   ChartUtils.showLoadingState('myChart');
+ *   
+ *   try {
+ *     // Fetch data
+ *     const data = await fetchData();
+ *     
+ *     // Create chart
+ *     createChart(data);
+ *     
+ *   } catch (error) {
+ *     // Show error state
+ *     ChartUtils.showErrorState('myChart', error.message);
+ *   }
+ * }
+ * 
+ * // Add resize handler
+ * const charts = [];
+ * window.addEventListener('resize', ChartUtils.createResizeHandler(charts));
+ * ```
+ * 
+ * @author Hack23 AB - Political Intelligence Team
+ * @license Apache-2.0
+ * @version 1.0.0
+ * @since 2026
+ */
+
+// =============================================================================
+// EXAMPLE 1: Simple Bar Chart with Empty State Handling
+// =============================================================================
+
+function example1_SimpleBarChart() {
+  const containerId = 'example1Chart';
+  
+  // Step 1: Show loading state
+  ChartUtils.showLoadingState(containerId);
+  
+  // Step 2: Fetch data (simulated)
+  setTimeout(() => {
+    const data = {
+      labels: ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'],
+      values: [25, 20, 18, 12, 10, 7, 5, 3]
+    };
+    
+    // Step 3: Hide loading state
+    ChartUtils.hideStateOverlays(containerId);
+    
+    // Step 4: Handle empty data
+    if (!data || data.values.length === 0) {
+      ChartUtils.showEmptyState(containerId, 'No party data available');
+      return;
+    }
+    
+    // Step 5: Create chart with responsive options
+    const ctx = document.getElementById(containerId);
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.labels,
+        datasets: [{
+          label: 'Party Votes (%)',
+          data: data.values,
+          backgroundColor: ChartUtils.THEME_COLORS.cyan
+        }]
+      },
+      options: ChartUtils.getResponsiveOptions('bar')
+    });
+    
+    // Step 6: Add keyboard navigation
+    ChartUtils.addKeyboardNavigation(ctx, chart);
+  }, 1000);
+}
+
+// =============================================================================
+// EXAMPLE 2: Line Chart with Error Handling
+// =============================================================================
+
+function example2_LineChartWithError() {
+  const containerId = 'example2Chart';
+  
+  // Show loading state
+  ChartUtils.showLoadingState(containerId);
+  
+  // Simulate data fetch with error
+  setTimeout(() => {
+    const hasError = Math.random() > 0.5; // 50% chance of error
+    
+    if (hasError) {
+      // Show error state
+      ChartUtils.showErrorState(containerId, 'Failed to load data from CIA Platform');
+      return;
+    }
+    
+    // Success: create chart
+    ChartUtils.hideStateOverlays(containerId);
+    
+    const ctx = document.getElementById(containerId);
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+        datasets: [{
+          label: 'Legislative Activity',
+          data: [120, 135, 150, 142, 158, 165, 170],
+          borderColor: ChartUtils.THEME_COLORS.magenta,
+          backgroundColor: 'rgba(255, 0, 110, 0.1)',
+          tension: 0.4
+        }]
+      },
+      options: ChartUtils.getResponsiveOptions('line')
+    });
+    
+    ChartUtils.addKeyboardNavigation(ctx, chart);
+  }, 1500);
+}
+
+// =============================================================================
+// EXAMPLE 3: Multiple Charts with Resize Handler
+// =============================================================================
+
+function example3_MultipleChartsWithResize() {
+  const charts = [];
+  
+  // Create multiple charts
+  ['chart1', 'chart2', 'chart3'].forEach((id, index) => {
+    ChartUtils.showLoadingState(id);
+    
+    setTimeout(() => {
+      ChartUtils.hideStateOverlays(id);
+      
+      const ctx = document.getElementById(id);
+      const chart = new Chart(ctx, {
+        type: index === 0 ? 'bar' : index === 1 ? 'line' : 'doughnut',
+        data: {
+          labels: ['A', 'B', 'C', 'D'],
+          datasets: [{
+            label: `Dataset ${index + 1}`,
+            data: [10, 20, 30, 40].map(v => v * (index + 1)),
+            backgroundColor: [
+              ChartUtils.THEME_COLORS.cyan,
+              ChartUtils.THEME_COLORS.magenta,
+              ChartUtils.THEME_COLORS.yellow,
+              ChartUtils.THEME_COLORS.lightText
+            ]
+          }]
+        },
+        options: ChartUtils.getResponsiveOptions(
+          index === 0 ? 'bar' : index === 1 ? 'line' : 'pie'
+        )
+      });
+      
+      charts.push(chart);
+      ChartUtils.addKeyboardNavigation(ctx, chart);
+    }, 1000 + (index * 500));
+  });
+  
+  // Add resize handler for all charts
+  window.addEventListener('resize', ChartUtils.createResizeHandler(charts));
+}
+
+// =============================================================================
+// EXAMPLE 4: D3.js Heatmap with ChartUtils Colors
+// =============================================================================
+
+function example4_D3HeatmapWithThemeColors() {
+  const containerId = 'example4Heatmap';
+  
+  ChartUtils.showLoadingState(containerId);
+  
+  setTimeout(() => {
+    ChartUtils.hideStateOverlays(containerId);
+    
+    const container = d3.select(`#${containerId}`);
+    const width = container.node().getBoundingClientRect().width;
+    const height = 400;
+    
+    // Use ChartUtils theme colors for D3.js
+    const colorScale = d3.scaleSequential()
+      .domain([0, 100])
+      .interpolator(d3.interpolateRgb(
+        ChartUtils.THEME_COLORS.cyan,
+        ChartUtils.THEME_COLORS.magenta
+      ));
+    
+    const svg = container.append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('role', 'img')
+      .attr('aria-label', 'Risk assessment heatmap')
+      .style('background', ChartUtils.THEME_COLORS.darkBg);
+    
+    // Create sample heatmap cells
+    const data = d3.range(100).map(i => ({
+      x: i % 10,
+      y: Math.floor(i / 10),
+      value: Math.random() * 100
+    }));
+    
+    const cellSize = Math.min(width / 10, height / 10);
+    
+    svg.selectAll('rect')
+      .data(data)
+      .enter().append('rect')
+      .attr('x', d => d.x * cellSize)
+      .attr('y', d => d.y * cellSize)
+      .attr('width', cellSize - 2)
+      .attr('height', cellSize - 2)
+      .attr('fill', d => colorScale(d.value))
+      .attr('stroke', ChartUtils.THEME_COLORS.darkBg)
+      .attr('stroke-width', 2)
+      .attr('tabindex', 0) // Keyboard accessibility
+      .on('focus', function(event, d) {
+        // Announce to screen readers
+        ChartUtils.announceDataPoint({
+          data: {
+            labels: [`Cell ${d.x},${d.y}`],
+            datasets: [{ data: [d.value] }]
+          }
+        }, 0);
+      });
+  }, 1000);
+}
+
+// =============================================================================
+// EXAMPLE 5: Complete Dashboard Integration Pattern
+// =============================================================================
+
+/**
+ * Complete dashboard integration example
+ * This function demonstrates the full pattern but does not auto-execute
+ * Call runCompleteDashboardExample() to execute
+ */
+function runCompleteDashboardExample() {
+  'use strict';
+  
+  // Configuration
+  const CONFIG = {
+    dataUrl: 'cia-data/example-data.csv',
+    chartContainerIds: [
+      'effectivenessChart',
+      'comparisonChart',
+      'momentumChart'
+    ]
+  };
+  
+  // Store chart instances
+  let chartInstances = [];
+  
+  /**
+   * Initialize dashboard
+   */
+  async function initDashboard() {
+    // Show loading states for all charts
+    CONFIG.chartContainerIds.forEach(id => {
+      ChartUtils.showLoadingState(id);
+    });
+    
+    try {
+      // Fetch data
+      const data = await fetchData();
+      
+      // Create charts
+      createEffectivenessChart(data);
+      createComparisonChart(data);
+      createMomentumChart(data);
+      
+      // Setup resize handler
+      window.addEventListener('resize', 
+        ChartUtils.createResizeHandler(chartInstances)
+      );
+      
+    } catch (error) {
+      console.error('Dashboard initialization error:', error);
+      CONFIG.chartContainerIds.forEach(id => {
+        ChartUtils.showErrorState(id, error.message);
+      });
+    }
+  }
+  
+  /**
+   * Fetch data from CIA Platform
+   */
+  async function fetchData() {
+    const response = await fetch(CONFIG.dataUrl);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: Failed to fetch data`);
+    }
+    return await response.json();
+  }
+  
+  /**
+   * Create effectiveness chart
+   */
+  function createEffectivenessChart(data) {
+    const containerId = 'effectivenessChart';
+    ChartUtils.hideStateOverlays(containerId);
+    
+    if (!data || data.effectiveness.length === 0) {
+      ChartUtils.showEmptyState(containerId, 'No effectiveness data available');
+      return;
+    }
+    
+    const ctx = document.getElementById(containerId);
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: data.effectiveness.map(d => d.year),
+        datasets: [{
+          label: 'Effectiveness Score',
+          data: data.effectiveness.map(d => d.score),
+          borderColor: ChartUtils.THEME_COLORS.cyan,
+          backgroundColor: 'rgba(0, 217, 255, 0.1)',
+          tension: 0.4
+        }]
+      },
+      options: ChartUtils.getResponsiveOptions('line', {
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: (context) => {
+                return `Score: ${ChartUtils.formatNumber(context.parsed.y, 1)}`;
+              }
+            }
+          }
+        }
+      })
+    });
+    
+    chartInstances.push(chart);
+    ChartUtils.addKeyboardNavigation(ctx, chart);
+  }
+  
+  /**
+   * Create comparison chart
+   */
+  function createComparisonChart(data) {
+    const containerId = 'comparisonChart';
+    ChartUtils.hideStateOverlays(containerId);
+    
+    if (!data || data.comparison.length === 0) {
+      ChartUtils.showEmptyState(containerId, 'No comparison data available');
+      return;
+    }
+    
+    const ctx = document.getElementById(containerId);
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.comparison.map(d => d.party),
+        datasets: [{
+          label: 'Performance',
+          data: data.comparison.map(d => d.performance),
+          backgroundColor: ChartUtils.THEME_COLORS.parties['S'] // Example: use party colors
+        }]
+      },
+      options: ChartUtils.getResponsiveOptions('bar')
+    });
+    
+    chartInstances.push(chart);
+    ChartUtils.addKeyboardNavigation(ctx, chart);
+  }
+  
+  /**
+   * Create momentum chart
+   */
+  function createMomentumChart(data) {
+    const containerId = 'momentumChart';
+    ChartUtils.hideStateOverlays(containerId);
+    
+    if (!data || data.momentum.length === 0) {
+      ChartUtils.showEmptyState(containerId, 'No momentum data available');
+      return;
+    }
+    
+    const ctx = document.getElementById(containerId);
+    const chart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: data.momentum.map(d => d.party),
+        datasets: [{
+          label: 'Momentum',
+          data: data.momentum.map(d => d.score),
+          backgroundColor: [
+            ChartUtils.THEME_COLORS.cyan,
+            ChartUtils.THEME_COLORS.magenta,
+            ChartUtils.THEME_COLORS.yellow
+          ]
+        }]
+      },
+      options: ChartUtils.getResponsiveOptions('doughnut')
+    });
+    
+    chartInstances.push(chart);
+    ChartUtils.addKeyboardNavigation(ctx, chart);
+  }
+  
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDashboard);
+  } else {
+    initDashboard();
+  }
+}
+
+// =============================================================================
+// EXPORT FOR DOCUMENTATION
+// =============================================================================
+
+if (typeof module !== 'undefined' &amp;&amp; module.exports) {
+  module.exports = {
+    example1_SimpleBarChart,
+    example2_LineChartWithError,
+    example3_MultipleChartsWithResize,
+    example4_D3HeatmapWithThemeColors,
+    runCompleteDashboardExample
+  };
+}
+
+// =============================================================================
+// AUTO-EXECUTION (Browser Only)
+// =============================================================================
+
+/**
+ * Auto-execute examples only in browser context
+ * Guards against execution in Node.js/test environments
+ */
+if (typeof window !== 'undefined' &amp;&amp; typeof document !== 'undefined') {
+  // Only run if this script is explicitly included in a page that wants the examples
+  // Check for a data attribute or specific element to opt-in
+  if (document.currentScript &amp;&amp; document.currentScript.dataset.autorun === 'true') {
+    runCompleteDashboardExample();
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Analytics_CoalitionIntelligence.html">Analytics/CoalitionIntelligence</a></li><li><a href="module-Analytics_CommitteeIntelligence.html">Analytics/CommitteeIntelligence</a></li><li><a href="module-Article%2520Quality%2520Enhancer%2520-%2520Economist-Style%2520Content%2520Validation%2520Framework.html">Article Quality Enhancer - Economist-Style Content Validation Framework</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection.html">BehavioralAnalysis/AnomalyDetection</a></li><li><a href="module-CIA%2520Schema%2520Synchronization%2520-%2520Upstream%2520Schema%2520Caching%2520System.html">CIA Schema Synchronization - Upstream Schema Caching System</a></li><li><a href="module-CIA%2520Schema%2520Update%2520Detection%2520-%2520Upstream%2520Change%2520Monitoring.html">CIA Schema Update Detection - Upstream Change Monitoring</a></li><li><a href="module-ChartUtils.html">ChartUtils</a></li><li><a href="module-CoalitionIntelligence_StatusAnalysis.html">CoalitionIntelligence/StatusAnalysis</a></li><li><a href="module-ContentGeneration_BreakingNews.html">ContentGeneration/BreakingNews</a></li><li><a href="module-ContentGeneration_CommitteeAnalysis.html">ContentGeneration/CommitteeAnalysis</a></li><li><a href="module-ContentGeneration_GovernmentPolicy.html">ContentGeneration/GovernmentPolicy</a></li><li><a href="module-ContentGeneration_OppositionAnalysis.html">ContentGeneration/OppositionAnalysis</a></li><li><a href="module-ContentGeneration_ProspectiveAnalysis.html">ContentGeneration/ProspectiveAnalysis</a></li><li><a href="module-DashboardIntegration.html">DashboardIntegration</a></li><li><a href="module-DataPipeline_CIADataLoader.html">DataPipeline/CIADataLoader</a></li><li><a href="module-Dynamic%2520News%2520Index%2520Generation%2520-%2520Multi-Language%2520Article%2520Aggregation.html">Dynamic News Index Generation - Multi-Language Article Aggregation</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis.html">ElectionIntelligence/CycleAnalysis</a></li><li><a href="module-ElectionIntelligence_PreElectionMonitoring.html">ElectionIntelligence/PreElectionMonitoring</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a></li><li><a href="module-HTML%2520Utilities%2520-%2520DOM%2520Manipulation%2520and%2520XSS%2520Prevention%2520Framework.html">HTML Utilities - DOM Manipulation and XSS Prevention Framework</a></li><li><a href="module-IndividualIntelligence_PoliticianProfiling.html">IndividualIntelligence/PoliticianProfiling</a></li><li><a href="module-Infrastructure_Accessibility.html">Infrastructure/Accessibility</a></li><li><a href="module-Infrastructure_TypeGeneration.html">Infrastructure/TypeGeneration</a></li><li><a href="module-Infrastructure_VisualEvidence.html">Infrastructure/VisualEvidence</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.html">Infrastructure/WorkflowOrchestration</a></li><li><a href="module-Intelligence%2520Operations_Article%2520Template%2520Generation.html">Intelligence Operations/Article Template Generation</a></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a></li><li><a href="module-Intelligence%2520Operations_CIA%2520Statistical%2520Intelligence.html">Intelligence Operations/CIA Statistical Intelligence</a></li><li><a href="module-Intelligence%2520Operations_Data%2520Transformation%2520Pipeline.html">Intelligence Operations/Data Transformation Pipeline</a></li><li><a href="module-Intelligence%2520Operations_Editorial%2520Intelligence%2520Framework.html">Intelligence Operations/Editorial Intelligence Framework</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.html">Intelligence Operations/MCP Intelligence Server Client</a></li><li><a href="module-Intelligence_Forecasting.html">Intelligence/Forecasting</a></li><li><a href="module-Intelligence_Orchestration.html">Intelligence/Orchestration</a></li><li><a href="module-Intelligence_Visualization.html">Intelligence/Visualization</a></li><li><a href="module-News%2520Backport%2520Generation%2520-%2520Historical%2520Article%2520Migration%2520System.html">News Backport Generation - Historical Article Migration System</a></li><li><a href="module-OSINT_DataAcquisition.html">OSINT/DataAcquisition</a></li><li><a href="module-Party%2520Variants%2520-%2520Political%2520Party%2520Name%2520Normalization%2520Framework.html">Party Variants - Political Party Name Normalization Framework</a></li><li><a href="module-PoliticalIntelligence_PartyAnalysis.html">PoliticalIntelligence/PartyAnalysis</a></li><li><a href="module-RiskAssessment_AnomalyDetection.html">RiskAssessment/AnomalyDetection</a></li><li><a href="module-Sitemap%2520Generation%2520-%2520Multi-Language%2520SEO%2520Infrastructure.html">Sitemap Generation - Multi-Language SEO Infrastructure</a></li><li><a href="module-Statistics%2520Update%2520from%2520CIA%2520Database%2520-%2520Automated%2520Metrics%2520Synchronization.html">Statistics Update from CIA Database - Automated Metrics Synchronization</a></li><li><a href="module-TemporalIntelligence_SeasonalAnalysis.html">TemporalIntelligence/SeasonalAnalysis</a></li><li><a href="module-UIUtilities_NavigationEnhancement.html">UIUtilities/NavigationEnhancement</a></li><li><a href="module-Validation_CrossReferenceTracking.html">Validation/CrossReferenceTracking</a></li><li><a href="module-Validation_EveningAnalysis.html">Validation/EveningAnalysis</a></li><li><a href="module-Validation_LanguageMetadata.html">Validation/LanguageMetadata</a></li><li><a href="module-Validation_SchemaValidation.html">Validation/SchemaValidation</a></li><li><a href="module-Validation_TranslationQuality.html">Validation/TranslationQuality</a></li><li><a href="module-Validation_VisualRegression.html">Validation/VisualRegression</a></li><li><a href="module-Vocabulary%2520Extraction%2520-%2520Political%2520Terminology%2520Pattern%2520Analysis.html">Vocabulary Extraction - Political Terminology Pattern Analysis</a></li></ul><h3>Classes</h3><ul><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyAlertSystem.html">AnomalyAlertSystem</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionCharts.html">AnomalyDetectionCharts</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDashboard.html">AnomalyDetectionDashboard</a></li><li><a href="module-BehavioralAnalysis_AnomalyDetection-AnomalyDetectionDataManager.html">AnomalyDetectionDataManager</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleCharts.html">ElectionCycleCharts</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDashboard.html">ElectionCycleDashboard</a></li><li><a href="module-ElectionIntelligence_CycleAnalysis-ElectionCycleDataManager.html">ElectionCycleDataManager</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-AccessibilityTable.html">AccessibilityTable</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataCache.html">DataCache</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DataFetcher.html">DataFetcher</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-DecisionImpactChart.html">DecisionImpactChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-InfluenceChart.html">InfluenceChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-MinistryDashboard.html">MinistryDashboard</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-ProductivityChart.html">ProductivityChart</a></li><li><a href="module-GovernmentIntelligence_MinistryAnalysis-RiskHeatMap.html">RiskHeatMap</a></li><li><a href="module-Infrastructure_WorkflowOrchestration.WorkflowStateCoordinator.html">WorkflowStateCoordinator</a></li><li><a href="module-Intelligence%2520Operations_MCP%2520Intelligence%2520Server%2520Client.MCPClient.html">MCPClient</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

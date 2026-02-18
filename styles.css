@@ -9287,3 +9287,234 @@ body.news-page {
   font-weight: 600;
   margin-right: 0.5rem;
 }
+
+/* ==================================================
+   CHART STATE OVERLAYS (Loading/Empty/Error)
+   ================================================== */
+/* Styles for Chart.js and D3.js visualization states
+ * Provides user-friendly feedback during data loading,
+ * empty data scenarios, and error conditions
+ * WCAG 2.1 AA compliant with proper contrast and ARIA support
+ */
+
+/* Common state container styles */
+.chart-loading-state,
+.chart-empty-state,
+.chart-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(26, 30, 61, 0.5);
+  border-radius: 8px;
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Loading state */
+.chart-loading-state {
+  border-color: var(--primary-cyan, #00d9ff);
+}
+
+.chart-loading-state .spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(0, 217, 255, 0.2);
+  border-top-color: var(--primary-cyan, #00d9ff);
+  border-radius: 50%;
+  animation: spinner-rotation 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spinner-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chart-loading-state p {
+  color: var(--primary-cyan, #00d9ff);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Empty state */
+.chart-empty-state {
+  border-color: var(--primary-yellow, #ffbe0b);
+}
+
+.chart-empty-state .empty-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--primary-yellow, #ffbe0b);
+  margin-bottom: 1rem;
+  stroke-width: 2;
+}
+
+.chart-empty-state h3 {
+  color: var(--light-text, #e0e0e0);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.chart-empty-state p {
+  color: rgba(224, 224, 224, 0.8);
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.chart-empty-state .help-text {
+  font-size: 0.9rem;
+  color: rgba(224, 224, 224, 0.6);
+}
+
+.chart-empty-state a {
+  color: var(--primary-cyan, #00d9ff);
+  text-decoration: underline;
+}
+
+.chart-empty-state a:hover {
+  color: var(--primary-magenta, #ff006e);
+}
+
+/* Error state */
+.chart-error-state {
+  border-color: var(--primary-magenta, #ff006e);
+}
+
+.chart-error-state .error-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--primary-magenta, #ff006e);
+  margin-bottom: 1rem;
+  stroke-width: 2;
+}
+
+.chart-error-state h3 {
+  color: var(--light-text, #e0e0e0);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.chart-error-state p {
+  color: rgba(224, 224, 224, 0.8);
+  font-size: 1rem;
+  margin: 0.5rem 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.chart-error-state .retry-button {
+  background: var(--primary-cyan, #00d9ff);
+  color: var(--dark-bg, #0a0e27);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chart-error-state .retry-button:hover {
+  background: var(--primary-magenta, #ff006e);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 0, 110, 0.3);
+}
+
+.chart-error-state .retry-button:focus {
+  outline: 3px solid var(--primary-cyan, #00d9ff);
+  outline-offset: 2px;
+}
+
+.chart-error-state .retry-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .chart-loading-state,
+  .chart-empty-state,
+  .chart-error-state {
+    min-height: 250px;
+    padding: 1.5rem;
+  }
+  
+  .chart-loading-state .spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+  }
+  
+  .chart-empty-state .empty-icon,
+  .chart-error-state .error-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .chart-empty-state h3,
+  .chart-error-state h3 {
+    font-size: 1.25rem;
+  }
+  
+  .chart-empty-state p,
+  .chart-error-state p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus indicators for accessibility (WCAG 2.1 AA) */
+canvas:focus-visible,
+svg:focus-visible,
+.chart-card:focus-within {
+  outline: 3px solid var(--primary-cyan, #00d9ff);
+  outline-offset: 2px;
+}
+
+/* Fallback for browsers without :focus-visible support */
+@supports not selector(:focus-visible) {
+  canvas:focus,
+  svg:focus,
+  .chart-card:focus-within {
+    outline: 3px solid var(--primary-cyan, #00d9ff);
+    outline-offset: 2px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .chart-loading-state,
+  .chart-empty-state,
+  .chart-error-state {
+    border-width: 3px;
+    border-style: solid;
+  }
+  
+  .chart-error-state .retry-button {
+    border: 2px solid currentColor;
+  }
+}
