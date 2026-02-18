@@ -127,15 +127,16 @@ describe('Party Dashboard', () => {
 Tests all 9 dashboards systematically:
 
 ```javascript
+// Simplified example - actual implementation has specific chart IDs
 const dashboards = [
   { id: 'party-dashboard', charts: 4, hasD3: false },
   { id: 'election-cycle-dashboard', charts: 4, hasD3: true, d3Container: 'decision-heatmap' },
-  { id: 'committee-dashboard', charts: 2, hasD3: false },
-  { id: 'coalition-dashboard', charts: 2, hasD3: true, d3Container: 'coalitionNetwork' },
-  { id: 'seasonal-patterns-dashboard', charts: 2, hasD3: false },
-  { id: 'pre-election-dashboard', charts: 2, hasD3: false },
-  { id: 'anomaly-detection-dashboard', charts: 2, hasD3: true, d3Container: 'severity-heatmap' },
-  { id: 'ministry-dashboard', charts: 2, hasD3: false },
+  { id: 'committee-dashboard', charts: 3, hasD3: true, d3Container: 'committeeNetwork' },
+  { id: 'coalition-dashboard', charts: 3, hasD3: true, d3Container: 'coalitionNetwork' },
+  { id: 'seasonal-patterns-dashboard', charts: 4, hasD3: true, d3Container: 'seasonal-heatmap' },
+  { id: 'pre-election-dashboard', charts: 4, hasD3: false },
+  { id: 'anomaly-detection-dashboard', charts: 4, hasD3: true, d3Container: 'severity-heatmap' },
+  { id: 'ministry-dashboard', charts: 3, hasD3: true, d3Container: 'ministryRiskHeatMap' },
   { id: 'risk-dashboard', charts: 4, hasD3: true, d3Container: 'riskHeatMap' }
 ];
 
