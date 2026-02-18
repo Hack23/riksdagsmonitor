@@ -847,6 +847,9 @@ export class MCPClient {
    * @returns {Promise<Array>} Documents with enriched content
    */
   async enrichDocumentsWithContent(documents, concurrency = 3) {
+    // Validate and clamp concurrency to at least 1
+    concurrency = Math.max(1, Math.floor(concurrency));
+    
     const enriched = [];
     
     // Process in batches to avoid overwhelming the MCP server
@@ -884,7 +887,7 @@ export class MCPClient {
               contentFetched: true
             };
           } catch (error) {
-            console.error(`❌ Failed to enrich document ${doc.dok_id}:`, error.message);
+            console.error(`❌ Failed to enrich document ${dok_id || 'unknown'}:`, error.message);
             return { ...doc, contentFetchError: error.message };
           }
         })
@@ -895,8 +898,10 @@ export class MCPClient {
         if (result.status === 'fulfilled') {
           enriched.push(result.value);
         } else {
-          console.error(`❌ Batch enrichment failed for document ${batch[idx].dok_id}:`, result.reason);
-          enriched.push({ ...batch[idx], contentFetchError: result.reason.message });
+          const failedDoc = batch[idx];
+          const failedDokId = failedDoc.dokumentnamn || failedDoc.dok_id || failedDoc.id || 'unknown';
+          console.error(`❌ Batch enrichment failed for document ${failedDokId}:`, result.reason);
+          enriched.push({ ...failedDoc, contentFetchError: result.reason.message });
         }
       });
       
