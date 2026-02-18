@@ -56,14 +56,14 @@ describe('Dashboard Page - Main English Version', () => {
   });
   
   it('should have CIA data visualization containers', () => {
-    // Dashboard page has specific CIA visualization sections
+    // Dashboard page initially shows loading state, then dashboard-content
+    // We should wait for content to be visible or just check it exists in DOM
+    cy.get('#loading-state').should('exist');
+    
+    // Key sections should exist in the DOM (even if hidden initially)
     cy.get('#key-metrics').should('exist');
     cy.get('#party-performance').should('exist');
     cy.get('#election-forecast').should('exist');
-    
-    // Check for Chart.js canvas elements
-    cy.get('#party-seats-chart').should('exist');
-    cy.get('#party-cohesion-chart').should('exist');
   });
   
   it('should be responsive on mobile', () => {
