@@ -438,16 +438,60 @@ npm run htmlhint && npm test && npm run build
 - `.github/workflows/javascript-testing.yml` - Vite build, Vitest, Cypress E2E
 - `.github/workflows/dependency-review.yml` - Dependency security
 - `.github/workflows/copilot-setup-steps.yml` - Copilot agent setup
+- `.github/workflows/release.yml` - Release with attestations and documentation-as-code
 
 **Test Results**:
 - ✅ 49/49 unit tests passing (Vitest)
 - ✅ 100% test pass rate
 - ✅ Coverage: 70% lines, 70% functions, 60% branches
 
+## 🚀 Release Process
+
+Riksdagsmonitor follows a comprehensive release process with full supply chain security:
+
+### Release Workflow
+
+- **Trigger**: Manual (workflow_dispatch) or tag push (v*.*.*)
+- **Duration**: ~20-30 minutes
+- **Jobs**: Prepare → Build → Release
+
+### Release Artifacts
+
+Each release includes:
+- ✅ Production build (`riksdagsmonitor-vX.Y.Z.zip`)
+- ✅ SHA-256 checksum for verification
+- ✅ SBOM in SPDX format (Software Bill of Materials)
+- ✅ SLSA Build Provenance attestations (signed)
+
+### Documentation as Code
+
+Every release automatically generates and publishes:
+- 📚 API Documentation (JSDoc)
+- 📊 Test Coverage Report (Vitest)
+- 🧪 E2E Test Reports (Cypress)
+- 📦 Dependency Tree (npm)
+
+**Documentation Hub**: [riksdagsmonitor.com/docs/](https://riksdagsmonitor.com/docs/)
+
+### Dual Deployment
+
+- **Primary**: AWS S3/CloudFront (https://riksdagsmonitor.com)
+- **Backup**: GitHub Pages (disaster recovery)
+
+### Security & Verification
+
+Verify attestations using GitHub CLI:
+```bash
+gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
+```
+
+**Full Release Guide**: See [RELEASE_PROCESS.md](RELEASE_PROCESS.md)
+
 ## 📖 Documentation
 
 ### Project Documentation
 - [README.md](README.md) - This file
+- [RELEASE_PROCESS.md](RELEASE_PROCESS.md) - Comprehensive release guide with attestations ✨ **NEW**
 - [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) - Multi-language translation standards and glossary
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security architecture and controls
 - [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis and risk assessment
