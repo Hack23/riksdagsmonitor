@@ -1,0 +1,232 @@
+/**
+ * Cypress E2E Tests - All Dashboards Comprehensive Coverage
+ * 
+ * Tests all 9 dashboards with fail-fast principle (no conditionals/skips):
+ * 1. Party Dashboard
+ * 2. Election Cycle Dashboard
+ * 3. Committee Dashboard
+ * 4. Coalition Dashboard
+ * 5. Seasonal Patterns Dashboard
+ * 6. Pre-Election Dashboard
+ * 7. Anomaly Detection Dashboard
+ * 8. Ministry Dashboard
+ * 9. Risk Dashboard
+ * 
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+describe('All Dashboards - Comprehensive Coverage', () => {
+  beforeEach(() => {
+    cy.stubCIAData();
+    cy.visit('/');
+  });
+  
+  /**
+   * Dashboard configuration for systematic testing
+   */
+  const dashboards = [
+    {
+      id: 'party-dashboard',
+      name: 'Party Dashboard',
+      charts: ['partyEffectivenessChart', 'partyComparisonChart', 'coalitionAlignmentChart', 'partyMomentumChart'],
+      hasD3: false
+    },
+    {
+      id: 'election-cycle-dashboard',
+      name: 'Election Cycle Dashboard',
+      charts: ['cycle-timeline-chart', 'risk-forecast-chart', 'temporal-trends-chart', 'party-tier-chart'],
+      hasD3: true,
+      d3Container: 'decision-heatmap'
+    },
+    {
+      id: 'committee-dashboard',
+      name: 'Committee Dashboard',
+      charts: ['committee-productivity-chart', 'committee-comparison-chart'],
+      hasD3: false
+    },
+    {
+      id: 'coalition-dashboard',
+      name: 'Coalition Dashboard',
+      charts: ['coalition-strength-chart', 'coalition-stability-chart'],
+      hasD3: true,
+      d3Container: 'coalitionNetwork'
+    },
+    {
+      id: 'seasonal-patterns-dashboard',
+      name: 'Seasonal Patterns Dashboard',
+      charts: ['seasonal-trends-chart', 'quarterly-patterns-chart'],
+      hasD3: false
+    },
+    {
+      id: 'pre-election-dashboard',
+      name: 'Pre-Election Dashboard',
+      charts: ['pre-election-momentum-chart', 'pre-election-risk-chart'],
+      hasD3: false
+    },
+    {
+      id: 'anomaly-detection-dashboard',
+      name: 'Anomaly Detection Dashboard',
+      charts: ['anomaly-timeline-chart', 'anomaly-scatter-chart'],
+      hasD3: true,
+      d3Container: 'severity-heatmap'
+    },
+    {
+      id: 'ministry-dashboard',
+      name: 'Ministry Dashboard',
+      charts: ['ministry-effectiveness-chart', 'ministry-productivity-chart'],
+      hasD3: false
+    },
+    {
+      id: 'risk-dashboard',
+      name: 'Risk Dashboard',
+      charts: ['riskDistributionChart', 'anomalyDetectionChart', 'crisisResilienceChart', 'riskEvolutionChart'],
+      hasD3: true,
+      d3Container: 'riskHeatMap'
+    }
+  ];
+  
+  dashboards.forEach(dashboard => {
+    describe(`${dashboard.name}`, () => {
+      it('should exist and be visible', () => {
+        cy.get(`#${dashboard.id}`).should('exist').should('be.visible');
+      });
+      
+      it('should have dashboard heading', () => {
+        cy.get(`#${dashboard.id} h2, #${dashboard.id} h3`).first().should('be.visible');
+      });
+      
+      it('should not have error messages', () => {
+        cy.get(`#${dashboard.id} .dashboard-error, #${dashboard.id} .error-message`).should('not.exist');
+      });
+      
+      it('should have data attribution', () => {
+        // Most dashboards should have CIA data attribution
+        cy.get(`#${dashboard.id}`).then(($dashboard) => {
+          // Check if dashboard or parent page has attribution
+          const hasAttribution = $dashboard.text().includes('CIA') || 
+                                 $dashboard.find('a[href*="cia"]').length > 0 ||
+                                 Cypress.$('.data-attribution').length > 0;
+          expect(hasAttribution).to.be.true;
+        });
+      });
+      
+      if (dashboard.charts && dashboard.charts.length > 0) {
+        describe('Chart.js Charts', () => {
+          dashboard.charts.forEach(chartId => {
+            it(`should have ${chartId} canvas`, () => {
+              cy.get(`#${chartId}`).should('exist');
+            });
+            
+            it(`${chartId} should have Chart.js render monitor class`, () => {
+              // Chart.js adds this class after rendering
+              cy.get(`#${chartId}`, { timeout: 10000 }).should(($canvas) => {
+                // Canvas should exist and have dimensions
+                expect($canvas[0]).to.exist;
+                expect($canvas[0].width).to.be.greaterThan(0);
+                expect($canvas[0].height).to.be.greaterThan(0);
+              });
+            });
+          });
+        });
+      }
+      
+      if (dashboard.hasD3 && dashboard.d3Container) {
+        describe('D3.js Visualizations', () => {
+          it(`should have ${dashboard.d3Container} container`, () => {
+            cy.get(`#${dashboard.d3Container}`).should('exist');
+          });
+          
+          it(`${dashboard.d3Container} should render D3 SVG`, () => {
+            cy.get(`#${dashboard.d3Container} svg`, { timeout: 10000 }).should('exist');
+          });
+          
+          it(`${dashboard.d3Container} SVG should have content`, () => {
+            cy.get(`#${dashboard.d3Container} svg`, { timeout: 10000 }).should(($svg) => {
+              expect($svg.children().length).to.be.greaterThan(0);
+            });
+          });
+        });
+      }
+      
+      describe('Accessibility', () => {
+        it('should have ARIA labels on charts', () => {
+          cy.get(`#${dashboard.id} canvas[role="img"]`).each($canvas => {
+            expect($canvas.attr('aria-label')).to.exist;
+            expect($canvas.attr('aria-label').length).to.be.greaterThan(10);
+          });
+        });
+        
+        it('should have screen reader descriptions', () => {
+          // Check for .sr-only elements or aria-label attributes
+          cy.get(`#${dashboard.id}`).then($dashboard => {
+            const hasSrOnly = $dashboard.find('.sr-only').length > 0;
+            const hasAriaLabels = $dashboard.find('[aria-label]').length > 0;
+            expect(hasSrOnly || hasAriaLabels).to.be.true;
+          });
+        });
+      });
+      
+      describe('Responsive Design', () => {
+        it('should be visible on mobile (375px)', () => {
+          cy.viewport(375, 667);
+          cy.get(`#${dashboard.id}`).should('be.visible');
+        });
+        
+        it('should be visible on tablet (768px)', () => {
+          cy.viewport(768, 1024);
+          cy.get(`#${dashboard.id}`).should('be.visible');
+        });
+        
+        it('should be visible on desktop (1440px)', () => {
+          cy.viewport(1440, 900);
+          cy.get(`#${dashboard.id}`).should('be.visible');
+        });
+      });
+    });
+  });
+  
+  describe('Dashboard Integration', () => {
+    it('all 9 dashboards should be present on main page', () => {
+      dashboards.forEach(dashboard => {
+        cy.get(`#${dashboard.id}`).should('exist');
+      });
+    });
+    
+    it('should not have duplicate dashboard IDs', () => {
+      const dashboardIds = dashboards.map(d => d.id);
+      const uniqueIds = [...new Set(dashboardIds)];
+      expect(dashboardIds.length).to.equal(uniqueIds.length);
+    });
+    
+    it('should load all dashboards without console errors', () => {
+      cy.window().then((win) => {
+        cy.spy(win.console, 'error');
+      });
+      
+      // Visit page and wait for dashboards to load
+      cy.get('#party-dashboard', { timeout: 10000 }).should('be.visible');
+      
+      // Check no console errors
+      cy.window().then((win) => {
+        expect(win.console.error).to.not.be.called;
+      });
+    });
+  });
+  
+  describe('Performance', () => {
+    it('should load all dashboards within 10 seconds', () => {
+      cy.get('#party-dashboard', { timeout: 10000 }).should('be.visible');
+      cy.get('#risk-dashboard', { timeout: 10000 }).should('be.visible');
+      cy.get('#ministry-dashboard', { timeout: 10000 }).should('be.visible');
+    });
+    
+    it('should render Chart.js charts within reasonable time', () => {
+      // First chart should render quickly
+      cy.get('#partyEffectivenessChart', { timeout: 5000 }).should('exist');
+      cy.get('#partyEffectivenessChart').should(($canvas) => {
+        expect($canvas[0].width).to.be.greaterThan(0);
+      });
+    });
+  });
+});

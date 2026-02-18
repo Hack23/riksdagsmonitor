@@ -242,16 +242,10 @@ describe('Dashboard Page - Navigation', () => {
   it('should support language switching on dashboard page', () => {
     cy.visit('/dashboard/');
     
-    // Try to switch to Swedish version
-    cy.get('body').then(($body) => {
-      const svLink = $body.find('a[href*="index_sv.html"]');
-      if (svLink.length > 0) {
-        cy.get('a[href*="index_sv.html"]').first().click();
-        cy.url().should('include', 'index_sv.html');
-      } else {
-        cy.log('Swedish language link not found - skipping language switch test');
-      }
-    });
+    // Fail-fast: Language switcher must exist
+    cy.get('a[href*="index_sv.html"]').should('exist');
+    cy.get('a[href*="index_sv.html"]').first().click();
+    cy.url().should('include', 'index_sv.html');
   });
 });
 
