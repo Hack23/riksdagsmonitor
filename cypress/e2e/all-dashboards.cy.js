@@ -18,7 +18,8 @@
 
 describe('All Dashboards - Comprehensive Coverage', () => {
   beforeEach(() => {
-    cy.stubCIAData();
+    // Use real CIA CSV sample data from the repository to ensure correct schemas per dashboard
+    // cy.stubCIAData(); // Disabled: causes dashboards to render empty/fallback states
     cy.visit('/');
   });
   
@@ -107,10 +108,10 @@ describe('All Dashboards - Comprehensive Coverage', () => {
       it('should have data attribution', () => {
         // Most dashboards should have CIA data attribution
         cy.get(`#${dashboard.id}`).then(($dashboard) => {
-          // Check if dashboard or parent page has attribution
-          const hasAttribution = $dashboard.text().includes('CIA') || 
+          // Check if the current dashboard has attribution (scoped to this dashboard)
+          const hasAttribution = $dashboard.text().includes('CIA') ||
                                  $dashboard.find('a[href*="cia"]').length > 0 ||
-                                 Cypress.$('.data-attribution').length > 0;
+                                 $dashboard.find('.data-attribution').length > 0;
           expect(hasAttribution).to.be.true;
         });
       });
@@ -248,13 +249,13 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     });
     
     it('should render Chart.js charts within reasonable time', () => {
-      // First chart should render quickly
+      // First chart should render quickly (scoped to dashboard container)
       cy.get('#party-dashboard')
         .find('#partyEffectivenessChart', { timeout: 5000 })
-        .should('exist');
-      cy.get('#partyEffectivenessChart').should(($canvas) => {
-        expect($canvas[0].width).to.be.greaterThan(0);
-      });
+        .should('exist')
+        .should(($canvas) => {
+          expect($canvas[0].width).to.be.greaterThan(0);
+        });
     });
   });
 });

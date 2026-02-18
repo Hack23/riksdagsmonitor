@@ -171,12 +171,15 @@ describe('Party Dashboard', () => {
     });
 
     it('external links should have target="_blank"', () => {
-      const externalLinks = container.querySelectorAll('a[target="_blank"]');
-      
+      // External links are defined in the footer for the party dashboard page
+      const externalLinks = document.querySelectorAll('footer a[href^="http"]');
+      expect(externalLinks.length).toBeGreaterThan(0);
+
       externalLinks.forEach(link => {
         expect(link.getAttribute('target')).toBe('_blank');
-        // Note: Security rel attributes should be added in actual HTML
-        // (rel="noopener" recommended for target="_blank")
+        // Ensure security best practices for target="_blank" links
+        const rel = link.getAttribute('rel') || '';
+        expect(rel.includes('noopener')).toBe(true);
       });
     });
   });
