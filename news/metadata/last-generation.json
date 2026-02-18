@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-02-17T17:40:00Z",
+  "timestamp": "2026-02-18T04:06:00Z",
   "type": "scheduled-generation",
   "types": ["committee-reports", "propositions", "motions"],
   "generated": 42,
   "errors": 0,
   "articles": [
     {
-      "slug": "2026-02-17-committee-reports",
+      "slug": "2026-02-18-committee-reports",
       "type": "committee-reports",
       "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
       "sources": ["get_betankanden"]
     },
     {
-      "slug": "2026-02-17-government-propositions",
+      "slug": "2026-02-18-government-propositions",
       "type": "propositions",
       "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-      "sources": ["get_propositioner"]
+      "sources": ["get_propositioner", "search_dokument"]
     },
     {
-      "slug": "2026-02-17-opposition-motions",
+      "slug": "2026-02-18-opposition-motions",
       "type": "motions",
       "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
       "sources": ["get_motioner"]
@@ -28,7 +28,14 @@
     "get_sync_status",
     "get_betankanden (2025/26)",
     "get_propositioner (2025/26)",
-    "get_motioner (2025/26)"
+    "get_motioner (2025/26)",
+    "search_dokument (bet, 2025/26)"
   ],
-  "nextExpectedCheck": "2026-02-18T02:00:00Z"
+  "newDataSince": "2026-02-17",
+  "keyFindings": [
+    "2 new committee reports from SkU (Tax Committee): border cash controls, future data protection",
+    "6 new government propositions: new weapons law, VAT fraud measures, crisis management, explosive goods control, e-ID reporting, beneficial ownership",
+    "Latest motions from Feb 11 on supplementary tax and dividend tax exceptions"
+  ],
+  "nextExpectedCheck": "2026-02-19T02:00:00Z"
 }
