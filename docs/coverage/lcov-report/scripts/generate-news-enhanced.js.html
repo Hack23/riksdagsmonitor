@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.85% </span>
+                <span class="strong">80.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>207/256</span>
+                <span class='fraction'>206/256</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.8% </span>
+                <span class="strong">53.01% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>43/83</span>
+                <span class='fraction'>44/83</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.06% </span>
+                <span class="strong">65.51% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>18/29</span>
+                <span class='fraction'>19/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.37% </span>
+                <span class="strong">81.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>201/244</span>
+                <span class='fraction'>199/244</span>
             </div>
         
             
@@ -1626,10 +1626,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">711x</span>
+<span class="cline-any cline-yes">837x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1654,11 +1654,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -2433,10 +2433,10 @@ async function generateNews() {
   // Write batch status for workflow orchestration
   const today = new Date().toISOString().split('T')[0];
   const existingFiles = fs.existsSync(NEWS_DIR)
-    ? fs.readdirSync(NEWS_DIR).filter(f =&gt; f.startsWith(today) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >f.endsWith('.html'))</span>
+    ? fs.readdirSync(NEWS_DIR).filter(f =&gt; f.startsWith(today) &amp;&amp; f.endsWith('.html'))
     : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
   const completedLangs = allRequestedLanguages.filter(lang =&gt;
-    existingFiles.some(<span class="fstat-no" title="function not covered" >f </span>=&gt; <span class="cstat-no" title="statement not covered" >f.endsWith(`-${lang}.html`))</span>
+    existingFiles.some(f =&gt; f.endsWith(`-${lang}.html`))
   );
   const remainingLangs = allRequestedLanguages.filter(l =&gt; !completedLangs.includes(l));
   
@@ -2460,12 +2460,12 @@ async function generateNews() {
     stats.articles.forEach(article =&gt; console.log(`  - ${article}`));
   }
   
-  if (remainingLangs.length &gt; 0) {
-    console.log(`\n📦 Batch progress: ${completedLangs.length}/${allRequestedLanguages.length} languages done`);
-    console.log(`   Remaining: ${remainingLangs.join(', ')}`);
-    console.log('   Re-run with --skip-existing to continue with next batch');
-  } else <span class="missing-if-branch" title="else path not taken" >E</span>{
-<span class="cstat-no" title="statement not covered" >    console.log(`\n🎉 All ${allRequestedLanguages.length} languages generated!`);</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (remainingLangs.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >    console.log(`\n📦 Batch progress: ${completedLangs.length}/${allRequestedLanguages.length} languages done`);</span>
+<span class="cstat-no" title="statement not covered" >    console.log(`   Remaining: ${remainingLangs.join(', ')}`);</span>
+<span class="cstat-no" title="statement not covered" >    console.log('   Re-run with --skip-existing to continue with next batch');</span>
+  } else {
+    console.log(`\n🎉 All ${allRequestedLanguages.length} languages generated!`);
   }
   
   return stats;
@@ -2491,7 +2491,7 @@ export { generateNews, generateWeekAhead, generateCommitteeReports, generateProp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-18T04:32:58.547Z
+                at 2026-02-18T06:19:36.461Z
             </div>
         <script src="../prettify.js"></script>
         <script>
