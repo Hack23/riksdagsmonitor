@@ -91,7 +91,8 @@ class TitleGenerator:
         # Filter out non-document h3s (like "Sources and Data")
         filtered = []
         exclude = ['sources and data', 'watch list', 'political context', 
-                   'assessment', 'key takeaways', 'källor och data']
+                   'assessment', 'key takeaways', 'källor och data', 'key points',
+                   'data sources and references']
         
         for match in matches:
             title_lower = match.lower()
@@ -99,6 +100,49 @@ class TitleGenerator:
                 filtered.append(match.strip())
         
         return filtered
+    
+    def extract_document_count(self, html_content: str, article_type: str) -> int:
+        """Extract actual document count from article content"""
+        # Try to find explicit count in article body (e.g., "<strong>10 motions</strong>" or "Six propositions")
+        if 'opposition-motions' in article_type:
+            # Look for pattern like "10 motions" or "ten motions"
+            count_patterns = [
+                (r'<strong>(\d+)\s+motions?</strong>', 'digit'),
+                (r'\b(\d+)\s+motions?\s+submitted', 'digit'),
+                (r'\bten\s+motions?\b', 10)
+            ]
+        elif 'committee-reports' in article_type:
+            count_patterns = [
+                (r'<strong>(\d+)\s+(?:committee\s+)?reports?</strong>', 'digit'),
+                (r'\b(\d+)\s+(?:committee\s+)?reports?\s+', 'digit')
+            ]
+        elif 'government-propositions' in article_type:
+            # Look for "six propositions" or "6 propositions" in lede
+            count_patterns = [
+                (r'\b[Ss]ix\s+propositions?\b', 6),  # Match "Six propositions"
+                (r'\b(\d+)\s+propositions?\s+submitted', 'digit'),
+                (r'<strong>(\d+)\s+(?:government\s+)?propositions?</strong>', 'digit')
+            ]
+        else:
+            return 0
+        
+        for pattern_info in count_patterns:
+            if isinstance(pattern_info, tuple):
+                pattern, result_type = pattern_info
+            else:
+                pattern = pattern_info
+                result_type = 'digit'
+            
+            matches = re.findall(pattern, html_content, re.IGNORECASE)
+            if matches:
+                # If result_type is a number, return it directly
+                if isinstance(result_type, int):
+                    return result_type
+                # If result_type is 'digit', extract the digit from match
+                elif result_type == 'digit' and matches[0].isdigit():
+                    return int(matches[0])
+        
+        return 0
     
     def extract_policy_themes(self, document_titles: List[str], max_themes: int = 3) -> List[str]:
         """Extract top policy themes from document titles"""
@@ -347,11 +391,10 @@ class TitleGenerator:
                 flags=re.DOTALL
             )
             
-            # 10. Update BreadcrumbList position 3 name (truncate if needed for display)
-            breadcrumb_title = new_title if len(new_title) <= 50 else new_title[:47] + "..."
+            # 10. Update BreadcrumbList position 3 name (use full title for consistency)
             content = re.sub(
                 r'("position":\s*3,\s*"name":\s*)".*?"',
-                f'\\1"{breadcrumb_title.replace('"', '\\"')}"',
+                f'\\1"{new_title.replace('"', '\\"')}"',
                 content,
                 count=1
             )
@@ -419,14 +462,20 @@ class TitleGenerator:
         
         # Extract document titles
         document_titles = self.extract_document_titles(en_content)
-        print(f"  Found {len(document_titles)} documents")
+        
+        # Try to get accurate document count from article content
+        doc_count = self.extract_document_count(en_content, article_type)
+        if doc_count == 0:
+            doc_count = len(document_titles)
+        
+        print(f"  Found {len(document_titles)} h3 titles, article mentions {doc_count} documents")
         
         if len(document_titles) > 0:
             print(f"  Top documents: {', '.join(document_titles[:3])}")
         
         # Generate title and description for English
         en_title = self.generate_title(article_type, document_titles, date_str, 'en')
-        en_description = self.generate_description(document_titles, article_type, len(document_titles))
+        en_description = self.generate_description(document_titles, article_type, doc_count)
         
         # Store for translation reference
         self.title_mapping[base_filename] = {
