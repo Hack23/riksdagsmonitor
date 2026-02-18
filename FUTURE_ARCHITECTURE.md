@@ -581,7 +581,7 @@ Amplify Hosting (SSR) → CloudFront
 **Compute:**
 | Current | Future | Rationale |
 |---------|--------|-----------|
-| Static HTML | AWS Lambda (Python 3.12, Node.js 20) | Serverless functions, pay-per-request |
+| Static HTML | AWS Lambda (Python 3.12, Node.js 24) | Serverless functions, pay-per-request |
 | N/A | AWS Amplify Hosting | Server-side rendering (SSR), edge functions |
 
 **API:**

@@ -106,7 +106,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
           
       - name: Install Dependencies
@@ -323,7 +323,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
           
       - name: Install Dependencies
@@ -465,7 +465,7 @@ jobs:
       - name: Setup Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
           
       - name: Install Dependencies
@@ -532,7 +532,7 @@ steps:
   - name: Setup Node.js
     uses: actions/setup-node@v4
     with:
-      node-version: '20'
+      node-version: '24'
       cache: 'npm'
       
   - name: Install Dependencies
@@ -615,7 +615,7 @@ steps:
   - name: Setup Node.js
     uses: actions/setup-node@v4
     with:
-      node-version: '20'
+      node-version: '24'
       cache: 'npm'
       
   - name: Setup Python
@@ -781,7 +781,7 @@ jobs:
       - name: Setup Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           
       - name: Run Agent Analysis
         env:
@@ -965,7 +965,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
           
       - name: Install Dependencies
@@ -1265,7 +1265,7 @@ jobs:
   my-task:
     uses: ./.github/workflows/reusable-agent-setup.yml
     with:
-      node-version: '20'
+      node-version: '24'
       python-version: '3.11'
     secrets:
       anthropic-key: ${{ secrets.ANTHROPIC_API_KEY }}
