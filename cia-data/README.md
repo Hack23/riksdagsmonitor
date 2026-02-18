@@ -455,6 +455,11 @@ Statistical outlier identification in parliament activity (2002-2026):
 - `status`: Current status (e.g., "Tjänstgörande riksdagsledamot")
 - `total_violations`: Total number of policy/conduct violations
 - `latest_violation_date`: Most recent violation timestamp
+- `absenteeism_violations`, `effectiveness_violations`, `discipline_violations`, `productivity_violations`, `collaboration_violations`: Violation breakdowns
+- `annual_absence_rate`: Annual absence percentage
+- `annual_rebel_rate`: Annual rebellion rate percentage
+- `annual_vote_count`: Total votes cast annually
+- `documents_last_year`: Documents produced in last year
 - `risk_score`: Overall risk score (0-100 scale)
 - `risk_level`: Classification (LOW, MEDIUM, HIGH, CRITICAL)
 - `risk_assessment`: Textual assessment summary
