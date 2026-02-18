@@ -81,7 +81,7 @@ graph TB
 # Multi-stage build for Node.js agentic workflow
 
 # Stage 1: Build dependencies
-FROM node:20-alpine AS deps
+FROM node:24-alpine AS deps
 LABEL stage=deps
 
 WORKDIR /app
@@ -94,7 +94,7 @@ RUN npm ci --only=production \
     && npm cache clean --force
 
 # Stage 2: Build application
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 LABEL stage=builder
 
 WORKDIR /app
@@ -110,7 +110,7 @@ COPY .github/copilot-mcp.json ./config/
 # RUN npm run build
 
 # Stage 3: Production runtime
-FROM node:20-alpine AS runtime
+FROM node:24-alpine AS runtime
 
 # Install security updates
 RUN apk update && apk upgrade \
@@ -239,7 +239,7 @@ CMD ["python", "scripts/agents/main.py"]
 # Multi-stage build with Node.js and Python
 
 # Stage 1: Node.js dependencies
-FROM node:20-alpine AS node-deps
+FROM node:24-alpine AS node-deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --only=production && npm cache clean --force
@@ -443,7 +443,7 @@ jobs:
 # Use BuildKit secrets for sensitive build-time data
 # syntax=docker/dockerfile:1
 
-FROM node:20-alpine
+FROM node:24-alpine
 
 # Mount secret during build (never stored in image)
 RUN --mount=type=secret,id=npm_token \
@@ -483,7 +483,7 @@ COPY . /app/
 
 ```dockerfile
 # Use Alpine base images
-FROM node:20-alpine  # ~180MB vs ~1GB for full Node.js
+FROM node:24-alpine  # ~180MB vs ~1GB for full Node.js
 
 # Remove build dependencies after installation
 RUN apk add --no-cache --virtual .build-deps \

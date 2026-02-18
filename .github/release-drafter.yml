@@ -73,39 +73,76 @@ template: |
 
   $CHANGES
 
-  ## 📊 Release Metrics
+  ## 📊 Release Metrics & Evidence
   
-  - **Test Coverage**: See [Coverage Report](https://riksdagsmonitor.com/docs/coverage/)
-  - **API Documentation**: See [API Docs](https://riksdagsmonitor.com/docs/api/)
-  - **E2E Tests**: See [E2E Reports](https://riksdagsmonitor.com/docs/cypress/)
+  [![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest&style=for-the-badge)](https://riksdagsmonitor.com/docs/coverage/)
+  [![API Documentation](https://img.shields.io/badge/API-Documentation-blue?logo=javascript&style=for-the-badge)](https://riksdagsmonitor.com/docs/api/)
+  [![E2E Tests](https://img.shields.io/badge/E2E-Cypress_Reports-green?logo=cypress&style=for-the-badge)](https://riksdagsmonitor.com/docs/cypress/)
+  [![Dependencies](https://img.shields.io/badge/Dependencies-Tree-blue?logo=npm&style=for-the-badge)](https://riksdagsmonitor.com/docs/dependencies/)
+
+  All test reports, coverage metrics, and API documentation are generated during build and available in the [Documentation Hub](https://riksdagsmonitor.com/docs/).
   
-  ## 🔐 Security & Supply Chain
+  ## 🔐 Security & Supply Chain Protection
+  
+  [![SLSA Level 2+](https://slsa.dev/images/gh-badge-level2.svg)](https://github.com/Hack23/riksdagsmonitor/attestations/)
+  [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
   
   This release includes:
-  - ✅ SLSA Build Provenance Attestations
-  - ✅ Software Bill of Materials (SBOM) in SPDX format
-  - ✅ SHA-256 checksums for all artifacts
-  - ✅ CodeQL security scanning
-  - ✅ Dependency vulnerability scanning
+  - ✅ **SLSA Build Provenance Attestations** - Cryptographically signed build provenance
+  - ✅ **Software Bill of Materials (SBOM)** - Complete dependency inventory in SPDX format
+  - ✅ **SHA-256 Checksums** - All artifacts include checksums for integrity verification
+  - ✅ **CodeQL Security Scanning** - Automated vulnerability detection
+  - ✅ **Dependency Scanning** - Continuous vulnerability monitoring with Dependabot
   
-  Verify attestations:
+  **Verify attestations:**
   ```bash
   gh attestation verify riksdagsmonitor-$RESOLVED_VERSION.zip -R Hack23/riksdagsmonitor
   ```
   
-  ## 📦 Artifacts
+  **Browse attestations:** [View all attestations](https://github.com/Hack23/riksdagsmonitor/attestations/)
   
-  - `riksdagsmonitor-$RESOLVED_VERSION.zip` - Production build
-  - `riksdagsmonitor-$RESOLVED_VERSION.zip.sha256` - Checksum
-  - `riksdagsmonitor-$RESOLVED_VERSION.spdx.json` - SBOM
-  - `*.intoto.jsonl` - Attestations
+  ## 📋 ISMS Compliance & Policies
+  
+  [![Hack23 ISMS](https://img.shields.io/badge/Hack23-ISMS-blue?logo=shield&style=for-the-badge)](https://github.com/Hack23/ISMS-PUBLIC)
+  [![Information Security Policy](https://img.shields.io/badge/Policy-Information_Security-blue?logo=shield&style=for-the-badge)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md)
+  [![Open Source Policy](https://img.shields.io/badge/Policy-Open_Source-blue?logo=opensource&style=for-the-badge)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md)
+  [![Secure Development](https://img.shields.io/badge/Policy-Secure_Development-blue?logo=github&style=for-the-badge)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+  
+  ### Compliance Frameworks
+  
+  [![ISO 27001:2022](https://img.shields.io/badge/ISO-27001:2022-purple?logo=iso&style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+  [![NIST CSF 2.0](https://img.shields.io/badge/NIST-CSF_2.0-orange?logo=nist&style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+  [![CIS Controls v8.1](https://img.shields.io/badge/CIS-Controls_v8.1-red?logo=cisecurity&style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+  
+  Riksdagsmonitor follows [Hack23 AB's comprehensive ISMS](https://github.com/Hack23/ISMS-PUBLIC) with defense-in-depth architecture and documented security controls.
+  
+  ## 📦 Release Artifacts
+  
+  | Artifact | Description | Verification |
+  |----------|-------------|--------------|
+  | `riksdagsmonitor-$RESOLVED_VERSION.zip` | Production build | SHA-256 checksum, SLSA attestation |
+  | `riksdagsmonitor-$RESOLVED_VERSION.zip.sha256` | SHA-256 checksum | Compare with `sha256sum` |
+  | `riksdagsmonitor-$RESOLVED_VERSION.spdx.json` | SBOM (SPDX format) | SBOM attestation |
+  | `*.intoto.jsonl` | SLSA attestations | `gh attestation verify` |
   
   ## 🚀 Deployment
   
   - **Primary**: https://riksdagsmonitor.com (AWS S3/CloudFront)
   - **Backup**: GitHub Pages
   - **Documentation**: https://riksdagsmonitor.com/docs/
+  - **Status**: [![Uptime](https://img.shields.io/badge/Uptime-99.9%25-success)](https://riksdagsmonitor.com)
+  
+  ## 🏗️ Built With
+  
+  - **Node.js**: 24.x
+  - **Vite**: 7.x
+  - **Chart.js**: 4.5.x
+  - **D3.js**: 7.9.x
+  - **Vitest**: 4.x
+  - **Cypress**: 15.x
   
   ## 👥 Contributors
   
   $CONTRIBUTORS
+  
+  **Full Changelog**: https://github.com/Hack23/riksdagsmonitor/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
