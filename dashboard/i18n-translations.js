@@ -560,7 +560,7 @@ export function formatNumber(num, lang = detectLanguage(), options = {}) {
 
 /**
  * Format percentage with cultural awareness
- * @param {number} num - Number to format as percentage (0-100)
+ * @param {number} num - Number to format as percentage (0-1 range, e.g., 0.5 for 50%)
  * @param {string} [lang] - Language code
  * @returns {string} Formatted percentage
  */

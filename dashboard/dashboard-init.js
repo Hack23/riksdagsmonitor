@@ -200,8 +200,8 @@ async function initDashboard() {
     document.getElementById('loading-state').classList.add('hidden');
     document.getElementById('error-state').classList.remove('hidden');
     
-    // Use i18n for error message
-    const errorMessage = error && error.message ? error.message : t('errorLoadingData');
+    // Use i18n for user-facing error message, log technical details to console
+    const errorMessage = t('errorLoadingData');
     document.getElementById('error-message').textContent = errorMessage;
     
     // Retry button with i18n text

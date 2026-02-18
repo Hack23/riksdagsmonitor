@@ -8,10 +8,13 @@ import re
 from pathlib import Path
 
 # Language configurations
+# Note: 'no' is used as the key for Norwegian to match existing filename (index_no.html)
+# while 'hreflang_code' uses 'nb' to match ISO 639-1 standard for Norwegian Bokmål.
+# Future enhancement: Consider renaming file to index_nb.html for full ISO 639-1 compliance.
 LANGUAGES = {
     'sv': {'locale': 'sv_SE', 'hreflang_code': 'sv'},
     'da': {'locale': 'da_DK', 'hreflang_code': 'da'},
-    'no': {'locale': 'nb_NO', 'hreflang_code': 'nb'},
+    'no': {'locale': 'nb_NO', 'hreflang_code': 'nb'},  # File uses 'no', hreflang uses 'nb'
     'fi': {'locale': 'fi_FI', 'hreflang_code': 'fi'},
     'de': {'locale': 'de_DE', 'hreflang_code': 'de'},
     'fr': {'locale': 'fr_FR', 'hreflang_code': 'fr'},
