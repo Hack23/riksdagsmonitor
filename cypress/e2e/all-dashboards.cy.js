@@ -249,7 +249,9 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     
     it('should render Chart.js charts within reasonable time', () => {
       // First chart should render quickly
-      cy.get('#partyEffectivenessChart', { timeout: 5000 }).should('exist');
+      cy.get('#party-dashboard')
+        .find('#partyEffectivenessChart', { timeout: 5000 })
+        .should('exist');
       cy.get('#partyEffectivenessChart').should(($canvas) => {
         expect($canvas[0].width).to.be.greaterThan(0);
       });

@@ -53,6 +53,9 @@ describe('Party Dashboard', () => {
           </div>
         </div>
       </section>
+      <footer>
+        <p>Data provided by <a href="https://cia.hack23.com" target="_blank" rel="noopener noreferrer">CIA Platform</a> | <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23</a></p>
+      </footer>
     `;
     
     container = document.getElementById('party-dashboard');
