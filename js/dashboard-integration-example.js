@@ -316,7 +316,12 @@ function example4_D3HeatmapWithThemeColors() {
 // EXAMPLE 5: Complete Dashboard Integration Pattern
 // =============================================================================
 
-(function() {
+/**
+ * Complete dashboard integration example
+ * This function demonstrates the full pattern but does not auto-execute
+ * Call runCompleteDashboardExample() to execute
+ */
+function runCompleteDashboardExample() {
   'use strict';
   
   // Configuration
@@ -486,8 +491,7 @@ function example4_D3HeatmapWithThemeColors() {
   } else {
     initDashboard();
   }
-  
-})();
+}
 
 // =============================================================================
 // EXPORT FOR DOCUMENTATION
@@ -498,6 +502,23 @@ if (typeof module !== 'undefined' && module.exports) {
     example1_SimpleBarChart,
     example2_LineChartWithError,
     example3_MultipleChartsWithResize,
-    example4_D3HeatmapWithThemeColors
+    example4_D3HeatmapWithThemeColors,
+    runCompleteDashboardExample
   };
+}
+
+// =============================================================================
+// AUTO-EXECUTION (Browser Only)
+// =============================================================================
+
+/**
+ * Auto-execute examples only in browser context
+ * Guards against execution in Node.js/test environments
+ */
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  // Only run if this script is explicitly included in a page that wants the examples
+  // Check for a data attribute or specific element to opt-in
+  if (document.currentScript && document.currentScript.dataset.autorun === 'true') {
+    runCompleteDashboardExample();
+  }
 }

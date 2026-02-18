@@ -16,6 +16,27 @@
 describe('ChartUtils', () => {
   let container;
   
+  beforeAll(() => {
+    // Mock getComputedStyle before loading the module
+    global.getComputedStyle = jest.fn(() => ({
+      getPropertyValue: jest.fn(() => '')
+    }));
+    
+    // Mock window dimensions
+    global.innerWidth = 1024;
+    global.innerHeight = 768;
+    
+    // Load the ChartUtils module by executing it in the global context
+    const fs = require('fs');
+    const path = require('path');
+    const chartUtilsPath = path.join(__dirname, '../js/chart-utils.js');
+    const chartUtilsCode = fs.readFileSync(chartUtilsPath, 'utf8');
+    
+    // Execute the code in the context of the window object
+    const script = new Function('window', chartUtilsCode);
+    script(global);
+  });
+  
   beforeEach(() => {
     // Setup DOM
     document.body.innerHTML = '';
@@ -23,19 +44,13 @@ describe('ChartUtils', () => {
     container.id = 'test-chart-container';
     document.body.appendChild(container);
     
-    // Mock window dimensions
+    // Reset window dimensions
     global.innerWidth = 1024;
     global.innerHeight = 768;
-    
-    // Mock getComputedStyle
-    global.getComputedStyle = jest.fn(() => ({
-      getPropertyValue: jest.fn(() => '')
-    }));
   });
   
   afterEach(() => {
     document.body.innerHTML = '';
-    jest.clearAllMocks();
   });
   
   describe('getResponsiveOptions()', () => {

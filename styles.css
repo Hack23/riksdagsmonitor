@@ -9464,11 +9464,21 @@ body.news-page {
 }
 
 /* Focus indicators for accessibility (WCAG 2.1 AA) */
-canvas:focus,
-svg:focus,
+canvas:focus-visible,
+svg:focus-visible,
 .chart-card:focus-within {
   outline: 3px solid var(--primary-cyan, #00d9ff);
   outline-offset: 2px;
+}
+
+/* Fallback for browsers without :focus-visible support */
+@supports not selector(:focus-visible) {
+  canvas:focus,
+  svg:focus,
+  .chart-card:focus-within {
+    outline: 3px solid var(--primary-cyan, #00d9ff);
+    outline-offset: 2px;
+  }
 }
 
 /* High contrast mode support */

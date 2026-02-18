@@ -105,7 +105,6 @@
    */
   function getResponsiveOptions(chartType = 'bar', customOptions = {}) {
     const isMobile = window.innerWidth < BREAKPOINTS.tablet;
-    const isTablet = window.innerWidth >= BREAKPOINTS.tablet && window.innerWidth < BREAKPOINTS.desktop;
     
     const baseOptions = {
       responsive: true,
@@ -209,16 +208,27 @@
       return;
     }
 
-    // If container is a canvas, wrap it
-    const parent = container.parentElement;
-    
-    container.innerHTML = '';
-    container.insertAdjacentHTML('beforebegin', `
-      <div class="chart-loading-state" role="status" aria-live="polite" aria-label="Loading chart data">
-        <div class="spinner" aria-hidden="true"></div>
-        <p>Loading data...</p>
-      </div>
-    `);
+    // Build loading state overlay safely using DOM APIs
+    const loadingState = document.createElement('div');
+    loadingState.className = 'chart-loading-state';
+    loadingState.setAttribute('role', 'status');
+    loadingState.setAttribute('aria-live', 'polite');
+    loadingState.setAttribute('aria-label', 'Loading chart data');
+
+    const spinner = document.createElement('div');
+    spinner.className = 'spinner';
+    spinner.setAttribute('aria-hidden', 'true');
+
+    const message = document.createElement('p');
+    message.textContent = 'Loading data...';
+
+    loadingState.appendChild(spinner);
+    loadingState.appendChild(message);
+
+    // Insert before the container
+    if (container.parentNode) {
+      container.parentNode.insertBefore(loadingState, container);
+    }
     
     // Hide the canvas/container temporarily
     container.style.display = 'none';
@@ -243,20 +253,63 @@
       loadingState.remove();
     }
 
-    container.innerHTML = '';
-    container.insertAdjacentHTML('beforebegin', `
-      <div class="chart-empty-state" role="status" aria-live="polite">
-        <svg class="empty-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-          <path d="M3 3v18h18"></path>
-          <path d="M18 17V9"></path>
-          <path d="M13 17V5"></path>
-          <path d="M8 17v-3"></path>
-        </svg>
-        <h3>No Data Available</h3>
-        <p>${message}</p>
-        <p class="help-text">Check back later or <a href="mailto:support@riksdagsmonitor.com">contact support</a>.</p>
-      </div>
-    `);
+    // Build empty state overlay safely using DOM APIs
+    const emptyState = document.createElement('div');
+    emptyState.className = 'chart-empty-state';
+    emptyState.setAttribute('role', 'status');
+    emptyState.setAttribute('aria-live', 'polite');
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'empty-icon');
+    svg.setAttribute('width', '64');
+    svg.setAttribute('height', '64');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('aria-hidden', 'true');
+
+    const path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path1.setAttribute('d', 'M3 3v18h18');
+    svg.appendChild(path1);
+
+    const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path2.setAttribute('d', 'M18 17V9');
+    svg.appendChild(path2);
+
+    const path3 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path3.setAttribute('d', 'M13 17V5');
+    svg.appendChild(path3);
+
+    const path4 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path4.setAttribute('d', 'M8 17v-3');
+    svg.appendChild(path4);
+
+    const heading = document.createElement('h3');
+    heading.textContent = 'No Data Available';
+
+    const messagePara = document.createElement('p');
+    // Use textContent to avoid injecting untrusted HTML
+    messagePara.textContent = message;
+
+    const helpText = document.createElement('p');
+    helpText.className = 'help-text';
+    helpText.textContent = 'Check back later or ';
+    
+    const contactLink = document.createElement('a');
+    contactLink.href = 'mailto:support@riksdagsmonitor.com';
+    contactLink.textContent = 'contact support';
+    helpText.appendChild(contactLink);
+    helpText.appendChild(document.createTextNode('.'));
+
+    emptyState.appendChild(svg);
+    emptyState.appendChild(heading);
+    emptyState.appendChild(messagePara);
+    emptyState.appendChild(helpText);
+
+    // Insert before the container
+    if (container.parentNode) {
+      container.parentNode.insertBefore(emptyState, container);
+    }
     
     container.style.display = 'none';
   }
@@ -280,19 +333,65 @@
       loadingState.remove();
     }
 
-    container.innerHTML = '';
-    container.insertAdjacentHTML('beforebegin', `
-      <div class="chart-error-state" role="alert" aria-live="assertive">
-        <svg class="error-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-        <h3>Error Loading Data</h3>
-        <p>${error}</p>
-        <button class="retry-button" onclick="location.reload()">Retry</button>
-      </div>
-    `);
+    // Build error state overlay safely using DOM APIs
+    const errorState = document.createElement('div');
+    errorState.className = 'chart-error-state';
+    errorState.setAttribute('role', 'alert');
+    errorState.setAttribute('aria-live', 'assertive');
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'error-icon');
+    svg.setAttribute('width', '64');
+    svg.setAttribute('height', '64');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('aria-hidden', 'true');
+
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', '12');
+    circle.setAttribute('cy', '12');
+    circle.setAttribute('r', '10');
+    svg.appendChild(circle);
+
+    const line1 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line1.setAttribute('x1', '12');
+    line1.setAttribute('y1', '8');
+    line1.setAttribute('x2', '12');
+    line1.setAttribute('y2', '12');
+    svg.appendChild(line1);
+
+    const line2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line2.setAttribute('x1', '12');
+    line2.setAttribute('y1', '16');
+    line2.setAttribute('x2', '12.01');
+    line2.setAttribute('y2', '16');
+    svg.appendChild(line2);
+
+    const heading = document.createElement('h3');
+    heading.textContent = 'Error Loading Data';
+
+    const messagePara = document.createElement('p');
+    // Use textContent to avoid injecting untrusted HTML
+    messagePara.textContent = error;
+
+    const retryButton = document.createElement('button');
+    retryButton.className = 'retry-button';
+    retryButton.textContent = 'Retry';
+    // Attach click handler programmatically to avoid inline event handlers
+    retryButton.addEventListener('click', function() {
+      window.location.reload();
+    });
+
+    errorState.appendChild(svg);
+    errorState.appendChild(heading);
+    errorState.appendChild(messagePara);
+    errorState.appendChild(retryButton);
+
+    // Insert before the container
+    if (container.parentNode) {
+      container.parentNode.insertBefore(errorState, container);
+    }
     
     container.style.display = 'none';
   }
@@ -384,8 +483,28 @@
    * @param {number} index - Data point index
    */
   function highlightDataPoint(chart, index) {
-    // Trigger tooltip programmatically
-    chart.tooltip.setActiveElements([{datasetIndex: 0, index: index}]);
+    // Guard for disabled tooltips
+    const tooltip = chart.tooltip;
+    if (!tooltip) {
+      return;
+    }
+
+    const meta = chart.getDatasetMeta(0);
+    const element = meta && meta.data && meta.data[index];
+    if (!element) {
+      return;
+    }
+
+    // Determine tooltip position for Chart.js v4
+    const position = typeof element.tooltipPosition === 'function'
+      ? element.tooltipPosition()
+      : { x: element.x, y: element.y };
+
+    // Trigger tooltip programmatically with position
+    tooltip.setActiveElements(
+      [{ datasetIndex: 0, index: index }],
+      position
+    );
     chart.update();
   }
 
