@@ -417,7 +417,12 @@ function parseArticleMetadata(filePath) {
       lang,
       title: extractMetaContent(content, 'og:title') || extractTitle(content) || 'Untitled',
       description: extractMetaContent(content, 'og:description') || extractMetaContent(content, 'description') || '',
-      date: extractMetaContent(content, 'article:published_time') || extractFromFilename(fileName),
+      date: normalizeDateString(
+        extractMetaContent(content, 'article:published_time') || 
+        extractMetaContent(content, 'date') || 
+        extractDateFromJSONLD(content) || 
+        extractFromFilename(fileName)
+      ),
       type: classifyArticleType(content, fileName),
       topics: extractTopics(content),
       tags: extractTags(content)
@@ -464,6 +469,62 @@ function extractMetaContent(html, property) {
 function extractTitle(html) {
   const match = html.match(/<title>([^<]+)<\/title>/i);
   return match ? match[1].replace(' - Riksdagsmonitor', '').trim() : null;
+}
+
+/**
+ * Normalize date string to YYYY-MM-DD format
+ * Handles full ISO timestamps, simple dates, etc.
+ * @param {string} dateStr - Date string in various formats
+ * @returns {string} Date in YYYY-MM-DD format
+ */
+function normalizeDateString(dateStr) {
+  if (!dateStr) return null;
+  
+  // If already in YYYY-MM-DD format, return as-is
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    return dateStr;
+  }
+  
+  // If ISO timestamp (with time), extract just the date part
+  if (dateStr.includes('T')) {
+    return dateStr.split('T')[0];
+  }
+  
+  // If has timezone offset like +01:00, remove it first
+  const cleaned = dateStr.replace(/[+-]\d{2}:\d{2}$/, '');
+  if (cleaned.includes('T')) {
+    return cleaned.split('T')[0];
+  }
+  
+  return dateStr;
+}
+
+/**
+ * Extract date from JSON-LD structured data
+ * @param {string} html - HTML content
+ * @returns {string|null} Date in YYYY-MM-DD format or null
+ */
+function extractDateFromJSONLD(html) {
+  try {
+    // Extract JSON-LD script tag content
+    const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i);
+    if (!jsonLdMatch) return null;
+    
+    const jsonLdText = jsonLdMatch[1].trim();
+    const jsonData = JSON.parse(jsonLdText);
+    
+    // Extract datePublished from NewsArticle schema
+    if (jsonData.datePublished) {
+      // Handle both full ISO timestamps and simple YYYY-MM-DD dates
+      const dateStr = jsonData.datePublished.split('T')[0];
+      return dateStr;
+    }
+    
+    return null;
+  } catch (error) {
+    // Silently fail - this is a fallback mechanism
+    return null;
+  }
 }
 
 /**
