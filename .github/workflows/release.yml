@@ -190,6 +190,15 @@ jobs:
           echo "📚 Generating JSDoc API documentation..."
           npm run jsdoc
           echo "✅ API documentation generated in api/"
+          
+          echo "📁 Syncing API documentation to docs/api/..."
+          mkdir -p docs/api
+          if [ -d "api" ]; then
+            cp -r api/* docs/api/ || true
+            echo "✅ API documentation available in docs/api/"
+          else
+            echo "⚠️ JSDoc output directory 'api' not found; skipping copy to docs/api/"
+          fi
 
       - name: Generate dependencies documentation
         run: |
@@ -371,7 +380,7 @@ jobs:
           target-folder: docs
           branch: main
           clean: false
-          commit-message: "docs: update documentation for ${{ needs.prepare.outputs.version || 'development' }}"
+          commit-message: "docs: update documentation for ${{ steps.get-version.outputs.version || 'development' }}"
 
   build:
     name: Build Release Package
@@ -422,8 +431,6 @@ jobs:
 
       - name: Build application
         run: npm run build
-        env:
-          VITE_APP_VERSION: ${{ needs.prepare.outputs.version }}
 
       - name: Create release artifacts
         run: |
@@ -493,7 +500,6 @@ jobs:
     permissions:
       contents: write # Required to create releases
       id-token: write # Required for OIDC/AWS
-      actions: write # Required for deployment actions
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
