@@ -1,68 +1,88 @@
 {
-  "timestamp": "2026-02-18T07:10:18.344Z",
+  "timestamp": "2026-02-18T11:30:00.000Z",
   "type": "realtime-monitor",
   "events_detected": {
     "high_significance": [
       {
-        "type": "parliamentary_question",
-        "id": "HD11520",
-        "title": "Scanner equipment shortage and narcotics smuggling risks",
-        "date": "2026-02-17",
-        "party": "S",
-        "target_minister": "Finance Minister Elisabeth Svantesson"
+        "type": "foreign_policy_debate",
+        "id": "HDC120260218ud",
+        "title": "Annual Foreign Policy Debate (Utrikespolitisk debatt)",
+        "date": "2026-02-18",
+        "description": "Annual debate led by Foreign Minister Maria Malmer Stenergard (M) at 09:00"
       },
       {
         "type": "parliamentary_question",
-        "id": "HD11519",
-        "title": "Increased narcotics smuggling via container traffic",
-        "date": "2026-02-17",
-        "party": "S",
-        "target_minister": "Finance Minister Elisabeth Svantesson"
-      },
-      {
-        "type": "parliamentary_question",
-        "id": "HD11516",
-        "title": "Swedish diplomatic connections to Jeffrey Epstein",
-        "date": "2026-02-16",
+        "id": "HD11524",
+        "title": "Palestinian Authority new constitutional proposal",
+        "date": "2026-02-18",
         "party": "SD",
         "target_minister": "Foreign Minister Maria Malmer Stenergard"
+      },
+      {
+        "type": "parliamentary_question",
+        "id": "HD11522",
+        "title": "AI use in public sector",
+        "date": "2026-02-18",
+        "party": "V",
+        "target_minister": "Civil Minister Erik Slottner"
+      },
+      {
+        "type": "parliamentary_question",
+        "id": "HD11521",
+        "title": "EU-Cuba PDCA agreement",
+        "date": "2026-02-18",
+        "party": "SD",
+        "target_minister": "Trade Minister Benjamin Dousa"
+      },
+      {
+        "type": "parliamentary_question",
+        "id": "HD11523",
+        "title": "Öland Bridge infrastructure",
+        "date": "2026-02-18",
+        "party": "C",
+        "target_minister": "Infrastructure Minister Andreas Carlson"
+      },
+      {
+        "type": "interpellation",
+        "id": "HD10342",
+        "title": "Security for elite athletes and cultural workers",
+        "date": "2026-02-18",
+        "party": "S"
       }
     ],
     "medium_significance": [
       {
-        "type": "parliamentary_question",
-        "id": "HD11518",
-        "title": "Support for freedom of expression actors in Iran",
-        "date": "2026-02-17",
-        "party": "SD"
+        "type": "ministerial_answer",
+        "id": "HD12483",
+        "title": "Police report against national security advisor",
+        "date": "2026-02-18"
       },
       {
-        "type": "parliamentary_question",
-        "id": "HD11514",
+        "type": "ministerial_answer",
+        "id": "HD12511",
         "title": "Teenage deportations",
-        "date": "2026-02-16",
-        "party": "C"
+        "date": "2026-02-18"
+      },
+      {
+        "type": "ministerial_answer",
+        "id": "HD12503",
+        "title": "Judiciary oversight review",
+        "date": "2026-02-18"
       }
     ]
   },
   "articles_generated": [
     {
-      "slug": "2026-02-18-parliamentary-questions",
+      "slug": "2026-02-18-foreign-policy-debate",
+      "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
       "type": "breaking",
-      "languages": 14,
-      "headline": "Parliamentary Questions: MPs Demand Answers on Drug Smuggling and Diplomatic Scandals"
+      "headline_en": "Sweden's Annual Foreign Policy Debate: Riksdag Takes on Global Challenges"
     }
   ],
-  "sources_checked": [
-    "search_voteringar",
-    "search_anforanden",
-    "search_dokument",
-    "get_fragor",
-    "get_interpellationer",
-    "get_calendar_events",
-    "search_regering",
-    "enhanced_government_search"
-  ],
-  "mcp_status": "live",
+  "data_freshness": {
+    "mcp_status": "live",
+    "mcp_checked_at": "2026-02-18T11:31:47.515Z",
+    "sources": ["data.riksdagen.se", "g0v.se"]
+  },
   "next_check": "2026-02-18T14:00:00.000Z"
 }

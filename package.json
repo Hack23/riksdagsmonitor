@@ -94,6 +94,9 @@
   "optionalDependencies": {
     "cypress": "^15.10.0"
   },
+  "overrides": {
+    "glob": "^13.0.0"
+  },
   "engines": {
     "node": ">=24"
   }
