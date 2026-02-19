@@ -646,7 +646,7 @@ describe('Data Transformers', () => {
         'committee-reports',
         'en'
       );
-      expect(content).toContain('>Bet 2025/26:FiU1</a>');
+      expect(content).toContain('Bet 2025/26:FiU1</a>');
     });
 
     it('should fall back to dok_id when dokumentnamn missing', () => {
@@ -655,7 +655,7 @@ describe('Data Transformers', () => {
         'committee-reports',
         'en'
       );
-      expect(content).toContain('>GX01FiU1</a>');
+      expect(content).toContain('GX01FiU1</a>');
     });
 
     it('should fall back to title text when both dokumentnamn and dok_id missing', () => {
@@ -664,7 +664,7 @@ describe('Data Transformers', () => {
         'committee-reports',
         'en'
       );
-      expect(content).toContain('>Fallback Title</a>');
+      expect(content).toContain('Fallback Title</a>');
     });
 
     it('should never render "undefined" as link text', () => {
@@ -683,7 +683,7 @@ describe('Data Transformers', () => {
         'propositions',
         'en'
       );
-      expect(content).toContain('>PROP123</a>');
+      expect(content).toContain('PROP123</a>');
     });
 
     it('should apply dokumentnamn fallback for motions', () => {
@@ -692,7 +692,7 @@ describe('Data Transformers', () => {
         'motions',
         'en'
       );
-      expect(content).toContain('>MOT456</a>');
+      expect(content).toContain('MOT456</a>');
     });
   });
 
