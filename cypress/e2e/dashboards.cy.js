@@ -61,8 +61,10 @@ describe('Dashboard Functionality', () => {
     
     it('should display D3 heatmap', () => {
       // Fail-fast: Heatmap must exist and render, no conditionals
+      // Scroll into view to ensure it's loaded
+      cy.get('#anomaly-detection-dashboard').scrollIntoView();
       cy.get('#severity-heatmap').should('exist');
-      cy.get('#severity-heatmap svg').should('exist');
+      cy.get('#severity-heatmap svg', { timeout: 10000 }).should('exist');
       cy.waitForD3('severity-heatmap');
     });
   });

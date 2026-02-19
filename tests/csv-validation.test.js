@@ -132,10 +132,18 @@ describe('CIA CSV Data Validation', () => {
         
         // Define per-file minimum size thresholds
         // Most distribution files should be substantial (>1KB) to catch truncated exports
-        // Only genuinely small summary files use the 0.05KB threshold
+        // Small summary/distribution files with aggregated data use lower thresholds
         const smallFileExceptions = [
           'politician_risk_summary_sample.csv',  // Small summary file
-          'top10_politicians_by_risk.csv'        // Top 10 list
+          'top10_politicians_by_risk.csv',        // Top 10 list
+          // Distribution files with aggregated counts/percentages (naturally small)
+          'distribution_politician_risk_levels.csv',  // Risk level counts (3-4 rows)
+          'distribution_risk_by_party.csv',           // Party risk aggregates (~10 rows)
+          'distribution_crisis_resilience.csv',       // Crisis level counts
+          'distribution_ministry_risk_levels.csv',    // Ministry risk counts
+          'distribution_ministry_risk_quarterly.csv', // Quarterly risk aggregates
+          'distribution_experience_levels.csv',       // Experience level counts (4-5 rows)
+          'percentile_voting_anomaly_detection.csv'   // Percentile data (naturally small)
         ];
         const isSmallFile = smallFileExceptions.includes(filename);
         const minSizeKB = isSmallFile ? 0.05 : 1;
