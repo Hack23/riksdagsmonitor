@@ -81,7 +81,7 @@
     "@vitest/ui": "^4.0.18",
     "eslint": "^10.0.0",
     "globals": "^17.3.0",
-    "happy-dom": "^20.6.2",
+    "happy-dom": "^20.6.3",
     "htmlhint": "^1.9.1",
     "js-yaml": "^4.1.1",
     "jsdoc": "^4.0.5",
