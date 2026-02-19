@@ -521,8 +521,223 @@ class TitleGenerator:
                 translated = translated.replace(eng, swe)
             return translated
         
-        # For other languages, keep English
-        # Production would use Azure Translator API for proper translations
+        # Danish translations
+        if target_lang == 'da':
+            translations = {
+                'Committee Reports': 'Udvalgsrapporter', 'Government Propositions': 'Regeringsforslag',
+                'Opposition Motions': 'Oppositionens forslag', 'in Focus': 'i Fokus',
+                'Border': 'Grænse', 'Customs': 'Told', 'Appropriations': 'Bevillinger',
+                'Tax': 'Skat', 'Vat': 'Moms', 'Weapons': 'Våben', 'Audit': 'Revision',
+                'Financial': 'Finansiel', 'Detention': 'Frihedsberøvelse', 'Elderly Care': 'Ældrepleje',
+                'Analysis of': 'Analyse af', 'committee reports': 'udvalgsrapporter',
+                'government propositions': 'regeringsforslag', 'opposition motions': 'oppositionens forslag',
+                'covering': 'der dækker', 'shaping legislative agenda': 'former lovgivningsdagsordenen',
+                'and': 'og',
+            }
+            translated = text
+            for eng, da in translations.items():
+                translated = translated.replace(eng, da)
+            return translated
+        
+        # Norwegian translations
+        if target_lang == 'no':
+            translations = {
+                'Committee Reports': 'Komitérapporter', 'Government Propositions': 'Regjeringsforslag',
+                'Opposition Motions': 'Opposisjonsforslag', 'in Focus': 'i Fokus',
+                'Border': 'Grense', 'Customs': 'Toll', 'Appropriations': 'Bevilgninger',
+                'Tax': 'Skatt', 'Vat': 'Mva', 'Weapons': 'Våpen', 'Audit': 'Revisjon',
+                'Financial': 'Finansiell', 'Detention': 'Frihetsberøvelse', 'Elderly Care': 'Eldreomsorg',
+                'Analysis of': 'Analyse av', 'committee reports': 'komitérapporter',
+                'government propositions': 'regjeringsforslag', 'opposition motions': 'opposisjonsforslag',
+                'covering': 'som dekker', 'shaping legislative agenda': 'former lovgivningsagendaen',
+                'and': 'og',
+            }
+            translated = text
+            for eng, no in translations.items():
+                translated = translated.replace(eng, no)
+            return translated
+        
+        # Finnish translations
+        if target_lang == 'fi':
+            translations = {
+                'Committee Reports': 'Valiokuntaraportit', 'Government Propositions': 'Hallituksen esitykset',
+                'Opposition Motions': 'Opposition esitykset', 'in Focus': 'Keskiössä',
+                'Border': 'Raja', 'Customs': 'Tulli', 'Appropriations': 'Määrärahat',
+                'Tax': 'Vero', 'Vat': 'Alv', 'Weapons': 'Aseet', 'Audit': 'Tarkastus',
+                'Financial': 'Taloudellinen', 'Detention': 'Vapaudenmenetys', 'Elderly Care': 'Vanhustenhoito',
+                'Analysis of': 'Analyysi', 'committee reports': 'valiokuntaraporteista',
+                'government propositions': 'hallituksen esityksistä', 'opposition motions': 'opposition esityksistä',
+                'covering': 'kattaen', 'shaping legislative agenda': 'muokkaa lainsäädäntöagendaa',
+                'and': 'ja',
+            }
+            translated = text
+            for eng, fi in translations.items():
+                translated = translated.replace(eng, fi)
+            return translated
+        
+        # German translations
+        if target_lang == 'de':
+            translations = {
+                'Committee Reports': 'Ausschussberichte', 'Government Propositions': 'Regierungsvorlagen',
+                'Opposition Motions': 'Oppositionsanträge', 'in Focus': 'im Fokus',
+                'Border': 'Grenze', 'Customs': 'Zoll', 'Appropriations': 'Mittel',
+                'Tax': 'Steuer', 'Vat': 'MwSt', 'Weapons': 'Waffen', 'Audit': 'Prüfung',
+                'Financial': 'Finanziell', 'Detention': 'Freiheitsentzug', 'Elderly Care': 'Altenpflege',
+                'Analysis of': 'Analyse von', 'committee reports': 'Ausschussberichten',
+                'government propositions': 'Regierungsvorlagen', 'opposition motions': 'Oppositionsanträgen',
+                'covering': 'über', 'shaping legislative agenda': 'prägt die Gesetzgebungsagenda',
+                'and': 'und',
+            }
+            translated = text
+            for eng, de in translations.items():
+                translated = translated.replace(eng, de)
+            return translated
+        
+        # French translations
+        if target_lang == 'fr':
+            translations = {
+                'Committee Reports': 'Rapports de Commission', 'Government Propositions': 'Propositions Gouvernementales',
+                'Opposition Motions': 'Motions d\'Opposition', 'in Focus': 'au Centre',
+                'Border': 'Frontière', 'Customs': 'Douane', 'Appropriations': 'Crédits',
+                'Tax': 'Taxe', 'Vat': 'TVA', 'Weapons': 'Armes', 'Audit': 'Audit',
+                'Financial': 'Financier', 'Detention': 'Détention', 'Elderly Care': 'Soins aux Personnes Âgées',
+                'Analysis of': 'Analyse de', 'committee reports': 'rapports de commission',
+                'government propositions': 'propositions gouvernementales', 'opposition motions': 'motions d\'opposition',
+                'covering': 'couvrant', 'shaping legislative agenda': 'façonne l\'agenda législatif',
+                'and': 'et',
+            }
+            translated = text
+            for eng, fr in translations.items():
+                translated = translated.replace(eng, fr)
+            return translated
+        
+        # Spanish translations
+        if target_lang == 'es':
+            translations = {
+                'Committee Reports': 'Informes de Comisión', 'Government Propositions': 'Proposiciones Gubernamentales',
+                'Opposition Motions': 'Mociones de Oposición', 'in Focus': 'en Foco',
+                'Border': 'Frontera', 'Customs': 'Aduanas', 'Appropriations': 'Asignaciones',
+                'Tax': 'Impuesto', 'Vat': 'IVA', 'Weapons': 'Armas', 'Audit': 'Auditoría',
+                'Financial': 'Financiero', 'Detention': 'Detención', 'Elderly Care': 'Cuidado de Ancianos',
+                'Analysis of': 'Análisis de', 'committee reports': 'informes de comisión',
+                'government propositions': 'proposiciones gubernamentales', 'opposition motions': 'mociones de oposición',
+                'covering': 'cubriendo', 'shaping legislative agenda': 'configura la agenda legislativa',
+                'and': 'y',
+            }
+            translated = text
+            for eng, es in translations.items():
+                translated = translated.replace(eng, es)
+            return translated
+        
+        # Dutch translations
+        if target_lang == 'nl':
+            translations = {
+                'Committee Reports': 'Commissierapporten', 'Government Propositions': 'Regeringsvoorstellen',
+                'Opposition Motions': 'Oppositiemoties', 'in Focus': 'in Focus',
+                'Border': 'Grens', 'Customs': 'Douane', 'Appropriations': 'Begrotingen',
+                'Tax': 'Belasting', 'Vat': 'BTW', 'Weapons': 'Wapens', 'Audit': 'Audit',
+                'Financial': 'Financieel', 'Detention': 'Detentie', 'Elderly Care': 'Ouderenzorg',
+                'Analysis of': 'Analyse van', 'committee reports': 'commissierapporten',
+                'government propositions': 'regeringsvoorstellen', 'opposition motions': 'oppositiemoties',
+                'covering': 'betreffende', 'shaping legislative agenda': 'vormt de wetgevingsagenda',
+                'and': 'en',
+            }
+            translated = text
+            for eng, nl in translations.items():
+                translated = translated.replace(eng, nl)
+            return translated
+        
+        # Arabic translations (RTL)
+        if target_lang == 'ar':
+            translations = {
+                'Committee Reports': 'تقارير اللجان', 'Government Propositions': 'مقترحات الحكومة',
+                'Opposition Motions': 'مقترحات المعارضة', 'in Focus': 'في التركيز',
+                'Border': 'الحدود', 'Customs': 'الجمارك', 'Appropriations': 'المخصصات',
+                'Tax': 'الضريبة', 'Vat': 'ضريبة القيمة المضافة', 'Weapons': 'الأسلحة', 'Audit': 'التدقيق',
+                'Financial': 'المالي', 'Detention': 'الاحتجاز', 'Elderly Care': 'رعاية المسنين',
+                'Analysis of': 'تحليل', 'committee reports': 'تقارير اللجان',
+                'government propositions': 'مقترحات الحكومة', 'opposition motions': 'مقترحات المعارضة',
+                'covering': 'تغطي', 'shaping legislative agenda': 'تشكل جدول الأعمال التشريعي',
+                'and': 'و',
+            }
+            translated = text
+            for eng, ar in translations.items():
+                translated = translated.replace(eng, ar)
+            return translated
+        
+        # Hebrew translations (RTL)
+        if target_lang == 'he':
+            translations = {
+                'Committee Reports': 'דוחות ועדה', 'Government Propositions': 'הצעות ממשלה',
+                'Opposition Motions': 'הצעות אופוזיציה', 'in Focus': 'במוקד',
+                'Border': 'גבול', 'Customs': 'מכס', 'Appropriations': 'הקצבות',
+                'Tax': 'מס', 'Vat': 'מע"מ', 'Weapons': 'נשק', 'Audit': 'ביקורת',
+                'Financial': 'פיננסי', 'Detention': 'מעצר', 'Elderly Care': 'טיפול בקשישים',
+                'Analysis of': 'ניתוח של', 'committee reports': 'דוחות ועדה',
+                'government propositions': 'הצעות ממשלה', 'opposition motions': 'הצעות אופוזיציה',
+                'covering': 'המכסים', 'shaping legislative agenda': 'מעצבים את סדר היום החקיקתי',
+                'and': 'ו',
+            }
+            translated = text
+            for eng, he in translations.items():
+                translated = translated.replace(eng, he)
+            return translated
+        
+        # Japanese translations
+        if target_lang == 'ja':
+            translations = {
+                'Committee Reports': '委員会報告', 'Government Propositions': '政府提案',
+                'Opposition Motions': '野党動議', 'in Focus': 'に焦点',
+                'Border': '国境', 'Customs': '税関', 'Appropriations': '予算配分',
+                'Tax': '税', 'Vat': '付加価値税', 'Weapons': '武器', 'Audit': '監査',
+                'Financial': '財政', 'Detention': '拘留', 'Elderly Care': '高齢者介護',
+                'Analysis of': 'の分析', 'committee reports': '委員会報告',
+                'government propositions': '政府提案', 'opposition motions': '野党動議',
+                'covering': 'カバーする', 'shaping legislative agenda': '立法議題を形成',
+                'and': 'と',
+            }
+            translated = text
+            for eng, ja in translations.items():
+                translated = translated.replace(eng, ja)
+            return translated
+        
+        # Korean translations
+        if target_lang == 'ko':
+            translations = {
+                'Committee Reports': '위원회 보고서', 'Government Propositions': '정부 제안',
+                'Opposition Motions': '야당 동의', 'in Focus': '초점',
+                'Border': '국경', 'Customs': '세관', 'Appropriations': '예산',
+                'Tax': '세금', 'Vat': '부가가치세', 'Weapons': '무기', 'Audit': '감사',
+                'Financial': '금융', 'Detention': '구금', 'Elderly Care': '노인 돌봄',
+                'Analysis of': '분석', 'committee reports': '위원회 보고서',
+                'government propositions': '정부 제안', 'opposition motions': '야당 동의',
+                'covering': '다루는', 'shaping legislative agenda': '입법 의제 형성',
+                'and': '및',
+            }
+            translated = text
+            for eng, ko in translations.items():
+                translated = translated.replace(eng, ko)
+            return translated
+        
+        # Chinese translations
+        if target_lang == 'zh':
+            translations = {
+                'Committee Reports': '委员会报告', 'Government Propositions': '政府提案',
+                'Opposition Motions': '反对党动议', 'in Focus': '焦点',
+                'Border': '边境', 'Customs': '海关', 'Appropriations': '拨款',
+                'Tax': '税收', 'Vat': '增值税', 'Weapons': '武器', 'Audit': '审计',
+                'Financial': '金融', 'Detention': '拘留', 'Elderly Care': '养老护理',
+                'Analysis of': '分析', 'committee reports': '委员会报告',
+                'government propositions': '政府提案', 'opposition motions': '反对党动议',
+                'covering': '涵盖', 'shaping legislative agenda': '塑造立法议程',
+                'and': '和',
+            }
+            translated = text
+            for eng, zh in translations.items():
+                translated = translated.replace(eng, zh)
+            return translated
+        
+        # For any other languages, keep English (fallback)
         return text
     
     def process_article_set(self, base_filename: str, dry_run: bool = False) -> int:
