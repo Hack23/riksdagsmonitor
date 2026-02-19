@@ -513,6 +513,7 @@ class TitleGenerator:
                 'in parliamentary committees': 'i riksdagens utskott',
                 'key policy areas': 'centrala politikområden',
                 'legislative priorities': 'lagstiftningsprioriteringar',
+                ' for ': ' för ',  # Space before/after to avoid replacing "before", "reform", etc.
                 'and': 'och',
             }
             
@@ -544,12 +545,16 @@ class TitleGenerator:
             translations = {
                 'Committee Reports': 'Komitérapporter', 'Government Propositions': 'Regjeringsforslag',
                 'Opposition Motions': 'Opposisjonsforslag', 'in Focus': 'i Fokus',
+                'Dominate Committee Agenda': 'Dominerer Komitéagendaen',
                 'Border': 'Grense', 'Customs': 'Toll', 'Appropriations': 'Bevilgninger',
-                'Tax': 'Skatt', 'Vat': 'Mva', 'Weapons': 'Våpen', 'Audit': 'Revisjon',
+                'Tax': 'Skatt', 'Vat': 'Mva', 'VAT': 'Mva', 'Weapons': 'Våpen', 'Audit': 'Revisjon',
                 'Financial': 'Finansiell', 'Detention': 'Frihetsberøvelse', 'Elderly Care': 'Eldreomsorg',
+                'Security': 'Sikkerhet', 'Supplementary': 'Tillegg', 'Government Personnel': 'Regjeringspersonell',
                 'Analysis of': 'Analyse av', 'committee reports': 'komitérapporter',
                 'government propositions': 'regjeringsforslag', 'opposition motions': 'opposisjonsforslag',
                 'covering': 'som dekker', 'shaping legislative agenda': 'former lovgivningsagendaen',
+                'in parliamentary committees': 'i parlamentariske komitéer',
+                'challenging government policy': 'utfordrer regjeringens politikk',
                 'and': 'og',
             }
             translated = text
@@ -707,11 +712,16 @@ class TitleGenerator:
                 'Committee Reports': '위원회 보고서', 'Government Propositions': '정부 제안',
                 'Opposition Motions': '야당 동의', 'in Focus': '초점',
                 'Border': '국경', 'Customs': '세관', 'Appropriations': '예산',
-                'Tax': '세금', 'Vat': '부가가치세', 'Weapons': '무기', 'Audit': '감사',
-                'Financial': '금융', 'Detention': '구금', 'Elderly Care': '노인 돌봄',
+                'Tax': '세금', 'tax': '세금', 'Vat': '부가가치세', 'VAT': '부가가치세', 
+                'Weapons': '무기', 'Audit': '감사',
+                'Financial': '금융', 'Detention': '구금', 'detention': '구금',
+                'Elderly Care': '노인 돌봄', 'elderly care': '노인 돌봄',
+                'Security': '보안', 'security': '보안',
                 'Analysis of': '분석', 'committee reports': '위원회 보고서',
                 'government propositions': '정부 제안', 'opposition motions': '야당 동의',
                 'covering': '다루는', 'shaping legislative agenda': '입법 의제 형성',
+                'in parliamentary committees': '의회 위원회에서',
+                'challenging government policy': '정부 정책에 도전',
                 'and': '및',
             }
             translated = text
@@ -724,12 +734,17 @@ class TitleGenerator:
             translations = {
                 'Committee Reports': '委员会报告', 'Government Propositions': '政府提案',
                 'Opposition Motions': '反对党动议', 'in Focus': '焦点',
-                'Border': '边境', 'Customs': '海关', 'Appropriations': '拨款',
-                'Tax': '税收', 'Vat': '增值税', 'Weapons': '武器', 'Audit': '审计',
+                'Border': '边境', 'border': '边境', 'Customs': '海关', 'customs': '海关',
+                'Appropriations': '拨款', 'appropriations': '拨款',
+                'Tax': '税收', 'Vat': '增值税', 'VAT': '增值税', 'Weapons': '武器', 'Audit': '审计',
                 'Financial': '金融', 'Detention': '拘留', 'Elderly Care': '养老护理',
+                'Security': '安全', 'Supplementary': '补充', 'supplementary': '补充',
+                'Government Personnel': '政府人员', 'government personnel': '政府人员',
                 'Analysis of': '分析', 'committee reports': '委员会报告',
                 'government propositions': '政府提案', 'opposition motions': '反对党动议',
                 'covering': '涵盖', 'shaping legislative agenda': '塑造立法议程',
+                'in parliamentary committees': '在议会委员会中',
+                'challenging government policy': '挑战政府政策',
                 'and': '和',
             }
             translated = text
