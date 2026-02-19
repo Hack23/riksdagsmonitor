@@ -3209,20 +3209,251 @@ footer {
 
 
 /* ==================================================
+   DASHBOARD CTA BANNER
+   Prominent call-to-action for Intelligence Dashboard
+   ================================================== */
+
+.dashboard-cta {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.12) 0%, rgba(255, 0, 110, 0.08) 100%);
+  border: 2px solid rgba(0, 217, 255, 0.4);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  margin: 0 var(--spacing-md) var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d9ff, #ff006e, transparent);
+  transform: translateX(-100%);
+  will-change: transform;
+  animation: dashboard-cta-shimmer 4s linear infinite;
+}
+
+@keyframes dashboard-cta-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Disable dashboard CTA shimmer animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-cta::before {
+    animation: none;
+  }
+}
+
+.dashboard-cta-heading {
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--heading-color, #00d9ff);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-cta-description {
+  color: var(--text-secondary, #c0c0c0);
+  font-size: var(--font-size-base, 1rem);
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+  max-width: 72ch;
+  margin-inline: auto;
+}
+
+.dashboard-cta-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-cta-features li {
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 2rem;
+  padding: 0.35rem 0.9rem;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--text-color, #e0e0e0);
+  white-space: nowrap;
+}
+
+.dashboard-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #0a0e27;
+  background: linear-gradient(135deg, #00d9ff, #00b8d9);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--font-size-lg, 1.125rem);
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius, 8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
+}
+
+.dashboard-cta-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 217, 255, 0.5);
+  background: linear-gradient(135deg, #33e1ff, #00d9ff);
+}
+
+.dashboard-cta-link:focus-visible {
+  outline: 3px solid #ff006e;
+  outline-offset: 4px;
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.dashboard-cta-link-icon {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-cta {
+    padding: var(--spacing-md);
+    margin: 0 var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
+  }
+
+  .dashboard-cta-features li {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  .dashboard-cta-link {
+    font-size: 1rem;
+    padding: 0.65rem 1.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dashboard-cta {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.15) 0%, rgba(255, 0, 110, 0.1) 100%);
+    border-color: rgba(0, 217, 255, 0.5);
+  }
+}
+
+/* ==================================================
    NEWS NAVIGATION
-   Cyberpunk cyan-themed callout for News section
+   Cyberpunk magenta-themed callout for News section
    ================================================== */
 
 .news-navigation {
-  background: rgba(0, 217, 255, 0.08);
-  border: 1px solid rgba(0, 217, 255, 0.3);
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.08) 0%, rgba(255, 190, 11, 0.06) 100%);
+  border: 2px solid rgba(255, 0, 110, 0.35);
   border-radius: var(--border-radius);
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-xl);
   margin: 0 var(--spacing-md) var(--spacing-lg) var(--spacing-md);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.news-navigation a {
+.news-navigation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff006e, #ffbe0b, transparent);
+  animation: news-cta-shimmer 4s linear infinite;
+}
+
+@keyframes news-cta-shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Disable news navigation shimmer animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .news-navigation::before {
+    animation: none;
+  }
+}
+
+.news-navigation-heading {
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--heading-color, #ff006e);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.02em;
+}
+
+.news-navigation-description {
+  color: var(--text-secondary, #c0c0c0);
+  font-size: var(--font-size-base, 1rem);
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+  max-width: 72ch;
+  margin-inline: auto;
+}
+
+.news-navigation-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+.news-navigation-features li {
+  background: rgba(255, 0, 110, 0.1);
+  border: 1px solid rgba(255, 0, 110, 0.25);
+  border-radius: 2rem;
+  padding: 0.35rem 0.9rem;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--text-color, #e0e0e0);
+  white-space: nowrap;
+}
+
+.news-navigation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #0a0e27;
+  background: linear-gradient(135deg, #ff006e, #cc0058);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--font-size-lg, 1.125rem);
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius, 8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 0, 110, 0.3);
+}
+
+.news-navigation-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 0, 110, 0.5);
+  background: linear-gradient(135deg, #ff3389, #ff006e);
+}
+
+.news-navigation-link:focus-visible {
+  outline: 3px solid #00d9ff;
+  outline-offset: 4px;
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.news-navigation-link-icon {
+  font-size: 1.3rem;
+}
+
+/* Legacy single-line support */
+.news-navigation > a:not(.news-navigation-link) {
   color: var(--link-color);
   text-decoration: none;
   font-size: var(--font-size-lg);
@@ -3233,47 +3464,31 @@ footer {
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.news-navigation a:hover {
-  color: var(--link-hover);
-  transform: translateY(-2px);
-}
-
-.news-navigation a:focus-visible {
-  outline: 3px solid var(--primary-color);
-  outline-offset: 4px;
-  border-radius: var(--border-radius-sm);
-}
-
 .news-navigation-icon {
   font-size: 1.3rem;
 }
 
-.news-navigation p {
-  margin: 0.5rem 0 0 0;
-  color: var(--text-secondary);
-  font-size: var(--font-size-sm);
+@media (max-width: 768px) {
+  .news-navigation {
+    padding: var(--spacing-md);
+    margin: 0 var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
+  }
+
+  .news-navigation-features li {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  .news-navigation-link {
+    font-size: 1rem;
+    padding: 0.65rem 1.5rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   .news-navigation {
-    background: rgba(0, 217, 255, 0.12);
-    border-color: rgba(0, 217, 255, 0.4);
-  }
-  
-  .news-navigation a {
-    color: #00d9ff;
-  }
-  
-  .news-navigation a:hover {
-    color: #66f3ff;
-  }
-  
-  .news-navigation a:focus-visible {
-    outline-color: #00d9ff;
-  }
-  
-  .news-navigation p {
-    color: #c0c0c0;
+    background: linear-gradient(135deg, rgba(255, 0, 110, 0.12) 0%, rgba(255, 190, 11, 0.08) 100%);
+    border-color: rgba(255, 0, 110, 0.45);
   }
 }
 /* Mobile responsive adjustments */
