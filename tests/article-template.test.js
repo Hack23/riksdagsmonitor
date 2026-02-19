@@ -101,6 +101,24 @@ describe('Article Template', () => {
       expect(html).toContain('"datePublished"');
     });
 
+    it('should include speakable SpeakableSpecification in NewsArticle schema', () => {
+      const html = generateArticleHTML(mockArticleData);
+
+      expect(html).toContain('"speakable"');
+      expect(html).toContain('"SpeakableSpecification"');
+      expect(html).toContain('".lede"');
+      expect(html).toContain('".article-content h2"');
+    });
+
+    it('should include dns-prefetch and preconnect resource hints', () => {
+      const html = generateArticleHTML(mockArticleData);
+
+      expect(html).toContain('rel="preconnect" href="https://hack23.com"');
+      expect(html).toContain('rel="dns-prefetch" href="https://hack23.com"');
+      expect(html).toContain('rel="dns-prefetch" href="https://fonts.googleapis.com"');
+      expect(html).toContain('rel="dns-prefetch" href="https://fonts.gstatic.com"');
+    });
+
     it('should include event calendar section', () => {
       const html = generateArticleHTML(mockArticleData);
       

@@ -394,9 +394,14 @@ ${tags.map(tag => `  &lt;meta property="article:tag" content="${escapeHtml(tag)}
 ${ALL_LANG_CODES.map(l => `  &lt;link rel="alternate" hreflang="${l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
   &lt;link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/${baseSlug}-en.html">
   
+  &lt;!-- Resource hints for performance -->
+  &lt;link rel="preconnect" href="https://hack23.com" crossorigin>
+  &lt;link rel="dns-prefetch" href="https://hack23.com">
   &lt;!-- Google Fonts -->
   &lt;link rel="preconnect" href="https://fonts.googleapis.com">
   &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  &lt;link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  &lt;link rel="dns-prefetch" href="https://fonts.gstatic.com">
   &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Orbitron:wght@400;500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
   
   &lt;!-- Main stylesheet - contains all article styles -->
@@ -454,6 +459,10 @@ ${ALL_LANG_CODES.map(l => `  &lt;link rel="alternate" hreflang="${l}" href="http
       "@type": "WebSite",
       "name": "Riksdagsmonitor",
       "url": "https://riksdagsmonitor.com"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".lede", ".article-content h2"]
     },
     "mainEntityOfPage": {
       "@type": "WebPage",

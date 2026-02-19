@@ -366,9 +366,14 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
 ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/${baseSlug}-en.html">
   
+  <!-- Resource hints for performance -->
+  <link rel="preconnect" href="https://hack23.com" crossorigin>
+  <link rel="dns-prefetch" href="https://hack23.com">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   
   <!-- Main stylesheet - contains all article styles -->
@@ -426,6 +431,10 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
       "@type": "WebSite",
       "name": "Riksdagsmonitor",
       "url": "https://riksdagsmonitor.com"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".lede", ".article-content h2"]
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
