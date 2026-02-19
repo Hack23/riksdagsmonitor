@@ -161,6 +161,9 @@ class TitleGenerator:
                 if keyword in title_lower and keyword not in matched_keywords:
                     # Capitalize first letter of each word
                     theme = ' '.join(word.capitalize() for word in keyword.split())
+                    # Fix special cases
+                    if theme == 'Vat':
+                        theme = 'VAT'
                     themes.append(theme)
                     matched_keywords.add(keyword)
                     break  # Only one keyword per title to avoid over-counting
@@ -222,7 +225,7 @@ class TitleGenerator:
             # Format: "New {Theme1} and {Theme2} Lead Government Legislative Push"
             if len(themes) >= 2:
                 # Check for specific high-impact themes
-                if any(t in ['Weapons', 'Vat', 'Fraud', 'Financial', 'Security'] for t in themes):
+                if any(t in ['Weapons', 'VAT', 'Fraud', 'Financial', 'Security'] for t in themes):
                     title = f"New {themes[0]} and {themes[1]} Lead Government Legislative Push"
                 else:
                     title = f"Government Advances {themes[0]} and {themes[1]} Reforms"
@@ -467,40 +470,33 @@ class TitleGenerator:
                 'Opposition Unites Against': 'Oppositionen Enar sig Mot',
                 'Splits on': 'Delar sig om',
                 
-                # Policy areas (capitalized)
-                'Border': 'Gränskontroll',
-                'Customs': 'Tull',
-                'Appropriations': 'Anslag',
-                'Tax': 'Skatt',
-                'Vat': 'Moms',
-                'Weapons': 'Vapen',
-                'Audit': 'Revision',
-                'Financial': 'Finansiell',
-                'Detention': 'Frihetsberövande',
-                'Elderly Care': 'Äldreomsorg',
-                'Government Personnel': 'Regeringspersonal',
-                'Animal': 'Djur',
-                'Data Protection': 'Dataskydd',
-                'Security': 'Säkerhet',
-                'Defense': 'Försvar',
-                
-                # Policy areas (lowercase for descriptions)
-                'border': 'gränskontroll',
-                'customs': 'tull',
-                'appropriations': 'anslag',
-                'tax': 'skatt',
-                'vat': 'moms',
-                'weapons': 'vapen',
-                'audit': 'revision',
-                'financial': 'finansiella',
-                'detention': 'frihetsberövande',
-                'elderly care': 'äldreomsorg',
-                'government personnel': 'regeringspersonal',
-                'animal': 'djur',
-                'data protection': 'dataskydd',
-                'security': 'säkerhet',
-                'defense': 'försvar',
-                'renewable energy': 'förnybar energi',
+                # Policy areas (capitalized and lowercase)
+                'Border': 'Gränskontroll', 'border': 'gränskontroll',
+                'Customs': 'Tull', 'customs': 'tull',
+                'Appropriations': 'Anslag', 'appropriations': 'anslag',
+                'Supplementary': 'Tillägg', 'supplementary': 'tillägg',
+                'Government Personnel': 'Regeringspersonal', 'government personnel': 'regeringspersonal',
+                'Tax': 'Skatt', 'tax': 'skatt',
+                'Vat': 'Moms', 'vat': 'moms', 'VAT': 'Moms',
+                'Weapons': 'Vapen', 'weapons': 'vapen',
+                'Audit': 'Revision', 'audit': 'revision',
+                'Financial': 'Finansiell', 'financial': 'finansiella',
+                'Detention': 'Frihetsberövande', 'detention': 'frihetsberövande',
+                'Elderly Care': 'Äldreomsorg', 'elderly care': 'äldreomsorg',
+                'Animal Protection': 'Djurskydd', 'animal protection': 'djurskydd',
+                'Animal': 'Djur', 'animal': 'djur',
+                'Data Protection': 'Dataskydd', 'data protection': 'dataskydd',
+                'Security': 'Säkerhet', 'security': 'säkerhet',
+                'Defense': 'Försvar', 'defense': 'försvar',
+                'Labor': 'Arbete', 'labor': 'arbete',
+                'Welfare': 'Välfärd', 'welfare': 'välfärd',
+                'Parental Benefit': 'Föräldrapenning', 'parental benefit': 'föräldrapenning',
+                'Parental': 'Föräldra', 'parental': 'föräldra',
+                'Trade': 'Handel', 'trade': 'handel',
+                'Housing': 'Boende', 'housing': 'boende',
+                'Macroprudential': 'Makrotillsyn', 'macroprudential': 'makrotillsyn',
+                'Language Requirement': 'Språkkrav', 'language requirement': 'språkkrav',
+                'Renewable Energy': 'Förnybar Energi', 'renewable energy': 'förnybar energi',
                 
                 # Description phrases
                 'Analysis of': 'Analys av',
@@ -546,15 +542,34 @@ class TitleGenerator:
                 'Committee Reports': 'Komitérapporter', 'Government Propositions': 'Regjeringsforslag',
                 'Opposition Motions': 'Opposisjonsforslag', 'in Focus': 'i Fokus',
                 'Dominate Committee Agenda': 'Dominerer Komitéagendaen',
-                'Border': 'Grense', 'Customs': 'Toll', 'Appropriations': 'Bevilgninger',
-                'Tax': 'Skatt', 'Vat': 'Mva', 'VAT': 'Mva', 'Weapons': 'Våpen', 'Audit': 'Revisjon',
-                'Financial': 'Finansiell', 'Detention': 'Frihetsberøvelse', 'Elderly Care': 'Eldreomsorg',
-                'Security': 'Sikkerhet', 'Supplementary': 'Tillegg', 'Government Personnel': 'Regjeringspersonell',
+                'Lead Government Legislative Push': 'Leder Regjeringens Lovgivningsinitiativer',
+                'Border': 'Grense', 'border': 'grense', 'Customs': 'Toll', 'customs': 'toll', 
+                'Appropriations': 'Bevilgninger', 'appropriations': 'bevilgninger',
+                'Supplementary': 'Tillegg', 'supplementary': 'tillegg',
+                'Government Personnel': 'Regjeringspersonell', 'government personnel': 'regjeringspersonell',
+                'Tax': 'Skatt', 'tax': 'skatt', 'Vat': 'Mva', 'vat': 'mva', 'VAT': 'Mva', 
+                'Weapons': 'Våpen', 'weapons': 'våpen', 'Audit': 'Revisjon', 'audit': 'revisjon',
+                'Financial': 'Finansiell', 'financial': 'finansiell', 
+                'Detention': 'Frihetsberøvelse', 'detention': 'frihetsberøvelse',
+                'Elderly Care': 'Eldreomsorg', 'elderly care': 'eldreomsorg',
+                'Security': 'Sikkerhet', 'security': 'sikkerhet',
+                'Labor': 'Arbeid', 'labor': 'arbeid',
+                'Welfare': 'Velferd', 'welfare': 'velferd',
+                'Parental Benefit': 'Foreldrepenger', 'parental benefit': 'foreldrepenger',
+                'Parental': 'Foreldrepenger', 'parental': 'foreldrepenger',
+                'Trade': 'Handel', 'trade': 'handel',
+                'Housing': 'Bolig', 'housing': 'bolig',
+                'Animal Protection': 'Dyrevern', 'animal protection': 'dyrevern',
+                'Animal': 'Dyr', 'animal': 'dyr',
+                'Macroprudential': 'Makrotilsyn', 'macroprudential': 'makrotilsyn',
+                'Language Requirement': 'Språkkrav', 'language requirement': 'språkkrav',
+                'Renewable Energy': 'Fornybar Energi', 'renewable energy': 'fornybar energi',
                 'Analysis of': 'Analyse av', 'committee reports': 'komitérapporter',
                 'government propositions': 'regjeringsforslag', 'opposition motions': 'opposisjonsforslag',
                 'covering': 'som dekker', 'shaping legislative agenda': 'former lovgivningsagendaen',
                 'in parliamentary committees': 'i parlamentariske komitéer',
                 'challenging government policy': 'utfordrer regjeringens politikk',
+                ' for ': ' for ',  # Keep Norwegian preposition
                 'and': 'og',
             }
             translated = text
@@ -711,17 +726,35 @@ class TitleGenerator:
             translations = {
                 'Committee Reports': '위원회 보고서', 'Government Propositions': '정부 제안',
                 'Opposition Motions': '야당 동의', 'in Focus': '초점',
-                'Border': '국경', 'Customs': '세관', 'Appropriations': '예산',
-                'Tax': '세금', 'tax': '세금', 'Vat': '부가가치세', 'VAT': '부가가치세', 
-                'Weapons': '무기', 'Audit': '감사',
-                'Financial': '금융', 'Detention': '구금', 'detention': '구금',
+                'Dominate Committee Agenda': '위원회 의제 지배',
+                'Lead Government Legislative Push': '정부 입법 추진 주도',
+                'Border': '국경', 'border': '국경', 'Customs': '세관', 'customs': '세관',
+                'Appropriations': '예산', 'appropriations': '예산',
+                'Supplementary': '추가', 'supplementary': '추가',
+                'Government Personnel': '정부 인력', 'government personnel': '정부 인력',
+                'Tax': '세금', 'tax': '세금', 'Vat': '부가가치세', 'vat': '부가가치세', 'VAT': '부가가치세', 
+                'Weapons': '무기', 'weapons': '무기', 'Audit': '감사', 'audit': '감사',
+                'Financial': '금융', 'financial': '금융',
+                'Detention': '구금', 'detention': '구금',
                 'Elderly Care': '노인 돌봄', 'elderly care': '노인 돌봄',
                 'Security': '보안', 'security': '보안',
+                'Labor': '노동', 'labor': '노동',
+                'Welfare': '복지', 'welfare': '복지',
+                'Parental Benefit': '육아 수당', 'parental benefit': '육아 수당',
+                'Parental': '육아', 'parental': '육아',
+                'Trade': '무역', 'trade': '무역',
+                'Housing': '주택', 'housing': '주택',
+                'Animal Protection': '동물 보호', 'animal protection': '동물 보호',
+                'Animal': '동물', 'animal': '동물',
+                'Macroprudential': '거시건전성', 'macroprudential': '거시건전성',
+                'Language Requirement': '언어 요구 사항', 'language requirement': '언어 요구 사항',
+                'Renewable Energy': '재생 에너지', 'renewable energy': '재생 에너지',
                 'Analysis of': '분석', 'committee reports': '위원회 보고서',
                 'government propositions': '정부 제안', 'opposition motions': '야당 동의',
                 'covering': '다루는', 'shaping legislative agenda': '입법 의제 형성',
                 'in parliamentary committees': '의회 위원회에서',
                 'challenging government policy': '정부 정책에 도전',
+                ' for ': ' ',  # Korean doesn't need explicit "for"
                 'and': '및',
             }
             translated = text
@@ -734,17 +767,35 @@ class TitleGenerator:
             translations = {
                 'Committee Reports': '委员会报告', 'Government Propositions': '政府提案',
                 'Opposition Motions': '反对党动议', 'in Focus': '焦点',
+                'Dominate Committee Agenda': '主导委员会议程',
+                'Lead Government Legislative Push': '引领政府立法推进',
                 'Border': '边境', 'border': '边境', 'Customs': '海关', 'customs': '海关',
                 'Appropriations': '拨款', 'appropriations': '拨款',
-                'Tax': '税收', 'Vat': '增值税', 'VAT': '增值税', 'Weapons': '武器', 'Audit': '审计',
-                'Financial': '金融', 'Detention': '拘留', 'Elderly Care': '养老护理',
-                'Security': '安全', 'Supplementary': '补充', 'supplementary': '补充',
+                'Supplementary': '补充', 'supplementary': '补充',
                 'Government Personnel': '政府人员', 'government personnel': '政府人员',
+                'Tax': '税收', 'tax': '税收', 'Vat': '增值税', 'vat': '增值税', 'VAT': '增值税', 
+                'Weapons': '武器', 'weapons': '武器', 'Audit': '审计', 'audit': '审计',
+                'Financial': '金融', 'financial': '金融',
+                'Detention': '拘留', 'detention': '拘留',
+                'Elderly Care': '养老护理', 'elderly care': '养老护理',
+                'Security': '安全', 'security': '安全',
+                'Labor': '劳工', 'labor': '劳工',
+                'Welfare': '福利', 'welfare': '福利',
+                'Parental Benefit': '育儿津贴', 'parental benefit': '育儿津贴',
+                'Parental': '育儿', 'parental': '育儿',
+                'Trade': '贸易', 'trade': '贸易',
+                'Housing': '住房', 'housing': '住房',
+                'Animal Protection': '动物保护', 'animal protection': '动物保护',
+                'Animal': '动物', 'animal': '动物',
+                'Macroprudential': '宏观审慎', 'macroprudential': '宏观审慎',
+                'Language Requirement': '语言要求', 'language requirement': '语言要求',
+                'Renewable Energy': '可再生能源', 'renewable energy': '可再生能源',
                 'Analysis of': '分析', 'committee reports': '委员会报告',
                 'government propositions': '政府提案', 'opposition motions': '反对党动议',
                 'covering': '涵盖', 'shaping legislative agenda': '塑造立法议程',
                 'in parliamentary committees': '在议会委员会中',
                 'challenging government policy': '挑战政府政策',
+                ' for ': ' ',  # Chinese doesn't need explicit "for"
                 'and': '和',
             }
             translated = text
