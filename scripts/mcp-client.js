@@ -491,6 +491,7 @@ export class MCPClient {
       // Build headers: custom headers from config + runtime headers
       const headers = {
         'Content-Type': 'application/json',
+        'Accept': 'application/json, text/event-stream',
         ...this.customHeaders  // Spread custom headers from config first
       };
       
@@ -543,10 +544,12 @@ export class MCPClient {
         }
         
         // Handle session initialization error (Streamable HTTP transport)
-        if (errorMsg.includes('session initialization')) {
+        if (errorMsg.includes('session initialization') || errorMsg.includes('Too Many Requests')) {
           this.sessionId = null;
-          if (retryCount === 0) {
-            console.warn('⚠️ Session expired, re-initializing...');
+          if (retryCount < 2) {
+            const delay = (retryCount + 1) * 2000;
+            console.warn(`⚠️ Session error, re-initializing after ${delay}ms...`);
+            await new Promise(r => setTimeout(r, delay));
             await this.initializeSession();
             return this.request(tool, params, retryCount + 1, skipPrefix);
           }
@@ -560,7 +563,18 @@ export class MCPClient {
       const result = jsonRpcResponse.result || {};
       if (result.content && Array.isArray(result.content) && result.content[0]?.text) {
         try {
-          return JSON.parse(result.content[0].text);
+          const parsed = JSON.parse(result.content[0].text);
+          // Gateway returns large payloads via file path
+          if (parsed.payloadPath) {
+            const fs = await import('fs');
+            const payloadRaw = JSON.parse(fs.readFileSync(parsed.payloadPath, 'utf8'));
+            const payloadText = payloadRaw?.content?.[0]?.text;
+            if (payloadText) {
+              try { return JSON.parse(payloadText); } catch { return { text: payloadText }; }
+            }
+            return payloadRaw;
+          }
+          return parsed;
         } catch (e) {
           return { text: result.content[0].text };
         }
@@ -574,10 +588,14 @@ export class MCPClient {
       if (retryCount < this.maxRetries - 1 && (
         error.name === 'AbortError' || 
         errorMsg.includes('network') ||
-        errorMsg.includes('econnrefused')
+        errorMsg.includes('econnrefused') ||
+        errorMsg.includes('connection closed') ||
+        errorMsg.includes('too many requests')
       )) {
-        console.warn(`⚠️ Request failed, retrying (${retryCount + 1}/${this.maxRetries - 1})...`);
-        await this.sleep(RETRY_DELAY * Math.pow(2, retryCount)); // Exponential backoff
+        const delay = RETRY_DELAY * Math.pow(2, retryCount);
+        console.warn(`⚠️ Request failed (${error.message.substring(0, 60)}), retrying after ${delay}ms (${retryCount + 1}/${this.maxRetries - 1})...`);
+        this.sessionId = null;
+        await this.sleep(delay);
         return this.request(tool, params, retryCount + 1, skipPrefix);
       }
       
@@ -642,6 +660,7 @@ export class MCPClient {
       // Build headers: custom headers from config + runtime headers
       const headers = {
         'Content-Type': 'application/json',
+        'Accept': 'application/json, text/event-stream',
         ...this.customHeaders  // Spread custom headers from config first
       };
       
@@ -656,7 +675,7 @@ export class MCPClient {
           id: jsonRpcId++,
           method: 'initialize',
           params: {
-            protocolVersion: '2025-03-26',
+            protocolVersion: '2024-11-05',
             capabilities: {},
             clientInfo: { name: 'riksdagsmonitor-news', version: '1.0.0' }
           }
@@ -675,6 +694,16 @@ export class MCPClient {
         this.sessionId = sessionId;
         console.log(`  🔗 MCP session initialized: ${sessionId.substring(0, 8)}...`);
       }
+
+      // Send notifications/initialized (required by MCP protocol)
+      await fetch(this.baseURL, {
+        method: 'POST',
+        headers: { ...headers, ...(this.sessionId ? { 'Mcp-Session-Id': this.sessionId } : {}) },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          method: 'notifications/initialized'
+        })
+      });
     } finally {
       clearTimeout(timeoutId);
     }
