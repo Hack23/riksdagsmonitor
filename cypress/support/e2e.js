@@ -10,6 +10,9 @@
 // Import Cypress commands
 import './commands';
 
+// Import cypress-axe for automated accessibility testing (WCAG 2.1 AA)
+import 'cypress-axe';
+
 // Hide fetch/XHR requests in command log (cleaner output)
 const app = window.top;
 

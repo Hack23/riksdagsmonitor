@@ -12,9 +12,15 @@ on:
       - 'js/party-dashboard.js'
       - 'js/ministry-dashboard.js'
       - 'js/coalition-loader.js'
+      - 'js/anomaly-detection-dashboard.js'
+      - 'js/election-cycle-dashboard.js'
+      - 'js/seasonal-patterns-dashboard.js'
+      - 'js/pre-election-dashboard.js'
       - 'cypress/e2e/dashboard-page.cy.js'
       - 'cypress/e2e/dashboards.cy.js'
       - 'cypress/e2e/politician-dashboard.cy.js'
+      - 'cypress/e2e/accessibility-dashboards.cy.js'
+      - 'cypress/e2e/dashboards-multi-language.cy.js'
       - '.github/workflows/test-dashboard.yml'
   pull_request:
     branches:
@@ -27,9 +33,15 @@ on:
       - 'js/party-dashboard.js'
       - 'js/ministry-dashboard.js'
       - 'js/coalition-loader.js'
+      - 'js/anomaly-detection-dashboard.js'
+      - 'js/election-cycle-dashboard.js'
+      - 'js/seasonal-patterns-dashboard.js'
+      - 'js/pre-election-dashboard.js'
       - 'cypress/e2e/dashboard-page.cy.js'
       - 'cypress/e2e/dashboards.cy.js'
       - 'cypress/e2e/politician-dashboard.cy.js'
+      - 'cypress/e2e/accessibility-dashboards.cy.js'
+      - 'cypress/e2e/dashboards-multi-language.cy.js'
   workflow_dispatch:
 
 permissions:
@@ -81,6 +93,8 @@ jobs:
           - 'cypress/e2e/dashboard-page.cy.js'
           - 'cypress/e2e/dashboards.cy.js'
           - 'cypress/e2e/politician-dashboard.cy.js'
+          - 'cypress/e2e/accessibility-dashboards.cy.js'
+          - 'cypress/e2e/dashboards-multi-language.cy.js'
     
     steps:
       - name: Harden Runner

@@ -12,6 +12,7 @@ on:
       - 'vite.config.js'
       - 'vitest.config.js'
       - 'cypress.config.js'
+      - 'playwright.config.js'
       - 'tests/**'
       - 'cypress/**'
       - '.github/workflows/javascript-testing.yml'
@@ -26,6 +27,7 @@ on:
       - 'vite.config.js'
       - 'vitest.config.js'
       - 'cypress.config.js'
+      - 'playwright.config.js'
       - 'tests/**'
       - 'cypress/**'
   workflow_dispatch:

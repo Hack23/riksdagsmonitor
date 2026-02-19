@@ -91,7 +91,8 @@ export default defineConfig({
     exclude: [
       'node_modules/**',
       'dist/**',
-      'cypress/**'
+      'cypress/**',
+      'tests/visual-regression/**'
     ],
     
     // Test timeout (10 seconds)
