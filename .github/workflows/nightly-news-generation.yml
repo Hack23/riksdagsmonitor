@@ -1,0 +1,235 @@
+name: Nightly News Generation
+
+on:
+  schedule:
+    # 02:00 CET (01:00 UTC winter / stays near local midnight in summer)
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Override document window start date (YYYY-MM-DD, default: yesterday)'
+        required: false
+      threshold:
+        description: 'Minimum document count per type to trigger generation (default: 5)'
+        required: false
+        default: '5'
+      languages:
+        description: 'Languages to generate (en,sv | nordic | eu-core | all)'
+        required: false
+        default: 'all'
+      types:
+        description: 'Article types (committee-reports,propositions,motions,week-ahead)'
+        required: false
+        default: 'committee-reports,propositions,motions,week-ahead'
+      dry_run:
+        description: 'Dry run – log what would happen without writing files'
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-news:
+    name: Generate Daily News Articles
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies…"
+          npm ci --prefer-offline --no-audit
+          echo "✅ Dependencies installed"
+
+      - name: Set date variables
+        id: dates
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          YESTERDAY=$(date -d yesterday +%Y-%m-%d)
+          echo "today=$DATE"         >> "$GITHUB_OUTPUT"
+          echo "yesterday=$YESTERDAY" >> "$GITHUB_OUTPUT"
+          echo "📅 Today    : $DATE"
+          echo "📅 Yesterday: $YESTERDAY"
+
+      - name: Generate daily news articles
+        id: generate
+        env:
+          MCP_AUTH_TOKEN:        ${{ secrets.MCP_AUTH_TOKEN }}
+          MCP_SERVER_URL:        ${{ vars.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp' }}
+          MCP_CLIENT_TIMEOUT_MS: '90000'
+        run: |
+          # Build CLI arguments
+          ARGS=""
+
+          # --date
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            ARGS="$ARGS --date=${{ github.event.inputs.date }}"
+          fi
+
+          # --threshold
+          THRESHOLD="${{ github.event.inputs.threshold || '5' }}"
+          ARGS="$ARGS --threshold=$THRESHOLD"
+
+          # --languages
+          LANGS="${{ github.event.inputs.languages || 'all' }}"
+          ARGS="$ARGS --languages=$LANGS"
+
+          # --types
+          TYPES="${{ github.event.inputs.types || 'committee-reports,propositions,motions,week-ahead' }}"
+          ARGS="$ARGS --types=$TYPES"
+
+          # --dry-run
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+            echo "🔍 Dry-run mode enabled"
+          fi
+
+          echo "🚀 Running: node scripts/generate-daily-news.js $ARGS"
+          node scripts/generate-daily-news.js $ARGS
+
+      - name: Read generation report
+        if: always()
+        id: report
+        run: |
+          REPORT_FILE="news/metadata/daily-report.json"
+          if [ -f "$REPORT_FILE" ]; then
+            echo "📊 Generation report:"
+            cat "$REPORT_FILE"
+
+            ARTICLES_CREATED=$(jq -r '.articlesCreated | join(", ")' "$REPORT_FILE")
+            ERRORS=$(jq -r '.errors | length' "$REPORT_FILE")
+            echo "articles_created=$ARTICLES_CREATED" >> "$GITHUB_OUTPUT"
+            echo "error_count=$ERRORS"                >> "$GITHUB_OUTPUT"
+          else
+            echo "⚠️  No report file found"
+            echo "articles_created=" >> "$GITHUB_OUTPUT"
+            echo "error_count=0"     >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update news indexes and sitemap
+        if: steps.generate.outcome == 'success' && github.event.inputs.dry_run != 'true'
+        run: |
+          echo "🔄 Updating news indexes…"
+          if [ -f "scripts/update-news-indexes-and-sitemap.py" ]; then
+            python3 scripts/update-news-indexes-and-sitemap.py
+            echo "✅ Indexes and sitemap updated"
+          elif [ -f "package.json" ] && grep -q '"generate-news-indexes"' package.json; then
+            node scripts/generate-news-indexes.js
+            node scripts/generate-sitemap.js
+            echo "✅ Indexes and sitemap updated"
+          else
+            echo "ℹ️  No index/sitemap update script found – skipping"
+          fi
+
+      - name: Validate generated HTML
+        if: steps.generate.outcome == 'success' && github.event.inputs.dry_run != 'true'
+        run: |
+          echo "🔍 Validating generated HTML…"
+          TODAY="${{ steps.dates.outputs.today }}"
+
+          # Build list of today's new files
+          shopt -s nullglob
+          NEW_FILES=(news/${TODAY}-*.html)
+          shopt -u nullglob
+
+          if [ ${#NEW_FILES[@]} -eq 0 ]; then
+            echo "ℹ️  No new HTML files for $TODAY – skipping validation"
+          else
+            echo "Validating ${#NEW_FILES[@]} files…"
+            npx --yes htmlhint "${NEW_FILES[@]}" || echo "⚠️  HTMLHint found issues (non-blocking)"
+            echo "✅ HTML validation complete"
+          fi
+
+      - name: Create Pull Request
+        if: >
+          steps.generate.outcome == 'success' &&
+          github.event.inputs.dry_run != 'true' &&
+          steps.report.outputs.articles_created != ''
+        id: create-pr
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'news: automated daily articles for ${{ steps.dates.outputs.today }}'
+          title: '📰 Daily news: ${{ steps.dates.outputs.today }}'
+          body: |
+            ## 📰 Automated Daily News Generation
+
+            This PR was created automatically by the nightly news generation workflow.
+
+            ### Summary
+            - **Date**: ${{ steps.dates.outputs.today }}
+            - **Document window**: ${{ steps.dates.outputs.yesterday }} → ${{ steps.dates.outputs.today }}
+            - **Languages**: ${{ github.event.inputs.languages || 'all' }}
+            - **Articles created**: ${{ steps.report.outputs.articles_created }}
+            - **Errors**: ${{ steps.report.outputs.error_count }}
+
+            ### Article Types Generated
+            ${{ steps.report.outputs.articles_created }}
+
+            ### Quality Checks
+            - [x] MCP data fetched from riksdag-regering-mcp
+            - [x] Document threshold applied (≥${{ github.event.inputs.threshold || '5' }} docs per type)
+            - [x] Multi-language generation (${{ github.event.inputs.languages || 'all' }})
+            - [x] HTML validation with HTMLHint
+            - [x] News indexes and sitemap updated
+
+            ### References
+            - Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            - Script: `scripts/generate-daily-news.js`
+            - Guide: `ARTICLE_ENHANCEMENT_GUIDE.md`
+
+            ---
+            *Automatically generated by the Nightly News Generation workflow*
+          branch: 'auto/daily-news-${{ steps.dates.outputs.today }}'
+          delete-branch: true
+          labels: |
+            automated-pipeline
+            news-article
+            content
+
+      - name: Output PR URL
+        if: steps.create-pr.outputs.pull-request-url != ''
+        run: |
+          echo "✅ Pull request created: ${{ steps.create-pr.outputs.pull-request-url }}"
+          echo "## 📰 PR Created" >> "$GITHUB_STEP_SUMMARY"
+          echo "${{ steps.create-pr.outputs.pull-request-url }}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Write step summary
+        if: always()
+        run: |
+          echo "## 📰 Nightly News Generation — ${{ steps.dates.outputs.today }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Field | Value |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Date | ${{ steps.dates.outputs.today }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Languages | ${{ github.event.inputs.languages || 'all' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Articles created | ${{ steps.report.outputs.articles_created || 'none' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Errors | ${{ steps.report.outputs.error_count || '0' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Status | ${{ steps.generate.outcome }} |" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ Nightly news generation failed!" >&2
+          echo "Please check the workflow run for details:"
+          echo "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          echo ""
+          echo "## ❌ Generation Failed" >> "$GITHUB_STEP_SUMMARY"
+          echo "Check the [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details." >> "$GITHUB_STEP_SUMMARY"

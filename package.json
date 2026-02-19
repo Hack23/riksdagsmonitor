@@ -25,6 +25,7 @@
     "validate-translations": "node scripts/validate-translations.js",
     "validate-news": "node scripts/validate-news-translations.js",
     "validate-all": "npm run htmlhint && npm run validate-translations && npm run validate-news",
+    "generate-daily-news": "node scripts/generate-daily-news.js",
     "generate-news": "node scripts/generate-news-enhanced.js",
     "generate-news-indexes": "node scripts/generate-news-indexes.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
