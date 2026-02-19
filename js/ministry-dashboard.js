@@ -1775,10 +1775,12 @@
     }
     
     /**
-     * Generate fallback data when CIA data is completely unavailable
-     * Uses realistic ministry names and conservative default values
+     * Generate fallback data when CIA data is completely unavailable.
+     * Returns empty/neutral values that produce a blank dashboard state
+     * rather than generating synthetic data.
+     * @returns {{riskLevels: Array, productivity: Array, influence: Array, decisionImpact: Array}}
      */
-    generateMockData() {
+    generateFallbackData() {
       const ministries = [
         'Finansdepartementet', 'Utrikesdepartementet', 'Försvarsdepartementet',
         'Justitiedepartementet', 'Socialdepartementet', 'Utbildningsdepartementet',
