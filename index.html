@@ -340,11 +340,20 @@ Swedish Election 2026
 
 <!-- News Navigation -->
 <nav class="news-navigation" aria-label="News">
-<a href="news/index.html" aria-label="Visit News section - AI-Disrupted Political Journalism">
-<span class="news-navigation-icon" aria-hidden="true">📰</span>
-<span>News</span>
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI-Disrupted Political Journalism</p>
+<p class="news-navigation-description">Economist-style coverage of Sweden's Riksdag generated daily by AI agents using Citizen Intelligence Agency OSINT data. Automated analysis of government propositions, committee reports, opposition motions, parliamentary questions, and evening deep-dives — published in 14 languages.</p>
+<ul class="news-navigation-features" aria-label="News coverage types">
+<li>📋 Committee Reports</li>
+<li>📜 Government Propositions</li>
+<li>✊ Opposition Motions</li>
+<li>❓ Parliamentary Questions</li>
+<li>🌙 Evening Analysis</li>
+<li>🌍 14 Languages</li>
+</ul>
+<a href="news/index.html" class="news-navigation-link" aria-label="Read the latest news">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>Read Latest News</span>
 </a>
-<p>AI-Disrupted Political Journalism powered by CIA OSINT</p>
 </nav>
 
 <header>
@@ -379,6 +388,24 @@ Swedish Election 2026
 </div>
 </div>
 </header>
+
+<!-- Intelligence Dashboard CTA -->
+<nav class="dashboard-cta" aria-label="Intelligence Dashboard">
+<h2 class="dashboard-cta-heading"><span aria-hidden="true">📊</span> Intelligence Dashboard</h2>
+<p class="dashboard-cta-description">Explore interactive visualizations powered by Citizen Intelligence Agency — election 2026 forecasts, party performance analytics, 45-rule risk assessment across 349 MPs, coalition stability tracking, and committee network analysis.</p>
+<ul class="dashboard-cta-features" aria-label="Dashboard highlights">
+<li>🗳️ Election 2026 Predictions</li>
+<li>📈 Party Performance</li>
+<li>⚠️ Risk Assessment</li>
+<li>🤝 Coalition Analysis</li>
+<li>🏛️ Committee Networks</li>
+<li>👥 MP Rankings</li>
+</ul>
+<a href="dashboard/index.html" class="dashboard-cta-link" aria-label="Open Intelligence Dashboard">
+<span class="dashboard-cta-link-icon" aria-hidden="true">📊</span>
+<span>Open Dashboard</span>
+</a>
+</nav>
 
 <main id="main-content" role="main">
 <section id="coalition-status">
@@ -1221,6 +1248,9 @@ Performance tiers (ntile_party_tier: 1-4)
 
 <!-- Papa Parse v5.5.3 for CSV parsing (hosted locally on CloudFront) -->
 <script src="js/lib/papaparse.5.5.3.min.js"></script>
+
+<!-- Chart Utilities (shared configuration and helpers) -->
+<script src="js/chart-utils.js"></script>
 
 <script src="js/risk-dashboard.js"></script>
 

@@ -27,7 +27,7 @@ permissions:
   discussions: read
   security-events: read
   
-timeout-minutes: 30
+timeout-minutes: 45
 
 network:
   allowed:
@@ -471,13 +471,30 @@ get_voting_group({ rm: "2025/26", groupBy: "parti" })
 
 ### Step 3: Analyze Data
 
-For the data retrieved:
+The automated news generation script (`scripts/generate-news-enhanced.js`) now includes **enhanced document enrichment** that automatically:
 
-1. **Identify significance** - What's newsworthy?
-2. **Find connections** - How do events relate?
-3. **Assess impact** - What does this mean for Swedish democracy?
-4. **Gather context** - Historical background, international comparison
-5. **Balance perspectives** - Multiple stakeholder views
+1. **Fetches detailed document metadata** via `enrichDocumentsWithContent()`:
+   - Extracts author names from `intressent.tilltalsnamn` + `efternamn` fields
+   - Extracts party affiliation from `intressent.parti` field
+   - Retrieves document summaries from `summary` or `notis` fields
+   - Preserves document type, subtype, and committee/organ information
+
+2. **Generates enhanced summaries** when API summaries are unavailable:
+   - Committee reports: "${organ} committee report on ${subtyp}"
+   - Propositions: "Government proposition regarding ${subtyp} referred to ${organ}"
+   - Motions: "Motion by ${author} (${party}) on ${subtyp}"
+
+3. **Ensures data quality**:
+   - Displays "Unknown" instead of "undefined" for missing fields
+   - Batch processing with rate limiting (3 concurrent requests, 200ms delay)
+   - Graceful error handling with `contentFetchError` tracking
+
+**Manual Analysis** (for future enhancement with AI):
+- Identify significance - What's newsworthy?
+- Find connections - How do events relate?
+- Assess impact - What does this mean for Swedish democracy?
+- Gather context - Historical background, international comparison
+- Balance perspectives - Multiple stakeholder views
 
 ### Step 4: Generate Articles
 

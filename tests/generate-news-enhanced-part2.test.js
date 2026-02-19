@@ -34,6 +34,7 @@ const { mockClientInstance, mockCalendarEvents, mockCommitteeReports, mockPropos
     fetchCommitteeReports: vi.fn(),
     fetchPropositions: vi.fn(),
     fetchMotions: vi.fn(),
+    enrichDocumentsWithContent: vi.fn(),  // NEW: Added for document enrichment
     request: vi.fn(),
     timeout: 30000,
     baseURL: 'https://riksdag-regering-ai.onrender.com/mcp'
@@ -63,6 +64,10 @@ function resetMockClient() {
   mockClientInstance.fetchCommitteeReports.mockReset().mockResolvedValue(mockCommitteeReports);
   mockClientInstance.fetchPropositions.mockReset().mockResolvedValue(mockPropositions);
   mockClientInstance.fetchMotions.mockReset().mockResolvedValue(mockMotions);
+  // NEW: Mock enrichDocumentsWithContent to return documents with contentFetched flag
+  mockClientInstance.enrichDocumentsWithContent.mockReset().mockImplementation(async (docs) => 
+    docs.map(doc => ({ ...doc, contentFetched: true }))
+  );
   mockClientInstance.request.mockReset().mockResolvedValue({ last_sync: '2026-02-16T12:00:00Z' });
 }
 

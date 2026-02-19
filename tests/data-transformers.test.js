@@ -551,18 +551,33 @@ describe('Data Transformers', () => {
       expect(content).toContain('Förslaget innebär att');
     });
 
-    it('should use localized default when no summary provided', () => {
-      const content = generateArticleContent(
+    it('should use localized default or enhanced summary when no API summary provided', () => {
+      // Test case 1: With organ metadata, should generate enhanced summary
+      const contentWithOrgan = generateArticleContent(
         { reports: [{ titel: 'Test', url: '#', organ: 'SoU' }] },
         'committee-reports',
         'de'
       );
-      // Only title has data-translate, summary is localized default
-      const matches = content.match(/data-translate="true"/g);
-      expect(matches).not.toBeNull();
-      expect(matches.length).toBe(1);
-      // Should contain the German default text
-      expect(content).toContain(L('de', 'reportDefault'));
+      // Only title has data-translate (not the enhanced summary based on metadata)
+      const matchesWithOrgan = contentWithOrgan.match(/data-translate="true"/g);
+      expect(matchesWithOrgan).not.toBeNull();
+      expect(matchesWithOrgan.length).toBe(1);
+      // Should contain enhanced summary with organ
+      expect(contentWithOrgan).toContain('SoU');
+      expect(contentWithOrgan).toContain(L('de', 'committeeReport'));
+      
+      // Test case 2: Without any metadata, should use localized default
+      const contentWithoutMetadata = generateArticleContent(
+        { reports: [{ titel: 'Test', url: '#' }] },
+        'committee-reports',
+        'de'
+      );
+      // Only title has data-translate
+      const matchesWithoutMetadata = contentWithoutMetadata.match(/data-translate="true"/g);
+      expect(matchesWithoutMetadata).not.toBeNull();
+      expect(matchesWithoutMetadata.length).toBe(1);
+      // Should contain the German default text when no metadata available
+      expect(contentWithoutMetadata).toContain(L('de', 'reportDefault'));
     });
 
     it('should wrap week-ahead event titel in data-translate span', () => {
