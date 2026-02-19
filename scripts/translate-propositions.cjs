@@ -522,10 +522,20 @@ function translateFile(sourceFile, outputDir, targetLang) {
     /"alternativeHeadline": ".*?"/,
     `"alternativeHeadline": "${trans.description}"`
   );
-  translated = translated.replace(
-    /"description": ".*?"/g,
-    `"description": "${trans.description}"`
-  );
+  
+  // Update Schema.org JSON-LD description (only in NewsArticle block)
+  const newsArticleStart = translated.indexOf('"@type": "NewsArticle"');
+  if (newsArticleStart !== -1) {
+    const descStart = translated.indexOf('"description":', newsArticleStart);
+    if (descStart !== -1) {
+      const descValueStart = translated.indexOf('"', descStart + 14) + 1;
+      const descValueEnd = translated.indexOf('"', descValueStart);
+      if (descValueEnd !== -1 && descValueEnd < translated.indexOf('"@type":', newsArticleStart + 100)) {
+        translated = translated.substring(0, descValueStart) + trans.description + translated.substring(descValueEnd);
+      }
+    }
+  }
+  
   translated = translated.replace(
     /"inLanguage": ".*?"/,
     `"inLanguage": "${targetLang}"`
@@ -584,15 +594,17 @@ function translateFile(sourceFile, outputDir, targetLang) {
   const datePattern = dateMatch ? dateMatch[1] : '2026-02-18'; // fallback if no date found
   
   // Update language switcher active state
-  const langSwitcherPattern = new RegExp(`(<a href="${datePattern}-government-propositions-)en(\\.html" class="lang-link) active"`, 'g');
-  translated = translated.replace(
-    langSwitcherPattern,
-    `$1${targetLang}$2 active"`
-  );
-  const removeEnActivePattern = new RegExp(`(<a href="${datePattern}-government-propositions-en\\.html" class="lang-link) active"`);
+  // Remove 'active' from the English link without changing its href
+  const removeEnActivePattern = new RegExp(`(<a href="${datePattern}-government-propositions-en\\.html" class="lang-link) active"`, 'g');
   translated = translated.replace(
     removeEnActivePattern,
-    `<a href="${datePattern}-government-propositions-en.html" class="lang-link"`
+    `$1"`
+  );
+  // Add 'active' to the current target language link without changing its href
+  const addTargetActivePattern = new RegExp(`(<a href="${datePattern}-government-propositions-${targetLang}\\.html" class="lang-link)(?! active")`, 'g');
+  translated = translated.replace(
+    addTargetActivePattern,
+    `$1 active"`
   );
   
   // Update canonical URL
