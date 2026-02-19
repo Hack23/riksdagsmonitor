@@ -93,6 +93,16 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Your mission is t
 
 ## 🚨 CRITICAL REQUIREMENTS (MUST COMPLETE)
 
+### ⏱️ Time Budget Management
+**You have 45 minutes total.** Budget your time wisely:
+- **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, assess day's data
+- **Minutes 5–15**: Query MCP tools, gather parliamentary data for the day
+- **Minutes 15–30**: Generate evening analysis articles for all languages
+- **Minutes 30–40**: Translate, validate, commit
+- **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
+
+**If you reach minute 35 without having committed**: Stop generating more content. Commit what you have and create the PR immediately. Partial content in a PR is better than a timeout with no PR.
+
 ### 1. MANDATORY Date Validation (First Step)
 **ALWAYS START by logging the current date and time:**
 ```bash
@@ -196,7 +206,17 @@ Parse `languages` input (default: `all` for evening coverage):
 
 Generate article versions for each requested language with culturally appropriate tone and proper localization.
 
-## 🔌 MCP Tools: Swedish Political Data
+## � MCP Tools: Fully Operational
+
+**✅ MCP tools ARE accessible and working perfectly.** Call them directly - the framework handles everything.
+
+### How MCP Tool Calls Work in Agentic Workflows
+
+The `mcp-servers` frontmatter declares the riksdag-regering server. At runtime, gh-aw:
+1. Starts the MCP gateway on `host.docker.internal:80`
+2. Routes tool calls through `http://host.docker.internal:80/mcp/riksdag-regering`
+3. Handles HTTPS termination, retries, and cold start warmup automatically
+4. Exposes all 32 riksdag-regering tools as native tool calls
 
 ### ⚡ Quick Start - Use MCP Tools Directly
 
@@ -726,7 +746,14 @@ else
 fi
 ```
 
-**See `.github/workflows/news-article-generator.md` Step 5 for detailed translation examples and rules.**
+**Translation Rules (self-contained — agents cannot read other workflow files):**
+1. **Translate ALL Swedish text** in `<span data-translate="true" lang="sv">...</span>` markers to the target language
+2. **Remove the data-translate wrapper** after translating — just leave the translated text
+3. **Never mix languages** — zero Swedish in non-Swedish articles
+4. **Translate titles, summaries, descriptions, committee names** — everything user-facing
+5. **Keep proper nouns** (party names, personal names) untranslated
+6. **RTL languages** (ar, he): Ensure `dir="rtl"` on `<html>` tag
+7. **Validate** every generated article to confirm no `data-translate` markers remain
 
 ### Step 6: Regenerate Indexes and Sitemap
 

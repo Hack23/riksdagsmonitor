@@ -392,7 +392,19 @@ export const CONTENT_LABELS = {
     referredTo: 'referred to',
     motionBy: 'Motion by',
     parliamentaryMotion: 'Parliamentary motion',
-    unknown: 'Unknown'
+    unknown: 'Unknown',
+    // Analytical narrative labels
+    reportsOverview: (n) => `The Swedish Parliament's committees have published ${n} new reports, reflecting ongoing legislative work across multiple policy areas.`,
+    reportSignificance: 'This report addresses',
+    readFullReport: 'Read the full report',
+    propsOverview: (n) => `The government has submitted ${n} new propositions to Parliament, each requiring committee review and chamber debate before potential adoption.`,
+    propSignificance: 'This proposition concerns',
+    readFullProp: 'Read the full proposition',
+    motionsOverview: (n) => `Opposition MPs have filed ${n} new motions, pressing the government on issues ranging across policy domains.`,
+    motionSignificance: 'This motion addresses',
+    readFullMotion: 'Read the full motion',
+    policyContext: 'Policy context',
+    filedBy: 'Filed by'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -426,7 +438,19 @@ export const CONTENT_LABELS = {
     referredTo: 'hänvisad till',
     motionBy: 'Motion av',
     parliamentaryMotion: 'Riksdagsmotion',
-    unknown: 'Okänd'
+    unknown: 'Okänd',
+    // Analytical narrative labels
+    reportsOverview: (n) => `Riksdagens utskott har publicerat ${n} nya betänkanden som speglar det pågående lagstiftningsarbetet inom flera politikområden.`,
+    reportSignificance: 'Detta betänkande behandlar',
+    readFullReport: 'Läs hela betänkandet',
+    propsOverview: (n) => `Regeringen har överlämnat ${n} nya propositioner till riksdagen, var och en kräver utskottsbehandling och kammardebatt.`,
+    propSignificance: 'Denna proposition avser',
+    readFullProp: 'Läs hela propositionen',
+    motionsOverview: (n) => `Oppositionsriksdagsledamöter har lämnat in ${n} nya motioner som pressar regeringen inom flera politikområden.`,
+    motionSignificance: 'Denna motion behandlar',
+    readFullMotion: 'Läs hela motionen',
+    policyContext: 'Politisk kontext',
+    filedBy: 'Inlämnad av'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -460,7 +484,19 @@ export const CONTENT_LABELS = {
     referredTo: 'henvist til',
     motionBy: 'Forslag fra',
     parliamentaryMotion: 'Parlamentarisk forslag',
-    unknown: 'Ukendt'
+    unknown: 'Ukendt',
+    // Analytical narrative labels
+    reportsOverview: (n) => `Sverigesrigsdagens udvalg har offentliggjort ${n} nye betænkninger, der afspejler igangværende lovgivningsarbejde.`,
+    reportSignificance: 'Denne betænkning omhandler',
+    readFullReport: 'Læs hele betænkningen',
+    propsOverview: (n) => `Regeringen har fremsat ${n} nye lovforslag til parlamentet.`,
+    propSignificance: 'Dette forslag vedrører',
+    readFullProp: 'Læs hele forslaget',
+    motionsOverview: (n) => `Oppositionsmedlemmer har indgivet ${n} nye forslag.`,
+    motionSignificance: 'Dette forslag omhandler',
+    readFullMotion: 'Læs hele forslaget',
+    policyContext: 'Politisk kontekst',
+    filedBy: 'Indgivet af'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -494,7 +530,19 @@ export const CONTENT_LABELS = {
     referredTo: 'henvist til',
     motionBy: 'Forslag fra',
     parliamentaryMotion: 'Parlamentarisk forslag',
-    unknown: 'Ukjent'
+    unknown: 'Ukjent',
+    // Analytical narrative labels
+    reportsOverview: (n) => `Den svenske riksdagens komiteer har publisert ${n} nye innstillinger som gjenspeiler pågående lovgivningsarbeid.`,
+    reportSignificance: 'Denne innstillingen omhandler',
+    readFullReport: 'Les hele innstillingen',
+    propsOverview: (n) => `Regjeringen har fremmet ${n} nye proposisjoner til Stortinget.`,
+    propSignificance: 'Denne proposisjonen gjelder',
+    readFullProp: 'Les hele proposisjonen',
+    motionsOverview: (n) => `Opposisjonsmedlemmer har fremmet ${n} nye forslag.`,
+    motionSignificance: 'Dette forslaget omhandler',
+    readFullMotion: 'Les hele forslaget',
+    policyContext: 'Politisk kontekst',
+    filedBy: 'Innsendt av'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -528,7 +576,19 @@ export const CONTENT_LABELS = {
     referredTo: 'lähetetty valiokuntaan',
     motionBy: 'Aloite',
     parliamentaryMotion: 'Eduskunnan aloite',
-    unknown: 'Tuntematon'
+    unknown: 'Tuntematon',
+    // Analytical narrative labels
+    reportsOverview: (n) => `Ruotsin valtiopäivien valiokunnat ovat julkaisseet ${n} uutta mietintöä, jotka heijastavat meneillään olevaa lainsäädäntötyötä.`,
+    reportSignificance: 'Tämä mietintö käsittelee',
+    readFullReport: 'Lue koko mietintö',
+    propsOverview: (n) => `Hallitus on jättänyt ${n} uutta esitystä eduskunnalle.`,
+    propSignificance: 'Tämä esitys koskee',
+    readFullProp: 'Lue koko esitys',
+    motionsOverview: (n) => `Opposition kansanedustajat ovat jättäneet ${n} uutta aloitetta.`,
+    motionSignificance: 'Tämä aloite käsittelee',
+    readFullMotion: 'Lue koko aloite',
+    policyContext: 'Poliittinen konteksti',
+    filedBy: 'Jättänyt'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -562,7 +622,19 @@ export const CONTENT_LABELS = {
     referredTo: 'verwiesen an',
     motionBy: 'Antrag von',
     parliamentaryMotion: 'Parlamentarischer Antrag',
-    unknown: 'Unbekannt'
+    unknown: 'Unbekannt',
+    // Analytical narrative labels
+    reportsOverview: (n) => `Die Ausschüsse des schwedischen Reichstags haben ${n} neue Berichte veröffentlicht, die laufende Gesetzgebungsarbeit widerspiegeln.`,
+    reportSignificance: 'Dieser Bericht befasst sich mit',
+    readFullReport: 'Den vollständigen Bericht lesen',
+    propsOverview: (n) => `Die Regierung hat ${n} neue Vorlagen an das Parlament übermittelt.`,
+    propSignificance: 'Diese Vorlage betrifft',
+    readFullProp: 'Die vollständige Vorlage lesen',
+    motionsOverview: (n) => `Oppositionsabgeordnete haben ${n} neue Anträge eingereicht.`,
+    motionSignificance: 'Dieser Antrag befasst sich mit',
+    readFullMotion: 'Den vollständigen Antrag lesen',
+    policyContext: 'Politischer Kontext',
+    filedBy: 'Eingereicht von'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -596,7 +668,19 @@ export const CONTENT_LABELS = {
     referredTo: 'renvoyée à',
     motionBy: 'Motion de',
     parliamentaryMotion: 'Motion parlementaire',
-    unknown: 'Inconnu'
+    unknown: 'Inconnu',
+    // Analytical narrative labels
+    reportsOverview: (n) => `Les commissions du Riksdag suédois ont publié ${n} nouveaux rapports reflétant le travail législatif en cours.`,
+    reportSignificance: 'Ce rapport traite de',
+    readFullReport: 'Lire le rapport complet',
+    propsOverview: (n) => `Le gouvernement a soumis ${n} nouvelles propositions au Parlement.`,
+    propSignificance: 'Cette proposition concerne',
+    readFullProp: 'Lire la proposition complète',
+    motionsOverview: (n) => `Des députés de l\'opposition ont déposé ${n} nouvelles motions.`,
+    motionSignificance: 'Cette motion traite de',
+    readFullMotion: 'Lire la motion complète',
+    policyContext: 'Contexte politique',
+    filedBy: 'Déposé par'
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -630,7 +714,19 @@ export const CONTENT_LABELS = {
     referredTo: 'remitida a',
     motionBy: 'Moción de',
     parliamentaryMotion: 'Moción parlamentaria',
-    unknown: 'Desconocido'
+    unknown: 'Desconocido',
+    // Analytical narrative labels
+    reportsOverview: (n) => `Las comisiones del Riksdag sueco han publicado ${n} nuevos informes que reflejan el trabajo legislativo en curso.`,
+    reportSignificance: 'Este informe aborda',
+    readFullReport: 'Leer el informe completo',
+    propsOverview: (n) => `El gobierno ha presentado ${n} nuevas proposiciones al Parlamento.`,
+    propSignificance: 'Esta proposición se refiere a',
+    readFullProp: 'Leer la proposición completa',
+    motionsOverview: (n) => `Diputados de la oposición han presentado ${n} nuevas mociones.`,
+    motionSignificance: 'Esta moción aborda',
+    readFullMotion: 'Leer la moción completa',
+    policyContext: 'Contexto político',
+    filedBy: 'Presentada por'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -664,7 +760,19 @@ export const CONTENT_LABELS = {
     referredTo: 'doorverwezen naar',
     motionBy: 'Motie van',
     parliamentaryMotion: 'Parlementaire motie',
-    unknown: 'Onbekend'
+    unknown: 'Onbekend',
+    // Analytical narrative labels
+    reportsOverview: (n) => `De commissies van de Zweedse Riksdag hebben ${n} nieuwe rapporten gepubliceerd die het lopende wetgevingswerk weerspiegelen.`,
+    reportSignificance: 'Dit rapport behandelt',
+    readFullReport: 'Lees het volledige rapport',
+    propsOverview: (n) => `De regering heeft ${n} nieuwe voorstellen bij het parlement ingediend.`,
+    propSignificance: 'Dit voorstel betreft',
+    readFullProp: 'Lees het volledige voorstel',
+    motionsOverview: (n) => `Oppositieleden hebben ${n} nieuwe moties ingediend.`,
+    motionSignificance: 'Deze motie behandelt',
+    readFullMotion: 'Lees de volledige motie',
+    policyContext: 'Politieke context',
+    filedBy: 'Ingediend door'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -698,7 +806,19 @@ export const CONTENT_LABELS = {
     referredTo: 'محال إلى',
     motionBy: 'اقتراح من',
     parliamentaryMotion: 'اقتراح برلماني',
-    unknown: 'غير معروف'
+    unknown: 'غير معروف',
+    // Analytical narrative labels
+    reportsOverview: (n) => `نشرت لجان البرلمان السويدي ${n} تقارير جديدة تعكس العمل التشريعي الجاري.`,
+    reportSignificance: 'يتناول هذا التقرير',
+    readFullReport: 'قراءة التقرير الكامل',
+    propsOverview: (n) => `قدمت الحكومة ${n} مقترحات جديدة إلى البرلمان.`,
+    propSignificance: 'يتعلق هذا المقترح بـ',
+    readFullProp: 'قراءة المقترح الكامل',
+    motionsOverview: (n) => `قدم أعضاء المعارضة ${n} اقتراحات جديدة.`,
+    motionSignificance: 'يتناول هذا الاقتراح',
+    readFullMotion: 'قراءة الاقتراح الكامل',
+    policyContext: 'السياق السياسي',
+    filedBy: 'مقدم من'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -732,7 +852,19 @@ export const CONTENT_LABELS = {
     referredTo: 'הועבר ל',
     motionBy: 'הצעה של',
     parliamentaryMotion: 'הצעה פרלמנטרית',
-    unknown: 'לא ידוע'
+    unknown: 'לא ידוע',
+    // Analytical narrative labels
+    reportsOverview: (n) => `ועדות הריקסדאג השוודי פרסמו ${n} דוחות חדשים המשקפים עבודת חקיקה שוטפת.`,
+    reportSignificance: 'דוח זה עוסק ב',
+    readFullReport: 'קראו את הדוח המלא',
+    propsOverview: (n) => `הממשלה הגישה ${n} הצעות חדשות לפרלמנט.`,
+    propSignificance: 'הצעה זו נוגעת ל',
+    readFullProp: 'קראו את ההצעה המלאה',
+    motionsOverview: (n) => `חברי אופוזיציה הגישו ${n} הצעות חדשות.`,
+    motionSignificance: 'הצעה זו עוסקת ב',
+    readFullMotion: 'קראו את ההצעה המלאה',
+    policyContext: 'הקשר מדיני',
+    filedBy: 'הוגשה על ידי'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -766,7 +898,19 @@ export const CONTENT_LABELS = {
     referredTo: 'に付託',
     motionBy: '動議提出者',
     parliamentaryMotion: '議会動議',
-    unknown: '不明'
+    unknown: '不明',
+    // Analytical narrative labels
+    reportsOverview: (n) => `スウェーデン国会の委員会が${n}件の新しい報告書を発表し、現在進行中の立法作業を反映しています。`,
+    reportSignificance: 'この報告書は',
+    readFullReport: '報告書全文を読む',
+    propsOverview: (n) => `政府は議会に${n}件の新しい提案を提出しました。`,
+    propSignificance: 'この提案は',
+    readFullProp: '提案全文を読む',
+    motionsOverview: (n) => `野党議員が${n}件の新しい動議を提出しました。`,
+    motionSignificance: 'この動議は',
+    readFullMotion: '動議全文を読む',
+    policyContext: '政策的背景',
+    filedBy: '提出者'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -800,7 +944,19 @@ export const CONTENT_LABELS = {
     referredTo: '에 회부',
     motionBy: '동의 제안자',
     parliamentaryMotion: '의회 동의',
-    unknown: '알 수 없음'
+    unknown: '알 수 없음',
+    // Analytical narrative labels
+    reportsOverview: (n) => `스웨덴 의회 위원회가 진행 중인 입법 작업을 반영하는 ${n}개의 새 보고서를 발표했습니다.`,
+    reportSignificance: '이 보고서는',
+    readFullReport: '전체 보고서 읽기',
+    propsOverview: (n) => `정부가 의회에 ${n}개의 새 법안을 제출했습니다.`,
+    propSignificance: '이 법안은',
+    readFullProp: '전체 법안 읽기',
+    motionsOverview: (n) => `야당 의원들이 ${n}개의 새 동의안을 제출했습니다.`,
+    motionSignificance: '이 동의안은',
+    readFullMotion: '전체 동의안 읽기',
+    policyContext: '정책 맥락',
+    filedBy: '제출자'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -834,7 +990,19 @@ export const CONTENT_LABELS = {
     referredTo: '提交至',
     motionBy: '动议提出者',
     parliamentaryMotion: '议会动议',
-    unknown: '未知'
+    unknown: '未知',
+    // Analytical narrative labels
+    reportsOverview: (n) => `瑞典国会各委员会发布了${n}份新报告，反映了正在进行的立法工作。`,
+    reportSignificance: '该报告涉及',
+    readFullReport: '阅读完整报告',
+    propsOverview: (n) => `政府向议会提交了${n}项新提案。`,
+    propSignificance: '该提案涉及',
+    readFullProp: '阅读完整提案',
+    motionsOverview: (n) => `反对党议员提交了${n}项新动议。`,
+    motionSignificance: '该动议涉及',
+    readFullMotion: '阅读完整动议',
+    policyContext: '政策背景',
+    filedBy: '提交者'
   }
 };
 
@@ -972,7 +1140,39 @@ function generateEnhancedSummary(doc, type, lang) {
 }
 
 /**
- * Generate Committee Reports content
+ * Map Swedish committee codes to full names for richer descriptions
+ */
+const COMMITTEE_NAMES = {
+  AU: { en: 'Labour Market Committee', sv: 'Arbetsmarknadsutskottet' },
+  CU: { en: 'Civil Affairs Committee', sv: 'Civilutskottet' },
+  FiU: { en: 'Finance Committee', sv: 'Finansutskottet' },
+  FöU: { en: 'Defence Committee', sv: 'Försvarsutskottet' },
+  JuU: { en: 'Justice Committee', sv: 'Justitieutskottet' },
+  KU: { en: 'Constitutional Committee', sv: 'Konstitutionsutskottet' },
+  KrU: { en: 'Cultural Affairs Committee', sv: 'Kulturutskottet' },
+  MJU: { en: 'Environment and Agriculture Committee', sv: 'Miljö- och jordbruksutskottet' },
+  NU: { en: 'Industry and Trade Committee', sv: 'Näringsutskottet' },
+  SkU: { en: 'Taxation Committee', sv: 'Skatteutskottet' },
+  SfU: { en: 'Social Insurance Committee', sv: 'Socialförsäkringsutskottet' },
+  SoU: { en: 'Social Committee', sv: 'Socialutskottet' },
+  TU: { en: 'Transport Committee', sv: 'Trafikutskottet' },
+  UbU: { en: 'Education Committee', sv: 'Utbildningsutskottet' },
+  UU: { en: 'Foreign Affairs Committee', sv: 'Utrikesutskottet' },
+};
+
+/**
+ * Get human-readable committee name from code
+ */
+function getCommitteeName(code, lang) {
+  if (!code) return L(lang, 'unknown');
+  const entry = COMMITTEE_NAMES[code];
+  if (!entry) return code;
+  // Use Swedish name for sv, English for all others (other languages get translated via data-translate)
+  return lang === 'sv' ? entry.sv : entry.en;
+}
+
+/**
+ * Generate Committee Reports content with analytical narrative
  */
 function generateCommitteeContent(data, lang) {
   const reports = data.reports || [];
@@ -984,37 +1184,72 @@ function generateCommitteeContent(data, lang) {
     return content;
   }
   
+  // Lede paragraph: overview of committee activity
+  const overviewFn = L(lang, 'reportsOverview');
+  const overviewText = typeof overviewFn === 'function' ? overviewFn(reports.length) : `${reports.length} new committee reports published.`;
+  content += `<p class="article-lede">${escapeHtml(overviewText)}</p>\n`;
+  
+  // Group reports by committee for thematic coherence
+  const byCommittee = {};
   reports.forEach(report => {
-    // Mark Swedish API titles/summaries for LLM translation post-processing
-    // Only wrap in data-translate when content is from Swedish API (titel field)
-    const titleText = report.titel || report.title || '';
-    const escapedTitle = escapeHtml(titleText);
-    const titleHtml = (report.titel && !report.title)
-      ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
-      : escapedTitle;
-    const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
+    const committee = report.organ || report.committee || 'other';
+    if (!byCommittee[committee]) byCommittee[committee] = [];
+    byCommittee[committee].push(report);
+  });
+  
+  // Generate content for each committee group
+  Object.entries(byCommittee).forEach(([committeeCode, committeeReports]) => {
+    const committeeName = getCommitteeName(committeeCode, lang);
     
-    // Use enriched summary, enhanced summary based on metadata, or fallback to default
-    const summaryText = generateEnhancedSummary(report, 'report', lang);
-    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
-    const isFromAPI = report.summary || report.notis;
-    const summaryHtml = (report.titel && !report.title && isFromAPI && summaryText !== L(lang, 'reportDefault')) 
-      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>` 
-      : escapeHtml(summaryText);
+    // Committee section header (only if multiple committees)
+    if (Object.keys(byCommittee).length > 1) {
+      content += `\n    <h3>${escapeHtml(committeeName)}</h3>\n`;
+    }
     
-    content += `
-    <h3>${titleHtml}</h3>
-    <p><strong>${L(lang, 'committee')}:</strong> ${report.organ || report.committee || L(lang, 'unknown')}</p>
-    <p><strong>${L(lang, 'document')}:</strong> <a href="${report.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
-    <p>${summaryHtml}</p>
+    committeeReports.forEach(report => {
+      const titleText = report.titel || report.title || '';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (report.titel && !report.title)
+        ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+        : escapedTitle;
+      const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
+      
+      // Use enriched summary or enhanced summary from metadata
+      const summaryText = generateEnhancedSummary(report, 'report', lang);
+      const isFromAPI = report.summary || report.notis;
+      const summaryHtml = (report.titel && !report.title && isFromAPI && summaryText !== L(lang, 'reportDefault'))
+        ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+        : escapeHtml(summaryText);
+      
+      // Build a narrative paragraph instead of bare fields
+      if (Object.keys(byCommittee).length > 1) {
+        // Sub-item under committee header
+        content += `
+    <div class="report-entry">
+      <h4>${titleHtml}</h4>
+      <p>${escapeHtml(L(lang, 'reportSignificance'))} ${summaryHtml}</p>
+      <p><a href="${report.url}" class="document-link" rel="noopener noreferrer">${escapeHtml(L(lang, 'readFullReport'))}: ${docName}</a></p>
+    </div>
 `;
+      } else {
+        // Single committee - use h3 for each report
+        content += `
+    <div class="report-entry">
+      <h3>${titleHtml}</h3>
+      <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>
+      <p>${escapeHtml(L(lang, 'reportSignificance'))} ${summaryHtml}</p>
+      <p><a href="${report.url}" class="document-link" rel="noopener noreferrer">${escapeHtml(L(lang, 'readFullReport'))}: ${docName}</a></p>
+    </div>
+`;
+      }
+    });
   });
   
   return content;
 }
 
 /**
- * Generate Propositions content
+ * Generate Propositions content with analytical narrative
  */
 function generatePropositionsContent(data, lang) {
   const propositions = data.propositions || [];
@@ -1026,9 +1261,12 @@ function generatePropositionsContent(data, lang) {
     return content;
   }
   
+  // Lede paragraph: overview of government legislative activity
+  const overviewFn = L(lang, 'propsOverview');
+  const overviewText = typeof overviewFn === 'function' ? overviewFn(propositions.length) : `${propositions.length} new government propositions submitted.`;
+  content += `<p class="article-lede">${escapeHtml(overviewText)}</p>\n`;
+  
   propositions.forEach(prop => {
-    // Mark Swedish API titles/summaries for LLM translation post-processing
-    // Only wrap in data-translate when content is from Swedish API (titel field)
     const titleText = prop.titel || prop.title || '';
     const escapedTitle = escapeHtml(titleText);
     const titleHtml = (prop.titel && !prop.title)
@@ -1038,16 +1276,23 @@ function generatePropositionsContent(data, lang) {
     
     // Use enhanced summary based on metadata
     const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
-    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
     const isFromAPI = prop.summary || prop.notis;
     const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== L(lang, 'propDefault'))
       ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
       : escapeHtml(summaryText);
     
+    // Committee the proposition is referred to
+    const referredCommittee = prop.organ || prop.committee;
+    const referredLine = referredCommittee
+      ? `<br><strong>${L(lang, 'referredTo')}:</strong> ${escapeHtml(getCommitteeName(referredCommittee, lang))}`
+      : '';
+    
     content += `
-    <h3>${titleHtml}</h3>
-    <p><strong>${L(lang, 'document')}:</strong> <a href="${prop.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
-    <p>${summaryHtml}</p>
+    <div class="proposition-entry">
+      <h3>${titleHtml}</h3>
+      <p>${escapeHtml(L(lang, 'propSignificance'))} ${summaryHtml}${referredLine}</p>
+      <p><a href="${prop.url}" class="document-link" rel="noopener noreferrer">${escapeHtml(L(lang, 'readFullProp'))}: ${docName}</a></p>
+    </div>
 `;
   });
   
@@ -1055,7 +1300,7 @@ function generatePropositionsContent(data, lang) {
 }
 
 /**
- * Generate Motions content
+ * Generate Motions content with analytical narrative
  */
 function generateMotionsContent(data, lang) {
   const motions = data.motions || [];
@@ -1067,9 +1312,12 @@ function generateMotionsContent(data, lang) {
     return content;
   }
   
+  // Lede paragraph: overview of opposition activity
+  const overviewFn = L(lang, 'motionsOverview');
+  const overviewText = typeof overviewFn === 'function' ? overviewFn(motions.length) : `${motions.length} new opposition motions filed.`;
+  content += `<p class="article-lede">${escapeHtml(overviewText)}</p>\n`;
+  
   motions.forEach(motion => {
-    // Mark Swedish API titles/summaries for LLM translation post-processing
-    // Only wrap in data-translate when content is from Swedish API (titel field)
     const titleText = motion.titel || motion.title || '';
     const escapedTitle = escapeHtml(titleText);
     const titleHtml = (motion.titel && !motion.title)
@@ -1077,24 +1325,27 @@ function generateMotionsContent(data, lang) {
       : escapedTitle;
     const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
     
-    // Use enriched author and party data from document fetching
+    // Use enriched author and party data
     const authorName = motion.intressent_namn || motion.author || L(lang, 'unknown');
-    const partyName = motion.parti || L(lang, 'unknown');
+    const partyName = motion.parti || '';
+    const authorLine = partyName
+      ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
+      : escapeHtml(authorName);
     
     // Use enhanced summary based on metadata
     const summaryText = generateEnhancedSummary(motion, 'motion', lang);
-    // Only wrap in data-translate if it's from Swedish API (has summary or notis fields)
     const isFromAPI = motion.summary || motion.notis;
     const summaryHtml = (motion.titel && !motion.title && isFromAPI && summaryText !== L(lang, 'motionDefault'))
       ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
       : escapeHtml(summaryText);
     
     content += `
-    <h3>${titleHtml}</h3>
-    <p><strong>${L(lang, 'author')}:</strong> ${authorName}</p>
-    <p><strong>${L(lang, 'party')}:</strong> ${partyName}</p>
-    <p><strong>${L(lang, 'document')}:</strong> <a href="${motion.url}" class="document-link" rel="noopener noreferrer">${docName}</a></p>
-    <p>${summaryHtml}</p>
+    <div class="motion-entry">
+      <h3>${titleHtml}</h3>
+      <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
+      <p>${escapeHtml(L(lang, 'motionSignificance'))} ${summaryHtml}</p>
+      <p><a href="${motion.url}" class="document-link" rel="noopener noreferrer">${escapeHtml(L(lang, 'readFullMotion'))}: ${docName}</a></p>
+    </div>
 `;
   });
   

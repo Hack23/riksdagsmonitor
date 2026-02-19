@@ -46,7 +46,11 @@ export const TRANSLATIONS = {
   en: {
     loadingData: 'Loading CIA intelligence data...',
     noDataAvailable: 'No data available',
+    noDataDescription: 'Data for this visualization is currently unavailable. Please check back later.',
     errorLoadingData: 'Error loading data. Please try again.',
+    errorTitle: 'Something went wrong',
+    errorPersists: 'If this problem persists,',
+    contactSupport: 'contact support',
     retryButton: 'Retry',
     lastUpdated: 'Last updated',
     parties: {
@@ -77,7 +81,11 @@ export const TRANSLATIONS = {
   sv: {
     loadingData: 'Laddar CIA underrättelsedata...',
     noDataAvailable: 'Ingen data tillgänglig',
+    noDataDescription: 'Data för denna visualisering är för närvarande inte tillgänglig. Försök igen senare.',
     errorLoadingData: 'Fel vid inläsning av data. Försök igen.',
+    errorTitle: 'Något gick fel',
+    errorPersists: 'Om problemet kvarstår,',
+    contactSupport: 'kontakta support',
     retryButton: 'Försök igen',
     lastUpdated: 'Senast uppdaterad',
     parties: {
@@ -108,7 +116,11 @@ export const TRANSLATIONS = {
   da: {
     loadingData: 'Indlæser CIA efterretningsdata...',
     noDataAvailable: 'Ingen tilgængelige data',
+    noDataDescription: 'Data til denne visualisering er i øjeblikket ikke tilgængelig. Prøv igen senere.',
     errorLoadingData: 'Fejl ved indlæsning af data. Prøv igen.',
+    errorTitle: 'Noget gik galt',
+    errorPersists: 'Hvis problemet fortsætter,',
+    contactSupport: 'kontakt support',
     retryButton: 'Prøv igen',
     lastUpdated: 'Sidst opdateret',
     parties: {
@@ -139,7 +151,11 @@ export const TRANSLATIONS = {
   no: {
     loadingData: 'Laster CIA etterretningsdata...',
     noDataAvailable: 'Ingen tilgjengelige data',
+    noDataDescription: 'Data for denne visualiseringen er for øyeblikket ikke tilgjengelig. Prøv igjen senere.',
     errorLoadingData: 'Feil ved lasting av data. Prøv igjen.',
+    errorTitle: 'Noe gikk galt',
+    errorPersists: 'Hvis problemet vedvarer,',
+    contactSupport: 'kontakt support',
     retryButton: 'Prøv igjen',
     lastUpdated: 'Sist oppdatert',
     parties: {
@@ -170,7 +186,11 @@ export const TRANSLATIONS = {
   fi: {
     loadingData: 'Ladataan CIA-tiedustelutietoja...',
     noDataAvailable: 'Ei saatavilla olevia tietoja',
+    noDataDescription: 'Tämän visualisoinnin tiedot eivät ole tällä hetkellä saatavilla. Yritä myöhemmin uudelleen.',
     errorLoadingData: 'Virhe tietojen latauksessa. Yritä uudelleen.',
+    errorTitle: 'Jotain meni pieleen',
+    errorPersists: 'Jos ongelma jatkuu,',
+    contactSupport: 'ota yhteyttä tukeen',
     retryButton: 'Yritä uudelleen',
     lastUpdated: 'Viimeksi päivitetty',
     parties: {
@@ -201,7 +221,11 @@ export const TRANSLATIONS = {
   de: {
     loadingData: 'CIA-Geheimdienstdaten werden geladen...',
     noDataAvailable: 'Keine Daten verfügbar',
+    noDataDescription: 'Daten für diese Visualisierung sind derzeit nicht verfügbar. Bitte versuchen Sie es später erneut.',
     errorLoadingData: 'Fehler beim Laden der Daten. Bitte versuchen Sie es erneut.',
+    errorTitle: 'Etwas ist schiefgelaufen',
+    errorPersists: 'Wenn das Problem weiterhin besteht,',
+    contactSupport: 'Support kontaktieren',
     retryButton: 'Erneut versuchen',
     lastUpdated: 'Zuletzt aktualisiert',
     parties: {
@@ -232,7 +256,11 @@ export const TRANSLATIONS = {
   fr: {
     loadingData: 'Chargement des données de renseignement CIA...',
     noDataAvailable: 'Aucune donnée disponible',
+    noDataDescription: 'Les données pour cette visualisation sont actuellement indisponibles. Veuillez réessayer plus tard.',
     errorLoadingData: 'Erreur lors du chargement des données. Veuillez réessayer.',
+    errorTitle: 'Quelque chose s\'est mal passé',
+    errorPersists: 'Si ce problème persiste,',
+    contactSupport: 'contacter le support',
     retryButton: 'Réessayer',
     lastUpdated: 'Dernière mise à jour',
     parties: {
@@ -263,7 +291,11 @@ export const TRANSLATIONS = {
   es: {
     loadingData: 'Cargando datos de inteligencia CIA...',
     noDataAvailable: 'No hay datos disponibles',
+    noDataDescription: 'Los datos para esta visualización no están disponibles en este momento. Por favor, inténtelo más tarde.',
     errorLoadingData: 'Error al cargar datos. Por favor, inténtelo de nuevo.',
+    errorTitle: 'Algo salió mal',
+    errorPersists: 'Si este problema persiste,',
+    contactSupport: 'contactar soporte',
     retryButton: 'Reintentar',
     lastUpdated: 'Última actualización',
     parties: {
@@ -294,7 +326,11 @@ export const TRANSLATIONS = {
   nl: {
     loadingData: 'CIA inlichtingengegevens laden...',
     noDataAvailable: 'Geen gegevens beschikbaar',
+    noDataDescription: 'Gegevens voor deze visualisatie zijn momenteel niet beschikbaar. Probeer het later opnieuw.',
     errorLoadingData: 'Fout bij het laden van gegevens. Probeer het opnieuw.',
+    errorTitle: 'Er ging iets mis',
+    errorPersists: 'Als dit probleem aanhoudt,',
+    contactSupport: 'neem contact op met ondersteuning',
     retryButton: 'Opnieuw proberen',
     lastUpdated: 'Laatst bijgewerkt',
     parties: {
@@ -325,7 +361,11 @@ export const TRANSLATIONS = {
   ar: {
     loadingData: 'جاري تحميل بيانات استخبارات CIA...',
     noDataAvailable: 'لا توجد بيانات متاحة',
+    noDataDescription: 'البيانات الخاصة بهذا التصور غير متاحة حالياً. يرجى المحاولة مرة أخرى لاحقاً.',
     errorLoadingData: 'خطأ في تحميل البيانات. يرجى المحاولة مرة أخرى.',
+    errorTitle: 'حدث خطأ ما',
+    errorPersists: 'إذا استمرت هذه المشكلة،',
+    contactSupport: 'اتصل بالدعم',
     retryButton: 'إعادة المحاولة',
     lastUpdated: 'آخر تحديث',
     parties: {
@@ -356,7 +396,11 @@ export const TRANSLATIONS = {
   he: {
     loadingData: 'טוען נתוני מודיעין CIA...',
     noDataAvailable: 'אין נתונים זמינים',
+    noDataDescription: 'הנתונים עבור המחשה זו אינם זמינים כרגע. אנא נסה שוב מאוחר יותר.',
     errorLoadingData: 'שגיאה בטעינת נתונים. אנא נסה שנית.',
+    errorTitle: 'משהו השתבש',
+    errorPersists: 'אם הבעיה ממשיכה,',
+    contactSupport: 'צור קשר עם התמיכה',
     retryButton: 'נסה שוב',
     lastUpdated: 'עודכן לאחרונה',
     parties: {
@@ -387,7 +431,11 @@ export const TRANSLATIONS = {
   ja: {
     loadingData: 'CIA情報データを読み込んでいます...',
     noDataAvailable: '利用可能なデータがありません',
+    noDataDescription: 'この視覚化のデータは現在利用できません。後でもう一度お試しください。',
     errorLoadingData: 'データの読み込みエラーです。もう一度お試しください。',
+    errorTitle: '問題が発生しました',
+    errorPersists: 'この問題が続く場合は、',
+    contactSupport: 'サポートに連絡',
     retryButton: '再試行',
     lastUpdated: '最終更新',
     parties: {
@@ -418,7 +466,11 @@ export const TRANSLATIONS = {
   ko: {
     loadingData: 'CIA 정보 데이터를 불러오는 중...',
     noDataAvailable: '사용 가능한 데이터가 없습니다',
+    noDataDescription: '이 시각화에 대한 데이터는 현재 사용할 수 없습니다. 나중에 다시 확인하십시오.',
     errorLoadingData: '데이터 로드 중 오류가 발생했습니다. 다시 시도해 주세요.',
+    errorTitle: '문제가 발생했습니다',
+    errorPersists: '이 문제가 지속되면,',
+    contactSupport: '지원 팀에 문의',
     retryButton: '다시 시도',
     lastUpdated: '마지막 업데이트',
     parties: {
@@ -449,7 +501,11 @@ export const TRANSLATIONS = {
   zh: {
     loadingData: '正在加载CIA情报数据...',
     noDataAvailable: '无可用数据',
+    noDataDescription: '此可视化的数据目前不可用。请稍后再试。',
     errorLoadingData: '加载数据时出错。请重试。',
+    errorTitle: '出现问题',
+    errorPersists: '如果此问题持续存在，',
+    contactSupport: '联系支持',
     retryButton: '重试',
     lastUpdated: '最后更新',
     parties: {
