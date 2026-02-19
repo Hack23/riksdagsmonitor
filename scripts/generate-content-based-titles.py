@@ -23,6 +23,7 @@ Usage:
 import os
 import re
 import sys
+import json
 from pathlib import Path
 from typing import Dict, List, Tuple, Set
 from collections import Counter
@@ -77,10 +78,19 @@ class TitleGenerator:
         'language requirement', 'language'
     ]
     
-    def __init__(self, news_dir: str = '/home/runner/work/riksdagsmonitor/riksdagsmonitor/news'):
-        self.news_dir = Path(news_dir)
+    def __init__(self, news_dir: str = None):
+        """Initialize TitleGenerator with news directory path.
+        
+        Args:
+            news_dir: Path to news directory. If None, uses Path('news') relative to current directory.
+        """
+        if news_dir is None:
+            self.news_dir = Path('news')
+        else:
+            self.news_dir = Path(news_dir)
         self.used_titles: Set[str] = set()
         self.title_mapping: Dict[str, Dict[str, str]] = {}
+        self.english_only: bool = True  # Safe default: only update English articles
     
     def extract_document_titles(self, html_content: str) -> List[str]:
         """Extract all h3 document titles from article"""
@@ -369,26 +379,28 @@ class TitleGenerator:
                 count=1
             )
             
-            # 7. Update Schema.org NewsArticle headline
+            # 7. Update Schema.org NewsArticle headline (use json.dumps for safe escaping)
+            safe_title = json.dumps(new_title)[1:-1]  # Remove quotes from json.dumps output
             content = re.sub(
-                r'"headline":\s*".*?"',
-                f'"headline": "{new_title.replace('"', '\\"')}"',
+                r'"headline":\s*"[^"]*"',
+                f'"headline": "{safe_title}"',
                 content,
                 count=1
             )
             
             # 8. Update Schema.org alternativeHeadline
+            safe_description = json.dumps(new_description)[1:-1]
             content = re.sub(
-                r'"alternativeHeadline":\s*".*?"',
-                f'"alternativeHeadline": "{new_description.replace('"', '\\"')}"',
+                r'"alternativeHeadline":\s*"[^"]*"',
+                f'"alternativeHeadline": "{safe_description}"',
                 content,
                 count=1
             )
             
             # 9. Update Schema.org description
             content = re.sub(
-                r'("@type":\s*"NewsArticle".*?"description":\s*)".*?"',
-                f'\\1"{new_description.replace('"', '\\"')}"',
+                r'("@type":\s*"NewsArticle".*?"description":\s*)"[^"]*"',
+                f'\\1"{safe_description}"',
                 content,
                 count=1,
                 flags=re.DOTALL
@@ -396,8 +408,8 @@ class TitleGenerator:
             
             # 10. Update BreadcrumbList position 3 name (use full title for consistency)
             content = re.sub(
-                r'("position":\s*3,\s*"name":\s*)".*?"',
-                f'\\1"{new_title.replace('"', '\\"')}"',
+                r'("position":\s*3,\s*"name":\s*)"[^"]*"',
+                f'\\1"{safe_title}"',
                 content,
                 count=1
             )
@@ -438,9 +450,21 @@ class TitleGenerator:
     
     def translate_text(self, text: str, target_lang: str, context: str = "title") -> str:
         """
-        Translate text to target language.
-        Uses simple translation patterns for Swedish and keeps English for others.
-        Note: In production, integrate with Azure Translator API or Google Cloud Translation.
+        Translate text to target language using comprehensive translation dictionaries.
+        
+        Supports 13 non-English languages: Swedish, Danish, Norwegian, Finnish, German,
+        French, Spanish, Dutch, Arabic, Hebrew, Japanese, Korean, and Chinese.
+        
+        Args:
+            text: English text to translate
+            target_lang: Two-letter language code (sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh)
+            context: Translation context ("title" or "description")
+            
+        Returns:
+            Translated text or English if target_lang is 'en' or translation not available
+            
+        Note: Uses pattern-based translation with comprehensive dictionaries (30-44 terms per language).
+              For production use with unknown text, integrate Azure Translator API or Google Cloud Translation.
         """
         
         # Language name mapping
@@ -860,6 +884,10 @@ class TitleGenerator:
         if self.update_article_metadata(en_file, en_title, en_description, dry_run):
             updated_count += 1
         
+        # Skip non-English translations if english_only mode is enabled
+        if self.english_only:
+            return updated_count
+        
         # Translate and update other language versions
         for lang in self.LANGUAGES:
             if lang == 'en':
@@ -931,8 +959,45 @@ class TitleGenerator:
 
 def main():
     """Main entry point"""
+    import argparse
     
-    dry_run = '--dry-run' in sys.argv or '-n' in sys.argv
+    parser = argparse.ArgumentParser(
+        description='Generate content-based titles and metadata for news articles',
+        epilog='''
+WARNING: This script can overwrite existing titles/metadata!
+         Use --dry-run first to preview changes.
+         Use --english-only to update only English articles (safe default).
+         Use --overwrite-translations with caution - may destroy professional translations!
+        '''
+    )
+    parser.add_argument('--dry-run', '-n', action='store_true',
+                        help='Preview changes without writing to files')
+    parser.add_argument('--english-only', action='store_true', default=False,
+                        help='Only update English articles (safe, default behavior)')
+    parser.add_argument('--overwrite-translations', action='store_true', default=False,
+                        help='DANGEROUS: Overwrite non-English articles. May destroy professional translations!')
+    
+    args = parser.parse_args()
+    
+    # Safety check
+    if not args.english_only and not args.overwrite_translations:
+        print("\n⚠️  WARNING: No language scope specified!")
+        print("   Using --english-only as safe default.")
+        print("   To update all languages, use --overwrite-translations (DANGEROUS!)")
+        args.english_only = True
+    
+    if args.overwrite_translations and not args.dry_run:
+        print("\n" + "="*70)
+        print("  ⚠️  DANGER: --overwrite-translations MODE")
+        print("="*70)
+        print("  This will overwrite ALL language versions including professional")
+        print("  human translations. This mode should ONLY be used on new articles")
+        print("  that don't have professional translations yet.")
+        print()
+        response = input("  Type 'YES' to continue or anything else to abort: ")
+        if response != 'YES':
+            print("\n  Aborted. No files were modified.")
+            return
     
     print("=" * 70)
     print("  Content-Based Title and Metadata Generator")
@@ -940,7 +1005,8 @@ def main():
     print("=" * 70)
     
     generator = TitleGenerator()
-    stats = generator.process_all_articles(dry_run=dry_run)
+    generator.english_only = args.english_only
+    stats = generator.process_all_articles(dry_run=args.dry_run)
     
     print("\n" + "=" * 70)
     print("  Summary")
@@ -950,6 +1016,7 @@ def main():
     print(f"  Opposition Motions:       {stats['opposition-motions']} articles")
     print(f"  Total files updated:      {stats['total']} files")
     print(f"  Unique titles generated:  {len(generator.used_titles)}")
+    print(f"  Mode:                     {'English only' if args.english_only else 'All languages'}")
     
     # Check for duplicates (should be zero)
     if len(generator.used_titles) != len(set(generator.used_titles)):
@@ -957,7 +1024,7 @@ def main():
     else:
         print("\n  ✅ All titles are unique!")
     
-    if dry_run:
+    if args.dry_run:
         print("\n  ℹ️  This was a dry run. No files were modified.")
         print("     Run without --dry-run to apply changes.")
     

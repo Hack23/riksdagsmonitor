@@ -22,9 +22,18 @@ from pathlib import Path
 class DescriptionFixer:
     """Fix mixed-language descriptions while preserving professional titles."""
     
-    def __init__(self, dry_run=False):
+    def __init__(self, dry_run=False, news_dir=None):
+        """Initialize DescriptionFixer.
+        
+        Args:
+            dry_run: If True, only preview changes without writing
+            news_dir: Path to news directory. If None, uses Path('news') relative to current directory.
+        """
         self.dry_run = dry_run
-        self.news_dir = Path('/home/runner/work/riksdagsmonitor/riksdagsmonitor/news')
+        if news_dir is None:
+            self.news_dir = Path('news')
+        else:
+            self.news_dir = Path(news_dir)
         self.stats = {'processed': 0, 'updated': 0, 'skipped': 0, 'errors': 0}
         
     def translate_description(self, text, target_lang):
