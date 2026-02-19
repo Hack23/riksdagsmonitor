@@ -524,14 +524,43 @@ function translateFile(sourceFile, outputDir, targetLang) {
   );
   
   // Update Schema.org JSON-LD description (only in NewsArticle block)
-  const newsArticleStart = translated.indexOf('"@type": "NewsArticle"');
-  if (newsArticleStart !== -1) {
-    const descStart = translated.indexOf('"description":', newsArticleStart);
-    if (descStart !== -1) {
-      const descValueStart = translated.indexOf('"', descStart + 14) + 1;
-      const descValueEnd = translated.indexOf('"', descValueStart);
-      if (descValueEnd !== -1 && descValueEnd < translated.indexOf('"@type":', newsArticleStart + 100)) {
-        translated = translated.substring(0, descValueStart) + trans.description + translated.substring(descValueEnd);
+  const newsArticleTypeIndex = translated.indexOf('"@type": "NewsArticle"');
+  if (newsArticleTypeIndex !== -1) {
+    // Find the start of the NewsArticle object by locating the nearest opening brace before "@type"
+    const newsArticleObjectStart = translated.lastIndexOf('{', newsArticleTypeIndex);
+    if (newsArticleObjectStart !== -1) {
+      // Find the end of the NewsArticle object by counting braces
+      let depth = 0;
+      let newsArticleObjectEnd = -1;
+      for (let i = newsArticleObjectStart; i < translated.length; i++) {
+        const ch = translated[i];
+        if (ch === '{') {
+          depth++;
+        } else if (ch === '}') {
+          depth--;
+          if (depth === 0) {
+            newsArticleObjectEnd = i;
+            break;
+          }
+        }
+      }
+
+      if (newsArticleObjectEnd !== -1) {
+        const descStart = translated.indexOf('"description":', newsArticleTypeIndex);
+        if (descStart !== -1 && descStart < newsArticleObjectEnd) {
+          const descriptionKey = '"description":';
+          const firstQuoteIndex = translated.indexOf('"', descStart + descriptionKey.length);
+          if (firstQuoteIndex !== -1 && firstQuoteIndex < newsArticleObjectEnd) {
+            const descValueStart = firstQuoteIndex + 1;
+            const descValueEnd = translated.indexOf('"', descValueStart);
+            if (descValueEnd !== -1 && descValueEnd <= newsArticleObjectEnd) {
+              translated =
+                translated.substring(0, descValueStart) +
+                trans.description +
+                translated.substring(descValueEnd);
+            }
+          }
+        }
       }
     }
   }
