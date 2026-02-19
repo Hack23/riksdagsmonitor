@@ -5,11 +5,11 @@
  * Validates WCAG 2.1 AA compliance including color contrast, ARIA labels,
  * keyboard navigation, and focus indicators.
  *
+ * Note: cypress-axe is globally imported via cypress/support/e2e.js.
+ *
  * @author Hack23 AB
  * @license Apache-2.0
  */
-
-import 'cypress-axe';
 
 const dashboards = [
   'party-dashboard',

@@ -35,6 +35,8 @@ export default defineConfig({
   // Shared settings for all projects below
   use: {
     // Base URL to use in actions like `await page.goto('/')`
+    // Matches Vite's preview server default port (4173).
+    // Override with PLAYWRIGHT_BASE_URL env var if the port is unavailable.
     baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:4173',
 
     // Collect trace when retrying the failed test

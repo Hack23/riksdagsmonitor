@@ -14,8 +14,9 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 
 // Performance threshold constants
-const RENDER_THRESHOLD_MS = 500;
-const DOM_SETUP_THRESHOLD_MS = 100;
+// Can be overridden via environment variables for CI/local tuning
+const RENDER_THRESHOLD_MS = Number(process.env.PERF_RENDER_THRESHOLD_MS) || 500;
+const DOM_SETUP_THRESHOLD_MS = Number(process.env.PERF_DOM_SETUP_THRESHOLD_MS) || 100;
 const MOCK_MP_COUNT = 349;
 const MOCK_RULE_COUNT = 45;
 
