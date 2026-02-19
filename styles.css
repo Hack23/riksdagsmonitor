@@ -3240,6 +3240,13 @@ footer {
   100% { left: 100%; }
 }
 
+/* Disable dashboard CTA shimmer animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-cta::before {
+    animation: none;
+  }
+}
+
 .dashboard-cta-heading {
   font-family: var(--font-heading, 'Orbitron', sans-serif);
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
@@ -3362,6 +3369,13 @@ footer {
 @keyframes news-cta-shimmer {
   0% { left: -100%; }
   100% { left: 100%; }
+}
+
+/* Disable news navigation shimmer animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .news-navigation::before {
+    animation: none;
+  }
 }
 
 .news-navigation-heading {
