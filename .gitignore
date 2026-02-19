@@ -17,8 +17,8 @@ htmlhint-report.txt
 internal-links-report.json
 external-links-report.json
 
-# Test coverage (generated during development, committed during release)
-
+# Test coverage (generated artifacts - not committed to source control)
+coverage/
 .nyc_output/
 
 # Cypress
