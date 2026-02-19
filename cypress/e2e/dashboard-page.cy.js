@@ -56,16 +56,14 @@ describe('Dashboard Page - Main English Version', () => {
   });
   
   it('should have CIA data visualization containers', () => {
-    // Check for common dashboard chart/visualization containers
-    cy.get('body').then(($body) => {
-      const bodyHtml = $body.html();
-      
-      // Look for typical dashboard elements
-      const hasCharts = bodyHtml.includes('canvas') || bodyHtml.includes('chart');
-      const hasVisualizations = bodyHtml.includes('dashboard') || bodyHtml.includes('visualization');
-      
-      expect(hasCharts || hasVisualizations).to.be.true;
-    });
+    // Dashboard page initially shows loading state, then dashboard-content
+    // We should wait for content to be visible or just check it exists in DOM
+    cy.get('#loading-state').should('exist');
+    
+    // Key sections should exist in the DOM (even if hidden initially)
+    cy.get('#key-metrics').should('exist');
+    cy.get('#party-performance').should('exist');
+    cy.get('#election-forecast').should('exist');
   });
   
   it('should be responsive on mobile', () => {
@@ -242,16 +240,9 @@ describe('Dashboard Page - Navigation', () => {
   it('should support language switching on dashboard page', () => {
     cy.visit('/dashboard/');
     
-    // Try to switch to Swedish version
-    cy.get('body').then(($body) => {
-      const svLink = $body.find('a[href*="index_sv.html"]');
-      if (svLink.length > 0) {
-        cy.get('a[href*="index_sv.html"]').first().click();
-        cy.url().should('include', 'index_sv.html');
-      } else {
-        cy.log('Swedish language link not found - skipping language switch test');
-      }
-    });
+    // Dashboard page has hreflang links in head, not clickable language switcher
+    // Verify hreflang links exist for Swedish
+    cy.get('link[rel="alternate"][hreflang="sv"]').should('exist');
   });
 });
 
