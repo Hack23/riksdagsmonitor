@@ -1,0 +1,309 @@
+name: Nightly News Generation
+
+# Runs at 02:00 CET winter (01:00 UTC) / 03:00 CEST summer (01:00 UTC year-round).
+# The cron uses 01:00 UTC so parliamentary data is available every morning.
+# Manual trigger is always available for on-demand generation or testing.
+on:
+  schedule:
+    - cron: '0 1 * * *'  # 02:00 CET (01:00 UTC) daily
+  workflow_dispatch:
+    inputs:
+      article_types:
+        description: 'Article types to generate (propositions,motions,committee-reports,week-ahead). Leave empty for full run.'
+        required: false
+        type: string
+        default: ''
+      languages:
+        description: 'Languages to generate (all | nordic | eu-core | comma-separated codes)'
+        required: false
+        type: string
+        default: 'all'
+      threshold:
+        description: 'Minimum new documents required to generate an article type (default: 5)'
+        required: false
+        type: string
+        default: '5'
+      lookback_hours:
+        description: 'Hours to look back for new documents (default: 24)'
+        required: false
+        type: string
+        default: '24'
+      force_generate:
+        description: 'Force generation even if threshold is not met'
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: 'Dry run – discover documents and log what would be generated without writing files'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: nightly-news-generation
+  cancel-in-progress: false
+
+jobs:
+  generate-news:
+    name: Generate Daily News Articles
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            raw.githubusercontent.com:443
+            registry.npmjs.org:443
+            objects.githubusercontent.com:443
+            riksdag-regering-ai.onrender.com:443
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Build script arguments
+        id: build_args
+        run: |
+          ARGS=""
+
+          # Languages
+          LANGUAGES="${{ github.event.inputs.languages || 'all' }}"
+          ARGS="$ARGS --languages=$LANGUAGES"
+
+          # Threshold
+          THRESHOLD="${{ github.event.inputs.threshold || '5' }}"
+          ARGS="$ARGS --threshold=$THRESHOLD"
+
+          # Lookback hours
+          LOOKBACK="${{ github.event.inputs.lookback_hours || '24' }}"
+          ARGS="$ARGS --lookback-hours=$LOOKBACK"
+
+          # Force generate
+          if [ "${{ github.event.inputs.force_generate }}" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+
+          # Dry run
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+
+          echo "script_args=$ARGS" >> $GITHUB_OUTPUT
+          echo "📋 Script arguments: $ARGS"
+
+      - name: Run daily news generation
+        id: generate
+        env:
+          MCP_SERVER_URL: ${{ vars.MCP_SERVER_URL || 'https://riksdag-regering-ai.onrender.com/mcp' }}
+          MCP_AUTH_TOKEN: ${{ secrets.MCP_AUTH_TOKEN }}
+          MCP_CLIENT_TIMEOUT_MS: '90000'
+        run: |
+          echo "📰 Starting nightly news generation..."
+          echo "⏰ Timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          echo ""
+
+          node scripts/generate-daily-news.js ${{ steps.build_args.outputs.script_args }}
+          EXIT_CODE=$?
+
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          echo "generation_date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
+          echo "generation_ts=$(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> $GITHUB_OUTPUT
+
+          if [ $EXIT_CODE -eq 0 ]; then
+            echo "✅ News generation completed successfully"
+          else
+            echo "⚠️ News generation completed with errors (exit code $EXIT_CODE)"
+          fi
+
+          # Don't fail the step on generation errors – status is surfaced in the PR body
+          exit 0
+
+      - name: Read generation status
+        id: read_status
+        if: always()
+        run: |
+          STATUS_FILE="news/metadata/daily-generation-status.json"
+          if [ -f "$STATUS_FILE" ]; then
+            TOTAL=$(jq -r '.totalArticles // 0' "$STATUS_FILE")
+            ERRORS=$(jq -r '.errors // 0' "$STATUS_FILE")
+            TYPES=$(jq -r '.typesGenerated | join(", ")' "$STATUS_FILE" 2>/dev/null || echo "none")
+            COUNTS=$(jq -r '.documentCounts | to_entries | map("\(.key): \(.value)") | join(", ")' "$STATUS_FILE" 2>/dev/null || echo "")
+            STATUS=$(jq -r '.status' "$STATUS_FILE" 2>/dev/null || echo "unknown")
+
+            echo "total_articles=$TOTAL"   >> $GITHUB_OUTPUT
+            echo "total_errors=$ERRORS"    >> $GITHUB_OUTPUT
+            echo "types_generated=$TYPES"  >> $GITHUB_OUTPUT
+            echo "doc_counts=$COUNTS"      >> $GITHUB_OUTPUT
+            echo "pipeline_status=$STATUS" >> $GITHUB_OUTPUT
+
+            echo "📊 Generation status: $STATUS"
+            echo "📝 Articles generated: $TOTAL"
+            echo "📄 Document counts: $COUNTS"
+          else
+            echo "total_articles=0"        >> $GITHUB_OUTPUT
+            echo "total_errors=0"          >> $GITHUB_OUTPUT
+            echo "types_generated=none"    >> $GITHUB_OUTPUT
+            echo "doc_counts="             >> $GITHUB_OUTPUT
+            echo "pipeline_status=unknown" >> $GITHUB_OUTPUT
+            echo "⚠️ Status file not found"
+          fi
+
+      - name: Upload generation artifacts
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: daily-news-generation-${{ steps.generate.outputs.generation_date }}
+          path: |
+            news/metadata/daily-generation-status.json
+            news/metadata/last-generation.json
+            news/metadata/generation-result.json
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Check for new articles
+        id: check_changes
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          # Check for new article files
+          git status --short news/ | grep -E "^\?\?" | wc -l > /tmp/new_files_count || true
+          NEW_FILES=$(cat /tmp/new_files_count 2>/dev/null || echo "0")
+          NEW_FILES=$(echo "$NEW_FILES" | tr -d '[:space:]')
+
+          # Check for modified index files
+          git status --short | grep -E "^\?\?|^ M" | wc -l > /tmp/changed_count || true
+          CHANGED=$(cat /tmp/changed_count 2>/dev/null || echo "0")
+          CHANGED=$(echo "$CHANGED" | tr -d '[:space:]')
+
+          echo "new_files=$NEW_FILES"   >> $GITHUB_OUTPUT
+          echo "has_changes=$( [ "$CHANGED" -gt "0" ] && echo "true" || echo "false" )" >> $GITHUB_OUTPUT
+
+          echo "📂 New article files:  $NEW_FILES"
+          echo "📝 Changed files total: $CHANGED"
+
+          git status --short | head -20 || true
+
+      - name: Create pull request with generated articles
+        if: |
+          github.event.inputs.dry_run != 'true' &&
+          steps.read_status.outputs.total_articles != '0'
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            news: nightly generation ${{ steps.generate.outputs.generation_date }}
+
+            Generated ${{ steps.read_status.outputs.total_articles }} articles
+            Types: ${{ steps.read_status.outputs.types_generated }}
+          title: '📰 Nightly News – ${{ steps.generate.outputs.generation_date }}'
+          body: |
+            ## 📰 Automated Nightly News Generation
+
+            This PR contains news articles automatically generated from Swedish Riksdag and Government data.
+
+            ### 📊 Generation Summary
+
+            | Metric | Value |
+            |--------|-------|
+            | **Date** | ${{ steps.generate.outputs.generation_date }} |
+            | **Articles generated** | ${{ steps.read_status.outputs.total_articles }} |
+            | **Errors** | ${{ steps.read_status.outputs.total_errors }} |
+            | **Pipeline status** | ${{ steps.read_status.outputs.pipeline_status }} |
+            | **Types** | ${{ steps.read_status.outputs.types_generated }} |
+            | **Languages** | ${{ github.event.inputs.languages || 'all' }} |
+            | **Timestamp** | ${{ steps.generate.outputs.generation_ts }} |
+
+            ### 📄 Document Discovery
+
+            New documents found in the last ${{ github.event.inputs.lookback_hours || '24' }} hours:
+            `${{ steps.read_status.outputs.doc_counts }}`
+
+            ### 📋 Article Types Generated
+
+            ${{ steps.read_status.outputs.types_generated }}
+
+            ### ✅ Quality Checks
+
+            - [x] Articles generated from official Riksdag/Government API
+            - [x] Multi-language index pages updated
+            - [x] Sitemap.xml regenerated
+            - [ ] Manual review recommended before merge
+
+            ### 🔧 Generation Configuration
+
+            - **Threshold**: ${{ github.event.inputs.threshold || '5' }} documents required per type
+            - **Lookback**: ${{ github.event.inputs.lookback_hours || '24' }} hours
+            - **Force**: ${{ github.event.inputs.force_generate || 'false' }}
+
+            ### 🔗 References
+
+            - Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            - Data source: [riksdag-regering-mcp](https://riksdag-regering-ai.onrender.com/mcp)
+
+            ---
+            *This PR was automatically created by the nightly news generation workflow.*
+          branch: 'news/nightly-${{ steps.generate.outputs.generation_date }}-${{ github.run_number }}'
+          delete-branch: true
+          labels: |
+            automated-pipeline
+            news-article
+            nightly-generation
+          add-paths: |
+            news/
+
+      - name: Generate workflow summary
+        if: always()
+        run: |
+          echo "## 📰 Nightly News Generation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| **Date** | ${{ steps.generate.outputs.generation_date }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Articles** | ${{ steps.read_status.outputs.total_articles }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Errors** | ${{ steps.read_status.outputs.total_errors }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Status** | ${{ steps.read_status.outputs.pipeline_status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Types** | ${{ steps.read_status.outputs.types_generated }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Languages** | ${{ github.event.inputs.languages || 'all' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Document Counts" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "\`${{ steps.read_status.outputs.doc_counts }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.read_status.outputs.total_articles }}" = "0" ]; then
+            echo "### ℹ️ No Articles Generated" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "No document types met the threshold of ${{ github.event.inputs.threshold || '5' }} new documents." >> $GITHUB_STEP_SUMMARY
+            echo "This is normal on low-activity days (e.g., recess periods, public holidays)." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ✅ Articles Generated" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "A pull request has been created with the new articles." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Workflow run: [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*" >> $GITHUB_STEP_SUMMARY
