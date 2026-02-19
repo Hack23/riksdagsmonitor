@@ -4,7 +4,22 @@
  * Government Propositions Translation Script
  * Translates enhanced proposition articles to 14 languages
  * 
- * Usage: node translate-propositions.js <source-file> <output-dir>
+ * IMPORTANT LIMITATION:
+ * This script ONLY translates:
+ * - Page metadata (title, description, OG tags, Twitter Card)
+ * - Section headings (H2, H3)
+ * - UI elements (navigation, data sources, methodology labels)
+ * 
+ * This script DOES NOT translate:
+ * - Article body content (paragraphs, lists, analysis text)
+ * - Embedded quotes or substantive policy descriptions
+ * 
+ * Full article body translation requires:
+ * - Professional translation services (DeepL API, Google Cloud Translation)
+ * - GPT-4 or similar AI with 14-language capability
+ * - Estimated cost: ~$50-100K for complete 14-language coverage
+ * 
+ * Usage: node translate-propositions.js <source-file> [output-dir]
  */
 
 const fs = require('fs');
@@ -563,14 +578,21 @@ function translateFile(sourceFile, outputDir, targetLang) {
   translated = translated.replace(/<strong>Document References:<\/strong>/, `<strong>${trans.docRefs}:</strong>`);
   translated = translated.replace(/← Back to News/, trans.backToNews);
   
+  // Extract the date pattern from the source filename
+  // e.g., "2026-02-18" from "2026-02-18-government-propositions-en.html"
+  const dateMatch = path.basename(sourceFile).match(/(\d{4}-\d{2}-\d{2})/);
+  const datePattern = dateMatch ? dateMatch[1] : '2026-02-18'; // fallback if no date found
+  
   // Update language switcher active state
+  const langSwitcherPattern = new RegExp(`(<a href="${datePattern}-government-propositions-)en(\\.html" class="lang-link) active"`, 'g');
   translated = translated.replace(
-    /(<a href="2026-02-18-government-propositions-)en(\.html" class="lang-link) active"/g,
+    langSwitcherPattern,
     `$1${targetLang}$2 active"`
   );
+  const removeEnActivePattern = new RegExp(`(<a href="${datePattern}-government-propositions-en\\.html" class="lang-link) active"`);
   translated = translated.replace(
-    /(<a href="2026-02-18-government-propositions-en\.html" class="lang-link) active"/,
-    `<a href="2026-02-18-government-propositions-en.html" class="lang-link"`
+    removeEnActivePattern,
+    `<a href="${datePattern}-government-propositions-en.html" class="lang-link"`
   );
   
   // Update canonical URL
@@ -580,7 +602,7 @@ function translateFile(sourceFile, outputDir, targetLang) {
   );
   
   // Update canonical in URLs
-  const urlPattern = new RegExp(`(2026-02-18-government-propositions-)en(\\.html)`, 'g');
+  const urlPattern = new RegExp(`(${datePattern}-government-propositions-)en(\\.html)`, 'g');
   translated = translated.replace(urlPattern, `$1${targetLang}$2`);
   
   // Write output
@@ -593,16 +615,29 @@ function translateFile(sourceFile, outputDir, targetLang) {
 }
 
 // Main execution
-const sourceFile = process.argv[2] || '/home/runner/work/riksdagsmonitor/riksdagsmonitor/news/2026-02-18-government-propositions-en-ENHANCED.html';
-const outputDir = process.argv[3] || path.dirname(sourceFile);
+const sourceFile = process.argv[2];
+const outputDir = process.argv[3];
 
+if (!sourceFile) {
+  console.error('Usage: node translate-propositions.js <source-file> [output-dir]');
+  console.error('');
+  console.error('Example: node translate-propositions.js news/2026-02-18-government-propositions-en.html');
+  console.error('');
+  console.error('NOTE: This script only translates metadata (titles, descriptions, section headings).');
+  console.error('      Full article body translation requires professional translation services.');
+  process.exit(1);
+}
+
+const outputDirectory = outputDir || path.dirname(sourceFile);
 const targetLanguages = ['sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
 
 console.log(`Translating ${sourceFile} to ${targetLanguages.length} languages...\n`);
+console.log('⚠️  WARNING: This script only translates metadata and section headings.');
+console.log('   Article body content remains in the source language.\n');
 
 targetLanguages.forEach(lang => {
   try {
-    translateFile(sourceFile, outputDir, lang);
+    translateFile(sourceFile, outputDirectory, lang);
   } catch (error) {
     console.error(`✗ Error translating to ${lang}:`, error.message);
   }
