@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: DecisionImpactChart</title>
+    <title>JSDoc: Source: js/logger.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,138 +17,83 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: DecisionImpactChart</h1>
+    <h1 class="page-title">Source: js/logger.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="module-GovernmentIntelligence_MinistryAnalysis.html">GovernmentIntelligence/MinistryAnalysis</a>~</span>DecisionImpactChart<span class="signature">()</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description"><p>Decision Impact Timeline (Chart.js)</p></div>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="DecisionImpactChart"><span class="type-signature"></span>new DecisionImpactChart<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_ministry-dashboard.js.html">js/ministry-dashboard.js</a>, <a href="js_ministry-dashboard.js.html#line1305">line 1305</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module Logger
+ * @category Utilities - Logging
+ *
+ * @description
+ * Debug logger utility gated behind `?debug` URL parameter.
+ * In production, only warnings and errors are emitted.
+ * Enable debug output by appending `?debug` to the page URL.
+ *
+ * @example
+ * // Enable debug logging:
+ * // https://riksdagsmonitor.com/?debug
+ *
+ * import { logger } from './logger.js';
+ * logger.debug('Loading CSV:', filename);
+ * logger.error('Failed to load:', error);
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+const DEBUG = typeof window !== 'undefined' &amp;&amp;
+  new URLSearchParams(window.location.search).has('debug');
+
+/**
+ * Structured logger with debug gating.
+ * debug/info messages are suppressed unless ?debug is present in the URL.
+ */
+export const logger = {
+  /**
+   * Log a debug message (only visible with ?debug URL parameter).
+   * @param {...*} args - Arguments to log
+   */
+  debug(...args) {
+    if (DEBUG) {
+      console.log('[DEBUG]', ...args);
+    }
+  },
+
+  /**
+   * Log an info message (only visible with ?debug URL parameter).
+   * @param {...*} args - Arguments to log
+   */
+  info(...args) {
+    if (DEBUG) {
+      console.info('[INFO]', ...args);
+    }
+  },
+
+  /**
+   * Log a warning (always visible).
+   * @param {...*} args - Arguments to log
+   */
+  warn(...args) {
+    console.warn('[WARN]', ...args);
+  },
+
+  /**
+   * Log an error (always visible).
+   * @param {...*} args - Arguments to log
+   */
+  error(...args) {
+    console.error('[ERROR]', ...args);
+  }
+};
+</code></pre>
+        </article>
+    </section>
 
 
 
