@@ -30,7 +30,7 @@ permissions:
   discussions: read
   security-events: read
   
-timeout-minutes: 30
+timeout-minutes: 45
 
 network:
   allowed:
