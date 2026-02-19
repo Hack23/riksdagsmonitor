@@ -465,8 +465,9 @@ export class MCPClient {
       // - MCP Gateway (host.docker.internal) expects prefixed names: "riksdag-regering--tool_name"
       // - Direct MCP Server (onrender.com) expects unprefixed names: "tool_name"
       // - skipPrefix is set to true on fallback retry to prevent infinite recursion
-      // Gateway URL path already identifies the server, no tool name prefix needed
-      const toolName = tool;
+      const isGateway = this.baseURL.includes('host.docker.internal') || this.baseURL.includes('/mcp/riksdag-regering');
+      const shouldPrefix = isGateway && !skipPrefix && !tool.includes('--');
+      const toolName = shouldPrefix ? `riksdag-regering--${tool}` : tool;
       
       const jsonRpcRequest = {
         jsonrpc: '2.0',
