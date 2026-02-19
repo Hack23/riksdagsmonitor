@@ -492,7 +492,9 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
     }
   }
   </script>
-  
+
+  <!-- Privacy-focused analytics: cookie-free, GDPR-compliant, no consent required -->
+  <script defer data-domain="riksdagsmonitor.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 <article class="news-article">
@@ -537,6 +539,7 @@ ${watchPoints.length > 0 ? generateWatchSection(watchPoints, lang) : ''}
 </article>
 
 <script src="../scripts/back-to-top.js"></script>
+<script src="../js/plausible-events.js"></script>
 </body>
 </html>`;
 }
