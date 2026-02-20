@@ -160,9 +160,12 @@ jobs:
         run: npx cypress verify
 
       - name: Run unit tests with coverage
-        run: npm run coverage
+        run: |
+          mkdir -p builds/test-results builds/coverage
+          npm run coverage
 
       - name: Start app and run E2E tests
+        shell: bash
         env:
           CYPRESS_VIDEO: false
           NODE_OPTIONS: "--max-old-space-size=4096"
@@ -172,8 +175,15 @@ jobs:
           TERM: dumb
         run: |
           echo "🚀 Running E2E tests for release validation..."
-          NODE_OPTIONS="--max-old-space-size=4096" xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24 -ac +extension GLX +extension RANDR +render -nolisten tcp" npm run e2e || TEST_EXIT_CODE=$?
-          exit ${TEST_EXIT_CODE:-0}
+          mkdir -p builds/cypress
+          set -o pipefail
+          NODE_OPTIONS="--max-old-space-size=4096" \
+            xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24 -ac +extension GLX +extension RANDR +render -nolisten tcp" \
+            npm run e2e 2>&1 | tee builds/cypress/e2e-output.log
+          TEST_EXIT_CODE=$?
+          # Copy Cypress screenshots if they exist
+          cp -r cypress/screenshots builds/cypress/ 2>/dev/null || true
+          exit ${TEST_EXIT_CODE}
 
       - name: Clean old docs
         run: |
@@ -211,15 +221,11 @@ jobs:
           echo "📊 Copying test reports to docs/..."
           npm run build:test-reports
           
-          # Copy Cypress reports if they exist
-          if [ -d "cypress/reports" ]; then
-            cp -r cypress/reports/* docs/cypress/ || true
-          fi
+          # Generate unit test results HTML index from vitest JSON
+          node scripts/generate-test-results-html.cjs || echo "⚠️ Failed to generate unit test results HTML"
           
-          # Create test results index if coverage exists
-          if [ -d "docs/coverage" ]; then
-            echo "✅ Coverage report available at docs/coverage/index.html"
-          fi
+          # Generate E2E test results HTML index from log output
+          node scripts/generate-e2e-results-html.cjs || echo "⚠️ Failed to generate E2E test results HTML"
           
           echo "✅ Test reports copied to docs/"
 
@@ -329,13 +335,13 @@ jobs:
                 <div class="card">
                   <h2>🧪 Test Results</h2>
                   <p>Detailed unit test results from Vitest, including all test suites and individual test cases.</p>
-                  <a href="test-results/">View Test Results →</a>
+                  <a href="test-results/index.html">View Test Results →</a>
                 </div>
                 
                 <div class="card">
                   <h2>🎭 E2E Tests (Cypress)</h2>
                   <p>End-to-end test reports from Cypress, validating dashboard functionality and user interactions.</p>
-                  <a href="cypress/">View E2E Reports →</a>
+                  <a href="cypress/index.html">View E2E Reports →</a>
                 </div>
                 
                 <div class="card">
