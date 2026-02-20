@@ -90,7 +90,7 @@ This threat model systematically analyzes security for Riksdagsmonitor using the
 - **Medium-Risk Threats:** 8 (Controls in place, continuous monitoring)
 - **Low-Risk Threats:** 42 (Accepted with controls)
 - **AI-Specific Threats:** 18 (OWASP LLM Top 10 coverage)
-- **Attack Trees:** 6 comprehensive scenarios (3 traditional + 3 AI/LLM)
+- **Attack Trees:** 9 attack trees (3 dedicated + 6 embedded scenarios)
 - **MITRE ATT&CK Techniques:** 23 mapped
 - **Residual Risk:** LOW (3.2/10.0) - Acceptable for public civic transparency platform
 
@@ -2341,7 +2341,7 @@ Trike focuses on acceptable risk and security auditing, ensuring every threat ha
 | **Acceptable Risk Definition** | CEO-defined risk tolerance thresholds | Risk Score ≤ 3.2/10 acceptable; 0 CRITICAL risks tolerated |
 | **Threat Enumeration Completeness** | All actor-asset-action triples evaluated | 52 STRIDE threats + 18 AI/LLM threats = 70 total threat entries |
 | **Permission Model** | Intended vs. implemented access rights | GitHub OIDC scopes, AWS IAM policies, MCP server access controls |
-| **Risk Treatment Tracking** | Every threat has explicit treatment | 0 AVOID, 48 MITIGATE, 4 TRANSFER, 42 ACCEPT (100% coverage) |
+| **Risk Treatment Tracking** | Every threat has explicit treatment | 0 AVOID, 48 MITIGATE, 4 TRANSFER, 18 ACCEPT (70 threats, 100% coverage) |
 | **Audit Trail** | All changes tracked to threat model | Git commit history, quarterly review schedule |
 
 **Trike Benefits for Riksdagsmonitor:**
