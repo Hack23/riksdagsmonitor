@@ -1,4 +1,5 @@
 {
+  "schemaVersion": "2",
   "timestamp": "2026-02-20T14:15:00.000Z",
   "type": "realtime-monitor",
   "schedule": "weekday-14:00-utc",
