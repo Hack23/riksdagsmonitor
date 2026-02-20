@@ -1,9 +1,9 @@
 {
-  "lastGeneration": "2026-02-19T05:30:00Z",
-  "articleTypes": ["committee-reports", "government-propositions", "opposition-motions"],
+  "lastGeneration": "2026-02-20T06:10:00Z",
+  "articleTypes": ["week-ahead", "committee-reports", "government-propositions", "opposition-motions"],
   "languages": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
-  "articlesGenerated": 42,
-  "date": "2026-02-19",
+  "articlesGenerated": 56,
+  "date": "2026-02-20",
   "source": "riksdag-regering-mcp",
   "forceGeneration": false
 }
