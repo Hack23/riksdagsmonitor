@@ -61,23 +61,23 @@ This document outlines the future security architecture for Riksdagsmonitor over
 
 The following table shows all 15 architecture documents maintained for Riksdagsmonitor. This document is highlighted.
 
-| Document | Type | Description | Status |
-|----------|------|-------------|--------|
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Current | C4 system architecture model | ✅ Active |
-| [DATA_MODEL.md](DATA_MODEL.md) | Current | Data structures and entities | ✅ Active |
-| [FLOWCHART.md](FLOWCHART.md) | Current | Business process flows | ✅ Active |
-| [STATEDIAGRAM.md](STATEDIAGRAM.md) | Current | System state transitions | ✅ Active |
-| [MINDMAP.md](MINDMAP.md) | Current | System conceptual map | ✅ Active |
-| [SWOT.md](SWOT.md) | Current | Strategic analysis | ✅ Active |
-| [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) | Security | Current security controls | ✅ Active |
-| [THREAT_MODEL.md](THREAT_MODEL.md) | Security | STRIDE threat analysis | ✅ Active |
-| **[FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md)** | **Security** | **Future security roadmap (this document)** | **✅ Active** |
-| [FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md) | Future | Architecture evolution roadmap | ✅ Active |
-| [FUTURE_DATA_MODEL.md](FUTURE_DATA_MODEL.md) | Future | Enhanced data architecture | ✅ Active |
-| [FUTURE_FLOWCHART.md](FUTURE_FLOWCHART.md) | Future | Improved process workflows | ✅ Active |
-| [FUTURE_STATEDIAGRAM.md](FUTURE_STATEDIAGRAM.md) | Future | Advanced state management | ✅ Active |
-| [FUTURE_MINDMAP.md](FUTURE_MINDMAP.md) | Future | Capability expansion map | ✅ Active |
-| [FUTURE_SWOT.md](FUTURE_SWOT.md) | Future | Future strategic opportunities | ✅ Active |
+| Document | Focus | Description |
+|----------|-------|-------------|
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Current | C4 system architecture model |
+| [DATA_MODEL.md](DATA_MODEL.md) | Current | Data structures and entities |
+| [FLOWCHART.md](FLOWCHART.md) | Current | Business process flows |
+| [STATEDIAGRAM.md](STATEDIAGRAM.md) | Current | System state transitions |
+| [MINDMAP.md](MINDMAP.md) | Current | System conceptual map |
+| [SWOT.md](SWOT.md) | Current | Strategic analysis |
+| [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) | Security | Current security controls |
+| [THREAT_MODEL.md](THREAT_MODEL.md) | Security | STRIDE threat analysis |
+| **[FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md)** | **Security** | **Future security roadmap (this document)** |
+| [FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md) | Future | Architecture evolution roadmap |
+| [FUTURE_DATA_MODEL.md](FUTURE_DATA_MODEL.md) | Future | Enhanced data architecture |
+| [FUTURE_FLOWCHART.md](FUTURE_FLOWCHART.md) | Future | Improved process workflows |
+| [FUTURE_STATEDIAGRAM.md](FUTURE_STATEDIAGRAM.md) | Future | Advanced state management |
+| [FUTURE_MINDMAP.md](FUTURE_MINDMAP.md) | Future | Capability expansion map |
+| [FUTURE_SWOT.md](FUTURE_SWOT.md) | Future | Future strategic opportunities |
 
 ---
 
