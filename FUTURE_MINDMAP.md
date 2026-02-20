@@ -26,14 +26,25 @@
 
 This document provides future-state conceptual mindmaps for Riksdagsmonitor, visualizing the planned evolution from a static Swedish Parliament monitoring website to a comprehensive AI-powered democratic intelligence platform. Building on the current [Mindmap](MINDMAP.md), these diagrams illustrate the 3-7 year roadmap (2026-2032).
 
-## 📚 Related Architecture Documentation
+## 📚 Architecture Documentation Map
 
 | Document | Focus | Description |
 |----------|-------|-------------|
-| **[Mindmap](MINDMAP.md)** | 🗺️ Current | Current system conceptual map |
-| **[Future Architecture](FUTURE_ARCHITECTURE.md)** | 🏗️ Future | System evolution roadmap |
-| **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 Future | Advanced process flows |
-| **[Future SWOT](FUTURE_SWOT.md)** | 💼 Future | Strategic outlook |
+| [🏛️ Architecture](ARCHITECTURE.md) | 🏗️ C4 Models | System context, containers, components |
+| [📊 Data Model](DATA_MODEL.md) | 📊 Data | Entity relationships and data dictionary |
+| [🔄 Flowchart](FLOWCHART.md) | 🔄 Processes | Business and data flow diagrams |
+| [📈 State Diagram](STATEDIAGRAM.md) | 📈 States | System state transitions and lifecycles |
+| [🧠 Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
+| [💼 SWOT](SWOT.md) | 💼 Strategy | Strategic analysis and positioning |
+| [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) | 🔒 Security | Current security controls and design |
+| [🚀 Future Security](FUTURE_SECURITY_ARCHITECTURE.md) | 🔮 Security | Planned security improvements |
+| [🎯 Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE/MITRE ATT&CK analysis |
+| [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) | 🔮 Evolution | Architectural evolution roadmap |
+| [📊 Future Data Model](FUTURE_DATA_MODEL.md) | 🔮 Data | Enhanced data architecture plans |
+| [🔄 Future Flowchart](FUTURE_FLOWCHART.md) | 🔮 Processes | Improved process workflows |
+| [📈 Future State Diagram](FUTURE_STATEDIAGRAM.md) | 🔮 States | Advanced state management |
+| **[🧠 Future Mindmap](FUTURE_MINDMAP.md)** | **🔮 Concepts** | **Capability expansion plans** |
+| [💼 Future SWOT](FUTURE_SWOT.md) | 🔮 Strategy | Future strategic opportunities |
 
 ---
 
@@ -291,25 +302,25 @@ mindmap
 
 ---
 
-## 📚 Related Documents
+## 📚 Architecture Documentation Map
 
-### 🗺️ Current State
-- [🗺️ Mindmap](MINDMAP.md) — Current system conceptual map
-- [🏗️ Architecture](ARCHITECTURE.md) — Current C4 models
-- [💼 SWOT](SWOT.md) — Current strategic analysis
-
-### 🚀 Future State
-- [🏗️ Future Architecture](FUTURE_ARCHITECTURE.md) — System evolution
-- [🔄 Future Flowcharts](FUTURE_FLOWCHART.md) — Advanced process flows
-- [📊 Future Data Model](FUTURE_DATA_MODEL.md) — Enhanced data architecture
-- [🔄 Future State Diagrams](FUTURE_STATEDIAGRAM.md) — Advanced state transitions
-- [💼 Future SWOT](FUTURE_SWOT.md) — Strategic outlook
-- [🛡️ Future Security](FUTURE_SECURITY_ARCHITECTURE.md) — Security roadmap
-
-### 🛡️ ISMS Policies
-- [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
-- [🤖 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)
-- [🔐 Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md)
+| Document | Focus | Description |
+|----------|-------|-------------|
+| [🏛️ Architecture](ARCHITECTURE.md) | 🏗️ C4 Models | System context, containers, components |
+| [📊 Data Model](DATA_MODEL.md) | 📊 Data | Entity relationships and data dictionary |
+| [🔄 Flowchart](FLOWCHART.md) | 🔄 Processes | Business and data flow diagrams |
+| [📈 State Diagram](STATEDIAGRAM.md) | 📈 States | System state transitions and lifecycles |
+| [🧠 Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
+| [💼 SWOT](SWOT.md) | 💼 Strategy | Strategic analysis and positioning |
+| [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) | 🔒 Security | Current security controls and design |
+| [🚀 Future Security](FUTURE_SECURITY_ARCHITECTURE.md) | 🔮 Security | Planned security improvements |
+| [🎯 Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE/MITRE ATT&CK analysis |
+| [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) | 🔮 Evolution | Architectural evolution roadmap |
+| [📊 Future Data Model](FUTURE_DATA_MODEL.md) | 🔮 Data | Enhanced data architecture plans |
+| [🔄 Future Flowchart](FUTURE_FLOWCHART.md) | 🔮 Processes | Improved process workflows |
+| [📈 Future State Diagram](FUTURE_STATEDIAGRAM.md) | 🔮 States | Advanced state management |
+| **[🧠 Future Mindmap](FUTURE_MINDMAP.md)** | **🔮 Concepts** | **Capability expansion plans** |
+| [💼 Future SWOT](FUTURE_SWOT.md) | 🔮 Strategy | Future strategic opportunities |
 
 ---
 
