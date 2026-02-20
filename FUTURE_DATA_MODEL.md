@@ -22,6 +22,28 @@
 
 ---
 
+## 📚 Architecture Documentation Map
+
+| Document | Type | Description |
+|----------|------|-------------|
+| [Architecture](ARCHITECTURE.md) | 🏛️ Current | C4 model showing system structure |
+| [Data Model](DATA_MODEL.md) | 📊 Current | Data entities and relationships |
+| [Flowcharts](FLOWCHART.md) | 🔄 Current | Process flows and pipelines |
+| [State Diagrams](STATEDIAGRAM.md) | 🔄 Current | System state transitions |
+| [Mindmap](MINDMAP.md) | 🗺️ Current | System conceptual map |
+| [SWOT](SWOT.md) | 💼 Current | Strategic analysis |
+| [Future Architecture](FUTURE_ARCHITECTURE.md) | 🏗️ Future | System evolution roadmap |
+| **[Future Data Model](FUTURE_DATA_MODEL.md)** | 📊 **Future** | **Enhanced data architecture (this doc)** |
+| [Future Flowcharts](FUTURE_FLOWCHART.md) | 🔄 Future | Advanced process flows |
+| [Future State Diagrams](FUTURE_STATEDIAGRAM.md) | 🔄 Future | Advanced state management |
+| [Future Mindmap](FUTURE_MINDMAP.md) | 🗺️ Future | Future capability map |
+| [Future SWOT](FUTURE_SWOT.md) | 💼 Future | Strategic outlook |
+| [Security Architecture](SECURITY_ARCHITECTURE.md) | 🛡️ Security | Defense-in-depth controls |
+| [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) | 🛡️ Future | Security roadmap |
+| [Threat Model](THREAT_MODEL.md) | 🎯 Security | STRIDE analysis |
+
+---
+
 ## 📊 Executive Summary
 
 Riksdagsmonitor's data architecture evolves over 2026-2032 from static CSV files to a **fully-managed AWS Serverless intelligence platform**. This transformation enables real-time political analytics, AI-powered insights, and scalable processing of Swedish parliamentary data.
@@ -1631,3 +1653,13 @@ stateDiagram-v2
 ---
 
 *This document is part of Riksdagsmonitor's comprehensive documentation portfolio, demonstrating commitment to transparency, security, and technical excellence in Swedish political intelligence.*
+
+---
+
+**📋 Document Control:**  
+**✅ Approved by:** James Pether Sörling, CEO  
+**📤 Distribution:** Public  
+**🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
+**📅 Effective Date:** 2026-02-20  
+**⏰ Next Review:** 2027-02-20  
+**🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
