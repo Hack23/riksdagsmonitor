@@ -48,7 +48,7 @@
 
 - [🎯 Executive Summary](#-executive-summary)
 - [🔐 ISMS Policy Alignment](#-isms-policy-alignment)
-- [1. 🏗️ System Overview](#1-️-system-overview)
+- [1. 🏗️ System Overview](#1--system-overview)
   - [1.1 🎯 Purpose and Scope](#11--purpose-and-scope)
   - [1.2 🔐 AWS Security Controls](#12--aws-security-controls)
   - [1.3 Architecture Diagram](#13-architecture-diagram)
@@ -65,26 +65,26 @@
   - [3.1 ISO 27001:2022 Controls](#31-iso-270012022-controls)
   - [3.2 NIST CSF 2.0 Categories](#32-nist-csf-20-categories)
   - [3.3 CIS Controls v8.1](#33-cis-controls-v81)
-- [4. 🛡️ Security Controls Summary](#4-️-security-controls-summary)
+- [4. 🛡️ Security Controls Summary](#4--security-controls-summary)
   - [4.1 Preventive Controls](#41-preventive-controls)
   - [4.2 Detective Controls](#42-detective-controls)
   - [4.3 Corrective Controls](#43-corrective-controls)
 - [5. 📝 Security Assumptions and Constraints](#5--security-assumptions-and-constraints)
   - [5.1 Assumptions](#51-assumptions)
   - [5.2 Constraints](#52-constraints)
-- [6. ⚠️ Risk Assessment](#6-️-risk-assessment)
+- [6. ⚠️ Risk Assessment](#6--risk-assessment)
   - [6.1 Residual Risks](#61-residual-risks)
   - [6.2 Accepted Risks](#62-accepted-risks)
-- [7. 🏛️ Security Governance](#7-️-security-governance)
+- [7. 🏛️ Security Governance](#7--security-governance)
   - [7.1 Roles and Responsibilities](#71-roles-and-responsibilities)
   - [7.2 Review and Update Schedule](#72-review-and-update-schedule)
   - [7.3 Related Documentation](#73-related-documentation)
 - [8. ✅ Approval](#8--approval)
-- [🛡️ Defense-in-Depth Strategy](#️-defense-in-depth-strategy)
+- [🛡️ Defense-in-Depth Strategy](#-defense-in-depth-strategy)
 - [📜 Data Integrity & Auditing](#-data-integrity--auditing)
 - [🔍 Security Event Monitoring](#-security-event-monitoring)
-- [🏗️ High Availability Design](#️-high-availability-design)
-- [🕵️ Threat Detection & Investigation](#️-threat-detection--investigation)
+- [🏗️ High Availability Design](#-high-availability-design)
+- [🕵️ Threat Detection & Investigation](#-threat-detection--investigation)
 - [🔎 Vulnerability Management](#-vulnerability-management)
 - [🤖 Automated Security Operations](#-automated-security-operations)
 - [⚡ Resilience & Operational Readiness](#-resilience--operational-readiness)
@@ -762,7 +762,7 @@ graph TB
     subgraph "Layer 1: Network Security"
         L1A[AWS CloudFront CDN]
         L1B[AWS Shield Standard]
-        L1C[Route 53 WAF planned]
+        L1C[AWS WAF on CloudFront (planned)]
         L1D[GitHub Infrastructure DR]
     end
     
@@ -814,7 +814,7 @@ graph TB
 | **X-Content-Type-Options** | `nosniff` | Prevent MIME sniffing | ✅ Active |
 | **Referrer Policy** | `strict-origin-when-cross-origin` | Control referrer information | ✅ Active |
 | **Permissions Policy** | Disable geolocation, microphone, camera | Minimize browser permissions | ✅ Active |
-| **Subresource Integrity** | SHA-384 hashes for local libraries | Verify resource integrity | ✅ Active |
+| **Subresource Integrity** | Planned: SHA-384 hashes for third-party/CDN assets and critical local libraries | Verify resource integrity | 🔄 Planned |
 
 **Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js compatibility. Future roadmap (2027): Implement nonce-based CSP for stricter inline script control.
 
@@ -1426,35 +1426,9 @@ Riksdagsmonitor leverages extensive automation to reduce manual security overhea
 
 ### **Dependabot Configuration**
 
-**File:** `.github/dependabot.yml`
+Dependabot is configured to automatically monitor and update both npm dependencies and GitHub Actions workflows, with daily checks for new versions and security patches. Minor and patch npm updates are grouped for reduced noise.
 
-```yaml
-version: 2
-updates:
-  # npm dependencies (package.json)
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "daily"  # Check daily for security patches
-    open-pull-requests-limit: 10
-    reviewers:
-      - "Hack23"
-    labels:
-      - "dependencies"
-      - "security"
-    
-  # GitHub Actions workflows
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"  # Check weekly for action updates
-    open-pull-requests-limit: 5
-    reviewers:
-      - "Hack23"
-    labels:
-      - "dependencies"
-      - "github-actions"
-```
+The authoritative configuration is maintained in [`.github/dependabot.yml`](.github/dependabot.yml). Refer to that file for the exact ecosystems, schedules, labels, groups, and other settings currently in effect.
 
 **Auto-Merge Policy:**
 - **Patch versions** (X.Y.Z → X.Y.Z+1): Auto-merge if CI passes
@@ -1466,16 +1440,16 @@ updates:
 **File:** `.github/workflows/codeql.yml`
 
 **Query Suites:**
-- `security-extended`: OWASP Top 10, CWE Top 25, SANS Top 25
-- Custom queries for riksdagsmonitor-specific patterns
+- GitHub default CodeQL query suite for JavaScript (security coverage aligned with OWASP/CWE/SANS)
+- Additional review for riksdagsmonitor-specific patterns as needed
 
 **Scan Frequency:**
 - **Pull Requests:** Every PR (blocking check)
-- **Scheduled:** Every Monday 06:00 UTC (full repository scan)
+- **Scheduled:** Every Monday 00:00 UTC (full repository scan, cron: `0 0 * * 1`)
 - **Manual:** On-demand via workflow_dispatch
 
 **False Positive Management:**
-- Dismissed alerts documented in `.github/codeql/dismissals.md`
+- Dismissed alerts documented in the central security documentation (CodeQL dismissal log)
 - Requires CISO approval for dismissal
 - Automated re-opening if code changes in dismissed location
 
@@ -1485,11 +1459,9 @@ updates:
 
 ```yaml
 - name: Generate SLSA Build Provenance
-  uses: actions/attest-build-provenance@v3.2.0
+  uses: actions/attest-build-provenance@96278af6caaf10aea03fd8d33a09a777ca52d62f # v3.2.0
   with:
     subject-path: 'riksdagsmonitor-*.zip'
-    subject-digest: ${{ steps.hash.outputs.sha256 }}
-    push-to-registry: true  # Publish to GitHub registry
 ```
 
 **Attestation Contents:**
@@ -1511,7 +1483,7 @@ updates:
 **Configuration (every workflow):**
 ```yaml
 - name: Harden Runner
-  uses: step-security/harden-runner@v2
+  uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
   with:
     egress-policy: audit  # Log all network egress (block mode planned 2027 Q2)
     allowed-endpoints: >
