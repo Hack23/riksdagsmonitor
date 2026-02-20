@@ -52,7 +52,7 @@ This document outlines the future security architecture for Riksdagsmonitor over
 7. [Risk Management](#7-risk-management)
 8. [Success Metrics](#8-success-metrics)
 9. [Security Investment & Budget Planning](#security-investment--budget-planning)
-10. [Conclusion](#9-conclusion)
+10. [Conclusion](#10-conclusion)
 11. [References](#references)
 
 ---
@@ -101,7 +101,7 @@ This document aligns with the following Hack23 ISMS policies from [Hack23/ISMS-P
 ### Security Control Implementation Status
 
 | Control Domain | Current (2026) | Target (2028) | Target (2030) | Framework |
-|----------------|----------------|---------------|---------------|-----------|  
+|----------------|----------------|---------------|---------------|-----------|
 | Access Control | 🟡 Partial | 🟢 Full | 🟢 Full | ISO 27001 A.9 |
 | Cryptography | 🟡 Classical TLS 1.3 | 🟡 Hybrid PQC | 🟢 Full PQC | ISO 27001 A.10 |
 | Physical Security | 🟢 GitHub/AWS managed | 🟢 Full | 🟢 Full | ISO 27001 A.11 |
@@ -761,7 +761,7 @@ graph LR
 
 ---
 
-## 💰 Security Investment & Budget Planning
+## 9. 💰 Security Investment & Budget Planning
 
 ### Per-Phase Investment Estimates
 
@@ -807,7 +807,7 @@ graph LR
 
 ---
 
-## 9. 🤝 Conclusion
+## 10. 🤝 Conclusion
 
 This Future Security Architecture demonstrates Hack23 AB's commitment to **proactive security evolution** rather than reactive patching. By implementing post-quantum cryptography before it's necessary, AI-augmented security before attacks become fully autonomous, and zero-trust principles before breaches occur, Riksdagsmonitor will maintain its security leadership while delivering interactive Chart.js/D3.js dashboards.
 
