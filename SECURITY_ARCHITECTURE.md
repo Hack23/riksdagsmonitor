@@ -22,11 +22,11 @@
 
 ---
 
-## 📚 Architecture Documentation Map
+## 📚 Related Architecture Documentation
 
 | Document | Focus | Description |
 |----------|-------|-------------|
-| **[Security Architecture](SECURITY_ARCHITECTURE.md)** | 🛡️ Security | **Current document** — Defense-in-depth controls |
+| **[Security Architecture](SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Current document — Defense-in-depth controls |
 | [Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE/MITRE ATT&CK analysis |
 | [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) | 🚀 Security Roadmap | Planned security improvements |
 | [Architecture](ARCHITECTURE.md) | 🏛️ C4 Models | System structure and components |
