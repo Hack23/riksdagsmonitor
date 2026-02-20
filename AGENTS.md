@@ -781,10 +781,10 @@ custom_instructions: `
 ### 3. Leverage Skills
 Agents automatically load relevant skills from `.github/skills/` (87 total skills across 12 categories):
 
-**Core Infrastructure (7)**:
+**Core Infrastructure (9)**:
 - `hack23-isms-compliance`, `security-by-design`, `static-site-security`
 - `ci-cd-security`, `documentation-standards`, `html-accessibility`
-- `multi-language-localization`
+- `multi-language-localization`, `hack23-future-architecture-standards`, `documentation-portfolio`
 
 **Political Intelligence (11)**:
 - `political-science-analysis`, `osint-methodologies`, `intelligence-analysis-techniques`
@@ -792,22 +792,46 @@ Agents automatically load relevant skills from `.github/skills/` (87 total skill
 - `strategic-communication-analysis`, `legislative-monitoring`
 - `risk-assessment-frameworks`, `data-science-for-intelligence`, `gdpr-compliance`
 
-**ISMS & Security (6)**:
+**ISMS & Security (12)**:
 - `cis-controls`, `iso-27001-controls`, `nist-csf-mapping`
 - `threat-modeling`, `secure-code-review`, `security-documentation`
+- `incident-response`, `input-validation`, `vulnerability-management`
+- `data-protection`, `ai-governance`, `information-security-strategy`
 
-**Development & Operations (4)**:
-- `c4-architecture-documentation`, `github-actions-workflows`
-- `code-quality-checks`, `secrets-management`
+**Development & Operations (16)**:
+- `c4-architecture-documentation`, `github-actions-workflows`, `code-quality-checks`, `secrets-management`
+- `data-pipeline-engineering`, `automated-content-generation`, `performance-optimization`, `api-integration`
+- `github-agentic-workflows`, `code-review-practices`, `testing-strategy`, `contribution-guidelines`
+- `change-management`, `open-source-governance`, `copilot-agent-patterns`, `product-management-patterns`
 
-**UI/UX & Design (3)** ✨ NEW:
+**UI/UX & Design (7)**:
 - `responsive-design`, `design-system-management`, `political-data-visualization`
+- `advanced-data-visualization`, `ui-ux-design`, `seo-optimization`, `data-visualization-principles`
 
-**Testing & Quality Assurance (2)** ✨ NEW:
+**Testing & Quality Assurance (2)**:
 - `playwright-testing`, `issue-management`
 
-**Data Integration (1)** ✨ NEW:
-- `riksdag-regering-mcp`
+**Data Integration (4)**:
+- `riksdag-regering-mcp`, `cia-data-integration`, `mcp-server-development`, `european-parliament-api`
+
+**Business & Marketing (2)**:
+- `marketing`, `business-development`
+
+**Language & Localization (1)**:
+- `language-expertise`
+
+**GitHub Agentic Workflows (12)**:
+- `gh-aw-authentication-credentials`, `gh-aw-containerization`, `gh-aw-continuous-ai-patterns`
+- `gh-aw-firewall`, `gh-aw-github-actions-integration`, `gh-aw-logging-monitoring`
+- `gh-aw-mcp-configuration`, `gh-aw-mcp-gateway`, `gh-aw-safe-outputs`
+- `gh-aw-security-architecture`, `gh-aw-tools-ecosystem`, `gh-aw-workflow-authoring`
+
+**Journalism & Media (4)**:
+- `editorial-standards`, `investigative-journalism`, `prospective-news-coverage`, `comparative-politics-reporting`
+
+**Government & Regulatory (7)**:
+- `global-government-analysis`, `myndigheter-monitoring`, `regulatory-affairs`
+- `economic-policy-analysis`, `secure-development-lifecycle`, `secure-development-policy`, `compliance-checklist`
 
 See [SKILLS.md](SKILLS.md) for comprehensive skill documentation and [Skills Mapping](#skills-mapping-by-agent) above for agent-specific recommendations.
 

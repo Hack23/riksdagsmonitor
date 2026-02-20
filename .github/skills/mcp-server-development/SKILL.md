@@ -31,6 +31,8 @@ Provides patterns for developing and integrating Model Context Protocol (MCP) se
 - Least privilege access to external APIs
 
 ## GitHub MCP Configuration
+
+This example shows the `.github/copilot-mcp.json` format (GitHub Actions secret expansion):
 ```json
 {
   "mcpServers": {
@@ -46,7 +48,7 @@ Provides patterns for developing and integrating Model Context Protocol (MCP) se
 }
 ```
 
-> **Supply Chain Security**: In production, pin packages to exact versions (e.g., `@modelcontextprotocol/server-github@0.1.0`) and verify integrity. Use `@latest` only in examples. Always use GitHub secrets for tokens, never hard-code credentials.
+> **Supply Chain Security**: In production, pin packages to exact versions (e.g., `@modelcontextprotocol/server-github@0.1.0`) and verify integrity. Use `@latest` only in examples. The `${{ secrets.* }}` syntax is specific to GitHub Copilot MCP configuration files — for standalone use, set `GITHUB_TOKEN` via environment variables.
 
 ## Testing MCP Tools
 - Unit test each tool independently
