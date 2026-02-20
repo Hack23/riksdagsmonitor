@@ -26,12 +26,12 @@
 
 This document defines the data model for the Riksdagsmonitor platform, documenting entity relationships, data structures, CIA product schemas, and data quality metrics for Swedish Parliament political data spanning 50+ years.
 
-## 📚 Architecture Documentation Map
+## 📚 Related Architecture Documentation
 
 | Document | Focus | Description |
 |----------|-------|-------------|
 | [Architecture](ARCHITECTURE.md) | 🏛️ C4 Models | System structure and components |
-| **[Data Model](DATA_MODEL.md)** | **📊 Data** | **Entities, schemas, relationships** |
+| **[Data Model](DATA_MODEL.md)** (this doc) | 📊 Data | Entities, schemas, relationships |
 | [Flowcharts](FLOWCHART.md) | 🔄 Processes | Process flows and data pipelines |
 | [State Diagrams](STATEDIAGRAM.md) | 🔄 Behavior | System state transitions |
 | [Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
