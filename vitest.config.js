@@ -24,7 +24,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'lcov', 'json'],
-      reportsDirectory: './coverage',
+      reportsDirectory: './builds/coverage',
       
       // Disabled: tests don't import dashboard modules (by design)
       all: false,
@@ -100,8 +100,11 @@ export default defineConfig({
     // Hook timeout
     hookTimeout: 10000,
     
-    // Reporter configuration
-    reporters: ['verbose'],
+    // Reporter configuration - verbose to console, JSON to builds/ for release docs
+    reporters: [
+      'verbose',
+      ['json', { outputFile: 'builds/test-results/vitest-results.json' }]
+    ],
     
     // Watch mode settings
     watch: false,

@@ -160,7 +160,9 @@ jobs:
         run: npx cypress verify
 
       - name: Run unit tests with coverage
-        run: npm run coverage
+        run: |
+          mkdir -p builds/test-results builds/coverage
+          npm run coverage
 
       - name: Start app and run E2E tests
         env:
@@ -172,7 +174,10 @@ jobs:
           TERM: dumb
         run: |
           echo "🚀 Running E2E tests for release validation..."
-          NODE_OPTIONS="--max-old-space-size=4096" xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24 -ac +extension GLX +extension RANDR +render -nolisten tcp" npm run e2e || TEST_EXIT_CODE=$?
+          mkdir -p builds/cypress
+          NODE_OPTIONS="--max-old-space-size=4096" xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24 -ac +extension GLX +extension RANDR +render -nolisten tcp" npm run e2e 2>&1 | tee builds/cypress/e2e-output.log; TEST_EXIT_CODE=${PIPESTATUS[0]}
+          # Copy Cypress screenshots if they exist
+          cp -r cypress/screenshots builds/cypress/ 2>/dev/null || true
           exit ${TEST_EXIT_CODE:-0}
 
       - name: Clean old docs
@@ -211,14 +216,44 @@ jobs:
           echo "📊 Copying test reports to docs/..."
           npm run build:test-reports
           
-          # Copy Cypress reports if they exist
-          if [ -d "cypress/reports" ]; then
-            cp -r cypress/reports/* docs/cypress/ || true
+          # Generate unit test results HTML index from vitest JSON
+          if [ -f "docs/test-results/vitest-results.json" ]; then
+            node -e "
+              const fs = require('fs');
+              const data = JSON.parse(fs.readFileSync('docs/test-results/vitest-results.json', 'utf8'));
+              const passed = data.numPassedTests || 0;
+              const failed = data.numFailedTests || 0;
+              const total = data.numTotalTests || 0;
+              const duration = ((data.testResults || []).reduce((a, r) => a + (r.endTime - r.startTime), 0) / 1000).toFixed(2);
+              const suites = (data.testResults || []).map(r => {
+                const name = r.name.replace(/.*[\\/\\\\]/, '');
+                const status = r.status === 'passed' ? '✅' : '❌';
+                const tests = (r.assertionResults || []).map(t =>
+                  '<li>' + (t.status === 'passed' ? '✅' : '❌') + ' ' + t.fullName.replace(/</g,'&lt;') + '</li>'
+                ).join('');
+                return '<details><summary>' + status + ' ' + name + '</summary><ul>' + tests + '</ul></details>';
+              }).join('');
+              const html = '<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\"><title>Unit Test Results</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:\"Segoe UI\",sans-serif;line-height:1.6;color:#e0e0e0;background:linear-gradient(135deg,#0a0e27,#1a1e3d);min-height:100vh;padding:2rem}.container{max-width:900px;margin:0 auto}h1{color:#00d9ff;margin-bottom:1rem}h2{color:#ffbe0b;margin:1.5rem 0 .5rem}.stats{display:flex;gap:2rem;margin:1rem 0;flex-wrap:wrap}.stat{background:rgba(26,30,61,.6);border:1px solid rgba(0,217,255,.3);border-radius:8px;padding:1rem 1.5rem}.stat .num{font-size:2rem;font-weight:bold}.pass{color:#00ff88}.fail{color:#ff006e}.total{color:#00d9ff}details{background:rgba(26,30,61,.4);border:1px solid rgba(0,217,255,.2);border-radius:4px;margin:.5rem 0;padding:.5rem 1rem}summary{cursor:pointer;font-weight:bold}ul{margin:.5rem 0 .5rem 1.5rem}li{margin:.25rem 0}a{color:#00d9ff}</style></head><body><div class=\"container\"><h1>🧪 Unit Test Results</h1><div class=\"stats\"><div class=\"stat\"><div class=\"num pass\">' + passed + '</div>Passed</div><div class=\"stat\"><div class=\"num fail\">' + failed + '</div>Failed</div><div class=\"stat\"><div class=\"num total\">' + total + '</div>Total</div><div class=\"stat\"><div class=\"num total\">' + duration + 's</div>Duration</div></div><h2>Test Suites</h2>' + suites + '<p style=\"margin-top:2rem\"><a href=\"../index.html\">← Back to Documentation Hub</a></p></div></body></html>';
+              fs.writeFileSync('docs/test-results/index.html', html);
+            "
+            echo "✅ Unit test results HTML generated at docs/test-results/index.html"
           fi
           
-          # Create test results index if coverage exists
-          if [ -d "docs/coverage" ]; then
-            echo "✅ Coverage report available at docs/coverage/index.html"
+          # Generate E2E test results HTML index from log output
+          if [ -f "docs/cypress/e2e-output.log" ]; then
+            node -e "
+              const fs = require('fs');
+              const log = fs.readFileSync('docs/cypress/e2e-output.log', 'utf8');
+              const escaped = log.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+              const passMatch = log.match(/All specs passed!|(\d+) passing/);
+              const failMatch = log.match(/(\d+) failing/);
+              const status = failMatch ? '❌ Some tests failed' : (passMatch ? '✅ All tests passed' : 'ℹ️ Test results');
+              const hasScreenshots = fs.existsSync('docs/cypress/screenshots');
+              const screenshotLinks = hasScreenshots ? '<h2>Screenshots</h2><p>Available in <a href=\"screenshots/\">screenshots/</a></p>' : '';
+              const html = '<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\"><title>E2E Test Results</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:\"Segoe UI\",sans-serif;line-height:1.6;color:#e0e0e0;background:linear-gradient(135deg,#0a0e27,#1a1e3d);min-height:100vh;padding:2rem}.container{max-width:900px;margin:0 auto}h1{color:#00d9ff;margin-bottom:1rem}h2{color:#ffbe0b;margin:1.5rem 0 .5rem}.status{font-size:1.3rem;margin:1rem 0}pre{background:rgba(0,0,0,.4);border:1px solid rgba(0,217,255,.2);border-radius:8px;padding:1.5rem;overflow-x:auto;font-size:.85rem;max-height:600px;overflow-y:auto}a{color:#00d9ff}</style></head><body><div class=\"container\"><h1>🎭 E2E Test Results (Cypress)</h1><p class=\"status\">' + status + '</p>' + screenshotLinks + '<h2>Test Output</h2><pre>' + escaped + '</pre><p style=\"margin-top:2rem\"><a href=\"../index.html\">← Back to Documentation Hub</a></p></div></body></html>';
+              fs.writeFileSync('docs/cypress/index.html', html);
+            "
+            echo "✅ E2E test results HTML generated at docs/cypress/index.html"
           fi
           
           echo "✅ Test reports copied to docs/"
@@ -329,13 +364,13 @@ jobs:
                 <div class="card">
                   <h2>🧪 Test Results</h2>
                   <p>Detailed unit test results from Vitest, including all test suites and individual test cases.</p>
-                  <a href="test-results/">View Test Results →</a>
+                  <a href="test-results/index.html">View Test Results →</a>
                 </div>
                 
                 <div class="card">
                   <h2>🎭 E2E Tests (Cypress)</h2>
                   <p>End-to-end test reports from Cypress, validating dashboard functionality and user interactions.</p>
-                  <a href="cypress/">View E2E Reports →</a>
+                  <a href="cypress/index.html">View E2E Reports →</a>
                 </div>
                 
                 <div class="card">
