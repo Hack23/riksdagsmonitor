@@ -22,6 +22,32 @@
 
 ---
 
+## 🎯 Purpose
+
+This document defines the data model for the Riksdagsmonitor platform, documenting entity relationships, data structures, CIA product schemas, and data quality metrics for Swedish Parliament political data spanning 50+ years.
+
+## 📚 Architecture Documentation Map
+
+| Document | Focus | Description |
+|----------|-------|-------------|
+| [Architecture](ARCHITECTURE.md) | 🏛️ C4 Models | System structure and components |
+| **[Data Model](DATA_MODEL.md)** | **📊 Data** | **Entities, schemas, relationships** |
+| [Flowcharts](FLOWCHART.md) | 🔄 Processes | Process flows and data pipelines |
+| [State Diagrams](STATEDIAGRAM.md) | 🔄 Behavior | System state transitions |
+| [Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
+| [SWOT](SWOT.md) | 💼 Strategy | Strategic position assessment |
+| [Security Architecture](SECURITY_ARCHITECTURE.md) | 🛡️ Security | Defense-in-depth controls |
+| [Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE threat analysis |
+| [Future Architecture](FUTURE_ARCHITECTURE.md) | 🚀 Future | Architectural evolution roadmap |
+| [Future Data Model](FUTURE_DATA_MODEL.md) | 🚀 Future | Enhanced data architecture plans |
+| [Future Flowcharts](FUTURE_FLOWCHART.md) | 🚀 Future | Advanced process flows roadmap |
+| [Future State Diagrams](FUTURE_STATEDIAGRAM.md) | 🚀 Future | Advanced state management |
+| [Future Mindmap](FUTURE_MINDMAP.md) | 🚀 Future | Capability expansion plans |
+| [Future SWOT](FUTURE_SWOT.md) | 🚀 Future | Future strategic opportunities |
+| [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) | 🚀 Future | Planned security improvements |
+
+---
+
 ## Executive Summary
 
 Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ years of Swedish Parliament data (1971-2026) with 19 intelligence products from the CIA platform. This document defines all data entities, relationships, schemas, pipelines, and integration patterns following Hack23 AB's ISMS standards (ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1).
