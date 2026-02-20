@@ -33,7 +33,7 @@ This document defines the data model for the Riksdagsmonitor platform, documenti
 | [Architecture](ARCHITECTURE.md) | 🏛️ C4 Models | System structure and components |
 | **[Data Model](DATA_MODEL.md)** (this doc) | 📊 Data | Entities, schemas, relationships |
 | [Flowcharts](FLOWCHART.md) | 🔄 Processes | Process flows and data pipelines |
-| [State Diagrams](STATEDIAGRAM.md) | 🔄 Behavior | System state transitions |
+| [State Diagrams](STATEDIAGRAM.md) | 📈 States | System state transitions |
 | [Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
 | [SWOT](SWOT.md) | 💼 Strategy | Strategic position assessment |
 | [Security Architecture](SECURITY_ARCHITECTURE.md) | 🛡️ Security | Defense-in-depth controls |
