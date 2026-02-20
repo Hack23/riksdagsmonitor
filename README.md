@@ -514,13 +514,28 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - [README.md](README.md) - This file
 - [RELEASE_PROCESS.md](RELEASE_PROCESS.md) - Comprehensive release guide with attestations ✨ **NEW**
 - [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) - Multi-language translation standards and glossary
-- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security architecture and controls
-- [THREAT_MODEL.md](THREAT_MODEL.md) - Threat analysis and risk assessment
-- [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows and automation
-- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture and design
-- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Future security roadmap
-- [LABELS.md](LABELS.md) - Automatic labeling system and label definitions ✨ **NEW**
+- [SECURITY.md](SECURITY.md) - Security policy and vulnerability reporting ✨ **NEW**
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines ✨ **NEW**
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Community standards ✨ **NEW**
 - [LICENSE](LICENSE) - Apache License 2.0
+
+### Architecture Documentation Portfolio
+| Current State | Future State |
+|--------------|-------------|
+| [🏗️ Architecture](ARCHITECTURE.md) | [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) |
+| [📊 Data Model](DATA_MODEL.md) | [📊 Future Data Model](FUTURE_DATA_MODEL.md) |
+| [🔄 Flowcharts](FLOWCHART.md) | [🔄 Future Flowcharts](FUTURE_FLOWCHART.md) |
+| [🔄 State Diagrams](STATEDIAGRAM.md) | [🔄 Future State Diagrams](FUTURE_STATEDIAGRAM.md) |
+| [🗺️ Mindmap](MINDMAP.md) | [🗺️ Future Mindmap](FUTURE_MINDMAP.md) |
+| [💼 SWOT](SWOT.md) | [💼 Future SWOT](FUTURE_SWOT.md) |
+
+### Security Documentation
+- [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) - Defense-in-depth security controls
+- [🔮 Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap
+- [🎯 Threat Model](THREAT_MODEL.md) - STRIDE threat analysis and risk assessment
+- [🔧 Workflows](WORKFLOWS.md) - CI/CD workflows and automation
+- [🔐 Security Policy](SECURITY.md) - Vulnerability reporting and disclosure
+- [LABELS.md](LABELS.md) - Automatic labeling system and label definitions ✨ **NEW**
 
 ### GitHub Copilot Integration
 - [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (13 agents)

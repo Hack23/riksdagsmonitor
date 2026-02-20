@@ -1,13 +1,41 @@
-# 🗺️ Riksdagsmonitor - System Mindmaps
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-01-29  
-**Classification:** Public  
-**Owner:** Hack23 AB (Org.nr 5595347807)
+<h1 align="center">🗺️ Riksdagsmonitor — System Mindmaps</h1>
+
+<p align="center">
+  <strong>🧠 Conceptual Maps for Democratic Intelligence Architecture</strong><br>
+  <em>🎯 System Overview · Security · CI/CD · Data Integration · Compliance</em>
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-02-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
 
 ## 🎯 Purpose
 
 This document provides conceptual mindmaps for Riksdagsmonitor, offering intuitive visual representations of the system's organization, workflows, and architecture. These mindmaps complement the detailed technical documentation and serve as entry points for understanding the platform's structure.
+
+## 📚 Related Architecture Documentation
+
+| Document | Focus | Description |
+|----------|-------|-------------|
+| **[Architecture](ARCHITECTURE.md)** | 🏛️ C4 Models | System structure and components |
+| **[Data Model](DATA_MODEL.md)** | 📊 Data | Entities, schemas, relationships |
+| **[State Diagrams](STATEDIAGRAM.md)** | 🔄 Behavior | System state transitions |
+| **[Flowcharts](FLOWCHART.md)** | 🔄 Processes | Process flows and pipelines |
+| **[SWOT](SWOT.md)** | 💼 Strategy | Strategic position assessment |
+| **[Future Mindmap](FUTURE_MINDMAP.md)** | 🚀 Future | Future capability map |
 
 ---
 
@@ -415,24 +443,32 @@ mindmap
 
 ## 🔗 Related Documentation
 
-### Core Documentation
-- [README.md](README.md) - Project overview and quick start
-- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Detailed security controls
-- [THREAT_MODEL.md](THREAT_MODEL.md) - STRIDE analysis and risk assessment
-- [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows documentation
-- [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture with diagrams
-- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Future roadmap
+### 🏗️ Architecture Documentation
+- [🏗️ Architecture](ARCHITECTURE.md) — System architecture (C4 models)
+- [📊 Data Model](DATA_MODEL.md) — Data entities and relationships
+- [🔄 Flowcharts](FLOWCHART.md) — Process flows and pipelines
+- [🔄 State Diagrams](STATEDIAGRAM.md) — System state transitions
+- [💼 SWOT](SWOT.md) — Strategic position assessment
+- [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) — Defense-in-depth controls
+- [🎯 Threat Model](THREAT_MODEL.md) — STRIDE threat analysis
+- [🔧 Workflows](WORKFLOWS.md) — CI/CD pipeline documentation
 
-### External References
-- [Hack23 ISMS](https://github.com/Hack23/ISMS-PUBLIC)
-- [CIA Platform](https://github.com/Hack23/cia)
-- [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+### 🚀 Future Architecture
+- [🗺️ Future Mindmap](FUTURE_MINDMAP.md) — Future capability map
+- [🏗️ Future Architecture](FUTURE_ARCHITECTURE.md) — System evolution
+- [🛡️ Future Security](FUTURE_SECURITY_ARCHITECTURE.md) — Security roadmap
+
+### 🛡️ ISMS Policies (Hack23 AB)
+- [🔐 Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md)
+- [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+- [📊 Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
 
 ---
 
-**Document Control:**
-- **Repository:** https://github.com/Hack23/riksdagsmonitor
-- **Path:** /MINDMAP.md
-- **Format:** Markdown with Mermaid mindmap diagrams
-- **Classification:** Public
-- **Next Review:** 2026-04-29
+**📋 Document Control:**  
+**✅ Approved by:** James Pether Sörling, CEO  
+**📤 Distribution:** Public  
+**🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
+**📅 Effective Date:** 2026-02-20  
+**⏰ Next Review:** 2026-05-20  
+**🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
