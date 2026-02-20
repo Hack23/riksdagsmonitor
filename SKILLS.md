@@ -18,9 +18,9 @@ Skills are:
 - ✅ **Reusable**: Apply across multiple tasks
 - ✅ **Context-Aware**: Load only when relevant
 
-## Available Skills (57 Total) ✨ **UPDATED 2026-02-11**
+## Available Skills (87 Total) ✨ **UPDATED 2026-02-20**
 
-### Core Infrastructure (8 skills) ⬆️ **EXPANDED**
+### Core Infrastructure (9 skills) ⬆️ **EXPANDED**
 1. hack23-isms-compliance
 2. security-by-design
 3. static-site-security
@@ -28,61 +28,110 @@ Skills are:
 5. documentation-standards
 6. html-accessibility
 7. multi-language-localization
-8. **hack23-future-architecture-standards** ✨ **NEW** (2026-02-11) - Complete standards for FUTURE_ARCHITECTURE.md documents
+8. **hack23-future-architecture-standards** ✨ (2026-02-11)
+9. **documentation-portfolio** ✨ **NEW** (2026-02-20) - Required architecture docs (current/future state)
 
 ### Political Intelligence (11 skills)
-8. political-science-analysis
-9. osint-methodologies
-10. intelligence-analysis-techniques
-11. swedish-political-system
-12. electoral-analysis
-13. behavioral-analysis
-14. strategic-communication-analysis
-15. legislative-monitoring
-16. risk-assessment-frameworks
-17. data-science-for-intelligence
-18. gdpr-compliance
+10. political-science-analysis
+11. osint-methodologies
+12. intelligence-analysis-techniques
+13. swedish-political-system
+14. electoral-analysis
+15. behavioral-analysis
+16. strategic-communication-analysis
+17. legislative-monitoring
+18. risk-assessment-frameworks
+19. data-science-for-intelligence
+20. gdpr-compliance
 
-### ISMS & Security (6 skills)
-19. cis-controls
-20. iso-27001-controls
-21. nist-csf-mapping
-22. threat-modeling
-23. secure-code-review
-24. security-documentation
+### ISMS & Security (12 skills) ⬆️ **EXPANDED**
+21. cis-controls
+22. iso-27001-controls
+23. nist-csf-mapping
+24. threat-modeling
+25. secure-code-review
+26. security-documentation
+27. **incident-response** ✨ **NEW** (2026-02-20) - Security incident procedures (NIST/ISO 27001)
+28. **input-validation** ✨ **NEW** (2026-02-20) - XSS/injection prevention patterns
+29. **vulnerability-management** ✨ **NEW** (2026-02-20) - Vulnerability scanning and remediation
+30. **data-protection** ✨ **NEW** (2026-02-20) - Privacy-by-design, GDPR compliance
+31. **ai-governance** ✨ **NEW** (2026-02-20) - AI/LLM governance and responsible AI
+32. **information-security-strategy** ✨ **NEW** (2026-02-20) - Security program governance
 
-### Development & Operations (11 skills)
-26. c4-architecture-documentation
-27. github-actions-workflows
-28. code-quality-checks
-29. secrets-management
-30. data-pipeline-engineering
-31. automated-content-generation
-32. performance-optimization
-33. api-integration
-34. github-agentic-workflows
+### Development & Operations (16 skills) ⬆️ **EXPANDED**
+33. c4-architecture-documentation
+34. github-actions-workflows
+35. code-quality-checks
+36. secrets-management
+37. data-pipeline-engineering
+38. automated-content-generation
+39. performance-optimization
+40. api-integration
+41. github-agentic-workflows
+42. **code-review-practices** ✨ **NEW** (2026-02-20) - Code review standards and feedback
+43. **testing-strategy** ✨ **NEW** (2026-02-20) - Unit/integration/E2E/security testing
+44. **contribution-guidelines** ✨ **NEW** (2026-02-20) - Open source contribution standards
+45. **change-management** ✨ **NEW** (2026-02-20) - Change control processes (ITIL/ISO 27001)
+46. **open-source-governance** ✨ **NEW** (2026-02-20) - License compliance and supply chain security
+47. **copilot-agent-patterns** ✨ **NEW** (2026-02-20) - Agent design patterns and orchestration
+48. **product-management-patterns** ✨ **NEW** (2026-02-20) - Feature prioritization and roadmaps
 
-### UI/UX & Design (5 skills) ⬆️ **EXPANDED** ✨
-35. responsive-design
-36. design-system-management
-37. political-data-visualization
-38. advanced-data-visualization
-39. **ui-ux-design** ✨ **NEW** (2026-02-11) - Comprehensive UX, usability, accessibility
+### UI/UX & Design (7 skills) ⬆️ **EXPANDED**
+49. responsive-design
+50. design-system-management
+51. political-data-visualization
+52. advanced-data-visualization
+53. ui-ux-design
+54. **seo-optimization** ✨ **NEW** (2026-02-20) - Schema.org, meta tags, multilingual SEO
+55. **data-visualization-principles** ✨ **NEW** (2026-02-20) - Chart selection, color theory, accessibility
 
 ### Testing & Quality Assurance (2 skills)
-40. playwright-testing
-41. issue-management
+56. playwright-testing
+57. issue-management
 
-### Data Integration (2 skills)
-42. riksdag-regering-mcp
-43. cia-data-integration
+### Data Integration (4 skills) ⬆️ **EXPANDED**
+58. riksdag-regering-mcp
+59. cia-data-integration
+60. **mcp-server-development** ✨ **NEW** (2026-02-20) - MCP server patterns and transport protocols
+61. **european-parliament-api** ✨ **NEW** (2026-02-20) - EU Parliament Open Data integration
 
-### Business & Marketing (2 skills) ✨ **NEW CATEGORY** (2026-02-11)
-44. **marketing** ✨ **NEW** - Digital marketing, SEO, content, social media, analytics
-45. **business-development** ✨ **NEW** - Partnerships, revenue models, stakeholder engagement
+### Business & Marketing (2 skills)
+62. marketing
+63. business-development
 
-### Language & Localization (1 skill) ✨ **NEW CATEGORY** (2026-02-11)
-46. **language-expertise** ✨ **NEW** - Comprehensive expertise for all 14 languages (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
+### Language & Localization (1 skill)
+64. language-expertise
+
+### GitHub Agentic Workflows (12 skills)
+65. gh-aw-authentication-credentials
+66. gh-aw-containerization
+67. gh-aw-continuous-ai-patterns
+68. gh-aw-firewall
+69. gh-aw-github-actions-integration
+70. gh-aw-logging-monitoring
+71. gh-aw-mcp-configuration
+72. gh-aw-mcp-gateway
+73. gh-aw-safe-outputs
+74. gh-aw-security-architecture
+75. gh-aw-tools-ecosystem
+76. gh-aw-workflow-authoring
+
+### Journalism & Media (4 skills)
+77. editorial-standards
+78. investigative-journalism
+79. prospective-news-coverage
+80. comparative-politics-reporting
+
+### Secure Development (3 skills)
+81. secure-development-lifecycle
+82. secure-development-policy
+83. compliance-checklist
+
+### Government & Regulatory (4 skills)
+84. global-government-analysis
+85. myndigheter-monitoring
+86. regulatory-affairs
+87. economic-policy-analysis
 
 ---
 
@@ -1583,7 +1632,7 @@ Many tasks benefit from combining multiple skills:
 
 ---
 
-**Last Updated**: 2026-02-11  
-**Total Skills**: 45  
-**New Categories**: Business & Marketing (2 skills), Language & Localization (1 skill)  
+**Last Updated**: 2026-02-20  
+**Total Skills**: 87  
+**New Skills (2026-02-20)**: 18 skills added from Hack23 repos (security, development, governance, platform, design)  
 **Maintained by**: Hack23 AB
