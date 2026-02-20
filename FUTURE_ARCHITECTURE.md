@@ -37,6 +37,26 @@
 >
 > — **James Pether Sörling, CEO, Hack23 AB**
 
+## 📚 Architecture Documentation Map
+
+| Document | Focus | Description |
+|----------|-------|-------------|
+| **[Architecture](ARCHITECTURE.md)** | 🏛️ Current | C4 models (Context, Container, Component) |
+| **[Data Model](DATA_MODEL.md)** | 📊 Current | Entities, schemas, relationships |
+| **[Flowcharts](FLOWCHART.md)** | 🔄 Current | Process flows and data pipelines |
+| **[State Diagrams](STATEDIAGRAM.md)** | 🔄 Current | System state transitions |
+| **[Mindmaps](MINDMAP.md)** | 🧠 Current | Conceptual system maps |
+| **[SWOT](SWOT.md)** | 💼 Current | Strategic position assessment |
+| **[Future Architecture](FUTURE_ARCHITECTURE.md)** | 🚀 **This Document** | AWS serverless roadmap, AI enhancement |
+| **[Future Data Model](FUTURE_DATA_MODEL.md)** | 📊 Future | Aurora, DynamoDB, Neptune data architecture |
+| **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 Future | Bedrock AI workflows, Step Functions orchestration |
+| **[Future State Diagrams](FUTURE_STATEDIAGRAM.md)** | 🔄 Future | AI-enhanced state transitions, event-driven workflows |
+| **[Future Mindmaps](FUTURE_MINDMAP.md)** | 🧠 Future | Future capability evolution, AWS service relationships |
+| **[Future SWOT](FUTURE_SWOT.md)** | 💼 Future | Future strategic opportunities |
+| **[Security Architecture](SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Defense-in-depth controls |
+| **[Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md)** | 🛡️ Future | Planned AWS security enhancements (GuardDuty, WAF) |
+| **[Threat Model](THREAT_MODEL.md)** | 🎯 Security | STRIDE threat analysis |
+
 ---
 
 ## 📊 Executive Summary
