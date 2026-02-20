@@ -165,6 +165,7 @@ jobs:
           npm run coverage
 
       - name: Start app and run E2E tests
+        shell: bash
         env:
           CYPRESS_VIDEO: false
           NODE_OPTIONS: "--max-old-space-size=4096"
