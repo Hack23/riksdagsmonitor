@@ -1,9 +1,33 @@
 {
-  "lastGeneration": "2026-02-19T05:30:00Z",
-  "articleTypes": ["committee-reports", "government-propositions", "opposition-motions"],
-  "languages": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
-  "articlesGenerated": 42,
-  "date": "2026-02-19",
-  "source": "riksdag-regering-mcp",
-  "forceGeneration": false
+  "timestamp": "2026-02-20T10:15:00.000Z",
+  "check_type": "realtime_monitor",
+  "events_detected": {
+    "high_significance": [
+      {
+        "type": "committee_reports",
+        "count": 10,
+        "ids": ["HD01NU19", "HD01NU20", "HD01NU18", "HD01SfU21", "HD01SfU23", "HD01AU9", "HD01NU22", "HD01NU23", "HD01NU21", "HD01KrU4"],
+        "description": "Largest single-day batch of committee reports in current session"
+      },
+      {
+        "type": "interpellations",
+        "count": 7,
+        "ids": ["HD10343", "HD10344", "HD10345", "HD10346", "HD10347", "HD10348", "HD10349"],
+        "description": "Coordinated Social Democrat interpellation offensive targeting multiple government ministers"
+      }
+    ],
+    "medium_significance": [
+      {
+        "type": "written_question",
+        "count": 1,
+        "ids": ["HD11528"],
+        "description": "Written question on tonnage tax design"
+      }
+    ]
+  },
+  "articles_generated": [
+    "2026-02-20-committee-reports"
+  ],
+  "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+  "next_check": "2026-02-20T14:00:00.000Z"
 }
