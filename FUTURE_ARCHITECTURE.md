@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
@@ -25,8 +25,8 @@
   <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor.svg?type=shield" alt="FOSSA"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-15  
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-02-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -36,6 +36,26 @@
 > *"At Hack23 AB, we have made a strategic decision to build our future on AWS serverless architecture. This means zero infrastructure management, no Kubernetes, no containers to maintain—just pure serverless compute, managed AI services, and AWS's deep expertise in security and compliance. By standardizing entirely on AWS, we eliminate operational complexity and leverage Amazon Bedrock for all AI capabilities. This document openly shares our AWS-first roadmap for transforming Riksdagsmonitor into an AI-enhanced political intelligence platform built on the most mature serverless ecosystem in the industry."*
 >
 > — **James Pether Sörling, CEO, Hack23 AB**
+
+## 📚 Architecture Documentation Map
+
+| Document | Focus | Description |
+|----------|-------|-------------|
+| **[Architecture](ARCHITECTURE.md)** | 🏛️ Current | C4 models (Context, Container, Component) |
+| **[Data Model](DATA_MODEL.md)** | 📊 Current | Entities, schemas, relationships |
+| **[Flowcharts](FLOWCHART.md)** | 🔄 Current | Process flows and data pipelines |
+| **[State Diagrams](STATEDIAGRAM.md)** | 🔄 Current | System state transitions |
+| **[Mindmaps](MINDMAP.md)** | 🧠 Current | Conceptual system maps |
+| **[SWOT](SWOT.md)** | 💼 Current | Strategic position assessment |
+| **[Future Architecture](FUTURE_ARCHITECTURE.md)** | 🚀 **This Document** | AWS serverless roadmap, AI enhancement |
+| **[Future Data Model](FUTURE_DATA_MODEL.md)** | 📊 Future | Aurora, DynamoDB, Neptune data architecture |
+| **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 Future | Bedrock AI workflows, Step Functions orchestration |
+| **[Future State Diagrams](FUTURE_STATEDIAGRAM.md)** | 🔄 Future | AI-enhanced state transitions, event-driven workflows |
+| **[Future Mindmaps](FUTURE_MINDMAP.md)** | 🧠 Future | Future capability evolution, AWS service relationships |
+| **[Future SWOT](FUTURE_SWOT.md)** | 💼 Future | Future strategic opportunities |
+| **[Security Architecture](SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Defense-in-depth controls |
+| **[Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md)** | 🛡️ Future | Planned AWS security enhancements (GuardDuty, WAF) |
+| **[Threat Model](THREAT_MODEL.md)** | 🎯 Security | STRIDE threat analysis |
 
 ---
 
@@ -1898,6 +1918,6 @@ Riksdagsmonitor's future architecture represents a strategic evolution from a st
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-15  
-**⏰ Next Review:** 2026-05-15  
+**📅 Effective Date:** 2026-02-20  
+**⏰ Next Review:** 2026-05-20  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![AWS Well-Architected](https://img.shields.io/badge/AWS-Well_Architected-FF9900?style=flat-square&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/architecture/well-architected/)
