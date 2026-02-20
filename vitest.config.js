@@ -103,7 +103,7 @@ export default defineConfig({
     // Reporter configuration - verbose to console, JSON to builds/ for release docs
     reporters: [
       'verbose',
-      ['json', { outputFile: 'builds/test-results/vitest-results.json' }]
+      ['json', { outputFile: process.env.VITEST_JSON_OUTPUT || 'builds/test-results/vitest-results.json' }]
     ],
     
     // Watch mode settings

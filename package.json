@@ -39,7 +39,7 @@
     "docs:diagrams": "echo 'Architecture diagrams generation placeholder - implement with graphviz if needed'",
     "test:e2ereportmerge": "echo 'Cypress report merge placeholder - mochawesome-merge if multi-spec reports exist'",
     "test:e2ereporthtmlall": "echo 'Cypress HTML report generation placeholder - mochawesome-report-generator'",
-    "build:test-reports": "mkdir -p docs/test-results docs/cypress docs/coverage && ([ -d builds/coverage ] && cp -r builds/coverage/* docs/coverage/ || echo 'No coverage directory to copy') && ([ -d builds/test-results ] && cp -r builds/test-results/* docs/test-results/ || echo 'No test-results directory to copy') && ([ -d builds/cypress ] && cp -r builds/cypress/* docs/cypress/ || echo 'No cypress directory to copy') && echo 'Test reports copied to docs/'",
+    "build:test-reports": "mkdir -p docs/test-results docs/cypress docs/coverage && ([ -d builds/coverage ] && [ -n \"$(ls -A builds/coverage 2>/dev/null)\" ] && cp -r builds/coverage/* docs/coverage/ || echo 'No coverage directory to copy') && ([ -d builds/test-results ] && [ -n \"$(ls -A builds/test-results 2>/dev/null)\" ] && cp -r builds/test-results/* docs/test-results/ || echo 'No test-results directory to copy') && ([ -d builds/cypress ] && [ -n \"$(ls -A builds/cypress 2>/dev/null)\" ] && cp -r builds/cypress/* docs/cypress/ || echo 'No cypress directory to copy') && echo 'Test reports copied to docs/'",
     "docs:sitemap": "node scripts/generate-sitemap.js",
     "serve": "python3 -m http.server 8080",
     "linkcheck": "linkinator http://localhost:8080/ --recurse"
