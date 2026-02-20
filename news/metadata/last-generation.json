@@ -1,9 +1,40 @@
 {
-  "lastGeneration": "2026-02-20T06:10:00Z",
-  "articleTypes": ["week-ahead", "committee-reports", "government-propositions", "opposition-motions"],
-  "languages": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
-  "articlesGenerated": 56,
-  "date": "2026-02-20",
-  "source": "riksdag-regering-mcp",
-  "forceGeneration": false
+  "timestamp": "2026-02-20T14:15:00.000Z",
+  "type": "realtime-monitor",
+  "schedule": "weekday-14:00-utc",
+  "events_detected": [
+    {
+      "type": "committee_reports",
+      "significance": "HIGH",
+      "count": 12,
+      "committee": "SfU (Socialförsäkringsutskottet)",
+      "topic": "Immigration reform package",
+      "documents": ["HD01SfU21", "HD01SfU23", "HD01SfU24", "HD01SfU25", "HD01SfU26", "HD01SfU27", "HD01SfU28", "HD01SfU30", "HD01SfU31", "HD01SfU32", "HD01SfU34", "HD01SfU35"]
+    },
+    {
+      "type": "interpellations",
+      "significance": "MEDIUM",
+      "count": 8,
+      "topics": ["For-profit schools", "Scaffolding worker certification", "Student attitudes toward minorities", "Night trains", "Fiscal Policy Council", "Healthcare working conditions", "Discrimination law", "Malmfälten workforce"]
+    },
+    {
+      "type": "written_questions",
+      "significance": "MEDIUM",
+      "count": 1,
+      "topics": ["Tonnage tax design"]
+    }
+  ],
+  "articles_generated": [
+    {
+      "slug": "immigration-reform-reports",
+      "languages": 14,
+      "significance": "HIGH",
+      "article_type": "breaking"
+    }
+  ],
+  "next_check": "2026-02-21T10:00:00.000Z",
+  "data_freshness": {
+    "mcp_status": "live",
+    "sync_time": "2026-02-20T14:16:00.660Z"
+  }
 }
