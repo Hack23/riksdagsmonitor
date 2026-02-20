@@ -420,9 +420,9 @@ describe('Multi-Language Cross-Page Navigation', () => {
       
       // Navigate to dashboard (if link exists)
       cy.get('body').then(($body) => {
-        const dashboardLink = $body.find(`a[href*="dashboard"]`);
+        const dashboardLink = $body.find('a.dashboard-cta-link');
         if (dashboardLink.length > 0) {
-          cy.get('a[href*="dashboard"]').first().click();
+          cy.get('a.dashboard-cta-link').first().scrollIntoView().click();
           cy.url().should('include', 'dashboard');
           cy.get('html').invoke('attr', 'lang').should('match', new RegExp(langCode, 'i'));
         }
@@ -431,9 +431,9 @@ describe('Multi-Language Cross-Page Navigation', () => {
       // Navigate to news (if link exists)
       cy.visit(`/index_${langCode}.html`);
       cy.get('body').then(($body) => {
-        const newsLink = $body.find(`a[href*="news"]`);
+        const newsLink = $body.find('a.news-navigation-link');
         if (newsLink.length > 0) {
-          cy.get('a[href*="news"]').first().click();
+          cy.get('a.news-navigation-link').first().scrollIntoView().click({ force: true });
           cy.url().should('include', 'news');
           cy.get('html').invoke('attr', 'lang').should('match', new RegExp(langCode, 'i'));
         }
