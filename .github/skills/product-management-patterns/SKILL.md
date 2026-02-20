@@ -1,7 +1,7 @@
 ---
 name: product-management-patterns
 description: Product management patterns including roadmap planning, feature prioritization, user feedback, and agile practices
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Product Management Patterns Skill

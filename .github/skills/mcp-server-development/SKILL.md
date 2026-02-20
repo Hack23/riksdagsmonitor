@@ -1,7 +1,7 @@
 ---
 name: mcp-server-development
 description: Model Context Protocol server development patterns, tool design, transport protocols, and MCP best practices
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # MCP Server Development Skill
@@ -36,15 +36,17 @@ Provides patterns for developing and integrating Model Context Protocol (MCP) se
   "mcpServers": {
     "github": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github", "--toolsets", "all"],
+      "args": ["-y", "@modelcontextprotocol/server-github@latest", "--toolsets", "all"],
       "env": {
-        "GITHUB_TOKEN": "${{ secrets.TOKEN }}",
+        "GITHUB_TOKEN": "${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}",
         "GITHUB_API_URL": "https://api.githubcopilot.com/mcp/insiders"
       }
     }
   }
 }
 ```
+
+> **Supply Chain Security**: In production, pin packages to exact versions (e.g., `@modelcontextprotocol/server-github@0.1.0`) and verify integrity. Use `@latest` only in examples. Always use GitHub secrets for tokens, never hard-code credentials.
 
 ## Testing MCP Tools
 - Unit test each tool independently

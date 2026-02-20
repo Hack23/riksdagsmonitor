@@ -1,7 +1,7 @@
 ---
 name: documentation-portfolio
 description: Required architecture documents including current/future state diagrams, data models, flowcharts, state diagrams, mindmaps, and SWOT analysis
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Documentation Portfolio Skill

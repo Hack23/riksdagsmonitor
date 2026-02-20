@@ -1,7 +1,7 @@
 ---
 name: change-management
 description: Change management processes, impact assessment, approval workflows, and rollback procedures following ITIL and ISO 27001
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Change Management Skill

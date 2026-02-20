@@ -1,7 +1,7 @@
 ---
 name: open-source-governance
 description: Open source policy, license compliance, contribution guidelines, dependency management, and supply chain security
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Open Source Governance Skill

@@ -4,7 +4,7 @@
 
 This repository includes custom GitHub Copilot agents specialized for different aspects of the riksdagsmonitor project. Each agent has deep expertise in its domain and can be invoked to assist with specific tasks.
 
-## Available Agents (13 Total)
+## Available Agents (14 Total)
 
 ### 1. Security Architect (`security-architect`)
 **Expertise**: Security architecture, ISMS compliance, threat modeling, ISO 27001/NIST CSF/CIS Controls
@@ -401,6 +401,42 @@ assign_copilot_to_issue({
 })
 ```
 
+### 14. News Journalist (`news-journalist`) ✨ **NEW**
+**Expertise**: Political journalism, editorial standards, The Economist-style coverage, Swedish and global politics
+
+**Use for**:
+- Political news article generation (Riksdagen, Regeringen, Myndigheter)
+- Editorial quality control (AP/Reuters/The Economist style)
+- Multi-language news coverage (14 languages)
+- Fact-checking and source verification
+- Intelligence-driven narrative reporting
+- SEO-optimized Schema.org structured articles
+
+**Key Capabilities**:
+- **News Generation**: Data-driven articles from Riksdag/Regering MCP data
+- **Editorial Standards**: Inverted pyramid structure, balanced reporting, attribution
+- **Multi-Language**: Full translation workflow for 14 languages with RTL support
+- **Quality**: Schema.org NewsArticle, FAQPage, speakable structured data
+- **SEO**: Meta tags, Open Graph, Twitter Cards, hreflang tags
+
+**Example invocation**:
+```javascript
+assign_copilot_to_issue({
+  owner: "Hack23",
+  repo: "riksdagsmonitor",
+  issue_number: 201,
+  custom_agent: "news-journalist",
+  custom_instructions: `
+    Generate daily political news article covering:
+    - Latest government propositions
+    - Opposition motions
+    - Committee reports
+    - Support all 14 languages
+    - Include Schema.org structured data
+  `
+})
+```
+
 ## GitHub Copilot Coding Agent Features
 
 All agents support modern GitHub Copilot coding agent features:
@@ -703,6 +739,20 @@ All agents automatically load relevant skills from `.github/skills/` based on th
 - `hack23-isms-compliance` - Compliance requirements
 - `threat-modeling` - Security architecture
 
+### News Journalist ✨ **NEW**
+**Primary Skills**:
+- `editorial-standards` - Journalism quality standards
+- `automated-content-generation` - Template-based article generation
+- `multi-language-localization` - 14-language content
+- `seo-optimization` - Schema.org, meta tags, structured data
+- `riksdag-regering-mcp` - Swedish political data tools
+
+**Supporting Skills**:
+- `political-science-analysis` - Political context
+- `html-accessibility` - Accessible article structure
+- `responsive-design` - Article layout
+- `language-expertise` - Translation quality
+
 ---
 
 ## Best Practices
@@ -715,6 +765,7 @@ Select the agent that best matches your task:
 - **UI/Frontend** → Frontend Specialist
 - **Compliance** → ISMS Compliance Manager
 - **CI/CD** → Deployment Specialist
+- **Political news** → News Journalist
 
 ### 2. Provide Clear Instructions
 Use `custom_instructions` to give specific guidance:
@@ -728,7 +779,7 @@ custom_instructions: `
 ```
 
 ### 3. Leverage Skills
-Agents automatically load relevant skills from `.github/skills/` (40 total skills across 7 categories):
+Agents automatically load relevant skills from `.github/skills/` (87 total skills across 12 categories):
 
 **Core Infrastructure (7)**:
 - `hack23-isms-compliance`, `security-by-design`, `static-site-security`
@@ -836,5 +887,5 @@ All agents follow these standards:
 
 ---
 
-**Last Updated**: 2026-02-06  
+**Last Updated**: 2026-02-20  
 **Maintained by**: Hack23 AB

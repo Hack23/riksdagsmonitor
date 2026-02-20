@@ -1,7 +1,7 @@
 ---
 name: testing-strategy
 description: Comprehensive testing strategy covering unit, integration, E2E, security, accessibility, and performance testing
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Testing Strategy Skill

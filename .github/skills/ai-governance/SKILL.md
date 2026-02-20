@@ -1,7 +1,7 @@
 ---
 name: ai-governance
 description: AI/LLM governance policies, ethical AI use, prompt security, and responsible AI development practices
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # AI Governance Skill

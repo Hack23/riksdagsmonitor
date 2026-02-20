@@ -1,7 +1,7 @@
 ---
 name: incident-response
 description: Security incident detection, classification, response procedures, and post-incident review following NIST and ISO 27001
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Incident Response Skill

@@ -1,7 +1,7 @@
 ---
 name: information-security-strategy
 description: Information security strategy, risk management, security program governance, and compliance framework integration
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Information Security Strategy Skill

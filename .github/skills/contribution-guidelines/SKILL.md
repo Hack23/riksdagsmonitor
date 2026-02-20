@@ -1,7 +1,7 @@
 ---
 name: contribution-guidelines
 description: Open source contribution standards, PR workflows, code of conduct, and community engagement best practices
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Contribution Guidelines Skill

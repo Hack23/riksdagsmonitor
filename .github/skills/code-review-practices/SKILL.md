@@ -1,7 +1,7 @@
 ---
 name: code-review-practices
 description: Code review best practices, quality gates, security checks, and constructive feedback guidelines for collaborative development
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Code Review Practices Skill

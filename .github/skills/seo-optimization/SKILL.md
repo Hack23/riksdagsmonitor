@@ -1,7 +1,7 @@
 ---
 name: seo-optimization
 description: SEO best practices including meta tags, structured data (Schema.org), semantic HTML, performance, and multilingual SEO with hreflang
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # SEO Optimization Skill

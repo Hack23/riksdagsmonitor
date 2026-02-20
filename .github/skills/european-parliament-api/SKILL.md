@@ -1,7 +1,7 @@
 ---
 name: european-parliament-api
 description: European Parliament Open Data API integration, MEP data, legislative procedures, and cross-parliament analysis
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # European Parliament API Skill

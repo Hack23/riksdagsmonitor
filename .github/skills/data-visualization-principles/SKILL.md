@@ -1,7 +1,7 @@
 ---
 name: data-visualization-principles
 description: Data visualization design principles, chart selection, color theory, accessibility, and storytelling with data
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Data Visualization Principles Skill

@@ -1,7 +1,7 @@
 ---
 name: data-protection
 description: Data protection, privacy-by-design, GDPR compliance, data classification, and secure data handling practices
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Data Protection Skill

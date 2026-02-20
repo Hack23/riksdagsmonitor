@@ -1,7 +1,7 @@
 ---
 name: input-validation
 description: Input validation and sanitization patterns for preventing XSS, injection attacks, and ensuring data integrity
-license: CC-BY-4.0
+license: Apache-2.0
 ---
 
 # Input Validation Skill
