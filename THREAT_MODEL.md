@@ -204,8 +204,6 @@ Crown Jewels are the top 5 highest-value assets that adversaries most desire and
 - 🔍 **Enhanced Monitoring:** Crown Jewels receive continuous automated monitoring plus human spot-checks
 - 📋 **Quarterly Review:** Crown Jewel list reviewed quarterly and after any significant architectural change
 
-
-
 | Asset | Confidentiality Goal | Integrity Goal | Availability Goal |
 |-------|---------------------|----------------|-------------------|
 | **Dashboard Code** | Public (open source) | **HIGH** - No unauthorized modifications | **HIGH** - 99.95% uptime |
@@ -2305,7 +2303,7 @@ Demonstrating [Hack23 Threat Modeling Policy § 4](https://github.com/Hack23/ISM
 |----------|-----------|----------------------|-------------|
 | **1️⃣ Attacker-Centric (MITRE ATT&CK)** | § MITRE ATT&CK Framework Integration | ✅ Complete | 23 techniques mapped, 9 tactics covered |
 | **2️⃣ Asset-Centric (Crown Jewels)** | § Critical Assets & Protection Goals | ✅ Complete | 10 assets classified, 5 Crown Jewels, $180K annual value |
-| **3️⃣ Architecture-Centric (STRIDE per Element)** | § Data Flow & Architecture Analysis | ✅ Complete | 26 STRIDE threats across DFD elements |
+| **3️⃣ Architecture-Centric (STRIDE per Element)** | § Data Flow & Architecture Analysis | ✅ Complete | 26 STRIDE threats across DFD elements (subset of 52 total STRIDE threats across all strategies) |
 | **4️⃣ Scenario-Centric (Misuse Cases)** | § Priority Threat Scenarios + § Attack Tree Analysis | ✅ Complete | 9 attack trees (3 dedicated + 6 embedded scenarios) |
 | **5️⃣ Risk-Centric (Quantitative Assessment)** | § Enhanced Risk-Centric Analysis (next section) | ✅ Complete | Risk scores, cost avoidance quantified |
 
@@ -2446,7 +2444,7 @@ graph TD
 | **AVOID** | 0 | No threats require feature removal | N/A |
 | **MITIGATE** | 48 | Active controls implemented | $180,000 |
 | **TRANSFER** | 4 | AWS/GitHub vendor responsibility (Shield, GitHub SLA) | $25,000 (vendor SLA value) |
-| **ACCEPT** | 42 | Residual risk within tolerance | $0 (cost of acceptance) |
+| **ACCEPT** | 18 | Residual risk within tolerance | $0 (cost of acceptance) |
 
 ### **Business Value Quantification**
 
