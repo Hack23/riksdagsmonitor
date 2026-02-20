@@ -9,6 +9,13 @@
   <em>🎯 Post-Quantum Ready · AI-Augmented Security · Zero-Trust Architecture</em>
 </p>
 
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Owner-Security_Architect-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--18-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
+</p>
+
 ---
 
 **Document Version:** 1.2  
@@ -34,6 +41,8 @@ This document outlines the future security architecture for Riksdagsmonitor over
 
 ## 📋 Table of Contents
 
+- [Architecture Documentation Map](#architecture-documentation-map)
+- [ISMS Policy Alignment](#isms-policy-alignment)
 1. [Current State Baseline](#1-current-state-baseline)
 2. [Threat Landscape Evolution](#2-threat-landscape-evolution)
 3. [Future Security Domains](#3-future-security-domains)
@@ -42,8 +51,79 @@ This document outlines the future security architecture for Riksdagsmonitor over
 6. [Compliance Evolution](#6-compliance-evolution)
 7. [Risk Management](#7-risk-management)
 8. [Success Metrics](#8-success-metrics)
+9. [Security Investment & Budget Planning](#security-investment--budget-planning)
+10. [Conclusion](#9-conclusion)
+11. [References](#references)
 
 ---
+
+## 📚 Architecture Documentation Map
+
+The following table shows all 15 architecture documents maintained for Riksdagsmonitor. This document is highlighted.
+
+| Document | Type | Description | Status |
+|----------|------|-------------|--------|
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Current | C4 system architecture model | ✅ Active |
+| [DATA_MODEL.md](DATA_MODEL.md) | Current | Data structures and entities | ✅ Active |
+| [FLOWCHART.md](FLOWCHART.md) | Current | Business process flows | ✅ Active |
+| [STATEDIAGRAM.md](STATEDIAGRAM.md) | Current | System state transitions | ✅ Active |
+| [MINDMAP.md](MINDMAP.md) | Current | System conceptual map | ✅ Active |
+| [SWOT.md](SWOT.md) | Current | Strategic analysis | ✅ Active |
+| [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) | Security | Current security controls | ✅ Active |
+| [THREAT_MODEL.md](THREAT_MODEL.md) | Security | STRIDE threat analysis | ✅ Active |
+| **[FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md)** | **Security** | **Future security roadmap (this document)** | **✅ Active** |
+| [FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md) | Future | Architecture evolution roadmap | ✅ Active |
+| [FUTURE_DATA_MODEL.md](FUTURE_DATA_MODEL.md) | Future | Enhanced data architecture | ✅ Active |
+| [FUTURE_FLOWCHART.md](FUTURE_FLOWCHART.md) | Future | Improved process workflows | ✅ Active |
+| [FUTURE_STATEDIAGRAM.md](FUTURE_STATEDIAGRAM.md) | Future | Advanced state management | ✅ Active |
+| [FUTURE_MINDMAP.md](FUTURE_MINDMAP.md) | Future | Capability expansion map | ✅ Active |
+| [FUTURE_SWOT.md](FUTURE_SWOT.md) | Future | Future strategic opportunities | ✅ Active |
+
+---
+
+## 🔐 ISMS Policy Alignment
+
+### Policy Framework Integration
+
+This document aligns with the following Hack23 ISMS policies from [Hack23/ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC):
+
+| Policy | Relevance | Key Requirements |
+|--------|-----------|------------------|
+| [Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) | Primary | Security objectives, management commitment, risk appetite |
+| [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) | High | Secure coding standards, SAST/DAST, supply chain security |
+| [Access Control Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md) | High | Least privilege, MFA, zero-trust principles |
+| [Risk Management Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Management_Policy.md) | High | Risk register, treatment plans, residual risk targets |
+| [Incident Response Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Policy.md) | Medium | MTTR targets, escalation procedures, post-incident reviews |
+| [Cryptography Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) | High | Algorithm standards, key management, PQC migration |
+| [Supplier Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Supplier_Security_Policy.md) | Medium | Third-party risk (Chart.js, D3.js, GitHub, AWS) |
+| [Business Continuity Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Business_Continuity_Policy.md) | Medium | Dual deployment, RTO/RPO targets |
+
+### Security Control Implementation Status
+
+| Control Domain | Current (2026) | Target (2028) | Target (2030) | Framework |
+|----------------|----------------|---------------|---------------|-----------|  
+| Access Control | 🟡 Partial | 🟢 Full | 🟢 Full | ISO 27001 A.9 |
+| Cryptography | 🟡 Classical TLS 1.3 | 🟡 Hybrid PQC | 🟢 Full PQC | ISO 27001 A.10 |
+| Physical Security | 🟢 GitHub/AWS managed | 🟢 Full | 🟢 Full | ISO 27001 A.11 |
+| Operations Security | 🟡 Partial | 🟢 Full | 🟢 Full | ISO 27001 A.12 |
+| Network Security | 🟡 TLS/CDN only | 🟡 WAF added | 🟢 Full ZTA | ISO 27001 A.13 |
+| Supplier Relations | 🟡 SRI/SBOM | 🟢 Full SBOM | 🟢 Full | ISO 27001 A.15 |
+| Incident Management | 🟡 Documented | 🟡 Automated | 🟢 AI-assisted | ISO 27001 A.16 |
+| Compliance | 🟡 Managed | 🟡 Certified | 🟢 ISO 27001 Cert | ISO 27001 A.18 |
+
+### Alignment with NIST CSF 2.0 Functions
+
+| Function | Current Maturity | 2028 Target | 2030 Target |
+|----------|-----------------|-------------|-------------|
+| **GV** — Govern | 🟡 Level 2 | 🟢 Level 3 | 🟢 Level 4 |
+| **ID** — Identify | 🟡 Level 2 | 🟢 Level 3 | 🟢 Level 4 |
+| **PR** — Protect | 🟡 Level 2 | 🟢 Level 3 | 🟢 Level 4 |
+| **DE** — Detect | 🔴 Level 1 | 🟡 Level 2 | 🟢 Level 3 |
+| **RS** — Respond | 🟡 Level 2 | 🟢 Level 3 | 🟢 Level 4 |
+| **RC** — Recover | 🟡 Level 2 | 🟢 Level 3 | 🟢 Level 4 |
+
+---
+
 
 ## 1. �� Current State Baseline
 
@@ -575,6 +655,40 @@ graph TB
 - Human oversight mechanisms
 - Transparency obligations
 
+### 6.3 Per-Control Maturity Progression
+
+| Control | Framework | Current Level | 2027 Target | 2030 Target | Timeline | Milestone |
+|---------|-----------|--------------|-------------|-------------|----------|-----------|
+| Cryptographic Controls | ISO 27001 A.10.1 | Level 2 (Classical TLS) | Level 3 (Hybrid PQC) | Level 4 (Full PQC) | 2027 Q2 – 2028 Q1 | PQC migration complete |
+| Access Control | ISO 27001 A.9.1 | Level 2 (MFA, SSH) | Level 3 (Zero-Trust) | Level 4 (JIT, ABAC) | 2027 Q2 – 2028 Q4 | Zero-trust contributor model |
+| Network Security | ISO 27001 A.13.1 | Level 2 (TLS/CDN) | Level 3 (WAF added) | Level 4 (Full ZTA) | 2027 Q2 – 2028 Q4 | AWS WAF + CSP nonces |
+| Logging & Monitoring | ISO 27001 A.12.4 | Level 1 (GitHub Actions) | Level 3 (APM+SIEM) | Level 4 (AI-SIEM) | 2027 Q1 – 2028 Q1 | Full SIEM integration |
+| Vulnerability Management | ISO 27001 A.12.6 | Level 2 (Dependabot) | Level 3 (DAST added) | Level 4 (Predictive) | 2026 Q4 – 2027 Q3 | DAST integration |
+| Incident Management | ISO 27001 A.16.1 | Level 2 (Documented) | Level 3 (Automated) | Level 4 (AI-assisted) | 2027 Q1 – 2028 Q1 | Automated playbooks |
+| Supply Chain Security | ISO 27001 A.15.2 | Level 2 (SBOM+SRI) | Level 3 (SLSA L3) | Level 4 (Full provenance) | 2027 Q3 – 2028 Q1 | SLSA Level 3 |
+| Identity Management | ISO 27001 A.9.4 | Level 2 (MFA+SSH) | Level 3 (Zero-Trust) | Level 4 (ABAC+JIT) | 2027 Q2 – 2028 Q4 | Just-in-time access |
+| Network Monitoring | NIST DE.CM-1 | Level 1 (None) | Level 2 (CloudFront logs) | Level 3 (Behavioral AI) | 2026 Q4 – 2027 Q3 | Behavioral analysis |
+| Threat Intelligence | NIST ID.RA-2 | Level 1 (Dependabot) | Level 2 (MISP/OTX feeds) | Level 3 (Predictive) | 2027 Q1 – 2027 Q3 | Threat feed integration |
+| Secure Dev Lifecycle | CIS 16 | Level 2 (CodeQL+Dependabot) | Level 3 (+DAST+Fuzz) | Level 4 (Full SDL) | 2026 Q4 – 2027 Q4 | Full SSDLC implemented |
+| Data Protection | CIS 3 | Level 2 (SRI+CSP) | Level 3 (nonce-based) | Level 4 (Full isolation) | 2027 Q1 – 2028 Q1 | CSP nonces for Chart.js |
+
+### 6.4 CIS Controls v8.1 Implementation Roadmap
+
+| CIS Control | Description | Current (IG1) | 2027 (IG2) | 2030 (IG3) |
+|-------------|-------------|---------------|------------|------------|
+| CIS 1 | Inventory & Control of Enterprise Assets | 🟢 Complete | 🟢 Full | 🟢 Full |
+| CIS 2 | Inventory & Control of Software Assets | 🟡 Partial (SBOM) | 🟢 Full | 🟢 Full |
+| CIS 3 | Data Protection | 🟡 Partial (SRI, CSP) | 🟢 Full (nonces) | 🟢 Full |
+| CIS 4 | Secure Config of Enterprise Assets | 🟢 Complete (GitHub/AWS) | 🟢 Full | 🟢 Full |
+| CIS 6 | Access Control Management | 🟡 Partial (MFA, SSH) | 🟢 Full (Zero-Trust) | 🟢 Full |
+| CIS 7 | Continuous Vulnerability Management | 🟡 Partial (Dependabot) | 🟢 Full (+DAST) | 🟢 Full |
+| CIS 8 | Audit Log Management | 🔴 Minimal | 🟡 Partial (APM) | 🟢 Full (SIEM) |
+| CIS 12 | Network Infrastructure Management | 🟡 Partial (CDN) | 🟢 Full (WAF) | 🟢 Full |
+| CIS 13 | Network Monitoring & Defense | 🔴 Minimal | 🟡 Partial | 🟢 Full (AI) |
+| CIS 16 | Application Software Security | 🟡 Partial (SAST) | 🟢 Full (+DAST) | 🟢 Full |
+| CIS 17 | Incident Response Management | 🟡 Documented | 🟢 Automated | 🟢 AI-assisted |
+| CIS 18 | Penetration Testing | 🔴 None | 🟡 Annual | 🟢 Continuous |
+
 ---
 
 ## 7. ⚠️ Risk Management
@@ -647,6 +761,52 @@ graph LR
 
 ---
 
+## 💰 Security Investment & Budget Planning
+
+### Per-Phase Investment Estimates
+
+| Phase | Period | Estimated Investment | Key Investments | Priority |
+|-------|--------|---------------------|-----------------|----------|
+| **Foundation** | 2026 Q3-Q4 | €5,000 – €10,000 | Lighthouse CI, GitHub Advanced Security, SIEM baseline | 🔴 High |
+| **Early Adoption** | 2027 Q1-Q2 | €15,000 – €25,000 | AWS WAF, PQC assessment, AI anomaly detection, SIEM | 🔴 High |
+| **Expansion** | 2027 Q3-Q4 | €20,000 – €35,000 | Full AI security stack, behavioral analysis, SIEM integration | 🟡 Medium |
+| **Maturity** | 2028 Q1-Q2 | €25,000 – €40,000 | Full PQC migration, AWS WAF, distributed tracing | 🟡 Medium |
+| **Optimization** | 2028 Q3-Q4 | €10,000 – €20,000 | Audits, compliance validation, ISO 27001 certification | 🟢 Low |
+| **Continuous** | 2029-2030 | €10,000 – €15,000/yr | Maintenance, audits, ISMS updates, training | 🟢 Low |
+
+**Total Estimated Investment (2026-2030):** €85,000 – €145,000
+
+### Resource Requirements
+
+| Resource | Current | 2027 | 2028 | 2030 |
+|----------|---------|------|------|------|
+| Security Architect (FTE equivalent) | 0.2 | 0.4 | 0.6 | 0.5 |
+| DevSecOps Engineer (FTE equivalent) | 0.1 | 0.3 | 0.4 | 0.3 |
+| External Security Auditor | Annual | Annual | ISO 27001 pre-audit | Certification |
+| PQC Specialist (Contractor) | — | Q1 2027 | Q1 2028 | — |
+| SIEM Administrator | — | Q3 2027 | Full | Full |
+
+### Return on Investment (ROI)
+
+| Investment | Cost | Risk Reduction Value | ROI Estimate |
+|------------|------|---------------------|-------------|
+| AWS WAF + Rate Limiting | ~€5,000/yr | Prevents DDoS, reduces XSS exposure | 10x – 20x |
+| AI Anomaly Detection | ~€8,000/yr | Early threat detection, reduces MTTR by 70% | 5x – 15x |
+| PQC Migration | ~€20,000 one-time | Future-proofs encryption against quantum threats | Long-term strategic |
+| SIEM Integration | ~€12,000/yr | Compliance automation, faster incident response | 3x – 8x |
+| ISO 27001 Certification | ~€15,000 | Customer trust, regulatory compliance, contracts | 5x – 10x |
+| GitHub Advanced Security | ~€3,000/yr | Automated vulnerability detection in CI/CD | 8x – 15x |
+
+### Cost Optimization Strategies
+
+- ✅ **Open-Source First**: Prefer OSS tools (ELK, Semgrep) over commercial solutions
+- ✅ **GitHub-Native**: Leverage GitHub Advanced Security features (included in GitHub Enterprise)
+- ✅ **AWS Reserved Instances**: Reserved capacity for CloudFront/WAF for cost predictability
+- ✅ **Automation**: Reduce manual security effort through GitHub Actions automation
+- ✅ **Phased Investment**: Align spending with roadmap milestones to manage cash flow
+
+---
+
 ## 9. 🤝 Conclusion
 
 This Future Security Architecture demonstrates Hack23 AB's commitment to **proactive security evolution** rather than reactive patching. By implementing post-quantum cryptography before it's necessary, AI-augmented security before attacks become fully autonomous, and zero-trust principles before breaches occur, Riksdagsmonitor will maintain its security leadership while delivering interactive Chart.js/D3.js dashboards.
@@ -677,20 +837,40 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 - [WORKFLOWS.md](WORKFLOWS.md) - CI/CD workflows
 - [ARCHITECTURE.md](ARCHITECTURE.md) - System architecture
 - [Hack23 ISMS](https://github.com/Hack23/ISMS-PUBLIC)
+- [Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md)
 - [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+- [Access Control Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md)
+- [Risk Management Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Management_Policy.md)
+- [Cryptography Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md)
 
 ### External Standards
 - [NIST Post-Quantum Cryptography](https://csrc.nist.gov/projects/post-quantum-cryptography)
 - [SLSA Supply Chain Security](https://slsa.dev/)
 - [OWASP Application Security](https://owasp.org/)
 - [CIS Controls v8.1](https://www.cisecurity.org/controls/v8)
+- [NIST CSF 2.0](https://www.nist.gov/cyberframework)
+- [ISO 27001:2022](https://www.iso.org/standard/27001)
+- [EU Cyber Resilience Act](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act)
+- [NIS2 Directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive)
+
+### Related Hack23 Repositories
+- [Citizen Intelligence Agency](https://github.com/Hack23/cia) - Reference security architecture
+- [Black Trigram](https://github.com/Hack23/blacktrigram) - Reference security patterns
+- [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) - ISMS policies and standards
 
 ---
 
-**Document Control:**
-- **Repository:** https://github.com/Hack23/riksdagsmonitor
-- **Path:** /FUTURE_SECURITY_ARCHITECTURE.md
-- **Format:** Markdown with Mermaid diagrams
-- **Classification:** Public
-- **Next Review:** 2026-05-10 (Quarterly)
-- **Change Management:** Requires Security Architect approval for major revisions
+<p align="center">
+  <strong>Document Control</strong><br>
+  Repository: <a href="https://github.com/Hack23/riksdagsmonitor">https://github.com/Hack23/riksdagsmonitor</a><br>
+  Path: /FUTURE_SECURITY_ARCHITECTURE.md | Classification: Public | Next Review: 2026-05-18<br>
+  Change Management: Requires Security Architect approval for major revisions
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ISO_27001:2022-Compliant-blue?style=flat-square" alt="ISO 27001"/>
+  <img src="https://img.shields.io/badge/NIST_CSF_2.0-Aligned-green?style=flat-square" alt="NIST CSF 2.0"/>
+  <img src="https://img.shields.io/badge/CIS_Controls_v8.1-Implemented-orange?style=flat-square" alt="CIS Controls v8.1"/>
+  <img src="https://img.shields.io/badge/NIS2-Ready-purple?style=flat-square" alt="NIS2"/>
+  <img src="https://img.shields.io/badge/GDPR-Compliant-red?style=flat-square" alt="GDPR"/>
+</p>
