@@ -1217,7 +1217,7 @@ graph TB
   4. Verify patch availability and compatibility
 - **Remediation:** Accept Dependabot PR or manually update `package.json` / `package-lock.json`
 - **Verification:** Run `npm audit`, re-scan with Dependabot, test functionality
-- **Documentation:** Update CHANGELOG.md with security fix note
+- **Documentation:** Record the security fix in GitHub release notes and commit message
 
 **2. CodeQL Code Scanning Alert**
 - **Trigger:** SAST finding in pull request or scheduled scan
@@ -1373,7 +1373,7 @@ graph LR
 2. Create fix branch: `security/CVE-YYYY-NNNNN`
 3. Apply fix (update dependency, refactor code, apply workaround)
 4. Run full test suite (unit + E2E)
-5. Update CHANGELOG.md with security fix note
+5. Record the security fix in GitHub release notes and commit message
 6. Create PR with "Security Fix" label
 7. Fast-track review (bypass normal review queue for Critical/High)
 8. Merge to main and deploy immediately
