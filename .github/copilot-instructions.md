@@ -3,9 +3,12 @@
 ## 📋 Repository Context
 
 **Project**: Static HTML/CSS website for Swedish Parliament (Riksdag) monitoring
-**Stack**: HTML5, CSS3, GitHub Pages, GitHub Actions
+**Stack**: HTML5, CSS3, Vite, Vitest, Cypress, GitHub Pages, GitHub Actions
 **Languages**: 14-language support (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
 **Security**: ISO 27001, NIST CSF 2.0, CIS Controls v8.1 compliant
+**Organization**: Hack23 AB (21 repositories)
+**ISMS**: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
+**Skills**: 87 skills in `.github/skills/` covering security, compliance, development, testing, visualization, intelligence, and more
 
 ## 🎯 Core Rules (ALWAYS Follow)
 
@@ -32,8 +35,8 @@
 - **SHOULD**: Validate security headers
 
 ### 4. Use Available Agents and Skills
-- Leverage 6 specialized agents (security-architect, documentation-architect, quality-engineer, frontend-specialist, isms-compliance-manager, deployment-specialist)
-- Skills automatically load based on context
+- Leverage 14 specialized agents (security-architect, documentation-architect, quality-engineer, frontend-specialist, isms-compliance-manager, deployment-specialist, devops-engineer, intelligence-operative, news-journalist, content-generator, data-pipeline-specialist, data-visualization-specialist, task-agent, ui-enhancement-specialist)
+- 87 skills automatically load based on context from `.github/skills/`
 - Reference AGENTS.md and SKILLS.md for capabilities
 
 ## 🏗️ Architecture & Design Rules
@@ -96,6 +99,41 @@ MUST have these files (never delete):
 - FUTURE_SECURITY_ARCHITECTURE.md - Security roadmap
 - ARCHITECTURE.md - C4 models
 ```
+
+### Architecture Documentation Portfolio (Hack23 Standard)
+Every Hack23 repository MUST maintain comprehensive architectural documentation:
+
+#### Current State Documentation
+```
+REQUIRED:
+- ARCHITECTURE.md — Complete C4 models (Context, Container, Component)
+- DATA_MODEL.md — Data structures, entities, relationships
+- FLOWCHART.md — Business process and data flows
+- STATEDIAGRAM.md — System state transitions and lifecycles
+- MINDMAP.md — System conceptual relationships
+- SWOT.md — Strategic analysis and positioning
+```
+
+#### Future State Planning
+```
+REQUIRED:
+- FUTURE_ARCHITECTURE.md — Architectural evolution roadmap
+- FUTURE_DATA_MODEL.md — Enhanced data architecture plans
+- FUTURE_FLOWCHART.md — Improved process workflows
+- FUTURE_STATEDIAGRAM.md — Advanced state management
+- FUTURE_MINDMAP.md — Capability expansion plans
+- FUTURE_SWOT.md — Future strategic opportunities
+```
+
+#### Security Documentation
+```
+REQUIRED:
+- SECURITY_ARCHITECTURE.md — Current security controls and architecture
+- FUTURE_SECURITY_ARCHITECTURE.md — Planned security improvements
+- THREAT_MODEL.md — STRIDE threat analysis and mitigations
+```
+
+#### Reference: [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 
 ### DevSecOps
 ```
@@ -213,6 +251,8 @@ DON'T UPDATE when:
 ✅ Include document control metadata
 ✅ Map to ISO 27001/NIST CSF/CIS Controls
 ✅ Maintain both current and future state docs
+✅ Follow documentation-portfolio skill requirements
+✅ Keep all 12 architecture documents up to date
 ```
 
 ## 🎨 Design System
@@ -299,14 +339,55 @@ deployment-specialist:
   - CI/CD improvements
   - GitHub Actions
   - Workflow optimization
+
+devops-engineer:
+  - Infrastructure automation
+  - Performance monitoring
+  - Build optimization
+
+intelligence-operative:
+  - Political data analysis
+  - OSINT collection
+  - Voting pattern analysis
+
+news-journalist:
+  - Political news coverage
+  - Article generation
+  - Editorial standards
+
+content-generator:
+  - Automated content generation
+  - Multi-language articles
+  - Template-based rendering
+
+data-pipeline-specialist:
+  - CIA data consumption
+  - ETL workflows
+  - Data validation
+
+data-visualization-specialist:
+  - Chart.js/D3.js dashboards
+  - Interactive visualizations
+  - Political metrics charts
+
+task-agent:
+  - Product analysis
+  - Issue creation/management
+  - Agent coordination
+
+ui-enhancement-specialist:
+  - CSS-only visualizations
+  - Design system management
+  - Cyberpunk theme implementation
 ```
 
 ## 🔗 References
 
-- **Agents**: See [AGENTS.md](../AGENTS.md)
-- **Skills**: See [SKILLS.md](../SKILLS.md)
+- **Agents**: See [AGENTS.md](../AGENTS.md) — 14 specialized agents
+- **Skills**: See [SKILLS.md](../SKILLS.md) — 87 skills across security, compliance, development, testing, intelligence, and more
 - **ISMS**: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
 - **Security Policy**: [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+- **Hack23 Repositories**: 21 repos including [cia](https://github.com/Hack23/cia), [homepage](https://github.com/Hack23/homepage), [blacktrigram](https://github.com/Hack23/blacktrigram), [cia-compliance-manager](https://github.com/Hack23/cia-compliance-manager), [European-Parliament-MCP-Server](https://github.com/Hack23/European-Parliament-MCP-Server), [euparliamentmonitor](https://github.com/Hack23/euparliamentmonitor), [game](https://github.com/Hack23/game), [lambda-in-private-vpc](https://github.com/Hack23/lambda-in-private-vpc)
 
 ## 💡 Remember
 
@@ -323,5 +404,5 @@ deployment-specialist:
 
 ---
 
-**Last Updated**: 2026-01-31
-**Version**: 1.0
+**Last Updated**: 2026-02-20
+**Version**: 2.0

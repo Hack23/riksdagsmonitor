@@ -4,7 +4,7 @@
 
 This repository includes custom GitHub Copilot agents specialized for different aspects of the riksdagsmonitor project. Each agent has deep expertise in its domain and can be invoked to assist with specific tasks.
 
-## Available Agents (13 Total)
+## Available Agents (14 Total)
 
 ### 1. Security Architect (`security-architect`)
 **Expertise**: Security architecture, ISMS compliance, threat modeling, ISO 27001/NIST CSF/CIS Controls
@@ -401,6 +401,42 @@ assign_copilot_to_issue({
 })
 ```
 
+### 14. News Journalist (`news-journalist`) ✨ **NEW**
+**Expertise**: Political journalism, editorial standards, The Economist-style coverage, Swedish and global politics
+
+**Use for**:
+- Political news article generation (Riksdagen, Regeringen, Myndigheter)
+- Editorial quality control (AP/Reuters/The Economist style)
+- Multi-language news coverage (14 languages)
+- Fact-checking and source verification
+- Intelligence-driven narrative reporting
+- SEO-optimized Schema.org structured articles
+
+**Key Capabilities**:
+- **News Generation**: Data-driven articles from Riksdag/Regering MCP data
+- **Editorial Standards**: Inverted pyramid structure, balanced reporting, attribution
+- **Multi-Language**: Full translation workflow for 14 languages with RTL support
+- **Quality**: Schema.org NewsArticle, FAQPage, speakable structured data
+- **SEO**: Meta tags, Open Graph, Twitter Cards, hreflang tags
+
+**Example invocation**:
+```javascript
+assign_copilot_to_issue({
+  owner: "Hack23",
+  repo: "riksdagsmonitor",
+  issue_number: 201,
+  custom_agent: "news-journalist",
+  custom_instructions: `
+    Generate daily political news article covering:
+    - Latest government propositions
+    - Opposition motions
+    - Committee reports
+    - Support all 14 languages
+    - Include Schema.org structured data
+  `
+})
+```
+
 ## GitHub Copilot Coding Agent Features
 
 All agents support modern GitHub Copilot coding agent features:
@@ -703,6 +739,20 @@ All agents automatically load relevant skills from `.github/skills/` based on th
 - `hack23-isms-compliance` - Compliance requirements
 - `threat-modeling` - Security architecture
 
+### News Journalist ✨ **NEW**
+**Primary Skills**:
+- `editorial-standards` - Journalism quality standards
+- `automated-content-generation` - Template-based article generation
+- `multi-language-localization` - 14-language content
+- `seo-optimization` - Schema.org, meta tags, structured data
+- `riksdag-regering-mcp` - Swedish political data tools
+
+**Supporting Skills**:
+- `political-science-analysis` - Political context
+- `html-accessibility` - Accessible article structure
+- `responsive-design` - Article layout
+- `language-expertise` - Translation quality
+
 ---
 
 ## Best Practices
@@ -715,6 +765,7 @@ Select the agent that best matches your task:
 - **UI/Frontend** → Frontend Specialist
 - **Compliance** → ISMS Compliance Manager
 - **CI/CD** → Deployment Specialist
+- **Political news** → News Journalist
 
 ### 2. Provide Clear Instructions
 Use `custom_instructions` to give specific guidance:
@@ -728,12 +779,12 @@ custom_instructions: `
 ```
 
 ### 3. Leverage Skills
-Agents automatically load relevant skills from `.github/skills/` (40 total skills across 7 categories):
+Agents automatically load relevant skills from `.github/skills/` (87 total skills across 12 categories):
 
-**Core Infrastructure (7)**:
+**Core Infrastructure (9)**:
 - `hack23-isms-compliance`, `security-by-design`, `static-site-security`
 - `ci-cd-security`, `documentation-standards`, `html-accessibility`
-- `multi-language-localization`
+- `multi-language-localization`, `hack23-future-architecture-standards`, `documentation-portfolio`
 
 **Political Intelligence (11)**:
 - `political-science-analysis`, `osint-methodologies`, `intelligence-analysis-techniques`
@@ -741,22 +792,46 @@ Agents automatically load relevant skills from `.github/skills/` (40 total skill
 - `strategic-communication-analysis`, `legislative-monitoring`
 - `risk-assessment-frameworks`, `data-science-for-intelligence`, `gdpr-compliance`
 
-**ISMS & Security (6)**:
+**ISMS & Security (12)**:
 - `cis-controls`, `iso-27001-controls`, `nist-csf-mapping`
 - `threat-modeling`, `secure-code-review`, `security-documentation`
+- `incident-response`, `input-validation`, `vulnerability-management`
+- `data-protection`, `ai-governance`, `information-security-strategy`
 
-**Development & Operations (4)**:
-- `c4-architecture-documentation`, `github-actions-workflows`
-- `code-quality-checks`, `secrets-management`
+**Development & Operations (16)**:
+- `c4-architecture-documentation`, `github-actions-workflows`, `code-quality-checks`, `secrets-management`
+- `data-pipeline-engineering`, `automated-content-generation`, `performance-optimization`, `api-integration`
+- `github-agentic-workflows`, `code-review-practices`, `testing-strategy`, `contribution-guidelines`
+- `change-management`, `open-source-governance`, `copilot-agent-patterns`, `product-management-patterns`
 
-**UI/UX & Design (3)** ✨ NEW:
+**UI/UX & Design (7)**:
 - `responsive-design`, `design-system-management`, `political-data-visualization`
+- `advanced-data-visualization`, `ui-ux-design`, `seo-optimization`, `data-visualization-principles`
 
-**Testing & Quality Assurance (2)** ✨ NEW:
+**Testing & Quality Assurance (2)**:
 - `playwright-testing`, `issue-management`
 
-**Data Integration (1)** ✨ NEW:
-- `riksdag-regering-mcp`
+**Data Integration (4)**:
+- `riksdag-regering-mcp`, `cia-data-integration`, `mcp-server-development`, `european-parliament-api`
+
+**Business & Marketing (2)**:
+- `marketing`, `business-development`
+
+**Language & Localization (1)**:
+- `language-expertise`
+
+**GitHub Agentic Workflows (12)**:
+- `gh-aw-authentication-credentials`, `gh-aw-containerization`, `gh-aw-continuous-ai-patterns`
+- `gh-aw-firewall`, `gh-aw-github-actions-integration`, `gh-aw-logging-monitoring`
+- `gh-aw-mcp-configuration`, `gh-aw-mcp-gateway`, `gh-aw-safe-outputs`
+- `gh-aw-security-architecture`, `gh-aw-tools-ecosystem`, `gh-aw-workflow-authoring`
+
+**Journalism & Media (4)**:
+- `editorial-standards`, `investigative-journalism`, `prospective-news-coverage`, `comparative-politics-reporting`
+
+**Government & Regulatory (7)**:
+- `global-government-analysis`, `myndigheter-monitoring`, `regulatory-affairs`
+- `economic-policy-analysis`, `secure-development-lifecycle`, `secure-development-policy`, `compliance-checklist`
 
 See [SKILLS.md](SKILLS.md) for comprehensive skill documentation and [Skills Mapping](#skills-mapping-by-agent) above for agent-specific recommendations.
 
@@ -836,5 +911,5 @@ All agents follow these standards:
 
 ---
 
-**Last Updated**: 2026-02-06  
+**Last Updated**: 2026-02-20  
 **Maintained by**: Hack23 AB
