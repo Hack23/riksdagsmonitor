@@ -55,7 +55,7 @@ We'd also love PRs. If you're thinking of a large PR, we advise opening up an is
 3. Make sure the tests pass on your machine: `npm test`
 4. Create a new branch: `git checkout -b my-branch-name`
 5. Make your change, add tests, and make sure the tests still pass.
-6. Validate HTML: `npx htmlhint *.html`
+6. Validate HTML: `npm run htmlhint`
 7. Push to your fork and [submit a pull request][pr].
 8. Pat yourself on the back and wait for your pull request to be reviewed and merged.
 

@@ -538,12 +538,12 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - [LABELS.md](LABELS.md) - Automatic labeling system and label definitions ✨ **NEW**
 
 ### GitHub Copilot Integration
-- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (13 agents)
-- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (56 skills) ✨ **UPDATED 2026-02-11**
+- [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (14 agents)
+- [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (87 skills)
 - [`.github/agents/`](.github/agents/) - Agent configuration files
 - [`.github/skills/`](.github/skills/) - Skill libraries
 
-**Available Agents (13)** ⬆️ **UPDATED**:
+**Available Agents (14)**:
 - **security-architect** - Security architecture and ISMS compliance
 - **documentation-architect** - C4 models and technical documentation
 - **quality-engineer** - HTML/CSS validation and accessibility
@@ -551,14 +551,15 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - **isms-compliance-manager** - ISO 27001/NIST CSF/CIS Controls compliance
 - **deployment-specialist** - GitHub Actions and CI/CD automation
 - **intelligence-operative** - Political intelligence analysis, OSINT, Swedish politics expertise, riksdag-regering-mcp (32 tools)
-- **task-agent** ✨ - Product excellence, quality assurance, Playwright testing, issue management
-- **ui-enhancement-specialist** ✨ - Static HTML/CSS, responsive design, 14-language support, WCAG 2.1 AA
-- **data-pipeline-specialist** ✨ - CIA data consumption, ETL workflows, caching strategies, data validation
-- **data-visualization-specialist** ✨ - Chart.js/D3.js, interactive dashboards, CIA intelligence visualizations
-- **content-generator** ✨ **NEW** - Automated news generation, intelligence reports, multi-language content
-- **devops-engineer** ✨ **NEW** - CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring
+- **task-agent** - Product excellence, quality assurance, Playwright testing, issue management
+- **ui-enhancement-specialist** - Static HTML/CSS, responsive design, 14-language support, WCAG 2.1 AA
+- **data-pipeline-specialist** - CIA data consumption, ETL workflows, caching strategies, data validation
+- **data-visualization-specialist** - Chart.js/D3.js, interactive dashboards, CIA intelligence visualizations
+- **content-generator** - Automated news generation, intelligence reports, multi-language content
+- **devops-engineer** - CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring
+- **news-journalist** - Political journalism, editorial standards, multi-language news coverage
 
-**Available Skills (41)** ⬆️ **UPDATED**:
+**Available Skills (87)**:
 
 *Core Infrastructure (7):*
 - **hack23-isms-compliance** - ISMS framework requirements
