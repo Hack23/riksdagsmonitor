@@ -9,13 +9,38 @@
   <em>🎯 Multi-Modal AI · Real-Time Analytics · Predictive Democracy · Knowledge Graphs</em>
 </p>
 
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-20 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-02-15  
-**Classification:** Public  
-**Owner:** Hack23 AB (Org.nr 5595347807)  
-**Review Cycle:** Quarterly
+## 📚 Architecture Documentation Map
+
+| Document | Type | Description |
+|----------|------|-------------|
+| [Architecture](ARCHITECTURE.md) | 🏛️ Current | C4 model showing system structure |
+| [Data Model](DATA_MODEL.md) | 📊 Current | Data entities and relationships |
+| [Flowcharts](FLOWCHART.md) | 🔄 Current | Process flows and pipelines |
+| [State Diagrams](STATEDIAGRAM.md) | 🔄 Current | System state transitions |
+| [Mindmap](MINDMAP.md) | 🗺️ Current | System conceptual map |
+| [SWOT](SWOT.md) | 💼 Current | Strategic analysis |
+| [Future Architecture](FUTURE_ARCHITECTURE.md) | 🏗️ Future | System evolution roadmap |
+| [Future Data Model](FUTURE_DATA_MODEL.md) | 📊 Future | Enhanced data architecture |
+| **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 **Future** | **Advanced process flows (this doc)** |
+| [Future State Diagrams](FUTURE_STATEDIAGRAM.md) | 🔄 Future | Advanced state management |
+| [Future Mindmap](FUTURE_MINDMAP.md) | 🗺️ Future | Future capability map |
+| [Future SWOT](FUTURE_SWOT.md) | 💼 Future | Strategic outlook |
+| [Security Architecture](SECURITY_ARCHITECTURE.md) | 🛡️ Security | Defense-in-depth controls |
+| [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) | 🛡️ Future | Security roadmap |
+| [Threat Model](THREAT_MODEL.md) | 🎯 Security | STRIDE analysis |
 
 ---
 
@@ -1355,3 +1380,13 @@ flowchart TD
   <a href="https://www.hack23.com/cia">CIA Platform</a> ·
   <a href="https://github.com/Hack23/ISMS-PUBLIC">ISMS</a>
 </p>
+
+---
+
+**📋 Document Control:**  
+**✅ Approved by:** James Pether Sörling, CEO  
+**📤 Distribution:** Public  
+**🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
+**📅 Effective Date:** 2026-02-20  
+**⏰ Next Review:** 2026-05-20  
+**🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
