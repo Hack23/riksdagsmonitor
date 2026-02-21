@@ -1,4 +1,6 @@
 {
+  "schemaVersion": 1,
+  "type": "last-generation",
   "timestamp": "2026-02-21T12:09:17.839Z",
   "schedule": "Saturday 12:00 UTC",
   "events_detected": [
