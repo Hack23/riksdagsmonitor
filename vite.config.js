@@ -207,7 +207,8 @@ export default defineConfig({
         manualChunks: {
           // Core visualization libraries
           'chart': ['chart.js', 'chartjs-plugin-annotation'],
-          'd3': ['d3']
+          'd3': ['d3'],
+          'papa': ['papaparse']
         },
         
         // Asset file naming
