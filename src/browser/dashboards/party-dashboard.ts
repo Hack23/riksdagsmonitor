@@ -115,11 +115,12 @@ interface PerformanceRow extends CSVRow {
 }
 
 /** Parsed coalition alignment row from CSV. */
-interface CoalitionRow extends CSVRow {
+interface CoalitionRow {
   party1: string;
   party2: string;
   alignment_rate: string;
   coalition_likelihood?: string;
+  [key: string]: string | undefined;
 }
 
 /** Parsed momentum row from CSV. */
@@ -835,7 +836,7 @@ function createEffectivenessChart(data: CSVRow[]): void {
     spanGaps: true,
   }));
 
-  new Chart(ctx, {
+  const chart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: years,
@@ -878,7 +879,7 @@ function createEffectivenessChart(data: CSVRow[]): void {
     },
   });
 
-  addChartKeyboardNav(ctx);
+  addChartKeyboardNav(chart, ctx);
 }
 
 /**
@@ -927,7 +928,7 @@ function createComparisonChart(data: CSVRow[]): void {
   // Sort by score descending
   chartData.sort((a, b) => b.score - a.score);
 
-  new Chart(ctx, {
+  const chart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: chartData.map((d) => d.party),
@@ -968,7 +969,7 @@ function createComparisonChart(data: CSVRow[]): void {
     },
   });
 
-  addChartKeyboardNav(ctx);
+  addChartKeyboardNav(chart, ctx);
 }
 
 /**
@@ -1104,7 +1105,7 @@ function createMomentumChart(data: CSVRow[]): void {
     return { party, momentum: 50 }; // Default value
   });
 
-  new Chart(ctx, {
+  const chart = new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: PARTIES.map((p) => t.parties[p] ?? p),
@@ -1139,7 +1140,7 @@ function createMomentumChart(data: CSVRow[]): void {
     },
   });
 
-  addChartKeyboardNav(ctx);
+  addChartKeyboardNav(chart, ctx);
 }
 
 // ============================================================================
