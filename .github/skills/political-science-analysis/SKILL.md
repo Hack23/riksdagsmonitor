@@ -72,6 +72,7 @@ JOIN (
     FROM view_politician_voting_record vr2
     JOIN politician p2 ON vr2.politician_id = p2.id
     GROUP BY ballot_id, party, vote
+    -- Note: QUALIFY is supported in Snowflake, BigQuery, DuckDB. For standard SQL, wrap this subquery in a CTE and filter with WHERE row_num = 1.
     QUALIFY ROW_NUMBER() OVER (PARTITION BY ballot_id, party ORDER BY vote_count DESC) = 1
 ) party_line ON vr.ballot_id = party_line.ballot_id AND p.party = party_line.party
 WHERE vr.vote_date >= '2022-01-01'

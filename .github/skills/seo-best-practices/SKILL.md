@@ -37,7 +37,7 @@ This skill provides guidance for search engine optimization (SEO) of the Riksdag
 <html lang="sv">
 <head>
   <!-- Title tag (50-60 characters) -->
-  <title>Politiker Risk analys - Riksdagsmonitor</title>
+  <title>Politiker Riskanalys - Riksdagsmonitor</title>
   
   <!-- Meta description (150-160 characters) -->
   <meta name="description" content="Analysera svenska politikers riskpoäng, röstningsbeteende och finansiella kopplingar. Oberoende politisk transparens och OSINT-analys.">
