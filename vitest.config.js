@@ -18,7 +18,7 @@ export default defineConfig({
     globals: true,
     
     // Setup files to run before tests
-    setupFiles: ['./tests/setup.js'],
+    setupFiles: ['./tests/setup.ts'],
     
     // Coverage configuration
     coverage: {
@@ -39,6 +39,7 @@ export default defineConfig({
       include: [
         'js/**/*.js',
         'scripts/**/*.js',
+        'scripts/**/*.ts',
         'dashboard/**/*.js'
       ],
       
