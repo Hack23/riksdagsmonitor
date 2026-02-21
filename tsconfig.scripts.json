@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": false,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist/scripts",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@scripts/*": ["scripts/*"],
+      "@types/*": ["scripts/types/*"]
+    },
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": false
+  },
+  "include": [
+    "scripts/**/*.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "scripts/coalition-dashboard.js",
+    "scripts/committees-dashboard.js",
+    "scripts/back-to-top.js",
+    "scripts/**/*.js",
+    "tests/**/*.js"
+  ]
+}

@@ -18,7 +18,7 @@ export default defineConfig({
     globals: true,
     
     // Setup files to run before tests
-    setupFiles: ['./tests/setup.js'],
+    setupFiles: ['./tests/setup.ts'],
     
     // Coverage configuration
     coverage: {
@@ -37,8 +37,10 @@ export default defineConfig({
       
       // Include patterns
       include: [
+        'src/browser/**/*.ts',
         'js/**/*.js',
         'scripts/**/*.js',
+        'scripts/**/*.ts',
         'dashboard/**/*.js'
       ],
       
@@ -84,7 +86,9 @@ export default defineConfig({
     // Test file patterns
     include: [
       'tests/**/*.test.js',
-      'tests/**/*.spec.js'
+      'tests/**/*.test.ts',
+      'tests/**/*.spec.js',
+      'tests/**/*.spec.ts'
     ],
     
     // Exclude patterns

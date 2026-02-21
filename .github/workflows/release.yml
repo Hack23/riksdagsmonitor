@@ -131,7 +131,7 @@ jobs:
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
           path: .tsbuildinfo
-          key: ${{ runner.os }}-tsbuild-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('js/**/*.js', 'dashboard/**/*.js', 'scripts/**/*.js') }}
+          key: ${{ runner.os }}-tsbuild-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('src/browser/**/*.ts', 'scripts/**/*.ts', 'scripts/**/*.js') }}
           restore-keys: |
             ${{ runner.os }}-tsbuild-${{ hashFiles('**/package-lock.json') }}-
             ${{ runner.os }}-tsbuild-
@@ -197,8 +197,8 @@ jobs:
 
       - name: Generate API documentation
         run: |
-          echo "📚 Generating JSDoc API documentation..."
-          npm run jsdoc
+          echo "📚 Generating TypeDoc API documentation..."
+          npm run typedoc
           echo "✅ API documentation generated in api/"
           
           echo "📁 Syncing API documentation to docs/api/..."
@@ -207,7 +207,7 @@ jobs:
             cp -r api/* docs/api/ || true
             echo "✅ API documentation available in docs/api/"
           else
-            echo "⚠️ JSDoc output directory 'api' not found; skipping copy to docs/api/"
+            echo "⚠️ TypeDoc output directory 'api' not found; skipping copy to docs/api/"
           fi
 
       - name: Generate dependencies documentation
@@ -322,7 +322,7 @@ jobs:
               <div class="grid">
                 <div class="card">
                   <h2>📖 API Documentation</h2>
-                  <p>Comprehensive JSDoc-generated API reference for all JavaScript modules, dashboard components, and utility functions.</p>
+                  <p>Comprehensive TypeDoc-generated API reference for all TypeScript modules, dashboard components, and utility functions.</p>
                   <a href="api/index.html">View API Docs →</a>
                 </div>
                 

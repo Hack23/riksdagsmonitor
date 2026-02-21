@@ -54,7 +54,7 @@ jobs:
         id: fetch_stats
         run: |
           echo "Fetching CIA production statistics..."
-          node scripts/load-cia-stats.js
+          npx --no-install tsx scripts/load-cia-stats.ts
           
           # Check if stats file was created/updated
           if [ -f "cia-data/production-stats.json" ]; then
@@ -84,7 +84,7 @@ jobs:
         if: steps.fetch_stats.outputs.stats_fetched == 'true'
         run: |
           echo "Updating website files with new statistics..."
-          node scripts/update-stats-from-cia.js
+          npx --no-install tsx scripts/update-stats-from-cia.ts
           
           # Check if any files were modified
           if git diff --quiet; then

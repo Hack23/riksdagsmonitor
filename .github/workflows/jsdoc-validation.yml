@@ -1,6 +1,6 @@
-name: JSDoc Documentation Validation
+name: TypeDoc Documentation Validation
 
-# Trigger on changes to JavaScript files in key directories
+# Trigger on changes to source files in key directories
 on:
   workflow_dispatch: # Allow manual trigger
 
@@ -9,8 +9,8 @@ permissions:
   pull-requests: read
 
 jobs:
-  jsdoc-generation:
-    name: Generate & Validate JSDoc
+  typedoc-generation:
+    name: Generate & Validate TypeDoc
     runs-on: ubuntu-latest
     timeout-minutes: 10
     
@@ -32,14 +32,13 @@ jobs:
       - name: Install Dependencies
         run: |
           npm ci
-          npm list jsdoc || echo "JSDoc not yet installed"
           
-      - name: Generate JSDoc Documentation
+      - name: Generate TypeDoc Documentation
         id: generate
         run: |
-          echo "🔍 Generating JSDoc API documentation..."
-          npm run jsdoc
-          echo "✅ JSDoc generation complete"
+          echo "🔍 Generating TypeDoc API documentation..."
+          npm run typedoc
+          echo "✅ TypeDoc generation complete"
           
       - name: Update Sitemap
         id: update_sitemap
@@ -62,11 +61,11 @@ jobs:
             echo "📝 No changes to API documentation or sitemap"
           else
             echo "📝 Committing updated API documentation and sitemap..."
-            git commit -m "docs: Update JSDoc API documentation and sitemap.xml [skip ci]
+            git commit -m "docs: Update TypeDoc API documentation and sitemap.xml [skip ci]
             
-            - Generated from latest JavaScript source code
+            - Generated from latest TypeScript/JavaScript source code
             - Updated sitemap.xml with API documentation URLs
-            - Includes intelligence operative perspective
+            - Full type-aware documentation with MDN links
             - Deployed via GitHub Pages
             
             Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
@@ -78,7 +77,7 @@ jobs:
       - name: Verify api/ Directory Created
         run: |
           if [ ! -d "api" ]; then
-            echo "❌ ERROR: api/ directory not created by JSDoc"
+            echo "❌ ERROR: api/ directory not created by TypeDoc"
             exit 1
           fi
           echo "✅ api/ directory exists"
@@ -92,11 +91,11 @@ jobs:
             exit 1
           fi
           
-          echo "✅ JSDoc generated sufficient documentation files"
+          echo "✅ TypeDoc generated sufficient documentation files"
           
       - name: List Generated Documentation
         run: |
-          echo "📋 Generated JSDoc Files:"
+          echo "📝 Generated TypeDoc Files:"
           ls -lh api/ | head -20
           
       - name: Check for index.html
@@ -137,25 +136,25 @@ jobs:
             echo "⚠️ WARNING: Intelligence terminology not prominent in documentation"
           fi
           
-      - name: Run JSDoc Validation Tests
+      - name: Run TypeDoc Validation Tests
         run: |
-          echo "🧪 Running JSDoc validation test suite..."
-          npm run jsdoc:validate || npm run test tests/jsdoc-validation.test.js
+          echo "🧪 Running TypeDoc validation test suite..."
+          npm run typedoc:validate || npm run test tests/jsdoc-validation.test.js
           
-      - name: Check JSDoc Coverage in Source Files
+      - name: Check Documentation Coverage in Source Files
         run: |
-          echo "📊 Checking JSDoc coverage in source files..."
+          echo "📊 Checking documentation coverage in source files..."
           
-          # Count JavaScript files
-          TOTAL_JS=$(find js dashboard scripts -name "*.js" ! -name "*.min.js" ! -path "*/lib/*" | wc -l)
+          # Count source files (JS + TS) across all source directories
+          TOTAL_SOURCE_FILES=$(find src/browser scripts \( -name "*.js" -o -name "*.ts" \) | grep -v node_modules | grep -v lib/ | grep -v ".min." | grep -v ".d.ts" | wc -l)
           
-          # Count files with JSDoc (/** */)
-          FILES_WITH_JSDOC=$(find js dashboard scripts -name "*.js" ! -name "*.min.js" ! -path "*/lib/*" -exec grep -l "/\*\*" {} \; | wc -l)
+          # Count files with doc comments (/** */)
+          FILES_WITH_DOC_COMMENTS=$(find src/browser scripts \( -name "*.js" -o -name "*.ts" \) ! -name "*.min.*" ! -name "*.d.ts" ! -path "*/lib/*" -exec grep -l "/\*\*" {} \; | wc -l)
           
-          echo "📈 JSDoc Coverage: $FILES_WITH_JSDOC / $TOTAL_JS files"
+          echo "📈 Documentation Coverage: $FILES_WITH_DOC_COMMENTS / $TOTAL_SOURCE_FILES files"
           
-          if [ "$TOTAL_JS" -gt 0 ]; then
-            COVERAGE_PERCENT=$((FILES_WITH_JSDOC * 100 / TOTAL_JS))
+          if [ "$TOTAL_SOURCE_FILES" -gt 0 ]; then
+            COVERAGE_PERCENT=$((FILES_WITH_DOC_COMMENTS * 100 / TOTAL_SOURCE_FILES))
             echo "📊 Coverage: ${COVERAGE_PERCENT}%"
             
             if [ "$COVERAGE_PERCENT" -lt 50 ]; then
@@ -167,27 +166,27 @@ jobs:
             fi
           fi
           
-      - name: Upload JSDoc Artifacts
+      - name: Upload TypeDoc Artifacts
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         if: always()
         with:
-          name: jsdoc-api-docs
+          name: typedoc-api-docs
           path: api/
           retention-days: 30
           
       - name: Generate Summary
         if: always()
         run: |
-          echo "## 📚 JSDoc Documentation Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 📚 TypeDoc Documentation Validation Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Generation Status" >> $GITHUB_STEP_SUMMARY
           
           if [ -d "api" ]; then
             HTML_COUNT=$(find api -name "*.html" | wc -l)
-            echo "✅ **JSDoc Generation**: Success" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **TypeDoc Generation**: Success" >> $GITHUB_STEP_SUMMARY
             echo "📄 **Generated Files**: $HTML_COUNT HTML documents" >> $GITHUB_STEP_SUMMARY
           else
-            echo "❌ **JSDoc Generation**: Failed" >> $GITHUB_STEP_SUMMARY
+            echo "❌ **TypeDoc Generation**: Failed" >> $GITHUB_STEP_SUMMARY
           fi
           
           echo "" >> $GITHUB_STEP_SUMMARY

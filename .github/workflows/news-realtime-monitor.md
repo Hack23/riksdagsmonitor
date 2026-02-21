@@ -370,9 +370,9 @@ The MCP server may take 30-60 seconds on first request (cold start). **The frame
 
 ### 📚 Documentation References
 
-- **MCP Client Source**: `scripts/mcp-client.js` (777 lines, comprehensive JSDoc)
+- **MCP Client Source**: `scripts/mcp-client.ts` (777 lines, comprehensive JSDoc)
 - **MCP Server Repo**: [riksdag-regering-mcp on npm](https://www.npmjs.com/package/riksdag-regering-mcp)
-- **API Examples**: See `scripts/mcp-client.js` lines 77-101 for intelligence use cases
+- **API Examples**: See `scripts/mcp-client.ts` lines 77-101 for intelligence use cases
 
 ## Detection Workflow
 
@@ -550,11 +550,16 @@ After generating articles:
 
 ```bash
 # Regenerate all 14 language news index files
-node scripts/generate-news-indexes.js
+npx tsx scripts/generate-news-indexes.ts
+
+# Update news metadata database
+npx tsx scripts/extract-news-metadata.ts
 
 # Update sitemap
-node scripts/generate-sitemap.js
+npx tsx scripts/generate-sitemap.ts
 ```
+
+**Always commit `data/news-articles.json` alongside the generated articles.** This metadata database is used by dashboards and data consumers.
 
 ### Step 5: Update Metadata
 

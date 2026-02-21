@@ -1,4 +1,4 @@
-name: JavaScript Testing
+name: TypeScript & JavaScript Testing
 
 on:
   push:
@@ -6,9 +6,12 @@ on:
       - main
       - develop
     paths:
+      - '**/*.ts'
       - '**/*.js'
+      - 'src/browser/**'
       - 'package.json'
       - 'package-lock.json'
+      - 'tsconfig*.json'
       - 'vite.config.js'
       - 'vitest.config.js'
       - 'cypress.config.js'
@@ -20,9 +23,12 @@ on:
       - main
       - develop
     paths:
-      - '**.js'
+      - '**/*.ts'
+      - '**/*.js'
+      - 'src/browser/**'
       - 'package.json'
       - 'package-lock.json'
+      - 'tsconfig*.json'
       - 'vite.config.js'
       - 'vitest.config.js'
       - 'cypress.config.js'
@@ -56,6 +62,15 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
+      
+      - name: TypeScript type-check (browser)
+        run: npx tsc --project tsconfig.browser.json --noEmit
+      
+      - name: TypeScript type-check (scripts)
+        run: npx tsc --project tsconfig.scripts.json --noEmit
+      
+      - name: Generate TypeDoc API documentation
+        run: npm run typedoc
       
       - name: Run Vitest unit tests
         run: npm run test:coverage

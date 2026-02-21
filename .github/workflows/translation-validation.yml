@@ -2,7 +2,7 @@ name: Translation Validation
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ main ]
     paths:
       - 'index*.html'
       - 'news/*.html'
@@ -10,7 +10,7 @@ on:
       - '.github/workflows/translation-validation.yml'
       - 'TRANSLATION_GUIDE.md'
   pull_request:
-    branches: [ master, main ]
+    branches: [ main ]
     paths:
       - 'index*.html'
       - 'news/*.html'

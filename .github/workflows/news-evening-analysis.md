@@ -759,11 +759,16 @@ fi
 
 ```bash
 # Regenerate all 14 language news index files
-node scripts/generate-news-indexes.js
+npx tsx scripts/generate-news-indexes.ts
+
+# Update news metadata database
+npx tsx scripts/extract-news-metadata.ts
 
 # Update sitemap
-node scripts/generate-sitemap.js
+npx tsx scripts/generate-sitemap.ts
 ```
+
+**Always commit `data/news-articles.json` alongside the generated articles.** This metadata database is used by dashboards and data consumers.
 
 ### Step 6.5: Validate Generated Content (BLOCKING)
 

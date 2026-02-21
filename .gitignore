@@ -6,11 +6,13 @@
 .vscode/
 .idea/
 node_modules/
+api/
 dist/
 build/
 *.log
 data/cia-exports/
 types/
+!scripts/types/
 schemas/metadata/
 validation-report.json
 htmlhint-report.txt

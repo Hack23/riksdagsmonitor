@@ -6,12 +6,8 @@ on:
       - main
       - develop
     paths:
+      - 'src/browser/**'
       - 'dashboard/**'
-      - 'js/stats-loader.js'
-      - 'js/risk-dashboard.js'
-      - 'js/party-dashboard.js'
-      - 'js/ministry-dashboard.js'
-      - 'js/coalition-loader.js'
       - 'cypress/e2e/dashboard-page.cy.js'
       - 'cypress/e2e/dashboards.cy.js'
       - 'cypress/e2e/politician-dashboard.cy.js'
@@ -21,12 +17,8 @@ on:
       - main
       - develop
     paths:
+      - 'src/browser/**'
       - 'dashboard/**'
-      - 'js/stats-loader.js'
-      - 'js/risk-dashboard.js'
-      - 'js/party-dashboard.js'
-      - 'js/ministry-dashboard.js'
-      - 'js/coalition-loader.js'
       - 'cypress/e2e/dashboard-page.cy.js'
       - 'cypress/e2e/dashboards.cy.js'
       - 'cypress/e2e/politician-dashboard.cy.js'

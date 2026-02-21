@@ -8,8 +8,7 @@ on:
     paths:
       - 'index*.html'
       - 'styles.css'
-      - 'js/main.js'
-      - 'js/language-switcher.js'
+      - 'src/browser/**'
       - 'cypress/e2e/homepage.cy.js'
       - 'cypress/e2e/accessibility.cy.js'
       - '.github/workflows/test-homepage.yml'
@@ -20,8 +19,7 @@ on:
     paths:
       - 'index*.html'
       - 'styles.css'
-      - 'js/main.js'
-      - 'js/language-switcher.js'
+      - 'src/browser/**'
       - 'cypress/e2e/homepage.cy.js'
       - 'cypress/e2e/accessibility.cy.js'
   workflow_dispatch:

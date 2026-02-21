@@ -35,8 +35,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["javascript"]
-        # CodeQL supports [ $supported-codeql-languages ]
+        language: ["javascript-typescript"]
+        # CodeQL "javascript-typescript" covers both JavaScript and TypeScript
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
         # Note: Python removed as repository contains no Python code
 

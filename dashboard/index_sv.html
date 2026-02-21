@@ -62,8 +62,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans+Hebrew:wght@400;500;700&display=swap" rel="stylesheet">
 
-<!-- Chart.js v4.4.1 (hosted locally) -->
-<script src="../js/lib/chart.umd.4.4.1.js"></script>
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -267,9 +265,7 @@ Data från <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener">
 </footer>
 
 <!-- JavaScript Modules -->
-<script type="module" src="cia-data-loader.js"></script>
-<script type="module" src="cia-visualizations.js"></script>
-<script type="module" src="election-predictions.js"></script>
-<script type="module" src="dashboard-init.js"></script>
+    <!-- CIA Dashboard entry point -->
+    <script type="module" src="/src/browser/cia-entry.ts"></script>
 </body>
 </html>
