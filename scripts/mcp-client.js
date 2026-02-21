@@ -461,13 +461,10 @@ export class MCPClient {
       // MCP uses JSON-RPC 2.0 protocol
       // Call the tool using tools/call method
       // 
-      // Tool name prefixing rules:
-      // - MCP Gateway (host.docker.internal) expects prefixed names: "riksdag-regering--tool_name"
-      // - Direct MCP Server (onrender.com) expects unprefixed names: "tool_name"
-      // - skipPrefix is set to true on fallback retry to prevent infinite recursion
-      const isGateway = this.baseURL.includes('host.docker.internal') || this.baseURL.includes('/mcp/riksdag-regering');
-      const shouldPrefix = isGateway && !skipPrefix && !tool.includes('--');
-      const toolName = shouldPrefix ? `riksdag-regering--${tool}` : tool;
+      // Tool name rules:
+      // - MCP Gateway routes by URL path, so tool names are NOT prefixed
+      // - Both gateway (host.docker.internal) and direct server use unprefixed names
+      const toolName = tool.includes('--') ? tool.split('--').pop() : tool;
       
       const jsonRpcRequest = {
         jsonrpc: '2.0',
