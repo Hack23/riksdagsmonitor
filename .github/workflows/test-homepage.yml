@@ -8,6 +8,7 @@ on:
     paths:
       - 'index*.html'
       - 'styles.css'
+      - 'src/browser/**'
       - 'js/main.js'
       - 'js/language-switcher.js'
       - 'cypress/e2e/homepage.cy.js'
@@ -20,6 +21,7 @@ on:
     paths:
       - 'index*.html'
       - 'styles.css'
+      - 'src/browser/**'
       - 'js/main.js'
       - 'js/language-switcher.js'
       - 'cypress/e2e/homepage.cy.js'

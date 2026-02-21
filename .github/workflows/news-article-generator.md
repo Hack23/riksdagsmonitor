@@ -1025,6 +1025,24 @@ This script:
 **Why This Is Critical:**
 Without running this script, newly generated articles won't appear in the news index pages. This was the blocking issue identified in PR #120 where index files had hardcoded article arrays that required manual updates.
 
+### Step 6.5: Update News Metadata Database
+
+After regenerating indexes, update the centralized news metadata database:
+
+```bash
+node --experimental-strip-types scripts/extract-news-metadata.ts
+```
+
+This script:
+- Scans `news/` directory for all article HTML files
+- Extracts Schema.org JSON-LD metadata from each article
+- Generates `data/news-articles.json` with structured metadata for all articles
+- Includes headline, description, datePublished, wordCount, keywords, articleSection per article
+- Groups by slug and language for cross-language article discovery
+- Used by dashboards and data consumers for article metadata queries
+
+**Always commit `data/news-articles.json` alongside the generated articles.**
+
 ### Step 7: Update Sitemap
 
 Run the sitemap generation script:

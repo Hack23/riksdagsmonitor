@@ -6,6 +6,7 @@ on:
       - main
       - develop
     paths:
+      - 'src/browser/**'
       - 'dashboard/**'
       - 'js/stats-loader.js'
       - 'js/risk-dashboard.js'
@@ -21,6 +22,7 @@ on:
       - main
       - develop
     paths:
+      - 'src/browser/**'
       - 'dashboard/**'
       - 'js/stats-loader.js'
       - 'js/risk-dashboard.js'
