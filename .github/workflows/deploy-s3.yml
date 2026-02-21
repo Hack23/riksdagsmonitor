@@ -120,7 +120,7 @@ jobs:
       - name: Deploy to S3 with cache headers
         run: |
           BUCKET="s3://${{ env.S3_BUCKET_NAME }}"
-          SRC="."
+          SRC="dist"
 
           # HTML files - short cache, must-revalidate
           aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.html' \
