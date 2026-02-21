@@ -2,14 +2,51 @@
 
 > Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency
 
-**Document Classification:** 🟢 Public  
-**Last Updated:** 2026-02-10  
-**Owner:** Hack23 AB (Org.nr 5595347807)  
-**Review Cycle:** Quarterly
-
 ## 🎯 Mission
 
 Riksdagsmonitor is a comprehensive intelligence platform for monitoring political activity in Sweden's Riksdag (Parliament). Built on the [Citizen Intelligence Agency (CIA)](https://github.com/Hack23/cia) platform, we provide systematic transparency through real-time analysis and 50+ years of historical data.
+
+<table>
+  <tr>
+    <td width="120" align="center">
+      <img src="https://img.shields.io/badge/Riksdag-Monitor-00338D?style=for-the-badge&logo=swedish&logoColor=FECC00" width="80" alt="Riksdagsmonitor"/>
+      <div>
+        <a href="https://riksdagsmonitor.com">
+          <img src="https://img.shields.io/website?url=https://riksdagsmonitor.com" alt="Website Status">
+        </a>
+      </div>
+    </td>
+    <td>
+      <p><strong>Swedish Parliament Intelligence Platform</strong> monitoring political activity in Sweden's Riksdag with systematic transparency through real-time analysis and 50+ years of historical data (1971-2024).</p>
+      <div>
+        <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor">
+          <img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard">
+        </a>
+        <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml">
+          <img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg" alt="Quality Checks">
+        </a>
+        <a href="https://github.com/Hack23/riksdagsmonitor/license">
+          <img src="https://img.shields.io/github/license/Hack23/riksdagsmonitor" alt="License">
+        </a>
+      </div>
+      <div>
+        <a href="https://riksdagsmonitor.com"><strong>🌐 Official Website</strong></a> •
+        <a href="https://github.com/Hack23/riksdagsmonitor"><strong>📂 Repository</strong></a> •
+        <a href="https://hack23.com/riksdagsmonitor-features.html"><strong>✨ Features</strong></a> •
+        <a href="https://hack23.com/riksdagsmonitor-docs.html"><strong>📚 Documentation</strong></a>
+      </div>
+    </td>
+  </tr>
+</table>
+
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
+[![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
+[![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
+[![License](https://img.shields.io/github/license/Hack23/riksdagsmonitor)](https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE)
+[![ISMS](https://img.shields.io/badge/Hack23-ISMS-blue)](https://github.com/Hack23/ISMS-PUBLIC)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Hack23/riksdagsmonitor)
+
+
 
 ## 📊 Quality Metrics
 
