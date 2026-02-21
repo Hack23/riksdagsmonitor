@@ -11,7 +11,14 @@
  *
  * @author Hack23 AB
  * @license Apache-2.0
- */
+
+ *
+ * @intelligence Committee Performance & Network Analytics — organizational intelligence analyzing Swedish Riksdag committee structure, productivity patterns, and decision-making networks. Committees are where legislative power accumulates and policy details are negotiated.
+ *
+ * @business Institutional analysis product — committee analytics serve researchers (legislative studies), journalists (committee coverage), and corporate affairs teams (regulatory tracking). Unique data product differentiating from vote-only parliamentary trackers.
+ *
+ * @marketing Expert audience engagement — committee analysis content attracts high-value audiences: policy researchers, lobbyists, and legislative affairs professionals. This audience has high conversion potential for premium analytics and API subscriptions.
+ * */
 
 import { logger } from '../shared/index.js';
 

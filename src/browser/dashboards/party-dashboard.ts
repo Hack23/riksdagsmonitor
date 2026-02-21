@@ -29,7 +29,14 @@
  * @version 2.0.0
  * @since 2024
  * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
- */
+
+ *
+ * @intelligence Political Party Performance Intelligence — comparative analytics engine tracking 50+ years (1971-2026) of Swedish party performance across 8 parties (S, M, SD, C, V, KD, L, MP). Implements multi-dimensional analysis: effectiveness trends, coalition alignment matrices, momentum indicators, and inter-party cooperation patterns.
+ *
+ * @business Longitudinal analytics differentiator — 50+ years of historical data creates a moat that competitors cannot easily replicate. Party performance analytics serve multiple customer segments: journalists (election coverage), researchers (academic papers), corporations (political risk), and citizens (voting decisions).
+ *
+ * @marketing Election-season content engine — party comparison charts generate high-engagement social media content during election cycles. Each party analysis is localized to 14 languages, maximizing international reach. Embeddable widgets potential for media partner integrations.
+ * */
 
 import {
   createChart,

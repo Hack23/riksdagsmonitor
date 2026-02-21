@@ -21,7 +21,14 @@
  * @version 2.0.0
  * @since 2024
  * @see {@link https://github.com/Hack23/cia|CIA Platform Data Pipeline}
- */
+
+ *
+ * @intelligence Coalition Intelligence Acquisition Module — real-time monitoring of Swedish coalition formations (Tidö Agreement 2022-), party membership dynamics, leadership role analysis, and political alignment patterns. Provides strategic assessment of coalition stability and party-level behavioral metrics across all 8 Riksdag parties.
+ *
+ * @business Predictive intelligence asset — coalition dynamics data is uniquely valuable for political risk consulting, corporate government affairs teams, and financial institutions assessing regulatory stability. Foundation for premium alerting service (coalition changes, leadership shifts).
+ *
+ * @marketing Breaking news fuel — coalition changes are high-impact political events generating significant media coverage. Real-time coalition monitoring enables Riksdagsmonitor to be first-to-report, driving traffic and establishing authority as a political intelligence source.
+ * */
 
 import {
   createChart,

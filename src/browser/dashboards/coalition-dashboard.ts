@@ -11,7 +11,14 @@
  * @license Apache-2.0
  * @version 2.0.0
  * @since 2024
- */
+
+ *
+ * @intelligence Coalition Voting Pattern Intelligence — interactive visualization revealing party alliances, behavioral anomalies, and political realignments through voting record analysis. Transforms raw voting data into strategic coalition intelligence with pattern detection and trend identification.
+ *
+ * @business Interactive engagement driver — coalition visualizations have the highest user engagement metrics (time on page, interaction rate). Interactive features justify premium tier pricing and demonstrate technical sophistication to enterprise prospects.
+ *
+ * @marketing Shareable visual content — coalition alignment charts and voting pattern visualizations are the most shared content type on social media. Each visualization is a potential viral asset with embedded Riksdagsmonitor branding.
+ * */
 
 import {
   logger,

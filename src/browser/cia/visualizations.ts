@@ -14,7 +14,14 @@
  * @license Apache-2.0
  * @version 1.0.0
  * @since 2024-01-15
- */
+
+ *
+ * @intelligence Intelligence Visualization Engine — primary rendering engine transforming complex CIA-exported political data into actionable visual intelligence. Orchestrates 6+ specialized visualization types for real-time political risk assessment and coalition forecasting analysis.
+ *
+ * @business Visual analytics value driver — visualization quality directly determines user perception of platform intelligence depth. Each visualization type is a feature-marketable capability. Custom visualization engine enables white-label offerings for B2G/enterprise clients.
+ *
+ * @marketing Visual content factory — every rendered visualization is a potential marketing asset: embeddable widgets, shareable images, presentation slides, and report graphics. High-quality visualizations are the most shared content type, driving organic reach and brand recognition.
+ * */
 
 import type {
   OverviewDashboard,

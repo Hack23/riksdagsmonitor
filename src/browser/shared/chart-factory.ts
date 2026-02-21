@@ -5,7 +5,14 @@
  * responsive behavior, and accessibility features.
  *
  * @security No inline scripts — all Chart.js configuration is programmatic
- */
+
+ *
+ * @intelligence Standardized intelligence visualization factory — ensures all analytical charts (risk heat maps, coalition networks, electoral forecasts) maintain consistent OSINT presentation standards with accessibility compliance for briefing-quality output.
+ *
+ * @business Development velocity multiplier — centralizing Chart.js configuration eliminates per-dashboard setup cost (reduced from 51+ `new Chart()` calls). Enables rapid prototyping of new intelligence products with predictable quality and performance.
+ *
+ * @marketing Visual quality assurance — every chart produced is screenshot-ready for social media, press releases, and reports. Consistent styling builds brand recognition. Responsive behavior ensures mobile-quality content for all distribution channels.
+ * */
 
 import type { Chart as ChartType, ChartConfiguration, ChartTypeRegistry } from 'chart.js';
 import { THEME_COLORS, CHART_PALETTE, BREAKPOINTS } from './theme.js';

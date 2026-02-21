@@ -9,7 +9,14 @@
  * - Retry with exponential backoff
  * - CSV parsing via d3.csvParse
  * - JSON and text response handling
- */
+
+ *
+ * @intelligence Resilient OSINT data acquisition pipeline — multi-source intelligence data loading with local-first strategy, remote fallback, localStorage caching (TTL-based), retry with exponential backoff, and CSV/JSON parsing. Ensures continuous intelligence availability even during source outages.
+ *
+ * @business Platform reliability foundation — data loading resilience directly impacts user experience KPIs (page load time, error rate, Time to Interactive). Caching reduces infrastructure costs and enables offline-capable future PWA offering.
+ *
+ * @marketing Performance marketing enabler — fast, reliable data loading supports Core Web Vitals targets (LCP < 2.5s, FID < 100ms) critical for SEO ranking and user retention. Reliability metrics are a key selling point for B2G/enterprise prospects.
+ * */
 
 import { logger } from './logger.js';
 import type { CSVRow, DataSource, LoadOptions } from './types.js';

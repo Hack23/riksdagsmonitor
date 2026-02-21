@@ -2,7 +2,14 @@
  * @module Shared/DomUtils
  * @description Shared DOM utility functions for dashboard components.
  * Provides loading states, error display, and accessibility helpers.
- */
+
+ *
+ * @intelligence Intelligence presentation layer — standardized loading states, error recovery displays, and accessibility helpers ensuring WCAG 2.1 AA compliance across all intelligence dashboard components.
+ *
+ * @business User experience consistency — loading skeletons and error states prevent user frustration during data acquisition. Accessibility compliance (WCAG 2.1 AA) is a legal requirement for government clients and a competitive advantage.
+ *
+ * @marketing Inclusive design asset — accessibility compliance enables marketing to government agencies (mandatory WCAG requirement), educational institutions, and disability advocacy organizations. Demonstrates corporate social responsibility.
+ * */
 
 /**
  * Show a loading spinner overlay inside a container.

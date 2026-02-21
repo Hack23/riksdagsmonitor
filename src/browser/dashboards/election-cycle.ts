@@ -19,7 +19,14 @@
  * @license Apache-2.0
  * @version 2.0.0
  * @since 2024
- */
+
+ *
+ * @intelligence Electoral Cycle Forecasting & Risk Assessment — 40-year temporal intelligence analysis (1994-2034) of Swedish parliamentary election cycles with predictive risk forecasting, coalition stability assessment, and decision-making pattern analysis across historical and projected election periods.
+ *
+ * @business Election forecasting product — electoral predictions attract peak user traffic and media attention during election seasons. Forecasting accuracy builds brand credibility. Historical analysis depth (40 years) creates competitive moat. Foundation for election-specific premium reporting packages.
+ *
+ * @marketing Election-season traffic driver — election forecasts generate maximum media coverage, social sharing, and organic search traffic. Election prediction content has proven viral potential. Pre-election period is the optimal window for user acquisition campaigns.
+ * */
 
 import {
   logger,

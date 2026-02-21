@@ -1,7 +1,14 @@
 /**
  * @module UI/BackToTop
  * @description WCAG-compliant scroll-to-top button with reduced motion support.
- */
+
+ *
+ * @intelligence WCAG-compliant navigation intelligence — scroll-to-top accessibility component with reduced motion support (prefers-reduced-motion media query). Ensures inclusive navigation for intelligence analysts working through long-form dashboard content.
+ *
+ * @business Accessibility compliance requirement — WCAG 2.1 AA is mandatory for government clients (B2G) and required by EU accessibility directives. Back-to-top is a basic UX pattern that reduces friction for all users, improving engagement metrics across all customer segments.
+ *
+ * @marketing Inclusive design demonstration — accessibility features are marketable to government agencies, educational institutions, and organizations with diversity mandates. WCAG compliance is a checkbox requirement in many RFP processes.
+ * */
 
 export function initBackToTop(): void {
   const btn = document.getElementById('back-to-top');

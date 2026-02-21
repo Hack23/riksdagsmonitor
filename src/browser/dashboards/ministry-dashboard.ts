@@ -29,7 +29,14 @@
  * @version 2.0.0
  * @since 2024
  * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
- */
+
+ *
+ * @intelligence Executive Power Assessment & Ministerial Risk Profiling — advanced intelligence platform providing multi-dimensional ministerial risk scoring, influence hierarchy measurement, productivity matrix analysis, and decision-impact assessment for Swedish government ministers using D3.js heat maps and Chart.js analytics.
+ *
+ * @business Government accountability product — ministerial risk profiling serves B2G clients (transparency agencies), media organizations (investigative journalism), and NGOs (government oversight). Unique data product with monetization potential through subscription-based ministerial alert services.
+ *
+ * @marketing Investigative journalism enabler — ministerial risk profiles generate high-impact stories attracting media attention and driving platform awareness. Press coverage of ministerial assessments creates organic marketing reach and establishes thought leadership in government transparency.
+ * */
 
 import {
   createChart,

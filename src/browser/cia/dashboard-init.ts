@@ -14,7 +14,14 @@
  * @license Apache-2.0
  * @version 1.0.0
  * @since 2024-01-15
- */
+
+ *
+ * @intelligence Intelligence Platform Orchestration Layer — coordinates bootstrap sequence for multi-layered data integration, visualization rendering, and interactive intelligence presentation. Manages component lifecycle, dependency resolution, error recovery, and state coordination across rendering engines and data pipelines.
+ *
+ * @business Platform reliability SLA foundation — initialization resilience directly impacts uptime metrics and user trust. Error recovery ensures graceful degradation, maintaining partial functionality during outages. SLA commitments for enterprise clients depend on robust initialization.
+ *
+ * @marketing First-load experience quality — dashboard initialization speed and reliability determine first-impression quality for new users. Time to Interactive (< 3s target) is critical for conversion from landing page visitor to engaged user. Loading state UX affects bounce rate.
+ * */
 
 import { CIADataLoader } from './data-loader.js';
 import { CIADashboardRenderer } from './visualizations.js';

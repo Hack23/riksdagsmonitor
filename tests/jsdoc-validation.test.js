@@ -84,7 +84,7 @@ describe('TypeDoc Generation & Validation', () => {
       const files = await fs.readdir(modulesDir);
       const htmlFiles = files.filter(f => f.endsWith('.html'));
 
-      // Should have module docs for js/, dashboard/, scripts/ files
+      // Should have module docs for src/browser/, scripts/ files
       expect(htmlFiles.length).toBeGreaterThan(20);
     });
 
@@ -112,28 +112,28 @@ describe('TypeDoc Generation & Validation', () => {
       expect(exists).toBe(true);
     });
 
-    it('should include documentation for js/ browser modules', async () => {
+    it('should include documentation for src/browser/ dashboard modules', async () => {
       const modulesDir = path.join(API_DIR, 'modules');
       const files = await fs.readdir(modulesDir);
 
-      const jsBrowserModules = files.filter(f =>
-        f.startsWith('js_') && f.endsWith('.html')
+      const browserModules = files.filter(f =>
+        f.startsWith('src_browser_') && f.endsWith('.html')
       );
 
-      // All 14 js/ files should be documented
-      expect(jsBrowserModules.length).toBeGreaterThanOrEqual(10);
+      // All 27 src/browser/ TS files should be documented
+      expect(browserModules.length).toBeGreaterThanOrEqual(10);
     });
 
-    it('should include documentation for dashboard/ modules', async () => {
+    it('should include documentation for src/browser/cia/ modules', async () => {
       const modulesDir = path.join(API_DIR, 'modules');
       const files = await fs.readdir(modulesDir);
 
-      const dashboardModules = files.filter(f =>
-        f.startsWith('dashboard_') && f.endsWith('.html')
+      const ciaModules = files.filter(f =>
+        f.startsWith('src_browser_cia_') && f.endsWith('.html')
       );
 
-      // All 5 dashboard/ files should be documented
-      expect(dashboardModules.length).toBeGreaterThanOrEqual(4);
+      // All 5 cia/ files should be documented
+      expect(ciaModules.length).toBeGreaterThanOrEqual(4);
     });
 
     it('should include documentation for scripts/ modules', async () => {
@@ -362,28 +362,25 @@ describe('TypeDoc Generation & Validation', () => {
 describe('Documentation File Completeness', () => {
 
   it('should list all expected source directories', async () => {
-    const jsDir = path.join(process.cwd(), 'js');
-    const dashboardDir = path.join(process.cwd(), 'dashboard');
+    const browserDir = path.join(process.cwd(), 'src', 'browser');
     const scriptsDir = path.join(process.cwd(), 'scripts');
 
-    const jsDirExists = await fs.access(jsDir).then(() => true).catch(() => false);
-    const dashboardDirExists = await fs.access(dashboardDir).then(() => true).catch(() => false);
+    const browserDirExists = await fs.access(browserDir).then(() => true).catch(() => false);
     const scriptsDirExists = await fs.access(scriptsDir).then(() => true).catch(() => false);
 
-    expect(jsDirExists).toBe(true);
-    expect(dashboardDirExists).toBe(true);
+    expect(browserDirExists).toBe(true);
     expect(scriptsDirExists).toBe(true);
   });
 
-  it('should document all dashboard JavaScript files', async () => {
-    const dashboardDir = path.join(process.cwd(), 'dashboard');
-    const files = await fs.readdir(dashboardDir);
-    const jsFiles = files.filter(f => f.endsWith('.js'));
+  it('should document all browser TypeScript files', async () => {
+    const browserDir = path.join(process.cwd(), 'src', 'browser', 'dashboards');
+    const files = await fs.readdir(browserDir);
+    const tsFiles = files.filter(f => f.endsWith('.ts'));
 
-    expect(jsFiles.length).toBeGreaterThanOrEqual(3);
+    expect(tsFiles.length).toBeGreaterThanOrEqual(10);
 
-    if (jsFiles.length > 0) {
-      const content = await fs.readFile(path.join(dashboardDir, jsFiles[0]), 'utf-8');
+    if (tsFiles.length > 0) {
+      const content = await fs.readFile(path.join(browserDir, tsFiles[0]), 'utf-8');
       expect(content).toContain('/**');
     }
   });
@@ -393,7 +390,7 @@ describe('Documentation File Completeness', () => {
     const files = await fs.readdir(modulesDir);
     const htmlFiles = files.filter(f => f.endsWith('.html'));
 
-    // 14 js/ + 5 dashboard/ + ~42 scripts/ = ~61 modules
+    // 27 src/browser/ + ~42 scripts/ = ~69 modules
     expect(htmlFiles.length).toBeGreaterThanOrEqual(40);
   });
 

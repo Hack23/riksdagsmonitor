@@ -23,7 +23,14 @@
  * @version 2.0.0
  * @since 2024
  * @see {@link https://github.com/Hack23/cia|CIA Platform Data Source}
- */
+
+ *
+ * @intelligence Individual Politician Intelligence Profiling — micro-level assessment of 349 Swedish MPs with comprehensive risk scoring, influence hierarchy measurement, behavioral pattern analysis, and career trajectory forecasting. Provides drill-down from macro political trends to individual actor analysis.
+ *
+ * @business Personalized intelligence product — individual politician profiles are the most granular data product, enabling per-politician alerts, comparison tools, and voter constituency reports. Foundation for B2C freemium model (free basic profiles, premium detailed analytics).
+ *
+ * @marketing Voter engagement tool — "look up your MP" functionality drives organic search traffic and civic engagement. Each politician profile page is SEO-optimized for name searches, capturing electoral-season search spikes across 14 languages.
+ * */
 
 import {
   logger,

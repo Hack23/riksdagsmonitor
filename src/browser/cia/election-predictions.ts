@@ -13,7 +13,14 @@
  * @license Apache-2.0
  * @version 1.0.0
  * @since 2024-01-15
- */
+
+ *
+ * @intelligence Electoral Forecasting Engine — sophisticated seat prediction algorithms for Swedish parliamentary elections (2026). Implements probabilistic seat distribution, coalition scenario analysis, and confidence interval calculations. Transforms polling data, historical voting patterns, and demographic trends into actionable electoral intelligence.
+ *
+ * @business Flagship forecasting product — election predictions are the highest-traffic, highest-engagement feature during election periods. Forecasting accuracy builds reputational capital. Prediction data is monetizable through media licensing, API access, and custom reporting.
+ *
+ * @marketing Peak virality content — election prediction charts and coalition probability visualizations achieve maximum social media engagement and press coverage. Each forecast update is a content marketing event. Prediction accuracy tracking builds long-term brand credibility.
+ * */
 
 import type { ElectionAnalysis } from './data-loader.js';
 

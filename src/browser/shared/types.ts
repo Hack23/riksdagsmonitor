@@ -2,7 +2,14 @@
  * @module Shared/Types
  * @description Core type definitions for Riksdagsmonitor browser modules.
  * Provides shared interfaces for chart configuration, data loading, and dashboard components.
- */
+
+ *
+ * @intelligence Intelligence domain type system — canonical data models for political entities (MPs, parties, coalitions, voting records), risk scoring dimensions, and intelligence product schemas. Ensures type-safe data flow from CIA Platform CSV exports through analysis pipelines to visualization output.
+ *
+ * @business Developer experience investment — strong typing reduces integration bugs, accelerates onboarding for contributors, and makes the API surface self-documenting. Critical for future developer ecosystem (API consumers, plugin authors, third-party integrations).
+ *
+ * @marketing Technical credibility asset — TypeScript type definitions demonstrate engineering maturity to technical audiences (CTOs, developers, open-source community). Publishable as npm types package for ecosystem growth.
+ * */
 
 // ─── Chart Types ─────────────────────────────────────────────────────────────
 

@@ -12,7 +12,14 @@
  * @license Apache-2.0
  * @version 2.0.0
  * @since 2024
- */
+
+ *
+ * @intelligence Seasonal Parliamentary Pattern Intelligence — 23-year temporal analysis (2002-2025) implementing Z-score anomaly detection for quarterly parliamentary activity patterns. Classifies legislative seasons and detects statistically significant deviations from historical norms.
+ *
+ * @business Unique analytical methodology — seasonal pattern analysis is a sophisticated differentiator that most parliamentary monitoring tools lack. Demonstrates advanced data science capabilities to enterprise and research clients. Foundation for seasonal activity alerting subscription.
+ *
+ * @marketing Research partnership content — seasonal analysis methodology and findings are publishable in academic journals, driving research partnerships and academic user acquisition. Positions Riksdagsmonitor as a research-grade platform.
+ * */
 
 import {
   logger,

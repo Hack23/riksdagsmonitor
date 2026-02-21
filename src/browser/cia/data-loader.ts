@@ -14,7 +14,14 @@
  * @license Apache-2.0
  * @version 2.0.0
  * @since 2024
- */
+
+ *
+ * @intelligence CIA Platform Data Pipeline Orchestrator — core data acquisition module implementing multi-source intelligence data loading from 19+ CIA product categories. Manages CSV export ingestion and JSON fallback for electoral forecasts. Provides resilient pipeline with local-first strategy and remote fallback.
+ *
+ * @business Data infrastructure investment — the CIA data pipeline is the foundation for all analytical products. Pipeline reliability directly impacts user experience and platform credibility. Modular architecture enables future data source expansion (European Parliament, Nordic councils).
+ *
+ * @marketing Data transparency asset — transparent data sourcing (CIA Platform, open government data) builds trust with all audience segments. Data pipeline documentation demonstrates commitment to accuracy and verifiability, key messaging for press and academic audiences.
+ * */
 
 /* ------------------------------------------------------------------ */
 /*  Interfaces                                                        */

@@ -13,7 +13,14 @@
  * @license Apache-2.0
  * @version 2.0.0
  * @since 2024
- */
+
+ *
+ * @intelligence Pre-Election Activity Monitoring & Behavior Anomaly Detection — critical-period intelligence monitoring (12-24 months before elections) with real-time activity anomaly detection. Detects election-driven behavior changes through quarterly comparison. Provides early warning for coalition formation, government dissolution, and campaign intensity signals.
+ *
+ * @business Early warning intelligence product — pre-election monitoring is the most time-sensitive intelligence product. Creates urgency for real-time access (premium tier justification). Valuable to political consulting firms, media organizations, and financial institutions tracking political stability.
+ *
+ * @marketing Campaign-period content engine — pre-election anomaly alerts generate timely, newsworthy content during the highest-traffic political period. Each detected anomaly is a potential press release, social media post, and newsletter feature. Peak content marketing effectiveness.
+ * */
 
 import {
   logger,

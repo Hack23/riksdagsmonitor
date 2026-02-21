@@ -15,7 +15,14 @@
  * 3. **Validation**  — Filter by `status === 'success'`
  * 4. **Mapping**     — Apply stat-id → object_name lookup
  * 5. **Display**     — Format numbers and update DOM elements
- */
+
+ *
+ * @intelligence OSINT Data Acquisition Module — core intelligence collection loading extraction summary statistics from CIA Platform CSVs. Implements structured data acquisition pipeline: fetch → parse → validate → map → display. Provides real-time political metrics including document counts, voting records, and party activity indicators.
+ *
+ * @business Key metrics showcase — statistics are the "proof of depth" for the platform, demonstrating comprehensive data coverage (documents, votes, committees). These numbers drive trust and credibility for all customer segments, especially journalists and researchers requiring data provenance.
+ *
+ * @marketing Hero section content — statistics (e.g., "3.5M+ votes analyzed") are primary marketing assets for landing pages, press releases, and social media. Each metric is a shareable data point that demonstrates platform value and drives organic reach.
+ * */
 
 import { loadCSV, createDataSource, logger } from '../shared/index.js';
 import type { CSVRow } from '../shared/index.js';

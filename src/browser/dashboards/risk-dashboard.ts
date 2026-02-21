@@ -16,7 +16,14 @@
  * @version 2.0.0
  * @since 2024
  * @see {@link https://github.com/Hack23/cia|CIA Platform Data Pipeline}
- */
+
+ *
+ * @intelligence Political Risk Intelligence Engine — 45-rule risk scoring system analyzing 349 Swedish MPs across behavioral, financial, attendance, and performance dimensions. Implements D3.js heat map (349×45 matrix) with color-coded severity classification (CRITICAL/HIGH/MEDIUM/LOW) and Chart.js trend analytics for risk trajectory monitoring.
+ *
+ * @business Premium intelligence product — the risk dashboard is the highest-value analytical feature, uniquely differentiating Riksdagsmonitor from basic parliamentary sites. Foundation for premium/enterprise tier with customizable risk rule configuration, alert thresholds, and API-accessible risk scores for institutional subscribers.
+ *
+ * @marketing Flagship content generator — risk assessments produce shareable, newsworthy content (e.g., "Top 10 highest-risk MPs"). Heat map visualizations are visually compelling for press coverage, social media engagement, and conference presentations. Drives media partnerships and journalist user acquisition.
+ * */
 
 import {
   createChart,

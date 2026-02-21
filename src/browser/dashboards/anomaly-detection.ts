@@ -25,7 +25,14 @@
  * @version 2.0.0
  * @since 2024
  * @see {@link https://github.com/Hack23/cia|CIA Platform Data Pipeline}
- */
+
+ *
+ * @intelligence Statistical Outlier Detection & Early Warning System — advanced Z-score analysis (threshold |Z| >= 2.0) for behavioral anomaly detection across 23 years × 4 quarters = 92 time periods of Swedish Parliament activity. Severity classification: CRITICAL (>3σ), HIGH (2-3σ), MODERATE (1-2σ). Direction detection: UNUSUALLY_HIGH, UNUSUALLY_LOW, WITHIN_NORMAL_RANGE.
+ *
+ * @business Algorithmic intelligence differentiator — statistical anomaly detection represents the most technically sophisticated product capability. Demonstrates platform as an AI/ML-adjacent intelligence tool. Highest perceived value for enterprise and institutional clients. Foundation for automated anomaly alerting subscription.
+ *
+ * @marketing Alert-driven content generation — each detected anomaly is an automatically generated content opportunity: push notifications, email alerts, social media posts, and newsletter items. Anomaly alerts create FOMO (fear of missing out) driving subscription growth and daily active usage.
+ * */
 
 import {
   logger,

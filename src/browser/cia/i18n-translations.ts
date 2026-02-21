@@ -12,7 +12,14 @@
  * @license Apache-2.0
  * @version 1.0.0
  * @since 2026-02-13
- */
+
+ *
+ * @intelligence Multi-Language Intelligence Support — comprehensive translation dictionary for CIA Intelligence Dashboard supporting 14 languages (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH). Provides UI translations, data labels, cultural formatting (dates, numbers via Intl API), and RTL support for Arabic and Hebrew.
+ *
+ * @business Global market expansion infrastructure — 14-language support enables market entry across Nordic, European, Middle Eastern, and Asian markets without additional development. Each language version is a separate SEO-optimize addressable market. Foundation for localized pricing and regional partnerships.
+ *
+ * @marketing International reach multiplier — each language version captures organic search traffic in that language market. 14-language support is a key differentiator from single-language competitors. Enables international press coverage, academic citations, and cross-border partnership opportunities.
+ * */
 
 /* ------------------------------------------------------------------ */
 /*  Interfaces                                                        */

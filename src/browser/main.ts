@@ -5,7 +5,14 @@
  *
  * Each dashboard is initialized independently — if one fails, others continue.
  * Libraries (Chart.js, D3) are imported via Vite bundling from npm packages.
- */
+
+ *
+ * @intelligence Central intelligence platform orchestrator — coordinates 12 analytical dashboards covering OSINT data acquisition, political risk assessment, coalition dynamics, electoral forecasting, and behavioral anomaly detection across 349 Swedish MPs and 8 parties.
+ *
+ * @business Core platform entry point delivering the primary user value proposition: comprehensive political transparency as a service. Each successfully loaded dashboard directly increases user engagement time (target: 8+ min average session), driving conversion from casual visitors to regular users and API subscribers.
+ *
+ * @marketing Landing page intelligence showcase — first impression for all 5 target audiences (citizens, journalists, researchers, NGOs, corporations). Each dashboard module is a demonstrable feature for content marketing, social media screenshots, and press coverage. Supports 14-language SEO via separate index files.
+ * */
 
 // ─── Library Imports (Vite bundles these from node_modules) ──────────────────
 // These replace the old js/lib/*.js vendor files

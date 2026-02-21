@@ -2,7 +2,14 @@
  * @module Shared/Theme
  * @description Cyberpunk design system theme constants.
  * Single source of truth for colors, breakpoints, and typography used across all dashboards.
- */
+
+ *
+ * @intelligence Visual intelligence presentation standards — cyberpunk design system encoding risk severity (CRITICAL red → LOW green), classification levels, and intelligence hierarchy through consistent color semantics and typography.
+ *
+ * @business Brand identity infrastructure — the cyberpunk theme is a key differentiator creating instant visual recognition. Design system consistency reduces development cost for new features and ensures professional appearance across all 14 language versions.
+ *
+ * @marketing Brand consistency engine — ensures every screenshot, embed, and shared visualization carries the distinctive Riksdagsmonitor visual identity. CSS custom properties enable white-label customization for enterprise/B2G clients.
+ * */
 
 import type { ThemeColors, Breakpoints } from './types.js';
 
