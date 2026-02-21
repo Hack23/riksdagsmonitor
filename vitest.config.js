@@ -84,7 +84,9 @@ export default defineConfig({
     // Test file patterns
     include: [
       'tests/**/*.test.js',
-      'tests/**/*.spec.js'
+      'tests/**/*.test.ts',
+      'tests/**/*.spec.js',
+      'tests/**/*.spec.ts'
     ],
     
     // Exclude patterns
