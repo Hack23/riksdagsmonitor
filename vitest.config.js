@@ -37,6 +37,7 @@ export default defineConfig({
       
       // Include patterns
       include: [
+        'src/browser/**/*.ts',
         'js/**/*.js',
         'scripts/**/*.js',
         'scripts/**/*.ts',

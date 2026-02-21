@@ -9,8 +9,6 @@ on:
       - 'index*.html'
       - 'styles.css'
       - 'src/browser/**'
-      - 'js/main.js'
-      - 'js/language-switcher.js'
       - 'cypress/e2e/homepage.cy.js'
       - 'cypress/e2e/accessibility.cy.js'
       - '.github/workflows/test-homepage.yml'
@@ -22,8 +20,6 @@ on:
       - 'index*.html'
       - 'styles.css'
       - 'src/browser/**'
-      - 'js/main.js'
-      - 'js/language-switcher.js'
       - 'cypress/e2e/homepage.cy.js'
       - 'cypress/e2e/accessibility.cy.js'
   workflow_dispatch:

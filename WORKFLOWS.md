@@ -1,4 +1,4 @@
-# 🔄 Riksdagsmonitor - CI/CD Workflows
+# 🔄 Riksdagsmonitor — CI/CD Workflows
 
 ### CI/CD & Security
 [![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
@@ -7,27 +7,41 @@
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 
 ### Testing
-[![JavaScript Testing](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml)
-[![JSDoc Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml)
+[![TypeScript & JavaScript Testing](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml)
+[![TypeDoc Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/jsdoc-validation.yml)
 [![Translation Validation](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/translation-validation.yml)
 
 ### Documentation & Release
 [![Release](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/release.yml)
-[![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=javascript)](https://riksdagsmonitor.com/docs/api/)
+[![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=typescript)](https://riksdagsmonitor.com/docs/api/)
 [![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest)](https://riksdagsmonitor.com/docs/coverage/)
 
-**Document Version:** 4.0  
-**Last Updated:** 2026-02-18  
-**Classification:** Public  
+**Document Version:** 5.0
+**Last Updated:** 2026-02-21
+**Classification:** Public
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
 ## Executive Summary
 
 This document describes the Continuous Integration and Continuous Deployment (CI/CD) workflows for Riksdagsmonitor. All workflows are implemented using GitHub Actions and follow Hack23 AB's [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md).
 
-**Total Workflows: 26** ⬆️ (updated from 17)  
-**Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled where applicable)  
+The project has been migrated from JavaScript to **TypeScript** (27 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 24's native type-stripping for scripts.
+
+**Total Workflows: 29** (23 standard YAML + 3 agentic markdown sources + 3 compiled lock files)
+**Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 **ISMS Compliance:** ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1
+
+### Technology Stack
+
+| Component | Version | Purpose |
+|-----------|---------|---------|
+| Node.js | 24 | Runtime (native TypeScript strip-types) |
+| TypeScript | 5.9.3 | Type system |
+| Vite | 7.3.1 | Build toolchain (esbuild) |
+| Vitest | 4.0.18 | Unit testing (1200 tests) |
+| Cypress | 14 | E2E testing |
+| TypeDoc | 0.28.17 | API documentation |
+| ESLint | 9.x | Linting (flat config) |
 
 ### Compliance Frameworks
 - **ISO 27001:2022:** A.8.31 (Separation of dev/test/prod), A.8.32 (Change management), A.5.37 (Documented operating procedures)
@@ -36,2012 +50,744 @@ This document describes the Continuous Integration and Continuous Deployment (CI
 
 See [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) for complete framework documentation.
 
-## Workflow Overview
+## Workflow Architecture
 
 ```mermaid
 graph TD
     A[Developer Push/PR] --> B{Workflow Type}
     B -->|Quality| C[Quality Checks]
-    B -->|Security| D[Dependency Review]
+    B -->|Security| D[Security Suite]
     B -->|Testing| T[Testing Suite]
     B -->|Release| R[Release Pipeline]
-    B -->|Agent| E[Copilot Setup]
+    B -->|Agent| E[Copilot / Agentic]
+    B -->|Data| DP[CIA Data Pipeline]
+    B -->|Monitor| M[Monitoring]
     
     C --> F[HTML Validation]
     C --> G[Link Checking]
+    C --> TS[TypeScript Lint]
     
-    D --> H[Dependency Scan]
-    D --> I[Vulnerability Check]
-    D --> CodeQL[CodeQL Analysis]
+    D --> H[Dependency Review]
+    D --> CodeQL[CodeQL JS/TS]
+    D --> SC[OpenSSF Scorecard]
     
-    T --> JS[JavaScript Testing]
-    T --> JSDoc[JSDoc Validation]
+    T --> TSTest[TypeScript & JS Testing]
+    T --> TypeDoc[TypeDoc Validation]
     T --> Trans[Translation Check]
+    T --> Dash[Dashboard E2E]
+    T --> Home[Homepage E2E]
+    T --> News[News E2E]
     
-    R --> Build[Build & Test]
+    TSTest --> TSC[tsc --noEmit]
+    TSTest --> VT[Vitest 1200 Tests]
+    TSTest --> CY[Cypress E2E]
+    
+    R --> Build[Vite Build]
     R --> Attest[SLSA Attestations]
-    R --> Deploy[Dual Deploy]
+    R --> DeployDual[Dual Deploy]
     
-    E --> J[MCP Server Init]
-    E --> K[Agent Environment]
+    DeployDual --> S3[AWS S3/CloudFront]
+    DeployDual --> GHP[GitHub Pages]
     
-    F --> L{Pass?}
-    G --> L
-    H --> L
-    I --> L
+    DP --> CIA[CIA Exports Fetch]
+    DP --> Val[Schema Validation]
+    DP --> Stats[Stats Update]
     
-    L -->|Yes| M[Approve]
-    L -->|No| N[Block/Alert]
+    E --> Setup[Copilot Setup Steps]
+    E --> AG[Agentic News Gen]
     
-    M --> O[Deploy to AWS S3/CloudFront + GitHub Pages]
+    M --> LH[Lighthouse CI]
+    M --> UP[Uptime Monitor]
     
     style C fill:#4caf50
     style D fill:#ff9800
     style T fill:#00bcd4
     style R fill:#9c27b0
     style E fill:#2196f3
-    style M fill:#4caf50
-    style N fill:#f44336
+    style DP fill:#795548
+    style M fill:#607d8b
 ```
 
-## Complete Workflow Inventory
+## Complete Workflow Inventory (29 Files)
 
 ### 🔐 Security & Compliance (5 workflows)
 
-#### 1.1 CodeQL Analysis
-- **File:** `.github/workflows/codeql.yml`
-- **Trigger:** Push to main, PR, Schedule (weekly)
-- **Purpose:** Static code analysis for security vulnerabilities
-- **ISMS Controls:** ISO 27001 A.8.8, NIST CSF PR.DS-6, CIS 16.6
-- **Evidence:** [Hack23 ISMS - Security Testing](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#security-testing)
-
-#### 1.2 Dependency Review
-- **File:** `.github/workflows/dependency-review.yml`
-- **Trigger:** Pull requests
-- **Purpose:** Vulnerability scanning for dependencies
-- **ISMS Controls:** ISO 27001 A.8.8, NIST CSF ID.RA-1, CIS 16.10
-- **Evidence:** [Hack23 ISMS - Dependency Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#dependency-management)
-
-#### 1.3 OpenSSF Scorecard
-- **File:** `.github/workflows/scorecards.yml`
-- **Trigger:** Schedule (weekly), Push to main
-- **Purpose:** Supply chain security assessment
-- **ISMS Controls:** ISO 27001 A.8.30, NIST CSF ID.SC-3, CIS 16.6
-- **Evidence:** [Hack23 ISMS - Supply Chain Security](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#supply-chain-security)
-
-#### 1.4 Setup Labels
-- **File:** `.github/workflows/setup-labels.yml`
-- **Trigger:** Workflow dispatch
-- **Purpose:** Initialize repository labels for issue management
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
-
-#### 1.5 Labeler
-- **File:** `.github/workflows/labeler.yml`
-- **Trigger:** Pull requests
-- **Purpose:** Automatic PR labeling based on file changes
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+| # | Workflow | File | Trigger | ISMS Controls |
+|---|----------|------|---------|---------------|
+| 1.1 | CodeQL Analysis | `codeql.yml` | Push, PR, Weekly schedule | A.8.8, PR.DS-6, CIS 16.6 |
+| 1.2 | Dependency Review | `dependency-review.yml` | Pull requests | A.8.8, PR.DS-6, CIS 16.6 |
+| 1.3 | OpenSSF Scorecard | `scorecards.yml` | Push to main, Weekly | A.5.36, DE.CM-6, CIS 16.2 |
+| 1.4 | Setup Labels | `setup-labels.yml` | Manual dispatch | A.5.37, PR.IP-1 |
+| 1.5 | PR Labeler | `labeler.yml` | Pull requests | A.5.37, PR.IP-1 |
 
 ### 🧪 Testing & Validation (7 workflows)
 
-#### 2.1 JavaScript Testing
-- **File:** `.github/workflows/javascript-testing.yml`
-- **Trigger:** Push, PR, Schedule (daily)
-- **Purpose:** Unit tests, E2E tests with Cypress, build validation
-- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12, CIS 16.1
-- **Evidence:** [Hack23 ISMS - Testing Standards](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#testing-requirements)
+| # | Workflow | File | Trigger | Coverage |
+|---|----------|------|---------|----------|
+| 2.1 | TypeScript & JavaScript Testing | `javascript-testing.yml` | Push/PR (`**/*.ts`, `**/*.js`, `src/browser/**`) | TSC type-check + Vitest + Cypress |
+| 2.2 | TypeDoc Validation | `jsdoc-validation.yml` | Push/PR (`src/browser/**`, `scripts/**`) | TypeDoc generation + coverage |
+| 2.3 | Quality Checks | `quality-checks.yml` | Push/PR to main | ESLint + HTMLHint + linkinator |
+| 2.4 | Translation Validation | `translation-validation.yml` | Push/PR (`index*.html`, `news/*.html`) | 14-language + RTL + hreflang |
+| 2.5 | Test Dashboard | `test-dashboard.yml` | Push/PR (`src/browser/**`, `dashboard/**`) | Dashboard Cypress E2E |
+| 2.6 | Test Homepage | `test-homepage.yml` | Push/PR (`src/browser/**`, `index*.html`) | Homepage Cypress E2E |
+| 2.7 | Test News | `test-news.yml` | Push/PR (`news/**`, `cypress/e2e/news*`) | News pages Cypress E2E |
 
-#### 2.2 JSDoc Validation
-- **File:** `.github/workflows/jsdoc-validation.yml`
-- **Trigger:** Push, PR
-- **Purpose:** API documentation generation and validation
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+### 📦 CIA Data Pipeline (5 workflows)
 
-#### 2.3 Quality Checks
-- **File:** `.github/workflows/quality-checks.yml`
-- **Trigger:** Push, PR
-- **Purpose:** HTML validation, link checking
-- **ISMS Controls:** ISO 27001 A.14.2, NIST CSF PR.IP-12, CIS 16.1
-
-#### 2.4 Translation Validation
-- **File:** `.github/workflows/translation-validation.yml`
-- **Trigger:** Push, PR
-- **Purpose:** Validate 14-language content consistency
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
-
-#### 2.5 Test Dashboard
-- **File:** `.github/workflows/test-dashboard.yml`
-- **Trigger:** Push, PR
-- **Purpose:** Dashboard functionality validation
-- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12
-
-#### 2.6 Test Homepage
-- **File:** `.github/workflows/test-homepage.yml`
-- **Trigger:** Push, PR
-- **Purpose:** Homepage functionality validation
-- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12
-
-#### 2.7 Test News
-- **File:** `.github/workflows/test-news.yml`
-- **Trigger:** Push, PR
-- **Purpose:** News article functionality validation
-- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12
-
-### 📦 Data Pipeline & CIA Integration (5 workflows)
-
-#### 3.1 Data Pipeline
-- **File:** `.github/workflows/data-pipeline.yml`
-- **Trigger:** Schedule (nightly 02:00 CET), Workflow dispatch
-- **Purpose:** Fetch and process CIA platform data
-- **ISMS Controls:** ISO 27001 A.8.16, NIST CSF PR.DS-5, CIS 8.2
-
-#### 3.2 Check CIA Schema Updates
-- **File:** `.github/workflows/check-cia-schema-updates.yml`
-- **Trigger:** Schedule (weekly)
-- **Purpose:** Monitor CIA schema changes
-- **ISMS Controls:** ISO 27001 A.8.31, NIST CSF ID.RA-1
-
-#### 3.3 Sync CIA Schemas
-- **File:** `.github/workflows/sync-cia-schemas.yml`
-- **Trigger:** Workflow dispatch
-- **Purpose:** Synchronize CIA JSON schemas
-- **ISMS Controls:** ISO 27001 A.8.31, NIST CSF ID.RA-1
-
-#### 3.4 Update CIA Stats
-- **File:** `.github/workflows/update-cia-stats.yml`
-- **Trigger:** Schedule, Workflow dispatch
-- **Purpose:** Update statistics from CIA platform
-- **ISMS Controls:** ISO 27001 A.8.16, NIST CSF PR.DS-5
-
-#### 3.5 Validate CIA Data
-- **File:** `.github/workflows/validate-cia-data.yml`
-- **Trigger:** Push, PR
-- **Purpose:** Validate CIA data integrity
-- **ISMS Controls:** ISO 27001 A.8.24, NIST CSF PR.DS-8, CIS 3.12
+| # | Workflow | File | Trigger | Purpose |
+|---|----------|------|---------|---------|
+| 3.1 | CIA Data Pipeline | `data-pipeline.yml` | Manual dispatch (schedule disabled) | Fetch & validate CIA exports |
+| 3.2 | Check CIA Schema Updates | `check-cia-schema-updates.yml` | Weekly schedule | Detect upstream schema changes |
+| 3.3 | Sync CIA Schemas | `sync-cia-schemas.yml` | Manual dispatch, push | Sync schemas from CIA repo |
+| 3.4 | Update CIA Stats | `update-cia-stats.yml` | Daily 03:00 CET, manual | Fetch production statistics |
+| 3.5 | Validate CIA Data | `validate-cia-data.yml` | Daily, push/PR, manual | JSON schema validation |
 
 ### 🚀 Release & Deployment (3 workflows)
 
-#### 4.1 Release with Attestations
-- **File:** `.github/workflows/release.yml`
-- **Trigger:** Workflow dispatch, Tag push (v*.*.*)
-- **Purpose:** Build, test, generate SLSA attestations, deploy
-- **Jobs:** Prepare (15-20min) → Build (5min) → Release (5-10min)
-- **Attestations:** SLSA Build Provenance + SBOM (SPDX)
-- **Deployment:** Dual (AWS S3/CloudFront + GitHub Pages)
-- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.DS-6, CIS 16.6
-- **Evidence:** [Hack23 ISMS - Release Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#release-management)
-- **Documentation:** See [RELEASE_PROCESS.md](RELEASE_PROCESS.md)
+| # | Workflow | File | Trigger | Targets |
+|---|----------|------|---------|---------|
+| 4.1 | Release with Attestations | `release.yml` | Push to main, manual | SLSA + dual deploy |
+| 4.2 | Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
+| 4.3 | Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 
-#### 4.2 Deploy to S3
-- **File:** `.github/workflows/deploy-s3.yml`
-- **Trigger:** Push to main
-- **Purpose:** Deploy to AWS S3/CloudFront
-- **ISMS Controls:** ISO 27001 A.8.31, NIST CSF PR.DS-6, CIS 16.11
+### 🤖 Agentic Workflows (7 files: 3 sources + 3 locks + 1 compiler)
 
-#### 4.3 Lighthouse CI
-- **File:** `.github/workflows/lighthouse-ci.yml`
-- **Trigger:** Push, PR
-- **Purpose:** Performance and accessibility audits
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+| # | Workflow | Source | Lock | Purpose |
+|---|----------|--------|------|---------|
+| 5.1 | News Article Generator | `news-article-generator.md` | `news-article-generator.lock.yml` | Daily news generation |
+| 5.2 | News Evening Analysis | `news-evening-analysis.md` | `news-evening-analysis.lock.yml` | Evening analysis reports |
+| 5.3 | News Realtime Monitor | `news-realtime-monitor.md` | `news-realtime-monitor.lock.yml` | Real-time political monitoring |
+| 5.4 | Compile Agentic Workflows | `compile-agentic-workflows.yml` | — | Compile .md → .lock.yml |
 
-### 🤖 Agentic Workflows (4 workflows)
+### 📊 Monitoring & Infrastructure (2 workflows)
 
-#### 5.1 News Article Generator
-- **File:** `.github/workflows/news-article-generator.lock.yml`
-- **Trigger:** Schedule (daily), Workflow dispatch
-- **Purpose:** Automated news article generation
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
-
-#### 5.2 News Evening Analysis
-- **File:** `.github/workflows/news-evening-analysis.lock.yml`
-- **Trigger:** Schedule (nightly 21:00 CET), Workflow dispatch
-- **Purpose:** Daily political intelligence analysis
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
-
-#### 5.3 News Realtime Monitor
-- **File:** `.github/workflows/news-realtime-monitor.lock.yml`
-- **Trigger:** Schedule (hourly), Workflow dispatch
-- **Purpose:** Real-time political event monitoring
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
-
-#### 5.4 Compile Agentic Workflows
-- **File:** `.github/workflows/compile-agentic-workflows.yml`
-- **Trigger:** Push to .github/workflows/*.md
-- **Purpose:** Compile markdown agentic workflows to YAML
-- **ISMS Controls:** ISO 27001 A.8.32, NIST CSF PR.IP-12
-
-### 📊 Monitoring & Uptime (2 workflows)
-
-#### 6.1 Uptime Monitor
-- **File:** `.github/workflows/uptime-monitor.yml`
-- **Trigger:** Schedule (every 5 minutes)
-- **Purpose:** Monitor site availability and performance
-- **Targets:** Primary (AWS) + DR (GitHub Pages)
-- **ISMS Controls:** ISO 27001 A.8.6, NIST CSF DE.CM-7, CIS 8.11
-
-#### 6.2 Copilot Setup Steps
-- **File:** `.github/workflows/copilot-setup-steps.yml`
-- **Trigger:** Workflow dispatch
-- **Purpose:** GitHub Copilot agent environment setup
-- **ISMS Controls:** ISO 27001 A.5.37, NIST CSF ID.GV-1
+| # | Workflow | File | Trigger | Purpose |
+|---|----------|------|---------|---------|
+| 6.1 | Uptime Monitor | `uptime-monitor.yml` | Every 15 minutes | Site availability checks |
+| 6.2 | Copilot Setup Steps | `copilot-setup-steps.yml` | Push, manual | Agent environment setup |
 
 ---
 
-## Workflow Security Summary
+## Detailed Workflow Documentation
 
-**All workflows implement:**
-- ✅ SHA-pinned GitHub Actions (supply chain security)
-- ✅ step-security/harden-runner (egress auditing)
-- ✅ Least-privilege permissions (contents: read default)
-- ✅ OIDC authentication (no long-lived credentials)
-- ✅ Secrets management (GitHub Secrets, AWS IAM OIDC)
+### 1. Quality Checks (`quality-checks.yml`)
 
-**Compliance Mapping:**
-- **ISO 27001:2022:** A.8.31 (Environment separation), A.8.32 (Change management), A.14.2 (Security in development)
-- **NIST CSF 2.0:** ID.RA (Risk Assessment), PR.DS (Data Security), DE.CM (Continuous Monitoring)
-- **CIS Controls v8.1:** 16.1 (Secure development), 16.6 (Application security), 16.10 (Vulnerability remediation)
+**Purpose:** Validates code quality through ESLint linting, HTML validation, and link checking on every push/PR to `main`.
+
+**Branch triggers:** `main` only
+
+#### Jobs
+
+##### 1.1 TypeScript Lint (`typescript-lint`)
+```yaml
+steps:
+  - Checkout
+  - Setup Node.js 24
+  - Install dependencies (npm ci)
+  - Run ESLint: npx eslint .
+  - Artifact upload: eslint-results
+```
+
+**What it checks:**
+- TypeScript & JavaScript files via ESLint flat config (`eslint.config.js`)
+- Uses `@typescript-eslint/parser` with `tsconfig.browser.json` + `tsconfig.scripts.json`
+- 0 errors required (warnings permitted)
+
+##### 1.2 HTML Validation
+```yaml
+steps:
+  - Checkout
+  - Run HTMLHint on all *.html files
+  - Report validation results
+```
+
+##### 1.3 Link Checking
+```yaml
+steps:
+  - Checkout, Setup Node.js, Install deps
+  - Vite preview server (background)
+  - linkinator --recurse (skip external)
+```
+
+##### 1.4 Summary
+Generates a consolidated step summary with pass/fail status for all jobs.
+
+**Security Controls:**
+- Harden-runner with egress auditing
+- All actions SHA-pinned
+- Least privilege permissions (`contents: read`)
 
 ---
 
-## 1. Quality Checks Workflow (Detailed)
+### 2. TypeScript & JavaScript Testing (`javascript-testing.yml`)
 
-**File:** `.github/workflows/quality-checks.yml`  
-**Trigger:** Push to master/main, Pull requests  
-**Purpose:** Validate HTML quality and check links
+**Purpose:** Primary test workflow — TypeScript type-checking, Vitest unit tests, Vite build verification, and multi-language Cypress E2E.
 
-### Jobs
+**Triggers:** Push/PR on `**/*.ts`, `**/*.js`, `src/browser/**`, `tsconfig*.json`, `*.html`, `styles.css`, `cypress/**`, `package*.json`, `vitest.config.js`, `vite.config.js`
 
-#### 1.1 HTML Validation
-- **Tool:** HTMLHint
-- **Purpose:** Ensure HTML standards compliance
-- **Exit Criteria:** Zero errors
-- **Artifacts:** `htmlhint-report.txt`
+#### Jobs
+
+##### 2.1 Unit Tests & Build
+```yaml
+steps:
+  - Checkout
+  - Setup Node.js 24
+  - Install dependencies
+  - TypeScript type-check (browser): npx tsc --project tsconfig.browser.json --noEmit
+  - TypeScript type-check (scripts): npx tsc --project tsconfig.scripts.json --noEmit
+  - Run Vitest: npx vitest run --coverage
+  - Vite build: npm run build
+  - Upload coverage artifacts
+```
+
+**TypeScript Compilation Strategy:**
+- `tsconfig.browser.json` — validates `src/browser/**/*.ts` (27 modules)
+- `tsconfig.scripts.json` — validates `scripts/**/*.ts` + `tests/**/*.ts`
+- Both use `noEmit: true` (Vite/esbuild handles actual compilation)
+
+##### 2.2 Multi-Language E2E (Cypress)
+Matrix strategy: Tests across `en`, `sv`, and additional language variants.
 
 ```yaml
-- name: Validate HTML
-  run: htmlhint *.html
+steps:
+  - Checkout, Setup Node.js, Install deps
+  - Vite build + preview server
+  - Cypress run (headless Chrome)
+  - Upload screenshots on failure
 ```
 
-**Standards Checked:**
-- DOCTYPE declaration
-- Valid HTML structure
-- Proper tag nesting
-- Attribute validation
-- Accessibility requirements
+**Test Coverage:**
+- 1200 unit tests (Vitest)
+- Happy-DOM environment for browser module testing
+- V8 coverage provider with `src/browser/**/*.ts` in include paths
 
-#### 1.2 Link Checking
-- **Tool:** Linkinator v6
-- **Purpose:** Verify internal and external links
-- **Scope:** Internal (recursive), External (sample)
-- **Artifacts:** `internal-links-report.json`, `external-links-report.json`
+---
 
-**Internal Links:**
-```yaml
-linkinator http://localhost:8080/ --recurse --skip "^(?!http://localhost:8080)"
-```
+### 3. TypeDoc Validation (`jsdoc-validation.yml`)
 
-**External Links:**
-```yaml
-linkinator https://riksdagsmonitor.com/ --skip "(fonts\.googleapis\.com|fonts\.gstatic\.com|github\.com)"
-```
+**Purpose:** Generates TypeDoc API documentation from TypeScript source and validates documentation coverage.
 
-**Link Check Strategy:**
-- Internal: Full recursive check (all pages)
-- External: Sample check (main page only to avoid rate limiting)
-- Skipped: Font CDNs, GitHub pages (to avoid false positives)
-
-#### 1.3 Summary
-- **Tool:** Bash script
-- **Purpose:** Aggregate quality check results
-- **Output:** Workflow summary with artifact links
-
-### Security Controls
-
-**Implemented:**
-- Harden Runner (egress audit mode)
-- SHA-pinned GitHub Actions
-- Least privilege permissions (contents: read)
-- Artifact retention (30 days)
-
-**Control Mapping:**
-- ISO 27001: A.14.2 (Security in Development)
-- NIST CSF 2.0: PR.IP-12 (Vulnerability management plan)
-- CIS Controls v8.1: 16.1 (Secure application development)
-
-## 2. Dependency Review Workflow
-
-**File:** `.github/workflows/dependency-review.yml`  
-**Trigger:** Pull requests  
-**Purpose:** Scan dependencies for vulnerabilities
-
-### Jobs
-
-#### 2.1 Dependency Review
-- **Tool:** GitHub Dependency Review Action
-- **Purpose:** Identify vulnerable dependencies in PRs
-- **Action:** Block PRs with known-vulnerable packages
-- **Output:** PR comment with vulnerability summary
+**Source directories:** `src/browser`, `scripts`
 
 ```yaml
-- name: 'Dependency Review'
-  uses: actions/dependency-review-action@v4.8.2
-  with:
-    comment-summary-in-pr: always
+steps:
+  - Checkout, Setup Node.js 24, Install deps
+  - Generate TypeDoc: npx typedoc
+  - Validate documentation coverage
+  - Check generated TypeDoc files exist
+  - Upload api/ artifact
 ```
 
-**Detection Coverage:**
-- Direct dependencies
-- Transitive dependencies
-- Development dependencies
-- License compliance issues
-
-**Severity Levels:**
-- **CRITICAL** - Immediate block
-- **HIGH** - Block with exception process
-- **MEDIUM** - Warning
-- **LOW** - Informational
-
-### Security Controls
-
-**Implemented:**
-- Harden Runner (egress audit mode)
-- SHA-pinned actions
-- Automated vulnerability detection
-- PR blocking on critical issues
-
-**Control Mapping:**
-- ISO 27001: A.14.2 (Secure development)
-- NIST CSF 2.0: ID.RA-1 (Asset vulnerabilities identified)
-- CIS Controls v8.1: 7.1 (Vulnerability management program)
-
-## 3. Copilot Setup Steps Workflow
-
-**File:** `.github/workflows/copilot-setup-steps.yml`  
-**Trigger:** Workflow dispatch, Push to workflow file, PR to workflow file  
-**Purpose:** Set up GitHub Copilot agent environment
-
-### Jobs
-
-#### 3.1 Copilot Setup
-- **Purpose:** Initialize MCP servers and agent environment
-- **Permissions:** Comprehensive (issues, PRs, actions, security)
-- **Environment:** Ubuntu latest with Node.js
-
-```yaml
-jobs:
-  copilot-setup-steps:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write
-      pull-requests: write
-```
-
-**Setup Steps:**
-1. Checkout repository
-2. Load MCP configuration (`.github/copilot-mcp.json`)
-3. Initialize servers (filesystem, github, git, memory, sequential-thinking, playwright)
-4. Configure agent environment
-
-**MCP Servers:**
-- **filesystem** - File system access
-- **github** - GitHub API operations
-- **git** - Git operations
-- **memory** - Conversation history
-- **sequential-thinking** - Reasoning framework
-- **playwright** - Browser automation (disabled by default)
-- **brave-search** - Web search (disabled, requires API key)
-
-### Security Controls
-
-**Implemented:**
-- Least privilege permissions
-- Scoped GitHub token (workflow-specific)
-- Environment secrets management
-- Audit logging
-
-**Control Mapping:**
-- ISO 27001: A.9.4 (Access control)
-- NIST CSF 2.0: PR.AC-4 (Access permissions managed)
-- CIS Controls v8.1: 5.4 (Service account management)
-
-## 4. CIA Data Pipeline Workflow ✨ **NEW**
-
-**File:** `.github/workflows/data-pipeline.yml`  
-**Trigger:** Manual (`workflow_dispatch`)  
-**Purpose:** Future CIA intelligence export fetching, validation, and caching pipeline (design documented; implementation in progress)  
-**Note:** The current `Fetch CIA Exports` step in `data-pipeline.yml` is a placeholder only (it always sets `fetched=0` and does not download exports or update `last-fetch.json`). As a result, the described validation, cache generation, and PR-creation stages are not yet active; daily scheduling will be enabled and this section updated once the real fetch implementation lands.
-
-### Jobs
-
-#### 4.1 Fetch & Validate CIA Intelligence Exports
-- **Purpose:** CIA data pipeline for exports (manual trigger; future automation planned, current fetch step is a no-op placeholder)
-- **Schedule:** Not yet scheduled; planned future schedule is daily at 02:00 UTC (03:00/04:00 CET/CEST)
-- **Permissions:** contents: write, pull-requests: write
-
-**Pipeline Stages:** *(intended design – blocked until the real fetch implementation is in place)*
-
-1. **Data Freshness Check**
-   ```yaml
-   - name: Check current data freshness
-     run: |
-       # Skip fetch if data < 23 hours old
-       # Unless force_refresh=true
-   ```
-   
-2. **Fetch CIA Exports**
-   ```yaml
-   - name: Fetch CIA exports
-     env:
-       FORCE_REFRESH: ${{ github.event.inputs.force_refresh }}
-       EXPORT_TYPES: ${{ github.event.inputs.export_types }}
-   ```
-   
-   **19 CIA Visualization Products:**
-   - Intelligence Dashboards (4): Overview, Party Performance, Government Cabinet, Election Cycle
-   - Top 10 Rankings (10): Influential MPs, Productive MPs, Controversial MPs, Absent MPs, Party Rebels, Coalition Brokers, Rising Stars, Electoral Risk, Ethics Concerns, Media Presence
-   - Advanced Analytics (3): Committee Network, Politician Career, Party Longitudinal
-   - Data Validation (1): JSON Schema validation
-   - Cache Management (1): Versioned cache with archival
-
-3. **Validate Fetched Data**
-   ```yaml
-   - name: Validate fetched data
-     run: npm run validate-data
-   ```
-   - Validates against CIA JSON schemas
-   - Generates validation report with pass/fail counts
-   - Skips invalid exports
-
-4. **Generate Versioned Cache**
-   ```yaml
-   - name: Generate cache with versioning
-     run: |
-       # Archive previous cache
-       # Generate new cache from validated exports
-       # Keep last 7 archives
-   ```
-
-5. **Create PR with Updated Data**
-   ```yaml
-   - name: Set PR date
-     id: pr_date
-     run: echo "date=$(date +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
-
-   - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
-     with:
-       title: "CIA Data Update - ${{ steps.pr_date.outputs.date }}"
-       branch: 'data-pipeline/cia-update-${{ github.run_number }}'
-       assignees: data-pipeline-specialist
-   ```
-
-**Features:**
-- Smart caching (skip if data < 23 hours old)
-- Force refresh capability via workflow_dispatch
-- JSON Schema validation
-- Versioned cache with archival (keep last 7)
-- Automated PR creation on success
-- Comprehensive error handling
-- GitHub Actions summary with metrics
-
-### Security Controls
-
-**Implemented:**
-- Harden Runner (egress audit mode)
-- SHA-pinned actions
-- Minimal permissions (contents: write, pull-requests: write)
-- npm caching for faster builds
-- Artifact retention (30 days)
-
-**Control Mapping:**
-- ISO 27001: A.14.2 (Security in Development)
-- NIST CSF 2.0: PR.DS-2 (Data in transit protected)
-- CIS Controls v8.1: 16.1 (Secure application development)
-
-## 5. Lighthouse CI Workflow ✨ **NEW**
-
-**File:** `.github/workflows/lighthouse-ci.yml`  
-**Trigger:** Push/PR to main, Schedule (weekly Monday 8 AM UTC), Workflow dispatch  
-**Purpose:** Performance monitoring and Core Web Vitals tracking
-
-### Jobs
-
-#### 5.1 Lighthouse Performance Audit
-- **Purpose:** Track Core Web Vitals and performance metrics
-- **Schedule:** Weekly + on main branch changes
-- **Permissions:** contents: read, pull-requests: write
-
-**Audit Configuration:**
-```yaml
-lhci autorun \
-  --url="https://riksdagsmonitor.com" \
-  --url="https://riksdagsmonitor.com/index_sv.html" \
-  --collect.numberOfRuns=3 \
-  --collect.settings.chromeFlags="--no-sandbox --disable-gpu --headless" \
-  --assert.preset="lighthouse:recommended"
-```
-
-**Metrics Tracked:**
-
-1. **Lighthouse Scores**
-   - Performance (target: 70+)
-   - Accessibility (target: 90+, WCAG 2.1 AA)
-   - Best Practices (target: 90+)
-   - SEO (target: 90+)
-
-2. **Core Web Vitals**
-   - First Contentful Paint (FCP): < 1.5s
-   - Largest Contentful Paint (LCP): < 2.5s
-   - Time to Interactive (TTI): < 3.0s
-   - Cumulative Layout Shift (CLS): < 0.1
-   - Total Blocking Time (TBT): < 200ms
-
-**Features:**
-- 3 runs per audit for consistency
-- Audits both English and Swedish versions
-- Retry logic for network resilience
-- PR comments with results
-- Artifact uploads (full reports)
-- Color-coded status indicators (🟢🟡🔴)
-
-**PR Comment Example:**
-```
-## Lighthouse Performance Audit
-
-| Category | Score | Status |
-|----------|-------|--------|
-| Performance | 85/100 | 🟡 |
-| Accessibility | 98/100 | 🟢 |
-| Best Practices | 92/100 | 🟢 |
-| SEO | 100/100 | 🟢 |
-```
-
-### Security Controls
-
-**Implemented:**
-- Harden Runner (egress audit mode)
-- SHA-pinned actions
-- Minimal permissions
-- Lighthouse CLI caching
-
-**Control Mapping:**
-- ISO 27001: A.14.2 (Security in Development)
-- NIST CSF 2.0: PR.IP-12 (Vulnerability management)
-- CIS Controls v8.1: 16.1 (Secure application development)
-
-## 6. Uptime Monitor Workflow ✨ **NEW**
-
-**File:** `.github/workflows/uptime-monitor.yml`  
-**Trigger:** Schedule (every 15 minutes), Workflow dispatch  
-**Purpose:** Site availability monitoring and auto-incident creation
-
-### Jobs
-
-#### 6.1 Site Availability Check
-- **Purpose:** Monitor site uptime and auto-create incidents
-- **Schedule:** Every 15 minutes (*/15 * * * *)
-- **Permissions:** contents: read, issues: write
-
-**Check Stages:**
-
-1. **Homepage Availability**
-   ```bash
-   HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://riksdagsmonitor.com)
-   # Must return 200
-   ```
-
-2. **All 14 Language Versions**
-   ```bash
-   LANGUAGES=(en sv da no fi de fr es nl ar he ja ko zh)
-   # Check each language file
-   ```
-
-3. **Critical Assets**
-   - styles.css
-   - manifest.json
-   - sitemap.xml
-   - robots.txt
-
-4. **Security Headers**
-   - HTTPS redirect
-   - Strict-Transport-Security (HSTS)
-   - X-Frame-Options
-   - X-Content-Type-Options
-   - Content-Security-Policy (CSP)
-
-**Auto-Incident Management:**
-
-```yaml
-- name: Create incident issue
-  if: failure() && steps.homepage.outcome == 'failure'
-  uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
-  # Creates issue with label: incident, uptime-monitor, critical
-```
-
-**Incident Issue:**
-```
-🚨 Site Down - HTTP 503 - 2026-02-10T04:00:00Z
-
-**Status**: 🔴 SITE DOWN
-**HTTP Code**: 503
-**Detected by**: Uptime Monitor Workflow
-
-### Action Required
-1. Check deployment status
-2. Review GitHub Pages configuration
-3. Verify DNS settings
-4. Check CDN status
-```
-
-**Auto-Resolution:**
-```yaml
-- name: Close resolved incidents
-  if: success() && steps.homepage.outcome == 'success'
-  # Closes open incidents with resolved status
-```
-
-**Features:**
-- 15-minute check interval
-- All 14 language versions validated
-- Critical asset verification
-- Security header validation
-- Auto-incident creation on downtime
-- Auto-close on resolution
-- Response time tracking
-
-### Security Controls
-
-**Implemented:**
-- Harden Runner (egress audit mode)
-- SHA-pinned actions
-- Minimal permissions (issues: write)
-- Rate limit awareness (15-min intervals)
-
-**Control Mapping:**
-- ISO 27001: A.17.1 (Availability management)
-- NIST CSF 2.0: DE.CM-1 (Network monitored)
-- CIS Controls v8.1: 8.11 (Monitoring and alerting)
-
-## 7. News Generation Workflows (Agentic)
-
-**Files:**
-- `.github/workflows/news-article-generator.md` → `.lock.yml` (General article generation)
-- `.github/workflows/news-realtime-monitor.md` → `.lock.yml` (Breaking news)
-- `.github/workflows/news-evening-analysis.md` → `.lock.yml` (Evening analysis)
-
-**Triggers:**
-- **Article Generator:** Daily ~05:51 UTC (day-of-week article types), Workflow dispatch
-- **Realtime Monitor:** 10:00 + 14:00 UTC Mon-Fri, 12:00 UTC Sat-Sun, Workflow dispatch
-- **Evening Analysis:** 18:00 UTC Mon-Fri, 16:00 UTC Sat (weekly wrap-up), Workflow dispatch
-
-**Purpose:** AI-powered political news article generation from riksdag-regering-mcp data using GitHub Agentic Workflows (gh-aw) with Claude Opus 4.
-
-### Overview
-
-Riksdagsmonitor uses **three complementary agentic workflows** for full-day news coverage:
-
-| Workflow | Schedule | Purpose |
-|----------|----------|---------|
-| `news-article-generator.lock.yml` | ~05:51 UTC daily (7 days) | Day-of-week article generation |
-| `news-realtime-monitor.lock.yml` | 10:00 + 14:00 UTC Mon-Fri, 12:00 UTC Sat-Sun | Breaking news / live monitoring |
-| `news-evening-analysis.lock.yml` | 18:00 UTC Mon-Fri, 16:00 UTC Sat | Evening analysis + Saturday weekly wrap-up |
-
-### 7.1 Agentic News Generation Workflow
-
-**File:** `.github/workflows/news-article-generator.lock.yml`  
-**Source:** `.github/workflows/news-article-generator.md`  
-**Status:** ✅ Fixed (2026-02-12)  
-**Schedule:** Daily at 05:51 UTC (scattered)  
-**Permissions:** contents: write, pull-requests: write, issues: read
-
-#### Architecture
-
-The agentic workflow uses **GitHub Agentic Workflows (gh-aw)** framework:
-
-**Engine:** `copilot` (Claude Opus 4)  
-**MCP Servers:** 
-- `riksdag-regering` (HTTP) - 32 specialized tools for Swedish political data
-- `github` (HTTP) - GitHub API integration
-- `filesystem` (local) - File system operations
-- `memory` (local) - Knowledge graph
-- `sequential-thinking` (local) - Chain of thought reasoning
-- `playwright` (local) - Browser automation (disabled by default)
-
-**Safe Outputs:**
-- `create-pull-request` - PR creation with generated articles
-- `add-comment` - Issue/PR comments
-- `noop` - No-op logging for transparency
-
-#### Agent Instructions (The Economist Style)
-
-The agent generates world-class political journalism following **The Economist style guide**:
-
-**Core Principles:**
-- Clarity above all - Short sentences, simple words, active voice
-- Analytical depth - Context, background, multiple perspectives
-- Elegant prose - Sophisticated but not pretentious
-- Objectivity - Fact-based, balanced, no partisan bias
-
-**Article Structure:**
-1. **Lead Paragraph** (50 words): Who, what, when, where, why
-2. **Context** (150-200 words): Background and history
-3. **Evidence** (300-400 words): Data, quotes, documents from MCP tools
-4. **Analysis** (200-300 words): Interpretation and implications
-5. **Conclusion** (100 words): Synthesis and broader significance
-
-#### Quality Gates
-
-**Pre-generation:**
-- Check last generation timestamp (< 11 hours = skip)
-- Verify MCP server availability
-- Validate riksdag-regering-mcp connectivity
-
-**Post-generation:**
-- HTML validation (HTMLHint)
-- Metadata validation (YAML frontmatter, og:tags, Schema.org)
-- Link checking (internal/external)
-- Multi-language consistency (EN/SV parity)
-- SEO metadata completeness
-
-**PR Creation:**
-- Article count validation
-- Language coverage check (EN + SV minimum)
-- Index file regeneration verified
-- Sitemap update confirmed
-- Quality summary in PR body with validation results
-
-#### MCP Tools (riksdag-regering-mcp)
-
-**32 Specialized Tools Available:**
-
-**Document Search:**
-- `search_dokument` - Search all Riksdag documents
-- `get_dokument` - Get specific document with full text
-- `search_dokument_fulltext` - Full-text search
-
-**Parliament Activity:**
-- `get_propositioner` - Latest government bills
-- `get_betankanden` - Latest committee reports
-- `get_motioner` - Latest opposition motions
-- `get_fragor` - Written questions to ministers
-- `get_interpellationer` - Interpellations
-
-**Calendar & Events:**
-- `get_calendar_events` - Upcoming parliamentary events
-- `list_reports` - Available reports
-- `fetch_report` - Get specific report
-
-**MPs & Voting:**
-- `search_ledamoter` - Search MPs by name, party, status
-- `get_ledamot` - Get MP details
-- `search_voteringar` - Search votes
-- `get_voting_group` - Votes grouped by party/district
-
-**Debates & Speeches:**
-- `search_anforanden` - Search speeches
-
-**Government Documents:**
-- `search_regering` - Search government documents
-- `get_g0v_document_content` - Get full document content (Markdown)
-- `analyze_g0v_by_department` - Department-wise analysis
-
-**Batch Operations:**
-- `batch_fetch_documents` - Multiple session fetching
-- `fetch_paginated_documents` - Large result sets
-- `fetch_paginated_anforanden` - Large debate sets
-
-**Enhanced Search:**
-- `enhanced_government_search` - Combined Riksdag + Government search
-
-#### Failure Analysis & Resolution
-
-**Previous Issues (Resolved 2026-02-12):**
-- ❌ Secret verification failures (4 consecutive runs)
-- ❌ Insufficient permissions (read-only → prevented PR creation)
-
-**Root Cause:**
-- Workflow had `contents: read` but required `contents: write` for safe-outputs
-- Missing `pull-requests: write` permission
-- gh-aw framework expected write access for PR creation
-
-**Solution Applied:**
-```yaml
-# Updated permissions in news-article-generator.md
-permissions:
-  contents: write  # Enable PR creation
-  pull-requests: write  # Enable PR creation
-  issues: read  # Keep read access
-```
-
-**Documentation:**
-- Analysis: `docs/AGENTIC_WORKFLOW_ANALYSIS.md`
-- Issue: #118 (resolved)
-
-#### Compilation Process
-
-The agentic workflow uses a **compile-once, run-many** pattern:
-
-**Source:** `news-article-generator.md` (499 lines, human-editable)  
-**Compiled:** `news-article-generator.lock.yml` (1,117 lines, machine-generated)
-
-**Compilation Command:**
+**Coverage Check:**
 ```bash
-cd .github/workflows
-gh aw compile news-article-generator.md
+find src/browser scripts -name "*.ts" -o -name "*.js" | head -20
+# Verifies TypeDoc generated output for all source files
 ```
 
-**When to Recompile:**
-- After editing `.md` file
-- After updating agent instructions
-- After changing permissions or MCP servers
-- After gh-aw framework updates
+---
 
-**Auto-compilation Workflow:**
-- `.github/workflows/compile-agentic-workflows.yml`
-- Triggers on `.md` file changes
-- Creates issue if compilation fails
-- Requires manual compilation (gh CLI + gh-aw extension)
+### 4. CodeQL Analysis (`codeql.yml`)
 
-### 7.3 Evening Analysis Workflow
+**Purpose:** GitHub's code scanning for security vulnerabilities across JavaScript and TypeScript.
 
-**File:** `.github/workflows/news-evening-analysis.lock.yml`  
-**Source:** `.github/workflows/news-evening-analysis.md`  
-**Status:** ✅ Active  
-**Schedule:** Weekday evenings at 18:00 UTC (19:00 CET)  
-**Model:** claude-opus-4.6  
-**Timeout:** 30 minutes  
-**Languages:** All 14 supported languages (default)
+**Language matrix:** `["javascript-typescript"]` — analyses both `.js` and `.ts` files in a single pass.
 
-#### Purpose
-
-Generate comprehensive daily wrap-up of Swedish parliamentary and government activity written in **The Economist style** with deeper analytical depth than breaking coverage. This is the flagship daily product.
-
-#### 5 Editorial Pillars Structure
-
-Every evening analysis article must include these 5 structural elements:
-
-1. **Lead Story** (400-800 words)
-   - The most significant development of the day
-   - What happened and why it matters
-   - Immediate implications for Swedish politics
-   - Analytical thesis in opening paragraph
-
-2. **Parliamentary Pulse** (200-400 words)
-   - Summary of legislative activity
-   - Key votes and their margins
-   - Important debates and notable speeches
-   - Committee decisions and reports
-
-3. **Government Watch** (200-300 words)
-   - Executive branch activity
-   - New propositions or policy announcements
-   - Ministerial statements
-   - Regulatory developments
-
-4. **Opposition Dynamics** (200-300 words)
-   - Opposition motions and strategy
-   - Coalition dynamics and tensions
-   - Cross-party collaboration or conflict
-
-5. **Looking Ahead** (100-200 words)
-   - What's coming tomorrow/this week
-   - Scheduled votes and debates
-   - Upcoming committee meetings
-   - Expected government announcements
-
-#### Quality Requirements
-
-**Analytical Depth (Target ≥ 0.6):**
-- Causal analysis (because, therefore, consequently)
-- Comparative analysis (compared to, unlike, whereas)
-- Evaluative statements (suggests, reveals, indicates)
-- Contextual framing (historically, traditionally, background)
-- Forward-looking predictions (will, likely, expected)
-
-**Historical Context (Target ≥ 1.0 on 0-3 scale):**
-- References to past events or sessions
-- Historical comparisons (since YYYY, compared to last year)
-- Trend analysis over time
-
-**Party Perspectives (Target ≥ 6):**
-- Minimum 6 parties mentioned per article
-- Balanced coverage across coalition and opposition
-- Government (M, KD, L) + SD + Opposition (S, V, MP, C)
-
-**Source Citations (Target ≥ 5):**
-- riksdag-regering-mcp tool citations
-- Document IDs (dok_id) for Riksdag documents
-- Riksmöte session references (e.g., 2025/26)
-- Attributed quotes with anförande IDs
-
-**International Comparison (Target 60%+ of articles):**
-- Relate Swedish politics to European trends
-- Compare to other Nordic democracies
-- Global context when relevant
-
-#### Validation & Testing
-
-**Automated Validation Script:**
-```bash
-node scripts/validate-evening-analysis.js news/YYYY-MM-DD-evening-analysis-en.html
-```
-
-**Validation Report Includes:**
-- ✅ All 5 Editorial Pillars present
-- ✅ Word count per section (meets minimums)
-- ✅ Analytical depth score (0.0-1.0)
-- ✅ Historical context score (0-3)
-- ✅ International comparison presence
-- ✅ Party perspective count
-- ✅ Source citation count
-- ✅ Overall quality score (0.0-1.0)
-
-**Test Suite:**
-- `tests/news-evening-analysis.test.js` - 30 comprehensive test cases
-  - Structure validation (8 tests)
-  - Analytical depth (7 tests)
-  - Cross-workflow coordination (5 tests)
-  - Multi-language quality (5 tests)
-  - Helper function validation (5 tests)
-
-**Quality Thresholds:**
-- Overall quality score ≥ 0.75 (good)
-- Analytical depth ≥ 0.6 (acceptable)
-- Historical context ≥ 1.0 (present in 90%+ articles)
-- Party perspectives ≥ 6 (balanced coverage)
-- Source citations ≥ 5 (well-documented)
-
-#### Cross-Workflow Coordination
-
-**Workflow State Management:**
-- `news/metadata/workflow-state.json` - Shared state across workflows
-  - Last evening analysis timestamp
-  - Recent realtime articles (for deduplication)
-  - MCP query cache (2-hour TTL)
-  - Evening analysis metrics
-
-**Quality Metrics Tracking:**
-- `news/metadata/quality-metrics.json` - Per-article quality scores
-  - Quality score by language
-  - Analytical depth by language
-  - Historical context presence
-  - International comparison count
-  - Aggregate metrics across all languages
-
-**Deduplication Strategy:**
-- Check recent realtime articles (< 6 hours)
-- Calculate similarity score (word overlap)
-- If similarity > 70%, synthesize but don't repeat verbatim
-- Reference realtime coverage, add deeper analysis
-
-#### Multi-Language Support
-
-**14 Languages Generated:**
-- **Nordic:** en, sv, da, no, fi
-- **EU Core:** de, fr, es, nl
-- **Global:** ar, he, ja, ko, zh
-
-**Language-Specific Requirements:**
-- Proper `lang` attribute in HTML
-- `dir="rtl"` for Arabic and Hebrew
-- Hreflang tags for all 14 languages
-- Schema.org NewsArticle in each language
-- Culturally appropriate tone and formatting
-
-**Tone Adaptation by Language:**
-- English: Confident, witty, global perspective
-- Swedish: Balanced, accessible, domestic focus
-- German: Thorough, precise, analytical
-- French: Elegant, nuanced, European context
-- Arabic/Hebrew: Culturally appropriate, RTL-aware
-
-#### MCP Tools Integration
-
-**Primary Data Sources:**
-- `get_calendar_events` - Daily parliamentary schedule
-- `search_voteringar` - Votes taken today
-- `get_betankanden` - Committee reports published
-- `search_anforanden` - Speeches and debates
-- `search_regering` - Government documents today
-- `get_propositioner` - New propositions
-- `get_motioner` - Opposition motions
-- `get_fragor` / `get_interpellationer` - Questions to ministers
-
-**Analysis Patterns:**
-- Vote analysis: voteringar → voting_group → anföranden → ledamoter
-- Government activity: regering → propositioner → analyze_by_department
-- Legislative tracking: betankanden → motioner → dokument_fulltext
-
-#### Monitoring & Metrics
-
-**Success Criteria:**
-- ✅ All 14 language versions generated
-- ✅ All 5 Editorial Pillars present in each article
-- ✅ Quality score ≥ 0.75 for 90%+ articles
-- ✅ Historical context in 90%+ articles
-- ✅ Party perspectives ≥ 6 in every article
-
-**Failure Conditions:**
-- ❌ Quality score < 0.6 → Alert for review
-- ❌ Missing Editorial Pillar → Validation fails
-- ❌ < 6 parties mentioned → Coverage gap
-- ❌ < 5 source citations → Insufficient documentation
-
-**PR Creation:**
-- Branch: `news-evening/{date}`
-- Labels: `automated-news`, `evening-analysis`, `needs-editorial-review`
-- Body includes:
-  - Article count and languages generated
-  - Quality validation results
-  - Key findings and significance rating
-  - MCP tools used
-  - Validation report summary
-
-### Security Controls
-
-**Implemented (Both Workflows):**
-- Harden Runner (egress audit mode)
-- SHA-pinned actions
-- Least privilege permissions
-- Environment secrets management
-- Audit logging
-- HTML validation
-- Link checking
-
-**Additional (Agentic Workflow):**
-- MCP gateway with API key rotation
-- Safe-outputs validation framework
-- Firewall activity logging
-- Network egress monitoring
-- Agent stdio logging
-
-**Control Mapping:**
-- ISO 27001: A.14.2 (Security in Development)
-- NIST CSF 2.0: PR.DS-2 (Data in transit protected)
-- CIS Controls v8.1: 16.1 (Secure application development)
-
-### Monitoring & Metrics
-
-**Success Metrics:**
-- Workflow success rate: Target >95% (Manual: 100%, Agentic: Fixed 2026-02-12)
-- Articles generated per run: 1-5 (depends on parliamentary activity)
-- PR creation time: < 5 minutes
-- HTML validation pass rate: 100%
-
-**Alerting:**
-- 3 consecutive failures → Issue created automatically
-- MCP server unavailable → Slack notification
-- Validation failures → PR comment with details
-
-### Future Enhancements
-
-**Planned:**
-- [ ] Multi-language expansion (beyond EN/SV)
-- [ ] Automated editorial scoring
-- [ ] A/B testing for article templates
-- [ ] Integration with CIA intelligence exports
-- [ ] Automated fact-checking validation
-- [ ] SEO performance tracking per article
-
-**Under Consideration:**
-- [ ] Real-time breaking news generation
-- [ ] Social media auto-posting
-- [ ] Newsletter compilation
-- [ ] Podcast script generation
-
-## Workflow Inventory (17 Total)
-
-| # | Workflow | Status | Security | Schedule | Purpose |
-|---|----------|--------|----------|----------|---------|
-| 1 | copilot-setup-steps.yml | ✅ | SHA+HR | On-demand | Agent environment setup |
-| 2 | quality-checks.yml | ✅ | SHA+HR | Push/PR | HTML/link validation |
-| 3 | dependency-review.yml | ✅ | SHA+HR | PR | Vulnerability scanning |
-| 4 | deploy-s3.yml | ✅ | SHA+HR+Block | Push/Release | AWS deployment |
-| 5 | scorecards.yml | ✅ | SHA+HR | Weekly Tue | OpenSSF scorecard |
-| 6 | translation-validation.yml | ✅ | SHA+HR | Push/PR | Multi-language validation |
-| 7 | validate-cia-data.yml | ✅ | SHA+HR | Daily 3AM | CIA data validation |
-| 8 | sync-cia-schemas.yml | ✅ | SHA+HR | On-demand | Schema synchronization |
-| 9 | check-cia-schema-updates.yml | ✅ | SHA+HR | Weekly Mon | Schema update checks |
-| 10 | **data-pipeline.yml** | ✨ NEW | SHA+HR | On-demand | CIA data fetch |
-| 11 | **lighthouse-ci.yml** | ✨ NEW | SHA+HR | Weekly Mon | Performance monitoring |
-| 12 | **uptime-monitor.yml** | ✨ NEW | SHA+HR | Every 15min | Site availability |
-| 13 | **news-article-generator.lock.yml** | ✅ | SHA+HR | Daily 05:51 | AI news generation (agentic) |
-| 14 | **news-evening-analysis.lock.yml** | ✅ | SHA+HR | Weekday 18:00 UTC | Evening wrap-up (agentic) |
-| 15 | **news-realtime-monitor.lock.yml** | ✅ | SHA+HR | 10:00+14:00 Mon-Fri | Breaking news (agentic) |
-| 16 | **setup-labels.yml** | ✨ NEW | SHA+HR | On-demand | Label creation/management |
-| 17 | **labeler.yml** | ✨ NEW | SHA+HR | PR events | Automatic PR labeling |
-
-**Legend:**
-- SHA: SHA-pinned actions
-- HR: step-security/harden-runner
-- Block: Egress policy set to block (deploy-s3.yml only)
-
-## Workflow Automation Patterns
-
-### Pattern 1: Scheduled Data Pipeline
 ```yaml
-on:
-  schedule:
-    - cron: '0 2 * * *'  # Daily at 02:00 UTC
-  workflow_dispatch:
+strategy:
+  matrix:
+    language: ['javascript-typescript']
+steps:
+  - Harden Runner
+  - Checkout
+  - Initialize CodeQL (language matrix)
+  - Autobuild
+  - Perform CodeQL Analysis
+  - Upload SARIF results
 ```
 
-Used by: validate-cia-data.yml (data-pipeline.yml is currently workflow_dispatch-only until fetch is implemented)  
-**Purpose:** Automated nightly data validation/refresh for external data sources
+---
 
-### Pattern 2: Performance Monitoring
+### 5. Release Pipeline (`release.yml`)
+
+**Purpose:** Full release workflow with Vite build, SLSA provenance attestations, SBOM generation, and dual deployment to AWS S3/CloudFront + GitHub Pages.
+
+**Cache key:** `hashFiles('src/browser/**/*.ts', 'scripts/**/*.ts', 'scripts/**/*.js')` — tracks TypeScript source for cache invalidation.
+
+#### Key Steps:
+1. **Build:** `npm run build` (Vite/esbuild → `dist/`)
+2. **SLSA Attestation:** `actions/attest-build-provenance` for supply chain security
+3. **SBOM:** Software Bill of Materials generation
+4. **TypeDoc:** Generate API reference (TypeDoc-generated API documentation for TypeScript modules)
+5. **Dual Deploy:**
+   - AWS S3 + CloudFront invalidation
+   - GitHub Pages (backup)
+
+---
+
+### 6. Deploy to S3 (`deploy-s3.yml`)
+
+**Purpose:** Deploys built assets to AWS S3/CloudFront on push to main.
+
+**Critical:** Includes a Vite build step before deployment — never deploys raw source.
+
 ```yaml
-on:
-  schedule:
-    - cron: '0 8 * * 1'  # Weekly Monday
-  push:
-    branches: [main]
+steps:
+  - Checkout
+  - Setup Node.js 24
+  - Install dependencies: npm ci
+  - Build: npm run build          # ← Critical: Vite build before deploy
+  - Configure AWS credentials
+  - S3 sync with exclusions
+  - CloudFront cache invalidation
 ```
 
-Used by: lighthouse-ci.yml  
-**Purpose:** Regular performance audits + change detection
+**S3 Sync Exclusions:**
+```
+--exclude ".git/*" --exclude ".github/*" --exclude "node_modules/*"
+--exclude "src/*" --exclude "tests/*" --exclude "cypress/*"
+--exclude "builds/*" --exclude "tsconfig*.json" --exclude "*.config.js"
+--exclude "typedoc.json" --exclude "eslint.config.js"
+```
 
-### Pattern 3: Continuous Monitoring
+---
+
+### 7. CIA Data Integration Workflows
+
+#### 7.1 Update CIA Stats (`update-cia-stats.yml`)
+
+**Schedule:** Daily at 03:00 CET (02:00 UTC)
+
 ```yaml
-on:
-  schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
+steps:
+  - Checkout, Setup Node.js 24, Install deps
+  - Fetch: node scripts/load-cia-stats.ts        # Node 24 native TS
+  - Update: node scripts/update-stats-from-cia.ts  # Node 24 native TS
+  - Commit and push changes (if any)
 ```
 
-Used by: uptime-monitor.yml  
-**Purpose:** Real-time uptime monitoring
+**Note:** Uses Node 24's native TypeScript type-stripping (`process.features.typescript === "strip"`). No `--experimental-strip-types` flag needed — `.ts` files run directly with `node`.
 
-### Pattern 4: Schema Management
+#### 7.2 Data Pipeline (`data-pipeline.yml`)
+
+**Status:** Schedule disabled — fetch implementation pending. Manual dispatch only.
+
+Validates CIA exports against JSON schemas, generates versioned cache, and creates PRs with updated data.
+
+#### 7.3 Check CIA Schema Updates (`check-cia-schema-updates.yml`)
+
+Weekly check for upstream CIA schema changes. Auto-creates PRs when updates found.
+
+#### 7.4 Sync CIA Schemas (`sync-cia-schemas.yml`)
+
+Syncs JSON schemas from upstream CIA repository. Uses `scripts/sync-cia-schemas.js`.
+
+#### 7.5 Validate CIA Data (`validate-cia-data.yml`)
+
+Daily validation of CIA data exports against JSON schemas. Uses `scripts/validate-against-cia-schemas.js`.
+
+---
+
+### 8. Agentic News Generation Workflows
+
+Three agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with Claude to generate political news content.
+
+#### 8.1 News Article Generator (`news-article-generator.md`)
+
+**Source:** Markdown workflow definition compiled to `news-article-generator.lock.yml`
+**Model:** Claude Opus 4.6
+**Style:** The Economist editorial standards
+
+Generates daily political news articles from Swedish Riksdag/Government data via riksdag-regering-mcp tools.
+
+#### 8.2 News Evening Analysis (`news-evening-analysis.md`)
+
+**5 Editorial Pillars:**
+1. Parliamentary proceedings
+2. Government policy
+3. Committee deliberations
+4. Opposition dynamics
+5. Meta-analysis
+
+#### 8.3 News Realtime Monitor (`news-realtime-monitor.md`)
+
+Real-time political event monitoring with breaking news detection.
+
+#### 8.4 Compile Agentic Workflows (`compile-agentic-workflows.yml`)
+
+Compiles `.md` workflow sources to `.lock.yml` using `gh aw compile`. Creates GitHub issues if manual compilation is needed.
+
+**MCP Tools Available:**
+- riksdag-regering-mcp (32 tools for Swedish political data)
+- @playwright/mcp (browser automation)
+- @modelcontextprotocol/server-filesystem
+- @modelcontextprotocol/server-memory
+
+---
+
+### 9. Monitoring & Infrastructure
+
+#### 9.1 Lighthouse CI (`lighthouse-ci.yml`)
+
+**Schedule:** Weekly + push/PR to main
+**Audits:** Performance, Accessibility, SEO, Best Practices
+**Targets:** All 14 language versions + dashboard pages
+
+#### 9.2 Uptime Monitor (`uptime-monitor.yml`)
+
+**Schedule:** Every 15 minutes
+**Checks:** All 14 language homepages + critical assets + security headers
+**Incident Management:** Auto-creates/closes GitHub issues on outage/recovery
+
+#### 9.3 Copilot Setup Steps (`copilot-setup-steps.yml`)
+
+**Purpose:** Configures the GitHub Copilot coding agent environment.
+
 ```yaml
-on:
-  schedule:
-    - cron: '0 6 * * 1'  # Weekly Monday
-  workflow_dispatch:
+steps:
+  - Checkout
+  - Setup Web Test Environment (Chrome + Xvfb)
+  - Setup Node.js 24
+  - Install MCP server packages globally
+  - Install Playwright browsers
+  - Verify all MCP server installations
 ```
 
-Used by: check-cia-schema-updates.yml  
-**Purpose:** Automated schema update detection
+**MCP Servers Installed:**
+- `@modelcontextprotocol/server-filesystem`
+- `@modelcontextprotocol/server-memory`
+- `@modelcontextprotocol/server-sequential-thinking`
+- `@playwright/mcp`
+- `riksdag-regering-mcp`
+
+---
+
+### 10. Translation Validation (`translation-validation.yml`)
+
+**Purpose:** Validates all 14 language translations, RTL support (Arabic, Hebrew), hreflang tags, and news article language purity.
+
+**Branch triggers:** `main` only
+**Paths:** `index*.html`, `news/*.html`, `scripts/validate-translations.js`
+
+---
+
+### 11. PR Labeling System
+
+#### 11.1 Setup Labels (`setup-labels.yml`)
+
+Manual workflow creating/updating 46 repository labels across categories:
+- Content, Technology, Data, i18n, ISMS, Infrastructure, Quality, Priority, Size, Status
+
+#### 11.2 PR Labeler (`labeler.yml`)
+
+Auto-labels PRs based on changed file paths and adds size labels (xs/s/m/l/xl) based on lines changed.
+
+---
 
 ## Workflow Security Architecture
 
 ### Supply Chain Security
 
-**SHA-Pinned Actions:**
+All workflows implement defense-in-depth:
+
+| Control | Implementation | ISMS Reference |
+|---------|---------------|----------------|
+| Action SHA Pinning | Every `uses:` pinned to commit SHA | CIS 16.6 |
+| Harden Runner | `step-security/harden-runner` with egress audit | NIST DE.CM-1 |
+| Least Privilege | Minimal `permissions:` per-workflow | ISO A.8.3 |
+| Dependency Review | `actions/dependency-review-action` on PRs | CIS 16.4 |
+| CodeQL Scanning | `javascript-typescript` language matrix | ISO A.8.8 |
+| Scorecard | OpenSSF Scorecard supply-chain analysis | NIST PR.DS-6 |
+| Secret Scanning | Native GitHub secret scanning enabled | ISO A.8.24 |
+
+### Network Security (Egress Audit)
+
 ```yaml
-- uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-- uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
-- uses: actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
-- uses: step-security/harden-runner@20cf305ff2073D973412fa9b1e3a4f227bda3c76 # v2.14.0
-```
-
-**Benefits:**
-- Prevents supply chain attacks
-- Ensures reproducible builds
-- Enables vulnerability tracking
-- Supports rollback to known-good versions
-
-### Network Security
-
-**Harden Runner:**
-```yaml
+# Standard pattern across all workflows
 - name: Harden Runner
-  uses: step-security/harden-runner@v2.14.0
+  uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e  # v2.14.2
   with:
     egress-policy: audit
+    allowed-endpoints: >
+      api.github.com:443
+      github.com:443
+      registry.npmjs.org:443
 ```
-
-**Capabilities:**
-- Network egress monitoring
-- Audit mode for workflow development
-- Block mode for production (future enhancement)
-- Detection of unexpected network calls
 
 ### Secrets Management
 
-**GitHub Secrets:**
-- `COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN` - GitHub PAT for MCP server
-- Stored in environment: `copilot`
-- Scoped to minimal permissions
-- Rotated quarterly
+| Secret | Used By | Purpose |
+|--------|---------|---------|
+| `GITHUB_TOKEN` | Most workflows | Standard GitHub API access |
+| `COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN` | Copilot setup, agentic workflows | MCP server authentication |
+| `AWS_ACCESS_KEY_ID` | deploy-s3, release | S3 deployment |
+| `AWS_SECRET_ACCESS_KEY` | deploy-s3, release | S3 deployment |
+| `CLOUDFRONT_DISTRIBUTION_ID` | deploy-s3, release | CloudFront invalidation |
 
-**Access Control:**
-- Environment-based secrets
-- Workflow-scoped access
-- No secret exposure in logs
-- Audit trail in GitHub
+---
 
 ## Deployment Pipeline
 
-### GitHub Pages Deployment
+### Dual Deployment Strategy
 
-**Trigger:** Push to main/master branch after successful quality checks
-
-**Process:**
 ```mermaid
 graph LR
-    A[Quality Checks Pass] --> B[Dependency Review Pass]
-    B --> C[GitHub Pages Deploy]
-    C --> D[CDN Distribution]
-    D --> E[Live on riksdagsmonitor.com]
-    
-    style A fill:#4caf50
-    style B fill:#4caf50
-    style C fill:#2196f3
-    style D fill:#2196f3
-    style E fill:#4caf50
+    P[Push to main] --> B[Vite Build]
+    B --> A1[SLSA Attestation]
+    B --> A2[SBOM Generation]
+    A1 --> D1[AWS S3/CloudFront]
+    A1 --> D2[GitHub Pages]
+    D1 --> CF[CloudFront Invalidation]
+    D2 --> GH[GitHub Pages CDN]
+    CF --> U[Users: riksdagsmonitor.com]
+    GH --> U2[Users: hack23.github.io/riksdagsmonitor]
 ```
 
-**Deployment Configuration:**
-- **Source:** Main branch, root directory
-- **Custom Domain:** riksdagsmonitor.com (via CNAME)
-- **HTTPS:** Enforced (TLS 1.3)
-- **CDN:** GitHub Pages global CDN
+**Primary:** AWS S3 + CloudFront (riksdagsmonitor.com)
+**Backup:** GitHub Pages (hack23.github.io/riksdagsmonitor)
 
-**Deployment Security:**
-- HTTPS-only access
-- Immutable Git history
-- Rollback via Git revert
-- Deployment audit logs
+### Build Process
 
-## Monitoring and Alerting
+```bash
+npm run build        # Vite/esbuild → dist/
+```
 
-### GitHub Security Features
+Vite compiles TypeScript source (`src/browser/**/*.ts`) to optimized JavaScript bundles:
+- `main-*.js` — primary application bundle (251 KB gzip: 74 KB)
+- `chart-*.js` — Chart.js bundle (207 KB gzip: 71 KB)
+- `d3-*.js` — D3.js bundle (37 KB gzip: 12 KB)
+- `cia-entry-*.js` — CIA data entry point (37 KB gzip: 12 KB)
 
-**Enabled:**
-- ✅ Dependabot alerts
-- ✅ Secret scanning
-- ✅ Code scanning (CodeQL)
-- ✅ Security advisories
-- ✅ Branch protection rules
+---
 
-**Alert Channels:**
-- GitHub Security Dashboard
-- Email notifications to repository admins
-- PR comments for dependency issues
-- Workflow failure notifications
+## TypeScript Integration Summary
 
-### Metrics Collection
+The following table summarizes how each workflow interacts with TypeScript:
 
-**Tracked Metrics:**
-- Workflow success rate
-- Quality check pass rate
-- Dependency vulnerability count
-- Link check failure rate
-- Deployment frequency
+| Workflow | TypeScript Interaction | Mechanism |
+|----------|----------------------|-----------|
+| `javascript-testing.yml` | Type-checks + tests TS source | `tsc --noEmit` + Vitest |
+| `quality-checks.yml` | Lints TS files | ESLint with `@typescript-eslint` |
+| `jsdoc-validation.yml` | Generates API docs from TS | TypeDoc |
+| `codeql.yml` | Scans TS for vulnerabilities | `javascript-typescript` matrix |
+| `release.yml` | Builds TS → JS bundles | Vite/esbuild |
+| `deploy-s3.yml` | Builds then deploys bundles | `npm run build` → S3 sync |
+| `update-cia-stats.yml` | Runs `.ts` scripts directly | Node 24 native TS strip |
+| `vitest.config.js` | Coverage includes TS source | `src/browser/**/*.ts` in includes |
+| `test-dashboard.yml` | Triggers on TS changes | `src/browser/**` in path filter |
+| `test-homepage.yml` | Triggers on TS changes | `src/browser/**` in path filter |
 
-**Retention:**
-- Workflow runs: 90 days
-- Artifacts: 30 days
-- Logs: 90 days
+---
 
-## Incident Response
+## Workflow Automation Patterns
 
-### Workflow Failure Handling
+### Pattern 1: Scheduled Data Pipeline
+```yaml
+schedule:
+  - cron: '0 2 * * *'     # Update CIA stats daily at 03:00 CET
+steps:
+  - node scripts/load-cia-stats.ts    # Node 24 native TS
+  - node scripts/update-stats-from-cia.ts
+  - git commit + push (if changed)
+```
 
-**Response Procedure:**
-1. **Detection:** Automatic GitHub notification
-2. **Triage:** Review workflow logs and artifacts
-3. **Investigation:** Identify root cause
-4. **Remediation:** Fix issue and re-run
-5. **Documentation:** Update WORKFLOWS.md if process change
+### Pattern 2: Performance Monitoring
+```yaml
+schedule:
+  - cron: '0 6 * * 1'     # Weekly Lighthouse audit
+steps:
+  - treosh/lighthouse-ci-action (14 language URLs)
+  - Upload reports + PR comment
+```
 
-**Common Failures:**
-- HTML validation errors → Fix markup
-- Link check failures → Update broken links
-- Dependency vulnerabilities → Update packages
-- Secret scanning alerts → Rotate secrets
+### Pattern 3: Continuous Availability Monitoring
+```yaml
+schedule:
+  - cron: '*/15 * * * *'  # Every 15 minutes
+steps:
+  - curl all 14 language homepages
+  - Check security headers (HSTS, CSP, X-Frame-Options)
+  - Auto-create/close incident issues
+```
 
-### Security Incident Response
+### Pattern 4: Agentic Content Generation
+```yaml
+source: news-article-generator.md
+compiled: news-article-generator.lock.yml
+model: Claude Opus 4.6
+tools: riksdag-regering-mcp (32 tools)
+style: The Economist editorial standards
+```
 
-**Critical Issues:**
-- Secret exposure → Immediate rotation, audit access
-- Vulnerable dependency → Emergency patch PR
-- Compromised action → Pin to last known-good SHA
-- Unauthorized deployment → Rollback, investigate
+---
 
-**Escalation:**
-1. Repository owners
-2. Hack23 security team
-3. GitHub support (for platform issues)
+## ISMS Compliance Mapping
 
-## Compliance and Audit
+### ISO 27001:2022 Controls
 
-### ISMS Alignment
+| Control | Workflow(s) | Implementation |
+|---------|-------------|----------------|
+| A.5.33 — Protection of records | update-cia-stats | Git audit trail, source attribution |
+| A.5.36 — Conformity with policies | scorecards | OpenSSF automated compliance |
+| A.5.37 — Documented procedures | All | Workflow YAML as executable documentation |
+| A.8.3 — Information lifecycle | update-cia-stats, data-pipeline | Automated daily updates, retention |
+| A.8.8 — Vulnerability management | codeql, dependency-review | Automated scanning |
+| A.8.10 — Information deletion | data-pipeline | Cache archival (keep 7 days) |
+| A.8.19 — Security in use | All | HTTPS-only, SRI, CSP |
+| A.8.24 — Secret scanning | GitHub native | Automated secret detection |
+| A.8.31 — Separation of environments | release | Staging → production pipeline |
+| A.8.32 — Change management | quality-checks, testing | Quality gates before merge |
 
-**Secure Development Policy Compliance:**
-- ✅ Automated security scanning
-- ✅ Quality gates before deployment
-- ✅ SHA-pinned dependencies
-- ✅ Audit logging
-- ✅ Documented procedures
+### NIST CSF 2.0 Functions
 
-**Evidence:**
-- Workflow run history (90 days)
-- Quality check artifacts (30 days)
-- Dependency review comments (permanent)
-- Security scan results (permanent)
+| Function | Workflow(s) |
+|----------|-------------|
+| **GV** (Govern) | setup-labels, ISMS documentation |
+| **ID** (Identify) | scorecards, dependency-review |
+| **PR** (Protect) | codeql, harden-runner, SHA pinning |
+| **DE** (Detect) | uptime-monitor, validate-cia-data |
+| **RS** (Respond) | Incident auto-creation on outage |
+| **RC** (Recover) | Auto-close incidents on recovery |
 
-### Audit Trail
+### CIS Controls v8.1
 
-**Logged Events:**
-- All workflow executions
-- Quality check results
-- Dependency scan findings
-- Deployment events
-- Configuration changes
+| Control | Workflow(s) |
+|---------|-------------|
+| 2.2 — Software inventory | release (SBOM) |
+| 3.1 — Data inventory | data-pipeline metadata |
+| 3.14 — Data integrity | validate-cia-data |
+| 16.2 — Software security | scorecards |
+| 16.4 — Dependency security | dependency-review |
+| 16.6 — Application security | codeql |
+| 16.10 — Vulnerability remediation | Dependabot + codeql |
 
-**Access:**
-- GitHub Actions UI
-- GitHub API
-- Artifact downloads
-- Email notifications
-
-## Future Enhancements
-
-### Planned Improvements
-
-1. **Asset Optimization Pipeline:**
-   - Automated image compression
-   - WebP conversion
-   - CSS/JS minification
-   - Bundle size tracking
-
-2. **Advanced Monitoring:**
-   - Real-time alerting (Slack/Email)
-   - Performance regression detection
-   - Accessibility monitoring
-   - SEO score tracking
-
-3. **Deployment Enhancements:**
-   - Blue-green deployments
-   - Canary releases
-   - Automatic rollback on failures
-   - Deployment gates with manual approval
-
-4. **Data Pipeline Enhancements:**
-   - Multi-source data aggregation
-   - Real-time data streaming
-   - Data quality metrics
-   - Historical trend analysis
-
-### Timeline
-
-- **Q2 2026:** Asset optimization pipeline, Advanced alerting
-- **Q3 2026:** Deployment enhancements, Performance regression detection
-- **Q4 2026:** Real-time data streaming, Blue-green deployments
+---
 
 ## Workflow Troubleshooting Guide
 
 ### Common Issues and Solutions
 
-#### Issue: Workflow not triggering on schedule
+#### Issue: TypeScript type-check fails in CI
+```
+error TS2307: Cannot find module './foo'
+```
+**Solution:**
+1. Verify `tsconfig.browser.json` includes the file in `include` patterns
+2. Check that import paths use correct extensions (`.ts` or extensionless)
+3. Run locally: `npx tsc --project tsconfig.browser.json --noEmit`
 
-**Symptoms:** Scheduled workflow doesn't run at expected time
-
-**Diagnosis:**
-```bash
-# Check workflow syntax
-gh workflow view <workflow-name>
-
-# View workflow runs
-gh run list --workflow=<workflow-name> --limit=10
+#### Issue: Workflow not triggering on TypeScript changes
+**Solution:** Ensure path filters include `'**/*.ts'` and `'src/browser/**'`:
+```yaml
+paths:
+  - '**/*.ts'
+  - 'src/browser/**'
+  - 'tsconfig*.json'
 ```
 
-**Solutions:**
-1. Verify cron syntax at [crontab.guru](https://crontab.guru)
-2. Check repository activity (GitHub may disable workflows after 60 days of inactivity)
-3. Ensure workflow file is on default branch (main/master)
-4. Re-enable workflow in Actions settings if disabled
+#### Issue: Node 24 cannot run .ts scripts
+**Solution:** Node 24 has native TypeScript type-stripping. Verify:
+```bash
+node -e "console.log(process.features.typescript)"  # Should print "strip"
+```
+If using an older Node version, add `--experimental-strip-types` flag.
 
 #### Issue: Harden Runner egress audit failures
-
-**Symptoms:** Unexpected network calls detected in workflow logs
-
-**Diagnosis:**
-```yaml
-# Check workflow logs for:
-Harden-Runner: Egress detected to unauthorized endpoint
-```
-
-**Solutions:**
-1. Review allowed-endpoints in deploy-s3.yml for reference
-2. Add new endpoints to allowed list
-3. Use egress-policy: audit for development
-4. Switch to egress-policy: block for production
+**Cause:** New network endpoints accessed.
+**Solution:** Review the egress report and add legitimate endpoints to `allowed-endpoints`.
 
 #### Issue: Lighthouse CI failures
-
-**Symptoms:** Lighthouse audit times out or fails intermittently
-
-**Diagnosis:**
-```bash
-# Check lighthouse.log artifact
-# Look for network errors, timeouts
-```
-
-**Solutions:**
-1. Increase timeout (currently 30s)
-2. Check site availability first
-3. Reduce numberOfRuns from 3 to 2
-4. Add retry logic (already implemented)
-5. Verify site is accessible from GitHub Actions runners
+**Cause:** Performance regression or accessibility issue.
+**Solution:**
+1. Check the Lighthouse HTML report artifact
+2. Common fixes: optimize images, reduce CSS, fix color contrast
+3. Targets: LCP < 2.5s, CLS < 0.1, Accessibility ≥ 90
 
 #### Issue: Data pipeline skipping fetch
+**Cause:** Data freshness < 23 hours.
+**Solution:** Use `force_refresh: true` input parameter for manual dispatch.
 
-**Symptoms:** Data pipeline runs but doesn't fetch new data
-
-**Diagnosis:**
-```yaml
-# Check workflow summary:
-"Pipeline Status: SKIPPED - Data is fresh (< 23 hours old)"
-```
-
-**Solutions:**
-1. This is expected behavior (cache optimization)
-2. Use workflow_dispatch with force_refresh=true
-3. Check last-fetch.json for timestamp
-4. Verify data freshness threshold (23 hours)
-
-#### Issue: Uptime monitor creating duplicate incidents
-
-**Symptoms:** Multiple open incident issues for same downtime
-
-**Diagnosis:**
+#### Issue: Agentic workflow lock files outdated
+**Cause:** `.md` source edited but `.lock.yml` not recompiled.
+**Solution:**
 ```bash
-# Check issues with label: incident,uptime-monitor
-gh issue list --label incident,uptime-monitor --state open
+gh extension install github/gh-aw
+gh aw compile .github/workflows/news-article-generator.md
+git add .github/workflows/*.lock.yml
+git commit -m "chore: recompile agentic workflow lock files"
 ```
-
-**Solutions:**
-1. Workflow checks for existing open incidents (already implemented)
-2. If duplicates exist, close manually and re-run workflow
-3. Verify GitHub Actions script permissions (issues: write)
-
-#### Issue: Agentic Workflow - No Safe Outputs Generated
-
-**Symptoms:** Agentic workflow (news-realtime-monitor, news-evening-analysis, news-article-generator) succeeds but shows as "failed" with message "No Safe Outputs Generated"
-
-**Diagnosis:**
-```bash
-# Check workflow run details
-gh run view <run-id>
-
-# Look for:
-# - Agent job: succeeded ✅
-# - Safe outputs: skipped ❌
-# - Detection job: skipped ❌
-```
-
-**Root Cause:** Agent completed execution but did not call a safe output tool (`safeoutputs___noop` or `safeoutputs___create_pull_request`) to signal completion.
-
-**Solutions:**
-1. **Review agent behavior** - Agent must ALWAYS call one safe output tool:
-   - `safeoutputs___noop` when no significant events detected (most common for realtime monitor)
-   - `safeoutputs___create_pull_request` when articles generated
-   
-2. **Re-run workflow** - Use workflow_dispatch to trigger manually:
-   ```bash
-   gh workflow run news-realtime-monitor.lock.yml
-   ```
-
-3. **Verify workflow instructions** - Check for CRITICAL REQUIREMENTS section ensuring:
-   - Date validation at start
-   - Mandatory safe output call at end
-   - Clear execution summary pattern
-
-**Prevention:** All agentic workflows now include mandatory safe output requirements (added 2026-02-16). The agent will follow a 7-step execution pattern with safe output call as Step 6.
-
-**Reference:** Issue #245, Commit bfde78a
-
-#### Issue: Agentic Workflow - Date Detection Error
-
-**Symptoms:** Agent logs show incorrect date (e.g., claims Sunday when it's Monday)
-
-**Diagnosis:**
-```bash
-# Check agent logs for date validation output
-gh run view <run-id> --log | grep -A 5 "Date Validation"
-```
-
-**Root Cause:** Missing date validation at workflow start, or timezone confusion.
-
-**Solutions:**
-1. **Date validation is now mandatory** - All workflows start with:
-   ```bash
-   date -u "+Current UTC: %A %Y-%m-%d %H:%M:%S"
-   date +"%Z: %A %Y-%m-%d %H:%M:%S"
-   ```
-
-2. **Verify schedule configuration**:
-   - news-realtime-monitor: Mon-Fri 10:00+14:00 UTC, Sat-Sun 12:00 UTC
-   - news-evening-analysis: Mon-Fri 18:00 UTC, Sat 16:00 UTC
-   - news-article-generator: Daily at 05:51 UTC
-
-3. **Re-compile workflows** if schedule modified:
-   ```bash
-   gh aw compile .github/workflows/news-*.md
-   ```
-
-**Prevention:** Date validation logging is now mandatory at the start of all agentic workflows (added 2026-02-16).
-
-**Reference:** Issue #245
-
-#### Issue: Agentic Workflow - MCP Cold Start Timeout
-
-**Symptoms:** MCP tool calls timing out after 30-60 seconds
-
-**Diagnosis:**
-```bash
-# Check for cold start indicators in logs
-gh run view <run-id> --log | grep -i "cold start\|timeout\|retry"
-```
-
-**Root Cause:** MCP server (riksdag-regering-ai.onrender.com) takes 30-60s to wake up on first request.
-
-**Solutions:**
-1. **Framework handles retries automatically** - No action needed, just wait
-2. **Warm-up strategy** - First query warms server, subsequent queries are fast
-3. **Batch queries** - Make multiple queries in sequence after warm-up
-
-**Prevention:** MCP documentation now includes cold start handling guidance with automatic retry information.
 
 #### Issue: Translation validation failing
-
-**Symptoms:** Translation validation reports missing og:locale tags
-
-**Diagnosis:**
-```bash
-# Run validation locally
-npm run validate-translations
-```
-
-**Solutions:**
-1. Ensure all language files have og:locale meta tag
-2. Pattern: `<meta property="og:locale" content="sv_SE">`
-3. Must come before og:locale:alternate tags
-4. Use scripts/validate-translations.js for debugging
-
-#### Issue: Dependency review blocking PR
-
-**Symptoms:** PR blocked due to vulnerable dependency
-
-**Diagnosis:**
-```yaml
-# Check workflow summary for vulnerability details
-# Severity: CRITICAL, HIGH, MEDIUM, LOW
-```
-
-**Solutions:**
-1. Update vulnerable dependency: `npm update <package>`
-2. Check for security advisories: `npm audit`
-3. Review alternative packages if no fix available
-4. Document exception if false positive
+**Cause:** Missing hreflang tags or broken language purity.
+**Solution:** Run `npm run validate-translations` locally and fix reported issues.
 
 #### Issue: Deploy-S3 CloudFront invalidation failure
-
-**Symptoms:** Deploy succeeds but CloudFront cache not invalidated
-
-**Diagnosis:**
-```bash
-# Check workflow logs for:
-"Could not discover CloudFront distribution ID"
-```
-
-**Solutions:**
-1. Verify CloudFormation stack name (CLOUDFRONT_STACK_NAME)
-2. Check IAM role permissions for CloudFront
-3. Fallback: Manual invalidation in AWS Console
-4. Verify distribution exists for S3 bucket
+**Cause:** AWS credentials expired or wrong distribution ID.
+**Solution:**
+1. Verify `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` secrets are valid
+2. Verify `CLOUDFRONT_DISTRIBUTION_ID` matches the production distribution
+3. Check IAM policy allows `cloudfront:CreateInvalidation`
 
 ### Performance Optimization Tips
 
-#### Workflow Run Time Optimization
-
-1. **Use Caching Aggressively**
-   ```yaml
-   # Note: Examples use SHA-pinned form for security (matching repo workflows)
-   - uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
-     with:
-       path: ~/.npm
-       key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-   ```
-
-2. **Prefer npm ci over npm install**
-   ```bash
-   npm ci --prefer-offline --no-audit
-   ```
-
-3. **Parallelize Independent Jobs**
-   ```yaml
-   jobs:
-     job1:
-       runs-on: ubuntu-latest
-     job2:
-       runs-on: ubuntu-latest
-       # Runs in parallel with job1
-   ```
-
-4. **Skip Unnecessary Steps**
-   ```yaml
-   - name: Check data freshness
-     if: steps.freshness.outputs.skip_fetch != 'true'
-   ```
-
-#### Artifact Size Optimization
-
-1. **Use if-no-files-found: ignore**
-   ```yaml
-   - uses: actions/upload-artifact@0b0cf7a4bbde4f8777da630a136716afda3db770 # v6
-     with:
-       if-no-files-found: ignore
-   ```
-
-2. **Set Appropriate Retention**
-   ```yaml
-   retention-days: 30  # Quality reports
-   retention-days: 5   # Security scans
-   ```
-
-3. **Compress Large Artifacts**
-   ```bash
-   tar -czf report.tar.gz report/
-   ```
-
-### Monitoring and Alerting
-
-#### Key Metrics to Track
-
-1. **Workflow Success Rate**
-   - Target: > 95% for all workflows
-   - Alert if < 90% over 7 days
-
-2. **Build Time**
-   - quality-checks.yml: < 5 minutes
-   - deploy-s3.yml: < 10 minutes
-   - lighthouse-ci.yml: < 15 minutes
-
-3. **Data Freshness**
-   - CIA data: < 24 hours old
-   - Schemas: < 7 days since last check
-
-4. **Site Availability**
-   - Uptime: > 99.9% (43 minutes downtime/month)
-   - Response time: < 2 seconds
-
-#### Setting Up Alerts
-
-**GitHub Actions Status:**
-```bash
-# Weekly summary email (manually check)
-https://github.com/<org>/<repo>/actions
-
-# Or use GitHub API
-gh api repos/<org>/<repo>/actions/runs \
-  --jq '.workflow_runs[0:10] | .[] | {name, status, conclusion}'
-```
-
-**External Monitoring:**
-```bash
-# Consider UptimeRobot, Pingdom, or StatusCake
-# For 24/7 uptime monitoring beyond GitHub Actions
-```
-
-## Workflow Metrics Dashboard
-
-### Current Performance (Example)
-
-| Workflow | Avg Duration | Success Rate | Last 7 Days |
-|----------|--------------|--------------|-------------|
-| quality-checks | 3m 42s | 98.2% | 56/57 ✅ |
-| dependency-review | 1m 15s | 100% | 12/12 ✅ |
-| deploy-s3 | 8m 33s | 95.8% | 23/24 ✅ |
-| translation-validation | 2m 05s | 100% | 18/18 ✅ |
-| lighthouse-ci | 12m 18s | 87.5% | 7/8 ✅ |
-| uptime-monitor | 0m 45s | 99.8% | 667/668 ✅ |
-
-*Note: Metrics are examples. Track real metrics via GitHub Actions dashboard.*
-
-## 16. Automatic PR Labeling System ✨ **NEW**
-
-**File:** `.github/workflows/setup-labels.yml`, `.github/workflows/labeler.yml`  
-**Configuration:** `.github/labeler.yml`  
-**Documentation:** [LABELS.md](LABELS.md)
-
-### Overview
-
-Riksdagsmonitor implements an automated labeling system that categorizes pull requests based on file changes, titles, and descriptions. This improves organization, searchability, and provides quick visual context about changes.
-
-### 16.1 Setup Labels Workflow
-
-**File:** `.github/workflows/setup-labels.yml`  
-**Trigger:** Manual (`workflow_dispatch`)  
-**Purpose:** Create or update repository labels
-
-#### Features
-
-- **46 Labels:** Covering all aspects of the project
-- **Categorized:** Content, technology, data, i18n, ISMS, infrastructure, quality, AI
-- **Idempotent:** Can be run multiple times safely
-- **Recreate Option:** Optional flag to delete all labels and recreate
-
-#### Security Configuration
-
-```yaml
-permissions:
-  contents: read
-  issues: write
-  pull-requests: write
-
-steps:
-  - name: Harden Runner
-    uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
-    with:
-      egress-policy: audit
-
-  - name: Checkout repository
-    uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-```
-
-#### Label Categories
-
-| Category | Labels | Examples |
-|----------|--------|----------|
-| **Content** | 4 | `news`, `dashboard`, `visualization`, `intelligence` |
-| **Technology** | 4 | `html-css`, `javascript`, `workflow`, `security` |
-| **Data** | 4 | `cia-data`, `riksdag-data`, `data-pipeline`, `schema` |
-| **I18n** | 3 | `i18n`, `translation`, `rtl` |
-| **ISMS** | 4 | `isms`, `iso-27001`, `nist-csf`, `cis-controls` |
-| **Infrastructure** | 4 | `ci-cd`, `deployment`, `performance`, `monitoring` |
-| **Quality** | 4 | `testing`, `accessibility`, `documentation`, `refactor` |
-| **Standard** | 3 | `bug`, `enhancement`, `dependencies` |
-| **AI** | 3 | `agent`, `skill`, `agentic-workflow` |
-| **Priority** | 4 | `priority-critical/high/medium/low` |
-| **Size** | 5 | `size-xs/s/m/l/xl` |
-| **Status** | 4 | `status-needs-review/in-progress/blocked/ready` |
-
-#### Usage
-
-1. Go to **Actions** → **Setup Repository Labels**
-2. Click **Run workflow**
-3. (Optional) Check "Recreate all labels" to delete existing labels
-4. Wait for completion (< 1 minute)
-
-#### Label Creation Process
-
-```bash
-# Function to create or update label
-create_or_update_label() {
-  local name="$1"
-  local color="$2"
-  local description="$3"
-  
-  if gh label list --search "$name" --limit 1 | grep -q "^$name"; then
-    echo "📝 Updating label: $name"
-    gh label edit "$name" --color "$color" --description "$description"
-  else
-    echo "✨ Creating label: $name"
-    gh label create "$name" --color "$color" --description "$description"
-  fi
-}
-```
-
-### 16.2 Automatic Labeler Workflow
-
-**File:** `.github/workflows/labeler.yml`  
-**Trigger:** `pull_request_target` (opened, synchronize, reopened, edited)  
-**Purpose:** Automatically label PRs based on changes
-
-#### Features
-
-- **Automatic labeling** based on file paths, PR titles, descriptions
-- **Size labels** calculated from diff statistics
-- **Label validation** checks if required labels exist
-- **PR comment** with label summary on new PRs
-- **Continuous monitoring** on PR updates
-
-#### Security Configuration
-
-```yaml
-permissions: read-all
-
-jobs:
-  labeler:
-    permissions:
-      contents: read
-      pull-requests: write
-      issues: write
-
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e
-        with:
-          egress-policy: audit
-```
-
-#### Labeling Logic
-
-**File Path Matching:**
-```yaml
-news:
-  - changed-files:
-      - any-glob-to-any-file:
-          - "news/**/*.html"
-          - "scripts/article-template.js"
-```
-
-**PR Title Matching:**
-```yaml
-news:
-  - title: "news:*"
-  - title: "content:*"
-```
-
-**PR Body Matching:**
-```yaml
-news:
-  - body: "- [x] 📰 News Content"
-```
-
-#### Size Label Calculation
-
-```bash
-# Calculate PR size
-ADDITIONS=$(gh pr view "$PR_NUMBER" --json additions --jq '.additions')
-DELETIONS=$(gh pr view "$PR_NUMBER" --json deletions --jq '.deletions')
-TOTAL_CHANGES=$((ADDITIONS + DELETIONS))
-
-# Determine size label
-if [ "$TOTAL_CHANGES" -lt 10 ]; then SIZE_LABEL="size-xs"
-elif [ "$TOTAL_CHANGES" -lt 50 ]; then SIZE_LABEL="size-s"
-elif [ "$TOTAL_CHANGES" -lt 250 ]; then SIZE_LABEL="size-m"
-elif [ "$TOTAL_CHANGES" -lt 1000 ]; then SIZE_LABEL="size-l"
-else SIZE_LABEL="size-xl"
-fi
-```
-
-#### Workflow Process
-
-```mermaid
-graph TD
-    A[PR Created/Updated] --> B[Check Labels Exist]
-    B -->|Missing| C[Post Warning]
-    B -->|OK| D[Apply Labels]
-    D --> E[Calculate Size]
-    E --> F[Add Size Label]
-    F --> G{New PR?}
-    G -->|Yes| H[Post Summary Comment]
-    G -->|No| I[Update Complete]
-    H --> I
-    
-    style A fill:#2196f3
-    style D fill:#4caf50
-    style E fill:#ff9800
-    style F fill:#4caf50
-    style H fill:#9c27b0
-    style I fill:#4caf50
-```
-
-#### Label Application Examples
-
-**Example 1: News Article**
-- Files: `news/2026-02-15-riksdag-vote-en.html`, `news/2026-02-15-riksdag-vote-sv.html`
-- Labels: `news`, `html-css`, `i18n`, `translation`, `size-s`
-
-**Example 2: Dashboard Enhancement**
-- Files: `js/politician-dashboard.js`, `politician-dashboard.html`, `cia-data/politician/*.csv`
-- Title: `feat: Add politician influence network visualization`
-- Labels: `dashboard`, `visualization`, `javascript`, `html-css`, `cia-data`, `enhancement`, `size-m`
-
-**Example 3: Security Update**
-- Files: `SECURITY_ARCHITECTURE.md`, `THREAT_MODEL.md`, `.github/skills/iso-27001-controls/SKILL.md`
-- Title: `security: Update ISO 27001 control mapping`
-- Labels: `security`, `isms`, `iso-27001`, `documentation`, `skill`, `size-m`
-
-**Example 4: CI/CD Workflow**
-- Files: `.github/workflows/data-pipeline.yml`, `.github/workflows/quality-checks.yml`
-- Title: `ci: Optimize data pipeline workflow`
-- Labels: `workflow`, `ci-cd`, `data-pipeline`, `performance`, `size-s`
-
-#### PR Comment Example
-
-```markdown
-## 🏷️ Automatic Labeling Summary
-
-This PR has been automatically labeled based on the files changed and PR metadata.
-
-**Applied Labels:** news, html-css, i18n, translation, size-s
-
-### Label Categories
-- 🗳️ **Content**: news, dashboard, visualization, intelligence
-- 💻 **Technology**: html-css, javascript, workflow, security
-- 📊 **Data**: cia-data, riksdag-data, data-pipeline, schema
-- 🌍 **I18n**: i18n, translation, rtl
-- 🔒 **ISMS**: isms, iso-27001, nist-csf, cis-controls
-- 🏗️ **Infrastructure**: ci-cd, deployment, performance, monitoring
-- 🔄 **Quality**: testing, accessibility, documentation, refactor
-- 🤖 **AI**: agent, skill, agentic-workflow
-
-For more information, see `.github/labeler.yml`.
-```
-
-### Benefits
-
-- ✅ **Improved organization** - Easy filtering and searching
-- ✅ **Quick context** - Visual indicators of PR content
-- ✅ **Workflow automation** - Automated categorization
-- ✅ **Consistency** - Standard labeling across PRs
-- ✅ **Searchability** - Find related PRs by label
-- ✅ **Metrics** - Track PR types and sizes over time
-
-### Maintenance
-
-**Adding New Labels:**
-1. Edit `.github/workflows/setup-labels.yml` to add label definition
-2. Edit `.github/labeler.yml` to add labeling rules
-3. Run setup-labels workflow
-4. Update [LABELS.md](LABELS.md) documentation
-
-**Modifying Label Rules:**
-1. Edit `.github/labeler.yml`
-2. Test on a new PR
-3. Adjust rules as needed
-4. Document changes in [LABELS.md](LABELS.md)
-
-### Troubleshooting
-
-**Labels Not Applied:**
-- Check if labels exist: Run setup-labels workflow
-- Verify labeler workflow ran: Check Actions tab
-- Check workflow logs for errors
-- Ensure `.github/labeler.yml` is valid YAML
-
-**Size Label Incorrect:**
-- Size is based on total changes (additions + deletions)
-- Regenerated files may have large diffs
-- Manual adjustment of size label is allowed
-
-### References
-
-- **Documentation:** [LABELS.md](LABELS.md)
-- **Configuration:** [`.github/labeler.yml`](.github/labeler.yml)
-- **Setup Workflow:** [`.github/workflows/setup-labels.yml`](.github/workflows/setup-labels.yml)
-- **Labeler Workflow:** [`.github/workflows/labeler.yml`](.github/workflows/labeler.yml)
-- **GitHub Labeler Action:** https://github.com/actions/labeler
+#### Workflow Run Time
+- **npm ci** with `--prefer-offline --no-audit` for faster installs
+- **Cache** npm dependencies: `actions/cache` with `hashFiles('**/package-lock.json')`
+- **Parallel jobs** where possible (ESLint + HTMLHint + link checking)
+- **Matrix strategy** for multi-language E2E tests
+
+#### Artifact Size
+- Upload only necessary files (coverage reports, screenshots on failure)
+- Set appropriate `retention-days` (7 for test artifacts, 30 for pipeline data)
+- Use `if-no-files-found: ignore` to prevent failures on missing artifacts
+
+---
+
+## Workflow Metrics
+
+### Key Performance Indicators
+
+| Metric | Target | Actual |
+|--------|--------|--------|
+| Test Count | > 1000 | **1200** ✅ |
+| Test Pass Rate | 100% | **100%** ✅ |
+| TypeScript Errors | 0 | **0** ✅ |
+| ESLint Errors | 0 | **0** ✅ |
+| Build Time | < 5s | **3.4s** ✅ |
+| Test Duration | < 30s | **15s** ✅ |
+| Action SHA Pinning | 100% | **100%** ✅ |
+| Harden Runner | All workflows | **All** ✅ |
+
+---
 
 ## References
 
 ### ISMS Documentation
+- [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
 - [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
-- [CI/CD Security Standards](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#cicd-security)
-- [Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md)
+- [Threat Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)
 
 ### GitHub Documentation
-- [GitHub Actions Security](https://docs.github.com/en/actions/security-guides)
-- [Workflow Syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
-- [Dependabot](https://docs.github.com/en/code-security/dependabot)
+- [GitHub Actions](https://docs.github.com/en/actions)
+- [GitHub Copilot Agents](https://docs.github.com/en/copilot/concepts/agents)
+- [GitHub Agentic Workflows](https://github.com/github/gh-aw)
 
 ### Related Documentation
-- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Security controls
-- [THREAT_MODEL.md](THREAT_MODEL.md) - Risk analysis
-- [ARCHITECTURE.md](ARCHITECTURE.md) - System design
-- [LABELS.md](LABELS.md) - Label system and definitions ✨ **NEW**
-- [AGENTS.md](AGENTS.md) - GitHub Copilot agents (13 total)
-- [SKILLS.md](SKILLS.md) - Agent skills library (40 total)
+- [ARCHITECTURE.md](ARCHITECTURE.md) — C4 architecture models
+- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) — Security controls
+- [THREAT_MODEL.md](THREAT_MODEL.md) — STRIDE threat analysis
+- [FUTURE_WORKFLOWS.md](FUTURE_WORKFLOWS.md) — Future workflow projections
+- [AGENTS.md](AGENTS.md) — Custom agent reference
+- [SKILLS.md](SKILLS.md) — Skill definitions
 
 ### External Tools
-- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
-- [step-security/harden-runner](https://github.com/step-security/harden-runner)
-- [OpenSSF Scorecard](https://github.com/ossf/scorecard)
-- [HTMLHint](https://htmlhint.com/)
-- [linkinator](https://github.com/JustinBeckwith/linkinator)
+- [step-security/harden-runner](https://github.com/step-security/harden-runner) — Workflow security
+- [OpenSSF Scorecard](https://securityscorecards.dev/) — Supply chain security
+- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) — Performance monitoring
+- [TypeDoc](https://typedoc.org/) — TypeScript API documentation
 
 ---
 
-**Document Control:**
-- **Repository:** https://github.com/Hack23/riksdagsmonitor
-- **Path:** /WORKFLOWS.md
-- **Format:** Markdown
-- **Classification:** Public
-- **Version:** 3.1
-- **Last Updated:** 2026-02-16
-- **Next Review:** 2026-05-16 (Quarterly)
-- **Maintained by:** devops-engineer agent
+**Document Version:** 5.0
+**Last Updated:** 2026-02-21
+**Classification:** Public
+**Owner:** Hack23 AB

@@ -83,6 +83,18 @@ jobs:
           done
           echo "✅ Restored mtimes for $(git ls-tree -r --name-only HEAD | wc -l) files"
 
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with Vite
+        run: npm run build
+
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
         with:
@@ -132,12 +144,16 @@ jobs:
             --cache-control 'public, max-age=86400' \
             --exclude 'screenshots/*' --exclude '.git/*'
 
-          # Everything else
+          # Everything else (exclude source-only directories)
           aws s3 sync "$SRC" "$BUCKET" \
             --exclude '.git/*' --exclude 'screenshots/*' \
             --exclude '.github/*' --exclude 'docs/*' --exclude 'schemas/*' \
             --exclude 'scripts/*' --exclude '.devcontainer/*' --exclude 'quicksight/*' \
-            --exclude '*.md' --exclude 'package*.json' --exclude '.gitignore'
+            --exclude 'src/*' --exclude 'tests/*' --exclude 'cypress/*' \
+            --exclude 'node_modules/*' --exclude 'builds/*' \
+            --exclude '*.md' --exclude 'package*.json' --exclude '.gitignore' \
+            --exclude 'tsconfig*.json' --exclude '*.config.js' --exclude 'jsdoc.json' \
+            --exclude 'typedoc.json' --exclude 'eslint.config.js'
 
           echo "✅ Deploy with cache headers completed"
       
