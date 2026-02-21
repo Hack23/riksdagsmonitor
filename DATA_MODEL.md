@@ -22,6 +22,32 @@
 
 ---
 
+## 🎯 Purpose
+
+This document defines the data model for the Riksdagsmonitor platform, documenting entity relationships, data structures, CIA product schemas, and data quality metrics for Swedish Parliament political data spanning 50+ years.
+
+## 📚 Architecture Documentation Map
+
+| Document | Focus | Description |
+|----------|-------|-------------|
+| [🏛️ Architecture](ARCHITECTURE.md) | 🏗️ C4 Models | System context, containers, components |
+| **[📊 Data Model](DATA_MODEL.md)** | **📊 Data** | **Entity relationships and data dictionary** |
+| [🔄 Flowchart](FLOWCHART.md) | 🔄 Processes | Business and data flow diagrams |
+| [📈 State Diagram](STATEDIAGRAM.md) | 📈 States | System state transitions and lifecycles |
+| [🧠 Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
+| [💼 SWOT](SWOT.md) | 💼 Strategy | Strategic analysis and positioning |
+| [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) | 🔒 Security | Current security controls and design |
+| [🚀 Future Security](FUTURE_SECURITY_ARCHITECTURE.md) | 🔮 Security | Planned security improvements |
+| [🎯 Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE/MITRE ATT&CK analysis |
+| [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) | 🔮 Evolution | Architectural evolution roadmap |
+| [📊 Future Data Model](FUTURE_DATA_MODEL.md) | 🔮 Data | Enhanced data architecture plans |
+| [🔄 Future Flowchart](FUTURE_FLOWCHART.md) | 🔮 Processes | Improved process workflows |
+| [📈 Future State Diagram](FUTURE_STATEDIAGRAM.md) | 🔮 States | Advanced state management |
+| [🧠 Future Mindmap](FUTURE_MINDMAP.md) | 🔮 Concepts | Capability expansion plans |
+| [💼 Future SWOT](FUTURE_SWOT.md) | 🔮 Strategy | Future strategic opportunities |
+
+---
+
 ## Executive Summary
 
 Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ years of Swedish Parliament data (1971-2026) with 19 intelligence products from the CIA platform. This document defines all data entities, relationships, schemas, pipelines, and integration patterns following Hack23 AB's ISMS standards (ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1).
