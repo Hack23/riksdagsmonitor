@@ -604,7 +604,7 @@ while true; do
   echo ""
   echo "🔄 Running batch $BATCH_NUM..."
   
-  node scripts/generate-news-enhanced.ts \
+  npx tsx scripts/generate-news-enhanced.ts \
     --types="$ARTICLE_TYPES" \
     --languages="$LANG_ARG" \
     --batch-size=5 \
@@ -1011,7 +1011,7 @@ fi
 **CRITICAL**: After generating articles, regenerate all 14 language news index files:
 
 ```bash
-node scripts/generate-news-indexes.ts
+npx tsx scripts/generate-news-indexes.ts
 ```
 
 This script:
@@ -1030,7 +1030,7 @@ Without running this script, newly generated articles won't appear in the news i
 After regenerating indexes, update the centralized news metadata database:
 
 ```bash
-node --experimental-strip-types scripts/extract-news-metadata.ts
+npx tsx scripts/extract-news-metadata.ts
 ```
 
 This script:
@@ -1048,7 +1048,7 @@ This script:
 Run the sitemap generation script:
 
 ```bash
-node scripts/generate-sitemap.ts
+npx tsx scripts/generate-sitemap.ts
 ```
 
 This will:
