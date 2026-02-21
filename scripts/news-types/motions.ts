@@ -197,25 +197,25 @@ export const REQUIRED_TOOLS: readonly string[] = [
   'get_motioner'
 ];
 
-interface TitleSet {
+export interface TitleSet {
   title: string;
   subtitle: string;
 }
 
-interface MotionsValidationResult {
+export interface MotionsValidationResult {
   hasMotions: boolean;
   hasMinimumSources: boolean;
   hasOppositionAnalysis: boolean;
   passed: boolean;
 }
 
-interface ArticleInput {
+export interface ArticleInput {
   content?: string;
   sources?: string[];
   [key: string]: unknown;
 }
 
-interface GenerationOptions {
+export interface GenerationOptions {
   languages?: Language[];
   limit?: number;
   writeArticle?: ((html: string, filename: string) => Promise<void>) | null;

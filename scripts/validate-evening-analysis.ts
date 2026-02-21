@@ -140,14 +140,14 @@ import type { EditorialPillar } from './types/editorial.js';
 const __filename: string = fileURLToPath(import.meta.url);
 
 /** Parsed article representation */
-interface ParsedArticle {
+export interface ParsedArticle {
   readonly content: string;
   readonly filepath: string;
   readonly filename: string;
 }
 
 /** Extracted sections from an evening analysis article */
-interface ArticleSections {
+export interface ArticleSections {
   leadParagraph: string | null;
   parliamentaryPulse: string | null;
   governmentWatch: string | null;
@@ -156,12 +156,12 @@ interface ArticleSections {
 }
 
 /** Map of analytical marker categories to regex patterns */
-interface AnalyticalMarkers {
+export interface AnalyticalMarkers {
   readonly [category: string]: readonly RegExp[];
 }
 
 /** Error-only validation result (when parsing fails) */
-interface EveningAnalysisError {
+export interface EveningAnalysisError {
   readonly error: string;
   readonly filepath: string;
 }

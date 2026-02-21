@@ -237,14 +237,14 @@ export interface RawDocument {
 }
 
 /** Week ahead data structure */
-interface WeekAheadData {
+export interface WeekAheadData {
   events: RawCalendarEvent[];
   highlights?: Array<{ title: string; description: string }>;
   context?: string;
 }
 
 /** Article generation data */
-interface ArticleContentData {
+export interface ArticleContentData {
   events?: RawCalendarEvent[];
   reports?: RawDocument[];
   propositions?: RawDocument[];

@@ -83,6 +83,7 @@ export default [
       'dashboard/lib/**',
       'api/scripts/**', // Ignore generated JSDoc prettify scripts
       'docs/api/scripts/**', // Ignore generated JSDoc prettify scripts
+      'api/assets/**', // Ignore TypeDoc generated assets
     ],
   },
 ];

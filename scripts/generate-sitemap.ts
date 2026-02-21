@@ -122,7 +122,7 @@ function getNewsArticles(): ArticleGroup[] {
 }
 
 /**
- * Get API documentation files.
+ * Get API documentation files (supports TypeDoc nested directory structure).
  */
 function getApiDocs(): ApiDoc[] {
   console.log('📚 Scanning API documentation directory...');
@@ -132,15 +132,30 @@ function getApiDocs(): ApiDoc[] {
     return [];
   }
 
-  const files = fs.readdirSync(API_DIR).filter((file) => file.endsWith('.html'));
+  const results: ApiDoc[] = [];
 
-  console.log(`  Found ${files.length} API documentation files`);
+  function scanDir(dir: string): void {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory() && entry.name !== 'assets') {
+        scanDir(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith('.html')) {
+        const relativePath = path.relative(API_DIR, fullPath).replace(/\\/g, '/');
+        results.push({
+          file: relativePath,
+          path: fullPath,
+          lastmod: getFileModTime(fullPath),
+        });
+      }
+    }
+  }
 
-  return files.map((file) => ({
-    file,
-    path: path.join(API_DIR, file),
-    lastmod: getFileModTime(path.join(API_DIR, file)),
-  }));
+  scanDir(API_DIR);
+
+  console.log(`  Found ${results.length} API documentation files`);
+
+  return results;
 }
 
 /**
@@ -349,7 +364,7 @@ function generateSitemap(): string {
     });
   });
 
-  // API Documentation (JSDoc generated)
+  // API Documentation (TypeDoc generated)
   const apiDocs = getApiDocs();
   if (apiDocs.length > 0) {
     console.log(`  Processing ${apiDocs.length} API documentation files...`);

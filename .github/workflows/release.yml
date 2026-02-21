@@ -197,8 +197,8 @@ jobs:
 
       - name: Generate API documentation
         run: |
-          echo "📚 Generating JSDoc API documentation..."
-          npm run jsdoc
+          echo "📚 Generating TypeDoc API documentation..."
+          npm run typedoc
           echo "✅ API documentation generated in api/"
           
           echo "📁 Syncing API documentation to docs/api/..."

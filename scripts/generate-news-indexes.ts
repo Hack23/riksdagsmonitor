@@ -28,7 +28,7 @@ const NEWS_DIR: string = path.join(__dirname, '..', 'news');
 // Types
 // ---------------------------------------------------------------------------
 
-interface FilterLabels {
+export interface FilterLabels {
   type: string;
   allTypes: string;
   prospective: string;
@@ -49,18 +49,18 @@ interface FilterLabels {
   titleSort: string;
 }
 
-interface I18nStrings {
+export interface I18nStrings {
   noArticles: string;
   loading: string;
   articleCount: string;
 }
 
-interface BreadcrumbLabels {
+export interface BreadcrumbLabels {
   home: string;
   news: string;
 }
 
-interface LanguageConfig {
+export interface LanguageConfig {
   name: string;
   code: string;
   locale: string;
@@ -81,9 +81,9 @@ type LanguageCode =
   | 'de' | 'fr' | 'es' | 'nl'
   | 'ar' | 'he' | 'ja' | 'ko' | 'zh';
 
-type ArticleTypeValue = 'prospective' | 'retrospective' | 'analysis' | 'breaking';
+export type ArticleTypeValue = 'prospective' | 'retrospective' | 'analysis' | 'breaking';
 
-interface NewsArticleMetadata {
+export interface NewsArticleMetadata {
   slug: string;
   lang: string;
   title: string;
@@ -96,7 +96,7 @@ interface NewsArticleMetadata {
   baseSlug?: string;
 }
 
-interface ArticleDisplayData {
+export interface ArticleDisplayData {
   title: string;
   date: string;
   type: ArticleTypeValue;
@@ -108,14 +108,14 @@ interface ArticleDisplayData {
   tags: string[];
 }
 
-interface GenerationResult {
+export interface GenerationResult {
   success: boolean;
   successCount: number;
   errorCount: number;
   articles: Record<string, NewsArticleMetadata[]>;
 }
 
-interface LanguageNoticeMessage {
+export interface LanguageNoticeMessage {
   title: string;
   text: string;
 }

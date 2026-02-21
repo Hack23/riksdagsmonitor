@@ -195,12 +195,12 @@ export const REQUIRED_TOOLS: readonly string[] = [
   'get_betankanden'
 ];
 
-interface TitleSet {
+export interface TitleSet {
   title: string;
   subtitle: string;
 }
 
-interface CommitteeReportsValidationResult {
+export interface CommitteeReportsValidationResult {
   hasCommitteeReports: boolean;
   hasMinimumSources: boolean;
   hasAnalysisTone: boolean;
@@ -208,13 +208,13 @@ interface CommitteeReportsValidationResult {
   passed: boolean;
 }
 
-interface ArticleInput {
+export interface ArticleInput {
   content?: string;
   sources?: string[];
   [key: string]: unknown;
 }
 
-interface GenerationOptions {
+export interface GenerationOptions {
   languages?: Language[];
   limit?: number;
   writeArticle?: ((html: string, filename: string) => Promise<void>) | null;

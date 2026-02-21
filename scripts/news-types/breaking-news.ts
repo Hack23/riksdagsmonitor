@@ -185,12 +185,12 @@ export const REQUIRED_TOOLS: readonly string[] = [
   'search_ledamoter'
 ];
 
-interface TitleSet {
+export interface TitleSet {
   title: string;
   subtitle: string;
 }
 
-interface ArticleInput {
+export interface ArticleInput {
   content?: string;
   sources?: string[];
   [key: string]: unknown;

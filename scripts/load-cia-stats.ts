@@ -35,12 +35,12 @@ const CACHE_MAX_AGE_HOURS = 24;
 // Types
 // ---------------------------------------------------------------------------
 
-interface TableEntry {
+export interface TableEntry {
   readonly name: string;
   readonly count: number;
 }
 
-interface StatsMetadata {
+export interface StatsMetadata {
   source_url: string;
   last_updated: string | null;
   extraction_time: string | null;
@@ -49,7 +49,7 @@ interface StatsMetadata {
   error?: string;
 }
 
-interface StatsCounts {
+export interface StatsCounts {
   total_persons: number;
   total_votes: number;
   total_documents: number;
@@ -79,7 +79,7 @@ interface StatsCounts {
   total_document_content: number;
 }
 
-interface StatsData {
+export interface StatsData {
   metadata: StatsMetadata;
   counts: StatsCounts;
   tables: {
@@ -88,7 +88,7 @@ interface StatsData {
   };
 }
 
-interface CSVRow {
+export interface CSVRow {
   [header: string]: string;
 }
 
@@ -500,4 +500,3 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 }
 
 export { main as loadCIAStats, extractStatistics, parseCSV, fetchCSV };
-export type { StatsData, StatsCounts, StatsMetadata, CSVRow };

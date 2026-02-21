@@ -43,7 +43,7 @@ const INDEX_FILES: readonly string[] = [
 // Types
 // ---------------------------------------------------------------------------
 
-interface LangDescriptions {
+export interface LangDescriptions {
   heroDescription: string;
   twitterDescription: string;
   schemaDescription: string;
@@ -58,7 +58,7 @@ interface LangDescriptions {
   monitoringText?: string;
 }
 
-interface UpdateResult {
+export interface UpdateResult {
   file: string;
   changes: number;
   updated: boolean;

@@ -206,12 +206,12 @@ export const REQUIRED_TOOLS: readonly string[] = [
   'get_calendar_events'
 ];
 
-interface TitleSet {
+export interface TitleSet {
   title: string;
   subtitle: string;
 }
 
-interface WeekAheadValidationResult {
+export interface WeekAheadValidationResult {
   hasCalendarEvents: boolean;
   hasMinimumSources: boolean;
   hasProspectiveTone: boolean;
@@ -219,13 +219,13 @@ interface WeekAheadValidationResult {
   passed: boolean;
 }
 
-interface ArticleInput {
+export interface ArticleInput {
   content?: string;
   sources?: string[];
   [key: string]: unknown;
 }
 
-interface GenerationOptions {
+export interface GenerationOptions {
   languages?: Language[];
   dateRange?: DateRange | null;
   writeArticle?: ((html: string, filename: string) => Promise<void>) | null;

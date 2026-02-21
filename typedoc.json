@@ -1,0 +1,98 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "js",
+    "dashboard",
+    "scripts"
+  ],
+  "entryPointStrategy": "expand",
+  "tsconfig": "tsconfig.typedoc.json",
+  "out": "api",
+  "name": "Riksdagsmonitor Intelligence Platform",
+  "readme": "docs/API_README.md",
+  "plugin": [
+    "typedoc-plugin-mdn-links"
+  ],
+  "exclude": [
+    "**/lib/**",
+    "**/node_modules/**",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/*.d.ts",
+    "**/*.cjs"
+  ],
+  "blockTags": [
+    "@author",
+    "@callback",
+    "@category",
+    "@default",
+    "@defaultValue",
+    "@deprecated",
+    "@description",
+    "@enum",
+    "@example",
+    "@file",
+    "@gdpr",
+    "@hidden",
+    "@intelligence",
+    "@internal",
+    "@license",
+    "@link",
+    "@module",
+    "@osint",
+    "@override",
+    "@param",
+    "@returns",
+    "@remarks",
+    "@risk",
+    "@see",
+    "@security",
+    "@since",
+    "@throws",
+    "@type",
+    "@typedef",
+    "@typeParam",
+    "@version"
+  ],
+  "categorizeByGroup": true,
+  "searchInComments": true,
+  "searchInDocuments": true,
+  "navigationLinks": {
+    "Home": "https://riksdagsmonitor.com",
+    "GitHub": "https://github.com/Hack23/riksdagsmonitor",
+    "ISMS": "https://github.com/Hack23/ISMS-PUBLIC"
+  },
+  "sidebarLinks": {
+    "Architecture": "https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md",
+    "Security": "https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md",
+    "Threat Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md",
+    "Data Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md"
+  },
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeInternal": true,
+  "excludeReferences": true,
+  "includeVersion": true,
+  "hideGenerator": false,
+  "cleanOutputDir": true,
+  "sort": ["source-order"],
+  "kindSortOrder": [
+    "Module",
+    "Namespace",
+    "Class",
+    "Interface",
+    "TypeAlias",
+    "Enum",
+    "Function",
+    "Variable"
+  ],
+  "visibilityFilters": {
+    "protected": false,
+    "private": false,
+    "inherited": true,
+    "@alpha": false,
+    "@beta": false
+  },
+  "groupReferencesByType": true,
+  "suppressCommentWarningsInDeclarationFiles": true
+}

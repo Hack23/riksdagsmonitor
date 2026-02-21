@@ -153,14 +153,14 @@ describe('Sitemap Generation', () => {
     });
 
     it('should include module documentation', () => {
-      const moduleUrls: RegExpMatchArray | null = sitemapContent.match(/api\/module-.+?\.html/g);
+      const moduleUrls: RegExpMatchArray | null = sitemapContent.match(/api\/modules\/.+?\.html/g);
       const moduleUrlCount: number = (moduleUrls || []).length;
       console.log(`  ✓ Found ${moduleUrlCount} module documentation pages`);
       expect(moduleUrlCount).toBeGreaterThan(10);
     });
 
     it('should include script documentation', () => {
-      const scriptUrls: RegExpMatchArray | null = sitemapContent.match(/api\/scripts_.+?\.html/g);
+      const scriptUrls: RegExpMatchArray | null = sitemapContent.match(/api\/modules\/scripts_.+?\.html/g);
       const scriptUrlCount: number = (scriptUrls || []).length;
       console.log(`  ✓ Found ${scriptUrlCount} script documentation pages`);
       expect(scriptUrlCount).toBeGreaterThanOrEqual(10);
