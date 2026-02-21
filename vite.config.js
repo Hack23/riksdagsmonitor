@@ -248,8 +248,13 @@ export default defineConfig({
   // Plugins
   plugins: [
     // Generate Subresource Integrity (SRI) hashes for security
+    // Skip external Google Fonts — they don't support CORS for SRI verification
     sri({
-      algorithm: 'sha384'
+      algorithm: 'sha384',
+      skipResources: [
+        'https://fonts.googleapis.com/*',
+        'https://fonts.gstatic.com/*'
+      ]
     })
   ],
   

@@ -12,8 +12,8 @@
  * */
 
 // ─── Library Imports ─────────────────────────────────────────────────────────
-import 'chart.js/auto';
-import 'chartjs-plugin-annotation';
+// Register Chart.js on globalThis so CIA dashboard modules can access it.
+import './shared/register-globals.js';
 
 // ─── CIA Dashboard Modules ──────────────────────────────────────────────────
 // dashboard-init.ts handles all orchestration internally

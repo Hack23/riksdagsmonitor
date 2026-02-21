@@ -15,10 +15,9 @@
  * */
 
 // ─── Library Imports (Vite bundles these from node_modules) ──────────────────
-// These replace the old js/lib/*.js vendor files
-import 'chart.js/auto';
-import 'chartjs-plugin-annotation';
-import 'd3';
+// Register Chart.js and D3.js on globalThis so dashboard modules can access them.
+// Must be imported before any dashboard module that reads (globalThis as any).Chart / .d3.
+import './shared/register-globals.js';
 
 // ─── UI Components ───────────────────────────────────────────────────────────
 import { initBackToTop } from './ui/back-to-top.js';
