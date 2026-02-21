@@ -146,15 +146,15 @@ jobs:
           echo "📊 Checking documentation coverage in source files..."
           
           # Count source files (JS + TS) across all source directories
-          TOTAL_JS=$(find src/browser scripts \( -name "*.js" -o -name "*.ts" \) | grep -v node_modules | grep -v lib/ | grep -v ".min." | grep -v ".d.ts" | wc -l)
+          TOTAL_SOURCE_FILES=$(find src/browser scripts \( -name "*.js" -o -name "*.ts" \) | grep -v node_modules | grep -v lib/ | grep -v ".min." | grep -v ".d.ts" | wc -l)
           
           # Count files with doc comments (/** */)
-          FILES_WITH_JSDOC=$(find src/browser scripts \( -name "*.js" -o -name "*.ts" \) ! -name "*.min.*" ! -name "*.d.ts" ! -path "*/lib/*" -exec grep -l "/\*\*" {} \; | wc -l)
+          FILES_WITH_DOC_COMMENTS=$(find src/browser scripts \( -name "*.js" -o -name "*.ts" \) ! -name "*.min.*" ! -name "*.d.ts" ! -path "*/lib/*" -exec grep -l "/\*\*" {} \; | wc -l)
           
-          echo "📈 Documentation Coverage: $FILES_WITH_JSDOC / $TOTAL_JS files"
+          echo "📈 Documentation Coverage: $FILES_WITH_DOC_COMMENTS / $TOTAL_SOURCE_FILES files"
           
-          if [ "$TOTAL_JS" -gt 0 ]; then
-            COVERAGE_PERCENT=$((FILES_WITH_JSDOC * 100 / TOTAL_JS))
+          if [ "$TOTAL_SOURCE_FILES" -gt 0 ]; then
+            COVERAGE_PERCENT=$((FILES_WITH_DOC_COMMENTS * 100 / TOTAL_SOURCE_FILES))
             echo "📊 Coverage: ${COVERAGE_PERCENT}%"
             
             if [ "$COVERAGE_PERCENT" -lt 50 ]; then
