@@ -142,10 +142,11 @@ describe('Sitemap Generation', () => {
 
   describe('API Documentation Coverage', () => {
     const apiDirExists = fs.existsSync(path.join(rootDir, 'api'));
+    const skipMsg = '  ⏭ Skipping: api/ directory not found (run typedoc first)';
 
     it('should include API index page if api directory exists', () => {
       if (!apiDirExists) {
-        console.log('  ⏭ Skipping: api/ directory not found (run typedoc first)');
+        console.log(skipMsg);
         return;
       }
       expect(sitemapContent).toContain('<loc>https://riksdagsmonitor.com/api/index.html</loc>');
@@ -153,7 +154,7 @@ describe('Sitemap Generation', () => {
 
     it('should include API documentation files if api directory exists', () => {
       if (!apiDirExists) {
-        console.log('  ⏭ Skipping: api/ directory not found (run typedoc first)');
+        console.log(skipMsg);
         return;
       }
       const apiUrls: RegExpMatchArray | null = sitemapContent.match(/api\/.+?\.html/g);
@@ -164,7 +165,7 @@ describe('Sitemap Generation', () => {
 
     it('should include module documentation if api directory exists', () => {
       if (!apiDirExists) {
-        console.log('  ⏭ Skipping: api/ directory not found (run typedoc first)');
+        console.log(skipMsg);
         return;
       }
       const moduleUrls: RegExpMatchArray | null = sitemapContent.match(/api\/modules\/.+?\.html/g);
@@ -175,7 +176,7 @@ describe('Sitemap Generation', () => {
 
     it('should include script documentation if api directory exists', () => {
       if (!apiDirExists) {
-        console.log('  ⏭ Skipping: api/ directory not found (run typedoc first)');
+        console.log(skipMsg);
         return;
       }
       const scriptUrls: RegExpMatchArray | null = sitemapContent.match(/api\/modules\/scripts_.+?\.html/g);
