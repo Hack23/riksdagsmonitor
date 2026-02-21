@@ -12,6 +12,7 @@ build/
 *.log
 data/cia-exports/
 types/
+!scripts/types/
 schemas/metadata/
 validation-report.json
 htmlhint-report.txt
