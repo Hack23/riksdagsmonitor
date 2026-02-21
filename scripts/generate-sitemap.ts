@@ -96,6 +96,7 @@ function loadGitTimestamps(): void {
     }
   } catch (_error: unknown) {
     // git not available — getFileModTime will fall back to fs.statSync
+    console.warn('⚠️ Git timestamps unavailable — falling back to filesystem mtime');
   }
 }
 
