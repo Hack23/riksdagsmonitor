@@ -282,17 +282,17 @@ class PreElectionDataManager {
     if (!this.preElectionData) return null;
     const targetYear = year !== undefined ? year : this.getLatestYear();
     if (!targetYear) return null;
-    return this.preElectionData.find(d => d['year'] === targetYear) || null;
+    return this.preElectionData.find(d => Number(d['year']) === targetYear) || null;
   }
 
   calculateDeviations(currentYear?: number): Deviations | null {
     const data = this.getCurrentYearData(currentYear);
     if (!data) return null;
     return {
-      ballots: (data['ballot_percent_change_from_baseline'] as number) || 0,
-      documents: (data['document_percent_change_from_baseline'] as number) || 0,
-      assignments: (((data['total_new_assignments'] as number) - (data['baseline_assignments'] as number)) / (data['baseline_assignments'] as number) * 100) || 0,
-      attendance: (((data['avg_attendance_rate'] as number) - (data['baseline_attendance'] as number)) / (data['baseline_attendance'] as number) * 100) || 0
+      ballots: Number(data['ballot_percent_change_from_baseline']) || 0,
+      documents: Number(data['document_percent_change_from_baseline']) || 0,
+      assignments: ((Number(data['total_new_assignments']) - Number(data['baseline_assignments'])) / (Number(data['baseline_assignments']) || 1) * 100) || 0,
+      attendance: ((Number(data['avg_attendance_rate']) - Number(data['baseline_attendance'])) / (Number(data['baseline_attendance']) || 1) * 100) || 0
     };
   }
 
@@ -361,7 +361,7 @@ class PreElectionCharts {
     if (!ctx) return;
     const data = this.dataManager.preElectionData;
     if (!data || data.length === 0) return;
-    const sorted = [...data].sort((a, b) => (a['year'] as number) - (b['year'] as number));
+    const sorted = [...data].sort((a, b) => Number(a['year']) - Number(b['year']));
     const t = this.t;
 
     new Chart(ctx, {
@@ -393,7 +393,7 @@ class PreElectionCharts {
     if (!ctx) return;
     const data = this.dataManager.electionComparisonData;
     if (!data || data.length === 0) return;
-    const sorted = [...data].sort((a, b) => (a['year'] as number) - (b['year'] as number));
+    const sorted = [...data].sort((a, b) => Number(a['year']) - Number(b['year']));
     const t = this.t;
 
     new Chart(ctx, {
@@ -401,8 +401,8 @@ class PreElectionCharts {
       data: {
         labels: sorted.map(d => d['year']),
         datasets: [
-          { label: t.chartLabels['electionYear'], data: sorted.map(d => (d['is_election_year'] === 't' || d['is_election_year'] === true) ? d['total_ballots'] : null), backgroundColor: CONFIG.chartColors.election + '99', borderColor: CONFIG.chartColors.election, borderWidth: 1 },
-          { label: t.chartLabels['nonElectionYear'], data: sorted.map(d => (d['is_election_year'] === 'f' || d['is_election_year'] === false) ? d['total_ballots'] : null), backgroundColor: CONFIG.chartColors.nonElection + '99', borderColor: CONFIG.chartColors.nonElection, borderWidth: 1 }
+          { label: t.chartLabels['electionYear'], data: sorted.map(d => (d['is_election_year'] === 't' || d['is_election_year'] === 'true') ? d['total_ballots'] : null), backgroundColor: CONFIG.chartColors.election + '99', borderColor: CONFIG.chartColors.election, borderWidth: 1 },
+          { label: t.chartLabels['nonElectionYear'], data: sorted.map(d => (d['is_election_year'] === 'f' || d['is_election_year'] === 'false') ? d['total_ballots'] : null), backgroundColor: CONFIG.chartColors.nonElection + '99', borderColor: CONFIG.chartColors.nonElection, borderWidth: 1 }
         ]
       },
       options: {
@@ -426,8 +426,8 @@ class PreElectionCharts {
       data: {
         labels: [t.metrics['ballots'], t.metrics['documents'], t.metrics['assignments'], t.metrics['attendance'], t.metrics['winRate'], t.metrics['absenceRate']],
         datasets: [
-          { label: `${latestYear} Q4`, data: [(data['total_ballots'] as number) / 100, (data['total_documents'] as number) / 100, data['total_new_assignments'], data['avg_attendance_rate'], data['avg_party_win_rate'], data['avg_party_absence_rate']], borderColor: CONFIG.chartColors.ballots, backgroundColor: CONFIG.chartColors.ballots + '33', pointBackgroundColor: CONFIG.chartColors.ballots },
-          { label: t.baseline, data: [(data['baseline_ballots'] as number) / 100, (data['baseline_documents'] as number) / 100, data['baseline_assignments'], (data['baseline_attendance'] as number) || 85, (data['baseline_party_win_rate'] as number) || 56, (data['baseline_party_absence_rate'] as number) || 15], borderColor: CONFIG.chartColors.baseline, backgroundColor: CONFIG.chartColors.baseline + '22', borderDash: [5, 5], pointBackgroundColor: CONFIG.chartColors.baseline }
+          { label: `${latestYear} Q4`, data: [Number(data['total_ballots']) / 100, Number(data['total_documents']) / 100, Number(data['total_new_assignments']), Number(data['avg_attendance_rate']), Number(data['avg_party_win_rate']), Number(data['avg_party_absence_rate'])], borderColor: CONFIG.chartColors.ballots, backgroundColor: CONFIG.chartColors.ballots + '33', pointBackgroundColor: CONFIG.chartColors.ballots },
+          { label: t.baseline, data: [Number(data['baseline_ballots']) / 100, Number(data['baseline_documents']) / 100, Number(data['baseline_assignments']), Number(data['baseline_attendance']) || 85, Number(data['baseline_party_win_rate']) || 56, Number(data['baseline_party_absence_rate']) || 15], borderColor: CONFIG.chartColors.baseline, backgroundColor: CONFIG.chartColors.baseline + '22', borderDash: [5, 5], pointBackgroundColor: CONFIG.chartColors.baseline }
         ]
       },
       options: {
@@ -443,7 +443,7 @@ class PreElectionCharts {
     if (!ctx) return;
     const data = this.dataManager.preElectionData;
     if (!data || data.length === 0) return;
-    const sorted = [...data].sort((a, b) => (a['year'] as number) - (b['year'] as number));
+    const sorted = [...data].sort((a, b) => Number(a['year']) - Number(b['year']));
 
     new Chart(ctx, {
       type: 'line',
@@ -452,7 +452,7 @@ class PreElectionCharts {
         datasets: [
           { label: 'Party Win Rate (%)', data: sorted.map(d => d['avg_party_win_rate']), borderColor: CONFIG.chartColors.normal, backgroundColor: CONFIG.chartColors.normal + '33', tension: 0.3, yAxisID: 'y' },
           { label: 'Party Absence Rate (%)', data: sorted.map(d => d['avg_party_absence_rate']), borderColor: CONFIG.chartColors.alert, backgroundColor: CONFIG.chartColors.alert + '33', tension: 0.3, yAxisID: 'y' },
-          { label: 'Party Documents (÷100)', data: sorted.map(d => ((d['party_documents_total'] as number) || 0) / 100), borderColor: CONFIG.chartColors.documents, backgroundColor: CONFIG.chartColors.documents + '33', tension: 0.3, yAxisID: 'y2' }
+          { label: 'Party Documents (÷100)', data: sorted.map(d => (Number(d['party_documents_total']) || 0) / 100), borderColor: CONFIG.chartColors.documents, backgroundColor: CONFIG.chartColors.documents + '33', tension: 0.3, yAxisID: 'y2' }
         ]
       },
       options: {
@@ -473,10 +473,10 @@ class PreElectionCharts {
     if (!ctx) return;
     const data = this.dataManager.preElectionData;
     if (!data || data.length === 0) return;
-    const sorted = [...data].sort((a, b) => (a['year'] as number) - (b['year'] as number));
+    const sorted = [...data].sort((a, b) => Number(a['year']) - Number(b['year']));
 
     const years = sorted.map(d => d['year']);
-    const values = sorted.map(d => d['total_ballots'] as number);
+    const values = sorted.map(d => Number(d['total_ballots']));
     const labels: string[] = [];
     const changes: number[] = [];
 
@@ -564,7 +564,7 @@ function updateStatusCards(dataManager: PreElectionDataManager): void {
   const ballotCard = document.querySelector('.status-card[data-metric="ballots"]');
   if (ballotCard) {
     const currentValue = ballotCard.querySelector('.current-value');
-    if (currentValue) currentValue.textContent = (data['total_ballots'] as number).toLocaleString();
+    if (currentValue) currentValue.textContent = Number(data['total_ballots']).toLocaleString();
     const baselineComparison = ballotCard.querySelector('.baseline-comparison');
     if (baselineComparison) baselineComparison.textContent = (deviations.ballots > 0 ? '+' : '') + deviations.ballots.toFixed(2) + '% ' + t.vsBaseline;
     const badge = ballotCard.querySelector('.status-badge');
@@ -579,7 +579,7 @@ function updateStatusCards(dataManager: PreElectionDataManager): void {
   const docCard = document.querySelector('.status-card[data-metric="documents"]');
   if (docCard) {
     const currentValue = docCard.querySelector('.current-value');
-    if (currentValue) currentValue.textContent = (data['total_documents'] as number).toLocaleString();
+    if (currentValue) currentValue.textContent = Number(data['total_documents']).toLocaleString();
     const baselineComparison = docCard.querySelector('.baseline-comparison');
     if (baselineComparison) baselineComparison.textContent = (deviations.documents > 0 ? '+' : '') + deviations.documents.toFixed(2) + '% ' + t.vsBaseline;
     const badge = docCard.querySelector('.status-badge');
@@ -590,7 +590,7 @@ function updateStatusCards(dataManager: PreElectionDataManager): void {
   const attendanceCard = document.querySelector('.status-card[data-metric="attendance"]');
   if (attendanceCard) {
     const currentValue = attendanceCard.querySelector('.current-value');
-    if (currentValue) currentValue.textContent = (data['avg_attendance_rate'] as number).toFixed(2) + '%';
+    if (currentValue) currentValue.textContent = Number(data['avg_attendance_rate']).toFixed(2) + '%';
     const baselineComparison = attendanceCard.querySelector('.baseline-comparison');
     if (baselineComparison) baselineComparison.textContent = (deviations.attendance > 0 ? '+' : '') + deviations.attendance.toFixed(2) + '% ' + t.vsBaseline;
     const badge = attendanceCard.querySelector('.status-badge');
@@ -601,13 +601,13 @@ function updateStatusCards(dataManager: PreElectionDataManager): void {
   const partyCard = document.querySelector('.status-card[data-metric="party-performance"]');
   if (partyCard) {
     const currentValue = partyCard.querySelector('.current-value');
-    if (currentValue) currentValue.textContent = (data['avg_party_win_rate'] as number).toFixed(2) + '%';
+    if (currentValue) currentValue.textContent = Number(data['avg_party_win_rate']).toFixed(2) + '%';
 
-    const availableYears = Array.from(new Set(dataManager.preElectionData!.map(d => d['year'] as number))).sort((a, b) => a - b);
+    const availableYears = Array.from(new Set(dataManager.preElectionData!.map(d => Number(d['year'])))).sort((a, b) => a - b);
     const latestYearIndex = availableYears.indexOf(latestYear!);
     const prevYearValue = latestYearIndex > 0 ? availableYears[latestYearIndex - 1] : null;
-    const prevYear = prevYearValue !== null ? dataManager.preElectionData!.find(d => d['year'] === prevYearValue) : null;
-    const yoyChange = (prevYear && prevYear['avg_party_win_rate']) ? (((data['avg_party_win_rate'] as number) - (prevYear['avg_party_win_rate'] as number)) / (prevYear['avg_party_win_rate'] as number) * 100) : 0;
+    const prevYear = prevYearValue !== null ? dataManager.preElectionData!.find(d => Number(d['year']) === prevYearValue) : null;
+    const yoyChange = (prevYear && prevYear['avg_party_win_rate']) ? ((Number(data['avg_party_win_rate']) - Number(prevYear['avg_party_win_rate'])) / (Number(prevYear['avg_party_win_rate']) || 1) * 100) : 0;
 
     const baselineComparison = partyCard.querySelector('.baseline-comparison');
     if (baselineComparison) baselineComparison.textContent = (yoyChange > 0 ? '+' : '') + yoyChange.toFixed(2) + '% ' + t.yoy;

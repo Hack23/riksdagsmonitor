@@ -365,7 +365,7 @@ class ElectionCycleCharts {
     const aggregated: Record<string, { label: string; attendance: number; ballots: number; approval: number; preElection: boolean }> = {};
     temporalData.forEach(d => {
       const key = `${d['election_cycle_id']}-${d['semester']}`;
-      if (!aggregated[key]) aggregated[key] = { label: key, attendance: parseFloat(String(d['avg_attendance_rate'] ?? 0)), ballots: parseInt(String(d['total_ballots'] ?? 0), 10), approval: parseFloat(String(d['avg_approval_rate'] ?? 0)), preElection: d['is_pre_election_semester'] === 'TRUE' || d['is_pre_election_semester'] === true };
+      if (!aggregated[key]) aggregated[key] = { label: key, attendance: parseFloat(String(d['avg_attendance_rate'] ?? 0)), ballots: parseInt(String(d['total_ballots'] ?? 0), 10), approval: parseFloat(String(d['avg_approval_rate'] ?? 0)), preElection: String(d['is_pre_election_semester']).toUpperCase() === 'TRUE' };
     });
 
     const labels = Object.keys(aggregated).sort();

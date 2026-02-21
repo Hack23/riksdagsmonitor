@@ -276,11 +276,11 @@ function renderCoalitionNetwork(): void {
   const link = svg.append('g').attr('class', 'links').selectAll('line').data(links).enter().append('line')
     .attr('stroke', '#999').attr('stroke-opacity', (d: any) => d.strength).attr('stroke-width', (d: any) => Math.sqrt(d.strength * 10))
     .style('cursor', 'pointer')
-    .on('mouseover', function(event: any, d: any) {
+    .on('mouseover', function(this: SVGLineElement, event: any, d: any) {
       d3.select(this).attr('stroke', '#ff6600').attr('stroke-width', Math.sqrt(d.strength * 10) + 2);
       showTooltip(event, `Coalition Strength: ${(d.strength * 100).toFixed(0)}%`);
     })
-    .on('mouseout', function(_event: any, d: any) {
+    .on('mouseout', function(this: SVGLineElement, _event: any, d: any) {
       d3.select(this).attr('stroke', '#999').attr('stroke-width', Math.sqrt(d.strength * 10));
       hideTooltip();
     });
@@ -296,13 +296,13 @@ function renderCoalitionNetwork(): void {
   node.append('text').text((d: any) => d.id).attr('x', 0).attr('y', 0).attr('text-anchor', 'middle').attr('dominant-baseline', 'middle').attr('fill', '#fff').attr('font-weight', 'bold').attr('font-size', '14px').attr('pointer-events', 'none');
   node.append('text').text((d: any) => d.name).attr('x', 0).attr('y', (d: any) => d.influence * 3 + 15).attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').attr('pointer-events', 'none');
 
-  node.on('mouseover', function(event: any, d: any) {
+  node.on('mouseover', function(this: SVGGElement, event: any, d: any) {
     d3.select(this).select('circle').attr('stroke-width', 4).attr('stroke', '#ff6600');
     showTooltip(event, `${d.fullName}<br>Influence: ${d.influence.toFixed(1)}`);
-  }).on('mouseout', function() {
+  }).on('mouseout', function(this: SVGGElement) {
     d3.select(this).select('circle').attr('stroke-width', 2).attr('stroke', '#fff');
     hideTooltip();
-  }).on('click', function(_event: any, d: any) {
+  }).on('click', function(this: SVGGElement, _event: any, d: any) {
     alert(`${d.fullName}\nInfluence Score: ${d.influence.toFixed(1)}\nColor: ${d.color}`);
   }).on('keydown', function(event: any, d: any) {
     if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); alert(`${d.fullName}\nInfluence Score: ${d.influence.toFixed(1)}\nColor: ${d.color}`); }

@@ -328,10 +328,10 @@ class SeasonalPatternsDataManager {
   filterData(filters: SeasonalFilters): CSVRow[] {
     if (!this.data) return [];
     return this.data.filter(row => {
-      if (filters.year && filters.year !== 'all' && row['year'] !== parseInt(filters.year)) return false;
-      if (filters.quarter && filters.quarter !== 'all' && row['quarter'] !== parseInt(filters.quarter)) return false;
+      if (filters.year && filters.year !== 'all' && String(row['year']) !== filters.year) return false;
+      if (filters.quarter && filters.quarter !== 'all' && String(row['quarter']) !== filters.quarter) return false;
       if (filters.election && filters.election !== 'all') {
-        const isElection = row['is_election_year'] === 't' || row['is_election_year'] === true;
+        const isElection = row['is_election_year'] === 't' || row['is_election_year'] === 'true';
         if (filters.election === 'election' && !isElection) return false;
         if (filters.election === 'non-election' && isElection) return false;
       }
@@ -385,7 +385,7 @@ class SeasonalPatternsCharts {
     const height = 600 - margin.top - margin.bottom;
 
     const svg = d3.select(container).append('svg').attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom).attr('role', 'img').attr('aria-label', this.translations.charts.heatmap.title).append('g').attr('transform', `translate(${margin.left},${margin.top})`);
-    const years = [...new Set(data.map((d: CSVRow) => d['year']))].sort() as number[];
+    const years = Array.from(new Set(data.map((d: CSVRow) => d['year']))).sort();
     const quarters = [1, 2, 3, 4];
     const xScale = d3.scaleBand().domain(quarters).range([0, width]).padding(0.05);
     const yScale = d3.scaleBand().domain(years).range([0, height]).padding(0.05);
@@ -419,7 +419,7 @@ class SeasonalPatternsCharts {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const t = this.translations.chartLabels;
-    const sortedData = [...data].sort((a, b) => { if (a['year'] !== b['year']) return (a['year'] as number) - (b['year'] as number); return (a['quarter'] as number) - (b['quarter'] as number); });
+    const sortedData = [...data].sort((a, b) => { if (a['year'] !== b['year']) return Number(a['year']) - Number(b['year']); return Number(a['quarter']) - Number(b['quarter']); });
     const labels = sortedData.map(d => `${d['year']}-Q${d['quarter']}`);
 
     this.chartInstances['zscore'] = new Chart(ctx, {
@@ -465,13 +465,13 @@ class SeasonalPatternsCharts {
     const canvas = document.getElementById('classification-chart') as HTMLCanvasElement | null;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const years = [...new Set(data.map(d => d['year']))].sort() as number[];
-    const classifications: Record<string, Record<number, number>> = {};
+    const years = Array.from(new Set(data.map(d => d['year']))).sort();
+    const classifications: Record<string, Record<string, number>> = {};
     data.forEach(row => {
-      const classification = (row['seasonal_pattern_classification'] as string) || 'UNKNOWN';
+      const classification = row['seasonal_pattern_classification'] || 'UNKNOWN';
       if (!classifications[classification]) classifications[classification] = {};
-      if (!classifications[classification][row['year'] as number]) classifications[classification][row['year'] as number] = 0;
-      classifications[classification][row['year'] as number]++;
+      if (!classifications[classification][row['year']]) classifications[classification][row['year']] = 0;
+      classifications[classification][row['year']]++;
     });
     const datasets = Object.keys(classifications).map(classification => {
       const counts = years.map(year => classifications[classification][year] || 0);
@@ -493,7 +493,7 @@ class SeasonalPatternsCharts {
     const canvas = document.getElementById('qoq-change-chart') as HTMLCanvasElement | null;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const sortedData = [...data].filter(d => d['qoq_ballot_change_pct'] !== null && d['qoq_ballot_change_pct'] !== undefined).sort((a, b) => { if (a['year'] !== b['year']) return (a['year'] as number) - (b['year'] as number); return (a['quarter'] as number) - (b['quarter'] as number); });
+    const sortedData = [...data].filter(d => d['qoq_ballot_change_pct'] !== null && d['qoq_ballot_change_pct'] !== undefined).sort((a, b) => { if (a['year'] !== b['year']) return Number(a['year']) - Number(b['year']); return Number(a['quarter']) - Number(b['quarter']); });
     const labels = sortedData.map(d => `${d['year']}-Q${d['quarter']}`);
     const changes = sortedData.map(d => Number(d['qoq_ballot_change_pct']) || 0);
     const colors = changes.map(change => change > 0 ? CONFIG.colors.success : change < 0 ? CONFIG.colors.danger : CONFIG.colors.info);
@@ -546,7 +546,7 @@ class SeasonalPatternsDashboard {
 
     if (yearFilter) {
       yearFilter.addEventListener('change', (e) => { this.currentFilters.year = (e.target as HTMLSelectElement).value; this.applyFilters(); });
-      const years = [...new Set(this.dataManager.data!.map(d => d['year']))].sort((a: any, b: any) => b - a);
+      const years = Array.from(new Set(this.dataManager.data!.map(d => d['year']))).sort((a, b) => Number(b) - Number(a));
       years.forEach(year => { const o = document.createElement('option'); o.value = String(year); o.textContent = String(year); yearFilter.appendChild(o); });
     }
     if (quarterFilter) { quarterFilter.addEventListener('change', (e) => { this.currentFilters.quarter = (e.target as HTMLSelectElement).value; this.applyFilters(); }); }
@@ -555,7 +555,7 @@ class SeasonalPatternsDashboard {
       classificationFilter.addEventListener('change', (e) => { this.currentFilters.classification = (e.target as HTMLSelectElement).value; this.applyFilters(); });
       const classificationSet = new Set<string>();
       this.dataManager.data!.forEach(d => { if (d['seasonal_pattern_classification']) classificationSet.add(d['seasonal_pattern_classification'] as string); if (d['base_activity_classification']) classificationSet.add(d['base_activity_classification'] as string); });
-      [...classificationSet].sort().forEach(classification => {
+      Array.from(classificationSet).sort().forEach(classification => {
         const o = document.createElement('option'); o.value = classification;
         o.textContent = this.translations.classifications?.[classification] || TRANSLATIONS['en']?.classifications?.[classification] || classification;
         classificationFilter.appendChild(o);

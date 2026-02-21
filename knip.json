@@ -1,6 +1,7 @@
 {
   "$schema": "https://unpkg.com/knip@latest/schema.json",
   "entry": [
+    "src/browser/**/*.ts",
     "js/*.js",
     "dashboard/*.js",
     "scripts/*.ts",
@@ -12,6 +13,7 @@
     "cypress/**/*.js"
   ],
   "project": [
+    "src/browser/**/*.ts",
     "js/**/*.js",
     "dashboard/**/*.js",
     "scripts/**/*.ts",
@@ -24,9 +26,6 @@
     "js/lib/**"
   ],
   "ignoreDependencies": [
-    "chart.js",
-    "chartjs-plugin-annotation",
-    "d3",
     "htmlhint",
     "js-yaml",
     "playwright"
