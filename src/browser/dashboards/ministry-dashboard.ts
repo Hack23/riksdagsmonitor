@@ -1125,8 +1125,8 @@ function renderDecisionImpactChart(
   const Chart = (globalThis as any).Chart;
   if (!Chart) return;
 
-  const ministries = [...new Set(data.map((d) => d.ministry))].slice(0, 5);
-  const periods = [...new Set(data.map((d) => d.period))].sort();
+  const ministries = Array.from(new Set(data.map((d) => d.ministry))).slice(0, 5);
+  const periods = Array.from(new Set(data.map((d) => d.period))).sort();
   const lineColors = ['#006633', '#00cc66', '#008838', '#007744', '#004422'];
 
   const datasets = ministries.map((ministry, index) => {
