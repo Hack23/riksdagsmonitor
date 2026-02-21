@@ -156,6 +156,12 @@ jobs:
           commit_message: "chore(release): bump version to ${{ github.event.inputs.version }}"
           tagging_message: "${{ github.event.inputs.version }}"
 
+      - name: Generate API documentation
+        run: |
+          echo "📚 Generating TypeDoc API documentation..."
+          npm run typedoc
+          echo "✅ API documentation generated in api/"
+
       - name: Verify Cypress
         run: npx cypress verify
 
@@ -195,12 +201,8 @@ jobs:
           rm -rf docs/dependencies/* || true
           echo "✅ Old documentation cleaned"
 
-      - name: Generate API documentation
+      - name: Copy API documentation to docs
         run: |
-          echo "📚 Generating TypeDoc API documentation..."
-          npm run typedoc
-          echo "✅ API documentation generated in api/"
-          
           echo "📁 Syncing API documentation to docs/api/..."
           mkdir -p docs/api
           if [ -d "api" ]; then
