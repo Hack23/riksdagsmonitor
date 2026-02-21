@@ -93,7 +93,7 @@ Do NOT use for:
 
 **Token Handling Rules:**
 ```
-✅ DO: Use environment variable references (${VAR_NAME})
+✅ DO: Use environment variable references (${VAR_NAME} in MCP JSON config files; $VAR_NAME in shell scripts; ${{ secrets.VAR_NAME }} in GitHub Actions)
 ✅ DO: Use GitHub Actions secrets for CI/CD tokens
 ✅ DO: Rotate tokens at least quarterly
 ✅ DO: Use fine-grained PATs with minimal scopes

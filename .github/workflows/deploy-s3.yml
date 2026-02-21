@@ -95,6 +95,21 @@ jobs:
       - name: Build with Vite
         run: npm run build
 
+      - name: Verify build artifacts
+        run: |
+          echo "Verifying Vite build output..."
+          if [ ! -d "dist" ]; then
+            echo "❌ Build verification failed: 'dist' directory is missing."
+            exit 1
+          fi
+
+          if [ ! -f "dist/index.html" ]; then
+            echo "❌ Build verification failed: 'dist/index.html' is missing."
+            exit 1
+          fi
+
+          echo "✅ Build artifacts verified: 'dist' directory and 'dist/index.html' exist."
+
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
         with:
