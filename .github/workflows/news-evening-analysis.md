@@ -759,13 +759,13 @@ fi
 
 ```bash
 # Regenerate all 14 language news index files
-node scripts/generate-news-indexes.ts
+npx tsx scripts/generate-news-indexes.ts
 
 # Update news metadata database
-node --experimental-strip-types scripts/extract-news-metadata.ts
+npx tsx scripts/extract-news-metadata.ts
 
 # Update sitemap
-node scripts/generate-sitemap.ts
+npx tsx scripts/generate-sitemap.ts
 ```
 
 **Always commit `data/news-articles.json` alongside the generated articles.** This metadata database is used by dashboards and data consumers.
