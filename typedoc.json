@@ -1,8 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": [
-    "js",
-    "dashboard",
+    "src/browser",
     "scripts"
   ],
   "entryPointStrategy": "expand",
@@ -52,7 +51,17 @@
     "@type",
     "@typedef",
     "@typeParam",
-    "@version"
+    "@version",
+    "@intelligence",
+    "@business",
+    "@marketing",
+    "@market",
+    "@revenue",
+    "@growth",
+    "@audience",
+    "@competitive",
+    "@stakeholder",
+    "@kpi"
   ],
   "categorizeByGroup": true,
   "searchInComments": true,
@@ -66,7 +75,9 @@
     "Architecture": "https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md",
     "Security": "https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md",
     "Threat Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md",
-    "Data Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md"
+    "Data Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md",
+    "SWOT": "https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md",
+    "Business Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md"
   },
   "excludePrivate": true,
   "excludeProtected": false,

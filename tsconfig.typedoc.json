@@ -16,8 +16,7 @@
     "types": ["node"]
   },
   "include": [
-    "js/**/*.js",
-    "dashboard/**/*.js",
+    "src/browser/**/*.ts",
     "scripts/**/*.ts",
     "scripts/**/*.js"
   ],
