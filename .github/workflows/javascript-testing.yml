@@ -69,6 +69,9 @@ jobs:
       - name: TypeScript type-check (scripts)
         run: npx tsc --project tsconfig.scripts.json --noEmit
       
+      - name: Generate TypeDoc API documentation
+        run: npm run typedoc
+      
       - name: Run Vitest unit tests
         run: npm run test:coverage
       
