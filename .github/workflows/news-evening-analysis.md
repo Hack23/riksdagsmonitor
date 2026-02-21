@@ -759,10 +759,10 @@ fi
 
 ```bash
 # Regenerate all 14 language news index files
-node scripts/generate-news-indexes.js
+node scripts/generate-news-indexes.ts
 
 # Update sitemap
-node scripts/generate-sitemap.js
+node scripts/generate-sitemap.ts
 ```
 
 ### Step 6.5: Validate Generated Content (BLOCKING)

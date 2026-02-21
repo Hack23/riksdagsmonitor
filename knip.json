@@ -1,0 +1,40 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "js/*.js",
+    "dashboard/*.js",
+    "scripts/*.ts",
+    "scripts/*.js",
+    "scripts/news-types/*.ts",
+    "tests/**/*.test.ts",
+    "tests/**/*.test.js",
+    "cypress.config.js",
+    "cypress/**/*.js"
+  ],
+  "project": [
+    "js/**/*.js",
+    "dashboard/**/*.js",
+    "scripts/**/*.ts",
+    "scripts/**/*.js",
+    "tests/**/*.ts",
+    "tests/**/*.js",
+    "cypress/**/*.js"
+  ],
+  "ignore": [
+    "js/lib/**"
+  ],
+  "ignoreDependencies": [
+    "chart.js",
+    "chartjs-plugin-annotation",
+    "d3",
+    "htmlhint",
+    "js-yaml",
+    "playwright"
+  ],
+  "ignoreBinaries": [
+    "playwright",
+    "cypress",
+    "python3",
+    "linkinator"
+  ]
+}

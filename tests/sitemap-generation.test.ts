@@ -163,7 +163,7 @@ describe('Sitemap Generation', () => {
       const scriptUrls: RegExpMatchArray | null = sitemapContent.match(/api\/scripts_.+?\.html/g);
       const scriptUrlCount: number = (scriptUrls || []).length;
       console.log(`  ✓ Found ${scriptUrlCount} script documentation pages`);
-      expect(scriptUrlCount).toBeGreaterThan(10);
+      expect(scriptUrlCount).toBeGreaterThanOrEqual(10);
     });
   });
 

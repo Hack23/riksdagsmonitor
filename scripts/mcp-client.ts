@@ -268,7 +268,7 @@ export class MCPClient {
   - Try manual workflow dispatch with force_generation=true`;
       }
 
-      throw new Error(errorMessage, { cause: err });
+      throw new Error(errorMessage, { cause: error });
     } finally {
       clearTimeout(timeoutId);
     }
@@ -618,5 +618,3 @@ export async function enrichDocumentsWithContent(
 ): ReturnType<MCPClient['enrichDocumentsWithContent']> {
   return getDefaultClient().enrichDocumentsWithContent(...args);
 }
-
-export default MCPClient;

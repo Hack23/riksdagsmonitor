@@ -485,7 +485,7 @@ get_voting_group({ rm: "2025/26", groupBy: "parti" })
 
 ### Step 3: Analyze Data
 
-The automated news generation script (`scripts/generate-news-enhanced.js`) now includes **enhanced document enrichment** that automatically:
+The automated news generation script (`scripts/generate-news-enhanced.ts`) now includes **enhanced document enrichment** that automatically:
 
 1. **Fetches detailed document metadata** via `enrichDocumentsWithContent()`:
    - Extracts author names from `intressent.tilltalsnamn` + `efternamn` fields
@@ -553,7 +553,7 @@ echo "📋 Final languages: $LANG_ARG"
 
 #### Run Automated News Generation Script (Batched)
 
-The `generate-news-enhanced.js` script supports **batch mode** to avoid generating all 14 languages at once (which is too complex for a single pass). Use `--batch-size=5` and `--skip-existing` to process languages in manageable batches:
+The `generate-news-enhanced.ts` script supports **batch mode** to avoid generating all 14 languages at once (which is too complex for a single pass). Use `--batch-size=5` and `--skip-existing` to process languages in manageable batches:
 
 ```bash
 # Get article types input — use day-of-week schedule if not manually specified
@@ -604,7 +604,7 @@ while true; do
   echo ""
   echo "🔄 Running batch $BATCH_NUM..."
   
-  node scripts/generate-news-enhanced.js \
+  node scripts/generate-news-enhanced.ts \
     --types="$ARTICLE_TYPES" \
     --languages="$LANG_ARG" \
     --batch-size=5 \
@@ -774,7 +774,7 @@ The script handles all 14 supported languages:
 
 #### The Problem
 
-The generation script (`generate-news-enhanced.js`) outputs HTML articles with Swedish Riksdag API data (document titles, summaries) marked with `data-translate="true" lang="sv"` attributes. The script **cannot** translate this content because:
+The generation script (`generate-news-enhanced.ts`) outputs HTML articles with Swedish Riksdag API data (document titles, summaries) marked with `data-translate="true" lang="sv"` attributes. The script **cannot** translate this content because:
 
 1. The Riksdag API returns ALL data in Swedish only
 2. Automatic translation would produce poor quality
@@ -1011,7 +1011,7 @@ fi
 **CRITICAL**: After generating articles, regenerate all 14 language news index files:
 
 ```bash
-node scripts/generate-news-indexes.js
+node scripts/generate-news-indexes.ts
 ```
 
 This script:
@@ -1030,7 +1030,7 @@ Without running this script, newly generated articles won't appear in the news i
 Run the sitemap generation script:
 
 ```bash
-node scripts/generate-sitemap.js
+node scripts/generate-sitemap.ts
 ```
 
 This will:

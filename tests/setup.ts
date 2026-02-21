@@ -21,7 +21,7 @@ interface MockChartConfig {
 }
 
 declare global {
-  // eslint-disable-next-line no-var
+   
   var Chart: new (ctx: unknown, config: MockChartConfig) => {
     ctx: unknown;
     config: MockChartConfig;
@@ -33,7 +33,7 @@ declare global {
     clear(): void;
   };
 
-  // eslint-disable-next-line no-var
+   
   var d3: Record<string, unknown>;
 }
 

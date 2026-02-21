@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default [
   js.configs.recommended,
@@ -15,6 +16,7 @@ export default [
         Chart: 'readonly',
         d3: 'readonly',
         Papa: 'readonly',
+        ChartUtils: 'readonly',
       },
     },
     rules: {
@@ -30,8 +32,29 @@ export default [
     },
   },
   {
+    // TypeScript file configuration
+    files: ['**/*.ts'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+      globals: {
+        ...globals.node,
+        ...globals.es2021,
+      },
+    },
+    rules: {
+      'no-unused-vars': 'off', // TypeScript compiler handles this via noUnusedLocals
+      'no-undef': 'off', // TypeScript compiler handles this
+      'no-redeclare': 'off', // TypeScript handles this
+      'no-console': 'off',
+    },
+  },
+  {
     // Test-specific configuration
-    files: ['tests/**/*.test.js', '**/*.test.js'],
+    files: ['tests/**/*.test.js', 'tests/**/*.test.ts', '**/*.test.js', '**/*.test.ts'],
     languageOptions: {
       globals: {
         ...globals.node,
@@ -54,9 +77,12 @@ export default [
       'dist/**',
       'coverage/**',
       'cypress/**',
+      'builds/**',
       '*.min.js',
       'js/lib/**', // Ignore vendored libraries
       'dashboard/lib/**',
+      'api/scripts/**', // Ignore generated JSDoc prettify scripts
+      'docs/api/scripts/**', // Ignore generated JSDoc prettify scripts
     ],
   },
 ];

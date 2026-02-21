@@ -605,7 +605,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     propsOverview: (n: number): string => `Le gouvernement a soumis ${n} nouvelles propositions au Parlement.`,
     propSignificance: 'Cette proposition concerne',
     readFullProp: 'Lire la proposition complète',
-    motionsOverview: (n: number): string => `Des députés de l\'opposition ont déposé ${n} nouvelles motions.`,
+    motionsOverview: (n: number): string => `Des députés de l'opposition ont déposé ${n} nouvelles motions.`,
     motionSignificance: 'Cette motion traite de',
     readFullMotion: 'Lire la motion complète',
     policyContext: 'Contexte politique',
@@ -1605,15 +1605,3 @@ export function generateSources(tools: string[] = []): string[] {
 
   return sources;
 }
-
-export default {
-  transformCalendarToEventGrid,
-  generateArticleContent,
-  extractWatchPoints,
-  extractTopics,
-  generateMetadata,
-  calculateReadTime,
-  generateSources,
-  CONTENT_LABELS,
-  L
-};
