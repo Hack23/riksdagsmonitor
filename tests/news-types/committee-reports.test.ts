@@ -1,7 +1,7 @@
 /**
  * Unit Tests for Committee Reports Article Generation Module
  * 
- * Tests the scripts/news-types/committee-reports.js module including:
+ * Tests the scripts/news-types/committee-reports.ts module including:
  * - Committee reports fetching
  * - Cross-reference validation
  * - Multi-language support
@@ -45,7 +45,7 @@ interface CommitteeReportsValidationResult {
 
 /** Extended cross-references for committee reports */
 interface CommitteeReportsCrossReferences {
-  readonly reports: number;
+  readonly event: string;
   readonly sources: readonly string[];
 }
 
@@ -190,7 +190,7 @@ describe('Committee Reports Article Generation', () => {
         languages: ['en']
       });
       
-      expect(result.crossReferences.reports).toBe(mockCommitteeReports.length);
+      expect(result.crossReferences.event).toBe(`${mockCommitteeReports.length} reports`);
     });
   });
 
@@ -218,7 +218,7 @@ describe('Committee Reports Article Generation', () => {
         languages: ['en']
       });
       
-      const article = result.articles[0];
+      const article = result.articles[0]!;
       expect(article.html).toBeDefined();
       expect(typeof article.html).toBe('string');
       expect(article.html.length).toBeGreaterThan(0);
@@ -229,7 +229,7 @@ describe('Committee Reports Article Generation', () => {
         languages: ['en']
       });
       
-      const article = result.articles[0];
+      const article = result.articles[0]!;
       expect(article.filename).toMatch(/committee-reports-en\.html$/);
     });
   });
@@ -240,7 +240,7 @@ describe('Committee Reports Article Generation', () => {
         languages: ['en']
       });
       
-      expect(result.crossReferences.reports).toBe(3);
+      expect(result.crossReferences.event).toBe('3 reports');
     });
 
     it('should track betankanden as data source', async () => {

@@ -73,7 +73,7 @@ describe('Module convenience exports', () => {
 
     const events = await fetchCalendarEvents('2026-01-01', '2026-01-07');
     expect(events).toHaveLength(1);
-    expect(events[0].title).toBe('E1');
+    expect((events[0] as Record<string, unknown>).title).toBe('E1');
   });
 
   it('convenience fetchPropositions should delegate to default client', async () => {

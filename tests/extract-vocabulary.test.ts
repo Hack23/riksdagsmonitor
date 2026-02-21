@@ -1,5 +1,5 @@
 /**
- * Unit Tests for extract-vocabulary.js
+ * Unit Tests for extract-vocabulary.ts
  * Tests vocabulary extraction from news articles
  */
 
@@ -7,7 +7,7 @@ import { describe, it, expect, beforeEach, afterAll } from 'vitest';
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'fs';
 import { execSync } from 'child_process';
 
-describe('extract-vocabulary.js', () => {
+describe('extract-vocabulary.ts', () => {
   const testDir = 'tests/fixtures/vocabulary-test';
 
   beforeEach(() => {
@@ -49,7 +49,7 @@ describe('extract-vocabulary.js', () => {
 
       writeFileSync(`${testDir}/2026-02-14-test-en.html`, content);
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir} --date-prefix 2026-02-14`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir} --date-prefix 2026-02-14`, {
         encoding: 'utf-8'
       });
 
@@ -70,7 +70,7 @@ describe('extract-vocabulary.js', () => {
         writeFileSync(`${testDir}/2026-02-14-test-${lang}.html`, content);
       }
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -93,7 +93,7 @@ describe('extract-vocabulary.js', () => {
 
       writeFileSync(`${testDir}/2026-02-14-test-en.html`, content);
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -118,7 +118,7 @@ describe('extract-vocabulary.js', () => {
         </body></html>
       `);
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -138,7 +138,7 @@ describe('extract-vocabulary.js', () => {
 
       writeFileSync(`${testDir}/test-en.html`, content);
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -157,7 +157,7 @@ describe('extract-vocabulary.js', () => {
 
       writeFileSync(`${testDir}/test-en.html`, content);
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -173,7 +173,7 @@ describe('extract-vocabulary.js', () => {
       writeFileSync(`${testDir}/2026-02-14-test-en.html`, '<html><body><h1>Feb 14</h1></body></html>');
       writeFileSync(`${testDir}/2026-03-01-test-en.html`, '<html><body><h1>March 1</h1></body></html>');
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir} --date-prefix 2026-02-`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir} --date-prefix 2026-02-`, {
         encoding: 'utf-8'
       });
 
@@ -182,7 +182,7 @@ describe('extract-vocabulary.js', () => {
     });
 
     it('should show help message', () => {
-      const output = execSync('node scripts/extract-vocabulary.js --help', {
+      const output = execSync('node scripts/extract-vocabulary.ts --help', {
         encoding: 'utf-8'
       });
 
@@ -201,7 +201,7 @@ describe('extract-vocabulary.js', () => {
       // File with invalid language code
       writeFileSync(`${testDir}/test-xx.html`, '<html><body>Test</body></html>');
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -219,7 +219,7 @@ describe('extract-vocabulary.js', () => {
       writeFileSync(`${testDir}/test-en.html`, 'test');
       execSync(`chmod 000 ${testDir}/test-en.html`);
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -239,7 +239,7 @@ describe('extract-vocabulary.js', () => {
         </body></html>
       `);
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -251,7 +251,7 @@ describe('extract-vocabulary.js', () => {
       writeFileSync(`${testDir}/motion-en.html`, '<html><body><h1>Motion</h1></body></html>');
       writeFileSync(`${testDir}/proposition-en.html`, '<html><body><h1>Proposition</h1></body></html>');
 
-      const output = execSync(`node scripts/extract-vocabulary.js --directory ${testDir}`, {
+      const output = execSync(`node scripts/extract-vocabulary.ts --directory ${testDir}`, {
         encoding: 'utf-8'
       });
 

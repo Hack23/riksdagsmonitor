@@ -200,14 +200,14 @@ describe('Sitemap Generation', () => {
     });
 
     it('should use proper base URL', () => {
-      const urls: RegExpMatchArray = sitemapContent.match(/<loc>(.+?)<\/loc>/g) || [];
+      const urls: string[] = sitemapContent.match(/<loc>(.+?)<\/loc>/g) || [];
       urls.forEach(url => {
         expect(url, 'All URLs should use https://riksdagsmonitor.com base').toContain('https://riksdagsmonitor.com/');
       });
     });
 
     it('should not have duplicate URLs', () => {
-      const urls: RegExpMatchArray = sitemapContent.match(/<loc>(.+?)<\/loc>/g) || [];
+      const urls: string[] = sitemapContent.match(/<loc>(.+?)<\/loc>/g) || [];
       const uniqueUrls = new Set<string>(urls);
       expect(urls.length, 'Sitemap should not have duplicate URLs').toBe(uniqueUrls.size);
     });

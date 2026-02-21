@@ -184,7 +184,8 @@ import {
   extractWatchPoints,
   generateMetadata,
   calculateReadTime,
-  generateSources
+  generateSources,
+  type RawCalendarEvent
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
@@ -243,8 +244,8 @@ export function getWeekAheadDateRange(): DateRange {
   const endUTC = startUTC + (7 * 24 * 60 * 60 * 1000); // +7 days
   
   return {
-    start: new Date(startUTC).toISOString().split('T')[0],
-    end: new Date(endUTC).toISOString().split('T')[0]
+    start: new Date(startUTC).toISOString().split('T')[0] ?? '',
+    end: new Date(endUTC).toISOString().split('T')[0] ?? ''
   };
 }
 
@@ -252,7 +253,7 @@ export function getWeekAheadDateRange(): DateRange {
  * Format date for article slug
  */
 export function formatDateForSlug(date: Date = new Date()): string {
-  return date.toISOString().split('T')[0];
+  return date.toISOString().split('T')[0] ?? '';
 }
 
 /**
@@ -277,7 +278,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
     
     // 1. Fetch calendar events from MCP
     console.log('  🔄 Fetching calendar events from riksdag-regering-mcp...');
-    const events: unknown[] = await client.fetchCalendarEvents(range.start, range.end);
+    const events = await client.fetchCalendarEvents(range.start, range.end) as RawCalendarEvent[];
     mcpCalls.push({ tool: 'get_calendar_events', result: events });
     console.log(`  📊 Found ${events.length} events`);
     
@@ -308,7 +309,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
         slug: `${slug}-${lang}.html`,
         title: titles.title,
         subtitle: titles.subtitle,
-        date: today.toISOString().split('T')[0],
+        date: today.toISOString().split('T')[0] ?? '',
         type: 'prospective' as ArticleCategory,
         readTime,
         lang,

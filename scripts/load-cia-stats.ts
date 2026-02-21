@@ -6,6 +6,13 @@
  * Statistical intelligence data loader providing comprehensive parliamentary and
  * government statistics from the CIA production database.
  *
+ * ISMS Compliance: ISO 27001 - Information Security Management
+ * Data Classification: public - All data sourced from public government records
+ * GDPR Compliance: No personal data processed; aggregated statistics only
+ * Swedish Offentlighetsprincipen (Principle of Public Access) applies
+ *
+ * Data source: https://github.com/Hack23/cia
+ *
  * @author Hack23 AB - Intelligence Operations Team
  * @license Apache-2.0
  * @version 2.0.0

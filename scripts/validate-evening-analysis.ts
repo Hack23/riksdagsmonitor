@@ -206,7 +206,7 @@ function extractSections(html: string): ArticleSections {
  */
 function extractLeadParagraph(html: string): string | null {
   const match: RegExpMatchArray | null = html.match(/<p class="lede">([\s\S]*?)<\/p>/i);
-  return match ? match[1].trim() : null;
+  return match?.[1]?.trim() ?? null;
 }
 
 /**
@@ -218,7 +218,7 @@ function extractSection(html: string, heading: string): string | null {
     'i',
   );
   const match: RegExpMatchArray | null = html.match(pattern);
-  return match ? match[1].trim() : null;
+  return match?.[1]?.trim() ?? null;
 }
 
 /**
@@ -376,7 +376,7 @@ function validateSources(html: string): SourceValidation {
   // Extract riksdag-regering-mcp tool mentions
   const mcpMatches: IterableIterator<RegExpMatchArray> = html.matchAll(/riksdag-regering-mcp:\s*([a-z_]+)/gi);
   for (const m of mcpMatches) {
-    sources.push(m[1]);
+    if (m[1]) sources.push(m[1]);
   }
 
   return {
@@ -558,7 +558,7 @@ if (process.argv[1] === __filename) {
     process.exit(1);
   }
 
-  const articlePath: string = args[0];
+  const articlePath: string = args[0] ?? '';
   const validation: EveningAnalysisValidation | EveningAnalysisError = validateEveningAnalysis(articlePath);
   printValidation(validation);
 

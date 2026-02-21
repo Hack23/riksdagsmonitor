@@ -6,6 +6,7 @@
 .vscode/
 .idea/
 node_modules/
+api/
 dist/
 build/
 *.log

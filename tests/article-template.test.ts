@@ -633,7 +633,7 @@ describe('Article Template', () => {
       // Should not contain raw newlines within the JSON-LD block
       const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
       expect(jsonLdMatch).not.toBeNull();
-      const jsonLd = jsonLdMatch![1];
+      const jsonLd = jsonLdMatch![1]!;
       // The articleBody value itself should have newlines removed
       const bodyMatch = jsonLd.match(/"articleBody":\s*"([^"]*)"/);
       expect(bodyMatch).not.toBeNull();
@@ -645,9 +645,9 @@ describe('Article Template', () => {
       const data: MockArticleData = { ...mockArticleData, content: longContent };
       const html = generateArticleHTML(data as unknown as ArticleData) as string;
       const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
-      const jsonLd = jsonLdMatch![1];
+      const jsonLd = jsonLdMatch![1]!;
       const bodyMatch = jsonLd.match(/"articleBody":\s*"([^"]*)"/);
-      expect(bodyMatch![1].length).toBeLessThanOrEqual(510); // 500 chars + some escaped entities
+      expect(bodyMatch![1]!.length).toBeLessThanOrEqual(510); // 500 chars + some escaped entities
     });
   });
 });

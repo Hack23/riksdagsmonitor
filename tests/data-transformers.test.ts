@@ -94,7 +94,7 @@ describe('Data Transformers', () => {
       expect(grid).toBeInstanceOf(Array);
       expect(grid.length).toBeGreaterThan(0);
       
-      const firstDay = grid[0];
+      const firstDay = grid[0]!;
       expect(firstDay).toHaveProperty('date');
       expect(firstDay).toHaveProperty('dayName');
       expect(firstDay).toHaveProperty('dayNumber');
@@ -109,7 +109,7 @@ describe('Data Transformers', () => {
       expect(grid[0]).toHaveProperty('dayName');
       // Swedish day names (Intl may return lowercase — compare case-insensitively)
       const validSwedishDays = ['måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag', 'söndag'];
-      expect(validSwedishDays).toContain(grid[0].dayName.toLowerCase());
+      expect(validSwedishDays).toContain(grid[0]!.dayName.toLowerCase());
     });
 
     it('should handle empty events array', () => {
@@ -119,8 +119,8 @@ describe('Data Transformers', () => {
     });
 
     it('should handle null/undefined events', () => {
-      expect(transformCalendarToEventGrid(null, 'en')).toEqual([]);
-      expect(transformCalendarToEventGrid(undefined, 'en')).toEqual([]);
+      expect(transformCalendarToEventGrid(null as any, 'en')).toEqual([]);
+      expect(transformCalendarToEventGrid(undefined as any, 'en')).toEqual([]);
     });
 
     it('should support all 14 languages via Intl formatting', () => {
@@ -131,9 +131,9 @@ describe('Data Transformers', () => {
         expect(grid).toBeInstanceOf(Array);
         expect(grid.length).toBeGreaterThan(0);
         // Day name should be a non-empty string for all languages
-        expect(grid[0].dayName).toBeTruthy();
-        expect(typeof grid[0].dayName).toBe('string');
-        expect(grid[0].dayName.length).toBeGreaterThan(0);
+        expect(grid[0]!.dayName).toBeTruthy();
+        expect(typeof grid[0]!.dayName).toBe('string');
+        expect(grid[0]!.dayName.length).toBeGreaterThan(0);
       });
     });
 
@@ -427,7 +427,7 @@ describe('Data Transformers', () => {
     it('should have all required keys in every language', () => {
       ALL_LANGUAGES.forEach((lang: Language) => {
         REQUIRED_KEYS.forEach((key: string) => {
-          expect((CONTENT_LABELS as Record<string, Record<string, unknown>>)[lang]).toHaveProperty(key);
+          expect((CONTENT_LABELS as unknown as Record<string, Record<string, unknown>>)[lang]).toHaveProperty(key);
         });
       });
     });
@@ -436,7 +436,7 @@ describe('Data Transformers', () => {
       const staticKeys = REQUIRED_KEYS.filter((k: string) => !k.endsWith('Desc'));
       ALL_LANGUAGES.forEach((lang: Language) => {
         staticKeys.forEach((key: string) => {
-          const val = (CONTENT_LABELS as Record<string, Record<string, unknown>>)[lang][key];
+          const val = (CONTENT_LABELS as unknown as Record<string, Record<string, unknown>>)[lang]![key];
           expect(typeof val).toBe('string');
           expect((val as string).length).toBeGreaterThan(0);
         });
@@ -447,7 +447,7 @@ describe('Data Transformers', () => {
       const descKeys = REQUIRED_KEYS.filter((k: string) => k.endsWith('Desc'));
       ALL_LANGUAGES.forEach((lang: Language) => {
         descKeys.forEach((key: string) => {
-          const fn = (CONTENT_LABELS as Record<string, Record<string, unknown>>)[lang][key];
+          const fn = (CONTENT_LABELS as unknown as Record<string, Record<string, unknown>>)[lang]![key];
           expect(typeof fn).toBe('function');
           // Should return a string when called with a number
           expect(typeof (fn as (n: number) => string)(5)).toBe('string');
@@ -752,7 +752,7 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'en') as WatchPoint[];
       
       expect(watchPoints.length).toBeGreaterThan(0);
-      const wp = watchPoints[0];
+      const wp = watchPoints[0]!;
       expect(wp.title).toContain('data-translate="true"');
       expect(wp.title).toContain('lang="sv"');
       expect(wp.title).toContain('Öppen utfrågning');
@@ -766,7 +766,7 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'en') as WatchPoint[];
       
       expect(watchPoints.length).toBeGreaterThan(0);
-      const wp = watchPoints[0];
+      const wp = watchPoints[0]!;
       expect(wp.title).not.toContain('data-translate="true"');
       expect(wp.title).toContain('EU summit on trade');
     });
@@ -779,8 +779,8 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'en') as WatchPoint[];
       
       expect(watchPoints.length).toBeGreaterThan(0);
-      expect(watchPoints[0].title).not.toContain('<script>');
-      expect(watchPoints[0].title).toContain('&lt;script&gt;');
+      expect(watchPoints[0]!.title).not.toContain('<script>');
+      expect(watchPoints[0]!.title).toContain('&lt;script&gt;');
     });
   });
 });

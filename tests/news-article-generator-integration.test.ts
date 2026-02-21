@@ -236,7 +236,7 @@ describe('News Article Generator Integration', () => {
 
   describe('Validation Reporting', () => {
     it('should generate markdown validation report', async () => {
-      const { generateValidationReport } = await import('../scripts/validate-cross-references.js') as {
+      const { generateValidationReport } = await import('../scripts/validate-cross-references.js') as unknown as {
         generateValidationReport: (validation: ValidationReportInput) => string;
       };
       
@@ -258,7 +258,7 @@ describe('News Article Generator Integration', () => {
     });
 
     it('should export CI-friendly summary', async () => {
-      const { exportCISummary } = await import('../scripts/validate-cross-references.js') as {
+      const { exportCISummary } = await import('../scripts/validate-cross-references.js') as unknown as {
         exportCISummary: (batchResults: BatchResultInput) => CISummary;
       };
       
@@ -281,7 +281,7 @@ describe('News Article Generator Integration', () => {
     });
 
     it('should mark success when all articles pass', async () => {
-      const { exportCISummary } = await import('../scripts/validate-cross-references.js') as {
+      const { exportCISummary } = await import('../scripts/validate-cross-references.js') as unknown as {
         exportCISummary: (batchResults: BatchResultInput) => CISummary;
       };
       

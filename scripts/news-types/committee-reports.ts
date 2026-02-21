@@ -173,7 +173,8 @@ import {
   extractWatchPoints,
   generateMetadata,
   calculateReadTime,
-  generateSources
+  generateSources,
+  type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
@@ -223,7 +224,7 @@ interface GenerationOptions {
  * Format date for article slug
  */
 export function formatDateForSlug(date: Date = new Date()): string {
-  return date.toISOString().split('T')[0];
+  return date.toISOString().split('T')[0] ?? '';
 }
 
 /**
@@ -244,7 +245,7 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
     const client = new MCPClient();
     
     console.log('  🔄 Fetching committee reports from riksdag-regering-mcp...');
-    const reports: unknown[] = await client.fetchCommitteeReports(limit);
+    const reports = await client.fetchCommitteeReports(limit) as RawDocument[];
     mcpCalls.push({ tool: 'get_betankanden', result: reports });
     console.log(`  📊 Found ${reports.length} committee reports`);
     
@@ -275,7 +276,7 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
         slug: `${slug}-${lang}.html`,
         title: titles.title,
         subtitle: titles.subtitle,
-        date: today.toISOString().split('T')[0],
+        date: today.toISOString().split('T')[0] ?? '',
         type: 'analysis' as ArticleCategory,
         readTime,
         lang,

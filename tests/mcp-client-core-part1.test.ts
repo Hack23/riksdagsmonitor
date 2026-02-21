@@ -410,7 +410,7 @@ describe('MCPClient', () => {
 
       const events = await client.fetchCalendarEvents('2026-02-10', '2026-02-17');
       expect(events).toHaveLength(2);
-      expect(events[0].title).toBe('Event 1');
+      expect((events[0] as Record<string, unknown>).title).toBe('Event 1');
     });
 
     it('should pass optional org and akt parameters', async () => {
@@ -486,7 +486,7 @@ describe('MCPClient', () => {
 
       const props = await client.fetchPropositions();
       expect(props).toHaveLength(1);
-      expect(props[0].title).toBe('Prop 1');
+      expect((props[0] as Record<string, unknown>).title).toBe('Prop 1');
     });
 
     it('should pass optional rm parameter', async () => {

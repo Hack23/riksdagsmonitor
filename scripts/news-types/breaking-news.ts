@@ -200,7 +200,7 @@ interface ArticleInput {
  * Format date for article slug
  */
 export function formatDateForSlug(date: Date = new Date()): string {
-  return date.toISOString().split('T')[0];
+  return date.toISOString().split('T')[0] ?? '';
 }
 
 /**
@@ -272,7 +272,7 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         slug: `${slug}-${lang}.html`,
         title: titles.title,
         subtitle: titles.subtitle,
-        date: today.toISOString().split('T')[0],
+        date: today.toISOString().split('T')[0] ?? '',
         type: 'breaking' as ArticleCategory,
         readTime,
         lang,

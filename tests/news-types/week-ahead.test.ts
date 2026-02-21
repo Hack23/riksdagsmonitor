@@ -1,7 +1,7 @@
 /**
  * Unit Tests for Week-Ahead Article Generation Module
  * 
- * Tests the scripts/news-types/week-ahead.js module including:
+ * Tests the scripts/news-types/week-ahead.ts module including:
  * - Date range calculation
  * - Article generation with MCP integration
  * - Cross-reference validation
@@ -46,7 +46,7 @@ interface WeekAheadValidationResult {
 
 /** Extended cross-references for week-ahead */
 interface WeekAheadCrossReferences {
-  readonly events: number;
+  readonly event: string;
   readonly sources: readonly string[];
 }
 
@@ -254,7 +254,7 @@ describe('Week-Ahead Article Generation', () => {
         languages: ['en']
       });
       
-      const article = result.articles[0];
+      const article = result.articles[0]!;
       expect(article.html).toBeDefined();
       expect(typeof article.html).toBe('string');
       expect(article.html.length).toBeGreaterThan(0);
@@ -265,7 +265,7 @@ describe('Week-Ahead Article Generation', () => {
         languages: ['en']
       });
       
-      const article = result.articles[0];
+      const article = result.articles[0]!;
       expect(article.filename).toMatch(/\.html$/);
       expect(article.filename).toContain('-en.html');
     });
@@ -278,7 +278,7 @@ describe('Week-Ahead Article Generation', () => {
       });
       
       expect(result.crossReferences).toBeDefined();
-      expect(result.crossReferences.events).toBeDefined();
+      expect(result.crossReferences.event).toBeDefined();
       expect(result.crossReferences.sources).toBeDefined();
     });
 
@@ -287,7 +287,7 @@ describe('Week-Ahead Article Generation', () => {
         languages: ['en']
       });
       
-      expect(result.crossReferences.events).toBe(mockCalendarEvents.length);
+      expect(result.crossReferences.event).toBe(`${mockCalendarEvents.length} events`);
     });
 
     it('should list data sources used', async () => {

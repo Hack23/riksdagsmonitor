@@ -1,3 +1,4 @@
+/// <reference lib="dom" />
 /**
  * Vitest Setup File
  *

@@ -83,7 +83,7 @@ function parseArticle(filepath: string): ParsedArticle | null {
  */
 function extractTitle(html: string): string | null {
   const match = html.match(/<title>([^<]+)<\/title>/);
-  return match ? match[1] : null;
+  return match ? (match[1] ?? null) : null;
 }
 
 /**
@@ -91,7 +91,7 @@ function extractTitle(html: string): string | null {
  */
 function extractLang(html: string): string | null {
   const match = html.match(/<html lang="([^"]+)"/);
-  return match ? match[1] : null;
+  return match ? (match[1] ?? null) : null;
 }
 
 /**
@@ -117,7 +117,7 @@ function extractSections(html: string): ArticleSections {
  */
 function extractLeadParagraph(html: string): string | null {
   const match = html.match(/<p class="lede">([\s\S]*?)<\/p>/i);
-  return match ? match[1].trim() : null;
+  return match ? match[1]!.trim() : null;
 }
 
 /**
@@ -130,7 +130,7 @@ function extractSection(html: string, heading: string): string | null {
     'i'
   );
   const match = html.match(pattern);
-  return match ? match[1].trim() : null;
+  return match ? match[1]!.trim() : null;
 }
 
 /**
@@ -140,13 +140,13 @@ function extractSources(html: string): string[] {
   const match = html.match(/<div class="article-sources">([\s\S]*?)<\/div>/);
   if (!match) return [];  // Return empty array instead of null
   
-  const sourcesHtml = match[1];
+  const sourcesHtml = match[1]!;
   const sources: string[] = [];
   
   // Extract riksdag-regering-mcp tool mentions
   const mcpMatches = sourcesHtml.matchAll(/riksdag-regering-mcp:\s*([a-z_]+)/gi);
   for (const m of mcpMatches) {
-    sources.push(m[1]);
+    sources.push(m[1]!);
   }
   
   return sources;
@@ -749,12 +749,12 @@ describe('Multi-Language Quality Tests', () => {
     // All should have same structure
     if (structures.length >= 2) {
       // All available language versions should have the same structural sections
-      const firstHasSections = structures[0].hasSections;
+      const firstHasSections = structures[0]!.hasSections;
       const allConsistent = structures.every((s: { hasSections: boolean }) => s.hasSections === firstHasSections);
       
       if (!allConsistent) {
         console.log('⚠️  Legacy articles have inconsistent structure across languages.');
-        console.log(`    EN has sections: ${structures[0].hasSections}, SV has sections: ${structures[1].hasSections}`);
+        console.log(`    EN has sections: ${structures[0]!.hasSections}, SV has sections: ${structures[1]!.hasSections}`);
         console.log('    Future articles should maintain consistent structure across all languages.');
         console.log('    This is expected for legacy articles - test will pass with warning.');
       }
@@ -786,7 +786,7 @@ describe('Multi-Language Quality Tests', () => {
     
     // Scores should be relatively consistent (within 0.5)
     if (analyticalScores.length >= 2) {
-      const diff = Math.abs(analyticalScores[0] - analyticalScores[1]);
+      const diff = Math.abs(analyticalScores[0]! - analyticalScores[1]!);
       expect(diff).toBeLessThanOrEqual(0.5); // Allow some variation for language differences
     }
   });

@@ -89,7 +89,7 @@ describe('MCPClient Part 2', () => {
 
       const docs = await client.searchDocuments({ sok: 'budget', doktyp: 'mot', limit: 5 });
       expect(docs).toHaveLength(1);
-      expect(docs[0].title).toBe('Doc 1');
+      expect((docs[0] as Record<string, unknown>).title).toBe('Doc 1');
     });
 
     it('should call correct tool name', async () => {
@@ -126,7 +126,7 @@ describe('MCPClient Part 2', () => {
 
       const speeches = await client.searchSpeeches({ sok: 'klimat', parti: 'S' });
       expect(speeches).toHaveLength(1);
-      expect(speeches[0].speaker).toBe('MP1');
+      expect((speeches[0] as Record<string, unknown>).speaker).toBe('MP1');
     });
 
     it('should call correct tool name', async () => {
@@ -247,7 +247,7 @@ describe('MCPClient Part 2', () => {
 
       const docs = await client.fetchGovernmentDocuments({ type: 'SOU', limit: 10 });
       expect(docs).toHaveLength(1);
-      expect(docs[0].type).toBe('SOU');
+      expect((docs[0] as Record<string, unknown>).type).toBe('SOU');
     });
 
     it('should call correct tool name', async () => {

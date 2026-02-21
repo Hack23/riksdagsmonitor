@@ -49,13 +49,13 @@ describe('Workflow State Coordinator', () => {
     it('should initialize with empty state', async () => {
       await coordinator.load();
       
-      expect(coordinator.state.recentArticles).toEqual([]);
-      expect(coordinator.state.mcpQueryCache).toEqual({});
-      expect(coordinator.state.workflows).toEqual({});
+      expect((coordinator as any).state.recentArticles).toEqual([]);
+      expect((coordinator as any).state.mcpQueryCache).toEqual({});
+      expect((coordinator as any).state.workflows).toEqual({});
     });
 
     it('should save and load state', async () => {
-      coordinator.state.recentArticles = [
+      (coordinator as any).state.recentArticles = [
         { slug: 'test-article-en.html', timestamp: new Date().toISOString(), workflow: 'test' } as RecentArticleEntry
       ];
       
@@ -66,8 +66,8 @@ describe('Workflow State Coordinator', () => {
       const coordinator2 = new WorkflowStateCoordinator(TEST_STATE_FILE);
       await coordinator2.load();
       
-      expect(coordinator2.state.recentArticles).toHaveLength(1);
-      expect(coordinator2.state.recentArticles[0].slug).toBe('test-article-en.html');
+      expect((coordinator2 as any).state.recentArticles).toHaveLength(1);
+      expect((coordinator2 as any).state.recentArticles[0].slug).toBe('test-article-en.html');
     });
 
     it('should create metadata directory if missing', async () => {
@@ -97,9 +97,9 @@ describe('Workflow State Coordinator', () => {
       await coordinator.save();
       const after = new Date().toISOString();
       
-      expect(coordinator.state.lastUpdate).toBeDefined();
-      expect(coordinator.state.lastUpdate! >= before).toBe(true);
-      expect(coordinator.state.lastUpdate! <= after).toBe(true);
+      expect((coordinator as any).state.lastUpdate).toBeDefined();
+      expect((coordinator as any).state.lastUpdate! >= before).toBe(true);
+      expect((coordinator as any).state.lastUpdate! <= after).toBe(true);
     });
   });
 
@@ -110,8 +110,8 @@ describe('Workflow State Coordinator', () => {
       
       await coordinator.cacheMCPQuery(queryKey, result);
       
-      expect(coordinator.state.mcpQueryCache[queryKey]).toBeDefined();
-      expect(coordinator.state.mcpQueryCache[queryKey].result).toEqual(result);
+      expect((coordinator as any).state.mcpQueryCache[queryKey]).toBeDefined();
+      expect((coordinator as any).state.mcpQueryCache[queryKey].result).toEqual(result);
     });
 
     it('should retrieve cached MCP query', async () => {
@@ -159,8 +159,8 @@ describe('Workflow State Coordinator', () => {
       
       await coordinator.cacheMCPQuery(queryKey, result);
       
-      expect(coordinator.state.mcpQueryCache[queryKey].resultHash).toBeDefined();
-      expect(typeof coordinator.state.mcpQueryCache[queryKey].resultHash).toBe('string');
+      expect((coordinator as any).state.mcpQueryCache[queryKey].resultHash).toBeDefined();
+      expect(typeof (coordinator as any).state.mcpQueryCache[queryKey].resultHash).toBe('string');
     });
   });
 
@@ -176,9 +176,9 @@ describe('Workflow State Coordinator', () => {
       
       await coordinator.addRecentArticle(article);
       
-      expect(coordinator.state.recentArticles).toHaveLength(1);
-      expect(coordinator.state.recentArticles[0].slug).toBe(article.slug);
-      expect(coordinator.state.recentArticles[0].workflow).toBe(article.workflow);
+      expect((coordinator as any).state.recentArticles).toHaveLength(1);
+      expect((coordinator as any).state.recentArticles[0].slug).toBe(article.slug);
+      expect((coordinator as any).state.recentArticles[0].workflow).toBe(article.workflow);
     });
 
     it('should set timestamp on article addition', async () => {
@@ -192,7 +192,7 @@ describe('Workflow State Coordinator', () => {
       
       await coordinator.addRecentArticle(article);
       
-      expect(coordinator.state.recentArticles[0].timestamp).toBeDefined();
+      expect((coordinator as any).state.recentArticles[0].timestamp).toBeDefined();
     });
 
     it('should get recent articles within time window', async () => {
@@ -215,12 +215,12 @@ describe('Workflow State Coordinator', () => {
         mcpQueries: []
       };
       
-      coordinator.state.recentArticles = [article1, article2];
+      (coordinator as any).state.recentArticles = [article1, article2];
       
       const recent = coordinator.getRecentArticles(6) as RecentArticleEntry[]; // Last 6 hours
       
       expect(recent).toHaveLength(1);
-      expect(recent[0].slug).toBe('recent-en.html');
+      expect(recent[0]!.slug).toBe('recent-en.html');
     });
 
     it('should cleanup expired articles', () => {
@@ -242,11 +242,11 @@ describe('Workflow State Coordinator', () => {
         mcpQueries: []
       };
       
-      coordinator.state.recentArticles = [recentArticle, expiredArticle];
+      (coordinator as any).state.recentArticles = [recentArticle, expiredArticle];
       coordinator.cleanupExpiredEntries();
       
-      expect(coordinator.state.recentArticles).toHaveLength(1);
-      expect(coordinator.state.recentArticles[0].slug).toBe('recent-en.html');
+      expect((coordinator as any).state.recentArticles).toHaveLength(1);
+      expect((coordinator as any).state.recentArticles[0].slug).toBe('recent-en.html');
     });
   });
 
@@ -362,9 +362,9 @@ describe('Workflow State Coordinator', () => {
         articlesGenerated: 3
       });
       
-      expect(coordinator.state.workflows['realtime-monitor']).toBeDefined();
-      expect(coordinator.state.workflows['realtime-monitor'].runCount).toBe(1);
-      expect(coordinator.state.workflows['realtime-monitor'].articlesGenerated).toBe(3);
+      expect((coordinator as any).state.workflows['realtime-monitor']).toBeDefined();
+      expect((coordinator as any).state.workflows['realtime-monitor'].runCount).toBe(1);
+      expect((coordinator as any).state.workflows['realtime-monitor'].articlesGenerated).toBe(3);
     });
 
     it('should increment run count on multiple executions', async () => {
@@ -372,14 +372,14 @@ describe('Workflow State Coordinator', () => {
       await coordinator.recordWorkflowExecution('realtime-monitor');
       await coordinator.recordWorkflowExecution('realtime-monitor');
       
-      expect(coordinator.state.workflows['realtime-monitor'].runCount).toBe(3);
+      expect((coordinator as any).state.workflows['realtime-monitor'].runCount).toBe(3);
     });
 
     it('should track articles generated across runs', async () => {
       await coordinator.recordWorkflowExecution('realtime-monitor', { articlesGenerated: 2 });
       await coordinator.recordWorkflowExecution('realtime-monitor', { articlesGenerated: 3 });
       
-      expect(coordinator.state.workflows['realtime-monitor'].articlesGenerated).toBe(5);
+      expect((coordinator as any).state.workflows['realtime-monitor'].articlesGenerated).toBe(5);
     });
 
     it('should get workflow statistics', async () => {

@@ -13,13 +13,13 @@ describe('Load CIA Stats Script', () => {
     vi.clearAllMocks();
   });
   describe('Script Configuration', () => {
-    it('should have load-cia-stats.js script', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+    it('should have load-cia-stats.ts script', () => {
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       expect(fs.existsSync(scriptPath)).toBe(true);
     });
 
     it('should be a Node.js ES module', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('import');
       expect(content).toContain('export');
@@ -28,13 +28,13 @@ describe('Load CIA Stats Script', () => {
 
   describe('CIA Data Source', () => {
     it('should reference extraction_summary_report.csv', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('extraction_summary_report.csv');
     });
 
     it('should fetch from GitHub cia repository', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('github.com/Hack23/cia');
     });
@@ -42,25 +42,25 @@ describe('Load CIA Stats Script', () => {
 
   describe('ISMS Compliance Documentation', () => {
     it('should include ISO 27001 compliance comments', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('ISO 27001');
     });
 
     it('should document data classification', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content.toLowerCase()).toContain('public');
     });
 
     it('should reference GDPR compliance', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('GDPR');
     });
 
     it('should reference Swedish Offentlighetsprincipen', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('Offentlighetsprincipen');
     });
@@ -68,31 +68,31 @@ describe('Load CIA Stats Script', () => {
 
   describe('Statistics Extraction', () => {
     it('should extract total_persons statistic', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('total_persons');
     });
 
     it('should extract total_votes statistic', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('total_votes');
     });
 
     it('should extract total_documents statistic', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('total_documents');
     });
 
     it('should extract total_committee_documents statistic', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('total_committee_documents');
     });
 
     it('should extract total_rule_violations statistic', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('total_rule_violations');
     });
@@ -100,7 +100,7 @@ describe('Load CIA Stats Script', () => {
 
   describe('Output Generation', () => {
     it('should output to cia-data/production-stats.json', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('production-stats.json');
     });
@@ -117,14 +117,14 @@ describe('Load CIA Stats Script', () => {
 
   describe('Caching Strategy', () => {
     it('should implement cache freshness check', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       // Check for cache or freshness logic
       expect(content).toMatch(/cache|fresh|stale/i);
     });
 
     it('should include last_updated timestamp', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('last_updated');
     });
@@ -132,13 +132,13 @@ describe('Load CIA Stats Script', () => {
 
   describe('Error Handling', () => {
     it('should have error handling for network failures', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('catch');
     });
 
     it('should have try-catch blocks', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('try');
     });
@@ -146,13 +146,13 @@ describe('Load CIA Stats Script', () => {
 
   describe('CSV Parsing', () => {
     it('should parse CSV content', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('.split');
     });
 
     it('should handle CSV headers', () => {
-      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
+      const scriptPath = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
       const content = fs.readFileSync(scriptPath, 'utf-8');
       expect(content).toContain('object_type');
     });
@@ -188,9 +188,9 @@ describe('Load CIA Stats Script', () => {
   });
 
   describe('Integration with Update Script', () => {
-    it('should be compatible with update-stats-from-cia.js', () => {
-      const loadScript = path.join(process.cwd(), 'scripts', 'load-cia-stats.js');
-      const updateScript = path.join(process.cwd(), 'scripts', 'update-stats-from-cia.js');
+    it('should be compatible with update-stats-from-cia.ts', () => {
+      const loadScript = path.join(process.cwd(), 'scripts', 'load-cia-stats.ts');
+      const updateScript = path.join(process.cwd(), 'scripts', 'update-stats-from-cia.ts');
 
       // Both scripts should exist and work together
       expect(fs.existsSync(loadScript)).toBe(true);

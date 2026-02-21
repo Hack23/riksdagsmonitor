@@ -173,7 +173,8 @@ import {
   extractWatchPoints,
   generateMetadata,
   calculateReadTime,
-  generateSources
+  generateSources,
+  type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
@@ -222,7 +223,7 @@ interface GenerationOptions {
  * Format date for article slug
  */
 export function formatDateForSlug(date: Date = new Date()): string {
-  return date.toISOString().split('T')[0];
+  return date.toISOString().split('T')[0] ?? '';
 }
 
 /**
@@ -239,7 +240,7 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
     const client = new MCPClient();
     
     console.log('  🔄 Fetching propositions from riksdag-regering-mcp...');
-    const propositions: unknown[] = await client.fetchPropositions(limit);
+    const propositions = await client.fetchPropositions(limit) as RawDocument[];
     mcpCalls.push({ tool: 'get_propositioner', result: propositions });
     console.log(`  📊 Found ${propositions.length} propositions`);
     
@@ -267,7 +268,7 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
         slug: `${slug}-${lang}.html`,
         title: titles.title,
         subtitle: titles.subtitle,
-        date: today.toISOString().split('T')[0],
+        date: today.toISOString().split('T')[0] ?? '',
         type: 'analysis' as ArticleCategory,
         readTime,
         lang,

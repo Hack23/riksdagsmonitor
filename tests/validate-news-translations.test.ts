@@ -1,5 +1,5 @@
 /**
- * Unit Tests for validate-news-translations.js
+ * Unit Tests for validate-news-translations.ts
  * Tests validation of translated news articles
  */
 
@@ -14,7 +14,7 @@ interface ExecSyncError extends Error {
   readonly stderr: string;
 }
 
-describe('validate-news-translations.js', () => {
+describe('validate-news-translations.ts', () => {
   const testDir = 'tests/fixtures/translation-validation';
 
   beforeEach(() => {
@@ -47,7 +47,7 @@ describe('validate-news-translations.js', () => {
 
       writeFileSync(`${testDir}/2026-02-14-test-en.html`, content);
 
-      const result = execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -59,7 +59,7 @@ describe('validate-news-translations.js', () => {
       writeFileSync(`${testDir}/test-sv.html`, '<html lang="sv"><body>Test</body></html>');
       writeFileSync(`${testDir}/test-en.html`, '<html lang="en"><body>Test</body></html>');
 
-      const result = execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -69,7 +69,7 @@ describe('validate-news-translations.js', () => {
     it('should handle files without language code', () => {
       writeFileSync(`${testDir}/invalid.html`, '<html><body>Test</body></html>');
 
-      const result = execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -94,7 +94,7 @@ describe('validate-news-translations.js', () => {
 
       let exitCode = 0;
       try {
-        execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
           encoding: 'utf-8'
         });
       } catch (error: unknown) {
@@ -117,7 +117,7 @@ describe('validate-news-translations.js', () => {
 
       writeFileSync(`${testDir}/test-en.html`, content);
 
-      const result = execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -138,7 +138,7 @@ describe('validate-news-translations.js', () => {
 
       let output = '';
       try {
-        execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
           encoding: 'utf-8'
         });
       } catch (error: unknown) {
@@ -159,7 +159,7 @@ describe('validate-news-translations.js', () => {
         writeFileSync(`${testDir}/test-${lang}.html`, content);
       }
 
-      const result = execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -180,7 +180,7 @@ describe('validate-news-translations.js', () => {
 
       let output = '';
       try {
-        execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
           encoding: 'utf-8'
         });
       } catch (error: unknown) {
@@ -199,7 +199,7 @@ describe('validate-news-translations.js', () => {
       writeFileSync(`${testDir}/test1-en.html`, '<html lang="en"><body>Test 1</body></html>');
       writeFileSync(`${testDir}/subdir/test2-en.html`, '<html lang="en"><body>Test 2</body></html>');
 
-      const result = execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -213,7 +213,7 @@ describe('validate-news-translations.js', () => {
 
       let exitCode = 0;
       try {
-        execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
           encoding: 'utf-8'
         });
       } catch (error: unknown) {
@@ -232,7 +232,7 @@ describe('validate-news-translations.js', () => {
 
       let exitCode = 0;
       try {
-        execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
           encoding: 'utf-8'
         });
       } catch (error: unknown) {
@@ -249,7 +249,7 @@ describe('validate-news-translations.js', () => {
       writeFileSync(`${testDir}/test-ko.html`, '<html lang="ko"><body>한국어 테스트</body></html>');
       writeFileSync(`${testDir}/test-zh.html`, '<html lang="zh"><body>中文测试</body></html>');
 
-      const result = execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
         encoding: 'utf-8'
       });
 
@@ -261,7 +261,7 @@ describe('validate-news-translations.js', () => {
       writeFileSync(`${testDir}/test-ar.html`, '<html lang="ar" dir="rtl"><body>اختبار عربي</body></html>');
       writeFileSync(`${testDir}/test-he.html`, '<html lang="he" dir="rtl"><body>בדיקה עברית</body></html>');
 
-      const result = execSync(`node scripts/validate-news-translations.js ${testDir}`, {
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
         encoding: 'utf-8'
       });
 

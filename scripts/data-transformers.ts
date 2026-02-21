@@ -197,11 +197,11 @@ import type { ContentLabelSet, CommitteeName, CommitteeNameMap } from './types/c
 import type { EventGridItem, WatchPoint, ArticleMetadata, ArticleType } from './types/article.js';
 
 // ---------------------------------------------------------------------------
-// Local (private) interfaces – not exported
+// Data interfaces shared with news-type modules
 // ---------------------------------------------------------------------------
 
 /** Raw calendar event from MCP server */
-interface RawCalendarEvent {
+export interface RawCalendarEvent {
   datum?: string;
   from?: string;
   start?: string;
@@ -216,7 +216,7 @@ interface RawCalendarEvent {
 }
 
 /** Raw document from MCP server */
-interface RawDocument {
+export interface RawDocument {
   doktyp?: string;
   organ?: string;
   committee?: string;
