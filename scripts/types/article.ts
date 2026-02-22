@@ -117,7 +117,7 @@ export interface BreakingNewsOptions {
   languages?: Language[];
   eventContext?: string;
   eventData?: BreakingEventData | null;
-  writeArticle?: ((html: string, filename: string) => Promise<void>) | null;
+  writeArticle?: ((html: string, filename: string) => Promise<void | boolean>) | null;
 }
 
 /** Validation result for a breaking news article */
