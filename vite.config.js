@@ -10,6 +10,29 @@
 
 import { defineConfig } from 'vite';
 import sri from 'vite-plugin-sri-gen';
+import fs from 'node:fs';
+import path from 'node:path';
+
+/**
+ * Auto-discover news article HTML files from the news/ directory.
+ * This prevents new articles from being excluded from the Vite build
+ * (and thus missing from S3 deployment).
+ */
+function discoverNewsArticles() {
+  const newsDir = path.resolve(__dirname, 'news');
+  const entries = {};
+  if (fs.existsSync(newsDir)) {
+    for (const file of fs.readdirSync(newsDir)) {
+      if (file.endsWith('.html') && !file.startsWith('index')) {
+        const name = file.replace('.html', '');
+        entries[`news/${name}`] = `./news/${file}`;
+      }
+    }
+  }
+  return entries;
+}
+
+const newsArticleEntries = discoverNewsArticles();
 
 export default defineConfig({
   // Base configuration
@@ -105,102 +128,8 @@ export default defineConfig({
         'news/index_ja': './news/index_ja.html',
         'news/index_ko': './news/index_ko.html',
         'news/index_zh': './news/index_zh.html',
-        // News article pages (81 files)
-        'news/2026-02-10-biodiversity-citizenship-en': './news/2026-02-10-biodiversity-citizenship-en.html',
-        'news/2026-02-10-biodiversity-citizenship-sv': './news/2026-02-10-biodiversity-citizenship-sv.html',
-        'news/2026-02-10-pm-eu-summit-en': './news/2026-02-10-pm-eu-summit-en.html',
-        'news/2026-02-10-pm-eu-summit-sv': './news/2026-02-10-pm-eu-summit-sv.html',
-        'news/2026-02-10-week-ahead-feb-10-17-en': './news/2026-02-10-week-ahead-feb-10-17-en.html',
-        'news/2026-02-10-week-ahead-feb-10-17-sv': './news/2026-02-10-week-ahead-feb-10-17-sv.html',
-        'news/2026-02-13-evening-analysis-ar': './news/2026-02-13-evening-analysis-ar.html',
-        'news/2026-02-13-evening-analysis-da': './news/2026-02-13-evening-analysis-da.html',
-        'news/2026-02-13-evening-analysis-de': './news/2026-02-13-evening-analysis-de.html',
-        'news/2026-02-13-evening-analysis-en': './news/2026-02-13-evening-analysis-en.html',
-        'news/2026-02-13-evening-analysis-es': './news/2026-02-13-evening-analysis-es.html',
-        'news/2026-02-13-evening-analysis-fi': './news/2026-02-13-evening-analysis-fi.html',
-        'news/2026-02-13-evening-analysis-fr': './news/2026-02-13-evening-analysis-fr.html',
-        'news/2026-02-13-evening-analysis-he': './news/2026-02-13-evening-analysis-he.html',
-        'news/2026-02-13-evening-analysis-ja': './news/2026-02-13-evening-analysis-ja.html',
-        'news/2026-02-13-evening-analysis-ko': './news/2026-02-13-evening-analysis-ko.html',
-        'news/2026-02-13-evening-analysis-nl': './news/2026-02-13-evening-analysis-nl.html',
-        'news/2026-02-13-evening-analysis-no': './news/2026-02-13-evening-analysis-no.html',
-        'news/2026-02-13-evening-analysis-sv': './news/2026-02-13-evening-analysis-sv.html',
-        'news/2026-02-13-evening-analysis-zh': './news/2026-02-13-evening-analysis-zh.html',
-        'news/2026-02-14-committee-reports-ar': './news/2026-02-14-committee-reports-ar.html',
-        'news/2026-02-14-committee-reports-da': './news/2026-02-14-committee-reports-da.html',
-        'news/2026-02-14-committee-reports-de': './news/2026-02-14-committee-reports-de.html',
-        'news/2026-02-14-committee-reports-en': './news/2026-02-14-committee-reports-en.html',
-        'news/2026-02-14-committee-reports-es': './news/2026-02-14-committee-reports-es.html',
-        'news/2026-02-14-committee-reports-fi': './news/2026-02-14-committee-reports-fi.html',
-        'news/2026-02-14-committee-reports-fiscal-welfare-en': './news/2026-02-14-committee-reports-fiscal-welfare-en.html',
-        'news/2026-02-14-committee-reports-fiscal-welfare-sv': './news/2026-02-14-committee-reports-fiscal-welfare-sv.html',
-        'news/2026-02-14-committee-reports-fr': './news/2026-02-14-committee-reports-fr.html',
-        'news/2026-02-14-committee-reports-he': './news/2026-02-14-committee-reports-he.html',
-        'news/2026-02-14-committee-reports-ja': './news/2026-02-14-committee-reports-ja.html',
-        'news/2026-02-14-committee-reports-ko': './news/2026-02-14-committee-reports-ko.html',
-        'news/2026-02-14-committee-reports-nl': './news/2026-02-14-committee-reports-nl.html',
-        'news/2026-02-14-committee-reports-no': './news/2026-02-14-committee-reports-no.html',
-        'news/2026-02-14-committee-reports-sv': './news/2026-02-14-committee-reports-sv.html',
-        'news/2026-02-14-committee-reports-zh': './news/2026-02-14-committee-reports-zh.html',
-        'news/2026-02-14-government-propositions-ar': './news/2026-02-14-government-propositions-ar.html',
-        'news/2026-02-14-government-propositions-da': './news/2026-02-14-government-propositions-da.html',
-        'news/2026-02-14-government-propositions-de': './news/2026-02-14-government-propositions-de.html',
-        'news/2026-02-14-government-propositions-en': './news/2026-02-14-government-propositions-en.html',
-        'news/2026-02-14-government-propositions-es': './news/2026-02-14-government-propositions-es.html',
-        'news/2026-02-14-government-propositions-fi': './news/2026-02-14-government-propositions-fi.html',
-        'news/2026-02-14-government-propositions-fr': './news/2026-02-14-government-propositions-fr.html',
-        'news/2026-02-14-government-propositions-he': './news/2026-02-14-government-propositions-he.html',
-        'news/2026-02-14-government-propositions-ja': './news/2026-02-14-government-propositions-ja.html',
-        'news/2026-02-14-government-propositions-ko': './news/2026-02-14-government-propositions-ko.html',
-        'news/2026-02-14-government-propositions-nl': './news/2026-02-14-government-propositions-nl.html',
-        'news/2026-02-14-government-propositions-no': './news/2026-02-14-government-propositions-no.html',
-        'news/2026-02-14-government-propositions-sv': './news/2026-02-14-government-propositions-sv.html',
-        'news/2026-02-14-government-propositions-zh': './news/2026-02-14-government-propositions-zh.html',
-        'news/2026-02-14-opposition-motions-ar': './news/2026-02-14-opposition-motions-ar.html',
-        'news/2026-02-14-opposition-motions-da': './news/2026-02-14-opposition-motions-da.html',
-        'news/2026-02-14-opposition-motions-de': './news/2026-02-14-opposition-motions-de.html',
-        'news/2026-02-14-opposition-motions-en': './news/2026-02-14-opposition-motions-en.html',
-        'news/2026-02-14-opposition-motions-es': './news/2026-02-14-opposition-motions-es.html',
-        'news/2026-02-14-opposition-motions-fi': './news/2026-02-14-opposition-motions-fi.html',
-        'news/2026-02-14-opposition-motions-fr': './news/2026-02-14-opposition-motions-fr.html',
-        'news/2026-02-14-opposition-motions-he': './news/2026-02-14-opposition-motions-he.html',
-        'news/2026-02-14-opposition-motions-ja': './news/2026-02-14-opposition-motions-ja.html',
-        'news/2026-02-14-opposition-motions-ko': './news/2026-02-14-opposition-motions-ko.html',
-        'news/2026-02-14-opposition-motions-nl': './news/2026-02-14-opposition-motions-nl.html',
-        'news/2026-02-14-opposition-motions-no': './news/2026-02-14-opposition-motions-no.html',
-        'news/2026-02-14-opposition-motions-sv': './news/2026-02-14-opposition-motions-sv.html',
-        'news/2026-02-14-opposition-motions-zh': './news/2026-02-14-opposition-motions-zh.html',
-        'news/2026-02-14-week-ahead-feb-14-20-en': './news/2026-02-14-week-ahead-feb-14-20-en.html',
-        'news/2026-02-14-week-ahead-feb-14-20-sv': './news/2026-02-14-week-ahead-feb-14-20-sv.html',
-        'news/2026-02-14-week-ahead-feb-15-21-da': './news/2026-02-14-week-ahead-feb-15-21-da.html',
-        'news/2026-02-14-week-ahead-feb-15-21-en': './news/2026-02-14-week-ahead-feb-15-21-en.html',
-        'news/2026-02-14-week-ahead-feb-15-21-fi': './news/2026-02-14-week-ahead-feb-15-21-fi.html',
-        'news/2026-02-14-week-ahead-feb-15-21-no': './news/2026-02-14-week-ahead-feb-15-21-no.html',
-        'news/2026-02-14-week-ahead-feb-15-21-sv': './news/2026-02-14-week-ahead-feb-15-21-sv.html',
-        'news/2026-02-committee-reports-en': './news/2026-02-committee-reports-en.html',
-        'news/2026-02-committee-reports-sv': './news/2026-02-committee-reports-sv.html',
-        'news/2026-02-government-propositions-en': './news/2026-02-government-propositions-en.html',
-        'news/2026-02-government-propositions-sv': './news/2026-02-government-propositions-sv.html',
-        'news/2026-02-opposition-motions-en': './news/2026-02-opposition-motions-en.html',
-        'news/2026-02-opposition-motions-sv': './news/2026-02-opposition-motions-sv.html',
-        'news/2026-02-parliament-agenda-en': './news/2026-02-parliament-agenda-en.html',
-        'news/2026-02-parliament-agenda-sv': './news/2026-02-parliament-agenda-sv.html',
-        'news/2026-02-week-ahead-en': './news/2026-02-week-ahead-en.html',
-        'news/2026-02-week-ahead-sv': './news/2026-02-week-ahead-sv.html',
-        'news/2026-02-16-opposition-interpellations-offensive-en': './news/2026-02-16-opposition-interpellations-offensive-en.html',
-        'news/2026-02-16-opposition-interpellations-offensive-sv': './news/2026-02-16-opposition-interpellations-offensive-sv.html',
-        'news/2026-02-16-opposition-interpellations-offensive-da': './news/2026-02-16-opposition-interpellations-offensive-da.html',
-        'news/2026-02-16-opposition-interpellations-offensive-no': './news/2026-02-16-opposition-interpellations-offensive-no.html',
-        'news/2026-02-16-opposition-interpellations-offensive-fi': './news/2026-02-16-opposition-interpellations-offensive-fi.html',
-        'news/2026-02-16-opposition-interpellations-offensive-de': './news/2026-02-16-opposition-interpellations-offensive-de.html',
-        'news/2026-02-16-opposition-interpellations-offensive-fr': './news/2026-02-16-opposition-interpellations-offensive-fr.html',
-        'news/2026-02-16-opposition-interpellations-offensive-es': './news/2026-02-16-opposition-interpellations-offensive-es.html',
-        'news/2026-02-16-opposition-interpellations-offensive-nl': './news/2026-02-16-opposition-interpellations-offensive-nl.html',
-        'news/2026-02-16-opposition-interpellations-offensive-ar': './news/2026-02-16-opposition-interpellations-offensive-ar.html',
-        'news/2026-02-16-opposition-interpellations-offensive-he': './news/2026-02-16-opposition-interpellations-offensive-he.html',
-        'news/2026-02-16-opposition-interpellations-offensive-ja': './news/2026-02-16-opposition-interpellations-offensive-ja.html',
-        'news/2026-02-16-opposition-interpellations-offensive-ko': './news/2026-02-16-opposition-interpellations-offensive-ko.html',
-        'news/2026-02-16-opposition-interpellations-offensive-zh': './news/2026-02-16-opposition-interpellations-offensive-zh.html'
+        // News article pages — auto-discovered from news/ directory
+        ...newsArticleEntries
       },
       output: {
         // Manual chunk splitting for optimal loading

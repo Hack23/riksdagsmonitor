@@ -1,0 +1,172 @@
+name: S3 Troubleshoot
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Diagnostic command to run'
+        required: true
+        default: 'list-missing'
+        type: choice
+        options:
+          - list-missing
+          - list-bucket-news
+          - check-specific-file
+          - compare-dist-vs-s3
+          - bucket-stats
+      file_pattern:
+        description: 'File pattern for check-specific-file (e.g. news/2026-02-22-justice-reform-en.html)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  AWS_REGION: "us-east-1"
+  S3_BUCKET_NAME: "riksdagsmonitor-frontend-us-east-1-172017021075"
+
+jobs:
+  troubleshoot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with Vite
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
+        with:
+          role-to-assume: arn:aws:iam::172017021075:role/GithubWorkFlowRole
+          role-session-name: s3troubleshoot
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: List files missing from S3
+        if: inputs.command == 'list-missing'
+        run: |
+          echo "📋 Comparing local dist/ with S3 bucket..."
+          echo ""
+
+          # List all HTML files in dist/news/
+          echo "=== Local dist/news/ HTML files ==="
+          find dist/news -name '*.html' | sort > /tmp/local-files.txt
+          wc -l /tmp/local-files.txt
+          echo ""
+
+          # List all HTML files in S3 news/
+          echo "=== S3 bucket news/ HTML files ==="
+          aws s3 ls "s3://${{ env.S3_BUCKET_NAME }}/news/" --recursive \
+            | grep '\.html$' | awk '{print "dist/" $4}' | sort > /tmp/s3-files.txt
+          wc -l /tmp/s3-files.txt
+          echo ""
+
+          # Show files in local but not in S3
+          echo "=== Files in dist/ but MISSING from S3 ==="
+          comm -23 /tmp/local-files.txt /tmp/s3-files.txt || true
+          echo ""
+
+          MISSING=$(comm -23 /tmp/local-files.txt /tmp/s3-files.txt | wc -l)
+          echo "Total missing from S3: $MISSING"
+
+      - name: List S3 bucket news files
+        if: inputs.command == 'list-bucket-news'
+        run: |
+          echo "📋 Listing all news/ files in S3 bucket..."
+          aws s3 ls "s3://${{ env.S3_BUCKET_NAME }}/news/" --recursive --human-readable
+          echo ""
+          echo "Total files:"
+          aws s3 ls "s3://${{ env.S3_BUCKET_NAME }}/news/" --recursive | wc -l
+
+      - name: Check specific file
+        if: inputs.command == 'check-specific-file'
+        run: |
+          FILE="${{ inputs.file_pattern }}"
+          if [ -z "$FILE" ]; then
+            echo "❌ No file pattern specified"
+            exit 1
+          fi
+
+          echo "🔍 Checking file: $FILE"
+          echo ""
+
+          echo "=== In local dist/ ==="
+          if [ -f "dist/$FILE" ]; then
+            echo "✅ EXISTS in dist/$FILE"
+            ls -la "dist/$FILE"
+          else
+            echo "❌ MISSING from dist/$FILE"
+            echo "   Check if the file is listed in vite.config.js rollupOptions.input"
+          fi
+          echo ""
+
+          echo "=== In S3 bucket ==="
+          aws s3 ls "s3://${{ env.S3_BUCKET_NAME }}/$FILE" 2>/dev/null && \
+            echo "✅ EXISTS in S3" || echo "❌ MISSING from S3"
+          echo ""
+
+          echo "=== In source repo ==="
+          if [ -f "$FILE" ]; then
+            echo "✅ EXISTS in repo: $FILE"
+            ls -la "$FILE"
+          else
+            echo "❌ MISSING from repo"
+          fi
+
+      - name: Compare dist vs S3
+        if: inputs.command == 'compare-dist-vs-s3'
+        run: |
+          echo "📋 Full comparison of dist/ vs S3 bucket..."
+          echo ""
+
+          # Get S3 file list
+          aws s3 ls "s3://${{ env.S3_BUCKET_NAME }}/" --recursive \
+            | awk '{print $4}' | sort > /tmp/s3-all.txt
+
+          # Get dist file list (remove dist/ prefix)
+          find dist -type f | sed 's|^dist/||' | sort > /tmp/dist-all.txt
+
+          echo "=== Files in dist/ but MISSING from S3 ==="
+          comm -23 /tmp/dist-all.txt /tmp/s3-all.txt | head -50
+          MISSING=$(comm -23 /tmp/dist-all.txt /tmp/s3-all.txt | wc -l)
+          echo "... Total missing: $MISSING"
+          echo ""
+
+          echo "=== Files in S3 but NOT in dist/ (orphaned) ==="
+          comm -13 /tmp/dist-all.txt /tmp/s3-all.txt | head -50
+          ORPHANED=$(comm -13 /tmp/dist-all.txt /tmp/s3-all.txt | wc -l)
+          echo "... Total orphaned: $ORPHANED"
+
+      - name: Bucket stats
+        if: inputs.command == 'bucket-stats'
+        run: |
+          echo "📊 S3 Bucket Statistics"
+          echo ""
+
+          echo "=== Total objects ==="
+          aws s3 ls "s3://${{ env.S3_BUCKET_NAME }}/" --recursive --summarize | tail -2
+          echo ""
+
+          echo "=== Objects by type ==="
+          aws s3 ls "s3://${{ env.S3_BUCKET_NAME }}/" --recursive | awk '{print $4}' | \
+            sed 's/.*\.//' | sort | uniq -c | sort -rn
+          echo ""
+
+          echo "=== News files count ==="
+          aws s3 ls "s3://${{ env.S3_BUCKET_NAME }}/news/" --recursive | wc -l
