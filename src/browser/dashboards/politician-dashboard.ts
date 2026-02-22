@@ -35,6 +35,7 @@
 import {
   logger,
   detectLanguage,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';
@@ -648,6 +649,11 @@ export async function init(): Promise<void> {
     dataCache.influenceMetrics = influenceData;
     dataCache.behavioralTrends = behavioralData;
     dataCache.experienceLevels = experienceData;
+
+    const politicianDashboard = document.getElementById('politician-dashboard');
+    if (politicianDashboard) {
+      showDataSourceDisclaimer(politicianDashboard, 'live');
+    }
 
     // --- Top 10 Most Productive (by annual_vote_count) ---
     const activeRiskData = riskData.filter(

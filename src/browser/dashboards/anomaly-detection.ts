@@ -37,9 +37,10 @@
 import {
   logger,
   detectLanguage,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
-import type { CSVRow } from '../shared/index.js';
+import type { CSVRow, DataSourceType } from '../shared/index.js';
 
 const d3 = (globalThis as any).d3;
 const Chart = (globalThis as any).Chart;
@@ -338,6 +339,7 @@ function generateFallbackData(): CSVRow[] {
 
 class AnomalyDetectionDataManager {
   data: CSVRow[] | null = null;
+  dataSourceType: DataSourceType = 'live';
   private readonly language: string;
 
   constructor() {
@@ -384,6 +386,7 @@ class AnomalyDetectionDataManager {
       logger.warn('All data sources failed, using synthetic fallback data');
       const fallback = generateFallbackData();
       this.data = fallback;
+      this.dataSourceType = 'synthetic';
       return fallback;
     }
 
@@ -1183,6 +1186,11 @@ export async function init(): Promise<void> {
 
   try {
     await dataManager.fetchData();
+
+    const dashboard = document.getElementById('anomaly-detection-dashboard');
+    if (dashboard) {
+      showDataSourceDisclaimer(dashboard, dataManager.dataSourceType);
+    }
 
     const criticalAnomaly = dataManager.checkForCriticalAnomalies();
     if (criticalAnomaly) {

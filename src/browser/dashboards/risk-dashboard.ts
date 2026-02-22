@@ -32,6 +32,7 @@ import {
   CHART_PALETTE,
   addChartKeyboardNav,
   initDashboardSection,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
 import { loadCSV, createDataSource } from '../shared/index.js';
@@ -990,6 +991,10 @@ export async function init(): Promise<void> {
   }
 
   // Initialize visualizations with real data
+  const riskDashboard = document.getElementById('risk-dashboard');
+  if (riskDashboard) {
+    showDataSourceDisclaimer(riskDashboard, 'live');
+  }
   updateEarlyWarnings(riskData);
   createHeatMap(riskData);
   createRiskDistributionChart(riskData);

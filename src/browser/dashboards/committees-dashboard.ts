@@ -20,7 +20,7 @@
  * @marketing Expert audience engagement — committee analysis content attracts high-value audiences: policy researchers, lobbyists, and legislative affairs professionals. This audience has high conversion potential for premium analytics and API subscriptions.
  * */
 
-import { logger } from '../shared/index.js';
+import { logger, showDataSourceDisclaimer } from '../shared/index.js';
 
 /* ------------------------------------------------------------------ */
 /*  Global library references (loaded via <script> tags)              */
@@ -1057,6 +1057,8 @@ async function initializeDashboard(): Promise<void> {
     const dataManager = new DataManager();
     const data = await dataManager.loadAllData();
     logger.info('[CommitteeDashboard] Data loaded successfully');
+
+    showDataSourceDisclaimer(dashboardRoot, 'live');
 
     if (visualizationInstances?.charts) {
       visualizationInstances.charts.destroy();

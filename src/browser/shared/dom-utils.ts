@@ -109,6 +109,58 @@ export function detectLanguage(): string {
   return document.documentElement.lang || 'en';
 }
 
+// ─── Data Source Disclaimer ──────────────────────────────────────────────────
+
+/**
+ * Data source type for dashboard disclaimers.
+ */
+export type DataSourceType = 'live' | 'synthetic' | 'mock';
+
+/**
+ * Show a data source disclaimer banner inside a dashboard container.
+ * Informs users whether data is live CSV, synthetic fallback, or mock.
+ */
+export function showDataSourceDisclaimer(
+  container: HTMLElement,
+  sourceType: DataSourceType,
+): void {
+  // Remove any existing disclaimer in this container
+  const existing = container.querySelector('.data-source-disclaimer');
+  if (existing) existing.remove();
+
+  const disclaimer = document.createElement('div');
+  disclaimer.className = `data-source-disclaimer data-source-${sourceType}`;
+  disclaimer.setAttribute('role', 'status');
+
+  let icon: string;
+  let text: string;
+
+  switch (sourceType) {
+    case 'live':
+      icon = '✅';
+      text = 'Live data loaded from CIA Platform CSV exports';
+      break;
+    case 'synthetic':
+      icon = '⚠️';
+      text = 'Synthetic fallback data — live CSV sources unavailable';
+      break;
+    case 'mock':
+      icon = '🔧';
+      text = 'Mock demonstration data — not based on real parliamentary records';
+      break;
+  }
+
+  disclaimer.textContent = `${icon} ${text}`;
+
+  // Insert after the first heading or at the top of the container
+  const heading = container.querySelector('h2, h3');
+  if (heading && heading.nextSibling) {
+    heading.parentNode!.insertBefore(disclaimer, heading.nextSibling);
+  } else {
+    container.prepend(disclaimer);
+  }
+}
+
 /**
  * Announce a data point to screen readers via live region.
  */
