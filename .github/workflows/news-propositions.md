@@ -4,7 +4,7 @@ description: Generates government propositions analysis articles for all 14 lang
 strict: false
 on:
   schedule:
-    cron: "0 5 * * 1-5"
+    - cron: "0 5 * * 1-5"
   workflow_dispatch:
     inputs:
       force_generation:

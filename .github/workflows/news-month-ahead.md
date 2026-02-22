@@ -4,7 +4,7 @@ description: Generates month-ahead strategic outlook articles for all 14 languag
 strict: false
 on:
   schedule:
-    cron: "0 8 1 * *"
+    - cron: "0 8 1 * *"
   workflow_dispatch:
     inputs:
       force_generation:

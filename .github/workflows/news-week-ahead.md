@@ -4,7 +4,7 @@ description: Generates week-ahead prospective articles for all 14 languages. Run
 strict: false
 on:
   schedule:
-    cron: "0 7 * * 5"
+    - cron: "0 7 * * 5"
   workflow_dispatch:
     inputs:
       force_generation:

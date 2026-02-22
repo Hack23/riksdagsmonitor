@@ -4,7 +4,7 @@ description: Generates opposition motions analysis articles for all 14 languages
 strict: false
 on:
   schedule:
-    cron: "0 6 * * 1-5"
+    - cron: "0 6 * * 1-5"
   workflow_dispatch:
     inputs:
       force_generation:

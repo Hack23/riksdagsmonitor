@@ -4,7 +4,7 @@ description: Generates weekly review retrospective articles for all 14 languages
 strict: false
 on:
   schedule:
-    cron: "0 9 * * 6"
+    - cron: "0 9 * * 6"
   workflow_dispatch:
     inputs:
       force_generation:

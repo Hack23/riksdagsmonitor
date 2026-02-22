@@ -4,7 +4,7 @@ description: Generates committee reports analysis articles for all 14 languages.
 strict: false
 on:
   schedule:
-    cron: "0 4 * * 1-5"
+    - cron: "0 4 * * 1-5"
   workflow_dispatch:
     inputs:
       force_generation:
