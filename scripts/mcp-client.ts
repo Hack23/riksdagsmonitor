@@ -404,7 +404,7 @@ export class MCPClient {
       'search_dokument',
       searchParams as unknown as Record<string, unknown>,
     );
-    return (response['documents'] ?? []) as unknown[];
+    return (response['dokument'] ?? response['documents'] ?? []) as unknown[];
   }
 
   async searchSpeeches(searchParams: SearchSpeechesParams): Promise<unknown[]> {

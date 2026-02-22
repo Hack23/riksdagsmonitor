@@ -1,35 +1,9 @@
 {
-  "timestamp": "2026-02-22T01:12:00.000Z",
-  "monitor_type": "realtime",
-  "events_detected": [
-    {
-      "type": "government_proposition",
-      "significance": "HIGH",
-      "title": "Frihetsberövande påföljder för barn och unga (Prop 2025/26:132)",
-      "date": "2026-02-19"
-    },
-    {
-      "type": "press_release",
-      "significance": "HIGH",
-      "title": "Ytterligare åtgärder för att stärka barns skydd mot sexualbrott",
-      "date": "2026-02-20"
-    },
-    {
-      "type": "press_release",
-      "significance": "HIGH",
-      "title": "400 nya fängelseplatser på Kristianstad Vä",
-      "date": "2026-02-20"
-    },
-    {
-      "type": "press_release",
-      "significance": "MEDIUM",
-      "title": "Regeringen går vidare med förslag om ungdomsfängelser",
-      "date": "2026-02-20"
-    }
-  ],
-  "articles_generated": 14,
-  "article_slug": "2026-02-22-justice-reform",
-  "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-  "mcp_data_status": "live",
-  "next_check": "2026-02-22T12:00:00.000Z"
+  "lastGenerated": "2026-02-22T10:55:00Z",
+  "articleTypes": ["weekly-review"],
+  "languages": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
+  "articlesGenerated": 14,
+  "dataSource": "riksdag-regering-mcp",
+  "documentsAnalyzed": 51,
+  "forceGeneration": false
 }

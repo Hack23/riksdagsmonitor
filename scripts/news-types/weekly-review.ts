@@ -98,13 +98,35 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     const toStr = formatDateForSlug(today);
 
     console.log(`  🔄 Fetching documents ${fromStr} → ${toStr}...`);
-    const documents = await client.searchDocuments({
-      from_date: fromStr,
-      to_date: toStr,
-      limit: 30
-    }) as RawDocument[];
-    mcpCalls.push({ tool: 'search_dokument', result: documents });
-    console.log(`  📊 Found ${documents.length} documents from past week`);
+
+    // Fetch committee reports, propositions, and motions for richer content
+    const [reports, propositions, motions] = await Promise.all([
+      client.fetchCommitteeReports(30, '2025/26').catch(() => [] as unknown[]),
+      client.fetchPropositions(30, '2025/26').catch(() => [] as unknown[]),
+      client.fetchMotions(30, '2025/26').catch(() => [] as unknown[]),
+    ]);
+
+    // Filter to only recent items within lookback period
+    const filterRecent = (docs: unknown[]): RawDocument[] =>
+      (docs as RawDocument[]).filter(d => {
+        const date = (d as Record<string, string>).datum ?? (d as Record<string, string>).publicerad ?? '';
+        return date >= fromStr && date <= toStr;
+      });
+
+    const recentReports = filterRecent(reports);
+    const recentPropositions = filterRecent(propositions);
+    const recentMotions = filterRecent(motions);
+
+    // Tag documents with their type for content generation
+    for (const d of recentReports) (d as Record<string, string>).doktyp = (d as Record<string, string>).doktyp || 'bet';
+    for (const d of recentPropositions) (d as Record<string, string>).doktyp = (d as Record<string, string>).doktyp || 'prop';
+    for (const d of recentMotions) (d as Record<string, string>).doktyp = (d as Record<string, string>).doktyp || 'mot';
+
+    const documents: RawDocument[] = [...recentReports, ...recentPropositions, ...recentMotions];
+    mcpCalls.push({ tool: 'get_betankanden', result: recentReports });
+    mcpCalls.push({ tool: 'get_propositioner', result: recentPropositions });
+    mcpCalls.push({ tool: 'get_motioner', result: recentMotions });
+    console.log(`  📊 Found ${documents.length} documents (${recentReports.length} reports, ${recentPropositions.length} propositions, ${recentMotions.length} motions)`);
 
     if (documents.length === 0) {
       console.log('  ℹ️ No documents found for the past week, skipping');
@@ -121,7 +143,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       const watchPoints = extractWatchPoints({ documents }, lang);
       const metadata = generateMetadata({ documents }, 'weekly-review', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['search_dokument']);
+      const sources: string[] = generateSources(['get_betankanden', 'get_propositioner', 'get_motioner']);
 
       const titles: TitleSet = getTitles(lang, documents.length);
 
@@ -162,7 +184,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       mcpCalls,
       crossReferences: {
         event: `${documents.length} documents over ${lookbackDays} days`,
-        sources: ['search_dokument']
+        sources: ['get_betankanden', 'get_propositioner', 'get_motioner']
       }
     };
   } catch (error: unknown) {
