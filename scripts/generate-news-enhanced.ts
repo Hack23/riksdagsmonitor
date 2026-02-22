@@ -176,6 +176,9 @@ import {
   generateSources
 } from './data-transformers.js';
 import { generateArticleHTML } from './article-template.js';
+import { generateMonthAhead } from './news-types/month-ahead.js';
+import { generateWeeklyReview } from './news-types/weekly-review.js';
+import { generateMonthlyReview } from './news-types/monthly-review.js';
 import type { Language } from './types/language.js';
 import type { ArticleCategory } from './types/article.js';
 import type {
@@ -834,6 +837,15 @@ async function generateNews(): Promise<typeof stats> {
       case 'breaking':
         console.log('⚡ Breaking news generation requires manual trigger with specific event context');
         console.log('  ⚠️ Full implementation pending');
+        break;
+      case 'month-ahead':
+        await generateMonthAhead({ languages, writeArticle });
+        break;
+      case 'weekly-review':
+        await generateWeeklyReview({ languages, writeArticle });
+        break;
+      case 'monthly-review':
+        await generateMonthlyReview({ languages, writeArticle });
         break;
       default:
         console.warn(`⚠️ Unknown article type: ${type}`);

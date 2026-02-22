@@ -67,7 +67,7 @@ export interface ArticleInput {
 export interface GenerationOptions {
   languages?: Language[];
   lookbackDays?: number;
-  writeArticle?: ((html: string, filename: string) => Promise<void>) | null;
+  writeArticle?: ((html: string, filename: string) => Promise<void | boolean>) | null;
 }
 
 /**

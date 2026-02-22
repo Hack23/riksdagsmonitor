@@ -171,6 +171,9 @@ describe('Generate News Enhanced - Part 1', () => {
 
       expect(moduleExports.VALID_ARTICLE_TYPES).toBeDefined();
       expect(moduleExports.VALID_ARTICLE_TYPES).toContain('week-ahead');
+      expect(moduleExports.VALID_ARTICLE_TYPES).toContain('month-ahead');
+      expect(moduleExports.VALID_ARTICLE_TYPES).toContain('weekly-review');
+      expect(moduleExports.VALID_ARTICLE_TYPES).toContain('monthly-review');
       expect(moduleExports.VALID_ARTICLE_TYPES).toContain('breaking'); // Actual: 'breaking', not 'week-summary'
       expect(moduleExports.VALID_ARTICLE_TYPES).toContain('committee-reports');
       expect(moduleExports.VALID_ARTICLE_TYPES).toContain('propositions');
