@@ -38,12 +38,6 @@ function extractCronSchedule(content: string): string | null {
   return cronMatch ? (cronMatch[1] ?? null) : null;
 }
 
-/** Check if workflow has schedule trigger */
-function hasScheduleTrigger(content: string): boolean {
-  // Match "schedule:" that's not part of a larger word
-  return /^\s*schedule:/m.test(content) || /on:\s*\n\s*schedule:/m.test(content);
-}
-
 /** Parse frontmatter from .md workflow file */
 function parseFrontmatter(filepath: string): string {
   const content = fs.readFileSync(filepath, 'utf-8');
