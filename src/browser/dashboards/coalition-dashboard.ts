@@ -379,7 +379,7 @@ function renderVotingAnomalyChart(): void {
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { title: { display: true, text: 'Voting Anomalies (Last 5 Years)', font: { size: 16, weight: 'bold' } }, tooltip: { callbacks: { label: (context: any) => { const date = new Date(context.parsed.x); return `${context.dataset.label}: Deviation ${context.parsed.y.toFixed(2)} on ${date.toLocaleDateString()}`; } } }, legend: { display: true, position: 'bottom' } },
-      scales: { x: { type: 'time', time: { unit: 'year', displayFormats: { year: 'yyyy' } }, title: { display: true, text: 'Date' } }, y: { title: { display: true, text: 'Deviation Score' }, beginAtZero: true } }
+      scales: { x: { type: 'linear', title: { display: true, text: 'Date' }, ticks: { callback: (value: any) => new Date(value).getFullYear().toString() } }, y: { title: { display: true, text: 'Deviation Score' }, beginAtZero: true } }
     }
   });
 }
