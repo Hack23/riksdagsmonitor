@@ -124,7 +124,13 @@ async function performPost(
       statusText: raw.statusText,
       headers: { get: (h: string) => raw.headers.get(h) },
       text: async () => responseBody,
-      json: async () => JSON.parse(responseBody) as unknown,
+      json: async () => {
+        try {
+          return JSON.parse(responseBody) as unknown;
+        } catch {
+          throw new Error(`HTTP ${raw.status} ${raw.statusText}: non-JSON response body: ${responseBody.slice(0, 200)}`);
+        }
+      },
     };
   }
 

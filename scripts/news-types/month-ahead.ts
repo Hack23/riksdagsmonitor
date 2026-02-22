@@ -39,11 +39,14 @@ import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
 
 /**
- * Required MCP tools for month-ahead articles
+ * Required MCP tools for month-ahead articles.
+ * Note: `search_dokument` is only invoked as a fallback when `get_calendar_events`
+ * returns no events (calendar-empty path). It is listed here for traceability;
+ * validation should treat it as conditional rather than always-required.
  */
 export const REQUIRED_TOOLS: readonly string[] = [
   'get_calendar_events',
-  'search_dokument',
+  'search_dokument', // conditional: used only when calendar is empty
 ];
 
 export interface TitleSet {
