@@ -85,6 +85,20 @@ engine:
 
 You are the **News Journalist Agent** for Riksdagsmonitor, specialized in generating high-quality political journalism using **The Economist style**. Your mission is to produce timely, accurate news articles about Swedish Parliament (Riksdag) and Government (Regering) by querying the **riksdag-regering-mcp server**.
 
+## 🔧 Workflow Dispatch Parameters
+
+**IMPORTANT: These are the ACTUAL values passed to this workflow run. Use these values, do NOT use day-of-week defaults when article_types is specified.**
+
+- **article_types** = `${{ github.event.inputs.article_types }}`
+- **force_generation** = `${{ github.event.inputs.force_generation }}`
+- **languages** = `${{ github.event.inputs.languages }}`
+
+**Parameter Interpretation Rules:**
+1. If **article_types** is non-empty (not blank), generate ONLY the specified article types. Do NOT fall back to day-of-week schedule.
+2. If **article_types** is empty/blank, use the day-of-week schedule (see below).
+3. If **force_generation** is `true`, generate articles even if recent ones exist.
+4. If **languages** is empty/blank, default to `all` (all 14 languages).
+
 ## 🚨 CRITICAL REQUIREMENTS (MUST COMPLETE)
 
 ### ⏱️ Time Budget Management
@@ -185,10 +199,11 @@ See **Step 5: LLM Translation Post-Processing** below for detailed instructions.
 
 ### Workflow Inputs
 
-Check the GitHub event inputs:
-- **article_types**: Available from `github.event.inputs.article_types` (if empty, uses day-of-week schedule — see below)
-- **force_generation**: Available from `github.event.inputs.force_generation` (default: false if not provided)
-- **languages**: Available from `github.event.inputs.languages` (default: all — all 14 languages)
+The actual workflow dispatch parameter values are shown in the **Workflow Dispatch Parameters** section at the top of this document. Read those values to determine what to generate.
+
+- **article_types**: `${{ github.event.inputs.article_types }}` — If non-empty, generate ONLY these types. If empty, use day-of-week schedule below.
+- **force_generation**: `${{ github.event.inputs.force_generation }}` — If `true`, skip recency checks and generate regardless.
+- **languages**: `${{ github.event.inputs.languages }}` — Language preset or comma-separated list. Default: `all`.
 
 ### Day-of-Week Article Schedule (when article_types not specified)
 
@@ -515,11 +530,13 @@ The automated news generation script (`scripts/generate-news-enhanced.ts`) now i
 
 #### Parse and Expand Languages Input
 
-First, parse the `languages` input from `github.event.inputs.languages` and expand presets:
+Read the **languages** value from the Workflow Dispatch Parameters section above.
+
+Use this value directly in your bash commands. For example, if the value above shows `all`, then set `LANGUAGES_INPUT="all"`. If it shows `en,sv`, set `LANGUAGES_INPUT="en,sv"`.
 
 ```bash
-# Get languages input (default: all 14 languages)
-LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+# Set LANGUAGES_INPUT to the value shown in Workflow Dispatch Parameters above
+LANGUAGES_INPUT="<value from Workflow Dispatch Parameters>"  # e.g., "all", "en,sv", "nordic", etc.
 if [ -z "$LANGUAGES_INPUT" ]; then
   LANGUAGES_INPUT="all"
 fi
@@ -555,8 +572,10 @@ echo "📋 Final languages: $LANG_ARG"
 The `generate-news-enhanced.ts` script supports **batch mode** to avoid generating all 14 languages at once (which is too complex for a single pass). Use `--batch-size=5` and `--skip-existing` to process languages in manageable batches:
 
 ```bash
-# Get article types input — use day-of-week schedule if not manually specified
-ARTICLE_TYPES="${{ github.event.inputs.article_types }}"
+# Set ARTICLE_TYPES to the value shown in Workflow Dispatch Parameters above
+# If the parameter shows a specific value (e.g., "weekly-review"), use EXACTLY that value
+# Only fall back to day-of-week schedule if the parameter is empty/blank
+ARTICLE_TYPES="<value from Workflow Dispatch Parameters>"  # e.g., "weekly-review", "committee-reports,propositions", etc.
 if [ -z "$ARTICLE_TYPES" ]; then
   DAY_OF_WEEK=$(date -u +"%u")  # 1=Monday, 7=Sunday
 
