@@ -19,7 +19,7 @@ import path from 'node:path';
  * (and thus missing from S3 deployment).
  */
 function discoverNewsArticles() {
-  const newsDir = path.resolve(__dirname, 'news');
+  const newsDir = new URL('./news', import.meta.url);
   const entries = {};
   if (fs.existsSync(newsDir)) {
     for (const file of fs.readdirSync(newsDir)) {
