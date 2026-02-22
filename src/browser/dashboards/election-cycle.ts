@@ -31,6 +31,7 @@
 import {
   logger,
   detectLanguage,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';
@@ -439,6 +440,8 @@ export class ElectionCycleDashboard {
     try {
       this.showLoading();
       await this.dataManager.fetchAllData();
+      const dash = document.getElementById('election-cycle-dashboard');
+      if (dash) { showDataSourceDisclaimer(dash, 'live'); }
       this.setupFilters();
       this.renderCharts();
       this.hideLoading();

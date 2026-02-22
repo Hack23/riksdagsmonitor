@@ -7587,6 +7587,33 @@ html[lang="he"] {
   margin-bottom: 0;
 }
 
+/* Data Source Disclaimer Banner */
+.data-source-disclaimer {
+  margin: var(--spacing-sm) 0;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.data-source-live {
+  color: var(--success-color);
+  border: 1px solid color-mix(in srgb, var(--success-color) 40%, transparent);
+  background-color: color-mix(in srgb, var(--success-color) 10%, transparent);
+}
+
+.data-source-synthetic {
+  color: var(--warning-color);
+  border: 1px solid color-mix(in srgb, var(--warning-color) 40%, transparent);
+  background-color: color-mix(in srgb, var(--warning-color) 10%, transparent);
+}
+
+.data-source-mock {
+  color: var(--primary-cyan, #00d9ff);
+  border: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 40%, transparent);
+  background-color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 10%, transparent);
+}
+
 .methodology-note {
   color: var(--text-secondary);
   font-style: italic;

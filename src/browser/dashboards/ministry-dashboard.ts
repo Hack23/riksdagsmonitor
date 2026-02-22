@@ -54,6 +54,7 @@ import {
   showLoadingState,
   showErrorState,
   hideStateOverlays,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';
@@ -1265,6 +1266,8 @@ export async function init(): Promise<void> {
 
     // Hide loading
     loadingMsg.remove();
+
+    showDataSourceDisclaimer(container, 'live');
 
     // Render visualisations
     renderRiskHeatMap('ministryRiskHeatMap', data.riskLevels, lang);

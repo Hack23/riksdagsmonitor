@@ -37,9 +37,10 @@
 import {
   logger,
   detectLanguage,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
-import type { CSVRow } from '../shared/index.js';
+import type { CSVRow, DataSourceType } from '../shared/index.js';
 
 const d3 = (globalThis as any).d3;
 const Chart = (globalThis as any).Chart;
@@ -269,12 +270,80 @@ function getTranslations(): AnomalyTranslationsFull {
   return t as AnomalyTranslationsFull;
 }
 
+/**
+ * Generate synthetic fallback data when all CSV sources are unavailable.
+ * Ensures charts render with representative sample data rather than showing
+ * an error state, consistent with how other dashboards handle data failures.
+ */
+function generateFallbackData(): CSVRow[] {
+  const data: CSVRow[] = [];
+  const quarterLabels = ['Q1_JAN_MAR', 'Q2_APR_JUN', 'Q3_JUL_SEP', 'Q4_OCT_DEC'];
+  const periods = ['Winter Session', 'Spring Session', 'Summer Recess/Election', 'Autumn Session'];
+
+  for (let year = 2018; year <= 2025; year++) {
+    for (let quarter = 1; quarter <= 4; quarter++) {
+      // Deterministic, bounded z-scores to avoid random HIGH/CRITICAL anomalies in fallback data
+      const ballotZRaw = (((year * 31 + quarter * 17) % 300) / 100) - 1.5;
+      const docZRaw = (((year * 19 + quarter * 23) % 300) / 100) - 1.5;
+      const ballotZ = ballotZRaw.toFixed(4);
+      const docZ = docZRaw.toFixed(4);
+      const absBallotZ = Math.abs(ballotZRaw);
+      const absDocZ = Math.abs(docZRaw);
+      const maxZ = Math.max(absBallotZ, absDocZ);
+      let severity = 'LOW';
+      let anomalyType = 'NO_ANOMALY';
+      let direction = 'WITHIN_NORMAL_RANGE';
+      const dominantZ = absBallotZ >= absDocZ ? ballotZRaw : docZRaw;
+
+      if (maxZ >= 3.0) { severity = 'CRITICAL'; anomalyType = absBallotZ >= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; direction = dominantZ > 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; }
+      else if (maxZ >= 2.0) { severity = 'HIGH'; anomalyType = absBallotZ >= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; direction = dominantZ > 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; }
+      else if (maxZ >= 1.0) { severity = 'MODERATE'; }
+
+      data.push({
+        year: String(year),
+        quarter: String(quarter),
+        is_election_year: (year === 2022) ? 't' : 'f',
+        // Deterministic synthetic counts for reproducible fallback data
+        total_ballots: String(100 + ((year * 13 + quarter * 7) % 200)),
+        active_politicians: '349',
+        attendance_rate: '100.00',
+        documents_produced: String(200 + ((year * 29 + quarter * 11) % 500)),
+        q_baseline_ballots: '150.00',
+        q_stddev_ballots: '40.00',
+        ballot_z_score: ballotZ,
+        q_baseline_docs: '300.00',
+        q_stddev_docs: '100.00',
+        doc_z_score: docZ,
+        q_baseline_attendance: '100.00',
+        q_stddev_attendance: '0',
+        attendance_z_score: '0',
+        activity_classification: maxZ >= 2 ? 'ANOMALY_DETECTED' : 'NORMAL_ACTIVITY',
+        quarter_label: quarterLabels[quarter - 1],
+        parliamentary_period: periods[quarter - 1],
+        anomaly_type: anomalyType,
+        anomaly_direction: direction,
+        max_z_score: maxZ.toFixed(4),
+        anomaly_severity: severity,
+      });
+    }
+  }
+
+  data.sort((a, b) => {
+    const yearDiff = parseInt(b.year as string, 10) - parseInt(a.year as string, 10);
+    if (yearDiff !== 0) return yearDiff;
+    return parseInt(b.quarter as string, 10) - parseInt(a.quarter as string, 10);
+  });
+
+  return data;
+}
+
 // ============================================================================
 // DATA MANAGER
 // ============================================================================
 
 class AnomalyDetectionDataManager {
   data: CSVRow[] | null = null;
+  dataSourceType: DataSourceType = 'live';
   private readonly language: string;
 
   constructor() {
@@ -318,7 +387,11 @@ class AnomalyDetectionDataManager {
     }
 
     if (!response) {
-      throw lastError || new Error('All data sources failed');
+      logger.warn('All data sources failed, using synthetic fallback data');
+      const fallback = generateFallbackData();
+      this.data = fallback;
+      this.dataSourceType = 'synthetic';
+      return fallback;
     }
 
     const csvText = await response.text();
@@ -1118,6 +1191,11 @@ export async function init(): Promise<void> {
   try {
     await dataManager.fetchData();
 
+    const dashboard = document.getElementById('anomaly-detection-dashboard');
+    if (dashboard) {
+      showDataSourceDisclaimer(dashboard, dataManager.dataSourceType);
+    }
+
     const criticalAnomaly = dataManager.checkForCriticalAnomalies();
     if (criticalAnomaly) {
       alertSystem.checkAndDisplayAlert(criticalAnomaly);
@@ -1132,6 +1210,7 @@ export async function init(): Promise<void> {
     logger.debug('✅ Anomaly Detection Dashboard initialized successfully');
   } catch (error) {
     logger.error('Failed to initialize dashboard:', error);
+    hideLoading();
     showDashboardError((error as Error).message);
   }
 }
