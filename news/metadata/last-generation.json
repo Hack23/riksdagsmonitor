@@ -1,39 +1,13 @@
 {
-  "timestamp": "2026-02-22T12:38:17.492Z",
+  "timestamp": "2026-02-22T12:49:56.215Z",
   "types": [
-    "weekly-review"
+    "monthly-review"
   ],
   "languagesGenerated": [
-    "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en"
   ],
   "allRequestedLanguages": [
-    "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en"
   ],
   "batchSize": "all",
   "skipExisting": false,
