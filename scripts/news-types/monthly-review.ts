@@ -6,20 +6,12 @@
  * 
  * @description
  * Generates comprehensive monthly review articles analyzing the past 30 days
- * of parliamentary activity. Provides deep retrospective analysis of legislative
- * outcomes, policy trends, coalition dynamics, and government performance
- * over the full monthly cycle.
- * 
- * **COVERAGE SCOPE - 30-DAY LOOKBACK:**
- * - Legislative output: bills passed, motions debated, committee reports issued
- * - Government performance: propositions tabled, policy announcements
- * - Coalition dynamics: voting patterns, party discipline, cross-party cooperation
- * - Committee activity: reports issued, hearings conducted
- * - Opposition effectiveness: motions filed, interpellations submitted
- * 
- * **MCP DATA SOURCES:**
- * Primary tools: search_dokument, get_betankanden
- * Secondary: get_propositioner, get_motioner, search_voteringar
+ * of parliamentary activity using the same 5-step enrichment pipeline as weekly-review:
+ * 1. search_dokument  – find document IDs and types for the period
+ * 2. get_betankanden / get_propositioner / get_motioner – typed metadata fetchers
+ * 3. get_dokument_innehall – load every document completely (concurrency 3)
+ * 4. search_anforanden – fetch speeches from the same period
+ * 5. CIA static context – secondary historical context only
  * 
  * @author Hack23 AB
  * @license Apache-2.0
@@ -32,8 +24,14 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
-  type RawDocument
+  type RawDocument,
+  type CIAContext,
 } from '../data-transformers.js';
+import {
+  enrichWithFullText,
+  attachSpeechesToDocuments,
+  loadCIAContext,
+} from './weekly-review.js';
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
@@ -42,7 +40,12 @@ import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord
  * Required MCP tools for monthly-review articles
  */
 export const REQUIRED_TOOLS: readonly string[] = [
-  'search_dokument'
+  'search_dokument',
+  'get_dokument_innehall',
+  'search_anforanden',
+  'get_betankanden',
+  'get_propositioner',
+  'get_motioner',
 ];
 
 export interface TitleSet {
@@ -78,7 +81,7 @@ export function formatDateForSlug(date: Date = new Date()): string {
 }
 
 /**
- * Generate Monthly Review article in specified languages
+ * Generate Monthly Review article in specified languages using the full enrichment pipeline.
  */
 export async function generateMonthlyReview(options: GenerationOptions = {}): Promise<GenerationResult> {
   const { languages = ['en', 'sv'], lookbackDays = 30, writeArticle = null } = options;
@@ -97,19 +100,96 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     const fromStr = formatDateForSlug(startDate);
     const toStr = formatDateForSlug(today);
 
-    console.log(`  🔄 Fetching documents ${fromStr} → ${toStr}...`);
-    const documents = await client.searchDocuments({
+    // Step 1: search_dokument for document IDs and types
+    console.log(`  🔄 Step 1 — Searching documents ${fromStr} → ${toStr}...`);
+    const allDocs = await client.searchDocuments({
       from_date: fromStr,
       to_date: toStr,
-      limit: 50
+      limit: 50,
     }) as RawDocument[];
-    mcpCalls.push({ tool: 'search_dokument', result: documents });
-    console.log(`  📊 Found ${documents.length} documents from past month`);
+    mcpCalls.push({ tool: 'search_dokument', result: allDocs });
+
+    // Step 2: typed metadata fetchers (robust: errors → empty [])
+    console.log('  🔄 Step 2 — Fetching typed metadata (reports, propositions, motions)...');
+    const [recentReports, recentPropositions, recentMotions] = await Promise.all([
+      Promise.resolve().then(() => client.fetchCommitteeReports(30, '2025/26'))
+        .catch((err: unknown) => { console.error('Failed to fetch committee reports:', err); return [] as unknown[]; }),
+      Promise.resolve().then(() => client.fetchPropositions(20, '2025/26'))
+        .catch((err: unknown) => { console.error('Failed to fetch propositions:', err); return [] as unknown[]; }),
+      Promise.resolve().then(() => client.fetchMotions(20, '2025/26'))
+        .catch((err: unknown) => { console.error('Failed to fetch motions:', err); return [] as unknown[]; }),
+    ]);
+
+    // Record MCP calls for traceability
+    mcpCalls.push({ tool: 'get_betankanden', result: recentReports });
+    mcpCalls.push({ tool: 'get_propositioner', result: recentPropositions });
+    mcpCalls.push({ tool: 'get_motioner', result: recentMotions });
+
+    // Filter typed results to the lookback window so only in-period documents are merged
+    const filterByDate = (docs: unknown[]): unknown[] =>
+      docs.filter(d => {
+        const rec = d as Record<string, string>;
+        const docDate: string = rec['datum'] ?? rec['date'] ?? '';
+        if (!docDate) return true; // no date field — keep (can't filter)
+        return docDate >= fromStr && docDate <= toStr;
+      });
+
+    const filteredReports = filterByDate(recentReports as unknown[]);
+    const filteredPropositions = filterByDate(recentPropositions as unknown[]);
+    const filteredMotions = filterByDate(recentMotions as unknown[]);
+
+    // Merge: typed docs first (have dok_id), then search extras
+    const typedDocs = [...filteredReports, ...filteredPropositions, ...filteredMotions] as RawDocument[];
+    const typedDocIds = new Set<string>(
+      typedDocs.flatMap(d => {
+        const id = (d as Record<string, string>).dok_id;
+        return id ? [id] : [];
+      }),
+    );
+    const searchExtras = allDocs.filter(d => {
+      const id = (d as Record<string, string>).dok_id;
+      const type = (d as Record<string, string>).doktyp;
+      return id && type && !typedDocIds.has(id);
+    });
+    const documents: RawDocument[] = typedDocs.length > 0
+      ? [...typedDocs, ...searchExtras]
+      : allDocs;
+
+    // Tag doktyp defaults where missing
+    for (const d of documents) {
+      const rec = d as Record<string, unknown>;
+      if (!rec['doktyp']) {
+        if (filteredReports.includes(d as unknown)) rec['doktyp'] = 'bet';
+        else if (filteredPropositions.includes(d as unknown)) rec['doktyp'] = 'prop';
+        else if (filteredMotions.includes(d as unknown)) rec['doktyp'] = 'mot';
+      }
+    }
+
+    console.log(`  📊 Found ${documents.length} documents (${filteredReports.length} reports, ${filteredPropositions.length} propositions, ${filteredMotions.length} motions within lookback window)`);
 
     if (documents.length === 0) {
       console.log('  ℹ️ No documents found for the past month, skipping');
       return { success: true, files: 0, mcpCalls };
     }
+
+    // Step 3: enrich each document with full text
+    console.log('  🔄 Step 3 — Loading full document content...');
+    await enrichWithFullText(client, documents, mcpCalls, 3);
+
+    // Step 4: fetch speeches from the period
+    console.log('  🔄 Step 4 — Fetching speeches from the period...');
+    const rawSpeeches = await Promise.resolve()
+      .then(() => client.searchSpeeches({ from: fromStr, to: toStr, limit: 100 }))
+      .catch((err: unknown) => { console.error('Failed to fetch speeches:', err); return [] as unknown[]; });
+    const speeches: Array<Record<string, unknown>> = Array.isArray(rawSpeeches) ? rawSpeeches as Array<Record<string, unknown>> : [];
+    mcpCalls.push({ tool: 'search_anforanden', result: speeches });
+    console.log(`  🗣 Found ${speeches.length} speeches`);
+    attachSpeechesToDocuments(documents, speeches);
+
+    // Step 5: CIA intelligence context (secondary, historical)
+    console.log('  🔄 Step 5 — Loading CIA intelligence context...');
+    const ciaContext: CIAContext = loadCIAContext();
+    console.log(`  🧠 CIA context: ${ciaContext.partyPerformance.length} parties, coalition stability ${ciaContext.coalitionStability.stabilityScore}/100, motion denial rate ${ciaContext.overallMotionDenialRate}%`);
 
     const slug = `${formatDateForSlug(today)}-monthly-review`;
     const articles: GeneratedArticle[] = [];
@@ -117,11 +197,18 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      const content: string = generateArticleContent({ documents }, 'monthly-review', lang);
+      const content: string = generateArticleContent(
+        { documents, reports: recentReports as RawDocument[], propositions: recentPropositions as RawDocument[], motions: recentMotions as RawDocument[], ciaContext },
+        'monthly-review',
+        lang,
+      );
       const watchPoints = extractWatchPoints({ documents }, lang);
       const metadata = generateMetadata({ documents }, 'monthly-review', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['search_dokument']);
+      const sources: string[] = generateSources([
+        'search_dokument', 'get_dokument_innehall', 'search_anforanden',
+        'get_betankanden', 'get_propositioner', 'get_motioner',
+      ]);
 
       const titles: TitleSet = getTitles(lang, documents.length);
 
@@ -138,14 +225,14 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
       });
 
       articles.push({
         lang,
         html,
         filename: `${slug}-${lang}.html`,
-        slug: `${slug}-${lang}`
+        slug: `${slug}-${lang}`,
       });
 
       if (writeArticle) {
@@ -162,7 +249,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
       mcpCalls,
       crossReferences: {
         event: `${documents.length} documents over ${lookbackDays} days`,
-        sources: ['search_dokument']
+        sources: ['search_dokument', 'get_dokument_innehall', 'search_anforanden', 'get_betankanden', 'get_propositioner', 'get_motioner'],
       }
     };
   } catch (error: unknown) {

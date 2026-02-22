@@ -554,10 +554,10 @@ function classifyArticleType(content: string, fileName: string): ArticleTypeValu
   // Prospective: week-ahead / upcoming previews
   const prospectiveKeywords: string[] = [
     'week ahead', 'week-ahead', 'upcoming', 'preview', 'look ahead',           // en
-    'veckan som kommer', 'kommande', 'framåtblick',                             // sv
-    'ugen der kommer', 'kommende', 'fremadrettet',                              // da
+    'veckan som kommer', 'kommande vecka', 'framåtblick',                       // sv
+    'ugen der kommer', 'kommende uge', 'fremadrettet',                          // da
     'uken som kommer', 'fremtidsrettet',                                        // no
-    'tuleva viikko', 'tulevat', 'ennakko',                                      // fi
+    'tuleva viikko', 'ennakko',                                                 // fi
     'woche voraus', 'vorschau',                                                 // de
     'semaine à venir', 'aperçu',                                                // fr
     'semana por delante', 'adelanto',                                            // es
@@ -569,7 +569,7 @@ function classifyArticleType(content: string, fileName: string): ArticleTypeValu
     '一周展望', '即将'                                                             // zh
   ];
 
-  if (fileName.includes('week-ahead') || prospectiveKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
+  if (fileName.includes('week-ahead') || fileName.includes('month-ahead') || prospectiveKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
     return 'prospective';
   }
 
