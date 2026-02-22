@@ -1405,6 +1405,50 @@ function cleanMotionText(raw: string): string {
 }
 
 /**
+ * Detect when a text string is an MP/politician profile page excerpt rather than
+ * document content. Returns true for texts that begin with Swedish MP-status phrases
+ * or contain profile-specific markers such as:
+ *   - "Tjänstgörande riksdagsledamot …"   (active MP)
+ *   - "Tidigare riksdagsledamot …"        (former MP)
+ *   - "Avgången riksdagsledamot …"        (resigned MP)
+ *   - "Tlllgänglig ersättare …"           (substitute MP)
+ *   - "Tjänstgörande ersättare …"         (active substitute)
+ *   - "Tidigare ersättare …"              (former substitute)
+ *   - "Tjänstgörande statsrådsersättare"  (acting minister substitute)
+ *   - "Tidigare statsråd …"              (former minister)
+ *   - "Tidigare statsminister …"          (former PM)
+ *   - "Inga uppdrag"                      (no assignments)
+ *   - "Avgången …"                        (resigned)
+ *   - "Avliden YYYY-MM-DD …"              (deceased MP)
+ *
+ * This data comes from the riksdag API's person/ledamot profile pages, and must never
+ * appear in article document-entry content.
+ */
+export function isPersonProfileText(text: string): boolean {
+  if (!text) return false;
+  const trimmed = text.trimStart();
+  // Ordered from most specific to least; any match → it is a person profile excerpt
+  return (
+    /^Tjänstgörande riksdagsledamot/u.test(trimmed) ||
+    /^Tidigare riksdagsledamot/u.test(trimmed) ||
+    /^Avgången riksdagsledamot/u.test(trimmed) ||
+    /^Tillgänglig ersättare/u.test(trimmed) ||
+    /^Tjänstgörande ersättare/u.test(trimmed) ||
+    /^Tidigare ersättare/u.test(trimmed) ||
+    /^Tjänstgörande statsrådsersättare/u.test(trimmed) ||
+    /^Tidigare statsråd/u.test(trimmed) ||
+    /^Inga uppdrag/u.test(trimmed) ||
+    /^Avgången/u.test(trimmed) ||
+    // Deceased: "Avliden YYYY-MM-DD ..."
+    /^Avliden\s+\d{4}-\d{2}-\d{2}/u.test(trimmed) ||
+    // Contains riksdag email address — always a profile page
+    /[a-zA-Z0-9._%+\-]+@riksdagen\.se/u.test(trimmed) ||
+    // Contains "Aktuella uppdrag Riksdagsledamot" — profile header
+    /Aktuella uppdrag\s+Riksdagsledamot/u.test(trimmed)
+  );
+}
+
+/**
  * Build a descriptive proposition summary from the ministry organ.
  * Returns a ministry-specific framing sentence.
  */
@@ -1434,15 +1478,21 @@ function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language 
   // For motions: clean raw Swedish notis text before returning
   if ((type === 'motion') && (doc.summary || doc.notis)) {
     const raw = (doc.summary || doc.notis || '');
-    if (raw.includes('Motion till riksdagen') || raw.includes('Förslag till riksdagsbeslut')) {
-      return cleanMotionText(raw);
+    // Skip person-profile data (e.g. "Tjänstgörande riksdagsledamot...", "Avliden 2011-09-20...")
+    if (!isPersonProfileText(raw)) {
+      if (raw.includes('Motion till riksdagen') || raw.includes('Förslag till riksdagsbeslut')) {
+        return cleanMotionText(raw);
+      }
+      return raw;
     }
-    return raw;
   }
 
-  // If we have a real summary or notis, use it as-is for other types
+  // If we have a real summary or notis (not person profile data), use it as-is
   if (doc.summary || doc.notis) {
-    return doc.summary || doc.notis || '';
+    const text = doc.summary || doc.notis || '';
+    if (!isPersonProfileText(text)) {
+      return text;
+    }
   }
 
   // Generate enhanced summary based on metadata
@@ -2118,10 +2168,13 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
 
   // ── PRIMARY: full document text or best available summary ────────────────
   const rawText = doc.fullText || doc.fullContent || doc.summary || doc.notis || '';
+  // Discard person-profile data (MP status lines, deceased notices) — these are
+  // not document content and must never appear in article document entries.
+  const safeRawText = isPersonProfileText(rawText) ? '' : rawText;
   // For motions, clean Swedish boilerplate before extracting passage
-  const cleanedText = (normalizedType === 'motion' && rawText.includes('Motion till riksdagen'))
-    ? cleanMotionText(rawText)
-    : rawText;
+  const cleanedText = (normalizedType === 'motion' && safeRawText.includes('Motion till riksdagen'))
+    ? cleanMotionText(safeRawText)
+    : safeRawText;
   const passage = extractKeyPassage(cleanedText, 500);
   if (passage) {
     const isSwedishSource = !!(doc.titel && !doc.title);

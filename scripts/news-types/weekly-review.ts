@@ -30,6 +30,7 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
+  isPersonProfileText,
   type RawDocument,
   type CIAContext
 } from '../data-transformers.js';
@@ -307,14 +308,22 @@ export async function enrichWithFullText(
         // Merge full text fields into document.
         // NOTE: details['text'] from get_dokument_innehall is a raw database metadata
         // dump (IDs, dates, URLs), NOT human-readable prose — do not use as fullText.
+        // Also: some documents return politician profile text (MP status like
+        // "Tjänstgörande riksdagsledamot..." or "Avliden YYYY-MM-DD...") in their
+        // notis/summary/fullText fields — discard these to prevent them from
+        // appearing as article content.
+        const sanitize = (s: unknown): string => {
+          const str = (s as string) ?? '';
+          return isPersonProfileText(str) ? '' : str;
+        };
         const d = doc as Record<string, unknown>;
-        d['fullText'] = (details['fullText'] as string)
-          ?? (details['summary'] as string)
-          ?? (details['notis'] as string)
-          ?? '';
+        d['fullText'] = sanitize(details['fullText'])
+          || sanitize(details['summary'])
+          || sanitize(details['notis'])
+          || '';
         d['fullContent'] = (details['html'] as string) ?? '';
-        if (!d['summary'] && details['summary']) d['summary'] = details['summary'] as string;
-        if (!d['notis'] && details['notis']) d['notis'] = details['notis'] as string;
+        if (!d['summary'] && details['summary']) d['summary'] = sanitize(details['summary']);
+        if (!d['notis'] && details['notis']) d['notis'] = sanitize(details['notis']);
         d['contentFetched'] = true;
         enriched++;
       } catch (err: unknown) {
