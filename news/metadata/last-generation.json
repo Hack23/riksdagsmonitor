@@ -1,35 +1,41 @@
 {
-  "timestamp": "2026-02-22T01:12:00.000Z",
-  "monitor_type": "realtime",
-  "events_detected": [
+  "timestamp": "2026-02-22T12:09:00.000Z",
+  "type": "realtime-monitor",
+  "schedule": "weekend",
+  "eventsDetected": [
     {
-      "type": "government_proposition",
+      "title": "Extra ändringsbudget för 2026 – Stöd till Ukraina och vaccinberedskap",
+      "source": "Proposition 2025/26:143",
+      "date": "2026-02-19",
       "significance": "HIGH",
-      "title": "Frihetsberövande påföljder för barn och unga (Prop 2025/26:132)",
-      "date": "2026-02-19"
+      "type": "proposition"
     },
     {
-      "type": "press_release",
+      "title": "Luftförsvar i fokus för nytt stort stödpaket till Ukraina",
+      "source": "Government press release",
+      "date": "2026-02-19",
       "significance": "HIGH",
-      "title": "Ytterligare åtgärder för att stärka barns skydd mot sexualbrott",
-      "date": "2026-02-20"
+      "type": "press_release"
     },
     {
-      "type": "press_release",
+      "title": "Regeringen föreslår ny lag om beredskapslager i livsmedelskedjan",
+      "source": "Government press release",
+      "date": "2026-02-20",
       "significance": "HIGH",
-      "title": "400 nya fängelseplatser på Kristianstad Vä",
-      "date": "2026-02-20"
-    },
-    {
-      "type": "press_release",
-      "significance": "MEDIUM",
-      "title": "Regeringen går vidare med förslag om ungdomsfängelser",
-      "date": "2026-02-20"
+      "type": "press_release"
     }
   ],
-  "articles_generated": 14,
-  "article_slug": "2026-02-22-justice-reform",
-  "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-  "mcp_data_status": "live",
-  "next_check": "2026-02-22T12:00:00.000Z"
+  "articlesGenerated": [
+    {
+      "slug": "2026-02-22-weekend-security-preparedness",
+      "type": "weekend-analysis",
+      "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+      "languageCount": 14
+    }
+  ],
+  "nextExpectedCheck": "2026-02-23T12:00:00.000Z",
+  "mcpDataFreshness": {
+    "status": "live",
+    "checkedAt": "2026-02-22T12:11:24.749Z"
+  }
 }
