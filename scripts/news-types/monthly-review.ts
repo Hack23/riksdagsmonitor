@@ -8,9 +8,9 @@
  * Generates comprehensive monthly review articles analyzing the past 30 days
  * of parliamentary activity using the same 5-step enrichment pipeline as weekly-review:
  * 1. search_dokument  – find document IDs and types for the period
- * 2. get_dokument_innehall – load every document completely (concurrency 3)
- * 3. search_anforanden – fetch speeches from the same period
- * 4. get_betankanden / get_propositioner / get_motioner – typed metadata
+ * 2. get_betankanden / get_propositioner / get_motioner – typed metadata fetchers
+ * 3. get_dokument_innehall – load every document completely (concurrency 3)
+ * 4. search_anforanden – fetch speeches from the same period
  * 5. CIA static context – secondary historical context only
  * 
  * @author Hack23 AB
