@@ -523,7 +523,7 @@ ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<Wat
   </footer>
 </article>
 
-<script src="../scripts/back-to-top.js"></script>
+<script type="module" src="../scripts/back-to-top.ts"></script>
 </body>
 </html>`;
 }

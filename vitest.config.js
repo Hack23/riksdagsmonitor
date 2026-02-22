@@ -67,15 +67,15 @@ export default defineConfig({
         'scripts/committees-dashboard.ts',
         'scripts/back-to-top.ts',
         // CLI-only scripts not importable in test environment
-        'scripts/sync-cia-schemas.js',
-        'scripts/check-cia-schema-updates.js',
-        'scripts/generate-types-from-cia-schemas.js',
-        'scripts/generate-news-backport.js',
-        'scripts/load-cia-stats.js',
-        'scripts/update-stats-from-cia.js',
+        'scripts/sync-cia-schemas.ts',
+        'scripts/check-cia-schema-updates.ts',
+        'scripts/generate-types-from-cia-schemas.ts',
+        'scripts/generate-news-backport.ts',
+        'scripts/load-cia-stats.ts',
+        'scripts/update-stats-from-cia.ts',
         'scripts/validate-against-cia-schemas.ts',
         // CLI validation script (not importable, uses process.exit)
-        'scripts/validate-translations.js',
+        'scripts/validate-translations.ts',
         // Dashboard modules (tested via structural DOM tests)
         'dashboard/cia-visualizations.js',
         'dashboard/dashboard-init.js',
