@@ -1887,6 +1887,12 @@ function partyMotionSuccessRate(party: string | undefined, cia: CIAContext | und
 function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string, cia: CIAContext | undefined, lang: Language | string): string {
   const parts: string[] = [];
 
+  // Normalise short doktyp codes to the names used by generateEnhancedSummary
+  const normalizedType = docType === 'prop' ? 'proposition'
+    : docType === 'bet' ? 'report'
+    : docType === 'mot' ? 'motion'
+    : docType;
+
   // ── PRIMARY: full document text or best available summary ────────────────
   const rawText = doc.fullText || doc.fullContent || doc.summary || doc.notis || '';
   const passage = extractKeyPassage(rawText, 500);
@@ -1896,7 +1902,7 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
       ? `<span data-translate="true" lang="sv">${escapeHtml(passage)}</span>`
       : escapeHtml(passage));
   } else {
-    parts.push(escapeHtml(generateEnhancedSummary(doc, docType, lang)));
+    parts.push(escapeHtml(generateEnhancedSummary(doc, normalizedType, lang)));
   }
 
   // ── PRIMARY: policy domain significance derived from document content ────

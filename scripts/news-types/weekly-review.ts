@@ -206,11 +206,11 @@ async function enrichWithFullText(
         const details = await client.fetchDocumentDetails(dokId, true);
         mcpCalls.push({ tool: 'get_dokument_innehall', result: details });
 
-        // Merge full text fields into document
+        // Merge full text fields into document.
+        // NOTE: details['text'] from get_dokument_innehall is a raw database metadata
+        // dump (IDs, dates, URLs), NOT human-readable prose — do not use as fullText.
         const d = doc as Record<string, unknown>;
         d['fullText'] = (details['fullText'] as string)
-          ?? (details['text'] as string)
-          ?? (details['html'] as string)
           ?? (details['summary'] as string)
           ?? (details['notis'] as string)
           ?? '';
@@ -326,10 +326,27 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     mcpCalls.push({ tool: 'get_propositioner', result: recentPropositions });
     mcpCalls.push({ tool: 'get_motioner', result: recentMotions });
 
-    // Merge: use primary search results; fall back to supplementary if empty
-    const documents: RawDocument[] = allDocs.length > 0
-      ? (allDocs as RawDocument[])
-      : [...recentReports, ...recentPropositions, ...recentMotions];
+    // Merge: typed docs (with dok_id) are highest quality; supplement with
+    // real documents from general search (those that have both dok_id and doktyp).
+    const typedDocs = [...recentReports, ...recentPropositions, ...recentMotions];
+    const typedDocIds = new Set<string>(
+      typedDocs.flatMap(d => {
+        const id = (d as Record<string, string>).dok_id;
+        return id ? [id] : [];
+      }),
+    );
+
+    const searchExtras = (allDocs as RawDocument[]).filter(d => {
+      const id = (d as Record<string, string>).dok_id;
+      const type = (d as Record<string, string>).doktyp;
+      return id && type && !typedDocIds.has(id);
+    });
+
+    // Use typed + extras when available; fall back to raw search results (test mocks / edge cases)
+    const documents: RawDocument[] =
+      typedDocs.length > 0 || searchExtras.length > 0
+        ? [...typedDocs, ...searchExtras]
+        : (allDocs as RawDocument[]);
 
     console.log(`  📊 Found ${documents.length} documents (${recentReports.length} reports, ${recentPropositions.length} propositions, ${recentMotions.length} motions)`);
 

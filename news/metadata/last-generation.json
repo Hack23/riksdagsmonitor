@@ -1,9 +1,45 @@
 {
-  "lastGenerated": "2026-02-22T10:55:00Z",
-  "articleTypes": ["weekly-review"],
-  "languages": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
-  "articlesGenerated": 14,
-  "dataSource": "riksdag-regering-mcp",
-  "documentsAnalyzed": 51,
-  "forceGeneration": false
+  "timestamp": "2026-02-22T12:38:17.492Z",
+  "types": [
+    "weekly-review"
+  ],
+  "languagesGenerated": [
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
+  ],
+  "allRequestedLanguages": [
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
+  ],
+  "batchSize": "all",
+  "skipExisting": false,
+  "generated": 0,
+  "errors": 0,
+  "articles": [],
+  "status": "enhanced",
+  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
