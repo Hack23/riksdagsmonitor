@@ -163,8 +163,64 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
+/** Terminal color codes for output formatting */
+interface ColorCodes {
+  reset: string;
+  green: string;
+  red: string;
+  yellow: string;
+  cyan: string;
+  bold: string;
+}
+
+/** Language configuration for a supported language */
+interface LanguageConfig {
+  code: string;
+  file: string;
+  name: string;
+  rtl: boolean;
+}
+
+/** Successful validation result for a language file */
+interface ValidationSuccess {
+  lang: string;
+  code: string;
+  file: string;
+  passed: string[];
+  failed: string[];
+  untranslatedSample?: string;
+  error?: undefined;
+}
+
+/** Error result when a language file cannot be read */
+interface ValidationError {
+  lang: string;
+  code: string;
+  file: string;
+  error: string;
+  passed?: undefined;
+  failed?: undefined;
+  untranslatedSample?: undefined;
+}
+
+/** Union type for all possible validation results */
+type ValidationResult = ValidationSuccess | ValidationError;
+
+/** Map of validation check functions */
+interface ValidationChecks {
+  langAttribute: (content: string, lang: LanguageConfig) => boolean;
+  rtlAttribute: (content: string, lang: LanguageConfig) => boolean;
+  hasTitle: (content: string) => boolean;
+  hasDescription: (content: string) => boolean;
+  hasCanonical: (content: string, lang: LanguageConfig) => boolean;
+  hasHreflang: (content: string) => boolean;
+  hasOgLocale: (content: string, lang: LanguageConfig) => boolean;
+  hasSchemaOrg: (content: string) => boolean;
+  noUntranslatedMarkers: (content: string, lang: LanguageConfig) => boolean;
+}
+
 // Color codes for terminal output
-const colors = {
+const colors: ColorCodes = {
   reset: '\x1b[0m',
   green: '\x1b[32m',
   red: '\x1b[31m',
@@ -174,7 +230,7 @@ const colors = {
 };
 
 // Language configurations
-const languages = [
+const languages: LanguageConfig[] = [
   { code: 'en', file: 'index.html', name: 'English', rtl: false },
   { code: 'sv', file: 'index_sv.html', name: 'Swedish', rtl: false },
   { code: 'da', file: 'index_da.html', name: 'Danish', rtl: false },
@@ -192,46 +248,46 @@ const languages = [
 ];
 
 // Validation checks
-const checks = {
-  langAttribute: (content, lang) => {
+const checks: ValidationChecks = {
+  langAttribute: (content: string, lang: LanguageConfig): boolean => {
     const regex = new RegExp(`<html\\s+lang="${lang.code}"`);
     return regex.test(content);
   },
   
-  rtlAttribute: (content, lang) => {
+  rtlAttribute: (content: string, lang: LanguageConfig): boolean => {
     if (!lang.rtl) return true; // Not required for LTR languages
     return content.includes('dir="rtl"');
   },
   
-  hasTitle: (content) => {
+  hasTitle: (content: string): boolean => {
     return /<title>.*<\/title>/.test(content);
   },
   
-  hasDescription: (content) => {
+  hasDescription: (content: string): boolean => {
     return /<meta\s+name="description"\s+content="[^"]+">/.test(content);
   },
   
-  hasCanonical: (content, lang) => {
+  hasCanonical: (content: string, lang: LanguageConfig): boolean => {
     return content.includes(`<link rel="canonical" href="https://riksdagsmonitor.com/${lang.file}">`);
   },
   
-  hasHreflang: (content) => {
+  hasHreflang: (content: string): boolean => {
     // Check for at least some hreflang tags
-    const count = (content.match(/hreflang=/g) || []).length;
+    const count: number = (content.match(/hreflang=/g) || []).length;
     return count >= 14; // Should have at least 14 (one for each language)
   },
   
-  hasOgLocale: (content, lang) => {
+  hasOgLocale: (content: string, _lang: LanguageConfig): boolean => {
     // Check for Open Graph locale
     return content.includes(`<meta property="og:locale" content="`);
   },
   
-  hasSchemaOrg: (content) => {
+  hasSchemaOrg: (content: string): boolean => {
     return content.includes('"@context": "https://schema.org"');
   },
   
   // NEW: Check for untranslated Swedish content markers
-  noUntranslatedMarkers: (content, lang) => {
+  noUntranslatedMarkers: (content: string, lang: LanguageConfig): boolean => {
     // Swedish files can have Swedish content
     if (lang.code === 'sv') return true;
     
@@ -241,12 +297,12 @@ const checks = {
 };
 
 // Main validation function
-function validateLanguageFile(lang) {
-  const filepath = join(process.cwd(), lang.file);
+function validateLanguageFile(lang: LanguageConfig): ValidationResult {
+  const filepath: string = join(process.cwd(), lang.file);
   
   try {
-    const content = readFileSync(filepath, 'utf-8');
-    const results = {
+    const content: string = readFileSync(filepath, 'utf-8');
+    const results: ValidationSuccess = {
       lang: lang.name,
       code: lang.code,
       file: lang.file,
@@ -308,11 +364,11 @@ function validateLanguageFile(lang) {
       results.passed.push('No untranslated Swedish markers');
     } else {
       // Count how many markers remain
-      const markerCount = (content.match(/data-translate="true"/g) || []).length;
+      const markerCount: number = (content.match(/data-translate="true"/g) || []).length;
       results.failed.push(`Contains ${markerCount} untranslated Swedish content markers (data-translate="true")`);
       
       // Extract a sample for debugging
-      const sampleMatch = content.match(/<span data-translate="true"[^>]*>([^<]{0,50})/);
+      const sampleMatch: RegExpMatchArray | null = content.match(/<span data-translate="true"[^>]*>([^<]{0,50})/);
       if (sampleMatch) {
         results.untranslatedSample = sampleMatch[1] + (sampleMatch[1].length >= 50 ? '...' : '');
       }
@@ -320,18 +376,18 @@ function validateLanguageFile(lang) {
     
     return results;
     
-  } catch (error) {
+  } catch (error: unknown) {
     return {
       lang: lang.name,
       code: lang.code,
       file: lang.file,
-      error: error.message
+      error: (error as Error).message
     };
   }
 }
 
 // Print results
-function printResults(results) {
+function printResults(results: ValidationResult[]): number {
   console.log(`\n${colors.bold}${colors.cyan}===========================================`);
   console.log(`Translation Validation Report`);
   console.log(`===========================================${colors.reset}\n`);
@@ -340,35 +396,36 @@ function printResults(results) {
   let totalFailed = 0;
   let totalErrors = 0;
   
-  results.forEach(result => {
-    if (result.error) {
+  results.forEach((result: ValidationResult) => {
+    if (result.error !== undefined) {
       console.log(`${colors.red}✗ ${result.lang} (${result.code})${colors.reset}`);
       console.log(`  ${colors.red}ERROR: ${result.error}${colors.reset}`);
       totalErrors++;
     } else {
-      const allPassed = result.failed.length === 0;
-      const status = allPassed 
-        ? `${colors.green}✓ ${result.lang} (${result.code})${colors.reset}`
-        : `${colors.yellow}⚠ ${result.lang} (${result.code})${colors.reset}`;
+      const successResult = result as ValidationSuccess;
+      const allPassed: boolean = successResult.failed.length === 0;
+      const status: string = allPassed 
+        ? `${colors.green}✓ ${successResult.lang} (${successResult.code})${colors.reset}`
+        : `${colors.yellow}⚠ ${successResult.lang} (${successResult.code})${colors.reset}`;
       
       console.log(status);
-      console.log(`  File: ${result.file}`);
-      console.log(`  ${colors.green}Passed: ${result.passed.length}${colors.reset}`);
+      console.log(`  File: ${successResult.file}`);
+      console.log(`  ${colors.green}Passed: ${successResult.passed.length}${colors.reset}`);
       
-      if (result.failed.length > 0) {
-        console.log(`  ${colors.red}Failed: ${result.failed.length}${colors.reset}`);
-        result.failed.forEach(failure => {
+      if (successResult.failed.length > 0) {
+        console.log(`  ${colors.red}Failed: ${successResult.failed.length}${colors.reset}`);
+        successResult.failed.forEach((failure: string) => {
           console.log(`    ${colors.red}✗ ${failure}${colors.reset}`);
         });
         
         // Show untranslated sample if available
-        if (result.untranslatedSample) {
-          console.log(`    ${colors.yellow}Sample: "${result.untranslatedSample}"${colors.reset}`);
+        if (successResult.untranslatedSample) {
+          console.log(`    ${colors.yellow}Sample: "${successResult.untranslatedSample}"${colors.reset}`);
         }
       }
       
-      totalPassed += result.passed.length;
-      totalFailed += result.failed.length;
+      totalPassed += successResult.passed.length;
+      totalFailed += successResult.failed.length;
     }
     console.log('');
   });
@@ -394,7 +451,7 @@ function printResults(results) {
 }
 
 // Run validation
-const results = languages.map(lang => validateLanguageFile(lang));
-const exitCode = printResults(results);
+const results: ValidationResult[] = languages.map((lang: LanguageConfig) => validateLanguageFile(lang));
+const exitCode: number = printResults(results);
 
 process.exit(exitCode);

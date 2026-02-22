@@ -1889,12 +1889,47 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${titleHtml}</h4>\n`;
       content += `      <p>${summaryHtml}</p>\n`;
+      content += `      <p><strong>${escapeHtml(String(L(lang, 'whatThisMeans')))}:</strong> ${generatePolicySignificance(doc, lang)}</p>\n`;
       if (doc.url) {
         content += `      <p><a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;
       }
       content += `    </div>\n`;
     });
   });
+
+  // Key takeaways section
+  content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
+  content += `    <div class="context-box">\n      <ul>\n`;
+
+  // Summarise document type distribution
+  const typeEntries = Object.entries(byType);
+  const typeDescriptions = typeEntries.map(([docType, typeDocs]) => {
+    const typeLabel = docType === 'mot' ? (lang === 'sv' ? 'motioner' : 'motions')
+      : docType === 'prop' ? (lang === 'sv' ? 'propositioner' : 'propositions')
+      : docType === 'bet' ? (lang === 'sv' ? 'betänkanden' : 'committee reports')
+      : docType === 'skr' ? (lang === 'sv' ? 'skrivelser' : 'government communications')
+      : docType;
+    return `${typeDocs.length} ${typeLabel}`;
+  });
+  if (typeDescriptions.length > 0) {
+    content += `        <li>${escapeHtml(typeDescriptions.join(', '))}</li>\n`;
+  }
+
+  // Highlight policy domains covered
+  const allDomains = new Set<string>();
+  docs.forEach(doc => {
+    const sig = generatePolicySignificance(doc, lang);
+    const genericVal = L(lang, 'policySignificanceGeneric');
+    if (sig !== genericVal) {
+      allDomains.add(sig);
+    }
+  });
+  if (allDomains.size > 0) {
+    const policyContextVal = L(lang, 'policyContext');
+    content += `        <li>${escapeHtml(String(policyContextVal))}: ${escapeHtml(Array.from(allDomains).slice(0, 3).join('; '))}</li>\n`;
+  }
+
+  content += `      </ul>\n    </div>\n`;
 
   return content;
 }
@@ -2003,12 +2038,17 @@ export function generateArticleContent(data: ArticleContentData, type: ArticleTy
   switch (type) {
     case 'week-ahead':
       return generateWeekAheadContent(data as WeekAheadData, lang);
+    case 'month-ahead':
+      return generateWeekAheadContent(data as WeekAheadData, lang);
     case 'committee-reports':
       return generateCommitteeContent(data, lang);
     case 'propositions':
       return generatePropositionsContent(data, lang);
     case 'motions':
       return generateMotionsContent(data, lang);
+    case 'weekly-review':
+    case 'monthly-review':
+    case 'breaking':
     default:
       return generateGenericContent(data, lang);
   }
@@ -2108,6 +2148,34 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
         const tagVal = L(lang, 'oppMotionsTag');
         tags.push(typeof tagVal === 'string' ? tagVal : '');
       }
+      break;
+    case 'month-ahead':
+      keywords.push('parliament', 'month ahead', 'calendar', 'outlook');
+      topics.push('parliament', 'outlook');
+      {
+        const tagVal = L(lang, 'weekAhead');
+        tags.push(typeof tagVal === 'string' ? tagVal : '');
+      }
+      break;
+    case 'weekly-review':
+      keywords.push('parliament', 'weekly review', 'analysis', 'recap');
+      topics.push('parliament', 'review');
+      {
+        const tagVal = L(lang, 'committeeReportsTag');
+        tags.push(typeof tagVal === 'string' ? tagVal : '');
+      }
+      break;
+    case 'monthly-review':
+      keywords.push('parliament', 'monthly review', 'analysis', 'recap');
+      topics.push('parliament', 'review');
+      {
+        const tagVal = L(lang, 'committeeReportsTag');
+        tags.push(typeof tagVal === 'string' ? tagVal : '');
+      }
+      break;
+    case 'breaking':
+      keywords.push('breaking news', 'parliament', 'urgent', 'alert');
+      topics.push('breaking', 'parliament');
       break;
   }
 

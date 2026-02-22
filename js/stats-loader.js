@@ -188,7 +188,7 @@
         if (text && text.trim().split('\n').length > 2) {
           return text;
         }
-      } catch (_) {
+      } catch (_err) {
         // try next URL
       }
     }

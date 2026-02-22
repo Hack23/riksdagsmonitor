@@ -11,7 +11,6 @@
 import { defineConfig } from 'vite';
 import sri from 'vite-plugin-sri-gen';
 import fs from 'node:fs';
-import path from 'node:path';
 
 /**
  * Auto-discover news article HTML files from the news/ directory.

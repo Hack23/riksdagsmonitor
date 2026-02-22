@@ -217,14 +217,143 @@
  * @see https://www.riksdagen.se/sv/sa-funkar-riksdagen/utskott/ (Committee Information)
  */
 
-(function() {
+/// <reference lib="dom" />
+
+import * as d3 from 'd3';
+
+// Chart.js and Papa Parse are loaded as browser globals via script tags
+declare const Chart: any;
+declare const Papa: {
+  parse(input: string, config?: {
+    header?: boolean;
+    dynamicTyping?: boolean;
+    skipEmptyLines?: boolean;
+  }): { data: Record<string, any>[]; errors: { message: string }[] };
+};
+
+// ==============================================
+// INTERFACES
+// ==============================================
+
+interface CommitteeNameLocalized {
+  sv: string;
+  en: string;
+}
+
+interface CommitteeDefinition {
+  code: string;
+  name: string;
+  nameLocalized: CommitteeNameLocalized;
+  color: string;
+  domain: string;
+}
+
+interface CacheConfig {
+  enabled: boolean;
+  ttl: number;
+  prefix: string;
+}
+
+interface DimensionSpec {
+  width: number;
+  height: number;
+}
+
+interface DimensionsConfig {
+  network: DimensionSpec;
+  heatmap: DimensionSpec;
+  chart: { aspectRatio: number };
+}
+
+interface DataUrlsConfig {
+  productivityMatrix: string[];
+  committeeDecisions: string[];
+  annualDocuments: string[];
+  ballotSummary: string[];
+  seasonalPatterns: string[];
+}
+
+interface AppConfig {
+  dataUrls: DataUrlsConfig;
+  cache: CacheConfig;
+  committees: CommitteeDefinition[];
+  dimensions: DimensionsConfig;
+}
+
+interface ProductivityMatrixRow {
+  committee_code?: string;
+  year?: string | number;
+  productivity_level?: string;
+  [key: string]: any;
+}
+
+interface AnnualDocumentRow {
+  committee?: string;
+  year?: string | number;
+  doc_count?: string | number;
+  [key: string]: any;
+}
+
+interface SeasonalPatternRow {
+  year?: string | number;
+  quarter?: string | number;
+  median?: string | number;
+  total_ballots?: string | number;
+  value?: string | number;
+  [key: string]: any;
+}
+
+interface CommitteeData {
+  productivityMatrix: ProductivityMatrixRow[];
+  committeeDecisions: Record<string, any>[];
+  annualDocuments: AnnualDocumentRow[];
+  ballotSummary: Record<string, any>[];
+  seasonalPatterns: SeasonalPatternRow[];
+}
+
+interface NetworkNode extends d3.SimulationNodeDatum {
+  id: string;
+  code: string;
+  name: string;
+  color: string;
+  productivity: number;
+  decisions: number;
+  radius: number;
+}
+
+interface NetworkLink extends d3.SimulationLinkDatum<NetworkNode> {
+  value: number;
+}
+
+interface HeatMapCell {
+  committee: string;
+  year: string;
+  value: number;
+}
+
+interface HeatMapData {
+  matrix: HeatMapCell[];
+  years: string[];
+  committees: string[];
+}
+
+interface CacheEntry {
+  data: Record<string, any>[];
+  timestamp: number;
+}
+
+// ==============================================
+// IMPLEMENTATION
+// ==============================================
+
+(function(): void {
   'use strict';
 
   // ==============================================
   // CONFIGURATION
   // ==============================================
 
-  const CONFIG = {
+  const CONFIG: AppConfig = {
     // CIA Data Sources - Local files with remote fallback
     dataUrls: {
       productivityMatrix: ['cia-data/distribution_committee_productivity_matrix.csv', 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_committee_productivity_matrix.csv'],
@@ -273,6 +402,8 @@
   // ==============================================
 
   class DataManager {
+    private cache: Map<string, Record<string, any>[]>;
+
     constructor() {
       this.cache = new Map();
     }
@@ -280,10 +411,10 @@
     /**
      * Fetch CSV data with caching support
      * @param {string} key - Cache key identifier
-     * @param {string|Array<string>} url - URL(s) to fetch data from (tries in order if array)
-     * @returns {Promise<Array>} Parsed CSV data
+     * @param {string|string[]} url - URL(s) to fetch data from (tries in order if array)
+     * @returns {Promise<Record<string, any>[]>} Parsed CSV data
      */
-    async fetchData(key, url) {
+    async fetchData(key: string, url: string | string[]): Promise<Record<string, any>[]> {
       // Check cache first
       if (CONFIG.cache.enabled) {
         const cached = this.getCached(key);
@@ -294,21 +425,21 @@
       }
 
       // Convert single URL to array for consistent handling
-      const urls = Array.isArray(url) ? url : [url];
-      let lastError = null;
+      const urls: string[] = Array.isArray(url) ? url : [url];
+      let lastError: Error | null = null;
 
       // Try each URL in order (local first, then remote fallback)
       for (let i = 0; i < urls.length; i++) {
-        const currentUrl = urls[i];
+        const currentUrl: string = urls[i];
         try {
           console.log(`[DataManager] Fetching ${key} from ${currentUrl}`);
-          const response = await fetch(currentUrl);
+          const response: Response = await fetch(currentUrl);
           
           if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
           }
 
-          const csvText = await response.text();
+          const csvText: string = await response.text();
           
           // Parse CSV using Papa Parse
           if (typeof Papa === 'undefined') {
@@ -325,7 +456,7 @@
             console.warn(`[DataManager] CSV parsing warnings for ${key}:`, parsed.errors);
           }
 
-          const data = parsed.data;
+          const data: Record<string, any>[] = parsed.data;
           
           // Cache the result
           if (CONFIG.cache.enabled) {
@@ -334,9 +465,9 @@
 
           console.log(`[DataManager] Successfully loaded ${key} from ${i === 0 ? 'local' : 'remote'} source`);
           return data;
-        } catch (error) {
-          console.warn(`[DataManager] Failed to fetch ${key} from ${currentUrl}:`, error.message);
-          lastError = error;
+        } catch (error: unknown) {
+          console.warn(`[DataManager] Failed to fetch ${key} from ${currentUrl}:`, (error as Error).message);
+          lastError = error as Error;
           // Continue to next URL if available
         }
       }
@@ -349,17 +480,17 @@
     /**
      * Get cached data if valid
      * @param {string} key - Cache key
-     * @returns {Array|null} Cached data or null
+     * @returns {Record<string, any>[] | null} Cached data or null
      */
-    getCached(key) {
-      const cacheKey = CONFIG.cache.prefix + key;
+    getCached(key: string): Record<string, any>[] | null {
+      const cacheKey: string = CONFIG.cache.prefix + key;
       try {
-        const cached = localStorage.getItem(cacheKey);
+        const cached: string | null = localStorage.getItem(cacheKey);
         
         if (!cached) return null;
 
-        const { data, timestamp } = JSON.parse(cached);
-        const age = Date.now() - timestamp;
+        const { data, timestamp }: CacheEntry = JSON.parse(cached);
+        const age: number = Date.now() - timestamp;
         
         if (age < CONFIG.cache.ttl) {
           return data;
@@ -367,13 +498,13 @@
           localStorage.removeItem(cacheKey);
           return null;
         }
-      } catch (error) {
+      } catch (error: unknown) {
         // localStorage might be disabled, in privacy mode, or have quota issues
         // OR JSON parse error if data is corrupted
         console.warn('[DataManager] Cache read failed:', error);
         try {
           localStorage.removeItem(cacheKey);
-        } catch (e) {
+        } catch (_e: unknown) {
           // Ignore if removal also fails
         }
         return null;
@@ -383,27 +514,27 @@
     /**
      * Set cached data
      * @param {string} key - Cache key
-     * @param {Array} data - Data to cache
+     * @param {Record<string, any>[]} data - Data to cache
      */
-    setCached(key, data) {
-      const cacheKey = CONFIG.cache.prefix + key;
-      const cacheData = {
+    setCached(key: string, data: Record<string, any>[]): void {
+      const cacheKey: string = CONFIG.cache.prefix + key;
+      const cacheData: CacheEntry = {
         data: data,
         timestamp: Date.now()
       };
       
       try {
         localStorage.setItem(cacheKey, JSON.stringify(cacheData));
-      } catch (error) {
+      } catch (error: unknown) {
         console.warn(`[DataManager] Failed to cache ${key}:`, error);
       }
     }
 
     /**
      * Load all committee data
-     * @returns {Promise<Object>} All committee data
+     * @returns {Promise<CommitteeData>} All committee data
      */
-    async loadAllData() {
+    async loadAllData(): Promise<CommitteeData> {
       try {
         const [
           productivityMatrix,
@@ -420,13 +551,13 @@
         ]);
 
         return {
-          productivityMatrix,
+          productivityMatrix: productivityMatrix as ProductivityMatrixRow[],
           committeeDecisions,
-          annualDocuments,
+          annualDocuments: annualDocuments as AnnualDocumentRow[],
           ballotSummary,
-          seasonalPatterns
+          seasonalPatterns: seasonalPatterns as SeasonalPatternRow[]
         };
-      } catch (error) {
+      } catch (error: unknown) {
         console.error('[DataManager] Failed to load all data:', error);
         throw error;
       }
@@ -438,7 +569,12 @@
   // ==============================================
 
   class NetworkDiagram {
-    constructor(containerId, data) {
+    private containerId: string;
+    private data: CommitteeData;
+    private svg: d3.Selection<SVGSVGElement, unknown, null, undefined> | null;
+    private simulation: d3.Simulation<NetworkNode, NetworkLink> | null;
+
+    constructor(containerId: string, data: CommitteeData) {
       this.containerId = containerId;
       this.data = data;
       this.svg = null;
@@ -448,8 +584,8 @@
     /**
      * Render force-directed network diagram
      */
-    render() {
-      const container = document.getElementById(this.containerId);
+    render(): void {
+      const container: HTMLElement | null = document.getElementById(this.containerId);
       if (!container) {
         console.error(`[NetworkDiagram] Container ${this.containerId} not found`);
         return;
@@ -459,9 +595,9 @@
       container.innerHTML = '';
 
       // Calculate responsive dimensions
-      const containerWidth = container.clientWidth;
-      const width = Math.min(containerWidth, CONFIG.dimensions.network.width);
-      const height = Math.min(width * 0.6, CONFIG.dimensions.network.height);
+      const containerWidth: number = container.clientWidth;
+      const width: number = Math.min(containerWidth, CONFIG.dimensions.network.width);
+      const height: number = Math.min(width * 0.6, CONFIG.dimensions.network.height);
 
       // Create SVG
       this.svg = d3.select(container)
@@ -477,11 +613,11 @@
       const { nodes, links } = this.processNetworkData();
 
       // Create force simulation
-      this.simulation = d3.forceSimulation(nodes)
-        .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+      this.simulation = d3.forceSimulation<NetworkNode>(nodes)
+        .force('link', d3.forceLink<NetworkNode, NetworkLink>(links).id((d: NetworkNode) => d.id).distance(100))
         .force('charge', d3.forceManyBody().strength(-400))
         .force('center', d3.forceCenter(width / 2, height / 2))
-        .force('collision', d3.forceCollide().radius(d => d.radius + 10));
+        .force('collision', d3.forceCollide<NetworkNode>().radius((d: NetworkNode) => d.radius + 10));
 
       // Add links
       const link = this.svg.append('g')
@@ -490,27 +626,27 @@
         .data(links)
         .enter().append('line')
         .attr('stroke', 'var(--border-color)')
-        .attr('stroke-width', d => Math.sqrt(d.value) * 2)
+        .attr('stroke-width', (d: NetworkLink) => Math.sqrt(d.value) * 2)
         .attr('stroke-opacity', 0.6);
 
       // Add nodes
       const node = this.svg.append('g')
         .attr('class', 'nodes')
-        .selectAll('g')
+        .selectAll<SVGGElement, NetworkNode>('g')
         .data(nodes)
         .enter().append('g')
         .attr('tabindex', '0')
         .attr('role', 'button')
-        .attr('aria-label', d => `${d.name} committee with ${d.productivity} productivity score`)
-        .call(d3.drag()
-          .on('start', d => this.dragStarted(d))
-          .on('drag', d => this.dragged(d))
-          .on('end', d => this.dragEnded(d)));
+        .attr('aria-label', (d: NetworkNode) => `${d.name} committee with ${d.productivity} productivity score`)
+        .call(d3.drag<SVGGElement, NetworkNode>()
+          .on('start', (event: d3.D3DragEvent<SVGGElement, NetworkNode, NetworkNode>) => this.dragStarted(event))
+          .on('drag', (event: d3.D3DragEvent<SVGGElement, NetworkNode, NetworkNode>) => this.dragged(event))
+          .on('end', (event: d3.D3DragEvent<SVGGElement, NetworkNode, NetworkNode>) => this.dragEnded(event)));
 
       // Node circles
       node.append('circle')
-        .attr('r', d => d.radius)
-        .attr('fill', d => d.color)
+        .attr('r', (d: NetworkNode) => d.radius)
+        .attr('fill', (d: NetworkNode) => d.color)
         .attr('stroke', 'var(--card-bg)')
         .attr('stroke-width', 2);
 
@@ -521,22 +657,22 @@
         .attr('font-size', '12px')
         .attr('font-weight', 'bold')
         .attr('fill', 'var(--text-color)')
-        .text(d => d.code);
+        .text((d: NetworkNode) => d.code);
 
       // Tooltips
       node.append('title')
-        .text(d => `${d.name}\nProductivity: ${d.productivity}\nDecisions: ${d.decisions}`);
+        .text((d: NetworkNode) => `${d.name}\nProductivity: ${d.productivity}\nDecisions: ${d.decisions}`);
 
       // Update positions on simulation tick
       this.simulation.on('tick', () => {
         link
-          .attr('x1', d => d.source.x)
-          .attr('y1', d => d.source.y)
-          .attr('x2', d => d.target.x)
-          .attr('y2', d => d.target.y);
+          .attr('x1', (d: any) => d.source.x)
+          .attr('y1', (d: any) => d.source.y)
+          .attr('x2', (d: any) => d.target.x)
+          .attr('y2', (d: any) => d.target.y);
 
         node
-          .attr('transform', d => `translate(${d.x},${d.y})`);
+          .attr('transform', (d: NetworkNode) => `translate(${d.x},${d.y})`);
       });
 
       // Add legend
@@ -548,18 +684,18 @@
 
     /**
      * Process raw data into network format
-     * @returns {Object} Nodes and links for network diagram
+     * @returns {{ nodes: NetworkNode[]; links: NetworkLink[] }} Nodes and links for network diagram
      */
-    processNetworkData() {
+    processNetworkData(): { nodes: NetworkNode[]; links: NetworkLink[] } {
       // Build a lookup from loaded committee productivity data
-      const prodLookup = {};
-      const decisionsLookup = {};
+      const prodLookup: Record<string, number> = {};
+      const decisionsLookup: Record<string, number> = {};
       
       if (this.data && this.data.productivityMatrix) {
-        this.data.productivityMatrix.forEach(row => {
-          const code = row.committee_code || '';
+        this.data.productivityMatrix.forEach((row: ProductivityMatrixRow) => {
+          const code: string = row.committee_code || '';
           if (code && !prodLookup[code]) {
-            const level = (row.productivity_level || '').toUpperCase();
+            const level: string = (row.productivity_level || '').toUpperCase();
             prodLookup[code] = level === 'HIGHLY_PRODUCTIVE' ? 95 : 
                                level === 'PRODUCTIVE' ? 80 : 
                                level === 'MODERATELY_PRODUCTIVE' ? 65 : 50;
@@ -568,18 +704,18 @@
       }
       
       if (this.data && this.data.annualDocuments) {
-        this.data.annualDocuments.forEach(row => {
-          const code = row.committee || '';
-          const count = parseInt(row.doc_count) || 0;
+        this.data.annualDocuments.forEach((row: AnnualDocumentRow) => {
+          const code: string = row.committee || '';
+          const count: number = parseInt(String(row.doc_count)) || 0;
           if (code) {
             decisionsLookup[code] = (decisionsLookup[code] || 0) + count;
           }
         });
       }
       
-      const nodes = CONFIG.committees.map((committee) => {
-        const productivity = prodLookup[committee.code] || 70;
-        const decisions = decisionsLookup[committee.code] || 50;
+      const nodes: NetworkNode[] = CONFIG.committees.map((committee: CommitteeDefinition) => {
+        const productivity: number = prodLookup[committee.code] || 70;
+        const decisions: number = decisionsLookup[committee.code] || 50;
         return {
           id: committee.code,
           code: committee.code,
@@ -592,15 +728,15 @@
       });
 
       // Generate links based on shared document domains (committees with similar productivity)
-      const links = [];
+      const links: NetworkLink[] = [];
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           // Link committees with similar productivity levels
-          const prodDiff = Math.abs(nodes[i].productivity - nodes[j].productivity);
+          const prodDiff: number = Math.abs(nodes[i].productivity - nodes[j].productivity);
           if (prodDiff < 20) {
             links.push({
-              source: nodes[i].id,
-              target: nodes[j].id,
+              source: nodes[i].id as any,
+              target: nodes[j].id as any,
               value: 10 - prodDiff / 2
             });
           }
@@ -613,7 +749,9 @@
     /**
      * Add legend to network diagram
      */
-    addLegend(width, height) {
+    addLegend(width: number, height: number): void {
+      if (!this.svg) return;
+
       const legend = this.svg.append('g')
         .attr('class', 'legend')
         .attr('transform', `translate(20, ${height - 80})`);
@@ -637,19 +775,19 @@
     /**
      * Update accessible table fallback
      */
-    updateAccessibleTable(nodes, links) {
-      const table = document.getElementById('committeeNetworkTable');
+    updateAccessibleTable(nodes: NetworkNode[], links: NetworkLink[]): void {
+      const table: HTMLElement | null = document.getElementById('committeeNetworkTable');
       if (!table) return;
 
-      let html = '<caption>Committee Network Connections</caption>';
+      let html: string = '<caption>Committee Network Connections</caption>';
       html += '<thead><tr><th>Committee</th><th>Productivity</th><th>Decisions</th><th>Connections</th></tr></thead>';
       html += '<tbody>';
 
-      nodes.forEach(node => {
+      nodes.forEach((node: NetworkNode) => {
         // Handle both string and object types for source/target
-        const connections = links.filter(l => {
-          const sourceId = typeof l.source === 'string' ? l.source : l.source && l.source.id;
-          const targetId = typeof l.target === 'string' ? l.target : l.target && l.target.id;
+        const connections: number = links.filter((l: NetworkLink) => {
+          const sourceId: string = typeof l.source === 'string' ? l.source : (l.source as any)?.id ?? '';
+          const targetId: string = typeof l.target === 'string' ? l.target : (l.target as any)?.id ?? '';
           return sourceId === node.id || targetId === node.id;
         }).length;
         html += `<tr>
@@ -665,19 +803,19 @@
     }
 
     // Drag handlers
-    dragStarted(event) {
-      if (!event.active) this.simulation.alphaTarget(0.3).restart();
+    dragStarted(event: d3.D3DragEvent<SVGGElement, NetworkNode, NetworkNode>): void {
+      if (!event.active && this.simulation) this.simulation.alphaTarget(0.3).restart();
       event.subject.fx = event.subject.x;
       event.subject.fy = event.subject.y;
     }
 
-    dragged(event) {
+    dragged(event: d3.D3DragEvent<SVGGElement, NetworkNode, NetworkNode>): void {
       event.subject.fx = event.x;
       event.subject.fy = event.y;
     }
 
-    dragEnded(event) {
-      if (!event.active) this.simulation.alphaTarget(0);
+    dragEnded(event: d3.D3DragEvent<SVGGElement, NetworkNode, NetworkNode>): void {
+      if (!event.active && this.simulation) this.simulation.alphaTarget(0);
       event.subject.fx = null;
       event.subject.fy = null;
     }
@@ -688,7 +826,11 @@
   // ==============================================
 
   class ProductivityHeatMap {
-    constructor(containerId, data) {
+    private containerId: string;
+    private data: CommitteeData;
+    private svg: d3.Selection<SVGSVGElement, unknown, null, undefined> | null;
+
+    constructor(containerId: string, data: CommitteeData) {
       this.containerId = containerId;
       this.data = data;
       this.svg = null;
@@ -697,8 +839,8 @@
     /**
      * Render productivity heat map
      */
-    render() {
-      const container = document.getElementById(this.containerId);
+    render(): void {
+      const container: HTMLElement | null = document.getElementById(this.containerId);
       if (!container) {
         console.error(`[ProductivityHeatMap] Container ${this.containerId} not found`);
         return;
@@ -708,13 +850,13 @@
       container.innerHTML = '';
 
       // Calculate responsive dimensions
-      const containerWidth = container.clientWidth;
-      const width = Math.min(containerWidth, CONFIG.dimensions.heatmap.width);
-      const height = Math.min(width * 0.5, CONFIG.dimensions.heatmap.height);
+      const containerWidth: number = container.clientWidth;
+      const width: number = Math.min(containerWidth, CONFIG.dimensions.heatmap.width);
+      const height: number = Math.min(width * 0.5, CONFIG.dimensions.heatmap.height);
 
       const margin = { top: 80, right: 100, bottom: 60, left: 150 };
-      const innerWidth = width - margin.left - margin.right;
-      const innerHeight = height - margin.top - margin.bottom;
+      const innerWidth: number = width - margin.left - margin.right;
+      const innerHeight: number = height - margin.top - margin.bottom;
 
       // Create SVG
       this.svg = d3.select(container)
@@ -730,7 +872,7 @@
         .attr('transform', `translate(${margin.left},${margin.top})`);
 
       // Process data
-      const { matrix, years, committees } = this.processHeatMapData();
+      const { matrix, years, committees }: HeatMapData = this.processHeatMapData();
 
       // Scales
       const xScale = d3.scaleBand()
@@ -750,24 +892,24 @@
       g.selectAll('rect')
         .data(matrix)
         .enter().append('rect')
-        .attr('x', d => xScale(d.year))
-        .attr('y', d => yScale(d.committee))
+        .attr('x', (d: HeatMapCell) => xScale(d.year) ?? 0)
+        .attr('y', (d: HeatMapCell) => yScale(d.committee) ?? 0)
         .attr('width', xScale.bandwidth())
         .attr('height', yScale.bandwidth())
-        .attr('fill', d => colorScale(d.value))
+        .attr('fill', (d: HeatMapCell) => colorScale(d.value))
         .attr('stroke', 'var(--card-bg)')
         .attr('stroke-width', 1)
         .attr('tabindex', '0')
         .attr('role', 'button')
-        .attr('aria-label', d => `${d.committee} in ${d.year}: ${d.value.toFixed(1)} productivity`)
-        .on('mouseover', function(event, d) {
+        .attr('aria-label', (d: HeatMapCell) => `${d.committee} in ${d.year}: ${d.value.toFixed(1)} productivity`)
+        .on('mouseover', function(this: SVGRectElement, _event: MouseEvent, _d: HeatMapCell) {
           d3.select(this).attr('stroke', 'var(--accent-color)').attr('stroke-width', 2);
         })
-        .on('mouseout', function(event, d) {
+        .on('mouseout', function(this: SVGRectElement, _event: MouseEvent, _d: HeatMapCell) {
           d3.select(this).attr('stroke', 'var(--card-bg)').attr('stroke-width', 1);
         })
         .append('title')
-        .text(d => `${d.committee} (${d.year})\nProductivity: ${d.value.toFixed(1)}`);
+        .text((d: HeatMapCell) => `${d.committee} (${d.year})\nProductivity: ${d.value.toFixed(1)}`);
 
       // X axis
       g.append('g')
@@ -803,20 +945,20 @@
 
     /**
      * Process raw data into heat map format
-     * @returns {Object} Matrix data, years, and committees
+     * @returns {HeatMapData} Matrix data, years, and committees
      */
-    processHeatMapData() {
-      const committees = CONFIG.committees.map(c => c.code);
+    processHeatMapData(): HeatMapData {
+      const committees: string[] = CONFIG.committees.map((c: CommitteeDefinition) => c.code);
       
       // Build lookup from real productivity matrix data
-      const dataLookup = {};
+      const dataLookup: Record<string, number> = {};
       if (this.data && this.data.productivityMatrix) {
-        this.data.productivityMatrix.forEach(row => {
-          const code = row.committee_code || '';
-          const year = row.year || '';
+        this.data.productivityMatrix.forEach((row: ProductivityMatrixRow) => {
+          const code: string = row.committee_code || '';
+          const year: string = String(row.year || '');
           if (code && year) {
-            const level = (row.productivity_level || '').toUpperCase();
-            const value = level === 'HIGHLY_PRODUCTIVE' ? 90 :
+            const level: string = (row.productivity_level || '').toUpperCase();
+            const value: number = level === 'HIGHLY_PRODUCTIVE' ? 90 :
                           level === 'PRODUCTIVE' ? 75 :
                           level === 'MODERATELY_PRODUCTIVE' ? 55 :
                           level === 'INACTIVE' ? 15 : 40;
@@ -826,19 +968,19 @@
       }
       
       // Determine available years from data, fallback to default range
-      const yearSet = new Set();
+      const yearSet = new Set<string>();
       if (this.data && this.data.productivityMatrix) {
-        this.data.productivityMatrix.forEach(row => {
+        this.data.productivityMatrix.forEach((row: ProductivityMatrixRow) => {
           if (row.year) yearSet.add(String(row.year));
         });
       }
-      const years = yearSet.size > 0 
+      const years: string[] = yearSet.size > 0 
         ? Array.from(yearSet).sort() 
         : ['2020', '2021', '2022', '2023', '2024', '2025', '2026'];
       
-      const matrix = [];
-      committees.forEach(committee => {
-        years.forEach(year => {
+      const matrix: HeatMapCell[] = [];
+      committees.forEach((committee: string) => {
+        years.forEach((year: string) => {
           matrix.push({
             committee: committee,
             year: year,
@@ -853,16 +995,16 @@
     /**
      * Add color scale legend
      */
-    addColorLegend(g, colorScale, innerWidth, innerHeight) {
-      const legendWidth = 200;
-      const legendHeight = 15;
+    addColorLegend(g: d3.Selection<SVGGElement, unknown, null, undefined>, _colorScale: d3.ScaleSequential<string, never>, innerWidth: number, innerHeight: number): void {
+      const legendWidth: number = 200;
+      const legendHeight: number = 15;
 
       const legend = g.append('g')
         .attr('class', 'legend')
         .attr('transform', `translate(${innerWidth - legendWidth}, ${innerHeight + 40})`);
 
       // Gradient
-      const defs = this.svg.append('defs');
+      const defs = this.svg!.append('defs');
       const gradient = defs.append('linearGradient')
         .attr('id', 'productivity-gradient')
         .attr('x1', '0%')
@@ -904,24 +1046,24 @@
     /**
      * Update accessible table fallback
      */
-    updateAccessibleTable(matrix) {
-      const table = document.getElementById('productivityMatrixTable');
+    updateAccessibleTable(matrix: HeatMapCell[]): void {
+      const table: HTMLElement | null = document.getElementById('productivityMatrixTable');
       if (!table) return;
 
-      const years = [...new Set(matrix.map(d => d.year))];
-      const committees = [...new Set(matrix.map(d => d.committee))];
+      const years: string[] = [...new Set(matrix.map((d: HeatMapCell) => d.year))];
+      const committees: string[] = [...new Set(matrix.map((d: HeatMapCell) => d.committee))];
 
-      let html = '<caption>Committee Productivity Matrix (2020-2026)</caption>';
+      let html: string = '<caption>Committee Productivity Matrix (2020-2026)</caption>';
       html += '<thead><tr><th>Committee</th>';
-      years.forEach(year => {
+      years.forEach((year: string) => {
         html += `<th>${year}</th>`;
       });
       html += '</tr></thead><tbody>';
 
-      committees.forEach(committee => {
+      committees.forEach((committee: string) => {
         html += `<tr><td>${committee}</td>`;
-        years.forEach(year => {
-          const cell = matrix.find(d => d.committee === committee && d.year === year);
+        years.forEach((year: string) => {
+          const cell: HeatMapCell | undefined = matrix.find((d: HeatMapCell) => d.committee === committee && d.year === year);
           html += `<td>${cell ? cell.value.toFixed(1) : 'N/A'}</td>`;
         });
         html += '</tr>';
@@ -937,6 +1079,8 @@
   // ==============================================
 
   class ChartJSVisualizations {
+    private charts: Record<string, any>;
+
     constructor() {
       this.charts = {};
     }
@@ -944,7 +1088,7 @@
     /**
      * Render all Chart.js charts
      */
-    renderAll(data) {
+    renderAll(data: CommitteeData): void {
       this.renderCommitteeComparison(data);
       this.renderDecisionEffectiveness(data);
       this.renderSeasonalPatterns(data);
@@ -953,25 +1097,26 @@
     /**
      * Committee Comparison Bar Chart
      */
-    renderCommitteeComparison(data) {
-      const canvas = document.getElementById('committeeComparisonChart');
+    renderCommitteeComparison(data: CommitteeData): void {
+      const canvas: HTMLCanvasElement | null = document.getElementById('committeeComparisonChart') as HTMLCanvasElement | null;
       if (!canvas) {
         console.error('[ChartJS] committeeComparisonChart canvas not found');
         return;
       }
 
-      const ctx = canvas.getContext('2d');
+      const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
+      if (!ctx) return;
 
       // Process data from loaded productivity data
-      const labels = CONFIG.committees.map(c => c.code);
+      const labels: string[] = CONFIG.committees.map((c: CommitteeDefinition) => c.code);
       
       // Build productivity lookup from real data
-      const prodLookup = {};
+      const prodLookup: Record<string, number> = {};
       if (data && data.productivityMatrix) {
-        data.productivityMatrix.forEach(row => {
-          const code = row.committee_code || '';
+        data.productivityMatrix.forEach((row: ProductivityMatrixRow) => {
+          const code: string = row.committee_code || '';
           if (code && !prodLookup[code]) {
-            const level = (row.productivity_level || '').toUpperCase();
+            const level: string = (row.productivity_level || '').toUpperCase();
             prodLookup[code] = level === 'HIGHLY_PRODUCTIVE' ? 90 :
                                level === 'PRODUCTIVE' ? 75 :
                                level === 'MODERATELY_PRODUCTIVE' ? 55 :
@@ -980,8 +1125,8 @@
         });
       }
       
-      const productivity = labels.map(code => prodLookup[code] || 50);
-      const colors = CONFIG.committees.map(c => c.color);
+      const productivity: number[] = labels.map((code: string) => prodLookup[code] || 50);
+      const colors: string[] = CONFIG.committees.map((c: CommitteeDefinition) => c.color);
 
       // Destroy existing chart
       if (this.charts.comparison) {
@@ -997,7 +1142,7 @@
             label: 'Productivity Score',
             data: productivity,
             backgroundColor: colors,
-            borderColor: colors.map(c => c),
+            borderColor: colors.map((c: string) => c),
             borderWidth: 2
           }]
         },
@@ -1020,7 +1165,7 @@
             },
             tooltip: {
               callbacks: {
-                label: function(context) {
+                label: function(context: any): string {
                   return `Productivity: ${context.parsed.y.toFixed(1)}`;
                 }
               }
@@ -1063,47 +1208,48 @@
     /**
      * Decision Effectiveness Stacked Bar Chart
      */
-    renderDecisionEffectiveness(data) {
-      const canvas = document.getElementById('decisionEffectivenessChart');
+    renderDecisionEffectiveness(data: CommitteeData): void {
+      const canvas: HTMLCanvasElement | null = document.getElementById('decisionEffectivenessChart') as HTMLCanvasElement | null;
       if (!canvas) {
         console.error('[ChartJS] decisionEffectivenessChart canvas not found');
         return;
       }
 
-      const ctx = canvas.getContext('2d');
+      const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
+      if (!ctx) return;
 
       // Process data from loaded decision/document data
-      const yearSet = new Set();
+      const yearSet = new Set<string>();
       if (data && data.annualDocuments) {
-        data.annualDocuments.forEach(row => {
+        data.annualDocuments.forEach((row: AnnualDocumentRow) => {
           if (row.year) yearSet.add(String(row.year));
         });
       }
       // Use last 7 years of available data
-      const allYears = yearSet.size > 0 ? Array.from(yearSet).sort() : ['2020', '2021', '2022', '2023', '2024', '2025', '2026'];
-      const labels = allYears.slice(-7);
+      const allYears: string[] = yearSet.size > 0 ? Array.from(yearSet).sort() : ['2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+      const labels: string[] = allYears.slice(-7);
       
       // Calculate total documents per year from real data
-      const yearDocCounts = {};
+      const yearDocCounts: Record<string, number> = {};
       if (data && data.annualDocuments) {
-        data.annualDocuments.forEach(row => {
-          const year = String(row.year);
-          const count = parseInt(row.doc_count) || 0;
+        data.annualDocuments.forEach((row: AnnualDocumentRow) => {
+          const year: string = String(row.year);
+          const count: number = parseInt(String(row.doc_count)) || 0;
           yearDocCounts[year] = (yearDocCounts[year] || 0) + count;
         });
       }
       
       // Approximate decision outcomes using document proportions
       // Based on typical Riksdag decision patterns (~70% approved, ~20% rejected, ~10% pending)
-      const approved = labels.map(year => {
-        const total = yearDocCounts[year] || 100;
+      const approved: number[] = labels.map((year: string) => {
+        const total: number = yearDocCounts[year] || 100;
         return Math.min(100, (total > 0 ? 70 : 0));
       });
-      const rejected = labels.map(year => {
-        const total = yearDocCounts[year] || 100;
+      const rejected: number[] = labels.map((year: string) => {
+        const total: number = yearDocCounts[year] || 100;
         return total > 0 ? 20 : 0;
       });
-      const pending = labels.map((year, i) => Math.max(0, 100 - approved[i] - rejected[i]));
+      const pending: number[] = labels.map((_year: string, i: number) => Math.max(0, 100 - approved[i] - rejected[i]));
 
       // Destroy existing chart
       if (this.charts.effectiveness) {
@@ -1160,7 +1306,7 @@
             },
             tooltip: {
               callbacks: {
-                label: function(context) {
+                label: function(context: any): string {
                   return `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%`;
                 }
               }
@@ -1205,40 +1351,41 @@
     /**
      * Seasonal Activity Patterns Line Chart
      */
-    renderSeasonalPatterns(data) {
-      const canvas = document.getElementById('seasonalPatternsChart');
+    renderSeasonalPatterns(data: CommitteeData): void {
+      const canvas: HTMLCanvasElement | null = document.getElementById('seasonalPatternsChart') as HTMLCanvasElement | null;
       if (!canvas) {
         console.error('[ChartJS] seasonalPatternsChart canvas not found');
         return;
       }
 
-      const ctx = canvas.getContext('2d');
+      const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
+      if (!ctx) return;
 
       // Process data from loaded seasonal patterns
-      const labels = ['Q1', 'Q2', 'Q3', 'Q4'];
+      const labels: string[] = ['Q1', 'Q2', 'Q3', 'Q4'];
       
       // Group seasonal data by year and quarter
-      const yearQuarterData = {};
+      const yearQuarterData: Record<string, Record<number, number>> = {};
       if (data && data.seasonalPatterns) {
-        data.seasonalPatterns.forEach(row => {
-          const year = String(row.year || '');
-          const quarter = parseInt(row.quarter) || 0;
+        data.seasonalPatterns.forEach((row: SeasonalPatternRow) => {
+          const year: string = String(row.year || '');
+          const quarter: number = parseInt(String(row.quarter)) || 0;
           if (year && quarter >= 1 && quarter <= 4) {
             if (!yearQuarterData[year]) yearQuarterData[year] = {};
             // Use median value if this is percentile data, otherwise use direct value
-            yearQuarterData[year][quarter] = parseFloat(row.median || row.total_ballots || row.value || 0);
+            yearQuarterData[year][quarter] = parseFloat(String(row.median || row.total_ballots || row.value || 0));
           }
         });
       }
       
       // Use last 3 years of available data, or defaults
-      const availableYears = Object.keys(yearQuarterData).sort().slice(-3);
-      const yearColors = ['#1e88e5', '#43a047', '#fb8c00'];
+      const availableYears: string[] = Object.keys(yearQuarterData).sort().slice(-3);
+      const yearColors: string[] = ['#1e88e5', '#43a047', '#fb8c00'];
       
-      const datasets = availableYears.length > 0 
-        ? availableYears.map((year, idx) => ({
+      const datasets: any[] = availableYears.length > 0 
+        ? availableYears.map((year: string, idx: number) => ({
             label: year,
-            data: [1, 2, 3, 4].map(q => yearQuarterData[year][q] || 0),
+            data: [1, 2, 3, 4].map((q: number) => yearQuarterData[year][q] || 0),
             borderColor: yearColors[idx % yearColors.length],
             backgroundColor: yearColors[idx % yearColors.length] + '1A',
             tension: 0.4
@@ -1282,7 +1429,7 @@
             },
             tooltip: {
               callbacks: {
-                label: function(context) {
+                label: function(context: any): string {
                   return `${context.dataset.label}: ${context.parsed.y} activity score`;
                 }
               }
@@ -1325,8 +1472,8 @@
     /**
      * Destroy all Chart.js instances
      */
-    destroy() {
-      Object.keys(this.charts).forEach(key => {
+    destroy(): void {
+      Object.keys(this.charts).forEach((key: string) => {
         if (this.charts[key] && typeof this.charts[key].destroy === 'function') {
           this.charts[key].destroy();
         }
@@ -1339,18 +1486,24 @@
   // INITIALIZATION
   // ==============================================
 
+  interface VisualizationInstances {
+    network: NetworkDiagram;
+    heatmap: ProductivityHeatMap;
+    charts: ChartJSVisualizations;
+  }
+
   // Keep references to visualization instances for reuse
-  let visualizationInstances = null;
+  let visualizationInstances: VisualizationInstances | null = null;
 
   // Module-level flag to prevent concurrent initializations
-  let isInitializing = false;
+  let isInitializing: boolean = false;
 
   /**
    * Initialize committee dashboard
    */
-  async function initializeDashboard() {
+  async function initializeDashboard(): Promise<void> {
     // Early guard: only initialize when the main dashboard container exists
-    const dashboardRoot = document.getElementById('committee-dashboard');
+    const dashboardRoot: HTMLElement | null = document.getElementById('committee-dashboard');
     if (!dashboardRoot) {
       console.info('[CommitteeDashboard] Skipping initialization: #committee-dashboard container not found.');
       return;
@@ -1381,8 +1534,8 @@
       showLoadingIndicator();
 
       // Load data
-      const dataManager = new DataManager();
-      const data = await dataManager.loadAllData();
+      const dataManager: DataManager = new DataManager();
+      const data: CommitteeData = await dataManager.loadAllData();
       console.log('[CommitteeDashboard] Data loaded successfully', data);
 
       // Destroy existing Chart.js instances if they exist
@@ -1391,13 +1544,13 @@
       }
 
       // Render visualizations
-      const network = new NetworkDiagram('committeeNetwork', data);
+      const network: NetworkDiagram = new NetworkDiagram('committeeNetwork', data);
       network.render();
 
-      const heatmap = new ProductivityHeatMap('productivityMatrix', data);
+      const heatmap: ProductivityHeatMap = new ProductivityHeatMap('productivityMatrix', data);
       heatmap.render();
 
-      const charts = new ChartJSVisualizations();
+      const charts: ChartJSVisualizations = new ChartJSVisualizations();
       charts.renderAll(data);
 
       // Store instances for later cleanup/reuse
@@ -1411,9 +1564,9 @@
       hideLoadingIndicator();
 
       console.log('[CommitteeDashboard] Initialization complete');
-    } catch (error) {
+    } catch (error: unknown) {
       console.error('[CommitteeDashboard] Initialization failed:', error);
-      showErrorMessage(error.message);
+      showErrorMessage((error as Error).message);
     } finally {
       // Always clear the flag when initialization completes or fails
       isInitializing = false;
@@ -1423,27 +1576,27 @@
   /**
    * Show loading indicator (idempotent - safe to call multiple times)
    */
-  function showLoadingIndicator() {
-    const dashboard = document.getElementById('committee-dashboard');
+  function showLoadingIndicator(): void {
+    const dashboard: HTMLElement | null = document.getElementById('committee-dashboard');
     if (!dashboard) return;
 
     // Remove existing loading indicator if present (idempotency)
-    const existing = document.getElementById('committee-loading');
+    const existing: HTMLElement | null = document.getElementById('committee-loading');
     if (existing) {
       existing.remove();
     }
 
-    const indicator = document.createElement('div');
+    const indicator: HTMLDivElement = document.createElement('div');
     indicator.id = 'committee-loading';
     indicator.className = 'loading-indicator';
     indicator.setAttribute('role', 'status');
     indicator.setAttribute('aria-live', 'polite');
     
-    const spinner = document.createElement('div');
+    const spinner: HTMLDivElement = document.createElement('div');
     spinner.className = 'spinner';
     indicator.appendChild(spinner);
     
-    const text = document.createElement('p');
+    const text: HTMLParagraphElement = document.createElement('p');
     text.textContent = 'Loading committee data...';
     indicator.appendChild(text);
     
@@ -1453,8 +1606,8 @@
   /**
    * Hide loading indicator
    */
-  function hideLoadingIndicator() {
-    const indicator = document.getElementById('committee-loading');
+  function hideLoadingIndicator(): void {
+    const indicator: HTMLElement | null = document.getElementById('committee-loading');
     if (indicator) {
       indicator.remove();
     }
@@ -1463,23 +1616,23 @@
   /**
    * Show error message
    */
-  function showErrorMessage(message) {
-    const dashboard = document.getElementById('committee-dashboard');
+  function showErrorMessage(message: string): void {
+    const dashboard: HTMLElement | null = document.getElementById('committee-dashboard');
     if (!dashboard) return;
 
-    const error = document.createElement('div');
+    const error: HTMLDivElement = document.createElement('div');
     error.className = 'error-message';
     error.setAttribute('role', 'alert');
     
-    const heading = document.createElement('h3');
+    const heading: HTMLHeadingElement = document.createElement('h3');
     heading.textContent = '⚠️ Error Loading Committee Dashboard';
     error.appendChild(heading);
     
-    const messageParagraph = document.createElement('p');
+    const messageParagraph: HTMLParagraphElement = document.createElement('p');
     messageParagraph.textContent = message;
     error.appendChild(messageParagraph);
     
-    const supportParagraph = document.createElement('p');
+    const supportParagraph: HTMLParagraphElement = document.createElement('p');
     supportParagraph.textContent = 'Please refresh the page or contact support if the issue persists.';
     error.appendChild(supportParagraph);
     
@@ -1501,10 +1654,10 @@
   }
 
   // Re-render on window resize (debounced)
-  let resizeTimeout;
-  window.addEventListener('resize', function() {
+  let resizeTimeout: ReturnType<typeof setTimeout>;
+  window.addEventListener('resize', function(): void {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(function() {
+    resizeTimeout = setTimeout(function(): void {
       console.log('[CommitteeDashboard] Window resized, re-rendering...');
       initializeDashboard();
     }, 300);

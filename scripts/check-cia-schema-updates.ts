@@ -145,19 +145,19 @@
  * @see ISO 27001:2022 A.12.6.1 - Change management
  */
 
-import fs from 'fs/promises';
-import path from 'path';
-import crypto from 'crypto';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename: string = fileURLToPath(import.meta.url);
+const __dirname: string = path.dirname(__filename);
 
 // Base URL for CIA schemas
-const CIA_SCHEMA_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/json-export-specs/schemas/';
+const CIA_SCHEMA_BASE_URL: string = 'https://raw.githubusercontent.com/Hack23/cia/master/json-export-specs/schemas/';
 
 // All CIA schema names
-const CIA_SCHEMAS = [
+const CIA_SCHEMAS: readonly string[] = [
   'overview-dashboard',
   'party-performance',
   'cabinet-scorecard',
@@ -177,9 +177,40 @@ const CIA_SCHEMAS = [
   'party-longitudinal',
   'riksdag-overview',
   'ministry-performance'
-];
+] as const;
+
+interface SchemaHashResult {
+  content: string;
+  hash: string;
+}
+
+interface SchemaUpdate {
+  schema: string;
+  type: 'new' | 'updated';
+  localHash?: string;
+  remoteHash: string;
+}
+
+interface SchemaError {
+  schema: string;
+  error: string;
+}
+
+interface UpdateReport {
+  timestamp: string;
+  updatesAvailable: boolean;
+  updateCount: number;
+  errorCount: number;
+  updates: SchemaUpdate[];
+  errors: SchemaError[];
+}
 
 class CIASchemaUpdateChecker {
+  private readonly schemasDir: string;
+  private readonly metadataDir: string;
+  private updates: SchemaUpdate[];
+  private errors: SchemaError[];
+
   constructor() {
     this.schemasDir = path.join(__dirname, '..', 'schemas', 'cia');
     this.metadataDir = path.join(__dirname, '..', 'schemas', 'metadata');
@@ -190,43 +221,43 @@ class CIASchemaUpdateChecker {
   /**
    * Calculate SHA256 hash of schema content
    */
-  calculateHash(content) {
+  calculateHash(content: string): string {
     return crypto.createHash('sha256').update(content).digest('hex');
   }
 
   /**
    * Fetch remote schema hash
    */
-  async fetchRemoteSchemaHash(schemaName) {
+  async fetchRemoteSchemaHash(schemaName: string): Promise<SchemaHashResult> {
     const url = `${CIA_SCHEMA_BASE_URL}${schemaName}.schema.json`;
     
     try {
-      const response = await fetch(url);
+      const response: Response = await fetch(url);
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
       }
       
-      const content = await response.text();
-      const hash = this.calculateHash(content);
+      const content: string = await response.text();
+      const hash: string = this.calculateHash(content);
       
       return { content, hash };
-    } catch (error) {
-      throw new Error(`Failed to fetch ${schemaName}: ${error.message}`, { cause: error });
+    } catch (error: unknown) {
+      throw new Error(`Failed to fetch ${schemaName}: ${(error as Error).message}`, { cause: error });
     }
   }
 
   /**
    * Load local schema hash
    */
-  async loadLocalSchemaHash(schemaName) {
-    const schemaPath = path.join(this.schemasDir, `${schemaName}.schema.json`);
+  async loadLocalSchemaHash(schemaName: string): Promise<SchemaHashResult | null> {
+    const schemaPath: string = path.join(this.schemasDir, `${schemaName}.schema.json`);
     
     try {
-      const content = await fs.readFile(schemaPath, 'utf8');
-      const hash = this.calculateHash(content);
+      const content: string = await fs.readFile(schemaPath, 'utf8');
+      const hash: string = this.calculateHash(content);
       return { content, hash };
-    } catch (error) {
-      if (error.code === 'ENOENT') {
+    } catch (error: unknown) {
+      if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
         return null; // Schema doesn't exist locally
       }
       throw error;
@@ -236,13 +267,13 @@ class CIASchemaUpdateChecker {
   /**
    * Check a single schema for updates
    */
-  async checkSchemaUpdate(schemaName) {
+  async checkSchemaUpdate(schemaName: string): Promise<void> {
     console.log(`🔍 Checking: ${schemaName}...`);
     
     try {
       // Fetch remote and local hashes
-      const remote = await this.fetchRemoteSchemaHash(schemaName);
-      const local = await this.loadLocalSchemaHash(schemaName);
+      const remote: SchemaHashResult = await this.fetchRemoteSchemaHash(schemaName);
+      const local: SchemaHashResult | null = await this.loadLocalSchemaHash(schemaName);
       
       if (!local) {
         console.log(`   🆕 New schema: ${schemaName}`);
@@ -266,11 +297,11 @@ class CIASchemaUpdateChecker {
       }
       
       console.log(`   ✅ Up to date: ${schemaName}`);
-    } catch (error) {
-      console.error(`   ❌ Error: ${schemaName} - ${error.message}`);
+    } catch (error: unknown) {
+      console.error(`   ❌ Error: ${schemaName} - ${(error as Error).message}`);
       this.errors.push({
         schema: schemaName,
-        error: error.message
+        error: (error as Error).message
       });
     }
   }
@@ -278,7 +309,7 @@ class CIASchemaUpdateChecker {
   /**
    * Check all schemas for updates
    */
-  async checkAllSchemas() {
+  async checkAllSchemas(): Promise<number> {
     console.log('🔄 CIA Schema Update Check');
     console.log('='.repeat(50));
     console.log(`📋 Checking ${CIA_SCHEMAS.length} schemas`);
@@ -287,7 +318,7 @@ class CIASchemaUpdateChecker {
     for (const schemaName of CIA_SCHEMAS) {
       await this.checkSchemaUpdate(schemaName);
       // Small delay to avoid rate limiting
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise<void>(resolve => setTimeout(resolve, 100));
     }
 
     // Save update report
@@ -303,8 +334,8 @@ class CIASchemaUpdateChecker {
   /**
    * Save update report
    */
-  async saveUpdateReport() {
-    const report = {
+  async saveUpdateReport(): Promise<void> {
+    const report: UpdateReport = {
       timestamp: new Date().toISOString(),
       updatesAvailable: this.updates.length > 0,
       updateCount: this.updates.length,
@@ -313,7 +344,7 @@ class CIASchemaUpdateChecker {
       errors: this.errors
     };
 
-    const reportPath = path.join(this.metadataDir, 'update-check.json');
+    const reportPath: string = path.join(this.metadataDir, 'update-check.json');
     await fs.mkdir(this.metadataDir, { recursive: true });
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2), 'utf8');
 
@@ -327,14 +358,14 @@ class CIASchemaUpdateChecker {
   /**
    * Print summary
    */
-  printSummary() {
+  printSummary(): void {
     console.log('');
     console.log('='.repeat(50));
     console.log('📊 Update Check Summary');
     console.log('='.repeat(50));
     
-    const newSchemas = this.updates.filter(u => u.type === 'new');
-    const updatedSchemas = this.updates.filter(u => u.type === 'updated');
+    const newSchemas: SchemaUpdate[] = this.updates.filter(u => u.type === 'new');
+    const updatedSchemas: SchemaUpdate[] = this.updates.filter(u => u.type === 'updated');
     
     console.log(`🆕 New schemas: ${newSchemas.length}`);
     console.log(`📝 Updated schemas: ${updatedSchemas.length}`);
@@ -344,7 +375,7 @@ class CIASchemaUpdateChecker {
       console.log('');
       console.log('📋 Schemas with updates:');
       for (const update of this.updates) {
-        const icon = update.type === 'new' ? '🆕' : '📝';
+        const icon: string = update.type === 'new' ? '🆕' : '📝';
         console.log(`   ${icon} ${update.schema}`);
       }
       console.log('');
@@ -369,12 +400,12 @@ class CIASchemaUpdateChecker {
 }
 
 // Main execution
-async function main() {
+async function main(): Promise<void> {
   try {
     const checker = new CIASchemaUpdateChecker();
-    const exitCode = await checker.checkAllSchemas();
+    const exitCode: number = await checker.checkAllSchemas();
     process.exit(exitCode);
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('💥 Fatal error:', error);
     process.exit(1);
   }

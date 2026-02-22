@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env npx tsx
 
 /**
  * @module Validation/SchemaValidation
@@ -88,20 +88,42 @@
  * @see Issue #89 (Data Quality Enhancement Phase)
  */
 
-import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import Ajv2019 from 'ajv/dist/2019.js';
 import addFormats from 'ajv-formats';
+import type { ErrorObject } from 'ajv';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename: string = fileURLToPath(import.meta.url);
+const __dirname: string = path.dirname(__filename);
+
+interface ValidationResult {
+  product: string;
+  valid: boolean;
+  errorCount?: number;
+  errors?: ErrorObject[];
+  error?: string;
+}
+
+interface ValidationReport {
+  timestamp: string;
+  totalValidated: number;
+  validCount: number;
+  invalidCount: number;
+  results: ValidationResult[];
+}
 
 class CIASchemaValidator {
+  schemasDir: string;
+  dataDir: string;
+  ajv: InstanceType<typeof Ajv2019>;
+  results: ValidationResult[];
+
   constructor() {
     this.schemasDir = path.join(__dirname, '..', 'schemas', 'cia');
     this.dataDir = path.join(__dirname, '..', 'data', 'cia-exports', 'current');
-    const Ajv = Ajv2019.default || Ajv2019;
+    const Ajv = (Ajv2019 as { default?: typeof Ajv2019 }).default || Ajv2019;
     this.ajv = new Ajv({ 
       allErrors: true, 
       verbose: true,
@@ -114,14 +136,14 @@ class CIASchemaValidator {
   /**
    * Load a CIA schema by product name
    */
-  async loadCIASchema(productName) {
-    const schemaPath = path.join(this.schemasDir, `${productName}.schema.json`);
+  async loadCIASchema(productName: string): Promise<Record<string, unknown>> {
+    const schemaPath: string = path.join(this.schemasDir, `${productName}.schema.json`);
     
     try {
-      const schemaContent = await fs.readFile(schemaPath, 'utf8');
-      return JSON.parse(schemaContent);
-    } catch (error) {
-      if (error.code === 'ENOENT') {
+      const schemaContent: string = await fs.readFile(schemaPath, 'utf8');
+      return JSON.parse(schemaContent) as Record<string, unknown>;
+    } catch (error: unknown) {
+      if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
         throw new Error(`Schema not found: ${productName}.schema.json (run npm run sync-schemas first)`, { cause: error });
       }
       throw error;
@@ -131,25 +153,26 @@ class CIASchemaValidator {
   /**
    * Validate a single export against its schema
    */
-  async validateExport(productName, data) {
+  async validateExport(productName: string, data: unknown): Promise<boolean> {
     console.log(`🔍 Validating: ${productName}...`);
     
     try {
       // Load schema
-      const schema = await this.loadCIASchema(productName);
+      const schema: Record<string, unknown> = await this.loadCIASchema(productName);
       
       // Compile schema
       const validate = this.ajv.compile(schema);
       
       // Validate data
-      const valid = validate(data);
+      const valid: boolean = validate(data);
       
       if (!valid) {
+        const errors: ErrorObject[] = validate.errors ?? [];
         console.log(`   ❌ Validation failed for ${productName}`);
-        console.log(`   Errors (${validate.errors.length}):`);
+        console.log(`   Errors (${errors.length}):`);
         
         // Show first 5 errors
-        const displayErrors = validate.errors.slice(0, 5);
+        const displayErrors: ErrorObject[] = errors.slice(0, 5);
         for (const error of displayErrors) {
           console.log(`      - ${error.instancePath || '/'}: ${error.message}`);
           if (error.params && Object.keys(error.params).length > 0) {
@@ -157,15 +180,15 @@ class CIASchemaValidator {
           }
         }
         
-        if (validate.errors.length > 5) {
-          console.log(`      ... and ${validate.errors.length - 5} more errors`);
+        if (errors.length > 5) {
+          console.log(`      ... and ${errors.length - 5} more errors`);
         }
         
         this.results.push({
           product: productName,
           valid: false,
-          errorCount: validate.errors.length,
-          errors: validate.errors
+          errorCount: errors.length,
+          errors: errors
         });
         
         return false;
@@ -179,12 +202,12 @@ class CIASchemaValidator {
       });
       
       return true;
-    } catch (error) {
-      console.log(`   ❌ Error: ${productName} - ${error.message}`);
+    } catch (error: unknown) {
+      console.log(`   ❌ Error: ${productName} - ${(error as Error).message}`);
       this.results.push({
         product: productName,
         valid: false,
-        error: error.message
+        error: (error as Error).message
       });
       return false;
     }
@@ -193,7 +216,7 @@ class CIASchemaValidator {
   /**
    * Validate all CIA exports in the data directory
    */
-  async validateAllExports() {
+  async validateAllExports(): Promise<number> {
     console.log('🔍 CIA Data Validation');
     console.log('='.repeat(50));
     console.log(`📁 Data directory: ${this.dataDir}`);
@@ -202,18 +225,18 @@ class CIASchemaValidator {
     // Check if data directory exists
     try {
       await fs.access(this.dataDir);
-    } catch (error) {
+    } catch (_error: unknown) {
       console.log('⚠️  No data directory found - skipping validation');
       console.log('   Data will be validated when exports are available');
       return 0;
     }
 
     // Get all JSON files in data directory
-    let exportFiles;
+    let exportFiles: string[];
     try {
-      const files = await fs.readdir(this.dataDir);
-      exportFiles = files.filter(f => f.endsWith('.json'));
-    } catch (error) {
+      const files: string[] = await fs.readdir(this.dataDir);
+      exportFiles = files.filter((f: string) => f.endsWith('.json'));
+    } catch (_error: unknown) {
       console.log('⚠️  Could not read data directory - skipping validation');
       return 0;
     }
@@ -229,19 +252,19 @@ class CIASchemaValidator {
 
     // Validate each export
     for (const exportFile of exportFiles) {
-      const productName = exportFile.replace('.json', '');
-      const dataPath = path.join(this.dataDir, exportFile);
+      const productName: string = exportFile.replace('.json', '');
+      const dataPath: string = path.join(this.dataDir, exportFile);
       
       try {
-        const dataContent = await fs.readFile(dataPath, 'utf8');
-        const data = JSON.parse(dataContent);
+        const dataContent: string = await fs.readFile(dataPath, 'utf8');
+        const data: unknown = JSON.parse(dataContent);
         await this.validateExport(productName, data);
-      } catch (error) {
-        console.log(`   ❌ Error reading ${exportFile}: ${error.message}`);
+      } catch (error: unknown) {
+        console.log(`   ❌ Error reading ${exportFile}: ${(error as Error).message}`);
         this.results.push({
           product: productName,
           valid: false,
-          error: error.message
+          error: (error as Error).message
         });
       }
     }
@@ -253,37 +276,37 @@ class CIASchemaValidator {
     this.printSummary();
 
     // Return exit code (0 if all valid, 1 if any failed)
-    const failedCount = this.results.filter(r => !r.valid).length;
+    const failedCount: number = this.results.filter((r: ValidationResult) => !r.valid).length;
     return failedCount === 0 ? 0 : 1;
   }
 
   /**
    * Save validation report
    */
-  async saveReport() {
-    const report = {
+  async saveReport(): Promise<void> {
+    const report: ValidationReport = {
       timestamp: new Date().toISOString(),
       totalValidated: this.results.length,
-      validCount: this.results.filter(r => r.valid).length,
-      invalidCount: this.results.filter(r => !r.valid).length,
+      validCount: this.results.filter((r: ValidationResult) => r.valid).length,
+      invalidCount: this.results.filter((r: ValidationResult) => !r.valid).length,
       results: this.results
     };
 
-    const reportPath = path.join(__dirname, '..', 'validation-report.json');
+    const reportPath: string = path.join(__dirname, '..', 'validation-report.json');
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2), 'utf8');
   }
 
   /**
    * Print validation summary
    */
-  printSummary() {
+  printSummary(): void {
     console.log('');
     console.log('='.repeat(50));
     console.log('📊 Validation Summary');
     console.log('='.repeat(50));
     
-    const validCount = this.results.filter(r => r.valid).length;
-    const invalidCount = this.results.filter(r => !r.valid).length;
+    const validCount: number = this.results.filter((r: ValidationResult) => r.valid).length;
+    const invalidCount: number = this.results.filter((r: ValidationResult) => !r.valid).length;
     
     console.log(`✅ Valid: ${validCount}/${this.results.length}`);
     console.log(`❌ Invalid: ${invalidCount}/${this.results.length}`);
@@ -291,9 +314,9 @@ class CIASchemaValidator {
     if (invalidCount > 0) {
       console.log('');
       console.log('⚠️  Failed validations:');
-      const failed = this.results.filter(r => !r.valid);
+      const failed: ValidationResult[] = this.results.filter((r: ValidationResult) => !r.valid);
       for (const result of failed) {
-        const errorInfo = result.errorCount ? `${result.errorCount} errors` : result.error;
+        const errorInfo: string = result.errorCount ? `${result.errorCount} errors` : result.error ?? 'unknown error';
         console.log(`   - ${result.product}: ${errorInfo}`);
       }
     }
@@ -305,12 +328,12 @@ class CIASchemaValidator {
 }
 
 // Main execution
-async function main() {
+async function main(): Promise<void> {
   try {
-    const validator = new CIASchemaValidator();
-    const exitCode = await validator.validateAllExports();
+    const validator: CIASchemaValidator = new CIASchemaValidator();
+    const exitCode: number = await validator.validateAllExports();
     process.exit(exitCode);
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('💥 Fatal error:', error);
     process.exit(1);
   }

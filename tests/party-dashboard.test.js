@@ -190,7 +190,7 @@ describe('Party Dashboard', () => {
 
   describe('Party Configuration', () => {
     it('should support all 8 Swedish parties', () => {
-      const expectedParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+      const _expectedParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
       
       // These parties should be referenced in ARIA labels or descriptions
       const dashboardText = container.textContent;

@@ -94,18 +94,95 @@
  * @see tests/validate-articles-playwright.test.js (Test Suite)
  */
 
-import { chromium } from 'playwright';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { chromium, type Browser, type Page } from 'playwright';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename: string = fileURLToPath(import.meta.url);
+const __dirname: string = path.dirname(__filename);
+
+/**
+ * Viewport size configuration for responsive testing
+ */
+interface ViewportSize {
+  width: number;
+  height: number;
+  name: string;
+}
+
+/**
+ * Validation configuration options
+ */
+interface ValidationConfig {
+  headless: boolean;
+  screenshotsDir: string;
+  baseUrl: string;
+  viewportSizes: ViewportSize[];
+}
+
+/**
+ * Screenshot metadata
+ */
+interface ScreenshotInfo {
+  name: string;
+  path: string;
+  viewport: string;
+  article: string;
+}
+
+/**
+ * Result of a single validation check
+ */
+interface ValidationCheckResult {
+  passed: boolean;
+  issues: string[];
+}
+
+/**
+ * Result of validating a single article
+ */
+interface ArticleValidationResult {
+  article: string;
+  lang: string;
+  passed: boolean;
+  issues: string[];
+  screenshots: ScreenshotInfo[];
+}
+
+/**
+ * Summary of all validation results
+ */
+interface ValidationSummary {
+  total: number;
+  passed: number;
+  failed: number;
+  passRate: number;
+  screenshots: ScreenshotInfo[];
+}
+
+/**
+ * Full validation results including per-article results and summary
+ */
+interface ValidationResults {
+  results: ArticleValidationResult[];
+  summary: ValidationSummary;
+  screenshots: ScreenshotInfo[];
+}
+
+/**
+ * Accessibility tree node structure from Playwright
+ */
+interface AccessibilityNode {
+  role?: string;
+  name?: string;
+  children?: AccessibilityNode[];
+}
 
 /**
  * Default configuration
  */
-const DEFAULT_CONFIG = {
+const DEFAULT_CONFIG: ValidationConfig = {
   headless: true,
   screenshotsDir: path.join(__dirname, '..', 'screenshots'),
   baseUrl: 'http://localhost:8080',
@@ -119,17 +196,20 @@ const DEFAULT_CONFIG = {
 /**
  * RTL languages
  */
-const RTL_LANGUAGES = ['ar', 'he'];
+const RTL_LANGUAGES: string[] = ['ar', 'he'];
 
 /**
  * Validate articles with Playwright
  * 
- * @param {Array} articlePaths - Array of article file paths relative to news/
- * @param {Object} options - Validation options
- * @returns {Promise<Object>} Validation results with screenshots
+ * @param articlePaths - Array of article file paths relative to news/
+ * @param options - Validation options
+ * @returns Validation results with screenshots
  */
-export async function validateArticlesWithPlaywright(articlePaths, options = {}) {
-  const config = { ...DEFAULT_CONFIG, ...options };
+export async function validateArticlesWithPlaywright(
+  articlePaths: string[],
+  options: Partial<ValidationConfig> = {}
+): Promise<ValidationResults> {
+  const config: ValidationConfig = { ...DEFAULT_CONFIG, ...options };
   
   // Ensure screenshots directory exists
   if (!fs.existsSync(config.screenshotsDir)) {
@@ -139,14 +219,14 @@ export async function validateArticlesWithPlaywright(articlePaths, options = {})
   console.log('🎭 Starting Playwright validation...');
   console.log(`  Articles to validate: ${articlePaths.length}`);
   
-  const browser = await chromium.launch({ headless: config.headless });
-  const results = [];
+  const browser: Browser = await chromium.launch({ headless: config.headless });
+  const results: ArticleValidationResult[] = [];
   
   try {
     for (const articlePath of articlePaths) {
       console.log(`\n  📄 Validating: ${articlePath}`);
       
-      const articleResult = await validateSingleArticle(
+      const articleResult: ArticleValidationResult = await validateSingleArticle(
         browser,
         articlePath,
         config
@@ -165,7 +245,7 @@ export async function validateArticlesWithPlaywright(articlePaths, options = {})
     await browser.close();
   }
   
-  const summary = generateSummary(results);
+  const summary: ValidationSummary = generateSummary(results);
   console.log('\n✅ Playwright validation complete');
   console.log(`  Passed: ${summary.passed}/${summary.total}`);
   console.log(`  Screenshots: ${summary.screenshots.length}`);
@@ -180,32 +260,36 @@ export async function validateArticlesWithPlaywright(articlePaths, options = {})
 /**
  * Validate a single article
  */
-async function validateSingleArticle(browser, articlePath, config) {
-  const page = await browser.newPage();
+async function validateSingleArticle(
+  browser: Browser,
+  articlePath: string,
+  config: ValidationConfig
+): Promise<ArticleValidationResult> {
+  const page: Page = await browser.newPage();
   
   // Normalize articlePath to avoid duplicate segments (e.g., "news/news/article.html")
-  const normalizedPath = articlePath.replace(/^\/?news\//, '');
-  const url = `${config.baseUrl}/news/${normalizedPath}`;
+  const normalizedPath: string = articlePath.replace(/^\/?news\//, '');
+  const url: string = `${config.baseUrl}/news/${normalizedPath}`;
   
-  const issues = [];
-  const screenshots = [];
+  const issues: string[] = [];
+  const screenshots: ScreenshotInfo[] = [];
   
   try {
     // Navigate to article
     await page.goto(url, { waitUntil: 'networkidle' });
     
     // Extract language from filename (e.g., article-en.html -> en)
-    const lang = extractLanguage(articlePath);
+    const lang: string = extractLanguage(articlePath);
     
     // 1. Accessibility tree validation
-    const accessibilityResult = await validateAccessibility(page);
+    const accessibilityResult: ValidationCheckResult = await validateAccessibility(page);
     if (!accessibilityResult.passed) {
       issues.push(...accessibilityResult.issues);
     }
     
     // 2. RTL validation for ar/he
     if (RTL_LANGUAGES.includes(lang)) {
-      const rtlResult = await validateRTL(page, lang);
+      const rtlResult: ValidationCheckResult = await validateRTL(page, lang);
       if (!rtlResult.passed) {
         issues.push(...rtlResult.issues);
       }
@@ -215,8 +299,8 @@ async function validateSingleArticle(browser, articlePath, config) {
     for (const viewport of config.viewportSizes) {
       await page.setViewportSize(viewport);
       
-      const screenshotName = generateScreenshotName(articlePath, viewport.name);
-      const screenshotPath = path.join(config.screenshotsDir, screenshotName);
+      const screenshotName: string = generateScreenshotName(articlePath, viewport.name);
+      const screenshotPath: string = path.join(config.screenshotsDir, screenshotName);
       
       await page.screenshot({
         path: screenshotPath,
@@ -232,19 +316,19 @@ async function validateSingleArticle(browser, articlePath, config) {
     }
     
     // 4. Check heading hierarchy
-    const headingResult = await validateHeadingHierarchy(page);
+    const headingResult: ValidationCheckResult = await validateHeadingHierarchy(page);
     if (!headingResult.passed) {
       issues.push(...headingResult.issues);
     }
     
     // 5. Check color contrast
-    const contrastResult = await validateColorContrast(page);
+    const contrastResult: ValidationCheckResult = await validateColorContrast(page);
     if (!contrastResult.passed) {
       issues.push(...contrastResult.issues);
     }
     
-  } catch (error) {
-    issues.push(`Validation error: ${error.message}`);
+  } catch (error: unknown) {
+    issues.push(`Validation error: ${(error as Error).message}`);
   } finally {
     await page.close();
   }
@@ -261,11 +345,11 @@ async function validateSingleArticle(browser, articlePath, config) {
 /**
  * Validate accessibility tree (WCAG 2.1 AA)
  */
-async function validateAccessibility(page) {
-  const issues = [];
+async function validateAccessibility(page: Page): Promise<ValidationCheckResult> {
+  const issues: string[] = [];
   
   try {
-    const snapshot = await page.accessibility.snapshot();
+    const snapshot: AccessibilityNode | null = await page.accessibility.snapshot() as AccessibilityNode | null;
     
     if (!snapshot) {
       issues.push('No accessibility tree found');
@@ -278,13 +362,13 @@ async function validateAccessibility(page) {
     }
     
     // Check for keyboard navigation
-    const focusableElements = await page.locator('[tabindex], a, button, input, textarea, select').count();
+    const focusableElements: number = await page.locator('[tabindex], a, button, input, textarea, select').count();
     if (focusableElements === 0) {
       issues.push('No focusable elements found for keyboard navigation');
     }
     
-  } catch (error) {
-    issues.push(`Accessibility validation error: ${error.message}`);
+  } catch (error: unknown) {
+    issues.push(`Accessibility validation error: ${(error as Error).message}`);
   }
   
   return {
@@ -296,18 +380,18 @@ async function validateAccessibility(page) {
 /**
  * Validate RTL layout for Arabic and Hebrew
  */
-async function validateRTL(page, lang) {
-  const issues = [];
+async function validateRTL(page: Page, lang: string): Promise<ValidationCheckResult> {
+  const issues: string[] = [];
   
   try {
-    const htmlDir = await page.locator('html').getAttribute('dir');
+    const htmlDir: string | null = await page.locator('html').getAttribute('dir');
     
     if (htmlDir !== 'rtl') {
       issues.push(`RTL language ${lang} does not have dir="rtl" on <html>`);
     }
     
     // Check if text aligns to the right
-    const bodyDir = await page.locator('body').evaluate(el => 
+    const bodyDir: string = await page.locator('body').evaluate((el: Element) =>
       window.getComputedStyle(el).direction
     );
     
@@ -315,8 +399,8 @@ async function validateRTL(page, lang) {
       issues.push(`Body element does not have RTL text direction`);
     }
     
-  } catch (error) {
-    issues.push(`RTL validation error: ${error.message}`);
+  } catch (error: unknown) {
+    issues.push(`RTL validation error: ${(error as Error).message}`);
   }
   
   return {
@@ -328,23 +412,23 @@ async function validateRTL(page, lang) {
 /**
  * Validate heading hierarchy (h1 → h2 → h3)
  */
-async function validateHeadingHierarchy(page) {
-  const issues = [];
+async function validateHeadingHierarchy(page: Page): Promise<ValidationCheckResult> {
+  const issues: string[] = [];
   
   try {
-    const headings = await page.locator('h1, h2, h3, h4, h5, h6').allTextContents();
+    const headings: string[] = await page.locator('h1, h2, h3, h4, h5, h6').allTextContents();
     
     if (headings.length === 0) {
       issues.push('No headings found');
     }
     
-    const h1Count = await page.locator('h1').count();
+    const h1Count: number = await page.locator('h1').count();
     if (h1Count !== 1) {
       issues.push(`Expected 1 h1, found ${h1Count}`);
     }
     
-  } catch (error) {
-    issues.push(`Heading validation error: ${error.message}`);
+  } catch (error: unknown) {
+    issues.push(`Heading validation error: ${(error as Error).message}`);
   }
   
   return {
@@ -356,13 +440,13 @@ async function validateHeadingHierarchy(page) {
 /**
  * Validate color contrast (4.5:1 for normal text)
  */
-async function validateColorContrast(page) {
-  const issues = [];
+async function validateColorContrast(page: Page): Promise<ValidationCheckResult> {
+  const issues: string[] = [];
   
   try {
     // This is a simplified check - full contrast checking requires axe-core
-    const hasHighContrast = await page.evaluate(() => {
-      const textElements = document.querySelectorAll('p, h1, h2, h3, li, a');
+    const hasHighContrast: boolean = await page.evaluate(() => {
+      const textElements: NodeListOf<Element> = document.querySelectorAll('p, h1, h2, h3, li, a');
       // Simplified: Just check if text is not too light
       return textElements.length > 0;
     });
@@ -371,8 +455,8 @@ async function validateColorContrast(page) {
       issues.push('Could not verify color contrast');
     }
     
-  } catch (error) {
-    issues.push(`Contrast validation error: ${error.message}`);
+  } catch (error: unknown) {
+    issues.push(`Contrast validation error: ${(error as Error).message}`);
   }
   
   return {
@@ -385,34 +469,34 @@ async function validateColorContrast(page) {
  * Helper functions
  */
 
-function extractLanguage(articlePath) {
-  const match = articlePath.match(/-([a-z]{2})\.html$/);
+function extractLanguage(articlePath: string): string {
+  const match: RegExpMatchArray | null = articlePath.match(/-([a-z]{2})\.html$/);
   return match ? match[1] : 'en';
 }
 
-function generateScreenshotName(articlePath, viewport) {
-  const basename = path.basename(articlePath, '.html');
+function generateScreenshotName(articlePath: string, viewport: string): string {
+  const basename: string = path.basename(articlePath, '.html');
   return `${basename}-${viewport}.png`;
 }
 
-function hasProperARIA(node) {
+function hasProperARIA(node: AccessibilityNode | null): boolean {
   if (!node) return true;
   
   // Check if node has a non-empty ARIA role
-  const hasRole = node.role != null && node.role !== '';
+  const hasRole: boolean = node.role != null && node.role !== '';
   
   // Recursively check children, including the current node
   if (node.children) {
-    return hasRole && node.children.every(child => hasProperARIA(child));
+    return hasRole && node.children.every((child: AccessibilityNode) => hasProperARIA(child));
   }
   
   return hasRole;
 }
 
-function generateSummary(results) {
-  const passed = results.filter(r => r.passed).length;
-  const failed = results.length - passed;
-  const screenshots = results.flatMap(r => r.screenshots);
+function generateSummary(results: ArticleValidationResult[]): ValidationSummary {
+  const passed: number = results.filter((r: ArticleValidationResult) => r.passed).length;
+  const failed: number = results.length - passed;
+  const screenshots: ScreenshotInfo[] = results.flatMap((r: ArticleValidationResult) => r.screenshots);
   
   return {
     total: results.length,
@@ -426,10 +510,10 @@ function generateSummary(results) {
 /**
  * Generate PR comment with screenshots
  */
-export function generatePRComment(results) {
+export function generatePRComment(results: ValidationResults): string {
   const { summary, screenshots } = results;
   
-  let comment = `## 📸 Visual Validation Results\n\n`;
+  let comment: string = `## 📸 Visual Validation Results\n\n`;
   comment += `**Status**: ${summary.passRate === 1 ? '✅ All passed' : `⚠️ ${summary.failed} failed`}\n`;
   comment += `**Articles validated**: ${summary.total}\n`;
   comment += `**Screenshots captured**: ${screenshots.length}\n\n`;
@@ -437,8 +521,8 @@ export function generatePRComment(results) {
   comment += `### Screenshots\n\n`;
   
   // Group screenshots by article
-  const byArticle = {};
-  screenshots.forEach(ss => {
+  const byArticle: Record<string, ScreenshotInfo[]> = {};
+  screenshots.forEach((ss: ScreenshotInfo) => {
     if (!byArticle[ss.article]) {
       byArticle[ss.article] = [];
     }
@@ -447,7 +531,7 @@ export function generatePRComment(results) {
   
   for (const [article, articleScreenshots] of Object.entries(byArticle)) {
     comment += `#### ${article}\n\n`;
-    articleScreenshots.forEach(ss => {
+    articleScreenshots.forEach((ss: ScreenshotInfo) => {
       // Note: Screenshots should be uploaded as CI artifacts or committed for links to work
       // Relative paths won't render in GitHub PR comments without proper setup
       comment += `![${ss.viewport}](screenshots/${ss.name}) `;
@@ -458,11 +542,11 @@ export function generatePRComment(results) {
   
   // Accessibility validation
   comment += `### Accessibility Validation\n\n`;
-  results.results.forEach(result => {
-    const status = result.passed ? '✅' : '❌';
+  results.results.forEach((result: ArticleValidationResult) => {
+    const status: string = result.passed ? '✅' : '❌';
     comment += `${status} **${result.article}** (${result.lang})\n`;
     if (result.issues.length > 0) {
-      result.issues.forEach(issue => {
+      result.issues.forEach((issue: string) => {
         comment += `  - ${issue}\n`;
       });
     }
@@ -474,8 +558,11 @@ export function generatePRComment(results) {
 /**
  * Validate and save results to file
  */
-export async function validateAndSave(articlePaths, outputPath) {
-  const results = await validateArticlesWithPlaywright(articlePaths);
+export async function validateAndSave(
+  articlePaths: string[],
+  outputPath: string
+): Promise<ValidationResults> {
+  const results: ValidationResults = await validateArticlesWithPlaywright(articlePaths);
   
   fs.writeFileSync(
     outputPath,

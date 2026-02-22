@@ -152,15 +152,29 @@
  * @see Issue #76 (Type Safety Enhancement)
  */
 
-import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { compile } from 'json-schema-to-typescript';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename: string = fileURLToPath(import.meta.url);
+const __dirname: string = path.dirname(__filename);
+
+interface FailedGeneration {
+  schema: string;
+  error: string;
+}
+
+interface GenerationResults {
+  generated: string[];
+  failed: FailedGeneration[];
+}
 
 class CIATypeGenerator {
+  private readonly schemasDir: string;
+  private readonly typesDir: string;
+  private readonly results: GenerationResults;
+
   constructor() {
     this.schemasDir = path.join(__dirname, '..', 'schemas', 'cia');
     this.typesDir = path.join(__dirname, '..', 'types');
@@ -173,17 +187,17 @@ class CIATypeGenerator {
   /**
    * Generate TypeScript types from a single schema
    */
-  async generateTypesForSchema(schemaFile) {
-    const schemaName = schemaFile.replace('.schema.json', '');
+  async generateTypesForSchema(schemaFile: string): Promise<boolean> {
+    const schemaName: string = schemaFile.replace('.schema.json', '');
     console.log(`📝 Generating types for: ${schemaName}...`);
     
     try {
-      const schemaPath = path.join(this.schemasDir, schemaFile);
-      const schemaContent = await fs.readFile(schemaPath, 'utf8');
-      const schema = JSON.parse(schemaContent);
+      const schemaPath: string = path.join(this.schemasDir, schemaFile);
+      const schemaContent: string = await fs.readFile(schemaPath, 'utf8');
+      const schema: Record<string, unknown> = JSON.parse(schemaContent) as Record<string, unknown>;
       
       // Generate TypeScript types
-      const types = await compile(schema, schemaName, {
+      const types: string = await compile(schema, schemaName, {
         bannerComment: `/**
  * Auto-generated TypeScript types from CIA JSON Schema
  * Schema: ${schemaFile}
@@ -200,18 +214,18 @@ class CIATypeGenerator {
       });
       
       // Save types to file
-      const typesPath = path.join(this.typesDir, `${schemaName}.d.ts`);
+      const typesPath: string = path.join(this.typesDir, `${schemaName}.d.ts`);
       await fs.writeFile(typesPath, types, 'utf8');
       
       console.log(`   ✅ Generated: ${schemaName}.d.ts`);
       this.results.generated.push(schemaName);
       
       return true;
-    } catch (error) {
-      console.error(`   ❌ Failed: ${schemaName} - ${error.message}`);
+    } catch (error: unknown) {
+      console.error(`   ❌ Failed: ${schemaName} - ${(error as Error).message}`);
       this.results.failed.push({
         schema: schemaName,
-        error: error.message
+        error: (error as Error).message
       });
       return false;
     }
@@ -220,7 +234,7 @@ class CIATypeGenerator {
   /**
    * Generate types for all CIA schemas
    */
-  async generateAllTypes() {
+  async generateAllTypes(): Promise<number> {
     console.log('📝 CIA Type Generation');
     console.log('='.repeat(50));
     console.log(`📁 Schemas directory: ${this.schemasDir}`);
@@ -231,11 +245,11 @@ class CIATypeGenerator {
     await fs.mkdir(this.typesDir, { recursive: true });
 
     // Get all schema files
-    let schemaFiles;
+    let schemaFiles: string[];
     try {
-      const files = await fs.readdir(this.schemasDir);
-      schemaFiles = files.filter(f => f.endsWith('.schema.json'));
-    } catch (error) {
+      const files: string[] = await fs.readdir(this.schemasDir);
+      schemaFiles = files.filter((f: string) => f.endsWith('.schema.json'));
+    } catch (_error: unknown) {
       console.error('❌ Could not read schemas directory');
       console.error('   Run "npm run sync-schemas" first to download schemas');
       return 1;
@@ -268,12 +282,12 @@ class CIATypeGenerator {
   /**
    * Create index.d.ts that exports all types
    */
-  async createIndexFile() {
-    const imports = this.results.generated
-      .map(name => `export * from './${name}';`)
+  async createIndexFile(): Promise<void> {
+    const imports: string = this.results.generated
+      .map((name: string) => `export * from './${name}';`)
       .join('\n');
 
-    const indexContent = `/**
+    const indexContent: string = `/**
  * CIA Data Types - Index
  * Auto-generated from CIA JSON Schemas
  * Generated: ${new Date().toISOString()}
@@ -284,7 +298,7 @@ class CIATypeGenerator {
 ${imports}
 `;
 
-    const indexPath = path.join(this.typesDir, 'index.d.ts');
+    const indexPath: string = path.join(this.typesDir, 'index.d.ts');
     await fs.writeFile(indexPath, indexContent, 'utf8');
     
     console.log('');
@@ -294,7 +308,7 @@ ${imports}
   /**
    * Print generation summary
    */
-  printSummary() {
+  printSummary(): void {
     console.log('');
     console.log('='.repeat(50));
     console.log('📊 Type Generation Summary');
@@ -321,12 +335,12 @@ ${imports}
 }
 
 // Main execution
-async function main() {
+async function main(): Promise<void> {
   try {
-    const generator = new CIATypeGenerator();
-    const exitCode = await generator.generateAllTypes();
+    const generator: CIATypeGenerator = new CIATypeGenerator();
+    const exitCode: number = await generator.generateAllTypes();
     process.exit(exitCode);
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('💥 Fatal error:', error);
     process.exit(1);
   }

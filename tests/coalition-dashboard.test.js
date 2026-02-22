@@ -122,7 +122,7 @@ describe('Coalition Dashboard', () => {
       const localPrefix = 'cia-data/';
       const remotePrefix = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
 
-      expectedFiles.forEach(key => {
+      expectedFiles.forEach(_key => {
         // The dashboard JS defines DATA_CONFIG.files with these keys
         expect(localPrefix.startsWith('cia-data')).toBe(true);
         expect(remotePrefix).toContain('sample-data');
@@ -312,7 +312,7 @@ describe('Coalition Dashboard', () => {
       
       // Should not throw, should fall back to mock data
       try {
-        const response = await fetch('cia-data/nonexistent.csv');
+        const _response = await fetch('cia-data/nonexistent.csv');
       } catch (error) {
         expect(error.message).toBe('Network error');
       }

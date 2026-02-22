@@ -843,7 +843,7 @@
           d3.select(this).attr('stroke', '#00d9ff').attr('stroke-width', 2);
           
           // Show tooltip
-          const tooltip = d3.select('body').append('div')
+          const _tooltip = d3.select('body').append('div')
             .attr('class', 'heatmap-tooltip')
             .style('position', 'absolute')
             .style('background', 'rgba(10, 14, 39, 0.95)')

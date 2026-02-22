@@ -691,7 +691,7 @@
    * @param {Array} experienceData - Experience data  
    * @returns {Object} Enhanced leader info
    */
-  function getEnhancedLeaderInfo(leader, politicianData, experienceData) {
+  function getEnhancedLeaderInfo(leader, politicianData, _experienceData) {
     if (!leader.personId) return leader;
 
     // Find politician data

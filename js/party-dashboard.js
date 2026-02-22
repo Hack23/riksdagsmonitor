@@ -682,7 +682,7 @@
           return parseCSV(csvText);
         }
       }
-    } catch (localError) {
+    } catch (_localError) {
       console.warn(`Local fetch failed for ${filename}, trying remote...`);
     }
 
