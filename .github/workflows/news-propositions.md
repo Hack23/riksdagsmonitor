@@ -156,9 +156,19 @@ npx tsx scripts/generate-news-enhanced.ts \
   --skip-existing
 ```
 
-### Step 4: Translate, Validate & Create PR
+### Step 4: Translate, Validate & Verify Analysis Quality
 
 Translate all Swedish content, regenerate indexes, validate, then create PR.
+
+**CRITICAL: Each article MUST contain real analysis, not just a list of translated links.**
+Every generated article must include:
+- An analytical lede paragraph about the government's legislative strategy (not just a document count)
+- Legislative Pipeline section explaining where each proposition sits in the process
+- "Why It Matters" analysis for each proposition with policy domain context
+- Policy Implications section assessing the government's legislative ambition
+- Committee referral analysis showing which policy areas are affected
+
+If the generated article lacks these analytical sections, manually add contextual analysis before committing.
 
 ```bash
 npx tsx scripts/generate-news-indexes.ts

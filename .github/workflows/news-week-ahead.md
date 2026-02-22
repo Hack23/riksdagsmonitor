@@ -161,7 +161,16 @@ npx tsx scripts/generate-news-enhanced.ts \
   --skip-existing
 ```
 
-### Step 4: Translate, Validate & Create PR
+### Step 4: Translate, Validate & Verify Analysis Quality
+
+**CRITICAL: Each article MUST contain real analysis, not just a list of translated event titles.**
+Every generated article must include:
+- A "Why This Week Matters" context box with political significance analysis
+- Key Events section with interpretive commentary (not just time/title)
+- "What to Watch" forward-looking analysis with implications
+- Political context connecting events to broader legislative trends
+
+If the generated article lacks analysis, manually add contextual commentary before committing.
 
 ```bash
 npx tsx scripts/generate-news-indexes.ts

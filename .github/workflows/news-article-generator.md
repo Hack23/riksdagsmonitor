@@ -1081,9 +1081,19 @@ This validation checks:
 7. ⚠️  Sitemap news-URL coverage (> 10 recommended; missing sitemap.xml = blocking error)
 8. ⚠️  Language switcher consistency across all 14 languages (warning level)
 
-**Exit code 0** = pass (proceed to Step 8), **exit code 1** = fail (STOP, do not create PR).
+**CRITICAL: Analysis Quality Check**
+Every generated article MUST contain real analysis, not merely a translated list of document links.
+Verify each article includes:
+- An analytical lede paragraph with political context (not just "N documents were published")
+- Thematic or policy domain grouping with interpretive commentary
+- "Why It Matters" or "What This Means" analysis for significant items
+- Key Takeaways, Policy Implications, or Coalition Dynamics section
+- Party/committee breakdown analysis where applicable
 
-If validation fails, review the error messages, fix the issues, regenerate indexes if needed, and run validation again.
+**If an article reads as a link list with translated titles, it FAILS quality review.**
+Add contextual analysis manually before committing.
+
+**Exit code 0** = pass (proceed to Step 8), **exit code 1** = fail (STOP, do not create PR).
 
 ### Step 8: Create Metadata
 

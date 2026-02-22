@@ -164,8 +164,18 @@ npx tsx scripts/generate-news-enhanced.ts \
   --skip-existing
 ```
 
-### Step 4: Translate Swedish Content
+### Step 4: Translate Swedish Content & Verify Analysis Quality
 All Swedish API data MUST be translated. Check every article for `data-translate="true"` markers.
+
+**CRITICAL: Each article MUST contain real analysis, not just a list of translated links.**
+Every generated article must include:
+- An analytical lede paragraph providing political context (not just a document count)
+- Thematic analysis section grouping reports by committee with interpretive commentary
+- "What This Means" or "Why It Matters" analysis for each document
+- Key Takeaways section summarizing political significance and implications
+- Policy domain inference (fiscal, defence, healthcare, etc.) based on committee and title
+
+If the generated article lacks these analytical sections, manually add contextual analysis before committing.
 
 ### Step 5: Regenerate Indexes
 ```bash
