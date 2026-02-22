@@ -99,33 +99,52 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
 
     console.log(`  🔄 Fetching documents ${fromStr} → ${toStr}...`);
 
-    // Fetch committee reports, propositions, and motions for richer content
-    const [reports, propositions, motions] = await Promise.all([
-      client.fetchCommitteeReports(30, '2025/26').catch(() => [] as unknown[]),
-      client.fetchPropositions(30, '2025/26').catch(() => [] as unknown[]),
-      client.fetchMotions(30, '2025/26').catch(() => [] as unknown[]),
-    ]);
+    // Primary: fetch ALL documents in the date range via search_dokument
+    const allDocs = await client.searchDocuments({
+      from_date: fromStr,
+      to_date: toStr,
+      limit: 200,
+    });
 
-    // Filter to only recent items within lookback period
+    mcpCalls.push({ tool: 'search_dokument', result: allDocs });
+
+    // Supplementary: fetch type-specific documents for richer metadata (non-fatal)
     const filterRecent = (docs: unknown[]): RawDocument[] =>
       (docs as RawDocument[]).filter(d => {
         const date = (d as Record<string, string>).datum ?? (d as Record<string, string>).publicerad ?? '';
         return date >= fromStr && date <= toStr;
       });
 
+    const [reports, propositions, motions] = await Promise.all([
+      Promise.resolve()
+        .then(() => client.fetchCommitteeReports(50, '2025/26') as Promise<unknown[]>)
+        .catch((err: unknown) => { console.error('Failed to fetch committee reports:', err); return [] as unknown[]; }),
+      Promise.resolve()
+        .then(() => client.fetchPropositions(50, '2025/26') as Promise<unknown[]>)
+        .catch((err: unknown) => { console.error('Failed to fetch propositions:', err); return [] as unknown[]; }),
+      Promise.resolve()
+        .then(() => client.fetchMotions(50, '2025/26') as Promise<unknown[]>)
+        .catch((err: unknown) => { console.error('Failed to fetch motions:', err); return [] as unknown[]; }),
+    ]);
+
     const recentReports = filterRecent(reports);
     const recentPropositions = filterRecent(propositions);
     const recentMotions = filterRecent(motions);
 
-    // Tag documents with their type for content generation (only when missing)
+    // Tag supplementary documents with their type (only when missing)
     for (const d of recentReports) { if (!(d as Record<string, string>).doktyp) (d as Record<string, string>).doktyp = 'bet'; }
     for (const d of recentPropositions) { if (!(d as Record<string, string>).doktyp) (d as Record<string, string>).doktyp = 'prop'; }
     for (const d of recentMotions) { if (!(d as Record<string, string>).doktyp) (d as Record<string, string>).doktyp = 'mot'; }
 
-    const documents: RawDocument[] = [...recentReports, ...recentPropositions, ...recentMotions];
     mcpCalls.push({ tool: 'get_betankanden', result: recentReports });
     mcpCalls.push({ tool: 'get_propositioner', result: recentPropositions });
     mcpCalls.push({ tool: 'get_motioner', result: recentMotions });
+
+    // Merge: use primary search results; fall back to supplementary if search returned nothing
+    const documents: RawDocument[] = allDocs.length > 0
+      ? (allDocs as RawDocument[])
+      : [...recentReports, ...recentPropositions, ...recentMotions];
+
     console.log(`  📊 Found ${documents.length} documents (${recentReports.length} reports, ${recentPropositions.length} propositions, ${recentMotions.length} motions)`);
 
     if (documents.length === 0) {
@@ -143,7 +162,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       const watchPoints = extractWatchPoints({ documents }, lang);
       const metadata = generateMetadata({ documents }, 'weekly-review', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_betankanden', 'get_propositioner', 'get_motioner']);
+      const sources: string[] = generateSources(['search_dokument', 'get_betankanden', 'get_propositioner', 'get_motioner']);
 
       const titles: TitleSet = getTitles(lang, documents.length);
 
