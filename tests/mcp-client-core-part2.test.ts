@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { MCPClient } from '../scripts/mcp-client.js';
+import { MCPClient, normalizeDocumentType } from '../scripts/mcp-client.js';
 import type { MCPStats } from '../scripts/types/mcp.js';
 
 interface JsonRpcBody {
@@ -113,6 +113,110 @@ describe('MCPClient Part 2', () => {
 
       const docs = await client.searchDocuments({ sok: 'test' });
       expect(docs).toEqual([]);
+    });
+
+    it('should stamp type=motion on mot documents', async () => {
+      const mockDocs = [{ dok_id: 'H901mot1', doktyp: 'mot', titel: 'Motion on climate' }];
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { dokument: mockDocs } })
+      })) as unknown as typeof global.fetch;
+
+      const docs = await client.searchDocuments({ doktyp: 'mot' });
+      const doc = docs[0] as Record<string, unknown>;
+      expect(doc['type']).toBe('motion');
+      expect(doc['doktyp']).toBe('mot'); // raw code preserved
+    });
+
+    it('should stamp type=committee-report on bet documents', async () => {
+      const mockDocs = [{ dok_id: 'H901AU1', doktyp: 'bet', titel: 'Committee report' }];
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { dokument: mockDocs } })
+      })) as unknown as typeof global.fetch;
+
+      const docs = await client.searchDocuments({ doktyp: 'bet' });
+      expect((docs[0] as Record<string, unknown>)['type']).toBe('committee-report');
+    });
+
+    it('should stamp type=proposition on prop documents', async () => {
+      const mockDocs = [{ dok_id: 'H901prop1', doktyp: 'prop', titel: 'Gov bill' }];
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { dokument: mockDocs } })
+      })) as unknown as typeof global.fetch;
+
+      const docs = await client.searchDocuments({});
+      expect((docs[0] as Record<string, unknown>)['type']).toBe('proposition');
+    });
+
+    it('should stamp subtype from subtyp field', async () => {
+      const mockDocs = [{ dok_id: 'H901bet1', doktyp: 'bet', subtyp: 'rskr', titel: 'Report' }];
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { dokument: mockDocs } })
+      })) as unknown as typeof global.fetch;
+
+      const docs = await client.searchDocuments({});
+      const doc = docs[0] as Record<string, unknown>;
+      expect(doc['subtype']).toBe('rskr');
+      expect(doc['subtyp']).toBe('rskr'); // raw field preserved
+    });
+
+    it('should not overwrite existing type field', async () => {
+      const mockDocs = [{ dok_id: 'H1', doktyp: 'mot', type: 'already-set' }];
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { dokument: mockDocs } })
+      })) as unknown as typeof global.fetch;
+
+      const docs = await client.searchDocuments({});
+      expect((docs[0] as Record<string, unknown>)['type']).toBe('already-set');
+    });
+
+    it('should use the dokument key before the documents key', async () => {
+      const mockDokument = [{ dok_id: 'A', doktyp: 'prop' }];
+      const mockDocuments = [{ dok_id: 'B', doktyp: 'mot' }];
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { dokument: mockDokument, documents: mockDocuments } })
+      })) as unknown as typeof global.fetch;
+
+      const docs = await client.searchDocuments({});
+      expect(docs).toHaveLength(1);
+      expect((docs[0] as Record<string, unknown>)['dok_id']).toBe('A');
+    });
+  });
+
+  describe('normalizeDocumentType', () => {
+    it('should map Swedish doktyp codes to English type strings', () => {
+      expect(normalizeDocumentType('mot')).toBe('motion');
+      expect(normalizeDocumentType('bet')).toBe('committee-report');
+      expect(normalizeDocumentType('prop')).toBe('proposition');
+      expect(normalizeDocumentType('skr')).toBe('government-communication');
+      expect(normalizeDocumentType('ip')).toBe('interpellation');
+      expect(normalizeDocumentType('fr')).toBe('written-question');
+      expect(normalizeDocumentType('kammakt')).toBe('chamber-action');
+      expect(normalizeDocumentType('prot')).toBe('minutes');
+      expect(normalizeDocumentType('sfs')).toBe('statute');
+      expect(normalizeDocumentType('sou')).toBe('government-inquiry');
+      expect(normalizeDocumentType('dir')).toBe('committee-directive');
+      expect(normalizeDocumentType('ds')).toBe('departmental-report');
+    });
+
+    it('should return the code unchanged for unrecognised doktyp values', () => {
+      expect(normalizeDocumentType('xyz123')).toBe('xyz123');
+    });
+
+    it('should return document for empty/undefined input', () => {
+      expect(normalizeDocumentType(undefined)).toBe('document');
+      expect(normalizeDocumentType('')).toBe('document');
+    });
+
+    it('should be case-insensitive', () => {
+      expect(normalizeDocumentType('MOT')).toBe('motion');
+      expect(normalizeDocumentType('Prop')).toBe('proposition');
+      expect(normalizeDocumentType('BET')).toBe('committee-report');
     });
   });
 

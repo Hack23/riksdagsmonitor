@@ -52,6 +52,7 @@ export interface JsonRpcResponse {
 export interface SearchDocumentsParams {
   titel?: string;
   doktyp?: string;
+  subtyp?: string;
   rm?: string;
   organ?: string;
   from_date?: string;
@@ -113,7 +114,14 @@ export interface RiksdagDocument {
   id?: string;
   titel?: string;
   rubrik?: string;
+  /** Raw Swedish document-type code from the API (e.g. 'mot', 'bet', 'prop', 'skr', 'ip', 'fr') */
   doktyp?: string;
+  /** Normalized human-readable document type (e.g. 'motion', 'committee-report', 'proposition') */
+  type?: string;
+  /** Normalized human-readable document sub-type (mirrors API 'subtyp' field) */
+  subtype?: string;
+  /** Raw sub-type code from the API */
+  subtyp?: string;
   organ?: string;
   datum?: string;
   summary?: string;
