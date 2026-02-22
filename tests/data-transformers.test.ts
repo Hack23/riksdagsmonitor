@@ -1007,7 +1007,11 @@ describe('Data Transformers', () => {
       'committeeCountContext', 'committeeActivityTakeaway', 'committeeMomentumTakeaway',
       'oppositionStrategyContext', 'policyImplicationsContext', 'genericOverview',
       'partyMotionsFiled', 'otherCommittee', 'otherDocuments',
-      'policySignificanceTouches', 'policySignificanceGeneric'
+      'policySignificanceTouches', 'policySignificanceGeneric',
+      'politicalContext', 'policyImplications', 'keyTakeaways', 'thematicAnalysis',
+      'legislativePipeline', 'oppositionStrategy', 'coalitionDynamics',
+      'whatThisMeans', 'whyItMatters', 'committeeBreakdown', 'propsBreakdown',
+      'motionsBreakdown'
     ];
 
     allLangs.forEach(lang => {
