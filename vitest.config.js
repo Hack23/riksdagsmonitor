@@ -63,9 +63,9 @@ export default defineConfig({
         'js/seasonal-patterns-dashboard.js',
         'js/stats-loader.js',
         // Browser-only scripts loaded via <script> in HTML
-        'scripts/coalition-dashboard.js',
-        'scripts/committees-dashboard.js',
-        'scripts/back-to-top.js',
+        'scripts/coalition-dashboard.ts',
+        'scripts/committees-dashboard.ts',
+        'scripts/back-to-top.ts',
         // CLI-only scripts not importable in test environment
         'scripts/sync-cia-schemas.js',
         'scripts/check-cia-schema-updates.js',
@@ -73,7 +73,7 @@ export default defineConfig({
         'scripts/generate-news-backport.js',
         'scripts/load-cia-stats.js',
         'scripts/update-stats-from-cia.js',
-        'scripts/validate-against-cia-schemas.js',
+        'scripts/validate-against-cia-schemas.ts',
         // CLI validation script (not importable, uses process.exit)
         'scripts/validate-translations.js',
         // Dashboard modules (tested via structural DOM tests)
