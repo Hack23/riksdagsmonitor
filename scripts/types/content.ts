@@ -90,4 +90,16 @@ export interface ContentLabelSet {
   committeeBreakdown: (n: number, c: number) => string;
   propsBreakdown: (n: number) => string;
   motionsBreakdown: (n: number) => string;
+  // Localized body text labels (avoid hardcoded en/sv fallbacks)
+  committeeCountContext: (n: number) => string;
+  committeeActivityTakeaway: (committees: string, extra: number) => string;
+  committeeMomentumTakeaway: (n: number) => string;
+  oppositionStrategyContext: (n: number) => string;
+  policyImplicationsContext: (propCount: number, domainCount: number) => string;
+  genericOverview: (n: number) => string;
+  partyMotionsFiled: (party: string, n: number) => string;
+  otherCommittee: string;
+  otherDocuments: string;
+  policySignificanceTouches: (domains: string) => string;
+  policySignificanceGeneric: string;
 }
