@@ -1,80 +1,35 @@
 {
-  "schemaVersion": 1,
-  "type": "last-generation",
-  "timestamp": "2026-02-21T12:09:17.839Z",
-  "schedule": "Saturday 12:00 UTC",
+  "timestamp": "2026-02-22T01:12:00.000Z",
+  "monitor_type": "realtime",
   "events_detected": [
     {
-      "type": "government_announcement",
+      "type": "government_proposition",
       "significance": "HIGH",
-      "title": "Sweden's first comprehensive national AI strategy",
-      "source": "search_regering",
-      "date": "2026-02-20",
-      "details": "Vice PM Ebba Busch presented at AI Impact Summit in New Delhi. Strategy targets global top-10 AI ranking."
+      "title": "Frihetsberövande påföljder för barn och unga (Prop 2025/26:132)",
+      "date": "2026-02-19"
     },
     {
-      "type": "government_announcement",
-      "significance": "MEDIUM",
-      "title": "Youth prisons proposal",
-      "source": "search_regering",
+      "type": "press_release",
+      "significance": "HIGH",
+      "title": "Ytterligare åtgärder för att stärka barns skydd mot sexualbrott",
       "date": "2026-02-20"
     },
     {
-      "type": "government_announcement",
-      "significance": "MEDIUM",
-      "title": "Emergency food supply legislation",
-      "source": "search_regering",
+      "type": "press_release",
+      "significance": "HIGH",
+      "title": "400 nya fängelseplatser på Kristianstad Vä",
       "date": "2026-02-20"
     },
     {
-      "type": "government_announcement",
+      "type": "press_release",
       "significance": "MEDIUM",
-      "title": "Child protection against sexual crimes",
-      "source": "search_regering",
-      "date": "2026-02-20"
-    },
-    {
-      "type": "government_announcement",
-      "significance": "MEDIUM",
-      "title": "400 new prison places at Kristianstad Vä",
-      "source": "search_regering",
-      "date": "2026-02-20"
-    },
-    {
-      "type": "government_announcement",
-      "significance": "MEDIUM",
-      "title": "National condominium register proposition",
-      "source": "search_regering",
-      "date": "2026-02-20"
-    },
-    {
-      "type": "government_announcement",
-      "significance": "MEDIUM",
-      "title": "Mandatory language screening for small children",
-      "source": "search_regering",
+      "title": "Regeringen går vidare med förslag om ungdomsfängelser",
       "date": "2026-02-20"
     }
   ],
-  "articles_generated": [
-    {
-      "slug": "2026-02-21-ai-strategy",
-      "type": "breaking",
-      "languages": 14,
-      "primary_event": "Sweden's first national AI strategy"
-    }
-  ],
-  "sources_checked": [
-    "get_sync_status",
-    "search_voteringar",
-    "search_anforanden",
-    "search_dokument",
-    "search_regering",
-    "enhanced_government_search",
-    "get_calendar_events"
-  ],
-  "data_freshness": {
-    "status": "live",
-    "checked_at": "2026-02-21T12:10:13.356Z"
-  },
-  "next_check": "2026-02-22T12:00:00Z"
+  "articles_generated": 14,
+  "article_slug": "2026-02-22-justice-reform",
+  "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+  "mcp_data_status": "live",
+  "next_check": "2026-02-22T12:00:00.000Z"
 }
