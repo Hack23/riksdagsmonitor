@@ -569,7 +569,7 @@ function classifyArticleType(content: string, fileName: string): ArticleTypeValu
     '一周展望', '即将'                                                             // zh
   ];
 
-  if (fileName.includes('week-ahead') || prospectiveKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
+  if (fileName.includes('week-ahead') || fileName.includes('weekend') || prospectiveKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
     return 'prospective';
   }
 
