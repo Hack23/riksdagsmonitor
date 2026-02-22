@@ -173,7 +173,8 @@ import {
   extractWatchPoints,
   generateMetadata,
   calculateReadTime,
-  generateSources
+  generateSources,
+  type RawDocument,
 } from './data-transformers.js';
 import { generateArticleHTML } from './article-template.js';
 import { generateMonthAhead } from './news-types/month-ahead.js';
@@ -493,7 +494,7 @@ async function generateWeekAhead(): Promise<GenerationResult> {
     const rawDocs = await Promise.resolve()
       .then(() => client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 }))
       .catch(() => [] as unknown[]);
-    const documents: unknown[] = Array.isArray(rawDocs) ? rawDocs : [];
+    const documents: RawDocument[] = Array.isArray(rawDocs) ? rawDocs as RawDocument[] : [];
     console.log(`  📊 Found ${documents.length} upcoming documents`);
 
     // 3. Fetch parliamentary questions (fragor)
