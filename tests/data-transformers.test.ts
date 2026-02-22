@@ -273,6 +273,54 @@ describe('Data Transformers', () => {
       expect(metadata).toHaveProperty('keywords');
       expect(metadata.keywords).toBeInstanceOf(Array);
     });
+
+    it('should generate metadata for weekly-review type', () => {
+      const metadata = generateMetadata(
+        { documents: [{ titel: 'Test', doktyp: 'mot' }] } as MockArticlePayload,
+        'weekly-review',
+        'en'
+      ) as ArticleMetadata;
+
+      expect(metadata.keywords).toContain('weekly review');
+      expect(metadata.keywords).toContain('analysis');
+      expect(metadata.topics).toContain('review');
+    });
+
+    it('should generate metadata for monthly-review type', () => {
+      const metadata = generateMetadata(
+        { documents: [{ titel: 'Test', doktyp: 'prop' }] } as MockArticlePayload,
+        'monthly-review',
+        'en'
+      ) as ArticleMetadata;
+
+      expect(metadata.keywords).toContain('monthly review');
+      expect(metadata.keywords).toContain('analysis');
+      expect(metadata.topics).toContain('review');
+    });
+
+    it('should generate metadata for month-ahead type', () => {
+      const metadata = generateMetadata(
+        { events: mockEvents } as MockArticlePayload,
+        'month-ahead',
+        'en'
+      ) as ArticleMetadata;
+
+      expect(metadata.keywords).toContain('month ahead');
+      expect(metadata.keywords).toContain('outlook');
+      expect(metadata.topics).toContain('outlook');
+    });
+
+    it('should generate metadata for breaking type', () => {
+      const metadata = generateMetadata(
+        {} as MockArticlePayload,
+        'breaking',
+        'en'
+      ) as ArticleMetadata;
+
+      expect(metadata.keywords).toContain('breaking news');
+      expect(metadata.keywords).toContain('urgent');
+      expect(metadata.topics).toContain('breaking');
+    });
   });
 
   describe('calculateReadTime', () => {
@@ -875,6 +923,55 @@ describe('Data Transformers', () => {
       expect(content).toContain('Thematic Analysis');
       expect(content).toContain('Motions');
       expect(content).toContain('Propositions');
+    });
+
+    it('should render Key Takeaways and What This Means for generic content', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattepolitik', doktyp: 'mot', url: 'https://example.com/d1', dok_id: 'D1', organ: 'FiU' },
+          { titel: 'Budget proposal', doktyp: 'prop', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('What This Means');
+    });
+
+    it('should render policy significance in monthly-review generic content', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Försvarspolitik', doktyp: 'bet', url: 'https://example.com/d1', dok_id: 'D1', organ: 'FöU' }
+        ]
+      } as MockArticlePayload, 'monthly-review', 'en') as string;
+
+      expect(content).toContain('Thematic Analysis');
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('defence and security policy');
+    });
+
+    it('should handle month-ahead type via week-ahead content generator', () => {
+      const content = generateArticleContent({
+        events: [
+          { titel: 'EU-debatt', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ],
+        highlights: [{ title: 'Key vote', description: 'Budget debate' }]
+      } as MockArticlePayload, 'month-ahead', 'en') as string;
+
+      expect(content).toContain('What to Watch');
+      expect(content).toContain('Key vote');
+    });
+
+    it('should render Swedish analytical sections for generic content', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattepolitik', doktyp: 'mot', url: 'https://example.com/d1', dok_id: 'D1', organ: 'FiU' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'sv') as string;
+
+      // Swedish labels from CONTENT_LABELS.sv
+      expect(content).toContain(CONTENT_LABELS.sv.thematicAnalysis);
+      expect(content).toContain(CONTENT_LABELS.sv.keyTakeaways);
+      expect(content).toContain(CONTENT_LABELS.sv.whatThisMeans);
     });
   });
 
