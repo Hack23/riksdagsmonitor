@@ -402,7 +402,7 @@ function printResults(results: ValidationResult[]): number {
       console.log(`  ${colors.red}ERROR: ${result.error}${colors.reset}`);
       totalErrors++;
     } else {
-      const successResult: ValidationSuccess = result;
+      const successResult = result as ValidationSuccess;
       const allPassed: boolean = successResult.failed.length === 0;
       const status: string = allPassed 
         ? `${colors.green}✓ ${successResult.lang} (${successResult.code})${colors.reset}`

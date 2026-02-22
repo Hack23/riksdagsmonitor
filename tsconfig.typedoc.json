@@ -26,6 +26,7 @@
     "builds",
     "js/lib",
     "dashboard/lib",
+    "scripts/validate-articles-playwright.ts",
     "tests",
     "cypress",
     "api"
