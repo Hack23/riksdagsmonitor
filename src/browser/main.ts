@@ -15,8 +15,8 @@
  * */
 
 // ─── Library Imports (Vite bundles these from node_modules) ──────────────────
-// Register Chart.js and D3.js on globalThis so dashboard modules can access them.
-// Must be imported before any dashboard module that reads (globalThis as any).Chart / .d3.
+// Register Chart.js, D3.js, and Papa Parse on globalThis so dashboard modules can access them.
+// Must be imported before any dashboard module that reads (globalThis as any).Chart / .d3 / .Papa.
 import './shared/register-globals.js';
 
 // ─── UI Components ───────────────────────────────────────────────────────────

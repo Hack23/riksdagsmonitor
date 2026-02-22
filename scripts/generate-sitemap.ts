@@ -12,6 +12,7 @@
  * @version 2.1.0
  */
 
+import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -62,9 +63,52 @@ interface HreflangAlternate {
 // ---------------------------------------------------------------------------
 
 /**
- * Get file modification time.
+ * Cache of git commit timestamps keyed by relative file path.
+ * Populated once via loadGitTimestamps() to avoid per-file git calls.
+ */
+const gitTimestampCache = new Map<string, string>();
+let gitTimestampsLoaded = false;
+
+/**
+ * Preload git commit timestamps for all tracked files in a single git call.
+ * Parses `git log --name-only` output to map each file to its most recent commit timestamp.
+ */
+function loadGitTimestamps(): void {
+  if (gitTimestampsLoaded) return;
+  gitTimestampsLoaded = true;
+  try {
+    const output = execSync('git log --format="COMMIT %cI" --name-only --diff-filter=ACMR', {
+      cwd: ROOT_DIR,
+      encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+      maxBuffer: 10 * 1024 * 1024,
+    });
+    let currentTimestamp = '';
+    for (const line of output.split('\n')) {
+      if (line.startsWith('COMMIT ')) {
+        currentTimestamp = new Date(line.substring(7)).toISOString();
+      } else if (line.trim() && currentTimestamp) {
+        // Only keep the first (most recent) timestamp per file
+        if (!gitTimestampCache.has(line)) {
+          gitTimestampCache.set(line, currentTimestamp);
+        }
+      }
+    }
+  } catch (_error: unknown) {
+    // git not available — getFileModTime will fall back to fs.statSync
+    console.warn('⚠️ Git timestamps unavailable — falling back to filesystem mtime');
+  }
+}
+
+/**
+ * Get file modification time from git history for deterministic timestamps.
+ * Falls back to filesystem mtime only when git history is unavailable.
  */
 function getFileModTime(filePath: string): string {
+  loadGitTimestamps();
+  const relativePath = path.relative(ROOT_DIR, filePath).split(path.sep).join('/');
+  const cached = gitTimestampCache.get(relativePath);
+  if (cached) return cached;
   try {
     const stats = fs.statSync(filePath);
     return stats.mtime.toISOString();
