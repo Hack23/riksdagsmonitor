@@ -1,6 +1,54 @@
-riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.3.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
-│ └── eslint@10.0.0 deduped
+│ └── eslint@10.0.1 deduped
+├─┬ @types/d3@7.4.3
+│ ├── @types/d3-array@3.2.2
+│ ├─┬ @types/d3-axis@3.0.6
+│ │ └── @types/d3-selection@3.0.11 deduped
+│ ├─┬ @types/d3-brush@3.0.6
+│ │ └── @types/d3-selection@3.0.11 deduped
+│ ├── @types/d3-chord@3.0.6
+│ ├── @types/d3-color@3.1.3
+│ ├─┬ @types/d3-contour@3.0.6
+│ │ ├── @types/d3-array@3.2.2 deduped
+│ │ └── @types/geojson@7946.0.16
+│ ├── @types/d3-delaunay@6.0.4
+│ ├── @types/d3-dispatch@3.0.7
+│ ├─┬ @types/d3-drag@3.0.7
+│ │ └── @types/d3-selection@3.0.11 deduped
+│ ├── @types/d3-dsv@3.0.7
+│ ├── @types/d3-ease@3.0.2
+│ ├─┬ @types/d3-fetch@3.0.7
+│ │ └── @types/d3-dsv@3.0.7 deduped
+│ ├── @types/d3-force@3.0.10
+│ ├── @types/d3-format@3.0.4
+│ ├─┬ @types/d3-geo@3.1.0
+│ │ └── @types/geojson@7946.0.16 deduped
+│ ├── @types/d3-hierarchy@3.1.7
+│ ├─┬ @types/d3-interpolate@3.0.4
+│ │ └── @types/d3-color@3.1.3 deduped
+│ ├── @types/d3-path@3.1.1
+│ ├── @types/d3-polygon@3.0.2
+│ ├── @types/d3-quadtree@3.0.6
+│ ├── @types/d3-random@3.0.3
+│ ├── @types/d3-scale-chromatic@3.1.0
+│ ├─┬ @types/d3-scale@4.0.9
+│ │ └── @types/d3-time@3.0.4 deduped
+│ ├── @types/d3-selection@3.0.11
+│ ├─┬ @types/d3-shape@3.1.8
+│ │ └── @types/d3-path@3.1.1 deduped
+│ ├── @types/d3-time-format@4.0.3
+│ ├── @types/d3-time@3.0.4
+│ ├── @types/d3-timer@3.0.2
+│ ├─┬ @types/d3-transition@3.0.9
+│ │ └── @types/d3-selection@3.0.11 deduped
+│ └─┬ @types/d3-zoom@3.0.8
+│   ├── @types/d3-interpolate@3.0.4 deduped
+│   └── @types/d3-selection@3.0.11 deduped
+├─┬ @types/node@25.3.0
+│ └── undici-types@7.18.2
+├─┬ @types/papaparse@5.5.2
+│ └── @types/node@25.3.0 deduped
 ├─┬ @vitest/coverage-v8@4.0.18
 │ ├── @bcoe/v8-coverage@1.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@4.0.18
@@ -18,14 +66,15 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ istanbul-lib-report@3.0.1
 │ │ ├── istanbul-lib-coverage@3.2.2 deduped
 │ │ ├─┬ make-dir@4.0.0
-│ │ │ └── semver@7.7.4
+│ │ │ └── semver@7.7.4 deduped
 │ │ └─┬ supports-color@7.2.0
 │ │   └── has-flag@4.0.0 deduped
 │ ├─┬ istanbul-reports@3.2.0
 │ │ ├── html-escaper@2.0.2
 │ │ └── istanbul-lib-report@3.0.1 deduped
 │ ├─┬ magicast@0.5.2
-│ │ ├── @babel/parser@7.29.0 deduped
+│ │ ├─┬ @babel/parser@7.29.0
+│ │ │ └── @babel/types@7.29.0 deduped
 │ │ ├─┬ @babel/types@7.29.0
 │ │ │ ├── @babel/helper-string-parser@7.27.1
 │ │ │ └── @babel/helper-validator-identifier@7.28.5
@@ -55,6 +104,7 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── fast-uri@3.1.0
 │ ├── json-schema-traverse@1.0.0
 │ └── require-from-string@2.0.2
+├── ansi-colors@4.1.3 extraneous
 ├─┬ chart.js@4.5.1
 │ └── @kurkle/color@0.3.4
 ├─┬ chartjs-plugin-annotation@3.1.0
@@ -187,16 +237,14 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └─┬ string-width@4.2.3
 │ │   ├── emoji-regex@8.0.0
 │ │   ├── is-fullwidth-code-point@3.0.0
-│ │   └── strip-ansi@6.0.1 deduped
+│ │   └─┬ strip-ansi@6.0.1
+│ │     └── ansi-regex@5.0.1
 │ ├── commander@6.2.1
 │ ├── common-tags@1.8.2
 │ ├── dayjs@1.11.19
 │ ├─┬ debug@4.4.3
 │ │ └── ms@2.1.3
-│ ├─┬ enquirer@2.4.1
-│ │ ├── ansi-colors@4.1.3
-│ │ └─┬ strip-ansi@6.0.1
-│ │   └── ansi-regex@5.0.1
+│ ├── UNMET DEPENDENCY enquirer@^2.3.6
 │ ├── eventemitter2@6.4.7
 │ ├─┬ execa@4.1.0
 │ │ ├── cross-spawn@7.0.6 deduped
@@ -219,7 +267,7 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── pify@2.3.0
 │ ├─┬ extract-zip@2.0.1
 │ │ ├─┬ @types/yauzl@2.10.3
-│ │ │ └── @types/node@25.2.3 deduped
+│ │ │ └── @types/node@25.3.0 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── get-stream@5.2.0 deduped
 │ │ └── yauzl@2.10.0 deduped
@@ -247,7 +295,7 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ │ └── is-fullwidth-code-point@3.0.0 deduped
 │ │ │ └── string-width@4.2.3 deduped
 │ │ ├── colorette@2.0.20
-│ │ ├── enquirer@2.4.1 deduped
+│ │ ├── UNMET OPTIONAL DEPENDENCY enquirer@>= 2.3.0 < 3
 │ │ ├─┬ log-update@4.0.0
 │ │ │ ├─┬ ansi-escapes@4.3.2
 │ │ │ │ └── type-fest@0.21.3
@@ -367,13 +415,13 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── d3-interpolate@3.0.1 deduped
 │   ├── d3-selection@3.0.0 deduped
 │   └── d3-transition@3.0.1 deduped
-├─┬ eslint@10.0.0
+├─┬ eslint@10.0.1
 │ ├─┬ @eslint-community/eslint-utils@4.9.1
 │ │ ├── eslint-visitor-keys@3.4.3
-│ │ └── eslint@10.0.0 deduped
+│ │ └── eslint@10.0.1 deduped
 │ ├── @eslint-community/regexpp@4.12.2
-│ ├─┬ @eslint/config-array@0.23.1
-│ │ ├── @eslint/object-schema@3.0.1
+│ ├─┬ @eslint/config-array@0.23.2
+│ │ ├── @eslint/object-schema@3.0.2
 │ │ ├── debug@4.4.3 deduped
 │ │ └── minimatch@10.2.1 deduped
 │ ├─┬ @eslint/config-helpers@0.5.2
@@ -405,18 +453,18 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │   └── isexe@2.0.0
 │ ├── debug@4.4.3 deduped
 │ ├── escape-string-regexp@4.0.0
-│ ├─┬ eslint-scope@9.1.0
+│ ├─┬ eslint-scope@9.1.1
 │ │ ├── @types/esrecurse@4.3.1
 │ │ ├── @types/estree@1.0.8 deduped
 │ │ ├─┬ esrecurse@4.3.0
 │ │ │ └── estraverse@5.3.0 deduped
 │ │ └── estraverse@5.3.0
-│ ├── eslint-visitor-keys@5.0.0
-│ ├─┬ espree@11.1.0
+│ ├── eslint-visitor-keys@5.0.1
+│ ├─┬ espree@11.1.1
 │ │ ├─┬ acorn-jsx@5.3.2
-│ │ │ └── acorn@8.15.0 deduped
-│ │ ├── acorn@8.15.0
-│ │ └── eslint-visitor-keys@5.0.0 deduped
+│ │ │ └── acorn@8.16.0 deduped
+│ │ ├── acorn@8.16.0
+│ │ └── eslint-visitor-keys@5.0.1 deduped
 │ ├─┬ esquery@1.7.0
 │ │ └── estraverse@5.3.0 deduped
 │ ├── esutils@2.0.3
@@ -438,7 +486,7 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── imurmurhash@0.1.4
 │ ├─┬ is-glob@4.0.3
 │ │ └── is-extglob@2.1.1
-│ ├── UNMET OPTIONAL DEPENDENCY jiti@*
+│ ├── jiti@2.6.1
 │ ├── json-stable-stringify-without-jsonify@1.0.1
 │ ├─┬ minimatch@10.2.1
 │ │ └─┬ brace-expansion@5.0.2
@@ -453,12 +501,11 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   │ └── prelude-ls@1.2.1 deduped
 │   └── word-wrap@1.2.5
 ├── globals@17.3.0
-├─┬ happy-dom@20.6.3
-│ ├─┬ @types/node@25.2.3
-│ │ └── undici-types@7.16.0
+├─┬ happy-dom@20.7.0
+│ ├── @types/node@25.3.0 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
-│ │ └── @types/node@25.2.3 deduped
+│ │ └── @types/node@25.3.0 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
 │ └─┬ ws@8.19.0
@@ -485,39 +532,6 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── xml@1.0.1
 ├─┬ js-yaml@4.1.1
 │ └── argparse@2.0.1
-├─┬ jsdoc@4.0.5
-│ ├─┬ @babel/parser@7.29.0
-│ │ └── @babel/types@7.29.0 deduped
-│ ├─┬ @jsdoc/salty@0.2.9
-│ │ └── lodash@4.17.23 deduped
-│ ├─┬ @types/markdown-it@14.1.2
-│ │ ├── @types/linkify-it@5.0.0
-│ │ └── @types/mdurl@2.0.0
-│ ├── bluebird@3.7.2 deduped
-│ ├─┬ catharsis@0.9.0
-│ │ └── lodash@4.17.23 deduped
-│ ├── escape-string-regexp@2.0.0
-│ ├─┬ js2xmlparser@4.0.2
-│ │ └── xmlcreate@2.0.4
-│ ├─┬ klaw@3.0.0
-│ │ └── graceful-fs@4.2.11 deduped
-│ ├─┬ markdown-it-anchor@8.6.7
-│ │ ├── @types/markdown-it@14.1.2 deduped
-│ │ └── markdown-it@14.1.1 deduped
-│ ├─┬ markdown-it@14.1.1
-│ │ ├── argparse@2.0.1 deduped
-│ │ ├── entities@4.5.0
-│ │ ├─┬ linkify-it@5.0.0
-│ │ │ └── uc.micro@2.1.0 deduped
-│ │ ├── mdurl@2.0.0
-│ │ ├── punycode.js@2.3.1
-│ │ └── uc.micro@2.1.0
-│ ├── marked@4.3.0
-│ ├── mkdirp@1.0.4
-│ ├─┬ requizzle@0.2.4
-│ │ └── lodash@4.17.23 deduped
-│ ├── strip-json-comments@3.1.1 deduped
-│ └── underscore@1.13.7
 ├─┬ json-schema-to-typescript@15.0.4
 │ ├─┬ @apidevtools/json-schema-ref-parser@11.9.3
 │ │ ├── @jsdevtools/ono@7.1.3
@@ -531,6 +545,61 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── minimist@1.2.8 deduped
 │ ├── prettier@3.8.1
 │ └── tinyglobby@0.2.15 deduped
+├─┬ knip@5.85.0
+│ ├─┬ @nodelib/fs.walk@1.2.8
+│ │ ├─┬ @nodelib/fs.scandir@2.1.5
+│ │ │ ├── @nodelib/fs.stat@2.0.5 deduped
+│ │ │ └─┬ run-parallel@1.2.0
+│ │ │   └── queue-microtask@1.2.3
+│ │ └─┬ fastq@1.20.1
+│ │   └── reusify@1.1.0
+│ ├── @types/node@25.3.0 deduped
+│ ├─┬ fast-glob@3.3.3
+│ │ ├── @nodelib/fs.stat@2.0.5
+│ │ ├── @nodelib/fs.walk@1.2.8 deduped
+│ │ ├─┬ glob-parent@5.1.2
+│ │ │ └── is-glob@4.0.3 deduped
+│ │ ├── merge2@1.4.1
+│ │ └─┬ micromatch@4.0.8
+│ │   ├─┬ braces@3.0.3
+│ │   │ └─┬ fill-range@7.1.1
+│ │   │   └─┬ to-regex-range@5.0.1
+│ │   │     └── is-number@7.0.0
+│ │   └── picomatch@2.3.1
+│ ├─┬ formatly@0.3.0
+│ │ └─┬ fd-package-json@2.0.0
+│ │   └── walk-up-path@4.0.0
+│ ├── jiti@2.6.1 deduped
+│ ├── js-yaml@4.1.1 deduped
+│ ├── minimist@1.2.8 deduped
+│ ├─┬ oxc-resolver@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm-eabi@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm64@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-darwin-arm64@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-darwin-x64@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-freebsd-x64@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm-gnueabihf@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm-musleabihf@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm64-gnu@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm64-musl@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-ppc64-gnu@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-riscv64-gnu@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-riscv64-musl@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-s390x-gnu@11.18.0
+│ │ ├── @oxc-resolver/binding-linux-x64-gnu@11.18.0
+│ │ ├── @oxc-resolver/binding-linux-x64-musl@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-openharmony-arm64@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-wasm32-wasi@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-arm64-msvc@11.18.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-ia32-msvc@11.18.0
+│ │ └── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-x64-msvc@11.18.0
+│ ├── picocolors@1.1.1
+│ ├── picomatch@4.0.3
+│ ├── smol-toml@1.6.0
+│ ├── strip-json-comments@5.0.3
+│ ├── typescript@5.9.3 deduped
+│ └── zod@4.3.6
+├── papaparse@5.5.3
 ├─┬ start-server-and-test@2.1.3
 │ ├── arg@5.0.2
 │ ├── bluebird@3.7.2 deduped
@@ -577,12 +646,7 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── lodash@4.17.23 deduped
 │   ├── minimist@1.2.8 deduped
 │   └── rxjs@7.8.2 deduped
-├─┬ vite-plugin-sri-gen@1.3.2
-│ ├─┬ parse5@8.0.0
-│ │ └── entities@6.0.1
-│ └── vite@7.3.1 deduped
-├─┬ vite@7.3.1
-│ ├── @types/node@25.2.3 deduped
+├─┬ tsx@4.21.0
 │ ├─┬ esbuild@0.27.3
 │ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/aix-ppc64@0.27.3
 │ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/android-arm@0.27.3
@@ -610,16 +674,117 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/win32-arm64@0.27.3
 │ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/win32-ia32@0.27.3
 │ │ └── UNMET OPTIONAL DEPENDENCY @esbuild/win32-x64@0.27.3
+│ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
+│ └─┬ get-tsconfig@4.13.6
+│   └── resolve-pkg-maps@1.0.0
+├─┬ typedoc-plugin-mdn-links@5.1.1
+│ └── typedoc@0.28.17 deduped
+├─┬ typedoc@0.28.17
+│ ├─┬ @gerrit0/mini-shiki@3.22.0
+│ │ ├─┬ @shikijs/engine-oniguruma@3.22.0
+│ │ │ ├── @shikijs/types@3.22.0 deduped
+│ │ │ └── @shikijs/vscode-textmate@10.0.2 deduped
+│ │ ├─┬ @shikijs/langs@3.22.0
+│ │ │ └── @shikijs/types@3.22.0 deduped
+│ │ ├─┬ @shikijs/themes@3.22.0
+│ │ │ └── @shikijs/types@3.22.0 deduped
+│ │ ├─┬ @shikijs/types@3.22.0
+│ │ │ ├── @shikijs/vscode-textmate@10.0.2 deduped
+│ │ │ └─┬ @types/hast@3.0.4
+│ │ │   └── @types/unist@3.0.3
+│ │ └── @shikijs/vscode-textmate@10.0.2
+│ ├── lunr@2.3.9
+│ ├─┬ markdown-it@14.1.1
+│ │ ├── argparse@2.0.1 deduped
+│ │ ├── entities@4.5.0
+│ │ ├─┬ linkify-it@5.0.0
+│ │ │ └── uc.micro@2.1.0 deduped
+│ │ ├── mdurl@2.0.0
+│ │ ├── punycode.js@2.3.1
+│ │ └── uc.micro@2.1.0
+│ ├─┬ minimatch@9.0.5
+│ │ └─┬ brace-expansion@2.0.2
+│ │   └── balanced-match@1.0.2
+│ ├── typescript@5.9.3 deduped
+│ └── yaml@2.8.2
+├─┬ typescript-eslint@8.56.0
+│ ├─┬ @typescript-eslint/eslint-plugin@8.56.0
+│ │ ├── @eslint-community/regexpp@4.12.2 deduped
+│ │ ├── @typescript-eslint/parser@8.56.0 deduped
+│ │ ├─┬ @typescript-eslint/scope-manager@8.56.0
+│ │ │ ├── @typescript-eslint/types@8.56.0 deduped
+│ │ │ └── @typescript-eslint/visitor-keys@8.56.0 deduped
+│ │ ├─┬ @typescript-eslint/type-utils@8.56.0
+│ │ │ ├── @typescript-eslint/types@8.56.0 deduped
+│ │ │ ├── @typescript-eslint/typescript-estree@8.56.0 deduped
+│ │ │ ├── @typescript-eslint/utils@8.56.0 deduped
+│ │ │ ├── debug@4.4.3 deduped
+│ │ │ ├── eslint@10.0.1 deduped
+│ │ │ ├── ts-api-utils@2.4.0 deduped
+│ │ │ └── typescript@5.9.3 deduped
+│ │ ├── @typescript-eslint/utils@8.56.0 deduped
+│ │ ├─┬ @typescript-eslint/visitor-keys@8.56.0
+│ │ │ ├── @typescript-eslint/types@8.56.0 deduped
+│ │ │ └── eslint-visitor-keys@5.0.1 deduped
+│ │ ├── eslint@10.0.1 deduped
+│ │ ├── ignore@7.0.5
+│ │ ├── natural-compare@1.4.0 deduped
+│ │ ├─┬ ts-api-utils@2.4.0
+│ │ │ └── typescript@5.9.3 deduped
+│ │ └── typescript@5.9.3 deduped
+│ ├─┬ @typescript-eslint/parser@8.56.0
+│ │ ├── @typescript-eslint/scope-manager@8.56.0 deduped
+│ │ ├── @typescript-eslint/types@8.56.0
+│ │ ├── @typescript-eslint/typescript-estree@8.56.0 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.56.0 deduped
+│ │ ├── debug@4.4.3 deduped
+│ │ ├── eslint@10.0.1 deduped
+│ │ └── typescript@5.9.3 deduped
+│ ├─┬ @typescript-eslint/typescript-estree@8.56.0
+│ │ ├─┬ @typescript-eslint/project-service@8.56.0
+│ │ │ ├── @typescript-eslint/tsconfig-utils@8.56.0 deduped
+│ │ │ ├── @typescript-eslint/types@8.56.0 deduped
+│ │ │ ├── debug@4.4.3 deduped
+│ │ │ └── typescript@5.9.3 deduped
+│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.56.0
+│ │ │ └── typescript@5.9.3 deduped
+│ │ ├── @typescript-eslint/types@8.56.0 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.56.0 deduped
+│ │ ├── debug@4.4.3 deduped
+│ │ ├─┬ minimatch@9.0.5
+│ │ │ └─┬ brace-expansion@2.0.2
+│ │ │   └── balanced-match@1.0.2
+│ │ ├── semver@7.7.4
+│ │ ├── tinyglobby@0.2.15 deduped
+│ │ ├── ts-api-utils@2.4.0 deduped
+│ │ └── typescript@5.9.3 deduped
+│ ├─┬ @typescript-eslint/utils@8.56.0
+│ │ ├── @eslint-community/eslint-utils@4.9.1 deduped
+│ │ ├── @typescript-eslint/scope-manager@8.56.0 deduped
+│ │ ├── @typescript-eslint/types@8.56.0 deduped
+│ │ ├── @typescript-eslint/typescript-estree@8.56.0 deduped
+│ │ ├── eslint@10.0.1 deduped
+│ │ └── typescript@5.9.3 deduped
+│ ├── eslint@10.0.1 deduped
+│ └── typescript@5.9.3 deduped
+├── typescript@5.9.3
+├─┬ vite-plugin-sri-gen@1.3.2
+│ ├─┬ parse5@8.0.0
+│ │ └── entities@6.0.1
+│ └── vite@7.3.1 deduped
+├─┬ vite@7.3.1
+│ ├── @types/node@25.3.0 deduped
+│ ├── esbuild@0.27.3 deduped
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.3 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY jiti@>=1.21.0
+│ ├── jiti@2.6.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY less@^4.0.0
 │ ├── UNMET OPTIONAL DEPENDENCY lightningcss@^1.21.0
-│ ├── picomatch@4.0.3
+│ ├── picomatch@4.0.3 deduped
 │ ├─┬ postcss@8.5.6
 │ │ ├── nanoid@3.3.11
-│ │ ├── picocolors@1.1.1
+│ │ ├── picocolors@1.1.1 deduped
 │ │ └── source-map-js@1.2.1 deduped
 │ ├─┬ rollup@4.57.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-android-arm-eabi@4.57.1
@@ -655,12 +820,12 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY sugarss@^5.0.0
 │ ├── UNMET OPTIONAL DEPENDENCY terser@^5.16.0
 │ ├── tinyglobby@0.2.15 deduped
-│ ├── UNMET OPTIONAL DEPENDENCY tsx@^4.8.1
-│ └── UNMET OPTIONAL DEPENDENCY yaml@^2.4.2
+│ ├── tsx@4.21.0 deduped
+│ └── yaml@2.8.2 deduped
 └─┬ vitest@4.0.18
   ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
   ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
-  ├── @types/node@25.2.3 deduped
+  ├── @types/node@25.3.0 deduped
   ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@4.0.18
   ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@4.0.18
   ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@4.0.18
@@ -693,7 +858,7 @@ riksdagsmonitor@0.0.6 /home/runner/work/riksdagsmonitor/riksdagsmonitor
   ├── @vitest/utils@4.0.18 deduped
   ├── es-module-lexer@1.7.0
   ├── expect-type@1.3.0
-  ├── happy-dom@20.6.3 deduped
+  ├── happy-dom@20.7.0 deduped
   ├── UNMET OPTIONAL DEPENDENCY jsdom@*
   ├─┬ magic-string@0.30.21
   │ └── @jridgewell/sourcemap-codec@1.5.5

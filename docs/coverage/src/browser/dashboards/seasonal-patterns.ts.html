@@ -1,0 +1,1921 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/browser/dashboards/seasonal-patterns.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/browser/dashboards</a> seasonal-patterns.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/373</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/250</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/88</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/254</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a>
+<a name='L395'></a><a href='#L395'>395</a>
+<a name='L396'></a><a href='#L396'>396</a>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a>
+<a name='L416'></a><a href='#L416'>416</a>
+<a name='L417'></a><a href='#L417'>417</a>
+<a name='L418'></a><a href='#L418'>418</a>
+<a name='L419'></a><a href='#L419'>419</a>
+<a name='L420'></a><a href='#L420'>420</a>
+<a name='L421'></a><a href='#L421'>421</a>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a>
+<a name='L480'></a><a href='#L480'>480</a>
+<a name='L481'></a><a href='#L481'>481</a>
+<a name='L482'></a><a href='#L482'>482</a>
+<a name='L483'></a><a href='#L483'>483</a>
+<a name='L484'></a><a href='#L484'>484</a>
+<a name='L485'></a><a href='#L485'>485</a>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a>
+<a name='L505'></a><a href='#L505'>505</a>
+<a name='L506'></a><a href='#L506'>506</a>
+<a name='L507'></a><a href='#L507'>507</a>
+<a name='L508'></a><a href='#L508'>508</a>
+<a name='L509'></a><a href='#L509'>509</a>
+<a name='L510'></a><a href='#L510'>510</a>
+<a name='L511'></a><a href='#L511'>511</a>
+<a name='L512'></a><a href='#L512'>512</a>
+<a name='L513'></a><a href='#L513'>513</a>
+<a name='L514'></a><a href='#L514'>514</a>
+<a name='L515'></a><a href='#L515'>515</a>
+<a name='L516'></a><a href='#L516'>516</a>
+<a name='L517'></a><a href='#L517'>517</a>
+<a name='L518'></a><a href='#L518'>518</a>
+<a name='L519'></a><a href='#L519'>519</a>
+<a name='L520'></a><a href='#L520'>520</a>
+<a name='L521'></a><a href='#L521'>521</a>
+<a name='L522'></a><a href='#L522'>522</a>
+<a name='L523'></a><a href='#L523'>523</a>
+<a name='L524'></a><a href='#L524'>524</a>
+<a name='L525'></a><a href='#L525'>525</a>
+<a name='L526'></a><a href='#L526'>526</a>
+<a name='L527'></a><a href='#L527'>527</a>
+<a name='L528'></a><a href='#L528'>528</a>
+<a name='L529'></a><a href='#L529'>529</a>
+<a name='L530'></a><a href='#L530'>530</a>
+<a name='L531'></a><a href='#L531'>531</a>
+<a name='L532'></a><a href='#L532'>532</a>
+<a name='L533'></a><a href='#L533'>533</a>
+<a name='L534'></a><a href='#L534'>534</a>
+<a name='L535'></a><a href='#L535'>535</a>
+<a name='L536'></a><a href='#L536'>536</a>
+<a name='L537'></a><a href='#L537'>537</a>
+<a name='L538'></a><a href='#L538'>538</a>
+<a name='L539'></a><a href='#L539'>539</a>
+<a name='L540'></a><a href='#L540'>540</a>
+<a name='L541'></a><a href='#L541'>541</a>
+<a name='L542'></a><a href='#L542'>542</a>
+<a name='L543'></a><a href='#L543'>543</a>
+<a name='L544'></a><a href='#L544'>544</a>
+<a name='L545'></a><a href='#L545'>545</a>
+<a name='L546'></a><a href='#L546'>546</a>
+<a name='L547'></a><a href='#L547'>547</a>
+<a name='L548'></a><a href='#L548'>548</a>
+<a name='L549'></a><a href='#L549'>549</a>
+<a name='L550'></a><a href='#L550'>550</a>
+<a name='L551'></a><a href='#L551'>551</a>
+<a name='L552'></a><a href='#L552'>552</a>
+<a name='L553'></a><a href='#L553'>553</a>
+<a name='L554'></a><a href='#L554'>554</a>
+<a name='L555'></a><a href='#L555'>555</a>
+<a name='L556'></a><a href='#L556'>556</a>
+<a name='L557'></a><a href='#L557'>557</a>
+<a name='L558'></a><a href='#L558'>558</a>
+<a name='L559'></a><a href='#L559'>559</a>
+<a name='L560'></a><a href='#L560'>560</a>
+<a name='L561'></a><a href='#L561'>561</a>
+<a name='L562'></a><a href='#L562'>562</a>
+<a name='L563'></a><a href='#L563'>563</a>
+<a name='L564'></a><a href='#L564'>564</a>
+<a name='L565'></a><a href='#L565'>565</a>
+<a name='L566'></a><a href='#L566'>566</a>
+<a name='L567'></a><a href='#L567'>567</a>
+<a name='L568'></a><a href='#L568'>568</a>
+<a name='L569'></a><a href='#L569'>569</a>
+<a name='L570'></a><a href='#L570'>570</a>
+<a name='L571'></a><a href='#L571'>571</a>
+<a name='L572'></a><a href='#L572'>572</a>
+<a name='L573'></a><a href='#L573'>573</a>
+<a name='L574'></a><a href='#L574'>574</a>
+<a name='L575'></a><a href='#L575'>575</a>
+<a name='L576'></a><a href='#L576'>576</a>
+<a name='L577'></a><a href='#L577'>577</a>
+<a name='L578'></a><a href='#L578'>578</a>
+<a name='L579'></a><a href='#L579'>579</a>
+<a name='L580'></a><a href='#L580'>580</a>
+<a name='L581'></a><a href='#L581'>581</a>
+<a name='L582'></a><a href='#L582'>582</a>
+<a name='L583'></a><a href='#L583'>583</a>
+<a name='L584'></a><a href='#L584'>584</a>
+<a name='L585'></a><a href='#L585'>585</a>
+<a name='L586'></a><a href='#L586'>586</a>
+<a name='L587'></a><a href='#L587'>587</a>
+<a name='L588'></a><a href='#L588'>588</a>
+<a name='L589'></a><a href='#L589'>589</a>
+<a name='L590'></a><a href='#L590'>590</a>
+<a name='L591'></a><a href='#L591'>591</a>
+<a name='L592'></a><a href='#L592'>592</a>
+<a name='L593'></a><a href='#L593'>593</a>
+<a name='L594'></a><a href='#L594'>594</a>
+<a name='L595'></a><a href='#L595'>595</a>
+<a name='L596'></a><a href='#L596'>596</a>
+<a name='L597'></a><a href='#L597'>597</a>
+<a name='L598'></a><a href='#L598'>598</a>
+<a name='L599'></a><a href='#L599'>599</a>
+<a name='L600'></a><a href='#L600'>600</a>
+<a name='L601'></a><a href='#L601'>601</a>
+<a name='L602'></a><a href='#L602'>602</a>
+<a name='L603'></a><a href='#L603'>603</a>
+<a name='L604'></a><a href='#L604'>604</a>
+<a name='L605'></a><a href='#L605'>605</a>
+<a name='L606'></a><a href='#L606'>606</a>
+<a name='L607'></a><a href='#L607'>607</a>
+<a name='L608'></a><a href='#L608'>608</a>
+<a name='L609'></a><a href='#L609'>609</a>
+<a name='L610'></a><a href='#L610'>610</a>
+<a name='L611'></a><a href='#L611'>611</a>
+<a name='L612'></a><a href='#L612'>612</a>
+<a name='L613'></a><a href='#L613'>613</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @module Dashboards/SeasonalPatterns
+ * @category Intelligence Analysis - Seasonal Parliamentary Patterns &amp; Anomaly Detection
+ *
+ * Swedish Parliamentary Seasonal Activity Analysis &amp; Quarterly Pattern Intelligence Dashboard.
+ *
+ * Advanced intelligence analysis implementing 23-year temporal pattern analysis
+ * (2002-2025) of Swedish parliamentary quarterly activity with sophisticated Z-score
+ * anomaly detection and seasonal pattern classification.
+ *
+ * @author Hack23 AB - Temporal Intelligence Team
+ * @license Apache-2.0
+ * @version 2.0.0
+ * @since 2024
+&nbsp;
+ *
+ * @intelligence Seasonal Parliamentary Pattern Intelligence — 23-year temporal analysis (2002-2025) implementing Z-score anomaly detection for quarterly parliamentary activity patterns. Classifies legislative seasons and detects statistically significant deviations from historical norms.
+ *
+ * @business Unique analytical methodology — seasonal pattern analysis is a sophisticated differentiator that most parliamentary monitoring tools lack. Demonstrates advanced data science capabilities to enterprise and research clients. Foundation for seasonal activity alerting subscription.
+ *
+ * @marketing Research partnership content — seasonal analysis methodology and findings are publishable in academic journals, driving research partnerships and academic user acquisition. Positions Riksdagsmonitor as a research-grade platform.
+ * */
+&nbsp;
+import {
+  logger,
+  detectLanguage,
+  showDataSourceDisclaimer,
+} from '../shared/index.js';
+&nbsp;
+import type { CSVRow } from '../shared/index.js';
+&nbsp;
+const d3 = (<span class="cstat-no" title="statement not covered" >globalThis as any).d3;</span>
+const Chart = (<span class="cstat-no" title="statement not covered" >globalThis as any).Chart;</span>
+const Papa = (<span class="cstat-no" title="statement not covered" >globalThis as any).Papa;</span>
+&nbsp;
+// ============================================================================
+// INTERFACES
+// ============================================================================
+&nbsp;
+interface SeasonalConfig {
+  readonly dataUrls: readonly string[];
+  readonly cacheKey: string;
+  readonly cacheDuration: number;
+  readonly zScoreThreshold: number;
+  readonly colors: Record&lt;string, string&gt;;
+  readonly quarterColors: Record&lt;string, string&gt;;
+}
+&nbsp;
+interface SeasonalTranslations {
+  title: string;
+  subtitle: string;
+  filters: {
+    year: string;
+    quarter: string;
+    election: string;
+    classification: string;
+    allYears: string;
+    allQuarters: string;
+    allElections: string;
+    electionYears: string;
+    nonElectionYears: string;
+    allClassifications: string;
+  };
+  quarters: Record&lt;string, string&gt;;
+  charts: {
+    heatmap: { title: string; description: string };
+    zscore: { title: string; description: string };
+    comparison: { title: string; description: string };
+    classification: { title: string; description: string };
+    qoq: { title: string; description: string };
+  };
+  classifications: Record&lt;string, string&gt;;
+  tooltips: {
+    ballots: string;
+    zScore: string;
+    classification: string;
+    anomaly: string;
+    na: string;
+    quarter: string;
+    year: string;
+  };
+  chartLabels: {
+    ballotZScore: string;
+    documentZScore: string;
+    attendanceZScore: string;
+    yearQuarter: string;
+    zScore: string;
+    quarter: string;
+    averageBallots: string;
+    year: string;
+    count: string;
+    changePercent: string;
+    qoqChange: string;
+    anomaly: string;
+  };
+  loading: string;
+  error: string;
+  dataAttribution: string;
+}
+&nbsp;
+interface SeasonalFilters {
+  year: string;
+  quarter: string;
+  election: string;
+  classification: string;
+}
+&nbsp;
+interface QuarterAggregate {
+  quarter: string;
+  avgBallots: number;
+  stddevBallots: number;
+  avgAttendance: number;
+  stddevAttendance: number;
+  avgDocs: number;
+  stddevDocs: number;
+  count: number;
+}
+&nbsp;
+interface CacheEntry {
+  data: CSVRow[];
+  timestamp: number;
+}
+&nbsp;
+// ============================================================================
+// CONFIGURATION
+// ============================================================================
+&nbsp;
+const CONFIG: SeasonalConfig = <span class="cstat-no" title="statement not covered" >{</span>
+  dataUrls: [
+    'cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv',
+    'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_activity_patterns_sample.csv'
+  ],
+  cacheKey: 'riksdag_seasonal_patterns',
+  cacheDuration: 24 * 60 * 60 * 1000,
+  zScoreThreshold: 2.0,
+  colors: {
+    primary: '#00d9ff',
+    secondary: '#ff006e',
+    tertiary: '#ffbe0b',
+    success: '#008838',
+    warning: '#fbc02d',
+    danger: '#d32f2f',
+    info: '#117a8b',
+    normal: '#388e3c',
+    elevated: '#f57c00',
+    reduced: '#1976d2',
+    anomaly: '#d32f2f'
+  },
+  quarterColors: {
+    Q1: '#1976d2',
+    Q2: '#388e3c',
+    Q3: '#fbc02d',
+    Q4: '#f57c00'
+  }
+};
+&nbsp;
+// ============================================================================
+// TRANSLATIONS (14 Languages)
+// ============================================================================
+&nbsp;
+const TRANSLATIONS: Record&lt;string, SeasonalTranslations&gt; = <span class="cstat-no" title="statement not covered" >{</span>
+  en: {
+    title: 'Seasonal Activity Patterns (2002-2025)',
+    subtitle: 'Quarterly Analysis with Z-Score Anomaly Detection',
+    filters: { year: 'Year', quarter: 'Quarter', election: 'Election Status', classification: 'Activity Classification', allYears: 'All Years', allQuarters: 'All Quarters', allElections: 'All', electionYears: 'Election Years', nonElectionYears: 'Non-Election Years', allClassifications: 'All Classifications' },
+    quarters: { Q1: 'Q1 - Winter Session', Q2: 'Q2 - Spring Session', Q3: 'Q3 - Summer Recess', Q4: 'Q4 - Autumn Session' },
+    charts: {
+      heatmap: { title: 'Quarterly Activity Heat Map (2002-2025)', description: 'Ballot volume by year and quarter with Z-score overlay' },
+      zscore: { title: 'Z-Score Anomaly Detection', description: 'Statistical outliers (|Z| ≥ 2.0) flagged in red' },
+      comparison: { title: 'Average Activity by Quarter (All Years)', description: 'Q1-Q4 baselines with standard deviation bands' },
+      classification: { title: 'Seasonal Pattern Classification', description: 'Distribution of NORMAL, ELEVATED, REDUCED, ANOMALY patterns' },
+      qoq: { title: 'Quarter-over-Quarter Changes', description: 'Sequential ballot changes (% and absolute)' }
+    },
+    classifications: { NORMAL_ACTIVITY: 'Normal Activity', ELEVATED_ACTIVITY: 'Elevated Activity', REDUCED_ACTIVITY: 'Reduced Activity', ANOMALY_DETECTED: 'Anomaly Detected', NORMAL_SEASONAL_PATTERN: 'Normal Seasonal Pattern', Q3_SUMMER_LULL: 'Q3 Summer Lull', Q4_ELEVATED_ACTIVITY: 'Q4 Elevated Activity', UNUSUALLY_HIGH_ACTIVITY: 'Unusually High Activity', UNUSUALLY_LOW_ACTIVITY: 'Unusually Low Activity' },
+    tooltips: { ballots: 'Ballots', zScore: 'Z-Score', classification: 'Classification', anomaly: 'ANOMALY', na: 'N/A', quarter: 'Quarter', year: 'Year' },
+    chartLabels: { ballotZScore: 'Ballot Z-Score', documentZScore: 'Document Z-Score', attendanceZScore: 'Attendance Z-Score', yearQuarter: 'Year-Quarter', zScore: 'Z-Score', quarter: 'Quarter', averageBallots: 'Average Ballots', year: 'Year', count: 'Count', changePercent: 'Change (%)', qoqChange: 'QoQ Change (%)', anomaly: 'ANOMALY' },
+    loading: 'Loading data...', error: 'Error loading data. Please try again.', dataAttribution: 'Data by CIA Platform'
+  },
+  sv: {
+    title: 'Säsongsmönster (2002-2025)',
+    subtitle: 'Kvartalsanalys med Z-poäng anomalidetektering',
+    filters: { year: 'År', quarter: 'Kvartal', election: 'Valstatus', classification: 'Aktivitetsklassificering', allYears: 'Alla år', allQuarters: 'Alla kvartal', allElections: 'Alla', electionYears: 'Valår', nonElectionYears: 'Icke-valår', allClassifications: 'Alla klassificeringar' },
+    quarters: { Q1: 'Q1 - Vintersession', Q2: 'Q2 - Vårsession', Q3: 'Q3 - Sommaruppehåll', Q4: 'Q4 - Höstsession' },
+    charts: { heatmap: { title: 'Kvartalsaktivitet värmekarta (2002-2025)', description: 'Omröstningsvolym per år och kvartal med Z-poäng' }, zscore: { title: 'Z-poäng anomalidetektering', description: 'Statistiska avvikelser (|Z| ≥ 2.0) markerade i rött' }, comparison: { title: 'Genomsnittlig aktivitet per kvartal (alla år)', description: 'Q1-Q4 baslinjer med standardavvikelseband' }, classification: { title: 'Säsongsmönster klassificering', description: 'Fördelning av NORMAL, FÖRHÖJD, REDUCERAD, ANOMALI mönster' }, qoq: { title: 'Kvartal-till-kvartal förändringar', description: 'Sekventiella omröstningsförändringar (% och absolut)' } },
+    classifications: { NORMAL_ACTIVITY: 'Normal aktivitet', ELEVATED_ACTIVITY: 'Förhöjd aktivitet', REDUCED_ACTIVITY: 'Reducerad aktivitet', ANOMALY_DETECTED: 'Anomali upptäckt', NORMAL_SEASONAL_PATTERN: 'Normalt säsongsmönster', Q3_SUMMER_LULL: 'Q3 sommaruppehåll', Q4_ELEVATED_ACTIVITY: 'Q4 förhöjd aktivitet', UNUSUALLY_HIGH_ACTIVITY: 'Ovanligt hög aktivitet', UNUSUALLY_LOW_ACTIVITY: 'Ovanligt låg aktivitet' },
+    tooltips: { ballots: 'Omröstningar', zScore: 'Z-poäng', classification: 'Klassificering', anomaly: 'ANOMALI', na: 'Saknas', quarter: 'Kvartal', year: 'År' },
+    chartLabels: { ballotZScore: 'Omröstningar Z-poäng', documentZScore: 'Dokument Z-poäng', attendanceZScore: 'Närvaro Z-poäng', yearQuarter: 'År-Kvartal', zScore: 'Z-poäng', quarter: 'Kvartal', averageBallots: 'Genomsnittliga omröstningar', year: 'År', count: 'Antal', changePercent: 'Förändring (%)', qoqChange: 'KtK-förändring (%)', anomaly: 'ANOMALI' },
+    loading: 'Laddar data...', error: 'Fel vid inläsning av data. Försök igen.', dataAttribution: 'Data från CIA-plattformen'
+  },
+  da: { title: 'Sæsonmønstre (2002-2025)', subtitle: 'Kvartalsanalyse med Z-score anomalidetektion', filters: { year: 'År', quarter: 'Kvartal', election: 'Valgstatus', classification: 'Aktivitetsklassificering', allYears: 'Alle år', allQuarters: 'Alle kvartaler', allElections: 'Alle', electionYears: 'Valgår', nonElectionYears: 'Ikke-valgår', allClassifications: 'Alle klassificeringer' }, quarters: { Q1: 'K1 - Vintersession', Q2: 'K2 - Forårssession', Q3: 'K3 - Sommerpause', Q4: 'K4 - Efterårssession' }, charts: { heatmap: { title: 'Kvartalsaktivitet varmekort (2002-2025)', description: 'Afstemningsvolumen efter år og kvartal med Z-score' }, zscore: { title: 'Z-score anomalidetektion', description: 'Statistiske afvigelser (|Z| ≥ 2.0) markeret med rødt' }, comparison: { title: 'Gennemsnitlig aktivitet efter kvartal (alle år)', description: 'K1-K4 basislinjer med standardafvigelsesbånd' }, classification: { title: 'Sæsonmønster klassificering', description: 'Fordeling af NORMAL, FORHØJET, REDUCERET, ANOMALI mønstre' }, qoq: { title: 'Kvartal-til-kvartal ændringer', description: 'Sekventielle afstemningsændringer (% og absolut)' } }, classifications: { NORMAL_ACTIVITY: 'Normal aktivitet', ELEVATED_ACTIVITY: 'Forhøjet aktivitet', REDUCED_ACTIVITY: 'Reduceret aktivitet', ANOMALY_DETECTED: 'Anomali opdaget', NORMAL_SEASONAL_PATTERN: 'Normalt sæsonmønster', Q3_SUMMER_LULL: 'K3 sommerpause', Q4_ELEVATED_ACTIVITY: 'K4 forhøjet aktivitet', UNUSUALLY_HIGH_ACTIVITY: 'Usædvanligt høj aktivitet', UNUSUALLY_LOW_ACTIVITY: 'Usædvanligt lav aktivitet' }, tooltips: { ballots: 'Afstemninger', zScore: 'Z-score', classification: 'Klassificering', anomaly: 'ANOMALI', na: 'Mangler', quarter: 'Kvartal', year: 'År' }, chartLabels: { ballotZScore: 'Afstemninger Z-score', documentZScore: 'Dokument Z-score', attendanceZScore: 'Fremmøde Z-score', yearQuarter: 'År-Kvartal', zScore: 'Z-score', quarter: 'Kvartal', averageBallots: 'Gennemsnitlige afstemninger', year: 'År', count: 'Antal', changePercent: 'Ændring (%)', qoqChange: 'KtK-ændring (%)', anomaly: 'ANOMALI' }, loading: 'Indlæser data...', error: 'Fejl ved indlæsning af data. Prøv igen.', dataAttribution: 'Data fra CIA-platformen' },
+  no: { title: 'Sesongmønstre (2002-2025)', subtitle: 'Kvartalsanalyse med Z-score anomalideteksjon', filters: { year: 'År', quarter: 'Kvartal', election: 'Valgstatus', classification: 'Aktivitetsklassifisering', allYears: 'Alle år', allQuarters: 'Alle kvartaler', allElections: 'Alle', electionYears: 'Valgår', nonElectionYears: 'Ikke-valgår', allClassifications: 'Alle klassifiseringer' }, quarters: { Q1: 'K1 - Vintersesjon', Q2: 'K2 - Vårsesjon', Q3: 'K3 - Sommerferie', Q4: 'K4 - Høstsesjon' }, charts: { heatmap: { title: 'Kvartalsaktivitet varmekart (2002-2025)', description: 'Avstemningsvolum etter år og kvartal med Z-score' }, zscore: { title: 'Z-score anomalideteksjon', description: 'Statistiske avvik (|Z| ≥ 2.0) markert i rødt' }, comparison: { title: 'Gjennomsnittlig aktivitet etter kvartal (alle år)', description: 'K1-K4 basislinjer med standardavviksbånd' }, classification: { title: 'Sesongmønster klassifisering', description: 'Fordeling av NORMAL, FORHØYET, REDUSERT, ANOMALI mønstre' }, qoq: { title: 'Kvartal-til-kvartal endringer', description: 'Sekvensielle avstemningsendringer (% og absolutt)' } }, classifications: { NORMAL_ACTIVITY: 'Normal aktivitet', ELEVATED_ACTIVITY: 'Forhøyet aktivitet', REDUCED_ACTIVITY: 'Redusert aktivitet', ANOMALY_DETECTED: 'Anomali oppdaget', NORMAL_SEASONAL_PATTERN: 'Normalt sesongmønster', Q3_SUMMER_LULL: 'K3 sommerferie', Q4_ELEVATED_ACTIVITY: 'K4 forhøyet aktivitet', UNUSUALLY_HIGH_ACTIVITY: 'Uvanlig høy aktivitet', UNUSUALLY_LOW_ACTIVITY: 'Uvanlig lav aktivitet' }, tooltips: { ballots: 'Avstemninger', zScore: 'Z-score', classification: 'Klassifisering', anomaly: 'ANOMALI', na: 'Mangler', quarter: 'Kvartal', year: 'År' }, chartLabels: { ballotZScore: 'Avstemninger Z-score', documentZScore: 'Dokument Z-score', attendanceZScore: 'Fremmøte Z-score', yearQuarter: 'År-Kvartal', zScore: 'Z-score', quarter: 'Kvartal', averageBallots: 'Gjennomsnittlige avstemninger', year: 'År', count: 'Antall', changePercent: 'Endring (%)', qoqChange: 'KtK-endring (%)', anomaly: 'ANOMALI' }, loading: 'Laster data...', error: 'Feil ved lasting av data. Prøv igjen.', dataAttribution: 'Data fra CIA-plattformen' },
+  fi: { title: 'Kausivaihtelut (2002-2025)', subtitle: 'Neljännesvuosi-analyysi Z-pisteiden poikkeamatunnistuksella', filters: { year: 'Vuosi', quarter: 'Kvartaali', election: 'Vaalitilanne', classification: 'Aktiviteettiluokitus', allYears: 'Kaikki vuodet', allQuarters: 'Kaikki kvartaalit', allElections: 'Kaikki', electionYears: 'Vaalivuodet', nonElectionYears: 'Ei-vaalivuodet', allClassifications: 'Kaikki luokitukset' }, quarters: { Q1: 'Q1 - Talviistunto', Q2: 'Q2 - Kevätistunto', Q3: 'Q3 - Kesätauko', Q4: 'Q4 - Syysistunto' }, charts: { heatmap: { title: 'Neljännesvuosi-aktiviteetti lämpökartta (2002-2025)', description: 'Äänestysvolyymi vuoden ja kvartaalin mukaan Z-pisteillä' }, zscore: { title: 'Z-piste poikkeamatunnistus', description: 'Tilastolliset poikkeamat (|Z| ≥ 2.0) merkitty punaisella' }, comparison: { title: 'Keskimääräinen aktiviteetti kvartaaleittain (kaikki vuodet)', description: 'Q1-Q4 perusviivat keskihajontakaistaleilla' }, classification: { title: 'Kausivaihtelujen luokittelu', description: 'NORMAALI, KOHONNUT, ALENTUNUT, POIKKEAMA -mallien jakauma' }, qoq: { title: 'Kvartaalista toiseen muutokset', description: 'Peräkkäiset äänestysmuutokset (% ja absoluuttinen)' } }, classifications: { NORMAL_ACTIVITY: 'Normaali aktiviteetti', ELEVATED_ACTIVITY: 'Kohonnut aktiviteetti', REDUCED_ACTIVITY: 'Alentunut aktiviteetti', ANOMALY_DETECTED: 'Poikkeama havaittu', NORMAL_SEASONAL_PATTERN: 'Normaali kausimalli', Q3_SUMMER_LULL: 'Q3 kesätauko', Q4_ELEVATED_ACTIVITY: 'Q4 kohonnut aktiviteetti', UNUSUALLY_HIGH_ACTIVITY: 'Epätavallisen korkea aktiviteetti', UNUSUALLY_LOW_ACTIVITY: 'Epätavallisen matala aktiviteetti' }, tooltips: { ballots: 'Äänet', zScore: 'Z-piste', classification: 'Luokitus', anomaly: 'POIKKEAMA', na: 'Puuttuu', quarter: 'Kvartaali', year: 'Vuosi' }, chartLabels: { ballotZScore: 'Äänet Z-piste', documentZScore: 'Dokumentti Z-piste', attendanceZScore: 'Läsnäolo Z-piste', yearQuarter: 'Vuosi-Kvartaali', zScore: 'Z-piste', quarter: 'Kvartaali', averageBallots: 'Keskimääräiset äänet', year: 'Vuosi', count: 'Lukumäärä', changePercent: 'Muutos (%)', qoqChange: 'KtK-muutos (%)', anomaly: 'POIKKEAMA' }, loading: 'Ladataan tietoja...', error: 'Virhe tietojen lataamisessa.', dataAttribution: 'Data CIA-alustalta' },
+  de: { title: 'Saisonale Muster (2002-2025)', subtitle: 'Quartalsanalyse mit Z-Score-Anomalieerkennung', filters: { year: 'Jahr', quarter: 'Quartal', election: 'Wahlstatus', classification: 'Aktivitätsklassifizierung', allYears: 'Alle Jahre', allQuarters: 'Alle Quartale', allElections: 'Alle', electionYears: 'Wahljahre', nonElectionYears: 'Nicht-Wahljahre', allClassifications: 'Alle Klassifizierungen' }, quarters: { Q1: 'Q1 - Wintersitzung', Q2: 'Q2 - Frühjahrssitzung', Q3: 'Q3 - Sommerpause', Q4: 'Q4 - Herbstsitzung' }, charts: { heatmap: { title: 'Quartalsaktivität Heatmap (2002-2025)', description: 'Abstimmungsvolumen nach Jahr und Quartal mit Z-Score' }, zscore: { title: 'Z-Score-Anomalieerkennung', description: 'Statistische Ausreißer (|Z| ≥ 2.0) rot markiert' }, comparison: { title: 'Durchschnittliche Aktivität nach Quartal (alle Jahre)', description: 'Q1-Q4 Basislinien mit Standardabweichungsbändern' }, classification: { title: 'Saisonale Musterklassifizierung', description: 'Verteilung von NORMAL, ERHÖHT, REDUZIERT, ANOMALIE Mustern' }, qoq: { title: 'Quartal-zu-Quartal Änderungen', description: 'Aufeinanderfolgende Abstimmungsänderungen (% und absolut)' } }, classifications: { NORMAL_ACTIVITY: 'Normale Aktivität', ELEVATED_ACTIVITY: 'Erhöhte Aktivität', REDUCED_ACTIVITY: 'Reduzierte Aktivität', ANOMALY_DETECTED: 'Anomalie erkannt', NORMAL_SEASONAL_PATTERN: 'Normales saisonales Muster', Q3_SUMMER_LULL: 'Q3 Sommerpause', Q4_ELEVATED_ACTIVITY: 'Q4 erhöhte Aktivität', UNUSUALLY_HIGH_ACTIVITY: 'Ungewöhnlich hohe Aktivität', UNUSUALLY_LOW_ACTIVITY: 'Ungewöhnlich niedrige Aktivität' }, tooltips: { ballots: 'Abstimmungen', zScore: 'Z-Score', classification: 'Klassifizierung', anomaly: 'ANOMALIE', na: 'Fehlt', quarter: 'Quartal', year: 'Jahr' }, chartLabels: { ballotZScore: 'Abstimmungen Z-Score', documentZScore: 'Dokument Z-Score', attendanceZScore: 'Anwesenheit Z-Score', yearQuarter: 'Jahr-Quartal', zScore: 'Z-Score', quarter: 'Quartal', averageBallots: 'Durchschnittliche Abstimmungen', year: 'Jahr', count: 'Anzahl', changePercent: 'Änderung (%)', qoqChange: 'QzQ-Änderung (%)', anomaly: 'ANOMALIE' }, loading: 'Daten werden geladen...', error: 'Fehler beim Laden der Daten.', dataAttribution: 'Daten von CIA-Plattform' },
+  fr: { title: 'Schémas saisonniers (2002-2025)', subtitle: 'Analyse trimestrielle avec détection d\'anomalies par score Z', filters: { year: 'Année', quarter: 'Trimestre', election: 'Statut électoral', classification: 'Classification d\'activité', allYears: 'Toutes les années', allQuarters: 'Tous les trimestres', allElections: 'Tous', electionYears: 'Années électorales', nonElectionYears: 'Années non-électorales', allClassifications: 'Toutes les classifications' }, quarters: { Q1: 'T1 - Session d\'hiver', Q2: 'T2 - Session de printemps', Q3: 'T3 - Pause estivale', Q4: 'T4 - Session d\'automne' }, charts: { heatmap: { title: 'Carte de chaleur d\'activité trimestrielle (2002-2025)', description: 'Volume de scrutins par année et trimestre avec score Z' }, zscore: { title: 'Détection d\'anomalies par score Z', description: 'Valeurs aberrantes statistiques (|Z| ≥ 2.0) marquées en rouge' }, comparison: { title: 'Activité moyenne par trimestre (toutes les années)', description: 'Lignes de base T1-T4 avec bandes d\'écart-type' }, classification: { title: 'Classification des schémas saisonniers', description: 'Distribution des schémas NORMAL, ÉLEVÉ, RÉDUIT, ANOMALIE' }, qoq: { title: 'Changements d\'un trimestre à l\'autre', description: 'Changements séquentiels de scrutins (% et absolu)' } }, classifications: { NORMAL_ACTIVITY: 'Activité normale', ELEVATED_ACTIVITY: 'Activité élevée', REDUCED_ACTIVITY: 'Activité réduite', ANOMALY_DETECTED: 'Anomalie détectée', NORMAL_SEASONAL_PATTERN: 'Schéma saisonnier normal', Q3_SUMMER_LULL: 'T3 pause estivale', Q4_ELEVATED_ACTIVITY: 'T4 activité élevée', UNUSUALLY_HIGH_ACTIVITY: 'Activité exceptionnellement élevée', UNUSUALLY_LOW_ACTIVITY: 'Activité exceptionnellement basse' }, tooltips: { ballots: 'Scrutins', zScore: 'Score Z', classification: 'Classification', anomaly: 'ANOMALIE', na: 'Manquant', quarter: 'Trimestre', year: 'Année' }, chartLabels: { ballotZScore: 'Scrutins Score Z', documentZScore: 'Document Score Z', attendanceZScore: 'Présence Score Z', yearQuarter: 'Année-Trimestre', zScore: 'Score Z', quarter: 'Trimestre', averageBallots: 'Scrutins moyens', year: 'Année', count: 'Nombre', changePercent: 'Changement (%)', qoqChange: 'TàT-changement (%)', anomaly: 'ANOMALIE' }, loading: 'Chargement des données...', error: 'Erreur lors du chargement des données.', dataAttribution: 'Données de la plateforme CIA' },
+  es: { title: 'Patrones estacionales (2002-2025)', subtitle: 'Análisis trimestral con detección de anomalías por puntuación Z', filters: { year: 'Año', quarter: 'Trimestre', election: 'Estado electoral', classification: 'Clasificación de actividad', allYears: 'Todos los años', allQuarters: 'Todos los trimestres', allElections: 'Todos', electionYears: 'Años electorales', nonElectionYears: 'Años no electorales', allClassifications: 'Todas las clasificaciones' }, quarters: { Q1: 'T1 - Sesión de invierno', Q2: 'T2 - Sesión de primavera', Q3: 'T3 - Receso de verano', Q4: 'T4 - Sesión de otoño' }, charts: { heatmap: { title: 'Mapa de calor de actividad trimestral (2002-2025)', description: 'Volumen de votaciones por año y trimestre' }, zscore: { title: 'Detección de anomalías por puntuación Z', description: 'Valores atípicos (|Z| ≥ 2.0) marcados en rojo' }, comparison: { title: 'Actividad promedio por trimestre (todos los años)', description: 'Líneas base T1-T4 con bandas de desviación estándar' }, classification: { title: 'Clasificación de patrones estacionales', description: 'Distribución de patrones NORMAL, ELEVADO, REDUCIDO, ANOMALÍA' }, qoq: { title: 'Cambios de trimestre a trimestre', description: 'Cambios secuenciales de votaciones' } }, classifications: { NORMAL_ACTIVITY: 'Actividad normal', ELEVATED_ACTIVITY: 'Actividad elevada', REDUCED_ACTIVITY: 'Actividad reducida', ANOMALY_DETECTED: 'Anomalía detectada', NORMAL_SEASONAL_PATTERN: 'Patrón estacional normal', Q3_SUMMER_LULL: 'T3 receso de verano', Q4_ELEVATED_ACTIVITY: 'T4 actividad elevada', UNUSUALLY_HIGH_ACTIVITY: 'Actividad inusualmente alta', UNUSUALLY_LOW_ACTIVITY: 'Actividad inusualmente baja' }, tooltips: { ballots: 'Votaciones', zScore: 'Puntuación Z', classification: 'Clasificación', anomaly: 'ANOMALÍA', na: 'N/A', quarter: 'Trimestre', year: 'Año' }, chartLabels: { ballotZScore: 'Votaciones Z', documentZScore: 'Documento Z', attendanceZScore: 'Asistencia Z', yearQuarter: 'Año-Trimestre', zScore: 'Puntuación Z', quarter: 'Trimestre', averageBallots: 'Votaciones promedio', year: 'Año', count: 'Recuento', changePercent: 'Cambio (%)', qoqChange: 'TaT-cambio (%)', anomaly: 'ANOMALÍA' }, loading: 'Cargando datos...', error: 'Error al cargar los datos.', dataAttribution: 'Datos de la plataforma CIA' },
+  nl: { title: 'Seizoenspatronen (2002-2025)', subtitle: 'Kwartaalanalyse met Z-score anomaliedetectie', filters: { year: 'Jaar', quarter: 'Kwartaal', election: 'Verkiezingsstatus', classification: 'Activiteitsclassificatie', allYears: 'Alle jaren', allQuarters: 'Alle kwartalen', allElections: 'Alle', electionYears: 'Verkiezingsjaren', nonElectionYears: 'Niet-verkiezingsjaren', allClassifications: 'Alle classificaties' }, quarters: { Q1: 'K1 - Wintersessie', Q2: 'K2 - Voorjaarssessie', Q3: 'K3 - Zomerpauze', Q4: 'K4 - Herfstsessie' }, charts: { heatmap: { title: 'Kwartaalactiviteit heatmap (2002-2025)', description: 'Stemvolume per jaar en kwartaal met Z-score' }, zscore: { title: 'Z-score anomaliedetectie', description: 'Statistische uitschieters (|Z| ≥ 2.0) gemarkeerd in rood' }, comparison: { title: 'Gemiddelde activiteit per kwartaal (alle jaren)', description: 'K1-K4 basislijnen met standaardafwijkingsbanden' }, classification: { title: 'Seizoenspatroon classificatie', description: 'Verdeling van patronen' }, qoq: { title: 'Kwartaal-op-kwartaal veranderingen', description: 'Opeenvolgende stemveranderingen' } }, classifications: { NORMAL_ACTIVITY: 'Normale activiteit', ELEVATED_ACTIVITY: 'Verhoogde activiteit', REDUCED_ACTIVITY: 'Verminderde activiteit', ANOMALY_DETECTED: 'Anomalie gedetecteerd', NORMAL_SEASONAL_PATTERN: 'Normaal seizoenspatroon', Q3_SUMMER_LULL: 'K3 zomerpauze', Q4_ELEVATED_ACTIVITY: 'K4 verhoogde activiteit', UNUSUALLY_HIGH_ACTIVITY: 'Ongewoon hoge activiteit', UNUSUALLY_LOW_ACTIVITY: 'Ongewoon lage activiteit' }, tooltips: { ballots: 'Stemmen', zScore: 'Z-score', classification: 'Classificatie', anomaly: 'ANOMALIE', na: 'Ontbreekt', quarter: 'Kwartaal', year: 'Jaar' }, chartLabels: { ballotZScore: 'Stemmen Z-score', documentZScore: 'Document Z-score', attendanceZScore: 'Aanwezigheid Z-score', yearQuarter: 'Jaar-Kwartaal', zScore: 'Z-score', quarter: 'Kwartaal', averageBallots: 'Gemiddelde stemmen', year: 'Jaar', count: 'Aantal', changePercent: 'Verandering (%)', qoqChange: 'KoK-verandering (%)', anomaly: 'ANOMALIE' }, loading: 'Gegevens laden...', error: 'Fout bij het laden van gegevens.', dataAttribution: 'Data van CIA-platform' },
+  ar: { title: 'الأنماط الموسمية (2002-2025)', subtitle: 'تحليل ربع سنوي مع كشف الشذوذ بالنقاط Z', filters: { year: 'السنة', quarter: 'الربع', election: 'حالة الانتخابات', classification: 'تصنيف النشاط', allYears: 'كل السنوات', allQuarters: 'كل الأرباع', allElections: 'الكل', electionYears: 'سنوات الانتخابات', nonElectionYears: 'سنوات بدون انتخابات', allClassifications: 'كل التصنيفات' }, quarters: { Q1: 'الربع 1', Q2: 'الربع 2', Q3: 'الربع 3', Q4: 'الربع 4' }, charts: { heatmap: { title: 'خريطة حرارية للنشاط الفصلي', description: 'حجم التصويت حسب السنة والربع' }, zscore: { title: 'كشف الشذوذ بالنقاط Z', description: 'القيم الشاذة مميزة بالأحمر' }, comparison: { title: 'متوسط النشاط حسب الربع', description: 'خطوط أساسية مع نطاقات الانحراف المعياري' }, classification: { title: 'تصنيف الأنماط الموسمية', description: 'توزيع الأنماط' }, qoq: { title: 'التغيرات من ربع لآخر', description: 'التغيرات المتسلسلة' } }, classifications: { NORMAL_ACTIVITY: 'نشاط عادي', ELEVATED_ACTIVITY: 'نشاط مرتفع', REDUCED_ACTIVITY: 'نشاط منخفض', ANOMALY_DETECTED: 'شذوذ مكتشف', NORMAL_SEASONAL_PATTERN: 'نمط موسمي عادي', Q3_SUMMER_LULL: 'عطلة صيفية', Q4_ELEVATED_ACTIVITY: 'نشاط مرتفع', UNUSUALLY_HIGH_ACTIVITY: 'نشاط مرتفع بشكل غير عادي', UNUSUALLY_LOW_ACTIVITY: 'نشاط منخفض بشكل غير عادي' }, tooltips: { ballots: 'تصويت', zScore: 'نقاط Z', classification: 'تصنيف', anomaly: 'شذوذ', na: 'غير متوفر', quarter: 'ربع', year: 'سنة' }, chartLabels: { ballotZScore: 'تصويت Z', documentZScore: 'مستند Z', attendanceZScore: 'حضور Z', yearQuarter: 'سنة-ربع', zScore: 'نقاط Z', quarter: 'ربع', averageBallots: 'متوسط التصويت', year: 'سنة', count: 'عدد', changePercent: 'تغيير (%)', qoqChange: 'ربع-ربع (%)', anomaly: 'شذوذ' }, loading: 'جاري تحميل البيانات...', error: 'خطأ في تحميل البيانات.', dataAttribution: 'البيانات من منصة CIA' },
+  he: { title: 'דפוסים עונתיים (2002-2025)', subtitle: 'ניתוח רבעוני עם זיהוי חריגות Z-Score', filters: { year: 'שנה', quarter: 'רבעון', election: 'סטטוס בחירות', classification: 'סיווג פעילות', allYears: 'כל השנים', allQuarters: 'כל הרבעונים', allElections: 'הכל', electionYears: 'שנות בחירות', nonElectionYears: 'שנים ללא בחירות', allClassifications: 'כל הסיווגים' }, quarters: { Q1: 'רבעון 1', Q2: 'רבעון 2', Q3: 'רבעון 3', Q4: 'רבעון 4' }, charts: { heatmap: { title: 'מפת חום של פעילות רבעונית', description: 'נפח הצבעות לפי שנה ורבעון' }, zscore: { title: 'זיהוי חריגות Z-Score', description: 'ערכים חריגים מסומנים באדום' }, comparison: { title: 'פעילות ממוצעת לפי רבעון', description: 'קווי בסיס עם רצועות סטיית תקן' }, classification: { title: 'סיווג דפוסים עונתיים', description: 'התפלגות דפוסים' }, qoq: { title: 'שינויים מרבעון לרבעון', description: 'שינויים רציפים בהצבעה' } }, classifications: { NORMAL_ACTIVITY: 'פעילות רגילה', ELEVATED_ACTIVITY: 'פעילות מוגברת', REDUCED_ACTIVITY: 'פעילות מופחתת', ANOMALY_DETECTED: 'חריגה זוהתה', NORMAL_SEASONAL_PATTERN: 'דפוס עונתי רגיל', Q3_SUMMER_LULL: 'הפסקת קיץ', Q4_ELEVATED_ACTIVITY: 'פעילות מוגברת', UNUSUALLY_HIGH_ACTIVITY: 'פעילות גבוהה במיוחד', UNUSUALLY_LOW_ACTIVITY: 'פעילות נמוכה במיוחד' }, tooltips: { ballots: 'הצבעות', zScore: 'Z-Score', classification: 'סיווג', anomaly: 'חריגה', na: 'חסר', quarter: 'רבעון', year: 'שנה' }, chartLabels: { ballotZScore: 'הצבעות Z', documentZScore: 'מסמך Z', attendanceZScore: 'נוכחות Z', yearQuarter: 'שנה-רבעון', zScore: 'Z-Score', quarter: 'רבעון', averageBallots: 'הצבעות ממוצעות', year: 'שנה', count: 'ספירה', changePercent: 'שינוי (%)', qoqChange: 'רבעון-רבעון (%)', anomaly: 'חריגה' }, loading: 'טוען נתונים...', error: 'שגיאה בטעינת נתונים.', dataAttribution: 'נתונים מפלטפורמת CIA' },
+  ja: { title: '季節パターン (2002-2025)', subtitle: 'Zスコア異常検出を伴う四半期分析', filters: { year: '年', quarter: '四半期', election: '選挙状況', classification: '活動分類', allYears: 'すべての年', allQuarters: 'すべての四半期', allElections: 'すべて', electionYears: '選挙年', nonElectionYears: '非選挙年', allClassifications: 'すべての分類' }, quarters: { Q1: 'Q1 - 冬季会期', Q2: 'Q2 - 春季会期', Q3: 'Q3 - 夏季休会', Q4: 'Q4 - 秋季会期' }, charts: { heatmap: { title: '四半期活動ヒートマップ', description: '年と四半期別の投票量' }, zscore: { title: 'Zスコア異常検出', description: '統計的外れ値を赤でマーク' }, comparison: { title: '四半期別平均活動', description: 'ベースラインと標準偏差バンド' }, classification: { title: '季節パターン分類', description: 'パターンの分布' }, qoq: { title: '四半期間の変化', description: '連続的な投票変化' } }, classifications: { NORMAL_ACTIVITY: '通常の活動', ELEVATED_ACTIVITY: '活動上昇', REDUCED_ACTIVITY: '活動減少', ANOMALY_DETECTED: '異常検出', NORMAL_SEASONAL_PATTERN: '通常の季節パターン', Q3_SUMMER_LULL: 'Q3夏季休会', Q4_ELEVATED_ACTIVITY: 'Q4活動上昇', UNUSUALLY_HIGH_ACTIVITY: '異常に高い活動', UNUSUALLY_LOW_ACTIVITY: '異常に低い活動' }, tooltips: { ballots: '投票', zScore: 'Zスコア', classification: '分類', anomaly: '異常', na: 'N/A', quarter: '四半期', year: '年' }, chartLabels: { ballotZScore: '投票Z', documentZScore: '文書Z', attendanceZScore: '出席Z', yearQuarter: '年-四半期', zScore: 'Zスコア', quarter: '四半期', averageBallots: '平均投票', year: '年', count: '数', changePercent: '変化 (%)', qoqChange: 'QoQ変化 (%)', anomaly: '異常' }, loading: 'データ読み込み中...', error: 'データの読み込みエラー。', dataAttribution: 'CIAプラットフォームのデータ' },
+  ko: { title: '계절별 패턴 (2002-2025)', subtitle: 'Z점수 이상 탐지를 통한 분기별 분석', filters: { year: '년도', quarter: '분기', election: '선거 상태', classification: '활동 분류', allYears: '모든 연도', allQuarters: '모든 분기', allElections: '모두', electionYears: '선거 연도', nonElectionYears: '비선거 연도', allClassifications: '모든 분류' }, quarters: { Q1: '1분기', Q2: '2분기', Q3: '3분기', Q4: '4분기' }, charts: { heatmap: { title: '분기별 활동 히트맵', description: '연도 및 분기별 투표량' }, zscore: { title: 'Z점수 이상 탐지', description: '통계적 이상값은 빨간색' }, comparison: { title: '분기별 평균 활동', description: '기준선과 표준편차 밴드' }, classification: { title: '계절별 패턴 분류', description: '패턴의 분포' }, qoq: { title: '분기별 변화', description: '순차적 투표 변화' } }, classifications: { NORMAL_ACTIVITY: '정상 활동', ELEVATED_ACTIVITY: '상승 활동', REDUCED_ACTIVITY: '감소 활동', ANOMALY_DETECTED: '이상 탐지', NORMAL_SEASONAL_PATTERN: '정상 계절 패턴', Q3_SUMMER_LULL: '여름 휴회', Q4_ELEVATED_ACTIVITY: '상승 활동', UNUSUALLY_HIGH_ACTIVITY: '비정상적으로 높은 활동', UNUSUALLY_LOW_ACTIVITY: '비정상적으로 낮은 활동' }, tooltips: { ballots: '투표', zScore: 'Z점수', classification: '분류', anomaly: '이상', na: 'N/A', quarter: '분기', year: '년도' }, chartLabels: { ballotZScore: '투표 Z', documentZScore: '문서 Z', attendanceZScore: '출석 Z', yearQuarter: '년-분기', zScore: 'Z점수', quarter: '분기', averageBallots: '평균 투표', year: '년도', count: '수', changePercent: '변화 (%)', qoqChange: 'QoQ 변화 (%)', anomaly: '이상' }, loading: '데이터 로딩 중...', error: '데이터 로딩 오류.', dataAttribution: 'CIA 플랫폼의 데이터' },
+  zh: { title: '季节性模式 (2002-2025)', subtitle: '带Z分数异常检测的季度分析', filters: { year: '年份', quarter: '季度', election: '选举状态', classification: '活动分类', allYears: '所有年份', allQuarters: '所有季度', allElections: '全部', electionYears: '选举年', nonElectionYears: '非选举年', allClassifications: '所有分类' }, quarters: { Q1: '第1季度', Q2: '第2季度', Q3: '第3季度', Q4: '第4季度' }, charts: { heatmap: { title: '季度活动热图', description: '按年份和季度' }, zscore: { title: 'Z分数异常检测', description: '统计异常值标记为红色' }, comparison: { title: '按季度的平均活动', description: '基线与标准差带' }, classification: { title: '季节性模式分类', description: '模式的分布' }, qoq: { title: '季度环比变化', description: '连续投票变化' } }, classifications: { NORMAL_ACTIVITY: '正常活动', ELEVATED_ACTIVITY: '活动升高', REDUCED_ACTIVITY: '活动降低', ANOMALY_DETECTED: '检测到异常', NORMAL_SEASONAL_PATTERN: '正常季节性模式', Q3_SUMMER_LULL: '夏季休会', Q4_ELEVATED_ACTIVITY: '活动升高', UNUSUALLY_HIGH_ACTIVITY: '异常高的活动', UNUSUALLY_LOW_ACTIVITY: '异常低的活动' }, tooltips: { ballots: '投票', zScore: 'Z分数', classification: '分类', anomaly: '异常', na: '无', quarter: '季度', year: '年份' }, chartLabels: { ballotZScore: '投票Z', documentZScore: '文档Z', attendanceZScore: '出勤Z', yearQuarter: '年-季度', zScore: 'Z分数', quarter: '季度', averageBallots: '平均投票', year: '年份', count: '计数', changePercent: '变化 (%)', qoqChange: 'QoQ变化 (%)', anomaly: '异常' }, loading: '加载数据中...', error: '加载数据出错。', dataAttribution: '数据来自CIA平台' }
+};
+&nbsp;
+// ============================================================================
+// DATA MANAGER
+// ============================================================================
+&nbsp;
+<span class="fstat-no" title="function not covered" >class S</span>easonalPatternsDataManager {
+<span class="cstat-no" title="statement not covered" >  data: CSVRow[] | null = null;</span>
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >fetchData(): Promise&lt;CSVRow[]&gt; {</span>
+    const cached = <span class="cstat-no" title="statement not covered" >this.getCachedData();</span>
+<span class="cstat-no" title="statement not covered" >    if (cached) { <span class="cstat-no" title="statement not covered" >logger.info('Using cached seasonal patterns data'); <span class="cstat-no" title="statement not covered" >t</span>his.data = cached; <span class="cstat-no" title="statement not covered" >r</span>eturn cached; }</span></span>
+&nbsp;
+    let lastError: Error | null = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0; i</span> &lt; CONFIG.dataUrls.length; i++) {</span>
+      const url = <span class="cstat-no" title="statement not covered" >CONFIG.dataUrls[i];</span>
+      const isLocal = <span class="cstat-no" title="statement not covered" >!url.startsWith('http');</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered" >        logger.info(`Fetching seasonal patterns data from ${isLocal ? 'local' : 'remote'} source (${i + 1}/${CONFIG.dataUrls.length})...`);</span>
+        const response = <span class="cstat-no" title="statement not covered" >await fetch(url);</span>
+<span class="cstat-no" title="statement not covered" >        if (!response.ok) <span class="cstat-no" title="statement not covered" >throw new Error(`HTTP ${response.status}: ${response.statusText}`);</span></span>
+        const csvText = <span class="cstat-no" title="statement not covered" >await response.text();</span>
+        const parsedData = <span class="cstat-no" title="statement not covered" >this.parseCSV(csvText);</span>
+<span class="cstat-no" title="statement not covered" >        this.setCachedData(parsedData);</span>
+<span class="cstat-no" title="statement not covered" >        this.data = parsedData;</span>
+<span class="cstat-no" title="statement not covered" >        logger.info(`Loaded ${parsedData.length} seasonal activity records from ${isLocal ? 'local' : 'remote'} source`);</span>
+<span class="cstat-no" title="statement not covered" >        return parsedData;</span>
+      } catch (error) {
+<span class="cstat-no" title="statement not covered" >        lastError = error instanceof Error ? error : new Error(String(error));</span>
+<span class="cstat-no" title="statement not covered" >        logger.error(`Failed to load from ${isLocal ? 'local' : 'remote'} source: ${lastError.message}`);</span>
+      }
+    }
+&nbsp;
+    // Try expired cache as fallback
+    const cached2 = <span class="cstat-no" title="statement not covered" >localStorage.getItem(CONFIG.cacheKey);</span>
+<span class="cstat-no" title="statement not covered" >    if (cached2) {</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+        const parsed = <span class="cstat-no" title="statement not covered" >JSON.parse(cached2) as CacheEntry;</span>
+<span class="cstat-no" title="statement not covered" >        if (parsed &amp;&amp; typeof parsed === 'object' &amp;&amp; 'data' in parsed) {</span>
+<span class="cstat-no" title="statement not covered" >          logger.info('Using expired cache as fallback');</span>
+<span class="cstat-no" title="statement not covered" >          this.data = parsed.data;</span>
+<span class="cstat-no" title="statement not covered" >          return parsed.data;</span>
+        }
+      } catch { /* ignore */ }
+    }
+<span class="cstat-no" title="statement not covered" >    throw lastError || new Error('All data sources failed');</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  parseCSV(c</span>svText: string): CSVRow[] {
+<span class="cstat-no" title="statement not covered" >    if (typeof Papa !== 'undefined') {</span>
+      const parsed = <span class="cstat-no" title="statement not covered" >Papa.parse(csvText, { header: true, dynamicTyping: true, skipEmptyLines: true });</span>
+<span class="cstat-no" title="statement not covered" >      return parsed.data as CSVRow[];</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (typeof d3 !== 'undefined' &amp;&amp; typeof d3.csvParse === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered" >        return d3.csvParse(csvText, <span class="fstat-no" title="function not covered" >(d</span>: Record&lt;string, string&gt;) =&gt; {</span>
+          const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >          Object.keys(d).forEach(<span class="fstat-no" title="function not covered" >(k</span>ey) =&gt; {</span>
+            const value = <span class="cstat-no" title="statement not covered" >d[key];</span>
+<span class="cstat-no" title="statement not covered" >            if (typeof value === 'string' &amp;&amp; /^-?\d+(\.\d+)?$/.test(value.trim())) {</span>
+              (<span class="cstat-no" title="statement not covered" >row as any)[key] = parseFloat(value);</span>
+            } else {
+              (<span class="cstat-no" title="statement not covered" >row as any)[key] = value;</span>
+            }
+          });
+<span class="cstat-no" title="statement not covered" >          return row;</span>
+        }) as CSVRow[];
+      } catch { /* fallback below */ }
+    }
+&nbsp;
+    const lines = <span class="cstat-no" title="statement not covered" >csvText.trim().split('\n');</span>
+    const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').map(<span class="fstat-no" title="function not covered" >h =&gt; <span class="cstat-no" title="statement not covered" >h</span>.trim().replace(/^"|"$/g, ''))</span>;</span>
+    const data: CSVRow[] = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >1; i</span> &lt; lines.length; i++) {</span>
+      const values = <span class="cstat-no" title="statement not covered" >lines[i].split(',').map(<span class="fstat-no" title="function not covered" >v =&gt; <span class="cstat-no" title="statement not covered" >v</span>.trim().replace(/^"|"$/g, ''))</span>;</span>
+      const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >      headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>eader, index) =&gt; {</span>
+        const value = <span class="cstat-no" title="statement not covered" >values[index];</span>
+<span class="cstat-no" title="statement not covered" >        if (/^-?\d+(\.\d+)?$/.test(value)) { (<span class="cstat-no" title="statement not covered" >row as any)[header] = parseFloat(value); }</span></span>
+        else { (<span class="cstat-no" title="statement not covered" >row as any)[header] = value; }</span>
+      });
+<span class="cstat-no" title="statement not covered" >      data.push(row);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return data;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getCachedData(): CSVRow[] | null {</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const cached = <span class="cstat-no" title="statement not covered" >localStorage.getItem(CONFIG.cacheKey);</span>
+<span class="cstat-no" title="statement not covered" >      if (!cached) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+      const parsed = <span class="cstat-no" title="statement not covered" >JSON.parse(cached) as CacheEntry;</span>
+<span class="cstat-no" title="statement not covered" >      if (Date.now() - parsed.timestamp &gt; CONFIG.cacheDuration) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+<span class="cstat-no" title="statement not covered" >      return parsed.data;</span>
+    } catch { <span class="cstat-no" title="statement not covered" >return null; }</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  setCachedData(d</span>ata: CSVRow[]): void {
+<span class="cstat-no" title="statement not covered" >    try { <span class="cstat-no" title="statement not covered" >localStorage.setItem(CONFIG.cacheKey, JSON.stringify({ data, timestamp: Date.now() })); }</span></span>
+    catch (e) { <span class="cstat-no" title="statement not covered" >logger.error('Error caching data:', e); }</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  aggregateByQuarter(): Record&lt;string, QuarterAggregate&gt; | null {</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.data) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+    const quarters: Record&lt;string, CSVRow[]&gt; = <span class="cstat-no" title="statement not covered" >{ Q1: [], Q2: [], Q3: [], Q4: [] };</span>
+<span class="cstat-no" title="statement not covered" >    this.data.forEach(<span class="fstat-no" title="function not covered" >row =&gt; {</span> const q = <span class="cstat-no" title="statement not covered" >`Q${row['quarter']}`; <span class="cstat-no" title="statement not covered" >i</span>f (quarters[q]) <span class="cstat-no" title="statement not covered" >quarters[q].push(row); }</span></span>);</span>
+&nbsp;
+    const aggregated: Record&lt;string, QuarterAggregate&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >    Object.keys(quarters).forEach(<span class="fstat-no" title="function not covered" >q =&gt; {</span></span>
+      const records = <span class="cstat-no" title="statement not covered" >quarters[q];</span>
+<span class="cstat-no" title="statement not covered" >      if (records.length === 0) <span class="cstat-no" title="statement not covered" >return;</span></span>
+      const ballots = <span class="cstat-no" title="statement not covered" >records.map(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >N</span>umber(r['total_ballots']) || 0)</span>;</span>
+      const attendance = <span class="cstat-no" title="statement not covered" >records.map(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >N</span>umber(r['attendance_rate']) || 0)</span>;</span>
+      const docs = <span class="cstat-no" title="statement not covered" >records.map(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >N</span>umber(r['documents_produced']) || 0)</span>;</span>
+<span class="cstat-no" title="statement not covered" >      aggregated[q] = { quarter: q, avgBallots: mean(ballots), stddevBallots: stddev(ballots), avgAttendance: mean(attendance), stddevAttendance: stddev(attendance), avgDocs: mean(docs), stddevDocs: stddev(docs), count: records.length };</span>
+    });
+<span class="cstat-no" title="statement not covered" >    return aggregated;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  identifyAnomalies(t</span>hreshold: number = <span class="branch-0 cbranch-no" title="branch not covered" >CONFIG.zScoreThreshold): CSVRow[] {</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.data) <span class="cstat-no" title="statement not covered" >return [];</span></span>
+    const anomalies = <span class="cstat-no" title="statement not covered" >this.data.filter(<span class="fstat-no" title="function not covered" >row =&gt; {</span></span>
+      const ballotZ = <span class="cstat-no" title="statement not covered" >Math.abs(Number(row['ballot_z_score']) || 0);</span>
+      const docZ = <span class="cstat-no" title="statement not covered" >Math.abs(Number(row['doc_z_score']) || 0);</span>
+      const attendanceZ = <span class="cstat-no" title="statement not covered" >Math.abs(Number(row['attendance_z_score']) || 0);</span>
+<span class="cstat-no" title="statement not covered" >      return ballotZ &gt;= threshold || docZ &gt;= threshold || attendanceZ &gt;= threshold;</span>
+    });
+<span class="cstat-no" title="statement not covered" >    anomalies.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
+      const maxZa = <span class="cstat-no" title="statement not covered" >Math.max(Math.abs(Number(a['ballot_z_score']) || 0), Math.abs(Number(a['doc_z_score']) || 0), Math.abs(Number(a['attendance_z_score']) || 0));</span>
+      const maxZb = <span class="cstat-no" title="statement not covered" >Math.max(Math.abs(Number(b['ballot_z_score']) || 0), Math.abs(Number(b['doc_z_score']) || 0), Math.abs(Number(b['attendance_z_score']) || 0));</span>
+<span class="cstat-no" title="statement not covered" >      return maxZb - maxZa;</span>
+    });
+<span class="cstat-no" title="statement not covered" >    return anomalies;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  filterData(f</span>ilters: SeasonalFilters): CSVRow[] {
+<span class="cstat-no" title="statement not covered" >    if (!this.data) <span class="cstat-no" title="statement not covered" >return [];</span></span>
+<span class="cstat-no" title="statement not covered" >    return this.data.filter(<span class="fstat-no" title="function not covered" >row =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (filters.year &amp;&amp; filters.year !== 'all' &amp;&amp; String(row['year']) !== filters.year) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >      if (filters.quarter &amp;&amp; filters.quarter !== 'all' &amp;&amp; String(row['quarter']) !== filters.quarter) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >      if (filters.election &amp;&amp; filters.election !== 'all') {</span>
+        const isElection = <span class="cstat-no" title="statement not covered" >row['is_election_year'] === 't' || row['is_election_year'] === 'true';</span>
+<span class="cstat-no" title="statement not covered" >        if (filters.election === 'election' &amp;&amp; !isElection) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >        if (filters.election === 'non-election' &amp;&amp; isElection) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (filters.classification &amp;&amp; filters.classification !== 'all') {</span>
+<span class="cstat-no" title="statement not covered" >        if (row['base_activity_classification'] !== filters.classification &amp;&amp; row['seasonal_pattern_classification'] !== filters.classification) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+      }
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    });
+  }
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >mean(a</span>rr: number[]): number { <span class="cstat-no" title="statement not covered" >if (arr.length === 0) <span class="cstat-no" title="statement not covered" >return 0; <span class="cstat-no" title="statement not covered" >r</span></span>eturn arr.reduce(<span class="fstat-no" title="function not covered" >(s</span>, v) =&gt; <span class="cstat-no" title="statement not covered" >s + v, 0</span>) / arr.length; }</span>
+function <span class="fstat-no" title="function not covered" >stddev(a</span>rr: number[]): number { <span class="cstat-no" title="statement not covered" >if (arr.length === 0) <span class="cstat-no" title="statement not covered" >return 0; c</span></span>onst avg = <span class="cstat-no" title="statement not covered" >mean(arr); <span class="cstat-no" title="statement not covered" >r</span>eturn Math.sqrt(mean(arr.map(<span class="fstat-no" title="function not covered" >v =&gt; <span class="cstat-no" title="statement not covered" >M</span>ath.pow(v - avg, 2))</span>)); }</span>
+&nbsp;
+// ============================================================================
+// CHART RENDERER
+// ============================================================================
+&nbsp;
+class SeasonalPatternsCharts {
+<span class="cstat-no" title="statement not covered" >  private chartInstances: Record&lt;string, any&gt; = {};</span>
+  private translations: SeasonalTranslations;
+  private dataManager: SeasonalPatternsDataManager;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(d</span>ataManager: SeasonalPatternsDataManager, language: string = <span class="branch-0 cbranch-no" title="branch not covered" >'en') {</span>
+<span class="cstat-no" title="statement not covered" >    this.dataManager = dataManager;</span>
+<span class="cstat-no" title="statement not covered" >    this.translations = TRANSLATIONS[language] || TRANSLATIONS['en'];</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  destroyCharts(): void {</span>
+<span class="cstat-no" title="statement not covered" >    Object.keys(this.chartInstances).forEach(<span class="fstat-no" title="function not covered" >key =&gt; {</span> <span class="cstat-no" title="statement not covered" >if (this.chartInstances[key]) { <span class="cstat-no" title="statement not covered" >this.chartInstances[key].destroy(); <span class="cstat-no" title="statement not covered" >d</span>elete this.chartInstances[key]; }</span> }</span>);</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >renderAll(f</span>ilteredData: CSVRow[] | null = <span class="branch-0 cbranch-no" title="branch not covered" >null): Promise&lt;void&gt; {</span>
+    const data = <span class="cstat-no" title="statement not covered" >filteredData || this.dataManager.data;</span>
+<span class="cstat-no" title="statement not covered" >    if (!data || data.length === 0) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >    this.destroyCharts();</span>
+<span class="cstat-no" title="statement not covered" >    this.renderSeasonalHeatmap(data);</span>
+<span class="cstat-no" title="statement not covered" >    this.renderZScoreTimeline(data);</span>
+<span class="cstat-no" title="statement not covered" >    this.renderQuarterComparison(data);</span>
+<span class="cstat-no" title="statement not covered" >    this.renderClassificationChart(data);</span>
+<span class="cstat-no" title="statement not covered" >    this.renderQoQChangeChart(data);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  renderSeasonalHeatmap(d</span>ata: CSVRow[]): void {
+    const container = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonal-heatmap');</span>
+<span class="cstat-no" title="statement not covered" >    if (!container || typeof d3 === 'undefined') <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >    container.innerHTML = '';</span>
+&nbsp;
+    const margin = <span class="cstat-no" title="statement not covered" >{ top: 40, right: 100, bottom: 60, left: 60 };</span>
+    const width = <span class="cstat-no" title="statement not covered" >Math.min(container.clientWidth, 1200) - margin.left - margin.right;</span>
+    const height = <span class="cstat-no" title="statement not covered" >600 - margin.top - margin.bottom;</span>
+&nbsp;
+    const svg = <span class="cstat-no" title="statement not covered" >d3.select(container).append('svg').attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom).attr('role', 'img').attr('aria-label', this.translations.charts.heatmap.title).append('g').attr('transform', `translate(${margin.left},${margin.top})`);</span>
+    const years = <span class="cstat-no" title="statement not covered" >Array.from(new Set(data.map(<span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >d['year'])</span>)).sort();</span>
+    const quarters = <span class="cstat-no" title="statement not covered" >[1, 2, 3, 4];</span>
+    const xScale = <span class="cstat-no" title="statement not covered" >d3.scaleBand().domain(quarters).range([0, width]).padding(0.05);</span>
+    const yScale = <span class="cstat-no" title="statement not covered" >d3.scaleBand().domain(years).range([0, height]).padding(0.05);</span>
+    const maxBallots = <span class="cstat-no" title="statement not covered" >d3.max(data, <span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >Number(d['total_ballots']) || 0)</span> as number;</span>
+    const colorScale = <span class="cstat-no" title="statement not covered" >d3.scaleSequential().domain([0, maxBallots]).interpolator(d3.interpolateYlOrRd);</span>
+&nbsp;
+    const t = <span class="cstat-no" title="statement not covered" >this.translations;</span>
+<span class="cstat-no" title="statement not covered" >    svg.selectAll('.cell').data(data).enter().append('rect').attr('class', 'cell')</span>
+      .attr('x', <span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >xScale(d['quarter']))</span>.attr('y', <span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >yScale(d['year']))</span>
+      .attr('width', xScale.bandwidth()).attr('height', yScale.bandwidth())
+      .attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(Number(d['total_ballots']) || 0))</span>.attr('stroke', '#fff').attr('stroke-width', 1)
+      .append('title').text(<span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; {
+        const classText = <span class="cstat-no" title="statement not covered" >t.classifications[d['seasonal_pattern_classification'] as string] || t.classifications[d['base_activity_classification'] as string] || d['seasonal_pattern_classification'] || t.tooltips.na;</span>
+<span class="cstat-no" title="statement not covered" >        return `${d['year']} Q${d['quarter']}\n${t.tooltips.ballots}: ${d['total_ballots']}\n${t.tooltips.zScore}: ${(Number(d['ballot_z_score']) || 0).toFixed(2)}\n${t.tooltips.classification}: ${classText}`;</span>
+      });
+&nbsp;
+    const anomalies = <span class="cstat-no" title="statement not covered" >data.filter(<span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >Math.abs(Number(d['ballot_z_score']) || 0) &gt;= CONFIG.zScoreThreshold)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    svg.selectAll('.anomaly-marker').data(anomalies).enter().append('circle').attr('class', 'anomaly-marker')</span>
+      .attr('cx', <span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >xScale(d['quarter']) + xScale.bandwidth() / 2)</span>.attr('cy', <span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >yScale(d['year']) + yScale.bandwidth() / 2)</span>
+      .attr('r', 8).attr('fill', CONFIG.colors.danger).attr('stroke', '#fff').attr('stroke-width', 2)
+      .append('title').text(<span class="fstat-no" title="function not covered" >(d</span>: CSVRow) =&gt; <span class="cstat-no" title="statement not covered" >`${t.tooltips.anomaly}: ${d['year']} Q${d['quarter']}\n${t.tooltips.zScore}: ${(Number(d['ballot_z_score']) || 0).toFixed(2)}`)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    svg.append('g').attr('transform', `translate(0,${height})`).call(d3.axisBottom(xScale).tickFormat(<span class="fstat-no" title="function not covered" >(q</span>: number) =&gt; <span class="cstat-no" title="statement not covered" >`Q${q}`)</span>);</span>
+<span class="cstat-no" title="statement not covered" >    svg.append('g').call(d3.axisLeft(yScale));</span>
+<span class="cstat-no" title="statement not covered" >    svg.append('text').attr('x', width / 2).attr('y', height + 40).attr('text-anchor', 'middle').text(t.filters?.quarter || 'Quarter').style('font-size', '14px');</span>
+<span class="cstat-no" title="statement not covered" >    svg.append('text').attr('transform', 'rotate(-90)').attr('x', -height / 2).attr('y', -40).attr('text-anchor', 'middle').text(t.filters?.year || 'Year').style('font-size', '14px');</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  renderZScoreTimeline(d</span>ata: CSVRow[]): void {
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('zscore-timeline-chart') as HTMLCanvasElement | null;</span>
+<span class="cstat-no" title="statement not covered" >    if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
+    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
+    const t = <span class="cstat-no" title="statement not covered" >this.translations.chartLabels;</span>
+    const sortedData = <span class="cstat-no" title="statement not covered" >[...data].sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; { <span class="cstat-no" title="statement not covered" >if (a['year'] !== b['year']) <span class="cstat-no" title="statement not covered" >return Number(a['year']) - Number(b['year']); <span class="cstat-no" title="statement not covered" >r</span></span>eturn Number(a['quarter']) - Number(b['quarter']); }</span>);</span>
+    const labels = <span class="cstat-no" title="statement not covered" >sortedData.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>${d['year']}-Q${d['quarter']}`)</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.chartInstances['zscore'] = new Chart(ctx, {</span>
+      type: 'line', data: { labels, datasets: [
+        { label: t.ballotZScore, data: sortedData.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >N</span>umber(d['ballot_z_score']) || 0)</span>, borderColor: CONFIG.colors.primary, backgroundColor: CONFIG.colors.primary + '40', borderWidth: 2, pointRadius: 3, tension: 0.1 },
+        { label: t.documentZScore, data: sortedData.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >N</span>umber(d['doc_z_score']) || 0)</span>, borderColor: CONFIG.colors.secondary, backgroundColor: CONFIG.colors.secondary + '40', borderWidth: 2, pointRadius: 3, tension: 0.1 },
+        { label: t.attendanceZScore, data: sortedData.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >N</span>umber(d['attendance_z_score']) || 0)</span>, borderColor: CONFIG.colors.tertiary, backgroundColor: CONFIG.colors.tertiary + '40', borderWidth: 2, pointRadius: 3, tension: 0.1 }
+      ] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; { let label = <span class="cstat-no" title="statement not covered" >context.dataset.label || ''; <span class="cstat-no" title="statement not covered" >i</span>f (label) <span class="cstat-no" title="statement not covered" >label += ': '; <span class="cstat-no" title="statement not covered" >l</span></span>abel += context.parsed.y.toFixed(2); <span class="cstat-no" title="statement not covered" >i</span>f (Math.abs(context.parsed.y) &gt;= CONFIG.zScoreThreshold) <span class="cstat-no" title="statement not covered" >label += ' 🔴 ' + t.anomaly; <span class="cstat-no" title="statement not covered" >r</span></span>eturn label; }</span> } } }, scales: { x: { title: { display: true, text: t.yearQuarter }, ticks: { maxRotation: 90, minRotation: 45, autoSkip: true, maxTicksLimit: 20 } }, y: { title: { display: true, text: t.zScore }, min: -4, max: 4 } } }
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  renderQuarterComparison(d</span>ata: CSVRow[]): void {
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('quarter-comparison-chart') as HTMLCanvasElement | null;</span>
+<span class="cstat-no" title="statement not covered" >    if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
+    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
+    const aggregated = <span class="cstat-no" title="statement not covered" >this.aggregateDataByQuarter(data);</span>
+<span class="cstat-no" title="statement not covered" >    if (!aggregated) <span class="cstat-no" title="statement not covered" >return;</span></span>
+    const labels = <span class="cstat-no" title="statement not covered" >['Q1', 'Q2', 'Q3', 'Q4'];</span>
+    const avgBallots = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >q =&gt; <span class="cstat-no" title="statement not covered" >a</span>ggregated[q]?.avgBallots || 0)</span>;</span>
+    const stddevBallots = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >q =&gt; <span class="cstat-no" title="statement not covered" >a</span>ggregated[q]?.stddevBallots || 0)</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.chartInstances['comparison'] = new Chart(ctx, {</span>
+      type: 'bar', data: { labels: labels.map(<span class="fstat-no" title="function not covered" >q =&gt; <span class="cstat-no" title="statement not covered" >t</span>his.translations.quarters[q] || q)</span>, datasets: [{ label: this.translations.charts?.comparison?.title || 'Average Ballots', data: avgBallots, backgroundColor: labels.map(<span class="fstat-no" title="function not covered" >q =&gt; <span class="cstat-no" title="statement not covered" >C</span>ONFIG.quarterColors[q])</span>, borderColor: labels.map(<span class="fstat-no" title="function not covered" >q =&gt; <span class="cstat-no" title="statement not covered" >C</span>ONFIG.quarterColors[q])</span>, borderWidth: 2 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >[`Average: ${context.parsed.y.toFixed(1)} ballots`, `Std Dev: ±${stddevBallots[context.dataIndex].toFixed(1)}`] }</span> } }, scales: { x: { title: { display: true, text: this.translations.chartLabels.quarter } }, y: { title: { display: true, text: this.translations.chartLabels.averageBallots }, beginAtZero: true } } }
+    });
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >aggregateDataByQuarter(d</span>ata: CSVRow[]): Record&lt;string, QuarterAggregate&gt; | null {
+<span class="cstat-no" title="statement not covered" >    if (!data) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+    const quarters: Record&lt;string, CSVRow[]&gt; = <span class="cstat-no" title="statement not covered" >{ Q1: [], Q2: [], Q3: [], Q4: [] };</span>
+<span class="cstat-no" title="statement not covered" >    data.forEach(<span class="fstat-no" title="function not covered" >row =&gt; {</span> const q = <span class="cstat-no" title="statement not covered" >`Q${row['quarter']}`; <span class="cstat-no" title="statement not covered" >i</span>f (quarters[q]) <span class="cstat-no" title="statement not covered" >quarters[q].push(row); }</span></span>);</span>
+    const aggregated: Record&lt;string, QuarterAggregate&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >    Object.keys(quarters).forEach(<span class="fstat-no" title="function not covered" >q =&gt; {</span></span>
+      const records = <span class="cstat-no" title="statement not covered" >quarters[q]; <span class="cstat-no" title="statement not covered" >i</span>f (records.length === 0) <span class="cstat-no" title="statement not covered" >return;</span></span>
+      const ballots = <span class="cstat-no" title="statement not covered" >records.map(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >N</span>umber(r['total_ballots']) || 0)</span>;</span>
+<span class="cstat-no" title="statement not covered" >      aggregated[q] = { quarter: q, avgBallots: mean(ballots), stddevBallots: stddev(ballots), avgAttendance: 0, stddevAttendance: 0, avgDocs: 0, stddevDocs: 0, count: records.length };</span>
+    });
+<span class="cstat-no" title="statement not covered" >    return aggregated;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  renderClassificationChart(d</span>ata: CSVRow[]): void {
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('classification-chart') as HTMLCanvasElement | null;</span>
+<span class="cstat-no" title="statement not covered" >    if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
+    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
+    const years = <span class="cstat-no" title="statement not covered" >Array.from(new Set(data.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >d</span>['year'])</span>)).sort();</span>
+    const classifications: Record&lt;string, Record&lt;string, number&gt;&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >    data.forEach(<span class="fstat-no" title="function not covered" >row =&gt; {</span></span>
+      const classification = <span class="cstat-no" title="statement not covered" >row['seasonal_pattern_classification'] || 'UNKNOWN';</span>
+<span class="cstat-no" title="statement not covered" >      if (!classifications[classification]) <span class="cstat-no" title="statement not covered" >classifications[classification] = {};</span></span>
+<span class="cstat-no" title="statement not covered" >      if (!classifications[classification][row['year']]) <span class="cstat-no" title="statement not covered" >classifications[classification][row['year']] = 0;</span></span>
+<span class="cstat-no" title="statement not covered" >      classifications[classification][row['year']]++;</span>
+    });
+    const datasets = <span class="cstat-no" title="statement not covered" >Object.keys(classifications).map(<span class="fstat-no" title="function not covered" >classification =&gt; {</span></span>
+      const counts = <span class="cstat-no" title="statement not covered" >years.map(<span class="fstat-no" title="function not covered" >year =&gt; <span class="cstat-no" title="statement not covered" >c</span>lassifications[classification][year] || 0)</span>;</span>
+      let color = <span class="cstat-no" title="statement not covered" >CONFIG.colors.info;</span>
+<span class="cstat-no" title="statement not covered" >      if (classification.includes('NORMAL')) <span class="cstat-no" title="statement not covered" >color = CONFIG.colors.<span class="cstat-no" title="statement not covered" >normal;</span></span></span>
+      else if (classification.includes('ELEVATED') || classification.includes('HIGH')) <span class="cstat-no" title="statement not covered" >color = CONFIG.colors.<span class="cstat-no" title="statement not covered" >elevated;</span></span>
+      else if (classification.includes('REDUCED') || classification.includes('LOW')) <span class="cstat-no" title="statement not covered" >color = CONFIG.colors.<span class="cstat-no" title="statement not covered" >reduced;</span></span>
+      else if (classification.includes('ANOMALY')) <span class="cstat-no" title="statement not covered" >color = CONFIG.colors.anomaly;</span>
+<span class="cstat-no" title="statement not covered" >      return { label: this.translations.classifications[classification] || classification, data: counts, backgroundColor: color, borderColor: color, borderWidth: 1 };</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.chartInstances['classification'] = new Chart(ctx, {</span>
+      type: 'bar', data: { labels: years, datasets },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' }, tooltip: { mode: 'index', intersect: false } }, scales: { x: { stacked: true, title: { display: true, text: this.translations.chartLabels.year } }, y: { stacked: true, title: { display: true, text: this.translations.chartLabels.count }, beginAtZero: true } } }
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  renderQoQChangeChart(d</span>ata: CSVRow[]): void {
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('qoq-change-chart') as HTMLCanvasElement | null;</span>
+<span class="cstat-no" title="statement not covered" >    if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
+    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
+    const sortedData = <span class="cstat-no" title="statement not covered" >[...data].filter(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >d</span>['qoq_ballot_change_pct'] !== null &amp;&amp; d['qoq_ballot_change_pct'] !== undefined)</span>.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; { <span class="cstat-no" title="statement not covered" >if (a['year'] !== b['year']) <span class="cstat-no" title="statement not covered" >return Number(a['year']) - Number(b['year']); <span class="cstat-no" title="statement not covered" >r</span></span>eturn Number(a['quarter']) - Number(b['quarter']); }</span>);</span>
+    const labels = <span class="cstat-no" title="statement not covered" >sortedData.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>${d['year']}-Q${d['quarter']}`)</span>;</span>
+    const changes = <span class="cstat-no" title="statement not covered" >sortedData.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >N</span>umber(d['qoq_ballot_change_pct']) || 0)</span>;</span>
+    const colors = <span class="cstat-no" title="statement not covered" >changes.map(<span class="fstat-no" title="function not covered" >change =&gt; <span class="cstat-no" title="statement not covered" >c</span>hange &gt; 0 ? CONFIG.colors.success : change &lt; 0 ? CONFIG.colors.danger : CONFIG.colors.info)</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.chartInstances['qoq'] = new Chart(ctx, {</span>
+      type: 'bar', data: { labels, datasets: [{ label: this.translations.chartLabels.qoqChange, data: changes, backgroundColor: colors, borderColor: colors, borderWidth: 1 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`Change: ${context.parsed.y.toFixed(2)}%` }</span> } }, scales: { x: { title: { display: true, text: this.translations.chartLabels.yearQuarter }, ticks: { maxRotation: 90, minRotation: 45, autoSkip: true, maxTicksLimit: 20 } }, y: { title: { display: true, text: this.translations.chartLabels.changePercent } } } }
+    });
+  }
+}
+&nbsp;
+// ============================================================================
+// DASHBOARD CONTROLLER
+// ============================================================================
+&nbsp;
+class SeasonalPatternsDashboard {
+<span class="cstat-no" title="statement not covered" >  private dataManager = new SeasonalPatternsDataManager();</span>
+<span class="cstat-no" title="statement not covered" >  private chartRenderer: SeasonalPatternsCharts | null = null;</span>
+  private currentLanguage: string;
+  private translations: SeasonalTranslations;
+<span class="cstat-no" title="statement not covered" >  private currentFilters: SeasonalFilters = { year: 'all', quarter: 'all', election: 'all', classification: 'all' };</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor() {</span>
+<span class="cstat-no" title="statement not covered" >    this.currentLanguage = detectLanguage();</span>
+<span class="cstat-no" title="statement not covered" >    this.translations = TRANSLATIONS[this.currentLanguage] || TRANSLATIONS['en'];</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.translations.tooltips) <span class="cstat-no" title="statement not covered" >this.translations.tooltips = TRANSLATIONS['en'].tooltips;</span></span>
+<span class="cstat-no" title="statement not covered" >    if (!this.translations.chartLabels) <span class="cstat-no" title="statement not covered" >this.translations.chartLabels = TRANSLATIONS['en'].chartLabels;</span></span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >initialize(): Promise&lt;void&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      this.showLoading();</span>
+<span class="cstat-no" title="statement not covered" >      await this.dataManager.fetchData();</span>
+      const dash = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonal-patterns-dashboard');</span>
+<span class="cstat-no" title="statement not covered" >      if (dash) { <span class="cstat-no" title="statement not covered" >showDataSourceDisclaimer(dash, 'live'); }</span></span>
+<span class="cstat-no" title="statement not covered" >      this.chartRenderer = new SeasonalPatternsCharts(this.dataManager, this.currentLanguage);</span>
+<span class="cstat-no" title="statement not covered" >      this.setupFilters();</span>
+<span class="cstat-no" title="statement not covered" >      await this.chartRenderer.renderAll();</span>
+<span class="cstat-no" title="statement not covered" >      this.hideLoading();</span>
+<span class="cstat-no" title="statement not covered" >      logger.info('Seasonal Patterns Dashboard initialized successfully');</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      logger.error('Error initializing dashboard:', error);</span>
+<span class="cstat-no" title="statement not covered" >      this.showError();</span>
+    }
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >setupFilters(): void {</span>
+    const yearFilter = <span class="cstat-no" title="statement not covered" >document.getElementById('year-filter') as HTMLSelectElement | null;</span>
+    const quarterFilter = <span class="cstat-no" title="statement not covered" >document.getElementById('quarter-filter') as HTMLSelectElement | null;</span>
+    const electionFilter = <span class="cstat-no" title="statement not covered" >document.getElementById('election-filter') as HTMLSelectElement | null;</span>
+    const classificationFilter = <span class="cstat-no" title="statement not covered" >document.getElementById('classification-filter') as HTMLSelectElement | null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (yearFilter) {</span>
+<span class="cstat-no" title="statement not covered" >      yearFilter.addEventListener('change', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; { <span class="cstat-no" title="statement not covered" >this.currentFilters.year = (e.target as HTMLSelectElement).value; <span class="cstat-no" title="statement not covered" >t</span>his.applyFilters(); }</span>);</span>
+      const years = <span class="cstat-no" title="statement not covered" >Array.from(new Set(this.dataManager.data!.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >d</span>['year'])</span>)).sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >Number(b) - Number(a))</span>;</span>
+<span class="cstat-no" title="statement not covered" >      years.forEach(<span class="fstat-no" title="function not covered" >year =&gt; {</span> const o = <span class="cstat-no" title="statement not covered" >document.createElement('option'); <span class="cstat-no" title="statement not covered" >o</span>.value = String(year); <span class="cstat-no" title="statement not covered" >o</span>.textContent = String(year); <span class="cstat-no" title="statement not covered" >y</span>earFilter.appendChild(o); }</span>);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (quarterFilter) { <span class="cstat-no" title="statement not covered" >quarterFilter.addEventListener('change', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; { <span class="cstat-no" title="statement not covered" >this.currentFilters.quarter = (e.target as HTMLSelectElement).value; <span class="cstat-no" title="statement not covered" >t</span>his.applyFilters(); }</span>); }</span></span>
+<span class="cstat-no" title="statement not covered" >    if (electionFilter) { <span class="cstat-no" title="statement not covered" >electionFilter.addEventListener('change', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; { <span class="cstat-no" title="statement not covered" >this.currentFilters.election = (e.target as HTMLSelectElement).value; <span class="cstat-no" title="statement not covered" >t</span>his.applyFilters(); }</span>); }</span></span>
+<span class="cstat-no" title="statement not covered" >    if (classificationFilter) {</span>
+<span class="cstat-no" title="statement not covered" >      classificationFilter.addEventListener('change', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; { <span class="cstat-no" title="statement not covered" >this.currentFilters.classification = (e.target as HTMLSelectElement).value; <span class="cstat-no" title="statement not covered" >t</span>his.applyFilters(); }</span>);</span>
+      const classificationSet = <span class="cstat-no" title="statement not covered" >new Set&lt;string&gt;();</span>
+<span class="cstat-no" title="statement not covered" >      this.dataManager.data!.forEach(<span class="fstat-no" title="function not covered" >d =&gt; {</span> <span class="cstat-no" title="statement not covered" >if (d['seasonal_pattern_classification']) <span class="cstat-no" title="statement not covered" >classificationSet.add(d['seasonal_pattern_classification'] as string); <span class="cstat-no" title="statement not covered" >i</span></span>f (d['base_activity_classification']) <span class="cstat-no" title="statement not covered" >classificationSet.add(d['base_activity_classification'] as string); }</span></span>);</span>
+<span class="cstat-no" title="statement not covered" >      Array.from(classificationSet).sort().forEach(<span class="fstat-no" title="function not covered" >classification =&gt; {</span></span>
+        const o = <span class="cstat-no" title="statement not covered" >document.createElement('option'); <span class="cstat-no" title="statement not covered" >o</span>.value = classification;</span>
+<span class="cstat-no" title="statement not covered" >        o.textContent = this.translations.classifications?.[classification] || TRANSLATIONS['en']?.classifications?.[classification] || classification;</span>
+<span class="cstat-no" title="statement not covered" >        classificationFilter.appendChild(o);</span>
+      });
+    }
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >applyFilters(): Promise&lt;void&gt; {</span>
+    const filteredData = <span class="cstat-no" title="statement not covered" >this.dataManager.filterData(this.currentFilters);</span>
+<span class="cstat-no" title="statement not covered" >    await this.chartRenderer!.renderAll(filteredData);</span>
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >showLoading(): void {</span>
+    const container = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonal-patterns-dashboard');</span>
+<span class="cstat-no" title="statement not covered" >    if (container) { <span class="cstat-no" title="statement not covered" >container.classList.add('loading'); <span class="cstat-no" title="statement not covered" >c</span>ontainer.setAttribute('aria-busy', 'true'); }</span></span>
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >hideLoading(): void {</span>
+    const container = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonal-patterns-dashboard');</span>
+<span class="cstat-no" title="statement not covered" >    if (container) { <span class="cstat-no" title="statement not covered" >container.classList.remove('loading'); <span class="cstat-no" title="statement not covered" >c</span>ontainer.removeAttribute('aria-busy'); }</span></span>
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >showError(): void {</span>
+    const container = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonal-patterns-dashboard');</span>
+<span class="cstat-no" title="statement not covered" >    if (container) {</span>
+<span class="cstat-no" title="statement not covered" >      while (container.firstChild) <span class="cstat-no" title="statement not covered" >container.removeChild(container.firstChild);</span></span>
+      const errorWrapper = <span class="cstat-no" title="statement not covered" >document.createElement('div'); <span class="cstat-no" title="statement not covered" >e</span>rrorWrapper.className = 'error-message'; <span class="cstat-no" title="statement not covered" >e</span>rrorWrapper.setAttribute('role', 'alert');</span>
+      const errorText = <span class="cstat-no" title="statement not covered" >document.createElement('p'); <span class="cstat-no" title="statement not covered" >e</span>rrorText.textContent = `⚠️ ${this.translations.error || TRANSLATIONS['en'].error}`;</span>
+<span class="cstat-no" title="statement not covered" >      errorWrapper.appendChild(errorText); <span class="cstat-no" title="statement not covered" >c</span>ontainer.appendChild(errorWrapper);</span>
+    }
+  }
+}
+&nbsp;
+// ============================================================================
+// EXPORTED INIT
+// ============================================================================
+&nbsp;
+export async function <span class="fstat-no" title="function not covered" >init(): Promise&lt;void&gt; {</span>
+  const dashboardContainer = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonal-patterns-dashboard');</span>
+<span class="cstat-no" title="statement not covered" >  if (dashboardContainer) {</span>
+    const dashboard = <span class="cstat-no" title="statement not covered" >new SeasonalPatternsDashboard();</span>
+<span class="cstat-no" title="statement not covered" >    await dashboard.initialize();</span>
+  }
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-02-22T19:03:57.370Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    
