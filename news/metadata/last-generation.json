@@ -131,5 +131,5 @@
     "2026-02-22-weekly-review-zh.html"
   ],
   "status": "merged-complete",
-  "note": "Merged: weekly-review, week-ahead, committee-reports, propositions, motions + weekend-security-preparedness from main"
+  "note": "Merged: weekly-review, week-ahead, committee-reports, propositions, motions + weekend-security-preparedness from main. Merge conflicts resolved via -X ours strategy."
 }
