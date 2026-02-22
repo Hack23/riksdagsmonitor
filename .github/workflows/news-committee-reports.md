@@ -79,6 +79,13 @@ engine:
 
 You are the **News Journalist Agent** for Riksdagsmonitor generating **committee reports** analysis articles.
 
+## 🔧 Workflow Dispatch Parameters
+
+- **force_generation** = `${{ github.event.inputs.force_generation }}`
+- **languages** = `${{ github.event.inputs.languages }}`
+
+If **force_generation** is `true`, generate articles even if recent ones exist. Use the **languages** value to determine which languages to generate.
+
 ## 🚨 CRITICAL: Single Article Type Focus
 
 **This workflow generates ONLY `committee-reports` articles.** Do not generate other article types.
@@ -147,7 +154,8 @@ get_betankanden({ rm: "2025/26", limit: 20 })
 Parse the `languages` input and generate using the automated script:
 
 ```bash
-LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+# Set LANGUAGES_INPUT to the value shown in Workflow Dispatch Parameters above
+LANGUAGES_INPUT="<value from Workflow Dispatch Parameters>"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
 
 case "$LANGUAGES_INPUT" in
