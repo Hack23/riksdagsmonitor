@@ -645,7 +645,7 @@
         // Show tooltip
         showTooltip(event, `Coalition Strength: ${(d.strength * 100).toFixed(0)}%`);
       })
-      .on('mouseout', function(event, d) {
+      .on('mouseout', function(_event, _d) {
         d3.select(this)
           .attr('stroke', '#999')
           .attr('stroke-width', d => Math.sqrt(d.strength * 10));
@@ -706,7 +706,7 @@
       
       showTooltip(event, `${d.fullName}<br>Influence: ${d.influence.toFixed(1)}`);
     })
-    .on('mouseout', function(event, d) {
+    .on('mouseout', function(_event, _d) {
       d3.select(this).select('circle')
         .attr('stroke-width', 2)
         .attr('stroke', '#fff');

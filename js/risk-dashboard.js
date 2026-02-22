@@ -236,7 +236,7 @@
       const lastName = politician.last_name || 'Unknown';
       const party = politician.party || 'IND';
       const riskScore = parseFloat(politician.risk_score) || 0;
-      const riskLevel = politician.risk_level || classifyRiskLevel(riskScore);
+      const _riskLevel = politician.risk_level || classifyRiskLevel(riskScore);
       
       // Create risk matrix entries for each rule
       // Use actual risk score as base, with slight variations per rule

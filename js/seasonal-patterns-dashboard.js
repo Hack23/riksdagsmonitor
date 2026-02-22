@@ -918,7 +918,7 @@
         .attr('stroke', '#fff')
         .attr('stroke-width', 1)
         .attr('role', 'presentation')
-        .on('mouseover', function(event, d) {
+        .on('mouseover', function(_event, _d) {
           // Tooltip
           d3.select(this).attr('stroke', '#000').attr('stroke-width', 2);
         })

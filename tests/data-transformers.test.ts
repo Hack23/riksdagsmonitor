@@ -70,6 +70,7 @@ interface MockArticlePayload {
     documentType?: string;
     dokumentnamn?: string;
     dok_id?: string;
+    organ?: string;
   }>;
 }
 

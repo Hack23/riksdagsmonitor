@@ -235,7 +235,7 @@ class CIATypeGenerator {
     try {
       const files = await fs.readdir(this.schemasDir);
       schemaFiles = files.filter(f => f.endsWith('.schema.json'));
-    } catch (error) {
+    } catch (_error) {
       console.error('❌ Could not read schemas directory');
       console.error('   Run "npm run sync-schemas" first to download schemas');
       return 1;

@@ -221,7 +221,7 @@ const checks = {
     return count >= 14; // Should have at least 14 (one for each language)
   },
   
-  hasOgLocale: (content, lang) => {
+  hasOgLocale: (content, _lang) => {
     // Check for Open Graph locale
     return content.includes(`<meta property="og:locale" content="`);
   },

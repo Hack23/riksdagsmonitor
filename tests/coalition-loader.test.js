@@ -454,7 +454,7 @@ MP,t`;
       try {
         const cached = localStorage.getItem(cacheKey);
         data = JSON.parse(cached);
-      } catch (_e) {
+      } catch (_err) {
         // Handle error
         data = null;
       }
@@ -843,7 +843,7 @@ MP,t`;
 
       try {
         await fetchWithRetry();
-      } catch (e) {
+      } catch (_e) {
         // Expected to fail after 4 attempts (initial + 3 retries)
       }
 

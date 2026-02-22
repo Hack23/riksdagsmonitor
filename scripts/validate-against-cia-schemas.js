@@ -202,7 +202,7 @@ class CIASchemaValidator {
     // Check if data directory exists
     try {
       await fs.access(this.dataDir);
-    } catch (error) {
+    } catch (_error) {
       console.log('⚠️  No data directory found - skipping validation');
       console.log('   Data will be validated when exports are available');
       return 0;
@@ -213,7 +213,7 @@ class CIASchemaValidator {
     try {
       const files = await fs.readdir(this.dataDir);
       exportFiles = files.filter(f => f.endsWith('.json'));
-    } catch (error) {
+    } catch (_error) {
       console.log('⚠️  Could not read data directory - skipping validation');
       return 0;
     }

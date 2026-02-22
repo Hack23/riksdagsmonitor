@@ -373,7 +373,7 @@
         console.warn('[DataManager] Cache read failed:', error);
         try {
           localStorage.removeItem(cacheKey);
-        } catch (e) {
+        } catch (_e) {
           // Ignore if removal also fails
         }
         return null;
@@ -760,10 +760,10 @@
         .attr('tabindex', '0')
         .attr('role', 'button')
         .attr('aria-label', d => `${d.committee} in ${d.year}: ${d.value.toFixed(1)} productivity`)
-        .on('mouseover', function(event, d) {
+        .on('mouseover', function(_event, _d) {
           d3.select(this).attr('stroke', 'var(--accent-color)').attr('stroke-width', 2);
         })
-        .on('mouseout', function(event, d) {
+        .on('mouseout', function(_event, _d) {
           d3.select(this).attr('stroke', 'var(--card-bg)').attr('stroke-width', 1);
         })
         .append('title')
