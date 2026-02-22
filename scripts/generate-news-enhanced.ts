@@ -244,7 +244,7 @@ const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? 
 // Valid article types
 // ---------------------------------------------------------------------------
 
-const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'committee-reports', 'propositions', 'motions', 'breaking'];
+const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking'];
 
 const articleTypes: string[] = typesArg
   ? (typesArg.split('=')[1] ?? '').split(',').map(t => t.trim())
