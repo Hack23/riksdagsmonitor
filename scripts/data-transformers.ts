@@ -1607,7 +1607,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   }
 
   // Analytical lede paragraph
-  const breakdownFn = L(lang, 'propsBreakdown');
+  const breakdownFn = L(lang, 'propsBreakdown') as string | ((n: number) => string);
   const breakdownText = typeof breakdownFn === 'function'
     ? breakdownFn(propositions.length)
     : `${propositions.length} new government propositions submitted.`;
@@ -1688,7 +1688,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   }
 
   // Analytical lede paragraph
-  const breakdownFn = L(lang, 'motionsBreakdown');
+  const breakdownFn = L(lang, 'motionsBreakdown') as string | ((n: number) => string);
   const breakdownText = typeof breakdownFn === 'function'
     ? breakdownFn(motions.length)
     : `${motions.length} new opposition motions filed.`;
@@ -1762,7 +1762,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
         const detail = typeof detailFn === 'function'
           ? detailFn(party, partyMotions.length)
           : `${party}: ${partyMotions.length} motions filed`;
-        content += `        <li><strong>${escapeHtml(party)}</strong> — ${escapeHtml(String(detail))}</li>\n`;
+        content += `        <li>${escapeHtml(String(detail))}</li>\n`;
       }
     });
     content += `      </ul>\n    </div>\n`;
@@ -1906,7 +1906,7 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
 /**
  * Get localized label with fallback to English
  */
-export function L(lang: Language | string, key: string): string | ((n: number) => string) {
+export function L(lang: Language | string, key: string): ContentLabelSet[keyof ContentLabelSet] {
   const langLabels = CONTENT_LABELS[lang as Language];
   const value = langLabels?.[key as keyof ContentLabelSet];
   if (value !== undefined) return value;
@@ -2047,7 +2047,7 @@ export function extractWatchPoints(data: ArticleContentData, lang: Language = 'e
   // From committee reports
   if (data.reports && data.reports.length > 0) {
     const debatesVal = L(lang, 'committeeDebates');
-    const debatesDescFn = L(lang, 'committeeDebatesDesc');
+    const debatesDescFn = L(lang, 'committeeDebatesDesc') as string | ((n: number) => string);
     watchPoints.push({
       title: typeof debatesVal === 'string' ? debatesVal : '',
       description: typeof debatesDescFn === 'function' ? debatesDescFn(data.reports.length) : ''
@@ -2057,7 +2057,7 @@ export function extractWatchPoints(data: ArticleContentData, lang: Language = 'e
   // From propositions
   if (data.propositions && data.propositions.length > 0) {
     const proposalsVal = L(lang, 'govProposals');
-    const proposalsDescFn = L(lang, 'govProposalsDesc');
+    const proposalsDescFn = L(lang, 'govProposalsDesc') as string | ((n: number) => string);
     watchPoints.push({
       title: typeof proposalsVal === 'string' ? proposalsVal : '',
       description: typeof proposalsDescFn === 'function' ? proposalsDescFn(data.propositions.length) : ''

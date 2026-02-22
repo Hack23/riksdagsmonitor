@@ -48,9 +48,11 @@ interface MockArticlePayload {
     titel?: string;
     title?: string;
     url?: string;
+    organ?: string;
     dokumentnamn?: string;
     dok_id?: string;
   }>;
+
   motions?: Array<{
     titel?: string;
     title?: string;
@@ -64,6 +66,8 @@ interface MockArticlePayload {
     titel?: string;
     title?: string;
     url?: string;
+    doktyp?: string;
+    documentType?: string;
     dokumentnamn?: string;
     dok_id?: string;
   }>;
@@ -1011,7 +1015,7 @@ describe('Data Transformers', () => {
         it(`should have ${key} label for ${lang}`, () => {
           const labels = CONTENT_LABELS[lang];
           expect(labels).toBeDefined();
-          expect((labels as Record<string, unknown>)[key]).toBeDefined();
+          expect((labels as unknown as Record<string, unknown>)[key]).toBeDefined();
         });
       });
     });
