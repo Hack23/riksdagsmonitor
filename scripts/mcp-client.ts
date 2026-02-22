@@ -7,6 +7,8 @@
  * @license Apache-2.0
  */
 
+import { request as httpsRequest } from 'https';
+import { URL } from 'url';
 import type {
   MCPClientConfig,
   MCPStats,
@@ -19,6 +21,115 @@ import type {
   GovDocSearchParams,
   RiksdagDocument,
 } from './types/mcp.js';
+
+// ---------------------------------------------------------------------------
+// HTTP helper – tries globalThis.fetch first (allows test mocking), then
+// falls back to Node.js https.request when Cloudflare blocks undici/fetch
+// (Node v24 built-in fetch returns 400 Bad Request for some endpoints).
+// ---------------------------------------------------------------------------
+
+interface FetchLike {
+  ok: boolean;
+  status: number;
+  statusText: string;
+  headers: { get(name: string): string | null };
+  text(): Promise<string>;
+  json(): Promise<unknown>;
+}
+
+function nodeHttpsPost(
+  url: string,
+  headers: Record<string, string>,
+  body: string,
+  signal: AbortSignal,
+): Promise<FetchLike> {
+  // Add early-abort check so no sockets are opened for already-cancelled requests
+  if (signal.aborted) {
+    return Promise.reject(new Error('Request aborted'));
+  }
+  return new Promise<FetchLike>((resolve, reject) => {
+    const parsed = new URL(url);
+    const reqHeaders: Record<string, string | number> = {
+      ...headers,
+      'Content-Length': Buffer.byteLength(body),
+    };
+
+    const req = httpsRequest(
+      {
+        hostname: parsed.hostname,
+        port: parsed.port ? parseInt(parsed.port, 10) : 443,
+        path: parsed.pathname + parsed.search,
+        method: 'POST',
+        headers: reqHeaders,
+      },
+      (res) => {
+        let data = '';
+        res.on('data', (chunk: Buffer) => { data += chunk.toString(); });
+        res.on('end', () => {
+          const resHeaders = res.headers as Record<string, string | string[]>;
+          resolve({
+            ok: (res.statusCode ?? 0) >= 200 && (res.statusCode ?? 0) < 300,
+            status: res.statusCode ?? 0,
+            statusText: res.statusMessage ?? '',
+            headers: {
+              get(name: string) {
+                const v = resHeaders[name.toLowerCase()];
+                return Array.isArray(v) ? v[0] ?? null : v ?? null;
+              },
+            },
+            text: async () => data,
+            json: async () => JSON.parse(data) as unknown,
+          });
+        });
+        res.on('error', reject);
+      },
+    );
+
+    signal.addEventListener('abort', () => req.destroy(new Error('Request aborted')));
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
+}
+
+/**
+ * Post JSON to the MCP server.
+ * Uses globalThis.fetch so tests can mock it; transparently falls back to
+ * Node.js https.request when Cloudflare rejects the undici/fetch client.
+ */
+async function performPost(
+  url: string,
+  headers: Record<string, string>,
+  body: string,
+  signal: AbortSignal,
+): Promise<FetchLike> {
+  const fetchFn = globalThis.fetch;
+  if (!fetchFn) {
+    return nodeHttpsPost(url, headers, body, signal);
+  }
+
+  const raw = await fetchFn(url, { method: 'POST', headers, body, signal });
+
+  // Cloudflare sometimes blocks Node.js v24 undici-based fetch with an HTML 400 page.
+  // Fall back to https.request (which sends a compatible TLS client hello) for that case.
+  if (!raw.ok && raw.status === 400) {
+    const responseBody = await raw.text().catch(() => '');
+    if (responseBody.toLowerCase().includes('cloudflare')) {
+      return nodeHttpsPost(url, headers, body, signal);
+    }
+    // Not a Cloudflare block – return a FetchLike with the already-consumed body
+    return {
+      ok: false,
+      status: raw.status,
+      statusText: raw.statusText,
+      headers: { get: (h: string) => raw.headers.get(h) },
+      text: async () => responseBody,
+      json: async () => JSON.parse(responseBody) as unknown,
+    };
+  }
+
+  return raw as unknown as FetchLike;
+}
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -138,12 +249,12 @@ export class MCPClient {
       if (this.authToken) headers['Authorization'] = this.authToken;
       if (this.sessionId) headers['Mcp-Session-Id'] = this.sessionId;
 
-      const response = await fetch(this.baseURL, {
-        method: 'POST',
+      const response = await performPost(
+        this.baseURL,
         headers,
-        body: JSON.stringify(jsonRpcRequest),
-        signal: controller.signal,
-      });
+        JSON.stringify(jsonRpcRequest),
+        controller.signal,
+      );
 
       if (!response.ok) {
         let errorBody = '';
@@ -306,10 +417,10 @@ export class MCPClient {
       };
       if (this.authToken) headers['Authorization'] = this.authToken;
 
-      const response = await fetch(this.baseURL, {
-        method: 'POST',
+      const response = await performPost(
+        this.baseURL,
         headers,
-        body: JSON.stringify({
+        JSON.stringify({
           jsonrpc: '2.0',
           id: jsonRpcId++,
           method: 'initialize',
@@ -319,8 +430,8 @@ export class MCPClient {
             clientInfo: { name: 'riksdagsmonitor-news', version: '1.0.0' },
           },
         }),
-        signal: controller.signal,
-      });
+        controller.signal,
+      );
 
       if (!response.ok) {
         throw new Error(`Session init failed: ${response.status} ${response.statusText}`);
@@ -336,17 +447,18 @@ export class MCPClient {
         console.log(`  🔗 MCP session initialized: ${sessionId.substring(0, 8)}...`);
       }
 
-      await fetch(this.baseURL, {
-        method: 'POST',
-        headers: {
+      await performPost(
+        this.baseURL,
+        {
           ...headers,
           ...(this.sessionId ? { 'Mcp-Session-Id': this.sessionId } : {}),
         },
-        body: JSON.stringify({
+        JSON.stringify({
           jsonrpc: '2.0',
           method: 'notifications/initialized',
         }),
-      });
+        controller.signal,
+      );
     } finally {
       clearTimeout(timeoutId);
     }
@@ -399,6 +511,20 @@ export class MCPClient {
     return (response['dokument'] ?? response['motions'] ?? []) as unknown[];
   }
 
+  async fetchWrittenQuestions(params: { limit?: number; rm?: string } = {}): Promise<unknown[]> {
+    const reqParams: Record<string, unknown> = { limit: params.limit ?? 20 };
+    if (params.rm) reqParams['rm'] = params.rm;
+    const response = await this.request('get_fragor', reqParams);
+    return (response['dokument'] ?? response['questions'] ?? []) as unknown[];
+  }
+
+  async fetchInterpellations(params: { limit?: number; rm?: string } = {}): Promise<unknown[]> {
+    const reqParams: Record<string, unknown> = { limit: params.limit ?? 15 };
+    if (params.rm) reqParams['rm'] = params.rm;
+    const response = await this.request('get_interpellationer', reqParams);
+    return (response['dokument'] ?? response['interpellations'] ?? []) as unknown[];
+  }
+
   async searchDocuments(searchParams: SearchDocumentsParams): Promise<unknown[]> {
     const response = await this.request(
       'search_dokument',
@@ -412,7 +538,7 @@ export class MCPClient {
       'search_anforanden',
       searchParams as unknown as Record<string, unknown>,
     );
-    return (response['speeches'] ?? []) as unknown[];
+    return (response['anforanden'] ?? response['speeches'] ?? []) as unknown[];
   }
 
   async fetchMPs(filters: FetchMPsFilters = {}): Promise<unknown[]> {

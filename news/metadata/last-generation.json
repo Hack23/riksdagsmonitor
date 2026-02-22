@@ -1,9 +1,60 @@
 {
-  "lastGenerated": "2026-02-22T10:55:00Z",
-  "articleTypes": ["weekly-review"],
-  "languages": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
-  "articlesGenerated": 14,
-  "dataSource": "riksdag-regering-mcp",
-  "documentsAnalyzed": 51,
-  "forceGeneration": false
+  "timestamp": "2026-02-22T13:56:53.416Z",
+  "types": [
+    "week-ahead"
+  ],
+  "languagesGenerated": [
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
+  ],
+  "allRequestedLanguages": [
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
+  ],
+  "batchSize": "all",
+  "skipExisting": false,
+  "generated": 14,
+  "errors": 0,
+  "articles": [
+    "2026-02-22-week-ahead-en.html",
+    "2026-02-22-week-ahead-sv.html",
+    "2026-02-22-week-ahead-da.html",
+    "2026-02-22-week-ahead-no.html",
+    "2026-02-22-week-ahead-fi.html",
+    "2026-02-22-week-ahead-de.html",
+    "2026-02-22-week-ahead-fr.html",
+    "2026-02-22-week-ahead-es.html",
+    "2026-02-22-week-ahead-nl.html",
+    "2026-02-22-week-ahead-ar.html",
+    "2026-02-22-week-ahead-he.html",
+    "2026-02-22-week-ahead-ja.html",
+    "2026-02-22-week-ahead-ko.html",
+    "2026-02-22-week-ahead-zh.html"
+  ],
+  "status": "enhanced",
+  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
