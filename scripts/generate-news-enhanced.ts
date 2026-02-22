@@ -534,7 +534,7 @@ async function generateWeekAhead(): Promise<GenerationResult> {
       const watchPoints = extractWatchPoints({ events: events as Parameters<typeof transformCalendarToEventGrid>[0], documents }, lang);
       const metadata = generateMetadata({ events: events as Parameters<typeof transformCalendarToEventGrid>[0], documents }, 'week-ahead', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_calendar_events', 'search_dokument', 'search_anforanden', 'get_fragor', 'get_interpellationer']);
+      const sources: string[] = generateSources(['get_calendar_events', 'search_dokument', 'get_fragor', 'get_interpellationer']);
 
       // Language-specific titles
       const titles: Record<Language, TitleSet> = {
@@ -900,11 +900,14 @@ async function generateNews(): Promise<typeof stats> {
             ? (topDoc['titel'] || topDoc['title'] || topDoc['avser'] || 'Parliamentary Development')
             : 'Riksdag parliamentary activity today';
           const topSlug = topDoc
-            ? ((topDoc['titel'] || topDoc['title'] || 'news')
-                .toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, '')
-                .replace(/\s+/g, '-')
-                .slice(0, 40))
+            ? (() => {
+                const cleaned = (topDoc['titel'] || topDoc['title'] || 'news')
+                  .toLowerCase()
+                  .replace(/[^a-z0-9\s-]/g, '')
+                  .replace(/\s+/g, '-')
+                  .slice(0, 40);
+                return cleaned || 'news';
+              })()
             : 'news';
           const voteId = recentVotes.length > 0 ? ((recentVotes[0] as DocRecord)['punkt'] ?? '') : '';
 
