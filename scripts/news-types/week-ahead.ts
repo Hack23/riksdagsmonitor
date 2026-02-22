@@ -332,7 +332,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
       const watchPoints = extractWatchPoints({ events, documents }, lang);
       const metadata = generateMetadata({ events, documents }, 'week-ahead', lang);
       const readTime = calculateReadTime(content);
-      const sources = generateSources(['get_calendar_events', 'search_dokument', 'get_fragor', 'get_interpellationer']);
+      const sources = generateSources(['get_calendar_events', 'search_dokument', 'search_anforanden', 'get_fragor', 'get_interpellationer']);
       
       const titles: TitleSet = getTitles(lang, range);
       

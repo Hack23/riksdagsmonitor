@@ -362,7 +362,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     // ── Step 4: fetch speeches from the period ─────────────────────────────
     console.log('  🔄 Step 4 — Fetching speeches from the period...');
     const speeches = await Promise.resolve()
-      .then(() => client.searchSpeeches({ rm: '2025/26', limit: 100 }) as Promise<unknown[]>)
+      .then(() => client.searchSpeeches({ rm: '2025/26', from: fromStr, to: toStr, limit: 100 }) as Promise<unknown[]>)
       .catch((err: unknown) => { console.error('Failed to fetch speeches:', err); return [] as unknown[]; });
 
     mcpCalls.push({ tool: 'search_anforanden', result: speeches });

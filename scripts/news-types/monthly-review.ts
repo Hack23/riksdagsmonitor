@@ -112,11 +112,11 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     // Step 2: typed metadata fetchers (robust: errors → empty [])
     console.log('  🔄 Step 2 — Fetching typed metadata (reports, propositions, motions)...');
     const [recentReports, recentPropositions, recentMotions] = await Promise.all([
-      Promise.resolve().then(() => client.fetchCommitteeReports({ from: fromStr, to: toStr, limit: 30 }))
+      Promise.resolve().then(() => client.fetchCommitteeReports(30, '2025/26'))
         .catch((err: unknown) => { console.error('Failed to fetch committee reports:', err); return [] as unknown[]; }),
-      Promise.resolve().then(() => client.fetchPropositions({ from: fromStr, to: toStr, limit: 20 }))
+      Promise.resolve().then(() => client.fetchPropositions(20, '2025/26'))
         .catch((err: unknown) => { console.error('Failed to fetch propositions:', err); return [] as unknown[]; }),
-      Promise.resolve().then(() => client.fetchMotions({ from: fromStr, to: toStr, limit: 20 }))
+      Promise.resolve().then(() => client.fetchMotions(20, '2025/26'))
         .catch((err: unknown) => { console.error('Failed to fetch motions:', err); return [] as unknown[]; }),
     ]);
 

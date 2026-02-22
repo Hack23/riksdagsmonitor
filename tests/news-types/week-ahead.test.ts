@@ -28,6 +28,8 @@ interface MockMCPClientShape {
   fetchCalendarEvents: Mock<(start: string, end: string) => Promise<CalendarEvent[]>>;
   searchDocuments: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
   searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchWrittenQuestions: Mock<(params?: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchInterpellations: Mock<(params?: Record<string, unknown>) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -81,6 +83,8 @@ const { mockClientInstance, mockCalendarEvents, MockMCPClient } = vi.hoisted(() 
     fetchCalendarEvents: vi.fn().mockResolvedValue(mockCalendarEvents) as MockMCPClientShape['fetchCalendarEvents'],
     searchDocuments: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchDocuments'],
     searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
+    fetchWrittenQuestions: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchWrittenQuestions'],
+    fetchInterpellations: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchInterpellations'],
   };
   
   function MockMCPClient(): MockMCPClientShape {
@@ -107,6 +111,8 @@ describe('Week-Ahead Article Generation', () => {
     mockClientInstance.fetchCalendarEvents.mockResolvedValue(mockCalendarEvents);
     mockClientInstance.searchDocuments.mockResolvedValue([]);
     mockClientInstance.searchSpeeches.mockResolvedValue([]);
+    mockClientInstance.fetchWrittenQuestions.mockResolvedValue([]);
+    mockClientInstance.fetchInterpellations.mockResolvedValue([]);
   });
 
   afterEach(() => {

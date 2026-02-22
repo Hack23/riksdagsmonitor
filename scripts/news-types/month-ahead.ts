@@ -196,7 +196,7 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
         event: events.length > 0
           ? `${events.length} events over ${daysAhead} days`
           : `${documents.length} upcoming documents`,
-        sources: ['calendar_events'],
+        sources: events.length > 0 ? ['calendar_events'] : ['calendar_events', 'search_dokument'],
       },
     };
   } catch (error: unknown) {

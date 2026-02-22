@@ -533,7 +533,7 @@ async function generateWeekAhead(): Promise<GenerationResult> {
       const watchPoints = extractWatchPoints({ events: events as Parameters<typeof transformCalendarToEventGrid>[0], documents }, lang);
       const metadata = generateMetadata({ events: events as Parameters<typeof transformCalendarToEventGrid>[0], documents }, 'week-ahead', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_calendar_events', 'get_fragor', 'get_interpellationer']);
+      const sources: string[] = generateSources(['get_calendar_events', 'search_dokument', 'search_anforanden', 'get_fragor', 'get_interpellationer']);
 
       // Language-specific titles
       const titles: Record<Language, TitleSet> = {

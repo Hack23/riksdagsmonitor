@@ -23,9 +23,9 @@ interface SearchDocument {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   searchDocuments: Mock<(params: Record<string, unknown>) => Promise<SearchDocument[]>>;
-  fetchCommitteeReports: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
-  fetchPropositions: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
-  fetchMotions: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchCommitteeReports: Mock<(limit?: number, rm?: string | null, organ?: string | null) => Promise<unknown[]>>;
+  fetchPropositions: Mock<(limit?: number, rm?: string | null) => Promise<unknown[]>>;
+  fetchMotions: Mock<(limit?: number, rm?: string | null) => Promise<unknown[]>>;
   fetchDocumentDetails: Mock<(dokId: string, full?: boolean) => Promise<Record<string, unknown>>>;
   searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
 }
