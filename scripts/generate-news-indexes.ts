@@ -569,7 +569,7 @@ function classifyArticleType(content: string, fileName: string): ArticleTypeValu
     '一周展望', '即将'                                                             // zh
   ];
 
-  if (fileName.includes('week-ahead') || fileName.includes('weekend') || prospectiveKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
+  if (fileName.includes('week-ahead') || prospectiveKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
     return 'prospective';
   }
 
@@ -808,7 +808,7 @@ function generateIndexHTML(
     slug: a.slug,
     lang: a.lang,
     availableLanguages: a.availableLanguages || [a.lang],
-    excerpt: a.description.substring(0, 200),
+    excerpt: a.description.length > 200 ? a.description.substring(0, 200).replace(/\s+\S*$/, '') + '...' : a.description,
     topics: a.topics,
     tags: a.tags,
   }));
