@@ -106,7 +106,7 @@ function loadGitTimestamps(): void {
  */
 function getFileModTime(filePath: string): string {
   loadGitTimestamps();
-  const relativePath = path.relative(ROOT_DIR, filePath);
+  const relativePath = path.relative(ROOT_DIR, filePath).split(path.sep).join('/');
   const cached = gitTimestampCache.get(relativePath);
   if (cached) return cached;
   try {
