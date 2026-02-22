@@ -22,7 +22,10 @@
 
 import {
   logger,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
+
+import type { DataSourceType } from '../shared/index.js';
 
 const d3 = (globalThis as any).d3;
 const Chart = (globalThis as any).Chart;
@@ -119,6 +122,9 @@ let dataCache: DataCache = {
   annualVotes: null
 };
 
+/** Tracks whether any data source fell back to mock/synthetic data. */
+let coalitionDataSourceType: DataSourceType = 'live';
+
 // ============================================================================
 // CSV UTILITIES
 // ============================================================================
@@ -148,7 +154,7 @@ async function fetchCSV(urls: string[]): Promise<Record<string, string>[] | null
 
 async function fetchCoalitionData(): Promise<void> {
   try {
-    if (DATA_CONFIG.useMockData) { dataCache.coalitionAlignment = generateMockCoalitionData(); return; }
+    if (DATA_CONFIG.useMockData) { dataCache.coalitionAlignment = generateMockCoalitionData(); coalitionDataSourceType = 'mock'; return; }
     const csvData = await fetchCSV(DATA_CONFIG.files['coalition']);
     if (csvData && csvData.length > 0) {
       const alignment: Record<string, Record<string, number>> = {};
@@ -159,13 +165,13 @@ async function fetchCoalitionData(): Promise<void> {
       });
       dataCache.coalitionAlignment = alignment;
       logger.info('Coalition data loaded from CSV');
-    } else { dataCache.coalitionAlignment = generateMockCoalitionData(); logger.info('Coalition data loaded (mock fallback)'); }
-  } catch (error) { logger.error('Failed to fetch coalition data:', error); dataCache.coalitionAlignment = generateMockCoalitionData(); }
+    } else { dataCache.coalitionAlignment = generateMockCoalitionData(); coalitionDataSourceType = 'mock'; logger.info('Coalition data loaded (mock fallback)'); }
+  } catch (error) { logger.error('Failed to fetch coalition data:', error); dataCache.coalitionAlignment = generateMockCoalitionData(); coalitionDataSourceType = 'mock'; }
 }
 
 async function fetchBehavioralData(): Promise<void> {
   try {
-    if (DATA_CONFIG.useMockData) { dataCache.behavioralPatterns = generateMockBehavioralData(); return; }
+    if (DATA_CONFIG.useMockData) { dataCache.behavioralPatterns = generateMockBehavioralData(); coalitionDataSourceType = 'mock'; return; }
     const csvData = await fetchCSV(DATA_CONFIG.files['behavioral']);
     if (csvData && csvData.length > 0) {
       const partyData: Record<string, { total: number; standardBehavior: number }> = {};
@@ -186,22 +192,22 @@ async function fetchBehavioralData(): Promise<void> {
       });
       dataCache.behavioralPatterns = patterns;
       logger.info('Behavioral data loaded from CSV');
-    } else { dataCache.behavioralPatterns = generateMockBehavioralData(); }
-  } catch (error) { logger.error('Failed to fetch behavioral data:', error); dataCache.behavioralPatterns = generateMockBehavioralData(); }
+    } else { dataCache.behavioralPatterns = generateMockBehavioralData(); coalitionDataSourceType = 'mock'; }
+  } catch (error) { logger.error('Failed to fetch behavioral data:', error); dataCache.behavioralPatterns = generateMockBehavioralData(); coalitionDataSourceType = 'mock'; }
 }
 
 async function fetchDecisionData(): Promise<void> {
   try {
-    if (DATA_CONFIG.useMockData) { dataCache.decisionPatterns = generateMockDecisionData(); return; }
+    if (DATA_CONFIG.useMockData) { dataCache.decisionPatterns = generateMockDecisionData(); coalitionDataSourceType = 'mock'; return; }
     const csvData = await fetchCSV(DATA_CONFIG.files['decision']);
     if (csvData && csvData.length > 0) { dataCache.decisionPatterns = csvData; }
-    else { dataCache.decisionPatterns = generateMockDecisionData(); }
-  } catch (error) { logger.error('Failed to fetch decision data:', error); dataCache.decisionPatterns = generateMockDecisionData(); }
+    else { dataCache.decisionPatterns = generateMockDecisionData(); coalitionDataSourceType = 'mock'; }
+  } catch (error) { logger.error('Failed to fetch decision data:', error); dataCache.decisionPatterns = generateMockDecisionData(); coalitionDataSourceType = 'mock'; }
 }
 
 async function fetchAnomalyData(): Promise<void> {
   try {
-    if (DATA_CONFIG.useMockData) { dataCache.votingAnomalies = generateMockAnomalyData(); return; }
+    if (DATA_CONFIG.useMockData) { dataCache.votingAnomalies = generateMockAnomalyData(); coalitionDataSourceType = 'mock'; return; }
     const csvData = await fetchCSV(DATA_CONFIG.files['anomalyByParty']);
     if (csvData && csvData.length > 0) {
       const anomalies: AnomalyEntry[] = [];
@@ -218,13 +224,13 @@ async function fetchAnomalyData(): Promise<void> {
       });
       dataCache.votingAnomalies = anomalies;
       logger.info('Anomaly data loaded from CSV');
-    } else { dataCache.votingAnomalies = generateMockAnomalyData(); }
-  } catch (error) { logger.error('Failed to fetch anomaly data:', error); dataCache.votingAnomalies = generateMockAnomalyData(); }
+    } else { dataCache.votingAnomalies = generateMockAnomalyData(); coalitionDataSourceType = 'mock'; }
+  } catch (error) { logger.error('Failed to fetch anomaly data:', error); dataCache.votingAnomalies = generateMockAnomalyData(); coalitionDataSourceType = 'mock'; }
 }
 
 async function fetchAnnualVotesData(): Promise<void> {
   try {
-    if (DATA_CONFIG.useMockData) { dataCache.annualVotes = generateMockAnnualVotesData(); return; }
+    if (DATA_CONFIG.useMockData) { dataCache.annualVotes = generateMockAnnualVotesData(); coalitionDataSourceType = 'mock'; return; }
     const csvData = await fetchCSV(DATA_CONFIG.files['annualVotes']);
     if (csvData && csvData.length > 0) {
       const annualData: Record<string, AnnualVoteEntry[]> = {};
@@ -236,8 +242,8 @@ async function fetchAnnualVotesData(): Promise<void> {
       Object.keys(annualData).forEach(party => { annualData[party].sort((a, b) => a.year - b.year); });
       dataCache.annualVotes = annualData;
       logger.info('Annual votes data loaded from CSV');
-    } else { dataCache.annualVotes = generateMockAnnualVotesData(); }
-  } catch (error) { logger.error('Failed to fetch annual votes data:', error); dataCache.annualVotes = generateMockAnnualVotesData(); }
+    } else { dataCache.annualVotes = generateMockAnnualVotesData(); coalitionDataSourceType = 'mock'; }
+  } catch (error) { logger.error('Failed to fetch annual votes data:', error); dataCache.annualVotes = generateMockAnnualVotesData(); coalitionDataSourceType = 'mock'; }
 }
 
 // ============================================================================
@@ -379,7 +385,7 @@ function renderVotingAnomalyChart(): void {
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { title: { display: true, text: 'Voting Anomalies (Last 5 Years)', font: { size: 16, weight: 'bold' } }, tooltip: { callbacks: { label: (context: any) => { const date = new Date(context.parsed.x); return `${context.dataset.label}: Deviation ${context.parsed.y.toFixed(2)} on ${date.toLocaleDateString()}`; } } }, legend: { display: true, position: 'bottom' } },
-      scales: { x: { type: 'time', time: { unit: 'year', displayFormats: { year: 'yyyy' } }, title: { display: true, text: 'Date' } }, y: { title: { display: true, text: 'Deviation Score' }, beginAtZero: true } }
+      scales: { x: { type: 'linear', title: { display: true, text: 'Date' }, ticks: { callback: (value: any) => new Date(value).getFullYear().toString() } }, y: { title: { display: true, text: 'Deviation Score' }, beginAtZero: true } }
     }
   });
 }
@@ -547,6 +553,7 @@ export async function init(): Promise<void> {
 
   try {
     logger.info('Initializing Coalition & Voting Pattern Dashboard...');
+    coalitionDataSourceType = 'live';
     showLoadingState();
 
     await Promise.all([
@@ -556,6 +563,8 @@ export async function init(): Promise<void> {
       fetchAnomalyData(),
       fetchAnnualVotesData()
     ]);
+
+    showDataSourceDisclaimer(dashboard, coalitionDataSourceType);
 
     renderCoalitionNetwork();
     renderAlignmentHeatMap();

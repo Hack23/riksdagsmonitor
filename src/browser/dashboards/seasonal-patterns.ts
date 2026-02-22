@@ -24,6 +24,7 @@
 import {
   logger,
   detectLanguage,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';
@@ -534,6 +535,8 @@ class SeasonalPatternsDashboard {
     try {
       this.showLoading();
       await this.dataManager.fetchData();
+      const dash = document.getElementById('seasonal-patterns-dashboard');
+      if (dash) { showDataSourceDisclaimer(dash, 'live'); }
       this.chartRenderer = new SeasonalPatternsCharts(this.dataManager, this.currentLanguage);
       this.setupFilters();
       await this.chartRenderer.renderAll();

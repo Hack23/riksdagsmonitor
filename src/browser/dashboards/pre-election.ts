@@ -25,6 +25,7 @@
 import {
   logger,
   detectLanguage,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';
@@ -648,6 +649,7 @@ export async function init(): Promise<void> {
     return;
   }
 
+  showDataSourceDisclaimer(dashboard, 'live');
   updateStatusCards(dataManager);
   const chartRenderer = new PreElectionCharts(dataManager);
   chartRenderer.renderAllCharts();

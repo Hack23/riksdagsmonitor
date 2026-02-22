@@ -50,6 +50,7 @@ import {
   formatPercent,
   getResponsiveOptions,
   addChartKeyboardNav,
+  showDataSourceDisclaimer,
 } from '../shared/index.js';
 
 import { detectLanguage } from '../shared/index.js';
@@ -1208,6 +1209,8 @@ export async function init(): Promise<void> {
       ]);
 
     // Create visualizations
+    const hasData = partyEffectiveness.length > 0 || partyPerformance.length > 0;
+    showDataSourceDisclaimer(dashboardSection, hasData ? 'live' : 'synthetic');
     createEffectivenessChart(partyEffectiveness);
     createComparisonChart(partyPerformance);
     createCoalitionNetwork(coalitionAlignment);
