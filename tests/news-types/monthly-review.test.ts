@@ -23,6 +23,11 @@ interface SearchDocument {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   searchDocuments: Mock<(params: Record<string, unknown>) => Promise<SearchDocument[]>>;
+  fetchCommitteeReports: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchPropositions: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchMotions: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchDocumentDetails: Mock<(dokId: string, full?: boolean) => Promise<Record<string, unknown>>>;
+  searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -71,7 +76,12 @@ const { mockClientInstance, mockDocuments, MockMCPClient } = vi.hoisted(() => {
   ];
 
   const mockClientInstance: MockMCPClientShape = {
-    searchDocuments: vi.fn().mockResolvedValue(mockDocuments) as MockMCPClientShape['searchDocuments']
+    searchDocuments: vi.fn().mockResolvedValue(mockDocuments) as MockMCPClientShape['searchDocuments'],
+    fetchCommitteeReports: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchCommitteeReports'],
+    fetchPropositions: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchPropositions'],
+    fetchMotions: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchMotions'],
+    fetchDocumentDetails: vi.fn().mockResolvedValue({}) as MockMCPClientShape['fetchDocumentDetails'],
+    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
   };
 
   function MockMCPClient(): MockMCPClientShape {
@@ -95,6 +105,11 @@ describe('Monthly Review Article Generation', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockClientInstance.searchDocuments.mockResolvedValue(mockDocuments);
+    mockClientInstance.fetchCommitteeReports.mockResolvedValue([]);
+    mockClientInstance.fetchPropositions.mockResolvedValue([]);
+    mockClientInstance.fetchMotions.mockResolvedValue([]);
+    mockClientInstance.fetchDocumentDetails.mockResolvedValue({});
+    mockClientInstance.searchSpeeches.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -110,6 +125,14 @@ describe('Monthly Review Article Generation', () => {
 
     it('should require search_dokument tool', () => {
       expect(monthlyReviewModule.REQUIRED_TOOLS).toContain('search_dokument');
+    });
+
+    it('should require enrichment tools', () => {
+      expect(monthlyReviewModule.REQUIRED_TOOLS).toContain('get_dokument_innehall');
+      expect(monthlyReviewModule.REQUIRED_TOOLS).toContain('search_anforanden');
+      expect(monthlyReviewModule.REQUIRED_TOOLS).toContain('get_betankanden');
+      expect(monthlyReviewModule.REQUIRED_TOOLS).toContain('get_propositioner');
+      expect(monthlyReviewModule.REQUIRED_TOOLS).toContain('get_motioner');
     });
   });
 

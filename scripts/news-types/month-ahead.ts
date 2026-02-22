@@ -42,7 +42,8 @@ import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord
  * Required MCP tools for month-ahead articles
  */
 export const REQUIRED_TOOLS: readonly string[] = [
-  'get_calendar_events'
+  'get_calendar_events',
+  'search_dokument',
 ];
 
 export interface TitleSet {
@@ -78,7 +79,8 @@ export function formatDateForSlug(date: Date = new Date()): string {
 }
 
 /**
- * Generate Month-Ahead article in specified languages
+ * Generate Month-Ahead article in specified languages.
+ * Falls back to searchDocuments when calendar returns 0 events.
  */
 export async function generateMonthAhead(options: GenerationOptions = {}): Promise<GenerationResult> {
   const { languages = ['en', 'sv'], daysAhead = 30, writeArticle = null } = options;
@@ -102,9 +104,21 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
     mcpCalls.push({ tool: 'get_calendar_events', result: events });
     console.log(`  📊 Found ${events.length} calendar events`);
 
+    // When calendar is empty, fall back to upcoming documents (propositions/reports in pipeline)
+    let documents: RawDocument[] = [];
     if (events.length === 0) {
-      console.log('  ℹ️ No upcoming calendar events found, skipping');
-      return { success: true, files: 0, mcpCalls };
+      console.log('  ℹ️ No calendar events — fetching upcoming documents from legislative pipeline...');
+      const rawDocs = await Promise.resolve()
+        .then(() => client.searchDocuments({ from_date: fromStr, to_date: toStr, limit: 30 }))
+        .catch((err: unknown) => { console.error('Failed to fetch documents:', err); return [] as unknown[]; });
+      documents = Array.isArray(rawDocs) ? rawDocs as RawDocument[] : [];
+      mcpCalls.push({ tool: 'search_dokument', result: documents });
+      console.log(`  📊 Found ${documents.length} upcoming documents`);
+
+      if (documents.length === 0) {
+        console.log('  ℹ️ No upcoming documents found, skipping');
+        return { success: true, files: 0, mcpCalls };
+      }
     }
 
     const slug = `${formatDateForSlug(today)}-month-ahead`;
@@ -113,13 +127,21 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      const content: string = generateArticleContent({ events }, 'month-ahead', lang);
-      const watchPoints = extractWatchPoints({ events }, lang);
-      const metadata = generateMetadata({ events }, 'month-ahead', lang);
-      const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_calendar_events']);
+      const dataForContent = events.length > 0
+        ? { events }
+        : { events: [], documents };
 
-      const titles: TitleSet = getTitles(lang, events.length);
+      const content: string = generateArticleContent(dataForContent, 'month-ahead', lang);
+      const watchPoints = extractWatchPoints(dataForContent, lang);
+      const metadata = generateMetadata(dataForContent, 'month-ahead', lang);
+      const readTime: string = calculateReadTime(content);
+      const usedTools = events.length > 0
+        ? ['get_calendar_events']
+        : ['get_calendar_events', 'search_dokument'];
+      const sources: string[] = generateSources(usedTools);
+
+      const itemCount = events.length > 0 ? events.length : documents.length;
+      const titles: TitleSet = getTitles(lang, itemCount);
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -134,14 +156,14 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
       });
 
       articles.push({
         lang,
         html,
         filename: `${slug}-${lang}.html`,
-        slug: `${slug}-${lang}`
+        slug: `${slug}-${lang}`,
       });
 
       if (writeArticle) {
@@ -157,16 +179,18 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
       articles,
       mcpCalls,
       crossReferences: {
-        event: `${events.length} events over ${daysAhead} days`,
-        sources: ['calendar_events']
-      }
+        event: events.length > 0
+          ? `${events.length} events over ${daysAhead} days`
+          : `${documents.length} upcoming documents`,
+        sources: ['calendar_events'],
+      },
     };
   } catch (error: unknown) {
     console.error('❌ Error generating Month-Ahead:', (error as Error).message);
     return {
       success: false,
       error: (error as Error).message,
-      mcpCalls
+      mcpCalls,
     };
   }
 }

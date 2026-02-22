@@ -278,6 +278,8 @@ export interface WeekAheadData {
   events: RawCalendarEvent[];
   highlights?: Array<{ title: string; description: string }>;
   context?: string;
+  /** Upcoming legislative documents — used when calendar is empty */
+  documents?: RawDocument[];
 }
 
 /** Article generation data */
@@ -1463,6 +1465,8 @@ function getCommitteeName(code: string | undefined, lang: Language | string): st
  */
 function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
+  // Cast to ArticleContentData to access documents field (passed via switch cast)
+  const documents = (data as unknown as ArticleContentData).documents ?? [];
 
   let content = '';
 
@@ -1496,6 +1500,58 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
     <h3>${dayName ? dayName + ' - ' : ''}${titleHtml}</h3>
     <p>${event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`}</p>
 `;
+    });
+  }
+
+  // Legislative Pipeline: show upcoming documents when calendar is sparse or empty
+  if (documents.length > 0) {
+    const sectionLabel = lang === 'sv'
+      ? 'Kommande i den lagstiftande processen'
+      : lang === 'de' ? 'Bevorstehende legislative Tagesordnung'
+      : lang === 'fr' ? 'Agenda législatif à venir'
+      : lang === 'es' ? 'Agenda legislativa próxima'
+      : lang === 'da' ? 'Kommende lovgivningsmæssig dagsorden'
+      : lang === 'no' ? 'Kommende lovgivningsmessig agenda'
+      : lang === 'fi' ? 'Tuleva lainsäädäntöohjelma'
+      : lang === 'nl' ? 'Komende wetgevende agenda'
+      : lang === 'ar' ? 'جدول الأعمال التشريعي القادم'
+      : lang === 'he' ? 'סדר היום החקיקתי הקרוב'
+      : lang === 'ja' ? '今後の立法スケジュール'
+      : lang === 'ko' ? '향후 입법 일정'
+      : lang === 'zh' ? '未来立法议程'
+      : 'Upcoming Legislative Agenda';
+
+    content += `\n    <h2>${sectionLabel}</h2>\n`;
+
+    // Show top documents — prioritise propositions and committee reports
+    const priorityDocs = [
+      ...documents.filter(d => (d as Record<string, string>).doktyp === 'prop' || (d as Record<string, string>).doktyp === 'proposition'),
+      ...documents.filter(d => (d as Record<string, string>).doktyp === 'bet' || (d as Record<string, string>).doktyp === 'betankande'),
+      ...documents.filter(d => {
+        const t = (d as Record<string, string>).doktyp;
+        return t !== 'prop' && t !== 'proposition' && t !== 'bet' && t !== 'betankande';
+      }),
+    ].slice(0, 15);
+
+    priorityDocs.forEach(doc => {
+      const rec = doc as Record<string, string>;
+      const titleText = rec['titel'] || rec['title'] || rec['doktyp'] || 'Document';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (rec['titel'] && !rec['title'])
+        ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+        : escapedTitle;
+
+      const significance = generatePolicySignificance(doc, lang);
+      const dokId = rec['dok_id'] ?? rec['id'] ?? '';
+      const urlBase = 'https://riksdagen.se/sv/dokument-och-lagar/dokument/';
+      const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : '';
+
+      content += `\n    <div class="document-entry">\n`;
+      content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+      if (significance) {
+        content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
+      }
+      content += `    </div>\n`;
     });
   }
 

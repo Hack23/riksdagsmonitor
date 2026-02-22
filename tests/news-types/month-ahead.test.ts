@@ -23,6 +23,7 @@ interface CalendarEvent {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   fetchCalendarEvents: Mock<(from: string, tom: string) => Promise<CalendarEvent[]>>;
+  searchDocuments: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -70,7 +71,8 @@ const { mockClientInstance, mockCalendarEvents, MockMCPClient } = vi.hoisted(() 
   ];
 
   const mockClientInstance: MockMCPClientShape = {
-    fetchCalendarEvents: vi.fn().mockResolvedValue(mockCalendarEvents) as MockMCPClientShape['fetchCalendarEvents']
+    fetchCalendarEvents: vi.fn().mockResolvedValue(mockCalendarEvents) as MockMCPClientShape['fetchCalendarEvents'],
+    searchDocuments: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchDocuments'],
   };
 
   function MockMCPClient(): MockMCPClientShape {
@@ -94,6 +96,7 @@ describe('Month-Ahead Article Generation', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockClientInstance.fetchCalendarEvents.mockResolvedValue(mockCalendarEvents);
+    mockClientInstance.searchDocuments.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -109,6 +112,10 @@ describe('Month-Ahead Article Generation', () => {
 
     it('should require calendar events tool', () => {
       expect(monthAheadModule.REQUIRED_TOOLS).toContain('get_calendar_events');
+    });
+
+    it('should require search_dokument tool for document fallback', () => {
+      expect(monthAheadModule.REQUIRED_TOOLS).toContain('search_dokument');
     });
   });
 

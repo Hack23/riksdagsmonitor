@@ -80,7 +80,7 @@ export function formatDateForSlug(date: Date = new Date()): string {
  * Resolve the repo data directory path.
  * Works both in Node.js ESM and from compiled paths.
  */
-function repoDataDir(): string {
+export function repoDataDir(): string {
   try {
     const __dirname = dirname(fileURLToPath(import.meta.url));
     // From scripts/news-types/ → up two levels to repo root → data/
@@ -94,7 +94,7 @@ function repoDataDir(): string {
  * Load CIA intelligence context from static JSON files.
  * Returns a populated CIAContext or a minimal fallback when files are missing.
  */
-function loadCIAContext(): CIAContext {
+export function loadCIAContext(): CIAContext {
   const dataDir = repoDataDir();
 
   // Attempt to read party-performance.json
@@ -184,7 +184,7 @@ function loadCIAContext(): CIAContext {
  * Enrich a flat list of documents with full text via get_dokument_innehall.
  * Mutates each document in place; never throws — failures are logged and skipped.
  */
-async function enrichWithFullText(
+export async function enrichWithFullText(
   client: MCPClient,
   documents: RawDocument[],
   mcpCalls: MCPCallRecord[],
@@ -236,7 +236,7 @@ async function enrichWithFullText(
 /**
  * Attach related speeches to documents that share the same dokId.
  */
-function attachSpeechesToDocuments(
+export function attachSpeechesToDocuments(
   documents: RawDocument[],
   speeches: Array<Record<string, unknown>>,
 ): void {

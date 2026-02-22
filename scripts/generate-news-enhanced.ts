@@ -179,6 +179,7 @@ import { generateArticleHTML } from './article-template.js';
 import { generateMonthAhead } from './news-types/month-ahead.js';
 import { generateWeeklyReview } from './news-types/weekly-review.js';
 import { generateMonthlyReview } from './news-types/monthly-review.js';
+import { generateBreakingNews } from './news-types/breaking-news.js';
 import type { Language } from './types/language.js';
 import type { ArticleCategory } from './types/article.js';
 import type {
@@ -834,10 +835,65 @@ async function generateNews(): Promise<typeof stats> {
       case 'motions':
         await generateMotions();
         break;
-      case 'breaking':
-        console.log('⚡ Breaking news generation requires manual trigger with specific event context');
-        console.log('  ⚠️ Full implementation pending');
+      case 'breaking': {
+        // Auto-detect most significant recent development: fetch today's votes and documents
+        console.log('⚡ Breaking news — detecting most significant parliamentary development...');
+        try {
+          const sharedClient = await getSharedClient();
+          const today = new Date();
+          const todayStr = today.toISOString().split('T')[0] ?? '';
+
+          // Fetch recent votes (no date filter — search_voteringar uses rm/bet/punkt)
+          const recentVotes = await Promise.resolve()
+            .then(() => sharedClient.fetchVotingRecords({ limit: 20 }))
+            .catch(() => [] as unknown[]);
+
+          // Fetch today's most significant documents
+          const todayDocs = await Promise.resolve()
+            .then(() => sharedClient.searchDocuments({ from_date: todayStr, to_date: todayStr, limit: 20 }))
+            .catch(() => [] as unknown[]);
+
+          if (recentVotes.length === 0 && todayDocs.length === 0) {
+            console.log('  ℹ️ No significant votes or documents found today — skipping breaking news');
+            break;
+          }
+
+          // Pick the most significant document: prefer propositions and committee reports
+          type DocRecord = Record<string, string>;
+          const allItems = [...todayDocs, ...recentVotes] as DocRecord[];
+          const topDoc = allItems.find(d => d['doktyp'] === 'prop' || d['doktyp'] === 'proposition')
+            ?? allItems.find(d => d['doktyp'] === 'bet' || d['doktyp'] === 'betankande')
+            ?? allItems[0];
+
+          const topTitle = topDoc
+            ? (topDoc['titel'] || topDoc['title'] || topDoc['avser'] || 'Parliamentary Development')
+            : 'Riksdag parliamentary activity today';
+          const topSlug = topDoc
+            ? ((topDoc['titel'] || topDoc['title'] || 'news')
+                .toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '')
+                .replace(/\s+/g, '-')
+                .slice(0, 40))
+            : 'news';
+          const voteId = recentVotes.length > 0 ? ((recentVotes[0] as DocRecord)['punkt'] ?? '') : '';
+
+          console.log(`  📰 Lead story: "${topTitle}"`);
+
+          await generateBreakingNews({
+            languages,
+            eventContext: topTitle,
+            eventData: {
+              slug: topSlug,
+              topic: topTitle.slice(0, 80),
+              voteId: voteId || undefined,
+            },
+            writeArticle,
+          });
+        } catch (err: unknown) {
+          console.error('❌ Error generating breaking news:', (err as Error).message);
+        }
         break;
+      }
       case 'month-ahead':
         await generateMonthAhead({ languages, writeArticle });
         break;

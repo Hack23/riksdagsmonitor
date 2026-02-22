@@ -26,6 +26,8 @@ interface CalendarEvent {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   fetchCalendarEvents: Mock<(start: string, end: string) => Promise<CalendarEvent[]>>;
+  searchDocuments: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
+  searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -76,7 +78,9 @@ const { mockClientInstance, mockCalendarEvents, MockMCPClient } = vi.hoisted(() 
   ];
   
   const mockClientInstance: MockMCPClientShape = {
-    fetchCalendarEvents: vi.fn().mockResolvedValue(mockCalendarEvents) as MockMCPClientShape['fetchCalendarEvents']
+    fetchCalendarEvents: vi.fn().mockResolvedValue(mockCalendarEvents) as MockMCPClientShape['fetchCalendarEvents'],
+    searchDocuments: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchDocuments'],
+    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
   };
   
   function MockMCPClient(): MockMCPClientShape {
@@ -101,6 +105,8 @@ describe('Week-Ahead Article Generation', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockClientInstance.fetchCalendarEvents.mockResolvedValue(mockCalendarEvents);
+    mockClientInstance.searchDocuments.mockResolvedValue([]);
+    mockClientInstance.searchSpeeches.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -118,11 +124,11 @@ describe('Week-Ahead Article Generation', () => {
       expect(weekAheadModule.REQUIRED_TOOLS).toContain('get_calendar_events');
     });
 
-    it('should only list tools actually used by generateWeekAhead', () => {
-      // REQUIRED_TOOLS must match tools actually called in the implementation.
-      // Future cross-referencing tools (search_dokument, get_fragor, get_interpellationer)
-      // should be added here when implemented in generateWeekAhead().
-      expect(weekAheadModule.REQUIRED_TOOLS).toEqual(['get_calendar_events']);
+    it('should list all tools actually used by generateWeekAhead', () => {
+      // Implementation now calls: get_calendar_events, search_dokument, search_anforanden
+      expect(weekAheadModule.REQUIRED_TOOLS).toContain('get_calendar_events');
+      expect(weekAheadModule.REQUIRED_TOOLS).toContain('search_dokument');
+      expect(weekAheadModule.REQUIRED_TOOLS).toContain('search_anforanden');
     });
   });
 
@@ -287,7 +293,7 @@ describe('Week-Ahead Article Generation', () => {
         languages: ['en']
       });
       
-      expect(result.crossReferences.event).toBe(`${mockCalendarEvents.length} events`);
+      expect(result.crossReferences.event).toContain(`${mockCalendarEvents.length} events`);
     });
 
     it('should list data sources used', async () => {
