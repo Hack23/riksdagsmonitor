@@ -250,6 +250,27 @@ export interface RawDocument {
   intressent_namn?: string;
   author?: string;
   parti?: string;
+  /** Full document text loaded via get_dokument_innehall */
+  fullText?: string;
+  /** Full document HTML content from API */
+  fullContent?: string;
+  /** Whether this document was enriched with full content */
+  contentFetched?: boolean;
+  /** Related speeches mentioning this document */
+  speeches?: Array<{ talare?: string; parti?: string; text?: string; anforande_nummer?: string }>;
+}
+
+/** CIA intelligence context for enriching analysis */
+export interface CIAContext {
+  partyPerformance: Array<{
+    id: string;
+    partyName: string;
+    metrics: { seats: number; successRate: number; motionsSubmitted: number; motionsPassed: number; cohesionScore?: number };
+    trends: { supportTrend: string; activityTrend: string };
+  }>;
+  coalitionStability: { stabilityScore: number; riskLevel: string; defectionProbability: number; majorityMargin: number };
+  votingPatterns: { keyIssues: Array<{ topic: string; coalitionAlignment: number; oppositionAlignment: number; crossPartyVotes: number }> };
+  overallMotionDenialRate: number; /** percentage of motions denied (typically 99%+) */
 }
 
 /** Week ahead data structure */
@@ -268,6 +289,8 @@ export interface ArticleContentData {
   documents?: RawDocument[];
   highlights?: Array<{ title: string; description: string }>;
   context?: string;
+  /** CIA intelligence context for enriched analysis */
+  ciaContext?: CIAContext;
 }
 
 // ---------------------------------------------------------------------------
@@ -1833,25 +1856,115 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string): 
 }
 
 /**
- * Generate generic content
+ * Extract the most analytically useful excerpt from full document text.
+ * Returns first substantive paragraph (skips short headings/metadata lines).
+ */
+function extractKeyPassage(fullText: string | undefined, maxChars = 600): string {
+  if (!fullText) return '';
+  // Strip HTML tags if present
+  const plain = fullText.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  if (plain.length <= maxChars) return plain;
+  // Find a sentence boundary near maxChars
+  const cut = plain.lastIndexOf('.', maxChars);
+  return cut > 100 ? plain.slice(0, cut + 1) : plain.slice(0, maxChars) + '…';
+}
+
+/**
+ * Look up party motion success rate from CIA context.
+ * Returns null when data is unavailable so callers can skip the annotation.
+ */
+function partyMotionSuccessRate(party: string | undefined, cia: CIAContext | undefined): number | null {
+  if (!cia || !party) return null;
+  const p = cia.partyPerformance.find(x => x.id === party || x.partyName.toLowerCase().startsWith(party.toLowerCase()));
+  return p ? p.metrics.successRate : null;
+}
+
+/**
+ * Generate per-document analysis.
+ * PRIMARY: full document text, policy significance, related speeches.
+ * SECONDARY (only when genuinely informative): CIA historical context footnote.
+ */
+function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string, cia: CIAContext | undefined, lang: Language | string): string {
+  const parts: string[] = [];
+
+  // ── PRIMARY: full document text or best available summary ────────────────
+  const rawText = doc.fullText || doc.fullContent || doc.summary || doc.notis || '';
+  const passage = extractKeyPassage(rawText, 500);
+  if (passage) {
+    const isSwedishSource = !!(doc.titel && !doc.title);
+    parts.push(isSwedishSource
+      ? `<span data-translate="true" lang="sv">${escapeHtml(passage)}</span>`
+      : escapeHtml(passage));
+  } else {
+    parts.push(escapeHtml(generateEnhancedSummary(doc, docType, lang)));
+  }
+
+  // ── PRIMARY: policy domain significance derived from document content ────
+  const significance = generatePolicySignificance(doc, lang);
+  parts.push(`<strong>${escapeHtml(String(L(lang, 'whatThisMeans')))}:</strong> ${significance}`);
+
+  // ── PRIMARY: related speeches (direct evidence from the chamber) ─────────
+  const speeches = doc.speeches || [];
+  if (speeches.length > 0) {
+    const speakerLines = speeches.slice(0, 2).map(s => {
+      const who = [s.talare, s.parti ? `(${s.parti})` : ''].filter(Boolean).join(' ');
+      return who ? escapeHtml(who) : 'Unknown speaker';
+    }).join(', ');
+    parts.push(`<em>Debate contributions from: ${speakerLines}.</em>`);
+  }
+
+  // ── SECONDARY: CIA historical context — only where it adds real perspective
+  // For motions: historical passage rate is highly relevant context since
+  // almost all opposition motions are denied (~99%). Only show when we have
+  // an actual party-specific rate, so the note is concrete, not generic.
+  if (docType === 'mot' && cia) {
+    const party = doc.parti;
+    const rate = partyMotionSuccessRate(party, cia);
+    if (rate !== null && party) {
+      parts.push(
+        `<small class="cia-context">Historical context: ${escapeHtml(party)} motions have a ${escapeHtml(rate.toFixed(1))}% passage rate ` +
+        `(${escapeHtml(String(cia.overallMotionDenialRate))}% of all opposition motions are rejected). ` +
+        `This motion signals a policy position rather than an imminent legislative change.</small>`
+      );
+    }
+  }
+
+  // For propositions: only note coalition arithmetic when majority is razor-thin (≤2 seats)
+  // — that's when it genuinely affects outcome probability.
+  if (docType === 'prop' && cia && cia.coalitionStability.majorityMargin <= 2) {
+    const margin = cia.coalitionStability.majorityMargin;
+    parts.push(
+      `<small class="cia-context">Historical context: the government's ${margin}-seat majority means a single defection or absence ` +
+      `could affect this proposition's passage.</small>`
+    );
+  }
+
+  return parts.join(' ');
+}
+
+/**
+ * Generate generic content with deep per-document analysis.
+ * Document content is the primary source. CIA data provides historical
+ * context only where it genuinely adds perspective.
+ * Used for weekly-review, monthly-review, and breaking article types.
  */
 function generateGenericContent(data: ArticleContentData, lang: Language | string): string {
-  // When documents are provided (weekly/monthly review), generate analytical content
   const docs = data.documents || [];
   if (docs.length === 0) {
     return `<p>${L(lang, 'genericContent')}</p>`;
   }
 
+  const cia = data.ciaContext;
   let content = '';
 
-  // Analytical overview
+  // ── Overview lede (from document count) ────────────────────────────────
   const overviewFn = L(lang, 'genericOverview') as string | ((n: number) => string);
   const overview = typeof overviewFn === 'function'
     ? overviewFn(docs.length)
     : `During this period, ${docs.length} documents were processed in parliament.`;
   content += `<p class="article-lede">${escapeHtml(String(overview))}</p>\n`;
 
-  // Group by document type for thematic analysis
+  // ── Group by document type ───────────────────────────────────────────────
   const byType: Record<string, RawDocument[]> = {};
   docs.forEach(doc => {
     const docType = doc.doktyp || doc.documentType || 'other';
@@ -1861,7 +1974,15 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
 
   content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
 
-  Object.entries(byType).forEach(([docType, typeDocs]) => {
+  // Render in significance order: propositions → committee reports → motions → rest
+  const typeOrder = ['prop', 'bet', 'skr', 'mot', 'other'];
+  const sortedTypes = [...Object.keys(byType)].sort((a, b) => {
+    const ai = typeOrder.indexOf(a); const bi = typeOrder.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
+
+  for (const docType of sortedTypes) {
+    const typeDocs = byType[docType] ?? [];
     const otherDocsVal = L(lang, 'otherDocuments');
     const otherDocsLabel = typeof otherDocsVal === 'string' ? otherDocsVal : 'Other documents';
     const typeLabel = docType === 'mot' ? (lang === 'sv' ? 'Motioner' : 'Motions')
@@ -1873,60 +1994,65 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
 
     content += `\n    <h3>${escapeHtml(typeLabel)} (${typeDocs.length})</h3>\n`;
 
-    typeDocs.forEach(doc => {
+    // ── Per-document deep analysis ───────────────────────────────────────
+    for (const doc of typeDocs) {
       const titleText = doc.titel || doc.title || '';
       const escapedTitle = escapeHtml(titleText);
       const titleHtml = (doc.titel && !doc.title)
         ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
         : escapedTitle;
 
-      const summaryText = generateEnhancedSummary(doc, docType, lang);
-      const isFromAPI = doc.summary || doc.notis;
-      const summaryHtml = (doc.titel && !doc.title && isFromAPI)
-        ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
-        : escapeHtml(summaryText);
+      const analysis = generateDocumentIntelligenceAnalysis(doc, docType, cia, lang);
 
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${titleHtml}</h4>\n`;
-      content += `      <p>${summaryHtml}</p>\n`;
-      content += `      <p><strong>${escapeHtml(String(L(lang, 'whatThisMeans')))}:</strong> ${generatePolicySignificance(doc, lang)}</p>\n`;
+      content += `      <p>${analysis}</p>\n`;
       if (doc.url) {
         content += `      <p><a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;
       }
       content += `    </div>\n`;
-    });
-  });
+    }
+  }
 
-  // Key takeaways section
+  // ── Key takeaways ────────────────────────────────────────────────────────
   content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
   content += `    <div class="context-box">\n      <ul>\n`;
 
-  // Summarise document type distribution
-  const typeEntries = Object.entries(byType);
-  const typeDescriptions = typeEntries.map(([docType, typeDocs]) => {
-    const typeLabel = docType === 'mot' ? (lang === 'sv' ? 'motioner' : 'motions')
-      : docType === 'prop' ? (lang === 'sv' ? 'propositioner' : 'propositions')
-      : docType === 'bet' ? (lang === 'sv' ? 'betänkanden' : 'committee reports')
-      : docType === 'skr' ? (lang === 'sv' ? 'skrivelser' : 'government communications')
+  // Document type distribution
+  const typeDescriptions = sortedTypes.map(docType => {
+    const typeDocs = byType[docType] ?? [];
+    const label = docType === 'mot' ? 'motions'
+      : docType === 'prop' ? 'propositions'
+      : docType === 'bet' ? 'committee reports'
+      : docType === 'skr' ? 'government communications'
       : docType;
-    return `${typeDocs.length} ${typeLabel}`;
+    return `${typeDocs.length} ${label}`;
   });
   if (typeDescriptions.length > 0) {
-    content += `        <li>${escapeHtml(typeDescriptions.join(', '))}</li>\n`;
+    content += `        <li>${escapeHtml(typeDescriptions.join(', '))} processed this period</li>\n`;
   }
 
-  // Highlight policy domains covered
+  // Policy domains
   const allDomains = new Set<string>();
+  const enrichedCount = docs.filter(d => d.contentFetched).length;
   docs.forEach(doc => {
     const sig = generatePolicySignificance(doc, lang);
     const genericVal = L(lang, 'policySignificanceGeneric');
-    if (sig !== genericVal) {
-      allDomains.add(sig);
-    }
+    if (sig !== genericVal) allDomains.add(sig);
   });
   if (allDomains.size > 0) {
     const policyContextVal = L(lang, 'policyContext');
-    content += `        <li>${escapeHtml(String(policyContextVal))}: ${escapeHtml(Array.from(allDomains).slice(0, 3).join('; '))}</li>\n`;
+    content += `        <li>${escapeHtml(String(policyContextVal))}: ${escapeHtml(Array.from(allDomains).slice(0, 4).join('; '))}</li>\n`;
+  }
+  if (enrichedCount > 0) {
+    content += `        <li><strong>Analysis depth:</strong> ${enrichedCount} of ${docs.length} documents analysed with full text</li>\n`;
+  }
+
+  // ── SECONDARY: CIA context only when it changes interpretation ───────────
+  // Razor-thin majority is actionable intelligence worth flagging once, in summary
+  if (cia && cia.coalitionStability.majorityMargin <= 2) {
+    content += `        <li><small class="cia-context">Historical context: the current ${cia.coalitionStability.majorityMargin}-seat majority means ` +
+      `any single defection or absence could reverse outcomes this week.</small></li>\n`;
   }
 
   content += `      </ul>\n    </div>\n`;

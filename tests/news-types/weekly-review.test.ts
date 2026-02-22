@@ -23,6 +23,8 @@ interface SearchDocument {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   searchDocuments: Mock<(params: Record<string, unknown>) => Promise<SearchDocument[]>>;
+  fetchDocumentDetails: Mock<(dokId: string) => Promise<Record<string, unknown>>>;
+  searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -70,7 +72,9 @@ const { mockClientInstance, mockDocuments, MockMCPClient } = vi.hoisted(() => {
   ];
 
   const mockClientInstance: MockMCPClientShape = {
-    searchDocuments: vi.fn().mockResolvedValue(mockDocuments) as MockMCPClientShape['searchDocuments']
+    searchDocuments: vi.fn().mockResolvedValue(mockDocuments) as MockMCPClientShape['searchDocuments'],
+    fetchDocumentDetails: vi.fn().mockResolvedValue({ summary: 'Full document text', fullText: 'Complete analysis of the document.' }) as MockMCPClientShape['fetchDocumentDetails'],
+    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
   };
 
   function MockMCPClient(): MockMCPClientShape {
@@ -94,6 +98,8 @@ describe('Weekly Review Article Generation', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockClientInstance.searchDocuments.mockResolvedValue(mockDocuments);
+    mockClientInstance.fetchDocumentDetails.mockResolvedValue({ summary: 'Full document text', fullText: 'Complete analysis.' });
+    mockClientInstance.searchSpeeches.mockResolvedValue([]);
   });
 
   afterEach(() => {
