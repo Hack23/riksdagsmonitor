@@ -1372,11 +1372,71 @@ function isHighPriority(event: RawCalendarEvent): boolean {
 }
 
 /**
+ * Parse author and party from raw Swedish motion text.
+ * Handles "av Fredrik Olovsson m.fl. (S)" and similar patterns.
+ */
+function parseMotionAuthorParty(text: string): { author: string; party: string } | null {
+  const m = text.match(/\bav\s+([^(]+?)\s+\(([A-ZÅÄÖ]{1,5})\)/u);
+  if (m) return { author: m[1].trim().replace(/\s+/g, ' '), party: m[2] };
+  return null;
+}
+
+/**
+ * Clean raw Swedish motion notis text into a readable subject.
+ * Strips "Motion till riksdagen XXXX av AUTHOR (PARTY) med anledning av..."
+ * and truncates at "Förslag till riksdagsbeslut".
+ */
+function cleanMotionText(raw: string): string {
+  // Minimum cleaned text length before falling back to raw; max excerpt lengths
+  const MIN_CLEANED = 20;
+  const MAX_CLEANED = 300;
+  const MAX_RAW_FALLBACK = 200;
+  // Truncate at formal ballot section
+  let text = raw.replace(/Förslag till riksdagsbeslut[\s\S]*/i, '').trim();
+  // Strip leading "Motion till riksdagen YYYY/YY:NNN av AUTHOR (PARTY) " prefix
+  text = text.replace(/^Motion till riksdagen\s+\S+\s+av\s+[^(]+\([A-ZÅÄÖ]{1,5}\)\s*/i, '').trim();
+  // Strip "med anledning av prop. YYYY/YY:NNN " prefix
+  text = text.replace(/^med anledning av prop\.\s+\S+\s*/i, '').trim();
+  return text.length > MIN_CLEANED ? text.slice(0, MAX_CLEANED) : raw.slice(0, MAX_RAW_FALLBACK);
+}
+
+/**
+ * Build a descriptive proposition summary from the ministry organ.
+ * Returns a ministry-specific framing sentence.
+ */
+function propSummaryFromOrgan(organ: string, lang: Language | string): string {
+  const ministryMap: Record<string, { sv: string; en: string }> = {
+    Justitiedepartementet:    { sv: 'Justitiedepartementets förslag rör rättsliga förändringar.', en: 'This Justice Ministry proposal amends existing legal framework.' },
+    Finansdepartementet:      { sv: 'Finansdepartementets förslag påverkar statsbudget eller finansreglering.', en: 'This Finance Ministry proposal has fiscal or budgetary implications.' },
+    Försvarsdepartementet:    { sv: 'Försvarsdepartementets förslag rör försvars- eller säkerhetspolitik.', en: 'This Defence Ministry proposal concerns national security or defence posture.' },
+    Utbildningsdepartementet: { sv: 'Utbildningsdepartementets förslag berör skolsystem eller forskning.', en: 'This Education Ministry proposal affects schools, universities or research funding.' },
+    Socialdepartementet:      { sv: 'Socialdepartementets förslag rör välfärd eller socialpolitik.', en: 'This Social Affairs Ministry proposal affects welfare entitlements or social services.' },
+    Miljödepartementet:       { sv: 'Klimat- och miljödepartementets förslag rör klimat- eller miljöpolitik.', en: 'This Climate and Environment Ministry proposal targets emissions or ecological regulation.' },
+    'Klimat- och miljödepartementet': { sv: 'Klimat- och miljödepartementets förslag rör klimat- eller miljöpolitik.', en: 'This Climate and Environment Ministry proposal targets emissions or ecological regulation.' },
+    'Klimat- och näringslivsdepartementet': { sv: 'Klimat- och näringslivsdepartementets förslag rör klimat- och näringspolitik.', en: 'This Climate and Enterprise Ministry proposal addresses both environmental and industrial policy.' },
+    Utrikesdepartementet:     { sv: 'Utrikesdepartementets förslag rör utrikespolitik eller internationella relationer.', en: 'This Foreign Affairs Ministry proposal concerns international relations or Sweden’s global obligations.' },
+    Infrastrukturdepartementet: { sv: 'Infrastrukturdepartementets förslag rör transport eller samhällsinfrastruktur.', en: 'This Infrastructure Ministry proposal affects transport networks or public utilities.' },
+  };
+  const entry = ministryMap[organ];
+  if (!entry) return '';
+  return lang === 'sv' ? entry.sv : entry.en;
+}
+
+/**
  * Generate enhanced summary from document metadata when summary field is missing
  * Uses document type, subtype, organ, and other metadata to create informative placeholder
  */
 function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language | string): string {
-  // If we have a real summary or notis, use it
+  // For motions: clean raw Swedish notis text before returning
+  if ((type === 'motion') && (doc.summary || doc.notis)) {
+    const raw = (doc.summary || doc.notis || '');
+    if (raw.includes('Motion till riksdagen') || raw.includes('Förslag till riksdagsbeslut')) {
+      return cleanMotionText(raw);
+    }
+    return raw;
+  }
+
+  // If we have a real summary or notis, use it as-is for other types
   if (doc.summary || doc.notis) {
     return doc.summary || doc.notis || '';
   }
@@ -1397,12 +1457,13 @@ function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language 
       parts.push(`${typeof onVal === 'string' ? onVal : ''} ${subtyp}`);
     }
   } else if (type === 'proposition') {
+    // Try ministry-specific framing first
+    const ministrySummary = organ ? propSummaryFromOrgan(organ, lang) : '';
+    if (ministrySummary) {
+      return ministrySummary;
+    }
     const propLabel = L(lang, 'governmentProposition');
     parts.push(typeof propLabel === 'string' ? propLabel : '');
-    if (subtyp) {
-      const regardingVal = L(lang, 'regarding');
-      parts.push(`${typeof regardingVal === 'string' ? regardingVal : ''} ${subtyp}`);
-    }
     if (organ) {
       const referredVal = L(lang, 'referredTo');
       parts.push(`${typeof referredVal === 'string' ? referredVal : ''} ${organ}`);
@@ -1800,23 +1861,30 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
       : escapedTitle;
     const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
 
-    // Use enriched author and party data
+    // Use enriched author and party data, with fallback parsing from raw notis
     const unknownVal = L(lang, 'unknown');
-    const authorName = motion.intressent_namn || motion.author || (typeof unknownVal === 'string' ? unknownVal : 'Unknown');
-    const partyName = motion.parti || '';
+    let authorName = motion.intressent_namn || motion.author || '';
+    let partyName = motion.parti || '';
+    if (!authorName) {
+      const rawText = motion.summary || motion.notis || motion.fullText || '';
+      const parsed = parseMotionAuthorParty(rawText);
+      if (parsed) { authorName = parsed.author; partyName = parsed.party; }
+    }
+    if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
     const authorLine = partyName
       ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
       : escapeHtml(authorName);
 
-    // Use enhanced summary based on metadata
+    // Use enhanced summary based on metadata (cleanMotionText strips Swedish boilerplate)
     const summaryText = generateEnhancedSummary(motion, 'motion', lang);
-    const isFromAPI = motion.summary || motion.notis;
     const motionDefaultVal = L(lang, 'motionDefault');
-    const summaryHtml = (motion.titel && !motion.title && isFromAPI && summaryText !== motionDefaultVal)
+    // Only wrap in data-translate when the content comes from a Swedish source
+    const isSwedishContent = (motion.titel && !motion.title)
+      || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
+    const summaryHtml = (summaryText && summaryText !== motionDefaultVal && isSwedishContent)
       ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
-      : escapeHtml(summaryText);
+      : escapeHtml(summaryText || (typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));
 
-    const motionSigVal = L(lang, 'motionSignificance');
     const readFullVal = L(lang, 'readFullMotion');
     const whyItMattersVal = L(lang, 'whyItMatters');
 
@@ -1824,7 +1892,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     <div class="motion-entry">
       <h3>${titleHtml}</h3>
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
-      <p>${escapeHtml(String(motionSigVal))} ${summaryHtml}</p>
+      <p>${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
       <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
@@ -1900,10 +1968,27 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string): 
 
   if (policyHintSet.size > 0) {
     const domains = Array.from(policyHintSet).join(', ');
-    const touchesFn = L(lang, 'policySignificanceTouches') as string | ((domains: string) => string);
-    return typeof touchesFn === 'function'
-      ? touchesFn(escapeHtml(domains))
-      : `Touches on ${escapeHtml(domains)}.`;
+    const doktyp = doc.doktyp || doc.documentType || '';
+    // Type-specific implication sentences
+    let implication: string;
+    if (lang === 'sv') {
+      if (doktyp === 'mot') {
+        implication = 'Motionen signalerar partiets politiska ståndpunkt; bifall är osannolikt utan regeringsstöd.';
+      } else if (doktyp === 'bet') {
+        implication = 'Kommitténs ståndpunkt avgör propositionens väg i kammaren.';
+      } else {
+        implication = 'Utskottsgranskning och kammarvotering avgör propositionens öde.';
+      }
+    } else {
+      if (doktyp === 'mot') {
+        implication = 'This motion signals a policy position; passage requires government or majority support.';
+      } else if (doktyp === 'bet') {
+        implication = 'The committee vote will be determinative for the legislation\'s path forward.';
+      } else {
+        implication = 'Parliamentary committee review and chamber debate will shape the final outcome.';
+      }
+    }
+    return `Touches on ${escapeHtml(domains)}. ${implication}`;
   }
 
   // Generic significance when no domain detected
@@ -1951,7 +2036,11 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
 
   // ── PRIMARY: full document text or best available summary ────────────────
   const rawText = doc.fullText || doc.fullContent || doc.summary || doc.notis || '';
-  const passage = extractKeyPassage(rawText, 500);
+  // For motions, clean Swedish boilerplate before extracting passage
+  const cleanedText = (normalizedType === 'motion' && rawText.includes('Motion till riksdagen'))
+    ? cleanMotionText(rawText)
+    : rawText;
+  const passage = extractKeyPassage(cleanedText, 500);
   if (passage) {
     const isSwedishSource = !!(doc.titel && !doc.title);
     parts.push(isSwedishSource
@@ -1980,7 +2069,13 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
   // almost all opposition motions are denied (~99%). Only show when we have
   // an actual party-specific rate, so the note is concrete, not generic.
   if (docType === 'mot' && cia) {
-    const party = doc.parti;
+    // Try to get party from doc fields, else parse from raw text
+    let party = doc.parti;
+    if (!party) {
+      const rawText2 = doc.summary || doc.notis || doc.fullText || '';
+      const parsed2 = parseMotionAuthorParty(rawText2);
+      if (parsed2) party = parsed2.party;
+    }
     const rate = partyMotionSuccessRate(party, cia);
     if (rate !== null && party) {
       parts.push(
