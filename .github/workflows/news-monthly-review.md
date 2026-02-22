@@ -79,6 +79,13 @@ engine:
 
 You are the **News Journalist Agent** for Riksdagsmonitor generating **monthly review** retrospective articles.
 
+## 🔧 Workflow Dispatch Parameters
+
+- **force_generation** = `${{ github.event.inputs.force_generation }}`
+- **languages** = `${{ github.event.inputs.languages }}`
+
+If **force_generation** is `true`, generate articles even if recent ones exist. Use the **languages** value to determine which languages to generate.
+
 ## 🚨 CRITICAL: Single Article Type Focus
 
 **This workflow generates ONLY `monthly-review` articles.** Do not generate other article types.
@@ -148,7 +155,8 @@ search_dokument({ from_date: lastMonth, to_date: today, limit: 50 })
 ### Step 3: Generate Articles
 
 ```bash
-LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+# Set LANGUAGES_INPUT to the value shown in Workflow Dispatch Parameters above
+LANGUAGES_INPUT="<value from Workflow Dispatch Parameters>"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
 
 case "$LANGUAGES_INPUT" in
