@@ -798,6 +798,11 @@ This validation checks:
 
 **Exit code 0** = pass (proceed to Step 7), **exit code 1** = fail (STOP, do not create PR).
 
+**CRITICAL: Analysis Quality Check**
+Every generated article MUST contain real analysis, not merely a translated list of document links.
+Verify each article includes analytical lede paragraphs, thematic grouping with commentary, policy significance analysis, and forward-looking "What to Watch" sections.
+**If an article reads as a link list with translated titles, it FAILS quality review.**
+
 If validation fails, review the error messages, fix the issues, regenerate indexes if needed, and run validation again.
 
 ### Step 7: Create Pull Request

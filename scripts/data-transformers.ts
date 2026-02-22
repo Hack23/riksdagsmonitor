@@ -196,6 +196,22 @@ import type { Language } from './types/language.js';
 import type { ContentLabelSet, CommitteeName, CommitteeNameMap } from './types/content.js';
 import type { EventGridItem, WatchPoint, ArticleMetadata, ArticleType } from './types/article.js';
 
+/**
+ * Sanitize a URL for safe use in href attributes.
+ * Rejects javascript:, data:, vbscript: schemes and returns '#' for invalid URLs.
+ * Also escapes HTML attribute characters in the URL.
+ */
+function sanitizeUrl(url: string | undefined | null): string {
+  if (!url || typeof url !== 'string') return '#';
+  const trimmed = url.trim();
+  // Block dangerous schemes
+  if (/^(javascript|data|vbscript):/i.test(trimmed)) return '#';
+  // Only allow http, https, and relative URLs
+  if (/^[a-z]+:/i.test(trimmed) && !/^https?:/i.test(trimmed)) return '#';
+  // Escape HTML attribute characters
+  return trimmed.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 // ---------------------------------------------------------------------------
 // Data interfaces shared with news-type modules
 // ---------------------------------------------------------------------------
@@ -334,7 +350,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'This motion addresses',
     readFullMotion: 'Read the full motion',
     policyContext: 'Policy context',
-    filedBy: 'Filed by'
+    filedBy: 'Filed by',
+    politicalContext: 'Political Context',
+    policyImplications: 'Policy Implications',
+    keyTakeaways: 'Key Takeaways',
+    thematicAnalysis: 'Thematic Analysis',
+    legislativePipeline: 'Legislative Pipeline',
+    oppositionStrategy: 'Opposition Strategy',
+    coalitionDynamics: 'Coalition Dynamics',
+    whatThisMeans: 'What This Means',
+    whyItMatters: 'Why It Matters',
+    committeeBreakdown: (n: number, c: number): string => `This batch of ${n} committee reports spans ${c} different committees, reflecting the breadth of legislative activity in the current parliamentary session. The thematic spread reveals the Riksdag's multi-front policy engagement and the government's legislative priorities.`,
+    propsBreakdown: (n: number): string => `The government has submitted ${n} new propositions, signalling its policy priorities and the pace of its legislative agenda. Each proposition must navigate committee review and chamber debate, providing insight into the coalition's strategic direction and its ability to build cross-party support.`,
+    motionsBreakdown: (n: number): string => `Opposition MPs have filed ${n} new motions, mapping the political fault lines in the current Riksdag. These motions reveal not just policy disagreements but the strategic positioning of parties as they prepare for the next electoral contest.`
+,
+    committeeCountContext: (n: number): string => `${n} reports from this committee signal intensive legislative work within its portfolio.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `Parliamentary committees have been active across ${committees} and ${extra} further policy domains.` : `Parliamentary committees have been active across ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `A total of ${n} reports demonstrates sustained legislative momentum and ongoing policy prioritisation.`,
+    oppositionStrategyContext: (n: number): string => `Motions from ${n} different parties reveal the breadth of opposition political criticism and alternative policy agendas.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `These ${propCount} propositions touch on ${domainCount} policy domain${domainCount > 1 ? 's' : ''}, demonstrating the government's broad legislative ambition. Committee review and chamber debate will determine whether these proposals command sufficient support to become law.`,
+    genericOverview: (n: number): string => `During this period, ${n} documents were processed in parliament, offering a snapshot of ongoing legislative work.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motion${n > 1 ? 's' : ''} filed`,
+    otherCommittee: 'Other committees',
+    otherDocuments: 'Other documents',
+    policySignificanceTouches: (domains: string): string => `Touches on ${domains}. Committee review and potential chamber vote will determine the proposal's fate.`,
+    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -380,7 +420,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'Denna motion behandlar',
     readFullMotion: 'Läs hela motionen',
     policyContext: 'Politisk kontext',
-    filedBy: 'Inlämnad av'
+    filedBy: 'Inlämnad av',
+    politicalContext: 'Politisk kontext',
+    policyImplications: 'Politiska konsekvenser',
+    keyTakeaways: 'Centrala slutsatser',
+    thematicAnalysis: 'Tematisk analys',
+    legislativePipeline: 'Lagstiftningsprocess',
+    oppositionStrategy: 'Oppositionens strategi',
+    coalitionDynamics: 'Koalitionsdynamik',
+    whatThisMeans: 'Vad detta innebär',
+    whyItMatters: 'Varför det spelar roll',
+    committeeBreakdown: (n: number, c: number): string => `Denna omgång med ${n} utskottsbetänkanden omfattar ${c} olika utskott, vilket speglar bredden i riksdagens lagstiftningsarbete under innevarande session.`,
+    propsBreakdown: (n: number): string => `Regeringen har överlämnat ${n} nya propositioner, som signalerar dess politiska prioriteringar och takten i den lagstiftande agendan.`,
+    motionsBreakdown: (n: number): string => `Oppositionsledamöter har lämnat in ${n} nya motioner som kartlägger de politiska skiljelinjerna i nuvarande riksdag.`
+,
+    committeeCountContext: (n: number): string => `${n} betänkanden från detta utskott signalerar intensivt lagstiftningsarbete inom dess ansvarsområde.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `Riksdagens utskott har varit aktiva inom ${committees} och ${extra} ytterligare områden.` : `Riksdagens utskott har varit aktiva inom ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `Totalt ${n} betänkanden visar lagstiftande momentum och pågående politisk prioritering.`,
+    oppositionStrategyContext: (n: number): string => `Motioner från ${n} olika partier visar bredden i oppositionens politiska kritik och alternativa agenda.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `Dessa ${propCount} propositioner berör ${domainCount} politikområde${domainCount > 1 ? 'n' : ''}, vilket visar regeringens breda lagstiftningsambition. Utskottsbehandling och kammardebatt avgör om förslagen vinner tillräckligt stöd för att bli lag.`,
+    genericOverview: (n: number): string => `Under perioden har ${n} dokument behandlats i riksdagen, vilket ger en bild av det pågående lagstiftningsarbetet.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motion${n > 1 ? 'er' : ''} inlämnade`,
+    otherCommittee: 'Övriga utskott',
+    otherDocuments: 'Övriga dokument',
+    policySignificanceTouches: (domains: string): string => `Berör ${domains}. Utskottsbehandling och eventuell kammaromröstning avgör om förslaget får genomslag.`,
+    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -426,7 +490,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'Dette forslag omhandler',
     readFullMotion: 'Læs hele forslaget',
     policyContext: 'Politisk kontekst',
-    filedBy: 'Indgivet af'
+    filedBy: 'Indgivet af',
+    politicalContext: 'Politisk kontekst',
+    policyImplications: 'Politiske konsekvenser',
+    keyTakeaways: 'Centrale konklusioner',
+    thematicAnalysis: 'Tematisk analyse',
+    legislativePipeline: 'Lovgivningsprocessen',
+    oppositionStrategy: 'Oppositionens strategi',
+    coalitionDynamics: 'Koalitionsdynamik',
+    whatThisMeans: 'Hvad dette betyder',
+    whyItMatters: 'Hvorfor det er vigtigt',
+    committeeBreakdown: (n: number, c: number): string => `Denne omgang med ${n} udvalgsbetænkninger dækker ${c} forskellige udvalg.`,
+    propsBreakdown: (n: number): string => `Regeringen har fremsat ${n} nye lovforslag.`,
+    motionsBreakdown: (n: number): string => `Oppositionsmedlemmer har indgivet ${n} nye forslag.`
+,
+    committeeCountContext: (n: number): string => `${n} betænkninger fra dette udvalg signalerer intensivt lovgivningsarbejde.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `Parlamentets udvalg har været aktive inden for ${committees} og ${extra} yderligere politikområder.` : `Parlamentets udvalg har været aktive inden for ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `I alt ${n} betænkninger viser vedvarende lovgivningsmæssig fremdrift.`,
+    oppositionStrategyContext: (n: number): string => `Forslag fra ${n} forskellige partier viser bredden i oppositionens politiske kritik.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `Disse ${propCount} lovforslag berører ${domainCount} politikområde${domainCount > 1 ? 'r' : ''}, hvilket viser regeringens brede lovgivningsambition.`,
+    genericOverview: (n: number): string => `I denne periode er ${n} dokumenter blevet behandlet i parlamentet.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} forslag indgivet`,
+    otherCommittee: 'Andre udvalg',
+    otherDocuments: 'Andre dokumenter',
+    policySignificanceTouches: (domains: string): string => `Berører ${domains}. Udvalgsbehandling og afstemning afgør forslagets skæbne.`,
+    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -472,7 +560,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'Dette forslaget omhandler',
     readFullMotion: 'Les hele forslaget',
     policyContext: 'Politisk kontekst',
-    filedBy: 'Innsendt av'
+    filedBy: 'Innsendt av',
+    politicalContext: 'Politisk kontekst',
+    policyImplications: 'Politiske konsekvenser',
+    keyTakeaways: 'Sentrale konklusjoner',
+    thematicAnalysis: 'Tematisk analyse',
+    legislativePipeline: 'Lovgivningsprosessen',
+    oppositionStrategy: 'Opposisjonens strategi',
+    coalitionDynamics: 'Koalisjonsdynamikk',
+    whatThisMeans: 'Hva dette betyr',
+    whyItMatters: 'Hvorfor det er viktig',
+    committeeBreakdown: (n: number, c: number): string => `Denne runden med ${n} komitéinnstillinger dekker ${c} forskjellige komiteer.`,
+    propsBreakdown: (n: number): string => `Regjeringen har fremmet ${n} nye proposisjoner.`,
+    motionsBreakdown: (n: number): string => `Opposisjonsmedlemmer har innsendt ${n} nye forslag.`
+,
+    committeeCountContext: (n: number): string => `${n} innstillinger fra denne komiteen signaliserer intensivt lovgivningsarbeid.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `Stortingets komiteer har vært aktive innen ${committees} og ${extra} ytterligere politikkområder.` : `Stortingets komiteer har vært aktive innen ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `Totalt ${n} innstillinger viser vedvarende lovgivende fremdrift.`,
+    oppositionStrategyContext: (n: number): string => `Forslag fra ${n} ulike partier viser bredden i opposisjonens politiske kritikk.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `Disse ${propCount} proposisjonene berører ${domainCount} politikkområde${domainCount > 1 ? 'r' : ''}, og viser regjeringens brede lovgivningsambisjon.`,
+    genericOverview: (n: number): string => `I denne perioden er ${n} dokumenter blitt behandlet i parlamentet.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} forslag innsendt`,
+    otherCommittee: 'Andre komiteer',
+    otherDocuments: 'Andre dokumenter',
+    policySignificanceTouches: (domains: string): string => `Berører ${domains}. Komitébehandling og avstemning avgjør forslagets skjebne.`,
+    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -518,7 +630,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'Tämä aloite käsittelee',
     readFullMotion: 'Lue koko aloite',
     policyContext: 'Poliittinen konteksti',
-    filedBy: 'Jättänyt'
+    filedBy: 'Jättänyt',
+    politicalContext: 'Poliittinen konteksti',
+    policyImplications: 'Poliittiset vaikutukset',
+    keyTakeaways: 'Keskeiset havainnot',
+    thematicAnalysis: 'Temaattinen analyysi',
+    legislativePipeline: 'Lainsäädäntöprosessi',
+    oppositionStrategy: 'Opposition strategia',
+    coalitionDynamics: 'Koalitiodynamiikka',
+    whatThisMeans: 'Mitä tämä tarkoittaa',
+    whyItMatters: 'Miksi tämä on tärkeää',
+    committeeBreakdown: (n: number, c: number): string => `Tämä erä ${n} valiokunnan mietintöä kattaa ${c} eri valiokuntaa.`,
+    propsBreakdown: (n: number): string => `Hallitus on jättänyt ${n} uutta esitystä.`,
+    motionsBreakdown: (n: number): string => `Oppositiokansanedustajat ovat jättäneet ${n} uutta aloitetta.`
+,
+    committeeCountContext: (n: number): string => `${n} mietintöä tästä valiokunnasta osoittavat intensiivistä lainsäädäntötyötä.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `Eduskunnan valiokunnat ovat olleet aktiivisia aloilla ${committees} ja ${extra} muulla politiikka-alueella.` : `Eduskunnan valiokunnat ovat olleet aktiivisia aloilla ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `Yhteensä ${n} mietintöä osoittaa jatkuvaa lainsäädännöllistä vauhtia.`,
+    oppositionStrategyContext: (n: number): string => `${n} eri puolueen aloitteet osoittavat opposition poliittisen kritiikin laajuuden.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `Nämä ${propCount} esitystä koskevat ${domainCount} politiikka-aluetta, mikä osoittaa hallituksen laajaa lainsäädäntökunnianhimoa.`,
+    genericOverview: (n: number): string => `Tänä aikana eduskunnassa käsiteltiin ${n} asiakirjaa.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} aloitetta jätetty`,
+    otherCommittee: 'Muut valiokunnat',
+    otherDocuments: 'Muut asiakirjat',
+    policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}. Valiokuntakäsittely ja äänestys ratkaisevat ehdotuksen kohtalon.`,
+    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -564,7 +700,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'Dieser Antrag befasst sich mit',
     readFullMotion: 'Den vollständigen Antrag lesen',
     policyContext: 'Politischer Kontext',
-    filedBy: 'Eingereicht von'
+    filedBy: 'Eingereicht von',
+    politicalContext: 'Politischer Kontext',
+    policyImplications: 'Politische Auswirkungen',
+    keyTakeaways: 'Zentrale Erkenntnisse',
+    thematicAnalysis: 'Thematische Analyse',
+    legislativePipeline: 'Gesetzgebungsverfahren',
+    oppositionStrategy: 'Oppositionsstrategie',
+    coalitionDynamics: 'Koalitionsdynamik',
+    whatThisMeans: 'Was dies bedeutet',
+    whyItMatters: 'Warum es wichtig ist',
+    committeeBreakdown: (n: number, c: number): string => `Diese Runde von ${n} Ausschussberichten umfasst ${c} verschiedene Ausschüsse.`,
+    propsBreakdown: (n: number): string => `Die Regierung hat ${n} neue Vorlagen eingebracht.`,
+    motionsBreakdown: (n: number): string => `Oppositionsabgeordnete haben ${n} neue Anträge eingereicht.`
+,
+    committeeCountContext: (n: number): string => `${n} Berichte dieses Ausschusses signalisieren intensive Gesetzgebungsarbeit.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `Die Parlamentsausschüsse waren in den Bereichen ${committees} und ${extra} weiteren Politikfeldern aktiv.` : `Die Parlamentsausschüsse waren in den Bereichen ${committees} aktiv.`,
+    committeeMomentumTakeaway: (n: number): string => `Insgesamt ${n} Berichte zeugen von anhaltendem Gesetzgebungsmomentum.`,
+    oppositionStrategyContext: (n: number): string => `Anträge aus ${n} verschiedenen Parteien zeigen die Breite der oppositionellen politischen Kritik.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `Diese ${propCount} Vorlagen betreffen ${domainCount} Politikbereich${domainCount > 1 ? 'e' : ''} und demonstrieren den breiten Gesetzgebungsanspruch der Regierung.`,
+    genericOverview: (n: number): string => `In diesem Zeitraum wurden ${n} Dokumente im Parlament behandelt.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} Antrag${n > 1 ? 'e' : ''} eingereicht`,
+    otherCommittee: 'Sonstige Ausschüsse',
+    otherDocuments: 'Sonstige Dokumente',
+    policySignificanceTouches: (domains: string): string => `Betrifft ${domains}. Ausschussberatung und Abstimmung bestimmen das Schicksal des Vorschlags.`,
+    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -610,7 +770,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'Cette motion traite de',
     readFullMotion: 'Lire la motion complète',
     policyContext: 'Contexte politique',
-    filedBy: 'Déposé par'
+    filedBy: 'Déposé par',
+    politicalContext: 'Contexte politique',
+    policyImplications: 'Implications politiques',
+    keyTakeaways: 'Points clés',
+    thematicAnalysis: 'Analyse thématique',
+    legislativePipeline: 'Processus législatif',
+    oppositionStrategy: 'Stratégie de l\'opposition',
+    coalitionDynamics: 'Dynamique de coalition',
+    whatThisMeans: 'Ce que cela signifie',
+    whyItMatters: 'Pourquoi c\'est important',
+    committeeBreakdown: (n: number, c: number): string => `Ce lot de ${n} rapports de commission couvre ${c} commissions différentes.`,
+    propsBreakdown: (n: number): string => `Le gouvernement a soumis ${n} nouvelles propositions.`,
+    motionsBreakdown: (n: number): string => `Les députés de l'opposition ont déposé ${n} nouvelles motions.`
+,
+    committeeCountContext: (n: number): string => `${n} rapports de cette commission témoignent d'un travail législatif intensif.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `Les commissions parlementaires ont été actives dans les domaines ${committees} et ${extra} autres domaines politiques.` : `Les commissions parlementaires ont été actives dans les domaines ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `Un total de ${n} rapports démontre un élan législatif soutenu.`,
+    oppositionStrategyContext: (n: number): string => `Des motions de ${n} partis différents révèlent l'étendue de la critique politique de l'opposition.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `Ces ${propCount} propositions touchent à ${domainCount} domaine${domainCount > 1 ? 's' : ''} politique${domainCount > 1 ? 's' : ''}, démontrant l'ambition législative du gouvernement.`,
+    genericOverview: (n: number): string => `Durant cette période, ${n} documents ont été traités au parlement.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party} : ${n} motion${n > 1 ? 's' : ''} déposée${n > 1 ? 's' : ''}`,
+    otherCommittee: 'Autres commissions',
+    otherDocuments: 'Autres documents',
+    policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}. L'examen en commission et le vote détermineront le sort de la proposition.`,
+    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.'
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -656,7 +840,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'Esta moción aborda',
     readFullMotion: 'Leer la moción completa',
     policyContext: 'Contexto político',
-    filedBy: 'Presentada por'
+    filedBy: 'Presentada por',
+    politicalContext: 'Contexto político',
+    policyImplications: 'Implicaciones políticas',
+    keyTakeaways: 'Conclusiones clave',
+    thematicAnalysis: 'Análisis temático',
+    legislativePipeline: 'Proceso legislativo',
+    oppositionStrategy: 'Estrategia de la oposición',
+    coalitionDynamics: 'Dinámica de coalición',
+    whatThisMeans: 'Qué significa esto',
+    whyItMatters: 'Por qué es importante',
+    committeeBreakdown: (n: number, c: number): string => `Este lote de ${n} informes de comisión abarca ${c} comisiones diferentes.`,
+    propsBreakdown: (n: number): string => `El gobierno ha presentado ${n} nuevas proposiciones.`,
+    motionsBreakdown: (n: number): string => `Los diputados de la oposición han presentado ${n} nuevas mociones.`
+,
+    committeeCountContext: (n: number): string => `${n} informes de esta comisión señalan un trabajo legislativo intensivo.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `Las comisiones parlamentarias han estado activas en las áreas de ${committees} y ${extra} dominios políticos más.` : `Las comisiones parlamentarias han estado activas en las áreas de ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `Un total de ${n} informes demuestra un impulso legislativo sostenido.`,
+    oppositionStrategyContext: (n: number): string => `Mociones de ${n} partidos diferentes revelan la amplitud de la crítica política de la oposición.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `Estas ${propCount} proposiciones abarcan ${domainCount} dominio${domainCount > 1 ? 's' : ''} político${domainCount > 1 ? 's' : ''}, demostrando la amplia ambición legislativa del gobierno.`,
+    genericOverview: (n: number): string => `Durante este período, ${n} documentos fueron procesados en el parlamento.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} moción${n > 1 ? 'es' : ''} presentada${n > 1 ? 's' : ''}`,
+    otherCommittee: 'Otras comisiones',
+    otherDocuments: 'Otros documentos',
+    policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}. La revisión en comisión y la votación determinarán el destino de la propuesta.`,
+    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -702,7 +910,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'Deze motie behandelt',
     readFullMotion: 'Lees de volledige motie',
     policyContext: 'Politieke context',
-    filedBy: 'Ingediend door'
+    filedBy: 'Ingediend door',
+    politicalContext: 'Politieke context',
+    policyImplications: 'Beleidsimplicaties',
+    keyTakeaways: 'Belangrijkste bevindingen',
+    thematicAnalysis: 'Thematische analyse',
+    legislativePipeline: 'Wetgevingsproces',
+    oppositionStrategy: 'Oppositiestrategie',
+    coalitionDynamics: 'Coalitiedynamiek',
+    whatThisMeans: 'Wat dit betekent',
+    whyItMatters: 'Waarom het belangrijk is',
+    committeeBreakdown: (n: number, c: number): string => `Deze reeks van ${n} commissierapporten bestrijkt ${c} verschillende commissies.`,
+    propsBreakdown: (n: number): string => `De regering heeft ${n} nieuwe voorstellen ingediend.`,
+    motionsBreakdown: (n: number): string => `Oppositieleden hebben ${n} nieuwe moties ingediend.`
+,
+    committeeCountContext: (n: number): string => `${n} rapporten van deze commissie signaleren intensief wetgevend werk.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `De parlementaire commissies zijn actief geweest op het gebied van ${committees} en ${extra} verdere beleidsterreinen.` : `De parlementaire commissies zijn actief geweest op het gebied van ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `In totaal ${n} rapporten tonen aanhoudend wetgevend momentum.`,
+    oppositionStrategyContext: (n: number): string => `Moties van ${n} verschillende partijen tonen de breedte van de politieke kritiek van de oppositie.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `Deze ${propCount} wetsvoorstellen bestrijken ${domainCount} beleidsterrein${domainCount > 1 ? 'en' : ''}, wat de brede wetgevende ambitie van de regering laat zien.`,
+    genericOverview: (n: number): string => `In deze periode zijn ${n} documenten in het parlement behandeld.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motie${n > 1 ? 's' : ''} ingediend`,
+    otherCommittee: 'Overige commissies',
+    otherDocuments: 'Overige documenten',
+    policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}. Commissiebehandeling en stemming bepalen het lot van het voorstel.`,
+    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -748,7 +980,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'يتناول هذا الاقتراح',
     readFullMotion: 'قراءة الاقتراح الكامل',
     policyContext: 'السياق السياسي',
-    filedBy: 'مقدم من'
+    filedBy: 'مقدم من',
+    politicalContext: 'السياق السياسي',
+    policyImplications: 'الآثار السياسية',
+    keyTakeaways: 'النقاط الرئيسية',
+    thematicAnalysis: 'التحليل الموضوعي',
+    legislativePipeline: 'المسار التشريعي',
+    oppositionStrategy: 'استراتيجية المعارضة',
+    coalitionDynamics: 'ديناميكيات الائتلاف',
+    whatThisMeans: 'ماذا يعني هذا',
+    whyItMatters: 'لماذا هذا مهم',
+    committeeBreakdown: (n: number, c: number): string => `تغطي هذه الدفعة من ${n} تقارير لجان ${c} لجان مختلفة.`,
+    propsBreakdown: (n: number): string => `قدمت الحكومة ${n} مقترحات جديدة.`,
+    motionsBreakdown: (n: number): string => `قدم نواب المعارضة ${n} اقتراحات جديدة.`
+,
+    committeeCountContext: (n: number): string => `${n} تقارير من هذه اللجنة تشير إلى عمل تشريعي مكثف.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `كانت اللجان البرلمانية نشطة في مجالات ${committees} و${extra} مجالات سياسية أخرى.` : `كانت اللجان البرلمانية نشطة في مجالات ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `إجمالي ${n} تقارير يدل على زخم تشريعي مستمر.`,
+    oppositionStrategyContext: (n: number): string => `اقتراحات من ${n} أحزاب مختلفة تكشف عن اتساع النقد السياسي للمعارضة.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `تمس هذه المقترحات الـ ${propCount} ${domainCount} مجال${domainCount > 1 ? 'ات' : ''} سياسي${domainCount > 1 ? 'ة' : ''}.`,
+    genericOverview: (n: number): string => `خلال هذه الفترة، تمت معالجة ${n} وثائق في البرلمان.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} اقتراح${n > 1 ? 'ات' : ''} مقدمة`,
+    otherCommittee: 'لجان أخرى',
+    otherDocuments: 'وثائق أخرى',
+    policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}. ستحدد المراجعة في اللجنة والتصويت مصير المقترح.`,
+    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -794,7 +1050,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'הצעה זו עוסקת ב',
     readFullMotion: 'קראו את ההצעה המלאה',
     policyContext: 'הקשר מדיני',
-    filedBy: 'הוגשה על ידי'
+    filedBy: 'הוגשה על ידי',
+    politicalContext: 'הקשר פוליטי',
+    policyImplications: 'השלכות מדיניות',
+    keyTakeaways: 'מסקנות מרכזיות',
+    thematicAnalysis: 'ניתוח נושאי',
+    legislativePipeline: 'תהליך החקיקה',
+    oppositionStrategy: 'אסטרטגיית האופוזיציה',
+    coalitionDynamics: 'דינמיקת הקואליציה',
+    whatThisMeans: 'מה זה אומר',
+    whyItMatters: 'למה זה חשוב',
+    committeeBreakdown: (n: number, c: number): string => `קבוצה זו של ${n} דוחות ועדה מכסה ${c} ועדות שונות.`,
+    propsBreakdown: (n: number): string => `הממשלה הגישה ${n} הצעות חדשות.`,
+    motionsBreakdown: (n: number): string => `חברי האופוזיציה הגישו ${n} הצעות חדשות.`
+,
+    committeeCountContext: (n: number): string => `${n} דוחות מוועדה זו מעידים על עבודת חקיקה אינטנסיבית.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `ועדות הפרלמנט היו פעילות בתחומי ${committees} ו-${extra} תחומי מדיניות נוספים.` : `ועדות הפרלמנט היו פעילות בתחומי ${committees}.`,
+    committeeMomentumTakeaway: (n: number): string => `סך של ${n} דוחות מעיד על מומנטום חקיקתי מתמשך.`,
+    oppositionStrategyContext: (n: number): string => `הצעות מ-${n} מפלגות שונות חושפות את רוחב הביקורת הפוליטית של האופוזיציה.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `${propCount} הצעות חוק אלה נוגעות ל-${domainCount} תחומ${domainCount > 1 ? 'י' : ''} מדיניות, המדגימות את שאיפת החקיקה הרחבה של הממשלה.`,
+    genericOverview: (n: number): string => `במהלך תקופה זו, ${n} מסמכים עברו טיפול בפרלמנט.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} הצע${n > 1 ? 'ות' : 'ה'} הוגש${n > 1 ? 'ו' : 'ה'}`,
+    otherCommittee: 'ועדות אחרות',
+    otherDocuments: 'מסמכים אחרים',
+    policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}. בחינה בוועדה והצבעה יקבעו את גורל ההצעה.`,
+    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -840,7 +1120,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: 'この動議は',
     readFullMotion: '動議全文を読む',
     policyContext: '政策的背景',
-    filedBy: '提出者'
+    filedBy: '提出者',
+    politicalContext: '政治的背景',
+    policyImplications: '政策への影響',
+    keyTakeaways: '主要ポイント',
+    thematicAnalysis: 'テーマ別分析',
+    legislativePipeline: '立法プロセス',
+    oppositionStrategy: '野党の戦略',
+    coalitionDynamics: '連立の力学',
+    whatThisMeans: 'これが意味すること',
+    whyItMatters: 'なぜ重要か',
+    committeeBreakdown: (n: number, c: number): string => `この${n}件の委員会報告は${c}の異なる委員会にまたがっています。`,
+    propsBreakdown: (n: number): string => `政府は${n}件の新たな法案を提出しました。`,
+    motionsBreakdown: (n: number): string => `野党議員が${n}件の新たな動議を提出しました。`
+,
+    committeeCountContext: (n: number): string => `この委員会からの${n}件の報告書は、集中的な立法作業を示しています。`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `議会の委員会は${committees}および他${extra}の政策分野で活動しています。` : `議会の委員会は${committees}の分野で活動しています。`,
+    committeeMomentumTakeaway: (n: number): string => `合計${n}件の報告書は、持続的な立法の勢いを示しています。`,
+    oppositionStrategyContext: (n: number): string => `${n}つの異なる政党からの動議は、野党の政治的批判の幅を示しています。`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `これら${propCount}件の法案は${domainCount}つの政策分野に及び、政府の幅広い立法意欲を示しています。`,
+    genericOverview: (n: number): string => `この期間中、議会で${n}件の文書が処理されました。`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}：${n}件の動議を提出`,
+    otherCommittee: 'その他の委員会',
+    otherDocuments: 'その他の文書',
+    policySignificanceTouches: (domains: string): string => `${domains}に関連します。委員会審査と採決が提案の行方を決定します。`,
+    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -886,7 +1190,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: '이 동의안은',
     readFullMotion: '전체 동의안 읽기',
     policyContext: '정책 맥락',
-    filedBy: '제출자'
+    filedBy: '제출자',
+    politicalContext: '정치적 맥락',
+    policyImplications: '정책적 시사점',
+    keyTakeaways: '핵심 요점',
+    thematicAnalysis: '주제별 분석',
+    legislativePipeline: '입법 과정',
+    oppositionStrategy: '야당 전략',
+    coalitionDynamics: '연립 역학',
+    whatThisMeans: '이것이 의미하는 바',
+    whyItMatters: '왜 중요한가',
+    committeeBreakdown: (n: number, c: number): string => `이 ${n}개 위원회 보고서는 ${c}개의 서로 다른 위원회에 걸쳐 있습니다.`,
+    propsBreakdown: (n: number): string => `정부가 ${n}개의 새 법안을 제출했습니다.`,
+    motionsBreakdown: (n: number): string => `야당 의원들이 ${n}개의 새 동의안을 제출했습니다.`
+,
+    committeeCountContext: (n: number): string => `이 위원회의 ${n}건의 보고서는 집중적인 입법 작업을 나타냅니다.`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `의회 위원회는 ${committees} 및 ${extra}개의 추가 정책 분야에서 활동했습니다.` : `의회 위원회는 ${committees} 분야에서 활동했습니다.`,
+    committeeMomentumTakeaway: (n: number): string => `총 ${n}건의 보고서는 지속적인 입법 추진력을 보여줍니다.`,
+    oppositionStrategyContext: (n: number): string => `${n}개 정당의 동의안은 야당의 정치적 비판의 폭을 보여줍니다.`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `이 ${propCount}건의 법안은 ${domainCount}개 정책 영역에 걸쳐 있으며, 정부의 광범위한 입법 야심을 보여줍니다.`,
+    genericOverview: (n: number): string => `이 기간 동안 의회에서 ${n}건의 문서가 처리되었습니다.`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}: ${n}건의 동의안 제출`,
+    otherCommittee: '기타 위원회',
+    otherDocuments: '기타 문서',
+    policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다. 위원회 심사와 표결이 제안의 운명을 결정합니다.`,
+    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -932,7 +1260,31 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     motionSignificance: '该动议涉及',
     readFullMotion: '阅读完整动议',
     policyContext: '政策背景',
-    filedBy: '提交者'
+    filedBy: '提交者',
+    politicalContext: '政治背景',
+    policyImplications: '政策影响',
+    keyTakeaways: '关键要点',
+    thematicAnalysis: '主题分析',
+    legislativePipeline: '立法进程',
+    oppositionStrategy: '反对党策略',
+    coalitionDynamics: '联盟动态',
+    whatThisMeans: '这意味着什么',
+    whyItMatters: '为什么重要',
+    committeeBreakdown: (n: number, c: number): string => `这批${n}份委员会报告涵盖${c}个不同委员会。`,
+    propsBreakdown: (n: number): string => `政府提交了${n}项新提案。`,
+    motionsBreakdown: (n: number): string => `反对党议员提交了${n}项新动议。`
+,
+    committeeCountContext: (n: number): string => `该委员会的${n}份报告表明密集的立法工作。`,
+    committeeActivityTakeaway: (committees: string, extra: number): string => extra > 0 ? `议会委员会在${committees}以及其他${extra}个政策领域积极开展工作。` : `议会委员会在${committees}领域积极开展工作。`,
+    committeeMomentumTakeaway: (n: number): string => `共${n}份报告展示了持续的立法势头。`,
+    oppositionStrategyContext: (n: number): string => `来自${n}个不同政党的动议显示了反对派政治批评的广度。`,
+    policyImplicationsContext: (propCount: number, domainCount: number): string => `这${propCount}项提案涉及${domainCount}个政策领域，展示了政府广泛的立法雄心。`,
+    genericOverview: (n: number): string => `在此期间，议会处理了${n}份文件。`,
+    partyMotionsFiled: (party: string, n: number): string => `${party}：提交了${n}项动议`,
+    otherCommittee: '其他委员会',
+    otherDocuments: '其他文件',
+    policySignificanceTouches: (domains: string): string => `涉及${domains}领域。委员会审查和表决将决定提案的命运。`,
+    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。'
   }
 };
 
@@ -1073,6 +1425,10 @@ function getCommitteeName(code: string | undefined, lang: Language | string): st
     const unknownVal = L(lang, 'unknown');
     return typeof unknownVal === 'string' ? unknownVal : 'Unknown';
   }
+  if (code === 'unknown') {
+    const otherVal = L(lang, 'otherCommittee');
+    return typeof otherVal === 'string' ? otherVal : 'Other committees';
+  }
   const entry: CommitteeName | undefined = COMMITTEE_NAMES[code];
   if (!entry) return code;
   // Use Swedish name for sv, English for all others (other languages get translated via data-translate)
@@ -1147,26 +1503,40 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
     return content;
   }
 
-  // Lede paragraph: overview of committee activity
-  const overviewFn = L(lang, 'reportsOverview');
-  const overviewText = typeof overviewFn === 'function' ? overviewFn(reports.length) : `${reports.length} new committee reports published.`;
-  content += `<p class="article-lede">${escapeHtml(String(overviewText))}</p>\n`;
-
   // Group reports by committee for thematic coherence
   const byCommittee: Record<string, RawDocument[]> = {};
   reports.forEach(report => {
-    const committee = report.organ || report.committee || 'other';
+    const committee = report.organ || report.committee || 'unknown';
     if (!byCommittee[committee]) byCommittee[committee] = [];
     byCommittee[committee].push(report);
   });
 
-  // Generate content for each committee group
+  const committeeCount = Object.keys(byCommittee).length;
+
+  // Analytical lede: contextual overview of committee activity
+  const breakdown = L(lang, 'committeeBreakdown') as string | ((n: number, c: number) => string);
+  const breakdownText = typeof breakdown === 'function'
+    ? breakdown(reports.length, committeeCount)
+    : `${reports.length} committee reports across ${committeeCount} committees.`;
+  content += `<p class="article-lede">${escapeHtml(String(breakdownText))}</p>\n`;
+
+  // Thematic analysis section header
+  content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
+
+  // Generate content for each committee group with analysis
   Object.entries(byCommittee).forEach(([committeeCode, committeeReports]) => {
     const committeeName = getCommitteeName(committeeCode, lang);
 
-    // Committee section header (only if multiple committees)
-    if (Object.keys(byCommittee).length > 1) {
-      content += `\n    <h3>${escapeHtml(committeeName)}</h3>\n`;
+    // Committee section header
+    content += `\n    <h3>${escapeHtml(committeeName)}</h3>\n`;
+
+    // Add committee context: how many reports from this committee
+    if (committeeReports.length > 1) {
+      const countContextFn = L(lang, 'committeeCountContext') as string | ((n: number) => string);
+      const countContext = typeof countContextFn === 'function'
+        ? countContextFn(committeeReports.length)
+        : `${committeeReports.length} reports from this committee signal intensive legislative work within its portfolio.`;
+      content += `    <p><em>${escapeHtml(String(countContext))}</em></p>\n`;
     }
 
     committeeReports.forEach(report => {
@@ -1187,30 +1557,38 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
 
       const reportSigVal = L(lang, 'reportSignificance');
       const readFullVal = L(lang, 'readFullReport');
+      const whatThisMeansVal = L(lang, 'whatThisMeans');
 
-      // Build a narrative paragraph instead of bare fields
-      if (Object.keys(byCommittee).length > 1) {
-        // Sub-item under committee header
-        content += `
+      content += `
     <div class="report-entry">
       <h4>${titleHtml}</h4>
-      <p>${escapeHtml(String(reportSigVal))} ${summaryHtml}</p>
-      <p><a href="${report.url}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
-    </div>
-`;
-      } else {
-        // Single committee - use h3 for each report
-        content += `
-    <div class="report-entry">
-      <h3>${titleHtml}</h3>
       <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>
       <p>${escapeHtml(String(reportSigVal))} ${summaryHtml}</p>
-      <p><a href="${report.url}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generatePolicySignificance(report, lang)}</p>
+      <p><a href="${sanitizeUrl(report.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
-      }
     });
   });
+
+  // Key takeaways section
+  content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
+  content += `    <div class="context-box">\n      <ul>\n`;
+
+  // Generate analytical takeaways based on committees covered
+  const committeeNames = Object.keys(byCommittee).map(c => getCommitteeName(c, lang));
+  const activityFn = L(lang, 'committeeActivityTakeaway') as string | ((committees: string, extra: number) => string);
+  const takeaway1 = typeof activityFn === 'function'
+    ? activityFn(committeeNames.slice(0, 3).join(', '), committeeCount > 3 ? committeeCount - 3 : 0)
+    : `Parliamentary committees have been active across ${committeeNames.slice(0, 3).join(', ')}.`;
+  const momentumFn = L(lang, 'committeeMomentumTakeaway') as string | ((n: number) => string);
+  const takeaway2 = typeof momentumFn === 'function'
+    ? momentumFn(reports.length)
+    : `A total of ${reports.length} reports demonstrates sustained legislative momentum.`;
+
+  content += `        <li>${escapeHtml(takeaway1)}</li>\n`;
+  content += `        <li>${escapeHtml(takeaway2)}</li>\n`;
+  content += `      </ul>\n    </div>\n`;
 
   return content;
 }
@@ -1228,10 +1606,15 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     return content;
   }
 
-  // Lede paragraph: overview of government legislative activity
-  const overviewFn = L(lang, 'propsOverview');
-  const overviewText = typeof overviewFn === 'function' ? overviewFn(propositions.length) : `${propositions.length} new government propositions submitted.`;
-  content += `<p class="article-lede">${escapeHtml(String(overviewText))}</p>\n`;
+  // Analytical lede paragraph
+  const breakdownFn = L(lang, 'propsBreakdown') as string | ((n: number) => string);
+  const breakdownText = typeof breakdownFn === 'function'
+    ? breakdownFn(propositions.length)
+    : `${propositions.length} new government propositions submitted.`;
+  content += `<p class="article-lede">${escapeHtml(String(breakdownText))}</p>\n`;
+
+  // Legislative pipeline section
+  content += `\n    <h2>${L(lang, 'legislativePipeline')}</h2>\n`;
 
   propositions.forEach(prop => {
     const titleText = prop.titel || prop.title || '';
@@ -1257,15 +1640,36 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
 
     const propSigVal = L(lang, 'propSignificance');
     const readFullVal = L(lang, 'readFullProp');
+    const whyItMattersVal = L(lang, 'whyItMatters');
 
     content += `
     <div class="proposition-entry">
       <h3>${titleHtml}</h3>
       <p>${escapeHtml(String(propSigVal))} ${summaryHtml}${referredLine}</p>
-      <p><a href="${prop.url}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(prop, lang)}</p>
+      <p><a href="${sanitizeUrl(prop.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
   });
+
+  // Policy implications section
+  content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
+  content += `    <div class="context-box">\n`;
+
+  // Group by referred committee for policy domain analysis
+  const byCommittee: Record<string, number> = {};
+  propositions.forEach(p => {
+    const c = p.organ || p.committee || 'unknown';
+    byCommittee[c] = (byCommittee[c] || 0) + 1;
+  });
+  const domainCount = Object.keys(byCommittee).length;
+
+  const implicationFn = L(lang, 'policyImplicationsContext') as string | ((propCount: number, domainCount: number) => string);
+  const implication = typeof implicationFn === 'function'
+    ? implicationFn(propositions.length, domainCount)
+    : `These ${propositions.length} propositions touch on ${domainCount} policy domains.`;
+  content += `      <p>${escapeHtml(String(implication))}</p>\n`;
+  content += `    </div>\n`;
 
   return content;
 }
@@ -1283,10 +1687,31 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     return content;
   }
 
-  // Lede paragraph: overview of opposition activity
-  const overviewFn = L(lang, 'motionsOverview');
-  const overviewText = typeof overviewFn === 'function' ? overviewFn(motions.length) : `${motions.length} new opposition motions filed.`;
-  content += `<p class="article-lede">${escapeHtml(String(overviewText))}</p>\n`;
+  // Analytical lede paragraph
+  const breakdownFn = L(lang, 'motionsBreakdown') as string | ((n: number) => string);
+  const breakdownText = typeof breakdownFn === 'function'
+    ? breakdownFn(motions.length)
+    : `${motions.length} new opposition motions filed.`;
+  content += `<p class="article-lede">${escapeHtml(String(breakdownText))}</p>\n`;
+
+  // Group motions by party for strategic analysis
+  const byParty: Record<string, RawDocument[]> = {};
+  motions.forEach(motion => {
+    const party = motion.parti || 'other';
+    if (!byParty[party]) byParty[party] = [];
+    byParty[party].push(motion);
+  });
+
+  // Opposition strategy section
+  const partyCount = Object.keys(byParty).filter(p => p !== 'other').length;
+  if (partyCount > 1) {
+    content += `\n    <h2>${L(lang, 'oppositionStrategy')}</h2>\n`;
+    const strategyFn = L(lang, 'oppositionStrategyContext') as string | ((n: number) => string);
+    const strategyContext = typeof strategyFn === 'function'
+      ? strategyFn(partyCount)
+      : `Motions from ${partyCount} different parties reveal the breadth of opposition political criticism and alternative policy agendas.`;
+    content += `    <p>${escapeHtml(String(strategyContext))}</p>\n`;
+  }
 
   motions.forEach(motion => {
     const titleText = motion.titel || motion.title || '';
@@ -1314,25 +1739,164 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 
     const motionSigVal = L(lang, 'motionSignificance');
     const readFullVal = L(lang, 'readFullMotion');
+    const whyItMattersVal = L(lang, 'whyItMatters');
 
     content += `
     <div class="motion-entry">
       <h3>${titleHtml}</h3>
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
       <p>${escapeHtml(String(motionSigVal))} ${summaryHtml}</p>
-      <p><a href="${motion.url}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
+      <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
   });
+
+  // Party activity breakdown
+  if (partyCount > 0) {
+    content += `\n    <h2>${L(lang, 'coalitionDynamics')}</h2>\n`;
+    content += `    <div class="context-box">\n      <ul>\n`;
+    Object.entries(byParty).forEach(([party, partyMotions]) => {
+      if (party !== 'other') {
+        const detailFn = L(lang, 'partyMotionsFiled') as string | ((party: string, n: number) => string);
+        const detail = typeof detailFn === 'function'
+          ? detailFn(party, partyMotions.length)
+          : `${party}: ${partyMotions.length} motions filed`;
+        content += `        <li>${escapeHtml(String(detail))}</li>\n`;
+      }
+    });
+    content += `      </ul>\n    </div>\n`;
+  }
 
   return content;
 }
 
 /**
+ * Generate policy significance context for a document based on its metadata
+ */
+function generatePolicySignificance(doc: RawDocument, lang: Language | string): string {
+  const title = (doc.titel || doc.title || '').toLowerCase();
+  const organ = doc.organ || doc.committee || '';
+
+  // Infer policy domain from title keywords and committee (deduplicated)
+  const policyHintSet = new Set<string>();
+  const addHint = (hint: string): void => { policyHintSet.add(hint); };
+
+  if (title.includes('skatt') || title.includes('tax') || organ === 'SkU' || organ === 'FiU') {
+    addHint(lang === 'sv' ? 'finanspolitik' : 'fiscal policy');
+  }
+  if (title.includes('försvar') || title.includes('defen') || organ === 'FöU') {
+    addHint(lang === 'sv' ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
+  }
+  if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || organ === 'MJU') {
+    addHint(lang === 'sv' ? 'miljö- och klimatpolitik' : 'environmental and climate policy');
+  }
+  if (title.includes('utbildning') || title.includes('educ') || organ === 'UbU') {
+    addHint(lang === 'sv' ? 'utbildningspolitik' : 'education policy');
+  }
+  if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || organ === 'SoU') {
+    addHint(lang === 'sv' ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
+  }
+  if (title.includes('migration') || title.includes('invandring') || organ === 'SfU') {
+    addHint(lang === 'sv' ? 'migrationspolitik' : 'migration policy');
+  }
+  if (title.includes('eu') || title.includes('europa') || organ === 'UU') {
+    addHint(lang === 'sv' ? 'EU- och utrikespolitik' : 'EU and foreign affairs');
+  }
+  if (title.includes('brott') || title.includes('straff') || title.includes('justice') || organ === 'JuU') {
+    addHint(lang === 'sv' ? 'rättspolitik' : 'justice policy');
+  }
+  if (title.includes('arbetsmarknad') || title.includes('labour') || organ === 'AU') {
+    addHint(lang === 'sv' ? 'arbetsmarknadspolitik' : 'labour market policy');
+  }
+  if (title.includes('bostad') || title.includes('housing') || organ === 'CU') {
+    addHint(lang === 'sv' ? 'bostadspolitik' : 'housing policy');
+  }
+  if (title.includes('trafik') || title.includes('transport') || organ === 'TU') {
+    addHint(lang === 'sv' ? 'transportpolitik' : 'transport policy');
+  }
+  if (title.includes('näring') || title.includes('handel') || title.includes('trade') || organ === 'NU') {
+    addHint(lang === 'sv' ? 'näringspolitik' : 'trade and industry policy');
+  }
+
+  if (policyHintSet.size > 0) {
+    const domains = Array.from(policyHintSet).join(', ');
+    const touchesFn = L(lang, 'policySignificanceTouches') as string | ((domains: string) => string);
+    return typeof touchesFn === 'function'
+      ? touchesFn(escapeHtml(domains))
+      : `Touches on ${escapeHtml(domains)}.`;
+  }
+
+  // Generic significance when no domain detected
+  const genericVal = L(lang, 'policySignificanceGeneric');
+  return typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
+}
+
+/**
  * Generate generic content
  */
-function generateGenericContent(_data: ArticleContentData, lang: Language | string): string {
-  return `<p>${L(lang, 'genericContent')}</p>`;
+function generateGenericContent(data: ArticleContentData, lang: Language | string): string {
+  // When documents are provided (weekly/monthly review), generate analytical content
+  const docs = data.documents || [];
+  if (docs.length === 0) {
+    return `<p>${L(lang, 'genericContent')}</p>`;
+  }
+
+  let content = '';
+
+  // Analytical overview
+  const overviewFn = L(lang, 'genericOverview') as string | ((n: number) => string);
+  const overview = typeof overviewFn === 'function'
+    ? overviewFn(docs.length)
+    : `During this period, ${docs.length} documents were processed in parliament.`;
+  content += `<p class="article-lede">${escapeHtml(String(overview))}</p>\n`;
+
+  // Group by document type for thematic analysis
+  const byType: Record<string, RawDocument[]> = {};
+  docs.forEach(doc => {
+    const docType = doc.doktyp || doc.documentType || 'other';
+    if (!byType[docType]) byType[docType] = [];
+    byType[docType].push(doc);
+  });
+
+  content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
+
+  Object.entries(byType).forEach(([docType, typeDocs]) => {
+    const otherDocsVal = L(lang, 'otherDocuments');
+    const otherDocsLabel = typeof otherDocsVal === 'string' ? otherDocsVal : 'Other documents';
+    const typeLabel = docType === 'mot' ? (lang === 'sv' ? 'Motioner' : 'Motions')
+      : docType === 'prop' ? (lang === 'sv' ? 'Propositioner' : 'Propositions')
+      : docType === 'bet' ? (lang === 'sv' ? 'Betänkanden' : 'Committee Reports')
+      : docType === 'skr' ? (lang === 'sv' ? 'Skrivelser' : 'Government Communications')
+      : docType === 'other' ? otherDocsLabel
+      : docType;
+
+    content += `\n    <h3>${escapeHtml(typeLabel)} (${typeDocs.length})</h3>\n`;
+
+    typeDocs.forEach(doc => {
+      const titleText = doc.titel || doc.title || '';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (doc.titel && !doc.title)
+        ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+        : escapedTitle;
+
+      const summaryText = generateEnhancedSummary(doc, docType, lang);
+      const isFromAPI = doc.summary || doc.notis;
+      const summaryHtml = (doc.titel && !doc.title && isFromAPI)
+        ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+        : escapeHtml(summaryText);
+
+      content += `    <div class="document-entry">\n`;
+      content += `      <h4>${titleHtml}</h4>\n`;
+      content += `      <p>${summaryHtml}</p>\n`;
+      if (doc.url) {
+        content += `      <p><a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;
+      }
+      content += `    </div>\n`;
+    });
+  });
+
+  return content;
 }
 
 // ---------------------------------------------------------------------------
@@ -1342,7 +1906,7 @@ function generateGenericContent(_data: ArticleContentData, lang: Language | stri
 /**
  * Get localized label with fallback to English
  */
-export function L(lang: Language | string, key: string): string | ((n: number) => string) {
+export function L(lang: Language | string, key: string): ContentLabelSet[keyof ContentLabelSet] {
   const langLabels = CONTENT_LABELS[lang as Language];
   const value = langLabels?.[key as keyof ContentLabelSet];
   if (value !== undefined) return value;
@@ -1483,7 +2047,7 @@ export function extractWatchPoints(data: ArticleContentData, lang: Language = 'e
   // From committee reports
   if (data.reports && data.reports.length > 0) {
     const debatesVal = L(lang, 'committeeDebates');
-    const debatesDescFn = L(lang, 'committeeDebatesDesc');
+    const debatesDescFn = L(lang, 'committeeDebatesDesc') as string | ((n: number) => string);
     watchPoints.push({
       title: typeof debatesVal === 'string' ? debatesVal : '',
       description: typeof debatesDescFn === 'function' ? debatesDescFn(data.reports.length) : ''
@@ -1493,7 +2057,7 @@ export function extractWatchPoints(data: ArticleContentData, lang: Language = 'e
   // From propositions
   if (data.propositions && data.propositions.length > 0) {
     const proposalsVal = L(lang, 'govProposals');
-    const proposalsDescFn = L(lang, 'govProposalsDesc');
+    const proposalsDescFn = L(lang, 'govProposalsDesc') as string | ((n: number) => string);
     watchPoints.push({
       title: typeof proposalsVal === 'string' ? proposalsVal : '',
       description: typeof proposalsDescFn === 'function' ? proposalsDescFn(data.propositions.length) : ''

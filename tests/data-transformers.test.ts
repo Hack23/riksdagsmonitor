@@ -48,9 +48,11 @@ interface MockArticlePayload {
     titel?: string;
     title?: string;
     url?: string;
+    organ?: string;
     dokumentnamn?: string;
     dok_id?: string;
   }>;
+
   motions?: Array<{
     titel?: string;
     title?: string;
@@ -64,6 +66,8 @@ interface MockArticlePayload {
     titel?: string;
     title?: string;
     url?: string;
+    doktyp?: string;
+    documentType?: string;
     dokumentnamn?: string;
     dok_id?: string;
   }>;
@@ -818,6 +822,218 @@ describe('Data Transformers', () => {
       expect(watchPoints.length).toBeGreaterThan(0);
       expect(watchPoints[0]!.title).not.toContain('<script>');
       expect(watchPoints[0]!.title).toContain('&lt;script&gt;');
+    });
+  });
+
+  describe('Analytical content sections', () => {
+    it('should render Thematic Analysis and Key Takeaways for committee-reports', () => {
+      const content = generateArticleContent({
+        reports: [
+          { titel: 'Skattereform', organ: 'FiU', url: 'https://example.com/1', dok_id: 'FiU1' },
+          { titel: 'Miljöpolitik', organ: 'MJU', url: 'https://example.com/2', dok_id: 'MJU5' }
+        ]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      expect(content).toContain('Thematic Analysis');
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('What This Means');
+    });
+
+    it('should render Legislative Pipeline and Policy Implications for propositions', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'Prop1' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('Legislative Pipeline');
+      expect(content).toContain('Policy Implications');
+      expect(content).toContain('Why It Matters');
+    });
+
+    it('should render Opposition Strategy and Coalition Dynamics for motions', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/m1', dok_id: 'M1' },
+          { titel: 'Försvarspolitik', parti: 'V', url: 'https://example.com/m2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('Opposition Strategy');
+      expect(content).toContain('Coalition Dynamics');
+      expect(content).toContain('Why It Matters');
+    });
+
+    it('should render Thematic Analysis for generic content (weekly/monthly review)', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test document', doktyp: 'mot', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Another document', doktyp: 'prop', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Thematic Analysis');
+      expect(content).toContain('Motions');
+      expect(content).toContain('Propositions');
+    });
+  });
+
+  describe('Policy domain inference (generatePolicySignificance)', () => {
+    it('should detect fiscal policy from FiU committee', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Budget', organ: 'FiU', url: 'https://example.com/1', dok_id: 'FiU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      expect(content).toContain('fiscal policy');
+    });
+
+    it('should detect defence policy from FöU committee', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Military spending', organ: 'FöU', url: 'https://example.com/1', dok_id: 'FöU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      expect(content).toContain('defence and security policy');
+    });
+
+    it('should detect environmental policy from title keyword', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Klimat och miljö', url: 'https://example.com/1', dok_id: 'X1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      expect(content).toContain('environmental and climate policy');
+    });
+
+    it('should detect healthcare policy from SoU committee', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Healthcare reform', organ: 'SoU', url: 'https://example.com/1', dok_id: 'SoU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      expect(content).toContain('healthcare policy');
+    });
+
+    it('should not produce duplicate domains when both keyword and committee match', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'EU-frågor och europa', organ: 'UU', url: 'https://example.com/1', dok_id: 'UU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // Should only appear once, not duplicated
+      const matches = content.match(/EU and foreign affairs/g);
+      expect(matches).not.toBeNull();
+      expect(matches!.length).toBe(1);
+    });
+
+    it('should produce generic significance for unknown domains', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Diverse frågor', url: 'https://example.com/1', dok_id: 'X1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      expect(content).toContain('Requires committee review');
+    });
+
+    it('should produce Swedish significance for sv language', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Skattepolitik', organ: 'FiU', url: 'https://example.com/1', dok_id: 'FiU1' }]
+      } as MockArticlePayload, 'committee-reports', 'sv') as string;
+
+      expect(content).toContain('finanspolitik');
+    });
+  });
+
+  describe('URL sanitization in generated content', () => {
+    it('should reject javascript: URLs in report links', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Test', url: 'javascript:alert(1)', dok_id: 'X1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      expect(content).not.toContain('javascript:');
+      expect(content).toContain('href="#"');
+    });
+
+    it('should reject data: URLs in proposition links', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Test', url: 'data:text/html,<h1>XSS</h1>', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).not.toContain('data:');
+      expect(content).toContain('href="#"');
+    });
+
+    it('should allow valid https URLs', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Test', url: 'https://riksdagen.se/doc/1', dok_id: 'R1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      expect(content).toContain('href="https://riksdagen.se/doc/1"');
+    });
+
+    it('should reject vbscript: URLs', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Test', url: 'vbscript:MsgBox("XSS")', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).not.toContain('vbscript:');
+      expect(content).toContain('href="#"');
+    });
+  });
+
+  describe('Localized committee and document type labels', () => {
+    it('should render localized committee name for unknown committees', () => {
+      const content = generateArticleContent({
+        reports: [
+          { titel: 'Test report', url: 'https://example.com/1', dok_id: 'X1' }
+        ]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // Without organ/committee, should use localized "Other committees" not literal "other"
+      expect(content).not.toMatch(/<h3>other<\/h3>/i);
+    });
+
+    it('should render localized "Other documents" for unknown doc types', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test', doktyp: 'other', url: 'https://example.com/1', dok_id: 'D1' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Other documents');
+      // Should NOT render raw 'other' as the heading label
+      expect(content).not.toMatch(/<h3>other\s*\(/);
+    });
+  });
+
+  describe('New ContentLabelSet fields', () => {
+    const allLangs: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+    const newKeys = [
+      'committeeCountContext', 'committeeActivityTakeaway', 'committeeMomentumTakeaway',
+      'oppositionStrategyContext', 'policyImplicationsContext', 'genericOverview',
+      'partyMotionsFiled', 'otherCommittee', 'otherDocuments',
+      'policySignificanceTouches', 'policySignificanceGeneric'
+    ];
+
+    allLangs.forEach(lang => {
+      newKeys.forEach(key => {
+        it(`should have ${key} label for ${lang}`, () => {
+          const labels = CONTENT_LABELS[lang];
+          expect(labels).toBeDefined();
+          expect((labels as unknown as Record<string, unknown>)[key]).toBeDefined();
+        });
+      });
+    });
+
+    it('should have function-valued committeeCountContext for en', () => {
+      const fn = CONTENT_LABELS.en.committeeCountContext;
+      expect(typeof fn).toBe('function');
+      expect(fn(3)).toContain('3');
+    });
+
+    it('should have string-valued otherCommittee for sv', () => {
+      expect(typeof CONTENT_LABELS.sv.otherCommittee).toBe('string');
+      expect(CONTENT_LABELS.sv.otherCommittee).toBe('Övriga utskott');
+    });
+
+    it('should have string-valued policySignificanceGeneric for en', () => {
+      expect(typeof CONTENT_LABELS.en.policySignificanceGeneric).toBe('string');
+      expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('committee review');
     });
   });
 });

@@ -164,7 +164,17 @@ npx tsx scripts/generate-news-enhanced.ts \
   --skip-existing
 ```
 
-### Step 4: Translate, Validate & Create PR
+### Step 4: Translate, Validate & Verify Analysis Quality
+
+**CRITICAL: Each article MUST contain real analysis, not just a list of translated links.**
+Every generated article must include:
+- An analytical lede paragraph about opposition strategy and political fault lines (not just a motion count)
+- Opposition Strategy section analysing which parties are most active and why
+- "Why It Matters" analysis for each motion with policy domain context
+- Coalition Dynamics section showing party activity breakdown
+- Party-level breakdown with motion counts per party
+
+If the generated article lacks these analytical sections, manually add contextual analysis before committing.
 
 ```bash
 npx tsx scripts/generate-news-indexes.ts
