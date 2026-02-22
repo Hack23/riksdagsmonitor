@@ -77,4 +77,17 @@ export interface ContentLabelSet {
   readFullMotion: string;
   policyContext: string;
   filedBy: string;
+  // Analytical section labels
+  politicalContext: string;
+  policyImplications: string;
+  keyTakeaways: string;
+  thematicAnalysis: string;
+  legislativePipeline: string;
+  oppositionStrategy: string;
+  coalitionDynamics: string;
+  whatThisMeans: string;
+  whyItMatters: string;
+  committeeBreakdown: (n: number, c: number) => string;
+  propsBreakdown: (n: number) => string;
+  motionsBreakdown: (n: number) => string;
 }
