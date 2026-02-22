@@ -1411,7 +1411,7 @@ function cleanMotionText(raw: string): string {
  *   - "Tjänstgörande riksdagsledamot …"   (active MP)
  *   - "Tidigare riksdagsledamot …"        (former MP)
  *   - "Avgången riksdagsledamot …"        (resigned MP)
- *   - "Tlllgänglig ersättare …"           (substitute MP)
+ *   - "Tillgänglig ersättare …"           (substitute MP)
  *   - "Tjänstgörande ersättare …"         (active substitute)
  *   - "Tidigare ersättare …"              (former substitute)
  *   - "Tjänstgörande statsrådsersättare"  (acting minister substitute)
@@ -1437,6 +1437,7 @@ export function isPersonProfileText(text: string): boolean {
     /^Tidigare ersättare/u.test(trimmed) ||
     /^Tjänstgörande statsrådsersättare/u.test(trimmed) ||
     /^Tidigare statsråd/u.test(trimmed) ||
+    /^Tidigare statsminister/u.test(trimmed) ||
     /^Inga uppdrag/u.test(trimmed) ||
     /^Avgången/u.test(trimmed) ||
     // Deceased: "Avliden YYYY-MM-DD ..."
