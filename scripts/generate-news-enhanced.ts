@@ -489,21 +489,51 @@ async function generateWeekAhead(): Promise<GenerationResult> {
     const events: unknown[] = await client.fetchCalendarEvents(dateRange.start, dateRange.end);
     console.log(`  📊 Found ${events.length} events`);
 
+    // 2. Fetch upcoming/recent documents
+    const rawDocs = await Promise.resolve()
+      .then(() => client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 }))
+      .catch(() => [] as unknown[]);
+    const documents: unknown[] = Array.isArray(rawDocs) ? rawDocs : [];
+    console.log(`  📊 Found ${documents.length} upcoming documents`);
+
+    // 3. Fetch parliamentary questions (fragor)
+    console.log('  🔄 Fetching parliamentary questions...');
+    const rawQuestions = await Promise.resolve()
+      .then(() => client.fetchWrittenQuestions({ limit: 20 }))
+      .catch(() => [] as unknown[]);
+    const questions: unknown[] = Array.isArray(rawQuestions) ? rawQuestions : [];
+    console.log(`  📊 Found ${questions.length} written questions`);
+
+    // 4. Fetch interpellations (interpellationer)
+    console.log('  🔄 Fetching interpellations...');
+    const rawInterpellations = await Promise.resolve()
+      .then(() => client.fetchInterpellations({ limit: 15 }))
+      .catch(() => [] as unknown[]);
+    const interpellations: unknown[] = Array.isArray(rawInterpellations) ? rawInterpellations : [];
+    console.log(`  📊 Found ${interpellations.length} interpellations`);
+
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-week-ahead`;
 
-    // 2. Generate for each requested language
+    // 5. Generate for each requested language
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
       // Transform data for this language
       // MCP returns unknown[] — cast to match data-transformers' expected shapes
       const eventGrid = transformCalendarToEventGrid(events as Parameters<typeof transformCalendarToEventGrid>[0], lang);
-      const content: string = generateArticleContent({ events: events as Parameters<typeof transformCalendarToEventGrid>[0] }, 'week-ahead', lang);
-      const watchPoints = extractWatchPoints({ events: events as Parameters<typeof transformCalendarToEventGrid>[0] }, lang);
-      const metadata = generateMetadata({ events: events as Parameters<typeof transformCalendarToEventGrid>[0] }, 'week-ahead', lang);
+      const weekData = {
+        events: events as Parameters<typeof transformCalendarToEventGrid>[0],
+        documents,
+        questions,
+        interpellations,
+        highlights: [] as Array<{title: string; description: string}>,
+      };
+      const content: string = generateArticleContent(weekData, 'week-ahead', lang);
+      const watchPoints = extractWatchPoints({ events: events as Parameters<typeof transformCalendarToEventGrid>[0], documents }, lang);
+      const metadata = generateMetadata({ events: events as Parameters<typeof transformCalendarToEventGrid>[0], documents }, 'week-ahead', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_calendar_events']);
+      const sources: string[] = generateSources(['get_calendar_events', 'get_fragor', 'get_interpellationer']);
 
       // Language-specific titles
       const titles: Record<Language, TitleSet> = {

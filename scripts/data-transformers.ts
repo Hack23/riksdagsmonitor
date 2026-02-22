@@ -280,6 +280,10 @@ export interface WeekAheadData {
   context?: string;
   /** Upcoming legislative documents — used when calendar is empty */
   documents?: RawDocument[];
+  /** Parliamentary written questions (fragor) for the coming period */
+  questions?: RawDocument[];
+  /** Parliamentary interpellations (interpellationer) for the coming period */
+  interpellations?: RawDocument[];
 }
 
 /** Article generation data */
@@ -1528,6 +1532,8 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
   const { events, highlights, context } = data;
   // Cast to ArticleContentData to access documents field (passed via switch cast)
   const documents = (data as unknown as ArticleContentData).documents ?? [];
+  const questions = data.questions ?? [];
+  const interpellations = data.interpellations ?? [];
 
   let content = '';
 
@@ -1612,6 +1618,82 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
       if (significance) {
         content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
       }
+      content += `    </div>\n`;
+    });
+  }
+
+  // Parliamentary Questions: upcoming written questions to ministers
+  if (questions.length > 0) {
+    const questionsLabel = lang === 'sv' ? 'Skriftliga frågor till statsråd'
+      : lang === 'de' ? 'Schriftliche parlamentarische Anfragen'
+      : lang === 'fr' ? 'Questions écrites au gouvernement'
+      : lang === 'es' ? 'Preguntas escritas al gobierno'
+      : lang === 'da' ? 'Skriftlige spørgsmål til ministrene'
+      : lang === 'no' ? 'Skriftlige spørsmål til statsrådene'
+      : lang === 'fi' ? 'Kirjalliset kysymykset ministerille'
+      : lang === 'nl' ? 'Schriftelijke vragen aan ministers'
+      : lang === 'ar' ? 'أسئلة مكتوبة للحكومة'
+      : lang === 'he' ? 'שאלות כתובות לממשלה'
+      : lang === 'ja' ? '大臣への書面質問'
+      : lang === 'ko' ? '장관에 대한 서면 질문'
+      : lang === 'zh' ? '书面质询政府'
+      : 'Parliamentary Questions to Ministers';
+    content += `\n    <h2>${questionsLabel}</h2>\n`;
+    questions.slice(0, 8).forEach(q => {
+      const rec = q as Record<string, string>;
+      const titleText = rec['titel'] || rec['title'] || 'Question';
+      const party = rec['parti'] ? ` (${escapeHtml(rec['parti'])})` : '';
+      const dok_id = rec['dok_id'] ?? '';
+      const qUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : '';
+      content += `    <div class="document-entry">\n`;
+      content += `      <h4>${qUrl ? `<a href="${qUrl}" target="_blank" rel="noopener noreferrer">` : ''}<span data-translate="true" lang="sv">${escapeHtml(titleText)}</span>${qUrl ? '</a>' : ''}</h4>\n`;
+      if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
+      content += `    </div>\n`;
+    });
+  }
+
+  // Interpellations: formal parliamentary interpellations awaiting ministerial response
+  if (interpellations.length > 0) {
+    const interLabel = lang === 'sv' ? 'Interpellationer under behandling'
+      : lang === 'de' ? 'Interpellationen in Bearbeitung'
+      : lang === 'fr' ? 'Interpellations en cours'
+      : lang === 'es' ? 'Interpelaciones en curso'
+      : lang === 'da' ? 'Forespørgsler til behandling'
+      : lang === 'no' ? 'Interpellasjoner til behandling'
+      : lang === 'fi' ? 'Käsittelyssä olevat välikysymykset'
+      : lang === 'nl' ? 'Interpellaties in behandeling'
+      : lang === 'ar' ? 'الاستجوابات البرلمانية قيد المعالجة'
+      : lang === 'he' ? 'בקשות הבהרה בטיפול'
+      : lang === 'ja' ? '処理中の質問主意書'
+      : lang === 'ko' ? '처리 중인 대정부 질문'
+      : lang === 'zh' ? '待处理的质询'
+      : 'Interpellations Pending';
+    content += `\n    <h2>${interLabel}</h2>\n`;
+    interpellations.slice(0, 8).forEach(interp => {
+      const rec = interp as Record<string, string>;
+      const titleText = rec['titel'] || rec['title'] || 'Interpellation';
+      const party = rec['parti'] ? ` (${escapeHtml(rec['parti'])})` : '';
+      const dok_id = rec['dok_id'] ?? '';
+      const iUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : '';
+      // Extract clean summary: content starts after "till MINISTER\n" line
+      const rawSummary = rec['summary'] ?? '';
+      // Find start of actual content after the header lines (Interpellation NNN / av AUTHOR / till MINISTER)
+      const tillMatch = rawSummary.match(/\btill\s+[^\n]+\n\s*/i);
+      const contentStart = tillMatch
+        ? rawSummary.indexOf(tillMatch[0]) + tillMatch[0].length
+        : rawSummary.replace(/^Interpellation\s+\S+[^\n]*\n\s*/i, '').replace(/^\s*av\s+[^\n]+\n\s*/i, '').length === rawSummary.length
+          ? 0
+          : 0;
+      const cleanedSummary = (tillMatch ? rawSummary.slice(contentStart) : rawSummary
+        .replace(/^Interpellation\s+\S+[^\n]*\n\s*/i, '')
+        .replace(/^\s*av\s+[^\n]+\n\s*/i, '')
+        .replace(/^\s*till\s+[^\n]+\n\s*/i, ''))
+        .trim()
+        .slice(0, 200);
+      content += `    <div class="document-entry">\n`;
+      content += `      <h4>${iUrl ? `<a href="${iUrl}" target="_blank" rel="noopener noreferrer">` : ''}<span data-translate="true" lang="sv">${escapeHtml(titleText)}</span>${iUrl ? '</a>' : ''}</h4>\n`;
+      if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
+      if (cleanedSummary) content += `      <p><span data-translate="true" lang="sv">${escapeHtml(cleanedSummary)}…</span></p>\n`;
       content += `    </div>\n`;
     });
   }
@@ -2086,15 +2168,8 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
     }
   }
 
-  // For propositions: only note coalition arithmetic when majority is razor-thin (≤2 seats)
-  // — that's when it genuinely affects outcome probability.
-  if (docType === 'prop' && cia && cia.coalitionStability.majorityMargin <= 2) {
-    const margin = cia.coalitionStability.majorityMargin;
-    parts.push(
-      `<small class="cia-context">Historical context: the government's ${margin}-seat majority means a single defection or absence ` +
-      `could affect this proposition's passage.</small>`
-    );
-  }
+  // For propositions: coalition note is already in the article-level summary; skip per-document repetition.
+  // (Moved to generateGenericContent key-takeaways section.)
 
   return parts.join(' ');
 }

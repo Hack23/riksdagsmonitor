@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-22T13:27:25.764Z",
-  "totalArticles": 517,
-  "uniqueSlugs": 48,
+  "generatedAt": "2026-02-22T13:57:20.100Z",
+  "totalArticles": 557,
+  "uniqueSlugs": 49,
   "languages": [
     "ar",
     "da",
@@ -261,6 +261,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-ar.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-ar.html",
+      "lang": "ar",
+      "headline": "الشهر القادم: التوقعات البرلمانية",
+      "description": "معاينة استراتيجية لـ 30 أحداث قادمة",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "الأسبوع القادم",
+      "wordCount": 1245,
+      "inLanguage": "ar",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-ar.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-ar.html",
+      "lang": "ar",
+      "headline": "المراجعة الشهرية: البرلمان في منظور",
+      "description": "تحليل شامل لـ 50 تطور من الشهر الماضي",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "مراجعة الأسبوع",
+      "wordCount": 4019,
+      "inLanguage": "ar",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-ar.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-ar.html",
       "lang": "ar",
@@ -274,6 +304,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-ar.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-ar.html",
+      "lang": "ar",
+      "headline": "الأسبوع القادم: 2026-02-23 إلى 2026-03-02",
+      "description": "التقويم البرلماني واجتماعات اللجان والمناقشات للأسبوع المقبل",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "الأسبوع القادم",
+      "wordCount": 2600,
+      "inLanguage": "ar",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-ar.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -321,6 +366,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-da.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-da.html",
+      "lang": "da",
+      "headline": "Måneden forude: Parlamentarisk udsigt",
+      "description": "Strategisk forhåndsvisning af 30 kommende begivenheder",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Ugen fremover",
+      "wordCount": 1259,
+      "inLanguage": "da",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-da.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-da.html",
+      "lang": "da",
+      "headline": "Månedsgennemgang: Parlamentet i perspektiv",
+      "description": "Omfattende analyse af 50 begivenheder fra den forgangne måned",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Ugens tilbageblik",
+      "wordCount": 4114,
+      "inLanguage": "da",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-da.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-da.html",
       "lang": "da",
@@ -334,6 +409,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-da.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-da.html",
+      "lang": "da",
+      "headline": "Ugen Fremover: 2026-02-23 til 2026-03-02",
+      "description": "Parlamentarisk kalender, udvalgsmøder og debatter for den kommende uge",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Ugen fremover",
+      "wordCount": 2617,
+      "inLanguage": "da",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-da.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -381,6 +471,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-de.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-de.html",
+      "lang": "de",
+      "headline": "Monatsausblick: Parlamentarische Vorschau",
+      "description": "Strategische Vorschau auf 30 bevorstehende Ereignisse",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Woche voraus",
+      "wordCount": 1266,
+      "inLanguage": "de",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-de.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-de.html",
+      "lang": "de",
+      "headline": "Monatsrückblick: Parlament in Perspektive",
+      "description": "Umfassende Analyse von 50 Entwicklungen des vergangenen Monats",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Wochenrückblick",
+      "wordCount": 4125,
+      "inLanguage": "de",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-de.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-de.html",
       "lang": "de",
@@ -394,6 +514,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-de.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-de.html",
+      "lang": "de",
+      "headline": "Woche Voraus: 2026-02-23 bis 2026-03-02",
+      "description": "Parlamentarischer Kalender, Ausschusssitzungen und Debatten für die kommende Woche",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Woche voraus",
+      "wordCount": 2626,
+      "inLanguage": "de",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-de.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -441,6 +576,21 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-en.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-en.html",
+      "lang": "en",
+      "headline": "Month Ahead: Parliamentary Outlook",
+      "description": "Strategic preview of 30 upcoming events shaping Sweden&#039;s legislative agenda",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "The Week Ahead",
+      "wordCount": 1276,
+      "inLanguage": "en",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-en.html"
+    },
+    {
       "slug": "2026-02-22-monthly-review",
       "file": "2026-02-22-monthly-review-en.html",
       "lang": "en",
@@ -449,7 +599,7 @@
       "datePublished": "2026-02-22T00:00:00.000Z",
       "dateModified": "2026-02-22T00:00:00.000Z",
       "articleSection": "Weekly Review",
-      "wordCount": 4109,
+      "wordCount": 4162,
       "inLanguage": "en",
       "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
@@ -479,7 +629,7 @@
       "datePublished": "2026-02-22T00:00:00.000Z",
       "dateModified": "2026-02-22T00:00:00.000Z",
       "articleSection": "The Week Ahead",
-      "wordCount": 52,
+      "wordCount": 2636,
       "inLanguage": "en",
       "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
@@ -531,6 +681,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-es.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-es.html",
+      "lang": "es",
+      "headline": "Mes adelante: Perspectiva parlamentaria",
+      "description": "Vista previa estratégica de 30 eventos próximos",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Semana próxima",
+      "wordCount": 1275,
+      "inLanguage": "es",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-es.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-es.html",
+      "lang": "es",
+      "headline": "Revisión mensual: El Parlamento en perspectiva",
+      "description": "Análisis integral de 50 desarrollos del mes pasado",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Revisión semanal",
+      "wordCount": 4215,
+      "inLanguage": "es",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-es.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-es.html",
       "lang": "es",
@@ -544,6 +724,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-es.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-es.html",
+      "lang": "es",
+      "headline": "Semana Próxima: 2026-02-23 a 2026-03-02",
+      "description": "Calendario parlamentario, reuniones de comisión y debates para la próxima semana",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Semana próxima",
+      "wordCount": 2635,
+      "inLanguage": "es",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-es.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -591,6 +786,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-fi.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-fi.html",
+      "lang": "fi",
+      "headline": "Kuukausi eteenpäin: Parlamentaarinen näkymä",
+      "description": "Strateginen ennakkokatsaus 30 tulevaan tapahtumaan",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Tuleva viikko",
+      "wordCount": 1273,
+      "inLanguage": "fi",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-fi.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-fi.html",
+      "lang": "fi",
+      "headline": "Kuukausikatsaus: Eduskunta perspektiivissä",
+      "description": "Kattava analyysi 50 tapahtumasta viime kuukaudelta",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Viikon katsaus",
+      "wordCount": 4212,
+      "inLanguage": "fi",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-fi.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-fi.html",
       "lang": "fi",
@@ -604,6 +829,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-fi.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-fi.html",
+      "lang": "fi",
+      "headline": "Tuleva Viikko: 2026-02-23 - 2026-03-02",
+      "description": "Parlamentin kalenteri, valiokuntien kokoukset ja keskustelut tulevalle viikolle",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Tuleva viikko",
+      "wordCount": 2636,
+      "inLanguage": "fi",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-fi.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -651,6 +891,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-fr.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-fr.html",
+      "lang": "fr",
+      "headline": "Mois à venir : Perspective parlementaire",
+      "description": "Aperçu stratégique de 30 événements à venir",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Semaine à venir",
+      "wordCount": 1281,
+      "inLanguage": "fr",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-fr.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-fr.html",
+      "lang": "fr",
+      "headline": "Revue mensuelle : Le Parlement en perspective",
+      "description": "Analyse complète de 50 développements du mois écoulé",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Revue de la semaine",
+      "wordCount": 4233,
+      "inLanguage": "fr",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-fr.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-fr.html",
       "lang": "fr",
@@ -664,6 +934,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-fr.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-fr.html",
+      "lang": "fr",
+      "headline": "Semaine à Venir: 2026-02-23 au 2026-03-02",
+      "description": "Calendrier parlementaire, réunions de commission et débats pour la semaine à venir",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Semaine à venir",
+      "wordCount": 2642,
+      "inLanguage": "fr",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-fr.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -711,6 +996,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-he.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-he.html",
+      "lang": "he",
+      "headline": "החודש הקרוב: תחזית פרלמנטרית",
+      "description": "תצוגה מקדימה אסטרטגית של 30 אירועים קרובים",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "השבוע הקרוב",
+      "wordCount": 1223,
+      "inLanguage": "he",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-he.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-he.html",
+      "lang": "he",
+      "headline": "סקירה חודשית: הפרלמנט בפרספקטיבה",
+      "description": "ניתוח מקיף של 50 התפתחויות מהחודש שעבר",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "סיכום שבועי",
+      "wordCount": 3837,
+      "inLanguage": "he",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-he.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-he.html",
       "lang": "he",
@@ -724,6 +1039,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-he.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-he.html",
+      "lang": "he",
+      "headline": "השבוע הקרוב: 2026-02-23 עד 2026-03-02",
+      "description": "לוח שנה פרלמנטרי, פגישות ועדה ודיונים לשבוע הקרוב",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "השבוע הקרוב",
+      "wordCount": 2568,
+      "inLanguage": "he",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-he.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -771,6 +1101,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-ja.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-ja.html",
+      "lang": "ja",
+      "headline": "月間展望：議会見通し",
+      "description": "30件の今後のイベントの戦略的プレビュー",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "来週の展望",
+      "wordCount": 1171,
+      "inLanguage": "ja",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-ja.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-ja.html",
+      "lang": "ja",
+      "headline": "月間レビュー：議会を展望する",
+      "description": "先月の50件の動向の包括的分析",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "週間レビュー",
+      "wordCount": 3549,
+      "inLanguage": "ja",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-ja.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-ja.html",
       "lang": "ja",
@@ -784,6 +1144,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-ja.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-ja.html",
+      "lang": "ja",
+      "headline": "来週の展望: 2026-02-23 から 2026-03-02",
+      "description": "来週の議会カレンダー、委員会会議、討論",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "来週の展望",
+      "wordCount": 2501,
+      "inLanguage": "ja",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-ja.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -831,6 +1206,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-ko.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-ko.html",
+      "lang": "ko",
+      "headline": "월간 전망: 의회 전망",
+      "description": "30개 향후 이벤트에 대한 전략적 미리보기",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "다음 주 전망",
+      "wordCount": 1183,
+      "inLanguage": "ko",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-ko.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-ko.html",
+      "lang": "ko",
+      "headline": "월간 리뷰: 의회 전망",
+      "description": "지난 달 50건의 동향에 대한 종합 분석",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "주간 리뷰",
+      "wordCount": 3630,
+      "inLanguage": "ko",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-ko.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-ko.html",
       "lang": "ko",
@@ -844,6 +1249,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-ko.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-ko.html",
+      "lang": "ko",
+      "headline": "다음 주 전망: 2026-02-23부터 2026-03-02까지",
+      "description": "다음 주 의회 일정, 위원회 회의 및 토론",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "다음 주 전망",
+      "wordCount": 2518,
+      "inLanguage": "ko",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-ko.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -891,6 +1311,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-nl.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-nl.html",
+      "lang": "nl",
+      "headline": "Maand vooruit: Parlementair vooruitzicht",
+      "description": "Strategisch overzicht van 30 aankomende evenementen",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Week vooruit",
+      "wordCount": 1273,
+      "inLanguage": "nl",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-nl.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-nl.html",
+      "lang": "nl",
+      "headline": "Maandelijkse terugblik: Parlement in perspectief",
+      "description": "Uitgebreide analyse van 50 ontwikkelingen van de afgelopen maand",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Weekoverzicht",
+      "wordCount": 4196,
+      "inLanguage": "nl",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-nl.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-nl.html",
       "lang": "nl",
@@ -904,6 +1354,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-nl.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-nl.html",
+      "lang": "nl",
+      "headline": "Week Vooruit: 2026-02-23 tot 2026-03-02",
+      "description": "Parlementaire kalender, commissievergaderingen en debatten voor de komende week",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Week vooruit",
+      "wordCount": 2635,
+      "inLanguage": "nl",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-nl.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -951,6 +1416,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-no.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-no.html",
+      "lang": "no",
+      "headline": "Måneden fremover: Parlamentarisk utsikt",
+      "description": "Strategisk forhåndsvisning av 30 kommende hendelser",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Uka som kommer",
+      "wordCount": 1251,
+      "inLanguage": "no",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-no.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-no.html",
+      "lang": "no",
+      "headline": "Månedsgjennomgang: Stortinget i perspektiv",
+      "description": "Omfattende analyse av 50 hendelser fra den siste måneden",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Ukens tilbakeblikk",
+      "wordCount": 4034,
+      "inLanguage": "no",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-no.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-no.html",
       "lang": "no",
@@ -964,6 +1459,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-no.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-no.html",
+      "lang": "no",
+      "headline": "Uke Fremover: 2026-02-23 til 2026-03-02",
+      "description": "Parlamentarisk kalender, komitémøter og debatter for kommende uke",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Uka som kommer",
+      "wordCount": 2608,
+      "inLanguage": "no",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-no.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -1011,6 +1521,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-sv.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-sv.html",
+      "lang": "sv",
+      "headline": "Månaden framåt: Parlamentarisk utblick",
+      "description": "Strategisk förhandsvisning av 30 kommande händelser",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Veckan som kommer",
+      "wordCount": 1237,
+      "inLanguage": "sv",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-sv.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-sv.html",
+      "lang": "sv",
+      "headline": "Månadskrönika: Riksdagen i perspektiv",
+      "description": "Omfattande analys av 50 händelser från den gångna månaden",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Veckans återblick",
+      "wordCount": 4073,
+      "inLanguage": "sv",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-sv.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-sv.html",
       "lang": "sv",
@@ -1024,6 +1564,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-sv.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-sv.html",
+      "lang": "sv",
+      "headline": "Vecka Framåt: 2026-02-23 till 2026-03-02",
+      "description": "Riksdagens kalender, utskottsmöten och kammarens debatter för kommande vecka",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "Veckan som kommer",
+      "wordCount": 2599,
+      "inLanguage": "sv",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-sv.html"
     },
     {
       "slug": "2026-02-22-weekly-review",
@@ -1071,6 +1626,36 @@
       "url": "https://riksdagsmonitor.com/news/2026-02-22-government-propositions-zh.html"
     },
     {
+      "slug": "2026-02-22-month-ahead",
+      "file": "2026-02-22-month-ahead-zh.html",
+      "lang": "zh",
+      "headline": "月度展望：议会前瞻",
+      "description": "30个即将到来的事件的战略预览",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "下周展望",
+      "wordCount": 1166,
+      "inLanguage": "zh",
+      "keywords": "parliament, month ahead, calendar, outlook, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-month-ahead-zh.html"
+    },
+    {
+      "slug": "2026-02-22-monthly-review",
+      "file": "2026-02-22-monthly-review-zh.html",
+      "lang": "zh",
+      "headline": "月度回顾：议会纵览",
+      "description": "过去一个月50项发展的综合分析",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "每周回顾",
+      "wordCount": 3506,
+      "inLanguage": "zh",
+      "keywords": "parliament, monthly review, analysis, recap, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-monthly-review-zh.html"
+    },
+    {
       "slug": "2026-02-22-opposition-motions",
       "file": "2026-02-22-opposition-motions-zh.html",
       "lang": "zh",
@@ -1084,6 +1669,21 @@
       "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
       "image": "https://hack23.com/cia-icon-140.webp",
       "url": "https://riksdagsmonitor.com/news/2026-02-22-opposition-motions-zh.html"
+    },
+    {
+      "slug": "2026-02-22-week-ahead",
+      "file": "2026-02-22-week-ahead-zh.html",
+      "lang": "zh",
+      "headline": "下周展望：2026-02-23 至 2026-03-02",
+      "description": "下周议会日程、委员会会议和辩论",
+      "datePublished": "2026-02-22T00:00:00.000Z",
+      "dateModified": "2026-02-22T00:00:00.000Z",
+      "articleSection": "下周展望",
+      "wordCount": 2495,
+      "inLanguage": "zh",
+      "keywords": "parliament, week ahead, calendar, events, calendar, events, debates, Swedish Parliament, Riksdag, politics, Sweden",
+      "image": "https://hack23.com/cia-icon-140.webp",
+      "url": "https://riksdagsmonitor.com/news/2026-02-22-week-ahead-zh.html"
     },
     {
       "slug": "2026-02-22-weekly-review",

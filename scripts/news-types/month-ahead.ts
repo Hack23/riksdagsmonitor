@@ -115,8 +115,22 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
       mcpCalls.push({ tool: 'search_dokument', result: documents });
       console.log(`  📊 Found ${documents.length} upcoming documents`);
 
+      // When no future docs either, fall back to recent 30-day pipeline documents
       if (documents.length === 0) {
-        console.log('  ℹ️ No upcoming documents found, skipping');
+        console.log('  ℹ️ No upcoming documents — fetching recent 30-day legislative pipeline...');
+        const pastStart = new Date(today);
+        pastStart.setDate(pastStart.getDate() - daysAhead);
+        const pastFromStr = formatDateForSlug(pastStart);
+        const rawRecentDocs = await Promise.resolve()
+          .then(() => client.searchDocuments({ from_date: pastFromStr, to_date: fromStr, limit: 50 }))
+          .catch((err: unknown) => { console.error('Failed to fetch recent docs:', err); return [] as unknown[]; });
+        documents = Array.isArray(rawRecentDocs) ? rawRecentDocs as RawDocument[] : [];
+        mcpCalls.push({ tool: 'search_dokument', result: documents });
+        console.log(`  📊 Found ${documents.length} recent pipeline documents`);
+      }
+
+      if (documents.length === 0) {
+        console.log('  ℹ️ No documents found, skipping');
         return { success: true, files: 0, mcpCalls };
       }
     }

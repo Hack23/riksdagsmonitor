@@ -194,13 +194,15 @@ import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord
 
 /**
  * Required MCP tools for week-ahead articles.
- * Updated 2026-02-22: now also calls search_dokument and search_anforanden
- * as supplementary context sources when calendar data is sparse.
+ * Updated 2026-02-22: also calls get_fragor and get_interpellationer
+ * as parliamentary-questions context sources when calendar is sparse.
  */
 export const REQUIRED_TOOLS: readonly string[] = [
   'get_calendar_events',
   'search_dokument',
   'search_anforanden',
+  'get_fragor',
+  'get_interpellationer',
 ];
 
 export interface TitleSet {
@@ -299,6 +301,24 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
     mcpCalls.push({ tool: 'search_anforanden', result: speeches });
     console.log(`  🗣 Found ${speeches.length} recent speeches`);
 
+    // Step 4: Parliamentary questions (fragor) — active debates heading into the week
+    console.log('  🔄 Step 4 — Fetching parliamentary questions...');
+    const rawQuestions = await Promise.resolve()
+      .then(() => client.fetchWrittenQuestions({ limit: 20 }))
+      .catch((err: unknown) => { console.error('Failed to fetch fragor:', err); return [] as unknown[]; });
+    const questions: RawDocument[] = Array.isArray(rawQuestions) ? rawQuestions as RawDocument[] : [];
+    mcpCalls.push({ tool: 'get_fragor', result: questions });
+    console.log(`  📊 Found ${questions.length} written questions`);
+
+    // Step 5: Interpellations (interpellationer) — formal parliamentary questions pending
+    console.log('  🔄 Step 5 — Fetching interpellations...');
+    const rawInterpellations = await Promise.resolve()
+      .then(() => client.fetchInterpellations({ limit: 15 }))
+      .catch((err: unknown) => { console.error('Failed to fetch interpellationer:', err); return [] as unknown[]; });
+    const interpellations: RawDocument[] = Array.isArray(rawInterpellations) ? rawInterpellations as RawDocument[] : [];
+    mcpCalls.push({ tool: 'get_interpellationer', result: interpellations });
+    console.log(`  📊 Found ${interpellations.length} interpellations`);
+
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-week-ahead`;
     const articles: GeneratedArticle[] = [];
@@ -307,11 +327,12 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
       
       const eventGrid = transformCalendarToEventGrid(events as Record<string, unknown>[], lang);
-      const content = generateArticleContent({ events, documents, highlights: [] }, 'week-ahead', lang);
+      const weekData = { events, documents, questions, interpellations, highlights: [] as Array<{title:string;description:string}> };
+      const content = generateArticleContent(weekData, 'week-ahead', lang);
       const watchPoints = extractWatchPoints({ events, documents }, lang);
       const metadata = generateMetadata({ events, documents }, 'week-ahead', lang);
       const readTime = calculateReadTime(content);
-      const sources = generateSources(['get_calendar_events', 'search_dokument', 'search_anforanden']);
+      const sources = generateSources(['get_calendar_events', 'search_dokument', 'get_fragor', 'get_interpellationer']);
       
       const titles: TitleSet = getTitles(lang, range);
       
@@ -354,8 +375,8 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
       articles,
       mcpCalls,
       crossReferences: {
-        event: `${(events as unknown[]).length} events, ${documents.length} docs`,
-        sources: ['calendar_events', 'search_dokument', 'search_anforanden'],
+        event: `${(events as unknown[]).length} events, ${documents.length} docs, ${questions.length} questions, ${interpellations.length} interpellations`,
+        sources: ['calendar_events', 'search_dokument', 'get_fragor', 'get_interpellationer'],
       },
     };
     

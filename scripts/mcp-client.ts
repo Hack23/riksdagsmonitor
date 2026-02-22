@@ -507,6 +507,20 @@ export class MCPClient {
     return (response['dokument'] ?? response['motions'] ?? []) as unknown[];
   }
 
+  async fetchWrittenQuestions(params: { limit?: number; rm?: string } = {}): Promise<unknown[]> {
+    const reqParams: Record<string, unknown> = { limit: params.limit ?? 20 };
+    if (params.rm) reqParams['rm'] = params.rm;
+    const response = await this.request('get_fragor', reqParams);
+    return (response['dokument'] ?? response['questions'] ?? []) as unknown[];
+  }
+
+  async fetchInterpellations(params: { limit?: number; rm?: string } = {}): Promise<unknown[]> {
+    const reqParams: Record<string, unknown> = { limit: params.limit ?? 15 };
+    if (params.rm) reqParams['rm'] = params.rm;
+    const response = await this.request('get_interpellationer', reqParams);
+    return (response['dokument'] ?? response['interpellations'] ?? []) as unknown[];
+  }
+
   async searchDocuments(searchParams: SearchDocumentsParams): Promise<unknown[]> {
     const response = await this.request(
       'search_dokument',
