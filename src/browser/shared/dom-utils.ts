@@ -152,10 +152,10 @@ export function showDataSourceDisclaimer(
 
   disclaimer.textContent = `${icon} ${text}`;
 
-  // Insert after the first heading or at the top of the container
+  // Insert after the first heading if present, otherwise at the top of the container
   const heading = container.querySelector('h2, h3');
-  if (heading && heading.nextSibling) {
-    heading.parentNode!.insertBefore(disclaimer, heading.nextSibling);
+  if (heading) {
+    heading.insertAdjacentElement('afterend', disclaimer);
   } else {
     container.prepend(disclaimer);
   }

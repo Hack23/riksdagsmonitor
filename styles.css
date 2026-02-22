@@ -7597,21 +7597,21 @@ html[lang="he"] {
 }
 
 .data-source-live {
-  background: rgba(76, 175, 80, 0.1);
-  border: 1px solid rgba(76, 175, 80, 0.3);
-  color: #4caf50;
+  color: var(--success-color);
+  border: 1px solid color-mix(in srgb, var(--success-color) 40%, transparent);
+  background-color: color-mix(in srgb, var(--success-color) 10%, transparent);
 }
 
 .data-source-synthetic {
-  background: rgba(255, 152, 0, 0.1);
-  border: 1px solid rgba(255, 152, 0, 0.3);
-  color: #ff9800;
+  color: var(--warning-color);
+  border: 1px solid color-mix(in srgb, var(--warning-color) 40%, transparent);
+  background-color: color-mix(in srgb, var(--warning-color) 10%, transparent);
 }
 
 .data-source-mock {
-  background: rgba(0, 217, 255, 0.1);
-  border: 1px solid rgba(0, 217, 255, 0.3);
-  color: #00d9ff;
+  color: var(--primary-cyan, #00d9ff);
+  border: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 40%, transparent);
+  background-color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 10%, transparent);
 }
 
 .methodology-note {

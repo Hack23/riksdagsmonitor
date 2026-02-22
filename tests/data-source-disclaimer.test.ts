@@ -18,6 +18,7 @@ describe('Data Source Disclaimer', () => {
   let container: HTMLElement;
 
   beforeEach(() => {
+    document.body.innerHTML = '';
     container = document.createElement('section');
     container.id = 'test-dashboard';
     container.innerHTML = '<h2>Test Dashboard</h2><div class="dashboard-grid"></div>';
@@ -104,6 +105,15 @@ describe('Data Source Disclaimer', () => {
       showDataSourceDisclaimer(container, 'live');
       const disclaimer = container.querySelector('.data-source-disclaimer');
       expect(container.firstElementChild).toBe(disclaimer);
+    });
+
+    it('should insert after heading when heading is the last child', () => {
+      container.innerHTML = '<h2>Only Heading</h2>';
+      showDataSourceDisclaimer(container, 'live');
+      const heading = container.querySelector('h2');
+      const disclaimer = container.querySelector('.data-source-disclaimer');
+      expect(heading!.nextElementSibling).toBe(disclaimer);
+      expect(container.lastElementChild).toBe(disclaimer);
     });
   });
 

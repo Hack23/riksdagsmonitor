@@ -282,28 +282,32 @@ function generateFallbackData(): CSVRow[] {
 
   for (let year = 2018; year <= 2025; year++) {
     for (let quarter = 1; quarter <= 4; quarter++) {
-      const ballotZ = (Math.random() * 4 - 1).toFixed(4);
-      const docZ = (Math.random() * 4 - 1).toFixed(4);
-      const absBallotZ = Math.abs(parseFloat(ballotZ));
-      const absDocZ = Math.abs(parseFloat(docZ));
+      // Deterministic, bounded z-scores to avoid random HIGH/CRITICAL anomalies in fallback data
+      const ballotZRaw = (((year * 31 + quarter * 17) % 300) / 100) - 1.5;
+      const docZRaw = (((year * 19 + quarter * 23) % 300) / 100) - 1.5;
+      const ballotZ = ballotZRaw.toFixed(4);
+      const docZ = docZRaw.toFixed(4);
+      const absBallotZ = Math.abs(ballotZRaw);
+      const absDocZ = Math.abs(docZRaw);
       const maxZ = Math.max(absBallotZ, absDocZ);
       let severity = 'LOW';
       let anomalyType = 'NO_ANOMALY';
       let direction = 'WITHIN_NORMAL_RANGE';
-      const dominantZ = absBallotZ >= absDocZ ? ballotZ : docZ;
+      const dominantZ = absBallotZ >= absDocZ ? ballotZRaw : docZRaw;
 
-      if (maxZ >= 3.0) { severity = 'CRITICAL'; anomalyType = absBallotZ >= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; direction = parseFloat(dominantZ) > 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; }
-      else if (maxZ >= 2.0) { severity = 'HIGH'; anomalyType = absBallotZ >= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; direction = parseFloat(dominantZ) > 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; }
+      if (maxZ >= 3.0) { severity = 'CRITICAL'; anomalyType = absBallotZ >= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; direction = dominantZ > 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; }
+      else if (maxZ >= 2.0) { severity = 'HIGH'; anomalyType = absBallotZ >= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; direction = dominantZ > 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; }
       else if (maxZ >= 1.0) { severity = 'MODERATE'; }
 
       data.push({
         year: String(year),
         quarter: String(quarter),
         is_election_year: (year === 2022) ? 't' : 'f',
-        total_ballots: String(100 + Math.floor(Math.random() * 200)),
+        // Deterministic synthetic counts for reproducible fallback data
+        total_ballots: String(100 + ((year * 13 + quarter * 7) % 200)),
         active_politicians: '349',
         attendance_rate: '100.00',
-        documents_produced: String(200 + Math.floor(Math.random() * 500)),
+        documents_produced: String(200 + ((year * 29 + quarter * 11) % 500)),
         q_baseline_ballots: '150.00',
         q_stddev_ballots: '40.00',
         ballot_z_score: ballotZ,
