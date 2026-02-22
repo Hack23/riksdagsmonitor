@@ -1,13 +1,12 @@
 ---
-name: News Article Generator
-description: Automatically generates news articles from Swedish Riksdag and Government data using riksdag-regering-mcp server and validates with Playwright
+name: "News: Article Generator (Manual)"
+description: Manual-only multi-type article generator. For automated per-type generation, use the dedicated news-committee-reports, news-propositions, news-motions, news-week-ahead, news-month-ahead, news-weekly-review, news-monthly-review workflows instead.
 strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
-  schedule: daily
   workflow_dispatch:
     inputs:
       article_types:
-        description: Comma-separated article types (week-ahead,committee-reports,propositions,motions,breaking). Leave empty for day-of-week schedule.
+        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking). Leave empty for day-of-week schedule.
         required: false
       force_generation:
         description: Force generation even if recent articles exist

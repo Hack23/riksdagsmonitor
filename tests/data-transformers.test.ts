@@ -60,6 +60,13 @@ interface MockArticlePayload {
     dok_id?: string;
     intressent_namn?: string;
   }>;
+  documents?: Array<{
+    titel?: string;
+    title?: string;
+    url?: string;
+    dokumentnamn?: string;
+    dok_id?: string;
+  }>;
 }
 
 describe('Data Transformers', () => {
@@ -323,6 +330,36 @@ describe('Data Transformers', () => {
         motions: [{ titel: 'Test Motion', parti: 'S', url: '#', dokumentnamn: 'Mot 2025/26:1', intressent_namn: 'Test Person' }] 
       } as MockArticlePayload, 'motions', 'en') as string;
       expect(content).toContain('Test Motion');
+    });
+
+    it('should handle weekly-review type with documents property', () => {
+      const content = generateArticleContent(
+        { documents: [{ titel: 'Weekly Doc', url: '#' }] } as MockArticlePayload,
+        'weekly-review',
+        'en'
+      ) as string;
+      expect(typeof content).toBe('string');
+      expect(content.length).toBeGreaterThan(0);
+    });
+
+    it('should handle monthly-review type with documents property', () => {
+      const content = generateArticleContent(
+        { documents: [{ titel: 'Monthly Doc', url: '#' }] } as MockArticlePayload,
+        'monthly-review',
+        'en'
+      ) as string;
+      expect(typeof content).toBe('string');
+      expect(content.length).toBeGreaterThan(0);
+    });
+
+    it('should handle month-ahead type with events', () => {
+      const content = generateArticleContent(
+        { events: mockEvents, highlights: [] } as MockArticlePayload,
+        'month-ahead',
+        'en'
+      ) as string;
+      expect(typeof content).toBe('string');
+      expect(content.length).toBeGreaterThan(0);
     });
 
     it('should include highlights section when highlights are provided', () => {

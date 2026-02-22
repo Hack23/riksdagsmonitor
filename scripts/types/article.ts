@@ -11,6 +11,9 @@ export type ArticleCategory = 'prospective' | 'retrospective' | 'analysis' | 'br
 /** Internal article type identifiers for content routing */
 export type ArticleType =
   | 'week-ahead'
+  | 'month-ahead'
+  | 'weekly-review'
+  | 'monthly-review'
   | 'committee-reports'
   | 'propositions'
   | 'motions'
