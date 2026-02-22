@@ -117,10 +117,10 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     const recentPropositions = filterRecent(propositions);
     const recentMotions = filterRecent(motions);
 
-    // Tag documents with their type for content generation
-    for (const d of recentReports) (d as Record<string, string>).doktyp = (d as Record<string, string>).doktyp || 'bet';
-    for (const d of recentPropositions) (d as Record<string, string>).doktyp = (d as Record<string, string>).doktyp || 'prop';
-    for (const d of recentMotions) (d as Record<string, string>).doktyp = (d as Record<string, string>).doktyp || 'mot';
+    // Tag documents with their type for content generation (only when missing)
+    for (const d of recentReports) { if (!(d as Record<string, string>).doktyp) (d as Record<string, string>).doktyp = 'bet'; }
+    for (const d of recentPropositions) { if (!(d as Record<string, string>).doktyp) (d as Record<string, string>).doktyp = 'prop'; }
+    for (const d of recentMotions) { if (!(d as Record<string, string>).doktyp) (d as Record<string, string>).doktyp = 'mot'; }
 
     const documents: RawDocument[] = [...recentReports, ...recentPropositions, ...recentMotions];
     mcpCalls.push({ tool: 'get_betankanden', result: recentReports });
