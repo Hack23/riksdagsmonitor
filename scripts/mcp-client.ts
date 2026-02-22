@@ -43,6 +43,10 @@ function nodeHttpsPost(
   body: string,
   signal: AbortSignal,
 ): Promise<FetchLike> {
+  // Add early-abort check so no sockets are opened for already-cancelled requests
+  if (signal.aborted) {
+    return Promise.reject(new Error('Request aborted'));
+  }
   return new Promise<FetchLike>((resolve, reject) => {
     const parsed = new URL(url);
     const reqHeaders: Record<string, string | number> = {

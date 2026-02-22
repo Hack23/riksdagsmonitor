@@ -41,7 +41,12 @@ import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord
  * Required MCP tools for weekly-review articles
  */
 export const REQUIRED_TOOLS: readonly string[] = [
-  'search_dokument'
+  'search_dokument',
+  'get_dokument_innehall',
+  'search_anforanden',
+  'get_betankanden',
+  'get_propositioner',
+  'get_motioner',
 ];
 
 export interface TitleSet {

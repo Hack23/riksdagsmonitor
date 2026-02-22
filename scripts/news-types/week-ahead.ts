@@ -194,8 +194,12 @@ import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord
 
 /**
  * Required MCP tools for week-ahead articles.
- * Updated 2026-02-22: also calls get_fragor and get_interpellationer
- * as parliamentary-questions context sources when calendar is sparse.
+ * All tools are always invoked (not conditional on calendar scarcity):
+ * - get_calendar_events: upcoming committee/chamber events
+ * - search_dokument: recently-published documents
+ * - search_anforanden: recent chamber speeches for context
+ * - get_fragor: latest written questions to ministers
+ * - get_interpellationer: latest interpellations
  */
 export const REQUIRED_TOOLS: readonly string[] = [
   'get_calendar_events',
@@ -376,7 +380,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
       mcpCalls,
       crossReferences: {
         event: `${(events as unknown[]).length} events, ${documents.length} docs, ${questions.length} questions, ${interpellations.length} interpellations`,
-        sources: ['calendar_events', 'search_dokument', 'get_fragor', 'get_interpellationer'],
+        sources: ['calendar_events', 'search_dokument', 'search_anforanden', 'get_fragor', 'get_interpellationer'],
       },
     };
     

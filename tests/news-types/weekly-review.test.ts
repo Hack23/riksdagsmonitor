@@ -23,7 +23,7 @@ interface SearchDocument {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   searchDocuments: Mock<(params: Record<string, unknown>) => Promise<SearchDocument[]>>;
-  fetchDocumentDetails: Mock<(dokId: string) => Promise<Record<string, unknown>>>;
+  fetchDocumentDetails: Mock<(dokId: string, includeFullText?: boolean) => Promise<Record<string, unknown>>>;
   searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
 }
 

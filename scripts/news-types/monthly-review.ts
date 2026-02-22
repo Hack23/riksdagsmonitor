@@ -120,8 +120,26 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
         .catch((err: unknown) => { console.error('Failed to fetch motions:', err); return [] as unknown[]; }),
     ]);
 
+    // Record MCP calls for traceability
+    mcpCalls.push({ tool: 'get_betankanden', result: recentReports });
+    mcpCalls.push({ tool: 'get_propositioner', result: recentPropositions });
+    mcpCalls.push({ tool: 'get_motioner', result: recentMotions });
+
+    // Filter typed results to the lookback window so only in-period documents are merged
+    const filterByDate = (docs: unknown[]): unknown[] =>
+      docs.filter(d => {
+        const rec = d as Record<string, string>;
+        const docDate: string = rec['datum'] ?? rec['date'] ?? '';
+        if (!docDate) return true; // no date field — keep (can't filter)
+        return docDate >= fromStr && docDate <= toStr;
+      });
+
+    const filteredReports = filterByDate(recentReports as unknown[]);
+    const filteredPropositions = filterByDate(recentPropositions as unknown[]);
+    const filteredMotions = filterByDate(recentMotions as unknown[]);
+
     // Merge: typed docs first (have dok_id), then search extras
-    const typedDocs = [...recentReports, ...recentPropositions, ...recentMotions] as RawDocument[];
+    const typedDocs = [...filteredReports, ...filteredPropositions, ...filteredMotions] as RawDocument[];
     const typedDocIds = new Set<string>(
       typedDocs.flatMap(d => {
         const id = (d as Record<string, string>).dok_id;
@@ -141,13 +159,13 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     for (const d of documents) {
       const rec = d as Record<string, unknown>;
       if (!rec['doktyp']) {
-        if (recentReports.includes(d as unknown)) rec['doktyp'] = 'bet';
-        else if (recentPropositions.includes(d as unknown)) rec['doktyp'] = 'prop';
-        else if (recentMotions.includes(d as unknown)) rec['doktyp'] = 'mot';
+        if (filteredReports.includes(d as unknown)) rec['doktyp'] = 'bet';
+        else if (filteredPropositions.includes(d as unknown)) rec['doktyp'] = 'prop';
+        else if (filteredMotions.includes(d as unknown)) rec['doktyp'] = 'mot';
       }
     }
 
-    console.log(`  📊 Found ${documents.length} documents (${recentReports.length} reports, ${recentPropositions.length} propositions, ${recentMotions.length} motions)`);
+    console.log(`  📊 Found ${documents.length} documents (${filteredReports.length} reports, ${filteredPropositions.length} propositions, ${filteredMotions.length} motions within lookback window)`);
 
     if (documents.length === 0) {
       console.log('  ℹ️ No documents found for the past month, skipping');
