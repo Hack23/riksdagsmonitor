@@ -1334,6 +1334,13 @@ describe('groupMotionsByProposition (#462)', () => {
     // Both motion entries should still be present
     expect(content).toContain('MOT_A');
     expect(content).toContain('MOT_B');
+    // Prop group heading should be an h3 containing the ID
+    expect(content).toMatch(/<h3[^>]*>Prop\. 2025\/26:118/);
+    // Swedish descriptive title should appear inside the h3 heading
+    expect(content).toContain('Tillståndsprövning enligt förnybartdirektivet');
+    // Individual motions inside the group must use h4 (not h3) for their own title
+    expect(content).toMatch(/<h4[^>]*>/);
+    expect(content).not.toMatch(/<h3[^>]*>med anledning av/);
   });
 
   it('separates independent motions from proposition-linked motions', () => {
@@ -1359,6 +1366,9 @@ describe('groupMotionsByProposition (#462)', () => {
     expect(content).toContain('Independent Motions');
     expect(content).toContain('MOT_PROP');
     expect(content).toContain('MOT_IND');
+    // Independent motion title should be an h3 (not h4)
+    expect(content).toMatch(/<h3[^>]*>.*?Fristående motion om transportpolitik/s);
+    expect(content).not.toMatch(/<h4[^>]*>.*Fristående motion om transportpolitik/);
   });
 
   it('renders all motions without grouping header when none reference a proposition', () => {
@@ -1372,6 +1382,11 @@ describe('groupMotionsByProposition (#462)', () => {
     expect(content).not.toContain('Independent Motions');
     expect(content).toContain('M1');
     expect(content).toContain('M2');
+    // Independent motions rendered alone should use h3 (not h4)
+    expect(content).toMatch(/<h3[^>]*>.*?Om utbildningspolitik/s);
+    expect(content).toMatch(/<h3[^>]*>.*?Om sjukvård/s);
+    expect(content).not.toMatch(/<h4[^>]*>.*Om utbildningspolitik/);
+    expect(content).not.toMatch(/<h4[^>]*>.*Om sjukvård/);
   });
 });
 

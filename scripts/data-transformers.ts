@@ -1960,8 +1960,11 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   const multiCommittee = byCommitteeGroup.size > 1;
 
   byCommitteeGroup.forEach((committeeProps, committeeKey) => {
-    if (multiCommittee && committeeKey) {
-      content += `    <h3>${escapeHtml(getCommitteeName(committeeKey, lang))}</h3>\n`;
+    if (multiCommittee) {
+      const committeeLabel = committeeKey
+        ? escapeHtml(getCommitteeName(committeeKey, lang))
+        : escapeHtml(String(L(lang, 'otherCommittee')));
+      content += `    <h3>${committeeLabel}</h3>\n`;
     }
 
     const headingTag = multiCommittee ? 'h4' : 'h3';
@@ -2024,6 +2027,9 @@ const PROP_REFERENCE_REGEX = /med anledning av prop\.\s+(\d{4}\/\d{2}:\d+)/i;
 
 /** Regex to capture the full proposition reference text (non-greedy, stops at HTML tags) */
 const PROP_FULL_REF_REGEX = /med anledning av (prop\.\s*\d{4}\/\d{2}:\d+(?:\s+[^<]+?)?(?=\s*$|<))/i;
+
+/** Regex to capture the Swedish descriptive title that follows a proposition ID in a motion title */
+const PROP_TITLE_SUFFIX_REGEX = /med anledning av prop\.\s+\d{4}\/\d{2}:\d+\s*(.*)/i;
 
 /**
  * Extract the parent proposition reference (e.g. "2025/26:118") from a motion title.
@@ -2098,7 +2104,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   }
 
   /** Render a single motion entry block */
-  const renderMotion = (motion: RawDocument): string => {
+  const renderMotion = (motion: RawDocument, headingTag: 'h3' | 'h4' = 'h3'): string => {
     const titleText = motion.titel || motion.title || '';
     const escapedTitle = escapeHtml(titleText);
     const titleHtml = (motion.titel && !motion.title)
@@ -2137,7 +2143,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 
     return `
     <div class="motion-entry">
-      <h3>${titleHtml}</h3>
+      <${headingTag}>${titleHtml}</${headingTag}>
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
       <p>${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
@@ -2153,19 +2159,17 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     content += `\n    <h2>${L(lang, 'responsesToProp')}</h2>\n`;
 
     grouped.forEach((propMotions, propRef) => {
-      // Get prop title from first motion using PROP_FULL_REF_REGEX (non-greedy, HTML-safe)
+      // Extract Swedish descriptive title using the shared PROP_TITLE_SUFFIX_REGEX constant
       const firstTitle = propMotions[0]?.titel || propMotions[0]?.title || '';
-      const fullRefMatch = firstTitle.match(PROP_FULL_REF_REGEX);
-      const propTitle = fullRefMatch
-        ? firstTitle.replace(fullRefMatch[0], '').trim() || propRef
-        : propRef;
+      const titleSuffixMatch = firstTitle.match(PROP_TITLE_SUFFIX_REGEX);
+      const propTitle = titleSuffixMatch?.[1]?.trim() || propRef;
 
       const safePropRef = escapeHtml(String(propRef));
       const safePropTitle = escapeHtml(String(propTitle));
 
       content += `    <h3>Prop. ${safePropRef}: ${svSpan(safePropTitle, lang)}</h3>\n`;
 
-      propMotions.forEach(motion => { content += renderMotion(motion); });
+      propMotions.forEach(motion => { content += renderMotion(motion, 'h4'); });
     });
   }
 
