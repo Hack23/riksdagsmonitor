@@ -2112,6 +2112,107 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   } else {
     // Single theme or no detection: flat list
     motions.forEach(motion => { content += renderMotionEntry(motion, lang); });
+  /** Render a single motion entry block */
+  const renderMotion = (motion: RawDocument): string => {
+    const titleText = motion.titel || motion.title || '';
+    const escapedTitle = escapeHtml(titleText);
+    const titleHtml = (motion.titel && !motion.title)
+      ? svSpan(escapedTitle, lang)
+      : escapedTitle;
+    const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
+
+    // Use enriched author and party data, with fallback parsing from raw notis.
+    // Treat 'Unknown' sentinel (set by enrichDocumentsWithContent) as missing so
+    // we attempt parseMotionAuthorParty before giving up.
+    const unknownVal = L(lang, 'unknown');
+    let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null) || motion.author || '';
+    let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
+    if (!authorName || authorName === 'Unknown') {
+      const rawText = motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
+      const parsed = parseMotionAuthorParty(rawText);
+      if (parsed) { authorName = parsed.author; partyName = partyName || parsed.party; }
+    }
+    if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
+    const authorLine = partyName
+      ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
+      : escapeHtml(authorName);
+
+    // Use enhanced summary based on metadata (cleanMotionText strips Swedish boilerplate)
+    const summaryText = generateEnhancedSummary(motion, 'motion', lang);
+    const motionDefaultVal = L(lang, 'motionDefault');
+    // Only wrap in Swedish-language span when the content comes from a Swedish source
+    const isSwedishContent = (motion.titel && !motion.title)
+      || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
+    const summaryHtml = (summaryText && summaryText !== motionDefaultVal && isSwedishContent)
+      ? svSpan(escapeHtml(summaryText), lang)
+      : escapeHtml(summaryText || (typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));
+
+    const readFullVal = L(lang, 'readFullMotion');
+    const whyItMattersVal = L(lang, 'whyItMatters');
+
+    return `
+    <div class="motion-entry">
+      <h3>${titleHtml}</h3>
+      <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
+      <p>${summaryHtml}</p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
+      <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+    </div>
+`;
+  };
+
+  // Group motions by parent proposition to eliminate repetitive section headers
+  const { grouped, independent } = groupMotionsByProposition(motions);
+
+  if (grouped.size > 0) {
+    const responsesLabel = lang === 'sv' ? 'Svar på propositioner'
+      : lang === 'de' ? 'Antworten auf Regierungsvorlagen'
+      : lang === 'fr' ? 'Réponses aux propositions gouvernementales'
+      : lang === 'es' ? 'Respuestas a proposiciones del gobierno'
+      : lang === 'da' ? 'Svar på regeringsforslag'
+      : lang === 'no' ? 'Svar på regjeringforslag'
+      : lang === 'fi' ? 'Vastaukset hallituksen esityksiin'
+      : lang === 'nl' ? 'Antwoorden op regeringsvoorstellen'
+      : lang === 'ar' ? 'ردود على مقترحات الحكومة'
+      : lang === 'he' ? 'תשובות להצעות הממשלה'
+      : lang === 'ja' ? '政府提案への回答'
+      : lang === 'ko' ? '정부 제안에 대한 응답'
+      : lang === 'zh' ? '对政府提案的回应'
+      : 'Responses to Government Propositions';
+
+    content += `\n    <h2>${responsesLabel}</h2>\n`;
+
+    grouped.forEach((propMotions, propRef) => {
+      // Get prop title from first motion (strip the prop reference prefix from the title)
+      const firstTitle = propMotions[0]?.titel || propMotions[0]?.title || '';
+      const propTitleMatch = firstTitle.match(/med anledning av prop\.\s+\S+\s+(.*)/i);
+      const propTitle = propTitleMatch?.[1]?.trim() || propRef;
+
+      content += `    <h3>${escapeHtml(`Prop. ${propRef}: ${propTitle}`)}</h3>\n`;
+
+      propMotions.forEach(motion => { content += renderMotion(motion); });
+    });
+  }
+
+  if (independent.length > 0) {
+    if (grouped.size > 0) {
+      const indepLabel = lang === 'sv' ? 'Övriga motioner'
+        : lang === 'de' ? 'Sonstige Anträge'
+        : lang === 'fr' ? 'Autres motions'
+        : lang === 'es' ? 'Otras mociones'
+        : lang === 'da' ? 'Andre forslag'
+        : lang === 'no' ? 'Andre forslag'
+        : lang === 'fi' ? 'Muut aloitteet'
+        : lang === 'nl' ? 'Overige moties'
+        : lang === 'ar' ? 'اقتراحات أخرى'
+        : lang === 'he' ? 'הצעות אחרות'
+        : lang === 'ja' ? 'その他の動議'
+        : lang === 'ko' ? '기타 동의'
+        : lang === 'zh' ? '其他动议'
+        : 'Independent Motions';
+      content += `\n    <h2>${indepLabel}</h2>\n`;
+    }
+    independent.forEach(motion => { content += renderMotion(motion); });
   }
 
   // Party activity breakdown
