@@ -247,9 +247,18 @@ const skipExistingArg: boolean = args.includes('--skip-existing');
 const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
 
 const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
-const QUALITY_THRESHOLD: number = qualityThresholdArg
-  ? parseInt(qualityThresholdArg.split('=')[1] ?? '40', 10)
-  : 40;
+const DEFAULT_QUALITY_THRESHOLD = 40;
+let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
+if (qualityThresholdArg) {
+  const rawValue: string = qualityThresholdArg.split('=')[1] ?? '';
+  const numericValue: number = rawValue === '' ? NaN : Number(rawValue);
+  if (Number.isFinite(numericValue)) {
+    parsedQualityThreshold = Math.min(100, Math.max(0, numericValue));
+  } else {
+    console.warn(`Invalid --quality-threshold value "${rawValue}", falling back to default ${DEFAULT_QUALITY_THRESHOLD}.`);
+  }
+}
+const QUALITY_THRESHOLD: number = parsedQualityThreshold;
 
 // ---------------------------------------------------------------------------
 // Valid article types

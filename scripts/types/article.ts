@@ -83,7 +83,7 @@ export interface ArticleQualityScore {
   lang: string;
   /** Article type (e.g. "motions") */
   articleType: string;
-  /** Approximate word count (includes HTML tag tokens) */
+  /** Approximate word count based on text content after stripping HTML tags */
   wordCount: number;
   /** Number of "Unknown (Unknown)" occurrences */
   unknownAuthors: number;
