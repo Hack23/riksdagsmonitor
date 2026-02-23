@@ -578,6 +578,9 @@ async function writeSingleArticle(html: string, slug: string, lang: Language, ar
   const qualityScore: ArticleQualityScore = validateArticleQuality(translatedHtml, lang, articleType ?? inferredType, filename);
   stats.qualityScores.push(qualityScore);
   await writeArticle(translatedHtml, filename);
+  const qualityScore: ArticleQualityScore = validateArticleQuality(html, lang, articleType ?? inferredType, filename);
+  stats.qualityScores.push(qualityScore);
+  await writeArticle(html, filename);
   stats.generated += 1;
   stats.articles.push(filename);
   return filename;
@@ -1180,4 +1183,5 @@ export {
   getWeekAheadDateRange,
   requireMcp,
   translateSwedishContent
+  requireMcp
 };
