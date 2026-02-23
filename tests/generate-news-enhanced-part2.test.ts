@@ -463,3 +463,92 @@ describe('Article Template Integration', () => {
     expect(typeof generateArticleHTML).toBe('function');
   });
 });
+
+// ---------------------------------------------------------------------------
+// #468 — validateArticleQuality
+// ---------------------------------------------------------------------------
+
+describe('validateArticleQuality', () => {
+  it('should be exported from generate-news-enhanced', async () => {
+    const mod = await import('../scripts/generate-news-enhanced.js') as Record<string, unknown>;
+    expect(typeof mod['validateArticleQuality']).toBe('function');
+  });
+
+  it('should score below threshold for empty HTML', async () => {
+    const { validateArticleQuality, QUALITY_THRESHOLD } = await import('../scripts/generate-news-enhanced.js') as {
+      validateArticleQuality: (html: string, lang: string, type: string, hint: string) => { qualityScore: number; belowThreshold: boolean };
+      QUALITY_THRESHOLD: number;
+    };
+    const report = validateArticleQuality('', 'en', 'motions', 'test.html');
+    // Empty HTML has no words and no sections; it only earns the translation bonus (20 pts)
+    // which is still well below the 40-pt threshold.
+    expect(report.qualityScore).toBeLessThan(QUALITY_THRESHOLD);
+    expect(report.belowThreshold).toBe(true);
+    expect(typeof QUALITY_THRESHOLD).toBe('number');
+  });
+
+  it('should give a high score for a rich article', async () => {
+    const { validateArticleQuality } = await import('../scripts/generate-news-enhanced.js') as {
+      validateArticleQuality: (html: string, lang: string, type: string, hint: string) => { qualityScore: number; belowThreshold: boolean; wordCount: number };
+    };
+    // Build an article with 400+ words and multiple h2 sections
+    const words = Array(420).fill('word').join(' ');
+    const html = `<html><body><h2>Analysis</h2><h2>Context</h2><h2>Outlook</h2><p>${words}</p></body></html>`;
+    const report = validateArticleQuality(html, 'en', 'committee-reports', 'test-en.html');
+    expect(report.wordCount).toBeGreaterThanOrEqual(400);
+    expect(report.analyticalSections).toBe(3);
+    expect(report.untranslatedSpans).toBe(0);
+    expect(report.qualityScore).toBeGreaterThanOrEqual(40);
+    expect(report.belowThreshold).toBe(false);
+  });
+
+  it('should penalise residual data-translate spans for non-sv articles', async () => {
+    const { validateArticleQuality } = await import('../scripts/generate-news-enhanced.js') as {
+      validateArticleQuality: (html: string, lang: string, type: string, hint: string) => { untranslatedSpans: number; qualityScore: number };
+    };
+    const words = Array(400).fill('word').join(' ');
+    const spans = Array(20).fill('<span data-translate="true" lang="sv">term</span>').join(' ');
+    const html = `<html><body><h2>A</h2><h2>B</h2><h2>C</h2><p>${words}</p>${spans}</body></html>`;
+    const noSpanReport = validateArticleQuality(`<html><body><h2>A</h2><h2>B</h2><h2>C</h2><p>${words}</p></body></html>`, 'de', 'motions', 'test.html');
+    const withSpanReport = validateArticleQuality(html, 'de', 'motions', 'test.html');
+    expect(withSpanReport.untranslatedSpans).toBeGreaterThan(0);
+    expect(withSpanReport.qualityScore).toBeLessThan(noSpanReport.qualityScore);
+  });
+
+  it('should NOT penalise sv articles for data-translate spans', async () => {
+    const { validateArticleQuality } = await import('../scripts/generate-news-enhanced.js') as {
+      validateArticleQuality: (html: string, lang: string, type: string, hint: string) => { untranslatedSpans: number };
+    };
+    const html = '<p><span data-translate="true" lang="sv">text</span></p>';
+    const report = validateArticleQuality(html, 'sv', 'motions', 'test-sv.html');
+    expect(report.untranslatedSpans).toBe(0);
+  });
+  it('should score proportionally for intermediate section counts', async () => {
+    const { validateArticleQuality } = await import('../scripts/generate-news-enhanced.js') as {
+      validateArticleQuality: (html: string, lang: string, type: string, hint: string) => { analyticalSections: number; qualityScore: number };
+    };
+    const words = Array(420).fill('word').join(' ');
+    const oneSection = validateArticleQuality(`<html><body><h2>A</h2><p>${words}</p></body></html>`, 'en', 'motions', 'a.html');
+    const twoSections = validateArticleQuality(`<html><body><h2>A</h2><h2>B</h2><p>${words}</p></body></html>`, 'en', 'motions', 'b.html');
+    const threeSections = validateArticleQuality(`<html><body><h2>A</h2><h2>B</h2><h2>C</h2><p>${words}</p></body></html>`, 'en', 'motions', 'c.html');
+    // Scores must increase as sections increase
+    expect(oneSection.qualityScore).toBeLessThan(twoSections.qualityScore);
+    expect(twoSections.qualityScore).toBeLessThan(threeSections.qualityScore);
+    // Proportional check: 1 section = 10 pts, 2 sections = 20 pts, 3 = 30 pts
+    expect(twoSections.qualityScore - oneSection.qualityScore).toBe(10);
+    expect(threeSections.qualityScore - twoSections.qualityScore).toBe(10);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// #468 — QUALITY_THRESHOLD exported constant
+// ---------------------------------------------------------------------------
+
+describe('QUALITY_THRESHOLD export', () => {
+  it('should export a positive numeric QUALITY_THRESHOLD', async () => {
+    const { QUALITY_THRESHOLD } = await import('../scripts/generate-news-enhanced.js') as { QUALITY_THRESHOLD: number };
+    expect(typeof QUALITY_THRESHOLD).toBe('number');
+    expect(QUALITY_THRESHOLD).toBeGreaterThan(0);
+    expect(QUALITY_THRESHOLD).toBeLessThanOrEqual(100);
+  });
+});

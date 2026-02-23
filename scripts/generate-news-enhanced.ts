@@ -246,6 +246,18 @@ const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batc
 const skipExistingArg: boolean = args.includes('--skip-existing');
 const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
 
+/**
+ * When true (the default), a failed MCP warm-up causes the whole pipeline to
+ * abort with a non-zero exit code.  Pass `--require-mcp=false` to allow
+ * degraded-mode execution (useful for local testing without a live server).
+ */
+const requireMcpArg: boolean = (() => {
+  const raw = args.find(arg => arg.startsWith('--require-mcp'));
+  if (raw === undefined) return true;            // default: enforce
+  if (raw === '--require-mcp=false') return false;
+  return true;                                   // --require-mcp or --require-mcp=true
+})();
+
 // ---------------------------------------------------------------------------
 // Valid article types
 // ---------------------------------------------------------------------------
@@ -381,7 +393,17 @@ async function getSharedClient(): Promise<MCPClient> {
       console.log(`  📊 Last sync: ${status['last_sync'] as string}`);
     }
   } catch (error: unknown) {
-    console.warn(`⚠️ MCP warm-up failed: ${(error as Error).message}`);
+    const msg = `MCP warm-up failed: ${(error as Error).message}`;
+    if (requireMcpArg) {
+      // Abort the entire pipeline — generating articles from empty data produces
+      // low-quality placeholder content that should never be committed.
+      throw new Error(
+        `❌ ${msg}\n` +
+        '  The riksdag-regering MCP server is unavailable after all retries.\n' +
+        '  Pass --require-mcp=false to allow degraded-mode execution.'
+      );
+    }
+    console.warn(`⚠️ ${msg}`);
     console.warn('  Continuing anyway — individual requests will retry with backoff');
   }
 
@@ -401,11 +423,18 @@ if (!fs.existsSync(METADATA_DIR)) {
 // Generation statistics
 // ---------------------------------------------------------------------------
 
-const stats: { generated: number; errors: number; articles: string[]; timestamp: string } = {
+const stats: {
+  generated: number;
+  errors: number;
+  articles: string[];
+  timestamp: string;
+  qualityScores: number[];
+} = {
   generated: 0,
   errors: 0,
   articles: [],
-  timestamp: new Date().toISOString()
+  timestamp: new Date().toISOString(),
+  qualityScores: [],
 };
 
 // ---------------------------------------------------------------------------
@@ -513,6 +542,93 @@ export function translateSwedishContent(html: string, targetLang: Language): str
 }
 
 /**
+ * Quality metrics produced by validateArticleQuality()
+ */
+export interface ArticleQualityReport {
+  /** Filename (without path) used as an identifier in the report */
+  filename: string;
+  /** Total words in visible text (HTML tags stripped) */
+  wordCount: number;
+  /** Number of `data-translate="true"` spans remaining (should be 0 after translation) */
+  untranslatedSpans: number;
+  /** Number of h2 analytical section headers found */
+  analyticalSections: number;
+  /** 0–100 composite score */
+  qualityScore: number;
+  /** true when score < QUALITY_THRESHOLD */
+  belowThreshold: boolean;
+}
+
+/**
+ * Articles scoring below this threshold trigger a console warning.
+ * We never block writing (to avoid silent data loss) but we flag the run.
+ */
+const QUALITY_THRESHOLD = 40;
+
+/**
+ * Validate article quality after HTML generation.
+ *
+ * Scoring (0–100):
+ * - Word count ≥ 300  → +50 pts (proportional: capped at 50 if ≥ 300, else (words/300)*50)
+ * - Analytical sections (h2 count) ≥ 3 → +30 pts (proportional: capped at 30 if ≥ 3, else (n/3)*30)
+ * - Zero untranslated spans → +20 pts (deducted proportionally when spans present)
+ *
+ * @param html - Final article HTML (after translation)
+ * @param lang - Target language code
+ * @param articleType - Article type slug (for reporting)
+ * @param filenameHint - Filename shown in the report
+ * @returns Quality report with score and metrics
+ */
+export function validateArticleQuality(
+  html: string,
+  lang: Language,
+  articleType: string,
+  filenameHint: string,
+): ArticleQualityReport {
+  // Word count: strip all HTML tags with a single pass.
+  // The HTML here is always pipeline-generated (never user input), so a simple
+  // tag strip is both correct and sufficient for word-count purposes.
+  const textOnly = html
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&[a-z#]+\d*;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const wordCount = textOnly ? textOnly.split(' ').filter(w => w.length > 0).length : 0;
+
+  // Count residual data-translate spans (should be 0 after post-processing)
+  const untranslatedSpans = lang !== 'sv'
+    ? (html.match(/data-translate="true"/g) ?? []).length
+    : 0;
+
+  // Count meaningful h2 headers (analytical section markers)
+  const analyticalSections = (html.match(/<h2[^>]*>/gi) ?? []).length;
+
+  // Scoring
+  const wordScore = Math.min(50, (wordCount / 300) * 50);
+  const sectionScore = Math.min(30, (analyticalSections / 3) * 30);
+  // Each untranslated span costs 2 pts, capped at 20 (i.e. 10+ spans = full penalty)
+  const translationPenalty = Math.min(20, untranslatedSpans * 2);
+  const translationScore = 20 - translationPenalty;
+  const qualityScore = Math.round(wordScore + sectionScore + translationScore);
+
+  const report: ArticleQualityReport = {
+    filename: filenameHint,
+    wordCount,
+    untranslatedSpans,
+    analyticalSections,
+    qualityScore,
+    belowThreshold: qualityScore < QUALITY_THRESHOLD,
+  };
+
+  // Log quality report to console
+  const scoreLabel = report.belowThreshold ? '⚠️  BELOW THRESHOLD' : '✅ OK';
+  console.log(`  📊 Quality [${articleType}/${lang}] ${filenameHint}`);
+  console.log(`     Words: ${wordCount} | h2 sections: ${analyticalSections} | Untranslated spans: ${untranslatedSpans} | Score: ${qualityScore}/100 ${scoreLabel}`);
+
+  return report;
+}
+
+/**
  * Write article to file
  */
 async function writeArticle(html: string, filename: string): Promise<boolean> {
@@ -533,13 +649,18 @@ async function writeArticle(html: string, filename: string): Promise<boolean> {
  * Sub-generators (monthly-review, weekly-review, month-ahead) receive this wrapper
  * instead of `writeArticle` directly. It extracts the target language from the
  * filename (e.g. "2026-02-22-monthly-review-de.html" → "de"), runs
- * `translateSwedishContent` to process all data-translate spans, then writes.
+ * `translateSwedishContent` to process all data-translate spans, validates quality,
+ * then writes.
  */
 async function writeArticleWithTranslation(html: string, filename: string): Promise<boolean> {
   // Filename pattern: <slug>-<lang>.html  (lang is the last hyphen-separated segment)
   const langMatch = /\-([a-z]{2})\.html$/.exec(filename);
   const lang: Language = langMatch ? (langMatch[1] as Language) : 'en';
   const processedHtml: string = translateSwedishContent(html, lang);
+  // Extract article type from filename for quality report
+  const typeHint = filename.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/-[a-z]{2}\.html$/, '');
+  const report = validateArticleQuality(processedHtml, lang, typeHint, filename);
+  stats.qualityScores.push(report.qualityScore);
   return writeArticle(processedHtml, filename);
 }
 
@@ -549,6 +670,10 @@ async function writeArticleWithTranslation(html: string, filename: string): Prom
 async function writeSingleArticle(html: string, slug: string, lang: Language): Promise<string> {
   const filename: string = `${slug}-${lang}.html`;
   const processedHtml: string = translateSwedishContent(html, lang);
+  // Extract article type from slug for quality report
+  const typeHint = slug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+  const report = validateArticleQuality(processedHtml, lang, typeHint, filename);
+  stats.qualityScores.push(report.qualityScore);
   await writeArticle(processedHtml, filename);
   stats.generated += 1;
   stats.articles.push(filename);
@@ -1100,6 +1225,17 @@ async function generateNews(): Promise<typeof stats> {
     stats.articles.forEach(article => console.log(`  - ${article}`));
   }
 
+  // Quality summary
+  if (stats.qualityScores.length > 0) {
+    const avgScore = Math.round(stats.qualityScores.reduce((a, b) => a + b, 0) / stats.qualityScores.length);
+    const belowCount = stats.qualityScores.filter(s => s < QUALITY_THRESHOLD).length;
+    const allBelowThreshold = belowCount === stats.qualityScores.length;
+    console.log(`\n📊 Quality summary: avg score ${avgScore}/100 (${belowCount}/${stats.qualityScores.length} below threshold)`);
+    if (allBelowThreshold) {
+      console.warn('⚠️  ALL generated articles are below the quality threshold — possible data/MCP issue');
+    }
+  }
+
   if (remainingLangs.length > 0) {
     console.log(`\n📦 Batch progress: ${completedLangs.length}/${allRequestedLanguages.length} languages done`);
     console.log(`   Remaining: ${remainingLangs.join(', ')}`);
@@ -1118,7 +1254,13 @@ async function generateNews(): Promise<typeof stats> {
 if (import.meta.url === `file://${process.argv[1]}`) {
   generateNews()
     .then(result => {
-      process.exit(result.errors > 0 ? 1 : 0);
+      if (result.errors > 0) { process.exit(1); }
+      // Exit code 2 = soft failure: all articles are below quality threshold
+      const allBelowThreshold =
+        result.qualityScores.length > 0 &&
+        result.qualityScores.every((s: number) => s < QUALITY_THRESHOLD);
+      if (allBelowThreshold) { process.exit(2); }
+      process.exit(0);
     })
     .catch((error: unknown) => {
       console.error('❌ Fatal error:', error);
@@ -1142,5 +1284,6 @@ export {
   ALL_LANGUAGES,
   LANGUAGE_PRESETS,
   formatDateForSlug,
-  getWeekAheadDateRange
+  getWeekAheadDateRange,
+  QUALITY_THRESHOLD,
 };
