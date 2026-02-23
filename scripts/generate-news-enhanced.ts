@@ -353,7 +353,6 @@ console.log('Article types:', articleTypes.join(', '));
 console.log('Languages:', languages.join(', '));
 console.log('Batch size:', batchSize > 0 ? batchSize : 'all at once');
 console.log('Skip existing:', skipExistingArg ? 'Yes' : 'No');
-console.log('Require MCP:', requireMcp ? 'Yes (abort on failure)' : 'No (degraded mode)');
 console.log('Dry run:', dryRunArg ? 'Yes (no files written)' : 'No');
 
 // ---------------------------------------------------------------------------
@@ -368,10 +367,6 @@ let sharedClient: MCPClient | null = null;
  * request using an extended timeout to handle Render.com cold starts (30-60s).
  *
  * @returns Warmed-up shared client
- * @throws {Error} When `requireMcp` is true and the MCP server warm-up fails.
- *   Callers (generateCommitteeReports, generatePropositions, generateMotions, etc.)
- *   catch this and return `{ success: false, error }` rather than crashing.
- *   Pass `--require-mcp=false` to allow degraded mode (empty data, no throw).
  */
 async function getSharedClient(): Promise<MCPClient> {
   if (sharedClient) return sharedClient;
