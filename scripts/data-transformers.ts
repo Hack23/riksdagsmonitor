@@ -231,6 +231,22 @@ function normalizeDocUrl(doc: { url?: string; dok_id?: string }): string {
 }
 
 // ---------------------------------------------------------------------------
+// Static English title overrides for well-known Swedish propositions.
+// Keys are dok_id values returned by get_propositioner. When the MCP data only
+// supplies a Swedish title (prop.titel) and no English translation (prop.title),
+// this map is checked first so that EN articles never show raw Swedish titles.
+// ---------------------------------------------------------------------------
+const PROP_TITLE_EN: Record<string, string> = {
+  HD03113: 'Riksrevisionen Report on State Efforts for Agricultural Climate Transition',
+  HD03124: 'A European Single Access Point for Financial and Sustainability Information',
+  HD03117: 'Removal of Notification Requirement Before Applying for Parental Benefits',
+  HD03112: 'A Register for All Tenant-Owner Apartments',
+  HD03118: 'Permit Assessment Under the EU Renewables Directive',
+  HD03119: 'Development of the Macroprudential Oversight Domain',
+  HD0396:  'Report on IMF Activities 2025',
+};
+
+// ---------------------------------------------------------------------------
 // Data interfaces shared with news-type modules
 // ---------------------------------------------------------------------------
 
@@ -1908,18 +1924,26 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   content += `\n    <h2>${L(lang, 'legislativePipeline')}</h2>\n`;
 
   propositions.forEach(prop => {
-    const titleText = prop.titel || prop.title || '';
+    // Prefer pre-translated English title (from static map or prop.title),
+    // falling back to Swedish prop.titel with a data-translate marker.
+    const dokId = prop.dok_id ?? '';
+    const enTitleOverride = PROP_TITLE_EN[dokId];
+    const rawTitle = prop.titel || prop.title || '';
+    const hasEnglish = !!prop.title || !!enTitleOverride;
+    const titleText = lang === 'sv'
+      ? rawTitle                              // always Swedish for SV
+      : (prop.title || enTitleOverride || rawTitle);  // English first for other langs
     const escapedTitle = escapeHtml(titleText);
-    const titleHtml = (prop.titel && !prop.title)
+    const titleHtml = (!hasEnglish && lang !== 'sv')
       ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
       : escapedTitle;
-    const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
+    const docName = escapeHtml(prop.dokumentnamn || dokId || rawTitle);
 
     // Use enhanced summary based on metadata
     const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
     const isFromAPI = prop.summary || prop.notis;
     const propDefaultVal = L(lang, 'propDefault');
-    const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== propDefaultVal)
+    const summaryHtml = (!hasEnglish && lang !== 'sv' && isFromAPI && summaryText !== propDefaultVal)
       ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
       : escapeHtml(summaryText);
 
