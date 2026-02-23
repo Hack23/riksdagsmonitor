@@ -102,4 +102,8 @@ export interface ContentLabelSet {
   otherDocuments: string;
   policySignificanceTouches: (domains: string) => string;
   policySignificanceGeneric: string;
+  /** Heading for motions grouped under a parent proposition: "Responses to Prop. YYYY/YY:NNN" */
+  responsesToProp: (propRef: string) => string;
+  /** Section heading for motions not tied to a specific proposition */
+  independentMotions: string;
 }

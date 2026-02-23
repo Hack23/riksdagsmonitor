@@ -1159,7 +1159,8 @@ describe('Data Transformers', () => {
       'politicalContext', 'policyImplications', 'keyTakeaways', 'thematicAnalysis',
       'legislativePipeline', 'oppositionStrategy', 'coalitionDynamics',
       'whatThisMeans', 'whyItMatters', 'committeeBreakdown', 'propsBreakdown',
-      'motionsBreakdown'
+      'motionsBreakdown',
+      'responsesToProp', 'independentMotions'
     ];
 
     allLangs.forEach(lang => {
@@ -1186,6 +1187,114 @@ describe('Data Transformers', () => {
     it('should have string-valued policySignificanceGeneric for en', () => {
       expect(typeof CONTENT_LABELS.en.policySignificanceGeneric).toBe('string');
       expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('committee review');
+    });
+
+    it('should have function-valued responsesToProp for en', () => {
+      const fn = CONTENT_LABELS.en.responsesToProp;
+      expect(typeof fn).toBe('function');
+      expect(fn('2025/26:118')).toContain('2025/26:118');
+    });
+
+    it('should have string-valued independentMotions for sv', () => {
+      expect(typeof CONTENT_LABELS.sv.independentMotions).toBe('string');
+      expect(CONTENT_LABELS.sv.independentMotions.length).toBeGreaterThan(0);
+    });
+  });
+
+  describe('Motion grouping by parent proposition (#462)', () => {
+    it('should render a group heading when motions share a parent proposition', () => {
+      const content = generateArticleContent({
+        motions: [
+          {
+            titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet',
+            url: 'https://riksdagen.se/mot1', dok_id: 'HD023912', parti: 'S',
+            intressent_namn: 'Anna Lindberg'
+          },
+          {
+            titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet',
+            url: 'https://riksdagen.se/mot2', dok_id: 'HD023908', parti: 'V',
+            intressent_namn: 'Bo Karlsson'
+          }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // Group heading should appear once with the prop reference
+      expect(content).toContain('2025/26:118');
+      // The proposition title should be extracted after stripping the "med anledning av" prefix
+      expect(content).toContain('Tillståndsprövning');
+      // Individual entries should use dok_id as sub-heading (h4)
+      expect(content).toContain('HD023912');
+      expect(content).toContain('HD023908');
+    });
+
+    it('should group under a single h3 heading when multiple motions reference the same prop', () => {
+      const content = generateArticleContent({
+        motions: [
+          {
+            titel: 'med anledning av prop. 2025/26:108 Reformering av avfallslagstiftningen',
+            url: 'https://riksdagen.se/mot3', dok_id: 'HD023909', parti: 'S',
+            intressent_namn: 'Carl Svensson'
+          },
+          {
+            titel: 'med anledning av prop. 2025/26:108 Reformering av avfallslagstiftningen',
+            url: 'https://riksdagen.se/mot4', dok_id: 'HD023907', parti: 'M',
+            intressent_namn: 'Diana Persson'
+          },
+          {
+            titel: 'med anledning av prop. 2025/26:108 Reformering av avfallslagstiftningen',
+            url: 'https://riksdagen.se/mot5', dok_id: 'HD023906', parti: 'V',
+            intressent_namn: 'Erik Holm'
+          }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // "Responses to Prop." group heading should appear once
+      const matchCount = (content.match(/Responses to Prop\. 2025\/26:108/g) || []).length;
+      expect(matchCount).toBe(1);
+      // All three dok_ids should appear
+      expect(content).toContain('HD023909');
+      expect(content).toContain('HD023907');
+      expect(content).toContain('HD023906');
+    });
+
+    it('should render independent motions section when grouped motions also exist', () => {
+      const content = generateArticleContent({
+        motions: [
+          {
+            titel: 'med anledning av prop. 2025/26:118 Förnybartdirektivet',
+            url: 'https://riksdagen.se/mot6', dok_id: 'HD023901', parti: 'S',
+            intressent_namn: 'Fanny Berg'
+          },
+          {
+            titel: 'Klimatpolitik och havsnivåer',
+            url: 'https://riksdagen.se/mot7', dok_id: 'HD023900', parti: 'MP',
+            intressent_namn: 'Greta Larsson'
+          }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // Grouped section for the prop reference
+      expect(content).toContain('2025/26:118');
+      // Independent motions section heading
+      expect(content).toContain('Independent Motions');
+      // Independent motion's dok_id
+      expect(content).toContain('HD023900');
+    });
+
+    it('should render flat (no group headers) when no motions reference a proposition', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', url: 'https://riksdagen.se/m1', dok_id: 'M1', parti: 'S', intressent_namn: 'Hans Ek' },
+          { titel: 'Försvarspolitik', url: 'https://riksdagen.se/m2', dok_id: 'M2', parti: 'V', intressent_namn: 'Ida Ny' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // No grouping headers should appear
+      expect(content).not.toContain('Responses to Prop.');
+      expect(content).not.toContain('Independent Motions');
+      // Titles rendered as h3 in flat mode
+      expect(content).toContain('Skattefrågor');
+      expect(content).toContain('Försvarspolitik');
     });
   });
 });

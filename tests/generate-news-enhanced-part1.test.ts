@@ -77,6 +77,7 @@ interface GenerateNewsEnhancedModule {
   readonly writeSingleArticle: (html: string, slug: string, lang: string) => Promise<string>;
   readonly writeArticlePair: (htmlEN: string, htmlSV: string, slug: string) => Promise<void>;
   readonly generateWeekAhead: () => Promise<GenerationResult>;
+  readonly requireMcpArg: boolean;
 }
 
 // Use vi.hoisted() to define mock data before vi.mock() hoisting
@@ -226,6 +227,14 @@ describe('Generate News Enhanced - Part 1', () => {
       if (!moduleExports) return;
 
       expect(moduleExports.LANGUAGE_PRESETS.all).toEqual(moduleExports.ALL_LANGUAGES);
+    });
+
+    it('requireMcpArg should default to true when --require-mcp=false is not passed', () => {
+      if (!moduleExports) return;
+
+      // In the test environment, no --require-mcp=false arg is present,
+      // so requireMcpArg should be true (fail-fast mode enabled by default).
+      expect(moduleExports.requireMcpArg).toBe(true);
     });
   });
 
