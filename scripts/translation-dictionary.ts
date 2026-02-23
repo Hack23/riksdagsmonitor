@@ -681,4 +681,37 @@ export function translatePhrase(text: string, targetLang: Language): string {
   return text;
 }
 
+/**
+ * Process all `<span data-translate="true" lang="sv">…</span>` spans
+ * remaining in an article BEFORE writing it to disk.
+ *
+ * - For `sv` articles: retains the original Swedish text, removes marker.
+ * - For other languages: attempts dictionary lookup via translatePhrase();
+ *   if no match, keeps the Swedish text unchanged but still removes the marker.
+ *
+ * Upstream invariant: span content has already been HTML-escaped via
+ * escapeHtml(). The spans therefore never contain nested tags.
+ *
+ * @param html       - Full article HTML
+ * @param targetLang - Target language (e.g. 'de', 'sv')
+ * @returns HTML with all data-translate spans processed
+ */
+export function translateSwedishContent(html: string, targetLang: string): string {
+  // Match both attribute orderings:
+  // <span data-translate="true" lang="sv">...</span>
+  // <span lang="sv" data-translate="true">...</span>
+  const spanRe = /<span\s+(?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*>([\s\S]*?)<\/span>/g;
+
+  return html.replace(spanRe, (_match: string, inner: string) => {
+    if (targetLang === 'sv') {
+      // Swedish articles: keep text in a bare lang="sv" span (accessibility), remove data-translate marker
+      return `<span lang="sv">${inner}</span>`;
+    }
+    // Non-Swedish: try phrase translation (handles prefixes like "med anledning av prop.")
+    const translated = translatePhrase(inner, targetLang as Language);
+    // translatePhrase returns original text when no match, so always use its result
+    return translated;
+  });
+}
+
 export { DICTIONARIES };

@@ -329,13 +329,6 @@ export interface ArticleContentData {
 // ---------------------------------------------------------------------------
 
 /**
- * Sentinel value set by enrichDocumentsWithContent() when the riksdag API
- * returns no data for intressent_naam or parti.  Any field whose value equals
- * this sentinel must be treated the same as an absent field.
- */
-export const UNKNOWN_SENTINEL = 'Unknown';
-
-/**
  * Map of custom locale codes to Intl-compatible locale strings
  */
 const LOCALE_MAP: Record<string, string> = {
@@ -1556,8 +1549,8 @@ function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language 
       parts.push(`${typeof referredVal === 'string' ? referredVal : ''} ${organ}`);
     }
   } else if (type === 'motion') {
-    const author = (doc.intressent_namn !== UNKNOWN_SENTINEL ? doc.intressent_namn : null) || doc.author;
-    const party = doc.parti !== UNKNOWN_SENTINEL ? doc.parti : undefined;
+    const author = (doc.intressent_namn !== 'Unknown' ? doc.intressent_namn : null) || doc.author;
+    const party = doc.parti !== 'Unknown' ? doc.parti : undefined;
     if (author && party) {
       const motionByVal = L(lang, 'motionBy');
       parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author} (${party})`);
@@ -2016,28 +2009,7 @@ function groupMotionsByProposition(motions: RawDocument[]): {
  * Generate Motions content with analytical narrative
  */
 function generateMotionsContent(data: ArticleContentData, lang: Language | string): string {
-  const rawMotions = data.motions || [];
-
-  // Deduplicate: keep only the first occurrence of each unique motion using a composite
-  // key (dok_id + title + party + author) so distinct motions with the same title from
-  // different parties/authors are preserved while true duplicates are collapsed.
-  const seenMotions = new Set<string>();
-  const motions = rawMotions.filter(m => {
-    const dokId = (m.dok_id || '').trim().toLowerCase();
-    const title = (m.titel || m.title || '').trim().toLowerCase();
-    const party = (m.parti || '').trim().toLowerCase();
-    const author = (m.intressent_namn || m.author || '').trim().toLowerCase();
-    const keyParts: string[] = [];
-    if (dokId) keyParts.push(`id:${dokId}`);
-    if (title) keyParts.push(`t:${title}`);
-    if (party) keyParts.push(`p:${party}`);
-    if (author) keyParts.push(`a:${author}`);
-    if (keyParts.length === 0) return true;
-    const key = keyParts.join('|');
-    if (seenMotions.has(key)) return false;
-    seenMotions.add(key);
-    return true;
-  });
+  const motions = data.motions || [];
 
   let content = `<h2>${L(lang, 'oppMotions')}</h2>\n`;
 
@@ -2056,7 +2028,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   // Group motions by party for strategic analysis
   const byParty: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
-    const party = (motion.parti && motion.parti !== UNKNOWN_SENTINEL) ? motion.parti : 'other';
+    const party = (motion.parti && motion.parti !== 'Unknown') ? motion.parti : 'other';
     if (!byParty[party]) byParty[party] = [];
     byParty[party].push(motion);
   });
@@ -2085,9 +2057,9 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     // Treat 'Unknown' sentinel (set by enrichDocumentsWithContent) as missing so
     // we attempt parseMotionAuthorParty before giving up.
     const unknownVal = L(lang, 'unknown');
-    let authorName = (motion.intressent_namn !== UNKNOWN_SENTINEL ? motion.intressent_namn : null) || motion.author || '';
-    let partyName = (motion.parti !== UNKNOWN_SENTINEL ? motion.parti : '') || '';
-    if (!authorName || authorName === UNKNOWN_SENTINEL) {
+    let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null) || motion.author || '';
+    let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
+    if (!authorName || authorName === 'Unknown') {
       const rawText = motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
       const parsed = parseMotionAuthorParty(rawText);
       if (parsed) { authorName = parsed.author; partyName = partyName || parsed.party; }

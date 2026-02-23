@@ -13,7 +13,6 @@ import {
   calculateReadTime,
   generateSources,
   generateContentTitle,
-  UNKNOWN_SENTINEL,
   CONTENT_LABELS,
   L
 } from '../scripts/data-transformers.js';
@@ -1370,61 +1369,5 @@ describe('groupMotionsByProposition (#462)', () => {
     expect(content).not.toContain('Independent Motions');
     expect(content).toContain('M1');
     expect(content).toContain('M2');
-  });
-});
-
-describe('UNKNOWN_SENTINEL constant (#454)', () => {
-  it('is exported from data-transformers and equals the literal string Unknown', () => {
-    expect(UNKNOWN_SENTINEL).toBe('Unknown');
-  });
-});
-
-describe('motion deduplication composite key (#462)', () => {
-  it('deduplicates two motions that are true duplicates (same dok_id, title, party, author)', () => {
-    const content = generateArticleContent({
-      motions: [
-        {
-          titel: 'Om skattepolitik',
-          intressent_namn: 'Anna Olsson',
-          parti: 'M',
-          url: '#',
-          dok_id: 'DUP001',
-        },
-        {
-          titel: 'Om skattepolitik',
-          intressent_namn: 'Anna Olsson',
-          parti: 'M',
-          url: '#',
-          dok_id: 'DUP001',
-        },
-      ]
-    } as MockArticlePayload, 'motions', 'en') as string;
-    // DUP001 should appear only once
-    const matches = content.match(/DUP001/g);
-    expect(matches).not.toBeNull();
-    expect(matches!.length).toBe(1);
-  });
-
-  it('keeps two motions with the same title when they come from different parties', () => {
-    const content = generateArticleContent({
-      motions: [
-        {
-          titel: 'Om klimatpolitik',
-          intressent_namn: 'Björn Berg',
-          parti: 'M',
-          url: '#',
-          dok_id: 'KLIM_M',
-        },
-        {
-          titel: 'Om klimatpolitik',
-          intressent_namn: 'Sara Holm',
-          parti: 'SD',
-          url: '#',
-          dok_id: 'KLIM_SD',
-        },
-      ]
-    } as MockArticlePayload, 'motions', 'en') as string;
-    expect(content).toContain('KLIM_M');
-    expect(content).toContain('KLIM_SD');
   });
 });
