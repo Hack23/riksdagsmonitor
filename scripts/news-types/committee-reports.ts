@@ -174,6 +174,7 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
+  generateContentTitle,
   type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -270,7 +271,7 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_betankanden']);
       
-      const titles: TitleSet = getTitles(lang, reports.length);
+      const titles: TitleSet = getTitles(lang, reports.length, reports);
       
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -326,7 +327,10 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
 /**
  * Get language-specific titles
  */
-function getTitles(lang: Language, reportsCount: number): TitleSet {
+function getTitles(lang: Language, reportsCount: number, documents: RawDocument[] = []): TitleSet {
+  const contentTitle = generateContentTitle(documents, lang, 'committee-reports');
+  if (contentTitle) return contentTitle;
+
   const titles: Record<Language, TitleSet> = {
     en: {
       title: `Committee Reports: Parliamentary Priorities This Week`,
