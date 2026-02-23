@@ -446,19 +446,19 @@ describe('Generate News Enhanced - Part 1', () => {
     });
 
     it('should fail when a supplemental MCP call fails (requireMcp=true default)', async () => {
-      if (!moduleExports || !mockClientInstance) return;
+      expect(moduleExports).not.toBeNull();
 
       mockClientInstance.searchDocuments.mockRejectedValueOnce(new Error('Server unavailable'));
 
-      const result = await moduleExports.generateWeekAhead();
+      const result = await moduleExports!.generateWeekAhead();
 
       expect(result.success).toBe(false);
     });
 
     it('should call supplemental MCP methods (searchDocuments, fetchWrittenQuestions, fetchInterpellations)', async () => {
-      if (!moduleExports || !mockClientInstance) return;
+      expect(moduleExports).not.toBeNull();
 
-      await moduleExports.generateWeekAhead();
+      await moduleExports!.generateWeekAhead();
 
       expect(mockClientInstance.searchDocuments).toHaveBeenCalled();
       expect(mockClientInstance.fetchWrittenQuestions).toHaveBeenCalled();

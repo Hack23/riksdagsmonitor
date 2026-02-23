@@ -427,7 +427,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Other committees',
     otherDocuments: 'Other documents',
     policySignificanceTouches: (domains: string): string => `Touches on ${domains}. Committee review and potential chamber vote will determine the proposal's fate.`,
-    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.'
+    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.',
+    responsesToProp: 'Responses to Government Propositions',
+    independentMotions: 'Independent Motions'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -497,7 +499,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Övriga utskott',
     otherDocuments: 'Övriga dokument',
     policySignificanceTouches: (domains: string): string => `Berör ${domains}. Utskottsbehandling och eventuell kammaromröstning avgör om förslaget får genomslag.`,
-    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.'
+    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.',
+    responsesToProp: 'Svar på propositioner',
+    independentMotions: 'Övriga motioner'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -567,7 +571,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Andre udvalg',
     otherDocuments: 'Andre dokumenter',
     policySignificanceTouches: (domains: string): string => `Berører ${domains}. Udvalgsbehandling og afstemning afgør forslagets skæbne.`,
-    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.'
+    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.',
+    responsesToProp: 'Svar på regeringsforslag',
+    independentMotions: 'Andre forslag'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -637,7 +643,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Andre komiteer',
     otherDocuments: 'Andre dokumenter',
     policySignificanceTouches: (domains: string): string => `Berører ${domains}. Komitébehandling og avstemning avgjør forslagets skjebne.`,
-    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.'
+    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.',
+    responsesToProp: 'Svar på regjeringforslag',
+    independentMotions: 'Andre forslag'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -707,7 +715,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Muut valiokunnat',
     otherDocuments: 'Muut asiakirjat',
     policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}. Valiokuntakäsittely ja äänestys ratkaisevat ehdotuksen kohtalon.`,
-    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.'
+    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.',
+    responsesToProp: 'Vastaukset hallituksen esityksiin',
+    independentMotions: 'Muut aloitteet'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -777,7 +787,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Sonstige Ausschüsse',
     otherDocuments: 'Sonstige Dokumente',
     policySignificanceTouches: (domains: string): string => `Betrifft ${domains}. Ausschussberatung und Abstimmung bestimmen das Schicksal des Vorschlags.`,
-    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.'
+    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.',
+    responsesToProp: 'Antworten auf Regierungsvorlagen',
+    independentMotions: 'Sonstige Anträge'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -847,7 +859,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Autres commissions',
     otherDocuments: 'Autres documents',
     policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}. L'examen en commission et le vote détermineront le sort de la proposition.`,
-    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.'
+    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.',
+    responsesToProp: 'Réponses aux propositions gouvernementales',
+    independentMotions: 'Autres motions'
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -917,7 +931,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Otras comisiones',
     otherDocuments: 'Otros documentos',
     policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}. La revisión en comisión y la votación determinarán el destino de la propuesta.`,
-    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.'
+    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.',
+    responsesToProp: 'Respuestas a proposiciones del gobierno',
+    independentMotions: 'Otras mociones'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -987,7 +1003,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Overige commissies',
     otherDocuments: 'Overige documenten',
     policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}. Commissiebehandeling en stemming bepalen het lot van het voorstel.`,
-    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.'
+    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.',
+    responsesToProp: 'Antwoorden op regeringsvoorstellen',
+    independentMotions: 'Overige moties'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -1057,7 +1075,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'لجان أخرى',
     otherDocuments: 'وثائق أخرى',
     policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}. ستحدد المراجعة في اللجنة والتصويت مصير المقترح.`,
-    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.'
+    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.',
+    responsesToProp: 'ردود على مقترحات الحكومة',
+    independentMotions: 'اقتراحات أخرى'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -1127,7 +1147,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'ועדות אחרות',
     otherDocuments: 'מסמכים אחרים',
     policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}. בחינה בוועדה והצבעה יקבעו את גורל ההצעה.`,
-    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.'
+    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.',
+    responsesToProp: 'תשובות להצעות הממשלה',
+    independentMotions: 'הצעות אחרות'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -1197,7 +1219,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'その他の委員会',
     otherDocuments: 'その他の文書',
     policySignificanceTouches: (domains: string): string => `${domains}に関連します。委員会審査と採決が提案の行方を決定します。`,
-    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。'
+    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。',
+    responsesToProp: '政府提案への回答',
+    independentMotions: 'その他の動議'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -1267,7 +1291,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: '기타 위원회',
     otherDocuments: '기타 문서',
     policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다. 위원회 심사와 표결이 제안의 운명을 결정합니다.`,
-    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.'
+    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.',
+    responsesToProp: '정부 제안에 대한 응답',
+    independentMotions: '기타 동의'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -1337,7 +1363,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: '其他委员会',
     otherDocuments: '其他文件',
     policySignificanceTouches: (domains: string): string => `涉及${domains}领域。委员会审查和表决将决定提案的命运。`,
-    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。'
+    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。',
+    responsesToProp: '对政府提案的回应',
+    independentMotions: '其他动议'
   }
 };
 
@@ -2101,20 +2129,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   const { grouped, independent } = groupMotionsByProposition(motions);
 
   if (grouped.size > 0) {
-    const responsesLabel = lang === 'sv' ? 'Svar på propositioner'
-      : lang === 'de' ? 'Antworten auf Regierungsvorlagen'
-      : lang === 'fr' ? 'Réponses aux propositions gouvernementales'
-      : lang === 'es' ? 'Respuestas a proposiciones del gobierno'
-      : lang === 'da' ? 'Svar på regeringsforslag'
-      : lang === 'no' ? 'Svar på regjeringforslag'
-      : lang === 'fi' ? 'Vastaukset hallituksen esityksiin'
-      : lang === 'nl' ? 'Antwoorden op regeringsvoorstellen'
-      : lang === 'ar' ? 'ردود على مقترحات الحكومة'
-      : lang === 'he' ? 'תשובות להצעות הממשלה'
-      : lang === 'ja' ? '政府提案への回答'
-      : lang === 'ko' ? '정부 제안에 대한 응답'
-      : lang === 'zh' ? '对政府提案的回应'
-      : 'Responses to Government Propositions';
+    const responsesLabel = String(L(lang, 'responsesToProp'));
 
     content += `\n    <h2>${responsesLabel}</h2>\n`;
 
@@ -2132,20 +2147,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 
   if (independent.length > 0) {
     if (grouped.size > 0) {
-      const indepLabel = lang === 'sv' ? 'Övriga motioner'
-        : lang === 'de' ? 'Sonstige Anträge'
-        : lang === 'fr' ? 'Autres motions'
-        : lang === 'es' ? 'Otras mociones'
-        : lang === 'da' ? 'Andre forslag'
-        : lang === 'no' ? 'Andre forslag'
-        : lang === 'fi' ? 'Muut aloitteet'
-        : lang === 'nl' ? 'Overige moties'
-        : lang === 'ar' ? 'اقتراحات أخرى'
-        : lang === 'he' ? 'הצעות אחרות'
-        : lang === 'ja' ? 'その他の動議'
-        : lang === 'ko' ? '기타 동의'
-        : lang === 'zh' ? '其他动议'
-        : 'Independent Motions';
+      const indepLabel = String(L(lang, 'independentMotions'));
       content += `\n    <h2>${indepLabel}</h2>\n`;
     }
     independent.forEach(motion => { content += renderMotion(motion); });
