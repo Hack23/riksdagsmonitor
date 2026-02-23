@@ -5,12 +5,14 @@
  *   - getSharedClient() throws instead of silently continuing (requireMcp=true)
  *   - Individual generator functions propagate the error (success: false)
  *   - requireMcp defaults to true and is exported
+ *   - --require-mcp=false disables fail-fast (degraded mode)
  *
  * A dedicated test file is used so the module is freshly imported with
  * sharedClient=null, enabling warm-up failure to be triggered cleanly.
  */
 
 import { describe, it, expect, vi, beforeAll, beforeEach, afterAll } from 'vitest';
+import { describe, it, expect, vi, beforeAll, afterAll, beforeEach } from 'vitest';
 import fs from 'fs';
 import type { GenerationResult } from '../scripts/types/article.js';
 import type { MCPClientConfig } from '../scripts/types/mcp.js';
@@ -81,6 +83,8 @@ beforeAll(async () => {
     throw new Error(
       `Failed to import ../scripts/generate-news-enhanced.js: ${e instanceof Error ? e.message : String(e)}`,
     );
+    console.error('Import failed:', e instanceof Error ? e.message : String(e));
+    moduleExports = null;
   }
 });
 
@@ -109,6 +113,8 @@ describe('MCP fail-fast abort (requireMcp=true)', () => {
     it('should export requireMcp as true by default', () => {
       expect(moduleExports).not.toBeNull();
       expect(moduleExports!.requireMcp).toBe(true);
+      if (!moduleExports) return;
+      expect(moduleExports.requireMcp).toBe(true);
     });
   });
 
@@ -117,6 +123,9 @@ describe('MCP fail-fast abort (requireMcp=true)', () => {
       expect(moduleExports).not.toBeNull();
 
       const result = await moduleExports!.generateCommitteeReports();
+      if (!moduleExports) return;
+
+      const result = await moduleExports.generateCommitteeReports();
 
       expect(result.success).toBe(false);
     });
@@ -125,6 +134,9 @@ describe('MCP fail-fast abort (requireMcp=true)', () => {
       expect(moduleExports).not.toBeNull();
 
       const result = await moduleExports!.generateCommitteeReports();
+      if (!moduleExports) return;
+
+      const result = await moduleExports.generateCommitteeReports();
 
       expect(result.error).toMatch(/MCP server unavailable/i);
     });
@@ -135,6 +147,9 @@ describe('MCP fail-fast abort (requireMcp=true)', () => {
       expect(moduleExports).not.toBeNull();
 
       const result = await moduleExports!.generatePropositions();
+      if (!moduleExports) return;
+
+      const result = await moduleExports.generatePropositions();
 
       expect(result.success).toBe(false);
       expect(result.error).toMatch(/MCP server unavailable/i);
@@ -146,6 +161,9 @@ describe('MCP fail-fast abort (requireMcp=true)', () => {
       expect(moduleExports).not.toBeNull();
 
       const result = await moduleExports!.generateMotions();
+      if (!moduleExports) return;
+
+      const result = await moduleExports.generateMotions();
 
       expect(result.success).toBe(false);
       expect(result.error).toMatch(/MCP server unavailable/i);

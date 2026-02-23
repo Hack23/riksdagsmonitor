@@ -451,6 +451,11 @@ describe('Generate News Enhanced - Part 1', () => {
       mockClientInstance.searchDocuments.mockRejectedValueOnce(new Error('Server unavailable'));
 
       const result = await moduleExports!.generateWeekAhead();
+      if (!moduleExports || !mockClientInstance) return;
+
+      mockClientInstance.searchDocuments.mockRejectedValueOnce(new Error('Server unavailable'));
+
+      const result = await moduleExports.generateWeekAhead();
 
       expect(result.success).toBe(false);
     });
@@ -459,6 +464,9 @@ describe('Generate News Enhanced - Part 1', () => {
       expect(moduleExports).not.toBeNull();
 
       await moduleExports!.generateWeekAhead();
+      if (!moduleExports || !mockClientInstance) return;
+
+      await moduleExports.generateWeekAhead();
 
       expect(mockClientInstance.searchDocuments).toHaveBeenCalled();
       expect(mockClientInstance.fetchWrittenQuestions).toHaveBeenCalled();

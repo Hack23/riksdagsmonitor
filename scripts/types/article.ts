@@ -75,12 +75,36 @@ export interface DateRange {
   end: string;
 }
 
+/** Quality metrics for a single generated article */
+export interface ArticleQualityScore {
+  /** Filename of the article (e.g. "2026-02-23-motions-en.html") */
+  filename: string;
+  /** Language code of the article */
+  lang: string;
+  /** Article type (e.g. "motions") */
+  articleType: string;
+  /** Approximate word count based on text content after stripping HTML tags */
+  wordCount: number;
+  /** Number of "Unknown (Unknown)" occurrences */
+  unknownAuthors: number;
+  /** Number of data-translate="true" spans (should be 0 for non-Swedish) */
+  untranslatedSpans: number;
+  /** Number of analytical <h2> sections found */
+  analyticalSections: number;
+  /** Final 0–100 quality score */
+  score: number;
+  /** Whether the article passed the quality threshold */
+  passed: boolean;
+}
+
 /** Aggregate statistics for a full news generation run */
 export interface GenerationStats {
   generated: number;
   errors: number;
   articles: string[];
   timestamp: string;
+  /** Per-article quality scores collected during the run */
+  qualityScores: ArticleQualityScore[];
 }
 
 /** MCP tool call record for cross-reference validation */
