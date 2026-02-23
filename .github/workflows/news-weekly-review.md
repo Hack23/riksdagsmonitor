@@ -116,6 +116,23 @@ echo "Article Type: weekly-review"
 echo "============================"
 ```
 
+## MANDATORY MCP Health Gate
+
+Before generating ANY articles, verify MCP connectivity:
+
+1. Call `get_sync_status({})` — if successful, proceed
+2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
+3. If ALL 3 attempts fail:
+   - Use `safeoutputs___noop` with message: "MCP server unavailable after 3 connection attempts. No articles generated."
+   - DO NOT analyze existing articles in the repository
+   - DO NOT fabricate or recycle content
+   - The workflow MUST end with noop
+
+**CRITICAL**: ALL article content MUST originate from live MCP data. Never generate content from:
+- Existing articles in the news/ directory
+- Cached or stale data
+- AI-generated content without MCP source data
+
 ## MANDATORY PR Creation
 
 - ✅ `safeoutputs___create_pull_request` when articles generated

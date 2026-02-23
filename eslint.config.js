@@ -79,6 +79,7 @@ export default [
       'coverage/**',
       'cypress/**',
       'builds/**',
+      'docs/coverage/**',
       '*.min.js',
       'js/lib/**', // Ignore vendored libraries
       'dashboard/lib/**',
