@@ -243,7 +243,8 @@ const languagesArg: string | undefined = args.find(arg => arg.startsWith('--lang
 const dryRunArg: boolean = args.includes('--dry-run');
 const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batch-size='));
 const skipExistingArg: boolean = args.includes('--skip-existing');
-const requireMcpArg: boolean = !args.includes('--require-mcp=false');
+const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
+const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
 const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
 
 // ---------------------------------------------------------------------------
@@ -349,7 +350,7 @@ console.log('Article types:', articleTypes.join(', '));
 console.log('Languages:', languages.join(', '));
 console.log('Batch size:', batchSize > 0 ? batchSize : 'all at once');
 console.log('Skip existing:', skipExistingArg ? 'Yes' : 'No');
-console.log('Require MCP:', requireMcpArg ? 'Yes (abort on failure)' : 'No (degraded mode)');
+console.log('Require MCP:', requireMcp ? 'Yes (abort on failure)' : 'No (degraded mode)');
 console.log('Dry run:', dryRunArg ? 'Yes (no files written)' : 'No');
 
 // ---------------------------------------------------------------------------
@@ -364,6 +365,10 @@ let sharedClient: MCPClient | null = null;
  * request using an extended timeout to handle Render.com cold starts (30-60s).
  *
  * @returns Warmed-up shared client
+ * @throws {Error} When `requireMcp` is true and the MCP server warm-up fails.
+ *   Callers (generateCommitteeReports, generatePropositions, generateMotions, etc.)
+ *   catch this and return `{ success: false, error }` rather than crashing.
+ *   Pass `--require-mcp=false` to allow degraded mode (empty data, no throw).
  */
 async function getSharedClient(): Promise<MCPClient> {
   if (sharedClient) return sharedClient;
@@ -382,12 +387,12 @@ async function getSharedClient(): Promise<MCPClient> {
       console.log(`  📊 Last sync: ${status['last_sync'] as string}`);
     }
   } catch (error: unknown) {
-    if (requireMcpArg) {
-      console.error(`❌ MCP server unavailable: ${(error as Error).message}`);
-      console.error('  Aborting generation — use --require-mcp=false to allow degraded mode');
-      process.exit(1);
+    const message = (error as Error).message;
+    if (requireMcp) {
+      sharedClient = null;
+      throw new Error(`MCP server unavailable: ${message}`, { cause: error });
     }
-    console.warn(`⚠️ MCP warm-up failed: ${(error as Error).message}`);
+    console.warn(`⚠️ MCP warm-up failed: ${message}`);
     console.warn('  Continuing anyway — individual requests will retry with backoff');
   }
 
@@ -1044,5 +1049,5 @@ export {
   LANGUAGE_PRESETS,
   formatDateForSlug,
   getWeekAheadDateRange,
-  requireMcpArg
+  requireMcp
 };
