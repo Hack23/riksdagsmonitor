@@ -47,7 +47,7 @@ const motionResponsePropPrefix: Record<Language, string> = {
 const motionResponseSkrPrefix: Record<Language, string> = {
   sv: 'med anledning av skr.',
   en: 'in response to govt. comm.',
-  da: 'som svar på regjeringsmeddelelse',
+  da: 'som svar på regeringsmeddelelse',
   no: 'som svar på regj. meld.',
   fi: 'vastauksena hallituksen kirjeeseen',
   de: 'als Reaktion auf Regierungsschreiben',
@@ -152,7 +152,7 @@ function buildMap(lang: Language): TranslationMap {
       'konstitutionsutskottet',
       {
         sv: 'konstitutionsutskottet', en: 'Committee on the Constitution',
-        da: 'Forfatningsudvalget', no: 'Konstitusjonskommiteen', fi: 'Perustuslakivaliokunta',
+        da: 'Forfatningsudvalget', no: 'Konstitusjonskomiteen', fi: 'Perustuslakivaliokunta',
         de: 'Verfassungsausschuss', fr: 'Comité de la Constitution',
         es: 'Comité Constitucional', nl: 'Grondwetcommissie',
         ar: 'لجنة الدستور', he: 'ועדת החוקה', ja: '憲法委員会', ko: '헌법위원회', zh: '宪法委员会',
@@ -186,7 +186,7 @@ function buildMap(lang: Language): TranslationMap {
       'näringsutskottet',
       {
         sv: 'näringsutskottet', en: 'Committee on Industry and Trade',
-        da: 'Erhvervsudvalget', no: 'Næringskommiteen', fi: 'Talousvaliokunta',
+        da: 'Erhvervsudvalget', no: 'Næringskomiteen', fi: 'Talousvaliokunta',
         de: 'Ausschuss für Wirtschaft und Handel', fr: 'Comité de l\'industrie et du commerce',
         es: 'Comité de Industria y Comercio', nl: 'Commissie voor Industrie en Handel',
         ar: 'لجنة الصناعة والتجارة', he: 'ועדת התעשייה והמסחר',
@@ -197,7 +197,7 @@ function buildMap(lang: Language): TranslationMap {
       'skatteutskottet',
       {
         sv: 'skatteutskottet', en: 'Committee on Taxation',
-        da: 'Skatteudvalget', no: 'Skattekommiteen', fi: 'Verovaliokunta',
+        da: 'Skatteudvalget', no: 'Skattekomiteen', fi: 'Verovaliokunta',
         de: 'Steuerausschuss', fr: 'Comité de la fiscalité',
         es: 'Comité Fiscal', nl: 'Belastingcommissie',
         ar: 'لجنة الضرائب', he: 'ועדת המיסים', ja: '税制委員会', ko: '세금위원회', zh: '税务委员会',
@@ -696,21 +696,27 @@ export function translatePhrase(text: string, targetLang: Language): string {
  * @param targetLang - Target language (e.g. 'de', 'sv')
  * @returns HTML with all data-translate spans processed
  */
-export function translateSwedishContent(html: string, targetLang: string): string {
+export function translateSwedishContent(html: string, targetLang: Language): string {
   // Match both attribute orderings:
   // <span data-translate="true" lang="sv">...</span>
   // <span lang="sv" data-translate="true">...</span>
-  const spanRe = /<span\s+(?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*>([\s\S]*?)<\/span>/g;
+  // Inner text may contain HTML entities but no nested tags (escapeHtml is applied upstream).
+  const spanRe =
+    /<span\s+((?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*)>([\s\S]*?)<\/span>/g;
 
-  return html.replace(spanRe, (_match: string, inner: string) => {
-    if (targetLang === 'sv') {
-      // Swedish articles: keep text in a bare lang="sv" span (accessibility), remove data-translate marker
-      return `<span lang="sv">${inner}</span>`;
+  return html.replace(spanRe, (_match: string, attrs: string, inner: string): string => {
+    // Remove data-translate marker but preserve all other attributes (e.g. lang="sv" for accessibility)
+    const cleanedAttrs = attrs.replace(/\s*data-translate=(?:"true"|'true')/, '').trim();
+
+    const translatedInner =
+      targetLang === 'sv'
+        ? inner
+        : translatePhrase(inner, targetLang);
+
+    if (cleanedAttrs.length > 0) {
+      return `<span ${cleanedAttrs}>${translatedInner}</span>`;
     }
-    // Non-Swedish: try phrase translation (handles prefixes like "med anledning av prop.")
-    const translated = translatePhrase(inner, targetLang as Language);
-    // translatePhrase returns original text when no match, so always use its result
-    return translated;
+    return `<span>${translatedInner}</span>`;
   });
 }
 

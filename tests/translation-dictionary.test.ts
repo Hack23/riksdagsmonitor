@@ -106,7 +106,8 @@ describe('translateSwedishContent', () => {
     const html = `<p>${swSpan('utskott')}</p>`;
     const result = translateSwedishContent(html, 'en');
     expect(result).not.toContain('data-translate');
-    expect(result).not.toContain('lang="sv"');
+    // span is preserved for accessibility, only data-translate marker removed
+    expect(result).toContain('lang="sv"');
     expect(result).toContain('committee');
   });
 
@@ -155,6 +156,56 @@ describe('translateSwedishContent', () => {
     const html = `<p>${swSpan('budget')}</p>`;
     const result = translateSwedishContent(html, 'zh');
     expect(result).toContain('预算');
+  });
+
+  it('translates to Danish (da)', () => {
+    const html = `<p>${swSpan('riksdagen')}</p>`;
+    const result = translateSwedishContent(html, 'da');
+    expect(result).not.toContain('data-translate');
+    expect(result).toContain('lang="sv"');
+    expect(result).toContain('Riksdag');
+  });
+
+  it('translates to Norwegian (no)', () => {
+    const html = `<p>${swSpan('utskott')}</p>`;
+    const result = translateSwedishContent(html, 'no');
+    expect(result).not.toContain('data-translate');
+    expect(result).toContain('komité');
+  });
+
+  it('translates to Finnish (fi)', () => {
+    const html = `<p>${swSpan('riksdagen')}</p>`;
+    const result = translateSwedishContent(html, 'fi');
+    expect(result).not.toContain('data-translate');
+    expect(result).toContain('Riksdag');
+  });
+
+  it('translates to Spanish (es)', () => {
+    const html = `<p>${swSpan('riksdagen')}</p>`;
+    const result = translateSwedishContent(html, 'es');
+    expect(result).not.toContain('data-translate');
+    expect(result).toContain('Riksdag');
+  });
+
+  it('translates to Dutch (nl)', () => {
+    const html = `<p>${swSpan('utskott')}</p>`;
+    const result = translateSwedishContent(html, 'nl');
+    expect(result).not.toContain('data-translate');
+    expect(result).toContain('commissie');
+  });
+
+  it('translates to Hebrew (he)', () => {
+    const html = `<p>${swSpan('riksdagen')}</p>`;
+    const result = translateSwedishContent(html, 'he');
+    expect(result).not.toContain('data-translate');
+    expect(result).toContain('הריקסדאג');
+  });
+
+  it('translates to Korean (ko)', () => {
+    const html = `<p>${swSpan('riksdagen')}</p>`;
+    const result = translateSwedishContent(html, 'ko');
+    expect(result).not.toContain('data-translate');
+    expect(result).toContain('스웨덴 의회');
   });
 
   it('keeps untranslated Swedish text (no match) but still removes data-translate marker', () => {
