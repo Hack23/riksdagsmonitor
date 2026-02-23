@@ -61,6 +61,10 @@ interface MockArticlePayload {
     dokumentnamn?: string;
     dok_id?: string;
     intressent_namn?: string;
+    /** Riksdag API subtitle — motions typically "av Author (Party)" */
+    undertitel?: string;
+    notis?: string;
+    summary?: string;
   }>;
   documents?: Array<{
     titel?: string;
@@ -383,6 +387,52 @@ describe('Data Transformers', () => {
         motions: [{ titel: 'Test Motion', parti: 'S', url: '#', dokumentnamn: 'Mot 2025/26:1', intressent_namn: 'Test Person' }] 
       } as MockArticlePayload, 'motions', 'en') as string;
       expect(content).toContain('Test Motion');
+    });
+
+    it('should extract author/party from notis when intressent_namn is "Unknown" sentinel', () => {
+      const content = generateArticleContent({
+        motions: [{
+          titel: 'Djurskydd',
+          url: '#',
+          dok_id: 'MOT123',
+          // enrichDocumentsWithContent sets these sentinels when intressent data is missing
+          intressent_namn: 'Unknown',
+          parti: 'Unknown',
+          notis: 'Motion till riksdagen 2025/26:123 av Ulrika Liljeberg (C) om förbättrat djurskydd. Förslag till riksdagsbeslut'
+        }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+      expect(content).toContain('Ulrika Liljeberg');
+      expect(content).toContain('(C)');
+      expect(content).not.toContain('Unknown (Unknown)');
+    });
+
+    it('should extract author/party from undertitel field as primary text source', () => {
+      const content = generateArticleContent({
+        motions: [{
+          titel: 'Försvarspolitik',
+          url: '#',
+          dok_id: 'MOT456',
+          intressent_namn: 'Unknown',
+          parti: 'Unknown',
+          undertitel: 'av Stefan Löfven m.fl. (S)'
+        }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+      expect(content).toContain('Stefan Löfven');
+      expect(content).toContain('(S)');
+      expect(content).not.toContain('Unknown (Unknown)');
+    });
+
+    it('should extract author/party from summary when intressent_namn is empty', () => {
+      const content = generateArticleContent({
+        motions: [{
+          titel: 'Skatter',
+          url: '#',
+          dok_id: 'MOT789',
+          summary: 'Motion till riksdagen 2025/26:456 av Nooshi Dadgostar m.fl. (V) om skattepolitik.'
+        }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+      expect(content).toContain('Nooshi Dadgostar');
+      expect(content).toContain('(V)');
     });
 
     it('should handle weekly-review type with documents property', () => {

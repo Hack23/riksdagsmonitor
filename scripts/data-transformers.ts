@@ -247,6 +247,8 @@ export interface RawDocument {
   url?: string;
   summary?: string;
   notis?: string;
+  /** Subtitle / undertitel field from riksdag API — motions typically contain "av Author (Party)" */
+  undertitel?: string;
   intressent_namn?: string;
   author?: string;
   parti?: string;
@@ -1524,8 +1526,11 @@ function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language 
       parts.push(`${typeof referredVal === 'string' ? referredVal : ''} ${organ}`);
     }
   } else if (type === 'motion') {
-    const author = doc.intressent_namn || doc.author;
-    const party = doc.parti;
+    const rawAuthor = doc.intressent_namn || doc.author;
+    const rawParty = doc.parti;
+    // Treat 'Unknown' sentinel (set by enrichDocumentsWithContent) as missing
+    const author = (!rawAuthor || rawAuthor === 'Unknown') ? '' : rawAuthor;
+    const party = (!rawParty || rawParty === 'Unknown') ? '' : rawParty;
     if (author && party) {
       const motionByVal = L(lang, 'motionBy');
       parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author} (${party})`);
@@ -1994,15 +1999,20 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
       : escapedTitle;
     const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
 
-    // Use enriched author and party data, with fallback parsing from raw notis
+    // Use enriched author and party data, with fallback parsing from raw notis/undertitel.
+    // 'Unknown' is a sentinel set by enrichDocumentsWithContent when no author data was found;
+    // treat it the same as empty so text-parsing can extract the real name.
     const unknownVal = L(lang, 'unknown');
     let authorName = motion.intressent_namn || motion.author || '';
     let partyName = motion.parti || '';
-    if (!authorName) {
-      const rawText = motion.summary || motion.notis || motion.fullText || '';
+    if (!authorName || authorName === 'Unknown') {
+      authorName = '';
+      const rawText = motion.undertitel || motion.summary || motion.notis || motion.fullText || '';
       const parsed = parseMotionAuthorParty(rawText);
       if (parsed) { authorName = parsed.author; partyName = parsed.party; }
     }
+    // Normalize 'Unknown' party sentinel to empty string
+    if (partyName === 'Unknown') partyName = '';
     if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
     const authorLine = partyName
       ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
@@ -2205,10 +2215,12 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
   // almost all opposition motions are denied (~99%). Only show when we have
   // an actual party-specific rate, so the note is concrete, not generic.
   if (docType === 'mot' && cia) {
-    // Try to get party from doc fields, else parse from raw text
+    // Try to get party from doc fields, else parse from raw text.
+    // 'Unknown' is a sentinel from enrichment; treat it like missing so parsing can find real data.
     let party = doc.parti;
-    if (!party) {
-      const rawText2 = doc.summary || doc.notis || doc.fullText || '';
+    if (!party || party === 'Unknown') {
+      party = undefined;
+      const rawText2 = doc.undertitel || doc.summary || doc.notis || doc.fullText || '';
       const parsed2 = parseMotionAuthorParty(rawText2);
       if (parsed2) party = parsed2.party;
     }
