@@ -1034,10 +1034,10 @@ describe('Data Transformers', () => {
         reports: [{ titel: 'EU-frågor och europa', organ: 'UU', url: 'https://example.com/1', dok_id: 'UU1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
 
-      // Should only appear once, not duplicated
-      const matches = content.match(/EU and foreign affairs/g);
-      expect(matches).not.toBeNull();
-      expect(matches!.length).toBe(1);
+      // Domain must appear (it IS detected) — may appear in multiple analytical sections
+      // but must never be listed twice in a single domain string (deduplication check)
+      expect(content).toMatch(/EU and foreign affairs/);
+      expect(content).not.toContain('EU and foreign affairs, EU and foreign affairs');
     });
 
     it('should produce generic significance for unknown domains', () => {
@@ -1054,6 +1054,275 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'committee-reports', 'sv') as string;
 
       expect(content).toContain('finanspolitik');
+    });
+  });
+
+  describe('Domain-specific policy analysis (getDomainSpecificAnalysis)', () => {
+    it('should include substantive fiscal committee report analysis — not just generic boilerplate', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Skattereform', organ: 'FiU', url: 'https://example.com/1', dok_id: 'FiU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // New domain-specific sentence should mention Finance Committee or fiscal framework
+      expect(content).toMatch(/Finance Committee|fiscal surplus rule|budgetary/i);
+    });
+
+    it('should include substantive defence motion analysis', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // New domain-specific sentence should mention NATO or security commitments
+      expect(content).toMatch(/NATO|security commitments|strategic/i);
+    });
+
+    it('should include substantive climate committee report analysis', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Klimatpolitik', organ: 'MJU', url: 'https://example.com/1', dok_id: 'MJU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // New domain-specific sentence should mention decarbonisation or climate ambition
+      expect(content).toMatch(/decarboni|climate ambition|Environment.*Committee|legislative baseline/i);
+    });
+
+    it('should include substantive healthcare committee report analysis', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Hälso- och sjukvård', organ: 'SoU', url: 'https://example.com/1', dok_id: 'SoU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // New domain-specific sentence should mention regional councils or health system
+      expect(content).toMatch(/regional|Social Affairs Committee|health system/i);
+    });
+
+    it('should not contain old generic implication "signals a policy position"', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'S1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // Old boilerplate should be gone
+      expect(content).not.toContain('This motion signals a policy position; passage requires government or majority support.');
+    });
+
+    it('should use mot-specific analysis even when doktyp field is absent from motion doc', () => {
+      // No doktyp field — generateMotionsContent injects implied 'mot' type
+      const content = generateArticleContent({
+        motions: [{ titel: 'Klimatpolitik', parti: 'MP', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // mot-specific text: "growing parliamentary pressure for faster decarbonisation"
+      expect(content).toContain('decarbonisation');
+      // NOT the default proposition fallback "navigate competing interests"
+      expect(content).not.toContain('navigate competing interests from industry');
+    });
+
+    it('should use bet-specific analysis even when doktyp field is absent from report doc', () => {
+      // No doktyp field — generateCommitteeContent injects implied 'bet' type
+      const content = generateArticleContent({
+        reports: [{ titel: 'Klimatpolitik', organ: 'MJU', url: 'https://example.com/1', dok_id: 'R1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // bet-specific text: "legislative baseline"
+      expect(content).toContain('legislative baseline');
+      // NOT the climate-mot text ("decarbonisation")
+      expect(content).not.toContain('decarbonisation');
+    });
+
+    it('should not include redundant "Committee review" procedural sentence in policySignificanceTouches', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // The policySignificanceTouches label no longer appends the procedural sentence
+      expect(content).not.toContain('Committee review and potential chamber vote will determine the proposal\'s fate.');
+    });
+
+    it('should detect "förnybartdirektivet" as environmental/climate policy', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Tillståndsprövning enligt förnybartdirektivet', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('environmental and climate policy');
+      expect(content).toContain('decarbonisation');
+    });
+
+    it('should detect "makrotillsyn" as fiscal policy', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Utveckling av makrotillsynsområdet', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('fiscal policy');
+    });
+
+    it('should detect "bostadsrätt" and "lagfart" as housing policy', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Identitetskrav vid lagfart och åtgärder mot kringgåenden av bostadsrättslagen', parti: 'V', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('housing policy');
+      expect(content).toContain('Housing motions reflect structural tension');
+    });
+
+    it('should produce Swedish domain-specific analysis for sv language', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'sv') as string;
+
+      // Should contain Swedish domain-specific text about NATO
+      expect(content).toMatch(/NATO|säkerhetsåtaganden|strategisk/i);
+    });
+  });
+
+  describe('Thematic grouping in motions content', () => {
+    it('should group motions by policy theme when multiple domains detected', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor och budget', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Försvarspolitik och NATO', parti: 'M', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // Thematic Analysis section should appear when multiple domains exist
+      expect(content).toContain('Thematic Analysis');
+    });
+
+    it('should render thematic section headings for each policy domain', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Klimat och miljö', parti: 'MP', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('fiscal policy');
+      expect(content).toContain('environmental and climate policy');
+    });
+
+    it('should not render Thematic Analysis section when all motions share one domain', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor del 1', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Skattefrågor del 2', parti: 'M', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // Single theme = flat list, no Thematic Analysis heading
+      expect(content).not.toContain('Thematic Analysis');
+    });
+  });
+
+  describe('Opposition strategy per-party analysis', () => {
+    it('should name the most active party in opposition strategy section', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Bostadspolitik', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' },
+          { titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/3', dok_id: 'M3' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // S is most active with 2 motions
+      expect(content).toContain('<strong>S</strong>');
+      expect(content).toContain('leads opposition activity');
+    });
+
+    it('should mention the second most active party', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Bostadspolitik', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' },
+          { titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/3', dok_id: 'M3' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // M follows with 1 motion
+      expect(content).toContain('M follows with');
+    });
+  });
+
+  describe('Government priority analysis in propositions', () => {
+    it('should include government priority signal when multiple propositions share a committee', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' },
+          { titel: 'Skattepolitik', organ: 'FiU', url: 'https://example.com/p2', dok_id: 'P2' },
+          { titel: 'Miljölag', organ: 'MJU', url: 'https://example.com/p3', dok_id: 'P3' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      // Should mention FiU receives the most (2) propositions
+      expect(content).toMatch(/Finance Committee.*2|2.*Finance Committee/);
+      expect(content).toContain('government priority');
+    });
+
+    it('domainCount reflects actual policy domains, not committee count', () => {
+      // 3 propositions, all sent to FiU (1 committee) but touching 2 distinct domains
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Klimatlag miljö', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' },
+          { titel: 'Försvarsbudget militär', organ: 'FiU', url: 'https://example.com/p2', dok_id: 'P2' },
+          { titel: 'Extra budgetanslag', organ: 'FiU', url: 'https://example.com/p3', dok_id: 'P3' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      // Committee count is 1 (all FiU) but domain count should be > 1 (climate + defence + fiscal)
+      // The text must NOT say "1 policy domain" when multiple domains are detected
+      expect(content).not.toMatch(/touch on 1 policy domain[^s]/);
+    });
+  });
+
+  describe('Cross-committee analysis in committee reports', () => {
+    it('should include cross-committee domain analysis in key takeaways', () => {
+      const content = generateArticleContent({
+        reports: [
+          { titel: 'Skattereform', organ: 'FiU', url: 'https://example.com/1', dok_id: 'FiU1' },
+          { titel: 'Försvarspolitik', organ: 'FöU', url: 'https://example.com/2', dok_id: 'FöU1' }
+        ]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // Cross-committee analysis should identify domains spanning committees
+      expect(content).toMatch(/cross-committee|broad legislative|multi-front/i);
+    });
+
+    it('should list detected policy domains in the cross-committee analysis', () => {
+      const content = generateArticleContent({
+        reports: [
+          { titel: 'Klimat och miljö', organ: 'MJU', url: 'https://example.com/1', dok_id: 'MJU1' }
+        ]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // The cross-committee section should name detected domains
+      expect(content).toContain('environmental and climate policy');
+    });
+  });
+
+  describe('generateDeepPolicyAnalysis with fullText enrichment', () => {
+    it('falls back to domain-specific policy significance when no fullText is available', () => {
+      // When only summary/notis are present (no fullText), deepPolicyAnalysis falls back
+      // to generatePolicySignificance — the summary is already shown in the line above
+      const content = generateArticleContent({
+        reports: [{
+          titel: 'Skattereform',
+          organ: 'FiU',
+          url: 'https://example.com/1',
+          dok_id: 'FiU1'
+        } as unknown as { titel: string; organ: string; url: string; dok_id: string }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // Fallback: domain-specific analysis is still present
+      expect(content).toMatch(/Finance Committee|fiscal surplus rule|fiscal policy/i);
+    });
+
+    it('should NOT add extra data-translate span when summary is already shown above', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Test', summary: 'Förslaget innebär att', url: '#', organ: 'SoU' }]
+      } as MockArticlePayload, 'committee-reports', 'sv') as string;
+
+      // Exactly 2: one for title, one for summary — deepPolicyAnalysis uses only fullText,
+      // so summary/notis are NOT re-wrapped, avoiding a third span.
+      // Uses lang='sv' because svSpan adds data-translate="true" only for Swedish articles.
+      const matches = content.match(/data-translate="true"/g);
+      expect(matches).not.toBeNull();
+      expect(matches!.length).toBe(2);
     });
   });
 
@@ -1125,7 +1394,7 @@ describe('Data Transformers', () => {
       'committeeCountContext', 'committeeActivityTakeaway', 'committeeMomentumTakeaway',
       'oppositionStrategyContext', 'policyImplicationsContext', 'genericOverview',
       'partyMotionsFiled', 'otherCommittee', 'otherDocuments',
-      'policySignificanceTouches', 'policySignificanceGeneric',
+      'policySignificanceTouches', 'policySignificanceGeneric', 'generalMatters',
       'politicalContext', 'policyImplications', 'keyTakeaways', 'thematicAnalysis',
       'legislativePipeline', 'oppositionStrategy', 'coalitionDynamics',
       'whatThisMeans', 'whyItMatters', 'committeeBreakdown', 'propsBreakdown',
@@ -1156,6 +1425,44 @@ describe('Data Transformers', () => {
     it('should have string-valued policySignificanceGeneric for en', () => {
       expect(typeof CONTENT_LABELS.en.policySignificanceGeneric).toBe('string');
       expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('committee review');
+    });
+
+    it('should have localized generalMatters for sv (not English)', () => {
+      expect(CONTENT_LABELS.sv.generalMatters).toBe('Övriga frågor');
+      expect(CONTENT_LABELS.sv.generalMatters).not.toBe('General matters');
+    });
+
+    it('should use localized generalMatters as fallback theme in motions thematic grouping', () => {
+      // One detectable domain (försvar) + one undetectable → 2 themes → thematic section shown
+      const svContent = generateArticleContent({
+        motions: [
+          { titel: 'Försvarspolitik och NATO', parti: 'M', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Med anledning av misc policy', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'sv') as string;
+
+      // Swedish fallback should be "Övriga frågor", not the English "General matters"
+      expect(svContent).toContain('Övriga frågor');
+      expect(svContent).not.toContain('>General matters<');
+    });
+
+    it('should collect domain labels (not full analysis sentences) in generic content policy context', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'mot', url: 'https://example.com/1', dok_id: 'D1' },
+          { titel: 'Försvarspolitik', doktyp: 'bet', url: 'https://example.com/2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      // Should show domain labels, not full multi-sentence analysis
+      if (content.includes('Policy context')) {
+        const policyLine = content.split('\n').find(l => l.includes('Policy context'));
+        if (policyLine) {
+          // Each domain-label entry should be short — not contain full analysis sentences
+          expect(policyLine).not.toContain('Fiscal policy motions directly challenge');
+          expect(policyLine).not.toContain('signals opposition readiness');
+        }
+      }
     });
   });
 });
@@ -1304,8 +1611,8 @@ describe('generateMotionsContent author/party sentinel fix (#454)', () => {
   });
 });
 
-describe('groupMotionsByProposition (#462)', () => {
-  it('renders a grouped section header for motions referencing the same proposition', () => {
+describe('groupMotionsByProposition (#462) / thematic grouping (#460)', () => {
+  it('groups same-domain motions under a single thematic heading', () => {
     const content = generateArticleContent({
       motions: [
         {
@@ -1324,16 +1631,16 @@ describe('groupMotionsByProposition (#462)', () => {
         },
       ]
     } as MockArticlePayload, 'motions', 'en') as string;
-    // Should have exactly one section header for the prop (not two h3 with the full prop title)
-    const propHeaderMatches = content.match(/Prop\. 2025\/26:118/g);
-    expect(propHeaderMatches).not.toBeNull();
-    expect(propHeaderMatches!.length).toBe(1);
-    // Both motion entries should still be present
+    // Both motions share climate/energy domain — they render in a flat list (themeCount=1),
+    // no separate "Thematic Analysis" section header needed for a single theme.
+    // Both motion entries should be present.
     expect(content).toContain('MOT_A');
     expect(content).toContain('MOT_B');
+    // No old proposition-based grouping headers
+    expect(content).not.toContain('Responses to Government Propositions');
   });
 
-  it('separates independent motions from proposition-linked motions', () => {
+  it('groups motions by policy theme across different domains', () => {
     const content = generateArticleContent({
       motions: [
         {
@@ -1352,8 +1659,222 @@ describe('groupMotionsByProposition (#462)', () => {
         },
       ]
     } as MockArticlePayload, 'motions', 'en') as string;
-    expect(content).toContain('Responses to Government Propositions');
-    expect(content).toContain('Independent Motions');
+    // Thematic grouping should be used — no old flat-list headings
+    expect(content).not.toContain('Responses to Government Propositions');
+    expect(content).not.toContain('Independent Motions');
+    // Both motion entries should still be present
+    expect(content).toContain('MOT_PROP');
+    expect(content).toContain('MOT_IND');
+  });
+
+  it('renders all motions without old proposition-grouping header when none reference a proposition', () => {
+    const content = generateArticleContent({
+      motions: [
+        { titel: 'Om utbildningspolitik', intressent_namn: 'Per Nord', parti: 'KD', url: '#', dok_id: 'M1' },
+        { titel: 'Om sjukvård', intressent_namn: 'Gun Öst', parti: 'MP', url: '#', dok_id: 'M2' },
+      ]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).not.toContain('Responses to Government Propositions');
+    expect(content).not.toContain('Independent Motions');
+    expect(content).toContain('M1');
+    expect(content).toContain('M2');
+  });
+});
+
+describe('generateContentTitle', () => {
+  /** Minimal RawDocument shapes that carry Swedish keyword content */
+  const klimatDoc = { titel: 'Förslag om klimatanpassning och utsläppshandel', rubrik: '' };
+  const försvarDoc = { titel: 'Proposition om försvarsutgifter och NATO-samarbete', rubrik: '' };
+  const bostadDoc  = { titel: 'Motion om bostadsmark och byggande i städerna', rubrik: '' };
+  const ekonomiDoc = { titel: 'Budgetproposition med skatteändringar och ekonomi', rubrik: '' };
+
+  it('returns null when fewer than 2 domains are detected', () => {
+    const result = generateContentTitle([], 'en', 'motions');
+    expect(result).toBeNull();
+  });
+
+  it('returns null for documents without Swedish keyword matches', () => {
+    const docs = [{ titel: 'Unknown parliamentary document', rubrik: '' }];
+    const result = generateContentTitle(docs, 'en', 'motions');
+    expect(result).toBeNull();
+  });
+
+  describe('motions', () => {
+    it('builds an English content title from 2 domains', () => {
+      const result = generateContentTitle([klimatDoc, försvarDoc], 'en', 'motions');
+      expect(result).not.toBeNull();
+      expect(result!.title).toContain('Opposition');
+      expect(result!.title).not.toBe('Opposition Motions: Battle Lines This Week');
+    });
+
+    it('title contains both detected domain names', () => {
+      const result = generateContentTitle([klimatDoc, försvarDoc], 'en', 'motions');
+      expect(result!.title).toContain('Environment');
+      expect(result!.title).toContain('Defense');
+    });
+
+    it('subtitle includes document count', () => {
+      const docs = [klimatDoc, försvarDoc, bostadDoc];
+      const result = generateContentTitle(docs, 'en', 'motions');
+      expect(result!.subtitle).toContain('3');
+    });
+
+    it('produces a Swedish (sv) title', () => {
+      const result = generateContentTitle([klimatDoc, försvarDoc], 'sv', 'motions');
+      expect(result!.title).toContain('Oppositionen');
+      expect(result!.title).toContain('Miljö');
+      expect(result!.title).toContain('Försvar');
+    });
+
+    it('falls back to English template for unknown language code', () => {
+      const result = generateContentTitle([klimatDoc, försvarDoc], 'xx', 'motions');
+      expect(result!.title).toContain('Opposition');
+    });
+  });
+
+  describe('propositions', () => {
+    it('builds an English content title', () => {
+      const result = generateContentTitle([ekonomiDoc, bostadDoc], 'en', 'propositions');
+      expect(result).not.toBeNull();
+      expect(result!.title).toContain('Government');
+      expect(result!.title).toContain('Economy');
+      expect(result!.title).toContain('Housing');
+    });
+
+    it('produces a Swedish (sv) title', () => {
+      const result = generateContentTitle([ekonomiDoc, bostadDoc], 'sv', 'propositions');
+      expect(result!.title).toContain('Regeringen');
+      expect(result!.title).toContain('Ekonomi');
+      expect(result!.title).toContain('Bostäder');
+    });
+  });
+
+  describe('committee-reports', () => {
+    it('builds an English content title', () => {
+      const result = generateContentTitle([klimatDoc, ekonomiDoc], 'en', 'committee-reports');
+      expect(result).not.toBeNull();
+      expect(result!.title).toContain('Committees');
+      expect(result!.title).toContain('Environment');
+      expect(result!.title).toContain('Economy');
+    });
+
+    it('produces a Swedish (sv) title', () => {
+      const result = generateContentTitle([klimatDoc, ekonomiDoc], 'sv', 'committee-reports');
+      expect(result!.title).toContain('Utskotten');
+      expect(result!.title).toContain('Miljö');
+      expect(result!.title).toContain('Ekonomi');
+    });
+  });
+
+  describe('domain frequency ranking', () => {
+    it('picks the most frequent domain first', () => {
+      const docs = [klimatDoc, klimatDoc, ekonomiDoc];
+      const result = generateContentTitle(docs, 'en', 'motions');
+      // environment appears twice, economy once — environment should be d1 (earlier in title)
+      expect(result).not.toBeNull();
+      const title = result!.title;
+      const envIdx = title.indexOf('Environment');
+      const ecoIdx = title.indexOf('Economy');
+      expect(envIdx).toBeGreaterThanOrEqual(0);
+      expect(ecoIdx).toBeGreaterThanOrEqual(0);
+      expect(envIdx).toBeLessThan(ecoIdx);
+    });
+  });
+
+  describe('14-language coverage', () => {
+    const langs = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'] as const;
+    for (const lang of langs) {
+      it(`returns a non-null result for lang="${lang}"`, () => {
+        const result = generateContentTitle([klimatDoc, ekonomiDoc], lang, 'motions');
+        expect(result).not.toBeNull();
+        expect(result!.title.length).toBeGreaterThan(0);
+        expect(result!.subtitle.length).toBeGreaterThan(0);
+      });
+    }
+  });
+});
+
+describe('generateMotionsContent author/party sentinel fix (#454)', () => {
+  it('falls back to parseMotionAuthorParty when intressent_namn is Unknown sentinel', () => {
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Motion till riksdagen 2025/26:123 av Anna Andersson (M) om skattelättnad',
+        intressent_namn: 'Unknown',
+        parti: 'Unknown',
+        url: '#',
+        dok_id: 'MOT123',
+      }]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).toContain('Anna Andersson');
+    expect(content).toContain('(M)');
+    expect(content).not.toContain('Unknown (Unknown)');
+  });
+
+  it('keeps real author name when intressent_namn is not a sentinel', () => {
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Test motion',
+        intressent_namn: 'Lars Pettersson',
+        parti: 'S',
+        url: '#',
+        dok_id: 'MOT999',
+      }]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).toContain('Lars Pettersson');
+    expect(content).toContain('(S)');
+  });
+});
+
+describe('groupMotionsByProposition (#462)', () => {
+  it('renders all motions with same theme in a flat list without a prop section header', () => {
+    const content = generateArticleContent({
+      motions: [
+        {
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet',
+          intressent_namn: 'Anna Björk',
+          parti: 'M',
+          url: '#',
+          dok_id: 'MOT_A',
+        },
+        {
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet',
+          intressent_namn: 'Lars Svensson',
+          parti: 'SD',
+          url: '#',
+          dok_id: 'MOT_B',
+        },
+      ]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    // New behavior: thematic grouping — same theme → flat list, no prop section header
+    expect(content).not.toContain('Responses to Government Propositions');
+    // Both motion entries should still be present
+    expect(content).toContain('MOT_A');
+    expect(content).toContain('MOT_B');
+  });
+
+  it('renders motions with thematic grouping when multiple policy themes detected', () => {
+    const content = generateArticleContent({
+      motions: [
+        {
+          titel: 'med anledning av prop. 2025/26:50 Bostadsfrågor',
+          intressent_namn: 'Maja Berg',
+          parti: 'C',
+          url: '#',
+          dok_id: 'MOT_PROP',
+        },
+        {
+          titel: 'Fristående motion om transportpolitik',
+          intressent_namn: 'Erik Holm',
+          parti: 'V',
+          url: '#',
+          dok_id: 'MOT_IND',
+        },
+      ]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    // New behavior: thematic grouping replaces proposition-based grouping
+    expect(content).toContain('Thematic Analysis');
+    expect(content).not.toContain('Responses to Government Propositions');
+    expect(content).not.toContain('Independent Motions');
     expect(content).toContain('MOT_PROP');
     expect(content).toContain('MOT_IND');
   });

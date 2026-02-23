@@ -427,8 +427,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motion${n > 1 ? 's' : ''} filed`,
     otherCommittee: 'Other committees',
     otherDocuments: 'Other documents',
-    policySignificanceTouches: (domains: string): string => `Touches on ${domains}. Committee review and potential chamber vote will determine the proposal's fate.`,
-    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.'
+    policySignificanceTouches: (domains: string): string => `Touches on ${domains}.`,
+    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.',
+    generalMatters: 'General matters'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -497,8 +498,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motion${n > 1 ? 'er' : ''} inlämnade`,
     otherCommittee: 'Övriga utskott',
     otherDocuments: 'Övriga dokument',
-    policySignificanceTouches: (domains: string): string => `Berör ${domains}. Utskottsbehandling och eventuell kammaromröstning avgör om förslaget får genomslag.`,
-    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.'
+    policySignificanceTouches: (domains: string): string => `Berör ${domains}.`,
+    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.',
+    generalMatters: 'Övriga frågor'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -567,8 +569,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} forslag indgivet`,
     otherCommittee: 'Andre udvalg',
     otherDocuments: 'Andre dokumenter',
-    policySignificanceTouches: (domains: string): string => `Berører ${domains}. Udvalgsbehandling og afstemning afgør forslagets skæbne.`,
-    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.'
+    policySignificanceTouches: (domains: string): string => `Berører ${domains}.`,
+    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.',
+    generalMatters: 'Generelle spørgsmål'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -637,8 +640,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} forslag innsendt`,
     otherCommittee: 'Andre komiteer',
     otherDocuments: 'Andre dokumenter',
-    policySignificanceTouches: (domains: string): string => `Berører ${domains}. Komitébehandling og avstemning avgjør forslagets skjebne.`,
-    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.'
+    policySignificanceTouches: (domains: string): string => `Berører ${domains}.`,
+    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.',
+    generalMatters: 'Generelle spørsmål'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -707,8 +711,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} aloitetta jätetty`,
     otherCommittee: 'Muut valiokunnat',
     otherDocuments: 'Muut asiakirjat',
-    policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}. Valiokuntakäsittely ja äänestys ratkaisevat ehdotuksen kohtalon.`,
-    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.'
+    policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}.`,
+    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.',
+    generalMatters: 'Yleiset asiat'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -777,8 +782,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} Antrag${n > 1 ? 'e' : ''} eingereicht`,
     otherCommittee: 'Sonstige Ausschüsse',
     otherDocuments: 'Sonstige Dokumente',
-    policySignificanceTouches: (domains: string): string => `Betrifft ${domains}. Ausschussberatung und Abstimmung bestimmen das Schicksal des Vorschlags.`,
-    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.'
+    policySignificanceTouches: (domains: string): string => `Betrifft ${domains}.`,
+    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.',
+    generalMatters: 'Allgemeine Angelegenheiten'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -847,8 +853,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party} : ${n} motion${n > 1 ? 's' : ''} déposée${n > 1 ? 's' : ''}`,
     otherCommittee: 'Autres commissions',
     otherDocuments: 'Autres documents',
-    policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}. L'examen en commission et le vote détermineront le sort de la proposition.`,
-    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.'
+    policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}.`,
+    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.',
+    generalMatters: 'Questions générales'
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -917,8 +924,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} moción${n > 1 ? 'es' : ''} presentada${n > 1 ? 's' : ''}`,
     otherCommittee: 'Otras comisiones',
     otherDocuments: 'Otros documentos',
-    policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}. La revisión en comisión y la votación determinarán el destino de la propuesta.`,
-    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.'
+    policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}.`,
+    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.',
+    generalMatters: 'Asuntos generales'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -987,8 +995,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motie${n > 1 ? 's' : ''} ingediend`,
     otherCommittee: 'Overige commissies',
     otherDocuments: 'Overige documenten',
-    policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}. Commissiebehandeling en stemming bepalen het lot van het voorstel.`,
-    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.'
+    policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}.`,
+    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.',
+    generalMatters: 'Algemene zaken'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -1057,8 +1066,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} اقتراح${n > 1 ? 'ات' : ''} مقدمة`,
     otherCommittee: 'لجان أخرى',
     otherDocuments: 'وثائق أخرى',
-    policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}. ستحدد المراجعة في اللجنة والتصويت مصير المقترح.`,
-    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.'
+    policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}.`,
+    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.',
+    generalMatters: 'مسائل عامة'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -1127,8 +1137,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} הצע${n > 1 ? 'ות' : 'ה'} הוגש${n > 1 ? 'ו' : 'ה'}`,
     otherCommittee: 'ועדות אחרות',
     otherDocuments: 'מסמכים אחרים',
-    policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}. בחינה בוועדה והצבעה יקבעו את גורל ההצעה.`,
-    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.'
+    policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}.`,
+    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.',
+    generalMatters: 'עניינים כלליים'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -1197,8 +1208,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}：${n}件の動議を提出`,
     otherCommittee: 'その他の委員会',
     otherDocuments: 'その他の文書',
-    policySignificanceTouches: (domains: string): string => `${domains}に関連します。委員会審査と採決が提案の行方を決定します。`,
-    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。'
+    policySignificanceTouches: (domains: string): string => `${domains}に関連します。`,
+    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。',
+    generalMatters: '一般事項'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -1267,8 +1279,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n}건의 동의안 제출`,
     otherCommittee: '기타 위원회',
     otherDocuments: '기타 문서',
-    policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다. 위원회 심사와 표결이 제안의 운명을 결정합니다.`,
-    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.'
+    policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다.`,
+    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.',
+    generalMatters: '일반 사항'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -1337,8 +1350,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}：提交了${n}项动议`,
     otherCommittee: '其他委员会',
     otherDocuments: '其他文件',
-    policySignificanceTouches: (domains: string): string => `涉及${domains}领域。委员会审查和表决将决定提案的命运。`,
-    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。'
+    policySignificanceTouches: (domains: string): string => `涉及${domains}领域。`,
+    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。',
+    generalMatters: '一般事项'
   }
 };
 
@@ -1862,7 +1876,7 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
       <h4>${titleHtml}</h4>
       <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>
       <p>${escapeHtml(String(reportSigVal))} ${summaryHtml}</p>
-      <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generatePolicySignificance(report, lang)}</p>
+      <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generateDeepPolicyAnalysis(report, lang, 'bet')}</p>
       <p><a href="${sanitizeUrl(report.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
@@ -1886,6 +1900,19 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
 
   content += `        <li>${escapeHtml(takeaway1)}</li>\n`;
   content += `        <li>${escapeHtml(takeaway2)}</li>\n`;
+
+  // Cross-committee domain analysis: identify which policy areas span multiple committees
+  const allDomains = new Set<string>();
+  reports.forEach(r => { detectPolicyDomains(r, lang).forEach(d => allDomains.add(d)); });
+  if (allDomains.size > 0) {
+    const isSv = lang === 'sv';
+    const domainList = Array.from(allDomains).slice(0, 3).join(', ');
+    const crossAnalysis = isSv
+      ? `Betänkandena berör ${escapeHtml(domainList)} – ett mönster som tyder på breda lagstiftningsprioriteringar denna session.`
+      : `Reports span ${escapeHtml(domainList)} — a cross-committee pattern signalling the government's broad legislative priorities this session.`;
+    content += `        <li>${crossAnalysis}</li>\n`;
+  }
+
   content += `      </ul>\n    </div>\n`;
 
   return content;
@@ -1944,7 +1971,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     <div class="proposition-entry">
       <h3>${titleHtml}</h3>
       <p>${escapeHtml(String(propSigVal))} ${summaryHtml}${referredLine}</p>
-      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(prop, lang)}</p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(prop, lang, 'prop')}</p>
       <p><a href="${sanitizeUrl(prop.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
@@ -1954,19 +1981,38 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
   content += `    <div class="context-box">\n`;
 
-  // Group by referred committee for policy domain analysis
+  // Count unique policy domains across all propositions for accurate "N policy domains" text
+  const allPropDomains = new Set<string>();
+  propositions.forEach(p => detectPolicyDomains(p, lang).forEach(d => allPropDomains.add(d)));
+  const domainCount = allPropDomains.size;
+
+  // Group by referred committee for government priority signal (separate from domain count)
   const byCommittee: Record<string, number> = {};
   propositions.forEach(p => {
     const c = p.organ || p.committee || 'unknown';
     byCommittee[c] = (byCommittee[c] || 0) + 1;
   });
-  const domainCount = Object.keys(byCommittee).length;
 
   const implicationFn = L(lang, 'policyImplicationsContext') as string | ((propCount: number, domainCount: number) => string);
   const implication = typeof implicationFn === 'function'
     ? implicationFn(propositions.length, domainCount)
     : `These ${propositions.length} propositions touch on ${domainCount} policy domains.`;
   content += `      <p>${escapeHtml(String(implication))}</p>\n`;
+
+  // Government priority signal: identify the committee receiving the most propositions
+  const sortedCommittees = Object.entries(byCommittee)
+    .filter(([c]) => c !== 'unknown')
+    .sort(([, a], [, b]) => b - a);
+  if (sortedCommittees.length > 0) {
+    const [topCommittee, topCount] = sortedCommittees[0];
+    const topName = getCommitteeName(topCommittee, lang);
+    const isSv = lang === 'sv';
+    const priorityNote = isSv
+      ? `${escapeHtml(topName)} tar emot ${topCount} av propositionerna – ett tecken på att detta är ett centralt prioriterat område för regeringen denna session.`
+      : `${escapeHtml(topName)} receives ${topCount} of the propositions — a strong signal of government priority in this policy area this session.`;
+    content += `      <p>${priorityNote}</p>\n`;
+  }
+
   content += `    </div>\n`;
 
   return content;
@@ -2028,12 +2074,12 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   // Group motions by party for strategic analysis
   const byParty: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
-    const party = (motion.parti && motion.parti !== 'Unknown') ? motion.parti : 'other';
+    const party = normalizePartyKey(motion.parti);
     if (!byParty[party]) byParty[party] = [];
     byParty[party].push(motion);
   });
 
-  // Opposition strategy section
+  // Opposition strategy section with per-party analysis
   const partyCount = Object.keys(byParty).filter(p => p !== 'other').length;
   if (partyCount > 1) {
     content += `\n    <h2>${L(lang, 'oppositionStrategy')}</h2>\n`;
@@ -2042,109 +2088,37 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
       ? strategyFn(partyCount)
       : `Motions from ${partyCount} different parties reveal the breadth of opposition political criticism and alternative policy agendas.`;
     content += `    <p>${escapeHtml(String(strategyContext))}</p>\n`;
+    // Per-party analysis with domain focus
+    content += generateOppositionStrategySection(motions, lang);
   }
 
-  /** Render a single motion entry block */
-  const renderMotion = (motion: RawDocument): string => {
-    const titleText = motion.titel || motion.title || '';
-    const escapedTitle = escapeHtml(titleText);
-    const titleHtml = (motion.titel && !motion.title)
-      ? svSpan(escapedTitle, lang)
-      : escapedTitle;
-    const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
+  // Group motions by primary policy theme for thematic analysis
+  const byTheme: Record<string, RawDocument[]> = {};
+  motions.forEach(motion => {
+    const domains = detectPolicyDomains(motion, lang);
+    const theme = domains[0] || String(L(lang, 'generalMatters'));
+    if (!byTheme[theme]) byTheme[theme] = [];
+    byTheme[theme].push(motion);
+  });
+  const themeCount = Object.keys(byTheme).length;
 
-    // Use enriched author and party data, with fallback parsing from raw notis.
-    // Treat 'Unknown' sentinel (set by enrichDocumentsWithContent) as missing so
-    // we attempt parseMotionAuthorParty before giving up.
-    const unknownVal = L(lang, 'unknown');
-    let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null) || motion.author || '';
-    let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
-    if (!authorName || authorName === 'Unknown') {
-      const rawText = motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
-      const parsed = parseMotionAuthorParty(rawText);
-      if (parsed) { authorName = parsed.author; partyName = partyName || parsed.party; }
-    }
-    if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
-    const authorLine = partyName
-      ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
-      : escapeHtml(authorName);
-
-    // Use enhanced summary based on metadata (cleanMotionText strips Swedish boilerplate)
-    const summaryText = generateEnhancedSummary(motion, 'motion', lang);
-    const motionDefaultVal = L(lang, 'motionDefault');
-    // Only wrap in Swedish-language span when the content comes from a Swedish source
-    const isSwedishContent = (motion.titel && !motion.title)
-      || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
-    const summaryHtml = (summaryText && summaryText !== motionDefaultVal && isSwedishContent)
-      ? svSpan(escapeHtml(summaryText), lang)
-      : escapeHtml(summaryText || (typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));
-
-    const readFullVal = L(lang, 'readFullMotion');
-    const whyItMattersVal = L(lang, 'whyItMatters');
-
-    return `
-    <div class="motion-entry">
-      <h3>${titleHtml}</h3>
-      <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
-      <p>${summaryHtml}</p>
-      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
-      <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
-    </div>
-`;
-  };
-
-  // Group motions by parent proposition to eliminate repetitive section headers
-  const { grouped, independent } = groupMotionsByProposition(motions);
-
-  if (grouped.size > 0) {
-    const responsesLabel = lang === 'sv' ? 'Svar på propositioner'
-      : lang === 'de' ? 'Antworten auf Regierungsvorlagen'
-      : lang === 'fr' ? 'Réponses aux propositions gouvernementales'
-      : lang === 'es' ? 'Respuestas a proposiciones del gobierno'
-      : lang === 'da' ? 'Svar på regeringsforslag'
-      : lang === 'no' ? 'Svar på regjeringforslag'
-      : lang === 'fi' ? 'Vastaukset hallituksen esityksiin'
-      : lang === 'nl' ? 'Antwoorden op regeringsvoorstellen'
-      : lang === 'ar' ? 'ردود على مقترحات الحكومة'
-      : lang === 'he' ? 'תשובות להצעות הממשלה'
-      : lang === 'ja' ? '政府提案への回答'
-      : lang === 'ko' ? '정부 제안에 대한 응답'
-      : lang === 'zh' ? '对政府提案的回应'
-      : 'Responses to Government Propositions';
-
-    content += `\n    <h2>${responsesLabel}</h2>\n`;
-
-    grouped.forEach((propMotions, propRef) => {
-      // Get prop title from first motion (strip the prop reference prefix from the title)
-      const firstTitle = propMotions[0]?.titel || propMotions[0]?.title || '';
-      const propTitleMatch = firstTitle.match(/med anledning av prop\.\s+\S+\s+(.*)/i);
-      const propTitle = propTitleMatch?.[1]?.trim() || propRef;
-
-      content += `    <h3>${escapeHtml(`Prop. ${propRef}: ${propTitle}`)}</h3>\n`;
-
-      propMotions.forEach(motion => { content += renderMotion(motion); });
+  if (themeCount > 1) {
+    // Thematic sections: group motions by policy area
+    content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
+    Object.entries(byTheme).forEach(([theme, themeMotions]) => {
+      content += `\n    <h3>${escapeHtml(theme)} (${themeMotions.length})</h3>\n`;
+      themeMotions.forEach(motion => {
+        // Demote motion entry headings one level when inside a themed section
+        const entryHtml = renderMotionEntry(motion, lang);
+        const demotedHtml = entryHtml
+          .replace(/<h3(\b[^>]*)?>/g, '<h4$1>')
+          .replace(/<\/h3>/g, '</h4>');
+        content += demotedHtml;
+      });
     });
-  }
-
-  if (independent.length > 0) {
-    if (grouped.size > 0) {
-      const indepLabel = lang === 'sv' ? 'Övriga motioner'
-        : lang === 'de' ? 'Sonstige Anträge'
-        : lang === 'fr' ? 'Autres motions'
-        : lang === 'es' ? 'Otras mociones'
-        : lang === 'da' ? 'Andre forslag'
-        : lang === 'no' ? 'Andre forslag'
-        : lang === 'fi' ? 'Muut aloitteet'
-        : lang === 'nl' ? 'Overige moties'
-        : lang === 'ar' ? 'اقتراحات أخرى'
-        : lang === 'he' ? 'הצעות אחרות'
-        : lang === 'ja' ? 'その他の動議'
-        : lang === 'ko' ? '기타 동의'
-        : lang === 'zh' ? '其他动议'
-        : 'Independent Motions';
-      content += `\n    <h2>${indepLabel}</h2>\n`;
-    }
-    independent.forEach(motion => { content += renderMotion(motion); });
+  } else {
+    // Single theme or no detection: flat list
+    motions.forEach(motion => { content += renderMotionEntry(motion, lang); });
   }
 
   // Party activity breakdown
@@ -2167,81 +2141,413 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 }
 
 /**
- * Generate policy significance context for a document based on its metadata
+ * Render a single motion entry div (shared between flat list and themed sections).
  */
-function generatePolicySignificance(doc: RawDocument, lang: Language | string): string {
+function renderMotionEntry(motion: RawDocument, lang: Language | string): string {
+  const titleText = motion.titel || motion.title || '';
+  const escapedTitle = escapeHtml(titleText);
+  const titleHtml = (motion.titel && !motion.title)
+    ? svSpan(escapedTitle, lang)
+    : escapedTitle;
+  const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
+
+  // Use enriched author and party data, with fallback parsing from raw notis.
+  // Treat 'Unknown' sentinel (set by enrichDocumentsWithContent) as missing so
+  // we attempt parseMotionAuthorParty before giving up.
+  const unknownVal = L(lang, 'unknown');
+  let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null) || motion.author || '';
+  let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
+  if (!authorName || authorName === 'Unknown') {
+    const rawText = motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
+    const parsed = parseMotionAuthorParty(rawText);
+    if (parsed) { authorName = parsed.author; partyName = partyName || parsed.party; }
+  }
+  if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
+  const authorLine = partyName
+    ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
+    : escapeHtml(authorName);
+
+  // Use enhanced summary based on metadata (cleanMotionText strips Swedish boilerplate)
+  const summaryText = generateEnhancedSummary(motion, 'motion', lang);
+  const motionDefaultVal = L(lang, 'motionDefault');
+  // Only wrap in Swedish-language span when the content comes from a Swedish source
+  const isSwedishContent = (motion.titel && !motion.title)
+    || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
+  const summaryHtml = (summaryText && summaryText !== motionDefaultVal && isSwedishContent)
+    ? svSpan(escapeHtml(summaryText), lang)
+    : escapeHtml(summaryText || (typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));
+
+  const readFullVal = L(lang, 'readFullMotion');
+  const whyItMattersVal = L(lang, 'whyItMatters');
+
+  return `
+    <div class="motion-entry">
+      <h3>${titleHtml}</h3>
+      <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
+      <p>${summaryHtml}</p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(motion, lang, 'mot')}</p>
+      <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+    </div>
+`;
+}
+
+/**
+ * Detect policy domains from a document's title and committee code.
+ * Returns a deduplicated array of localised domain strings.
+ */
+function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): string[] {
   const title = (doc.titel || doc.title || '').toLowerCase();
   const organ = doc.organ || doc.committee || '';
+  const isSv = lang === 'sv';
+  const set = new Set<string>();
 
-  // Infer policy domain from title keywords and committee (deduplicated)
-  const policyHintSet = new Set<string>();
-  const addHint = (hint: string): void => { policyHintSet.add(hint); };
+  if (title.includes('skatt') || title.includes('tax') || title.includes('budget') || title.includes('finans')
+      || title.includes('makrotillsyn') || title.includes('macroprudential')
+      || organ === 'SkU' || organ === 'FiU')
+    set.add(isSv ? 'finanspolitik' : 'fiscal policy');
+  if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
+      || organ === 'FöU')
+    set.add(isSv ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
+  if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || title.includes('energi')
+      || title.includes('förnybart') || title.includes('renewable') || title.includes('koldioxid')
+      || title.includes('hållbar') || title.includes('sustain')
+      || organ === 'MJU')
+    set.add(isSv ? 'miljö- och klimatpolitik' : 'environmental and climate policy');
+  if (title.includes('utbildning') || title.includes('educ') || title.includes('skola') || title.includes('högskola')
+      || organ === 'UbU')
+    set.add(isSv ? 'utbildningspolitik' : 'education policy');
+  if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || title.includes('omsorg')
+      || organ === 'SoU')
+    set.add(isSv ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
+  if (title.includes('migration') || title.includes('invandring') || title.includes('asyl') || title.includes('utlänning')
+      || organ === 'SfU')
+    set.add(isSv ? 'migrationspolitik' : 'migration policy');
+  if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign')
+      || organ === 'UU')
+    set.add(isSv ? 'EU- och utrikespolitik' : 'EU and foreign affairs');
+  if (title.includes('brott') || title.includes('straff') || title.includes('polis') || title.includes('justice')
+      || title.includes('kriminal') || organ === 'JuU')
+    set.add(isSv ? 'rättspolitik' : 'justice policy');
+  if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
+      || title.includes('facklig') || organ === 'AU')
+    set.add(isSv ? 'arbetsmarknadspolitik' : 'labour market policy');
+  if (title.includes('bostad') || title.includes('housing') || title.includes('hyra') || title.includes('bostadsrätt')
+      || title.includes('lagfart') || title.includes('fastighet')
+      || organ === 'CU')
+    set.add(isSv ? 'bostadspolitik' : 'housing policy');
+  if (title.includes('trafik') || title.includes('transport') || title.includes('järnväg') || title.includes('väg')
+      || organ === 'TU')
+    set.add(isSv ? 'transportpolitik' : 'transport policy');
+  if (title.includes('näring') || title.includes('handel') || title.includes('trade') || title.includes('industri')
+      || title.includes('företag') || organ === 'NU')
+    set.add(isSv ? 'näringspolitik' : 'trade and industry policy');
 
-  if (title.includes('skatt') || title.includes('tax') || organ === 'SkU' || organ === 'FiU') {
-    addHint(lang === 'sv' ? 'finanspolitik' : 'fiscal policy');
-  }
-  if (title.includes('försvar') || title.includes('defen') || organ === 'FöU') {
-    addHint(lang === 'sv' ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
-  }
-  if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || organ === 'MJU') {
-    addHint(lang === 'sv' ? 'miljö- och klimatpolitik' : 'environmental and climate policy');
-  }
-  if (title.includes('utbildning') || title.includes('educ') || organ === 'UbU') {
-    addHint(lang === 'sv' ? 'utbildningspolitik' : 'education policy');
-  }
-  if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || organ === 'SoU') {
-    addHint(lang === 'sv' ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
-  }
-  if (title.includes('migration') || title.includes('invandring') || organ === 'SfU') {
-    addHint(lang === 'sv' ? 'migrationspolitik' : 'migration policy');
-  }
-  if (title.includes('eu') || title.includes('europa') || organ === 'UU') {
-    addHint(lang === 'sv' ? 'EU- och utrikespolitik' : 'EU and foreign affairs');
-  }
-  if (title.includes('brott') || title.includes('straff') || title.includes('justice') || organ === 'JuU') {
-    addHint(lang === 'sv' ? 'rättspolitik' : 'justice policy');
-  }
-  if (title.includes('arbetsmarknad') || title.includes('labour') || organ === 'AU') {
-    addHint(lang === 'sv' ? 'arbetsmarknadspolitik' : 'labour market policy');
-  }
-  if (title.includes('bostad') || title.includes('housing') || organ === 'CU') {
-    addHint(lang === 'sv' ? 'bostadspolitik' : 'housing policy');
-  }
-  if (title.includes('trafik') || title.includes('transport') || organ === 'TU') {
-    addHint(lang === 'sv' ? 'transportpolitik' : 'transport policy');
-  }
-  if (title.includes('näring') || title.includes('handel') || title.includes('trade') || organ === 'NU') {
-    addHint(lang === 'sv' ? 'näringspolitik' : 'trade and industry policy');
-  }
+  return Array.from(set);
+}
 
-  if (policyHintSet.size > 0) {
-    const domains = Array.from(policyHintSet).join(', ');
-    const doktyp = doc.doktyp || doc.documentType || '';
-    // Type-specific implication sentences
-    let implication: string;
-    if (lang === 'sv') {
-      if (doktyp === 'mot') {
-        implication = 'Motionen signalerar partiets politiska ståndpunkt; bifall är osannolikt utan regeringsstöd.';
-      } else if (doktyp === 'bet') {
-        implication = 'Kommitténs ståndpunkt avgör propositionens väg i kammaren.';
-      } else {
-        implication = 'Utskottsgranskning och kammarvotering avgör propositionens öde.';
+type _LangPair = { en: Record<string, string>; sv: Record<string, string> };
+
+/** Module-level constant — allocated once, shared across all calls. */
+const DOMAIN_ANALYSES: Record<string, _LangPair> = {
+    'fiscal policy': {
+      en: {
+        mot: 'Fiscal policy motions directly challenge the government\'s budget assumptions and signal opposition readiness to contest tax and spending priorities.',
+        bet: 'The Finance Committee\'s position on fiscal matters is usually decisive — the chamber almost always follows its recommendation on budgetary questions.',
+        default: 'Government fiscal proposals must clear rigorous Finance Committee scrutiny and align with Sweden\'s fiscal surplus rule, making the committee\'s verdict pivotal.'
+      },
+      sv: {
+        mot: 'Finanspolitiska motioner utmanar direkt regeringens budgetantaganden och signalerar oppositionens beredskap att bestrida skatte- och utgiftsprioriteringar.',
+        bet: 'Finansutskottets ståndpunkt i finanspolitiska frågor är i regel avgörande – kammaren följer nästan alltid utskottets rekommendation.',
+        default: 'Regeringens finanspolitiska förslag måste klara finansutskottets granskning och harmonisera med överskottsmålet för att nå bifall.'
       }
-    } else {
-      if (doktyp === 'mot') {
-        implication = 'This motion signals a policy position; passage requires government or majority support.';
-      } else if (doktyp === 'bet') {
-        implication = 'The committee vote will be determinative for the legislation\'s path forward.';
-      } else {
-        implication = 'Parliamentary committee review and chamber debate will shape the final outcome.';
+    },
+    'defence and security policy': {
+      en: {
+        mot: 'Defence motions carry heightened strategic significance following Sweden\'s NATO accession, pressing the government on long-term security commitments.',
+        bet: 'Committee reports on defence shape Sweden\'s military posture and NATO integration trajectory — decisions here have multi-decade consequences.',
+        default: 'Defence proposals engage Sweden\'s NATO obligations and cross-party consensus-building mechanisms for national security legislation.'
+      },
+      sv: {
+        mot: 'Försvarsrelaterade motioner har förhöjd strategisk betydelse efter Sveriges NATO-inträde och pressar regeringen om långsiktiga säkerhetsåtaganden.',
+        bet: 'Utskottsbetänkanden om försvar formar Sveriges militära inriktning och NATO-integration – besluten har konsekvenser i decennier.',
+        default: 'Försvarspropositioner engagerar Sveriges NATO-förpliktelser och mekanismer för brett partistöd inom säkerhetspolitiken.'
+      }
+    },
+    'environmental and climate policy': {
+      en: {
+        mot: 'Climate motions reflect growing parliamentary pressure for faster decarbonisation, often targeting specific industries or the pace of policy implementation.',
+        bet: 'The Environment Committee\'s recommendations balance climate ambition against economic competitiveness — its position sets the legislative baseline.',
+        default: 'Environmental proposals must navigate competing interests from industry, regional governments, and EU climate commitments, making parliamentary support critical.'
+      },
+      sv: {
+        mot: 'Klimatmotioner speglar växande parlamentariskt tryck för snabbare koldioxidminskning och riktar sig ofta mot specifika branscher.',
+        bet: 'Miljöutskottet väger klimatambition mot ekonomisk konkurrenskraft – dess rekommendation sätter lagstiftningens utgångspunkt.',
+        default: 'Miljöförslag måste navigera konkurrerande intressen från industrin, regionerna och EU:s klimatåtaganden.'
+      }
+    },
+    'healthcare policy': {
+      en: {
+        mot: 'Healthcare motions typically target gaps in regional service delivery, pressing for national minimum standards, additional funding, or new patient rights.',
+        bet: 'Social Affairs Committee reports on healthcare set the framework for Sweden\'s regionally delivered but nationally financed health system.',
+        default: 'Healthcare proposals require coordination between national government, regional councils, and professional bodies — a complexity that shapes the legislative timeline.'
+      },
+      sv: {
+        mot: 'Hälso- och sjukvårdsmotioner riktar sig typiskt mot brister i regionala tjänster och driver på för nationella miniminivåer eller nya patienträttigheter.',
+        bet: 'Socialutskottets betänkanden om hälso- och sjukvård sätter ramarna för det regionalt levererade men nationellt finansierade hälsosystemet.',
+        default: 'Hälso- och sjukvårdspropositioner kräver samordning mellan stat, regioner och professioner – en komplexitet som formar lagstiftningens tidslinje.'
+      }
+    },
+    'migration policy': {
+      en: {
+        mot: 'Migration motions reflect one of Sweden\'s most contested policy areas, with parties divided on asylum rules, integration requirements, and deportation procedures.',
+        bet: 'The Social Insurance Committee\'s migration reports navigate Sweden\'s EU law obligations and UN Refugee Convention commitments alongside domestic political pressures.',
+        default: 'Migration proposals must balance EU regulatory obligations with national political imperatives, making cross-party support essential for durable legislation.'
+      },
+      sv: {
+        mot: 'Migrationsmotioner speglar ett av Sveriges mest omtvistade politikområden, med partier delade om asylregler, integrationskrav och återvändanderutiner.',
+        bet: 'Socialförsäkringsutskottets migrationsbetänkanden navigerar Sveriges åtaganden enligt EU-rätten och FN:s flyktingkonvention.',
+        default: 'Migrationspropositioner måste balansera EU-rättsliga förpliktelser med nationella politiska imperativ.'
+      }
+    },
+    'EU and foreign affairs': {
+      en: {
+        mot: 'EU and foreign affairs motions signal parliamentary expectations for government negotiating positions — influential despite executive prerogative in external relations.',
+        bet: 'The Foreign Affairs Committee\'s reports on EU matters reflect Sweden\'s positioning within the bloc and may bind future negotiating postures.',
+        default: 'EU and foreign affairs proposals engage Sweden\'s treaty obligations and often require coordination with European partners before domestic enactment.'
+      },
+      sv: {
+        mot: 'EU- och utrikespolitiska motioner signalerar parlamentets förväntningar på regeringens förhandlingspositioner.',
+        bet: 'Utrikesutskottets betänkanden om EU-frågor speglar Sveriges positionering inom unionen och kan binda framtida förhandlingslinjer.',
+        default: 'EU- och utrikespropositioner engagerar Sveriges fördragsförpliktelser och kräver samordning med europeiska partner.'
+      }
+    },
+    'justice policy': {
+      en: {
+        mot: 'Justice motions address crime, sentencing, and policing — areas with high public salience where opposition parties frequently press for tougher or more targeted measures.',
+        bet: 'The Justice Committee shapes the criminal law framework; its reports on sentencing and policing directly affect prosecution practice and enforcement priorities.',
+        default: 'Justice proposals balance rule-of-law principles, human rights obligations, and public safety demands — requiring careful drafting to withstand constitutional scrutiny.'
+      },
+      sv: {
+        mot: 'Rättsliga motioner rör brott, straff och polis – frågor med hög allmän relevans där oppositionen ofta driver på för hårdare åtgärder.',
+        bet: 'Justitieutskottet formar den straffrättsliga ramen; dess betänkanden om straffsatser och polisverksamhet påverkar direkt åklagarnas praxis.',
+        default: 'Rättsliga propositioner balanserar rättsstatsprinciper, mänskliga rättigheter och allmän säkerhet.'
+      }
+    },
+    'labour market policy': {
+      en: {
+        mot: 'Labour market motions engage sensitive negotiations between employers, unions, and the state — every motion sends a signal to Sweden\'s social partners.',
+        bet: 'The Labour Committee\'s reports on workplace legislation must navigate collective bargaining autonomy while setting minimum statutory floors.',
+        default: 'Labour market proposals enter an arena where tripartite negotiation shapes the final legislative outcome as much as parliamentary votes.'
+      },
+      sv: {
+        mot: 'Arbetsmarknadsmotioner engagerar känsliga förhandlingar mellan arbetsgivare, fackförbund och stat – varje motion signalerar till parterna.',
+        bet: 'Arbetsmarknadsutskottets betänkanden om arbetsplatslagar måste navigera kollektivavtalens självständighet.',
+        default: 'Arbetsmarknadspropositioner träder in i en arena där trepartsförhandlingar formar det slutliga lagstiftningsresultatet.'
+      }
+    },
+    'housing policy': {
+      en: {
+        mot: 'Housing motions reflect structural tension between demand for affordable homes and constraints of planning law, rent regulation, and construction cost pressures.',
+        bet: 'The Civil Affairs Committee\'s housing reports address one of Sweden\'s most persistent policy challenges, where committee decisions unlock or block major regulatory change.',
+        default: 'Housing proposals must reconcile competing interests from municipalities, property owners, tenants, and developers — a coalition rarely achieved quickly.'
+      },
+      sv: {
+        mot: 'Bostadsmotioner speglar strukturell spänning mellan efterfrågan på prisvärda bostäder och begränsningarna i plan- och hyreslagstiftning.',
+        bet: 'Civilutskottets bostadsbetänkanden hanterar en av Sveriges mest ihållande politiska utmaningar.',
+        default: 'Bostadspropositioner måste balansera konkurrerande intressen från kommuner, fastighetsägare, hyresgäster och byggföretag.'
+      }
+    },
+    'transport policy': {
+      en: {
+        mot: 'Transport motions address infrastructure investment, road safety, and public transit — areas where regional and national interests frequently diverge.',
+        bet: 'The Transport Committee\'s reports guide Sweden\'s national infrastructure planning cycle, directly affecting long-term investment priorities.',
+        default: 'Transport proposals engage the national infrastructure budget, regional equity, and climate transition targets — all must be balanced in committee deliberation.'
+      },
+      sv: {
+        mot: 'Transportmotioner rör infrastrukturinvesteringar, trafiksäkerhet och kollektivtrafik – frågor där regionala och nationella intressen ofta divergerar.',
+        bet: 'Trafikutskottets betänkanden vägleder Sveriges nationella infrastrukturplanering och påverkar direkt långsiktiga investeringsprioriteringar.',
+        default: 'Transportpropositioner engagerar den nationella infrastrukturbudgeten, regional jämlikhet och klimatomställningsmål.'
+      }
+    },
+    'trade and industry policy': {
+      en: {
+        mot: 'Industry and trade motions often target competitiveness, innovation, or trade agreements — signalling party positions ahead of EU-level or bilateral negotiations.',
+        bet: 'The Committee on Industry and Trade shapes Sweden\'s business environment through reports that set conditions for investment, innovation, and exports.',
+        default: 'Industry and trade proposals engage international commitments, EU single-market rules, and domestic competitiveness imperatives simultaneously.'
+      },
+      sv: {
+        mot: 'Näringspolitiska motioner riktar sig ofta mot konkurrenskraft, innovation eller handelsavtal och signalerar partipositioner inför förhandlingar.',
+        bet: 'Näringsutskottets betänkanden formar Sveriges affärsmiljö och sätter villkoren för investeringar och export.',
+        default: 'Näringspolitiska propositioner engagerar internationella åtaganden, EU:s inre marknadsregler och inhemsk konkurrenskraft.'
+      }
+    },
+    'education policy': {
+      en: {
+        mot: 'Education motions reflect deep disagreements on school standards, teacher pay, and the role of independent schools — one of Sweden\'s most contested domestic debates.',
+        bet: 'The Education Committee\'s reports directly shape curriculum standards, funding formulas, and school regulation — decisions with long generational consequences.',
+        default: 'Education proposals must balance national curriculum standards with municipal delivery autonomy and the contested role of private providers in the Swedish school system.'
+      },
+      sv: {
+        mot: 'Utbildningsmotioner speglar djupa meningsskiljaktigheter om skolstandard, lärarlöner och friskolornas roll.',
+        bet: 'Utbildningsutskottets betänkanden formar direkt läroplaner, finansieringsmodeller och skolreglering.',
+        default: 'Utbildningspropositioner måste balansera nationella läroplaner med kommunalt leveransansvar och de privata aktörernas omstridda roll.'
       }
     }
-    return `Touches on ${escapeHtml(domains)}. ${implication}`;
+};
+
+/** Module-level constant — allocated once, shared across all calls. */
+const EN_DOMAIN_MAP: Record<string, string> = {
+  'finanspolitik': 'fiscal policy',
+  'försvars- och säkerhetspolitik': 'defence and security policy',
+  'miljö- och klimatpolitik': 'environmental and climate policy',
+  'utbildningspolitik': 'education policy',
+  'hälso- och sjukvårdspolitik': 'healthcare policy',
+  'migrationspolitik': 'migration policy',
+  'EU- och utrikespolitik': 'EU and foreign affairs',
+  'rättspolitik': 'justice policy',
+  'arbetsmarknadspolitik': 'labour market policy',
+  'bostadspolitik': 'housing policy',
+  'transportpolitik': 'transport policy',
+  'näringspolitik': 'trade and industry policy'
+};
+
+/**
+ * Return a substantive domain-specific and type-specific analysis sentence.
+ * Each of 12 policy domains has tailored text for motions (mot), committee
+ * reports (bet), and propositions/default, in both English and Swedish.
+ */
+function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: Language | string): string {
+  const isSv = lang === 'sv';
+
+  const lookupKey = EN_DOMAIN_MAP[primaryDomain] ?? primaryDomain;
+  const entry = DOMAIN_ANALYSES[lookupKey];
+  if (!entry) return '';
+
+  const langEntry = isSv ? entry.sv : entry.en;
+  const typeKey = (doktyp === 'mot' || doktyp === 'bet') ? doktyp : 'default';
+  return langEntry[typeKey] ?? langEntry['default'] ?? '';
+}
+
+/**
+ * Generate policy significance context for a document based on its metadata.
+ * Uses the localised policySignificanceTouches label plus a domain-specific
+ * analysis sentence instead of generic boilerplate.
+ * @param impliedDoktyp - document type inferred from the calling context
+ *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
+ */
+function generatePolicySignificance(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
+  const domains = detectPolicyDomains(doc, lang);
+
+  if (domains.length > 0) {
+    const domainsStr = domains.join(', ');
+    const touchesFn = L(lang, 'policySignificanceTouches') as string | ((d: string) => string);
+    const baseText = typeof touchesFn === 'function'
+      ? touchesFn(escapeHtml(domainsStr))
+      : `Touches on ${escapeHtml(domainsStr)}.`;
+
+    const doktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
+    const deepAnalysis = getDomainSpecificAnalysis(domains[0] ?? '', doktyp, lang);
+    return deepAnalysis ? `${baseText} ${deepAnalysis}` : baseText;
   }
 
   // Generic significance when no domain detected
   const genericVal = L(lang, 'policySignificanceGeneric');
   return typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
+}
+
+/**
+ * Generate deep policy analysis for a single document entry.
+ * Only uses `fullText` / `fullContent` (enriched content fetched separately)
+ * as the passage source — summary/notis are already shown in the summary line
+ * above in structured views and must not be duplicated here.
+ * Falls back to generatePolicySignificance when no enriched text is available.
+ * @param impliedDoktyp - document type inferred from the calling context
+ *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
+ */
+function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
+  const effectiveDoktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
+  const rawText = doc.fullText || doc.fullContent || '';
+  if (rawText && !isPersonProfileText(rawText)) {
+    const cleanedText = (effectiveDoktyp === 'mot' && rawText.includes('Motion till riksdagen'))
+      ? cleanMotionText(rawText)
+      : rawText;
+    const passage = extractKeyPassage(cleanedText, 300);
+    if (passage) {
+      const isSwedishSource = !!(doc.titel && !doc.title);
+      const passageHtml = isSwedishSource
+        ? svSpan(escapeHtml(passage), lang)
+        : escapeHtml(passage);
+      return `${passageHtml} ${generatePolicySignificance(doc, lang, impliedDoktyp)}`;
+    }
+  }
+  return generatePolicySignificance(doc, lang, impliedDoktyp);
+}
+
+/**
+ * Normalise a raw `parti` field to a canonical party key.
+ * Maps missing, empty, or any capitalisation of 'unknown' to 'other'.
+ * Used in both generateMotionsContent (party grouping) and
+ * generateOppositionStrategySection so both sections treat the sentinel
+ * identically regardless of capitalisation.
+ */
+function normalizePartyKey(parti: unknown): string {
+  const raw = typeof parti === 'string' ? parti.trim() : '';
+  return !raw || raw.toLowerCase() === 'unknown' ? 'other' : raw;
+}
+
+/**
+ * Generate an opposition-strategy analysis paragraph.
+ * Identifies which party is most active, what policy areas they focus on,
+ * and which other party follows — turning raw party counts into narrative.
+ */
+function generateOppositionStrategySection(motions: RawDocument[], lang: Language | string): string {
+  const byParty: Record<string, RawDocument[]> = {};
+  motions.forEach(m => {
+    const party = normalizePartyKey(m.parti);
+    if (!byParty[party]) byParty[party] = [];
+    byParty[party].push(m);
+  });
+
+  const sortedParties = Object.entries(byParty)
+    .filter(([p]) => p !== 'other')
+    .sort(([, a], [, b]) => b.length - a.length);
+
+  if (sortedParties.length === 0) return '';
+
+  const [topParty, topMotions] = sortedParties[0];
+
+  // Identify primary policy domain(s) for the most-active party
+  const topDomainSet = new Set<string>();
+  topMotions.forEach(m => {
+    detectPolicyDomains(m, lang).forEach(d => topDomainSet.add(d));
+  });
+  const topDomains = Array.from(topDomainSet).slice(0, 2);
+
+  const isSv = lang === 'sv';
+  const count = topMotions.length;
+  let text = '';
+
+  if (isSv) {
+    const domainList = topDomains.join(' och ');
+    text = `<strong>${escapeHtml(topParty)}</strong> är mest aktiv med ${count} motion${count !== 1 ? 'er' : ''}`;
+    if (domainList) text += `, med fokus på ${escapeHtml(domainList)}`;
+    text += '.';
+  } else {
+    const domainList = topDomains.join(' and ');
+    text = `<strong>${escapeHtml(topParty)}</strong> leads opposition activity with ${count} motion${count !== 1 ? 's' : ''}`;
+    if (domainList) text += `, focused on ${escapeHtml(domainList)}`;
+    text += '.';
+  }
+
+  if (sortedParties.length > 1) {
+    const [secondParty, secondMotions] = sortedParties[1];
+    const n = secondMotions.length;
+    text += isSv
+      ? ` ${escapeHtml(secondParty)} följer med ${n} motion${n !== 1 ? 'er' : ''}.`
+      : ` ${escapeHtml(secondParty)} follows with ${n} motion${n !== 1 ? 's' : ''}.`;
+  }
+
+  return `    <p>${text}</p>\n`;
 }
 
 /**
@@ -2302,7 +2608,7 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
   }
 
   // ── PRIMARY: policy domain significance derived from document content ────
-  const significance = generatePolicySignificance(doc, lang);
+  const significance = generatePolicySignificance(doc, lang, docType);
   parts.push(`<strong>${escapeHtml(String(L(lang, 'whatThisMeans')))}:</strong> ${significance}`);
 
   // ── PRIMARY: related speeches (direct evidence from the chamber) ─────────
@@ -2433,13 +2739,11 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
     content += `        <li>${escapeHtml(typeDescriptions.join(', '))} processed this period</li>\n`;
   }
 
-  // Policy domains
+  // Policy domains — show labels only to keep the bullet concise
   const allDomains = new Set<string>();
   const enrichedCount = docs.filter(d => d.contentFetched).length;
   docs.forEach(doc => {
-    const sig = generatePolicySignificance(doc, lang);
-    const genericVal = L(lang, 'policySignificanceGeneric');
-    if (sig !== genericVal) allDomains.add(sig);
+    detectPolicyDomains(doc, lang).forEach(d => allDomains.add(d));
   });
   if (allDomains.size > 0) {
     const policyContextVal = L(lang, 'policyContext');
