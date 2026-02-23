@@ -1285,7 +1285,7 @@ describe('Data Transformers', () => {
       const content = generateArticleContent({
         motions: [
           { titel: 'Skattefrågor', url: 'https://riksdagen.se/m1', dok_id: 'M1', parti: 'S', intressent_namn: 'Hans Ek' },
-          { titel: 'Försvarspolitik', url: 'https://riksdagen.se/m2', dok_id: 'M2', parti: 'V', intressent_namn: 'Ida Ny' }
+          { titel: 'Försvarspolitik', url: 'https://riksdagen.se/m2', dok_id: 'M2', parti: 'V', intressent_namn: 'Ida Nilsson' }
         ]
       } as MockArticlePayload, 'motions', 'en') as string;
 

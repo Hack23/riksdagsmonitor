@@ -1985,7 +1985,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
  * Matches Swedish phrases like "med anledning av prop. 2025/26:118".
  */
 function extractParentPropRef(text: string): string | null {
-  const m = text.match(/med anledning av prop(?:ositionen?)?\.\s+(\d{4}\/\d{2,4}:\d+)/i);
+  const m = text.match(/med anledning av prop(?:ositionen?)?\.\s+(\d{4}\/\d{2}:\d+)/i);
   return m ? (m[1] ?? null) : null;
 }
 
@@ -1999,7 +1999,8 @@ function groupMotionsByProposition(motions: RawDocument[]): Map<string, RawDocum
     const text = motion.titel || motion.title || '';
     const key = extractParentPropRef(text) ?? '';
     if (!groups.has(key)) groups.set(key, []);
-    groups.get(key)!.push(motion);
+    const arr = groups.get(key);
+    if (arr) arr.push(motion);
   }
   return groups;
 }
