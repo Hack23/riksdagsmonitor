@@ -78,8 +78,9 @@ beforeAll(async () => {
   try {
     moduleExports = (await import('../scripts/generate-news-enhanced.js')) as unknown as GenerateNewsEnhancedModule;
   } catch (e: unknown) {
-    console.error('Import failed:', e instanceof Error ? e.message : String(e));
-    moduleExports = null;
+    throw new Error(
+      `Failed to import ../scripts/generate-news-enhanced.js: ${e instanceof Error ? e.message : String(e)}`,
+    );
   }
 });
 
@@ -106,24 +107,24 @@ afterAll(() => {
 describe('MCP fail-fast abort (requireMcp=true)', () => {
   describe('requireMcp flag', () => {
     it('should export requireMcp as true by default', () => {
-      if (!moduleExports) return;
-      expect(moduleExports.requireMcp).toBe(true);
+      expect(moduleExports).not.toBeNull();
+      expect(moduleExports!.requireMcp).toBe(true);
     });
   });
 
   describe('generateCommitteeReports — MCP unavailable', () => {
     it('should return success=false when MCP warm-up fails', async () => {
-      if (!moduleExports) return;
+      expect(moduleExports).not.toBeNull();
 
-      const result = await moduleExports.generateCommitteeReports();
+      const result = await moduleExports!.generateCommitteeReports();
 
       expect(result.success).toBe(false);
     });
 
     it('should include "MCP server unavailable" in the error message', async () => {
-      if (!moduleExports) return;
+      expect(moduleExports).not.toBeNull();
 
-      const result = await moduleExports.generateCommitteeReports();
+      const result = await moduleExports!.generateCommitteeReports();
 
       expect(result.error).toMatch(/MCP server unavailable/i);
     });
@@ -131,9 +132,9 @@ describe('MCP fail-fast abort (requireMcp=true)', () => {
 
   describe('generatePropositions — MCP unavailable', () => {
     it('should return success=false when MCP warm-up fails', async () => {
-      if (!moduleExports) return;
+      expect(moduleExports).not.toBeNull();
 
-      const result = await moduleExports.generatePropositions();
+      const result = await moduleExports!.generatePropositions();
 
       expect(result.success).toBe(false);
       expect(result.error).toMatch(/MCP server unavailable/i);
@@ -142,9 +143,9 @@ describe('MCP fail-fast abort (requireMcp=true)', () => {
 
   describe('generateMotions — MCP unavailable', () => {
     it('should return success=false when MCP warm-up fails', async () => {
-      if (!moduleExports) return;
+      expect(moduleExports).not.toBeNull();
 
-      const result = await moduleExports.generateMotions();
+      const result = await moduleExports!.generateMotions();
 
       expect(result.success).toBe(false);
       expect(result.error).toMatch(/MCP server unavailable/i);

@@ -613,14 +613,14 @@ describe('Data Transformers', () => {
   });
 
   describe('data-translate markers for Swedish API content', () => {
-    it('should wrap Swedish titel in lang="sv" span for non-Swedish committee reports', () => {
+    it('should wrap Swedish titel in data-translate span for non-Swedish committee reports', () => {
       const content = generateArticleContent(
         { reports: [{ titel: 'Bättre förutsättningar', url: '#', organ: 'FiU' }] } as MockArticlePayload,
         'committee-reports',
         'en'
       ) as string;
-      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
-      expect(content).not.toContain('data-translate="true"');
+      // Non-Swedish: data-translate="true" lang="sv" marks Swedish API text for LLM translation
+      expect(content).toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Bättre förutsättningar');
     });
@@ -635,14 +635,14 @@ describe('Data Transformers', () => {
       expect(content).toContain('Better conditions');
     });
 
-    it('should wrap Swedish titel in lang="sv" span for non-Swedish propositions', () => {
+    it('should wrap Swedish titel in data-translate span for non-Swedish propositions', () => {
       const content = generateArticleContent(
         { propositions: [{ titel: 'Ändringsbudget för 2026', url: '#' }] } as MockArticlePayload,
         'propositions',
         'en'
       ) as string;
-      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
-      expect(content).not.toContain('data-translate="true"');
+      // Non-Swedish: data-translate="true" lang="sv" marks Swedish API text for LLM translation
+      expect(content).toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Ändringsbudget för 2026');
     });
@@ -657,25 +657,26 @@ describe('Data Transformers', () => {
       expect(content).toContain('Budget Amendment 2026');
     });
 
-    it('should wrap Swedish titel in data-translate span for motions', () => {
+    it('should wrap Swedish titel in data-translate span for non-Swedish motions', () => {
       const content = generateArticleContent(
         { motions: [{ titel: 'Djurskydd', url: '#', parti: 'MP', intressent_namn: 'Test' }] } as MockArticlePayload,
         'motions',
         'en'
       ) as string;
-      // Non-Swedish articles use lang="sv" for accessibility but no data-translate marker
-      expect(content).not.toContain('data-translate="true"');
+      // Non-Swedish: data-translate="true" lang="sv" marks Swedish API text for LLM translation
+      expect(content).toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Djurskydd');
     });
 
-    it('should use data-translate="true" for Swedish (sv) articles with Swedish title', () => {
+    it('should NOT use data-translate="true" for Swedish (sv) articles with Swedish title', () => {
       const content = generateArticleContent(
         { motions: [{ titel: 'Djurskydd', url: '#', parti: 'MP', intressent_namn: 'Test' }] } as MockArticlePayload,
         'motions',
         'sv'
       ) as string;
-      expect(content).toContain('data-translate="true"');
+      // Swedish articles: text is already in target language, no translation marker needed
+      expect(content).not.toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
     });
 
@@ -689,14 +690,14 @@ describe('Data Transformers', () => {
       expect(content).toContain('Animal Protection');
     });
 
-    it('should wrap Swedish summary in lang="sv" span when present for non-Swedish articles', () => {
+    it('should wrap Swedish summary in data-translate span when present for non-Swedish articles', () => {
       const content = generateArticleContent(
         { reports: [{ titel: 'Test', summary: 'Förslaget innebär att', url: '#', organ: 'SoU' }] } as MockArticlePayload,
         'committee-reports',
         'en'
       ) as string;
-      // Non-Swedish: lang="sv" spans but no data-translate markers
-      expect(content).not.toContain('data-translate="true"');
+      // Non-Swedish: data-translate="true" lang="sv" for LLM translation
+      expect(content).toContain('data-translate="true"');
       const langMatches = content.match(/lang="sv"/g);
       expect(langMatches).not.toBeNull();
       expect(langMatches!.length).toBe(2); // title + summary
@@ -710,8 +711,8 @@ describe('Data Transformers', () => {
         'committee-reports',
         'de'
       ) as string;
-      // Non-Swedish: lang="sv" span for title but no data-translate markers
-      expect(contentWithOrgan).not.toContain('data-translate="true"');
+      // Non-Swedish: data-translate="true" lang="sv" for LLM translation
+      expect(contentWithOrgan).toContain('data-translate="true"');
       const langMatchesWithOrgan = contentWithOrgan.match(/lang="sv"/g);
       expect(langMatchesWithOrgan).not.toBeNull();
       expect(langMatchesWithOrgan!.length).toBe(1); // only title
@@ -725,8 +726,8 @@ describe('Data Transformers', () => {
         'committee-reports',
         'de'
       ) as string;
-      // Non-Swedish: lang="sv" span for title only, no data-translate markers
-      expect(contentWithoutMetadata).not.toContain('data-translate="true"');
+      // Non-Swedish: data-translate="true" lang="sv" for LLM translation
+      expect(contentWithoutMetadata).toContain('data-translate="true"');
       const langMatchesWithoutMetadata = contentWithoutMetadata.match(/lang="sv"/g);
       expect(langMatchesWithoutMetadata).not.toBeNull();
       expect(langMatchesWithoutMetadata!.length).toBe(1); // only title
@@ -734,7 +735,7 @@ describe('Data Transformers', () => {
       expect(contentWithoutMetadata).toContain(L('de', 'reportDefault'));
     });
 
-    it('should wrap week-ahead event titel in lang="sv" span for non-Swedish articles', () => {
+    it('should wrap week-ahead event titel in data-translate span for non-Swedish articles', () => {
       const eventsWithTitel: MockCalendarEvent[] = [
         { titel: 'Öppen utfrågning om AI', rubrik: 'EU debate on AI', datum: '2026-02-10T10:00:00', organ: 'TU' }
       ];
@@ -743,8 +744,8 @@ describe('Data Transformers', () => {
         'week-ahead',
         'en'
       ) as string;
-      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
-      expect(content).not.toContain('data-translate="true"');
+      // Non-Swedish: data-translate="true" lang="sv" marks Swedish API text for LLM translation
+      expect(content).toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Öppen utfrågning om AI');
     });
@@ -853,7 +854,7 @@ describe('Data Transformers', () => {
   });
 
   describe('extractWatchPoints with data-translate markers', () => {
-    it('should wrap Swedish event titles in lang="sv" span for non-Swedish articles', () => {
+    it('should wrap Swedish event titles in data-translate span for non-Swedish articles', () => {
       const watchPoints = extractWatchPoints({
         events: [
           { titel: 'Öppen utfrågning', rubrik: 'EU summit debate', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
@@ -862,8 +863,8 @@ describe('Data Transformers', () => {
       
       expect(watchPoints.length).toBeGreaterThan(0);
       const wp = watchPoints[0]!;
-      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
-      expect(wp.title).not.toContain('data-translate="true"');
+      // Non-Swedish: data-translate="true" lang="sv" marks Swedish API text for LLM translation
+      expect(wp.title).toContain('data-translate="true"');
       expect(wp.title).toContain('lang="sv"');
       expect(wp.title).toContain('Öppen utfrågning');
     });

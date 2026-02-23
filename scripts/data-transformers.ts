@@ -215,25 +215,24 @@ function sanitizeUrl(url: string | undefined | null): string {
 /**
  * Emit a Swedish-language span.
  *
- * For Swedish articles (`lang === 'sv'`) the span carries both the
- * `lang="sv"` accessibility attribute AND `data-translate="true"` so
- * quality-validation tooling can verify that Swedish articles contain the
- * original text.
+ * For Swedish articles (`lang === 'sv'`) the span carries only the
+ * `lang="sv"` accessibility attribute for screen readers — the text is
+ * already in the target language, so no translation marker is needed.
  *
- * For **all other** languages the span carries only `lang="sv"` (screen
- * readers still know the text is Swedish) but the `data-translate` marker is
- * intentionally omitted — it signals "this text should be translated" but no
- * client-side translation mechanism exists, so the marker only causes false
- * validation failures in non-Swedish articles.
+ * For **all other** languages the span carries both `lang="sv"` and
+ * `data-translate="true"`. This marks embedded Swedish API text inside
+ * non-Swedish articles so translation tooling can find and translate it;
+ * downstream validators then ensure the `data-translate` markers are removed
+ * before publishing.
  *
  * @param escapedText - Already HTML-escaped text content
  * @param lang        - Target article language (e.g. `'sv'`, `'en'`)
  */
 function svSpan(escapedText: string, lang: Language | string): string {
   if (lang === 'sv') {
-    return `<span data-translate="true" lang="sv">${escapedText}</span>`;
+    return `<span lang="sv">${escapedText}</span>`;
   }
-  return `<span lang="sv">${escapedText}</span>`;
+  return `<span data-translate="true" lang="sv">${escapedText}</span>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -2045,7 +2044,8 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   }
 
   /** Render a single motion entry block */
-  const renderMotion = (motion: RawDocument): string => {
+  const renderMotion = (motion: RawDocument, grouped = false): string => {
+    const headingTag = grouped ? 'h4' : 'h3';
     const titleText = motion.titel || motion.title || '';
     const escapedTitle = escapeHtml(titleText);
     const titleHtml = (motion.titel && !motion.title)
@@ -2088,7 +2088,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 
     return `
     <div class="motion-entry">
-      <h3>${titleHtml}</h3>
+      <${headingTag}>${titleHtml}</${headingTag}>
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
       <p>${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
@@ -2126,7 +2126,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 
       content += `    <h3>${escapeHtml(`Prop. ${propRef}: ${propTitle}`)}</h3>\n`;
 
-      propMotions.forEach(motion => { content += renderMotion(motion); });
+      propMotions.forEach(motion => { content += renderMotion(motion, true); });
     });
   }
 
@@ -2797,7 +2797,7 @@ const CONTENT_TITLE_TEMPLATES: Record<string, Record<string, { title: string; su
     ar: { title: 'المعارضة تتحدى {d1} و{d2}', subtitle: 'تحليل {count} اقتراح معارضة حول {d1} و{d2}' },
     he: { title: 'האופוזיציה מאתגרת {d1} ו{d2}', subtitle: 'ניתוח {count} הצעות אופוזיציה: {d1} ו{d2}' },
     ja: { title: '野党が{d1}と{d2}に挑む', subtitle: '{d1}と{d2}に関する{count}件の野党動議の分析' },
-    ko: { title: '야당이 {d1}과 {d2}에 도전', subtitle: '{d1}과 {d2}에 관한 {count}개 야당 동의 분析' },
+    ko: { title: '야당이 {d1}과 {d2}에 도전', subtitle: '{d1}과 {d2}에 관한 {count}개 야당 동의 분석' },
     zh: { title: '反对党挑战{d1}和{d2}', subtitle: '关于{d1}和{d2}的{count}份反对党动议分析' },
   },
   propositions: {
@@ -2813,7 +2813,7 @@ const CONTENT_TITLE_TEMPLATES: Record<string, Record<string, { title: string; su
     ar: { title: 'الحكومة تستهدف {d1} و{d2}', subtitle: 'تحليل {count} مقترح حكومي حول {d1} و{d2}' },
     he: { title: 'הממשלה מתמקדת ב{d1} וב{d2}', subtitle: 'ניתוח {count} הצעות ממשלה: {d1} ו{d2}' },
     ja: { title: '政府が{d1}と{d2}に着手', subtitle: '{d1}と{d2}に関する{count}件の政府提案の分析' },
-    ko: { title: '정부가 {d1}과 {d2} 추진', subtitle: '{d1}과 {d2}에 관한 {count}개 정부 법안 분析' },
+    ko: { title: '정부가 {d1}과 {d2} 추진', subtitle: '{d1}과 {d2}에 관한 {count}개 정부 법안 분석' },
     zh: { title: '政府推进{d1}和{d2}改革', subtitle: '关于{d1}和{d2}的{count}份政府提案分析' },
   },
   'committee-reports': {
@@ -2829,7 +2829,7 @@ const CONTENT_TITLE_TEMPLATES: Record<string, Record<string, { title: string; su
     ar: { title: 'اللجان تعالج {d1} و{d2}', subtitle: 'تحليل {count} تقرير لجنة حول {d1} و{d2}' },
     he: { title: 'הוועדות עוסקות ב{d1} וב{d2}', subtitle: 'ניתוח {count} דוחות ועדה: {d1} ו{d2}' },
     ja: { title: '委員会が{d1}と{d2}を審議', subtitle: '{d1}と{d2}に関する{count}件の委員会報告の分析' },
-    ko: { title: '위원회가 {d1}과 {d2}을 심의', subtitle: '{d1}과 {d2}에 관한 {count}개 위원회 보고서 분析' },
+    ko: { title: '위원회가 {d1}과 {d2}을 심의', subtitle: '{d1}과 {d2}에 관한 {count}개 위원회 보고서 분석' },
     zh: { title: '委员会审议{d1}和{d2}', subtitle: '关于{d1}和{d2}的{count}份委员会报告分析' },
   },
 };
