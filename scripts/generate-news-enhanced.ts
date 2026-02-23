@@ -251,6 +251,18 @@ const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? 
 
 const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking'];
 
+/** Maps article type → the slug fragment used in file names. */
+const ARTICLE_TYPE_SLUG: Readonly<Record<string, string>> = {
+  'week-ahead': 'week-ahead',
+  'month-ahead': 'month-ahead',
+  'weekly-review': 'weekly-review',
+  'monthly-review': 'monthly-review',
+  'committee-reports': 'committee-reports',
+  'propositions': 'government-propositions',
+  'motions': 'opposition-motions',
+  'breaking': 'breaking',
+};
+
 const articleTypes: string[] = typesArg
   ? (typesArg.split('=')[1] ?? '').split(',').map(t => t.trim())
   : ['week-ahead'];
@@ -301,14 +313,19 @@ const METADATA_DIR: string = path.join(NEWS_DIR, 'metadata');
 // Track full requested set before any filtering
 const allRequestedLanguages: Language[] = [...languages];
 
-// Apply --skip-existing: remove languages that already have today's articles
+// Apply --skip-existing: remove languages that already have today's articles for the requested types
 if (skipExistingArg) {
   const today: string = toISODate(new Date());
   const existingFiles: string[] = fs.existsSync(NEWS_DIR)
     ? fs.readdirSync(NEWS_DIR).filter(f => f.startsWith(today) && f.endsWith('.html'))
     : [];
+  // Build the set of slug fragments for the requested types so we only skip languages
+  // that already have articles for those specific types (not any article from today).
+  const requestedSlugs = articleTypes.map(t => ARTICLE_TYPE_SLUG[t] ?? t);
   const doneLangs: Language[] = languages.filter(lang =>
-    existingFiles.some(f => f.endsWith(`-${lang}.html`))
+    requestedSlugs.some(slugFragment =>
+      existingFiles.some(f => f.includes(slugFragment) && f.endsWith(`-${lang}.html`))
+    )
   );
   if (doneLangs.length > 0) {
     console.log(`⏭️  Skipping already-generated languages: ${doneLangs.join(', ')}`);

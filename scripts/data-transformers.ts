@@ -212,6 +212,24 @@ function sanitizeUrl(url: string | undefined | null): string {
   return trimmed.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/**
+ * Normalise a Riksdag document URL so it always ends with .html.
+ * The data.riksdagen.se REST API requires the .html suffix; URLs built from
+ * dok_id alone (without the suffix) return 404. Falls back to constructing
+ * a URL from dok_id when url is absent.
+ */
+function normalizeDocUrl(doc: { url?: string; dok_id?: string }): string {
+  let url = doc.url ?? '';
+  if (!url && doc.dok_id) {
+    url = `https://data.riksdagen.se/dokument/${doc.dok_id}.html`;
+  }
+  // Add .html suffix if the URL points to data.riksdagen.se/dokument/ but lacks an extension
+  if (/https?:\/\/data\.riksdagen\.se\/dokument\/[^./?#]+$/.test(url)) {
+    url = `${url}.html`;
+  }
+  return sanitizeUrl(url);
+}
+
 // ---------------------------------------------------------------------------
 // Data interfaces shared with news-type modules
 // ---------------------------------------------------------------------------
@@ -1838,7 +1856,7 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
       <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>
       <p>${escapeHtml(String(reportSigVal))} ${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generatePolicySignificance(report, lang)}</p>
-      <p><a href="${sanitizeUrl(report.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><a href="${normalizeDocUrl(report)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
     });
@@ -1920,7 +1938,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
       <h3>${titleHtml}</h3>
       <p>${escapeHtml(String(propSigVal))} ${summaryHtml}${referredLine}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(prop, lang)}</p>
-      <p><a href="${sanitizeUrl(prop.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><a href="${normalizeDocUrl(prop)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
   });
@@ -2027,7 +2045,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
       <p>${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
-      <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><a href="${normalizeDocUrl(motion)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
   });
@@ -2293,8 +2311,8 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${titleHtml}</h4>\n`;
       content += `      <p>${analysis}</p>\n`;
-      if (doc.url) {
-        content += `      <p><a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;
+      if (doc.url || doc.dok_id) {
+        content += `      <p><a href="${normalizeDocUrl(doc)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;
       }
       content += `    </div>\n`;
     }
