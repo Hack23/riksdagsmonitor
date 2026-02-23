@@ -215,25 +215,25 @@ function sanitizeUrl(url: string | undefined | null): string {
 /**
  * Emit a Swedish-language span.
  *
- * For Swedish articles (`lang === 'sv'`) the span carries both the
- * `lang="sv"` accessibility attribute AND `data-translate="true"` so
- * quality-validation tooling can verify that Swedish articles contain the
- * original text.
+ * For Swedish articles (`lang === 'sv'`) the span carries only the
+ * `lang="sv"` accessibility attribute. No `data-translate` marker is used in
+ * Swedish output because the text is already in the target language.
  *
- * For **all other** languages the span carries only `lang="sv"` (screen
- * readers still know the text is Swedish) but the `data-translate` marker is
- * intentionally omitted — it signals "this text should be translated" but no
- * client-side translation mechanism exists, so the marker only causes false
- * validation failures in non-Swedish articles.
+ * For **all other** languages the span carries both `lang="sv"` (screen
+ * readers know the text is Swedish) AND `data-translate="true"`. This marks
+ * embedded Swedish-source text in non-Swedish articles so that the translation
+ * workflow and validators (see `.github/workflows/news-article-generator.md`
+ * and `scripts/validate-news-translations.ts`) can detect, translate, and
+ * remove the original Swedish before publishing.
  *
  * @param escapedText - Already HTML-escaped text content
  * @param lang        - Target article language (e.g. `'sv'`, `'en'`)
  */
 function svSpan(escapedText: string, lang: Language | string): string {
   if (lang === 'sv') {
-    return `<span data-translate="true" lang="sv">${escapedText}</span>`;
+    return `<span lang="sv">${escapedText}</span>`;
   }
-  return `<span lang="sv">${escapedText}</span>`;
+  return `<span data-translate="true" lang="sv">${escapedText}</span>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -2171,7 +2171,9 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
       const propTitleMatch = firstTitle.match(/med anledning av prop\.\s+\S+\s+(.*)/i);
       const propTitle = propTitleMatch?.[1]?.trim() || propRef;
 
-      content += `    <h3>${escapeHtml(`Prop. ${propRef}: ${propTitle}`)}</h3>\n`;
+      const safePropRef = escapeHtml(String(propRef));
+      const safePropTitle = escapeHtml(String(propTitle));
+      content += `    <h3>Prop. ${safePropRef}: ${svSpan(safePropTitle, lang)}</h3>\n`;
 
       propMotions.forEach(motion => { content += renderMotion(motion); });
     });
