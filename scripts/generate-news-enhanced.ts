@@ -244,6 +244,8 @@ const dryRunArg: boolean = args.includes('--dry-run');
 const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batch-size='));
 const skipExistingArg: boolean = args.includes('--skip-existing');
 const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
+const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
+const qualityThreshold: number = qualityThresholdArg ? parseInt(qualityThresholdArg.split('=')[1] ?? '40', 10) : 40;
 
 // ---------------------------------------------------------------------------
 // Valid article types
@@ -407,6 +409,124 @@ const stats: { generated: number; errors: number; articles: string[]; timestamp:
   timestamp: new Date().toISOString()
 };
 
+// Track quality scores for all articles generated in this run
+const qualityScores: number[] = [];
+
+// ---------------------------------------------------------------------------
+// Article quality validation
+// ---------------------------------------------------------------------------
+
+/** Quality metrics and score for a single generated article. */
+export interface ArticleQualityReport {
+  articleId: string;
+  wordCount: number;
+  unknownAuthorCount: number;
+  totalEntryCount: number;
+  untranslatedSpanCount: number;
+  analyticalSectionCount: number;
+  score: number;
+  passed: boolean;
+  issues: string[];
+}
+
+/**
+ * Validate the quality of a generated HTML article.
+ *
+ * Scoring (100 pts total):
+ * - Word count        25 pts (>= 500 full, >= 300 partial, < 300 = REJECT)
+ * - Unknown authors   25 pts (0% full, <= 50% partial, > 50% = 0)
+ * - Untranslated spans 25 pts (sv always full; non-sv: 0 spans full, <= 10 partial, > 10 = 0)
+ * - Analytical sections 25 pts (>= 3 full, >= 1 partial, 0 = 0)
+ *
+ * @param html - Full HTML content of the article
+ * @param lang - Language code (e.g. 'en', 'sv')
+ * @param articleType - Article type label for reporting (e.g. 'motions-en')
+ * @returns Quality report with score and per-metric details
+ */
+export function validateArticleQuality(html: string, lang: string, articleType: string): ArticleQualityReport {
+  const articleId = `${articleType}-${lang}`;
+
+  // Word count: strip tags and count whitespace-separated tokens
+  const textContent = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const wordCount = textContent.length === 0 ? 0 : textContent.split(' ').filter(w => w.length > 0).length;
+
+  // Count "Unknown (Unknown)" sentinel entries (used when author/party is missing)
+  const unknownAuthorCount = (html.match(/Unknown \(Unknown\)/g) ?? []).length;
+
+  // Use list items as a proxy for total document entries
+  const listItemCount = (html.match(/<li[^>]*>/g) ?? []).length;
+  const totalEntryCount = Math.max(listItemCount, unknownAuthorCount);
+
+  // Count untranslated spans — only relevant for non-Swedish content
+  const untranslatedSpanCount = lang !== 'sv'
+    ? (html.match(/data-translate="true"/g) ?? []).length
+    : 0;
+
+  // Count analytical h2 sections (structural quality indicator)
+  const analyticalSectionCount = (html.match(/<h2[^>]*>/g) ?? []).length;
+
+  const issues: string[] = [];
+
+  // Word count score: 25 pts
+  let wordScore = 0;
+  if (wordCount >= 500) {
+    wordScore = 25;
+  } else if (wordCount >= 300) {
+    wordScore = 15;
+  } else {
+    issues.push(`Word count: ${wordCount} < 300 — REJECT`);
+  }
+
+  // Unknown authors score: 25 pts
+  let unknownScore = 0;
+  const unknownRatio = totalEntryCount > 0 ? unknownAuthorCount / totalEntryCount : 0;
+  if (unknownRatio === 0) {
+    unknownScore = 25;
+  } else if (unknownRatio <= 0.5) {
+    unknownScore = Math.round(25 * (1 - unknownRatio));
+    issues.push(`Unknown authors: ${unknownAuthorCount}/${totalEntryCount} ⚠️`);
+  } else {
+    issues.push(`Unknown authors: ${unknownAuthorCount}/${totalEntryCount} ⚠️`);
+  }
+
+  // Untranslated spans score: 25 pts
+  let untranslatedScore = 0;
+  if (lang === 'sv' || untranslatedSpanCount === 0) {
+    untranslatedScore = 25;
+  } else if (untranslatedSpanCount <= 10) {
+    untranslatedScore = Math.round(25 * (1 - untranslatedSpanCount / 10));
+    issues.push(`Untranslated spans: ${untranslatedSpanCount} ⚠️`);
+  } else {
+    issues.push(`Untranslated spans: ${untranslatedSpanCount} > 10 ⚠️`);
+  }
+
+  // Analytical sections score: 25 pts
+  let analyticalScore = 0;
+  if (analyticalSectionCount >= 3) {
+    analyticalScore = 25;
+  } else if (analyticalSectionCount >= 1) {
+    analyticalScore = Math.round(25 * analyticalSectionCount / 3);
+    issues.push(`Analytical sections: ${analyticalSectionCount}/3 ⚠️`);
+  } else {
+    issues.push(`Analytical sections: 0/3 ⚠️`);
+  }
+
+  const score = wordScore + unknownScore + untranslatedScore + analyticalScore;
+  const passed = score >= qualityThreshold;
+
+  return {
+    articleId,
+    wordCount,
+    unknownAuthorCount,
+    totalEntryCount,
+    untranslatedSpanCount,
+    analyticalSectionCount,
+    score,
+    passed,
+    issues
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Helper functions
 // ---------------------------------------------------------------------------
@@ -453,7 +573,26 @@ async function writeArticle(html: string, filename: string): Promise<boolean> {
 /**
  * Write article in specified language
  */
-async function writeSingleArticle(html: string, slug: string, lang: Language): Promise<string> {
+async function writeSingleArticle(html: string, slug: string, lang: Language, articleType?: string): Promise<string> {
+  // Validate article quality before writing
+  const report = validateArticleQuality(html, lang, articleType ?? slug);
+  const unknownRatioStr = report.totalEntryCount > 0
+    ? `${report.unknownAuthorCount}/${report.totalEntryCount}`
+    : `${report.unknownAuthorCount}/0`;
+  const unknownIcon = report.unknownAuthorCount > 0 ? '⚠️' : '✅';
+  const untranslatedIcon = report.untranslatedSpanCount > 0 ? '⚠️' : '✅';
+  const analyticalIcon = report.analyticalSectionCount >= 3 ? '✅' : '⚠️';
+  console.log(`\n  📊 Article Quality Report: ${report.articleId}`);
+  console.log(`     - Word count: ${report.wordCount} ${report.wordCount >= 300 ? '✅' : '❌'}`);
+  console.log(`     - Unknown authors: ${unknownRatioStr} ${unknownIcon}`);
+  console.log(`     - Untranslated spans: ${report.untranslatedSpanCount} ${untranslatedIcon}`);
+  console.log(`     - Analytical sections: ${report.analyticalSectionCount}/3 ${analyticalIcon}`);
+  console.log(`     - Quality Score: ${report.score}/100 — ${report.passed ? 'ABOVE THRESHOLD' : 'BELOW THRESHOLD'}`);
+  if (report.issues.length > 0) {
+    report.issues.forEach(issue => console.warn(`     ⚠️  ${issue}`));
+  }
+  qualityScores.push(report.score);
+
   const filename: string = `${slug}-${lang}.html`;
   await writeArticle(html, filename);
   stats.generated += 1;
@@ -575,7 +714,7 @@ async function generateWeekAhead(): Promise<GenerationResult> {
       });
 
       // Write article
-      await writeSingleArticle(html, slug, lang);
+      await writeSingleArticle(html, slug, lang, 'week-ahead');
       console.log(`  ✅ ${lang.toUpperCase()} version generated`);
     }
 
@@ -662,7 +801,7 @@ async function generateCommitteeReports(): Promise<GenerationResult> {
         tags: metadata.tags
       });
 
-      await writeSingleArticle(html, slug, lang);
+      await writeSingleArticle(html, slug, lang, 'committee-reports');
     }
 
     return { success: true, files: languages.length, slug };
@@ -746,7 +885,7 @@ async function generatePropositions(): Promise<GenerationResult> {
         tags: metadata.tags
       });
 
-      await writeSingleArticle(html, slug, lang);
+      await writeSingleArticle(html, slug, lang, 'propositions');
     }
 
     return { success: true, files: languages.length, slug };
@@ -830,7 +969,7 @@ async function generateMotions(): Promise<GenerationResult> {
         tags: metadata.tags
       });
 
-      await writeSingleArticle(html, slug, lang);
+      await writeSingleArticle(html, slug, lang, 'motions');
     }
 
     return { success: true, files: languages.length, slug };
@@ -1012,7 +1151,16 @@ async function generateNews(): Promise<typeof stats> {
 if (import.meta.url === `file://${process.argv[1]}`) {
   generateNews()
     .then(result => {
-      process.exit(result.errors > 0 ? 1 : 0);
+      if (result.errors > 0) {
+        process.exit(1);
+      }
+      // Soft failure: all articles in this run scored below the quality threshold
+      if (qualityScores.length > 0 && qualityScores.every(s => s < qualityThreshold)) {
+        console.warn(`\n⚠️ Quality Warning: ALL ${qualityScores.length} article(s) scored below threshold (${qualityThreshold})`);
+        console.warn(`   Scores: ${qualityScores.join(', ')}`);
+        process.exit(2);
+      }
+      process.exit(0);
     })
     .catch((error: unknown) => {
       console.error('❌ Fatal error:', error);
