@@ -422,6 +422,23 @@ describe('Data Transformers', () => {
       expect(content).not.toContain('Unknown (Unknown)');
     });
 
+    it('should extract party from notis even when authorName is already set (party-only sentinel)', () => {
+      const content = generateArticleContent({
+        motions: [{
+          titel: 'Klimatpolitik',
+          url: '#',
+          dok_id: 'MOT999',
+          // author is present but party is missing/sentinel
+          intressent_namn: 'Ulrika Liljeberg',
+          parti: 'Unknown',
+          notis: 'Motion till riksdagen 2025/26:999 av Ulrika Liljeberg (C) om klimatpolitik.'
+        }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+      expect(content).toContain('Ulrika Liljeberg');
+      expect(content).toContain('(C)');
+      expect(content).not.toContain('Unknown');
+    });
+
     it('should extract author/party from summary when intressent_namn is empty', () => {
       const content = generateArticleContent({
         motions: [{

@@ -2027,14 +2027,17 @@ function renderMotionEntry(motion: RawDocument, lang: Language | string, grouped
   const unknownVal = L(lang, 'unknown');
   let authorName = motion.intressent_namn || motion.author || '';
   let partyName = motion.parti || '';
-  if (!authorName || authorName === 'Unknown') {
-    authorName = '';
+  const isSentinel = (v: string): boolean => !v || v === 'Unknown';
+  if (isSentinel(authorName) || isSentinel(partyName)) {
     const rawText = motion.undertitel || motion.summary || motion.notis || motion.fullText || '';
     const parsed = parseMotionAuthorParty(rawText);
-    if (parsed) { authorName = parsed.author; partyName = parsed.party; }
+    if (parsed) {
+      if (isSentinel(authorName) && parsed.author) authorName = parsed.author;
+      if (isSentinel(partyName) && parsed.party) partyName = parsed.party;
+    }
   }
   if (partyName === 'Unknown') partyName = '';
-  if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
+  if (!authorName || authorName === 'Unknown') authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
   const authorLine = partyName
     ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
     : escapeHtml(authorName);
@@ -2084,7 +2087,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   // Group motions by party for strategic analysis
   const byParty: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
-    const party = motion.parti || 'other';
+    const party = (!motion.parti || motion.parti === 'Unknown') ? 'other' : motion.parti;
     if (!byParty[party]) byParty[party] = [];
     byParty[party].push(motion);
   });
