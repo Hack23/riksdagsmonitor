@@ -1349,6 +1349,12 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
 // Private helper functions
 // ---------------------------------------------------------------------------
 
+/** Regex that matches the "med anledning av prop. YYYY/YY:NNN" pattern in motion titles */
+const PROP_REFERENCE_REGEX = /med anledning av prop\.\s+(\S+)/i;
+
+/** Regex to capture the full proposition reference text (including description) */
+const PROP_FULL_REF_REGEX = /med anledning av (prop\.\s*\S+(?:\s+.+)?)/i;
+
 /**
  * Check if date is today
  */
@@ -1986,7 +1992,7 @@ export function groupMotionsByProposition(motions: RawDocument[]): Map<string, R
   const groups = new Map<string, RawDocument[]>();
   for (const motion of motions) {
     const title = motion.titel || motion.title || '';
-    const match = title.match(/med anledning av prop\.\s+(\S+)/i);
+    const match = title.match(PROP_REFERENCE_REGEX);
     const key = match ? match[1] : '';
     const existing = groups.get(key);
     if (existing) {
@@ -2048,15 +2054,16 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   );
 
   for (const propKey of orderedKeys) {
-    const groupMotions = byProposition.get(propKey)!;
+    // Safe: orderedKeys is built from byProposition.keys(), so get() is always defined
+    const groupMotions = byProposition.get(propKey) ?? [];
     if (propKey === '') {
       if (byProposition.size > 1) {
         content += `\n    <h3>${escapeHtml(String(independentMotionsVal))}</h3>\n`;
       }
     } else {
       // Build heading from the full proposition reference in the first motion's title
-      const firstTitle = groupMotions[0]!.titel || groupMotions[0]!.title || '';
-      const propRefMatch = firstTitle.match(/med anledning av (prop\.\s*\S+(?:\s+.+)?)/i);
+      const firstTitle = groupMotions[0]?.titel || groupMotions[0]?.title || '';
+      const propRefMatch = firstTitle.match(PROP_FULL_REF_REGEX);
       const propRef = propRefMatch ? propRefMatch[1] : `Prop. ${propKey}`;
       const propHeadingHtml = `<span data-translate="true" lang="sv">${escapeHtml(propRef)}</span>`;
       content += `\n    <h3>${escapeHtml(String(responsesToPropVal))}: ${propHeadingHtml}</h3>\n`;
