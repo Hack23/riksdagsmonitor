@@ -712,13 +712,9 @@ const TRANSLATABLE_SV_SPAN_REGEX =
   /<span\s+((?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*)>([\s\S]*?)<\/span>/g;
 
 export function translateSwedishContent(html: string, targetLang: Language): string {
-  // Match both attribute orderings:
-  // <span data-translate="true" lang="sv">...</span>
-  // <span lang="sv" data-translate="true">...</span>
-  // Inner text may contain HTML entities but no nested tags (escapeHtml is applied upstream).
-  const spanRe = new RegExp(TRANSLATABLE_SV_SPAN_REGEX.source, TRANSLATABLE_SV_SPAN_REGEX.flags);
-
-  return html.replace(spanRe, (_match: string, attrs: string, inner: string): string => {
+  // String.prototype.replace resets lastIndex on a global regex before each call,
+  // so TRANSLATABLE_SV_SPAN_REGEX can be used directly without cloning.
+  return html.replace(TRANSLATABLE_SV_SPAN_REGEX, (_match: string, attrs: string, inner: string): string => {
     // Remove data-translate marker but preserve all other attributes (e.g. lang="sv" for accessibility)
     const cleanedAttrs = attrs.replace(/\s*data-translate=(?:"true"|'true')/, '').trim();
 
