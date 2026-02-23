@@ -167,6 +167,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { MCPClient } from './mcp-client.js';
+import { translatePhrase } from './translation-dictionary.js';
 import {
   transformCalendarToEventGrid,
   generateArticleContent,
@@ -436,6 +437,38 @@ function formatDateForSlug(date: Date = new Date()): string {
 }
 
 /**
+ * Process all `data-translate="true"` spans in an HTML string.
+ *
+ * - For Swedish ('sv'): removes the `data-translate` attribute but keeps the text.
+ * - For all other languages: translates the inner text via the static dictionary,
+ *   then removes the `data-translate` attribute so no marker remains in the output.
+ *
+ * The `lang="sv"` attribute is also removed from the span so the rendered element
+ * no longer falsely claims Swedish language for non-Swedish pages.
+ *
+ * @param html - Raw article HTML that may contain data-translate spans
+ * @param targetLang - ISO 639-1 code of the article's target language
+ * @returns HTML with all data-translate spans processed
+ */
+export function translateSwedishContent(html: string, targetLang: Language): string {
+  // Match <span> that has both data-translate="true" and lang="sv" in either attribute order.
+  // The inner text may contain HTML entities but no nested tags (escapeHtml is applied upstream).
+  return html.replace(
+    /<span\s+(?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*>([\s\S]*?)<\/span>/g,
+    (_match: string, innerText: string): string => {
+      const text = innerText.trim();
+      if (targetLang === 'sv') {
+        // Keep Swedish text as-is; just remove the translate marker attribute.
+        return `<span lang="sv">${innerText}</span>`;
+      }
+      const translated = translatePhrase(text, targetLang);
+      // Return a plain span without the data-translate marker or lang="sv".
+      return `<span>${translated}</span>`;
+    },
+  );
+}
+
+/**
  * Write article to file
  */
 async function writeArticle(html: string, filename: string): Promise<boolean> {
@@ -451,11 +484,28 @@ async function writeArticle(html: string, filename: string): Promise<boolean> {
 }
 
 /**
+ * Language-aware writeArticle wrapper for sub-generators.
+ *
+ * Sub-generators (monthly-review, weekly-review, month-ahead) receive this wrapper
+ * instead of `writeArticle` directly. It extracts the target language from the
+ * filename (e.g. "2026-02-22-monthly-review-de.html" → "de"), runs
+ * `translateSwedishContent` to process all data-translate spans, then writes.
+ */
+async function writeArticleWithTranslation(html: string, filename: string): Promise<boolean> {
+  // Filename pattern: <slug>-<lang>.html  (lang is the last hyphen-separated segment)
+  const langMatch = /\-([a-z]{2})\.html$/.exec(filename);
+  const lang: Language = langMatch ? (langMatch[1] as Language) : 'en';
+  const processedHtml: string = translateSwedishContent(html, lang);
+  return writeArticle(processedHtml, filename);
+}
+
+/**
  * Write article in specified language
  */
 async function writeSingleArticle(html: string, slug: string, lang: Language): Promise<string> {
   const filename: string = `${slug}-${lang}.html`;
-  await writeArticle(html, filename);
+  const processedHtml: string = translateSwedishContent(html, lang);
+  await writeArticle(processedHtml, filename);
   stats.generated += 1;
   stats.articles.push(filename);
   return filename;
@@ -921,7 +971,7 @@ async function generateNews(): Promise<typeof stats> {
               topic: topTitle.slice(0, 80),
               voteId: voteId || undefined,
             },
-            writeArticle,
+            writeArticle: writeArticleWithTranslation,
           });
         } catch (err: unknown) {
           console.error('❌ Error generating breaking news:', (err as Error).message);
@@ -929,13 +979,13 @@ async function generateNews(): Promise<typeof stats> {
         break;
       }
       case 'month-ahead':
-        await generateMonthAhead({ languages, writeArticle });
+        await generateMonthAhead({ languages, writeArticle: writeArticleWithTranslation });
         break;
       case 'weekly-review':
-        await generateWeeklyReview({ languages, writeArticle });
+        await generateWeeklyReview({ languages, writeArticle: writeArticleWithTranslation });
         break;
       case 'monthly-review':
-        await generateMonthlyReview({ languages, writeArticle });
+        await generateMonthlyReview({ languages, writeArticle: writeArticleWithTranslation });
         break;
       default:
         console.warn(`⚠️ Unknown article type: ${type}`);
