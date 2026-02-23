@@ -212,6 +212,40 @@ function sanitizeUrl(url: string | undefined | null): string {
   return trimmed.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/**
+ * Normalise a Riksdag document URL for use in article links.
+ * The MCP server appends ".html" to data.riksdagen.se/dokument/ URLs, but those
+ * URLs return empty HTML. Strip the ".html" suffix so the API returns actual
+ * document content (HTML for motions/betankanden, XML metadata for propositions).
+ * Falls back to constructing the URL from dok_id when url is absent.
+ */
+function normalizeDocUrl(doc: { url?: string; dok_id?: string }): string {
+  let url = doc.url ?? '';
+  if (!url && doc.dok_id) {
+    url = `https://data.riksdagen.se/dokument/${doc.dok_id}`;
+  }
+  // Strip .html suffix from data.riksdagen.se/dokument/ URLs — those endpoints
+  // return empty content with the .html suffix; without it they return document content.
+  url = url.replace(/(https?:\/\/data\.riksdagen\.se\/dokument\/[A-Za-z0-9]+)\.html\b/, '$1');
+  return sanitizeUrl(url);
+}
+
+// ---------------------------------------------------------------------------
+// Static English title overrides for well-known Swedish propositions.
+// Keys are dok_id values returned by get_propositioner. When the MCP data only
+// supplies a Swedish title (prop.titel) and no English translation (prop.title),
+// this map is checked first so that EN articles never show raw Swedish titles.
+// ---------------------------------------------------------------------------
+const PROP_TITLE_EN: Record<string, string> = {
+  HD03113: 'Riksrevisionen Report on State Efforts for Agricultural Climate Transition',
+  HD03124: 'A European Single Access Point for Financial and Sustainability Information',
+  HD03117: 'Removal of Notification Requirement Before Applying for Parental Benefits',
+  HD03112: 'A Register for All Tenant-Owner Apartments',
+  HD03118: 'Permit Assessment Under the EU Renewables Directive',
+  HD03119: 'Development of the Macroprudential Oversight Domain',
+  HD0396:  'Report on IMF Activities 2025',
+};
+
 // ---------------------------------------------------------------------------
 // Data interfaces shared with news-type modules
 // ---------------------------------------------------------------------------
@@ -1838,7 +1872,7 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
       <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>
       <p>${escapeHtml(String(reportSigVal))} ${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generatePolicySignificance(report, lang)}</p>
-      <p><a href="${sanitizeUrl(report.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><a href="${normalizeDocUrl(report)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
     });
@@ -1890,18 +1924,26 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   content += `\n    <h2>${L(lang, 'legislativePipeline')}</h2>\n`;
 
   propositions.forEach(prop => {
-    const titleText = prop.titel || prop.title || '';
+    // Prefer pre-translated English title (from static map or prop.title),
+    // falling back to Swedish prop.titel with a data-translate marker.
+    const dokId = prop.dok_id ?? '';
+    const enTitleOverride = PROP_TITLE_EN[dokId];
+    const rawTitle = prop.titel || prop.title || '';
+    const hasEnglish = !!prop.title || !!enTitleOverride;
+    const titleText = lang === 'sv'
+      ? rawTitle                              // always Swedish for SV
+      : (prop.title || enTitleOverride || rawTitle);  // English first for other langs
     const escapedTitle = escapeHtml(titleText);
-    const titleHtml = (prop.titel && !prop.title)
+    const titleHtml = (!hasEnglish && lang !== 'sv')
       ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
       : escapedTitle;
-    const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
+    const docName = escapeHtml(prop.dokumentnamn || dokId || rawTitle);
 
     // Use enhanced summary based on metadata
     const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
     const isFromAPI = prop.summary || prop.notis;
     const propDefaultVal = L(lang, 'propDefault');
-    const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== propDefaultVal)
+    const summaryHtml = (!hasEnglish && lang !== 'sv' && isFromAPI && summaryText !== propDefaultVal)
       ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
       : escapeHtml(summaryText);
 
@@ -1920,7 +1962,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
       <h3>${titleHtml}</h3>
       <p>${escapeHtml(String(propSigVal))} ${summaryHtml}${referredLine}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(prop, lang)}</p>
-      <p><a href="${sanitizeUrl(prop.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><a href="${normalizeDocUrl(prop)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
   });
@@ -2027,7 +2069,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
       <p>${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
-      <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+      <p><a href="${normalizeDocUrl(motion)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
   });
@@ -2293,8 +2335,8 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${titleHtml}</h4>\n`;
       content += `      <p>${analysis}</p>\n`;
-      if (doc.url) {
-        content += `      <p><a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;
+      if (doc.url || doc.dok_id) {
+        content += `      <p><a href="${normalizeDocUrl(doc)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;
       }
       content += `    </div>\n`;
     }
