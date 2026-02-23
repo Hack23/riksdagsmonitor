@@ -403,7 +403,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Other committees',
     otherDocuments: 'Other documents',
     policySignificanceTouches: (domains: string): string => `Touches on ${domains}. Committee review and potential chamber vote will determine the proposal's fate.`,
-    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.'
+    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.',
+    responsesToProp: 'In response to',
+    independentMotions: 'Independent Motions'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -473,7 +475,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Övriga utskott',
     otherDocuments: 'Övriga dokument',
     policySignificanceTouches: (domains: string): string => `Berör ${domains}. Utskottsbehandling och eventuell kammaromröstning avgör om förslaget får genomslag.`,
-    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.'
+    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.',
+    responsesToProp: 'Som svar på',
+    independentMotions: 'Fristående motioner'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -543,7 +547,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Andre udvalg',
     otherDocuments: 'Andre dokumenter',
     policySignificanceTouches: (domains: string): string => `Berører ${domains}. Udvalgsbehandling og afstemning afgør forslagets skæbne.`,
-    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.'
+    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.',
+    responsesToProp: 'Som svar på',
+    independentMotions: 'Uafhængige forslag'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -613,7 +619,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Andre komiteer',
     otherDocuments: 'Andre dokumenter',
     policySignificanceTouches: (domains: string): string => `Berører ${domains}. Komitébehandling og avstemning avgjør forslagets skjebne.`,
-    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.'
+    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.',
+    responsesToProp: 'Som svar på',
+    independentMotions: 'Uavhengige forslag'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -683,7 +691,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Muut valiokunnat',
     otherDocuments: 'Muut asiakirjat',
     policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}. Valiokuntakäsittely ja äänestys ratkaisevat ehdotuksen kohtalon.`,
-    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.'
+    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.',
+    responsesToProp: 'Vastauksena',
+    independentMotions: 'Itsenäiset aloitteet'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -753,7 +763,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Sonstige Ausschüsse',
     otherDocuments: 'Sonstige Dokumente',
     policySignificanceTouches: (domains: string): string => `Betrifft ${domains}. Ausschussberatung und Abstimmung bestimmen das Schicksal des Vorschlags.`,
-    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.'
+    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.',
+    responsesToProp: 'Als Antwort auf',
+    independentMotions: 'Unabhängige Anträge'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -823,7 +835,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Autres commissions',
     otherDocuments: 'Autres documents',
     policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}. L'examen en commission et le vote détermineront le sort de la proposition.`,
-    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.'
+    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.',
+    responsesToProp: 'En réponse à',
+    independentMotions: 'Motions indépendantes'
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -893,7 +907,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Otras comisiones',
     otherDocuments: 'Otros documentos',
     policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}. La revisión en comisión y la votación determinarán el destino de la propuesta.`,
-    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.'
+    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.',
+    responsesToProp: 'En respuesta a',
+    independentMotions: 'Mociones independientes'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -963,7 +979,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Overige commissies',
     otherDocuments: 'Overige documenten',
     policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}. Commissiebehandeling en stemming bepalen het lot van het voorstel.`,
-    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.'
+    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.',
+    responsesToProp: 'Als reactie op',
+    independentMotions: 'Onafhankelijke moties'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -1033,7 +1051,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'لجان أخرى',
     otherDocuments: 'وثائق أخرى',
     policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}. ستحدد المراجعة في اللجنة والتصويت مصير المقترح.`,
-    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.'
+    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.',
+    responsesToProp: 'رداً على',
+    independentMotions: 'اقتراحات مستقلة'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -1103,7 +1123,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'ועדות אחרות',
     otherDocuments: 'מסמכים אחרים',
     policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}. בחינה בוועדה והצבעה יקבעו את גורל ההצעה.`,
-    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.'
+    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.',
+    responsesToProp: 'בתגובה ל',
+    independentMotions: 'הצעות עצמאיות'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -1173,7 +1195,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'その他の委員会',
     otherDocuments: 'その他の文書',
     policySignificanceTouches: (domains: string): string => `${domains}に関連します。委員会審査と採決が提案の行方を決定します。`,
-    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。'
+    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。',
+    responsesToProp: '提案への対応',
+    independentMotions: '独立した動議'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -1243,7 +1267,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: '기타 위원회',
     otherDocuments: '기타 문서',
     policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다. 위원회 심사와 표결이 제안의 운명을 결정합니다.`,
-    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.'
+    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.',
+    responsesToProp: '에 대한 응답',
+    independentMotions: '독립 동의안'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -1313,7 +1339,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: '其他委员会',
     otherDocuments: '其他文件',
     policySignificanceTouches: (domains: string): string => `涉及${domains}领域。委员会审查和表决将决定提案的命运。`,
-    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。'
+    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。',
+    responsesToProp: '回应',
+    independentMotions: '独立动议'
   }
 };
 
@@ -1948,6 +1976,29 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
 }
 
 /**
+ * Group motions by their parent proposition reference.
+ * Motions responding to the same proposition (pattern: "med anledning av prop. YYYY/YY:NNN")
+ * are grouped together. Independent motions are stored under the empty-string key.
+ * @returns Map from proposition ID (e.g. "2025/26:118") to motions array.
+ *          Key '' contains independent motions not tied to any proposition.
+ */
+export function groupMotionsByProposition(motions: RawDocument[]): Map<string, RawDocument[]> {
+  const groups = new Map<string, RawDocument[]>();
+  for (const motion of motions) {
+    const title = motion.titel || motion.title || '';
+    const match = title.match(/med anledning av prop\.\s+(\S+)/i);
+    const key = match ? match[1] : '';
+    const existing = groups.get(key);
+    if (existing) {
+      existing.push(motion);
+    } else {
+      groups.set(key, [motion]);
+    }
+  }
+  return groups;
+}
+
+/**
  * Generate Motions content with analytical narrative
  */
 function generateMotionsContent(data: ArticleContentData, lang: Language | string): string {
@@ -1967,7 +2018,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     : `${motions.length} new opposition motions filed.`;
   content += `<p class="article-lede">${escapeHtml(String(breakdownText))}</p>\n`;
 
-  // Group motions by party for strategic analysis
+  // Group motions by party (for Coalition Dynamics section)
   const byParty: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
     const party = motion.parti || 'other';
@@ -1986,51 +2037,88 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     content += `    <p>${escapeHtml(String(strategyContext))}</p>\n`;
   }
 
-  motions.forEach(motion => {
-    const titleText = motion.titel || motion.title || '';
-    const escapedTitle = escapeHtml(titleText);
-    const titleHtml = (motion.titel && !motion.title)
-      ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
-      : escapedTitle;
-    const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
+  // Group motions by parent proposition and render without repetitive headings
+  const byProposition = groupMotionsByProposition(motions);
+  const responsesToPropVal = L(lang, 'responsesToProp');
+  const independentMotionsVal = L(lang, 'independentMotions');
 
-    // Use enriched author and party data, with fallback parsing from raw notis
-    const unknownVal = L(lang, 'unknown');
-    let authorName = motion.intressent_namn || motion.author || '';
-    let partyName = motion.parti || '';
-    if (!authorName) {
-      const rawText = motion.summary || motion.notis || motion.fullText || '';
-      const parsed = parseMotionAuthorParty(rawText);
-      if (parsed) { authorName = parsed.author; partyName = parsed.party; }
+  // Render proposition-grouped motions first, then independent motions
+  const orderedKeys = [...byProposition.keys()].sort((a, b) =>
+    a === '' ? 1 : b === '' ? -1 : a.localeCompare(b)
+  );
+
+  for (const propKey of orderedKeys) {
+    const groupMotions = byProposition.get(propKey)!;
+    if (propKey === '') {
+      if (byProposition.size > 1) {
+        content += `\n    <h3>${escapeHtml(String(independentMotionsVal))}</h3>\n`;
+      }
+    } else {
+      // Build heading from the full proposition reference in the first motion's title
+      const firstTitle = groupMotions[0]!.titel || groupMotions[0]!.title || '';
+      const propRefMatch = firstTitle.match(/med anledning av (prop\.\s*\S+(?:\s+.+)?)/i);
+      const propRef = propRefMatch ? propRefMatch[1] : `Prop. ${propKey}`;
+      const propHeadingHtml = `<span data-translate="true" lang="sv">${escapeHtml(propRef)}</span>`;
+      content += `\n    <h3>${escapeHtml(String(responsesToPropVal))}: ${propHeadingHtml}</h3>\n`;
     }
-    if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
-    const authorLine = partyName
-      ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
-      : escapeHtml(authorName);
 
-    // Use enhanced summary based on metadata (cleanMotionText strips Swedish boilerplate)
-    const summaryText = generateEnhancedSummary(motion, 'motion', lang);
-    const motionDefaultVal = L(lang, 'motionDefault');
-    // Only wrap in data-translate when the content comes from a Swedish source
-    const isSwedishContent = (motion.titel && !motion.title)
-      || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
-    const summaryHtml = (summaryText && summaryText !== motionDefaultVal && isSwedishContent)
-      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
-      : escapeHtml(summaryText || (typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));
+    groupMotions.forEach(motion => {
+      const titleText = motion.titel || motion.title || '';
+      const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
 
-    const readFullVal = L(lang, 'readFullMotion');
-    const whyItMattersVal = L(lang, 'whyItMatters');
+      // For grouped motions (inside a proposition group) use the document ID as the heading.
+      // For independent motions (propKey === '') use the motion title as before.
+      let entryHeadingHtml: string;
+      if (propKey !== '') {
+        const entryHeadingText = motion.dokumentnamn || motion.dok_id || titleText;
+        entryHeadingHtml = escapeHtml(entryHeadingText);
+      } else {
+        const escapedTitle = escapeHtml(titleText);
+        entryHeadingHtml = (motion.titel && !motion.title)
+          ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+          : escapedTitle;
+      }
 
-    content += `
+      // Use enriched author and party data, with fallback parsing from raw notis
+      const unknownVal = L(lang, 'unknown');
+      let authorName = motion.intressent_namn || motion.author || '';
+      let partyName = motion.parti || '';
+      if (!authorName) {
+        const rawText = motion.summary || motion.notis || motion.fullText || '';
+        const parsed = parseMotionAuthorParty(rawText);
+        if (parsed) { authorName = parsed.author; partyName = parsed.party; }
+      }
+      if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
+      const authorLine = partyName
+        ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
+        : escapeHtml(authorName);
+
+      // Use enhanced summary based on metadata (cleanMotionText strips Swedish boilerplate)
+      const summaryText = generateEnhancedSummary(motion, 'motion', lang);
+      const motionDefaultVal = L(lang, 'motionDefault');
+      // Only wrap in data-translate when the content comes from a Swedish source
+      const isSwedishContent = (motion.titel && !motion.title)
+        || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
+      const summaryHtml = (summaryText && summaryText !== motionDefaultVal && isSwedishContent)
+        ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+        : escapeHtml(summaryText || (typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));
+
+      const readFullVal = L(lang, 'readFullMotion');
+      const whyItMattersVal = L(lang, 'whyItMatters');
+
+      // Use h4 for individual motions inside a proposition group, h3 for standalone
+      const headingTag = propKey !== '' ? 'h4' : 'h3';
+      content += `
     <div class="motion-entry">
-      <h3>${titleHtml}</h3>
+      <${headingTag}>${entryHeadingHtml}</${headingTag}>
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
       <p>${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
       <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
-  });
+    });
+  }
 
   // Party activity breakdown
   if (partyCount > 0) {

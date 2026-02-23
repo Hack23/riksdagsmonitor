@@ -13,7 +13,8 @@ import {
   calculateReadTime,
   generateSources,
   CONTENT_LABELS,
-  L
+  L,
+  groupMotionsByProposition
 } from '../scripts/data-transformers.js';
 import type { Language } from '../scripts/types/language.js';
 import type { EventGridItem, WatchPoint, ArticleMetadata } from '../scripts/types/article.js';
@@ -1109,7 +1110,7 @@ describe('Data Transformers', () => {
       'politicalContext', 'policyImplications', 'keyTakeaways', 'thematicAnalysis',
       'legislativePipeline', 'oppositionStrategy', 'coalitionDynamics',
       'whatThisMeans', 'whyItMatters', 'committeeBreakdown', 'propsBreakdown',
-      'motionsBreakdown'
+      'motionsBreakdown', 'responsesToProp', 'independentMotions'
     ];
 
     allLangs.forEach(lang => {
@@ -1137,5 +1138,136 @@ describe('Data Transformers', () => {
       expect(typeof CONTENT_LABELS.en.policySignificanceGeneric).toBe('string');
       expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('committee review');
     });
+
+    it('should have string-valued responsesToProp for en', () => {
+      expect(typeof CONTENT_LABELS.en.responsesToProp).toBe('string');
+      expect(CONTENT_LABELS.en.responsesToProp).toBeTruthy();
+    });
+
+    it('should have string-valued independentMotions for en', () => {
+      expect(typeof CONTENT_LABELS.en.independentMotions).toBe('string');
+      expect(CONTENT_LABELS.en.independentMotions).toBe('Independent Motions');
+    });
   });
+
+  describe('groupMotionsByProposition', () => {
+    it('should group motions that reference the same proposition', () => {
+      const motions = [
+        { titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning', url: '#', dok_id: 'HD023912' },
+        { titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning', url: '#', dok_id: 'HD023908' },
+        { titel: 'med anledning av prop. 2025/26:108 Reformering', url: '#', dok_id: 'HD023909' }
+      ];
+      const groups = groupMotionsByProposition(motions as any);
+      expect(groups.get('2025/26:118')).toHaveLength(2);
+      expect(groups.get('2025/26:108')).toHaveLength(1);
+    });
+
+    it('should put motions without a proposition reference in the empty-string key', () => {
+      const motions = [
+        { titel: 'Skattefrågor', url: '#', dok_id: 'M1' },
+        { titel: 'Försvarspolitik', url: '#', dok_id: 'M2' }
+      ];
+      const groups = groupMotionsByProposition(motions as any);
+      expect(groups.has('')).toBe(true);
+      expect(groups.get('')).toHaveLength(2);
+      expect(groups.size).toBe(1);
+    });
+
+    it('should handle an empty motions array', () => {
+      const groups = groupMotionsByProposition([]);
+      expect(groups.size).toBe(0);
+    });
+
+    it('should use english title field if titel is absent', () => {
+      const motions = [
+        { title: 'med anledning av prop. 2025/26:99 Test', url: '#', dok_id: 'M1' }
+      ];
+      const groups = groupMotionsByProposition(motions as any);
+      expect(groups.has('2025/26:99')).toBe(true);
+    });
+
+    it('should preserve all motions across groups', () => {
+      const motions = [
+        { titel: 'med anledning av prop. 2025/26:118 A', url: '#', dok_id: 'A1' },
+        { titel: 'med anledning av prop. 2025/26:118 A', url: '#', dok_id: 'A2' },
+        { titel: 'med anledning av prop. 2025/26:108 B', url: '#', dok_id: 'B1' },
+        { titel: 'Fristående motion', url: '#', dok_id: 'C1' }
+      ];
+      const groups = groupMotionsByProposition(motions as any);
+      const totalMotions = [...groups.values()].reduce((sum, arr) => sum + arr.length, 0);
+      expect(totalMotions).toBe(motions.length);
+    });
+  });
+
+  describe('Grouped motions rendering', () => {
+    it('should render proposition group heading for motions sharing a prop reference', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning', url: 'https://example.com/m1', dok_id: 'HD023912', parti: 'S', intressent_namn: 'Author A' },
+          { titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning', url: 'https://example.com/m2', dok_id: 'HD023908', parti: 'M', intressent_namn: 'Author B' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('In response to');
+      expect(content).toContain('2025/26:118');
+      expect(content).toContain('HD023912');
+      expect(content).toContain('HD023908');
+      // Proposition title should appear only ONCE as the group heading
+      const propTitleMatches = (content.match(/Tillståndsprövning/g) || []).length;
+      expect(propTitleMatches).toBe(1);
+    });
+
+    it('should render independent motions section heading when groups are mixed', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning', url: '#', dok_id: 'M1', parti: 'S' },
+          { titel: 'Fristående skattefråga', url: '#', dok_id: 'M2', parti: 'V' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('In response to');
+      expect(content).toContain('Independent Motions');
+      expect(content).toContain('M1');
+      // Independent motion title shown in its own section
+      expect(content).toContain('Fristående skattefråga');
+    });
+
+    it('should NOT render independent motions heading when all motions are independent', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', url: '#', dok_id: 'M1', parti: 'S', intressent_namn: 'Author' },
+          { titel: 'Försvarspolitik', url: '#', dok_id: 'M2', parti: 'V', intressent_namn: 'Author 2' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).not.toContain('Independent Motions');
+      expect(content).not.toContain('In response to');
+      expect(content).toContain('Skattefrågor');
+      expect(content).toContain('Försvarspolitik');
+    });
+
+    it('should use h4 for motions inside a proposition group', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning', url: '#', dok_id: 'HD023912', parti: 'S', intressent_namn: 'Author' },
+          { titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning', url: '#', dok_id: 'HD023908', parti: 'M', intressent_namn: 'Author B' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('<h4>HD023912</h4>');
+      expect(content).toContain('<h4>HD023908</h4>');
+    });
+
+    it('should use h3 for independent motions (not inside a group)', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', url: '#', dok_id: 'M1', parti: 'S', intressent_namn: 'Author' }
+        ]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('<h3>');
+      expect(content).not.toContain('<h4>');
+    });
+  });
+
 });
