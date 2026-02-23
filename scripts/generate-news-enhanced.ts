@@ -187,6 +187,7 @@ import type {
   GenerationStats,
   GenerationResult,
   DateRange,
+  ArticleQualityScore,
 } from './types/article.js';
 
 // ---------------------------------------------------------------------------
@@ -244,6 +245,24 @@ const dryRunArg: boolean = args.includes('--dry-run');
 const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batch-size='));
 const skipExistingArg: boolean = args.includes('--skip-existing');
 const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
+const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
+const DEFAULT_QUALITY_THRESHOLD = 40;
+let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
+if (qualityThresholdArg) {
+  const rawValue: string = qualityThresholdArg.split('=')[1] ?? '';
+  const numericValue: number = rawValue === '' ? NaN : Number(rawValue);
+  if (Number.isFinite(numericValue)) {
+    parsedQualityThreshold = Math.min(100, Math.max(0, numericValue));
+  } else {
+    console.warn(`Invalid --quality-threshold value "${rawValue}", falling back to default ${DEFAULT_QUALITY_THRESHOLD}.`);
+  }
+}
+const QUALITY_THRESHOLD: number = parsedQualityThreshold;
+
+// --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
+// Set --require-mcp=false for local development/testing without a live MCP server.
+const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
+const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
 
 // ---------------------------------------------------------------------------
 // Valid article types
@@ -380,7 +399,12 @@ async function getSharedClient(): Promise<MCPClient> {
       console.log(`  📊 Last sync: ${status['last_sync'] as string}`);
     }
   } catch (error: unknown) {
-    console.warn(`⚠️ MCP warm-up failed: ${(error as Error).message}`);
+    const message = (error as Error).message;
+    if (requireMcp) {
+      sharedClient = null;
+      throw new Error(`MCP server unavailable: ${message}`, { cause: error });
+    }
+    console.warn(`⚠️ MCP warm-up failed: ${message}`);
     console.warn('  Continuing anyway — individual requests will retry with backoff');
   }
 
@@ -400,11 +424,12 @@ if (!fs.existsSync(METADATA_DIR)) {
 // Generation statistics
 // ---------------------------------------------------------------------------
 
-const stats: { generated: number; errors: number; articles: string[]; timestamp: string } = {
+const stats: GenerationStats = {
   generated: 0,
   errors: 0,
   articles: [],
-  timestamp: new Date().toISOString()
+  timestamp: new Date().toISOString(),
+  qualityScores: []
 };
 
 // ---------------------------------------------------------------------------
@@ -450,11 +475,105 @@ async function writeArticle(html: string, filename: string): Promise<boolean> {
   return true;
 }
 
+// ---------------------------------------------------------------------------
+// Article quality validation
+// ---------------------------------------------------------------------------
+
+/**
+ * Validate the quality of a generated article HTML.
+ *
+ * Scoring (0–100):
+ *  - wordScore      (0–50): proportional to word count up to 1 000 words
+ *  - sectionScore   (0–30): based on number of analytical <h2> sections (full at ≥ 3)
+ *  - translationScore (0–20): deducted for each data-translate="true" span in non-Swedish
+ *
+ * @param html        - raw HTML of the article
+ * @param lang        - language code of the article (e.g. "en")
+ * @param articleType - article type slug (e.g. "motions")
+ * @param filename    - filename for the quality record
+ * @returns           ArticleQualityScore with metrics and pass/fail result
+ */
+function validateArticleQuality(
+  html: string,
+  lang: string,
+  articleType: string,
+  filename: string
+): ArticleQualityScore {
+  // ----- word count (approximate: strip tags, count whitespace-delimited tokens) -----
+  const stripped: string = html.replace(/<[^>]+>/g, ' ');
+  const wordCount: number = stripped.split(/\s+/).filter(w => w.length > 0).length;
+  const wordScore: number = Math.min(50, Math.round((wordCount / 1000) * 50));
+
+  // ----- analytical sections (h2 headings) -----
+  const h2Matches: RegExpMatchArray | null = html.match(/<h2[\s>]/gi);
+  const analyticalSections: number = h2Matches ? h2Matches.length : 0;
+  const sectionScore: number = Math.min(30, Math.round((analyticalSections / 3) * 30));
+
+  // ----- translation completeness (non-Swedish only) -----
+  const untranslatedMatches: RegExpMatchArray | null = html.match(/data-translate="true"/g);
+  const untranslatedSpans: number = untranslatedMatches ? untranslatedMatches.length : 0;
+  const translationDeduction: number = lang === 'sv' ? 0 : Math.min(20, untranslatedSpans * 2);
+  const translationScore: number = 20 - translationDeduction;
+
+  const score: number = wordScore + sectionScore + translationScore;
+
+  // ----- unknown authors -----
+  const unknownMatches: RegExpMatchArray | null = html.match(/Unknown \(Unknown\)/g);
+  const unknownAuthors: number = unknownMatches ? unknownMatches.length : 0;
+
+  const passed: boolean = score >= QUALITY_THRESHOLD;
+
+  // ----- console report -----
+  const scoreLabel: string = passed ? '✅' : '⚠️';
+  const reportId: string = filename.replace(/\.html$/, '');
+  console.log(`\n📊 Article Quality Report: ${reportId}`);
+  console.log(`   Word count:           ${wordCount} (score: ${wordScore}/50)`);
+  console.log(`   Analytical sections:  ${analyticalSections} (score: ${sectionScore}/30)`);
+  console.log(`   Untranslated spans:   ${untranslatedSpans} (score: ${translationScore}/20)`);
+  console.log(`   Unknown authors:      ${unknownAuthors} ${unknownAuthors > 0 ? '⚠️' : '✅'}`);
+  console.log(`   Quality Score:        ${score}/100 — ${passed ? 'PASSED' : 'BELOW THRESHOLD'} ${scoreLabel}`);
+
+  if (!passed) {
+    console.warn(`   ⚠️  Score ${score} is below threshold ${QUALITY_THRESHOLD}. Article written but flagged.`);
+    if (wordCount < 300) {
+      console.warn('      → Article under 300 words — expand with analytical sections');
+    }
+    if (untranslatedSpans > 10 && lang !== 'sv') {
+      console.warn(`      → ${untranslatedSpans} untranslated data-translate spans — translate before committing`);
+    }
+    if (analyticalSections < 1) {
+      console.warn('      → No analytical h2 sections found — add thematic analysis');
+    }
+    if (unknownAuthors > 0) {
+      console.warn(`      → ${unknownAuthors} "Unknown (Unknown)" entries — fix author/party metadata`);
+    }
+  }
+
+  return {
+    filename,
+    lang,
+    articleType,
+    wordCount,
+    unknownAuthors,
+    untranslatedSpans,
+    analyticalSections,
+    score,
+    passed
+  };
+}
+
 /**
  * Write article in specified language
  */
-async function writeSingleArticle(html: string, slug: string, lang: Language): Promise<string> {
+async function writeSingleArticle(html: string, slug: string, lang: Language, articleType?: string): Promise<string> {
   const filename: string = `${slug}-${lang}.html`;
+  // Infer article type from slug (e.g. "2026-02-23-motions" → "motions",
+  // "2026-02-23-committee-reports" → "committee-reports"). Falls back to the
+  // full slug if the slug does not follow the YYYY-MM-DD-{type} pattern.
+  const slugParts: string[] = slug.split('-');
+  const inferredType: string = slugParts.length >= 4 ? slugParts.slice(3).join('-') : slug;
+  const qualityScore: ArticleQualityScore = validateArticleQuality(html, lang, articleType ?? inferredType, filename);
+  stats.qualityScores.push(qualityScore);
   await writeArticle(html, filename);
   stats.generated += 1;
   stats.articles.push(filename);
@@ -491,25 +610,22 @@ async function generateWeekAhead(): Promise<GenerationResult> {
     console.log(`  📊 Found ${events.length} events`);
 
     // 2. Fetch upcoming/recent documents
-    const rawDocs = await Promise.resolve()
-      .then(() => client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 }))
-      .catch(() => [] as unknown[]);
+    const rawDocs = await client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const documents: RawDocument[] = Array.isArray(rawDocs) ? rawDocs as RawDocument[] : [];
     console.log(`  📊 Found ${documents.length} upcoming documents`);
 
     // 3. Fetch parliamentary questions (fragor)
     console.log('  🔄 Fetching parliamentary questions...');
-    const rawQuestions = await Promise.resolve()
-      .then(() => client.fetchWrittenQuestions({ limit: 20 }))
-      .catch(() => [] as unknown[]);
+    const rawQuestions = await client.fetchWrittenQuestions({ limit: 20 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const questions: unknown[] = Array.isArray(rawQuestions) ? rawQuestions : [];
     console.log(`  📊 Found ${questions.length} written questions`);
 
     // 4. Fetch interpellations (interpellationer)
     console.log('  🔄 Fetching interpellations...');
-    const rawInterpellations = await Promise.resolve()
-      .then(() => client.fetchInterpellations({ limit: 15 }))
-      .catch(() => [] as unknown[]);
+    const rawInterpellations = await client.fetchInterpellations({ limit: 15 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const interpellations: unknown[] = Array.isArray(rawInterpellations) ? rawInterpellations : [];
     console.log(`  📊 Found ${interpellations.length} interpellations`);
 
@@ -575,7 +691,7 @@ async function generateWeekAhead(): Promise<GenerationResult> {
       });
 
       // Write article
-      await writeSingleArticle(html, slug, lang);
+      await writeSingleArticle(html, slug, lang, 'week-ahead');
       console.log(`  ✅ ${lang.toUpperCase()} version generated`);
     }
 
@@ -662,7 +778,7 @@ async function generateCommitteeReports(): Promise<GenerationResult> {
         tags: metadata.tags
       });
 
-      await writeSingleArticle(html, slug, lang);
+      await writeSingleArticle(html, slug, lang, 'committee-reports');
     }
 
     return { success: true, files: languages.length, slug };
@@ -746,7 +862,7 @@ async function generatePropositions(): Promise<GenerationResult> {
         tags: metadata.tags
       });
 
-      await writeSingleArticle(html, slug, lang);
+      await writeSingleArticle(html, slug, lang, 'propositions');
     }
 
     return { success: true, files: languages.length, slug };
@@ -830,7 +946,7 @@ async function generateMotions(): Promise<GenerationResult> {
         tags: metadata.tags
       });
 
-      await writeSingleArticle(html, slug, lang);
+      await writeSingleArticle(html, slug, lang, 'motions');
     }
 
     return { success: true, files: languages.length, slug };
@@ -994,6 +1110,17 @@ async function generateNews(): Promise<typeof stats> {
     stats.articles.forEach(article => console.log(`  - ${article}`));
   }
 
+  // Quality summary
+  if (stats.qualityScores.length > 0) {
+    const passed: number = stats.qualityScores.filter(q => q.passed).length;
+    const total: number = stats.qualityScores.length;
+    console.log(`\n📊 Quality summary: ${passed}/${total} articles passed (threshold: ${QUALITY_THRESHOLD})`);
+    const allBelowThreshold: boolean = total > 0 && passed === 0;
+    if (allBelowThreshold) {
+      console.warn(`⚠️  All ${total} articles scored below quality threshold ${QUALITY_THRESHOLD}`);
+    }
+  }
+
   if (remainingLangs.length > 0) {
     console.log(`\n📦 Batch progress: ${completedLangs.length}/${allRequestedLanguages.length} languages done`);
     console.log(`   Remaining: ${remainingLangs.join(', ')}`);
@@ -1012,7 +1139,16 @@ async function generateNews(): Promise<typeof stats> {
 if (import.meta.url === `file://${process.argv[1]}`) {
   generateNews()
     .then(result => {
-      process.exit(result.errors > 0 ? 1 : 0);
+      if (result.errors > 0) {
+        process.exit(1);
+      }
+      // Soft failure: exit 2 when ALL generated articles are below quality threshold
+      const qualityScores = result.qualityScores;
+      if (qualityScores.length > 0 && qualityScores.every(q => !q.passed)) {
+        console.warn(`⚠️  Exiting with code 2: all ${qualityScores.length} articles scored below quality threshold ${QUALITY_THRESHOLD}`);
+        process.exit(2);
+      }
+      process.exit(0);
     })
     .catch((error: unknown) => {
       console.error('❌ Fatal error:', error);
@@ -1032,9 +1168,12 @@ export {
   generateMotions,
   writeSingleArticle,
   writeArticlePair,
+  validateArticleQuality,
   VALID_ARTICLE_TYPES,
   ALL_LANGUAGES,
   LANGUAGE_PRESETS,
+  QUALITY_THRESHOLD,
   formatDateForSlug,
-  getWeekAheadDateRange
+  getWeekAheadDateRange,
+  requireMcp
 };

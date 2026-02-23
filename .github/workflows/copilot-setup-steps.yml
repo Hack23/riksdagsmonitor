@@ -15,7 +15,6 @@ env:
   GITHUB_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
   GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
   COPILOT_GITHUB_TOKEN : ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
-  DISPLAY: ":99"
 
 jobs:
   # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
@@ -53,14 +52,13 @@ jobs:
             ${{ runner.os }}-apt-
 
       # Setup complete Web test environment
-      - name: Setup Web Test Environment (Chrome + Xvfb + Dependencies)
+      - name: Setup Test Environment
         run: |
           echo "🔧 Setting up complete Web test environment..."
 
           # Install system dependencies for Web rendering
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            xvfb dbus-x11 x11-utils \
             libgtk2.0-0 libgtk-3-0 libgbm-dev libgbm1 \
             libnotify-dev libnss3 libxss1 \
             libxtst6 xauth \
@@ -72,34 +70,12 @@ jobs:
             libx11-xcb1 libxcomposite1 libxdamage1 \
             libxfixes3 libxrandr2 libxrender1 \
             libxshmfence1 xdg-utils wget libxkbcommon0 xkb-data
-
-          # Install Google Chrome Stable for Web WebGL support
-          wget -qO- https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
-          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
-          # Setup D-Bus for Chrome
-          sudo mkdir -p /var/run/dbus
-          sudo dbus-daemon --system --fork || true
                     
-          # Verify Chrome installation
-          google-chrome --version
           echo "✅ Web test environment setup complete"
         env:
-          DISPLAY: ":99"
           XKB_DEFAULT_RULES: evdev
           XKB_DEFAULT_MODEL: pc105
           XKB_DEFAULT_LAYOUT: us
-
-      # Start Xvfb early for Playwright/Chrome
-      - name: Start Xvfb
-        run: |
-          echo "🖥️ Starting Xvfb virtual display..."
-          Xvfb :99 -screen 0 1920x1080x24 &
-          sleep 2
-          echo "DISPLAY=:99" >> $GITHUB_ENV
-          echo "✅ Xvfb started on display :99"
 
       # JavaScript/TypeScript setup
       - name: Setup Node.js
@@ -114,6 +90,9 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
 
       # Pre-install MCP server packages globally
       - name: Install MCP server packages globally
@@ -171,9 +150,3 @@ jobs:
           echo "📍 GitHub MCP Server: Using HTTP endpoint (https://api.githubcopilot.com/mcp/insiders)"
           echo "📍 Riksdag-Regering MCP Server: Using HTTP endpoint (https://riksdag-regering-ai.onrender.com/mcp)"
           echo "✅ MCP server verification complete"
-
-      - name: Install Playwright browsers (and OS deps)
-        run: npx playwright install --with-deps
-        env:
-          DISPLAY: ":99"
-          PLAYWRIGHT_BROWSERS_PATH: "0"

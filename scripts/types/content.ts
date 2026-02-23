@@ -104,4 +104,5 @@ export interface ContentLabelSet {
   policySignificanceGeneric: string;
   responsesToProp: string;
   independentMotions: string;
+  generalMatters: string;
 }
