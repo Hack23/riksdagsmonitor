@@ -246,9 +246,6 @@ const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batc
 const skipExistingArg: boolean = args.includes('--skip-existing');
 const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
 const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
-const qualityThreshold: number = qualityThresholdArg ? parseInt(qualityThresholdArg.split('=')[1] ?? '40', 10) : 40;
-
-const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
 if (qualityThresholdArg) {
@@ -435,124 +432,6 @@ const stats: GenerationStats = {
   qualityScores: []
 };
 
-// Track quality scores for all articles generated in this run
-const qualityScores: number[] = [];
-
-// ---------------------------------------------------------------------------
-// Article quality validation
-// ---------------------------------------------------------------------------
-
-/** Quality metrics and score for a single generated article. */
-export interface ArticleQualityReport {
-  readonly articleId: string;
-  readonly wordCount: number;
-  readonly unknownAuthorCount: number;
-  readonly totalEntryCount: number;
-  readonly untranslatedSpanCount: number;
-  readonly analyticalSectionCount: number;
-  readonly score: number;
-  readonly passed: boolean;
-  readonly issues: string[];
-}
-
-/**
- * Validate the quality of a generated HTML article.
- *
- * Scoring (100 pts total):
- * - Word count        25 pts (>= 500 full, >= 300 partial, < 300 = REJECT)
- * - Unknown authors   25 pts (0% full, <= 50% partial, > 50% = 0)
- * - Untranslated spans 25 pts (sv always full; non-sv: 0 spans full, <= 10 partial, > 10 = 0)
- * - Analytical sections 25 pts (>= 3 full, >= 1 partial, 0 = 0)
- *
- * @param html - Full HTML content of the article
- * @param lang - Language code (e.g. 'en', 'sv')
- * @param articleType - Article type label for reporting (e.g. 'motions')
- * @returns Quality report with score and per-metric details
- */
-export function validateArticleQuality(html: string, lang: string, articleType: string): ArticleQualityReport {
-  const articleId = `${articleType}-${lang}`;
-
-  // Word count: strip tags and count whitespace-separated tokens
-  const textContent = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-  const wordCount = textContent.length === 0 ? 0 : textContent.split(' ').filter(w => w.length > 0).length;
-
-  // Count "Unknown (Unknown)" sentinel entries (used when author/party is missing)
-  const unknownAuthorCount = (html.match(/Unknown \(Unknown\)/g) ?? []).length;
-
-  // Use list items as a proxy for total document entries
-  const listItemCount = (html.match(/<li[^>]*>/g) ?? []).length;
-  const totalEntryCount = Math.max(listItemCount, unknownAuthorCount);
-
-  // Count untranslated spans — only relevant for non-Swedish content
-  const untranslatedSpanCount = lang !== 'sv'
-    ? (html.match(/data-translate="true"/g) ?? []).length
-    : 0;
-
-  // Count analytical h2 sections (structural quality indicator)
-  const analyticalSectionCount = (html.match(/<h2[^>]*>/g) ?? []).length;
-
-  const issues: string[] = [];
-
-  // Word count score: 25 pts
-  let wordScore = 0;
-  if (wordCount >= 500) {
-    wordScore = 25;
-  } else if (wordCount >= 300) {
-    wordScore = 15;
-  } else {
-    issues.push(`Word count: ${wordCount} < 300 — REJECT`);
-  }
-
-  // Unknown authors score: 25 pts
-  let unknownScore = 0;
-  const unknownRatio = totalEntryCount > 0 ? unknownAuthorCount / totalEntryCount : 0;
-  if (unknownRatio === 0) {
-    unknownScore = 25;
-  } else if (unknownRatio <= 0.5) {
-    unknownScore = Math.round(25 * (1 - unknownRatio));
-    issues.push(`Unknown authors: ${unknownAuthorCount}/${totalEntryCount} ⚠️`);
-  } else {
-    issues.push(`Unknown authors: ${unknownAuthorCount}/${totalEntryCount} ⚠️`);
-  }
-
-  // Untranslated spans score: 25 pts
-  let untranslatedScore = 0;
-  if (lang === 'sv' || untranslatedSpanCount === 0) {
-    untranslatedScore = 25;
-  } else if (untranslatedSpanCount <= 10) {
-    untranslatedScore = Math.round(25 * (1 - untranslatedSpanCount / 10));
-    issues.push(`Untranslated spans: ${untranslatedSpanCount} ⚠️`);
-  } else {
-    issues.push(`Untranslated spans: ${untranslatedSpanCount} > 10 ⚠️`);
-  }
-
-  // Analytical sections score: 25 pts
-  let analyticalScore = 0;
-  if (analyticalSectionCount >= 3) {
-    analyticalScore = 25;
-  } else if (analyticalSectionCount >= 1) {
-    analyticalScore = Math.round(25 * analyticalSectionCount / 3);
-    issues.push(`Analytical sections: ${analyticalSectionCount}/3 ⚠️`);
-  } else {
-    issues.push(`Analytical sections: 0/3 ⚠️`);
-  }
-
-  const score = wordScore + unknownScore + untranslatedScore + analyticalScore;
-  const passed = score >= qualityThreshold;
-
-  return {
-    articleId,
-    wordCount,
-    unknownAuthorCount,
-    totalEntryCount,
-    untranslatedSpanCount,
-    analyticalSectionCount,
-    score,
-    passed,
-    issues
-  };
-}
-
 // ---------------------------------------------------------------------------
 // Helper functions
 // ---------------------------------------------------------------------------
@@ -686,32 +565,13 @@ function validateArticleQuality(
  * Write article in specified language
  */
 async function writeSingleArticle(html: string, slug: string, lang: Language, articleType?: string): Promise<string> {
-  // Validate article quality before writing
-  const report = validateArticleQuality(html, lang, articleType ?? slug);
-  const unknownRatioStr = report.totalEntryCount > 0
-    ? `${report.unknownAuthorCount}/${report.totalEntryCount}`
-    : `${report.unknownAuthorCount}/0`;
-  const unknownIcon = report.unknownAuthorCount > 0 ? '⚠️' : '✅';
-  const untranslatedIcon = report.untranslatedSpanCount > 0 ? '⚠️' : '✅';
-  const analyticalIcon = report.analyticalSectionCount >= 3 ? '✅' : '⚠️';
-  console.log(`\n  📊 Article Quality Report: ${report.articleId}`);
-  console.log(`     - Word count: ${report.wordCount} ${report.wordCount >= 300 ? '✅' : '❌'}`);
-  console.log(`     - Unknown authors: ${unknownRatioStr} ${unknownIcon}`);
-  console.log(`     - Untranslated spans: ${report.untranslatedSpanCount} ${untranslatedIcon}`);
-  console.log(`     - Analytical sections: ${report.analyticalSectionCount}/3 ${analyticalIcon}`);
-  console.log(`     - Quality Score: ${report.score}/100 — ${report.passed ? 'ABOVE THRESHOLD' : 'BELOW THRESHOLD'}`);
-  if (report.issues.length > 0) {
-    report.issues.forEach(issue => console.warn(`     ⚠️  ${issue}`));
-  }
-  qualityScores.push(report.score);
-
   const filename: string = `${slug}-${lang}.html`;
   // Infer article type from slug (e.g. "2026-02-23-motions" → "motions",
   // "2026-02-23-committee-reports" → "committee-reports"). Falls back to the
   // full slug if the slug does not follow the YYYY-MM-DD-{type} pattern.
   const slugParts: string[] = slug.split('-');
-  const articleType: string = slugParts.length >= 4 ? slugParts.slice(3).join('-') : slug;
-  const qualityScore: ArticleQualityScore = validateArticleQuality(html, lang, articleType, filename);
+  const inferredType: string = slugParts.length >= 4 ? slugParts.slice(3).join('-') : slug;
+  const qualityScore: ArticleQualityScore = validateArticleQuality(html, lang, articleType ?? inferredType, filename);
   stats.qualityScores.push(qualityScore);
   await writeArticle(html, filename);
   stats.generated += 1;
@@ -1285,10 +1145,6 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const qualityScores = result.qualityScores;
       if (qualityScores.length > 0 && qualityScores.every(q => !q.passed)) {
         console.warn(`⚠️  Exiting with code 2: all ${qualityScores.length} articles scored below quality threshold ${QUALITY_THRESHOLD}`);
-      // Soft failure: all articles in this run scored below the quality threshold
-      if (qualityScores.length > 0 && qualityScores.every(s => s < qualityThreshold)) {
-        console.warn(`\n⚠️ Quality Warning: ALL ${qualityScores.length} article(s) scored below threshold (${qualityThreshold})`);
-        console.warn(`   Scores: ${qualityScores.join(', ')}`);
         process.exit(2);
       }
       process.exit(0);

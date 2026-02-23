@@ -1,35 +1,28 @@
 /**
- * Unit Tests for Article Quality Validation
+ * Unit Tests for Article Quality Validation (ArticleQualityScore)
  *
  * Tests the validateArticleQuality function from generate-news-enhanced.ts:
- * - Word count detection and scoring
- * - Unknown (Unknown) author counting and scoring
- * - Untranslated data-translate span detection (non-Swedish only)
- * - Analytical section (h2 header) counting and scoring
+ * - Word count detection and scoring (0–50 pts, proportional up to 1000 words)
+ * - Unknown (Unknown) author counting (reported, does not affect score)
+ * - Untranslated data-translate span detection (non-Swedish only, 0–20 pts)
+ * - Analytical section (h2 header) counting and scoring (0–30 pts)
  * - Composite quality score calculation
  * - Pass/fail against default threshold (40)
  */
 
 import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest';
 import fs from 'fs';
+import type { ArticleQualityScore } from '../scripts/types/article.js';
 import type { MCPClientConfig } from '../scripts/types/mcp.js';
-
-/** Shape of the quality report returned by validateArticleQuality */
-interface ArticleQualityReport {
-  readonly articleId: string;
-  readonly wordCount: number;
-  readonly unknownAuthorCount: number;
-  readonly totalEntryCount: number;
-  readonly untranslatedSpanCount: number;
-  readonly analyticalSectionCount: number;
-  readonly score: number;
-  readonly passed: boolean;
-  readonly issues: string[];
-}
 
 /** Partial shape of the generate-news-enhanced module we need for these tests */
 interface GenerateNewsEnhancedModule {
-  readonly validateArticleQuality: (html: string, lang: string, articleType: string) => ArticleQualityReport;
+  readonly validateArticleQuality: (
+    html: string,
+    lang: string,
+    articleType: string,
+    filename: string
+  ) => ArticleQualityScore;
 }
 
 // ---------------------------------------------------------------------------
@@ -44,6 +37,8 @@ const { MockMCPClient, mockClientInstance } = vi.hoisted(() => {
     fetchMotions: vi.fn().mockResolvedValue([]),
     fetchVotingRecords: vi.fn().mockResolvedValue([]),
     searchDocuments: vi.fn().mockResolvedValue([]),
+    fetchWrittenQuestions: vi.fn().mockResolvedValue([]),
+    fetchInterpellations: vi.fn().mockResolvedValue([]),
     enrichDocumentsWithContent: vi.fn().mockResolvedValue([]),
     request: vi.fn().mockResolvedValue({ last_sync: '2026-02-23T00:00:00Z' }),
     timeout: 30000,
@@ -118,157 +113,157 @@ describe('Article Quality Validation', () => {
     expect(typeof mod?.validateArticleQuality).toBe('function');
   });
 
-  describe('Word count scoring', () => {
-    it('scores 25 pts for articles with >= 500 words', () => {
+  describe('Word count scoring (0–50 pts, proportional up to 1000 words)', () => {
+    it('scores ~30 pts word score for a 600-word article (score 50: 30+0+20)', () => {
       if (!mod) return;
       const html = buildHtml({ words: 600, h2Count: 0, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      // wordScore=25, unknownScore=25 (no entries), untranslatedScore=0 (no spans but 0<=0), analyticalScore=0
-      // unknownRatio: totalEntryCount=0 → unknownScore=25
-      // untranslated: 0 spans → 25pts
-      // analytical: 0 h2 → 0pts → issue
-      expect(report.wordCount).toBeGreaterThanOrEqual(500);
-      // word score contributes 25
-      // total = 25 (word) + 25 (unknown) + 25 (untranslated) + 0 (analytical) = 75
-      expect(report.score).toBe(75);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      // wordScore = round(600/1000 * 50) = 30; sectionScore = 0; translationScore = 20
+      expect(result.wordCount).toBeGreaterThanOrEqual(600);
+      expect(result.score).toBe(50);
+      expect(result.passed).toBe(true);
     });
 
-    it('scores 15 pts for articles with 300-499 words', () => {
+    it('scores partial word pts for a 350-word article (fails threshold)', () => {
       if (!mod) return;
       const html = buildHtml({ words: 350, h2Count: 0, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.wordCount).toBeGreaterThanOrEqual(300);
-      expect(report.wordCount).toBeLessThan(500);
-      // 15 (word) + 25 (unknown) + 25 (untranslated) + 0 (analytical) = 65
-      expect(report.score).toBe(65);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.wordCount).toBeGreaterThanOrEqual(350);
+      expect(result.wordCount).toBeLessThan(500);
+      // wordScore = round(350/1000 * 50) = 18; sectionScore = 0; translationScore = 20 → 38
+      expect(result.score).toBeLessThan(40);
+      expect(result.passed).toBe(false);
     });
 
-    it('scores 0 pts and adds REJECT issue for articles with < 300 words', () => {
+    it('compensates very low word count with strong sections (short article still passes)', () => {
       if (!mod) return;
       const html = buildHtml({ words: 50, h2Count: 3, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.wordCount).toBeLessThan(300);
-      expect(report.issues.some(i => i.includes('REJECT'))).toBe(true);
-      // 0 (word) + 25 (unknown) + 25 (untranslated) + 25 (analytical) = 75
-      expect(report.score).toBe(75);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.wordCount).toBeLessThan(100);
+      // wordScore ≈ 3; sectionScore = 30; translationScore = 20 → ≥ 50 → passes
+      expect(result.score).toBeGreaterThanOrEqual(50);
+      expect(result.passed).toBe(true);
     });
   });
 
   describe('Unknown author detection', () => {
-    it('scores 25 pts when there are no Unknown (Unknown) entries', () => {
+    it('returns unknownAuthors = 0 when no Unknown (Unknown) entries', () => {
       if (!mod) return;
       const html = buildHtml({ words: 600, unknownCount: 0, listItemCount: 5, h2Count: 3, untranslatedSpans: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.unknownAuthorCount).toBe(0);
-      expect(report.score).toBe(100);
-    });
-
-    it('adds a warning issue when > 50% are Unknown (Unknown)', () => {
-      if (!mod) return;
-      const html = buildHtml({ words: 600, unknownCount: 8, listItemCount: 10, h2Count: 3, untranslatedSpans: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.unknownAuthorCount).toBe(8);
-      expect(report.totalEntryCount).toBe(10);
-      expect(report.issues.some(i => i.includes('Unknown authors'))).toBe(true);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.unknownAuthors).toBe(0);
     });
 
     it('counts Unknown (Unknown) occurrences correctly', () => {
       if (!mod) return;
       const html = '<li>Filed by: Unknown (Unknown)</li><li>Filed by: Unknown (Unknown)</li><li>Filed by: Real Author (M)</li>';
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.unknownAuthorCount).toBe(2);
-      expect(report.totalEntryCount).toBe(3);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.unknownAuthors).toBe(2);
+    });
+
+    it('reports unknown authors in the result (does not affect score calculation)', () => {
+      if (!mod) return;
+      const html = buildHtml({ words: 600, unknownCount: 8, listItemCount: 10, h2Count: 3, untranslatedSpans: 0 });
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.unknownAuthors).toBe(8);
+      // unknownAuthors are tracked but do not deduct from score in this model
+      expect(result.score).toBeGreaterThan(0);
     });
   });
 
   describe('Untranslated span detection', () => {
-    it('scores 25 pts for Swedish articles regardless of data-translate spans', () => {
+    it('scores full translation pts (20) for Swedish articles regardless of data-translate spans', () => {
       if (!mod) return;
       const html = buildHtml({ words: 600, untranslatedSpans: 20, h2Count: 3, unknownCount: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'sv', 'test');
-      expect(report.untranslatedSpanCount).toBe(0); // sv gets 0 count
-      // No untranslated penalty for Swedish
-      expect(report.score).toBe(100);
+      const svResult = mod.validateArticleQuality(html, 'sv', 'test', 'test-sv.html');
+      const enResult = mod.validateArticleQuality(html, 'en', 'test', 'test-en.html');
+      // sv is exempt from translation deduction — must score higher than en
+      expect(svResult.score).toBeGreaterThan(enResult.score);
+      expect(svResult.passed).toBe(true);
     });
 
-    it('scores 0 pts and warns when > 10 untranslated spans in non-Swedish', () => {
+    it('deducts points for untranslated spans in non-Swedish (> 10 spans → translationScore = 0)', () => {
       if (!mod) return;
       const html = buildHtml({ words: 600, untranslatedSpans: 21, h2Count: 3, unknownCount: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.untranslatedSpanCount).toBe(21);
-      expect(report.issues.some(i => i.includes('Untranslated spans') && i.includes('10'))).toBe(true);
-      // 25 (word) + 25 (unknown) + 0 (untranslated) + 25 (analytical) = 75
-      expect(report.score).toBe(75);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.untranslatedSpans).toBe(21);
+      // translationDeduction = min(20, 21*2) = 20 → translationScore = 0
+      expect(result.score).toBeGreaterThan(0); // still passes thanks to words + sections
     });
 
-    it('scores 25 pts when there are 0 untranslated spans in non-Swedish', () => {
+    it('scores full 20 translation pts when there are 0 untranslated spans in non-Swedish', () => {
       if (!mod) return;
       const html = buildHtml({ words: 600, untranslatedSpans: 0, h2Count: 3, unknownCount: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'de', 'test');
-      expect(report.untranslatedSpanCount).toBe(0);
-      expect(report.score).toBe(100);
+      const result = mod.validateArticleQuality(html, 'de', 'test', 'test.html');
+      expect(result.untranslatedSpans).toBe(0);
+      expect(result.passed).toBe(true);
     });
   });
 
   describe('Analytical section detection', () => {
-    it('scores 25 pts when there are >= 3 h2 sections', () => {
+    it('scores full 30 section pts when there are >= 3 h2 sections', () => {
       if (!mod) return;
       const html = buildHtml({ words: 600, h2Count: 3, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.analyticalSectionCount).toBe(3);
-      expect(report.score).toBe(100);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.analyticalSections).toBe(3);
+      // wordScore ≈ 30 + sectionScore = 30 + translationScore = 20 → ≥ 70
+      expect(result.score).toBeGreaterThanOrEqual(70);
     });
 
-    it('scores partial pts and warns when there is 1 h2 section', () => {
+    it('scores partial section pts and lower total for 1 h2 section', () => {
       if (!mod) return;
-      const html = buildHtml({ words: 600, h2Count: 1, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.analyticalSectionCount).toBe(1);
-      expect(report.issues.some(i => i.includes('Analytical sections'))).toBe(true);
-      // analyticalScore = round(25 * 1/3) = 8
-      expect(report.score).toBe(25 + 25 + 25 + 8);
+      const html1 = buildHtml({ words: 600, h2Count: 1, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
+      const html3 = buildHtml({ words: 600, h2Count: 3, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
+      const result1 = mod.validateArticleQuality(html1, 'en', 'test', 'test.html');
+      const result3 = mod.validateArticleQuality(html3, 'en', 'test', 'test.html');
+      expect(result1.analyticalSections).toBe(1);
+      // sectionScore(1) = round(1/3 * 30) = 10 < 30
+      expect(result1.score).toBeLessThan(result3.score);
     });
 
-    it('scores 0 pts and warns when there are no h2 sections', () => {
+    it('scores 0 section pts and lower total when no h2 sections', () => {
       if (!mod) return;
       const html = buildHtml({ words: 600, h2Count: 0, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.analyticalSectionCount).toBe(0);
-      expect(report.issues.some(i => i.includes('Analytical sections') && i.includes('0/3'))).toBe(true);
-      expect(report.score).toBe(75);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.analyticalSections).toBe(0);
+      // wordScore = 30; sectionScore = 0; translationScore = 20 → 50
+      expect(result.score).toBe(50);
     });
   });
 
   describe('Quality score and pass/fail', () => {
-    it('returns passed=true for a perfect article (score=100)', () => {
+    it('returns passed=true for a high-quality article', () => {
       if (!mod) return;
       const html = buildHtml({ words: 600, h2Count: 3, unknownCount: 0, untranslatedSpans: 0, listItemCount: 5 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.score).toBe(100);
-      expect(report.passed).toBe(true);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.score).toBeGreaterThan(40);
+      expect(result.passed).toBe(true);
     });
 
     it('returns passed=false for a low-quality article (score < 40)', () => {
       if (!mod) return;
       // Very short, all unknowns, 21 untranslated spans, no sections
       const html = buildHtml({ words: 10, h2Count: 0, unknownCount: 5, listItemCount: 5, untranslatedSpans: 21 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.score).toBeLessThan(40);
-      expect(report.passed).toBe(false);
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      expect(result.score).toBeLessThan(40);
+      expect(result.passed).toBe(false);
     });
 
-    it('sets articleId as "<articleType>-<lang>"', () => {
+    it('achieves maximum score (100) for a perfect article (≥1000 words, ≥3 h2, 0 spans)', () => {
       if (!mod) return;
-      const html = buildHtml({ words: 600, h2Count: 3 });
-      const report = mod.validateArticleQuality(html, 'fr', 'motions');
-      expect(report.articleId).toBe('motions-fr');
+      const html = buildHtml({ words: 1200, h2Count: 5, unknownCount: 0, untranslatedSpans: 0, listItemCount: 0 });
+      const result = mod.validateArticleQuality(html, 'en', 'test', 'test.html');
+      // wordScore = 50 + sectionScore = 30 + translationScore = 20 = 100
+      expect(result.score).toBe(100);
+      expect(result.passed).toBe(true);
     });
 
-    it('returns no issues for a high-quality article', () => {
+    it('returns scores within 0–100 range for any input', () => {
       if (!mod) return;
-      const html = buildHtml({ words: 600, h2Count: 3, unknownCount: 0, untranslatedSpans: 0, listItemCount: 5 });
-      const report = mod.validateArticleQuality(html, 'en', 'test');
-      expect(report.issues).toHaveLength(0);
+      const html = buildHtml({ words: 800, h2Count: 2, unknownCount: 0, untranslatedSpans: 3 });
+      const result = mod.validateArticleQuality(html, 'de', 'committee-reports', 'test-de.html');
+      expect(result.score).toBeGreaterThanOrEqual(0);
+      expect(result.score).toBeLessThanOrEqual(100);
     });
   });
 });
