@@ -245,6 +245,11 @@ const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batc
 const skipExistingArg: boolean = args.includes('--skip-existing');
 const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
 
+// --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
+// Set --require-mcp=false for local development/testing without a live MCP server.
+const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
+const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
+
 // ---------------------------------------------------------------------------
 // Valid article types
 // ---------------------------------------------------------------------------
@@ -380,7 +385,12 @@ async function getSharedClient(): Promise<MCPClient> {
       console.log(`  📊 Last sync: ${status['last_sync'] as string}`);
     }
   } catch (error: unknown) {
-    console.warn(`⚠️ MCP warm-up failed: ${(error as Error).message}`);
+    const message = (error as Error).message;
+    if (requireMcp) {
+      sharedClient = null;
+      throw new Error(`MCP server unavailable: ${message}`);
+    }
+    console.warn(`⚠️ MCP warm-up failed: ${message}`);
     console.warn('  Continuing anyway — individual requests will retry with backoff');
   }
 
@@ -1036,5 +1046,6 @@ export {
   ALL_LANGUAGES,
   LANGUAGE_PRESETS,
   formatDateForSlug,
-  getWeekAheadDateRange
+  getWeekAheadDateRange,
+  requireMcp
 };
