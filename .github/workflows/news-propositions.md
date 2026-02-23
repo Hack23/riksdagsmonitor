@@ -195,6 +195,49 @@ Every generated article must include:
 
 If the generated article lacks these analytical sections, manually add contextual analysis before committing.
 
+## MANDATORY Quality Validation
+
+After article generation, verify EACH article meets these minimum standards before committing.
+
+### Required Sections (at least 3 of 5):
+1. **Analytical Lede** (paragraph, not just document count)
+2. **Thematic Analysis** (documents grouped by policy theme)
+3. **Strategic Context** (why these documents matter politically)
+4. **Stakeholder Impact** (who benefits, who loses)
+5. **What Happens Next** (expected timeline and outcomes)
+
+### Disqualifying Patterns:
+- ❌ `"Filed by: Unknown (Unknown)"` — FIX author/party metadata before committing
+- ❌ `data-translate="true"` spans in non-Swedish articles — TRANSLATE before committing
+- ❌ Identical "Why It Matters" text for all entries — DIFFERENTIATE analysis per proposition
+- ❌ Flat list of propositions without grouping — GROUP by policy theme or ministry
+- ❌ Article under 500 words — EXPAND with analytical sections
+
+### Bash Validation Commands:
+```bash
+# Check for unknown authors (should return 0)
+grep -l "Filed by: Unknown" news/*-government-propositions-*.html 2>/dev/null | wc -l || true
+
+# Check for untranslated spans in English article (should return 0)
+grep -c 'data-translate="true"' "news/$(date +%Y-%m-%d)-government-propositions-en.html" 2>/dev/null || true
+
+# Check word count of English article text content (must be >= 500; HTML tags stripped)
+FILE="news/$(date +%Y-%m-%d)-government-propositions-en.html"
+if [ ! -f "$FILE" ]; then echo "ERROR: Expected article file not found: $FILE" >&2; exit 1; fi
+WORD_COUNT="$(sed 's/<[^>]*>/ /g' "$FILE" | tr -s '[:space:]' '\n' | grep -c '[[:alnum:]]' 2>/dev/null || echo 0)"
+echo "Content word count (HTML tags stripped): $WORD_COUNT"
+if [ "$WORD_COUNT" -lt 500 ]; then echo "ERROR: Article content too short (must be at least 500 words)." >&2; exit 1; fi
+
+# Check for duplicate "Why It Matters" content (should return empty)
+grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-government-propositions-en.html" 2>/dev/null | sort | uniq -d || true
+```
+
+### If Article Fails Quality Check:
+1. Use bash to enhance the HTML with analytical sections
+2. Replace generic "Why It Matters" with proposition-specific analysis
+3. Add thematic grouping headers (e.g., by ministry or policy area)
+4. Translate any remaining Swedish content
+
 ```bash
 npx tsx scripts/generate-news-indexes.ts
 ```
@@ -206,4 +249,4 @@ npx tsx scripts/generate-news-indexes.ts
 - ZERO TOLERANCE for language mixing
 
 ## Article Naming Convention
-Files: `YYYY-MM-DD-propositions-{lang}.html`
+Files: `YYYY-MM-DD-government-propositions-{lang}.html`
