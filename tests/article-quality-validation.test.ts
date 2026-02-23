@@ -269,24 +269,31 @@ describe('validateArticleQuality', () => {
   });
 
   describe('pass/fail threshold', () => {
-    it('should fail when score is exactly below threshold (39)', () => {
+    it('should fail when score is exactly 39 (below threshold)', () => {
       if (!qualityModule) return;
-      // Craft an article that scores exactly 39:
-      // wordCount ~750 → wordScore=37; h2Count=0 → sectionScore=0; no spans → translationScore=20 → 57 (too high)
-      // Try: wordCount=0, h2Count=1 (sectionScore=10), untranslatedSpans=0 → 0+10+20 = 30 (below 40)
-      const html = buildHtml({ wordCount: 0, h2Count: 1, untranslatedSpans: 0 });
+      // Scoring: wordScore = Math.round((wordCount / 1000) * 50)
+      //          sectionScore = Math.min(30, Math.round((h2Count / 3) * 30))
+      //          translationScore = 20 (no untranslated spans)
+      // buildHtml adds 2 extra words from "<h1>Test Article</h1>", so actual word count = wordCount + 2.
+      // wordCount=380 → actual=382 → wordScore=Math.round((382/1000)*50)=Math.round(19.1)=19
+      // h2Count=0 → sectionScore=0
+      // untranslatedSpans=0 → translationScore=20
+      // score = 19 + 0 + 20 = 39 → passed === false
+      const html = buildHtml({ wordCount: 380, h2Count: 0, untranslatedSpans: 0 });
       const result = qualityModule.validateArticleQuality(html, 'en', 'motions', 'test.html');
-      expect(result.passed).toBe(result.score >= 40);
+      expect(result.score).toBe(39);
+      expect(result.passed).toBe(false);
     });
 
     it('should pass when score equals threshold (40)', () => {
       if (!qualityModule) return;
-      // wordCount=1000 → wordScore=50; h2Count=0; untranslatedSpans=15 → translationScore=20-30=-10→0
-      // = 50 → passes
-      // Simpler: h2Count=3 → sectionScore=30; no words, no spans → 0+30+20=50
-      const html = buildHtml({ wordCount: 0, h2Count: 3, untranslatedSpans: 0 });
+      // wordCount=400 → actual=402 → wordScore=Math.round((402/1000)*50)=Math.round(20.1)=20
+      // h2Count=0 → sectionScore=0
+      // untranslatedSpans=0 → translationScore=20
+      // score = 20 + 0 + 20 = 40 → passed === true
+      const html = buildHtml({ wordCount: 400, h2Count: 0, untranslatedSpans: 0 });
       const result = qualityModule.validateArticleQuality(html, 'en', 'motions', 'test.html');
-      expect(result.score).toBeGreaterThanOrEqual(40);
+      expect(result.score).toBe(40);
       expect(result.passed).toBe(true);
     });
   });

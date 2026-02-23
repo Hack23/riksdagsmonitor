@@ -228,8 +228,12 @@ grep -rl "Filed by: Unknown" news/ | grep "committee-reports" | wc -l || true
 # Check for untranslated spans in English article (should return 0)
 grep -c 'data-translate="true"' "news/$(date +%Y-%m-%d)-committee-reports-en.html" 2>/dev/null || true
 
-# Check word count of English article (must be >= 500; note: includes HTML tags)
-wc -w "news/$(date +%Y-%m-%d)-committee-reports-en.html" 2>/dev/null || true
+# Check word count of English article text content (must be >= 500; HTML tags stripped)
+FILE="news/$(date +%Y-%m-%d)-committee-reports-en.html"
+if [ ! -f "$FILE" ]; then echo "ERROR: Expected article file not found: $FILE" >&2; exit 1; fi
+WORD_COUNT="$(sed 's/<[^>]*>/ /g' "$FILE" | tr -s '[:space:]' '\n' | grep -c '[[:alnum:]]' 2>/dev/null || echo 0)"
+echo "Content word count (HTML tags stripped): $WORD_COUNT"
+if [ "$WORD_COUNT" -lt 500 ]; then echo "ERROR: Article content too short (must be at least 500 words)." >&2; exit 1; fi
 
 # Check for duplicate "Why It Matters" content (should return empty)
 grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-committee-reports-en.html" 2>/dev/null | sort | uniq -d || true

@@ -525,11 +525,12 @@ function validateArticleQuality(
 
   // ----- console report -----
   const scoreLabel: string = passed ? '✅' : '⚠️';
-  console.log(`\n📊 Article Quality Report: ${articleType}-${lang}`);
+  const reportId: string = filename.replace(/\.html$/, '');
+  console.log(`\n📊 Article Quality Report: ${reportId}`);
   console.log(`   Word count:           ${wordCount} (score: ${wordScore}/50)`);
   console.log(`   Analytical sections:  ${analyticalSections} (score: ${sectionScore}/30)`);
   console.log(`   Untranslated spans:   ${untranslatedSpans} (score: ${translationScore}/20)`);
-  console.log(`   Unknown authors:      ${unknownAuthors} ⚠️`);
+  console.log(`   Unknown authors:      ${unknownAuthors} ${unknownAuthors > 0 ? '⚠️' : '✅'}`);
   console.log(`   Quality Score:        ${score}/100 — ${passed ? 'PASSED' : 'BELOW THRESHOLD'} ${scoreLabel}`);
 
   if (!passed) {
