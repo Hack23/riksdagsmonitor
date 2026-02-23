@@ -81,7 +81,6 @@ export interface GenerationStats {
   errors: number;
   articles: string[];
   timestamp: string;
-  qualityScores: number[];
 }
 
 /** MCP tool call record for cross-reference validation */
