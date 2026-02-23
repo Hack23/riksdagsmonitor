@@ -1920,20 +1920,6 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
 }
 
 /**
- * Group propositions by the committee they are referred to.
- * Propositions without a committee assignment are grouped under the empty-string key.
- */
-export function groupPropositionsByCommittee(propositions: RawDocument[]): Map<string, RawDocument[]> {
-  const grouped = new Map<string, RawDocument[]>();
-  for (const prop of propositions) {
-    const key = (prop.organ || prop.committee || '') as string;
-    if (!grouped.has(key)) grouped.set(key, []);
-    grouped.get(key)!.push(prop);
-  }
-  return grouped;
-}
-
-/**
  * Generate Propositions content with analytical narrative
  */
 function generatePropositionsContent(data: ArticleContentData, lang: Language | string): string {
@@ -1956,6 +1942,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   // Legislative pipeline section
   content += `\n    <h2>${L(lang, 'legislativePipeline')}</h2>\n`;
 
+  // Group propositions by committee; multi-committee → h3 committee + h4 prop, single → h3 prop
   const byCommitteeGroup = groupPropositionsByCommittee(propositions);
   const multiCommittee = byCommitteeGroup.size > 1;
 
@@ -1966,7 +1953,6 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
         : escapeHtml(String(L(lang, 'otherCommittee')));
       content += `    <h3>${committeeLabel}</h3>\n`;
     }
-
     const headingTag = multiCommittee ? 'h4' : 'h3';
 
     committeeProps.forEach(prop => {
@@ -1985,7 +1971,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
         ? svSpan(escapeHtml(summaryText), lang)
         : escapeHtml(summaryText);
 
-      // Referred-to line: shown only for single-committee view (heading already shows it for multi-committee)
+      // Show "Referred to" inline only in single-committee view (committee heading covers it otherwise)
       const referredCommittee = prop.organ || prop.committee;
       const referredLine = (!multiCommittee && referredCommittee)
         ? `<br><strong>${L(lang, 'referredTo')}:</strong> ${escapeHtml(getCommitteeName(referredCommittee, lang))}`
@@ -2006,11 +1992,11 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     });
   });
 
-  // Policy implications section
+  // Policy implications section — reuse committee group count as domain count
+  const domainCount = byCommitteeGroup.size;
+
   content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
   content += `    <div class="context-box">\n`;
-
-  const domainCount = byCommitteeGroup.size;
 
   const implicationFn = L(lang, 'policyImplicationsContext') as string | ((propCount: number, domainCount: number) => string);
   const implication = typeof implicationFn === 'function'
@@ -2022,13 +2008,13 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   return content;
 }
 
-/** Strict regex matching only valid proposition IDs (e.g. 2025/26:118) */
+/** Matches a strict proposition ID (YYYY/YY:NNN) in a motion title. */
 const PROP_REFERENCE_REGEX = /med anledning av prop\.\s+(\d{4}\/\d{2}:\d+)/i;
 
-/** Regex to capture the full proposition reference text (non-greedy, stops at HTML tags) */
+/** Captures the full proposition reference text (non-greedy, stops at HTML tags). */
 const PROP_FULL_REF_REGEX = /med anledning av (prop\.\s*\d{4}\/\d{2}:\d+(?:\s+[^<]+?)?(?=\s*$|<))/i;
 
-/** Regex to capture the Swedish descriptive title that follows a proposition ID in a motion title */
+/** Captures the descriptive title portion that follows the prop ID. */
 const PROP_TITLE_SUFFIX_REGEX = /med anledning av prop\.\s+\d{4}\/\d{2}:\d+\s*(.*)/i;
 
 /**
@@ -2056,12 +2042,26 @@ export function groupMotionsByProposition(motions: RawDocument[]): {
     const ref = extractPropRef(title);
     if (ref) {
       if (!grouped.has(ref)) grouped.set(ref, []);
-      grouped.get(ref)!.push(motion);
+      (grouped.get(ref) ?? []).push(motion);
     } else {
       independent.push(motion);
     }
   }
   return { grouped, independent };
+}
+
+/**
+ * Group propositions by their referred committee (organ/committee field).
+ * Propositions without a committee use the empty-string key.
+ */
+export function groupPropositionsByCommittee(propositions: RawDocument[]): Map<string, RawDocument[]> {
+  const map = new Map<string, RawDocument[]>();
+  for (const prop of propositions) {
+    const key = prop.organ ?? prop.committee ?? '';
+    if (!map.has(key)) map.set(key, []);
+    (map.get(key) ?? []).push(prop);
+  }
+  return map;
 }
 
 /**
@@ -2103,7 +2103,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     content += `    <p>${escapeHtml(String(strategyContext))}</p>\n`;
   }
 
-  /** Render a single motion entry block */
+  /** Render a single motion entry block, using the specified heading tag (h3 or h4) */
   const renderMotion = (motion: RawDocument, headingTag: 'h3' | 'h4' = 'h3'): string => {
     const titleText = motion.titel || motion.title || '';
     const escapedTitle = escapeHtml(titleText);
@@ -2159,16 +2159,16 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     content += `\n    <h2>${L(lang, 'responsesToProp')}</h2>\n`;
 
     grouped.forEach((propMotions, propRef) => {
-      // Extract Swedish descriptive title using the shared PROP_TITLE_SUFFIX_REGEX constant
+      // Extract the descriptive title portion that follows the prop ID
       const firstTitle = propMotions[0]?.titel || propMotions[0]?.title || '';
-      const titleSuffixMatch = firstTitle.match(PROP_TITLE_SUFFIX_REGEX);
-      const propTitle = titleSuffixMatch?.[1]?.trim() || propRef;
+      const suffixMatch = firstTitle.match(PROP_TITLE_SUFFIX_REGEX);
+      const propTitle = suffixMatch?.[1]?.trim() || String(propRef);
 
       const safePropRef = escapeHtml(String(propRef));
-      const safePropTitle = escapeHtml(String(propTitle));
-
+      const safePropTitle = escapeHtml(propTitle);
       content += `    <h3>Prop. ${safePropRef}: ${svSpan(safePropTitle, lang)}</h3>\n`;
 
+      // Individual motions inside a prop group use h4 to maintain h2→h3→h4 hierarchy
       propMotions.forEach(motion => { content += renderMotion(motion, 'h4'); });
     });
   }
@@ -2177,7 +2177,8 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     if (grouped.size > 0) {
       content += `\n    <h2>${L(lang, 'independentMotions')}</h2>\n`;
     }
-    independent.forEach(motion => { content += renderMotion(motion); });
+    // Independent motions always use h3 (no parent group heading above them)
+    independent.forEach(motion => { content += renderMotion(motion, 'h3'); });
   }
 
   // Party activity breakdown
