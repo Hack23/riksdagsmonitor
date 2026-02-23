@@ -21,6 +21,9 @@ interface MockMCPClientInstance {
   fetchCommitteeReports: ReturnType<typeof vi.fn>;
   fetchPropositions: ReturnType<typeof vi.fn>;
   fetchMotions: ReturnType<typeof vi.fn>;
+  searchDocuments: ReturnType<typeof vi.fn>;
+  fetchWrittenQuestions: ReturnType<typeof vi.fn>;
+  fetchInterpellations: ReturnType<typeof vi.fn>;
   enrichDocumentsWithContent: ReturnType<typeof vi.fn>;
   request: ReturnType<typeof vi.fn>;
   timeout: number;
@@ -45,6 +48,9 @@ const { mockClientInstance, MockMCPClient } = vi.hoisted(() => {
     fetchCommitteeReports: vi.fn().mockResolvedValue([]),
     fetchPropositions: vi.fn().mockResolvedValue([]),
     fetchMotions: vi.fn().mockResolvedValue([]),
+    searchDocuments: vi.fn().mockResolvedValue([]),
+    fetchWrittenQuestions: vi.fn().mockResolvedValue([]),
+    fetchInterpellations: vi.fn().mockResolvedValue([]),
     enrichDocumentsWithContent: vi.fn().mockResolvedValue([]),
     request: vi.fn().mockResolvedValue({ last_sync: '2026-02-16T12:00:00Z' }),
     timeout: 30000,
