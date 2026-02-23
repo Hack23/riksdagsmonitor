@@ -2074,7 +2074,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   // Group motions by party for strategic analysis
   const byParty: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
-    const party = (motion.parti && motion.parti !== 'Unknown') ? motion.parti : 'other';
+    const party = normalizePartyKey(motion.parti);
     if (!byParty[party]) byParty[party] = [];
     byParty[party].push(motion);
   });
@@ -2484,6 +2484,18 @@ function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, i
 }
 
 /**
+ * Normalise a raw `parti` field to a canonical party key.
+ * Maps missing, empty, or any capitalisation of 'unknown' to 'other'.
+ * Used in both generateMotionsContent (party grouping) and
+ * generateOppositionStrategySection so both sections treat the sentinel
+ * identically regardless of capitalisation.
+ */
+function normalizePartyKey(parti: unknown): string {
+  const raw = typeof parti === 'string' ? parti.trim() : '';
+  return !raw || raw.toLowerCase() === 'unknown' ? 'other' : raw;
+}
+
+/**
  * Generate an opposition-strategy analysis paragraph.
  * Identifies which party is most active, what policy areas they focus on,
  * and which other party follows — turning raw party counts into narrative.
@@ -2491,8 +2503,7 @@ function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, i
 function generateOppositionStrategySection(motions: RawDocument[], lang: Language | string): string {
   const byParty: Record<string, RawDocument[]> = {};
   motions.forEach(m => {
-    const rawParty = typeof m.parti === 'string' ? m.parti.trim() : '';
-    const party = !rawParty || rawParty.toLowerCase() === 'unknown' ? 'other' : rawParty;
+    const party = normalizePartyKey(m.parti);
     if (!byParty[party]) byParty[party] = [];
     byParty[party].push(m);
   });
