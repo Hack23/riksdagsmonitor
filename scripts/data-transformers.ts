@@ -212,6 +212,30 @@ function sanitizeUrl(url: string | undefined | null): string {
   return trimmed.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/**
+ * Emit a Swedish-language span.
+ *
+ * For Swedish articles (`lang === 'sv'`) the span carries both the
+ * `lang="sv"` accessibility attribute AND `data-translate="true"` so
+ * quality-validation tooling can verify that Swedish articles contain the
+ * original text.
+ *
+ * For **all other** languages the span carries only `lang="sv"` (screen
+ * readers still know the text is Swedish) but the `data-translate` marker is
+ * intentionally omitted — it signals "this text should be translated" but no
+ * client-side translation mechanism exists, so the marker only causes false
+ * validation failures in non-Swedish articles.
+ *
+ * @param escapedText - Already HTML-escaped text content
+ * @param lang        - Target article language (e.g. `'sv'`, `'en'`)
+ */
+function svSpan(escapedText: string, lang: Language | string): string {
+  if (lang === 'sv') {
+    return `<span data-translate="true" lang="sv">${escapedText}</span>`;
+  }
+  return `<span lang="sv">${escapedText}</span>`;
+}
+
 // ---------------------------------------------------------------------------
 // Data interfaces shared with news-type modules
 // ---------------------------------------------------------------------------
@@ -238,6 +262,7 @@ export interface RawDocument {
   committee?: string;
   titel?: string;
   rubrik?: string;
+  undertitel?: string;
   title?: string;
   dokumentnamn?: string;
   dok_id?: string;
@@ -1524,8 +1549,8 @@ function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language 
       parts.push(`${typeof referredVal === 'string' ? referredVal : ''} ${organ}`);
     }
   } else if (type === 'motion') {
-    const author = doc.intressent_namn || doc.author;
-    const party = doc.parti;
+    const author = (doc.intressent_namn !== 'Unknown' ? doc.intressent_namn : null) || doc.author;
+    const party = doc.parti !== 'Unknown' ? doc.parti : undefined;
     if (author && party) {
       const motionByVal = L(lang, 'motionBy');
       parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author} (${party})`);
@@ -1611,7 +1636,7 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
       // Mark Swedish API titles for LLM translation post-processing
       const escapedEventTitle = escapeHtml(eventTitle);
       const titleHtml = (event.titel && !event.title)
-        ? `<span data-translate="true" lang="sv">${escapedEventTitle}</span>`
+        ? svSpan(escapedEventTitle, lang)
         : escapedEventTitle;
 
       content += `
@@ -1656,7 +1681,7 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
       const titleText = rec['titel'] || rec['title'] || rec['doktyp'] || 'Document';
       const escapedTitle = escapeHtml(titleText);
       const titleHtml = (rec['titel'] && !rec['title'])
-        ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+        ? svSpan(escapedTitle, lang)
         : escapedTitle;
 
       const significance = generatePolicySignificance(doc, lang);
@@ -1697,7 +1722,7 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
       const dok_id = rec['dok_id'] ?? '';
       const qUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : '';
       content += `    <div class="document-entry">\n`;
-      content += `      <h4>${qUrl ? `<a href="${qUrl}" target="_blank" rel="noopener noreferrer">` : ''}<span data-translate="true" lang="sv">${escapeHtml(titleText)}</span>${qUrl ? '</a>' : ''}</h4>\n`;
+      content += `      <h4>${qUrl ? `<a href="${qUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(titleText), lang)}${qUrl ? '</a>' : ''}</h4>\n`;
       if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
       content += `    </div>\n`;
     });
@@ -1742,9 +1767,9 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
         .trim()
         .slice(0, 200);
       content += `    <div class="document-entry">\n`;
-      content += `      <h4>${iUrl ? `<a href="${iUrl}" target="_blank" rel="noopener noreferrer">` : ''}<span data-translate="true" lang="sv">${escapeHtml(titleText)}</span>${iUrl ? '</a>' : ''}</h4>\n`;
+      content += `      <h4>${iUrl ? `<a href="${iUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(titleText), lang)}${iUrl ? '</a>' : ''}</h4>\n`;
       if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
-      if (cleanedSummary) content += `      <p><span data-translate="true" lang="sv">${escapeHtml(cleanedSummary)}…</span></p>\n`;
+      if (cleanedSummary) content += `      <p>${svSpan(escapeHtml(cleanedSummary) + '…', lang)}</p>\n`;
       content += `    </div>\n`;
     });
   }
@@ -1816,7 +1841,7 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
       const titleText = report.titel || report.title || '';
       const escapedTitle = escapeHtml(titleText);
       const titleHtml = (report.titel && !report.title)
-        ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+        ? svSpan(escapedTitle, lang)
         : escapedTitle;
       const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
 
@@ -1825,7 +1850,7 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
       const isFromAPI = report.summary || report.notis;
       const reportDefaultVal = L(lang, 'reportDefault');
       const summaryHtml = (report.titel && !report.title && isFromAPI && summaryText !== reportDefaultVal)
-        ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+        ? svSpan(escapeHtml(summaryText), lang)
         : escapeHtml(summaryText);
 
       const reportSigVal = L(lang, 'reportSignificance');
@@ -1893,7 +1918,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     const titleText = prop.titel || prop.title || '';
     const escapedTitle = escapeHtml(titleText);
     const titleHtml = (prop.titel && !prop.title)
-      ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+      ? svSpan(escapedTitle, lang)
       : escapedTitle;
     const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
 
@@ -1902,7 +1927,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     const isFromAPI = prop.summary || prop.notis;
     const propDefaultVal = L(lang, 'propDefault');
     const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== propDefaultVal)
-      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+      ? svSpan(escapeHtml(summaryText), lang)
       : escapeHtml(summaryText);
 
     // Committee the proposition is referred to
@@ -1948,6 +1973,39 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
 }
 
 /**
+ * Extract the parent proposition reference (e.g. "2025/26:118") from a motion title.
+ * Motions responding to a government proposition have titles like
+ * "med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet".
+ */
+function extractPropRef(title: string): string | null {
+  const m = title.match(/med anledning av prop\.\s+(\S+)/i);
+  return m?.[1] || null;
+}
+
+/**
+ * Group motions by the parent government proposition they respond to.
+ * Motions without a proposition reference are returned separately as "independent".
+ */
+function groupMotionsByProposition(motions: RawDocument[]): {
+  grouped: Map<string, RawDocument[]>;
+  independent: RawDocument[];
+} {
+  const grouped = new Map<string, RawDocument[]>();
+  const independent: RawDocument[] = [];
+  for (const motion of motions) {
+    const title = motion.titel || motion.title || '';
+    const ref = extractPropRef(title);
+    if (ref) {
+      if (!grouped.has(ref)) grouped.set(ref, []);
+      grouped.get(ref)!.push(motion);
+    } else {
+      independent.push(motion);
+    }
+  }
+  return { grouped, independent };
+}
+
+/**
  * Generate Motions content with analytical narrative
  */
 function generateMotionsContent(data: ArticleContentData, lang: Language | string): string {
@@ -1970,7 +2028,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   // Group motions by party for strategic analysis
   const byParty: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
-    const party = motion.parti || 'other';
+    const party = (motion.parti && motion.parti !== 'Unknown') ? motion.parti : 'other';
     if (!byParty[party]) byParty[party] = [];
     byParty[party].push(motion);
   });
@@ -1986,22 +2044,25 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     content += `    <p>${escapeHtml(String(strategyContext))}</p>\n`;
   }
 
-  motions.forEach(motion => {
+  /** Render a single motion entry block */
+  const renderMotion = (motion: RawDocument): string => {
     const titleText = motion.titel || motion.title || '';
     const escapedTitle = escapeHtml(titleText);
     const titleHtml = (motion.titel && !motion.title)
-      ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+      ? svSpan(escapedTitle, lang)
       : escapedTitle;
     const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
 
-    // Use enriched author and party data, with fallback parsing from raw notis
+    // Use enriched author and party data, with fallback parsing from raw notis.
+    // Treat 'Unknown' sentinel (set by enrichDocumentsWithContent) as missing so
+    // we attempt parseMotionAuthorParty before giving up.
     const unknownVal = L(lang, 'unknown');
-    let authorName = motion.intressent_namn || motion.author || '';
-    let partyName = motion.parti || '';
-    if (!authorName) {
-      const rawText = motion.summary || motion.notis || motion.fullText || '';
+    let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null) || motion.author || '';
+    let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
+    if (!authorName || authorName === 'Unknown') {
+      const rawText = motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
       const parsed = parseMotionAuthorParty(rawText);
-      if (parsed) { authorName = parsed.author; partyName = parsed.party; }
+      if (parsed) { authorName = parsed.author; partyName = partyName || parsed.party; }
     }
     if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
     const authorLine = partyName
@@ -2011,17 +2072,17 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     // Use enhanced summary based on metadata (cleanMotionText strips Swedish boilerplate)
     const summaryText = generateEnhancedSummary(motion, 'motion', lang);
     const motionDefaultVal = L(lang, 'motionDefault');
-    // Only wrap in data-translate when the content comes from a Swedish source
+    // Only wrap in Swedish-language span when the content comes from a Swedish source
     const isSwedishContent = (motion.titel && !motion.title)
       || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
     const summaryHtml = (summaryText && summaryText !== motionDefaultVal && isSwedishContent)
-      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+      ? svSpan(escapeHtml(summaryText), lang)
       : escapeHtml(summaryText || (typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));
 
     const readFullVal = L(lang, 'readFullMotion');
     const whyItMattersVal = L(lang, 'whyItMatters');
 
-    content += `
+    return `
     <div class="motion-entry">
       <h3>${titleHtml}</h3>
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
@@ -2030,7 +2091,61 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
       <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
-  });
+  };
+
+  // Group motions by parent proposition to eliminate repetitive section headers
+  const { grouped, independent } = groupMotionsByProposition(motions);
+
+  if (grouped.size > 0) {
+    const responsesLabel = lang === 'sv' ? 'Svar på propositioner'
+      : lang === 'de' ? 'Antworten auf Regierungsvorlagen'
+      : lang === 'fr' ? 'Réponses aux propositions gouvernementales'
+      : lang === 'es' ? 'Respuestas a proposiciones del gobierno'
+      : lang === 'da' ? 'Svar på regeringsforslag'
+      : lang === 'no' ? 'Svar på regjeringforslag'
+      : lang === 'fi' ? 'Vastaukset hallituksen esityksiin'
+      : lang === 'nl' ? 'Antwoorden op regeringsvoorstellen'
+      : lang === 'ar' ? 'ردود على مقترحات الحكومة'
+      : lang === 'he' ? 'תשובות להצעות הממשלה'
+      : lang === 'ja' ? '政府提案への回答'
+      : lang === 'ko' ? '정부 제안에 대한 응답'
+      : lang === 'zh' ? '对政府提案的回应'
+      : 'Responses to Government Propositions';
+
+    content += `\n    <h2>${responsesLabel}</h2>\n`;
+
+    grouped.forEach((propMotions, propRef) => {
+      // Get prop title from first motion (strip the prop reference prefix from the title)
+      const firstTitle = propMotions[0]?.titel || propMotions[0]?.title || '';
+      const propTitleMatch = firstTitle.match(/med anledning av prop\.\s+\S+\s+(.*)/i);
+      const propTitle = propTitleMatch?.[1]?.trim() || propRef;
+
+      content += `    <h3>${escapeHtml(`Prop. ${propRef}: ${propTitle}`)}</h3>\n`;
+
+      propMotions.forEach(motion => { content += renderMotion(motion); });
+    });
+  }
+
+  if (independent.length > 0) {
+    if (grouped.size > 0) {
+      const indepLabel = lang === 'sv' ? 'Övriga motioner'
+        : lang === 'de' ? 'Sonstige Anträge'
+        : lang === 'fr' ? 'Autres motions'
+        : lang === 'es' ? 'Otras mociones'
+        : lang === 'da' ? 'Andre forslag'
+        : lang === 'no' ? 'Andre forslag'
+        : lang === 'fi' ? 'Muut aloitteet'
+        : lang === 'nl' ? 'Overige moties'
+        : lang === 'ar' ? 'اقتراحات أخرى'
+        : lang === 'he' ? 'הצעות אחרות'
+        : lang === 'ja' ? 'その他の動議'
+        : lang === 'ko' ? '기타 동의'
+        : lang === 'zh' ? '其他动议'
+        : 'Independent Motions';
+      content += `\n    <h2>${indepLabel}</h2>\n`;
+    }
+    independent.forEach(motion => { content += renderMotion(motion); });
+  }
 
   // Party activity breakdown
   if (partyCount > 0) {
@@ -2180,7 +2295,7 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
   if (passage) {
     const isSwedishSource = !!(doc.titel && !doc.title);
     parts.push(isSwedishSource
-      ? `<span data-translate="true" lang="sv">${escapeHtml(passage)}</span>`
+      ? svSpan(escapeHtml(passage), lang)
       : escapeHtml(passage));
   } else {
     parts.push(escapeHtml(generateEnhancedSummary(doc, normalizedType, lang)));
@@ -2285,7 +2400,7 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
       const titleText = doc.titel || doc.title || '';
       const escapedTitle = escapeHtml(titleText);
       const titleHtml = (doc.titel && !doc.title)
-        ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+        ? svSpan(escapedTitle, lang)
         : escapedTitle;
 
       const analysis = generateDocumentIntelligenceAnalysis(doc, docType, cia, lang);
@@ -2485,7 +2600,7 @@ export function extractWatchPoints(data: ArticleContentData, lang: Language = 'e
       // Mark Swedish API titles for LLM translation post-processing
       const escapedEventTitle = escapeHtml(eventTitle);
       const titleDisplay = (event.titel && !event.title)
-        ? `<span data-translate="true" lang="sv">${escapedEventTitle}</span>`
+        ? svSpan(escapedEventTitle, lang)
         : escapedEventTitle;
 
       const monitorVal = L(lang, 'monitorDev');
