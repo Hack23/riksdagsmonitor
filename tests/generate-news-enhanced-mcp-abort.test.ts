@@ -11,7 +11,7 @@
  * sharedClient=null, enabling warm-up failure to be triggered cleanly.
  */
 
-import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest';
+import { describe, it, expect, vi, beforeAll, afterAll, beforeEach } from 'vitest';
 import fs from 'fs';
 import type { GenerationResult } from '../scripts/types/article.js';
 import type { MCPClientConfig } from '../scripts/types/mcp.js';
