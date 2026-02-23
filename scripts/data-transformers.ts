@@ -1963,14 +1963,30 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
 function generateMotionsContent(data: ArticleContentData, lang: Language | string): string {
   const rawMotions = data.motions || [];
 
-  // Deduplicate: keep only the first motion per unique title.
-  // Motions referencing the same parent proposition (e.g. "med anledning av prop. X")
-  // share an identical title and would otherwise repeat in the article.
-  const seenTitles = new Set<string>();
+  // Deduplicate: collapse true duplicates using a composite key
+  // (dok_id + title + party + author) so that distinct motions that happen
+  // to share the same title (e.g. same topic, different party) are preserved,
+  // while genuine repeats (e.g. the same entry appearing twice in the MCP
+  // response) are collapsed to a single occurrence.
+  const seenMotions = new Set<string>();
   const motions = rawMotions.filter(m => {
-    const key = (m.titel || m.title || m.dok_id || '').trim().toLowerCase();
-    if (!key || seenTitles.has(key)) return false;
-    seenTitles.add(key);
+    const title  = (m.titel  || m.title          || '').trim().toLowerCase();
+    const party  = (m.parti  || ''               ).trim().toLowerCase();
+    const author = (m.intressent_namn || m.author || '').trim().toLowerCase();
+    const dokId  = (m.dok_id || ''               ).trim().toLowerCase();
+
+    const keyParts: string[] = [];
+    if (dokId)  keyParts.push(`id:${dokId}`);
+    if (title)  keyParts.push(`t:${title}`);
+    if (party)  keyParts.push(`p:${party}`);
+    if (author) keyParts.push(`a:${author}`);
+
+    // If we have no identifying information at all, keep the entry.
+    if (keyParts.length === 0) return true;
+
+    const key = keyParts.join('|');
+    if (seenMotions.has(key)) return false;
+    seenMotions.add(key);
     return true;
   });
 

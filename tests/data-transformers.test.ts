@@ -1182,7 +1182,7 @@ describe('Motion content quality improvements', () => {
     expect(content).not.toContain('Unknown (Unknown)');
   });
 
-  it('#462: should deduplicate motions with identical titles', () => {
+  it('#462: should deduplicate motions that are true duplicates (same dok_id/title/party/author)', () => {
     const content = generateArticleContent({
       motions: [
         {
@@ -1193,7 +1193,33 @@ describe('Motion content quality improvements', () => {
           parti: 'SD',
         },
         {
-          // Exact same title — should be deduplicated away
+          // Exact same dok_id, title, party, author — should be deduplicated away
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning',
+          url: '#',
+          dok_id: 'HD023912',
+          intressent_namn: 'Nils Nilsson',
+          parti: 'SD',
+        },
+      ],
+    } as MockArticlePayload, 'motions', 'en') as string;
+
+    // Title should appear only once in the output (dedup collapses true duplicate)
+    const titleCount = (content.match(/Tillståndsprövning/g) ?? []).length;
+    expect(titleCount).toBe(1);
+  });
+
+  it('#462: should keep motions with same title but different authors/parties', () => {
+    const content = generateArticleContent({
+      motions: [
+        {
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning',
+          url: '#',
+          dok_id: 'HD023912',
+          intressent_namn: 'Nils Nilsson',
+          parti: 'SD',
+        },
+        {
+          // Same title, different party/author — should be preserved as distinct
           titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning',
           url: '#',
           dok_id: 'HD023908',
@@ -1203,9 +1229,9 @@ describe('Motion content quality improvements', () => {
       ],
     } as MockArticlePayload, 'motions', 'en') as string;
 
-    // Title should appear only once in the output (dedup keeps first entry)
+    // Both entries should appear — same title from different parties/authors are distinct
     const titleCount = (content.match(/Tillståndsprövning/g) ?? []).length;
-    expect(titleCount).toBe(1);
+    expect(titleCount).toBeGreaterThanOrEqual(2);
   });
 
   it('#462: should keep motions with different titles', () => {

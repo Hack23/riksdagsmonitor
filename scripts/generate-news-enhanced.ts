@@ -486,8 +486,7 @@ export function extractTopicFromDocs(
     return t && !t.startsWith('med anledning av prop');
   }) ?? docs[0];
 
-  if (!primary) return '';
-
+  // docs[0] is guaranteed non-undefined (early return above handles empty array)
   const rawTitle = String(primary['titel'] || primary['title'] || '');
   if (!rawTitle) return '';
 
@@ -518,6 +517,13 @@ export function extractTopicFromDocs(
  *
  * The `lang="sv"` attribute is also removed from the span so the rendered element
  * no longer falsely claims Swedish language for non-Swedish pages.
+ *
+ * **Upstream invariant**: every code path that creates a `data-translate` span calls
+ * `escapeHtml()` on the content before insertion, so the inner text contains only
+ * HTML character entities (e.g. `&amp;`, `&lt;`) and no raw `<` characters.  This
+ * guarantees that the greedy `[\s\S]*?` inside the regex cannot be "tricked" by a
+ * nested `</span>` in the content.  If you add a new site that produces
+ * `data-translate` spans, ensure the content is passed through `escapeHtml()` first.
  *
  * @param html - Raw article HTML that may contain data-translate spans
  * @param targetLang - ISO 639-1 code of the article's target language
@@ -595,9 +601,10 @@ export function validateArticleQuality(
     .trim();
   const wordCount = textOnly ? textOnly.split(' ').filter(w => w.length > 0).length : 0;
 
-  // Count residual data-translate spans (should be 0 after post-processing)
+  // Count residual data-translate spans (should be 0 after post-processing).
+  // Only count <span> elements (consistent with translateSwedishContent scope).
   const untranslatedSpans = lang !== 'sv'
-    ? (html.match(/data-translate="true"/g) ?? []).length
+    ? (html.match(/<span[^>]*data-translate="true"[^>]*>/gi) ?? []).length
     : 0;
 
   // Count meaningful h2 headers (analytical section markers)
@@ -660,8 +667,10 @@ async function writeArticleWithTranslation(html: string, filename: string): Prom
   // Extract article type from filename for quality report
   const typeHint = filename.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/-[a-z]{2}\.html$/, '');
   const report = validateArticleQuality(processedHtml, lang, typeHint, filename);
-  stats.qualityScores.push(report.qualityScore);
-  return writeArticle(processedHtml, filename);
+  const written = await writeArticle(processedHtml, filename);
+  // Only record the score for articles that were successfully written
+  if (written) stats.qualityScores.push(report.qualityScore);
+  return written;
 }
 
 /**
@@ -673,10 +682,13 @@ async function writeSingleArticle(html: string, slug: string, lang: Language): P
   // Extract article type from slug for quality report
   const typeHint = slug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
   const report = validateArticleQuality(processedHtml, lang, typeHint, filename);
-  stats.qualityScores.push(report.qualityScore);
-  await writeArticle(processedHtml, filename);
-  stats.generated += 1;
-  stats.articles.push(filename);
+  const written = await writeArticle(processedHtml, filename);
+  // Only record the score for articles that were successfully written
+  if (written) stats.qualityScores.push(report.qualityScore);
+  if (written) {
+    stats.generated += 1;
+    stats.articles.push(filename);
+  }
   return filename;
 }
 
@@ -1286,4 +1298,5 @@ export {
   formatDateForSlug,
   getWeekAheadDateRange,
   QUALITY_THRESHOLD,
+  requireMcpArg,
 };
