@@ -9,7 +9,7 @@
 
 import { describe, it, expect } from 'vitest';
 import { translateTerm, translatePhrase } from '../scripts/translation-dictionary.js';
-import { translateSwedishContent } from '../scripts/generate-news-enhanced.js';
+import { translateSwedishContent, extractTopicFromDocs } from '../scripts/generate-news-enhanced.js';
 
 // ---------------------------------------------------------------------------
 // translateTerm
@@ -178,5 +178,62 @@ describe('translateSwedishContent', () => {
     const result = translateSwedishContent(html, 'en');
     expect(result).toContain('committee');
     expect(result).not.toContain('data-translate');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// extractTopicFromDocs (#456 content-based titles)
+// ---------------------------------------------------------------------------
+
+describe('extractTopicFromDocs', () => {
+  it('returns empty string for empty docs array', () => {
+    expect(extractTopicFromDocs([])).toBe('');
+  });
+
+  it('returns cleaned title from first document', () => {
+    const docs = [{ titel: 'Tillståndsprövning enligt förnybartdirektivet' }];
+    const result = extractTopicFromDocs(docs);
+    expect(result).toBe('Tillståndsprövning enligt förnybartdirektivet');
+  });
+
+  it('strips "Regeringens proposition YYYY/YY:NNN" prefix', () => {
+    const docs = [{ titel: 'Regeringens proposition 2025/26:118 Tillståndsprövning' }];
+    const result = extractTopicFromDocs(docs);
+    expect(result).toBe('Tillståndsprövning');
+  });
+
+  it('skips "med anledning av prop." entries in favour of a real title', () => {
+    const docs = [
+      { titel: 'med anledning av prop. 2025/26:118 X' },
+      { titel: 'En tydlig proposition om bostäder' },
+    ];
+    const result = extractTopicFromDocs(docs);
+    expect(result).toBe('En tydlig proposition om bostäder');
+  });
+
+  it('falls back to the only doc even if it is a "med anledning av" entry', () => {
+    const docs = [{ titel: 'med anledning av prop. 2025/26:1 Y' }];
+    const result = extractTopicFromDocs(docs);
+    // Should still return something (not empty)
+    expect(result.length).toBeGreaterThan(0);
+  });
+
+  it('truncates long titles at maxLength and ends with ellipsis', () => {
+    const longTitle = 'A'.repeat(60);
+    const result = extractTopicFromDocs([{ titel: longTitle }], 50);
+    expect(result.length).toBeLessThanOrEqual(53); // "…" adds 1 char after trim
+    expect(result).toContain('…');
+  });
+
+  it('uses "title" field when "titel" is absent', () => {
+    const docs = [{ title: 'English title' }];
+    const result = extractTopicFromDocs(docs);
+    expect(result).toBe('English title');
+  });
+
+  it('prefers "titel" over "title" when both are present', () => {
+    const docs = [{ titel: 'Swedish titel', title: 'English title' }];
+    const result = extractTopicFromDocs(docs);
+    expect(result).toBe('Swedish titel');
   });
 });

@@ -313,6 +313,13 @@ const LOCALE_MAP: Record<string, string> = {
 };
 
 /**
+ * Sentinel value set by enrichDocumentsWithContent() when the riksdag API
+ * returns no data for intressent_naam or parti.  Any field whose value equals
+ * this sentinel must be treated the same as an absent field.
+ */
+const UNKNOWN_SENTINEL = 'Unknown';
+
+/**
  * Map Swedish committee codes to full names for richer descriptions
  */
 const COMMITTEE_NAMES: CommitteeNameMap = {
@@ -1524,8 +1531,11 @@ function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language 
       parts.push(`${typeof referredVal === 'string' ? referredVal : ''} ${organ}`);
     }
   } else if (type === 'motion') {
-    const author = doc.intressent_namn || doc.author;
-    const party = doc.parti;
+    const rawAuthor = doc.intressent_namn || doc.author;
+    const rawParty = doc.parti;
+    // Treat enrichDocumentsWithContent 'Unknown' sentinel same as missing
+    const author = rawAuthor && rawAuthor !== UNKNOWN_SENTINEL ? rawAuthor : undefined;
+    const party = rawParty && rawParty !== UNKNOWN_SENTINEL ? rawParty : undefined;
     if (author && party) {
       const motionByVal = L(lang, 'motionBy');
       parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author} (${party})`);
@@ -1951,7 +1961,18 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
  * Generate Motions content with analytical narrative
  */
 function generateMotionsContent(data: ArticleContentData, lang: Language | string): string {
-  const motions = data.motions || [];
+  const rawMotions = data.motions || [];
+
+  // Deduplicate: keep only the first motion per unique title.
+  // Motions referencing the same parent proposition (e.g. "med anledning av prop. X")
+  // share an identical title and would otherwise repeat in the article.
+  const seenTitles = new Set<string>();
+  const motions = rawMotions.filter(m => {
+    const key = (m.titel || m.title || m.dok_id || '').trim().toLowerCase();
+    if (!key || seenTitles.has(key)) return false;
+    seenTitles.add(key);
+    return true;
+  });
 
   let content = `<h2>${L(lang, 'oppMotions')}</h2>\n`;
 
@@ -1994,16 +2015,22 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
       : escapedTitle;
     const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
 
-    // Use enriched author and party data, with fallback parsing from raw notis
+    // Use enriched author and party data, with fallback parsing from raw notis.
+    // enrichDocumentsWithContent sets 'Unknown' as sentinel when no data found,
+    // so we must treat 'Unknown' the same as empty and try parseMotionAuthorParty.
     const unknownVal = L(lang, 'unknown');
     let authorName = motion.intressent_namn || motion.author || '';
     let partyName = motion.parti || '';
-    if (!authorName) {
+    if (!authorName || authorName === UNKNOWN_SENTINEL) {
       const rawText = motion.summary || motion.notis || motion.fullText || '';
       const parsed = parseMotionAuthorParty(rawText);
-      if (parsed) { authorName = parsed.author; partyName = parsed.party; }
+      if (parsed) {
+        authorName = parsed.author;
+        if (!partyName || partyName === UNKNOWN_SENTINEL) partyName = parsed.party;
+      }
     }
-    if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
+    if (!authorName || authorName === UNKNOWN_SENTINEL) authorName = typeof unknownVal === 'string' ? unknownVal : UNKNOWN_SENTINEL;
+    if (partyName === UNKNOWN_SENTINEL) partyName = '';
     const authorLine = partyName
       ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
       : escapeHtml(authorName);

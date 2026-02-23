@@ -437,6 +437,50 @@ function formatDateForSlug(date: Date = new Date()): string {
 }
 
 /**
+ * Extract a short topic descriptor from the first significant document in a list.
+ * Used to build content-based article titles that reflect the actual content rather
+ * than static "Battle Lines / Policy Priorities" boilerplate.
+ *
+ * @param docs - Array of raw documents (motions, propositions, committee reports)
+ * @param maxLength - Maximum length of returned topic string (default 50)
+ * @returns Cleaned topic string, or empty string if none found
+ */
+export function extractTopicFromDocs(
+  docs: Array<Record<string, unknown>>,
+  maxLength = 50,
+): string {
+  if (docs.length === 0) return '';
+
+  // Prefer documents that are NOT generic "motion in response to prop." entries
+  const primary = docs.find(d => {
+    const t = String(d['titel'] || d['title'] || '').toLowerCase();
+    return t && !t.startsWith('med anledning av prop');
+  }) ?? docs[0];
+
+  if (!primary) return '';
+
+  const rawTitle = String(primary['titel'] || primary['title'] || '');
+  if (!rawTitle) return '';
+
+  // Strip common Swedish boilerplate prefixes for a cleaner excerpt
+  const cleaned = rawTitle
+    .replace(/^Regeringens proposition\s+\S+\s*/i, '')
+    .replace(/^Regeringens skrivelse\s+\S+\s*/i, '')
+    .replace(/^Motion till riksdagen\s+\S+\s+av\s+[^(]+\([A-ZÅÄÖ]{1,5}\)\s*/i, '')
+    .replace(/^med anledning av prop\.\s+\S+\s*/i, '')
+    .trim();
+
+  const topic = cleaned || rawTitle;
+  if (topic.length <= maxLength) return topic;
+  // Try to cut at the last word boundary; fall back to a hard slice + ellipsis
+  const truncated = topic.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  return lastSpace > maxLength / 2
+    ? truncated.slice(0, lastSpace) + '…'
+    : truncated + '…';
+}
+
+/**
  * Process all `data-translate="true"` spans in an HTML string.
  *
  * - For Swedish ('sv'): removes the `data-translate` attribute but keeps the text.
@@ -667,6 +711,9 @@ async function generateCommitteeReports(): Promise<GenerationResult> {
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-committee-reports`;
 
+    // Build content-aware topic excerpt for title (issue #456)
+    const reportsTopic = extractTopicFromDocs(reports as Array<Record<string, unknown>>);
+
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
@@ -677,21 +724,22 @@ async function generateCommitteeReports(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_betankanden', 'get_dokument_innehall']);
 
+      const topicSuffix = reportsTopic ? `: ${reportsTopic}` : '';
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Committee Reports: Parliamentary Priorities This Week`, subtitle: `Analysis of ${reports.length} committee reports revealing Riksdag priorities for the current session` },
-        sv: { title: `Utskottsbetänkanden: Riksdagens prioriteringar denna vecka`, subtitle: `Analys av ${reports.length} utskottsbetänkanden som avslöjar riksdagens prioriteringar` },
-        da: { title: `Udvalgsbetænkninger: Parlamentets prioriteringer denne uge`, subtitle: `Analyse af ${reports.length} udvalgsbetænkninger` },
-        no: { title: `Komitéinnstillinger: Stortingets prioriteringer denne uken`, subtitle: `Analyse av ${reports.length} komitéinnstillinger` },
-        fi: { title: `Valiokunnan mietinnöt: Eduskunnan prioriteetit tällä viikolla`, subtitle: `Analyysi ${reports.length} valiokunnan mietinnöstä` },
-        de: { title: `Ausschussberichte: Parlamentarische Prioritäten diese Woche`, subtitle: `Analyse von ${reports.length} Ausschussberichten` },
-        fr: { title: `Rapports de commission: Priorités parlementaires cette semaine`, subtitle: `Analyse de ${reports.length} rapports de commission` },
-        es: { title: `Informes de comisión: Prioridades parlamentarias esta semana`, subtitle: `Análisis de ${reports.length} informes de comisión` },
-        nl: { title: `Commissierapporten: Parlementaire prioriteiten deze week`, subtitle: `Analyse van ${reports.length} commissierapporten` },
-        ar: { title: `تقارير اللجان: أولويات البرلمان هذا الأسبوع`, subtitle: `تحليل ${reports.length} تقارير لجان` },
-        he: { title: `דוחות ועדה: סדרי עדיפויות פרלמנטריים השבוע`, subtitle: `ניתוח ${reports.length} דוחות ועדה` },
-        ja: { title: `委員会報告：今週の議会優先事項`, subtitle: `${reports.length}件の委員会報告の分析` },
-        ko: { title: `위원회 보고서: 이번 주 의회 우선순위`, subtitle: `${reports.length}개 위원회 보고서 분석` },
-        zh: { title: `委员会报告：本周议会优先事项`, subtitle: `${reports.length}份委员会报告分析` }
+        en: { title: `Committee Reports${topicSuffix}`, subtitle: `Analysis of ${reports.length} committee reports revealing Riksdag priorities for the current session` },
+        sv: { title: `Utskottsbetänkanden${topicSuffix}`, subtitle: `Analys av ${reports.length} utskottsbetänkanden som avslöjar riksdagens prioriteringar` },
+        da: { title: `Udvalgsbetænkninger${topicSuffix}`, subtitle: `Analyse af ${reports.length} udvalgsbetænkninger` },
+        no: { title: `Komitéinnstillinger${topicSuffix}`, subtitle: `Analyse av ${reports.length} komitéinnstillinger` },
+        fi: { title: `Valiokunnan mietinnöt${topicSuffix}`, subtitle: `Analyysi ${reports.length} valiokunnan mietinnöstä` },
+        de: { title: `Ausschussberichte${topicSuffix}`, subtitle: `Analyse von ${reports.length} Ausschussberichten` },
+        fr: { title: `Rapports de commission${topicSuffix}`, subtitle: `Analyse de ${reports.length} rapports de commission` },
+        es: { title: `Informes de comisión${topicSuffix}`, subtitle: `Análisis de ${reports.length} informes de comisión` },
+        nl: { title: `Commissierapporten${topicSuffix}`, subtitle: `Analyse van ${reports.length} commissierapporten` },
+        ar: { title: `تقارير اللجان${topicSuffix}`, subtitle: `تحليل ${reports.length} تقارير لجان` },
+        he: { title: `דוחות ועדה${topicSuffix}`, subtitle: `ניתוח ${reports.length} דוחות ועדה` },
+        ja: { title: `委員会報告${topicSuffix}`, subtitle: `${reports.length}件の委員会報告の分析` },
+        ko: { title: `위원회 보고서${topicSuffix}`, subtitle: `${reports.length}개 위원회 보고서 분석` },
+        zh: { title: `委员会报告${topicSuffix}`, subtitle: `${reports.length}份委员会报告分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -751,6 +799,9 @@ async function generatePropositions(): Promise<GenerationResult> {
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-government-propositions`;
 
+    // Build content-aware topic excerpt for title (issue #456)
+    const propsTopic = extractTopicFromDocs(propositions as Array<Record<string, unknown>>);
+
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
@@ -761,21 +812,22 @@ async function generatePropositions(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_propositioner', 'get_dokument_innehall']);
 
+      const topicSuffix = propsTopic ? `: ${propsTopic}` : '';
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Government Propositions: Policy Priorities This Week`, subtitle: `Analysis of ${propositions.length} government propositions shaping the legislative agenda` },
-        sv: { title: `Regeringens propositioner: Veckans prioriteringar`, subtitle: `Analys av ${propositions.length} propositioner som formar den lagstiftande agendan` },
-        da: { title: `Regeringsforslag: Politiske prioriteringer denne uge`, subtitle: `Analyse af ${propositions.length} regeringsforslag` },
-        no: { title: `Regjeringens proposisjoner: Politiske prioriteringer denne uken`, subtitle: `Analyse av ${propositions.length} regjeringsproposisjoner` },
-        fi: { title: `Hallituksen esitykset: Viikon poliittiset prioriteetit`, subtitle: `Analyysi ${propositions.length} hallituksen esityksestä` },
-        de: { title: `Regierungsvorlagen: Politische Prioritäten diese Woche`, subtitle: `Analyse von ${propositions.length} Regierungsvorlagen` },
-        fr: { title: `Propositions gouvernementales: Priorités politiques cette semaine`, subtitle: `Analyse de ${propositions.length} propositions gouvernementales` },
-        es: { title: `Proposiciones gubernamentales: Prioridades políticas esta semana`, subtitle: `Análisis de ${propositions.length} proposiciones gubernamentales` },
-        nl: { title: `Regeringsvoorstellen: Politieke prioriteiten deze week`, subtitle: `Analyse van ${propositions.length} regeringsvoorstellen` },
-        ar: { title: `مقترحات الحكومة: الأولويات السياسية هذا الأسبوع`, subtitle: `تحليل ${propositions.length} مقترحات حكومية` },
-        he: { title: `הצעות ממשלה: סדרי עדיפויות מדיניים השבוע`, subtitle: `ניתוח ${propositions.length} הצעות ממשלה` },
-        ja: { title: `政府提案：今週の政策優先事項`, subtitle: `${propositions.length}件の政府提案の分析` },
-        ko: { title: `정부 법안: 이번 주 정책 우선순위`, subtitle: `${propositions.length}개 정부 법안 분석` },
-        zh: { title: `政府提案：本周政策优先事项`, subtitle: `${propositions.length}份政府提案分析` }
+        en: { title: `Government Propositions${topicSuffix}`, subtitle: `Analysis of ${propositions.length} government propositions shaping the legislative agenda` },
+        sv: { title: `Regeringens propositioner${topicSuffix}`, subtitle: `Analys av ${propositions.length} propositioner som formar den lagstiftande agendan` },
+        da: { title: `Regeringsforslag${topicSuffix}`, subtitle: `Analyse af ${propositions.length} regeringsforslag` },
+        no: { title: `Regjeringens proposisjoner${topicSuffix}`, subtitle: `Analyse av ${propositions.length} regjeringsproposisjoner` },
+        fi: { title: `Hallituksen esitykset${topicSuffix}`, subtitle: `Analyysi ${propositions.length} hallituksen esityksestä` },
+        de: { title: `Regierungsvorlagen${topicSuffix}`, subtitle: `Analyse von ${propositions.length} Regierungsvorlagen` },
+        fr: { title: `Propositions gouvernementales${topicSuffix}`, subtitle: `Analyse de ${propositions.length} propositions gouvernementales` },
+        es: { title: `Proposiciones gubernamentales${topicSuffix}`, subtitle: `Análisis de ${propositions.length} proposiciones gubernamentales` },
+        nl: { title: `Regeringsvoorstellen${topicSuffix}`, subtitle: `Analyse van ${propositions.length} regeringsvoorstellen` },
+        ar: { title: `مقترحات الحكومة${topicSuffix}`, subtitle: `تحليل ${propositions.length} مقترحات حكومية` },
+        he: { title: `הצעות ממשלה${topicSuffix}`, subtitle: `ניתוח ${propositions.length} הצעות ממשלה` },
+        ja: { title: `政府提案${topicSuffix}`, subtitle: `${propositions.length}件の政府提案の分析` },
+        ko: { title: `정부 법안${topicSuffix}`, subtitle: `${propositions.length}개 정부 법안 분석` },
+        zh: { title: `政府提案${topicSuffix}`, subtitle: `${propositions.length}份政府提案分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -835,6 +887,9 @@ async function generateMotions(): Promise<GenerationResult> {
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-opposition-motions`;
 
+    // Build content-aware topic excerpt for title (issue #456)
+    const motionsTopic = extractTopicFromDocs(motions as Array<Record<string, unknown>>);
+
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
@@ -845,21 +900,22 @@ async function generateMotions(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_motioner', 'get_dokument_innehall']);
 
+      const topicSuffix = motionsTopic ? `: ${motionsTopic}` : '';
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Opposition Motions: Battle Lines This Week`, subtitle: `Analysis of ${motions.length} opposition motions revealing parliamentary fault lines` },
-        sv: { title: `Oppositionsmotioner: Veckans stridslinjer`, subtitle: `Analys av ${motions.length} oppositionsmotioner som avslöjar parlamentariska skiljelinjer` },
-        da: { title: `Oppositionsforslag: Ugens kamppladser`, subtitle: `Analyse af ${motions.length} oppositionsforslag` },
-        no: { title: `Opposisjonsforslag: Ukens kamplinjer`, subtitle: `Analyse av ${motions.length} opposisjonsforslag` },
-        fi: { title: `Opposition aloitteet: Viikon taistelulinjat`, subtitle: `Analyysi ${motions.length} opposition aloitteesta` },
-        de: { title: `Oppositionsanträge: Kampflinien dieser Woche`, subtitle: `Analyse von ${motions.length} Oppositionsanträgen` },
-        fr: { title: `Motions d'opposition: Lignes de bataille cette semaine`, subtitle: `Analyse de ${motions.length} motions d'opposition` },
-        es: { title: `Mociones de oposición: Líneas de batalla esta semana`, subtitle: `Análisis de ${motions.length} mociones de oposición` },
-        nl: { title: `Oppositiemoties: Strijdlijnen deze week`, subtitle: `Analyse van ${motions.length} oppositiemoties` },
-        ar: { title: `اقتراحات المعارضة: خطوط المعركة هذا الأسبوع`, subtitle: `تحليل ${motions.length} اقتراحات المعارضة` },
-        he: { title: `הצעות אופוזיציה: קווי העימות השבוע`, subtitle: `ניתוח ${motions.length} הצעות אופוזיציה` },
-        ja: { title: `野党動議：今週の対立構図`, subtitle: `${motions.length}件の野党動議の分析` },
-        ko: { title: `야당 동의: 이번 주 대립 구도`, subtitle: `${motions.length}개 야당 동의 분석` },
-        zh: { title: `反对党动议：本周对立格局`, subtitle: `${motions.length}份反对党动议分析` }
+        en: { title: `Opposition Motions${topicSuffix}`, subtitle: `Analysis of ${motions.length} opposition motions revealing parliamentary fault lines` },
+        sv: { title: `Oppositionsmotioner${topicSuffix}`, subtitle: `Analys av ${motions.length} oppositionsmotioner som avslöjar parlamentariska skiljelinjer` },
+        da: { title: `Oppositionsforslag${topicSuffix}`, subtitle: `Analyse af ${motions.length} oppositionsforslag` },
+        no: { title: `Opposisjonsforslag${topicSuffix}`, subtitle: `Analyse av ${motions.length} opposisjonsforslag` },
+        fi: { title: `Opposition aloitteet${topicSuffix}`, subtitle: `Analyysi ${motions.length} opposition aloitteesta` },
+        de: { title: `Oppositionsanträge${topicSuffix}`, subtitle: `Analyse von ${motions.length} Oppositionsanträgen` },
+        fr: { title: `Motions d'opposition${topicSuffix}`, subtitle: `Analyse de ${motions.length} motions d'opposition` },
+        es: { title: `Mociones de oposición${topicSuffix}`, subtitle: `Análisis de ${motions.length} mociones de oposición` },
+        nl: { title: `Oppositiemoties${topicSuffix}`, subtitle: `Analyse van ${motions.length} oppositiemoties` },
+        ar: { title: `اقتراحات المعارضة${topicSuffix}`, subtitle: `تحليل ${motions.length} اقتراحات المعارضة` },
+        he: { title: `הצעות אופוזיציה${topicSuffix}`, subtitle: `ניתוח ${motions.length} הצעות אופוזיציה` },
+        ja: { title: `野党動議${topicSuffix}`, subtitle: `${motions.length}件の野党動議の分析` },
+        ko: { title: `야당 동의${topicSuffix}`, subtitle: `${motions.length}개 야당 동의 분석` },
+        zh: { title: `反对党动议${topicSuffix}`, subtitle: `${motions.length}份反对党动议分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;

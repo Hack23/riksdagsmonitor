@@ -1139,3 +1139,84 @@ describe('Data Transformers', () => {
     });
   });
 });
+
+// ---------------------------------------------------------------------------
+// Regression tests for issue #454 (author/party 'Unknown' sentinel fix)
+// and issue #462 (motion deduplication)
+// ---------------------------------------------------------------------------
+
+describe('Motion content quality improvements', () => {
+  it('#454: should use notis text when intressent_namn is "Unknown" sentinel', () => {
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Med anledning av prop. 2025/26:118',
+        url: 'https://riksdagen.se/test',
+        dokumentnamn: 'Mot2025/26:1',
+        intressent_namn: 'Unknown', // sentinel from enrichDocumentsWithContent
+        parti: 'Unknown',           // sentinel from enrichDocumentsWithContent
+        notis: 'Motion till riksdagen 2025/26:1 av Anna Andersson (S) om förnybar energi',
+      }],
+    } as MockArticlePayload, 'motions', 'en') as string;
+
+    // Should NOT show "Unknown" — must parse from notis instead
+    expect(content).not.toContain('Unknown (Unknown)');
+    expect(content).not.toContain('Filed by: Unknown');
+    // Parsed author/party from notis
+    expect(content).toContain('Anna Andersson');
+    expect(content).toContain('(S)');
+  });
+
+  it('#454: should fall back to localized "Unknown" only when parsing also fails', () => {
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'En motion',
+        url: '#',
+        intressent_namn: 'Unknown',
+        parti: 'Unknown',
+        notis: '',    // nothing to parse from
+      }],
+    } as MockArticlePayload, 'motions', 'en') as string;
+
+    // Should show localised "Unknown" (not raw double-Unknown)
+    // The party part should be absent because partyName becomes empty
+    expect(content).not.toContain('Unknown (Unknown)');
+  });
+
+  it('#462: should deduplicate motions with identical titles', () => {
+    const content = generateArticleContent({
+      motions: [
+        {
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning',
+          url: '#',
+          dok_id: 'HD023912',
+          intressent_namn: 'Nils Nilsson',
+          parti: 'SD',
+        },
+        {
+          // Exact same title — should be deduplicated away
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning',
+          url: '#',
+          dok_id: 'HD023908',
+          intressent_namn: 'Karin Karlsson',
+          parti: 'M',
+        },
+      ],
+    } as MockArticlePayload, 'motions', 'en') as string;
+
+    // Title should appear only once in the output (dedup keeps first entry)
+    const titleCount = (content.match(/Tillståndsprövning/g) ?? []).length;
+    expect(titleCount).toBe(1);
+  });
+
+  it('#462: should keep motions with different titles', () => {
+    const content = generateArticleContent({
+      motions: [
+        { titel: 'Motion A', url: '#', dok_id: 'A1', intressent_namn: 'Per P', parti: 'S' },
+        { titel: 'Motion B', url: '#', dok_id: 'B1', intressent_namn: 'Pär P', parti: 'M' },
+      ],
+    } as MockArticlePayload, 'motions', 'en') as string;
+
+    expect(content).toContain('Motion A');
+    expect(content).toContain('Motion B');
+  });
+});
