@@ -167,7 +167,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { MCPClient } from './mcp-client.js';
-import { translatePhrase } from './translation-dictionary.js';
 import {
   transformCalendarToEventGrid,
   generateArticleContent,
@@ -182,6 +181,7 @@ import { generateMonthAhead } from './news-types/month-ahead.js';
 import { generateWeeklyReview } from './news-types/weekly-review.js';
 import { generateMonthlyReview } from './news-types/monthly-review.js';
 import { generateBreakingNews } from './news-types/breaking-news.js';
+import { translateTerm, translatePhrase } from './translation-dictionary.js';
 import type { Language } from './types/language.js';
 import type { ArticleCategory } from './types/article.js';
 import type {
@@ -246,17 +246,18 @@ const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batc
 const skipExistingArg: boolean = args.includes('--skip-existing');
 const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
 
-/**
- * When true (the default), a failed MCP warm-up causes the whole pipeline to
- * abort with a non-zero exit code.  Pass `--require-mcp=false` to allow
- * degraded-mode execution (useful for local testing without a live server).
- */
-const requireMcpArg: boolean = (() => {
-  const raw = args.find(arg => arg.startsWith('--require-mcp'));
-  if (raw === undefined) return true;            // default: enforce
-  if (raw === '--require-mcp=false') return false;
-  return true;                                   // --require-mcp or --require-mcp=true
-})();
+// --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
+// Set --require-mcp=false for local development/testing without a live MCP server.
+const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
+const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
+
+// --quality-threshold: minimum quality score (0-100) an article must achieve.
+// The run exits with code 2 if ALL generated articles score below this threshold.
+const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
+export const DEFAULT_QUALITY_THRESHOLD = 40;
+export const QUALITY_THRESHOLD: number = qualityThresholdArg
+  ? (parseInt(qualityThresholdArg.split('=')[1] ?? String(DEFAULT_QUALITY_THRESHOLD), 10) || DEFAULT_QUALITY_THRESHOLD)
+  : DEFAULT_QUALITY_THRESHOLD;
 
 // ---------------------------------------------------------------------------
 // Valid article types
@@ -393,17 +394,12 @@ async function getSharedClient(): Promise<MCPClient> {
       console.log(`  📊 Last sync: ${status['last_sync'] as string}`);
     }
   } catch (error: unknown) {
-    const msg = `MCP warm-up failed: ${(error as Error).message}`;
-    if (requireMcpArg) {
-      // Abort the entire pipeline — generating articles from empty data produces
-      // low-quality placeholder content that should never be committed.
-      throw new Error(
-        `❌ ${msg}\n` +
-        '  The riksdag-regering MCP server is unavailable after all retries.\n' +
-        '  Pass --require-mcp=false to allow degraded-mode execution.'
-      );
+    const message = (error as Error).message;
+    if (requireMcp) {
+      sharedClient = null;
+      throw new Error(`MCP server unavailable: ${message}`, { cause: error });
     }
-    console.warn(`⚠️ ${msg}`);
+    console.warn(`⚠️ MCP warm-up failed: ${message}`);
     console.warn('  Continuing anyway — individual requests will retry with backoff');
   }
 
@@ -423,18 +419,12 @@ if (!fs.existsSync(METADATA_DIR)) {
 // Generation statistics
 // ---------------------------------------------------------------------------
 
-const stats: {
-  generated: number;
-  errors: number;
-  articles: string[];
-  timestamp: string;
-  qualityScores: number[];
-} = {
+const stats: { generated: number; errors: number; articles: string[]; timestamp: string; qualityScores: number[] } = {
   generated: 0,
   errors: 0,
   articles: [],
   timestamp: new Date().toISOString(),
-  qualityScores: [],
+  qualityScores: []
 };
 
 // ---------------------------------------------------------------------------
@@ -466,176 +456,6 @@ function formatDateForSlug(date: Date = new Date()): string {
 }
 
 /**
- * Extract a short topic descriptor from the first significant document in a list.
- * Used to build content-based article titles that reflect the actual content rather
- * than static "Battle Lines / Policy Priorities" boilerplate.
- *
- * @param docs - Array of raw documents (motions, propositions, committee reports)
- * @param maxLength - Maximum length of returned topic string (default 50)
- * @returns Cleaned topic string, or empty string if none found
- */
-export function extractTopicFromDocs(
-  docs: Array<Record<string, unknown>>,
-  maxLength = 50,
-): string {
-  if (docs.length === 0) return '';
-
-  // Prefer documents that are NOT generic "motion in response to prop." entries
-  const primary = docs.find(d => {
-    const t = String(d['titel'] || d['title'] || '').toLowerCase();
-    return t && !t.startsWith('med anledning av prop');
-  }) ?? docs[0];
-
-  // docs[0] is guaranteed non-undefined (early return above handles empty array)
-  const rawTitle = String(primary['titel'] || primary['title'] || '');
-  if (!rawTitle) return '';
-
-  // Strip common Swedish boilerplate prefixes for a cleaner excerpt
-  const cleaned = rawTitle
-    .replace(/^Regeringens proposition\s+\S+\s*/i, '')
-    .replace(/^Regeringens skrivelse\s+\S+\s*/i, '')
-    .replace(/^Motion till riksdagen\s+\S+\s+av\s+[^(]+\([A-ZÅÄÖ]{1,5}\)\s*/i, '')
-    .replace(/^med anledning av prop\.\s+\S+\s*/i, '')
-    .trim();
-
-  const topic = cleaned || rawTitle;
-  if (topic.length <= maxLength) return topic;
-  // Try to cut at the last word boundary; fall back to a hard slice + ellipsis
-  const truncated = topic.slice(0, maxLength);
-  const lastSpace = truncated.lastIndexOf(' ');
-  return lastSpace > maxLength / 2
-    ? truncated.slice(0, lastSpace) + '…'
-    : truncated + '…';
-}
-
-/**
- * Process all `data-translate="true"` spans in an HTML string.
- *
- * - For Swedish ('sv'): removes the `data-translate` attribute but keeps the text.
- * - For all other languages: translates the inner text via the static dictionary,
- *   then removes the `data-translate` attribute so no marker remains in the output.
- *
- * The `lang="sv"` attribute is also removed from the span so the rendered element
- * no longer falsely claims Swedish language for non-Swedish pages.
- *
- * **Upstream invariant**: every code path that creates a `data-translate` span calls
- * `escapeHtml()` on the content before insertion, so the inner text contains only
- * HTML character entities (e.g. `&amp;`, `&lt;`) and no raw `<` characters.  This
- * guarantees that the greedy `[\s\S]*?` inside the regex cannot be "tricked" by a
- * nested `</span>` in the content.  If you add a new site that produces
- * `data-translate` spans, ensure the content is passed through `escapeHtml()` first.
- *
- * @param html - Raw article HTML that may contain data-translate spans
- * @param targetLang - ISO 639-1 code of the article's target language
- * @returns HTML with all data-translate spans processed
- */
-export function translateSwedishContent(html: string, targetLang: Language): string {
-  // Match <span> that has both data-translate="true" and lang="sv" in either attribute order.
-  // The inner text may contain HTML entities but no nested tags (escapeHtml is applied upstream).
-  return html.replace(
-    /<span\s+(?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*>([\s\S]*?)<\/span>/g,
-    (_match: string, innerText: string): string => {
-      const text = innerText.trim();
-      if (targetLang === 'sv') {
-        // Keep Swedish text as-is; just remove the translate marker attribute.
-        return `<span lang="sv">${innerText}</span>`;
-      }
-      const translated = translatePhrase(text, targetLang);
-      // Return a plain span without the data-translate marker or lang="sv".
-      return `<span>${translated}</span>`;
-    },
-  );
-}
-
-/**
- * Quality metrics produced by validateArticleQuality()
- */
-export interface ArticleQualityReport {
-  /** Filename (without path) used as an identifier in the report */
-  filename: string;
-  /** Total words in visible text (HTML tags stripped) */
-  wordCount: number;
-  /** Number of `data-translate="true"` spans remaining (should be 0 after translation) */
-  untranslatedSpans: number;
-  /** Number of h2 analytical section headers found */
-  analyticalSections: number;
-  /** 0–100 composite score */
-  qualityScore: number;
-  /** true when score < QUALITY_THRESHOLD */
-  belowThreshold: boolean;
-}
-
-/**
- * Articles scoring below this threshold trigger a console warning.
- * We never block writing (to avoid silent data loss) but we flag the run.
- */
-const QUALITY_THRESHOLD = 40;
-
-/**
- * Validate article quality after HTML generation.
- *
- * Scoring (0–100):
- * - Word count ≥ 300  → +50 pts (proportional: capped at 50 if ≥ 300, else (words/300)*50)
- * - Analytical sections (h2 count) ≥ 3 → +30 pts (proportional: capped at 30 if ≥ 3, else (n/3)*30)
- * - Zero untranslated spans → +20 pts (deducted proportionally when spans present)
- *
- * @param html - Final article HTML (after translation)
- * @param lang - Target language code
- * @param articleType - Article type slug (for reporting)
- * @param filenameHint - Filename shown in the report
- * @returns Quality report with score and metrics
- */
-export function validateArticleQuality(
-  html: string,
-  lang: Language,
-  articleType: string,
-  filenameHint: string,
-): ArticleQualityReport {
-  // Word count: strip all HTML tags with a single pass.
-  // The HTML here is always pipeline-generated (never user input), so a simple
-  // tag strip is both correct and sufficient for word-count purposes.
-  const textOnly = html
-    .replace(/<[^>]*>/g, ' ')
-    .replace(/&[a-z#]+\d*;/gi, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-  const wordCount = textOnly ? textOnly.split(' ').filter(w => w.length > 0).length : 0;
-
-  // Count residual data-translate spans (should be 0 after post-processing).
-  // Only count <span> elements (consistent with translateSwedishContent scope).
-  const untranslatedSpans = lang !== 'sv'
-    ? (html.match(/<span[^>]*data-translate="true"[^>]*>/gi) ?? []).length
-    : 0;
-
-  // Count meaningful h2 headers (analytical section markers)
-  const analyticalSections = (html.match(/<h2[^>]*>/gi) ?? []).length;
-
-  // Scoring
-  const wordScore = Math.min(50, (wordCount / 300) * 50);
-  const sectionScore = Math.min(30, (analyticalSections / 3) * 30);
-  // Each untranslated span costs 2 pts, capped at 20 (i.e. 10+ spans = full penalty)
-  const translationPenalty = Math.min(20, untranslatedSpans * 2);
-  const translationScore = 20 - translationPenalty;
-  const qualityScore = Math.round(wordScore + sectionScore + translationScore);
-
-  const report: ArticleQualityReport = {
-    filename: filenameHint,
-    wordCount,
-    untranslatedSpans,
-    analyticalSections,
-    qualityScore,
-    belowThreshold: qualityScore < QUALITY_THRESHOLD,
-  };
-
-  // Log quality report to console
-  const scoreLabel = report.belowThreshold ? '⚠️  BELOW THRESHOLD' : '✅ OK';
-  console.log(`  📊 Quality [${articleType}/${lang}] ${filenameHint}`);
-  console.log(`     Words: ${wordCount} | h2 sections: ${analyticalSections} | Untranslated spans: ${untranslatedSpans} | Score: ${qualityScore}/100 ${scoreLabel}`);
-
-  return report;
-}
-
-/**
  * Write article to file
  */
 async function writeArticle(html: string, filename: string): Promise<boolean> {
@@ -650,45 +470,163 @@ async function writeArticle(html: string, filename: string): Promise<boolean> {
   return true;
 }
 
+// ---------------------------------------------------------------------------
+// Translation post-processing
+// ---------------------------------------------------------------------------
+
 /**
- * Language-aware writeArticle wrapper for sub-generators.
+ * Process all `<span data-translate="true" lang="sv">…</span>` spans
+ * remaining in an article BEFORE writing it to disk.
  *
- * Sub-generators (monthly-review, weekly-review, month-ahead) receive this wrapper
- * instead of `writeArticle` directly. It extracts the target language from the
- * filename (e.g. "2026-02-22-monthly-review-de.html" → "de"), runs
- * `translateSwedishContent` to process all data-translate spans, validates quality,
- * then writes.
+ * - For `sv` articles: retains the original Swedish text, removes marker.
+ * - For other languages: attempts dictionary lookup via translateTerm(); if no
+ *   match, keeps the Swedish text unchanged but still removes the marker.
+ *
+ * Upstream invariant: span content has already been HTML-escaped via
+ * escapeHtml(). The spans therefore never contain nested tags.
+ *
+ * @param html       - Full article HTML
+ * @param targetLang - Target language (e.g. 'de', 'sv')
+ * @returns HTML with all data-translate spans processed
  */
-async function writeArticleWithTranslation(html: string, filename: string): Promise<boolean> {
-  // Filename pattern: <slug>-<lang>.html  (lang is the last hyphen-separated segment)
-  const langMatch = /\-([a-z]{2})\.html$/.exec(filename);
-  const lang: Language = langMatch ? (langMatch[1] as Language) : 'en';
-  const processedHtml: string = translateSwedishContent(html, lang);
-  // Extract article type from filename for quality report
-  const typeHint = filename.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/-[a-z]{2}\.html$/, '');
-  const report = validateArticleQuality(processedHtml, lang, typeHint, filename);
-  const written = await writeArticle(processedHtml, filename);
-  // Only record the score for articles that were successfully written
-  if (written) stats.qualityScores.push(report.qualityScore);
-  return written;
+export function translateSwedishContent(html: string, targetLang: string): string {
+  // Match both attribute orderings:
+  // <span data-translate="true" lang="sv">...</span>
+  // <span lang="sv" data-translate="true">...</span>
+  const spanRe = /<span\s+(?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*>([\s\S]*?)<\/span>/g;
+
+  return html.replace(spanRe, (_match: string, inner: string) => {
+    if (targetLang === 'sv') {
+      // Swedish articles: keep lang="sv" accessibility attr but remove data-translate marker
+      return `<span lang="sv">${inner}</span>`;
+    }
+    // Try phrase translation (handles prefix patterns like "med anledning av prop.")
+    const translated = translatePhrase(inner, targetLang as Language);
+    // If translated, return plain text (span no longer needed)
+    return translated;
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Article quality validation
+// ---------------------------------------------------------------------------
+
+/**
+ * Result shape returned by validateArticleQuality.
+ */
+export interface ArticleQualityReport {
+  qualityScore: number;
+  wordCount: number;
+  analyticalSections: number;
+  untranslatedSpans: number;
+  belowThreshold: boolean;
 }
 
 /**
- * Write article in specified language
+ * Score an article on a 0–100 scale across three metrics:
+ *
+ * | Metric                  | Max pts | Target                    |
+ * |-------------------------|---------|---------------------------|
+ * | Word count              |   50    | ≥ 1 000 words = full score|
+ * | Analytical h2 sections  |   30    | ≥ 3 h2 tags = full score  |
+ * | Translation completeness|   20    | 0 spans = full score (2 pts deducted per span, capped) |
+ *
+ * Swedish (`sv`) articles are exempt from the translation penalty since
+ * `data-translate="true"` is intentional in the Swedish edition.
+ *
+ * @param html        - Full article HTML
+ * @param lang        - Article language (e.g. 'de', 'sv')
+ * @param articleType - Article type slug (e.g. 'motions', 'propositions')
+ * @param hint        - Optional filename hint for console output
+ */
+export function validateArticleQuality(
+  html: string,
+  lang: string,
+  articleType: string,
+  hint = ''
+): ArticleQualityReport {
+  // Strip tags using a single-pass replacer; html always comes from our own
+  // controlled pipeline so we can safely strip all tags for word counting.
+  const textOnly = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const wordCount = textOnly.split(' ').filter(w => w.length > 1).length;
+
+  // Word score: proportional, capped at 50 pts (target: 1000 words)
+  const wordScore = Math.min(50, Math.round((wordCount / 1000) * 50));
+
+  // Section score: h2 heading count, proportional, capped at 30 pts (target: 3)
+  const h2Count = (html.match(/<h2[\s>]/gi) ?? []).length;
+  const sectionScore = Math.min(30, Math.round((h2Count / 3) * 30));
+
+  // Translation penalty: 2 pts per remaining span, capped at 20 pts
+  // sv articles are exempt — data-translate is intentional there
+  const untranslatedSpans = lang === 'sv'
+    ? 0
+    : (html.match(/<span[^>]*data-translate="true"[^>]*>/gi) ?? []).length;
+  const translationScore = Math.max(0, 20 - untranslatedSpans * 2);
+
+  const qualityScore = wordScore + sectionScore + translationScore;
+  const belowThreshold = qualityScore < QUALITY_THRESHOLD;
+
+  const label = belowThreshold ? '⚠️ LOW' : '✅ OK';
+  const fileHint = hint ? ` ${hint}` : '';
+  console.log(
+    `📊 Quality [${articleType}/${lang}]${fileHint}` +
+    `  Words: ${wordCount} | h2 sections: ${h2Count}` +
+    ` | Untranslated spans: ${untranslatedSpans} | Score: ${qualityScore}/100 ${label}`
+  );
+
+  return { qualityScore, wordCount, analyticalSections: h2Count, untranslatedSpans, belowThreshold };
+}
+
+// ---------------------------------------------------------------------------
+// Content-based title extraction (#456)
+// ---------------------------------------------------------------------------
+
+/** Boilerplate prefixes to strip from Swedish document titles. */
+const TOPIC_STRIP_RE = /^(?:Regeringens proposition\s+\d{4}\/\d{2}:\d+\s*|med anledning av prop\.?\s+\d{4}\/\d{2}:\d+\s*|om förslag till\s*|med anledning av\s*|angående\s*)/i;
+
+/**
+ * Extract a human-readable topic string from an array of documents.
+ *
+ * - Skips "med anledning av prop." entries if a better alternative exists.
+ * - Strips common Swedish boilerplate prefixes.
+ * - Truncates at `maxLength` characters with an ellipsis if the title is long.
+ *
+ * @param docs      - Array of raw documents (any shape with `titel` / `title`)
+ * @param maxLength - Max characters before truncation (default: 80)
+ */
+export function extractTopicFromDocs(
+  docs: Array<{ titel?: string; title?: string }>,
+  maxLength = 80
+): string {
+  if (docs.length === 0) return '';
+
+  // Prefer a doc whose title is NOT a "med anledning av" reference
+  const primary =
+    docs.find(d => {
+      const t = d.titel || d.title || '';
+      return t && !/^med anledning av prop\./i.test(t);
+    }) ?? docs[0];
+
+  const raw = (primary?.titel || primary?.title || '').trim();
+  const cleaned = raw.replace(TOPIC_STRIP_RE, '').trim() || raw;
+
+  if (cleaned.length <= maxLength) return cleaned;
+  return cleaned.slice(0, maxLength).trimEnd() + '…';
+}
+
+/**
+ * Write article in specified language, applying translation post-processing
+ * and quality validation before writing to disk.
  */
 async function writeSingleArticle(html: string, slug: string, lang: Language): Promise<string> {
   const filename: string = `${slug}-${lang}.html`;
-  const processedHtml: string = translateSwedishContent(html, lang);
-  // Extract article type from slug for quality report
-  const typeHint = slug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
-  const report = validateArticleQuality(processedHtml, lang, typeHint, filename);
-  const written = await writeArticle(processedHtml, filename);
-  // Only record the score for articles that were successfully written
-  if (written) stats.qualityScores.push(report.qualityScore);
-  if (written) {
-    stats.generated += 1;
-    stats.articles.push(filename);
-  }
+  const processedHtml = translateSwedishContent(html, lang);
+  const report = validateArticleQuality(processedHtml, lang, slug.replace(/^\d{4}-\d{2}-\d{2}-/, ''), filename);
+  await writeArticle(processedHtml, filename);
+  stats.qualityScores.push(report.qualityScore);
+  stats.generated += 1;
+  stats.articles.push(filename);
   return filename;
 }
 
@@ -722,25 +660,22 @@ async function generateWeekAhead(): Promise<GenerationResult> {
     console.log(`  📊 Found ${events.length} events`);
 
     // 2. Fetch upcoming/recent documents
-    const rawDocs = await Promise.resolve()
-      .then(() => client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 }))
-      .catch(() => [] as unknown[]);
+    const rawDocs = await client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const documents: RawDocument[] = Array.isArray(rawDocs) ? rawDocs as RawDocument[] : [];
     console.log(`  📊 Found ${documents.length} upcoming documents`);
 
     // 3. Fetch parliamentary questions (fragor)
     console.log('  🔄 Fetching parliamentary questions...');
-    const rawQuestions = await Promise.resolve()
-      .then(() => client.fetchWrittenQuestions({ limit: 20 }))
-      .catch(() => [] as unknown[]);
+    const rawQuestions = await client.fetchWrittenQuestions({ limit: 20 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const questions: unknown[] = Array.isArray(rawQuestions) ? rawQuestions : [];
     console.log(`  📊 Found ${questions.length} written questions`);
 
     // 4. Fetch interpellations (interpellationer)
     console.log('  🔄 Fetching interpellations...');
-    const rawInterpellations = await Promise.resolve()
-      .then(() => client.fetchInterpellations({ limit: 15 }))
-      .catch(() => [] as unknown[]);
+    const rawInterpellations = await client.fetchInterpellations({ limit: 15 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const interpellations: unknown[] = Array.isArray(rawInterpellations) ? rawInterpellations : [];
     console.log(`  📊 Found ${interpellations.length} interpellations`);
 
@@ -848,9 +783,6 @@ async function generateCommitteeReports(): Promise<GenerationResult> {
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-committee-reports`;
 
-    // Build content-aware topic excerpt for title (issue #456)
-    const reportsTopic = extractTopicFromDocs(reports as Array<Record<string, unknown>>);
-
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
@@ -861,22 +793,21 @@ async function generateCommitteeReports(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_betankanden', 'get_dokument_innehall']);
 
-      const topicSuffix = reportsTopic ? `: ${reportsTopic}` : '';
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Committee Reports${topicSuffix}`, subtitle: `Analysis of ${reports.length} committee reports revealing Riksdag priorities for the current session` },
-        sv: { title: `Utskottsbetänkanden${topicSuffix}`, subtitle: `Analys av ${reports.length} utskottsbetänkanden som avslöjar riksdagens prioriteringar` },
-        da: { title: `Udvalgsbetænkninger${topicSuffix}`, subtitle: `Analyse af ${reports.length} udvalgsbetænkninger` },
-        no: { title: `Komitéinnstillinger${topicSuffix}`, subtitle: `Analyse av ${reports.length} komitéinnstillinger` },
-        fi: { title: `Valiokunnan mietinnöt${topicSuffix}`, subtitle: `Analyysi ${reports.length} valiokunnan mietinnöstä` },
-        de: { title: `Ausschussberichte${topicSuffix}`, subtitle: `Analyse von ${reports.length} Ausschussberichten` },
-        fr: { title: `Rapports de commission${topicSuffix}`, subtitle: `Analyse de ${reports.length} rapports de commission` },
-        es: { title: `Informes de comisión${topicSuffix}`, subtitle: `Análisis de ${reports.length} informes de comisión` },
-        nl: { title: `Commissierapporten${topicSuffix}`, subtitle: `Analyse van ${reports.length} commissierapporten` },
-        ar: { title: `تقارير اللجان${topicSuffix}`, subtitle: `تحليل ${reports.length} تقارير لجان` },
-        he: { title: `דוחות ועדה${topicSuffix}`, subtitle: `ניתוח ${reports.length} דוחות ועדה` },
-        ja: { title: `委員会報告${topicSuffix}`, subtitle: `${reports.length}件の委員会報告の分析` },
-        ko: { title: `위원회 보고서${topicSuffix}`, subtitle: `${reports.length}개 위원회 보고서 분석` },
-        zh: { title: `委员会报告${topicSuffix}`, subtitle: `${reports.length}份委员会报告分析` }
+        en: { title: `Committee Reports: Parliamentary Priorities This Week`, subtitle: `Analysis of ${reports.length} committee reports revealing Riksdag priorities for the current session` },
+        sv: { title: `Utskottsbetänkanden: Riksdagens prioriteringar denna vecka`, subtitle: `Analys av ${reports.length} utskottsbetänkanden som avslöjar riksdagens prioriteringar` },
+        da: { title: `Udvalgsbetænkninger: Parlamentets prioriteringer denne uge`, subtitle: `Analyse af ${reports.length} udvalgsbetænkninger` },
+        no: { title: `Komitéinnstillinger: Stortingets prioriteringer denne uken`, subtitle: `Analyse av ${reports.length} komitéinnstillinger` },
+        fi: { title: `Valiokunnan mietinnöt: Eduskunnan prioriteetit tällä viikolla`, subtitle: `Analyysi ${reports.length} valiokunnan mietinnöstä` },
+        de: { title: `Ausschussberichte: Parlamentarische Prioritäten diese Woche`, subtitle: `Analyse von ${reports.length} Ausschussberichten` },
+        fr: { title: `Rapports de commission: Priorités parlementaires cette semaine`, subtitle: `Analyse de ${reports.length} rapports de commission` },
+        es: { title: `Informes de comisión: Prioridades parlamentarias esta semana`, subtitle: `Análisis de ${reports.length} informes de comisión` },
+        nl: { title: `Commissierapporten: Parlementaire prioriteiten deze week`, subtitle: `Analyse van ${reports.length} commissierapporten` },
+        ar: { title: `تقارير اللجان: أولويات البرلمان هذا الأسبوع`, subtitle: `تحليل ${reports.length} تقارير لجان` },
+        he: { title: `דוחות ועדה: סדרי עדיפויות פרלמנטריים השבוע`, subtitle: `ניתוח ${reports.length} דוחות ועדה` },
+        ja: { title: `委員会報告：今週の議会優先事項`, subtitle: `${reports.length}件の委員会報告の分析` },
+        ko: { title: `위원회 보고서: 이번 주 의회 우선순위`, subtitle: `${reports.length}개 위원회 보고서 분석` },
+        zh: { title: `委员会报告：本周议会优先事项`, subtitle: `${reports.length}份委员会报告分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -936,9 +867,6 @@ async function generatePropositions(): Promise<GenerationResult> {
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-government-propositions`;
 
-    // Build content-aware topic excerpt for title (issue #456)
-    const propsTopic = extractTopicFromDocs(propositions as Array<Record<string, unknown>>);
-
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
@@ -949,22 +877,21 @@ async function generatePropositions(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_propositioner', 'get_dokument_innehall']);
 
-      const topicSuffix = propsTopic ? `: ${propsTopic}` : '';
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Government Propositions${topicSuffix}`, subtitle: `Analysis of ${propositions.length} government propositions shaping the legislative agenda` },
-        sv: { title: `Regeringens propositioner${topicSuffix}`, subtitle: `Analys av ${propositions.length} propositioner som formar den lagstiftande agendan` },
-        da: { title: `Regeringsforslag${topicSuffix}`, subtitle: `Analyse af ${propositions.length} regeringsforslag` },
-        no: { title: `Regjeringens proposisjoner${topicSuffix}`, subtitle: `Analyse av ${propositions.length} regjeringsproposisjoner` },
-        fi: { title: `Hallituksen esitykset${topicSuffix}`, subtitle: `Analyysi ${propositions.length} hallituksen esityksestä` },
-        de: { title: `Regierungsvorlagen${topicSuffix}`, subtitle: `Analyse von ${propositions.length} Regierungsvorlagen` },
-        fr: { title: `Propositions gouvernementales${topicSuffix}`, subtitle: `Analyse de ${propositions.length} propositions gouvernementales` },
-        es: { title: `Proposiciones gubernamentales${topicSuffix}`, subtitle: `Análisis de ${propositions.length} proposiciones gubernamentales` },
-        nl: { title: `Regeringsvoorstellen${topicSuffix}`, subtitle: `Analyse van ${propositions.length} regeringsvoorstellen` },
-        ar: { title: `مقترحات الحكومة${topicSuffix}`, subtitle: `تحليل ${propositions.length} مقترحات حكومية` },
-        he: { title: `הצעות ממשלה${topicSuffix}`, subtitle: `ניתוח ${propositions.length} הצעות ממשלה` },
-        ja: { title: `政府提案${topicSuffix}`, subtitle: `${propositions.length}件の政府提案の分析` },
-        ko: { title: `정부 법안${topicSuffix}`, subtitle: `${propositions.length}개 정부 법안 분석` },
-        zh: { title: `政府提案${topicSuffix}`, subtitle: `${propositions.length}份政府提案分析` }
+        en: { title: `Government Propositions: Policy Priorities This Week`, subtitle: `Analysis of ${propositions.length} government propositions shaping the legislative agenda` },
+        sv: { title: `Regeringens propositioner: Veckans prioriteringar`, subtitle: `Analys av ${propositions.length} propositioner som formar den lagstiftande agendan` },
+        da: { title: `Regeringsforslag: Politiske prioriteringer denne uge`, subtitle: `Analyse af ${propositions.length} regeringsforslag` },
+        no: { title: `Regjeringens proposisjoner: Politiske prioriteringer denne uken`, subtitle: `Analyse av ${propositions.length} regjeringsproposisjoner` },
+        fi: { title: `Hallituksen esitykset: Viikon poliittiset prioriteetit`, subtitle: `Analyysi ${propositions.length} hallituksen esityksestä` },
+        de: { title: `Regierungsvorlagen: Politische Prioritäten diese Woche`, subtitle: `Analyse von ${propositions.length} Regierungsvorlagen` },
+        fr: { title: `Propositions gouvernementales: Priorités politiques cette semaine`, subtitle: `Analyse de ${propositions.length} propositions gouvernementales` },
+        es: { title: `Proposiciones gubernamentales: Prioridades políticas esta semana`, subtitle: `Análisis de ${propositions.length} proposiciones gubernamentales` },
+        nl: { title: `Regeringsvoorstellen: Politieke prioriteiten deze week`, subtitle: `Analyse van ${propositions.length} regeringsvoorstellen` },
+        ar: { title: `مقترحات الحكومة: الأولويات السياسية هذا الأسبوع`, subtitle: `تحليل ${propositions.length} مقترحات حكومية` },
+        he: { title: `הצעות ממשלה: סדרי עדיפויות מדיניים השבוע`, subtitle: `ניתוח ${propositions.length} הצעות ממשלה` },
+        ja: { title: `政府提案：今週の政策優先事項`, subtitle: `${propositions.length}件の政府提案の分析` },
+        ko: { title: `정부 법안: 이번 주 정책 우선순위`, subtitle: `${propositions.length}개 정부 법안 분석` },
+        zh: { title: `政府提案：本周政策优先事项`, subtitle: `${propositions.length}份政府提案分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -1024,9 +951,6 @@ async function generateMotions(): Promise<GenerationResult> {
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-opposition-motions`;
 
-    // Build content-aware topic excerpt for title (issue #456)
-    const motionsTopic = extractTopicFromDocs(motions as Array<Record<string, unknown>>);
-
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
@@ -1037,22 +961,21 @@ async function generateMotions(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_motioner', 'get_dokument_innehall']);
 
-      const topicSuffix = motionsTopic ? `: ${motionsTopic}` : '';
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Opposition Motions${topicSuffix}`, subtitle: `Analysis of ${motions.length} opposition motions revealing parliamentary fault lines` },
-        sv: { title: `Oppositionsmotioner${topicSuffix}`, subtitle: `Analys av ${motions.length} oppositionsmotioner som avslöjar parlamentariska skiljelinjer` },
-        da: { title: `Oppositionsforslag${topicSuffix}`, subtitle: `Analyse af ${motions.length} oppositionsforslag` },
-        no: { title: `Opposisjonsforslag${topicSuffix}`, subtitle: `Analyse av ${motions.length} opposisjonsforslag` },
-        fi: { title: `Opposition aloitteet${topicSuffix}`, subtitle: `Analyysi ${motions.length} opposition aloitteesta` },
-        de: { title: `Oppositionsanträge${topicSuffix}`, subtitle: `Analyse von ${motions.length} Oppositionsanträgen` },
-        fr: { title: `Motions d'opposition${topicSuffix}`, subtitle: `Analyse de ${motions.length} motions d'opposition` },
-        es: { title: `Mociones de oposición${topicSuffix}`, subtitle: `Análisis de ${motions.length} mociones de oposición` },
-        nl: { title: `Oppositiemoties${topicSuffix}`, subtitle: `Analyse van ${motions.length} oppositiemoties` },
-        ar: { title: `اقتراحات المعارضة${topicSuffix}`, subtitle: `تحليل ${motions.length} اقتراحات المعارضة` },
-        he: { title: `הצעות אופוזיציה${topicSuffix}`, subtitle: `ניתוח ${motions.length} הצעות אופוזיציה` },
-        ja: { title: `野党動議${topicSuffix}`, subtitle: `${motions.length}件の野党動議の分析` },
-        ko: { title: `야당 동의${topicSuffix}`, subtitle: `${motions.length}개 야당 동의 분석` },
-        zh: { title: `反对党动议${topicSuffix}`, subtitle: `${motions.length}份反对党动议分析` }
+        en: { title: `Opposition Motions: Battle Lines This Week`, subtitle: `Analysis of ${motions.length} opposition motions revealing parliamentary fault lines` },
+        sv: { title: `Oppositionsmotioner: Veckans stridslinjer`, subtitle: `Analys av ${motions.length} oppositionsmotioner som avslöjar parlamentariska skiljelinjer` },
+        da: { title: `Oppositionsforslag: Ugens kamppladser`, subtitle: `Analyse af ${motions.length} oppositionsforslag` },
+        no: { title: `Opposisjonsforslag: Ukens kamplinjer`, subtitle: `Analyse av ${motions.length} opposisjonsforslag` },
+        fi: { title: `Opposition aloitteet: Viikon taistelulinjat`, subtitle: `Analyysi ${motions.length} opposition aloitteesta` },
+        de: { title: `Oppositionsanträge: Kampflinien dieser Woche`, subtitle: `Analyse von ${motions.length} Oppositionsanträgen` },
+        fr: { title: `Motions d'opposition: Lignes de bataille cette semaine`, subtitle: `Analyse de ${motions.length} motions d'opposition` },
+        es: { title: `Mociones de oposición: Líneas de batalla esta semana`, subtitle: `Análisis de ${motions.length} mociones de oposición` },
+        nl: { title: `Oppositiemoties: Strijdlijnen deze week`, subtitle: `Analyse van ${motions.length} oppositiemoties` },
+        ar: { title: `اقتراحات المعارضة: خطوط المعركة هذا الأسبوع`, subtitle: `تحليل ${motions.length} اقتراحات المعارضة` },
+        he: { title: `הצעות אופוזיציה: קווי העימות השבוע`, subtitle: `ניתוח ${motions.length} הצעות אופוזיציה` },
+        ja: { title: `野党動議：今週の対立構図`, subtitle: `${motions.length}件の野党動議の分析` },
+        ko: { title: `야당 동의: 이번 주 대립 구도`, subtitle: `${motions.length}개 야당 동의 분석` },
+        zh: { title: `反对党动议：本周对立格局`, subtitle: `${motions.length}份反对党动议分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -1164,7 +1087,7 @@ async function generateNews(): Promise<typeof stats> {
               topic: topTitle.slice(0, 80),
               voteId: voteId || undefined,
             },
-            writeArticle: writeArticleWithTranslation,
+            writeArticle,
           });
         } catch (err: unknown) {
           console.error('❌ Error generating breaking news:', (err as Error).message);
@@ -1172,13 +1095,13 @@ async function generateNews(): Promise<typeof stats> {
         break;
       }
       case 'month-ahead':
-        await generateMonthAhead({ languages, writeArticle: writeArticleWithTranslation });
+        await generateMonthAhead({ languages, writeArticle });
         break;
       case 'weekly-review':
-        await generateWeeklyReview({ languages, writeArticle: writeArticleWithTranslation });
+        await generateWeeklyReview({ languages, writeArticle });
         break;
       case 'monthly-review':
-        await generateMonthlyReview({ languages, writeArticle: writeArticleWithTranslation });
+        await generateMonthlyReview({ languages, writeArticle });
         break;
       default:
         console.warn(`⚠️ Unknown article type: ${type}`);
@@ -1239,13 +1162,9 @@ async function generateNews(): Promise<typeof stats> {
 
   // Quality summary
   if (stats.qualityScores.length > 0) {
-    const avgScore = Math.round(stats.qualityScores.reduce((a, b) => a + b, 0) / stats.qualityScores.length);
-    const belowCount = stats.qualityScores.filter(s => s < QUALITY_THRESHOLD).length;
-    const allBelowThreshold = belowCount === stats.qualityScores.length;
-    console.log(`\n📊 Quality summary: avg score ${avgScore}/100 (${belowCount}/${stats.qualityScores.length} below threshold)`);
-    if (allBelowThreshold) {
-      console.warn('⚠️  ALL generated articles are below the quality threshold — possible data/MCP issue');
-    }
+    const avg = Math.round(stats.qualityScores.reduce((a, b) => a + b, 0) / stats.qualityScores.length);
+    const below = stats.qualityScores.filter(s => s < QUALITY_THRESHOLD).length;
+    console.log(`\n📊 Quality summary: avg ${avg}/100 | ${below}/${stats.qualityScores.length} articles below threshold (${QUALITY_THRESHOLD})`);
   }
 
   if (remainingLangs.length > 0) {
@@ -1266,13 +1185,15 @@ async function generateNews(): Promise<typeof stats> {
 if (import.meta.url === `file://${process.argv[1]}`) {
   generateNews()
     .then(result => {
-      if (result.errors > 0) { process.exit(1); }
-      // Exit code 2 = soft failure: all articles are below quality threshold
+      // Exit 2 when every generated article scored below the quality threshold
       const allBelowThreshold =
         result.qualityScores.length > 0 &&
-        result.qualityScores.every((s: number) => s < QUALITY_THRESHOLD);
-      if (allBelowThreshold) { process.exit(2); }
-      process.exit(0);
+        result.qualityScores.every(s => s < QUALITY_THRESHOLD);
+      if (allBelowThreshold) {
+        console.error(`❌ All articles scored below quality threshold (${QUALITY_THRESHOLD}). Exiting with code 2.`);
+        process.exit(2);
+      }
+      process.exit(result.errors > 0 ? 1 : 0);
     })
     .catch((error: unknown) => {
       console.error('❌ Fatal error:', error);
@@ -1297,6 +1218,6 @@ export {
   LANGUAGE_PRESETS,
   formatDateForSlug,
   getWeekAheadDateRange,
-  QUALITY_THRESHOLD,
-  requireMcpArg,
+  requireMcp,
+  requireMcpArg
 };
