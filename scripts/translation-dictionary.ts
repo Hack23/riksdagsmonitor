@@ -696,13 +696,27 @@ export function translatePhrase(text: string, targetLang: Language): string {
  * @param targetLang - Target language (e.g. 'de', 'sv')
  * @returns HTML with all data-translate spans processed
  */
+/**
+ * Matches `<span>` elements that have both `data-translate="true"` and `lang="sv"` attributes
+ * in any order.
+ *
+ * Capture groups:
+ * 1. The full attribute string inside `<span …>` (used to strip `data-translate` while
+ *    preserving `lang="sv"` and any other attributes).
+ * 2. The inner HTML-safe content between the opening and closing `<span>` tags.
+ *
+ * Note: `escapeHtml()` is applied upstream, so the inner content may contain HTML entities
+ * but no nested tags, making the non-greedy `[\s\S]*?` match safe.
+ */
+const TRANSLATABLE_SV_SPAN_REGEX =
+  /<span\s+((?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*)>([\s\S]*?)<\/span>/g;
+
 export function translateSwedishContent(html: string, targetLang: Language): string {
   // Match both attribute orderings:
   // <span data-translate="true" lang="sv">...</span>
   // <span lang="sv" data-translate="true">...</span>
   // Inner text may contain HTML entities but no nested tags (escapeHtml is applied upstream).
-  const spanRe =
-    /<span\s+((?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*)>([\s\S]*?)<\/span>/g;
+  const spanRe = new RegExp(TRANSLATABLE_SV_SPAN_REGEX.source, TRANSLATABLE_SV_SPAN_REGEX.flags);
 
   return html.replace(spanRe, (_match: string, attrs: string, inner: string): string => {
     // Remove data-translate marker but preserve all other attributes (e.g. lang="sv" for accessibility)

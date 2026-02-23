@@ -230,5 +230,3 @@ describe('translateSwedishContent', () => {
     expect(result).not.toContain('data-translate');
   });
 });
-
-
