@@ -1468,7 +1468,7 @@ export function isPersonProfileText(text: string): boolean {
     // Deceased: "Avliden YYYY-MM-DD ..."
     /^Avliden\s+\d{4}-\d{2}-\d{2}/u.test(trimmed) ||
     // Contains riksdag email address — always a profile page
-    /[a-zA-Z0-9._%+\-]+@riksdagen\.se/u.test(trimmed) ||
+    /[a-zA-Z0-9._%+-]+@riksdagen\.se/u.test(trimmed) ||
     // Contains "Aktuella uppdrag Riksdagsledamot" — profile header
     /Aktuella uppdrag\s+Riksdagsledamot/u.test(trimmed)
   );
