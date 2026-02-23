@@ -1350,10 +1350,10 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
 // ---------------------------------------------------------------------------
 
 /** Regex that matches the "med anledning av prop. YYYY/YY:NNN" pattern in motion titles */
-const PROP_REFERENCE_REGEX = /med anledning av prop\.\s+(\S+)/i;
+const PROP_REFERENCE_REGEX = /med anledning av prop\.\s+(\d{4}\/\d{2}:\d+)/i;
 
-/** Regex to capture the full proposition reference text (including description) */
-const PROP_FULL_REF_REGEX = /med anledning av (prop\.\s*\S+(?:\s+.+)?)/i;
+/** Regex to capture the full proposition reference text (including description, but not trailing HTML or extra motion text) */
+const PROP_FULL_REF_REGEX = /med anledning av (prop\.\s*\d{4}\/\d{2}:\d+(?:\s+[^<]+?)?(?=\s*$|<))/i;
 
 /**
  * Check if date is today
