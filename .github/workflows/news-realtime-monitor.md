@@ -118,6 +118,23 @@ echo "============================"
 - ✅ If output shows Monday-Friday → Expect regular parliamentary activity
 - ✅ If output shows Saturday-Sunday → Expect limited activity (government press only)
 
+## MANDATORY MCP Health Gate
+
+Before generating ANY articles, verify MCP connectivity:
+
+1. Call `get_sync_status({})` — if successful, proceed
+2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
+3. If ALL 3 attempts fail:
+   - Use `safeoutputs___noop` with message: "MCP server unavailable after 3 connection attempts. No articles generated."
+   - DO NOT analyze existing articles in the repository
+   - DO NOT fabricate or recycle content
+   - The workflow MUST end with noop
+
+**CRITICAL**: ALL article content MUST originate from live MCP data. Never generate content from:
+- Existing articles in the news/ directory
+- Cached or stale data
+- AI-generated content without MCP source data
+
 ### 2. MANDATORY Pull Request Creation (Final Step)
 
 **CRITICAL: Workflow behavior depends on whether events found**
@@ -743,7 +760,7 @@ If articles are generated, validate with Playwright before creating PR:
 
 ## Error Handling
 
-- **MCP server unavailable**: Log error, document what failed, let workflow FAIL (don't use noop)
+- **MCP server unavailable**: Follow MCP Health Gate — retry 3 times, then call `safeoutputs___noop` with message "MCP server unavailable after 3 connection attempts. No articles generated." (do NOT let the workflow fail)
 - **No significant events**: Verify all sources checked, call `safeoutputs___noop` (LEGITIMATE), workflow succeeds
 - **Partial data**: Generate articles for available data, note gaps in metadata, call `safeoutputs___create_pull_request`
 - **PR creation fails after articles generated**: Let workflow FAIL (don't use noop)
