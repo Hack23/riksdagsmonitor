@@ -213,20 +213,20 @@ function sanitizeUrl(url: string | undefined | null): string {
 }
 
 /**
- * Normalise a Riksdag document URL so it always ends with .html.
- * The data.riksdagen.se REST API requires the .html suffix; URLs built from
- * dok_id alone (without the suffix) return 404. Falls back to constructing
- * a URL from dok_id when url is absent.
+ * Normalise a Riksdag document URL for use in article links.
+ * The MCP server appends ".html" to data.riksdagen.se/dokument/ URLs, but those
+ * URLs return empty HTML. Strip the ".html" suffix so the API returns actual
+ * document content (HTML for motions/betankanden, XML metadata for propositions).
+ * Falls back to constructing the URL from dok_id when url is absent.
  */
 function normalizeDocUrl(doc: { url?: string; dok_id?: string }): string {
   let url = doc.url ?? '';
   if (!url && doc.dok_id) {
-    url = `https://data.riksdagen.se/dokument/${doc.dok_id}.html`;
+    url = `https://data.riksdagen.se/dokument/${doc.dok_id}`;
   }
-  // Add .html suffix if the URL points to data.riksdagen.se/dokument/ but lacks an extension
-  if (/https?:\/\/data\.riksdagen\.se\/dokument\/[^./?#]+$/.test(url)) {
-    url = `${url}.html`;
-  }
+  // Strip .html suffix from data.riksdagen.se/dokument/ URLs — those endpoints
+  // return empty content with the .html suffix; without it they return document content.
+  url = url.replace(/(https?:\/\/data\.riksdagen\.se\/dokument\/[A-Za-z0-9]+)\.html\b/, '$1');
   return sanitizeUrl(url);
 }
 
