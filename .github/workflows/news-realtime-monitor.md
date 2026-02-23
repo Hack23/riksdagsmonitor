@@ -760,7 +760,7 @@ If articles are generated, validate with Playwright before creating PR:
 
 ## Error Handling
 
-- **MCP server unavailable**: Log error, document what failed, let workflow FAIL (don't use noop)
+- **MCP server unavailable**: Follow MCP Health Gate — retry 3 times, then call `safeoutputs___noop` with message "MCP server unavailable after 3 connection attempts. No articles generated." (do NOT let the workflow fail)
 - **No significant events**: Verify all sources checked, call `safeoutputs___noop` (LEGITIMATE), workflow succeeds
 - **Partial data**: Generate articles for available data, note gaps in metadata, call `safeoutputs___create_pull_request`
 - **PR creation fails after articles generated**: Let workflow FAIL (don't use noop)
