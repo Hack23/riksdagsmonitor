@@ -388,7 +388,7 @@ async function getSharedClient(): Promise<MCPClient> {
     const message = (error as Error).message;
     if (requireMcp) {
       sharedClient = null;
-      throw new Error(`MCP server unavailable: ${message}`);
+      throw new Error(`MCP server unavailable: ${message}`, { cause: error });
     }
     console.warn(`⚠️ MCP warm-up failed: ${message}`);
     console.warn('  Continuing anyway — individual requests will retry with backoff');
