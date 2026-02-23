@@ -1923,53 +1923,70 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   // Legislative pipeline section
   content += `\n    <h2>${L(lang, 'legislativePipeline')}</h2>\n`;
 
-  propositions.forEach(prop => {
-    const titleText = prop.titel || prop.title || '';
-    const escapedTitle = escapeHtml(titleText);
-    const titleHtml = (prop.titel && !prop.title)
-      ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
-      : escapedTitle;
-    const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
+  // Group propositions by referred committee
+  const byCommitteeGroup = groupPropositionsByCommittee(propositions);
+  const committeeKeys = [...byCommitteeGroup.keys()].sort((a, b) =>
+    a === '' ? 1 : b === '' ? -1 : a.localeCompare(b)
+  );
 
-    // Use enhanced summary based on metadata
-    const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
-    const isFromAPI = prop.summary || prop.notis;
-    const propDefaultVal = L(lang, 'propDefault');
-    const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== propDefaultVal)
-      ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
-      : escapeHtml(summaryText);
+  for (const committeeKey of committeeKeys) {
+    const groupProps = byCommitteeGroup.get(committeeKey) ?? [];
 
-    // Committee the proposition is referred to
-    const referredCommittee = prop.organ || prop.committee;
-    const referredLine = referredCommittee
-      ? `<br><strong>${L(lang, 'referredTo')}:</strong> ${escapeHtml(getCommitteeName(referredCommittee, lang))}`
-      : '';
+    // Show a committee section heading when there are multiple committees
+    if (byCommitteeGroup.size > 1) {
+      const committeeName = committeeKey === ''
+        ? String(L(lang, 'otherDocuments'))
+        : getCommitteeName(committeeKey, lang);
+      content += `\n    <h3>${escapeHtml(committeeName)}</h3>\n`;
+    }
 
-    const propSigVal = L(lang, 'propSignificance');
-    const readFullVal = L(lang, 'readFullProp');
-    const whyItMattersVal = L(lang, 'whyItMatters');
+    groupProps.forEach(prop => {
+      const titleText = prop.titel || prop.title || '';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (prop.titel && !prop.title)
+        ? `<span data-translate="true" lang="sv">${escapedTitle}</span>`
+        : escapedTitle;
+      const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
 
-    content += `
+      // Use enhanced summary based on metadata
+      const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
+      const isFromAPI = prop.summary || prop.notis;
+      const propDefaultVal = L(lang, 'propDefault');
+      const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== propDefaultVal)
+        ? `<span data-translate="true" lang="sv">${escapeHtml(summaryText)}</span>`
+        : escapeHtml(summaryText);
+
+      // Use h4 when inside a committee group, h3 when no grouping
+      const headingTag = byCommitteeGroup.size > 1 ? 'h4' : 'h3';
+
+      // Show "Referred to" committee only when no committee section heading is visible,
+      // i.e. when all propositions belong to a single committee (no h3 grouping is rendered).
+      const referredCommittee = prop.organ || prop.committee;
+      const referredLine = (byCommitteeGroup.size === 1 && referredCommittee)
+        ? `<br><strong>${L(lang, 'referredTo')}:</strong> ${escapeHtml(getCommitteeName(referredCommittee, lang))}`
+        : '';
+
+      const propSigVal = L(lang, 'propSignificance');
+      const readFullVal = L(lang, 'readFullProp');
+      const whyItMattersVal = L(lang, 'whyItMatters');
+
+      content += `
     <div class="proposition-entry">
-      <h3>${titleHtml}</h3>
+      <${headingTag}>${titleHtml}</${headingTag}>
       <p>${escapeHtml(String(propSigVal))} ${summaryHtml}${referredLine}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(prop, lang)}</p>
       <p><a href="${sanitizeUrl(prop.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
-  });
+    });
+  }
 
   // Policy implications section
   content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
   content += `    <div class="context-box">\n`;
 
-  // Group by referred committee for policy domain analysis
-  const byCommittee: Record<string, number> = {};
-  propositions.forEach(p => {
-    const c = p.organ || p.committee || 'unknown';
-    byCommittee[c] = (byCommittee[c] || 0) + 1;
-  });
-  const domainCount = Object.keys(byCommittee).length;
+  // Reuse the committee grouping already built above for domain count
+  const domainCount = byCommitteeGroup.size;
 
   const implicationFn = L(lang, 'policyImplicationsContext') as string | ((propCount: number, domainCount: number) => string);
   const implication = typeof implicationFn === 'function'
@@ -1979,6 +1996,27 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   content += `    </div>\n`;
 
   return content;
+}
+
+/**
+ * Group propositions by their referred committee.
+ * Propositions referred to the same committee (organ/committee field) are grouped together.
+ * Propositions with no committee reference are stored under the empty-string key.
+ * @returns Map from committee code (e.g. "FiU") to propositions array.
+ *          Key '' contains propositions not referred to any committee.
+ */
+export function groupPropositionsByCommittee(propositions: RawDocument[]): Map<string, RawDocument[]> {
+  const groups = new Map<string, RawDocument[]>();
+  for (const prop of propositions) {
+    const key = prop.organ || prop.committee || '';
+    const existing = groups.get(key);
+    if (existing) {
+      existing.push(prop);
+    } else {
+      groups.set(key, [prop]);
+    }
+  }
+  return groups;
 }
 
 /**

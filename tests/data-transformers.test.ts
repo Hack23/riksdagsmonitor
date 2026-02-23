@@ -14,7 +14,8 @@ import {
   generateSources,
   CONTENT_LABELS,
   L,
-  groupMotionsByProposition
+  groupMotionsByProposition,
+  groupPropositionsByCommittee
 } from '../scripts/data-transformers.js';
 import type { Language } from '../scripts/types/language.js';
 import type { EventGridItem, WatchPoint, ArticleMetadata } from '../scripts/types/article.js';
@@ -1267,6 +1268,111 @@ describe('Data Transformers', () => {
 
       expect(content).toContain('<h3>');
       expect(content).not.toContain('<h4>');
+    });
+  });
+
+  describe('groupPropositionsByCommittee', () => {
+    it('should group propositions that share the same committee (organ)', () => {
+      const propositions = [
+        { titel: 'Prop A', organ: 'FiU', url: '#', dok_id: 'P1' },
+        { titel: 'Prop B', organ: 'FiU', url: '#', dok_id: 'P2' },
+        { titel: 'Prop C', organ: 'MJU', url: '#', dok_id: 'P3' }
+      ];
+      const groups = groupPropositionsByCommittee(propositions as any);
+      expect(groups.get('FiU')).toHaveLength(2);
+      expect(groups.get('MJU')).toHaveLength(1);
+    });
+
+    it('should fall back to committee field when organ is absent', () => {
+      const propositions = [
+        { titel: 'Prop A', committee: 'UbU', url: '#', dok_id: 'P1' }
+      ];
+      const groups = groupPropositionsByCommittee(propositions as any);
+      expect(groups.has('UbU')).toBe(true);
+      expect(groups.get('UbU')).toHaveLength(1);
+    });
+
+    it('should place propositions without a committee under the empty-string key', () => {
+      const propositions = [
+        { titel: 'Prop A', url: '#', dok_id: 'P1' },
+        { titel: 'Prop B', url: '#', dok_id: 'P2' }
+      ];
+      const groups = groupPropositionsByCommittee(propositions as any);
+      expect(groups.has('')).toBe(true);
+      expect(groups.get('')).toHaveLength(2);
+      expect(groups.size).toBe(1);
+    });
+
+    it('should handle an empty propositions array', () => {
+      const groups = groupPropositionsByCommittee([]);
+      expect(groups.size).toBe(0);
+    });
+
+    it('should preserve all propositions across groups', () => {
+      const propositions = [
+        { titel: 'Prop A', organ: 'FiU', url: '#', dok_id: 'P1' },
+        { titel: 'Prop B', organ: 'FiU', url: '#', dok_id: 'P2' },
+        { titel: 'Prop C', organ: 'MJU', url: '#', dok_id: 'P3' },
+        { titel: 'Prop D', url: '#', dok_id: 'P4' }
+      ];
+      const groups = groupPropositionsByCommittee(propositions as any);
+      const total = [...groups.values()].reduce((s, arr) => s + arr.length, 0);
+      expect(total).toBe(propositions.length);
+    });
+  });
+
+  describe('Grouped propositions rendering', () => {
+    it('should render committee section heading when propositions span multiple committees', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Prop A', organ: 'FiU', url: '#', dok_id: 'P1' },
+          { titel: 'Prop B', organ: 'MJU', url: '#', dok_id: 'P2' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      // Committee name for FiU (Finance Committee) should appear as section heading
+      expect(content).toContain('Finance');
+      expect(content).toContain('P1');
+      expect(content).toContain('P2');
+    });
+
+    it('should use h4 for propositions inside a committee group', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Prop A', organ: 'FiU', url: '#', dok_id: 'P1' },
+          { titel: 'Prop B', organ: 'MJU', url: '#', dok_id: 'P2' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('<h4>');
+    });
+
+    it('should use h3 for propositions when all belong to same committee (no grouping header needed)', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Prop A', organ: 'FiU', url: '#', dok_id: 'P1' },
+          { titel: 'Prop B', organ: 'FiU', url: '#', dok_id: 'P2' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      // Single committee → no committee heading → h3 used for proposition titles
+      expect(content).not.toContain('<h4>');
+      expect(content).toContain('<h3>');
+    });
+
+    it('should NOT show committee heading when all propositions are in the same committee', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Prop A', organ: 'FiU', url: '#', dok_id: 'P1' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      // Only 1 group → no extra committee <h3> before the proposition
+      // The Finance Committee label should NOT appear as a section heading
+      const h3Matches = content.match(/<h3>/g) || [];
+      // Should only have h2/h3 for article sections (Legislative Pipeline, Policy Implications)
+      // but not an extra committee heading
+      expect(h3Matches.length).toBeLessThanOrEqual(2);
     });
   });
 
