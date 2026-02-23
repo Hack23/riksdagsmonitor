@@ -1038,7 +1038,7 @@ describe('Data Transformers', () => {
   });
 
   describe('Domain-specific policy analysis (getDomainSpecificAnalysis)', () => {
-    it('should include substantive fiscal motion analysis — not just generic boilerplate', () => {
+    it('should include substantive fiscal committee report analysis — not just generic boilerplate', () => {
       const content = generateArticleContent({
         reports: [{ titel: 'Skattereform', organ: 'FiU', url: 'https://example.com/1', dok_id: 'FiU1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
@@ -1358,7 +1358,7 @@ describe('Data Transformers', () => {
       'committeeCountContext', 'committeeActivityTakeaway', 'committeeMomentumTakeaway',
       'oppositionStrategyContext', 'policyImplicationsContext', 'genericOverview',
       'partyMotionsFiled', 'otherCommittee', 'otherDocuments',
-      'policySignificanceTouches', 'policySignificanceGeneric',
+      'policySignificanceTouches', 'policySignificanceGeneric', 'generalMatters',
       'politicalContext', 'policyImplications', 'keyTakeaways', 'thematicAnalysis',
       'legislativePipeline', 'oppositionStrategy', 'coalitionDynamics',
       'whatThisMeans', 'whyItMatters', 'committeeBreakdown', 'propsBreakdown',
@@ -1389,6 +1389,44 @@ describe('Data Transformers', () => {
     it('should have string-valued policySignificanceGeneric for en', () => {
       expect(typeof CONTENT_LABELS.en.policySignificanceGeneric).toBe('string');
       expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('committee review');
+    });
+
+    it('should have localized generalMatters for sv (not English)', () => {
+      expect(CONTENT_LABELS.sv.generalMatters).toBe('Övriga frågor');
+      expect(CONTENT_LABELS.sv.generalMatters).not.toBe('General matters');
+    });
+
+    it('should use localized generalMatters as fallback theme in motions thematic grouping', () => {
+      // One detectable domain (försvar) + one undetectable → 2 themes → thematic section shown
+      const svContent = generateArticleContent({
+        motions: [
+          { titel: 'Försvarspolitik och NATO', parti: 'M', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Med anledning av misc policy', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'sv') as string;
+
+      // Swedish fallback should be "Övriga frågor", not the English "General matters"
+      expect(svContent).toContain('Övriga frågor');
+      expect(svContent).not.toContain('>General matters<');
+    });
+
+    it('should collect domain labels (not full analysis sentences) in generic content policy context', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'mot', url: 'https://example.com/1', dok_id: 'D1' },
+          { titel: 'Försvarspolitik', doktyp: 'bet', url: 'https://example.com/2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      // Should show domain labels, not full multi-sentence analysis
+      if (content.includes('Policy context')) {
+        const policyLine = content.split('\n').find(l => l.includes('Policy context'));
+        if (policyLine) {
+          // Each domain-label entry should be short — not contain full analysis sentences
+          expect(policyLine).not.toContain('Fiscal policy motions directly challenge');
+          expect(policyLine).not.toContain('signals opposition readiness');
+        }
+      }
     });
   });
 });

@@ -403,7 +403,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Other committees',
     otherDocuments: 'Other documents',
     policySignificanceTouches: (domains: string): string => `Touches on ${domains}.`,
-    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.'
+    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.',
+    generalMatters: 'General matters'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -473,7 +474,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Övriga utskott',
     otherDocuments: 'Övriga dokument',
     policySignificanceTouches: (domains: string): string => `Berör ${domains}.`,
-    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.'
+    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.',
+    generalMatters: 'Övriga frågor'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -543,7 +545,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Andre udvalg',
     otherDocuments: 'Andre dokumenter',
     policySignificanceTouches: (domains: string): string => `Berører ${domains}.`,
-    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.'
+    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.',
+    generalMatters: 'Generelle spørgsmål'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -613,7 +616,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Andre komiteer',
     otherDocuments: 'Andre dokumenter',
     policySignificanceTouches: (domains: string): string => `Berører ${domains}.`,
-    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.'
+    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.',
+    generalMatters: 'Generelle spørsmål'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -683,7 +687,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Muut valiokunnat',
     otherDocuments: 'Muut asiakirjat',
     policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}.`,
-    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.'
+    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.',
+    generalMatters: 'Yleiset asiat'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -753,7 +758,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Sonstige Ausschüsse',
     otherDocuments: 'Sonstige Dokumente',
     policySignificanceTouches: (domains: string): string => `Betrifft ${domains}.`,
-    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.'
+    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.',
+    generalMatters: 'Allgemeine Angelegenheiten'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -823,7 +829,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Autres commissions',
     otherDocuments: 'Autres documents',
     policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}.`,
-    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.'
+    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.',
+    generalMatters: 'Questions générales'
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -893,7 +900,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Otras comisiones',
     otherDocuments: 'Otros documentos',
     policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}.`,
-    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.'
+    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.',
+    generalMatters: 'Asuntos generales'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -963,7 +971,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'Overige commissies',
     otherDocuments: 'Overige documenten',
     policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}.`,
-    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.'
+    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.',
+    generalMatters: 'Algemene zaken'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -1033,7 +1042,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'لجان أخرى',
     otherDocuments: 'وثائق أخرى',
     policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}.`,
-    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.'
+    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.',
+    generalMatters: 'مسائل عامة'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -1103,7 +1113,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'ועדות אחרות',
     otherDocuments: 'מסמכים אחרים',
     policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}.`,
-    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.'
+    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.',
+    generalMatters: 'עניינים כלליים'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -1173,7 +1184,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: 'その他の委員会',
     otherDocuments: 'その他の文書',
     policySignificanceTouches: (domains: string): string => `${domains}に関連します。`,
-    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。'
+    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。',
+    generalMatters: '一般事項'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -1243,7 +1255,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: '기타 위원회',
     otherDocuments: '기타 문서',
     policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다.`,
-    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.'
+    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.',
+    generalMatters: '일반 사항'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -1313,7 +1326,8 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     otherCommittee: '其他委员会',
     otherDocuments: '其他文件',
     policySignificanceTouches: (domains: string): string => `涉及${domains}领域。`,
-    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。'
+    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。',
+    generalMatters: '一般事项'
   }
 };
 
@@ -2020,7 +2034,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   const byTheme: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
     const domains = detectPolicyDomains(motion, lang);
-    const theme = domains[0] || (lang === 'sv' ? 'Övriga frågor' : 'General matters');
+    const theme = domains[0] || String(L(lang, 'generalMatters'));
     if (!byTheme[theme]) byTheme[theme] = [];
     byTheme[theme].push(motion);
   });
@@ -2160,15 +2174,10 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
   return Array.from(set);
 }
 
-/**
- * Return a substantive domain-specific and type-specific analysis sentence.
- * Each of 12 policy domains has tailored text for motions (mot), committee
- * reports (bet), and propositions/default, in both English and Swedish.
- */
-function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: Language | string): string {
-  const isSv = lang === 'sv';
-  type LangPair = { en: Record<string, string>; sv: Record<string, string> };
-  const analyses: Record<string, LangPair> = {
+type _LangPair = { en: Record<string, string>; sv: Record<string, string> };
+
+/** Module-level constant — allocated once, shared across all calls. */
+const DOMAIN_ANALYSES: Record<string, _LangPair> = {
     'fiscal policy': {
       en: {
         mot: 'Fiscal policy motions directly challenge the government\'s budget assumptions and signal opposition readiness to contest tax and spending priorities.',
@@ -2313,26 +2322,34 @@ function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: 
         default: 'Utbildningspropositioner måste balansera nationella läroplaner med kommunalt leveransansvar och de privata aktörernas omstridda roll.'
       }
     }
-  };
+};
 
-  // Normalise display-language domain string to English for lookup
-  const enDomainMap: Record<string, string> = {
-    'finanspolitik': 'fiscal policy',
-    'försvars- och säkerhetspolitik': 'defence and security policy',
-    'miljö- och klimatpolitik': 'environmental and climate policy',
-    'utbildningspolitik': 'education policy',
-    'hälso- och sjukvårdspolitik': 'healthcare policy',
-    'migrationspolitik': 'migration policy',
-    'EU- och utrikespolitik': 'EU and foreign affairs',
-    'rättspolitik': 'justice policy',
-    'arbetsmarknadspolitik': 'labour market policy',
-    'bostadspolitik': 'housing policy',
-    'transportpolitik': 'transport policy',
-    'näringspolitik': 'trade and industry policy'
-  };
+/** Module-level constant — allocated once, shared across all calls. */
+const EN_DOMAIN_MAP: Record<string, string> = {
+  'finanspolitik': 'fiscal policy',
+  'försvars- och säkerhetspolitik': 'defence and security policy',
+  'miljö- och klimatpolitik': 'environmental and climate policy',
+  'utbildningspolitik': 'education policy',
+  'hälso- och sjukvårdspolitik': 'healthcare policy',
+  'migrationspolitik': 'migration policy',
+  'EU- och utrikespolitik': 'EU and foreign affairs',
+  'rättspolitik': 'justice policy',
+  'arbetsmarknadspolitik': 'labour market policy',
+  'bostadspolitik': 'housing policy',
+  'transportpolitik': 'transport policy',
+  'näringspolitik': 'trade and industry policy'
+};
 
-  const lookupKey = enDomainMap[primaryDomain] ?? primaryDomain;
-  const entry = analyses[lookupKey];
+/**
+ * Return a substantive domain-specific and type-specific analysis sentence.
+ * Each of 12 policy domains has tailored text for motions (mot), committee
+ * reports (bet), and propositions/default, in both English and Swedish.
+ */
+function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: Language | string): string {
+  const isSv = lang === 'sv';
+
+  const lookupKey = EN_DOMAIN_MAP[primaryDomain] ?? primaryDomain;
+  const entry = DOMAIN_ANALYSES[lookupKey];
   if (!entry) return '';
 
   const langEntry = isSv ? entry.sv : entry.en;
@@ -2416,11 +2433,10 @@ function generateOppositionStrategySection(motions: RawDocument[], lang: Languag
 
   const [topParty, topMotions] = sortedParties[0];
 
-  // Identify primary policy domain(s) for the most-active party using detectPolicyDomains
-  // Use English keys for domain detection to get consistent results for display
+  // Identify primary policy domain(s) for the most-active party
   const topDomainSet = new Set<string>();
   topMotions.forEach(m => {
-    detectPolicyDomains(m, 'en').forEach(d => topDomainSet.add(d));
+    detectPolicyDomains(m, lang).forEach(d => topDomainSet.add(d));
   });
   const topDomains = Array.from(topDomainSet).slice(0, 2);
 
@@ -2509,7 +2525,7 @@ function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: string,
   }
 
   // ── PRIMARY: policy domain significance derived from document content ────
-  const significance = generatePolicySignificance(doc, lang);
+  const significance = generatePolicySignificance(doc, lang, docType);
   parts.push(`<strong>${escapeHtml(String(L(lang, 'whatThisMeans')))}:</strong> ${significance}`);
 
   // ── PRIMARY: related speeches (direct evidence from the chamber) ─────────
@@ -2640,13 +2656,11 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
     content += `        <li>${escapeHtml(typeDescriptions.join(', '))} processed this period</li>\n`;
   }
 
-  // Policy domains
+  // Policy domains — show labels only to keep the bullet concise
   const allDomains = new Set<string>();
   const enrichedCount = docs.filter(d => d.contentFetched).length;
   docs.forEach(doc => {
-    const sig = generatePolicySignificance(doc, lang);
-    const genericVal = L(lang, 'policySignificanceGeneric');
-    if (sig !== genericVal) allDomains.add(sig);
+    detectPolicyDomains(doc, lang).forEach(d => allDomains.add(d));
   });
   if (allDomains.size > 0) {
     const policyContextVal = L(lang, 'policyContext');
