@@ -1920,6 +1920,20 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
 }
 
 /**
+ * Group propositions by the committee they are referred to.
+ * Propositions without a committee assignment are grouped under the empty-string key.
+ */
+export function groupPropositionsByCommittee(propositions: RawDocument[]): Map<string, RawDocument[]> {
+  const grouped = new Map<string, RawDocument[]>();
+  for (const prop of propositions) {
+    const key = (prop.organ || prop.committee || '') as string;
+    if (!grouped.has(key)) grouped.set(key, []);
+    grouped.get(key)!.push(prop);
+  }
+  return grouped;
+}
+
+/**
  * Generate Propositions content with analytical narrative
  */
 function generatePropositionsContent(data: ArticleContentData, lang: Language | string): string {
@@ -1942,24 +1956,17 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   // Legislative pipeline section
   content += `\n    <h2>${L(lang, 'legislativePipeline')}</h2>\n`;
 
-  // Group propositions by referred committee
   const byCommitteeGroup = groupPropositionsByCommittee(propositions);
-  const committeeKeys = [...byCommitteeGroup.keys()].sort((a, b) =>
-    a === '' ? 1 : b === '' ? -1 : a.localeCompare(b)
-  );
+  const multiCommittee = byCommitteeGroup.size > 1;
 
-  for (const committeeKey of committeeKeys) {
-    const groupProps = byCommitteeGroup.get(committeeKey) ?? [];
-
-    // Show a committee section heading when there are multiple committees
-    if (byCommitteeGroup.size > 1) {
-      const committeeName = committeeKey === ''
-        ? String(L(lang, 'otherDocuments'))
-        : getCommitteeName(committeeKey, lang);
-      content += `\n    <h3>${escapeHtml(committeeName)}</h3>\n`;
+  byCommitteeGroup.forEach((committeeProps, committeeKey) => {
+    if (multiCommittee && committeeKey) {
+      content += `    <h3>${escapeHtml(getCommitteeName(committeeKey, lang))}</h3>\n`;
     }
 
-    groupProps.forEach(prop => {
+    const headingTag = multiCommittee ? 'h4' : 'h3';
+
+    committeeProps.forEach(prop => {
       const titleText = prop.titel || prop.title || '';
       const escapedTitle = escapeHtml(titleText);
       const titleHtml = (prop.titel && !prop.title)
@@ -1975,13 +1982,9 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
         ? svSpan(escapeHtml(summaryText), lang)
         : escapeHtml(summaryText);
 
-      // Use h4 when inside a committee group, h3 when no grouping
-      const headingTag = byCommitteeGroup.size > 1 ? 'h4' : 'h3';
-
-      // Show "Referred to" committee only when no committee section heading is visible,
-      // i.e. when all propositions belong to a single committee (no h3 grouping rendered).
+      // Referred-to line: shown only for single-committee view (heading already shows it for multi-committee)
       const referredCommittee = prop.organ || prop.committee;
-      const referredLine = (byCommitteeGroup.size === 1 && referredCommittee)
+      const referredLine = (!multiCommittee && referredCommittee)
         ? `<br><strong>${L(lang, 'referredTo')}:</strong> ${escapeHtml(getCommitteeName(referredCommittee, lang))}`
         : '';
 
@@ -1998,13 +2001,12 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     </div>
 `;
     });
-  }
+  });
 
   // Policy implications section
   content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
   content += `    <div class="context-box">\n`;
 
-  // Reuse committee grouping for domain count
   const domainCount = byCommitteeGroup.size;
 
   const implicationFn = L(lang, 'policyImplicationsContext') as string | ((propCount: number, domainCount: number) => string);
@@ -2017,26 +2019,11 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   return content;
 }
 
-/**
- * Group propositions by their referred committee.
- * Propositions referred to the same committee (organ/committee field) are grouped together.
- * Propositions with no committee reference are stored under the empty-string key.
- * @returns Map from committee code (e.g. "FiU") to propositions array.
- *          Key '' contains propositions not referred to any committee.
- */
-export function groupPropositionsByCommittee(propositions: RawDocument[]): Map<string, RawDocument[]> {
-  const groups = new Map<string, RawDocument[]>();
-  for (const prop of propositions) {
-    const key = prop.organ || prop.committee || '';
-    const existing = groups.get(key);
-    if (existing) {
-      existing.push(prop);
-    } else {
-      groups.set(key, [prop]);
-    }
-  }
-  return groups;
-}
+/** Strict regex matching only valid proposition IDs (e.g. 2025/26:118) */
+const PROP_REFERENCE_REGEX = /med anledning av prop\.\s+(\d{4}\/\d{2}:\d+)/i;
+
+/** Regex to capture the full proposition reference text (non-greedy, stops at HTML tags) */
+const PROP_FULL_REF_REGEX = /med anledning av (prop\.\s*\d{4}\/\d{2}:\d+(?:\s+[^<]+?)?(?=\s*$|<))/i;
 
 /**
  * Extract the parent proposition reference (e.g. "2025/26:118") from a motion title.
@@ -2044,7 +2031,7 @@ export function groupPropositionsByCommittee(propositions: RawDocument[]): Map<s
  * "med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet".
  */
 function extractPropRef(title: string): string | null {
-  const m = title.match(/med anledning av prop\.\s+(\d{4}\/\d{2}:\d+)/i);
+  const m = title.match(PROP_REFERENCE_REGEX);
   return m?.[1] || null;
 }
 
@@ -2163,16 +2150,19 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   const { grouped, independent } = groupMotionsByProposition(motions);
 
   if (grouped.size > 0) {
-    content += `\n    <h2>${String(L(lang, 'responsesToProp'))}</h2>\n`;
+    content += `\n    <h2>${L(lang, 'responsesToProp')}</h2>\n`;
 
     grouped.forEach((propMotions, propRef) => {
-      // Get prop title from first motion (strip the prop reference prefix from the title)
+      // Get prop title from first motion using PROP_FULL_REF_REGEX (non-greedy, HTML-safe)
       const firstTitle = propMotions[0]?.titel || propMotions[0]?.title || '';
-      const propTitleMatch = firstTitle.match(/med anledning av prop\.\s+\S+\s+(.*)/i);
-      const propTitle = propTitleMatch?.[1]?.trim() || propRef;
+      const fullRefMatch = firstTitle.match(PROP_FULL_REF_REGEX);
+      const propTitle = fullRefMatch
+        ? firstTitle.replace(fullRefMatch[0], '').trim() || propRef
+        : propRef;
 
       const safePropRef = escapeHtml(String(propRef));
       const safePropTitle = escapeHtml(String(propTitle));
+
       content += `    <h3>Prop. ${safePropRef}: ${svSpan(safePropTitle, lang)}</h3>\n`;
 
       propMotions.forEach(motion => { content += renderMotion(motion); });
@@ -2181,7 +2171,7 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 
   if (independent.length > 0) {
     if (grouped.size > 0) {
-      content += `\n    <h2>${String(L(lang, 'independentMotions'))}</h2>\n`;
+      content += `\n    <h2>${L(lang, 'independentMotions')}</h2>\n`;
     }
     independent.forEach(motion => { content += renderMotion(motion); });
   }
