@@ -12,6 +12,7 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
+  generateContentTitle,
   CONTENT_LABELS,
   L
 } from '../scripts/data-transformers.js';
@@ -612,13 +613,14 @@ describe('Data Transformers', () => {
   });
 
   describe('data-translate markers for Swedish API content', () => {
-    it('should wrap Swedish titel in data-translate span for committee reports', () => {
+    it('should wrap Swedish titel in lang="sv" span for non-Swedish committee reports', () => {
       const content = generateArticleContent(
         { reports: [{ titel: 'Bättre förutsättningar', url: '#', organ: 'FiU' }] } as MockArticlePayload,
         'committee-reports',
         'en'
       ) as string;
-      expect(content).toContain('data-translate="true"');
+      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
+      expect(content).not.toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Bättre förutsättningar');
     });
@@ -633,13 +635,14 @@ describe('Data Transformers', () => {
       expect(content).toContain('Better conditions');
     });
 
-    it('should wrap Swedish titel in data-translate span for propositions', () => {
+    it('should wrap Swedish titel in lang="sv" span for non-Swedish propositions', () => {
       const content = generateArticleContent(
         { propositions: [{ titel: 'Ändringsbudget för 2026', url: '#' }] } as MockArticlePayload,
         'propositions',
         'en'
       ) as string;
-      expect(content).toContain('data-translate="true"');
+      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
+      expect(content).not.toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Ändringsbudget för 2026');
     });
@@ -660,9 +663,20 @@ describe('Data Transformers', () => {
         'motions',
         'en'
       ) as string;
-      expect(content).toContain('data-translate="true"');
+      // Non-Swedish articles use lang="sv" for accessibility but no data-translate marker
+      expect(content).not.toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Djurskydd');
+    });
+
+    it('should use data-translate="true" for Swedish (sv) articles with Swedish title', () => {
+      const content = generateArticleContent(
+        { motions: [{ titel: 'Djurskydd', url: '#', parti: 'MP', intressent_namn: 'Test' }] } as MockArticlePayload,
+        'motions',
+        'sv'
+      ) as string;
+      expect(content).toContain('data-translate="true"');
+      expect(content).toContain('lang="sv"');
     });
 
     it('should NOT wrap English title in data-translate span for motions', () => {
@@ -675,16 +689,17 @@ describe('Data Transformers', () => {
       expect(content).toContain('Animal Protection');
     });
 
-    it('should wrap Swedish summary in data-translate span when present', () => {
+    it('should wrap Swedish summary in lang="sv" span when present for non-Swedish articles', () => {
       const content = generateArticleContent(
         { reports: [{ titel: 'Test', summary: 'Förslaget innebär att', url: '#', organ: 'SoU' }] } as MockArticlePayload,
         'committee-reports',
         'en'
       ) as string;
-      // Two data-translate spans: one for title, one for summary
-      const matches = content.match(/data-translate="true"/g);
-      expect(matches).not.toBeNull();
-      expect(matches!.length).toBe(2);
+      // Non-Swedish: lang="sv" spans but no data-translate markers
+      expect(content).not.toContain('data-translate="true"');
+      const langMatches = content.match(/lang="sv"/g);
+      expect(langMatches).not.toBeNull();
+      expect(langMatches!.length).toBe(2); // title + summary
       expect(content).toContain('Förslaget innebär att');
     });
 
@@ -695,10 +710,11 @@ describe('Data Transformers', () => {
         'committee-reports',
         'de'
       ) as string;
-      // Only title has data-translate (not the enhanced summary based on metadata)
-      const matchesWithOrgan = contentWithOrgan.match(/data-translate="true"/g);
-      expect(matchesWithOrgan).not.toBeNull();
-      expect(matchesWithOrgan!.length).toBe(1);
+      // Non-Swedish: lang="sv" span for title but no data-translate markers
+      expect(contentWithOrgan).not.toContain('data-translate="true"');
+      const langMatchesWithOrgan = contentWithOrgan.match(/lang="sv"/g);
+      expect(langMatchesWithOrgan).not.toBeNull();
+      expect(langMatchesWithOrgan!.length).toBe(1); // only title
       // Should contain enhanced summary with organ
       expect(contentWithOrgan).toContain('SoU');
       expect(contentWithOrgan).toContain(L('de', 'committeeReport'));
@@ -709,15 +725,16 @@ describe('Data Transformers', () => {
         'committee-reports',
         'de'
       ) as string;
-      // Only title has data-translate
-      const matchesWithoutMetadata = contentWithoutMetadata.match(/data-translate="true"/g);
-      expect(matchesWithoutMetadata).not.toBeNull();
-      expect(matchesWithoutMetadata!.length).toBe(1);
+      // Non-Swedish: lang="sv" span for title only, no data-translate markers
+      expect(contentWithoutMetadata).not.toContain('data-translate="true"');
+      const langMatchesWithoutMetadata = contentWithoutMetadata.match(/lang="sv"/g);
+      expect(langMatchesWithoutMetadata).not.toBeNull();
+      expect(langMatchesWithoutMetadata!.length).toBe(1); // only title
       // Should contain the German default text when no metadata available
       expect(contentWithoutMetadata).toContain(L('de', 'reportDefault'));
     });
 
-    it('should wrap week-ahead event titel in data-translate span', () => {
+    it('should wrap week-ahead event titel in lang="sv" span for non-Swedish articles', () => {
       const eventsWithTitel: MockCalendarEvent[] = [
         { titel: 'Öppen utfrågning om AI', rubrik: 'EU debate on AI', datum: '2026-02-10T10:00:00', organ: 'TU' }
       ];
@@ -726,7 +743,9 @@ describe('Data Transformers', () => {
         'week-ahead',
         'en'
       ) as string;
-      expect(content).toContain('data-translate="true"');
+      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
+      expect(content).not.toContain('data-translate="true"');
+      expect(content).toContain('lang="sv"');
       expect(content).toContain('Öppen utfrågning om AI');
     });
 
@@ -834,7 +853,7 @@ describe('Data Transformers', () => {
   });
 
   describe('extractWatchPoints with data-translate markers', () => {
-    it('should wrap Swedish event titles in data-translate span', () => {
+    it('should wrap Swedish event titles in lang="sv" span for non-Swedish articles', () => {
       const watchPoints = extractWatchPoints({
         events: [
           { titel: 'Öppen utfrågning', rubrik: 'EU summit debate', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
@@ -843,7 +862,8 @@ describe('Data Transformers', () => {
       
       expect(watchPoints.length).toBeGreaterThan(0);
       const wp = watchPoints[0]!;
-      expect(wp.title).toContain('data-translate="true"');
+      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
+      expect(wp.title).not.toContain('data-translate="true"');
       expect(wp.title).toContain('lang="sv"');
       expect(wp.title).toContain('Öppen utfrågning');
     });
@@ -1056,7 +1076,7 @@ describe('Data Transformers', () => {
       expect(content).toMatch(/NATO|security commitments|strategic/i);
     });
 
-    it('should include substantive climate motion analysis', () => {
+    it('should include substantive climate committee report analysis', () => {
       const content = generateArticleContent({
         reports: [{ titel: 'Klimatpolitik', organ: 'MJU', url: 'https://example.com/1', dok_id: 'MJU1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
@@ -1295,10 +1315,11 @@ describe('Data Transformers', () => {
     it('should NOT add extra data-translate span when summary is already shown above', () => {
       const content = generateArticleContent({
         reports: [{ titel: 'Test', summary: 'Förslaget innebär att', url: '#', organ: 'SoU' }]
-      } as MockArticlePayload, 'committee-reports', 'en') as string;
+      } as MockArticlePayload, 'committee-reports', 'sv') as string;
 
       // Exactly 2: one for title, one for summary — deepPolicyAnalysis uses only fullText,
-      // so summary/notis are NOT re-wrapped, avoiding a third span
+      // so summary/notis are NOT re-wrapped, avoiding a third span.
+      // Uses lang='sv' because svSpan adds data-translate="true" only for Swedish articles.
       const matches = content.match(/data-translate="true"/g);
       expect(matches).not.toBeNull();
       expect(matches!.length).toBe(2);
@@ -1443,5 +1464,219 @@ describe('Data Transformers', () => {
         }
       }
     });
+  });
+});
+
+describe('generateContentTitle', () => {
+  /** Minimal RawDocument shapes that carry Swedish keyword content */
+  const klimatDoc = { titel: 'Förslag om klimatanpassning och utsläppshandel', rubrik: '' };
+  const försvarDoc = { titel: 'Proposition om försvarsutgifter och NATO-samarbete', rubrik: '' };
+  const bostadDoc  = { titel: 'Motion om bostadsmark och byggande i städerna', rubrik: '' };
+  const ekonomiDoc = { titel: 'Budgetproposition med skatteändringar och ekonomi', rubrik: '' };
+
+  it('returns null when fewer than 2 domains are detected', () => {
+    const result = generateContentTitle([], 'en', 'motions');
+    expect(result).toBeNull();
+  });
+
+  it('returns null for documents without Swedish keyword matches', () => {
+    const docs = [{ titel: 'Unknown parliamentary document', rubrik: '' }];
+    const result = generateContentTitle(docs, 'en', 'motions');
+    expect(result).toBeNull();
+  });
+
+  describe('motions', () => {
+    it('builds an English content title from 2 domains', () => {
+      const result = generateContentTitle([klimatDoc, försvarDoc], 'en', 'motions');
+      expect(result).not.toBeNull();
+      expect(result!.title).toContain('Opposition');
+      expect(result!.title).not.toBe('Opposition Motions: Battle Lines This Week');
+    });
+
+    it('title contains both detected domain names', () => {
+      const result = generateContentTitle([klimatDoc, försvarDoc], 'en', 'motions');
+      expect(result!.title).toContain('Environment');
+      expect(result!.title).toContain('Defense');
+    });
+
+    it('subtitle includes document count', () => {
+      const docs = [klimatDoc, försvarDoc, bostadDoc];
+      const result = generateContentTitle(docs, 'en', 'motions');
+      expect(result!.subtitle).toContain('3');
+    });
+
+    it('produces a Swedish (sv) title', () => {
+      const result = generateContentTitle([klimatDoc, försvarDoc], 'sv', 'motions');
+      expect(result!.title).toContain('Oppositionen');
+      expect(result!.title).toContain('Miljö');
+      expect(result!.title).toContain('Försvar');
+    });
+
+    it('falls back to English template for unknown language code', () => {
+      const result = generateContentTitle([klimatDoc, försvarDoc], 'xx', 'motions');
+      expect(result!.title).toContain('Opposition');
+    });
+  });
+
+  describe('propositions', () => {
+    it('builds an English content title', () => {
+      const result = generateContentTitle([ekonomiDoc, bostadDoc], 'en', 'propositions');
+      expect(result).not.toBeNull();
+      expect(result!.title).toContain('Government');
+      expect(result!.title).toContain('Economy');
+      expect(result!.title).toContain('Housing');
+    });
+
+    it('produces a Swedish (sv) title', () => {
+      const result = generateContentTitle([ekonomiDoc, bostadDoc], 'sv', 'propositions');
+      expect(result!.title).toContain('Regeringen');
+      expect(result!.title).toContain('Ekonomi');
+      expect(result!.title).toContain('Bostäder');
+    });
+  });
+
+  describe('committee-reports', () => {
+    it('builds an English content title', () => {
+      const result = generateContentTitle([klimatDoc, ekonomiDoc], 'en', 'committee-reports');
+      expect(result).not.toBeNull();
+      expect(result!.title).toContain('Committees');
+      expect(result!.title).toContain('Environment');
+      expect(result!.title).toContain('Economy');
+    });
+
+    it('produces a Swedish (sv) title', () => {
+      const result = generateContentTitle([klimatDoc, ekonomiDoc], 'sv', 'committee-reports');
+      expect(result!.title).toContain('Utskotten');
+      expect(result!.title).toContain('Miljö');
+      expect(result!.title).toContain('Ekonomi');
+    });
+  });
+
+  describe('domain frequency ranking', () => {
+    it('picks the most frequent domain first', () => {
+      const docs = [klimatDoc, klimatDoc, ekonomiDoc];
+      const result = generateContentTitle(docs, 'en', 'motions');
+      // environment appears twice, economy once — environment should be d1 (earlier in title)
+      expect(result).not.toBeNull();
+      const title = result!.title;
+      const envIdx = title.indexOf('Environment');
+      const ecoIdx = title.indexOf('Economy');
+      expect(envIdx).toBeGreaterThanOrEqual(0);
+      expect(ecoIdx).toBeGreaterThanOrEqual(0);
+      expect(envIdx).toBeLessThan(ecoIdx);
+    });
+  });
+
+  describe('14-language coverage', () => {
+    const langs = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'] as const;
+    for (const lang of langs) {
+      it(`returns a non-null result for lang="${lang}"`, () => {
+        const result = generateContentTitle([klimatDoc, ekonomiDoc], lang, 'motions');
+        expect(result).not.toBeNull();
+        expect(result!.title.length).toBeGreaterThan(0);
+        expect(result!.subtitle.length).toBeGreaterThan(0);
+      });
+    }
+  });
+});
+
+describe('generateMotionsContent author/party sentinel fix (#454)', () => {
+  it('falls back to parseMotionAuthorParty when intressent_namn is Unknown sentinel', () => {
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Motion till riksdagen 2025/26:123 av Anna Andersson (M) om skattelättnad',
+        intressent_namn: 'Unknown',
+        parti: 'Unknown',
+        url: '#',
+        dok_id: 'MOT123',
+      }]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).toContain('Anna Andersson');
+    expect(content).toContain('(M)');
+    expect(content).not.toContain('Unknown (Unknown)');
+  });
+
+  it('keeps real author name when intressent_namn is not a sentinel', () => {
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Test motion',
+        intressent_namn: 'Lars Pettersson',
+        parti: 'S',
+        url: '#',
+        dok_id: 'MOT999',
+      }]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).toContain('Lars Pettersson');
+    expect(content).toContain('(S)');
+  });
+});
+
+describe('groupMotionsByProposition (#462) / thematic grouping (#460)', () => {
+  it('groups same-domain motions under a single thematic heading', () => {
+    const content = generateArticleContent({
+      motions: [
+        {
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet',
+          intressent_namn: 'Anna Björk',
+          parti: 'M',
+          url: '#',
+          dok_id: 'MOT_A',
+        },
+        {
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet',
+          intressent_namn: 'Lars Svensson',
+          parti: 'SD',
+          url: '#',
+          dok_id: 'MOT_B',
+        },
+      ]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    // Both motions share climate/energy domain — they render in a flat list (themeCount=1),
+    // no separate "Thematic Analysis" section header needed for a single theme.
+    // Both motion entries should be present.
+    expect(content).toContain('MOT_A');
+    expect(content).toContain('MOT_B');
+    // No old proposition-based grouping headers
+    expect(content).not.toContain('Responses to Government Propositions');
+  });
+
+  it('groups motions by policy theme across different domains', () => {
+    const content = generateArticleContent({
+      motions: [
+        {
+          titel: 'med anledning av prop. 2025/26:50 Bostadsfrågor',
+          intressent_namn: 'Maja Berg',
+          parti: 'C',
+          url: '#',
+          dok_id: 'MOT_PROP',
+        },
+        {
+          titel: 'Fristående motion om transportpolitik',
+          intressent_namn: 'Erik Holm',
+          parti: 'V',
+          url: '#',
+          dok_id: 'MOT_IND',
+        },
+      ]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    // Thematic grouping should be used — no old flat-list headings
+    expect(content).not.toContain('Responses to Government Propositions');
+    expect(content).not.toContain('Independent Motions');
+    // Both motion entries should still be present
+    expect(content).toContain('MOT_PROP');
+    expect(content).toContain('MOT_IND');
+  });
+
+  it('renders all motions without old proposition-grouping header when none reference a proposition', () => {
+    const content = generateArticleContent({
+      motions: [
+        { titel: 'Om utbildningspolitik', intressent_namn: 'Per Nord', parti: 'KD', url: '#', dok_id: 'M1' },
+        { titel: 'Om sjukvård', intressent_namn: 'Gun Öst', parti: 'MP', url: '#', dok_id: 'M2' },
+      ]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).not.toContain('Responses to Government Propositions');
+    expect(content).not.toContain('Independent Motions');
+    expect(content).toContain('M1');
+    expect(content).toContain('M2');
   });
 });
