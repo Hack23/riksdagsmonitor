@@ -54,6 +54,9 @@ interface MockMCPClientInstance {
   fetchPropositions: ReturnType<typeof vi.fn>;
   fetchMotions: ReturnType<typeof vi.fn>;
   enrichDocumentsWithContent: ReturnType<typeof vi.fn>;
+  searchDocuments: ReturnType<typeof vi.fn>;
+  fetchWrittenQuestions: ReturnType<typeof vi.fn>;
+  fetchInterpellations: ReturnType<typeof vi.fn>;
   request: ReturnType<typeof vi.fn>;
   timeout: number;
   baseURL: string;
@@ -94,6 +97,9 @@ const { mockClientInstance, mockCalendarEvents, mockCommitteeReports, mockPropos
     fetchPropositions: vi.fn(),
     fetchMotions: vi.fn(),
     enrichDocumentsWithContent: vi.fn(),  // NEW: Added for document enrichment
+    searchDocuments: vi.fn(),
+    fetchWrittenQuestions: vi.fn(),
+    fetchInterpellations: vi.fn(),
     request: vi.fn(),
     timeout: 30000,
     baseURL: 'https://riksdag-regering-ai.onrender.com/mcp'
@@ -133,6 +139,9 @@ function resetMockClient(): void {
   mockClientInstance.enrichDocumentsWithContent.mockReset().mockImplementation(async (docs: EnrichableDoc[]) =>
     docs.map((doc: EnrichableDoc) => ({ ...doc, contentFetched: true }))
   );
+  mockClientInstance.searchDocuments.mockReset().mockResolvedValue([]);
+  mockClientInstance.fetchWrittenQuestions.mockReset().mockResolvedValue([]);
+  mockClientInstance.fetchInterpellations.mockReset().mockResolvedValue([]);
   mockClientInstance.request.mockReset().mockResolvedValue({ last_sync: '2026-02-16T12:00:00Z' });
 }
 

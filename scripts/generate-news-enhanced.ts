@@ -247,6 +247,11 @@ const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? 
 const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
 const qualityThreshold: number = qualityThresholdArg ? parseInt(qualityThresholdArg.split('=')[1] ?? '40', 10) : 40;
 
+// --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
+// Set --require-mcp=false for local development/testing without a live MCP server.
+const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
+const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
+
 // ---------------------------------------------------------------------------
 // Valid article types
 // ---------------------------------------------------------------------------
@@ -382,7 +387,12 @@ async function getSharedClient(): Promise<MCPClient> {
       console.log(`  📊 Last sync: ${status['last_sync'] as string}`);
     }
   } catch (error: unknown) {
-    console.warn(`⚠️ MCP warm-up failed: ${(error as Error).message}`);
+    const message = (error as Error).message;
+    if (requireMcp) {
+      sharedClient = null;
+      throw new Error(`MCP server unavailable: ${message}`, { cause: error });
+    }
+    console.warn(`⚠️ MCP warm-up failed: ${message}`);
     console.warn('  Continuing anyway — individual requests will retry with backoff');
   }
 
@@ -630,25 +640,22 @@ async function generateWeekAhead(): Promise<GenerationResult> {
     console.log(`  📊 Found ${events.length} events`);
 
     // 2. Fetch upcoming/recent documents
-    const rawDocs = await Promise.resolve()
-      .then(() => client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 }))
-      .catch(() => [] as unknown[]);
+    const rawDocs = await client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const documents: RawDocument[] = Array.isArray(rawDocs) ? rawDocs as RawDocument[] : [];
     console.log(`  📊 Found ${documents.length} upcoming documents`);
 
     // 3. Fetch parliamentary questions (fragor)
     console.log('  🔄 Fetching parliamentary questions...');
-    const rawQuestions = await Promise.resolve()
-      .then(() => client.fetchWrittenQuestions({ limit: 20 }))
-      .catch(() => [] as unknown[]);
+    const rawQuestions = await client.fetchWrittenQuestions({ limit: 20 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const questions: unknown[] = Array.isArray(rawQuestions) ? rawQuestions : [];
     console.log(`  📊 Found ${questions.length} written questions`);
 
     // 4. Fetch interpellations (interpellationer)
     console.log('  🔄 Fetching interpellations...');
-    const rawInterpellations = await Promise.resolve()
-      .then(() => client.fetchInterpellations({ limit: 15 }))
-      .catch(() => [] as unknown[]);
+    const rawInterpellations = await client.fetchInterpellations({ limit: 15 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const interpellations: unknown[] = Array.isArray(rawInterpellations) ? rawInterpellations : [];
     console.log(`  📊 Found ${interpellations.length} interpellations`);
 
@@ -1184,5 +1191,6 @@ export {
   ALL_LANGUAGES,
   LANGUAGE_PRESETS,
   formatDateForSlug,
-  getWeekAheadDateRange
+  getWeekAheadDateRange,
+  requireMcp
 };
