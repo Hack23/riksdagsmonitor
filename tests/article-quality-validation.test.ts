@@ -274,7 +274,8 @@ describe('validateArticleQuality', () => {
       // Scoring: wordScore = Math.round((wordCount / 1000) * 50)
       //          sectionScore = Math.min(30, Math.round((h2Count / 3) * 30))
       //          translationScore = 20 (no untranslated spans)
-      // buildHtml adds 2 extra words from "<h1>Test Article</h1>", so actual word count = wordCount + 2.
+      // buildHtml wraps word tokens in a <p> and prefixes with <h1>Test Article</h1>,
+      // so actual word count = wordCount + 2 ("Test" + "Article" from the h1).
       // wordCount=380 → actual=382 → wordScore=Math.round((382/1000)*50)=Math.round(19.1)=19
       // h2Count=0 → sectionScore=0
       // untranslatedSpans=0 → translationScore=20
