@@ -428,15 +428,15 @@ const qualityScores: number[] = [];
 
 /** Quality metrics and score for a single generated article. */
 export interface ArticleQualityReport {
-  articleId: string;
-  wordCount: number;
-  unknownAuthorCount: number;
-  totalEntryCount: number;
-  untranslatedSpanCount: number;
-  analyticalSectionCount: number;
-  score: number;
-  passed: boolean;
-  issues: string[];
+  readonly articleId: string;
+  readonly wordCount: number;
+  readonly unknownAuthorCount: number;
+  readonly totalEntryCount: number;
+  readonly untranslatedSpanCount: number;
+  readonly analyticalSectionCount: number;
+  readonly score: number;
+  readonly passed: boolean;
+  readonly issues: string[];
 }
 
 /**
@@ -450,7 +450,7 @@ export interface ArticleQualityReport {
  *
  * @param html - Full HTML content of the article
  * @param lang - Language code (e.g. 'en', 'sv')
- * @param articleType - Article type label for reporting (e.g. 'motions-en')
+ * @param articleType - Article type label for reporting (e.g. 'motions')
  * @returns Quality report with score and per-metric details
  */
 export function validateArticleQuality(html: string, lang: string, articleType: string): ArticleQualityReport {
