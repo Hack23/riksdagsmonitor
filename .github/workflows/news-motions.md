@@ -176,6 +176,45 @@ Every generated article must include:
 
 If the generated article lacks these analytical sections, manually add contextual analysis before committing.
 
+## MANDATORY Quality Validation
+
+After article generation, verify EACH article meets these minimum standards before committing.
+
+### Required Sections (at least 3 of 5):
+1. **Analytical Lede** (paragraph, not just document count)
+2. **Thematic Analysis** (documents grouped by policy theme)
+3. **Strategic Context** (why these documents matter politically)
+4. **Stakeholder Impact** (who benefits, who loses)
+5. **What Happens Next** (expected timeline and outcomes)
+
+### Disqualifying Patterns:
+- ❌ `"Filed by: Unknown (Unknown)"` — FIX author/party metadata before committing
+- ❌ `data-translate="true"` spans in non-Swedish articles — TRANSLATE before committing
+- ❌ Identical "Why It Matters" text for all entries — DIFFERENTIATE analysis per motion
+- ❌ Flat list of motions without grouping — GROUP by policy theme or party
+- ❌ Article under 500 words — EXPAND with analytical sections
+
+### Bash Validation Commands:
+```bash
+# Check for unknown authors (should return 0)
+grep -rl "Filed by: Unknown" news/ | grep "motions" | wc -l || true
+
+# Check for untranslated spans in English article (should return 0)
+grep -c 'data-translate="true"' "news/$(date +%Y-%m-%d)-motions-en.html" 2>/dev/null || true
+
+# Check word count of English article (must be >= 500; note: includes HTML tags)
+wc -w "news/$(date +%Y-%m-%d)-motions-en.html" 2>/dev/null || true
+
+# Check for duplicate "Why It Matters" content (should return empty)
+grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-motions-en.html" 2>/dev/null | sort | uniq -d || true
+```
+
+### If Article Fails Quality Check:
+1. Use bash to enhance the HTML with analytical sections
+2. Replace generic "Why It Matters" with motion-specific analysis
+3. Add thematic grouping headers (e.g., by policy area or party)
+4. Translate any remaining Swedish content
+
 ```bash
 npx tsx scripts/generate-news-indexes.ts
 ```
