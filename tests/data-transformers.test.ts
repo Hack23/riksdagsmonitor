@@ -1083,6 +1083,65 @@ describe('Data Transformers', () => {
       expect(content).not.toContain('This motion signals a policy position; passage requires government or majority support.');
     });
 
+    it('should use mot-specific analysis even when doktyp field is absent from motion doc', () => {
+      // No doktyp field — generateMotionsContent injects implied 'mot' type
+      const content = generateArticleContent({
+        motions: [{ titel: 'Klimatpolitik', parti: 'MP', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // mot-specific text: "growing parliamentary pressure for faster decarbonisation"
+      expect(content).toContain('decarbonisation');
+      // NOT the default proposition fallback "navigate competing interests"
+      expect(content).not.toContain('navigate competing interests from industry');
+    });
+
+    it('should use bet-specific analysis even when doktyp field is absent from report doc', () => {
+      // No doktyp field — generateCommitteeContent injects implied 'bet' type
+      const content = generateArticleContent({
+        reports: [{ titel: 'Klimatpolitik', organ: 'MJU', url: 'https://example.com/1', dok_id: 'R1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // bet-specific text: "legislative baseline"
+      expect(content).toContain('legislative baseline');
+      // NOT the climate-mot text ("decarbonisation")
+      expect(content).not.toContain('decarbonisation');
+    });
+
+    it('should not include redundant "Committee review" procedural sentence in policySignificanceTouches', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      // The policySignificanceTouches label no longer appends the procedural sentence
+      expect(content).not.toContain('Committee review and potential chamber vote will determine the proposal\'s fate.');
+    });
+
+    it('should detect "förnybartdirektivet" as environmental/climate policy', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Tillståndsprövning enligt förnybartdirektivet', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('environmental and climate policy');
+      expect(content).toContain('decarbonisation');
+    });
+
+    it('should detect "makrotillsyn" as fiscal policy', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Utveckling av makrotillsynsområdet', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('fiscal policy');
+    });
+
+    it('should detect "bostadsrätt" and "lagfart" as housing policy', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Identitetskrav vid lagfart och åtgärder mot kringgåenden av bostadsrättslagen', parti: 'V', url: 'https://example.com/1', dok_id: 'M1' }]
+      } as MockArticlePayload, 'motions', 'en') as string;
+
+      expect(content).toContain('housing policy');
+      expect(content).toContain('Housing motions reflect structural tension');
+    });
+
     it('should produce Swedish domain-specific analysis for sv language', () => {
       const content = generateArticleContent({
         motions: [{ titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/1', dok_id: 'M1' }]

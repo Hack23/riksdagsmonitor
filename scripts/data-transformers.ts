@@ -402,7 +402,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motion${n > 1 ? 's' : ''} filed`,
     otherCommittee: 'Other committees',
     otherDocuments: 'Other documents',
-    policySignificanceTouches: (domains: string): string => `Touches on ${domains}. Committee review and potential chamber vote will determine the proposal's fate.`,
+    policySignificanceTouches: (domains: string): string => `Touches on ${domains}.`,
     policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.'
   },
   sv: {
@@ -472,7 +472,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motion${n > 1 ? 'er' : ''} inlämnade`,
     otherCommittee: 'Övriga utskott',
     otherDocuments: 'Övriga dokument',
-    policySignificanceTouches: (domains: string): string => `Berör ${domains}. Utskottsbehandling och eventuell kammaromröstning avgör om förslaget får genomslag.`,
+    policySignificanceTouches: (domains: string): string => `Berör ${domains}.`,
     policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.'
   },
   da: {
@@ -542,7 +542,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} forslag indgivet`,
     otherCommittee: 'Andre udvalg',
     otherDocuments: 'Andre dokumenter',
-    policySignificanceTouches: (domains: string): string => `Berører ${domains}. Udvalgsbehandling og afstemning afgør forslagets skæbne.`,
+    policySignificanceTouches: (domains: string): string => `Berører ${domains}.`,
     policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.'
   },
   no: {
@@ -612,7 +612,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} forslag innsendt`,
     otherCommittee: 'Andre komiteer',
     otherDocuments: 'Andre dokumenter',
-    policySignificanceTouches: (domains: string): string => `Berører ${domains}. Komitébehandling og avstemning avgjør forslagets skjebne.`,
+    policySignificanceTouches: (domains: string): string => `Berører ${domains}.`,
     policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.'
   },
   fi: {
@@ -682,7 +682,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} aloitetta jätetty`,
     otherCommittee: 'Muut valiokunnat',
     otherDocuments: 'Muut asiakirjat',
-    policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}. Valiokuntakäsittely ja äänestys ratkaisevat ehdotuksen kohtalon.`,
+    policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}.`,
     policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.'
   },
   de: {
@@ -752,7 +752,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} Antrag${n > 1 ? 'e' : ''} eingereicht`,
     otherCommittee: 'Sonstige Ausschüsse',
     otherDocuments: 'Sonstige Dokumente',
-    policySignificanceTouches: (domains: string): string => `Betrifft ${domains}. Ausschussberatung und Abstimmung bestimmen das Schicksal des Vorschlags.`,
+    policySignificanceTouches: (domains: string): string => `Betrifft ${domains}.`,
     policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.'
   },
   fr: {
@@ -822,7 +822,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party} : ${n} motion${n > 1 ? 's' : ''} déposée${n > 1 ? 's' : ''}`,
     otherCommittee: 'Autres commissions',
     otherDocuments: 'Autres documents',
-    policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}. L'examen en commission et le vote détermineront le sort de la proposition.`,
+    policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}.`,
     policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.'
   },
   es: {
@@ -892,7 +892,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} moción${n > 1 ? 'es' : ''} presentada${n > 1 ? 's' : ''}`,
     otherCommittee: 'Otras comisiones',
     otherDocuments: 'Otros documentos',
-    policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}. La revisión en comisión y la votación determinarán el destino de la propuesta.`,
+    policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}.`,
     policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.'
   },
   nl: {
@@ -962,7 +962,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motie${n > 1 ? 's' : ''} ingediend`,
     otherCommittee: 'Overige commissies',
     otherDocuments: 'Overige documenten',
-    policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}. Commissiebehandeling en stemming bepalen het lot van het voorstel.`,
+    policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}.`,
     policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.'
   },
   ar: {
@@ -1032,7 +1032,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} اقتراح${n > 1 ? 'ات' : ''} مقدمة`,
     otherCommittee: 'لجان أخرى',
     otherDocuments: 'وثائق أخرى',
-    policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}. ستحدد المراجعة في اللجنة والتصويت مصير المقترح.`,
+    policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}.`,
     policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.'
   },
   he: {
@@ -1102,7 +1102,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} הצע${n > 1 ? 'ות' : 'ה'} הוגש${n > 1 ? 'ו' : 'ה'}`,
     otherCommittee: 'ועדות אחרות',
     otherDocuments: 'מסמכים אחרים',
-    policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}. בחינה בוועדה והצבעה יקבעו את גורל ההצעה.`,
+    policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}.`,
     policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.'
   },
   ja: {
@@ -1172,7 +1172,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}：${n}件の動議を提出`,
     otherCommittee: 'その他の委員会',
     otherDocuments: 'その他の文書',
-    policySignificanceTouches: (domains: string): string => `${domains}に関連します。委員会審査と採決が提案の行方を決定します。`,
+    policySignificanceTouches: (domains: string): string => `${domains}に関連します。`,
     policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。'
   },
   ko: {
@@ -1242,7 +1242,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n}건의 동의안 제출`,
     otherCommittee: '기타 위원회',
     otherDocuments: '기타 문서',
-    policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다. 위원회 심사와 표결이 제안의 운명을 결정합니다.`,
+    policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다.`,
     policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.'
   },
   zh: {
@@ -1312,7 +1312,7 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}：提交了${n}项动议`,
     otherCommittee: '其他委员会',
     otherDocuments: '其他文件',
-    policySignificanceTouches: (domains: string): string => `涉及${domains}领域。委员会审查和表决将决定提案的命运。`,
+    policySignificanceTouches: (domains: string): string => `涉及${domains}领域。`,
     policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。'
   }
 };
@@ -1837,7 +1837,7 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
       <h4>${titleHtml}</h4>
       <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>
       <p>${escapeHtml(String(reportSigVal))} ${summaryHtml}</p>
-      <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generateDeepPolicyAnalysis(report, lang)}</p>
+      <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generateDeepPolicyAnalysis(report, lang, 'bet')}</p>
       <p><a href="${sanitizeUrl(report.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
@@ -1932,7 +1932,7 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     <div class="proposition-entry">
       <h3>${titleHtml}</h3>
       <p>${escapeHtml(String(propSigVal))} ${summaryHtml}${referredLine}</p>
-      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(prop, lang)}</p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(prop, lang, 'prop')}</p>
       <p><a href="${sanitizeUrl(prop.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
@@ -2100,7 +2100,7 @@ function renderMotionEntry(motion: RawDocument, lang: Language | string): string
       <h3>${titleHtml}</h3>
       <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
       <p>${summaryHtml}</p>
-      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(motion, lang)}</p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(motion, lang, 'mot')}</p>
       <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
     </div>
 `;
@@ -2116,29 +2116,45 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
   const isSv = lang === 'sv';
   const set = new Set<string>();
 
-  if (title.includes('skatt') || title.includes('tax') || organ === 'SkU' || organ === 'FiU')
+  if (title.includes('skatt') || title.includes('tax') || title.includes('budget') || title.includes('finans')
+      || title.includes('makrotillsyn') || title.includes('macroprudential')
+      || organ === 'SkU' || organ === 'FiU')
     set.add(isSv ? 'finanspolitik' : 'fiscal policy');
-  if (title.includes('försvar') || title.includes('defen') || organ === 'FöU')
+  if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
+      || organ === 'FöU')
     set.add(isSv ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
-  if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || organ === 'MJU')
+  if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || title.includes('energi')
+      || title.includes('förnybart') || title.includes('renewable') || title.includes('koldioxid')
+      || title.includes('hållbar') || title.includes('sustain')
+      || organ === 'MJU')
     set.add(isSv ? 'miljö- och klimatpolitik' : 'environmental and climate policy');
-  if (title.includes('utbildning') || title.includes('educ') || organ === 'UbU')
+  if (title.includes('utbildning') || title.includes('educ') || title.includes('skola') || title.includes('högskola')
+      || organ === 'UbU')
     set.add(isSv ? 'utbildningspolitik' : 'education policy');
-  if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || organ === 'SoU')
+  if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || title.includes('omsorg')
+      || organ === 'SoU')
     set.add(isSv ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
-  if (title.includes('migration') || title.includes('invandring') || organ === 'SfU')
+  if (title.includes('migration') || title.includes('invandring') || title.includes('asyl') || title.includes('utlänning')
+      || organ === 'SfU')
     set.add(isSv ? 'migrationspolitik' : 'migration policy');
-  if (title.includes('eu') || title.includes('europa') || organ === 'UU')
+  if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign')
+      || organ === 'UU')
     set.add(isSv ? 'EU- och utrikespolitik' : 'EU and foreign affairs');
-  if (title.includes('brott') || title.includes('straff') || title.includes('justice') || organ === 'JuU')
+  if (title.includes('brott') || title.includes('straff') || title.includes('polis') || title.includes('justice')
+      || title.includes('kriminal') || organ === 'JuU')
     set.add(isSv ? 'rättspolitik' : 'justice policy');
-  if (title.includes('arbetsmarknad') || title.includes('labour') || organ === 'AU')
+  if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
+      || title.includes('facklig') || organ === 'AU')
     set.add(isSv ? 'arbetsmarknadspolitik' : 'labour market policy');
-  if (title.includes('bostad') || title.includes('housing') || organ === 'CU')
+  if (title.includes('bostad') || title.includes('housing') || title.includes('hyra') || title.includes('bostadsrätt')
+      || title.includes('lagfart') || title.includes('fastighet')
+      || organ === 'CU')
     set.add(isSv ? 'bostadspolitik' : 'housing policy');
-  if (title.includes('trafik') || title.includes('transport') || organ === 'TU')
+  if (title.includes('trafik') || title.includes('transport') || title.includes('järnväg') || title.includes('väg')
+      || organ === 'TU')
     set.add(isSv ? 'transportpolitik' : 'transport policy');
-  if (title.includes('näring') || title.includes('handel') || title.includes('trade') || organ === 'NU')
+  if (title.includes('näring') || title.includes('handel') || title.includes('trade') || title.includes('industri')
+      || title.includes('företag') || organ === 'NU')
     set.add(isSv ? 'näringspolitik' : 'trade and industry policy');
 
   return Array.from(set);
@@ -2328,8 +2344,10 @@ function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: 
  * Generate policy significance context for a document based on its metadata.
  * Uses the localised policySignificanceTouches label plus a domain-specific
  * analysis sentence instead of generic boilerplate.
+ * @param impliedDoktyp - document type inferred from the calling context
+ *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
  */
-function generatePolicySignificance(doc: RawDocument, lang: Language | string): string {
+function generatePolicySignificance(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
   const domains = detectPolicyDomains(doc, lang);
 
   if (domains.length > 0) {
@@ -2339,7 +2357,7 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string): 
       ? touchesFn(escapeHtml(domainsStr))
       : `Touches on ${escapeHtml(domainsStr)}.`;
 
-    const doktyp = doc.doktyp || doc.documentType || '';
+    const doktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
     const deepAnalysis = getDomainSpecificAnalysis(domains[0] ?? '', doktyp, lang);
     return deepAnalysis ? `${baseText} ${deepAnalysis}` : baseText;
   }
@@ -2355,11 +2373,14 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string): 
  * as the passage source — summary/notis are already shown in the summary line
  * above in structured views and must not be duplicated here.
  * Falls back to generatePolicySignificance when no enriched text is available.
+ * @param impliedDoktyp - document type inferred from the calling context
+ *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
  */
-function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string): string {
+function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
+  const effectiveDoktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
   const rawText = doc.fullText || doc.fullContent || '';
   if (rawText && !isPersonProfileText(rawText)) {
-    const cleanedText = (doc.doktyp === 'mot' && rawText.includes('Motion till riksdagen'))
+    const cleanedText = (effectiveDoktyp === 'mot' && rawText.includes('Motion till riksdagen'))
       ? cleanMotionText(rawText)
       : rawText;
     const passage = extractKeyPassage(cleanedText, 300);
@@ -2368,10 +2389,10 @@ function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string): 
       const passageHtml = isSwedishSource
         ? `<span data-translate="true" lang="sv">${escapeHtml(passage)}</span>`
         : escapeHtml(passage);
-      return `${passageHtml} ${generatePolicySignificance(doc, lang)}`;
+      return `${passageHtml} ${generatePolicySignificance(doc, lang, impliedDoktyp)}`;
     }
   }
-  return generatePolicySignificance(doc, lang);
+  return generatePolicySignificance(doc, lang, impliedDoktyp);
 }
 
 /**
