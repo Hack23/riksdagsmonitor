@@ -501,25 +501,22 @@ async function generateWeekAhead(): Promise<GenerationResult> {
     console.log(`  📊 Found ${events.length} events`);
 
     // 2. Fetch upcoming/recent documents
-    const rawDocs = await Promise.resolve()
-      .then(() => client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 }))
-      .catch(() => [] as unknown[]);
+    const rawDocs = await client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const documents: RawDocument[] = Array.isArray(rawDocs) ? rawDocs as RawDocument[] : [];
     console.log(`  📊 Found ${documents.length} upcoming documents`);
 
     // 3. Fetch parliamentary questions (fragor)
     console.log('  🔄 Fetching parliamentary questions...');
-    const rawQuestions = await Promise.resolve()
-      .then(() => client.fetchWrittenQuestions({ limit: 20 }))
-      .catch(() => [] as unknown[]);
+    const rawQuestions = await client.fetchWrittenQuestions({ limit: 20 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const questions: unknown[] = Array.isArray(rawQuestions) ? rawQuestions : [];
     console.log(`  📊 Found ${questions.length} written questions`);
 
     // 4. Fetch interpellations (interpellationer)
     console.log('  🔄 Fetching interpellations...');
-    const rawInterpellations = await Promise.resolve()
-      .then(() => client.fetchInterpellations({ limit: 15 }))
-      .catch(() => [] as unknown[]);
+    const rawInterpellations = await client.fetchInterpellations({ limit: 15 })
+      .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
     const interpellations: unknown[] = Array.isArray(rawInterpellations) ? rawInterpellations : [];
     console.log(`  📊 Found ${interpellations.length} interpellations`);
 
