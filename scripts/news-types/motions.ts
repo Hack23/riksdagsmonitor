@@ -176,6 +176,7 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
+  generateContentTitle,
   type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -264,7 +265,7 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_motioner']);
       
-      const titles: TitleSet = getTitles(lang, motions.length);
+      const titles: TitleSet = getTitles(lang, motions.length, motions);
       
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -317,7 +318,10 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
   }
 }
 
-function getTitles(lang: Language, count: number): TitleSet {
+function getTitles(lang: Language, count: number, documents: RawDocument[] = []): TitleSet {
+  const contentTitle = generateContentTitle(documents, lang, 'motions');
+  if (contentTitle) return contentTitle;
+
   const titles: Record<Language, TitleSet> = {
     en: {
       title: `Opposition Motions: Battle Lines This Week`,

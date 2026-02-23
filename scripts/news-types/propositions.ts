@@ -174,6 +174,7 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
+  generateContentTitle,
   type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -262,7 +263,7 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_propositioner']);
       
-      const titles: TitleSet = getTitles(lang, propositions.length);
+      const titles: TitleSet = getTitles(lang, propositions.length, propositions);
       
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -315,7 +316,10 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
   }
 }
 
-function getTitles(lang: Language, count: number): TitleSet {
+function getTitles(lang: Language, count: number, documents: RawDocument[] = []): TitleSet {
+  const contentTitle = generateContentTitle(documents, lang, 'propositions');
+  if (contentTitle) return contentTitle;
+
   const titles: Record<Language, TitleSet> = {
     en: {
       title: `Government Propositions: Policy Priorities This Week`,
