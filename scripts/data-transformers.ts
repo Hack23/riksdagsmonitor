@@ -2042,7 +2042,7 @@ export function groupMotionsByProposition(motions: RawDocument[]): {
     const ref = extractPropRef(title);
     if (ref) {
       if (!grouped.has(ref)) grouped.set(ref, []);
-      (grouped.get(ref) ?? []).push(motion);
+      grouped.get(ref)!.push(motion);
     } else {
       independent.push(motion);
     }
@@ -2059,7 +2059,7 @@ export function groupPropositionsByCommittee(propositions: RawDocument[]): Map<s
   for (const prop of propositions) {
     const key = prop.organ ?? prop.committee ?? '';
     if (!map.has(key)) map.set(key, []);
-    (map.get(key) ?? []).push(prop);
+    map.get(key)!.push(prop);
   }
   return map;
 }

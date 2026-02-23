@@ -623,6 +623,8 @@ describe('Data Transformers', () => {
       ) as string;
       // Non-Swedish: lang="sv" AND data-translate marker for translation workflow
       expect(content).toContain('data-translate="true"');
+      expect(content).toContain('lang="sv"');
+      expect(content).toContain('Bättre förutsättningar');
     });
 
     it('should NOT wrap English title in data-translate span for committee reports', () => {
@@ -1364,7 +1366,7 @@ describe('groupMotionsByProposition (#462)', () => {
     expect(content).toContain('Independent Motions');
     expect(content).toContain('MOT_PROP');
     expect(content).toContain('MOT_IND');
-    // Independent motion title should be wrapped in h3 (check via h4 absence and content presence)
+    // Independent motion title should appear in h3 (verify: h4 not used, and text is present)
     expect(content).not.toMatch(/<h4[^>]*>.*Fristående motion om transportpolitik/);
     // The title text should appear
     expect(content).toContain('Fristående motion om transportpolitik');
