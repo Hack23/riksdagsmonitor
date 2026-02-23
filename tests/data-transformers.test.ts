@@ -1233,6 +1233,21 @@ describe('Data Transformers', () => {
       expect(content).toMatch(/Finance Committee.*2|2.*Finance Committee/);
       expect(content).toContain('government priority');
     });
+
+    it('domainCount reflects actual policy domains, not committee count', () => {
+      // 3 propositions, all sent to FiU (1 committee) but touching 2 distinct domains
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Klimatlag miljö', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' },
+          { titel: 'Försvarsbudget militär', organ: 'FiU', url: 'https://example.com/p2', dok_id: 'P2' },
+          { titel: 'Extra budgetanslag', organ: 'FiU', url: 'https://example.com/p3', dok_id: 'P3' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      // Committee count is 1 (all FiU) but domain count should be > 1 (climate + defence + fiscal)
+      // The text must NOT say "1 policy domain" when multiple domains are detected
+      expect(content).not.toMatch(/touch on 1 policy domain[^s]/);
+    });
   });
 
   describe('Cross-committee analysis in committee reports', () => {

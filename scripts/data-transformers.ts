@@ -1956,13 +1956,17 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
   content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
   content += `    <div class="context-box">\n`;
 
-  // Group by referred committee for policy domain analysis
+  // Count unique policy domains across all propositions for accurate "N policy domains" text
+  const allPropDomains = new Set<string>();
+  propositions.forEach(p => detectPolicyDomains(p, 'en').forEach(d => allPropDomains.add(d)));
+  const domainCount = Math.max(allPropDomains.size, 1);
+
+  // Group by referred committee for government priority signal (separate from domain count)
   const byCommittee: Record<string, number> = {};
   propositions.forEach(p => {
     const c = p.organ || p.committee || 'unknown';
     byCommittee[c] = (byCommittee[c] || 0) + 1;
   });
-  const domainCount = Object.keys(byCommittee).length;
 
   const implicationFn = L(lang, 'policyImplicationsContext') as string | ((propCount: number, domainCount: number) => string);
   const implication = typeof implicationFn === 'function'
