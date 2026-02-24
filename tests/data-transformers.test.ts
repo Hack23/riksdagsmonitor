@@ -64,6 +64,10 @@ interface MockArticlePayload {
     dokumentnamn?: string;
     dok_id?: string;
     intressent_namn?: string;
+    author?: string;
+    notis?: string;
+    summary?: string;
+    undertitel?: string;
   }>;
   documents?: Array<{
     titel?: string;
@@ -1821,6 +1825,41 @@ describe('generateMotionsContent author/party sentinel fix (#454)', () => {
     } as MockArticlePayload, 'motions', 'en') as string;
     expect(content).toContain('Lars Pettersson');
     expect(content).toContain('(S)');
+  });
+
+  it('extracts party from notis when author is valid but parti is Unknown sentinel', () => {
+    // Simulates enrichDocumentsWithContent setting intressent_namn correctly but parti='Unknown'
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Test motion',
+        intressent_namn: 'Ulrika Liljeberg',
+        parti: 'Unknown',
+        notis: 'Motion till riksdagen 2025/26:456 av Ulrika Liljeberg (C) om något viktigt.',
+        url: '#',
+        dok_id: 'MOT_PARTY_ONLY',
+      }]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).toContain('Ulrika Liljeberg');
+    expect(content).toContain('(C)');
+    expect(content).not.toContain('Unknown (Unknown)');
+  });
+
+  it('extracts author and party from notis when both intressent_namn and author are Unknown sentinels', () => {
+    // Simulates real enrichDocumentsWithContent shape: both author fields default to 'Unknown'
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Test motion',
+        intressent_namn: 'Unknown',
+        author: 'Unknown',
+        parti: 'Unknown',
+        notis: 'Motion till riksdagen 2025/26:789 av Erik Andersson (KD) om ett viktigt ämne.',
+        url: '#',
+        dok_id: 'MOT_ALL_UNKNOWN',
+      }]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).toContain('Erik Andersson');
+    expect(content).toContain('(KD)');
+    expect(content).not.toContain('Unknown (Unknown)');
   });
 });
 
