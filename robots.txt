@@ -3,7 +3,6 @@ Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
 
 Sitemap: https://riksdagsmonitor.com/sitemap.xml
 
@@ -13,7 +12,6 @@ Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
 Crawl-delay: 0
 
 User-agent: Bingbot
@@ -21,7 +19,6 @@ Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
 Crawl-delay: 0
 
 User-agent: DuckDuckBot
@@ -29,7 +26,6 @@ Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
 Crawl-delay: 0
 
 User-agent: Slurp
@@ -37,7 +33,6 @@ Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
 Crawl-delay: 0
 
 User-agent: Baiduspider
@@ -45,7 +40,6 @@ Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
 Crawl-delay: 1
 
 # Social Media Bots
@@ -54,18 +48,15 @@ Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
 
 User-agent: Twitterbot
 Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
 
 User-agent: LinkedInBot
 Allow: /
 Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /schemas/
