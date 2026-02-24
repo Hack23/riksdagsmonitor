@@ -215,15 +215,6 @@ function sanitizeUrl(url: string | undefined | null): string {
 /**
  * Emit a Swedish-language span.
  *
- * For Swedish articles (`lang === 'sv'`) the span carries only the
- * `lang="sv"` accessibility attribute for screen readers — the text is
- * already in the target language, so no translation marker is needed.
- *
- * For **all other** languages the span carries both `lang="sv"` and
- * `data-translate="true"`. This marks embedded Swedish API text inside
- * non-Swedish articles so translation tooling can find and translate it;
- * downstream validators then ensure the `data-translate` markers are removed
- * before publishing.
  * For Swedish articles (`lang === 'sv'`) the span carries both the
  * `lang="sv"` accessibility attribute AND `data-translate="true"` so
  * quality-validation tooling can verify that Swedish articles contain the
@@ -240,9 +231,6 @@ function sanitizeUrl(url: string | undefined | null): string {
  */
 function svSpan(escapedText: string, lang: Language | string): string {
   if (lang === 'sv') {
-    return `<span lang="sv">${escapedText}</span>`;
-  }
-  return `<span data-translate="true" lang="sv">${escapedText}</span>`;
     return `<span data-translate="true" lang="sv">${escapedText}</span>`;
   }
   return `<span lang="sv">${escapedText}</span>`;
@@ -439,10 +427,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motion${n > 1 ? 's' : ''} filed`,
     otherCommittee: 'Other committees',
     otherDocuments: 'Other documents',
-    policySignificanceTouches: (domains: string): string => `Touches on ${domains}. Committee review and potential chamber vote will determine the proposal's fate.`,
-    policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.',
-    responsesToProp: 'Responses to Government Propositions',
-    independentMotions: 'Independent Motions'
     policySignificanceTouches: (domains: string): string => `Touches on ${domains}.`,
     policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.',
     generalMatters: 'General matters'
@@ -514,10 +498,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motion${n > 1 ? 'er' : ''} inlämnade`,
     otherCommittee: 'Övriga utskott',
     otherDocuments: 'Övriga dokument',
-    policySignificanceTouches: (domains: string): string => `Berör ${domains}. Utskottsbehandling och eventuell kammaromröstning avgör om förslaget får genomslag.`,
-    policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.',
-    responsesToProp: 'Svar på propositioner',
-    independentMotions: 'Övriga motioner'
     policySignificanceTouches: (domains: string): string => `Berör ${domains}.`,
     policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.',
     generalMatters: 'Övriga frågor'
@@ -589,10 +569,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} forslag indgivet`,
     otherCommittee: 'Andre udvalg',
     otherDocuments: 'Andre dokumenter',
-    policySignificanceTouches: (domains: string): string => `Berører ${domains}. Udvalgsbehandling og afstemning afgør forslagets skæbne.`,
-    policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.',
-    responsesToProp: 'Svar på regeringsforslag',
-    independentMotions: 'Andre forslag'
     policySignificanceTouches: (domains: string): string => `Berører ${domains}.`,
     policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.',
     generalMatters: 'Generelle spørgsmål'
@@ -664,10 +640,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} forslag innsendt`,
     otherCommittee: 'Andre komiteer',
     otherDocuments: 'Andre dokumenter',
-    policySignificanceTouches: (domains: string): string => `Berører ${domains}. Komitébehandling og avstemning avgjør forslagets skjebne.`,
-    policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.',
-    responsesToProp: 'Svar på regjeringforslag',
-    independentMotions: 'Andre forslag'
     policySignificanceTouches: (domains: string): string => `Berører ${domains}.`,
     policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.',
     generalMatters: 'Generelle spørsmål'
@@ -739,10 +711,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} aloitetta jätetty`,
     otherCommittee: 'Muut valiokunnat',
     otherDocuments: 'Muut asiakirjat',
-    policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}. Valiokuntakäsittely ja äänestys ratkaisevat ehdotuksen kohtalon.`,
-    policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.',
-    responsesToProp: 'Vastaukset hallituksen esityksiin',
-    independentMotions: 'Muut aloitteet'
     policySignificanceTouches: (domains: string): string => `Koskee aloja ${domains}.`,
     policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.',
     generalMatters: 'Yleiset asiat'
@@ -814,10 +782,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} Antrag${n > 1 ? 'e' : ''} eingereicht`,
     otherCommittee: 'Sonstige Ausschüsse',
     otherDocuments: 'Sonstige Dokumente',
-    policySignificanceTouches: (domains: string): string => `Betrifft ${domains}. Ausschussberatung und Abstimmung bestimmen das Schicksal des Vorschlags.`,
-    policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.',
-    responsesToProp: 'Antworten auf Regierungsvorlagen',
-    independentMotions: 'Sonstige Anträge'
     policySignificanceTouches: (domains: string): string => `Betrifft ${domains}.`,
     policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.',
     generalMatters: 'Allgemeine Angelegenheiten'
@@ -889,10 +853,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party} : ${n} motion${n > 1 ? 's' : ''} déposée${n > 1 ? 's' : ''}`,
     otherCommittee: 'Autres commissions',
     otherDocuments: 'Autres documents',
-    policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}. L'examen en commission et le vote détermineront le sort de la proposition.`,
-    policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.',
-    responsesToProp: 'Réponses aux propositions gouvernementales',
-    independentMotions: 'Autres motions'
     policySignificanceTouches: (domains: string): string => `Touche aux domaines ${domains}.`,
     policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.',
     generalMatters: 'Questions générales'
@@ -964,10 +924,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} moción${n > 1 ? 'es' : ''} presentada${n > 1 ? 's' : ''}`,
     otherCommittee: 'Otras comisiones',
     otherDocuments: 'Otros documentos',
-    policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}. La revisión en comisión y la votación determinarán el destino de la propuesta.`,
-    policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.',
-    responsesToProp: 'Respuestas a proposiciones del gobierno',
-    independentMotions: 'Otras mociones'
     policySignificanceTouches: (domains: string): string => `Toca los ámbitos de ${domains}.`,
     policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.',
     generalMatters: 'Asuntos generales'
@@ -1039,10 +995,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} motie${n > 1 ? 's' : ''} ingediend`,
     otherCommittee: 'Overige commissies',
     otherDocuments: 'Overige documenten',
-    policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}. Commissiebehandeling en stemming bepalen het lot van het voorstel.`,
-    policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.',
-    responsesToProp: 'Antwoorden op regeringsvoorstellen',
-    independentMotions: 'Overige moties'
     policySignificanceTouches: (domains: string): string => `Raakt aan ${domains}.`,
     policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.',
     generalMatters: 'Algemene zaken'
@@ -1114,10 +1066,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} اقتراح${n > 1 ? 'ات' : ''} مقدمة`,
     otherCommittee: 'لجان أخرى',
     otherDocuments: 'وثائق أخرى',
-    policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}. ستحدد المراجعة في اللجنة والتصويت مصير المقترح.`,
-    policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.',
-    responsesToProp: 'ردود على مقترحات الحكومة',
-    independentMotions: 'اقتراحات أخرى'
     policySignificanceTouches: (domains: string): string => `يتعلق بمجالات ${domains}.`,
     policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.',
     generalMatters: 'مسائل عامة'
@@ -1189,10 +1137,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n} הצע${n > 1 ? 'ות' : 'ה'} הוגש${n > 1 ? 'ו' : 'ה'}`,
     otherCommittee: 'ועדות אחרות',
     otherDocuments: 'מסמכים אחרים',
-    policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}. בחינה בוועדה והצבעה יקבעו את גורל ההצעה.`,
-    policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.',
-    responsesToProp: 'תשובות להצעות הממשלה',
-    independentMotions: 'הצעות אחרות'
     policySignificanceTouches: (domains: string): string => `נוגע בתחומי ${domains}.`,
     policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.',
     generalMatters: 'עניינים כלליים'
@@ -1264,10 +1208,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}：${n}件の動議を提出`,
     otherCommittee: 'その他の委員会',
     otherDocuments: 'その他の文書',
-    policySignificanceTouches: (domains: string): string => `${domains}に関連します。委員会審査と採決が提案の行方を決定します。`,
-    policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。',
-    responsesToProp: '政府提案への回答',
-    independentMotions: 'その他の動議'
     policySignificanceTouches: (domains: string): string => `${domains}に関連します。`,
     policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。',
     generalMatters: '一般事項'
@@ -1339,10 +1279,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}: ${n}건의 동의안 제출`,
     otherCommittee: '기타 위원회',
     otherDocuments: '기타 문서',
-    policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다. 위원회 심사와 표결이 제안의 운명을 결정합니다.`,
-    policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.',
-    responsesToProp: '정부 제안에 대한 응답',
-    independentMotions: '기타 동의'
     policySignificanceTouches: (domains: string): string => `${domains} 분야에 관련됩니다.`,
     policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.',
     generalMatters: '일반 사항'
@@ -1414,10 +1350,6 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     partyMotionsFiled: (party: string, n: number): string => `${party}：提交了${n}项动议`,
     otherCommittee: '其他委员会',
     otherDocuments: '其他文件',
-    policySignificanceTouches: (domains: string): string => `涉及${domains}领域。委员会审查和表决将决定提案的命运。`,
-    policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。',
-    responsesToProp: '对政府提案的回应',
-    independentMotions: '其他动议'
     policySignificanceTouches: (domains: string): string => `涉及${domains}领域。`,
     policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。',
     generalMatters: '一般事项'
@@ -2142,7 +2074,6 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
   // Group motions by party for strategic analysis
   const byParty: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
-    const party = (motion.parti && motion.parti !== 'Unknown') ? motion.parti : 'other';
     const party = normalizePartyKey(motion.parti);
     if (!byParty[party]) byParty[party] = [];
     byParty[party].push(motion);
@@ -2161,86 +2092,6 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
     content += generateOppositionStrategySection(motions, lang);
   }
 
-  /** Render a single motion entry block */
-  const renderMotion = (motion: RawDocument, grouped = false): string => {
-    const headingTag = grouped ? 'h4' : 'h3';
-    const titleText = motion.titel || motion.title || '';
-    const escapedTitle = escapeHtml(titleText);
-    const titleHtml = (motion.titel && !motion.title)
-      ? svSpan(escapedTitle, lang)
-      : escapedTitle;
-    const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
-
-    // Use enriched author and party data, with fallback parsing from raw notis.
-    // Treat 'Unknown' sentinel (set by enrichDocumentsWithContent) as missing so
-    // we attempt parseMotionAuthorParty before giving up.
-    const unknownVal = L(lang, 'unknown');
-    let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null) || motion.author || '';
-    let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
-    // Fire fallback when EITHER author or party is missing (covers party-only sentinel case)
-    if (!authorName || !partyName) {
-      const rawText = motion.undertitel || motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
-      const parsed = parseMotionAuthorParty(rawText);
-      if (parsed) {
-        if (!authorName) authorName = parsed.author;
-        if (!partyName) partyName = parsed.party;
-      }
-    }
-    if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
-    const authorLine = partyName
-      ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
-      : escapeHtml(authorName);
-
-    // Use enhanced summary based on metadata (cleanMotionText strips Swedish boilerplate)
-    const summaryText = generateEnhancedSummary(motion, 'motion', lang);
-    const motionDefaultVal = L(lang, 'motionDefault');
-    // Only wrap in Swedish-language span when the content comes from a Swedish source
-    const isSwedishContent = (motion.titel && !motion.title)
-      || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
-    const summaryHtml = (summaryText && summaryText !== motionDefaultVal && isSwedishContent)
-      ? svSpan(escapeHtml(summaryText), lang)
-      : escapeHtml(summaryText || (typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));
-
-    const readFullVal = L(lang, 'readFullMotion');
-    const whyItMattersVal = L(lang, 'whyItMatters');
-
-    return `
-    <div class="motion-entry">
-      <${headingTag}>${titleHtml}</${headingTag}>
-      <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
-      <p>${summaryHtml}</p>
-      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generatePolicySignificance(motion, lang)}</p>
-      <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
-    </div>
-`;
-  };
-
-  // Group motions by parent proposition to eliminate repetitive section headers
-  const { grouped, independent } = groupMotionsByProposition(motions);
-
-  if (grouped.size > 0) {
-    const responsesLabel = String(L(lang, 'responsesToProp'));
-
-    content += `\n    <h2>${responsesLabel}</h2>\n`;
-
-    grouped.forEach((propMotions, propRef) => {
-      // Get prop title from first motion (strip the prop reference prefix from the title)
-      const firstTitle = propMotions[0]?.titel || propMotions[0]?.title || '';
-      const propTitleMatch = firstTitle.match(/med anledning av prop\.\s+\S+\s+(.*)/i);
-      const propTitle = propTitleMatch?.[1]?.trim() || propRef;
-
-      content += `    <h3>${escapeHtml(`Prop. ${propRef}: ${propTitle}`)}</h3>\n`;
-
-      propMotions.forEach(motion => { content += renderMotion(motion, true); });
-    });
-  }
-
-  if (independent.length > 0) {
-    if (grouped.size > 0) {
-      const indepLabel = String(L(lang, 'independentMotions'));
-      content += `\n    <h2>${indepLabel}</h2>\n`;
-    }
-    independent.forEach(motion => { content += renderMotion(motion); });
   // Group motions by primary policy theme for thematic analysis
   const byTheme: Record<string, RawDocument[]> = {};
   motions.forEach(motion => {
@@ -2306,10 +2157,15 @@ function renderMotionEntry(motion: RawDocument, lang: Language | string): string
   const unknownVal = L(lang, 'unknown');
   let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null) || motion.author || '';
   let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
-  if (!authorName || authorName === 'Unknown') {
-    const rawText = motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
+  // Fire fallback when EITHER author or party is missing — covers the party-only sentinel case
+  // where intressent_namn is valid but parti was 'Unknown' and stripped to ''.
+  if (!authorName || authorName === 'Unknown' || !partyName) {
+    const rawText = motion.undertitel || motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
     const parsed = parseMotionAuthorParty(rawText);
-    if (parsed) { authorName = parsed.author; partyName = partyName || parsed.party; }
+    if (parsed) {
+      if (!authorName || authorName === 'Unknown') authorName = parsed.author;
+      if (!partyName) partyName = parsed.party;
+    }
   }
   if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
   const authorLine = partyName
@@ -3246,7 +3102,6 @@ const CONTENT_TITLE_TEMPLATES: Record<string, Record<string, { title: string; su
     ar: { title: 'المعارضة تتحدى {d1} و{d2}', subtitle: 'تحليل {count} اقتراح معارضة حول {d1} و{d2}' },
     he: { title: 'האופוזיציה מאתגרת {d1} ו{d2}', subtitle: 'ניתוח {count} הצעות אופוזיציה: {d1} ו{d2}' },
     ja: { title: '野党が{d1}と{d2}に挑む', subtitle: '{d1}と{d2}に関する{count}件の野党動議の分析' },
-    ko: { title: '야당이 {d1}과 {d2}에 도전', subtitle: '{d1}과 {d2}에 관한 {count}개 야당 동의 분석' },
     ko: { title: '야당이 {d1}과 {d2}에 도전', subtitle: '{d1}과 {d2}에 관한 {count}개 야당 동의 분析' },
     zh: { title: '反对党挑战{d1}和{d2}', subtitle: '关于{d1}和{d2}的{count}份反对党动议分析' },
   },
@@ -3263,7 +3118,6 @@ const CONTENT_TITLE_TEMPLATES: Record<string, Record<string, { title: string; su
     ar: { title: 'الحكومة تستهدف {d1} و{d2}', subtitle: 'تحليل {count} مقترح حكومي حول {d1} و{d2}' },
     he: { title: 'הממשלה מתמקדת ב{d1} וב{d2}', subtitle: 'ניתוח {count} הצעות ממשלה: {d1} ו{d2}' },
     ja: { title: '政府が{d1}と{d2}に着手', subtitle: '{d1}と{d2}に関する{count}件の政府提案の分析' },
-    ko: { title: '정부가 {d1}과 {d2} 추진', subtitle: '{d1}과 {d2}에 관한 {count}개 정부 법안 분석' },
     ko: { title: '정부가 {d1}과 {d2} 추진', subtitle: '{d1}과 {d2}에 관한 {count}개 정부 법안 분析' },
     zh: { title: '政府推进{d1}和{d2}改革', subtitle: '关于{d1}和{d2}的{count}份政府提案分析' },
   },
@@ -3280,7 +3134,6 @@ const CONTENT_TITLE_TEMPLATES: Record<string, Record<string, { title: string; su
     ar: { title: 'اللجان تعالج {d1} و{d2}', subtitle: 'تحليل {count} تقرير لجنة حول {d1} و{d2}' },
     he: { title: 'הוועדות עוסקות ב{d1} וב{d2}', subtitle: 'ניתוח {count} דוחות ועדה: {d1} ו{d2}' },
     ja: { title: '委員会が{d1}と{d2}を審議', subtitle: '{d1}と{d2}に関する{count}件の委員会報告の分析' },
-    ko: { title: '위원회가 {d1}과 {d2}을 심의', subtitle: '{d1}과 {d2}에 관한 {count}개 위원회 보고서 분석' },
     ko: { title: '위원회가 {d1}과 {d2}을 심의', subtitle: '{d1}과 {d2}에 관한 {count}개 위원회 보고서 분析' },
     zh: { title: '委员会审议{d1}和{d2}', subtitle: '关于{d1}和{d2}的{count}份委员会报告分析' },
   },

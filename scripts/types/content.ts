@@ -102,7 +102,5 @@ export interface ContentLabelSet {
   otherDocuments: string;
   policySignificanceTouches: (domains: string) => string;
   policySignificanceGeneric: string;
-  responsesToProp: string;
-  independentMotions: string;
   generalMatters: string;
 }

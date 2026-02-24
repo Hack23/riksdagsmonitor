@@ -264,11 +264,6 @@ const QUALITY_THRESHOLD: number = parsedQualityThreshold;
 const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
 const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
 
-// --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
-// Set --require-mcp=false for local development/testing without a live MCP server.
-const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
-const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
-
 // ---------------------------------------------------------------------------
 // Valid article types
 // ---------------------------------------------------------------------------
