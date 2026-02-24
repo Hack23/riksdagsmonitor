@@ -341,21 +341,21 @@ const LOCALE_MAP: Record<string, string> = {
  * Map Swedish committee codes to full names for richer descriptions
  */
 const COMMITTEE_NAMES: CommitteeNameMap = {
-  AU: { en: 'Labour Market Committee', sv: 'Arbetsmarknadsutskottet' },
-  CU: { en: 'Civil Affairs Committee', sv: 'Civilutskottet' },
-  FiU: { en: 'Finance Committee', sv: 'Finansutskottet' },
-  FöU: { en: 'Defence Committee', sv: 'Försvarsutskottet' },
-  JuU: { en: 'Justice Committee', sv: 'Justitieutskottet' },
-  KU: { en: 'Constitutional Committee', sv: 'Konstitutionsutskottet' },
-  KrU: { en: 'Cultural Affairs Committee', sv: 'Kulturutskottet' },
-  MJU: { en: 'Environment and Agriculture Committee', sv: 'Miljö- och jordbruksutskottet' },
-  NU: { en: 'Industry and Trade Committee', sv: 'Näringsutskottet' },
-  SkU: { en: 'Taxation Committee', sv: 'Skatteutskottet' },
-  SfU: { en: 'Social Insurance Committee', sv: 'Socialförsäkringsutskottet' },
-  SoU: { en: 'Social Committee', sv: 'Socialutskottet' },
-  TU: { en: 'Transport Committee', sv: 'Trafikutskottet' },
-  UbU: { en: 'Education Committee', sv: 'Utbildningsutskottet' },
-  UU: { en: 'Foreign Affairs Committee', sv: 'Utrikesutskottet' },
+  AU: { en: 'Committee on Labour Market Affairs', sv: 'Arbetsmarknadsutskottet' },
+  CU: { en: 'Committee on Civil Affairs', sv: 'Civilutskottet' },
+  FiU: { en: 'Committee on Finance', sv: 'Finansutskottet' },
+  FöU: { en: 'Committee on Defence', sv: 'Försvarsutskottet' },
+  JuU: { en: 'Committee on Justice', sv: 'Justitieutskottet' },
+  KU: { en: 'Committee on the Constitution', sv: 'Konstitutionsutskottet' },
+  KrU: { en: 'Committee on Cultural Affairs', sv: 'Kulturutskottet' },
+  MJU: { en: 'Committee on Environment and Agriculture', sv: 'Miljö- och jordbruksutskottet' },
+  NU: { en: 'Committee on Industry and Trade', sv: 'Näringsutskottet' },
+  SkU: { en: 'Committee on Taxation', sv: 'Skatteutskottet' },
+  SfU: { en: 'Committee on Social Insurance', sv: 'Socialförsäkringsutskottet' },
+  SoU: { en: 'Committee on Social Affairs', sv: 'Socialutskottet' },
+  TU: { en: 'Committee on Transport', sv: 'Trafikutskottet' },
+  UbU: { en: 'Committee on Education', sv: 'Utbildningsutskottet' },
+  UU: { en: 'Committee on Foreign Affairs', sv: 'Utrikesutskottet' },
 };
 
 // Multi-language labels for content generation
@@ -2543,34 +2543,12 @@ function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: 
 }
 
 /**
- * Swedish Riksdag committee codes mapped to their English and Swedish names.
- * Used as a secondary fallback in generatePolicySignificance when keyword and
- * organ-based domain detection both fail to match a recognised policy domain.
- */
-const ORGAN_NAMES: Record<string, { en: string; sv: string }> = {
-  AU:  { en: 'Committee on Labour Market Affairs', sv: 'arbetsmarknadsutskottet' },
-  CU:  { en: 'Committee on Civil Affairs', sv: 'civilutskottet' },
-  FiU: { en: 'Committee on Finance', sv: 'finansutskottet' },
-  FöU: { en: 'Committee on Defence', sv: 'försvarsutskottet' },
-  JuU: { en: 'Committee on Justice', sv: 'justitieutskottet' },
-  KrU: { en: 'Committee on Cultural Affairs', sv: 'kulturutskottet' },
-  KU:  { en: 'Committee on the Constitution', sv: 'konstitutionsutskottet' },
-  MJU: { en: 'Committee on Environment and Agriculture', sv: 'miljö- och jordbruksutskottet' },
-  NU:  { en: 'Committee on Industry and Trade', sv: 'näringsutskottet' },
-  SkU: { en: 'Committee on Taxation', sv: 'skatteutskottet' },
-  SfU: { en: 'Committee on Social Insurance', sv: 'socialförsäkringsutskottet' },
-  SoU: { en: 'Committee on Social Affairs', sv: 'socialutskottet' },
-  TU:  { en: 'Committee on Transport', sv: 'trafikutskottet' },
-  UbU: { en: 'Committee on Education', sv: 'utbildningsutskottet' },
-  UU:  { en: 'Committee on Foreign Affairs', sv: 'utrikesutskottet' },
-};
-
-/**
  * Generate policy significance context for a document based on its metadata.
  * Uses the localised policySignificanceTouches label plus a domain-specific
  * analysis sentence instead of generic boilerplate.
- * Falls back to a committee-specific sentence when no domain keyword matches
- * but the document's organ field identifies a known Riksdag committee.
+ * Falls back to a committee-specific sentence (derived from COMMITTEE_NAMES)
+ * when no domain keyword matches but the document's organ field identifies a
+ * known Riksdag committee.
  * @param impliedDoktyp - document type inferred from the calling context
  *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
  */
@@ -2592,11 +2570,11 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string, i
   // Secondary: committee-specific context when organ is present but no domain matched
   const organ = doc.organ || doc.committee || '';
   if (organ) {
-    const organEntry = ORGAN_NAMES[organ];
+    const organEntry = COMMITTEE_NAMES[organ];
     if (organEntry) {
       const isSv = lang === 'sv';
       return isSv
-        ? `Ärendet behandlas av ${organEntry.sv} för parlamentarisk beredning.`
+        ? `Ärendet behandlas av ${organEntry.sv.toLowerCase()} för parlamentarisk beredning.`
         : `This matter is referred to the ${organEntry.en} for parliamentary examination.`;
     }
   }

@@ -1358,7 +1358,7 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'propositions', 'en') as string;
 
       // Should mention FiU receives the most (2) propositions
-      expect(content).toMatch(/Finance Committee.*2|2.*Finance Committee/);
+      expect(content).toMatch(/Committee on Finance.*2|2.*Committee on Finance/);
       expect(content).toContain('government priority');
     });
 
