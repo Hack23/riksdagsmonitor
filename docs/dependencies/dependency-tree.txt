@@ -1,6 +1,6 @@
-riksdagsmonitor@0.3.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.4.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
-│ └── eslint@10.0.1 deduped
+│ └── eslint@10.0.2 deduped
 ├─┬ @types/d3@7.4.3
 │ ├── @types/d3-array@3.2.2
 │ ├─┬ @types/d3-axis@3.0.6
@@ -104,7 +104,6 @@ riksdagsmonitor@0.3.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── fast-uri@3.1.0
 │ ├── json-schema-traverse@1.0.0
 │ └── require-from-string@2.0.2
-├── ansi-colors@4.1.3 extraneous
 ├─┬ chart.js@4.5.1
 │ └── @kurkle/color@0.3.4
 ├─┬ chartjs-plugin-annotation@3.1.0
@@ -237,14 +236,16 @@ riksdagsmonitor@0.3.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └─┬ string-width@4.2.3
 │ │   ├── emoji-regex@8.0.0
 │ │   ├── is-fullwidth-code-point@3.0.0
-│ │   └─┬ strip-ansi@6.0.1
-│ │     └── ansi-regex@5.0.1
+│ │   └── strip-ansi@6.0.1 deduped
 │ ├── commander@6.2.1
 │ ├── common-tags@1.8.2
 │ ├── dayjs@1.11.19
 │ ├─┬ debug@4.4.3
 │ │ └── ms@2.1.3
-│ ├── UNMET DEPENDENCY enquirer@^2.3.6
+│ ├─┬ enquirer@2.4.1
+│ │ ├── ansi-colors@4.1.3
+│ │ └─┬ strip-ansi@6.0.1
+│ │   └── ansi-regex@5.0.1
 │ ├── eventemitter2@6.4.7
 │ ├─┬ execa@4.1.0
 │ │ ├── cross-spawn@7.0.6 deduped
@@ -295,7 +296,7 @@ riksdagsmonitor@0.3.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ │ └── is-fullwidth-code-point@3.0.0 deduped
 │ │ │ └── string-width@4.2.3 deduped
 │ │ ├── colorette@2.0.20
-│ │ ├── UNMET OPTIONAL DEPENDENCY enquirer@>= 2.3.0 < 3
+│ │ ├── enquirer@2.4.1 deduped
 │ │ ├─┬ log-update@4.0.0
 │ │ │ ├─┬ ansi-escapes@4.3.2
 │ │ │ │ └── type-fest@0.21.3
@@ -415,10 +416,10 @@ riksdagsmonitor@0.3.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── d3-interpolate@3.0.1 deduped
 │   ├── d3-selection@3.0.0 deduped
 │   └── d3-transition@3.0.1 deduped
-├─┬ eslint@10.0.1
+├─┬ eslint@10.0.2
 │ ├─┬ @eslint-community/eslint-utils@4.9.1
 │ │ ├── eslint-visitor-keys@3.4.3
-│ │ └── eslint@10.0.1 deduped
+│ │ └── eslint@10.0.2 deduped
 │ ├── @eslint-community/regexpp@4.12.2
 │ ├─┬ @eslint/config-array@0.23.2
 │ │ ├── @eslint/object-schema@3.0.2
@@ -439,7 +440,7 @@ riksdagsmonitor@0.3.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── @humanwhocodes/module-importer@1.0.1
 │ ├── @humanwhocodes/retry@0.4.3
 │ ├── @types/estree@1.0.8
-│ ├─┬ ajv@6.12.6
+│ ├─┬ ajv@6.14.0
 │ │ ├── fast-deep-equal@3.1.3 deduped
 │ │ ├── fast-json-stable-stringify@2.1.0
 │ │ ├── json-schema-traverse@0.4.1
@@ -707,65 +708,64 @@ riksdagsmonitor@0.3.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │   └── balanced-match@1.0.2
 │ ├── typescript@5.9.3 deduped
 │ └── yaml@2.8.2
-├─┬ typescript-eslint@8.56.0
-│ ├─┬ @typescript-eslint/eslint-plugin@8.56.0
+├─┬ typescript-eslint@8.56.1
+│ ├─┬ @typescript-eslint/eslint-plugin@8.56.1
 │ │ ├── @eslint-community/regexpp@4.12.2 deduped
-│ │ ├── @typescript-eslint/parser@8.56.0 deduped
-│ │ ├─┬ @typescript-eslint/scope-manager@8.56.0
-│ │ │ ├── @typescript-eslint/types@8.56.0 deduped
-│ │ │ └── @typescript-eslint/visitor-keys@8.56.0 deduped
-│ │ ├─┬ @typescript-eslint/type-utils@8.56.0
-│ │ │ ├── @typescript-eslint/types@8.56.0 deduped
-│ │ │ ├── @typescript-eslint/typescript-estree@8.56.0 deduped
-│ │ │ ├── @typescript-eslint/utils@8.56.0 deduped
+│ │ ├── @typescript-eslint/parser@8.56.1 deduped
+│ │ ├─┬ @typescript-eslint/scope-manager@8.56.1
+│ │ │ ├── @typescript-eslint/types@8.56.1 deduped
+│ │ │ └── @typescript-eslint/visitor-keys@8.56.1 deduped
+│ │ ├─┬ @typescript-eslint/type-utils@8.56.1
+│ │ │ ├── @typescript-eslint/types@8.56.1 deduped
+│ │ │ ├── @typescript-eslint/typescript-estree@8.56.1 deduped
+│ │ │ ├── @typescript-eslint/utils@8.56.1 deduped
 │ │ │ ├── debug@4.4.3 deduped
-│ │ │ ├── eslint@10.0.1 deduped
+│ │ │ ├── eslint@10.0.2 deduped
 │ │ │ ├── ts-api-utils@2.4.0 deduped
 │ │ │ └── typescript@5.9.3 deduped
-│ │ ├── @typescript-eslint/utils@8.56.0 deduped
-│ │ ├─┬ @typescript-eslint/visitor-keys@8.56.0
-│ │ │ ├── @typescript-eslint/types@8.56.0 deduped
+│ │ ├── @typescript-eslint/utils@8.56.1 deduped
+│ │ ├─┬ @typescript-eslint/visitor-keys@8.56.1
+│ │ │ ├── @typescript-eslint/types@8.56.1 deduped
 │ │ │ └── eslint-visitor-keys@5.0.1 deduped
-│ │ ├── eslint@10.0.1 deduped
+│ │ ├── eslint@10.0.2 deduped
 │ │ ├── ignore@7.0.5
 │ │ ├── natural-compare@1.4.0 deduped
 │ │ ├─┬ ts-api-utils@2.4.0
 │ │ │ └── typescript@5.9.3 deduped
 │ │ └── typescript@5.9.3 deduped
-│ ├─┬ @typescript-eslint/parser@8.56.0
-│ │ ├── @typescript-eslint/scope-manager@8.56.0 deduped
-│ │ ├── @typescript-eslint/types@8.56.0
-│ │ ├── @typescript-eslint/typescript-estree@8.56.0 deduped
-│ │ ├── @typescript-eslint/visitor-keys@8.56.0 deduped
+│ ├─┬ @typescript-eslint/parser@8.56.1
+│ │ ├── @typescript-eslint/scope-manager@8.56.1 deduped
+│ │ ├── @typescript-eslint/types@8.56.1
+│ │ ├── @typescript-eslint/typescript-estree@8.56.1 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.56.1 deduped
 │ │ ├── debug@4.4.3 deduped
-│ │ ├── eslint@10.0.1 deduped
+│ │ ├── eslint@10.0.2 deduped
 │ │ └── typescript@5.9.3 deduped
-│ ├─┬ @typescript-eslint/typescript-estree@8.56.0
-│ │ ├─┬ @typescript-eslint/project-service@8.56.0
-│ │ │ ├── @typescript-eslint/tsconfig-utils@8.56.0 deduped
-│ │ │ ├── @typescript-eslint/types@8.56.0 deduped
+│ ├─┬ @typescript-eslint/typescript-estree@8.56.1
+│ │ ├─┬ @typescript-eslint/project-service@8.56.1
+│ │ │ ├── @typescript-eslint/tsconfig-utils@8.56.1 deduped
+│ │ │ ├── @typescript-eslint/types@8.56.1 deduped
 │ │ │ ├── debug@4.4.3 deduped
 │ │ │ └── typescript@5.9.3 deduped
-│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.56.0
+│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.56.1
 │ │ │ └── typescript@5.9.3 deduped
-│ │ ├── @typescript-eslint/types@8.56.0 deduped
-│ │ ├── @typescript-eslint/visitor-keys@8.56.0 deduped
+│ │ ├── @typescript-eslint/types@8.56.1 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.56.1 deduped
 │ │ ├── debug@4.4.3 deduped
-│ │ ├─┬ minimatch@9.0.5
-│ │ │ └─┬ brace-expansion@2.0.2
-│ │ │   └── balanced-match@1.0.2
+│ │ ├─┬ minimatch@10.2.2
+│ │ │ └── brace-expansion@5.0.2 deduped
 │ │ ├── semver@7.7.4
 │ │ ├── tinyglobby@0.2.15 deduped
 │ │ ├── ts-api-utils@2.4.0 deduped
 │ │ └── typescript@5.9.3 deduped
-│ ├─┬ @typescript-eslint/utils@8.56.0
+│ ├─┬ @typescript-eslint/utils@8.56.1
 │ │ ├── @eslint-community/eslint-utils@4.9.1 deduped
-│ │ ├── @typescript-eslint/scope-manager@8.56.0 deduped
-│ │ ├── @typescript-eslint/types@8.56.0 deduped
-│ │ ├── @typescript-eslint/typescript-estree@8.56.0 deduped
-│ │ ├── eslint@10.0.1 deduped
+│ │ ├── @typescript-eslint/scope-manager@8.56.1 deduped
+│ │ ├── @typescript-eslint/types@8.56.1 deduped
+│ │ ├── @typescript-eslint/typescript-estree@8.56.1 deduped
+│ │ ├── eslint@10.0.2 deduped
 │ │ └── typescript@5.9.3 deduped
-│ ├── eslint@10.0.1 deduped
+│ ├── eslint@10.0.2 deduped
 │ └── typescript@5.9.3 deduped
 ├── typescript@5.9.3
 ├─┬ vite-plugin-sri-gen@1.3.2
