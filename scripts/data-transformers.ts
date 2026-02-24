@@ -2063,9 +2063,6 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
 /** Matches a strict proposition ID (YYYY/YY:NNN) in a motion title. */
 const PROP_REFERENCE_REGEX = /med anledning av prop\.\s+(\d{4}\/\d{2}:\d+)/i;
 
-/** Captures the full proposition reference text (non-greedy, stops at HTML tags). */
-const PROP_FULL_REF_REGEX = /med anledning av (prop\.\s*\d{4}\/\d{2}:\d+(?:\s+[^<]+?)?(?=\s*$|<))/i;
-
 /** Captures the descriptive title portion that follows the prop ID. */
 const PROP_TITLE_SUFFIX_REGEX = /med anledning av prop\.\s+\d{4}\/\d{2}:\d+\s*(.*)/i;
 
