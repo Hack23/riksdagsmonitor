@@ -570,9 +570,9 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) - Defense-in-depth security controls
 - [🔮 Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap
 - [🎯 Threat Model](THREAT_MODEL.md) - STRIDE threat analysis and risk assessment
+- [🛡️ CRA Assessment](CRA-ASSESSMENT.md) - EU Cyber Resilience Act conformity
 - [🔧 Workflows](WORKFLOWS.md) - CI/CD workflows and automation
 - [🔐 Security Policy](SECURITY.md) - Vulnerability reporting and disclosure
-- [LABELS.md](LABELS.md) - Automatic labeling system and label definitions ✨ **NEW**
 
 ### GitHub Copilot Integration
 - [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (14 agents)

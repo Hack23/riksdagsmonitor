@@ -41,6 +41,8 @@
 | [Future State Diagrams](FUTURE_STATEDIAGRAM.md) | 🚀 Behavior | Advanced state management |
 | [Future Mindmaps](FUTURE_MINDMAP.md) | 🚀 Concepts | Capability expansion maps |
 | [Future SWOT](FUTURE_SWOT.md) | 🚀 Strategy | Future strategic opportunities |
+| [Workflows](WORKFLOWS.md) | 🔧 DevOps | CI/CD automation and pipelines |
+| [CRA Assessment](CRA-ASSESSMENT.md) | ⚖️ Compliance | EU Cyber Resilience Act conformity |
 
 ---
 
