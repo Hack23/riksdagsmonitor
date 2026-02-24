@@ -2308,7 +2308,7 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || title.includes('makrotillsyn') || title.includes('macroprudential')
       || title.includes('moms') || title.includes('mervärd') || title.includes('skattebedrägeri')
       || title.includes('e-id') || title.includes('e-legitimation') || title.includes('verklig huvudman')
-      || title.includes('penningtvätt') || title.includes('beneficial') || title.includes('fakturabedrägeri')
+      || title.includes('penningtvätt') || /\bbeneficial owner(ship)?\b/.test(title) || title.includes('fakturabedrägeri')
       || organ === 'SkU' || organ === 'FiU')
     set.add(isSv ? 'finanspolitik' : 'fiscal policy');
   if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
@@ -2340,7 +2340,7 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || title.includes('kriminal') || organ === 'JuU')
     set.add(isSv ? 'rättspolitik' : 'justice policy');
   if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
-      || title.includes('facklig') || title.includes('ilo') || title.includes('trakasserier')
+      || title.includes('facklig') || /\bilo\b/.test(title) || title.includes('trakasserier')
       || title.includes('kollektivavtal') || title.includes('lönediskriminering') || title.includes('harassment')
       || organ === 'AU')
     set.add(isSv ? 'arbetsmarknadspolitik' : 'labour market policy');
@@ -2548,21 +2548,21 @@ function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: 
  * organ-based domain detection both fail to match a recognised policy domain.
  */
 const ORGAN_NAMES: Record<string, { en: string; sv: string }> = {
-  AU:  { en: 'the Committee on Labour', sv: 'arbetsmarknadsutskottet' },
-  CU:  { en: 'the Civil Affairs Committee', sv: 'civilutskottet' },
-  FiU: { en: 'the Finance Committee', sv: 'finansutskottet' },
-  FöU: { en: 'the Defence Committee', sv: 'försvarsutskottet' },
-  JuU: { en: 'the Justice Committee', sv: 'justitieutskottet' },
-  KrU: { en: 'the Committee on Cultural Affairs', sv: 'kulturutskottet' },
-  KU:  { en: 'the Committee on the Constitution', sv: 'konstitutionsutskottet' },
-  MJU: { en: 'the Committee on Environment and Agriculture', sv: 'miljö- och jordbruksutskottet' },
-  NU:  { en: 'the Committee on Industry and Trade', sv: 'näringsutskottet' },
-  SkU: { en: 'the Tax Committee', sv: 'skatteutskottet' },
-  SfU: { en: 'the Social Insurance Committee', sv: 'socialförsäkringsutskottet' },
-  SoU: { en: 'the Social Affairs Committee', sv: 'socialutskottet' },
-  TU:  { en: 'the Transport Committee', sv: 'trafikutskottet' },
-  UbU: { en: 'the Committee on Education', sv: 'utbildningsutskottet' },
-  UU:  { en: 'the Foreign Affairs Committee', sv: 'utrikesutskottet' },
+  AU:  { en: 'Committee on Labour Market Affairs', sv: 'arbetsmarknadsutskottet' },
+  CU:  { en: 'Committee on Civil Affairs', sv: 'civilutskottet' },
+  FiU: { en: 'Committee on Finance', sv: 'finansutskottet' },
+  FöU: { en: 'Committee on Defence', sv: 'försvarsutskottet' },
+  JuU: { en: 'Committee on Justice', sv: 'justitieutskottet' },
+  KrU: { en: 'Committee on Cultural Affairs', sv: 'kulturutskottet' },
+  KU:  { en: 'Committee on the Constitution', sv: 'konstitutionsutskottet' },
+  MJU: { en: 'Committee on Environment and Agriculture', sv: 'miljö- och jordbruksutskottet' },
+  NU:  { en: 'Committee on Industry and Trade', sv: 'näringsutskottet' },
+  SkU: { en: 'Committee on Taxation', sv: 'skatteutskottet' },
+  SfU: { en: 'Committee on Social Insurance', sv: 'socialförsäkringsutskottet' },
+  SoU: { en: 'Committee on Social Affairs', sv: 'socialutskottet' },
+  TU:  { en: 'Committee on Transport', sv: 'trafikutskottet' },
+  UbU: { en: 'Committee on Education', sv: 'utbildningsutskottet' },
+  UU:  { en: 'Committee on Foreign Affairs', sv: 'utrikesutskottet' },
 };
 
 /**
@@ -2597,7 +2597,7 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string, i
       const isSv = lang === 'sv';
       return isSv
         ? `Ärendet behandlas av ${organEntry.sv} för parlamentarisk beredning.`
-        : `This matter is referred to ${organEntry.en} for parliamentary examination.`;
+        : `This matter is referred to the ${organEntry.en} for parliamentary examination.`;
     }
   }
 
