@@ -157,7 +157,14 @@ graph TD
 | 5.1 | News Article Generator | `news-article-generator.md` | `news-article-generator.lock.yml` | Daily news generation |
 | 5.2 | News Evening Analysis | `news-evening-analysis.md` | `news-evening-analysis.lock.yml` | Evening analysis reports |
 | 5.3 | News Realtime Monitor | `news-realtime-monitor.md` | `news-realtime-monitor.lock.yml` | Real-time political monitoring |
-| 5.4 | Compile Agentic Workflows | `compile-agentic-workflows.yml` | — | Compile .md → .lock.yml |
+| 5.4 | News Motions | `news-motions.md` | `news-motions.lock.yml` | Motion tracking and reporting |
+| 5.5 | News Committee Reports | `news-committee-reports.md` | `news-committee-reports.lock.yml` | Committee report coverage |
+| 5.6 | News Weekly Review | `news-weekly-review.md` | `news-weekly-review.lock.yml` | Weekly political summary |
+| 5.7 | News Monthly Review | `news-monthly-review.md` | `news-monthly-review.lock.yml` | Monthly political review |
+| 5.8 | News Week Ahead | `news-week-ahead.md` | `news-week-ahead.lock.yml` | Upcoming week preview |
+| 5.9 | News Month Ahead | `news-month-ahead.md` | `news-month-ahead.lock.yml` | Upcoming month preview |
+| 5.10 | News Propositions | `news-propositions.md` | `news-propositions.lock.yml` | Government proposition coverage |
+| 5.11 | Compile Agentic Workflows | `compile-agentic-workflows.yml` | — | Compile .md → .lock.yml |
 
 ### 📊 Monitoring & Infrastructure (2 workflows)
 
@@ -389,7 +396,7 @@ Daily validation of CIA data exports against JSON schemas. Uses `scripts/validat
 
 ### 8. Agentic News Generation Workflows
 
-Three agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with Claude to generate political news content.
+Ten agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with Claude to generate political news content.
 
 #### 8.1 News Article Generator (`news-article-generator.md`)
 
@@ -412,7 +419,35 @@ Generates daily political news articles from Swedish Riksdag/Government data via
 
 Real-time political event monitoring with breaking news detection.
 
-#### 8.4 Compile Agentic Workflows (`compile-agentic-workflows.yml`)
+#### 8.4 News Motions (`news-motions.md`)
+
+Tracks and reports on parliamentary motions filed by members.
+
+#### 8.5 News Committee Reports (`news-committee-reports.md`)
+
+Coverage of committee reports and deliberations across Riksdag committees.
+
+#### 8.6 News Weekly Review (`news-weekly-review.md`)
+
+Weekly summary of political developments across all parliamentary activities.
+
+#### 8.7 News Monthly Review (`news-monthly-review.md`)
+
+Monthly comprehensive political review with trend analysis.
+
+#### 8.8 News Week Ahead (`news-week-ahead.md`)
+
+Preview of upcoming parliamentary week including scheduled debates and votes.
+
+#### 8.9 News Month Ahead (`news-month-ahead.md`)
+
+Preview of upcoming month's parliamentary calendar and expected developments.
+
+#### 8.10 News Propositions (`news-propositions.md`)
+
+Coverage of government propositions and their parliamentary journey.
+
+#### 8.11 Compile Agentic Workflows (`compile-agentic-workflows.yml`)
 
 Compiles `.md` workflow sources to `.lock.yml` using `gh aw compile`. Creates GitHub issues if manual compilation is needed.
 

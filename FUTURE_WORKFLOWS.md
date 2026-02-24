@@ -8,13 +8,13 @@
 
 ## Executive Summary
 
-This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026-2037). Building on the current foundation of 29 workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
+This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026-2037). Building on the current foundation of 44 workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
 
 ### Current State (2026 Q1)
-- 29 workflows (23 YAML + 3 agentic sources + 3 compiled locks)
+- 44 workflows (24 YAML + 10 agentic sources + 10 compiled locks)
 - TypeScript migration complete (27 modules)
 - 1200 unit tests, dual deployment (S3/CloudFront + GitHub Pages)
-- 3 agentic news generation workflows (Claude Opus 4.6)
+- 10 agentic news generation workflows (Claude Opus 4.6)
 
 ### Target State (2029-2037)
 - 50+ autonomous workflows
@@ -667,7 +667,7 @@ gantt
 
 | Year | Projected Total | New Capabilities |
 |------|----------------|------------------|
-| 2026 Q1 | **29** | TypeScript foundation ✅ |
+| 2026 Q1 | **44** | TypeScript foundation, 10 agentic workflows ✅ |
 | 2026 Q4 | **35** | CIA pipeline v2, preview deploys, visual regression |
 | 2027 Q4 | **42** | OSINT pipeline, ML predictions, real-time streams |
 | 2028 Q4 | **48** | Self-healing, canary deploy, AI editorial board |
@@ -759,7 +759,7 @@ gantt
 
 | Year | Workflows | AI Model | Key Capability |
 |------|-----------|----------|----------------|
-| 2026 | 29-35 | Opus 4.6-4.9 | Agentic news generation |
+| 2026 | 44-50 | Opus 4.6-4.9 | Agentic news generation |
 | 2027 | 35-40 | Opus 5.x | Predictive analytics |
 | 2028 | 40-45 | Opus 6.x | Multi-modal content |
 | 2029 | 45-55 | Opus 7.x | Autonomous pipeline |

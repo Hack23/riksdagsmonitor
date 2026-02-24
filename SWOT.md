@@ -230,7 +230,7 @@ quadrantChart
 - `SKILLS.md` (41 specialized skills)
 - `.github/agents/` (agent configuration files)
 - `.github/skills/` (skill libraries)
-- Active agentic workflows: news-article-generator, news-evening-analysis, news-realtime-monitor
+- Active agentic workflows: 10 workflows including news-article-generator, news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions
 
 **Strategic Value:** Scalable AI-driven development and content generation addressing single-developer constraint.
 
@@ -356,7 +356,7 @@ quadrantChart
 
 **Current State:**
 - **14 Language Files:** Manual maintenance of index_*.html files
-- **News Articles:** Agentic workflows (news-article-generator, news-evening-analysis, news-realtime-monitor) in experimental phase
+- **News Articles:** 10 agentic workflows (news-article-generator, news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions) in production
 - **Translation Validation:** Automated checks but human review required
 
 **Efficiency Issues:**
@@ -365,7 +365,7 @@ quadrantChart
 - **Scaling Constraint:** Cannot rapidly expand content without automation
 
 **Mitigation Progress:**
-- **Agentic Workflows:** 3 experimental AI-powered news generation workflows
+- **Agentic Workflows:** 10 AI-powered news generation workflows (article generator, evening analysis, realtime monitor, motions, committee reports, weekly/monthly review, week/month ahead, propositions)
 - **Translation Scripts:** Automated validation (validate-news-translations.js)
 - **Content Templates:** Standardized HTML structures for consistency
 
@@ -705,7 +705,7 @@ quadrantChart
 - **Documentation Overhead:** Comprehensive docs require significant effort
 
 **Mitigations:**
-- **GitHub Copilot Agents:** Automate development tasks (13 agents)
+- **GitHub Copilot Agents:** Automate development tasks (14 agents)
 - **Simple Architecture:** Static site minimizes maintenance overhead
 - **Open Source Model:** Invite community contributions
 - **Sustainable Scope:** Focus on high-value features, avoid feature creep
