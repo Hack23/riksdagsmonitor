@@ -859,7 +859,7 @@ ${generateHreflangTags()}
           "headline": "${escapeHtml(article.title)}",
           "url": "https://riksdagsmonitor.com/news/${article.slug}",
           "datePublished": "${article.date}",
-          "description": "${escapeHtml(article.description).substring(0, 150)}",
+          "description": "${(d => d.length > 150 ? d.substring(0, 150).replace(/\s+\S*$/, '') + '...' : d)(escapeHtml(article.description))}",
           "inLanguage": "${article.lang || lang.code}",
           "author": {
             "@type": "Organization",
