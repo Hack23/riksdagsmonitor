@@ -3042,6 +3042,161 @@ export function extractWatchPoints(data: ArticleContentData, lang: Language = 'e
 }
 
 /**
+ * Localized keywords for each article type, keyed by language then article type.
+ * Falls back to English when a language entry is absent.
+ */
+const ARTICLE_TYPE_KEYWORDS: Record<string, Partial<Record<Language, string[]>>> = {
+  'week-ahead': {
+    en: ['parliament', 'week ahead', 'calendar', 'events'],
+    sv: ['riksdag', 'veckan framåt', 'kalender', 'händelser'],
+    da: ['parlament', 'uge fremover', 'kalender', 'begivenheder'],
+    no: ['parlament', 'uke fremover', 'kalender', 'hendelser'],
+    fi: ['parlamentti', 'tuleva viikko', 'kalenteri', 'tapahtumat'],
+    de: ['Parlament', 'Woche voraus', 'Kalender', 'Ereignisse'],
+    fr: ['parlement', 'semaine à venir', 'calendrier', 'événements'],
+    es: ['parlamento', 'próxima semana', 'calendario', 'eventos'],
+    nl: ['parlement', 'week vooruit', 'agenda', 'evenementen'],
+    ar: ['برلمان', 'الأسبوع القادم', 'تقويم', 'أحداث'],
+    he: ['פרלמנט', 'שבוע קרוב', 'לוח שנה', 'אירועים'],
+    ja: ['議会', '来週', 'カレンダー', '予定'],
+    ko: ['의회', '다음 주', '일정', '행사'],
+    zh: ['议会', '下周展望', '日历', '活动'],
+  },
+  'committee-reports': {
+    en: ['committee', 'committee reports', 'parliament', 'legislation'],
+    sv: ['utskott', 'betänkanden', 'riksdag', 'Sverige'],
+    da: ['udvalg', 'betænkninger', 'parlament', 'Sverige'],
+    no: ['komité', 'betenkninger', 'parlament', 'Sverige'],
+    fi: ['valiokunta', 'mietinnöt', 'parlamentti', 'Ruotsi'],
+    de: ['Ausschuss', 'Berichte', 'Parlament', 'Schweden'],
+    fr: ['comité', 'rapports', 'parlement', 'Suède'],
+    es: ['comité', 'informes', 'parlamento', 'Suecia'],
+    nl: ['commissie', 'rapporten', 'parlement', 'Zweden'],
+    ar: ['لجنة', 'تقارير', 'برلمان', 'السويد'],
+    he: ['ועדה', 'דוחות', 'פרלמנט', 'שוודיה'],
+    ja: ['委員会', '報告', '議会', 'スウェーデン'],
+    ko: ['위원회', '보고서', '의회', '스웨덴'],
+    zh: ['委员会', '报告', '议会', '瑞典'],
+  },
+  'propositions': {
+    en: ['government', 'propositions', 'parliament', 'legislation'],
+    sv: ['regering', 'propositioner', 'riksdag', 'lagstiftning'],
+    da: ['regering', 'forslag', 'parlament', 'lovgivning'],
+    no: ['regjering', 'proposisjoner', 'parlament', 'lovgivning'],
+    fi: ['hallitus', 'esitykset', 'parlamentti', 'lainsäädäntö'],
+    de: ['Regierung', 'Gesetzesvorlagen', 'Parlament', 'Gesetzgebung'],
+    fr: ['gouvernement', 'propositions', 'parlement', 'législation'],
+    es: ['gobierno', 'proposiciones', 'parlamento', 'legislación'],
+    nl: ['regering', 'voorstellen', 'parlement', 'wetgeving'],
+    ar: ['حكومة', 'مقترحات', 'برلمان', 'تشريع'],
+    he: ['ממשלה', 'הצעות', 'פרלמנט', 'חקיקה'],
+    ja: ['政府', '提案', '議会', '法律'],
+    ko: ['정부', '제안', '의회', '입법'],
+    zh: ['政府', '提案', '议会', '立法'],
+  },
+  'motions': {
+    en: ['motions', 'opposition', 'parliament', 'proposals'],
+    sv: ['motioner', 'opposition', 'riksdag', 'förslag'],
+    da: ['motioner', 'opposition', 'parlament', 'forslag'],
+    no: ['motioner', 'opposisjon', 'parlament', 'forslag'],
+    fi: ['aloitteet', 'oppositio', 'parlamentti', 'ehdotukset'],
+    de: ['Anträge', 'Opposition', 'Parlament', 'Vorschläge'],
+    fr: ['motions', 'opposition', 'parlement', 'propositions'],
+    es: ['mociones', 'oposición', 'parlamento', 'propuestas'],
+    nl: ['moties', 'oppositie', 'parlement', 'voorstellen'],
+    ar: ['اقتراحات', 'معارضة', 'برلمان', 'مقترحات'],
+    he: ['הצעות', 'אופוזיציה', 'פרלמנט', 'הצעות חוק'],
+    ja: ['動議', '野党', '議会', '提案'],
+    ko: ['발의', '야당', '의회', '제안'],
+    zh: ['动议', '反对党', '议会', '提案'],
+  },
+  'month-ahead': {
+    en: ['parliament', 'month ahead', 'calendar', 'outlook'],
+    sv: ['riksdag', 'månaden framåt', 'kalender', 'utsikt'],
+    da: ['parlament', 'måneden fremover', 'kalender', 'udsigt'],
+    no: ['parlament', 'måneden fremover', 'kalender', 'utsikt'],
+    fi: ['parlamentti', 'tuleva kuukausi', 'kalenteri', 'näkymät'],
+    de: ['Parlament', 'Monat voraus', 'Kalender', 'Ausblick'],
+    fr: ['parlement', 'mois à venir', 'calendrier', 'perspectives'],
+    es: ['parlamento', 'próximo mes', 'calendario', 'perspectiva'],
+    nl: ['parlement', 'komende maand', 'agenda', 'vooruitzicht'],
+    ar: ['برلمان', 'الشهر القادم', 'تقويم', 'توقعات'],
+    he: ['פרלמנט', 'חודש קרוב', 'לוח שנה', 'תחזית'],
+    ja: ['議会', '来月', 'カレンダー', '見通し'],
+    ko: ['의회', '다음 달', '일정', '전망'],
+    zh: ['议会', '下月展望', '日历', '展望'],
+  },
+  'weekly-review': {
+    en: ['parliament', 'weekly review', 'analysis', 'recap'],
+    sv: ['riksdag', 'veckans återblick', 'analys', 'sammanfattning'],
+    da: ['parlament', 'ugentlig gennemgang', 'analyse', 'resumé'],
+    no: ['parlament', 'ukentlig gjennomgang', 'analyse', 'oppsummering'],
+    fi: ['parlamentti', 'viikkokatsaus', 'analyysi', 'yhteenveto'],
+    de: ['Parlament', 'Wochenrückblick', 'Analyse', 'Zusammenfassung'],
+    fr: ['parlement', 'revue hebdomadaire', 'analyse', 'récapitulatif'],
+    es: ['parlamento', 'revisión semanal', 'análisis', 'resumen'],
+    nl: ['parlement', 'weekoverzicht', 'analyse', 'samenvatting'],
+    ar: ['برلمان', 'مراجعة أسبوعية', 'تحليل', 'ملخص'],
+    he: ['פרלמנט', 'סקירה שבועית', 'ניתוח', 'סיכום'],
+    ja: ['議会', '週刊レビュー', '分析', '要約'],
+    ko: ['의회', '주간 리뷰', '분석', '요약'],
+    zh: ['议会', '每周回顾', '分析', '摘要'],
+  },
+  'monthly-review': {
+    en: ['parliament', 'monthly review', 'analysis', 'recap'],
+    sv: ['riksdag', 'månadens återblick', 'analys', 'sammanfattning'],
+    da: ['parlament', 'månedlig gennemgang', 'analyse', 'resumé'],
+    no: ['parlament', 'månedlig gjennomgang', 'analyse', 'oppsummering'],
+    fi: ['parlamentti', 'kuukausikatsaus', 'analyysi', 'yhteenveto'],
+    de: ['Parlament', 'Monatsrückblick', 'Analyse', 'Zusammenfassung'],
+    fr: ['parlement', 'revue mensuelle', 'analyse', 'récapitulatif'],
+    es: ['parlamento', 'revisión mensual', 'análisis', 'resumen'],
+    nl: ['parlement', 'maandoverzicht', 'analyse', 'samenvatting'],
+    ar: ['برلمان', 'مراجعة شهرية', 'تحليل', 'ملخص'],
+    he: ['פרלמנט', 'סקירה חודשית', 'ניתוח', 'סיכום'],
+    ja: ['議会', '月刊レビュー', '分析', '要約'],
+    ko: ['의회', '월간 리뷰', '분석', '요약'],
+    zh: ['议会', '每月回顾', '分析', '摘要'],
+  },
+  'breaking': {
+    en: ['breaking news', 'parliament', 'urgent', 'alert'],
+    sv: ['senaste nytt', 'riksdag', 'brådskande', 'larm'],
+    da: ['seneste nyt', 'parlament', 'presserende', 'alarm'],
+    no: ['siste nytt', 'parlament', 'presserende', 'alarm'],
+    fi: ['viimeisimmät', 'parlamentti', 'kiireellinen', 'hälytys'],
+    de: ['Eilmeldung', 'Parlament', 'dringend', 'Alarm'],
+    fr: ['dernière heure', 'parlement', 'urgent', 'alerte'],
+    es: ['última hora', 'parlamento', 'urgente', 'alerta'],
+    nl: ['laatste nieuws', 'parlement', 'urgent', 'alarm'],
+    ar: ['أخبار عاجلة', 'برلمان', 'عاجل', 'تنبيه'],
+    he: ['חדשות אחרונות', 'פרלמנט', 'דחוף', 'התראה'],
+    ja: ['速報', '議会', '緊急', '警報'],
+    ko: ['속보', '의회', '긴급', '경보'],
+    zh: ['突发新闻', '议会', '紧急', '警报'],
+  },
+};
+
+/**
+ * Localized common/footer keywords appended to every article, keyed by language.
+ */
+const COMMON_KEYWORDS: Partial<Record<Language, string[]>> = {
+  en: ['Swedish Parliament', 'Riksdag', 'politics', 'Sweden'],
+  sv: ['Sveriges riksdag', 'Riksdag', 'politik', 'Sverige'],
+  da: ['Svensk parlament', 'Riksdag', 'politik', 'Sverige'],
+  no: ['Svensk parlament', 'Riksdag', 'politikk', 'Sverige'],
+  fi: ['Ruotsin parlamentti', 'Riksdag', 'politiikka', 'Ruotsi'],
+  de: ['Schwedisches Parlament', 'Riksdag', 'Politik', 'Schweden'],
+  fr: ['Parlement suédois', 'Riksdag', 'politique', 'Suède'],
+  es: ['Parlamento sueco', 'Riksdag', 'política', 'Suecia'],
+  nl: ['Zweeds parlement', 'Riksdag', 'politiek', 'Zweden'],
+  ar: ['البرلمان السويدي', 'ريكسداغ', 'سياسة', 'السويد'],
+  he: ['הפרלמנט השוודי', 'ריקסדאג', 'פוליטיקה', 'שוודיה'],
+  ja: ['スウェーデン議会', 'リクスダーグ', '政治', 'スウェーデン'],
+  ko: ['스웨덴 의회', '릭스다그', '정치', '스웨덴'],
+  zh: ['瑞典议会', '瑞典国会', '政治', '瑞典'],
+};
+
+/**
  * Generate article metadata
  */
 export function generateMetadata(data: ArticleContentData, type: ArticleType | string, lang: Language = 'en'): ArticleMetadata {
@@ -3049,10 +3204,16 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
   const topics: string[] = [];
   const tags: string[] = [];
 
-  // Add type-specific keywords
+  // Look up localized type-specific keywords (fall back to English)
+  const typeKw: string[] =
+    ARTICLE_TYPE_KEYWORDS[type]?.[lang] ??
+    ARTICLE_TYPE_KEYWORDS[type]?.en ??
+    [];
+  keywords.push(...typeKw);
+
+  // Add type-specific topics and tags
   switch (type) {
     case 'week-ahead':
-      keywords.push('parliament', 'week ahead', 'calendar', 'events');
       topics.push('parliament');
       {
         const tagVal = L(lang, 'weekAhead');
@@ -3060,7 +3221,6 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'committee-reports':
-      keywords.push('committee', 'reports', 'betänkanden', 'parliament');
       topics.push('committees', 'reports');
       {
         const tagVal = L(lang, 'committeeReportsTag');
@@ -3068,7 +3228,6 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'propositions':
-      keywords.push('government', 'propositions', 'parliament', 'legislation');
       topics.push('government', 'legislation');
       {
         const tagVal = L(lang, 'govPropsTag');
@@ -3076,7 +3235,6 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'motions':
-      keywords.push('motions', 'opposition', 'parliament', 'proposals');
       topics.push('parliament', 'opposition');
       {
         const tagVal = L(lang, 'oppMotionsTag');
@@ -3084,7 +3242,6 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'month-ahead':
-      keywords.push('parliament', 'month ahead', 'calendar', 'outlook');
       topics.push('parliament', 'outlook');
       {
         const tagVal = L(lang, 'weekAhead');
@@ -3092,7 +3249,6 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'weekly-review':
-      keywords.push('parliament', 'weekly review', 'analysis', 'recap');
       topics.push('parliament', 'review');
       {
         const tagVal = L(lang, 'committeeReportsTag');
@@ -3100,7 +3256,6 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'monthly-review':
-      keywords.push('parliament', 'monthly review', 'analysis', 'recap');
       topics.push('parliament', 'review');
       {
         const tagVal = L(lang, 'committeeReportsTag');
@@ -3108,7 +3263,6 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'breaking':
-      keywords.push('breaking news', 'parliament', 'urgent', 'alert');
       topics.push('breaking', 'parliament');
       break;
   }
@@ -3121,11 +3275,14 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
     keywords.push('committees', 'reports');
   }
 
-  // Add common keywords
-  keywords.push('Swedish Parliament', 'Riksdag', 'politics', 'Sweden');
+  // Add common localized keywords
+  const commonKw: string[] = COMMON_KEYWORDS[lang] ?? COMMON_KEYWORDS.en ?? [];
+  keywords.push(...commonKw);
 
+  // Deduplicate while preserving insertion order (also eliminates duplicate 'reports'
+  // that previously arose when data.reports was present alongside the committee-reports type)
   return {
-    keywords: keywords.slice(0, 15),
+    keywords: [...new Set(keywords)].slice(0, 15),
     topics: topics.slice(0, 5),
     tags: tags.slice(0, 10)
   };
