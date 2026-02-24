@@ -142,6 +142,7 @@
  */
 
 import { escapeHtml } from './html-utils.js';
+import { CONTENT_LABELS } from './data-transformers.js';
 import type { Language } from './types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, ArticleCategory } from './types/article.js';
 import type { BreadcrumbLabels, FooterLabelSet } from './types/content.js';
@@ -344,9 +345,9 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta name="twitter:site" content="@riksdagsmonitor">
   <meta name="twitter:creator" content="@jamessorling">
-  <meta name="twitter:label1" content="Reading time">
+  <meta name="twitter:label1" content="${CONTENT_LABELS[lang]?.twitterLabel1 ?? CONTENT_LABELS.en.twitterLabel1}">
   <meta name="twitter:data1" content="${readTime}">
-  <meta name="twitter:label2" content="Article type">
+  <meta name="twitter:label2" content="${CONTENT_LABELS[lang]?.twitterLabel2 ?? CONTENT_LABELS.en.twitterLabel2}">
   <meta name="twitter:data2" content="${typeLabel}">
   
   <!-- Hreflang for language alternatives -->

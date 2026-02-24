@@ -431,7 +431,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.',
     generalMatters: 'General matters',
     responsesToProp: 'Responses to Government Propositions',
-    independentMotions: 'Independent Motions'
+    independentMotions: 'Independent Motions',
+    twitterLabel1: 'Reading time',
+    twitterLabel2: 'Article type'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -504,7 +506,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.',
     generalMatters: 'Övriga frågor',
     responsesToProp: 'Svar på propositioner',
-    independentMotions: 'Övriga motioner'
+    independentMotions: 'Övriga motioner',
+    twitterLabel1: 'Lästid',
+    twitterLabel2: 'Artikeltyp'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -577,7 +581,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.',
     generalMatters: 'Generelle spørgsmål',
     responsesToProp: 'Svar på regeringsforslag',
-    independentMotions: 'Andre forslag'
+    independentMotions: 'Andre forslag',
+    twitterLabel1: 'Læsetid',
+    twitterLabel2: 'Artikeltype'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -650,7 +656,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.',
     generalMatters: 'Generelle spørsmål',
     responsesToProp: 'Svar på regjeringforslag',
-    independentMotions: 'Andre forslag'
+    independentMotions: 'Andre forslag',
+    twitterLabel1: 'Lesetid',
+    twitterLabel2: 'Artikkeltype'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -723,7 +731,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.',
     generalMatters: 'Yleiset asiat',
     responsesToProp: 'Vastaukset hallituksen esityksiin',
-    independentMotions: 'Muut aloitteet'
+    independentMotions: 'Muut aloitteet',
+    twitterLabel1: 'Lukuaika',
+    twitterLabel2: 'Artikkelityyppi'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -796,7 +806,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.',
     generalMatters: 'Allgemeine Angelegenheiten',
     responsesToProp: 'Antworten auf Regierungsvorlagen',
-    independentMotions: 'Sonstige Anträge'
+    independentMotions: 'Sonstige Anträge',
+    twitterLabel1: 'Lesezeit',
+    twitterLabel2: 'Artikeltyp'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -869,7 +881,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.',
     generalMatters: 'Questions générales',
     responsesToProp: 'Réponses aux propositions gouvernementales',
-    independentMotions: 'Autres motions'
+    independentMotions: 'Autres motions',
+    twitterLabel1: 'Temps de lecture',
+    twitterLabel2: "Type d'article"
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -942,7 +956,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.',
     generalMatters: 'Asuntos generales',
     responsesToProp: 'Respuestas a proposiciones del gobierno',
-    independentMotions: 'Otras mociones'
+    independentMotions: 'Otras mociones',
+    twitterLabel1: 'Tiempo de lectura',
+    twitterLabel2: 'Tipo de artículo'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -1015,7 +1031,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.',
     generalMatters: 'Algemene zaken',
     responsesToProp: 'Antwoorden op regeringsvoorstellen',
-    independentMotions: 'Overige moties'
+    independentMotions: 'Overige moties',
+    twitterLabel1: 'Leestijd',
+    twitterLabel2: 'Artikeltype'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -1088,7 +1106,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.',
     generalMatters: 'مسائل عامة',
     responsesToProp: 'ردود على مقترحات الحكومة',
-    independentMotions: 'اقتراحات أخرى'
+    independentMotions: 'اقتراحات أخرى',
+    twitterLabel1: 'وقت القراءة',
+    twitterLabel2: 'نوع المقال'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -1161,7 +1181,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.',
     generalMatters: 'עניינים כלליים',
     responsesToProp: 'תשובות להצעות הממשלה',
-    independentMotions: 'הצעות אחרות'
+    independentMotions: 'הצעות אחרות',
+    twitterLabel1: 'זמן קריאה',
+    twitterLabel2: 'סוג כתבה'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -1234,7 +1256,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。',
     generalMatters: '一般事項',
     responsesToProp: '政府提案への回答',
-    independentMotions: 'その他の動議'
+    independentMotions: 'その他の動議',
+    twitterLabel1: '読了時間',
+    twitterLabel2: '記事タイプ'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -1307,7 +1331,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.',
     generalMatters: '일반 사항',
     responsesToProp: '정부 제안에 대한 응답',
-    independentMotions: '기타 동의'
+    independentMotions: '기타 동의',
+    twitterLabel1: '읽기 시간',
+    twitterLabel2: '기사 유형'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -1380,7 +1406,9 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。',
     generalMatters: '一般事项',
     responsesToProp: '对政府提案的回应',
-    independentMotions: '其他动议'
+    independentMotions: '其他动议',
+    twitterLabel1: '阅读时间',
+    twitterLabel2: '文章类型'
   }
 };
 
