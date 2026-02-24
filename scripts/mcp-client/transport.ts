@@ -100,7 +100,7 @@ export async function performPost(
         statusText: resp.statusText,
         headers: {
           get(name: string): string | null {
-            return resp.headers.get(name);
+            return resp.headers?.get?.(name) ?? null;
           },
         },
         text: () => resp.text(),
