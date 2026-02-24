@@ -193,9 +193,7 @@ npx tsx scripts/generate-news-enhanced.ts \
 **CRITICAL: Each article MUST contain real analysis, not just a list of translated event titles.**
 Every generated article must include strategic outlook with political context, not merely translated calendar entries.
 
-```bash
-npx tsx scripts/generate-news-indexes.ts
-```
+**Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files.
 
 ## Article Content Structure
 

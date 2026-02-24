@@ -6,6 +6,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npx tsx scripts/generate-news-indexes.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap.ts",
     "build": "vite build",
     "preview": "vite preview",
     "test": "NODE_OPTIONS='--max-old-space-size=2048' vitest run",
