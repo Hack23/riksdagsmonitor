@@ -181,6 +181,7 @@ import { generateMonthAhead } from './news-types/month-ahead.js';
 import { generateWeeklyReview } from './news-types/weekly-review.js';
 import { generateMonthlyReview } from './news-types/monthly-review.js';
 import { generateBreakingNews } from './news-types/breaking-news.js';
+import { translateSwedishContent } from './translation-dictionary.js';
 import type { Language } from './types/language.js';
 import type { ArticleCategory } from './types/article.js';
 import type {
@@ -567,14 +568,16 @@ function validateArticleQuality(
  */
 async function writeSingleArticle(html: string, slug: string, lang: Language, articleType?: string): Promise<string> {
   const filename: string = `${slug}-${lang}.html`;
+  // Translate any remaining Swedish data-translate spans before writing or validating
+  const translatedHtml: string = translateSwedishContent(html, lang);
   // Infer article type from slug (e.g. "2026-02-23-motions" → "motions",
   // "2026-02-23-committee-reports" → "committee-reports"). Falls back to the
   // full slug if the slug does not follow the YYYY-MM-DD-{type} pattern.
   const slugParts: string[] = slug.split('-');
   const inferredType: string = slugParts.length >= 4 ? slugParts.slice(3).join('-') : slug;
-  const qualityScore: ArticleQualityScore = validateArticleQuality(html, lang, articleType ?? inferredType, filename);
+  const qualityScore: ArticleQualityScore = validateArticleQuality(translatedHtml, lang, articleType ?? inferredType, filename);
   stats.qualityScores.push(qualityScore);
-  await writeArticle(html, filename);
+  await writeArticle(translatedHtml, filename);
   stats.generated += 1;
   stats.articles.push(filename);
   return filename;
@@ -1175,5 +1178,6 @@ export {
   QUALITY_THRESHOLD,
   formatDateForSlug,
   getWeekAheadDateRange,
-  requireMcp
+  requireMcp,
+  translateSwedishContent
 };
