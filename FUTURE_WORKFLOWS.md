@@ -668,10 +668,10 @@ gantt
 | Year | Projected Total | New Capabilities |
 |------|----------------|------------------|
 | 2026 Q1 | **44** | TypeScript foundation, 10 agentic workflows ✅ |
-| 2026 Q4 | **35** | CIA pipeline v2, preview deploys, visual regression |
-| 2027 Q4 | **42** | OSINT pipeline, ML predictions, real-time streams |
-| 2028 Q4 | **48** | Self-healing, canary deploy, AI editorial board |
-| 2029 Q4 | **55+** | Intelligence API, multi-parliament, federation |
+| 2026 Q4 | **50** | CIA pipeline v2, preview deploys, visual regression |
+| 2027 Q4 | **55** | OSINT pipeline, ML predictions, real-time streams |
+| 2028 Q4 | **65** | Self-healing, canary deploy, AI editorial board |
+| 2029 Q4 | **75+** | Intelligence API, multi-parliament, federation |
 
 ---
 
@@ -757,15 +757,15 @@ gantt
 
 **Workflow Count Projection (Extended):**
 
-| Year | Workflows | AI Model | Key Capability |
-|------|-----------|----------|----------------|
+| Year | Total Workflows | AI Model | Key Capability |
+|------|----------------|----------|----------------|
 | 2026 | 44-50 | Opus 4.6-4.9 | Agentic news generation |
-| 2027 | 35-40 | Opus 5.x | Predictive analytics |
-| 2028 | 40-45 | Opus 6.x | Multi-modal content |
-| 2029 | 45-55 | Opus 7.x | Autonomous pipeline |
-| 2030 | 55-65 | Opus 8.x | Near-expert analysis |
-| 2031-2033 | 65-80 | Opus 9-10.x / Pre-AGI | Global coverage |
-| 2034-2037 | 80-100+ | AGI / Post-AGI | Transformative platform |
+| 2027 | 50-55 | Opus 5.x | Predictive analytics |
+| 2028 | 55-65 | Opus 6.x | Multi-modal content |
+| 2029 | 65-75 | Opus 7.x | Autonomous pipeline |
+| 2030 | 75-85 | Opus 8.x | Near-expert analysis |
+| 2031-2033 | 85-100 | Opus 9-10.x / Pre-AGI | Global coverage |
+| 2034-2037 | 100-120+ | AGI / Post-AGI | Transformative platform |
 
 ---
 

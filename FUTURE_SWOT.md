@@ -287,7 +287,7 @@ quadrantChart
 
 | Strategic Theme | Actions (2026-2037) | KPIs | Owner |
 |----------------|---------------------|------|-------|
-| **AI Intelligence** | Deploy GPT-5, Knowledge Graph, Election Forecasting | Prediction accuracy > 85% | CTO |
+| **AI Intelligence** | Deploy best-available Amazon Bedrock foundation model (e.g., Anthropic Opus), Knowledge Graph, Election Forecasting | Prediction accuracy > 85% | CTO |
 | **Nordic Expansion** | Denmark (2027), Norway (2028), Finland (2028) | 3 parliaments integrated | Product |
 | **API Platform** | Launch freemium API, research partnerships | $50K ARR by 2028 | Business |
 | **ISMS Leadership** | EU CRA, NIS2 compliance, AI governance | Zero critical findings | Security |
