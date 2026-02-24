@@ -3124,209 +3124,44 @@ export function extractWatchPoints(data: ArticleContentData, lang: Language = 'e
 }
 
 /**
- * Localized keywords for each article type, keyed by article type then language.
- * Falls back to English when a language entry is absent.
+ * SEO keyword translations for all 14 supported languages.
+ * Maps English keyword strings to their localized equivalents.
+ * Used by generateMetadata() to produce language-specific keyword lists.
  */
-const ARTICLE_TYPE_KEYWORDS: Record<ArticleType, Partial<Record<Language, string[]>>> = {
-  'week-ahead': {
-    en: ['parliament', 'week ahead', 'calendar', 'events'],
-    sv: ['riksdag', 'veckan framåt', 'kalender', 'händelser'],
-    da: ['parlament', 'uge fremover', 'kalender', 'begivenheder'],
-    no: ['parlament', 'uke fremover', 'kalender', 'hendelser'],
-    fi: ['parlamentti', 'tuleva viikko', 'kalenteri', 'tapahtumat'],
-    de: ['parlament', 'kommende woche', 'kalender', 'ereignisse'],
-    fr: ['parlement', 'semaine à venir', 'calendrier', 'événements'],
-    es: ['parlamento', 'próxima semana', 'calendario', 'eventos'],
-    nl: ['parlement', 'week vooruit', 'agenda', 'evenementen'],
-    ar: ['برلمان', 'الأسبوع القادم', 'تقويم', 'أحداث'],
-    he: ['פרלמנט', 'שבוע קרוב', 'לוח שנה', 'אירועים'],
-    ja: ['議会', '来週の展望', 'カレンダー', '予定'],
-    ko: ['의회', '다음 주', '일정', '행사'],
-    zh: ['议会', '下周展望', '日历', '活动'],
-  },
-  'committee-reports': {
-    en: ['committee', 'reports', 'parliament', 'legislation'],
-    sv: ['utskott', 'betänkanden', 'riksdag', 'lagstiftning'],
-    da: ['udvalg', 'betænkninger', 'parlament', 'lovgivning'],
-    no: ['komité', 'betenkninger', 'parlament', 'lovgivning'],
-    fi: ['valiokunta', 'mietinnöt', 'parlamentti', 'lainsäädäntö'],
-    de: ['ausschuss', 'berichte', 'parlament', 'gesetzgebung'],
-    fr: ['commission', 'rapports', 'parlement', 'législation'],
-    es: ['comisión', 'informes', 'parlamento', 'legislación'],
-    nl: ['commissie', 'rapporten', 'parlement', 'wetgeving'],
-    ar: ['لجنة', 'تقارير', 'برلمان', 'تشريع'],
-    he: ['ועדה', 'דוחות', 'פרלמנט', 'חקיקה'],
-    ja: ['委員会', '報告書', '議会', '立法'],
-    ko: ['위원회', '보고서', '의회', '입법'],
-    zh: ['委员会', '报告', '议会', '立法'],
-  },
-  'propositions': {
-    en: ['government', 'propositions', 'parliament', 'legislation'],
-    sv: ['regering', 'propositioner', 'riksdag', 'lagstiftning'],
-    da: ['regering', 'lovforslag', 'parlament', 'lovgivning'],
-    no: ['regjering', 'proposisjoner', 'parlament', 'lovgivning'],
-    fi: ['hallitus', 'esitykset', 'parlamentti', 'lainsäädäntö'],
-    de: ['regierung', 'gesetzentwürfe', 'parlament', 'gesetzgebung'],
-    fr: ['gouvernement', 'propositions de loi', 'parlement', 'législation'],
-    es: ['gobierno', 'proposiciones', 'parlamento', 'legislación'],
-    nl: ['regering', 'wetsvoorstellen', 'parlement', 'wetgeving'],
-    ar: ['حكومة', 'مقترحات', 'برلمان', 'تشريع'],
-    he: ['ממשלה', 'הצעות חוק', 'פרלמנט', 'חקיקה'],
-    ja: ['政府', '法律案', '議会', '立法'],
-    ko: ['정부', '법률안', '의회', '입법'],
-    zh: ['政府', '提案', '议会', '立法'],
-  },
-  'motions': {
-    en: ['motions', 'opposition', 'parliament', 'proposals'],
-    sv: ['motioner', 'opposition', 'riksdag', 'förslag'],
-    da: ['forslag', 'opposition', 'parlament', 'initiativ'],
-    no: ['forslag', 'opposisjon', 'parlament', 'initiativ'],
-    fi: ['aloitteet', 'oppositio', 'parlamentti', 'ehdotukset'],
-    de: ['anträge', 'opposition', 'parlament', 'vorschläge'],
-    fr: ['motions', 'opposition', 'parlement', 'propositions'],
-    es: ['mociones', 'oposición', 'parlamento', 'propuestas'],
-    nl: ['moties', 'oppositie', 'parlement', 'voorstellen'],
-    ar: ['اقتراحات', 'معارضة', 'برلمان', 'مقترحات'],
-    he: ['הצעות', 'אופוזיציה', 'פרלמנט', 'הצעות חוק'],
-    ja: ['動議', '野党', '議会', '提案'],
-    ko: ['발의', '야당', '의회', '제안'],
-    zh: ['动议', '反对派', '议会', '提案'],
-  },
-  'month-ahead': {
-    en: ['parliament', 'month ahead', 'calendar', 'outlook'],
-    sv: ['riksdag', 'månaden framåt', 'kalender', 'utsikter'],
-    da: ['parlament', 'måneden forude', 'kalender', 'udsigt'],
-    no: ['parlament', 'måneden fremover', 'kalender', 'utsikter'],
-    fi: ['parlamentti', 'tuleva kuukausi', 'kalenteri', 'näkymät'],
-    de: ['parlament', 'kommender monat', 'kalender', 'ausblick'],
-    fr: ['parlement', 'mois à venir', 'calendrier', 'perspectives'],
-    es: ['parlamento', 'mes próximo', 'calendario', 'perspectivas'],
-    nl: ['parlement', 'maand vooruit', 'agenda', 'vooruitzichten'],
-    ar: ['برلمان', 'الشهر القادم', 'تقويم', 'توقعات'],
-    he: ['פרלמנט', 'חודש קרוב', 'לוח שנה', 'תחזית'],
-    ja: ['議会', '来月の展望', 'カレンダー', '見通し'],
-    ko: ['의회', '다음 달', '일정', '전망'],
-    zh: ['议会', '下月展望', '日历', '展望'],
-  },
-  'weekly-review': {
-    en: ['parliament', 'weekly review', 'analysis', 'recap'],
-    sv: ['riksdag', 'veckans sammanfattning', 'analys', 'recap'],
-    da: ['parlament', 'ugentlig gennemgang', 'analyse', 'resumé'],
-    no: ['parlament', 'ukentlig gjennomgang', 'analyse', 'oppsummering'],
-    fi: ['parlamentti', 'viikkokatsaus', 'analyysi', 'yhteenveto'],
-    de: ['parlament', 'wochenbericht', 'analyse', 'zusammenfassung'],
-    fr: ['parlement', 'bilan hebdomadaire', 'analyse', 'récapitulatif'],
-    es: ['parlamento', 'revisión semanal', 'análisis', 'resumen'],
-    nl: ['parlement', 'wekelijks overzicht', 'analyse', 'samenvatting'],
-    ar: ['برلمان', 'مراجعة أسبوعية', 'تحليل', 'ملخص'],
-    he: ['פרלמנט', 'סקירה שבועית', 'ניתוח', 'סיכום'],
-    ja: ['議会', '週間レビュー', '分析', 'まとめ'],
-    ko: ['의회', '주간 리뷰', '분석', '요약'],
-    zh: ['议会', '每周回顾', '分析', '总结'],
-  },
-  'monthly-review': {
-    en: ['parliament', 'monthly review', 'analysis', 'recap'],
-    sv: ['riksdag', 'månadens sammanfattning', 'analys', 'recap'],
-    da: ['parlament', 'månedlig gennemgang', 'analyse', 'resumé'],
-    no: ['parlament', 'månedlig gjennomgang', 'analyse', 'oppsummering'],
-    fi: ['parlamentti', 'kuukausikatsaus', 'analyysi', 'yhteenveto'],
-    de: ['parlament', 'monatsbericht', 'analyse', 'zusammenfassung'],
-    fr: ['parlement', 'bilan mensuel', 'analyse', 'récapitulatif'],
-    es: ['parlamento', 'revisión mensual', 'análisis', 'resumen'],
-    nl: ['parlement', 'maandelijks overzicht', 'analyse', 'samenvatting'],
-    ar: ['برلمان', 'مراجعة شهرية', 'تحليل', 'ملخص'],
-    he: ['פרלמנט', 'סקירה חודשית', 'ניתוח', 'סיכום'],
-    ja: ['議会', '月間レビュー', '分析', 'まとめ'],
-    ko: ['의회', '월간 리뷰', '분석', '요약'],
-    zh: ['议会', '每月回顾', '分析', '总结'],
-  },
-  'breaking': {
-    en: ['breaking news', 'parliament', 'urgent', 'alert'],
-    sv: ['senaste nytt', 'riksdag', 'brådskande', 'varning'],
-    da: ['seneste nyt', 'parlament', 'presserende', 'advarsel'],
-    no: ['siste nytt', 'parlament', 'haster', 'varsel'],
-    fi: ['viimeisimmät uutiset', 'parlamentti', 'kiireellinen', 'hälytys'],
-    de: ['Eilmeldung', 'parlament', 'dringend', 'warnung'],
-    fr: ['dernières nouvelles', 'parlement', 'urgent', 'alerte'],
-    es: ['noticias de última hora', 'parlamento', 'urgente', 'alerta'],
-    nl: ['laatste nieuws', 'parlement', 'dringend', 'waarschuwing'],
-    ar: ['أخبار عاجلة', 'برلمان', 'عاجل', 'تنبيه'],
-    he: ['חדשות אחרונות', 'פרלמנט', 'דחוף', 'התראה'],
-    ja: ['速報', '議会', '緊急', '警告'],
-    ko: ['속보', '의회', '긴급', '경보'],
-    zh: ['突发新闻', '议会', '紧急', '警告'],
-  },
+const SEO_KEYWORD_TRANSLATIONS: Record<string, Partial<Record<Language, string>>> = {
+  'parliament':      { sv: 'riksdag', da: 'parlament', no: 'parlament', fi: 'eduskunta', de: 'parlament', fr: 'parlement', es: 'parlamento', nl: 'parlement', ar: 'برلمان', he: 'פרלמנט', ja: '議会', ko: '의회', zh: '议会' },
+  'Swedish Parliament': { sv: 'Riksdagen', da: 'Svensk Parlament', no: 'Svensk Parlament', fi: 'Ruotsin Eduskunta', de: 'Schwedisches Parlament', fr: 'Parlement Suédois', es: 'Parlamento Sueco', nl: 'Zweeds Parlement', ar: 'البرلمان السويدي', he: 'הפרלמנט השבדי', ja: 'スウェーデン議会', ko: '스웨덴 의회', zh: '瑞典议会' },
+  'Sweden':          { sv: 'Sverige', da: 'Sverige', no: 'Sverige', fi: 'Ruotsi', de: 'Schweden', fr: 'Suède', es: 'Suecia', nl: 'Zweden', ar: 'السويد', he: 'שבדיה', ja: 'スウェーデン', ko: '스웨덴', zh: '瑞典' },
+  'politics':        { sv: 'politik', da: 'politik', no: 'politikk', fi: 'politiikka', de: 'politik', fr: 'politique', es: 'política', nl: 'politiek', ar: 'سياسة', he: 'פוליטיקה', ja: '政治', ko: '정치', zh: '政治' },
+  'week ahead':      { sv: 'veckan framåt', da: 'ugen forude', no: 'uken fremover', fi: 'tuleva viikko', de: 'kommende woche', fr: 'semaine à venir', es: 'semana próxima', nl: 'week vooruit', ar: 'الأسبوع القادم', he: 'השבוע הקרוב', ja: '来週の展望', ko: '다음 주', zh: '下周展望' },
+  'month ahead':     { sv: 'månaden framåt', da: 'måneden forude', no: 'måneden fremover', fi: 'tuleva kuukausi', de: 'kommender monat', fr: 'mois à venir', es: 'mes próximo', nl: 'maand vooruit', ar: 'الشهر القادم', he: 'החודש הקרוב', ja: '来月の展望', ko: '다음 달', zh: '下月展望' },
+  'calendar':        { sv: 'kalender', da: 'kalender', no: 'kalender', fi: 'kalenteri', de: 'kalender', fr: 'calendrier', es: 'calendario', nl: 'kalender', ar: 'تقويم', he: 'לוח שנה', ja: 'カレンダー', ko: '일정', zh: '日历' },
+  'events':          { sv: 'händelser', da: 'begivenheder', no: 'hendelser', fi: 'tapahtumat', de: 'ereignisse', fr: 'événements', es: 'eventos', nl: 'evenementen', ar: 'أحداث', he: 'אירועים', ja: '出来事', ko: '이벤트', zh: '事件' },
+  'committee':       { sv: 'utskott', da: 'udvalg', no: 'komité', fi: 'valiokunta', de: 'ausschuss', fr: 'commission', es: 'comisión', nl: 'commissie', ar: 'لجنة', he: 'ועדה', ja: '委員会', ko: '위원회', zh: '委员会' },
+  'committees':      { sv: 'utskott', da: 'udvalg', no: 'komiteer', fi: 'valiokunnat', de: 'ausschüsse', fr: 'commissions', es: 'comisiones', nl: 'commissies', ar: 'لجان', he: 'ועדות', ja: '委員会', ko: '위원회들', zh: '委员会' },
+  'reports':         { sv: 'betänkanden', da: 'betænkninger', no: 'innstillinger', fi: 'mietinnöt', de: 'berichte', fr: 'rapports', es: 'informes', nl: 'rapporten', ar: 'تقارير', he: 'דוחות', ja: '報告書', ko: '보고서', zh: '报告' },
+  'betänkanden':     { sv: 'betänkanden', da: 'betænkninger', no: 'innstillinger', fi: 'mietinnöt', de: 'parlamentsberichte', fr: 'rapports parlementaires', es: 'informes parlamentarios', nl: 'parlementaire rapporten', ar: 'تقارير برلمانية', he: 'דוחות פרלמנטריים', ja: '議会報告書', ko: '의회 보고서', zh: '议会报告' },
+  'government':      { sv: 'regering', da: 'regering', no: 'regjering', fi: 'hallitus', de: 'regierung', fr: 'gouvernement', es: 'gobierno', nl: 'regering', ar: 'حكومة', he: 'ממשלה', ja: '政府', ko: '정부', zh: '政府' },
+  'propositions':    { sv: 'propositioner', da: 'lovforslag', no: 'proposisjoner', fi: 'esitykset', de: 'gesetzentwürfe', fr: 'propositions de loi', es: 'proposiciones', nl: 'wetsvoorstellen', ar: 'مقترحات', he: 'הצעות חוק', ja: '法律案', ko: '법률안', zh: '提案' },
+  'legislation':     { sv: 'lagstiftning', da: 'lovgivning', no: 'lovgivning', fi: 'lainsäädäntö', de: 'gesetzgebung', fr: 'législation', es: 'legislación', nl: 'wetgeving', ar: 'تشريع', he: 'חקיקה', ja: '立法', ko: '법률', zh: '立法' },
+  'motions':         { sv: 'motioner', da: 'forslag', no: 'forslag', fi: 'aloitteet', de: 'anträge', fr: 'motions', es: 'mociones', nl: 'moties', ar: 'اقتراحات', he: 'הצעות', ja: '動議', ko: '동의', zh: '动议' },
+  'opposition':      { sv: 'opposition', da: 'opposition', no: 'opposisjon', fi: 'oppositio', de: 'opposition', fr: 'opposition', es: 'oposición', nl: 'oppositie', ar: 'معارضة', he: 'אופוזיציה', ja: '野党', ko: '야당', zh: '反对派' },
+  'proposals':       { sv: 'förslag', da: 'forslag', no: 'forslag', fi: 'ehdotukset', de: 'vorschläge', fr: 'propositions', es: 'propuestas', nl: 'voorstellen', ar: 'مقترحات', he: 'הצעות', ja: '提案', ko: '제안', zh: '提案' },
+  'outlook':         { sv: 'utsikter', da: 'udsigt', no: 'utsikter', fi: 'näkymät', de: 'ausblick', fr: 'perspectives', es: 'perspectivas', nl: 'vooruitzichten', ar: 'توقعات', he: 'תחזית', ja: '見通し', ko: '전망', zh: '展望' },
+  'weekly review':   { sv: 'veckans sammanfattning', da: 'ugentlig gennemgang', no: 'ukentlig gjennomgang', fi: 'viikkokatsaus', de: 'wochenbericht', fr: 'bilan hebdomadaire', es: 'revisión semanal', nl: 'wekelijks overzicht', ar: 'مراجعة أسبوعية', he: 'סקירה שבועית', ja: '週間レビュー', ko: '주간 리뷰', zh: '每周回顾' },
+  'monthly review':  { sv: 'månadens sammanfattning', da: 'månedlig gennemgang', no: 'månedlig gjennomgang', fi: 'kuukausikatsaus', de: 'monatsbericht', fr: 'bilan mensuel', es: 'revisión mensual', nl: 'maandelijks overzicht', ar: 'مراجعة شهرية', he: 'סקירה חודשית', ja: '月間レビュー', ko: '월간 리뷰', zh: '每月回顾' },
+  'analysis':        { sv: 'analys', da: 'analyse', no: 'analyse', fi: 'analyysi', de: 'analyse', fr: 'analyse', es: 'análisis', nl: 'analyse', ar: 'تحليل', he: 'ניתוח', ja: '分析', ko: '분석', zh: '分析' },
+  'recap':           { sv: 'sammanfattning', da: 'resumé', no: 'oppsummering', fi: 'yhteenveto', de: 'zusammenfassung', fr: 'récapitulatif', es: 'resumen', nl: 'samenvatting', ar: 'ملخص', he: 'סיכום', ja: 'まとめ', ko: '요약', zh: '总结' },
+  'breaking news':   { sv: 'senaste nytt', da: 'seneste nyt', no: 'siste nytt', fi: 'viimeisimmät uutiset', de: 'Eilmeldung', fr: 'dernières nouvelles', es: 'noticias de última hora', nl: 'laatste nieuws', ar: 'أخبار عاجلة', he: 'חדשות אחרונות', ja: '速報', ko: '속보', zh: '突发新闻' },
+  'urgent':          { sv: 'brådskande', da: 'presserende', no: 'haster', fi: 'kiireellinen', de: 'dringend', fr: 'urgent', es: 'urgente', nl: 'dringend', ar: 'عاجل', he: 'דחוף', ja: '緊急', ko: '긴급', zh: '紧急' },
+  'alert':           { sv: 'varning', da: 'advarsel', no: 'varsel', fi: 'hälytys', de: 'warnung', fr: 'alerte', es: 'alerta', nl: 'waarschuwing', ar: 'تنبيه', he: 'התראה', ja: '警告', ko: '경보', zh: '警告' },
+  'debates':         { sv: 'debatter', da: 'debatter', no: 'debatter', fi: 'keskustelut', de: 'debatten', fr: 'débats', es: 'debates', nl: 'debatten', ar: 'مناقشات', he: 'דיונים', ja: '討論', ko: '토론', zh: '辩论' },
 };
 
-/**
- * Localized common/footer keywords appended to every article, keyed by language.
- */
-const COMMON_KEYWORDS: Partial<Record<Language, string[]>> = {
-  en: ['Swedish Parliament', 'Riksdag', 'politics', 'Sweden'],
-  sv: ['Sveriges riksdag', 'Riksdag', 'politik', 'Sverige'],
-  da: ['Svensk parlament', 'Riksdag', 'politik', 'Sverige'],
-  no: ['Svensk parlament', 'Riksdag', 'politikk', 'Sverige'],
-  fi: ['Ruotsin parlamentti', 'Riksdag', 'politiikka', 'Ruotsi'],
-  de: ['Schwedisches Parlament', 'Riksdag', 'Politik', 'Schweden'],
-  fr: ['Parlement suédois', 'Riksdag', 'politique', 'Suède'],
-  es: ['Parlamento sueco', 'Riksdag', 'política', 'Suecia'],
-  nl: ['Zweeds parlement', 'Riksdag', 'politiek', 'Zweden'],
-  ar: ['البرلمان السويدي', 'Riksdag', 'ريكسداغ', 'سياسة', 'السويد'],
-  he: ['הפרלמנט השוודי', 'Riksdag', 'ריקסדאג', 'פוליטיקה', 'שוודיה'],
-  ja: ['スウェーデン議会', 'Riksdag', 'リクスダーグ', '政治', 'スウェーデン'],
-  ko: ['스웨덴 의회', 'Riksdag', '릭스다그', '정치', '스웨덴'],
-  zh: ['瑞典议会', 'Riksdag', '瑞典国会', '政治', '瑞典'],
-};
-
-/**
- * Localized keywords injected when article data contains specific collections
- * (events → calendar/debates; reports → committees/reports).
- */
-const DATA_DRIVEN_KEYWORDS: Record<'events' | 'reports', Partial<Record<Language, string[]>>> = {
-  events: {
-    en: ['calendar', 'events', 'debates'],
-    sv: ['kalender', 'evenemang', 'debatter'],
-    da: ['kalender', 'begivenheder', 'debatter'],
-    no: ['kalender', 'hendelser', 'debatter'],
-    fi: ['kalenteri', 'tapahtumat', 'väittelyt'],
-    de: ['kalender', 'veranstaltungen', 'debatten'],
-    fr: ['calendrier', 'événements', 'débats'],
-    es: ['calendario', 'eventos', 'debates'],
-    nl: ['kalender', 'evenementen', 'debatten'],
-    ar: ['تقويم', 'فعاليات', 'مناقشات'],
-    he: ['לוח שנה', 'אירועים', 'דיונים'],
-    ja: ['カレンダー', 'イベント', '討論'],
-    ko: ['캘린더', '이벤트', '토론'],
-    zh: ['日历', '活动', '辩论'],
-  },
-  reports: {
-    en: ['committees', 'reports'],
-    sv: ['utskott', 'betänkanden'],
-    da: ['udvalg', 'betænkninger'],
-    no: ['komiteer', 'betenkninger'],
-    fi: ['valiokunnat', 'mietinnöt'],
-    de: ['ausschüsse', 'berichte'],
-    fr: ['commissions', 'rapports'],
-    es: ['comisiones', 'informes'],
-    nl: ['commissies', 'rapporten'],
-    ar: ['لجان', 'تقارير'],
-    he: ['ועדות', 'דוחות'],
-    ja: ['委員会', '報告書'],
-    ko: ['위원회', '보고서'],
-    zh: ['委员会', '报告'],
-  },
-};
-
-/**
- * Look up localized keywords for a given article type and language,
- * falling back to English when the language entry is absent.
- */
-function getLocalizedKeywords<T extends string>(
-  map: Record<T, Partial<Record<Language, string[]>>>,
-  type: T,
-  lang: Language
-): string[] {
-  return map[type]?.[lang] ?? map[type]?.en ?? [];
+/** Return the localized form of an SEO keyword for the given language (falls back to English). */
+function localizeKeyword(keyword: string, lang: Language): string {
+  if (lang === 'en') return keyword;
+  return SEO_KEYWORD_TRANSLATIONS[keyword]?.[lang] ?? keyword;
 }
 
 /**
@@ -3336,13 +3171,12 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
   const keywords: string[] = [];
   const topics: string[] = [];
   const tags: string[] = [];
+  const kw = (k: string): string => localizeKeyword(k, lang);
 
-  // Look up localized type-specific keywords (fall back to English)
-  keywords.push(...getLocalizedKeywords(ARTICLE_TYPE_KEYWORDS, type, lang));
-
-  // Add type-specific topics and tags
+  // Add type-specific keywords
   switch (type) {
     case 'week-ahead':
+      keywords.push(kw('parliament'), kw('week ahead'), kw('calendar'), kw('events'));
       topics.push('parliament');
       {
         const tagVal = L(lang, 'weekAhead');
@@ -3350,6 +3184,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'committee-reports':
+      keywords.push(kw('committee'), kw('reports'), kw('betänkanden'), kw('parliament'));
       topics.push('committees', 'reports');
       {
         const tagVal = L(lang, 'committeeReportsTag');
@@ -3357,6 +3192,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'propositions':
+      keywords.push(kw('government'), kw('propositions'), kw('parliament'), kw('legislation'));
       topics.push('government', 'legislation');
       {
         const tagVal = L(lang, 'govPropsTag');
@@ -3364,6 +3200,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'motions':
+      keywords.push(kw('motions'), kw('opposition'), kw('parliament'), kw('proposals'));
       topics.push('parliament', 'opposition');
       {
         const tagVal = L(lang, 'oppMotionsTag');
@@ -3371,6 +3208,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'month-ahead':
+      keywords.push(kw('parliament'), kw('month ahead'), kw('calendar'), kw('outlook'));
       topics.push('parliament', 'outlook');
       {
         const tagVal = L(lang, 'weekAhead');
@@ -3378,6 +3216,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'weekly-review':
+      keywords.push(kw('parliament'), kw('weekly review'), kw('analysis'), kw('recap'));
       topics.push('parliament', 'review');
       {
         const tagVal = L(lang, 'committeeReportsTag');
@@ -3385,6 +3224,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'monthly-review':
+      keywords.push(kw('parliament'), kw('monthly review'), kw('analysis'), kw('recap'));
       topics.push('parliament', 'review');
       {
         const tagVal = L(lang, 'committeeReportsTag');
@@ -3392,25 +3232,24 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       }
       break;
     case 'breaking':
+      keywords.push(kw('breaking news'), kw('parliament'), kw('urgent'), kw('alert'));
       topics.push('breaking', 'parliament');
       break;
   }
 
-  // Extract additional keywords from data (localized)
-  if (data.events?.length) {
-    keywords.push(...getLocalizedKeywords(DATA_DRIVEN_KEYWORDS, 'events', lang));
+  // Extract additional keywords from data
+  if (data.events) {
+    keywords.push(kw('calendar'), kw('events'), kw('debates'));
   }
-  if (data.reports?.length) {
-    keywords.push(...getLocalizedKeywords(DATA_DRIVEN_KEYWORDS, 'reports', lang));
+  if (data.reports) {
+    keywords.push(kw('committees'), kw('reports'));
   }
 
-  // Add common localized keywords
-  keywords.push(...(COMMON_KEYWORDS[lang] ?? COMMON_KEYWORDS.en ?? []));
+  // Add common keywords
+  keywords.push(kw('Swedish Parliament'), 'Riksdag', kw('politics'), kw('Sweden'));
 
-  // Deduplicate while preserving insertion order (also eliminates duplicate 'reports'
-  // that previously arose when data.reports was present alongside the committee-reports type)
   return {
-    keywords: [...new Set(keywords)].slice(0, 15),
+    keywords: keywords.slice(0, 15),
     topics: topics.slice(0, 5),
     tags: tags.slice(0, 10)
   };
