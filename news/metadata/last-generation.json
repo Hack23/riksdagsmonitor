@@ -70,12 +70,20 @@
     "2026-02-24-welfare-reform-proposition-ko.html",
     "2026-02-24-welfare-reform-proposition-zh.html"
   ],
-  "eventsDetected": [
-    "high",
-    "medium",
-    "low"
-  ],
+  "eventsDetected": {
+    "high": [
+      "Government files five propositions in legislative push covering civilian defence, psychological violence, ILO conventions, migration rules, MTF shares",
+      "Government files Proposition 2025/26:136 — Kvalificering till socialförsäkringen (third part of bidragsreform)"
+    ],
+    "medium": [
+      "Six government press releases including welfare reform press conference",
+      "New interpellation on paratransit services filed (IP 2025/26:356)",
+      "Three written questions filed (Euratom Treaty, flood damage in Västernorrland)",
+      "Remiss on electronic surveillance for child protection"
+    ],
+    "low": []
+  },
   "nextCheck": "2026-02-25T10:00:00.000Z",
   "status": "success",
-  "note": "Breaking news 2026-02-24: Five-bill legislative push (10:30) covering civilian defence, psychological violence, ILO conventions, migration rules, MTF shares; and welfare reform completion (14:00)."
+  "note": "Breaking news 2026-02-24: Five-bill legislative push (10:30) covering civilian defence, psychological violence, ILO conventions, migration rules, MTF shares; and welfare reform completion (14:00) with Proposition 2025/26:136 on qualification for social insurance."
 }
