@@ -3,9 +3,10 @@
  * Tests multi-language synchronization, quality framework, and workflow coordination
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import type { Language } from '../scripts/types/language.js';
 import type { ArticleCategory } from '../scripts/types/article.js';
@@ -203,6 +204,24 @@ describe('News Realtime Monitor - Multi-Language Synchronization', () => {
   });
 
   describe('Real-world Integration Tests', () => {
+    const GENERATED_INDEX_FILES: string[] = [];
+
+    beforeAll(() => {
+      const ROOT_DIR = path.join(__dirname, '..');
+      const before = new Set(fs.readdirSync(NEWS_DIR).filter(f => f.startsWith('index') && f.endsWith('.html')));
+      execSync('npx tsx scripts/generate-news-indexes/index.ts', { cwd: ROOT_DIR, stdio: 'pipe' });
+      const after = fs.readdirSync(NEWS_DIR).filter(f => f.startsWith('index') && f.endsWith('.html'));
+      GENERATED_INDEX_FILES.push(...after.filter(f => !before.has(f)));
+    }, 30000);
+
+    afterAll(() => {
+      GENERATED_INDEX_FILES.forEach(f => {
+        try { fs.unlinkSync(path.join(NEWS_DIR, f)); } catch (err) {
+          if ((err as NodeJS.ErrnoException).code !== 'ENOENT') console.warn(`Cleanup warning: ${(err as Error).message}`);
+        }
+      });
+    });
+
     it('should verify all 14 language indexes exist', () => {
       const languages: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
 
