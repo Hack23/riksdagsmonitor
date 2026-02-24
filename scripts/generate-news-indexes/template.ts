@@ -10,6 +10,7 @@
 
 import { escapeHtml } from '../html-utils.js';
 import type {
+  ArticleDisplayData,
   FilterLabels,
   LanguageConfig,
   LanguageNoticeMessage,
