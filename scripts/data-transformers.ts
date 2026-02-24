@@ -341,21 +341,21 @@ const LOCALE_MAP: Record<string, string> = {
  * Map Swedish committee codes to full names for richer descriptions
  */
 const COMMITTEE_NAMES: CommitteeNameMap = {
-  AU: { en: 'Labour Market Committee', sv: 'Arbetsmarknadsutskottet' },
-  CU: { en: 'Civil Affairs Committee', sv: 'Civilutskottet' },
-  FiU: { en: 'Finance Committee', sv: 'Finansutskottet' },
-  FöU: { en: 'Defence Committee', sv: 'Försvarsutskottet' },
-  JuU: { en: 'Justice Committee', sv: 'Justitieutskottet' },
-  KU: { en: 'Constitutional Committee', sv: 'Konstitutionsutskottet' },
-  KrU: { en: 'Cultural Affairs Committee', sv: 'Kulturutskottet' },
-  MJU: { en: 'Environment and Agriculture Committee', sv: 'Miljö- och jordbruksutskottet' },
-  NU: { en: 'Industry and Trade Committee', sv: 'Näringsutskottet' },
-  SkU: { en: 'Taxation Committee', sv: 'Skatteutskottet' },
-  SfU: { en: 'Social Insurance Committee', sv: 'Socialförsäkringsutskottet' },
-  SoU: { en: 'Social Committee', sv: 'Socialutskottet' },
-  TU: { en: 'Transport Committee', sv: 'Trafikutskottet' },
-  UbU: { en: 'Education Committee', sv: 'Utbildningsutskottet' },
-  UU: { en: 'Foreign Affairs Committee', sv: 'Utrikesutskottet' },
+  AU: { en: 'Committee on Labour Market Affairs', sv: 'Arbetsmarknadsutskottet' },
+  CU: { en: 'Committee on Civil Affairs', sv: 'Civilutskottet' },
+  FiU: { en: 'Committee on Finance', sv: 'Finansutskottet' },
+  FöU: { en: 'Committee on Defence', sv: 'Försvarsutskottet' },
+  JuU: { en: 'Committee on Justice', sv: 'Justitieutskottet' },
+  KU: { en: 'Committee on the Constitution', sv: 'Konstitutionsutskottet' },
+  KrU: { en: 'Committee on Cultural Affairs', sv: 'Kulturutskottet' },
+  MJU: { en: 'Committee on Environment and Agriculture', sv: 'Miljö- och jordbruksutskottet' },
+  NU: { en: 'Committee on Industry and Trade', sv: 'Näringsutskottet' },
+  SkU: { en: 'Committee on Taxation', sv: 'Skatteutskottet' },
+  SfU: { en: 'Committee on Social Insurance', sv: 'Socialförsäkringsutskottet' },
+  SoU: { en: 'Committee on Social Affairs', sv: 'Socialutskottet' },
+  TU: { en: 'Committee on Transport', sv: 'Trafikutskottet' },
+  UbU: { en: 'Committee on Education', sv: 'Utbildningsutskottet' },
+  UU: { en: 'Committee on Foreign Affairs', sv: 'Utrikesutskottet' },
 };
 
 // Multi-language labels for content generation
@@ -2362,9 +2362,15 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
 
   if (title.includes('skatt') || title.includes('tax') || title.includes('budget') || title.includes('finans')
       || title.includes('makrotillsyn') || title.includes('macroprudential')
+      || title.includes('moms') || title.includes('mervärd') || title.includes('skattebedrägeri')
+      || title.includes('e-id') || title.includes('e-legitimation') || title.includes('verklig huvudman')
+      || title.includes('penningtvätt') || /\bbeneficial owner(ship)?\b/.test(title) || title.includes('fakturabedrägeri')
       || organ === 'SkU' || organ === 'FiU')
     set.add(isSv ? 'finanspolitik' : 'fiscal policy');
   if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
+      || title.includes('vapen') || title.includes('beredskap') || title.includes('totalförsvar')
+      || title.includes('krigsmateriel') || title.includes('säkerhetsskydd') || title.includes('preparedness')
+      || title.includes('weapon')
       || organ === 'FöU')
     set.add(isSv ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
   if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || title.includes('energi')
@@ -2379,6 +2385,8 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || organ === 'SoU')
     set.add(isSv ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
   if (title.includes('migration') || title.includes('invandring') || title.includes('asyl') || title.includes('utlänning')
+      || title.includes('uppehållstillstånd') || title.includes('medborgarskap') || title.includes('citizenship')
+      || title.includes('utvisning') || title.includes('statslöshet')
       || organ === 'SfU')
     set.add(isSv ? 'migrationspolitik' : 'migration policy');
   if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign')
@@ -2388,7 +2396,9 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || title.includes('kriminal') || organ === 'JuU')
     set.add(isSv ? 'rättspolitik' : 'justice policy');
   if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
-      || title.includes('facklig') || organ === 'AU')
+      || title.includes('facklig') || /\bilo\b/.test(title) || title.includes('trakasserier')
+      || title.includes('kollektivavtal') || title.includes('lönediskriminering') || title.includes('harassment')
+      || organ === 'AU')
     set.add(isSv ? 'arbetsmarknadspolitik' : 'labour market policy');
   if (title.includes('bostad') || title.includes('housing') || title.includes('hyra') || title.includes('bostadsrätt')
       || title.includes('lagfart') || title.includes('fastighet')
@@ -2398,7 +2408,8 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || organ === 'TU')
     set.add(isSv ? 'transportpolitik' : 'transport policy');
   if (title.includes('näring') || title.includes('handel') || title.includes('trade') || title.includes('industri')
-      || title.includes('företag') || organ === 'NU')
+      || title.includes('företag') || title.includes('jordbruk') || title.includes('lantbruk')
+      || title.includes('veterinär') || title.includes('djur') || organ === 'NU')
     set.add(isSv ? 'näringspolitik' : 'trade and industry policy');
 
   return Array.from(set);
@@ -2591,6 +2602,9 @@ function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: 
  * Generate policy significance context for a document based on its metadata.
  * Uses the localised policySignificanceTouches label plus a domain-specific
  * analysis sentence instead of generic boilerplate.
+ * Falls back to a committee-specific sentence (derived from COMMITTEE_NAMES)
+ * when no domain keyword matches but the document's organ field identifies a
+ * known Riksdag committee.
  * @param impliedDoktyp - document type inferred from the calling context
  *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
  */
@@ -2609,7 +2623,19 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string, i
     return deepAnalysis ? `${baseText} ${deepAnalysis}` : baseText;
   }
 
-  // Generic significance when no domain detected
+  // Secondary: committee-specific context when organ is present but no domain matched
+  const organ = doc.organ || doc.committee || '';
+  if (organ) {
+    const organEntry = COMMITTEE_NAMES[organ];
+    if (organEntry) {
+      const isSv = lang === 'sv';
+      return isSv
+        ? `Ärendet behandlas av ${organEntry.sv.toLowerCase()} för parlamentarisk beredning.`
+        : `This matter is referred to the ${organEntry.en} for parliamentary examination.`;
+    }
+  }
+
+  // Generic significance when no domain detected and no known committee
   const genericVal = L(lang, 'policySignificanceGeneric');
   return typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
 }
