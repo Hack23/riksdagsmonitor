@@ -245,9 +245,9 @@ grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-committee-reports-en.html"
 3. Add thematic grouping headers (e.g., by committee or policy domain)
 4. Translate any remaining Swedish content
 
-### Step 5: Validate & Create PR
+### Step 5: Build-time Generation Note
 
-**Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files.
+**Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files. Run `npm run prebuild` (or `npm run build`) locally if you need to preview the generated indexes, metadata, or sitemap.
 
 ### Step 6: Validate & Create PR
 Validate HTML structure, then create PR:
