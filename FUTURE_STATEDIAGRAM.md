@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-24 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -24,7 +24,7 @@
 
 ## 🎯 Purpose
 
-This document outlines the future state transition models for Riksdagsmonitor over the next 3-7 years (2026-2032). Building on the current [State Diagrams](STATEDIAGRAM.md), this roadmap introduces AI-driven state management, real-time streaming states, predictive analytics lifecycle, and multi-parliament coordination states.
+This document outlines the future state transition models for Riksdagsmonitor over the next 3-11 years (2026-2037). Building on the current [State Diagrams](STATEDIAGRAM.md), this roadmap introduces AI-driven state management, real-time streaming states, predictive analytics lifecycle, and multi-parliament coordination states.
 
 ## 📚 Architecture Documentation Map
 
@@ -280,15 +280,84 @@ stateDiagram-v2
 
 ---
 
+## 6. 🤖 AI/LLM Model Evolution Lifecycle (2026-2037)
+
+```mermaid
+stateDiagram-v2
+    [*] --> CurrentModel
+
+    CurrentModel --> MinorUpdate: Every ~2.3 Months
+    MinorUpdate --> Evaluation: Opus 4.7, 4.8, 4.9...
+    
+    Evaluation --> Integration: Performance Improved
+    Evaluation --> CurrentModel: No Significant Gain
+    
+    Integration --> ShadowTesting: Deploy Shadow Mode
+    ShadowTesting --> GradualRollout: Quality Verified
+    ShadowTesting --> Rollback: Quality Degraded
+    
+    GradualRollout --> CurrentModel: New Model Active
+    Rollback --> CurrentModel: Revert to Previous
+
+    CurrentModel --> MajorUpgrade: Annual Major Version
+    MajorUpgrade --> ArchitectureReview: Opus 5.0, 6.0, 7.0...
+    
+    ArchitectureReview --> CapabilityAssessment: Architecture Compatible
+    ArchitectureReview --> PlatformRedesign: Breaking Changes
+    
+    CapabilityAssessment --> FeatureExpansion: New Capabilities Available
+    FeatureExpansion --> Integration: Enable New Features
+    
+    PlatformRedesign --> MigrationPlanning: Plan Architecture Update
+    MigrationPlanning --> Integration: Migration Complete
+
+    CurrentModel --> CompetitorEvaluation: Quarterly Review
+    CompetitorEvaluation --> ModelSwitch: Competitor Superior
+    CompetitorEvaluation --> CurrentModel: Current Model Best
+    
+    ModelSwitch --> Integration: Multi-Model via Bedrock
+
+    CurrentModel --> AGITransition: 2033-2037
+    AGITransition --> AutonomousMode: AGI Capabilities Confirmed
+    AGITransition --> EnhancedMode: Pre-AGI Improvements
+    
+    AutonomousMode --> GlobalPlatform: 195 Parliaments
+    EnhancedMode --> CurrentModel: Incremental Enhancement
+    
+    GlobalPlatform --> [*]
+
+    note right of MinorUpdate
+        Anthropic minor releases
+        ~2.3 month cadence
+        Backward compatible
+    end note
+
+    note right of MajorUpgrade
+        Annual major versions
+        Opus 5.0 (2027)
+        Opus 6.0 (2028)
+        Through 2037 or successor
+    end note
+
+    note right of AGITransition
+        Scenario planning for
+        transformative AI capabilities
+        Human oversight maintained
+    end note
+```
+
+---
+
 ## 📋 Future State Summary
 
 | # | State Model | Timeline | Key Technology | Status |
 |---|-------------|----------|----------------|--------|
-| 1 | AI Content Generation | 2026-2028 | GPT-5, Stability AI, ElevenLabs | 🟡 Planned |
+| 1 | AI Content Generation | 2026-2028 | Opus 4.6-6.x, Stability AI, ElevenLabs | 🟡 Planned |
 | 2 | Predictive Model Lifecycle | 2027-2028 | TensorFlow.js, XGBoost | 🔴 Research |
 | 3 | Real-Time Streaming | 2028+ | Kafka, Flink, WebSocket | 🔴 Research |
 | 4 | Election Forecast | 2026-2028 | Monte Carlo, Statistical Models | 🟡 Planned |
 | 5 | Multi-Parliament | 2028+ | Multi-API Integration | 🔴 Research |
+| 6 | AI/LLM Model Evolution | 2026-2037 | Opus 4.6→AGI, Multi-Model Strategy | 🟡 Planned |
 
 ---
 
@@ -318,6 +387,6 @@ stateDiagram-v2
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-20  
+**📅 Effective Date:** 2026-02-24  
 **⏰ Next Review:** 2026-05-20  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)

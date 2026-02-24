@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--15-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-15 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-02-15  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-24 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-02-24  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -46,17 +46,19 @@
 
 ## 📊 Executive Summary
 
-Riksdagsmonitor's data architecture evolves over 2026-2032 from static CSV files to a **fully-managed AWS Serverless intelligence platform**. This transformation enables real-time political analytics, AI-powered insights, and scalable processing of Swedish parliamentary data.
+Riksdagsmonitor's data architecture evolves over 2026-2037 from static CSV files to a **fully-managed AWS Serverless intelligence platform**. This transformation enables real-time political analytics, AI-powered insights, and scalable processing of Swedish parliamentary data.
 
-**Strategic Vision (2026-2032):**
+**Strategic Vision (2026-2037):**
 - 🔄 **Phase 1 (2026-2027):** CSV → CIA JSON API Gateway integration
 - ☁️ **Phase 2 (2027-2028):** AWS Serverless migration (Neptune, Aurora, DynamoDB, OpenSearch)
 - 🤖 **Phase 3 (2028-2030):** AI/ML with Amazon Bedrock (embeddings, RAG, forecasting)
 - 📊 **Phase 4 (2030-2032):** Advanced analytics with Timestream and real-time streaming
+- 🧠 **Phase 5 (2033-2035):** Pre-AGI data architecture with autonomous schema evolution
+- 🌐 **Phase 6 (2036-2037):** AGI-era data platform supporting 195 global parliaments
 
 **Key Transformations:**
 
-| Aspect | Current (2026) | Future (2032) |
+| Aspect | Current (2026) | Future (2037) |
 |--------|----------------|---------------|
 | **Data Source** | CIA CSV exports (static) | CIA JSON API Gateway (real-time) |
 | **Database** | GitHub repository files | Neptune Graph + Aurora Serverless v2 |
@@ -64,7 +66,7 @@ Riksdagsmonitor's data architecture evolves over 2026-2032 from static CSV files
 | **Query** | JavaScript filters | AWS AppSync GraphQL API |
 | **Analytics** | Static aggregations | Timestream time-series + Lambda analytics |
 | **AI/ML** | None | Bedrock Titan Embeddings (8192-dim) + RAG |
-| **Scale** | 109K documents | 10M+ documents with graph relationships |
+| **Scale** | 109K documents | 100M+ documents with global parliament coverage |
 | **Compute** | Static site | AWS Lambda serverless functions |
 | **Orchestration** | GitHub Actions | AWS Step Functions |
 
@@ -1620,6 +1622,48 @@ stateDiagram-v2
 
 ---
 
+## 🤖 AI/LLM Data Architecture Evolution (2026-2037)
+
+### Data Model Impact of AI Evolution
+
+**AI Model Update Cadence:** Anthropic Opus minor updates every ~2.3 months, major versions annually
+
+| Period | AI Model | Data Architecture Impact | New Data Entities |
+|--------|----------|------------------------|-------------------|
+| 2026-2027 | Opus 4.6-5.x | Enhanced embeddings, improved entity extraction | AI audit logs, model version tracking |
+| 2028-2029 | Opus 6.x-7.x | Multi-modal data storage, video/audio political content | Media assets, content provenance records |
+| 2030-2032 | Opus 8.x-10.x | Near-expert analysis data, global parliament schemas | Cross-parliament entities, policy impact models |
+| 2033-2035 | Pre-AGI systems | Autonomous schema evolution, self-organizing knowledge graphs | Emergent relationship types, dynamic taxonomies |
+| 2036-2037 | AGI / Post-AGI | Universal political data ontology, real-time global coverage | 195 parliament datasets, global democracy metrics |
+
+### AI-Driven Data Capabilities
+
+**Continuous Model Integration (Every ~2.3 Months):**
+- Embedding dimension upgrades (768 → 1024 → 2048 → 8192+) tracked in vector DB metadata
+- Schema versioning aligned with AI model capabilities
+- Backward-compatible data migration for each model update
+- Automated data quality assessment using latest model capabilities
+
+**Competitor Model Data Considerations:**
+- Multi-model embedding storage (separate vector spaces per model family)
+- Model-agnostic entity extraction pipeline
+- Cross-model consistency validation for political entity resolution
+- Data portability across AI providers via standardized schemas
+
+### Extended Data Scale Projections
+
+| Metric | 2026 | 2028 | 2030 | 2033 | 2037 |
+|--------|------|------|------|------|------|
+| **Politicians tracked** | 2,494 | 5,000+ | 15,000+ | 50,000+ | 500,000+ |
+| **Documents indexed** | 109K | 500K | 2M+ | 10M+ | 100M+ |
+| **Voting records** | 3.5M | 10M+ | 25M+ | 100M+ | 1B+ |
+| **Languages** | 14 | 30+ | 50+ | 100+ | All UN |
+| **Parliaments** | 1 | 4 | 10+ | 50+ | 195 |
+| **AI model versions** | 1 | 5+ | 10+ | 20+ | 30+ |
+| **Data refresh** | Daily | Hourly | Real-time | Sub-second | Predictive |
+
+---
+
 ## 📋 Document Control
 
 **Document Information:**
@@ -1633,11 +1677,12 @@ stateDiagram-v2
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2026-02-15 | CEO | Initial version - AWS Serverless architecture |
+| 2.0 | 2026-02-24 | CEO | Extended to 2037 vision, AI/LLM data architecture, global scale projections |
 
 **Approval:**
 - **Document Owner:** CEO, Hack23 AB
 - **Approved Date:** 2026-02-15
-- **Next Review:** 2027-02-15 (Annual)
+- **Next Review:** 2027-02-24 (Annual)
 
 **Distribution:**
 - Public repository: [github.com/Hack23/riksdagsmonitor](https://github.com/Hack23/riksdagsmonitor)
@@ -1660,6 +1705,6 @@ stateDiagram-v2
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-20  
-**⏰ Next Review:** 2027-02-20  
+**📅 Effective Date:** 2026-02-24  
+**⏰ Next Review:** 2027-02-24  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)

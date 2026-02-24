@@ -1,22 +1,22 @@
 # 🔮 Riksdagsmonitor — Future Workflows Vision
 
-**Document Version:** 1.0
-**Last Updated:** 2026-02-21
+**Document Version:** 2.0
+**Last Updated:** 2026-02-24
 **Classification:** Public
 **Owner:** Hack23 AB (Org.nr 5595347807)
-**Horizon:** 2026–2029
+**Horizon:** 2026–2037
 
 ## Executive Summary
 
-This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next three years. Building on the current foundation of 29 workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
+This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026-2037). Building on the current foundation of 44 workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
 
 ### Current State (2026 Q1)
-- 29 workflows (23 YAML + 3 agentic sources + 3 compiled locks)
+- 44 workflows (24 YAML + 10 agentic sources + 10 compiled locks)
 - TypeScript migration complete (27 modules)
 - 1200 unit tests, dual deployment (S3/CloudFront + GitHub Pages)
-- 3 agentic news generation workflows (Claude Opus 4.6)
+- 10 agentic news generation workflows (Claude Opus 4.6)
 
-### Target State (2029)
+### Target State (2029-2037)
 - 50+ autonomous workflows
 - Real-time political intelligence pipeline
 - Predictive analytics with ML models
@@ -58,6 +58,20 @@ graph TB
         D4[Multi-Parliament Coverage]
     end
     
+    subgraph "2030-2033 - AI Evolution"
+        E1[Pre-AGI Model Integration]
+        E2[50+ Parliament Coverage]
+        E3[Autonomous Content Pipeline]
+        E4[Global Democracy Index]
+    end
+    
+    subgraph "2034-2037 - AGI Era"
+        F1[AGI-Enhanced Intelligence]
+        F2[195 Parliament Network]
+        F3[Real-Time Global Monitoring]
+        F4[Transformative Democracy Tech]
+    end
+    
     A1 --> B1
     A2 --> B2
     A3 --> B3
@@ -72,6 +86,19 @@ graph TB
     C2 --> D2
     C3 --> D3
     C4 --> D4
+    
+    D1 --> E1
+    D2 --> E2
+    D3 --> E3
+    D4 --> E4
+    
+    E1 --> F1
+    E2 --> F2
+    E3 --> F3
+    E4 --> F4
+    
+    style E1 fill:#e91e63
+    style F1 fill:#795548
     
     style A1 fill:#4caf50
     style A2 fill:#4caf50
@@ -640,11 +667,11 @@ gantt
 
 | Year | Projected Total | New Capabilities |
 |------|----------------|------------------|
-| 2026 Q1 | **29** | TypeScript foundation ✅ |
-| 2026 Q4 | **35** | CIA pipeline v2, preview deploys, visual regression |
-| 2027 Q4 | **42** | OSINT pipeline, ML predictions, real-time streams |
-| 2028 Q4 | **48** | Self-healing, canary deploy, AI editorial board |
-| 2029 Q4 | **55+** | Intelligence API, multi-parliament, federation |
+| 2026 Q1 | **44** | TypeScript foundation, 10 agentic workflows ✅ |
+| 2026 Q4 | **50** | CIA pipeline v2, preview deploys, visual regression |
+| 2027 Q4 | **55** | OSINT pipeline, ML predictions, real-time streams |
+| 2028 Q4 | **65** | Self-healing, canary deploy, AI editorial board |
+| 2029 Q4 | **75+** | Intelligence API, multi-parliament, federation |
 
 ---
 
@@ -669,6 +696,76 @@ gantt
 2028: + EU AI Act compliance (for ML models)
 2029: + NIS2 Directive compliance (critical infrastructure)
 ```
+
+---
+
+## Phase 5: AI Evolution & Global Scale (2030-2033)
+
+### 5.1 Pre-AGI Model Integration
+
+**Priority:** Strategic
+**AI Model Trajectory:** Anthropic Opus 8.x-10.x (minor updates every ~2.3 months, major annually)
+
+**Capabilities:**
+- Continuous model evaluation pipeline (automated benchmarking every 2.3 months)
+- Multi-model orchestration (Bedrock model switching based on task complexity)
+- Near-expert political analysis with domain-specialized fine-tuning
+- Autonomous investigative journalism workflows
+
+### 5.2 Global Parliament Coverage
+
+**Target:** 50+ parliaments across Europe, Americas, and Asia-Pacific
+
+**Workflow Additions:**
+- Parliament API discovery and integration workflows
+- Cross-parliament schema normalization pipelines
+- Multi-timezone content scheduling (24/7 global coverage)
+- Federated data network synchronization
+
+### 5.3 Autonomous Content Pipeline
+
+**Target:** < 5% human review required for standard articles
+
+**Key Metrics:**
+- AI editorial quality score > 95%
+- Fact verification accuracy > 99%
+- Multi-modal content (text, image, audio, video) in 50+ languages
+- Real-time event-driven article generation
+
+---
+
+## Phase 6: AGI Era & Transformative Democracy (2034-2037)
+
+### 6.1 AGI-Enhanced Intelligence
+
+**Scenario:** AGI or near-AGI systems become available through Amazon Bedrock or successor platforms
+
+**Strategic Considerations:**
+- 🤖 **Autonomous analysis**: AGI-powered real-time political intelligence across all 195 parliamentary systems
+- 🌐 **Universal language support**: Every UN language supported natively
+- 📊 **Predictive governance**: Policy impact prediction before legislation is proposed
+- ⚖️ **Ethical AI governance**: Human oversight maintained regardless of AI capability level
+- 🛡️ **Democratic safeguards**: Platform architecture prevents weaponization or manipulation
+
+### 6.2 AI Model Evolution Strategy
+
+**Assumptions:**
+- Anthropic Opus minor updates every ~2.3 months through 2037 (or until successor paradigm)
+- Major version upgrades annually (Opus 5.0, 6.0, 7.0... through ~12.0 by 2037)
+- Competitors (OpenAI, Google, Meta, EU sovereign AI) evaluated at each major release
+- Architecture must accommodate potential paradigm shifts (quantum AI, neuromorphic computing)
+
+**Workflow Count Projection (Extended):**
+
+| Year | Total Workflows | AI Model | Key Capability |
+|------|----------------|----------|----------------|
+| 2026 | 44-50 | Opus 4.6-4.9 | Agentic news generation |
+| 2027 | 50-55 | Opus 5.x | Predictive analytics |
+| 2028 | 55-65 | Opus 6.x | Multi-modal content |
+| 2029 | 65-75 | Opus 7.x | Autonomous pipeline |
+| 2030 | 75-85 | Opus 8.x | Near-expert analysis |
+| 2031-2033 | 85-100 | Opus 9-10.x / Pre-AGI | Global coverage |
+| 2034-2037 | 100-120+ | AGI / Post-AGI | Transformative platform |
 
 ---
 
@@ -701,12 +798,20 @@ gantt
 - [ ] Self-healing pipeline success rate > 95%
 - [ ] Multi-platform content distribution (5+ channels)
 
-### Long-term (2029)
+### Long-term (2029-2037)
 - [ ] Public political intelligence API serving 1000+ consumers
 - [ ] Multi-parliament coverage (5+ Nordic/EU parliaments)
 - [ ] Democracy health index with international comparisons
 - [ ] Fully autonomous content pipeline (human review < 10% of articles)
 - [ ] Federated data network with 10+ partner platforms
+
+### Visionary (2030-2037)
+- [ ] Pre-AGI model integration with autonomous evaluation pipeline
+- [ ] 50+ parliament coverage with real-time cross-parliament analysis
+- [ ] < 5% human review required for standard political articles
+- [ ] AI model updates integrated within 30 days of release (minor every ~2.3 months)
+- [ ] Global real-time democracy health index covering 195 parliaments
+- [ ] AGI-ready architecture with maintained human oversight and democratic safeguards
 
 ---
 
@@ -722,7 +827,7 @@ gantt
 
 ---
 
-**Document Version:** 1.0
-**Last Updated:** 2026-02-21
+**Document Version:** 2.0
+**Last Updated:** 2026-02-24
 **Classification:** Public
 **Owner:** Hack23 AB

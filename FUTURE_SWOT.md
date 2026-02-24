@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-24 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -24,7 +24,7 @@
 
 ## 🎯 Purpose
 
-This document provides a forward-looking SWOT analysis for Riksdagsmonitor over the next 3-7 years (2026-2032). Building on the current [SWOT Analysis](SWOT.md), this assessment evaluates how planned expansions in AI, Nordic parliament coverage, API platform, and revenue models will reshape Riksdagsmonitor's strategic position.
+This document provides a forward-looking SWOT analysis for Riksdagsmonitor over the next 3-11 years (2026-2037). Building on the current [SWOT Analysis](SWOT.md), this assessment evaluates how planned expansions in AI, Nordic parliament coverage, API platform, and revenue models will reshape Riksdagsmonitor's strategic position.
 
 > *"The future of democratic transparency lies at the intersection of AI, open data, and civic engagement. This strategic outlook maps our path from Swedish parliament monitoring to a global democratic intelligence platform."*
 >
@@ -56,7 +56,7 @@ This document provides a forward-looking SWOT analysis for Riksdagsmonitor over 
 
 ```mermaid
 quadrantChart
-    title Riksdagsmonitor Future SWOT (2026-2032)
+    title Riksdagsmonitor Future SWOT (2026-2037)
     x-axis Internal --> External
     y-axis Negative --> Positive
     quadrant-1 Opportunities
@@ -91,7 +91,7 @@ quadrantChart
 
 ---
 
-## 💪 Future Strengths (2027-2032)
+## 💪 Future Strengths (2027-2037)
 
 ### FS1: AI-Powered Democratic Intelligence
 
@@ -135,7 +135,7 @@ quadrantChart
 
 ---
 
-## 🔻 Future Weaknesses (2027-2032)
+## 🔻 Future Weaknesses (2027-2037)
 
 ### FW1: Complex AI Infrastructure
 
@@ -168,7 +168,7 @@ quadrantChart
 
 ---
 
-## 🚀 Future Opportunities (2027-2032)
+## 🚀 Future Opportunities (2027-2037)
 
 ### FO1: Global Parliament Network
 
@@ -202,7 +202,7 @@ quadrantChart
 
 ---
 
-## ⚠️ Future Threats (2027-2032)
+## ⚠️ Future Threats (2027-2037)
 
 ### FT1: Big Tech Competition
 
@@ -236,15 +236,64 @@ quadrantChart
 
 ---
 
+## 🤖 AI/LLM Evolution Impact (2026-2037)
+
+### AI Model Trajectory
+
+**Current Foundation (2026):** Anthropic Claude Opus 4.6 via Amazon Bedrock
+- Minor model updates expected every ~2.3 months (Opus 4.7, 4.8, 4.9...)
+- Major version upgrades annually (Opus 5.0 in 2027, 6.0 in 2028, etc.)
+
+**Model Evolution Roadmap:**
+
+| Year | Expected Model | Capability Level | Impact on Riksdagsmonitor |
+|------|---------------|------------------|---------------------------|
+| 2026 | Opus 4.6-4.9 | Advanced reasoning, 200K context | Multi-modal news generation, 14-language support |
+| 2027 | Opus 5.x | Enhanced agentic, tool use | Autonomous political analysis, real-time fact-checking |
+| 2028 | Opus 6.x | Multi-modal native, 1M+ context | Video generation, comprehensive knowledge synthesis |
+| 2029 | Opus 7.x / Competitors | Near-expert reasoning | Predictive policy impact, automated investigative journalism |
+| 2030 | Opus 8.x / New paradigms | Domain expertise | Real-time parliamentary monitoring, expert-level analysis |
+| 2031-2033 | Pre-AGI systems | Broad general intelligence | Autonomous democratic intelligence platform |
+| 2034-2037 | AGI / Post-AGI era | Superhuman analysis | Transformative democratic accountability at global scale |
+
+### Competitive Landscape Considerations
+
+**LLM Competitors to Monitor:**
+- 🔵 **OpenAI** (GPT-5, GPT-6+): Primary competitor, strong in reasoning and multi-modal
+- 🟢 **Google DeepMind** (Gemini Ultra+): Strong in search integration and knowledge
+- 🟠 **Meta** (Llama 5+): Open-source leader, potential for self-hosted models
+- 🔴 **xAI** (Grok 3+): Real-time data integration strengths
+- 🟡 **Mistral/European AI**: EU-aligned, regulatory advantage for GDPR compliance
+- 🟣 **Chinese AI** (DeepSeek, Qwen): Cost-competitive, potential geopolitical concerns
+
+**Strategic Response:**
+- ✅ **Multi-model strategy**: Amazon Bedrock provides access to multiple model families
+- ✅ **Model-agnostic architecture**: Abstract AI capabilities behind service interfaces
+- ✅ **Continuous evaluation**: Benchmark new models every 2.3 months against current performance
+- ✅ **Open-source fallback**: Maintain compatibility with open-weight models (Llama, Mistral)
+- ✅ **AGI preparedness**: Architecture designed to leverage increasingly capable AI systems
+
+### AGI Transition Planning (2033-2037)
+
+**Scenario Planning for AGI/ASI Impact:**
+- 📊 **Optimistic**: AGI dramatically enhances democratic transparency, enabling real-time policy analysis across all 195 parliamentary systems worldwide
+- ⚖️ **Moderate**: Gradual capability improvement continues the annual major version cycle, reaching near-expert political analysis by 2035
+- ⚠️ **Disruptive**: New AI paradigms render current architectures obsolete, requiring fundamental platform redesign
+- 🛡️ **Risk mitigation**: Maintain human oversight, ethical AI principles, and democratic values regardless of AI capability level
+
+---
+
 ## 📊 Strategic Action Matrix
 
-| Strategic Theme | Actions (2026-2028) | KPIs | Owner |
+| Strategic Theme | Actions (2026-2037) | KPIs | Owner |
 |----------------|---------------------|------|-------|
-| **AI Intelligence** | Deploy GPT-5, Knowledge Graph, Election Forecasting | Prediction accuracy > 85% | CTO |
+| **AI Intelligence** | Deploy best-available Amazon Bedrock foundation model (e.g., Anthropic Opus), Knowledge Graph, Election Forecasting | Prediction accuracy > 85% | CTO |
 | **Nordic Expansion** | Denmark (2027), Norway (2028), Finland (2028) | 3 parliaments integrated | Product |
 | **API Platform** | Launch freemium API, research partnerships | $50K ARR by 2028 | Business |
 | **ISMS Leadership** | EU CRA, NIS2 compliance, AI governance | Zero critical findings | Security |
 | **Community** | Contributor onboarding, academic partnerships | 10+ active contributors | Community |
+| **AI Evolution** | Continuous model evaluation, multi-model strategy, AGI readiness | Latest model within 30 days | CTO |
+| **Long-Term Vision** | Global parliament network, 50+ languages, real-time democracy index | 10+ parliaments by 2035 | CEO |
 
 ---
 
@@ -252,6 +301,6 @@ quadrantChart
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-20  
+**📅 Effective Date:** 2026-02-24  
 **⏰ Next Review:** 2026-05-20  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
