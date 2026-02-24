@@ -341,21 +341,21 @@ const LOCALE_MAP: Record<string, string> = {
  * Map Swedish committee codes to full names for richer descriptions
  */
 const COMMITTEE_NAMES: CommitteeNameMap = {
-  AU: { en: 'Labour Market Committee', sv: 'Arbetsmarknadsutskottet' },
-  CU: { en: 'Civil Affairs Committee', sv: 'Civilutskottet' },
-  FiU: { en: 'Finance Committee', sv: 'Finansutskottet' },
-  FöU: { en: 'Defence Committee', sv: 'Försvarsutskottet' },
-  JuU: { en: 'Justice Committee', sv: 'Justitieutskottet' },
-  KU: { en: 'Constitutional Committee', sv: 'Konstitutionsutskottet' },
-  KrU: { en: 'Cultural Affairs Committee', sv: 'Kulturutskottet' },
-  MJU: { en: 'Environment and Agriculture Committee', sv: 'Miljö- och jordbruksutskottet' },
-  NU: { en: 'Industry and Trade Committee', sv: 'Näringsutskottet' },
-  SkU: { en: 'Taxation Committee', sv: 'Skatteutskottet' },
-  SfU: { en: 'Social Insurance Committee', sv: 'Socialförsäkringsutskottet' },
-  SoU: { en: 'Social Committee', sv: 'Socialutskottet' },
-  TU: { en: 'Transport Committee', sv: 'Trafikutskottet' },
-  UbU: { en: 'Education Committee', sv: 'Utbildningsutskottet' },
-  UU: { en: 'Foreign Affairs Committee', sv: 'Utrikesutskottet' },
+  AU: { en: 'Committee on Labour Market Affairs', sv: 'Arbetsmarknadsutskottet' },
+  CU: { en: 'Committee on Civil Affairs', sv: 'Civilutskottet' },
+  FiU: { en: 'Committee on Finance', sv: 'Finansutskottet' },
+  FöU: { en: 'Committee on Defence', sv: 'Försvarsutskottet' },
+  JuU: { en: 'Committee on Justice', sv: 'Justitieutskottet' },
+  KU: { en: 'Committee on the Constitution', sv: 'Konstitutionsutskottet' },
+  KrU: { en: 'Committee on Cultural Affairs', sv: 'Kulturutskottet' },
+  MJU: { en: 'Committee on Environment and Agriculture', sv: 'Miljö- och jordbruksutskottet' },
+  NU: { en: 'Committee on Industry and Trade', sv: 'Näringsutskottet' },
+  SkU: { en: 'Committee on Taxation', sv: 'Skatteutskottet' },
+  SfU: { en: 'Committee on Social Insurance', sv: 'Socialförsäkringsutskottet' },
+  SoU: { en: 'Committee on Social Affairs', sv: 'Socialutskottet' },
+  TU: { en: 'Committee on Transport', sv: 'Trafikutskottet' },
+  UbU: { en: 'Committee on Education', sv: 'Utbildningsutskottet' },
+  UU: { en: 'Committee on Foreign Affairs', sv: 'Utrikesutskottet' },
 };
 
 // Multi-language labels for content generation
@@ -431,7 +431,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Requires committee review and chamber debate before a decision is reached.',
     generalMatters: 'General matters',
     responsesToProp: 'Responses to Government Propositions',
-    independentMotions: 'Independent Motions'
+    independentMotions: 'Independent Motions',
+    twitterLabel1: 'Reading time',
+    twitterLabel2: 'Article type',
+    jobTitle: 'Political Intelligence Analyst',
+    siteDescription: 'Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -504,7 +508,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Kräver utskottsbehandling och kammardebatt innan beslut fattas.',
     generalMatters: 'Övriga frågor',
     responsesToProp: 'Svar på propositioner',
-    independentMotions: 'Övriga motioner'
+    independentMotions: 'Övriga motioner',
+    twitterLabel1: 'Lästid',
+    twitterLabel2: 'Artikeltyp',
+    jobTitle: 'Politisk underrättelseanalytiker',
+    siteDescription: 'Riksdagsmonitor – övervaka politisk aktivitet med systematisk transparens'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -577,7 +585,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Kræver udvalgsbehandling og kammerdebat, før der træffes afgørelse.',
     generalMatters: 'Generelle spørgsmål',
     responsesToProp: 'Svar på regeringsforslag',
-    independentMotions: 'Andre forslag'
+    independentMotions: 'Andre forslag',
+    twitterLabel1: 'Læsetid',
+    twitterLabel2: 'Artikeltype',
+    jobTitle: 'Politisk efterretningsanalytiker',
+    siteDescription: 'Svensk parlamentsovervågning – følg politisk aktivitet med systematisk gennemsigtighed'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -650,7 +662,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Krever komitébehandling og kammerdebatt før avgjørelse fattes.',
     generalMatters: 'Generelle spørsmål',
     responsesToProp: 'Svar på regjeringforslag',
-    independentMotions: 'Andre forslag'
+    independentMotions: 'Andre forslag',
+    twitterLabel1: 'Lesetid',
+    twitterLabel2: 'Artikkeltype',
+    jobTitle: 'Politisk etterretningsanalytiker',
+    siteDescription: 'Svensk parlamentsovervåkning – følg politisk aktivitet med systematisk åpenhet'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -723,7 +739,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Vaatii valiokuntakäsittelyn ja täysistuntokeskustelun ennen päätöksentekoa.',
     generalMatters: 'Yleiset asiat',
     responsesToProp: 'Vastaukset hallituksen esityksiin',
-    independentMotions: 'Muut aloitteet'
+    independentMotions: 'Muut aloitteet',
+    twitterLabel1: 'Lukuaika',
+    twitterLabel2: 'Artikkelityyppi',
+    jobTitle: 'Poliittinen tiedusteluanalyytikko',
+    siteDescription: 'Ruotsin parlamentin seuranta – poliittisen toiminnan systemaattinen läpinäkyvyys'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -796,7 +816,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Erfordert Ausschussberatung und Kammerdebatte vor einer Entscheidung.',
     generalMatters: 'Allgemeine Angelegenheiten',
     responsesToProp: 'Antworten auf Regierungsvorlagen',
-    independentMotions: 'Sonstige Anträge'
+    independentMotions: 'Sonstige Anträge',
+    twitterLabel1: 'Lesezeit',
+    twitterLabel2: 'Artikeltyp',
+    jobTitle: 'Politischer Geheimdienstanalyst',
+    siteDescription: 'Schwedische Parlamentsplattform – politische Aktivität mit systematischer Transparenz verfolgen'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -869,7 +893,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Nécessite un examen en commission et un débat en séance avant toute décision.',
     generalMatters: 'Questions générales',
     responsesToProp: 'Réponses aux propositions gouvernementales',
-    independentMotions: 'Autres motions'
+    independentMotions: 'Autres motions',
+    twitterLabel1: 'Temps de lecture',
+    twitterLabel2: "Type d'article",
+    jobTitle: 'Analyste en renseignement politique',
+    siteDescription: "Plateforme du Parlement suédois – surveiller l'activité politique avec une transparence systématique"
   },
   es: {
     whyMatters: 'Por qué esta semana es importante',
@@ -942,7 +970,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Requiere revisión en comisión y debate en cámara antes de tomar una decisión.',
     generalMatters: 'Asuntos generales',
     responsesToProp: 'Respuestas a proposiciones del gobierno',
-    independentMotions: 'Otras mociones'
+    independentMotions: 'Otras mociones',
+    twitterLabel1: 'Tiempo de lectura',
+    twitterLabel2: 'Tipo de artículo',
+    jobTitle: 'Analista de inteligencia política',
+    siteDescription: 'Plataforma del Parlamento sueco – monitorear la actividad política con transparencia sistemática'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -1015,7 +1047,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'Vereist commissiebehandeling en plenair debat voor een besluit wordt genomen.',
     generalMatters: 'Algemene zaken',
     responsesToProp: 'Antwoorden op regeringsvoorstellen',
-    independentMotions: 'Overige moties'
+    independentMotions: 'Overige moties',
+    twitterLabel1: 'Leestijd',
+    twitterLabel2: 'Artikeltype',
+    jobTitle: 'Politiek inlichtingenanalist',
+    siteDescription: 'Zweeds Parlementsplatform – politieke activiteit volgen met systematische transparantie'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -1088,7 +1124,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'يتطلب مراجعة في اللجنة ونقاش في الجلسة العامة قبل اتخاذ القرار.',
     generalMatters: 'مسائل عامة',
     responsesToProp: 'ردود على مقترحات الحكومة',
-    independentMotions: 'اقتراحات أخرى'
+    independentMotions: 'اقتراحات أخرى',
+    twitterLabel1: 'وقت القراءة',
+    twitterLabel2: 'نوع المقال',
+    jobTitle: 'محلل الاستخبارات السياسية',
+    siteDescription: 'منصة البرلمان السويدي – رصد النشاط السياسي بشفافية منهجية'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -1161,7 +1201,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: 'מחייב בחינה בוועדה ודיון במליאה לפני קבלת החלטה.',
     generalMatters: 'עניינים כלליים',
     responsesToProp: 'תשובות להצעות הממשלה',
-    independentMotions: 'הצעות אחרות'
+    independentMotions: 'הצעות אחרות',
+    twitterLabel1: 'זמן קריאה',
+    twitterLabel2: 'סוג כתבה',
+    jobTitle: 'אנליסט מודיעין פוליטי',
+    siteDescription: 'פלטפורמת הפרלמנט השבדי – מעקב אחר פעילות פוליטית בשקיפות שיטתית'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -1234,7 +1278,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: '決定前に委員会審査と本会議討論が必要です。',
     generalMatters: '一般事項',
     responsesToProp: '政府提案への回答',
-    independentMotions: 'その他の動議'
+    independentMotions: 'その他の動議',
+    twitterLabel1: '読了時間',
+    twitterLabel2: '記事タイプ',
+    jobTitle: '政治インテリジェンスアナリスト',
+    siteDescription: 'スウェーデン議会プラットフォーム – 体系的な透明性で政治活動を監視'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -1307,7 +1355,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: '결정 전에 위원회 심사와 본회의 토론이 필요합니다.',
     generalMatters: '일반 사항',
     responsesToProp: '정부 제안에 대한 응답',
-    independentMotions: '기타 동의'
+    independentMotions: '기타 동의',
+    twitterLabel1: '읽기 시간',
+    twitterLabel2: '기사 유형',
+    jobTitle: '정치 인텔리전스 분석가',
+    siteDescription: '스웨덴 의회 플랫폼 – 체계적인 투명성으로 정치 활동 모니터링'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -1380,7 +1432,11 @@ export const CONTENT_LABELS: Record<Language, ContentLabelSet> = {
     policySignificanceGeneric: '在作出决定之前需要委员会审查和全体辩论。',
     generalMatters: '一般事项',
     responsesToProp: '对政府提案的回应',
-    independentMotions: '其他动议'
+    independentMotions: '其他动议',
+    twitterLabel1: '阅读时间',
+    twitterLabel2: '文章类型',
+    jobTitle: '政治情报分析师',
+    siteDescription: '瑞典议会平台 – 以系统透明度监测政治活动'
   }
 };
 
@@ -2306,9 +2362,15 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
 
   if (title.includes('skatt') || title.includes('tax') || title.includes('budget') || title.includes('finans')
       || title.includes('makrotillsyn') || title.includes('macroprudential')
+      || title.includes('moms') || title.includes('mervärd') || title.includes('skattebedrägeri')
+      || title.includes('e-id') || title.includes('e-legitimation') || title.includes('verklig huvudman')
+      || title.includes('penningtvätt') || /\bbeneficial owner(ship)?\b/.test(title) || title.includes('fakturabedrägeri')
       || organ === 'SkU' || organ === 'FiU')
     set.add(isSv ? 'finanspolitik' : 'fiscal policy');
   if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
+      || title.includes('vapen') || title.includes('beredskap') || title.includes('totalförsvar')
+      || title.includes('krigsmateriel') || title.includes('säkerhetsskydd') || title.includes('preparedness')
+      || title.includes('weapon')
       || organ === 'FöU')
     set.add(isSv ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
   if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || title.includes('energi')
@@ -2323,6 +2385,8 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || organ === 'SoU')
     set.add(isSv ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
   if (title.includes('migration') || title.includes('invandring') || title.includes('asyl') || title.includes('utlänning')
+      || title.includes('uppehållstillstånd') || title.includes('medborgarskap') || title.includes('citizenship')
+      || title.includes('utvisning') || title.includes('statslöshet')
       || organ === 'SfU')
     set.add(isSv ? 'migrationspolitik' : 'migration policy');
   if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign')
@@ -2332,7 +2396,9 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || title.includes('kriminal') || organ === 'JuU')
     set.add(isSv ? 'rättspolitik' : 'justice policy');
   if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
-      || title.includes('facklig') || organ === 'AU')
+      || title.includes('facklig') || /\bilo\b/.test(title) || title.includes('trakasserier')
+      || title.includes('kollektivavtal') || title.includes('lönediskriminering') || title.includes('harassment')
+      || organ === 'AU')
     set.add(isSv ? 'arbetsmarknadspolitik' : 'labour market policy');
   if (title.includes('bostad') || title.includes('housing') || title.includes('hyra') || title.includes('bostadsrätt')
       || title.includes('lagfart') || title.includes('fastighet')
@@ -2342,7 +2408,8 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || organ === 'TU')
     set.add(isSv ? 'transportpolitik' : 'transport policy');
   if (title.includes('näring') || title.includes('handel') || title.includes('trade') || title.includes('industri')
-      || title.includes('företag') || organ === 'NU')
+      || title.includes('företag') || title.includes('jordbruk') || title.includes('lantbruk')
+      || title.includes('veterinär') || title.includes('djur') || organ === 'NU')
     set.add(isSv ? 'näringspolitik' : 'trade and industry policy');
 
   return Array.from(set);
@@ -2535,6 +2602,9 @@ function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: 
  * Generate policy significance context for a document based on its metadata.
  * Uses the localised policySignificanceTouches label plus a domain-specific
  * analysis sentence instead of generic boilerplate.
+ * Falls back to a committee-specific sentence (derived from COMMITTEE_NAMES)
+ * when no domain keyword matches but the document's organ field identifies a
+ * known Riksdag committee.
  * @param impliedDoktyp - document type inferred from the calling context
  *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
  */
@@ -2553,7 +2623,19 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string, i
     return deepAnalysis ? `${baseText} ${deepAnalysis}` : baseText;
   }
 
-  // Generic significance when no domain detected
+  // Secondary: committee-specific context when organ is present but no domain matched
+  const organ = doc.organ || doc.committee || '';
+  if (organ) {
+    const organEntry = COMMITTEE_NAMES[organ];
+    if (organEntry) {
+      const isSv = lang === 'sv';
+      return isSv
+        ? `Ärendet behandlas av ${organEntry.sv.toLowerCase()} för parlamentarisk beredning.`
+        : `This matter is referred to the ${organEntry.en} for parliamentary examination.`;
+    }
+  }
+
+  // Generic significance when no domain detected and no known committee
   const genericVal = L(lang, 'policySignificanceGeneric');
   return typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
 }
@@ -3042,65 +3124,65 @@ export function extractWatchPoints(data: ArticleContentData, lang: Language = 'e
 }
 
 /**
- * Localized keywords for each article type, keyed by language then article type.
+ * Localized keywords for each article type, keyed by article type then language.
  * Falls back to English when a language entry is absent.
  */
-const ARTICLE_TYPE_KEYWORDS: Record<string, Partial<Record<Language, string[]>>> = {
+const ARTICLE_TYPE_KEYWORDS: Record<ArticleType, Partial<Record<Language, string[]>>> = {
   'week-ahead': {
     en: ['parliament', 'week ahead', 'calendar', 'events'],
     sv: ['riksdag', 'veckan framåt', 'kalender', 'händelser'],
     da: ['parlament', 'uge fremover', 'kalender', 'begivenheder'],
     no: ['parlament', 'uke fremover', 'kalender', 'hendelser'],
     fi: ['parlamentti', 'tuleva viikko', 'kalenteri', 'tapahtumat'],
-    de: ['Parlament', 'Woche voraus', 'Kalender', 'Ereignisse'],
+    de: ['parlament', 'kommende woche', 'kalender', 'ereignisse'],
     fr: ['parlement', 'semaine à venir', 'calendrier', 'événements'],
     es: ['parlamento', 'próxima semana', 'calendario', 'eventos'],
     nl: ['parlement', 'week vooruit', 'agenda', 'evenementen'],
     ar: ['برلمان', 'الأسبوع القادم', 'تقويم', 'أحداث'],
     he: ['פרלמנט', 'שבוע קרוב', 'לוח שנה', 'אירועים'],
-    ja: ['議会', '来週', 'カレンダー', '予定'],
+    ja: ['議会', '来週の展望', 'カレンダー', '予定'],
     ko: ['의회', '다음 주', '일정', '행사'],
     zh: ['议会', '下周展望', '日历', '活动'],
   },
   'committee-reports': {
     en: ['committee', 'reports', 'parliament', 'legislation'],
-    sv: ['utskott', 'betänkanden', 'riksdag', 'Sverige'],
-    da: ['udvalg', 'betænkninger', 'parlament', 'Sverige'],
-    no: ['komité', 'betenkninger', 'parlament', 'Sverige'],
-    fi: ['valiokunta', 'mietinnöt', 'parlamentti', 'Ruotsi'],
-    de: ['Ausschuss', 'Berichte', 'Parlament', 'Schweden'],
-    fr: ['comité', 'rapports', 'parlement', 'Suède'],
-    es: ['comité', 'informes', 'parlamento', 'Suecia'],
-    nl: ['commissie', 'rapporten', 'parlement', 'Zweden'],
-    ar: ['لجنة', 'تقارير', 'برلمان', 'السويد'],
-    he: ['ועדה', 'דוחות', 'פרלמנט', 'שוודיה'],
-    ja: ['委員会', '報告', '議会', 'スウェーデン'],
-    ko: ['위원회', '보고서', '의회', '스웨덴'],
-    zh: ['委员会', '报告', '议会', '瑞典'],
+    sv: ['utskott', 'betänkanden', 'riksdag', 'lagstiftning'],
+    da: ['udvalg', 'betænkninger', 'parlament', 'lovgivning'],
+    no: ['komité', 'betenkninger', 'parlament', 'lovgivning'],
+    fi: ['valiokunta', 'mietinnöt', 'parlamentti', 'lainsäädäntö'],
+    de: ['ausschuss', 'berichte', 'parlament', 'gesetzgebung'],
+    fr: ['commission', 'rapports', 'parlement', 'législation'],
+    es: ['comisión', 'informes', 'parlamento', 'legislación'],
+    nl: ['commissie', 'rapporten', 'parlement', 'wetgeving'],
+    ar: ['لجنة', 'تقارير', 'برلمان', 'تشريع'],
+    he: ['ועדה', 'דוחות', 'פרלמנט', 'חקיקה'],
+    ja: ['委員会', '報告書', '議会', '立法'],
+    ko: ['위원회', '보고서', '의회', '입법'],
+    zh: ['委员会', '报告', '议会', '立法'],
   },
   'propositions': {
     en: ['government', 'propositions', 'parliament', 'legislation'],
     sv: ['regering', 'propositioner', 'riksdag', 'lagstiftning'],
-    da: ['regering', 'forslag', 'parlament', 'lovgivning'],
+    da: ['regering', 'lovforslag', 'parlament', 'lovgivning'],
     no: ['regjering', 'proposisjoner', 'parlament', 'lovgivning'],
     fi: ['hallitus', 'esitykset', 'parlamentti', 'lainsäädäntö'],
-    de: ['Regierung', 'Gesetzesvorlagen', 'Parlament', 'Gesetzgebung'],
-    fr: ['gouvernement', 'propositions', 'parlement', 'législation'],
+    de: ['regierung', 'gesetzentwürfe', 'parlament', 'gesetzgebung'],
+    fr: ['gouvernement', 'propositions de loi', 'parlement', 'législation'],
     es: ['gobierno', 'proposiciones', 'parlamento', 'legislación'],
-    nl: ['regering', 'voorstellen', 'parlement', 'wetgeving'],
+    nl: ['regering', 'wetsvoorstellen', 'parlement', 'wetgeving'],
     ar: ['حكومة', 'مقترحات', 'برلمان', 'تشريع'],
-    he: ['ממשלה', 'הצעות', 'פרלמנט', 'חקיקה'],
-    ja: ['政府', '提案', '議会', '法律'],
-    ko: ['정부', '제안', '의회', '입법'],
+    he: ['ממשלה', 'הצעות חוק', 'פרלמנט', 'חקיקה'],
+    ja: ['政府', '法律案', '議会', '立法'],
+    ko: ['정부', '법률안', '의회', '입법'],
     zh: ['政府', '提案', '议会', '立法'],
   },
   'motions': {
     en: ['motions', 'opposition', 'parliament', 'proposals'],
     sv: ['motioner', 'opposition', 'riksdag', 'förslag'],
-    da: ['motioner', 'opposition', 'parlament', 'forslag'],
-    no: ['motioner', 'opposisjon', 'parlament', 'forslag'],
+    da: ['forslag', 'opposition', 'parlament', 'initiativ'],
+    no: ['forslag', 'opposisjon', 'parlament', 'initiativ'],
     fi: ['aloitteet', 'oppositio', 'parlamentti', 'ehdotukset'],
-    de: ['Anträge', 'Opposition', 'Parlament', 'Vorschläge'],
+    de: ['anträge', 'opposition', 'parlament', 'vorschläge'],
     fr: ['motions', 'opposition', 'parlement', 'propositions'],
     es: ['mociones', 'oposición', 'parlamento', 'propuestas'],
     nl: ['moties', 'oppositie', 'parlement', 'voorstellen'],
@@ -3108,71 +3190,71 @@ const ARTICLE_TYPE_KEYWORDS: Record<string, Partial<Record<Language, string[]>>>
     he: ['הצעות', 'אופוזיציה', 'פרלמנט', 'הצעות חוק'],
     ja: ['動議', '野党', '議会', '提案'],
     ko: ['발의', '야당', '의회', '제안'],
-    zh: ['动议', '反对党', '议会', '提案'],
+    zh: ['动议', '反对派', '议会', '提案'],
   },
   'month-ahead': {
     en: ['parliament', 'month ahead', 'calendar', 'outlook'],
-    sv: ['riksdag', 'månaden framåt', 'kalender', 'utsikt'],
-    da: ['parlament', 'måneden fremover', 'kalender', 'udsigt'],
-    no: ['parlament', 'måneden fremover', 'kalender', 'utsikt'],
+    sv: ['riksdag', 'månaden framåt', 'kalender', 'utsikter'],
+    da: ['parlament', 'måneden forude', 'kalender', 'udsigt'],
+    no: ['parlament', 'måneden fremover', 'kalender', 'utsikter'],
     fi: ['parlamentti', 'tuleva kuukausi', 'kalenteri', 'näkymät'],
-    de: ['Parlament', 'Monat voraus', 'Kalender', 'Ausblick'],
+    de: ['parlament', 'kommender monat', 'kalender', 'ausblick'],
     fr: ['parlement', 'mois à venir', 'calendrier', 'perspectives'],
-    es: ['parlamento', 'próximo mes', 'calendario', 'perspectiva'],
-    nl: ['parlement', 'komende maand', 'agenda', 'vooruitzicht'],
+    es: ['parlamento', 'mes próximo', 'calendario', 'perspectivas'],
+    nl: ['parlement', 'maand vooruit', 'agenda', 'vooruitzichten'],
     ar: ['برلمان', 'الشهر القادم', 'تقويم', 'توقعات'],
     he: ['פרלמנט', 'חודש קרוב', 'לוח שנה', 'תחזית'],
-    ja: ['議会', '来月', 'カレンダー', '見通し'],
+    ja: ['議会', '来月の展望', 'カレンダー', '見通し'],
     ko: ['의회', '다음 달', '일정', '전망'],
     zh: ['议会', '下月展望', '日历', '展望'],
   },
   'weekly-review': {
     en: ['parliament', 'weekly review', 'analysis', 'recap'],
-    sv: ['riksdag', 'veckans återblick', 'analys', 'sammanfattning'],
+    sv: ['riksdag', 'veckans sammanfattning', 'analys', 'recap'],
     da: ['parlament', 'ugentlig gennemgang', 'analyse', 'resumé'],
     no: ['parlament', 'ukentlig gjennomgang', 'analyse', 'oppsummering'],
     fi: ['parlamentti', 'viikkokatsaus', 'analyysi', 'yhteenveto'],
-    de: ['Parlament', 'Wochenrückblick', 'Analyse', 'Zusammenfassung'],
-    fr: ['parlement', 'revue hebdomadaire', 'analyse', 'récapitulatif'],
+    de: ['parlament', 'wochenbericht', 'analyse', 'zusammenfassung'],
+    fr: ['parlement', 'bilan hebdomadaire', 'analyse', 'récapitulatif'],
     es: ['parlamento', 'revisión semanal', 'análisis', 'resumen'],
-    nl: ['parlement', 'weekoverzicht', 'analyse', 'samenvatting'],
+    nl: ['parlement', 'wekelijks overzicht', 'analyse', 'samenvatting'],
     ar: ['برلمان', 'مراجعة أسبوعية', 'تحليل', 'ملخص'],
     he: ['פרלמנט', 'סקירה שבועית', 'ניתוח', 'סיכום'],
-    ja: ['議会', '週刊レビュー', '分析', '要約'],
+    ja: ['議会', '週間レビュー', '分析', 'まとめ'],
     ko: ['의회', '주간 리뷰', '분석', '요약'],
-    zh: ['议会', '每周回顾', '分析', '摘要'],
+    zh: ['议会', '每周回顾', '分析', '总结'],
   },
   'monthly-review': {
     en: ['parliament', 'monthly review', 'analysis', 'recap'],
-    sv: ['riksdag', 'månadens återblick', 'analys', 'sammanfattning'],
+    sv: ['riksdag', 'månadens sammanfattning', 'analys', 'recap'],
     da: ['parlament', 'månedlig gennemgang', 'analyse', 'resumé'],
     no: ['parlament', 'månedlig gjennomgang', 'analyse', 'oppsummering'],
     fi: ['parlamentti', 'kuukausikatsaus', 'analyysi', 'yhteenveto'],
-    de: ['Parlament', 'Monatsrückblick', 'Analyse', 'Zusammenfassung'],
-    fr: ['parlement', 'revue mensuelle', 'analyse', 'récapitulatif'],
+    de: ['parlament', 'monatsbericht', 'analyse', 'zusammenfassung'],
+    fr: ['parlement', 'bilan mensuel', 'analyse', 'récapitulatif'],
     es: ['parlamento', 'revisión mensual', 'análisis', 'resumen'],
-    nl: ['parlement', 'maandoverzicht', 'analyse', 'samenvatting'],
+    nl: ['parlement', 'maandelijks overzicht', 'analyse', 'samenvatting'],
     ar: ['برلمان', 'مراجعة شهرية', 'تحليل', 'ملخص'],
     he: ['פרלמנט', 'סקירה חודשית', 'ניתוח', 'סיכום'],
-    ja: ['議会', '月刊レビュー', '分析', '要約'],
+    ja: ['議会', '月間レビュー', '分析', 'まとめ'],
     ko: ['의회', '월간 리뷰', '분석', '요약'],
-    zh: ['议会', '每月回顾', '分析', '摘要'],
+    zh: ['议会', '每月回顾', '分析', '总结'],
   },
   'breaking': {
     en: ['breaking news', 'parliament', 'urgent', 'alert'],
-    sv: ['senaste nytt', 'riksdag', 'brådskande', 'larm'],
-    da: ['seneste nyt', 'parlament', 'presserende', 'alarm'],
-    no: ['siste nytt', 'parlament', 'presserende', 'alarm'],
-    fi: ['viimeisimmät', 'parlamentti', 'kiireellinen', 'hälytys'],
-    de: ['Eilmeldung', 'Parlament', 'dringend', 'Alarm'],
-    fr: ['dernière heure', 'parlement', 'urgent', 'alerte'],
-    es: ['última hora', 'parlamento', 'urgente', 'alerta'],
-    nl: ['laatste nieuws', 'parlement', 'urgent', 'alarm'],
+    sv: ['senaste nytt', 'riksdag', 'brådskande', 'varning'],
+    da: ['seneste nyt', 'parlament', 'presserende', 'advarsel'],
+    no: ['siste nytt', 'parlament', 'haster', 'varsel'],
+    fi: ['viimeisimmät uutiset', 'parlamentti', 'kiireellinen', 'hälytys'],
+    de: ['Eilmeldung', 'parlament', 'dringend', 'warnung'],
+    fr: ['dernières nouvelles', 'parlement', 'urgent', 'alerte'],
+    es: ['noticias de última hora', 'parlamento', 'urgente', 'alerta'],
+    nl: ['laatste nieuws', 'parlement', 'dringend', 'waarschuwing'],
     ar: ['أخبار عاجلة', 'برلمان', 'عاجل', 'تنبيه'],
     he: ['חדשות אחרונות', 'פרלמנט', 'דחוף', 'התראה'],
-    ja: ['速報', '議会', '緊急', '警報'],
+    ja: ['速報', '議会', '緊急', '警告'],
     ko: ['속보', '의회', '긴급', '경보'],
-    zh: ['突发新闻', '议会', '紧急', '警报'],
+    zh: ['突发新闻', '议会', '紧急', '警告'],
   },
 };
 
@@ -3189,25 +3271,25 @@ const COMMON_KEYWORDS: Partial<Record<Language, string[]>> = {
   fr: ['Parlement suédois', 'Riksdag', 'politique', 'Suède'],
   es: ['Parlamento sueco', 'Riksdag', 'política', 'Suecia'],
   nl: ['Zweeds parlement', 'Riksdag', 'politiek', 'Zweden'],
-  ar: ['البرلمان السويدي', 'ريكسداغ', 'سياسة', 'السويد'],
-  he: ['הפרלמנט השוודי', 'ריקסדאג', 'פוליטיקה', 'שוודיה'],
-  ja: ['スウェーデン議会', 'リクスダーグ', '政治', 'スウェーデン'],
-  ko: ['스웨덴 의회', '릭스다그', '정치', '스웨덴'],
-  zh: ['瑞典议会', '瑞典国会', '政治', '瑞典'],
+  ar: ['البرلمان السويدي', 'Riksdag', 'ريكسداغ', 'سياسة', 'السويد'],
+  he: ['הפרלמנט השוודי', 'Riksdag', 'ריקסדאג', 'פוליטיקה', 'שוודיה'],
+  ja: ['スウェーデン議会', 'Riksdag', 'リクスダーグ', '政治', 'スウェーデン'],
+  ko: ['스웨덴 의회', 'Riksdag', '릭스다그', '정치', '스웨덴'],
+  zh: ['瑞典议会', 'Riksdag', '瑞典国会', '政治', '瑞典'],
 };
 
 /**
  * Localized keywords injected when article data contains specific collections
  * (events → calendar/debates; reports → committees/reports).
  */
-const DATA_DRIVEN_KEYWORDS: Record<string, Partial<Record<Language, string[]>>> = {
+const DATA_DRIVEN_KEYWORDS: Record<'events' | 'reports', Partial<Record<Language, string[]>>> = {
   events: {
     en: ['calendar', 'events', 'debates'],
     sv: ['kalender', 'evenemang', 'debatter'],
     da: ['kalender', 'begivenheder', 'debatter'],
     no: ['kalender', 'hendelser', 'debatter'],
     fi: ['kalenteri', 'tapahtumat', 'väittelyt'],
-    de: ['Kalender', 'Veranstaltungen', 'Debatten'],
+    de: ['kalender', 'veranstaltungen', 'debatten'],
     fr: ['calendrier', 'événements', 'débats'],
     es: ['calendario', 'eventos', 'debates'],
     nl: ['kalender', 'evenementen', 'debatten'],
@@ -3223,13 +3305,13 @@ const DATA_DRIVEN_KEYWORDS: Record<string, Partial<Record<Language, string[]>>> 
     da: ['udvalg', 'betænkninger'],
     no: ['komiteer', 'betenkninger'],
     fi: ['valiokunnat', 'mietinnöt'],
-    de: ['Ausschüsse', 'Berichte'],
-    fr: ['comités', 'rapports'],
-    es: ['comités', 'informes'],
+    de: ['ausschüsse', 'berichte'],
+    fr: ['commissions', 'rapports'],
+    es: ['comisiones', 'informes'],
     nl: ['commissies', 'rapporten'],
     ar: ['لجان', 'تقارير'],
     he: ['ועדות', 'דוחות'],
-    ja: ['委員会', '報告'],
+    ja: ['委員会', '報告書'],
     ko: ['위원회', '보고서'],
     zh: ['委员会', '报告'],
   },
@@ -3239,9 +3321,9 @@ const DATA_DRIVEN_KEYWORDS: Record<string, Partial<Record<Language, string[]>>> 
  * Look up localized keywords for a given article type and language,
  * falling back to English when the language entry is absent.
  */
-function getLocalizedKeywords(
-  map: Record<string, Partial<Record<Language, string[]>>>,
-  type: string,
+function getLocalizedKeywords<T extends string>(
+  map: Record<T, Partial<Record<Language, string[]>>>,
+  type: T,
   lang: Language
 ): string[] {
   return map[type]?.[lang] ?? map[type]?.en ?? [];
@@ -3315,10 +3397,10 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
   }
 
   // Extract additional keywords from data (localized)
-  if (data.events) {
+  if (data.events?.length) {
     keywords.push(...getLocalizedKeywords(DATA_DRIVEN_KEYWORDS, 'events', lang));
   }
-  if (data.reports) {
+  if (data.reports?.length) {
     keywords.push(...getLocalizedKeywords(DATA_DRIVEN_KEYWORDS, 'reports', lang));
   }
 

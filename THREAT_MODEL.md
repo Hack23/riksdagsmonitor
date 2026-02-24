@@ -120,6 +120,8 @@ This threat model systematically analyzes security for Riksdagsmonitor using the
 | [📈 FUTURE_STATEDIAGRAM.md](./FUTURE_STATEDIAGRAM.md) | Advanced state management | ✅ Current | Future state threat scenarios |
 | [🧠 FUTURE_MINDMAP.md](./FUTURE_MINDMAP.md) | Capability expansion plans | ✅ Current | Future asset identification |
 | [💼 FUTURE_SWOT.md](./FUTURE_SWOT.md) | Future strategic opportunities | ✅ Current | Strategic risk forecasting |
+| [🔧 WORKFLOWS.md](./WORKFLOWS.md) | CI/CD automation and pipelines | ✅ Current | Pipeline security analysis |
+| [🛡️ CRA-ASSESSMENT.md](./CRA-ASSESSMENT.md) | EU Cyber Resilience Act conformity | ✅ Current | CRA compliance evidence |
 
 ---
 

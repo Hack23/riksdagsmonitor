@@ -105,4 +105,8 @@ export interface ContentLabelSet {
   generalMatters: string;
   responsesToProp: string;
   independentMotions: string;
+  twitterLabel1: string;
+  twitterLabel2: string;
+  jobTitle: string;
+  siteDescription: string;
 }
