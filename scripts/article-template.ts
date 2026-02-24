@@ -375,7 +375,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
     "author": {
       "@type": "Person",
       "name": "James Pether Sörling",
-      "jobTitle": "Political Intelligence Analyst",
+      "jobTitle": "${CONTENT_LABELS[lang]?.jobTitle ?? CONTENT_LABELS.en.jobTitle}",
       "affiliation": {
         "@type": "Organization",
         "name": "Hack23 AB"
@@ -464,7 +464,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
     "name": "Riksdagsmonitor",
     "url": "https://riksdagsmonitor.com",
     "logo": "https://hack23.com/cia-icon-140.webp",
-    "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+    "description": "${CONTENT_LABELS[lang]?.siteDescription ?? CONTENT_LABELS.en.siteDescription}",
     "foundingDate": "2020",
     "founder": {
       "@type": "Person",

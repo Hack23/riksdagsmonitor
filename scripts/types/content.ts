@@ -107,4 +107,6 @@ export interface ContentLabelSet {
   independentMotions: string;
   twitterLabel1: string;
   twitterLabel2: string;
+  jobTitle: string;
+  siteDescription: string;
 }
