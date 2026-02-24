@@ -62,6 +62,9 @@ interface MockArticlePayload {
     dokumentnamn?: string;
     dok_id?: string;
     intressent_namn?: string;
+    notis?: string;
+    summary?: string;
+    undertitel?: string;
   }>;
   documents?: Array<{
     titel?: string;
