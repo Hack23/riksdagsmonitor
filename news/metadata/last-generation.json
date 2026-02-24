@@ -1,44 +1,38 @@
 {
-  "timestamp": "2026-02-23T14:18:00.000Z",
-  "types": [
-    "realtime-monitor",
-    "update-news"
+  "timestamp": "2026-02-24T10:30:00.000Z",
+  "check_type": "realtime-monitor",
+  "events_detected": [
+    {
+      "type": "government_propositions",
+      "significance": "HIGH",
+      "count": 5,
+      "items": [
+        {"dok_id": "HD03142", "title": "Ett starkare skydd för civilbefolkningen vid höjd beredskap", "organ": "Försvarsdepartementet"},
+        {"dok_id": "HD03138", "title": "En särskild straffbestämmelse för psykiskt våld", "organ": "Justitiedepartementet"},
+        {"dok_id": "HD03134", "title": "ILO:s konvention om avskaffande av våld och trakasserier i arbetslivet", "organ": "Arbetsmarknadsdepartementet"},
+        {"dok_id": "HD03146", "title": "Bättre migrationsrättsliga regler för forskare och doktorander", "organ": "Justitiedepartementet"},
+        {"dok_id": "HD03125", "title": "Nya regler om aktier på MTF-plattformar", "organ": "Justitiedepartementet"}
+      ]
+    },
+    {
+      "type": "committee_report",
+      "significance": "HIGH",
+      "count": 1,
+      "items": [
+        {"dok_id": "HD01UU15", "title": "Situationen i Israel och Palestina", "organ": "UU"}
+      ]
+    },
+    {
+      "type": "interpellation",
+      "significance": "MEDIUM",
+      "count": 1,
+      "items": [
+        {"dok_id": "HD10356", "title": "Färdtjänst och regeringens fortsatta beredning av Trafikanalys förslag", "parti": "S"}
+      ]
+    }
   ],
-  "languagesGenerated": [
-    "en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"
-  ],
-  "allRequestedLanguages": [
-    "en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"
-  ],
-  "batchSize": "all",
-  "skipExisting": false,
-  "generated": 14,
-  "errors": 0,
-  "articles": [
-    "2026-02-23-chamber-debates-update-en.html",
-    "2026-02-23-chamber-debates-update-sv.html",
-    "2026-02-23-chamber-debates-update-da.html",
-    "2026-02-23-chamber-debates-update-no.html",
-    "2026-02-23-chamber-debates-update-fi.html",
-    "2026-02-23-chamber-debates-update-de.html",
-    "2026-02-23-chamber-debates-update-fr.html",
-    "2026-02-23-chamber-debates-update-es.html",
-    "2026-02-23-chamber-debates-update-nl.html",
-    "2026-02-23-chamber-debates-update-ar.html",
-    "2026-02-23-chamber-debates-update-he.html",
-    "2026-02-23-chamber-debates-update-ja.html",
-    "2026-02-23-chamber-debates-update-ko.html",
-    "2026-02-23-chamber-debates-update-zh.html"
-  ],
-  "eventsDetected": {
-    "high": [],
-    "medium": [
-      "Live interpellation debates in chamber (IP 2025/26:326, 322, 320)",
-      "Two additional interpellations filed today (IP 2025/26:354, 355)"
-    ],
-    "low": []
-  },
-  "nextCheck": "2026-02-24T10:00:00.000Z",
-  "status": "success",
-  "note": ""
+  "articles_generated": 14,
+  "article_slug": "2026-02-24-legislative-push",
+  "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+  "next_check": "2026-02-24T14:00:00.000Z"
 }
