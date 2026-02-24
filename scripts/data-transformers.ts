@@ -3063,7 +3063,7 @@ const ARTICLE_TYPE_KEYWORDS: Record<string, Partial<Record<Language, string[]>>>
     zh: ['议会', '下周展望', '日历', '活动'],
   },
   'committee-reports': {
-    en: ['committee', 'committee reports', 'parliament', 'legislation'],
+    en: ['committee', 'reports', 'parliament', 'legislation'],
     sv: ['utskott', 'betänkanden', 'riksdag', 'Sverige'],
     da: ['udvalg', 'betænkninger', 'parlament', 'Sverige'],
     no: ['komité', 'betenkninger', 'parlament', 'Sverige'],
@@ -3197,6 +3197,18 @@ const COMMON_KEYWORDS: Partial<Record<Language, string[]>> = {
 };
 
 /**
+ * Look up localized keywords for a given article type and language,
+ * falling back to English when the language entry is absent.
+ */
+function getLocalizedKeywords(
+  map: Record<string, Partial<Record<Language, string[]>>>,
+  type: string,
+  lang: Language
+): string[] {
+  return map[type]?.[lang] ?? map[type]?.en ?? [];
+}
+
+/**
  * Generate article metadata
  */
 export function generateMetadata(data: ArticleContentData, type: ArticleType | string, lang: Language = 'en'): ArticleMetadata {
@@ -3205,11 +3217,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
   const tags: string[] = [];
 
   // Look up localized type-specific keywords (fall back to English)
-  const typeKw: string[] =
-    ARTICLE_TYPE_KEYWORDS[type]?.[lang] ??
-    ARTICLE_TYPE_KEYWORDS[type]?.en ??
-    [];
-  keywords.push(...typeKw);
+  keywords.push(...getLocalizedKeywords(ARTICLE_TYPE_KEYWORDS, type, lang));
 
   // Add type-specific topics and tags
   switch (type) {
@@ -3276,8 +3284,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
   }
 
   // Add common localized keywords
-  const commonKw: string[] = COMMON_KEYWORDS[lang] ?? COMMON_KEYWORDS.en ?? [];
-  keywords.push(...commonKw);
+  keywords.push(...(COMMON_KEYWORDS[lang] ?? COMMON_KEYWORDS.en ?? []));
 
   // Deduplicate while preserving insertion order (also eliminates duplicate 'reports'
   // that previously arose when data.reports was present alongside the committee-reports type)
