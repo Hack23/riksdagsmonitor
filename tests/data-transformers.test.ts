@@ -1929,4 +1929,22 @@ describe('groupMotionsByProposition (#462)', () => {
     expect(content).toContain('M1');
     expect(content).toContain('M2');
   });
+
+  it('wraps Swedish titles in lang="sv" span even when both titel and title are set (#458)', () => {
+    const content = generateArticleContent({
+      motions: [
+        {
+          titel: 'med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet',
+          title: 'med anledning av prop. 2025/26:118 Tillståndsprövning enligt förnybartdirektivet',
+          intressent_namn: 'Anna Björk',
+          parti: 'M',
+          url: '#',
+          dok_id: 'MOT_SV',
+        },
+      ]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    // Swedish title should be wrapped in <span lang="sv"> for accessibility and translation
+    expect(content).toContain('lang="sv"');
+    expect(content).toContain('MOT_SV');
+  });
 });

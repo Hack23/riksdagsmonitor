@@ -229,4 +229,26 @@ describe('translateSwedishContent', () => {
     expect(result).toContain('committee');
     expect(result).not.toContain('data-translate');
   });
+
+  it('translates bare <span lang="sv"> without data-translate for non-Swedish articles', () => {
+    const html = '<h3><span lang="sv">med anledning av prop. 2025/26:118 Test</span></h3>';
+    const result = translateSwedishContent(html, 'en');
+    expect(result).toContain('in response to prop.');
+    expect(result).toContain('2025/26:118');
+    expect(result).toContain('lang="sv"');
+  });
+
+  it('preserves bare <span lang="sv"> for Swedish articles', () => {
+    const html = '<h3><span lang="sv">med anledning av prop. 2025/26:118 Test</span></h3>';
+    const result = translateSwedishContent(html, 'sv');
+    expect(result).toContain('med anledning av prop.');
+    expect(result).toBe(html);
+  });
+
+  it('translates bare sv span of riksdagen for German', () => {
+    const html = '<span lang="sv">riksdagen</span>';
+    const result = translateSwedishContent(html, 'de');
+    expect(result).toContain('Riksdag');
+    expect(result).toContain('lang="sv"');
+  });
 });
