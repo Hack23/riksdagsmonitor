@@ -3338,7 +3338,8 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
   const tags: string[] = [];
 
   // Look up localized type-specific keywords (fall back to English)
-  keywords.push(...getLocalizedKeywords(ARTICLE_TYPE_KEYWORDS, type, lang));
+  // Cast to ArticleType: unknown strings produce [] via optional chaining in the helper.
+  keywords.push(...getLocalizedKeywords(ARTICLE_TYPE_KEYWORDS, type as ArticleType, lang));
 
   // Add type-specific topics and tags
   switch (type) {
