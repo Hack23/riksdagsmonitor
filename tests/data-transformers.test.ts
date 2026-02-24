@@ -13,6 +13,8 @@ import {
   calculateReadTime,
   generateSources,
   generateContentTitle,
+  groupMotionsByProposition,
+  groupPropositionsByCommittee,
   CONTENT_LABELS,
   L
 } from '../scripts/data-transformers.js';
@@ -1612,7 +1614,7 @@ describe('generateMotionsContent author/party sentinel fix (#454)', () => {
 });
 
 describe('groupMotionsByProposition (#462) / thematic grouping (#460)', () => {
-  it('groups same-domain motions under a single thematic heading', () => {
+  it('groups same-prop motions under a single h3 heading with h4 entries', () => {
     const content = generateArticleContent({
       motions: [
         {
@@ -1631,16 +1633,14 @@ describe('groupMotionsByProposition (#462) / thematic grouping (#460)', () => {
         },
       ]
     } as MockArticlePayload, 'motions', 'en') as string;
-    // Both motions share climate/energy domain — they render in a flat list (themeCount=1),
-    // no separate "Thematic Analysis" section header needed for a single theme.
-    // Both motion entries should be present.
+    // Proposition grouping: both motions share the same prop → single h3 heading
+    expect(content).toContain('Responses to Government Propositions');
+    expect(content).toContain('Prop. 2025/26:118');
     expect(content).toContain('MOT_A');
     expect(content).toContain('MOT_B');
-    // No old proposition-based grouping headers
-    expect(content).not.toContain('Responses to Government Propositions');
   });
 
-  it('groups motions by policy theme across different domains', () => {
+  it('groups proposition-response motions separately from independent motions', () => {
     const content = generateArticleContent({
       motions: [
         {
@@ -1659,15 +1659,14 @@ describe('groupMotionsByProposition (#462) / thematic grouping (#460)', () => {
         },
       ]
     } as MockArticlePayload, 'motions', 'en') as string;
-    // Thematic grouping should be used — no old flat-list headings
-    expect(content).not.toContain('Responses to Government Propositions');
-    expect(content).not.toContain('Independent Motions');
-    // Both motion entries should still be present
+    // Proposition grouping: one grouped + one independent
+    expect(content).toContain('Responses to Government Propositions');
+    expect(content).toContain('Independent Motions');
     expect(content).toContain('MOT_PROP');
     expect(content).toContain('MOT_IND');
   });
 
-  it('renders all motions without old proposition-grouping header when none reference a proposition', () => {
+  it('renders all motions without proposition-grouping header when none reference a proposition', () => {
     const content = generateArticleContent({
       motions: [
         { titel: 'Om utbildningspolitik', intressent_namn: 'Per Nord', parti: 'KD', url: '#', dok_id: 'M1' },
@@ -1826,7 +1825,7 @@ describe('generateMotionsContent author/party sentinel fix (#454)', () => {
 });
 
 describe('groupMotionsByProposition (#462)', () => {
-  it('renders all motions with same theme in a flat list without a prop section header', () => {
+  it('groups motions referencing the same proposition under a single h3 heading', () => {
     const content = generateArticleContent({
       motions: [
         {
@@ -1845,14 +1844,15 @@ describe('groupMotionsByProposition (#462)', () => {
         },
       ]
     } as MockArticlePayload, 'motions', 'en') as string;
-    // New behavior: thematic grouping — same theme → flat list, no prop section header
-    expect(content).not.toContain('Responses to Government Propositions');
+    // Proposition grouping: both motions share the same prop → single h3 heading
+    expect(content).toContain('Responses to Government Propositions');
+    expect(content).toContain('Prop. 2025/26:118');
     // Both motion entries should still be present
     expect(content).toContain('MOT_A');
     expect(content).toContain('MOT_B');
   });
 
-  it('renders motions with thematic grouping when multiple policy themes detected', () => {
+  it('uses Independent Motions heading when mixed with proposition-response motions', () => {
     const content = generateArticleContent({
       motions: [
         {
@@ -1871,10 +1871,9 @@ describe('groupMotionsByProposition (#462)', () => {
         },
       ]
     } as MockArticlePayload, 'motions', 'en') as string;
-    // New behavior: thematic grouping replaces proposition-based grouping
-    expect(content).toContain('Thematic Analysis');
-    expect(content).not.toContain('Responses to Government Propositions');
-    expect(content).not.toContain('Independent Motions');
+    // One grouped + one independent
+    expect(content).toContain('Responses to Government Propositions');
+    expect(content).toContain('Independent Motions');
     expect(content).toContain('MOT_PROP');
     expect(content).toContain('MOT_IND');
   });
