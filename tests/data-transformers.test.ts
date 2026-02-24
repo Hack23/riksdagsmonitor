@@ -1054,6 +1054,108 @@ describe('Data Transformers', () => {
       expect(content).toContain('Requires committee review');
     });
 
+    it('should produce committee-specific fallback when organ is known but no title keyword matches', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Diverse administrativa ändringar', organ: 'KU', url: 'https://example.com/1', dok_id: 'KU1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      // KU is not mapped to a domain — should get committee-specific fallback instead of generic
+      expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
+      expect(content).toContain('Committee on the Constitution');
+    });
+
+    it('should produce Swedish committee fallback for sv language', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Diverse administrativa ändringar', organ: 'KU', url: 'https://example.com/1', dok_id: 'KU1' }]
+      } as MockArticlePayload, 'propositions', 'sv') as string;
+
+      expect(content).toContain('konstitutionsutskottet');
+    });
+
+    it('should detect "vapen" as defence and security policy', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Vapenlagen och vapentillstånd', url: 'https://example.com/1', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('defence and security policy');
+    });
+
+    it('should detect "beredskap" as defence and security policy', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Civilt försvar och beredskap', url: 'https://example.com/1', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('defence and security policy');
+    });
+
+    it('should detect "moms" as fiscal policy', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Momsbedrägerier och skattekontroll', url: 'https://example.com/1', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('fiscal policy');
+    });
+
+    it('should detect "e-legitimation" as fiscal policy', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Rapportering om e-legitimation och e-id', url: 'https://example.com/1', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('fiscal policy');
+    });
+
+    it('should detect "verklig huvudman" as fiscal policy', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Verklig huvudman och beneficial ownership', url: 'https://example.com/1', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('fiscal policy');
+    });
+
+    it('should detect "uppehållstillstånd" as migration policy', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Uppehållstillstånd och medborgarskap', url: 'https://example.com/1', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('migration policy');
+    });
+
+    it('should detect "trakasserier" as labour market policy', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Trakasserier och ILO-konventioner', url: 'https://example.com/1', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('labour market policy');
+    });
+
+    it('should detect "veterinär" as trade and industry policy', () => {
+      const content = generateArticleContent({
+        propositions: [{ titel: 'Veterinär och lantbruk', url: 'https://example.com/1', dok_id: 'P1' }]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('trade and industry policy');
+    });
+
+    it('should use committee fallback for KU organ when title has no matching keywords', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Grundlagsändringar', organ: 'KU', url: 'https://example.com/1', dok_id: 'KU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // KU not mapped to domain — gets committee-specific fallback
+      expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
+      expect(content).toContain('Committee on the Constitution');
+    });
+
+    it('should use committee fallback for KrU organ when title has no matching keywords', () => {
+      const content = generateArticleContent({
+        reports: [{ titel: 'Kulturfrågor', organ: 'KrU', url: 'https://example.com/1', dok_id: 'KrU1' }]
+      } as MockArticlePayload, 'committee-reports', 'en') as string;
+
+      // KrU not mapped to domain — gets committee-specific fallback
+      expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
+      expect(content).toContain('Committee on Cultural Affairs');
+    });
+
     it('should produce Swedish significance for sv language', () => {
       const content = generateArticleContent({
         reports: [{ titel: 'Skattepolitik', organ: 'FiU', url: 'https://example.com/1', dok_id: 'FiU1' }]

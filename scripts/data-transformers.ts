@@ -2306,9 +2306,15 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
 
   if (title.includes('skatt') || title.includes('tax') || title.includes('budget') || title.includes('finans')
       || title.includes('makrotillsyn') || title.includes('macroprudential')
+      || title.includes('moms') || title.includes('mervärd') || title.includes('skattebedrägeri')
+      || title.includes('e-id') || title.includes('e-legitimation') || title.includes('verklig huvudman')
+      || title.includes('penningtvätt') || title.includes('beneficial') || title.includes('fakturabedrägeri')
       || organ === 'SkU' || organ === 'FiU')
     set.add(isSv ? 'finanspolitik' : 'fiscal policy');
   if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
+      || title.includes('vapen') || title.includes('beredskap') || title.includes('totalförsvar')
+      || title.includes('krigsmateriel') || title.includes('säkerhetsskydd') || title.includes('preparedness')
+      || title.includes('weapon')
       || organ === 'FöU')
     set.add(isSv ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
   if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || title.includes('energi')
@@ -2323,6 +2329,8 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || organ === 'SoU')
     set.add(isSv ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
   if (title.includes('migration') || title.includes('invandring') || title.includes('asyl') || title.includes('utlänning')
+      || title.includes('uppehållstillstånd') || title.includes('medborgarskap') || title.includes('citizenship')
+      || title.includes('utvisning') || title.includes('statslöshet')
       || organ === 'SfU')
     set.add(isSv ? 'migrationspolitik' : 'migration policy');
   if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign')
@@ -2332,7 +2340,9 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || title.includes('kriminal') || organ === 'JuU')
     set.add(isSv ? 'rättspolitik' : 'justice policy');
   if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
-      || title.includes('facklig') || organ === 'AU')
+      || title.includes('facklig') || title.includes('ilo') || title.includes('trakasserier')
+      || title.includes('kollektivavtal') || title.includes('lönediskriminering') || title.includes('harassment')
+      || organ === 'AU')
     set.add(isSv ? 'arbetsmarknadspolitik' : 'labour market policy');
   if (title.includes('bostad') || title.includes('housing') || title.includes('hyra') || title.includes('bostadsrätt')
       || title.includes('lagfart') || title.includes('fastighet')
@@ -2342,7 +2352,8 @@ function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): 
       || organ === 'TU')
     set.add(isSv ? 'transportpolitik' : 'transport policy');
   if (title.includes('näring') || title.includes('handel') || title.includes('trade') || title.includes('industri')
-      || title.includes('företag') || organ === 'NU')
+      || title.includes('företag') || title.includes('jordbruk') || title.includes('lantbruk')
+      || title.includes('veterinär') || title.includes('djur') || organ === 'NU')
     set.add(isSv ? 'näringspolitik' : 'trade and industry policy');
 
   return Array.from(set);
@@ -2532,9 +2543,34 @@ function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: 
 }
 
 /**
+ * Swedish Riksdag committee codes mapped to their English and Swedish names.
+ * Used as a secondary fallback in generatePolicySignificance when keyword and
+ * organ-based domain detection both fail to match a recognised policy domain.
+ */
+const ORGAN_NAMES: Record<string, { en: string; sv: string }> = {
+  AU:  { en: 'the Committee on Labour', sv: 'arbetsmarknadsutskottet' },
+  CU:  { en: 'the Civil Affairs Committee', sv: 'civilutskottet' },
+  FiU: { en: 'the Finance Committee', sv: 'finansutskottet' },
+  FöU: { en: 'the Defence Committee', sv: 'försvarsutskottet' },
+  JuU: { en: 'the Justice Committee', sv: 'justitieutskottet' },
+  KrU: { en: 'the Committee on Cultural Affairs', sv: 'kulturutskottet' },
+  KU:  { en: 'the Committee on the Constitution', sv: 'konstitutionsutskottet' },
+  MJU: { en: 'the Committee on Environment and Agriculture', sv: 'miljö- och jordbruksutskottet' },
+  NU:  { en: 'the Committee on Industry and Trade', sv: 'näringsutskottet' },
+  SkU: { en: 'the Tax Committee', sv: 'skatteutskottet' },
+  SfU: { en: 'the Social Insurance Committee', sv: 'socialförsäkringsutskottet' },
+  SoU: { en: 'the Social Affairs Committee', sv: 'socialutskottet' },
+  TU:  { en: 'the Transport Committee', sv: 'trafikutskottet' },
+  UbU: { en: 'the Committee on Education', sv: 'utbildningsutskottet' },
+  UU:  { en: 'the Foreign Affairs Committee', sv: 'utrikesutskottet' },
+};
+
+/**
  * Generate policy significance context for a document based on its metadata.
  * Uses the localised policySignificanceTouches label plus a domain-specific
  * analysis sentence instead of generic boilerplate.
+ * Falls back to a committee-specific sentence when no domain keyword matches
+ * but the document's organ field identifies a known Riksdag committee.
  * @param impliedDoktyp - document type inferred from the calling context
  *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
  */
@@ -2553,7 +2589,19 @@ function generatePolicySignificance(doc: RawDocument, lang: Language | string, i
     return deepAnalysis ? `${baseText} ${deepAnalysis}` : baseText;
   }
 
-  // Generic significance when no domain detected
+  // Secondary: committee-specific context when organ is present but no domain matched
+  const organ = doc.organ || doc.committee || '';
+  if (organ) {
+    const organEntry = ORGAN_NAMES[organ];
+    if (organEntry) {
+      const isSv = lang === 'sv';
+      return isSv
+        ? `Ärendet behandlas av ${organEntry.sv} för parlamentarisk beredning.`
+        : `This matter is referred to ${organEntry.en} for parliamentary examination.`;
+    }
+  }
+
+  // Generic significance when no domain detected and no known committee
   const genericVal = L(lang, 'policySignificanceGeneric');
   return typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
 }
