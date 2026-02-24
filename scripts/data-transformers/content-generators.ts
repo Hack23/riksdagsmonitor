@@ -1,0 +1,671 @@
+/**
+ * @module data-transformers/content-generators
+ * @description Article content generators that transform structured
+ * parliamentary data into narrative HTML. Each generator handles a
+ * specific article type: week-ahead, committee reports, propositions,
+ * motions, and generic (weekly/monthly review, breaking).
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+import { escapeHtml } from '../html-utils.js';
+import type { Language } from '../types/language.js';
+import type { ArticleContentData, WeekAheadData, RawDocument } from './types.js';
+import {
+  L,
+  svSpan,
+  sanitizeUrl,
+  isHighPriority,
+  formatDayName,
+  getCommitteeName,
+  generateEnhancedSummary,
+  normalizePartyKey,
+} from './helpers.js';
+import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from './policy-analysis.js';
+import {
+  groupMotionsByProposition,
+  groupPropositionsByCommittee,
+  generateOppositionStrategySection,
+  renderMotionEntry,
+  generateDocumentIntelligenceAnalysis,
+  PROP_TITLE_SUFFIX_REGEX,
+} from './document-analysis.js';
+
+export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
+  const { events, highlights, context } = data;
+  // Cast to ArticleContentData to access documents field (passed via switch cast)
+  const documents = (data as unknown as ArticleContentData).documents ?? [];
+  const questions = data.questions ?? [];
+  const interpellations = data.interpellations ?? [];
+
+  let content = '';
+
+  // Introduction section
+  content += `
+    <div class="context-box">
+      <h3>${L(lang, 'whyMatters')}</h3>
+      <p>${context || L(lang, 'whyMattersDefault')}</p>
+    </div>
+`;
+
+  // Group events by significance
+  const highPriority = events.filter(e => isHighPriority(e));
+
+  if (highPriority.length > 0) {
+    content += `\n    <h2>${L(lang, 'keyEvents')}</h2>\n`;
+
+    highPriority.forEach(event => {
+      // Derive dayName from event date if not present
+      const dayName = event.dayName || (event.datum || event.from || event.start ? formatDayName(new Date(event.datum || event.from || event.start || ''), lang) : '');
+      const eventTime = event.time || event.tid || 'Expected';
+      const eventTitle = event.title || event.titel || 'Event';
+
+      // Mark Swedish API titles for LLM translation post-processing
+      const escapedEventTitle = escapeHtml(eventTitle);
+      const titleHtml = (event.titel && !event.title)
+        ? svSpan(escapedEventTitle, lang)
+        : escapedEventTitle;
+
+      content += `
+    <h3>${dayName ? dayName + ' - ' : ''}${titleHtml}</h3>
+    <p>${event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`}</p>
+`;
+    });
+  }
+
+  // Legislative Pipeline: show upcoming documents when calendar is sparse or empty
+  if (documents.length > 0) {
+    const sectionLabel = lang === 'sv'
+      ? 'Kommande i den lagstiftande processen'
+      : lang === 'de' ? 'Bevorstehende legislative Tagesordnung'
+      : lang === 'fr' ? 'Agenda législatif à venir'
+      : lang === 'es' ? 'Agenda legislativa próxima'
+      : lang === 'da' ? 'Kommende lovgivningsmæssig dagsorden'
+      : lang === 'no' ? 'Kommende lovgivningsmessig agenda'
+      : lang === 'fi' ? 'Tuleva lainsäädäntöohjelma'
+      : lang === 'nl' ? 'Komende wetgevende agenda'
+      : lang === 'ar' ? 'جدول الأعمال التشريعي القادم'
+      : lang === 'he' ? 'סדר היום החקיקתי הקרוב'
+      : lang === 'ja' ? '今後の立法スケジュール'
+      : lang === 'ko' ? '향후 입법 일정'
+      : lang === 'zh' ? '未来立法议程'
+      : 'Upcoming Legislative Agenda';
+
+    content += `\n    <h2>${sectionLabel}</h2>\n`;
+
+    // Show top documents — prioritise propositions and committee reports
+    const priorityDocs = [
+      ...documents.filter(d => (d as Record<string, string>).doktyp === 'prop' || (d as Record<string, string>).doktyp === 'proposition'),
+      ...documents.filter(d => (d as Record<string, string>).doktyp === 'bet' || (d as Record<string, string>).doktyp === 'betankande'),
+      ...documents.filter(d => {
+        const t = (d as Record<string, string>).doktyp;
+        return t !== 'prop' && t !== 'proposition' && t !== 'bet' && t !== 'betankande';
+      }),
+    ].slice(0, 15);
+
+    priorityDocs.forEach(doc => {
+      const rec = doc as Record<string, string>;
+      const titleText = rec['titel'] || rec['title'] || rec['doktyp'] || 'Document';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (rec['titel'] && !rec['title'])
+        ? svSpan(escapedTitle, lang)
+        : escapedTitle;
+
+      const significance = generatePolicySignificance(doc, lang);
+      const dokId = rec['dok_id'] ?? rec['id'] ?? '';
+      const urlBase = 'https://riksdagen.se/sv/dokument-och-lagar/dokument/';
+      const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : '';
+
+      content += `\n    <div class="document-entry">\n`;
+      content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+      if (significance) {
+        content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
+      }
+      content += `    </div>\n`;
+    });
+  }
+
+  // Parliamentary Questions: upcoming written questions to ministers
+  if (questions.length > 0) {
+    const questionsLabel = lang === 'sv' ? 'Skriftliga frågor till statsråd'
+      : lang === 'de' ? 'Schriftliche parlamentarische Anfragen'
+      : lang === 'fr' ? 'Questions écrites au gouvernement'
+      : lang === 'es' ? 'Preguntas escritas al gobierno'
+      : lang === 'da' ? 'Skriftlige spørgsmål til ministrene'
+      : lang === 'no' ? 'Skriftlige spørsmål til statsrådene'
+      : lang === 'fi' ? 'Kirjalliset kysymykset ministerille'
+      : lang === 'nl' ? 'Schriftelijke vragen aan ministers'
+      : lang === 'ar' ? 'أسئلة مكتوبة للحكومة'
+      : lang === 'he' ? 'שאלות כתובות לממשלה'
+      : lang === 'ja' ? '大臣への書面質問'
+      : lang === 'ko' ? '장관에 대한 서면 질문'
+      : lang === 'zh' ? '书面质询政府'
+      : 'Parliamentary Questions to Ministers';
+    content += `\n    <h2>${questionsLabel}</h2>\n`;
+    questions.slice(0, 8).forEach(q => {
+      const rec = q as Record<string, string>;
+      const titleText = rec['titel'] || rec['title'] || 'Question';
+      const party = rec['parti'] ? ` (${escapeHtml(rec['parti'])})` : '';
+      const dok_id = rec['dok_id'] ?? '';
+      const qUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : '';
+      content += `    <div class="document-entry">\n`;
+      content += `      <h4>${qUrl ? `<a href="${qUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(titleText), lang)}${qUrl ? '</a>' : ''}</h4>\n`;
+      if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
+      content += `    </div>\n`;
+    });
+  }
+
+  // Interpellations: formal parliamentary interpellations awaiting ministerial response
+  if (interpellations.length > 0) {
+    const interLabel = lang === 'sv' ? 'Interpellationer under behandling'
+      : lang === 'de' ? 'Interpellationen in Bearbeitung'
+      : lang === 'fr' ? 'Interpellations en cours'
+      : lang === 'es' ? 'Interpelaciones en curso'
+      : lang === 'da' ? 'Forespørgsler til behandling'
+      : lang === 'no' ? 'Interpellasjoner til behandling'
+      : lang === 'fi' ? 'Käsittelyssä olevat välikysymykset'
+      : lang === 'nl' ? 'Interpellaties in behandeling'
+      : lang === 'ar' ? 'الاستجوابات البرلمانية قيد المعالجة'
+      : lang === 'he' ? 'בקשות הבהרה בטיפול'
+      : lang === 'ja' ? '処理中の質問主意書'
+      : lang === 'ko' ? '처리 중인 대정부 질문'
+      : lang === 'zh' ? '待处理的质询'
+      : 'Interpellations Pending';
+    content += `\n    <h2>${interLabel}</h2>\n`;
+    interpellations.slice(0, 8).forEach(interp => {
+      const rec = interp as Record<string, string>;
+      const titleText = rec['titel'] || rec['title'] || 'Interpellation';
+      const party = rec['parti'] ? ` (${escapeHtml(rec['parti'])})` : '';
+      const dok_id = rec['dok_id'] ?? '';
+      const iUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : '';
+      // Extract clean summary: content starts after "till MINISTER\n" line
+      const rawSummary = rec['summary'] ?? '';
+      // Find start of actual content after the header lines (Interpellation NNN / av AUTHOR / till MINISTER)
+      const tillMatch = rawSummary.match(/\btill\s+[^\n]+\n\s*/i);
+      const contentStart = tillMatch
+        ? rawSummary.indexOf(tillMatch[0]) + tillMatch[0].length
+        : rawSummary.replace(/^Interpellation\s+\S+[^\n]*\n\s*/i, '').replace(/^\s*av\s+[^\n]+\n\s*/i, '').length === rawSummary.length
+          ? 0
+          : 0;
+      const cleanedSummary = (tillMatch ? rawSummary.slice(contentStart) : rawSummary
+        .replace(/^Interpellation\s+\S+[^\n]*\n\s*/i, '')
+        .replace(/^\s*av\s+[^\n]+\n\s*/i, '')
+        .replace(/^\s*till\s+[^\n]+\n\s*/i, ''))
+        .trim()
+        .slice(0, 200);
+      content += `    <div class="document-entry">\n`;
+      content += `      <h4>${iUrl ? `<a href="${iUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(titleText), lang)}${iUrl ? '</a>' : ''}</h4>\n`;
+      if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
+      if (cleanedSummary) content += `      <p>${svSpan(escapeHtml(cleanedSummary) + '…', lang)}</p>\n`;
+      content += `    </div>\n`;
+    });
+  }
+
+  // Additional context
+  if (highlights && highlights.length > 0) {
+    content += `\n    <h2>${L(lang, 'whatToWatch')}</h2>\n    <ul>\n`;
+
+    highlights.forEach(highlight => {
+      content += `      <li><strong>${highlight.title}:</strong> ${highlight.description}</li>\n`;
+    });
+
+    content += '    </ul>\n';
+  }
+
+  return content;
+}
+
+export function generateCommitteeContent(data: ArticleContentData, lang: Language | string): string {
+  const reports = data.reports || [];
+
+  let content = `<h2>${L(lang, 'latestReports')}</h2>\n`;
+
+  if (reports.length === 0) {
+    content += `<p>${L(lang, 'noReports')}</p>\n`;
+    return content;
+  }
+
+  // Group reports by committee for thematic coherence
+  const byCommittee: Record<string, RawDocument[]> = {};
+  reports.forEach(report => {
+    const committee = report.organ || report.committee || 'unknown';
+    if (!byCommittee[committee]) byCommittee[committee] = [];
+    byCommittee[committee].push(report);
+  });
+
+  const committeeCount = Object.keys(byCommittee).length;
+
+  // Analytical lede: contextual overview of committee activity
+  const breakdown = L(lang, 'committeeBreakdown') as string | ((n: number, c: number) => string);
+  const breakdownText = typeof breakdown === 'function'
+    ? breakdown(reports.length, committeeCount)
+    : `${reports.length} committee reports across ${committeeCount} committees.`;
+  content += `<p class="article-lede">${escapeHtml(String(breakdownText))}</p>\n`;
+
+  // Thematic analysis section header
+  content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
+
+  // Generate content for each committee group with analysis
+  Object.entries(byCommittee).forEach(([committeeCode, committeeReports]) => {
+    const committeeName = getCommitteeName(committeeCode, lang);
+
+    // Committee section header
+    content += `\n    <h3>${escapeHtml(committeeName)}</h3>\n`;
+
+    // Add committee context: how many reports from this committee
+    if (committeeReports.length > 1) {
+      const countContextFn = L(lang, 'committeeCountContext') as string | ((n: number) => string);
+      const countContext = typeof countContextFn === 'function'
+        ? countContextFn(committeeReports.length)
+        : `${committeeReports.length} reports from this committee signal intensive legislative work within its portfolio.`;
+      content += `    <p><em>${escapeHtml(String(countContext))}</em></p>\n`;
+    }
+
+    committeeReports.forEach(report => {
+      const titleText = report.titel || report.title || '';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (report.titel && !report.title)
+        ? svSpan(escapedTitle, lang)
+        : escapedTitle;
+      const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
+
+      // Use enriched summary or enhanced summary from metadata
+      const summaryText = generateEnhancedSummary(report, 'report', lang);
+      const isFromAPI = report.summary || report.notis;
+      const reportDefaultVal = L(lang, 'reportDefault');
+      const summaryHtml = (report.titel && !report.title && isFromAPI && summaryText !== reportDefaultVal)
+        ? svSpan(escapeHtml(summaryText), lang)
+        : escapeHtml(summaryText);
+
+      const reportSigVal = L(lang, 'reportSignificance');
+      const readFullVal = L(lang, 'readFullReport');
+      const whatThisMeansVal = L(lang, 'whatThisMeans');
+
+      content += `
+    <div class="report-entry">
+      <h4>${titleHtml}</h4>
+      <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>
+      <p>${escapeHtml(String(reportSigVal))} ${summaryHtml}</p>
+      <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generateDeepPolicyAnalysis(report, lang, 'bet')}</p>
+      <p><a href="${sanitizeUrl(report.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+    </div>
+`;
+    });
+  });
+
+  // Key takeaways section
+  content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
+  content += `    <div class="context-box">\n      <ul>\n`;
+
+  // Generate analytical takeaways based on committees covered
+  const committeeNames = Object.keys(byCommittee).map(c => getCommitteeName(c, lang));
+  const activityFn = L(lang, 'committeeActivityTakeaway') as string | ((committees: string, extra: number) => string);
+  const takeaway1 = typeof activityFn === 'function'
+    ? activityFn(committeeNames.slice(0, 3).join(', '), committeeCount > 3 ? committeeCount - 3 : 0)
+    : `Parliamentary committees have been active across ${committeeNames.slice(0, 3).join(', ')}.`;
+  const momentumFn = L(lang, 'committeeMomentumTakeaway') as string | ((n: number) => string);
+  const takeaway2 = typeof momentumFn === 'function'
+    ? momentumFn(reports.length)
+    : `A total of ${reports.length} reports demonstrates sustained legislative momentum.`;
+
+  content += `        <li>${escapeHtml(takeaway1)}</li>\n`;
+  content += `        <li>${escapeHtml(takeaway2)}</li>\n`;
+
+  // Cross-committee domain analysis: identify which policy areas span multiple committees
+  const allDomains = new Set<string>();
+  reports.forEach(r => { detectPolicyDomains(r, lang).forEach(d => allDomains.add(d)); });
+  if (allDomains.size > 0) {
+    const isSv = lang === 'sv';
+    const domainList = Array.from(allDomains).slice(0, 3).join(', ');
+    const crossAnalysis = isSv
+      ? `Betänkandena berör ${escapeHtml(domainList)} – ett mönster som tyder på breda lagstiftningsprioriteringar denna session.`
+      : `Reports span ${escapeHtml(domainList)} — a cross-committee pattern signalling the government's broad legislative priorities this session.`;
+    content += `        <li>${crossAnalysis}</li>\n`;
+  }
+
+  content += `      </ul>\n    </div>\n`;
+
+  return content;
+}
+
+export function generatePropositionsContent(data: ArticleContentData, lang: Language | string): string {
+  const propositions = data.propositions || [];
+
+  let content = `<h2>${L(lang, 'govProps')}</h2>\n`;
+
+  if (propositions.length === 0) {
+    content += `<p>${L(lang, 'noProps')}</p>\n`;
+    return content;
+  }
+
+  // Analytical lede paragraph
+  const breakdownFn = L(lang, 'propsBreakdown') as string | ((n: number) => string);
+  const breakdownText = typeof breakdownFn === 'function'
+    ? breakdownFn(propositions.length)
+    : `${propositions.length} new government propositions submitted.`;
+  content += `<p class="article-lede">${escapeHtml(String(breakdownText))}</p>\n`;
+
+  // Legislative pipeline section
+  content += `\n    <h2>${L(lang, 'legislativePipeline')}</h2>\n`;
+
+  // Group propositions by committee; multi-committee → h3 committee + h4 prop, single → h3 prop
+  const byCommitteeGroup = groupPropositionsByCommittee(propositions);
+  const multiCommittee = byCommitteeGroup.size > 1;
+
+  byCommitteeGroup.forEach((committeeProps, committeeKey) => {
+    if (multiCommittee) {
+      const committeeLabel = committeeKey
+        ? escapeHtml(getCommitteeName(committeeKey, lang))
+        : escapeHtml(String(L(lang, 'otherCommittee')));
+      content += `    <h3>${committeeLabel}</h3>\n`;
+    }
+    const headingTag = multiCommittee ? 'h4' : 'h3';
+
+    committeeProps.forEach(prop => {
+      const titleText = prop.titel || prop.title || '';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (prop.titel && !prop.title)
+        ? svSpan(escapedTitle, lang)
+        : escapedTitle;
+      const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
+
+      // Use enhanced summary based on metadata
+      const summaryText = generateEnhancedSummary(prop, 'proposition', lang);
+      const isFromAPI = prop.summary || prop.notis;
+      const propDefaultVal = L(lang, 'propDefault');
+      const summaryHtml = (prop.titel && !prop.title && isFromAPI && summaryText !== propDefaultVal)
+        ? svSpan(escapeHtml(summaryText), lang)
+        : escapeHtml(summaryText);
+
+      // Show "Referred to" inline only in single-committee view (committee heading covers it otherwise)
+      const referredCommittee = prop.organ || prop.committee;
+      const referredLine = (!multiCommittee && referredCommittee)
+        ? `<br><strong>${L(lang, 'referredTo')}:</strong> ${escapeHtml(getCommitteeName(referredCommittee, lang))}`
+        : '';
+
+      const propSigVal = L(lang, 'propSignificance');
+      const readFullVal = L(lang, 'readFullProp');
+      const whyItMattersVal = L(lang, 'whyItMatters');
+
+      content += `
+    <div class="proposition-entry">
+      <${headingTag}>${titleHtml}</${headingTag}>
+      <p>${escapeHtml(String(propSigVal))} ${summaryHtml}${referredLine}</p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(prop, lang, 'prop')}</p>
+      <p><a href="${sanitizeUrl(prop.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+    </div>
+`;
+    });
+  });
+
+  // Policy implications section
+  content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
+  content += `    <div class="context-box">\n`;
+
+  // Count unique policy domains across all propositions for accurate "N policy domains" text
+  const allPropDomains = new Set<string>();
+  propositions.forEach(p => detectPolicyDomains(p, lang).forEach(d => allPropDomains.add(d)));
+  const domainCount = allPropDomains.size;
+
+  // Group by referred committee for government priority signal (separate from domain count)
+  const byCommittee: Record<string, number> = {};
+  propositions.forEach(p => {
+    const c = p.organ || p.committee || 'unknown';
+    byCommittee[c] = (byCommittee[c] || 0) + 1;
+  });
+
+  const implicationFn = L(lang, 'policyImplicationsContext') as string | ((propCount: number, domainCount: number) => string);
+  const implication = typeof implicationFn === 'function'
+    ? implicationFn(propositions.length, domainCount)
+    : `These ${propositions.length} propositions touch on ${domainCount} policy domains.`;
+  content += `      <p>${escapeHtml(String(implication))}</p>\n`;
+
+  // Government priority signal: identify the committee receiving the most propositions
+  const sortedCommittees = Object.entries(byCommittee)
+    .filter(([c]) => c !== 'unknown')
+    .sort(([, a], [, b]) => b - a);
+  if (sortedCommittees.length > 0) {
+    const [topCommittee, topCount] = sortedCommittees[0];
+    const topName = getCommitteeName(topCommittee, lang);
+    const isSv = lang === 'sv';
+    const priorityNote = isSv
+      ? `${escapeHtml(topName)} tar emot ${topCount} av propositionerna – ett tecken på att detta är ett centralt prioriterat område för regeringen denna session.`
+      : `${escapeHtml(topName)} receives ${topCount} of the propositions — a strong signal of government priority in this policy area this session.`;
+    content += `      <p>${priorityNote}</p>\n`;
+  }
+
+  content += `    </div>\n`;
+
+  return content;
+}
+
+export function generateMotionsContent(data: ArticleContentData, lang: Language | string): string {
+  const motions = data.motions || [];
+
+  let content = `<h2>${L(lang, 'oppMotions')}</h2>\n`;
+
+  if (motions.length === 0) {
+    content += `<p>${L(lang, 'noMotions')}</p>\n`;
+    return content;
+  }
+
+  // Analytical lede paragraph
+  const breakdownFn = L(lang, 'motionsBreakdown') as string | ((n: number) => string);
+  const breakdownText = typeof breakdownFn === 'function'
+    ? breakdownFn(motions.length)
+    : `${motions.length} new opposition motions filed.`;
+  content += `<p class="article-lede">${escapeHtml(String(breakdownText))}</p>\n`;
+
+  // Group motions by party for strategic analysis
+  const byParty: Record<string, RawDocument[]> = {};
+  motions.forEach(motion => {
+    const party = normalizePartyKey(motion.parti);
+    if (!byParty[party]) byParty[party] = [];
+    byParty[party].push(motion);
+  });
+
+  // Opposition strategy section with per-party analysis
+  const partyCount = Object.keys(byParty).filter(p => p !== 'other').length;
+  if (partyCount > 1) {
+    content += `\n    <h2>${L(lang, 'oppositionStrategy')}</h2>\n`;
+    const strategyFn = L(lang, 'oppositionStrategyContext') as string | ((n: number) => string);
+    const strategyContext = typeof strategyFn === 'function'
+      ? strategyFn(partyCount)
+      : `Motions from ${partyCount} different parties reveal the breadth of opposition political criticism and alternative policy agendas.`;
+    content += `    <p>${escapeHtml(String(strategyContext))}</p>\n`;
+    // Per-party analysis with domain focus
+    content += generateOppositionStrategySection(motions, lang);
+  }
+
+  // Group "med anledning av prop." motions by parent proposition to eliminate duplicate headings
+  const { grouped: groupedByProp, independent: independentMotions } = groupMotionsByProposition(motions);
+
+  if (groupedByProp.size > 0) {
+    content += `\n    <h2>${L(lang, 'responsesToProp')}</h2>\n`;
+    groupedByProp.forEach((propMotions, propRef) => {
+      // Extract the descriptive title portion that follows the prop ID
+      const firstTitle = propMotions[0]?.titel || propMotions[0]?.title || '';
+      const suffixMatch = firstTitle.match(PROP_TITLE_SUFFIX_REGEX);
+      const propTitle = suffixMatch?.[1]?.trim() || String(propRef);
+      const safePropRef = escapeHtml(String(propRef));
+      const safePropTitle = escapeHtml(propTitle);
+      content += `    <h3>Prop. ${safePropRef}: ${svSpan(safePropTitle, lang)}</h3>\n`;
+      // Individual motions inside a prop group use h4 to maintain h2→h3→h4 hierarchy
+      propMotions.forEach(m => {
+        const html = renderMotionEntry(m, lang);
+        content += html.replace(/<h3(\b[^>]*)?>/g, '<h4$1>').replace(/<\/h3>/g, '</h4>');
+      });
+    });
+  }
+
+  // Motions to render with thematic analysis:
+  // - when proposition groups exist: only independent motions (non-"med anledning av")
+  // - when no proposition groups: all motions (preserves existing thematic behaviour)
+  const thematicMotions = groupedByProp.size > 0 ? independentMotions : motions;
+
+  if (thematicMotions.length > 0) {
+    if (groupedByProp.size > 0) {
+      content += `\n    <h2>${L(lang, 'independentMotions')}</h2>\n`;
+    }
+
+    // Group motions by primary policy theme for thematic analysis
+    const byTheme: Record<string, RawDocument[]> = {};
+    thematicMotions.forEach(motion => {
+      const domains = detectPolicyDomains(motion, lang);
+      const theme = domains[0] || String(L(lang, 'generalMatters'));
+      if (!byTheme[theme]) byTheme[theme] = [];
+      byTheme[theme].push(motion);
+    });
+    const themeCount = Object.keys(byTheme).length;
+
+    if (themeCount > 1 && groupedByProp.size === 0) {
+      // Suppress "Thematic Analysis" h2 when already under an "Independent Motions" h2
+      // (groupedByProp.size === 0 means we are NOT in the split-section layout, so it is
+      // safe to emit the additional h2 without creating two consecutive section headers)
+      content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
+      Object.entries(byTheme).forEach(([theme, themeMotions]) => {
+        content += `\n    <h3>${escapeHtml(theme)} (${themeMotions.length})</h3>\n`;
+        themeMotions.forEach(motion => {
+          // Demote motion entry headings one level when inside a themed section
+          const entryHtml = renderMotionEntry(motion, lang);
+          const demotedHtml = entryHtml
+            .replace(/<h3(\b[^>]*)?>/g, '<h4$1>')
+            .replace(/<\/h3>/g, '</h4>');
+          content += demotedHtml;
+        });
+      });
+    } else {
+      // Single theme, no detection, or alongside proposition groups: flat list
+      thematicMotions.forEach(motion => { content += renderMotionEntry(motion, lang); });
+    }
+  }
+
+  // Party activity breakdown
+  if (partyCount > 0) {
+    content += `\n    <h2>${L(lang, 'coalitionDynamics')}</h2>\n`;
+    content += `    <div class="context-box">\n      <ul>\n`;
+    Object.entries(byParty).forEach(([party, partyMotions]) => {
+      if (party !== 'other') {
+        const detailFn = L(lang, 'partyMotionsFiled') as string | ((party: string, n: number) => string);
+        const detail = typeof detailFn === 'function'
+          ? detailFn(party, partyMotions.length)
+          : `${party}: ${partyMotions.length} motions filed`;
+        content += `        <li>${escapeHtml(String(detail))}</li>\n`;
+      }
+    });
+    content += `      </ul>\n    </div>\n`;
+  }
+
+  return content;
+}
+
+export function generateGenericContent(data: ArticleContentData, lang: Language | string): string {
+  const docs = data.documents || [];
+  if (docs.length === 0) {
+    return `<p>${L(lang, 'genericContent')}</p>`;
+  }
+
+  const cia = data.ciaContext;
+  let content = '';
+
+  // ── Overview lede (from document count) ────────────────────────────────
+  const overviewFn = L(lang, 'genericOverview') as string | ((n: number) => string);
+  const overview = typeof overviewFn === 'function'
+    ? overviewFn(docs.length)
+    : `During this period, ${docs.length} documents were processed in parliament.`;
+  content += `<p class="article-lede">${escapeHtml(String(overview))}</p>\n`;
+
+  // ── Group by document type ───────────────────────────────────────────────
+  const byType: Record<string, RawDocument[]> = {};
+  docs.forEach(doc => {
+    const docType = doc.doktyp || doc.documentType || 'other';
+    if (!byType[docType]) byType[docType] = [];
+    byType[docType].push(doc);
+  });
+
+  content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
+
+  // Render in significance order: propositions → committee reports → motions → rest
+  const typeOrder = ['prop', 'bet', 'skr', 'mot', 'other'];
+  const sortedTypes = [...Object.keys(byType)].sort((a, b) => {
+    const ai = typeOrder.indexOf(a); const bi = typeOrder.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
+
+  for (const docType of sortedTypes) {
+    const typeDocs = byType[docType] ?? [];
+    const otherDocsVal = L(lang, 'otherDocuments');
+    const otherDocsLabel = typeof otherDocsVal === 'string' ? otherDocsVal : 'Other documents';
+    const typeLabel = docType === 'mot' ? (lang === 'sv' ? 'Motioner' : 'Motions')
+      : docType === 'prop' ? (lang === 'sv' ? 'Propositioner' : 'Propositions')
+      : docType === 'bet' ? (lang === 'sv' ? 'Betänkanden' : 'Committee Reports')
+      : docType === 'skr' ? (lang === 'sv' ? 'Skrivelser' : 'Government Communications')
+      : docType === 'other' ? otherDocsLabel
+      : docType;
+
+    content += `\n    <h3>${escapeHtml(typeLabel)} (${typeDocs.length})</h3>\n`;
+
+    // ── Per-document deep analysis ───────────────────────────────────────
+    for (const doc of typeDocs) {
+      const titleText = doc.titel || doc.title || '';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (doc.titel && !doc.title)
+        ? svSpan(escapedTitle, lang)
+        : escapedTitle;
+
+      const analysis = generateDocumentIntelligenceAnalysis(doc, docType, cia, lang);
+
+      content += `    <div class="document-entry">\n`;
+      content += `      <h4>${titleHtml}</h4>\n`;
+      content += `      <p>${analysis}</p>\n`;
+      if (doc.url) {
+        content += `      <p><a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;
+      }
+      content += `    </div>\n`;
+    }
+  }
+
+  // ── Key takeaways ────────────────────────────────────────────────────────
+  content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
+  content += `    <div class="context-box">\n      <ul>\n`;
+
+  // Document type distribution
+  const typeDescriptions = sortedTypes.map(docType => {
+    const typeDocs = byType[docType] ?? [];
+    const label = docType === 'mot' ? 'motions'
+      : docType === 'prop' ? 'propositions'
+      : docType === 'bet' ? 'committee reports'
+      : docType === 'skr' ? 'government communications'
+      : docType;
+    return `${typeDocs.length} ${label}`;
+  });
+  if (typeDescriptions.length > 0) {
+    content += `        <li>${escapeHtml(typeDescriptions.join(', '))} processed this period</li>\n`;
+  }
+
+  // Policy domains — show labels only to keep the bullet concise
+  const allDomains = new Set<string>();
+  const enrichedCount = docs.filter(d => d.contentFetched).length;
+  docs.forEach(doc => {
+    detectPolicyDomains(doc, lang).forEach(d => allDomains.add(d));
+  });
+  if (allDomains.size > 0) {
+    const policyContextVal = L(lang, 'policyContext');
+    content += `        <li>${escapeHtml(String(policyContextVal))}: ${escapeHtml(Array.from(allDomains).slice(0, 4).join('; '))}</li>\n`;
+  }
+  if (enrichedCount > 0) {
+    content += `        <li><strong>Analysis depth:</strong> ${enrichedCount} of ${docs.length} documents analysed with full text</li>\n`;
+  }
+
+  // ── SECONDARY: CIA context only when it changes interpretation ───────────
+  // Razor-thin majority is actionable intelligence worth flagging once, in summary
+  if (cia && cia.coalitionStability.majorityMargin <= 2) {
+    content += `        <li><small class="cia-context">Historical context: the current ${cia.coalitionStability.majorityMargin}-seat majority means ` +
+      `any single defection or absence could reverse outcomes this week.</small></li>\n`;
+  }
+
+  content += `      </ul>\n    </div>\n`;
+
+  return content;
+}

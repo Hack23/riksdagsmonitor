@@ -1,0 +1,341 @@
+/**
+ * @module data-transformers/policy-analysis
+ * @description Policy domain detection and analysis for parliamentary
+ * documents. Detects fiscal, defence, environmental, education, healthcare,
+ * migration, EU, justice, labour, housing, transport, and trade domains
+ * using keyword matching against Swedish document titles.
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+import { escapeHtml } from '../html-utils.js';
+import type { Language } from '../types/language.js';
+import type { RawDocument } from './types.js';
+import { COMMITTEE_NAMES } from './constants.js';
+import {
+  L,
+  svSpan,
+  cleanMotionText,
+  isPersonProfileText,
+  extractKeyPassage,
+} from './helpers.js';
+
+/**
+ * Detect policy domains from a document's title and committee code.
+ * Returns a deduplicated array of localised domain strings.
+ */
+export function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): string[] {
+  const title = (doc.titel || doc.title || '').toLowerCase();
+  const organ = doc.organ || doc.committee || '';
+  const isSv = lang === 'sv';
+  const set = new Set<string>();
+
+  if (title.includes('skatt') || title.includes('tax') || title.includes('budget') || title.includes('finans')
+      || title.includes('makrotillsyn') || title.includes('macroprudential')
+      || title.includes('moms') || title.includes('mervärd') || title.includes('skattebedrägeri')
+      || title.includes('e-id') || title.includes('e-legitimation') || title.includes('verklig huvudman')
+      || title.includes('penningtvätt') || /\bbeneficial owner(ship)?\b/.test(title) || title.includes('fakturabedrägeri')
+      || organ === 'SkU' || organ === 'FiU')
+    set.add(isSv ? 'finanspolitik' : 'fiscal policy');
+  if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
+      || title.includes('vapen') || title.includes('beredskap') || title.includes('totalförsvar')
+      || title.includes('krigsmateriel') || title.includes('säkerhetsskydd') || title.includes('preparedness')
+      || title.includes('weapon')
+      || organ === 'FöU')
+    set.add(isSv ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
+  if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || title.includes('energi')
+      || title.includes('förnybart') || title.includes('renewable') || title.includes('koldioxid')
+      || title.includes('hållbar') || title.includes('sustain')
+      || organ === 'MJU')
+    set.add(isSv ? 'miljö- och klimatpolitik' : 'environmental and climate policy');
+  if (title.includes('utbildning') || title.includes('educ') || title.includes('skola') || title.includes('högskola')
+      || organ === 'UbU')
+    set.add(isSv ? 'utbildningspolitik' : 'education policy');
+  if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || title.includes('omsorg')
+      || organ === 'SoU')
+    set.add(isSv ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
+  if (title.includes('migration') || title.includes('invandring') || title.includes('asyl') || title.includes('utlänning')
+      || title.includes('uppehållstillstånd') || title.includes('medborgarskap') || title.includes('citizenship')
+      || title.includes('utvisning') || title.includes('statslöshet')
+      || organ === 'SfU')
+    set.add(isSv ? 'migrationspolitik' : 'migration policy');
+  if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign')
+      || organ === 'UU')
+    set.add(isSv ? 'EU- och utrikespolitik' : 'EU and foreign affairs');
+  if (title.includes('brott') || title.includes('straff') || title.includes('polis') || title.includes('justice')
+      || title.includes('kriminal') || organ === 'JuU')
+    set.add(isSv ? 'rättspolitik' : 'justice policy');
+  if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
+      || title.includes('facklig') || /\bilo\b/.test(title) || title.includes('trakasserier')
+      || title.includes('kollektivavtal') || title.includes('lönediskriminering') || title.includes('harassment')
+      || organ === 'AU')
+    set.add(isSv ? 'arbetsmarknadspolitik' : 'labour market policy');
+  if (title.includes('bostad') || title.includes('housing') || title.includes('hyra') || title.includes('bostadsrätt')
+      || title.includes('lagfart') || title.includes('fastighet')
+      || organ === 'CU')
+    set.add(isSv ? 'bostadspolitik' : 'housing policy');
+  if (title.includes('trafik') || title.includes('transport') || title.includes('järnväg') || title.includes('väg')
+      || organ === 'TU')
+    set.add(isSv ? 'transportpolitik' : 'transport policy');
+  if (title.includes('näring') || title.includes('handel') || title.includes('trade') || title.includes('industri')
+      || title.includes('företag') || title.includes('jordbruk') || title.includes('lantbruk')
+      || title.includes('veterinär') || title.includes('djur') || organ === 'NU')
+    set.add(isSv ? 'näringspolitik' : 'trade and industry policy');
+
+  return Array.from(set);
+}
+
+type _LangPair = { en: Record<string, string>; sv: Record<string, string> };
+
+/** Module-level constant — allocated once, shared across all calls. */
+const DOMAIN_ANALYSES: Record<string, _LangPair> = {
+    'fiscal policy': {
+      en: {
+        mot: 'Fiscal policy motions directly challenge the government\'s budget assumptions and signal opposition readiness to contest tax and spending priorities.',
+        bet: 'The Finance Committee\'s position on fiscal matters is usually decisive — the chamber almost always follows its recommendation on budgetary questions.',
+        default: 'Government fiscal proposals must clear rigorous Finance Committee scrutiny and align with Sweden\'s fiscal surplus rule, making the committee\'s verdict pivotal.'
+      },
+      sv: {
+        mot: 'Finanspolitiska motioner utmanar direkt regeringens budgetantaganden och signalerar oppositionens beredskap att bestrida skatte- och utgiftsprioriteringar.',
+        bet: 'Finansutskottets ståndpunkt i finanspolitiska frågor är i regel avgörande – kammaren följer nästan alltid utskottets rekommendation.',
+        default: 'Regeringens finanspolitiska förslag måste klara finansutskottets granskning och harmonisera med överskottsmålet för att nå bifall.'
+      }
+    },
+    'defence and security policy': {
+      en: {
+        mot: 'Defence motions carry heightened strategic significance following Sweden\'s NATO accession, pressing the government on long-term security commitments.',
+        bet: 'Committee reports on defence shape Sweden\'s military posture and NATO integration trajectory — decisions here have multi-decade consequences.',
+        default: 'Defence proposals engage Sweden\'s NATO obligations and cross-party consensus-building mechanisms for national security legislation.'
+      },
+      sv: {
+        mot: 'Försvarsrelaterade motioner har förhöjd strategisk betydelse efter Sveriges NATO-inträde och pressar regeringen om långsiktiga säkerhetsåtaganden.',
+        bet: 'Utskottsbetänkanden om försvar formar Sveriges militära inriktning och NATO-integration – besluten har konsekvenser i decennier.',
+        default: 'Försvarspropositioner engagerar Sveriges NATO-förpliktelser och mekanismer för brett partistöd inom säkerhetspolitiken.'
+      }
+    },
+    'environmental and climate policy': {
+      en: {
+        mot: 'Climate motions reflect growing parliamentary pressure for faster decarbonisation, often targeting specific industries or the pace of policy implementation.',
+        bet: 'The Environment Committee\'s recommendations balance climate ambition against economic competitiveness — its position sets the legislative baseline.',
+        default: 'Environmental proposals must navigate competing interests from industry, regional governments, and EU climate commitments, making parliamentary support critical.'
+      },
+      sv: {
+        mot: 'Klimatmotioner speglar växande parlamentariskt tryck för snabbare koldioxidminskning och riktar sig ofta mot specifika branscher.',
+        bet: 'Miljöutskottet väger klimatambition mot ekonomisk konkurrenskraft – dess rekommendation sätter lagstiftningens utgångspunkt.',
+        default: 'Miljöförslag måste navigera konkurrerande intressen från industrin, regionerna och EU:s klimatåtaganden.'
+      }
+    },
+    'healthcare policy': {
+      en: {
+        mot: 'Healthcare motions typically target gaps in regional service delivery, pressing for national minimum standards, additional funding, or new patient rights.',
+        bet: 'Social Affairs Committee reports on healthcare set the framework for Sweden\'s regionally delivered but nationally financed health system.',
+        default: 'Healthcare proposals require coordination between national government, regional councils, and professional bodies — a complexity that shapes the legislative timeline.'
+      },
+      sv: {
+        mot: 'Hälso- och sjukvårdsmotioner riktar sig typiskt mot brister i regionala tjänster och driver på för nationella miniminivåer eller nya patienträttigheter.',
+        bet: 'Socialutskottets betänkanden om hälso- och sjukvård sätter ramarna för det regionalt levererade men nationellt finansierade hälsosystemet.',
+        default: 'Hälso- och sjukvårdspropositioner kräver samordning mellan stat, regioner och professioner – en komplexitet som formar lagstiftningens tidslinje.'
+      }
+    },
+    'migration policy': {
+      en: {
+        mot: 'Migration motions reflect one of Sweden\'s most contested policy areas, with parties divided on asylum rules, integration requirements, and deportation procedures.',
+        bet: 'The Social Insurance Committee\'s migration reports navigate Sweden\'s EU law obligations and UN Refugee Convention commitments alongside domestic political pressures.',
+        default: 'Migration proposals must balance EU regulatory obligations with national political imperatives, making cross-party support essential for durable legislation.'
+      },
+      sv: {
+        mot: 'Migrationsmotioner speglar ett av Sveriges mest omtvistade politikområden, med partier delade om asylregler, integrationskrav och återvändanderutiner.',
+        bet: 'Socialförsäkringsutskottets migrationsbetänkanden navigerar Sveriges åtaganden enligt EU-rätten och FN:s flyktingkonvention.',
+        default: 'Migrationspropositioner måste balansera EU-rättsliga förpliktelser med nationella politiska imperativ.'
+      }
+    },
+    'EU and foreign affairs': {
+      en: {
+        mot: 'EU and foreign affairs motions signal parliamentary expectations for government negotiating positions — influential despite executive prerogative in external relations.',
+        bet: 'The Foreign Affairs Committee\'s reports on EU matters reflect Sweden\'s positioning within the bloc and may bind future negotiating postures.',
+        default: 'EU and foreign affairs proposals engage Sweden\'s treaty obligations and often require coordination with European partners before domestic enactment.'
+      },
+      sv: {
+        mot: 'EU- och utrikespolitiska motioner signalerar parlamentets förväntningar på regeringens förhandlingspositioner.',
+        bet: 'Utrikesutskottets betänkanden om EU-frågor speglar Sveriges positionering inom unionen och kan binda framtida förhandlingslinjer.',
+        default: 'EU- och utrikespropositioner engagerar Sveriges fördragsförpliktelser och kräver samordning med europeiska partner.'
+      }
+    },
+    'justice policy': {
+      en: {
+        mot: 'Justice motions address crime, sentencing, and policing — areas with high public salience where opposition parties frequently press for tougher or more targeted measures.',
+        bet: 'The Justice Committee shapes the criminal law framework; its reports on sentencing and policing directly affect prosecution practice and enforcement priorities.',
+        default: 'Justice proposals balance rule-of-law principles, human rights obligations, and public safety demands — requiring careful drafting to withstand constitutional scrutiny.'
+      },
+      sv: {
+        mot: 'Rättsliga motioner rör brott, straff och polis – frågor med hög allmän relevans där oppositionen ofta driver på för hårdare åtgärder.',
+        bet: 'Justitieutskottet formar den straffrättsliga ramen; dess betänkanden om straffsatser och polisverksamhet påverkar direkt åklagarnas praxis.',
+        default: 'Rättsliga propositioner balanserar rättsstatsprinciper, mänskliga rättigheter och allmän säkerhet.'
+      }
+    },
+    'labour market policy': {
+      en: {
+        mot: 'Labour market motions engage sensitive negotiations between employers, unions, and the state — every motion sends a signal to Sweden\'s social partners.',
+        bet: 'The Labour Committee\'s reports on workplace legislation must navigate collective bargaining autonomy while setting minimum statutory floors.',
+        default: 'Labour market proposals enter an arena where tripartite negotiation shapes the final legislative outcome as much as parliamentary votes.'
+      },
+      sv: {
+        mot: 'Arbetsmarknadsmotioner engagerar känsliga förhandlingar mellan arbetsgivare, fackförbund och stat – varje motion signalerar till parterna.',
+        bet: 'Arbetsmarknadsutskottets betänkanden om arbetsplatslagar måste navigera kollektivavtalens självständighet.',
+        default: 'Arbetsmarknadspropositioner träder in i en arena där trepartsförhandlingar formar det slutliga lagstiftningsresultatet.'
+      }
+    },
+    'housing policy': {
+      en: {
+        mot: 'Housing motions reflect structural tension between demand for affordable homes and constraints of planning law, rent regulation, and construction cost pressures.',
+        bet: 'The Civil Affairs Committee\'s housing reports address one of Sweden\'s most persistent policy challenges, where committee decisions unlock or block major regulatory change.',
+        default: 'Housing proposals must reconcile competing interests from municipalities, property owners, tenants, and developers — a coalition rarely achieved quickly.'
+      },
+      sv: {
+        mot: 'Bostadsmotioner speglar strukturell spänning mellan efterfrågan på prisvärda bostäder och begränsningarna i plan- och hyreslagstiftning.',
+        bet: 'Civilutskottets bostadsbetänkanden hanterar en av Sveriges mest ihållande politiska utmaningar.',
+        default: 'Bostadspropositioner måste balansera konkurrerande intressen från kommuner, fastighetsägare, hyresgäster och byggföretag.'
+      }
+    },
+    'transport policy': {
+      en: {
+        mot: 'Transport motions address infrastructure investment, road safety, and public transit — areas where regional and national interests frequently diverge.',
+        bet: 'The Transport Committee\'s reports guide Sweden\'s national infrastructure planning cycle, directly affecting long-term investment priorities.',
+        default: 'Transport proposals engage the national infrastructure budget, regional equity, and climate transition targets — all must be balanced in committee deliberation.'
+      },
+      sv: {
+        mot: 'Transportmotioner rör infrastrukturinvesteringar, trafiksäkerhet och kollektivtrafik – frågor där regionala och nationella intressen ofta divergerar.',
+        bet: 'Trafikutskottets betänkanden vägleder Sveriges nationella infrastrukturplanering och påverkar direkt långsiktiga investeringsprioriteringar.',
+        default: 'Transportpropositioner engagerar den nationella infrastrukturbudgeten, regional jämlikhet och klimatomställningsmål.'
+      }
+    },
+    'trade and industry policy': {
+      en: {
+        mot: 'Industry and trade motions often target competitiveness, innovation, or trade agreements — signalling party positions ahead of EU-level or bilateral negotiations.',
+        bet: 'The Committee on Industry and Trade shapes Sweden\'s business environment through reports that set conditions for investment, innovation, and exports.',
+        default: 'Industry and trade proposals engage international commitments, EU single-market rules, and domestic competitiveness imperatives simultaneously.'
+      },
+      sv: {
+        mot: 'Näringspolitiska motioner riktar sig ofta mot konkurrenskraft, innovation eller handelsavtal och signalerar partipositioner inför förhandlingar.',
+        bet: 'Näringsutskottets betänkanden formar Sveriges affärsmiljö och sätter villkoren för investeringar och export.',
+        default: 'Näringspolitiska propositioner engagerar internationella åtaganden, EU:s inre marknadsregler och inhemsk konkurrenskraft.'
+      }
+    },
+    'education policy': {
+      en: {
+        mot: 'Education motions reflect deep disagreements on school standards, teacher pay, and the role of independent schools — one of Sweden\'s most contested domestic debates.',
+        bet: 'The Education Committee\'s reports directly shape curriculum standards, funding formulas, and school regulation — decisions with long generational consequences.',
+        default: 'Education proposals must balance national curriculum standards with municipal delivery autonomy and the contested role of private providers in the Swedish school system.'
+      },
+      sv: {
+        mot: 'Utbildningsmotioner speglar djupa meningsskiljaktigheter om skolstandard, lärarlöner och friskolornas roll.',
+        bet: 'Utbildningsutskottets betänkanden formar direkt läroplaner, finansieringsmodeller och skolreglering.',
+        default: 'Utbildningspropositioner måste balansera nationella läroplaner med kommunalt leveransansvar och de privata aktörernas omstridda roll.'
+      }
+    }
+};
+
+/** Module-level constant — allocated once, shared across all calls. */
+const EN_DOMAIN_MAP: Record<string, string> = {
+  'finanspolitik': 'fiscal policy',
+  'försvars- och säkerhetspolitik': 'defence and security policy',
+  'miljö- och klimatpolitik': 'environmental and climate policy',
+  'utbildningspolitik': 'education policy',
+  'hälso- och sjukvårdspolitik': 'healthcare policy',
+  'migrationspolitik': 'migration policy',
+  'EU- och utrikespolitik': 'EU and foreign affairs',
+  'rättspolitik': 'justice policy',
+  'arbetsmarknadspolitik': 'labour market policy',
+  'bostadspolitik': 'housing policy',
+  'transportpolitik': 'transport policy',
+  'näringspolitik': 'trade and industry policy'
+};
+
+/**
+ * Return a substantive domain-specific and type-specific analysis sentence.
+ * Each of 12 policy domains has tailored text for motions (mot), committee
+ * reports (bet), and propositions/default, in both English and Swedish.
+ */
+export function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: Language | string): string {
+  const isSv = lang === 'sv';
+
+  const lookupKey = EN_DOMAIN_MAP[primaryDomain] ?? primaryDomain;
+  const entry = DOMAIN_ANALYSES[lookupKey];
+  if (!entry) return '';
+
+  const langEntry = isSv ? entry.sv : entry.en;
+  const typeKey = (doktyp === 'mot' || doktyp === 'bet') ? doktyp : 'default';
+  return langEntry[typeKey] ?? langEntry['default'] ?? '';
+}
+
+/**
+ * Generate policy significance context for a document based on its metadata.
+ * Uses the localised policySignificanceTouches label plus a domain-specific
+ * analysis sentence instead of generic boilerplate.
+ * Falls back to a committee-specific sentence (derived from COMMITTEE_NAMES)
+ * when no domain keyword matches but the document's organ field identifies a
+ * known Riksdag committee.
+ * @param impliedDoktyp - document type inferred from the calling context
+ *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
+ */
+export function generatePolicySignificance(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
+  const domains = detectPolicyDomains(doc, lang);
+
+  if (domains.length > 0) {
+    const domainsStr = domains.join(', ');
+    const touchesFn = L(lang, 'policySignificanceTouches') as string | ((d: string) => string);
+    const baseText = typeof touchesFn === 'function'
+      ? touchesFn(escapeHtml(domainsStr))
+      : `Touches on ${escapeHtml(domainsStr)}.`;
+
+    const doktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
+    const deepAnalysis = getDomainSpecificAnalysis(domains[0] ?? '', doktyp, lang);
+    return deepAnalysis ? `${baseText} ${deepAnalysis}` : baseText;
+  }
+
+  // Secondary: committee-specific context when organ is present but no domain matched
+  const organ = doc.organ || doc.committee || '';
+  if (organ) {
+    const organEntry = COMMITTEE_NAMES[organ];
+    if (organEntry) {
+      const isSv = lang === 'sv';
+      return isSv
+        ? `Ärendet behandlas av ${organEntry.sv.toLowerCase()} för parlamentarisk beredning.`
+        : `This matter is referred to the ${organEntry.en} for parliamentary examination.`;
+    }
+  }
+
+  // Generic significance when no domain detected and no known committee
+  const genericVal = L(lang, 'policySignificanceGeneric');
+  return typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
+}
+
+/**
+ * Generate deep policy analysis for a single document entry.
+ * Only uses `fullText` / `fullContent` (enriched content fetched separately)
+ * as the passage source — summary/notis are already shown in the summary line
+ * above in structured views and must not be duplicated here.
+ * Falls back to generatePolicySignificance when no enriched text is available.
+ * @param impliedDoktyp - document type inferred from the calling context
+ *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
+ */
+export function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
+  const effectiveDoktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
+  const rawText = doc.fullText || doc.fullContent || '';
+  if (rawText && !isPersonProfileText(rawText)) {
+    const cleanedText = (effectiveDoktyp === 'mot' && rawText.includes('Motion till riksdagen'))
+      ? cleanMotionText(rawText)
+      : rawText;
+    const passage = extractKeyPassage(cleanedText, 300);
+    if (passage) {
+      const isSwedishSource = !!(doc.titel && !doc.title);
+      const passageHtml = isSwedishSource
+        ? svSpan(escapeHtml(passage), lang)
+        : escapeHtml(passage);
+      return `${passageHtml} ${generatePolicySignificance(doc, lang, impliedDoktyp)}`;
+    }
+  }
+  return generatePolicySignificance(doc, lang, impliedDoktyp);
+}
+
