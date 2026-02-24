@@ -134,7 +134,7 @@ Labels for security and compliance frameworks:
 | `cis-controls` | ![#e53935](https://via.placeholder.com/15/e53935/000000?text=+) | CIS Controls |
 
 **Auto-applies when:**
-- Changing `SECURITY_ARCHITECTURE.md`, `THREAT_MODEL.md`, `ISMS_COMPLIANCE_AUDIT_REPORT.md`
+- Changing `SECURITY_ARCHITECTURE.md`, `THREAT_MODEL.md`, `CRA-ASSESSMENT.md`
 - Modifying `.github/skills/iso-27001-controls/`, `.github/skills/nist-csf-mapping/`
 - PR title starts with `isms:`, `iso-27001:`, `nist:`, `cis:`
 

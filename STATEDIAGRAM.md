@@ -1068,7 +1068,7 @@ All state transitions MUST be logged with:
 | **WORKFLOWS.md** | Agentic Workflow States, CI/CD Pipeline | GitHub Actions workflow execution |
 | **THREAT_MODEL.md** | All state diagrams | State transition security risks |
 | **TRANSLATION_GUIDE.md** | Translation Validation States | Multi-language content workflow |
-| **MODULAR_NEWS_ARCHITECTURE.md** | Article Lifecycle States | News generation architecture |
+| **FLOWCHART.md** | Article Lifecycle States | Process and data flow diagrams |
 
 ### 9.2 Architecture Component State Mapping
 

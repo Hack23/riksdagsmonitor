@@ -243,7 +243,7 @@ isms:
               - "SECURITY_ARCHITECTURE.md"
               - "THREAT_MODEL.md"
               - "FUTURE_SECURITY_ARCHITECTURE.md"
-              - "ISMS_COMPLIANCE_AUDIT_REPORT.md"
+              - "CRA-ASSESSMENT.md"
               - "BCPPlan.md"
               - ".github/skills/hack23-isms-compliance/**"
       - title: "isms:*"
