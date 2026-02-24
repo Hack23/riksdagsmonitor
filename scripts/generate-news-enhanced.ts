@@ -576,8 +576,8 @@ async function writeSingleArticle(html: string, slug: string, lang: Language, ar
   const slugParts: string[] = slug.split('-');
   const inferredType: string = slugParts.length >= 4 ? slugParts.slice(3).join('-') : slug;
   const qualityScore: ArticleQualityScore = validateArticleQuality(translatedHtml, lang, articleType ?? inferredType, filename);
-  await writeArticle(translatedHtml, filename);
   stats.qualityScores.push(qualityScore);
+  await writeArticle(translatedHtml, filename);
   stats.generated += 1;
   stats.articles.push(filename);
   return filename;
