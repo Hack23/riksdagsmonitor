@@ -2255,11 +2255,11 @@ function renderMotionEntry(motion: RawDocument, lang: Language | string): string
   let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
   // Fire fallback when EITHER author or party is missing — covers the party-only sentinel case
   // where intressent_namn is valid but parti was 'Unknown' and stripped to ''.
-  if (!authorName || authorName === 'Unknown' || !partyName) {
+  if (!authorName || !partyName) {
     const rawText = motion.undertitel || motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
     const parsed = parseMotionAuthorParty(rawText);
     if (parsed) {
-      if (parsed.author && (!authorName || authorName === 'Unknown')) authorName = parsed.author;
+      if (parsed.author && !authorName) authorName = parsed.author;
       if (parsed.party && !partyName) partyName = parsed.party;
     }
   }
