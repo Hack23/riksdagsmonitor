@@ -11,15 +11,15 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-Security_Architect-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--18-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
 ---
 
-**Document Version:** 1.2  
-**Last Updated:** 2026-02-18  
+**Document Version:** 2.0  
+**Last Updated:** 2026-02-24  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)  
 **Review Cycle:** Quarterly
@@ -28,7 +28,7 @@
 
 ## 🎯 Executive Summary
 
-This document outlines the future security architecture for Riksdagsmonitor over the next 3-5 years. The roadmap focuses on **proactive security evolution** rather than reactive patches, ensuring the web platform with interactive Chart.js/D3.js dashboards remains secure against emerging threats including post-quantum cryptography, AI-powered attacks, and advanced persistent threats.
+This document outlines the future security architecture for Riksdagsmonitor over the next 3-11 years (2026-2037). The roadmap focuses on **proactive security evolution** rather than reactive patches, ensuring the web platform with interactive Chart.js/D3.js dashboards remains secure against emerging threats including post-quantum cryptography, AI-powered attacks, and advanced persistent threats.
 
 **Strategic Goals:**
 - 🔐 **Post-Quantum Readiness** - Cryptographic agility before quantum computers threaten current algorithms
@@ -829,6 +829,61 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 
 ---
 
+## 🤖 AI/LLM Security Evolution (2026-2037)
+
+### AI Model Security Trajectory
+
+**Current State (2026):** Anthropic Claude Opus 4.6 via Amazon Bedrock with safe-outputs validation
+
+**Security Implications of AI Evolution:**
+
+| Period | AI Model Level | Security Challenges | Mitigations |
+|--------|---------------|-------------------|-------------|
+| 2026-2027 | Opus 4.6-5.x (minor updates ~2.3mo) | Prompt injection, model hallucination, bias | Safe-outputs validation, human review, bias testing |
+| 2028-2029 | Opus 6.x-7.x (annual major upgrades) | Autonomous agent risks, multi-modal attack vectors | Agent sandboxing, output filtering, behavioral monitoring |
+| 2030-2032 | Opus 8.x-10.x / Pre-AGI | AI-powered adversarial attacks, deepfake political content | AI-augmented SIEM, deepfake detection, content provenance |
+| 2033-2035 | Near-AGI systems | Autonomous threat actors, AI arms race | Zero-trust AI, formal verification, cryptographic AI attestation |
+| 2036-2037 | AGI / Post-AGI era | Superhuman threat actors, unknown attack vectors | Quantum-resistant crypto, AI alignment verification, democratic safeguards |
+
+### AI Security Controls Roadmap
+
+**Phase 1 (2026-2027): Foundation**
+- ✅ Amazon Bedrock guardrails and content filtering
+- ✅ Safe-outputs validation for all agent actions
+- ✅ Model output auditing and logging
+- 🔄 Prompt injection detection and prevention
+- 🔄 AI model version pinning with rollback capability
+
+**Phase 2 (2028-2030): Advanced Protection**
+- 🔴 AI-powered threat detection (behavioral analytics)
+- 🔴 Multi-modal content provenance (C2PA standard)
+- 🔴 Autonomous agent containment and monitoring
+- 🔴 AI model supply chain security (model signing, attestation)
+
+**Phase 3 (2031-2033): Pre-AGI Security**
+- 🔴 Formal verification of AI agent behavior
+- 🔴 Cryptographic attestation of AI-generated content
+- 🔴 AI alignment monitoring and enforcement
+- 🔴 Decentralized AI security governance
+
+**Phase 4 (2034-2037): AGI-Era Security**
+- 🔴 Post-quantum cryptography fully deployed
+- 🔴 AI-to-AI security protocols
+- 🔴 Democratic oversight mechanisms for AGI systems
+- 🔴 Global threat intelligence federation
+- 🔴 Autonomous security response with human override
+
+### LLM Competitor Security Considerations
+
+**Multi-Model Security Strategy:**
+- Evaluate security posture of each model provider (Anthropic, OpenAI, Google, Meta) at every major release
+- Maintain model-agnostic security controls that work across all providers via Amazon Bedrock
+- Monitor for model-specific vulnerabilities disclosed by security researchers
+- Continuous benchmarking of AI safety features every ~2.3 months aligned with minor model updates
+- Prepare for potential paradigm shifts (quantum AI, neuromorphic computing) requiring new security frameworks
+
+---
+
 ## 📖 References
 
 ### ISMS Documentation
@@ -863,7 +918,7 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 <p align="center">
   <strong>Document Control</strong><br>
   Repository: <a href="https://github.com/Hack23/riksdagsmonitor">https://github.com/Hack23/riksdagsmonitor</a><br>
-  Path: /FUTURE_SECURITY_ARCHITECTURE.md | Classification: Public | Next Review: 2026-05-18<br>
+  Path: /FUTURE_SECURITY_ARCHITECTURE.md | Classification: Public | Next Review: 2026-05-24<br>
   Change Management: Requires Security Architect approval for major revisions
 </p>
 

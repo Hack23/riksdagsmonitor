@@ -16,8 +16,8 @@
 [![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=typescript)](https://riksdagsmonitor.com/docs/api/)
 [![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest)](https://riksdagsmonitor.com/docs/coverage/)
 
-**Document Version:** 5.0
-**Last Updated:** 2026-02-21
+**Document Version:** 5.1
+**Last Updated:** 2026-02-24
 **Classification:** Public
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -27,7 +27,7 @@ This document describes the Continuous Integration and Continuous Deployment (CI
 
 The project has been migrated from JavaScript to **TypeScript** (27 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 24's native type-stripping for scripts.
 
-**Total Workflows: 29** (23 standard YAML + 3 agentic markdown sources + 3 compiled lock files)
+**Total Workflows: 44** (24 standard YAML + 10 agentic markdown sources + 10 compiled lock files)
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 **ISMS Compliance:** ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1
 
@@ -108,7 +108,7 @@ graph TD
     style M fill:#607d8b
 ```
 
-## Complete Workflow Inventory (29 Files)
+## Complete Workflow Inventory (44 Files)
 
 ### 🔐 Security & Compliance (5 workflows)
 
@@ -150,14 +150,21 @@ graph TD
 | 4.2 | Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
 | 4.3 | Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 
-### 🤖 Agentic Workflows (7 files: 3 sources + 3 locks + 1 compiler)
+### 🤖 Agentic Workflows (21 files: 10 sources + 10 locks + 1 compiler)
 
 | # | Workflow | Source | Lock | Purpose |
 |---|----------|--------|------|---------|
 | 5.1 | News Article Generator | `news-article-generator.md` | `news-article-generator.lock.yml` | Daily news generation |
 | 5.2 | News Evening Analysis | `news-evening-analysis.md` | `news-evening-analysis.lock.yml` | Evening analysis reports |
 | 5.3 | News Realtime Monitor | `news-realtime-monitor.md` | `news-realtime-monitor.lock.yml` | Real-time political monitoring |
-| 5.4 | Compile Agentic Workflows | `compile-agentic-workflows.yml` | — | Compile .md → .lock.yml |
+| 5.4 | News Motions | `news-motions.md` | `news-motions.lock.yml` | Motion tracking and reporting |
+| 5.5 | News Committee Reports | `news-committee-reports.md` | `news-committee-reports.lock.yml` | Committee report coverage |
+| 5.6 | News Weekly Review | `news-weekly-review.md` | `news-weekly-review.lock.yml` | Weekly political summary |
+| 5.7 | News Monthly Review | `news-monthly-review.md` | `news-monthly-review.lock.yml` | Monthly political review |
+| 5.8 | News Week Ahead | `news-week-ahead.md` | `news-week-ahead.lock.yml` | Upcoming week preview |
+| 5.9 | News Month Ahead | `news-month-ahead.md` | `news-month-ahead.lock.yml` | Upcoming month preview |
+| 5.10 | News Propositions | `news-propositions.md` | `news-propositions.lock.yml` | Government proposition coverage |
+| 5.11 | Compile Agentic Workflows | `compile-agentic-workflows.yml` | — | Compile .md → .lock.yml |
 
 ### 📊 Monitoring & Infrastructure (2 workflows)
 
@@ -389,7 +396,7 @@ Daily validation of CIA data exports against JSON schemas. Uses `scripts/validat
 
 ### 8. Agentic News Generation Workflows
 
-Three agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with Claude to generate political news content.
+Ten agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with Claude to generate political news content.
 
 #### 8.1 News Article Generator (`news-article-generator.md`)
 
@@ -412,7 +419,35 @@ Generates daily political news articles from Swedish Riksdag/Government data via
 
 Real-time political event monitoring with breaking news detection.
 
-#### 8.4 Compile Agentic Workflows (`compile-agentic-workflows.yml`)
+#### 8.4 News Motions (`news-motions.md`)
+
+Tracks and reports on parliamentary motions filed by members.
+
+#### 8.5 News Committee Reports (`news-committee-reports.md`)
+
+Coverage of committee reports and deliberations across Riksdag committees.
+
+#### 8.6 News Weekly Review (`news-weekly-review.md`)
+
+Weekly summary of political developments across all parliamentary activities.
+
+#### 8.7 News Monthly Review (`news-monthly-review.md`)
+
+Monthly comprehensive political review with trend analysis.
+
+#### 8.8 News Week Ahead (`news-week-ahead.md`)
+
+Preview of upcoming parliamentary week including scheduled debates and votes.
+
+#### 8.9 News Month Ahead (`news-month-ahead.md`)
+
+Preview of upcoming month's parliamentary calendar and expected developments.
+
+#### 8.10 News Propositions (`news-propositions.md`)
+
+Coverage of government propositions and their parliamentary journey.
+
+#### 8.11 Compile Agentic Workflows (`compile-agentic-workflows.yml`)
 
 Compiles `.md` workflow sources to `.lock.yml` using `gh aw compile`. Creates GitHub issues if manual compilation is needed.
 
@@ -787,7 +822,7 @@ git commit -m "chore: recompile agentic workflow lock files"
 
 ---
 
-**Document Version:** 5.0
-**Last Updated:** 2026-02-21
+**Document Version:** 5.1
+**Last Updated:** 2026-02-24
 **Classification:** Public
 **Owner:** Hack23 AB

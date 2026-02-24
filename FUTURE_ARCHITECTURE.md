@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--20-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
@@ -25,7 +25,7 @@
   <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor.svg?type=shield" alt="FOSSA"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-02-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-24 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -61,7 +61,7 @@
 
 ## 📊 Executive Summary
 
-This document outlines the comprehensive architectural evolution roadmap for Riksdagsmonitor over the next 3-7 years (2026-2032+). The vision transforms the platform from a static HTML/CSS website into an **AI-enhanced political intelligence platform** built entirely on **AWS serverless architecture** with **zero infrastructure management**.
+This document outlines the comprehensive architectural evolution roadmap for Riksdagsmonitor over the next 3-11 years (2026-2037). The vision transforms the platform from a static HTML/CSS website into an **AI-enhanced political intelligence platform** built entirely on **AWS serverless architecture** with **zero infrastructure management**.
 
 **AWS Serverless Strategy:**
 - ☁️ **Single Cloud Provider** - AWS only per [Hack23 ISMS SUPPLIER.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/SUPPLIER.md)
@@ -97,6 +97,9 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 - **2026 Q4-2027 Q1:** AWS Lambda + AppSync for serverless GraphQL API
 - **2027 Q2-Q4:** Neptune Serverless + Bedrock Knowledge Bases for semantic search
 - **2028+:** AWS Amplify mobile apps + public API via AppSync
+- **2029-2030:** Opus 7.x-8.x integration, near-expert political analysis, 50+ language support
+- **2031-2033:** Pre-AGI architecture adaptation, global parliament coverage (50+ parliaments)
+- **2034-2037:** AGI-era platform evolution, 195 parliament network, real-time democracy index
 
 **Current State (2026 Q1):**
 - ✅ Static HTML/CSS website (14 languages)
@@ -1912,12 +1915,38 @@ Riksdagsmonitor's future architecture represents a strategic evolution from a st
 
 **Path Forward**: Success depends on disciplined execution of the technical roadmap, continuous security validation per ISO 27001/NIST CSF 2.0/CIS Controls frameworks, and preservation of the agentic orchestration architecture that distinguishes riksdagsmonitor from conventional platforms. The hybrid model positions riksdagsmonitor as a reference implementation for intelligent civic technology, demonstrating how advanced AI agents and cloud infrastructure combine to serve democratic transparency at scale. Future enhancements will extend geographic coverage to Nordic parliaments (Denmark, Norway, Finland), expand language support to 30+ languages via Bedrock's multilingual capabilities, and deepen intelligence analysis through SageMaker election forecasting models. The architecture provides a sustainable foundation for riksdagsmonitor's evolution as Sweden's premier political accountability platform for the next decade.
 
+### 🤖 AI/LLM Evolution Architecture Strategy (2026-2037)
+
+**Anthropic Opus Model Cadence:**
+- **Minor updates:** Every ~2.3 months (Opus 4.7, 4.8, 4.9...) — backward-compatible, incremental capability improvements
+- **Major versions:** Annually (Opus 5.0 in 2027, 6.0 in 2028, 7.0 in 2029... through 2037 or successor paradigm)
+- **Architecture principle:** Model-agnostic service layer via Amazon Bedrock abstracts all model dependencies
+
+**Extended Architecture Roadmap:**
+
+| Phase | Period | AI Model | Architecture Impact |
+|-------|--------|----------|-------------------|
+| Enhanced Journalism | 2026 Q2-Q3 | Opus 4.6-4.9 | Bedrock integration, agentic content generation |
+| Predictive Analytics | 2027 | Opus 5.x | SageMaker Serverless, real-time prediction pipelines |
+| Semantic Intelligence | 2028 | Opus 6.x | Neptune Serverless knowledge graphs, multi-modal content |
+| Conversational AI | 2029 | Opus 7.x | Amazon Lex, Bedrock Agents, natural language interfaces |
+| Near-Expert Analysis | 2030 | Opus 8.x | Autonomous political analysis, 50+ language native support |
+| Global Coverage | 2031-2033 | Opus 9-10.x / Pre-AGI | 50+ parliament architecture, federated data mesh |
+| AGI-Era Platform | 2034-2037 | Post-Opus / AGI | 195 parliament network, autonomous intelligence, quantum-ready |
+
+**Competitor & Paradigm Shift Considerations:**
+- **Multi-model via Bedrock:** Architecture supports switching between Anthropic, Meta (Llama), Amazon (Nova), and future providers
+- **Quarterly evaluation:** Benchmark competitors (OpenAI, Google, Meta, EU sovereign AI) at every major release
+- **Open-source fallback:** Maintain self-hosted model capability for resilience and sovereignty
+- **Paradigm readiness:** Architecture abstractions prepare for quantum computing, neuromorphic AI, and other transformative technologies
+- **AGI safeguards:** Human oversight, democratic accountability, and ethical AI governance built into every architectural layer
+
 ---
 
 **📋 Document Control:**  
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-20  
+**📅 Effective Date:** 2026-02-24  
 **⏰ Next Review:** 2026-05-20  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![AWS Well-Architected](https://img.shields.io/badge/AWS-Well_Architected-FF9900?style=flat-square&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/architecture/well-architected/)
