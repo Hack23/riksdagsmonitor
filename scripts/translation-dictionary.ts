@@ -711,18 +711,30 @@ export function translatePhrase(text: string, targetLang: Language): string {
 const TRANSLATABLE_SV_SPAN_REGEX =
   /<span\s+((?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*)>([\s\S]*?)<\/span>/g;
 
+/**
+ * Matches any `<span …lang="sv"…>…</span>` span — both bare and with data-translate.
+ * Used for non-Swedish articles to translate ALL Swedish text in a single pass.
+ */
+const ANY_SV_SPAN_REGEX =
+  /<span\s+((?=[^>]*lang="sv")[^>]*)>([\s\S]*?)<\/span>/g;
+
 export function translateSwedishContent(html: string, targetLang: Language): string {
-  // String.prototype.replace resets lastIndex on a global regex before each call,
-  // so TRANSLATABLE_SV_SPAN_REGEX can be used directly without cloning.
-  return html.replace(TRANSLATABLE_SV_SPAN_REGEX, (_match: string, attrs: string, inner: string): string => {
-    // Remove data-translate marker but preserve all other attributes (e.g. lang="sv" for accessibility)
+  if (targetLang === 'sv') {
+    // For Swedish articles: only strip data-translate markers, keep text unchanged
+    return html.replace(TRANSLATABLE_SV_SPAN_REGEX, (_match: string, attrs: string, inner: string): string => {
+      const cleanedAttrs = attrs.replace(/\s*data-translate=(?:"true"|'true')/, '').trim();
+      if (cleanedAttrs.length > 0) {
+        return `<span ${cleanedAttrs}>${inner}</span>`;
+      }
+      return `<span>${inner}</span>`;
+    });
+  }
+
+  // For non-Swedish articles: translate ALL <span lang="sv"> spans in one pass
+  return html.replace(ANY_SV_SPAN_REGEX, (_match: string, attrs: string, inner: string): string => {
+    // Remove data-translate marker if present, keep lang="sv" for accessibility
     const cleanedAttrs = attrs.replace(/\s*data-translate=(?:"true"|'true')/, '').trim();
-
-    const translatedInner =
-      targetLang === 'sv'
-        ? inner
-        : translatePhrase(inner, targetLang);
-
+    const translatedInner = translatePhrase(inner, targetLang);
     if (cleanedAttrs.length > 0) {
       return `<span ${cleanedAttrs}>${translatedInner}</span>`;
     }

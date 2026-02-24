@@ -174,6 +174,7 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
+  generateContentTitle,
   type RawDocument,
 } from './data-transformers.js';
 import { generateArticleHTML } from './article-template.js';
@@ -746,7 +747,7 @@ async function generateCommitteeReports(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_betankanden', 'get_dokument_innehall']);
 
-      const titles: Record<Language, TitleSet> = {
+      const defaultTitles: Record<Language, TitleSet> = {
         en: { title: `Committee Reports: Parliamentary Priorities This Week`, subtitle: `Analysis of ${reports.length} committee reports revealing Riksdag priorities for the current session` },
         sv: { title: `Utskottsbetänkanden: Riksdagens prioriteringar denna vecka`, subtitle: `Analys av ${reports.length} utskottsbetänkanden som avslöjar riksdagens prioriteringar` },
         da: { title: `Udvalgsbetænkninger: Parlamentets prioriteringer denne uge`, subtitle: `Analyse af ${reports.length} udvalgsbetænkninger` },
@@ -763,7 +764,8 @@ async function generateCommitteeReports(): Promise<GenerationResult> {
         zh: { title: `委员会报告：本周议会优先事项`, subtitle: `${reports.length}份委员会报告分析` }
       };
 
-      const langTitles: TitleSet = titles[lang] || titles.en;
+      const langTitles: TitleSet = generateContentTitle(typedReports ?? [], lang, 'committee-reports')
+        ?? defaultTitles[lang] ?? defaultTitles.en;
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -830,7 +832,7 @@ async function generatePropositions(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_propositioner', 'get_dokument_innehall']);
 
-      const titles: Record<Language, TitleSet> = {
+      const defaultTitles: Record<Language, TitleSet> = {
         en: { title: `Government Propositions: Policy Priorities This Week`, subtitle: `Analysis of ${propositions.length} government propositions shaping the legislative agenda` },
         sv: { title: `Regeringens propositioner: Veckans prioriteringar`, subtitle: `Analys av ${propositions.length} propositioner som formar den lagstiftande agendan` },
         da: { title: `Regeringsforslag: Politiske prioriteringer denne uge`, subtitle: `Analyse af ${propositions.length} regeringsforslag` },
@@ -847,7 +849,8 @@ async function generatePropositions(): Promise<GenerationResult> {
         zh: { title: `政府提案：本周政策优先事项`, subtitle: `${propositions.length}份政府提案分析` }
       };
 
-      const langTitles: TitleSet = titles[lang] || titles.en;
+      const langTitles: TitleSet = generateContentTitle(typedPropositions ?? [], lang, 'propositions')
+        ?? defaultTitles[lang] ?? defaultTitles.en;
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -914,7 +917,7 @@ async function generateMotions(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_motioner', 'get_dokument_innehall']);
 
-      const titles: Record<Language, TitleSet> = {
+      const defaultTitles: Record<Language, TitleSet> = {
         en: { title: `Opposition Motions: Battle Lines This Week`, subtitle: `Analysis of ${motions.length} opposition motions revealing parliamentary fault lines` },
         sv: { title: `Oppositionsmotioner: Veckans stridslinjer`, subtitle: `Analys av ${motions.length} oppositionsmotioner som avslöjar parlamentariska skiljelinjer` },
         da: { title: `Oppositionsforslag: Ugens kamppladser`, subtitle: `Analyse af ${motions.length} oppositionsforslag` },
@@ -931,7 +934,8 @@ async function generateMotions(): Promise<GenerationResult> {
         zh: { title: `反对党动议：本周对立格局`, subtitle: `${motions.length}份反对党动议分析` }
       };
 
-      const langTitles: TitleSet = titles[lang] || titles.en;
+      const langTitles: TitleSet = generateContentTitle(typedMotions ?? [], lang, 'motions')
+        ?? defaultTitles[lang] ?? defaultTitles.en;
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,

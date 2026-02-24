@@ -1675,9 +1675,10 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
       const eventTime = event.time || event.tid || 'Expected';
       const eventTitle = event.title || event.titel || 'Event';
 
-      // Mark Swedish API titles for LLM translation post-processing
+      // Mark Swedish API titles for translation post-processing
       const escapedEventTitle = escapeHtml(eventTitle);
-      const titleHtml = (event.titel && !event.title)
+      const eventLooksSwedish = /[åäöÅÄÖ]/.test(eventTitle);
+      const titleHtml = (event.titel || eventLooksSwedish)
         ? svSpan(escapedEventTitle, lang)
         : escapedEventTitle;
 
@@ -1722,7 +1723,8 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
       const rec = doc as Record<string, string>;
       const titleText = rec['titel'] || rec['title'] || rec['doktyp'] || 'Document';
       const escapedTitle = escapeHtml(titleText);
-      const titleHtml = (rec['titel'] && !rec['title'])
+      const docLooksSwedish = /[åäöÅÄÖ]/.test(titleText);
+      const titleHtml = (rec['titel'] || docLooksSwedish)
         ? svSpan(escapedTitle, lang)
         : escapedTitle;
 
@@ -1882,7 +1884,8 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
     committeeReports.forEach(report => {
       const titleText = report.titel || report.title || '';
       const escapedTitle = escapeHtml(titleText);
-      const titleHtml = (report.titel && !report.title)
+      const looksSwedish = /[åäöÅÄÖ]/.test(titleText) || /^(med anledning|om |till )/i.test(titleText);
+      const titleHtml = (report.titel || looksSwedish)
         ? svSpan(escapedTitle, lang)
         : escapedTitle;
       const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
@@ -1985,7 +1988,8 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     committeeProps.forEach(prop => {
       const titleText = prop.titel || prop.title || '';
       const escapedTitle = escapeHtml(titleText);
-      const titleHtml = (prop.titel && !prop.title)
+      const looksSwedish = /[åäöÅÄÖ]/.test(titleText) || /^(med anledning|om |till )/i.test(titleText);
+      const titleHtml = (prop.titel || looksSwedish)
         ? svSpan(escapedTitle, lang)
         : escapedTitle;
       const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
@@ -2242,7 +2246,10 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 function renderMotionEntry(motion: RawDocument, lang: Language | string): string {
   const titleText = motion.titel || motion.title || '';
   const escapedTitle = escapeHtml(titleText);
-  const titleHtml = (motion.titel && !motion.title)
+  // Swedish titles contain Swedish text from the Riksdag API — always wrap in svSpan
+  // so translateSwedishContent can translate them for non-Swedish articles.
+  const looksSwedish = /[åäöÅÄÖ]/.test(titleText) || /^med anledning av /i.test(titleText);
+  const titleHtml = (motion.titel || looksSwedish)
     ? svSpan(escapedTitle, lang)
     : escapedTitle;
   const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
@@ -2808,7 +2815,8 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
     for (const doc of typeDocs) {
       const titleText = doc.titel || doc.title || '';
       const escapedTitle = escapeHtml(titleText);
-      const titleHtml = (doc.titel && !doc.title)
+      const looksSwedish = /[åäöÅÄÖ]/.test(titleText) || /^(med anledning|om |till )/i.test(titleText);
+      const titleHtml = (doc.titel || looksSwedish)
         ? svSpan(escapedTitle, lang)
         : escapedTitle;
 
