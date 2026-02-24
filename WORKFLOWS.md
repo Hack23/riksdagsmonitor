@@ -810,6 +810,12 @@ git commit -m "chore: recompile agentic workflow lock files"
 - [ARCHITECTURE.md](ARCHITECTURE.md) — C4 architecture models
 - [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) — Security controls
 - [THREAT_MODEL.md](THREAT_MODEL.md) — STRIDE threat analysis
+- [DATA_MODEL.md](DATA_MODEL.md) — Data entities and relationships
+- [FLOWCHART.md](FLOWCHART.md) — Business process flows
+- [STATEDIAGRAM.md](STATEDIAGRAM.md) — System state transitions
+- [MINDMAP.md](MINDMAP.md) — System conceptual maps
+- [SWOT.md](SWOT.md) — Strategic analysis
+- [CRA-ASSESSMENT.md](CRA-ASSESSMENT.md) — EU Cyber Resilience Act conformity
 - [FUTURE_WORKFLOWS.md](FUTURE_WORKFLOWS.md) — Future workflow projections
 - [AGENTS.md](AGENTS.md) — Custom agent reference
 - [SKILLS.md](SKILLS.md) — Skill definitions
