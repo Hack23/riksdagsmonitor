@@ -2163,8 +2163,8 @@ function renderMotionEntry(motion: RawDocument, lang: Language | string): string
     const rawText = motion.undertitel || motion.summary || motion.notis || motion.fullText || motion.titel || motion.rubrik || '';
     const parsed = parseMotionAuthorParty(rawText);
     if (parsed) {
-      if (!authorName || authorName === 'Unknown') authorName = parsed.author;
-      if (!partyName) partyName = parsed.party;
+      if (parsed.author && (!authorName || authorName === 'Unknown')) authorName = parsed.author;
+      if (parsed.party && !partyName) partyName = parsed.party;
     }
   }
   if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';

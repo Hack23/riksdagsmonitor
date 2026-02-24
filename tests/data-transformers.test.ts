@@ -1823,6 +1823,23 @@ describe('generateMotionsContent author/party sentinel fix (#454)', () => {
     expect(content).toContain('Lars Pettersson');
     expect(content).toContain('(S)');
   });
+
+  it('extracts party from notis when author is valid but parti is Unknown sentinel', () => {
+    // Simulates enrichDocumentsWithContent setting intressent_namn correctly but parti='Unknown'
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Test motion',
+        intressent_namn: 'Ulrika Liljeberg',
+        parti: 'Unknown',
+        notis: 'Motion till riksdagen 2025/26:456 av Ulrika Liljeberg (C) om något viktigt.',
+        url: '#',
+        dok_id: 'MOT_PARTY_ONLY',
+      }]
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).toContain('Ulrika Liljeberg');
+    expect(content).toContain('(C)');
+    expect(content).not.toContain('Unknown (Unknown)');
+  });
 });
 
 describe('groupMotionsByProposition (#462)', () => {
