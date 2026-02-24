@@ -5,16 +5,56 @@
     "breaking-news"
   ],
   "languagesGenerated": [
-    "en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "allRequestedLanguages": [
-    "en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 14,
+  "generated": 28,
   "errors": 0,
   "articles": [
+    "2026-02-24-legislative-push-en.html",
+    "2026-02-24-legislative-push-sv.html",
+    "2026-02-24-legislative-push-da.html",
+    "2026-02-24-legislative-push-no.html",
+    "2026-02-24-legislative-push-fi.html",
+    "2026-02-24-legislative-push-de.html",
+    "2026-02-24-legislative-push-fr.html",
+    "2026-02-24-legislative-push-es.html",
+    "2026-02-24-legislative-push-nl.html",
+    "2026-02-24-legislative-push-ar.html",
+    "2026-02-24-legislative-push-he.html",
+    "2026-02-24-legislative-push-ja.html",
+    "2026-02-24-legislative-push-ko.html",
+    "2026-02-24-legislative-push-zh.html",
     "2026-02-24-welfare-reform-proposition-en.html",
     "2026-02-24-welfare-reform-proposition-sv.html",
     "2026-02-24-welfare-reform-proposition-da.html",
@@ -32,6 +72,7 @@
   ],
   "eventsDetected": {
     "high": [
+      "Government files five propositions in legislative push covering civilian defence, psychological violence, ILO conventions, migration rules, MTF shares",
       "Government files Proposition 2025/26:136 — Kvalificering till socialförsäkringen (third part of bidragsreform)"
     ],
     "medium": [
@@ -44,5 +85,5 @@
   },
   "nextCheck": "2026-02-25T10:00:00.000Z",
   "status": "success",
-  "note": "Major breaking news: Government completes three-part welfare reform (bidragsreform) with Proposition 2025/26:136 on qualification for social insurance."
+  "note": "Breaking news 2026-02-24: Five-bill legislative push (10:30) covering civilian defence, psychological violence, ILO conventions, migration rules, MTF shares; and welfare reform completion (14:00) with Proposition 2025/26:136 on qualification for social insurance."
 }
