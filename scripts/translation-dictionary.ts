@@ -742,31 +742,34 @@ export function translatePhrase(text: string, targetLang: Language): string {
 }
 
 /**
- * Process all `<span data-translate="true" lang="sv">…</span>` spans
- * remaining in an article BEFORE writing it to disk.
+ * Translate Swedish text in `<span lang="sv">` spans before writing an article.
  *
- * - For `sv` articles: retains the original Swedish text, removes marker.
- * - For other languages: attempts dictionary lookup via translatePhrase();
- *   if no match, keeps the Swedish text unchanged but still removes the marker.
+ * **For `sv` articles:** only strips `data-translate` markers; text stays Swedish.
+ *
+ * **For non-Swedish articles:** translates ALL `<span …lang="sv"…>` spans —
+ * both bare `<span lang="sv">` and `<span data-translate="true" lang="sv">` —
+ * in a single pass via {@link translatePhrase}. The `data-translate` marker is
+ * removed regardless; `lang="sv"` is preserved for accessibility.
  *
  * Upstream invariant: span content has already been HTML-escaped via
- * escapeHtml(). The spans therefore never contain nested tags.
+ * `escapeHtml()`. The spans therefore never contain nested tags.
  *
  * @param html       - Full article HTML
  * @param targetLang - Target language (e.g. 'de', 'sv')
- * @returns HTML with all data-translate spans processed
+ * @returns HTML with all Swedish spans processed
  */
 /**
- * Matches `<span>` elements that have both `data-translate="true"` and `lang="sv"` attributes
- * in any order.
+ * Matches `<span>` elements with both `data-translate="true"` and `lang="sv"`.
+ * Used **only for Swedish articles** to strip the `data-translate` marker while
+ * preserving the original Swedish text unchanged.
+ *
+ * For non-Swedish articles, {@link ANY_SV_SPAN_REGEX} is used instead to match
+ * ALL `<span lang="sv">` spans regardless of the `data-translate` attribute.
  *
  * Capture groups:
- * 1. The full attribute string inside `<span …>` (used to strip `data-translate` while
- *    preserving `lang="sv"` and any other attributes).
+ * 1. The full attribute string inside `<span …>` (used to strip `data-translate`
+ *    while preserving `lang="sv"` and any other attributes).
  * 2. The inner HTML-safe content between the opening and closing `<span>` tags.
- *
- * Note: `escapeHtml()` is applied upstream, so the inner content may contain HTML entities
- * but no nested tags, making the non-greedy `[\s\S]*?` match safe.
  */
 const TRANSLATABLE_SV_SPAN_REGEX =
   /<span\s+((?=[^>]*data-translate="true")(?=[^>]*lang="sv")[^>]*)>([\s\S]*?)<\/span>/g;
