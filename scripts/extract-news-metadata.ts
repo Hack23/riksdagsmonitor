@@ -108,7 +108,10 @@ function extractMetadata(): void {
       datePublished: articleData.datePublished ?? '',
       dateModified: articleData.dateModified ?? '',
       articleSection: articleData.articleSection ?? '',
-      wordCount: articleData.wordCount ?? 0,
+      wordCount: articleData.wordCount || (() => {
+        const stripped = content.replace(/<[^>]+>/g, ' ');
+        return stripped.split(/\s+/).filter((w: string) => w.length > 0).length;
+      })(),
       inLanguage: articleData.inLanguage ?? lang as string,
       keywords: articleData.keywords ?? '',
       image: ogImage as string,
