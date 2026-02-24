@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-02-23T14:18:00.000Z",
+  "timestamp": "2026-02-24T14:00:00.000Z",
   "types": [
     "realtime-monitor",
-    "update-news"
+    "breaking-news"
   ],
   "languagesGenerated": [
     "en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"
@@ -15,30 +15,34 @@
   "generated": 14,
   "errors": 0,
   "articles": [
-    "2026-02-23-chamber-debates-update-en.html",
-    "2026-02-23-chamber-debates-update-sv.html",
-    "2026-02-23-chamber-debates-update-da.html",
-    "2026-02-23-chamber-debates-update-no.html",
-    "2026-02-23-chamber-debates-update-fi.html",
-    "2026-02-23-chamber-debates-update-de.html",
-    "2026-02-23-chamber-debates-update-fr.html",
-    "2026-02-23-chamber-debates-update-es.html",
-    "2026-02-23-chamber-debates-update-nl.html",
-    "2026-02-23-chamber-debates-update-ar.html",
-    "2026-02-23-chamber-debates-update-he.html",
-    "2026-02-23-chamber-debates-update-ja.html",
-    "2026-02-23-chamber-debates-update-ko.html",
-    "2026-02-23-chamber-debates-update-zh.html"
+    "2026-02-24-welfare-reform-proposition-en.html",
+    "2026-02-24-welfare-reform-proposition-sv.html",
+    "2026-02-24-welfare-reform-proposition-da.html",
+    "2026-02-24-welfare-reform-proposition-no.html",
+    "2026-02-24-welfare-reform-proposition-fi.html",
+    "2026-02-24-welfare-reform-proposition-de.html",
+    "2026-02-24-welfare-reform-proposition-fr.html",
+    "2026-02-24-welfare-reform-proposition-es.html",
+    "2026-02-24-welfare-reform-proposition-nl.html",
+    "2026-02-24-welfare-reform-proposition-ar.html",
+    "2026-02-24-welfare-reform-proposition-he.html",
+    "2026-02-24-welfare-reform-proposition-ja.html",
+    "2026-02-24-welfare-reform-proposition-ko.html",
+    "2026-02-24-welfare-reform-proposition-zh.html"
   ],
   "eventsDetected": {
-    "high": [],
+    "high": [
+      "Government files Proposition 2025/26:136 — Kvalificering till socialförsäkringen (third part of bidragsreform)"
+    ],
     "medium": [
-      "Live interpellation debates in chamber (IP 2025/26:326, 322, 320)",
-      "Two additional interpellations filed today (IP 2025/26:354, 355)"
+      "Six government press releases including welfare reform press conference",
+      "New interpellation on paratransit services filed (IP 2025/26:356)",
+      "Three written questions filed (Euratom Treaty, flood damage in Västernorrland)",
+      "Remiss on electronic surveillance for child protection"
     ],
     "low": []
   },
-  "nextCheck": "2026-02-24T10:00:00.000Z",
+  "nextCheck": "2026-02-25T10:00:00.000Z",
   "status": "success",
-  "note": ""
+  "note": "Major breaking news: Government completes three-part welfare reform (bidragsreform) with Proposition 2025/26:136 on qualification for social insurance."
 }
