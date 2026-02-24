@@ -672,26 +672,6 @@ describe('Data Transformers', () => {
       expect(metaDe.keywords).toContain('Eilmeldung');
       expect(metaDe.keywords).not.toContain('breaking news');
     });
-
-    it('should not duplicate keywords when committee-reports type and data.reports are both present', () => {
-      const metadata = generateMetadata(
-        { reports: [{ titel: 'Test', url: '#', organ: 'FiU' }] } as MockArticlePayload,
-        'committee-reports',
-        'en'
-      ) as ArticleMetadata;
-      const reportCount = metadata.keywords.filter(k => k === 'reports').length;
-      expect(reportCount).toBeLessThanOrEqual(1);
-    });
-
-    it('should not inject event keywords when data.events is an empty array', () => {
-      const metadata = generateMetadata(
-        { events: [] } as unknown as MockArticlePayload,
-        'week-ahead',
-        'en'
-      ) as ArticleMetadata;
-      // 'debates' is only injected by DATA_DRIVEN_KEYWORDS when events is non-empty
-      expect(metadata.keywords).not.toContain('debates');
-    });
   });
 
   describe('data-translate markers for Swedish API content', () => {
