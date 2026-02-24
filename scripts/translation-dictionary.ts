@@ -599,6 +599,37 @@ function buildMap(lang: Language): TranslationMap {
         nl: 'handel', ar: 'تجارة', he: 'מסחר', ja: '貿易', ko: '무역', zh: '贸易',
       },
     ],
+    // Compound words that appear in calendar events
+    [
+      'interpellationssvar',
+      {
+        sv: 'interpellationssvar', en: 'interpellation responses', da: 'interpellationssvar',
+        no: 'interpellasjonssvar', fi: 'välikysymysvastaukset', de: 'Interpellationsantworten',
+        fr: 'réponses aux interpellations', es: 'respuestas a interpelaciones',
+        nl: 'interpellatie-antwoorden', ar: 'ردود الاستجواب', he: 'תשובות לשאילתות',
+        ja: '質問主意書への回答', ko: '질의 답변', zh: '质询答复',
+      },
+    ],
+    [
+      'sammanträde',
+      {
+        sv: 'sammanträde', en: 'meeting', da: 'møde',
+        no: 'møte', fi: 'kokous', de: 'Sitzung',
+        fr: 'réunion', es: 'reunión',
+        nl: 'vergadering', ar: 'اجتماع', he: 'ישיבה',
+        ja: '会議', ko: '회의', zh: '会议',
+      },
+    ],
+    [
+      'återrapportering',
+      {
+        sv: 'återrapportering', en: 'report-back', da: 'tilbagerapportering',
+        no: 'tilbakerapportering', fi: 'raportointi', de: 'Berichterstattung',
+        fr: 'rapport de retour', es: 'informe de seguimiento',
+        nl: 'terugrapportage', ar: 'تقرير متابعة', he: 'דיווח חוזר',
+        ja: 'フォローアップ報告', ko: '후속 보고', zh: '后续报告',
+      },
+    ],
   ];
   /* eslint-enable @typescript-eslint/naming-convention */
 
@@ -661,23 +692,52 @@ export function translatePhrase(text: string, targetLang: Language): string {
   // 1. Exact match
   if (dict[lower] !== undefined) return dict[lower];
 
-  // 2. Prefix match – find the longest dictionary key that the phrase starts with
+  // 2. Prefix match – find the longest dictionary key that the phrase starts with.
+  //    Only accept the match when the remainder starts at a word boundary (space,
+  //    punctuation, digit) so we never split a compound Swedish word and produce
+  //    broken hybrids like "质询ssvar" from "Interpellationssvar".
   let bestKey = '';
   let bestTranslation = '';
   for (const [key, value] of Object.entries(dict)) {
     if (lower.startsWith(key) && key.length > bestKey.length) {
-      bestKey = key;
-      bestTranslation = value;
+      const charAfter = lower[key.length];
+      // Accept only when remainder starts at a word boundary or is empty
+      if (!charAfter || /[\s.,;:!?\-–—/()0-9]/.test(charAfter)) {
+        bestKey = key;
+        bestTranslation = value;
+      }
     }
   }
 
   if (bestKey) {
-    // Append the remainder of the phrase (e.g. " 2025/26:118 Tillståndsprövning...")
     const remainder = text.slice(bestKey.length);
     return bestTranslation + remainder;
   }
 
-  // 3. No match – return original (still Swedish, but without data-translate marker)
+  // 3. Multi-segment: split on spaces, try to translate each word individually.
+  //    Handles patterns like "Arbetsmarknadsutskottets sammanträde" where the
+  //    possessive 's' prevents exact match but the base form is in the dictionary.
+  const words = text.split(/\s+/);
+  if (words.length > 1) {
+    let anyTranslated = false;
+    const translatedWords = words.map(word => {
+      const wLower = word.toLowerCase();
+      // Exact word match
+      if (dict[wLower] !== undefined) {
+        anyTranslated = true;
+        return dict[wLower];
+      }
+      // Try stripping Swedish possessive 's' suffix (e.g. "utskottets" → "utskottet")
+      if (wLower.endsWith('s') && dict[wLower.slice(0, -1)] !== undefined) {
+        anyTranslated = true;
+        return dict[wLower.slice(0, -1)];
+      }
+      return word;
+    });
+    if (anyTranslated) return translatedWords.join(' ');
+  }
+
+  // 4. No match – return original (still Swedish, but without data-translate marker)
   return text;
 }
 

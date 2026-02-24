@@ -1675,10 +1675,10 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
       const eventTime = event.time || event.tid || 'Expected';
       const eventTitle = event.title || event.titel || 'Event';
 
-      // Mark Swedish API titles for translation post-processing
+      // Mark Swedish API titles for translation post-processing.
+      // event.titel indicates data from the Swedish Riksdag API.
       const escapedEventTitle = escapeHtml(eventTitle);
-      const eventLooksSwedish = /[åäöÅÄÖ]/.test(eventTitle);
-      const titleHtml = (event.titel || eventLooksSwedish)
+      const titleHtml = event.titel
         ? svSpan(escapedEventTitle, lang)
         : escapedEventTitle;
 
@@ -1723,8 +1723,8 @@ function generateWeekAheadContent(data: WeekAheadData, lang: Language | string):
       const rec = doc as Record<string, string>;
       const titleText = rec['titel'] || rec['title'] || rec['doktyp'] || 'Document';
       const escapedTitle = escapeHtml(titleText);
-      const docLooksSwedish = /[åäöÅÄÖ]/.test(titleText);
-      const titleHtml = (rec['titel'] || docLooksSwedish)
+      // rec['titel'] indicates data from the Swedish Riksdag API
+      const titleHtml = rec['titel']
         ? svSpan(escapedTitle, lang)
         : escapedTitle;
 
@@ -1884,8 +1884,8 @@ function generateCommitteeContent(data: ArticleContentData, lang: Language | str
     committeeReports.forEach(report => {
       const titleText = report.titel || report.title || '';
       const escapedTitle = escapeHtml(titleText);
-      const looksSwedish = /[åäöÅÄÖ]/.test(titleText) || /^(med anledning|om |till )/i.test(titleText);
-      const titleHtml = (report.titel || looksSwedish)
+      // report.titel indicates data from the Swedish Riksdag API
+      const titleHtml = report.titel
         ? svSpan(escapedTitle, lang)
         : escapedTitle;
       const docName = escapeHtml(report.dokumentnamn || report.dok_id || titleText);
@@ -1988,8 +1988,8 @@ function generatePropositionsContent(data: ArticleContentData, lang: Language | 
     committeeProps.forEach(prop => {
       const titleText = prop.titel || prop.title || '';
       const escapedTitle = escapeHtml(titleText);
-      const looksSwedish = /[åäöÅÄÖ]/.test(titleText) || /^(med anledning|om |till )/i.test(titleText);
-      const titleHtml = (prop.titel || looksSwedish)
+      // prop.titel indicates data from the Swedish Riksdag API
+      const titleHtml = prop.titel
         ? svSpan(escapedTitle, lang)
         : escapedTitle;
       const docName = escapeHtml(prop.dokumentnamn || prop.dok_id || titleText);
@@ -2246,10 +2246,9 @@ function generateMotionsContent(data: ArticleContentData, lang: Language | strin
 function renderMotionEntry(motion: RawDocument, lang: Language | string): string {
   const titleText = motion.titel || motion.title || '';
   const escapedTitle = escapeHtml(titleText);
-  // Swedish titles contain Swedish text from the Riksdag API — always wrap in svSpan
-  // so translateSwedishContent can translate them for non-Swedish articles.
-  const looksSwedish = /[åäöÅÄÖ]/.test(titleText) || /^med anledning av /i.test(titleText);
-  const titleHtml = (motion.titel || looksSwedish)
+  // motion.titel indicates data from the Swedish Riksdag API — wrap in svSpan
+  // so translateSwedishContent can translate for non-Swedish articles.
+  const titleHtml = motion.titel
     ? svSpan(escapedTitle, lang)
     : escapedTitle;
   const docName = escapeHtml(motion.dokumentnamn || motion.dok_id || titleText);
@@ -2815,8 +2814,8 @@ function generateGenericContent(data: ArticleContentData, lang: Language | strin
     for (const doc of typeDocs) {
       const titleText = doc.titel || doc.title || '';
       const escapedTitle = escapeHtml(titleText);
-      const looksSwedish = /[åäöÅÄÖ]/.test(titleText) || /^(med anledning|om |till )/i.test(titleText);
-      const titleHtml = (doc.titel || looksSwedish)
+      // doc.titel indicates data from the Swedish Riksdag API
+      const titleHtml = doc.titel
         ? svSpan(escapedTitle, lang)
         : escapedTitle;
 

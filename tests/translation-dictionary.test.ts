@@ -84,6 +84,20 @@ describe('translatePhrase', () => {
     const result = translatePhrase(phrase, 'en');
     expect(result.toLowerCase()).toContain('government bill');
   });
+
+  it('does not split compound Swedish words at prefix boundaries', () => {
+    // "Interpellationssvar" should NOT become "质询ssvar" from prefix "interpellation"
+    expect(translatePhrase('Interpellationssvar', 'zh')).toBe('质询答复');
+    expect(translatePhrase('Interpellationssvar', 'en')).toBe('interpellation responses');
+    expect(translatePhrase('Interpellationssvar', 'ar')).toBe('ردود الاستجواب');
+  });
+
+  it('translates committee possessive + meeting via multi-segment fallback', () => {
+    // "Arbetsmarknadsutskottets sammanträde" should translate both segments
+    const result = translatePhrase('Arbetsmarknadsutskottets sammanträde', 'en');
+    expect(result).toContain('Committee on Labour Market Affairs');
+    expect(result).toContain('meeting');
+  });
 });
 
 // ---------------------------------------------------------------------------
