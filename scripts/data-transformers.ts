@@ -2251,7 +2251,9 @@ function renderMotionEntry(motion: RawDocument, lang: Language | string): string
   // Treat 'Unknown' sentinel (set by enrichDocumentsWithContent) as missing so
   // we attempt parseMotionAuthorParty before giving up.
   const unknownVal = L(lang, 'unknown');
-  let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null) || motion.author || '';
+  let authorName = (motion.intressent_namn !== 'Unknown' ? motion.intressent_namn : null)
+                || (motion.author !== 'Unknown' ? motion.author : null)
+                || '';
   let partyName = (motion.parti !== 'Unknown' ? motion.parti : '') || '';
   // Fire fallback when EITHER author or party is missing — covers the party-only sentinel case
   // where intressent_namn is valid but parti was 'Unknown' and stripped to ''.
