@@ -1,38 +1,64 @@
 {
-  "timestamp": "2026-02-24T10:30:00.000Z",
-  "check_type": "realtime-monitor",
-  "events_detected": [
-    {
-      "type": "government_propositions",
-      "significance": "HIGH",
-      "count": 5,
-      "items": [
-        {"dok_id": "HD03142", "title": "Ett starkare skydd för civilbefolkningen vid höjd beredskap", "organ": "Försvarsdepartementet"},
-        {"dok_id": "HD03138", "title": "En särskild straffbestämmelse för psykiskt våld", "organ": "Justitiedepartementet"},
-        {"dok_id": "HD03134", "title": "ILO:s konvention om avskaffande av våld och trakasserier i arbetslivet", "organ": "Arbetsmarknadsdepartementet"},
-        {"dok_id": "HD03146", "title": "Bättre migrationsrättsliga regler för forskare och doktorander", "organ": "Justitiedepartementet"},
-        {"dok_id": "HD03125", "title": "Nya regler om aktier på MTF-plattformar", "organ": "Justitiedepartementet"}
-      ]
-    },
-    {
-      "type": "committee_report",
-      "significance": "HIGH",
-      "count": 1,
-      "items": [
-        {"dok_id": "HD01UU15", "title": "Situationen i Israel och Palestina", "organ": "UU"}
-      ]
-    },
-    {
-      "type": "interpellation",
-      "significance": "MEDIUM",
-      "count": 1,
-      "items": [
-        {"dok_id": "HD10356", "title": "Färdtjänst och regeringens fortsatta beredning av Trafikanalys förslag", "parti": "S"}
-      ]
-    }
+  "timestamp": "2026-02-24T14:00:00.000Z",
+  "types": [
+    "realtime-monitor",
+    "breaking-news"
   ],
-  "articles_generated": 14,
-  "article_slug": "2026-02-24-legislative-push",
-  "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-  "next_check": "2026-02-24T14:00:00.000Z"
+  "languagesGenerated": [
+    "en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"
+  ],
+  "allRequestedLanguages": [
+    "en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"
+  ],
+  "batchSize": "all",
+  "skipExisting": false,
+  "generated": 28,
+  "errors": 0,
+  "articles": [
+    "2026-02-24-legislative-push-en.html",
+    "2026-02-24-legislative-push-sv.html",
+    "2026-02-24-legislative-push-da.html",
+    "2026-02-24-legislative-push-no.html",
+    "2026-02-24-legislative-push-fi.html",
+    "2026-02-24-legislative-push-de.html",
+    "2026-02-24-legislative-push-fr.html",
+    "2026-02-24-legislative-push-es.html",
+    "2026-02-24-legislative-push-nl.html",
+    "2026-02-24-legislative-push-ar.html",
+    "2026-02-24-legislative-push-he.html",
+    "2026-02-24-legislative-push-ja.html",
+    "2026-02-24-legislative-push-ko.html",
+    "2026-02-24-legislative-push-zh.html",
+    "2026-02-24-welfare-reform-proposition-en.html",
+    "2026-02-24-welfare-reform-proposition-sv.html",
+    "2026-02-24-welfare-reform-proposition-da.html",
+    "2026-02-24-welfare-reform-proposition-no.html",
+    "2026-02-24-welfare-reform-proposition-fi.html",
+    "2026-02-24-welfare-reform-proposition-de.html",
+    "2026-02-24-welfare-reform-proposition-fr.html",
+    "2026-02-24-welfare-reform-proposition-es.html",
+    "2026-02-24-welfare-reform-proposition-nl.html",
+    "2026-02-24-welfare-reform-proposition-ar.html",
+    "2026-02-24-welfare-reform-proposition-he.html",
+    "2026-02-24-welfare-reform-proposition-ja.html",
+    "2026-02-24-welfare-reform-proposition-ko.html",
+    "2026-02-24-welfare-reform-proposition-zh.html"
+  ],
+  "eventsDetected": {
+    "high": [
+      "Government files five propositions — civilian defence, psychological violence, ILO conventions, migration rules, MTF shares",
+      "Foreign Affairs Committee releases report on Israel and Palestine (Bet. 2025/26:UU15)",
+      "Government files Proposition 2025/26:136 — Kvalificering till socialförsäkringen (third part of bidragsreform)"
+    ],
+    "medium": [
+      "Six government press releases including welfare reform press conference",
+      "New interpellation on paratransit services filed (IP 2025/26:356)",
+      "Three written questions filed (Euratom Treaty, flood damage in Västernorrland)",
+      "Remiss on electronic surveillance for child protection"
+    ],
+    "low": []
+  },
+  "nextCheck": "2026-02-25T10:00:00.000Z",
+  "status": "success",
+  "note": "Two major breaking news stories on 2026-02-24: Five-bill legislative push (10:30) and welfare reform completion (14:00)."
 }
