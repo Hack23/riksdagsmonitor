@@ -142,6 +142,7 @@
  */
 
 import { escapeHtml } from './html-utils.js';
+import { CONTENT_LABELS } from './data-transformers.js';
 import type { Language } from './types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, ArticleCategory } from './types/article.js';
 import type { BreadcrumbLabels, FooterLabelSet } from './types/content.js';
@@ -344,9 +345,9 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta name="twitter:site" content="@riksdagsmonitor">
   <meta name="twitter:creator" content="@jamessorling">
-  <meta name="twitter:label1" content="Reading time">
+  <meta name="twitter:label1" content="${CONTENT_LABELS[lang]?.twitterLabel1 ?? CONTENT_LABELS.en.twitterLabel1}">
   <meta name="twitter:data1" content="${readTime}">
-  <meta name="twitter:label2" content="Article type">
+  <meta name="twitter:label2" content="${CONTENT_LABELS[lang]?.twitterLabel2 ?? CONTENT_LABELS.en.twitterLabel2}">
   <meta name="twitter:data2" content="${typeLabel}">
   
   <!-- Hreflang for language alternatives -->
@@ -374,7 +375,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
     "author": {
       "@type": "Person",
       "name": "James Pether Sörling",
-      "jobTitle": "Political Intelligence Analyst",
+      "jobTitle": "${CONTENT_LABELS[lang]?.jobTitle ?? CONTENT_LABELS.en.jobTitle}",
       "affiliation": {
         "@type": "Organization",
         "name": "Hack23 AB"
@@ -463,7 +464,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
     "name": "Riksdagsmonitor",
     "url": "https://riksdagsmonitor.com",
     "logo": "https://hack23.com/cia-icon-140.webp",
-    "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+    "description": "${CONTENT_LABELS[lang]?.siteDescription ?? CONTENT_LABELS.en.siteDescription}",
     "foundingDate": "2020",
     "founder": {
       "@type": "Person",

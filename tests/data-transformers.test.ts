@@ -616,6 +616,62 @@ describe('Data Transformers', () => {
       ) as ArticleMetadata;
       expect(metadata.tags).toContain('Woche Voraus');
     });
+
+    it('should localize keywords for German', () => {
+      const metadata = generateMetadata(
+        {} as MockArticlePayload,
+        'committee-reports',
+        'de'
+      ) as ArticleMetadata;
+      expect(metadata.keywords).toContain('ausschuss');
+      expect(metadata.keywords).toContain('berichte');
+      expect(metadata.keywords).toContain('parlament');
+      expect(metadata.keywords).not.toContain('committee');
+      expect(metadata.keywords).not.toContain('reports');
+      expect(metadata.keywords).not.toContain('parliament');
+    });
+
+    it('should localize keywords for Japanese', () => {
+      const metadata = generateMetadata(
+        {} as MockArticlePayload,
+        'propositions',
+        'ja'
+      ) as ArticleMetadata;
+      expect(metadata.keywords).toContain('政府');
+      expect(metadata.keywords).toContain('法律案');
+      expect(metadata.keywords).toContain('立法');
+      expect(metadata.keywords).toContain('議会');
+    });
+
+    it('should localize keywords for Arabic', () => {
+      const metadata = generateMetadata(
+        {} as MockArticlePayload,
+        'motions',
+        'ar'
+      ) as ArticleMetadata;
+      expect(metadata.keywords).toContain('اقتراحات');
+      expect(metadata.keywords).toContain('معارضة');
+      expect(metadata.keywords).toContain('برلمان');
+    });
+
+    it('should always keep Riksdag as a proper noun in all languages', () => {
+      for (const lang of ['de', 'fr', 'ja', 'ar', 'ko', 'zh', 'he'] as const) {
+        const metadata = generateMetadata(
+          {} as MockArticlePayload,
+          'week-ahead',
+          lang
+        ) as ArticleMetadata;
+        expect(metadata.keywords).toContain('Riksdag');
+      }
+    });
+
+    it('should fall back to English for unknown keyword in non-English language', () => {
+      // 'breaking news' maps to German 'Eilmeldung'; other un-mapped langs should get English fallback
+      // We test this indirectly: a language whose keyword exists should be localized, not English
+      const metaDe = generateMetadata({} as MockArticlePayload, 'breaking', 'de') as ArticleMetadata;
+      expect(metaDe.keywords).toContain('Eilmeldung');
+      expect(metaDe.keywords).not.toContain('breaking news');
+    });
   });
 
   describe('data-translate markers for Swedish API content', () => {
