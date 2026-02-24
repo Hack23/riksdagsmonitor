@@ -3197,6 +3197,45 @@ const COMMON_KEYWORDS: Partial<Record<Language, string[]>> = {
 };
 
 /**
+ * Localized keywords injected when article data contains specific collections
+ * (events → calendar/debates; reports → committees/reports).
+ */
+const DATA_DRIVEN_KEYWORDS: Record<string, Partial<Record<Language, string[]>>> = {
+  events: {
+    en: ['calendar', 'events', 'debates'],
+    sv: ['kalender', 'evenemang', 'debatter'],
+    da: ['kalender', 'begivenheder', 'debatter'],
+    no: ['kalender', 'hendelser', 'debatter'],
+    fi: ['kalenteri', 'tapahtumat', 'väittelyt'],
+    de: ['Kalender', 'Veranstaltungen', 'Debatten'],
+    fr: ['calendrier', 'événements', 'débats'],
+    es: ['calendario', 'eventos', 'debates'],
+    nl: ['kalender', 'evenementen', 'debatten'],
+    ar: ['تقويم', 'فعاليات', 'مناقشات'],
+    he: ['לוח שנה', 'אירועים', 'דיונים'],
+    ja: ['カレンダー', 'イベント', '討論'],
+    ko: ['캘린더', '이벤트', '토론'],
+    zh: ['日历', '活动', '辩论'],
+  },
+  reports: {
+    en: ['committees', 'reports'],
+    sv: ['utskott', 'betänkanden'],
+    da: ['udvalg', 'betænkninger'],
+    no: ['komiteer', 'betenkninger'],
+    fi: ['valiokunnat', 'mietinnöt'],
+    de: ['Ausschüsse', 'Berichte'],
+    fr: ['comités', 'rapports'],
+    es: ['comités', 'informes'],
+    nl: ['commissies', 'rapporten'],
+    ar: ['لجان', 'تقارير'],
+    he: ['ועדות', 'דוחות'],
+    ja: ['委員会', '報告'],
+    ko: ['위원회', '보고서'],
+    zh: ['委员会', '报告'],
+  },
+};
+
+/**
  * Look up localized keywords for a given article type and language,
  * falling back to English when the language entry is absent.
  */
@@ -3275,12 +3314,12 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       break;
   }
 
-  // Extract additional keywords from data
+  // Extract additional keywords from data (localized)
   if (data.events) {
-    keywords.push('calendar', 'events', 'debates');
+    keywords.push(...getLocalizedKeywords(DATA_DRIVEN_KEYWORDS, 'events', lang));
   }
   if (data.reports) {
-    keywords.push('committees', 'reports');
+    keywords.push(...getLocalizedKeywords(DATA_DRIVEN_KEYWORDS, 'reports', lang));
   }
 
   // Add common localized keywords
