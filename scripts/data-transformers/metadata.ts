@@ -296,10 +296,11 @@ export function generateContentTitle(
   if (domains.length < 2) return null;
 
   const langKey = lang as string;
-  const trans0 = DOMAIN_TRANSLATIONS[domains[0]!];
-  const trans1 = DOMAIN_TRANSLATIONS[domains[1]!];
-  const d1 = trans0?.[langKey] ?? trans0?.['en'];
-  const d2 = trans1?.[langKey] ?? trans1?.['en'];
+  const trans0 = DOMAIN_TRANSLATIONS[domains[0] ?? ''];
+  const trans1 = DOMAIN_TRANSLATIONS[domains[1] ?? ''];
+  if (!trans0 || !trans1) return null;
+  const d1 = trans0[langKey] ?? trans0['en'];
+  const d2 = trans1[langKey] ?? trans1['en'];
   if (!d1 || !d2) return null;
 
   const typeTemplates = CONTENT_TITLE_TEMPLATES[articleType];

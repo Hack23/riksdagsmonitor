@@ -63,7 +63,8 @@ export interface CIAContext {
   }>;
   coalitionStability: { stabilityScore: number; riskLevel: string; defectionProbability: number; majorityMargin: number };
   votingPatterns: { keyIssues: Array<{ topic: string; coalitionAlignment: number; oppositionAlignment: number; crossPartyVotes: number }> };
-  overallMotionDenialRate: number; /** percentage of motions denied (typically 99%+) */
+  /** Percentage of motions denied (typically 99%+) */
+  overallMotionDenialRate: number;
 }
 
 /** Week ahead data structure */
