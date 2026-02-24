@@ -16,8 +16,8 @@
 [![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=typescript)](https://riksdagsmonitor.com/docs/api/)
 [![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest)](https://riksdagsmonitor.com/docs/coverage/)
 
-**Document Version:** 5.0
-**Last Updated:** 2026-02-21
+**Document Version:** 5.1
+**Last Updated:** 2026-02-24
 **Classification:** Public
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -27,7 +27,7 @@ This document describes the Continuous Integration and Continuous Deployment (CI
 
 The project has been migrated from JavaScript to **TypeScript** (27 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 24's native type-stripping for scripts.
 
-**Total Workflows: 29** (23 standard YAML + 3 agentic markdown sources + 3 compiled lock files)
+**Total Workflows: 44** (24 standard YAML + 10 agentic markdown sources + 10 compiled lock files)
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 **ISMS Compliance:** ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1
 
@@ -108,7 +108,7 @@ graph TD
     style M fill:#607d8b
 ```
 
-## Complete Workflow Inventory (29 Files)
+## Complete Workflow Inventory (44 Files)
 
 ### 🔐 Security & Compliance (5 workflows)
 
@@ -150,7 +150,7 @@ graph TD
 | 4.2 | Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
 | 4.3 | Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 
-### 🤖 Agentic Workflows (7 files: 3 sources + 3 locks + 1 compiler)
+### 🤖 Agentic Workflows (21 files: 10 sources + 10 locks + 1 compiler)
 
 | # | Workflow | Source | Lock | Purpose |
 |---|----------|--------|------|---------|
@@ -787,7 +787,7 @@ git commit -m "chore: recompile agentic workflow lock files"
 
 ---
 
-**Document Version:** 5.0
-**Last Updated:** 2026-02-21
+**Document Version:** 5.1
+**Last Updated:** 2026-02-24
 **Classification:** Public
 **Owner:** Hack23 AB
