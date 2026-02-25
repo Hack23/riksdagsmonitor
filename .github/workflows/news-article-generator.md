@@ -1047,6 +1047,8 @@ fi
 
 Only commit the actual news article files: `news/{YYYY-MM-DD}-{slug}-{lang}.html`
 
+**To validate locally**: run `npm run prebuild` first to produce the generated index, metadata, and sitemap files on a fresh checkout before running validation or previewing the site.
+
 ### Step 7.5: Validate Generated Content (BLOCKING)
 
 **CRITICAL**: Run comprehensive quality validation BEFORE creating PR:
