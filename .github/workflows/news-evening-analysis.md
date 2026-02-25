@@ -280,6 +280,7 @@ search_voteringar({ rm: "2025/26", limit: 50 })  // Then filter by datum
 
 **✅ For running Node.js scripts via bash:**
 - ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
+- ✅ Extract gateway API key: read `gateway.apiKey` from `$GH_AW_MCP_CONFIG` and export as `MCP_AUTH_TOKEN="Bearer $KEY"`
 - ✅ Set `export MCP_CLIENT_TIMEOUT_MS=90000` for cold start tolerance
 - ✅ Scripts ARE used by agentic workflows and work perfectly
 - ✅ Trust the automatic retry logic for cold starts
@@ -983,7 +984,7 @@ For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_grou
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
 - **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_dokument()`, etc.)
-- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and `export MCP_CLIENT_TIMEOUT_MS=90000` before running
+- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract gateway API key via `MCP_AUTH_TOKEN` from MCP config before running. Set `export MCP_CLIENT_TIMEOUT_MS=90000`.
 - **Cold starts**: 30-60s on first call — framework retries automatically
 - **Safe outputs** (MANDATORY final step): 
   - `safeoutputs___create_pull_request` when analysis generated (must succeed or workflow fails)

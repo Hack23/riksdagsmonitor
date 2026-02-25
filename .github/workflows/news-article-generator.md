@@ -288,7 +288,7 @@ get_sync_status({})
 - ✅ Check for stale data (>48 hours since last sync) and note in articles with disclaimer
 - ✅ Use explicit date parameters where supported (from_date, to_date, from, tom)
 - ✅ Filter results by date when tools don't support date parameters
-- ✅ For Node.js scripts: set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` before running
+- ✅ For Node.js scripts: set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract the gateway API key from the MCP config before running (see script execution section below)
 
 **DO NOT try to call MCP manually from prompts:**
 - ❌ Use `curl` or manual HTTP calls to MCP endpoints
@@ -624,6 +624,16 @@ echo "  Languages: $LANG_ARG"
 # Route through MCP gateway (direct HTTPS fails in sandbox due to transparent proxy)
 # The gateway handles the external connection and exposes it over plain HTTP
 export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
+
+# Pass gateway API key so scripts can authenticate with the MCP gateway
+if [ -f "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" ]; then
+  GW_KEY=$(python3 -c "import json,sys; c=json.load(open(sys.argv[1])); print(c.get('gateway',{}).get('apiKey',''))" "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" 2>/dev/null || echo "")
+  if [ -z "$GW_KEY" ]; then
+    echo "⚠️  WARNING: MCP config file exists but gateway API key is missing or invalid"
+  else
+    export MCP_AUTH_TOKEN="Bearer $GW_KEY"
+  fi
+fi
 
 # Extended timeout for Render.com cold starts (server may take 30-60s to spin up)
 export MCP_CLIENT_TIMEOUT_MS=90000
@@ -1551,7 +1561,7 @@ Remember: You are producing world-class political journalism that informs Swedis
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
 - **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_dokument()`, etc.)
-- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and `export MCP_CLIENT_TIMEOUT_MS=90000` before running
+- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract gateway API key via `MCP_AUTH_TOKEN` from MCP config before running. Set `export MCP_CLIENT_TIMEOUT_MS=90000`.
 - **Cold starts**: 30-60s on first call — framework retries automatically; script auto-warms with `get_sync_status({})` before data queries
 - **Session reuse**: Script uses a shared MCPClient across all generators (warm-up benefits all subsequent calls)
 - **Batch mode**: Use `--batch-size=5 --skip-existing` to process languages in manageable batches (recommended for `--languages=all`)

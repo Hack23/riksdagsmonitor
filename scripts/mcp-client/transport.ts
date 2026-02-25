@@ -2,13 +2,14 @@
  * @module mcp-client/transport
  * @description HTTP transport layer for JSON-RPC 2.0 communication.
  * Tries `globalThis.fetch` first (allows test mocking), then falls
- * back to Node.js `https.request` when Cloudflare blocks undici/fetch.
+ * back to Node.js `http`/`https` request when Cloudflare blocks undici/fetch.
  *
  * @author Hack23 AB
  * @license Apache-2.0
  */
 
 import { request as httpsRequest } from 'https';
+import { request as httpRequest } from 'http';
 import { URL } from 'url';
 
 /** Minimal fetch-like response interface for transport abstraction */
@@ -22,8 +23,9 @@ export interface FetchLike {
 }
 
 /**
- * Low-level HTTPS POST using Node.js built-in `https.request`.
+ * Low-level HTTP/HTTPS POST using Node.js built-in `http`/`https` modules.
  * Used as fallback when `globalThis.fetch` is unavailable or blocked.
+ * Automatically selects `http.request` or `https.request` based on the URL protocol.
  */
 export function nodeHttpsPost(
   url: string,
@@ -33,9 +35,11 @@ export function nodeHttpsPost(
 ): Promise<FetchLike> {
   return new Promise<FetchLike>((resolve, reject) => {
     const parsed = new URL(url);
+    const isHttp = parsed.protocol === 'http:';
+    const requestFn = isHttp ? httpRequest : httpsRequest;
     const options = {
       hostname: parsed.hostname,
-      port: parsed.port || 443,
+      port: parsed.port || (isHttp ? 80 : 443),
       path: parsed.pathname + parsed.search,
       method: 'POST',
       headers: {
@@ -44,7 +48,7 @@ export function nodeHttpsPost(
       },
     };
 
-    const req = httpsRequest(options, (res) => {
+    const req = requestFn(options, (res) => {
       let data = '';
       res.on('data', (chunk: Buffer) => {
         data += chunk.toString();
