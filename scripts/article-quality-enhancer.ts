@@ -49,11 +49,12 @@ const DOCUMENT_ID_PATTERNS: readonly RegExp[] = [
  * Default quality thresholds based on The Economist standards
  */
 const DEFAULT_THRESHOLDS: QualityThresholds = {
-  minQualityScore: 0.75,
+  minQualityScore: 0.80,
   minAnalyticalDepth: 0.6,
-  minPartySources: 4,
+  minPartySources: 6,
   minCrossReferences: 3,
   requireWhyThisMatters: true,
+  requireHistoricalContext: true,
   recommendHistoricalContext: true,
   recommendInternationalComparison: false,
 };
@@ -250,8 +251,8 @@ function calculateQualityScore(metrics: QualityMetrics): number {
   // Analytical depth (already 0-1)
   score += metrics.analyticalDepth * weights.analyticalDepth;
 
-  // Party perspectives (normalize: 4+ parties = 1.0)
-  score += Math.min(metrics.partyCount / 4, 1.0) * weights.partyPerspectives;
+  // Party perspectives (normalize: 6+ parties = 1.0, reflecting 8-party Swedish system)
+  score += Math.min(metrics.partyCount / 6, 1.0) * weights.partyPerspectives;
 
   // Cross-references (normalize: 3+ refs = 1.0)
   score += Math.min(metrics.crossReferences / 3, 1.0) * weights.crossReferences;
@@ -323,10 +324,15 @@ export async function enhanceArticleQuality(
     issues.push('Missing "Why This Matters" section');
   }
 
+  if (options.requireHistoricalContext && !metrics.hasHistoricalContext) {
+    issues.push('Missing required historical context (at least one historical comparison required)');
+  }
+
   // Separate warnings (recommendations) from blocking failures
   const warnings: string[] = [];
 
-  if (options.recommendHistoricalContext && !metrics.hasHistoricalContext) {
+  // Only warn about historical context if it is not already a blocking error
+  if (options.recommendHistoricalContext && !options.requireHistoricalContext && !metrics.hasHistoricalContext) {
     warnings.push('Recommended: Add historical context');
   }
 

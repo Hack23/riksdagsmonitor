@@ -12,6 +12,7 @@
 import { escapeHtml } from '../html-utils.js';
 import type { Language } from '../types/language.js';
 import type { ArticleContentData, WeekAheadData, RawDocument } from './types.js';
+import { getPillarTransition } from '../editorial-pillars.js';
 import {
   L,
   svSpan,
@@ -31,6 +32,23 @@ import {
   generateDocumentIntelligenceAnalysis,
   PROP_TITLE_SUFFIX_REGEX,
 } from './document-analysis.js';
+
+/** Per-language title-suffix templates for inverted-pyramid lede construction. */
+const TITLE_SUFFIX_TEMPLATES: Readonly<Record<string, (t: string) => string>> = {
+  sv: t => ` — inklusive "${t}"`,
+  da: t => ` — herunder "${t}"`,
+  no: t => ` — inkludert "${t}"`,
+  fi: t => ` — mukaan lukien "${t}"`,
+  de: t => ` — darunter "${t}"`,
+  fr: t => ` — notamment "${t}"`,
+  es: t => ` — incluyendo "${t}"`,
+  nl: t => ` — inclusief "${t}"`,
+  ar: t => ` — بما فيها "${t}"`,
+  he: t => ` — כולל "${t}"`,
+  ja: t => `、「${t}」を含む`,
+  ko: t => `, "${t}" 포함`,
+  zh: t => `，包括"${t}"`,
+};
 
 export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
@@ -294,6 +312,12 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
     });
   });
 
+  // Narrative bridge from legislative content to analytical outlook (inter-pillar transition)
+  const pulseTransition = getPillarTransition(lang, 'pulseToWatch');
+  if (pulseTransition) {
+    content += `    <p class="pillar-transition">${escapeHtml(pulseTransition)}</p>\n`;
+  }
+
   // Key takeaways section
   content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
   content += `    <div class="context-box">\n      <ul>\n`;
@@ -543,6 +567,11 @@ export function generateMotionsContent(data: ArticleContentData, lang: Language 
 
   // Party activity breakdown
   if (partyCount > 0) {
+    // Narrative bridge before cross-party analysis (inter-pillar transition)
+    const watchTransition = getPillarTransition(lang, 'watchToOpposition');
+    if (watchTransition) {
+      content += `    <p class="pillar-transition">${escapeHtml(watchTransition)}</p>\n`;
+    }
     content += `\n    <h2>${L(lang, 'coalitionDynamics')}</h2>\n`;
     content += `    <div class="context-box">\n      <ul>\n`;
     Object.entries(byParty).forEach(([party, partyMotions]) => {
@@ -569,14 +598,8 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   const cia = data.ciaContext;
   let content = '';
 
-  // ── Overview lede (from document count) ────────────────────────────────
-  const overviewFn = L(lang, 'genericOverview') as string | ((n: number) => string);
-  const overview = typeof overviewFn === 'function'
-    ? overviewFn(docs.length)
-    : `During this period, ${docs.length} documents were processed in parliament.`;
-  content += `<p class="article-lede">${escapeHtml(String(overview))}</p>\n`;
-
-  // ── Group by document type ───────────────────────────────────────────────
+  // ── Inverted-pyramid lede: lead with most significant document type ──────
+  // Group by document type first to identify the most newsworthy lead
   const byType: Record<string, RawDocument[]> = {};
   docs.forEach(doc => {
     const docType = doc.doktyp || doc.documentType || 'other';
@@ -584,14 +607,67 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
     byType[docType].push(doc);
   });
 
-  content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
-
-  // Render in significance order: propositions → committee reports → motions → rest
+  // Significance order: propositions → committee reports → government comms → motions → rest
   const typeOrder = ['prop', 'bet', 'skr', 'mot', 'other'];
   const sortedTypes = [...Object.keys(byType)].sort((a, b) => {
     const ai = typeOrder.indexOf(a); const bi = typeOrder.indexOf(b);
     return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
   });
+
+  // Lead with the most significant type rather than a raw count
+  const leadType = sortedTypes[0];
+  const leadDocs = leadType ? (byType[leadType] ?? []) : [];
+  const leadTitle = leadDocs[0] ? (leadDocs[0].titel || leadDocs[0].title || '') : '';
+
+  // Per-language title suffix (e.g. " — including "Prop. 2025/26:42"")
+  const titleSuffix: string = leadTitle
+    ? (TITLE_SUFFIX_TEMPLATES[lang] ?? (t => ` — including "${t}"`))(leadTitle)
+    : '';
+
+  let ledeText: string;
+  if (leadType === 'prop' && leadDocs.length > 0) {
+    const n = leadDocs.length;
+    ledeText = lang === 'sv'
+      ? `Riksdagen behandlar ${n} proposition${n !== 1 ? 'er' : ''}${titleSuffix} under denna period.`
+      : lang === 'da' ? `Folketinget behandler ${n} lovforslag${titleSuffix} i denne periode.`
+      : lang === 'no' ? `Stortinget behandler ${n} lovproposisjon${n !== 1 ? 'er' : ''}${titleSuffix} i denne perioden.`
+      : lang === 'fi' ? `Eduskunta käsittelee ${n} hallituksen esitystä${titleSuffix} tällä kaudella.`
+      : lang === 'de' ? `Das Parlament berät ${n} Regierungsvorlag${n !== 1 ? 'en' : 'e'}${titleSuffix} in dieser Periode.`
+      : lang === 'fr' ? `Le parlement examine ${n} proposition${n !== 1 ? 's' : ''} gouvernementale${n !== 1 ? 's' : ''}${titleSuffix} pendant cette période.`
+      : lang === 'es' ? `El parlamento examina ${n} proposición${n !== 1 ? 'es' : ''} gubernamental${n !== 1 ? 'es' : ''}${titleSuffix} durante este período.`
+      : lang === 'nl' ? `Het parlement bespreekt ${n} regeringsvoorstel${n !== 1 ? 'len' : ''}${titleSuffix} in deze periode.`
+      : lang === 'ar' ? `يناقش البرلمان ${n} اقتراح${n !== 1 ? 'ات' : ''} حكومية${titleSuffix} خلال هذه الفترة.`
+      : lang === 'he' ? `הפרלמנט דן ב-${n} הצעת חוק ממשלתית${n !== 1 ? 'ות' : ''}${titleSuffix} בתקופה זו.`
+      : lang === 'ja' ? `議会はこの期間中に${n}本の政府提出法案を審議しています${titleSuffix}。`
+      : lang === 'ko' ? `의회는 이 기간 동안 ${n}건의 정부 법안을 심의하고 있습니다${titleSuffix}.`
+      : lang === 'zh' ? `议会正在审议本期${n}项政府提案${titleSuffix}。`
+      : `Parliament is considering ${n} government proposition${n !== 1 ? 's' : ''}${titleSuffix} during this period.`;
+  } else if (leadType === 'bet' && leadDocs.length > 0) {
+    const n = leadDocs.length;
+    ledeText = lang === 'sv'
+      ? `Utskotten har lämnat ${n} betänkande${n !== 1 ? 'n' : ''}${titleSuffix} för riksdagens beslut.`
+      : lang === 'da' ? `Udvalgene har afleveret ${n} betænkning${n !== 1 ? 'er' : ''}${titleSuffix} til parlamentarisk beslutning.`
+      : lang === 'no' ? `Komiteene har levert ${n} innstilling${n !== 1 ? 'er' : ''}${titleSuffix} til parlamentarisk beslutning.`
+      : lang === 'fi' ? `Valiokunnat ovat toimittaneet ${n} mietinnön${titleSuffix} parlamentin päätettäväksi.`
+      : lang === 'de' ? `Die Ausschüsse haben ${n} Bericht${n !== 1 ? 'e' : ''}${titleSuffix} zur parlamentarischen Entscheidung vorgelegt.`
+      : lang === 'fr' ? `Les commissions ont livré ${n} rapport${n !== 1 ? 's' : ''}${titleSuffix} pour décision parlementaire.`
+      : lang === 'es' ? `Los comités han presentado ${n} informe${n !== 1 ? 's' : ''}${titleSuffix} para decisión parlamentaria.`
+      : lang === 'nl' ? `De commissies hebben ${n} rapport${n !== 1 ? 'en' : ''}${titleSuffix} ingediend voor parlementaire beslissing.`
+      : lang === 'ar' ? `قدمت اللجان ${n} تقرير${n !== 1 ? 'اً' : ''}${titleSuffix} للقرار البرلماني.`
+      : lang === 'he' ? `הוועדות הגישו ${n} דוח${n !== 1 ? 'ות' : ''}${titleSuffix} להחלטה פרלמנטרית.`
+      : lang === 'ja' ? `委員会は議会の決定のために${n}本の報告書を提出しました${titleSuffix}。`
+      : lang === 'ko' ? `위원회들이 의회 결정을 위해 ${n}건의 보고서를 제출했습니다${titleSuffix}.`
+      : lang === 'zh' ? `委员会已提交${n}份报告${titleSuffix}供议会决定。`
+      : `Committees have delivered ${n} report${n !== 1 ? 's' : ''}${titleSuffix} for parliamentary decision.`;
+  } else {
+    const overviewFn = L(lang, 'genericOverview') as string | ((n: number) => string);
+    ledeText = typeof overviewFn === 'function'
+      ? overviewFn(docs.length)
+      : `During this period, ${docs.length} documents were processed in parliament.`;
+  }
+  content += `<p class="article-lede">${escapeHtml(ledeText)}</p>\n`;
+
+  content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
 
   for (const docType of sortedTypes) {
     const typeDocs = byType[docType] ?? [];
@@ -624,6 +700,12 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
       }
       content += `    </div>\n`;
     }
+  }
+
+  // ── Narrative bridge to analytical outlook ───────────────────────────────
+  const oppositionTransition = getPillarTransition(lang, 'oppositionToAhead');
+  if (oppositionTransition) {
+    content += `    <p class="pillar-transition">${escapeHtml(oppositionTransition)}</p>\n`;
   }
 
   // ── Key takeaways ────────────────────────────────────────────────────────
