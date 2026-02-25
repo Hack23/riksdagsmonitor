@@ -1158,7 +1158,6 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'propositions', 'en') as string;
 
       expect(content).toContain('Key Takeaways');
-      // Should contain policy domain cross-analysis
       expect(content).toContain('policy priorities');
     });
 
