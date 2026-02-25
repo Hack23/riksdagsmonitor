@@ -1,4 +1,4 @@
-riksdagsmonitor@0.6.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.6.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.0.2 deduped
 ├─┬ @types/d3@7.4.3
