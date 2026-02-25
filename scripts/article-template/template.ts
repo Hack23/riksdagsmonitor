@@ -263,7 +263,7 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
 
 ${events.length > 0 ? generateEventCalendar(events as ReadonlyArray<EventGridItem>, lang) : ''}
 
-  <div class="article-content">
+  <div class="article-content prose">
     <p class="lede">
       ${subtitle}
     </p>
