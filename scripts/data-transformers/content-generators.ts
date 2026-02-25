@@ -340,10 +340,25 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
   const allDomains = new Set<string>();
   reports.forEach(r => { detectPolicyDomains(r, lang).forEach(d => allDomains.add(d)); });
   if (allDomains.size > 0) {
-    const isSv = lang === 'sv';
     const domainList = Array.from(allDomains).slice(0, 3).join(', ');
-    const crossAnalysis = isSv
-      ? `Betänkandena berör ${escapeHtml(domainList)} – ett mönster som tyder på breda lagstiftningsprioriteringar denna session.`
+    const crossAnalysisTemplates: Record<string, (d: string) => string> = {
+      sv: (d) => `Betänkandena berör ${d} – ett mönster som tyder på breda lagstiftningsprioriteringar denna session.`,
+      da: (d) => `Betænkningerne berører ${d} — et mønster, der signalerer brede lovgivningsprioriteringer.`,
+      no: (d) => `Innstillingene berører ${d} — et mønster som signaliserer brede lovgivningsprioriteringer.`,
+      fi: (d) => `Mietinnöt kattavat ${d} — laaja-alainen malli, joka osoittaa hallituksen lainsäädäntöprioriteetit.`,
+      de: (d) => `Die Berichte betreffen ${d} — ein Muster, das die breiten Gesetzgebungsprioritäten signalisiert.`,
+      fr: (d) => `Les rapports couvrent ${d} — un schéma indiquant les larges priorités législatives.`,
+      es: (d) => `Los informes abarcan ${d} — un patrón que indica las amplias prioridades legislativas.`,
+      nl: (d) => `De rapporten bestrijken ${d} — een patroon dat de brede wetgevende prioriteiten signaleert.`,
+      ar: (d) => `تغطي التقارير ${d} — نمط يشير إلى أولويات تشريعية واسعة.`,
+      he: (d) => `הדוחות מקיפים ${d} — תבנית המסמנת סדרי עדיפויות חקיקתיים רחבים.`,
+      ja: (d) => `報告書は${d}に及び、幅広い立法優先事項を示しています。`,
+      ko: (d) => `보고서는 ${d}에 걸쳐 있으며, 광범위한 입법 우선순위를 나타냅니다.`,
+      zh: (d) => `报告涉及${d}——显示出广泛的立法优先事项。`,
+    };
+    const crossTpl = crossAnalysisTemplates[lang as string];
+    const crossAnalysis = crossTpl
+      ? crossTpl(escapeHtml(domainList))
       : `Reports span ${escapeHtml(domainList)} — a cross-committee pattern signalling the government's broad legislative priorities this session.`;
     content += `        <li>${crossAnalysis}</li>\n`;
   }
@@ -452,9 +467,24 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
   if (sortedCommittees.length > 0) {
     const [topCommittee, topCount] = sortedCommittees[0];
     const topName = getCommitteeName(topCommittee, lang);
-    const isSv = lang === 'sv';
-    const priorityNote = isSv
-      ? `${escapeHtml(topName)} tar emot ${topCount} av propositionerna – ett tecken på att detta är ett centralt prioriterat område för regeringen denna session.`
+    const priorityTemplates: Record<string, (n: string, c: number) => string> = {
+      sv: (n, c) => `${n} tar emot ${c} av propositionerna – ett tecken på att detta är ett centralt prioriterat område för regeringen denna session.`,
+      da: (n, c) => `${n} modtager ${c} af lovforslagene — et klart signal om regeringsprioritet.`,
+      no: (n, c) => `${n} mottar ${c} av proposisjonene — et sterkt signal om regjeringsprioritet.`,
+      fi: (n, c) => `${n} vastaanottaa ${c} esityksistä — vahva merkki hallituksen painopistealueesta.`,
+      de: (n, c) => `${n} erhält ${c} der Vorlagen — ein starkes Signal für die Regierungspriorität in diesem Bereich.`,
+      fr: (n, c) => `${n} reçoit ${c} des propositions — un signal fort de priorité gouvernementale.`,
+      es: (n, c) => `${n} recibe ${c} de las proposiciones — una señal clara de prioridad gubernamental.`,
+      nl: (n, c) => `${n} ontvangt ${c} van de voorstellen — een sterk signaal van overheidsprioriteit.`,
+      ar: (n, c) => `${n} يستقبل ${c} من المقترحات — إشارة قوية لأولوية حكومية.`,
+      he: (n, c) => `${n} מקבל ${c} מההצעות — אות חזק לעדיפות ממשלתית.`,
+      ja: (n, c) => `${n}は${c}件の提案を受け取り、政府の重点分野であることを示しています。`,
+      ko: (n, c) => `${n}이(가) ${c}건의 법안을 받아 정부 우선순위를 강하게 나타냅니다.`,
+      zh: (n, c) => `${n}收到${c}项提案——强烈表明这是政府本期的优先领域。`,
+    };
+    const priorityTpl = priorityTemplates[lang as string];
+    const priorityNote = priorityTpl
+      ? priorityTpl(escapeHtml(topName), topCount)
       : `${escapeHtml(topName)} receives ${topCount} of the propositions — a strong signal of government priority in this policy area this session.`;
     content += `      <p>${priorityNote}</p>\n`;
   }
@@ -744,7 +774,19 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
     content += `        <li>${escapeHtml(String(policyContextVal))}: ${escapeHtml(Array.from(allDomains).slice(0, 4).join('; '))}</li>\n`;
   }
   if (enrichedCount > 0) {
-    content += `        <li><strong>Analysis depth:</strong> ${enrichedCount} of ${docs.length} documents analysed with full text</li>\n`;
+    const analysisDepthLabels: Record<string, string> = {
+      en: 'Analysis depth', sv: 'Analysdjup', da: 'Analysedybde', no: 'Analysedybde',
+      fi: 'Analyysisyvyys', de: 'Analysetiefe', fr: 'Profondeur d\'analyse',
+      es: 'Profundidad del análisis', nl: 'Analysediepte', ar: 'عمق التحليل',
+      he: 'עומק הניתוח', ja: '分析の深さ', ko: '분석 깊이', zh: '分析深度',
+    };
+    const depthLabel = analysisDepthLabels[lang as string] ?? 'Analysis depth';
+    const ofLabels: Record<string, string> = {
+      sv: 'av', da: 'af', no: 'av', fi: '/', de: 'von', fr: 'sur', es: 'de',
+      nl: 'van', ar: 'من', he: 'מתוך', ja: '/', ko: '/', zh: '/',
+    };
+    const ofLabel = ofLabels[lang as string] ?? 'of';
+    content += `        <li><strong>${escapeHtml(depthLabel)}:</strong> ${enrichedCount} ${ofLabel} ${docs.length}</li>\n`;
   }
 
   // ── SECONDARY: CIA context only when it changes interpretation ───────────

@@ -1374,6 +1374,102 @@ describe('Data Transformers', () => {
     });
   });
 
+  describe('Multilingual policy domain translations', () => {
+    it('should return German domain names for de language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Klimat och miljö', parti: 'MP', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'de') as string;
+
+      expect(content).toContain('Finanzpolitik');
+      expect(content).toContain('Umwelt- und Klimapolitik');
+      expect(content).not.toContain('>fiscal policy<');
+      expect(content).not.toContain('>environmental and climate policy<');
+    });
+
+    it('should return French domain names for fr language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Bostadspolitik', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'fr') as string;
+
+      expect(content).toContain('politique de défense et de sécurité');
+      expect(content).toContain('politique du logement');
+    });
+
+    it('should return Japanese domain names for ja language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Klimat och miljö', parti: 'MP', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'ja') as string;
+
+      expect(content).toContain('財政政策');
+      expect(content).toContain('環境・気候政策');
+    });
+
+    it('should return Arabic domain names for ar language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Klimat och miljö', parti: 'MP', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'ar') as string;
+
+      expect(content).toContain('السياسة المالية');
+      expect(content).toContain('سياسة البيئة والمناخ');
+    });
+  });
+
+  describe('Multilingual opposition strategy text', () => {
+    it('should produce German strategy text for de language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Bostadspolitik', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' },
+          { titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/3', dok_id: 'M3' }
+        ]
+      } as MockArticlePayload, 'motions', 'de') as string;
+
+      expect(content).toContain('führt mit');
+      expect(content).not.toContain('leads opposition activity');
+    });
+
+    it('should produce French strategy text for fr language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Bostadspolitik', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' },
+          { titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/3', dok_id: 'M3' }
+        ]
+      } as MockArticlePayload, 'motions', 'fr') as string;
+
+      expect(content).toContain('mène avec');
+      expect(content).not.toContain('leads opposition activity');
+    });
+  });
+
+  describe('Multilingual generic content document type labels', () => {
+    it('should produce German document type labels for de language', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test document', doktyp: 'mot', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Another document', doktyp: 'prop', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'generic', 'de') as string;
+
+      expect(content).toContain('Anträge');
+      expect(content).toContain('Regierungsvorlagen');
+      expect(content).not.toContain('>Motions<');
+      expect(content).not.toContain('>Propositions<');
+    });
+  });
+
   describe('Opposition strategy per-party analysis', () => {
     it('should name the most active party in opposition strategy section', () => {
       const content = generateArticleContent({
