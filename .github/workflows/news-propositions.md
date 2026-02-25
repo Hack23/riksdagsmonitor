@@ -238,9 +238,7 @@ grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-government-propositions-en
 3. Add thematic grouping headers (e.g., by ministry or policy area)
 4. Translate any remaining Swedish content
 
-```bash
-npx tsx scripts/generate-news-indexes.ts
-```
+**Note**: For shared rules on news index files, metadata, sitemap generation, and what to commit, see the canonical guidance in `news-article-generator.md`.
 
 ## Translation Rules
 - Swedish API titles MUST be translated to target language

@@ -197,9 +197,7 @@ Every generated article must include:
 
 If the generated article lacks analysis, manually add contextual commentary before committing.
 
-```bash
-npx tsx scripts/generate-news-indexes.ts
-```
+**Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files. Run `npm run prebuild` (or `npm run build`) locally if you need to validate or preview the generated index, metadata, or sitemap outputs on a fresh checkout where these files will not exist.
 
 ## Translation Rules
 - Swedish API titles MUST be translated

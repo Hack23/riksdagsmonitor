@@ -236,9 +236,7 @@ grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-opposition-motions-en.html
 3. Add thematic grouping headers (e.g., by policy area or party)
 4. Translate any remaining Swedish content
 
-```bash
-npx tsx scripts/generate-news-indexes.ts
-```
+**Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files.
 
 ## Translation Rules
 - Swedish API titles MUST be translated to target language

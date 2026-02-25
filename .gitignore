@@ -57,3 +57,11 @@ news-*-screenshot.png
 news/metadata/generation-result.json
 news/metadata/last-generation.json
 scripts/__pycache__/
+
+# Build-time generated files (created by prebuild script, NOT committed)
+# These caused constant merge conflicts when committed by parallel agent PRs.
+# They are regenerated at build time via: npm run prebuild
+sitemap.xml
+news/index.html
+news/index_*.html
+data/news-articles.json
