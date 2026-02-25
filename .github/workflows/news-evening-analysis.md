@@ -31,7 +31,7 @@ permissions:
   discussions: read
   security-events: read
   
-timeout-minutes: 45
+timeout-minutes: 90
 
 network:
   allowed:
@@ -94,19 +94,19 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Your mission is t
 ## 🚨 CRITICAL REQUIREMENTS (MUST COMPLETE)
 
 ### ⏱️ Time Budget Management
-**You have 45 minutes total.** Budget your time wisely:
+**You have 90 minutes total.** Budget your time wisely:
 - **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, assess day's data
 - **Minutes 5–15**: Query MCP tools, gather parliamentary data for the day
-- **Minutes 15–37**: Generate evening analysis articles **one language at a time** (see Step 4)
-- **Minutes 37–42**: Validate and commit articles
-- **Minutes 42–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 15–75**: Generate evening analysis articles **one language at a time** (see Step 4)
+- **Minutes 75–82**: Validate and commit articles
+- **Minutes 82–90**: Create PR with `safeoutputs___create_pull_request`
 
 **Hard cutoffs — check elapsed before starting each new language:**
-- If elapsed >= 35 minutes → stop adding languages, commit what you have and create PR
-- If elapsed >= 40 minutes → skip validation, commit immediately, create PR
-- **NEVER hit the 45-minute timeout** — always call a safe output tool first
+- If elapsed >= 80 minutes → stop adding languages, commit what you have and create PR
+- If elapsed >= 85 minutes → skip validation, commit immediately, create PR
+- **NEVER hit the 90-minute timeout** — always call a safe output tool first
 
-**If you reach minute 35 without having committed**: Stop generating more content. Commit what you have and create the PR immediately. Partial content in a PR is better than a timeout with no PR.
+**If you reach minute 80 without having committed**: Stop generating more content. Commit what you have and create the PR immediately. Partial content in a PR is better than a timeout with no PR.
 
 ### 1. MANDATORY Date Validation (First Step)
 **ALWAYS START by logging the current date and time:**
