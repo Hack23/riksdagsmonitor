@@ -63,6 +63,7 @@ export interface QualityThresholds {
   minPartySources: number;
   minCrossReferences: number;
   requireWhyThisMatters: boolean;
+  requireHistoricalContext: boolean;
   recommendHistoricalContext: boolean;
   recommendInternationalComparison: boolean;
 }
