@@ -569,14 +569,8 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   const cia = data.ciaContext;
   let content = '';
 
-  // ── Overview lede (from document count) ────────────────────────────────
-  const overviewFn = L(lang, 'genericOverview') as string | ((n: number) => string);
-  const overview = typeof overviewFn === 'function'
-    ? overviewFn(docs.length)
-    : `During this period, ${docs.length} documents were processed in parliament.`;
-  content += `<p class="article-lede">${escapeHtml(String(overview))}</p>\n`;
-
-  // ── Group by document type ───────────────────────────────────────────────
+  // ── Inverted-pyramid lede: lead with most significant document type ──────
+  // Group by document type first to identify the most newsworthy lead
   const byType: Record<string, RawDocument[]> = {};
   docs.forEach(doc => {
     const docType = doc.doktyp || doc.documentType || 'other';
@@ -584,14 +578,36 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
     byType[docType].push(doc);
   });
 
-  content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
-
-  // Render in significance order: propositions → committee reports → motions → rest
+  // Significance order: propositions → committee reports → government comms → motions → rest
   const typeOrder = ['prop', 'bet', 'skr', 'mot', 'other'];
   const sortedTypes = [...Object.keys(byType)].sort((a, b) => {
     const ai = typeOrder.indexOf(a); const bi = typeOrder.indexOf(b);
     return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
   });
+
+  // Lead with the most significant type rather than a raw count
+  const leadType = sortedTypes[0];
+  const leadDocs = leadType ? (byType[leadType] ?? []) : [];
+  const leadTitle = leadDocs[0] ? (leadDocs[0].titel || leadDocs[0].title || '') : '';
+
+  let ledeText: string;
+  if (leadType === 'prop' && leadDocs.length > 0) {
+    ledeText = lang === 'sv'
+      ? `Riksdagen behandlar ${leadDocs.length} proposition${leadDocs.length !== 1 ? 'er' : ''}${leadTitle ? ` — inklusive "${leadTitle}"` : ''} under denna period.`
+      : `Parliament is considering ${leadDocs.length} government proposition${leadDocs.length !== 1 ? 's' : ''}${leadTitle ? ` — including "${leadTitle}"` : ''} during this period.`;
+  } else if (leadType === 'bet' && leadDocs.length > 0) {
+    ledeText = lang === 'sv'
+      ? `Utskotten har lämnat ${leadDocs.length} betänkande${leadDocs.length !== 1 ? 'n' : ''}${leadTitle ? ` — ledda av "${leadTitle}"` : ''} för riksdagens beslut.`
+      : `Committees have delivered ${leadDocs.length} report${leadDocs.length !== 1 ? 's' : ''}${leadTitle ? ` — led by "${leadTitle}"` : ''} for parliamentary decision.`;
+  } else {
+    const overviewFn = L(lang, 'genericOverview') as string | ((n: number) => string);
+    ledeText = typeof overviewFn === 'function'
+      ? overviewFn(docs.length)
+      : `During this period, ${docs.length} documents were processed in parliament.`;
+  }
+  content += `<p class="article-lede">${escapeHtml(ledeText)}</p>\n`;
+
+  content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
 
   for (const docType of sortedTypes) {
     const typeDocs = byType[docType] ?? [];

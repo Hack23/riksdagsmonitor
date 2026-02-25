@@ -421,6 +421,20 @@ describe('News Realtime Monitor - Quality Framework', () => {
     });
 
     it('should normalize party count correctly', () => {
+      const metricsWithSixParties: QualityMetrics = {
+        analyticalDepth: 0,
+        partyCount: 6,
+        crossReferences: 0,
+        hasWhyThisMatters: false,
+        hasHistoricalContext: false,
+        hasInternationalComparison: false
+      };
+      const score = qualityModule.calculateQualityScore(metricsWithSixParties);
+      // 6 parties (full quota) should contribute 0.25 (25% weight)
+      expect(score).toBeGreaterThanOrEqual(0.24);
+      expect(score).toBeLessThanOrEqual(0.26);
+
+      // 4 parties should contribute less than full weight (4/6 * 0.25 ≈ 0.167)
       const metricsWithFourParties: QualityMetrics = {
         analyticalDepth: 0,
         partyCount: 4,
@@ -429,10 +443,10 @@ describe('News Realtime Monitor - Quality Framework', () => {
         hasHistoricalContext: false,
         hasInternationalComparison: false
       };
-      const score = qualityModule.calculateQualityScore(metricsWithFourParties);
-      // 4 parties should contribute 0.25 (25% weight)
-      expect(score).toBeGreaterThanOrEqual(0.24);
-      expect(score).toBeLessThanOrEqual(0.26);
+      const scoreFour = qualityModule.calculateQualityScore(metricsWithFourParties);
+      expect(scoreFour).toBeLessThan(score);
+      expect(scoreFour).toBeGreaterThan(0.15);
+      expect(scoreFour).toBeLessThan(0.18);
     });
 
     it('should cap score at 1.0', () => {
