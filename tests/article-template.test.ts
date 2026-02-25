@@ -781,6 +781,9 @@ describe('Article Template', () => {
     it('should fall back to English for unknown language', () => {
       const html = generateSiteFooter('xx');
       expect(html).toContain('About Riksdagsmonitor');
+      // Should use English paths, not index_xx.html
+      expect(html).toContain('../index.html');
+      expect(html).not.toContain('index_xx.html');
     });
 
     it('should include Dashboard, LinkedIn, Security Policy, and Contact Us links', () => {

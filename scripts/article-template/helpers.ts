@@ -164,9 +164,12 @@ export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: L
  * @returns HTML footer element string
  */
 export function generateSiteFooter(lang: Language | string): string {
-  const labels = SITE_FOOTER_LABELS[lang as Language] || SITE_FOOTER_LABELS.en;
-  const homePath: string = lang === 'en' ? '../index.html' : `../index_${lang}.html`;
-  const newsPath: string = getNewsIndexFilename(lang);
+  const normalizedLang: Language = ALL_LANG_CODES.includes(lang as Language)
+    ? (lang as Language)
+    : 'en';
+  const labels = SITE_FOOTER_LABELS[normalizedLang];
+  const homePath: string = normalizedLang === 'en' ? '../index.html' : `../index_${normalizedLang}.html`;
+  const newsPath: string = getNewsIndexFilename(normalizedLang);
 
   return `<footer role="contentinfo">
   <div class="footer-content">

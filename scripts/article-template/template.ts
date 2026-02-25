@@ -243,7 +243,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
 
 <div class="article-top-nav">
-  <a href="${getNewsIndexFilename(lang)}" class="back-to-news">
+  <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" class="back-to-news">
     \u2190 ${getFooterLabel(lang, 'backToNews')}
   </a>
 </div>
