@@ -231,6 +231,104 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     content += '    </ul>\n';
   }
 
+  // Narrative bridge to analytical outlook (inter-pillar transition)
+  const aheadTransition = getPillarTransition(lang, 'pulseToWatch');
+  if (aheadTransition) {
+    content += `    <p class="pillar-transition">${escapeHtml(aheadTransition)}</p>\n`;
+  }
+
+  // ── Key takeaways: synthesize all data sources for the week ──────────────
+  const hasEventData = highPriority.length > 0;
+  const hasDocData = documents.length > 0;
+  const hasQData = questions.length > 0;
+  const hasInterpData = interpellations.length > 0;
+
+  if (hasEventData || hasDocData || hasQData || hasInterpData) {
+    content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
+    content += `    <div class="context-box">\n      <ul>\n`;
+
+    // Activity summary takeaway
+    const itemCount = highPriority.length + documents.length + questions.length + interpellations.length;
+    const activitySummaryTemplates: Record<string, (n: number) => string> = {
+      sv: n => `Denna period innehåller ${n} ärenden som spänner över debatter, lagförslag, skriftliga frågor och interpellationer.`,
+      da: n => `Denne periode omfatter ${n} emner på tværs af debatter, lovforslag, skriftlige spørgsmål og forespørgsler.`,
+      no: n => `Denne perioden omfatter ${n} saker som spenner over debatter, lovforslag, skriftlige spørsmål og interpellasjoner.`,
+      fi: n => `Tämä ajanjakso sisältää ${n} asiaa, jotka kattavat keskusteluja, lakiehdotuksia, kirjallisia kysymyksiä ja välikysymyksiä.`,
+      de: n => `Dieser Zeitraum umfasst ${n} Themen in den Bereichen Debatten, Gesetzentwürfe, schriftliche Anfragen und Interpellationen.`,
+      fr: n => `Cette période comprend ${n} sujets couvrant débats, propositions de loi, questions écrites et interpellations.`,
+      es: n => `Este período incluye ${n} temas que abarcan debates, proyectos de ley, preguntas escritas e interpelaciones.`,
+      nl: n => `Deze periode omvat ${n} onderwerpen over debatten, wetsvoorstellen, schriftelijke vragen en interpellaties.`,
+      ar: n => `تشمل هذه الفترة ${n} بندًا تتراوح بين المناقشات ومشاريع القوانين والأسئلة المكتوبة والاستجوابات.`,
+      he: n => `תקופה זו כוללת ${n} נושאים הכוללים דיונים, הצעות חוק, שאלות כתובות ואינטרפלציות.`,
+      ja: n => `この期間には、討論・法案・書面質問・質問主意書を含む${n}件の議題があります。`,
+      ko: n => `이 기간에는 토론, 법안, 서면 질문, 대정부 질문을 포괄하는 ${n}건의 의제가 있습니다.`,
+      zh: n => `本期涵盖${n}个议题，横跨辩论、法案、书面质询和质询。`,
+    };
+    const actTpl = activitySummaryTemplates[lang as string];
+    const activitySummary = actTpl
+      ? actTpl(itemCount)
+      : `This period features ${itemCount} items spanning debates, legislative proposals, written questions, and interpellations.`;
+    content += `        <li>${escapeHtml(activitySummary)}</li>\n`;
+
+    // Policy domain cross-analysis from documents
+    if (documents.length > 0) {
+      const weekDomains = new Set<string>();
+      documents.forEach(doc => {
+        detectPolicyDomains(doc, lang).forEach(d => weekDomains.add(d));
+      });
+      if (weekDomains.size > 0) {
+        const domainList = Array.from(weekDomains).slice(0, 4).join(', ');
+        const domainSummaryTemplates: Record<string, (d: string) => string> = {
+          sv: d => `Den lagstiftande dagordningen berör ${d} — ett brett politiskt fokus denna period.`,
+          da: d => `Den lovgivningsmæssige dagsorden berører ${d} — et bredt politisk fokus i denne periode.`,
+          no: d => `Den lovgivningsmessige agendaen berører ${d} — et bredt politisk fokus denne perioden.`,
+          fi: d => `Lainsäädäntöohjelma kattaa ${d} — laaja poliittinen painopiste tällä kaudella.`,
+          de: d => `Die gesetzgeberische Tagesordnung berührt ${d} — ein breiter politischer Fokus in diesem Zeitraum.`,
+          fr: d => `L'agenda législatif touche ${d} — un large spectre politique cette période.`,
+          es: d => `La agenda legislativa toca ${d} — un amplio enfoque político en este período.`,
+          nl: d => `De wetgevende agenda raakt ${d} — een breed politiek focus in deze periode.`,
+          ar: d => `يغطي جدول الأعمال التشريعي ${d} — تركيز سياسي واسع في هذه الفترة.`,
+          he: d => `סדר היום החקיקתי נוגע ב${d} — מוקד פוליטי רחב בתקופה זו.`,
+          ja: d => `立法アジェンダは${d}に及び、この期間の幅広い政策的焦点を示しています。`,
+          ko: d => `입법 안건은 ${d}에 걸쳐 있으며, 이 기간의 광범위한 정책 초점을 나타냅니다.`,
+          zh: d => `立法议程涉及${d}——显示本期广泛的政策关注。`,
+        };
+        const domTpl = domainSummaryTemplates[lang as string];
+        const domainSummary = domTpl
+          ? domTpl(escapeHtml(domainList))
+          : `The legislative agenda touches on ${escapeHtml(domainList)} — a broad policy focus this period.`;
+        content += `        <li>${domainSummary}</li>\n`;
+      }
+    }
+
+    // Parliamentary scrutiny indicator
+    if (questions.length > 0 || interpellations.length > 0) {
+      const scrutinyCount = questions.length + interpellations.length;
+      const scrutinyTemplates: Record<string, (n: number) => string> = {
+        sv: n => `${n} parlamentariska granskningsåtgärder (frågor och interpellationer) signalerar aktiv oppositionsövervakning.`,
+        da: n => `${n} parlamentariske kontrolforanstaltninger signalerer aktiv oppositionsovervågning.`,
+        no: n => `${n} parlamentariske kontrolltiltak signaliserer aktiv overvåking fra opposisjonen.`,
+        fi: n => `${n} parlamentaarista valvontatoimenpidettä signaloi aktiivista oppositiovalvontaa.`,
+        de: n => `${n} parlamentarische Kontrollmaßnahmen signalisieren aktive Oppositionsüberwachung.`,
+        fr: n => `${n} mesures de contrôle parlementaire signalent une surveillance active de l'opposition.`,
+        es: n => `${n} medidas de control parlamentario señalan una supervisión activa de la oposición.`,
+        nl: n => `${n} parlementaire controlemaatregelen signaleren actief oppositietoezicht.`,
+        ar: n => `${n} إجراءات رقابة برلمانية تشير إلى مراقبة نشطة من المعارضة.`,
+        he: n => `${n} אמצעי פיקוח פרלמנטריים מסמנים מעקב פעיל של האופוזיציה.`,
+        ja: n => `${n}件の議会監視措置は、野党による積極的な監視を示しています。`,
+        ko: n => `${n}건의 의회 감시 조치는 야당의 적극적인 감시를 나타냅니다.`,
+        zh: n => `${n}项议会监督措施表明反对派正在积极监督。`,
+      };
+      const scrTpl = scrutinyTemplates[lang as string];
+      const scrutinySummary = scrTpl
+        ? scrTpl(scrutinyCount)
+        : `${scrutinyCount} parliamentary scrutiny measures (questions and interpellations) signal active opposition oversight.`;
+      content += `        <li>${escapeHtml(scrutinySummary)}</li>\n`;
+    }
+
+    content += `      </ul>\n    </div>\n`;
+  }
+
   return content;
 }
 
@@ -490,6 +588,66 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
   }
 
   content += `    </div>\n`;
+
+  // Narrative bridge to analytical outlook (inter-pillar transition)
+  const propTransition = getPillarTransition(lang, 'pulseToWatch');
+  if (propTransition) {
+    content += `    <p class="pillar-transition">${escapeHtml(propTransition)}</p>\n`;
+  }
+
+  // ── Key takeaways: synthesize propositions batch ──────────────────────────
+  content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
+  content += `    <div class="context-box">\n      <ul>\n`;
+
+  // Propositions batch overview
+  const committeeCountProp = Object.keys(byCommittee).filter(c => c !== 'unknown').length;
+  const propOverviewTemplates: Record<string, (p: number, c: number) => string> = {
+    sv: (p, c) => `${p} propositioner har hänvisats till ${c} utskott, vilket visar bredden i regeringens lagstiftningsambitioner.`,
+    da: (p, c) => `${p} lovforslag er henvist til ${c} udvalg, hvilket viser bredden i regeringens lovgivningsmæssige ambitioner.`,
+    no: (p, c) => `${p} proposisjoner er henvist til ${c} komiteer, noe som viser bredden i regjeringens lovgivningsmessige ambisjoner.`,
+    fi: (p, c) => `${p} esitystä on viitattu ${c} valiokuntaan, mikä kuvastaa hallituksen lainsäädännöllisten tavoitteiden laajuutta.`,
+    de: (p, c) => `${p} Vorlagen wurden an ${c} Ausschüsse verwiesen, was die Breite der Gesetzgebungsambitionen der Regierung zeigt.`,
+    fr: (p, c) => `${p} propositions ont été renvoyées à ${c} commissions, montrant l'ampleur des ambitions législatives du gouvernement.`,
+    es: (p, c) => `${p} proposiciones han sido remitidas a ${c} comités, mostrando la amplitud de las ambiciones legislativas del gobierno.`,
+    nl: (p, c) => `${p} voorstellen zijn verwezen naar ${c} commissies, wat de breedte van de wetgevende ambities van de regering toont.`,
+    ar: (p, c) => `تمت إحالة ${p} مقترحات إلى ${c} لجان، مما يُظهر نطاق الطموحات التشريعية الحكومية.`,
+    he: (p, c) => `${p} הצעות הופנו ל-${c} ועדות, המראות את רוחב השאיפות החקיקתיות של הממשלה.`,
+    ja: (p, c) => `${p}件の法案が${c}の委員会に付託され、政府の幅広い立法野心を示しています。`,
+    ko: (p, c) => `${p}건의 법안이 ${c}개 위원회에 회부되어 정부의 광범위한 입법 야심을 나타냅니다.`,
+    zh: (p, c) => `${p}项提案已交付${c}个委员会审议，显示政府广泛的立法雄心。`,
+  };
+  const propOverTpl = propOverviewTemplates[lang as string];
+  const propOverview = propOverTpl
+    ? propOverTpl(propositions.length, committeeCountProp)
+    : `${propositions.length} propositions have been referred to ${committeeCountProp} committees, showing the breadth of the government's legislative ambitions.`;
+  content += `        <li>${escapeHtml(propOverview)}</li>\n`;
+
+  // Policy domain cross-analysis
+  if (allPropDomains.size > 0) {
+    const domainListProp = Array.from(allPropDomains).slice(0, 3).join(', ');
+    const propDomainTemplates: Record<string, (d: string) => string> = {
+      sv: d => `Propositionerna berör ${d} — ett mönster som avslöjar regeringens politik­prioriteringar.`,
+      da: d => `Lovforslagene berører ${d} — et mønster der afdækker regeringens politiske prioriteringer.`,
+      no: d => `Proposisjonene berører ${d} — et mønster som avslører regjeringens politiske prioriteringer.`,
+      fi: d => `Esitykset kattavat ${d} — malli, joka paljastaa hallituksen poliittiset prioriteetit.`,
+      de: d => `Die Vorlagen betreffen ${d} — ein Muster, das die politischen Prioritäten der Regierung offenbart.`,
+      fr: d => `Les propositions touchent ${d} — un schéma révélant les priorités politiques du gouvernement.`,
+      es: d => `Las proposiciones abarcan ${d} — un patrón que revela las prioridades políticas del gobierno.`,
+      nl: d => `De voorstellen raken ${d} — een patroon dat de politieke prioriteiten van de regering onthult.`,
+      ar: d => `تمس المقترحات ${d} — نمط يكشف عن الأولويات السياسية للحكومة.`,
+      he: d => `ההצעות נוגעות ב${d} — תבנית החושפת את סדרי העדיפויות הפוליטיים של הממשלה.`,
+      ja: d => `法案は${d}に及び、政府の政策優先事項を明らかにしています。`,
+      ko: d => `법안은 ${d}에 걸쳐 있으며, 정부의 정책 우선순위를 드러냅니다.`,
+      zh: d => `提案涉及${d}——揭示了政府的政策优先事项。`,
+    };
+    const propDomTpl = propDomainTemplates[lang as string];
+    const propDomainAnalysis = propDomTpl
+      ? propDomTpl(escapeHtml(domainListProp))
+      : `Propositions span ${escapeHtml(domainListProp)} — a pattern revealing the government's policy priorities.`;
+    content += `        <li>${propDomainAnalysis}</li>\n`;
+  }
+
+  content += `      </ul>\n    </div>\n`;
 
   return content;
 }

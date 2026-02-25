@@ -1044,6 +1044,124 @@ describe('Data Transformers', () => {
       expect(content).toContain('Key vote');
     });
 
+    it('should render key takeaways in week-ahead content with events and documents', () => {
+      const content = generateArticleContent({
+        events: [
+          { titel: 'Budgetdebatt', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ],
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1', organ: 'FiU' },
+          { titel: 'Försvarspolitik', doktyp: 'bet', url: 'https://example.com/d2', dok_id: 'D2', organ: 'FöU' }
+        ],
+        highlights: []
+      } as MockArticlePayload, 'week-ahead', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('items spanning');
+    });
+
+    it('should render key takeaways in Swedish for week-ahead content', () => {
+      const content = generateArticleContent({
+        events: [
+          { titel: 'Budgetdebatt', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ],
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1' }
+        ],
+        highlights: []
+      } as MockArticlePayload, 'week-ahead', 'sv') as string;
+
+      expect(content).toContain('Centrala slutsatser');
+      expect(content).toContain('ärenden som spänner');
+    });
+
+    it('should include policy domain analysis in week-ahead key takeaways', () => {
+      const content = generateArticleContent({
+        events: [],
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1', organ: 'FiU' }
+        ],
+        highlights: []
+      } as MockArticlePayload, 'week-ahead', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('legislative agenda');
+    });
+
+    it('should include parliamentary scrutiny indicator when questions exist', () => {
+      const content = generateArticleContent({
+        events: [],
+        questions: [
+          { titel: 'Fråga om integration', parti: 'SD', dok_id: 'Q1' }
+        ],
+        interpellations: [
+          { titel: 'Interpellation om vården', parti: 'V', dok_id: 'I1' }
+        ],
+        highlights: []
+      } as MockArticlePayload, 'week-ahead', 'en') as string;
+
+      expect(content).toContain('scrutiny measures');
+      expect(content).toContain('opposition oversight');
+    });
+
+    it('should include pillar transition in week-ahead content', () => {
+      const content = generateArticleContent({
+        events: [
+          { titel: 'Debatt', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ],
+        highlights: [{ title: 'Test', description: 'Test' }]
+      } as MockArticlePayload, 'week-ahead', 'en') as string;
+
+      expect(content).toContain('pillar-transition');
+    });
+
+    it('should render key takeaways in propositions content', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' },
+          { titel: 'Försvarsprop', organ: 'FöU', url: 'https://example.com/p2', dok_id: 'P2' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('propositions have been referred');
+      expect(content).toContain('committees');
+    });
+
+    it('should render key takeaways in Swedish for propositions', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' }
+        ]
+      } as MockArticlePayload, 'propositions', 'sv') as string;
+
+      expect(content).toContain('Centrala slutsatser');
+      expect(content).toContain('propositioner har hänvisats');
+    });
+
+    it('should include pillar transition in propositions content', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('pillar-transition');
+    });
+
+    it('should include policy domain cross-analysis in propositions key takeaways', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Skattereform', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' },
+          { titel: 'Försvarspolitik', organ: 'FöU', url: 'https://example.com/p2', dok_id: 'P2' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      // Should contain policy domain cross-analysis
+      expect(content).toContain('policy priorities');
+    });
+
     it('should render Swedish analytical sections for generic content', () => {
       const content = generateArticleContent({
         documents: [
