@@ -21,6 +21,8 @@ import {
   formatDate,
   generateEventCalendar,
   generateWatchSection,
+  generateArticleLanguageSwitcher,
+  generateSiteFooter,
 } from './helpers.js';
 
 /**
@@ -239,6 +241,14 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
   
 </head>
 <body>
+${generateArticleLanguageSwitcher(baseSlug, lang)}
+
+<div class="article-top-nav">
+  <a href="${getNewsIndexFilename(lang)}" class="back-to-news">
+    \u2190 ${getFooterLabel(lang, 'backToNews')}
+  </a>
+</div>
+
 <article class="news-article">
   <header class="article-header">
     <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
@@ -279,6 +289,8 @@ ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<Wat
     </div>
   </footer>
 </article>
+
+${generateSiteFooter(lang)}
 
 <script type="module" src="../scripts/back-to-top.ts"></script>
 </body>

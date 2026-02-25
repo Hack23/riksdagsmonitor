@@ -156,3 +156,57 @@ export const LOCALE_MAP: Record<string, string> = {
   de: 'de-DE', fr: 'fr-FR', es: 'es-ES', nl: 'nl-NL', ar: 'ar-SA',
   he: 'he-IL', ja: 'ja-JP', ko: 'ko-KR', zh: 'zh-CN'
 };
+
+/** Language display data for the article language switcher */
+export interface LangDisplay {
+  readonly flag: string;
+  readonly name: string;
+}
+
+/**
+ * Language display names with flag emojis for all 14 languages.
+ * Used by the article language switcher nav.
+ */
+export const LANG_DISPLAY: Record<Language, LangDisplay> = {
+  en: { flag: '🇬🇧', name: 'English' },
+  sv: { flag: '🇸🇪', name: 'Svenska' },
+  da: { flag: '🇩🇰', name: 'Dansk' },
+  no: { flag: '🇳🇴', name: 'Norsk' },
+  fi: { flag: '🇫🇮', name: 'Suomi' },
+  de: { flag: '🇩🇪', name: 'Deutsch' },
+  fr: { flag: '🇫🇷', name: 'Français' },
+  es: { flag: '🇪🇸', name: 'Español' },
+  nl: { flag: '🇳🇱', name: 'Nederlands' },
+  ar: { flag: '🇸🇦', name: 'العربية' },
+  he: { flag: '🇮🇱', name: 'עברית' },
+  ja: { flag: '🇯🇵', name: '日本語' },
+  ko: { flag: '🇰🇷', name: '한국어' },
+  zh: { flag: '🇨🇳', name: '中文' }
+};
+
+/**
+ * Site footer section heading translations for all 14 languages
+ */
+export const SITE_FOOTER_LABELS: Record<Language, {
+  readonly about: string;
+  readonly aboutText: string;
+  readonly quickLinks: string;
+  readonly builtBy: string;
+  readonly builtByText: string;
+  readonly languages: string;
+}> = {
+  en: { about: 'About Riksdagsmonitor', aboutText: 'Live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities.', quickLinks: 'Quick Links', builtBy: 'Built by Hack23 AB', builtByText: 'Swedish cybersecurity consultancy specializing in political transparency and open-source intelligence.', languages: 'Languages' },
+  sv: { about: 'Om Riksdagsmonitor', aboutText: 'Plattform för övervakning av Sveriges riksdag med CIA OSINT-kapacitet.', quickLinks: 'Snabblänkar', builtBy: 'Byggd av Hack23 AB', builtByText: 'Svenskt cybersäkerhetsföretag specialiserat på politisk transparens och öppen källkodsintelligens.', languages: 'Språk' },
+  da: { about: 'Om Riksdagsmonitor', aboutText: 'Platform til overvågning af det svenske parlament med CIA OSINT-kapacitet.', quickLinks: 'Hurtige links', builtBy: 'Bygget af Hack23 AB', builtByText: 'Svensk cybersikkerhedskonsulentfirma specialiseret i politisk gennemsigtighed.', languages: 'Sprog' },
+  no: { about: 'Om Riksdagsmonitor', aboutText: 'Plattform for overvåking av det svenske parlamentet med CIA OSINT-kapasitet.', quickLinks: 'Hurtiglenker', builtBy: 'Bygget av Hack23 AB', builtByText: 'Svensk cybersikkerhetskonsulentfirma spesialisert på politisk åpenhet.', languages: 'Språk' },
+  fi: { about: 'Tietoa Riksdagsmonitorista', aboutText: 'Ruotsin valtiopäivien seurantaalusta CIA OSINT -kyvyillä.', quickLinks: 'Pikalinkit', builtBy: 'Tekijä: Hack23 AB', builtByText: 'Ruotsalainen kyberturvallisuuskonsultointi erikoistunut poliittiseen läpinäkyvyyteen.', languages: 'Kielet' },
+  de: { about: 'Über Riksdagsmonitor', aboutText: 'Plattform zur Überwachung des schwedischen Parlaments mit CIA OSINT-Fähigkeiten.', quickLinks: 'Schnelllinks', builtBy: 'Erstellt von Hack23 AB', builtByText: 'Schwedische Cybersicherheitsberatung für politische Transparenz.', languages: 'Sprachen' },
+  fr: { about: 'À propos de Riksdagsmonitor', aboutText: 'Plateforme de surveillance du Parlement suédois avec capacités CIA OSINT.', quickLinks: 'Liens rapides', builtBy: 'Créé par Hack23 AB', builtByText: 'Conseil suédois en cybersécurité spécialisé dans la transparence politique.', languages: 'Langues' },
+  es: { about: 'Acerca de Riksdagsmonitor', aboutText: 'Plataforma de monitoreo del Parlamento sueco con capacidades CIA OSINT.', quickLinks: 'Enlaces rápidos', builtBy: 'Creado por Hack23 AB', builtByText: 'Consultoría sueca de ciberseguridad especializada en transparencia política.', languages: 'Idiomas' },
+  nl: { about: 'Over Riksdagsmonitor', aboutText: 'Platform voor monitoring van het Zweedse parlement met CIA OSINT-capaciteiten.', quickLinks: 'Snelkoppelingen', builtBy: 'Gebouwd door Hack23 AB', builtByText: 'Zweeds cybersecurity-adviesbureau gespecialiseerd in politieke transparantie.', languages: 'Talen' },
+  ar: { about: 'حول Riksdagsmonitor', aboutText: 'منصة لمراقبة البرلمان السويدي باستخدام قدرات CIA OSINT.', quickLinks: 'روابط سريعة', builtBy: 'بواسطة Hack23 AB', builtByText: 'شركة استشارات أمن سيبراني سويدية متخصصة في الشفافية السياسية.', languages: 'اللغات' },
+  he: { about: 'אודות Riksdagsmonitor', aboutText: 'פלטפורמה לניטור הפרלמנט השוודי עם יכולות CIA OSINT.', quickLinks: 'קישורים מהירים', builtBy: 'נבנה על ידי Hack23 AB', builtByText: 'חברת ייעוץ אבטחת סייבר שוודית המתמחה בשקיפות פוליטית.', languages: 'שפות' },
+  ja: { about: 'Riksdagsmonitorについて', aboutText: 'CIA OSINT機能によるスウェーデン議会監視プラットフォーム。', quickLinks: 'クイックリンク', builtBy: 'Hack23 AB 製', builtByText: '政治的透明性を専門とするスウェーデンのサイバーセキュリティコンサルタント。', languages: '言語' },
+  ko: { about: 'Riksdagsmonitor 소개', aboutText: 'CIA OSINT 기능을 활용한 스웨덴 의회 모니터링 플랫폼.', quickLinks: '빠른 링크', builtBy: 'Hack23 AB 제작', builtByText: '정치적 투명성을 전문으로 하는 스웨덴 사이버 보안 컨설팅.', languages: '언어' },
+  zh: { about: '关于Riksdagsmonitor', aboutText: '利用CIA OSINT能力监测瑞典议会的平台。', quickLinks: '快速链接', builtBy: 'Hack23 AB 构建', builtByText: '专注于政治透明度的瑞典网络安全咨询公司。', languages: '语言' }
+};

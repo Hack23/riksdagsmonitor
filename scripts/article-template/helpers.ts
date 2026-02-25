@@ -17,6 +17,8 @@ import {
   EVENT_CALENDAR_TITLES,
   WATCH_SECTION_TITLES,
   LOCALE_MAP,
+  LANG_DISPLAY,
+  SITE_FOOTER_LABELS,
 } from './constants.js';
 
 /**
@@ -135,4 +137,85 @@ ${watchPoints.map(point => `        <li>
         </li>`).join('\n')}
       </ul>
     </section>`;
+}
+
+/**
+ * All 14 supported language codes in display order.
+ */
+const ALL_LANG_CODES: readonly Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+
+/**
+ * Generate the article language switcher navigation bar.
+ *
+ * @param baseSlug - The article base slug without language suffix (e.g. "2026-02-13-evening-analysis")
+ * @param currentLang - The current article language
+ * @returns HTML nav element string
+ */
+export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: Language | string): string {
+  const links: string = ALL_LANG_CODES.map(l => {
+    const display = LANG_DISPLAY[l];
+    const active: string = l === currentLang ? ' active' : '';
+    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${l}">${display.flag} ${display.name}</a>`;
+  }).join('\n');
+  return `  <nav class="language-switcher" role="navigation" aria-label="Language versions">\n${links}\n  </nav>`;
+}
+
+/**
+ * Generate the full site footer matching index.html structure.
+ *
+ * @param lang - The current language
+ * @param newsIndexFilename - The news index filename for the language
+ * @returns HTML footer element string
+ */
+export function generateSiteFooter(lang: Language | string): string {
+  const labels = SITE_FOOTER_LABELS[lang as Language] || SITE_FOOTER_LABELS.en;
+  const homePath: string = lang === 'en' ? '../index.html' : `../index_${lang}.html`;
+  const newsPath: string = getNewsIndexFilename(lang);
+
+  return `<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>${labels.about}</h3>
+      <p>${labels.aboutText}</p>
+      <ul class="footer-stats">
+        <li><strong>349 MPs</strong> tracked</li>
+        <li><strong>45 risk rules</strong> active</li>
+        <li><strong>14 languages</strong> supported</li>
+        <li><strong>50+ years</strong> historical data</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>${labels.quickLinks}</h3>
+      <ul>
+        <li><a href="${homePath}">Home</a></li>
+        <li><a href="${newsPath}">News</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>${labels.builtBy}</h3>
+      <p>${labels.builtByText}</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Public ISMS</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>${labels.languages}</h3>
+      <div class="language-grid">
+${ALL_LANG_CODES.map(l => {
+  const display = LANG_DISPLAY[l];
+  const href: string = l === 'en' ? '../index.html' : `../index_${l}.html`;
+  return `        <a href="${href}" title="${display.name}"><span aria-hidden="true">${display.flag}</span> ${l.toUpperCase()}</a>`;
+}).join('\n')}
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden</p>
+  </div>
+</footer>`;
 }
