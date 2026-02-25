@@ -669,16 +669,22 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
 
   content += `\n    <h2>${L(lang, 'thematicAnalysis')}</h2>\n`;
 
+  // Per-language document type labels
+  const docTypeLabels: Record<string, Record<string, string>> = {
+    mot: { en: 'Motions', sv: 'Motioner', da: 'Forslag', no: 'Forslag', fi: 'Aloitteet', de: 'Anträge', fr: 'Motions', es: 'Mociones', nl: 'Moties', ar: 'اقتراحات', he: 'הצעות', ja: '動議', ko: '동의', zh: '动议' },
+    prop: { en: 'Propositions', sv: 'Propositioner', da: 'Lovforslag', no: 'Proposisjoner', fi: 'Hallituksen esitykset', de: 'Regierungsvorlagen', fr: 'Propositions', es: 'Proposiciones', nl: 'Regeringsvoorstellen', ar: 'مقترحات حكومية', he: 'הצעות ממשלה', ja: '政府提案', ko: '정부 법안', zh: '政府提案' },
+    bet: { en: 'Committee Reports', sv: 'Betänkanden', da: 'Betænkninger', no: 'Innstillinger', fi: 'Mietinnöt', de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comité', nl: 'Commissierapporten', ar: 'تقارير اللجان', he: 'דוחות ועדה', ja: '委員会報告', ko: '위원회 보고서', zh: '委员会报告' },
+    skr: { en: 'Government Communications', sv: 'Skrivelser', da: 'Regeringsmeddelelser', no: 'Regjeringsmeldinger', fi: 'Hallituksen kirjeet', de: 'Regierungsschreiben', fr: 'Communications gouvernementales', es: 'Comunicaciones gubernamentales', nl: 'Regeringsmededelingen', ar: 'مراسلات حكومية', he: 'תקשורות ממשלתיות', ja: '政府通知', ko: '정부 서한', zh: '政府通知' },
+  };
+
   for (const docType of sortedTypes) {
     const typeDocs = byType[docType] ?? [];
     const otherDocsVal = L(lang, 'otherDocuments');
     const otherDocsLabel = typeof otherDocsVal === 'string' ? otherDocsVal : 'Other documents';
-    const typeLabel = docType === 'mot' ? (lang === 'sv' ? 'Motioner' : 'Motions')
-      : docType === 'prop' ? (lang === 'sv' ? 'Propositioner' : 'Propositions')
-      : docType === 'bet' ? (lang === 'sv' ? 'Betänkanden' : 'Committee Reports')
-      : docType === 'skr' ? (lang === 'sv' ? 'Skrivelser' : 'Government Communications')
-      : docType === 'other' ? otherDocsLabel
-      : docType;
+    const langLabels = docTypeLabels[docType];
+    const typeLabel = langLabels
+      ? (langLabels[lang as string] ?? langLabels['sv'] ?? docType)
+      : docType === 'other' ? otherDocsLabel : docType;
 
     content += `\n    <h3>${escapeHtml(typeLabel)} (${typeDocs.length})</h3>\n`;
 
@@ -712,18 +718,19 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
   content += `    <div class="context-box">\n      <ul>\n`;
 
-  // Document type distribution
+  // Document type distribution (localised labels in summary too)
   const typeDescriptions = sortedTypes.map(docType => {
     const typeDocs = byType[docType] ?? [];
-    const label = docType === 'mot' ? 'motions'
-      : docType === 'prop' ? 'propositions'
-      : docType === 'bet' ? 'committee reports'
-      : docType === 'skr' ? 'government communications'
+    const langLabels2 = docTypeLabels[docType];
+    const label = langLabels2
+      ? (langLabels2[lang as string] ?? langLabels2['sv'] ?? docType).toLowerCase()
       : docType;
     return `${typeDocs.length} ${label}`;
   });
+  const processedLabel = L(lang, 'processedThisPeriod');
+  const processedSuffix = typeof processedLabel === 'string' ? processedLabel : 'processed this period';
   if (typeDescriptions.length > 0) {
-    content += `        <li>${escapeHtml(typeDescriptions.join(', '))} processed this period</li>\n`;
+    content += `        <li>${escapeHtml(typeDescriptions.join(', '))} ${escapeHtml(processedSuffix)}</li>\n`;
   }
 
   // Policy domains — show labels only to keep the bullet concise
