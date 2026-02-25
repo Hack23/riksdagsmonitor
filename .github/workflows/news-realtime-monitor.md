@@ -567,7 +567,7 @@ fi
 
 Only commit the actual news article files: `news/{YYYY-MM-DD}-{slug}-{lang}.html`
 
-### Step 5: Update Metadata
+### Step 5: Update News Generation Log
 
 Create/update `news/metadata/last-generation.json` with:
 - Timestamp of this check
