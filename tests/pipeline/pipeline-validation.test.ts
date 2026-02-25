@@ -109,6 +109,56 @@ describe('validateArticleHTML — word count', () => {
     expect(result.passed).toBe(false);
     expect(result.errors.some(e => /word count/i.test(e))).toBe(true);
   });
+
+  it('does not count words in <head>, <script>, or <style> toward minWordCount', () => {
+    const htmlWithHeadAndScriptWords = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+    This head title contains many descriptive words that should never be
+    counted toward the visible article content word count threshold.
+  </title>
+  <style>
+    /* This style block also contains several words that describe layout,
+       colors, spacing, typography, and other visual presentation details
+       which must be ignored for article content word counting. */
+  </style>
+  <script>
+    // This script comment includes numerous explanatory words about logic,
+    // data fetching, event handling, performance tuning and debugging but
+    // none of these should be counted as article content words.
+  </script>
+</head>
+<body>
+  <article>
+    <h1>Short Article</h1>
+    <h2>Intro Section</h2>
+    <p>Only a few visible words here.</p>
+    <div class="article-sources">
+      <p>Data Sources: riksdag-regering-mcp</p>
+    </div>
+  </article>
+</body>
+</html>`;
+    const result = validateArticleHTML(htmlWithHeadAndScriptWords, { minWordCount: 50 });
+    expect(result.passed).toBe(false);
+    expect(result.errors.some(e => /word count/i.test(e))).toBe(true);
+  });
+});
+
+describe('validateArticleHTML — sources attribution', () => {
+  it('fails when sources attribution block is missing', () => {
+    const html = makeValidHTML().replace(/<div class="article-sources">.*?<\/div>/s, '');
+    const result = validateArticleHTML(html, { requireSources: true });
+    expect(result.passed).toBe(false);
+    expect(result.errors.some(e => /sources/i.test(e))).toBe(true);
+  });
+
+  it('passes when sources attribution block is present', () => {
+    const result = validateArticleHTML(makeValidHTML(), { requireSources: true });
+    expect(result.passed).toBe(true);
+    expect(result.errors.some(e => /sources/i.test(e))).toBe(false);
+  });
 });
 
 describe('validateArticleHTML — empty input', () => {

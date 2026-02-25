@@ -1056,7 +1056,7 @@ New content types (risk indicators, trend charts, pull quotes, data tables) can 
 | `lang` attribute on `<html>` | required | error |
 | At least one `<h1>` | required | error |
 | At least one `<h2>` section | required | error |
-| Sources attribution block | required | warning (non-fatal) |
+| Sources attribution block | required | error |
 | Word count ≥ 50 | required | error |
 
 #### Pipeline Orchestrator
