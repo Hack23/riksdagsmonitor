@@ -477,7 +477,6 @@ This playbook activates when any of the following are detected:
 | Signal | Detection Method | Severity Indicator |
 |--------|-----------------|--------------------|
 | Unexpected content changes in production | GitHub Actions diff in deploy log | HIGH if unauthorized |
-| SHA-256 hash mismatch for article content | Automated integrity check | CRITICAL |
 | Unauthorized Git commits to main branch | GitHub audit log alert | CRITICAL |
 | Branch protection bypass detected | GitHub security event | CRITICAL |
 | Anomalous content detected by user report | User email to security@hack23.com | HIGH |
@@ -488,7 +487,7 @@ This playbook activates when any of the following are detected:
 
 | Severity | Criteria | Response Time | Escalation |
 |----------|----------|---------------|------------|
-| **P1 - Critical** | Unauthorized content in production, hash mismatch, branch protection bypass | 15 minutes to containment | Immediate personal notification to CEO |
+| **P1 - Critical** | Unauthorized content in production, branch protection bypass, SLSA attestation failure | 15 minutes to containment | Immediate personal notification to CEO |
 | **P2 - High** | Suspected tampering unconfirmed, anomalous content flagged | 1 hour to investigation | Alert within 30 minutes |
 | **P3 - Medium** | Minor unexpected changes, validation warnings | 4 hours to resolution | Standard ISMS notification |
 

@@ -2103,7 +2103,7 @@ However, Hack23 AB voluntarily maps to NIS2 requirements as a **best practice an
 |-------------|-------------|----------------|----------|--------|
 | **Art. 20** | Governance - Management bodies must approve and oversee cybersecurity measures and take cybersecurity training | CEO (James P. Sörling) personally approves all security architecture. Annual ISMS review. CISSP-equivalent knowledge maintained | SECURITY_ARCHITECTURE.md CEO sign-off, annual review record | COMPLIANT |
 | **Art. 21(1)** | Appropriate technical and organizational measures based on risk assessment | Risk-based approach documented in THREAT_MODEL.md. Defense-in-depth with 6 layers. STRIDE analysis. Regular risk reviews | THREAT_MODEL.md, SECURITY_ARCHITECTURE.md, Risk Register (ISMS-PUBLIC) | COMPLIANT |
-| **Art. 21(2)(a)** | Risk analysis and information system security policies | Information Security Policy (ISMS-PUBLIC). SECURITY_ARCHITECTURE.md as operational security policy. Annual review cycle | Information_Security_Policy.md, SECURITY_ARCHITECTURE.md v2.0 | COMPLIANT |
+| **Art. 21(2)(a)** | Risk analysis and information system security policies | Information Security Policy (ISMS-PUBLIC). SECURITY_ARCHITECTURE.md as operational security policy. Annual review cycle | Information_Security_Policy.md, SECURITY_ARCHITECTURE.md v2.1 | COMPLIANT |
 | **Art. 21(2)(b)** | Incident handling including detection, response, and notification | BCPPlan.md with 3 IR playbooks. ISMS Incident Response Plan. GitHub Security Advisories. Alert monitoring | BCPPlan.md IR Playbooks IR-PB-001/002/003, ISMS IRP | COMPLIANT |
 | **Art. 21(2)(c)** | Business continuity including backup management, disaster recovery, crisis management | Dual-deployment (CloudFront + GitHub Pages). S3 multi-region replication. RTO <30s (origin), <15min (DNS). BCPPlan.md | BCPPlan.md, AWS multi-region S3 config, Route 53 health checks | COMPLIANT |
 | **Art. 21(2)(d)** | Supply chain security including third-party services | Dependabot monitors all npm dependencies. GitHub Actions third-party action pinning. step-security/harden-runner. Third Party Management Policy (ISMS-PUBLIC) | Third_Party_Management.md, Dependabot config, pinned action SHAs | COMPLIANT |
@@ -2251,8 +2251,8 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 - **Total Annex A Controls:** 93
 - **Applicable:** 68 (73%)
 - **Not Applicable:** 25 (27%) - primarily physical security, HR (single-person company)
-- **Fully Implemented:** 62 (91% of applicable)
-- **Partially Implemented:** 6 (9% of applicable)
+- **Fully Implemented:** 66 (97% of applicable)
+- **Partially Implemented:** 2 (3% of applicable)
 - **Not Implemented:** 0
 
 ---
@@ -2522,43 +2522,33 @@ npm audit --json > audit-report.json  # Archive audit results
 
 ### SHA-256 Checksums for Generated Content
 
-All AI-generated news articles include SHA-256 integrity metadata:
+> **Status: Planned (Target: Q3 2026)** — Article-level SHA-256 hashing is not yet implemented in the content generation pipeline. The design below documents the planned approach. Currently, content integrity is assured via Git commit history, SLSA provenance attestation, and Sigstore artifact signing.
+
+**Planned Hash Generation Process (not yet implemented):**
+1. Article HTML content normalized (whitespace, encoding)
+2. SHA-256 computed over normalized content
+3. Hash stored in article metadata HTML comment
+4. Hash committed to Git alongside content
+5. Hash verifiable by anyone with the file
 
 ```html
-<!-- Example article metadata (in HTML comment or meta tag) -->
+<!-- Planned article metadata format (not yet in production) -->
 <!-- content-hash: sha256:a3f5c8d2e1b4... -->
 <!-- generated-at: 2026-02-25T02:15:00Z -->
 <!-- pipeline-run: github.com/Hack23/riksdagsmonitor/actions/runs/12345 -->
 <!-- sources: riksdag-api:2024/25, cia-export:2026-02-24 -->
 ```
 
-**Hash Generation Process:**
-1. Article HTML content normalized (whitespace, encoding)
-2. SHA-256 computed over normalized content
-3. Hash stored in article metadata
-4. Hash committed to Git alongside content
-5. Hash verifiable by anyone with the file
+### Current Content Integrity Controls (Active)
 
-### Build Metadata and Content Hashes
-
-Each build includes a manifest of content hashes:
-
-```json
-{
-  "build_id": "gh-actions-run-12345",
-  "build_timestamp": "2026-02-25T02:30:00Z",
-  "git_sha": "abc123def456...",
-  "content_hashes": {
-    "index.html": "sha256:aaa111...",
-    "index_sv.html": "sha256:bbb222...",
-    "news/2026-02-25-en.html": "sha256:ccc333..."
-  },
-  "data_sources": {
-    "cia_export": "sha256:ddd444...",
-    "riksdag_api_version": "2024/25"
-  }
-}
-```
+| Control | Implementation | Status |
+|---------|---------------|--------|
+| **SLSA provenance** | Build provenance via GitHub SLSA action — covers the full build artifact | Active |
+| **Sigstore signing** | Build artifacts signed via Sigstore transparency log | Active |
+| **Git commit SHA** | Immutable reference to exact content state; all pushes require GitHub authentication | Active |
+| **Branch protection** | Direct pushes to `main` blocked; all changes require PR and CI green | Active |
+| **Dependency review** | `actions/dependency-review-action` on all PRs | Active |
+| **Article-level SHA-256** | Per-article hash in HTML comment metadata | **Planned (Q3 2026)** |
 
 ### Git Commit Signatures as Content Provenance
 
@@ -2569,13 +2559,13 @@ Each build includes a manifest of content hashes:
 
 ### Tamper Detection Approach
 
-| Detection Method | Trigger | Response |
-|-----------------|---------|----------|
-| SHA-256 hash mismatch | Automated integrity check | IR-PB-001 (Content Tampering) |
-| SLSA attestation failure | GitHub Actions security job | Block deployment, alert CEO |
-| Unauthorized commit to main | GitHub branch protection | Block push, audit log alert |
-| Secret scanning match | GitHub Secret Scanning | Immediate block, credential rotation |
-| Unexpected file in deployment | Deployment diff review | Manual review gate |
+| Detection Method | Trigger | Response | Status |
+|-----------------|---------|----------|--------|
+| SLSA attestation failure | GitHub Actions security job | Block deployment, alert CEO | Active |
+| Unauthorized commit to main | GitHub branch protection | Block push, audit log alert | Active |
+| Secret scanning match | GitHub Secret Scanning | Immediate block, credential rotation | Active |
+| Unexpected file in deployment | Deployment diff review | Manual review gate | Active |
+| SHA-256 hash mismatch | Automated integrity check | IR-PB-001 (Content Tampering) | **Planned (Q3 2026)** |
 
 ---
 

@@ -847,7 +847,7 @@ flowchart TD
     STEP_PERMISSIONS --> CHECKOUT_PERM[checkout: read contents]
     STEP_PERMISSIONS --> DEPLOY_PERM[deploy: write pages]
     STEP_PERMISSIONS --> SECURITY_PERM[security-events: write]
-    CHECKPOINT_PERM --> AUDIT_EVENT[Audit Event Emitted]
+    CHECKOUT_PERM --> AUDIT_EVENT[Audit Event Emitted]
     DEPLOY_PERM --> AUDIT_EVENT
     SECURITY_PERM --> AUDIT_EVENT
     AUDIT_EVENT --> GH_AUDIT_LOG[GitHub Audit Log]
@@ -877,7 +877,7 @@ flowchart TD
 | 8 | MCP News Pipeline | Cron daily | 10-15 min | Daily | LLM quality check, SHA-256 |
 | 9 | CIA Data Integration | Cron daily | 3-5 min | Daily | Schema validate, integrity hash |
 | 10 | Data Validation | Per data fetch | 1-2 min | Per fetch | 9-stage validation pipeline |
-| 11 | Content Integrity | Per content | < 1 min | Per article | SHA-256, Git sign, Sigstore |
+| 11 | Content Integrity | Per content | < 1 min | Per article | Git signatures, Sigstore (build artifacts) |
 | 12 | Runner Hardening | Per job | Continuous | Per job | iptables, egress audit |
 
 ---
