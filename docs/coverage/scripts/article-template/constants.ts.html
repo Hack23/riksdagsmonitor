@@ -1,0 +1,886 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for scripts/article-template/constants.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">scripts/article-template</a> constants.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>13/13</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>13/13</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @module article-template/constants
+ * @description Localisation lookup tables for article template rendering.
+ * Contains breadcrumb, footer, tagline, locale, event calendar, and watch
+ * section translations for all 14 supported languages.
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+&nbsp;
+import type { Language } from '../types/language.js';
+import type { BreadcrumbLabels, FooterLabelSet } from '../types/content.js';
+&nbsp;
+/** Type labels for article categories per language */
+export interface TypeLabels {
+  readonly prospective: string;
+  readonly retrospective: string;
+  readonly analysis: string;
+  readonly breaking: string;
+}
+&nbsp;
+/**
+ * Breadcrumb translations for all supported languages
+ */
+export const BREADCRUMB_TRANSLATIONS: Record&lt;Language, BreadcrumbLabels&gt; = {
+  en: { home: 'Home', news: 'News' },
+  sv: { home: 'Hem', news: 'Nyheter' },
+  da: { home: 'Hjem', news: 'Nyheder' },
+  no: { home: 'Hjem', news: 'Nyheter' },
+  fi: { home: 'Etusivu', news: 'Uutiset' },
+  de: { home: 'Startseite', news: 'Nachrichten' },
+  fr: { home: 'Accueil', news: 'Actualités' },
+  es: { home: 'Inicio', news: 'Noticias' },
+  nl: { home: 'Home', news: 'Nieuws' },
+  ar: { home: 'الرئيسية', news: 'أخبار' },
+  he: { home: 'בית', news: 'חדשות' },
+  ja: { home: 'ホーム', news: 'ニュース' },
+  ko: { home: '홈', news: '뉴스' },
+  zh: { home: '主页', news: '新闻' }
+};
+&nbsp;
+/**
+ * Footer label translations for all 14 languages
+ */
+export const FOOTER_LABELS: Record&lt;Language, FooterLabelSet&gt; = {
+  en: { sourcesTitle: 'Sources and Data', dataSources: 'Data Sources', generatedBy: 'Generated by', generatedByValue: 'Automated News System using riksdag-regering-mcp', analysisTools: 'Analysis Tools', analysisToolsValue: 'AI-assisted journalism with human editorial oversight', backToNews: 'Back to News' },
+  sv: { sourcesTitle: 'Källor och data', dataSources: 'Datakällor', generatedBy: 'Genererad av', generatedByValue: 'Automatiserat nyhetssystem med riksdag-regering-mcp', analysisTools: 'Analysverktyg', analysisToolsValue: 'AI-assisterad journalistik med mänsklig granskning', backToNews: 'Tillbaka till nyheter' },
+  da: { sourcesTitle: 'Kilder og data', dataSources: 'Datakilder', generatedBy: 'Genereret af', generatedByValue: 'Automatiseret nyhedssystem med riksdag-regering-mcp', analysisTools: 'Analyseværktøjer', analysisToolsValue: 'AI-assisteret journalistik med redaktionel gennemgang', backToNews: 'Tilbage til nyheder' },
+  no: { sourcesTitle: 'Kilder og data', dataSources: 'Datakilder', generatedBy: 'Generert av', generatedByValue: 'Automatisert nyhetssystem med riksdag-regering-mcp', analysisTools: 'Analyseverktøy', analysisToolsValue: 'AI-assistert journalistikk med redaksjonell gjennomgang', backToNews: 'Tilbake til nyheter' },
+  fi: { sourcesTitle: 'Lähteet ja data', dataSources: 'Datalähteet', generatedBy: 'Luonut', generatedByValue: 'Automatisoitu uutisjärjestelmä riksdag-regering-mcp:llä', analysisTools: 'Analyysityökalut', analysisToolsValue: 'Tekoälyavusteinen journalismi toimituksellisella valvonnalla', backToNews: 'Takaisin uutisiin' },
+  de: { sourcesTitle: 'Quellen und Daten', dataSources: 'Datenquellen', generatedBy: 'Erstellt von', generatedByValue: 'Automatisiertes Nachrichtensystem mit riksdag-regering-mcp', analysisTools: 'Analysewerkzeuge', analysisToolsValue: 'KI-gestützter Journalismus mit redaktioneller Aufsicht', backToNews: 'Zurück zu Nachrichten' },
+  fr: { sourcesTitle: 'Sources et données', dataSources: 'Sources de données', generatedBy: 'Généré par', generatedByValue: 'Système automatisé avec riksdag-regering-mcp', analysisTools: 'Outils d\'analyse', analysisToolsValue: 'Journalisme assisté par IA avec supervision rédactionnelle', backToNews: 'Retour aux actualités' },
+  es: { sourcesTitle: 'Fuentes y datos', dataSources: 'Fuentes de datos', generatedBy: 'Generado por', generatedByValue: 'Sistema automatizado con riksdag-regering-mcp', analysisTools: 'Herramientas de análisis', analysisToolsValue: 'Periodismo asistido por IA con supervisión editorial', backToNews: 'Volver a noticias' },
+  nl: { sourcesTitle: 'Bronnen en data', dataSources: 'Databronnen', generatedBy: 'Gegenereerd door', generatedByValue: 'Geautomatiseerd nieuwssysteem met riksdag-regering-mcp', analysisTools: 'Analysetools', analysisToolsValue: 'AI-ondersteunde journalistiek met redactioneel toezicht', backToNews: 'Terug naar nieuws' },
+  ar: { sourcesTitle: 'المصادر والبيانات', dataSources: 'مصادر البيانات', generatedBy: 'تم إنشاؤه بواسطة', generatedByValue: 'نظام أخبار آلي مع riksdag-regering-mcp', analysisTools: 'أدوات التحليل', analysisToolsValue: 'صحافة بمساعدة الذكاء الاصطناعي مع إشراف تحريري', backToNews: 'العودة إلى الأخبار' },
+  he: { sourcesTitle: 'מקורות ונתונים', dataSources: 'מקורות נתונים', generatedBy: 'נוצר על ידי', generatedByValue: 'מערכת חדשות אוטומטית עם riksdag-regering-mcp', analysisTools: 'כלי ניתוח', analysisToolsValue: 'עיתונות בסיוע AI עם פיקוח עריכתי', backToNews: 'חזרה לחדשות' },
+  ja: { sourcesTitle: 'ソースとデータ', dataSources: 'データソース', generatedBy: '生成者', generatedByValue: 'riksdag-regering-mcpによる自動ニュースシステム', analysisTools: '分析ツール', analysisToolsValue: 'AI支援ジャーナリズム（編集監督付き）', backToNews: 'ニュースに戻る' },
+  ko: { sourcesTitle: '출처 및 데이터', dataSources: '데이터 소스', generatedBy: '생성자', generatedByValue: 'riksdag-regering-mcp 자동 뉴스 시스템', analysisTools: '분석 도구', analysisToolsValue: '편집 감독이 있는 AI 지원 저널리즘', backToNews: '뉴스로 돌아가기' },
+  zh: { sourcesTitle: '来源和数据', dataSources: '数据来源', generatedBy: '生成者', generatedByValue: '使用riksdag-regering-mcp的自动新闻系统', analysisTools: '分析工具', analysisToolsValue: '人工编辑监督下的AI辅助新闻', backToNews: '返回新闻' }
+};
+&nbsp;
+/**
+ * Site tagline translations for all 14 languages
+ */
+export const SITE_TAGLINE: Record&lt;Language, string&gt; = {
+  en: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
+  sv: 'Senaste nyheter och analyser från Sveriges riksdag. Politisk journalistik i The Economist-stil som bevakar riksdagen, regeringen och myndigheter med systematisk transparens.',
+  da: 'Seneste nyheder og analyser fra Sveriges Riksdag. Politisk journalistik i The Economist-stil, der dækker parlament, regering og myndigheder med systematisk gennemsigtighed.',
+  no: 'Siste nyheter og analyser fra Sveriges riksdag. Politisk journalistikk i The Economist-stil som dekker parlament, regjering og myndigheter med systematisk åpenhet.',
+  fi: 'Uusimmat uutiset ja analyysit Ruotsin valtiopäiviltä. The Economist -tyylinen poliittinen journalismi, joka kattaa eduskunnan, hallituksen ja viranomaiset järjestelmällisellä läpinäkyvyydellä.',
+  de: 'Aktuelle Nachrichten und Analysen aus dem schwedischen Riksdag. Politischer Journalismus im Economist-Stil über Parlament, Regierung und Behörden mit systematischer Transparenz.',
+  fr: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique de style The Economist couvrant le parlement, le gouvernement et les agences avec une transparence systématique.',
+  es: 'Últimas noticias y análisis del Riksdag sueco. Periodismo político al estilo The Economist que cubre el parlamento, el gobierno y las agencias con transparencia sistemática.',
+  nl: 'Laatste nieuws en analyses van de Zweedse Riksdag. Politieke journalistiek in Economist-stijl over parlement, regering en instanties met systematische transparantie.',
+  ar: 'أحدث الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية بأسلوب ذا إيكونوميست تغطي البرلمان والحكومة والوكالات بشفافية منهجية.',
+  he: 'חדשות ניתוחים אחרונים מהריקסדאג השוודי. עיתונות פוליטית בסגנון האקונומיסט המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.',
+  ja: 'スウェーデン議会リクスダーグの最新ニュースと分析。議会、政府、機関を体系的な透明性で報道するエコノミスト・スタイルの政治ジャーナリズム。',
+  ko: '스웨덴 의회 릭스다그의 최신 뉴스와 분석. 체계적인 투명성으로 의회, 정부, 기관을 다루는 이코노미스트 스타일의 정치 저널리즘.',
+  zh: '来自瑞典议会的最新新闻和分析。以经济学人风格的政治新闻，以系统性透明度报道议会、政府和机构。'
+};
+&nbsp;
+/**
+ * OG locale map for all 14 languages
+ */
+export const OG_LOCALE_MAP: Record&lt;Language, string&gt; = {
+  en: 'en_US', sv: 'sv_SE', da: 'da_DK', no: 'nb_NO', fi: 'fi_FI',
+  de: 'de_DE', fr: 'fr_FR', es: 'es_ES', nl: 'nl_NL', ar: 'ar_SA',
+  he: 'he_IL', ja: 'ja_JP', ko: 'ko_KR', zh: 'zh_CN'
+};
+&nbsp;
+/**
+ * Article category type labels for all 14 languages
+ */
+export const TYPE_LABELS: Record&lt;Language, TypeLabels&gt; = {
+  en: { prospective: 'The Week Ahead', retrospective: 'Weekly Review', analysis: 'Analysis', breaking: 'Breaking News' },
+  sv: { prospective: 'Veckan som kommer', retrospective: 'Veckans återblick', analysis: 'Analys', breaking: 'Senaste nytt' },
+  da: { prospective: 'Ugen fremover', retrospective: 'Ugens tilbageblik', analysis: 'Analyse', breaking: 'Seneste nyt' },
+  no: { prospective: 'Uka som kommer', retrospective: 'Ukens tilbakeblikk', analysis: 'Analyse', breaking: 'Siste nytt' },
+  fi: { prospective: 'Tuleva viikko', retrospective: 'Viikon katsaus', analysis: 'Analyysi', breaking: 'Viimeisimmät' },
+  de: { prospective: 'Woche voraus', retrospective: 'Wochenrückblick', analysis: 'Analyse', breaking: 'Eilmeldung' },
+  fr: { prospective: 'Semaine à venir', retrospective: 'Revue de la semaine', analysis: 'Analyse', breaking: 'Dernière heure' },
+  es: { prospective: 'Semana próxima', retrospective: 'Revisión semanal', analysis: 'Análisis', breaking: 'Última hora' },
+  nl: { prospective: 'Week vooruit', retrospective: 'Weekoverzicht', analysis: 'Analyse', breaking: 'Laatste nieuws' },
+  ar: { prospective: 'الأسبوع القادم', retrospective: 'مراجعة الأسبوع', analysis: 'تحليل', breaking: 'أخبار عاجلة' },
+  he: { prospective: 'השבוע הקרוב', retrospective: 'סיכום שבועי', analysis: 'ניתוח', breaking: 'חדשות אחרונות' },
+  ja: { prospective: '来週の展望', retrospective: '週間レビュー', analysis: '分析', breaking: '速報' },
+  ko: { prospective: '다음 주 전망', retrospective: '주간 리뷰', analysis: '분석', breaking: '속보' },
+  zh: { prospective: '下周展望', retrospective: '每周回顾', analysis: '分析', breaking: '突发新闻' }
+};
+&nbsp;
+/**
+ * Event calendar section titles for all 14 languages
+ */
+export const EVENT_CALENDAR_TITLES: Record&lt;Language, string&gt; = {
+  en: 'Event Calendar',
+  sv: 'Veckans händelser',
+  da: 'Ugens begivenheder',
+  no: 'Ukens hendelser',
+  fi: 'Viikon tapahtumat',
+  de: 'Veranstaltungskalender',
+  fr: 'Calendrier des événements',
+  es: 'Calendario de eventos',
+  nl: 'Evenementenkalender',
+  ar: 'تقويم الأحداث',
+  he: 'לוח אירועים',
+  ja: 'イベントカレンダー',
+  ko: '일정 캘린더',
+  zh: '活动日历'
+};
+&nbsp;
+/**
+ * Watch section titles for all 14 languages
+ */
+export const WATCH_SECTION_TITLES: Record&lt;Language, string&gt; = {
+  en: 'What to Watch This Week',
+  sv: 'Vad man ska följa denna vecka',
+  da: 'Hvad man skal følge denne uge',
+  no: 'Hva man bør følge denne uken',
+  fi: 'Mitä seurata tällä viikolla',
+  de: 'Worauf diese Woche zu achten ist',
+  fr: 'À suivre cette semaine',
+  es: 'Qué observar esta semana',
+  nl: 'Wat te volgen deze week',
+  ar: 'ما يجب متابعته هذا الأسبوع',
+  he: 'מה לעקוב אחריו השבוע',
+  ja: '今週の注目ポイント',
+  ko: '이번 주 주목할 사항',
+  zh: '本周关注要点'
+};
+&nbsp;
+/**
+ * Locale map for Intl date formatting across all 14 languages
+ */
+export const LOCALE_MAP: Record&lt;string, string&gt; = {
+  en: 'en-GB', sv: 'sv-SE', da: 'da-DK', no: 'no-NO', fi: 'fi-FI',
+  de: 'de-DE', fr: 'fr-FR', es: 'es-ES', nl: 'nl-NL', ar: 'ar-SA',
+  he: 'he-IL', ja: 'ja-JP', ko: 'ko-KR', zh: 'zh-CN'
+};
+&nbsp;
+/** Language display data for the article language switcher */
+export interface LangDisplay {
+  readonly flag: string;
+  readonly name: string;
+}
+&nbsp;
+/**
+ * Language display names with flag emojis for all 14 languages.
+ * Used by the article language switcher nav.
+ */
+export const LANG_DISPLAY: Record&lt;Language, LangDisplay&gt; = {
+  en: { flag: '🇬🇧', name: 'English' },
+  sv: { flag: '🇸🇪', name: 'Svenska' },
+  da: { flag: '🇩🇰', name: 'Dansk' },
+  no: { flag: '🇳🇴', name: 'Norsk' },
+  fi: { flag: '🇫🇮', name: 'Suomi' },
+  de: { flag: '🇩🇪', name: 'Deutsch' },
+  fr: { flag: '🇫🇷', name: 'Français' },
+  es: { flag: '🇪🇸', name: 'Español' },
+  nl: { flag: '🇳🇱', name: 'Nederlands' },
+  ar: { flag: '🇸🇦', name: 'العربية' },
+  he: { flag: '🇮🇱', name: 'עברית' },
+  ja: { flag: '🇯🇵', name: '日本語' },
+  ko: { flag: '🇰🇷', name: '한국어' },
+  zh: { flag: '🇨🇳', name: '中文' }
+};
+&nbsp;
+/**
+ * All 14 supported language codes in display order.
+ * Single source of truth — derived from LANG_DISPLAY keys.
+ */
+export const ALL_LANG_CODES: readonly Language[] = Object.keys(LANG_DISPLAY) as Language[];
+&nbsp;
+/**
+ * Localized aria-label for the language switcher nav element.
+ * Used on the `&lt;nav&gt;` wrapping article language links so screen readers
+ * announce the landmark in the page's own language.
+ */
+export const LANG_SWITCHER_ARIA_LABELS: Record&lt;Language, string&gt; = {
+  en: 'Language versions',
+  sv: 'Språkversioner',
+  da: 'Sprogversioner',
+  no: 'Språkversjoner',
+  fi: 'Kieliversiot',
+  de: 'Sprachversionen',
+  fr: 'Versions linguistiques',
+  es: 'Versiones de idioma',
+  nl: 'Taalversies',
+  ar: 'إصدارات اللغة',
+  he: 'גרסאות שפה',
+  ja: '言語バージョン',
+  ko: '언어 버전',
+  zh: '语言版本'
+};
+&nbsp;
+/**
+ * Localized aria-label text for language grid links in the footer.
+ * Matches the pattern used in index.html (e.g. "Switch to English", "Byt till Svenska").
+ */
+export const LANG_ARIA_LABELS: Record&lt;Language, string&gt; = {
+  en: 'Switch to English',
+  sv: 'Byt till Svenska',
+  da: 'Skift til Dansk',
+  no: 'Bytt til Norsk',
+  fi: 'Vaihda Suomeksi',
+  de: 'Wechseln zu Deutsch',
+  fr: 'Passer au Français',
+  es: 'Cambiar a Español',
+  nl: 'Schakel naar Nederlands',
+  ar: 'التبديل إلى العربية',
+  he: 'עבור לעברית',
+  ja: '日本語に切り替え',
+  ko: '한국어로 전환',
+  zh: '切换到中文'
+};
+&nbsp;
+/**
+ * Site footer section heading translations for all 14 languages
+ */
+export const SITE_FOOTER_LABELS: Record&lt;Language, {
+  readonly about: string;
+  readonly aboutText: string;
+  readonly quickLinks: string;
+  readonly builtBy: string;
+  readonly builtByText: string;
+  readonly languages: string;
+  readonly dashboard: string;
+  readonly location: string;
+  readonly statMPs: string;
+  readonly statRiskRules: string;
+  readonly statLanguages: string;
+  readonly statHistoricalData: string;
+}&gt; = {
+  en: { about: 'About Riksdagsmonitor', aboutText: 'Live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities.', quickLinks: 'Quick Links', builtBy: 'Built by Hack23 AB', builtByText: 'Swedish cybersecurity consultancy specializing in political transparency and open-source intelligence.', languages: 'Languages', dashboard: 'Dashboard', location: 'Gothenburg, Sweden', statMPs: '&lt;strong&gt;349 MPs&lt;/strong&gt; tracked', statRiskRules: '&lt;strong&gt;45 risk rules&lt;/strong&gt; active', statLanguages: '&lt;strong&gt;14 languages&lt;/strong&gt; supported', statHistoricalData: '&lt;strong&gt;50+ years&lt;/strong&gt; historical data' },
+  sv: { about: 'Om Riksdagsmonitor', aboutText: 'Plattform för övervakning av Sveriges riksdag med CIA OSINT-kapacitet.', quickLinks: 'Snabblänkar', builtBy: 'Byggd av Hack23 AB', builtByText: 'Svenskt cybersäkerhetsföretag specialiserat på politisk transparens och öppen källkodsintelligens.', languages: 'Språk', dashboard: 'Instrumentpanel', location: 'Göteborg, Sverige', statMPs: '&lt;strong&gt;349 ledamöter&lt;/strong&gt; övervakade', statRiskRules: '&lt;strong&gt;45 riskregler&lt;/strong&gt; aktiva', statLanguages: '&lt;strong&gt;14 språk&lt;/strong&gt; stöds', statHistoricalData: '&lt;strong&gt;50+ år&lt;/strong&gt; historisk data' },
+  da: { about: 'Om Riksdagsmonitor', aboutText: 'Platform til overvågning af det svenske parlament med CIA OSINT-kapacitet.', quickLinks: 'Hurtige links', builtBy: 'Bygget af Hack23 AB', builtByText: 'Svensk cybersikkerhedskonsulentfirma specialiseret i politisk gennemsigtighed.', languages: 'Sprog', dashboard: 'Dashboard', location: 'Göteborg, Sverige', statMPs: '&lt;strong&gt;349 medlemmer&lt;/strong&gt; overvåget', statRiskRules: '&lt;strong&gt;45 risikoregler&lt;/strong&gt; aktive', statLanguages: '&lt;strong&gt;14 sprog&lt;/strong&gt; understøttet', statHistoricalData: '&lt;strong&gt;50+ år&lt;/strong&gt; historiske data' },
+  no: { about: 'Om Riksdagsmonitor', aboutText: 'Plattform for overvåking av det svenske parlamentet med CIA OSINT-kapasitet.', quickLinks: 'Hurtiglenker', builtBy: 'Bygget av Hack23 AB', builtByText: 'Svensk cybersikkerhetskonsulentfirma spesialisert på politisk åpenhet.', languages: 'Språk', dashboard: 'Dashbord', location: 'Göteborg, Sverige', statMPs: '&lt;strong&gt;349 representanter&lt;/strong&gt; fulgt', statRiskRules: '&lt;strong&gt;45 risikoregler&lt;/strong&gt; aktive', statLanguages: '&lt;strong&gt;14 språk&lt;/strong&gt; støttes', statHistoricalData: '&lt;strong&gt;50+ år&lt;/strong&gt; med historiske data' },
+  fi: { about: 'Tietoa Riksdagsmonitorista', aboutText: 'Ruotsin valtiopäivien seurantaalusta CIA OSINT -kyvyillä.', quickLinks: 'Pikalinkit', builtBy: 'Tekijä: Hack23 AB', builtByText: 'Ruotsalainen kyberturvallisuuskonsultointi erikoistunut poliittiseen läpinäkyvyyteen.', languages: 'Kielet', dashboard: 'Koontinäyttö', location: 'Göteborg, Ruotsi', statMPs: '&lt;strong&gt;349 kansanedustajaa&lt;/strong&gt; seurannassa', statRiskRules: '&lt;strong&gt;45 riskisääntöä&lt;/strong&gt; aktiivisena', statLanguages: '&lt;strong&gt;14 kieltä&lt;/strong&gt; tuettuna', statHistoricalData: '&lt;strong&gt;Yli 50 vuotta&lt;/strong&gt; historiallista dataa' },
+  de: { about: 'Über Riksdagsmonitor', aboutText: 'Plattform zur Überwachung des schwedischen Parlaments mit CIA OSINT-Fähigkeiten.', quickLinks: 'Schnelllinks', builtBy: 'Erstellt von Hack23 AB', builtByText: 'Schwedische Cybersicherheitsberatung für politische Transparenz.', languages: 'Sprachen', dashboard: 'Dashboard', location: 'Göteborg, Schweden', statMPs: '&lt;strong&gt;349 Abgeordnete&lt;/strong&gt; überwacht', statRiskRules: '&lt;strong&gt;45 Risikoregeln&lt;/strong&gt; aktiv', statLanguages: '&lt;strong&gt;14 Sprachen&lt;/strong&gt; unterstützt', statHistoricalData: '&lt;strong&gt;50+ Jahre&lt;/strong&gt; historische Daten' },
+  fr: { about: 'À propos de Riksdagsmonitor', aboutText: 'Plateforme de surveillance du Parlement suédois avec capacités CIA OSINT.', quickLinks: 'Liens rapides', builtBy: 'Créé par Hack23 AB', builtByText: 'Conseil suédois en cybersécurité spécialisé dans la transparence politique.', languages: 'Langues', dashboard: 'Tableau de bord', location: 'Göteborg, Suède', statMPs: '&lt;strong&gt;349 députés&lt;/strong&gt; suivis', statRiskRules: '&lt;strong&gt;45 règles de risque&lt;/strong&gt; actives', statLanguages: '&lt;strong&gt;14 langues&lt;/strong&gt; prises en charge', statHistoricalData: '&lt;strong&gt;50+ ans&lt;/strong&gt; de données historiques' },
+  es: { about: 'Acerca de Riksdagsmonitor', aboutText: 'Plataforma de monitoreo del Parlamento sueco con capacidades CIA OSINT.', quickLinks: 'Enlaces rápidos', builtBy: 'Creado por Hack23 AB', builtByText: 'Consultoría sueca de ciberseguridad especializada en transparencia política.', languages: 'Idiomas', dashboard: 'Panel', location: 'Gotemburgo, Suecia', statMPs: '&lt;strong&gt;349 diputados&lt;/strong&gt; rastreados', statRiskRules: '&lt;strong&gt;45 reglas de riesgo&lt;/strong&gt; activas', statLanguages: '&lt;strong&gt;14 idiomas&lt;/strong&gt; admitidos', statHistoricalData: '&lt;strong&gt;Más de 50 años&lt;/strong&gt; de datos históricos' },
+  nl: { about: 'Over Riksdagsmonitor', aboutText: 'Platform voor monitoring van het Zweedse parlement met CIA OSINT-capaciteiten.', quickLinks: 'Snelkoppelingen', builtBy: 'Gebouwd door Hack23 AB', builtByText: 'Zweeds cybersecurity-adviesbureau gespecialiseerd in politieke transparantie.', languages: 'Talen', dashboard: 'Dashboard', location: 'Göteborg, Zweden', statMPs: '&lt;strong&gt;349 parlementariërs&lt;/strong&gt; gevolgd', statRiskRules: '&lt;strong&gt;45 risicoregels&lt;/strong&gt; actief', statLanguages: '&lt;strong&gt;14 talen&lt;/strong&gt; ondersteund', statHistoricalData: '&lt;strong&gt;50+ jaar&lt;/strong&gt; historische data' },
+  ar: { about: 'حول Riksdagsmonitor', aboutText: 'منصة لمراقبة البرلمان السويدي باستخدام قدرات CIA OSINT.', quickLinks: 'روابط سريعة', builtBy: 'بواسطة Hack23 AB', builtByText: 'شركة استشارات أمن سيبراني سويدية متخصصة في الشفافية السياسية.', languages: 'اللغات', dashboard: 'لوحة التحكم', location: 'غوتنبرغ، السويد', statMPs: 'تتبّع &lt;strong&gt;349 نائباً&lt;/strong&gt;', statRiskRules: '&lt;strong&gt;45 قاعدة مخاطر&lt;/strong&gt; نشطة', statLanguages: 'دعم &lt;strong&gt;14 لغة&lt;/strong&gt;', statHistoricalData: 'بيانات تاريخية لأكثر من &lt;strong&gt;50 عاماً&lt;/strong&gt;' },
+  he: { about: 'אודות Riksdagsmonitor', aboutText: 'פלטפורמה לניטור הפרלמנט השוודי עם יכולות CIA OSINT.', quickLinks: 'קישורים מהירים', builtBy: 'נבנה על ידי Hack23 AB', builtByText: 'חברת ייעוץ אבטחת סייבר שוודית המתמחה בשקיפות פוליטית.', languages: 'שפות', dashboard: 'לוח מחוונים', location: 'גטבורג, שוודיה', statMPs: '&lt;strong&gt;349 חברי פרלמנט&lt;/strong&gt; במעקב', statRiskRules: '&lt;strong&gt;45 כללי סיכון&lt;/strong&gt; פעילים', statLanguages: '&lt;strong&gt;14 שפות&lt;/strong&gt; נתמכות', statHistoricalData: '&lt;strong&gt;50+ שנים&lt;/strong&gt; של נתונים היסטוריים' },
+  ja: { about: 'Riksdagsmonitorについて', aboutText: 'CIA OSINT機能によるスウェーデン議会監視プラットフォーム。', quickLinks: 'クイックリンク', builtBy: 'Hack23 AB 製', builtByText: '政治的透明性を専門とするスウェーデンのサイバーセキュリティコンサルタント。', languages: '言語', dashboard: 'ダッシュボード', location: 'ヨーテボリ（スウェーデン）', statMPs: '&lt;strong&gt;349名の議員&lt;/strong&gt;を追跡', statRiskRules: '&lt;strong&gt;45のリスクルール&lt;/strong&gt;を運用', statLanguages: '&lt;strong&gt;14言語&lt;/strong&gt;をサポート', statHistoricalData: '&lt;strong&gt;50年以上&lt;/strong&gt;の履歴データ' },
+  ko: { about: 'Riksdagsmonitor 소개', aboutText: 'CIA OSINT 기능을 활용한 스웨덴 의회 모니터링 플랫폼.', quickLinks: '빠른 링크', builtBy: 'Hack23 AB 제작', builtByText: '정치적 투명성을 전문으로 하는 스웨덴 사이버 보안 컨설팅.', languages: '언어', dashboard: '대시보드', location: '스웨덴 예테보리', statMPs: '&lt;strong&gt;349명 의원&lt;/strong&gt; 추적', statRiskRules: '&lt;strong&gt;45개 위험 규칙&lt;/strong&gt; 운영', statLanguages: '&lt;strong&gt;14개 언어&lt;/strong&gt; 지원', statHistoricalData: '&lt;strong&gt;50년+&lt;/strong&gt; 역사 데이터' },
+  zh: { about: '关于Riksdagsmonitor', aboutText: '利用CIA OSINT能力监测瑞典议会的平台。', quickLinks: '快速链接', builtBy: 'Hack23 AB 构建', builtByText: '专注于政治透明度的瑞典网络安全咨询公司。', languages: '语言', dashboard: '仪表板', location: '瑞典哥德堡', statMPs: '已追踪 &lt;strong&gt;349 名议员&lt;/strong&gt;', statRiskRules: '已启用 &lt;strong&gt;45 条风险规则&lt;/strong&gt;', statLanguages: '支持 &lt;strong&gt;14 种语言&lt;/strong&gt;', statHistoricalData: '覆盖 &lt;strong&gt;50+ 年&lt;/strong&gt;历史数据' }
+};
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-02-25T02:43:39.298Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    
