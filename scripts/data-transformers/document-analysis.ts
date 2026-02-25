@@ -153,28 +153,81 @@ export function generateOppositionStrategySection(motions: RawDocument[], lang: 
   });
   const topDomains = Array.from(topDomainSet).slice(0, 2);
 
-  const isSv = lang === 'sv';
   const count = topMotions.length;
-  let text = '';
+  const safeParty = escapeHtml(topParty);
 
-  if (isSv) {
-    const domainList = topDomains.join(' och ');
-    text = `<strong>${escapeHtml(topParty)}</strong> är mest aktiv med ${count} motion${count !== 1 ? 'er' : ''}`;
-    if (domainList) text += `, med fokus på ${escapeHtml(domainList)}`;
-    text += '.';
+  // Per-language conjunction for domain list
+  const conjunctions: Record<string, string> = {
+    sv: ' och ', da: ' og ', no: ' og ', fi: ' ja ', de: ' und ', fr: ' et ',
+    es: ' y ', nl: ' en ', ar: ' و', he: ' ו', ja: '・', ko: '·', zh: '和',
+  };
+  const conjunction = conjunctions[lang as string] ?? ' and ';
+  const domainList = topDomains.join(conjunction);
+
+  // Per-language lead templates: {party} leads with {count} motions, focused on {domains}.
+  const leadsVal = L(lang, 'partyLeadsOpposition') as string | undefined;
+  let text: string;
+  if (typeof leadsVal === 'string' && leadsVal !== '') {
+    // If constant available in CONTENT_LABELS — use it directly
+    text = leadsVal
+      .replace('{party}', `<strong>${safeParty}</strong>`)
+      .replace('{count}', String(count));
   } else {
-    const domainList = topDomains.join(' and ');
-    text = `<strong>${escapeHtml(topParty)}</strong> leads opposition activity with ${count} motion${count !== 1 ? 's' : ''}`;
-    if (domainList) text += `, focused on ${escapeHtml(domainList)}`;
-    text += '.';
+    // Fallback inline templates per language
+    const templates: Record<string, (p: string, n: number) => string> = {
+      sv: (p, n) => `<strong>${p}</strong> är mest aktiv med ${n} motion${n !== 1 ? 'er' : ''}`,
+      da: (p, n) => `<strong>${p}</strong> fører med ${n} forslag`,
+      no: (p, n) => `<strong>${p}</strong> leder med ${n} forslag`,
+      fi: (p, n) => `<strong>${p}</strong> johtaa ${n} aloitteella`,
+      de: (p, n) => `<strong>${p}</strong> führt mit ${n} Antrag${n !== 1 ? 'en' : ''}`,
+      fr: (p, n) => `<strong>${p}</strong> mène avec ${n} motion${n !== 1 ? 's' : ''}`,
+      es: (p, n) => `<strong>${p}</strong> lidera con ${n} mocion${n !== 1 ? 'es' : ''}`,
+      nl: (p, n) => `<strong>${p}</strong> leidt met ${n} motie${n !== 1 ? 's' : ''}`,
+      ar: (p, n) => `<strong>${p}</strong> يتصدر بـ${n} اقتراح`,
+      he: (p, n) => `<strong>${p}</strong> מוביל עם ${n} הצעות`,
+      ja: (p, n) => `<strong>${p}</strong>が${n}件の動議で最も活発`,
+      ko: (p, n) => `<strong>${p}</strong>이(가) ${n}건의 동의로 선두`,
+      zh: (p, n) => `<strong>${p}</strong>以${n}项动议领先`,
+    };
+    const tpl = templates[lang as string];
+    text = tpl ? tpl(safeParty, count) : `<strong>${safeParty}</strong> leads opposition activity with ${count} motion${count !== 1 ? 's' : ''}`;
   }
+
+  if (domainList) {
+    const focusTemplates: Record<string, string> = {
+      sv: ', med fokus på ', da: ', med fokus på ', no: ', med fokus på ',
+      fi: ', painopisteenä ', de: ', mit Fokus auf ', fr: ', axé sur ',
+      es: ', centrado en ', nl: ', gericht op ', ar: '، بالتركيز على ',
+      he: ', בדגש על ', ja: '、', ko: ', ', zh: '，重点关注',
+    };
+    const focusPrefix = focusTemplates[lang as string] ?? ', focused on ';
+    text += `${focusPrefix}${escapeHtml(domainList)}`;
+  }
+  text += '.';
 
   if (sortedParties.length > 1) {
     const [secondParty, secondMotions] = sortedParties[1];
     const n = secondMotions.length;
-    text += isSv
-      ? ` ${escapeHtml(secondParty)} följer med ${n} motion${n !== 1 ? 'er' : ''}.`
-      : ` ${escapeHtml(secondParty)} follows with ${n} motion${n !== 1 ? 's' : ''}.`;
+    const safeSecond = escapeHtml(secondParty);
+    const followTemplates: Record<string, (p: string, n: number) => string> = {
+      sv: (p, c) => ` ${p} följer med ${c} motion${c !== 1 ? 'er' : ''}.`,
+      da: (p, c) => ` ${p} følger med ${c} forslag.`,
+      no: (p, c) => ` ${p} følger med ${c} forslag.`,
+      fi: (p, c) => ` ${p} seuraa ${c} aloitteella.`,
+      de: (p, c) => ` ${p} folgt mit ${c} Antrag${c !== 1 ? 'en' : ''}.`,
+      fr: (p, c) => ` ${p} suit avec ${c} motion${c !== 1 ? 's' : ''}.`,
+      es: (p, c) => ` ${p} sigue con ${c} mocion${c !== 1 ? 'es' : ''}.`,
+      nl: (p, c) => ` ${p} volgt met ${c} motie${c !== 1 ? 's' : ''}.`,
+      ar: (p, c) => ` ${p} يتبع بـ${c} اقتراح.`,
+      he: (p, c) => ` ${p} עוקב עם ${c} הצעות.`,
+      ja: (p, c) => ` ${p}が${c}件で続きます。`,
+      ko: (p, c) => ` ${p}이(가) ${c}건으로 뒤를 잇습니다.`,
+      zh: (p, c) => ` ${p}以${c}项紧随其后。`,
+    };
+    const followTpl = followTemplates[lang as string];
+    text += followTpl
+      ? followTpl(safeSecond, n)
+      : ` ${safeSecond} follows with ${n} motion${n !== 1 ? 's' : ''}.`;
   }
 
   return `    <p>${text}</p>\n`;
