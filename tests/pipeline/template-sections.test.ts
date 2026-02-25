@@ -128,4 +128,20 @@ describe('generateArticleHTML — sections array', () => {
     expect(contentPos).toBeGreaterThan(-1);
     expect(sectionPos).toBeGreaterThan(contentPos);
   });
+
+  it('escapes dangerous id and className attributes to prevent XSS', () => {
+    const sections: TemplateSection[] = [
+      {
+        id: '<script>alert(1)</script>',
+        html: '<p>Content</p>',
+        className: '" onclick="alert(1)"',
+      },
+    ];
+    const html = generateArticleHTML({ ...BASE_DATA, sections });
+
+    expect(html).not.toContain('<script>alert(1)</script>');
+    expect(html).not.toContain('" onclick="alert(1)"');
+    expect(html).toContain('id="&lt;script&gt;alert(1)&lt;/script&gt;"');
+    expect(html).toContain('class="&quot; onclick=&quot;alert(1)&quot;"');
+  });
 });

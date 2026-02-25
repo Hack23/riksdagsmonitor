@@ -91,6 +91,7 @@ export class PipelineOrchestrator {
             error: String((outcome as PromiseRejectedResult).reason),
             warnings: [],
             degraded: false,
+            files: 0,
           };
         }
       }
@@ -135,6 +136,7 @@ export class PipelineOrchestrator {
         durationMs,
         warnings: [`Unexpected throw from pipeline "${pipeline.name}": ${message}`],
         degraded: false,
+        files: 0,
       };
     }
   }
