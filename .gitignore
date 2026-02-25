@@ -57,3 +57,20 @@ news-*-screenshot.png
 news/metadata/generation-result.json
 news/metadata/last-generation.json
 scripts/__pycache__/
+
+# Generated news indexes and sitemap (rebuilt by CI/scripts)
+news/index.html
+news/index_ar.html
+news/index_da.html
+news/index_de.html
+news/index_es.html
+news/index_fi.html
+news/index_fr.html
+news/index_he.html
+news/index_ja.html
+news/index_ko.html
+news/index_nl.html
+news/index_no.html
+news/index_sv.html
+news/index_zh.html
+sitemap.xml
