@@ -1044,6 +1044,123 @@ describe('Data Transformers', () => {
       expect(content).toContain('Key vote');
     });
 
+    it('should render key takeaways in week-ahead content with events and documents', () => {
+      const content = generateArticleContent({
+        events: [
+          { titel: 'Budgetdebatt', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ],
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1', organ: 'FiU' },
+          { titel: 'Försvarspolitik', doktyp: 'bet', url: 'https://example.com/d2', dok_id: 'D2', organ: 'FöU' }
+        ],
+        highlights: []
+      } as MockArticlePayload, 'week-ahead', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('items spanning');
+    });
+
+    it('should render key takeaways in Swedish for week-ahead content', () => {
+      const content = generateArticleContent({
+        events: [
+          { titel: 'Budgetdebatt', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ],
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1' }
+        ],
+        highlights: []
+      } as MockArticlePayload, 'week-ahead', 'sv') as string;
+
+      expect(content).toContain('Centrala slutsatser');
+      expect(content).toContain('ärenden som spänner');
+    });
+
+    it('should include policy domain analysis in week-ahead key takeaways', () => {
+      const content = generateArticleContent({
+        events: [],
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1', organ: 'FiU' }
+        ],
+        highlights: []
+      } as MockArticlePayload, 'week-ahead', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('legislative agenda');
+    });
+
+    it('should include parliamentary scrutiny indicator when questions exist', () => {
+      const content = generateArticleContent({
+        events: [],
+        questions: [
+          { titel: 'Fråga om integration', parti: 'SD', dok_id: 'Q1' }
+        ],
+        interpellations: [
+          { titel: 'Interpellation om vården', parti: 'V', dok_id: 'I1' }
+        ],
+        highlights: []
+      } as MockArticlePayload, 'week-ahead', 'en') as string;
+
+      expect(content).toContain('scrutiny measures');
+      expect(content).toContain('opposition oversight');
+    });
+
+    it('should include pillar transition in week-ahead content', () => {
+      const content = generateArticleContent({
+        events: [
+          { titel: 'Debatt', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
+        ],
+        highlights: [{ title: 'Test', description: 'Test' }]
+      } as MockArticlePayload, 'week-ahead', 'en') as string;
+
+      expect(content).toContain('pillar-transition');
+    });
+
+    it('should render key takeaways in propositions content', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' },
+          { titel: 'Försvarsprop', organ: 'FöU', url: 'https://example.com/p2', dok_id: 'P2' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('propositions have been referred');
+      expect(content).toContain('committees');
+    });
+
+    it('should render key takeaways in Swedish for propositions', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' }
+        ]
+      } as MockArticlePayload, 'propositions', 'sv') as string;
+
+      expect(content).toContain('Centrala slutsatser');
+      expect(content).toContain('propositioner har hänvisats');
+    });
+
+    it('should include pillar transition in propositions content', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('pillar-transition');
+    });
+
+    it('should include policy domain cross-analysis in propositions key takeaways', () => {
+      const content = generateArticleContent({
+        propositions: [
+          { titel: 'Skattereform', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' },
+          { titel: 'Försvarspolitik', organ: 'FöU', url: 'https://example.com/p2', dok_id: 'P2' }
+        ]
+      } as MockArticlePayload, 'propositions', 'en') as string;
+
+      expect(content).toContain('Key Takeaways');
+      expect(content).toContain('policy priorities');
+    });
+
     it('should render Swedish analytical sections for generic content', () => {
       const content = generateArticleContent({
         documents: [
@@ -1371,6 +1488,218 @@ describe('Data Transformers', () => {
 
       // Single theme = flat list, no Thematic Analysis heading
       expect(content).not.toContain('Thematic Analysis');
+    });
+  });
+
+  describe('Multilingual policy domain translations', () => {
+    it('should return German domain names for de language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Klimat och miljö', parti: 'MP', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'de') as string;
+
+      expect(content).toContain('Finanzpolitik');
+      expect(content).toContain('Umwelt- und Klimapolitik');
+      expect(content).not.toContain('>fiscal policy<');
+      expect(content).not.toContain('>environmental and climate policy<');
+    });
+
+    it('should return French domain names for fr language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Bostadspolitik', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'fr') as string;
+
+      expect(content).toContain('politique de défense et de sécurité');
+      expect(content).toContain('politique du logement');
+    });
+
+    it('should return Japanese domain names for ja language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Klimat och miljö', parti: 'MP', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'ja') as string;
+
+      expect(content).toContain('財政政策');
+      expect(content).toContain('環境・気候政策');
+    });
+
+    it('should return Arabic domain names for ar language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Klimat och miljö', parti: 'MP', url: 'https://example.com/2', dok_id: 'M2' }
+        ]
+      } as MockArticlePayload, 'motions', 'ar') as string;
+
+      expect(content).toContain('السياسة المالية');
+      expect(content).toContain('سياسة البيئة والمناخ');
+    });
+  });
+
+  describe('Multilingual opposition strategy text', () => {
+    it('should produce German strategy text for de language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Bostadspolitik', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' },
+          { titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/3', dok_id: 'M3' }
+        ]
+      } as MockArticlePayload, 'motions', 'de') as string;
+
+      expect(content).toContain('führt mit');
+      expect(content).not.toContain('leads opposition activity');
+    });
+
+    it('should produce French strategy text for fr language', () => {
+      const content = generateArticleContent({
+        motions: [
+          { titel: 'Skattefrågor', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' },
+          { titel: 'Bostadspolitik', parti: 'S', url: 'https://example.com/2', dok_id: 'M2' },
+          { titel: 'Försvarspolitik', parti: 'M', url: 'https://example.com/3', dok_id: 'M3' }
+        ]
+      } as MockArticlePayload, 'motions', 'fr') as string;
+
+      expect(content).toContain('mène avec');
+      expect(content).not.toContain('leads opposition activity');
+    });
+  });
+
+  describe('Multilingual generic content document type labels', () => {
+    it('should produce German document type labels for de language', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test document', doktyp: 'mot', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Another document', doktyp: 'prop', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'generic', 'de') as string;
+
+      expect(content).toContain('Anträge');
+      expect(content).toContain('Regierungsvorlagen');
+      expect(content).not.toContain('>Motions<');
+      expect(content).not.toContain('>Propositions<');
+    });
+  });
+
+  describe('Generic content analytical sections (weekly-review/monthly-review)', () => {
+    it('should include opposition strategy section when motions from multiple parties exist', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'mot', parti: 'S', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Försvarspolitik', doktyp: 'mot', parti: 'M', url: 'https://example.com/d2', dok_id: 'D2' },
+          { titel: 'Budget 2026', doktyp: 'prop', url: 'https://example.com/d3', dok_id: 'D3' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Opposition Strategy');
+    });
+
+    it('should NOT include opposition strategy when only one party has motions', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'mot', parti: 'S', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Budget 2026', doktyp: 'prop', url: 'https://example.com/d3', dok_id: 'D3' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).not.toContain('Opposition Strategy');
+    });
+
+    it('should include committee activity section when multiple committee reports exist', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'bet', organ: 'FiU', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Försvarsfrågor', doktyp: 'bet', organ: 'FöU', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'monthly-review', 'en') as string;
+
+      expect(content).toContain('Committee Activity');
+      expect(content).toContain('Finance Committee');
+    });
+
+    it('should NOT include committee activity for single report', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'bet', organ: 'FiU', url: 'https://example.com/d1', dok_id: 'D1' }
+        ]
+      } as MockArticlePayload, 'monthly-review', 'en') as string;
+
+      expect(content).not.toContain('Committee Activity');
+    });
+
+    it('should include government priority signal when multiple propositions share a committee', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Budget 2026', doktyp: 'prop', organ: 'FiU', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Skattereform', doktyp: 'prop', organ: 'FiU', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Policy Implications');
+      expect(content).toContain('Finance Committee');
+      expect(content).toContain('propositions');
+    });
+
+    it('should translate committee activity heading for German', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'bet', organ: 'FiU', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Försvarsfrågor', doktyp: 'bet', organ: 'FöU', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'de') as string;
+
+      expect(content).toContain('Ausschusstätigkeit');
+      expect(content).not.toContain('>Committee Activity<');
+    });
+
+    it('should localize CIA context for Swedish', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1' }
+        ],
+        ciaContext: {
+          coalitionStability: { majorityMargin: 1 },
+          votingPatterns: {}
+        }
+      } as MockArticlePayload, 'weekly-review', 'sv') as string;
+
+      expect(content).toContain('Historisk kontext');
+      expect(content).not.toContain('Historical context');
+    });
+
+    it('should keep English CIA context for English', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1' }
+        ],
+        ciaContext: {
+          coalitionStability: { majorityMargin: 2 },
+          votingPatterns: {}
+        }
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Historical context');
+    });
+
+    it('should NOT show CIA context when margin is > 2', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1' }
+        ],
+        ciaContext: {
+          coalitionStability: { majorityMargin: 5 },
+          votingPatterns: {}
+        }
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).not.toContain('Historical context');
+      expect(content).not.toContain('cia-context');
     });
   });
 

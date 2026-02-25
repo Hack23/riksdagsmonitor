@@ -52,7 +52,106 @@ import {
   cleanMotionText,
   isPersonProfileText,
   extractKeyPassage,
+  getCommitteeName,
 } from './helpers.js';
+
+// ---------------------------------------------------------------------------
+// Per-language domain name translations (12 domains × 14 languages)
+// English keys are used internally; localised names are returned to callers.
+// ---------------------------------------------------------------------------
+type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
+  | 'migration' | 'eu-foreign' | 'justice' | 'labour' | 'housing' | 'transport' | 'trade';
+
+const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
+  fiscal: {
+    en: 'fiscal policy', sv: 'finanspolitik', da: 'finanspolitik', no: 'finanspolitikk',
+    fi: 'finanssipolitiikka', de: 'Finanzpolitik', fr: 'politique fiscale',
+    es: 'política fiscal', nl: 'begrotingsbeleid', ar: 'السياسة المالية',
+    he: 'מדיניות פיסקלית', ja: '財政政策', ko: '재정 정책', zh: '财政政策',
+  },
+  defence: {
+    en: 'defence and security policy', sv: 'försvars- och säkerhetspolitik',
+    da: 'forsvars- og sikkerhedspolitik', no: 'forsvars- og sikkerhetspolitikk',
+    fi: 'puolustus- ja turvallisuuspolitiikka', de: 'Verteidigungs- und Sicherheitspolitik',
+    fr: 'politique de défense et de sécurité', es: 'política de defensa y seguridad',
+    nl: 'defensie- en veiligheidsbeleid', ar: 'سياسة الدفاع والأمن',
+    he: 'מדיניות ביטחון והגנה', ja: '防衛・安全保障政策', ko: '국방·안보 정책', zh: '国防和安全政策',
+  },
+  environment: {
+    en: 'environmental and climate policy', sv: 'miljö- och klimatpolitik',
+    da: 'miljø- og klimapolitik', no: 'miljø- og klimapolitikk',
+    fi: 'ympäristö- ja ilmastopolitiikka', de: 'Umwelt- und Klimapolitik',
+    fr: 'politique environnementale et climatique', es: 'política medioambiental y climática',
+    nl: 'milieu- en klimaatbeleid', ar: 'سياسة البيئة والمناخ',
+    he: 'מדיניות סביבה ואקלים', ja: '環境・気候政策', ko: '환경·기후 정책', zh: '环境和气候政策',
+  },
+  education: {
+    en: 'education policy', sv: 'utbildningspolitik', da: 'uddannelsespolitik',
+    no: 'utdanningspolitikk', fi: 'koulutuspolitiikka', de: 'Bildungspolitik',
+    fr: 'politique éducative', es: 'política educativa', nl: 'onderwijsbeleid',
+    ar: 'سياسة التعليم', he: 'מדיניות חינוך', ja: '教育政策', ko: '교육 정책', zh: '教育政策',
+  },
+  healthcare: {
+    en: 'healthcare policy', sv: 'hälso- och sjukvårdspolitik',
+    da: 'sundhedspolitik', no: 'helsepolitikk', fi: 'terveyspolitiikka',
+    de: 'Gesundheitspolitik', fr: 'politique de santé', es: 'política sanitaria',
+    nl: 'gezondheidsbeleid', ar: 'سياسة الرعاية الصحية', he: 'מדיניות בריאות',
+    ja: '医療政策', ko: '보건 정책', zh: '医疗政策',
+  },
+  migration: {
+    en: 'migration policy', sv: 'migrationspolitik', da: 'migrationspolitik',
+    no: 'migrasjonspolitikk', fi: 'maahanmuuttopolitiikka', de: 'Migrationspolitik',
+    fr: 'politique migratoire', es: 'política migratoria', nl: 'migratiebeleid',
+    ar: 'سياسة الهجرة', he: 'מדיניות הגירה', ja: '移民政策', ko: '이민 정책', zh: '移民政策',
+  },
+  'eu-foreign': {
+    en: 'EU and foreign affairs', sv: 'EU- och utrikespolitik',
+    da: 'EU- og udenrigspolitik', no: 'EU- og utenrikspolitikk',
+    fi: 'EU- ja ulkopolitiikka', de: 'EU- und Außenpolitik',
+    fr: 'affaires européennes et étrangères', es: 'asuntos europeos y exteriores',
+    nl: 'EU- en buitenlands beleid', ar: 'شؤون الاتحاد الأوروبي والخارجية',
+    he: 'יחסי חוץ ואיחוד אירופי', ja: 'EU・外交政策', ko: 'EU·외교 정책', zh: '欧盟和外交事务',
+  },
+  justice: {
+    en: 'justice policy', sv: 'rättspolitik', da: 'retspolitik',
+    no: 'justispolitikk', fi: 'oikeuspolitiikka', de: 'Justizpolitik',
+    fr: 'politique judiciaire', es: 'política judicial', nl: 'justitiebeleid',
+    ar: 'سياسة العدالة', he: 'מדיניות משפט', ja: '司法政策', ko: '사법 정책', zh: '司法政策',
+  },
+  labour: {
+    en: 'labour market policy', sv: 'arbetsmarknadspolitik',
+    da: 'arbejdsmarkedspolitik', no: 'arbeidsmarkedspolitikk',
+    fi: 'työmarkkinapolitiikka', de: 'Arbeitsmarktpolitik',
+    fr: 'politique du marché du travail', es: 'política del mercado laboral',
+    nl: 'arbeidsmarktbeleid', ar: 'سياسة سوق العمل', he: 'מדיניות שוק העבודה',
+    ja: '労働市場政策', ko: '노동시장 정책', zh: '劳动市场政策',
+  },
+  housing: {
+    en: 'housing policy', sv: 'bostadspolitik', da: 'boligpolitik',
+    no: 'boligpolitikk', fi: 'asuntopolitiikka', de: 'Wohnungspolitik',
+    fr: 'politique du logement', es: 'política de vivienda', nl: 'woningbeleid',
+    ar: 'سياسة الإسكان', he: 'מדיניות דיור', ja: '住宅政策', ko: '주택 정책', zh: '住房政策',
+  },
+  transport: {
+    en: 'transport policy', sv: 'transportpolitik', da: 'transportpolitik',
+    no: 'transportpolitikk', fi: 'liikennepolitiikka', de: 'Verkehrspolitik',
+    fr: 'politique des transports', es: 'política de transporte', nl: 'vervoersbeleid',
+    ar: 'سياسة النقل', he: 'מדיניות תחבורה', ja: '交通政策', ko: '교통 정책', zh: '交通政策',
+  },
+  trade: {
+    en: 'trade and industry policy', sv: 'näringspolitik',
+    da: 'erhvervspolitik', no: 'næringspolitikk', fi: 'elinkeino- ja kauppapolitiikka',
+    de: 'Wirtschafts- und Handelspolitik', fr: 'politique commerciale et industrielle',
+    es: 'política comercial e industrial', nl: 'handels- en industriebeleid',
+    ar: 'سياسة التجارة والصناعة', he: 'מדיניות מסחר ותעשייה',
+    ja: '通商・産業政策', ko: '통상·산업 정책', zh: '贸易和产业政策',
+  },
+};
+
+/** Resolve a localised domain name from a domain key and language. */
+function domainName(key: DomainKey, lang: Language | string): string {
+  return DOMAIN_NAMES[key][lang] ?? DOMAIN_NAMES[key].en;
+}
 
 /**
  * Detect policy domains from a document's title and committee code.
@@ -61,7 +160,6 @@ import {
 export function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): string[] {
   const title = (doc.titel || doc.title || '').toLowerCase();
   const organ = doc.organ || doc.committee || '';
-  const isSv = lang === 'sv';
   const set = new Set<string>();
 
   if (title.includes('skatt') || title.includes('tax') || title.includes('budget') || title.includes('finans')
@@ -70,51 +168,51 @@ export function detectPolicyDomains(doc: RawDocument, lang: Language | string = 
       || title.includes('e-id') || title.includes('e-legitimation') || title.includes('verklig huvudman')
       || title.includes('penningtvätt') || /\bbeneficial owner(ship)?\b/.test(title) || title.includes('fakturabedrägeri')
       || organ === 'SkU' || organ === 'FiU')
-    set.add(isSv ? 'finanspolitik' : 'fiscal policy');
+    set.add(domainName('fiscal', lang));
   if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
       || title.includes('vapen') || title.includes('beredskap') || title.includes('totalförsvar')
       || title.includes('krigsmateriel') || title.includes('säkerhetsskydd') || title.includes('preparedness')
       || title.includes('weapon')
       || organ === 'FöU')
-    set.add(isSv ? 'försvars- och säkerhetspolitik' : 'defence and security policy');
+    set.add(domainName('defence', lang));
   if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || title.includes('energi')
       || title.includes('förnybart') || title.includes('renewable') || title.includes('koldioxid')
       || title.includes('hållbar') || title.includes('sustain')
       || organ === 'MJU')
-    set.add(isSv ? 'miljö- och klimatpolitik' : 'environmental and climate policy');
+    set.add(domainName('environment', lang));
   if (title.includes('utbildning') || title.includes('educ') || title.includes('skola') || title.includes('högskola')
       || organ === 'UbU')
-    set.add(isSv ? 'utbildningspolitik' : 'education policy');
+    set.add(domainName('education', lang));
   if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || title.includes('omsorg')
       || organ === 'SoU')
-    set.add(isSv ? 'hälso- och sjukvårdspolitik' : 'healthcare policy');
+    set.add(domainName('healthcare', lang));
   if (title.includes('migration') || title.includes('invandring') || title.includes('asyl') || title.includes('utlänning')
       || title.includes('uppehållstillstånd') || title.includes('medborgarskap') || title.includes('citizenship')
       || title.includes('utvisning') || title.includes('statslöshet')
       || organ === 'SfU')
-    set.add(isSv ? 'migrationspolitik' : 'migration policy');
+    set.add(domainName('migration', lang));
   if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign')
       || organ === 'UU')
-    set.add(isSv ? 'EU- och utrikespolitik' : 'EU and foreign affairs');
+    set.add(domainName('eu-foreign', lang));
   if (title.includes('brott') || title.includes('straff') || title.includes('polis') || title.includes('justice')
       || title.includes('kriminal') || organ === 'JuU')
-    set.add(isSv ? 'rättspolitik' : 'justice policy');
+    set.add(domainName('justice', lang));
   if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
       || title.includes('facklig') || /\bilo\b/.test(title) || title.includes('trakasserier')
       || title.includes('kollektivavtal') || title.includes('lönediskriminering') || title.includes('harassment')
       || organ === 'AU')
-    set.add(isSv ? 'arbetsmarknadspolitik' : 'labour market policy');
+    set.add(domainName('labour', lang));
   if (title.includes('bostad') || title.includes('housing') || title.includes('hyra') || title.includes('bostadsrätt')
       || title.includes('lagfart') || title.includes('fastighet')
       || organ === 'CU')
-    set.add(isSv ? 'bostadspolitik' : 'housing policy');
+    set.add(domainName('housing', lang));
   if (title.includes('trafik') || title.includes('transport') || title.includes('järnväg') || title.includes('väg')
       || organ === 'TU')
-    set.add(isSv ? 'transportpolitik' : 'transport policy');
+    set.add(domainName('transport', lang));
   if (title.includes('näring') || title.includes('handel') || title.includes('trade') || title.includes('industri')
       || title.includes('företag') || title.includes('jordbruk') || title.includes('lantbruk')
       || title.includes('veterinär') || title.includes('djur') || organ === 'NU')
-    set.add(isSv ? 'näringspolitik' : 'trade and industry policy');
+    set.add(domainName('trade', lang));
 
   return Array.from(set);
 }
@@ -189,6 +287,22 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
 }
 
 type _LangPair = { en: Record<string, string>; sv: Record<string, string> };
+
+/**
+ * Build a reverse lookup from any localised domain name back to the English key.
+ * This allows getDomainSpecificAnalysis to work with the localised strings
+ * returned by detectPolicyDomains().
+ */
+const _LOCALISED_TO_EN: Record<string, string> = {};
+for (const [, translations] of Object.entries(DOMAIN_NAMES)) {
+  const enName = translations.en;
+  for (const [langKey, localisedName] of Object.entries(translations)) {
+    // Skip the English entry — it maps to itself and adds no new lookup value
+    if (langKey === 'en') continue;
+    _LOCALISED_TO_EN[localisedName] = enName;
+    _LOCALISED_TO_EN[localisedName.toLowerCase()] = enName;
+  }
+}
 
 /** Module-level constant — allocated once, shared across all calls. */
 const DOMAIN_ANALYSES: Record<string, _LangPair> = {
@@ -338,21 +452,8 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
     }
 };
 
-/** Module-level constant — allocated once, shared across all calls. */
-const EN_DOMAIN_MAP: Record<string, string> = {
-  'finanspolitik': 'fiscal policy',
-  'försvars- och säkerhetspolitik': 'defence and security policy',
-  'miljö- och klimatpolitik': 'environmental and climate policy',
-  'utbildningspolitik': 'education policy',
-  'hälso- och sjukvårdspolitik': 'healthcare policy',
-  'migrationspolitik': 'migration policy',
-  'EU- och utrikespolitik': 'EU and foreign affairs',
-  'rättspolitik': 'justice policy',
-  'arbetsmarknadspolitik': 'labour market policy',
-  'bostadspolitik': 'housing policy',
-  'transportpolitik': 'transport policy',
-  'näringspolitik': 'trade and industry policy'
-};
+/** Module-level constant — reverse lookup from any localised domain name to English key. */
+const EN_DOMAIN_MAP: Record<string, string> = _LOCALISED_TO_EN;
 
 /**
  * Return a substantive domain-specific and type-specific analysis sentence.
@@ -401,9 +502,27 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
   if (organ) {
     const organEntry = COMMITTEE_NAMES[organ];
     if (organEntry) {
-      const isSv = lang === 'sv';
-      return isSv
-        ? `Ärendet behandlas av ${organEntry.sv.toLowerCase()} för parlamentarisk beredning.`
+      const committeeRefTemplates: Record<string, (name: string) => string> = {
+        sv: (n) => `Ärendet behandlas av ${n.toLowerCase()} för parlamentarisk beredning.`,
+        da: (n) => `Sagen behandles af ${n} til parlamentarisk behandling.`,
+        no: (n) => `Saken behandles av ${n} for parlamentarisk behandling.`,
+        fi: (n) => `Asia käsitellään valiokunnassa ${n} parlamentaarista käsittelyä varten.`,
+        de: (n) => `Die Angelegenheit wird dem ${n} zur parlamentarischen Prüfung überwiesen.`,
+        fr: (n) => `L'affaire est renvoyée à la ${n} pour examen parlementaire.`,
+        es: (n) => `El asunto se remite a la ${n} para examen parlamentario.`,
+        nl: (n) => `De zaak wordt verwezen naar de ${n} voor parlementaire behandeling.`,
+        ar: (n) => `تم إحالة الموضوع إلى ${n} للنظر البرلماني.`,
+        he: (n) => `הנושא הועבר ל${n} לבחינה פרלמנטרית.`,
+        ja: (n) => `この件は${n}に付託され、議会審議が行われます。`,
+        ko: (n) => `이 안건은 ${n}에 회부되어 의회 심의를 받습니다.`,
+        zh: (n) => `此事项已移交${n}进行议会审查。`,
+      };
+      // Use getCommitteeName for consistent localization: Swedish name for sv,
+      // English name for all others (client-side data-translate handles further l10n)
+      const committeeName = getCommitteeName(organ, lang);
+      const tpl = committeeRefTemplates[lang as string];
+      return tpl
+        ? tpl(committeeName)
         : `This matter is referred to the ${organEntry.en} for parliamentary examination.`;
     }
   }
