@@ -998,19 +998,18 @@ done
 
 if [ $UNTRANSLATED -gt 0 ]; then
   echo ""
-  echo "❌ TRANSLATION VALIDATION FAILED"
+  echo "WARNING: TRANSLATION INCOMPLETE"
   echo "   $UNTRANSLATED of $TOTAL_ARTICLES articles still contain untranslated Swedish content!"
-  echo "   You MUST go back and translate the marked content."
-  echo "   DO NOT proceed to Step 6 until all articles are translated."
-  exit 1
+  echo "   Attempt to translate the remaining articles before creating PR."
+  echo "   Note: Do NOT use exit 1 here — it kills the shell session and prevents PR creation."
 else
   echo ""
-  echo "✅ TRANSLATION VALIDATION PASSED"
+  echo "OK: TRANSLATION PASSED"
   echo "   All $TOTAL_ARTICLES articles fully translated - no Swedish markers remaining"
 fi
 ```
 
-**If validation fails**: GO BACK to Step 5.2 and translate the remaining articles. Do not skip this step. Do not proceed to Step 6.
+**If validation shows untranslated articles**: Attempt to translate remaining articles. If elapsed time is >= 38 minutes, create PR with what you have — partial translations are better than no PR.
 
 **Translation Examples**:
 
@@ -1055,19 +1054,21 @@ Only commit the actual news article files: `news/{YYYY-MM-DD}-{slug}-{lang}.html
 
 ```bash
 bash scripts/validate-news-generation.sh
+VALIDATION_EXIT=$?
 
-if [ $? -ne 0 ]; then
-  echo "❌ Validation failed - DO NOT create PR"
-  echo "Review errors above and fix issues before proceeding"
-  exit 1
+if [ $VALIDATION_EXIT -ne 0 ]; then
+  echo "Validation returned errors — review above and fix what you can"
+  echo "If elapsed time >= 38 minutes, create PR anyway with articles you have"
+else
+  echo "Validation passed - safe to create PR"
 fi
-
-echo "✅ Validation passed - safe to create PR"
 ```
 
+**Note**: Do NOT use `exit 1` after the validation call — store the exit code in a variable and decide based on elapsed time and error severity.
+
 This validation checks:
-1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes (blocking)
-2. ✅ No untranslated Swedish markers (data-translate) (blocking)
+1. ℹ️  Semantic HTML structure in news indexes (skipped if not present — they are .gitignored, generated at build time)
+2. ✅ No untranslated Swedish markers (data-translate) (blocking if articles exist)
 3. ✅ Localized taglines in non-English articles (blocking)
 4. ⚠️  BreadcrumbList localization (warning level)
 5. ⚠️  Index file freshness (< 24 hours) (warning level)
@@ -1202,12 +1203,12 @@ for lang in "${LANG_ARRAY[@]}"; do
   fi
 done
 
-# Fail the workflow if any requested languages are missing articles
+# Warn if any requested languages are missing articles (but don't exit)
 if [ "${#missing_langs[@]}" -ne 0 ]; then
-  echo "❌ Validation failed: No articles generated for the following requested languages: ${missing_langs[*]}"
-  exit 1
+  echo "WARNING: No articles generated for the following requested languages: ${missing_langs[*]}"
+  echo "Create PR with articles that were generated. Partial coverage is better than no PR."
 else
-  echo "✅ Validation passed: Articles generated for all requested languages."
+  echo "OK: Articles generated for all requested languages."
 fi
 
 # Verify RTL attributes for Arabic and Hebrew

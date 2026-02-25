@@ -26,9 +26,12 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # ============================================================================
-# Check 1: Semantic HTML structure in all 14 news index files
+# Check 1: Semantic HTML structure in news index files (if they exist)
+# NOTE: news/index*.html are listed in .gitignore and generated at build time
+# by the prebuild script. They are NOT present when this script runs in the
+# agentic workflow. Skip them gracefully — they are validated at build/deploy.
 # ============================================================================
-echo "📋 Check 1: Semantic HTML structure in news/index*.html"
+echo "📋 Check 1: Semantic HTML structure in news/index*.html (build-time files)"
 
 REQUIRED_ELEMENTS=(
   '<nav class="language-switcher"'
@@ -36,24 +39,27 @@ REQUIRED_ELEMENTS=(
   '<footer class="footer-section"'
 )
 
+INDEX_FILES_FOUND=0
+INDEX_ERRORS=0
 for idx in news/index.html news/index_{sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
   if [ -f "$idx" ]; then
+    INDEX_FILES_FOUND=$((INDEX_FILES_FOUND + 1))
     for element in "${REQUIRED_ELEMENTS[@]}"; do
       if ! grep -q "$element" "$idx"; then
         echo -e "${RED}❌ Missing $element in $idx${NC}"
+        INDEX_ERRORS=$((INDEX_ERRORS + 1))
         ERRORS=$((ERRORS + 1))
       fi
     done
-  else
-    echo -e "${RED}❌ File not found: $idx${NC}"
-    ERRORS=$((ERRORS + 1))
   fi
 done
 
-if [ $ERRORS -eq 0 ]; then
-  echo -e "${GREEN}✅ All 14 news index files have required semantic HTML structure${NC}"
+if [ $INDEX_FILES_FOUND -eq 0 ]; then
+  echo -e "${YELLOW}ℹ️  News index files not present (they are in .gitignore, generated at build time — OK)${NC}"
+elif [ $INDEX_ERRORS -eq 0 ]; then
+  echo -e "${GREEN}✅ All $INDEX_FILES_FOUND present news index files have required semantic HTML structure${NC}"
 else
-  echo -e "${RED}❌ $ERRORS structural errors in news index files${NC}"
+  echo -e "${RED}❌ $INDEX_ERRORS structural errors in news index files${NC}"
 fi
 echo ""
 
@@ -141,14 +147,17 @@ fi
 echo ""
 
 # ============================================================================
-# Check 5: All news index files are recent (not stale)
+# Check 5: All news index files are recent (not stale) — only if present
+# NOTE: news/index*.html are in .gitignore, generated at build time. Skip if absent.
 # ============================================================================
-echo "📋 Check 5: News index files are up-to-date"
+echo "📋 Check 5: News index files are up-to-date (if present)"
 
 STALE_INDEXES=0
+INDEX_COUNT_5=0
 # Check if any index file is older than 1 day (86400 seconds)
 for idx in news/index*.html; do
   if [ -f "$idx" ]; then
+    INDEX_COUNT_5=$((INDEX_COUNT_5 + 1))
     FILE_AGE=$(($(date +%s) - $(stat -c %Y "$idx" 2>/dev/null || stat -f %m "$idx" 2>/dev/null)))
     if [ $FILE_AGE -gt 86400 ]; then
       echo -e "${YELLOW}⚠️ Index file is older than 24 hours: $(basename $idx)${NC}"
@@ -158,7 +167,9 @@ for idx in news/index*.html; do
   fi
 done
 
-if [ $STALE_INDEXES -eq 0 ]; then
+if [ $INDEX_COUNT_5 -eq 0 ]; then
+  echo -e "${YELLOW}ℹ️  No index files present (generated at build time — OK)${NC}"
+elif [ $STALE_INDEXES -eq 0 ]; then
   echo -e "${GREEN}✅ All news index files are recent${NC}"
 else
   echo -e "${YELLOW}⚠️ $STALE_INDEXES index files are older than 24 hours${NC}"
@@ -166,13 +177,16 @@ fi
 echo ""
 
 # ============================================================================
-# Check 6: News index files have content (not empty)
+# Check 6: News index files have content (not empty) — only if present
+# NOTE: news/index*.html are in .gitignore, generated at build time. Skip if absent.
 # ============================================================================
-echo "📋 Check 6: News index files have content"
+echo "📋 Check 6: News index files have content (if present)"
 
 EMPTY_INDEXES=0
+INDEX_COUNT_6=0
 for idx in news/index*.html; do
   if [ -f "$idx" ]; then
+    INDEX_COUNT_6=$((INDEX_COUNT_6 + 1))
     FILE_SIZE=$(stat -c %s "$idx" 2>/dev/null || stat -f %z "$idx" 2>/dev/null)
     if [ $FILE_SIZE -lt 1000 ]; then
       echo -e "${RED}❌ Index file is suspiciously small (< 1KB): $(basename $idx)${NC}"
@@ -182,7 +196,9 @@ for idx in news/index*.html; do
   fi
 done
 
-if [ $EMPTY_INDEXES -eq 0 ]; then
+if [ $INDEX_COUNT_6 -eq 0 ]; then
+  echo -e "${YELLOW}ℹ️  No index files present (generated at build time — OK)${NC}"
+elif [ $EMPTY_INDEXES -eq 0 ]; then
   echo -e "${GREEN}✅ All news index files have content${NC}"
 else
   echo -e "${RED}❌ $EMPTY_INDEXES index files are too small${NC}"
@@ -270,9 +286,10 @@ else
   echo "❌ DO NOT create PR - fix errors first"
   echo ""
   echo "Recommended actions:"
-  echo "  1. Rerun: node scripts/generate-news-indexes.js"
-  echo "  2. Check translation post-processing completed"
+  echo "  1. Check translation post-processing completed for all non-Swedish articles"
+  echo "  2. Verify article HTML structure (semantic tags, language switcher, taglines)"
   echo "  3. Verify article generation succeeded"
   echo "  4. Rerun this validation script"
+  echo "  Note: news/index*.html are auto-generated at build time — do NOT generate manually"
   exit 1
 fi
