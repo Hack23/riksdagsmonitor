@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.36% </span>
+                <span class="strong">36.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/33</span>
+                <span class='fraction'>13/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">32.14% </span>
+                <span class="strong">28.12% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/28</span>
+                <span class='fraction'>9/32</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.36% </span>
+                <span class="strong">36.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/33</span>
+                <span class='fraction'>13/36</span>
             </div>
         
             
@@ -187,7 +187,11 @@
 <a name='L122'></a><a href='#L122'>122</a>
 <a name='L123'></a><a href='#L123'>123</a>
 <a name='L124'></a><a href='#L124'>124</a>
-<a name='L125'></a><a href='#L125'>125</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,8 +201,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,6 +225,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -315,13 +323,14 @@
  * @module mcp-client/transport
  * @description HTTP transport layer for JSON-RPC 2.0 communication.
  * Tries `globalThis.fetch` first (allows test mocking), then falls
- * back to Node.js `https.request` when Cloudflare blocks undici/fetch.
+ * back to Node.js `http`/`https` request when Cloudflare blocks undici/fetch.
  *
  * @author Hack23 AB
  * @license Apache-2.0
  */
 &nbsp;
 import { request as httpsRequest } from 'https';
+import { request as httpRequest } from 'http';
 import { URL } from 'url';
 &nbsp;
 /** Minimal fetch-like response interface for transport abstraction */
@@ -335,8 +344,9 @@ export interface FetchLike {
 }
 &nbsp;
 /**
- * Low-level HTTPS POST using Node.js built-in `https.request`.
+ * Low-level HTTP/HTTPS POST using Node.js built-in `http`/`https` modules.
  * Used as fallback when `globalThis.fetch` is unavailable or blocked.
+ * Automatically selects `http.request` or `https.request` based on the URL protocol.
  */
 export function <span class="fstat-no" title="function not covered" >nodeHttpsPost(</span>
   url: string,
@@ -346,9 +356,11 @@ export function <span class="fstat-no" title="function not covered" >nodeHttpsPo
 ): Promise&lt;FetchLike&gt; {
 <span class="cstat-no" title="statement not covered" >  return new Promise&lt;FetchLike&gt;(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
     const parsed = <span class="cstat-no" title="statement not covered" >new URL(url);</span>
+    const isHttp = <span class="cstat-no" title="statement not covered" >parsed.protocol === 'http:';</span>
+    const requestFn = <span class="cstat-no" title="statement not covered" >isHttp ? httpRequest : httpsRequest;</span>
     const options = <span class="cstat-no" title="statement not covered" >{</span>
       hostname: parsed.hostname,
-      port: parsed.port || 443,
+      port: parsed.port || (isHttp ? 80 : 443),
       path: parsed.pathname + parsed.search,
       method: 'POST',
       headers: {
@@ -357,7 +369,7 @@ export function <span class="fstat-no" title="function not covered" >nodeHttpsPo
       },
     };
 &nbsp;
-    const req = <span class="cstat-no" title="statement not covered" >httpsRequest(options, <span class="fstat-no" title="function not covered" >(r</span>es) =&gt; {</span>
+    const req = <span class="cstat-no" title="statement not covered" >requestFn(options, <span class="fstat-no" title="function not covered" >(r</span>es) =&gt; {</span>
       let data = <span class="cstat-no" title="statement not covered" >'';</span>
 <span class="cstat-no" title="statement not covered" >      res.on('data', <span class="fstat-no" title="function not covered" >(c</span>hunk: Buffer) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        data += chunk.toString();</span>
@@ -442,7 +454,7 @@ export async function performPost(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-25T18:48:19.526Z
+                at 2026-02-25T20:44:20.976Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

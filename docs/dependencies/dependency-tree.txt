@@ -1,4 +1,4 @@
-riksdagsmonitor@0.6.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.6.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.0.2 deduped
 ├─┬ @types/d3@7.4.3
@@ -108,7 +108,7 @@ riksdagsmonitor@0.6.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── @kurkle/color@0.3.4
 ├─┬ chartjs-plugin-annotation@3.1.0
 │ └── chart.js@4.5.1 deduped
-├─┬ cypress@15.10.0
+├─┬ cypress@15.11.0
 │ ├─┬ @cypress/request@3.0.10
 │ │ ├── aws-sign2@0.7.0
 │ │ ├── aws4@1.13.2
@@ -337,6 +337,7 @@ riksdagsmonitor@0.6.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── systeminformation@5.31.1
 │ ├── tmp@0.2.5
 │ ├── tree-kill@1.2.2
+│ ├── tslib@1.14.1
 │ ├── untildify@4.0.0
 │ └─┬ yauzl@2.10.0
 │   ├── buffer-crc32@0.2.13
