@@ -39,8 +39,8 @@ import type {
  * Key behaviours:
  * - **Error isolation**: a failure in one pipeline does not abort others.
  * - **Parallel mode**: when `config.parallel = true` all pipelines run via
- *   `Promise.all` for throughput; otherwise they execute sequentially for
- *   predictable log output.
+ *   `Promise.allSettled` for throughput and robust error handling; otherwise
+ *   they execute sequentially for predictable log output.
  * - **Result aggregation**: all per-pipeline `PipelineResult` objects are
  *   merged into a single `OrchestratorResult`.
  */

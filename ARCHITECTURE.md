@@ -1004,7 +1004,7 @@ graph TD
 |-------|---------------|----------------|
 | **fetch** | Call MCP tools to retrieve raw data | Partial failure → log warning, continue with empty data (graceful degradation) |
 | **transform** | Convert raw data to per-language article payloads | Safe type coercion; missing fields use defaults |
-| **generate** | Render HTML via `generateArticleHTML()` | Returns empty string on template error |
+| **generate** | Render HTML via `generateArticleHTML()` | Template errors throw; caller catches and returns `success=false` |
 | **validate** | Check HTML structure via `validateArticleHTML()` | Validation errors logged as warnings; file still written |
 | **write** | Persist HTML to `news/` directory | Atomic write; dry-run mode skips disk I/O |
 

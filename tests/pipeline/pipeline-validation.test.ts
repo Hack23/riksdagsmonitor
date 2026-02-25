@@ -46,10 +46,10 @@ describe('validateArticleHTML — valid HTML', () => {
 
   it('records passed checks for each satisfied rule', () => {
     const result = validateArticleHTML(makeValidHTML());
-    expect(result.passed_checks.length).toBeGreaterThan(0);
-    expect(result.passed_checks.some(c => c.includes('DOCTYPE'))).toBe(true);
-    expect(result.passed_checks.some(c => c.includes('H1'))).toBe(true);
-    expect(result.passed_checks.some(c => c.includes('h2'))).toBe(true);
+    expect(result.passedChecks.length).toBeGreaterThan(0);
+    expect(result.passedChecks.some(c => c.includes('DOCTYPE'))).toBe(true);
+    expect(result.passedChecks.some(c => c.includes('H1'))).toBe(true);
+    expect(result.passedChecks.some(c => c.includes('h2'))).toBe(true);
   });
 
   it('passes for a Swedish (sv) article', () => {

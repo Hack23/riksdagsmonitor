@@ -21,7 +21,7 @@ export interface ArticleValidationResult {
   /** `true` when the HTML passes all required checks. */
   passed: boolean;
   /** Informational messages about checks that passed. */
-  passed_checks: string[];
+  passedChecks: string[];
   /** Error messages for checks that failed (non-empty means `passed = false`). */
   errors: string[];
   /** Warning messages for checks that are advisory only. */
@@ -36,7 +36,7 @@ export interface ValidationOptions {
   requireH1?: boolean;
   /** Require at least one `<h2>` section (default: `true`). */
   requireSections?: boolean;
-  /** Require the sources footer block (default: `true`). */
+  /** Require the sources footer block and fail when absent (default: `true`). */
   requireSources?: boolean;
   /** Minimum word count threshold (default: `50`). */
   minWordCount?: number;
@@ -81,12 +81,12 @@ export function validateArticleHTML(
 
   const errors: string[] = [];
   const warnings: string[] = [];
-  const passed_checks: string[] = [];
+  const passedChecks: string[] = [];
 
   if (!html || typeof html !== 'string') {
     return {
       passed: false,
-      passed_checks,
+      passedChecks,
       errors: ['HTML is empty or not a string'],
       warnings,
     };
@@ -95,7 +95,7 @@ export function validateArticleHTML(
   // --- DOCTYPE ---
   if (options.requireDoctype) {
     if (/<!DOCTYPE\s+html>/i.test(html)) {
-      passed_checks.push('DOCTYPE present');
+      passedChecks.push('DOCTYPE present');
     } else {
       errors.push('Missing <!DOCTYPE html> declaration');
     }
@@ -104,7 +104,7 @@ export function validateArticleHTML(
   // --- lang attribute ---
   if (options.requireLangAttr) {
     if (/<html[^>]+lang=["'][a-z]{2,5}["']/i.test(html)) {
-      passed_checks.push('lang attribute present');
+      passedChecks.push('lang attribute present');
     } else {
       errors.push('Missing valid lang attribute on <html> element');
     }
@@ -113,7 +113,7 @@ export function validateArticleHTML(
   // --- H1 ---
   if (options.requireH1) {
     if (/<h1[^>]*>[\s\S]+?<\/h1>/i.test(html)) {
-      passed_checks.push('H1 heading present');
+      passedChecks.push('H1 heading present');
     } else {
       errors.push('Missing <h1> heading');
     }
@@ -124,7 +124,7 @@ export function validateArticleHTML(
     const h2Matches = html.match(/<h2[^>]*>/gi);
     const h2Count = h2Matches ? h2Matches.length : 0;
     if (h2Count >= 1) {
-      passed_checks.push(`${h2Count} <h2> section(s) present`);
+      passedChecks.push(`${h2Count} <h2> section(s) present`);
     } else {
       errors.push('No <h2> sections found — article content may be missing');
     }
@@ -133,17 +133,21 @@ export function validateArticleHTML(
   // --- Sources footer ---
   if (options.requireSources) {
     if (/article-sources|data-sources|riksdag-regering-mcp/i.test(html)) {
-      passed_checks.push('Sources block present');
+      passedChecks.push('Sources block present');
     } else {
-      warnings.push('Sources footer block not detected — article may lack attribution');
+      errors.push('Sources footer block not detected — article may lack attribution');
     }
   }
 
-  // --- Word count (approximate: strip tags, split on whitespace) ---
-  const textContent = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  // --- Word count (article body only: strip <head>, <script>, <style> blocks first) ---
+  const bodyOnly = html
+    .replace(/<head[\s\S]*?<\/head>/gi, '')
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '');
+  const textContent = bodyOnly.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
   const wordCount = textContent.split(' ').filter(w => w.length > 0).length;
   if (wordCount >= options.minWordCount) {
-    passed_checks.push(`Word count ${wordCount} meets minimum ${options.minWordCount}`);
+    passedChecks.push(`Word count ${wordCount} meets minimum ${options.minWordCount}`);
   } else {
     errors.push(
       `Word count ${wordCount} is below minimum ${options.minWordCount} — article content may be too thin`,
@@ -152,7 +156,7 @@ export function validateArticleHTML(
 
   return {
     passed: errors.length === 0,
-    passed_checks,
+    passedChecks,
     errors,
     warnings,
   };

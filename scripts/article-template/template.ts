@@ -273,7 +273,7 @@ ${content}
 
 ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<WatchPoint>, lang) : ''}
 
-${(sections as TemplateSection[]).length > 0 ? (sections as TemplateSection[]).map(s => `<div id="${s.id}" class="${s.className ?? 'article-section'}">${s.html}</div>`).join('\n') : ''}
+${(sections as TemplateSection[]).length > 0 ? (sections as TemplateSection[]).map(s => `<div id="${escapeHtml(s.id)}" class="${escapeHtml(s.className ?? 'article-section')}">${s.html}</div>`).join('\n') : ''}
   </div>
 
   <footer class="article-footer">

@@ -119,7 +119,7 @@ export interface OrchestratorConfig {
   /** Pipelines to run.  Order matters when `parallel = false`. */
   pipelines: ContentPipeline[];
   /**
-   * When `true` all pipelines run concurrently via `Promise.all`.
+   * When `true` all pipelines run concurrently via `Promise.allSettled`.
    * Defaults to `false` (sequential) for predictable logging.
    */
   parallel?: boolean;
