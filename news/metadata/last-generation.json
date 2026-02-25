@@ -1,44 +1,33 @@
 {
-  "timestamp": "2026-02-25T10:22:00.000Z",
-  "type": "realtime-monitor",
-  "eventsDetected": [
+  "generated_at": "2026-02-25T18:49:00Z",
+  "workflow": "news-realtime-monitor",
+  "run_id": "22411005874",
+  "events_detected": [
     {
-      "type": "committee_reports",
+      "type": "propositions_batch",
       "significance": "HIGH",
-      "count": 12,
-      "details": "12 committee reports published: FöU9 (Crisis Preparedness), MJU25 (Emergency Food Stores), MJU24 (New Environmental Authority), MJU22/MJU21/MJU20 (Three Riksrevision Climate Audits), MJU29 (Active Forestry), MJU27 (Food Chain Fraud), MJU10 (Hunting), MJU23 (Hunting Legislation), MJU28 (Species Protection Compensation), MJU26 (Veterinary Medicines)"
+      "count": 10,
+      "description": "Government submitted 10 propositions covering defence, security, welfare reform, migration",
+      "documents": ["2025/26:142", "2025/26:133", "2025/26:138", "2025/26:136", "2025/26:146", "2025/26:134", "2025/26:135", "2025/26:131", "2025/26:127", "2025/26:125"]
     },
     {
-      "type": "government_propositions",
-      "significance": "MEDIUM",
-      "count": 5,
-      "details": "5 government propositions from 2026-02-24: Public gathering security (133), Psychological violence (138), Migration rules (146), Rural employment (131), Driving training (127)"
-    },
-    {
-      "type": "written_questions",
-      "significance": "LOW",
-      "count": 3,
-      "details": "3 written questions filed 2026-02-25: Forestry machinery theft (SD), Transport subsidy (S), Activity support phase-down (S)"
+      "type": "interpellation",
+      "significance": "HIGH",
+      "count": 1,
+      "description": "Interpellation on Sweden EU budget contribution 60% increase",
+      "documents": ["2025/26:357"]
     }
   ],
-  "articlesGenerated": [
-    "2026-02-25-crisis-preparedness-climate-reports-en.html",
-    "2026-02-25-crisis-preparedness-climate-reports-sv.html",
-    "2026-02-25-crisis-preparedness-climate-reports-da.html",
-    "2026-02-25-crisis-preparedness-climate-reports-no.html",
-    "2026-02-25-crisis-preparedness-climate-reports-fi.html",
-    "2026-02-25-crisis-preparedness-climate-reports-de.html",
-    "2026-02-25-crisis-preparedness-climate-reports-fr.html",
-    "2026-02-25-crisis-preparedness-climate-reports-es.html",
-    "2026-02-25-crisis-preparedness-climate-reports-nl.html",
-    "2026-02-25-crisis-preparedness-climate-reports-ar.html",
-    "2026-02-25-crisis-preparedness-climate-reports-he.html",
-    "2026-02-25-crisis-preparedness-climate-reports-ja.html",
-    "2026-02-25-crisis-preparedness-climate-reports-ko.html",
-    "2026-02-25-crisis-preparedness-climate-reports-zh.html"
-  ],
-  "languages": 14,
-  "mcpDataStatus": "live",
-  "mcpSyncTimestamp": "2026-02-25T10:26:55.574Z",
-  "nextExpectedCheck": "2026-02-25T14:00:00.000Z"
+  "articles_generated": {
+    "slug": "government-legislative-package",
+    "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+    "language_count": 14,
+    "article_type": "breaking"
+  },
+  "mcp_data_source": {
+    "status": "live",
+    "sources": ["riksdagen", "regeringen"],
+    "accessed_at": "2026-02-25T18:50:42Z"
+  },
+  "next_check": "2026-02-26T10:00:00Z"
 }
