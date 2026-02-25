@@ -173,6 +173,7 @@ export function generateSiteFooter(lang: Language | string): string {
   const labels = SITE_FOOTER_LABELS[normalizedLang];
   const homePath: string = normalizedLang === 'en' ? '../index.html' : `../index_${normalizedLang}.html`;
   const newsPath: string = getNewsIndexFilename(normalizedLang);
+  const dashboardPath: string = normalizedLang === 'en' ? '../dashboard/index.html' : `../dashboard/index_${normalizedLang}.html`;
 
   return `<footer role="contentinfo">
   <div class="footer-content">
@@ -180,10 +181,10 @@ export function generateSiteFooter(lang: Language | string): string {
       <h3>${labels.about}</h3>
       <p>${labels.aboutText}</p>
       <ul class="footer-stats">
-        <li><strong>349 MPs</strong> tracked</li>
-        <li><strong>45 risk rules</strong> active</li>
-        <li><strong>14 languages</strong> supported</li>
-        <li><strong>50+ years</strong> historical data</li>
+        <li>${labels.statMPs}</li>
+        <li>${labels.statRiskRules}</li>
+        <li>${labels.statLanguages}</li>
+        <li>${labels.statHistoricalData}</li>
       </ul>
     </div>
     <div class="footer-section">
@@ -191,7 +192,7 @@ export function generateSiteFooter(lang: Language | string): string {
       <ul>
         <li><a href="${homePath}">Home</a></li>
         <li><a href="${newsPath}">News</a></li>
-        <li><a href="../dashboard/index.html">Dashboard</a></li>
+        <li><a href="${dashboardPath}">${labels.dashboard}</a></li>
         <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
         <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
         <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
@@ -222,7 +223,7 @@ ${ALL_LANG_CODES.map(l => {
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden</p>
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | ${labels.location}</p>
   </div>
 </footer>`;
 }

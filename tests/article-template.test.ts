@@ -821,6 +821,33 @@ describe('Article Template', () => {
       expect(html).toContain('aria-label="Byt till Svenska"');
       expect(html).toContain('aria-label="日本語に切り替え"');
     });
+
+    it('should use localized dashboard link for non-English languages', () => {
+      const htmlSv = generateSiteFooter('sv');
+      expect(htmlSv).toContain('dashboard/index_sv.html');
+      expect(htmlSv).toContain('Instrumentpanel');
+      const htmlFr = generateSiteFooter('fr');
+      expect(htmlFr).toContain('dashboard/index_fr.html');
+      expect(htmlFr).toContain('Tableau de bord');
+    });
+
+    it('should use localized location in footer bottom', () => {
+      const htmlEn = generateSiteFooter('en');
+      expect(htmlEn).toContain('Gothenburg, Sweden');
+      const htmlSv = generateSiteFooter('sv');
+      expect(htmlSv).toContain('Göteborg, Sverige');
+      const htmlJa = generateSiteFooter('ja');
+      expect(htmlJa).toContain('ヨーテボリ（スウェーデン）');
+    });
+
+    it('should use localized footer stats', () => {
+      const htmlSv = generateSiteFooter('sv');
+      expect(htmlSv).toContain('349 ledamöter');
+      expect(htmlSv).toContain('45 riskregler');
+      const htmlFr = generateSiteFooter('fr');
+      expect(htmlFr).toContain('349 députés');
+      expect(htmlFr).toContain('45 règles de risque');
+    });
   });
 
   describe('Default export includes new functions', () => {
