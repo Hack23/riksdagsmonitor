@@ -145,6 +145,8 @@
   --focus-color: #007744;     /* light-mode focus ring (≥ 3:1 on white bg)  */
   --focus-ring: 3px solid var(--focus-color);
   --focus-offset: 2px;
+  --focus-bg:   rgba(0, 119, 68, 0.08);  /* tinted bg for link focus highlight */
+  --focus-glow: rgba(0, 119, 68, 0.18);  /* outer glow for button/input focus  */
 
   /* ── Card elevation tokens ────────────────────────────────────────────── */
   --card-shadow-resting:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
@@ -186,6 +188,8 @@
     /* Dark-mode focus token (high contrast on dark backgrounds) */
     --focus-color: #00d9ff;  /* primary-cyan – 7.8:1 on #001a1a  */
     --focus-ring: 3px solid var(--focus-color);
+    --focus-bg:   rgba(0, 217, 255, 0.08);
+    --focus-glow: rgba(0, 217, 255, 0.18);
 
     /* Dark-mode card elevation */
     --card-shadow-resting: 0 1px 4px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
@@ -10005,7 +10009,18 @@ svg:focus-visible,
 /* ── 3. Enhanced Focus Indicators using token ───────────────────────────────── */
 /* Override the hardcoded --primary-color fallbacks with the new --focus-color token */
 @supports selector(:focus-visible) {
-  *:focus-visible {
+  :where(
+    button,
+    [href],
+    input,
+    select,
+    textarea,
+    summary,
+    details,
+    [role="button"],
+    [role="link"],
+    [tabindex]:not([tabindex="-1"])
+  ):focus-visible {
     outline: var(--focus-ring);
     outline-offset: var(--focus-offset);
   }
@@ -10013,7 +10028,7 @@ svg:focus-visible,
   a:focus-visible {
     outline: var(--focus-ring);
     outline-offset: 4px;
-    background-color: rgba(0, 119, 68, 0.08);
+    background-color: var(--focus-bg);
     border-radius: var(--border-radius-sm);
   }
 
@@ -10023,7 +10038,7 @@ svg:focus-visible,
   .btn-secondary:focus-visible {
     outline: var(--focus-ring);
     outline-offset: var(--focus-offset);
-    box-shadow: 0 0 0 4px rgba(0, 119, 68, 0.18);
+    box-shadow: 0 0 0 4px var(--focus-glow);
   }
 
   input:focus-visible,
@@ -10032,7 +10047,7 @@ svg:focus-visible,
     outline: var(--focus-ring);
     outline-offset: var(--focus-offset);
     border-color: var(--focus-color);
-    box-shadow: 0 0 0 3px rgba(0, 119, 68, 0.12);
+    box-shadow: 0 0 0 3px var(--focus-glow);
   }
 }
 
@@ -10165,7 +10180,8 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
   .btn-secondary,
   button {
     border: 2px solid ButtonText;
-    forced-color-adjust: none;
+    background: ButtonFace;
+    color: ButtonText;
   }
 
   /* Focus rings remain visible */
@@ -10199,12 +10215,19 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
 
 /* ── 9. Scroll-to-Top Button Enhancement ────────────────────────────────────── */
 /* Existing .back-to-top is styled elsewhere; add logical properties & token use */
-.back-to-top {
-  /* Use logical properties for position */
-  inset-inline-end: var(--space-5);
-  inset-block-end: var(--space-5);
-  /* Smooth appearance */
-  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+@supports (inset-inline-end: 1rem) and (inset-block-end: 1rem) {
+  .back-to-top {
+    /* Clear physical insets so only logical properties control position */
+    right: auto;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    /* Use logical properties for position */
+    inset-inline-end: var(--space-5);
+    inset-block-end: var(--space-5);
+    /* Smooth appearance */
+    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
 }
 
 .back-to-top:hover {
@@ -10218,21 +10241,17 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
 
 /* ── 10. Mobile Language Switcher Improvement ──────────────────────────────── */
 @media (max-width: 767px) {
-  /* Compact dropdown on narrow viewports */
+  /* Language switcher: auto-fill grid with scroll containment on mobile.
+     Targets both .language-switcher (markup class) and legacy wrapper names. */
   .language-switcher,
-  .lang-switcher {
-    /* Limit width so it doesn't overflow */
-    max-width: calc(100vw - var(--space-8));
-    overflow: hidden;
-  }
-
-  /* Language menu: single-column scrollable list on mobile */
+  .lang-switcher,
   .language-menu,
   .lang-menu {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
     gap: var(--space-1);
     max-height: 60vh;
+    max-width: calc(100vw - var(--space-8));
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;

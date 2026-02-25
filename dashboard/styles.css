@@ -660,6 +660,7 @@
 /* ── 3. Custom Tooltip Styling – Cyberpunk Theme ───────────────────────────── */
 .chart-tooltip,
 [role="tooltip"] {
+  position: relative;  /* anchor ::before arrow pseudo-element */
   background: rgba(10, 14, 39, 0.95);  /* --dark-bg */
   border: 1px solid rgba(0, 217, 255, 0.4);  /* --primary-cyan */
   border-radius: var(--border-radius);
