@@ -7,6 +7,7 @@
  * @license Apache-2.0
  */
 
+import fs from 'fs';
 import type {
   MCPClientConfig,
   MCPStats,
@@ -49,7 +50,6 @@ function getDefaultAuthToken(): string {
   // Try reading the gateway API key from the MCP config file
   const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
   try {
-    const fs = require('fs') as typeof import('fs');
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8')) as Record<string, unknown>;
       const gateway = raw['gateway'] as Record<string, unknown> | undefined;

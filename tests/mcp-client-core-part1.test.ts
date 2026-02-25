@@ -102,25 +102,195 @@ describe('MCPClient', () => {
       expect(stringClient.customHeaders).toEqual({});
     });
 
-    it('should use MCP_GATEWAY_API_KEY env var as auth token when MCP_AUTH_TOKEN is not set', () => {
+    it('should use MCP_GATEWAY_API_KEY env var as auth token when MCP_AUTH_TOKEN is not set', async () => {
       const origAuth = process.env['MCP_AUTH_TOKEN'];
       const origGw = process.env['MCP_GATEWAY_API_KEY'];
+
       delete process.env['MCP_AUTH_TOKEN'];
       process.env['MCP_GATEWAY_API_KEY'] = 'test-gw-key-123';
+
       try {
-        // Re-import to pick up changed env (test the function logic)
-        // Since the module caches DEFAULT_MCP_AUTH_TOKEN at load time,
-        // we test via explicit authToken config instead
-        const gwClient = new MCPClient({
-          baseURL: 'http://host.docker.internal:80/mcp/riksdag-regering',
-          authToken: `Bearer ${process.env['MCP_GATEWAY_API_KEY']}`
-        });
+        // Reset module cache so defaults are re-evaluated with new env vars
+        await vi.resetModules();
+
+        // Dynamically import to pick up updated environment for default auth token logic
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        const gwClient = getDefaultClient();
+
         expect(gwClient.authToken).toBe('Bearer test-gw-key-123');
+      } finally {
+        if (origAuth !== undefined) {
+          process.env['MCP_AUTH_TOKEN'] = origAuth;
+        } else {
+          delete process.env['MCP_AUTH_TOKEN'];
+        }
+
+        if (origGw !== undefined) {
+          process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        } else {
+          delete process.env['MCP_GATEWAY_API_KEY'];
+        }
+
+        // Ensure subsequent tests see a clean module state
+        await vi.resetModules();
+      }
+    });
+
+    it('should read gateway API key from MCP config file when env vars are unset', async () => {
+      const origAuth = process.env['MCP_AUTH_TOKEN'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+
+      delete process.env['MCP_AUTH_TOKEN'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+
+      // Write a temp MCP config file with a gateway API key
+      const tmpDir = '/tmp/mcp-test-config-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const configPath = `${tmpDir}/mcp-config.json`;
+      fs.writeFileSync(configPath, JSON.stringify({
+        gateway: { apiKey: 'file-based-key-456', port: 80, domain: 'host.docker.internal' }
+      }));
+      process.env['GH_AW_MCP_CONFIG'] = configPath;
+
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        const fileClient = getDefaultClient();
+        expect(fileClient.authToken).toBe('Bearer file-based-key-456');
       } finally {
         if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
         else delete process.env['MCP_AUTH_TOKEN'];
         if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
         else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
+      }
+    });
+
+    it('should return empty auth token when config file has malformed JSON', async () => {
+      const origAuth = process.env['MCP_AUTH_TOKEN'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+
+      delete process.env['MCP_AUTH_TOKEN'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+
+      const tmpDir = '/tmp/mcp-test-malformed-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const configPath = `${tmpDir}/mcp-config.json`;
+      fs.writeFileSync(configPath, '{ invalid json !!!');
+      process.env['GH_AW_MCP_CONFIG'] = configPath;
+
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        const client = getDefaultClient();
+        expect(client.authToken).toBe('');
+      } finally {
+        if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
+        else delete process.env['MCP_AUTH_TOKEN'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
+      }
+    });
+
+    it('should return empty auth token when config file is missing gateway field', async () => {
+      const origAuth = process.env['MCP_AUTH_TOKEN'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+
+      delete process.env['MCP_AUTH_TOKEN'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+
+      const tmpDir = '/tmp/mcp-test-nogateway-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const configPath = `${tmpDir}/mcp-config.json`;
+      fs.writeFileSync(configPath, JSON.stringify({ mcpServers: {} }));
+      process.env['GH_AW_MCP_CONFIG'] = configPath;
+
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        const client = getDefaultClient();
+        expect(client.authToken).toBe('');
+      } finally {
+        if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
+        else delete process.env['MCP_AUTH_TOKEN'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
+      }
+    });
+
+    it('should return empty auth token when config file does not exist', async () => {
+      const origAuth = process.env['MCP_AUTH_TOKEN'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+
+      delete process.env['MCP_AUTH_TOKEN'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+      process.env['GH_AW_MCP_CONFIG'] = '/tmp/nonexistent-mcp-config-' + Date.now() + '.json';
+
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        const client = getDefaultClient();
+        expect(client.authToken).toBe('');
+      } finally {
+        if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
+        else delete process.env['MCP_AUTH_TOKEN'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        await vi.resetModules();
+      }
+    });
+
+    it('should respect GH_AW_MCP_CONFIG environment variable for config path', async () => {
+      const origAuth = process.env['MCP_AUTH_TOKEN'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+
+      delete process.env['MCP_AUTH_TOKEN'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+
+      const tmpDir = '/tmp/mcp-test-custom-path-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const customConfigPath = `${tmpDir}/custom-mcp.json`;
+      fs.writeFileSync(customConfigPath, JSON.stringify({
+        gateway: { apiKey: 'custom-path-key-789' }
+      }));
+      process.env['GH_AW_MCP_CONFIG'] = customConfigPath;
+
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        const client = getDefaultClient();
+        expect(client.authToken).toBe('Bearer custom-path-key-789');
+      } finally {
+        if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
+        else delete process.env['MCP_AUTH_TOKEN'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
       }
     });
   });
