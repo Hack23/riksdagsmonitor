@@ -1,89 +1,44 @@
 {
-  "timestamp": "2026-02-24T14:00:00.000Z",
-  "types": [
-    "realtime-monitor",
-    "breaking-news"
+  "timestamp": "2026-02-25T10:22:00.000Z",
+  "type": "realtime-monitor",
+  "eventsDetected": [
+    {
+      "type": "committee_reports",
+      "significance": "HIGH",
+      "count": 12,
+      "details": "12 committee reports published: FöU9 (Crisis Preparedness), MJU25 (Emergency Food Stores), MJU24 (New Environmental Authority), MJU22/MJU21/MJU20 (Three Riksrevision Climate Audits), MJU29 (Active Forestry), MJU27 (Food Chain Fraud), MJU10 (Hunting), MJU23 (Hunting Legislation), MJU28 (Species Protection Compensation), MJU26 (Veterinary Medicines)"
+    },
+    {
+      "type": "government_propositions",
+      "significance": "MEDIUM",
+      "count": 5,
+      "details": "5 government propositions from 2026-02-24: Public gathering security (133), Psychological violence (138), Migration rules (146), Rural employment (131), Driving training (127)"
+    },
+    {
+      "type": "written_questions",
+      "significance": "LOW",
+      "count": 3,
+      "details": "3 written questions filed 2026-02-25: Forestry machinery theft (SD), Transport subsidy (S), Activity support phase-down (S)"
+    }
   ],
-  "languagesGenerated": [
-    "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+  "articlesGenerated": [
+    "2026-02-25-crisis-preparedness-climate-reports-en.html",
+    "2026-02-25-crisis-preparedness-climate-reports-sv.html",
+    "2026-02-25-crisis-preparedness-climate-reports-da.html",
+    "2026-02-25-crisis-preparedness-climate-reports-no.html",
+    "2026-02-25-crisis-preparedness-climate-reports-fi.html",
+    "2026-02-25-crisis-preparedness-climate-reports-de.html",
+    "2026-02-25-crisis-preparedness-climate-reports-fr.html",
+    "2026-02-25-crisis-preparedness-climate-reports-es.html",
+    "2026-02-25-crisis-preparedness-climate-reports-nl.html",
+    "2026-02-25-crisis-preparedness-climate-reports-ar.html",
+    "2026-02-25-crisis-preparedness-climate-reports-he.html",
+    "2026-02-25-crisis-preparedness-climate-reports-ja.html",
+    "2026-02-25-crisis-preparedness-climate-reports-ko.html",
+    "2026-02-25-crisis-preparedness-climate-reports-zh.html"
   ],
-  "allRequestedLanguages": [
-    "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
-  ],
-  "batchSize": "all",
-  "skipExisting": false,
-  "generated": 28,
-  "errors": 0,
-  "articles": [
-    "2026-02-24-legislative-push-en.html",
-    "2026-02-24-legislative-push-sv.html",
-    "2026-02-24-legislative-push-da.html",
-    "2026-02-24-legislative-push-no.html",
-    "2026-02-24-legislative-push-fi.html",
-    "2026-02-24-legislative-push-de.html",
-    "2026-02-24-legislative-push-fr.html",
-    "2026-02-24-legislative-push-es.html",
-    "2026-02-24-legislative-push-nl.html",
-    "2026-02-24-legislative-push-ar.html",
-    "2026-02-24-legislative-push-he.html",
-    "2026-02-24-legislative-push-ja.html",
-    "2026-02-24-legislative-push-ko.html",
-    "2026-02-24-legislative-push-zh.html",
-    "2026-02-24-welfare-reform-proposition-en.html",
-    "2026-02-24-welfare-reform-proposition-sv.html",
-    "2026-02-24-welfare-reform-proposition-da.html",
-    "2026-02-24-welfare-reform-proposition-no.html",
-    "2026-02-24-welfare-reform-proposition-fi.html",
-    "2026-02-24-welfare-reform-proposition-de.html",
-    "2026-02-24-welfare-reform-proposition-fr.html",
-    "2026-02-24-welfare-reform-proposition-es.html",
-    "2026-02-24-welfare-reform-proposition-nl.html",
-    "2026-02-24-welfare-reform-proposition-ar.html",
-    "2026-02-24-welfare-reform-proposition-he.html",
-    "2026-02-24-welfare-reform-proposition-ja.html",
-    "2026-02-24-welfare-reform-proposition-ko.html",
-    "2026-02-24-welfare-reform-proposition-zh.html"
-  ],
-  "eventsDetected": {
-    "high": [
-      "Government files five propositions in legislative push covering civilian defence, psychological violence, ILO conventions, migration rules, MTF shares",
-      "Government files Proposition 2025/26:136 — Kvalificering till socialförsäkringen (third part of bidragsreform)"
-    ],
-    "medium": [
-      "Six government press releases including welfare reform press conference",
-      "New interpellation on paratransit services filed (IP 2025/26:356)",
-      "Three written questions filed (Euratom Treaty, flood damage in Västernorrland)",
-      "Remiss on electronic surveillance for child protection"
-    ],
-    "low": []
-  },
-  "nextCheck": "2026-02-25T10:00:00.000Z",
-  "status": "success",
-  "note": "Breaking news 2026-02-24: Five-bill legislative push (10:30) covering civilian defence, psychological violence, ILO conventions, migration rules, MTF shares; and welfare reform completion (14:00) with Proposition 2025/26:136 on qualification for social insurance."
+  "languages": 14,
+  "mcpDataStatus": "live",
+  "mcpSyncTimestamp": "2026-02-25T10:26:55.574Z",
+  "nextExpectedCheck": "2026-02-25T14:00:00.000Z"
 }
