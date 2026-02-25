@@ -20,7 +20,7 @@ on:
       languages:
         description: 'Languages to generate (en,sv | nordic | eu-core | all)'
         required: false
-        default: en,sv
+        default: all
 
 permissions:
   contents: read
@@ -101,27 +101,24 @@ START_TIME=$(date +%s)
 echo "Workflow start: $(date -u)"
 ```
 
-Budget your time by checking `$(( ($(date +%s) - $START_TIME) / 60 ))` minutes elapsed:
-- **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, detect breaking activity
-- **Minutes 5–15**: Query MCP tools, assess significance of detected events
-- **Minutes 15–25**: Generate breaking news articles (**default: en and sv only**)
-- **Minutes 25–30**: Translate, validate, commit
-- **Minutes 30–35**: Create PR with `safeoutputs___create_pull_request`
-
-**🚨 HARD CUTOFFS — These are non-negotiable:**
-- **Minute 20**: If no articles written yet → call `safeoutputs___noop` immediately and exit
-- **Minute 30**: If PR not yet created → call `safeoutputs___noop` with whatever you have and exit
-- **NEVER let the workflow hit the 45-minute hard timeout** — call a safe output tool FIRST
-
-Check elapsed time before each major step:
+Budget your time by checking elapsed minutes:
 ```bash
 ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
 echo "Minutes elapsed: $ELAPSED"
-if [ "$ELAPSED" -ge 30 ]; then
-  echo "⏰ HARD CUTOFF: 30 minutes elapsed — calling noop and exiting"
-  # Call safeoutputs___noop now
-fi
 ```
+
+- **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, detect breaking activity
+- **Minutes 5–15**: Query MCP tools, assess significance of detected events
+- **Minutes 15–35**: Generate articles **one language at a time** (see Step 3 for sequential loop)
+- **Minutes 35–40**: Validate and commit all generated articles
+- **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
+
+**🚨 HARD CUTOFFS — check `$ELAPSED` before starting each new language:**
+- If `$ELAPSED` >= 35 → skip remaining languages, commit what you have, create PR
+- If `$ELAPSED` >= 40 → skip validation, commit immediately, create PR
+- **NEVER hit the 45-minute hard timeout** — call a safe output tool FIRST
+
+**CRITICAL: Process ONE language at a time (generate, write file, then next language). Do NOT queue all languages before writing.**
 
 ### 1. MANDATORY Date Validation (First Step)
 **ALWAYS START by logging the current date and time:**
@@ -226,12 +223,11 @@ Check the `focus` input (default: `all`):
 ### Language Support
 
 Parse the `languages` input and expand presets:
-- **en,sv** (default) - English and Swedish only (fastest, prevents timeout)
-- **all** - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh (use only when time permits)
+- **all** (default) - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
 - **nordic** → en,sv,da,no,fi
 - **eu-core** → en,sv,de,fr,es,nl
 
-**⚠️ Default is `en,sv` to prevent 45-minute timeout. Use `all` only via manual `workflow_dispatch`.**
+**Process languages ONE AT A TIME** — generate English first (fastest, reference), then Swedish, then remaining languages in order. After each language, check the elapsed time. If elapsed >= 35 minutes, stop and create the PR with what you have.
 
 ## 🔌 MCP Tools: Swedish Political Data
 
@@ -497,12 +493,26 @@ For each piece of data, evaluate significance using these criteria:
 
 ### Step 3: Generate Articles
 
-For HIGH significance events, generate articles following **The Economist style**:
+For HIGH significance events, generate articles following **The Economist style**.
+
+**CRITICAL: Process ONE language at a time.** Use this sequential loop pattern:
+
+```
+For each language in [en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh]:
+  1. Check elapsed time — if >= 35 minutes, stop and proceed to Step 5.5
+  2. Generate article HTML for this language
+  3. Translate all Swedish content (if not Swedish/English article)
+  4. Write the file to news/YYYY-MM-DD-{slug}-{lang}.html
+  5. Verify the file was written: ls -la news/YYYY-MM-DD-{slug}-{lang}.html
+  6. Continue to next language
+```
+
+This prevents timeout by generating partial (but valid) results. A PR with en+sv articles is better than a timeout with nothing.
 
 1. Create HTML files at `news/YYYY-MM-DD-{slug}-{lang}.html`
 2. Use article type `breaking` for urgent, `analysis` for ongoing stories
 3. Include proper metadata, hreflang tags, Schema.org structured data
-4. Generate all requested language versions
+4. Generate all requested language versions sequentially
 
 **Breaking Article Structure:**
 - **Flash Lead** (30 words): Critical fact in one sentence
@@ -557,24 +567,25 @@ done
    - Consult `TRANSLATION_GUIDE.md` for correct terminology
    - Write the updated file back
 
-3. **Validation (MANDATORY)**:
+3. **Validation (check only, do not exit)**:
 ```bash
 UNTRANSLATED=0
 for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
   if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
-    echo "❌ UNTRANSLATED: $(basename $article)"
+    echo "WARNING: UNTRANSLATED: $(basename $article)"
     UNTRANSLATED=$((UNTRANSLATED + 1))
   fi
 done
 
 if [ $UNTRANSLATED -gt 0 ]; then
-  echo "❌ $UNTRANSLATED articles contain untranslated Swedish content!"
-  echo "GO BACK and translate them. DO NOT proceed to Step 4."
-  exit 1
+  echo "WARNING: $UNTRANSLATED articles still contain untranslated Swedish content"
+  echo "Attempt to translate the above files before creating PR"
 else
-  echo "✅ All articles fully translated"
+  echo "OK: All articles fully translated"
 fi
 ```
+
+**Note**: Do NOT use `exit 1` in bash validation blocks — it kills the shell session and prevents the safe output tool from being called. Always use variable tracking instead.
 
 **Translation Rules (self-contained — agents cannot read other workflow files):**
 1. **Translate ALL Swedish text** in `<span data-translate="true" lang="sv">...</span>` markers to the target language
@@ -605,29 +616,31 @@ Create/update `news/metadata/last-generation.json` with:
 
 ```bash
 bash scripts/validate-news-generation.sh
+VALIDATION_EXIT=$?
 
-if [ $? -ne 0 ]; then
-  echo "❌ Validation failed - DO NOT create PR"
-  echo "Review errors above and fix issues before proceeding"
-  exit 1
+if [ $VALIDATION_EXIT -ne 0 ]; then
+  echo "Validation returned errors — review above and fix what you can"
+  echo "If elapsed time >= 38 minutes, create PR anyway with articles you have"
+else
+  echo "Validation passed - safe to create PR"
 fi
-
-echo "✅ Validation passed - safe to create PR"
 ```
 
+**Note**: Do NOT use `exit 1` after the validation call — always store the exit code in a variable and decide what to do based on elapsed time and error severity. Untranslated articles are better than no PR at all.
+
 This validation checks:
-1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes (blocking)
-2. ✅ No untranslated Swedish markers (data-translate) (blocking)
+1. ℹ️  Semantic HTML structure in news indexes (skipped if not present — they are .gitignored, generated at build time)
+2. ✅ No untranslated Swedish markers (data-translate) (blocking if articles exist)
 3. ✅ Localized taglines in non-English articles (blocking)
 4. ⚠️  BreadcrumbList localization (warning level)
-5. ⚠️  Index file freshness (< 24 hours) (warning level)
-6. ✅ Index files have content (> 1KB) (blocking)
-7. ⚠️  Sitemap news-URL coverage (validated at build time; missing sitemap.xml is OK — it's generated by prebuild)
+5. ℹ️  Index file freshness (skipped — index files generated at build time)
+6. ℹ️  Index files have content (skipped — index files generated at build time)
+7. ⚠️  Sitemap news-URL coverage (warning; missing sitemap.xml is OK — generated by prebuild)
 8. ⚠️  Language switcher consistency across all 14 languages (warning level)
 
-**Exit code 0** = pass (proceed to Step 6), **exit code 1** = fail (STOP, do not create PR).
+**Exit code 0** = all checks pass. **Exit code 1** = errors found. Both are recoverable — check elapsed time before deciding.
 
-If validation fails, review the error messages, fix the issues, regenerate indexes if needed, and run validation again.
+If validation shows errors, try to fix them. If elapsed >= 38 minutes, proceed to create PR with available articles.
 
 ### Step 6: Create PR (if articles generated)
 

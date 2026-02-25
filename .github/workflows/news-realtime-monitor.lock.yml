@@ -38,7 +38,7 @@ name: "News Realtime Monitor"
         description: "Focus area: votes, debates, questions, all"
         required: false
       languages:
-        default: en,sv
+        default: all
         description: Languages to generate (en,sv | nordic | eu-core | all)
         required: false
 
