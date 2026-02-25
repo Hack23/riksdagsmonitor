@@ -956,6 +956,130 @@ graph TB
 
 ---
 
+## 🔁 Content Pipeline Architecture
+
+### ContentPipeline Interface (`scripts/pipeline/`)
+
+The `scripts/pipeline/` module introduces a standardised **fetch → transform → generate → validate → write** lifecycle for all article types, replacing ad-hoc per-type logic with a unified contract.
+
+#### C4 Component Diagram — Pipeline Module
+
+```mermaid
+graph TD
+    subgraph "scripts/pipeline/ Module"
+        Types[types.ts<br/>ContentPipeline interface<br/>PipelineStage, PipelineResult<br/>OrchestratorConfig / Result]
+        Orchestrator[orchestrator.ts<br/>PipelineOrchestrator class<br/>Sequential & parallel execution<br/>Error isolation & aggregation]
+        Validation[validation.ts<br/>validateArticleHTML()<br/>validateArticleBatch()<br/>Post-generation structure checks]
+        Index[index.ts<br/>Barrel re-export<br/>Public API surface]
+    end
+
+    subgraph "Article Types (plugins)"
+        NewsTypes[scripts/news-types/<br/>motions, propositions,<br/>committee-reports, etc.<br/>Implement ContentPipeline]
+    end
+
+    subgraph "Template Layer"
+        Template[scripts/article-template/<br/>generateArticleHTML()<br/>Accepts sections[] array<br/>Extensible content blocks]
+    end
+
+    Types --> Orchestrator
+    Types --> NewsTypes
+    Orchestrator --> NewsTypes
+    Orchestrator --> Validation
+    NewsTypes --> Template
+    Index --> Types
+    Index --> Orchestrator
+    Index --> Validation
+
+    style Types fill:#4caf50,stroke:#2e7d32,stroke-width:2px
+    style Orchestrator fill:#2196f3,stroke:#1565c0,stroke-width:2px
+    style Validation fill:#ff9800,stroke:#e65100,stroke-width:2px
+    style Index fill:#9e9e9e,stroke:#616161,stroke-width:2px
+    style NewsTypes fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
+    style Template fill:#00bcd4,stroke:#00838f,stroke-width:2px
+```
+
+#### Pipeline Lifecycle Stages
+
+| Stage | Responsibility | Error Handling |
+|-------|---------------|----------------|
+| **fetch** | Call MCP tools to retrieve raw data | Partial failure → log warning, continue with empty data (graceful degradation) |
+| **transform** | Convert raw data to per-language article payloads | Safe type coercion; missing fields use defaults |
+| **generate** | Render HTML via `generateArticleHTML()` | Template errors throw; caller catches and returns `success=false` |
+| **validate** | Check HTML structure via `validateArticleHTML()` | Validation errors logged as warnings; file still written |
+| **write** | Persist HTML to `news/` directory | Atomic write; dry-run mode skips disk I/O |
+
+#### ContentPipeline Interface
+
+```typescript
+interface ContentPipeline {
+  readonly name: string;
+  run(options?: PipelineOptions): Promise<PipelineResult>;
+}
+
+interface PipelineResult extends GenerationResult {
+  durationMs?: number;
+  stageDurations?: Partial<Record<PipelineStage, number>>;
+  warnings?: string[];
+  degraded?: boolean;   // true when fallback/cached data was used
+}
+```
+
+#### Graceful Degradation Pattern
+
+All `ContentPipeline` implementations follow the **graceful degradation** contract:
+- MCP query failures are caught per-call with `.catch(() => [])` — an empty array
+- The pipeline continues with whatever data is available
+- A `warnings[]` entry documents the degradation for observability
+- `degraded: true` is set in `PipelineResult` so the orchestrator can surface it
+
+#### Extensible Template Sections
+
+`ArticleData` now accepts an optional `sections: TemplateSection[]` array:
+
+```typescript
+interface TemplateSection {
+  id: string;          // HTML element id
+  html: string;        // Pre-rendered HTML block
+  className?: string;  // Wrapper CSS class (default: 'article-section')
+}
+```
+
+New content types (risk indicators, trend charts, pull quotes, data tables) can be injected without modifying the core template — each section is rendered as an isolated `<div>` block after the main content body.
+
+#### Post-Generation HTML Validation
+
+`validateArticleHTML(html, opts)` runs lightweight structural checks before disk write:
+
+| Check | Default | When fails |
+|-------|---------|------------|
+| `<!DOCTYPE html>` present | required | error |
+| `lang` attribute on `<html>` | required | error |
+| At least one `<h1>` | required | error |
+| At least one `<h2>` section | required | error |
+| Sources attribution block | required | error |
+| Word count ≥ 50 | required | error |
+
+#### Pipeline Orchestrator
+
+`PipelineOrchestrator` runs pipelines with full error isolation:
+
+```typescript
+const orchestrator = new PipelineOrchestrator({
+  pipelines: [motionsPipeline, propositionsPipeline, committeeReportsPipeline],
+  parallel: true,          // run concurrently for throughput
+  defaultOptions: { languages: ['en', 'sv'] },
+});
+const result = await orchestrator.run();
+// result.allSucceeded, result.totalFiles, result.warnings, result.durationMs
+```
+
+**Key behaviours:**
+- A failure in one pipeline **never aborts** others (error isolation)
+- `Promise.allSettled` in parallel mode handles unexpected throws
+- `result.warnings[]` aggregates degradation/validation warnings across all pipelines
+
+---
+
 ## 🔒 Security Architecture Integration
 
 ### Defense-in-Depth Layers

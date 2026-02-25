@@ -42,6 +42,32 @@ export interface ArticleMetadata {
   tags: string[];
 }
 
+// ---------------------------------------------------------------------------
+// Extensible template sections
+// ---------------------------------------------------------------------------
+
+/**
+ * A pluggable HTML section inserted into the article body.
+ *
+ * New content types (risk indicators, trend charts, pull quotes, etc.) can be
+ * added without modifying the core template — just append a `TemplateSection`
+ * to the `sections` array in `ArticleData`.
+ */
+export interface TemplateSection {
+  /** Unique identifier used as the HTML element `id`. */
+  id: string;
+  /**
+   * Pre-rendered HTML string for this section.
+   * Must be safe to embed directly (callers are responsible for escaping).
+   */
+  html: string;
+  /**
+   * Optional CSS class name(s) added to the wrapper `<div>`.
+   * Defaults to `'article-section'` when omitted.
+   */
+  className?: string;
+}
+
 /** Full data payload passed to the article HTML template */
 export interface ArticleData {
   slug: string;
@@ -59,6 +85,12 @@ export interface ArticleData {
   keywords?: string[];
   topics?: string[];
   tags?: string[];
+  /**
+   * Optional extensible sections appended after the main article content.
+   * Each entry is rendered as an isolated `<div>` block, allowing new content
+   * types to be injected without changing the template core.
+   */
+  sections?: TemplateSection[];
 }
 
 /** A single generated article (language variant) */

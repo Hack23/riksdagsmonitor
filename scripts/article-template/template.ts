@@ -11,7 +11,7 @@
 import { escapeHtml } from '../html-utils.js';
 import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
-import type { ArticleData, EventGridItem, WatchPoint } from '../types/article.js';
+import type { ArticleData, EventGridItem, WatchPoint, TemplateSection } from '../types/article.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import {
   getBreadcrumbName,
@@ -46,7 +46,8 @@ export function generateArticleHTML(data: ArticleData): string {
     watchPoints = [],
     sources = [],
     keywords = [],
-    tags = []
+    tags = [],
+    sections = [],
   } = data;
 
   // Use proper OG locale for the language
@@ -271,6 +272,8 @@ ${events.length > 0 ? generateEventCalendar(events as ReadonlyArray<EventGridIte
 ${content}
 
 ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<WatchPoint>, lang) : ''}
+
+${(sections as TemplateSection[]).length > 0 ? (sections as TemplateSection[]).map(s => `<div id="${escapeHtml(s.id)}" class="${escapeHtml(s.className ?? 'article-section')}">${s.html}</div>`).join('\n') : ''}
   </div>
 
   <footer class="article-footer">
