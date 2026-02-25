@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect, afterEach, vi } from 'vitest';
-import { generateArticleHTML } from '../scripts/article-template.js';
+import { generateArticleHTML, generateArticleLanguageSwitcher, generateSiteFooter } from '../scripts/article-template.js';
 import articleTemplateDefault from '../scripts/article-template.js';
 import type { Language } from '../scripts/types/language.js';
 import type { ArticleData, ArticleCategory, EventGridItem, WatchPoint } from '../scripts/types/article.js';
@@ -648,6 +648,215 @@ describe('Article Template', () => {
       const jsonLd = jsonLdMatch![1]!;
       const bodyMatch = jsonLd.match(/"articleBody":\s*"([^"]*)"/);
       expect(bodyMatch![1]!.length).toBeLessThanOrEqual(510); // 500 chars + some escaped entities
+    });
+  });
+
+  describe('Language switcher in generated article', () => {
+    it('should include language-switcher nav in article HTML', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('class="language-switcher"');
+      expect(html).toContain('role="navigation"');
+      expect(html).toContain('aria-label="Language versions"');
+    });
+
+    it('should include all 14 language links', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      const langs = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+      for (const lang of langs) {
+        expect(html).toContain(`hreflang="${lang}"`);
+        expect(html).toContain(`class="lang-link`);
+      }
+    });
+
+    it('should mark current language as active', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('class="lang-link active" hreflang="en"');
+    });
+
+    it('should mark Swedish as active for sv articles', () => {
+      const svData: MockArticleData = { ...mockArticleData, lang: 'sv', slug: '2026-02-10-week-ahead-sv.html' };
+      const html = generateArticleHTML(svData as unknown as ArticleData) as string;
+      expect(html).toContain('class="lang-link active" hreflang="sv"');
+    });
+  });
+
+  describe('Top back-to-news navigation', () => {
+    it('should include article-top-nav before the article', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('class="article-top-nav"');
+    });
+
+    it('should include back-to-news link in top nav', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      const topNavMatch = html.match(/<div class="article-top-nav">([\s\S]*?)<\/div>/);
+      expect(topNavMatch).not.toBeNull();
+      expect(topNavMatch![1]).toContain('class="back-to-news"');
+      expect(topNavMatch![1]).toContain('Back to News');
+    });
+
+    it('should link to correct news index for language', () => {
+      const svData: MockArticleData = { ...mockArticleData, lang: 'sv', slug: '2026-02-10-week-ahead-sv.html' };
+      const html = generateArticleHTML(svData as unknown as ArticleData) as string;
+      const topNavMatch = html.match(/<div class="article-top-nav">([\s\S]*?)<\/div>/);
+      expect(topNavMatch).not.toBeNull();
+      expect(topNavMatch![1]).toContain('index_sv.html');
+    });
+  });
+
+  describe('Site footer in generated article', () => {
+    it('should include site footer with footer-content', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('<footer role="contentinfo">');
+      expect(html).toContain('class="footer-content"');
+      expect(html).toContain('class="footer-section"');
+    });
+
+    it('should include footer-bottom with copyright', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('class="footer-bottom"');
+      expect(html).toContain('Hack23 AB');
+    });
+
+    it('should include language grid in footer', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('class="language-grid"');
+    });
+
+    it('should include footer stats', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).toContain('class="footer-stats"');
+      expect(html).toContain('349 MPs');
+    });
+  });
+
+  describe('generateArticleLanguageSwitcher', () => {
+    it('should generate nav with all 14 language links', () => {
+      const html = generateArticleLanguageSwitcher('2026-02-10-test', 'en');
+      expect(html).toContain('class="language-switcher"');
+      expect(html).toContain('2026-02-10-test-en.html');
+      expect(html).toContain('2026-02-10-test-sv.html');
+      expect(html).toContain('2026-02-10-test-zh.html');
+    });
+
+    it('should mark the current language as active', () => {
+      const html = generateArticleLanguageSwitcher('2026-02-10-test', 'de');
+      expect(html).toContain('class="lang-link active" hreflang="de"');
+      expect(html).not.toContain('class="lang-link active" hreflang="en"');
+    });
+
+    it('should include flag emojis', () => {
+      const html = generateArticleLanguageSwitcher('2026-02-10-test', 'en');
+      expect(html).toContain('🇬🇧');
+      expect(html).toContain('🇸🇪');
+      expect(html).toContain('🇯🇵');
+    });
+
+    it('should add aria-current="page" to active language link', () => {
+      const html = generateArticleLanguageSwitcher('2026-02-10-test', 'de');
+      expect(html).toContain('aria-current="page"');
+      // Only the active language should have aria-current
+      const matches = html.match(/aria-current="page"/g);
+      expect(matches).toHaveLength(1);
+      expect(html).toContain('hreflang="de" aria-current="page"');
+    });
+
+    it('should use localized aria-label for nav element', () => {
+      const htmlEn = generateArticleLanguageSwitcher('2026-02-10-test', 'en');
+      expect(htmlEn).toContain('aria-label="Language versions"');
+
+      const htmlSv = generateArticleLanguageSwitcher('2026-02-10-test', 'sv');
+      expect(htmlSv).toContain('aria-label="Språkversioner"');
+
+      const htmlAr = generateArticleLanguageSwitcher('2026-02-10-test', 'ar');
+      expect(htmlAr).toContain('aria-label="إصدارات اللغة"');
+    });
+  });
+
+  describe('generateSiteFooter', () => {
+    it('should generate footer with English labels', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toContain('About Riksdagsmonitor');
+      expect(html).toContain('Quick Links');
+      expect(html).toContain('Built by Hack23 AB');
+    });
+
+    it('should generate footer with Swedish labels', () => {
+      const html = generateSiteFooter('sv');
+      expect(html).toContain('Om Riksdagsmonitor');
+      expect(html).toContain('Snabblänkar');
+    });
+
+    it('should include language grid', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toContain('class="language-grid"');
+      expect(html).toContain('🇬🇧');
+    });
+
+    it('should include copyright info', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toContain('Hack23 AB');
+      expect(html).toContain('Org.nr 5595347807');
+    });
+
+    it('should fall back to English for unknown language', () => {
+      const html = generateSiteFooter('xx');
+      expect(html).toContain('About Riksdagsmonitor');
+      // Should use English paths, not index_xx.html
+      expect(html).toContain('../index.html');
+      expect(html).not.toContain('index_xx.html');
+    });
+
+    it('should include Dashboard, LinkedIn, Security Policy, and Contact Us links', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toContain('dashboard/index.html');
+      expect(html).toContain('linkedin.com/company/hack23');
+      expect(html).toContain('Information_Security_Policy.md');
+      expect(html).toContain('mailto:info@hack23.com');
+      expect(html).toContain('Contact Us');
+    });
+
+    it('should include aria-label attributes on language grid links', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toContain('aria-label="Switch to English"');
+      expect(html).toContain('aria-label="Byt till Svenska"');
+      expect(html).toContain('aria-label="日本語に切り替え"');
+    });
+
+    it('should use localized dashboard link for non-English languages', () => {
+      const htmlSv = generateSiteFooter('sv');
+      expect(htmlSv).toContain('dashboard/index_sv.html');
+      expect(htmlSv).toContain('Instrumentpanel');
+      const htmlFr = generateSiteFooter('fr');
+      expect(htmlFr).toContain('dashboard/index_fr.html');
+      expect(htmlFr).toContain('Tableau de bord');
+    });
+
+    it('should use localized location in footer bottom', () => {
+      const htmlEn = generateSiteFooter('en');
+      expect(htmlEn).toContain('Gothenburg, Sweden');
+      const htmlSv = generateSiteFooter('sv');
+      expect(htmlSv).toContain('Göteborg, Sverige');
+      const htmlJa = generateSiteFooter('ja');
+      expect(htmlJa).toContain('ヨーテボリ（スウェーデン）');
+    });
+
+    it('should use localized footer stats', () => {
+      const htmlSv = generateSiteFooter('sv');
+      expect(htmlSv).toContain('349 ledamöter');
+      expect(htmlSv).toContain('45 riskregler');
+      const htmlFr = generateSiteFooter('fr');
+      expect(htmlFr).toContain('349 députés');
+      expect(htmlFr).toContain('45 règles de risque');
+    });
+  });
+
+  describe('Default export includes new functions', () => {
+    it('should export generateArticleLanguageSwitcher', () => {
+      expect(typeof articleTemplateDefault.generateArticleLanguageSwitcher).toBe('function');
+    });
+
+    it('should export generateSiteFooter', () => {
+      expect(typeof articleTemplateDefault.generateSiteFooter).toBe('function');
     });
   });
 });

@@ -17,6 +17,11 @@ import {
   EVENT_CALENDAR_TITLES,
   WATCH_SECTION_TITLES,
   LOCALE_MAP,
+  LANG_DISPLAY,
+  SITE_FOOTER_LABELS,
+  ALL_LANG_CODES,
+  LANG_ARIA_LABELS,
+  LANG_SWITCHER_ARIA_LABELS,
 } from './constants.js';
 
 /**
@@ -135,4 +140,90 @@ ${watchPoints.map(point => `        <li>
         </li>`).join('\n')}
       </ul>
     </section>`;
+}
+
+/**
+ * Generate the article language switcher navigation bar.
+ *
+ * @param baseSlug - The article base slug without language suffix (e.g. "2026-02-13-evening-analysis")
+ * @param currentLang - The current article language
+ * @returns HTML nav element string
+ */
+export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: Language | string): string {
+  const links: string = ALL_LANG_CODES.map(l => {
+    const display = LANG_DISPLAY[l];
+    const active: string = l === currentLang ? ' active' : '';
+    const ariaCurrent: string = l === currentLang ? ' aria-current="page"' : '';
+    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${l}"${ariaCurrent}>${display.flag} ${display.name}</a>`;
+  }).join('\n');
+  const ariaLabel: string = LANG_SWITCHER_ARIA_LABELS[currentLang as Language] || LANG_SWITCHER_ARIA_LABELS.en;
+  return `  <nav class="language-switcher" role="navigation" aria-label="${ariaLabel}">\n${links}\n  </nav>`;
+}
+
+/**
+ * Generate the full site footer matching index.html structure.
+ *
+ * @param lang - The current language
+ * @returns HTML footer element string
+ */
+export function generateSiteFooter(lang: Language | string): string {
+  const normalizedLang: Language = ALL_LANG_CODES.includes(lang as Language)
+    ? (lang as Language)
+    : 'en';
+  const labels = SITE_FOOTER_LABELS[normalizedLang];
+  const homePath: string = normalizedLang === 'en' ? '../index.html' : `../index_${normalizedLang}.html`;
+  const newsPath: string = getNewsIndexFilename(normalizedLang);
+  const dashboardPath: string = normalizedLang === 'en' ? '../dashboard/index.html' : `../dashboard/index_${normalizedLang}.html`;
+
+  return `<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>${labels.about}</h3>
+      <p>${labels.aboutText}</p>
+      <ul class="footer-stats">
+        <li>${labels.statMPs}</li>
+        <li>${labels.statRiskRules}</li>
+        <li>${labels.statLanguages}</li>
+        <li>${labels.statHistoricalData}</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>${labels.quickLinks}</h3>
+      <ul>
+        <li><a href="${homePath}">Home</a></li>
+        <li><a href="${newsPath}">News</a></li>
+        <li><a href="${dashboardPath}">${labels.dashboard}</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>${labels.builtBy}</h3>
+      <p>${labels.builtByText}</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Company LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Public ISMS</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Security Policy</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+        <li><a href="mailto:info@hack23.com">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>${labels.languages}</h3>
+      <div class="language-grid">
+${ALL_LANG_CODES.map(l => {
+  const display = LANG_DISPLAY[l];
+  const ariaLabel = LANG_ARIA_LABELS[l];
+  const href: string = l === 'en' ? '../index.html' : `../index_${l}.html`;
+  return `        <a href="${href}" title="${display.name}" aria-label="${ariaLabel}"><span aria-hidden="true">${display.flag}</span> ${l.toUpperCase()}</a>`;
+}).join('\n')}
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | ${labels.location}</p>
+  </div>
+</footer>`;
 }

@@ -9504,6 +9504,105 @@ body.news-page {
   padding-right: 2rem;
 }
 
+/* ========================================================================
+   Article Language Switcher
+   ======================================================================== */
+
+.language-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg, #f0f2f5);
+  border-bottom: 2px solid var(--primary-color, #006633);
+  max-width: 100%;
+}
+
+.language-switcher .lang-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-color, #333);
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.language-switcher .lang-link:hover,
+.language-switcher .lang-link:focus-visible {
+  background: var(--primary-color, #006633);
+  color: #fff;
+}
+
+.language-switcher .lang-link:focus-visible {
+  outline: 2px solid var(--primary-color, #006633);
+  outline-offset: 2px;
+}
+
+.language-switcher .lang-link.active {
+  background: var(--primary-color, #006633);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Article top navigation bar (Back to News at top) */
+.article-top-nav {
+  max-width: 800px;
+  margin: 0.75rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.article-top-nav .back-to-news {
+  display: inline-block;
+  color: var(--link-color, #007744);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.article-top-nav .back-to-news:hover,
+.article-top-nav .back-to-news:focus-visible {
+  color: var(--primary-color, #006633);
+  text-decoration: underline;
+}
+
+/* RTL overrides for language switcher */
+[dir="rtl"] .language-switcher {
+  direction: rtl;
+}
+
+[dir="rtl"] .article-top-nav {
+  text-align: right;
+}
+
+[dir="rtl"] .article-top-nav .back-to-news {
+  direction: rtl;
+}
+
+/* Responsive language switcher */
+@media (max-width: 768px) {
+  .language-switcher {
+    gap: 0.2rem;
+    padding: 0.5rem;
+  }
+
+  .language-switcher .lang-link {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .article-top-nav {
+    padding: 0 1rem;
+  }
+}
+
 /* Language badge styles (namespaced under .news-page) */
 .news-page .lang-badge-sm {
   display: inline-flex;

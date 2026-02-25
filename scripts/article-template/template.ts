@@ -12,7 +12,7 @@ import { escapeHtml } from '../html-utils.js';
 import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint } from '../types/article.js';
-import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS } from './constants.js';
+import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import {
   getBreadcrumbName,
   getFooterLabel,
@@ -21,6 +21,8 @@ import {
   formatDate,
   generateEventCalendar,
   generateWatchSection,
+  generateArticleLanguageSwitcher,
+  generateSiteFooter,
 } from './helpers.js';
 
 /**
@@ -58,7 +60,6 @@ export function generateArticleHTML(data: ArticleData): string {
   const typeLabel: string = TYPE_LABELS[lang]?.[type] || TYPE_LABELS.en[type] || 'News';
 
   // Generate hreflang tags for all available language variants
-  const ALL_LANG_CODES: readonly Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
   const isRTL: boolean = lang === 'ar' || lang === 'he';
   const dirAttr: string = isRTL ? ' dir="rtl"' : '';
   const baseSlug: string = slug.replace(`-${lang}.html`, '');
@@ -239,6 +240,14 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
   
 </head>
 <body>
+${generateArticleLanguageSwitcher(baseSlug, lang)}
+
+<div class="article-top-nav">
+  <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" class="back-to-news">
+    \u2190 ${getFooterLabel(lang, 'backToNews')}
+  </a>
+</div>
+
 <article class="news-article">
   <header class="article-header">
     <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
@@ -273,12 +282,14 @@ ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<Wat
     </div>
     
     <div class="article-nav">
-      <a href="${getNewsIndexFilename(lang)}" class="back-to-news">
+      <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" class="back-to-news">
         \u2190 ${getFooterLabel(lang, 'backToNews')}
       </a>
     </div>
   </footer>
 </article>
+
+${generateSiteFooter(lang)}
 
 <script type="module" src="../scripts/back-to-top.ts"></script>
 </body>

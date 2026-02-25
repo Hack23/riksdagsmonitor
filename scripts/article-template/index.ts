@@ -15,13 +15,15 @@
  */
 
 export { generateArticleHTML } from './template.js';
-export { generateEventCalendar, generateWatchSection } from './helpers.js';
+export { generateEventCalendar, generateWatchSection, generateArticleLanguageSwitcher, generateSiteFooter } from './helpers.js';
 
 import { generateArticleHTML } from './template.js';
-import { generateEventCalendar, generateWatchSection } from './helpers.js';
+import { generateEventCalendar, generateWatchSection, generateArticleLanguageSwitcher, generateSiteFooter } from './helpers.js';
 
 export default {
   generateArticleHTML,
   generateEventCalendar,
-  generateWatchSection
+  generateWatchSection,
+  generateArticleLanguageSwitcher,
+  generateSiteFooter
 };
