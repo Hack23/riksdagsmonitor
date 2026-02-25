@@ -477,8 +477,7 @@ flowchart TD
     HTML_VALIDATE --> HTML_OK{Valid HTML?}
     HTML_OK -->|Errors| FIX_HTML[Fix Template Errors]
     FIX_HTML --> HTML_VALIDATE
-    HTML_OK -->|Valid| CHECKSUM[SHA-256 Checksum Generation]
-    CHECKSUM --> GIT_COMMIT[Git Commit with Metadata]
+    HTML_OK -->|Valid| GIT_COMMIT[Git Commit with Metadata]
     GIT_COMMIT --> CREATE_PR[Create Pull Request]
     CREATE_PR --> HUMAN_REVIEW[Human Review Queue]
     HUMAN_REVIEW --> REVIEW_DECISION{Approved?}
@@ -868,13 +867,13 @@ flowchart TD
 | # | Process | Trigger | Duration | Frequency | Security Controls |
 |---|---------|---------|----------|-----------|-------------------|
 | 1 | Build and Deploy | Git push | 5-8 min | Per commit | SLSA, CodeQL, harden-runner |
-| 2 | News Generation | Cron 02:00 CET | 10-15 min | Daily | Data validation, checksums |
+| 2 | News Generation | Cron 02:00 CET | 10-15 min | Daily | Data validation, HTMLHint |
 | 3 | CIA Data Pipeline | Cron 03:00 CET | 3-5 min | Daily | Schema validation, integrity hash |
 | 4 | User Journey | Page visit | < 3s | On demand | TLS 1.3, CSP headers, HSTS |
 | 5 | Security Scanning | Code change | 5-10 min | Per commit | CodeQL, Dependabot, secret scan |
 | 6 | Multi-Language | Content creation | 15-30 min | Per article | HTMLHint, schema validation |
 | 7 | CI/CD Full Pipeline | Git push | 8-12 min | Per commit | Full security gate suite |
-| 8 | MCP News Pipeline | Cron daily | 10-15 min | Daily | LLM quality check, SHA-256 |
+| 8 | MCP News Pipeline | Cron daily | 10-15 min | Daily | LLM quality check |
 | 9 | CIA Data Integration | Cron daily | 3-5 min | Daily | Schema validate, integrity hash |
 | 10 | Data Validation | Per data fetch | 1-2 min | Per fetch | 9-stage validation pipeline |
 | 11 | Content Integrity | Per content | < 1 min | Per article | Git signatures, Sigstore (build artifacts) |
