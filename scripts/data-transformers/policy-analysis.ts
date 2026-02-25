@@ -5,9 +5,42 @@
  * migration, EU, justice, labour, housing, transport, and trade domains
  * using keyword matching against Swedish document titles.
  *
+ * Also provides confidence level assessment for intelligence analysis.
+ *
  * @author Hack23 AB
  * @license Apache-2.0
  */
+
+/**
+ * Confidence level for intelligence assessments.
+ * Reflects the quality and quantity of supporting evidence.
+ */
+export type ConfidenceLevel = 'HIGH' | 'MEDIUM' | 'LOW';
+
+/**
+ * Assess the confidence level of an intelligence analysis based on
+ * the number of corroborating evidence items and the quality of sources.
+ *
+ * @param evidenceCount - Number of distinct evidence items supporting the assessment
+ * @param sourceQuality - Quality score of sources (0-100, higher = better)
+ * @returns Confidence level classification
+ */
+export function assessConfidenceLevel(evidenceCount: number, sourceQuality: number): ConfidenceLevel {
+  const normalizedEvidence = Math.max(0, evidenceCount);
+  const normalizedQuality = Math.max(0, Math.min(100, sourceQuality));
+
+  // HIGH: Multiple evidence items with good-quality sources
+  if (normalizedEvidence >= 5 && normalizedQuality >= 70) return 'HIGH';
+  if (normalizedEvidence >= 3 && normalizedQuality >= 85) return 'HIGH';
+
+  // LOW: Very few evidence items or very poor source quality
+  if (normalizedEvidence === 0) return 'LOW';
+  if (normalizedEvidence <= 1 && normalizedQuality < 50) return 'LOW';
+  if (normalizedQuality < 30) return 'LOW';
+
+  // MEDIUM: everything in between
+  return 'MEDIUM';
+}
 
 import { escapeHtml } from '../html-utils.js';
 import type { Language } from '../types/language.js';
@@ -84,6 +117,75 @@ export function detectPolicyDomains(doc: RawDocument, lang: Language | string = 
     set.add(isSv ? 'näringspolitik' : 'trade and industry policy');
 
   return Array.from(set);
+}
+
+/**
+ * Dominant political narrative frames detected in document titles.
+ * These represent recurring rhetorical frames used across parties.
+ */
+export type NarrativeFrame =
+  | 'law-and-order'
+  | 'welfare-state-defence'
+  | 'fiscal-responsibility'
+  | 'green-transition'
+  | 'national-security'
+  | 'integration-challenge'
+  | 'eu-sovereignty'
+  | 'workers-rights';
+
+/**
+ * Detect dominant narrative frames in a document title.
+ * Narrative framing reveals which rhetorical strategies are being employed
+ * regardless of the specific policy domain.
+ *
+ * @param doc - Document to analyse
+ * @returns Array of detected narrative frames (deduplicated)
+ */
+export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
+  const title = (doc.titel || doc.title || '').toLowerCase();
+  const frames = new Set<NarrativeFrame>();
+
+  // Law-and-order: crime, punishment, police
+  if (title.includes('brott') || title.includes('straff') || title.includes('polis') ||
+      title.includes('kriminal') || title.includes('gäng') || /\bsäker(het)?\b/.test(title))
+    frames.add('law-and-order');
+
+  // Welfare-state defence: healthcare, social services, welfare
+  if (title.includes('välfärd') || title.includes('omsorg') || title.includes('social') ||
+      title.includes('pension') || title.includes('bidrag') || title.includes('trygghet'))
+    frames.add('welfare-state-defence');
+
+  // Fiscal responsibility: budgets, debt, taxes
+  if (title.includes('budget') || title.includes('skuld') || title.includes('bespar') ||
+      title.includes('effektiv') || title.includes('kostnad') || title.includes('överskott'))
+    frames.add('fiscal-responsibility');
+
+  // Green transition: climate, environment, energy
+  if (title.includes('klimat') || title.includes('hållbar') || title.includes('grön') ||
+      title.includes('utsläpp') || title.includes('förnybar') || title.includes('energiomstäl'))
+    frames.add('green-transition');
+
+  // National security: defence, preparedness, NATO
+  if (title.includes('försvar') || title.includes('nato') || title.includes('beredskap') ||
+      title.includes('totalförsvar') || title.includes('säkerhetsskydd'))
+    frames.add('national-security');
+
+  // Integration challenge: migration, asylum, citizenship
+  if (title.includes('integration') || title.includes('integrera') || title.includes('migration') || title.includes('invandring') ||
+      title.includes('asyl') || title.includes('utvisning'))
+    frames.add('integration-challenge');
+
+  // EU sovereignty: EU, European, sovereignty
+  if (/\beu\b/.test(title) || title.includes('europa') || title.includes('suveränitet') ||
+      title.includes('direktiv') || title.includes('förordning'))
+    frames.add('eu-sovereignty');
+
+  // Workers' rights: labour, unions, wages
+  if (title.includes('facklig') || title.includes('lön') || title.includes('arbetsrätt') ||
+      title.includes('kollektivavtal') || title.includes('strejk'))
+    frames.add('workers-rights');
+
+  return Array.from(frames);
 }
 
 type _LangPair = { en: Record<string, string>; sv: Record<string, string> };
