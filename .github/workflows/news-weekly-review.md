@@ -181,6 +181,12 @@ case "$LANGUAGES_INPUT" in
 esac
 
 export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
+# Pass gateway API key so scripts can authenticate with the MCP gateway
+if [ -f "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" ]; then
+  GW_KEY=$(python3 -c "import json,sys; c=json.load(open(sys.argv[1])); print(c.get('gateway',{}).get('apiKey',''))" "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" 2>/dev/null || echo "")
+  [ -n "$GW_KEY" ] && export MCP_AUTH_TOKEN="Bearer $GW_KEY"
+fi
+export MCP_CLIENT_TIMEOUT_MS=90000
 npx tsx scripts/generate-news-enhanced.ts \
   --types=weekly-review \
   --languages="$LANG_ARG" \

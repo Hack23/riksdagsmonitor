@@ -28,7 +28,6 @@ import { annotateDocumentTypes } from './document-types.js';
 
 const DEFAULT_MCP_SERVER_URL: string =
   process.env['MCP_SERVER_URL'] ?? 'https://riksdag-regering-ai.onrender.com/mcp';
-const DEFAULT_MCP_AUTH_TOKEN: string = process.env['MCP_AUTH_TOKEN'] ?? '';
 const DEFAULT_MAX_RETRIES = 3;
 const RETRY_DELAY = 2000;
 
@@ -36,6 +35,34 @@ function getDefaultTimeout(): number {
   const envVal = process.env['MCP_CLIENT_TIMEOUT_MS'];
   return envVal ? (Number.parseInt(envVal, 10) || 30_000) : 30_000;
 }
+
+/**
+ * Resolve the default MCP auth token.
+ * Priority: MCP_AUTH_TOKEN env → MCP_GATEWAY_API_KEY env → gateway.apiKey from MCP config file.
+ * When running inside the gh-aw sandbox the gateway requires a Bearer token but
+ * the key is only stored in the MCP config JSON — not passed as an env var to the agent container.
+ */
+function getDefaultAuthToken(): string {
+  if (process.env['MCP_AUTH_TOKEN']) return process.env['MCP_AUTH_TOKEN'];
+  if (process.env['MCP_GATEWAY_API_KEY']) return `Bearer ${process.env['MCP_GATEWAY_API_KEY']}`;
+
+  // Try reading the gateway API key from the MCP config file
+  const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
+  try {
+    const fs = require('fs') as typeof import('fs');
+    if (fs.existsSync(configPath)) {
+      const raw = JSON.parse(fs.readFileSync(configPath, 'utf8')) as Record<string, unknown>;
+      const gateway = raw['gateway'] as Record<string, unknown> | undefined;
+      const apiKey = gateway?.['apiKey'] as string | undefined;
+      if (apiKey) return `Bearer ${apiKey}`;
+    }
+  } catch {
+    // Config file read is best-effort — fall through to empty token
+  }
+  return '';
+}
+
+const DEFAULT_MCP_AUTH_TOKEN: string = getDefaultAuthToken();
 
 let jsonRpcId = 1;
 
