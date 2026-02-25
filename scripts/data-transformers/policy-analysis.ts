@@ -147,7 +147,7 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
 
   // Law-and-order: crime, punishment, police
   if (title.includes('brott') || title.includes('straff') || title.includes('polis') ||
-      title.includes('kriminal') || title.includes('gäng') || title.includes('säker'))
+      title.includes('kriminal') || title.includes('gäng') || /\bsäker(het)?\b/.test(title))
     frames.add('law-and-order');
 
   // Welfare-state defence: healthcare, social services, welfare
@@ -171,7 +171,7 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
     frames.add('national-security');
 
   // Integration challenge: migration, asylum, citizenship
-  if (title.includes('integr') || title.includes('migration') || title.includes('invandring') ||
+  if (title.includes('integration') || title.includes('integrera') || title.includes('migration') || title.includes('invandring') ||
       title.includes('asyl') || title.includes('utvisning'))
     frames.add('integration-challenge');
 
@@ -182,7 +182,7 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
 
   // Workers' rights: labour, unions, wages
   if (title.includes('facklig') || title.includes('lön') || title.includes('arbetsrätt') ||
-      title.includes('kollektivavtal') || title.includes('strejk') || title.includes('anstäl'))
+      title.includes('kollektivavtal') || title.includes('strejk'))
     frames.add('workers-rights');
 
   return Array.from(frames);

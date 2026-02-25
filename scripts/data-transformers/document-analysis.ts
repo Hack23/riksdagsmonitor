@@ -316,13 +316,13 @@ export function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: 
     // Flag high-influence documents during coalition instability
     if (influenceScore >= 60 && stabilityScore < 50) {
       parts.push(
-        `<small class="early-warning">⚠ Early warning: This high-influence document (score: ${influenceScore}) ` +
-        `arrives during a period of coalition instability (stability: ${stabilityScore}). ` +
+        `<small class="early-warning">⚠ Early warning: This high-influence document (score: ${escapeHtml(String(influenceScore))}) ` +
+        `arrives during a period of coalition instability (stability: ${escapeHtml(String(stabilityScore))}). ` +
         `Monitor closely for defections or procedural delays.</small>`
       );
     } else if (majorityMargin <= 2 && (docType === 'prop' || docType === 'bet')) {
       parts.push(
-        `<small class="early-warning">⚠ Thin majority alert: With only ${majorityMargin} seat majority, ` +
+        `<small class="early-warning">⚠ Thin majority alert: With only ${escapeHtml(String(majorityMargin))} seat majority, ` +
         `this ${docType === 'prop' ? 'government bill' : 'committee report'} faces elevated defeat risk.</small>`
       );
     }
