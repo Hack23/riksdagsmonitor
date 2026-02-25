@@ -602,3 +602,176 @@
     border: 2px solid currentColor;
   }
 }
+
+/* =============================================================================
+   DASHBOARD UI IMPROVEMENTS – Cyberpunk Theme Polish
+   ============================================================================= */
+
+/* ── 1. Chart Container Grid Layout with auto-fit ─────────────────────────── */
+.charts-grid,
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+/* ── 2. Skeleton Loading State for Dashboard ────────────────────────────────── */
+@keyframes dashboard-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.skeleton-dashboard {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 136, 56, 0.06) 25%,
+    rgba(0, 136, 56, 0.13) 50%,
+    rgba(0, 136, 56, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: dashboard-shimmer 1.6s infinite;
+  border-radius: var(--border-radius);
+  color: transparent !important;
+}
+
+/* Metric card skeleton */
+.metric-card.skeleton-dashboard {
+  min-height: 130px;
+}
+
+/* Chart skeleton */
+.chart-container.skeleton-dashboard {
+  min-height: 300px;
+}
+
+/* Ranking skeleton rows */
+.ranking-item.skeleton-dashboard {
+  min-height: 76px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-dashboard {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
+/* ── 3. Custom Tooltip Styling – Cyberpunk Theme ───────────────────────────── */
+.chart-tooltip,
+[role="tooltip"] {
+  position: relative;  /* anchor ::before arrow pseudo-element */
+  background: rgba(10, 14, 39, 0.95);  /* --dark-bg */
+  border: 1px solid rgba(0, 217, 255, 0.4);  /* --primary-cyan */
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: #e0e0e0;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-main);
+  box-shadow: 0 4px 16px rgba(0, 217, 255, 0.15),
+              0 2px 6px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 9999;
+  max-width: 260px;
+  line-height: 1.5;
+  /* Subtle entry animation */
+  animation: tooltip-appear 0.12s ease;
+}
+
+@keyframes tooltip-appear {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.chart-tooltip .tooltip-label {
+  font-size: var(--font-size-xs);
+  color: rgba(0, 217, 255, 0.8);  /* muted cyan */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-block-end: 0.25em;
+}
+
+.chart-tooltip .tooltip-value {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: #00d9ff;
+  font-family: var(--font-mono, monospace);
+}
+
+.chart-tooltip .tooltip-secondary {
+  font-size: var(--font-size-xs);
+  color: rgba(224, 224, 224, 0.7);
+  margin-block-start: 0.25em;
+}
+
+/* Arrow indicator on tooltip */
+.chart-tooltip::before {
+  content: '';
+  position: absolute;
+  inset-block-end: -6px;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: rgba(0, 217, 255, 0.4) transparent transparent;
+}
+
+/* Forced-colors support for tooltips */
+@media (forced-colors: active) {
+  .chart-tooltip,
+  [role="tooltip"] {
+    border: 2px solid ButtonText;
+    background: Canvas;
+    color: CanvasText;
+    box-shadow: none;
+  }
+
+  .chart-tooltip .tooltip-value {
+    color: Highlight;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .chart-tooltip,
+  [role="tooltip"] {
+    animation: none;
+  }
+}
+
+/* ── 4. Dashboard Card Focus & Hover Tokens ─────────────────────────────────── */
+.metric-card:focus-within,
+.prediction-card:focus-within,
+.scenario-card:focus-within {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skeleton-dashboard {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 204, 102, 0.06) 25%,
+      rgba(0, 204, 102, 0.14) 50%,
+      rgba(0, 204, 102, 0.06) 75%
+    );
+    background-size: 200% 100%;
+    animation: dashboard-shimmer 1.6s infinite;
+  }
+
+  .chart-tooltip,
+  [role="tooltip"] {
+    background: rgba(0, 26, 26, 0.97);
+    border-color: rgba(0, 204, 102, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 204, 102, 0.15), 0 2px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .chart-tooltip .tooltip-label {
+    color: rgba(0, 204, 102, 0.9);
+  }
+
+  .chart-tooltip .tooltip-value {
+    color: var(--primary-light, #00ff88);
+  }
+}

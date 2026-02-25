@@ -118,6 +118,45 @@
   --spacing-2xl: 3rem; /* 48px */
   --spacing-3xl: 4rem; /* 64px */
   --spacing-4xl: 6rem; /* 96px */
+
+  /* ── Design Tokens: Spacing Scale (T-shirt → numeric alias) ──────────── */
+  /* 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 px */
+  --space-1: 0.25rem;   /* 4px  */
+  --space-2: 0.5rem;    /* 8px  */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-7: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+  --space-9: 6rem;      /* 96px */
+
+  /* ── Modular Type Scale – Perfect Fourth (× 1.333) with fluid clamp() ── */
+  --fluid-xs:   clamp(0.694rem, 0.65rem  + 0.2vw,  0.8rem);
+  --fluid-sm:   clamp(0.833rem, 0.78rem  + 0.25vw, 0.938rem);
+  --fluid-base: clamp(1rem,     0.95rem  + 0.3vw,  1.125rem);
+  --fluid-md:   clamp(1.125rem, 1.05rem  + 0.4vw,  1.333rem);
+  --fluid-lg:   clamp(1.333rem, 1.25rem  + 0.5vw,  1.777rem);
+  --fluid-xl:   clamp(1.777rem, 1.6rem   + 0.7vw,  2.369rem);
+  --fluid-2xl:  clamp(2.369rem, 2.1rem   + 1.0vw,  3.157rem);
+  --fluid-3xl:  clamp(3.157rem, 2.8rem   + 1.4vw,  4.209rem);
+
+  /* ── Focus Color Token ───────────────────────────────────────────────── */
+  --focus-color: #007744;     /* light-mode focus ring (≥ 3:1 on white bg)  */
+  --focus-ring: 3px solid var(--focus-color);
+  --focus-offset: 2px;
+  --focus-bg:   rgba(0, 119, 68, 0.08);  /* tinted bg for link focus highlight */
+  --focus-glow: rgba(0, 119, 68, 0.18);  /* outer glow for button/input focus  */
+
+  /* ── Card elevation tokens ────────────────────────────────────────────── */
+  --card-shadow-resting:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --card-shadow-hover:    0 4px 12px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08);
+  --card-shadow-focus:    0 0 0 3px var(--focus-color);
+  --card-transition:      transform 0.18s ease, box-shadow 0.18s ease;
+
+  /* ── Skeleton / shimmer tokens ────────────────────────────────────────── */
+  --skeleton-base:    rgba(0, 102, 51, 0.06);
+  --skeleton-shine:   rgba(0, 102, 51, 0.13);
 }
 
 /* Dark Mode - Ingress Inspired Theme */
@@ -145,6 +184,21 @@
     --integrity-color: #50fa7b;
     --availability-color: #8be9fd;
     --font-accent: "Orbitron", sans-serif;
+
+    /* Dark-mode focus token (high contrast on dark backgrounds) */
+    --focus-color: #00d9ff;  /* primary-cyan – 7.8:1 on #001a1a  */
+    --focus-ring: 3px solid var(--focus-color);
+    --focus-bg:   rgba(0, 217, 255, 0.08);
+    --focus-glow: rgba(0, 217, 255, 0.18);
+
+    /* Dark-mode card elevation */
+    --card-shadow-resting: 0 1px 4px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
+    --card-shadow-hover:   0 6px 18px rgba(0,0,0,0.6), 0 3px 8px rgba(0,0,0,0.4);
+    --card-shadow-focus:   0 0 0 3px var(--focus-color);
+
+    /* Dark-mode skeleton */
+    --skeleton-base:  rgba(0, 204, 102, 0.06);
+    --skeleton-shine: rgba(0, 204, 102, 0.14);
   }
 }
 
@@ -9857,5 +9911,400 @@ svg:focus-visible,
   
   .chart-error-state .retry-button {
     border: 2px solid currentColor;
+  }
+}
+
+/* =============================================================================
+   UI/UX IMPROVEMENTS – Design Tokens, Accessibility, Visual Polish
+   Added: design tokens, skeleton animation, card hover/focus, article readability,
+          RTL logical properties, forced-colors, scroll-to-top, language switcher
+   ============================================================================= */
+
+/* ── 1. Skeleton Loading Animation ────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base)  25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-base)  75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--border-radius-sm);
+  color: transparent !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Skeleton shapes */
+.skeleton-text {
+  height: 1em;
+  margin-block-end: var(--space-2);
+  border-radius: 3px;
+}
+
+.skeleton-heading {
+  height: 1.5em;
+  width: 60%;
+  margin-block-end: var(--space-3);
+  border-radius: 3px;
+}
+
+.skeleton-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.skeleton-card {
+  height: 160px;
+  border-radius: var(--border-radius-lg);
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+/* ── 2. Enhanced Card Styles (hover lift + focus-within ring) ───────────────── */
+.card,
+.metric-card,
+.prediction-card,
+.scenario-card,
+.ranking-item,
+.committee-card {
+  box-shadow: var(--card-shadow-resting);
+  border-radius: var(--border-radius-lg);
+  transition: var(--card-transition);
+}
+
+.card:hover,
+.prediction-card:hover,
+.scenario-card:hover,
+.ranking-item:hover,
+.committee-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.card:focus-within,
+.prediction-card:focus-within,
+.scenario-card:focus-within,
+.ranking-item:focus-within,
+.committee-card:focus-within {
+  box-shadow: var(--card-shadow-focus), var(--card-shadow-resting);
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* ── 3. Enhanced Focus Indicators using token ───────────────────────────────── */
+/* Override the hardcoded --primary-color fallbacks with the new --focus-color token */
+@supports selector(:focus-visible) {
+  :where(
+    button,
+    [href],
+    input,
+    select,
+    textarea,
+    summary,
+    details,
+    [role="button"],
+    [role="link"],
+    [tabindex]:not([tabindex="-1"])
+  ):focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-offset);
+  }
+
+  a:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 4px;
+    background-color: var(--focus-bg);
+    border-radius: var(--border-radius-sm);
+  }
+
+  button:focus-visible,
+  .btn:focus-visible,
+  .btn-primary-large:focus-visible,
+  .btn-secondary:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-offset);
+    box-shadow: 0 0 0 4px var(--focus-glow);
+  }
+
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-offset);
+    border-color: var(--focus-color);
+    box-shadow: 0 0 0 3px var(--focus-glow);
+  }
+}
+
+/* ── 4. Link Underline Animation ─────────────────────────────────────────────── */
+/* Smooth animated underline on hover/focus – decorative but consistent */
+a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([class*="badge"]) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+
+a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([class*="badge"]):hover {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+/* ── 5. Article Text Readability (75 ch optimal measure) ──────────────────── */
+/* Applied to article body containers so prose columns stay readable */
+.article-content,
+.news-article .article-content,
+.news-article .lede,
+.article-body,
+.prose {
+  max-width: 75ch;
+}
+
+/* Keep the containing element centred when narrower than its parent */
+.news-article {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+/* ── 6. Pull-Quote Styling ────────────────────────────────────────────────── */
+.pull-quote {
+  font-size: var(--fluid-lg, 1.333rem);
+  font-style: italic;
+  line-height: var(--line-height-relaxed, 1.75);
+  color: var(--primary-color);
+  border-inline-start: 4px solid var(--primary-color);
+  padding-inline-start: var(--space-5);
+  margin-block: var(--space-7);
+  margin-inline: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pull-quote {
+    color: var(--primary-light, #00ff88);
+    border-inline-start-color: var(--primary-light, #00ff88);
+  }
+}
+
+/* ── 7. CSS Logical Properties for RTL Support ────────────────────────────── */
+/* Ensure layout components use logical rather than physical properties */
+.lede,
+.news-article .lede {
+  padding-inline-start: var(--space-4);
+  border-inline-start: 4px solid var(--primary-color, #006633);
+  /* Remove physical fallbacks below (kept for older browsers with @supports) */
+}
+
+@supports (margin-inline-start: 0) {
+  .container,
+  .news-article,
+  .cia-dashboard {
+    margin-inline: auto;
+  }
+
+  /* Navigation items spacing */
+  .nav-item + .nav-item {
+    margin-inline-start: var(--space-4);
+  }
+
+  /* Badge spacing */
+  .badge,
+  .party-badge,
+  .alert-badge {
+    padding-inline: var(--space-2);
+    padding-block: var(--space-1);
+  }
+
+  /* Section headings bottom border */
+  .section-heading {
+    padding-block-end: var(--space-2);
+  }
+}
+
+/* RTL-specific overrides */
+[dir="rtl"] .lede,
+[dir="rtl"] .news-article .lede {
+  padding-inline-start: var(--space-4);
+  padding-inline-end: 0;
+  border-inline-start: 4px solid var(--primary-color, #006633);
+  border-inline-end: none;
+}
+
+[dir="rtl"] .pull-quote {
+  border-inline-start: 4px solid var(--primary-color);
+  border-inline-end: none;
+  padding-inline-start: var(--space-5);
+  padding-inline-end: 0;
+}
+
+/* ── 8. Forced-Colors (Windows High Contrast) Support ──────────────────────── */
+@media (forced-colors: active) {
+  /* Cards: force border so they're distinguishable without shadow */
+  .card,
+  .metric-card,
+  .prediction-card,
+  .scenario-card,
+  .ranking-item,
+  .committee-card,
+  .chart-loading-state,
+  .chart-empty-state,
+  .chart-error-state {
+    border: 2px solid ButtonText;
+    box-shadow: none;
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  /* Remove gradient backgrounds – forced-colors strips them anyway */
+  .metric-card {
+    background: ButtonFace;
+    color: ButtonText;
+  }
+
+  /* Buttons */
+  .btn,
+  .btn-primary-large,
+  .btn-secondary,
+  button {
+    border: 2px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+
+  /* Focus rings remain visible */
+  *:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  /* Links */
+  a {
+    color: LinkText;
+  }
+
+  a:visited {
+    color: VisitedText;
+  }
+
+  /* Progress / skeleton: invisible in high-contrast so hide gracefully */
+  .skeleton {
+    border: 1px dashed GrayText;
+    animation: none;
+  }
+
+  /* Back-to-top button */
+  .back-to-top {
+    border: 2px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+}
+
+/* ── 9. Scroll-to-Top Button Enhancement ────────────────────────────────────── */
+/* Existing .back-to-top is styled elsewhere; add logical properties & token use */
+@supports (inset-inline-end: 1rem) and (inset-block-end: 1rem) {
+  .back-to-top {
+    /* Clear physical insets so only logical properties control position */
+    right: auto;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    /* Use logical properties for position */
+    inset-inline-end: var(--space-5);
+    inset-block-end: var(--space-5);
+    /* Smooth appearance */
+    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+.back-to-top:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* ── 10. Mobile Language Switcher Improvement ──────────────────────────────── */
+@media (max-width: 767px) {
+  /* Language switcher: auto-fill grid with scroll containment on mobile.
+     Targets both .language-switcher (markup class) and legacy wrapper names. */
+  .language-switcher,
+  .lang-switcher,
+  .language-menu,
+  .lang-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: var(--space-1);
+    max-height: 60vh;
+    max-width: calc(100vw - var(--space-8));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ── 11. Responsive Dashboard Grid Enhancement ──────────────────────────────── */
+/* Enhance existing grids with auto-fit/minmax for fluid column counts */
+.metrics-cards,
+.predictions-grid,
+.scenarios-grid,
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-5);
+}
+
+/* Chart containers responsive grid */
+.charts-grid,
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  gap: var(--space-5);
+}
+
+/* ── 12. Dark-Mode WCAG AA Contrast Fixes ─────────────────────────────────── */
+/* Ensure --text-secondary and muted text meet 4.5:1 on dark backgrounds */
+@media (prefers-color-scheme: dark) {
+  /* #aaaaaa on #001a1a = 8.2:1 – already fine, but ensure secondary text is legible */
+  .text-secondary,
+  .data-attribution,
+  .article-tagline,
+  .ranking-party,
+  .ranking-role,
+  .score-label,
+  .seats-label,
+  .confidence-interval,
+  .scenario-risk-level {
+    color: #b8b8b8; /* 9.0:1 on #001a1a ✓ */
+  }
+
+  /* Muted placeholder / helper text */
+  ::placeholder {
+    color: #909090; /* 5.3:1 on #001c25 ✓ */
+    opacity: 1;
+  }
+
+  /* Improve link colours in dark mode for AA compliance */
+  a {
+    color: var(--link-color, #58a6ff); /* 5.5:1 on #001a1a ✓ */
+  }
+
+  a:hover {
+    color: var(--link-hover, #79b8ff);
   }
 }
