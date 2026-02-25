@@ -94,16 +94,26 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Your mission is t
 ## 🚨 CRITICAL REQUIREMENTS (MUST COMPLETE)
 
 ### ⏱️ Time Budget Management
-**You have 45 minutes total.** Budget your time wisely:
-- **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, assess day's data
-- **Minutes 5–15**: Query MCP tools, gather parliamentary data for the day
-- **Minutes 15–37**: Generate evening analysis articles **one language at a time** (see Step 4)
-- **Minutes 37–42**: Validate and commit articles
+**You have 45 minutes total.** Record start time immediately:
+
+```bash
+START_TIME=$(date +%s)
+echo "Workflow start: $(date -u)"
+```
+
+Check elapsed with: `ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))`
+
+Budget your time wisely:
+- **Minutes 0–5**: Date check, MCP warm-up, assess day's data
+- **Minutes 5–10**: Query MCP tools, gather parliamentary data
+- **Minutes 10–30**: Generate articles via bash script — Step 4 (all 14 languages in one command)
+- **Minutes 30–37**: Validate articles and handle any translation gaps
+- **Minutes 37–42**: Commit articles
 - **Minutes 42–45**: Create PR with `safeoutputs___create_pull_request`
 
-**Hard cutoffs — check elapsed before starting each new language:**
-- If elapsed >= 35 minutes → stop adding languages, commit what you have and create PR
-- If elapsed >= 40 minutes → skip validation, commit immediately, create PR
+**Hard cutoffs — check `$ELAPSED` before each phase:**
+- If `$ELAPSED` >= 35 → skip remaining validation, commit what you have and create PR
+- If `$ELAPSED` >= 40 → skip validation, commit immediately, create PR
 - **NEVER hit the 45-minute timeout** — always call a safe output tool first
 
 **If you reach minute 35 without having committed**: Stop generating more content. Commit what you have and create the PR immediately. Partial content in a PR is better than a timeout with no PR.
@@ -293,16 +303,41 @@ The MCP server may take 30-60 seconds on first request (cold start). **The frame
 1. Call `get_sync_status()` first to warm up the server AND check data freshness
 2. Batch multiple queries after warmup
 
+### 🚨 If MCP Tools Are NOT In Your Tools List
+
+Sometimes, due to cold start timing, the MCP tools may not appear in your tools list immediately.
+
+**If you don't see `get_sync_status`, `get_calendar_events`, etc. in your available tools:**
+
+1. **Wait and retry**: Sleep 60 seconds, then try the tool call again
+   ```bash
+   echo "Waiting 60s for MCP server cold start..."
+   sleep 60
+   echo "Retrying MCP connection..."
+   ```
+2. After waiting, call `get_sync_status({})` — it should now work
+3. **If tools still not available after 3 attempts (total ~3 minutes waiting)**:
+   - Skip direct MCP tool calls in Steps 1–3
+   - Proceed **directly to Step 4 bash script approach** — the script handles MCP internally
+   - Use `safeoutputs___noop` only if the bash script also fails with no articles generated
+
+**⚠️ CRITICAL: NEVER implement your own MCP HTTP/JSON-RPC client from bash.** This wastes time and does not work in this environment. Only use:
+- ✅ Direct tool calls (framework-managed — preferred)
+- ✅ The `generate-news-enhanced.ts` bash script (fallback)
+- ❌ Writing your own `node /tmp/...` JSON-RPC HTTP client — this WILL time out the workflow
+
 ### 🐛 If You Get Errors
 
 | Error | Cause | Fix |
 |-------|-------|-----|
 | Tool not found | Wrong tool name | Use exact names: `get_calendar_events`, `search_voteringar` |
+| Tools not in list | MCP cold start race | Sleep 60s, retry; after 3 tries go straight to Step 4 bash script |
 | Empty results | No data in timeframe | Check `get_sync_status`, widen date range, verify rm parameter |
 | Stale data | Last sync >48h ago | Note in analysis, use available data with disclaimer |
 | Timeout | Cold start (30-60s) | Wait - framework retries automatically |
 | Swedish-only results | Riksdag API returns Swedish | YOU must translate to target languages |
 | Too broad results | No date filtering | Add from_date/to_date params OR filter results by date in code |
+| Spent 10+ min on MCP setup | Tried bash MCP client | Stop! Use Step 4 bash script instead — do not implement MCP yourself |
 
 ### 📋 32 Available MCP Tools
 
@@ -715,19 +750,58 @@ Structure the analysis around these editorial pillars:
 
 ### Step 4: Generate All Language Versions
 
-**CRITICAL: Process ONE language at a time.** Use this sequential loop:
+**PRIMARY APPROACH: Use the bash script (fastest, most reliable — same pattern as `news-week-ahead.md`):**
+
+```bash
+# Set languages based on input
+LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
+
+case "$LANGUAGES_INPUT" in
+  "nordic") LANG_ARG="en,sv,da,no,fi" ;;
+  "eu-core") LANG_ARG="en,sv,de,fr,es,nl" ;;
+  "all") LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
+  *) LANG_ARG="$LANGUAGES_INPUT" ;;
+esac
+
+# Set up MCP connection for script (gateway API key — same pattern as news-week-ahead.md)
+export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
+if [ -f "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" ]; then
+  GW_KEY=$(python3 -c "import json,sys; c=json.load(open(sys.argv[1])); print(c.get('gateway',{}).get('apiKey',''))" "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" 2>/dev/null || echo "")
+  if [ -z "$GW_KEY" ]; then
+    echo "⚠️  WARNING: MCP config file exists but gateway API key is missing or invalid"
+  else
+    export MCP_AUTH_TOKEN="Bearer $GW_KEY"
+  fi
+fi
+export MCP_CLIENT_TIMEOUT_MS=90000
+
+npx tsx scripts/generate-news-enhanced.ts \
+  --types=breaking \
+  --languages="$LANG_ARG" \
+  --skip-existing
+SCRIPT_EXIT=$?
+echo "Script exit code: $SCRIPT_EXIT"
+ls -la news/*-en.html 2>/dev/null | tail -5 || echo "No articles found yet"
+```
+
+If the script succeeds (`SCRIPT_EXIT=0`) and articles are present, proceed to Step 5.
+
+**FALLBACK (only if script returns non-zero and no articles exist): Process ONE language at a time manually:**
+
+Check elapsed: `ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))`
 
 ```
 For each language in [en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh]:
-  1. Check elapsed time — if >= 35 minutes, stop and proceed to Step 6.5
-  2. Generate article HTML for this language
+  1. Check elapsed — if $ELAPSED >= 35, stop and proceed to Step 6.5
+  2. Generate article HTML for this language using the template from Step 3
   3. Translate all Swedish content markers (data-translate="true")
   4. Write the file to news/YYYY-MM-DD-evening-analysis-{lang}.html
   5. Verify: ls -la news/YYYY-MM-DD-evening-analysis-{lang}.html
   6. Continue to next language
 ```
 
-For each language:
+For each manual language version:
 1. Create `news/YYYY-MM-DD-evening-analysis-{lang}.html`
 2. Use proper `<html lang="{lang}">` attribute
 3. Set `dir="rtl"` for Arabic (ar) and Hebrew (he)
