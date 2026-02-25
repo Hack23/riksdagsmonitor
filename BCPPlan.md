@@ -455,10 +455,491 @@ As CEO/Founder is the sole employee, traditional business continuity teams are n
 
 ---
 
+---
+
+## 📖 Incident Response Playbooks
+
+This section provides detailed, step-by-step incident response playbooks for the three highest-probability incident scenarios for Riksdagsmonitor. All playbooks follow the PICERL framework: **P**reparation, **I**dentification, **C**ontainment, **E**radication, **R**ecovery, **L**essons Learned.
+
+---
+
+### Playbook 1: Content Tampering Incident
+
+**Playbook ID:** IR-PB-001  
+**Version:** 1.0  
+**Owner:** James Pether Sörling, CEO  
+**Last Reviewed:** 2026-02-25  
+
+#### Trigger Conditions and Detection Signals
+
+This playbook activates when any of the following are detected:
+
+| Signal | Detection Method | Severity Indicator |
+|--------|-----------------|--------------------|
+| Unexpected content changes in production | GitHub Actions diff in deploy log | HIGH if unauthorized |
+| Unauthorized Git commits to main branch | GitHub audit log alert | CRITICAL |
+| Branch protection bypass detected | GitHub security event | CRITICAL |
+| Anomalous content detected by user report | User email to security@hack23.com | HIGH |
+| SLSA attestation failure | GitHub Actions security job | HIGH |
+| Unexpected language content injection | HTMLHint content validation | MEDIUM |
+
+#### Severity Classification
+
+| Severity | Criteria | Response Time | Escalation |
+|----------|----------|---------------|------------|
+| **P1 - Critical** | Unauthorized content in production, branch protection bypass, SLSA attestation failure | 15 minutes to containment | Immediate personal notification to CEO |
+| **P2 - High** | Suspected tampering unconfirmed, anomalous content flagged | 1 hour to investigation | Alert within 30 minutes |
+| **P3 - Medium** | Minor unexpected changes, validation warnings | 4 hours to resolution | Standard ISMS notification |
+
+#### Step-by-Step Response Procedure
+
+**PHASE 1: DETECT (0-15 minutes for P1)**
+
+1. **Receive Alert** — GitHub Actions notification, user report, or automated monitoring
+2. **Verify Authenticity** — Confirm alert is genuine (not false positive)
+   - Check GitHub Actions run logs for the deploy job
+   - Verify SHA-256 hashes in build metadata
+   - Review Git commit history on main branch
+3. **Classify Severity** — Apply classification matrix above
+4. **Document Start Time** — Record incident start timestamp in UTC
+5. **Open Incident Record** — Create GitHub Issue with label `security-incident`
+
+**PHASE 2: TRIAGE (15-30 minutes for P1)**
+
+1. **Scope Assessment** — Which files are affected? (index.html, all 14 language variants, news articles?)
+2. **Impact Assessment** — Is tampered content currently visible to users?
+3. **Source Identification** — Review GitHub audit log for:
+   ```
+   Settings > Security > Audit log
+   Filter: Action = "repo.create_actions_secret" or "git.push" or "protected_branch"
+   ```
+4. **Blast Radius** — Determine if compromise is isolated or widespread
+
+**PHASE 3: CONTAIN (30-60 minutes for P1)**
+
+1. **Immediate Rollback** — Revert to last known good commit:
+   ```bash
+   git log --oneline -20  # Identify last known good commit
+   git revert HEAD...<last-good-sha>  # Revert to good state
+   git push origin main  # Trigger redeploy
+   ```
+2. **Block Malicious User** (if external) — Via GitHub repository settings
+3. **Revoke Compromised Credentials** — If credentials were used:
+   - Rotate all GitHub Secrets immediately
+   - Revoke compromised PATs
+   - Regenerate Amazon Bedrock API keys
+4. **Enable Temporary Maintenance Mode** — If content integrity cannot be confirmed:
+   - Temporarily set CloudFront to return 503 for affected paths
+   - Display maintenance page with explanation
+
+**PHASE 4: ERADICATE (1-4 hours)**
+
+1. **Root Cause Analysis** — Determine exact attack vector:
+   - Social engineering?
+   - Compromised credentials?
+   - Supply chain attack via dependency?
+   - GitHub Actions workflow injection?
+2. **Remove Malicious Content** — Clean all affected files
+3. **Verify Clean State** — SHA-256 comparison against last known good
+4. **Patch Vulnerability** — Fix the root cause (update dependency, revoke credential, harden workflow)
+
+**PHASE 5: RECOVER (4-24 hours)**
+
+1. **Restore Service** — Deploy verified clean content
+2. **Verify Integrity** — Automated integrity checks pass
+3. **Monitor Closely** — Increased monitoring for 72 hours post-incident
+4. **Stakeholder Communication** — Post transparent incident report (see template below)
+
+**PHASE 6: POST-INCIDENT (Within 72 hours)**
+
+1. **Lessons Learned Meeting** — Document findings
+2. **Update Controls** — Implement additional preventive measures
+3. **Update Threat Model** — If new attack vector discovered
+4. **NIS2 Assessment** — Determine if ENISA notification required
+
+#### Communication Template
+
+```
+Subject: [Riksdagsmonitor] Security Incident Report - Content Integrity
+
+Incident: Potential content tampering detected
+Date/Time: [UTC timestamp]
+Severity: [P1/P2/P3]
+Status: [Investigating / Contained / Resolved]
+
+Summary:
+We detected [brief description]. Our investigation found [findings].
+
+Actions Taken:
+1. [Action taken]
+2. [Action taken]
+
+Impact:
+Content was [not affected / affected for X minutes] between [time] and [time].
+
+Preventive Measures:
+[Measures implemented to prevent recurrence]
+
+Contact: security@hack23.com
+```
+
+#### Rollback Procedure Using Git History
+
+```bash
+# Step 1: Identify good commit
+git log --oneline --graph --all | head -30
+
+# Step 2: Verify content of last known good commit
+git show <good-sha>:index.html | sha256sum
+
+# Step 3: Create revert commit (preserves history)
+git revert --no-commit <bad-sha>..<HEAD>
+git commit -m "security: revert content tampering incident [IR-PB-001]"
+
+# Step 4: Push and trigger redeploy
+git push origin main
+
+# Step 5: Verify production content
+curl -s https://riksdagsmonitor.com/ | sha256sum
+```
+
+#### Evidence Collection Checklist
+
+- [ ] GitHub Actions run logs (download and archive)
+- [ ] GitHub Audit Log export for incident timeframe
+- [ ] Git commit history with diff
+- [ ] SHA-256 hashes of affected and clean files
+- [ ] CloudFront access logs for incident timeframe
+- [ ] SLSA attestation records
+- [ ] Sigstore transparency log entries
+- [ ] Browser screenshots of tampered content (if visible)
+- [ ] User reports with timestamps
+- [ ] Credential access logs from GitHub
+
+---
+
+### Playbook 2: MCP Service Outage Incident
+
+**Playbook ID:** IR-PB-002  
+**Version:** 1.0  
+**Owner:** James Pether Sörling, CEO  
+**Last Reviewed:** 2026-02-25  
+
+#### Trigger Conditions
+
+| Signal | Detection Method | Severity |
+|--------|-----------------|----------|
+| GitHub Actions MCP job failure | Workflow notification email | HIGH |
+| riksdag.se API returning 5xx errors | Pipeline error log | HIGH |
+| API timeout after 30s | MCP client timeout log | MEDIUM |
+| Data staleness alert (>48h) | Automated staleness checker | MEDIUM |
+| Amazon Bedrock API unavailable | GitHub Actions job failure | HIGH |
+| Zero articles generated for 3+ days | Manual monitoring check | HIGH |
+| CIA platform export unavailable | Dashboard shows stale data | MEDIUM |
+
+#### Severity Classification
+
+| Severity | Criteria | Response Time |
+|----------|----------|---------------|
+| **P1 - Critical** | Complete MCP pipeline down, 0 data updates for 24+ hours | 1 hour |
+| **P2 - High** | Partial data failure, degraded content generation, 12-24 hour gap | 4 hours |
+| **P3 - Medium** | Single source unavailable, minor staleness, pipeline flaky | 24 hours |
+
+#### Step-by-Step Response Procedure
+
+**PHASE 1: DETECT AND VERIFY**
+
+1. **Confirm Outage** — Check GitHub Actions run history:
+   - Navigate to Actions tab
+   - Filter by workflow: `news-generation.yml`
+   - Check last 5 runs for failure pattern
+2. **Identify Scope** — Determine which component is failing:
+   - Riksdag API unavailable?
+   - Amazon Bedrock rate limited or unavailable?
+   - riksdag-regering-mcp server issue?
+   - Network egress blocked by harden-runner?
+3. **Check External Status Pages:**
+   - https://www.riksdagen.se/sv/kontakt/ (Riksdag IT contact)
+   - https://status.aws.amazon.com/ (Amazon Bedrock status)
+   - https://www.githubstatus.com/ (GitHub Actions status)
+4. **Classify Severity** and start incident timer
+
+**PHASE 2: TRIAGE**
+
+1. **Check Cached Data Availability** — Verify `cia-data/` directory has recent data
+2. **Determine User Impact** — Are dashboards showing stale data? How stale?
+3. **Estimate Recovery Time** — Is this an external outage (wait) or internal issue (fix)?
+
+**PHASE 3: CONTAIN / GRACEFUL DEGRADATION**
+
+1. **Activate Stale Data Banner** — If data is more than 48 hours old:
+   - Edit `index.html` to show data freshness warning
+   - Deploy immediately
+2. **Use Cached Data** — Pipeline automatically falls back to `cia-data/` cache
+3. **Disable Failed Pipeline** — If pipeline is producing errors, temporarily disable cron:
+   ```yaml
+   # Temporarily comment out schedule trigger in workflow YAML
+   # on:
+   #   schedule:
+   #     - cron: '0 1 * * *'
+   ```
+4. **Document Outage Start** — Record in incident log
+
+**PHASE 4: INVESTIGATE AND RESTORE**
+
+1. **External Outage:** Wait for provider recovery, monitor status pages
+2. **Internal Issue - API Change:** 
+   - Review Riksdag API changelog
+   - Update MCP server configuration
+   - Test with `npm run test:mcp`
+3. **Internal Issue - Credential:** 
+   - Verify Amazon Bedrock API key in GitHub Secrets
+   - Rotate key if expired or compromised
+4. **Internal Issue - Rate Limiting:**
+   - Implement exponential backoff
+   - Reduce fetch frequency temporarily
+   - Check Riksdag API terms of service
+
+**PHASE 5: RESTORE SERVICE**
+
+1. **Re-enable Pipeline** — Restore cron schedule in workflow
+2. **Run Manual Trigger** — `workflow_dispatch` to verify pipeline works
+3. **Verify Output** — Confirm articles generate successfully in all 14 languages
+4. **Remove Stale Banner** — Update HTML once fresh data available
+5. **Verify Dashboards** — Confirm CIA data dashboards show current data
+
+**PHASE 6: POST-INCIDENT**
+
+1. **Document Root Cause** — In incident GitHub Issue
+2. **Add Monitoring** — Alert if no successful pipeline run in 36 hours
+3. **Update Runbooks** — If new failure mode discovered
+4. **Resilience Improvement** — Implement recommendation from this incident
+
+#### Service Restoration Checklist
+
+- [ ] MCP server responding to tool discovery
+- [ ] Riksdag API returning valid JSON
+- [ ] Amazon Bedrock API responding within 30s
+- [ ] News generation pipeline completes without error
+- [ ] 14 language articles successfully generated
+- [ ] SHA-256 integrity check passes
+- [ ] Git commit and PR created successfully
+- [ ] CIA data dashboards showing fresh data
+- [ ] Stale data banners removed from all 14 language pages
+- [ ] GitHub Actions workflow next scheduled run confirmed
+
+#### Communication Template
+
+```
+Subject: [Riksdagsmonitor] Service Notification - Data Pipeline Status
+
+Status: [Investigating / Degraded / Restored]
+Affected: Automated news generation and/or data dashboard updates
+Date: [UTC date]
+
+Current Status:
+The automated data pipeline is [description]. 
+Content published before [timestamp] remains accurate.
+
+Expected Resolution:
+[ETA or "Awaiting external provider recovery"]
+
+Data Freshness:
+Most recent data: [timestamp]
+Best available data is displayed with staleness indicator.
+
+Updates: Follow https://github.com/Hack23/riksdagsmonitor/issues
+```
+
+---
+
+### Playbook 3: Data Poisoning / Integrity Incident
+
+**Playbook ID:** IR-PB-003  
+**Version:** 1.0  
+**Owner:** James Pether Sörling, CEO  
+**Last Reviewed:** 2026-02-25  
+
+#### Trigger Conditions
+
+| Signal | Detection Method | Severity |
+|--------|-----------------|----------|
+| Anomalous political content in generated articles | Human review gate | CRITICAL |
+| SHA-256 hash mismatch for CIA data export | Integrity check in pipeline | HIGH |
+| JSON schema validation failure from unexpected fields | Data validation log | HIGH |
+| Statistics that contradict known parliamentary data | Quality scoring below threshold | HIGH |
+| Dramatic unexpected change in voting statistics | Anomaly detection | HIGH |
+| LLM output contains factually incorrect political claims | Human review | MEDIUM |
+| Unexpected HTML injection in article content | HTMLHint detection | MEDIUM |
+
+#### Severity Classification
+
+| Severity | Criteria | Response Time |
+|----------|----------|---------------|
+| **P1 - Critical** | Confirmed false political information published and live | 15 minutes to takedown |
+| **P2 - High** | Suspected data poisoning, anomalous content caught by review | 1 hour investigation |
+| **P3 - Medium** | Data anomaly detected, not yet published | 4 hours analysis |
+
+#### Step-by-Step Response Procedure
+
+**PHASE 1: DETECT**
+
+1. **Initial Detection** — Via human review gate, quality scoring, or user report
+2. **Preserve Evidence** — Before any changes:
+   - Screenshot anomalous content
+   - Download and archive current `cia-data/` directory
+   - Export GitHub Actions run log
+   - Record all timestamps in UTC
+3. **Initial Assessment** — Is this:
+   - LLM hallucination (most likely)?
+   - Corrupted source data from Riksdag API?
+   - Malicious injection into CIA platform export?
+   - Supply chain compromise in MCP server?
+
+**PHASE 2: TRIAGE**
+
+1. **Trace to Source** — Identify where anomalous data entered:
+   ```bash
+   # Check raw API response data
+   cat cia-data/raw-export.json | jq '.["votingStats"]'
+   
+   # Compare with previous good data
+   git diff HEAD~1 -- cia-data/
+   
+   # Check MCP tool call logs in GitHub Actions
+   # Navigate: Actions > run-id > news-generation > step-logs
+   ```
+2. **Scope Assessment** — How much content is affected?
+3. **Published vs Pending** — Is anomalous content live or only in pipeline?
+
+**PHASE 3: CONTAIN**
+
+1. **If Content Is Live** — Immediate quarantine:
+   ```bash
+   # Revert to last clean version
+   git revert HEAD --no-commit
+   git commit -m "security: quarantine poisoned content [IR-PB-003]"
+   git push origin main
+   ```
+2. **Pause Pipeline** — Disable automated news generation until source validated:
+   - Comment out cron schedule in workflow YAML
+   - Push change to temporarily halt pipeline
+3. **Quarantine Data Files** — Move suspicious data to quarantine directory:
+   ```bash
+   mkdir -p cia-data/quarantine/$(date +%Y%m%d)
+   cp cia-data/*.json cia-data/quarantine/$(date +%Y%m%d)/
+   ```
+4. **Update Cache** — Restore from last verified clean data backup (Git history)
+
+**PHASE 4: VALIDATE SOURCE DATA**
+
+1. **Cross-Reference with Riksdag.se** — Manually verify key statistics:
+   - Party seat counts at https://riksdagen.se
+   - Recent vote outcomes
+   - Member information
+2. **Verify CIA Platform Data** — Check CIA platform directly:
+   - Access https://cia.hack23.com and compare key figures
+   - Check CIA platform's own data integrity logs
+3. **Re-fetch Clean Data** — Trigger fresh MCP data fetch after source verified:
+   ```bash
+   npm run fetch:cia-data  # Fetch fresh data
+   npm run validate:data   # Run validation suite
+   ```
+4. **Schema Comparison** — Verify data structure matches expected schema:
+   ```bash
+   npm run validate:schema -- --input cia-data/export.json
+   ```
+
+**PHASE 5: ERADICATE**
+
+1. **Remove All Poisoned Content** — From production and Git history if needed
+2. **Re-validate All Published Articles** — Check recent articles against source data
+3. **Update Quality Filters** — Add detection rules for the anomaly type seen
+4. **Enhance LLM Guardrails** — Add explicit factual verification prompts
+
+**PHASE 6: RECOVER**
+
+1. **Re-enable Pipeline** — Restore cron schedule after validation
+2. **Generate Fresh Articles** — Replace any quarantined content
+3. **Issue Correction** — If incorrect information was public, issue transparent correction
+4. **Enhanced Monitoring** — Increase review frequency for 30 days
+
+**PHASE 7: POST-INCIDENT**
+
+1. **Root Cause Report** — Document in incident GitHub Issue
+2. **Control Enhancement** — Implement additional preventive measures
+3. **Threat Model Update** — Update THREAT_MODEL.md with new attack vector
+4. **Communication** — If users were exposed to false information, issue public statement
+
+#### Root Cause Analysis Template
+
+```markdown
+## Data Poisoning Incident RCA - [DATE]
+
+**Incident ID:** IR-PB-003-[YYYYMMDD]
+**Severity:** [P1/P2/P3]
+**Detection Time:** [UTC]
+**Containment Time:** [UTC]
+**Resolution Time:** [UTC]
+
+### Timeline
+| Time (UTC) | Event |
+|------------|-------|
+| [time] | Anomaly first detected by [method] |
+| [time] | [Action taken] |
+
+### Root Cause
+[Describe the root cause: LLM hallucination / API corruption / supply chain]
+
+### Attack Vector (if malicious)
+[Describe how attacker introduced false data]
+
+### Impact Assessment
+- Content affected: [list of files/articles]
+- Time live: [duration if published]
+- User exposure: [estimated unique users who may have seen false content]
+
+### Remediation Steps Taken
+1. [Step taken]
+2. [Step taken]
+
+### Preventive Measures Implemented
+1. [Control enhancement]
+2. [Control enhancement]
+
+### Lessons Learned
+[Key takeaways for future incident prevention]
+```
+
+#### Preventive Measures
+
+| Measure | Implementation | Status |
+|---------|---------------|--------|
+| Human review gate for all AI-generated content | Mandatory PR review before merge | Active |
+| Quality score threshold (0.8/1.0) | LLM self-evaluation before translation | Active |
+| SHA-256 integrity hashing | Every article and data file | Active |
+| JSON schema validation | Multi-stage data validation pipeline | Active |
+| Anomaly detection for statistical outliers | Numeric range validation | Active |
+| Source data cross-reference | Manual spot-check quarterly | Planned |
+| LLM output factual verification | Citation requirement in prompts | Planned 2027 |
+| Automated fact-checking against Riksdag.se | Selenium scraper validation | Planned 2028 |
+
+---
+
+## Playbook Summary Reference Card
+
+| Playbook | ID | P1 Response | P2 Response | Primary Action | Evidence |
+|----------|----|-------------|-------------|----------------|----------|
+| Content Tampering | IR-PB-001 | 15 min contain | 1 hr contain | `git revert` + credential rotation | GitHub audit + SHA-256 |
+| MCP Outage | IR-PB-002 | 1 hr restore | 4 hr restore | Graceful degrade + pipeline fix | Actions logs + status pages |
+| Data Poisoning | IR-PB-003 | 15 min takedown | 1 hr quarantine | Quarantine + source validation | Data diff + cross-ref |
+
+---
+
 **📋 Document Control:**  
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](#)  
-**📅 Effective Date:** 2026-02-08  
-**⏰ Next Review:** 2026-05-08  
+**📅 Effective Date:** 2026-02-25  
+**⏰ Next Review:** 2026-05-25  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](#) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](#) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](#)

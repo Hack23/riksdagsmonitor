@@ -383,10 +383,533 @@ stateDiagram-v2
 
 ---
 
+---
+
+## 7. 📄 Content Lifecycle State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> Draft
+
+    Draft --> PendingValidation : Submit for Validation
+    Draft --> Abandoned : Author Cancels
+
+    PendingValidation --> SchemaValidation : Validation Started
+    SchemaValidation --> QualityCheck : Schema OK
+    SchemaValidation --> Draft : Schema Errors Found
+
+    QualityCheck --> TranslationCheck : Quality Score OK
+    QualityCheck --> Draft : Quality Below Threshold
+
+    TranslationCheck --> IntegrityCheck : All 14 Languages Valid
+    TranslationCheck --> Draft : Translation Errors
+
+    IntegrityCheck --> ReadyForReview : Integrity Hash OK
+    IntegrityCheck --> Draft : Hash Mismatch
+
+    ReadyForReview --> UnderReview : Reviewer Assigned
+    UnderReview --> Approved : Review Passed
+    UnderReview --> Draft : Changes Requested
+    UnderReview --> Rejected : Critical Issues Found
+
+    Approved --> Published : Deploy Pipeline Complete
+    Published --> Active : CDN Cache Warm
+    Active --> Stale : Data Age More Than 7 Days
+    Active --> Updated : New Data Available
+    Updated --> Active : Update Published
+    Stale --> Refreshing : Refresh Triggered
+    Refreshing --> Active : Refresh Complete
+    Refreshing --> Expired : Refresh Failed
+    Expired --> Archived : Manual Archive Decision
+    Active --> Archived : Content Age More Than 90 Days
+    Archived --> [*]
+    Rejected --> [*]
+    Abandoned --> [*]
+
+    note right of QualityCheck
+        Quality score computed by
+        LLM self-evaluation
+        Threshold: 0.8 of 1.0
+    end note
+
+    note right of Published
+        Content live in 14 languages
+        SHA-256 hash recorded
+        Git commit signed
+    end note
+```
+
+---
+
+## 8. ⚙️ MCP Pipeline Orchestration State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+
+    Idle --> Scheduled : Cron Trigger Fires
+    Idle --> ManualTrigger : Manual Dispatch
+
+    Scheduled --> Initializing : Pipeline Starts
+    ManualTrigger --> Initializing
+
+    Initializing --> MCPHandshake : Runtime Ready
+    MCPHandshake --> ToolDiscovery : MCP Server Connected
+    MCPHandshake --> InitError : Connection Failed
+
+    ToolDiscovery --> Fetching : 32 Tools Discovered
+    ToolDiscovery --> InitError : Tool Discovery Fails
+
+    Fetching --> FetchingPropositions : Parallel Fetch Starts
+    Fetching --> FetchingMotions : Parallel
+    Fetching --> FetchingCommittee : Parallel
+    Fetching --> FetchingVoting : Parallel
+
+    FetchingPropositions --> Aggregating : Propositions Ready
+    FetchingMotions --> Aggregating : Motions Ready
+    FetchingCommittee --> Aggregating : Committee Data Ready
+    FetchingVoting --> Aggregating : Voting Data Ready
+
+    Aggregating --> Validating : All Data Collected
+    Aggregating --> PartialData : Some Fetches Failed
+
+    PartialData --> Validating : Minimum Threshold Met
+    PartialData --> FetchError : Below Minimum
+
+    Validating --> Processing : Validation Passed
+    Validating --> ValidationError : Data Invalid
+
+    Processing --> Generating : Context Built
+    Generating --> LLMCall : Prompt Ready
+    LLMCall --> ResponseReceived : LLM Responded
+    LLMCall --> LLMTimeout : API Timeout
+    LLMTimeout --> LLMRetry : Retry Available
+    LLMRetry --> LLMCall : Retry Attempt
+    LLMRetry --> LLMFailed : Max Retries
+
+    ResponseReceived --> QualityEval : Response Parsed
+    QualityEval --> Translating : Quality OK
+    QualityEval --> Generating : Quality Low Retry
+
+    Translating --> TranslationComplete : 13 Languages Done
+    TranslationComplete --> Publishing : PR Created
+    Publishing --> Complete : Merged and Deployed
+    Publishing --> PublishError : Deploy Failed
+
+    InitError --> ErrorRecovery : Error Handler
+    FetchError --> ErrorRecovery
+    ValidationError --> ErrorRecovery
+    LLMFailed --> ErrorRecovery
+    PublishError --> ErrorRecovery
+
+    ErrorRecovery --> ErrorLog : Log Error Details
+    ErrorLog --> Notification : Alert Owner
+    Notification --> Idle : Reset for Next Run
+
+    Complete --> Idle : Pipeline Done
+
+    note right of LLMCall
+        Amazon Bedrock API
+        Claude Opus model
+        30s timeout per call
+        Max 3 retries
+    end note
+
+    note right of ErrorRecovery
+        All errors route here
+        Log to GitHub Actions
+        No silent failures
+    end note
+```
+
+---
+
+## 9. 📊 Data Freshness State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> Fresh
+
+    Fresh --> SlightlyStale : Data Age 1-3 Days
+    SlightlyStale --> Fresh : Refresh Successful
+    SlightlyStale --> Stale : Age Exceeds 3 Days
+
+    Stale --> Critical : Age Exceeds 7 Days
+    Stale --> Refreshing : Refresh Triggered
+
+    Critical --> Expired : Age Exceeds 14 Days
+    Critical --> Refreshing : Emergency Refresh
+
+    Refreshing --> FetchingData : Fetch in Progress
+    FetchingData --> Validating : Data Received
+    FetchingData --> RefreshFailed : Network Error
+
+    Validating --> Fresh : Validation Passed
+    Validating --> RefreshFailed : Validation Failed
+
+    RefreshFailed --> CacheAvailable : Check Cache
+    CacheAvailable --> ServingCache : Cache Valid
+    CacheAvailable --> Expired : No Valid Cache
+
+    ServingCache --> Stale : Cache Served
+    Expired --> ManualIntervention : Operator Alert
+    ManualIntervention --> Refreshing : Manual Retry
+    ManualIntervention --> [*] : Service Degraded
+
+    note right of Fresh
+        Fresh = data less than 24h old
+        Normal operational state
+        Banner: Data current
+    end note
+
+    note right of Expired
+        Expired = data more than 14 days old
+        Show prominent stale banner
+        Trigger PagerDuty alert
+    end note
+```
+
+---
+
+## 10. 🛡️ Security Incident Response State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> Monitoring
+
+    Monitoring --> AlertReceived : Security Alert Fired
+    AlertReceived --> Triaging : On-Call Notified
+
+    Triaging --> P1Critical : CVSS 9.0+
+    Triaging --> P2High : CVSS 7.0-8.9
+    Triaging --> P3Medium : CVSS 4.0-6.9
+    Triaging --> P4Low : CVSS Less Than 4.0
+    Triaging --> FalsePositive : Not a Real Incident
+
+    FalsePositive --> Monitoring : Close and Tune Alert
+
+    P1Critical --> ImmediateContainment : Within 15 Minutes
+    P2High --> Containment : Within 1 Hour
+    P3Medium --> Containment : Within 4 Hours
+    P4Low --> Remediation : Within 7 Days
+
+    ImmediateContainment --> TakeOffline : Disable Affected Service
+    TakeOffline --> EvidenceCollection : Preserve Logs
+
+    Containment --> IsolateComponent : Limit Blast Radius
+    IsolateComponent --> EvidenceCollection
+
+    EvidenceCollection --> RootCauseAnalysis : Evidence Preserved
+    RootCauseAnalysis --> Eradication : Root Cause Found
+    RootCauseAnalysis --> EscalateUnknown : Root Cause Unknown
+
+    EscalateUnknown --> ExternalSupport : Need Expert Help
+    ExternalSupport --> RootCauseAnalysis : Analysis Resumed
+
+    Eradication --> PatchApplied : Fix Developed
+    PatchApplied --> Testing : Fix Verified
+    Testing --> Recovery : Tests Pass
+    Testing --> Eradication : Tests Fail
+
+    Recovery --> ServiceRestored : Deploy to Production
+    ServiceRestored --> PostIncident : Service Healthy
+
+    PostIncident --> LessonsLearned : 72h Post-Incident Review
+    LessonsLearned --> ControlUpdate : Update Security Controls
+    ControlUpdate --> Documentation : Document Changes
+    Documentation --> Monitoring : Return to Normal
+
+    Remediation --> ControlUpdate
+
+    note right of P1Critical
+        Examples:
+        Credential exposure
+        Content tampering
+        Data breach
+        Response: 15 min SLA
+    end note
+
+    note right of PostIncident
+        Required within 72 hours:
+        Timeline reconstruction
+        Impact assessment
+        Control improvements
+        NIS2 notification if required
+    end note
+```
+
+---
+
+## 11. 🚀 Deployment Pipeline State Machine with Approval Gates
+
+```mermaid
+stateDiagram-v2
+    [*] --> CodeCommitted
+
+    CodeCommitted --> PRCreated : Developer Opens PR
+    PRCreated --> AutomatedChecks : CI Pipeline Starts
+
+    AutomatedChecks --> Linting : ESLint HTMLHint
+    AutomatedChecks --> UnitTests : Vitest Suite
+    AutomatedChecks --> SecurityScan : CodeQL Dependabot
+    AutomatedChecks --> BuildCheck : Vite Build
+
+    Linting --> LintGate : Results
+    UnitTests --> TestGate : Results
+    SecurityScan --> SecurityGate : Results
+    BuildCheck --> BuildGate : Results
+
+    LintGate --> AutomatedChecksFailed : Lint Errors
+    TestGate --> AutomatedChecksFailed : Test Failures
+    SecurityGate --> AutomatedChecksFailed : Security Issues
+    BuildGate --> AutomatedChecksFailed : Build Error
+
+    LintGate --> AllChecksPass : Lint Clean
+    TestGate --> AllChecksPass : Tests Pass
+    SecurityGate --> AllChecksPass : Security OK
+    BuildGate --> AllChecksPass : Build OK
+
+    AutomatedChecksFailed --> CodeCommitted : Fix Required
+
+    AllChecksPass --> E2ETests : Deploy to Staging
+    E2ETests --> E2EGate : Cypress Complete
+    E2EGate --> E2EFailed : E2E Failures
+    E2EFailed --> CodeCommitted : Fix Required
+
+    E2EGate --> AwaitingApproval : E2E Passed
+    AwaitingApproval --> UnderReview : Reviewer Assigned
+    UnderReview --> ChangesRequested : Review Feedback
+    ChangesRequested --> CodeCommitted : Author Updates
+    UnderReview --> Approved : LGTM
+
+    Approved --> MergeTrigger : Merge to Main
+    MergeTrigger --> DeploymentBuild : Build Release
+    DeploymentBuild --> SLSAAttestation : Sign Provenance
+    SLSAAttestation --> DeployToGHPages : Push to gh-pages
+    DeployToGHPages --> CDNInvalidation : CloudFront Invalidate
+    CDNInvalidation --> SmokeTest : Verify Live
+    SmokeTest --> SmokeGate : Check Results
+    SmokeGate --> DeployFailed : Smoke Failed
+    SmokeGate --> DeploymentComplete : Smoke Passed
+
+    DeployFailed --> Rollback : Auto Revert
+    Rollback --> PreviousVersion : Restore Prior
+    PreviousVersion --> PostMortem : Investigate Failure
+    PostMortem --> CodeCommitted : Fix and Redeploy
+
+    DeploymentComplete --> [*]
+
+    note right of AwaitingApproval
+        Required approvers:
+        James Pether Sorling (CEO)
+        Branch protection enforced
+        No force push allowed
+    end note
+
+    note right of SLSAAttestation
+        SLSA Level 2+
+        Sigstore signing
+        Build provenance
+        Tamper-evident log
+    end note
+```
+
+---
+
+## 12. ⏱️ API Rate Limiting State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> Available
+
+    Available --> Requesting : API Call Made
+    Requesting --> BudgetCheck : Check Rate Budget
+    BudgetCheck --> WithinBudget : Tokens Available
+    BudgetCheck --> BudgetExceeded : No Tokens
+
+    WithinBudget --> DeductToken : Consume Token
+    DeductToken --> ExecuteCall : Token Deducted
+    ExecuteCall --> SuccessResponse : 200 OK
+    ExecuteCall --> ThrottledResponse : 429 Too Many Requests
+    ExecuteCall --> ErrorResponse : 5xx Error
+
+    SuccessResponse --> Available : Call Complete
+
+    ThrottledResponse --> BackoffWait : Exponential Backoff
+    BackoffWait --> BackoffCheck : Wait Complete
+    BackoffCheck --> Requesting : Retry Available
+    BackoffCheck --> MaxRetries : Retries Exhausted
+
+    ErrorResponse --> RetryEligible : Retryable Error
+    RetryEligible --> BackoffWait
+    ErrorResponse --> FatalError : Non-Retryable
+
+    BudgetExceeded --> QuotaWindow : Next Window
+    QuotaWindow --> Available : Window Resets
+    QuotaWindow --> AlertLow : Budget Critical
+    AlertLow --> Available : Continue with Warning
+
+    MaxRetries --> FallbackCache : Use Cached Data
+    FallbackCache --> Available : Served from Cache
+    FatalError --> ErrorLog : Log Failure
+    ErrorLog --> Available : Reset
+
+    note right of BackoffWait
+        Exponential backoff:
+        1s, 2s, 4s, 8s, 16s
+        Max 5 retries per request
+    end note
+
+    note right of BudgetExceeded
+        Riksdag API rate limits:
+        Respect Retry-After header
+        Daily quota tracking
+    end note
+```
+
+---
+
+## 13. 🔑 Credential Rotation State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> Active
+
+    Active --> MonitorAge : Daily Age Check
+    MonitorAge --> StillValid : Age Less Than 60 Days
+    MonitorAge --> ApproachingExpiry : Age 60-89 Days
+    MonitorAge --> ExpiryCritical : Age 90+ Days
+    MonitorAge --> Expired : Age 120+ Days
+
+    StillValid --> Active : Continue Normal Operation
+
+    ApproachingExpiry --> RotationScheduled : Schedule Rotation
+    RotationScheduled --> AwaitingRotation : 7-Day Notice Sent
+    AwaitingRotation --> RotationInitiated : Rotation Window Opens
+
+    ExpiryCritical --> ImmediateRotation : Emergency Rotation
+    ImmediateRotation --> RotationInitiated
+
+    RotationInitiated --> NewCredentialCreated : New Credential Generated
+    NewCredentialCreated --> DualActive : Both Old and New Active
+    DualActive --> NewCredentialTested : Test New Credential
+    NewCredentialTested --> TestPassed : Validation OK
+    NewCredentialTested --> TestFailed : Validation Failed
+
+    TestPassed --> MigrateServices : Update All References
+    MigrateServices --> GHSecretUpdated : GitHub Secret Updated
+    GHSecretUpdated --> OldRevoked : Revoke Old Credential
+    OldRevoked --> Active : Rotation Complete
+
+    TestFailed --> NewCredentialRevoked : Revoke Failed Credential
+    NewCredentialRevoked --> RotationInitiated : Retry Rotation
+
+    Expired --> EmergencyRevoke : Immediate Revoke
+    EmergencyRevoke --> ServiceDegradation : Service Impact
+    ServiceDegradation --> EmergencyNew : Create Emergency Cred
+    EmergencyNew --> Active : Emergency Restore
+
+    Active --> Compromised : Security Alert
+    Compromised --> ImmediateRevoke : Revoke Now
+    ImmediateRevoke --> IncidentResponse : Trigger IR
+    IncidentResponse --> EmergencyNew
+
+    note right of Active
+        Credentials in scope:
+        Amazon Bedrock API key
+        GitHub PAT tokens
+        MCP server keys
+        Rotation policy: 90 days
+    end note
+
+    note right of DualActive
+        Zero-downtime rotation
+        Old credential still valid
+        during migration window
+        (max 24 hour overlap)
+    end note
+```
+
+---
+
+## 14. 📝 Content Versioning State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> v1Created
+
+    v1Created --> v1Active : First Publish
+    v1Active --> v1Updated : Minor Edit
+    v1Updated --> v1Active : Edit Published
+    v1Active --> v2Draft : Major Revision Started
+
+    v2Draft --> v2Review : v2 Content Ready
+    v2Review --> v2Approved : Review Passed
+    v2Review --> v2Draft : Changes Requested
+
+    v2Approved --> MigrationCheck : Check Compatibility
+    MigrationCheck --> BreakingChange : Schema Changed
+    MigrationCheck --> NonBreaking : Compatible
+
+    NonBreaking --> v2Deploy : Deploy v2
+    BreakingChange --> RedirectSetup : Create Redirects
+    RedirectSetup --> v2Deploy
+
+    v2Deploy --> v1Archived : Archive v1
+    v2Deploy --> v2Active : v2 Live
+    v1Archived --> v1Restorable : Keep for 90 Days
+
+    v2Active --> v2Updated : Minor Edit
+    v2Updated --> v2Active : Published
+    v2Active --> v3Draft : Next Major Version
+
+    v1Restorable --> v1Restored : Rollback Decision
+    v1Restored --> v1Active : Emergency Rollback
+    v1Restorable --> v1Deleted : Retention Expired
+    v1Deleted --> [*]
+
+    note right of v1Active
+        All versions stored in Git
+        Full history preserved
+        Rollback possible at any time
+        Git tag per release
+    end note
+
+    note right of BreakingChange
+        Breaking changes require:
+        URL redirect mapping
+        SEO impact assessment
+        Hreflang updates for 14 langs
+    end note
+```
+
+---
+
+## Updated Future State Summary
+
+| # | State Model | Timeline | Key Technology | Status |
+|---|-------------|----------|----------------|--------|
+| 1 | AI Content Generation | 2026-2028 | Opus 4.6-6.x, Stability AI, ElevenLabs | Planned |
+| 2 | Predictive Model Lifecycle | 2027-2028 | TensorFlow.js, XGBoost | Research |
+| 3 | Real-Time Streaming | 2028+ | Kafka, Flink, WebSocket | Research |
+| 4 | Election Forecast | 2026-2028 | Monte Carlo, Statistical Models | Planned |
+| 5 | Multi-Parliament | 2028+ | Multi-API Integration | Research |
+| 6 | AI/LLM Model Evolution | 2026-2037 | Opus 4.6 to AGI, Multi-Model Strategy | Planned |
+| 7 | Content Lifecycle | 2026 | Git, SHA-256, HTMLHint | Active |
+| 8 | MCP Pipeline Orchestration | 2026 | riksdag-regering-mcp, Amazon Bedrock | Active |
+| 9 | Data Freshness | 2026 | Cache layer, staleness detection | Active |
+| 10 | Security Incident Response | 2026 | GitHub Security, ISMS playbooks | Active |
+| 11 | Deployment Pipeline | 2026 | GitHub Actions, SLSA, Sigstore | Active |
+| 12 | API Rate Limiting | 2026 | Exponential backoff, quota tracking | Active |
+| 13 | Credential Rotation | 2026 | GitHub Secrets, 90-day policy | Active |
+| 14 | Content Versioning | 2026 | Git tags, redirects, archiving | Active |
+
+---
+
 **📋 Document Control:**  
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-24  
-**⏰ Next Review:** 2026-05-20  
+**📅 Effective Date:** 2026-02-25  
+**⏰ Next Review:** 2026-05-25  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
