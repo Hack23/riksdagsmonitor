@@ -12,6 +12,7 @@
 import { escapeHtml } from '../html-utils.js';
 import type { Language } from '../types/language.js';
 import type { ArticleContentData, WeekAheadData, RawDocument } from './types.js';
+import { getPillarTransition } from '../editorial-pillars.js';
 import {
   L,
   svSpan,
@@ -294,6 +295,12 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
     });
   });
 
+  // Narrative bridge from legislative content to analytical outlook (inter-pillar transition)
+  const pulseTransition = getPillarTransition(lang, 'pulseToWatch');
+  if (pulseTransition) {
+    content += `    <p class="pillar-transition">${escapeHtml(pulseTransition)}</p>\n`;
+  }
+
   // Key takeaways section
   content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
   content += `    <div class="context-box">\n      <ul>\n`;
@@ -543,6 +550,11 @@ export function generateMotionsContent(data: ArticleContentData, lang: Language 
 
   // Party activity breakdown
   if (partyCount > 0) {
+    // Narrative bridge before cross-party analysis (inter-pillar transition)
+    const watchTransition = getPillarTransition(lang, 'watchToOpposition');
+    if (watchTransition) {
+      content += `    <p class="pillar-transition">${escapeHtml(watchTransition)}</p>\n`;
+    }
     content += `\n    <h2>${L(lang, 'coalitionDynamics')}</h2>\n`;
     content += `    <div class="context-box">\n      <ul>\n`;
     Object.entries(byParty).forEach(([party, partyMotions]) => {
@@ -590,15 +602,59 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   const leadDocs = leadType ? (byType[leadType] ?? []) : [];
   const leadTitle = leadDocs[0] ? (leadDocs[0].titel || leadDocs[0].title || '') : '';
 
+  // Per-language title suffix (e.g. " — including "Prop. 2025/26:42"")
+  const titleSuffix: string = leadTitle
+    ? lang === 'sv' ? ` — inklusive "${leadTitle}"`
+    : lang === 'da' ? ` — herunder "${leadTitle}"`
+    : lang === 'no' ? ` — inkludert "${leadTitle}"`
+    : lang === 'fi' ? ` — mukaan lukien "${leadTitle}"`
+    : lang === 'de' ? ` — darunter "${leadTitle}"`
+    : lang === 'fr' ? ` — notamment "${leadTitle}"`
+    : lang === 'es' ? ` — incluyendo "${leadTitle}"`
+    : lang === 'nl' ? ` — inclusief "${leadTitle}"`
+    : lang === 'ar' ? ` — بما فيها "${leadTitle}"`
+    : lang === 'he' ? ` — כולל "${leadTitle}"`
+    : lang === 'ja' ? `、「${leadTitle}」を含む`
+    : lang === 'ko' ? `, "${leadTitle}" 포함`
+    : lang === 'zh' ? `，包括"${leadTitle}"`
+    : ` — including "${leadTitle}"`
+    : '';
+
   let ledeText: string;
   if (leadType === 'prop' && leadDocs.length > 0) {
+    const n = leadDocs.length;
     ledeText = lang === 'sv'
-      ? `Riksdagen behandlar ${leadDocs.length} proposition${leadDocs.length !== 1 ? 'er' : ''}${leadTitle ? ` — inklusive "${leadTitle}"` : ''} under denna period.`
-      : `Parliament is considering ${leadDocs.length} government proposition${leadDocs.length !== 1 ? 's' : ''}${leadTitle ? ` — including "${leadTitle}"` : ''} during this period.`;
+      ? `Riksdagen behandlar ${n} proposition${n !== 1 ? 'er' : ''}${titleSuffix} under denna period.`
+      : lang === 'da' ? `Folketinget behandler ${n} lovforslag${titleSuffix} i denne periode.`
+      : lang === 'no' ? `Stortinget behandler ${n} lovproposisjon${n !== 1 ? 'er' : ''}${titleSuffix} i denne perioden.`
+      : lang === 'fi' ? `Eduskunta käsittelee ${n} hallituksen esitystä${titleSuffix} tällä kaudella.`
+      : lang === 'de' ? `Das Parlament berät ${n} Regierungsvorlag${n !== 1 ? 'en' : 'e'}${titleSuffix} in dieser Periode.`
+      : lang === 'fr' ? `Le parlement examine ${n} proposition${n !== 1 ? 's' : ''} gouvernementale${n !== 1 ? 's' : ''}${titleSuffix} pendant cette période.`
+      : lang === 'es' ? `El parlamento examina ${n} proposición${n !== 1 ? 'es' : ''} gubernamental${n !== 1 ? 'es' : ''}${titleSuffix} durante este período.`
+      : lang === 'nl' ? `Het parlement bespreekt ${n} regeringsvoorstel${n !== 1 ? 'len' : ''}${titleSuffix} in deze periode.`
+      : lang === 'ar' ? `يناقش البرلمان ${n} اقتراح${n !== 1 ? 'ات' : ''} حكومية${titleSuffix} خلال هذه الفترة.`
+      : lang === 'he' ? `הפרלמנט דן ב-${n} הצעת חוק ממשלתית${n !== 1 ? 'ות' : ''}${titleSuffix} בתקופה זו.`
+      : lang === 'ja' ? `議会はこの期間中に${n}本の政府提出法案を審議しています${titleSuffix}。`
+      : lang === 'ko' ? `의회는 이 기간 동안 ${n}건의 정부 법안을 심의하고 있습니다${titleSuffix}.`
+      : lang === 'zh' ? `议会正在审议本期${n}项政府提案${titleSuffix}。`
+      : `Parliament is considering ${n} government proposition${n !== 1 ? 's' : ''}${titleSuffix} during this period.`;
   } else if (leadType === 'bet' && leadDocs.length > 0) {
+    const n = leadDocs.length;
     ledeText = lang === 'sv'
-      ? `Utskotten har lämnat ${leadDocs.length} betänkande${leadDocs.length !== 1 ? 'n' : ''}${leadTitle ? ` — ledda av "${leadTitle}"` : ''} för riksdagens beslut.`
-      : `Committees have delivered ${leadDocs.length} report${leadDocs.length !== 1 ? 's' : ''}${leadTitle ? ` — led by "${leadTitle}"` : ''} for parliamentary decision.`;
+      ? `Utskotten har lämnat ${n} betänkande${n !== 1 ? 'n' : ''}${titleSuffix} för riksdagens beslut.`
+      : lang === 'da' ? `Udvalgene har afleveret ${n} betænkning${n !== 1 ? 'er' : ''}${titleSuffix} til parlamentarisk beslutning.`
+      : lang === 'no' ? `Komiteene har levert ${n} innstilling${n !== 1 ? 'er' : ''}${titleSuffix} til parlamentarisk beslutning.`
+      : lang === 'fi' ? `Valiokunnat ovat toimittaneet ${n} mietinnön${titleSuffix} parlamentin päätettäväksi.`
+      : lang === 'de' ? `Die Ausschüsse haben ${n} Bericht${n !== 1 ? 'e' : ''}${titleSuffix} zur parlamentarischen Entscheidung vorgelegt.`
+      : lang === 'fr' ? `Les commissions ont livré ${n} rapport${n !== 1 ? 's' : ''}${titleSuffix} pour décision parlementaire.`
+      : lang === 'es' ? `Los comités han presentado ${n} informe${n !== 1 ? 's' : ''}${titleSuffix} para decisión parlamentaria.`
+      : lang === 'nl' ? `De commissies hebben ${n} rapport${n !== 1 ? 'en' : ''}${titleSuffix} ingediend voor parlementaire beslissing.`
+      : lang === 'ar' ? `قدمت اللجان ${n} تقرير${n !== 1 ? 'اً' : ''}${titleSuffix} للقرار البرلماني.`
+      : lang === 'he' ? `הוועדות הגישו ${n} דוח${n !== 1 ? 'ות' : ''}${titleSuffix} להחלטה פרלמנטרית.`
+      : lang === 'ja' ? `委員会は議会の決定のために${n}本の報告書を提出しました${titleSuffix}。`
+      : lang === 'ko' ? `위원회들이 의회 결정을 위해 ${n}건의 보고서를 제출했습니다${titleSuffix}.`
+      : lang === 'zh' ? `委员会已提交${n}份报告${titleSuffix}供议会决定。`
+      : `Committees have delivered ${n} report${n !== 1 ? 's' : ''}${titleSuffix} for parliamentary decision.`;
   } else {
     const overviewFn = L(lang, 'genericOverview') as string | ((n: number) => string);
     ledeText = typeof overviewFn === 'function'
@@ -640,6 +696,12 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
       }
       content += `    </div>\n`;
     }
+  }
+
+  // ── Narrative bridge to analytical outlook ───────────────────────────────
+  const oppositionTransition = getPillarTransition(lang, 'oppositionToAhead');
+  if (oppositionTransition) {
+    content += `    <p class="pillar-transition">${escapeHtml(oppositionTransition)}</p>\n`;
   }
 
   // ── Key takeaways ────────────────────────────────────────────────────────

@@ -445,8 +445,7 @@ describe('News Realtime Monitor - Quality Framework', () => {
       };
       const scoreFour = qualityModule.calculateQualityScore(metricsWithFourParties);
       expect(scoreFour).toBeLessThan(score);
-      expect(scoreFour).toBeGreaterThan(0.15);
-      expect(scoreFour).toBeLessThan(0.18);
+      expect(scoreFour).toBeCloseTo((4 / 6) * 0.25, 2);
     });
 
     it('should cap score at 1.0', () => {

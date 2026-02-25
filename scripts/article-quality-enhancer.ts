@@ -331,7 +331,8 @@ export async function enhanceArticleQuality(
   // Separate warnings (recommendations) from blocking failures
   const warnings: string[] = [];
 
-  if (options.recommendHistoricalContext && !metrics.hasHistoricalContext) {
+  // Only warn about historical context if it is not already a blocking error
+  if (options.recommendHistoricalContext && !options.requireHistoricalContext && !metrics.hasHistoricalContext) {
     warnings.push('Recommended: Add historical context');
   }
 
