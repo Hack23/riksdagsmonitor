@@ -192,9 +192,7 @@ npx tsx scripts/generate-news-enhanced.ts \
 **CRITICAL: Each article MUST contain real analysis, not just a list of translated document links.**
 Every generated article must include thematic analysis grouping documents by type and policy area, interpretive commentary on what the week's activity reveals about political dynamics, and key takeaways.
 
-```bash
-npx tsx scripts/generate-news-indexes.ts
-```
+**Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files. To locally preview or validate these generated indexes, metadata, and sitemap on a fresh checkout, run `npm run prebuild` before starting your local preview or build.
 
 ## Article Content Structure
 
