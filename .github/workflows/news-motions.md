@@ -93,9 +93,9 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 ## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–10**: Query MCP tools for motions data
-- **Minutes 10–30**: Generate articles for all 14 languages
-- **Minutes 30–38**: Validate and commit
-- **Minutes 38–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 10–40**: Generate articles for all 14 languages
+- **Minutes 40–43**: Validate and commit
+- **Minutes 43–45**: Create PR with `safeoutputs___create_pull_request`
 
 ## Required Skills
 
