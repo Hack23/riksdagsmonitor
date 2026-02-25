@@ -20,7 +20,7 @@ on:
       languages:
         description: 'Languages to generate (en,sv | nordic | eu-core | all)'
         required: false
-        default: all
+        default: en,sv
 
 permissions:
   contents: read
@@ -93,14 +93,35 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Your mission is
 ## 🚨 CRITICAL REQUIREMENTS (MUST COMPLETE)
 
 ### ⏱️ Time Budget Management
-**You have 45 minutes total.** Budget your time wisely:
+**You have 45 minutes total. Strict time limits apply — exceeding them causes workflow failure.**
+
+Record the start time immediately:
+```bash
+START_TIME=$(date +%s)
+echo "Workflow start: $(date -u)"
+```
+
+Budget your time by checking `$(( ($(date +%s) - $START_TIME) / 60 ))` minutes elapsed:
 - **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, detect breaking activity
 - **Minutes 5–15**: Query MCP tools, assess significance of detected events
-- **Minutes 15–30**: Generate breaking news articles for all languages
-- **Minutes 30–40**: Translate, validate, commit
-- **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 15–25**: Generate breaking news articles (**default: en and sv only**)
+- **Minutes 25–30**: Translate, validate, commit
+- **Minutes 30–35**: Create PR with `safeoutputs___create_pull_request`
 
-**If you reach minute 35 without having committed**: Stop generating more content. Commit what you have and create the PR immediately. Partial content in a PR is better than a timeout with no PR.
+**🚨 HARD CUTOFFS — These are non-negotiable:**
+- **Minute 20**: If no articles written yet → call `safeoutputs___noop` immediately and exit
+- **Minute 30**: If PR not yet created → call `safeoutputs___noop` with whatever you have and exit
+- **NEVER let the workflow hit the 45-minute hard timeout** — call a safe output tool FIRST
+
+Check elapsed time before each major step:
+```bash
+ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
+echo "Minutes elapsed: $ELAPSED"
+if [ "$ELAPSED" -ge 30 ]; then
+  echo "⏰ HARD CUTOFF: 30 minutes elapsed — calling noop and exiting"
+  # Call safeoutputs___noop now
+fi
+```
 
 ### 1. MANDATORY Date Validation (First Step)
 **ALWAYS START by logging the current date and time:**
@@ -205,9 +226,12 @@ Check the `focus` input (default: `all`):
 ### Language Support
 
 Parse the `languages` input and expand presets:
-- **all** (default) - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
+- **en,sv** (default) - English and Swedish only (fastest, prevents timeout)
+- **all** - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh (use only when time permits)
 - **nordic** → en,sv,da,no,fi
 - **eu-core** → en,sv,de,fr,es,nl
+
+**⚠️ Default is `en,sv` to prevent 45-minute timeout. Use `all` only via manual `workflow_dispatch`.**
 
 ## 🔌 MCP Tools: Swedish Political Data
 
