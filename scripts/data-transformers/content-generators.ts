@@ -797,7 +797,7 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
       .sort(([, a], [, b]) => b - a);
     if (sortedPropCommittees.length > 0 && sortedPropCommittees[0][1] >= 2) {
       const [topC, topN] = sortedPropCommittees[0];
-      const topCName = getCommitteeName(topC, lang);
+      const topCName = escapeHtml(getCommitteeName(topC, lang));
       const govPriorityTemplates: Record<string, (n: string, c: number) => string> = {
         sv: (n, c) => `${n} tar emot ${c} propositioner – detta signalerar ett prioriterat politikområde.`,
         da: (n, c) => `${n} modtager ${c} lovforslag — et klart signal om prioritet.`,
@@ -815,8 +815,8 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
       };
       const govTpl = govPriorityTemplates[lang as string];
       const govNote = govTpl
-        ? govTpl(escapeHtml(topCName), topN)
-        : `${escapeHtml(topCName)} receives ${topN} propositions — signalling government priority in this policy area.`;
+        ? govTpl(topCName, topN)
+        : `${topCName} receives ${topN} propositions — signalling government priority in this policy area.`;
       content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
       content += `    <p>${govNote}</p>\n`;
     }
