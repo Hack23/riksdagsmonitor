@@ -33,6 +33,23 @@ import {
   PROP_TITLE_SUFFIX_REGEX,
 } from './document-analysis.js';
 
+/** Per-language title-suffix templates for inverted-pyramid lede construction. */
+const TITLE_SUFFIX_TEMPLATES: Readonly<Record<string, (t: string) => string>> = {
+  sv: t => ` — inklusive "${t}"`,
+  da: t => ` — herunder "${t}"`,
+  no: t => ` — inkludert "${t}"`,
+  fi: t => ` — mukaan lukien "${t}"`,
+  de: t => ` — darunter "${t}"`,
+  fr: t => ` — notamment "${t}"`,
+  es: t => ` — incluyendo "${t}"`,
+  nl: t => ` — inclusief "${t}"`,
+  ar: t => ` — بما فيها "${t}"`,
+  he: t => ` — כולל "${t}"`,
+  ja: t => `、「${t}」を含む`,
+  ko: t => `, "${t}" 포함`,
+  zh: t => `，包括"${t}"`,
+};
+
 export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
   // Cast to ArticleContentData to access documents field (passed via switch cast)
@@ -603,21 +620,6 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   const leadTitle = leadDocs[0] ? (leadDocs[0].titel || leadDocs[0].title || '') : '';
 
   // Per-language title suffix (e.g. " — including "Prop. 2025/26:42"")
-  const TITLE_SUFFIX_TEMPLATES: Record<string, (t: string) => string> = {
-    sv: t => ` — inklusive "${t}"`,
-    da: t => ` — herunder "${t}"`,
-    no: t => ` — inkludert "${t}"`,
-    fi: t => ` — mukaan lukien "${t}"`,
-    de: t => ` — darunter "${t}"`,
-    fr: t => ` — notamment "${t}"`,
-    es: t => ` — incluyendo "${t}"`,
-    nl: t => ` — inclusief "${t}"`,
-    ar: t => ` — بما فيها "${t}"`,
-    he: t => ` — כולל "${t}"`,
-    ja: t => `、「${t}」を含む`,
-    ko: t => `, "${t}" 포함`,
-    zh: t => `，包括"${t}"`,
-  };
   const titleSuffix: string = leadTitle
     ? (TITLE_SUFFIX_TEMPLATES[lang] ?? (t => ` — including "${t}"`))(leadTitle)
     : '';
