@@ -52,6 +52,7 @@ import {
   cleanMotionText,
   isPersonProfileText,
   extractKeyPassage,
+  getCommitteeName,
 } from './helpers.js';
 
 // ---------------------------------------------------------------------------
@@ -295,7 +296,9 @@ type _LangPair = { en: Record<string, string>; sv: Record<string, string> };
 const _LOCALISED_TO_EN: Record<string, string> = {};
 for (const [, translations] of Object.entries(DOMAIN_NAMES)) {
   const enName = translations.en;
-  for (const localisedName of Object.values(translations)) {
+  for (const [langKey, localisedName] of Object.entries(translations)) {
+    // Skip the English entry — it maps to itself and adds no new lookup value
+    if (langKey === 'en') continue;
     _LOCALISED_TO_EN[localisedName] = enName;
     _LOCALISED_TO_EN[localisedName.toLowerCase()] = enName;
   }
@@ -514,8 +517,9 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
         ko: (n) => `이 안건은 ${n}에 회부되어 의회 심의를 받습니다.`,
         zh: (n) => `此事项已移交${n}进行议会审查。`,
       };
-      const isSv = lang === 'sv';
-      const committeeName = isSv ? organEntry.sv : organEntry.en;
+      // Use getCommitteeName for consistent localization: Swedish name for sv,
+      // English name for all others (client-side data-translate handles further l10n)
+      const committeeName = getCommitteeName(organ, lang);
       const tpl = committeeRefTemplates[lang as string];
       return tpl
         ? tpl(committeeName)
