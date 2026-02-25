@@ -102,7 +102,7 @@
     "vitest": "^4.0.18"
   },
   "optionalDependencies": {
-    "cypress": "^15.10.0"
+    "cypress": "^15.11.0"
   },
   "overrides": {
     "glob": "^13.0.0"
