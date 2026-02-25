@@ -25,6 +25,58 @@ import {
 } from './helpers.js';
 import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from './policy-analysis.js';
 
+/** Committee codes with known high-influence weighting */
+const HIGH_INFLUENCE_COMMITTEES = new Set(['FiU', 'KU', 'JuU', 'UU', 'FöU', 'SoU']);
+/** Document types that carry higher parliamentary influence */
+const HIGH_INFLUENCE_TYPES = new Set(['prop', 'bet', 'skr', 'dir']);
+
+/**
+ * Calculate an influence score (0-100) for a parliamentary document.
+ * Considers committee tier, document type, policy domain breadth,
+ * and the presence of full content as a proxy for document depth.
+ *
+ * @param doc - The document to score
+ * @returns Influence score 0-100
+ */
+export function calculateInfluenceScore(doc: RawDocument): number {
+  let score = 0;
+
+  // Document type weighting (propositions > reports > motions)
+  const docType = doc.doktyp || doc.documentType || '';
+  if (HIGH_INFLUENCE_TYPES.has(docType)) {
+    score += docType === 'prop' ? 35 : docType === 'bet' ? 30 : 20;
+  } else if (docType === 'mot') {
+    score += 10;
+  } else {
+    score += 15; // unknown type gets moderate weight
+  }
+
+  // Committee tier weighting
+  const organ = doc.organ || doc.committee || '';
+  if (HIGH_INFLUENCE_COMMITTEES.has(organ)) {
+    score += 30;
+  } else if (organ) {
+    score += 15;
+  }
+
+  // Policy domain breadth (more domains = broader impact)
+  const domains = detectPolicyDomains(doc);
+  score += Math.min(20, domains.length * 7);
+
+  // Content richness (full text available indicates substantive document)
+  if (doc.fullText || doc.fullContent) {
+    score += 10;
+  }
+
+  // Party sponsorship (government documents inherently carry more weight)
+  const isGovernment = !doc.parti || doc.doktyp === 'prop';
+  if (isGovernment && docType !== 'mot') {
+    score += 5;
+  }
+
+  return Math.min(100, score);
+}
+
 /** Matches a strict proposition ID (YYYY/YY:NNN) in a motion title. */
 const PROP_REFERENCE_REGEX = /med anledning av prop\.\s+(\d{4}\/\d{2}:\d+)/i;
 
@@ -251,6 +303,27 @@ export function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: 
         `<small class="cia-context">Historical context: ${escapeHtml(party)} motions have a ${escapeHtml(rate.toFixed(1))}% passage rate ` +
         `(${escapeHtml(String(cia.overallMotionDenialRate))}% of all opposition motions are rejected). ` +
         `This motion signals a policy position rather than an imminent legislative change.</small>`
+      );
+    }
+  }
+
+  // ── EARLY WARNING: high-influence documents with stability risk indicators ─
+  if (cia) {
+    const influenceScore = calculateInfluenceScore(doc);
+    const stabilityScore = cia.coalitionStability.stabilityScore;
+    const majorityMargin = cia.coalitionStability.majorityMargin;
+
+    // Flag high-influence documents during coalition instability
+    if (influenceScore >= 60 && stabilityScore < 50) {
+      parts.push(
+        `<small class="early-warning">⚠ Early warning: This high-influence document (score: ${escapeHtml(String(influenceScore))}) ` +
+        `arrives during a period of coalition instability (stability: ${escapeHtml(String(stabilityScore))}). ` +
+        `Monitor closely for defections or procedural delays.</small>`
+      );
+    } else if (majorityMargin <= 2 && (docType === 'prop' || docType === 'bet')) {
+      parts.push(
+        `<small class="early-warning">⚠ Thin majority alert: With only ${escapeHtml(String(majorityMargin))} seat majority, ` +
+        `this ${docType === 'prop' ? 'government bill' : 'committee report'} faces elevated defeat risk.</small>`
       );
     }
   }
