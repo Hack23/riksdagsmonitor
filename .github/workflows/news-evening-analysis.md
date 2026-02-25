@@ -133,11 +133,14 @@ Before generating ANY articles, verify MCP connectivity:
 
 1. Call `get_sync_status({})` — if successful, proceed
 2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
-3. If ALL 3 attempts fail:
+3. **If the tool call itself fails (returns error/exception)** after 3 attempts:
    - Use `safeoutputs___noop` with message: "MCP server unavailable after 3 connection attempts. No articles generated."
    - DO NOT analyze existing articles in the repository
    - DO NOT fabricate or recycle content
    - The workflow MUST end with noop
+4. **If the tools are simply not yet visible in your tools list** (different from a tool call failing):
+   - Follow the "🚨 If MCP Tools Are NOT In Your Tools List" section below
+   - After retries, fall back to the Step 4 bash script before considering noop
 
 **CRITICAL**: ALL article content MUST originate from live MCP data. Never generate content from:
 - Existing articles in the news/ directory
@@ -753,8 +756,8 @@ Structure the analysis around these editorial pillars:
 **PRIMARY APPROACH: Use the bash script (fastest, most reliable — same pattern as `news-week-ahead.md`):**
 
 ```bash
-# Set languages based on input
-LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+# Set LANGUAGES_INPUT to the value shown in Workflow Dispatch Parameters above
+LANGUAGES_INPUT="<value from Workflow Dispatch Parameters>"  # e.g. "all", "nordic", "eu-core", or "en,sv"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
 
 case "$LANGUAGES_INPUT" in
@@ -776,16 +779,25 @@ if [ -f "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" ]; then
 fi
 export MCP_CLIENT_TIMEOUT_MS=90000
 
+TODAY="$(date +%Y-%m-%d)"
 npx tsx scripts/generate-news-enhanced.ts \
   --types=breaking \
   --languages="$LANG_ARG" \
   --skip-existing
 SCRIPT_EXIT=$?
 echo "Script exit code: $SCRIPT_EXIT"
-ls -la news/*-en.html 2>/dev/null | tail -5 || echo "No articles found yet"
+
+# Use git status to detect newly generated files (reliable: won't match existing articles)
+NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
+if [ -z "$NEW_ARTICLES" ]; then
+  echo "No new evening analysis articles were created by the generator."
+else
+  echo "Newly generated articles:"
+  printf '%s\n' "$NEW_ARTICLES"
+fi
 ```
 
-If the script succeeds (`SCRIPT_EXIT=0`) and articles are present, proceed to Step 5.
+If the script succeeds (`SCRIPT_EXIT=0`) and `$NEW_ARTICLES` is non-empty, proceed to Step 5.
 
 **FALLBACK (only if script returns non-zero and no articles exist): Process ONE language at a time manually:**
 
@@ -821,7 +833,10 @@ For each manual language version:
 
 1. **Identify articles needing translation**:
 ```bash
-for article in news/*-evening-analysis-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+TODAY="$(date +%Y-%m-%d)"
+# Use git status to find only newly generated articles (works for both script and manual output)
+NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
+for article in $NEW_ARTICLES; do
   if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
     echo "NEEDS TRANSLATION: $article"
   fi
@@ -838,8 +853,11 @@ done
 
 3. **Validation (MANDATORY)**:
 ```bash
+TODAY="$(date +%Y-%m-%d)"
+# Use git status to find only newly generated articles (avoids false positives from existing articles)
+NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
 UNTRANSLATED=0
-for article in news/*-evening-analysis-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+for article in $NEW_ARTICLES; do
   if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
     echo "WARNING: UNTRANSLATED: $(basename $article)"
     UNTRANSLATED=$((UNTRANSLATED + 1))
