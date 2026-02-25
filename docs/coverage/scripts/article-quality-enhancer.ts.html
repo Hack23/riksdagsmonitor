@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.77% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>79/88</span>
+                <span class='fraction'>80/90</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.57% </span>
+                <span class="strong">79.06% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>31/38</span>
+                <span class='fraction'>34/43</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.75% </span>
+                <span class="strong">87.8% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>71/80</span>
+                <span class='fraction'>72/82</span>
             </div>
         
             
@@ -442,7 +442,13 @@
 <a name='L377'></a><a href='#L377'>377</a>
 <a name='L378'></a><a href='#L378'>378</a>
 <a name='L379'></a><a href='#L379'>379</a>
-<a name='L380'></a><a href='#L380'>380</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -493,6 +499,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -680,7 +687,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -689,23 +696,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -767,8 +774,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -872,11 +884,12 @@ const DOCUMENT_ID_PATTERNS: readonly RegExp[] = [
  * Default quality thresholds based on The Economist standards
  */
 const DEFAULT_THRESHOLDS: QualityThresholds = {
-  minQualityScore: 0.75,
+  minQualityScore: 0.80,
   minAnalyticalDepth: 0.6,
-  minPartySources: 4,
+  minPartySources: 6,
   minCrossReferences: 3,
   requireWhyThisMatters: true,
+  requireHistoricalContext: true,
   recommendHistoricalContext: true,
   recommendInternationalComparison: false,
 };
@@ -1073,8 +1086,8 @@ function calculateQualityScore(metrics: QualityMetrics): number {
   // Analytical depth (already 0-1)
   score += metrics.analyticalDepth * weights.analyticalDepth;
 &nbsp;
-  // Party perspectives (normalize: 4+ parties = 1.0)
-  score += Math.min(metrics.partyCount / 4, 1.0) * weights.partyPerspectives;
+  // Party perspectives (normalize: 6+ parties = 1.0, reflecting 8-party Swedish system)
+  score += Math.min(metrics.partyCount / 6, 1.0) * weights.partyPerspectives;
 &nbsp;
   // Cross-references (normalize: 3+ refs = 1.0)
   score += Math.min(metrics.crossReferences / 3, 1.0) * weights.crossReferences;
@@ -1146,10 +1159,15 @@ export async function enhanceArticleQuality(
 <span class="cstat-no" title="statement not covered" >    issues.push('Missing "Why This Matters" section');</span>
   }
 &nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (options.requireHistoricalContext &amp;&amp; !metrics.hasHistoricalContext) {
+<span class="cstat-no" title="statement not covered" >    issues.push('Missing required historical context (at least one historical comparison required)');</span>
+  }
+&nbsp;
   // Separate warnings (recommendations) from blocking failures
   const warnings: string[] = [];
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (options.recommendHistoricalContext &amp;&amp; !metrics.hasHistoricalContext) {
+  // Only warn about historical context if it is not already a blocking error
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (options.recommendHistoricalContext &amp;&amp; !options.requireHistoricalContext &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >!metrics.hasHistoricalContext) {</span>
 <span class="cstat-no" title="statement not covered" >    warnings.push('Recommended: Add historical context');</span>
   }
 &nbsp;
@@ -1207,7 +1225,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-25T02:43:39.298Z
+                at 2026-02-25T16:41:10.110Z
             </div>
         <script src="../prettify.js"></script>
         <script>
