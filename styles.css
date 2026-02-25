@@ -9537,7 +9537,6 @@ body.news-page {
 .language-switcher .lang-link:focus-visible {
   background: var(--primary-color, #006633);
   color: #fff;
-  outline: none;
 }
 
 .language-switcher .lang-link:focus-visible {

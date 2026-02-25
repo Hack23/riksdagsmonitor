@@ -12,7 +12,7 @@ import { escapeHtml } from '../html-utils.js';
 import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint } from '../types/article.js';
-import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS } from './constants.js';
+import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import {
   getBreadcrumbName,
   getFooterLabel,
@@ -60,7 +60,6 @@ export function generateArticleHTML(data: ArticleData): string {
   const typeLabel: string = TYPE_LABELS[lang]?.[type] || TYPE_LABELS.en[type] || 'News';
 
   // Generate hreflang tags for all available language variants
-  const ALL_LANG_CODES: readonly Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
   const isRTL: boolean = lang === 'ar' || lang === 'he';
   const dirAttr: string = isRTL ? ' dir="rtl"' : '';
   const baseSlug: string = slug.replace(`-${lang}.html`, '');

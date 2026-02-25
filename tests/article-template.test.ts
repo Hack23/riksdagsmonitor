@@ -782,6 +782,22 @@ describe('Article Template', () => {
       const html = generateSiteFooter('xx');
       expect(html).toContain('About Riksdagsmonitor');
     });
+
+    it('should include Dashboard, LinkedIn, Security Policy, and Contact Us links', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toContain('dashboard/index.html');
+      expect(html).toContain('linkedin.com/company/hack23');
+      expect(html).toContain('Information_Security_Policy.md');
+      expect(html).toContain('mailto:info@hack23.com');
+      expect(html).toContain('Contact Us');
+    });
+
+    it('should include aria-label attributes on language grid links', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toContain('aria-label="Switch to English"');
+      expect(html).toContain('aria-label="Byt till Svenska"');
+      expect(html).toContain('aria-label="日本語に切り替え"');
+    });
   });
 
   describe('Default export includes new functions', () => {

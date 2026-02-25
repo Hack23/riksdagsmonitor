@@ -19,6 +19,8 @@ import {
   LOCALE_MAP,
   LANG_DISPLAY,
   SITE_FOOTER_LABELS,
+  ALL_LANG_CODES,
+  LANG_ARIA_LABELS,
 } from './constants.js';
 
 /**
@@ -140,11 +142,6 @@ ${watchPoints.map(point => `        <li>
 }
 
 /**
- * All 14 supported language codes in display order.
- */
-const ALL_LANG_CODES: readonly Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
-
-/**
  * Generate the article language switcher navigation bar.
  *
  * @param baseSlug - The article base slug without language suffix (e.g. "2026-02-13-evening-analysis")
@@ -164,7 +161,6 @@ export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: L
  * Generate the full site footer matching index.html structure.
  *
  * @param lang - The current language
- * @param newsIndexFilename - The news index filename for the language
  * @returns HTML footer element string
  */
 export function generateSiteFooter(lang: Language | string): string {
@@ -189,6 +185,7 @@ export function generateSiteFooter(lang: Language | string): string {
       <ul>
         <li><a href="${homePath}">Home</a></li>
         <li><a href="${newsPath}">News</a></li>
+        <li><a href="../dashboard/index.html">Dashboard</a></li>
         <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
         <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
         <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
@@ -199,8 +196,11 @@ export function generateSiteFooter(lang: Language | string): string {
       <p>${labels.builtByText}</p>
       <ul>
         <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Company LinkedIn</a></li>
         <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Public ISMS</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Security Policy</a></li>
         <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+        <li><a href="mailto:info@hack23.com">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-section">
@@ -208,8 +208,9 @@ export function generateSiteFooter(lang: Language | string): string {
       <div class="language-grid">
 ${ALL_LANG_CODES.map(l => {
   const display = LANG_DISPLAY[l];
+  const ariaLabel = LANG_ARIA_LABELS[l];
   const href: string = l === 'en' ? '../index.html' : `../index_${l}.html`;
-  return `        <a href="${href}" title="${display.name}"><span aria-hidden="true">${display.flag}</span> ${l.toUpperCase()}</a>`;
+  return `        <a href="${href}" title="${display.name}" aria-label="${ariaLabel}"><span aria-hidden="true">${display.flag}</span> ${l.toUpperCase()}</a>`;
 }).join('\n')}
       </div>
     </div>

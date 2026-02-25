@@ -185,6 +185,33 @@ export const LANG_DISPLAY: Record<Language, LangDisplay> = {
 };
 
 /**
+ * All 14 supported language codes in display order.
+ * Single source of truth — derived from LANG_DISPLAY keys.
+ */
+export const ALL_LANG_CODES: readonly Language[] = Object.keys(LANG_DISPLAY) as Language[];
+
+/**
+ * Localized aria-label text for language grid links in the footer.
+ * Matches the pattern used in index.html (e.g. "Switch to English", "Byt till Svenska").
+ */
+export const LANG_ARIA_LABELS: Record<Language, string> = {
+  en: 'Switch to English',
+  sv: 'Byt till Svenska',
+  da: 'Skift til Dansk',
+  no: 'Bytt til Norsk',
+  fi: 'Vaihda Suomeksi',
+  de: 'Wechseln zu Deutsch',
+  fr: 'Passer au Français',
+  es: 'Cambiar a Español',
+  nl: 'Schakel naar Nederlands',
+  ar: 'التبديل إلى العربية',
+  he: 'עבור לעברית',
+  ja: '日本語に切り替え',
+  ko: '한국어로 전환',
+  zh: '切换到中文'
+};
+
+/**
  * Site footer section heading translations for all 14 languages
  */
 export const SITE_FOOTER_LABELS: Record<Language, {
