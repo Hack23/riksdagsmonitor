@@ -180,7 +180,7 @@ export const INTER_PILLAR_TRANSITIONS: Readonly<Record<Language, Readonly<Record
   },
   nl: {
     pulseToWatch: 'Terwijl het parlement over deze wetgevende kwesties beraadslaagt, is ook de uitvoerende macht actief geweest.',
-    watchToOpposition: 'Terwijl de regering haar agenda voortzet, hebben de oppositiepartijen gecoördineerde reacties gemount.',
+    watchToOpposition: 'Terwijl de regering haar agenda voortzet, hebben de oppositiepartijen gecoördineerde reacties geuit.',
     oppositionToAhead: 'Deze concurrerende dynamieken bereiden het toneel voor de parlementaire werkzaamheden van morgen.',
   },
   ar: {

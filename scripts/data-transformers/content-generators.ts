@@ -603,21 +603,23 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   const leadTitle = leadDocs[0] ? (leadDocs[0].titel || leadDocs[0].title || '') : '';
 
   // Per-language title suffix (e.g. " — including "Prop. 2025/26:42"")
+  const TITLE_SUFFIX_TEMPLATES: Record<string, (t: string) => string> = {
+    sv: t => ` — inklusive "${t}"`,
+    da: t => ` — herunder "${t}"`,
+    no: t => ` — inkludert "${t}"`,
+    fi: t => ` — mukaan lukien "${t}"`,
+    de: t => ` — darunter "${t}"`,
+    fr: t => ` — notamment "${t}"`,
+    es: t => ` — incluyendo "${t}"`,
+    nl: t => ` — inclusief "${t}"`,
+    ar: t => ` — بما فيها "${t}"`,
+    he: t => ` — כולל "${t}"`,
+    ja: t => `、「${t}」を含む`,
+    ko: t => `, "${t}" 포함`,
+    zh: t => `，包括"${t}"`,
+  };
   const titleSuffix: string = leadTitle
-    ? lang === 'sv' ? ` — inklusive "${leadTitle}"`
-    : lang === 'da' ? ` — herunder "${leadTitle}"`
-    : lang === 'no' ? ` — inkludert "${leadTitle}"`
-    : lang === 'fi' ? ` — mukaan lukien "${leadTitle}"`
-    : lang === 'de' ? ` — darunter "${leadTitle}"`
-    : lang === 'fr' ? ` — notamment "${leadTitle}"`
-    : lang === 'es' ? ` — incluyendo "${leadTitle}"`
-    : lang === 'nl' ? ` — inclusief "${leadTitle}"`
-    : lang === 'ar' ? ` — بما فيها "${leadTitle}"`
-    : lang === 'he' ? ` — כולל "${leadTitle}"`
-    : lang === 'ja' ? `、「${leadTitle}」を含む`
-    : lang === 'ko' ? `, "${leadTitle}" 포함`
-    : lang === 'zh' ? `，包括"${leadTitle}"`
-    : ` — including "${leadTitle}"`
+    ? (TITLE_SUFFIX_TEMPLATES[lang] ?? (t => ` — including "${t}"`))(leadTitle)
     : '';
 
   let ledeText: string;
