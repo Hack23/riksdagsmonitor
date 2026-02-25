@@ -750,6 +750,26 @@ describe('Article Template', () => {
       expect(html).toContain('🇸🇪');
       expect(html).toContain('🇯🇵');
     });
+
+    it('should add aria-current="page" to active language link', () => {
+      const html = generateArticleLanguageSwitcher('2026-02-10-test', 'de');
+      expect(html).toContain('aria-current="page"');
+      // Only the active language should have aria-current
+      const matches = html.match(/aria-current="page"/g);
+      expect(matches).toHaveLength(1);
+      expect(html).toContain('hreflang="de" aria-current="page"');
+    });
+
+    it('should use localized aria-label for nav element', () => {
+      const htmlEn = generateArticleLanguageSwitcher('2026-02-10-test', 'en');
+      expect(htmlEn).toContain('aria-label="Language versions"');
+
+      const htmlSv = generateArticleLanguageSwitcher('2026-02-10-test', 'sv');
+      expect(htmlSv).toContain('aria-label="Språkversioner"');
+
+      const htmlAr = generateArticleLanguageSwitcher('2026-02-10-test', 'ar');
+      expect(htmlAr).toContain('aria-label="إصدارات اللغة"');
+    });
   });
 
   describe('generateSiteFooter', () => {

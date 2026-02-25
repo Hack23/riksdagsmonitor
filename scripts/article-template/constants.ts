@@ -191,6 +191,28 @@ export const LANG_DISPLAY: Record<Language, LangDisplay> = {
 export const ALL_LANG_CODES: readonly Language[] = Object.keys(LANG_DISPLAY) as Language[];
 
 /**
+ * Localized aria-label for the language switcher nav element.
+ * Used on the `<nav>` wrapping article language links so screen readers
+ * announce the landmark in the page's own language.
+ */
+export const LANG_SWITCHER_ARIA_LABELS: Record<Language, string> = {
+  en: 'Language versions',
+  sv: 'Språkversioner',
+  da: 'Sprogversioner',
+  no: 'Språkversjoner',
+  fi: 'Kieliversiot',
+  de: 'Sprachversionen',
+  fr: 'Versions linguistiques',
+  es: 'Versiones de idioma',
+  nl: 'Taalversies',
+  ar: 'إصدارات اللغة',
+  he: 'גרסאות שפה',
+  ja: '言語バージョン',
+  ko: '언어 버전',
+  zh: '语言版本'
+};
+
+/**
  * Localized aria-label text for language grid links in the footer.
  * Matches the pattern used in index.html (e.g. "Switch to English", "Byt till Svenska").
  */

@@ -21,6 +21,7 @@ import {
   SITE_FOOTER_LABELS,
   ALL_LANG_CODES,
   LANG_ARIA_LABELS,
+  LANG_SWITCHER_ARIA_LABELS,
 } from './constants.js';
 
 /**
@@ -152,9 +153,11 @@ export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: L
   const links: string = ALL_LANG_CODES.map(l => {
     const display = LANG_DISPLAY[l];
     const active: string = l === currentLang ? ' active' : '';
-    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${l}">${display.flag} ${display.name}</a>`;
+    const ariaCurrent: string = l === currentLang ? ' aria-current="page"' : '';
+    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${l}"${ariaCurrent}>${display.flag} ${display.name}</a>`;
   }).join('\n');
-  return `  <nav class="language-switcher" role="navigation" aria-label="Language versions">\n${links}\n  </nav>`;
+  const ariaLabel: string = LANG_SWITCHER_ARIA_LABELS[currentLang as Language] || LANG_SWITCHER_ARIA_LABELS.en;
+  return `  <nav class="language-switcher" role="navigation" aria-label="${ariaLabel}">\n${links}\n  </nav>`;
 }
 
 /**

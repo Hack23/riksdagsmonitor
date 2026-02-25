@@ -282,7 +282,7 @@ ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<Wat
     </div>
     
     <div class="article-nav">
-      <a href="${getNewsIndexFilename(lang)}" class="back-to-news">
+      <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" class="back-to-news">
         \u2190 ${getFooterLabel(lang, 'backToNews')}
       </a>
     </div>
