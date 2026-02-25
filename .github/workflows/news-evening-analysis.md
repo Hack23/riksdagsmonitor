@@ -97,9 +97,14 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Your mission is t
 **You have 45 minutes total.** Budget your time wisely:
 - **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, assess day's data
 - **Minutes 5–15**: Query MCP tools, gather parliamentary data for the day
-- **Minutes 15–30**: Generate evening analysis articles for all languages
-- **Minutes 30–40**: Translate, validate, commit
-- **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 15–37**: Generate evening analysis articles **one language at a time** (see Step 4)
+- **Minutes 37–42**: Validate and commit articles
+- **Minutes 42–45**: Create PR with `safeoutputs___create_pull_request`
+
+**Hard cutoffs — check elapsed before starting each new language:**
+- If elapsed >= 35 minutes → stop adding languages, commit what you have and create PR
+- If elapsed >= 40 minutes → skip validation, commit immediately, create PR
+- **NEVER hit the 45-minute timeout** — always call a safe output tool first
 
 **If you reach minute 35 without having committed**: Stop generating more content. Commit what you have and create the PR immediately. Partial content in a PR is better than a timeout with no PR.
 
@@ -709,7 +714,19 @@ Structure the analysis around these editorial pillars:
 
 ### Step 4: Generate All Language Versions
 
-For each language in the requested set:
+**CRITICAL: Process ONE language at a time.** Use this sequential loop:
+
+```
+For each language in [en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh]:
+  1. Check elapsed time — if >= 35 minutes, stop and proceed to Step 6.5
+  2. Generate article HTML for this language
+  3. Translate all Swedish content markers (data-translate="true")
+  4. Write the file to news/YYYY-MM-DD-evening-analysis-{lang}.html
+  5. Verify: ls -la news/YYYY-MM-DD-evening-analysis-{lang}.html
+  6. Continue to next language
+```
+
+For each language:
 1. Create `news/YYYY-MM-DD-evening-analysis-{lang}.html`
 2. Use proper `<html lang="{lang}">` attribute
 3. Set `dir="rtl"` for Arabic (ar) and Hebrew (he)
@@ -749,17 +766,16 @@ done
 UNTRANSLATED=0
 for article in news/*-evening-analysis-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
   if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
-    echo "❌ UNTRANSLATED: $(basename $article)"
+    echo "WARNING: UNTRANSLATED: $(basename $article)"
     UNTRANSLATED=$((UNTRANSLATED + 1))
   fi
 done
 
 if [ $UNTRANSLATED -gt 0 ]; then
-  echo "❌ $UNTRANSLATED articles contain untranslated Swedish content!"
-  echo "GO BACK and translate them. DO NOT proceed to Step 6."
-  exit 1
+  echo "WARNING: $UNTRANSLATED articles contain untranslated Swedish content — attempt to translate before PR"
+  echo "Note: Do NOT use exit 1 here — it prevents safe output tool from being called."
 else
-  echo "✅ All articles fully translated"
+  echo "OK: All articles fully translated"
 fi
 ```
 
@@ -784,19 +800,21 @@ Only commit the actual news article files: `news/{YYYY-MM-DD}-{slug}-{lang}.html
 
 ```bash
 bash scripts/validate-news-generation.sh
+VALIDATION_EXIT=$?
 
-if [ $? -ne 0 ]; then
-  echo "❌ Validation failed - DO NOT create PR"
-  echo "Review errors above and fix issues before proceeding"
-  exit 1
+if [ $VALIDATION_EXIT -ne 0 ]; then
+  echo "Validation returned errors — review above and fix what you can"
+  echo "If elapsed time >= 40 minutes, create PR with articles you have"
+else
+  echo "Validation passed - safe to create PR"
 fi
-
-echo "✅ Validation passed - safe to create PR"
 ```
 
+**Note**: Do NOT use `exit 1` after the validation call — store the exit code and decide based on elapsed time.
+
 This validation checks:
-1. ✅ Semantic HTML structure (nav/main/footer) in all 14 news indexes (blocking)
-2. ✅ No untranslated Swedish markers (data-translate) (blocking)
+1. ℹ️  Semantic HTML structure in news indexes (skipped if not present — .gitignored, generated at build time)
+2. ✅ No untranslated Swedish markers (data-translate) (blocking if articles exist)
 3. ✅ Localized taglines in non-English articles (blocking)
 4. ⚠️  BreadcrumbList localization (warning level)
 5. ⚠️  Index file freshness (< 24 hours) (warning level)
