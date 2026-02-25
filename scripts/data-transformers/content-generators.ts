@@ -738,6 +738,90 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
     }
   }
 
+  // ── Cross-type analytical sections (bring generic content closer to dedicated generators) ──
+
+  // Opposition strategy when motions with multiple parties exist
+  const motionDocs = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
+  if (motionDocs.length >= 2) {
+    const byPartyGeneric: Record<string, RawDocument[]> = {};
+    motionDocs.forEach(m => {
+      const party = normalizePartyKey(m.parti);
+      if (!byPartyGeneric[party]) byPartyGeneric[party] = [];
+      byPartyGeneric[party].push(m);
+    });
+    const partyCountGeneric = Object.keys(byPartyGeneric).filter(p => p !== 'other').length;
+    if (partyCountGeneric > 1) {
+      content += `\n    <h2>${L(lang, 'oppositionStrategy')}</h2>\n`;
+      content += generateOppositionStrategySection(motionDocs, lang);
+    }
+  }
+
+  // Committee breakdown when committee reports exist
+  const reportDocs = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
+  if (reportDocs.length >= 2) {
+    const byCommitteeGeneric: Record<string, number> = {};
+    reportDocs.forEach(r => {
+      const c = r.organ || r.committee || 'unknown';
+      byCommitteeGeneric[c] = (byCommitteeGeneric[c] || 0) + 1;
+    });
+    const knownCommittees = Object.entries(byCommitteeGeneric).filter(([c]) => c !== 'unknown');
+    if (knownCommittees.length > 0) {
+      const committeeSectionLabels: Record<string, string> = {
+        en: 'Committee Activity', sv: 'Utskottsaktivitet', da: 'Udvalgsaktivitet',
+        no: 'Komitéaktivitet', fi: 'Valiokuntatoiminta', de: 'Ausschusstätigkeit',
+        fr: 'Activité des commissions', es: 'Actividad de comités', nl: 'Commissieactiviteit',
+        ar: 'نشاط اللجان', he: 'פעילות ועדות', ja: '委員会活動', ko: '위원회 활동', zh: '委员会活动',
+      };
+      const committeeSectionLabel = committeeSectionLabels[lang as string] ?? 'Committee Activity';
+      content += `\n    <h2>${escapeHtml(committeeSectionLabel)}</h2>\n`;
+      content += `    <div class="context-box">\n      <ul>\n`;
+      knownCommittees
+        .sort(([, a], [, b]) => b - a)
+        .forEach(([c, n]) => {
+          content += `        <li>${escapeHtml(getCommitteeName(c, lang))}: ${n}</li>\n`;
+        });
+      content += `      </ul>\n    </div>\n`;
+    }
+  }
+
+  // Government priority signal when multiple propositions target the same committee
+  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
+  if (propDocs.length >= 2) {
+    const byPropCommittee: Record<string, number> = {};
+    propDocs.forEach(p => {
+      const c = p.organ || p.committee || 'unknown';
+      byPropCommittee[c] = (byPropCommittee[c] || 0) + 1;
+    });
+    const sortedPropCommittees = Object.entries(byPropCommittee)
+      .filter(([c]) => c !== 'unknown')
+      .sort(([, a], [, b]) => b - a);
+    if (sortedPropCommittees.length > 0 && sortedPropCommittees[0][1] >= 2) {
+      const [topC, topN] = sortedPropCommittees[0];
+      const topCName = getCommitteeName(topC, lang);
+      const govPriorityTemplates: Record<string, (n: string, c: number) => string> = {
+        sv: (n, c) => `${n} tar emot ${c} propositioner – detta signalerar ett prioriterat politikområde.`,
+        da: (n, c) => `${n} modtager ${c} lovforslag — et klart signal om prioritet.`,
+        no: (n, c) => `${n} mottar ${c} proposisjoner — et signal om regjeringsprioritet.`,
+        fi: (n, c) => `${n} vastaanottaa ${c} esitystä — merkki hallituksen painopistealueesta.`,
+        de: (n, c) => `${n} erhält ${c} Vorlagen — ein Signal für Regierungspriorität.`,
+        fr: (n, c) => `${n} reçoit ${c} propositions — un signal de priorité gouvernementale.`,
+        es: (n, c) => `${n} recibe ${c} proposiciones — señal de prioridad gubernamental.`,
+        nl: (n, c) => `${n} ontvangt ${c} voorstellen — signaal van overheidsprioriteit.`,
+        ar: (n, c) => `${n} يستقبل ${c} مقترحات — إشارة لأولوية حكومية.`,
+        he: (n, c) => `${n} מקבל ${c} הצעות — אות לעדיפות ממשלתית.`,
+        ja: (n, c) => `${n}は${c}件の提案を受け取り、政府の重点分野を示しています。`,
+        ko: (n, c) => `${n}이(가) ${c}건의 법안을 받아 정부 우선순위를 나타냅니다.`,
+        zh: (n, c) => `${n}收到${c}项提案——表明这是政府的优先领域。`,
+      };
+      const govTpl = govPriorityTemplates[lang as string];
+      const govNote = govTpl
+        ? govTpl(escapeHtml(topCName), topN)
+        : `${escapeHtml(topCName)} receives ${topN} propositions — signalling government priority in this policy area.`;
+      content += `\n    <h2>${L(lang, 'policyImplications')}</h2>\n`;
+      content += `    <p>${govNote}</p>\n`;
+    }
+  }
+
   // ── Narrative bridge to analytical outlook ───────────────────────────────
   const oppositionTransition = getPillarTransition(lang, 'oppositionToAhead');
   if (oppositionTransition) {
@@ -792,8 +876,27 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   // ── SECONDARY: CIA context only when it changes interpretation ───────────
   // Razor-thin majority is actionable intelligence worth flagging once, in summary
   if (cia && cia.coalitionStability.majorityMargin <= 2) {
-    content += `        <li><small class="cia-context">Historical context: the current ${cia.coalitionStability.majorityMargin}-seat majority means ` +
-      `any single defection or absence could reverse outcomes this week.</small></li>\n`;
+    const margin = cia.coalitionStability.majorityMargin;
+    const ciaContextTemplates: Record<string, (m: number) => string> = {
+      sv: m => `Historisk kontext: nuvarande ${m}-mandatsövertag innebär att en enda avhoppare kan ändra utfallet.`,
+      da: m => `Historisk kontekst: det nuværende flertal på ${m} mandater betyder, at en enkelt afhopper kan vende resultatet.`,
+      no: m => `Historisk kontekst: nåværende ${m}-mandats flertall betyr at en enkelt avhopper kan snu utfallet.`,
+      fi: m => `Historiallinen konteksti: nykyinen ${m} paikan enemmistö tarkoittaa, että yksittäinen loikkari voi kääntää tuloksen.`,
+      de: m => `Historischer Kontext: Die aktuelle ${m}-Sitze-Mehrheit bedeutet, dass ein einzelner Abweichler das Ergebnis kippen könnte.`,
+      fr: m => `Contexte historique : la majorité actuelle de ${m} sièges signifie qu'une seule défection pourrait inverser le résultat.`,
+      es: m => `Contexto histórico: la mayoría actual de ${m} escaños significa que una sola defección podría revertir el resultado.`,
+      nl: m => `Historische context: de huidige meerderheid van ${m} zetels betekent dat één enkele overloper de uitkomst kan omkeren.`,
+      ar: m => `السياق التاريخي: الأغلبية الحالية البالغة ${m} مقاعد تعني أن انشقاقاً واحداً يمكن أن يعكس النتائج.`,
+      he: m => `הקשר היסטורי: הרוב הנוכחי של ${m} מושבים משמעו שעריקות אחת יכולה להפוך את התוצאה.`,
+      ja: m => `歴史的背景：現在の${m}議席差は、1人の離反で結果が覆る可能性を意味します。`,
+      ko: m => `역사적 맥락: 현재 ${m}석 차이는 단 한 명의 이탈로도 결과가 뒤집힐 수 있음을 의미합니다.`,
+      zh: m => `历史背景：目前${m}席的多数意味着任何一位议员的倒戈都可能逆转结果。`,
+    };
+    const ciaTpl = ciaContextTemplates[lang as string];
+    const ciaText = ciaTpl
+      ? ciaTpl(margin)
+      : `Historical context: the current ${margin}-seat majority means any single defection or absence could reverse outcomes this week.`;
+    content += `        <li><small class="cia-context">${escapeHtml(ciaText)}</small></li>\n`;
   }
 
   content += `      </ul>\n    </div>\n`;

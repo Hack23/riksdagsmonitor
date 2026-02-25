@@ -1470,6 +1470,122 @@ describe('Data Transformers', () => {
     });
   });
 
+  describe('Generic content analytical sections (weekly-review/monthly-review)', () => {
+    it('should include opposition strategy section when motions from multiple parties exist', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'mot', parti: 'S', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Försvarspolitik', doktyp: 'mot', parti: 'M', url: 'https://example.com/d2', dok_id: 'D2' },
+          { titel: 'Budget 2026', doktyp: 'prop', url: 'https://example.com/d3', dok_id: 'D3' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Opposition Strategy');
+    });
+
+    it('should NOT include opposition strategy when only one party has motions', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'mot', parti: 'S', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Budget 2026', doktyp: 'prop', url: 'https://example.com/d3', dok_id: 'D3' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).not.toContain('Opposition Strategy');
+    });
+
+    it('should include committee activity section when multiple committee reports exist', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'bet', organ: 'FiU', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Försvarsfrågor', doktyp: 'bet', organ: 'FöU', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'monthly-review', 'en') as string;
+
+      expect(content).toContain('Committee Activity');
+      expect(content).toContain('Finance Committee');
+    });
+
+    it('should NOT include committee activity for single report', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'bet', organ: 'FiU', url: 'https://example.com/d1', dok_id: 'D1' }
+        ]
+      } as MockArticlePayload, 'monthly-review', 'en') as string;
+
+      expect(content).not.toContain('Committee Activity');
+    });
+
+    it('should include government priority signal when multiple propositions share a committee', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Budget 2026', doktyp: 'prop', organ: 'FiU', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Skattereform', doktyp: 'prop', organ: 'FiU', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Policy Implications');
+      expect(content).toContain('Finance Committee');
+      expect(content).toContain('propositions');
+    });
+
+    it('should translate committee activity heading for German', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Skattefrågor', doktyp: 'bet', organ: 'FiU', url: 'https://example.com/d1', dok_id: 'D1' },
+          { titel: 'Försvarsfrågor', doktyp: 'bet', organ: 'FöU', url: 'https://example.com/d2', dok_id: 'D2' }
+        ]
+      } as MockArticlePayload, 'weekly-review', 'de') as string;
+
+      expect(content).toContain('Ausschusstätigkeit');
+      expect(content).not.toContain('>Committee Activity<');
+    });
+
+    it('should localize CIA context for Swedish', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1' }
+        ],
+        ciaContext: {
+          coalitionStability: { majorityMargin: 1 },
+          votingPatterns: {}
+        }
+      } as MockArticlePayload, 'weekly-review', 'sv') as string;
+
+      expect(content).toContain('Historisk kontext');
+      expect(content).not.toContain('Historical context');
+    });
+
+    it('should keep English CIA context for English', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1' }
+        ],
+        ciaContext: {
+          coalitionStability: { majorityMargin: 2 },
+          votingPatterns: {}
+        }
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).toContain('Historical context');
+    });
+
+    it('should NOT show CIA context when margin is > 2', () => {
+      const content = generateArticleContent({
+        documents: [
+          { titel: 'Test', doktyp: 'prop', url: 'https://example.com/d1', dok_id: 'D1' }
+        ],
+        ciaContext: {
+          coalitionStability: { majorityMargin: 5 },
+          votingPatterns: {}
+        }
+      } as MockArticlePayload, 'weekly-review', 'en') as string;
+
+      expect(content).not.toContain('Historical context');
+      expect(content).not.toContain('cia-context');
+    });
+  });
+
   describe('Opposition strategy per-party analysis', () => {
     it('should name the most active party in opposition strategy section', () => {
       const content = generateArticleContent({
