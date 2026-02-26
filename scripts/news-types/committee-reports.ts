@@ -183,17 +183,12 @@ import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord
 
 /**
  * Required MCP tools for committee-reports articles
- * 
- * REQUIRED_TOOLS UPDATE (2026-02-14):
- * Initially set to 4 tools ['get_betankanden', 'search_voteringar', 'search_anforanden', 'get_propositioner']
- * to match tests/validation expectations. However, this caused runtime validation failures
- * since the implementation only calls get_betankanden (line 66).
- * 
- * Reverted to actual implementation (1 tool) to prevent validation failures.
- * When additional tools are implemented in generateCommitteeReports(), add them back here.
  */
 export const REQUIRED_TOOLS: readonly string[] = [
-  'get_betankanden'
+  'get_betankanden',
+  'search_voteringar',
+  'search_anforanden',
+  'get_propositioner'
 ];
 
 export interface TitleSet {
@@ -255,8 +250,24 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
       return { success: true, files: 0, mcpCalls };
     }
     
-    // Cross-reference with votes and debates (optional enhancement)
-    // Future: Add voteringar, anforanden, propositioner queries here
+    // Step 2: Enrich with voting patterns, speeches, and propositions (non-fatal)
+    console.log('  🔄 Fetching voting patterns, speeches, and propositions...');
+    const currentRm = '2025/26';
+    const [votes, speeches, propositions] = await Promise.all([
+      Promise.resolve()
+        .then(() => client.fetchVotingRecords({ rm: currentRm, limit: 20 }) as Promise<unknown[]>)
+        .catch((err: unknown) => { console.error('  ⚠️ Failed to fetch voting records:', (err as Error)?.message ?? String(err)); return [] as unknown[]; }),
+      Promise.resolve()
+        .then(() => client.searchSpeeches({ rm: currentRm, limit: 15 }) as Promise<unknown[]>)
+        .catch((err: unknown) => { console.error('  ⚠️ Failed to fetch speeches:', (err as Error)?.message ?? String(err)); return [] as unknown[]; }),
+      Promise.resolve()
+        .then(() => client.fetchPropositions(20) as Promise<unknown[]>)
+        .catch((err: unknown) => { console.error('  ⚠️ Failed to fetch propositions:', (err as Error)?.message ?? String(err)); return [] as unknown[]; }),
+    ]);
+    mcpCalls.push({ tool: 'search_voteringar', result: votes });
+    mcpCalls.push({ tool: 'search_anforanden', result: speeches });
+    mcpCalls.push({ tool: 'get_propositioner', result: propositions });
+    console.log(`  🗳 Found ${votes.length} voting records, ${speeches.length} speeches, ${(propositions as unknown[]).length} propositions`);
     
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-committee-reports`;
@@ -265,11 +276,15 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
       
-      const content: string = generateArticleContent({ reports }, 'committee-reports', lang);
+      const content: string = generateArticleContent(
+        { reports, votes, speeches, propositions: propositions as RawDocument[] },
+        'committee-reports',
+        lang
+      );
       const watchPoints = extractWatchPoints({ reports }, lang);
       const metadata = generateMetadata({ reports }, 'committee-reports', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_betankanden']);
+      const sources: string[] = generateSources(['get_betankanden', 'search_voteringar', 'search_anforanden', 'get_propositioner']);
       
       const titles: TitleSet = getTitles(lang, reports.length, reports);
       
@@ -310,7 +325,7 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
       mcpCalls,
       crossReferences: {
         event: `${reports.length} reports`,
-        sources: ['betankanden']
+        sources: ['betankanden', 'voteringar', 'anforanden', 'propositioner']
       }
     };
     
