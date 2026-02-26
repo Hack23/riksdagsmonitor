@@ -2326,7 +2326,7 @@ Following [Hack23 AB Workshop Framework](https://github.com/Hack23/ISMS-PUBLIC/b
 
 ## 🌐 Current Threat Landscape Integration
 
-Per [ENISA Threat Landscape 2024](https://www.enisa.europa.eu/publications/enisa-threat-landscape-2024) and [Hack23 Threat Modeling Policy § 3.1](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md), we integrate current cyber threat trends into Riksdagsmonitor analysis.
+Per [ENISA Threat Landscape 2024](https://www.enisa.europa.eu/publications/enisa-threat-landscape-2024) and [Hack23 Threat Modeling Policy § 3.1](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md#current-threat-landscape), we integrate current cyber threat trends into Riksdagsmonitor analysis.
 
 ### **🇪🇺 ENISA Threat Landscape 2024 — Priority Threat Category Mapping**
 
