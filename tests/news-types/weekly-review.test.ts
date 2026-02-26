@@ -25,6 +25,10 @@ interface MockMCPClientShape {
   searchDocuments: Mock<(params: Record<string, unknown>) => Promise<SearchDocument[]>>;
   fetchDocumentDetails: Mock<(dokId: string, includeFullText?: boolean) => Promise<Record<string, unknown>>>;
   searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchVotingRecords: Mock<(filters: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchCommitteeReports: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
+  fetchPropositions: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
+  fetchMotions: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -61,6 +65,32 @@ interface WeeklyReviewModule {
     writeArticle?: (html: string, filename: string) => void;
   }) => Promise<WeeklyReviewGenerationResult>;
   readonly validateWeeklyReview: (article: ArticleInput) => WeeklyReviewValidationResult;
+  readonly analyzeCoalitionStress: (
+    votingRecords: Array<{ parti?: string; rost?: string; bet?: string; punkt?: string }>,
+    ciaContext: Record<string, unknown>
+  ) => {
+    governmentWins: number;
+    governmentLosses: number;
+    crossPartyVotes: number;
+    defections: number;
+    totalVotes: number;
+    riskIndex: { score: number; level: string; summary: string };
+    anomalies: Array<{ type: string; severity: string; description: string }>;
+  };
+  readonly calculateWeekOverWeekMetrics: (
+    documents: unknown[],
+    speeches: unknown[],
+    votingRecords: unknown[],
+    ciaContext: Record<string, unknown>
+  ) => {
+    currentDocuments: number;
+    currentSpeeches: number;
+    currentVotes: number;
+    activityChange: string;
+    trendComparison: { overallDirection: string; insights: string[] };
+  };
+  readonly generateCoalitionDynamicsSection: (stress: Record<string, unknown>, lang: Language) => string;
+  readonly generateWeekOverWeekSection: (metrics: Record<string, unknown>, lang: Language) => string;
 }
 
 // Mock MCP client
@@ -75,6 +105,10 @@ const { mockClientInstance, mockDocuments, MockMCPClient } = vi.hoisted(() => {
     searchDocuments: vi.fn().mockResolvedValue(mockDocuments) as MockMCPClientShape['searchDocuments'],
     fetchDocumentDetails: vi.fn().mockResolvedValue({ summary: 'Full document text', fullText: 'Complete analysis of the document.' }) as MockMCPClientShape['fetchDocumentDetails'],
     searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
+    fetchVotingRecords: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchVotingRecords'],
+    fetchCommitteeReports: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchCommitteeReports'],
+    fetchPropositions: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchPropositions'],
+    fetchMotions: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchMotions'],
   };
 
   function MockMCPClient(): MockMCPClientShape {
@@ -100,6 +134,10 @@ describe('Weekly Review Article Generation', () => {
     mockClientInstance.searchDocuments.mockResolvedValue(mockDocuments);
     mockClientInstance.fetchDocumentDetails.mockResolvedValue({ summary: 'Full document text', fullText: 'Complete analysis.' });
     mockClientInstance.searchSpeeches.mockResolvedValue([]);
+    mockClientInstance.fetchVotingRecords.mockResolvedValue([]);
+    mockClientInstance.fetchCommitteeReports.mockResolvedValue([]);
+    mockClientInstance.fetchPropositions.mockResolvedValue([]);
+    mockClientInstance.fetchMotions.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -115,6 +153,10 @@ describe('Weekly Review Article Generation', () => {
 
     it('should require search_dokument tool', () => {
       expect(weeklyReviewModule.REQUIRED_TOOLS).toContain('search_dokument');
+    });
+
+    it('should require search_voteringar tool', () => {
+      expect(weeklyReviewModule.REQUIRED_TOOLS).toContain('search_voteringar');
     });
   });
 
@@ -226,6 +268,200 @@ describe('Weekly Review Article Generation', () => {
 
       expect(result.success).toBe(true);
       expect(result.articles.length).toBe(1);
+    });
+  });
+
+  describe('Coalition Stress Analysis', () => {
+    it('should export analyzeCoalitionStress function', () => {
+      expect(weeklyReviewModule.analyzeCoalitionStress).toBeDefined();
+      expect(typeof weeklyReviewModule.analyzeCoalitionStress).toBe('function');
+    });
+
+    it('should return zero counts for empty voting records', () => {
+      const result = weeklyReviewModule.analyzeCoalitionStress([], {
+        coalitionStability: { stabilityScore: 75, riskLevel: 'low', defectionProbability: 0.1, majorityMargin: 5 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 96,
+      } as unknown as Record<string, unknown>);
+
+      expect(result.governmentWins).toBe(0);
+      expect(result.governmentLosses).toBe(0);
+      expect(result.totalVotes).toBe(0);
+      expect(result.riskIndex).toBeDefined();
+      expect(result.riskIndex.score).toBeGreaterThanOrEqual(0);
+      expect(result.anomalies).toBeDefined();
+    });
+
+    it('should detect government wins from voting records', () => {
+      const votingRecords = [
+        { parti: 'M', rost: 'Ja', bet: 'AU10', punkt: '1' },
+        { parti: 'KD', rost: 'Ja', bet: 'AU10', punkt: '1' },
+        { parti: 'L', rost: 'Ja', bet: 'AU10', punkt: '1' },
+        { parti: 'S', rost: 'Nej', bet: 'AU10', punkt: '1' },
+        { parti: 'V', rost: 'Nej', bet: 'AU10', punkt: '1' },
+      ];
+
+      const result = weeklyReviewModule.analyzeCoalitionStress(votingRecords, {
+        coalitionStability: { stabilityScore: 75, riskLevel: 'low', defectionProbability: 0.1, majorityMargin: 5 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 96,
+      } as unknown as Record<string, unknown>);
+
+      expect(result.governmentWins).toBe(1);
+      expect(result.governmentLosses).toBe(0);
+      expect(result.totalVotes).toBe(1);
+    });
+
+    it('should detect cross-party votes', () => {
+      const votingRecords = [
+        { parti: 'M', rost: 'Ja', bet: 'FiU20', punkt: '1' },
+        { parti: 'S', rost: 'Ja', bet: 'FiU20', punkt: '1' },
+      ];
+
+      const result = weeklyReviewModule.analyzeCoalitionStress(votingRecords, {
+        coalitionStability: { stabilityScore: 70, riskLevel: 'low', defectionProbability: 0.15, majorityMargin: 4 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 96,
+      } as unknown as Record<string, unknown>);
+
+      expect(result.crossPartyVotes).toBeGreaterThanOrEqual(1);
+    });
+
+    it('should include voting records call in mcpCalls', async () => {
+      mockClientInstance.fetchVotingRecords.mockResolvedValue([
+        { parti: 'M', rost: 'Ja', bet: 'AU10', punkt: '1' },
+      ]);
+
+      const result = await weeklyReviewModule.generateWeeklyReview({ languages: ['en'] });
+
+      expect(result.mcpCalls!.some((c: MCPCallRecord) => c.tool === 'search_voteringar')).toBe(true);
+    });
+  });
+
+  describe('Week-over-Week Metrics', () => {
+    it('should export calculateWeekOverWeekMetrics function', () => {
+      expect(weeklyReviewModule.calculateWeekOverWeekMetrics).toBeDefined();
+      expect(typeof weeklyReviewModule.calculateWeekOverWeekMetrics).toBe('function');
+    });
+
+    it('should return current activity counts', () => {
+      const docs = [{ id: '1' }, { id: '2' }] as unknown[];
+      const speeches = [{ id: 'a' }];
+      const votes = [{ parti: 'M', rost: 'Ja' }];
+      const cia = {
+        coalitionStability: { stabilityScore: 75, riskLevel: 'low', defectionProbability: 0.1, majorityMargin: 5 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 96,
+      } as unknown as Record<string, unknown>;
+
+      const result = weeklyReviewModule.calculateWeekOverWeekMetrics(docs, speeches, votes, cia);
+
+      expect(result.currentDocuments).toBe(2);
+      expect(result.currentSpeeches).toBe(1);
+      expect(result.currentVotes).toBe(1);
+      expect(['increasing', 'stable', 'declining']).toContain(result.activityChange);
+      expect(result.trendComparison).toBeDefined();
+      expect(Array.isArray(result.trendComparison.insights)).toBe(true);
+    });
+  });
+
+  describe('Template Sections', () => {
+    it('should export generateCoalitionDynamicsSection function', () => {
+      expect(weeklyReviewModule.generateCoalitionDynamicsSection).toBeDefined();
+    });
+
+    it('should export generateWeekOverWeekSection function', () => {
+      expect(weeklyReviewModule.generateWeekOverWeekSection).toBeDefined();
+    });
+
+    it('should generate Coalition Dynamics section in English', () => {
+      const stress = {
+        governmentWins: 5, governmentLosses: 1, crossPartyVotes: 2,
+        defections: 0, totalVotes: 6,
+        riskIndex: { score: 30, level: 'LOW', summary: 'Coalition is stable.' },
+        anomalies: [],
+      };
+      const html = weeklyReviewModule.generateCoalitionDynamicsSection(
+        stress as unknown as Record<string, unknown>, 'en'
+      );
+      expect(html).toContain('Coalition Dynamics');
+      expect(html).toContain('30');
+    });
+
+    it('should generate Coalition Dynamics section in Swedish', () => {
+      const stress = {
+        governmentWins: 3, governmentLosses: 0, crossPartyVotes: 0,
+        defections: 1, totalVotes: 3,
+        riskIndex: { score: 45, level: 'MEDIUM', summary: 'Moderate risk.' },
+        anomalies: [],
+      };
+      const html = weeklyReviewModule.generateCoalitionDynamicsSection(
+        stress as unknown as Record<string, unknown>, 'sv'
+      );
+      expect(html).toContain('Koalitionsdynamik');
+    });
+
+    it('should generate Coalition Dynamics section for all 14 languages', () => {
+      const stress = {
+        governmentWins: 2, governmentLosses: 0, crossPartyVotes: 0,
+        defections: 0, totalVotes: 2,
+        riskIndex: { score: 20, level: 'LOW', summary: 'Low risk.' },
+        anomalies: [],
+      };
+      const langs: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+      for (const lang of langs) {
+        const html = weeklyReviewModule.generateCoalitionDynamicsSection(
+          stress as unknown as Record<string, unknown>, lang
+        );
+        expect(html).toContain('<h2>');
+        expect(html).toContain('20');
+      }
+    });
+
+    it('should generate Week-over-Week section in English', () => {
+      const metrics = {
+        currentDocuments: 10, currentSpeeches: 25, currentVotes: 8,
+        activityChange: 'stable',
+        trendComparison: { overallDirection: 'STABLE', insights: ['Coalition stable.'] },
+      };
+      const html = weeklyReviewModule.generateWeekOverWeekSection(
+        metrics as unknown as Record<string, unknown>, 'en'
+      );
+      expect(html).toContain('Week-over-Week Metrics');
+      expect(html).toContain('10');
+      expect(html).toContain('Coalition stable.');
+    });
+
+    it('should generate Week-over-Week section for all 14 languages', () => {
+      const metrics = {
+        currentDocuments: 5, currentSpeeches: 10, currentVotes: 3,
+        activityChange: 'increasing',
+        trendComparison: { overallDirection: 'IMPROVING', insights: ['Improving trend.'] },
+      };
+      const langs: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+      for (const lang of langs) {
+        const html = weeklyReviewModule.generateWeekOverWeekSection(
+          metrics as unknown as Record<string, unknown>, lang
+        );
+        expect(html).toContain('<h2>');
+        expect(html).toContain('5');
+      }
+    });
+
+    it('should include Coalition Dynamics and Week-over-Week in generated articles', async () => {
+      const result = await weeklyReviewModule.generateWeeklyReview({ languages: ['en', 'sv'] });
+
+      const enArticle = result.articles.find((a: GeneratedArticle) => a.lang === 'en');
+      const svArticle = result.articles.find((a: GeneratedArticle) => a.lang === 'sv');
+
+      expect(enArticle!.html).toContain('Coalition Dynamics');
+      expect(enArticle!.html).toContain('Week-over-Week Metrics');
+      expect(svArticle!.html).toContain('Koalitionsdynamik');
+      expect(svArticle!.html).toContain('Vecka-för-vecka-mätvärden');
     });
   });
 });

@@ -35,8 +35,28 @@ import {
   type CIAContext
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
+import { escapeHtml } from '../html-utils.js';
+import {
+  calculateCoalitionRiskIndex,
+  detectAnomalousPatterns,
+  generateTrendComparison,
+} from '../data-transformers/risk-analysis.js';
+import type {
+  CoalitionRiskIndex,
+  AnomalyFlag,
+  TrendComparison,
+} from '../data-transformers/risk-analysis.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
+
+/** Swedish government coalition parties (current Tidö coalition) */
+const GOVERNMENT_PARTIES = new Set(['M', 'KD', 'L', 'SD']);
+
+/** Swedish opposition parties */
+const OPPOSITION_PARTIES = new Set(['S', 'V', 'MP', 'C']);
+
+/** Allowlist of severity values for anomaly CSS class injection */
+const VALID_SEVERITIES = new Set(['low', 'medium', 'high', 'critical']);
 
 /**
  * Required MCP tools for weekly-review articles
@@ -48,6 +68,7 @@ export const REQUIRED_TOOLS: readonly string[] = [
   'get_betankanden',
   'get_propositioner',
   'get_motioner',
+  'search_voteringar',
 ];
 
 export interface TitleSet {
@@ -73,6 +94,43 @@ export interface GenerationOptions {
   languages?: Language[];
   lookbackDays?: number;
   writeArticle?: ((html: string, filename: string) => Promise<void | boolean>) | null;
+}
+
+/** Shape of a single voting record returned by search_voteringar */
+export interface VotingRecord {
+  parti?: string;
+  /** Ja | Nej | Avstår | Frånvarande */
+  rost?: string;
+  bet?: string;
+  punkt?: string;
+  [key: string]: unknown;
+}
+
+/** Coalition stress analysis result derived from voting records */
+export interface CoalitionStressResult {
+  /** Number of vote points where the government majority (Ja) won */
+  governmentWins: number;
+  /** Number of vote points where the government majority lost */
+  governmentLosses: number;
+  /** Vote points where opposition parties voted with the government */
+  crossPartyVotes: number;
+  /** Vote points with internal government-bloc defections */
+  defections: number;
+  /** Composite risk index from risk-analysis.ts */
+  riskIndex: CoalitionRiskIndex;
+  /** Detected anomaly flags from risk-analysis.ts */
+  anomalies: AnomalyFlag[];
+  /** Total distinct vote-points analysed */
+  totalVotes: number;
+}
+
+/** Week-over-week comparative metrics */
+export interface WeekOverWeekMetrics {
+  currentDocuments: number;
+  currentSpeeches: number;
+  currentVotes: number;
+  trendComparison: TrendComparison;
+  activityChange: 'increasing' | 'stable' | 'declining';
 }
 
 /**
@@ -371,6 +429,281 @@ export function attachSpeechesToDocuments(
 }
 
 /**
+ * Analyse coalition stress from a list of voting records.
+ *
+ * Groups records by vote-point (bet + punkt), then counts:
+ * - Government wins/losses (M/KD/L/SD bloc)
+ * - Cross-party votes (opposition voting with government)
+ * - Internal defections (government parties split)
+ *
+ * Also integrates risk scoring via calculateCoalitionRiskIndex and
+ * detectAnomalousPatterns from scripts/data-transformers/risk-analysis.ts.
+ *
+ * @param votingRecords - Raw records from search_voteringar
+ * @param ciaContext    - CIA intelligence context for risk scoring
+ */
+export function analyzeCoalitionStress(
+  votingRecords: VotingRecord[],
+  ciaContext: CIAContext,
+): CoalitionStressResult {
+  const GOV_PARTIES = GOVERNMENT_PARTIES;
+  const OPP_PARTIES = OPPOSITION_PARTIES;
+
+  // Group records by vote-point
+  const byPoint = new Map<string, VotingRecord[]>();
+  for (const record of votingRecords) {
+    const key = `${record.bet ?? 'unknown'}-${record.punkt ?? '0'}`;
+    if (!byPoint.has(key)) byPoint.set(key, []);
+    byPoint.get(key)!.push(record);
+  }
+
+  let governmentWins = 0;
+  let governmentLosses = 0;
+  let crossPartyVotes = 0;
+  let defections = 0;
+
+  for (const records of byPoint.values()) {
+    const totalYes = records.filter(r => r.rost === 'Ja').length;
+    const totalNo  = records.filter(r => r.rost === 'Nej').length;
+
+    // Government wins when Ja majority
+    if (totalYes > totalNo) { governmentWins++; }
+    else if (totalNo > totalYes) { governmentLosses++; }
+
+    const govYes = records.filter(r => GOV_PARTIES.has(r.parti ?? '') && r.rost === 'Ja').length;
+    const govNo  = records.filter(r => GOV_PARTIES.has(r.parti ?? '') && r.rost === 'Nej').length;
+    const oppYes = records.filter(r => OPP_PARTIES.has(r.parti ?? '') && r.rost === 'Ja').length;
+
+    // Cross-party: opposition voting with government
+    if (govYes > 0 && oppYes > 0) crossPartyVotes++;
+    // Defection: government bloc members split
+    if (govYes > 0 && govNo > 0) defections++;
+  }
+
+  return {
+    governmentWins,
+    governmentLosses,
+    crossPartyVotes,
+    defections,
+    riskIndex: calculateCoalitionRiskIndex(ciaContext),
+    anomalies: detectAnomalousPatterns(ciaContext),
+    totalVotes: byPoint.size,
+  };
+}
+
+/**
+ * Calculate week-over-week comparative metrics.
+ *
+ * Combines current-week activity counts with the trend comparison
+ * from generateTrendComparison (risk-analysis.ts) to produce a
+ * directional activity assessment.
+ *
+ * @param documents     - Documents collected this week
+ * @param speeches      - Speeches collected this week
+ * @param votingRecords - Voting records collected this week
+ * @param ciaContext    - CIA intelligence context for trend analysis
+ */
+export function calculateWeekOverWeekMetrics(
+  documents: RawDocument[],
+  speeches: unknown[],
+  votingRecords: VotingRecord[],
+  ciaContext: CIAContext,
+): WeekOverWeekMetrics {
+  const trendComparison = generateTrendComparison(ciaContext);
+
+  const activityChange: WeekOverWeekMetrics['activityChange'] =
+    trendComparison.overallDirection === 'IMPROVING'
+      ? 'increasing'
+      : trendComparison.overallDirection === 'DECLINING' || trendComparison.overallDirection === 'VOLATILE'
+      ? 'declining'
+      : 'stable';
+
+  return {
+    currentDocuments: documents.length,
+    currentSpeeches: speeches.length,
+    currentVotes: votingRecords.length,
+    trendComparison,
+    activityChange,
+  };
+}
+
+/** Coalition Dynamics section labels for all 14 languages */
+const COALITION_DYNAMICS_LABELS: Readonly<Record<Language, string>> = {
+  en: 'Coalition Dynamics',
+  sv: 'Koalitionsdynamik',
+  da: 'Koalitionsdynamik',
+  no: 'Koalisjonsdynamikk',
+  fi: 'Koalitionidynamiikka',
+  de: 'Koalitionsdynamik',
+  fr: 'Dynamique de coalition',
+  es: 'Dinámica de coalición',
+  nl: 'Coalitiedynamiek',
+  ar: 'ديناميكيات الائتلاف',
+  he: 'דינמיקת קואליציה',
+  ja: '連立の動向',
+  ko: '연립 동향',
+  zh: '联合政府动态',
+};
+
+/** Risk level labels for all 14 languages */
+const RISK_LEVEL_LABELS: Readonly<Record<Language, Record<string, string>>> = {
+  en: { LOW: 'Low', MEDIUM: 'Moderate', HIGH: 'High', CRITICAL: 'Critical' },
+  sv: { LOW: 'Låg', MEDIUM: 'Måttlig', HIGH: 'Hög', CRITICAL: 'Kritisk' },
+  da: { LOW: 'Lav', MEDIUM: 'Moderat', HIGH: 'Høj', CRITICAL: 'Kritisk' },
+  no: { LOW: 'Lav', MEDIUM: 'Moderat', HIGH: 'Høy', CRITICAL: 'Kritisk' },
+  fi: { LOW: 'Matala', MEDIUM: 'Kohtalainen', HIGH: 'Korkea', CRITICAL: 'Kriittinen' },
+  de: { LOW: 'Gering', MEDIUM: 'Moderat', HIGH: 'Hoch', CRITICAL: 'Kritisch' },
+  fr: { LOW: 'Faible', MEDIUM: 'Modéré', HIGH: 'Élevé', CRITICAL: 'Critique' },
+  es: { LOW: 'Bajo', MEDIUM: 'Moderado', HIGH: 'Alto', CRITICAL: 'Crítico' },
+  nl: { LOW: 'Laag', MEDIUM: 'Matig', HIGH: 'Hoog', CRITICAL: 'Kritiek' },
+  ar: { LOW: 'منخفض', MEDIUM: 'معتدل', HIGH: 'مرتفع', CRITICAL: 'حرج' },
+  he: { LOW: 'נמוך', MEDIUM: 'בינוני', HIGH: 'גבוה', CRITICAL: 'קריטי' },
+  ja: { LOW: '低', MEDIUM: '中程度', HIGH: '高', CRITICAL: '危機的' },
+  ko: { LOW: '낮음', MEDIUM: '보통', HIGH: '높음', CRITICAL: '위급' },
+  zh: { LOW: '低', MEDIUM: '中等', HIGH: '高', CRITICAL: '危急' },
+};
+
+/**
+ * Generate the "Coalition Dynamics" HTML section for the given language.
+ * Shows risk index, government wins/losses, cross-party votes, defections,
+ * and any anomaly flags detected this week.
+ */
+export function generateCoalitionDynamicsSection(
+  stress: CoalitionStressResult,
+  lang: Language,
+): string {
+  const heading = COALITION_DYNAMICS_LABELS[lang] ?? COALITION_DYNAMICS_LABELS.en;
+  const riskLabels = RISK_LEVEL_LABELS[lang] ?? RISK_LEVEL_LABELS.en;
+  const riskLevelLabel = riskLabels[stress.riskIndex.level] ?? stress.riskIndex.level;
+
+  const statsLabels: Record<Language, {
+    score: string; level: string; wins: string; losses: string;
+    cross: string; defections: string; votes: string;
+  }> = {
+    en: { score: 'Risk score', level: 'Risk level', wins: 'Government wins', losses: 'Government losses', cross: 'Cross-party votes', defections: 'Internal defections', votes: 'Vote points analysed' },
+    sv: { score: 'Riskpoäng', level: 'Risknivå', wins: 'Regeringsvinster', losses: 'Regeringsförluster', cross: 'Partiöverskridande röster', defections: 'Interna avhopp', votes: 'Analyserade röstpunkter' },
+    da: { score: 'Risikoscore', level: 'Risikoniveau', wins: 'Regeringsgevinster', losses: 'Regeringstab', cross: 'Tværpartilige stemmer', defections: 'Interne afhopp', votes: 'Analyserede afstemningspunkter' },
+    no: { score: 'Risikoscore', level: 'Risikonivå', wins: 'Regjeringsseire', losses: 'Regjeringstap', cross: 'Tverrpartistemmer', defections: 'Interne avhopp', votes: 'Analyserte voteringspunkter' },
+    fi: { score: 'Riskipisteet', level: 'Riskitaso', wins: 'Hallituksen voitot', losses: 'Hallituksen tappiot', cross: 'Puoluerajat ylittävät äänet', defections: 'Sisäiset loikkaukset', votes: 'Analysoidut äänestyskohteet' },
+    de: { score: 'Risikowert', level: 'Risikoniveau', wins: 'Regierungssiege', losses: 'Regierungsniederlagen', cross: 'Überparteiliche Abstimmungen', defections: 'Interne Abweichungen', votes: 'Analysierte Abstimmungspunkte' },
+    fr: { score: 'Score de risque', level: 'Niveau de risque', wins: 'Victoires gouvernementales', losses: 'Défaites gouvernementales', cross: 'Votes transpartisans', defections: 'Défections internes', votes: 'Points de vote analysés' },
+    es: { score: 'Puntuación de riesgo', level: 'Nivel de riesgo', wins: 'Victorias gubernamentales', losses: 'Derrotas gubernamentales', cross: 'Votos transversales', defections: 'Defecciones internas', votes: 'Puntos de votación analizados' },
+    nl: { score: 'Risicoscore', level: 'Risiconiveau', wins: 'Regeringsoverwinningen', losses: 'Regeringsnederlagen', cross: 'Stemmen over partijgrenzen', defections: 'Interne defecties', votes: 'Geanalyseerde stemmentpunten' },
+    ar: { score: 'درجة الخطر', level: 'مستوى الخطر', wins: 'انتصارات الحكومة', losses: 'خسائر الحكومة', cross: 'تصويتات متعددة الأحزاب', defections: 'الانشقاقات الداخلية', votes: 'نقاط التصويت المحللة' },
+    he: { score: 'ציון סיכון', level: 'רמת סיכון', wins: 'ניצחונות ממשלתיים', losses: 'הפסדים ממשלתיים', cross: 'הצבעות חוצות-מפלגות', defections: 'עריקות פנימיות', votes: 'נקודות הצבעה שנותחו' },
+    ja: { score: 'リスクスコア', level: 'リスクレベル', wins: '政府の勝利', losses: '政府の敗北', cross: '超党派投票', defections: '内部離反', votes: '分析された投票点' },
+    ko: { score: '위험 점수', level: '위험 수준', wins: '정부 승리', losses: '정부 패배', cross: '초당파 표결', defections: '내부 이탈', votes: '분석된 표결 항목' },
+    zh: { score: '风险评分', level: '风险等级', wins: '政府获胜', losses: '政府失败', cross: '跨党派投票', defections: '内部叛离', votes: '分析的表决点' },
+  };
+
+  const lbl = statsLabels[lang] ?? statsLabels.en;
+
+  let html = `\n    <h2>${escapeHtml(heading)}</h2>\n`;
+  html += `    <div class="context-box">\n`;
+  html += `      <p>${escapeHtml(stress.riskIndex.summary)}</p>\n`;
+  html += `      <ul>\n`;
+  html += `        <li><strong>${escapeHtml(lbl.score)}:</strong> ${stress.riskIndex.score}/100</li>\n`;
+  html += `        <li><strong>${escapeHtml(lbl.level)}:</strong> ${escapeHtml(riskLevelLabel)}</li>\n`;
+
+  if (stress.totalVotes > 0) {
+    html += `        <li><strong>${escapeHtml(lbl.votes)}:</strong> ${stress.totalVotes}</li>\n`;
+    html += `        <li><strong>${escapeHtml(lbl.wins)}:</strong> ${stress.governmentWins}</li>\n`;
+    html += `        <li><strong>${escapeHtml(lbl.losses)}:</strong> ${stress.governmentLosses}</li>\n`;
+    if (stress.crossPartyVotes > 0) {
+      html += `        <li><strong>${escapeHtml(lbl.cross)}:</strong> ${stress.crossPartyVotes}</li>\n`;
+    }
+    if (stress.defections > 0) {
+      html += `        <li><strong>${escapeHtml(lbl.defections)}:</strong> ${stress.defections}</li>\n`;
+    }
+  }
+
+  html += `      </ul>\n`;
+
+  if (stress.anomalies.length > 0) {
+    html += `      <ul>\n`;
+    for (const anomaly of stress.anomalies.slice(0, 3)) {
+      html += `        <li class="anomaly-flag severity-${VALID_SEVERITIES.has(anomaly.severity.toLowerCase()) ? anomaly.severity.toLowerCase() : 'low'}">${escapeHtml(anomaly.description)}</li>\n`;
+    }
+    html += `      </ul>\n`;
+  }
+
+  html += `    </div>\n`;
+  return html;
+}
+
+/** Week-over-Week Metrics section labels for all 14 languages */
+const WEEK_OVER_WEEK_LABELS: Readonly<Record<Language, string>> = {
+  en: 'Week-over-Week Metrics',
+  sv: 'Vecka-för-vecka-mätvärden',
+  da: 'Uge-for-uge-målinger',
+  no: 'Uke-for-uke-metrikker',
+  fi: 'Viikko viikolta -mittarit',
+  de: 'Woche-für-Woche-Kennzahlen',
+  fr: 'Métriques semaine après semaine',
+  es: 'Métricas semana a semana',
+  nl: 'Week-over-week metrics',
+  ar: 'مقاييس الأسبوع بالأسبوع',
+  he: 'מדדים שבוע אחרי שבוע',
+  ja: '週次比較指標',
+  ko: '주간 비교 지표',
+  zh: '周环比指标',
+};
+
+/**
+ * Generate the "Week-over-Week Metrics" HTML section for the given language.
+ * Shows current-week activity counts, trend comparison from risk-analysis.ts,
+ * and directional activity change.
+ */
+export function generateWeekOverWeekSection(
+  metrics: WeekOverWeekMetrics,
+  lang: Language,
+): string {
+  const heading = WEEK_OVER_WEEK_LABELS[lang] ?? WEEK_OVER_WEEK_LABELS.en;
+
+  const activityLabels: Record<Language, { documents: string; speeches: string; votes: string; trend: string; direction: string; insights: string; increasing: string; stable: string; declining: string }> = {
+    en: { documents: 'Documents', speeches: 'Speeches', votes: 'Voting records', trend: 'Stability trend', direction: 'Activity direction', insights: 'Trend insights', increasing: 'Increasing ↑', stable: 'Stable →', declining: 'Declining ↓' },
+    sv: { documents: 'Dokument', speeches: 'Anföranden', votes: 'Voteringsprotokoll', trend: 'Stabilitetstrend', direction: 'Aktivitetsutveckling', insights: 'Trendinsikter', increasing: 'Ökande ↑', stable: 'Stabilt →', declining: 'Minskande ↓' },
+    da: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Afstemningsprotokoller', trend: 'Stabilitetstrend', direction: 'Aktivitetsretning', insights: 'Trendindsigter', increasing: 'Stigende ↑', stable: 'Stabilt →', declining: 'Faldende ↓' },
+    no: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Voteringsprotokoller', trend: 'Stabilitetstrend', direction: 'Aktivitetsretning', insights: 'Trendinnsikter', increasing: 'Økende ↑', stable: 'Stabilt →', declining: 'Synkende ↓' },
+    fi: { documents: 'Asiakirjat', speeches: 'Puheenvuorot', votes: 'Äänestystulokset', trend: 'Vakaustrendit', direction: 'Toimintasuunta', insights: 'Trendianalyysit', increasing: 'Kasvava ↑', stable: 'Vakaa →', declining: 'Laskeva ↓' },
+    de: { documents: 'Dokumente', speeches: 'Reden', votes: 'Abstimmungsprotokolle', trend: 'Stabilitätstrend', direction: 'Aktivitätsentwicklung', insights: 'Trendeinblicke', increasing: 'Zunehmend ↑', stable: 'Stabil →', declining: 'Abnehmend ↓' },
+    fr: { documents: 'Documents', speeches: 'Discours', votes: 'Relevés de vote', trend: 'Tendance de stabilité', direction: 'Direction de l\'activité', insights: 'Aperçus des tendances', increasing: 'En hausse ↑', stable: 'Stable →', declining: 'En baisse ↓' },
+    es: { documents: 'Documentos', speeches: 'Discursos', votes: 'Registros de votación', trend: 'Tendencia de estabilidad', direction: 'Dirección de actividad', insights: 'Perspectivas de tendencia', increasing: 'En aumento ↑', stable: 'Estable →', declining: 'En descenso ↓' },
+    nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemregistraties', trend: 'Stabiliteitstrend', direction: 'Activiteitsrichting', insights: 'Trendinzichten', increasing: 'Toenemend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
+    ar: { documents: 'وثائق', speeches: 'خطب', votes: 'سجلات التصويت', trend: 'اتجاه الاستقرار', direction: 'اتجاه النشاط', insights: 'رؤى الاتجاه', increasing: 'متزايد ↑', stable: 'مستقر →', declining: 'متناقص ↓' },
+    he: { documents: 'מסמכים', speeches: 'נאומים', votes: 'פרוטוקולי הצבעה', trend: 'מגמת יציבות', direction: 'כיוון הפעילות', insights: 'תובנות מגמה', increasing: 'עולה ↑', stable: 'יציב →', declining: 'יורד ↓' },
+    ja: { documents: '文書', speeches: '演説', votes: '投票記録', trend: '安定性トレンド', direction: '活動方向', insights: 'トレンド考察', increasing: '増加中 ↑', stable: '安定 →', declining: '減少中 ↓' },
+    ko: { documents: '문서', speeches: '연설', votes: '표결 기록', trend: '안정성 추세', direction: '활동 방향', insights: '추세 인사이트', increasing: '증가 중 ↑', stable: '안정적 →', declining: '감소 중 ↓' },
+    zh: { documents: '文件', speeches: '演讲', votes: '表决记录', trend: '稳定性趋势', direction: '活动方向', insights: '趋势洞察', increasing: '增加中 ↑', stable: '稳定 →', declining: '减少中 ↓' },
+  };
+
+  const lbl = activityLabels[lang] ?? activityLabels.en;
+  const directionText = metrics.activityChange === 'increasing'
+    ? lbl.increasing
+    : metrics.activityChange === 'declining'
+    ? lbl.declining
+    : lbl.stable;
+
+  let html = `\n    <h2>${escapeHtml(heading)}</h2>\n`;
+  html += `    <div class="context-box">\n`;
+  html += `      <ul>\n`;
+  html += `        <li><strong>${escapeHtml(lbl.documents)}:</strong> ${metrics.currentDocuments}</li>\n`;
+  html += `        <li><strong>${escapeHtml(lbl.speeches)}:</strong> ${metrics.currentSpeeches}</li>\n`;
+  if (metrics.currentVotes > 0) {
+    html += `        <li><strong>${escapeHtml(lbl.votes)}:</strong> ${metrics.currentVotes}</li>\n`;
+  }
+  html += `        <li><strong>${escapeHtml(lbl.direction)}:</strong> ${escapeHtml(directionText)}</li>\n`;
+  html += `      </ul>\n`;
+
+  if (metrics.trendComparison.insights.length > 0) {
+    html += `      <p><strong>${escapeHtml(lbl.insights)}:</strong> ${escapeHtml(metrics.trendComparison.insights[0] ?? '')}</p>\n`;
+  }
+
+  html += `    </div>\n`;
+  return html;
+}
+
+/**
  * Generate Weekly Review article in specified languages
  */
 export async function generateWeeklyReview(options: GenerationOptions = {}): Promise<GenerationResult> {
@@ -481,6 +814,23 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     const ciaContext = loadCIAContext();
     console.log(`  🧠 CIA context: ${ciaContext.partyPerformance.length} parties, coalition stability ${ciaContext.coalitionStability.stabilityScore}/100, motion denial rate ${ciaContext.overallMotionDenialRate}%`);
 
+    // ── Step 6: fetch voting records for coalition stress analysis ─────────
+    console.log('  🔄 Step 6 — Fetching voting records for coalition stress analysis...');
+    let votingRecords: unknown[] = [];
+    try {
+      votingRecords = (await client.fetchVotingRecords({ rm: '2025/26', limit: 50 })) as unknown[];
+    } catch (err: unknown) {
+      console.error('Failed to fetch voting records:', err);
+    }
+
+    mcpCalls.push({ tool: 'search_voteringar', result: votingRecords });
+    console.log(`  🗳 Found ${votingRecords.length} voting records`);
+
+    // ── Compute coalition stress and week-over-week metrics ────────────────
+    const coalitionStress = analyzeCoalitionStress(votingRecords as VotingRecord[], ciaContext);
+    const weekMetrics = calculateWeekOverWeekMetrics(documents, speeches, votingRecords as VotingRecord[], ciaContext);
+    console.log(`  📈 Coalition risk: ${coalitionStress.riskIndex.level} (${coalitionStress.riskIndex.score}/100), activity: ${weekMetrics.activityChange}`);
+
     // ── Generate articles ──────────────────────────────────────────────────
     const slug = `${formatDateForSlug(today)}-weekly-review`;
     const articles: GeneratedArticle[] = [];
@@ -489,9 +839,12 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
       const content: string = generateArticleContent({ documents, ciaContext }, 'weekly-review', lang);
+      const coalitionSection: string = generateCoalitionDynamicsSection(coalitionStress, lang);
+      const weekOverWeekSection: string = generateWeekOverWeekSection(weekMetrics, lang);
+      const fullContent: string = content + coalitionSection + weekOverWeekSection;
       const watchPoints = extractWatchPoints({ documents, ciaContext }, lang);
       const metadata = generateMetadata({ documents, ciaContext }, 'weekly-review', lang);
-      const readTime: string = calculateReadTime(content);
+      const readTime: string = calculateReadTime(fullContent);
       const sources: string[] = generateSources([
         'search_dokument',
         'get_dokument_innehall',
@@ -499,6 +852,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
         'get_betankanden',
         'get_propositioner',
         'get_motioner',
+        'search_voteringar',
       ]);
 
       const titles: TitleSet = getTitles(lang, documents.length);
@@ -511,7 +865,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
         type: 'retrospective' as ArticleCategory,
         readTime,
         lang,
-        content,
+        content: fullContent,
         watchPoints,
         sources,
         keywords: metadata.keywords,
@@ -540,7 +894,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       mcpCalls,
       crossReferences: {
         event: `${documents.length} documents over ${lookbackDays} days`,
-        sources: ['search_dokument', 'get_dokument_innehall', 'search_anforanden', 'get_betankanden', 'get_propositioner', 'get_motioner']
+        sources: ['search_dokument', 'get_dokument_innehall', 'search_anforanden', 'get_betankanden', 'get_propositioner', 'get_motioner', 'search_voteringar']
       }
     };
   } catch (error: unknown) {
