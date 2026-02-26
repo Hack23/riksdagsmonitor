@@ -54,10 +54,10 @@
  * - Includes motion text, sponsorship, current status
  * - Enables systematic opposition coverage
  * 
- * TODO: Implement additional tools for comprehensive analysis:
- * - search_dokument_fulltext: Full text analysis of motion content
- * - analyze_g0v_by_department: Government department responses
- * - search_anforanden: Parliamentary debate related to motion
+ * Additional tools (all implemented with graceful degradation):
+ * - search_dokument_fulltext: Full-text policy alternative analysis
+ * - analyze_g0v_by_department: Government department response tracking
+ * - search_anforanden: Debate context and party positioning
  * 
  * **OPERATIONAL WORKFLOW:**
  * 1. Query MCP: Fetch recent motions (default: 10 most recent)
@@ -186,16 +186,14 @@ import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord
 /**
  * Required MCP tools for motions articles
  * 
- * REQUIRED_TOOLS UPDATE (2026-02-14):
- * Initially set to 4 tools ['get_motioner', 'search_dokument_fulltext', 'analyze_g0v_by_department', 'search_anforanden']
- * to match tests/validation expectations. However, this caused runtime validation failures
- * since the implementation only calls get_motioner (line 56).
- * 
- * Reverted to actual implementation (1 tool) to prevent validation failures.
- * When additional tools are implemented in generateMotions(), add them back here.
+ * Restored to full 4-tool specification (2026-02-26):
+ * All four tools are now implemented with graceful degradation on failure.
  */
 export const REQUIRED_TOOLS: readonly string[] = [
-  'get_motioner'
+  'get_motioner',
+  'search_dokument_fulltext',
+  'analyze_g0v_by_department',
+  'search_anforanden',
 ];
 
 export interface TitleSet {
@@ -251,6 +249,70 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
       console.log('  ℹ️ No new motions found, skipping');
       return { success: true, files: 0, mcpCalls };
     }
+
+    // Tool 2: search_dokument_fulltext — full-text policy alternative analysis
+    try {
+      const topTitle = motions[0]?.titel || motions[0]?.title || '';
+      if (topTitle) {
+        const ftResponse = await client.request('search_dokument_fulltext', { query: topTitle, limit: 3 });
+        const ftDocs = (ftResponse['dokument'] ?? ftResponse['results'] ?? []) as RawDocument[];
+        mcpCalls.push({ tool: 'search_dokument_fulltext', result: ftDocs });
+        console.log(`  📄 Full text: ${ftDocs.length} results`);
+        // Attach full text to motions for "Policy Alternative" rendering in article
+        ftDocs.forEach((ftDoc, i) => {
+          const m = motions[i] as Record<string, unknown>;
+          if (m && !m['fullText']) {
+            m['fullText'] = ftDoc.fullText || ftDoc.summary || '';
+          }
+        });
+      }
+    } catch (err) {
+      console.warn('  ⚠ search_dokument_fulltext unavailable:', (err as Error).message);
+    }
+
+    // Tool 3: analyze_g0v_by_department — government department response tracking
+    let govDeptData: Record<string, unknown>[] = [];
+    try {
+      const today0 = new Date();
+      const thirtyDaysAgo = new Date(today0);
+      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+      const govResp = await client.request('analyze_g0v_by_department', {
+        dateFrom: formatDateForSlug(thirtyDaysAgo),
+        dateTo: formatDateForSlug(today0),
+      });
+      govDeptData = (govResp['departments'] ?? govResp['data'] ?? []) as Record<string, unknown>[];
+      mcpCalls.push({ tool: 'analyze_g0v_by_department', result: govDeptData });
+      console.log(`  🏛 Gov dept analysis: ${govDeptData.length} departments`);
+    } catch (err) {
+      console.warn('  ⚠ analyze_g0v_by_department unavailable:', (err as Error).message);
+    }
+
+    // Tool 4: search_anforanden — debate context and party positioning
+    try {
+      const debateQuery = motions[0]?.titel || motions[0]?.title || '';
+      if (debateQuery) {
+        const speeches = await client.searchSpeeches({ text: debateQuery, rm: '2025/26', limit: 10 }) as Array<Record<string, unknown>>;
+        mcpCalls.push({ tool: 'search_anforanden', result: speeches });
+        console.log(`  🗣 Debate speeches: ${speeches.length} found`);
+        // Attach speeches to the first motion without speeches for "Party Positioning" rendering
+        if (speeches.length > 0) {
+          for (const motion of motions) {
+            const m = motion as Record<string, unknown>;
+            if (!m['speeches']) {
+              m['speeches'] = speeches.slice(0, 3).map((s: Record<string, unknown>) => ({
+                talare: s['talare'],
+                parti: s['parti'],
+                text: (s['anforande_text'] as string | undefined)?.slice(0, 300),
+                anforande_nummer: s['anforande_nummer'],
+              }));
+              break;
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.warn('  ⚠ search_anforanden unavailable:', (err as Error).message);
+    }
     
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-opposition-motions`;
@@ -259,11 +321,16 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
       
-      const content: string = generateArticleContent({ motions }, 'motions', lang);
+      const content: string = generateArticleContent({ motions, govDeptData }, 'motions', lang);
       const watchPoints = extractWatchPoints({ motions }, lang);
       const metadata = generateMetadata({ motions }, 'motions', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_motioner']);
+      const sources: string[] = generateSources([
+        'get_motioner',
+        'search_dokument_fulltext',
+        'analyze_g0v_by_department',
+        'search_anforanden',
+      ]);
       
       const titles: TitleSet = getTitles(lang, motions.length, motions);
       
@@ -304,7 +371,7 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
       mcpCalls,
       crossReferences: {
         event: `${motions.length} motions`,
-        sources: ['motioner']
+        sources: ['motioner', 'fulltext', 'gov-dept', 'speeches']
       }
     };
     

@@ -18,6 +18,8 @@ interface MotionRecord {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   fetchMotions: Mock<(limit: number) => Promise<MotionRecord[]>>;
+  request: Mock<(tool: string, params: Record<string, unknown>) => Promise<Record<string, unknown>>>;
+  searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -53,7 +55,9 @@ const { mockClientInstance, mockMotions, MockMCPClient } = vi.hoisted(() => {
   ];
   
   const mockClientInstance: MockMCPClientShape = {
-    fetchMotions: vi.fn().mockResolvedValue(mockMotions) as MockMCPClientShape['fetchMotions']
+    fetchMotions: vi.fn().mockResolvedValue(mockMotions) as MockMCPClientShape['fetchMotions'],
+    request: vi.fn().mockResolvedValue({}) as MockMCPClientShape['request'],
+    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
   };
   
   function MockMCPClient(): MockMCPClientShape {
@@ -77,6 +81,8 @@ describe('Motions Article Generation', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockClientInstance.fetchMotions.mockResolvedValue(mockMotions);
+    mockClientInstance.request.mockResolvedValue({});
+    mockClientInstance.searchSpeeches.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -87,6 +93,14 @@ describe('Motions Article Generation', () => {
     it('should export REQUIRED_TOOLS constant', () => {
       expect(motionsModule.REQUIRED_TOOLS).toBeDefined();
       expect(motionsModule.REQUIRED_TOOLS).toContain('get_motioner');
+    });
+
+    it('should include all four required tools', () => {
+      expect(motionsModule.REQUIRED_TOOLS).toContain('get_motioner');
+      expect(motionsModule.REQUIRED_TOOLS).toContain('search_dokument_fulltext');
+      expect(motionsModule.REQUIRED_TOOLS).toContain('analyze_g0v_by_department');
+      expect(motionsModule.REQUIRED_TOOLS).toContain('search_anforanden');
+      expect(motionsModule.REQUIRED_TOOLS).toHaveLength(4);
     });
   });
 
@@ -100,6 +114,38 @@ describe('Motions Article Generation', () => {
       expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_motioner')).toBe(true);
     });
 
+    it('should call search_dokument_fulltext when motions have titles', async () => {
+      await motionsModule.generateMotions({ languages: ['en'] });
+      expect(mockClientInstance.request).toHaveBeenCalledWith(
+        'search_dokument_fulltext',
+        expect.objectContaining({ query: expect.any(String), limit: 3 })
+      );
+    });
+
+    it('should call analyze_g0v_by_department', async () => {
+      await motionsModule.generateMotions({ languages: ['en'] });
+      expect(mockClientInstance.request).toHaveBeenCalledWith(
+        'analyze_g0v_by_department',
+        expect.objectContaining({ dateFrom: expect.any(String), dateTo: expect.any(String) })
+      );
+    });
+
+    it('should call search_anforanden for debate context', async () => {
+      await motionsModule.generateMotions({ languages: ['en'] });
+      expect(mockClientInstance.searchSpeeches).toHaveBeenCalledWith(
+        expect.objectContaining({ text: expect.any(String), limit: 10 })
+      );
+    });
+
+    it('should record all tool calls in mcpCalls', async () => {
+      const result = await motionsModule.generateMotions({ languages: ['en'] });
+      const toolNames = result.mcpCalls!.map((c: MCPCallRecord) => c.tool);
+      expect(toolNames).toContain('get_motioner');
+      expect(toolNames).toContain('search_dokument_fulltext');
+      expect(toolNames).toContain('analyze_g0v_by_department');
+      expect(toolNames).toContain('search_anforanden');
+    });
+
     it('should handle empty motions', async () => {
       mockClientInstance.fetchMotions.mockResolvedValue([]);
       
@@ -109,6 +155,18 @@ describe('Motions Article Generation', () => {
       
       expect(result.success).toBe(true);
       expect(result.files).toBe(0);
+    });
+
+    it('should degrade gracefully when search_dokument_fulltext fails', async () => {
+      mockClientInstance.request.mockRejectedValueOnce(new Error('Tool unavailable'));
+      const result = await motionsModule.generateMotions({ languages: ['en'] });
+      expect(result.success).toBe(true);
+    });
+
+    it('should degrade gracefully when search_anforanden fails', async () => {
+      mockClientInstance.searchSpeeches.mockRejectedValueOnce(new Error('Tool unavailable'));
+      const result = await motionsModule.generateMotions({ languages: ['en'] });
+      expect(result.success).toBe(true);
     });
   });
 
@@ -127,6 +185,14 @@ describe('Motions Article Generation', () => {
       });
       
       expect(result.slug).toMatch(/opposition-motions$/);
+    });
+
+    it('should include all four tool names in sources', async () => {
+      const result = await motionsModule.generateMotions({ languages: ['en'] });
+      // Verify the crossReferences.sources reflect the enriched pipeline
+      expect(result.crossReferences?.sources).toContain('fulltext');
+      expect(result.crossReferences?.sources).toContain('gov-dept');
+      expect(result.crossReferences?.sources).toContain('speeches');
     });
   });
 

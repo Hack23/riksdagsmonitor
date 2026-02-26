@@ -91,4 +91,6 @@ export interface ArticleContentData {
   context?: string;
   /** CIA intelligence context for enriched analysis */
   ciaContext?: CIAContext;
+  /** Government department analysis from analyze_g0v_by_department */
+  govDeptData?: Record<string, unknown>[];
 }
