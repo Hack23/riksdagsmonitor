@@ -11,6 +11,8 @@ import type { Language } from '../../scripts/types/language.js';
 interface MockMCPClientShape {
   fetchVotingRecords: Mock<(...args: unknown[]) => Promise<unknown[]>>;
   searchSpeeches: Mock<(...args: unknown[]) => Promise<unknown[]>>;
+  fetchVotingGroup: Mock<(...args: unknown[]) => Promise<unknown[]>>;
+  fetchMPs: Mock<(...args: unknown[]) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -44,7 +46,9 @@ interface BreakingNewsModule {
 const { mockClientInstance, MockMCPClient } = vi.hoisted(() => {
   const mockClientInstance: MockMCPClientShape = {
     fetchVotingRecords: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchVotingRecords'],
-    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches']
+    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
+    fetchVotingGroup: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchVotingGroup'],
+    fetchMPs: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchMPs']
   };
   
   function MockMCPClient(): MockMCPClientShape {
@@ -133,6 +137,34 @@ describe('Breaking News Article Generation', () => {
       });
       
       expect(mockClientInstance.searchSpeeches).toHaveBeenCalled();
+    });
+
+    it('should fetch voting group if voteId provided', async () => {
+      const eventData: BreakingEventData = {
+        voteId: 'v123',
+        slug: 'test'
+      };
+      
+      await breakingNewsModule.generateBreakingNews({
+        languages: ['en'],
+        eventData
+      });
+      
+      expect(mockClientInstance.fetchVotingGroup).toHaveBeenCalled();
+    });
+
+    it('should fetch MP profiles if topic provided', async () => {
+      const eventData: BreakingEventData = {
+        topic: 'Budget debate',
+        slug: 'test'
+      };
+      
+      await breakingNewsModule.generateBreakingNews({
+        languages: ['en'],
+        eventData
+      });
+      
+      expect(mockClientInstance.fetchMPs).toHaveBeenCalled();
     });
   });
 

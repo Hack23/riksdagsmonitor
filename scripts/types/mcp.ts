@@ -92,6 +92,16 @@ export interface FetchVotingFilters {
   [key: string]: unknown;
 }
 
+/** Parameters for party-level voting group lookup */
+export interface FetchVotingGroupParams {
+  bet?: string;
+  punkt?: string;
+  groupBy?: 'parti' | 'valkrets' | 'namn';
+  rm?: string;
+  limit?: number;
+  [key: string]: unknown;
+}
+
 /** Parameters for government document search */
 export interface GovDocSearchParams {
   title?: string;

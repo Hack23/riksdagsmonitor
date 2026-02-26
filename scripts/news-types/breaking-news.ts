@@ -39,10 +39,8 @@
  * - search_ledamoter: Member information for quote attribution
  * 
  * **IMPLEMENTATION STATUS:**
- * - Actual implementation calls: search_voteringar, search_anforanden
- * - TODO implementation: get_voting_group, search_ledamoter
- * Note: This causes validation warnings but allows tests to pass. Full
- * implementation should complete all four tool integrations.
+ * - All four MCP tools implemented: search_voteringar, get_voting_group,
+ *   search_anforanden, search_ledamoter (all conditional on event data)
  * 
  * **INTELLIGENCE ANALYSIS FRAMEWORK:**
  * Breaking news articles incorporate:
@@ -168,15 +166,11 @@ import type {
 /**
  * Required MCP tools for breaking news articles
  * 
- * CURRENT IMPLEMENTATION STATUS:
- * - search_voteringar: ✅ Implemented (conditional, line 72)
- * - search_anforanden: ✅ Implemented (conditional, line 79)
- * - get_voting_group: ❌ TODO - Not yet implemented  
- * - search_ledamoter: ❌ TODO - Not yet implemented
- * 
- * NOTE: REQUIRED_TOOLS lists the full specification for validation.
- * Current implementation calls a subset. This causes validation warnings
- * but allows tests to pass. Full implementation should add the missing tools.
+ * IMPLEMENTATION STATUS:
+ * - search_voteringar: ✅ Implemented (conditional on voteId)
+ * - get_voting_group: ✅ Implemented (conditional on voteId)
+ * - search_anforanden: ✅ Implemented (conditional on topic)
+ * - search_ledamoter: ✅ Implemented (conditional on topic)
  */
 export const REQUIRED_TOOLS: readonly string[] = [
   'search_voteringar',
@@ -233,18 +227,30 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       };
     }
     
-    // Example: Fetch related votes if event involves a vote
+    // Fetch related votes and party breakdown if event involves a vote
     if (eventData.voteId) {
       console.log('  🔄 Fetching voting details...');
       const votes: unknown = await client.fetchVotingRecords({ punkt: eventData.voteId });
       mcpCalls.push({ tool: 'search_voteringar', result: votes });
+      
+      // Fetch party-level voting breakdown
+      console.log('  🔄 Fetching party voting breakdown...');
+      const votingGroup: unknown = await client.fetchVotingGroup({ punkt: eventData.voteId, groupBy: 'parti' });
+      mcpCalls.push({ tool: 'get_voting_group', result: votingGroup });
     }
     
-    // Example: Fetch related speeches
+    // Fetch related speeches and MP context if topic provided
     if (eventData.topic) {
       console.log('  🔄 Fetching related speeches...');
       const speeches: unknown = await client.searchSpeeches({ sok: eventData.topic });
       mcpCalls.push({ tool: 'search_anforanden', result: speeches });
+      
+      // Fetch MP profiles for speaker context using names from speeches
+      console.log('  🔄 Fetching MP profiles for speaker context...');
+      const speechList = Array.isArray(speeches) ? speeches as Array<Record<string, unknown>> : [];
+      const speakerName = speechList[0]?.['talare'] as string | undefined;
+      const mps: unknown = await client.fetchMPs(speakerName ? { namn: speakerName, limit: 1 } : { limit: 5 });
+      mcpCalls.push({ tool: 'search_ledamoter', result: mps });
     }
     
     const today = new Date();
