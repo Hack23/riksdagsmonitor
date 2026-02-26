@@ -142,11 +142,52 @@ Before generating ANY articles, verify MCP connectivity:
 
 1. Call `get_sync_status({})` — if successful, proceed
 2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
-3. If ALL 3 attempts fail:
+3. **If the tool call itself fails (returns error/exception)** after 3 attempts:
    - Use `safeoutputs___noop` with message: "MCP server unavailable after 3 connection attempts. No articles generated."
    - DO NOT analyze existing articles in the repository
    - DO NOT fabricate or recycle content
    - The workflow MUST end with noop
+4. **If the tools are simply not yet visible in your tools list** (different from a tool call failing):
+   - Wait 60 seconds: `sleep 60`
+   - Try `get_sync_status({})` again (up to 3 total attempts, ~3 minutes waiting)
+   - After 3 attempts, fall back to the bash script approach in the PRIMARY APPROACH section of Step 3: Generate Articles
+   - Use `safeoutputs___noop` only if the bash script also fails with no articles generated
+
+### 🚨 If MCP Tools Are NOT In Your Tools List
+
+Sometimes, due to cold start timing, the MCP tools may not appear in your tools list immediately.
+
+**If you don't see `get_sync_status`, `get_calendar_events`, etc. in your available tools:**
+
+1. **Wait and retry**: Sleep 60 seconds, then try the tool call again
+   ```bash
+   echo "Waiting 60s for MCP server cold start..."
+   sleep 60
+   echo "Retrying MCP connection..."
+   ```
+2. After waiting, call `get_sync_status({})` — it should now work
+3. **If tools still not available after 3 attempts (total ~3 minutes waiting)**:
+   - Skip direct MCP tool calls in Steps 1–3
+   - Proceed **directly to the bash script approach in the PRIMARY APPROACH section of Step 3: Generate Articles** — the script handles MCP internally
+   - Use `safeoutputs___noop` only if the bash script also fails with no articles generated
+
+**⚠️ CRITICAL: NEVER implement your own MCP HTTP/JSON-RPC client from bash.** This wastes time and does not work in this environment. Only use:
+- ✅ Direct tool calls (framework-managed — preferred)
+- ✅ The `generate-news-enhanced.ts` bash script (fallback)
+- ❌ Writing your own `node /tmp/...` JSON-RPC HTTP client — this WILL time out the workflow
+
+### 🐛 If You Get Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| Tool not found | Wrong tool name | Use exact names: `get_calendar_events`, `search_voteringar` |
+| Tools not in list | MCP cold start race | Sleep 60s, retry; after 3 tries go to PRIMARY APPROACH bash script in Step 3: Generate Articles |
+| Empty results | No data in timeframe | Check `get_sync_status`, widen date range, verify rm parameter |
+| Stale data | Last sync >48h ago | Note in articles, use available data with disclaimer |
+| Timeout | Cold start (30-60s) | Wait — framework retries automatically |
+| Swedish-only results | Riksdag API returns Swedish | YOU must translate to target languages |
+| Too broad results | No date filtering | Add from_date/to_date params OR filter results by date in code |
+| Spent 10+ min on MCP setup | Tried bash MCP client | Stop! Use PRIMARY APPROACH bash script in Step 3: Generate Articles instead |
 
 **CRITICAL**: ALL article content MUST originate from live MCP data. Never generate content from:
 - Existing articles in the news/ directory
@@ -284,15 +325,16 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 - ✅ Trust the automatic retry logic for cold starts
 
 **✅ For running Node.js scripts via bash:**
-- ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
-- ✅ Extract gateway API key: read `gateway.apiKey` from `$GH_AW_MCP_CONFIG` and export as `MCP_AUTH_TOKEN="Bearer $KEY"`
-- ✅ Set `export MCP_CLIENT_TIMEOUT_MS=90000` for cold start tolerance
+- ✅ Run `source scripts/mcp-setup.sh` BEFORE running any script (sets MCP_SERVER_URL, MCP_AUTH_TOKEN, MCP_CLIENT_TIMEOUT_MS)
+- ✅ Or query individual MCP tools: `npx tsx scripts/mcp-query-cli.ts get_sync_status`
 - ✅ Scripts ARE used by agentic workflows and work perfectly
 
-**❌ DO NOT:**
+**🚫 NEVER implement your own MCP HTTP/JSON-RPC client — NEVER write ad-hoc Python/Node.js MCP scripts:**
 - ❌ Rely on implicit "latest" data without checking freshness
 - ❌ Skip data freshness validation
 - ❌ Use tools without understanding date parameter support
+- ❌ Write ad-hoc Python/Node.js scripts to query MCP (use `scripts/mcp-query-cli.ts` instead)
+- ❌ Spend more than 5 minutes on MCP connectivity — go straight to the bash script fallback
 
 ### 🚨 DATA FRESHNESS CHECK (MANDATORY FIRST STEP)
 
@@ -495,6 +537,54 @@ For each piece of data, evaluate significance using these criteria:
 ### Step 3: Generate Articles
 
 For HIGH significance events, generate articles following **The Economist style**.
+
+**PRIMARY APPROACH: Use the bash script (fastest, most reliable — generates all 14 languages in one command):**
+
+```bash
+# Set LANGUAGES_INPUT to the value shown in Workflow Dispatch Parameters above
+LANGUAGES_INPUT="<value from Workflow Dispatch Parameters>"  # e.g. "all", "nordic", "eu-core", or "en,sv"
+[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
+
+case "$LANGUAGES_INPUT" in
+  "nordic") LANG_ARG="en,sv,da,no,fi" ;;
+  "eu-core") LANG_ARG="en,sv,de,fr,es,nl" ;;
+  "all") LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
+  *) LANG_ARG="$LANGUAGES_INPUT" ;;
+esac
+
+# Set up MCP connection for script (gateway API key)
+export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
+if [ -f "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" ]; then
+  GW_KEY=$(python3 -c "import json,sys; c=json.load(open(sys.argv[1])); print(c.get('gateway',{}).get('apiKey',''))" "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" 2>/dev/null || echo "")
+  if [ -z "$GW_KEY" ]; then
+    echo "⚠️  WARNING: MCP config file exists but gateway API key is missing or invalid"
+  else
+    export MCP_AUTH_TOKEN="Bearer $GW_KEY"
+  fi
+fi
+export MCP_CLIENT_TIMEOUT_MS=90000
+
+TODAY="$(date +%Y-%m-%d)"
+npx tsx scripts/generate-news-enhanced.ts \
+  --types=breaking \
+  --languages="$LANG_ARG" \
+  --skip-existing
+SCRIPT_EXIT=$?
+echo "Script exit code: $SCRIPT_EXIT"
+
+# Use git status to detect newly generated files (reliable: won't match existing articles)
+NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
+if [ -z "$NEW_ARTICLES" ]; then
+  echo "No new breaking news articles were created by the generator."
+else
+  echo "Newly generated articles:"
+  printf '%s\n' "$NEW_ARTICLES"
+fi
+```
+
+If the script succeeds (`SCRIPT_EXIT=0`) and `$NEW_ARTICLES` is non-empty, proceed to Step 3.5 for translation.
+
+**FALLBACK (only if script returns non-zero AND `$NEW_ARTICLES` is empty — no new articles were created): Process ONE language at a time manually:**
 
 **CRITICAL: Process ONE language at a time.** Use this sequential loop pattern:
 
@@ -807,6 +897,8 @@ If articles are generated, validate with Playwright before creating PR:
 6. ✅ **OUTPUT:** Call EXACTLY ONE of:
    - `safeoutputs___create_pull_request` (if articles generated)
    - `safeoutputs___noop` (if no significant events)
+   - `safeoutputs___missing_tool` (if a required capability is unavailable)
+   - `safeoutputs___missing_data` (if required data is unavailable)
 7. ✅ **END:** Exit gracefully
 
 **FAILURE TO COMPLETE STEP 6 = WORKFLOW FAILURE**
@@ -818,6 +910,7 @@ If articles are generated, validate with Playwright before creating PR:
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
 - **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_voteringar()`, etc.)
-- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract gateway API key via `MCP_AUTH_TOKEN` from MCP config before running. Set `export MCP_CLIENT_TIMEOUT_MS=90000`.
+- **Node.js scripts**: Run `source scripts/mcp-setup.sh` before running scripts, or query individual tools via `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`.
 - **Cold starts**: 30-60s on first call — framework retries automatically
-- **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated) or `safeoutputs___noop` (no significant events)
+- **Bash script fallback**: Use `npx tsx scripts/generate-news-enhanced.ts --types=breaking --languages="$LANG_ARG"` with MCP_SERVER_URL set (see Step 3)
+- **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated), `safeoutputs___noop` (no significant events), `safeoutputs___missing_tool` (capability missing), or `safeoutputs___missing_data` (data unavailable)

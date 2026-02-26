@@ -174,17 +174,7 @@ case "$LANGUAGES_INPUT" in
   *) LANG_ARG="$LANGUAGES_INPUT" ;;
 esac
 
-export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
-# Pass gateway API key so scripts can authenticate with the MCP gateway
-if [ -f "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" ]; then
-  GW_KEY=$(python3 -c "import json,sys; c=json.load(open(sys.argv[1])); print(c.get('gateway',{}).get('apiKey',''))" "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" 2>/dev/null || echo "")
-  if [ -z "$GW_KEY" ]; then
-    echo "⚠️  WARNING: MCP config file exists but gateway API key is missing or invalid"
-  else
-    export MCP_AUTH_TOKEN="Bearer $GW_KEY"
-  fi
-fi
-export MCP_CLIENT_TIMEOUT_MS=90000
+source scripts/mcp-setup.sh
 npx tsx scripts/generate-news-enhanced.ts \
   --types=motions \
   --languages="$LANG_ARG" \
