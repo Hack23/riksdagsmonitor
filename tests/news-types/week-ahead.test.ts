@@ -436,6 +436,97 @@ describe('Week-Ahead Article Generation', () => {
     });
   });
 
+  describe('Enhanced Cross-Referencing', () => {
+    it('should show Policy Context box when event organ matches document organ', async () => {
+      // Provide a high-priority event (contains 'EU' to pass isHighPriority) with organ matching the doc
+      mockClientInstance.fetchCalendarEvents.mockResolvedValue([{
+        id: '1', title: 'EU budget vote', date: '2026-02-16', type: 'chamber', organ: 'Kammaren',
+      }]);
+      mockClientInstance.searchDocuments.mockResolvedValue([{
+        titel: 'Budget Proposition 2026',
+        dok_id: 'H901prop1',
+        doktyp: 'prop',
+        organ: 'Kammaren',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      const article = result.articles[0]!;
+      // 'EU budget vote' event has organ 'Kammaren', matching the document's organ
+      expect(article.html).toContain('Policy Context');
+      expect(article.html).toContain('policy-context-box');
+    });
+
+    it('should show Questions to Watch section label', async () => {
+      mockClientInstance.fetchWrittenQuestions.mockResolvedValue([{
+        titel: 'Question about budget funding',
+        dok_id: 'H901fr1',
+        parti: 'V',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      const article = result.articles[0]!;
+      expect(article.html).toContain('Questions to Watch');
+    });
+
+    it('should show Swedish Questions to Watch label in sv version', async () => {
+      mockClientInstance.fetchWrittenQuestions.mockResolvedValue([{
+        titel: 'Fråga om budgetanslaget',
+        dok_id: 'H901fr2',
+        parti: 'S',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['sv'] });
+      expect(result.success).toBe(true);
+      const article = result.articles[0]!;
+      expect(article.html).toContain('Frågor att bevaka');
+    });
+
+    it('should show Interpellation Spotlight section label', async () => {
+      mockClientInstance.fetchInterpellations.mockResolvedValue([{
+        titel: 'Question about housing policy',
+        dok_id: 'H901ip1',
+        parti: 'S',
+        summary: 'Interpellation 2025/26:1\nav John Doe\ntill Statsminister Ulf Kristersson\nDetta är en fråga om bostadspolitiken.',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      const article = result.articles[0]!;
+      expect(article.html).toContain('Interpellation Spotlight');
+    });
+
+    it('should extract and display minister name from interpellation summary', async () => {
+      mockClientInstance.fetchInterpellations.mockResolvedValue([{
+        titel: 'Question about housing policy',
+        dok_id: 'H901ip2',
+        parti: 'MP',
+        summary: 'Interpellation 2025/26:2\nav Jane Doe\ntill Statsminister Ulf Kristersson\nFråga om bostadspolitiken.',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      const article = result.articles[0]!;
+      expect(article.html).toContain('minister-target');
+      expect(article.html).toContain('Statsminister Ulf Kristersson');
+    });
+
+    it('should show Swedish Interpellation Spotlight label in sv version', async () => {
+      mockClientInstance.fetchInterpellations.mockResolvedValue([{
+        titel: 'Interpellation om miljöpolitik',
+        dok_id: 'H901ip3',
+        parti: 'MP',
+        summary: 'Interpellation 2025/26:3\nav Eva Svensson\ntill Klimatminister Romina Pourmokhtari\nFråga om klimatpolitiken.',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['sv'] });
+      expect(result.success).toBe(true);
+      const article = result.articles[0]!;
+      expect(article.html).toContain('Interpellationer i fokus');
+    });
+  });
+
   describe('Integration with Writer', () => {
     it('should call writeArticle function if provided', async () => {
       const mockWriter = vi.fn();
