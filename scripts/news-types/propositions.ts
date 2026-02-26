@@ -264,8 +264,13 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
     let departmentAnalysis: Record<string, unknown> = {};
     try {
       console.log('  🔄 Fetching department impact analysis...');
-      const dateStr = formatDateForSlug(new Date());
-      departmentAnalysis = await client.request('analyze_g0v_by_department', { dateFrom: dateStr, dateTo: dateStr });
+      const toDate = new Date();
+      const fromDate = new Date(toDate);
+      fromDate.setDate(fromDate.getDate() - 7);
+      departmentAnalysis = await client.request('analyze_g0v_by_department', {
+        dateFrom: formatDateForSlug(fromDate),
+        dateTo: formatDateForSlug(toDate)
+      });
       mcpCalls.push({ tool: 'analyze_g0v_by_department', result: departmentAnalysis });
       console.log('  🏛 Department analysis retrieved');
     } catch (err: unknown) {

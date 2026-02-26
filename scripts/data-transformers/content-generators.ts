@@ -649,6 +649,10 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
 
   content += `      </ul>\n    </div>\n`;
 
+  // Display limits for enrichment sections
+  const MAX_DISPLAY_ITEMS = 3;
+  const MAX_SPEECH_PREVIEW_LENGTH = 200;
+
   // ── Policy Substance section (from search_dokument_fulltext) ─────────────
   const fullTextResults = data.fullTextResults as Array<Record<string, unknown>> | undefined;
   if (fullTextResults && fullTextResults.length > 0) {
@@ -661,7 +665,7 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
     const psHeading = policySubstanceHeadings[lang as string] ?? policySubstanceHeadings['en'];
     content += `\n    <h2>${escapeHtml(psHeading)}</h2>\n`;
     content += `    <div class="policy-substance">\n`;
-    for (const doc of fullTextResults.slice(0, 3)) {
+    for (const doc of fullTextResults.slice(0, MAX_DISPLAY_ITEMS)) {
       const docTitle = escapeHtml(String(doc['titel'] ?? doc['title'] ?? ''));
       const docSummary = escapeHtml(String(doc['summary'] ?? doc['notis'] ?? ''));
       if (docTitle) {
@@ -688,7 +692,7 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
     const diHeading = departmentImpactHeadings[lang as string] ?? departmentImpactHeadings['en'];
     content += `\n    <h2>${escapeHtml(diHeading)}</h2>\n`;
     content += `    <div class="department-impact"><ul>\n`;
-    for (const dept of departments.slice(0, 5)) {
+    for (const dept of departments.slice(0, MAX_DISPLAY_ITEMS)) {
       const deptName = escapeHtml(String(dept['departement'] ?? dept['name'] ?? dept['namn'] ?? ''));
       const deptCount = Number(dept['count'] ?? dept['antal'] ?? 0);
       if (deptName) {
@@ -710,10 +714,10 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
     const pdHeading = parliamentaryDebateHeadings[lang as string] ?? parliamentaryDebateHeadings['en'];
     content += `\n    <h2>${escapeHtml(pdHeading)}</h2>\n`;
     content += `    <div class="debate-context">\n`;
-    for (const speech of speechDebates.slice(0, 3)) {
+    for (const speech of speechDebates.slice(0, MAX_DISPLAY_ITEMS)) {
       const speaker = escapeHtml(String(speech['talare'] ?? speech['speaker'] ?? ''));
       const party = escapeHtml(String(speech['parti'] ?? speech['party'] ?? ''));
-      const text = escapeHtml(String(speech['anforandetext'] ?? speech['text'] ?? '').substring(0, 200));
+      const text = escapeHtml(String(speech['anforandetext'] ?? speech['text'] ?? '').substring(0, MAX_SPEECH_PREVIEW_LENGTH));
       if (speaker && text) {
         content += `      <blockquote><p>${text}…</p><footer>— ${speaker}${party ? ` (${party})` : ''}</footer></blockquote>\n`;
       }
