@@ -80,6 +80,34 @@ export interface WeekAheadData {
   interpellations?: RawDocument[];
 }
 
+/**
+ * Monthly metrics for trend analysis, party rankings, and legislative efficiency.
+ * Computed in monthly-review.ts and consumed by generateMonthlyReviewContent.
+ */
+export interface MonthlyMetrics {
+  /** Total documents processed this month */
+  totalDocuments: number;
+  /** Number of committee reports (betänkanden) */
+  reportCount: number;
+  /** Number of government propositions */
+  propositionCount: number;
+  /** Number of parliamentary motions */
+  motionCount: number;
+  /** Number of speeches (anföranden) */
+  speechCount: number;
+  /** Previous month's total document count (for trend) */
+  previousMonthDocCount: number;
+  /** Two months ago total document count (for rolling average) */
+  twoMonthsAgoDocCount: number;
+  /** Party activity rankings sorted by total activity (motions + speeches) */
+  partyRankings: Array<{ party: string; motionCount: number; speechCount: number }>;
+  /**
+   * Legislative efficiency rate: committee reports divided by propositions (0–1).
+   * Higher values indicate faster committee processing.
+   */
+  legislativeEfficiencyRate: number;
+}
+
 /** Article generation data */
 export interface ArticleContentData {
   events?: RawCalendarEvent[];
@@ -91,4 +119,6 @@ export interface ArticleContentData {
   context?: string;
   /** CIA intelligence context for enriched analysis */
   ciaContext?: CIAContext;
+  /** Monthly metrics for trend analysis (monthly-review specific) */
+  monthlyMetrics?: MonthlyMetrics;
 }

@@ -43,6 +43,9 @@ interface MonthlyReviewValidationResult {
   hasMinimumSources: boolean;
   hasRetrospectiveTone: boolean;
   hasTrendAnalysis: boolean;
+  hasPartyRankings: boolean;
+  hasLegislativeEfficiency: boolean;
+  hasMonthInNumbers: boolean;
   passed: boolean;
 }
 
@@ -244,6 +247,76 @@ describe('Monthly Review Article Generation', () => {
 
       expect(result.success).toBe(true);
       expect(result.articles.length).toBe(1);
+    });
+  });
+
+  describe('Monthly Enhancements', () => {
+    it('should include Month in Numbers section in generated articles', async () => {
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      // Month in Numbers section should appear when documents are present
+      expect(article!.html).toContain('Month in Numbers');
+    });
+
+    it('should include Legislative Efficiency section in generated articles', async () => {
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      expect(article!.html).toContain('Legislative Efficiency');
+    });
+
+    it('should include Strategic Outlook section in generated articles', async () => {
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      expect(article!.html).toContain('Strategic Outlook');
+    });
+
+    it('should generate Swedish-language monthly sections', async () => {
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['sv']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      expect(article!.html).toContain('Månaden i siffror');
+      expect(article!.html).toContain('Lagstiftningseffektivitet');
+      expect(article!.html).toContain('Strategisk utsikt');
+    });
+
+    it('should validate new section fields in validateMonthlyReview', () => {
+      const article: ArticleInput = {
+        content: 'Month in Numbers review. Committee reports throughput. Party Performance Rankings. Legislative Efficiency. Strategic Outlook trend analysis completed.',
+        sources: ['s1', 's2', 's3']
+      };
+
+      const result = monthlyReviewModule.validateMonthlyReview(article);
+      expect(result.hasMonthInNumbers).toBe(true);
+      expect(result.hasLegislativeEfficiency).toBe(true);
+      expect(result.hasPartyRankings).toBe(true);
+    });
+
+    it('should fetch previous months for trend analysis (3 searchDocuments calls)', async () => {
+      await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      // Exactly 3 calls: current month + previous month + 2-months-ago
+      expect(mockClientInstance.searchDocuments.mock.calls.length).toBe(3);
     });
   });
 });
