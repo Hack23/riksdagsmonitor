@@ -284,9 +284,8 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 - ✅ Trust the automatic retry logic for cold starts
 
 **✅ For running Node.js scripts via bash:**
-- ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
-- ✅ Extract gateway API key: read `gateway.apiKey` from `$GH_AW_MCP_CONFIG` and export as `MCP_AUTH_TOKEN="Bearer $KEY"`
-- ✅ Set `export MCP_CLIENT_TIMEOUT_MS=90000` for cold start tolerance
+- ✅ Run `source scripts/mcp-setup.sh` BEFORE running any script (sets MCP_SERVER_URL, MCP_AUTH_TOKEN, MCP_CLIENT_TIMEOUT_MS)
+- ✅ Or query individual MCP tools: `npx tsx scripts/mcp-query-cli.ts get_sync_status`
 - ✅ Scripts ARE used by agentic workflows and work perfectly
 
 **❌ DO NOT:**
@@ -818,6 +817,6 @@ If articles are generated, validate with Playwright before creating PR:
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
 - **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_voteringar()`, etc.)
-- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract gateway API key via `MCP_AUTH_TOKEN` from MCP config before running. Set `export MCP_CLIENT_TIMEOUT_MS=90000`.
+- **Node.js scripts**: Run `source scripts/mcp-setup.sh` before running scripts, or query individual tools via `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`.
 - **Cold starts**: 30-60s on first call — framework retries automatically
 - **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated) or `safeoutputs___noop` (no significant events)

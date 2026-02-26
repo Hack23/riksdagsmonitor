@@ -288,7 +288,8 @@ get_sync_status({})
 - ✅ Check for stale data (>48 hours since last sync) and note in articles with disclaimer
 - ✅ Use explicit date parameters where supported (from_date, to_date, from, tom)
 - ✅ Filter results by date when tools don't support date parameters
-- ✅ For Node.js scripts: set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract the gateway API key from the MCP config before running (see script execution section below)
+- ✅ For Node.js scripts: run `source scripts/mcp-setup.sh` before running (see script execution section below)
+- ✅ Query individual MCP tools from bash: `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`
 
 **DO NOT try to call MCP manually from prompts:**
 - ❌ Use `curl` or manual HTTP calls to MCP endpoints
@@ -298,6 +299,8 @@ get_sync_status({})
 - ❌ Rely on implicit "latest" data without checking freshness
 - ❌ Skip data freshness validation
 - ❌ Use tools without understanding date parameter support
+- ❌ Write ad-hoc Python/Node.js scripts to query MCP (use `scripts/mcp-query-cli.ts` instead)
+- ❌ Spend more than 5 minutes on MCP connectivity — go straight to the bash script fallback
 
 ### 🚨 DATA FRESHNESS CHECK (MANDATORY FIRST STEP)
 
@@ -622,21 +625,8 @@ echo "  Types: $ARTICLE_TYPES"
 echo "  Languages: $LANG_ARG"
 
 # Route through MCP gateway (direct HTTPS fails in sandbox due to transparent proxy)
-# The gateway handles the external connection and exposes it over plain HTTP
-export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
-
-# Pass gateway API key so scripts can authenticate with the MCP gateway
-if [ -f "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" ]; then
-  GW_KEY=$(python3 -c "import json,sys; c=json.load(open(sys.argv[1])); print(c.get('gateway',{}).get('apiKey',''))" "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" 2>/dev/null || echo "")
-  if [ -z "$GW_KEY" ]; then
-    echo "⚠️  WARNING: MCP config file exists but gateway API key is missing or invalid"
-  else
-    export MCP_AUTH_TOKEN="Bearer $GW_KEY"
-  fi
-fi
-
-# Extended timeout for Render.com cold starts (server may take 30-60s to spin up)
-export MCP_CLIENT_TIMEOUT_MS=90000
+# Set up MCP connection via shared helper script
+source scripts/mcp-setup.sh
 
 # === BATCHED GENERATION ===
 # Generate articles in batches of 5 languages per run.
