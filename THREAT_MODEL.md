@@ -646,6 +646,26 @@ Visual coverage matrix showing detection and mitigation status per MITRE ATT&CK 
 | **ATT-GAP-002** | T1048 (Exfil over C2) | TA0010 Exfiltration | No automated detection for slow exfiltration via CDN abuse or covert channel through publicly-visible content | Add CDN anomaly alerting via CloudFront access log analysis | Q2 2026 |
 | **ATT-GAP-003** | T1071.004 (DNS as C2) | TA0011 C&C | Static site cannot inspect DNS traffic; vendor-dependent (AWS Route 53 monitoring) | Enhance Route 53 DNS query logging and alerting; enable Route 53 Resolver Query Logs | Q2 2026 |
 
+### **🔪 Kill Chain Disruption Analysis**
+
+Per [Hack23 Threat Modeling Policy § 4.1.4](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md), mapping defensive controls to each Cyber Kill Chain phase for Riksdagsmonitor:
+
+| Kill Chain Phase | Attacker Activity (Riksdagsmonitor Context) | Defensive Control | Detection Mechanism | Disruption Effectiveness |
+|-----------------|---------------------------------------------|-------------------|---------------------|--------------------------|
+| **1. Reconnaissance** | Scan public GitHub repo for secrets, enumerate AWS infrastructure, identify AI workflow schedules | Public repo accepted risk; minimal metadata exposure via `.gitignore`, S3 bucket policy, no directory listing | Repository traffic anomaly (GitHub Insights), Route 53 query logs | ⚠️ 60% — Public repo limits concealment |
+| **2. Weaponization** | Craft malicious npm package, prepare XSS payload, develop AI prompt injection | N/A — occurs off-target; no direct defense | Threat intelligence feeds (ENISA, CERT-SE, MITRE ATT&CK updates) | ⚠️ 30% — Attacker-side activity |
+| **3. Delivery** | Submit malicious PR, phishing for GitHub credentials, CDN asset substitution | Branch protection (PREV-002), MFA (PREV-001), SRI hashes (PREV-012), SHA-pinned Actions (PREV-015) | Dependabot alerts (DET-007), SRI failure (DET-006), CodeQL (DET-008) | ✅ 95% — Multi-layer delivery blocking |
+| **4. Exploitation** | Execute XSS via CDN compromise, exploit vulnerable dependency, AI prompt injection | CSP (PREV-011), Dependabot patching (PREV-013), input sanitization (PREV-023), HTTPS-only (PREV-009) | CSP violation reports (DET-005), CodeQL findings (DET-008), PR review rejection (DET-012) | ✅ 92% — Static architecture limits exploitation |
+| **5. Installation** | Persist via modified GitHub Actions workflow, inject into build pipeline | Workflow approval (PREV-016), CODEOWNERS (PREV-004), Git immutable history | Workflow execution logs (DET-009), GitHub audit logs (DET-001) | ✅ 90% — No server-side persistence possible |
+| **6. Command & Control** | Covert C2 via DNS tunneling, CDN abuse for data exfiltration | Static architecture eliminates server-side C2; Route 53 monitoring | CloudTrail (DET-002), Route 53 DNS query logs | ⚠️ 70% — Limited by static-site architecture (vendor-dependent) |
+| **7. Actions on Objectives** | Deface website, inject disinformation, manipulate political data, DDoS during elections | S3 versioning (PREV-019), Git revert (CORR-001), DR failover (CORR-003), mandatory PR review (PREV-028) | CloudWatch alarms (DET-004), Shield metrics (DET-010), content integrity monitoring | ✅ 97% — Rapid rollback + multi-region DR |
+
+**Kill Chain Disruption Summary:**
+- **Strongest disruption:** Phase 3 (Delivery) at 95% and Phase 7 (Actions on Objectives) at 97% — multi-layer preventive and corrective controls
+- **Weakest disruption:** Phase 2 (Weaponization) at 30% — attacker-side activity, mitigated by threat intelligence
+- **Architecture advantage:** Static website + no server-side code eliminates Phases 5-6 attack surface almost entirely
+- **Overall Kill Chain Disruption Score:** **76%** (simple average across all phases)
+
 ---
 
 ## 🌳 Attack Tree Analysis
@@ -1480,6 +1500,19 @@ Following [Hack23 Security Architecture](./SECURITY_ARCHITECTURE.md) and [ISMS C
 
 **Residual Risk Score:** **0.69/10** (LOW) - Acceptable for public civic transparency platform
 
+### **🎭 STRIDE → Control Mapping**
+
+Consolidated mapping of each STRIDE category to primary, secondary, and monitoring controls per [Hack23 Threat Modeling Policy § 4.3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md):
+
+| STRIDE Category | Example Threat | Primary Control | Secondary Control | Monitoring |
+|-----------------|---------------|-----------------|-------------------|------------|
+| **🎭 Spoofing** | Account compromise, commit forgery | GitHub MFA enforcement (PREV-001), OIDC auth (PREV-006) | GPG commit signing (PREV-003), CODEOWNERS (PREV-004) | GitHub audit logs (DET-001), failed login monitoring |
+| **🔧 Tampering** | Malicious commits, CDN supply chain, data manipulation | Branch protection (PREV-002), SRI hashes (PREV-012) | CodeQL (PREV-014), Dependabot (PREV-013), SHA-pinned Actions (PREV-015) | CloudTrail (DET-002), SRI validation (DET-006), CSP reports (DET-005) |
+| **❌ Repudiation** | Commit authorship denial, action denial | GPG signing (PREV-003), immutable Git history | N/A | GitHub audit logs (DET-001), structured logging, Audit trail analysis, commit verification |
+| **📤 Information Disclosure** | Secret leaks, AI hallucination, S3 exposure | Secret scanning (PREV-005), IAM least privilege (PREV-007) | S3 bucket policy (PREV-008), mandatory PR review (PREV-028) | S3 access logs (DET-003), PR rejection rate (DET-012) |
+| **⚡ Denial of Service** | DDoS, CloudFront outage, pipeline exhaustion | AWS Shield Standard (PREV-021), multi-region replication (PREV-020) | Route 53 health checks (PREV-022), S3 versioning (PREV-019) | CloudWatch alarms (DET-004), Shield metrics (DET-010) |
+| **⬆️ Elevation of Privilege** | Workflow escalation, IAM policy bypass | CODEOWNERS (PREV-004), workflow approval (PREV-016) | IAM least privilege (PREV-007), OIDC scoped tokens (PREV-006) | Workflow logs (DET-009), GitHub audit logs (DET-001) |
+
 ### **ISO 27001:2022 Control Mapping**
 
 | Annex A Control | Riksdagsmonitor Implementation | Control IDs | Status |
@@ -2213,7 +2246,41 @@ Following [Hack23 Threat Modeling Policy § 4.4](https://github.com/Hack23/ISMS-
 
 ## 🔄 Continuous Validation & Assessment
 
-Following [Hack23 Threat Modeling Policy § 6.7](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md#continuous-improvement), we establish continuous threat model maintenance procedures.
+Following [Hack23 Threat Modeling Policy § 5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md#continuous-assessment) and [§ 6.7](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md#continuous-improvement), we establish continuous threat model maintenance procedures.
+
+### **🎪 Threat Modeling Workshop Process**
+
+Following [Hack23 AB Workshop Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md#threat-modeling-workshop) with riksdagsmonitor-specific adaptations:
+
+#### **📋 Workshop Lifecycle (PRE → MONITOR)**
+
+| Phase | Activity | Riksdagsmonitor Implementation | Output | Responsible |
+|-------|----------|-------------------------------|--------|-------------|
+| **PRE** | Scope definition, asset inventory refresh, participant assembly | Review 14-language site, AI workflows, AWS infrastructure, dashboard features | Updated scope, participant roster | CEO + Security Architect |
+| **ENUM** | Enumerate all system components, data flows, trust boundaries | Update C4 diagrams (Level 1+2), DFD with STRIDE annotations, identify new AI workflow changes | Component inventory, updated DFD | Security Architect |
+| **THREATS** | Systematic threat identification using STRIDE per element | Apply STRIDE to each DFD element; integrate MITRE ATT&CK techniques; review OWASP LLM Top 10 | Threat register (currently 70 threats) | Security Architect + Dev Team |
+| **MAP** | Map threats to controls, identify gaps, assess residual risk | Map each threat to PREV/DET/CORR controls; calculate risk scores; identify ATT-GAP items | Control mapping, gap analysis | Security Architect |
+| **PLAN** | Prioritize remediation, assign owners, set timelines | Create remediation backlog; assign to quarterly milestones; budget control improvements | Remediation plan with deadlines | CEO |
+| **VALIDATE** | Verify controls are effective, test detection mechanisms | Run CodeQL, Dependabot scan, SRI validation, CSP audit; test DR failover | Validation evidence, test results | Quality Engineer |
+| **MONITOR** | Continuous monitoring, metrics tracking, threat intelligence updates | Track 10 security metrics (see below); integrate ENISA/CERT-SE/MITRE updates | Dashboard metrics, quarterly report | CEO + Security Architect |
+
+#### **👥 Workshop Team Assembly**
+
+- **🛡️ Security Architect:** Threat analysis, control design, STRIDE/MITRE integration
+- **👨‍💼 CEO/CISO:** Risk acceptance, business impact assessment, final approval
+- **💻 Development Team:** Implementation feasibility, code-level threat review
+- **🤖 AI Workflow Expert:** OWASP LLM Top 10, prompt injection risks, AI hallucination analysis
+- **📊 Quality Engineer:** Validation testing, accessibility compliance, CI/CD security
+
+#### **📅 Assessment Lifecycle Schedule**
+
+| Assessment Type | Trigger | Frequency | Scope | Output |
+|----------------|---------|-----------|-------|--------|
+| **Full Workshop (PRE → MONITOR)** | Quarterly review, major architecture change | Quarterly (Feb, May, Aug, Nov) | All 7 phases, complete threat model review | Updated THREAT_MODEL.md |
+| **Targeted Assessment** | New AI workflow, dashboard feature, dependency update | As needed (within 2 weeks of change) | ENUM → MAP phases for affected components | Targeted threat update |
+| **Incident-Driven Review** | Security incident, near-miss, control failure | Within 1 week of incident | THREATS → PLAN phases for incident scope | Incident lessons learned, control improvements |
+| **Threat Intelligence Update** | ENISA report, MITRE ATT&CK update, CERT-SE advisory | As published | MAP → MONITOR phases | Updated threat agent analysis |
+| **Election Period Heightened Review** | 60 days before Swedish/EU elections | Pre-election cycle | Full review with election-specific scenarios | Election security posture report |
 
 ### **Threat Model Update Triggers**
 
@@ -2259,7 +2326,27 @@ Following [Hack23 Threat Modeling Policy § 6.7](https://github.com/Hack23/ISMS-
 
 ## 🌐 Current Threat Landscape Integration
 
-Per [ENISA Threat Landscape 2024](https://www.enisa.europa.eu/publications/enisa-threat-landscape-2024), we integrate current cyber threat trends into Riksdagsmonitor analysis.
+Per [ENISA Threat Landscape 2024](https://www.enisa.europa.eu/publications/enisa-threat-landscape-2024) and [Hack23 Threat Modeling Policy § 3.1](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md#current-threat-landscape), we integrate current cyber threat trends into Riksdagsmonitor analysis.
+
+### **🇪🇺 ENISA Threat Landscape 2024 — Priority Threat Category Mapping**
+
+Mapping Riksdagsmonitor exposure to all 7 ENISA priority threat categories:
+
+| # | ENISA Priority Threat Category | Riksdagsmonitor Exposure | Applicable Attack Vectors | Current Controls | Residual Risk | MITRE ATT&CK Alignment |
+|---|-------------------------------|-------------------------|--------------------------|-----------------|--------------|------------------------|
+| 1 | **🔒 Threats Against Availability** | **HIGH** — CloudFront/GitHub Pages are public-facing; DDoS during Swedish elections is credible | L7 flood, DNS amplification, CDN exhaustion | AWS Shield Standard (PREV-021), multi-region DR (PREV-020), Route 53 failover (PREV-022) | **LOW** | [T1498](https://attack.mitre.org/techniques/T1498/), [T1499](https://attack.mitre.org/techniques/T1499/) |
+| 2 | **💰 Ransomware** | **LOW** — No server-side infrastructure to encrypt; static assets recoverable from Git | Supply chain ransomware (npm ecosystem), GitHub account compromise | Dependabot (PREV-013), MFA (PREV-001), S3 versioning (PREV-019), Git immutable history | **VERY LOW** | [T1486](https://attack.mitre.org/techniques/T1486/) |
+| 3 | **📊 Threats Against Data** | **MEDIUM** — Public political data integrity is critical; no private user data | Data manipulation via AI hallucination, CDN content poisoning, commit tampering | SRI (PREV-012), mandatory PR review (PREV-028), branch protection (PREV-002), GPG signing (PREV-003) | **LOW** | [T1565](https://attack.mitre.org/techniques/T1565/), [T1659](https://attack.mitre.org/techniques/T1659/) |
+| 4 | **🦠 Malware** | **LOW** — Static website cannot execute server-side malware; client-side risk via CDN | Malicious npm package, compromised Chart.js/D3.js CDN asset | CSP (PREV-011), SRI (PREV-012), Dependabot (PREV-013), CodeQL (PREV-014) | **VERY LOW** | [T1195.002](https://attack.mitre.org/techniques/T1195/002/) |
+| 5 | **🎣 Social Engineering** | **MEDIUM** — GitHub contributor phishing, credential theft for deployment access | Phishing for GitHub PAT/MFA bypass, impersonation of maintainers | MFA (PREV-001), OIDC (PREV-006), secret scanning (PREV-005), security awareness | **LOW** | [T1566](https://attack.mitre.org/techniques/T1566/), [T1078](https://attack.mitre.org/techniques/T1078/) |
+| 6 | **📰 Information Manipulation** | **CRITICAL** — AI-generated political news is the #1 threat vector for democratic manipulation | AI hallucination injection, prompt injection, data source poisoning, translation manipulation | Mandatory PR review (PREV-028), MCP freshness validation (PREV-026), document ID validation (PREV-024) | **MEDIUM** | [T1659](https://attack.mitre.org/techniques/T1659/) |
+| 7 | **🔗 Supply Chain Attacks** | **HIGH** — npm ecosystem, Chart.js/D3.js CDN, GitHub Actions marketplace | Compromised npm packages, CDN poisoning, malicious GitHub Actions | SRI (PREV-012), SHA-pinned Actions (PREV-015), Dependabot (PREV-013), SBOM generation | **LOW** | [T1195](https://attack.mitre.org/techniques/T1195/) |
+
+**ENISA Integration Summary:**
+- **CRITICAL exposure:** Information Manipulation (ENISA #6) — directly targets riksdagsmonitor's AI-generated democratic content
+- **HIGH exposure:** Availability threats and Supply Chain attacks — addressed by multi-layer controls
+- **Risk-accepted:** Ransomware and Malware are structurally mitigated by static-site architecture
+- **Overall ENISA alignment:** 7/7 categories assessed, controls mapped, residual risk documented
 
 ### **2024-2026 Threat Trends Applicable to Riksdagsmonitor**
 
@@ -2298,6 +2385,43 @@ Per [ENISA Threat Landscape 2024](https://www.enisa.europa.eu/publications/enisa
 ## 🎯 Multi-Strategy Threat Modeling Implementation
 
 Demonstrating [Hack23 Threat Modeling Policy § 4](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) five-strategy integrated approach:
+
+### **🧠 Multi-Strategy Integration Mindmap**
+
+```mermaid
+mindmap
+  root((🎯 Riksdagsmonitor<br/>Threat Modeling Strategies))
+    (🎖️ Attacker-Centric)
+      [MITRE ATT&CK 23 techniques]
+      [9 ATT&CK tactics covered]
+      [Kill Chain disruption 76%]
+      [Threat agent profiles × 7]
+      [ENISA TL 2024 alignment]
+    (🏗️ Asset-Centric)
+      [10 assets classified]
+      [5 Crown Jewels ranked]
+      [$180K annual value]
+      [CIA triad per asset]
+      [Attack attractiveness scored]
+    (🏛️ Architecture-Centric)
+      [STRIDE per DFD element]
+      [C4 Level 1+2 diagrams]
+      [Trust boundary analysis]
+      [26 STRIDE threats mapped]
+      [6-category control mapping]
+    (🎯 Scenario-Centric)
+      [6 priority scenarios]
+      [9 attack trees]
+      [AI hallucination misuse case]
+      [Election interference what-if]
+      [Supply chain CDN scenario]
+    (⚖️ Risk-Centric)
+      [Quantitative risk scoring]
+      [Likelihood × Impact matrix]
+      [Risk treatment 100% coverage]
+      [ROI 682% on controls]
+      [Business impact $180K]
+```
 
 ### **Strategy Integration Matrix**
 
@@ -2750,6 +2874,7 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 
 - [🏛️ Architecture](./ARCHITECTURE.md) - C4 models (Context, Container, Component)
 - [🔐 Security Architecture](./SECURITY_ARCHITECTURE.md) - Comprehensive security controls implementation (CSP, SRI, IAM, OIDC)
+- [🔮 Future Threat Model](./FUTURE_THREAT_MODEL.md) - Threat analysis for planned architecture evolution
 - [📊 Data Model](./DATA_MODEL.md) - Political data entities and relationships
 - [🔄 Workflows](./WORKFLOWS.md) - CI/CD security workflows, GitHub Actions
 - [📈 State Diagram](./STATEDIAGRAM.md) - System state transitions
