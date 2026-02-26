@@ -24,6 +24,9 @@ interface CalendarEvent {
 interface MockMCPClientShape {
   fetchCalendarEvents: Mock<(from: string, tom: string) => Promise<CalendarEvent[]>>;
   searchDocuments: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
+  fetchCommitteeReports: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
+  fetchPropositions: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
+  fetchMotions: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -73,6 +76,9 @@ const { mockClientInstance, mockCalendarEvents, MockMCPClient } = vi.hoisted(() 
   const mockClientInstance: MockMCPClientShape = {
     fetchCalendarEvents: vi.fn().mockResolvedValue(mockCalendarEvents) as MockMCPClientShape['fetchCalendarEvents'],
     searchDocuments: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchDocuments'],
+    fetchCommitteeReports: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchCommitteeReports'],
+    fetchPropositions: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchPropositions'],
+    fetchMotions: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchMotions'],
   };
 
   function MockMCPClient(): MockMCPClientShape {
@@ -97,6 +103,9 @@ describe('Month-Ahead Article Generation', () => {
     vi.clearAllMocks();
     mockClientInstance.fetchCalendarEvents.mockResolvedValue(mockCalendarEvents);
     mockClientInstance.searchDocuments.mockResolvedValue([]);
+    mockClientInstance.fetchCommitteeReports.mockResolvedValue([]);
+    mockClientInstance.fetchPropositions.mockResolvedValue([]);
+    mockClientInstance.fetchMotions.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -117,6 +126,18 @@ describe('Month-Ahead Article Generation', () => {
     it('should require search_dokument tool for document fallback', () => {
       expect(monthAheadModule.REQUIRED_TOOLS).toContain('search_dokument');
     });
+
+    it('should require get_betankanden tool for committee pipeline', () => {
+      expect(monthAheadModule.REQUIRED_TOOLS).toContain('get_betankanden');
+    });
+
+    it('should require get_propositioner tool for strategic outlook', () => {
+      expect(monthAheadModule.REQUIRED_TOOLS).toContain('get_propositioner');
+    });
+
+    it('should require get_motioner tool for trend analysis', () => {
+      expect(monthAheadModule.REQUIRED_TOOLS).toContain('get_motioner');
+    });
   });
 
   describe('Data Collection', () => {
@@ -127,6 +148,33 @@ describe('Month-Ahead Article Generation', () => {
 
       expect(mockClientInstance.fetchCalendarEvents).toHaveBeenCalled();
       expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_calendar_events')).toBe(true);
+    });
+
+    it('should fetch committee reports from MCP', async () => {
+      const result = await monthAheadModule.generateMonthAhead({
+        languages: ['en']
+      });
+
+      expect(mockClientInstance.fetchCommitteeReports).toHaveBeenCalled();
+      expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_betankanden')).toBe(true);
+    });
+
+    it('should fetch propositions from MCP', async () => {
+      const result = await monthAheadModule.generateMonthAhead({
+        languages: ['en']
+      });
+
+      expect(mockClientInstance.fetchPropositions).toHaveBeenCalled();
+      expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_propositioner')).toBe(true);
+    });
+
+    it('should fetch motions from MCP', async () => {
+      const result = await monthAheadModule.generateMonthAhead({
+        languages: ['en']
+      });
+
+      expect(mockClientInstance.fetchMotions).toHaveBeenCalled();
+      expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_motioner')).toBe(true);
     });
 
     it('should handle empty calendar events', async () => {
@@ -176,6 +224,17 @@ describe('Month-Ahead Article Generation', () => {
       const validation = monthAheadModule.validateMonthAhead(article);
       expect(validation.hasCalendarEvents).toBe(true);
       expect(validation.hasForwardLookingTone).toBe(true);
+    });
+
+    it('should include hasLegislativePipeline in validation result', () => {
+      const article: ArticleInput = {
+        content: 'Committee pipeline report proposition motion scheduled for next month.',
+        sources: ['source1', 'source2', 'source3']
+      };
+
+      const validation = monthAheadModule.validateMonthAhead(article);
+      expect(validation).toHaveProperty('hasLegislativePipeline');
+      expect(validation.hasLegislativePipeline).toBe(true);
     });
   });
 
