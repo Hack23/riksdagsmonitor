@@ -288,10 +288,12 @@ search_regering({ from_date: "2026-02-16", limit: 30 })
 - ✅ Or query individual MCP tools: `npx tsx scripts/mcp-query-cli.ts get_sync_status`
 - ✅ Scripts ARE used by agentic workflows and work perfectly
 
-**❌ DO NOT:**
+**🚫 NEVER implement your own MCP HTTP/JSON-RPC client — NEVER write ad-hoc Python/Node.js MCP scripts:**
 - ❌ Rely on implicit "latest" data without checking freshness
 - ❌ Skip data freshness validation
 - ❌ Use tools without understanding date parameter support
+- ❌ Write ad-hoc Python/Node.js scripts to query MCP (use `scripts/mcp-query-cli.ts` instead)
+- ❌ Spend more than 5 minutes on MCP connectivity — go straight to the bash script fallback
 
 ### 🚨 DATA FRESHNESS CHECK (MANDATORY FIRST STEP)
 

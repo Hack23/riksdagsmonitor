@@ -39,7 +39,12 @@ async function main(): Promise<void> {
   const rawParams = process.argv[3] ?? '{}';
   let params: Record<string, unknown>;
   try {
-    params = JSON.parse(rawParams) as Record<string, unknown>;
+    const parsed: unknown = JSON.parse(rawParams);
+    if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      console.error(`MCP tool params must be a JSON object, got: ${typeof parsed}`);
+      process.exit(1);
+    }
+    params = parsed as Record<string, unknown>;
   } catch (parseErr: unknown) {
     console.error(`Invalid JSON params: ${rawParams}\nError: ${(parseErr as Error).message}`);
     process.exit(1);
@@ -56,4 +61,8 @@ async function main(): Promise<void> {
   }
 }
 
-main();
+main().catch((error: unknown) => {
+  const msg = (error as Error).message ?? String(error);
+  console.error(`Unexpected error in mcp-query-cli: ${msg}`);
+  process.exit(1);
+});

@@ -20,11 +20,11 @@ _MCP_CONFIG_PATH="${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}"
 if [ -f "$_MCP_CONFIG_PATH" ]; then
   GW_KEY=$(node -e "
     try {
-      const c = JSON.parse(require('fs').readFileSync(process.argv[1], 'utf8'));
+      const c = JSON.parse(require('fs').readFileSync(process.argv[2], 'utf8'));
       const k = (c.gateway || {}).apiKey || '';
       process.stdout.write(k);
-    } catch(e) { process.stderr.write(''); process.stdout.write(''); }
-  " "$_MCP_CONFIG_PATH" 2>/dev/null || echo "")
+    } catch(e) { process.stderr.write('MCP config parse error: ' + e.message + '\n'); process.stdout.write(''); }
+  " -- "$_MCP_CONFIG_PATH" 2>/dev/null || echo "")
   if [ -z "$GW_KEY" ]; then
     echo "⚠️  WARNING: MCP config file exists but gateway API key is missing or invalid"
   else

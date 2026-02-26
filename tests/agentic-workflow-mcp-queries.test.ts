@@ -462,6 +462,7 @@ describe('MCP Anti-Pattern Guards', () => {
   const COMPLEX_WORKFLOWS: readonly string[] = [
     'news-evening-analysis.md',
     'news-article-generator.md',
+    'news-realtime-monitor.md',
   ];
 
   COMPLEX_WORKFLOWS.forEach(workflow => {
