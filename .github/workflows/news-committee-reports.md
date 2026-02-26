@@ -139,6 +139,19 @@ Before generating ANY articles, verify MCP connectivity:
 
 ## MANDATORY PR Creation
 
+> **🚀 HOW SAFE PR CREATION WORKS — READ THIS FIRST**
+>
+> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
+>
+> **Exact steps:**
+> 1. Write article files to `news/` using `bash` or `edit` tools
+> 2. Stage and commit locally: `git add news/ && git commit -m "Add committee-reports articles"`
+> 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
+>
+> **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
+> **❌ DO NOT** try alternative approaches if the tool call works — one call is all you need.
+> **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
+
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` when articles generated
 - ✅ **ONLY USE `noop` if genuinely no new committee reports** from riksdag-regering-mcp
 - ❌ **NEVER use `noop` as fallback for PR creation failures**

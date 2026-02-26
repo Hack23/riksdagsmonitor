@@ -92,10 +92,11 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Your mission is
 
 > **⚠️ NON-NEGOTIABLE — read before anything else:**
 > Every run **MUST** end by calling exactly one safe output tool:
-> - Found no significant events → `safeoutputs___noop({"message": "Real-time monitor: No significant parliamentary events in this window. Checked: votes, debates, questions, documents, calendar."})`
-> - Generated articles → `safeoutputs___create_pull_request({...})`
+> - Found no significant events → `safeoutputs___noop({"message": "..."})`
+> - Generated articles → `git add news/ && git commit -m "..."` then `safeoutputs___create_pull_request({...})`
 > - Required tool unavailable → `safeoutputs___missing_tool({"reason": "..."})`
 >
+> **`safeoutputs___create_pull_request` handles branch creation and push automatically. Do NOT run `git push` or create branches.**
 > **Exiting without calling one of these = workflow failure.** When in doubt, call `safeoutputs___noop`.
 
 ## 🚨 CRITICAL REQUIREMENTS (MUST COMPLETE)
@@ -204,18 +205,24 @@ Sometimes, due to cold start timing, the MCP tools may not appear in your tools 
 
 ### 2. MANDATORY Pull Request Creation (Final Step)
 
-**CRITICAL: Workflow behavior depends on whether events found**
+> **🚀 HOW SAFE PR CREATION WORKS — READ THIS FIRST**
+>
+> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
+>
+> **Exact steps:**
+> 1. Write article files to `news/` using `bash` or `edit` tools
+> 2. Stage and commit locally: `git add news/ && git commit -m "Add breaking-news articles"`
+> 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
+>
+> **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
+> **❌ DO NOT** try alternative approaches if the tool call works — one call is all you need.
+> **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
 
-- ✅ **If significant events found:** Generate articles → `safeoutputs___create_pull_request` (MUST succeed or FAIL)
+- ✅ **If significant events found:** Generate articles → `safeoutputs___create_pull_request`
 - ✅ **If genuinely no events:** `safeoutputs___noop` → Workflow succeeds (legitimate)
-- ❌ **NEVER use `noop` as fallback for PR failures:** If articles generated but PR fails → FAIL
-
-**⚠️ From reader's perspective: No PR when articles exist = FAILURE**
-- ✅ `safeoutputs___create_pull_request` - When articles generated
+- ❌ **NEVER use `noop` as fallback for PR failures**
 
 **⚠️ FAILURE TO CALL A SAFE OUTPUT TOOL = WORKFLOW FAILURE**
-
-The workflow will **FAIL** if no safe output is generated, even if the agent job technically succeeds. This is by design to ensure all runs produce actionable output.
 
 ## ⚠️ CRITICAL REQUIREMENT: Multi-Language Translation
 
@@ -760,88 +767,35 @@ If validation shows errors, try to fix them. If elapsed >= 38 minutes, proceed t
 
 ### Step 6: Create PR (if articles generated)
 
-**IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
+> **🚀 REMINDER: How safe PR creation works**
+>
+> 1. Stage and commit: `git add news/ && git commit -m "Add breaking-news articles for YYYY-MM-DD"`
+> 2. Call `safeoutputs___create_pull_request` — it handles branch creation, push, and PR automatically
+> 3. Done. **One call. No retries needed. No alternative approaches.**
+>
+> **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API.
 
-In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead, you MUST use the **safeoutputs MCP tools** available through the MCP gateway.
-
-#### Available Safe-Output MCP Tools
-
-1. **`safeoutputs___create_pull_request`** - Create a PR with your changes
-   ```json
-   {
-     "title": "🔴 Breaking: {primary headline} - {date}",
-     "body": "## Breaking News\n\nThis PR contains...",
-     "labels": ["automated-news", "breaking-news", "needs-editorial-review"]
-   }
-   ```
-
-2. **`safeoutputs___add_comment`** - Add a comment to the triggering issue/PR
-   ```json
-   {
-     "body": "Real-time monitor detected significant events. {count} articles generated.",
-     "item_number": 123
-   }
-   ```
-
-3. **`safeoutputs___noop`** - ONLY when genuinely no events detected
-   ```json
-   {
-     "message": "Real-time monitor: No significant parliamentary events in this window. Checked: votes, debates, questions, documents, calendar. Next check: {schedule}."
-   }
-   ```
-   
-   **⚠️ CRITICAL: Only use noop if:**
-   - You monitored all sources and found NO significant events
-   - No articles were generated
-   - This is the legitimate "quiet period" case
-   
-   **❌ NEVER use noop if:**
-   - Articles were generated but PR creation failed
-   - You encountered errors after creating content
-   - In those cases, let the workflow FAIL
-
-4. **`safeoutputs___missing_tool`** - Report missing capabilities
-5. **`safeoutputs___missing_data`** - Report missing data
-
-#### How to Create the PR
-
-**CRITICAL: Understanding the Container Isolation Bug**
-
-Due to a known bug in safe-outputs, `create_pull_request` may fail with "no-commits-found". If this happens:
-- ❌ **DO NOT call `safeoutputs___noop`** - this hides the failure
-- ✅ **Let the workflow FAIL** - readers need the article
-
-After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool.
-
-**Example failure handling:**
-```javascript
-const result = await safeoutputs___create_pull_request({
-  title: "🔴 Breaking: Coalition Crisis - 2026-02-17",
-  body: prBody,
-  labels: ["automated-news", "breaking-news"]
-});
-
-if (!result || result.error) {
-  throw new Error("Failed to create PR after generating breaking news - workflow must fail");
+Call `safeoutputs___create_pull_request` with:
+```json
+{
+  "title": "🔴 Breaking: {primary headline} - {date}",
+  "body": "## Breaking News\n\nArticles: {count}\nLanguages: {list}\nSources: riksdag-regering-mcp",
+  "labels": ["automated-news", "breaking-news", "needs-editorial-review"]
 }
 ```
-
-**Title:** `🔴 Breaking: {primary headline} - {date}`
-**Branch:** `news-realtime/{timestamp}`
-**Labels:** `automated-news`, `breaking-news`, `needs-editorial-review`
 
 #### If No Significant Events Detected (LEGITIMATE NOOP CASE)
 
 **THIS IS THE MOST COMMON OUTCOME** - Parliament is often inactive between sessions.
 
 When genuinely no breaking news is detected:
-
 1. Verify you monitored all sources (votes, debates, questions, documents, calendar)
-2. Document what was checked
-3. Call `safeoutputs___noop` with detailed message
-4. Workflow succeeds (legitimate quiet period)
+2. Call `safeoutputs___noop` with message describing what was checked
+3. Workflow succeeds (legitimate quiet period)
 
-**⚠️ But if articles were generated and PR fails:** workflow MUST FAIL, not noop.
+**❌ NEVER use `noop` if articles were generated — let the workflow FAIL instead.**
+
+**Other safe output tools:** `safeoutputs___add_comment`, `safeoutputs___missing_tool`, `safeoutputs___missing_data`
 
 ## Available MCP Tools
 

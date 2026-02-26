@@ -149,19 +149,24 @@ Before generating ANY articles, verify MCP connectivity:
 
 ### 2. MANDATORY Pull Request Creation (Final Step)
 
-**CRITICAL: Workflow MUST create a PR with analysis or FAIL**
-
-From a reader's perspective: **Where's the analysis?**
+> **🚀 HOW SAFE PR CREATION WORKS — READ THIS FIRST**
+>
+> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
+>
+> **Exact steps:**
+> 1. Write article files to `news/` using `bash` or `edit` tools
+> 2. Stage and commit locally: `git add news/ && git commit -m "Add evening-analysis articles"`
+> 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
+>
+> **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
+> **❌ DO NOT** try alternative approaches if the tool call works — one call is all you need.
+> **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
 
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` - When analysis articles generated
 - ✅ **ONLY USE `noop` if genuinely insufficient data** (checked riksdag-regering-mcp, found no votes, no debates, no documents, no calendar events for the lookback period)
-- ❌ **NEVER use `noop` as a fallback for PR creation failures** - If articles were generated but PR fails, the workflow MUST FAIL
+- ❌ **NEVER use `noop` as a fallback for PR creation failures**
 
-**⚠️ If you generated analysis articles but cannot create PR → workflow FAILS (not noop)**
-
-Readers expect analysis. No PR = No analysis = FAILURE.
-
-The workflow will **FAIL** if no safe output is generated. This is by design to ensure all runs produce actionable output.
+The workflow will **FAIL** if no safe output is generated. This is by design.
 
 You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to produce a comprehensive wrap-up of Swedish parliamentary and government activity, written in **The Economist style** with deeper analytical depth than breaking coverage.
 
@@ -921,76 +926,31 @@ If validation fails, review the error messages, fix the issues, regenerate index
 
 ### Step 7: Create Pull Request
 
-**IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
+> **🚀 REMINDER: How safe PR creation works**
+>
+> 1. Stage and commit: `git add news/ && git commit -m "Add evening-analysis articles for YYYY-MM-DD"`
+> 2. Call `safeoutputs___create_pull_request` — it handles branch creation, push, and PR automatically
+> 3. Done. **One call. No retries needed. No alternative approaches.**
+>
+> **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API.
 
-In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead, you MUST use the **safeoutputs MCP tools** available through the MCP gateway. These tools are already registered and available to you:
-
-#### Available Safe-Output MCP Tools
-
-1. **`safeoutputs___create_pull_request`** - Create a PR with your changes
-   ```json
-   {
-     "title": "🌆 Evening Analysis: {Lead headline} - {date}",
-     "body": "## Evening Parliamentary Analysis\n\nThis PR contains...",
-     "labels": ["automated-news", "evening-analysis", "needs-editorial-review"]
-   }
-   ```
-
-2. **`safeoutputs___add_comment`** - Add a comment to the triggering issue/PR
-   ```json
-   {
-     "body": "Evening analysis completed successfully. {count} articles generated.",
-     "item_number": 123
-   }
-   ```
-
-3. **`safeoutputs___noop`** - ONLY when genuinely no data exists
-   ```json
-   {
-     "message": "No significant parliamentary activity for evening analysis. Checked riksdag-regering-mcp: no votes, debates, documents, or calendar events in last {lookback_hours} hours. Last analysis: {timestamp}."
-   }
-   ```
-   
-   **⚠️ CRITICAL: Only use noop if:**
-   - You checked riksdag-regering-mcp and found NO parliamentary activity
-   - No analysis articles were generated
-   - The day was genuinely quiet (no votes, no debates, no documents)
-   
-   **❌ NEVER use noop if:**
-   - Articles were generated but PR creation failed
-   - You encountered errors after creating content
-   - In those cases, let the workflow FAIL
-
-4. **`safeoutputs___missing_tool`** - Report missing capabilities
-5. **`safeoutputs___missing_data`** - Report missing data
-
-#### How to Create the PR
-
-**CRITICAL: Understanding the Container Isolation Bug**
-
-Due to a known bug in safe-outputs, `create_pull_request` may fail with "no-commits-found" even though you've committed changes. If this happens:
-- ❌ **DO NOT call `safeoutputs___noop`** - this hides the failure
-- ✅ **Let the workflow FAIL** by throwing an error
-- From reader's perspective: No PR = No analysis = FAILURE
-
-After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool with:
-
-**Title:** `🌆 Evening Analysis: {Lead headline} - {date}`
-**Branch:** `news-evening/{date}`
-**Labels:** `automated-news`, `evening-analysis`, `needs-editorial-review`
-
-**Example failure handling:**
-```javascript
-const result = await safeoutputs___create_pull_request({
-  title: "🌆 Evening Analysis: Coalition Tensions - 2026-02-17",
-  body: prBody,
-  labels: ["automated-news", "evening-analysis"]
-});
-
-if (!result || result.error) {
-  throw new Error("Failed to create PR after generating analysis - workflow must fail");
+Call `safeoutputs___create_pull_request` with:
+```json
+{
+  "title": "🌆 Evening Analysis: {Lead headline} - {date}",
+  "body": "## Evening Parliamentary Analysis\n\nArticles: {count}\nLanguages: {list}\nMCP tools used: {tools}\nValidation: passed",
+  "labels": ["automated-news", "evening-analysis", "needs-editorial-review"]
 }
 ```
+
+**If no parliamentary activity was found** (genuinely no data from riksdag-regering-mcp):
+- Call `safeoutputs___noop` with message describing what was checked
+- ❌ NEVER use `noop` if articles were generated — let the workflow FAIL instead
+
+**Other safe output tools available:**
+- `safeoutputs___add_comment` — comment on triggering issue/PR
+- `safeoutputs___missing_tool` — report missing capabilities
+- `safeoutputs___missing_data` — report missing data
 
 **PR Body should include:**
 - Summary of articles generated
