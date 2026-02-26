@@ -23,7 +23,7 @@ if [ -f "$_MCP_CONFIG_PATH" ]; then
       const c = JSON.parse(require('fs').readFileSync(process.argv[1], 'utf8'));
       const k = (c.gateway || {}).apiKey || '';
       process.stdout.write(k);
-    } catch { process.stdout.write(''); }
+    } catch(e) { process.stderr.write(''); process.stdout.write(''); }
   " "$_MCP_CONFIG_PATH" 2>/dev/null || echo "")
   if [ -z "$GW_KEY" ]; then
     echo "⚠️  WARNING: MCP config file exists but gateway API key is missing or invalid"

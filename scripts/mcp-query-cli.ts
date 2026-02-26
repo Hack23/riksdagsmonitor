@@ -40,8 +40,8 @@ async function main(): Promise<void> {
   let params: Record<string, unknown>;
   try {
     params = JSON.parse(rawParams) as Record<string, unknown>;
-  } catch {
-    console.error(`Invalid JSON params: ${rawParams}`);
+  } catch (parseErr: unknown) {
+    console.error(`Invalid JSON params: ${rawParams}\nError: ${(parseErr as Error).message}`);
     process.exit(1);
   }
 
