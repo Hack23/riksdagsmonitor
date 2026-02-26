@@ -1,5 +1,9 @@
 {
   "timestamp": "2026-02-26T12:05:00.000Z",
+  "generated": 14,
+  "errors": 0,
+  "types": "breaking",
+  "status": "success",
   "generated_at": "2026-02-26T12:05:00.000Z",
   "workflow": "news-realtime-monitor",
   "run_id": null,
