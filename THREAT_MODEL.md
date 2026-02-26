@@ -2390,7 +2390,7 @@ Demonstrating [Hack23 Threat Modeling Policy § 4](https://github.com/Hack23/ISM
 
 ```mermaid
 mindmap
-  root)🎯 Riksdagsmonitor<br/>Threat Modeling Strategies(
+  root((🎯 Riksdagsmonitor<br/>Threat Modeling Strategies))
     (🎖️ Attacker-Centric)
       [MITRE ATT&CK 23 techniques]
       [9 ATT&CK tactics covered]
