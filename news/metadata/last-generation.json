@@ -1,33 +1,48 @@
 {
-  "generated_at": "2026-02-25T18:49:00Z",
+  "timestamp": "2026-02-26T12:05:00.000Z",
+  "generated": 14,
+  "errors": 0,
+  "types": "breaking",
+  "status": "success",
+  "generated_at": "2026-02-26T12:05:00.000Z",
   "workflow": "news-realtime-monitor",
-  "run_id": "22411005874",
+  "run_id": null,
+  "type": "realtime-monitor",
   "events_detected": [
     {
-      "type": "propositions_batch",
+      "type": "government_propositions",
       "significance": "HIGH",
-      "count": 10,
-      "description": "Government submitted 10 propositions covering defence, security, welfare reform, migration",
-      "documents": ["2025/26:142", "2025/26:133", "2025/26:138", "2025/26:136", "2025/26:146", "2025/26:134", "2025/26:135", "2025/26:131", "2025/26:127", "2025/26:125"]
+      "description": "Ten major propositions filed in one week including deportation rules, psychological violence criminalisation, public assembly security, civilian preparedness",
+      "date_range": "2026-02-23 to 2026-02-25"
     },
     {
-      "type": "interpellation",
+      "type": "press_conference",
       "significance": "HIGH",
-      "count": 1,
-      "description": "Interpellation on Sweden EU budget contribution 60% increase",
-      "documents": ["2025/26:357"]
+      "description": "Government press conference on stricter deportation rules (lagrådsremiss)",
+      "date": "2026-02-25"
+    },
+    {
+      "type": "foreign_policy",
+      "significance": "MEDIUM",
+      "description": "Ukraine 4th anniversary rally + 230M SEK humanitarian aid",
+      "date": "2026-02-24"
     }
   ],
-  "articles_generated": {
-    "slug": "government-legislative-package",
-    "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-    "language_count": 14,
-    "article_type": "breaking"
-  },
+  "articles_generated": 14,
+  "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
+  "slug": "2026-02-26-breaking-security-reforms",
+  "data_sources": [
+    "riksdag-regering-mcp: get_sync_status",
+    "riksdag-regering-mcp: search_regering",
+    "riksdag-regering-mcp: get_propositioner",
+    "riksdag-regering-mcp: search_voteringar",
+    "riksdag-regering-mcp: search_dokument",
+    "riksdag-regering-mcp: get_calendar_events"
+  ],
+  "next_check": "2026-02-26T14:00:00.000Z",
   "mcp_data_source": {
     "status": "live",
-    "sources": ["riksdagen", "regeringen"],
-    "accessed_at": "2026-02-25T18:50:42Z"
-  },
-  "next_check": "2026-02-26T10:00:00Z"
+    "sources": ["riksdag-regering-mcp"],
+    "accessed_at": "2026-02-26T12:05:00.000Z"
+  }
 }
