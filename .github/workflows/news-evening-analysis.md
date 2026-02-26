@@ -292,9 +292,8 @@ search_voteringar({ rm: "2025/26", limit: 50 })  // Then filter by datum
 - ✅ **CRITICAL**: Filter results by date in your analysis when tools don't support date params
 
 **✅ For running Node.js scripts via bash:**
-- ✅ Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` BEFORE running script
-- ✅ Extract gateway API key: read `gateway.apiKey` from `$GH_AW_MCP_CONFIG` and export as `MCP_AUTH_TOKEN="Bearer $KEY"`
-- ✅ Set `export MCP_CLIENT_TIMEOUT_MS=90000` for cold start tolerance
+- ✅ Run `source scripts/mcp-setup.sh` BEFORE running any script (sets MCP_SERVER_URL, MCP_AUTH_TOKEN, MCP_CLIENT_TIMEOUT_MS)
+- ✅ Query individual MCP tools from bash: `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`
 - ✅ Scripts ARE used by agentic workflows and work perfectly
 - ✅ Trust the automatic retry logic for cold starts
 
@@ -324,10 +323,15 @@ Sometimes, due to cold start timing, the MCP tools may not appear in your tools 
    - Proceed **directly to Step 4 bash script approach** — the script handles MCP internally
    - Use `safeoutputs___noop` only if the bash script also fails with no articles generated
 
-**⚠️ CRITICAL: NEVER implement your own MCP HTTP/JSON-RPC client from bash.** This wastes time and does not work in this environment. Only use:
+**🚫🚫🚫 ABSOLUTE PROHIBITION — READ THIS CAREFULLY 🚫🚫🚫**
+
+**NEVER implement your own MCP HTTP/JSON-RPC client from bash.** This wastes 10-20+ minutes and ALWAYS fails. Past workflow runs have wasted entire time budgets writing ad-hoc Python/Node.js MCP scripts. Only use:
 - ✅ Direct tool calls (framework-managed — preferred)
-- ✅ The `generate-news-enhanced.ts` bash script (fallback)
+- ✅ The `generate-news-enhanced.ts` bash script with `source scripts/mcp-setup.sh` (fallback)
+- ✅ Individual tool queries via `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`
 - ❌ Writing your own `node /tmp/...` JSON-RPC HTTP client — this WILL time out the workflow
+- ❌ Writing Python scripts (`python3 -c`, `python3 << 'EOF'`) to query MCP — use the repo's TypeScript client
+- ❌ Using `curl` to call MCP endpoints — the AWF sandbox blocks direct HTTPS
 
 ### 🐛 If You Get Errors
 
@@ -767,17 +771,8 @@ case "$LANGUAGES_INPUT" in
   *) LANG_ARG="$LANGUAGES_INPUT" ;;
 esac
 
-# Set up MCP connection for script (gateway API key — same pattern as news-week-ahead.md)
-export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
-if [ -f "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" ]; then
-  GW_KEY=$(python3 -c "import json,sys; c=json.load(open(sys.argv[1])); print(c.get('gateway',{}).get('apiKey',''))" "${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}" 2>/dev/null || echo "")
-  if [ -z "$GW_KEY" ]; then
-    echo "⚠️  WARNING: MCP config file exists but gateway API key is missing or invalid"
-  else
-    export MCP_AUTH_TOKEN="Bearer $GW_KEY"
-  fi
-fi
-export MCP_CLIENT_TIMEOUT_MS=90000
+# Set up MCP connection for script (see scripts/mcp-setup.sh)
+source scripts/mcp-setup.sh
 
 TODAY="$(date +%Y-%m-%d)"
 npx tsx scripts/generate-news-enhanced.ts \
@@ -1076,7 +1071,7 @@ For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_grou
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
 - **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_dokument()`, etc.)
-- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract gateway API key via `MCP_AUTH_TOKEN` from MCP config before running. Set `export MCP_CLIENT_TIMEOUT_MS=90000`.
+- **Node.js scripts**: Run `source scripts/mcp-setup.sh` before running scripts, or query individual tools via `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`.
 - **Cold starts**: 30-60s on first call — framework retries automatically
 - **Safe outputs** (MANDATORY final step): 
   - `safeoutputs___create_pull_request` when analysis generated (must succeed or workflow fails)

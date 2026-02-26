@@ -413,3 +413,100 @@ describe('MCP Tool Date Parameter Support Matrix', () => {
     });
   });
 });
+
+// ---------------------------------------------------------------------------
+// MCP Setup & Anti-Pattern Tests
+// ---------------------------------------------------------------------------
+
+/** All workflow .md files that contain bash blocks running generate-news-enhanced.ts */
+const ALL_WORKFLOWS: readonly string[] = [
+  'news-article-generator.md',
+  'news-committee-reports.md',
+  'news-evening-analysis.md',
+  'news-month-ahead.md',
+  'news-monthly-review.md',
+  'news-motions.md',
+  'news-propositions.md',
+  'news-week-ahead.md',
+  'news-weekly-review.md',
+];
+
+describe('MCP Setup Script Usage', () => {
+  ALL_WORKFLOWS.forEach(workflow => {
+    it(`${workflow} should use source scripts/mcp-setup.sh instead of inline python3`, () => {
+      const filepath = path.join(WORKFLOWS_DIR, workflow);
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      // Must reference the shared MCP setup script
+      expect(content).toContain('source scripts/mcp-setup.sh');
+
+      // Must NOT contain inline python3 for JSON parsing (except in anti-pattern warnings)
+      const lines = content.split('\n');
+      const problematicPython: ProblematicLine[] = [];
+      lines.forEach((line, idx) => {
+        // Skip lines that are anti-pattern documentation (contain ❌ or "DO NOT" or "NEVER")
+        if (line.includes('❌') || line.includes('DO NOT') || line.includes('NEVER')) {
+          return;
+        }
+        if (line.includes('python3 -c') && !line.includes('❌')) {
+          problematicPython.push({ line: idx + 1, content: line.trim() });
+        }
+      });
+
+      expect(problematicPython).toEqual([]);
+    });
+  });
+});
+
+describe('MCP Anti-Pattern Guards', () => {
+  const COMPLEX_WORKFLOWS: readonly string[] = [
+    'news-evening-analysis.md',
+    'news-article-generator.md',
+    'news-realtime-monitor.md',
+  ];
+
+  COMPLEX_WORKFLOWS.forEach(workflow => {
+    it(`${workflow} should warn against ad-hoc MCP scripts`, () => {
+      const filepath = path.join(WORKFLOWS_DIR, workflow);
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      // Must contain prohibition against ad-hoc MCP scripts
+      expect(content).toMatch(/NEVER.*implement.*MCP|NEVER.*MCP.*client|PROHIBITION/i);
+    });
+
+    it(`${workflow} should reference mcp-query-cli.ts as alternative`, () => {
+      const filepath = path.join(WORKFLOWS_DIR, workflow);
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      expect(content).toContain('mcp-query-cli.ts');
+    });
+  });
+
+  it('scripts/mcp-setup.sh should exist and be valid', () => {
+    const setupPath = path.join(__dirname, '..', 'scripts', 'mcp-setup.sh');
+    expect(fs.existsSync(setupPath)).toBe(true);
+
+    const content = fs.readFileSync(setupPath, 'utf-8');
+    // Should set the three required env vars
+    expect(content).toContain('MCP_SERVER_URL');
+    expect(content).toContain('MCP_AUTH_TOKEN');
+    expect(content).toContain('MCP_CLIENT_TIMEOUT_MS');
+    // Should use node -e, not python3 for execution
+    expect(content).toContain('node -e');
+    // Should not contain python3 execution commands (comments are OK)
+    const execLines = content.split('\n').filter(l =>
+      !l.trim().startsWith('#') && l.includes('python3 -c')
+    );
+    expect(execLines).toEqual([]);
+  });
+
+  it('scripts/mcp-query-cli.ts should exist', () => {
+    const cliPath = path.join(__dirname, '..', 'scripts', 'mcp-query-cli.ts');
+    expect(fs.existsSync(cliPath)).toBe(true);
+
+    const content = fs.readFileSync(cliPath, 'utf-8');
+    // Should import MCPClient from the repo's client
+    expect(content).toContain('MCPClient');
+    expect(content).toContain('mcp-client');
+  });
+});
