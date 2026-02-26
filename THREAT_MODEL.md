@@ -664,7 +664,7 @@ Per [Hack23 Threat Modeling Policy § 4.1.4](https://github.com/Hack23/ISMS-PUBL
 - **Strongest disruption:** Phase 3 (Delivery) at 95% and Phase 7 (Actions on Objectives) at 97% — multi-layer preventive and corrective controls
 - **Weakest disruption:** Phase 2 (Weaponization) at 30% — attacker-side activity, mitigated by threat intelligence
 - **Architecture advantage:** Static website + no server-side code eliminates Phases 5-6 attack surface almost entirely
-- **Overall Kill Chain Disruption Score:** **76%** (weighted average across all phases)
+- **Overall Kill Chain Disruption Score:** **76%** (simple average across all phases)
 
 ---
 
@@ -1508,7 +1508,7 @@ Consolidated mapping of each STRIDE category to primary, secondary, and monitori
 |-----------------|---------------|-----------------|-------------------|------------|
 | **🎭 Spoofing** | Account compromise, commit forgery | GitHub MFA enforcement (PREV-001), OIDC auth (PREV-006) | GPG commit signing (PREV-003), CODEOWNERS (PREV-004) | GitHub audit logs (DET-001), failed login monitoring |
 | **🔧 Tampering** | Malicious commits, CDN supply chain, data manipulation | Branch protection (PREV-002), SRI hashes (PREV-012) | CodeQL (PREV-014), Dependabot (PREV-013), SHA-pinned Actions (PREV-015) | CloudTrail (DET-002), SRI validation (DET-006), CSP reports (DET-005) |
-| **❌ Repudiation** | Commit authorship denial, action denial | GPG signing (PREV-003), immutable Git history | GitHub audit logs, structured logging | Audit trail analysis, commit verification |
+| **❌ Repudiation** | Commit authorship denial, action denial | GPG signing (PREV-003), immutable Git history | N/A | GitHub audit logs (DET-001), structured logging, Audit trail analysis, commit verification |
 | **📤 Information Disclosure** | Secret leaks, AI hallucination, S3 exposure | Secret scanning (PREV-005), IAM least privilege (PREV-007) | S3 bucket policy (PREV-008), mandatory PR review (PREV-028) | S3 access logs (DET-003), PR rejection rate (DET-012) |
 | **⚡ Denial of Service** | DDoS, CloudFront outage, pipeline exhaustion | AWS Shield Standard (PREV-021), multi-region replication (PREV-020) | Route 53 health checks (PREV-022), S3 versioning (PREV-019) | CloudWatch alarms (DET-004), Shield metrics (DET-010) |
 | **⬆️ Elevation of Privilege** | Workflow escalation, IAM policy bypass | CODEOWNERS (PREV-004), workflow approval (PREV-016) | IAM least privilege (PREV-007), OIDC scoped tokens (PREV-006) | Workflow logs (DET-009), GitHub audit logs (DET-001) |

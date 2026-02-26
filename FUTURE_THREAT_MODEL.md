@@ -54,6 +54,8 @@ Aligned with [Hack23 AB Threat Modeling Policy](https://github.com/Hack23/ISMS-P
 | **🔒 Integrity** | High | **Critical** | Real-time voting data + expanded AI content increases integrity requirements |
 | **⚡ Availability** | High | **Critical** | Real-time dashboards require higher availability during parliamentary sessions |
 
+> **Note:** This table describes the **future Riksdagsmonitor system security classification**. The CIA classification badges in the Document Control section represent the **classification of this document itself**, not the future system, and may therefore differ from the future system's target classification.
+
 ---
 
 ## 🏗️ Future Architecture Threat Analysis
