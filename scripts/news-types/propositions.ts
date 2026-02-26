@@ -46,7 +46,7 @@
  * - Includes full proposition text, budget impact, department information
  * - Enables systematic government agenda tracking
  * 
- * TODO: Implement additional tools for comprehensive analysis:
+ * Additional tools for comprehensive analysis:
  * - search_dokument_fulltext: Full policy analysis from proposition
  * - analyze_g0v_by_department: Department-by-department impact
  * - search_anforanden: Parliamentary debate on proposition
@@ -183,17 +183,12 @@ import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord
 
 /**
  * Required MCP tools for propositions articles
- * 
- * REQUIRED_TOOLS UPDATE (2026-02-14):
- * Initially set to 4 tools ['get_propositioner', 'search_dokument_fulltext', 'analyze_g0v_by_department', 'search_anforanden']
- * to match tests/validation expectations. However, this caused runtime validation failures
- * since the implementation only calls get_propositioner (line 56).
- * 
- * Reverted to actual implementation (1 tool) to prevent validation failures.
- * When additional tools are implemented in generatePropositions(), add them back here.
  */
 export const REQUIRED_TOOLS: readonly string[] = [
-  'get_propositioner'
+  'get_propositioner',
+  'search_dokument_fulltext',
+  'analyze_g0v_by_department',
+  'search_anforanden'
 ];
 
 export interface TitleSet {
@@ -250,6 +245,44 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
       return { success: true, files: 0, mcpCalls };
     }
     
+    // ── Step 2: Full-text policy analysis ─────────────────────────────────
+    const topPropTitle = ((propositions[0] as Record<string, string>)['titel'] ?? (propositions[0] as Record<string, string>)['title'] ?? '');
+    let fullTextResults: unknown[] = [];
+    if (topPropTitle) {
+      try {
+        console.log('  🔄 Fetching full-text policy analysis...');
+        const ftResponse = await client.request('search_dokument_fulltext', { query: topPropTitle, limit: 3 });
+        fullTextResults = (ftResponse['dokument'] ?? ftResponse['results'] ?? []) as unknown[];
+        mcpCalls.push({ tool: 'search_dokument_fulltext', result: fullTextResults });
+        console.log(`  📄 Found ${fullTextResults.length} full-text matches`);
+      } catch (err: unknown) {
+        console.warn('  ⚠ search_dokument_fulltext failed (non-fatal):', (err as Error).message);
+      }
+    }
+
+    // ── Step 3: Department impact analysis ────────────────────────────────
+    let departmentAnalysis: Record<string, unknown> = {};
+    try {
+      console.log('  🔄 Fetching department impact analysis...');
+      const dateStr = formatDateForSlug(new Date());
+      departmentAnalysis = await client.request('analyze_g0v_by_department', { dateFrom: dateStr, dateTo: dateStr });
+      mcpCalls.push({ tool: 'analyze_g0v_by_department', result: departmentAnalysis });
+      console.log('  🏛 Department analysis retrieved');
+    } catch (err: unknown) {
+      console.warn('  ⚠ analyze_g0v_by_department failed (non-fatal):', (err as Error).message);
+    }
+
+    // ── Step 4: Parliamentary debate context ──────────────────────────────
+    let speechDebates: unknown[] = [];
+    try {
+      console.log('  🔄 Fetching parliamentary debate context...');
+      speechDebates = await client.searchSpeeches({ text: topPropTitle, rm: '2025/26', limit: 10 });
+      mcpCalls.push({ tool: 'search_anforanden', result: speechDebates });
+      console.log(`  🗣 Found ${speechDebates.length} debate speeches`);
+    } catch (err: unknown) {
+      console.warn('  ⚠ search_anforanden failed (non-fatal):', (err as Error).message);
+    }
+
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-government-propositions`;
     const articles: GeneratedArticle[] = [];
@@ -257,11 +290,11 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
       
-      const content: string = generateArticleContent({ propositions }, 'propositions', lang);
-      const watchPoints = extractWatchPoints({ propositions }, lang);
-      const metadata = generateMetadata({ propositions }, 'propositions', lang);
+      const content: string = generateArticleContent({ propositions, fullTextResults, departmentAnalysis, speechDebates }, 'propositions', lang);
+      const watchPoints = extractWatchPoints({ propositions, fullTextResults, departmentAnalysis, speechDebates }, lang);
+      const metadata = generateMetadata({ propositions, fullTextResults, departmentAnalysis, speechDebates }, 'propositions', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_propositioner']);
+      const sources: string[] = generateSources(['get_propositioner', 'search_dokument_fulltext', 'analyze_g0v_by_department', 'search_anforanden']);
       
       const titles: TitleSet = getTitles(lang, propositions.length, propositions);
       
@@ -302,7 +335,7 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
       mcpCalls,
       crossReferences: {
         event: `${propositions.length} propositions`,
-        sources: ['propositioner']
+        sources: ['propositioner', 'dokument_fulltext', 'g0v_department', 'anforanden']
       }
     };
     
