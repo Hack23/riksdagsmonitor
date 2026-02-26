@@ -1071,7 +1071,7 @@ For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_grou
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
 - **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_dokument()`, etc.)
-- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract gateway API key via `MCP_AUTH_TOKEN` from MCP config before running. Set `export MCP_CLIENT_TIMEOUT_MS=90000`.
+- **Node.js scripts**: Run `source scripts/mcp-setup.sh` before running scripts, or query individual tools via `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`.
 - **Cold starts**: 30-60s on first call — framework retries automatically
 - **Safe outputs** (MANDATORY final step): 
   - `safeoutputs___create_pull_request` when analysis generated (must succeed or workflow fails)

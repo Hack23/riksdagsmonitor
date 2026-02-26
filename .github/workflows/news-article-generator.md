@@ -291,7 +291,7 @@ get_sync_status({})
 - ✅ For Node.js scripts: run `source scripts/mcp-setup.sh` before running (see script execution section below)
 - ✅ Query individual MCP tools from bash: `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`
 
-**DO NOT try to call MCP manually from prompts:**
+**🚫 NEVER try to call MCP manually from prompts — NEVER implement your own MCP HTTP/JSON-RPC client:**
 - ❌ Use `curl` or manual HTTP calls to MCP endpoints
 - ❌ Import `MCPClient` or manage sessions yourself from prompt code
 - ❌ Use `mcp["server"]["tool"]` wrapper syntax in prompts
@@ -1551,7 +1551,7 @@ Remember: You are producing world-class political journalism that informs Swedis
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
 
 - **Agent tool calls**: Use simple names directly (`get_calendar_events()`, `search_dokument()`, etc.)
-- **Node.js scripts**: Set `export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"` and extract gateway API key via `MCP_AUTH_TOKEN` from MCP config before running. Set `export MCP_CLIENT_TIMEOUT_MS=90000`.
+- **Node.js scripts**: Run `source scripts/mcp-setup.sh` before running scripts, or query individual tools via `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`.
 - **Cold starts**: 30-60s on first call — framework retries automatically; script auto-warms with `get_sync_status({})` before data queries
 - **Session reuse**: Script uses a shared MCPClient across all generators (warm-up benefits all subsequent calls)
 - **Batch mode**: Use `--batch-size=5 --skip-existing` to process languages in manageable batches (recommended for `--languages=all`)
