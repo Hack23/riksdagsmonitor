@@ -79,6 +79,8 @@ interface MockArticlePayload {
     dok_id?: string;
     organ?: string;
   }>;
+  votes?: unknown[];
+  speeches?: unknown[];
 }
 
 describe('Data Transformers', () => {
@@ -376,6 +378,79 @@ describe('Data Transformers', () => {
     it('should handle committee-reports with empty reports array', () => {
       const content = generateArticleContent({ reports: [] } as MockArticlePayload, 'committee-reports', 'en') as string;
       expect(content).toContain('No committee reports');
+    });
+
+    it('should render Voting Results section when votes are provided', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test Report', url: '#', organ: 'FiU' }], votes: [{}] } as MockArticlePayload,
+        'committee-reports',
+        'en'
+      ) as string;
+      expect(content).toContain('Voting Results');
+    });
+
+    it('should omit Voting Results section when votes array is empty', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test Report', url: '#', organ: 'FiU' }], votes: [] } as MockArticlePayload,
+        'committee-reports',
+        'en'
+      ) as string;
+      expect(content).not.toContain('Voting Results');
+    });
+
+    it('should render Committee Debate section when speeches are provided', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test Report', url: '#', organ: 'FiU' }], speeches: [{}] } as MockArticlePayload,
+        'committee-reports',
+        'en'
+      ) as string;
+      expect(content).toContain('Committee Debate');
+    });
+
+    it('should omit Committee Debate section when speeches array is empty', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test Report', url: '#', organ: 'FiU' }], speeches: [] } as MockArticlePayload,
+        'committee-reports',
+        'en'
+      ) as string;
+      expect(content).not.toContain('Committee Debate');
+    });
+
+    it('should render Government Bill Linkage section when propositions are provided', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test Report', url: '#', organ: 'FiU' }], propositions: [{ titel: 'Prop 2025/26:1' }] } as MockArticlePayload,
+        'committee-reports',
+        'en'
+      ) as string;
+      expect(content).toContain('Government Bill Linkage');
+      expect(content).toContain('Prop 2025/26:1');
+    });
+
+    it('should omit Government Bill Linkage section when propositions array is empty', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test Report', url: '#', organ: 'FiU' }], propositions: [] } as MockArticlePayload,
+        'committee-reports',
+        'en'
+      ) as string;
+      expect(content).not.toContain('Government Bill Linkage');
+    });
+
+    it('should render Swedish Röstningsresultat heading for sv language when votes provided', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', url: '#', organ: 'FiU' }], votes: [{}] } as MockArticlePayload,
+        'committee-reports',
+        'sv'
+      ) as string;
+      expect(content).toContain('Röstningsresultat');
+    });
+
+    it('should render Swedish Utskottsdebatt heading for sv language when speeches provided', () => {
+      const content = generateArticleContent(
+        { reports: [{ titel: 'Test', url: '#', organ: 'FiU' }], speeches: [{}] } as MockArticlePayload,
+        'committee-reports',
+        'sv'
+      ) as string;
+      expect(content).toContain('Utskottsdebatt');
     });
 
     it('should handle propositions with data', () => {
