@@ -438,7 +438,7 @@ describe('Weekly Review Article Generation', () => {
     it('should return current activity counts', () => {
       const docs = [{ id: '1' }, { id: '2' }] as unknown[];
       const speeches = [{ id: 'a' }];
-      const votes = [{ parti: 'M', rost: 'Ja' }];
+      const votes = [{ parti: 'M', rost: 'Ja', bet: 'AU1', punkt: '1' }];
       const cia = {
         coalitionStability: { stabilityScore: 75, riskLevel: 'low', defectionProbability: 0.1, majorityMargin: 5 },
         partyPerformance: [],

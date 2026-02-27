@@ -48,6 +48,7 @@ import type {
 } from '../data-transformers/risk-analysis.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
+import { getCurrentRiksmote } from './motions.js';
 
 /** Swedish government coalition parties (current Tidö coalition) */
 const GOVERNMENT_PARTIES = new Set(['M', 'KD', 'L', 'SD']);
@@ -432,22 +433,29 @@ export function attachSpeechesToDocuments(
 
 /**
  * Normalize CIAContext so defectionProbability is in [0, 1].
- * risk-analysis.ts multiplies it by 100, so a whole-percent value (e.g. 15)
- * would produce 1500 and break risk calculations.
+ *
+ * risk-analysis.ts multiplies it by 100, so out-of-range values can
+ * explode scores. Expected input formats:
+ * - (0, 1] — already a proper probability fraction; kept as-is.
+ *            Note: exactly 1.0 is treated as 100% (not as 1% whole-percent).
+ * - (1, ∞) — treated as a whole-percent (loadCIAContext returns min 5,
+ *             e.g. 50 means 50% → normalized to 0.5); clamped to 1.
+ * - Non-finite or ≤ 0 — coerced to 0 (no defection risk).
  */
 function normalizedCIAContext(ctx: CIAContext): CIAContext {
   const defProb = ctx.coalitionStability?.defectionProbability;
   if (typeof defProb !== 'number') return ctx;
 
   let normalized: number;
-  if (!Number.isFinite(defProb)) {
+  if (!Number.isFinite(defProb) || defProb <= 0) {
+    // Non-finite or non-positive: no defection risk.
     normalized = 0;
-  } else if (defProb > 1) {
-    // Treat as whole-percent and convert to fraction, then clamp
-    normalized = Math.min(1, Math.max(0, defProb / 100));
+  } else if (defProb <= 1) {
+    // Already a fraction in (0, 1]: keep as-is (1.0 = 100% probability).
+    normalized = defProb;
   } else {
-    // Already fraction form — clamp negatives to 0
-    normalized = Math.max(0, defProb);
+    // Whole-percent value (e.g. loadCIAContext min 5): convert to fraction and clamp.
+    normalized = Math.min(1, defProb / 100);
   }
 
   if (normalized === defProb) return ctx;
@@ -573,7 +581,7 @@ export function calculateWeeklyActivityMetrics(
       uniqueVotePoints.add(`${record.bet}-${record.punkt}`);
     }
   }
-  const currentVotes = uniqueVotePoints.size > 0 ? uniqueVotePoints.size : votingRecords.length;
+  const currentVotes = uniqueVotePoints.size;
 
   return {
     currentDocuments: documents.length,
@@ -633,7 +641,7 @@ const COALITION_STATS_LABELS: Readonly<Record<Language, {
   de: { score: 'Risikowert', level: 'Risikoniveau', wins: 'Regierungssiege', losses: 'Regierungsniederlagen', cross: 'Überparteiliche Abstimmungen', defections: 'Interne Abweichungen', votes: 'Analysierte Abstimmungspunkte' },
   fr: { score: 'Score de risque', level: 'Niveau de risque', wins: 'Victoires gouvernementales', losses: 'Défaites gouvernementales', cross: 'Votes transpartisans', defections: 'Défections internes', votes: 'Points de vote analysés' },
   es: { score: 'Puntuación de riesgo', level: 'Nivel de riesgo', wins: 'Victorias gubernamentales', losses: 'Derrotas gubernamentales', cross: 'Votos transversales', defections: 'Defecciones internas', votes: 'Puntos de votación analizados' },
-  nl: { score: 'Risicoscore', level: 'Risiconiveau', wins: 'Regeringsoverwinningen', losses: 'Regeringsnederlagen', cross: 'Stemmen over partijgrenzen', defections: 'Interne defecties', votes: 'Geanalyseerde stemmentpunten' },
+  nl: { score: 'Risicoscore', level: 'Risiconiveau', wins: 'Regeringsoverwinningen', losses: 'Regeringsnederlagen', cross: 'Stemmen over partijgrenzen', defections: 'Interne defecties', votes: 'Geanalyseerde stempunten' },
   ar: { score: 'درجة الخطر', level: 'مستوى الخطر', wins: 'انتصارات الحكومة', losses: 'خسائر الحكومة', cross: 'تصويتات متعددة الأحزاب', defections: 'الانشقاقات الداخلية', votes: 'نقاط التصويت المحللة' },
   he: { score: 'ציון סיכון', level: 'רמת סיכון', wins: 'ניצחונות ממשלתיים', losses: 'הפסדים ממשלתיים', cross: 'הצבעות חוצות-מפלגות', defections: 'עריקות פנימיות', votes: 'נקודות הצבעה שנותחו' },
   ja: { score: 'リスクスコア', level: 'リスクレベル', wins: '政府の勝利', losses: '政府の敗北', cross: '超党派投票', defections: '内部離反', votes: '分析された投票点' },
@@ -680,7 +688,14 @@ export function generateCoalitionDynamicsSection(
   if (stress.anomalies.length > 0) {
     html += `      <ul>\n`;
     for (const anomaly of stress.anomalies.slice(0, 3)) {
-      html += `        <li class="anomaly-flag severity-${VALID_SEVERITIES.has(anomaly.severity.toLowerCase()) ? anomaly.severity.toLowerCase() : 'low'}">${escapeHtml(anomaly.description)}</li>\n`;
+      const severityRaw = anomaly.severity;
+      const severityNormalized = severityRaw.toLowerCase();
+      const isValidSeverity = VALID_SEVERITIES.has(severityNormalized);
+      if (!isValidSeverity) {
+        console.warn(`WeeklyReview: Unexpected anomaly severity '${severityRaw}', falling back to 'low'.`);
+      }
+      const severityClass = isValidSeverity ? severityNormalized : 'low';
+      html += `        <li class="anomaly-flag severity-${severityClass}">${escapeHtml(anomaly.description)}</li>\n`;
     }
     html += `      </ul>\n`;
   }
@@ -884,26 +899,24 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     let votingRecords: unknown[] = [];
     try {
       // search_voteringar does not support date params; use rm+limit then filter by datum.
-      // Derive the riksmöte(s) from both ends of the date range in case the window crosses
-      // the September session boundary (e.g. late Aug → early Sep lookback).
-      const startRmYear = startDate.getMonth() >= 8 ? startDate.getFullYear() : startDate.getFullYear() - 1;
-      const endRmYear = today.getMonth() >= 8 ? today.getFullYear() : today.getFullYear() - 1;
-      const rmValues: string[] = [];
-      rmValues.push(`${startRmYear}/${String(startRmYear + 1).slice(-2)}`);
-      if (endRmYear !== startRmYear) {
-        const endRm = `${endRmYear}/${String(endRmYear + 1).slice(-2)}`;
-        if (!rmValues.includes(endRm)) rmValues.push(endRm);
-      }
+      // Derive the riksmöte(s) from both ends of the date range using the shared
+      // getCurrentRiksmote utility (Sep boundary: month >= 8 → new session).
+      const startRm = getCurrentRiksmote(startDate);
+      const endRm = getCurrentRiksmote(today);
+      const rmValues = startRm === endRm ? [startRm] : [startRm, endRm];
       const allVotesArrays = await Promise.all(
         rmValues.map(rm => client.fetchVotingRecords({ rm, limit: 200 }) as Promise<VotingRecord[]>),
       );
       const allVotes: VotingRecord[] = allVotesArrays.flat();
       // Post-query filter to the weekly window using the datum field.
-      // Normalize to YYYY-MM-DD in case datum includes a time component.
       votingRecords = allVotes.filter(r => {
         const d = r.datum;
         if (typeof d !== 'string') return false;
-        const dateStr = d.includes('T') ? d.split('T')[0] : d;
+        // Extract YYYY-MM-DD via regex to handle ISO timestamps and timezone suffixes
+        // (e.g. '2026-02-10T10:00:00' or '2026-09-05+02:00').
+        const match = /^\d{4}-\d{2}-\d{2}/.exec(d);
+        if (!match) return false;
+        const dateStr = match[0];
         return dateStr >= fromStr && dateStr <= toStr;
       });
     } catch (err: unknown) {
