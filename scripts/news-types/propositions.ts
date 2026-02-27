@@ -180,6 +180,7 @@ import {
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
+import { getCurrentRiksmote } from './motions.js';
 
 /**
  * Required MCP tools for propositions articles
@@ -281,7 +282,7 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
     let speechDebates: unknown[] = [];
     try {
       console.log('  🔄 Fetching parliamentary debate context...');
-      speechDebates = await client.searchSpeeches({ text: topPropTitle, rm: '2025/26', limit: 10 });
+      speechDebates = await client.searchSpeeches({ text: topPropTitle, rm: getCurrentRiksmote(), limit: 10 });
       mcpCalls.push({ tool: 'search_anforanden', result: speechDebates });
       console.log(`  🗣 Found ${speechDebates.length} debate speeches`);
     } catch (err: unknown) {
