@@ -728,6 +728,82 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
 
   content += `      </ul>\n    </div>\n`;
 
+  // Display limits for enrichment sections
+  const MAX_DISPLAY_ITEMS = 3;
+  const MAX_SPEECH_PREVIEW_LENGTH = 200;
+
+  // ── Policy Substance section (from search_dokument_fulltext) ─────────────
+  const fullTextResults = data.fullTextResults as Array<Record<string, unknown>> | undefined;
+  if (fullTextResults && fullTextResults.length > 0) {
+    const policySubstanceHeadings: Record<string, string> = {
+      en: 'Policy Substance', sv: 'Politikinnehåll', da: 'Politisk indhold',
+      no: 'Politisk innhold', fi: 'Politiikan sisältö', de: 'Politischer Inhalt',
+      fr: 'Contenu politique', es: 'Contenido de la política', nl: 'Beleidsinhoud',
+      ar: 'مضمون السياسة', he: 'תוכן המדיניות', ja: '政策の内容', ko: '정책 내용', zh: '政策内容',
+    };
+    const psHeading = policySubstanceHeadings[lang as string] ?? policySubstanceHeadings['en'];
+    content += `\n    <h2>${escapeHtml(psHeading)}</h2>\n`;
+    content += `    <div class="policy-substance">\n`;
+    for (const doc of fullTextResults.slice(0, MAX_DISPLAY_ITEMS)) {
+      const docTitle = escapeHtml(String(doc['titel'] ?? doc['title'] ?? ''));
+      const docSummary = escapeHtml(String(doc['summary'] ?? doc['notis'] ?? ''));
+      if (docTitle) {
+        content += `      <div class="fulltext-result"><strong>${docTitle}</strong>`;
+        if (docSummary) content += `<p>${docSummary}</p>`;
+        content += `</div>\n`;
+      }
+    }
+    content += `    </div>\n`;
+  }
+
+  // ── Department Impact section (from analyze_g0v_by_department) ───────────
+  const departmentAnalysis = data.departmentAnalysis as Record<string, unknown> | undefined;
+  const departments = departmentAnalysis
+    ? ((departmentAnalysis['departments'] ?? departmentAnalysis['dokument'] ?? []) as Array<Record<string, unknown>>)
+    : [];
+  if (departments.length > 0) {
+    const departmentImpactHeadings: Record<string, string> = {
+      en: 'Department Impact', sv: 'Departementets påverkan', da: 'Ministerielt ansvar',
+      no: 'Departementspåvirkning', fi: 'Ministeriön vaikutus', de: 'Ressortverantwortung',
+      fr: 'Impact ministériel', es: 'Impacto ministerial', nl: 'Ministeriële impact',
+      ar: 'تأثير الوزارة', he: 'השפעת המשרד', ja: '省庁への影響', ko: '부처 영향', zh: '部门影响',
+    };
+    const diHeading = departmentImpactHeadings[lang as string] ?? departmentImpactHeadings['en'];
+    content += `\n    <h2>${escapeHtml(diHeading)}</h2>\n`;
+    content += `    <div class="department-impact"><ul>\n`;
+    for (const dept of departments.slice(0, MAX_DISPLAY_ITEMS)) {
+      const deptName = escapeHtml(String(dept['departement'] ?? dept['name'] ?? dept['namn'] ?? ''));
+      const deptCount = Number(dept['count'] ?? dept['antal'] ?? 0);
+      if (deptName) {
+        content += `      <li>${deptName}${deptCount > 0 ? ` (${deptCount})` : ''}</li>\n`;
+      }
+    }
+    content += `    </ul></div>\n`;
+  }
+
+  // ── Parliamentary Debate section (from search_anforanden) ─────────────────
+  const speechDebates = data.speechDebates as Array<Record<string, unknown>> | undefined;
+  if (speechDebates && speechDebates.length > 0) {
+    const parliamentaryDebateHeadings: Record<string, string> = {
+      en: 'Parliamentary Debate', sv: 'Parlamentarisk debatt', da: 'Parlamentarisk debat',
+      no: 'Parlamentarisk debatt', fi: 'Parlamentaarinen keskustelu', de: 'Parlamentarische Debatte',
+      fr: 'Débat parlementaire', es: 'Debate parlamentario', nl: 'Parlementair debat',
+      ar: 'النقاش البرلماني', he: 'דיון פרלמנטרי', ja: '議会討論', ko: '의회 토론', zh: '议会辩论',
+    };
+    const pdHeading = parliamentaryDebateHeadings[lang as string] ?? parliamentaryDebateHeadings['en'];
+    content += `\n    <h2>${escapeHtml(pdHeading)}</h2>\n`;
+    content += `    <div class="debate-context">\n`;
+    for (const speech of speechDebates.slice(0, MAX_DISPLAY_ITEMS)) {
+      const speaker = escapeHtml(String(speech['talare'] ?? speech['speaker'] ?? ''));
+      const party = escapeHtml(String(speech['parti'] ?? speech['party'] ?? ''));
+      const text = escapeHtml(String(speech['anforandetext'] ?? speech['text'] ?? '').substring(0, MAX_SPEECH_PREVIEW_LENGTH));
+      if (speaker && text) {
+        content += `      <blockquote><p>${text}…</p><footer>— ${speaker}${party ? ` (${party})` : ''}</footer></blockquote>\n`;
+      }
+    }
+    content += `    </div>\n`;
+  }
+
   return content;
 }
 
