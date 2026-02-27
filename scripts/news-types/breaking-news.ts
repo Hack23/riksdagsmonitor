@@ -227,30 +227,49 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       };
     }
     
-    // Fetch related votes and party breakdown if event involves a vote
-    if (eventData.voteId) {
+    // Tool 1: search_voteringar — vote records (enriched with voteId when available)
+    try {
       console.log('  🔄 Fetching voting details...');
-      const votes: unknown = await client.fetchVotingRecords({ punkt: eventData.voteId });
+      const votes: unknown = await client.fetchVotingRecords(eventData.voteId ? { punkt: eventData.voteId } : { limit: 5 });
       mcpCalls.push({ tool: 'search_voteringar', result: votes });
-      
-      // Fetch party-level voting breakdown
-      console.log('  🔄 Fetching party voting breakdown...');
-      const votingGroup: unknown = await client.fetchVotingGroup({ punkt: eventData.voteId, groupBy: 'parti' });
-      mcpCalls.push({ tool: 'get_voting_group', result: votingGroup });
+    } catch (err) {
+      console.warn('  ⚠ search_voteringar unavailable:', (err as Error).message);
+      mcpCalls.push({ tool: 'search_voteringar', result: [] });
     }
-    
-    // Fetch related speeches and MP context if topic provided
-    if (eventData.topic) {
+
+    // Tool 2: get_voting_group — party-level voting breakdown
+    try {
+      console.log('  🔄 Fetching party voting breakdown...');
+      const votingGroup: unknown = await client.fetchVotingGroup(
+        eventData.voteId ? { punkt: eventData.voteId, groupBy: 'parti' } : { groupBy: 'parti', limit: 5 }
+      );
+      mcpCalls.push({ tool: 'get_voting_group', result: votingGroup });
+    } catch (err) {
+      console.warn('  ⚠ get_voting_group unavailable:', (err as Error).message);
+      mcpCalls.push({ tool: 'get_voting_group', result: [] });
+    }
+
+    // Tool 3: search_anforanden — speeches providing context and reactions
+    let speechList: Array<Record<string, unknown>> = [];
+    try {
       console.log('  🔄 Fetching related speeches...');
-      const speeches: unknown = await client.searchSpeeches({ sok: eventData.topic });
-      mcpCalls.push({ tool: 'search_anforanden', result: speeches });
-      
-      // Fetch MP profiles for speaker context using names from speeches
+      const speeches = await client.searchSpeeches(eventData.topic ? { text: eventData.topic, limit: 10 } : { limit: 5 });
+      speechList = Array.isArray(speeches) ? speeches as Array<Record<string, unknown>> : [];
+      mcpCalls.push({ tool: 'search_anforanden', result: speechList });
+    } catch (err) {
+      console.warn('  ⚠ search_anforanden unavailable:', (err as Error).message);
+      mcpCalls.push({ tool: 'search_anforanden', result: [] });
+    }
+
+    // Tool 4: search_ledamoter — MP profiles for speaker context
+    try {
       console.log('  🔄 Fetching MP profiles for speaker context...');
-      const speechList = Array.isArray(speeches) ? speeches as Array<Record<string, unknown>> : [];
       const speakerName = speechList[0]?.['talare'] as string | undefined;
       const mps: unknown = await client.fetchMPs(speakerName ? { namn: speakerName, limit: 1 } : { limit: 5 });
       mcpCalls.push({ tool: 'search_ledamoter', result: mps });
+    } catch (err) {
+      console.warn('  ⚠ search_ledamoter unavailable:', (err as Error).message);
+      mcpCalls.push({ tool: 'search_ledamoter', result: [] });
     }
     
     const today = new Date();
