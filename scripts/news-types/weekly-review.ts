@@ -822,15 +822,16 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
 
     // ── Step 2: type-specific fetchers for richer metadata (non-fatal) ─────
     console.log('  🔄 Step 2 — Fetching typed metadata (reports, propositions, motions)...');
+    const rm = getCurrentRiksmote(today);
     const [reports, propositions, motions] = await Promise.all([
       Promise.resolve()
-        .then(() => client.fetchCommitteeReports(50, '2025/26') as Promise<unknown[]>)
+        .then(() => client.fetchCommitteeReports(50, rm) as Promise<unknown[]>)
         .catch((err: unknown) => { console.error('Failed to fetch committee reports:', err); return [] as unknown[]; }),
       Promise.resolve()
-        .then(() => client.fetchPropositions(50, '2025/26') as Promise<unknown[]>)
+        .then(() => client.fetchPropositions(50, rm) as Promise<unknown[]>)
         .catch((err: unknown) => { console.error('Failed to fetch propositions:', err); return [] as unknown[]; }),
       Promise.resolve()
-        .then(() => client.fetchMotions(50, '2025/26') as Promise<unknown[]>)
+        .then(() => client.fetchMotions(50, rm) as Promise<unknown[]>)
         .catch((err: unknown) => { console.error('Failed to fetch motions:', err); return [] as unknown[]; }),
     ]);
 
@@ -882,7 +883,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     // ── Step 4: fetch speeches from the period ─────────────────────────────
     console.log('  🔄 Step 4 — Fetching speeches from the period...');
     const speeches = await Promise.resolve()
-      .then(() => client.searchSpeeches({ rm: '2025/26', from: fromStr, to: toStr, limit: 100 }) as Promise<unknown[]>)
+      .then(() => client.searchSpeeches({ rm, from: fromStr, to: toStr, limit: 100 }) as Promise<unknown[]>)
       .catch((err: unknown) => { console.error('Failed to fetch speeches:', err); return [] as unknown[]; });
 
     mcpCalls.push({ tool: 'search_anforanden', result: speeches });
