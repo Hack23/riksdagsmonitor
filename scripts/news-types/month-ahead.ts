@@ -148,13 +148,12 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
         console.log(`  📊 Found ${documents.length} recent pipeline documents`);
       }
 
-      if (documents.length === 0) {
-        console.log('  ℹ️ No documents found, skipping');
-        return { success: true, files: 0, mcpCalls };
-      }
     }
 
-    // ── Fetch strategic legislative pipeline data ──────────────────────────
+    // ── Fetch strategic legislative pipeline data (always, before early-return) ─
+    // These fetches run unconditionally so that betankanden/propositioner/motioner
+    // data can drive the Strategic Outlook / Pipeline / Trends sections even when
+    // calendar events and document fallbacks both return empty results.
     console.log('  🔄 Fetching legislative pipeline (betankanden, propositioner, motioner)...');
     const [committeeReports, propositionDocs, motionDocs] = await Promise.all([
       Promise.resolve()
@@ -176,6 +175,13 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
       `  📊 Pipeline: ${committeeReports.length} reports, ` +
       `${propositionDocs.length} propositions, ${motionDocs.length} motions`
     );
+
+    // Only skip generation when all data sources (calendar, docs, and pipeline) are empty
+    if (events.length === 0 && documents.length === 0 &&
+        committeeReports.length === 0 && propositionDocs.length === 0 && motionDocs.length === 0) {
+      console.log('  ℹ️ No data from any source, skipping');
+      return { success: true, files: 0, mcpCalls };
+    }
 
     const slug = `${formatDateForSlug(today)}-month-ahead`;
     const articles: GeneratedArticle[] = [];
@@ -250,8 +256,8 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
           ? `${events.length} events over ${daysAhead} days`
           : `${documents.length} upcoming documents`,
         sources: events.length > 0
-          ? ['calendar_events', 'get_betankanden', 'get_propositioner', 'get_motioner']
-          : ['calendar_events', 'search_dokument', 'get_betankanden', 'get_propositioner', 'get_motioner'],
+          ? ['calendar_events', 'betankanden', 'propositioner', 'motioner']
+          : ['calendar_events', 'search_dokument', 'betankanden', 'propositioner', 'motioner'],
       },
     };
   } catch (error: unknown) {
