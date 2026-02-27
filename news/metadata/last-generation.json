@@ -3,7 +3,7 @@
   "types": ["propositions"],
   "languagesGenerated": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
   "allRequestedLanguages": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
-  "batchSize": "all",
+  "batchSize": null,
   "skipExisting": false,
   "generated": 14,
   "errors": 0,
