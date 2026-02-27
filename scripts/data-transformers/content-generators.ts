@@ -11,7 +11,7 @@
 
 import { escapeHtml } from '../html-utils.js';
 import type { Language } from '../types/language.js';
-import type { ArticleContentData, WeekAheadData, RawDocument } from './types.js';
+import type { ArticleContentData, WeekAheadData, RawDocument, RawCalendarEvent } from './types.js';
 import { getPillarTransition } from '../editorial-pillars.js';
 import {
   L,
@@ -49,6 +49,56 @@ const TITLE_SUFFIX_TEMPLATES: Readonly<Record<string, (t: string) => string>> = 
   ko: t => `, "${t}" 포함`,
   zh: t => `，包括"${t}"`,
 };
+
+/** Extract meaningful keywords from text for cross-reference matching (min 2 chars, captures EU, KU, etc.; splits on whitespace, hyphens, and commas) */
+function extractKeywords(text: string): string[] {
+  return text.toLowerCase().split(/[\s,–-]+/u).filter(w => w.length >= 2);
+}
+
+/** Find documents related to a calendar event by organ match or keyword overlap (max 3) */
+function findRelatedDocuments(event: RawCalendarEvent, documents: RawDocument[]): RawDocument[] {
+  const eventOrgan = event.organ ?? '';
+  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? '');
+  return documents.filter(doc => {
+    const docOrgan = doc.organ ?? doc.committee ?? '';
+    if (eventOrgan && docOrgan && eventOrgan.toLowerCase() === docOrgan.toLowerCase()) return true;
+    const docText = (doc.titel ?? doc.title ?? '').toLowerCase();
+    return keywords.some(kw => docText.includes(kw));
+  }).slice(0, 3);
+}
+
+/** Find written questions related to a calendar event by keyword overlap (max 3) */
+function findRelatedQuestions(event: RawCalendarEvent, questions: RawDocument[]): RawDocument[] {
+  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? '');
+  return questions.filter(q => {
+    const qText = (q.titel ?? q.title ?? '').toLowerCase();
+    return keywords.some(kw => qText.includes(kw));
+  }).slice(0, 3);
+}
+
+/** Extract targeted minister name from interpellation summary "till MINISTER" header line.
+ *  Strips trailing topic clauses ("om X", "angående Y", etc.) and punctuation. */
+function extractMinister(summary: string): string {
+  // Use non-newline whitespace ([^\S\n]+) so we don't cross into the next line
+  const m = summary.match(/\btill[^\S\n]+([^\n]+)/i);
+  if (!m) return '';
+  const raw = m[1].trim();
+  if (!raw) return '';
+
+  // Remove common trailing topic clauses and punctuation
+  const lowerRaw = raw.toLowerCase();
+  const stopPhrases = [' om ', ' angående ', ' rörande ', ' beträffande '];
+  let end = raw.length;
+  for (const phrase of stopPhrases) {
+    const idx = lowerRaw.indexOf(phrase);
+    if (idx !== -1 && idx < end) end = idx;
+  }
+  // Cut at terminating punctuation if it comes earlier
+  const punctIdx = raw.search(/[?:;.,]/);
+  if (punctIdx !== -1 && punctIdx < end) end = punctIdx;
+
+  return raw.slice(0, end).trim();
+}
 
 export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
@@ -89,6 +139,50 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     <h3>${dayName ? dayName + ' - ' : ''}${titleHtml}</h3>
     <p>${event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`}</p>
 `;
+
+      // Policy Context: cross-reference related documents and questions per event
+      const relatedPolicyDocs = findRelatedDocuments(event, documents);
+      const relatedPolicyQs = findRelatedQuestions(event, questions);
+      if (relatedPolicyDocs.length > 0 || relatedPolicyQs.length > 0) {
+        const policyContextLabel = lang === 'sv' ? 'Policysammanhang'
+          : lang === 'de' ? 'Politischer Kontext'
+          : lang === 'fr' ? 'Contexte politique'
+          : lang === 'es' ? 'Contexto político'
+          : lang === 'da' ? 'Politisk kontekst'
+          : lang === 'no' ? 'Politisk kontekst'
+          : lang === 'fi' ? 'Poliittinen konteksti'
+          : lang === 'nl' ? 'Beleidscontext'
+          : lang === 'ar' ? 'السياق السياسي'
+          : lang === 'he' ? 'הקשר מדיניות'
+          : lang === 'ja' ? '政策コンテキスト'
+          : lang === 'ko' ? '정책 맥락'
+          : lang === 'zh' ? '政策背景'
+          : 'Policy Context';
+        content += `    <div class="policy-context-box">\n`;
+        content += `      <h4>${policyContextLabel}</h4>\n`;
+        relatedPolicyDocs.forEach(doc => {
+          const drec = doc as Record<string, string>;
+          const docTitle = drec['titel'] ?? drec['title'] ?? 'Document';
+          const dokId = drec['dok_id'] ?? '';
+          const docUrl = dokId ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dokId)}/`) : '';
+          content += `      <div class="document-entry">\n`;
+          content += `        <h5>${docUrl ? `<a href="${docUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(docTitle), lang)}${docUrl ? '</a>' : ''}</h5>\n`;
+          const sig = generatePolicySignificance(doc, lang);
+          if (sig) content += `        <p class="policy-significance">${escapeHtml(sig)}</p>\n`;
+          content += `      </div>\n`;
+        });
+        relatedPolicyQs.forEach(q => {
+          const qrec = q as Record<string, string>;
+          const qTitle = qrec['titel'] ?? qrec['title'] ?? 'Question';
+          const qParty = qrec['parti'] ? ` (${escapeHtml(qrec['parti'])})` : '';
+          const qDokId = qrec['dok_id'] ?? '';
+          const qUrl = qDokId ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(qDokId)}/`) : '';
+          content += `      <div class="document-entry">\n`;
+          content += `        <h5>${qUrl ? `<a href="${qUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(qTitle), lang)}${qUrl ? '</a>' : ''}${qParty}</h5>\n`;
+          content += `      </div>\n`;
+        });
+        content += `    </div>\n`;
+      }
     });
   }
 
@@ -144,22 +238,22 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     });
   }
 
-  // Parliamentary Questions: upcoming written questions to ministers
+  // Questions to Watch: upcoming written questions cross-referenced with debate topics
   if (questions.length > 0) {
-    const questionsLabel = lang === 'sv' ? 'Skriftliga frågor till statsråd'
-      : lang === 'de' ? 'Schriftliche parlamentarische Anfragen'
-      : lang === 'fr' ? 'Questions écrites au gouvernement'
-      : lang === 'es' ? 'Preguntas escritas al gobierno'
-      : lang === 'da' ? 'Skriftlige spørgsmål til ministrene'
-      : lang === 'no' ? 'Skriftlige spørsmål til statsrådene'
-      : lang === 'fi' ? 'Kirjalliset kysymykset ministerille'
-      : lang === 'nl' ? 'Schriftelijke vragen aan ministers'
-      : lang === 'ar' ? 'أسئلة مكتوبة للحكومة'
-      : lang === 'he' ? 'שאלות כתובות לממשלה'
-      : lang === 'ja' ? '大臣への書面質問'
-      : lang === 'ko' ? '장관에 대한 서면 질문'
-      : lang === 'zh' ? '书面质询政府'
-      : 'Parliamentary Questions to Ministers';
+    const questionsLabel = lang === 'sv' ? 'Frågor att bevaka'
+      : lang === 'de' ? 'Zu beobachtende Anfragen'
+      : lang === 'fr' ? 'Questions à surveiller'
+      : lang === 'es' ? 'Preguntas a seguir'
+      : lang === 'da' ? 'Spørgsmål at holde øje med'
+      : lang === 'no' ? 'Spørsmål å følge med på'
+      : lang === 'fi' ? 'Seurattavat kysymykset'
+      : lang === 'nl' ? 'Te volgen vragen'
+      : lang === 'ar' ? 'أسئلة تستحق المتابعة'
+      : lang === 'he' ? 'שאלות לעקוב'
+      : lang === 'ja' ? '注目の質問'
+      : lang === 'ko' ? '주목할 질문'
+      : lang === 'zh' ? '值得关注的问题'
+      : 'Questions to Watch';
     content += `\n    <h2>${questionsLabel}</h2>\n`;
     questions.slice(0, 8).forEach(q => {
       const rec = q as Record<string, string>;
@@ -174,22 +268,22 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     });
   }
 
-  // Interpellations: formal parliamentary interpellations awaiting ministerial response
+  // Interpellation Spotlight: formal interpellations enriched with minister response context
   if (interpellations.length > 0) {
-    const interLabel = lang === 'sv' ? 'Interpellationer under behandling'
-      : lang === 'de' ? 'Interpellationen in Bearbeitung'
-      : lang === 'fr' ? 'Interpellations en cours'
-      : lang === 'es' ? 'Interpelaciones en curso'
-      : lang === 'da' ? 'Forespørgsler til behandling'
-      : lang === 'no' ? 'Interpellasjoner til behandling'
-      : lang === 'fi' ? 'Käsittelyssä olevat välikysymykset'
-      : lang === 'nl' ? 'Interpellaties in behandeling'
-      : lang === 'ar' ? 'الاستجوابات البرلمانية قيد المعالجة'
-      : lang === 'he' ? 'בקשות הבהרה בטיפול'
-      : lang === 'ja' ? '処理中の質問主意書'
-      : lang === 'ko' ? '처리 중인 대정부 질문'
-      : lang === 'zh' ? '待处理的质询'
-      : 'Interpellations Pending';
+    const interLabel = lang === 'sv' ? 'Interpellationer i fokus'
+      : lang === 'de' ? 'Interpellationen im Fokus'
+      : lang === 'fr' ? 'Interpellations en vedette'
+      : lang === 'es' ? 'Interpelaciones destacadas'
+      : lang === 'da' ? 'Forespørgsler i fokus'
+      : lang === 'no' ? 'Interpellasjoner i fokus'
+      : lang === 'fi' ? 'Välikysymykset valokeilassa'
+      : lang === 'nl' ? 'Interpellaties in de spotlight'
+      : lang === 'ar' ? 'أبرز الاستجوابات البرلمانية'
+      : lang === 'he' ? 'בקשות הבהרה בזרקור'
+      : lang === 'ja' ? '注目の質問主意書'
+      : lang === 'ko' ? '주목할 대정부 질문'
+      : lang === 'zh' ? '质询聚焦'
+      : 'Interpellation Spotlight';
     content += `\n    <h2>${interLabel}</h2>\n`;
     interpellations.slice(0, 8).forEach(interp => {
       const rec = interp as Record<string, string>;
@@ -197,9 +291,9 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       const party = rec['parti'] ? ` (${escapeHtml(rec['parti'])})` : '';
       const dok_id = rec['dok_id'] ?? '';
       const iUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : '';
-      // Extract clean summary: content starts after "till MINISTER\n" line
+      // Extract minister and clean summary from the header lines
       const rawSummary = rec['summary'] ?? '';
-      // Find start of actual content after the header lines (Interpellation NNN / av AUTHOR / till MINISTER)
+      const ministerName = extractMinister(rawSummary);
       const tillMatch = rawSummary.match(/\btill\s+[^\n]+\n\s*/i);
       const contentStart = tillMatch
         ? rawSummary.indexOf(tillMatch[0]) + tillMatch[0].length
@@ -215,6 +309,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${iUrl ? `<a href="${iUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(titleText), lang)}${iUrl ? '</a>' : ''}</h4>\n`;
       if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
+      if (ministerName) content += `      <p class="minister-target">→ ${svSpan(escapeHtml(ministerName), lang)}</p>\n`;
       if (cleanedSummary) content += `      <p>${svSpan(escapeHtml(cleanedSummary) + '…', lang)}</p>\n`;
       content += `    </div>\n`;
     });
