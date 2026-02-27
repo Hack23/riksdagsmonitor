@@ -203,21 +203,21 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     prev2Start.setDate(prev2Start.getDate() - lookbackDays);
 
     const [prevMonthDocs, twoMonthsDocs] = await Promise.all([
-      // 50 documents per period is sufficient for trend direction; full-text enrichment is not needed here
-      client.searchDocuments({ from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 50 })
+      // Use a higher per-period cap to better approximate total volume for trend metrics; full-text enrichment is not needed here
+      client.searchDocuments({ from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 1000 })
         .catch((error) => {
           console.error(
             'MonthlyReview Step 6 — search_dokument failed for previous month trend window',
-            { from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 50 },
+            { from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 1000 },
             error,
           );
           return [] as RawDocument[];
         }),
-      client.searchDocuments({ from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 50 })
+      client.searchDocuments({ from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 1000 })
         .catch((error) => {
           console.error(
             'MonthlyReview Step 6 — search_dokument failed for two-months-ago trend window',
-            { from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 50 },
+            { from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 1000 },
             error,
           );
           return [] as RawDocument[];
@@ -232,18 +232,27 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     const motionCount = documents.filter(d => (d as Record<string, unknown>).doktyp === 'mot').length;
 
     // Party rankings: aggregate motions and speeches by party
+    // Normalize party keys: trim whitespace and drop unknown/empty sentinels
+    const normalizePartyKey = (raw: unknown): string | null => {
+      const value = String(raw ?? '').trim();
+      if (!value) return null;
+      const lower = value.toLowerCase();
+      if (lower === 'unknown' || lower === 'okänd') return null;
+      return value;
+    };
+
     const partyMotions: Record<string, number> = {};
     const partySpeeches: Record<string, number> = {};
     for (const doc of documents) {
       const rec = doc as Record<string, unknown>;
       if (rec['doktyp'] === 'mot') {
-        const p = String(rec['parti'] ?? '');
-        if (p) partyMotions[p] = (partyMotions[p] ?? 0) + 1;
+        const p = normalizePartyKey(rec['parti']);
+        if (p !== null) partyMotions[p] = (partyMotions[p] ?? 0) + 1;
       }
     }
     for (const speech of speeches) {
-      const p = String(speech['parti'] ?? '');
-      if (p) partySpeeches[p] = (partySpeeches[p] ?? 0) + 1;
+      const p = normalizePartyKey(speech['parti']);
+      if (p !== null) partySpeeches[p] = (partySpeeches[p] ?? 0) + 1;
     }
     const allParties = new Set([...Object.keys(partyMotions), ...Object.keys(partySpeeches)]);
     const partyRankings = Array.from(allParties)

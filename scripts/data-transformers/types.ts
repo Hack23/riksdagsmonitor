@@ -85,21 +85,35 @@ export interface WeekAheadData {
 /**
  * Monthly metrics for trend analysis, party rankings, and legislative efficiency.
  * Computed in monthly-review.ts and consumed by generateMonthlyReviewContent.
+ *
+ * NOTE: Document count fields may be based on limited/sampled search results
+ * (e.g., when upstream `search_dokument` calls use a hard result limit) and
+ * are therefore not guaranteed to be exact global totals for the period.
  */
 export interface MonthlyMetrics {
-  /** Total documents processed this month */
+  /**
+   * Sampled document count for this month.
+   * Derived from the number of documents returned by upstream search and may
+   * be capped by search limits rather than representing an exact total.
+   */
   totalDocuments: number;
-  /** Number of committee reports (betänkanden) */
+  /** Number of committee reports (betänkanden) in the sampled set */
   reportCount: number;
-  /** Number of government propositions */
+  /** Number of government propositions in the sampled set */
   propositionCount: number;
-  /** Number of parliamentary motions */
+  /** Number of parliamentary motions in the sampled set */
   motionCount: number;
-  /** Number of speeches (anföranden) */
+  /** Number of speeches (anföranden) in the sampled set */
   speechCount: number;
-  /** Previous month's total document count (for trend) */
+  /**
+   * Previous month's sampled document count (for trend).
+   * Subject to the same upstream search limits as totalDocuments.
+   */
   previousMonthDocCount: number;
-  /** Two months ago total document count (for rolling average) */
+  /**
+   * Sampled document count from two months ago (for rolling average).
+   * Subject to the same upstream search limits as totalDocuments.
+   */
   twoMonthsAgoDocCount: number;
   /** Party activity rankings sorted by total activity (motions + speeches) */
   partyRankings: Array<{ party: string; motionCount: number; speechCount: number }>;
