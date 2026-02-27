@@ -66,7 +66,11 @@ import {
   generatePropositionsContent,
   generateMotionsContent,
   generateGenericContent,
+<<<<<<< copilot/enhance-monthly-review-features
   generateMonthlyReviewContent,
+=======
+  generateMonthAheadContent,
+>>>>>>> main
 } from './content-generators.js';
 
 /**
@@ -87,7 +91,7 @@ export function generateArticleContent(
     case 'week-ahead':
       return generateWeekAheadContent(data as WeekAheadData, lang);
     case 'month-ahead':
-      return generateWeekAheadContent(data as WeekAheadData, lang);
+      return generateMonthAheadContent(data, lang);
     case 'committee-reports':
       return generateCommitteeContent(data, lang);
     case 'propositions':
