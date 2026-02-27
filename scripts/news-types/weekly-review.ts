@@ -822,6 +822,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
 
     // ── Step 2: type-specific fetchers for richer metadata (non-fatal) ─────
     console.log('  🔄 Step 2 — Fetching typed metadata (reports, propositions, motions)...');
+    const rm = getCurrentRiksmote(today);
     const [reports, propositions, motions] = await Promise.all([
       Promise.resolve()
         .then(() => client.fetchCommitteeReports(50, getCurrentRiksmote(today)) as Promise<unknown[]>)

@@ -116,6 +116,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
 
     // Step 2: typed metadata fetchers (robust: errors → empty [])
     console.log('  🔄 Step 2 — Fetching typed metadata (reports, propositions, motions)...');
+    const rm = getCurrentRiksmote(today);
     const [recentReports, recentPropositions, recentMotions] = await Promise.all([
       Promise.resolve().then(() => client.fetchCommitteeReports(30, getCurrentRiksmote(today)))
         .catch((err: unknown) => { console.error('Failed to fetch committee reports:', err); return [] as unknown[]; }),
