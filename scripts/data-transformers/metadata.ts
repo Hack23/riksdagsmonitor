@@ -340,6 +340,12 @@ export function generateSources(tools: string[] = []): string[] {
   if (tools.includes('get_dokument_innehall')) {
     sources.push('Riksdagen Document Content');
   }
+  if (tools.includes('search_voteringar')) {
+    sources.push('Riksdagen Voting Records');
+  }
+  if (tools.includes('search_anforanden')) {
+    sources.push('Riksdagen Speeches');
+  }
 
   return sources;
 }
