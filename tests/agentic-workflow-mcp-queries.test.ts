@@ -263,16 +263,10 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Should document riksmöte (parliamentary session) concept
-      expect(content).toMatch(/riksmöte|parliamentary.*session/i);
-      // Should reference current/dynamic context rather than only static values
-      expect(content).toMatch(/calculat|dynamic|current/i);
-    it('workflows should document riksmöte (rm) parameter usage dynamically', () => {
-      const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
-      const content = fs.readFileSync(filepath, 'utf-8');
-
-      // Should use dynamic riksmöte calculation, not a hardcoded year
-      expect(content).toContain('rm: <calculated riksmöte>');
+      // Should include explicit instructions for how to calculate the current riksmöte dynamically
+      expect(content).toMatch(/(calculate|calculating|calculation|determine|compute)[\s\S]{0,120}(riksmöte|parliamentary\s+session)/i);
+      // Should not rely on hardcoded rm literals like rm: "2025/26"
+      expect(content).not.toMatch(/rm:\s*["']20\d{2}\/\d{2}["']/i);
     });
 
     it('all news workflows should include riksmöte calculation instruction', () => {

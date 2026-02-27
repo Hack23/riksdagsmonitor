@@ -118,11 +118,11 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     console.log('  🔄 Step 2 — Fetching typed metadata (reports, propositions, motions)...');
     const rm = getCurrentRiksmote(today);
     const [recentReports, recentPropositions, recentMotions] = await Promise.all([
-      Promise.resolve().then(() => client.fetchCommitteeReports(30, getCurrentRiksmote(today)))
+      Promise.resolve().then(() => client.fetchCommitteeReports(30, rm))
         .catch((err: unknown) => { console.error('Failed to fetch committee reports:', err); return [] as unknown[]; }),
-      Promise.resolve().then(() => client.fetchPropositions(20, getCurrentRiksmote(today)))
+      Promise.resolve().then(() => client.fetchPropositions(20, rm))
         .catch((err: unknown) => { console.error('Failed to fetch propositions:', err); return [] as unknown[]; }),
-      Promise.resolve().then(() => client.fetchMotions(20, getCurrentRiksmote(today)))
+      Promise.resolve().then(() => client.fetchMotions(20, rm))
         .catch((err: unknown) => { console.error('Failed to fetch motions:', err); return [] as unknown[]; }),
     ]);
 

@@ -181,7 +181,6 @@ import {
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
-import { getCurrentRiksmote } from './motions.js';
 
 /**
  * Required MCP tools for propositions articles
