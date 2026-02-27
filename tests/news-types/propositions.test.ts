@@ -18,6 +18,8 @@ interface PropositionRecord {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   fetchPropositions: Mock<(limit: number) => Promise<PropositionRecord[]>>;
+  request: Mock<(tool: string, params: Record<string, unknown>) => Promise<Record<string, unknown>>>;
+  searchSpeeches: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -53,7 +55,9 @@ const { mockClientInstance, mockPropositions, MockMCPClient } = vi.hoisted(() =>
   ];
   
   const mockClientInstance: MockMCPClientShape = {
-    fetchPropositions: vi.fn().mockResolvedValue(mockPropositions) as MockMCPClientShape['fetchPropositions']
+    fetchPropositions: vi.fn().mockResolvedValue(mockPropositions) as MockMCPClientShape['fetchPropositions'],
+    request: vi.fn().mockResolvedValue({}) as MockMCPClientShape['request'],
+    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches']
   };
   
   function MockMCPClient(): MockMCPClientShape {
@@ -77,6 +81,8 @@ describe('Propositions Article Generation', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockClientInstance.fetchPropositions.mockResolvedValue(mockPropositions);
+    mockClientInstance.request.mockResolvedValue({});
+    mockClientInstance.searchSpeeches.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -87,6 +93,10 @@ describe('Propositions Article Generation', () => {
     it('should export REQUIRED_TOOLS constant', () => {
       expect(propositionsModule.REQUIRED_TOOLS).toBeDefined();
       expect(propositionsModule.REQUIRED_TOOLS).toContain('get_propositioner');
+      expect(propositionsModule.REQUIRED_TOOLS).toContain('search_dokument_fulltext');
+      expect(propositionsModule.REQUIRED_TOOLS).toContain('analyze_g0v_by_department');
+      expect(propositionsModule.REQUIRED_TOOLS).toContain('search_anforanden');
+      expect(propositionsModule.REQUIRED_TOOLS).toHaveLength(4);
     });
   });
 
@@ -97,6 +107,30 @@ describe('Propositions Article Generation', () => {
       });
       
       expect(mockClientInstance.fetchPropositions).toHaveBeenCalled();
+      expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_propositioner')).toBe(true);
+    });
+
+    it('should call all 4 required MCP tools', async () => {
+      const result = await propositionsModule.generatePropositions({
+        languages: ['en']
+      });
+
+      const toolNames = result.mcpCalls!.map((call: MCPCallRecord) => call.tool);
+      expect(toolNames).toContain('get_propositioner');
+      expect(toolNames).toContain('search_dokument_fulltext');
+      expect(toolNames).toContain('analyze_g0v_by_department');
+      expect(toolNames).toContain('search_anforanden');
+    });
+
+    it('should gracefully handle failures of enrichment tools', async () => {
+      mockClientInstance.request.mockRejectedValue(new Error('MCP enrichment error'));
+      mockClientInstance.searchSpeeches.mockRejectedValue(new Error('MCP speech error'));
+
+      const result = await propositionsModule.generatePropositions({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
       expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_propositioner')).toBe(true);
     });
 
