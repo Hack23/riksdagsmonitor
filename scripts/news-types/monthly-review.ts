@@ -33,6 +33,7 @@ import {
   attachSpeechesToDocuments,
   loadCIAContext,
 } from './weekly-review.js';
+import { getCurrentRiksmote } from './motions.js';
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
@@ -116,11 +117,11 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     // Step 2: typed metadata fetchers (robust: errors → empty [])
     console.log('  🔄 Step 2 — Fetching typed metadata (reports, propositions, motions)...');
     const [recentReports, recentPropositions, recentMotions] = await Promise.all([
-      Promise.resolve().then(() => client.fetchCommitteeReports(30, '2025/26'))
+      Promise.resolve().then(() => client.fetchCommitteeReports(30, getCurrentRiksmote(today)))
         .catch((err: unknown) => { console.error('Failed to fetch committee reports:', err); return [] as unknown[]; }),
-      Promise.resolve().then(() => client.fetchPropositions(20, '2025/26'))
+      Promise.resolve().then(() => client.fetchPropositions(20, getCurrentRiksmote(today)))
         .catch((err: unknown) => { console.error('Failed to fetch propositions:', err); return [] as unknown[]; }),
-      Promise.resolve().then(() => client.fetchMotions(20, '2025/26'))
+      Promise.resolve().then(() => client.fetchMotions(20, getCurrentRiksmote(today)))
         .catch((err: unknown) => { console.error('Failed to fetch motions:', err); return [] as unknown[]; }),
     ]);
 

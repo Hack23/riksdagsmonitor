@@ -259,12 +259,14 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/86400000|3600000/); // Millisecond calculations
     });
 
-    it('workflows should document riksmöte (rm) parameter usage', () => {
+    it('workflows should include dynamic riksmöte calculation instructions', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Should use riksmöte parameter
-      expect(content).toMatch(/rm:.*"2025\/26"|"2024\/25"/);
+      // Should document riksmöte (parliamentary session) concept
+      expect(content).toMatch(/riksmöte|parliamentary.*session/i);
+      // Should reference current/dynamic context rather than only static values
+      expect(content).toMatch(/calculat|dynamic|current/i);
     });
   });
 
