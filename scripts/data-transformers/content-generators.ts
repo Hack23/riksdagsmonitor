@@ -11,8 +11,7 @@
 
 import { escapeHtml } from '../html-utils.js';
 import type { Language } from '../types/language.js';
-import type { ArticleContentData, WeekAheadData, RawDocument, MonthlyMetrics } from './types.js';
-import type { ArticleContentData, WeekAheadData, RawDocument, RawCalendarEvent } from './types.js';
+import type { ArticleContentData, WeekAheadData, RawDocument, MonthlyMetrics, RawCalendarEvent } from './types.js';
 import { getPillarTransition } from '../editorial-pillars.js';
 import {
   L,
