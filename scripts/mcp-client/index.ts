@@ -82,6 +82,12 @@ export async function fetchVotingRecords(
   return getDefaultClient().fetchVotingRecords(...args);
 }
 
+export async function fetchVotingGroup(
+  ...args: Parameters<MCPClient['fetchVotingGroup']>
+): ReturnType<MCPClient['fetchVotingGroup']> {
+  return getDefaultClient().fetchVotingGroup(...args);
+}
+
 export async function fetchGovernmentDocuments(
   ...args: Parameters<MCPClient['fetchGovernmentDocuments']>
 ): ReturnType<MCPClient['fetchGovernmentDocuments']> {
