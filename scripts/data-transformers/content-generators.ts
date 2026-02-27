@@ -1381,6 +1381,7 @@ const MONTHLY_LABELS: Readonly<{
   speechesDelivered: Record<string, string>;
   coalitionStabilityOutlook: Record<string, string>;
   motionDenialContext: Record<string, string>;
+  insufficientData: Record<string, string>;
 }> = {
   monthInNumbers: { en: '📊 Month in Numbers', sv: '📊 Månaden i siffror', da: '📊 Måneden i tal', no: '📊 Måneden i tall', fi: '📊 Kuukausi numeroina', de: '📊 Der Monat in Zahlen', fr: '📊 Le mois en chiffres', es: '📊 El mes en cifras', nl: '📊 De maand in cijfers', ar: '📊 الشهر بالأرقام', he: '📊 החודש במספרים', ja: '📊 今月の統計', ko: '📊 이달의 통계', zh: '📊 本月数字' },
   partyRankings: { en: '🏆 Party Performance Rankings', sv: '🏆 Partiernas prestationsrankning', da: '🏆 Partiernes præstationsrangering', no: '🏆 Partienes prestasjonsranking', fi: '🏆 Puolueiden suoritusranking', de: '🏆 Partei-Leistungsranking', fr: '🏆 Classement des performances des partis', es: '🏆 Clasificación de rendimiento de partidos', nl: '🏆 Partijprestaties ranking', ar: '🏆 تصنيف أداء الأحزاب', he: '🏆 דירוג ביצועי מפלגות', ja: '🏆 政党パフォーマンスランキング', ko: '🏆 정당 성과 순위', zh: '🏆 政党绩效排名' },
@@ -1399,6 +1400,7 @@ const MONTHLY_LABELS: Readonly<{
   speechesDelivered: { en: 'speeches', sv: 'anföranden', da: 'taler', no: 'taler', fi: 'puhetta', de: 'Reden', fr: 'discours', es: 'discursos', nl: 'toespraken', ar: 'خطب', he: 'נאומים', ja: '演説', ko: '연설', zh: '演讲' },
   coalitionStabilityOutlook: { en: 'Coalition stability outlook', sv: 'Koalitionsstabilitetsutsikt', da: 'Koalitionsstabilitetsudsigt', no: 'Koalisjonsstabilitetsutsikt', fi: 'Koalitiostabiliteettiarvio', de: 'Koalitionsstabilitätsausblick', fr: 'Perspectives de stabilité de la coalition', es: 'Perspectiva de estabilidad de la coalición', nl: 'Coalitie stabiliteitsoverzicht', ar: 'توقعات استقرار الائتلاف', he: 'תחזית יציבות הקואליציה', ja: '連立安定性の展望', ko: '연립 안정성 전망', zh: '联合政府稳定性展望' },
   motionDenialContext: { en: 'Opposition motions historically pass at a low rate — parliamentary majority dynamics shape legislative outcomes.', sv: 'Oppositionsmotioner har historiskt sett låg bifallsfrekvens — parlamentariska majoritetsförhållanden styr lagstiftningsutfallen.', da: 'Oppositionsforslag har historisk set lav vedtagelsesfrekvens — parlamentariske flertalsdynamikker former lovgivningsresultaterne.', no: 'Opposisjonsforslag har historisk lav vedtaksrate — parlamentariske flertallsdynamikker former lovgivningsutfall.', fi: 'Oppositioaloitteilla on historiallisesti matala hyväksymisaste — parlamentin enemmistödynamiikka muokkaa lainsäädäntötuloksia.', de: 'Oppositionsanträge haben historisch geringe Erfolgsquoten — Mehrheitsverhältnisse im Parlament prägen die Gesetzgebungsergebnisse.', fr: "Les motions de l'opposition ont historiquement un faible taux d'adoption — la dynamique des majorités parlementaires façonne les résultats législatifs.", es: 'Las mociones de la oposición tienen históricamente bajas tasas de aprobación — la dinámica de la mayoría parlamentaria da forma a los resultados legislativos.', nl: 'Oppositiemoties hebben historisch gezien lage doorvoerpercentages — meerderheidsparlementsynamiek bepaalt wetgevingsresultaten.', ar: 'تتمتع مقترحات المعارضة تاريخياً بمعدلات مرور منخفضة — تشكّل ديناميكيات أغلبية البرلمان نتائج التشريع.', he: 'להצעות האופוזיציה יש היסטורית שיעורי מעבר נמוכים — דינמיקת הרוב הפרלמנטרית מעצבת תוצאות חקיקה.', ja: '野党動議は歴史的に低い通過率を持つ — 議会の多数決ダイナミクスが立法結果を形成する。', ko: '야당 동의는 역사적으로 낮은 통과율을 보임 — 의회 다수결 역학이 입법 결과를 형성함.', zh: '反对党动议历史上通过率较低——议会多数动态决定立法结果。' },
+  insufficientData: { en: 'Insufficient party activity data for this period.', sv: 'Otillräckliga partiaktivitetsdata för denna period.', da: 'Utilstrækkelige partiaktivitetsdata for denne periode.', no: 'Utilstrekkelige partiaktivitetsdata for denne perioden.', fi: 'Puoluetoimintatiedot ovat riittämättömät tälle ajanjaksolle.', de: 'Unzureichende Parteiak­tivitätsdaten für diesen Zeitraum.', fr: "Données d'activité des partis insuffisantes pour cette période.", es: 'Datos de actividad de partido insuficientes para este período.', nl: 'Onvoldoende partijactiviteitsgegevens voor deze periode.', ar: 'بيانات نشاط الحزب غير كافية لهذه الفترة.', he: 'נתוני פעילות מפלגתית לא מספיקים לתקופה זו.', ja: 'この期間の政党活動データが不十分です。', ko: '이 기간에 대한 정당 활동 데이터가 불충분합니다.', zh: '本期政党活动数据不足。' },
 };
 
 /** Return the label for a language key, falling back to English. */
@@ -1445,9 +1447,15 @@ function generateMonthInNumbers(metrics: MonthlyMetrics, lang: Language | string
  * Ranks parties by combined legislative and debate activity.
  */
 function generatePartyRankings(metrics: MonthlyMetrics, lang: Language | string): string {
-  if (metrics.partyRankings.length === 0) return '';
-
   let html = `\n    <h2>${escapeHtml(ml(lang, 'partyRankings'))}</h2>\n`;
+
+  if (!metrics.partyRankings || metrics.partyRankings.length === 0) {
+    html += `    <div class="context-box">\n`;
+    html += `      <p>${escapeHtml(ml(lang, 'insufficientData'))}</p>\n`;
+    html += `    </div>\n`;
+    return html;
+  }
+
   html += `    <div class="context-box">\n      <ol>\n`;
   // Show top 8 parties — matches the 8 Swedish parliamentary parties and keeps the list scannable
   metrics.partyRankings.slice(0, 8).forEach((entry, idx) => {
@@ -1520,7 +1528,7 @@ function generateStrategicOutlook(metrics: MonthlyMetrics, data: ArticleContentD
     const stabilityLabel = ml(lang, 'coalitionStabilityOutlook');
     const stabilityScore = cia.coalitionStability.stabilityScore;
     const riskLevel = cia.coalitionStability.riskLevel;
-    html += `        <li><strong>${escapeHtml(stabilityLabel)}:</strong> ${escapeHtml(stabilityScore)}/100 (${escapeHtml(riskLevel)})</li>\n`;
+    html += `        <li><strong>${escapeHtml(stabilityLabel)}:</strong> ${escapeHtml(String(stabilityScore))}/100 (${escapeHtml(riskLevel)})</li>\n`;
   }
 
   html += `      </ul>\n    </div>\n`;

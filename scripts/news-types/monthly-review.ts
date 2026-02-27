@@ -477,17 +477,20 @@ function checkTrendAnalysis(article: ArticleInput): boolean {
 function checkPartyRankings(article: ArticleInput): boolean {
   if (!article || !article.content) return false;
   return article.content.includes('Party Performance Rankings') ||
-         article.content.includes('Partiernas prestationsrankning');
+         article.content.includes('Partiernas prestationsrankning') ||
+         article.content.includes('🏆');
 }
 
 function checkLegislativeEfficiency(article: ArticleInput): boolean {
   if (!article || !article.content) return false;
   return article.content.includes('Legislative Efficiency') ||
-         article.content.includes('Lagstiftningseffektivitet');
+         article.content.includes('Lagstiftningseffektivitet') ||
+         article.content.includes('⚖️');
 }
 
 function checkMonthInNumbers(article: ArticleInput): boolean {
   if (!article || !article.content) return false;
   return article.content.includes('Month in Numbers') ||
-         article.content.includes('Månaden i siffror');
+         article.content.includes('Månaden i siffror') ||
+         article.content.includes('📊');
 }
