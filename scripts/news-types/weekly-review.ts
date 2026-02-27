@@ -429,6 +429,24 @@ export function attachSpeechesToDocuments(
 }
 
 /**
+ * Normalize CIAContext so defectionProbability is in [0, 1].
+ * risk-analysis.ts multiplies it by 100, so a whole-percent value (e.g. 15)
+ * would produce 1500 and break risk calculations.
+ */
+function normalizedCIAContext(ctx: CIAContext): CIAContext {
+  const defProb = ctx.coalitionStability?.defectionProbability;
+  if (typeof defProb !== 'number' || defProb <= 1) return ctx;
+  const clamped = Math.min(1, Math.max(0, defProb / 100));
+  return {
+    ...ctx,
+    coalitionStability: {
+      ...ctx.coalitionStability!,
+      defectionProbability: clamped,
+    },
+  };
+}
+
+/**
  * Analyse coalition stress from a list of voting records.
  *
  * Groups records by vote-point (bet + punkt), then counts:
@@ -469,12 +487,14 @@ export function analyzeCoalitionStress(
     const govYes = records.filter(r => GOV_PARTIES.has(r.parti ?? '') && r.rost === 'Ja').length;
     const govNo  = records.filter(r => GOV_PARTIES.has(r.parti ?? '') && r.rost === 'Nej').length;
     const oppYes = records.filter(r => OPP_PARTIES.has(r.parti ?? '') && r.rost === 'Ja').length;
+    const oppNo  = records.filter(r => OPP_PARTIES.has(r.parti ?? '') && r.rost === 'Nej').length;
 
-    // Determine government position (what most government members voted)
+    // Determine government position — skip if the bloc is evenly split (no clear position)
+    const govPositionClear = govYes !== govNo;
     const govPosition = govYes > govNo ? 'Ja' : 'Nej';
 
     // Government wins when its position matches the chamber majority
-    if (totalYes !== totalNo) {
+    if (govPositionClear && totalYes !== totalNo) {
       const governmentWon =
         (govPosition === 'Ja' && totalYes > totalNo) ||
         (govPosition === 'Nej' && totalNo > totalYes);
@@ -482,8 +502,9 @@ export function analyzeCoalitionStress(
       else { governmentLosses++; }
     }
 
-    // Cross-party: opposition voting with government (both voting Ja)
-    if (govYes > 0 && oppYes > 0) crossPartyVotes++;
+    // Cross-party: opposition aligned with government position (Ja or Nej)
+    const oppAlignedWithGov = govPosition === 'Ja' ? oppYes > 0 : oppNo > 0;
+    if (govPositionClear && oppAlignedWithGov) crossPartyVotes++;
     // Defection: government bloc members split
     if (govYes > 0 && govNo > 0) defections++;
   }
@@ -493,8 +514,8 @@ export function analyzeCoalitionStress(
     governmentLosses,
     crossPartyVotes,
     defections,
-    riskIndex: calculateCoalitionRiskIndex(ciaContext),
-    anomalies: detectAnomalousPatterns(ciaContext),
+    riskIndex: calculateCoalitionRiskIndex(normalizedCIAContext(ciaContext)),
+    anomalies: detectAnomalousPatterns(normalizedCIAContext(ciaContext)),
     totalVotes: byPoint.size,
   };
 }
@@ -526,10 +547,19 @@ export function calculateWeekOverWeekMetrics(
       ? 'declining'
       : 'stable';
 
+  // Count distinct vote-points (bet + punkt) to align with coalition analysis semantics
+  const uniqueVotePoints = new Set<string>();
+  for (const record of votingRecords) {
+    if (record.bet && record.punkt) {
+      uniqueVotePoints.add(`${record.bet}-${record.punkt}`);
+    }
+  }
+  const currentVotes = uniqueVotePoints.size > 0 ? uniqueVotePoints.size : votingRecords.length;
+
   return {
     currentDocuments: documents.length,
     currentSpeeches: speeches.length,
-    currentVotes: votingRecords.length,
+    currentVotes,
     trendComparison,
     activityChange,
   };

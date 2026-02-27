@@ -352,6 +352,59 @@ describe('Weekly Review Article Generation', () => {
       expect(result.crossPartyVotes).toBeGreaterThanOrEqual(1);
     });
 
+    it('should detect cross-party alignment when government and opposition both vote Nej', () => {
+      // Government position is Nej; opposition also votes Nej → cross-party alignment
+      const votingRecords = [
+        { parti: 'M', rost: 'Nej', bet: 'CU3', punkt: '1' },
+        { parti: 'S', rost: 'Nej', bet: 'CU3', punkt: '1' },
+        { parti: 'V', rost: 'Ja',  bet: 'CU3', punkt: '1' },
+      ];
+
+      const result = weeklyReviewModule.analyzeCoalitionStress(votingRecords, {
+        coalitionStability: { stabilityScore: 70, riskLevel: 'low', defectionProbability: 0.1, majorityMargin: 4 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 96,
+      } as unknown as Record<string, unknown>);
+
+      expect(result.crossPartyVotes).toBeGreaterThanOrEqual(1);
+    });
+
+    it('should skip win/loss when government bloc vote is evenly split', () => {
+      // 1 govYes, 1 govNo → no clear position → skip win/loss
+      const votingRecords = [
+        { parti: 'M',  rost: 'Ja',  bet: 'NU1', punkt: '1' },
+        { parti: 'KD', rost: 'Nej', bet: 'NU1', punkt: '1' },
+        { parti: 'S',  rost: 'Ja',  bet: 'NU1', punkt: '1' },
+      ];
+
+      const result = weeklyReviewModule.analyzeCoalitionStress(votingRecords, {
+        coalitionStability: { stabilityScore: 70, riskLevel: 'low', defectionProbability: 0.1, majorityMargin: 4 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 96,
+      } as unknown as Record<string, unknown>);
+
+      expect(result.governmentWins).toBe(0);
+      expect(result.governmentLosses).toBe(0);
+      // Defection should still be recorded (bloc split)
+      expect(result.defections).toBeGreaterThanOrEqual(1);
+    });
+
+    it('should normalize whole-percent defectionProbability for risk calculations', () => {
+      // defectionProbability=15 (whole percent) should not produce invalid risk scores
+      const result = weeklyReviewModule.analyzeCoalitionStress([], {
+        coalitionStability: { stabilityScore: 60, riskLevel: 'medium', defectionProbability: 15, majorityMargin: 3 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 80,
+      } as unknown as Record<string, unknown>);
+
+      // riskIndex.score should be in [0, 100]
+      expect(result.riskIndex.score).toBeGreaterThanOrEqual(0);
+      expect(result.riskIndex.score).toBeLessThanOrEqual(100);
+    });
+
     it('should include voting records call in mcpCalls', async () => {
       mockClientInstance.fetchVotingRecords.mockResolvedValue([
         { parti: 'M', rost: 'Ja', bet: 'AU10', punkt: '1' },
@@ -388,6 +441,28 @@ describe('Weekly Review Article Generation', () => {
       expect(['increasing', 'stable', 'declining']).toContain(result.activityChange);
       expect(result.trendComparison).toBeDefined();
       expect(Array.isArray(result.trendComparison.insights)).toBe(true);
+    });
+
+    it('should count distinct vote-points not raw records', () => {
+      // 3 raw records but only 1 distinct vote-point
+      const docs: unknown[] = [];
+      const speeches: unknown[] = [];
+      const votes = [
+        { parti: 'M',  rost: 'Ja',  bet: 'AU10', punkt: '1' },
+        { parti: 'KD', rost: 'Ja',  bet: 'AU10', punkt: '1' },
+        { parti: 'S',  rost: 'Nej', bet: 'AU10', punkt: '1' },
+      ];
+      const cia = {
+        coalitionStability: { stabilityScore: 75, riskLevel: 'low', defectionProbability: 0.1, majorityMargin: 5 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 96,
+      } as unknown as Record<string, unknown>;
+
+      const result = weeklyReviewModule.calculateWeekOverWeekMetrics(docs, speeches, votes, cia);
+
+      // 3 raw records, but only 1 distinct bet-punkt → currentVotes should be 1
+      expect(result.currentVotes).toBe(1);
     });
   });
 
