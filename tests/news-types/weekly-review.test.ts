@@ -429,7 +429,7 @@ describe('Weekly Review Article Generation', () => {
     });
   });
 
-  describe('Week-over-Week Metrics', () => {
+  describe('Weekly Activity Metrics', () => {
     it('should export calculateWeekOverWeekMetrics function', () => {
       expect(weeklyReviewModule.calculateWeekOverWeekMetrics).toBeDefined();
       expect(typeof weeklyReviewModule.calculateWeekOverWeekMetrics).toBe('function');
@@ -541,12 +541,12 @@ describe('Weekly Review Article Generation', () => {
       const html = weeklyReviewModule.generateWeekOverWeekSection(
         metrics as unknown as Record<string, unknown>, 'en'
       );
-      expect(html).toContain('Week-over-Week Metrics');
+      expect(html).toContain('Weekly Activity');
       expect(html).toContain('10');
       expect(html).toContain('Coalition stable.');
     });
 
-    it('should generate Week-over-Week section for all 14 languages', () => {
+    it('should generate Weekly Activity section for all 14 languages', () => {
       const metrics = {
         currentDocuments: 5, currentSpeeches: 10, currentVotes: 3,
         activityChange: 'increasing',
@@ -562,16 +562,16 @@ describe('Weekly Review Article Generation', () => {
       }
     });
 
-    it('should include Coalition Dynamics and Week-over-Week in generated articles', async () => {
+    it('should include Coalition Dynamics and Weekly Activity in generated articles', async () => {
       const result = await weeklyReviewModule.generateWeeklyReview({ languages: ['en', 'sv'] });
 
       const enArticle = result.articles.find((a: GeneratedArticle) => a.lang === 'en');
       const svArticle = result.articles.find((a: GeneratedArticle) => a.lang === 'sv');
 
       expect(enArticle!.html).toContain('Coalition Dynamics');
-      expect(enArticle!.html).toContain('Week-over-Week Metrics');
+      expect(enArticle!.html).toContain('Weekly Activity');
       expect(svArticle!.html).toContain('Koalitionsdynamik');
-      expect(svArticle!.html).toContain('Vecka-för-vecka-mätvärden');
+      expect(svArticle!.html).toContain('Veckans aktivitet');
     });
   });
 });

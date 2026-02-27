@@ -103,6 +103,8 @@ export interface VotingRecord {
   rost?: string;
   bet?: string;
   punkt?: string;
+  /** ISO date string (YYYY-MM-DD) used for post-query date filtering */
+  datum?: string;
   [key: string]: unknown;
 }
 
@@ -533,15 +535,19 @@ export function analyzeCoalitionStress(
 }
 
 /**
- * Calculate week-over-week comparative metrics.
+ * Calculate current-week activity metrics with CIA trend direction.
  *
- * Combines current-week activity counts with the trend comparison
- * from generateTrendComparison (risk-analysis.ts) to produce a
- * directional activity assessment.
+ * Returns the count of documents, speeches, and distinct vote-points
+ * collected during the current week, together with the CIA trend comparison
+ * (30/90/365-day coalition stability trajectory) mapped to a simple
+ * increasing/stable/declining direction.
+ *
+ * NOTE: This is not a prior-week comparison — `activityChange` reflects the
+ * CIA coalition-stability trend direction, not a delta against last week.
  *
  * @param documents     - Documents collected this week
  * @param speeches      - Speeches collected this week
- * @param votingRecords - Voting records collected this week
+ * @param votingRecords - Voting records collected this week (already date-filtered)
  * @param ciaContext    - CIA intelligence context for trend analysis
  */
 export function calculateWeekOverWeekMetrics(
@@ -681,28 +687,31 @@ export function generateCoalitionDynamicsSection(
   return html;
 }
 
-/** Week-over-Week Metrics section labels for all 14 languages */
+/** Weekly Activity section labels for all 14 languages */
 const WEEK_OVER_WEEK_LABELS: Readonly<Record<Language, string>> = {
-  en: 'Week-over-Week Metrics',
-  sv: 'Vecka-för-vecka-mätvärden',
-  da: 'Uge-for-uge-målinger',
-  no: 'Uke-for-uke-metrikker',
-  fi: 'Viikko viikolta -mittarit',
-  de: 'Woche-für-Woche-Kennzahlen',
-  fr: 'Métriques semaine après semaine',
-  es: 'Métricas semana a semana',
-  nl: 'Week-over-week metrics',
-  ar: 'مقاييس الأسبوع بالأسبوع',
-  he: 'מדדים שבוע אחרי שבוע',
-  ja: '週次比較指標',
-  ko: '주간 비교 지표',
-  zh: '周环比指标',
+  en: 'Weekly Activity',
+  sv: 'Veckans aktivitet',
+  da: 'Ugentlig aktivitet',
+  no: 'Ukentlig aktivitet',
+  fi: 'Viikon toiminta',
+  de: 'Wöchentliche Aktivität',
+  fr: 'Activité hebdomadaire',
+  es: 'Actividad semanal',
+  nl: 'Wekelijkse activiteit',
+  ar: 'النشاط الأسبوعي',
+  he: 'פעילות שבועית',
+  ja: '今週の活動',
+  ko: '주간 활동',
+  zh: '本周活动',
 };
 
 /**
- * Generate the "Week-over-Week Metrics" HTML section for the given language.
- * Shows current-week activity counts, trend comparison from risk-analysis.ts,
- * and directional activity change.
+ * Generate the "Weekly Activity" HTML section for the given language.
+ * Shows current-week activity counts (documents, speeches, vote-points),
+ * the CIA coalition-stability trend direction, and trend insights.
+ *
+ * NOTE: The "direction" field reflects the CIA stability trend (30/90/365-day),
+ * not a comparison against last week's counts.
  */
 export function generateWeekOverWeekSection(
   metrics: WeekOverWeekMetrics,
@@ -711,20 +720,20 @@ export function generateWeekOverWeekSection(
   const heading = WEEK_OVER_WEEK_LABELS[lang] ?? WEEK_OVER_WEEK_LABELS.en;
 
   const activityLabels: Record<Language, { documents: string; speeches: string; votes: string; trend: string; direction: string; insights: string; increasing: string; stable: string; declining: string }> = {
-    en: { documents: 'Documents', speeches: 'Speeches', votes: 'Votes', trend: 'Stability trend', direction: 'Activity direction', insights: 'Trend insights', increasing: 'Increasing ↑', stable: 'Stable →', declining: 'Declining ↓' },
-    sv: { documents: 'Dokument', speeches: 'Anföranden', votes: 'Voteringar', trend: 'Stabilitetstrend', direction: 'Aktivitetsutveckling', insights: 'Trendinsikter', increasing: 'Ökande ↑', stable: 'Stabilt →', declining: 'Minskande ↓' },
-    da: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Afstemninger', trend: 'Stabilitetstrend', direction: 'Aktivitetsretning', insights: 'Trendindsigter', increasing: 'Stigende ↑', stable: 'Stabilt →', declining: 'Faldende ↓' },
-    no: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Voteringer', trend: 'Stabilitetstrend', direction: 'Aktivitetsretning', insights: 'Trendinnsikter', increasing: 'Økende ↑', stable: 'Stabilt →', declining: 'Synkende ↓' },
-    fi: { documents: 'Asiakirjat', speeches: 'Puheenvuorot', votes: 'Äänestykset', trend: 'Vakaustrendit', direction: 'Toimintasuunta', insights: 'Trendianalyysit', increasing: 'Kasvava ↑', stable: 'Vakaa →', declining: 'Laskeva ↓' },
-    de: { documents: 'Dokumente', speeches: 'Reden', votes: 'Abstimmungen', trend: 'Stabilitätstrend', direction: 'Aktivitätsentwicklung', insights: 'Trendeinblicke', increasing: 'Zunehmend ↑', stable: 'Stabil →', declining: 'Abnehmend ↓' },
-    fr: { documents: 'Documents', speeches: 'Discours', votes: 'Votes', trend: 'Tendance de stabilité', direction: 'Direction de l\'activité', insights: 'Aperçus des tendances', increasing: 'En hausse ↑', stable: 'Stable →', declining: 'En baisse ↓' },
-    es: { documents: 'Documentos', speeches: 'Discursos', votes: 'Votaciones', trend: 'Tendencia de estabilidad', direction: 'Dirección de actividad', insights: 'Perspectivas de tendencia', increasing: 'En aumento ↑', stable: 'Estable →', declining: 'En descenso ↓' },
-    nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemmingen', trend: 'Stabiliteitstrend', direction: 'Activiteitsrichting', insights: 'Trendinzichten', increasing: 'Toenemend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
-    ar: { documents: 'وثائق', speeches: 'خطب', votes: 'عمليات التصويت', trend: 'اتجاه الاستقرار', direction: 'اتجاه النشاط', insights: 'رؤى الاتجاه', increasing: 'متزايد ↑', stable: 'مستقر →', declining: 'متناقص ↓' },
-    he: { documents: 'מסמכים', speeches: 'נאומים', votes: 'הצבעות', trend: 'מגמת יציבות', direction: 'כיוון הפעילות', insights: 'תובנות מגמה', increasing: 'עולה ↑', stable: 'יציב →', declining: 'יורד ↓' },
-    ja: { documents: '文書', speeches: '演説', votes: '採決', trend: '安定性トレンド', direction: '活動方向', insights: 'トレンド考察', increasing: '増加中 ↑', stable: '安定 →', declining: '減少中 ↓' },
-    ko: { documents: '문서', speeches: '연설', votes: '표결', trend: '안정성 추세', direction: '활동 방향', insights: '추세 인사이트', increasing: '증가 중 ↑', stable: '안정적 →', declining: '감소 중 ↓' },
-    zh: { documents: '文件', speeches: '演讲', votes: '表决', trend: '稳定性趋势', direction: '活动方向', insights: '趋势洞察', increasing: '增加中 ↑', stable: '稳定 →', declining: '减少中 ↓' },
+    en: { documents: 'Documents', speeches: 'Speeches', votes: 'Votes', trend: 'Stability trend', direction: 'CIA stability trend', insights: 'Trend insights', increasing: 'Improving ↑', stable: 'Stable →', declining: 'Declining ↓' },
+    sv: { documents: 'Dokument', speeches: 'Anföranden', votes: 'Voteringar', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendinsikter', increasing: 'Förbättrad ↑', stable: 'Stabilt →', declining: 'Minskande ↓' },
+    da: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Afstemninger', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendindsigter', increasing: 'Forbedret ↑', stable: 'Stabilt →', declining: 'Faldende ↓' },
+    no: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Voteringer', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendinnsikter', increasing: 'Forbedret ↑', stable: 'Stabilt →', declining: 'Synkende ↓' },
+    fi: { documents: 'Asiakirjat', speeches: 'Puheenvuorot', votes: 'Äänestykset', trend: 'Vakaustrendit', direction: 'CIA-vakaustrendi', insights: 'Trendianalyysit', increasing: 'Paraneva ↑', stable: 'Vakaa →', declining: 'Laskeva ↓' },
+    de: { documents: 'Dokumente', speeches: 'Reden', votes: 'Abstimmungen', trend: 'Stabilitätstrend', direction: 'CIA-Stabilitätstrend', insights: 'Trendeinblicke', increasing: 'Verbessernd ↑', stable: 'Stabil →', declining: 'Abnehmend ↓' },
+    fr: { documents: 'Documents', speeches: 'Discours', votes: 'Votes', trend: 'Tendance de stabilité', direction: 'Tendance stabilité CIA', insights: 'Aperçus des tendances', increasing: 'En amélioration ↑', stable: 'Stable →', declining: 'En baisse ↓' },
+    es: { documents: 'Documentos', speeches: 'Discursos', votes: 'Votaciones', trend: 'Tendencia de estabilidad', direction: 'Tendencia estabilidad CIA', insights: 'Perspectivas de tendencia', increasing: 'Mejorando ↑', stable: 'Estable →', declining: 'En descenso ↓' },
+    nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemmingen', trend: 'Stabiliteitstrend', direction: 'CIA-stabiliteitsrend', insights: 'Trendinzichten', increasing: 'Verbeterend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
+    ar: { documents: 'وثائق', speeches: 'خطب', votes: 'عمليات التصويت', trend: 'اتجاه الاستقرار', direction: 'اتجاه استقرار CIA', insights: 'رؤى الاتجاه', increasing: 'تحسّن ↑', stable: 'مستقر →', declining: 'متناقص ↓' },
+    he: { documents: 'מסמכים', speeches: 'נאומים', votes: 'הצבעות', trend: 'מגמת יציבות', direction: 'מגמת יציבות CIA', insights: 'תובנות מגמה', increasing: 'משתפר ↑', stable: 'יציב →', declining: 'יורד ↓' },
+    ja: { documents: '文書', speeches: '演説', votes: '採決', trend: '安定性トレンド', direction: 'CIA安定性トレンド', insights: 'トレンド考察', increasing: '改善中 ↑', stable: '安定 →', declining: '低下中 ↓' },
+    ko: { documents: '문서', speeches: '연설', votes: '표결', trend: '안정성 추세', direction: 'CIA 안정성 추세', insights: '추세 인사이트', increasing: '개선 중 ↑', stable: '안정적 →', declining: '감소 중 ↓' },
+    zh: { documents: '文件', speeches: '演讲', votes: '表决', trend: '稳定性趋势', direction: 'CIA稳定性趋势', insights: '趋势洞察', increasing: '改善中 ↑', stable: '稳定 →', declining: '下降中 ↓' },
   };
 
   const lbl = activityLabels[lang] ?? activityLabels.en;
@@ -868,7 +877,16 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     console.log('  🔄 Step 6 — Fetching voting records for coalition stress analysis...');
     let votingRecords: unknown[] = [];
     try {
-      votingRecords = (await client.fetchVotingRecords({ from: fromStr, to: toStr, limit: 50 })) as unknown[];
+      // search_voteringar does not support date params; use rm+limit then filter by datum
+      const voteMonth = today.getMonth(); // 0-based; September = 8
+      const voteStartYear = voteMonth >= 8 ? today.getFullYear() : today.getFullYear() - 1;
+      const currentRm = `${voteStartYear}/${String(voteStartYear + 1).slice(-2)}`;
+      const allVotes = (await client.fetchVotingRecords({ rm: currentRm, limit: 200 })) as VotingRecord[];
+      // Post-query filter to the weekly window using the datum field
+      votingRecords = allVotes.filter(r => {
+        const d = r.datum;
+        return typeof d === 'string' && d >= fromStr && d <= toStr;
+      });
     } catch (err: unknown) {
       console.error('Failed to fetch voting records:', err);
     }
