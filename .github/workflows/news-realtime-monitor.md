@@ -125,7 +125,7 @@ echo "Minutes elapsed: $ELAPSED"
 **🚨 HARD CUTOFFS — check `$ELAPSED` before starting each new language:**
 - If `$ELAPSED` >= 38 → stop generating new languages, commit what you have, call `safeoutputs___create_pull_request` IMMEDIATELY
 - If `$ELAPSED` >= 41 → skip validation, commit immediately, call `safeoutputs___create_pull_request` IMMEDIATELY
-- If `$ELAPSED` >= 43 → **IMMEDIATELY call `safeoutputs___noop`** — articles already committed but no time for PR; note what was done
+- If `$ELAPSED` >= 43 → **STOP ALL NEW WORK** — do not start new languages or validation; if a commit has already been made, **IMMEDIATELY call `safeoutputs___create_pull_request`** and clearly state in the PR body that final validation was skipped due to time pressure
 - **NEVER hit the 45-minute hard timeout** — call a safe output tool FIRST
 
 **🚨 MANDATORY: After git commit, call `safeoutputs___create_pull_request` as your VERY NEXT action — no checks, no delays:**
