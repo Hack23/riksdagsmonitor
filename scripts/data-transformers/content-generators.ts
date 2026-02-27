@@ -1424,10 +1424,10 @@ function generateMonthInNumbers(metrics: MonthlyMetrics, lang: Language | string
   html += `        <li><strong>${escapeHtml(ml(lang, 'motions'))}:</strong> ${escapeHtml(metrics.motionCount)}</li>\n`;
   html += `        <li><strong>${escapeHtml(ml(lang, 'speeches'))}:</strong> ${escapeHtml(metrics.speechCount)}</li>\n`;
   if (metrics.previousMonthDocCount > 0) {
-    html += `        <li><em>${escapeHtml(ml(lang, 'trendVsPrevMonth'))}:</em> ${escapeHtml(prevSign)}${escapeHtml(prevDiff)}</li>\n`;
+    html += `        <li><em>${escapeHtml(ml(lang, 'trendVsPrevMonth'))}:</em> ${escapeHtml(prevSign)}${prevDiff}</li>\n`;
   }
   if (metrics.twoMonthsAgoDocCount > 0 || metrics.previousMonthDocCount > 0) {
-    html += `        <li><em>${escapeHtml(ml(lang, 'trendVs2MonthsAgo'))}:</em> ${escapeHtml(rollingAvg)}</li>\n`;
+    html += `        <li><em>${escapeHtml(ml(lang, 'trendVs2MonthsAgo'))}:</em> ${rollingAvg}</li>\n`;
   }
   html += `      </ul>\n    </div>\n`;
   return html;
@@ -1467,7 +1467,7 @@ function generateLegislativeEfficiency(metrics: MonthlyMetrics, lang: Language |
 
   if (metrics.propositionCount > 0) {
     const pct = Math.round(metrics.legislativeEfficiencyRate * 100);
-    html += `        <li><strong>${escapeHtml(ml(lang, 'efficiencyRate'))}:</strong> ${escapeHtml(pct)}% (${escapeHtml(metrics.reportCount)} / ${escapeHtml(metrics.propositionCount)})</li>\n`;
+    html += `        <li><strong>${escapeHtml(ml(lang, 'efficiencyRate'))}:</strong> ${pct}% (${metrics.reportCount} / ${metrics.propositionCount})</li>\n`;
   }
 
   html += `        <li><small>${escapeHtml(ml(lang, 'motionDenialContext'))}</small></li>\n`;
