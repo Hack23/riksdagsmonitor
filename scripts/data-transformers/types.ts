@@ -21,6 +21,8 @@ export interface RawCalendarEvent {
   description?: string;
   details?: string;
   dayName?: string;
+  /** Organ/committee identifier returned by the MCP calendar API (e.g. 'Kammaren', 'FiU') */
+  organ?: string;
 }
 
 /** Raw document from MCP server */
@@ -91,4 +93,10 @@ export interface ArticleContentData {
   context?: string;
   /** CIA intelligence context for enriched analysis */
   ciaContext?: CIAContext;
+  /** Full-text search results for policy substance extraction */
+  fullTextResults?: unknown[];
+  /** Government department analysis from analyze_g0v_by_department */
+  departmentAnalysis?: Record<string, unknown>;
+  /** Parliamentary debate speeches from search_anforanden */
+  speechDebates?: unknown[];
 }
