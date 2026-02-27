@@ -405,6 +405,19 @@ describe('Weekly Review Article Generation', () => {
       expect(result.riskIndex.score).toBeLessThanOrEqual(100);
     });
 
+    it('should clamp negative and non-finite defectionProbability to 0', () => {
+      for (const bad of [-0.5, -10, Infinity, -Infinity, NaN]) {
+        const result = weeklyReviewModule.analyzeCoalitionStress([], {
+          coalitionStability: { stabilityScore: 60, riskLevel: 'medium', defectionProbability: bad, majorityMargin: 3 },
+          partyPerformance: [],
+          votingPatterns: { keyIssues: [] },
+          overallMotionDenialRate: 80,
+        } as unknown as Record<string, unknown>);
+        expect(result.riskIndex.score).toBeGreaterThanOrEqual(0);
+        expect(result.riskIndex.score).toBeLessThanOrEqual(100);
+      }
+    });
+
     it('should include voting records call in mcpCalls', async () => {
       mockClientInstance.fetchVotingRecords.mockResolvedValue([
         { parti: 'M', rost: 'Ja', bet: 'AU10', punkt: '1' },

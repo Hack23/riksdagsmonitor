@@ -108,9 +108,9 @@ export interface VotingRecord {
 
 /** Coalition stress analysis result derived from voting records */
 export interface CoalitionStressResult {
-  /** Number of vote points where the government majority (Ja) won */
+  /** Number of vote points where the government bloc position (Ja/Nej) matched the chamber majority */
   governmentWins: number;
-  /** Number of vote points where the government majority lost */
+  /** Number of vote points where the government bloc position did not match the chamber majority */
   governmentLosses: number;
   /** Vote points where opposition parties voted with the government */
   crossPartyVotes: number;
@@ -435,13 +435,25 @@ export function attachSpeechesToDocuments(
  */
 function normalizedCIAContext(ctx: CIAContext): CIAContext {
   const defProb = ctx.coalitionStability?.defectionProbability;
-  if (typeof defProb !== 'number' || defProb <= 1) return ctx;
-  const clamped = Math.min(1, Math.max(0, defProb / 100));
+  if (typeof defProb !== 'number') return ctx;
+
+  let normalized: number;
+  if (!Number.isFinite(defProb)) {
+    normalized = 0;
+  } else if (defProb > 1) {
+    // Treat as whole-percent and convert to fraction, then clamp
+    normalized = Math.min(1, Math.max(0, defProb / 100));
+  } else {
+    // Already fraction form — clamp negatives to 0
+    normalized = Math.max(0, defProb);
+  }
+
+  if (normalized === defProb) return ctx;
   return {
     ...ctx,
     coalitionStability: {
       ...ctx.coalitionStability!,
-      defectionProbability: clamped,
+      defectionProbability: normalized,
     },
   };
 }
@@ -699,20 +711,20 @@ export function generateWeekOverWeekSection(
   const heading = WEEK_OVER_WEEK_LABELS[lang] ?? WEEK_OVER_WEEK_LABELS.en;
 
   const activityLabels: Record<Language, { documents: string; speeches: string; votes: string; trend: string; direction: string; insights: string; increasing: string; stable: string; declining: string }> = {
-    en: { documents: 'Documents', speeches: 'Speeches', votes: 'Voting records', trend: 'Stability trend', direction: 'Activity direction', insights: 'Trend insights', increasing: 'Increasing ↑', stable: 'Stable →', declining: 'Declining ↓' },
-    sv: { documents: 'Dokument', speeches: 'Anföranden', votes: 'Voteringsprotokoll', trend: 'Stabilitetstrend', direction: 'Aktivitetsutveckling', insights: 'Trendinsikter', increasing: 'Ökande ↑', stable: 'Stabilt →', declining: 'Minskande ↓' },
-    da: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Afstemningsprotokoller', trend: 'Stabilitetstrend', direction: 'Aktivitetsretning', insights: 'Trendindsigter', increasing: 'Stigende ↑', stable: 'Stabilt →', declining: 'Faldende ↓' },
-    no: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Voteringsprotokoller', trend: 'Stabilitetstrend', direction: 'Aktivitetsretning', insights: 'Trendinnsikter', increasing: 'Økende ↑', stable: 'Stabilt →', declining: 'Synkende ↓' },
-    fi: { documents: 'Asiakirjat', speeches: 'Puheenvuorot', votes: 'Äänestystulokset', trend: 'Vakaustrendit', direction: 'Toimintasuunta', insights: 'Trendianalyysit', increasing: 'Kasvava ↑', stable: 'Vakaa →', declining: 'Laskeva ↓' },
-    de: { documents: 'Dokumente', speeches: 'Reden', votes: 'Abstimmungsprotokolle', trend: 'Stabilitätstrend', direction: 'Aktivitätsentwicklung', insights: 'Trendeinblicke', increasing: 'Zunehmend ↑', stable: 'Stabil →', declining: 'Abnehmend ↓' },
-    fr: { documents: 'Documents', speeches: 'Discours', votes: 'Relevés de vote', trend: 'Tendance de stabilité', direction: 'Direction de l\'activité', insights: 'Aperçus des tendances', increasing: 'En hausse ↑', stable: 'Stable →', declining: 'En baisse ↓' },
-    es: { documents: 'Documentos', speeches: 'Discursos', votes: 'Registros de votación', trend: 'Tendencia de estabilidad', direction: 'Dirección de actividad', insights: 'Perspectivas de tendencia', increasing: 'En aumento ↑', stable: 'Estable →', declining: 'En descenso ↓' },
-    nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemregistraties', trend: 'Stabiliteitstrend', direction: 'Activiteitsrichting', insights: 'Trendinzichten', increasing: 'Toenemend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
-    ar: { documents: 'وثائق', speeches: 'خطب', votes: 'سجلات التصويت', trend: 'اتجاه الاستقرار', direction: 'اتجاه النشاط', insights: 'رؤى الاتجاه', increasing: 'متزايد ↑', stable: 'مستقر →', declining: 'متناقص ↓' },
-    he: { documents: 'מסמכים', speeches: 'נאומים', votes: 'פרוטוקולי הצבעה', trend: 'מגמת יציבות', direction: 'כיוון הפעילות', insights: 'תובנות מגמה', increasing: 'עולה ↑', stable: 'יציב →', declining: 'יורד ↓' },
-    ja: { documents: '文書', speeches: '演説', votes: '投票記録', trend: '安定性トレンド', direction: '活動方向', insights: 'トレンド考察', increasing: '増加中 ↑', stable: '安定 →', declining: '減少中 ↓' },
-    ko: { documents: '문서', speeches: '연설', votes: '표결 기록', trend: '안정성 추세', direction: '활동 방향', insights: '추세 인사이트', increasing: '증가 중 ↑', stable: '안정적 →', declining: '감소 중 ↓' },
-    zh: { documents: '文件', speeches: '演讲', votes: '表决记录', trend: '稳定性趋势', direction: '活动方向', insights: '趋势洞察', increasing: '增加中 ↑', stable: '稳定 →', declining: '减少中 ↓' },
+    en: { documents: 'Documents', speeches: 'Speeches', votes: 'Votes', trend: 'Stability trend', direction: 'Activity direction', insights: 'Trend insights', increasing: 'Increasing ↑', stable: 'Stable →', declining: 'Declining ↓' },
+    sv: { documents: 'Dokument', speeches: 'Anföranden', votes: 'Voteringar', trend: 'Stabilitetstrend', direction: 'Aktivitetsutveckling', insights: 'Trendinsikter', increasing: 'Ökande ↑', stable: 'Stabilt →', declining: 'Minskande ↓' },
+    da: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Afstemninger', trend: 'Stabilitetstrend', direction: 'Aktivitetsretning', insights: 'Trendindsigter', increasing: 'Stigende ↑', stable: 'Stabilt →', declining: 'Faldende ↓' },
+    no: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Voteringer', trend: 'Stabilitetstrend', direction: 'Aktivitetsretning', insights: 'Trendinnsikter', increasing: 'Økende ↑', stable: 'Stabilt →', declining: 'Synkende ↓' },
+    fi: { documents: 'Asiakirjat', speeches: 'Puheenvuorot', votes: 'Äänestykset', trend: 'Vakaustrendit', direction: 'Toimintasuunta', insights: 'Trendianalyysit', increasing: 'Kasvava ↑', stable: 'Vakaa →', declining: 'Laskeva ↓' },
+    de: { documents: 'Dokumente', speeches: 'Reden', votes: 'Abstimmungen', trend: 'Stabilitätstrend', direction: 'Aktivitätsentwicklung', insights: 'Trendeinblicke', increasing: 'Zunehmend ↑', stable: 'Stabil →', declining: 'Abnehmend ↓' },
+    fr: { documents: 'Documents', speeches: 'Discours', votes: 'Votes', trend: 'Tendance de stabilité', direction: 'Direction de l\'activité', insights: 'Aperçus des tendances', increasing: 'En hausse ↑', stable: 'Stable →', declining: 'En baisse ↓' },
+    es: { documents: 'Documentos', speeches: 'Discursos', votes: 'Votaciones', trend: 'Tendencia de estabilidad', direction: 'Dirección de actividad', insights: 'Perspectivas de tendencia', increasing: 'En aumento ↑', stable: 'Estable →', declining: 'En descenso ↓' },
+    nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemmingen', trend: 'Stabiliteitstrend', direction: 'Activiteitsrichting', insights: 'Trendinzichten', increasing: 'Toenemend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
+    ar: { documents: 'وثائق', speeches: 'خطب', votes: 'عمليات التصويت', trend: 'اتجاه الاستقرار', direction: 'اتجاه النشاط', insights: 'رؤى الاتجاه', increasing: 'متزايد ↑', stable: 'مستقر →', declining: 'متناقص ↓' },
+    he: { documents: 'מסמכים', speeches: 'נאומים', votes: 'הצבעות', trend: 'מגמת יציבות', direction: 'כיוון הפעילות', insights: 'תובנות מגמה', increasing: 'עולה ↑', stable: 'יציב →', declining: 'יורד ↓' },
+    ja: { documents: '文書', speeches: '演説', votes: '採決', trend: '安定性トレンド', direction: '活動方向', insights: 'トレンド考察', increasing: '増加中 ↑', stable: '安定 →', declining: '減少中 ↓' },
+    ko: { documents: '문서', speeches: '연설', votes: '표결', trend: '안정성 추세', direction: '활동 방향', insights: '추세 인사이트', increasing: '증가 중 ↑', stable: '안정적 →', declining: '감소 중 ↓' },
+    zh: { documents: '文件', speeches: '演讲', votes: '表决', trend: '稳定性趋势', direction: '活动方向', insights: '趋势洞察', increasing: '增加中 ↑', stable: '稳定 →', declining: '减少中 ↓' },
   };
 
   const lbl = activityLabels[lang] ?? activityLabels.en;
@@ -856,7 +868,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     console.log('  🔄 Step 6 — Fetching voting records for coalition stress analysis...');
     let votingRecords: unknown[] = [];
     try {
-      votingRecords = (await client.fetchVotingRecords({ rm: '2025/26', limit: 50 })) as unknown[];
+      votingRecords = (await client.fetchVotingRecords({ from: fromStr, to: toStr, limit: 50 })) as unknown[];
     } catch (err: unknown) {
       console.error('Failed to fetch voting records:', err);
     }
