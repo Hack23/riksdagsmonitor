@@ -145,6 +145,15 @@ echo "============================"
 - ✅ If output shows Monday-Friday → Expect regular parliamentary activity
 - ✅ If output shows Saturday-Sunday → Expect limited activity (government press only)
 
+## 📅 Riksmöte (Parliamentary Session) Calculation
+
+The Swedish parliamentary session runs September–August. Calculate the current `rm` value:
+- If current month is September (9) or later: `rm = "{currentYear}/{nextYear's last 2 digits}"`
+- If current month is before September: `rm = "{previousYear}/{currentYear's last 2 digits}"`
+- Example: February 2026 → `rm = "2025/26"`, October 2026 → `rm = "2026/27"`
+
+Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
+
 ## MANDATORY MCP Health Gate
 
 Before generating ANY articles, verify MCP connectivity:
@@ -310,7 +319,7 @@ The `mcp-servers` frontmatter declares the riksdag-regering server. At runtime, 
 get_calendar_events({ from: "2026-02-16", tom: "2026-02-16", limit: 50 })
 
 // Recent votes
-search_voteringar({ rm: "2025/26", limit: 20 })
+search_voteringar({ rm: <calculated riksmöte>, limit: 20 })
 
 // Recent documents
 search_dokument({ from_date: "2026-02-16", limit: 30 })
@@ -496,19 +505,19 @@ const today = new Date().toISOString().split('T')[0];
 // === RIKSDAG ACTIVITY ===
 
 // Check recent votes
-search_voteringar({ rm: "2025/26", limit: 20 })
+search_voteringar({ rm: <calculated riksmöte>, limit: 20 })
 
 // Check recent speeches/debates
-search_anforanden({ rm: "2025/26", limit: 20 })
+search_anforanden({ rm: <calculated riksmöte>, limit: 20 })
 
 // Check recently published Riksdag documents
 search_dokument({ from_date: today, limit: 30 })
 
 // Check ministerial questions filed today
-get_fragor({ rm: "2025/26", limit: 20 })
+get_fragor({ rm: <calculated riksmöte>, limit: 20 })
 
 // Check interpellations
-get_interpellationer({ rm: "2025/26", limit: 10 })
+get_interpellationer({ rm: <calculated riksmöte>, limit: 10 })
 
 // Check calendar for today's events  
 get_calendar_events({ from: today, tom: today, limit: 50 })

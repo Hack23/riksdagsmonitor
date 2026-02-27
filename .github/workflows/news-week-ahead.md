@@ -114,6 +114,15 @@ echo "Article Type: week-ahead"
 echo "============================"
 ```
 
+## 📅 Riksmöte (Parliamentary Session) Calculation
+
+The Swedish parliamentary session runs September–August. Calculate the current `rm` value:
+- If current month is September (9) or later: `rm = "{currentYear}/{nextYear's last 2 digits}"`
+- If current month is before September: `rm = "{previousYear}/{currentYear's last 2 digits}"`
+- Example: February 2026 → `rm = "2025/26"`, October 2026 → `rm = "2026/27"`
+
+Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
+
 ## MANDATORY MCP Health Gate
 
 Before generating ANY articles, verify MCP connectivity:
@@ -175,7 +184,7 @@ Check if week-ahead articles exist from the last 11 hours.
 get_sync_status({})
 get_calendar_events({ from: "YYYY-MM-DD", tom: "YYYY-MM-DD+7", limit: 100 })
 search_dokument({ from_date: "YYYY-MM-DD", to_date: "YYYY-MM-DD+7" })
-get_fragor({ rm: "2025/26", limit: 20 })
+get_fragor({ rm: <calculated riksmöte>, limit: 20 })
 ```
 
 ### Step 3: Generate Articles
