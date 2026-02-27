@@ -423,18 +423,23 @@ function checkLegislativePipeline(article: ArticleInput): boolean {
     // Japanese
     '戦略的立法見通し',
     '委員会パイプライン',
+    '政策トレンド',
     // Korean
     '전략적 입법 전망',
     '위원회 파이프라인',
+    '정책 트렌드',
     // Chinese
     '战略立法展望',
     '委员会审议流程',
+    '政策趋势',
     // Arabic
     'التوقعات التشريعية الاستراتيجية',
     'مسار اللجان',
+    'الاتجاهات السياسية',
     // Hebrew
     'תחזית חקיקתית אסטרטגית',
     'צינור הוועדות',
+    'מגמות מדיניות',
   ];
   const content = (article.content as string).toLowerCase();
   return pipelineSectionMarkers.some(marker => content.includes(marker));
