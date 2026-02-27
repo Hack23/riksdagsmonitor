@@ -236,9 +236,9 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     const partySpeeches: Record<string, number> = {};
     for (const doc of documents) {
       const rec = doc as Record<string, unknown>;
-      if (rec['doktyp'] === 'mot' && rec['parti']) {
-        const p = String(rec['parti']);
-        partyMotions[p] = (partyMotions[p] ?? 0) + 1;
+      if (rec['doktyp'] === 'mot') {
+        const p = String(rec['parti'] ?? '');
+        if (p) partyMotions[p] = (partyMotions[p] ?? 0) + 1;
       }
     }
     for (const speech of speeches) {
