@@ -66,11 +66,8 @@ import {
   generatePropositionsContent,
   generateMotionsContent,
   generateGenericContent,
-<<<<<<< copilot/enhance-monthly-review-features
   generateMonthlyReviewContent,
-=======
   generateMonthAheadContent,
->>>>>>> main
 } from './content-generators.js';
 
 /**

@@ -318,5 +318,28 @@ describe('Monthly Review Article Generation', () => {
       // Exactly 3 calls: current month + previous month + 2-months-ago
       expect(mockClientInstance.searchDocuments.mock.calls.length).toBe(3);
     });
+
+    it('should render Party Performance Rankings when party data is available', async () => {
+      // Provide documents with doktyp + parti so the party aggregation fires
+      const docsWithParty = [
+        { id: 'mot-1', title: 'Motion om bostäder', date: '2026-02-01', type: 'mot', doktyp: 'mot', parti: 'S' },
+        { id: 'mot-2', title: 'Motion om skatter', date: '2026-02-05', type: 'mot', doktyp: 'mot', parti: 'M' },
+        { id: 'mot-3', title: 'Motion om klimat', date: '2026-02-10', type: 'mot', doktyp: 'mot', parti: 'S' },
+      ] as unknown as SearchDocument[];
+      mockClientInstance.searchDocuments.mockResolvedValue(docsWithParty);
+      mockClientInstance.searchSpeeches.mockResolvedValue([
+        { parti: 'M', talare: 'Speaker A', anforandetext: 'Text' },
+        { parti: 'SD', talare: 'Speaker B', anforandetext: 'Text' },
+      ]);
+
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      expect(article!.html).toContain('Party Performance Rankings');
+    });
   });
 });

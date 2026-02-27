@@ -1360,7 +1360,6 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
 }
 
 /**
-<<<<<<< copilot/enhance-monthly-review-features
  * Per-language label maps for the monthly-review-specific sections.
  * Covers all 14 supported languages.
  */
@@ -1391,8 +1390,8 @@ const MONTHLY_LABELS: Readonly<{
   reports: { en: 'Committee reports', sv: 'Betänkanden', da: 'Betænkninger', no: 'Innstillinger', fi: 'Mietinnöt', de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comité', nl: 'Commissierapporten', ar: 'تقارير اللجان', he: 'דוחות ועדה', ja: '委員会報告', ko: '위원회 보고서', zh: '委员会报告' },
   propositions: { en: 'Government propositions', sv: 'Propositioner', da: 'Lovforslag', no: 'Proposisjoner', fi: 'Hallituksen esitykset', de: 'Regierungsvorlagen', fr: 'Propositions gouvernementales', es: 'Proposiciones gubernamentales', nl: 'Regeringsvoorstellen', ar: 'المقترحات الحكومية', he: 'הצעות ממשלה', ja: '政府提案', ko: '정부 법안', zh: '政府提案' },
   motions: { en: 'Opposition motions', sv: 'Motioner', da: 'Forslag', no: 'Forslag', fi: 'Aloitteet', de: 'Anträge', fr: "Motions de l'opposition", es: 'Mociones de la oposición', nl: 'Oppositiemoties', ar: 'مقترحات المعارضة', he: 'הצעות האופוזיציה', ja: '反対動議', ko: '야당 동의', zh: '反对党动议' },
-  speeches: { en: 'Chamber speeches', sv: 'Anföranden', da: 'Taler', no: 'Taler', fi: 'Puheet', de: 'Parlamentsreden', fr: 'Discours parlementaires', es: 'Discursos parlamentarios', nl: 'Parlementaire toespraken', ar: 'الخطب البرلمانية', he: 'נאומים בכנסת', ja: '議会演説', ko: '의회 연설', zh: '议会演讲' },
-  efficiencyRate: { en: 'Committee throughput rate', sv: 'Utskottets genomströmningsgrad', da: 'Udvalgets gennemstrømningshastighed', no: 'Komiteens gjennomstrømningshastighet', fi: 'Valiokunnan käsittelyaste', de: 'Ausschuss-Durchsatzrate', fr: 'Taux de traitement en commission', es: 'Tasa de rendimiento del comité', nl: 'Commissiedoorvoersnelheid', ar: 'معدل إنتاجية اللجنة', he: 'קצב תפוקת הוועדה', ja: '委員会処理率', ko: '위원회 처리율', zh: '委员会处理率' },
+  speeches: { en: 'Chamber speeches', sv: 'Anföranden', da: 'Taler', no: 'Taler', fi: 'Puheet', de: 'Parlamentsreden', fr: 'Discours parlementaires', es: 'Discursos parlamentarios', nl: 'Parlementaire toespraken', ar: 'الخطب البرلمانية', he: 'נאומי המליאה', ja: '議会演説', ko: '의회 연설', zh: '议会演讲' },
+  efficiencyRate: { en: 'Committee reports per proposition', sv: 'Betänkanden per proposition', da: 'Betænkninger per lovforslag', no: 'Innstillinger per proposisjon', fi: 'Mietinnöt per esitys', de: 'Ausschussberichte pro Vorlage', fr: 'Rapports par proposition', es: 'Informes por proposición', nl: 'Commissierapporten per voorstel', ar: 'تقارير اللجان لكل اقتراح', he: 'דוחות ועדה לכל הצעה', ja: '提案当たり委員会報告数', ko: '제안당 위원회 보고서', zh: '每项提案的委员会报告数' },
   trendVsPrevMonth: { en: 'vs. previous month', sv: 'jmf föregående månad', da: 'ift. forrige måned', no: 'vs. forrige måned', fi: 'vs. edellinen kuukausi', de: 'vs. Vormonat', fr: 'vs. mois précédent', es: 'vs. mes anterior', nl: 'vs. vorige maand', ar: 'مقارنة بالشهر السابق', he: 'לעומת החודש הקודם', ja: '前月比', ko: '전월 대비', zh: '对比上个月' },
   trendVs2MonthsAgo: { en: '3-month rolling avg', sv: '3 månaders glidande snitt', da: '3-måneders glidende gennemsnit', no: '3 måneders glidende gjennomsnitt', fi: '3 kuukauden liukuva keskiarvo', de: '3-Monats-Gleitdurchschnitt', fr: 'Moyenne mobile sur 3 mois', es: 'Promedio móvil de 3 meses', nl: '3-maands voortschrijdend gemiddelde', ar: 'متوسط متحرك 3 أشهر', he: 'ממוצע נע 3 חודשים', ja: '3ヶ月移動平均', ko: '3개월 이동 평균', zh: '3个月滚动平均' },
   activityRank: { en: 'Activity rank', sv: 'Aktivitetsrankning', da: 'Aktivitetsrangering', no: 'Aktivitetsrangering', fi: 'Aktiivisuusranking', de: 'Aktivitätsrang', fr: "Rang d'activité", es: 'Rango de actividad', nl: 'Activiteitsrang', ar: 'تصنيف النشاط', he: 'דירוג פעילות', ja: '活動ランク', ko: '활동 순위', zh: '活动排名' },
@@ -1415,7 +1414,14 @@ function ml(lang: Language | string, key: keyof typeof MONTHLY_LABELS): string {
 function generateMonthInNumbers(metrics: MonthlyMetrics, lang: Language | string): string {
   const prevDiff = metrics.totalDocuments - metrics.previousMonthDocCount;
   const prevSign = prevDiff > 0 ? '+' : '';
-  const rollingAvg = Math.round((metrics.totalDocuments + metrics.previousMonthDocCount + metrics.twoMonthsAgoDocCount) / 3);
+  const availableMonthCounts = [
+    metrics.totalDocuments,
+    metrics.previousMonthDocCount,
+    metrics.twoMonthsAgoDocCount,
+  ].filter(count => count > 0);
+  const rollingAvg = availableMonthCounts.length > 0
+    ? Math.round(availableMonthCounts.reduce((a, b) => a + b, 0) / availableMonthCounts.length)
+    : metrics.totalDocuments;
 
   let html = `\n    <h2>${escapeHtml(ml(lang, 'monthInNumbers'))}</h2>\n`;
   html += `    <div class="context-box">\n      <ul>\n`;
@@ -1538,7 +1544,11 @@ export function generateMonthlyReviewContent(data: ArticleContentData, lang: Lan
   content += generatePartyRankings(metrics, lang);
   content += generateLegislativeEfficiency(metrics, lang);
   content += generateStrategicOutlook(metrics, data, lang);
-=======
+
+  return content;
+}
+
+/**
  * Generate Month-Ahead article content with strategic legislative forecasting.
  * Extends week-ahead calendar coverage with committee pipeline tracking,
  * propositions in pipeline, and motion trend analysis.
@@ -1741,7 +1751,6 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
       content += `    </ul>\n`;
     }
   }
->>>>>>> main
 
   return content;
 }
