@@ -41,7 +41,8 @@
  * **IMPLEMENTATION STATUS:**
  * - All four MCP tools implemented: search_voteringar, get_voting_group,
  *   search_anforanden, search_ledamoter (all called unconditionally;
- *   parameters are enriched when voteId/topic are present in event data)
+ *   parameters are enriched when voteId is present for voting tools, and
+ *   when a speaker name is found in speech results for search_ledamoter)
  * 
  * **INTELLIGENCE ANALYSIS FRAMEWORK:**
  * Breaking news articles incorporate:
@@ -171,7 +172,7 @@ import type {
  * - search_voteringar: ✅ Implemented (always called; parameters enriched when voteId is present)
  * - get_voting_group: ✅ Implemented (always called; parameters enriched when voteId is present)
  * - search_anforanden: ✅ Implemented (always called; parameters enriched when topic is present)
- * - search_ledamoter: ✅ Implemented (always called; parameters enriched when topic is present)
+ * - search_ledamoter: ✅ Implemented (always called; parameters enriched when a speaker name is found in search_anforanden results)
  */
 export const REQUIRED_TOOLS: readonly string[] = [
   'search_voteringar',

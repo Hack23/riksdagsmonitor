@@ -92,8 +92,8 @@ export interface FetchVotingFilters {
   [key: string]: unknown;
 }
 
-/** Parameters for party-level voting group lookup */
-export interface FetchVotingGroupParams {
+/** Filters for party-level voting group lookup */
+export interface FetchVotingGroupFilters {
   bet?: string;
   punkt?: string;
   groupBy?: 'parti' | 'valkrets' | 'namn';

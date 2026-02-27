@@ -158,18 +158,28 @@ describe('Breaking News Article Generation', () => {
       );
     });
 
-    it('should always fetch MP profiles (enriched with speaker name when topic provided)', async () => {
+    it('should always fetch MP profiles (enriched with speaker name from speech results)', async () => {
       const eventData: BreakingEventData = {
         topic: 'Budget debate',
         slug: 'test'
       };
+
+      const mockSpeakerName = 'Jane Doe';
+      mockClientInstance.searchSpeeches.mockResolvedValueOnce([
+        { talare: mockSpeakerName } as unknown as Record<string, unknown>
+      ]);
       
       await breakingNewsModule.generateBreakingNews({
         languages: ['en'],
         eventData
       });
       
-      expect(mockClientInstance.fetchMPs).toHaveBeenCalled();
+      expect(mockClientInstance.fetchMPs).toHaveBeenCalledWith(
+        expect.objectContaining({
+          namn: mockSpeakerName,
+          limit: 1
+        })
+      );
     });
 
     it('should call all 4 required tools even with minimal event data', async () => {

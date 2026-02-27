@@ -17,7 +17,7 @@ import type {
   SearchSpeechesParams,
   FetchMPsFilters,
   FetchVotingFilters,
-  FetchVotingGroupParams,
+  FetchVotingGroupFilters,
   GovDocSearchParams,
   RiksdagDocument,
 } from '../types/mcp.js';
@@ -468,7 +468,7 @@ export class MCPClient {
     return (response['votes'] ?? []) as unknown[];
   }
 
-  async fetchVotingGroup(params: FetchVotingGroupParams = {}): Promise<unknown[]> {
+  async fetchVotingGroup(params: FetchVotingGroupFilters = {}): Promise<unknown[]> {
     const response = await this.request(
       'get_voting_group',
       params as unknown as Record<string, unknown>,
