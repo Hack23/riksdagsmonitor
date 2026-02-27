@@ -113,8 +113,8 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
     // '2025/26'. This is intentional: month-ahead must remain accurate across parliamentary years
     // without requiring a code change at each new session boundary.
     const year = today.getFullYear();
-    const month = today.getMonth() + 1; // 1-12
-    const currentRiksmote = month >= 9
+    const month = today.getMonth(); // 0-11, align with motions.ts pattern
+    const currentRiksmote = month >= 8
       ? `${year}/${String(year + 1).slice(-2)}`
       : `${year - 1}/${String(year).slice(-2)}`;
 
