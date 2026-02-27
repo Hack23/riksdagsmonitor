@@ -254,7 +254,10 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
     console.log('  🔄 Fetching voting patterns, speeches, and propositions...');
     // Derive riksmöte from the first report's rm field, or calculate from current date.
     // Parliamentary year starts in September; e.g. Sep 2025–Aug 2026 → '2025/26'.
-    const firstReportRm = (reports[0] as Record<string, unknown>)?.['rm'] as string | undefined;
+    const firstReportRaw = (reports[0] as Record<string, unknown>)?.['rm'];
+    const rmPattern = /^\d{4}\/\d{2}$/;
+    const firstReportRm: string | undefined =
+      typeof firstReportRaw === 'string' && rmPattern.test(firstReportRaw) ? firstReportRaw : undefined;
     const now = new Date();
     const startYear = now.getMonth() >= 8 ? now.getFullYear() : now.getFullYear() - 1;
     const currentRm = firstReportRm ?? `${startYear}/${String(startYear + 1).slice(-2)}`;
@@ -274,6 +277,11 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
     mcpCalls.push({ tool: 'get_propositioner', result: propositions });
     console.log(`  🗳 Found ${votes.length} voting records, ${speeches.length} speeches, ${(propositions as unknown[]).length} propositions`);
     
+    // Normalize propositions: keep only plain objects to avoid runtime errors in content generator
+    const safePropositions = propositions.filter(
+      (p): p is RawDocument => typeof p === 'object' && p !== null
+    );
+    
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-committee-reports`;
     const articles: GeneratedArticle[] = [];
@@ -282,7 +290,7 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
       
       const content: string = generateArticleContent(
-        { reports, votes, speeches, propositions: propositions as RawDocument[] },
+        { reports, votes, speeches, propositions: safePropositions },
         'committee-reports',
         lang
       );

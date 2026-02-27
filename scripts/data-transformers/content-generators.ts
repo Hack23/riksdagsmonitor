@@ -658,7 +658,8 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
     content += `\n    <h2>${escapeHtml(billHeader)}</h2>\n`;
     content += `    <p>${escapeHtml(billCountText)}</p>\n`;
     propositions.slice(0, 3).forEach(prop => { // display up to 3 linked propositions
-      const propTitle = escapeHtml(prop.titel || prop.title || prop.dokumentnamn || '');
+      if (typeof prop !== 'object' || prop === null) return;
+      const propTitle = escapeHtml((prop as RawDocument).titel || (prop as RawDocument).title || (prop as RawDocument).dokumentnamn || '');
       if (propTitle) {
         content += `    <p>→ ${propTitle}</p>\n`;
       }
