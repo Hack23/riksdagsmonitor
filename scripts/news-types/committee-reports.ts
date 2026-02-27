@@ -252,7 +252,12 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
     
     // Step 2: Enrich with voting patterns, speeches, and propositions (non-fatal)
     console.log('  🔄 Fetching voting patterns, speeches, and propositions...');
-    const currentRm = '2025/26';
+    // Derive riksmöte from the first report's rm field, or calculate from current date.
+    // Parliamentary year starts in September; e.g. Sep 2025–Aug 2026 → '2025/26'.
+    const firstReportRm = (reports[0] as Record<string, unknown>)?.['rm'] as string | undefined;
+    const now = new Date();
+    const startYear = now.getMonth() >= 8 ? now.getFullYear() : now.getFullYear() - 1;
+    const currentRm = firstReportRm ?? `${startYear}/${String(startYear + 1).slice(-2)}`;
     const [votes, speeches, propositions] = await Promise.all([
       Promise.resolve()
         .then(() => client.fetchVotingRecords({ rm: currentRm, limit: 20 }) as Promise<unknown[]>)
@@ -261,7 +266,7 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
         .then(() => client.searchSpeeches({ rm: currentRm, limit: 15 }) as Promise<unknown[]>)
         .catch((err: unknown) => { console.error('  ⚠️ Failed to fetch speeches:', (err as Error)?.message ?? String(err)); return [] as unknown[]; }),
       Promise.resolve()
-        .then(() => client.fetchPropositions(20) as Promise<unknown[]>)
+        .then(() => client.fetchPropositions(20, currentRm) as Promise<unknown[]>)
         .catch((err: unknown) => { console.error('  ⚠️ Failed to fetch propositions:', (err as Error)?.message ?? String(err)); return [] as unknown[]; }),
     ]);
     mcpCalls.push({ tool: 'search_voteringar', result: votes });
