@@ -27,7 +27,7 @@ interface MockMCPClientShape {
   fetchCommitteeReports: Mock<(limit: number) => Promise<CommitteeReport[]>>;
   fetchVotingRecords: Mock<(filters: object) => Promise<unknown[]>>;
   searchSpeeches: Mock<(params: object) => Promise<unknown[]>>;
-  fetchPropositions: Mock<(limit: number) => Promise<unknown[]>>;
+  fetchPropositions: Mock<(limit?: number, rm?: string | null) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -150,7 +150,9 @@ describe('Committee Reports Article Generation', () => {
         languages: ['en']
       });
 
-      expect(mockClientInstance.fetchVotingRecords).toHaveBeenCalled();
+      expect(mockClientInstance.fetchVotingRecords).toHaveBeenCalledWith(
+        expect.objectContaining({ rm: '2024/25', limit: 20 })
+      );
       expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'search_voteringar')).toBe(true);
     });
 
@@ -159,7 +161,9 @@ describe('Committee Reports Article Generation', () => {
         languages: ['en']
       });
 
-      expect(mockClientInstance.searchSpeeches).toHaveBeenCalled();
+      expect(mockClientInstance.searchSpeeches).toHaveBeenCalledWith(
+        expect.objectContaining({ rm: '2024/25', limit: 15 })
+      );
       expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'search_anforanden')).toBe(true);
     });
 
@@ -168,7 +172,7 @@ describe('Committee Reports Article Generation', () => {
         languages: ['en']
       });
 
-      expect(mockClientInstance.fetchPropositions).toHaveBeenCalled();
+      expect(mockClientInstance.fetchPropositions).toHaveBeenCalledWith(20, '2024/25');
       expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_propositioner')).toBe(true);
     });
 
