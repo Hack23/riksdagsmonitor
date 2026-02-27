@@ -21,6 +21,8 @@ export interface RawCalendarEvent {
   description?: string;
   details?: string;
   dayName?: string;
+  /** Organ/committee identifier returned by the MCP calendar API (e.g. 'Kammaren', 'FiU') */
+  organ?: string;
 }
 
 /** Raw document from MCP server */

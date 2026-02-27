@@ -147,6 +147,42 @@ describe('Workflow Architecture', () => {
     }
   });
 
+  it('should have safe PR creation how-to in all workflows', () => {
+    const allWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md'
+    ];
+
+    for (const workflowFile of allWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(
+        fs.existsSync(filepath),
+        `Workflow ${workflowFile} should exist on disk`
+      ).toBe(true);
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      const hasDoNotGitPush = /DO\s+NOT[\s\S]{0,80}`git push`/i.test(content);
+      expect(
+        hasDoNotGitPush,
+        `Workflow ${workflowFile} should have explicit DO NOT git push instruction`
+      ).toBe(true);
+      expect(
+        content.includes('safeoutputs___create_pull_request'),
+        `Workflow ${workflowFile} should reference safeoutputs___create_pull_request`
+      ).toBe(true);
+      expect(
+        content.includes('git add') && content.includes('git commit'),
+        `Workflow ${workflowFile} should document git add + git commit before safe PR creation`
+      ).toBe(true);
+      expect(
+        content.includes('HOW SAFE PR CREATION WORKS'),
+        `Workflow ${workflowFile} should include the standardized HOW SAFE PR CREATION WORKS header block`
+      ).toBe(true);
+    }
+  });
+
   it('should have least privilege permissions on all workflows', () => {
     for (const [_articleType, workflowFile] of Object.entries(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
