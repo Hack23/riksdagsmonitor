@@ -17,6 +17,7 @@ import type {
   SearchSpeechesParams,
   FetchMPsFilters,
   FetchVotingFilters,
+  FetchVotingGroupFilters,
   GovDocSearchParams,
   RiksdagDocument,
 } from '../types/mcp.js';
@@ -465,6 +466,16 @@ export class MCPClient {
       filters as unknown as Record<string, unknown>,
     );
     return (response['votes'] ?? []) as unknown[];
+  }
+
+  async fetchVotingGroup(params: FetchVotingGroupFilters = {}): Promise<unknown[]> {
+    const response = await this.request(
+      'get_voting_group',
+      params as unknown as Record<string, unknown>,
+    );
+    // MCP server returns 'groups' when groupBy is provided (grouped results),
+    // or 'votes' when no grouping is applied (flat voting list fallback)
+    return (response['groups'] ?? response['votes'] ?? []) as unknown[];
   }
 
   async fetchGovernmentDocuments(searchParams: GovDocSearchParams): Promise<unknown[]> {
