@@ -126,8 +126,8 @@ export interface CoalitionStressResult {
   totalVotes: number;
 }
 
-/** Week-over-week comparative metrics */
-export interface WeekOverWeekMetrics {
+/** Weekly activity metrics — current-week counts with CIA coalition-stability trend direction (not a prior-week comparison) */
+export interface WeeklyActivityMetrics {
   currentDocuments: number;
   currentSpeeches: number;
   currentVotes: number;
@@ -551,15 +551,15 @@ export function analyzeCoalitionStress(
  * @param votingRecords - Voting records collected this week (already date-filtered)
  * @param ciaContext    - CIA intelligence context for trend analysis
  */
-export function calculateWeekOverWeekMetrics(
+export function calculateWeeklyActivityMetrics(
   documents: RawDocument[],
   speeches: unknown[],
   votingRecords: VotingRecord[],
   ciaContext: CIAContext,
-): WeekOverWeekMetrics {
+): WeeklyActivityMetrics {
   const trendComparison = generateTrendComparison(ciaContext);
 
-  const activityChange: WeekOverWeekMetrics['activityChange'] =
+  const activityChange: WeeklyActivityMetrics['activityChange'] =
     trendComparison.overallDirection === 'IMPROVING'
       ? 'increasing'
       : trendComparison.overallDirection === 'DECLINING' || trendComparison.overallDirection === 'VOLATILE'
@@ -720,7 +720,7 @@ const WEEKLY_ACTIVITY_LABELS: Readonly<Record<Language, {
   de: { documents: 'Dokumente', speeches: 'Reden', votes: 'Abstimmungen', trend: 'Stabilitätstrend', direction: 'CIA-Stabilitätstrend', insights: 'Trendeinblicke', increasing: 'Verbessernd ↑', stable: 'Stabil →', declining: 'Abnehmend ↓' },
   fr: { documents: 'Documents', speeches: 'Discours', votes: 'Votes', trend: 'Tendance de stabilité', direction: 'Tendance stabilité CIA', insights: 'Aperçus des tendances', increasing: 'En amélioration ↑', stable: 'Stable →', declining: 'En baisse ↓' },
   es: { documents: 'Documentos', speeches: 'Discursos', votes: 'Votaciones', trend: 'Tendencia de estabilidad', direction: 'Tendencia estabilidad CIA', insights: 'Perspectivas de tendencia', increasing: 'Mejorando ↑', stable: 'Estable →', declining: 'En descenso ↓' },
-  nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemmingen', trend: 'Stabiliteitstrend', direction: 'CIA-stabiliteitsrend', insights: 'Trendinzichten', increasing: 'Verbeterend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
+  nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemmingen', trend: 'Stabiliteitstrend', direction: 'CIA-stabiliteitstrend', insights: 'Trendinzichten', increasing: 'Verbeterend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
   ar: { documents: 'وثائق', speeches: 'خطب', votes: 'عمليات التصويت', trend: 'اتجاه الاستقرار', direction: 'اتجاه استقرار CIA', insights: 'رؤى الاتجاه', increasing: 'تحسّن ↑', stable: 'مستقر →', declining: 'متناقص ↓' },
   he: { documents: 'מסמכים', speeches: 'נאומים', votes: 'הצבעות', trend: 'מגמת יציבות', direction: 'מגמת יציבות CIA', insights: 'תובנות מגמה', increasing: 'משתפר ↑', stable: 'יציב →', declining: 'יורד ↓' },
   ja: { documents: '文書', speeches: '演説', votes: '採決', trend: '安定性トレンド', direction: 'CIA安定性トレンド', insights: 'トレンド考察', increasing: '改善中 ↑', stable: '安定 →', declining: '低下中 ↓' },
@@ -736,8 +736,8 @@ const WEEKLY_ACTIVITY_LABELS: Readonly<Record<Language, {
  * NOTE: The "direction" field reflects the CIA stability trend (30/90/365-day),
  * not a comparison against last week's counts.
  */
-export function generateWeekOverWeekSection(
-  metrics: WeekOverWeekMetrics,
+export function generateWeeklyActivitySection(
+  metrics: WeeklyActivityMetrics,
   lang: Language,
 ): string {
   const heading = WEEK_OVER_WEEK_LABELS[lang] ?? WEEK_OVER_WEEK_LABELS.en;
@@ -915,7 +915,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
 
     // ── Compute coalition stress and week-over-week metrics ────────────────
     const coalitionStress = analyzeCoalitionStress(votingRecords as VotingRecord[], ciaContext);
-    const weekMetrics = calculateWeekOverWeekMetrics(documents, speeches, votingRecords as VotingRecord[], ciaContext);
+    const weekMetrics = calculateWeeklyActivityMetrics(documents, speeches, votingRecords as VotingRecord[], ciaContext);
     console.log(`  📈 Coalition risk: ${coalitionStress.riskIndex.level} (${coalitionStress.riskIndex.score}/100), activity: ${weekMetrics.activityChange}`);
 
     // ── Generate articles ──────────────────────────────────────────────────
@@ -927,7 +927,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
 
       const content: string = generateArticleContent({ documents, ciaContext }, 'weekly-review', lang);
       const coalitionSection: string = generateCoalitionDynamicsSection(coalitionStress, lang);
-      const weekOverWeekSection: string = generateWeekOverWeekSection(weekMetrics, lang);
+      const weekOverWeekSection: string = generateWeeklyActivitySection(weekMetrics, lang);
       const fullContent: string = content + coalitionSection + weekOverWeekSection;
       const watchPoints = extractWatchPoints({ documents, ciaContext }, lang);
       const metadata = generateMetadata({ documents, ciaContext }, 'weekly-review', lang);

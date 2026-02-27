@@ -77,7 +77,7 @@ interface WeeklyReviewModule {
     riskIndex: { score: number; level: string; summary: string };
     anomalies: Array<{ type: string; severity: string; description: string }>;
   };
-  readonly calculateWeekOverWeekMetrics: (
+  readonly calculateWeeklyActivityMetrics: (
     documents: unknown[],
     speeches: unknown[],
     votingRecords: unknown[],
@@ -90,7 +90,7 @@ interface WeeklyReviewModule {
     trendComparison: { overallDirection: string; insights: string[] };
   };
   readonly generateCoalitionDynamicsSection: (stress: Record<string, unknown>, lang: Language) => string;
-  readonly generateWeekOverWeekSection: (metrics: Record<string, unknown>, lang: Language) => string;
+  readonly generateWeeklyActivitySection: (metrics: Record<string, unknown>, lang: Language) => string;
 }
 
 // Mock MCP client
@@ -430,9 +430,9 @@ describe('Weekly Review Article Generation', () => {
   });
 
   describe('Weekly Activity Metrics', () => {
-    it('should export calculateWeekOverWeekMetrics function', () => {
-      expect(weeklyReviewModule.calculateWeekOverWeekMetrics).toBeDefined();
-      expect(typeof weeklyReviewModule.calculateWeekOverWeekMetrics).toBe('function');
+    it('should export calculateWeeklyActivityMetrics function', () => {
+      expect(weeklyReviewModule.calculateWeeklyActivityMetrics).toBeDefined();
+      expect(typeof weeklyReviewModule.calculateWeeklyActivityMetrics).toBe('function');
     });
 
     it('should return current activity counts', () => {
@@ -446,7 +446,7 @@ describe('Weekly Review Article Generation', () => {
         overallMotionDenialRate: 96,
       } as unknown as Record<string, unknown>;
 
-      const result = weeklyReviewModule.calculateWeekOverWeekMetrics(docs, speeches, votes, cia);
+      const result = weeklyReviewModule.calculateWeeklyActivityMetrics(docs, speeches, votes, cia);
 
       expect(result.currentDocuments).toBe(2);
       expect(result.currentSpeeches).toBe(1);
@@ -472,7 +472,7 @@ describe('Weekly Review Article Generation', () => {
         overallMotionDenialRate: 96,
       } as unknown as Record<string, unknown>;
 
-      const result = weeklyReviewModule.calculateWeekOverWeekMetrics(docs, speeches, votes, cia);
+      const result = weeklyReviewModule.calculateWeeklyActivityMetrics(docs, speeches, votes, cia);
 
       // 3 raw records, but only 1 distinct bet-punkt → currentVotes should be 1
       expect(result.currentVotes).toBe(1);
@@ -484,8 +484,8 @@ describe('Weekly Review Article Generation', () => {
       expect(weeklyReviewModule.generateCoalitionDynamicsSection).toBeDefined();
     });
 
-    it('should export generateWeekOverWeekSection function', () => {
-      expect(weeklyReviewModule.generateWeekOverWeekSection).toBeDefined();
+    it('should export generateWeeklyActivitySection function', () => {
+      expect(weeklyReviewModule.generateWeeklyActivitySection).toBeDefined();
     });
 
     it('should generate Coalition Dynamics section in English', () => {
@@ -538,7 +538,7 @@ describe('Weekly Review Article Generation', () => {
         activityChange: 'stable',
         trendComparison: { overallDirection: 'STABLE', insights: ['Coalition stable.'] },
       };
-      const html = weeklyReviewModule.generateWeekOverWeekSection(
+      const html = weeklyReviewModule.generateWeeklyActivitySection(
         metrics as unknown as Record<string, unknown>, 'en'
       );
       expect(html).toContain('Weekly Activity');
@@ -554,7 +554,7 @@ describe('Weekly Review Article Generation', () => {
       };
       const langs: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
       for (const lang of langs) {
-        const html = weeklyReviewModule.generateWeekOverWeekSection(
+        const html = weeklyReviewModule.generateWeeklyActivitySection(
           metrics as unknown as Record<string, unknown>, lang
         );
         expect(html).toContain('<h2>');
@@ -572,6 +572,33 @@ describe('Weekly Review Article Generation', () => {
       expect(enArticle!.html).toContain('Weekly Activity');
       expect(svArticle!.html).toContain('Koalitionsdynamik');
       expect(svArticle!.html).toContain('Veckans aktivitet');
+    });
+
+    it('should fetch both riksmöte sessions when the 7-day window crosses the September boundary', async () => {
+      // Simulate "today" = September 5, 2026 → 7-day window is 2026-08-29 .. 2026-09-05
+      // August belongs to rm 2025/26, September to rm 2026/27 — both sessions must be queried.
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date('2026-09-05T12:00:00Z'));
+
+      const aug28Record = { parti: 'M', rost: 'Ja', bet: 'AU1', punkt: '1', datum: '2026-08-28' };  // outside window
+      const aug30Record = { parti: 'S', rost: 'Nej', bet: 'AU2', punkt: '1', datum: '2026-08-30' }; // inside window (old rm)
+      const sep04Record = { parti: 'M', rost: 'Ja', bet: 'AU3', punkt: '1', datum: '2026-09-04' };  // inside window (new rm)
+
+      // First call (rm=2025/26) returns august record; second (rm=2026/27) returns september record
+      mockClientInstance.fetchVotingRecords
+        .mockResolvedValueOnce([aug28Record, aug30Record])
+        .mockResolvedValueOnce([sep04Record]);
+
+      await weeklyReviewModule.generateWeeklyReview({ languages: ['en'] });
+
+      // Both sessions should have been fetched
+      const rmArgs = mockClientInstance.fetchVotingRecords.mock.calls.map(
+        (call: unknown[]) => (call[0] as Record<string, unknown>).rm
+      );
+      expect(rmArgs).toContain('2025/26');
+      expect(rmArgs).toContain('2026/27');
+
+      vi.useRealTimers();
     });
   });
 });
