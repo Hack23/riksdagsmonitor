@@ -267,6 +267,27 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/riksmöte|parliamentary.*session/i);
       // Should reference current/dynamic context rather than only static values
       expect(content).toMatch(/calculat|dynamic|current/i);
+    it('workflows should document riksmöte (rm) parameter usage dynamically', () => {
+      const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      // Should use dynamic riksmöte calculation, not a hardcoded year
+      expect(content).toContain('rm: <calculated riksmöte>');
+    });
+
+    it('all news workflows should include riksmöte calculation instruction', () => {
+      const newsWorkflows = [
+        'news-realtime-monitor.md', 'news-motions.md', 'news-article-generator.md',
+        'news-evening-analysis.md', 'news-monthly-review.md', 'news-week-ahead.md',
+        'news-weekly-review.md', 'news-committee-reports.md', 'news-propositions.md',
+        'news-month-ahead.md',
+      ];
+      for (const workflow of newsWorkflows) {
+        const content = fs.readFileSync(path.join(WORKFLOWS_DIR, workflow), 'utf-8');
+        expect(content).toContain('## 📅 Riksmöte (Parliamentary Session) Calculation');
+        // No hardcoded parliamentary session year in rm parameter (any year format)
+        expect(content).not.toMatch(/rm:\s*"20\d{2}\/\d{2}"/);
+      }
     });
   });
 
