@@ -127,6 +127,15 @@ date +"%Z: %A %Y-%m-%d %H:%M:%S"
 echo "============================"
 ```
 
+## 📅 Riksmöte (Parliamentary Session) Calculation
+
+The Swedish parliamentary session runs September–August. Calculate the current `rm` value:
+- If current month is September or later (calendar month 9; JavaScript `Date` month index 8): `rm = "{currentYear}/{nextYear's last 2 digits}"`
+- If current month is before September (calendar month ≤ 8; JavaScript `Date` month index ≤ 7): `rm = "{previousYear}/{currentYear's last 2 digits}"`
+- Example: February 2026 → `rm = "2025/26"`, October 2026 → `rm = "2026/27"`
+
+Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
+
 ## MANDATORY MCP Health Gate
 
 Before generating ANY articles, verify MCP connectivity:
@@ -273,8 +282,8 @@ get_calendar_events({ from: "2026-02-16", tom: "2026-02-16", limit: 50 })
 search_regering({ from_date: "2026-02-16", to_date: "2026-02-17", limit: 30 })
 
 // STEP 3: For tools without date filters, use rm + limit and filter results by date
-get_betankanden({ rm: "2025/26", limit: 20 })  // Then filter by publicerad date
-search_voteringar({ rm: "2025/26", limit: 50 })  // Then filter by datum
+get_betankanden({ rm: <calculated riksmöte>, limit: 20 })  // Then filter by publicerad date
+search_voteringar({ rm: <calculated riksmöte>, limit: 50 })  // Then filter by datum
 ```
 
 **Tool Naming:** Use simple names like `get_calendar_events()`, `search_voteringar()` - the framework handles routing automatically.
@@ -393,7 +402,7 @@ For richer analysis, combine data from multiple tools:
 **Example 1: Committee Report Deep Dive**
 ```javascript
 // 1. Get recent committee reports
-const betankanden = get_betankanden({ rm: "2025/26", limit: 20 });
+const betankanden = get_betankanden({ rm: <calculated riksmöte>, limit: 20 });
 const recentBet = betankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
 
 // 2. For each report, get full details
@@ -402,11 +411,11 @@ const reportDetails = recentBet.map(bet =>
 );
 
 // 3. Check related votes
-const relatedVotes = search_voteringar({ rm: "2025/26", limit: 50 })
+const relatedVotes = search_voteringar({ rm: <calculated riksmöte>, limit: 50 })
   .filter(v => recentBet.some(bet => v.bet === bet.beteckning));
 
 // 4. Find committee members' speeches
-const committeeSpeeches = search_anforanden({ rm: "2025/26", limit: 100 })
+const committeeSpeeches = search_anforanden({ rm: <calculated riksmöte>, limit: 100 })
   .filter(a => recentBet.some(bet => a.dokument_hangar_samman === bet.dok_id));
 ```
 
@@ -416,11 +425,11 @@ const committeeSpeeches = search_anforanden({ rm: "2025/26", limit: 100 })
 const govDocs = search_regering({ from_date: fromDate, to_date: today, limit: 30 });
 
 // 2. Get related propositions
-const propositions = get_propositioner({ rm: "2025/26", limit: 20 })
+const propositions = get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
   .filter(p => new Date(p.publicerad) >= new Date(fromDate));
 
 // 3. Check ministerial questions on same topics
-const questions = get_fragor({ rm: "2025/26", limit: 50 })
+const questions = get_fragor({ rm: <calculated riksmöte>, limit: 50 })
   .filter(q => new Date(q.inlämnad) >= new Date(fromDate));
 
 // 4. Department analysis
@@ -433,18 +442,18 @@ const deptAnalysis = analyze_g0v_by_department({
 **Example 3: Party Behavior Analysis**
 ```javascript
 // 1. Get voting patterns
-const voteGroups = get_voting_group({ rm: "2025/26", groupBy: "parti" });
+const voteGroups = get_voting_group({ rm: <calculated riksmöte>, groupBy: "parti" });
 
 // 2. Get recent votes
-const recentVotes = search_voteringar({ rm: "2025/26", limit: 100 })
+const recentVotes = search_voteringar({ rm: <calculated riksmöte>, limit: 100 })
   .filter(v => new Date(v.datum) >= new Date(fromDate));
 
 // 3. Get party motions
-const partyMotions = get_motioner({ rm: "2025/26", limit: 50 })
+const partyMotions = get_motioner({ rm: <calculated riksmöte>, limit: 50 })
   .filter(m => new Date(m.inlämnad) >= new Date(fromDate));
 
 // 4. Get speeches by party members
-const partySpeeches = search_anforanden({ rm: "2025/26", limit: 100 })
+const partySpeeches = search_anforanden({ rm: <calculated riksmöte>, limit: 100 })
   .filter(a => new Date(a.datum) >= new Date(fromDate));
 ```
 
@@ -489,21 +498,21 @@ get_calendar_events({ from: fromDate, tom: today, limit: 100 })
 // The riksdag-regering-mcp server returns votes sorted by date DESC
 // but we should be explicit about our date range
 search_voteringar({ 
-  rm: "2025/26", 
+  rm: <calculated riksmöte>, 
   limit: dayOfWeek === 6 ? 100 : 50 
   // Note: search_voteringar doesn't support from_date, so we rely on rm + limit
   // and then filter results by date in our analysis
 })
 
 // Party voting patterns (contextual data - no date filter available)
-get_voting_group({ rm: "2025/26", groupBy: "parti" })
+get_voting_group({ rm: <calculated riksmöte>, groupBy: "parti" })
 
 // Committee reports published (specify riksmöte explicitly)
-get_betankanden({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
+get_betankanden({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 50 : 20 })
 // Note: Filter results by publicerad date >= fromDate in analysis
 
 // Speeches and debates (specify riksmöte explicitly)
-search_anforanden({ rm: "2025/26", limit: dayOfWeek === 6 ? 100 : 50 })
+search_anforanden({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 100 : 50 })
 // Note: Filter results by datum >= fromDate in analysis
 
 // === GOVERNMENT ACTIVITY ===
@@ -516,16 +525,16 @@ search_regering({
 })
 
 // New propositions (specify riksmöte)
-get_propositioner({ rm: "2025/26", limit: dayOfWeek === 6 ? 20 : 10 })
+get_propositioner({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 20 : 10 })
 // Note: Filter results by publicerad date >= fromDate in analysis
 
 // Opposition motions (specify riksmöte)
-get_motioner({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
+get_motioner({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 50 : 20 })
 // Note: Filter results by inlämnad date >= fromDate in analysis
 
 // Ministerial questions and interpellations (specify riksmöte)
-get_fragor({ rm: "2025/26", limit: dayOfWeek === 6 ? 50 : 20 })
-get_interpellationer({ rm: "2025/26", limit: dayOfWeek === 6 ? 20 : 10 })
+get_fragor({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 50 : 20 })
+get_interpellationer({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 20 : 10 })
 // Note: Filter results by inlämnad date >= fromDate in analysis
 
 // === NEXT WEEK PREVIEW (Saturday) / TOMORROW (weekday) ===

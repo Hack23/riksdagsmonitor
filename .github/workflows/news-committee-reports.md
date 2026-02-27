@@ -120,6 +120,15 @@ echo "Article Type: committee-reports"
 echo "============================"
 ```
 
+## 📅 Riksmöte (Parliamentary Session) Calculation
+
+The Swedish parliamentary session runs September–August. Calculate the current `rm` value:
+- If current month is September or later (calendar month 9; JavaScript `Date` month index 8): `rm = "{currentYear}/{nextYear's last 2 digits}"`
+- If current month is before September (calendar month ≤ 8; JavaScript `Date` month index ≤ 7): `rm = "{previousYear}/{currentYear's last 2 digits}"`
+- Example: February 2026 → `rm = "2025/26"`, October 2026 → `rm = "2026/27"`
+
+Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
+
 ## MANDATORY MCP Health Gate
 
 Before generating ANY articles, verify MCP connectivity:
@@ -165,7 +174,7 @@ Before generating ANY articles, verify MCP connectivity:
 
 ```javascript
 get_sync_status({})
-get_betankanden({ rm: "2025/26", limit: 20 })
+get_betankanden({ rm: <calculated riksmöte>, limit: 20 })
 ```
 
 ## Generation Steps
@@ -176,7 +185,7 @@ Check if committee-reports articles exist from the last 11 hours. Skip if force_
 ### Step 2: Query MCP for Committee Reports
 ```javascript
 get_sync_status({})
-get_betankanden({ rm: "2025/26", limit: 20 })
+get_betankanden({ rm: <calculated riksmöte>, limit: 20 })
 ```
 
 ### Step 3: Generate Articles

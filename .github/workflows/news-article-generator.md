@@ -120,6 +120,15 @@ date +"%Z: %A %Y-%m-%d %H:%M:%S"
 echo "============================"
 ```
 
+## 📅 Riksmöte (Parliamentary Session) Calculation
+
+The Swedish parliamentary session runs September–August. Calculate the current `rm` value:
+- If current month is September or later (calendar month 9; JavaScript `Date` month index 8): `rm = "{currentYear}/{nextYear's last 2 digits}"`
+- If current month is before September (calendar month ≤ 8; JavaScript `Date` month index ≤ 7): `rm = "{previousYear}/{currentYear's last 2 digits}"`
+- Example: February 2026 → `rm = "2025/26"`, October 2026 → `rm = "2026/27"`
+
+Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
+
 ## MANDATORY MCP Health Gate
 
 Before generating ANY articles, verify MCP connectivity:
@@ -280,7 +289,7 @@ At runtime, gh-aw:
 ```javascript
 get_calendar_events({ from: "2026-02-17", tom: "2026-02-23", limit: 50 })
 search_dokument({ from_date: "2026-02-17", limit: 30 })
-search_voteringar({ rm: "2025/26", limit: 20 })
+search_voteringar({ rm: <calculated riksmöte>, limit: 20 })
 get_sync_status({})
 ```
 
@@ -480,13 +489,13 @@ get_calendar_events({ from: "2026-02-11", tom: "2026-02-18", limit: 100 })
 search_dokument({ from_date: "2026-02-11", to_date: "2026-02-18", doktyp: "deb" })
 
 // Get ministerial questions
-get_fragor({ rm: "2025/26", limit: 20 })
+get_fragor({ rm: <calculated riksmöte>, limit: 20 })
 ```
 
 **Committee Reports:**
 ```javascript
 // Get latest committee reports
-get_betankanden({ rm: "2025/26", limit: 20 })
+get_betankanden({ rm: <calculated riksmöte>, limit: 20 })
 
 // Get specific report details
 get_dokument({ dok_id: "bet_id", include_full_text: false })
@@ -495,31 +504,31 @@ get_dokument({ dok_id: "bet_id", include_full_text: false })
 **Government Propositions:**
 ```javascript
 // Get latest propositions
-get_propositioner({ rm: "2025/26", limit: 20 })
+get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
 
 // Search for specific topics
-search_dokument({ query: "klimat", doktyp: "prop", rm: "2025/26" })
+search_dokument({ query: "klimat", doktyp: "prop", rm: <calculated riksmöte> })
 ```
 
 **Opposition Motions:**
 ```javascript
 // Get latest motions
-get_motioner({ rm: "2025/26", limit: 20 })
+get_motioner({ rm: <calculated riksmöte>, limit: 20 })
 
 // Group by party
-search_dokument({ doktyp: "mot", rm: "2025/26", limit: 50 })
+search_dokument({ doktyp: "mot", rm: <calculated riksmöte>, limit: 50 })
 ```
 
 **Breaking News:**
 ```javascript
 // Search recent significant debates
-search_anforanden({ rm: "2025/26", limit: 20 })
+search_anforanden({ rm: <calculated riksmöte>, limit: 20 })
 
 // Check recent votes
-search_voteringar({ rm: "2025/26", limit: 20 })
+search_voteringar({ rm: <calculated riksmöte>, limit: 20 })
 
 // Get voting group analysis
-get_voting_group({ rm: "2025/26", groupBy: "parti" })
+get_voting_group({ rm: <calculated riksmöte>, groupBy: "parti" })
 ```
 
 ### Step 3: Analyze Data

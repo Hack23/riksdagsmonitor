@@ -116,6 +116,15 @@ echo "Article Type: month-ahead"
 echo "============================"
 ```
 
+## 📅 Riksmöte (Parliamentary Session) Calculation
+
+The Swedish parliamentary session runs September–August. Calculate the current `rm` value:
+- If current month is September or later (calendar month 9; JavaScript `Date` month index 8): `rm = "{currentYear}/{nextYear's last 2 digits}"`
+- If current month is before September (calendar month ≤ 8; JavaScript `Date` month index ≤ 7): `rm = "{previousYear}/{currentYear's last 2 digits}"`
+- Example: February 2026 → `rm = "2025/26"`, October 2026 → `rm = "2026/27"`
+
+Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
+
 ## MANDATORY MCP Health Gate
 
 Before generating ANY articles, verify MCP connectivity:
@@ -165,7 +174,7 @@ get_sync_status({})
 const today = new Date().toISOString().split('T')[0];
 const nextMonth = new Date(Date.now() + 30*86400000).toISOString().split('T')[0];
 get_calendar_events({ from: today, tom: nextMonth, limit: 200 })
-get_propositioner({ rm: "2025/26", limit: 20 })
+get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
 search_regering({ dateFrom: today, dateTo: nextMonth, limit: 10 })
 ```
 
