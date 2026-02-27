@@ -1425,11 +1425,11 @@ function generateMonthInNumbers(metrics: MonthlyMetrics, lang: Language | string
 
   let html = `\n    <h2>${escapeHtml(ml(lang, 'monthInNumbers'))}</h2>\n`;
   html += `    <div class="context-box">\n      <ul>\n`;
-  html += `        <li><strong>${escapeHtml(ml(lang, 'totalDocuments'))}:</strong> ${escapeHtml(metrics.totalDocuments)}</li>\n`;
-  html += `        <li><strong>${escapeHtml(ml(lang, 'reports'))}:</strong> ${escapeHtml(metrics.reportCount)}</li>\n`;
-  html += `        <li><strong>${escapeHtml(ml(lang, 'propositions'))}:</strong> ${escapeHtml(metrics.propositionCount)}</li>\n`;
-  html += `        <li><strong>${escapeHtml(ml(lang, 'motions'))}:</strong> ${escapeHtml(metrics.motionCount)}</li>\n`;
-  html += `        <li><strong>${escapeHtml(ml(lang, 'speeches'))}:</strong> ${escapeHtml(metrics.speechCount)}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'totalDocuments'))}:</strong> ${escapeHtml(String(metrics.totalDocuments))}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'reports'))}:</strong> ${escapeHtml(String(metrics.reportCount))}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'propositions'))}:</strong> ${escapeHtml(String(metrics.propositionCount))}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'motions'))}:</strong> ${escapeHtml(String(metrics.motionCount))}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'speeches'))}:</strong> ${escapeHtml(String(metrics.speechCount))}</li>\n`;
   if (metrics.previousMonthDocCount > 0) {
     html += `        <li><em>${escapeHtml(ml(lang, 'trendVsPrevMonth'))}:</em> ${escapeHtml(prevSign)}${prevDiff}</li>\n`;
   }
@@ -1455,8 +1455,8 @@ function generatePartyRankings(metrics: MonthlyMetrics, lang: Language | string)
     const speechLabel = ml(lang, 'speechesDelivered');
     const rankLabel = ml(lang, 'activityRank');
     html += `        <li><strong>${escapeHtml(entry.party)}</strong> — `;
-    html += `${escapeHtml(entry.motionCount)} ${escapeHtml(motionLabel)}, `;
-    html += `${escapeHtml(entry.speechCount)} ${escapeHtml(speechLabel)}`;
+    html += `${escapeHtml(String(entry.motionCount))} ${escapeHtml(motionLabel)}, `;
+    html += `${escapeHtml(String(entry.speechCount))} ${escapeHtml(speechLabel)}`;
     if (idx === 0) html += ` (${escapeHtml(rankLabel)} #1)`;
     html += `</li>\n`;
   });
@@ -1473,8 +1473,8 @@ function generateLegislativeEfficiency(metrics: MonthlyMetrics, lang: Language |
   html += `    <div class="context-box">\n      <ul>\n`;
 
   if (metrics.propositionCount > 0) {
-    const pct = Math.round(metrics.legislativeEfficiencyRate * 100);
-    html += `        <li><strong>${escapeHtml(ml(lang, 'efficiencyRate'))}:</strong> ${pct}% (${metrics.reportCount} / ${metrics.propositionCount})</li>\n`;
+    const ratio = metrics.legislativeEfficiencyRate.toFixed(2);
+    html += `        <li><strong>${escapeHtml(ml(lang, 'efficiencyRate'))}:</strong> ${ratio} (${metrics.reportCount} / ${metrics.propositionCount})</li>\n`;
   }
 
   html += `        <li><small>${escapeHtml(ml(lang, 'motionDenialContext'))}</small></li>\n`;
