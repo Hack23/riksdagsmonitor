@@ -43,6 +43,9 @@ interface MonthlyReviewValidationResult {
   hasMinimumSources: boolean;
   hasRetrospectiveTone: boolean;
   hasTrendAnalysis: boolean;
+  hasPartyRankings: boolean;
+  hasLegislativeEfficiency: boolean;
+  hasMonthInNumbers: boolean;
   passed: boolean;
 }
 
@@ -244,6 +247,99 @@ describe('Monthly Review Article Generation', () => {
 
       expect(result.success).toBe(true);
       expect(result.articles.length).toBe(1);
+    });
+  });
+
+  describe('Monthly Enhancements', () => {
+    it('should include Month in Numbers section in generated articles', async () => {
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      // Month in Numbers section should appear when documents are present
+      expect(article!.html).toContain('Month in Numbers');
+    });
+
+    it('should include Legislative Efficiency section in generated articles', async () => {
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      expect(article!.html).toContain('Legislative Efficiency');
+    });
+
+    it('should include Strategic Outlook section in generated articles', async () => {
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      expect(article!.html).toContain('Strategic Outlook');
+    });
+
+    it('should generate Swedish-language monthly sections', async () => {
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['sv']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      expect(article!.html).toContain('Månaden i siffror');
+      expect(article!.html).toContain('Lagstiftningseffektivitet');
+      expect(article!.html).toContain('Strategisk utsikt');
+    });
+
+    it('should validate new section fields in validateMonthlyReview', () => {
+      const article: ArticleInput = {
+        content: 'Month in Numbers review. Committee reports throughput. Party Performance Rankings. Legislative Efficiency. Strategic Outlook trend analysis completed.',
+        sources: ['s1', 's2', 's3']
+      };
+
+      const result = monthlyReviewModule.validateMonthlyReview(article);
+      expect(result.hasMonthInNumbers).toBe(true);
+      expect(result.hasLegislativeEfficiency).toBe(true);
+      expect(result.hasPartyRankings).toBe(true);
+    });
+
+    it('should fetch previous months for trend analysis (3 searchDocuments calls)', async () => {
+      await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      // At least 3 calls: current month + previous month + 2-months-ago
+      expect(mockClientInstance.searchDocuments.mock.calls.length).toBeGreaterThanOrEqual(3);
+    });
+
+    it('should render Party Performance Rankings when party data is available', async () => {
+      // Provide documents with doktyp + parti so the party aggregation fires
+      const docsWithParty = [
+        { id: 'mot-1', title: 'Motion om bostäder', date: '2026-02-01', type: 'mot', doktyp: 'mot', parti: 'S' },
+        { id: 'mot-2', title: 'Motion om skatter', date: '2026-02-05', type: 'mot', doktyp: 'mot', parti: 'M' },
+        { id: 'mot-3', title: 'Motion om klimat', date: '2026-02-10', type: 'mot', doktyp: 'mot', parti: 'S' },
+      ] as unknown as SearchDocument[];
+      mockClientInstance.searchDocuments.mockResolvedValue(docsWithParty);
+      mockClientInstance.searchSpeeches.mockResolvedValue([
+        { parti: 'M', talare: 'Speaker A', anforandetext: 'Text' },
+        { parti: 'SD', talare: 'Speaker B', anforandetext: 'Text' },
+      ]);
+
+      const result = await monthlyReviewModule.generateMonthlyReview({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      const article = result.articles[0];
+      expect(article).toBeDefined();
+      expect(article!.html).toContain('Party Performance Rankings');
     });
   });
 });
