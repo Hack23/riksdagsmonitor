@@ -523,13 +523,14 @@ export function analyzeCoalitionStress(
     if (govYes > 0 && govNo > 0) defections++;
   }
 
+  const normCtx = normalizedCIAContext(ciaContext);
   return {
     governmentWins,
     governmentLosses,
     crossPartyVotes,
     defections,
-    riskIndex: calculateCoalitionRiskIndex(normalizedCIAContext(ciaContext)),
-    anomalies: detectAnomalousPatterns(normalizedCIAContext(ciaContext)),
+    riskIndex: calculateCoalitionRiskIndex(normCtx),
+    anomalies: detectAnomalousPatterns(normCtx),
     totalVotes: byPoint.size,
   };
 }
@@ -619,6 +620,27 @@ const RISK_LEVEL_LABELS: Readonly<Record<Language, Record<string, string>>> = {
   zh: { LOW: '低', MEDIUM: '中等', HIGH: '高', CRITICAL: '危急' },
 };
 
+/** Coalition Dynamics stats labels for all 14 languages */
+const COALITION_STATS_LABELS: Readonly<Record<Language, {
+  score: string; level: string; wins: string; losses: string;
+  cross: string; defections: string; votes: string;
+}>> = {
+  en: { score: 'Risk score', level: 'Risk level', wins: 'Government wins', losses: 'Government losses', cross: 'Cross-party votes', defections: 'Internal defections', votes: 'Vote points analysed' },
+  sv: { score: 'Riskpoäng', level: 'Risknivå', wins: 'Regeringsvinster', losses: 'Regeringsförluster', cross: 'Partiöverskridande röster', defections: 'Interna avhopp', votes: 'Analyserade röstpunkter' },
+  da: { score: 'Risikoscore', level: 'Risikoniveau', wins: 'Regeringsgevinster', losses: 'Regeringstab', cross: 'Tværpartilige stemmer', defections: 'Interne afhopp', votes: 'Analyserede afstemningspunkter' },
+  no: { score: 'Risikoscore', level: 'Risikonivå', wins: 'Regjeringsseire', losses: 'Regjeringstap', cross: 'Tverrpartistemmer', defections: 'Interne avhopp', votes: 'Analyserte voteringspunkter' },
+  fi: { score: 'Riskipisteet', level: 'Riskitaso', wins: 'Hallituksen voitot', losses: 'Hallituksen tappiot', cross: 'Puoluerajat ylittävät äänet', defections: 'Sisäiset loikkaukset', votes: 'Analysoidut äänestyskohteet' },
+  de: { score: 'Risikowert', level: 'Risikoniveau', wins: 'Regierungssiege', losses: 'Regierungsniederlagen', cross: 'Überparteiliche Abstimmungen', defections: 'Interne Abweichungen', votes: 'Analysierte Abstimmungspunkte' },
+  fr: { score: 'Score de risque', level: 'Niveau de risque', wins: 'Victoires gouvernementales', losses: 'Défaites gouvernementales', cross: 'Votes transpartisans', defections: 'Défections internes', votes: 'Points de vote analysés' },
+  es: { score: 'Puntuación de riesgo', level: 'Nivel de riesgo', wins: 'Victorias gubernamentales', losses: 'Derrotas gubernamentales', cross: 'Votos transversales', defections: 'Defecciones internas', votes: 'Puntos de votación analizados' },
+  nl: { score: 'Risicoscore', level: 'Risiconiveau', wins: 'Regeringsoverwinningen', losses: 'Regeringsnederlagen', cross: 'Stemmen over partijgrenzen', defections: 'Interne defecties', votes: 'Geanalyseerde stemmentpunten' },
+  ar: { score: 'درجة الخطر', level: 'مستوى الخطر', wins: 'انتصارات الحكومة', losses: 'خسائر الحكومة', cross: 'تصويتات متعددة الأحزاب', defections: 'الانشقاقات الداخلية', votes: 'نقاط التصويت المحللة' },
+  he: { score: 'ציון סיכון', level: 'רמת סיכון', wins: 'ניצחונות ממשלתיים', losses: 'הפסדים ממשלתיים', cross: 'הצבעות חוצות-מפלגות', defections: 'עריקות פנימיות', votes: 'נקודות הצבעה שנותחו' },
+  ja: { score: 'リスクスコア', level: 'リスクレベル', wins: '政府の勝利', losses: '政府の敗北', cross: '超党派投票', defections: '内部離反', votes: '分析された投票点' },
+  ko: { score: '위험 점수', level: '위험 수준', wins: '정부 승리', losses: '정부 패배', cross: '초당파 표결', defections: '내부 이탈', votes: '분석된 표결 항목' },
+  zh: { score: '风险评分', level: '风险等级', wins: '政府获胜', losses: '政府失败', cross: '跨党派投票', defections: '内部叛离', votes: '分析的表决点' },
+};
+
 /**
  * Generate the "Coalition Dynamics" HTML section for the given language.
  * Shows risk index, government wins/losses, cross-party votes, defections,
@@ -632,27 +654,7 @@ export function generateCoalitionDynamicsSection(
   const riskLabels = RISK_LEVEL_LABELS[lang] ?? RISK_LEVEL_LABELS.en;
   const riskLevelLabel = riskLabels[stress.riskIndex.level] ?? stress.riskIndex.level;
 
-  const statsLabels: Record<Language, {
-    score: string; level: string; wins: string; losses: string;
-    cross: string; defections: string; votes: string;
-  }> = {
-    en: { score: 'Risk score', level: 'Risk level', wins: 'Government wins', losses: 'Government losses', cross: 'Cross-party votes', defections: 'Internal defections', votes: 'Vote points analysed' },
-    sv: { score: 'Riskpoäng', level: 'Risknivå', wins: 'Regeringsvinster', losses: 'Regeringsförluster', cross: 'Partiöverskridande röster', defections: 'Interna avhopp', votes: 'Analyserade röstpunkter' },
-    da: { score: 'Risikoscore', level: 'Risikoniveau', wins: 'Regeringsgevinster', losses: 'Regeringstab', cross: 'Tværpartilige stemmer', defections: 'Interne afhopp', votes: 'Analyserede afstemningspunkter' },
-    no: { score: 'Risikoscore', level: 'Risikonivå', wins: 'Regjeringsseire', losses: 'Regjeringstap', cross: 'Tverrpartistemmer', defections: 'Interne avhopp', votes: 'Analyserte voteringspunkter' },
-    fi: { score: 'Riskipisteet', level: 'Riskitaso', wins: 'Hallituksen voitot', losses: 'Hallituksen tappiot', cross: 'Puoluerajat ylittävät äänet', defections: 'Sisäiset loikkaukset', votes: 'Analysoidut äänestyskohteet' },
-    de: { score: 'Risikowert', level: 'Risikoniveau', wins: 'Regierungssiege', losses: 'Regierungsniederlagen', cross: 'Überparteiliche Abstimmungen', defections: 'Interne Abweichungen', votes: 'Analysierte Abstimmungspunkte' },
-    fr: { score: 'Score de risque', level: 'Niveau de risque', wins: 'Victoires gouvernementales', losses: 'Défaites gouvernementales', cross: 'Votes transpartisans', defections: 'Défections internes', votes: 'Points de vote analysés' },
-    es: { score: 'Puntuación de riesgo', level: 'Nivel de riesgo', wins: 'Victorias gubernamentales', losses: 'Derrotas gubernamentales', cross: 'Votos transversales', defections: 'Defecciones internas', votes: 'Puntos de votación analizados' },
-    nl: { score: 'Risicoscore', level: 'Risiconiveau', wins: 'Regeringsoverwinningen', losses: 'Regeringsnederlagen', cross: 'Stemmen over partijgrenzen', defections: 'Interne defecties', votes: 'Geanalyseerde stemmentpunten' },
-    ar: { score: 'درجة الخطر', level: 'مستوى الخطر', wins: 'انتصارات الحكومة', losses: 'خسائر الحكومة', cross: 'تصويتات متعددة الأحزاب', defections: 'الانشقاقات الداخلية', votes: 'نقاط التصويت المحللة' },
-    he: { score: 'ציון סיכון', level: 'רמת סיכון', wins: 'ניצחונות ממשלתיים', losses: 'הפסדים ממשלתיים', cross: 'הצבעות חוצות-מפלגות', defections: 'עריקות פנימיות', votes: 'נקודות הצבעה שנותחו' },
-    ja: { score: 'リスクスコア', level: 'リスクレベル', wins: '政府の勝利', losses: '政府の敗北', cross: '超党派投票', defections: '内部離反', votes: '分析された投票点' },
-    ko: { score: '위험 점수', level: '위험 수준', wins: '정부 승리', losses: '정부 패배', cross: '초당파 표결', defections: '내부 이탈', votes: '분석된 표결 항목' },
-    zh: { score: '风险评分', level: '风险等级', wins: '政府获胜', losses: '政府失败', cross: '跨党派投票', defections: '内部叛离', votes: '分析的表决点' },
-  };
-
-  const lbl = statsLabels[lang] ?? statsLabels.en;
+  const lbl = COALITION_STATS_LABELS[lang] ?? COALITION_STATS_LABELS.en;
 
   let html = `\n    <h2>${escapeHtml(heading)}</h2>\n`;
   html += `    <div class="context-box">\n`;
@@ -705,6 +707,27 @@ const WEEK_OVER_WEEK_LABELS: Readonly<Record<Language, string>> = {
   zh: '本周活动',
 };
 
+/** Weekly Activity metric labels for all 14 languages */
+const WEEKLY_ACTIVITY_LABELS: Readonly<Record<Language, {
+  documents: string; speeches: string; votes: string; trend: string;
+  direction: string; insights: string; increasing: string; stable: string; declining: string;
+}>> = {
+  en: { documents: 'Documents', speeches: 'Speeches', votes: 'Votes', trend: 'Stability trend', direction: 'CIA stability trend', insights: 'Trend insights', increasing: 'Improving ↑', stable: 'Stable →', declining: 'Declining ↓' },
+  sv: { documents: 'Dokument', speeches: 'Anföranden', votes: 'Voteringar', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendinsikter', increasing: 'Förbättrad ↑', stable: 'Stabilt →', declining: 'Minskande ↓' },
+  da: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Afstemninger', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendindsigter', increasing: 'Forbedret ↑', stable: 'Stabilt →', declining: 'Faldende ↓' },
+  no: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Voteringer', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendinnsikter', increasing: 'Forbedret ↑', stable: 'Stabilt →', declining: 'Synkende ↓' },
+  fi: { documents: 'Asiakirjat', speeches: 'Puheenvuorot', votes: 'Äänestykset', trend: 'Vakaustrendit', direction: 'CIA-vakaustrendi', insights: 'Trendianalyysit', increasing: 'Paraneva ↑', stable: 'Vakaa →', declining: 'Laskeva ↓' },
+  de: { documents: 'Dokumente', speeches: 'Reden', votes: 'Abstimmungen', trend: 'Stabilitätstrend', direction: 'CIA-Stabilitätstrend', insights: 'Trendeinblicke', increasing: 'Verbessernd ↑', stable: 'Stabil →', declining: 'Abnehmend ↓' },
+  fr: { documents: 'Documents', speeches: 'Discours', votes: 'Votes', trend: 'Tendance de stabilité', direction: 'Tendance stabilité CIA', insights: 'Aperçus des tendances', increasing: 'En amélioration ↑', stable: 'Stable →', declining: 'En baisse ↓' },
+  es: { documents: 'Documentos', speeches: 'Discursos', votes: 'Votaciones', trend: 'Tendencia de estabilidad', direction: 'Tendencia estabilidad CIA', insights: 'Perspectivas de tendencia', increasing: 'Mejorando ↑', stable: 'Estable →', declining: 'En descenso ↓' },
+  nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemmingen', trend: 'Stabiliteitstrend', direction: 'CIA-stabiliteitsrend', insights: 'Trendinzichten', increasing: 'Verbeterend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
+  ar: { documents: 'وثائق', speeches: 'خطب', votes: 'عمليات التصويت', trend: 'اتجاه الاستقرار', direction: 'اتجاه استقرار CIA', insights: 'رؤى الاتجاه', increasing: 'تحسّن ↑', stable: 'مستقر →', declining: 'متناقص ↓' },
+  he: { documents: 'מסמכים', speeches: 'נאומים', votes: 'הצבעות', trend: 'מגמת יציבות', direction: 'מגמת יציבות CIA', insights: 'תובנות מגמה', increasing: 'משתפר ↑', stable: 'יציב →', declining: 'יורד ↓' },
+  ja: { documents: '文書', speeches: '演説', votes: '採決', trend: '安定性トレンド', direction: 'CIA安定性トレンド', insights: 'トレンド考察', increasing: '改善中 ↑', stable: '安定 →', declining: '低下中 ↓' },
+  ko: { documents: '문서', speeches: '연설', votes: '표결', trend: '안정성 추세', direction: 'CIA 안정성 추세', insights: '추세 인사이트', increasing: '개선 중 ↑', stable: '안정적 →', declining: '감소 중 ↓' },
+  zh: { documents: '文件', speeches: '演讲', votes: '表决', trend: '稳定性趋势', direction: 'CIA稳定性趋势', insights: '趋势洞察', increasing: '改善中 ↑', stable: '稳定 →', declining: '下降中 ↓' },
+};
+
 /**
  * Generate the "Weekly Activity" HTML section for the given language.
  * Shows current-week activity counts (documents, speeches, vote-points),
@@ -719,24 +742,7 @@ export function generateWeekOverWeekSection(
 ): string {
   const heading = WEEK_OVER_WEEK_LABELS[lang] ?? WEEK_OVER_WEEK_LABELS.en;
 
-  const activityLabels: Record<Language, { documents: string; speeches: string; votes: string; trend: string; direction: string; insights: string; increasing: string; stable: string; declining: string }> = {
-    en: { documents: 'Documents', speeches: 'Speeches', votes: 'Votes', trend: 'Stability trend', direction: 'CIA stability trend', insights: 'Trend insights', increasing: 'Improving ↑', stable: 'Stable →', declining: 'Declining ↓' },
-    sv: { documents: 'Dokument', speeches: 'Anföranden', votes: 'Voteringar', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendinsikter', increasing: 'Förbättrad ↑', stable: 'Stabilt →', declining: 'Minskande ↓' },
-    da: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Afstemninger', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendindsigter', increasing: 'Forbedret ↑', stable: 'Stabilt →', declining: 'Faldende ↓' },
-    no: { documents: 'Dokumenter', speeches: 'Taler', votes: 'Voteringer', trend: 'Stabilitetstrend', direction: 'CIA-stabilitetstrend', insights: 'Trendinnsikter', increasing: 'Forbedret ↑', stable: 'Stabilt →', declining: 'Synkende ↓' },
-    fi: { documents: 'Asiakirjat', speeches: 'Puheenvuorot', votes: 'Äänestykset', trend: 'Vakaustrendit', direction: 'CIA-vakaustrendi', insights: 'Trendianalyysit', increasing: 'Paraneva ↑', stable: 'Vakaa →', declining: 'Laskeva ↓' },
-    de: { documents: 'Dokumente', speeches: 'Reden', votes: 'Abstimmungen', trend: 'Stabilitätstrend', direction: 'CIA-Stabilitätstrend', insights: 'Trendeinblicke', increasing: 'Verbessernd ↑', stable: 'Stabil →', declining: 'Abnehmend ↓' },
-    fr: { documents: 'Documents', speeches: 'Discours', votes: 'Votes', trend: 'Tendance de stabilité', direction: 'Tendance stabilité CIA', insights: 'Aperçus des tendances', increasing: 'En amélioration ↑', stable: 'Stable →', declining: 'En baisse ↓' },
-    es: { documents: 'Documentos', speeches: 'Discursos', votes: 'Votaciones', trend: 'Tendencia de estabilidad', direction: 'Tendencia estabilidad CIA', insights: 'Perspectivas de tendencia', increasing: 'Mejorando ↑', stable: 'Estable →', declining: 'En descenso ↓' },
-    nl: { documents: 'Documenten', speeches: 'Toespraken', votes: 'Stemmingen', trend: 'Stabiliteitstrend', direction: 'CIA-stabiliteitsrend', insights: 'Trendinzichten', increasing: 'Verbeterend ↑', stable: 'Stabiel →', declining: 'Afnemend ↓' },
-    ar: { documents: 'وثائق', speeches: 'خطب', votes: 'عمليات التصويت', trend: 'اتجاه الاستقرار', direction: 'اتجاه استقرار CIA', insights: 'رؤى الاتجاه', increasing: 'تحسّن ↑', stable: 'مستقر →', declining: 'متناقص ↓' },
-    he: { documents: 'מסמכים', speeches: 'נאומים', votes: 'הצבעות', trend: 'מגמת יציבות', direction: 'מגמת יציבות CIA', insights: 'תובנות מגמה', increasing: 'משתפר ↑', stable: 'יציב →', declining: 'יורד ↓' },
-    ja: { documents: '文書', speeches: '演説', votes: '採決', trend: '安定性トレンド', direction: 'CIA安定性トレンド', insights: 'トレンド考察', increasing: '改善中 ↑', stable: '安定 →', declining: '低下中 ↓' },
-    ko: { documents: '문서', speeches: '연설', votes: '표결', trend: '안정성 추세', direction: 'CIA 안정성 추세', insights: '추세 인사이트', increasing: '개선 중 ↑', stable: '안정적 →', declining: '감소 중 ↓' },
-    zh: { documents: '文件', speeches: '演讲', votes: '表决', trend: '稳定性趋势', direction: 'CIA稳定性趋势', insights: '趋势洞察', increasing: '改善中 ↑', stable: '稳定 →', declining: '下降中 ↓' },
-  };
-
-  const lbl = activityLabels[lang] ?? activityLabels.en;
+  const lbl = WEEKLY_ACTIVITY_LABELS[lang] ?? WEEKLY_ACTIVITY_LABELS.en;
   const directionText = metrics.activityChange === 'increasing'
     ? lbl.increasing
     : metrics.activityChange === 'declining'
@@ -877,15 +883,28 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     console.log('  🔄 Step 6 — Fetching voting records for coalition stress analysis...');
     let votingRecords: unknown[] = [];
     try {
-      // search_voteringar does not support date params; use rm+limit then filter by datum
-      const voteMonth = today.getMonth(); // 0-based; September = 8
-      const voteStartYear = voteMonth >= 8 ? today.getFullYear() : today.getFullYear() - 1;
-      const currentRm = `${voteStartYear}/${String(voteStartYear + 1).slice(-2)}`;
-      const allVotes = (await client.fetchVotingRecords({ rm: currentRm, limit: 200 })) as VotingRecord[];
-      // Post-query filter to the weekly window using the datum field
+      // search_voteringar does not support date params; use rm+limit then filter by datum.
+      // Derive the riksmöte(s) from both ends of the date range in case the window crosses
+      // the September session boundary (e.g. late Aug → early Sep lookback).
+      const startRmYear = startDate.getMonth() >= 8 ? startDate.getFullYear() : startDate.getFullYear() - 1;
+      const endRmYear = today.getMonth() >= 8 ? today.getFullYear() : today.getFullYear() - 1;
+      const rmValues: string[] = [];
+      rmValues.push(`${startRmYear}/${String(startRmYear + 1).slice(-2)}`);
+      if (endRmYear !== startRmYear) {
+        const endRm = `${endRmYear}/${String(endRmYear + 1).slice(-2)}`;
+        if (!rmValues.includes(endRm)) rmValues.push(endRm);
+      }
+      const allVotesArrays = await Promise.all(
+        rmValues.map(rm => client.fetchVotingRecords({ rm, limit: 200 }) as Promise<VotingRecord[]>),
+      );
+      const allVotes: VotingRecord[] = allVotesArrays.flat();
+      // Post-query filter to the weekly window using the datum field.
+      // Normalize to YYYY-MM-DD in case datum includes a time component.
       votingRecords = allVotes.filter(r => {
         const d = r.datum;
-        return typeof d === 'string' && d >= fromStr && d <= toStr;
+        if (typeof d !== 'string') return false;
+        const dateStr = d.includes('T') ? d.split('T')[0] : d;
+        return dateStr >= fromStr && dateStr <= toStr;
       });
     } catch (err: unknown) {
       console.error('Failed to fetch voting records:', err);
