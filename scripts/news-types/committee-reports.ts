@@ -75,7 +75,8 @@
  * - Includes report metadata, summaries, full text
  * - Enables systematic committee coverage
  * 
- * TODO: Implement additional tools for deeper analysis:
+ * **MCP TOOLS IMPLEMENTED:**
+ * - get_betankanden: Committee report metadata and full text
  * - search_voteringar: Committee voting patterns
  * - search_anforanden: Committee member statements
  * - get_propositioner: Related government proposals
