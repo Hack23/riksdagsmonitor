@@ -1433,10 +1433,10 @@ function generateMonthInNumbers(metrics: MonthlyMetrics, lang: Language | string
   html += `        <li><strong>${escapeHtml(ml(lang, 'motions'))}:</strong> ${escapeHtml(String(metrics.motionCount))}</li>\n`;
   html += `        <li><strong>${escapeHtml(ml(lang, 'speeches'))}:</strong> ${escapeHtml(String(metrics.speechCount))}</li>\n`;
   if (metrics.previousMonthDocCount > 0) {
-    html += `        <li><em>${escapeHtml(ml(lang, 'trendVsPrevMonth'))}:</em> ${escapeHtml(prevSign)}${prevDiff}</li>\n`;
+    html += `        <li><em>${escapeHtml(ml(lang, 'trendVsPrevMonth'))}:</em> ${escapeHtml(prevSign)}${escapeHtml(String(prevDiff))}</li>\n`;
   }
   if (metrics.twoMonthsAgoDocCount > 0 || metrics.previousMonthDocCount > 0) {
-    html += `        <li><em>${escapeHtml(ml(lang, 'trendVs2MonthsAgo'))}:</em> ${rollingAvg}</li>\n`;
+    html += `        <li><em>${escapeHtml(ml(lang, 'trendVs2MonthsAgo'))}:</em> ${escapeHtml(String(rollingAvg))}</li>\n`;
   }
   html += `      </ul>\n    </div>\n`;
   return html;
@@ -1482,7 +1482,7 @@ function generateLegislativeEfficiency(metrics: MonthlyMetrics, lang: Language |
 
   if (metrics.propositionCount > 0) {
     const ratio = metrics.legislativeEfficiencyRate.toFixed(2);
-    html += `        <li><strong>${escapeHtml(ml(lang, 'efficiencyRate'))}:</strong> ${ratio} (${metrics.reportCount} / ${metrics.propositionCount})</li>\n`;
+    html += `        <li><strong>${escapeHtml(ml(lang, 'efficiencyRate'))}:</strong> ${escapeHtml(ratio)} (${escapeHtml(String(metrics.reportCount))} / ${escapeHtml(String(metrics.propositionCount))})</li>\n`;
   }
 
   html += `        <li><small>${escapeHtml(ml(lang, 'motionDenialContext'))}</small></li>\n`;
