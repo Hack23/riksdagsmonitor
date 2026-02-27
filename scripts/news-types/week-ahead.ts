@@ -41,16 +41,12 @@
  * 6. **Party Positioning**: Known party stances on upcoming votes
  * 7. **International Context**: EU/Nordic cooperation dimensions
  * 
- * **MCP DATA SOURCE:**
- * Primary tool: get_calendar_events
- * - Retrieves riksdag calendar for specified date range
- * - Includes session times, committee assignments, topics
- * - Enables systematic prospective coverage
- * 
- * TODO: Implement additional tools for comprehensive analysis:
- * - search_dokument: Find related policy documents for calendar items
- * - get_fragor: Written questions related to upcoming debates
- * - get_interpellationer: Interpellations (parliamentary questions) for upcoming sessions
+ * **MCP DATA SOURCES (all five tools actively used):**
+ * - get_calendar_events: upcoming committee/chamber sessions (primary driver)
+ * - search_dokument: policy documents cross-referenced per calendar event (Policy Context boxes)
+ * - search_anforanden: recent speeches providing debate context
+ * - get_fragor: written questions linked to upcoming debates (Questions to Watch section)
+ * - get_interpellationer: interpellations enriched with minister response context (Interpellation Spotlight)
  * 
  * **OPERATIONAL WORKFLOW:**
  * 1. Calculate Date Range: Get calendar for next 7 calendar days
