@@ -32,7 +32,8 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
-  type RawDocument
+  type RawDocument,
+  type RawCalendarEvent
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
@@ -118,7 +119,7 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
       : `${year - 1}/${String(year).slice(-2)}`;
 
     console.log(`  🔄 Fetching calendar events ${fromStr} → ${toStr}...`);
-    const events = await client.fetchCalendarEvents(fromStr, toStr) as RawDocument[];
+    const events = await client.fetchCalendarEvents(fromStr, toStr) as RawCalendarEvent[];
     mcpCalls.push({ tool: 'get_calendar_events', result: events });
     console.log(`  📊 Found ${events.length} calendar events`);
 
@@ -158,13 +159,13 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
     const [committeeReports, propositionDocs, motionDocs] = await Promise.all([
       Promise.resolve()
         .then(() => client.fetchCommitteeReports(20, currentRiksmote) as Promise<unknown[]>)
-        .catch((err: unknown) => { console.error('Failed to fetch committee reports:', err); return [] as unknown[]; }),
+        .catch((err: unknown) => { console.warn('Non-fatal: failed to fetch committee reports, continuing with empty list:', err); return [] as unknown[]; }),
       Promise.resolve()
         .then(() => client.fetchPropositions(15, currentRiksmote) as Promise<unknown[]>)
-        .catch((err: unknown) => { console.error('Failed to fetch propositions:', err); return [] as unknown[]; }),
+        .catch((err: unknown) => { console.warn('Non-fatal: failed to fetch propositions, continuing with empty list:', err); return [] as unknown[]; }),
       Promise.resolve()
         .then(() => client.fetchMotions(50, currentRiksmote) as Promise<unknown[]>)
-        .catch((err: unknown) => { console.error('Failed to fetch motions:', err); return [] as unknown[]; }),
+        .catch((err: unknown) => { console.warn('Non-fatal: failed to fetch motions, continuing with empty list:', err); return [] as unknown[]; }),
     ]);
 
     mcpCalls.push({ tool: 'get_betankanden', result: committeeReports });
@@ -379,34 +380,62 @@ function checkStrategicContext(article: ArticleInput): boolean {
 
 function checkLegislativePipeline(article: ArticleInput): boolean {
   if (!article || !article.content) return false;
-  // Language-aware keyword set covering English plus all 13 localized terms used in generated content
-  // (avoids false negatives for non-English articles; uses short stems to cover inflected forms).
-  const pipelineKeywords = [
+  // Match on specific <h2> section headings inserted by generateMonthAheadContent —
+  // these only appear when the pipeline sections were actually generated, avoiding
+  // false positives from generic words that can appear in ordinary calendar text.
+  const pipelineSectionMarkers = [
     // English
-    'pipeline', 'committee', 'proposition', 'motion', 'report',
-    // Swedish (with/without diacritics)
-    'betänk', 'betank', 'utskott',
-    // Danish / Norwegian
-    'komité', 'komite', 'kommitté', 'kommission', 'komisjon',
+    'strategic legislative outlook',
+    'committee pipeline',
+    'policy trends',
+    // Swedish
+    'strategisk lagstiftningsutsikt',
+    'utskottspipeline',
+    'politiska trender',
     // German
-    'ausschuss', 'vorlage', 'bericht',
+    'strategischer gesetzgebungsausblick',
+    'ausschusspipeline',
+    'politische trends',
     // French
-    'commission', 'rapport',
+    'perspectives législatives stratégiques',
+    'pipeline des commissions',
+    'tendances politiques',
     // Spanish
-    'comité', 'comite', 'informe', 'dictamen', 'propuesta',
+    'perspectiva legislativa estratégica',
+    'proceso en comité',
+    'tendencias políticas',
+    // Danish
+    'strategisk lovgivningsmæssigt udsyn',
+    'udvalgspipeline',
+    'politiske tendenser',
+    // Norwegian
+    'strategisk lovgivningsmessig utsikt',
+    'komitépipeline',
+    'politiske trender',
     // Finnish
-    'valiokunta',
+    'strateginen lainsäädäntönäkymä',
+    'valiokuntaputkisto',
+    'poliittiset trendit',
+    // Dutch
+    'strategisch wetgevingsoverzicht',
+    'commissiepijplijn',
+    'politieke trends',
     // Japanese
-    '委員会',
+    '戦略的立法見通し',
+    '委員会パイプライン',
     // Korean
-    '위원회',
+    '전략적 입법 전망',
+    '위원회 파이프라인',
     // Chinese
-    '委员会',
+    '战略立法展望',
+    '委员会审议流程',
     // Arabic
-    'لجنة',
+    'التوقعات التشريعية الاستراتيجية',
+    'مسار اللجان',
     // Hebrew
-    'ועדה',
+    'תחזית חקיקתית אסטרטגית',
+    'צינור הוועדות',
   ];
   const content = (article.content as string).toLowerCase();
-  return pipelineKeywords.some(keyword => content.includes(keyword));
+  return pipelineSectionMarkers.some(marker => content.includes(marker));
 }

@@ -229,7 +229,7 @@ describe('Month-Ahead Article Generation', () => {
 
     it('should include hasLegislativePipeline in validation result', () => {
       const article: ArticleInput = {
-        content: 'Committee pipeline report proposition motion scheduled for next month.',
+        content: '<h2>Strategic Legislative Outlook</h2><p>Committee pipeline report proposition motion scheduled for next month.</p>',
         sources: ['source1', 'source2', 'source3']
       };
 
