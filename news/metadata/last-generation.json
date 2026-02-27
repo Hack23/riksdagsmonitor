@@ -1,48 +1,28 @@
 {
-  "timestamp": "2026-02-26T12:05:00.000Z",
+  "timestamp": "2026-02-27T05:25:00.000Z",
+  "types": ["propositions"],
+  "languagesGenerated": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
+  "allRequestedLanguages": ["en","sv","da","no","fi","de","fr","es","nl","ar","he","ja","ko","zh"],
+  "batchSize": null,
+  "skipExisting": false,
   "generated": 14,
   "errors": 0,
-  "types": "breaking",
-  "status": "success",
-  "generated_at": "2026-02-26T12:05:00.000Z",
-  "workflow": "news-realtime-monitor",
-  "run_id": null,
-  "type": "realtime-monitor",
-  "events_detected": [
-    {
-      "type": "government_propositions",
-      "significance": "HIGH",
-      "description": "Ten major propositions filed in one week including deportation rules, psychological violence criminalisation, public assembly security, civilian preparedness",
-      "date_range": "2026-02-23 to 2026-02-25"
-    },
-    {
-      "type": "press_conference",
-      "significance": "HIGH",
-      "description": "Government press conference on stricter deportation rules (lagrådsremiss)",
-      "date": "2026-02-25"
-    },
-    {
-      "type": "foreign_policy",
-      "significance": "MEDIUM",
-      "description": "Ukraine 4th anniversary rally + 230M SEK humanitarian aid",
-      "date": "2026-02-24"
-    }
+  "articles": [
+    "2026-02-27-government-propositions-en.html",
+    "2026-02-27-government-propositions-sv.html",
+    "2026-02-27-government-propositions-da.html",
+    "2026-02-27-government-propositions-no.html",
+    "2026-02-27-government-propositions-fi.html",
+    "2026-02-27-government-propositions-de.html",
+    "2026-02-27-government-propositions-fr.html",
+    "2026-02-27-government-propositions-es.html",
+    "2026-02-27-government-propositions-nl.html",
+    "2026-02-27-government-propositions-ar.html",
+    "2026-02-27-government-propositions-he.html",
+    "2026-02-27-government-propositions-ja.html",
+    "2026-02-27-government-propositions-ko.html",
+    "2026-02-27-government-propositions-zh.html"
   ],
-  "articles_generated": 14,
-  "languages": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"],
-  "slug": "2026-02-26-breaking-security-reforms",
-  "data_sources": [
-    "riksdag-regering-mcp: get_sync_status",
-    "riksdag-regering-mcp: search_regering",
-    "riksdag-regering-mcp: get_propositioner",
-    "riksdag-regering-mcp: search_voteringar",
-    "riksdag-regering-mcp: search_dokument",
-    "riksdag-regering-mcp: get_calendar_events"
-  ],
-  "next_check": "2026-02-26T14:00:00.000Z",
-  "mcp_data_source": {
-    "status": "live",
-    "sources": ["riksdag-regering-mcp"],
-    "accessed_at": "2026-02-26T12:05:00.000Z"
-  }
+  "status": "enhanced",
+  "note": "Government propositions analysis generated from live MCP data (18 propositions from riksmöte 2025/26)"
 }
