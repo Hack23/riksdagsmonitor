@@ -163,6 +163,15 @@ describe('Motions Article Generation', () => {
       expect(result.success).toBe(true);
     });
 
+    it('should degrade gracefully when analyze_g0v_by_department fails', async () => {
+      // First request call (search_dokument_fulltext) succeeds; second (analyze_g0v_by_department) fails
+      mockClientInstance.request
+        .mockResolvedValueOnce({})
+        .mockRejectedValueOnce(new Error('Tool unavailable'));
+      const result = await motionsModule.generateMotions({ languages: ['en'] });
+      expect(result.success).toBe(true);
+    });
+
     it('should degrade gracefully when search_anforanden fails', async () => {
       mockClientInstance.searchSpeeches.mockRejectedValueOnce(new Error('Tool unavailable'));
       const result = await motionsModule.generateMotions({ languages: ['en'] });

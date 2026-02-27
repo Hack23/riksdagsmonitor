@@ -228,6 +228,18 @@ export function formatDateForSlug(date: Date = new Date()): string {
 }
 
 /**
+ * Calculate the current Swedish riksmöte (parliamentary session) string.
+ * The session runs September–August: e.g. September 2025 → "2025/26".
+ */
+export function getCurrentRiksmote(date: Date = new Date()): string {
+  const year = date.getFullYear();
+  const month = date.getMonth(); // 0-based; September = 8
+  const startYear = month >= 8 ? year : year - 1;
+  const endYY = String(startYear + 1).slice(-2);
+  return `${startYear}/${endYY}`;
+}
+
+/**
  * Generate Opposition Motions article
  */
 export async function generateMotions(options: GenerationOptions = {}): Promise<GenerationResult> {
@@ -291,7 +303,7 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
     try {
       const debateQuery = motions[0]?.titel || motions[0]?.title || '';
       if (debateQuery) {
-        const speeches = await client.searchSpeeches({ text: debateQuery, rm: '2025/26', limit: 10 }) as Array<Record<string, unknown>>;
+        const speeches = await client.searchSpeeches({ text: debateQuery, rm: getCurrentRiksmote(), limit: 10 }) as Array<Record<string, unknown>>;
         mcpCalls.push({ tool: 'search_anforanden', result: speeches });
         console.log(`  🗣 Debate speeches: ${speeches.length} found`);
         // Attach speeches to the first motion without speeches for "Party Positioning" rendering
