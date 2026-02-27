@@ -232,8 +232,9 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     const motionCount = documents.filter(d => (d as Record<string, unknown>).doktyp === 'mot').length;
 
     // Party rankings: aggregate motions and speeches by party
-    // Normalize party keys: trim whitespace and drop unknown/empty sentinels
-    const normalizePartyKey = (raw: unknown): string | null => {
+    // Filter party keys: trim whitespace and drop unknown/empty sentinels (returns null to exclude)
+    // Note: distinct from the normalizePartyKey helper in helpers.ts which maps unknowns to 'other'
+    const filterPartyKey = (raw: unknown): string | null => {
       const value = String(raw ?? '').trim();
       if (!value) return null;
       const lower = value.toLowerCase();
@@ -246,12 +247,12 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     for (const doc of documents) {
       const rec = doc as Record<string, unknown>;
       if (rec['doktyp'] === 'mot') {
-        const p = normalizePartyKey(rec['parti']);
+        const p = filterPartyKey(rec['parti']);
         if (p !== null) partyMotions[p] = (partyMotions[p] ?? 0) + 1;
       }
     }
     for (const speech of speeches) {
-      const p = normalizePartyKey(speech['parti']);
+      const p = filterPartyKey(speech['parti']);
       if (p !== null) partySpeeches[p] = (partySpeeches[p] ?? 0) + 1;
     }
     const allParties = new Set([...Object.keys(partyMotions), ...Object.keys(partySpeeches)]);
