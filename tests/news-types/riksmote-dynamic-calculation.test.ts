@@ -13,7 +13,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -22,12 +22,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const newsTypesDir = join(__dirname, '../../scripts/news-types');
 
-/** Generators that must use dynamic riksmöte calculation */
-const DYNAMIC_RM_FILES = [
-  'weekly-review.ts',
-  'monthly-review.ts',
-  'propositions.ts',
-];
+/** All TypeScript generator files in scripts/news-types — discovered programmatically */
+const DYNAMIC_RM_FILES = readdirSync(newsTypesDir)
+  .filter(f => f.endsWith('.ts'))
+  .sort();
 
 /** Strip single-line (//) and multi-line block comments from TypeScript source */
 function stripComments(src: string): string {
