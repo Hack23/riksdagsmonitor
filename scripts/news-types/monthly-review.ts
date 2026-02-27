@@ -26,6 +26,7 @@ import {
   generateSources,
   type RawDocument,
   type CIAContext,
+  type MonthlyMetrics,
 } from '../data-transformers.js';
 import {
   enrichWithFullText,
@@ -58,6 +59,9 @@ export interface MonthlyReviewValidationResult {
   hasMinimumSources: boolean;
   hasRetrospectiveTone: boolean;
   hasTrendAnalysis: boolean;
+  hasPartyRankings: boolean;
+  hasLegislativeEfficiency: boolean;
+  hasMonthInNumbers: boolean;
   passed: boolean;
 }
 
@@ -191,6 +195,88 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     const ciaContext: CIAContext = loadCIAContext();
     console.log(`  🧠 CIA context: ${ciaContext.partyPerformance.length} parties, coalition stability ${ciaContext.coalitionStability.stabilityScore}/100, motion denial rate ${ciaContext.overallMotionDenialRate}%`);
 
+    // Step 6: Fetch previous 2 months for multi-month trend analysis
+    console.log('  🔄 Step 6 — Fetching previous months for trend analysis...');
+    const prevStart = new Date(startDate);
+    prevStart.setDate(prevStart.getDate() - lookbackDays);
+    const prev2Start = new Date(prevStart);
+    prev2Start.setDate(prev2Start.getDate() - lookbackDays);
+
+    const [prevMonthDocs, twoMonthsDocs] = await Promise.all([
+      // Use a higher per-period cap to better approximate total volume for trend metrics; full-text enrichment is not needed here
+      client.searchDocuments({ from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 1000 })
+        .catch((error) => {
+          console.error(
+            'MonthlyReview Step 6 — search_dokument failed for previous month trend window',
+            { from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 1000 },
+            error,
+          );
+          return [] as RawDocument[];
+        }),
+      client.searchDocuments({ from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 1000 })
+        .catch((error) => {
+          console.error(
+            'MonthlyReview Step 6 — search_dokument failed for two-months-ago trend window',
+            { from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 1000 },
+            error,
+          );
+          return [] as RawDocument[];
+        }),
+    ]);
+    mcpCalls.push({ tool: 'search_dokument', result: prevMonthDocs });
+    mcpCalls.push({ tool: 'search_dokument', result: twoMonthsDocs });
+
+    // Compute MonthlyMetrics from current-month data
+    const reportCount = documents.filter(d => (d as Record<string, unknown>).doktyp === 'bet').length;
+    const propositionCount = documents.filter(d => (d as Record<string, unknown>).doktyp === 'prop').length;
+    const motionCount = documents.filter(d => (d as Record<string, unknown>).doktyp === 'mot').length;
+
+    // Party rankings: aggregate motions and speeches by party
+    // Filter party keys: trim whitespace and drop unknown/empty sentinels (returns null to exclude)
+    // Note: distinct from the normalizePartyKey helper in helpers.ts which maps unknowns to 'other'
+    const filterPartyKey = (raw: unknown): string | null => {
+      const value = String(raw ?? '').trim();
+      if (!value) return null;
+      const lower = value.toLowerCase();
+      if (lower === 'unknown' || lower === 'okänd') return null;
+      return value;
+    };
+
+    const partyMotions: Record<string, number> = {};
+    const partySpeeches: Record<string, number> = {};
+    for (const doc of documents) {
+      const rec = doc as Record<string, unknown>;
+      if (rec['doktyp'] === 'mot') {
+        const p = filterPartyKey(rec['parti']);
+        if (p !== null) partyMotions[p] = (partyMotions[p] ?? 0) + 1;
+      }
+    }
+    for (const speech of speeches) {
+      const p = filterPartyKey(speech['parti']);
+      if (p !== null) partySpeeches[p] = (partySpeeches[p] ?? 0) + 1;
+    }
+    const allParties = new Set([...Object.keys(partyMotions), ...Object.keys(partySpeeches)]);
+    const partyRankings = Array.from(allParties)
+      .map(party => ({
+        party,
+        motionCount: partyMotions[party] ?? 0,
+        speechCount: partySpeeches[party] ?? 0,
+      }))
+      .sort((a, b) => (b.motionCount + b.speechCount) - (a.motionCount + a.speechCount));
+
+    const monthlyMetrics: MonthlyMetrics = {
+      totalDocuments: documents.length,
+      reportCount,
+      propositionCount,
+      motionCount,
+      speechCount: speeches.length,
+      previousMonthDocCount: Array.isArray(prevMonthDocs) ? prevMonthDocs.length : 0,
+      twoMonthsAgoDocCount: Array.isArray(twoMonthsDocs) ? twoMonthsDocs.length : 0,
+      partyRankings,
+      legislativeEfficiencyRate: propositionCount > 0 ? reportCount / propositionCount : 0,
+    };
+    console.log(`  📈 Monthly metrics: ${documents.length} docs this month, ${monthlyMetrics.previousMonthDocCount} last month, ${partyRankings.length} active parties`);
+
     const slug = `${formatDateForSlug(today)}-monthly-review`;
     const articles: GeneratedArticle[] = [];
 
@@ -198,7 +284,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
       const content: string = generateArticleContent(
-        { documents, reports: recentReports as RawDocument[], propositions: recentPropositions as RawDocument[], motions: recentMotions as RawDocument[], ciaContext },
+        { documents, reports: recentReports as RawDocument[], propositions: recentPropositions as RawDocument[], motions: recentMotions as RawDocument[], ciaContext, monthlyMetrics },
         'monthly-review',
         lang,
       );
@@ -336,13 +422,26 @@ export function validateMonthlyReview(article: ArticleInput): MonthlyReviewValid
   const hasMinimumSources = countSources(article) >= 3;
   const hasRetrospectiveTone = checkRetrospectiveTone(article);
   const hasTrendAnalysis = checkTrendAnalysis(article);
+  const hasPartyRankings = checkPartyRankings(article);
+  const hasLegislativeEfficiency = checkLegislativeEfficiency(article);
+  const hasMonthInNumbers = checkMonthInNumbers(article);
 
   return {
     hasMonthlySummary,
     hasMinimumSources,
     hasRetrospectiveTone,
     hasTrendAnalysis,
-    passed: hasMonthlySummary && hasMinimumSources && hasRetrospectiveTone && hasTrendAnalysis
+    hasPartyRankings,
+    hasLegislativeEfficiency,
+    hasMonthInNumbers,
+    passed:
+      hasMonthlySummary &&
+      hasMinimumSources &&
+      hasRetrospectiveTone &&
+      hasTrendAnalysis &&
+      hasPartyRankings &&
+      hasLegislativeEfficiency &&
+      hasMonthInNumbers
   };
 }
 
@@ -373,4 +472,25 @@ function checkTrendAnalysis(article: ArticleInput): boolean {
   return trendKeywords.some(keyword =>
     (article.content as string).toLowerCase().includes(keyword)
   );
+}
+
+function checkPartyRankings(article: ArticleInput): boolean {
+  if (!article || !article.content) return false;
+  return article.content.includes('Party Performance Rankings') ||
+         article.content.includes('Partiernas prestationsrankning') ||
+         article.content.includes('🏆');
+}
+
+function checkLegislativeEfficiency(article: ArticleInput): boolean {
+  if (!article || !article.content) return false;
+  return article.content.includes('Legislative Efficiency') ||
+         article.content.includes('Lagstiftningseffektivitet') ||
+         article.content.includes('⚖️');
+}
+
+function checkMonthInNumbers(article: ArticleInput): boolean {
+  if (!article || !article.content) return false;
+  return article.content.includes('Month in Numbers') ||
+         article.content.includes('Månaden i siffror') ||
+         article.content.includes('📊');
 }
