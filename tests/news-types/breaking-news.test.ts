@@ -139,7 +139,7 @@ describe('Breaking News Article Generation', () => {
       expect(mockClientInstance.searchSpeeches).toHaveBeenCalled();
     });
 
-    it('should fetch voting group if voteId provided', async () => {
+    it('should always fetch voting group (enriched with voteId when provided)', async () => {
       const eventData: BreakingEventData = {
         voteId: 'v123',
         slug: 'test'
@@ -153,7 +153,7 @@ describe('Breaking News Article Generation', () => {
       expect(mockClientInstance.fetchVotingGroup).toHaveBeenCalled();
     });
 
-    it('should fetch MP profiles if topic provided', async () => {
+    it('should always fetch MP profiles (enriched with speaker name when topic provided)', async () => {
       const eventData: BreakingEventData = {
         topic: 'Budget debate',
         slug: 'test'
@@ -164,6 +164,22 @@ describe('Breaking News Article Generation', () => {
         eventData
       });
       
+      expect(mockClientInstance.fetchMPs).toHaveBeenCalled();
+    });
+
+    it('should call all 4 required tools even with minimal event data', async () => {
+      const eventData: BreakingEventData = {
+        slug: 'test'
+      };
+
+      await breakingNewsModule.generateBreakingNews({
+        languages: ['en'],
+        eventData
+      });
+
+      expect(mockClientInstance.fetchVotingRecords).toHaveBeenCalled();
+      expect(mockClientInstance.fetchVotingGroup).toHaveBeenCalled();
+      expect(mockClientInstance.searchSpeeches).toHaveBeenCalled();
       expect(mockClientInstance.fetchMPs).toHaveBeenCalled();
     });
   });
