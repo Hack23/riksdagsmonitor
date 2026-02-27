@@ -117,15 +117,24 @@ echo "Minutes elapsed: $ELAPSED"
 ```
 
 - **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, detect breaking activity
-- **Minutes 5–15**: Query MCP tools, assess significance of detected events
-- **Minutes 15–35**: Generate articles **one language at a time** (see Step 3 for sequential loop)
-- **Minutes 35–40**: Validate and commit all generated articles
-- **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 5–12**: Query MCP tools, assess significance of detected events
+- **Minutes 12–38**: Generate articles **one language at a time** (all 14 languages typically takes ~26 min)
+- **Minutes 38–40**: Validate and commit all generated articles
+- **Minutes 40–43**: Create PR with `safeoutputs___create_pull_request` — call it DIRECTLY as a tool call
 
 **🚨 HARD CUTOFFS — check `$ELAPSED` before starting each new language:**
-- If `$ELAPSED` >= 35 → skip remaining languages, commit what you have, create PR
-- If `$ELAPSED` >= 40 → skip validation, commit immediately, create PR
+- If `$ELAPSED` >= 38 → stop generating new languages, commit what you have, call `safeoutputs___create_pull_request` IMMEDIATELY
+- If `$ELAPSED` >= 41 → skip validation, commit immediately, call `safeoutputs___create_pull_request` IMMEDIATELY
+- If `$ELAPSED` >= 43 → **STOP ALL NEW WORK** — do not start new languages or validation; if a commit has already been made, **IMMEDIATELY call `safeoutputs___create_pull_request`** and clearly state in the PR body that final validation was skipped due to time pressure
 - **NEVER hit the 45-minute hard timeout** — call a safe output tool FIRST
+
+**🚨 MANDATORY: After git commit, call `safeoutputs___create_pull_request` as your VERY NEXT action — no checks, no delays:**
+```
+# After: git add && git commit ...
+# IMMEDIATELY call this tool (NOT via bash):
+safeoutputs___create_pull_request({ "title": "...", "body": "...", "labels": [...] })
+```
+**❌ NEVER type `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any other bash command to "find" or "verify" safe output tools. They are always available. Just call them.**
 
 **CRITICAL: Process ONE language at a time (generate, write file, then next language). Do NOT queue all languages before writing.**
 
@@ -144,6 +153,15 @@ echo "============================"
 **After running the date check:**
 - ✅ If output shows Monday-Friday → Expect regular parliamentary activity
 - ✅ If output shows Saturday-Sunday → Expect limited activity (government press only)
+
+## 📅 Riksmöte (Parliamentary Session) Calculation
+
+The Swedish parliamentary session runs September–August. Calculate the current `rm` value:
+- If current month is September or later (calendar month 9; JavaScript `Date` month index 8): `rm = "{currentYear}/{nextYear's last 2 digits}"`
+- If current month is before September (calendar month ≤ 8; JavaScript `Date` month index ≤ 7): `rm = "{previousYear}/{currentYear's last 2 digits}"`
+- Example: February 2026 → `rm = "2025/26"`, October 2026 → `rm = "2026/27"`
+
+Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
 
 ## MANDATORY MCP Health Gate
 
@@ -280,10 +298,11 @@ Check the `focus` input (default: `all`):
 
 Parse the `languages` input and expand presets:
 - **all** (default) - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
+- **en,sv** — English and Swedish only (use when time is very limited)
 - **nordic** → en,sv,da,no,fi
 - **eu-core** → en,sv,de,fr,es,nl
 
-**Process languages ONE AT A TIME** — generate English first (fastest, reference), then Swedish, then remaining languages in order. After each language, check the elapsed time. If elapsed >= 35 minutes, stop and create the PR with what you have.
+**Process languages ONE AT A TIME** — generate English first (fastest, reference), then Swedish, then remaining languages in order. After each language, check the elapsed time. If elapsed >= 38 minutes, stop generating new languages, commit what you have, and call `safeoutputs___create_pull_request` IMMEDIATELY as a direct tool call.
 
 ## 🔌 MCP Tools: Swedish Political Data
 
@@ -310,7 +329,7 @@ The `mcp-servers` frontmatter declares the riksdag-regering server. At runtime, 
 get_calendar_events({ from: "2026-02-16", tom: "2026-02-16", limit: 50 })
 
 // Recent votes
-search_voteringar({ rm: "2025/26", limit: 20 })
+search_voteringar({ rm: <calculated riksmöte>, limit: 20 })
 
 // Recent documents
 search_dokument({ from_date: "2026-02-16", limit: 30 })
@@ -496,19 +515,19 @@ const today = new Date().toISOString().split('T')[0];
 // === RIKSDAG ACTIVITY ===
 
 // Check recent votes
-search_voteringar({ rm: "2025/26", limit: 20 })
+search_voteringar({ rm: <calculated riksmöte>, limit: 20 })
 
 // Check recent speeches/debates
-search_anforanden({ rm: "2025/26", limit: 20 })
+search_anforanden({ rm: <calculated riksmöte>, limit: 20 })
 
 // Check recently published Riksdag documents
 search_dokument({ from_date: today, limit: 30 })
 
 // Check ministerial questions filed today
-get_fragor({ rm: "2025/26", limit: 20 })
+get_fragor({ rm: <calculated riksmöte>, limit: 20 })
 
 // Check interpellations
-get_interpellationer({ rm: "2025/26", limit: 10 })
+get_interpellationer({ rm: <calculated riksmöte>, limit: 10 })
 
 // Check calendar for today's events  
 get_calendar_events({ from: today, tom: today, limit: 50 })
@@ -570,7 +589,18 @@ For each piece of data, evaluate significance using these criteria:
 
 For HIGH significance events, generate articles following **The Economist style**.
 
-**PRIMARY APPROACH: Use the bash script (fastest, most reliable — generates all 14 languages in one command):**
+**⚠️ MANDATORY PRE-GENERATION TIMER CHECK — do this FIRST before any generation:**
+```bash
+ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
+echo "Minutes elapsed before generation: $ELAPSED"
+if [ "$ELAPSED" -ge 38 ]; then
+  echo "⚠️ Not enough time to generate articles safely (elapsed >= 38 min). Calling noop."
+  # STOP HERE and call safeoutputs___noop with a summary of events detected
+fi
+```
+If `$ELAPSED >= 38`, skip generation entirely — call `safeoutputs___noop` immediately with a brief summary of what events were found (even if significant) to avoid timing out without any safe output.
+
+**PRIMARY APPROACH: Use the bash script (fastest, most reliable):**
 
 ```bash
 # Set LANGUAGES_INPUT to the value shown in Workflow Dispatch Parameters above
@@ -622,7 +652,7 @@ If the script succeeds (`SCRIPT_EXIT=0`) and `$NEW_ARTICLES` is non-empty, proce
 
 ```
 For each language in [en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh]:
-  1. Check elapsed time — if >= 35 minutes, stop and proceed to Step 5.5
+  1. Check elapsed time — if >= 38 minutes, stop and proceed to Step 5.5
   2. Generate article HTML for this language
   3. Translate all Swedish content (if not Swedish/English article)
   4. Write the file to news/YYYY-MM-DD-{slug}-{lang}.html
@@ -775,6 +805,32 @@ If validation shows errors, try to fix them. If elapsed >= 38 minutes, proceed t
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API.
 
+## 🚨 CRITICAL: Safe Output Tools Are ALWAYS Direct Tool Calls — NEVER Search For Them
+
+**`safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are ALWAYS available as direct tool calls in your tool list.**
+
+**❌ NEVER do any of the following — these are waste-of-time anti-patterns that WILL cause timeout:**
+```bash
+# ❌ WRONG — wastes time, always fails, causes workflow to run out of time
+ls /tmp/gh-aw/
+ls /home/runner/.copilot/
+ls /home/runner/.copilot/safeoutputs/
+cat /home/runner/.copilot/aw_info.json
+cat /home/runner/.copilot/mcp-config.json
+echo '{\"safeoutputs___create_pull_request\": true}'  # this does nothing
+```
+
+**✅ CORRECT — after git commit, your NEXT action is to call the tool directly:**
+```
+safeoutputs___create_pull_request({
+  "title": "🔴 Breaking: {headline} - {date}",
+  "body": "...",
+  "labels": ["automated-news", "breaking-news", "needs-editorial-review"]
+})
+```
+
+**If you ever think "let me check if safeoutputs tools are available" — STOP. They are. Call the tool directly.**
+
 Call `safeoutputs___create_pull_request` with:
 ```json
 {
@@ -873,14 +929,17 @@ If articles are generated, validate with Playwright before creating PR:
 3. ✅ **ASSESS:** Evaluate significance of detected events
 4. ✅ **GENERATE:** Create articles if HIGH significance detected
 5. ✅ **VALIDATE:** Run quality checks if articles created
-6. ✅ **OUTPUT:** Call EXACTLY ONE of:
+6. ✅ **COMMIT:** `git add news/ && git commit -m "..."` — then IMMEDIATELY call the safe output tool as your NEXT action
+7. ✅ **OUTPUT:** Call EXACTLY ONE of these as a **DIRECT TOOL CALL** (NOT via bash):
    - `safeoutputs___create_pull_request` (if articles generated)
    - `safeoutputs___noop` (if no significant events)
    - `safeoutputs___missing_tool` (if a required capability is unavailable)
    - `safeoutputs___missing_data` (if required data is unavailable)
-7. ✅ **END:** Exit gracefully
+8. ✅ **END:** Exit gracefully
 
-**FAILURE TO COMPLETE STEP 6 = WORKFLOW FAILURE**
+**FAILURE TO COMPLETE STEP 7 = WORKFLOW FAILURE**
+
+**🚨 Step 7 MUST be a direct tool call. NEVER search for safe output tools via bash (`ls`, `cat`, `echo`). They are always in your tool list — just call them.**
 
 🎯 **Now begin: Query riksdag-regering-mcp for real-time data using MCP tools, assess significance, and generate breaking news if warranted. ALWAYS call a safe output tool at the end.**
 
@@ -892,4 +951,4 @@ The riksdag-regering MCP server is configured in the workflow frontmatter and ac
 - **Node.js scripts**: Run `source scripts/mcp-setup.sh` before running scripts, or query individual tools via `npx tsx scripts/mcp-query-cli.ts <tool> '<json_params>'`.
 - **Cold starts**: 30-60s on first call — framework retries automatically
 - **Bash script fallback**: Use `npx tsx scripts/generate-news-enhanced.ts --types=breaking --languages="$LANG_ARG"` with MCP_SERVER_URL set (see Step 3)
-- **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated), `safeoutputs___noop` (no significant events), `safeoutputs___missing_tool` (capability missing), or `safeoutputs___missing_data` (data unavailable)
+- **Safe outputs** (MANDATORY final step): Use `safeoutputs___create_pull_request` (articles generated), `safeoutputs___noop` (no significant events), `safeoutputs___missing_tool` (capability missing), or `safeoutputs___missing_data` (data unavailable) — call these as **DIRECT TOOL CALLS**, never via bash
