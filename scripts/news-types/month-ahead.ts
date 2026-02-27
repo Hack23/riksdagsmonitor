@@ -379,8 +379,34 @@ function checkStrategicContext(article: ArticleInput): boolean {
 
 function checkLegislativePipeline(article: ArticleInput): boolean {
   if (!article || !article.content) return false;
-  const pipelineKeywords = ['pipeline', 'committee', 'proposition', 'motion', 'report', 'betank'];
-  return pipelineKeywords.some(keyword =>
-    (article.content as string).toLowerCase().includes(keyword)
-  );
+  // Language-aware keyword set covering English plus all 13 localized terms used in generated content
+  // (avoids false negatives for non-English articles; uses short stems to cover inflected forms).
+  const pipelineKeywords = [
+    // English
+    'pipeline', 'committee', 'proposition', 'motion', 'report',
+    // Swedish (with/without diacritics)
+    'betänk', 'betank', 'utskott',
+    // Danish / Norwegian
+    'komité', 'komite', 'kommitté', 'kommission', 'komisjon',
+    // German
+    'ausschuss', 'vorlage', 'bericht',
+    // French
+    'commission', 'rapport',
+    // Spanish
+    'comité', 'comite', 'informe', 'dictamen', 'propuesta',
+    // Finnish
+    'valiokunta',
+    // Japanese
+    '委員会',
+    // Korean
+    '위원회',
+    // Chinese
+    '委员会',
+    // Arabic
+    'لجنة',
+    // Hebrew
+    'ועדה',
+  ];
+  const content = (article.content as string).toLowerCase();
+  return pipelineKeywords.some(keyword => content.includes(keyword));
 }

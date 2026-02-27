@@ -42,6 +42,7 @@ interface MonthAheadValidationResult {
   hasMinimumSources: boolean;
   hasForwardLookingTone: boolean;
   hasStrategicContext: boolean;
+  hasLegislativePipeline: boolean;
   passed: boolean;
 }
 

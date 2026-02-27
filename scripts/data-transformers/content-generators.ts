@@ -1230,7 +1230,8 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
     // Group reports by committee
     const byCommittee: Record<string, RawDocument[]> = {};
     reports.forEach(r => {
-      const key = (r as Record<string, string>).organ || 'unknown';
+      const rec2 = r as Record<string, string>;
+      const key = rec2.organ ?? rec2.committee ?? 'unknown';
       if (!byCommittee[key]) byCommittee[key] = [];
       byCommittee[key].push(r);
     });
@@ -1309,7 +1310,7 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
 
     // Top parties by motion volume
     const topParties = Object.entries(byPartyTrend)
-      .filter(([k]) => k !== 'unknown')
+      .filter(([k]) => k !== 'unknown' && k !== 'other')
       .sort((a, b) => b[1] - a[1])
       .slice(0, 4);  // 4 parties: covers the typical Swedish governing+major-opposition parties
 
