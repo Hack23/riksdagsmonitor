@@ -44,6 +44,12 @@ export const REQUIRED_TOOLS_PER_TYPE: RequiredToolsMap = {
     'analyze_g0v_by_department',
     'search_anforanden',
   ],
+  'month-ahead': [
+    'get_calendar_events',
+    'get_betankanden',
+    'get_propositioner',
+    'get_motioner',
+  ],
   breaking: [
     'search_voteringar',
     'get_voting_group',
