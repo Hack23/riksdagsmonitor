@@ -29,6 +29,7 @@ export {
   searchSpeeches,
   fetchMPs,
   fetchVotingRecords,
+  fetchVotingGroup,
   fetchGovernmentDocuments,
   fetchDocumentDetails,
   enrichDocumentsWithContent,

@@ -11,6 +11,8 @@ import type { Language } from '../../scripts/types/language.js';
 interface MockMCPClientShape {
   fetchVotingRecords: Mock<(...args: unknown[]) => Promise<unknown[]>>;
   searchSpeeches: Mock<(...args: unknown[]) => Promise<unknown[]>>;
+  fetchVotingGroup: Mock<(...args: unknown[]) => Promise<unknown[]>>;
+  fetchMPs: Mock<(...args: unknown[]) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -44,7 +46,9 @@ interface BreakingNewsModule {
 const { mockClientInstance, MockMCPClient } = vi.hoisted(() => {
   const mockClientInstance: MockMCPClientShape = {
     fetchVotingRecords: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchVotingRecords'],
-    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches']
+    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
+    fetchVotingGroup: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchVotingGroup'],
+    fetchMPs: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchMPs']
   };
   
   function MockMCPClient(): MockMCPClientShape {
@@ -133,6 +137,65 @@ describe('Breaking News Article Generation', () => {
       });
       
       expect(mockClientInstance.searchSpeeches).toHaveBeenCalled();
+    });
+
+    it('should always fetch voting group (enriched with voteId when provided)', async () => {
+      const eventData: BreakingEventData = {
+        voteId: 'v123',
+        slug: 'test'
+      };
+      
+      await breakingNewsModule.generateBreakingNews({
+        languages: ['en'],
+        eventData
+      });
+      
+      expect(mockClientInstance.fetchVotingGroup).toHaveBeenCalledWith(
+        expect.objectContaining({
+          punkt: eventData.voteId,
+          groupBy: 'parti'
+        })
+      );
+    });
+
+    it('should always fetch MP profiles (enriched with speaker name from speech results)', async () => {
+      const eventData: BreakingEventData = {
+        topic: 'Budget debate',
+        slug: 'test'
+      };
+
+      const mockSpeakerName = 'Jane Doe';
+      mockClientInstance.searchSpeeches.mockResolvedValueOnce([
+        { talare: mockSpeakerName } as unknown as Record<string, unknown>
+      ]);
+      
+      await breakingNewsModule.generateBreakingNews({
+        languages: ['en'],
+        eventData
+      });
+      
+      expect(mockClientInstance.fetchMPs).toHaveBeenCalledWith(
+        expect.objectContaining({
+          namn: mockSpeakerName,
+          limit: 1
+        })
+      );
+    });
+
+    it('should call all 4 required tools even with minimal event data', async () => {
+      const eventData: BreakingEventData = {
+        slug: 'test'
+      };
+
+      await breakingNewsModule.generateBreakingNews({
+        languages: ['en'],
+        eventData
+      });
+
+      expect(mockClientInstance.fetchVotingRecords).toHaveBeenCalled();
+      expect(mockClientInstance.fetchVotingGroup).toHaveBeenCalled();
+      expect(mockClientInstance.searchSpeeches).toHaveBeenCalled();
+      expect(mockClientInstance.fetchMPs).toHaveBeenCalled();
     });
   });
 
