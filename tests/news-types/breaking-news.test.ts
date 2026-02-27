@@ -150,7 +150,12 @@ describe('Breaking News Article Generation', () => {
         eventData
       });
       
-      expect(mockClientInstance.fetchVotingGroup).toHaveBeenCalled();
+      expect(mockClientInstance.fetchVotingGroup).toHaveBeenCalledWith(
+        expect.objectContaining({
+          punkt: eventData.voteId,
+          groupBy: 'parti'
+        })
+      );
     });
 
     it('should always fetch MP profiles (enriched with speaker name when topic provided)', async () => {
