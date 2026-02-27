@@ -108,6 +108,9 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
 
     // Determine current riksmöte (Swedish parliamentary year: Sep 1 → Jun/Jul of next year).
     // Any date in September or later belongs to the new year's session (e.g. 2025-09-01 → "2025/26").
+    // Note: month-ahead uses dynamic calculation unlike weekly-review/monthly-review which hardcode
+    // '2025/26'. This is intentional: month-ahead must remain accurate across parliamentary years
+    // without requiring a code change at each new session boundary.
     const year = today.getFullYear();
     const month = today.getMonth() + 1; // 1-12
     const currentRiksmote = month >= 9
@@ -342,7 +345,7 @@ export function validateMonthAhead(article: ArticleInput): MonthAheadValidationR
     hasForwardLookingTone,
     hasStrategicContext,
     hasLegislativePipeline,
-    passed: hasCalendarEvents && hasMinimumSources && hasForwardLookingTone && hasStrategicContext
+    passed: hasCalendarEvents && hasMinimumSources && hasForwardLookingTone && hasStrategicContext && hasLegislativePipeline
   };
 }
 

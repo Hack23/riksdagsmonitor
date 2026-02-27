@@ -24,9 +24,9 @@ interface CalendarEvent {
 interface MockMCPClientShape {
   fetchCalendarEvents: Mock<(from: string, tom: string) => Promise<CalendarEvent[]>>;
   searchDocuments: Mock<(params: Record<string, unknown>) => Promise<unknown[]>>;
-  fetchCommitteeReports: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
-  fetchPropositions: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
-  fetchMotions: Mock<(limit: number, rm: string) => Promise<unknown[]>>;
+  fetchCommitteeReports: Mock<(limit: number, rm: string | null) => Promise<unknown[]>>;
+  fetchPropositions: Mock<(limit: number, rm: string | null) => Promise<unknown[]>>;
+  fetchMotions: Mock<(limit: number, rm: string | null) => Promise<unknown[]>>;
 }
 
 /** Validation input */

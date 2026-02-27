@@ -1224,9 +1224,10 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
         zh: (d, n) => `${n}项动议确定了活跃的政策领域：${d}。`,
       };
       const domTpl = domainIntroTemplates[lang as string];
-      const domainIntro = domTpl
-        ? domTpl(escapeHtml(domainList), motions.length)
-        : `${motions.length} motions identify active policy domains: ${escapeHtml(domainList)}.`;
+      const domainIntroRaw = domTpl
+        ? domTpl(domainList, motions.length)
+        : `${motions.length} motions identify active policy domains: ${domainList}.`;
+      const domainIntro = escapeHtml(domainIntroRaw);
       content += `    <p>${domainIntro}</p>\n`;
     }
 
