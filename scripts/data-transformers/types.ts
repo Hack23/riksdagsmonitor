@@ -102,8 +102,9 @@ export interface MonthlyMetrics {
   /** Party activity rankings sorted by total activity (motions + speeches) */
   partyRankings: Array<{ party: string; motionCount: number; speechCount: number }>;
   /**
-   * Legislative efficiency rate: committee reports divided by propositions (0–1).
-   * Higher values indicate faster committee processing.
+   * Legislative efficiency rate: committee reports divided by propositions.
+   * This is a non-negative ratio (reportCount / propositionCount) and may exceed 1
+   * when there are more reports than propositions in the same period.
    */
   legislativeEfficiencyRate: number;
 }

@@ -205,9 +205,23 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     const [prevMonthDocs, twoMonthsDocs] = await Promise.all([
       // 50 documents per period is sufficient for trend direction; full-text enrichment is not needed here
       client.searchDocuments({ from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 50 })
-        .catch(() => [] as RawDocument[]),
+        .catch((error) => {
+          console.error(
+            'MonthlyReview Step 6 — search_dokument failed for previous month trend window',
+            { from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 50 },
+            error,
+          );
+          return [] as RawDocument[];
+        }),
       client.searchDocuments({ from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 50 })
-        .catch(() => [] as RawDocument[]),
+        .catch((error) => {
+          console.error(
+            'MonthlyReview Step 6 — search_dokument failed for two-months-ago trend window',
+            { from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 50 },
+            error,
+          );
+          return [] as RawDocument[];
+        }),
     ]);
     mcpCalls.push({ tool: 'search_dokument', result: prevMonthDocs });
     mcpCalls.push({ tool: 'search_dokument', result: twoMonthsDocs });
@@ -410,7 +424,14 @@ export function validateMonthlyReview(article: ArticleInput): MonthlyReviewValid
     hasPartyRankings,
     hasLegislativeEfficiency,
     hasMonthInNumbers,
-    passed: hasMonthlySummary && hasMinimumSources && hasRetrospectiveTone && hasTrendAnalysis
+    passed:
+      hasMonthlySummary &&
+      hasMinimumSources &&
+      hasRetrospectiveTone &&
+      hasTrendAnalysis &&
+      hasPartyRankings &&
+      hasLegislativeEfficiency &&
+      hasMonthInNumbers
   };
 }
 
@@ -446,23 +467,17 @@ function checkTrendAnalysis(article: ArticleInput): boolean {
 function checkPartyRankings(article: ArticleInput): boolean {
   if (!article || !article.content) return false;
   return article.content.includes('Party Performance Rankings') ||
-         article.content.includes('Partiernas prestationsrankning') ||
-         article.content.includes('partyRankings') ||
-         article.content.toLowerCase().includes('rankings');
+         article.content.includes('Partiernas prestationsrankning');
 }
 
 function checkLegislativeEfficiency(article: ArticleInput): boolean {
   if (!article || !article.content) return false;
   return article.content.includes('Legislative Efficiency') ||
-         article.content.includes('Lagstiftningseffektivitet') ||
-         article.content.toLowerCase().includes('efficiency') ||
-         article.content.toLowerCase().includes('throughput');
+         article.content.includes('Lagstiftningseffektivitet');
 }
 
 function checkMonthInNumbers(article: ArticleInput): boolean {
   if (!article || !article.content) return false;
   return article.content.includes('Month in Numbers') ||
-         article.content.includes('Månaden i siffror') ||
-         article.content.toLowerCase().includes('total documents') ||
-         article.content.toLowerCase().includes('committee reports');
+         article.content.includes('Månaden i siffror');
 }
