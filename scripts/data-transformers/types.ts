@@ -97,6 +97,8 @@ export interface ArticleContentData {
   votes?: unknown[];
   /** Parliamentary speeches for committee debate context */
   speeches?: unknown[];
+  /** Government department analysis from analyze_g0v_by_department */
+  govDeptData?: Record<string, unknown>[];
   /** Full-text search results for policy substance extraction */
   fullTextResults?: unknown[];
   /** Government department analysis from analyze_g0v_by_department */

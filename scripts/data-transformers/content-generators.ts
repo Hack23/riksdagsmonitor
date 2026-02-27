@@ -1052,6 +1052,24 @@ export function generateMotionsContent(data: ArticleContentData, lang: Language 
     content += `      </ul>\n    </div>\n`;
   }
 
+  // Government department engagement section (from analyze_g0v_by_department)
+  const govDeptData = data.govDeptData ?? [];
+  if (govDeptData.length > 0) {
+    content += `\n    <h2>${L(lang, 'govEngagement')}</h2>\n`;
+    content += `    <div class="context-box">\n      <ul>\n`;
+    govDeptData.slice(0, 5).forEach(dept => {
+      const deptName = escapeHtml(String(dept['name'] ?? dept['departement'] ?? dept['department'] ?? ''));
+      const deptCount = dept['count'] ?? dept['total'] ?? dept['document_count'];
+      if (deptName) {
+        const hasDeptCount = deptCount !== null && deptCount !== undefined;
+        content += hasDeptCount
+          ? `        <li><strong>${deptName}</strong> (${escapeHtml(String(deptCount))})</li>\n`
+          : `        <li><strong>${deptName}</strong></li>\n`;
+      }
+    });
+    content += `      </ul>\n    </div>\n`;
+  }
+
   return content;
 }
 
