@@ -93,6 +93,10 @@ export interface ArticleContentData {
   context?: string;
   /** CIA intelligence context for enriched analysis */
   ciaContext?: CIAContext;
+  /** Voting records for cross-referencing committee decisions */
+  votes?: unknown[];
+  /** Parliamentary speeches for committee debate context */
+  speeches?: unknown[];
   /** Government department analysis from analyze_g0v_by_department */
   govDeptData?: Record<string, unknown>[];
   /** Full-text search results for policy substance extraction */
