@@ -314,6 +314,28 @@ describe('Weekly Review Article Generation', () => {
       expect(result.totalVotes).toBe(1);
     });
 
+    it('should detect government wins when government votes Nej to reject opposition proposal', () => {
+      // Government rejects opposition motion: Nej majority = government win
+      const votingRecords = [
+        { parti: 'M', rost: 'Nej', bet: 'SoU5', punkt: '2' },
+        { parti: 'KD', rost: 'Nej', bet: 'SoU5', punkt: '2' },
+        { parti: 'SD', rost: 'Nej', bet: 'SoU5', punkt: '2' },
+        { parti: 'S', rost: 'Ja', bet: 'SoU5', punkt: '2' },
+        { parti: 'V', rost: 'Ja', bet: 'SoU5', punkt: '2' },
+      ];
+
+      const result = weeklyReviewModule.analyzeCoalitionStress(votingRecords, {
+        coalitionStability: { stabilityScore: 75, riskLevel: 'low', defectionProbability: 0.1, majorityMargin: 5 },
+        partyPerformance: [],
+        votingPatterns: { keyIssues: [] },
+        overallMotionDenialRate: 96,
+      } as unknown as Record<string, unknown>);
+
+      // Government position is Nej, Nej majority → government won
+      expect(result.governmentWins).toBe(1);
+      expect(result.governmentLosses).toBe(0);
+    });
+
     it('should detect cross-party votes', () => {
       const votingRecords = [
         { parti: 'M', rost: 'Ja', bet: 'FiU20', punkt: '1' },

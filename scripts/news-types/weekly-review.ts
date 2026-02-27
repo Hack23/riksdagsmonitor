@@ -466,15 +466,23 @@ export function analyzeCoalitionStress(
     const totalYes = records.filter(r => r.rost === 'Ja').length;
     const totalNo  = records.filter(r => r.rost === 'Nej').length;
 
-    // Government wins when Ja majority
-    if (totalYes > totalNo) { governmentWins++; }
-    else if (totalNo > totalYes) { governmentLosses++; }
-
     const govYes = records.filter(r => GOV_PARTIES.has(r.parti ?? '') && r.rost === 'Ja').length;
     const govNo  = records.filter(r => GOV_PARTIES.has(r.parti ?? '') && r.rost === 'Nej').length;
     const oppYes = records.filter(r => OPP_PARTIES.has(r.parti ?? '') && r.rost === 'Ja').length;
 
-    // Cross-party: opposition voting with government
+    // Determine government position (what most government members voted)
+    const govPosition = govYes > govNo ? 'Ja' : 'Nej';
+
+    // Government wins when its position matches the chamber majority
+    if (totalYes !== totalNo) {
+      const governmentWon =
+        (govPosition === 'Ja' && totalYes > totalNo) ||
+        (govPosition === 'Nej' && totalNo > totalYes);
+      if (governmentWon) { governmentWins++; }
+      else { governmentLosses++; }
+    }
+
+    // Cross-party: opposition voting with government (both voting Ja)
     if (govYes > 0 && oppYes > 0) crossPartyVotes++;
     // Defection: government bloc members split
     if (govYes > 0 && govNo > 0) defections++;
