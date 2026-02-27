@@ -139,17 +139,22 @@ Before generating ANY articles, verify MCP connectivity:
 
 ### 2. MANDATORY Pull Request Creation (Final Step)
 
-**CRITICAL: Workflow MUST create a PR with articles or FAIL**
-
-From a reader's perspective: **Where's the article?**
+> **🚀 HOW SAFE PR CREATION WORKS — READ THIS FIRST**
+>
+> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
+>
+> **Exact steps:**
+> 1. Write article files to `news/` using `bash` or `edit` tools
+> 2. Stage and commit locally: `git add news/ && git commit -m "Add news articles"`
+> 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
+>
+> **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
+> **❌ DO NOT** try alternative approaches if the tool call works — one call is all you need.
+> **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
 
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` - When articles generated
-- ✅ **ONLY USE `noop` if genuinely no new data** (checked riksdag-regering-mcp, found no committee reports, no propositions, no significant updates, AND force_generation=false)
-- ❌ **NEVER use `noop` as a fallback for PR creation failures** - If articles were generated but PR fails, the workflow MUST FAIL
-
-**⚠️ If you generated articles but cannot create PR → workflow FAILS (not noop)**
-
-Readers expect articles. No PR = No articles = FAILURE.
+- ✅ **ONLY USE `safeoutputs___noop` if genuinely no new data** (checked riksdag-regering-mcp, found no committee reports, no propositions, no significant updates, AND force_generation=false)
+- ❌ **NEVER use `safeoutputs___noop` as a fallback for PR creation failures**
 
 ## Required Reference Materials & Available Skills
 
@@ -1271,153 +1276,28 @@ fi
 
 ### Step 10: Create Pull Request
 
-**IMPORTANT: Use MCP Safe-Outputs Tools (NOT git push)**
+> **🚀 REMINDER: How safe PR creation works**
+>
+> 1. Stage and commit: `git add news/ && git commit -m "Add news articles for YYYY-MM-DD"`
+> 2. Call `safeoutputs___create_pull_request` — it handles branch creation, push, and PR automatically
+> 3. Done. **One call. No retries needed. No alternative approaches.**
+>
+> **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API.
 
-In the agentic workflow sandbox, you **cannot** use `git push` directly. Instead, you MUST use the **safeoutputs MCP tools** which handle branch creation, pushing, and PR creation automatically.
-
-**Required steps:**
-1. Commit your changes locally (`git add` + `git commit`)
-2. Call `safeoutputs___create_pull_request` with your changes
-
-The **safeoutputs MCP tools** are available through the MCP gateway:
-
-#### Available Safe-Output MCP Tools
-
-1. **`safeoutputs___create_pull_request`** - Create a PR with your changes
-   ```json
-   {
-     "title": "📰 Automated News Generation - 2026-02-14",
-     "body": "## Automated News Generation\n\nThis PR contains...",
-     "labels": ["automated-news", "news-generation", "needs-editorial-review"]
-   }
-   ```
-
-2. **`safeoutputs___add_comment`** - Add a comment to the triggering issue/PR
-   ```json
-   {
-     "body": "News generation completed successfully. 4 articles generated.",
-     "item_number": 123
-   }
-   ```
-
-3. **`safeoutputs___noop`** - ONLY when genuinely no new data exists
-   ```json
-   {
-     "message": "No new articles to generate. Checked riksdag-regering-mcp: no new committee reports, propositions, or motions since last generation. Last: 2026-02-14T13:00:00Z. Use force_generation=true to override."
-   }
-   ```
-   
-   **⚠️ CRITICAL: Only use noop if:**
-   - You checked riksdag-regering-mcp and found NO new data
-   - No articles were generated
-   - force_generation=false
-   
-   **❌ NEVER use noop if:**
-   - Articles were generated but PR creation failed
-   - You encountered errors after creating content
-   - In those cases, let the workflow FAIL
-
-4. **`safeoutputs___missing_tool`** - Report missing capabilities
-5. **`safeoutputs___missing_data`** - Report missing data
-
-#### How to Create the PR
-
-After committing your changes locally with `git add` and `git commit`, call the `safeoutputs___create_pull_request` MCP tool:
-
+Call `safeoutputs___create_pull_request` with:
 ```json
 {
-  "title": "📰 Automated News Generation - 2026-02-17",
-  "body": "## Automated News Generation...",
-  "labels": ["automated-news", "news-generation"]
+  "title": "📰 Automated News Generation - {date}",
+  "body": "## Automated News Generation\n\nArticles: {count}\nTypes: {types}\nLanguages: {list}\nMCP tools used: {tools}",
+  "labels": ["automated-news", "news-generation", "needs-editorial-review"]
 }
 ```
 
-**If create_pull_request fails with "no-commits-found":**
-- ❌ **DO NOT call `safeoutputs___noop`** - this hides the failure
-- ✅ **Let the workflow FAIL** by throwing an error or exiting non-zero
-- The failure will be visible in GitHub Actions and can be investigated
-- From reader's perspective: No PR = No article = FAILURE
+**If no new data exists** (genuinely no data from riksdag-regering-mcp AND force_generation=false):
+- Call `safeoutputs___noop` with message describing what was checked
+- ❌ NEVER use `safeoutputs___noop` if articles were generated — let the workflow FAIL instead
 
-**Only use `safeoutputs___noop` if:**
-- You checked riksdag-regering-mcp and genuinely found NO new data
-- No articles were generated at all
-- force_generation=false
-
-**Example of correct failure handling:**
-```javascript
-// After committing articles
-const result = await safeoutputs___create_pull_request({
-  title: "📰 Automated News - 2026-02-17",
-  body: prBody,
-  labels: ["automated-news"]
-});
-
-if (!result || result.error) {
-  // PR creation failed - workflow MUST fail
-  console.error("PR creation failed:", result);
-  throw new Error("Failed to create PR after generating articles - workflow must fail");
-}
-```
-
-Call the `safeoutputs___create_pull_request` MCP tool with:
-
-**Title:** `📰 Automated News Generation - {date}`
-
-**Body:**
-```markdown
-## Automated News Generation
-
-This PR contains automatically generated news articles from riksdag-regering-mcp data.
-
-### Summary
-- **Articles Generated**: {count}
-- **Types**: {article_types}
-- **Timestamp**: {ISO 8601}
-- **MCP Tools Used**: {list of tools}
-
-### Articles Created
-- {list of files with descriptions}
-
-### Data Sources
-- **riksdag-regering-mcp**: Swedish Parliament and Government data
-- **32 specialized tools**: Documents, MPs, votes, speeches, calendar events
-
-### Quality Checks
-- [x] HTML validation passed
-- [x] Metadata validation passed
-- [x] No broken links detected
-- [x] SEO metadata complete
-- [x] Source attribution included
-- [x] Multi-language support (EN/SV)
-- [x] News indexes regenerated (at build time)
-- [x] Sitemap updated (at build time)
-- [ ] Editorial review recommended
-
-### Validation Results
-```
-HTML Validation: PASSED (0 errors)
-Link Check: PASSED (0 broken links)
-Metadata: COMPLETE
-SEO Score: {score}/100
-```
-
-### References
-- MCP Server: riksdag-regering-mcp (npm)
-- Data: Swedish Riksdag Open Data API
-- Style Guide: The Economist
-- Workflow: {workflow_run_url}
-
----
-*This PR was automatically created by the News Article Generator agent*
-
-**Next Steps:**
-1. Review articles for accuracy and tone
-2. Verify source citations and links
-3. Check multi-language consistency
-4. Approve and merge if quality standards met
-```
-
-**Branch:** `news-generation/automated-{timestamp}`
+**Other safe output tools:** `safeoutputs___add_comment`, `safeoutputs___missing_tool`, `safeoutputs___missing_data`
 
 **Labels:** `automated-news`, `news-generation`, `needs-editorial-review`
 
