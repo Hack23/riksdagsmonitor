@@ -25,6 +25,9 @@ interface CommitteeReport {
 /** Mock MCP client shape */
 interface MockMCPClientShape {
   fetchCommitteeReports: Mock<(limit: number) => Promise<CommitteeReport[]>>;
+  fetchVotingRecords: Mock<(filters: object) => Promise<unknown[]>>;
+  searchSpeeches: Mock<(params: object) => Promise<unknown[]>>;
+  fetchPropositions: Mock<(limit?: number, rm?: string | null) => Promise<unknown[]>>;
 }
 
 /** Validation input */
@@ -75,7 +78,10 @@ const { mockClientInstance, mockCommitteeReports, MockMCPClient } = vi.hoisted((
   ];
   
   const mockClientInstance: MockMCPClientShape = {
-    fetchCommitteeReports: vi.fn().mockResolvedValue(mockCommitteeReports) as MockMCPClientShape['fetchCommitteeReports']
+    fetchCommitteeReports: vi.fn().mockResolvedValue(mockCommitteeReports) as MockMCPClientShape['fetchCommitteeReports'],
+    fetchVotingRecords: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchVotingRecords'],
+    searchSpeeches: vi.fn().mockResolvedValue([]) as MockMCPClientShape['searchSpeeches'],
+    fetchPropositions: vi.fn().mockResolvedValue([]) as MockMCPClientShape['fetchPropositions'],
   };
   
   function MockMCPClient(): MockMCPClientShape {
@@ -99,6 +105,9 @@ describe('Committee Reports Article Generation', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockClientInstance.fetchCommitteeReports.mockResolvedValue(mockCommitteeReports);
+    mockClientInstance.fetchVotingRecords.mockResolvedValue([]);
+    mockClientInstance.searchSpeeches.mockResolvedValue([]);
+    mockClientInstance.fetchPropositions.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -116,11 +125,13 @@ describe('Committee Reports Article Generation', () => {
       expect(committeeReportsModule.REQUIRED_TOOLS).toContain('get_betankanden');
     });
 
-    it('should only list tools actually used by generateCommitteeReports', () => {
-      // REQUIRED_TOOLS must match tools actually called in the implementation.
-      // Future cross-referencing tools (voteringar, anforanden, propositioner)
-      // should be added here when implemented in generateCommitteeReports().
-      expect(committeeReportsModule.REQUIRED_TOOLS).toEqual(['get_betankanden']);
+    it('should require all four MCP tools', () => {
+      expect(committeeReportsModule.REQUIRED_TOOLS).toEqual([
+        'get_betankanden',
+        'search_voteringar',
+        'search_anforanden',
+        'get_propositioner'
+      ]);
     });
   });
 
@@ -132,6 +143,37 @@ describe('Committee Reports Article Generation', () => {
       
       expect(mockClientInstance.fetchCommitteeReports).toHaveBeenCalled();
       expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_betankanden')).toBe(true);
+    });
+
+    it('should call search_voteringar for voting patterns', async () => {
+      const result = await committeeReportsModule.generateCommitteeReports({
+        languages: ['en']
+      });
+
+      expect(mockClientInstance.fetchVotingRecords).toHaveBeenCalledWith(
+        expect.objectContaining({ rm: '2024/25', limit: 20 })
+      );
+      expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'search_voteringar')).toBe(true);
+    });
+
+    it('should call search_anforanden for debate context', async () => {
+      const result = await committeeReportsModule.generateCommitteeReports({
+        languages: ['en']
+      });
+
+      expect(mockClientInstance.searchSpeeches).toHaveBeenCalledWith(
+        expect.objectContaining({ rm: '2024/25', limit: 15 })
+      );
+      expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'search_anforanden')).toBe(true);
+    });
+
+    it('should call get_propositioner for bill linkage', async () => {
+      const result = await committeeReportsModule.generateCommitteeReports({
+        languages: ['en']
+      });
+
+      expect(mockClientInstance.fetchPropositions).toHaveBeenCalledWith(20, '2024/25');
+      expect(result.mcpCalls!.some((call: MCPCallRecord) => call.tool === 'get_propositioner')).toBe(true);
     });
 
     it('should fetch specified number of reports', async () => {
@@ -249,6 +291,17 @@ describe('Committee Reports Article Generation', () => {
       });
       
       expect(result.crossReferences.sources).toContain('betankanden');
+    });
+
+    it('should track all four data sources', async () => {
+      const result = await committeeReportsModule.generateCommitteeReports({
+        languages: ['en']
+      });
+
+      expect(result.crossReferences.sources).toContain('betankanden');
+      expect(result.crossReferences.sources).toContain('voteringar');
+      expect(result.crossReferences.sources).toContain('anforanden');
+      expect(result.crossReferences.sources).toContain('propositioner');
     });
   });
 

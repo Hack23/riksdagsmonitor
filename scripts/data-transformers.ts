@@ -29,6 +29,7 @@ export {
   type CIAContext,
   type WeekAheadData,
   type ArticleContentData,
+  type MonthlyMetrics,
 
   // Constants
   CONTENT_LABELS,

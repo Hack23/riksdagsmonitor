@@ -25,6 +25,7 @@ export type {
   CIAContext,
   WeekAheadData,
   ArticleContentData,
+  MonthlyMetrics,
 } from './types.js';
 
 // ── Re-export constants ────────────────────────────────────────────────────
@@ -65,6 +66,8 @@ import {
   generatePropositionsContent,
   generateMotionsContent,
   generateGenericContent,
+  generateMonthlyReviewContent,
+  generateMonthAheadContent,
 } from './content-generators.js';
 
 /**
@@ -85,15 +88,16 @@ export function generateArticleContent(
     case 'week-ahead':
       return generateWeekAheadContent(data as WeekAheadData, lang);
     case 'month-ahead':
-      return generateWeekAheadContent(data as WeekAheadData, lang);
+      return generateMonthAheadContent(data, lang);
     case 'committee-reports':
       return generateCommitteeContent(data, lang);
     case 'propositions':
       return generatePropositionsContent(data, lang);
     case 'motions':
       return generateMotionsContent(data, lang);
-    case 'weekly-review':
     case 'monthly-review':
+      return generateMonthlyReviewContent(data, lang);
+    case 'weekly-review':
     case 'breaking':
     default:
       return generateGenericContent(data, lang);

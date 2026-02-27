@@ -21,6 +21,8 @@ export interface RawCalendarEvent {
   description?: string;
   details?: string;
   dayName?: string;
+  /** Organ/committee identifier returned by the MCP calendar API (e.g. 'Kammaren', 'FiU') */
+  organ?: string;
 }
 
 /** Raw document from MCP server */
@@ -80,6 +82,49 @@ export interface WeekAheadData {
   interpellations?: RawDocument[];
 }
 
+/**
+ * Monthly metrics for trend analysis, party rankings, and legislative efficiency.
+ * Computed in monthly-review.ts and consumed by generateMonthlyReviewContent.
+ *
+ * NOTE: Document count fields may be based on limited/sampled search results
+ * (e.g., when upstream `search_dokument` calls use a hard result limit) and
+ * are therefore not guaranteed to be exact global totals for the period.
+ */
+export interface MonthlyMetrics {
+  /**
+   * Sampled document count for this month.
+   * Derived from the number of documents returned by upstream search and may
+   * be capped by search limits rather than representing an exact total.
+   */
+  totalDocuments: number;
+  /** Number of committee reports (betänkanden) in the sampled set */
+  reportCount: number;
+  /** Number of government propositions in the sampled set */
+  propositionCount: number;
+  /** Number of parliamentary motions in the sampled set */
+  motionCount: number;
+  /** Number of speeches (anföranden) in the sampled set */
+  speechCount: number;
+  /**
+   * Previous month's sampled document count (for trend).
+   * Subject to the same upstream search limits as totalDocuments.
+   */
+  previousMonthDocCount: number;
+  /**
+   * Sampled document count from two months ago (for rolling average).
+   * Subject to the same upstream search limits as totalDocuments.
+   */
+  twoMonthsAgoDocCount: number;
+  /** Party activity rankings sorted by total activity (motions + speeches) */
+  partyRankings: Array<{ party: string; motionCount: number; speechCount: number }>;
+  /**
+   * Legislative efficiency rate: committee reports divided by propositions.
+   * This is a non-negative ratio (reportCount / propositionCount) and may exceed 1
+   * when there are more reports than propositions in the same period.
+   */
+  legislativeEfficiencyRate: number;
+}
+
 /** Article generation data */
 export interface ArticleContentData {
   events?: RawCalendarEvent[];
@@ -91,4 +136,18 @@ export interface ArticleContentData {
   context?: string;
   /** CIA intelligence context for enriched analysis */
   ciaContext?: CIAContext;
+  /** Monthly metrics for trend analysis (monthly-review specific) */
+  monthlyMetrics?: MonthlyMetrics;
+  /** Voting records for cross-referencing committee decisions */
+  votes?: unknown[];
+  /** Parliamentary speeches for committee debate context */
+  speeches?: unknown[];
+  /** Government department analysis from analyze_g0v_by_department */
+  govDeptData?: Record<string, unknown>[];
+  /** Full-text search results for policy substance extraction */
+  fullTextResults?: unknown[];
+  /** Government department analysis from analyze_g0v_by_department */
+  departmentAnalysis?: Record<string, unknown>;
+  /** Parliamentary debate speeches from search_anforanden */
+  speechDebates?: unknown[];
 }

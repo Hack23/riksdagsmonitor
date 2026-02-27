@@ -11,7 +11,7 @@
 
 import { escapeHtml } from '../html-utils.js';
 import type { Language } from '../types/language.js';
-import type { ArticleContentData, WeekAheadData, RawDocument } from './types.js';
+import type { ArticleContentData, WeekAheadData, RawDocument, MonthlyMetrics, RawCalendarEvent } from './types.js';
 import { getPillarTransition } from '../editorial-pillars.js';
 import {
   L,
@@ -49,6 +49,56 @@ const TITLE_SUFFIX_TEMPLATES: Readonly<Record<string, (t: string) => string>> = 
   ko: t => `, "${t}" 포함`,
   zh: t => `，包括"${t}"`,
 };
+
+/** Extract meaningful keywords from text for cross-reference matching (min 2 chars, captures EU, KU, etc.; splits on whitespace, hyphens, and commas) */
+function extractKeywords(text: string): string[] {
+  return text.toLowerCase().split(/[\s,–-]+/u).filter(w => w.length >= 2);
+}
+
+/** Find documents related to a calendar event by organ match or keyword overlap (max 3) */
+function findRelatedDocuments(event: RawCalendarEvent, documents: RawDocument[]): RawDocument[] {
+  const eventOrgan = event.organ ?? '';
+  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? '');
+  return documents.filter(doc => {
+    const docOrgan = doc.organ ?? doc.committee ?? '';
+    if (eventOrgan && docOrgan && eventOrgan.toLowerCase() === docOrgan.toLowerCase()) return true;
+    const docText = (doc.titel ?? doc.title ?? '').toLowerCase();
+    return keywords.some(kw => docText.includes(kw));
+  }).slice(0, 3);
+}
+
+/** Find written questions related to a calendar event by keyword overlap (max 3) */
+function findRelatedQuestions(event: RawCalendarEvent, questions: RawDocument[]): RawDocument[] {
+  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? '');
+  return questions.filter(q => {
+    const qText = (q.titel ?? q.title ?? '').toLowerCase();
+    return keywords.some(kw => qText.includes(kw));
+  }).slice(0, 3);
+}
+
+/** Extract targeted minister name from interpellation summary "till MINISTER" header line.
+ *  Strips trailing topic clauses ("om X", "angående Y", etc.) and punctuation. */
+function extractMinister(summary: string): string {
+  // Use non-newline whitespace ([^\S\n]+) so we don't cross into the next line
+  const m = summary.match(/\btill[^\S\n]+([^\n]+)/i);
+  if (!m) return '';
+  const raw = m[1].trim();
+  if (!raw) return '';
+
+  // Remove common trailing topic clauses and punctuation
+  const lowerRaw = raw.toLowerCase();
+  const stopPhrases = [' om ', ' angående ', ' rörande ', ' beträffande '];
+  let end = raw.length;
+  for (const phrase of stopPhrases) {
+    const idx = lowerRaw.indexOf(phrase);
+    if (idx !== -1 && idx < end) end = idx;
+  }
+  // Cut at terminating punctuation if it comes earlier
+  const punctIdx = raw.search(/[?:;.,]/);
+  if (punctIdx !== -1 && punctIdx < end) end = punctIdx;
+
+  return raw.slice(0, end).trim();
+}
 
 export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
@@ -89,6 +139,50 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     <h3>${dayName ? dayName + ' - ' : ''}${titleHtml}</h3>
     <p>${event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`}</p>
 `;
+
+      // Policy Context: cross-reference related documents and questions per event
+      const relatedPolicyDocs = findRelatedDocuments(event, documents);
+      const relatedPolicyQs = findRelatedQuestions(event, questions);
+      if (relatedPolicyDocs.length > 0 || relatedPolicyQs.length > 0) {
+        const policyContextLabel = lang === 'sv' ? 'Policysammanhang'
+          : lang === 'de' ? 'Politischer Kontext'
+          : lang === 'fr' ? 'Contexte politique'
+          : lang === 'es' ? 'Contexto político'
+          : lang === 'da' ? 'Politisk kontekst'
+          : lang === 'no' ? 'Politisk kontekst'
+          : lang === 'fi' ? 'Poliittinen konteksti'
+          : lang === 'nl' ? 'Beleidscontext'
+          : lang === 'ar' ? 'السياق السياسي'
+          : lang === 'he' ? 'הקשר מדיניות'
+          : lang === 'ja' ? '政策コンテキスト'
+          : lang === 'ko' ? '정책 맥락'
+          : lang === 'zh' ? '政策背景'
+          : 'Policy Context';
+        content += `    <div class="policy-context-box">\n`;
+        content += `      <h4>${policyContextLabel}</h4>\n`;
+        relatedPolicyDocs.forEach(doc => {
+          const drec = doc as Record<string, string>;
+          const docTitle = drec['titel'] ?? drec['title'] ?? 'Document';
+          const dokId = drec['dok_id'] ?? '';
+          const docUrl = dokId ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dokId)}/`) : '';
+          content += `      <div class="document-entry">\n`;
+          content += `        <h5>${docUrl ? `<a href="${docUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(docTitle), lang)}${docUrl ? '</a>' : ''}</h5>\n`;
+          const sig = generatePolicySignificance(doc, lang);
+          if (sig) content += `        <p class="policy-significance">${escapeHtml(sig)}</p>\n`;
+          content += `      </div>\n`;
+        });
+        relatedPolicyQs.forEach(q => {
+          const qrec = q as Record<string, string>;
+          const qTitle = qrec['titel'] ?? qrec['title'] ?? 'Question';
+          const qParty = qrec['parti'] ? ` (${escapeHtml(qrec['parti'])})` : '';
+          const qDokId = qrec['dok_id'] ?? '';
+          const qUrl = qDokId ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(qDokId)}/`) : '';
+          content += `      <div class="document-entry">\n`;
+          content += `        <h5>${qUrl ? `<a href="${qUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(qTitle), lang)}${qUrl ? '</a>' : ''}${qParty}</h5>\n`;
+          content += `      </div>\n`;
+        });
+        content += `    </div>\n`;
+      }
     });
   }
 
@@ -144,22 +238,22 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     });
   }
 
-  // Parliamentary Questions: upcoming written questions to ministers
+  // Questions to Watch: upcoming written questions cross-referenced with debate topics
   if (questions.length > 0) {
-    const questionsLabel = lang === 'sv' ? 'Skriftliga frågor till statsråd'
-      : lang === 'de' ? 'Schriftliche parlamentarische Anfragen'
-      : lang === 'fr' ? 'Questions écrites au gouvernement'
-      : lang === 'es' ? 'Preguntas escritas al gobierno'
-      : lang === 'da' ? 'Skriftlige spørgsmål til ministrene'
-      : lang === 'no' ? 'Skriftlige spørsmål til statsrådene'
-      : lang === 'fi' ? 'Kirjalliset kysymykset ministerille'
-      : lang === 'nl' ? 'Schriftelijke vragen aan ministers'
-      : lang === 'ar' ? 'أسئلة مكتوبة للحكومة'
-      : lang === 'he' ? 'שאלות כתובות לממשלה'
-      : lang === 'ja' ? '大臣への書面質問'
-      : lang === 'ko' ? '장관에 대한 서면 질문'
-      : lang === 'zh' ? '书面质询政府'
-      : 'Parliamentary Questions to Ministers';
+    const questionsLabel = lang === 'sv' ? 'Frågor att bevaka'
+      : lang === 'de' ? 'Zu beobachtende Anfragen'
+      : lang === 'fr' ? 'Questions à surveiller'
+      : lang === 'es' ? 'Preguntas a seguir'
+      : lang === 'da' ? 'Spørgsmål at holde øje med'
+      : lang === 'no' ? 'Spørsmål å følge med på'
+      : lang === 'fi' ? 'Seurattavat kysymykset'
+      : lang === 'nl' ? 'Te volgen vragen'
+      : lang === 'ar' ? 'أسئلة تستحق المتابعة'
+      : lang === 'he' ? 'שאלות לעקוב'
+      : lang === 'ja' ? '注目の質問'
+      : lang === 'ko' ? '주목할 질문'
+      : lang === 'zh' ? '值得关注的问题'
+      : 'Questions to Watch';
     content += `\n    <h2>${questionsLabel}</h2>\n`;
     questions.slice(0, 8).forEach(q => {
       const rec = q as Record<string, string>;
@@ -174,22 +268,22 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     });
   }
 
-  // Interpellations: formal parliamentary interpellations awaiting ministerial response
+  // Interpellation Spotlight: formal interpellations enriched with minister response context
   if (interpellations.length > 0) {
-    const interLabel = lang === 'sv' ? 'Interpellationer under behandling'
-      : lang === 'de' ? 'Interpellationen in Bearbeitung'
-      : lang === 'fr' ? 'Interpellations en cours'
-      : lang === 'es' ? 'Interpelaciones en curso'
-      : lang === 'da' ? 'Forespørgsler til behandling'
-      : lang === 'no' ? 'Interpellasjoner til behandling'
-      : lang === 'fi' ? 'Käsittelyssä olevat välikysymykset'
-      : lang === 'nl' ? 'Interpellaties in behandeling'
-      : lang === 'ar' ? 'الاستجوابات البرلمانية قيد المعالجة'
-      : lang === 'he' ? 'בקשות הבהרה בטיפול'
-      : lang === 'ja' ? '処理中の質問主意書'
-      : lang === 'ko' ? '처리 중인 대정부 질문'
-      : lang === 'zh' ? '待处理的质询'
-      : 'Interpellations Pending';
+    const interLabel = lang === 'sv' ? 'Interpellationer i fokus'
+      : lang === 'de' ? 'Interpellationen im Fokus'
+      : lang === 'fr' ? 'Interpellations en vedette'
+      : lang === 'es' ? 'Interpelaciones destacadas'
+      : lang === 'da' ? 'Forespørgsler i fokus'
+      : lang === 'no' ? 'Interpellasjoner i fokus'
+      : lang === 'fi' ? 'Välikysymykset valokeilassa'
+      : lang === 'nl' ? 'Interpellaties in de spotlight'
+      : lang === 'ar' ? 'أبرز الاستجوابات البرلمانية'
+      : lang === 'he' ? 'בקשות הבהרה בזרקור'
+      : lang === 'ja' ? '注目の質問主意書'
+      : lang === 'ko' ? '주목할 대정부 질문'
+      : lang === 'zh' ? '质询聚焦'
+      : 'Interpellation Spotlight';
     content += `\n    <h2>${interLabel}</h2>\n`;
     interpellations.slice(0, 8).forEach(interp => {
       const rec = interp as Record<string, string>;
@@ -197,9 +291,9 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       const party = rec['parti'] ? ` (${escapeHtml(rec['parti'])})` : '';
       const dok_id = rec['dok_id'] ?? '';
       const iUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : '';
-      // Extract clean summary: content starts after "till MINISTER\n" line
+      // Extract minister and clean summary from the header lines
       const rawSummary = rec['summary'] ?? '';
-      // Find start of actual content after the header lines (Interpellation NNN / av AUTHOR / till MINISTER)
+      const ministerName = extractMinister(rawSummary);
       const tillMatch = rawSummary.match(/\btill\s+[^\n]+\n\s*/i);
       const contentStart = tillMatch
         ? rawSummary.indexOf(tillMatch[0]) + tillMatch[0].length
@@ -215,6 +309,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${iUrl ? `<a href="${iUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(titleText), lang)}${iUrl ? '</a>' : ''}</h4>\n`;
       if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
+      if (ministerName) content += `      <p class="minister-target">→ ${svSpan(escapeHtml(ministerName), lang)}</p>\n`;
       if (cleanedSummary) content += `      <p>${svSpan(escapeHtml(cleanedSummary) + '…', lang)}</p>\n`;
       content += `    </div>\n`;
     });
@@ -463,6 +558,114 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
 
   content += `      </ul>\n    </div>\n`;
 
+  // ── Optional: Voting Results section ─────────────────────────────────────
+  const votes = (data.votes ?? []) as unknown[];
+  if (votes.length > 0) {
+    const votingSectionHeaders: Record<string, string> = {
+      sv: 'Röstningsresultat', da: 'Afstemningsresultater', no: 'Voteringsresultater',
+      fi: 'Äänestystulokset', de: 'Abstimmungsergebnisse', fr: 'Résultats du vote',
+      es: 'Resultados de la votación', nl: 'Stemresultaten', ar: 'نتائج التصويت',
+      he: 'תוצאות ההצבעה', ja: '投票結果', ko: '투표 결과', zh: '投票结果',
+    };
+    const votingCountTemplates: Record<string, (n: number) => string> = {
+      sv: (n) => `${n} röstningsprotokoll visar hur partierna röstade i utskottsbeslut denna period.`,
+      da: (n) => `${n} afstemningsprotokoller viser, hvordan partierne stemte om udvalgets beslutninger.`,
+      no: (n) => `${n} voteringsprotokoll viser hvordan partiene stemte i komitévedtak.`,
+      fi: (n) => `${n} äänestysrekisteriä osoittaa, miten puolueet äänestivät valiokunnan päätöksistä.`,
+      de: (n) => `${n} Abstimmungsrekorde zeigen, wie die Parteien über Ausschussbeschlüsse abstimmten.`,
+      fr: (n) => `${n} procès-verbaux de vote montrent comment les partis ont voté sur les décisions de commission.`,
+      es: (n) => `${n} registros de votación muestran cómo votaron los partidos en las decisiones de la comisión.`,
+      nl: (n) => `${n} stemregisters tonen hoe partijen stemden over commissiebeslissingen.`,
+      ar: (n) => `${n} سجلات التصويت تظهر كيف صوتت الأحزاب على قرارات اللجنة.`,
+      he: (n) => `${n} פרוטוקולי הצבעה מציגים כיצד הצביעו המפלגות על החלטות הוועדה.`,
+      ja: (n) => `${n}件の投票記録が、委員会決定に対する各党の投票方法を示しています。`,
+      ko: (n) => `${n}건의 투표 기록이 위원회 결정에 대한 각 정당의 투표 방식을 보여줍니다.`,
+      zh: (n) => `${n}条投票记录显示各党派对委员会决定的投票情况。`,
+    };
+    const votingHeader = votingSectionHeaders[lang as string] ?? 'Voting Results';
+    const votingCountFn = votingCountTemplates[lang as string];
+    const votingCountText = votingCountFn
+      ? votingCountFn(votes.length)
+      : `${votes.length} voting records show how parties voted on committee decisions this period.`;
+    content += `\n    <h2>${escapeHtml(votingHeader)}</h2>\n`;
+    content += `    <p>${escapeHtml(votingCountText)}</p>\n`;
+  }
+
+  // ── Optional: Committee Debate section ───────────────────────────────────
+  const speeches = (data.speeches ?? []) as unknown[];
+  if (speeches.length > 0) {
+    const debateSectionHeaders: Record<string, string> = {
+      sv: 'Utskottsdebatt', da: 'Udvalgets debat', no: 'Komitédebatt',
+      fi: 'Valiokunnan keskustelu', de: 'Ausschussdebatte', fr: 'Débat en commission',
+      es: 'Debate en comisión', nl: 'Commissiedebat', ar: 'نقاش اللجنة',
+      he: 'דיון בוועדה', ja: '委員会討論', ko: '위원회 토론', zh: '委员会讨论',
+    };
+    const debateCountTemplates: Record<string, (n: number) => string> = {
+      sv: (n) => `${n} anföranden i kammaren belyser de viktigaste argumenten och partipositionerna i dessa frågor.`,
+      da: (n) => `${n} parlamentariske taler belyser nøgleargumenter og partipositioner.`,
+      no: (n) => `${n} parlamentariske innlegg belyser nøkkelargumenter og partiposisjoner.`,
+      fi: (n) => `${n} parlamentaarista puheenvuoroa valaisee keskeisiä argumentteja ja puolueiden kantoja.`,
+      de: (n) => `${n} parlamentarische Reden beleuchten Hauptargumente und Parteipositionen.`,
+      fr: (n) => `${n} discours parlementaires éclairent les arguments clés et les positions des partis.`,
+      es: (n) => `${n} discursos parlamentarios iluminan los principales argumentos y posiciones de los partidos.`,
+      nl: (n) => `${n} parlementaire toespraken belichten de belangrijkste argumenten en partijposities.`,
+      ar: (n) => `${n} خطاب برلماني يسلط الضوء على الحجج الرئيسية ومواقف الأحزاب.`,
+      he: (n) => `${n} נאומים פרלמנטריים מאירים טיעונים מרכזיים ועמדות מפלגות.`,
+      ja: (n) => `${n}件の議会演説が主要な論点と各党の立場を明らかにしています。`,
+      ko: (n) => `${n}건의 의회 연설이 주요 논점과 각 정당의 입장을 보여줍니다.`,
+      zh: (n) => `${n}篇议会演讲揭示了主要论点和各党派立场。`,
+    };
+    const debateHeader = debateSectionHeaders[lang as string] ?? 'Committee Debate';
+    const debateCountFn = debateCountTemplates[lang as string];
+    const debateCountText = debateCountFn
+      ? debateCountFn(speeches.length)
+      : `${speeches.length} parliamentary speeches highlight key arguments and party positions on these issues.`;
+    content += `\n    <h2>${escapeHtml(debateHeader)}</h2>\n`;
+    content += `    <p>${escapeHtml(debateCountText)}</p>\n`;
+  }
+
+  // ── Optional: Government Bill Linkage section ─────────────────────────────
+  const propositions = (data.propositions ?? []) as RawDocument[];
+  if (propositions.length > 0) {
+    const billSectionHeaders: Record<string, string> = {
+      sv: 'Koppling till regeringspropositioner', da: 'Tilknytning til regeringsforslag',
+      no: 'Tilknytning til regjeringsproposisjoner', fi: 'Yhteys hallituksen esityksiin',
+      de: 'Verknüpfung mit Regierungsvorlagen', fr: 'Lien avec les projets de loi gouvernementaux',
+      es: 'Vinculación con proyectos de ley gubernamentales', nl: 'Koppeling aan regeringsvoorstellen',
+      ar: 'الصلة بمشاريع قوانين الحكومة', he: 'קישור להצעות חוק ממשלתיות',
+      ja: '政府法案との連携', ko: '정부 법안과의 연계', zh: '与政府法案的关联',
+    };
+    const billCountTemplates: Record<string, (n: number) => string> = {
+      sv: (n) => `${n} regeringspropositioner är kopplade till dessa betänkanden och visar lagstiftningskedjan.`,
+      da: (n) => `${n} regeringsforslag er knyttet til disse betænkninger og viser den lovgivningsmæssige kæde.`,
+      no: (n) => `${n} regjeringsproposisjoner er knyttet til disse innstillingene og viser den legislative kjeden.`,
+      fi: (n) => `${n} hallituksen esitystä liittyy näihin mietintöihin ja osoittaa lainsäädäntöketjun.`,
+      de: (n) => `${n} Regierungsvorlagen sind mit diesen Berichten verknüpft und zeigen die Gesetzgebungskette.`,
+      fr: (n) => `${n} projets de loi gouvernementaux sont liés à ces rapports, montrant la chaîne législative.`,
+      es: (n) => `${n} proyectos de ley gubernamentales están vinculados a estos informes, mostrando la cadena legislativa.`,
+      nl: (n) => `${n} regeringsvoorstellen zijn gekoppeld aan deze rapporten en tonen de wetgevingsketen.`,
+      ar: (n) => `${n} مشاريع قوانين حكومية مرتبطة بهذه التقارير، مما يُظهر السلسلة التشريعية.`,
+      he: (n) => `${n} הצעות חוק ממשלתיות קשורות לדוחות אלה, ומציגות את השרשרת החקיקתית.`,
+      ja: (n) => `${n}件の政府法案がこれらの報告書に関連しており、立法プロセスの連鎖を示しています。`,
+      ko: (n) => `${n}건의 정부 법안이 이 보고서들과 연계되어 입법 과정의 연결고리를 보여줍니다.`,
+      zh: (n) => `${n}项政府法案与这些报告相关，展示了立法链条。`,
+    };
+    const billHeader = billSectionHeaders[lang as string] ?? 'Government Bill Linkage';
+    const billCountFn = billCountTemplates[lang as string];
+    const billCountText = billCountFn
+      ? billCountFn(propositions.length)
+      : `${propositions.length} government propositions are linked to these reports, tracing the full legislative chain.`;
+    content += `\n    <h2>${escapeHtml(billHeader)}</h2>\n`;
+    content += `    <p>${escapeHtml(billCountText)}</p>\n`;
+    propositions.slice(0, 3).forEach(prop => { // display up to 3 linked propositions
+      if (typeof prop !== 'object' || prop === null) return;
+      const propTitle = escapeHtml((prop as RawDocument).titel || (prop as RawDocument).title || (prop as RawDocument).dokumentnamn || '');
+      if (propTitle) {
+        content += `    <p>→ ${propTitle}</p>\n`;
+      }
+    });
+  }
+
   return content;
 }
 
@@ -649,6 +852,82 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
 
   content += `      </ul>\n    </div>\n`;
 
+  // Display limits for enrichment sections
+  const MAX_DISPLAY_ITEMS = 3;
+  const MAX_SPEECH_PREVIEW_LENGTH = 200;
+
+  // ── Policy Substance section (from search_dokument_fulltext) ─────────────
+  const fullTextResults = data.fullTextResults as Array<Record<string, unknown>> | undefined;
+  if (fullTextResults && fullTextResults.length > 0) {
+    const policySubstanceHeadings: Record<string, string> = {
+      en: 'Policy Substance', sv: 'Politikinnehåll', da: 'Politisk indhold',
+      no: 'Politisk innhold', fi: 'Politiikan sisältö', de: 'Politischer Inhalt',
+      fr: 'Contenu politique', es: 'Contenido de la política', nl: 'Beleidsinhoud',
+      ar: 'مضمون السياسة', he: 'תוכן המדיניות', ja: '政策の内容', ko: '정책 내용', zh: '政策内容',
+    };
+    const psHeading = policySubstanceHeadings[lang as string] ?? policySubstanceHeadings['en'];
+    content += `\n    <h2>${escapeHtml(psHeading)}</h2>\n`;
+    content += `    <div class="policy-substance">\n`;
+    for (const doc of fullTextResults.slice(0, MAX_DISPLAY_ITEMS)) {
+      const docTitle = escapeHtml(String(doc['titel'] ?? doc['title'] ?? ''));
+      const docSummary = escapeHtml(String(doc['summary'] ?? doc['notis'] ?? ''));
+      if (docTitle) {
+        content += `      <div class="fulltext-result"><strong>${docTitle}</strong>`;
+        if (docSummary) content += `<p>${docSummary}</p>`;
+        content += `</div>\n`;
+      }
+    }
+    content += `    </div>\n`;
+  }
+
+  // ── Department Impact section (from analyze_g0v_by_department) ───────────
+  const departmentAnalysis = data.departmentAnalysis as Record<string, unknown> | undefined;
+  const departments = departmentAnalysis
+    ? ((departmentAnalysis['departments'] ?? departmentAnalysis['dokument'] ?? []) as Array<Record<string, unknown>>)
+    : [];
+  if (departments.length > 0) {
+    const departmentImpactHeadings: Record<string, string> = {
+      en: 'Department Impact', sv: 'Departementets påverkan', da: 'Ministerielt ansvar',
+      no: 'Departementspåvirkning', fi: 'Ministeriön vaikutus', de: 'Ressortverantwortung',
+      fr: 'Impact ministériel', es: 'Impacto ministerial', nl: 'Ministeriële impact',
+      ar: 'تأثير الوزارة', he: 'השפעת המשרד', ja: '省庁への影響', ko: '부처 영향', zh: '部门影响',
+    };
+    const diHeading = departmentImpactHeadings[lang as string] ?? departmentImpactHeadings['en'];
+    content += `\n    <h2>${escapeHtml(diHeading)}</h2>\n`;
+    content += `    <div class="department-impact"><ul>\n`;
+    for (const dept of departments.slice(0, MAX_DISPLAY_ITEMS)) {
+      const deptName = escapeHtml(String(dept['departement'] ?? dept['name'] ?? dept['namn'] ?? ''));
+      const deptCount = Number(dept['count'] ?? dept['antal'] ?? 0);
+      if (deptName) {
+        content += `      <li>${deptName}${deptCount > 0 ? ` (${deptCount})` : ''}</li>\n`;
+      }
+    }
+    content += `    </ul></div>\n`;
+  }
+
+  // ── Parliamentary Debate section (from search_anforanden) ─────────────────
+  const speechDebates = data.speechDebates as Array<Record<string, unknown>> | undefined;
+  if (speechDebates && speechDebates.length > 0) {
+    const parliamentaryDebateHeadings: Record<string, string> = {
+      en: 'Parliamentary Debate', sv: 'Parlamentarisk debatt', da: 'Parlamentarisk debat',
+      no: 'Parlamentarisk debatt', fi: 'Parlamentaarinen keskustelu', de: 'Parlamentarische Debatte',
+      fr: 'Débat parlementaire', es: 'Debate parlamentario', nl: 'Parlementair debat',
+      ar: 'النقاش البرلماني', he: 'דיון פרלמנטרי', ja: '議会討論', ko: '의회 토론', zh: '议会辩论',
+    };
+    const pdHeading = parliamentaryDebateHeadings[lang as string] ?? parliamentaryDebateHeadings['en'];
+    content += `\n    <h2>${escapeHtml(pdHeading)}</h2>\n`;
+    content += `    <div class="debate-context">\n`;
+    for (const speech of speechDebates.slice(0, MAX_DISPLAY_ITEMS)) {
+      const speaker = escapeHtml(String(speech['talare'] ?? speech['speaker'] ?? ''));
+      const party = escapeHtml(String(speech['parti'] ?? speech['party'] ?? ''));
+      const text = escapeHtml(String(speech['anforandetext'] ?? speech['text'] ?? '').substring(0, MAX_SPEECH_PREVIEW_LENGTH));
+      if (speaker && text) {
+        content += `      <blockquote><p>${text}…</p><footer>— ${speaker}${party ? ` (${party})` : ''}</footer></blockquote>\n`;
+      }
+    }
+    content += `    </div>\n`;
+  }
+
   return content;
 }
 
@@ -769,6 +1048,24 @@ export function generateMotionsContent(data: ArticleContentData, lang: Language 
           ? detailFn(party, partyMotions.length)
           : `${party}: ${partyMotions.length} motions filed`;
         content += `        <li>${escapeHtml(String(detail))}</li>\n`;
+      }
+    });
+    content += `      </ul>\n    </div>\n`;
+  }
+
+  // Government department engagement section (from analyze_g0v_by_department)
+  const govDeptData = data.govDeptData ?? [];
+  if (govDeptData.length > 0) {
+    content += `\n    <h2>${L(lang, 'govEngagement')}</h2>\n`;
+    content += `    <div class="context-box">\n      <ul>\n`;
+    govDeptData.slice(0, 5).forEach(dept => {
+      const deptName = escapeHtml(String(dept['name'] ?? dept['departement'] ?? dept['department'] ?? ''));
+      const deptCount = dept['count'] ?? dept['total'] ?? dept['document_count'];
+      if (deptName) {
+        const hasDeptCount = deptCount !== null && deptCount !== undefined;
+        content += hasDeptCount
+          ? `        <li><strong>${deptName}</strong> (${escapeHtml(String(deptCount))})</li>\n`
+          : `        <li><strong>${deptName}</strong></li>\n`;
       }
     });
     content += `      </ul>\n    </div>\n`;
@@ -1058,6 +1355,410 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   }
 
   content += `      </ul>\n    </div>\n`;
+
+  return content;
+}
+
+/**
+ * Per-language label maps for the monthly-review-specific sections.
+ * Covers all 14 supported languages.
+ */
+const MONTHLY_LABELS: Readonly<{
+  monthInNumbers: Record<string, string>;
+  partyRankings: Record<string, string>;
+  legislativeEfficiency: Record<string, string>;
+  strategicOutlook: Record<string, string>;
+  totalDocuments: Record<string, string>;
+  reports: Record<string, string>;
+  propositions: Record<string, string>;
+  motions: Record<string, string>;
+  speeches: Record<string, string>;
+  efficiencyRate: Record<string, string>;
+  trendVsPrevMonth: Record<string, string>;
+  trendVs2MonthsAgo: Record<string, string>;
+  activityRank: Record<string, string>;
+  motionsFiled: Record<string, string>;
+  speechesDelivered: Record<string, string>;
+  coalitionStabilityOutlook: Record<string, string>;
+  motionDenialContext: Record<string, string>;
+  insufficientData: Record<string, string>;
+}> = {
+  monthInNumbers: { en: '📊 Month in Numbers', sv: '📊 Månaden i siffror', da: '📊 Måneden i tal', no: '📊 Måneden i tall', fi: '📊 Kuukausi numeroina', de: '📊 Der Monat in Zahlen', fr: '📊 Le mois en chiffres', es: '📊 El mes en cifras', nl: '📊 De maand in cijfers', ar: '📊 الشهر بالأرقام', he: '📊 החודש במספרים', ja: '📊 今月の統計', ko: '📊 이달의 통계', zh: '📊 本月数字' },
+  partyRankings: { en: '🏆 Party Performance Rankings', sv: '🏆 Partiernas prestationsrankning', da: '🏆 Partiernes præstationsrangering', no: '🏆 Partienes prestasjonsranking', fi: '🏆 Puolueiden suoritusranking', de: '🏆 Partei-Leistungsranking', fr: '🏆 Classement des performances des partis', es: '🏆 Clasificación de rendimiento de partidos', nl: '🏆 Partijprestaties ranking', ar: '🏆 تصنيف أداء الأحزاب', he: '🏆 דירוג ביצועי מפלגות', ja: '🏆 政党パフォーマンスランキング', ko: '🏆 정당 성과 순위', zh: '🏆 政党绩效排名' },
+  legislativeEfficiency: { en: '⚖️ Legislative Efficiency', sv: '⚖️ Lagstiftningseffektivitet', da: '⚖️ Lovgivningseffektivitet', no: '⚖️ Lovgivningseffektivitet', fi: '⚖️ Lainsäädäntötehokkuus', de: '⚖️ Gesetzgebungseffizienz', fr: '⚖️ Efficacité législative', es: '⚖️ Eficiencia legislativa', nl: '⚖️ Wetgevingsefficiëntie', ar: '⚖️ الكفاءة التشريعية', he: '⚖️ יעילות חקיקתית', ja: '⚖️ 立法効率', ko: '⚖️ 입법 효율성', zh: '⚖️ 立法效率' },
+  strategicOutlook: { en: '🔭 Strategic Outlook', sv: '🔭 Strategisk utsikt', da: '🔭 Strategisk udsigt', no: '🔭 Strategisk utsikt', fi: '🔭 Strateginen näkymä', de: '🔭 Strategischer Ausblick', fr: '🔭 Perspectives stratégiques', es: '🔭 Perspectiva estratégica', nl: '🔭 Strategisch vooruitzicht', ar: '🔭 التوقعات الاستراتيجية', he: '🔭 סיכוי אסטרטגי', ja: '🔭 戦略的展望', ko: '🔭 전략적 전망', zh: '🔭 战略展望' },
+  totalDocuments: { en: 'Total documents', sv: 'Totalt antal dokument', da: 'Dokumenter i alt', no: 'Totalt antall dokumenter', fi: 'Asiakirjoja yhteensä', de: 'Dokumente gesamt', fr: 'Total des documents', es: 'Total de documentos', nl: 'Totaal documenten', ar: 'إجمالي الوثائق', he: 'סך כל המסמכים', ja: '総文書数', ko: '총 문서 수', zh: '文件总数' },
+  reports: { en: 'Committee reports', sv: 'Betänkanden', da: 'Betænkninger', no: 'Innstillinger', fi: 'Mietinnöt', de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comité', nl: 'Commissierapporten', ar: 'تقارير اللجان', he: 'דוחות ועדה', ja: '委員会報告', ko: '위원회 보고서', zh: '委员会报告' },
+  propositions: { en: 'Government propositions', sv: 'Propositioner', da: 'Lovforslag', no: 'Proposisjoner', fi: 'Hallituksen esitykset', de: 'Regierungsvorlagen', fr: 'Propositions gouvernementales', es: 'Proposiciones gubernamentales', nl: 'Regeringsvoorstellen', ar: 'المقترحات الحكومية', he: 'הצעות ממשלה', ja: '政府提案', ko: '정부 법안', zh: '政府提案' },
+  motions: { en: 'Opposition motions', sv: 'Motioner', da: 'Forslag', no: 'Forslag', fi: 'Aloitteet', de: 'Anträge', fr: "Motions de l'opposition", es: 'Mociones de la oposición', nl: 'Oppositiemoties', ar: 'مقترحات المعارضة', he: 'הצעות האופוזיציה', ja: '反対動議', ko: '야당 동의', zh: '反对党动议' },
+  speeches: { en: 'Chamber speeches', sv: 'Anföranden', da: 'Taler', no: 'Taler', fi: 'Puheet', de: 'Parlamentsreden', fr: 'Discours parlementaires', es: 'Discursos parlamentarios', nl: 'Parlementaire toespraken', ar: 'الخطب البرلمانية', he: 'נאומי המליאה', ja: '議会演説', ko: '의회 연설', zh: '议会演讲' },
+  efficiencyRate: { en: 'Committee reports per proposition', sv: 'Betänkanden per proposition', da: 'Betænkninger per lovforslag', no: 'Innstillinger per proposisjon', fi: 'Mietinnöt per esitys', de: 'Ausschussberichte pro Vorlage', fr: 'Rapports par proposition', es: 'Informes por proposición', nl: 'Commissierapporten per voorstel', ar: 'تقارير اللجان لكل اقتراح', he: 'דוחות ועדה לכל הצעה', ja: '提案当たり委員会報告数', ko: '제안당 위원회 보고서', zh: '每项提案的委员会报告数' },
+  trendVsPrevMonth: { en: 'vs. previous month', sv: 'jmf föregående månad', da: 'ift. forrige måned', no: 'vs. forrige måned', fi: 'vs. edellinen kuukausi', de: 'vs. Vormonat', fr: 'vs. mois précédent', es: 'vs. mes anterior', nl: 'vs. vorige maand', ar: 'مقارنة بالشهر السابق', he: 'לעומת החודש הקודם', ja: '前月比', ko: '전월 대비', zh: '对比上个月' },
+  trendVs2MonthsAgo: { en: '3-month rolling avg', sv: '3 månaders glidande snitt', da: '3-måneders glidende gennemsnit', no: '3 måneders glidende gjennomsnitt', fi: '3 kuukauden liukuva keskiarvo', de: '3-Monats-Gleitdurchschnitt', fr: 'Moyenne mobile sur 3 mois', es: 'Promedio móvil de 3 meses', nl: '3-maands voortschrijdend gemiddelde', ar: 'متوسط متحرك 3 أشهر', he: 'ממוצע נע 3 חודשים', ja: '3ヶ月移動平均', ko: '3개월 이동 평균', zh: '3个月滚动平均' },
+  activityRank: { en: 'Activity rank', sv: 'Aktivitetsrankning', da: 'Aktivitetsrangering', no: 'Aktivitetsrangering', fi: 'Aktiivisuusranking', de: 'Aktivitätsrang', fr: "Rang d'activité", es: 'Rango de actividad', nl: 'Activiteitsrang', ar: 'تصنيف النشاط', he: 'דירוג פעילות', ja: '活動ランク', ko: '활동 순위', zh: '活动排名' },
+  motionsFiled: { en: 'motions', sv: 'motioner', da: 'forslag', no: 'forslag', fi: 'aloitetta', de: 'Anträge', fr: 'motions', es: 'mociones', nl: 'moties', ar: 'مقترحات', he: 'הצעות', ja: '動議', ko: '동의', zh: '动议' },
+  speechesDelivered: { en: 'speeches', sv: 'anföranden', da: 'taler', no: 'taler', fi: 'puhetta', de: 'Reden', fr: 'discours', es: 'discursos', nl: 'toespraken', ar: 'خطب', he: 'נאומים', ja: '演説', ko: '연설', zh: '演讲' },
+  coalitionStabilityOutlook: { en: 'Coalition stability outlook', sv: 'Koalitionsstabilitetsutsikt', da: 'Koalitionsstabilitetsudsigt', no: 'Koalisjonsstabilitetsutsikt', fi: 'Koalitiostabiliteettiarvio', de: 'Koalitionsstabilitätsausblick', fr: 'Perspectives de stabilité de la coalition', es: 'Perspectiva de estabilidad de la coalición', nl: 'Coalitie stabiliteitsoverzicht', ar: 'توقعات استقرار الائتلاف', he: 'תחזית יציבות הקואליציה', ja: '連立安定性の展望', ko: '연립 안정성 전망', zh: '联合政府稳定性展望' },
+  motionDenialContext: { en: 'Opposition motions historically pass at a low rate — parliamentary majority dynamics shape legislative outcomes.', sv: 'Oppositionsmotioner har historiskt sett låg bifallsfrekvens — parlamentariska majoritetsförhållanden styr lagstiftningsutfallen.', da: 'Oppositionsforslag har historisk set lav vedtagelsesfrekvens — parlamentariske flertalsdynamikker former lovgivningsresultaterne.', no: 'Opposisjonsforslag har historisk lav vedtaksrate — parlamentariske flertallsdynamikker former lovgivningsutfall.', fi: 'Oppositioaloitteilla on historiallisesti matala hyväksymisaste — parlamentin enemmistödynamiikka muokkaa lainsäädäntötuloksia.', de: 'Oppositionsanträge haben historisch geringe Erfolgsquoten — Mehrheitsverhältnisse im Parlament prägen die Gesetzgebungsergebnisse.', fr: "Les motions de l'opposition ont historiquement un faible taux d'adoption — la dynamique des majorités parlementaires façonne les résultats législatifs.", es: 'Las mociones de la oposición tienen históricamente bajas tasas de aprobación — la dinámica de la mayoría parlamentaria da forma a los resultados legislativos.', nl: 'Oppositiemoties hebben historisch gezien lage doorvoerpercentages — meerderheidsparlementsynamiek bepaalt wetgevingsresultaten.', ar: 'تتمتع مقترحات المعارضة تاريخياً بمعدلات مرور منخفضة — تشكّل ديناميكيات أغلبية البرلمان نتائج التشريع.', he: 'להצעות האופוזיציה יש היסטורית שיעורי מעבר נמוכים — דינמיקת הרוב הפרלמנטרית מעצבת תוצאות חקיקה.', ja: '野党動議は歴史的に低い通過率を持つ — 議会の多数決ダイナミクスが立法結果を形成する。', ko: '야당 동의는 역사적으로 낮은 통과율을 보임 — 의회 다수결 역학이 입법 결과를 형성함.', zh: '反对党动议历史上通过率较低——议会多数动态决定立法结果。' },
+  insufficientData: { en: 'Insufficient party activity data for this period.', sv: 'Otillräckliga partiaktivitetsdata för denna period.', da: 'Utilstrækkelige partiaktivitetsdata for denne periode.', no: 'Utilstrekkelige partiaktivitetsdata for denne perioden.', fi: 'Puoluetoimintatiedot ovat riittämättömät tälle ajanjaksolle.', de: 'Unzureichende Parteiak­tivitätsdaten für diesen Zeitraum.', fr: "Données d'activité des partis insuffisantes pour cette période.", es: 'Datos de actividad de partido insuficientes para este período.', nl: 'Onvoldoende partijactiviteitsgegevens voor deze periode.', ar: 'بيانات نشاط الحزب غير كافية لهذه الفترة.', he: 'נתוני פעילות מפלגתית לא מספיקים לתקופה זו.', ja: 'この期間の政党活動データが不十分です。', ko: '이 기간에 대한 정당 활동 데이터가 불충분합니다.', zh: '本期政党活动数据不足。' },
+};
+
+/** Return the label for a language key, falling back to English. */
+function ml(lang: Language | string, key: keyof typeof MONTHLY_LABELS): string {
+  const map = MONTHLY_LABELS[key] as Record<string, string>;
+  return map[lang as string] ?? map['en'] ?? key;
+}
+
+/**
+ * Generate the "Month in Numbers" statistical summary section.
+ * Renders document type counts, speech count, and month-over-month trend.
+ */
+function generateMonthInNumbers(metrics: MonthlyMetrics, lang: Language | string): string {
+  const prevDiff = metrics.totalDocuments - metrics.previousMonthDocCount;
+  const prevSign = prevDiff > 0 ? '+' : '';
+  const availableMonthCounts = [
+    metrics.totalDocuments,
+    metrics.previousMonthDocCount,
+    metrics.twoMonthsAgoDocCount,
+  ].filter(count => count > 0);
+  const rollingAvg = availableMonthCounts.length > 0
+    ? Math.round(availableMonthCounts.reduce((a, b) => a + b, 0) / availableMonthCounts.length)
+    : metrics.totalDocuments;
+
+  let html = `\n    <h2>${escapeHtml(ml(lang, 'monthInNumbers'))}</h2>\n`;
+  html += `    <div class="context-box">\n      <ul>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'totalDocuments'))}:</strong> ${escapeHtml(String(metrics.totalDocuments))}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'reports'))}:</strong> ${escapeHtml(String(metrics.reportCount))}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'propositions'))}:</strong> ${escapeHtml(String(metrics.propositionCount))}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'motions'))}:</strong> ${escapeHtml(String(metrics.motionCount))}</li>\n`;
+  html += `        <li><strong>${escapeHtml(ml(lang, 'speeches'))}:</strong> ${escapeHtml(String(metrics.speechCount))}</li>\n`;
+  if (metrics.previousMonthDocCount > 0) {
+    html += `        <li><em>${escapeHtml(ml(lang, 'trendVsPrevMonth'))}:</em> ${escapeHtml(prevSign)}${escapeHtml(String(prevDiff))}</li>\n`;
+  }
+  if (metrics.twoMonthsAgoDocCount > 0 || metrics.previousMonthDocCount > 0) {
+    html += `        <li><em>${escapeHtml(ml(lang, 'trendVs2MonthsAgo'))}:</em> ${escapeHtml(String(rollingAvg))}</li>\n`;
+  }
+  html += `      </ul>\n    </div>\n`;
+  return html;
+}
+
+/**
+ * Generate the "Party Performance Rankings" section.
+ * Ranks parties by combined legislative and debate activity.
+ */
+function generatePartyRankings(metrics: MonthlyMetrics, lang: Language | string): string {
+  let html = `\n    <h2>${escapeHtml(ml(lang, 'partyRankings'))}</h2>\n`;
+
+  if (!metrics.partyRankings || metrics.partyRankings.length === 0) {
+    html += `    <div class="context-box">\n`;
+    html += `      <p>${escapeHtml(ml(lang, 'insufficientData'))}</p>\n`;
+    html += `    </div>\n`;
+    return html;
+  }
+
+  html += `    <div class="context-box">\n      <ol>\n`;
+  // Show top 8 parties — matches the 8 Swedish parliamentary parties and keeps the list scannable
+  metrics.partyRankings.slice(0, 8).forEach((entry, idx) => {
+    const motionLabel = ml(lang, 'motionsFiled');
+    const speechLabel = ml(lang, 'speechesDelivered');
+    const rankLabel = ml(lang, 'activityRank');
+    html += `        <li><strong>${escapeHtml(entry.party)}</strong> — `;
+    html += `${escapeHtml(String(entry.motionCount))} ${escapeHtml(motionLabel)}, `;
+    html += `${escapeHtml(String(entry.speechCount))} ${escapeHtml(speechLabel)}`;
+    if (idx === 0) html += ` (${escapeHtml(rankLabel)} #1)`;
+    html += `</li>\n`;
+  });
+  html += `      </ol>\n    </div>\n`;
+  return html;
+}
+
+/**
+ * Generate the "Legislative Efficiency" metrics section.
+ * Shows committee throughput rate and opposition motion context.
+ */
+function generateLegislativeEfficiency(metrics: MonthlyMetrics, lang: Language | string): string {
+  let html = `\n    <h2>${escapeHtml(ml(lang, 'legislativeEfficiency'))}</h2>\n`;
+  html += `    <div class="context-box">\n      <ul>\n`;
+
+  if (metrics.propositionCount > 0) {
+    const ratio = metrics.legislativeEfficiencyRate.toFixed(2);
+    html += `        <li><strong>${escapeHtml(ml(lang, 'efficiencyRate'))}:</strong> ${escapeHtml(ratio)} (${escapeHtml(String(metrics.reportCount))} / ${escapeHtml(String(metrics.propositionCount))})</li>\n`;
+  }
+
+  html += `        <li><small>${escapeHtml(ml(lang, 'motionDenialContext'))}</small></li>\n`;
+  html += `      </ul>\n    </div>\n`;
+  return html;
+}
+
+/**
+ * Generate the "Strategic Outlook" section.
+ * Connects current-month trends to coalition stability and upcoming dynamics.
+ */
+function generateStrategicOutlook(metrics: MonthlyMetrics, data: ArticleContentData, lang: Language | string): string {
+  const cia = data.ciaContext;
+  let html = `\n    <h2>${escapeHtml(ml(lang, 'strategicOutlook'))}</h2>\n`;
+  html += `    <div class="context-box">\n      <ul>\n`;
+
+  // Activity trajectory based on month-over-month comparison
+  if (metrics.previousMonthDocCount > 0) {
+    const isIncreasing = metrics.totalDocuments > metrics.previousMonthDocCount;
+    const trajectoryTemplates: Record<string, (inc: boolean) => string> = {
+      en: inc => inc ? 'Legislative activity is accelerating — document volume is up month-over-month.' : 'Legislative activity is decelerating — document volume is down month-over-month.',
+      sv: inc => inc ? 'Riksdagsaktiviteten accelererar — dokumentvolymen ökar månad för månad.' : 'Riksdagsaktiviteten avtar — dokumentvolymen minskar månad för månad.',
+      da: inc => inc ? 'Den lovgivende aktivitet accelererer — dokumentmængden stiger måned for måned.' : 'Den lovgivende aktivitet aftager — dokumentmængden falder måned for måned.',
+      no: inc => inc ? 'Den lovgivende aktiviteten akselererer — dokumentvolumet øker måned for måned.' : 'Den lovgivende aktiviteten avtar — dokumentvolumet synker måned for måned.',
+      fi: inc => inc ? 'Lainsäädäntöaktiivisuus kiihtyy — asiakirjojen määrä kasvaa kuukaudesta toiseen.' : 'Lainsäädäntöaktiivisuus hidastuu — asiakirjojen määrä laskee kuukaudesta toiseen.',
+      de: inc => inc ? 'Die Gesetzgebungsaktivität nimmt zu — das Dokumentenvolumen steigt von Monat zu Monat.' : 'Die Gesetzgebungsaktivität nimmt ab — das Dokumentenvolumen sinkt von Monat zu Monat.',
+      fr: inc => inc ? "L'activité législative s'accélère — le volume documentaire augmente d'un mois sur l'autre." : "L'activité législative ralentit — le volume documentaire diminue d'un mois sur l'autre.",
+      es: inc => inc ? 'La actividad legislativa está acelerando — el volumen de documentos aumenta mes a mes.' : 'La actividad legislativa está desacelerando — el volumen de documentos disminuye mes a mes.',
+      nl: inc => inc ? 'De wetgevende activiteit neemt toe — het documentvolume stijgt maand over maand.' : 'De wetgevende activiteit neemt af — het documentvolume daalt maand over maand.',
+      ar: inc => inc ? 'النشاط التشريعي يتسارع — حجم الوثائق يزداد شهراً بعد شهر.' : 'النشاط التشريعي يتباطأ — حجم الوثائق يتراجع شهراً بعد شهر.',
+      he: inc => inc ? 'הפעילות החקיקתית מתאיצה — נפח המסמכים עולה מחודש לחודש.' : 'הפעילות החקיקתית מואטת — נפח המסמכים יורד מחודש לחודש.',
+      ja: inc => inc ? '立法活動が加速しています — 文書量が前月比で増加しています。' : '立法活動が減速しています — 文書量が前月比で減少しています。',
+      ko: inc => inc ? '입법 활동이 가속화되고 있습니다 — 문서량이 전월 대비 증가하고 있습니다.' : '입법 활동이 감속되고 있습니다 — 문서량이 전월 대비 감소하고 있습니다.',
+      zh: inc => inc ? '立法活动正在加速——文件数量环比增加。' : '立法活动正在减速——文件数量环比减少。',
+    };
+    const tpl = trajectoryTemplates[lang as string];
+    const trajectoryText = tpl ? tpl(isIncreasing) : (trajectoryTemplates['en'] ?? (inc => inc ? 'Legislative activity is accelerating.' : 'Legislative activity is decelerating.'))(isIncreasing);
+    html += `        <li>${escapeHtml(trajectoryText)}</li>\n`;
+  }
+
+  // Coalition stability signal from CIA context
+  if (cia) {
+    const stabilityLabel = ml(lang, 'coalitionStabilityOutlook');
+    const stabilityScore = cia.coalitionStability.stabilityScore;
+    const riskLevel = cia.coalitionStability.riskLevel;
+    html += `        <li><strong>${escapeHtml(stabilityLabel)}:</strong> ${escapeHtml(String(stabilityScore))}/100 (${escapeHtml(riskLevel)})</li>\n`;
+  }
+
+  html += `      </ul>\n    </div>\n`;
+  return html;
+}
+
+/**
+ * Generate a rich monthly review article with "Month in Numbers", party rankings,
+ * legislative efficiency metrics, and a strategic outlook section.
+ * Falls back to generic content when monthlyMetrics is absent.
+ */
+export function generateMonthlyReviewContent(data: ArticleContentData, lang: Language | string): string {
+  // Base document analysis (same as weekly review / generic)
+  let content = generateGenericContent(data, lang);
+
+  const metrics = data.monthlyMetrics;
+  if (!metrics) return content;
+
+  // Append monthly-specific sections
+  content += generateMonthInNumbers(metrics, lang);
+  content += generatePartyRankings(metrics, lang);
+  content += generateLegislativeEfficiency(metrics, lang);
+  content += generateStrategicOutlook(metrics, data, lang);
+
+  return content;
+}
+
+/**
+ * Generate Month-Ahead article content with strategic legislative forecasting.
+ * Extends week-ahead calendar coverage with committee pipeline tracking,
+ * propositions in pipeline, and motion trend analysis.
+ */
+export function generateMonthAheadContent(data: ArticleContentData, lang: Language | string): string {
+  // Base calendar/event content (handles events + upcoming documents)
+  let content = generateWeekAheadContent(data as WeekAheadData, lang);
+
+  const propositions = data.propositions ?? [];
+  const reports = data.reports ?? [];
+  const motions = data.motions ?? [];
+
+  // ── Strategic Legislative Outlook ────────────────────────────────────────
+  if (propositions.length > 0) {
+    const outlookLabel = lang === 'sv' ? 'Strategisk lagstiftningsutsikt'
+      : lang === 'de' ? 'Strategischer Gesetzgebungsausblick'
+      : lang === 'fr' ? 'Perspectives législatives stratégiques'
+      : lang === 'es' ? 'Perspectiva legislativa estratégica'
+      : lang === 'da' ? 'Strategisk lovgivningsmæssigt udsyn'
+      : lang === 'no' ? 'Strategisk lovgivningsmessig utsikt'
+      : lang === 'fi' ? 'Strateginen lainsäädäntönäkymä'
+      : lang === 'nl' ? 'Strategisch wetgevingsoverzicht'
+      : lang === 'ar' ? 'التوقعات التشريعية الاستراتيجية'
+      : lang === 'he' ? 'תחזית חקיקתית אסטרטגית'
+      : lang === 'ja' ? '戦略的立法見通し'
+      : lang === 'ko' ? '전략적 입법 전망'
+      : lang === 'zh' ? '战略立法展望'
+      : 'Strategic Legislative Outlook';
+    content += `\n    <h2>${outlookLabel}</h2>\n`;
+
+    // Lede: how many propositions are in the pipeline
+    const propLedeTemplates: Record<string, (n: number) => string> = {
+      sv: n => `${n} propositioner befinner sig i den lagstiftande processen denna månad.`,
+      da: n => `${n} lovforslag befinder sig i den lovgivningsmæssige proces denne måned.`,
+      no: n => `${n} proposisjoner er i den lovgivningsmessige prosessen denne måneden.`,
+      fi: n => `${n} hallituksen esitystä on lainsäädäntöprosessissa tässä kuussa.`,
+      de: n => `${n} Regierungsvorlagen befinden sich diesen Monat im Gesetzgebungsprozess.`,
+      fr: n => `${n} propositions gouvernementales sont en cours de traitement législatif ce mois-ci.`,
+      es: n => `${n} proposiciones gubernamentales se encuentran en el proceso legislativo este mes.`,
+      nl: n => `${n} regeringsvoorstellen bevinden zich deze maand in het wetgevingsproces.`,
+      ar: n => `${n} مقترحات حكومية في المسار التشريعي هذا الشهر.`,
+      he: n => `${n} הצעות ממשלה נמצאות בתהליך החקיקתי החודש.`,
+      ja: n => `今月は${n}件の政府提案が立法プロセスにあります。`,
+      ko: n => `이달 ${n}건의 정부 법안이 입법 프로세스에 있습니다.`,
+      zh: n => `本月${n}项政府提案处于立法审议过程中。`,
+    };
+    const propLedeTpl = propLedeTemplates[lang as string];
+    const propLede = propLedeTpl
+      ? propLedeTpl(propositions.length)
+      : `${propositions.length} government propositions are in the legislative pipeline this month.`;
+    content += `    <p class="article-lede">${escapeHtml(propLede)}</p>\n`;
+
+    propositions.slice(0, 8).forEach(prop => {  // 8 propositions: readable summary without overwhelming
+      const rec = prop as Record<string, string>;
+      const titleText = rec['titel'] || rec['title'] || rec['doktyp'] || 'Proposition';
+      const escapedTitle = escapeHtml(titleText);
+      const titleHtml = (rec['titel'] && !rec['title']) ? svSpan(escapedTitle, lang) : escapedTitle;
+      const significance = generatePolicySignificance(prop, lang);
+      const dokId = rec['dok_id'] ?? rec['id'] ?? '';
+      const urlBase = 'https://riksdagen.se/sv/dokument-och-lagar/dokument/';
+      const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : '';
+      content += `    <div class="document-entry">\n`;
+      content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+      if (significance) {
+        content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
+      }
+      content += `    </div>\n`;
+    });
+  }
+
+  // ── Committee Pipeline ────────────────────────────────────────────────────
+  if (reports.length > 0) {
+    const pipelineLabel = lang === 'sv' ? 'Utskottspipeline'
+      : lang === 'de' ? 'Ausschusspipeline'
+      : lang === 'fr' ? 'Pipeline des commissions'
+      : lang === 'es' ? 'Proceso en comité'
+      : lang === 'da' ? 'Udvalgspipeline'
+      : lang === 'no' ? 'Komitépipeline'
+      : lang === 'fi' ? 'Valiokuntaputkisto'
+      : lang === 'nl' ? 'Commissiepijplijn'
+      : lang === 'ar' ? 'مسار اللجان'
+      : lang === 'he' ? 'צינור הוועדות'
+      : lang === 'ja' ? '委員会パイプライン'
+      : lang === 'ko' ? '위원회 파이프라인'
+      : lang === 'zh' ? '委员会审议流程'
+      : 'Committee Pipeline';
+    content += `\n    <h2>${pipelineLabel}</h2>\n`;
+
+    // Group reports by committee
+    const byCommittee: Record<string, RawDocument[]> = {};
+    reports.forEach(r => {
+      const rec2 = r as Record<string, string>;
+      const key = rec2.organ ?? rec2.committee ?? 'unknown';
+      if (!byCommittee[key]) byCommittee[key] = [];
+      byCommittee[key].push(r);
+    });
+
+    Object.entries(byCommittee).slice(0, 5).forEach(([committeeCode, committeeReports]) => { // up to 5 committees
+      const committeeName = getCommitteeName(committeeCode, lang);
+      content += `    <h3>${escapeHtml(committeeName)}</h3>\n`;
+      committeeReports.slice(0, 3).forEach(report => {  // 3 reports per committee keeps the section scannable
+        const rec = report as Record<string, string>;
+        const titleText = rec['titel'] || rec['title'] || 'Report';
+        const escapedTitle = escapeHtml(titleText);
+        const titleHtml = (rec['titel'] && !rec['title']) ? svSpan(escapedTitle, lang) : escapedTitle;
+        const dokId = rec['dok_id'] ?? '';
+        const urlBase = 'https://riksdagen.se/sv/dokument-och-lagar/dokument/';
+        const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : '';
+        content += `    <div class="document-entry">\n`;
+        content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+        content += `    </div>\n`;
+      });
+    });
+  }
+
+  // ── Policy Trends ─────────────────────────────────────────────────────────
+  if (motions.length > 0) {
+    const trendsLabel = lang === 'sv' ? 'Politiska trender'
+      : lang === 'de' ? 'Politische Trends'
+      : lang === 'fr' ? 'Tendances politiques'
+      : lang === 'es' ? 'Tendencias políticas'
+      : lang === 'da' ? 'Politiske tendenser'
+      : lang === 'no' ? 'Politiske trender'
+      : lang === 'fi' ? 'Poliittiset trendit'
+      : lang === 'nl' ? 'Politieke trends'
+      : lang === 'ar' ? 'الاتجاهات السياسية'
+      : lang === 'he' ? 'מגמות מדיניות'
+      : lang === 'ja' ? '政策トレンド'
+      : lang === 'ko' ? '정책 트렌드'
+      : lang === 'zh' ? '政策趋势'
+      : 'Policy Trends';
+    content += `\n    <h2>${trendsLabel}</h2>\n`;
+
+    // Identify active policy domains from motions
+    const allTrendDomains = new Set<string>();
+    motions.forEach(m => detectPolicyDomains(m, lang).forEach(d => allTrendDomains.add(d)));
+
+    // Party activity breakdown
+    const byPartyTrend: Record<string, number> = {};
+    motions.forEach(m => {
+      const party = normalizePartyKey((m as Record<string, string>).parti);
+      byPartyTrend[party] = (byPartyTrend[party] || 0) + 1;
+    });
+
+    if (allTrendDomains.size > 0) {
+      const domainList = Array.from(allTrendDomains).slice(0, 5).join(', ');  // top 5 domains for readability
+      const domainIntroTemplates: Record<string, (d: string, n: number) => string> = {
+        sv: (d, n) => `${n} motioner identifierar aktiva policydomäner: ${d}.`,
+        da: (d, n) => `${n} motioner identificerer aktive politikdomæner: ${d}.`,
+        no: (d, n) => `${n} forslag identifiserer aktive politikkdomener: ${d}.`,
+        fi: (d, n) => `${n} aloitetta tunnistaa aktiiviset politiikka-alueet: ${d}.`,
+        de: (d, n) => `${n} Anträge identifizieren aktive Politikbereiche: ${d}.`,
+        fr: (d, n) => `${n} motions identifient des domaines politiques actifs: ${d}.`,
+        es: (d, n) => `${n} mociones identifican áreas de política activas: ${d}.`,
+        nl: (d, n) => `${n} moties identificeren actieve beleidsgebieden: ${d}.`,
+        ar: (d, n) => `${n} اقتراحات تُحدد مجالات السياسة النشطة: ${d}.`,
+        he: (d, n) => `${n} הצעות מזהות תחומי מדיניות פעילים: ${d}.`,
+        ja: (d, n) => `${n}件の動議が活発な政策領域を特定しています: ${d}。`,
+        ko: (d, n) => `${n}건의 동의가 활발한 정책 분야를 식별합니다: ${d}.`,
+        zh: (d, n) => `${n}项动议确定了活跃的政策领域：${d}。`,
+      };
+      const domTpl = domainIntroTemplates[lang as string];
+      const domainIntroRaw = domTpl
+        ? domTpl(domainList, motions.length)
+        : `${motions.length} motions identify active policy domains: ${domainList}.`;
+      const domainIntro = escapeHtml(domainIntroRaw);
+      content += `    <p>${domainIntro}</p>\n`;
+    }
+
+    // Top parties by motion volume
+    const topParties = Object.entries(byPartyTrend)
+      .filter(([k]) => k !== 'unknown' && k !== 'other')
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);  // 4 parties: covers the typical Swedish governing+major-opposition parties
+
+    if (topParties.length > 0) {
+      content += `    <ul>\n`;
+      topParties.forEach(([party, count]) => {
+        const partyMotionTemplates: Record<string, (p: string, n: number) => string> = {
+          sv: (p, n) => `${p}: ${n} motioner inlämnade`,
+          da: (p, n) => `${p}: ${n} motioner indgivet`,
+          no: (p, n) => `${p}: ${n} forslag innsendt`,
+          fi: (p, n) => `${p}: ${n} aloitetta jätetty`,
+          de: (p, n) => `${p}: ${n} Anträge eingereicht`,
+          fr: (p, n) => `${p}: ${n} motions déposées`,
+          es: (p, n) => `${p}: ${n} mociones presentadas`,
+          nl: (p, n) => `${p}: ${n} moties ingediend`,
+          ar: (p, n) => `${p}: ${n} اقتراحات مقدمة`,
+          he: (p, n) => `${p}: ${n} הצעות הוגשו`,
+          ja: (p, n) => `${p}: ${n}件の動議を提出`,
+          ko: (p, n) => `${p}: ${n}건의 동의 제출`,
+          zh: (p, n) => `${p}: ${n}项动议提交`,
+        };
+        const partyTpl = partyMotionTemplates[lang as string];
+        const partyEntry = partyTpl
+          ? partyTpl(escapeHtml(party), count)
+          : `${escapeHtml(party)}: ${count} motions submitted`;
+        content += `      <li>${partyEntry}</li>\n`;
+      });
+      content += `    </ul>\n`;
+    }
+  }
 
   return content;
 }
