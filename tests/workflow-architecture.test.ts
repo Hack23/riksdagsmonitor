@@ -176,6 +176,10 @@ describe('Workflow Architecture', () => {
         content.includes('git add') && content.includes('git commit'),
         `Workflow ${workflowFile} should document git add + git commit before safe PR creation`
       ).toBe(true);
+      expect(
+        content.includes('HOW SAFE PR CREATION WORKS'),
+        `Workflow ${workflowFile} should include the standardized HOW SAFE PR CREATION WORKS header block`
+      ).toBe(true);
     }
   });
 

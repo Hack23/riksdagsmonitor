@@ -149,8 +149,8 @@ Before generating ANY articles, verify MCP connectivity:
 > **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
 
 - ✅ `safeoutputs___create_pull_request` when articles generated
-- ✅ `noop` ONLY if genuinely no upcoming events in next 30 days
-- ❌ NEVER use `noop` as fallback for PR creation failures
+- ✅ `safeoutputs___noop` ONLY if genuinely no upcoming events in next 30 days
+- ❌ NEVER use `safeoutputs___noop` as fallback for PR creation failures
 
 ## MCP Tools
 

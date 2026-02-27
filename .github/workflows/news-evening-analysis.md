@@ -163,8 +163,8 @@ Before generating ANY articles, verify MCP connectivity:
 > **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
 
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` - When analysis articles generated
-- ✅ **ONLY USE `noop` if genuinely insufficient data** (checked riksdag-regering-mcp, found no votes, no debates, no documents, no calendar events for the lookback period)
-- ❌ **NEVER use `noop` as a fallback for PR creation failures**
+- ✅ **ONLY USE `safeoutputs___noop` if genuinely insufficient data** (checked riksdag-regering-mcp, found no votes, no debates, no documents, no calendar events for the lookback period)
+- ❌ **NEVER use `safeoutputs___noop` as a fallback for PR creation failures**
 
 The workflow will **FAIL** if no safe output is generated. This is by design.
 
@@ -945,7 +945,7 @@ Call `safeoutputs___create_pull_request` with:
 
 **If no parliamentary activity was found** (genuinely no data from riksdag-regering-mcp):
 - Call `safeoutputs___noop` with message describing what was checked
-- ❌ NEVER use `noop` if articles were generated — let the workflow FAIL instead
+- ❌ NEVER use `safeoutputs___noop` if articles were generated — let the workflow FAIL instead
 
 **Other safe output tools available:**
 - `safeoutputs___add_comment` — comment on triggering issue/PR

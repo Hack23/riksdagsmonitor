@@ -220,7 +220,7 @@ Sometimes, due to cold start timing, the MCP tools may not appear in your tools 
 
 - ✅ **If significant events found:** Generate articles → `safeoutputs___create_pull_request`
 - ✅ **If genuinely no events:** `safeoutputs___noop` → Workflow succeeds (legitimate)
-- ❌ **NEVER use `noop` as fallback for PR failures**
+- ❌ **NEVER use `safeoutputs___noop` as fallback for PR failures**
 
 **⚠️ FAILURE TO CALL A SAFE OUTPUT TOOL = WORKFLOW FAILURE**
 
@@ -793,7 +793,7 @@ When genuinely no breaking news is detected:
 2. Call `safeoutputs___noop` with message describing what was checked
 3. Workflow succeeds (legitimate quiet period)
 
-**❌ NEVER use `noop` if articles were generated — let the workflow FAIL instead.**
+**❌ NEVER use `safeoutputs___noop` if articles were generated — let the workflow FAIL instead.**
 
 **Other safe output tools:** `safeoutputs___add_comment`, `safeoutputs___missing_tool`, `safeoutputs___missing_data`
 

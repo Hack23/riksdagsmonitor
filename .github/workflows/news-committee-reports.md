@@ -153,8 +153,8 @@ Before generating ANY articles, verify MCP connectivity:
 > **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
 
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` when articles generated
-- ✅ **ONLY USE `noop` if genuinely no new committee reports** from riksdag-regering-mcp
-- ❌ **NEVER use `noop` as fallback for PR creation failures**
+- ✅ **ONLY USE `safeoutputs___noop` if genuinely no new committee reports** from riksdag-regering-mcp
+- ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
 
 ## MCP Tools
 
