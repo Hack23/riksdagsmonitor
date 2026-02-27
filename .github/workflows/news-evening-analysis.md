@@ -175,6 +175,8 @@ Before generating ANY articles, verify MCP connectivity:
 - ✅ **ONLY USE `safeoutputs___noop` if genuinely insufficient data** (checked riksdag-regering-mcp, found no votes, no debates, no documents, no calendar events for the lookback period)
 - ❌ **NEVER use `safeoutputs___noop` as a fallback for PR creation failures**
 
+> **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
+
 The workflow will **FAIL** if no safe output is generated. This is by design.
 
 You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to produce a comprehensive wrap-up of Swedish parliamentary and government activity, written in **The Economist style** with deeper analytical depth than breaking coverage.
@@ -942,6 +944,8 @@ If validation fails, review the error messages, fix the issues, regenerate index
 > 3. Done. **One call. No retries needed. No alternative approaches.**
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API.
+
+> **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 
 Call `safeoutputs___create_pull_request` with:
 ```json

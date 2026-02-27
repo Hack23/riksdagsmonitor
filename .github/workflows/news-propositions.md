@@ -159,6 +159,8 @@ Before generating ANY articles, verify MCP connectivity:
 - ✅ `safeoutputs___noop` ONLY if genuinely no new propositions
 - ❌ NEVER use `safeoutputs___noop` as fallback for PR creation failures
 
+> **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
+
 ## MCP Tools
 
 **ALWAYS call `get_sync_status()` FIRST.**
