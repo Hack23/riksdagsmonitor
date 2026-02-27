@@ -188,6 +188,24 @@ describe('Month-Ahead Article Generation', () => {
       expect(result.success).toBe(true);
       expect(result.files).toBe(0);
     });
+
+    it('should generate article when calendar is empty but pipeline data is present', async () => {
+      mockClientInstance.fetchCalendarEvents.mockResolvedValue([]);
+      mockClientInstance.searchDocuments.mockResolvedValue([]);
+      mockClientInstance.fetchPropositions.mockResolvedValue([
+        { titel: 'Proposition on climate policy', organ: 'MN', parti: 'MP' },
+        { titel: 'Tax reform bill', organ: 'FiU', parti: 'M' }
+      ]);
+
+      const result = await monthAheadModule.generateMonthAhead({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(true);
+      expect(result.files).toBeGreaterThan(0);
+      const enArticle = result.articles.find((a: GeneratedArticle) => a.lang === 'en');
+      expect(enArticle!.html).toContain('Strategic Legislative Outlook');
+    });
   });
 
   describe('Article Structure', () => {

@@ -112,11 +112,13 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
     // Note: month-ahead uses dynamic calculation unlike weekly-review/monthly-review which hardcode
     // '2025/26'. This is intentional: month-ahead must remain accurate across parliamentary years
     // without requiring a code change at each new session boundary.
-    const year = today.getFullYear();
-    const month = today.getMonth(); // 0-11, align with motions.ts pattern
-    const currentRiksmote = month >= 8
-      ? `${year}/${String(year + 1).slice(-2)}`
-      : `${year - 1}/${String(year).slice(-2)}`;
+    // Use endDate (not today) as the session reference so that a late-August run covering the
+    // Sep-1 boundary fetches the new session's pipeline data, not the outgoing session's.
+    const sessionRefYear = endDate.getFullYear();
+    const sessionRefMonth = endDate.getMonth(); // 0-11, align with motions.ts pattern
+    const currentRiksmote = sessionRefMonth >= 8
+      ? `${sessionRefYear}/${String(sessionRefYear + 1).slice(-2)}`
+      : `${sessionRefYear - 1}/${String(sessionRefYear).slice(-2)}`;
 
     console.log(`  🔄 Fetching calendar events ${fromStr} → ${toStr}...`);
     const events = await client.fetchCalendarEvents(fromStr, toStr) as RawCalendarEvent[];
