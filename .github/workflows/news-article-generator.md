@@ -156,6 +156,8 @@ Before generating ANY articles, verify MCP connectivity:
 - ✅ **ONLY USE `safeoutputs___noop` if genuinely no new data** (checked riksdag-regering-mcp, found no committee reports, no propositions, no significant updates, AND force_generation=false)
 - ❌ **NEVER use `safeoutputs___noop` as a fallback for PR creation failures**
 
+> **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
+
 ## Required Reference Materials & Available Skills
 
 Before generating or translating articles, consult these authoritative references:
@@ -1283,6 +1285,8 @@ fi
 > 3. Done. **One call. No retries needed. No alternative approaches.**
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API.
+
+> **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 
 Call `safeoutputs___create_pull_request` with:
 ```json
