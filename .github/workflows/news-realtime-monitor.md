@@ -20,7 +20,7 @@ on:
       languages:
         description: 'Languages to generate (en,sv | nordic | eu-core | all)'
         required: false
-        default: all
+        default: en,sv
 
 permissions:
   contents: read
@@ -117,15 +117,27 @@ echo "Minutes elapsed: $ELAPSED"
 ```
 
 - **Minutes 0–5**: Date check, MCP warm-up with `get_sync_status()`, detect breaking activity
-- **Minutes 5–15**: Query MCP tools, assess significance of detected events
-- **Minutes 15–35**: Generate articles **one language at a time** (see Step 3 for sequential loop)
-- **Minutes 35–40**: Validate and commit all generated articles
-- **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 5–12**: Query MCP tools, assess significance of detected events
+- **Minutes 12–20**: Generate articles **one language at a time** (default: en,sv only — stop at 20 min)
+- **Minutes 20–30**: Validate and commit all generated articles
+- **Minutes 30–35**: Create PR with `safeoutputs___create_pull_request`
 
 **🚨 HARD CUTOFFS — check `$ELAPSED` before starting each new language:**
-- If `$ELAPSED` >= 35 → skip remaining languages, commit what you have, create PR
-- If `$ELAPSED` >= 40 → skip validation, commit immediately, create PR
+- If `$ELAPSED` >= 20 → stop generating new languages, commit what you have, proceed to validation then PR creation
+- If `$ELAPSED` >= 30 → skip validation, commit immediately, create PR
+- If `$ELAPSED` >= 38 → **IMMEDIATELY call `safeoutputs___noop`** — do not attempt to create PR; log what was done
 - **NEVER hit the 45-minute hard timeout** — call a safe output tool FIRST
+
+**🚨 MANDATORY PRE-GENERATION TIMER CHECK:**
+Before starting article generation (Step 3), always check:
+```bash
+ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
+if [ "$ELAPSED" -ge 20 ]; then
+  echo "⚠️ Elapsed time >= 20 min before generation started. Calling noop."
+  # CALL safeoutputs___noop immediately with message about detected events
+fi
+```
+If `$ELAPSED >= 20` when you reach Step 3, skip generation entirely and call `safeoutputs___noop` with a summary of what was detected.
 
 **CRITICAL: Process ONE language at a time (generate, write file, then next language). Do NOT queue all languages before writing.**
 
@@ -279,11 +291,12 @@ Check the `focus` input (default: `all`):
 ### Language Support
 
 Parse the `languages` input and expand presets:
-- **all** (default) - All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
+- **en,sv** (default) - English and Swedish (core breaking news languages — fastest)
 - **nordic** → en,sv,da,no,fi
 - **eu-core** → en,sv,de,fr,es,nl
+- **all** → All 14 languages: en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh
 
-**Process languages ONE AT A TIME** — generate English first (fastest, reference), then Swedish, then remaining languages in order. After each language, check the elapsed time. If elapsed >= 35 minutes, stop and create the PR with what you have.
+**Process languages ONE AT A TIME** — generate English first (fastest, reference), then Swedish, then remaining languages in order. After each language, check the elapsed time. If elapsed >= 20 minutes, stop generating new languages, commit what you have, and proceed to the PR creation step (do not start a new language).
 
 ## 🔌 MCP Tools: Swedish Political Data
 
@@ -570,12 +583,23 @@ For each piece of data, evaluate significance using these criteria:
 
 For HIGH significance events, generate articles following **The Economist style**.
 
-**PRIMARY APPROACH: Use the bash script (fastest, most reliable — generates all 14 languages in one command):**
+**⚠️ MANDATORY PRE-GENERATION TIMER CHECK — do this FIRST before any generation:**
+```bash
+ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
+echo "Minutes elapsed before generation: $ELAPSED"
+if [ "$ELAPSED" -ge 20 ]; then
+  echo "⚠️ Not enough time to generate articles safely (elapsed >= 20 min). Calling noop."
+  # STOP HERE and call safeoutputs___noop with a summary of events detected
+fi
+```
+If `$ELAPSED >= 20`, skip generation entirely — call `safeoutputs___noop` immediately with a brief summary of what events were found (even if significant) to avoid timing out without any safe output.
+
+**PRIMARY APPROACH: Use the bash script (fastest, most reliable):**
 
 ```bash
 # Set LANGUAGES_INPUT to the value shown in Workflow Dispatch Parameters above
-LANGUAGES_INPUT="<value from Workflow Dispatch Parameters>"  # e.g. "all", "nordic", "eu-core", or "en,sv"
-[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
+LANGUAGES_INPUT="<value from Workflow Dispatch Parameters>"  # e.g. "en,sv", "nordic", "eu-core", or "all"
+[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="en,sv"
 
 case "$LANGUAGES_INPUT" in
   "nordic") LANG_ARG="en,sv,da,no,fi" ;;
@@ -621,8 +645,8 @@ If the script succeeds (`SCRIPT_EXIT=0`) and `$NEW_ARTICLES` is non-empty, proce
 **CRITICAL: Process ONE language at a time.** Use this sequential loop pattern:
 
 ```
-For each language in [en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh]:
-  1. Check elapsed time — if >= 35 minutes, stop and proceed to Step 5.5
+For each language in [en, sv] (core languages only for realtime):
+  1. Check elapsed time — if >= 20 minutes, stop and proceed to Step 5.5
   2. Generate article HTML for this language
   3. Translate all Swedish content (if not Swedish/English article)
   4. Write the file to news/YYYY-MM-DD-{slug}-{lang}.html
