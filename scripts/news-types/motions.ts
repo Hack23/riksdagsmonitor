@@ -270,16 +270,19 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
         const ftDocs = (ftResponse['dokument'] ?? ftResponse['results'] ?? []) as RawDocument[];
         mcpCalls.push({ tool: 'search_dokument_fulltext', result: ftDocs });
         console.log(`  📄 Full text: ${ftDocs.length} results`);
-        // Attach full text to motions for "Policy Alternative" rendering in article
-        ftDocs.forEach((ftDoc, i) => {
-          const m = motions[i] as Record<string, unknown>;
-          if (m && !m['fullText']) {
-            m['fullText'] = ftDoc.fullText || ftDoc.summary || '';
+        // Attach the best matching full text only to the primary motion (the one used for the query)
+        const primaryMotion = motions[0] as Record<string, unknown> | undefined;
+        if (primaryMotion && ftDocs.length > 0 && !primaryMotion['fullText']) {
+          const bestDoc = ftDocs[0] as Record<string, unknown>;
+          primaryMotion['fullText'] = (bestDoc['fullText'] as string) || (bestDoc['summary'] as string) || '';
+          if (ftDocs.length > 1) {
+            primaryMotion['policyAlternativeDocs'] = ftDocs;
           }
-        });
+        }
       }
     } catch (err) {
       console.warn('  ⚠ search_dokument_fulltext unavailable:', (err as Error).message);
+      mcpCalls.push({ tool: 'search_dokument_fulltext', result: [] });
     }
 
     // Tool 3: analyze_g0v_by_department — government department response tracking
@@ -297,6 +300,7 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
       console.log(`  🏛 Gov dept analysis: ${govDeptData.length} departments`);
     } catch (err) {
       console.warn('  ⚠ analyze_g0v_by_department unavailable:', (err as Error).message);
+      mcpCalls.push({ tool: 'analyze_g0v_by_department', result: [] });
     }
 
     // Tool 4: search_anforanden — debate context and party positioning
@@ -324,6 +328,7 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
       }
     } catch (err) {
       console.warn('  ⚠ search_anforanden unavailable:', (err as Error).message);
+      mcpCalls.push({ tool: 'search_anforanden', result: [] });
     }
     
     const today = new Date();

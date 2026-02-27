@@ -783,7 +783,8 @@ export function generateMotionsContent(data: ArticleContentData, lang: Language 
       const deptName = escapeHtml(String(dept['name'] ?? dept['departement'] ?? dept['department'] ?? ''));
       const deptCount = dept['count'] ?? dept['total'] ?? dept['document_count'];
       if (deptName) {
-        content += deptCount
+        const hasDeptCount = deptCount !== null && deptCount !== undefined;
+        content += hasDeptCount
           ? `        <li><strong>${deptName}</strong> (${escapeHtml(String(deptCount))})</li>\n`
           : `        <li><strong>${deptName}</strong></li>\n`;
       }

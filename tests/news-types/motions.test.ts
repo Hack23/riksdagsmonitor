@@ -161,6 +161,8 @@ describe('Motions Article Generation', () => {
       mockClientInstance.request.mockRejectedValueOnce(new Error('Tool unavailable'));
       const result = await motionsModule.generateMotions({ languages: ['en'] });
       expect(result.success).toBe(true);
+      const toolNames = result.mcpCalls?.map(c => c.tool) ?? [];
+      expect(toolNames).toContain('search_dokument_fulltext');
     });
 
     it('should degrade gracefully when analyze_g0v_by_department fails', async () => {
@@ -170,12 +172,16 @@ describe('Motions Article Generation', () => {
         .mockRejectedValueOnce(new Error('Tool unavailable'));
       const result = await motionsModule.generateMotions({ languages: ['en'] });
       expect(result.success).toBe(true);
+      const toolNames = result.mcpCalls?.map(c => c.tool) ?? [];
+      expect(toolNames).toContain('analyze_g0v_by_department');
     });
 
     it('should degrade gracefully when search_anforanden fails', async () => {
       mockClientInstance.searchSpeeches.mockRejectedValueOnce(new Error('Tool unavailable'));
       const result = await motionsModule.generateMotions({ languages: ['en'] });
       expect(result.success).toBe(true);
+      const toolNames = result.mcpCalls?.map(c => c.tool) ?? [];
+      expect(toolNames).toContain('search_anforanden');
     });
   });
 
