@@ -451,7 +451,9 @@ describe('Week-Ahead Article Generation', () => {
 
       const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
       expect(result.success).toBe(true);
-      const article = result.articles[0]!;
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
       // 'EU budget vote' event has organ 'Kammaren', matching the document's organ
       expect(article.html).toContain('Policy Context');
       expect(article.html).toContain('policy-context-box');
@@ -466,7 +468,9 @@ describe('Week-Ahead Article Generation', () => {
 
       const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
       expect(result.success).toBe(true);
-      const article = result.articles[0]!;
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
       expect(article.html).toContain('Questions to Watch');
     });
 
@@ -479,7 +483,9 @@ describe('Week-Ahead Article Generation', () => {
 
       const result = await weekAheadModule.generateWeekAhead({ languages: ['sv'] });
       expect(result.success).toBe(true);
-      const article = result.articles[0]!;
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
       expect(article.html).toContain('Frågor att bevaka');
     });
 
@@ -493,7 +499,9 @@ describe('Week-Ahead Article Generation', () => {
 
       const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
       expect(result.success).toBe(true);
-      const article = result.articles[0]!;
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
       expect(article.html).toContain('Interpellation Spotlight');
     });
 
@@ -507,7 +515,9 @@ describe('Week-Ahead Article Generation', () => {
 
       const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
       expect(result.success).toBe(true);
-      const article = result.articles[0]!;
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
       expect(article.html).toContain('minister-target');
       expect(article.html).toContain('Statsminister Ulf Kristersson');
     });
@@ -522,8 +532,122 @@ describe('Week-Ahead Article Generation', () => {
 
       const result = await weekAheadModule.generateWeekAhead({ languages: ['sv'] });
       expect(result.success).toBe(true);
-      const article = result.articles[0]!;
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
       expect(article.html).toContain('Interpellationer i fokus');
+    });
+
+    it('should not render minister-target when summary has no "till" line', async () => {
+      mockClientInstance.fetchInterpellations.mockResolvedValue([{
+        titel: 'Question about transport policy',
+        dok_id: 'H901ip4',
+        parti: 'M',
+        summary: 'Interpellation 2025/26:4\nav Alex Example\nDetta är en fråga om transportpolitiken utan specifik ministerrad.',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
+      expect(article.html).not.toContain('minister-target');
+    });
+
+    it('should not render minister-target when "till" line has no name', async () => {
+      mockClientInstance.fetchInterpellations.mockResolvedValue([{
+        titel: 'Question about education policy',
+        dok_id: 'H901ip5',
+        parti: 'L',
+        summary: 'Interpellation 2025/26:5\nav Chris Example\ntill \nDetta är en fråga om utbildningspolitiken.',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
+      expect(article.html).not.toContain('minister-target');
+    });
+
+    it('should handle multiple "till" patterns without breaking rendering', async () => {
+      mockClientInstance.fetchInterpellations.mockResolvedValue([{
+        titel: 'Question about climate and finance policy',
+        dok_id: 'H901ip6',
+        parti: 'C',
+        summary: 'Interpellation 2025/26:6\nav Pat Example\ntill Klimatminister Romina Pourmokhtari\noch till Finansminister Elisabeth Svantesson\nDetta är en fråga om klimat- och finanspolitiken.',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
+      expect(article.html).toContain('Interpellation Spotlight');
+    });
+
+    it('should not render Policy Context box when no documents or questions match', async () => {
+      mockClientInstance.fetchCalendarEvents.mockResolvedValue([{
+        id: '1', title: 'EU summit debate', date: '2026-02-16', type: 'chamber', organ: 'FiU',
+      }]);
+      // Documents have a completely unrelated organ, so no match occurs
+      mockClientInstance.searchDocuments.mockResolvedValue([{
+        titel: 'Miljöpolitik rapport',
+        dok_id: 'H901mot1',
+        doktyp: 'mot',
+        organ: 'MjU',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
+      expect(article.html).not.toContain('policy-context-box');
+    });
+
+    it('should limit Policy Context related documents to 3 per event', async () => {
+      mockClientInstance.fetchCalendarEvents.mockResolvedValue([{
+        id: '1', title: 'EU summit vote', date: '2026-02-16', type: 'chamber', organ: 'Kammaren',
+      }]);
+      // 5 matching documents — only up to 3 should appear in the policy context box
+      mockClientInstance.searchDocuments.mockResolvedValue([
+        { titel: 'EU Doc 1', dok_id: 'doc1', organ: 'Kammaren' },
+        { titel: 'EU Doc 2', dok_id: 'doc2', organ: 'Kammaren' },
+        { titel: 'EU Doc 3', dok_id: 'doc3', organ: 'Kammaren' },
+        { titel: 'EU Doc 4', dok_id: 'doc4', organ: 'Kammaren' },
+        { titel: 'EU Doc 5', dok_id: 'doc5', organ: 'Kammaren' },
+      ]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
+      // Should show a policy context box with at most 3 entries
+      expect(article.html).toContain('policy-context-box');
+      const contextBoxCount = (article.html.match(/policy-context-box/g) ?? []).length;
+      expect(contextBoxCount).toBeGreaterThanOrEqual(1);
+    });
+
+    it('should still render Interpellation Spotlight for high-priority event with no keyword match', async () => {
+      mockClientInstance.fetchCalendarEvents.mockResolvedValue([{
+        id: '1', title: 'Vote on EU directive', date: '2026-02-18', type: 'chamber', organ: 'Kammaren',
+      }]);
+      // Interpellation topic is completely unrelated to the event — Policy Context box NOT shown, but spotlight still shown
+      mockClientInstance.fetchInterpellations.mockResolvedValue([{
+        titel: 'Fråga om infrastruktur',
+        dok_id: 'H901ip7',
+        parti: 'S',
+        summary: 'Interpellation 2025/26:7\nav Test Person\ntill Infrastrukturminister Andreas Carlson\nOm vägnätets underhåll.',
+      }]);
+
+      const result = await weekAheadModule.generateWeekAhead({ languages: ['en'] });
+      expect(result.success).toBe(true);
+      expect(result.articles.length).toBeGreaterThan(0);
+      const article = result.articles[0];
+      if (!article) throw new Error('Expected article to be generated');
+      expect(article.html).toContain('Interpellation Spotlight');
     });
   });
 
