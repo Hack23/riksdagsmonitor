@@ -97,7 +97,7 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Your mission is
 > - Required tool unavailable → `safeoutputs___missing_tool({"reason": "..."})`
 >
 > **`safeoutputs___create_pull_request` handles branch creation and push automatically. Do NOT run `git push` or create branches.**
-> **Exiting without calling one of these = workflow failure.** When in doubt, call `safeoutputs___noop`.
+> **Exiting without calling one of these = workflow failure.** When in doubt **and no articles were generated**, call `safeoutputs___noop` (otherwise follow the detailed rules below).
 
 ## 🚨 CRITICAL REQUIREMENTS (MUST COMPLETE)
 

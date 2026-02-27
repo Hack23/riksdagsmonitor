@@ -157,11 +157,15 @@ describe('Workflow Architecture', () => {
 
     for (const workflowFile of allWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(
+        fs.existsSync(filepath),
+        `Workflow ${workflowFile} should exist on disk`
+      ).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
+      const hasDoNotGitPush = /DO\s+NOT[\s\S]{0,80}`git push`/i.test(content);
       expect(
-        content.includes('DO NOT** run `git push`'),
+        hasDoNotGitPush,
         `Workflow ${workflowFile} should have explicit DO NOT git push instruction`
       ).toBe(true);
       expect(
