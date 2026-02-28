@@ -665,7 +665,7 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 
 > *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political intelligence newsroom — 10 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
 
-Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus via GitHub Copilot Coding Agent, our 10 specialized workflows (9 scheduled + 1 on-demand) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
+Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus (currently 4.6) via GitHub Copilot Coding Agent, our 10 specialized workflows (9 scheduled + 1 on-demand) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
 
 ### 📰 Autonomous Publication Schedule
 
