@@ -684,7 +684,7 @@ Every day, the platform's AI operatives awaken on cron schedules, query the Swed
 | 📈 10:00 | **Monthly Review** | Comprehensive monthly intelligence assessment | 28th of month |
 | 🔧 Manual | **Article Generator** | On-demand article generation | On-demand |
 
-> _All times are **UTC** (GitHub Actions cron). For local time, convert to CET/CEST. Authoritative schedules defined in `news-*.lock.yml` workflows._
+> _All times are **UTC** (GitHub Actions cron). For local time, convert to CET/CEST. Authoritative schedules defined in `.github/workflows/news-*.lock.yml` workflows._
 
 > **Result**: Dozens of articles per week across 14 languages — delivering **hundreds of localized intelligence products each month**, generated autonomously with zero editorial intervention.
 
@@ -716,12 +716,12 @@ timeline
     section Phase 3 — Foundation (2026)
         Q1-Q2 : TypeScript migration ✅
                : 10 agentic news workflows ✅
-               : 44 total workflows
+               : 44 GitHub Actions workflows (CI/CD + news)
                : Dual deployment (S3 + GitHub Pages)
         Q3-Q4 : CIA data pipeline integration
                : Predictive dashboards
                : 14-language expansion
-               : 50 total workflows
+               : 50 GitHub Actions workflows
     section Phase 4 — Intelligence (2027-2029)
         2027 : Real-time data streams
              : ML prediction models
@@ -730,14 +730,14 @@ timeline
         2028 : Multi-modal content (audio/video)
              : Self-healing pipelines
              : AI editorial board
-             : 65 workflows
+             : 65 GitHub Actions workflows
         2029 : Fully autonomous pipeline
              : Expert-level analysis
              : API platform launch
-             : 75 workflows
+             : 75 GitHub Actions workflows
     section Phase 5 — Scale (2030-2033)
         2030-2031 : EU-wide coverage
-                  : 85+ workflows
+                  : 85+ GitHub Actions workflows
                   : Near-expert analysis
                   : Sovereign AI evaluation
         2032-2033 : Global parliamentary monitoring
@@ -806,14 +806,14 @@ graph TB
         MM1[🎙️ Audio/Video Analysis<br/>Debate tone detection]
         MM2[🤖 AI Editorial Board<br/>Autonomous quality control]
         MM3[🔧 Self-Healing Pipelines<br/>Auto-recovery workflows]
-        MM4[📊 65 Total Workflows]
+        MM4[📊 65 GitHub Actions Workflows]
     end
     subgraph SG2029["2029 — Autonomous Platform"]
         style SG2029 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
         AP1[🚀 Fully Autonomous Pipeline<br/>Zero human intervention]
         AP2[🧠 Expert-Level Analysis<br/>PhD-equivalent insight]
         AP3[🔌 API Platform Launch<br/>GraphQL + REST]
-        AP4[📊 75 Total Workflows]
+        AP4[📊 75 GitHub Actions Workflows]
     end
     PA1 --> MM1
     PA2 --> MM2
@@ -900,7 +900,7 @@ graph TB
 
 **Workflow Count Projection:**
 
-| Year | Total Workflows | AI Model | Key Capability |
+| Year | GitHub Actions Workflows | AI Model | Key Capability |
 |:----:|:---------------:|:---------|:---------------|
 | **2026** | 44→50 | Opus 4.6–4.9 | 🤖 Agentic news generation (current) |
 | **2027** | 50–55 | Opus 5.x | 🔮 Predictive analytics & Nordic expansion |
@@ -915,7 +915,7 @@ graph TB
 xychart-beta
     title "Riksdagsmonitor Workflow Growth Projection (2026–2037)"
     x-axis ["2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037"]
-    y-axis "Total Workflows" 0 --> 130
+    y-axis "GitHub Actions Workflows" 0 --> 130
     bar [47, 53, 60, 70, 80, 88, 95, 100, 105, 110, 115, 120]
     line [47, 53, 60, 70, 80, 88, 95, 100, 105, 110, 115, 120]
 ```
