@@ -80,6 +80,12 @@ export interface QualityMetrics {
   hasInternationalComparison: boolean;
   /** Whether the article contains economic context (World Bank indicators, GDP, unemployment, etc.) */
   hasEconomicContext?: boolean;
+  /** Whether the article has a language-switcher nav element */
+  hasLanguageSwitcher?: boolean;
+  /** Whether the article has an article-top-nav div with back-to-news link */
+  hasArticleTopNav?: boolean;
+  /** Whether the article has a back-to-news link (in top nav or footer) */
+  hasBackToNews?: boolean;
 }
 
 /** Quality assessment result for a single article */
