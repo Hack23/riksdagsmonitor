@@ -33,6 +33,7 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -44,6 +45,8 @@ network:
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+  scb:
+    url: https://scb-mcp.onrender.com/mcp
 
 tools:
   github:
@@ -54,6 +57,7 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -169,6 +173,7 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `search_dokument` — searches documents from past 7 days
 **Cross-reference:** `search_voteringar`, `get_betankanden`, `search_anforanden`
+**Statistical enrichment:** SCB MCP — enrich weekly context with relevant economic indicators
 
 ```javascript
 get_sync_status({})
@@ -177,6 +182,9 @@ const today = new Date().toISOString().split('T')[0];
 search_dokument({ from_date: lastWeek, to_date: today, limit: 30 })
 search_voteringar({ rm: <calculated riksmöte>, limit: 20 })
 get_betankanden({ rm: <calculated riksmöte>, limit: 10 })
+
+// SCB enrichment (optional — wrap in try/catch, do not block generation on SCB failures):
+// search_tables({ query: "arbetslöshet BNP konsumentprisindex", limit: 5 })
 ```
 
 ## Generation Steps

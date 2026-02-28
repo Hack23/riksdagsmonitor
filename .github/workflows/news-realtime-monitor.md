@@ -38,6 +38,7 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -49,6 +50,8 @@ network:
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+  scb:
+    url: https://scb-mcp.onrender.com/mcp
 
 tools:
   github:
@@ -64,6 +67,7 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se

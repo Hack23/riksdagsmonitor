@@ -150,4 +150,56 @@ export interface ArticleContentData {
   departmentAnalysis?: Record<string, unknown>;
   /** Parliamentary debate speeches from search_anforanden */
   speechDebates?: unknown[];
+  /** SCB statistical context for economic/demographic enrichment */
+  scbContext?: SCBContext;
+}
+
+// ---------------------------------------------------------------------------
+// SCB (Statistics Sweden) data types for statistical enrichment
+// ---------------------------------------------------------------------------
+
+/**
+ * SCB statistical context for enriching political analysis with
+ * official Swedish statistics from Statistics Sweden (SCB).
+ * Data sourced via the scb-mcp server (PxWebAPI 2.0).
+ */
+export interface SCBContext {
+  /** Unemployment rate data (national/regional) */
+  unemployment?: SCBIndicator;
+  /** GDP growth data */
+  gdpGrowth?: SCBIndicator;
+  /** Inflation / CPI data */
+  inflation?: SCBIndicator;
+  /** Population statistics */
+  population?: SCBIndicator;
+  /** Immigration / emigration data */
+  migration?: SCBIndicator;
+  /** Education enrollment statistics */
+  education?: SCBIndicator;
+  /** Greenhouse gas emissions */
+  emissions?: SCBIndicator;
+  /** Housing construction / prices */
+  housing?: SCBIndicator;
+  /** Government revenue / expenditure */
+  publicFinances?: SCBIndicator;
+  /** Crime statistics */
+  crime?: SCBIndicator;
+}
+
+/** Single SCB statistical indicator with value, period, and source table */
+export interface SCBIndicator {
+  /** Human-readable label (e.g. "Unemployment rate") */
+  label: string;
+  /** Numeric value */
+  value: number;
+  /** Unit of measurement (e.g. "percent", "SEK millions", "persons") */
+  unit: string;
+  /** Time period (e.g. "2025Q3", "2025M11", "2024") */
+  period: string;
+  /** SCB table ID for traceability (e.g. "TAB637") */
+  tableId: string;
+  /** Optional trend compared to previous period */
+  trend?: 'up' | 'down' | 'stable';
+  /** Optional previous period value for comparison */
+  previousValue?: number;
 }
