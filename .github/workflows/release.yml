@@ -50,14 +50,6 @@ jobs:
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
           echo "Version: ${VERSION}"
 
-      - name: Cache APT packages
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
-        with:
-          path: /var/cache/apt/archives
-          key: ${{ runner.os }}-apt-${{ hashFiles('.github/workflows/release.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-apt-
-
       - name: Setup Web Test Environment (Chrome + Xvfb + Dependencies)
         run: |
           echo "🔧 Setting up complete Web test environment..."
@@ -482,7 +474,7 @@ jobs:
 
       - name: Generate SBOM attestation
         id: attestsbom
-        uses: actions/attest-sbom@07e74fc4e78d1aad915e867f9a094073a9f71527 # v4.0.0
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
         with:
           subject-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
           sbom-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
@@ -533,6 +525,10 @@ jobs:
           name: security-artifacts
           path: artifacts/security
 
+      # NOTE: release-drafter emits benign warnings about "pull_request_target.*" not being
+      # known webhook names. This is a known upstream issue (release-drafter/release-drafter#1369)
+      # caused by Probot's GitHub Actions adapter not recognizing these event types.
+      # The warnings are harmless and do not affect functionality.
       - name: Draft Release Notes
         id: release-drafter
         uses: release-drafter/release-drafter@6db134d15f3909ccc9eefd369f02bd1e9cffdf97 # v6.2.0
