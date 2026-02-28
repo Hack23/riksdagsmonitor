@@ -8,12 +8,14 @@
     "world-bank": {
       "type": "local",
       "command": "npx",
+      "tools": ["*"],
       "args": [
         "-y",
         "@smithery/cli@4.4.0",
         "run",
         "@anshumax/world_bank_mcp_server"
-      ],
+      ]
+    },
     "scb": {
       "type": "http",
       "url": "https://scb-mcp.onrender.com/mcp",
