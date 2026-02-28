@@ -66,6 +66,8 @@ export interface QualityThresholds {
   requireHistoricalContext: boolean;
   recommendHistoricalContext: boolean;
   recommendInternationalComparison: boolean;
+  /** Recommend economic context from World Bank data (non-blocking) */
+  recommendEconomicContext?: boolean;
 }
 
 /** Measured quality metrics for a single article */
@@ -76,6 +78,8 @@ export interface QualityMetrics {
   hasWhyThisMatters: boolean;
   hasHistoricalContext: boolean;
   hasInternationalComparison: boolean;
+  /** Whether the article contains economic context (World Bank indicators, GDP, unemployment, etc.) */
+  hasEconomicContext?: boolean;
 }
 
 /** Quality assessment result for a single article */
