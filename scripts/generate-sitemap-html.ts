@@ -86,7 +86,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
   en: {
     name: 'English', nativeName: 'English', flag: '🇬🇧', dir: 'ltr', locale: 'en_US', hreflang: 'en',
     translations: {
-      siteMap: 'Site Map', completeNavigation: 'Complete navigation for Riksdagsmonitor platform',
+      siteMap: 'Sitemap', completeNavigation: 'Complete navigation for Riksdagsmonitor platform',
       quickJumpTo: 'Quick Jump To', mainPlatform: 'Main Platform', dashboards: 'Interactive Dashboards',
       newsAnalysis: 'News & Analysis', multiLanguage: 'Multi-Language Platform Access',
       documentation: 'Documentation', resources: 'Additional Resources',

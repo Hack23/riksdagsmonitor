@@ -3,7 +3,8 @@
  * Tests rss.xml generation and validation, including multi-language alternates.
  */
 
-import { describe, it, expect, vi, beforeAll } from 'vitest';
+import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest';
+import fs from 'fs';
 
 /** Shape of the generate-rss module */
 interface GenerateRssModule {
@@ -25,15 +26,26 @@ interface GenerateRssModule {
 describe('RSS Feed Generation', () => {
   let module: GenerateRssModule;
   let rssContent: string;
+  let originalExit: typeof process.exit;
+  let originalWriteFileSync: typeof fs.writeFileSync;
 
   beforeAll(async () => {
-    const originalExit = process.exit;
+    originalExit = process.exit;
+    originalWriteFileSync = fs.writeFileSync;
+
+    // Prevent process.exit from terminating the test
     process.exit = vi.fn() as unknown as typeof process.exit;
+    // Prevent actual file writes during module import (top-level main() calls writeFileSync)
+    fs.writeFileSync = vi.fn() as unknown as typeof fs.writeFileSync;
 
     module = await import('../scripts/generate-rss.js') as unknown as GenerateRssModule;
     rssContent = module.generateRss();
+  });
 
+  afterAll(() => {
     process.exit = originalExit;
+    fs.writeFileSync = originalWriteFileSync;
+    vi.clearAllMocks();
   });
 
   describe('escapeXml', () => {
