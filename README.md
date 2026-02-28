@@ -849,7 +849,7 @@ graph LR
 
 ### Phase 6: AGI Era & Transformative Democracy (2034–2037)
 
-> *When AGI or near-AGI systems become available through cloud platforms, Riksdagsmonitor's architecture is designed to harness — not be disrupted by — the paradigm shift.*
+> *When AGI or near-AGI systems emerge, Riksdagsmonitor's modular architecture is designed with flexibility to adapt to future AI paradigm shifts — including potential AGI capabilities — while maintaining democratic safeguards.*
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
@@ -889,11 +889,11 @@ graph TB
 
 ### 📈 AI Model Evolution Strategy
 
-**Assumptions:**
-- Anthropic Opus minor updates every ~2.3 months through 2037 (or until successor paradigm)
-- Major version upgrades annually (Opus 5.0, 6.0, 7.0... through ~12.0 by 2037)
-- Competitors (OpenAI, Google, Meta, EU sovereign AI) evaluated at each major release
-- Architecture must accommodate potential paradigm shifts (quantum AI, neuromorphic computing)
+**Illustrative assumptions** *(high uncertainty — AI landscape evolves rapidly)*:
+- Model updates assumed roughly quarterly; actual cadence will vary by vendor and paradigm
+- Version numbers (Opus 5.x–12.x) are illustrative — actual products may differ significantly
+- Competitors (OpenAI, Google, Meta, EU sovereign AI) evaluated at each major release cycle
+- Architecture must accommodate potential paradigm shifts (quantum AI, neuromorphic computing, or entirely new approaches)
 
 **Workflow Count Projection:**
 
