@@ -546,8 +546,6 @@ get_fragor({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 50 : 20 })
 get_interpellationer({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 20 : 10 })
 // Note: Filter results by inlämnad date >= fromDate in analysis
 
-// === NEXT WEEK PREVIEW (Saturday) / TOMORROW (weekday) ===
-
 // === ECONOMIC CONTEXT (World Bank Data — Optional Enrichment) ===
 // Use the World Bank MCP server (world-bank) to add economic depth to analysis.
 // The `get_indicator_for_country` tool fetches indicator data for Sweden (SWE).

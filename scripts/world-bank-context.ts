@@ -305,7 +305,7 @@ export function hasEconomicContext(content: string): boolean {
     /\beconomic\s+(growth|context|impact)\b/i,
     /\bworld\s+bank\b/i,
     /\bbnp\b/i, // Swedish: bruttonationalprodukt
-    /\barbetslöshet/i, // Swedish: unemployment (and definite forms)
+    /\barbetslöshet/i, // Swedish: unemployment (arbetslöshet, arbetslösheten, etc.)
     /\bekonomi/i, // Swedish: economy
     /\bhandelsbalans\b/i, // Swedish: trade balance
     /\bstatsskuld\b/i, // Swedish: national debt
