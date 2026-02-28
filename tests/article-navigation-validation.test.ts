@@ -97,6 +97,16 @@ describe('hasLanguageSwitcher', () => {
     const html = '<nav id="lang" class="language-switcher" role="navigation"><a>EN</a></nav>';
     expect(hasLanguageSwitcher(html)).toBe(true);
   });
+
+  it('should detect switcher with multiple classes', () => {
+    const html = '<nav class="nav-bar language-switcher active"><a>EN</a></nav>';
+    expect(hasLanguageSwitcher(html)).toBe(true);
+  });
+
+  it('should detect switcher with single quotes', () => {
+    const html = "<nav class='language-switcher'><a>EN</a></nav>";
+    expect(hasLanguageSwitcher(html)).toBe(true);
+  });
 });
 
 // ---------------------------------------------------------------------------

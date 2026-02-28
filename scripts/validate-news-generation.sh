@@ -282,8 +282,8 @@ if [ $ARTICLES_WITHOUT_TOPNAV -gt 0 ]; then
   echo -e "${YELLOW}   Fallback: python3 scripts/fix-article-navigation.py${NC}"
   WARNINGS=$((WARNINGS + 1))
 else
-  ARTICLE_COUNT_9=$(find news -name '*-*.html' | grep -v 'index' | wc -l)
-  if [ "$ARTICLE_COUNT_9" -gt 0 ]; then
+  ARTICLE_COUNT_TOPNAV=$(find news -name '*-*.html' | grep -v 'index' | wc -l)
+  if [ "$ARTICLE_COUNT_TOPNAV" -gt 0 ]; then
     echo -e "${GREEN}✅ All checked articles have article-top-nav${NC}"
   else
     echo -e "${YELLOW}⚠️ No articles found to check${NC}"
@@ -314,8 +314,8 @@ if [ $ARTICLES_WITHOUT_BACKNAV -gt 0 ]; then
   echo -e "${YELLOW}   Fallback: python3 scripts/fix-article-navigation.py${NC}"
   WARNINGS=$((WARNINGS + 1))
 else
-  ARTICLE_COUNT_10=$(find news -name '*-*.html' | grep -v 'index' | wc -l)
-  if [ "$ARTICLE_COUNT_10" -gt 0 ]; then
+  ARTICLE_COUNT_BACKNAV=$(find news -name '*-*.html' | grep -v 'index' | wc -l)
+  if [ "$ARTICLE_COUNT_BACKNAV" -gt 0 ]; then
     echo -e "${GREEN}✅ All checked articles have back-to-news link${NC}"
   else
     echo -e "${YELLOW}⚠️ No articles found to check${NC}"

@@ -221,7 +221,7 @@ function hasInternationalComparison(content: string): boolean {
  * @returns True if language switcher nav is present
  */
 function hasLanguageSwitcher(content: string): boolean {
-  return /<nav[^>]*class="language-switcher"/.test(content);
+  return /class=["'][^"']*\blanguage-switcher\b/.test(content);
 }
 
 /**
@@ -231,7 +231,7 @@ function hasLanguageSwitcher(content: string): boolean {
  * @returns True if article-top-nav div is present
  */
 function hasArticleTopNav(content: string): boolean {
-  return /<div[^>]*class="article-top-nav"/.test(content);
+  return /class=["'][^"']*\barticle-top-nav\b/.test(content);
 }
 
 /**
@@ -241,7 +241,7 @@ function hasArticleTopNav(content: string): boolean {
  * @returns True if back-to-news link is present
  */
 function hasBackToNews(content: string): boolean {
-  return /class="back-to-news"/.test(content);
+  return /class=["'][^"']*\bback-to-news\b/.test(content);
 }
 
 /** Weight configuration for quality score calculation */
