@@ -193,6 +193,13 @@ Before generating or translating articles, consult these authoritative reference
 12. **`.github/skills/osint-methodologies/SKILL.md`** — OSINT collection, source evaluation, data verification, ethical intelligence gathering
 13. **`.github/skills/api-integration/SKILL.md`** — REST/GraphQL patterns, rate limiting, error handling, retry logic
 
+### 📊 Economic Data (World Bank MCP)
+
+The **world-bank** MCP server provides economic indicators via `get_indicator_for_country` tool.
+Use this to enrich political analysis with economic context (GDP, unemployment, inflation, trade).
+Key Swedish indicators and Nordic comparison data are documented in `scripts/world-bank-context.ts`.
+Reference: https://github.com/anshumax/world_bank_mcp_server
+
 ### 🔐 Security & Workflow Skills
 
 14. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe-outputs MCP server, create_pull_request tool, container isolation workarounds, noop vs failure handling

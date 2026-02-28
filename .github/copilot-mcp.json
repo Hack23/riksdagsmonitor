@@ -5,6 +5,17 @@
       "url": "https://riksdag-regering-ai.onrender.com/mcp",
       "tools": ["*"]
     },
+    "world-bank": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@anshumax/world_bank_mcp_server"
+      ],
+      "tools": ["*"]
+    },
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/insiders",

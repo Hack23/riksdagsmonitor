@@ -219,6 +219,13 @@ You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to 
 11. **`.github/skills/automated-content-generation/SKILL.md`** — Template-based generation, quality validation
 12. **`.github/skills/data-science-for-intelligence/SKILL.md`** — Statistical analysis, pattern recognition
 
+### 📊 Economic Data (World Bank MCP)
+
+The **world-bank** MCP server provides economic indicators via `get_indicator_for_country` tool.
+Use this to enrich political analysis with economic context (GDP, unemployment, inflation, trade).
+Key Swedish indicators and Nordic comparison data are documented in `scripts/world-bank-context.ts`.
+Reference: https://github.com/anshumax/world_bank_mcp_server
+
 ### 🔐 Workflow & Security Skills
 
 13. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe-outputs tools, PR creation, container isolation fixes
@@ -538,6 +545,40 @@ get_motioner({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 50 : 20 })
 get_fragor({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 50 : 20 })
 get_interpellationer({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 20 : 10 })
 // Note: Filter results by inlämnad date >= fromDate in analysis
+
+// === NEXT WEEK PREVIEW (Saturday) / TOMORROW (weekday) ===
+
+// === ECONOMIC CONTEXT (World Bank Data — Optional Enrichment) ===
+// Use the World Bank MCP server (world-bank) to add economic depth to analysis.
+// The `get_indicator_for_country` tool fetches indicator data for Sweden (SWE).
+//
+// Key indicators for Swedish political intelligence:
+// - GDP growth: NY.GDP.MKTP.KD.ZG (fiscal policy context)
+// - Unemployment: SL.UEM.TOTL.ZS (labor market policy)
+// - Inflation: FP.CPI.TOTL.ZG (cost of living debates)
+// - Government expenditure: GC.XPN.TOTL.GD.ZS (budget debates)
+// - Military expenditure: MS.MIL.XPND.GD.ZS (NATO/defense policy)
+// - Trade % GDP: NE.TRD.GNFS.ZS (EU trade policy)
+// - CO2 emissions: EN.ATM.CO2E.PC (climate policy)
+// - R&D expenditure: GB.XPD.RSDV.GD.ZS (innovation policy)
+//
+// Example: Fetch Sweden's GDP growth for policy context
+// get_indicator_for_country({ country_id: "SWE", indicator_id: "NY.GDP.MKTP.KD.ZG" })
+//
+// Nordic comparison (Denmark=DNK, Norway=NOR, Finland=FIN, Germany=DEU):
+// get_indicator_for_country({ country_id: "DNK", indicator_id: "NY.GDP.MKTP.KD.ZG" })
+//
+// When to use economic context:
+// - Budget/fiscal policy discussions → GDP, government expenditure, trade
+// - Labor market debates → unemployment rate
+// - Cost of living motions → inflation data
+// - Defense/NATO policy → military expenditure
+// - Climate legislation → CO2 emissions per capita
+// - Research/innovation policy → R&D expenditure
+//
+// NOTE: World Bank data may lag 1-2 years. Use most recent available year.
+// Always cite "Source: World Bank Open Data" when including economic indicators.
+// See scripts/world-bank-context.ts for full indicator mappings and committee links.
 
 // === NEXT WEEK PREVIEW (Saturday) / TOMORROW (weekday) ===
 const nextMonday = dayOfWeek === 6
