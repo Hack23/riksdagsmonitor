@@ -665,25 +665,28 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 
 > *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political intelligence newsroom — 10 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
 
-Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus via GitHub Copilot Coding Agent, our 10 specialized workflows autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
+Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus via GitHub Copilot Coding Agent, our 10 specialized workflows (9 scheduled + 1 on-demand) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
 
 ### 📰 Autonomous Publication Schedule
 
 Every day, the platform's AI operatives awaken on cron schedules, query the Swedish Parliament's open data via **32 MCP tools**, cross-reference government sources, and generate publication-ready intelligence articles in **14 languages** — including RTL support for Arabic and Hebrew.
 
-| Time (CET) | Workflow | Coverage | Frequency |
+| Time (UTC) | Workflow | Coverage | Frequency |
 |:-----------:|:---------|:---------|:----------|
 | 🌅 04:00 | **Committee Reports** | Utskottsbetänkanden analysis, voting breakdowns | Mon–Fri |
 | 🌅 05:00 | **Propositions** | Government bills, legislative impact assessment | Mon–Fri |
 | ☀️ 06:00 | **Motions** | Opposition proposals, party strategy decoding | Mon–Fri |
 | ☀️ 07:00 | **Week Ahead** | Parliamentary calendar preview, agenda intelligence | Friday |
 | ☀️ 08:00 | **Month Ahead** | Strategic outlook, coalition forecasting | 1st of month |
-| 🔍 10:00 | **Realtime Monitor** | Breaking political developments, flash analysis | Mon–Fri (×2) |
-| 🌆 16:00–18:00 | **Evening Analysis** | Daily deep-dive intelligence synthesis | Daily |
+| 🔍 10:00/14:00/12:00 | **Realtime Monitor** | Breaking political developments, flash analysis | Mon–Fri (×2) + weekends |
+| 🌆 18:00 (16:00 Sat) | **Evening Analysis** | Deep-dive intelligence synthesis | Mon–Sat |
 | 📊 09:00 | **Weekly Review** | Week-in-review scorecard, party performance | Saturday |
-| 📈 10:00 | **Monthly Review** | Comprehensive monthly intelligence assessment | 28th |
+| 📈 10:00 | **Monthly Review** | Comprehensive monthly intelligence assessment | 28th of month |
+| 🔧 Manual | **Article Generator** | On-demand article generation | On-demand |
 
-> **Result**: ~50 articles/week × 14 languages = **~700 localized intelligence products per week**, generated autonomously with zero editorial intervention.
+> _All times are **UTC** (GitHub Actions cron). For local time, convert to CET/CEST. Authoritative schedules defined in `news-*.lock.yml` workflows._
+
+> **Result**: Dozens of articles per week across 14 languages — delivering **hundreds of localized intelligence products each month**, generated autonomously with zero editorial intervention.
 
 ### 🧠 Why This Is Different
 
@@ -759,19 +762,19 @@ timeline
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 graph LR
-    subgraph "✅ Completed"
-        style A fill:#006400,stroke:#00d9ff,color:#e0e0e0
+    subgraph SGCompleted["✅ Completed"]
+        style SGCompleted fill:#006400,stroke:#00d9ff,color:#e0e0e0
         A[TypeScript Migration<br/>27 modules] --> B[Agentic News Gen<br/>10 workflows]
         B --> C[14 Languages<br/>RTL support]
         C --> D[Dual Deploy<br/>S3 + GitHub Pages]
     end
-    subgraph "🔄 In Progress"
-        style E fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    subgraph SGProgress["🔄 In Progress"]
+        style SGProgress fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
         E[CIA Data Pipeline<br/>19 products] --> F[Predictive Dashboards<br/>Chart.js/D3.js]
-        F --> G[Content Expansion<br/>~700 articles/week]
+        F --> G[Content Expansion<br/>Hundreds of articles/month]
     end
-    subgraph "📋 Planned"
-        style H fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    subgraph SGPlanned["📋 Planned"]
+        style SGPlanned fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
         H[API Platform<br/>GraphQL] --> I[Nordic Expansion<br/>Denmark, Norway, Finland]
     end
     D --> E
@@ -781,7 +784,7 @@ graph LR
 | Capability | Status | Details |
 |:-----------|:------:|:--------|
 | TypeScript migration | ✅ Done | 27 modules, 1200+ unit tests |
-| Agentic news generation | ✅ Live | 10 workflows, ~700 articles/week |
+| Agentic news generation | ✅ Live | 10 workflows (9 scheduled + 1 on-demand), 14 languages |
 | 14-language support | ✅ Live | Including Arabic/Hebrew RTL |
 | CIA data integration | 🔄 Active | 19 visualization products |
 | Predictive dashboards | 📋 Planned | Chart.js/D3.js interactive displays |
@@ -791,22 +794,22 @@ graph LR
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 graph TB
-    subgraph "2027 — Predictive Analytics"
-        style 2027 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    subgraph SG2027["2027 — Predictive Analytics"]
+        style SG2027 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
         PA1[🔮 ML Election Models<br/>Coalition probability scoring]
         PA2[📡 Real-Time Streams<br/>Live parliamentary feeds]
         PA3[🌍 Nordic Expansion<br/>DK · NO · FI parliaments]
         PA4[🔍 Multi-Source OSINT<br/>Media + social + official]
     end
-    subgraph "2028 — Multi-Modal Intelligence"
-        style 2028 fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    subgraph SG2028["2028 — Multi-Modal Intelligence"]
+        style SG2028 fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
         MM1[🎙️ Audio/Video Analysis<br/>Debate tone detection]
         MM2[🤖 AI Editorial Board<br/>Autonomous quality control]
         MM3[🔧 Self-Healing Pipelines<br/>Auto-recovery workflows]
         MM4[📊 65 Total Workflows]
     end
-    subgraph "2029 — Autonomous Platform"
-        style 2029 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    subgraph SG2029["2029 — Autonomous Platform"]
+        style SG2029 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
         AP1[🚀 Fully Autonomous Pipeline<br/>Zero human intervention]
         AP2[🧠 Expert-Level Analysis<br/>PhD-equivalent insight]
         AP3[🔌 API Platform Launch<br/>GraphQL + REST]
@@ -827,15 +830,15 @@ graph TB
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 graph LR
-    subgraph "2030-2031 — EU Scale"
-        style EU fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    subgraph SGEU["2030-2031 — EU Scale"]
+        style SGEU fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
         EU1[🇪🇺 27 EU Parliaments<br/>+ European Parliament]
         EU2[🧠 Near-Expert Analysis<br/>Opus 8.x capabilities]
         EU3[📊 85+ Workflows<br/>Continent-wide coverage]
         EU4[🏛️ Sovereign AI Evaluation<br/>EU AI Act compliance]
     end
-    subgraph "2032-2033 — Global Reach"
-        style GL fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    subgraph SGGL["2032-2033 — Global Reach"]
+        style SGGL fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
         GL1[🌍 Global Parliamentary Watch<br/>100+ democracies]
         GL2[🗣️ Every UN Language<br/>Native-quality output]
         GL3[📊 100 Workflows<br/>Pre-AGI capabilities]
@@ -854,20 +857,20 @@ graph LR
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 graph TB
-    subgraph "🤖 6.1 AGI-Enhanced Intelligence"
-        style AGI fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    subgraph SGAGI["🤖 6.1 AGI-Enhanced Intelligence"]
+        style SGAGI fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
         AGI1["🤖 Autonomous Analysis<br/>Real-time intelligence across<br/>all 195 parliamentary systems"]
         AGI2["🌐 Universal Language<br/>Every UN language<br/>supported natively"]
         AGI3["📊 Predictive Governance<br/>Policy impact prediction<br/>before legislation proposed"]
     end
-    subgraph "⚖️ 6.2 Democratic Safeguards"
-        style SAFE fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    subgraph SGSAFE["⚖️ 6.2 Democratic Safeguards"]
+        style SGSAFE fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
         SAFE1["⚖️ Ethical AI Governance<br/>Human oversight maintained<br/>regardless of AI capability"]
         SAFE2["🛡️ Anti-Weaponization<br/>Architecture prevents<br/>manipulation or misuse"]
         SAFE3["🔒 Constitutional Alignment<br/>Democratic values encoded<br/>in platform architecture"]
     end
-    subgraph "🧬 6.3 Paradigm Readiness"
-        style PARA fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    subgraph SGPARA["🧬 6.3 Paradigm Readiness"]
+        style SGPARA fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
         PARA1["⚛️ Quantum AI Ready<br/>Post-quantum cryptography<br/>Quantum ML integration"]
         PARA2["🧠 Neuromorphic Computing<br/>Brain-inspired architectures<br/>Edge intelligence deployment"]
         PARA3["🌍 Transformative Platform<br/>120+ workflows · 195 parliaments<br/>Global democratic intelligence"]
