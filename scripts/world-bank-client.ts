@@ -24,7 +24,7 @@ export interface WorldBankDataPoint {
   readonly indicatorId: string;
   readonly indicatorName: string;
   readonly date: string;
-  readonly value: number | null;
+  readonly value: number;
 }
 
 /** Metadata about a World Bank indicator */
@@ -156,7 +156,15 @@ export class WorldBankClient {
         indicatorName: item.indicator?.value ?? indicatorId,
         date: item.date ?? '',
         value: item.value,
-      }));
+      }))
+      .sort((a, b) => {
+        const yearA = parseInt(a.date, 10);
+        const yearB = parseInt(b.date, 10);
+        if (isNaN(yearA) && isNaN(yearB)) return 0;
+        if (isNaN(yearA)) return 1;
+        if (isNaN(yearB)) return -1;
+        return yearB - yearA;
+      });
   }
 
   /**

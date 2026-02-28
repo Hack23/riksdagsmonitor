@@ -267,11 +267,14 @@ export function getEconomicHeading(
  * @returns Matching economic indicators
  */
 export function findRelevantIndicators(query: string): readonly EconomicIndicatorContext[] {
-  const lowerQuery = query.toLowerCase();
+  const q = query.trim().toLowerCase();
+  if (q.length === 0) {
+    return [];
+  }
   return ECONOMIC_INDICATORS.filter(
     (indicator) =>
-      indicator.policyAreas.some((area) => area.toLowerCase().includes(lowerQuery)) ||
-      indicator.committees.some((c) => c.toLowerCase() === lowerQuery),
+      indicator.policyAreas.some((area) => area.toLowerCase().includes(q)) ||
+      indicator.committees.some((c) => c.toLowerCase() === q),
   );
 }
 
@@ -309,8 +312,8 @@ export function hasEconomicContext(content: string): boolean {
     /\bekonomi/i, // Swedish: economy
     /\bhandelsbalans\b/i, // Swedish: trade balance
     /\bstatsskuld\b/i, // Swedish: national debt
-    /\bförsvarsutgifter\b/i, // Swedish: defense expenditure
-    /\bforskningsutgifter\b/i, // Swedish: R&D expenditure
+    /\bförsvarsutgift/i, // Swedish: defense expenditure (försvarsutgift, försvarsutgifter, försvarsutgifterna, etc.)
+    /\bforskningsutgift/i, // Swedish: R&D expenditure (forskningsutgift, forskningsutgifter, forskningsutgifterna, etc.)
     /\bNY\.GDP/i, // World Bank indicator IDs
     /\bSL\.UEM/i,
     /\bFP\.CPI/i,

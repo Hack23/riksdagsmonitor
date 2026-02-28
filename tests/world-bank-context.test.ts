@@ -206,6 +206,14 @@ describe('world-bank-context', () => {
       expect(results).toHaveLength(0);
     });
 
+    it('should return empty for empty query', () => {
+      expect(findRelevantIndicators('')).toHaveLength(0);
+    });
+
+    it('should return empty for whitespace-only query', () => {
+      expect(findRelevantIndicators('   ')).toHaveLength(0);
+    });
+
     it('should be case-insensitive', () => {
       const upper = findRelevantIndicators('FISCAL POLICY');
       const lower = findRelevantIndicators('fiscal policy');
@@ -261,6 +269,11 @@ describe('world-bank-context', () => {
     it('should detect Swedish economic terms', () => {
       expect(hasEconomicContext('BNP-tillväxten var 1,5 procent')).toBe(true);
       expect(hasEconomicContext('Arbetslösheten minskade till 7,5%')).toBe(true);
+    });
+
+    it('should detect Swedish inflected forms (definite, plural)', () => {
+      expect(hasEconomicContext('Försvarsutgifterna ökade kraftigt under 2025')).toBe(true);
+      expect(hasEconomicContext('Forskningsutgifterna låg på 3,4% av BNP')).toBe(true);
     });
 
     it('should detect World Bank indicator IDs', () => {

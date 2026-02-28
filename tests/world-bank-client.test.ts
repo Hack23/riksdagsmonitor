@@ -57,6 +57,44 @@ describe('WorldBankClient', () => {
   });
 
   describe('getIndicator', () => {
+    it('should sort results by date descending', async () => {
+      const mockResponse = [
+        { page: 1, pages: 1, per_page: '50', total: 3 },
+        [
+          {
+            indicator: { id: 'NY.GDP.MKTP.KD.ZG', value: 'GDP growth (annual %)' },
+            country: { id: 'SWE', value: 'Sweden' },
+            date: '2021',
+            value: 3.0,
+          },
+          {
+            indicator: { id: 'NY.GDP.MKTP.KD.ZG', value: 'GDP growth (annual %)' },
+            country: { id: 'SWE', value: 'Sweden' },
+            date: '2023',
+            value: 1.5,
+          },
+          {
+            indicator: { id: 'NY.GDP.MKTP.KD.ZG', value: 'GDP growth (annual %)' },
+            country: { id: 'SWE', value: 'Sweden' },
+            date: '2022',
+            value: 2.8,
+          },
+        ],
+      ];
+
+      global.fetch = vi.fn().mockResolvedValue({
+        ok: true,
+        json: () => Promise.resolve(mockResponse),
+      });
+
+      const results = await client.getIndicator('SWE', 'NY.GDP.MKTP.KD.ZG');
+
+      expect(results).toHaveLength(3);
+      expect(results[0].date).toBe('2023');
+      expect(results[1].date).toBe('2022');
+      expect(results[2].date).toBe('2021');
+    });
+
     it('should return data points for valid API response', async () => {
       const mockResponse = [
         { page: 1, pages: 1, per_page: '50', total: 2 },
