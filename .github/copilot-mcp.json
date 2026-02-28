@@ -14,6 +14,9 @@
         "run",
         "@anshumax/world_bank_mcp_server"
       ],
+    "scb": {
+      "type": "http",
+      "url": "https://scb-mcp.onrender.com/mcp",
       "tools": ["*"]
     },
     "github": {

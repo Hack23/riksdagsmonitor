@@ -661,6 +661,279 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - [Hack23 Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 - [Hack23 Blog](https://hack23.com/blog.html)
 
+## 🤖 AI-Disrupted News Generation
+
+> *"While traditional newsrooms debate whether AI will replace journalists, Riksdagsmonitor already runs a fully autonomous political intelligence newsroom — 10 agentic workflows, 14 languages, zero human editors, and a publication schedule that would bankrupt any legacy outlet trying to keep up."*
+
+Riksdagsmonitor's **agentic news generation pipeline** is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus (currently 4.6) via GitHub Copilot Coding Agent, our 10 specialized workflows (9 scheduled + 1 on-demand) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
+
+### 📰 Autonomous Publication Schedule
+
+Every day, the platform's AI operatives awaken on cron schedules, query the Swedish Parliament's open data via **32 MCP tools**, cross-reference government sources, and generate publication-ready intelligence articles in **14 languages** — including RTL support for Arabic and Hebrew.
+
+| Time (UTC) | Workflow | Coverage | Frequency |
+|:-----------:|:---------|:---------|:----------|
+| 🌅 04:00 | **Committee Reports** | Utskottsbetänkanden analysis, voting breakdowns | Mon–Fri |
+| 🌅 05:00 | **Propositions** | Government bills, legislative impact assessment | Mon–Fri |
+| ☀️ 06:00 | **Motions** | Opposition proposals, party strategy decoding | Mon–Fri |
+| ☀️ 07:00 | **Week Ahead** | Parliamentary calendar preview, agenda intelligence | Friday |
+| ☀️ 08:00 | **Month Ahead** | Strategic outlook, coalition forecasting | 1st of month |
+| 🔍 10:00 & 14:00 (Mon–Fri); 12:00 (Sat/Sun) | **Realtime Monitor** | Breaking political developments, flash analysis | Mon–Fri (×2) + weekends |
+| 🌆 18:00 (16:00 Sat) | **Evening Analysis** | Deep-dive intelligence synthesis | Mon–Sat |
+| 📊 09:00 | **Weekly Review** | Week-in-review scorecard, party performance | Saturday |
+| 📈 10:00 | **Monthly Review** | Comprehensive monthly intelligence assessment | 28th of month |
+| 🔧 Manual | **Article Generator** | On-demand article generation | On-demand |
+
+> _All times are **UTC** (GitHub Actions cron). For local time, convert to CET/CEST. Authoritative schedules defined in `.github/workflows/news-*.lock.yml` workflows._
+
+> **Result**: Dozens of articles per week across 14 languages — delivering **hundreds of localized intelligence products each month**, generated autonomously with zero editorial intervention.
+
+### 🧠 Why This Is Different
+
+Traditional AI-generated news is shallow — it rewrites press releases. Riksdagsmonitor's agentic pipeline performs **deep political intelligence analysis**:
+
+- 🔎 **Source verification**: Every claim traced to official Riksdag/Regering data via MCP
+- ⚖️ **Multi-party balance**: Algorithmic fairness across all 8 parliamentary parties
+- 📊 **Quantitative rigor**: Voting cohesion metrics, attendance scoring, legislative productivity indices
+- 🌐 **14-language reach**: Native-quality political analysis — not machine translation, but culturally adapted intelligence
+- 🛡️ **GDPR-compliant OSINT**: Only public parliamentary data, with privacy-by-design architecture
+- 🧪 **Quality gates**: HTMLHint validation, link checking, accessibility compliance (WCAG 2.1 AA) — every article passes CI before publication
+
+---
+
+## 🔮 Future Roadmap: 2026–2037
+
+> *From agentic news generation to AGI-powered democratic intelligence — the 11-year evolution of Riksdagsmonitor.*
+>
+> 📋 **Detailed planning**: [Future Workflows](FUTURE_WORKFLOWS.md) · [Future Mindmap](FUTURE_MINDMAP.md)
+
+### Evolution Overview
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27', 'background': '#0a0e27'}}}%%
+timeline
+    title Riksdagsmonitor Evolution — 2026 to 2037
+    section Phase 3 — Foundation (2026)
+        Q1-Q2 : TypeScript migration ✅
+               : 10 agentic news workflows ✅
+               : 34 GitHub Actions workflows + 10 agent prompt files
+               : Dual deployment (S3 + GitHub Pages)
+        Q3-Q4 : CIA data pipeline integration
+               : Predictive dashboards
+               : 14-language expansion
+               : 40 GitHub Actions workflows + 10 agent prompt files
+    section Phase 4 — Intelligence (2027-2029)
+        2027 : Real-time data streams
+             : ML prediction models
+             : Multi-source OSINT
+             : Nordic parliament expansion
+        2028 : Multi-modal content (audio/video)
+             : Self-healing pipelines
+             : AI editorial board
+             : 65 automation assets
+        2029 : Fully autonomous pipeline
+             : Expert-level analysis
+             : API platform launch
+             : 75 automation assets
+    section Phase 5 — Scale (2030-2033)
+        2030-2031 : EU-wide coverage
+                  : 85+ automation assets
+                  : Near-expert analysis
+                  : Sovereign AI evaluation
+        2032-2033 : Global parliamentary monitoring
+                  : 100 automation assets
+                  : Pre-AGI capabilities
+                  : Every UN language
+    section Phase 6 — AGI Era (2034-2037)
+        2034-2035 : AGI-enhanced intelligence
+                  : 195 parliaments monitored
+                  : Predictive governance
+                  : 110+ automation assets
+        2036-2037 : Transformative democracy platform
+                  : 120+ automation assets
+                  : Post-AGI capabilities
+                  : Democratic safeguards architecture
+```
+
+### Phase 3: Agentic Intelligence Foundation (2026)
+
+*Current phase — AI-disrupted news generation operational*
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+    subgraph SGCompleted["✅ Completed"]
+        style SGCompleted fill:#006400,stroke:#00d9ff,color:#e0e0e0
+        A[TypeScript Migration<br/>27 modules] --> B[Agentic News Gen<br/>10 workflows]
+        B --> C[14 Languages<br/>RTL support]
+        C --> D[Dual Deploy<br/>S3 + GitHub Pages]
+    end
+    subgraph SGProgress["🔄 In Progress"]
+        style SGProgress fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+        E[CIA Data Pipeline<br/>19 products] --> F[Predictive Dashboards<br/>Chart.js/D3.js]
+        F --> G[Content Expansion<br/>Hundreds of articles/month]
+    end
+    subgraph SGPlanned["📋 Planned"]
+        style SGPlanned fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+        H[API Platform<br/>GraphQL] --> I[Nordic Expansion<br/>Denmark, Norway, Finland]
+    end
+    D --> E
+    G --> H
+```
+
+| Capability | Status | Details |
+|:-----------|:------:|:--------|
+| TypeScript migration | ✅ Done | 27 modules, 49 Vitest tests |
+| Agentic news generation | ✅ Live | 10 workflows (9 scheduled + 1 on-demand), 14 languages |
+| 14-language support | ✅ Live | Including Arabic/Hebrew RTL |
+| CIA data integration | 🔄 Active | 19 visualization products |
+| Predictive dashboards | 📋 Planned | Chart.js/D3.js interactive displays |
+
+### Phase 4: Predictive Intelligence & Nordic Expansion (2027–2029)
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph TB
+    subgraph SG2027["2027 — Predictive Analytics"]
+        style SG2027 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+        PA1[🔮 ML Election Models<br/>Coalition probability scoring]
+        PA2[📡 Real-Time Streams<br/>Live parliamentary feeds]
+        PA3[🌍 Nordic Expansion<br/>DK · NO · FI parliaments]
+        PA4[🔍 Multi-Source OSINT<br/>Media + social + official]
+    end
+    subgraph SG2028["2028 — Multi-Modal Intelligence"]
+        style SG2028 fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+        MM1[🎙️ Audio/Video Analysis<br/>Debate tone detection]
+        MM2[🤖 AI Editorial Board<br/>Autonomous quality control]
+        MM3[🔧 Self-Healing Pipelines<br/>Auto-recovery workflows]
+        MM4[📊 65 Automation Assets]
+    end
+    subgraph SG2029["2029 — Autonomous Platform"]
+        style SG2029 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+        AP1[🚀 Fully Autonomous Pipeline<br/>Zero human intervention]
+        AP2[🧠 Expert-Level Analysis<br/>PhD-equivalent insight]
+        AP3[🔌 API Platform Launch<br/>GraphQL + REST]
+        AP4[📊 75 Automation Assets]
+    end
+    PA1 --> MM1
+    PA2 --> MM2
+    PA3 --> MM3
+    PA4 --> MM4
+    MM1 --> AP1
+    MM2 --> AP2
+    MM3 --> AP3
+    MM4 --> AP4
+```
+
+### Phase 5: EU-Wide Coverage & Pre-AGI (2030–2033)
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+    subgraph SGEU["2030-2031 — EU Scale"]
+        style SGEU fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+        EU1[🇪🇺 27 EU Parliaments<br/>+ European Parliament]
+        EU2[🧠 Near-Expert Analysis<br/>Opus 8.x capabilities]
+        EU3[📊 85+ Automation Assets<br/>Continent-wide coverage]
+        EU4[🏛️ Sovereign AI Evaluation<br/>EU AI Act compliance]
+    end
+    subgraph SGGL["2032-2033 — Global Reach"]
+        style SGGL fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+        GL1[🌍 Global Parliamentary Watch<br/>100+ democracies]
+        GL2[🗣️ Every UN Language<br/>Native-quality output]
+        GL3[📊 100 Automation Assets<br/>Pre-AGI capabilities]
+        GL4[🔒 Zero-Trust Architecture<br/>Quantum-safe cryptography]
+    end
+    EU1 --> GL1
+    EU2 --> GL2
+    EU3 --> GL3
+    EU4 --> GL4
+```
+
+### Phase 6: AGI Era & Transformative Democracy (2034–2037)
+
+> *When AGI or near-AGI systems emerge, Riksdagsmonitor's modular architecture is designed with flexibility to adapt to future AI paradigm shifts — including potential AGI capabilities — while maintaining democratic safeguards.*
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph TB
+    subgraph SGAGI["🤖 6.1 AGI-Enhanced Intelligence"]
+        style SGAGI fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+        AGI1["🤖 Autonomous Analysis<br/>Real-time intelligence across<br/>all 195 parliamentary systems"]
+        AGI2["🌐 Universal Language<br/>Every UN language<br/>supported natively"]
+        AGI3["📊 Predictive Governance<br/>Policy impact prediction<br/>before legislation proposed"]
+    end
+    subgraph SGSAFE["⚖️ 6.2 Democratic Safeguards"]
+        style SGSAFE fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+        SAFE1["⚖️ Ethical AI Governance<br/>Human oversight maintained<br/>regardless of AI capability"]
+        SAFE2["🛡️ Anti-Weaponization<br/>Architecture prevents<br/>manipulation or misuse"]
+        SAFE3["🔒 Constitutional Alignment<br/>Democratic values encoded<br/>in platform architecture"]
+    end
+    subgraph SGPARA["🧬 6.3 Paradigm Readiness"]
+        style SGPARA fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+        PARA1["⚛️ Quantum AI Ready<br/>Post-quantum cryptography<br/>Quantum ML integration"]
+        PARA2["🧠 Neuromorphic Computing<br/>Brain-inspired architectures<br/>Edge intelligence deployment"]
+        PARA3["🌍 Transformative Platform<br/>120+ automation assets · 195 parliaments<br/>Global democratic intelligence"]
+    end
+    AGI1 --> SAFE1
+    AGI2 --> SAFE2
+    AGI3 --> SAFE3
+    SAFE1 --> PARA1
+    SAFE2 --> PARA2
+    SAFE3 --> PARA3
+```
+
+**Strategic Considerations for Phase 6:**
+- 🤖 **Autonomous analysis**: AGI-powered real-time political intelligence across all 195 parliamentary systems
+- 🌐 **Universal language support**: Every UN language supported natively
+- 📊 **Predictive governance**: Policy impact prediction *before* legislation is proposed
+- ⚖️ **Ethical AI governance**: Human oversight maintained regardless of AI capability level
+- 🛡️ **Democratic safeguards**: Platform architecture prevents weaponization or manipulation
+
+### 📈 AI Model Evolution Strategy
+
+**Illustrative assumptions** *(high uncertainty — AI landscape evolves rapidly)*:
+- Model updates assumed roughly quarterly; actual cadence will vary by vendor and paradigm
+- Version numbers (Opus 5.x–12.x) are illustrative — actual products may differ significantly
+- Competitors (OpenAI, Google, Meta, EU sovereign AI) evaluated at each major release cycle
+- Architecture must accommodate potential paradigm shifts (quantum AI, neuromorphic computing, or entirely new approaches)
+
+**Workflow Count Projection:**
+
+| Year | Automation Assets | AI Model | Key Capability |
+|:----:|:---------------:|:---------|:---------------|
+| **2026** | 44→50 | Opus 4.6–4.9 | 🤖 Agentic news generation (current) |
+| **2027** | 50–55 | Opus 5.x | 🔮 Predictive analytics & Nordic expansion |
+| **2028** | 55–65 | Opus 6.x | 🎙️ Multi-modal content (audio/video) |
+| **2029** | 65–75 | Opus 7.x | 🚀 Fully autonomous pipeline |
+| **2030** | 75–85 | Opus 8.x | 🧠 Near-expert analysis |
+| **2031–2033** | 85–100 | Opus 9–10.x / Pre-AGI | 🌍 Global parliamentary coverage |
+| **2034–2037** | 100–120+ | AGI / Post-AGI | ⚡ Transformative democracy platform |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+xychart-beta
+    title "Riksdagsmonitor Workflow Growth Projection (2026–2037)"
+    x-axis ["2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037"]
+    y-axis "Automation Assets (Workflows + Prompt Files)" 0 --> 130
+    bar [47, 53, 60, 70, 80, 88, 95, 100, 105, 110, 115, 120]
+    line [47, 53, 60, 70, 80, 88, 95, 100, 105, 110, 115, 120]
+```
+
+> Note: The chart values are midpoint estimates within the projected ranges in the table above and are illustrative, not exact counts.
+
+### 📋 Detailed Future Planning
+
+| Document | Description |
+|:---------|:------------|
+| 📋 [**Future Workflows**](FUTURE_WORKFLOWS.md) | Complete 11-year workflow evolution roadmap with architecture diagrams |
+| 🗺️ [**Future Mindmap**](FUTURE_MINDMAP.md) | Capability expansion map from Swedish monitoring to global democratic intelligence |
+| 🚀 [Future Architecture](FUTURE_ARCHITECTURE.md) | Architectural evolution from static site to AI-native platform |
+| 🔒 [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) | Security roadmap including post-quantum cryptography |
+| 💼 [Future SWOT](FUTURE_SWOT.md) | Strategic opportunities in democratic technology |
+
+---
+
 ## 🏢 About Hack23
 
 **Hack23 AB (Org.nr 5595347807)** - Swedish cybersecurity and open-source intelligence consultancy

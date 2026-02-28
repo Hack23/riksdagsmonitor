@@ -39,6 +39,7 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -50,6 +51,8 @@ network:
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+  scb:
+    url: https://scb-mcp.onrender.com/mcp
 
 tools:
   github:
@@ -65,6 +68,7 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -588,6 +592,29 @@ const previewEnd = dayOfWeek === 6
 
 // Future calendar events (explicit date range)
 get_calendar_events({ from: nextMonday, tom: previewEnd, limit: 50 })
+
+// === SCB STATISTICAL ENRICHMENT (Optional) ===
+// Use the SCB MCP server to add economic/demographic context to political analysis.
+// SCB provides 1,200+ statistical tables covering population, economy, labour,
+// education, and environment via PxWebAPI 2.0.
+//
+// SCB MCP tools: search_tables, get_table_data, get_table_variables, preview_data, find_region_code
+//
+// Example: Enrich budget propositions with unemployment data
+// const labourTables = search_tables({ query: "arbetslöshet sysselsättning", limit: 5 })
+// const unemploymentData = get_table_data({
+//   tableId: "TAB5765",
+//   selection: { Tid: ["TOP(4)"], Kon: ["1+2"], ContentsCode: ["000005GI"] }
+// })
+//
+// Example: Add population context for migration policy
+// const migrationData = get_table_data({
+//   tableId: "TAB4230",
+//   selection: { Tid: ["TOP(4)"], ContentsCode: ["BE0101AK"] }
+// })
+//
+// ⚠️ SCB data is OPTIONAL enrichment — never block article generation on SCB failures.
+// Wrap all SCB calls in try/catch and continue without statistical context if unavailable.
 ```
 
 **⚠️ IMPORTANT: Date Filtering in Analysis**
