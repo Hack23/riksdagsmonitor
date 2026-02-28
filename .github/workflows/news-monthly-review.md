@@ -33,6 +33,7 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -44,6 +45,8 @@ network:
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+  scb:
+    url: https://scb-mcp.onrender.com/mcp
 
 tools:
   github:
@@ -54,6 +57,7 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -169,6 +173,7 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tools:** `search_dokument`, `get_betankanden` — comprehensive document search
 **Cross-reference:** `get_propositioner`, `get_motioner`, `search_voteringar`, `analyze_g0v_by_department`
+**Statistical enrichment:** SCB MCP — enrich monthly review with key economic indicators (GDP, unemployment, inflation)
 
 ```javascript
 get_sync_status({})
@@ -180,6 +185,11 @@ get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
 get_motioner({ rm: <calculated riksmöte>, limit: 20 })
 search_voteringar({ rm: <calculated riksmöte>, limit: 30 })
 analyze_g0v_by_department({ dateFrom: lastMonth, dateTo: today })
+
+// SCB enrichment (optional — wrap in try/catch, do not block generation on SCB failures):
+// search_tables({ query: "BNP arbetslöshet KPI", limit: 5 })
+// get_table_data({ tableId: "TAB5802", selection: { Tid: ["TOP(4)"] } })  // GDP
+// get_table_data({ tableId: "TAB5765", selection: { Tid: ["TOP(4)"], Kon: ["1+2"] } })  // Unemployment
 ```
 
 ## Generation Steps

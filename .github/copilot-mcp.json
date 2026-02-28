@@ -5,6 +5,11 @@
       "url": "https://riksdag-regering-ai.onrender.com/mcp",
       "tools": ["*"]
     },
+    "scb": {
+      "type": "http",
+      "url": "https://scb-mcp.onrender.com/mcp",
+      "tools": ["*"]
+    },
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/insiders",
