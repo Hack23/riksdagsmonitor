@@ -120,9 +120,20 @@ describe('SCB Data Types', () => {
     expect(content).toContain('export interface SCBContext');
     expect(content).toContain('export interface SCBIndicator');
 
-    // SCBContext should have key economic indicators
-    expect(content).toContain('unemployment');
-    expect(content).toContain('gdpGrowth');
+    // SCBContext should have fields aligned with all 12 SCB_DOMAIN_TABLES domains
+    expect(content).toContain('publicFinances');  // fiscal
+    expect(content).toContain('defence');          // defence
+    expect(content).toContain('emissions');         // environment
+    expect(content).toContain('education');         // education
+    expect(content).toContain('healthcare');        // healthcare
+    expect(content).toContain('migration');         // migration
+    expect(content).toContain('euForeign');         // eu-foreign
+    expect(content).toContain('crime');             // justice
+    expect(content).toContain('unemployment');      // labour
+    expect(content).toContain('housing');           // housing
+    expect(content).toContain('transport');         // transport
+    expect(content).toContain('gdpGrowth');         // trade
+    // Cross-domain indicators
     expect(content).toContain('inflation');
     expect(content).toContain('population');
   });
@@ -140,18 +151,20 @@ describe('SCB Policy Domain Mapping', () => {
     const analysisPath = path.join(__dirname, '..', 'scripts', 'data-transformers', 'policy-analysis.ts');
     const content = fs.readFileSync(analysisPath, 'utf-8');
 
-    expect(content).toContain('export const SCB_DOMAIN_TABLES');
+    const scbDomainTablesIndex = content.indexOf('export const SCB_DOMAIN_TABLES');
+    expect(scbDomainTablesIndex).toBeGreaterThan(-1);
+    const scbDomainTablesContent = content.slice(scbDomainTablesIndex);
 
     // Should map all 12 policy domains
     const domains = ['fiscal', 'defence', 'environment', 'education', 'healthcare',
       'migration', 'justice', 'labour', 'housing', 'transport', 'trade'];
 
     domains.forEach(domain => {
-      expect(content).toContain(`${domain}:`);
+      expect(scbDomainTablesContent).toContain(`${domain}:`);
     });
 
     // eu-foreign uses quoted key syntax
-    expect(content).toContain("'eu-foreign':");
+    expect(scbDomainTablesContent).toContain("'eu-foreign':");
   });
 
   it('SCB_DOMAIN_TABLES entries should have query and indicators', () => {

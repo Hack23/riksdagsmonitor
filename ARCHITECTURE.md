@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-20 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-28 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -1654,7 +1654,7 @@ graph TB
 | **Quality** | Inconsistent output | Structured 5-pillar editorial format |
 
 **Security Considerations:**
-- **HTTP-only MCP server** - No local execution risk, remote hosting on Render
+- **HTTPS MCP server** - No local execution risk, remote hosting on Render
 - **Public data sources only** - GDPR Article 6(1)(e) compliance (public interest)
 - **No authentication required** - Public API access, no API keys
 - **Rate limiting** - Handled by remote server, 100 requests/minute
@@ -1697,6 +1697,10 @@ graph TB
 | Trade & Industry | näringsliv företag BNP | TAB5802, TAB5803 | GDP growth, industrial production |
 | Housing | bostäder nybyggnation | TAB2052, TAB4709 | Housing starts, price index |
 | Justice | brott lagföringar | TAB1172 | Reported crimes, conviction rate |
+| Defence & Security | försvar militär offentliga utgifter | — | Defence spending as % of GDP |
+| Healthcare | hälsa sjukvård vård | — | Healthcare spending, hospital beds per capita |
+| Transport | trafik transport infrastruktur | — | Road traffic volume, public transport ridership |
+| EU & Foreign Affairs | utrikeshandel export import | TAB2661 | Export value, import value, trade balance |
 
 **Data Source:** https://www.scb.se/ (PxWebAPI 2.0 — official Swedish statistics API)
 
@@ -1714,7 +1718,7 @@ graph TB
 - Domain-to-table mapping in `scripts/data-transformers/policy-analysis.ts` (`SCB_DOMAIN_TABLES`)
 
 **Security Considerations:**
-- **HTTP-only MCP server** — No local execution risk, remote hosting on Render
+- **HTTPS MCP server** — No local execution risk, remote hosting on Render
 - **Public data sources only** — SCB is an official government statistics agency
 - **No authentication required** — Public API access, no API keys
 - **No PII** — Aggregate statistics only, no individual-level data
@@ -1732,8 +1736,8 @@ graph TB
 | **Repository** | https://github.com/Hack23/riksdagsmonitor |
 | **Path** | /ARCHITECTURE.md |
 | **Format** | Markdown with Mermaid C4 Diagrams |
-| **Last Updated** | 2026-02-20 (UTC) |
-| **Next Review** | 2026-05-20 |
+| **Last Updated** | 2026-02-28 (UTC) |
+| **Next Review** | 2026-05-28 |
 | **Review Cycle** | Quarterly |
 
 <p align="center">

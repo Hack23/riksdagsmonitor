@@ -164,26 +164,34 @@ export interface ArticleContentData {
  * Data sourced via the scb-mcp server (PxWebAPI 2.0).
  */
 export interface SCBContext {
-  /** Unemployment rate data (national/regional) */
-  unemployment?: SCBIndicator;
-  /** GDP growth data */
-  gdpGrowth?: SCBIndicator;
-  /** Inflation / CPI data */
-  inflation?: SCBIndicator;
-  /** Population statistics */
-  population?: SCBIndicator;
-  /** Immigration / emigration data */
-  migration?: SCBIndicator;
-  /** Education enrollment statistics */
-  education?: SCBIndicator;
-  /** Greenhouse gas emissions */
-  emissions?: SCBIndicator;
-  /** Housing construction / prices */
-  housing?: SCBIndicator;
-  /** Government revenue / expenditure */
+  /** Fiscal policy — government revenue / expenditure (domain: fiscal) */
   publicFinances?: SCBIndicator;
-  /** Crime statistics */
+  /** Defence spending as % of GDP (domain: defence) */
+  defence?: SCBIndicator;
+  /** Greenhouse gas emissions, renewable energy (domain: environment) */
+  emissions?: SCBIndicator;
+  /** Student enrollment, graduation rates (domain: education) */
+  education?: SCBIndicator;
+  /** Healthcare expenditure, hospital capacity (domain: healthcare) */
+  healthcare?: SCBIndicator;
+  /** Immigration / emigration data (domain: migration) */
+  migration?: SCBIndicator;
+  /** Export/import value, trade balance (domain: eu-foreign) */
+  euForeign?: SCBIndicator;
+  /** Reported crimes, conviction rate (domain: justice) */
   crime?: SCBIndicator;
+  /** Unemployment rate, employment rate (domain: labour) */
+  unemployment?: SCBIndicator;
+  /** Housing starts, price index (domain: housing) */
+  housing?: SCBIndicator;
+  /** Road traffic volume, public transport (domain: transport) */
+  transport?: SCBIndicator;
+  /** GDP growth, industrial production (domain: trade) */
+  gdpGrowth?: SCBIndicator;
+  /** Inflation / CPI data (cross-domain, relevant to fiscal/trade) */
+  inflation?: SCBIndicator;
+  /** Population statistics (cross-domain, relevant to migration/education) */
+  population?: SCBIndicator;
 }
 
 /** Single SCB statistical indicator with value, period, and source table */
