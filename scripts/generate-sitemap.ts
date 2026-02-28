@@ -31,6 +31,7 @@ console.log('🗺️ Sitemap Generation Script');
 const BASE_URL = 'https://riksdagsmonitor.com';
 const NEWS_DIR = path.join(__dirname, '..', 'news');
 const API_DIR = path.join(__dirname, '..', 'api');
+const DOCS_DIR = path.join(__dirname, '..', 'docs');
 const ROOT_DIR = path.join(__dirname, '..');
 const SITEMAP_FILE = path.join(ROOT_DIR, 'sitemap.xml');
 
@@ -48,6 +49,12 @@ interface ArticleGroup {
 }
 
 interface ApiDoc {
+  file: string;
+  path: string;
+  lastmod: string;
+}
+
+interface DocFile {
   file: string;
   path: string;
   lastmod: string;
@@ -198,6 +205,43 @@ function getApiDocs(): ApiDoc[] {
   scanDir(API_DIR);
 
   console.log(`  Found ${results.length} API documentation files`);
+
+  return results;
+}
+
+/**
+ * Get documentation files from the docs directory (api, coverage, test-results, cypress).
+ */
+function getDocFiles(): DocFile[] {
+  console.log('📖 Scanning docs directory...');
+
+  if (!fs.existsSync(DOCS_DIR)) {
+    console.warn('⚠️ Docs directory not found');
+    return [];
+  }
+
+  const results: DocFile[] = [];
+
+  function scanDir(dir: string): void {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory() && entry.name !== 'assets' && entry.name !== 'node_modules') {
+        scanDir(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith('.html')) {
+        const relativePath = path.relative(DOCS_DIR, fullPath).replace(/\\/g, '/');
+        results.push({
+          file: relativePath,
+          path: fullPath,
+          lastmod: getFileModTime(fullPath),
+        });
+      }
+    }
+  }
+
+  scanDir(DOCS_DIR);
+
+  console.log(`  Found ${results.length} documentation files in docs/`);
 
   return results;
 }
@@ -417,6 +461,18 @@ function generateSitemap(): string {
       const loc = `api/${doc.file}`;
       const priority = doc.file === 'index.html' ? '0.7' : '0.5';
       xml += generateUrlEntry(loc, doc.lastmod, 'weekly', priority);
+    });
+  }
+
+  // Generated documentation in docs/ (coverage, test-results, cypress, api docs)
+  const docFiles = getDocFiles();
+  if (docFiles.length > 0) {
+    console.log(`  Processing ${docFiles.length} docs/ documentation files...`);
+
+    docFiles.forEach((doc) => {
+      const loc = `docs/${doc.file}`;
+      const priority = doc.file === 'index.html' || doc.file.endsWith('/index.html') ? '0.4' : '0.3';
+      xml += generateUrlEntry(loc, doc.lastmod, 'monthly', priority);
     });
   }
 

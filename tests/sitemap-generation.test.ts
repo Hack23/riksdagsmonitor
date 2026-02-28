@@ -186,6 +186,31 @@ describe('Sitemap Generation', () => {
     });
   });
 
+  describe('Generated Documentation (docs/) Coverage', () => {
+    const docsDirExists = fs.existsSync(path.join(rootDir, 'docs'));
+    const skipMsg = '  ⏭ Skipping: docs/ directory not found';
+
+    it('should include docs index page if docs directory exists', () => {
+      if (!docsDirExists) {
+        console.log(skipMsg);
+        return;
+      }
+      expect(sitemapContent).toContain('docs/index.html');
+    });
+
+    it('should include docs documentation files if docs directory exists', () => {
+      if (!docsDirExists) {
+        console.log(skipMsg);
+        return;
+      }
+      const docsUrls: RegExpMatchArray | null = sitemapContent.match(/<loc>https:\/\/riksdagsmonitor\.com\/docs\/.+?\.html<\/loc>/g);
+      const docsUrlCount: number = (docsUrls || []).length;
+      console.log(`  ✓ Found ${docsUrlCount} docs/ documentation URLs`);
+      // docs/ content is generated and variable, just verify some exist
+      expect(docsUrlCount).toBeGreaterThan(0);
+    });
+  });
+
   describe('Sitemap HTML Pages Coverage', () => {
     it('should include sitemap HTML pages', () => {
       expect(sitemapContent).toContain('<loc>https://riksdagsmonitor.com/sitemap.html</loc>');
