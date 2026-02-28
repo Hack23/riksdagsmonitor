@@ -47,6 +47,9 @@ mcp-servers:
     url: https://riksdag-regering-ai.onrender.com/mcp
   scb:
     url: https://scb-mcp.onrender.com/mcp
+  world-bank:
+    command: npx
+    args: ["-y", "@smithery/cli@4.4.0", "run", "@anshumax/world_bank_mcp_server"]
 
 tools:
   github:

@@ -17,6 +17,7 @@
 
 import fs from 'fs';
 import type { QualityThresholds, QualityMetrics, QualityResult } from './types/validation.js';
+import { hasEconomicContext } from './world-bank-context.js';
 
 /**
  * Map of normalized party codes to their common name variants.
@@ -57,6 +58,7 @@ const DEFAULT_THRESHOLDS: QualityThresholds = {
   requireHistoricalContext: true,
   recommendHistoricalContext: true,
   recommendInternationalComparison: false,
+  recommendEconomicContext: true,
 };
 
 /**
@@ -296,6 +298,7 @@ export async function enhanceArticleQuality(
     hasWhyThisMatters: hasWhyThisMatters(content),
     hasHistoricalContext: hasHistoricalContext(content),
     hasInternationalComparison: hasInternationalComparison(content),
+    hasEconomicContext: hasEconomicContext(content),
   };
 
   // Calculate overall score
@@ -338,6 +341,10 @@ export async function enhanceArticleQuality(
 
   if (options.recommendInternationalComparison && !metrics.hasInternationalComparison) {
     warnings.push('Recommended: Add international comparison');
+  }
+
+  if (options.recommendEconomicContext && !metrics.hasEconomicContext) {
+    warnings.push('Recommended: Add economic context (World Bank indicators, GDP, unemployment data)');
   }
 
   return {
