@@ -306,6 +306,13 @@ function generateSitemap(): string {
   const politicianDashboardMtime = getFileModTime(path.join(ROOT_DIR, 'politician-dashboard.html'));
   xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
 
+  // RSS feed
+  const rssPath = path.join(ROOT_DIR, 'rss.xml');
+  if (fs.existsSync(rssPath)) {
+    const rssMtime = getFileModTime(rssPath);
+    xml += generateUrlEntry('rss.xml', rssMtime, 'daily', '0.5');
+  }
+
   // Dashboard pages with all language alternates (only for existing files)
   const dashboardAlternates: HreflangAlternate[] = LANGUAGES.map((lang) => ({
     lang,
