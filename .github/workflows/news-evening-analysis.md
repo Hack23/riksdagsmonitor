@@ -1115,6 +1115,16 @@ For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_grou
 
 **CRITICAL:** Only use `safeoutputs___noop` if genuinely no parliamentary activity. If articles generated, PR MUST be created or workflow FAILS.
 
+### 📦 Key Scripts Reference
+
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/generate-news-enhanced.ts` | `npx tsx scripts/generate-news-enhanced.ts --types=evening-analysis --languages=LANGS` | Main article generator |
+| `scripts/fix-article-navigation.py` | `python3 scripts/fix-article-navigation.py` | Fix missing language switcher + article-top-nav (idempotent) |
+| `scripts/validate-news-generation.sh` | `bash scripts/validate-news-generation.sh` | Validate generated article structure |
+| `scripts/mcp-setup.sh` | `source scripts/mcp-setup.sh` | Set MCP environment variables |
+| `scripts/mcp-query-cli.ts` | `npx tsx scripts/mcp-query-cli.ts <tool> '<json>'` | Query individual MCP tools |
+
 ### ✅ MCP Connectivity Summary
 
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:

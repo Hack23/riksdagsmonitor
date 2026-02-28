@@ -1471,6 +1471,37 @@ Remember: You are producing world-class political journalism that informs Swedis
 
 **CRITICAL:** Only use `safeoutputs___noop` if genuinely no new data exists. If articles were generated, PR MUST be created or workflow FAILS.
 
+### 📦 Available Scripts Reference
+
+**Article Generation (primary pipeline):**
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/generate-news-enhanced.ts` | `npx tsx scripts/generate-news-enhanced.ts --types=TYPE --languages=LANGS` | Main article generator using MCP data |
+| `scripts/mcp-setup.sh` | `source scripts/mcp-setup.sh` | Sets MCP_SERVER_URL, MCP_AUTH_TOKEN env vars |
+| `scripts/mcp-query-cli.ts` | `npx tsx scripts/mcp-query-cli.ts <tool> '<json>'` | Query individual MCP tools from bash |
+
+**Article Maintenance & Fixing:**
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/fix-article-navigation.py` | `python3 scripts/fix-article-navigation.py [--dry-run]` | Adds language switcher + article-top-nav to ALL articles (idempotent) |
+| `scripts/fix-language-switchers-and-css.py` | `python3 scripts/fix-language-switchers-and-css.py` | Updates switchers to show only existing languages, removes embedded CSS |
+| `scripts/fix-mixed-language-descriptions.py` | `python3 scripts/fix-mixed-language-descriptions.py` | Fixes articles with mixed-language meta descriptions |
+
+**Validation & Quality:**
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/validate-news-generation.sh` | `bash scripts/validate-news-generation.sh` | Validates generated article structure and content |
+| `scripts/validate-translations.ts` | `npx tsx scripts/validate-translations.ts` | Validates translation completeness across languages |
+| `scripts/validate-news-translations.ts` | `node scripts/validate-news-translations.ts` | Validates news article translations |
+| `scripts/article-quality-enhancer.ts` | (imported by generators) | Quality metrics: economic context, structure, completeness |
+
+**Build-time Generation (run by `npm run prebuild`, NOT manually):**
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/generate-news-indexes.ts` | `npx tsx scripts/generate-news-indexes/index.ts` | Generates news index pages (14 languages) |
+| `scripts/extract-news-metadata.ts` | `npx tsx scripts/extract-news-metadata.ts` | Extracts article metadata to `data/news-articles.json` |
+| `scripts/generate-sitemap.ts` | `npx tsx scripts/generate-sitemap.ts` | Generates `sitemap.xml` |
+
 ### ✅ MCP Connectivity Summary
 
 The riksdag-regering MCP server is configured in the workflow frontmatter and accessible through the gh-aw MCP gateway:
