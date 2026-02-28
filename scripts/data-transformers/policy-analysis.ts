@@ -568,6 +568,11 @@ export function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | st
  * Maps policy domain keys to relevant SCB table IDs and search queries
  * for enriching political analysis with official statistics.
  *
+ * Each entry contains:
+ * - `query` — Swedish-language search terms for `search_tables()` SCB MCP tool
+ * - `tables` — Known SCB table IDs (e.g. "TAB5765" for unemployment) for `get_table_data()`
+ * - `indicators` — Human-readable indicator names expected from the tables
+ *
  * SCB MCP tools: search_tables, get_table_data, get_table_variables, preview_data, find_region_code
  * Source: https://scb-mcp.onrender.com/mcp (PxWebAPI 2.0)
  */
