@@ -274,6 +274,8 @@ describe('world-bank-context', () => {
     it('should detect Swedish inflected forms (definite, plural)', () => {
       expect(hasEconomicContext('Försvarsutgifterna ökade kraftigt under 2025')).toBe(true);
       expect(hasEconomicContext('Forskningsutgifterna låg på 3,4% av BNP')).toBe(true);
+      expect(hasEconomicContext('Handelsbalansen förbättrades under kvartalet')).toBe(true);
+      expect(hasEconomicContext('Statsskulden minskade som andel av BNP')).toBe(true);
     });
 
     it('should detect World Bank indicator IDs', () => {

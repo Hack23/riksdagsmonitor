@@ -310,8 +310,8 @@ export function hasEconomicContext(content: string): boolean {
     /\bbnp\b/i, // Swedish: bruttonationalprodukt
     /\barbetslöshet/i, // Swedish: unemployment (arbetslöshet, arbetslösheten, etc.)
     /\bekonomi/i, // Swedish: economy
-    /\bhandelsbalans\b/i, // Swedish: trade balance
-    /\bstatsskuld\b/i, // Swedish: national debt
+    /\bhandelsbalans/i, // Swedish: trade balance (handelsbalans, handelsbalansen, etc.)
+    /\bstatsskuld/i, // Swedish: national debt (statsskuld, statsskulden, etc.)
     /\bförsvarsutgift/i, // Swedish: defense expenditure (försvarsutgift, försvarsutgifter, försvarsutgifterna, etc.)
     /\bforskningsutgift/i, // Swedish: R&D expenditure (forskningsutgift, forskningsutgifter, forskningsutgifterna, etc.)
     /\bNY\.GDP/i, // World Bank indicator IDs

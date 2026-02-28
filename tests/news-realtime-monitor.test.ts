@@ -513,4 +513,39 @@ describe('News Realtime Monitor - Quality Framework', () => {
       expect(result.metrics).toHaveProperty('hasInternationalComparison');
     });
   });
+
+  describe('recommendEconomicContext warning', () => {
+    const tmpArticle = '/tmp/test-economic-context-article.html';
+
+    afterEach(() => {
+      if (fs.existsSync(tmpArticle)) fs.unlinkSync(tmpArticle);
+    });
+
+    it('should emit warning when economic context is missing and recommendation is enabled', async () => {
+      fs.writeFileSync(tmpArticle, '<html><body><p>The parliamentary vote was decisive. Because reasons, therefore results.</p></body></html>');
+      const result = await qualityModule.enhanceArticleQuality(tmpArticle, {
+        minQualityScore: 0,
+        recommendEconomicContext: true,
+      });
+      expect(result.warnings).toContain('Recommended: Add economic context (World Bank indicators, GDP, unemployment data)');
+    });
+
+    it('should not emit warning when economic context is present', async () => {
+      fs.writeFileSync(tmpArticle, '<html><body><p>Sweden GDP growth was 2.1% according to World Bank data.</p></body></html>');
+      const result = await qualityModule.enhanceArticleQuality(tmpArticle, {
+        minQualityScore: 0,
+        recommendEconomicContext: true,
+      });
+      expect(result.warnings).not.toContain('Recommended: Add economic context (World Bank indicators, GDP, unemployment data)');
+    });
+
+    it('should not emit warning when recommendation is disabled', async () => {
+      fs.writeFileSync(tmpArticle, '<html><body><p>The parliamentary vote was decisive.</p></body></html>');
+      const result = await qualityModule.enhanceArticleQuality(tmpArticle, {
+        minQualityScore: 0,
+        recommendEconomicContext: false,
+      });
+      expect(result.warnings ?? []).not.toContain('Recommended: Add economic context (World Bank indicators, GDP, unemployment data)');
+    });
+  });
 });
