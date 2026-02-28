@@ -431,6 +431,7 @@ sequenceDiagram
     participant Cron as GitHub Actions Cron
     participant NewsGen as generate-daily-news.js
     participant MCP as riksdag-regering-mcp
+    participant SCB as scb-mcp
     participant State as workflow-state.json
     participant Git as Git Repository
     participant CI as GitHub Actions CI/CD
@@ -450,6 +451,10 @@ sequenceDiagram
     
     NewsGen->>MCP: Query 4: Parliamentary calendar (tomorrow)
     MCP-->>NewsGen: Upcoming debates, votes
+    
+    NewsGen->>SCB: Query 5: Statistical context (optional)
+    SCB-->>NewsGen: Economic indicators (unemployment, GDP, etc.)
+    Note over NewsGen,SCB: SCB enrichment is optional — failures do not block article generation
     
     NewsGen->>NewsGen: Analyze data + Generate 5 editorial pillars
     Note over NewsGen: 1. Lead Story (400-800 words)<br/>2. Parliamentary Pulse (200-400 words)<br/>3. Government Watch (200-300 words)<br/>4. Opposition Dynamics (200-300 words)<br/>5. Looking Ahead (100-200 words)
@@ -759,6 +764,7 @@ graph LR
 | **Financial Authority** | Budget, Government Spending | Monthly | CIA Platform → External Links | LOW |
 | **World Bank** | Country Indicators, Economic Data | Quarterly | CIA Platform → External Links | LOW |
 | **riksdag-regering-mcp** | Aggregated Political Data | On-demand | MCP Server (32 tools) | LOW |
+| **SCB (Statistics Sweden)** | 1,200+ statistical tables (economy, labour, population, education, environment) | Varies (monthly–quarterly) | MCP Server (scb-mcp, PxWebAPI 2.0) | LOW |
 
 ### News Generation Architecture
 
@@ -1547,6 +1553,7 @@ graph TB
     
     subgraph "MCP Servers"
         RR[riksdag-regering-mcp<br/>HTTP: riksdag-regering-ai.onrender.com/mcp<br/>32 specialized tools]
+        SCB[scb-mcp<br/>HTTP: scb-mcp.onrender.com/mcp<br/>Statistics Sweden PxWebAPI 2.0]
         GH[GitHub MCP<br/>HTTP: api.githubcopilot.com/mcp/insiders<br/>Repository management]
         FS[Filesystem MCP<br/>Local: mcp-server-filesystem<br/>File operations]
         Mem[Memory MCP<br/>Local: mcp-server-memory<br/>Knowledge graph]
@@ -1556,10 +1563,12 @@ graph TB
     subgraph "Data Sources"
         Riksdag[Riksdagen API<br/>data.riksdagen.se<br/>98.5% data completeness]
         Regering[Regeringen<br/>via g0v.se<br/>Government documents]
+        SCBData[Statistics Sweden<br/>scb.se<br/>1,200+ statistical tables]
     end
     
     Agent --> Skills
     Agent --> RR
+    Agent --> SCB
     Agent --> GH
     Agent --> FS
     Agent --> Mem
@@ -1567,6 +1576,7 @@ graph TB
     
     RR --> Riksdag
     RR --> Regering
+    SCB --> SCBData
     
     style Agent fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
     style Skills fill:#4caf50,stroke:#2e7d32,stroke-width:2px
@@ -1636,6 +1646,7 @@ graph TB
 | Capability | Without MCP | With MCP |
 |------------|-------------|----------|
 | **Data Access** | Manual API calls to Riksdagen API | Automated via 32 specialized tools |
+| **Statistical Context** | No official statistics integration | SCB MCP: 1,200+ tables (economy, labour, population) |
 | **Analysis** | Generic AI prompts | Domain-specific intelligence-operative agent |
 | **Expertise** | Basic knowledge | 18 strategic skills (political science, OSINT, Swedish politics) |
 | **Efficiency** | Multi-step manual workflows | Integrated single-step operations |
@@ -1650,6 +1661,63 @@ graph TB
 - **Data retention** - No PII stored, public data only
 
 **See:** [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for full security details
+
+#### scb-mcp Server (Statistics Sweden)
+
+**Purpose:** Provides access to 1,200+ statistical tables from Statistics Sweden (SCB) for enriching political analysis with official economic, demographic, and social indicators.
+
+**Configuration:**
+```json
+{
+  "scb": {
+    "type": "http",
+    "url": "https://scb-mcp.onrender.com/mcp",
+    "tools": ["*"]
+  }
+}
+```
+
+**Available Tools:**
+
+1. **search_tables** — Search SCB's 1,200+ statistical tables by keyword (Swedish/English)
+2. **get_table_data** — Retrieve data from a specific table with variable selections
+3. **get_table_variables** — List available variables and value domains for a table
+4. **preview_data** — Preview first rows of a table before full retrieval
+5. **find_region_code** — Lookup region codes for geographic filtering
+
+**Policy Domain Mapping:**
+
+| Policy Domain | SCB Search Query | Example Tables | Key Indicators |
+|---------------|-----------------|----------------|----------------|
+| Fiscal Policy | skatter statsbudget | TAB1291, TAB1292 | Revenue, expenditure, budget balance |
+| Labour Market | sysselsättning arbetslöshet | TAB5765, TAB5616 | Unemployment rate, employment rate |
+| Migration | invandring utvandring befolkning | TAB637, TAB4230 | Immigration, emigration, net migration |
+| Education | utbildning studenter | TAB4787, TAB4790 | Enrollment, graduation rates |
+| Environment | växthusgaser utsläpp | TAB5404, TAB5407 | GHG emissions, renewable energy share |
+| Trade & Industry | näringsliv företag BNP | TAB5802, TAB5803 | GDP growth, industrial production |
+| Housing | bostäder nybyggnation | TAB2052, TAB4709 | Housing starts, price index |
+| Justice | brott lagföringar | TAB1172 | Reported crimes, conviction rate |
+
+**Data Source:** https://www.scb.se/ (PxWebAPI 2.0 — official Swedish statistics API)
+
+**Use Cases:**
+1. **Proposition Analysis** — Enrich budget propositions with actual fiscal/economic data
+2. **Motion Context** — Add statistical evidence to opposition motion analysis
+3. **Monthly Reviews** — Include key economic indicators (GDP, unemployment, inflation)
+4. **Weekly Context** — Add trend data for economic policy discussions
+5. **Evening Analysis** — Statistical grounding for political developments
+
+**Integration Pattern:**
+- SCB data is **optional enrichment** — article generation never blocks on SCB failures
+- All SCB MCP calls are wrapped in try/catch with graceful fallback
+- SCB data adds "Statistical Context" sections to articles when available
+- Domain-to-table mapping in `scripts/data-transformers/policy-analysis.ts` (`SCB_DOMAIN_TABLES`)
+
+**Security Considerations:**
+- **HTTP-only MCP server** — No local execution risk, remote hosting on Render
+- **Public data sources only** — SCB is an official government statistics agency
+- **No authentication required** — Public API access, no API keys
+- **No PII** — Aggregate statistics only, no individual-level data
 
 ---
 
