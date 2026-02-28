@@ -768,6 +768,11 @@ Structure the analysis around these editorial pillars:
     <a href="{YYYY-MM-DD}-{baseSlug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="{YYYY-MM-DD}-{baseSlug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+
+  <!-- Back-to-news top navigation (REQUIRED - add after language switcher, before article) -->
+  <div class="article-top-nav">
+    <a href="{newsIndexFilename}" class="back-to-news">← {localizedBackToNews}</a>
+  </div>
   
   <div class="news-article">
     <header class="article-header">
@@ -829,6 +834,8 @@ Structure the analysis around these editorial pillars:
 ```
 
 **CSS Classes Available in styles.css:**
+- `.language-switcher` - Language navigation bar (after `<body>`, before article)
+- `.article-top-nav` - Top navigation with back-to-news link (after language switcher, before article)
 - `.news-article` - Main container
 - `.article-header` - Header section
 - `.article-meta` - Date, time, type info
@@ -838,7 +845,7 @@ Structure the analysis around these editorial pillars:
 - `.watch-section` - "What to Watch" section
 - `.article-footer` - Footer with sources
 - `.article-sources` - Sources section
-- `.back-to-news` - Back button
+- `.back-to-news` - Back button (used in both `.article-top-nav` and `.article-footer`)
 
 ### Step 4: Generate All Language Versions
 

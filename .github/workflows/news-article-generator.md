@@ -752,6 +752,7 @@ The script creates articles with:
    - Proper `<html lang="{lang}">` and `dir="rtl"` for Arabic/Hebrew
    - Mobile-responsive (handled by styles.css)
    - **Language switcher navigation** (added after opening `<body>`, before `<article>`)
+   - **Back-to-news top navigation** (`article-top-nav` div after language switcher, before article)
 
 2. **Metadata Structure** (automatically handled):
    - SEO metadata (title, description, keywords)
@@ -770,6 +771,8 @@ The script creates articles with:
    - **Conclusion** (100 words): Synthesis and broader significance
 
 4. **CSS Classes** (available in styles.css):
+   - `.language-switcher` - Language navigation bar (after `<body>`, before article)
+   - `.article-top-nav` - Top navigation with back-to-news link (after language switcher, before article)
    - `.news-article` - Main container
    - `.article-header` - Header with title and meta
    - `.article-meta` - Date, time, article type
@@ -780,7 +783,7 @@ The script creates articles with:
    - `.watch-section` - Key points section
    - `.article-footer` - Footer with sources
    - `.article-sources` - Sources and attribution
-   - `.back-to-news` - Navigation link
+   - `.back-to-news` - Navigation link (used in both `.article-top-nav` and `.article-footer`)
 
 5. **Source Attribution**:
    - Links to Riksdag documents (dok_id)
@@ -819,6 +822,21 @@ The script creates articles with:
    - Links use relative paths (same directory as article)
    - **Localize aria-label**: EN="Language switcher", SV="Språkväxlare", DA="Sprogvælger", NO="Språkvelger", FI="Kielenvalitsin", DE="Sprachwechsler", FR="Sélecteur de langue", ES="Selector de idioma", NL="Taalwisselaar", AR="محدد اللغة", HE="בורר שפה", JA="言語切り替え", KO="언어 선택기", ZH="语言切换器"
    - Current language link can be styled as `.lang-link.active` (optional)
+
+7. **Back-to-News Top Navigation** (REQUIRED):
+
+   Add immediately after the language switcher `</nav>`, before the `<article>` or `<div class="news-article">` element:
+
+   ```html
+   <div class="article-top-nav">
+     <a href="{newsIndexFilename}" class="back-to-news">← {localizedBackToNews}</a>
+   </div>
+   ```
+
+   **Requirements**:
+   - `{newsIndexFilename}`: `index.html` for English, `index_{lang}.html` for other languages
+   - `{localizedBackToNews}`: EN="Back to News", SV="Tillbaka till nyheter", DA="Tilbage til nyheder", NO="Tilbake til nyheter", FI="Takaisin uutisiin", DE="Zurück zu Nachrichten", FR="Retour aux actualités", ES="Volver a noticias", NL="Terug naar nieuws", AR="العودة إلى الأخبار", HE="חזרה לחדשות", JA="ニュースに戻る", KO="뉴스로 돌아가기", ZH="返回新闻"
+   - Uses `← ` (left arrow) before the label text
 
 #### Language Support
 
