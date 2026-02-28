@@ -1553,7 +1553,7 @@ graph TB
     
     subgraph "MCP Servers"
         RR[riksdag-regering-mcp<br/>HTTP: riksdag-regering-ai.onrender.com/mcp<br/>32 specialized tools]
-        SCB[scb-mcp<br/>HTTP: scb-mcp.onrender.com/mcp<br/>Statistics Sweden PxWebAPI 2.0]
+        SCB[scb-mcp<br/>HTTPS: scb-mcp.onrender.com/mcp<br/>Statistics Sweden PxWebAPI 2.0]
         GH[GitHub MCP<br/>HTTP: api.githubcopilot.com/mcp/insiders<br/>Repository management]
         FS[Filesystem MCP<br/>Local: mcp-server-filesystem<br/>File operations]
         Mem[Memory MCP<br/>Local: mcp-server-memory<br/>Knowledge graph]
@@ -1737,7 +1737,7 @@ graph TB
 | **Path** | /ARCHITECTURE.md |
 | **Format** | Markdown with Mermaid C4 Diagrams |
 | **Last Updated** | 2026-02-28 (UTC) |
-| **Next Review** | 2026-05-28 |
+| **Next Review** | 2026-05-20 |
 | **Review Cycle** | Quarterly |
 
 <p align="center">
