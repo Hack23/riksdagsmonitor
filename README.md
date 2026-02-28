@@ -741,16 +741,16 @@ timeline
                   : Near-expert analysis
                   : Sovereign AI evaluation
         2032-2033 : Global parliamentary monitoring
-                  : 100 workflows
+                  : 100 automation assets
                   : Pre-AGI capabilities
                   : Every UN language
     section Phase 6 — AGI Era (2034-2037)
         2034-2035 : AGI-enhanced intelligence
                   : 195 parliaments monitored
                   : Predictive governance
-                  : 110+ workflows
+                  : 110+ automation assets
         2036-2037 : Transformative democracy platform
-                  : 120+ workflows
+                  : 120+ automation assets
                   : Post-AGI capabilities
                   : Democratic safeguards architecture
 ```
@@ -834,14 +834,14 @@ graph LR
         style SGEU fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
         EU1[🇪🇺 27 EU Parliaments<br/>+ European Parliament]
         EU2[🧠 Near-Expert Analysis<br/>Opus 8.x capabilities]
-        EU3[📊 85+ Workflows<br/>Continent-wide coverage]
+        EU3[📊 85+ Automation Assets<br/>Continent-wide coverage]
         EU4[🏛️ Sovereign AI Evaluation<br/>EU AI Act compliance]
     end
     subgraph SGGL["2032-2033 — Global Reach"]
         style SGGL fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
         GL1[🌍 Global Parliamentary Watch<br/>100+ democracies]
         GL2[🗣️ Every UN Language<br/>Native-quality output]
-        GL3[📊 100 Workflows<br/>Pre-AGI capabilities]
+        GL3[📊 100 Automation Assets<br/>Pre-AGI capabilities]
         GL4[🔒 Zero-Trust Architecture<br/>Quantum-safe cryptography]
     end
     EU1 --> GL1
@@ -873,7 +873,7 @@ graph TB
         style SGPARA fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
         PARA1["⚛️ Quantum AI Ready<br/>Post-quantum cryptography<br/>Quantum ML integration"]
         PARA2["🧠 Neuromorphic Computing<br/>Brain-inspired architectures<br/>Edge intelligence deployment"]
-        PARA3["🌍 Transformative Platform<br/>120+ workflows · 195 parliaments<br/>Global democratic intelligence"]
+        PARA3["🌍 Transformative Platform<br/>120+ automation assets · 195 parliaments<br/>Global democratic intelligence"]
     end
     AGI1 --> SAFE1
     AGI2 --> SAFE2
