@@ -1,5 +1,5 @@
 {
-  "version": "0.6.3",
+  "version": "0.6.4",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -233,8 +233,8 @@
       }
     },
     "@types/node": {
-      "version": "25.3.0",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.3.0.tgz",
+      "version": "25.3.2",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.3.2.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -250,7 +250,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.0"
+          "version": "25.3.2"
         }
       }
     },
@@ -1360,7 +1360,7 @@
               "overridden": false,
               "dependencies": {
                 "@types/node": {
-                  "version": "25.3.0"
+                  "version": "25.3.2"
                 }
               }
             },
@@ -2536,7 +2536,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.0"
+          "version": "25.3.2"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2549,7 +2549,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "25.3.0"
+              "version": "25.3.2"
             }
           }
         },
@@ -2779,7 +2779,7 @@
           }
         },
         "@types/node": {
-          "version": "25.3.0"
+          "version": "25.3.2"
         },
         "fast-glob": {
           "version": "3.3.3",
@@ -3638,7 +3638,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.0"
+          "version": "25.3.2"
         },
         "esbuild": {
           "version": "0.27.3"
@@ -3681,8 +3681,8 @@
           }
         },
         "rollup": {
-          "version": "4.57.1",
-          "resolved": "https://registry.npmjs.org/rollup/-/rollup-4.57.1.tgz",
+          "version": "4.59.0",
+          "resolved": "https://registry.npmjs.org/rollup/-/rollup-4.59.0.tgz",
           "overridden": false,
           "dependencies": {
             "@rollup/rollup-android-arm-eabi": {},
@@ -3703,13 +3703,13 @@
             "@rollup/rollup-linux-riscv64-musl": {},
             "@rollup/rollup-linux-s390x-gnu": {},
             "@rollup/rollup-linux-x64-gnu": {
-              "version": "4.57.1",
-              "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.57.1.tgz",
+              "version": "4.59.0",
+              "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.59.0.tgz",
               "overridden": false
             },
             "@rollup/rollup-linux-x64-musl": {
-              "version": "4.57.1",
-              "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.57.1.tgz",
+              "version": "4.59.0",
+              "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.59.0.tgz",
               "overridden": false
             },
             "@rollup/rollup-openbsd-x64": {},
@@ -3748,7 +3748,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "25.3.0"
+          "version": "25.3.2"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
