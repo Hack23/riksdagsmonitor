@@ -783,7 +783,7 @@ graph LR
 
 | Capability | Status | Details |
 |:-----------|:------:|:--------|
-| TypeScript migration | ✅ Done | 27 modules, 49 Vitest test suites (2000+ test cases) |
+| TypeScript migration | ✅ Done | 27 modules, 49 Vitest tests |
 | Agentic news generation | ✅ Live | 10 workflows (9 scheduled + 1 on-demand), 14 languages |
 | 14-language support | ✅ Live | Including Arabic/Hebrew RTL |
 | CIA data integration | 🔄 Active | 19 visualization products |
@@ -919,6 +919,8 @@ xychart-beta
     bar [47, 53, 60, 70, 80, 88, 95, 100, 105, 110, 115, 120]
     line [47, 53, 60, 70, 80, 88, 95, 100, 105, 110, 115, 120]
 ```
+
+> Note: The chart values are midpoint estimates within the projected ranges in the table above and are illustrative, not exact counts.
 
 ### 📋 Detailed Future Planning
 
