@@ -783,7 +783,7 @@ graph LR
 
 | Capability | Status | Details |
 |:-----------|:------:|:--------|
-| TypeScript migration | ✅ Done | 27 modules, 1200+ unit tests |
+| TypeScript migration | ✅ Done | 27 modules, 49 Vitest test suites (2000+ test cases) |
 | Agentic news generation | ✅ Live | 10 workflows (9 scheduled + 1 on-demand), 14 languages |
 | 14-language support | ✅ Live | Including Arabic/Hebrew RTL |
 | CIA data integration | 🔄 Active | 19 visualization products |
