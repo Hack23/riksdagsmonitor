@@ -560,3 +560,82 @@ export function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | st
   return generatePolicySignificance(doc, lang, impliedDoktyp);
 }
 
+// ---------------------------------------------------------------------------
+// SCB (Statistics Sweden) table mapping for policy domains
+// ---------------------------------------------------------------------------
+
+/**
+ * Maps policy domain keys to relevant SCB table IDs and search queries
+ * for enriching political analysis with official statistics.
+ *
+ * Each entry contains:
+ * - `query` — Swedish-language search terms for `search_tables()` SCB MCP tool
+ * - `tables` — Known SCB table IDs (e.g. "TAB5765" for unemployment) for `get_table_data()`
+ * - `indicators` — Human-readable indicator names expected from the tables
+ *
+ * SCB MCP tools: search_tables, get_table_data, get_table_variables, preview_data, find_region_code
+ * Source: https://scb-mcp.onrender.com/mcp (PxWebAPI 2.0)
+ */
+export const SCB_DOMAIN_TABLES: Readonly<Record<DomainKey, { query: string; tables: string[]; indicators: string[] }>> = {
+  fiscal: {
+    query: 'skatter statsbudget offentliga finanser',
+    tables: ['TAB1291', 'TAB1292'],
+    indicators: ['Government revenue', 'Government expenditure', 'Budget balance'],
+  },
+  defence: {
+    query: 'försvar militär offentliga utgifter',
+    tables: [],
+    indicators: ['Defence spending as % of GDP'],
+  },
+  environment: {
+    query: 'växthusgaser utsläpp miljö',
+    tables: ['TAB5404', 'TAB5407'],
+    indicators: ['GHG emissions (kt CO₂e)', 'Renewable energy share'],
+  },
+  education: {
+    query: 'utbildning studenter skola',
+    tables: ['TAB4787', 'TAB4790'],
+    indicators: ['Student enrollment', 'Graduation rates', 'Education spending'],
+  },
+  healthcare: {
+    query: 'hälsa sjukvård vård',
+    tables: [],
+    indicators: ['Healthcare spending', 'Hospital beds per capita'],
+  },
+  migration: {
+    query: 'invandring utvandring migration befolkning',
+    tables: ['TAB637', 'TAB4230'],
+    indicators: ['Immigration', 'Emigration', 'Net migration'],
+  },
+  'eu-foreign': {
+    query: 'utrikeshandel export import',
+    tables: ['TAB2661'],
+    indicators: ['Export value', 'Import value', 'Trade balance'],
+  },
+  justice: {
+    query: 'brott lagföringar kriminalstatistik',
+    tables: ['TAB1172'],
+    indicators: ['Reported crimes', 'Conviction rate'],
+  },
+  labour: {
+    query: 'sysselsättning arbetslöshet arbetsmarknad',
+    tables: ['TAB5765', 'TAB5616'],
+    indicators: ['Unemployment rate', 'Employment rate', 'Labour force participation'],
+  },
+  housing: {
+    query: 'bostäder nybyggnation hyror',
+    tables: ['TAB2052', 'TAB4709'],
+    indicators: ['Housing starts', 'Housing prices index'],
+  },
+  transport: {
+    query: 'trafik transport infrastruktur',
+    tables: [],
+    indicators: ['Road traffic volume', 'Public transport ridership'],
+  },
+  trade: {
+    query: 'näringsliv företag BNP',
+    tables: ['TAB5802', 'TAB5803'],
+    indicators: ['GDP growth', 'Business starts', 'Industrial production index'],
+  },
+};
+

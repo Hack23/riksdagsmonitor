@@ -33,6 +33,7 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -44,6 +45,8 @@ network:
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+  scb:
+    url: https://scb-mcp.onrender.com/mcp
 
 tools:
   github:
@@ -54,6 +57,7 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -167,10 +171,15 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `get_propositioner` — fetches latest government propositions
 **Cross-reference:** `search_dokument`, `analyze_g0v_by_department`
+**Statistical enrichment:** SCB MCP — enrich with economic/fiscal data relevant to propositions
 
 ```javascript
 get_sync_status({})
 get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
+
+// SCB enrichment (optional — wrap in try/catch, do not block generation on SCB failures):
+// search_tables({ query: "statsbudget offentliga finanser BNP", limit: 5 })
+// get_table_data({ tableId: "<id>", selection: { Tid: ["TOP(4)"] } })
 ```
 
 ## Generation Steps

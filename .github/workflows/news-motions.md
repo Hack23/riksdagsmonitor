@@ -33,6 +33,7 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -44,6 +45,8 @@ network:
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+  scb:
+    url: https://scb-mcp.onrender.com/mcp
 
 tools:
   github:
@@ -54,6 +57,7 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
+    - scb-mcp.onrender.com
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -167,10 +171,16 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `get_motioner` — fetches latest opposition motions
 **Cross-reference:** `search_dokument_fulltext`, `search_anforanden`
+**Statistical enrichment:** SCB MCP — enrich with statistics relevant to motion policy areas (labour, education, migration, etc.)
 
 ```javascript
 get_sync_status({})
 get_motioner({ rm: <calculated riksmöte>, limit: 20 })
+
+// SCB enrichment (optional — wrap in try/catch, do not block generation on SCB failures):
+// For labour motions: search_tables({ query: "arbetslöshet sysselsättning", limit: 3 })
+// For education motions: search_tables({ query: "utbildning studenter", limit: 3 })
+// For migration motions: search_tables({ query: "invandring utvandring befolkning", limit: 3 })
 ```
 
 ## Generation Steps
