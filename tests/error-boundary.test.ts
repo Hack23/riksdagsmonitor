@@ -267,7 +267,7 @@ describe('renderWithFallback', () => {
     expect(renderFn).toHaveBeenCalledTimes(2);
   });
 
-  it('restores original container HTML before each renderFn call', async () => {
+  it('preserves existing container HTML when renderFn runs on the first attempt', async () => {
     // Pre-populate the container with a sentinel element (simulates a <canvas> in the HTML)
     container.innerHTML = '<canvas id="myChart"></canvas>';
 

@@ -83,6 +83,8 @@ export async function renderWithFallback(
     loadingOverlay.className = 'error-boundary-loading-overlay';
 
     // Ensure the container provides a positioning context for the overlay.
+    // Capture the prior inline value so it can be restored in the finally block.
+    const priorInlinePosition = container.style.position;
     const currentPosition = getComputedStyle(container).position;
     if (currentPosition === '' || currentPosition === 'static') {
       container.style.position = 'relative';
@@ -113,6 +115,9 @@ export async function renderWithFallback(
       if (loadingOverlay.parentNode === container) {
         container.removeChild(loadingOverlay);
       }
+      // Restore the container's original inline position value to avoid
+      // permanently altering its stacking context after the overlay is gone.
+      container.style.position = priorInlinePosition;
       inFlight = false;
     }
   };
