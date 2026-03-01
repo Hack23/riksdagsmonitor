@@ -7,7 +7,7 @@
  */
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-declare const d3: any;
+import type { SimulationNodeDatum, SimulationLinkDatum, DSVRowString } from 'd3';
 
 // ========== Interfaces ==========
 
@@ -17,7 +17,7 @@ export interface PartyConfig {
   fullName: string;
 }
 
-export interface PartyNode extends d3.SimulationNodeDatum {
+export interface PartyNode extends SimulationNodeDatum {
   id: string;
   name: string;
   fullName: string;
@@ -25,7 +25,7 @@ export interface PartyNode extends d3.SimulationNodeDatum {
   influence: number;
 }
 
-export interface CoalitionLink extends d3.SimulationLinkDatum<PartyNode> {
+export interface CoalitionLink extends SimulationLinkDatum<PartyNode> {
   strength: number;
 }
 
@@ -54,7 +54,7 @@ export type AnnualVotes = Record<string, AnnualVoteEntry[]>;
 export interface DataCache {
   coalitionAlignment: CoalitionAlignment | null;
   behavioralPatterns: BehavioralPatterns | null;
-  decisionPatterns: d3.DSVRowString<string>[] | null;
+  decisionPatterns: DSVRowString<string>[] | null;
   votingAnomalies: VotingAnomaly[] | null;
   annualVotes: AnnualVotes | null;
 }

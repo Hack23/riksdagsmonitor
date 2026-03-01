@@ -12,7 +12,8 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare const Chart: any;
-import type { CommitteeData } from './types.js';
+import { CONFIG } from './data.js';
+import type { CommitteeData, CommitteeDefinition, ProductivityMatrixRow, AnnualDocumentRow, SeasonalPatternRow } from './types.js';
 
 // ==============================================
 // CHART.JS VISUALIZATIONS

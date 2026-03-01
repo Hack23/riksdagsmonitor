@@ -34,7 +34,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
   content += `
     <div class="context-box">
       <h3>${L(lang, 'whyMatters')}</h3>
-      <p>${context || L(lang, 'whyMattersDefault')}</p>
+      <p>${escapeHtml(context || String(L(lang, 'whyMattersDefault')))}</p>
     </div>
 `;
 
@@ -58,7 +58,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
 
       content += `
     <h3>${dayName ? dayName + ' - ' : ''}${titleHtml}</h3>
-    <p>${event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`}</p>
+    <p>${escapeHtml(event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`)}</p>
 `;
 
       // Policy Context: cross-reference related documents and questions per event
@@ -216,15 +216,12 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       const rawSummary = rec['summary'] ?? '';
       const ministerName = extractMinister(rawSummary);
       const tillMatch = rawSummary.match(/\btill\s+[^\n]+\n\s*/i);
-      const contentStart = tillMatch
-        ? rawSummary.indexOf(tillMatch[0]) + tillMatch[0].length
-        : rawSummary.replace(/^Interpellation\s+\S+[^\n]*\n\s*/i, '').replace(/^\s*av\s+[^\n]+\n\s*/i, '').length === rawSummary.length
-          ? 0
-          : 0;
-      const cleanedSummary = (tillMatch ? rawSummary.slice(contentStart) : rawSummary
-        .replace(/^Interpellation\s+\S+[^\n]*\n\s*/i, '')
-        .replace(/^\s*av\s+[^\n]+\n\s*/i, '')
-        .replace(/^\s*till\s+[^\n]+\n\s*/i, ''))
+      const cleanedSummary = (tillMatch
+        ? rawSummary.slice(rawSummary.indexOf(tillMatch[0]) + tillMatch[0].length)
+        : rawSummary
+            .replace(/^Interpellation\s+\S+[^\n]*\n\s*/i, '')
+            .replace(/^\s*av\s+[^\n]+\n\s*/i, '')
+            .replace(/^\s*till\s+[^\n]+\n\s*/i, ''))
         .trim()
         .slice(0, 200);
       content += `    <div class="document-entry">\n`;

@@ -8,39 +8,10 @@
  */
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-declare const d3: any;
-
- * - Committee effectiveness indicates government functioning
- * - Productivity trends show policy momentum
- * - Coalition control of committees affects policy implementation
- * - Committee conflicts indicate policy disputes
- * 
- * @gdpr Public Committee Records
- * - Committee decisions are public
- * - Member participation public (published records)
- * - Aggregation protects individual privacy
- * - Retention follows parliamentary archive standards
- * 
- * @security Committee Data Integrity
- * - Data sourced from official CIA platform
- * - Timestamps prevent tampering
- * - Checksums validate authenticity
- * - Anomaly detection identifies corruption
- * 
- * @author Hack23 AB (Committee Intelligence & Governance Analytics)
- * @license Apache-2.0
- * @version 2.1.0
- * @since 2024-07-12
- * @see https://d3js.org/ (D3.js Data Visualization)
- * @see https://www.chartjs.org/ (Chart.js Charting)
- * @see https://github.com/Hack23/cia (CIA Platform)
- * @see Issue #111 (Committee Dashboard Enhancement)
- * @see https://www.riksdagen.se/sv/sa-funkar-riksdagen/utskott/ (Committee Information)
- */
 
 /// <reference lib="dom" />
 
-import * as d3 from 'd3';
+import type { SimulationNodeDatum, SimulationLinkDatum } from 'd3';
 
 // Chart.js and Papa Parse are loaded as browser globals via script tags
 declare const Chart: any;
@@ -132,7 +103,7 @@ export interface CommitteeData {
   seasonalPatterns: SeasonalPatternRow[];
 }
 
-export interface NetworkNode extends d3.SimulationNodeDatum {
+export interface NetworkNode extends SimulationNodeDatum {
   id: string;
   code: string;
   name: string;
@@ -142,7 +113,7 @@ export interface NetworkNode extends d3.SimulationNodeDatum {
   radius: number;
 }
 
-export interface NetworkLink extends d3.SimulationLinkDatum<NetworkNode> {
+export interface NetworkLink extends SimulationLinkDatum<NetworkNode> {
   value: number;
 }
 
