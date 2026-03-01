@@ -225,10 +225,33 @@ npx tsx scripts/generate-news-enhanced.ts \
 These elements are validated by `bash scripts/validate-news-generation.sh` (Checks 8–10). The fix script is a **fallback only** — do not run it by default:
 ```bash
 # FALLBACK ONLY — use if validate-news-generation.sh reports missing navigation elements
-python3 scripts/fix-article-navigation.py
+npx tsx scripts/fix-article-navigation.ts
 ```
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
+
+Run validation and HTMLHint before creating PR:
+```bash
+bash scripts/validate-news-generation.sh
+VALIDATION_EXIT=$?
+if [ "$VALIDATION_EXIT" -ne 0 ]; then
+  echo "❌ News generation validation failed. Fix the reported issues before creating a PR."
+  exit "$VALIDATION_EXIT"
+fi
+
+# HTMLHint validation with auto-fix for common nesting errors
+NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | wc -l)
+if [ "$NEWS_FILES" -gt 0 ]; then
+  if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
+    echo "⚠️ HTML validation errors found, attempting auto-fix..."
+    npx tsx scripts/article-quality-enhancer.ts --fix
+    if ! npx htmlhint "news/*-*.html"; then
+      echo "❌ HTML validation failed after auto-fix. Please fix remaining HTMLHint errors before creating a PR."
+      exit 1
+    fi
+  fi
+fi
+```
 
 **CRITICAL: Each article MUST contain real analysis, not just a list of translated event titles.**
 Every generated article must include:
