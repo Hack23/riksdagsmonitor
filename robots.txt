@@ -6,6 +6,9 @@ Disallow: /.github/
 
 Sitemap: https://riksdagsmonitor.com/sitemap.xml
 
+# RSS Feed
+# https://riksdagsmonitor.com/rss.xml
+
 # Allow all search engines to crawl the site
 User-agent: Googlebot
 Allow: /
