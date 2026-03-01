@@ -569,7 +569,8 @@ describe('Pipeline: hreflang tag consistency', () => {
   it('contains hreflang tags for all 14 language codes', () => {
     const html = articleTemplate.generateArticleHTML(makeArticleData('en'));
     ALL_14_LANGS.forEach(lang => {
-      expect(html, `hreflang="${lang}" missing`).toContain(`hreflang="${lang}"`);
+      const expectedHreflang = lang === 'no' ? 'nb' : lang;
+      expect(html, `hreflang="${expectedHreflang}" missing`).toContain(`hreflang="${expectedHreflang}"`);
     });
   });
 
@@ -604,29 +605,43 @@ describe('Pipeline: edge cases — empty MCP data (degraded mode)', () => {
     mockClientInstance.searchDocuments.mockResolvedValue([]);
 
     const result = await weekAheadMod.generateWeekAhead({ languages: ['en'] });
-    // Generator should still succeed (degraded article or error, but not throw)
-    expect(typeof result.success).toBe('boolean');
+    // week-ahead still generates a degraded article even with no events
+    expect(result.success).toBe(true);
+    const articles = result.articles as GeneratedArticle[];
+    expect(Array.isArray(articles)).toBe(true);
+    expect(articles.length).toBeGreaterThan(0);
+    // Empty event list yields a thin article without <h2> sections — relax that check
+    const firstArticle = articles[0];
+    expect(firstArticle).toBeDefined();
+    const validation = pipelineValidation.validateArticleHTML(firstArticle!.html, { requireSections: false });
+    expect(validation.passed, validation.errors.join(', ')).toBe(true);
   });
 
   it('committee-reports handles empty reports gracefully', async () => {
     mockClientInstance.fetchCommitteeReports.mockResolvedValue([]);
 
     const result = await committeeReportsMod.generateCommitteeReports({ languages: ['en'] });
-    expect(typeof result.success).toBe('boolean');
+    // committee-reports skips article generation when no reports are found
+    expect(result.success).toBe(true);
+    expect(result.files).toBe(0);
   });
 
   it('propositions handles empty data gracefully', async () => {
     mockClientInstance.fetchPropositions.mockResolvedValue([]);
 
     const result = await propositionsMod.generatePropositions({ languages: ['en'] });
-    expect(typeof result.success).toBe('boolean');
+    // propositions skips article generation when no propositions are found
+    expect(result.success).toBe(true);
+    expect(result.files).toBe(0);
   });
 
   it('motions handles empty data gracefully', async () => {
     mockClientInstance.fetchMotions.mockResolvedValue([]);
 
     const result = await motionsMod.generateMotions({ languages: ['en'] });
-    expect(typeof result.success).toBe('boolean');
+    // motions skips article generation when no motions are found
+    expect(result.success).toBe(true);
+    expect(result.files).toBe(0);
   });
 });
 

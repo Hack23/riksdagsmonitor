@@ -109,7 +109,7 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:data2" content="${typeLabel}">
   
   <!-- Hreflang for language alternatives -->
-${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
+${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l === 'no' ? 'nb' : l}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/${baseSlug}-en.html">
   
   <!-- Google Fonts -->
