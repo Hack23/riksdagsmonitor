@@ -35,8 +35,6 @@ declare namespace d3 {
   interface SimulationNodeDatum { index?: number; x?: number; y?: number; vx?: number; vy?: number; fx?: number | null; fy?: number | null; }
   interface SimulationLinkDatum<NodeDatum extends SimulationNodeDatum> { source: NodeDatum | string | number; target: NodeDatum | string | number; index?: number; }
   type DSVRowString<Columns extends string = string> = Partial<Record<Columns, string>>;
-  interface Selection<GElement, Datum, PElement, PDatum> { [key: string]: any; }
-  interface Simulation<NodeDatum, LinkDatum> { [key: string]: any; }
 }
 
 // ========== Interfaces ==========
