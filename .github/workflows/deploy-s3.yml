@@ -108,7 +108,17 @@ jobs:
             exit 1
           fi
 
-          echo "✅ Build artifacts verified: 'dist' directory and 'dist/index.html' exist."
+          if [ ! -f "dist/rss.xml" ]; then
+            echo "❌ Build verification failed: 'dist/rss.xml' is missing."
+            exit 1
+          fi
+
+          if [ ! -f "dist/sitemap.xml" ]; then
+            echo "❌ Build verification failed: 'dist/sitemap.xml' is missing."
+            exit 1
+          fi
+
+          echo "✅ Build artifacts verified: 'dist' directory, 'dist/index.html', 'dist/rss.xml', and 'dist/sitemap.xml' exist."
 
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
