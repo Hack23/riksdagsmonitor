@@ -75,7 +75,7 @@ export const LANGUAGE_PRESETS: Readonly<Record<string, Language[]>> = {
   'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl']
 };
 
-let languagesInput: string = languagesArg ? (languagesArg.split('=')[1] ?? '').trim().toLowerCase() : 'en,sv';
+let languagesInput: string = languagesArg ? (languagesArg.split('=')[1] ?? '').trim().toLowerCase() : 'all';
 
 // Expand presets (after trimming and normalizing)
 const presetLanguages: Language[] | undefined = LANGUAGE_PRESETS[languagesInput];
