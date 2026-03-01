@@ -16,7 +16,14 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
-          egress-policy: audit
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            codeload.github.com:443
+            github.com:443
+            nodejs.org:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
 
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -61,7 +68,14 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
-          egress-policy: audit
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            codeload.github.com:443
+            github.com:443
+            nodejs.org:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
 
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -119,7 +133,24 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
-          egress-policy: audit
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            cia.sourceforge.io:443
+            codeload.github.com:443
+            data.riksdagen.se:443
+            data.worldbank.org:443
+            github.com:443
+            nodejs.org:443
+            objects.githubusercontent.com:443
+            raw.githubusercontent.com:443
+            registry.npmjs.org:443
+            riksdagsmonitor.com:443
+            www.esv.se:443
+            www.hack23.com:443
+            www.linkedin.com:443
+            www.riksdagen.se:443
+            www.val.se:443
 
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -151,9 +182,6 @@ jobs:
           npm install -g linkinator@6
           linkinator --version
           echo "✅ linkinator v6 installed successfully"
-
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Check internal links (static files)
         run: |
@@ -239,10 +267,10 @@ jobs:
     needs: [typescript-lint, html-validation, link-checker]
     if: always()
     steps:
-      - name: Harden the runner (Audit all outbound calls)
+      - name: Harden Runner (block outbound calls)
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
-          egress-policy: audit
+          egress-policy: block
 
       - name: Quality Check Summary
         run: |
