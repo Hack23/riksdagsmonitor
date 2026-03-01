@@ -44,8 +44,7 @@ jobs:
             cat eslint-report.txt
             echo ""
             echo "📊 Linting completed with warnings/errors"
-            # Don't fail the build on linting issues initially - just report them
-            # exit 1
+            exit 1
           fi
           
       - name: Upload ESLint Report
@@ -103,8 +102,7 @@ jobs:
             cat htmlhint-report.txt
             echo ""
             echo "📊 Validation completed with warnings/errors"
-            # Don't fail the build on HTML validation issues initially
-            # exit 1
+            exit 1
           fi
           
       - name: Upload HTMLHint Report
