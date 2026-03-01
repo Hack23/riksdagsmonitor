@@ -137,7 +137,6 @@ jobs:
           allowed-endpoints: |
             api.github.com:443
             codeload.github.com:443
-            deb.debian.org:80
             github.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
@@ -174,9 +173,6 @@ jobs:
           npm install -g linkinator@6
           linkinator --version
           echo "✅ linkinator v6 installed successfully"
-
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Check internal links (static files)
         run: |
