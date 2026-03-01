@@ -10412,17 +10412,12 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
     var(--skeleton-base)  75%
   );
   background-size: 200% 100%;
-  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  animation: shimmer 1.5s ease-in-out infinite;
 }
 
 .skeleton-bar:nth-child(1) { width: 100%; }
 .skeleton-bar:nth-child(2) { width: 85%; }
 .skeleton-bar:nth-child(3) { width: 70%; }
-
-@keyframes skeleton-shimmer {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
 
 /* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {

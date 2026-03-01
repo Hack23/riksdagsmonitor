@@ -80,6 +80,26 @@ export async function renderWithFallback(
     const loadingOverlay = document.createElement('div');
     loadingOverlay.setAttribute('data-error-boundary-loading', 'true');
     loadingOverlay.setAttribute('aria-busy', 'true');
+    loadingOverlay.className = 'error-boundary-loading-overlay';
+
+    // Ensure the container provides a positioning context for the overlay.
+    const currentPosition = getComputedStyle(container).position;
+    if (currentPosition === '' || currentPosition === 'static') {
+      container.style.position = 'relative';
+    }
+
+    // Style the overlay to cover the container without affecting layout.
+    loadingOverlay.style.position = 'absolute';
+    loadingOverlay.style.top = '0';
+    loadingOverlay.style.right = '0';
+    loadingOverlay.style.bottom = '0';
+    loadingOverlay.style.left = '0';
+    loadingOverlay.style.display = 'flex';
+    loadingOverlay.style.alignItems = 'center';
+    loadingOverlay.style.justifyContent = 'center';
+    loadingOverlay.style.zIndex = '1';
+    loadingOverlay.style.pointerEvents = 'none';
+
     renderLoadingFallback(loadingOverlay, options.loadingLabel);
     container.appendChild(loadingOverlay);
 
