@@ -38,11 +38,14 @@
 (function(): void {
   'use strict';
 
-  // Read browser globals at the point of use so late-loaded libraries are
-  // picked up even when defer/async or load-order changes occur.
-  const d3 = (globalThis as any).d3;
-  const Chart = (globalThis as any).Chart;
-  const Papa = (globalThis as any).Papa;
+  // Browser globals – declared here so they are in scope for all class
+  // methods. They are assigned inside initializeDashboard() so they are
+  // always read from globalThis at the point of use, not at IIFE load time.
+  // This ensures late-loaded libraries (defer/async/dynamic ordering) are
+  // always picked up correctly.
+  let d3: any;
+  let Chart: any;
+  let Papa: any;
 
   // ==============================================
   // CONFIGURATION
@@ -1214,6 +1217,11 @@
     console.log('[CommitteeDashboard] Initializing...');
 
     try {
+      // Resolve browser globals here so late-loaded libraries are picked up.
+      d3 = (globalThis as any).d3;
+      Chart = (globalThis as any).Chart;
+      Papa = (globalThis as any).Papa;
+
       // Check if required libraries are loaded
       if (typeof d3 === 'undefined') {
         throw new Error('D3.js not loaded. Please include D3.js library.');
