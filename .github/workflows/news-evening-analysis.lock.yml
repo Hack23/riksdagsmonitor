@@ -670,7 +670,7 @@ jobs:
                 "entrypointArgs": [
                   "npx",
                   "-y",
-                  "@playwright/mcp@latest",
+                  "@playwright/mcp@0.0.68",
                   "--headless"
                 ],
                 "tools": [

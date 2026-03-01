@@ -64,7 +64,7 @@ tools:
   bash: true
   microsoft/playwright:
     command: npx
-    args: ["-y", "@playwright/mcp@latest", "--headless"]
+    args: ["-y", "@playwright/mcp@0.0.68", "--headless"]
     env:
       DISPLAY: ":99"
 
