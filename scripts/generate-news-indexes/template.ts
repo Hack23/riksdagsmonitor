@@ -230,13 +230,28 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
           <option value="title">${escapeHtml(f.titleSort)}</option>
         </select>
       </div>
+      
+      <div class="filter-group search-group">
+        <label for="search-input">${escapeHtml(lang.i18n.search)}</label>
+        <input type="search" id="search-input" placeholder="${escapeHtml(lang.i18n.searchPlaceholder)}" aria-label="${escapeHtml(lang.i18n.search)}" autocomplete="off">
+      </div>
     </div>
     
     <!-- Articles Grid -->
     <div class="articles-grid" id="articles-grid"></div>
     
-    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
+    <div id="no-articles" style="text-align: center; padding: 3rem; color: #888;" hidden>
+      ${escapeHtml(lang.i18n.noArticles)}
+    </div>
+    
+    <div id="no-results" style="text-align: center; padding: 3rem; color: #888;" hidden>
       ${escapeHtml(lang.noResults)}
+    </div>
+    
+    <!-- Pagination controls -->
+    <div class="pagination-controls" role="navigation" aria-label="${escapeHtml(lang.i18n.loadMore)}">
+      <p id="article-counter" class="article-counter" aria-live="polite" aria-atomic="true"></p>
+      <button id="load-more-btn" class="load-more-btn btn" hidden aria-label="${escapeHtml(lang.i18n.loadMore)}">${escapeHtml(lang.i18n.loadMore)}</button>
     </div>
   </div>
   
@@ -244,60 +259,183 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     // Language flags mapping (shared with server-side)
     const LANGUAGE_FLAGS = ${JSON.stringify(LANGUAGE_FLAGS)};
     
+    // RTL page flag (used to set dir="ltr" on language badges)
+    const IS_RTL = ${isRTL};
+    
     // Available in translation (for current language)
     const AVAILABLE_IN_TEXT = '${escapeHtml(AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in')}';
     
+    // HTML-escape helper to prevent XSS when interpolating article fields into innerHTML
+    function esc(str) {
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+    }
+    
+    function safeHref(slug) {
+      var s = String(slug);
+      // Only allow simple relative HTML filenames to avoid URL parsing/normalization issues.
+      // Reject empty strings, backslashes, and control characters outright.
+      if (!s || /[\\\\\\x00-\\x1F\\x7F]/.test(s)) {
+        return '#';
+      }
+      // Allow only [A-Za-z0-9._-] characters with a required ".html" suffix.
+      if (!/^[A-Za-z0-9._-]+\\.html$/.test(s)) {
+        return '#';
+      }
+      return esc(s);
+    }
+    
+    // Pagination i18n strings
+    const i18nLoadMore = ${JSON.stringify(lang.i18n.loadMore)};
+    const i18nShowingConfig = ${JSON.stringify(lang.i18n.showing)};
+    function i18nShowing(shown, total) {
+      var template;
+      // Support both simple string templates and pluralization objects
+      if (i18nShowingConfig && typeof i18nShowingConfig === 'object') {
+        // Prefer explicit pluralization keys if provided
+        if (shown === 1 && Object.prototype.hasOwnProperty.call(i18nShowingConfig, 'one')) {
+          template = i18nShowingConfig.one;
+        } else if (Object.prototype.hasOwnProperty.call(i18nShowingConfig, 'other')) {
+          template = i18nShowingConfig.other;
+        } else {
+          // Fallback: best-effort stringification of config object
+          template = String(i18nShowingConfig);
+        }
+      } else {
+        template = i18nShowingConfig || '';
+      }
+      if (typeof template !== 'string') {
+        template = String(template);
+      }
+      return template
+        .replace('{shown}', String(shown))
+        .replace('{total}', String(total));
+    }
+    
+    // Pagination state
+    const PAGE_SIZE = 20;
+    let visibleCount = PAGE_SIZE;
+    let restoringFromURL = false;
+    
     // Dynamic articles array - generated from news/ directory
-    const articles = ${JSON.stringify(displayData, null, 2)};
+    const articles = ${JSON.stringify(displayData, null, 2).replace(/<\//g, '<\\/')};
     
     let filteredArticles = [...articles];
     
-    function renderArticles(articlesToRender) {
-      const grid = document.getElementById('articles-grid');
-      const noResults = document.getElementById('no-results');
+    function buildArticleCard(article) {
+      // Generate language badge for the article using shared LANGUAGE_FLAGS
+      const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
+      const dirAttr = IS_RTL ? ' dir="ltr"' : '';
+      const langBadge = \`<span class="language-badge"\${dirAttr} aria-label="\${esc(article.lang)} language"><span aria-hidden="true">\${flag}</span> \${esc(article.lang.toUpperCase())}</span>\`;
       
-      if (articlesToRender.length === 0) {
+      // Generate available languages display if multiple languages exist
+      const availableLangs = article.availableLanguages || [article.lang];
+      let availableDisplay = '';
+      if (availableLangs.length > 1) {
+        const availableBadges = availableLangs.map(l => {
+          const lf = LANGUAGE_FLAGS[l] || '🌐';
+          return \`<span class="lang-badge-sm"\${dirAttr}><span aria-hidden="true">\${lf}</span> \${esc(l.toUpperCase())}</span>\`;
+        }).join(' ');
+        availableDisplay = \`<p class="available-languages"><strong>\${AVAILABLE_IN_TEXT}:</strong> \${availableBadges}</p>\`;
+      }
+      
+      return \`
+      <article class="article-card">
+        <div class="article-meta">
+          <time class="article-date" datetime="\${esc(article.date)}">\${formatDate(article.date)}</time>
+          <span class="article-type">\${localizeType(article.type)}</span>
+          \${langBadge}
+        </div>
+        <h2 class="article-title">
+          <a href="\${safeHref(article.slug)}">\${esc(article.title)}</a>
+        </h2>
+        <p class="article-excerpt">\${esc(article.excerpt)}</p>
+        \${availableDisplay}
+        <div class="article-tags">
+          \${article.tags.map(tag => \`<span class="tag">\${esc(tag)}</span>\`).join('')}
+        </div>
+      </article>
+    \`;
+    }
+    
+    function renderPage() {
+      const grid = document.getElementById('articles-grid');
+      const noArticles = document.getElementById('no-articles');
+      const noResults = document.getElementById('no-results');
+      const counter = document.getElementById('article-counter');
+      const btn = document.getElementById('load-more-btn');
+      
+      if (articles.length === 0) {
         grid.innerHTML = '';
-        noResults.style.display = 'block';
+        if (noArticles) noArticles.hidden = false;
+        noResults.hidden = true;
+        if (counter) counter.textContent = '';
+        if (btn) btn.hidden = true;
         return;
       }
       
-      noResults.style.display = 'none';
+      if (filteredArticles.length === 0) {
+        grid.innerHTML = '';
+        noResults.hidden = false;
+        if (noArticles) noArticles.hidden = true;
+        if (counter) counter.textContent = '';
+        if (btn) btn.hidden = true;
+        return;
+      }
       
-      grid.innerHTML = articlesToRender.map(article => {
-        // Generate language badge for the article using shared LANGUAGE_FLAGS
-        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
-        const langBadge = \`<span class="language-badge" aria-label="\${article.lang} language"><span aria-hidden="true">\${flag}</span> \${article.lang.toUpperCase()}</span>\`;
-        
-        // Generate available languages display if multiple languages exist
-        const availableLangs = article.availableLanguages || [article.lang];
-        let availableDisplay = '';
-        if (availableLangs.length > 1) {
-          const availableBadges = availableLangs.map(l => {
-            const f = LANGUAGE_FLAGS[l] || '🌐';
-            return \`<span class="lang-badge-sm"><span aria-hidden="true">\${f}</span> \${l.toUpperCase()}</span>\`;
-          }).join(' ');
-          availableDisplay = \`<p class="available-languages"><strong>\${AVAILABLE_IN_TEXT}:</strong> \${availableBadges}</p>\`;
+      if (noArticles) noArticles.hidden = true;
+      noResults.hidden = true;
+      
+      const visible = filteredArticles.slice(0, visibleCount);
+      grid.innerHTML = visible.map(buildArticleCard).join('');
+      
+      // Update counter
+      const shown = visible.length;
+      const total = filteredArticles.length;
+      if (counter) counter.textContent = i18nShowing(shown, total);
+      
+      // Update load more button
+      if (btn) {
+        if (total > visibleCount) {
+          btn.hidden = false;
+          btn.setAttribute('aria-label', i18nLoadMore);
+        } else {
+          btn.hidden = true;
         }
-        
-        return \`
-        <article class="article-card">
-          <div class="article-meta">
-            <time class="article-date" datetime="\${article.date}">\${formatDate(article.date)}</time>
-            <span class="article-type">\${localizeType(article.type)}</span>
-            \${langBadge}
-          </div>
-          <h2 class="article-title">
-            <a href="\${article.slug}">\${article.title}</a>
-          </h2>
-          <p class="article-excerpt">\${article.excerpt}</p>
-          \${availableDisplay}
-          <div class="article-tags">
-            \${article.tags.map(tag => \`<span class="tag">\${tag}</span>\`).join('')}
-          </div>
-        </article>
-      \`;
-      }).join('');
+      }
+    }
+    
+    function loadMore() {
+      const prevCount = visibleCount;
+      visibleCount += PAGE_SIZE;
+      updateURL();
+      renderPage();
+      // Focus management: move focus to first newly visible article link
+      const cards = document.querySelectorAll('.article-card');
+      if (cards[prevCount]) {
+        const link = cards[prevCount].querySelector('a');
+        if (link) link.focus();
+      }
+    }
+    
+    function updateURL() {
+      const typeFilter = document.getElementById('filter-type').value;
+      const topicFilter = document.getElementById('filter-topic').value;
+      const sortFilter = document.getElementById('filter-sort').value;
+      const searchInput = document.getElementById('search-input').value.trim();
+      const params = new URLSearchParams();
+      if (typeFilter !== 'all') params.set('type', typeFilter);
+      if (topicFilter !== 'all') params.set('topic', topicFilter);
+      if (sortFilter !== 'date-desc') params.set('sort', sortFilter);
+      if (searchInput) params.set('q', searchInput);
+      const effectiveVisible = Math.min(visibleCount, filteredArticles.length);
+      const page = Math.ceil(effectiveVisible / PAGE_SIZE);
+      if (page > 1 && filteredArticles.length > PAGE_SIZE) {
+        params.set('page', String(page));
+      }
+      const newURL = params.toString() ? '?' + params.toString() : window.location.pathname;
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', newURL);
+      }
     }
     
     const typeLabels = ${JSON.stringify({
@@ -320,6 +458,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       const typeFilter = document.getElementById('filter-type').value;
       const topicFilter = document.getElementById('filter-topic').value;
       const sortFilter = document.getElementById('filter-sort').value;
+      const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
       
       let filtered = [...articles];
       
@@ -331,6 +470,11 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       // Apply topic filter
       if (topicFilter !== 'all') {
         filtered = filtered.filter(article => article.topics.includes(topicFilter));
+      }
+      
+      // Apply search filter
+      if (searchQuery) {
+        filtered = filtered.filter(article => article.title.toLowerCase().includes(searchQuery));
       }
       
       // Apply sorting
@@ -347,46 +491,59 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       }
       
       filteredArticles = filtered;
-      renderArticles(filteredArticles);
+      // Reset visibleCount on user-initiated filter changes, but preserve it
+      // for the initial render when restoring from URL "page" parameter.
+      if (restoringFromURL) {
+        restoringFromURL = false;
+      } else {
+        visibleCount = PAGE_SIZE;
+      }
+      updateURL();
+      renderPage();
+    }
+    
+    function readURLParams() {
+      const params = new URLSearchParams(window.location.search);
+      
+      function safeSetSelect(id, value) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const opts = Array.from(el.options);
+        if (opts.some(o => o.value === value)) {
+          el.value = value;
+        }
+      }
+      
+      if (params.has('type')) safeSetSelect('filter-type', params.get('type'));
+      if (params.has('topic')) safeSetSelect('filter-topic', params.get('topic'));
+      if (params.has('sort')) safeSetSelect('filter-sort', params.get('sort'));
+      const searchInput = document.getElementById('search-input');
+      if (searchInput && params.has('q')) searchInput.value = params.get('q');
+      if (params.has('page')) {
+        const page = parseInt(params.get('page'), 10);
+        if (!isNaN(page) && page > 1) {
+          visibleCount = page * PAGE_SIZE;
+          restoringFromURL = true;
+        }
+      }
     }
     
     // Event listeners
     document.getElementById('filter-type').addEventListener('change', filterArticles);
     document.getElementById('filter-topic').addEventListener('change', filterArticles);
     document.getElementById('filter-sort').addEventListener('change', filterArticles);
+    document.getElementById('load-more-btn').addEventListener('click', loadMore);
     
-    // Initial render
-    filterArticles();
-  </script>
-
-  <!-- Dynamic Content Loader -->
-  <script>
-    // Localization data
-    const i18n = {
-      noArticles: '${lang.i18n.noArticles}',
-      loading: '${lang.i18n.loading}',
-      articleCount: ${lang.i18n.articleCount}
-    };
-    
-    // Dynamic content loader
-    document.addEventListener('DOMContentLoaded', () => {
-      const articlesGrid = document.querySelector('.articles-grid');
-      if (!articlesGrid) return;
-      
-      const articleCards = articlesGrid.querySelectorAll('.article-card');
-      const articleCount = articleCards.length;
-      
-      // Update article count if element exists
-      const countElement = document.querySelector('.article-count');
-      if (countElement) {
-        countElement.textContent = i18n.articleCount(articleCount);
-      }
-      
-      // Show no articles message if empty
-      if (articleCount === 0) {
-        articlesGrid.innerHTML = \`<p class="no-articles">\${i18n.noArticles}</p>\`;
-      }
+    // Debounced search input listener
+    let searchTimer;
+    document.getElementById('search-input').addEventListener('input', function() {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(filterArticles, 300);
     });
+    
+    // Read URL state and render
+    readURLParams();
+    filterArticles();
   </script>
 
   </main>

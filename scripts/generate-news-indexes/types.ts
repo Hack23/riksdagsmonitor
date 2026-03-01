@@ -29,8 +29,10 @@ export interface FilterLabels {
 
 export interface I18nStrings {
   noArticles: string;
-  loading: string;
-  articleCount: string;
+  search: string;
+  searchPlaceholder: string;
+  loadMore: string;
+  showing: string | { one: string; other: string };
 }
 
 export interface BreadcrumbLabels {

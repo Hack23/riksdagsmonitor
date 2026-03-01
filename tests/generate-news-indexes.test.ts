@@ -340,6 +340,75 @@ describe('Generate News Indexes', () => {
       expect(heContent).toContain('dir="rtl"');
       expect(heContent).toContain('lang="he"');
     });
+
+    it('should include search input with id and aria-label', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('id="search-input"');
+      expect(enContent).toContain('type="search"');
+      // aria-label present (non-empty) and autocomplete disabled, order-independent
+      expect(enContent).toMatch(/aria-label="[^"]+"/);
+      expect(enContent).toMatch(/autocomplete="off"/);
+    });
+
+    it('should include load-more button and article counter', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('id="load-more-btn"');
+      expect(enContent).toContain('id="article-counter"');
+      expect(enContent).toContain('aria-live="polite"');
+      // load-more must use addEventListener, not an inline onclick handler
+      expect(enContent).not.toContain('onclick="loadMore()"');
+      expect(enContent).toMatch(/addEventListener\s*\(\s*['"]click['"]\s*,\s*loadMore\s*\)/);
+    });
+
+    it('should include PAGE_SIZE and pagination logic', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('PAGE_SIZE');
+      expect(enContent).toContain('loadMore()');
+      expect(enContent).toContain('visibleCount');
+    });
+
+    it('should include readURLParams and updateURL for URL state management', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('readURLParams()');
+      expect(enContent).toContain('updateURL()');
+      expect(enContent).toContain('URLSearchParams');
+    });
+
+    it('should not include conflicting DOMContentLoaded content loader', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      // The old dynamic content loader must not be present (it could overwrite pagination state)
+      expect(enContent).not.toContain("document.addEventListener('DOMContentLoaded'");
+      // #no-articles is the intentional empty-state element for "no articles at all"
+      expect(enContent).toContain('id="no-articles"');
+      // renderPage() must distinguish articles.length === 0 from filteredArticles.length === 0
+      expect(enContent).toContain('articles.length === 0');
+    });
+
+    it('should include esc() helper and apply it to article fields in buildArticleCard', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      // esc() helper must be present to prevent XSS via innerHTML
+      expect(enContent).toContain('function esc(');
+      expect(enContent).toContain('.replace(/&/g,');
+      // safeHref() must be present and used for href to prevent javascript: XSS
+      expect(enContent).toContain('function safeHref(');
+      expect(enContent).toContain('safeHref(article.slug)');
+      // article fields must be escaped when interpolated
+      expect(enContent).toContain('esc(article.title)');
+      expect(enContent).toContain('esc(article.excerpt)');
+      expect(enContent).toContain('esc(tag)');
+    });
   });
 
   describe('classifyArticleType multi-language', () => {
