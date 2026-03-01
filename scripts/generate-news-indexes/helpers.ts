@@ -312,28 +312,48 @@ export function extractTags(content: string): string[] {
 }
 
 /**
+ * Collect all article HTML file paths recursively from a directory.
+ * Supports date-based subdirectory structure: news/{year}/{month}/article.html
+ */
+function collectArticleFiles(dir: string): string[] {
+  const result: string[] = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      result.push(...collectArticleFiles(path.join(dir, entry.name)));
+    } else if (entry.isFile() && entry.name.endsWith('.html') && !entry.name.startsWith('index')) {
+      result.push(path.join(dir, entry.name));
+    }
+  }
+  return result;
+}
+
+/**
  * Scan news directory and group articles by language.
+ * Supports date-based subdirectory structure: news/{year}/{month}/article.html
  */
 export function scanNewsArticles(): Record<string, NewsArticleMetadata[]> {
   console.log('\n📰 Scanning for articles...');
 
-  const files: string[] = fs.readdirSync(NEWS_DIR)
-    .filter((file) => file.endsWith('.html'))
-    .filter((file) => !file.startsWith('index')); // Exclude index files
+  const filePaths: string[] = collectArticleFiles(NEWS_DIR);
 
-  console.log(`  Found ${files.length} article files`);
+  console.log(`  Found ${filePaths.length} article files`);
 
   // Initialize buckets for all 14 supported languages
   const articlesByLang: Record<string, NewsArticleMetadata[]> = Object.fromEntries(
     Object.keys(LANGUAGES).map((lang) => [lang, []]),
   );
 
-  files.forEach((file) => {
-    const filePath: string = path.join(NEWS_DIR, file);
+  filePaths.forEach((filePath) => {
     const metadata: NewsArticleMetadata | null = parseArticleMetadata(filePath);
 
-    if (metadata && articlesByLang[metadata.lang]) {
-      articlesByLang[metadata.lang]!.push(metadata);
+    if (metadata) {
+      // Set slug to relative path from NEWS_DIR (e.g., "2026/02/2026-02-13-article-en.html")
+      metadata.slug = path.relative(NEWS_DIR, filePath).split(path.sep).join('/');
+
+      if (articlesByLang[metadata.lang]) {
+        articlesByLang[metadata.lang]!.push(metadata);
+      }
     }
   });
 
