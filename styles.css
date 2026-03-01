@@ -10727,6 +10727,9 @@ html[data-theme="light"] .installation-step {
   [dir="rtl"] .theme-toggle-btn {
     right: auto;
     left: 0.5rem;
+  }
+}
+
 /* ============================================================
    Fallback UI — error boundary cards and loading skeletons
    ============================================================ */
