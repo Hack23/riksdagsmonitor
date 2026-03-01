@@ -54,6 +54,10 @@ export interface LanguageConfig {
   noResults: string;
   i18n: I18nStrings;
   schemaDescription: string;
+  aiNewsroomTitle: string;
+  aiNewsroomText: string;
+  disclaimer: string;
+  disclaimerLink: string;
 }
 
 export type LanguageCode =

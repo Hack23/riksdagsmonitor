@@ -21,6 +21,7 @@ import {
   generateLanguageSwitcherNav,
   generateAvailableLanguages,
 } from './helpers.js';
+import { PKG_VERSION } from '../shared/version.js';
 
 export function generateIndexHTML(
   langKey: string,
@@ -546,9 +547,16 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     filterArticles();
   </script>
 
+  <section class="ai-newsroom-section" aria-labelledby="ai-newsroom-heading">
+    <div class="container">
+      <h2 id="ai-newsroom-heading"><span aria-hidden="true">🤖</span> ${escapeHtml(lang.aiNewsroomTitle)}</h2>
+      <p>${escapeHtml(lang.aiNewsroomText)}</p>
+    </div>
+  </section>
   </main>
-  <footer class="footer-section">
-    <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence</p>
+  <footer class="news-footer">
+    <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence | v${escapeHtml(String(PKG_VERSION))}</p>
+    <p class="footer-disclaimer">⚠️ ${escapeHtml(lang.disclaimer)} <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">${escapeHtml(lang.disclaimerLink)}</a>.</p>
   </footer>
 </body>
 </html>`;
