@@ -26,13 +26,16 @@ describe('Sitemap HTML Generation', () => {
   beforeAll(async () => {
     const originalExit = process.exit;
     const originalWriteFileSync = fs.writeFileSync;
-    process.exit = vi.fn() as unknown as typeof process.exit;
-    fs.writeFileSync = vi.fn() as unknown as typeof fs.writeFileSync;
 
-    module = await import('../scripts/generate-sitemap-html.js') as unknown as GenerateSitemapHtmlModule;
+    try {
+      process.exit = vi.fn() as unknown as typeof process.exit;
+      fs.writeFileSync = vi.fn() as unknown as typeof fs.writeFileSync;
 
-    process.exit = originalExit;
-    fs.writeFileSync = originalWriteFileSync;
+      module = await import('../scripts/generate-sitemap-html.js') as unknown as GenerateSitemapHtmlModule;
+    } finally {
+      process.exit = originalExit;
+      fs.writeFileSync = originalWriteFileSync;
+    }
   });
 
   describe('escapeHtml', () => {

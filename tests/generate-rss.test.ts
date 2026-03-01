@@ -33,18 +33,20 @@ describe('RSS Feed Generation', () => {
     originalExit = process.exit;
     originalWriteFileSync = fs.writeFileSync;
 
-    // Prevent process.exit from terminating the test
-    process.exit = vi.fn() as unknown as typeof process.exit;
-    // Prevent actual file writes during module import (top-level main() calls writeFileSync)
-    fs.writeFileSync = vi.fn() as unknown as typeof fs.writeFileSync;
+    try {
+      // Prevent process.exit and file writes as a defensive backstop
+      process.exit = vi.fn() as unknown as typeof process.exit;
+      fs.writeFileSync = vi.fn() as unknown as typeof fs.writeFileSync;
 
-    module = await import('../scripts/generate-rss.js') as unknown as GenerateRssModule;
-    rssContent = module.generateRss();
+      module = await import('../scripts/generate-rss.js') as unknown as GenerateRssModule;
+      rssContent = module.generateRss();
+    } finally {
+      process.exit = originalExit;
+      fs.writeFileSync = originalWriteFileSync;
+    }
   });
 
   afterAll(() => {
-    process.exit = originalExit;
-    fs.writeFileSync = originalWriteFileSync;
     vi.clearAllMocks();
   });
 

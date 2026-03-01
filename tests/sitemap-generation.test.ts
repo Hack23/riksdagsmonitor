@@ -340,8 +340,25 @@ describe('Sitemap Generation', () => {
         if (!match) return;
         const baseSlug: string = match[1]!;
         const lang: string = match[2]!;
-        const urlPattern = new RegExp(`<loc>https://riksdagsmonitor\\.com/news/${baseSlug}-${lang}\\.html</loc>`);
-        expect(sitemapContent, `Should include ${file}`).toMatch(urlPattern);
+        const otherLang: string = lang === 'en' ? 'sv' : 'en';
+
+        // Only perform hreflang validation when both language variants exist
+        const otherFilePath: string = path.join(newsDir, `${baseSlug}-${otherLang}.html`);
+        if (!fs.existsSync(otherFilePath)) {
+          return;
+        }
+
+        // Ensure the sitemap has a <url> entry for this article
+        const urlBlockRegex: RegExp = new RegExp(
+          `<url>\\s*<loc>https://riksdagsmonitor\\.com/news/${baseSlug}-${lang}\\.html</loc>[\\s\\S]*?</url>`
+        );
+        const urlEntryMatch: RegExpMatchArray | null = sitemapContent.match(urlBlockRegex);
+        expect(urlEntryMatch, `Sitemap entry for ${file} should exist`).toBeTruthy();
+        const urlEntry: string = urlEntryMatch![0];
+
+        // Verify that the <url> block contains hreflang alternates for both language variants
+        expect(urlEntry, `Sitemap entry for ${file} should include hreflang="${lang}"`).toContain(`hreflang="${lang}"`);
+        expect(urlEntry, `Sitemap entry for ${file} should include hreflang="${otherLang}"`).toContain(`hreflang="${otherLang}"`);
       });
     });
 
@@ -367,11 +384,13 @@ describe('Sitemap Generation', () => {
     });
 
     it('should have x-default hreflang pointing to English for main pages', () => {
-      // Main index entry should have x-default pointing to index.html
+      // Main index entry should have x-default pointing to the English index.html
       const indexEntry: RegExpMatchArray | null = sitemapContent.match(/<url>\s*<loc>https:\/\/riksdagsmonitor\.com\/index\.html<\/loc>[\s\S]*?<\/url>/);
       if (indexEntry) {
-        // Check x-default exists in alternates (it may or may not be in the main index entry)
-        expect(indexEntry[0]).toContain('hreflang="en"');
+        const entry: string = indexEntry[0];
+        // Validate x-default hreflang exists and points to the English main page
+        expect(entry).toContain('hreflang="x-default"');
+        expect(entry).toContain('href="https://riksdagsmonitor.com/index.html"');
       }
     });
   });

@@ -241,6 +241,9 @@ function getDocFiles(): DocFile[] {
 
   scanDir(DOCS_DIR);
 
+  // Sort for deterministic output across platforms/filesystems
+  results.sort((a, b) => a.file.localeCompare(b.file));
+
   console.log(`  Found ${results.length} documentation files in docs/`);
 
   return results;
@@ -285,10 +288,13 @@ function generateSitemap(): string {
         xmlns:xhtml="http://www.w3.org/1999/xhtml">`;
 
   // Main index page with all language alternates
-  const indexAlternates: HreflangAlternate[] = LANGUAGES.map((lang) => ({
-    lang,
-    href: lang === 'en' ? 'index.html' : `index_${lang}.html`,
-  }));
+  const indexAlternates: HreflangAlternate[] = [
+    ...LANGUAGES.map((lang) => ({
+      lang,
+      href: lang === 'en' ? 'index.html' : `index_${lang}.html`,
+    })),
+    { lang: 'x-default', href: 'index.html' },
+  ];
 
   const indexMtime = getFileModTime(path.join(ROOT_DIR, 'index.html'));
   xml += generateUrlEntry('index.html', indexMtime, 'daily', '1.0', indexAlternates);
@@ -314,10 +320,13 @@ function generateSitemap(): string {
   }
 
   // Dashboard pages with all language alternates (only for existing files)
-  const dashboardAlternates: HreflangAlternate[] = LANGUAGES.map((lang) => ({
-    lang,
-    href: lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${lang}.html`,
-  })).filter((alt) => fs.existsSync(path.join(ROOT_DIR, alt.href)));
+  const dashboardAlternates: HreflangAlternate[] = [
+    ...LANGUAGES.map((lang) => ({
+      lang,
+      href: lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${lang}.html`,
+    })).filter((alt) => fs.existsSync(path.join(ROOT_DIR, alt.href))),
+    { lang: 'x-default', href: 'dashboard/index.html' },
+  ];
 
   const dashboardEnMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index.html'));
   xml += generateUrlEntry('dashboard/index.html', dashboardEnMtime, 'weekly', '0.8', dashboardAlternates);
@@ -544,7 +553,9 @@ function main(): number {
 }
 
 // Run if called directly
-const exitCode = main();
-process.exit(exitCode);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const exitCode = main();
+  process.exit(exitCode);
+}
 
 export { generateSitemap, validateSitemap };

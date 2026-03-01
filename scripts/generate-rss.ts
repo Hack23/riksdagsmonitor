@@ -336,7 +336,9 @@ function main(): number {
 }
 
 // Run if called directly
-const exitCode = main();
-process.exit(exitCode);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const exitCode = main();
+  process.exit(exitCode);
+}
 
 export { generateRss, validateRss, getRssArticles, escapeXml };
