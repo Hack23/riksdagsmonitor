@@ -351,6 +351,51 @@ else
   else
     echo -e "${GREEN}✅ All $NEWS_HTML_COUNT news articles pass HTMLHint validation${NC}"
   fi
+  
+# Check 12: Language coverage per article slug (14-language completeness)
+# ============================================================================
+echo "📋 Check 12: Language coverage per article slug (all 14 languages expected)"
+
+ALL_ARTICLE_LANGS="en sv da no fi de fr es nl ar he ja ko zh"
+INCOMPLETE_SLUGS=0
+TOTAL_SLUGS=0
+
+# Use English articles as the reference set — English is always generated first
+for en_file in news/*-en.html; do
+  if [[ "$en_file" == news/index*.html ]]; then
+    continue
+  fi
+  if [ ! -f "$en_file" ]; then
+    continue
+  fi
+
+  slug=$(basename "$en_file" -en.html)
+  TOTAL_SLUGS=$((TOTAL_SLUGS + 1))
+  MISSING_LANGS=""
+  LANG_COUNT=0
+
+  for lang in $ALL_ARTICLE_LANGS; do
+    if [ -f "news/${slug}-${lang}.html" ]; then
+      LANG_COUNT=$((LANG_COUNT + 1))
+    else
+      MISSING_LANGS="$MISSING_LANGS $lang"
+    fi
+  done
+
+  if [ $LANG_COUNT -lt 14 ]; then
+    INCOMPLETE_SLUGS=$((INCOMPLETE_SLUGS + 1))
+    echo -e "${YELLOW}⚠️ '$slug' has only $LANG_COUNT/14 languages. Missing:$MISSING_LANGS${NC}"
+  fi
+done
+
+if [ $TOTAL_SLUGS -eq 0 ]; then
+  echo -e "${YELLOW}⚠️ No articles found to check language coverage${NC}"
+  WARNINGS=$((WARNINGS + 1))
+elif [ $INCOMPLETE_SLUGS -eq 0 ]; then
+  echo -e "${GREEN}✅ All $TOTAL_SLUGS article slugs have complete 14-language coverage${NC}"
+else
+  echo -e "${YELLOW}⚠️ $INCOMPLETE_SLUGS/$TOTAL_SLUGS article slugs have incomplete language coverage${NC}"
+  WARNINGS=$((WARNINGS + 1))
 fi
 echo ""
 
