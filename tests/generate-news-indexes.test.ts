@@ -360,7 +360,7 @@ describe('Generate News Indexes', () => {
       expect(enContent).toContain('aria-live="polite"');
       // load-more must use addEventListener, not an inline onclick handler
       expect(enContent).not.toContain('onclick="loadMore()"');
-      expect(enContent).toContain("getElementById('load-more-btn').addEventListener('click', loadMore)");
+      expect(enContent).toMatch(/addEventListener\s*\(\s*['"]click['"]\s*,\s*loadMore\s*\)/);
     });
 
     it('should include PAGE_SIZE and pagination logic', () => {

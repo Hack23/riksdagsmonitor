@@ -265,8 +265,13 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
     function safeHref(slug) {
       var s = String(slug);
-      // Reject any value that looks like an absolute/protocol URL to prevent href-based XSS
-      if (/[:/]/.test(s.split('?')[0].split('#')[0]) || /^[a-zA-Z][a-zA-Z0-9+\-.]*:/.test(s)) {
+      // Only allow simple relative HTML filenames to avoid URL parsing/normalization issues.
+      // Reject empty strings, backslashes, and control characters outright.
+      if (!s || /[\\\\\\x00-\\x1F\\x7F]/.test(s)) {
+        return '#';
+      }
+      // Allow only [A-Za-z0-9._-] characters with a required ".html" suffix.
+      if (!/^[A-Za-z0-9._-]+\\.html$/.test(s)) {
         return '#';
       }
       return esc(s);
@@ -281,7 +286,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     let visibleCount = PAGE_SIZE;
     
     // Dynamic articles array - generated from news/ directory
-    const articles = ${JSON.stringify(displayData, null, 2)};
+    const articles = ${JSON.stringify(displayData, null, 2).replace(/<\//g, '<\\/')};
     
     let filteredArticles = [...articles];
     
