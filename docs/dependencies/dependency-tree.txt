@@ -1,4 +1,4 @@
-riksdagsmonitor@0.7.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.7.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.0.2 deduped
 ├─┬ @types/d3@7.4.3
@@ -45,10 +45,10 @@ riksdagsmonitor@0.7.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └─┬ @types/d3-zoom@3.0.8
 │   ├── @types/d3-interpolate@3.0.4 deduped
 │   └── @types/d3-selection@3.0.11 deduped
-├─┬ @types/node@25.3.2
+├─┬ @types/node@25.3.3
 │ └── undici-types@7.18.2
 ├─┬ @types/papaparse@5.5.2
-│ └── @types/node@25.3.2 deduped
+│ └── @types/node@25.3.3 deduped
 ├─┬ @vitest/coverage-v8@4.0.18
 │ ├── @bcoe/v8-coverage@1.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@4.0.18
@@ -268,7 +268,7 @@ riksdagsmonitor@0.7.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── pify@2.3.0
 │ ├─┬ extract-zip@2.0.1
 │ │ ├─┬ @types/yauzl@2.10.3
-│ │ │ └── @types/node@25.3.2 deduped
+│ │ │ └── @types/node@25.3.3 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── get-stream@5.2.0 deduped
 │ │ └── yauzl@2.10.0 deduped
@@ -502,12 +502,12 @@ riksdagsmonitor@0.7.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├─┬ type-check@0.4.0
 │   │ └── prelude-ls@1.2.1 deduped
 │   └── word-wrap@1.2.5
-├── globals@17.3.0
+├── globals@17.4.0
 ├─┬ happy-dom@20.7.0
-│ ├── @types/node@25.3.2 deduped
+│ ├── @types/node@25.3.3 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
-│ │ └── @types/node@25.3.2 deduped
+│ │ └── @types/node@25.3.3 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
 │ └─┬ ws@8.19.0
@@ -555,7 +555,7 @@ riksdagsmonitor@0.7.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │   └── queue-microtask@1.2.3
 │ │ └─┬ fastq@1.20.1
 │ │   └── reusify@1.1.0
-│ ├── @types/node@25.3.2 deduped
+│ ├── @types/node@25.3.3 deduped
 │ ├─┬ fast-glob@3.3.3
 │ │ ├── @nodelib/fs.stat@2.0.5
 │ │ ├── @nodelib/fs.walk@1.2.8 deduped
@@ -774,7 +774,7 @@ riksdagsmonitor@0.7.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── entities@6.0.1
 │ └── vite@7.3.1 deduped
 ├─┬ vite@7.3.1
-│ ├── @types/node@25.3.2 deduped
+│ ├── @types/node@25.3.3 deduped
 │ ├── esbuild@0.27.3 deduped
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.3 deduped
@@ -826,7 +826,7 @@ riksdagsmonitor@0.7.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 └─┬ vitest@4.0.18
   ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
   ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
-  ├── @types/node@25.3.2 deduped
+  ├── @types/node@25.3.3 deduped
   ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@4.0.18
   ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@4.0.18
   ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@4.0.18

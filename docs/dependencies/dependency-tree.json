@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.7.1",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -233,8 +233,8 @@
       }
     },
     "@types/node": {
-      "version": "25.3.2",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.3.2.tgz",
+      "version": "25.3.3",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.3.3.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -250,7 +250,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.2"
+          "version": "25.3.3"
         }
       }
     },
@@ -1360,7 +1360,7 @@
               "overridden": false,
               "dependencies": {
                 "@types/node": {
-                  "version": "25.3.2"
+                  "version": "25.3.3"
                 }
               }
             },
@@ -2526,8 +2526,8 @@
       }
     },
     "globals": {
-      "version": "17.3.0",
-      "resolved": "https://registry.npmjs.org/globals/-/globals-17.3.0.tgz",
+      "version": "17.4.0",
+      "resolved": "https://registry.npmjs.org/globals/-/globals-17.4.0.tgz",
       "overridden": false
     },
     "happy-dom": {
@@ -2536,7 +2536,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.2"
+          "version": "25.3.3"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2549,7 +2549,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "25.3.2"
+              "version": "25.3.3"
             }
           }
         },
@@ -2779,7 +2779,7 @@
           }
         },
         "@types/node": {
-          "version": "25.3.2"
+          "version": "25.3.3"
         },
         "fast-glob": {
           "version": "3.3.3",
@@ -3638,7 +3638,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.2"
+          "version": "25.3.3"
         },
         "esbuild": {
           "version": "0.27.3"
@@ -3748,7 +3748,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "25.3.2"
+          "version": "25.3.3"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},

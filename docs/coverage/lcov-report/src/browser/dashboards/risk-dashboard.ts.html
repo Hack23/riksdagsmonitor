@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/320</span>
+                <span class='fraction'>0/325</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/73</span>
+                <span class='fraction'>0/75</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/294</span>
+                <span class='fraction'>0/299</span>
             </div>
         
             
@@ -1070,7 +1070,11 @@
 <a name='L1005'></a><a href='#L1005'>1005</a>
 <a name='L1006'></a><a href='#L1006'>1006</a>
 <a name='L1007'></a><a href='#L1007'>1007</a>
-<a name='L1008'></a><a href='#L1008'>1008</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1008'></a><a href='#L1008'>1008</a>
+<a name='L1009'></a><a href='#L1009'>1009</a>
+<a name='L1010'></a><a href='#L1010'>1010</a>
+<a name='L1011'></a><a href='#L1011'>1011</a>
+<a name='L1012'></a><a href='#L1012'>1012</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1112,7 +1116,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2036,16 +2039,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2107,11 +2115,10 @@
 import {
   createChart,
   getResponsiveOptions,
-  THEME_COLORS,
-  CHART_PALETTE,
   addChartKeyboardNav,
   initDashboardSection,
   showDataSourceDisclaimer,
+  renderErrorFallback,
 } from '../shared/index.js';
 &nbsp;
 import { loadCSV, createDataSource } from '../shared/index.js';
@@ -3044,18 +3051,23 @@ export async function <span class="fstat-no" title="function not covered" >init(
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    logger.error('❌ Failed to load CIA risk data:', error);</span>
 &nbsp;
-    // Display error message to user
-    const alertContainer = <span class="cstat-no" title="statement not covered" >document.getElementById('earlyWarningAlerts');</span>
-<span class="cstat-no" title="statement not covered" >    if (alertContainer) {</span>
-<span class="cstat-no" title="statement not covered" >      alertContainer.innerHTML = `</span>
-        &lt;div class="alert alert-danger" role="alert"&gt;
-          &lt;h4&gt;⚠️ Data Loading Error&lt;/h4&gt;
-          &lt;p&gt;Unable to load risk assessment data from CIA Platform.&lt;/p&gt;
-          &lt;p&gt;&lt;strong&gt;Error:&lt;/strong&gt; ${(error as Error).message}&lt;/p&gt;
-          &lt;p&gt;Please check your internet connection and try refreshing the page.&lt;/p&gt;
-          &lt;p&gt;&lt;small&gt;Data source: view_politician_risk_summary_sample.csv (403 politicians)&lt;/small&gt;&lt;/p&gt;
-        &lt;/div&gt;
-      `;
+    // Display error message to user using the shared error boundary fallback.
+    // Render into a child container prepended to #risk-dashboard so the rest
+    // of the section's DOM is preserved for a subsequent retry.
+    const dashboardSection = <span class="cstat-no" title="statement not covered" >document.getElementById('risk-dashboard');</span>
+<span class="cstat-no" title="statement not covered" >    if (dashboardSection) {</span>
+      const errContainer = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
+<span class="cstat-no" title="statement not covered" >      dashboardSection.prepend(errContainer);</span>
+<span class="cstat-no" title="statement not covered" >      renderErrorFallback(</span>
+        errContainer,
+        'Unable to load risk assessment data from CIA Platform.',
+<span class="fstat-no" title="function not covered" >        () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          errContainer.remove();</span>
+<span class="cstat-no" title="statement not covered" >          init().catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >            logger.error('Retry failed during risk dashboard re-initialization:', err),</span>
+          );
+        },
+      );
     }
 &nbsp;
     // Cannot proceed without data - exit gracefully
@@ -3091,7 +3103,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-28T20:05:49.755Z
+                at 2026-03-01T17:38:59.160Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
