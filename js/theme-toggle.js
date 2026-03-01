@@ -13,7 +13,7 @@
  * Accessibility:
  *  - Toggle is a native `<button>` with `aria-pressed` and a descriptive
  *    `aria-label` that updates on every toggle.
- *  - Keyboard: Enter / Space activate the toggle.
+ *  - Keyboard: native `<button>` handles Enter / Space automatically.
  *
  * @license Apache-2.0
  */
@@ -85,7 +85,12 @@
 
   // Apply before first paint (called synchronously by the anti-flash snippet
   // already present in <head>; this line covers when the module loads later).
-  applyTheme(resolveTheme(), false /* initial resolution only; do not persist on module boot */);
+  var _initialTheme = resolveTheme();
+  applyTheme(_initialTheme, false /* initial resolution only; do not persist on module boot */);
+  // Update button immediately — the script is placed after the button in <body>
+  // so the element is already in the DOM; this avoids a brief mismatch before
+  // DOMContentLoaded fires.
+  updateButton(_initialTheme);
 
   document.addEventListener('DOMContentLoaded', function () {
     const theme = document.documentElement.getAttribute('data-theme') || LIGHT;

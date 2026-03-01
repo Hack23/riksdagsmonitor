@@ -28,8 +28,6 @@
 import {
   createChart,
   getResponsiveOptions,
-  THEME_COLORS,
-  CHART_PALETTE,
   addChartKeyboardNav,
   initDashboardSection,
   showDataSourceDisclaimer,

@@ -88,8 +88,10 @@ export const LIGHT_THEME_COLORS: ThemeColors = {
  * Returns the active ThemeColors based on the current `data-theme` attribute
  * on `<html>`.  When the attribute is absent (e.g. before the anti-flash
  * snippet runs), falls back to `prefers-color-scheme` — consistent with the
- * CSS `@media (prefers-color-scheme: dark)` default.  Only hard-defaults to
- * dark when neither attribute nor `matchMedia` is available (SSR/test).
+ * CSS `@media (prefers-color-scheme: dark)` default.  Defaults to
+ * `DARK_THEME_COLORS` only in SSR / test environments where `document` is
+ * undefined; in a browser without `matchMedia` support it defaults to
+ * `LIGHT_THEME_COLORS` (matching the CSS `:root` base styles).
  *
  * Call this wherever Chart.js datasets need the current palette, e.g.:
  * ```ts

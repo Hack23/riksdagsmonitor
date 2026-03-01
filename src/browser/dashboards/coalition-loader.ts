@@ -32,8 +32,6 @@
 
 import {
   createChart,
-  THEME_COLORS,
-  CHART_PALETTE,
   initDashboardSection,
   loadCSV,
   createDataSource,
