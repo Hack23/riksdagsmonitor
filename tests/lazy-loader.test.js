@@ -237,7 +237,7 @@ describe('initLazyDashboards', () => {
   // ── Fallback: no IntersectionObserver ────────────────────────────────────────
 
   describe('Fallback (no IntersectionObserver)', () => {
-    it('loads all dashboards immediately when IntersectionObserver is unavailable', async () => {
+    it('loads all present dashboards immediately when IntersectionObserver is unavailable', async () => {
       delete globalThis.IntersectionObserver;
 
       document.body.innerHTML = `
@@ -256,6 +256,16 @@ describe('initLazyDashboards', () => {
       expect(loaderB).toHaveBeenCalledOnce();
     });
 
+    it('skips missing containers in fallback mode', () => {
+      delete globalThis.IntersectionObserver;
+
+      // No matching element in DOM
+      const loader = vi.fn(() => Promise.resolve());
+      initLazyDashboards([{ containerId: 'nonexistent', loader }]);
+
+      expect(loader).not.toHaveBeenCalled();
+    });
+
     it('does not throw when IntersectionObserver is unavailable', () => {
       delete globalThis.IntersectionObserver;
 
@@ -263,6 +273,28 @@ describe('initLazyDashboards', () => {
       expect(() =>
         initLazyDashboards([{ containerId: 'nonexistent', loader }])
       ).not.toThrow();
+    });
+
+    it('applies and removes skeleton class in fallback mode', async () => {
+      delete globalThis.IntersectionObserver;
+
+      document.body.innerHTML = '<section id="fallback-dash"></section>';
+      const el = document.getElementById('fallback-dash');
+
+      let resolveLoader;
+      const loader = vi.fn(() => new Promise((res) => { resolveLoader = res; }));
+
+      initLazyDashboards([{ containerId: 'fallback-dash', loader }]);
+
+      expect(loader).toHaveBeenCalledOnce();
+      // skeleton added immediately (before promise resolves)
+      expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(true);
+
+      resolveLoader();
+      await loader.mock.results[0].value;
+      await Promise.resolve();
+
+      expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(false);
     });
   });
 });

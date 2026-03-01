@@ -46,11 +46,22 @@ export function initLazyDashboards(
   options: IntersectionObserverInit = { rootMargin: '200px', threshold: 0.01 },
 ): void {
   if (typeof IntersectionObserver === 'undefined') {
-    // Graceful fallback: load everything immediately
+    // Graceful fallback: load immediately, but only when the container exists in the DOM
     for (const { containerId, loader } of dashboards) {
-      loader().catch((err: unknown) =>
-        logger.error(`Lazy load failed for #${containerId}:`, err),
-      );
+      const el = document.getElementById(containerId);
+      if (!el) {
+        logger.debug(`Lazy loader (fallback): #${containerId} not in DOM, skipping`);
+        continue;
+      }
+      el.classList.add(CHART_SKELETON_CLASS);
+      loader()
+        .then(() => {
+          el.classList.remove(CHART_SKELETON_CLASS);
+        })
+        .catch((err: unknown) => {
+          el.classList.remove(CHART_SKELETON_CLASS);
+          logger.error(`Lazy load failed for #${containerId}:`, err);
+        });
     }
     return;
   }
