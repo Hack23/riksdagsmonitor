@@ -428,8 +428,11 @@ export async function batchEnhanceQuality(
  *
  * Corrects:
  * - `<p><ul>` → closes `</p>` before `<ul>` (block element inside inline)
+ * - `<p><ol>` → closes `</p>` before `<ol>` (block element inside inline)
  * - `<p><div>` → removes enclosing `<p>` (block element inside inline)
  * - Orphaned `</p>` immediately after `</ul>` → removed
+ * - Orphaned `</p>` immediately after `</ol>` → removed
+ * - Orphaned `</p>` immediately after `</div>` (when wrapped by `<p>`) → removed
  *
  * @param content - Raw HTML content
  * @returns Fixed HTML content
