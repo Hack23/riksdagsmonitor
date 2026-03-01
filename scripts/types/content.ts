@@ -18,6 +18,7 @@ export interface FooterLabelSet {
   analysisTools: string;
   analysisToolsValue: string;
   backToNews: string;
+  skipToContent: string;
 }
 
 /** Localized names for a single committee (English + Swedish) */
