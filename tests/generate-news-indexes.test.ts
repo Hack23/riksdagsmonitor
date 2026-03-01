@@ -387,7 +387,10 @@ describe('Generate News Indexes', () => {
       const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       // The old dynamic content loader must not be present (it could overwrite pagination state)
       expect(enContent).not.toContain('DOMContentLoaded');
-      expect(enContent).not.toContain('no-articles');
+      // #no-articles is the intentional empty-state element for "no articles at all"
+      expect(enContent).toContain('id="no-articles"');
+      // renderPage() must distinguish articles.length === 0 from filteredArticles.length === 0
+      expect(enContent).toContain('articles.length === 0');
     });
 
     it('should include esc() helper and apply it to article fields in buildArticleCard', () => {

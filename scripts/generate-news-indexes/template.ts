@@ -240,6 +240,10 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     <!-- Articles Grid -->
     <div class="articles-grid" id="articles-grid"></div>
     
+    <div id="no-articles" style="display: none; text-align: center; padding: 3rem; color: #888;">
+      ${escapeHtml(lang.i18n.noArticles)}
+    </div>
+    
     <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
       ${escapeHtml(lang.noResults)}
     </div>
@@ -254,6 +258,9 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
   <script>
     // Language flags mapping (shared with server-side)
     const LANGUAGE_FLAGS = ${JSON.stringify(LANGUAGE_FLAGS)};
+    
+    // RTL page flag (used to set dir="ltr" on language badges)
+    const IS_RTL = ${isRTL};
     
     // Available in translation (for current language)
     const AVAILABLE_IN_TEXT = '${escapeHtml(AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in')}';
@@ -293,7 +300,8 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     function buildArticleCard(article) {
       // Generate language badge for the article using shared LANGUAGE_FLAGS
       const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
-      const langBadge = \`<span class="language-badge" aria-label="\${esc(article.lang)} language"><span aria-hidden="true">\${flag}</span> \${esc(article.lang.toUpperCase())}</span>\`;
+      const dirAttr = IS_RTL ? ' dir="ltr"' : '';
+      const langBadge = \`<span class="language-badge"\${dirAttr} aria-label="\${esc(article.lang)} language"><span aria-hidden="true">\${flag}</span> \${esc(article.lang.toUpperCase())}</span>\`;
       
       // Generate available languages display if multiple languages exist
       const availableLangs = article.availableLanguages || [article.lang];
@@ -301,7 +309,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       if (availableLangs.length > 1) {
         const availableBadges = availableLangs.map(l => {
           const lf = LANGUAGE_FLAGS[l] || '🌐';
-          return \`<span class="lang-badge-sm"><span aria-hidden="true">\${lf}</span> \${esc(l.toUpperCase())}</span>\`;
+          return \`<span class="lang-badge-sm"\${dirAttr}><span aria-hidden="true">\${lf}</span> \${esc(l.toUpperCase())}</span>\`;
         }).join(' ');
         availableDisplay = \`<p class="available-languages"><strong>\${AVAILABLE_IN_TEXT}:</strong> \${availableBadges}</p>\`;
       }
@@ -327,18 +335,30 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
     function renderPage() {
       const grid = document.getElementById('articles-grid');
+      const noArticles = document.getElementById('no-articles');
       const noResults = document.getElementById('no-results');
       const counter = document.getElementById('article-counter');
       const btn = document.getElementById('load-more-btn');
       
-      if (filteredArticles.length === 0) {
+      if (articles.length === 0) {
         grid.innerHTML = '';
-        noResults.style.display = 'block';
+        if (noArticles) noArticles.style.display = 'block';
+        noResults.style.display = 'none';
         if (counter) counter.textContent = '';
         if (btn) btn.style.display = 'none';
         return;
       }
       
+      if (filteredArticles.length === 0) {
+        grid.innerHTML = '';
+        noResults.style.display = 'block';
+        if (noArticles) noArticles.style.display = 'none';
+        if (counter) counter.textContent = '';
+        if (btn) btn.style.display = 'none';
+        return;
+      }
+      
+      if (noArticles) noArticles.style.display = 'none';
       noResults.style.display = 'none';
       
       const visible = filteredArticles.slice(0, visibleCount);
