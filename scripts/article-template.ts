@@ -17,4 +17,4 @@
  * @author Hack23 AB
  * @license Apache-2.0
  */
-export { generateArticleHTML, generateEventCalendar, generateWatchSection, generateArticleLanguageSwitcher, generateSiteFooter, default } from './article-template/index.js';
+export { generateArticleHTML, generateEventCalendar, generateWatchSection, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting, default } from './article-template/index.js';
