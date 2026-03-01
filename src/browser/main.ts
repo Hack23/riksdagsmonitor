@@ -3,9 +3,10 @@
  * @description Single entry point for main Riksdagsmonitor pages (index*.html).
  * Replaces 18 individual script tags with one module import.
  *
- * Each dashboard is initialized independently — if one fails, others continue.
- * Libraries (Chart.js, D3) are imported via Vite bundling from npm packages.
-
+ * Above-the-fold dashboards (stats) are initialised eagerly.
+ * All chart-heavy dashboards are lazy-loaded via IntersectionObserver so that
+ * Chart.js (~200 KB), D3 (~250 KB), and PapaParse (~50 KB) are only downloaded
+ * when the user scrolls their containing section into view.
  *
  * @intelligence Central intelligence platform orchestrator — coordinates 12 analytical dashboards covering OSINT data acquisition, political risk assessment, coalition dynamics, electoral forecasting, and behavioral anomaly detection across 349 Swedish MPs and 8 parties.
  *
@@ -14,49 +15,83 @@
  * @marketing Landing page intelligence showcase — first impression for all 5 target audiences (citizens, journalists, researchers, NGOs, corporations). Each dashboard module is a demonstrable feature for content marketing, social media screenshots, and press coverage. Supports 14-language SEO via separate index files.
  * */
 
-// ─── Library Imports (Vite bundles these from node_modules) ──────────────────
-// Register Chart.js, D3.js, and Papa Parse on globalThis so dashboard modules can access them.
-// Must be imported before any dashboard module that reads (globalThis as any).Chart / .d3 / .Papa.
-import './shared/register-globals.js';
-
 // ─── UI Components ───────────────────────────────────────────────────────────
 import { initBackToTop } from './ui/back-to-top.js';
 
-// ─── Dashboard Modules ──────────────────────────────────────────────────────
+// ─── Eager Dashboard: stats-loader (above-the-fold hero stats, no chart libs) ──
 import { init as initStats } from './dashboards/stats-loader.js';
-import { init as initRisk } from './dashboards/risk-dashboard.js';
-import { init as initParty } from './dashboards/party-dashboard.js';
-import { init as initMinistry } from './dashboards/ministry-dashboard.js';
-import { init as initCoalitionLoader } from './dashboards/coalition-loader.js';
-import { init as initCoalitionDashboard } from './dashboards/coalition-dashboard.js';
-import { init as initCommittees } from './dashboards/committees-dashboard.js';
-import { init as initElectionCycle } from './dashboards/election-cycle.js';
-import { init as initSeasonalPatterns } from './dashboards/seasonal-patterns.js';
-import { init as initPreElection } from './dashboards/pre-election.js';
-import { init as initAnomalyDetection } from './dashboards/anomaly-detection.js';
-import { init as initPolitician } from './dashboards/politician-dashboard.js';
+
+// ─── Lazy Loading ─────────────────────────────────────────────────────────────
+import { initLazyDashboards } from './lazy-loader.js';
+import type { LazyDashboard } from './lazy-loader.js';
 
 import { logger } from './shared/logger.js';
 
-// ─── Dashboard Registry ─────────────────────────────────────────────────────
-// Each entry: [name, init function]
-// Order matters for perceived loading (stats & risk first as they're above the fold)
-const DASHBOARDS: Array<[string, () => Promise<void>]> = [
-  ['stats', initStats],
-  ['risk', initRisk],
-  ['coalition-loader', initCoalitionLoader],
-  ['party', initParty],
-  ['coalition-dashboard', initCoalitionDashboard],
-  ['committees', initCommittees],
-  ['ministry', initMinistry],
-  ['election-cycle', initElectionCycle],
-  ['seasonal-patterns', initSeasonalPatterns],
-  ['pre-election', initPreElection],
-  ['anomaly-detection', initAnomalyDetection],
-  ['politician', initPolitician],
+// ─── Lazy Dashboard Helper ────────────────────────────────────────────────────
+// Loads register-globals (Chart.js, D3, PapaParse — cached after first call)
+// then imports and runs a dashboard's init().
+async function loadDashboard(
+  moduleLoader: () => Promise<{ init: () => Promise<void> }>,
+): Promise<void> {
+  await import('./shared/register-globals.js');
+  const { init } = await moduleLoader();
+  await init();
+}
+
+// ─── Lazy Dashboard Registry ─────────────────────────────────────────────────
+// Each entry triggers a dynamic import() only when the container scrolls into view.
+const LAZY_DASHBOARDS: LazyDashboard[] = [
+  {
+    containerId: 'coalition-status',
+    loader: () => loadDashboard(() => import('./dashboards/coalition-loader.js')),
+  },
+  {
+    containerId: 'election-cycle-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/election-cycle.js')),
+  },
+  {
+    containerId: 'party-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/party-dashboard.js')),
+  },
+  {
+    containerId: 'committee-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/committees-dashboard.js')),
+  },
+  {
+    containerId: 'coalition-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/coalition-dashboard.js')),
+  },
+  {
+    containerId: 'seasonal-patterns-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/seasonal-patterns.js')),
+  },
+  {
+    containerId: 'pre-election-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/pre-election.js')),
+  },
+  {
+    containerId: 'anomaly-detection-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/anomaly-detection.js')),
+  },
+  {
+    containerId: 'ministry-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/ministry-dashboard.js')),
+  },
+  {
+    containerId: 'risk-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/risk-dashboard.js')),
+  },
+  {
+    containerId: 'politician-dashboard',
+    loader: () => loadDashboard(() => import('./dashboards/politician-dashboard.js')),
+  },
 ];
 
 // ─── Initialization ─────────────────────────────────────────────────────────
+
+// Module-level reference prevents the IntersectionObserver from being
+// garbage-collected after initAll() returns.
+let _lazyObserver: IntersectionObserver | undefined;
 
 async function initAll(): Promise<void> {
   logger.info('Riksdagsmonitor initializing...');
@@ -65,24 +100,21 @@ async function initAll(): Promise<void> {
   // Init UI components (sync, fast)
   initBackToTop();
 
-  // Init dashboards in parallel — each is independent
-  const results = await Promise.allSettled(
-    DASHBOARDS.map(async ([name, initFn]) => {
-      try {
-        await initFn();
-        logger.debug(`✓ ${name} initialized`);
-      } catch (error) {
-        logger.error(`✗ ${name} failed:`, error);
-        throw error;
-      }
-    }),
-  );
+  // Register lazy dashboards immediately — IntersectionObserver must be live
+  // before initStats()'s async I/O so containers already in/near the viewport
+  // on initial render are not missed.
+  _lazyObserver = initLazyDashboards(LAZY_DASHBOARDS);
 
-  const succeeded = results.filter((r) => r.status === 'fulfilled').length;
-  const failed = results.filter((r) => r.status === 'rejected').length;
+  // Eager: stats loader populates hero metrics — no chart libraries needed
+  try {
+    await initStats();
+    logger.debug('✓ stats initialized');
+  } catch (error) {
+    logger.error('✗ stats failed:', error);
+  }
+
   const elapsed = (performance.now() - start).toFixed(0);
-
-  logger.info(`Initialized ${succeeded}/${DASHBOARDS.length} dashboards in ${elapsed}ms${failed > 0 ? ` (${failed} failed)` : ''}`);
+  logger.info(`Core initialized in ${elapsed}ms — ${LAZY_DASHBOARDS.length} dashboards pending lazy load`);
 }
 
 // Wait for DOM then initialize
