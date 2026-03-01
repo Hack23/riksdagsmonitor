@@ -70,7 +70,6 @@ const motionResponseSkrPrefix: Record<Language, string> = {
  * Swedish source keys are stored lower-case to enable case-insensitive replacement.
  */
 function buildMap(lang: Language): TranslationMap {
-  /* eslint-disable @typescript-eslint/naming-convention */
   const terms: Array<[string, Record<Language, string>]> = [
     // ---- Document type prefixes ----
     ['med anledning av prop.', motionResponsePropPrefix],
@@ -600,7 +599,6 @@ function buildMap(lang: Language): TranslationMap {
       },
     ],
   ];
-  /* eslint-enable @typescript-eslint/naming-convention */
 
   const map: TranslationMap = {};
   for (const [swedish, translations] of terms) {
