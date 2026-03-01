@@ -35,8 +35,9 @@ export const CHART_SKELETON_CLASS = 'chart-skeleton';
  * margin), its loader is called, the skeleton class is added, and removed
  * once the promise resolves or rejects.
  *
- * If `IntersectionObserver` is unavailable (SSR, old browser), all loaders
- * are invoked immediately as a graceful fallback.
+ * If `IntersectionObserver` is unavailable (old browser), all loaders are
+ * invoked immediately as a graceful fallback (containers still checked for DOM
+ * presence before loading).
  *
  * @param dashboards - Array of lazy-loadable dashboard descriptors.
  * @param options    - Optional `IntersectionObserver` init overrides.
