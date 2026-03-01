@@ -76,16 +76,19 @@ function renderVotingAnomalyChart(): void {
       },
       scales: {
         x: {
-          type: 'time',
-          time: {
-            unit: 'year',
-            displayFormats: {
-              year: 'yyyy'
-            }
-          },
+          type: 'linear',
           title: {
             display: true,
-            text: 'Date'
+            text: 'Date (Year)'
+          },
+          ticks: {
+            callback: function (value: number | string): string {
+              const ts: number = typeof value === 'string' ? Number(value) : value;
+              if (!Number.isFinite(ts)) {
+                return String(value);
+              }
+              return new Date(ts).getFullYear().toString();
+            }
           }
         },
         y: {
