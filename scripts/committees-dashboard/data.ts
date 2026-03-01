@@ -8,7 +8,6 @@
  * @license Apache-2.0
  */
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 declare const Papa: any;
 import type {
   AppConfig,

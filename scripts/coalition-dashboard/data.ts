@@ -10,7 +10,6 @@
  * @license Apache-2.0
  */
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 declare const d3: any;
 import type {
   PartyConfig, PartyNode, CoalitionLink, VotingAnomaly,
@@ -394,6 +393,5 @@ async function fetchAnnualVotesData(): Promise<void> {
   }
 }
 
-/**
- * Render D3.js coalition network diagram
- */
+})();
+

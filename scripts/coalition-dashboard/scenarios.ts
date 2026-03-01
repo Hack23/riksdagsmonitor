@@ -14,10 +14,9 @@
  * @license Apache-2.0
  */
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 declare const Chart: any;
 declare const d3: any;
-import type { PartyNode, CoalitionLink, VotingAnomaly, PartyConfig, DataCache, BehavioralPatterns, AnnualVotes, AnnualVoteEntry } from './types.js';
+import type { PartyNode, CoalitionLink, VotingAnomaly, PartyConfig, DataCache, BehavioralPatterns, AnnualVotes, AnnualVoteEntry, CoalitionAlignment } from './types.js';
 
 // These symbols are provided by the enclosing IIFE in coalition-dashboard.ts at runtime
 declare const PARTIES: Record<string, PartyConfig>;
@@ -429,5 +428,3 @@ if (document.readyState === 'loading') {
 } else {
   initDashboard();
 }
-
-})();

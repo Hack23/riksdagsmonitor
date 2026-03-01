@@ -27,7 +27,6 @@
  * @license Apache-2.0
  */
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 const d3 = (globalThis as any).d3;
 const Chart = (globalThis as any).Chart;

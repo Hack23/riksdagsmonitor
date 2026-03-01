@@ -12,7 +12,6 @@
  * @license Apache-2.0
  */
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 declare const d3: any;
 declare const Chart: any;
 declare const Papa: any;
