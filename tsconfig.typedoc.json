@@ -27,6 +27,10 @@
     "js/lib",
     "dashboard/lib",
     "scripts/validate-articles-playwright.ts",
+    "scripts/coalition-dashboard.ts",
+    "scripts/coalition-dashboard",
+    "scripts/committees-dashboard.ts",
+    "scripts/committees-dashboard",
     "tests",
     "cypress",
     "api"
