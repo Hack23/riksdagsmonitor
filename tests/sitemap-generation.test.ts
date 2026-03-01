@@ -274,6 +274,8 @@ describe('Sitemap Generation', () => {
 
   describe('Comprehensive Locale Validation', () => {
     const allLanguages: readonly string[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+    /** Map file-suffix language codes to BCP-47 hreflang codes (no → nb). */
+    const hreflang = (lang: string): string => lang === 'no' ? 'nb' : lang;
 
     it('should have hreflang alternates for the main index page covering all 14 languages', () => {
       // Find the index.html URL entry which should have all hreflang alternates
@@ -283,7 +285,7 @@ describe('Sitemap Generation', () => {
 
       allLanguages.forEach(lang => {
         const expected: string = lang === 'en' ? 'index.html' : `index_${lang}.html`;
-        expect(entry, `Main index should have hreflang alternate for ${lang}`).toContain(`hreflang="${lang}"`);
+        expect(entry, `Main index should have hreflang alternate for ${lang}`).toContain(`hreflang="${hreflang(lang)}"`);
         expect(entry, `Main index should link to ${expected}`).toContain(expected);
       });
     });
@@ -331,7 +333,10 @@ describe('Sitemap Generation', () => {
       const newsDir: string = path.join(rootDir, 'news');
       if (!fs.existsSync(newsDir)) return;
 
-      const files: string[] = fs.readdirSync(newsDir).filter((f: string) => f.match(/^\d{4}-\d{2}-\d{2}-.+-(en|sv)\.html$/));
+      const files: string[] = fs
+        .readdirSync(newsDir)
+        .filter((f: string) => f.match(/^\d{4}-\d{2}-\d{2}-.+-(en|sv)\.html$/))
+        .sort();
       // Just check a sample of 5 articles
       const sampleFiles: string[] = files.slice(0, 5);
 

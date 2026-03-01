@@ -34,8 +34,6 @@ const ROOT_DIR = path.join(__dirname, '..');
 const RSS_FILE = path.join(ROOT_DIR, 'rss.xml');
 const MAX_ITEMS = 50; // Limit RSS to most recent 50 articles
 
-const LANGUAGES: readonly Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
-
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -62,7 +60,7 @@ interface RssArticle {
  */
 function escapeXml(text: string): string {
   return text
-    .replace(/&/g, '&amp;')
+    .replace(/&(?!(?:#\d+|#x[0-9a-fA-F]+|[a-zA-Z]+);)/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
@@ -220,7 +218,7 @@ function generateRss(): string {
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <pubDate>${lastBuildDate}</pubDate>
     <ttl>60</ttl>
-    <copyright>Copyright ${new Date().getFullYear()} Hack23 AB. Licensed under Apache-2.0.</copyright>
+    <copyright>Copyright ${articles.length > 0 ? new Date(articles[0]!.pubDate).getUTCFullYear() : 2026} Hack23 AB. Licensed under Apache-2.0.</copyright>
     <managingEditor>info@hack23.com (Hack23 AB)</managingEditor>
     <webMaster>info@hack23.com (Hack23 AB)</webMaster>
     <generator>Riksdagsmonitor RSS Generator v1.0</generator>

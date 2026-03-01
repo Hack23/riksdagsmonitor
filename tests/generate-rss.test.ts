@@ -72,6 +72,18 @@ describe('RSS Feed Generation', () => {
     it('should handle plain text', () => {
       expect(module.escapeXml('Hello World')).toBe('Hello World');
     });
+
+    it('should not double-encode existing numeric entities', () => {
+      expect(module.escapeXml('Sweden&#x27;s')).toBe('Sweden&#x27;s');
+    });
+
+    it('should not double-encode decimal entities', () => {
+      expect(module.escapeXml('marat&#243;n')).toBe('marat&#243;n');
+    });
+
+    it('should not double-encode named entities', () => {
+      expect(module.escapeXml('&amp; &lt; &gt;')).toBe('&amp; &lt; &gt;');
+    });
   });
 
   describe('getRssArticles', () => {

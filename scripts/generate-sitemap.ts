@@ -65,6 +65,15 @@ interface HreflangAlternate {
   href: string;
 }
 
+/**
+ * Map file-suffix language codes to proper BCP-47 hreflang codes.
+ * Norwegian files use the suffix "no" but hreflang should be "nb" (Bokmål).
+ */
+function hreflangCode(lang: string): string {
+  if (lang === 'no') return 'nb';
+  return lang;
+}
+
 // ---------------------------------------------------------------------------
 // Functions
 // ---------------------------------------------------------------------------
@@ -268,7 +277,7 @@ function generateUrlEntry(
 
   alternates.forEach((alt) => {
     xml += `
-  <xhtml:link rel="alternate" hreflang="${alt.lang}" href="${BASE_URL}/${alt.href}"/>`;
+  <xhtml:link rel="alternate" hreflang="${hreflangCode(alt.lang)}" href="${BASE_URL}/${alt.href}"/>`;
   });
 
   xml += `
