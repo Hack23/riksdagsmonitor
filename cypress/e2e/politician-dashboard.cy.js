@@ -61,10 +61,11 @@ describe('Politician Dashboard', () => {
     });
 
     it('should load Chart.js library', () => {
-      cy.window().then((win) => {
-        // Check if Chart.js is loaded
-        expect(win.Chart).to.exist;
-      });
+      // Chart.js is lazy-loaded when the dashboard container enters the viewport.
+      // Scroll it into view to trigger the IntersectionObserver, then retry-wait
+      // for window.Chart to be populated by register-globals.
+      cy.get('#politician-dashboard').scrollIntoView();
+      cy.window().its('Chart').should('exist');
     });
 
     it('should have chart cards with proper styling', () => {
