@@ -25,6 +25,14 @@ import {
 } from './constants.js';
 
 /**
+ * Map a language code to its BCP-47 hreflang value.
+ * Norwegian files use the filename suffix 'no' but must be advertised as 'nb' (Bokmål) per BCP-47.
+ */
+export function hreflangCode(lang: string): string {
+  return lang === 'no' ? 'nb' : lang;
+}
+
+/**
  * Get breadcrumb name for a given language
  */
 export function getBreadcrumbName(lang: Language | string, type: keyof BreadcrumbLabels): string {
@@ -167,7 +175,7 @@ export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: L
     const display = LANG_DISPLAY[l];
     const active: string = l === currentLang ? ' active' : '';
     const ariaCurrent: string = l === currentLang ? ' aria-current="page"' : '';
-    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${l}"${ariaCurrent}>${display.flag} ${display.name}</a>`;
+    return `    <a href="${baseSlug}-${l}.html" class="lang-link${active}" hreflang="${hreflangCode(l)}"${ariaCurrent}>${display.flag} ${display.name}</a>`;
   }).join('\n');
   const ariaLabel: string = LANG_SWITCHER_ARIA_LABELS[currentLang as Language] || LANG_SWITCHER_ARIA_LABELS.en;
   return `  <nav class="language-switcher" role="navigation" aria-label="${ariaLabel}">\n${links}\n  </nav>`;

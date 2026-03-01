@@ -23,7 +23,7 @@
 #
 # Generates comprehensive evening analysis articles summarizing parliamentary and government activity with deeper analytical coverage and Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 #
-# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"6865bb1ab14aca8f8699bf6985faebef9941393d1228d97b5e9d80f85954cafe","compiler_version":"v0.51.2"}
+# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"a3ae5c09607df5ca31b9faeeda80f2c1318b93a5132801ec7a1430948a6ebd23","compiler_version":"v0.51.2"}
 
 name: "News Evening Analysis"
 "on":
