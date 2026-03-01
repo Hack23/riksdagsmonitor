@@ -150,12 +150,17 @@ describe('RSS Feed Generation', () => {
 
     it('should derive stable pubDate from filename when meta tag is missing', () => {
       const articles = module.getRssArticles();
-      // All articles have YYYY-MM-DD filename prefix — pubDate should never be "now"
+      // All articles have YYYY-MM-DD filename prefix — pubDate should be deterministic
       articles.forEach(article => {
-        const pubTime = new Date(article.pubDate).getTime();
-        // Must not be within the last few seconds (i.e., not new Date())
-        const recentThreshold = Date.now() - 60_000;
-        expect(pubTime).toBeLessThan(recentThreshold);
+        const pubDate = new Date(article.pubDate);
+        // Must be a valid date
+        expect(pubDate.getTime()).not.toBeNaN();
+        // Date portion should match the YYYY-MM-DD filename prefix
+        const dateMatch = article.file.match(/^(\d{4}-\d{2}-\d{2})/);
+        if (dateMatch) {
+          const actual = pubDate.toISOString().slice(0, 10);
+          expect(actual).toBe(dateMatch[1]);
+        }
       });
     });
   });
