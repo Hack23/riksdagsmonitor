@@ -202,8 +202,8 @@ describe('renderWithFallback', () => {
 
     // Click retry (the click handler is async-in-sync wrapper — flush microtasks)
     btn.click();
-    // Allow the async re-render to complete
-    await new Promise((r) => setTimeout(r, 0));
+    // Allow the async re-render (promise microtasks) to complete deterministically
+    await Promise.resolve();
 
     expect(renderFn).toHaveBeenCalledTimes(2);
   });
@@ -261,7 +261,7 @@ describe('renderWithFallback', () => {
 
     // Resolve the pending async renderFn
     resolveSecond();
-    await new Promise((r) => setTimeout(r, 0));
+    await Promise.resolve();
 
     // Only one extra attempt should have been started (the inFlight guard blocks the second)
     expect(renderFn).toHaveBeenCalledTimes(2);
@@ -297,7 +297,7 @@ describe('renderWithFallback', () => {
     await renderWithFallback(container, renderFn, 'msg');
     const btn = container.querySelector('.fallback-retry-btn') as HTMLButtonElement;
     btn.click();
-    await new Promise((r) => setTimeout(r, 0));
+    await Promise.resolve();
 
     // The canvas was present for both the initial and retry call
     expect(seenCanvas).toEqual([true, true]);

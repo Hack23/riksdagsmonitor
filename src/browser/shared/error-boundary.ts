@@ -50,10 +50,13 @@ export async function renderWithFallback(
   fallbackMessage = 'Data temporarily unavailable',
   options: RenderWithFallbackOptions = {},
 ): Promise<void> {
-  // Snapshot original markup so each attempt can restore pre-existing DOM
+  // Snapshot original markup so retry attempts can restore pre-existing DOM
   // elements (e.g. <canvas> elements) that renderFn depends on.
+  // Note: restore uses innerHTML, so child element references held by callers
+  // are not preserved across retries — they will point to recreated nodes.
   const originalHTML = container.innerHTML;
   let inFlight = false;
+  let isFirstAttempt = true;
 
   const attempt = async (): Promise<void> => {
     if (inFlight) {
@@ -63,9 +66,14 @@ export async function renderWithFallback(
 
     inFlight = true;
 
-    // Restore the original markup before handing control to renderFn so
-    // that any expected child elements (e.g. <canvas> targets) are present.
-    container.innerHTML = originalHTML;
+    // On retry, restore the original markup so any required child elements
+    // (e.g. <canvas> targets) are present for the re-render. The first
+    // attempt skips this to preserve existing DOM element references held
+    // by the caller.
+    if (!isFirstAttempt) {
+      container.innerHTML = originalHTML;
+    }
+    isFirstAttempt = false;
 
     // Append a dedicated loading overlay so the skeleton stays visible while
     // the async render is in progress without destroying required children.
