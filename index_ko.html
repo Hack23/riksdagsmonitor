@@ -3,6 +3,7 @@
 <head>
 <title>Riksdagsmonitor | 2026 스웨덴 총선 인텔리전스 플랫폼 | 의회 모니터링</title>
 <meta charset="UTF-8">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index_ko.html">
@@ -360,6 +361,14 @@
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="다크 테마로 전환"
+        title="다크 테마로 전환"
+        data-label-dark="라이트 테마로 전환"
+        data-label-light="다크 테마로 전환">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">2026 스웨덴 총선 인텔리전스 플랫폼</span></h1>
 <p class="tagline">실시간 의회 모니터링 · 연정 예측 · 45개 위험 규칙 · 50년+ 데이터</p>
 
@@ -1237,6 +1246,7 @@
   <span aria-hidden="true">↑</span>
 </button>
 
+    <script src="/js/theme-toggle.js"></script>
     <!-- Main application entry point -->
     <script type="module" src="/src/browser/main.ts"></script>
 </body>

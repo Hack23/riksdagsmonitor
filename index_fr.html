@@ -3,6 +3,7 @@
 <head>
 <title>Riksdagsmonitor | Plateforme d’intelligence électorale suédoise 2026 | Suivi parlementaire</title>
 <meta charset="UTF-8">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index_fr.html">
@@ -360,6 +361,14 @@
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Passer au thème sombre"
+        title="Passer au thème sombre"
+        data-label-dark="Passer au thème clair"
+        data-label-light="Passer au thème sombre">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">Plateforme d’intelligence électorale suédoise 2026</span></h1>
 <p class="tagline">Suivi parlementaire en temps réel · Prévisions de coalition · 45 règles de risque · Plus de 50 ans de données</p>
 
@@ -1237,6 +1246,7 @@ Niveaux de performance (ntile_party_tier : 1-4)
   <span aria-hidden="true">↑</span>
 </button>
 
+    <script src="/js/theme-toggle.js"></script>
     <!-- Main application entry point -->
     <script type="module" src="/src/browser/main.ts"></script>
 </body>

@@ -3,6 +3,7 @@
 <head>
 <title>CIA Nachrichtendienst-Dashboard | Schwedischer Reichstagsmonitor | Riksdagsmonitor</title>
 <meta charset="UTF-8">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../styles.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
@@ -105,6 +106,14 @@ Dashboard
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Zum dunklen Design wechseln"
+        title="Zum dunklen Design wechseln"
+        data-label-dark="Zum hellen Design wechseln"
+        data-label-light="Zum dunklen Design wechseln">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1>📊 CIA Nachrichtendienst-Dashboard</h1>
 <p class="tagline">Interaktive Visualisierung schwedischer Reichstags-Nachrichtendienstdaten</p>
 <p class="data-attribution">
@@ -269,6 +278,7 @@ Daten von <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener">C
 
 <!-- JavaScript Modules -->
     <!-- CIA Dashboard entry point -->
+    <script src="../js/theme-toggle.js"></script>
     <script type="module" src="/src/browser/cia-entry.ts"></script>
 </body>
 </html>

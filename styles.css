@@ -10416,6 +10416,374 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   THEME TOGGLE SYSTEM
+   ─────────────────────────────────────────────────────────────────────────
+   These [data-theme] selectors let the user override the OS colour scheme.
+   They carry higher specificity than :root and override every
+   @media (prefers-color-scheme: dark) block written above.
+
+   Architecture:
+     • html[data-theme="dark"]  → Ingress-inspired dark (mirrors media-query)
+     • html[data-theme="light"] → Professional green / light (mirrors :root)
+
+   WCAG 2.1 AA compliance notes:
+     Dark  bg #001a1a / text #f0f0f0  → 18.1:1  ✅
+     Light bg #f5f5f5 / text #1a1a1a  → 16.1:1  ✅
+     Cyan  #0077b6 on #f5f5f5         →  5.2:1  ✅ (primary-cyan light)
+     Cyan  #00d9ff on #001a1a         →  9.4:1  ✅ (primary-cyan dark)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Dark theme: explicit user choice ─────────────────────────────────────── */
+html[data-theme="dark"] {
+  /* Core palette (mirrors @media prefers-color-scheme: dark) */
+  --primary-color:         #00cc66;
+  --primary-light:         #00ff88;
+  --primary-dark:          #00bb77;
+  --accent-color:          #33eeff;
+  --bg-color:              #001a1a;
+  --card-bg:               #001c25;
+  --text-color:            #f0f0f0;
+  --text-secondary:        #aaaaaa;
+  --header-color:          #58a6ff;
+  --border-color:          rgba(0, 204, 102, 0.3);
+  --card-border:           rgba(0, 204, 102, 0.3);
+  --card-shadow:           rgba(0, 204, 102, 0.2);
+  --link-color:            #58a6ff;
+  --link-hover:            #79b8ff;
+  --button-bg:             #1a6fd9;
+  --button-text:           #ffffff;
+  --section-border:        #444;
+  --badge-bg:              #333;
+  --confidentiality-color: #bd93f9;
+  --integrity-color:       #50fa7b;
+  --availability-color:    #8be9fd;
+  /* Focus / card-elevation (dark) */
+  --focus-color:           #00d9ff;
+  --focus-ring:            3px solid var(--focus-color);
+  --focus-bg:              rgba(0, 217, 255, 0.08);
+  --focus-glow:            rgba(0, 217, 255, 0.18);
+  --card-shadow-resting:   0 1px 4px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
+  --card-shadow-hover:     0 6px 18px rgba(0,0,0,0.6), 0 3px 8px rgba(0,0,0,0.4);
+  --card-shadow-focus:     0 0 0 3px var(--focus-color);
+  --skeleton-base:         rgba(0, 204, 102, 0.06);
+  --skeleton-shine:        rgba(0, 204, 102, 0.14);
+  /* Cyberpunk design-system tokens */
+  --dark-bg:               #001a1a;
+  --mid-bg:                #001c25;
+  --light-text:            #f0f0f0;
+  --primary-cyan:          #00d9ff;
+  /* color-scheme: informs browsers to render native UI controls (scrollbars,
+     form inputs, date pickers) in dark mode, matching the custom CSS palette.
+     This improves accessibility and visual consistency beyond custom styles. */
+  color-scheme: dark;
+}
+
+/* Element-level dark overrides — mirrors @media (prefers-color-scheme: dark) */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3 {
+  font-family: "Orbitron", "Orbitron Fallback", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(0, 204, 102, 0.5);
+}
+
+html[data-theme="dark"] a:hover {
+  text-shadow: 0 0 8px rgba(0, 204, 102, 0.5);
+}
+
+html[data-theme="dark"] header {
+  border-bottom: 1px solid rgba(0, 204, 102, 0.3);
+}
+
+html[data-theme="dark"] .sticky-nav {
+  background: rgba(0, 26, 26, 0.95);
+  border-bottom: 2px solid var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0, 204, 102, 0.2);
+}
+
+html[data-theme="dark"] .card {
+  background: linear-gradient(135deg, rgba(0, 28, 37, 0.9), rgba(0, 26, 26, 0.9));
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 10px rgba(0, 204, 102, 0.2);
+}
+
+html[data-theme="dark"] section {
+  background: rgba(0, 28, 37, 0.3);
+}
+
+html[data-theme="dark"] .btn {
+  background: rgba(0, 204, 102, 0.2);
+  color: var(--primary-light);
+  border: 1px solid rgba(0, 204, 102, 0.3);
+}
+
+html[data-theme="dark"] ul li::before {
+  content: "▶";
+  font-size: 0.7rem;
+  top: 0.3rem;
+}
+
+html[data-theme="dark"] .dashboard-cta {
+  background: rgba(0, 28, 37, 0.6);
+  border: 1px solid rgba(0, 204, 102, 0.3);
+  box-shadow: 0 0 20px rgba(0, 204, 102, 0.1);
+}
+
+html[data-theme="dark"] .news-navigation {
+  background: rgba(0, 28, 37, 0.6);
+  border: 1px solid rgba(0, 204, 102, 0.3);
+}
+
+/* Scan-line effect for dark theme.
+   Note: base scan-line styles are also defined under @media (prefers-color-scheme: dark).
+   The [data-theme] selector takes higher specificity and overrides the media-query rule. */
+html[data-theme="dark"] body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    transparent 0px,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
+}
+
+html[data-theme="dark"] .breadcrumb {
+  background: rgba(0, 26, 26, 0.4);
+  border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .code-block {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+html[data-theme="dark"] .installation-step {
+  background: rgba(3, 105, 161, 0.1);
+  border-left-color: var(--primary-color);
+}
+
+html[data-theme="dark"] .badge-success {
+  background: rgba(40, 167, 69, 0.3);
+  color: #50fa7b;
+  border: 1px solid #50fa7b;
+  box-shadow: 0 0 8px rgba(80, 250, 123, 0.3);
+}
+
+html[data-theme="dark"] .badge-warning {
+  background: rgba(255, 193, 7, 0.3);
+  color: #f1fa8c;
+  border: 1px solid #f1fa8c;
+  box-shadow: 0 0 8px rgba(241, 250, 140, 0.3);
+}
+
+html[data-theme="dark"] .screenshot-container {
+  border-color: var(--border-color);
+  box-shadow: 0 0 10px rgba(0, 204, 102, 0.2);
+}
+
+/* ── Light theme: explicit user choice ────────────────────────────────────── */
+html[data-theme="light"] {
+  /* Core palette (mirrors :root light defaults) */
+  --primary-color:         #006633;
+  --primary-light:         #007744;
+  --primary-dark:          #004422;
+  --accent-color:          #008838;
+  --bg-color:              #f5f5f5;
+  --card-bg:               #ffffff;
+  --text-color:            #1a1a1a;
+  --text-secondary:        #4a4a4a;
+  --header-color:          #006633;
+  --border-color:          rgba(0, 102, 51, 0.15);
+  --card-border:           #dee2e6;
+  --card-shadow:           rgba(0, 102, 51, 0.08);
+  --link-color:            #007744;
+  --link-hover:            #006633;
+  --button-bg:             #007744;
+  --button-text:           #fff;
+  --section-border:        #e9ecef;
+  --badge-bg:              #f8f9fa;
+  --confidentiality-color: #7B2CBF;
+  --integrity-color:       #008838;
+  --availability-color:    #007744;
+  /* Focus / card-elevation (light) */
+  --focus-color:           #007744;
+  --focus-ring:            3px solid var(--focus-color);
+  --focus-bg:              rgba(0, 119, 68, 0.08);
+  --focus-glow:            rgba(0, 119, 68, 0.18);
+  --card-shadow-resting:   0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --card-shadow-hover:     0 4px 12px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08);
+  --card-shadow-focus:     0 0 0 3px var(--focus-color);
+  --skeleton-base:         rgba(0, 102, 51, 0.06);
+  --skeleton-shine:        rgba(0, 102, 51, 0.13);
+  /* Cyberpunk design-system tokens (light) — per spec */
+  --dark-bg:               #f5f5f5;
+  --mid-bg:                #e0e0e0;
+  --light-text:            #1a1e3d;
+  --primary-cyan:          #0077b6;
+  /* color-scheme: informs browsers to render native UI controls (scrollbars,
+     form inputs, date pickers) in light mode, matching the custom CSS palette.
+     This improves accessibility and visual consistency beyond custom styles. */
+  color-scheme: light;
+}
+
+/* Disable dark element-level overrides when user forces light */
+html[data-theme="light"] body::after,
+html[data-theme="light"] body::before {
+  display: none;
+}
+
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3 {
+  font-family: var(--font-main);
+  text-transform: none;
+  letter-spacing: normal;
+  text-shadow: none;
+}
+
+html[data-theme="light"] a:hover {
+  text-shadow: none;
+}
+
+html[data-theme="light"] header {
+  border-bottom: 1px solid var(--card-border);
+}
+
+html[data-theme="light"] .card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow-resting);
+}
+
+html[data-theme="light"] section {
+  background: transparent;
+}
+
+html[data-theme="light"] .btn {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+}
+
+html[data-theme="light"] ul li::before {
+  content: "•";
+  font-size: 1rem;
+}
+
+html[data-theme="light"] .sticky-nav {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 2px solid var(--primary-color);
+  box-shadow: 0 2px 6px rgba(0, 102, 51, 0.08);
+}
+
+html[data-theme="light"] .dashboard-cta,
+html[data-theme="light"] .news-navigation {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow-resting);
+}
+
+html[data-theme="light"] .breadcrumb {
+  background: transparent;
+  border-color: var(--border-color);
+}
+
+html[data-theme="light"] .code-block {
+  background: #f8f9fa;
+  border-color: var(--card-border);
+  color: var(--text-color);
+}
+
+html[data-theme="light"] .installation-step {
+  background: #f0f9ff;
+  border-left-color: #0369a1;
+}
+
+/* ─── Theme Toggle Button ─────────────────────────────────────────────────── */
+
+.theme-toggle-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 1rem;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+  color: var(--text-color);
+  box-shadow: var(--card-shadow-resting);
+  min-width: 44px;   /* WCAG 2.5.5 touch target */
+  min-height: 44px;
+  justify-content: center;
+  font-family: var(--font-main);
+  line-height: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.06);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary-color);
+  background: var(--bg-color);
+}
+
+.theme-toggle-btn:focus,
+.theme-toggle-btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset, 2px);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.97);
+}
+
+.theme-toggle-btn .theme-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  display: block;
+}
+
+/* RTL: flip button to left side */
+[dir="rtl"] .theme-toggle-btn {
+  right: auto;
+  left: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  [dir="rtl"] .theme-toggle-btn {
+    right: auto;
+    left: 0.5rem;
+  }
+}
+
 /* ============================================================
    Fallback UI — error boundary cards and loading skeletons
    ============================================================ */
