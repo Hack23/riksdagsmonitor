@@ -294,7 +294,23 @@ grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-committee-reports-en.html"
 **Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files. Run `npm run prebuild` (or `npm run build`) locally if you need to preview the generated indexes, metadata, or sitemap.
 
 ### Step 6: Validate & Create PR
-Validate HTML structure, then create PR:
+Run validation and HTMLHint before creating PR:
+```bash
+bash scripts/validate-news-generation.sh
+VALIDATION_EXIT=$?
+
+# HTMLHint validation with auto-fix
+NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | grep -v 'index' | wc -l)
+if [ "$NEWS_FILES" -gt 0 ]; then
+  if ! npx htmlhint "news/*.html" --config .htmlhintrc 2>/dev/null; then
+    echo "⚠️ HTML validation errors found, attempting auto-fix..."
+    npx tsx scripts/article-quality-enhancer.ts --fix
+    npx htmlhint "news/*.html" --config .htmlhintrc || true
+  fi
+fi
+```
+
+Then create PR:
 ```
 safeoutputs___create_pull_request
 ```

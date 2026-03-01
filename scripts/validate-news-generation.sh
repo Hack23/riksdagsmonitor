@@ -324,6 +324,35 @@ fi
 echo ""
 
 # ============================================================================
+# Check 11: HTMLHint validation on news articles
+# ============================================================================
+echo "📋 Check 11: HTMLHint validation on news articles"
+
+NEWS_HTML_COUNT=$(find news -maxdepth 1 -name '*-*.html' | grep -v 'index' | wc -l)
+if [ "$NEWS_HTML_COUNT" -eq 0 ]; then
+  echo -e "${YELLOW}⚠️ No news articles found to HTMLHint-validate${NC}"
+  WARNINGS=$((WARNINGS + 1))
+else
+  HTMLHINT_RESULT=0
+  npx htmlhint "news/*.html" --config .htmlhintrc 2>/dev/null || HTMLHINT_RESULT=$?
+  if [ $HTMLHINT_RESULT -ne 0 ]; then
+    echo -e "${YELLOW}⚠️ HTMLHint found errors in news articles (attempting auto-fix)${NC}"
+    npx tsx scripts/article-quality-enhancer.ts --fix 2>/dev/null || true
+    HTMLHINT_RESULT2=0
+    npx htmlhint "news/*.html" --config .htmlhintrc 2>/dev/null || HTMLHINT_RESULT2=$?
+    if [ $HTMLHINT_RESULT2 -ne 0 ]; then
+      echo -e "${YELLOW}⚠️ HTMLHint errors remain after auto-fix — review before merging${NC}"
+      WARNINGS=$((WARNINGS + 1))
+    else
+      echo -e "${GREEN}✅ HTMLHint errors fixed successfully${NC}"
+    fi
+  else
+    echo -e "${GREEN}✅ All $NEWS_HTML_COUNT news articles pass HTMLHint validation${NC}"
+  fi
+fi
+echo ""
+
+# ============================================================================
 # Summary
 # ============================================================================
 echo "================================================================"

@@ -16,6 +16,7 @@ import {
   hasLanguageSwitcher,
   hasArticleTopNav,
   hasBackToNews,
+  fixHtmlNesting,
 } from '../scripts/article-quality-enhancer.js';
 
 // ---------------------------------------------------------------------------
@@ -165,5 +166,51 @@ describe('Article template integration', () => {
     expect(hasLanguageSwitcher(EMPTY_HTML)).toBe(false);
     expect(hasArticleTopNav(EMPTY_HTML)).toBe(false);
     expect(hasBackToNews(EMPTY_HTML)).toBe(false);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// fixHtmlNesting
+// ---------------------------------------------------------------------------
+
+describe('fixHtmlNesting', () => {
+  it('should fix <p><ul> nesting by closing <p> before <ul>', () => {
+    const input = '<p>\n<ul><li>Item</li></ul></p>';
+    const result = fixHtmlNesting(input);
+    expect(result).toContain('</p>');
+    expect(result).toContain('<ul>');
+    expect(result).not.toMatch(/<p[^>]*>\s*<ul/);
+  });
+
+  it('should fix <p><ol> nesting by closing <p> before <ol>', () => {
+    const input = '<p>\n<ol><li>Step</li></ol></p>';
+    const result = fixHtmlNesting(input);
+    expect(result).toContain('</p>');
+    expect(result).toContain('<ol>');
+    expect(result).not.toMatch(/<p[^>]*>\s*<ol/);
+  });
+
+  it('should remove orphaned </p> after </ul>', () => {
+    const input = '<ul><li>Item</li></ul></p>';
+    const result = fixHtmlNesting(input);
+    expect(result).not.toContain('</ul></p>');
+    expect(result).toContain('</ul>');
+  });
+
+  it('should remove orphaned </p> after </ol>', () => {
+    const input = '<ol><li>Item</li></ol></p>';
+    const result = fixHtmlNesting(input);
+    expect(result).not.toContain('</ol></p>');
+    expect(result).toContain('</ol>');
+  });
+
+  it('should not modify valid HTML that has no nesting errors', () => {
+    const input = '<p>Paragraph</p><ul><li>Item</li></ul><p>Another</p>';
+    const result = fixHtmlNesting(input);
+    expect(result).toBe(input);
+  });
+
+  it('should return unchanged content for empty string', () => {
+    expect(fixHtmlNesting('')).toBe('');
   });
 });

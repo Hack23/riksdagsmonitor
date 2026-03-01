@@ -231,6 +231,22 @@ python3 scripts/fix-article-navigation.py
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
+Run validation and HTMLHint before creating PR:
+```bash
+bash scripts/validate-news-generation.sh
+VALIDATION_EXIT=$?
+
+# HTMLHint validation with auto-fix for common nesting errors
+NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | grep -v 'index' | wc -l)
+if [ "$NEWS_FILES" -gt 0 ]; then
+  if ! npx htmlhint "news/*.html" --config .htmlhintrc 2>/dev/null; then
+    echo "⚠️ HTML validation errors found, attempting auto-fix..."
+    npx tsx scripts/article-quality-enhancer.ts --fix
+    npx htmlhint "news/*.html" --config .htmlhintrc || true
+  fi
+fi
+```
+
 **CRITICAL: Each article MUST contain real analysis, not just a list of translated links.**
 Every generated article must include:
 - An analytical lede paragraph about opposition strategy and political fault lines (not just a motion count)

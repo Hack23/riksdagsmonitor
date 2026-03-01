@@ -423,6 +423,78 @@ export async function batchEnhanceQuality(
   return results;
 }
 
+/**
+ * Fix common HTML nesting errors in article content.
+ *
+ * Corrects:
+ * - `<p><ul>` → closes `</p>` before `<ul>` (block element inside inline)
+ * - `<p><div>` → removes enclosing `<p>` (block element inside inline)
+ * - Orphaned `</p>` immediately after `</ul>` → removed
+ *
+ * @param content - Raw HTML content
+ * @returns Fixed HTML content
+ */
+export function fixHtmlNesting(content: string): string {
+  let fixed = content;
+
+  // Fix <p><ul>: close paragraph before list
+  fixed = fixed.replace(/<p([^>]*)>\s*(<ul[\s>])/g, '<p$1></p>\n$2');
+
+  // Fix <p><ol>: close paragraph before ordered list
+  fixed = fixed.replace(/<p([^>]*)>\s*(<ol[\s>])/g, '<p$1></p>\n$2');
+
+  // Fix <p><div>: remove enclosing <p> around block-level div
+  fixed = fixed.replace(/<p([^>]*)>\s*(<div[\s>])/g, '$2');
+
+  // Fix orphaned </p> immediately after </ul>
+  fixed = fixed.replace(/<\/ul>\s*<\/p>/g, '</ul>');
+
+  // Fix orphaned </p> immediately after </ol>
+  fixed = fixed.replace(/<\/ol>\s*<\/p>/g, '</ol>');
+
+  // Fix orphaned </p> immediately after </div> that was wrapped in <p>
+  fixed = fixed.replace(/<\/div>\s*<\/p>/g, '</div>');
+
+  return fixed;
+}
+
+/**
+ * Fix HTML nesting errors in a file in-place.
+ *
+ * @param filePath - Path to the HTML file to fix
+ * @returns True if the file was modified
+ */
+export function fixHtmlNestingInFile(filePath: string): boolean {
+  if (!fs.existsSync(filePath)) {
+    return false;
+  }
+  const original = fs.readFileSync(filePath, 'utf-8');
+  const fixed = fixHtmlNesting(original);
+  if (fixed !== original) {
+    fs.writeFileSync(filePath, fixed, 'utf-8');
+    return true;
+  }
+  return false;
+}
+
+// CLI entry point: support --fix flag to fix HTML nesting in news/*.html
+if (import.meta.url === `file://${process.argv[1]}`) {
+  if (process.argv.includes('--fix')) {
+    const globPattern = process.argv[process.argv.indexOf('--fix') + 1];
+    const targetGlob = (globPattern && !globPattern.startsWith('-')) ? globPattern : 'news/*.html';
+    const { globSync } = await import('glob');
+    const files: string[] = globSync(targetGlob);
+    let fixedCount = 0;
+    for (const file of files) {
+      if (fixHtmlNestingInFile(file)) {
+        console.log(`Fixed HTML nesting in: ${file}`);
+        fixedCount++;
+      }
+    }
+    console.log(`Fixed ${fixedCount} of ${files.length} files.`);
+  }
+}
+
 // Export individual assessment functions for testing
 export {
   assessAnalyticalDepth,
