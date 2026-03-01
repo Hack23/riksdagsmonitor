@@ -42,21 +42,21 @@ export const CONFIG: AppConfig = {
   
   // Committee definitions with Swedish abbreviations
   committees: [
-    { code: 'AU', name: 'Foreign Affairs Committee', nameLocalized: { sv: 'Utrikesutskottet', en: 'Foreign Affairs Committee' }, color: '#1e88e5', domain: 'Foreign Policy' },
+    { code: 'AU', name: 'Labour Market Committee', nameLocalized: { sv: 'Arbetsmarknadsutskottet', en: 'Labour Market Committee' }, color: '#1e88e5', domain: 'Labour Market' },
     { code: 'CU', name: 'Civil Affairs Committee', nameLocalized: { sv: 'Civilutskottet', en: 'Civil Affairs Committee' }, color: '#43a047', domain: 'Civil Law' },
     { code: 'FiU', name: 'Finance Committee', nameLocalized: { sv: 'Finansutskottet', en: 'Finance Committee' }, color: '#fb8c00', domain: 'Economics' },
     { code: 'FöU', name: 'Defense Committee', nameLocalized: { sv: 'Försvarsutskottet', en: 'Defense Committee' }, color: '#e53935', domain: 'National Security' },
     { code: 'JuU', name: 'Justice Committee', nameLocalized: { sv: 'Justitieutskottet', en: 'Justice Committee' }, color: '#8e24aa', domain: 'Justice' },
     { code: 'KU', name: 'Constitutional Committee', nameLocalized: { sv: 'Konstitutionsutskottet', en: 'Constitutional Committee' }, color: '#3949ab', domain: 'Constitution' },
     { code: 'KrU', name: 'Cultural Affairs Committee', nameLocalized: { sv: 'Kulturutskottet', en: 'Cultural Affairs Committee' }, color: '#00acc1', domain: 'Culture' },
-    { code: 'MjU', name: 'Environment Committee', nameLocalized: { sv: 'Miljö- och jordbruksutskottet', en: 'Environment Committee' }, color: '#7cb342', domain: 'Environment' },
+    { code: 'MJU', name: 'Environment Committee', nameLocalized: { sv: 'Miljö- och jordbruksutskottet', en: 'Environment Committee' }, color: '#7cb342', domain: 'Environment' },
     { code: 'NU', name: 'Business Committee', nameLocalized: { sv: 'Näringsutskottet', en: 'Business Committee' }, color: '#ff6f00', domain: 'Business' },
     { code: 'SkU', name: 'Taxation Committee', nameLocalized: { sv: 'Skatteutskottet', en: 'Taxation Committee' }, color: '#d32f2f', domain: 'Taxation' },
-    { code: 'SoU', name: 'Social Insurance Committee', nameLocalized: { sv: 'Socialförsäkringsutskottet', en: 'Social Insurance Committee' }, color: '#c2185b', domain: 'Social Welfare' },
+    { code: 'SoU', name: 'Social Affairs Committee', nameLocalized: { sv: 'Socialutskottet', en: 'Social Affairs Committee' }, color: '#c2185b', domain: 'Social Affairs' },
     { code: 'TU', name: 'Transport Committee', nameLocalized: { sv: 'Trafikutskottet', en: 'Transport Committee' }, color: '#0097a7', domain: 'Transportation' },
     { code: 'UbU', name: 'Education Committee', nameLocalized: { sv: 'Utbildningsutskottet', en: 'Education Committee' }, color: '#5e35b1', domain: 'Education' },
     { code: 'UFöU', name: 'Foreign Defense Committee', nameLocalized: { sv: 'Utrikes- och försvarsutskottet', en: 'Foreign Defense Committee' }, color: '#f57c00', domain: 'Security Policy' },
-    { code: 'UU', name: 'Foreign Affairs Sub-Committee', nameLocalized: { sv: 'Utrikesutskottets underutskott', en: 'Foreign Affairs Sub-Committee' }, color: '#1565c0', domain: 'Foreign Policy' }
+    { code: 'UU', name: 'Foreign Affairs Committee', nameLocalized: { sv: 'Utrikesutskottet', en: 'Foreign Affairs Committee' }, color: '#1565c0', domain: 'Foreign Policy' }
   ],
   
   // Visualization dimensions

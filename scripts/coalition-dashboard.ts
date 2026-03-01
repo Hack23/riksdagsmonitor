@@ -9,14 +9,18 @@
  * interactive visualization of Swedish party coalition dynamics, voting patterns,
  * alignment heatmaps, and behavioral anomaly detection.
  *
- * **DECOMPOSED SOURCE MODULES** (`./coalition-dashboard/`):
+ * **REFERENCE MODULES** (`./coalition-dashboard/`):
+ * Type-reference modules that document the internal structure in a Node.js/ESM
+ * context. These are NOT imported at runtime; the browser IIFE below is the
+ * canonical implementation. They are retained for type checking and documentation.
  * - **types.ts** — interface/type declarations (PartyNode, CoalitionLink, etc.)
  * - **data.ts** — PARTIES config + CSV loading + data fetch functions (~399 lines)
  * - **charts.ts** — D3.js NetworkDiagram and AlignmentHeatMap (~319 lines)
  * - **scenarios.ts** — Chart.js charts, accessibility table, UI helpers, fallback data (~428 lines)
  *
- * NOTE: Excluded from tsconfig.scripts.json and vitest (browser-only IIFE script).
- * Browser libraries d3, Chart.js are loaded via globalThis.
+ * NOTE: This file cannot be split into ES modules because it relies on browser
+ * globals (d3, Chart.js loaded via <script> tags) and runs as a self-contained
+ * IIFE. Excluded from tsconfig.scripts.json and vitest.
  *
  * @author Hack23 AB
  * @license Apache-2.0

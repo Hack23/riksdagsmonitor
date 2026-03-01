@@ -9,15 +9,19 @@
  * interactive visualization of Swedish Riksdag committee structure, productivity,
  * and decision patterns using D3.js (network/heatmap) and Chart.js (bar/radar).
  *
- * **DECOMPOSED SOURCE MODULES** (`./committees-dashboard/`):
+ * **REFERENCE MODULES** (`./committees-dashboard/`):
+ * Type-reference modules that document the internal structure in a Node.js/ESM
+ * context. These are NOT imported at runtime; the browser IIFE below is the
+ * canonical implementation. They are retained for type checking and documentation.
  * - **types.ts** — interface declarations (CommitteeData, AppConfig, NetworkNode, etc.)
  * - **data.ts** — CONFIG constants + DataManager class (fetch + cache CIA data)
  * - **charts.ts** — NetworkDiagram + ProductivityHeatMap D3.js classes (~526 lines)
  * - **table.ts** — ChartJSVisualizations class and accessible table (~424 lines)
  * - **init.ts** — initializeDashboard + event listeners + UI helpers (~198 lines)
  *
- * NOTE: Excluded from tsconfig.scripts.json and vitest (browser-only IIFE script).
- * Browser libraries d3, Chart.js, and PapaParse are loaded via globalThis.
+ * NOTE: This file cannot be split into ES modules because it relies on browser
+ * globals (d3, Chart.js, PapaParse loaded via <script> tags) and runs as a
+ * self-contained IIFE. Excluded from tsconfig.scripts.json and vitest.
  *
  * @author Hack23 AB
  * @license Apache-2.0

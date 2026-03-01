@@ -184,7 +184,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       const qUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : '';
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${qUrl ? `<a href="${qUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(titleText), lang)}${qUrl ? '</a>' : ''}</h4>\n`;
-      if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
+      if (party) content += `      <p class="policy-significance">${party}</p>\n`;
       content += `    </div>\n`;
     });
   }
@@ -226,7 +226,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
         .slice(0, 200);
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${iUrl ? `<a href="${iUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(titleText), lang)}${iUrl ? '</a>' : ''}</h4>\n`;
-      if (party) content += `      <p class="policy-significance">${escapeHtml(party)}</p>\n`;
+      if (party) content += `      <p class="policy-significance">${party}</p>\n`;
       if (ministerName) content += `      <p class="minister-target">→ ${svSpan(escapeHtml(ministerName), lang)}</p>\n`;
       if (cleanedSummary) content += `      <p>${svSpan(escapeHtml(cleanedSummary) + '…', lang)}</p>\n`;
       content += `    </div>\n`;
@@ -238,7 +238,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     content += `\n    <h2>${L(lang, 'whatToWatch')}</h2>\n    <ul>\n`;
 
     highlights.forEach(highlight => {
-      content += `      <li><strong>${highlight.title}:</strong> ${highlight.description}</li>\n`;
+      content += `      <li><strong>${escapeHtml(highlight.title)}:</strong> ${escapeHtml(highlight.description)}</li>\n`;
     });
 
     content += '    </ul>\n';

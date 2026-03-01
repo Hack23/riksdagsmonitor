@@ -33,8 +33,8 @@ export function formatDateForSlug(date: Date = new Date()): string {
 export function repoDataDir(): string {
   try {
     const __dirname = dirname(fileURLToPath(import.meta.url));
-    // From scripts/news-types/ → up two levels to repo root → data/
-    return join(__dirname, '..', '..', 'data');
+    // From scripts/news-types/weekly-review/ → up three levels to repo root → data/
+    return join(__dirname, '..', '..', '..', 'data');
   } catch {
     return join(process.cwd(), 'data');
   }
@@ -46,8 +46,8 @@ export function repoDataDir(): string {
 function resolveCIADataDir(): string {
   try {
     const __dirname = dirname(fileURLToPath(import.meta.url));
-    // From scripts/news-types/ → up two levels to repo root → cia-data/
-    return join(__dirname, '..', '..', 'cia-data');
+    // From scripts/news-types/weekly-review/ → up three levels to repo root → cia-data/
+    return join(__dirname, '..', '..', '..', 'cia-data');
   } catch {
     return join(process.cwd(), 'cia-data');
   }
