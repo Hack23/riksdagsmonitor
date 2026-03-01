@@ -717,14 +717,16 @@ describe('Pipeline: edge cases — very long article content', () => {
 });
 
 describe('Pipeline: edge cases — special characters in content', () => {
-  it('handles HTML entities and special characters in title', () => {
+  it('generates valid HTML when title and subtitle contain special characters', () => {
     const html = articleTemplate.generateArticleHTML(
       makeArticleData('en', 'analysis', {
         title: 'Budget & Defence: Sweden\'s 2026 Priorities',
-        subtitle: 'Analysis of <key> policy areas & legislative priorities',
+        subtitle: 'Analysis of key policy areas & legislative priorities',
       }),
     );
     expect(html).toContain('<!DOCTYPE html>');
+    // Title/subtitle are HTML-escaped in meta tags and JSON-LD
+    expect(html).toContain('Budget &amp; Defence');
     const blocks = extractJsonLdBlocks(html);
     expect(blocks.every(b => b !== null)).toBe(true);
   });

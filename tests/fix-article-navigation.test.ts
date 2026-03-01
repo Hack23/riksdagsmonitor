@@ -39,7 +39,7 @@ function buildCompleteArticle(slug: string): string {
     <a href="${slug}-en.html" class="lang-link active" hreflang="en" aria-current="page">🇬🇧 English</a>
     <a href="${slug}-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="${slug}-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="${slug}-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
+    <a href="${slug}-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="${slug}-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
     <a href="${slug}-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
     <a href="${slug}-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
@@ -161,7 +161,9 @@ describe('transformContent — language switcher', () => {
   it('generates all 14 language links', () => {
     const { content } = transformContent(BARE_ARTICLE, SLUG, 'en');
     for (const lang of ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh']) {
-      expect(content).toContain(`hreflang="${lang}"`);
+      // Norwegian file suffix is 'no' but BCP-47 hreflang is 'nb'
+      const expectedHreflang = lang === 'no' ? 'nb' : lang;
+      expect(content).toContain(`hreflang="${expectedHreflang}"`);
     }
   });
 
