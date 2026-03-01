@@ -100,6 +100,7 @@ interface LocaleTranslations {
   readonly momentumSrOnly?: string;
   readonly loadingMessage: string;
   readonly errorMessage: string;
+  readonly retryMessage: string;
   readonly dataAttribution: string;
   readonly lastUpdated: string;
   readonly parties: PartyNames;
@@ -232,6 +233,7 @@ const TRANSLATIONS: TranslationMap = {
       'Doughnut chart displaying momentum scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party.',
     loadingMessage: 'Loading CIA data from GitHub repository...',
     errorMessage: 'Error loading data. Please try again later.',
+    retryMessage: 'Retry',
     dataAttribution: 'Data by CIA Platform',
     lastUpdated: 'Last Updated',
     parties: {
@@ -278,6 +280,7 @@ const TRANSLATIONS: TranslationMap = {
       'Ringdiagram som visar momentumpoäng för Socialdemokraterna, Moderaterna, Sverigedemokraterna, Centerpartiet, Vänsterpartiet, Kristdemokraterna, Liberalerna och Miljöpartiet.',
     loadingMessage: 'Laddar CIA-data från GitHub-repository...',
     errorMessage: 'Fel vid laddning av data. Försök igen senare.',
+    retryMessage: 'Försök igen',
     dataAttribution: 'Data från CIA-plattformen',
     lastUpdated: 'Senast Uppdaterad',
     parties: {
@@ -308,6 +311,7 @@ const TRANSLATIONS: TranslationMap = {
       'Partimomentumscorer med percentilbenchmarks (P50, P90), der angiver valgbane.',
     loadingMessage: 'Indlæser CIA-data fra GitHub-repository...',
     errorMessage: 'Fejl ved indlæsning af data. Prøv igen senere.',
+    retryMessage: 'Prøv igen',
     dataAttribution: 'Data fra CIA-platformen',
     lastUpdated: 'Senest Opdateret',
     parties: {
@@ -338,6 +342,7 @@ const TRANSLATIONS: TranslationMap = {
       'Partimomentumpoeng med persentilreferanser (P50, P90) som indikerer valgbane.',
     loadingMessage: 'Laster inn CIA-data fra GitHub-repository...',
     errorMessage: 'Feil ved lasting av data. Prøv igjen senere.',
+    retryMessage: 'Prøv igjen',
     dataAttribution: 'Data fra CIA-plattformen',
     lastUpdated: 'Sist Oppdatert',
     parties: {
@@ -368,6 +373,7 @@ const TRANSLATIONS: TranslationMap = {
       'Puolueen vauhtipisteet prosenttipisteillä (P50, P90), jotka osoittavat vaalikaaren.',
     loadingMessage: 'Ladataan CIA-tietoja GitHub-repositoriosta...',
     errorMessage: 'Virhe tietojen lataamisessa. Yritä myöhemmin uudelleen.',
+    retryMessage: 'Yritä uudelleen',
     dataAttribution: 'Tiedot CIA-alustalta',
     lastUpdated: 'Viimeksi Päivitetty',
     parties: {
@@ -399,6 +405,7 @@ const TRANSLATIONS: TranslationMap = {
       'Parteien-Momentum-Werte mit Perzentil-Benchmarks (P50, P90), die den Wahlverlauf anzeigen.',
     loadingMessage: 'Lade CIA-Daten aus GitHub-Repository...',
     errorMessage: 'Fehler beim Laden der Daten. Bitte versuchen Sie es später erneut.',
+    retryMessage: 'Wiederholen',
     dataAttribution: 'Daten von der CIA-Plattform',
     lastUpdated: 'Zuletzt Aktualisiert',
     parties: {
@@ -430,6 +437,7 @@ const TRANSLATIONS: TranslationMap = {
       'Scores de momentum des partis avec des repères de percentile (P50, P90) indiquant la trajectoire électorale.',
     loadingMessage: 'Chargement des données CIA depuis le dépôt GitHub...',
     errorMessage: 'Erreur lors du chargement des données. Veuillez réessayer plus tard.',
+    retryMessage: 'Réessayer',
     dataAttribution: 'Données de la plateforme CIA',
     lastUpdated: 'Dernière Mise à Jour',
     parties: {
@@ -461,6 +469,7 @@ const TRANSLATIONS: TranslationMap = {
     loadingMessage: 'Cargando datos de CIA desde el repositorio de GitHub...',
     errorMessage:
       'Error al cargar los datos. Por favor, inténtelo de nuevo más tarde.',
+    retryMessage: 'Reintentar',
     dataAttribution: 'Datos de la plataforma CIA',
     lastUpdated: 'Última Actualización',
     parties: {
@@ -492,6 +501,7 @@ const TRANSLATIONS: TranslationMap = {
       'Partijmomentumscores met percentiel-benchmarks (P50, P90) die het verkiezingstraject aangeven.',
     loadingMessage: 'CIA-gegevens laden vanuit GitHub-repository...',
     errorMessage: 'Fout bij het laden van gegevens. Probeer het later opnieuw.',
+    retryMessage: 'Opnieuw proberen',
     dataAttribution: 'Gegevens van het CIA-platform',
     lastUpdated: 'Laatst Bijgewerkt',
     parties: {
@@ -522,6 +532,7 @@ const TRANSLATIONS: TranslationMap = {
       'درجات زخم الأحزاب مع معايير النسبة المئوية (P50، P90) التي تشير إلى المسار الانتخابي.',
     loadingMessage: 'جارٍ تحميل بيانات CIA من مستودع GitHub...',
     errorMessage: 'خطأ في تحميل البيانات. يرجى المحاولة مرة أخرى لاحقًا.',
+    retryMessage: 'حاول مجددًا',
     dataAttribution: 'البيانات من منصة CIA',
     lastUpdated: 'آخر تحديث',
     parties: {
@@ -552,6 +563,7 @@ const TRANSLATIONS: TranslationMap = {
       'ציוני מומנטום של מפלגות עם אמות מידה אחוזיות (P50, P90) המצביעים על מסלול בחירות.',
     loadingMessage: 'טוען נתוני CIA ממאגר GitHub...',
     errorMessage: 'שגיאה בטעינת נתונים. נסה שוב מאוחר יותר.',
+    retryMessage: 'נסה שוב',
     dataAttribution: 'נתונים מפלטפורמת CIA',
     lastUpdated: 'עודכן לאחרונה',
     parties: {
@@ -582,6 +594,7 @@ const TRANSLATIONS: TranslationMap = {
       'パーセンタイルベンチマーク（P50、P90）を使用した政党の勢いスコアで、選挙の軌跡を示します。',
     loadingMessage: 'GitHubリポジトリからCIAデータを読み込んでいます...',
     errorMessage: 'データの読み込みエラー。後でもう一度お試しください。',
+    retryMessage: '再試行',
     dataAttribution: 'CIAプラットフォームからのデータ',
     lastUpdated: '最終更新',
     parties: {
@@ -612,6 +625,7 @@ const TRANSLATIONS: TranslationMap = {
       '백분위수 벤치마크(P50, P90)로 선거 궤적을 나타내는 정당 모멘텀 점수.',
     loadingMessage: 'GitHub 저장소에서 CIA 데이터를 로드하는 중...',
     errorMessage: '데이터 로드 오류. 나중에 다시 시도하십시오.',
+    retryMessage: '다시 시도',
     dataAttribution: 'CIA 플랫폼의 데이터',
     lastUpdated: '마지막 업데이트',
     parties: {
@@ -641,6 +655,7 @@ const TRANSLATIONS: TranslationMap = {
       '具有百分位基准（P50，P90）的政党动量分数，指示选举轨迹。',
     loadingMessage: '正在从GitHub存储库加载CIA数据...',
     errorMessage: '加载数据时出错。请稍后再试。',
+    retryMessage: '重试',
     dataAttribution: '来自CIA平台的数据',
     lastUpdated: '最后更新',
     parties: {
@@ -1235,6 +1250,6 @@ export async function init(): Promise<void> {
     renderErrorFallback(errContainer, t.errorMessage, () => {
       errContainer.remove();
       void init();
-    });
+    }, t.retryMessage);
   }
 }

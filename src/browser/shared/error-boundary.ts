@@ -48,17 +48,29 @@ export async function renderWithFallback(
     }
 
     inFlight = true;
-    renderLoadingFallback(container);
+
+    // Restore the original markup before handing control to renderFn so
+    // that any expected child elements (e.g. <canvas> targets) are present.
+    container.innerHTML = originalHTML;
+
+    // Append a dedicated loading overlay so the skeleton stays visible while
+    // the async render is in progress without destroying required children.
+    const loadingOverlay = document.createElement('div');
+    loadingOverlay.setAttribute('data-error-boundary-loading', 'true');
+    loadingOverlay.setAttribute('aria-busy', 'true');
+    renderLoadingFallback(loadingOverlay);
+    container.appendChild(loadingOverlay);
 
     try {
-      // Restore the original markup before handing control to renderFn so
-      // that any expected child elements (e.g. <canvas> targets) are present.
-      container.innerHTML = originalHTML;
       await Promise.resolve(renderFn());
     } catch (err) {
       logger.error('[ErrorBoundary] Render failed:', err);
       renderErrorFallback(container, fallbackMessage, attempt);
     } finally {
+      // Remove the overlay once the attempt finishes (success or failure).
+      if (loadingOverlay.parentNode === container) {
+        container.removeChild(loadingOverlay);
+      }
       inFlight = false;
     }
   };

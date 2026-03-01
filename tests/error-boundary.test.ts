@@ -223,6 +223,22 @@ describe('renderWithFallback', () => {
     expect(msg!.textContent).toBe('Data temporarily unavailable');
   });
 
+  it('removes the loading overlay after a successful render', async () => {
+    const renderFn = vi.fn(() => {
+      container.innerHTML = '<p class="result">done</p>';
+    });
+    await renderWithFallback(container, renderFn, 'msg');
+    // The loading overlay should be gone after the render completes
+    expect(container.querySelector('[data-error-boundary-loading]')).toBeNull();
+  });
+
+  it('removes the loading overlay after a failed render', async () => {
+    const renderFn = vi.fn(() => { throw new Error('fail'); });
+    await renderWithFallback(container, renderFn, 'msg');
+    // The loading overlay should be removed even when the render throws
+    expect(container.querySelector('[data-error-boundary-loading]')).toBeNull();
+  });
+
   it('ignores concurrent retry clicks while an attempt is already in flight', async () => {
     let resolveSecond!: () => void;
     let callCount = 0;
