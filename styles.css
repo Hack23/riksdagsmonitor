@@ -10430,7 +10430,7 @@ html[data-theme="dark"] {
 html[data-theme="dark"] h1,
 html[data-theme="dark"] h2,
 html[data-theme="dark"] h3 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron", "Orbitron Fallback", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 0 0 5px rgba(0, 204, 102, 0.5);
@@ -10469,6 +10469,7 @@ html[data-theme="dark"] .btn {
 html[data-theme="dark"] ul li::before {
   content: "▶";
   font-size: 0.7rem;
+  top: 0.3rem;
 }
 
 html[data-theme="dark"] .dashboard-cta {
