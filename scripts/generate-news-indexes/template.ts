@@ -8,6 +8,9 @@
  * @license Apache-2.0
  */
 
+import { readFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { escapeHtml } from '../html-utils.js';
 import type {
   ArticleDisplayData,
@@ -21,6 +24,10 @@ import {
   generateLanguageSwitcherNav,
   generateAvailableLanguages,
 } from './helpers.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const PKG_VERSION: string = (JSON.parse(readFileSync(join(__dirname, '..', '..', 'package.json'), 'utf-8')) as { version: string }).version;
 
 export function generateIndexHTML(
   langKey: string,
@@ -547,8 +554,15 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
   </script>
 
   </main>
+  <section class="ai-newsroom-section" aria-labelledby="ai-newsroom-heading">
+    <div class="container">
+      <h2 id="ai-newsroom-heading">🤖 AI-Disrupted News Generation</h2>
+      <p>Riksdagsmonitor's agentic news generation pipeline is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus via GitHub Copilot Coding Agent, our 10 specialized workflows (9 scheduled + 1 on-demand) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.</p>
+    </div>
+  </section>
   <footer class="footer-section">
-    <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence</p>
+    <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence | v${PKG_VERSION}</p>
+    <p class="footer-disclaimer">⚠️ Ongoing improvements — please <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">report any issues on GitHub</a>.</p>
   </footer>
 </body>
 </html>`;

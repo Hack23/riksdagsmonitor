@@ -882,6 +882,18 @@ describe('Article Template', () => {
       expect(htmlFr).toContain('349 députés');
       expect(htmlFr).toContain('45 règles de risque');
     });
+
+    it('should include app version in footer', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toMatch(/\| v\d+\.\d+\.\d+/);
+    });
+
+    it('should include disclaimer with GitHub issues link', () => {
+      const html = generateSiteFooter('en');
+      expect(html).toContain('footer-disclaimer');
+      expect(html).toContain('Ongoing improvements');
+      expect(html).toContain('https://github.com/Hack23/riksdagsmonitor/issues');
+    });
   });
 
   describe('Default export includes new functions', () => {
