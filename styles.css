@@ -13,7 +13,7 @@
   ascent-override: 90%;
   descent-override: 22%;
   line-gap-override: 0%;
-  src: local('Arial');
+  src: local('Arial'), local('Liberation Sans'), local('Helvetica Neue'), local('Helvetica');
 }
 
 @font-face {
@@ -25,7 +25,7 @@
   ascent-override: 85%;
   descent-override: 15%;
   line-gap-override: 0%;
-  src: local('Arial Black'), local('Impact');
+  src: local('Arial Black'), local('Impact'), local('Century Gothic'), local('Trebuchet MS');
 }
 
 /* ==================================================
