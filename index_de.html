@@ -3,6 +3,7 @@
 <head>
 <title>Riksdagsmonitor | Schwedische Wahl-Intelligence-Plattform 2026 | Parlamentsmonitoring</title>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('riksdagsmonitor-theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index_de.html">
@@ -357,6 +358,14 @@ Schwedische Wahl 2026
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Zum dunklen Design wechseln"
+        title="Zum dunklen Design wechseln"
+        data-label-dark="Zum hellen Design wechseln"
+        data-label-light="Zum dunklen Design wechseln">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">Schwedische Wahl-Intelligence-Plattform 2026</span></h1>
 <p class="tagline">Parlamentsmonitoring in Echtzeit · Koalitionsprognosen · 45 Risikoregeln · 50+ Jahre Daten</p>
 
@@ -1234,6 +1243,7 @@ Leistungsstufen (ntile_party_tier: 1-4)
   <span aria-hidden="true">↑</span>
 </button>
 
+    <script src="/js/theme-toggle.js"></script>
     <!-- Main application entry point -->
     <script type="module" src="/src/browser/main.ts"></script>
 </body>

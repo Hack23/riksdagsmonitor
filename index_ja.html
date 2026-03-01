@@ -3,6 +3,7 @@
 <head>
 <title>Riksdagsmonitor | スウェーデン総選挙2026インテリジェンス・プラットフォーム | 議会モニタリング</title>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('riksdagsmonitor-theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index_ja.html">
@@ -357,6 +358,14 @@
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="ダークテーマに切り替え"
+        title="ダークテーマに切り替え"
+        data-label-dark="ライトテーマに切り替え"
+        data-label-light="ダークテーマに切り替え">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">スウェーデン総選挙2026インテリジェンス・プラットフォーム</span></h1>
 <p class="tagline">リアルタイム議会監視 · 連立予測 · 45のリスクルール · 50年以上のデータ</p>
 
@@ -1234,6 +1243,7 @@
   <span aria-hidden="true">↑</span>
 </button>
 
+    <script src="/js/theme-toggle.js"></script>
     <!-- Main application entry point -->
     <script type="module" src="/src/browser/main.ts"></script>
 </body>
