@@ -28,7 +28,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Sort:', newest: 'Newest First', oldest: 'Oldest First', titleSort: 'Title'
     },
     noResults: 'No articles matched the filters',
-    i18n: { noArticles: 'No articles available', loading: 'Loading articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'', search: 'Search:', searchPlaceholder: 'Search articles...', loadMore: 'Load more articles', showing: '(shown, total) => \'Showing \' + shown + \' of \' + total + \' articles\'' },
+    i18n: { noArticles: 'No articles available', search: 'Search:', searchPlaceholder: 'Search articles...', loadMore: 'Load more articles', showing: '(shown, total) => \'Showing \' + shown + \' of \' + total + \' articles\'' },
     schemaDescription: 'Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency'
   },
   sv: {
@@ -44,7 +44,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Sortera:', newest: 'Nyast först', oldest: 'Äldst först', titleSort: 'Titel'
     },
     noResults: 'Inga artiklar matchade filtren',
-    i18n: { noArticles: 'Inga artiklar tillgängliga', loading: 'Laddar artiklar...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artiklar\'', search: 'Sök:', searchPlaceholder: 'Sök artiklar...', loadMore: 'Ladda fler artiklar', showing: '(shown, total) => \'Visar \' + shown + \' av \' + total + \' artiklar\'' },
+    i18n: { noArticles: 'Inga artiklar tillgängliga', search: 'Sök:', searchPlaceholder: 'Sök artiklar...', loadMore: 'Ladda fler artiklar', showing: '(shown, total) => \'Visar \' + shown + \' av \' + total + \' artiklar\'' },
     schemaDescription: 'Svensk riksdagsbevakning - Övervaka politisk aktivitet med systematisk transparens'
   },
   da: {
@@ -60,7 +60,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Sorter:', newest: 'Nyeste først', oldest: 'Ældste først', titleSort: 'Titel'
     },
     noResults: 'Ingen artikler matchede filtrene',
-    i18n: { noArticles: 'Ingen artikler tilgængelige', loading: 'Indlæser artikler...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikler\'', search: 'Søg:', searchPlaceholder: 'Søg artikler...', loadMore: 'Indlæs flere artikler', showing: '(shown, total) => \'Viser \' + shown + \' af \' + total + \' artikler\'' },
+    i18n: { noArticles: 'Ingen artikler tilgængelige', search: 'Søg:', searchPlaceholder: 'Søg artikler...', loadMore: 'Indlæs flere artikler', showing: '(shown, total) => \'Viser \' + shown + \' af \' + total + \' artikler\'' },
     schemaDescription: 'Svensk parlamentsovervågning - Overvåg politisk aktivitet med systematisk gennemsigtighed'
   },
   no: {
@@ -76,7 +76,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Sorter:', newest: 'Nyeste først', oldest: 'Eldste først', titleSort: 'Tittel'
     },
     noResults: 'Ingen artikler matchet filtrene',
-    i18n: { noArticles: 'Ingen artikler tilgjengelige', loading: 'Laster artikler...', articleCount: '(n) => n === 1 ? \'1 artikkel\' : \'\' + n + \' artikler\'', search: 'Søk:', searchPlaceholder: 'Søk artikler...', loadMore: 'Last flere artikler', showing: '(shown, total) => \'Viser \' + shown + \' av \' + total + \' artikler\'' },
+    i18n: { noArticles: 'Ingen artikler tilgjengelige', search: 'Søk:', searchPlaceholder: 'Søk artikler...', loadMore: 'Last flere artikler', showing: '(shown, total) => \'Viser \' + shown + \' av \' + total + \' artikler\'' },
     schemaDescription: 'Svensk parlamentsovervåking - Overvåk politisk aktivitet med systematisk åpenhet'
   },
   fi: {
@@ -92,7 +92,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Järjestä:', newest: 'Uusimmat ensin', oldest: 'Vanhimmat ensin', titleSort: 'Otsikko'
     },
     noResults: 'Mikään artikkeli ei vastannut suodattimia',
-    i18n: { noArticles: 'Ei artikkeleita saatavilla', loading: 'Ladataan artikkeleita...', articleCount: '(n) => n === 1 ? \'1 artikkeli\' : \'\' + n + \' artikkelia\'', search: 'Haku:', searchPlaceholder: 'Hae artikkeleita...', loadMore: 'Lataa lisää artikkeleita', showing: '(shown, total) => \'Näytetään \' + shown + \' / \' + total + \' artikkelia\'' },
+    i18n: { noArticles: 'Ei artikkeleita saatavilla', search: 'Haku:', searchPlaceholder: 'Hae artikkeleita...', loadMore: 'Lataa lisää artikkeleita', showing: '(shown, total) => \'Näytetään \' + shown + \' / \' + total + \' artikkelia\'' },
     schemaDescription: 'Ruotsin parlamenttiseuranta - Seuraa poliittista toimintaa järjestelmällisellä avoimuudella'
   },
   de: {
@@ -108,7 +108,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Sortieren:', newest: 'Neueste zuerst', oldest: 'Älteste zuerst', titleSort: 'Titel'
     },
     noResults: 'Keine Artikel entsprachen den Filtern',
-    i18n: { noArticles: 'Keine Artikel verfügbar', loading: 'Artikel werden geladen...', articleCount: '(n) => n === 1 ? \'1 Artikel\' : \'\' + n + \' Artikel\'', search: 'Suche:', searchPlaceholder: 'Artikel suchen...', loadMore: 'Mehr Artikel laden', showing: '(shown, total) => \'Zeige \' + shown + \' von \' + total + \' Artikeln\'' },
+    i18n: { noArticles: 'Keine Artikel verfügbar', search: 'Suche:', searchPlaceholder: 'Artikel suchen...', loadMore: 'Mehr Artikel laden', showing: '(shown, total) => \'Zeige \' + shown + \' von \' + total + \' Artikeln\'' },
     schemaDescription: 'Schwedische Parlamentsüberwachung - Politische Aktivitäten mit systematischer Transparenz verfolgen'
   },
   fr: {
@@ -124,7 +124,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Trier :', newest: 'Plus récent', oldest: 'Plus ancien', titleSort: 'Titre'
     },
     noResults: 'Aucun article ne correspond aux filtres',
-    i18n: { noArticles: 'Aucun article disponible', loading: 'Chargement des articles...', articleCount: '(n) => n === 1 ? \'1 article\' : \'\' + n + \' articles\'', search: 'Recherche :', searchPlaceholder: 'Rechercher des articles...', loadMore: 'Charger plus d\'articles', showing: '(shown, total) => \'Affichage de \' + shown + \' sur \' + total + \' articles\'' },
+    i18n: { noArticles: 'Aucun article disponible', search: 'Recherche :', searchPlaceholder: 'Rechercher des articles...', loadMore: 'Charger plus d\'articles', showing: '(shown, total) => \'Affichage de \' + shown + \' sur \' + total + \' articles\'' },
     schemaDescription: 'Surveillance du Parlement suédois - Suivre l\'activité politique avec une transparence systématique'
   },
   es: {
@@ -140,7 +140,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Ordenar:', newest: 'Más reciente', oldest: 'Más antiguo', titleSort: 'Título'
     },
     noResults: 'Ningún artículo coincidió con los filtros',
-    i18n: { noArticles: 'No hay artículos disponibles', loading: 'Cargando artículos...', articleCount: '(n) => n === 1 ? \'1 artículo\' : \'\' + n + \' artículos\'', search: 'Buscar:', searchPlaceholder: 'Buscar artículos...', loadMore: 'Cargar más artículos', showing: '(shown, total) => \'Mostrando \' + shown + \' de \' + total + \' artículos\'' },
+    i18n: { noArticles: 'No hay artículos disponibles', search: 'Buscar:', searchPlaceholder: 'Buscar artículos...', loadMore: 'Cargar más artículos', showing: '(shown, total) => \'Mostrando \' + shown + \' de \' + total + \' artículos\'' },
     schemaDescription: 'Monitoreo del Parlamento sueco - Seguimiento de la actividad política con transparencia sistemática'
   },
   nl: {
@@ -156,7 +156,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'Sorteren:', newest: 'Nieuwste eerst', oldest: 'Oudste eerst', titleSort: 'Titel'
     },
     noResults: 'Geen artikelen voldeden aan de filters',
-    i18n: { noArticles: 'Geen artikelen beschikbaar', loading: 'Artikelen laden...', articleCount: '(n) => n === 1 ? \'1 artikel\' : \'\' + n + \' artikelen\'', search: 'Zoeken:', searchPlaceholder: 'Artikelen zoeken...', loadMore: 'Meer artikelen laden', showing: '(shown, total) => \'Toon \' + shown + \' van \' + total + \' artikelen\'' },
+    i18n: { noArticles: 'Geen artikelen beschikbaar', search: 'Zoeken:', searchPlaceholder: 'Artikelen zoeken...', loadMore: 'Meer artikelen laden', showing: '(shown, total) => \'Toon \' + shown + \' van \' + total + \' artikelen\'' },
     schemaDescription: 'Zweeds parlementair toezicht - Volg politieke activiteit met systematische transparantie'
   },
   ar: {
@@ -172,7 +172,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'الترتيب:', newest: 'الأحدث أولاً', oldest: 'الأقدم أولاً', titleSort: 'العنوان'
     },
     noResults: 'لا توجد مقالات تطابق الفلاتر',
-    i18n: { noArticles: 'لا توجد مقالات متاحة', loading: 'جارٍ تحميل المقالات...', articleCount: '(n) => n === 1 ? \'مقال واحد\' : \'\' + n + \' مقالات\'', search: 'بحث:', searchPlaceholder: 'ابحث في المقالات...', loadMore: 'تحميل المزيد من المقالات', showing: '(shown, total) => \'عرض \' + shown + \' من \' + total + \' مقالات\'' },
+    i18n: { noArticles: 'لا توجد مقالات متاحة', search: 'بحث:', searchPlaceholder: 'ابحث في المقالات...', loadMore: 'تحميل المزيد من المقالات', showing: '(shown, total) => \'عرض \' + shown + \' من \' + total + \' مقالات\'' },
     schemaDescription: 'مراقبة البرلمان السويدي - متابعة النشاط السياسي بشفافية منهجية'
   },
   he: {
@@ -188,7 +188,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: 'מיון:', newest: 'החדש ביותר', oldest: 'הישן ביותר', titleSort: 'כותרת'
     },
     noResults: 'אין מאמרים שתואמים את הסינון',
-    i18n: { noArticles: 'אין מאמרים זמינים', loading: 'טוען מאמרים...', articleCount: '(n) => n === 1 ? \'מאמר אחד\' : \'\' + n + \' מאמרים\'', search: 'חיפוש:', searchPlaceholder: 'חפש מאמרים...', loadMore: 'טען עוד מאמרים', showing: '(shown, total) => \'מציג \' + shown + \' מתוך \' + total + \' מאמרים\'' },
+    i18n: { noArticles: 'אין מאמרים זמינים', search: 'חיפוש:', searchPlaceholder: 'חפש מאמרים...', loadMore: 'טען עוד מאמרים', showing: '(shown, total) => \'מציג \' + shown + \' מתוך \' + total + \' מאמרים\'' },
     schemaDescription: 'ניטור הפרלמנט השוודי - מעקב אחר פעילות פוליטית בשקיפות שיטתית'
   },
   ja: {
@@ -204,7 +204,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: '並び替え：', newest: '最新順', oldest: '古い順', titleSort: 'タイトル'
     },
     noResults: 'フィルターに一致する記事がありません',
-    i18n: { noArticles: '記事がありません', loading: '記事を読み込み中...', articleCount: '(n) => n === 1 ? \'1件の記事\' : \'\' + n + \'件の記事\'', search: '検索：', searchPlaceholder: '記事を検索...', loadMore: 'さらに記事を読み込む', showing: '(shown, total) => shown + \' / \' + total + \' 件の記事\'' },
+    i18n: { noArticles: '記事がありません', search: '検索：', searchPlaceholder: '記事を検索...', loadMore: 'さらに記事を読み込む', showing: '(shown, total) => shown + \' / \' + total + \' 件の記事\'' },
     schemaDescription: 'スウェーデン議会監視プラットフォーム - 体系的な透明性で政治活動を監視'
   },
   ko: {
@@ -220,7 +220,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: '정렬:', newest: '최신순', oldest: '오래된 순', titleSort: '제목'
     },
     noResults: '필터와 일치하는 기사가 없습니다',
-    i18n: { noArticles: '기사가 없습니다', loading: '기사 로딩 중...', articleCount: '(n) => n === 1 ? \'1개의 기사\' : \'\' + n + \'개의 기사\'', search: '검색:', searchPlaceholder: '기사 검색...', loadMore: '더 많은 기사 불러오기', showing: '(shown, total) => shown + \' / \' + total + \' 개 기사\'' },
+    i18n: { noArticles: '기사가 없습니다', search: '검색:', searchPlaceholder: '기사 검색...', loadMore: '더 많은 기사 불러오기', showing: '(shown, total) => shown + \' / \' + total + \' 개 기사\'' },
     schemaDescription: '스웨덴 의회 모니터링 플랫폼 - 체계적인 투명성으로 정치 활동 감시'
   },
   zh: {
@@ -236,7 +236,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
       sort: '排序：', newest: '最新优先', oldest: '最旧优先', titleSort: '标题'
     },
     noResults: '没有与过滤器匹配的文章',
-    i18n: { noArticles: '没有可用的文章', loading: '正在加载文章...', articleCount: '(n) => n === 1 ? \'1篇文章\' : \'\' + n + \'篇文章\'', search: '搜索：', searchPlaceholder: '搜索文章...', loadMore: '加载更多文章', showing: '(shown, total) => \'显示 \' + shown + \' / \' + total + \' 篇文章\'' },
+    i18n: { noArticles: '没有可用的文章', search: '搜索：', searchPlaceholder: '搜索文章...', loadMore: '加载更多文章', showing: '(shown, total) => \'显示 \' + shown + \' / \' + total + \' 篇文章\'' },
     schemaDescription: '瑞典议会监督平台 - 以系统化透明度监测政治活动'
   }
 };
