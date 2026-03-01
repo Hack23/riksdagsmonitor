@@ -42,6 +42,16 @@ function triggerIntersection(el, isIntersecting = true) {
   }
 }
 
+/**
+ * Drain the entire microtask queue.
+ * Uses a macro-task boundary (setTimeout) so all pending Promise callbacks,
+ * including adoption and rejection propagation microtasks, settle before
+ * the test continues.
+ */
+function flushPromises() {
+  return new Promise((resolve) => setTimeout(resolve, 0));
+}
+
 // ─── Tests ────────────────────────────────────────────────────────────────────
 
 describe('initLazyDashboards', () => {
@@ -76,10 +86,9 @@ describe('initLazyDashboards', () => {
       // skeleton present during loading
       expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(true);
 
+      await flushPromises(); // loader deferred via .then(); flushes load + promise adoption
       resolveLoader();
-      await loader.mock.results[0].value;
-      // flush microtasks
-      await Promise.resolve();
+      await flushPromises(); // flushes resolution propagation and skeleton removal
 
       expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(false);
     });
@@ -93,8 +102,8 @@ describe('initLazyDashboards', () => {
       initLazyDashboards([{ containerId: 'test-dashboard', loader }]);
       triggerIntersection(el);
 
-      await Promise.resolve(); // flush rejection handler
-      await Promise.resolve();
+      // flushes load, promise adoption, rejection propagation, and catch handler
+      await flushPromises();
 
       expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(false);
     });
@@ -120,6 +129,7 @@ describe('initLazyDashboards', () => {
       initLazyDashboards([{ containerId: 'test-dashboard', loader }]);
       triggerIntersection(el);
 
+      await Promise.resolve(); // loader is deferred via Promise.resolve().then()
       expect(loader).toHaveBeenCalledOnce();
     });
 
@@ -155,6 +165,7 @@ describe('initLazyDashboards', () => {
       triggerIntersection(el);
       triggerIntersection(el); // second trigger — should be ignored
 
+      await Promise.resolve(); // loader is deferred via Promise.resolve().then()
       expect(loader).toHaveBeenCalledOnce();
     });
   });
@@ -194,10 +205,12 @@ describe('initLazyDashboards', () => {
       ]);
 
       triggerIntersection(elA);
+      await Promise.resolve(); // loader is deferred via Promise.resolve().then()
       expect(loaderA).toHaveBeenCalledOnce();
       expect(loaderB).not.toHaveBeenCalled();
 
       triggerIntersection(elB);
+      await Promise.resolve();
       expect(loaderB).toHaveBeenCalledOnce();
     });
   });
@@ -229,12 +242,71 @@ describe('initLazyDashboards', () => {
 
       triggerIntersection(el);
 
+      await Promise.resolve(); // loader is deferred via Promise.resolve().then()
       expect(presentLoader).toHaveBeenCalledOnce();
       expect(missingLoader).not.toHaveBeenCalled();
     });
   });
 
-  // ── Fallback: no IntersectionObserver ────────────────────────────────────────
+  // ── Return value ─────────────────────────────────────────────────────────────
+
+  describe('Return value', () => {
+    it('returns the IntersectionObserver when IO is available', () => {
+      document.body.innerHTML = '<section id="test-dashboard"></section>';
+      const loader = vi.fn(() => Promise.resolve());
+
+      const result = initLazyDashboards([{ containerId: 'test-dashboard', loader }]);
+
+      expect(result).toBeInstanceOf(MockIntersectionObserver);
+    });
+
+    it('returns undefined in fallback mode (no IntersectionObserver)', () => {
+      delete globalThis.IntersectionObserver;
+
+      const result = initLazyDashboards([]);
+
+      expect(result).toBeUndefined();
+    });
+  });
+
+  // ── Sync-throw safety ────────────────────────────────────────────────────────
+
+  describe('Sync-throw safety', () => {
+    it('removes skeleton and does not propagate when loader throws synchronously (IO path)', async () => {
+      document.body.innerHTML = '<section id="test-dashboard"></section>';
+      const el = document.getElementById('test-dashboard');
+
+      const loader = vi.fn(() => { throw new Error('sync error'); });
+
+      initLazyDashboards([{ containerId: 'test-dashboard', loader }]);
+      triggerIntersection(el);
+
+      // Skeleton added before loader fires
+      expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(true);
+
+      // flushes load (throw), rejection propagation, and catch handler
+      await flushPromises();
+
+      expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(false);
+    });
+
+    it('removes skeleton and does not propagate when loader throws synchronously (fallback path)', async () => {
+      delete globalThis.IntersectionObserver;
+
+      document.body.innerHTML = '<section id="fallback-sync-dash"></section>';
+      const el = document.getElementById('fallback-sync-dash');
+
+      const loader = vi.fn(() => { throw new Error('sync error'); });
+
+      initLazyDashboards([{ containerId: 'fallback-sync-dash', loader }]);
+
+      // flushes load (throw), rejection propagation, and catch handler
+      await flushPromises();
+
+      expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(false);
+    });
+  });
+
 
   describe('Fallback (no IntersectionObserver)', () => {
     it('loads all present dashboards immediately when IntersectionObserver is unavailable', async () => {
@@ -252,6 +324,7 @@ describe('initLazyDashboards', () => {
         { containerId: 'dash-b', loader: loaderB },
       ]);
 
+      await Promise.resolve(); // loaders are deferred via Promise.resolve().then()
       expect(loaderA).toHaveBeenCalledOnce();
       expect(loaderB).toHaveBeenCalledOnce();
     });
@@ -286,13 +359,13 @@ describe('initLazyDashboards', () => {
 
       initLazyDashboards([{ containerId: 'fallback-dash', loader }]);
 
-      expect(loader).toHaveBeenCalledOnce();
-      // skeleton added immediately (before promise resolves)
+      // skeleton added synchronously before loader fires
       expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(true);
+      await Promise.resolve(); // loader is deferred via Promise.resolve().then()
+      expect(loader).toHaveBeenCalledOnce();
 
       resolveLoader();
-      await loader.mock.results[0].value;
-      await Promise.resolve();
+      await flushPromises(); // flushes resolution propagation and skeleton removal
 
       expect(el.classList.contains(CHART_SKELETON_CLASS)).toBe(false);
     });

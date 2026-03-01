@@ -39,13 +39,18 @@ export const CHART_SKELETON_CLASS = 'chart-skeleton';
  * invoked immediately as a graceful fallback (containers still checked for DOM
  * presence before loading).
  *
+ * The created `IntersectionObserver` is returned so callers can hold a
+ * reference (preventing GC) and call `disconnect()` if needed. `undefined` is
+ * returned when the fallback path is taken.
+ *
  * @param dashboards - Array of lazy-loadable dashboard descriptors.
  * @param options    - Optional `IntersectionObserver` init overrides.
+ * @returns The active `IntersectionObserver`, or `undefined` in fallback mode.
  */
 export function initLazyDashboards(
   dashboards: LazyDashboard[],
   options: IntersectionObserverInit = { rootMargin: '200px', threshold: 0.01 },
-): void {
+): IntersectionObserver | undefined {
   if (typeof IntersectionObserver === 'undefined') {
     // Graceful fallback: load immediately, but only when the container exists in the DOM
     for (const { containerId, loader } of dashboards) {
@@ -55,7 +60,9 @@ export function initLazyDashboards(
         continue;
       }
       el.classList.add(CHART_SKELETON_CLASS);
-      loader()
+      // Wrap in Promise.resolve() so a synchronous throw becomes a rejection
+      Promise.resolve()
+        .then(() => loader())
         .then(() => {
           el.classList.remove(CHART_SKELETON_CLASS);
         })
@@ -64,7 +71,7 @@ export function initLazyDashboards(
           logger.error(`Lazy load failed for #${containerId}:`, err);
         });
     }
-    return;
+    return undefined;
   }
 
   // Map element → loader for O(1) lookup inside the observer callback
@@ -84,7 +91,9 @@ export function initLazyDashboards(
       // Show skeleton while the module is downloading / initialising
       el.classList.add(CHART_SKELETON_CLASS);
 
-      loaderFn()
+      // Wrap in Promise.resolve() so a synchronous throw becomes a rejection
+      Promise.resolve()
+        .then(() => loaderFn())
         .then(() => {
           el.classList.remove(CHART_SKELETON_CLASS);
           logger.debug(`✓ lazy loaded #${el.id}`);
@@ -105,4 +114,7 @@ export function initLazyDashboards(
     pending.set(el, loader);
     observer.observe(el);
   }
+
+  // Return the observer so the caller retains a reference (prevents GC)
+  return observer;
 }
