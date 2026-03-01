@@ -26,8 +26,8 @@ export default defineConfig({
       reporter: ['text', 'html', 'lcov', 'json'],
       reportsDirectory: './builds/coverage',
       
-      // Disabled: tests don't import dashboard modules (by design)
-      all: false,
+      // Enabled: collect coverage for all included files, even untested ones
+      all: true,
       
       // Coverage thresholds
       lines: 70,
