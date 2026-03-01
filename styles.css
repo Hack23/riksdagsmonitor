@@ -1,4 +1,34 @@
 /* ==================================================
+   FONT FALLBACK METRICS — prevents CLS while web fonts load
+   size-adjust/ascent-override/descent-override approximate
+   each web font's metrics so that the fallback glyphs occupy
+   the same space, minimising layout shift on font-swap.
+   ================================================== */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  src: local('Arial');
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 94%;
+  ascent-override: 85%;
+  descent-override: 15%;
+  line-gap-override: 0%;
+  src: local('Arial Black'), local('Impact');
+}
+
+/* ==================================================
    CROSS-BROWSER COMPATIBILITY NOTES
    ================================================== */
 /* This CSS file includes vendor prefixes and fallbacks for maximum browser compatibility:
