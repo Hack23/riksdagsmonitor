@@ -11,6 +11,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import Papa from 'papaparse';
 import { MCPClient } from '../../mcp-client.js';
 import {
   isPersonProfileText,
@@ -54,29 +55,9 @@ function resolveCIADataDir(): string {
 }
 
 /**
- * Parse a single CSV line handling double-quoted fields.
- */
-function parseCsvLine(line: string): string[] {
-  const result: string[] = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
-    if (char === '"') {
-      inQuotes = !inQuotes;
-    } else if (char === ',' && !inQuotes) {
-      result.push(current);
-      current = '';
-    } else {
-      current += char;
-    }
-  }
-  result.push(current);
-  return result;
-}
-
-/**
  * Parse a CSV file into an array of row objects keyed by header names.
+ * Uses PapaParse for correct RFC 4180 handling (escaped quotes, embedded
+ * commas, multi-line fields).
  * Returns an empty array if the file does not exist or cannot be parsed.
  */
 function parseCsvFile(filePath: string): Array<Record<string, string>> {
@@ -86,17 +67,14 @@ function parseCsvFile(filePath: string): Array<Record<string, string>> {
   }
   try {
     const text = readFileSync(filePath, 'utf-8');
-    const lines = text.trim().split('\n');
-    if (lines.length < 2) return [];
-    const headers = parseCsvLine(lines[0]).map(h => h.trim());
-    return lines.slice(1)
-      .filter(line => line.trim())
-      .map(line => {
-        const vals = parseCsvLine(line);
-        const row: Record<string, string> = {};
-        headers.forEach((h, i) => { row[h] = (vals[i] ?? '').trim(); });
-        return row;
-      });
+    const result = Papa.parse<Record<string, string>>(text, {
+      header: true,
+      skipEmptyLines: true,
+    });
+    if (result.errors.length > 0) {
+      console.warn(`CSV parsing warnings for ${filePath}:`, result.errors);
+    }
+    return result.data;
   } catch (err) {
     console.error(`Failed to parse CSV ${filePath}:`, err);
     return [];

@@ -28,10 +28,6 @@
  */
 
 
-const d3 = (globalThis as any).d3;
-const Chart = (globalThis as any).Chart;
-const Papa = (globalThis as any).Papa;
-
 // ── Type declarations ─────────────────────────────────────────────────────
 
 // ── IIFE entry point (see ./committees-dashboard/ for focused source modules) ──
@@ -41,6 +37,12 @@ const Papa = (globalThis as any).Papa;
 
 (function(): void {
   'use strict';
+
+  // Read browser globals at the point of use so late-loaded libraries are
+  // picked up even when defer/async or load-order changes occur.
+  const d3 = (globalThis as any).d3;
+  const Chart = (globalThis as any).Chart;
+  const Papa = (globalThis as any).Papa;
 
   // ==============================================
   // CONFIGURATION
