@@ -286,7 +286,12 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
     // Pagination i18n strings
     const i18nLoadMore = ${JSON.stringify(lang.i18n.loadMore)};
-    const i18nShowing = ${lang.i18n.showing};
+    const i18nShowingTemplate = ${JSON.stringify(lang.i18n.showing)};
+    function i18nShowing(shown, total) {
+      return i18nShowingTemplate
+        .replace('{shown}', String(shown))
+        .replace('{total}', String(total));
+    }
     
     // Pagination state
     const PAGE_SIZE = 20;
@@ -383,6 +388,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     function loadMore() {
       const prevCount = visibleCount;
       visibleCount += PAGE_SIZE;
+      updateURL();
       renderPage();
       // Focus management: move focus to first newly visible article link
       const cards = document.querySelectorAll('.article-card');
@@ -402,6 +408,8 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       if (topicFilter !== 'all') params.set('topic', topicFilter);
       if (sortFilter !== 'date-desc') params.set('sort', sortFilter);
       if (searchInput) params.set('q', searchInput);
+      const page = Math.ceil(visibleCount / PAGE_SIZE);
+      if (page > 1) params.set('page', String(page));
       const newURL = params.toString() ? '?' + params.toString() : window.location.pathname;
       if (window.history && window.history.replaceState) {
         window.history.replaceState(null, '', newURL);
@@ -483,6 +491,10 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       if (params.has('sort')) safeSetSelect('filter-sort', params.get('sort'));
       const searchInput = document.getElementById('search-input');
       if (searchInput && params.has('q')) searchInput.value = params.get('q');
+      if (params.has('page')) {
+        const page = parseInt(params.get('page'), 10);
+        if (!isNaN(page) && page > 1) visibleCount = page * PAGE_SIZE;
+      }
     }
     
     // Event listeners
