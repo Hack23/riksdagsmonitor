@@ -419,6 +419,15 @@ describe('Generate News Indexes', () => {
       expect(enContent).toContain('agentic news generation pipeline');
     });
 
+    it('should localise AI newsroom section for non-English languages', () => {
+      module.generateAllIndexes();
+
+      const svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
+      expect(svContent).toContain('ai-newsroom-section');
+      expect(svContent).toContain('AI-styrd nyhetsproduktion');
+      expect(svContent).not.toContain('>🤖 AI-Disrupted News Generation<');
+    });
+
     it('should include app version in footer', () => {
       module.generateAllIndexes();
 
@@ -433,6 +442,15 @@ describe('Generate News Indexes', () => {
       expect(enContent).toContain('footer-disclaimer');
       expect(enContent).toContain('Ongoing improvements');
       expect(enContent).toContain('https://github.com/Hack23/riksdagsmonitor/issues');
+    });
+
+    it('should localise disclaimer for non-English languages', () => {
+      module.generateAllIndexes();
+
+      const svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
+      expect(svContent).toContain('footer-disclaimer');
+      expect(svContent).toContain('rapportera eventuella problem');
+      expect(svContent).not.toContain('>Ongoing improvements<');
     });
   });
 

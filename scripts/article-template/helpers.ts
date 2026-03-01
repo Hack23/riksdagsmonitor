@@ -8,9 +8,6 @@
  * @license Apache-2.0
  */
 
-import { readFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
 import type { Language } from '../types/language.js';
 import type { EventGridItem, WatchPoint } from '../types/article.js';
 import type { BreadcrumbLabels, FooterLabelSet } from '../types/content.js';
@@ -26,10 +23,7 @@ import {
   LANG_ARIA_LABELS,
   LANG_SWITCHER_ARIA_LABELS,
 } from './constants.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const PKG_VERSION: string = (JSON.parse(readFileSync(join(__dirname, '..', '..', 'package.json'), 'utf-8')) as { version: string }).version;
+import { PKG_VERSION } from '../shared/version.js';
 
 /**
  * Map a language code to its BCP-47 hreflang value.
@@ -252,7 +246,7 @@ ${ALL_LANG_CODES.map(l => {
   </div>
   <div class="footer-bottom">
     <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | ${labels.location} | v${PKG_VERSION}</p>
-    <p class="footer-disclaimer">⚠️ Ongoing improvements — please <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">report any issues on GitHub</a>.</p>
+    <p class="footer-disclaimer">⚠️ ${labels.disclaimer} <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">${labels.disclaimerLink}</a>.</p>
   </div>
 </footer>`;
 }

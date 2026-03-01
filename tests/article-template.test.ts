@@ -894,6 +894,17 @@ describe('Article Template', () => {
       expect(html).toContain('Ongoing improvements');
       expect(html).toContain('https://github.com/Hack23/riksdagsmonitor/issues');
     });
+
+    it('should localise disclaimer for non-English languages', () => {
+      const htmlSv = generateSiteFooter('sv');
+      expect(htmlSv).toContain('footer-disclaimer');
+      expect(htmlSv).toContain('rapportera eventuella problem');
+      expect(htmlSv).not.toContain('Ongoing improvements');
+
+      const htmlJa = generateSiteFooter('ja');
+      expect(htmlJa).toContain('footer-disclaimer');
+      expect(htmlJa).toContain('GitHub');
+    });
   });
 
   describe('Default export includes new functions', () => {
