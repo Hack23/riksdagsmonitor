@@ -33,6 +33,7 @@ import {
   addChartKeyboardNav,
   initDashboardSection,
   showDataSourceDisclaimer,
+  renderErrorFallback,
 } from '../shared/index.js';
 
 import { loadCSV, createDataSource } from '../shared/index.js';
@@ -965,18 +966,23 @@ export async function init(): Promise<void> {
   } catch (error) {
     logger.error('❌ Failed to load CIA risk data:', error);
 
-    // Display error message to user
-    const alertContainer = document.getElementById('earlyWarningAlerts');
-    if (alertContainer) {
-      alertContainer.innerHTML = `
-        <div class="alert alert-danger" role="alert">
-          <h4>⚠️ Data Loading Error</h4>
-          <p>Unable to load risk assessment data from CIA Platform.</p>
-          <p><strong>Error:</strong> ${(error as Error).message}</p>
-          <p>Please check your internet connection and try refreshing the page.</p>
-          <p><small>Data source: view_politician_risk_summary_sample.csv (403 politicians)</small></p>
-        </div>
-      `;
+    // Display error message to user using the shared error boundary fallback.
+    // Render into a child container prepended to #risk-dashboard so the rest
+    // of the section's DOM is preserved for a subsequent retry.
+    const dashboardSection = document.getElementById('risk-dashboard');
+    if (dashboardSection) {
+      const errContainer = document.createElement('div');
+      dashboardSection.prepend(errContainer);
+      renderErrorFallback(
+        errContainer,
+        'Unable to load risk assessment data from CIA Platform.',
+        () => {
+          errContainer.remove();
+          init().catch((err) =>
+            logger.error('Retry failed during risk dashboard re-initialization:', err),
+          );
+        },
+      );
     }
 
     // Cannot proceed without data - exit gracefully
