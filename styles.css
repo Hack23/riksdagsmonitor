@@ -9967,9 +9967,28 @@ svg:focus-visible,
   border-radius: var(--border-radius-lg);
 }
 
+/* Chart container placeholder shown while a lazy dashboard module loads */
+.chart-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base)  25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-base)  75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--border-radius-lg, 8px);
+  min-height: 300px;
+  pointer-events: none;
+}
+
 /* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   .skeleton {
+    animation: none;
+    opacity: 0.6;
+  }
+  .chart-skeleton {
     animation: none;
     opacity: 0.6;
   }
