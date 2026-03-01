@@ -193,6 +193,37 @@ describe('Article Template', () => {
       expect(html).toContain('<footer');
     });
 
+    it('should include skip to content link as first focusable element', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      
+      expect(html).toContain('class="skip-link"');
+      expect(html).toContain('href="#main-content"');
+      expect(html).toContain('Skip to main content');
+      // Skip link must appear before language switcher
+      const skipIdx = html.indexOf('class="skip-link"');
+      const navIdx = html.indexOf('class="language-switcher"');
+      expect(skipIdx).toBeGreaterThan(-1);
+      expect(skipIdx).toBeLessThan(navIdx);
+    });
+
+    it('should include id="main-content" on article element', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      
+      expect(html).toContain('id="main-content"');
+      expect(html).toContain('<article id="main-content"');
+    });
+
+    it('should translate skip link for non-English languages', () => {
+      const svData: MockArticleData = { ...mockArticleData, lang: 'sv', slug: '2026-02-10-test-sv.html' };
+      const arData: MockArticleData = { ...mockArticleData, lang: 'ar', slug: '2026-02-10-test-ar.html' };
+      
+      const svHtml = generateArticleHTML(svData as unknown as ArticleData) as string;
+      expect(svHtml).toContain('Hoppa till huvudinnehåll');
+      
+      const arHtml = generateArticleHTML(arData as unknown as ArticleData) as string;
+      expect(arHtml).toContain('الانتقال إلى المحتوى الرئيسي');
+    });
+
     it('should include sources attribution', () => {
       const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
       
