@@ -50,6 +50,9 @@ interface ArticleQualityEnhancerModule {
   readonly countCrossReferences: (content: string) => number;
   readonly hasWhyThisMatters: (content: string) => boolean;
   readonly hasHistoricalContext: (content: string) => boolean;
+  readonly hasLanguageSwitcher: (content: string) => boolean;
+  readonly hasArticleTopNav: (content: string) => boolean;
+  readonly hasBackToNews: (content: string) => boolean;
   readonly calculateQualityScore: (metrics: QualityMetrics) => number;
   readonly enhanceArticleQuality: (articlePath: string, thresholds?: Partial<QualityThresholds>) => Promise<QualityResult>;
 }

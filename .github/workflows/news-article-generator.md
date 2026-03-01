@@ -752,6 +752,7 @@ The script creates articles with:
    - Proper `<html lang="{lang}">` and `dir="rtl"` for Arabic/Hebrew
    - Mobile-responsive (handled by styles.css)
    - **Language switcher navigation** (added after opening `<body>`, before `<article>`)
+   - **Back-to-news top navigation** (`article-top-nav` div after language switcher, before article)
 
 2. **Metadata Structure** (automatically handled):
    - SEO metadata (title, description, keywords)
@@ -770,6 +771,8 @@ The script creates articles with:
    - **Conclusion** (100 words): Synthesis and broader significance
 
 4. **CSS Classes** (available in styles.css):
+   - `.language-switcher` - Language navigation bar (after `<body>`, before article)
+   - `.article-top-nav` - Top navigation with back-to-news link (after language switcher, before article)
    - `.news-article` - Main container
    - `.article-header` - Header with title and meta
    - `.article-meta` - Date, time, article type
@@ -780,7 +783,7 @@ The script creates articles with:
    - `.watch-section` - Key points section
    - `.article-footer` - Footer with sources
    - `.article-sources` - Sources and attribution
-   - `.back-to-news` - Navigation link
+   - `.back-to-news` - Navigation link (used in both `.article-top-nav` and `.article-footer`)
 
 5. **Source Attribution**:
    - Links to Riksdag documents (dok_id)
@@ -819,6 +822,21 @@ The script creates articles with:
    - Links use relative paths (same directory as article)
    - **Localize aria-label**: EN="Language switcher", SV="Språkväxlare", DA="Sprogvælger", NO="Språkvelger", FI="Kielenvalitsin", DE="Sprachwechsler", FR="Sélecteur de langue", ES="Selector de idioma", NL="Taalwisselaar", AR="محدد اللغة", HE="בורר שפה", JA="言語切り替え", KO="언어 선택기", ZH="语言切换器"
    - Current language link can be styled as `.lang-link.active` (optional)
+
+7. **Back-to-News Top Navigation** (REQUIRED):
+
+   Add immediately after the language switcher `</nav>`, before the `<article>` or `<div class="news-article">` element:
+
+   ```html
+   <div class="article-top-nav">
+     <a href="{newsIndexFilename}" class="back-to-news">← {localizedBackToNews}</a>
+   </div>
+   ```
+
+   **Requirements**:
+   - `{newsIndexFilename}`: `index.html` for English, `index_{lang}.html` for other languages
+   - `{localizedBackToNews}`: EN="Back to News", SV="Tillbaka till nyheter", DA="Tilbage til nyheder", NO="Tilbake til nyheter", FI="Takaisin uutisiin", DE="Zurück zu Nachrichten", FR="Retour aux actualités", ES="Volver a noticias", NL="Terug naar nieuws", AR="العودة إلى الأخبار", HE="חזרה לחדשות", JA="ニュースに戻る", KO="뉴스로 돌아가기", ZH="返回新闻"
+   - Uses `← ` (left arrow) before the label text
 
 #### Language Support
 
@@ -1452,6 +1470,37 @@ Remember: You are producing world-class political journalism that informs Swedis
 🎯 **Now begin: Warm up MCP with `get_sync_status({})`, check for recent generation, query riksdag-regering-mcp tools, analyze data, generate articles, commit locally, and create PR with `safeoutputs___create_pull_request`.**
 
 **CRITICAL:** Only use `safeoutputs___noop` if genuinely no new data exists. If articles were generated, PR MUST be created or workflow FAILS.
+
+### 📦 Available Scripts Reference
+
+**Article Generation (primary pipeline):**
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/generate-news-enhanced.ts` | `npx tsx scripts/generate-news-enhanced.ts --types=TYPE --languages=LANGS` | Main article generator using MCP data |
+| `scripts/mcp-setup.sh` | `source scripts/mcp-setup.sh` | Sets MCP_SERVER_URL, MCP_AUTH_TOKEN env vars |
+| `scripts/mcp-query-cli.ts` | `npx tsx scripts/mcp-query-cli.ts <tool> '<json>'` | Query individual MCP tools from bash |
+
+**Article Maintenance & Fixing:**
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/fix-article-navigation.py` | `python3 scripts/fix-article-navigation.py [--dry-run]` | **Fallback only** — adds language switcher + article-top-nav to articles missing them (idempotent) |
+| `scripts/fix-language-switchers-and-css.py` | `python3 scripts/fix-language-switchers-and-css.py` | Updates switchers to show only existing languages, removes embedded CSS |
+| `scripts/fix-mixed-language-descriptions.py` | `python3 scripts/fix-mixed-language-descriptions.py` | Fixes articles with mixed-language meta descriptions |
+
+**Validation & Quality:**
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/validate-news-generation.sh` | `bash scripts/validate-news-generation.sh` | Validates generated article structure and content |
+| `scripts/validate-translations.ts` | `npx tsx scripts/validate-translations.ts` | Validates translation completeness across languages |
+| `scripts/validate-news-translations.ts` | `node scripts/validate-news-translations.ts` | Validates news article translations |
+| `scripts/article-quality-enhancer.ts` | (imported by generators) | Quality metrics: economic context, structure, completeness |
+
+**Build-time Generation (run by `npm run prebuild`, NOT manually):**
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/generate-news-indexes.ts` | `npx tsx scripts/generate-news-indexes/index.ts` | Generates news index pages (14 languages) |
+| `scripts/extract-news-metadata.ts` | `npx tsx scripts/extract-news-metadata.ts` | Extracts article metadata to `data/news-articles.json` |
+| `scripts/generate-sitemap.ts` | `npx tsx scripts/generate-sitemap.ts` | Generates `sitemap.xml` |
 
 ### ✅ MCP Connectivity Summary
 

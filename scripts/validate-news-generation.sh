@@ -230,8 +230,8 @@ echo ""
 echo "📋 Check 8: Articles have visible language switcher"
 ARTICLES_WITHOUT_SWITCHER=0
 
-# Check articles year-agnostically (all news/*-{en,sv}.html files)
-for article in news/*-en.html news/*-sv.html; do
+# Check articles year-agnostically (all news/*-{lang}.html files across all 14 languages)
+for article in news/*-en.html news/*-sv.html news/*-da.html news/*-no.html news/*-fi.html news/*-de.html news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html; do
   # Skip index files
   if [[ "$article" == news/index*.html ]]; then
     continue
@@ -246,13 +246,77 @@ done
 
 if [ $ARTICLES_WITHOUT_SWITCHER -gt 0 ]; then
   echo -e "${YELLOW}⚠️ $ARTICLES_WITHOUT_SWITCHER articles missing language switcher navigation${NC}"
-  echo -e "${YELLOW}   (UX enhancement - not blocking)${NC}"
+  echo -e "${YELLOW}   Fallback: python3 scripts/fix-article-navigation.py${NC}"
   WARNINGS=$((WARNINGS + 1))
 else
   # Check if there are any articles to validate
-  ARTICLE_COUNT=$(find news -name '*-en.html' -o -name '*-sv.html' | grep -v 'index' | wc -l)
+  ARTICLE_COUNT=$(find news -name '*-*.html' | grep -v 'index' | wc -l)
   if [ $ARTICLE_COUNT -gt 0 ]; then
     echo -e "${GREEN}✅ All checked articles have language switcher${NC}"
+  else
+    echo -e "${YELLOW}⚠️ No articles found to check${NC}"
+  fi
+fi
+echo ""
+
+# ============================================================================
+# Check 9: Articles have article-top-nav with back-to-news link
+# ============================================================================
+echo "📋 Check 9: Articles have top navigation (article-top-nav)"
+ARTICLES_WITHOUT_TOPNAV=0
+
+for article in news/*-en.html news/*-sv.html news/*-da.html news/*-no.html news/*-fi.html news/*-de.html news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html; do
+  if [[ "$article" == news/index*.html ]]; then
+    continue
+  fi
+  
+  if [ -f "$article" ]; then
+    if ! grep -q 'class="article-top-nav"' "$article"; then
+      ARTICLES_WITHOUT_TOPNAV=$((ARTICLES_WITHOUT_TOPNAV + 1))
+    fi
+  fi
+done
+
+if [ $ARTICLES_WITHOUT_TOPNAV -gt 0 ]; then
+  echo -e "${YELLOW}⚠️ $ARTICLES_WITHOUT_TOPNAV articles missing article-top-nav${NC}"
+  echo -e "${YELLOW}   Fallback: python3 scripts/fix-article-navigation.py${NC}"
+  WARNINGS=$((WARNINGS + 1))
+else
+  ARTICLE_COUNT_TOPNAV=$(find news -name '*-*.html' | grep -v 'index' | wc -l)
+  if [ "$ARTICLE_COUNT_TOPNAV" -gt 0 ]; then
+    echo -e "${GREEN}✅ All checked articles have article-top-nav${NC}"
+  else
+    echo -e "${YELLOW}⚠️ No articles found to check${NC}"
+  fi
+fi
+echo ""
+
+# ============================================================================
+# Check 10: Articles have back-to-news link in footer
+# ============================================================================
+echo "📋 Check 10: Articles have back-to-news footer link"
+ARTICLES_WITHOUT_BACKNAV=0
+
+for article in news/*-en.html news/*-sv.html news/*-da.html news/*-no.html news/*-fi.html news/*-de.html news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html; do
+  if [[ "$article" == news/index*.html ]]; then
+    continue
+  fi
+  
+  if [ -f "$article" ]; then
+    if ! grep -q 'class="back-to-news"' "$article"; then
+      ARTICLES_WITHOUT_BACKNAV=$((ARTICLES_WITHOUT_BACKNAV + 1))
+    fi
+  fi
+done
+
+if [ $ARTICLES_WITHOUT_BACKNAV -gt 0 ]; then
+  echo -e "${YELLOW}⚠️ $ARTICLES_WITHOUT_BACKNAV articles missing back-to-news link${NC}"
+  echo -e "${YELLOW}   Fallback: python3 scripts/fix-article-navigation.py${NC}"
+  WARNINGS=$((WARNINGS + 1))
+else
+  ARTICLE_COUNT_BACKNAV=$(find news -name '*-*.html' | grep -v 'index' | wc -l)
+  if [ "$ARTICLE_COUNT_BACKNAV" -gt 0 ]; then
+    echo -e "${GREEN}✅ All checked articles have back-to-news link${NC}"
   else
     echo -e "${YELLOW}⚠️ No articles found to check${NC}"
   fi
@@ -291,5 +355,6 @@ else
   echo "  3. Verify article generation succeeded"
   echo "  4. Rerun this validation script"
   echo "  Note: news/index*.html are auto-generated at build time — do NOT generate manually"
+  echo "  Fallback only: python3 scripts/fix-article-navigation.py (if navigation elements missing)"
   exit 1
 fi

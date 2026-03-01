@@ -220,6 +220,17 @@ npx tsx scripts/generate-news-enhanced.ts \
   --skip-existing
 ```
 
+**Article Navigation Verification**: The `generate-news-enhanced.ts` script automatically includes all required navigation elements:
+- **Language switcher** (`<nav class="language-switcher">`) after `<body>` with all 14 languages
+- **Back-to-news top nav** (`<div class="article-top-nav">`) with localized back link after language switcher
+- **Footer back-to-news link** in `<footer class="article-footer">`
+
+These elements are validated by `bash scripts/validate-news-generation.sh` (Checks 8–10). The fix script is a **fallback only** — do not run it by default:
+```bash
+# FALLBACK ONLY — use if validate-news-generation.sh reports missing navigation elements
+python3 scripts/fix-article-navigation.py
+```
+
 ### Step 4: Translate Swedish Content & Verify Analysis Quality
 All Swedish API data MUST be translated. Check every article for `data-translate="true"` markers.
 

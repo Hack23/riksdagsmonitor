@@ -691,8 +691,11 @@ This prevents timeout by generating partial (but valid) results. A PR with en+sv
 - Use semantic HTML5: `<article>`, `<header>`, `<section>`, `<footer>`
 - Mobile-responsive (handled by styles.css)
 - **Language switcher navigation** (add after `<body>`, before `<article>` — include links to all 14 language versions of this article)
+- **Back-to-news top navigation** (`article-top-nav` div after language switcher, before article — localized back link)
 
 **Available CSS Classes in styles.css:**
+- `.language-switcher` - Language navigation bar (after `<body>`, before article)
+- `.article-top-nav` - Top navigation with back-to-news link (after language switcher, before article)
 - `.news-article` - Main container
 - `.article-header` - Header with title and meta
 - `.article-meta` - Date, time, article type
@@ -702,7 +705,7 @@ This prevents timeout by generating partial (but valid) results. A PR with en+sv
 - `.watch-section` - Key points section
 - `.article-footer` - Footer with sources
 - `.article-sources` - Sources and attribution
-- `.back-to-news` - Navigation link
+- `.back-to-news` - Navigation link (used in both `.article-top-nav` and `.article-footer`)
 
 ### Step 3.5: Translate Swedish Content (CRITICAL - MANDATORY)
 

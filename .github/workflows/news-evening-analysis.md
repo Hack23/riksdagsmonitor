@@ -768,6 +768,11 @@ Structure the analysis around these editorial pillars:
     <a href="{YYYY-MM-DD}-{baseSlug}-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="{YYYY-MM-DD}-{baseSlug}-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
+
+  <!-- Back-to-news top navigation (REQUIRED - add after language switcher, before article) -->
+  <div class="article-top-nav">
+    <a href="{newsIndexFilename}" class="back-to-news">← {localizedBackToNews}</a>
+  </div>
   
   <div class="news-article">
     <header class="article-header">
@@ -829,6 +834,8 @@ Structure the analysis around these editorial pillars:
 ```
 
 **CSS Classes Available in styles.css:**
+- `.language-switcher` - Language navigation bar (after `<body>`, before article)
+- `.article-top-nav` - Top navigation with back-to-news link (after language switcher, before article)
 - `.news-article` - Main container
 - `.article-header` - Header section
 - `.article-meta` - Date, time, type info
@@ -838,7 +845,7 @@ Structure the analysis around these editorial pillars:
 - `.watch-section` - "What to Watch" section
 - `.article-footer` - Footer with sources
 - `.article-sources` - Sources section
-- `.back-to-news` - Back button
+- `.back-to-news` - Back button (used in both `.article-top-nav` and `.article-footer`)
 
 ### Step 4: Generate All Language Versions
 
@@ -1107,6 +1114,16 @@ For deeper analysis, combine MCP tools: `search_voteringar` → `get_voting_grou
 🎯 **Now begin: Gather today's comprehensive parliamentary data using MCP tools, synthesize into an analytical evening wrap-up, generate all language versions, and create a PR using `safeoutputs___create_pull_request` MCP tool.**
 
 **CRITICAL:** Only use `safeoutputs___noop` if genuinely no parliamentary activity. If articles generated, PR MUST be created or workflow FAILS.
+
+### 📦 Key Scripts Reference
+
+| Script | Usage | Description |
+|--------|-------|-------------|
+| `scripts/generate-news-enhanced.ts` | `npx tsx scripts/generate-news-enhanced.ts --types=evening-analysis --languages=LANGS` | Main article generator |
+| `scripts/fix-article-navigation.py` | `python3 scripts/fix-article-navigation.py` | **Fallback only** — fix missing language switcher + article-top-nav (idempotent) |
+| `scripts/validate-news-generation.sh` | `bash scripts/validate-news-generation.sh` | Validate generated article structure |
+| `scripts/mcp-setup.sh` | `source scripts/mcp-setup.sh` | Set MCP environment variables |
+| `scripts/mcp-query-cli.ts` | `npx tsx scripts/mcp-query-cli.ts <tool> '<json>'` | Query individual MCP tools |
 
 ### ✅ MCP Connectivity Summary
 
