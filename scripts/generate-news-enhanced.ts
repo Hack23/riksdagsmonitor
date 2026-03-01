@@ -34,6 +34,7 @@ export {
   VALID_ARTICLE_TYPES,
   ALL_LANGUAGES,
   LANGUAGE_PRESETS,
+  languages,
   QUALITY_THRESHOLD,
   formatDateForSlug,
   getWeekAheadDateRange,
