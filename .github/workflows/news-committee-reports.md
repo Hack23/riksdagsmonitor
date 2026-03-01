@@ -228,7 +228,7 @@ npx tsx scripts/generate-news-enhanced.ts \
 These elements are validated by `bash scripts/validate-news-generation.sh` (Checks 8–10). The fix script is a **fallback only** — do not run it by default:
 ```bash
 # FALLBACK ONLY — use if validate-news-generation.sh reports missing navigation elements
-python3 scripts/fix-article-navigation.py
+npx tsx scripts/fix-article-navigation.ts
 ```
 
 ### Step 4: Translate Swedish Content & Verify Analysis Quality
