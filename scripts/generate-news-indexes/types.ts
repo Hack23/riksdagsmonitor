@@ -32,7 +32,7 @@ export interface I18nStrings {
   search: string;
   searchPlaceholder: string;
   loadMore: string;
-  showing: string;
+  showing: string | { one: string; other: string };
 }
 
 export interface BreadcrumbLabels {

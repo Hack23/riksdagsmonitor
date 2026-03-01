@@ -240,18 +240,18 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     <!-- Articles Grid -->
     <div class="articles-grid" id="articles-grid"></div>
     
-    <div id="no-articles" style="display: none; text-align: center; padding: 3rem; color: #888;">
+    <div id="no-articles" style="text-align: center; padding: 3rem; color: #888;" hidden>
       ${escapeHtml(lang.i18n.noArticles)}
     </div>
     
-    <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
+    <div id="no-results" style="text-align: center; padding: 3rem; color: #888;" hidden>
       ${escapeHtml(lang.noResults)}
     </div>
     
     <!-- Pagination controls -->
     <div class="pagination-controls" role="navigation" aria-label="${escapeHtml(lang.i18n.loadMore)}">
       <p id="article-counter" class="article-counter" aria-live="polite" aria-atomic="true"></p>
-      <button id="load-more-btn" class="load-more-btn btn" style="display:none" aria-label="${escapeHtml(lang.i18n.loadMore)}">${escapeHtml(lang.i18n.loadMore)}</button>
+      <button id="load-more-btn" class="load-more-btn btn" hidden aria-label="${escapeHtml(lang.i18n.loadMore)}">${escapeHtml(lang.i18n.loadMore)}</button>
     </div>
   </div>
   
@@ -286,9 +286,27 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
     // Pagination i18n strings
     const i18nLoadMore = ${JSON.stringify(lang.i18n.loadMore)};
-    const i18nShowingTemplate = ${JSON.stringify(lang.i18n.showing)};
+    const i18nShowingConfig = ${JSON.stringify(lang.i18n.showing)};
     function i18nShowing(shown, total) {
-      return i18nShowingTemplate
+      var template;
+      // Support both simple string templates and pluralization objects
+      if (i18nShowingConfig && typeof i18nShowingConfig === 'object') {
+        // Prefer explicit pluralization keys if provided
+        if (shown === 1 && Object.prototype.hasOwnProperty.call(i18nShowingConfig, 'one')) {
+          template = i18nShowingConfig.one;
+        } else if (Object.prototype.hasOwnProperty.call(i18nShowingConfig, 'other')) {
+          template = i18nShowingConfig.other;
+        } else {
+          // Fallback: best-effort stringification of config object
+          template = String(i18nShowingConfig);
+        }
+      } else {
+        template = i18nShowingConfig || '';
+      }
+      if (typeof template !== 'string') {
+        template = String(template);
+      }
+      return template
         .replace('{shown}', String(shown))
         .replace('{total}', String(total));
     }
@@ -348,24 +366,24 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       
       if (articles.length === 0) {
         grid.innerHTML = '';
-        if (noArticles) noArticles.style.display = 'block';
-        noResults.style.display = 'none';
+        if (noArticles) noArticles.hidden = false;
+        noResults.hidden = true;
         if (counter) counter.textContent = '';
-        if (btn) btn.style.display = 'none';
+        if (btn) btn.hidden = true;
         return;
       }
       
       if (filteredArticles.length === 0) {
         grid.innerHTML = '';
-        noResults.style.display = 'block';
-        if (noArticles) noArticles.style.display = 'none';
+        noResults.hidden = false;
+        if (noArticles) noArticles.hidden = true;
         if (counter) counter.textContent = '';
-        if (btn) btn.style.display = 'none';
+        if (btn) btn.hidden = true;
         return;
       }
       
-      if (noArticles) noArticles.style.display = 'none';
-      noResults.style.display = 'none';
+      if (noArticles) noArticles.hidden = true;
+      noResults.hidden = true;
       
       const visible = filteredArticles.slice(0, visibleCount);
       grid.innerHTML = visible.map(buildArticleCard).join('');
@@ -378,10 +396,10 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       // Update load more button
       if (btn) {
         if (total > visibleCount) {
-          btn.style.display = 'inline-block';
+          btn.hidden = false;
           btn.setAttribute('aria-label', i18nLoadMore);
         } else {
-          btn.style.display = 'none';
+          btn.hidden = true;
         }
       }
     }
