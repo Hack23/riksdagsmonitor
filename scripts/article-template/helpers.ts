@@ -47,11 +47,21 @@ export function getNewsIndexFilename(lang: Language | string): string {
 }
 
 /**
+ * Fix invalid HTML nesting where block elements like `<ul>` appear inside `<p>`.
+ * Browsers auto-close `<p>` before block elements, leaving orphaned `</p>` tags.
+ * Removes the orphaned `</p>` that follows `</ul>` or `</ol>`.
+ */
+export function fixHtmlNesting(htmlContent: string): string {
+  return htmlContent.replace(/<\/(ul|ol)>\s*<\/p>/g, '</$1>');
+}
+
+/**
  * Sanitize article body content for JSON-LD structured data.
  * Removes newlines and normalizes whitespace to prevent invalid JSON.
+ * Also fixes invalid HTML nesting (e.g. `<ul>` inside `<p>`).
  */
 export function sanitizeArticleBody(htmlContent: string): string {
-  return htmlContent
+  return fixHtmlNesting(htmlContent)
     .substring(0, 500)
     .replace(/\n/g, ' ')
     .replace(/\s+/g, ' ')

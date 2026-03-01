@@ -18,6 +18,7 @@ import {
   getFooterLabel,
   getNewsIndexFilename,
   sanitizeArticleBody,
+  fixHtmlNesting,
   formatDate,
   generateEventCalendar,
   generateWatchSection,
@@ -269,7 +270,7 @@ ${events.length > 0 ? generateEventCalendar(events as ReadonlyArray<EventGridIte
       ${subtitle}
     </p>
 
-${content}
+${fixHtmlNesting(content)}
 
 ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<WatchPoint>, lang) : ''}
 
