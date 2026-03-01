@@ -1228,6 +1228,13 @@ export async function init(): Promise<void> {
     logger.debug('✅ Party dashboard initialized successfully');
   } catch (error) {
     logger.error('Error initializing party dashboard:', error);
-    renderErrorFallback(dashboardSection, t.errorMessage, () => { void init(); });
+    // Append a dedicated error container so the rest of the section's DOM
+    // (including <canvas> elements) is preserved for a subsequent retry.
+    const errContainer = document.createElement('div');
+    dashboardSection.appendChild(errContainer);
+    renderErrorFallback(errContainer, t.errorMessage, () => {
+      errContainer.remove();
+      void init();
+    });
   }
 }

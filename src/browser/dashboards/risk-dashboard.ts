@@ -966,13 +966,20 @@ export async function init(): Promise<void> {
   } catch (error) {
     logger.error('❌ Failed to load CIA risk data:', error);
 
-    // Display error message to user using the shared error boundary fallback
-    const alertContainer = document.getElementById('earlyWarningAlerts');
-    if (alertContainer) {
+    // Display error message to user using the shared error boundary fallback.
+    // Render into a child container prepended to #risk-dashboard so the rest
+    // of the section's DOM is preserved for a subsequent retry.
+    const dashboardSection = document.getElementById('risk-dashboard');
+    if (dashboardSection) {
+      const errContainer = document.createElement('div');
+      dashboardSection.prepend(errContainer);
       renderErrorFallback(
-        alertContainer,
+        errContainer,
         'Unable to load risk assessment data from CIA Platform.',
-        () => { void init(); },
+        () => {
+          errContainer.remove();
+          void init();
+        },
       );
     }
 

@@ -36,6 +36,9 @@ export async function renderWithFallback(
   renderFn: () => void | Promise<void>,
   fallbackMessage = 'Data temporarily unavailable',
 ): Promise<void> {
+  // Snapshot original markup so each attempt can restore pre-existing DOM
+  // elements (e.g. <canvas> elements) that renderFn depends on.
+  const originalHTML = container.innerHTML;
   let inFlight = false;
 
   const attempt = async (): Promise<void> => {
@@ -48,6 +51,9 @@ export async function renderWithFallback(
     renderLoadingFallback(container);
 
     try {
+      // Restore the original markup before handing control to renderFn so
+      // that any expected child elements (e.g. <canvas> targets) are present.
+      container.innerHTML = originalHTML;
       await Promise.resolve(renderFn());
     } catch (err) {
       logger.error('[ErrorBoundary] Render failed:', err);

@@ -250,4 +250,41 @@ describe('renderWithFallback', () => {
     // Only one extra attempt should have been started (the inFlight guard blocks the second)
     expect(renderFn).toHaveBeenCalledTimes(2);
   });
+
+  it('restores original container HTML before each renderFn call', async () => {
+    // Pre-populate the container with a sentinel element (simulates a <canvas> in the HTML)
+    container.innerHTML = '<canvas id="myChart"></canvas>';
+
+    let seenCanvas = false;
+    const renderFn = vi.fn(() => {
+      // Check that the sentinel element is present when renderFn is called
+      seenCanvas = container.querySelector('#myChart') !== null;
+    });
+
+    await renderWithFallback(container, renderFn, 'msg');
+    expect(seenCanvas).toBe(true);
+  });
+
+  it('restores original HTML before retry after failure', async () => {
+    container.innerHTML = '<canvas id="myChart"></canvas>';
+
+    let callCount = 0;
+    const seenCanvas: boolean[] = [];
+
+    const renderFn = vi.fn(() => {
+      callCount += 1;
+      seenCanvas.push(container.querySelector('#myChart') !== null);
+      if (callCount === 1) throw new Error('first fail');
+      container.innerHTML = '<p class="success">ok</p>';
+    });
+
+    await renderWithFallback(container, renderFn, 'msg');
+    const btn = container.querySelector('.fallback-retry-btn') as HTMLButtonElement;
+    btn.click();
+    await new Promise((r) => setTimeout(r, 0));
+
+    // The canvas was present for both the initial and retry call
+    expect(seenCanvas).toEqual([true, true]);
+    expect(renderFn).toHaveBeenCalledTimes(2);
+  });
 });
