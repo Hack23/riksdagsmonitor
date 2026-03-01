@@ -574,6 +574,15 @@ describe('Pipeline: hreflang tag consistency', () => {
     });
   });
 
+  it('language switcher Norwegian link uses hreflang="nb" (BCP-47), not "no"', () => {
+    const html = articleTemplate.generateArticleHTML(makeArticleData('en'));
+    // The in-page language switcher must also emit nb (not no) for the Norwegian link
+    expect(html).toContain('href="2026-03-01-week-ahead-no.html"');
+    // Verify the switcher link does NOT use hreflang="no" and DOES use hreflang="nb"
+    expect(html).not.toMatch(/href="[^"]*-no\.html"[^>]*hreflang="no"/);
+    expect(html).toContain('hreflang="nb"');
+  });
+
   it('hreflang links share the same base slug', () => {
     const date = '2026-03-01';
     const html = articleTemplate.generateArticleHTML(
