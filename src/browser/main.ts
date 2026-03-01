@@ -89,6 +89,10 @@ const LAZY_DASHBOARDS: LazyDashboard[] = [
 
 // ─── Initialization ─────────────────────────────────────────────────────────
 
+// Module-level reference prevents the IntersectionObserver from being
+// garbage-collected after initAll() returns.
+let _lazyObserver: IntersectionObserver | undefined;
+
 async function initAll(): Promise<void> {
   logger.info('Riksdagsmonitor initializing...');
   const start = performance.now();
@@ -99,7 +103,7 @@ async function initAll(): Promise<void> {
   // Register lazy dashboards immediately — IntersectionObserver must be live
   // before initStats()'s async I/O so containers already in/near the viewport
   // on initial render are not missed.
-  initLazyDashboards(LAZY_DASHBOARDS);
+  _lazyObserver = initLazyDashboards(LAZY_DASHBOARDS);
 
   // Eager: stats loader populates hero metrics — no chart libraries needed
   try {
