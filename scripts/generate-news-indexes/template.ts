@@ -227,6 +227,11 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
           <option value="title">${escapeHtml(f.titleSort)}</option>
         </select>
       </div>
+      
+      <div class="filter-group search-group">
+        <label for="search-input">${escapeHtml(lang.i18n.search)}</label>
+        <input type="search" id="search-input" placeholder="${escapeHtml(lang.i18n.searchPlaceholder)}" aria-label="${escapeHtml(lang.i18n.search)}" autocomplete="off">
+      </div>
     </div>
     
     <!-- Articles Grid -->
@@ -234,6 +239,12 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
     <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: #888;">
       ${escapeHtml(lang.noResults)}
+    </div>
+    
+    <!-- Pagination controls -->
+    <div class="pagination-controls" role="navigation" aria-label="${escapeHtml(lang.i18n.loadMore)}">
+      <p id="article-counter" class="article-counter" aria-live="polite" aria-atomic="true"></p>
+      <button id="load-more-btn" class="load-more-btn btn" style="display:none" onclick="loadMore()" aria-label="${escapeHtml(lang.i18n.loadMore)}">${escapeHtml(lang.i18n.loadMore)}</button>
     </div>
   </div>
   
@@ -244,57 +255,115 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     // Available in translation (for current language)
     const AVAILABLE_IN_TEXT = '${escapeHtml(AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in')}';
     
+    // Pagination i18n strings
+    const i18nLoadMore = '${escapeHtml(lang.i18n.loadMore)}';
+    const i18nShowing = ${lang.i18n.showing};
+    
+    // Pagination state
+    const PAGE_SIZE = 20;
+    let visibleCount = PAGE_SIZE;
+    
     // Dynamic articles array - generated from news/ directory
     const articles = ${JSON.stringify(displayData, null, 2)};
     
     let filteredArticles = [...articles];
     
-    function renderArticles(articlesToRender) {
+    function buildArticleCard(article) {
+      // Generate language badge for the article using shared LANGUAGE_FLAGS
+      const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
+      const langBadge = \`<span class="language-badge" aria-label="\${article.lang} language"><span aria-hidden="true">\${flag}</span> \${article.lang.toUpperCase()}</span>\`;
+      
+      // Generate available languages display if multiple languages exist
+      const availableLangs = article.availableLanguages || [article.lang];
+      let availableDisplay = '';
+      if (availableLangs.length > 1) {
+        const availableBadges = availableLangs.map(l => {
+          const lf = LANGUAGE_FLAGS[l] || '🌐';
+          return \`<span class="lang-badge-sm"><span aria-hidden="true">\${lf}</span> \${l.toUpperCase()}</span>\`;
+        }).join(' ');
+        availableDisplay = \`<p class="available-languages"><strong>\${AVAILABLE_IN_TEXT}:</strong> \${availableBadges}</p>\`;
+      }
+      
+      return \`
+      <article class="article-card">
+        <div class="article-meta">
+          <time class="article-date" datetime="\${article.date}">\${formatDate(article.date)}</time>
+          <span class="article-type">\${localizeType(article.type)}</span>
+          \${langBadge}
+        </div>
+        <h2 class="article-title">
+          <a href="\${article.slug}">\${article.title}</a>
+        </h2>
+        <p class="article-excerpt">\${article.excerpt}</p>
+        \${availableDisplay}
+        <div class="article-tags">
+          \${article.tags.map(tag => \`<span class="tag">\${tag}</span>\`).join('')}
+        </div>
+      </article>
+    \`;
+    }
+    
+    function renderPage() {
       const grid = document.getElementById('articles-grid');
       const noResults = document.getElementById('no-results');
+      const counter = document.getElementById('article-counter');
+      const btn = document.getElementById('load-more-btn');
       
-      if (articlesToRender.length === 0) {
+      if (filteredArticles.length === 0) {
         grid.innerHTML = '';
         noResults.style.display = 'block';
+        if (counter) counter.textContent = '';
+        if (btn) btn.style.display = 'none';
         return;
       }
       
       noResults.style.display = 'none';
       
-      grid.innerHTML = articlesToRender.map(article => {
-        // Generate language badge for the article using shared LANGUAGE_FLAGS
-        const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
-        const langBadge = \`<span class="language-badge" aria-label="\${article.lang} language"><span aria-hidden="true">\${flag}</span> \${article.lang.toUpperCase()}</span>\`;
-        
-        // Generate available languages display if multiple languages exist
-        const availableLangs = article.availableLanguages || [article.lang];
-        let availableDisplay = '';
-        if (availableLangs.length > 1) {
-          const availableBadges = availableLangs.map(l => {
-            const f = LANGUAGE_FLAGS[l] || '🌐';
-            return \`<span class="lang-badge-sm"><span aria-hidden="true">\${f}</span> \${l.toUpperCase()}</span>\`;
-          }).join(' ');
-          availableDisplay = \`<p class="available-languages"><strong>\${AVAILABLE_IN_TEXT}:</strong> \${availableBadges}</p>\`;
+      const visible = filteredArticles.slice(0, visibleCount);
+      grid.innerHTML = visible.map(buildArticleCard).join('');
+      
+      // Update counter
+      const shown = visible.length;
+      const total = filteredArticles.length;
+      if (counter) counter.textContent = i18nShowing(shown, total);
+      
+      // Update load more button
+      if (btn) {
+        if (total > visibleCount) {
+          btn.style.display = 'inline-block';
+          btn.setAttribute('aria-label', i18nLoadMore);
+        } else {
+          btn.style.display = 'none';
         }
-        
-        return \`
-        <article class="article-card">
-          <div class="article-meta">
-            <time class="article-date" datetime="\${article.date}">\${formatDate(article.date)}</time>
-            <span class="article-type">\${localizeType(article.type)}</span>
-            \${langBadge}
-          </div>
-          <h2 class="article-title">
-            <a href="\${article.slug}">\${article.title}</a>
-          </h2>
-          <p class="article-excerpt">\${article.excerpt}</p>
-          \${availableDisplay}
-          <div class="article-tags">
-            \${article.tags.map(tag => \`<span class="tag">\${tag}</span>\`).join('')}
-          </div>
-        </article>
-      \`;
-      }).join('');
+      }
+    }
+    
+    function loadMore() {
+      const prevCount = visibleCount;
+      visibleCount += PAGE_SIZE;
+      renderPage();
+      // Focus management: move focus to first newly visible article link
+      const cards = document.querySelectorAll('.article-card');
+      if (cards[prevCount]) {
+        const link = cards[prevCount].querySelector('a');
+        if (link) link.focus();
+      }
+    }
+    
+    function updateURL() {
+      const typeFilter = document.getElementById('filter-type').value;
+      const topicFilter = document.getElementById('filter-topic').value;
+      const sortFilter = document.getElementById('filter-sort').value;
+      const searchInput = document.getElementById('search-input').value.trim();
+      const params = new URLSearchParams();
+      if (typeFilter !== 'all') params.set('type', typeFilter);
+      if (topicFilter !== 'all') params.set('topic', topicFilter);
+      if (sortFilter !== 'date-desc') params.set('sort', sortFilter);
+      if (searchInput) params.set('q', searchInput);
+      const newURL = params.toString() ? '?' + params.toString() : window.location.pathname;
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', newURL);
+      }
     }
     
     const typeLabels = ${JSON.stringify({
@@ -317,6 +386,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       const typeFilter = document.getElementById('filter-type').value;
       const topicFilter = document.getElementById('filter-topic').value;
       const sortFilter = document.getElementById('filter-sort').value;
+      const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
       
       let filtered = [...articles];
       
@@ -328,6 +398,11 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       // Apply topic filter
       if (topicFilter !== 'all') {
         filtered = filtered.filter(article => article.topics.includes(topicFilter));
+      }
+      
+      // Apply search filter
+      if (searchQuery) {
+        filtered = filtered.filter(article => article.title.toLowerCase().includes(searchQuery));
       }
       
       // Apply sorting
@@ -344,7 +419,17 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       }
       
       filteredArticles = filtered;
-      renderArticles(filteredArticles);
+      visibleCount = PAGE_SIZE;
+      updateURL();
+      renderPage();
+    }
+    
+    function readURLParams() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('type')) document.getElementById('filter-type').value = params.get('type');
+      if (params.has('topic')) document.getElementById('filter-topic').value = params.get('topic');
+      if (params.has('sort')) document.getElementById('filter-sort').value = params.get('sort');
+      if (params.has('q')) document.getElementById('search-input').value = params.get('q');
     }
     
     // Event listeners
@@ -352,7 +437,15 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     document.getElementById('filter-topic').addEventListener('change', filterArticles);
     document.getElementById('filter-sort').addEventListener('change', filterArticles);
     
-    // Initial render
+    // Debounced search input listener
+    let searchTimer;
+    document.getElementById('search-input').addEventListener('input', function() {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(filterArticles, 300);
+    });
+    
+    // Read URL state and render
+    readURLParams();
     filterArticles();
   </script>
 

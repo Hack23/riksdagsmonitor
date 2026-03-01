@@ -31,6 +31,10 @@ export interface I18nStrings {
   noArticles: string;
   loading: string;
   articleCount: string;
+  search: string;
+  searchPlaceholder: string;
+  loadMore: string;
+  showing: string;
 }
 
 export interface BreadcrumbLabels {
