@@ -469,7 +469,11 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       }
       
       filteredArticles = filtered;
-      visibleCount = PAGE_SIZE;
+      // Only reset visibleCount to the first page when not restoring from a URL "page" parameter.
+      const currentParams = new URLSearchParams(window.location.search);
+      if (!(currentParams.has('page') && visibleCount > PAGE_SIZE)) {
+        visibleCount = PAGE_SIZE;
+      }
       updateURL();
       renderPage();
     }

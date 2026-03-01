@@ -9005,7 +9005,7 @@ body.news-page {
   border: 1px solid rgba(0, 217, 255, 0.5);
   border-radius: 4px;
   color: #e0e0e0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
 }
 
 .news-page .filter-group input[type="search"]:hover {
@@ -9036,7 +9036,7 @@ body.news-page {
   border: 1px solid rgba(0, 217, 255, 0.5);
   border-radius: 4px;
   color: var(--primary-cyan, #00d9ff);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;

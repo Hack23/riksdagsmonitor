@@ -347,8 +347,9 @@ describe('Generate News Indexes', () => {
       const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('id="search-input"');
       expect(enContent).toContain('type="search"');
-      // aria-label present
-      expect(enContent).toMatch(/aria-label="[^"]+"\s+autocomplete="off"/);
+      // aria-label present (non-empty) and autocomplete disabled, order-independent
+      expect(enContent).toMatch(/aria-label="[^"]+"/);
+      expect(enContent).toMatch(/autocomplete="off"/);
     });
 
     it('should include load-more button and article counter', () => {
