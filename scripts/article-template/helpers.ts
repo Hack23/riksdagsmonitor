@@ -47,8 +47,21 @@ export function getNewsIndexFilename(lang: Language | string): string {
 }
 
 /**
+ * Remove orphaned `</p>` tags that appear immediately after `</ul>` or `</ol>`.
+ * Browsers auto-close `<p>` before block-level list elements, so AI-generated
+ * markup of the form `<p>intro</p><ul>…</ul></p>` leaves a dangling `</p>`.
+ * This function removes only that specific trailing `</p>` and does not attempt
+ * any other HTML repair.
+ */
+export function fixHtmlNesting(htmlContent: string): string {
+  return htmlContent.replace(/<\/(ul|ol)>\s*<\/p>/g, '</$1>');
+}
+
+/**
  * Sanitize article body content for JSON-LD structured data.
  * Removes newlines and normalizes whitespace to prevent invalid JSON.
+ * Callers should apply {@link fixHtmlNesting} to the raw HTML *before*
+ * escaping and passing it here, so the regex has a chance to match.
  */
 export function sanitizeArticleBody(htmlContent: string): string {
   return htmlContent

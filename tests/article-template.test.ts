@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect, afterEach, vi } from 'vitest';
-import { generateArticleHTML, generateArticleLanguageSwitcher, generateSiteFooter } from '../scripts/article-template.js';
+import { generateArticleHTML, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting } from '../scripts/article-template.js';
 import articleTemplateDefault from '../scripts/article-template.js';
 import type { Language } from '../scripts/types/language.js';
 import type { ArticleData, ArticleCategory, EventGridItem, WatchPoint } from '../scripts/types/article.js';
@@ -888,6 +888,50 @@ describe('Article Template', () => {
 
     it('should export generateSiteFooter', () => {
       expect(typeof articleTemplateDefault.generateSiteFooter).toBe('function');
+    });
+  });
+
+  describe('fixHtmlNesting', () => {
+    it('should remove orphaned </p> after </ul>', () => {
+      const input = '<p>intro</p><ul><li>item</li></ul></p>';
+      expect(fixHtmlNesting(input)).toBe('<p>intro</p><ul><li>item</li></ul>');
+    });
+
+    it('should remove orphaned </p> after </ol>', () => {
+      const input = '<p>intro</p><ol><li>step</li></ol></p>';
+      expect(fixHtmlNesting(input)).toBe('<p>intro</p><ol><li>step</li></ol>');
+    });
+
+    it('should handle whitespace between </ul> and </p>', () => {
+      const input = '<ul><li>x</li></ul>  </p>';
+      expect(fixHtmlNesting(input)).toBe('<ul><li>x</li></ul>');
+    });
+
+    it('should leave valid </p> tags unchanged', () => {
+      const input = '<p>valid paragraph</p><p>another</p>';
+      expect(fixHtmlNesting(input)).toBe('<p>valid paragraph</p><p>another</p>');
+    });
+
+    it('should fix the pattern in rendered article HTML body', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        content: '<p>Key proposals include:</p><ul><li><strong>Item A</strong></li></ul></p>'
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).not.toContain('</ul></p>');
+      expect(html).not.toContain('</ol></p>');
+    });
+
+    it('should fix the pattern in JSON-LD articleBody', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        content: '<p>Key proposals include:</p><ul><li><strong>Item A</strong></li></ul></p>'
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+      expect(jsonLdMatch).not.toBeNull();
+      // The escaped form of </ul></p> should not appear in JSON-LD articleBody
+      expect(jsonLdMatch![1]).not.toContain('&lt;/ul&gt;&lt;/p&gt;');
     });
   });
 });
