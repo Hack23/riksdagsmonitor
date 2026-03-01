@@ -978,7 +978,9 @@ export async function init(): Promise<void> {
         'Unable to load risk assessment data from CIA Platform.',
         () => {
           errContainer.remove();
-          void init();
+          init().catch((err) =>
+            logger.error('Retry failed during risk dashboard re-initialization:', err),
+          );
         },
       );
     }

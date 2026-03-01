@@ -20,6 +20,18 @@ import { logger } from './logger.js';
 import { renderErrorFallback, renderLoadingFallback } from './fallback-ui.js';
 
 /**
+ * Localised labels for the loading and error states produced by
+ * {@link renderWithFallback}.  Both fields are optional; English defaults
+ * are used when omitted so the API remains backwards-compatible.
+ */
+export interface RenderWithFallbackOptions {
+  /** ARIA label announced by screen readers while the skeleton is visible. */
+  readonly loadingLabel?: string;
+  /** Text shown on the retry button in the error card. */
+  readonly retryLabel?: string;
+}
+
+/**
  * Wrap a synchronous or asynchronous render function with an error boundary.
  *
  * - Shows a loading skeleton while an async render is in progress.
@@ -27,14 +39,16 @@ import { renderErrorFallback, renderLoadingFallback } from './fallback-ui.js';
  * - On failure the container shows an error card with an optional retry button.
  * - Each retry re-runs the full renderFn.
  *
- * @param container  - Target DOM element that will receive the rendered output.
- * @param renderFn   - Function (sync or async) that populates `container`.
+ * @param container       - Target DOM element that will receive the rendered output.
+ * @param renderFn        - Function (sync or async) that populates `container`.
  * @param fallbackMessage - Human-readable message shown in the error card.
+ * @param options         - Optional localised labels for the loading/error states.
  */
 export async function renderWithFallback(
   container: HTMLElement,
   renderFn: () => void | Promise<void>,
   fallbackMessage = 'Data temporarily unavailable',
+  options: RenderWithFallbackOptions = {},
 ): Promise<void> {
   // Snapshot original markup so each attempt can restore pre-existing DOM
   // elements (e.g. <canvas> elements) that renderFn depends on.
@@ -58,14 +72,14 @@ export async function renderWithFallback(
     const loadingOverlay = document.createElement('div');
     loadingOverlay.setAttribute('data-error-boundary-loading', 'true');
     loadingOverlay.setAttribute('aria-busy', 'true');
-    renderLoadingFallback(loadingOverlay);
+    renderLoadingFallback(loadingOverlay, options.loadingLabel);
     container.appendChild(loadingOverlay);
 
     try {
       await Promise.resolve(renderFn());
     } catch (err) {
       logger.error('[ErrorBoundary] Render failed:', err);
-      renderErrorFallback(container, fallbackMessage, attempt);
+      renderErrorFallback(container, fallbackMessage, attempt, options.retryLabel);
     } finally {
       // Remove the overlay once the attempt finishes (success or failure).
       if (loadingOverlay.parentNode === container) {

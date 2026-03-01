@@ -303,4 +303,25 @@ describe('renderWithFallback', () => {
     expect(seenCanvas).toEqual([true, true]);
     expect(renderFn).toHaveBeenCalledTimes(2);
   });
+
+  it('forwards options.loadingLabel to the loading overlay ARIA label', async () => {
+    let overlayLabel: string | null = null;
+    const renderFn = vi.fn(async () => {
+      // Capture the label while the render is "in progress"
+      const overlay = container.querySelector('[data-error-boundary-loading]');
+      if (overlay) {
+        const skeleton = overlay.querySelector('.fallback-loading-skeleton');
+        overlayLabel = skeleton?.getAttribute('aria-label') ?? null;
+      }
+    });
+    await renderWithFallback(container, renderFn, 'msg', { loadingLabel: 'Laddar…' });
+    expect(overlayLabel).toBe('Laddar…');
+  });
+
+  it('forwards options.retryLabel to the retry button on failure', async () => {
+    const renderFn = vi.fn(() => { throw new Error('fail'); });
+    await renderWithFallback(container, renderFn, 'msg', { retryLabel: 'Försök igen' });
+    const btn = container.querySelector('.fallback-retry-btn');
+    expect(btn?.textContent).toBe('Försök igen');
+  });
 });

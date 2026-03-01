@@ -1249,7 +1249,9 @@ export async function init(): Promise<void> {
     dashboardSection.appendChild(errContainer);
     renderErrorFallback(errContainer, t.errorMessage, () => {
       errContainer.remove();
-      void init();
+      init().catch((err) =>
+        logger.error('Retry failed during party dashboard re-initialization:', err),
+      );
     }, t.retryMessage);
   }
 }
