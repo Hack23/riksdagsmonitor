@@ -58,6 +58,8 @@ export const DARK_THEME_COLORS: ThemeColors = {
   blue:    '#58a6ff',
   tooltipBg:  'rgba(10, 14, 39, 0.95)',
   bodyText:   '#e0e0e0',
+  tickColor:  '#a0a0a0',
+  gridColor:  'rgba(255,255,255,0.07)',
   parties: PARTY_COLORS,
 } as const;
 
@@ -79,6 +81,8 @@ export const LIGHT_THEME_COLORS: ThemeColors = {
   blue:    '#007744',
   tooltipBg:  'rgba(245, 245, 245, 0.95)',
   bodyText:   '#1a1e3d',
+  tickColor:  '#555555',
+  gridColor:  'rgba(0,0,0,0.08)',
   parties: PARTY_COLORS,
 } as const;
 

@@ -24,6 +24,10 @@ export interface ThemeColors {
   readonly blue: string;
   readonly tooltipBg: string;
   readonly bodyText: string;
+  /** Muted color for chart axis tick labels. */
+  readonly tickColor: string;
+  /** Color for chart grid lines (semi-transparent). */
+  readonly gridColor: string;
   readonly parties: Readonly<Record<string, string>>;
 }
 

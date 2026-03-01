@@ -50,7 +50,7 @@
   function applyTheme(theme, persist) {
     document.documentElement.setAttribute('data-theme', theme);
     if (persist !== false) {
-      try { localStorage.setItem(STORAGE_KEY, theme); } catch (_) {}
+      try { localStorage.setItem(STORAGE_KEY, theme); } catch (_) { /* storage unavailable */ }
     }
   }
 
@@ -106,8 +106,15 @@
       var mql = window.matchMedia('(prefers-color-scheme: dark)');
       var handleSchemeChange = function (e) {
         try {
-          if (localStorage.getItem(STORAGE_KEY)) return; // explicit choice wins
-        } catch (_) {}
+          var storedTheme = localStorage.getItem(STORAGE_KEY);
+          if (storedTheme === DARK || storedTheme === LIGHT) {
+            return; // explicit valid choice wins
+          }
+          // Clear invalid or legacy values so system preference can apply
+          if (storedTheme !== null) {
+            localStorage.removeItem(STORAGE_KEY);
+          }
+        } catch (_) { /* storage unavailable */ }
         var sysTheme = e.matches ? DARK : LIGHT;
         applyTheme(sysTheme, false);
         updateButton(sysTheme);

@@ -39,6 +39,7 @@ export function getResponsiveOptions(): Record<string, unknown> {
   const width = window.innerWidth;
   const isMobile = width < BREAKPOINTS.tablet;
   const isTablet = width >= BREAKPOINTS.tablet && width < BREAKPOINTS.desktop;
+  const theme = getActiveThemeColors();
 
   return {
     responsive: true,
@@ -51,14 +52,14 @@ export function getResponsiveOptions(): Record<string, unknown> {
           boxWidth: isMobile ? 8 : 12,
           padding: isMobile ? 4 : 8,
           font: { size: isMobile ? 10 : (isTablet ? 11 : 12) },
-          color: '#e0e0e0',
+          color: theme.bodyText,
         },
       },
       tooltip: {
-        backgroundColor: getActiveThemeColors().tooltipBg,
-        titleColor: getActiveThemeColors().cyan,
-        bodyColor: getActiveThemeColors().bodyText,
-        borderColor: getActiveThemeColors().cyan,
+        backgroundColor: theme.tooltipBg,
+        titleColor: theme.cyan,
+        bodyColor: theme.bodyText,
+        borderColor: theme.cyan,
         borderWidth: 1,
         padding: isMobile ? 6 : 10,
         titleFont: { size: isMobile ? 11 : 13, weight: 'bold' as const },
@@ -69,18 +70,18 @@ export function getResponsiveOptions(): Record<string, unknown> {
     scales: {
       x: {
         ticks: {
-          color: '#a0a0a0',
+          color: theme.tickColor,
           font: { size: isMobile ? 9 : 11 },
           maxRotation: isMobile ? 45 : 0,
         },
-        grid: { color: 'rgba(255,255,255,0.05)' },
+        grid: { color: theme.gridColor },
       },
       y: {
         ticks: {
-          color: '#a0a0a0',
+          color: theme.tickColor,
           font: { size: isMobile ? 9 : 11 },
         },
-        grid: { color: 'rgba(255,255,255,0.08)' },
+        grid: { color: theme.gridColor },
       },
     },
   };
