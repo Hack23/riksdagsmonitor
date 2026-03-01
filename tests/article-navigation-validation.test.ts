@@ -16,6 +16,7 @@ import {
   hasLanguageSwitcher,
   hasArticleTopNav,
   hasBackToNews,
+  fixArticleHtmlNesting,
 } from '../scripts/article-quality-enhancer.js';
 
 // ---------------------------------------------------------------------------
@@ -165,5 +166,65 @@ describe('Article template integration', () => {
     expect(hasLanguageSwitcher(EMPTY_HTML)).toBe(false);
     expect(hasArticleTopNav(EMPTY_HTML)).toBe(false);
     expect(hasBackToNews(EMPTY_HTML)).toBe(false);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// fixArticleHtmlNesting
+// ---------------------------------------------------------------------------
+
+describe('fixArticleHtmlNesting', () => {
+  it('should fix <p><ul> nesting by removing the enclosing <p>', () => {
+    const input = '<p>\n<ul><li>Item</li></ul></p>';
+    const result = fixArticleHtmlNesting(input);
+    expect(result).not.toContain('</p>');
+    expect(result).toContain('<ul>');
+    expect(result).not.toMatch(/<p[^>]*>\s*<ul/);
+  });
+
+  it('should fix <p><ol> nesting by removing the enclosing <p>', () => {
+    const input = '<p>\n<ol><li>Step</li></ol></p>';
+    const result = fixArticleHtmlNesting(input);
+    expect(result).not.toContain('</p>');
+    expect(result).toContain('<ol>');
+    expect(result).not.toMatch(/<p[^>]*>\s*<ol/);
+  });
+
+  it('should remove orphaned </p> after </ul>', () => {
+    const input = '<ul><li>Item</li></ul></p>';
+    const result = fixArticleHtmlNesting(input);
+    expect(result).not.toContain('</ul></p>');
+    expect(result).toContain('</ul>');
+  });
+
+  it('should remove orphaned </p> after </ol>', () => {
+    const input = '<ol><li>Item</li></ol></p>';
+    const result = fixArticleHtmlNesting(input);
+    expect(result).not.toContain('</ol></p>');
+    expect(result).toContain('</ol>');
+  });
+
+  it('should not modify valid HTML that has no nesting errors', () => {
+    const input = '<p>Paragraph</p><ul><li>Item</li></ul><p>Another</p>';
+    const result = fixArticleHtmlNesting(input);
+    expect(result).toBe(input);
+  });
+
+  it('should return unchanged content for empty string', () => {
+    expect(fixArticleHtmlNesting('')).toBe('');
+  });
+
+  it('should fix <p><div> nesting by removing the enclosing <p>', () => {
+    const input = '<p>\n<div class="box">Content</div></p>';
+    const result = fixArticleHtmlNesting(input);
+    expect(result).toContain('<div class="box">Content</div>');
+    expect(result).not.toMatch(/<p[^>]*>\s*<div/);
+  });
+
+  it('should remove orphaned </p> after </div>', () => {
+    const input = '<div class="box">Content</div></p>';
+    const result = fixArticleHtmlNesting(input);
+    expect(result).not.toContain('</div></p>');
+    expect(result).toContain('</div>');
   });
 });
