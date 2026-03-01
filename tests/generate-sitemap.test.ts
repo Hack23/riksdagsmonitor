@@ -7,9 +7,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
-// We cannot directly import from generate-sitemap.js because it has top-level
-// side effects (console.log, process.exit). Instead, we test the exported functions
-// by dynamically importing with mocked process.exit.
+// The module uses an import.meta.url guard so it won't auto-execute main() on import,
+// but we still mock process.exit and fs.writeFileSync as a defensive backstop.
 
 /** Shape of the dynamically imported module */
 interface GenerateSitemapModule {
@@ -26,19 +25,21 @@ describe('Sitemap Generation', () => {
     originalExit = process.exit;
     originalWriteFileSync = fs.writeFileSync;
 
-    // Prevent process.exit from terminating the test
-    process.exit = vi.fn() as unknown as typeof process.exit;
-    // Prevent actual file writes
-    fs.writeFileSync = vi.fn() as unknown as typeof fs.writeFileSync;
+    try {
+      // Prevent process.exit and file writes as a defensive backstop
+      process.exit = vi.fn() as unknown as typeof process.exit;
+      fs.writeFileSync = vi.fn() as unknown as typeof fs.writeFileSync;
 
-    // Dynamic import after mocking
-    module = await import('../scripts/generate-sitemap.js') as unknown as GenerateSitemapModule;
+      // Dynamic import after mocking
+      module = await import('../scripts/generate-sitemap.js') as unknown as GenerateSitemapModule;
+    } finally {
+      process.exit = originalExit;
+      fs.writeFileSync = originalWriteFileSync;
+    }
   });
 
   afterEach(() => {
     vi.clearAllMocks();
-    process.exit = originalExit;
-    fs.writeFileSync = originalWriteFileSync;
   });
 
   describe('generateSitemap', () => {
