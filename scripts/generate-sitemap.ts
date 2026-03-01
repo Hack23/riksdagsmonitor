@@ -31,6 +31,7 @@ console.log('🗺️ Sitemap Generation Script');
 const BASE_URL = 'https://riksdagsmonitor.com';
 const NEWS_DIR = path.join(__dirname, '..', 'news');
 const API_DIR = path.join(__dirname, '..', 'api');
+const DOCS_DIR = path.join(__dirname, '..', 'docs');
 const ROOT_DIR = path.join(__dirname, '..');
 const SITEMAP_FILE = path.join(ROOT_DIR, 'sitemap.xml');
 
@@ -53,9 +54,24 @@ interface ApiDoc {
   lastmod: string;
 }
 
+interface DocFile {
+  file: string;
+  path: string;
+  lastmod: string;
+}
+
 interface HreflangAlternate {
   lang: string;
   href: string;
+}
+
+/**
+ * Map file-suffix language codes to proper BCP-47 hreflang codes.
+ * Norwegian files use the suffix "no" but hreflang should be "nb" (Bokmål).
+ */
+function hreflangCode(lang: string): string {
+  if (lang === 'no') return 'nb';
+  return lang;
 }
 
 // ---------------------------------------------------------------------------
@@ -214,6 +230,46 @@ function getApiDocs(): ApiDoc[] {
 }
 
 /**
+ * Get documentation files from the docs directory (api, coverage, test-results, cypress).
+ */
+function getDocFiles(): DocFile[] {
+  console.log('📖 Scanning docs directory...');
+
+  if (!fs.existsSync(DOCS_DIR)) {
+    console.warn('⚠️ Docs directory not found');
+    return [];
+  }
+
+  const results: DocFile[] = [];
+
+  function scanDir(dir: string): void {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory() && entry.name !== 'assets' && entry.name !== 'node_modules') {
+        scanDir(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith('.html')) {
+        const relativePath = path.relative(DOCS_DIR, fullPath).replace(/\\/g, '/');
+        results.push({
+          file: relativePath,
+          path: fullPath,
+          lastmod: getFileModTime(fullPath),
+        });
+      }
+    }
+  }
+
+  scanDir(DOCS_DIR);
+
+  // Sort for deterministic output across platforms/filesystems
+  results.sort((a, b) => a.file.localeCompare(b.file));
+
+  console.log(`  Found ${results.length} documentation files in docs/`);
+
+  return results;
+}
+
+/**
  * Generate XML for a URL entry.
  */
 function generateUrlEntry(
@@ -232,7 +288,7 @@ function generateUrlEntry(
 
   alternates.forEach((alt) => {
     xml += `
-  <xhtml:link rel="alternate" hreflang="${alt.lang}" href="${BASE_URL}/${alt.href}"/>`;
+  <xhtml:link rel="alternate" hreflang="${hreflangCode(alt.lang)}" href="${BASE_URL}/${alt.href}"/>`;
   });
 
   xml += `
@@ -252,10 +308,13 @@ function generateSitemap(): string {
         xmlns:xhtml="http://www.w3.org/1999/xhtml">`;
 
   // Main index page with all language alternates
-  const indexAlternates: HreflangAlternate[] = LANGUAGES.map((lang) => ({
-    lang,
-    href: lang === 'en' ? 'index.html' : `index_${lang}.html`,
-  }));
+  const indexAlternates: HreflangAlternate[] = [
+    ...LANGUAGES.map((lang) => ({
+      lang,
+      href: lang === 'en' ? 'index.html' : `index_${lang}.html`,
+    })),
+    { lang: 'x-default', href: 'index.html' },
+  ];
 
   const indexMtime = getFileModTime(path.join(ROOT_DIR, 'index.html'));
   xml += generateUrlEntry('index.html', indexMtime, 'daily', '1.0', indexAlternates);
@@ -273,11 +332,21 @@ function generateSitemap(): string {
   const politicianDashboardMtime = getFileModTime(path.join(ROOT_DIR, 'politician-dashboard.html'));
   xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
 
+  // RSS feed
+  const rssPath = path.join(ROOT_DIR, 'rss.xml');
+  if (fs.existsSync(rssPath)) {
+    const rssMtime = getFileModTime(rssPath);
+    xml += generateUrlEntry('rss.xml', rssMtime, 'daily', '0.5');
+  }
+
   // Dashboard pages with all language alternates (only for existing files)
-  const dashboardAlternates: HreflangAlternate[] = LANGUAGES.map((lang) => ({
-    lang,
-    href: lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${lang}.html`,
-  })).filter((alt) => fs.existsSync(path.join(ROOT_DIR, alt.href)));
+  const dashboardAlternates: HreflangAlternate[] = [
+    ...LANGUAGES.map((lang) => ({
+      lang,
+      href: lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${lang}.html`,
+    })).filter((alt) => fs.existsSync(path.join(ROOT_DIR, alt.href))),
+    { lang: 'x-default', href: 'dashboard/index.html' },
+  ];
 
   const dashboardEnMtime = getFileModTime(path.join(ROOT_DIR, 'dashboard', 'index.html'));
   xml += generateUrlEntry('dashboard/index.html', dashboardEnMtime, 'weekly', '0.8', dashboardAlternates);
@@ -431,6 +500,18 @@ function generateSitemap(): string {
     });
   }
 
+  // Generated documentation in docs/ (coverage, test-results, cypress, api docs)
+  const docFiles = getDocFiles();
+  if (docFiles.length > 0) {
+    console.log(`  Processing ${docFiles.length} docs/ documentation files...`);
+
+    docFiles.forEach((doc) => {
+      const loc = `docs/${doc.file}`;
+      const priority = doc.file === 'index.html' || doc.file.endsWith('/index.html') ? '0.4' : '0.3';
+      xml += generateUrlEntry(loc, doc.lastmod, 'monthly', priority);
+    });
+  }
+
   xml += `
   
 </urlset>`;
@@ -492,7 +573,9 @@ function main(): number {
 }
 
 // Run if called directly
-const exitCode = main();
-process.exit(exitCode);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const exitCode = main();
+  process.exit(exitCode);
+}
 
 export { generateSitemap, validateSitemap };
