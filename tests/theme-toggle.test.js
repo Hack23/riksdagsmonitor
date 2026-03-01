@@ -352,10 +352,10 @@ describe('Theme Toggle', () => {
   describe('anti-flash snippet localStorage validation logic', () => {
     it('uses stored "dark" without clearing or overriding', () => {
       storage.setItem(STORAGE_KEY, 'dark');
-      let t = null;
-      try { t = storage.getItem(STORAGE_KEY); } catch (_) { t = null; }
+      // Mirrors the anti-flash IIFE: read then validate/normalize
+      let t = (() => { try { return storage.getItem(STORAGE_KEY); } catch (_) { return null; } })();
       if (t !== 'dark' && t !== 'light') {
-        if (t !== null) { try { storage.removeItem(STORAGE_KEY); } catch (_) { /* empty */ } }
+        if (t !== null) { try { storage.removeItem(STORAGE_KEY); } catch (_) { /* storage unavailable */ } }
         t = 'light';
       }
       expect(t).toBe('dark');
@@ -364,10 +364,9 @@ describe('Theme Toggle', () => {
 
     it('uses stored "light" without clearing', () => {
       storage.setItem(STORAGE_KEY, 'light');
-      let t = null;
-      try { t = storage.getItem(STORAGE_KEY); } catch (_) { t = null; }
+      let t = (() => { try { return storage.getItem(STORAGE_KEY); } catch (_) { return null; } })();
       if (t !== 'dark' && t !== 'light') {
-        if (t !== null) { try { storage.removeItem(STORAGE_KEY); } catch (_) { /* empty */ } }
+        if (t !== null) { try { storage.removeItem(STORAGE_KEY); } catch (_) { /* storage unavailable */ } }
         t = 'light';
       }
       expect(t).toBe('light');
@@ -376,10 +375,9 @@ describe('Theme Toggle', () => {
 
     it('clears invalid stored value and falls back', () => {
       storage.setItem(STORAGE_KEY, 'invalid');
-      let t = null;
-      try { t = storage.getItem(STORAGE_KEY); } catch (_) { t = null; }
+      let t = (() => { try { return storage.getItem(STORAGE_KEY); } catch (_) { return null; } })();
       if (t !== 'dark' && t !== 'light') {
-        if (t !== null) { try { storage.removeItem(STORAGE_KEY); } catch (_) { /* empty */ } }
+        if (t !== null) { try { storage.removeItem(STORAGE_KEY); } catch (_) { /* storage unavailable */ } }
         t = 'light'; // fallback
       }
       expect(t).toBe('light');
@@ -392,10 +390,9 @@ describe('Theme Toggle', () => {
         setItem: () => { throw new Error('storage unavailable'); },
         removeItem: () => { throw new Error('storage unavailable'); },
       };
-      let t = null;
-      try { t = throwingStorage.getItem(STORAGE_KEY); } catch (_) { t = null; }
+      let t = (() => { try { return throwingStorage.getItem(STORAGE_KEY); } catch (_) { return null; } })();
       if (t !== 'dark' && t !== 'light') {
-        if (t !== null) { try { throwingStorage.removeItem(STORAGE_KEY); } catch (_) { /* empty */ } }
+        if (t !== null) { try { throwingStorage.removeItem(STORAGE_KEY); } catch (_) { /* storage unavailable */ } }
         t = 'light';
       }
       expect(t).toBe('light');

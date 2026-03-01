@@ -120,8 +120,7 @@ export function getActiveThemeColors(): ThemeColors {
  * Cyberpunk (dark) theme color palette — kept as the default export for
  * backwards compatibility with existing Chart.js consumers.
  *
- * @deprecated since v2.0 — will be removed in v3.0.
- *   Prefer `getActiveThemeColors()` which returns the correct palette for the
+ * @deprecated Prefer `getActiveThemeColors()` which returns the correct palette for the
  *   current `data-theme` value.  Migration:
  *   ```ts
  *   // Before
