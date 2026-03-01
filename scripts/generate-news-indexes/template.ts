@@ -247,7 +247,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     <!-- Pagination controls -->
     <div class="pagination-controls" role="navigation" aria-label="${escapeHtml(lang.i18n.loadMore)}">
       <p id="article-counter" class="article-counter" aria-live="polite" aria-atomic="true"></p>
-      <button id="load-more-btn" class="load-more-btn btn" style="display:none" onclick="loadMore()" aria-label="${escapeHtml(lang.i18n.loadMore)}">${escapeHtml(lang.i18n.loadMore)}</button>
+      <button id="load-more-btn" class="load-more-btn btn" style="display:none" aria-label="${escapeHtml(lang.i18n.loadMore)}">${escapeHtml(lang.i18n.loadMore)}</button>
     </div>
   </div>
   
@@ -455,6 +455,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     document.getElementById('filter-type').addEventListener('change', filterArticles);
     document.getElementById('filter-topic').addEventListener('change', filterArticles);
     document.getElementById('filter-sort').addEventListener('change', filterArticles);
+    document.getElementById('load-more-btn').addEventListener('click', loadMore);
     
     // Debounced search input listener
     let searchTimer;

@@ -358,6 +358,9 @@ describe('Generate News Indexes', () => {
       expect(enContent).toContain('id="load-more-btn"');
       expect(enContent).toContain('id="article-counter"');
       expect(enContent).toContain('aria-live="polite"');
+      // load-more must use addEventListener, not an inline onclick handler
+      expect(enContent).not.toContain('onclick="loadMore()"');
+      expect(enContent).toContain("getElementById('load-more-btn').addEventListener('click', loadMore)");
     });
 
     it('should include PAGE_SIZE and pagination logic', () => {
