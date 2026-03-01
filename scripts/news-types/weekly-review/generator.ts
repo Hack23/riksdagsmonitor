@@ -22,6 +22,7 @@ import type { Language } from '../../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../../types/article.js';
 import { getCurrentRiksmote } from '../motions.js';
 import type { GenerationOptions, TitleSet, VotingRecord } from './types.js';
+import { REQUIRED_TOOLS } from './types.js';
 import { loadCIAContext, enrichWithFullText, attachSpeechesToDocuments, formatDateForSlug } from './data-loader.js';
 import {
   analyzeCoalitionStress,
@@ -190,15 +191,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       const watchPoints = extractWatchPoints({ documents, ciaContext }, lang);
       const metadata = generateMetadata({ documents, ciaContext }, 'weekly-review', lang);
       const readTime: string = calculateReadTime(fullContent);
-      const sources: string[] = generateSources([
-        'search_dokument',
-        'get_dokument_innehall',
-        'search_anforanden',
-        'get_betankanden',
-        'get_propositioner',
-        'get_motioner',
-        'search_voteringar',
-      ]);
+      const sources: string[] = generateSources([...REQUIRED_TOOLS]);
 
       const titles: TitleSet = getTitles(lang, documents.length);
 
