@@ -10937,18 +10937,4 @@ html[data-theme="light"] .installation-step {
   color: var(--link-hover, #ff006e);
 }
 
-/* News page footer disclaimer */
-.news-page .footer-disclaimer {
-  font-size: 0.85rem;
-  color: #a0a0a0;
-  margin-top: 0.5rem;
-}
 
-.news-page .footer-disclaimer a {
-  color: #00d9ff;
-  text-decoration: underline;
-}
-
-.news-page .footer-disclaimer a:hover {
-  color: var(--link-hover, #ff006e);
-}
