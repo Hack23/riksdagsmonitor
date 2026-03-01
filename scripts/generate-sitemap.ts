@@ -119,6 +119,7 @@ function getFileModTime(filePath: string): string {
 
 /**
  * Get news articles with metadata.
+ * Supports date-based subdirectory structure: news/{year}/{month}/article.html
  */
 function getNewsArticles(): ArticleGroup[] {
   console.log('📰 Scanning news directory...');
@@ -128,39 +129,49 @@ function getNewsArticles(): ArticleGroup[] {
     return [];
   }
 
-  const files = fs
-    .readdirSync(NEWS_DIR)
-    .filter((file) => file.endsWith('.html') && file !== 'index.html' && !file.startsWith('index_'));
-
-  console.log(`  Found ${files.length} news articles`);
-
   // Group articles by base slug (without language suffix)
   const articles = new Map<string, ArticleGroup>();
 
-  files.forEach((file) => {
-    const match = file.match(/^(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
-    if (match) {
-      const baseSlug = match[1]!;
-      const lang = match[2]!;
-      const filePath = path.join(NEWS_DIR, file);
-      const fileModTime = getFileModTime(filePath);
+  function scanDir(dir: string): void {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        scanDir(path.join(dir, entry.name));
+      } else if (entry.isFile() && entry.name !== 'index.html' && !entry.name.startsWith('index_') && entry.name.endsWith('.html')) {
+        const file = entry.name;
+        const match = file.match(/^(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
+        if (match) {
+          const baseSlug = match[1]!;
+          const lang = match[2]!;
+          const filePath = path.join(dir, file);
+          const fileModTime = getFileModTime(filePath);
 
-      if (!articles.has(baseSlug)) {
-        articles.set(baseSlug, {
-          baseSlug,
-          languages: [],
-          lastmod: fileModTime,
-        });
-      } else {
-        const article = articles.get(baseSlug)!;
-        if (!article.lastmod || new Date(fileModTime) > new Date(article.lastmod)) {
-          article.lastmod = fileModTime;
+          // Include subdirectory prefix in baseSlug (e.g., "2026/02/2026-02-13-article")
+          const relDir = path.relative(NEWS_DIR, dir).split(path.sep).join('/');
+          const fullBaseSlug = relDir ? `${relDir}/${baseSlug}` : baseSlug;
+
+          if (!articles.has(fullBaseSlug)) {
+            articles.set(fullBaseSlug, {
+              baseSlug: fullBaseSlug,
+              languages: [],
+              lastmod: fileModTime,
+            });
+          } else {
+            const article = articles.get(fullBaseSlug)!;
+            if (!article.lastmod || new Date(fileModTime) > new Date(article.lastmod)) {
+              article.lastmod = fileModTime;
+            }
+          }
+
+          articles.get(fullBaseSlug)!.languages.push(lang);
         }
       }
-
-      articles.get(baseSlug)!.languages.push(lang);
     }
-  });
+  }
+
+  scanDir(NEWS_DIR);
+
+  console.log(`  Found ${articles.size} news articles`);
 
   return Array.from(articles.values());
 }

@@ -10,7 +10,7 @@
  */
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
-import { join, dirname } from 'path';
+import { join, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -56,10 +56,22 @@ interface JsonLdArticle {
   url?: string;
 }
 
+function collectNewsFiles(dir: string): string[] {
+  const result: string[] = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      result.push(...collectNewsFiles(join(dir, entry.name)));
+    } else if (entry.name.endsWith('.html') && !entry.name.startsWith('index')) {
+      result.push(join(dir, entry.name));
+    }
+  }
+  return result;
+}
+
 function extractMetadata(): void {
   const newsDir = join(ROOT, 'news');
-  const files = readdirSync(newsDir)
-    .filter((f: string) => f.endsWith('.html') && !f.startsWith('index'));
+  const allFilePaths = collectNewsFiles(newsDir);
+  const files = allFilePaths.map((fp) => relative(newsDir, fp));
 
   const articles: ArticleMetadata[] = [];
 

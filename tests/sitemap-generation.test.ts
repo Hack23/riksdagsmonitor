@@ -111,19 +111,19 @@ describe('Sitemap Generation', () => {
     });
 
     it('should include news articles', () => {
-      const newsUrls: RegExpMatchArray | null = sitemapContent.match(/<loc>https:\/\/riksdagsmonitor\.com\/news\/\d{4}-\d{2}-\d{2}-.+?\.html<\/loc>/g);
+      const newsUrls: RegExpMatchArray | null = sitemapContent.match(/<loc>https:\/\/riksdagsmonitor\.com\/news\/\d{4}\/\d{2}\/\d{4}-\d{2}-\d{2}-.+?\.html<\/loc>/g);
       const newsUrlCount: number = (newsUrls || []).length;
       console.log(`  ✓ Found ${newsUrlCount} news article URLs`);
       expect(newsUrlCount).toBeGreaterThan(50);
     });
 
     it('should include articles in multiple languages', () => {
-      // Check for language-specific news articles (year-agnostic)
+      // Check for language-specific news articles with date-based directory structure
       const languages: readonly string[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
       const foundLanguages = new Set<string>();
 
       languages.forEach(lang => {
-        const pattern = new RegExp(`news/\\d{4}-\\d{2}-\\d{2}-.+-${lang}\\.html`);
+        const pattern = new RegExp(`news/\\d{4}/\\d{2}/\\d{4}-\\d{2}-\\d{2}-.+-${lang}\\.html`);
         if (pattern.test(sitemapContent)) {
           foundLanguages.add(lang);
         }

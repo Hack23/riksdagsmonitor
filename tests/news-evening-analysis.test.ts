@@ -29,6 +29,20 @@ const __dirname = path.dirname(__filename);
 const NEWS_DIR = path.join(__dirname, '..', 'news');
 const METADATA_DIR = path.join(NEWS_DIR, 'metadata');
 
+/**
+ * Resolve path to a dated article under the date-based subdirectory structure.
+ * Files live at news/{year}/{month}/{filename}.
+ * Falls back to flat NEWS_DIR for backwards compatibility during transitions.
+ */
+function articlePath(filename: string): string {
+  const match = filename.match(/^(\d{4})-(\d{2})-/);
+  if (match) {
+    const subPath = path.join(NEWS_DIR, match[1]!, match[2]!, filename);
+    if (fs.existsSync(subPath)) return subPath;
+  }
+  return path.join(NEWS_DIR, filename);
+}
+
 /** Parsed article structure for test assertions */
 interface ParsedArticle {
   content: string;
@@ -315,7 +329,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should parse evening analysis articles correctly', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -328,7 +342,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should include all 5 Editorial Pillars', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -349,7 +363,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should have minimum 200 words per major section', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -375,7 +389,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should have analytical thesis in lead paragraph', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -387,7 +401,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should validate proper HTML structure', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -406,7 +420,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should have proper hreflang tags for all languages', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -431,7 +445,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should include Schema.org NewsArticle structured data', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -447,7 +461,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should use external styles.css instead of embedded CSS', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -475,7 +489,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should follow Economist-style journalism standards', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -496,7 +510,7 @@ describe('Evening Analysis Structure Validation', () => {
   });
 
   it('should have RTL direction for Arabic articles', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-ar.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-ar.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Arabic article not found, skipping');
@@ -514,7 +528,7 @@ describe('Analytical Depth Tests', () => {
   });
 
   it('should include historical context', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -528,7 +542,7 @@ describe('Analytical Depth Tests', () => {
   });
 
   it('should have international comparison when appropriate', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -543,7 +557,7 @@ describe('Analytical Depth Tests', () => {
   });
 
   it('should include "so what" analysis', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -555,7 +569,7 @@ describe('Analytical Depth Tests', () => {
   });
 
   it('should include "what next" analysis', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -567,7 +581,7 @@ describe('Analytical Depth Tests', () => {
   });
 
   it('should calculate analytical depth score', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -583,7 +597,7 @@ describe('Analytical Depth Tests', () => {
   });
 
   it('should include multiple party perspectives', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -597,7 +611,7 @@ describe('Analytical Depth Tests', () => {
   });
 
   it('should cite riksdag-regering-mcp sources', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Test article not found, skipping');
@@ -693,7 +707,7 @@ describe('Multi-Language Quality Tests', () => {
     
     for (const lang of allLanguages) {
       const filename = `${dateSlug}-evening-analysis-${lang}.html`;
-      const filepath = path.join(NEWS_DIR, filename);
+      const filepath = articlePath(filename);
       
       if (fs.existsSync(filepath)) {
         generated.push(lang);
@@ -711,7 +725,7 @@ describe('Multi-Language Quality Tests', () => {
     ];
     
     for (const { file, expectedLang } of testFiles) {
-      const filepath = path.join(NEWS_DIR, file);
+      const filepath = articlePath(file);
       
       if (!fs.existsSync(filepath)) {
         continue;
@@ -731,7 +745,7 @@ describe('Multi-Language Quality Tests', () => {
     const structures: Array<{ hasSections: boolean }> = [];
     
     for (const file of testFiles) {
-      const filepath = path.join(NEWS_DIR, file);
+      const filepath = articlePath(file);
       
       if (!fs.existsSync(filepath)) {
         continue;
@@ -774,7 +788,7 @@ describe('Multi-Language Quality Tests', () => {
     const analyticalScores: number[] = [];
     
     for (const file of testFiles) {
-      const filepath = path.join(NEWS_DIR, file);
+      const filepath = articlePath(file);
       
       if (!fs.existsSync(filepath)) {
         continue;
@@ -792,7 +806,7 @@ describe('Multi-Language Quality Tests', () => {
   });
 
   it('should have RTL direction for Hebrew articles', () => {
-    const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-he.html');
+    const testFile = articlePath('2026-02-13-evening-analysis-he.html');
     
     if (!fs.existsSync(testFile)) {
       console.warn('⚠️ Hebrew article not found, skipping');
