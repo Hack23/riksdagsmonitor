@@ -18,6 +18,7 @@ import {
   getFooterLabel,
   getNewsIndexFilename,
   sanitizeArticleBody,
+  fixHtmlNesting,
   formatDate,
   generateEventCalendar,
   generateWatchSection,
@@ -56,6 +57,9 @@ export function generateArticleHTML(data: ArticleData): string {
   const dateObj: Date = new Date(date);
   const formattedDate: string = formatDate(dateObj, lang);
   const isoDate: string = dateObj.toISOString().split('T')[0] ?? '';
+
+  // Fix invalid HTML nesting once so both the rendered body and JSON-LD are consistent
+  const fixedContent: string = fixHtmlNesting(content);
 
   // Fall back to English labels if language not supported
   const typeLabel: string = TYPE_LABELS[lang]?.[type] || TYPE_LABELS.en[type] || 'News';
@@ -161,8 +165,8 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
       "height": 630
     },
     "articleSection": "${typeLabel}",
-    "articleBody": "${sanitizeArticleBody(escapeHtml(content))}...",
-    "wordCount": ${Math.ceil(content.length / 5)},
+    "articleBody": "${sanitizeArticleBody(escapeHtml(fixedContent))}...",
+    "wordCount": ${Math.ceil(fixedContent.length / 5)},
     "inLanguage": "${lang}",
     "keywords": "${keywords.join(', ')}",
     "about": {
@@ -273,7 +277,7 @@ ${events.length > 0 ? generateEventCalendar(events as ReadonlyArray<EventGridIte
       ${subtitle}
     </p>
 
-${content}
+${fixedContent}
 
 ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<WatchPoint>, lang) : ''}
 
