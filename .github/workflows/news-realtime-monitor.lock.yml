@@ -23,7 +23,7 @@
 #
 # Monitors Riksdag and Government for real-time updates and generates breaking news articles with Playwright validation. Runs twice daily on weekdays, once on weekends for government press releases and crisis communications.
 #
-# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"7994fb29d491e4cf6a9302ae58718d1564333c00e07c19c01cf36feb13c35a3c","compiler_version":"v0.51.2"}
+# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"6f216ff62394de1df571cc059808212331fd65f81e02bea80e5b5fa55eaefd36","compiler_version":"v0.51.2"}
 
 name: "News Realtime Monitor"
 "on":
