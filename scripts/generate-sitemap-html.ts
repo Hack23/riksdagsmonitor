@@ -262,7 +262,7 @@ const LANGUAGE_META: Record<Language, LanguageMeta> = {
       newsIndex: 'Nieuwsindex', newsDesc: 'Laatste politieke nieuws, analyses en updates van het Zweedse Parlement en de regering.',
       ciaDashboard: 'CIA Inlichtingendashboard', ciaDashboardDesc: 'Interactief CIA inlichtingendashboard: Partijprestaties, verkiezingsprognoses, parlementariërs.',
       politicianDashboard: 'Politicus carrière & productiviteitsanalyse', politicianDashboardDesc: 'Uitgebreid politicus carrière- en productiviteitsdashboard.',
-      mainPlatformDesc: 'Zweedse verkiezingen 2026 live: Realtime monitoring, coalitieprogoses, parlementaire analyse.',
+      mainPlatformDesc: 'Zweedse verkiezingen 2026 live: Realtime monitoring, coalitieprognoses, parlementaire analyse.',
       xmlSitemap: 'XML Sitemap', xmlSitemapDesc: 'Machineleesbare sitemap voor zoekmachines (XML-formaat).',
       robotsTxt: 'Robots.txt', robotsTxtDesc: 'Zoekmachine-crawler-instructies.',
       sitemapInOtherLanguages: 'Deze sitemap in andere talen', accessPlatform: 'Toegang tot het hoofdplatform in uw voorkeurstaal.',
@@ -467,7 +467,18 @@ function getDocsSections(): { api: boolean; coverage: boolean; testResults: bool
  * Escape HTML special characters to prevent XSS.
  */
 function escapeHtml(text: string): string {
-  return text
+  // First decode any existing HTML entities so we don't double-escape them
+  const decoded = text
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&#x27;/g, "'")
+    .replace(/&#(\d+);/g, (_m, code) => String.fromCharCode(Number(code)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_m, hex) => String.fromCharCode(parseInt(hex, 16)));
+  // Then escape for safe HTML output
+  return decoded
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')

@@ -70,9 +70,6 @@ function escapeXml(text: string): string {
 }
 
 /**
- * Extract metadata from a news article HTML file.
- */
-/**
  * Derive a stable publication date from the filename date prefix (YYYY-MM-DD)
  * or fall back to the file's modification time. Never uses "now" so builds are
  * deterministic.
