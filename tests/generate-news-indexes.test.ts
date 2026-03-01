@@ -386,6 +386,20 @@ describe('Generate News Indexes', () => {
       expect(enContent).not.toContain('DOMContentLoaded');
       expect(enContent).not.toContain('no-articles');
     });
+
+    it('should include esc() helper and apply it to article fields in buildArticleCard', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      // esc() helper must be present to prevent XSS via innerHTML
+      expect(enContent).toContain('function esc(');
+      expect(enContent).toContain('.replace(/&/g,');
+      // article fields must be escaped when interpolated
+      expect(enContent).toContain('esc(article.title)');
+      expect(enContent).toContain('esc(article.slug)');
+      expect(enContent).toContain('esc(article.excerpt)');
+      expect(enContent).toContain('esc(tag)');
+    });
   });
 
   describe('classifyArticleType multi-language', () => {

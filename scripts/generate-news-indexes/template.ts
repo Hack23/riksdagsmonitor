@@ -255,6 +255,11 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     // Available in translation (for current language)
     const AVAILABLE_IN_TEXT = '${escapeHtml(AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in')}';
     
+    // HTML-escape helper to prevent XSS when interpolating article fields into innerHTML
+    function esc(str) {
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+    }
+    
     // Pagination i18n strings
     const i18nLoadMore = ${JSON.stringify(lang.i18n.loadMore)};
     const i18nShowing = ${lang.i18n.showing};
@@ -271,7 +276,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     function buildArticleCard(article) {
       // Generate language badge for the article using shared LANGUAGE_FLAGS
       const flag = LANGUAGE_FLAGS[article.lang] || '🌐';
-      const langBadge = \`<span class="language-badge" aria-label="\${article.lang} language"><span aria-hidden="true">\${flag}</span> \${article.lang.toUpperCase()}</span>\`;
+      const langBadge = \`<span class="language-badge" aria-label="\${esc(article.lang)} language"><span aria-hidden="true">\${flag}</span> \${esc(article.lang.toUpperCase())}</span>\`;
       
       // Generate available languages display if multiple languages exist
       const availableLangs = article.availableLanguages || [article.lang];
@@ -279,7 +284,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       if (availableLangs.length > 1) {
         const availableBadges = availableLangs.map(l => {
           const lf = LANGUAGE_FLAGS[l] || '🌐';
-          return \`<span class="lang-badge-sm"><span aria-hidden="true">\${lf}</span> \${l.toUpperCase()}</span>\`;
+          return \`<span class="lang-badge-sm"><span aria-hidden="true">\${lf}</span> \${esc(l.toUpperCase())}</span>\`;
         }).join(' ');
         availableDisplay = \`<p class="available-languages"><strong>\${AVAILABLE_IN_TEXT}:</strong> \${availableBadges}</p>\`;
       }
@@ -287,17 +292,17 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       return \`
       <article class="article-card">
         <div class="article-meta">
-          <time class="article-date" datetime="\${article.date}">\${formatDate(article.date)}</time>
+          <time class="article-date" datetime="\${esc(article.date)}">\${formatDate(article.date)}</time>
           <span class="article-type">\${localizeType(article.type)}</span>
           \${langBadge}
         </div>
         <h2 class="article-title">
-          <a href="\${article.slug}">\${article.title}</a>
+          <a href="\${esc(article.slug)}">\${esc(article.title)}</a>
         </h2>
-        <p class="article-excerpt">\${article.excerpt}</p>
+        <p class="article-excerpt">\${esc(article.excerpt)}</p>
         \${availableDisplay}
         <div class="article-tags">
-          \${article.tags.map(tag => \`<span class="tag">\${tag}</span>\`).join('')}
+          \${article.tags.map(tag => \`<span class="tag">\${esc(tag)}</span>\`).join('')}
         </div>
       </article>
     \`;
