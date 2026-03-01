@@ -27,7 +27,7 @@ export const TITLE_SUFFIX_TEMPLATES: Readonly<Record<string, (t: string) => stri
 };
 
 /** Extract meaningful keywords from text for cross-reference matching (min 2 chars, captures EU, KU, etc.; splits on whitespace, hyphens, and commas) */
-export function extractKeywords(text: string): string[] {
+function extractKeywords(text: string): string[] {
   return text.toLowerCase().split(/[\s,–-]+/u).filter(w => w.length >= 2);
 }
 
