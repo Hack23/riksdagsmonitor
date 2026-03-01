@@ -56,8 +56,9 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
         ? svSpan(escapedEventTitle, lang)
         : escapedEventTitle;
 
+      const dayPrefix = dayName ? escapeHtml(dayName) + ' - ' : '';
       content += `
-    <h3>${dayName ? dayName + ' - ' : ''}${titleHtml}</h3>
+    <h3>${dayPrefix}${titleHtml}</h3>
     <p>${escapeHtml(event.description || `${eventTime}: ${event.details || 'Parliamentary session scheduled.'}`)}</p>
 `;
 
