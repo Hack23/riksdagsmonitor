@@ -340,6 +340,52 @@ describe('Generate News Indexes', () => {
       expect(heContent).toContain('dir="rtl"');
       expect(heContent).toContain('lang="he"');
     });
+
+    it('should include search input with id and aria-label', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('id="search-input"');
+      expect(enContent).toContain('type="search"');
+      // aria-label present
+      expect(enContent).toMatch(/aria-label="[^"]+"\s+autocomplete="off"/);
+    });
+
+    it('should include load-more button and article counter', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('id="load-more-btn"');
+      expect(enContent).toContain('id="article-counter"');
+      expect(enContent).toContain('aria-live="polite"');
+    });
+
+    it('should include PAGE_SIZE and pagination logic', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('PAGE_SIZE');
+      expect(enContent).toContain('loadMore()');
+      expect(enContent).toContain('visibleCount');
+    });
+
+    it('should include readURLParams and updateURL for URL state management', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('readURLParams()');
+      expect(enContent).toContain('updateURL()');
+      expect(enContent).toContain('URLSearchParams');
+    });
+
+    it('should not include conflicting DOMContentLoaded content loader', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      // The old dynamic content loader must not be present (it could overwrite pagination state)
+      expect(enContent).not.toContain('DOMContentLoaded');
+      expect(enContent).not.toContain('no-articles');
+    });
   });
 
   describe('classifyArticleType multi-language', () => {

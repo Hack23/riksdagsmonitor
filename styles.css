@@ -8978,10 +8978,14 @@ body.news-page {
   font-family: 'Inter', sans-serif;
 }
 
-.news-page .filter-group input[type="search"]:hover,
-.news-page .filter-group input[type="search"]:focus {
+.news-page .filter-group input[type="search"]:hover {
   border-color: var(--primary-cyan, #00d9ff);
-  outline: none;
+}
+
+.news-page .filter-group input[type="search"]:focus-visible {
+  border-color: var(--primary-cyan, #00d9ff);
+  outline: 2px solid var(--primary-cyan, #00d9ff);
+  outline-offset: 2px;
 }
 
 .news-page .pagination-controls {

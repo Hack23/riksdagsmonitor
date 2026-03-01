@@ -256,7 +256,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     const AVAILABLE_IN_TEXT = '${escapeHtml(AVAILABLE_IN_TRANSLATIONS[langKey] || 'Available in')}';
     
     // Pagination i18n strings
-    const i18nLoadMore = '${escapeHtml(lang.i18n.loadMore)}';
+    const i18nLoadMore = ${JSON.stringify(lang.i18n.loadMore)};
     const i18nShowing = ${lang.i18n.showing};
     
     // Pagination state
@@ -426,10 +426,21 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
     function readURLParams() {
       const params = new URLSearchParams(window.location.search);
-      if (params.has('type')) document.getElementById('filter-type').value = params.get('type');
-      if (params.has('topic')) document.getElementById('filter-topic').value = params.get('topic');
-      if (params.has('sort')) document.getElementById('filter-sort').value = params.get('sort');
-      if (params.has('q')) document.getElementById('search-input').value = params.get('q');
+      
+      function safeSetSelect(id, value) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const opts = Array.from(el.options);
+        if (opts.some(o => o.value === value)) {
+          el.value = value;
+        }
+      }
+      
+      if (params.has('type')) safeSetSelect('filter-type', params.get('type'));
+      if (params.has('topic')) safeSetSelect('filter-topic', params.get('topic'));
+      if (params.has('sort')) safeSetSelect('filter-sort', params.get('sort'));
+      const searchInput = document.getElementById('search-input');
+      if (searchInput && params.has('q')) searchInput.value = params.get('q');
     }
     
     // Event listeners
@@ -447,36 +458,6 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     // Read URL state and render
     readURLParams();
     filterArticles();
-  </script>
-
-  <!-- Dynamic Content Loader -->
-  <script>
-    // Localization data
-    const i18n = {
-      noArticles: '${lang.i18n.noArticles}',
-      loading: '${lang.i18n.loading}',
-      articleCount: ${lang.i18n.articleCount}
-    };
-    
-    // Dynamic content loader
-    document.addEventListener('DOMContentLoaded', () => {
-      const articlesGrid = document.querySelector('.articles-grid');
-      if (!articlesGrid) return;
-      
-      const articleCards = articlesGrid.querySelectorAll('.article-card');
-      const articleCount = articleCards.length;
-      
-      // Update article count if element exists
-      const countElement = document.querySelector('.article-count');
-      if (countElement) {
-        countElement.textContent = i18n.articleCount(articleCount);
-      }
-      
-      // Show no articles message if empty
-      if (articleCount === 0) {
-        articlesGrid.innerHTML = \`<p class="no-articles">\${i18n.noArticles}</p>\`;
-      }
-    });
   </script>
 
   </main>
