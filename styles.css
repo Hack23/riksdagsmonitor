@@ -10638,11 +10638,6 @@ html[data-theme="light"] .installation-step {
 
 /* ─── Theme Toggle Button ─────────────────────────────────────────────────── */
 
-/* Ensure header can anchor the absolute-positioned button */
-header {
-  position: relative;
-}
-
 .theme-toggle-btn {
   position: absolute;
   top: 1rem;

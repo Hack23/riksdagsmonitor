@@ -56,6 +56,8 @@ export const DARK_THEME_COLORS: ThemeColors = {
   purple:  '#bd93f9',
   red:     '#ef476f',
   blue:    '#58a6ff',
+  tooltipBg:  'rgba(10, 14, 39, 0.95)',
+  bodyText:   '#e0e0e0',
   parties: PARTY_COLORS,
 } as const;
 
@@ -75,6 +77,8 @@ export const LIGHT_THEME_COLORS: ThemeColors = {
   purple:  '#7B2CBF',
   red:     '#DC3545',
   blue:    '#007744',
+  tooltipBg:  'rgba(245, 245, 245, 0.95)',
+  bodyText:   '#1a1e3d',
   parties: PARTY_COLORS,
 } as const;
 
@@ -82,8 +86,10 @@ export const LIGHT_THEME_COLORS: ThemeColors = {
 
 /**
  * Returns the active ThemeColors based on the current `data-theme` attribute
- * on `<html>`.  Falls back to dark palette when the attribute is absent
- * (consistent with the existing @media prefers-color-scheme:dark default).
+ * on `<html>`.  When the attribute is absent (e.g. before the anti-flash
+ * snippet runs), falls back to `prefers-color-scheme` — consistent with the
+ * CSS `@media (prefers-color-scheme: dark)` default.  Only hard-defaults to
+ * dark when neither attribute nor `matchMedia` is available (SSR/test).
  *
  * Call this wherever Chart.js datasets need the current palette, e.g.:
  * ```ts
@@ -94,7 +100,14 @@ export const LIGHT_THEME_COLORS: ThemeColors = {
 export function getActiveThemeColors(): ThemeColors {
   if (typeof document === 'undefined') return DARK_THEME_COLORS; // SSR / test guard
   const theme = document.documentElement.getAttribute('data-theme');
-  return theme === 'light' ? LIGHT_THEME_COLORS : DARK_THEME_COLORS;
+  if (theme === 'light') return LIGHT_THEME_COLORS;
+  if (theme === 'dark') return DARK_THEME_COLORS;
+  // data-theme not set — mirror the CSS prefers-color-scheme behaviour
+  if (typeof window !== 'undefined' && window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return DARK_THEME_COLORS;
+  }
+  return LIGHT_THEME_COLORS;
 }
 
 /**

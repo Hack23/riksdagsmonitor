@@ -22,6 +22,8 @@ export interface ThemeColors {
   readonly purple: string;
   readonly red: string;
   readonly blue: string;
+  readonly tooltipBg: string;
+  readonly bodyText: string;
   readonly parties: Readonly<Record<string, string>>;
 }
 

@@ -55,9 +55,9 @@ export function getResponsiveOptions(): Record<string, unknown> {
         },
       },
       tooltip: {
-        backgroundColor: 'rgba(10, 14, 39, 0.95)',
+        backgroundColor: getActiveThemeColors().tooltipBg,
         titleColor: getActiveThemeColors().cyan,
-        bodyColor: '#e0e0e0',
+        bodyColor: getActiveThemeColors().bodyText,
         borderColor: getActiveThemeColors().cyan,
         borderWidth: 1,
         padding: isMobile ? 6 : 10,

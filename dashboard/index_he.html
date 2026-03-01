@@ -3,6 +3,7 @@
 <head>
 <title>לוח מחוונים CIA | מוניטור הריקסדאג השוודי | Riksdagsmonitor</title>
 <meta charset="UTF-8">
+<script>(function(){var t=null;try{t=localStorage.getItem('riksdagsmonitor-theme');}catch(e){t=null;}if(!t){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../styles.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
@@ -106,6 +107,14 @@
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1>📊 לוח מחוונים מודיעין CIA</h1>
 <p class="tagline">הדמיה אינטראקטיבית של מודיעין הריקסדאג השוודי</p>
 <p class="data-attribution">
@@ -270,6 +279,7 @@
 
 <!-- JavaScript Modules -->
     <!-- CIA Dashboard entry point -->
+    <script src="../js/theme-toggle.js"></script>
     <script type="module" src="/src/browser/cia-entry.ts"></script>
 </body>
 </html>
