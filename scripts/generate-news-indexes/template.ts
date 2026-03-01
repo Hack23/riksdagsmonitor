@@ -296,6 +296,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     // Pagination state
     const PAGE_SIZE = 20;
     let visibleCount = PAGE_SIZE;
+    let restoringFromURL = false;
     
     // Dynamic articles array - generated from news/ directory
     const articles = ${JSON.stringify(displayData, null, 2).replace(/<\//g, '<\\/')};
@@ -408,8 +409,11 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       if (topicFilter !== 'all') params.set('topic', topicFilter);
       if (sortFilter !== 'date-desc') params.set('sort', sortFilter);
       if (searchInput) params.set('q', searchInput);
-      const page = Math.ceil(visibleCount / PAGE_SIZE);
-      if (page > 1) params.set('page', String(page));
+      const effectiveVisible = Math.min(visibleCount, filteredArticles.length);
+      const page = Math.ceil(effectiveVisible / PAGE_SIZE);
+      if (page > 1 && filteredArticles.length > PAGE_SIZE) {
+        params.set('page', String(page));
+      }
       const newURL = params.toString() ? '?' + params.toString() : window.location.pathname;
       if (window.history && window.history.replaceState) {
         window.history.replaceState(null, '', newURL);
@@ -469,9 +473,11 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       }
       
       filteredArticles = filtered;
-      // Only reset visibleCount to the first page when not restoring from a URL "page" parameter.
-      const currentParams = new URLSearchParams(window.location.search);
-      if (!(currentParams.has('page') && visibleCount > PAGE_SIZE)) {
+      // Reset visibleCount on user-initiated filter changes, but preserve it
+      // for the initial render when restoring from URL "page" parameter.
+      if (restoringFromURL) {
+        restoringFromURL = false;
+      } else {
         visibleCount = PAGE_SIZE;
       }
       updateURL();
@@ -497,7 +503,10 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       if (searchInput && params.has('q')) searchInput.value = params.get('q');
       if (params.has('page')) {
         const page = parseInt(params.get('page'), 10);
-        if (!isNaN(page) && page > 1) visibleCount = page * PAGE_SIZE;
+        if (!isNaN(page) && page > 1) {
+          visibleCount = page * PAGE_SIZE;
+          restoringFromURL = true;
+        }
       }
     }
     
