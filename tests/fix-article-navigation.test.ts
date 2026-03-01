@@ -106,6 +106,19 @@ const BARE_ARTICLE_NO_NAV = `<!DOCTYPE html>
 </body>
 </html>`;
 
+/** Article with a skip-link as the first element after <body> */
+const ARTICLE_WITH_SKIP_LINK = `<!DOCTYPE html>
+<html lang="en">
+<head><title>Test</title></head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<article id="main-content" class="news-article">
+  <h1>Headline</h1>
+  <p>Content here.</p>
+</article>
+</body>
+</html>`;
+
 // ---------------------------------------------------------------------------
 // Helper
 // ---------------------------------------------------------------------------
@@ -117,10 +130,19 @@ const SLUG = '2026-01-01-test';
 // ---------------------------------------------------------------------------
 
 describe('transformContent — language switcher', () => {
-  it('inserts language-switcher immediately after <body>', () => {
+  it('inserts language-switcher immediately after <body> when no skip-link present', () => {
     const { content } = transformContent(BARE_ARTICLE, SLUG, 'en');
     // The switcher nav must appear right after <body> (possibly with a newline)
     expect(content).toMatch(/<body>\s*<nav class="language-switcher"/);
+  });
+
+  it('inserts language-switcher after skip-link when skip-link is present', () => {
+    const { content, addedSwitcher } = transformContent(ARTICLE_WITH_SKIP_LINK, SLUG, 'en');
+    expect(addedSwitcher).toBe(true);
+    // skip-link must come before language-switcher
+    expect(content.indexOf('skip-link')).toBeLessThan(content.indexOf('language-switcher'));
+    // skip-link must be directly after <body> (first child)
+    expect(content).toMatch(/<body>\s*<a[^>]*class="skip-link"/);
   });
 
   it('adds language-switcher when missing', () => {

@@ -79,7 +79,13 @@ export function transformContent(
   const hasSwitcher = result.includes('language-switcher');
   if (!hasSwitcher) {
     const switcherHtml = generateArticleLanguageSwitcher(baseSlug, lang);
-    result = result.replace(/(<body>)/, `$1\n${switcherHtml}`);
+    // Prefer inserting AFTER the skip-link so it remains the first focusable element.
+    const skipLinkPattern = /(<a[^>]*class="skip-link"[^>]*>[\s\S]*?<\/a>)/;
+    if (skipLinkPattern.test(result)) {
+      result = result.replace(skipLinkPattern, `$1\n${switcherHtml}`);
+    } else {
+      result = result.replace(/(<body[^>]*>)/, `$1\n${switcherHtml}`);
+    }
     addedSwitcher = true;
   } else {
     // Update existing switcher to have all 14 languages.
