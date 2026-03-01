@@ -316,6 +316,7 @@ describe('Pipeline: generateArticleHTML — all 14 language variants', () => {
     }));
 
     const results = pipelineValidation.validateArticleBatch(articles);
+    expect(results).toHaveLength(articles.length);
 
     results.forEach(r => {
       expect(r.passed, `Language ${r.filename} failed: ${r.errors.join(', ')}`).toBe(true);
@@ -749,10 +750,17 @@ describe('Pipeline: validateArticleBatch across all 8 article types', () => {
       }),
     ]);
 
-    const successful = results.filter(r => r.success && r.articles?.length);
-    expect(successful.length).toBeGreaterThan(0);
+    // Ensure all 8 generators succeeded and produced at least one article each
+    expect(results).toHaveLength(8);
+    results.forEach((r, index) => {
+      expect(r.success, `Generator index ${index} failed`).toBe(true);
+      expect(
+        r.articles && r.articles.length > 0,
+        `Generator index ${index} produced no articles`,
+      ).toBe(true);
+    });
 
-    const batch = successful.map(r => {
+    const batch = results.map(r => {
       const art = (r.articles as GeneratedArticle[])[0]!;
       return { filename: art.filename, html: art.html };
     });
