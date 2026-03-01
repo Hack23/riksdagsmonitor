@@ -10931,3 +10931,7 @@ html[data-theme="light"] .installation-step {
   color: #00d9ff;
   text-decoration: underline;
 }
+
+.news-page .footer-disclaimer a:hover {
+  color: var(--link-hover, #ff006e);
+}
