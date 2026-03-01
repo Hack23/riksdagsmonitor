@@ -1483,7 +1483,7 @@ Remember: You are producing world-class political journalism that informs Swedis
 **Article Maintenance & Fixing:**
 | Script | Usage | Description |
 |--------|-------|-------------|
-| `scripts/fix-article-navigation.py` | `python3 scripts/fix-article-navigation.py [--dry-run]` | **Fallback only** — adds language switcher + article-top-nav to articles missing them (idempotent) |
+| `scripts/fix-article-navigation.ts` | `npx tsx scripts/fix-article-navigation.ts [--dry-run]` | **Fallback only** — adds language switcher + article-top-nav to articles missing them (idempotent) |
 | `scripts/fix-language-switchers-and-css.py` | `python3 scripts/fix-language-switchers-and-css.py` | Updates switchers to show only existing languages, removes embedded CSS |
 | `scripts/fix-mixed-language-descriptions.py` | `python3 scripts/fix-mixed-language-descriptions.py` | Fixes articles with mixed-language meta descriptions |
 
