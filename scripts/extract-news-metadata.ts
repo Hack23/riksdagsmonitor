@@ -10,7 +10,7 @@
  */
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
-import { join, dirname, relative } from 'path';
+import { join, dirname, relative, sep } from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -71,7 +71,7 @@ function collectNewsFiles(dir: string): string[] {
 function extractMetadata(): void {
   const newsDir = join(ROOT, 'news');
   const allFilePaths = collectNewsFiles(newsDir);
-  const files = allFilePaths.map((fp) => relative(newsDir, fp));
+  const files = allFilePaths.map((fp) => relative(newsDir, fp).split(sep).join('/'));
 
   const articles: ArticleMetadata[] = [];
 

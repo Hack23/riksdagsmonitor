@@ -149,7 +149,7 @@ function getNewsArticles(): ArticleGroup[] {
   const articles = new Map<string, ArticleGroup>();
 
   function scanDir(dir: string): void {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    const entries = fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name));
     for (const entry of entries) {
       if (entry.isDirectory()) {
         scanDir(path.join(dir, entry.name));
@@ -189,7 +189,7 @@ function getNewsArticles(): ArticleGroup[] {
 
   console.log(`  Found ${articles.size} news article groups`);
 
-  return Array.from(articles.values());
+  return Array.from(articles.values()).sort((a, b) => a.baseSlug.localeCompare(b.baseSlug));
 }
 
 /**
