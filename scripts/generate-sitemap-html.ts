@@ -467,19 +467,9 @@ function getDocsSections(): { api: boolean; coverage: boolean; testResults: bool
  * Escape HTML special characters to prevent XSS.
  */
 function escapeHtml(text: string): string {
-  // First decode any existing HTML entities so we don't double-escape them
-  const decoded = text
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#039;/g, "'")
-    .replace(/&#x27;/g, "'")
-    .replace(/&#(\d+);/g, (_m, code) => String.fromCharCode(Number(code)))
-    .replace(/&#x([0-9a-fA-F]+);/g, (_m, hex) => String.fromCharCode(parseInt(hex, 16)));
-  // Then escape for safe HTML output
-  return decoded
-    .replace(/&/g, '&amp;')
+  return text
+    // Escape & only when it is NOT already part of a valid HTML entity
+    .replace(/&(?!(?:#\d+|#x[0-9a-fA-F]+|[a-zA-Z]+);)/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
