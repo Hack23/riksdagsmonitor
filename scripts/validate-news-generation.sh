@@ -328,7 +328,7 @@ echo ""
 # ============================================================================
 echo "📋 Check 11: HTMLHint validation on news articles"
 
-NEWS_HTML_COUNT=$(find news -maxdepth 1 -name '*-*.html' | grep -v 'index' | wc -l)
+NEWS_HTML_COUNT=$(find news -maxdepth 1 -name '*-*.html' | wc -l)
 if [ "$NEWS_HTML_COUNT" -eq 0 ]; then
   echo -e "${YELLOW}⚠️ No news articles found to HTMLHint-validate${NC}"
   WARNINGS=$((WARNINGS + 1))
@@ -351,7 +351,9 @@ else
   else
     echo -e "${GREEN}✅ All $NEWS_HTML_COUNT news articles pass HTMLHint validation${NC}"
   fi
-  
+fi
+echo ""
+
 # Check 12: Language coverage per article slug (14-language completeness)
 # ============================================================================
 echo "📋 Check 12: Language coverage per article slug (all 14 languages expected)"

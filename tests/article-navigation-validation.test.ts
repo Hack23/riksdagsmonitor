@@ -213,4 +213,18 @@ describe('fixHtmlNesting', () => {
   it('should return unchanged content for empty string', () => {
     expect(fixHtmlNesting('')).toBe('');
   });
+
+  it('should fix <p><div> nesting by removing the enclosing <p>', () => {
+    const input = '<p>\n<div class="box">Content</div></p>';
+    const result = fixHtmlNesting(input);
+    expect(result).toContain('<div class="box">Content</div>');
+    expect(result).not.toMatch(/<p[^>]*>\s*<div/);
+  });
+
+  it('should remove orphaned </p> after </div>', () => {
+    const input = '<div class="box">Content</div></p>';
+    const result = fixHtmlNesting(input);
+    expect(result).not.toContain('</div></p>');
+    expect(result).toContain('</div>');
+  });
 });

@@ -480,11 +480,11 @@ export function fixHtmlNestingInFile(filePath: string): boolean {
   return false;
 }
 
-// CLI entry point: support --fix flag to fix HTML nesting in news/*.html
+// CLI entry point: support --fix flag to fix HTML nesting in news/*-*.html article files
 if (import.meta.url === `file://${process.argv[1]}`) {
   if (process.argv.includes('--fix')) {
     const globPattern = process.argv[process.argv.indexOf('--fix') + 1];
-    const targetGlob = (globPattern && !globPattern.startsWith('-')) ? globPattern : 'news/*.html';
+    const targetGlob = (globPattern && !globPattern.startsWith('-')) ? globPattern : 'news/*-*.html';
     const { globSync } = await import('glob');
     const files: string[] = globSync(targetGlob);
     let fixedCount = 0;
