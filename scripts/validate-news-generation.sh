@@ -338,7 +338,7 @@ else
   if [ $HTMLHINT_RESULT -ne 0 ]; then
     echo "$HTMLHINT_OUTPUT"
     echo -e "${YELLOW}⚠️ HTMLHint found errors in news articles (attempting auto-fix)${NC}"
-    npx tsx scripts/article-quality-enhancer.ts --fix 2>/dev/null || true
+    npx tsx scripts/article-quality-enhancer.ts --fix || true
     HTMLHINT_RESULT2=0
     HTMLHINT_OUTPUT2=$(npx htmlhint "news/*-*.html" 2>&1) || HTMLHINT_RESULT2=$?
     if [ $HTMLHINT_RESULT2 -ne 0 ]; then

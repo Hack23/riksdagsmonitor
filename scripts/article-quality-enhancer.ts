@@ -427,8 +427,8 @@ export async function batchEnhanceQuality(
  * Fix common HTML nesting errors in article content.
  *
  * Corrects invalid block-level nesting patterns:
- * - `<p><ul>` → closes `</p>` before `<ul>` so the `<ul>` list is not nested inside a `<p>` paragraph
- * - `<p><ol>` → closes `</p>` before `<ol>` so the `<ol>` list is not nested inside a `<p>` paragraph
+ * - `<p><ul>` → removes the enclosing `<p>` so the `<ul>` list is not nested inside a `<p>` paragraph
+ * - `<p><ol>` → removes the enclosing `<p>` so the `<ol>` list is not nested inside a `<p>` paragraph
  * - `<p><div>` → removes the enclosing `<p>` so the block-level `<div>` is not nested inside a `<p>` paragraph
  * - Orphaned `</p>` immediately after `</ul>` → removed
  * - Orphaned `</p>` immediately after `</ol>` → removed
@@ -437,14 +437,14 @@ export async function batchEnhanceQuality(
  * @param content - Raw HTML content
  * @returns Fixed HTML content
  */
-export function fixHtmlNesting(content: string): string {
+export function fixArticleHtmlNesting(content: string): string {
   let fixed = content;
 
-  // Fix <p><ul>: close paragraph before list
-  fixed = fixed.replace(/<p([^>]*)>\s*(<ul[\s>])/g, '<p$1></p>\n$2');
+  // Fix <p><ul>: remove the enclosing <p> so the list is not nested inside a paragraph
+  fixed = fixed.replace(/<p([^>]*)>\s*(<ul[\s>])/g, '$2');
 
-  // Fix <p><ol>: close paragraph before ordered list
-  fixed = fixed.replace(/<p([^>]*)>\s*(<ol[\s>])/g, '<p$1></p>\n$2');
+  // Fix <p><ol>: remove the enclosing <p> so the ordered list is not nested inside a paragraph
+  fixed = fixed.replace(/<p([^>]*)>\s*(<ol[\s>])/g, '$2');
 
   // Fix <p><div>: remove enclosing <p> around block-level div
   fixed = fixed.replace(/<p([^>]*)>\s*(<div[\s>])/g, '$2');
@@ -472,7 +472,7 @@ export function fixHtmlNestingInFile(filePath: string): boolean {
     return false;
   }
   const original = fs.readFileSync(filePath, 'utf-8');
-  const fixed = fixHtmlNesting(original);
+  const fixed = fixArticleHtmlNesting(original);
   if (fixed !== original) {
     fs.writeFileSync(filePath, fixed, 'utf-8');
     return true;

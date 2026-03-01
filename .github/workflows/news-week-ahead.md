@@ -234,6 +234,10 @@ Run validation and HTMLHint before creating PR:
 ```bash
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
+if [ "$VALIDATION_EXIT" -ne 0 ]; then
+  echo "❌ News generation validation failed. Fix the reported issues before creating a PR."
+  exit "$VALIDATION_EXIT"
+fi
 
 # HTMLHint validation with auto-fix for common nesting errors
 NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | wc -l)
