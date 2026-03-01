@@ -3,6 +3,7 @@
 <head>
 <title>Riksdagsmonitor | Ruotsin vaalien 2026 tiedustelualusta | Parlamenttiseuranta</title>
 <meta charset="UTF-8">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="canonical" href="https://riksdagsmonitor.com/index_fi.html">
@@ -360,6 +361,14 @@ Ruotsin vaalit 2026
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Vaihda tummaan teemaan"
+        title="Vaihda tummaan teemaan"
+        data-label-dark="Vaihda vaaleaan teemaan"
+        data-label-light="Vaihda tummaan teemaan">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">Ruotsin vaalien 2026 tiedustelualusta</span></h1>
 <p class="tagline">Reaaliaikainen parlamenttiseuranta · Koalitioennusteet · 45 riskisääntöä · Yli 50 vuoden data</p>
 
@@ -1237,6 +1246,7 @@ Suorituskykyluokat (ntile_party_tier: 1-4)
   <span aria-hidden="true">↑</span>
 </button>
 
+    <script src="/js/theme-toggle.js"></script>
     <!-- Main application entry point -->
     <script type="module" src="/src/browser/main.ts"></script>
 </body>

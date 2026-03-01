@@ -775,3 +775,59 @@
     color: var(--primary-light, #00ff88);
   }
 }
+
+/* ─── Dashboard: Theme-toggle chart colour adaptation ─────────────────────── */
+
+/* Charts and metric cards adapt automatically via var() references.
+   These rules cover dashboard-specific elements not handled by the
+   global theme override in styles.css. */
+
+html[data-theme="dark"] .chart-section,
+html[data-theme="dark"] .election-section,
+html[data-theme="dark"] .rankings-section,
+html[data-theme="dark"] .heatmap-section,
+html[data-theme="dark"] .network-section,
+html[data-theme="dark"] .metrics-grid {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border, var(--border-color));
+  box-shadow: 0 0 12px rgba(0, 204, 102, 0.15);
+}
+
+html[data-theme="dark"] .section-heading {
+  color: var(--primary-color);
+  border-bottom-color: var(--border-color);
+}
+
+html[data-theme="dark"] .metric-card {
+  background: linear-gradient(135deg, rgba(0, 204, 102, 0.2) 0%, rgba(0, 187, 119, 0.2) 100%);
+  border: 1px solid rgba(0, 204, 102, 0.3);
+}
+
+html[data-theme="dark"] .chart-container {
+  background: rgba(0, 26, 26, 0.6);
+  border: 1px solid rgba(0, 204, 102, 0.15);
+}
+
+html[data-theme="dark"] .risk-alerts {
+  border-left-color: var(--warning-color, #B35A00);
+  background: rgba(0, 26, 26, 0.5);
+}
+
+html[data-theme="light"] .chart-section,
+html[data-theme="light"] .election-section,
+html[data-theme="light"] .rankings-section,
+html[data-theme="light"] .heatmap-section,
+html[data-theme="light"] .network-section,
+html[data-theme="light"] .metrics-grid {
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow-resting);
+  border: 1px solid var(--card-border, #dee2e6);
+}
+
+html[data-theme="light"] .chart-container {
+  background: var(--bg-color);
+}
+
+html[data-theme="light"] .metric-card {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+}

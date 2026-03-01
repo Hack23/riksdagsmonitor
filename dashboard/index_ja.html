@@ -3,6 +3,7 @@
 <head>
 <title>CIA情報ダッシュボード | スウェーデン国会モニター | Riksdagsmonitor</title>
 <meta charset="UTF-8">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../styles.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
@@ -106,6 +107,14 @@
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="ダークテーマに切り替え"
+        title="ダークテーマに切り替え"
+        data-label-dark="ライトテーマに切り替え"
+        data-label-light="ダークテーマに切り替え">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1>📊 CIA情報ダッシュボード</h1>
 <p class="tagline">スウェーデン国会情報のインタラクティブ可視化</p>
 <p class="data-attribution">
@@ -270,6 +279,7 @@
 
 <!-- JavaScript Modules -->
     <!-- CIA Dashboard entry point -->
+    <script src="../js/theme-toggle.js"></script>
     <script type="module" src="/src/browser/cia-entry.ts"></script>
 </body>
 </html>

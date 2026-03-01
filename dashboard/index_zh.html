@@ -3,6 +3,7 @@
 <head>
 <title>CIA情报仪表板 | 瑞典国会监测 | Riksdagsmonitor</title>
 <meta charset="UTF-8">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../styles.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
@@ -106,6 +107,14 @@
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="切换到深色主题"
+        title="切换到深色主题"
+        data-label-dark="切换到浅色主题"
+        data-label-light="切换到深色主题">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1>📊 CIA情报仪表板</h1>
 <p class="tagline">瑞典国会情报的交互式可视化</p>
 <p class="data-attribution">
@@ -270,6 +279,7 @@
 
 <!-- JavaScript Modules -->
     <!-- CIA Dashboard entry point -->
+    <script src="../js/theme-toggle.js"></script>
     <script type="module" src="/src/browser/cia-entry.ts"></script>
 </body>
 </html>

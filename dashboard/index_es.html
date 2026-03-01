@@ -3,6 +3,7 @@
 <head>
 <title>Panel de Inteligencia CIA | Monitor del Riksdag Sueco | Riksdagsmonitor</title>
 <meta charset="UTF-8">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../styles.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
@@ -105,6 +106,14 @@ Panel
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Cambiar a tema oscuro"
+        title="Cambiar a tema oscuro"
+        data-label-dark="Cambiar a tema claro"
+        data-label-light="Cambiar a tema oscuro">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1>📊 Panel de Inteligencia CIA</h1>
 <p class="tagline">Visualización interactiva de inteligencia del Riksdag sueco</p>
 <p class="data-attribution">
@@ -269,6 +278,7 @@ Datos proporcionados por <a href="https://www.hack23.com/cia/" target="_blank" r
 
 <!-- JavaScript Modules -->
     <!-- CIA Dashboard entry point -->
+    <script src="../js/theme-toggle.js"></script>
     <script type="module" src="/src/browser/cia-entry.ts"></script>
 </body>
 </html>

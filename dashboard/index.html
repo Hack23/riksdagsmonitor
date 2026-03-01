@@ -3,6 +3,7 @@
 <head>
 <title>Riksdagsmonitor | Intelligence Dashboard | Swedish Parliament Analytics</title>
 <meta charset="UTF-8">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="../styles.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
@@ -136,6 +137,14 @@ Dashboard
 </nav>
 
 <header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <h1><span aria-hidden="true">📊</span> Riksdagsmonitor Intelligence Dashboard</h1>
 <p class="tagline">Interactive visualization of Swedish Riksdag intelligence data from Citizen Intelligence Agency</p>
 <nav class="page-nav" aria-label="Page navigation">
@@ -301,6 +310,7 @@ Dashboard
 
 <!-- JavaScript Modules -->
     <!-- CIA Dashboard entry point -->
+    <script src="../js/theme-toggle.js"></script>
     <script type="module" src="/src/browser/cia-entry.ts"></script>
 </body>
 </html>
