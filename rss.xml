@@ -8,8 +8,8 @@
     <link>https://riksdagsmonitor.com</link>
     <description>Real-time monitoring, analysis, and intelligence from the Swedish Parliament (Riksdag) and Government. Covering legislative activity, voting patterns, coalition dynamics, and election forecasts.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Mar 2026 15:27:27 GMT</lastBuildDate>
-    <pubDate>Sun, 01 Mar 2026 15:27:27 GMT</pubDate>
+    <lastBuildDate>Sun, 01 Mar 2026 15:57:34 GMT</lastBuildDate>
+    <pubDate>Sun, 01 Mar 2026 15:57:34 GMT</pubDate>
     <ttl>60</ttl>
     <copyright>Copyright 2026 Hack23 AB. Licensed under Apache-2.0.</copyright>
     <managingEditor>info@hack23.com (Hack23 AB)</managingEditor>
@@ -32,26 +32,26 @@
     <category>Election Analysis</category>
     <category>Legislative Monitoring</category>
     <item>
-      <title>Ten Committee Reports This Week | Riksdagsmonitor</title>
-      <link>https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html</link>
-      <description>Analysis of ten committee reports published February 5-6, 2026 reveals the Riksdag&apos;s priorities for spring 2026: audit responses, healthcare, economy, and regional development.</description>
-      <pubDate>Sun, 01 Mar 2026 15:27:27 GMT</pubDate>
-      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html</guid>
-      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
-      <category>Political Analysis</category>
-      <atom:link href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
-      <atom:link href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
-    </item>
-    <item>
       <title>Sweden&apos;s February Parliamentary Offensive: Security and Economy Before Election | Riksdagsmonitor</title>
       <link>https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html</link>
       <description>Sweden&apos;s Riksdag returns with intense February 2026 agenda: Eight major propositions in first week, from financial supervision to renewable energy. Security focus and economic regulation dominate pre-election positioning.</description>
-      <pubDate>Sun, 01 Mar 2026 15:27:27 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 15:57:34 GMT</pubDate>
       <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html</guid>
       <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
       <category>Political Analysis</category>
       <atom:link href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-en.html" rel="alternate" type="text/html" hreflang="en"/>
       <atom:link href="https://riksdagsmonitor.com/news/2026-02-parliament-agenda-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+    </item>
+    <item>
+      <title>Ten Committee Reports This Week | Riksdagsmonitor</title>
+      <link>https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html</link>
+      <description>Analysis of ten committee reports published February 5-6, 2026 reveals the Riksdag&apos;s priorities for spring 2026: audit responses, healthcare, economy, and regional development.</description>
+      <pubDate>Sun, 01 Mar 2026 15:57:34 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>Political Analysis</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-02-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-02-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
     </item>
     <item>
       <title>March 2026: Parliamentary Month Ahead</title>

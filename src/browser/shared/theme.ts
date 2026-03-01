@@ -211,7 +211,8 @@ export function getPartyColor(party: string): string {
 export function onThemeChange(
   callback: (colors: ThemeColors) => void,
 ): () => void {
-  if (typeof MutationObserver === 'undefined') return () => {};
+  if (typeof MutationObserver === 'undefined' || typeof document === 'undefined')
+    return () => {};
 
   const observer = new MutationObserver((mutations) => {
     for (const m of mutations) {
