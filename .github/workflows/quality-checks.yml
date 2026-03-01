@@ -136,14 +136,21 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
+            cia.sourceforge.io:443
             codeload.github.com:443
             data.riksdagen.se:443
+            data.worldbank.org:443
             github.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
+            raw.githubusercontent.com:443
             registry.npmjs.org:443
             riksdagsmonitor.com:443
+            www.esv.se:443
+            www.hack23.com:443
+            www.linkedin.com:443
             www.riksdagen.se:443
+            www.val.se:443
 
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
