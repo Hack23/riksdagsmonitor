@@ -48,6 +48,8 @@ interface RssArticle {
   pubDate: string;
   baseSlug: string;
   lang: Language;
+  author: string;
+  category: string;
   alternateLanguages: Array<{ lang: Language; href: string }>;
 }
 
@@ -70,6 +72,24 @@ function escapeXml(text: string): string {
 /**
  * Extract metadata from a news article HTML file.
  */
+/**
+ * Derive a stable publication date from the filename date prefix (YYYY-MM-DD)
+ * or fall back to the file's modification time. Never uses "now" so builds are
+ * deterministic.
+ */
+function stablePubDate(filePath: string): string {
+  const basename = path.basename(filePath);
+  const dateMatch = basename.match(/^(\d{4}-\d{2}-\d{2})/);
+  if (dateMatch) {
+    return new Date(`${dateMatch[1]}T12:00:00Z`).toISOString();
+  }
+  try {
+    return fs.statSync(filePath).mtime.toISOString();
+  } catch (_e: unknown) {
+    return '2026-01-01T12:00:00.000Z';
+  }
+}
+
 function extractArticleMeta(filePath: string): {
   title: string;
   description: string;
@@ -77,6 +97,7 @@ function extractArticleMeta(filePath: string): {
   author: string;
   category: string;
 } {
+  const fallbackDate = stablePubDate(filePath);
   try {
     const content = fs.readFileSync(filePath, 'utf8');
     const titleMatch = content.match(/<title>([^<]+)<\/title>/i);
@@ -88,7 +109,7 @@ function extractArticleMeta(filePath: string): {
     return {
       title: titleMatch ? titleMatch[1]!.trim() : path.basename(filePath, '.html'),
       description: descMatch ? descMatch[1]!.trim() : '',
-      pubDate: pubDateMatch ? pubDateMatch[1]!.trim() : new Date().toISOString(),
+      pubDate: pubDateMatch ? pubDateMatch[1]!.trim() : fallbackDate,
       author: authorMatch ? authorMatch[1]!.trim() : 'Riksdagsmonitor',
       category: sectionMatch ? sectionMatch[1]!.trim() : 'Political Analysis',
     };
@@ -96,7 +117,7 @@ function extractArticleMeta(filePath: string): {
     return {
       title: path.basename(filePath, '.html'),
       description: '',
-      pubDate: new Date().toISOString(),
+      pubDate: fallbackDate,
       author: 'Riksdagsmonitor',
       category: 'Political Analysis',
     };
@@ -161,6 +182,8 @@ function getRssArticles(): RssArticle[] {
       pubDate: meta.pubDate,
       baseSlug,
       lang: 'en',
+      author: meta.author,
+      category: meta.category,
       alternateLanguages: alternates,
     });
   }
@@ -234,7 +257,8 @@ function generateRss(): string {
       <description>${escapeXml(article.description)}</description>
       <pubDate>${new Date(article.pubDate).toUTCString()}</pubDate>
       <guid isPermaLink="true">${escapeXml(article.link)}</guid>
-      <dc:creator>Riksdagsmonitor</dc:creator>
+      <dc:creator>${escapeXml(article.author)}</dc:creator>
+      <category>${escapeXml(article.category)}</category>
       <atom:link href="${escapeXml(article.link)}" rel="alternate" type="text/html" hreflang="en"/>`;
 
     // Add multi-language alternate links

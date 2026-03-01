@@ -18,6 +18,8 @@ interface GenerateRssModule {
     pubDate: string;
     baseSlug: string;
     lang: string;
+    author: string;
+    category: string;
     alternateLanguages: Array<{ lang: string; href: string }>;
   }>;
   readonly escapeXml: (text: string) => string;
@@ -119,6 +121,31 @@ describe('RSS Feed Generation', () => {
       const articles = module.getRssArticles();
       expect(articles.length).toBeLessThanOrEqual(50);
     });
+
+    it('should have author field on articles', () => {
+      const articles = module.getRssArticles();
+      articles.forEach(article => {
+        expect(article.author).toBeTruthy();
+      });
+    });
+
+    it('should have category field on articles', () => {
+      const articles = module.getRssArticles();
+      articles.forEach(article => {
+        expect(article.category).toBeTruthy();
+      });
+    });
+
+    it('should derive stable pubDate from filename when meta tag is missing', () => {
+      const articles = module.getRssArticles();
+      // All articles have YYYY-MM-DD filename prefix — pubDate should never be "now"
+      articles.forEach(article => {
+        const pubTime = new Date(article.pubDate).getTime();
+        // Must not be within the last few seconds (i.e., not new Date())
+        const recentThreshold = Date.now() - 60_000;
+        expect(pubTime).toBeLessThan(recentThreshold);
+      });
+    });
   });
 
   describe('generateRss', () => {
@@ -189,7 +216,12 @@ describe('RSS Feed Generation', () => {
     });
 
     it('should have dc:creator elements', () => {
-      expect(rssContent).toContain('<dc:creator>Riksdagsmonitor</dc:creator>');
+      expect(rssContent).toMatch(/<dc:creator>[^<]+<\/dc:creator>/);
+    });
+
+    it('should have per-item category elements', () => {
+      // Each <item> should contain a <category> (from article metadata)
+      expect(rssContent).toMatch(/<item>[\s\S]*?<category>[^<]+<\/category>[\s\S]*?<\/item>/);
     });
 
     it('should have multi-language hreflang alternates', () => {
