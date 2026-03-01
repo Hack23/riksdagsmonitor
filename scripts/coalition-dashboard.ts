@@ -1,193 +1,41 @@
 /**
  * @module Analytics/CoalitionIntelligence
  * @category Analytics
- * 
+ *
  * @title Coalition & Voting Pattern Dashboard - Political Behavior Intelligence
- * 
+ *
  * @description
- * **INTELLIGENCE OPERATIVE PERSPECTIVE**
- * 
- * This dashboard module provides interactive visualization of Swedish political
- * coalition dynamics and voting pattern analysis. Operating as a data intelligence
- * interface, the coalition dashboard transforms raw voting records into pattern
- * intelligence revealing party alliances, behavioral anomalies, and political
- * realignments that may indicate upcoming coalition changes.
- * 
- * **ANALYTICAL DASHBOARDS:**
- * The dashboard provides four complementary intelligence views:
- * 
- * 1. **Coalition Network Diagram (D3.js Force-Directed Graph)**
- *    Visualizes: Party relationships and alliance strength
- *    Algorithm: Force-directed layout shows proximity = alliance strength
- *    Intelligence value: Coalition structure visualization
- *    Metrics: Link strength represents voting agreement percentage
- * 
- * 2. **Voting Anomaly Scatter Plot (Chart.js)**
- *    Visualizes: Unusual voting patterns by party and vote
- *    Metrics: X=deviation from expected, Y=party, Color=magnitude
- *    Intelligence value: Identifies cross-party voting (anomalies)
- *    Use case: Detect coalition stress (members voting against leadership)
- * 
- * 3. **Party Alignment Heat Map (D3.js Heatmap)**
- *    Visualizes: Pairwise agreement matrix between all parties
- *    Metrics: Cell color = voting agreement percentage (0-100%)
- *    Intelligence value: Shows which parties naturally align
- *    Use case: Predict coalition arrangements in future governments
- * 
- * 4. **Behavioral Patterns Bar Chart (Chart.js)**
- *    Visualizes: Party-specific voting characteristics
- *    Metrics: Absence rate, flip rate, abstention rate by party
- *    Intelligence value: Party discipline and reliability indicators
- *    Use case: Assess coalition partner reliability
- * 
- * 5. **Decision Trends Timeline (Chart.js Line Chart)**
- *    Visualizes: Coalition voting success over time
- *    Metrics: Government vote success rate, opposition effectiveness
- *    Intelligence value: Coalition health trending
- *    Use case: Track coalition stability/deterioration
- * 
- * **DATA SOURCES:**
- * The dashboard integrates CIA platform data:
- * - **distribution_coalition_alignment.csv**: Party cooperation metrics
- * - **view_riksdagen_committee_decisions.csv**: Committee voting patterns
- * - **percentile_seasonal_activity_patterns.csv**: Activity level trends
- * - **distribution_annual_votes.csv**: Long-term voting trends
- * 
- * **DATA CACHING STRATEGY:**
- * Implements intelligent caching for performance:
- * - Cache Enabled: 24-hour local browser cache
- * - Data Sources: Local files (first) with GitHub remote fallback
- * - TTL: 24 hours, automatic refresh
- * - Cache Key Prefix: riksdag_coalition_ (avoids conflicts)
- * 
- * **COALITION DEFINITIONS:**
- * The dashboard recognizes Swedish coalition structures:
- * 
- * **Current Coalition (2022-present):**
- * - Government: Moderates (M), Sweden Democrats (SD), Christian Democrats (KD), Liberals (L)
- * - Confidence & Supply: (support specific votes without being in government)
- * - Opposition: Social Democrats (S), Left Party (V), Green Party (MP), Centre (C), Finland Swedes (FI)
- * 
- * Visualization automatically adjusts to actual coalition composition:
- * - Color-codes parties by coalition affiliation
- * - Highlights key alliance partners
- * - Shows confidence & supply arrangements
- * - Displays opposition bloc structure
- * 
- * **PARTY DEFINITIONS:**
- * Eight major parties tracked:
- * - **S** (Socialdemokraterna): Center-left, largest opposition
- * - **M** (Moderaterna): Center-right, coalition leader (2022+)
- * - **SD** (Sverigedemokraterna): Right-wing populist, coalition partner
- * - **V** (Vänsterpartiet): Far-left, traditional opposition
- * - **MP** (Miljöpartiet): Green party, usually opposition
- * - **C** (Centerpartiet): Centrist, coalition-flexible
- * - **L** (Liberalerna): Classical liberal, coalition supporter
- * - **KD** (Kristdemokraterna): Christian conservative, coalition partner
- * 
- * **INTELLIGENCE APPLICATIONS:**
- * 1. **Coalition Stability Assessment**: Voting agreement trends indicate stability
- * 2. **Member Discipline Analysis**: Anomalies indicate party discipline issues
- * 3. **Emerging Coalitions**: Alignment patterns predict future governments
- * 4. **Cross-Party Cooperation**: Identify informal alliances on specific issues
- * 5. **Negotiation Prediction**: Historical patterns inform future negotiations
- * 
- * **BEHAVIORAL PATTERN METRICS:**
- * Dashboard calculates party-specific metrics:
- * - **Absence Rate**: Percentage of members absent from votes (party leadership?)
- * - **Flip Rate**: Percentage of votes where party changes position
- * - **Abstention Rate**: Percentage of non-votes (abstain or absence)
- * - **Consensus Rate**: How often party votes unified across members
- * - **Government Agreement**: Percentage of votes with government coalition
- * 
- * **VOTING ANOMALY DETECTION:**
- * Identifies unusual voting patterns:
- * - **Party Deviations**: Members voting differently from party position
- * - **Coalition Splits**: Party votes differ from coalition partners
- * - **Cross-Party Coalitions**: Unexpected party agreements on specific votes
- * - **Member-Level Anomalies**: Specific members consistently deviating
- * 
- * **ACCESSIBILITY FEATURES:**
- * Dashboard designed for WCAG 2.1 AA compliance:
- * - Color-blind friendly palette (not relying on color alone)
- * - Text labels on all data points
- * - Keyboard navigation support
- * - ARIA labels for screen readers
- * - High contrast mode support
- * 
- * **MULTILINGUAL SUPPORT (14 Languages):**
- * Dashboard UI supports all platform languages:
- * - Swedish (SV): Default, full terminology
- * - English (EN): International audience
- * - Nordic (DA, NO, FI): Regional users
- * - European (DE, FR, ES, NL): Continental users
- * - Middle Eastern (AR, HE): Diplomatic audience
- * - Asian (JA, KO, ZH): Economic audience
- * 
- * Party names and terminology translated appropriately for each language.
- * 
- * **PERFORMANCE OPTIMIZATION:**
- * Dashboard optimized for responsive interactivity:
- * - Data Caching: 24-hour local cache prevents repeated API calls
- * - Remote Fallback: GitHub provides data if local files unavailable
- * - Parallel Loading: Multiple data sources loaded simultaneously
- * - SVG Rendering: D3.js uses efficient vector graphics
- * - Chart.js: Optimized rendering for 8-party visualizations
- * 
- * **FAILURE HANDLING:**
- * Graceful degradation if data sources fail:
- * - Local Cache Hit: Use cached data if available
- * - Remote Fallback: Load from GitHub if local fails
- * - Graceful Errors: Display "Data unavailable" rather than breaking
- * - Retry Logic: Automatic retry on network failures
- * 
- * **GDPR COMPLIANCE:**
- * Dashboard handles voting data (public records):
- * - Member votes are published in parliament records
- * - Individual member names included (public official roles)
- * - Aggregation supports privacy (voting patterns, not individuals)
- * - Data retention follows parliamentary archive standards
- * 
- * @osint Coalition Intelligence Analysis
- * - Detects coalition formation patterns
- * - Tracks party alignment evolution
- * - Identifies emerging political realignments
- * - Predicts future coalition possibilities
- * 
- * @risk Government Stability Assessment
- * - Voting agreement trends indicate coalition stress
- * - Anomalies suggest approaching coalition breakdown
- * - Opposition effectiveness tracking
- * - Cross-party cooperation patterns
- * 
- * @gdpr Public Voting Records
- * - Parliamentary votes are public records
- * - Party-level aggregation respects privacy
- * - Member names included (public official roles)
- * - Retention follows parliamentary standards
- * 
- * @security Data Integrity Validation
- * - Data checksums validate authenticity
- * - Timestamp validation prevents staleness
- * - Source verification (CIA platform)
- * - Anomaly detection for data corruption
- * 
- * @author Hack23 AB (Political Intelligence & Coalition Analysis)
+ * Browser IIFE entry point for the Coalition Intelligence Dashboard. Provides
+ * interactive visualization of Swedish party coalition dynamics, voting patterns,
+ * alignment heatmaps, and behavioral anomaly detection.
+ *
+ * **REFERENCE MODULES** (`./coalition-dashboard/`):
+ * Type-reference modules that document the internal structure in a Node.js/ESM
+ * context. These are NOT imported at runtime; the browser IIFE below is the
+ * canonical implementation. They are retained for type checking and documentation.
+ * - **types.ts** — interface/type declarations (PartyNode, CoalitionLink, etc.)
+ * - **data.ts** — PARTIES config + CSV loading + data fetch functions (~399 lines)
+ * - **charts.ts** — D3.js NetworkDiagram and AlignmentHeatMap (~319 lines)
+ * - **scenarios.ts** — Chart.js charts, accessibility table, UI helpers, fallback data (~428 lines)
+ *
+ * NOTE: This file cannot be split into ES modules because it relies on browser
+ * globals (d3, Chart.js loaded via <script> tags) and runs as a self-contained
+ * IIFE. Excluded from tsconfig.scripts.json and vitest.
+ *
+ * @author Hack23 AB
  * @license Apache-2.0
- * @version 2.0.0
- * @since 2024-07-05
- * @see https://d3js.org/ (D3.js Data Visualization)
- * @see https://www.chartjs.org/ (Chart.js Charting)
- * @see https://github.com/Hack23/cia (CIA Platform Data)
- * @see Issue #107 (Coalition Dashboard Enhancement)
  */
 
-/// <reference lib="dom" />
 
-import * as d3 from 'd3';
-
-// Chart.js is loaded as a browser global via script tag
+// ========== Type declarations for browser globals ==========
+// d3 and Chart.js are loaded via <script> tags in the HTML; declare them here
+// so that type references like d3.SimulationNodeDatum below resolve in tooling.
 declare const Chart: any;
+declare namespace d3 {
+  interface SimulationNodeDatum { index?: number; x?: number; y?: number; vx?: number; vy?: number; fx?: number | null; fy?: number | null; }
+  interface SimulationLinkDatum<NodeDatum extends SimulationNodeDatum> { source: NodeDatum | string | number; target: NodeDatum | string | number; index?: number; }
+  type DSVRowString<Columns extends string = string> = Partial<Record<Columns, string>>;
+}
 
 // ========== Interfaces ==========
 
@@ -254,6 +102,9 @@ interface DataConfig {
   files: DataFiles;
   useMockData: boolean;
 }
+
+
+// ── IIFE entry point (see ./coalition-dashboard/ for focused source modules) ──
 
 // ========== Implementation ==========
 

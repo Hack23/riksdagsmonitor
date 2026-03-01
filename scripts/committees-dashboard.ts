@@ -1,353 +1,51 @@
 /**
  * @module Analytics/CommitteeIntelligence
  * @category Analytics
- * 
+ *
  * @title Committee Performance & Network Analytics Dashboard - Organizational Intelligence
- * 
+ *
  * @description
- * **INTELLIGENCE OPERATIVE PERSPECTIVE**
- * 
- * This dashboard module provides interactive visualization and analysis of Swedish
- * Riksdag committee structure, productivity, and decision patterns. Committees are
- * where legislative power actually accumulates and policy details get hammered out,
- * making committee-level intelligence critical for understanding parliamentary
- * dynamics. The dashboard transforms committee data into organizational intelligence
- * revealing power distribution, policy priorities, and committee effectiveness.
- * 
- * **STRATEGIC IMPORTANCE OF COMMITTEE ANALYSIS:**
- * Swedish parliament operates on a committee-based legislative model where:
- * 1. **Committee Pre-Process**: Bills typically go through committee first
- * 2. **Committee Bottleneck**: Strong committees can delay/modify legislation
- * 3. **Committee Expertise**: Subject-matter expertise concentrated in committees
- * 4. **Committee Power**: Committee chairs wield significant influence
- * 5. **Committee Compromise**: Coalition deals often negotiated in committees
- * 
- * Committee analysis reveals the legislative power structure beneath the party structure.
- * 
- * **COMMITTEE DEFINITIONS (15 Swedish Committees):**
- * Dashboard tracks all major Riksdag committees with specialized domains:
- * 
- * **Security & Foreign Policy:**
- * - AU (Utrikesutskottet): Foreign Affairs Committee
- * - FöU (Försvarsutskottet): Defense Committee
- * - KU (Konstitutionsutskottet): Constitutional Committee
- * 
- * **Economic & Fiscal:**
- * - FiU (Finansutskottet): Finance Committee (budget authority)
- * - NU (Näringsutskottet): Industry Committee
- * - TU (Trafikutskottet): Transport Committee
- * 
- * **Social Policy:**
- * - SoU (Socialutskottet): Social Affairs Committee
- * - MU (Miljöutskottet): Environment Committee
- * - KrU (Kulturutskottet): Cultural Affairs Committee
- * 
- * **Justice & Administration:**
- * - JuU (Justitieutskottet): Justice Committee
- * - CU (Civilutskottet): Civil Affairs Committee
- * 
- * **Health & Education:**
- * - HsU (Hälso- och sjukvårdsutskottet): Health & Welfare Committee
- * - UU (Utbildningsutskottet): Education Committee
- * 
- * **Other:**
- * - EU-nämnden: EU Affairs Committee
- * - StU (Statsutskottet): State Committee
- * 
- * Each committee configured with:
- * - Swedish abbreviation (AU, FiU, etc.)
- * - English and Swedish full names
- * - Color coding for visual distinction
- * - Policy domain classification
- * 
- * **ANALYTICAL DASHBOARDS:**
- * The dashboard provides four intelligence views:
- * 
- * 1. **Committee Network Diagram (D3.js Force-Directed Graph)**
- *    Visualizes: Committee relationships and information flow
- *    Algorithm: Force-directed layout shows proximity = collaboration
- *    Intelligence value: Identifies committee clusters and power hubs
- *    Use case: Find interconnected committee structures
- * 
- * 2. **Productivity Heat Map (D3.js Heatmap)**
- *    Visualizes: Committee activity and productivity over time
- *    Metrics: Document production, meeting frequency, decision rate
- *    Intelligence value: Identifies busy vs. dormant committees
- *    Use case: Track committee workload and priorities
- * 
- * 3. **Voting Pattern Analysis (Chart.js Multiple Charts)**
- *    Visualizes: Committee decision patterns and unanimity rates
- *    Metrics: Agreement rates, dissent frequency, consensus strength
- *    Intelligence value: Committee consensus/conflict assessment
- *    Use case: Identify contentious policy areas
- * 
- * 4. **Seasonal Activity Patterns (Chart.js Line Chart)**
- *    Visualizes: Committee activity variation by season
- *    Metrics: Meeting frequency, document volume by month
- *    Intelligence value: Budget cycle and legislative timing
- *    Use case: Predict when committees will be active
- * 
- * **DATA SOURCES:**
- * CIA Platform provides committee intelligence:
- * - distribution_committee_productivity_matrix.csv
- *   Committee productivity metrics and activity levels
- * - view_riksdagen_committee_decisions.csv
- *   Committee voting records and decision patterns
- * - distribution_annual_committee_documents.csv
- *   Document production by committee and year
- * - view_riksdagen_committee_ballot_decision_party_summary.csv
- *   Party-specific voting patterns within committees
- * - percentile_seasonal_activity_patterns.csv
- *   Seasonal variations in committee activity
- * 
- * **CACHING STRATEGY:**
- * Dashboard implements efficient multi-level caching:
- * - **Browser Cache**: 24-hour local storage
- * - **Data Sources**: Local files first, GitHub fallback
- * - **Automatic Refresh**: Stale cache invalidated after 24h
- * - **Cache Key Prefix**: riksdag_committee_ (avoids conflicts)
- * - **Parallel Loading**: Multiple sources loaded simultaneously
- * 
- * **INTELLIGENCE APPLICATIONS:**
- * 1. **Power Distribution**: Identify which committees wield most influence
- * 2. **Productivity Analysis**: Track committee effectiveness over time
- * 3. **Coalition Control**: Assess coalition's hold on key committees
- * 4. **Policy Priority Detection**: Identify committees getting resources
- * 5. **Committee Conflicts**: Track contentious committee decisions
- * 6. **Member Influence**: Identify powerful committee chairs/members
- * 7. **Timeline Prediction**: Predict when committee actions occur
- * 
- * **PARTY CONTROL ANALYSIS:**
- * Dashboard tracks party composition of committees:
- * - Committee chair parties (indicates committee control)
- * - Party representation by committee
- * - Coalition vs. opposition committee balance
- * - Coalition's control of key committees (Finance, Justice, Defense)
- * 
- * **PERFORMANCE METRICS:**
- * Dashboard calculates committee-level KPIs:
- * - **Productivity Index**: Documents produced per meeting
- * - **Decision Frequency**: Decisions per unit time
- * - **Meeting Frequency**: Regular schedule compliance
- * - **Unanimity Rate**: Percentage of unanimous decisions
- * - **Dissent Frequency**: Cross-party voting patterns
- * 
- * **ACCESSIBILITY FEATURES:**
- * WCAG 2.1 AA compliance:
- * - Color-blind friendly palette
- * - Text labels on all visualizations
- * - Keyboard navigation support
- * - ARIA labels for screen readers
- * - High contrast mode
- * - Responsive design (320px-1440px+)
- * 
- * **MULTILINGUAL SUPPORT (14 Languages):**
- * Complete internationalization:
- * - Swedish: Detailed terminology
- * - English: International audience
- * - Nordic: Regional users
- * - European: Continental coverage
- * - Middle Eastern: Diplomatic audience
- * - Asian: Economic representation
- * 
- * Committee names and explanations translated appropriately.
- * 
- * **RESPONSIVE DESIGN:**
- * Dashboard adapts to all screen sizes:
- * - **Mobile (320px)**: Stacked layout, single chart per view
- * - **Tablet (768px)**: Two-column layout, selectable views
- * - **Desktop (1920px)**: Four-chart dashboard, detailed annotations
- * - **UltraHD (2560px)**: Detailed network graphs with zoom capability
- * 
- * **FAILURE HANDLING:**
- * Graceful degradation:
- * - Local Cache Hit: Use cached data (24h TTL)
- * - Remote Fallback: GitHub data if local unavailable
- * - Error Display: "Data unavailable" vs. breaking UI
- * - Retry Logic: Automatic retry on network failures
- * - Partial Data: Display available data even if incomplete
- * 
- * **GDPR COMPLIANCE:**
- * Committee data handling (public parliamentary records):
- * - Committee member names published (public roles)
- * - Voting records public (parliamentary transparency)
- * - Aggregation respects privacy (committee-level, not member-level)
- * - Data retention follows parliamentary archive standards
- * 
- * **SECURITY CONSIDERATIONS:**
- * Data integrity and authenticity:
- * - Data Validation: Checksums verify source data
- * - Timestamp Validation: Ensures data freshness
- * - Source Verification: CIA platform authentication
- * - Anomaly Detection: Unusual data patterns trigger review
- * - Access Control: Committee analysis logged for audit
- * 
- * @osint Organizational Intelligence Analysis
- * - Maps committee power distribution
- * - Tracks policy prioritization through committee resources
- * - Identifies policy bottlenecks in specific committees
- * - Analyzes coalition control of critical committees
- * 
- * @risk Governance Structure Assessment
- * - Committee effectiveness indicates government functioning
- * - Productivity trends show policy momentum
- * - Coalition control of committees affects policy implementation
- * - Committee conflicts indicate policy disputes
- * 
- * @gdpr Public Committee Records
- * - Committee decisions are public
- * - Member participation public (published records)
- * - Aggregation protects individual privacy
- * - Retention follows parliamentary archive standards
- * 
- * @security Committee Data Integrity
- * - Data sourced from official CIA platform
- * - Timestamps prevent tampering
- * - Checksums validate authenticity
- * - Anomaly detection identifies corruption
- * 
- * @author Hack23 AB (Committee Intelligence & Governance Analytics)
+ * Browser IIFE entry point for the Committee Intelligence Dashboard. Provides
+ * interactive visualization of Swedish Riksdag committee structure, productivity,
+ * and decision patterns using D3.js (network/heatmap) and Chart.js (bar/radar).
+ *
+ * **REFERENCE MODULES** (`./committees-dashboard/`):
+ * Type-reference modules that document the internal structure in a Node.js/ESM
+ * context. These are NOT imported at runtime; the browser IIFE below is the
+ * canonical implementation. They are retained for type checking and documentation.
+ * - **types.ts** — interface declarations (CommitteeData, AppConfig, NetworkNode, etc.)
+ * - **data.ts** — CONFIG constants + DataManager class (fetch + cache CIA data)
+ * - **charts.ts** — NetworkDiagram + ProductivityHeatMap D3.js classes (~526 lines)
+ * - **table.ts** — ChartJSVisualizations class and accessible table (~424 lines)
+ * - **init.ts** — initializeDashboard + event listeners + UI helpers (~198 lines)
+ *
+ * NOTE: This file cannot be split into ES modules because it relies on browser
+ * globals (d3, Chart.js, PapaParse loaded via <script> tags) and runs as a
+ * self-contained IIFE. Excluded from tsconfig.scripts.json and vitest.
+ *
+ * @author Hack23 AB
  * @license Apache-2.0
- * @version 2.1.0
- * @since 2024-07-12
- * @see https://d3js.org/ (D3.js Data Visualization)
- * @see https://www.chartjs.org/ (Chart.js Charting)
- * @see https://github.com/Hack23/cia (CIA Platform)
- * @see Issue #111 (Committee Dashboard Enhancement)
- * @see https://www.riksdagen.se/sv/sa-funkar-riksdagen/utskott/ (Committee Information)
  */
 
-/// <reference lib="dom" />
 
-import * as d3 from 'd3';
+// ── Type declarations ─────────────────────────────────────────────────────
 
-// Chart.js and Papa Parse are loaded as browser globals via script tags
-declare const Chart: any;
-declare const Papa: {
-  parse(input: string, config?: {
-    header?: boolean;
-    dynamicTyping?: boolean;
-    skipEmptyLines?: boolean;
-  }): { data: Record<string, any>[]; errors: { message: string }[] };
-};
-
-// ==============================================
-// INTERFACES
-// ==============================================
-
-interface CommitteeNameLocalized {
-  sv: string;
-  en: string;
-}
-
-interface CommitteeDefinition {
-  code: string;
-  name: string;
-  nameLocalized: CommitteeNameLocalized;
-  color: string;
-  domain: string;
-}
-
-interface CacheConfig {
-  enabled: boolean;
-  ttl: number;
-  prefix: string;
-}
-
-interface DimensionSpec {
-  width: number;
-  height: number;
-}
-
-interface DimensionsConfig {
-  network: DimensionSpec;
-  heatmap: DimensionSpec;
-  chart: { aspectRatio: number };
-}
-
-interface DataUrlsConfig {
-  productivityMatrix: string[];
-  committeeDecisions: string[];
-  annualDocuments: string[];
-  ballotSummary: string[];
-  seasonalPatterns: string[];
-}
-
-interface AppConfig {
-  dataUrls: DataUrlsConfig;
-  cache: CacheConfig;
-  committees: CommitteeDefinition[];
-  dimensions: DimensionsConfig;
-}
-
-interface ProductivityMatrixRow {
-  committee_code?: string;
-  year?: string | number;
-  productivity_level?: string;
-  [key: string]: any;
-}
-
-interface AnnualDocumentRow {
-  committee?: string;
-  year?: string | number;
-  doc_count?: string | number;
-  [key: string]: any;
-}
-
-interface SeasonalPatternRow {
-  year?: string | number;
-  quarter?: string | number;
-  median?: string | number;
-  total_ballots?: string | number;
-  value?: string | number;
-  [key: string]: any;
-}
-
-interface CommitteeData {
-  productivityMatrix: ProductivityMatrixRow[];
-  committeeDecisions: Record<string, any>[];
-  annualDocuments: AnnualDocumentRow[];
-  ballotSummary: Record<string, any>[];
-  seasonalPatterns: SeasonalPatternRow[];
-}
-
-interface NetworkNode extends d3.SimulationNodeDatum {
-  id: string;
-  code: string;
-  name: string;
-  color: string;
-  productivity: number;
-  decisions: number;
-  radius: number;
-}
-
-interface NetworkLink extends d3.SimulationLinkDatum<NetworkNode> {
-  value: number;
-}
-
-interface HeatMapCell {
-  committee: string;
-  year: string;
-  value: number;
-}
-
-interface HeatMapData {
-  matrix: HeatMapCell[];
-  years: string[];
-  committees: string[];
-}
-
-interface CacheEntry {
-  data: Record<string, any>[];
-  timestamp: number;
-}
-
+// ── IIFE entry point (see ./committees-dashboard/ for focused source modules) ──
 // ==============================================
 // IMPLEMENTATION
 // ==============================================
 
 (function(): void {
   'use strict';
+
+  // Browser globals – declared here so they are in scope for all class
+  // methods. They are assigned inside initializeDashboard() so they are
+  // always read from globalThis at the point of use, not at IIFE load time.
+  // This ensures late-loaded libraries (defer/async/dynamic ordering) are
+  // always picked up correctly.
+  let d3: any;
+  let Chart: any;
+  let Papa: any;
 
   // ==============================================
   // CONFIGURATION
@@ -372,21 +70,21 @@ interface CacheEntry {
     
     // Committee definitions with Swedish abbreviations
     committees: [
-      { code: 'AU', name: 'Foreign Affairs Committee', nameLocalized: { sv: 'Utrikesutskottet', en: 'Foreign Affairs Committee' }, color: '#1e88e5', domain: 'Foreign Policy' },
+      { code: 'AU', name: 'Labour Market Committee', nameLocalized: { sv: 'Arbetsmarknadsutskottet', en: 'Labour Market Committee' }, color: '#1e88e5', domain: 'Labour Market' },
       { code: 'CU', name: 'Civil Affairs Committee', nameLocalized: { sv: 'Civilutskottet', en: 'Civil Affairs Committee' }, color: '#43a047', domain: 'Civil Law' },
       { code: 'FiU', name: 'Finance Committee', nameLocalized: { sv: 'Finansutskottet', en: 'Finance Committee' }, color: '#fb8c00', domain: 'Economics' },
       { code: 'FöU', name: 'Defense Committee', nameLocalized: { sv: 'Försvarsutskottet', en: 'Defense Committee' }, color: '#e53935', domain: 'National Security' },
       { code: 'JuU', name: 'Justice Committee', nameLocalized: { sv: 'Justitieutskottet', en: 'Justice Committee' }, color: '#8e24aa', domain: 'Justice' },
       { code: 'KU', name: 'Constitutional Committee', nameLocalized: { sv: 'Konstitutionsutskottet', en: 'Constitutional Committee' }, color: '#3949ab', domain: 'Constitution' },
       { code: 'KrU', name: 'Cultural Affairs Committee', nameLocalized: { sv: 'Kulturutskottet', en: 'Cultural Affairs Committee' }, color: '#00acc1', domain: 'Culture' },
-      { code: 'MjU', name: 'Environment Committee', nameLocalized: { sv: 'Miljö- och jordbruksutskottet', en: 'Environment Committee' }, color: '#7cb342', domain: 'Environment' },
+      { code: 'MJU', name: 'Environment Committee', nameLocalized: { sv: 'Miljö- och jordbruksutskottet', en: 'Environment Committee' }, color: '#7cb342', domain: 'Environment' },
       { code: 'NU', name: 'Business Committee', nameLocalized: { sv: 'Näringsutskottet', en: 'Business Committee' }, color: '#ff6f00', domain: 'Business' },
       { code: 'SkU', name: 'Taxation Committee', nameLocalized: { sv: 'Skatteutskottet', en: 'Taxation Committee' }, color: '#d32f2f', domain: 'Taxation' },
-      { code: 'SoU', name: 'Social Insurance Committee', nameLocalized: { sv: 'Socialförsäkringsutskottet', en: 'Social Insurance Committee' }, color: '#c2185b', domain: 'Social Welfare' },
+      { code: 'SfU', name: 'Social Insurance Committee', nameLocalized: { sv: 'Socialförsäkringsutskottet', en: 'Social Insurance Committee' }, color: '#f57c00', domain: 'Social Insurance' },
+      { code: 'SoU', name: 'Social Affairs Committee', nameLocalized: { sv: 'Socialutskottet', en: 'Social Affairs Committee' }, color: '#c2185b', domain: 'Social Affairs' },
       { code: 'TU', name: 'Transport Committee', nameLocalized: { sv: 'Trafikutskottet', en: 'Transport Committee' }, color: '#0097a7', domain: 'Transportation' },
       { code: 'UbU', name: 'Education Committee', nameLocalized: { sv: 'Utbildningsutskottet', en: 'Education Committee' }, color: '#5e35b1', domain: 'Education' },
-      { code: 'UFöU', name: 'Foreign Defense Committee', nameLocalized: { sv: 'Utrikes- och försvarsutskottet', en: 'Foreign Defense Committee' }, color: '#f57c00', domain: 'Security Policy' },
-      { code: 'UU', name: 'Foreign Affairs Sub-Committee', nameLocalized: { sv: 'Utrikesutskottets underutskott', en: 'Foreign Affairs Sub-Committee' }, color: '#1565c0', domain: 'Foreign Policy' }
+      { code: 'UU', name: 'Foreign Affairs Committee', nameLocalized: { sv: 'Utrikesutskottet', en: 'Foreign Affairs Committee' }, color: '#1565c0', domain: 'Foreign Policy' }
     ],
     
     // Visualization dimensions
@@ -1519,6 +1217,11 @@ interface CacheEntry {
     console.log('[CommitteeDashboard] Initializing...');
 
     try {
+      // Resolve browser globals here so late-loaded libraries are picked up.
+      d3 = (globalThis as any).d3;
+      Chart = (globalThis as any).Chart;
+      Papa = (globalThis as any).Papa;
+
       // Check if required libraries are loaded
       if (typeof d3 === 'undefined') {
         throw new Error('D3.js not loaded. Please include D3.js library.');
