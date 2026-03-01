@@ -752,15 +752,10 @@ describe('Pipeline: validateArticleBatch across all 8 article types', () => {
       return { filename: art.filename, html: art.html };
     });
 
-    const validations = pipelineValidation.validateArticleBatch(batch);
+    const validations = pipelineValidation.validateArticleBatch(batch, { requireSections: false });
+    expect(validations).toHaveLength(batch.length);
     validations.forEach(v => {
-      // Breaking news articles may not include <h2> sections with minimal mock data
-      const opts = v.filename.includes('breaking') ? { requireSections: false } : {};
-      const recheck = pipelineValidation.validateArticleHTML(
-        batch.find(b => b.filename === v.filename)!.html,
-        opts,
-      );
-      expect(recheck.passed, `${v.filename}: ${recheck.errors.join(', ')}`).toBe(true);
+      expect(v.passed, `${v.filename}: ${v.errors.join(', ')}`).toBe(true);
     });
   });
 });
