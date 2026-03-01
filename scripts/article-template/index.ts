@@ -15,7 +15,7 @@
  */
 
 export { generateArticleHTML } from './template.js';
-export { generateEventCalendar, generateWatchSection, generateArticleLanguageSwitcher, generateSiteFooter } from './helpers.js';
+export { generateEventCalendar, generateWatchSection, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting } from './helpers.js';
 
 import { generateArticleHTML } from './template.js';
 import { generateEventCalendar, generateWatchSection, generateArticleLanguageSwitcher, generateSiteFooter } from './helpers.js';
