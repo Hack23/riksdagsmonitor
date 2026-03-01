@@ -244,6 +244,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${l}" href="https:/
   
 </head>
 <body>
+<a href="#main-content" class="skip-link">${getFooterLabel(lang, 'skipToContent')}</a>
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
 
 <div class="article-top-nav">
@@ -252,7 +253,7 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
   </a>
 </div>
 
-<article class="news-article">
+<article id="main-content" class="news-article">
   <header class="article-header">
     <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
     <h1>${title}</h1>
