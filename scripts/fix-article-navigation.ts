@@ -20,51 +20,15 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
-// ── Language configuration ────────────────────────────────────────────────
-
-const LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'] as const;
-type Lang = typeof LANGUAGES[number];
-
-const LANG_DISPLAY: Readonly<Record<Lang, [string, string]>> = {
-  en: ['🇬🇧', 'English'],
-  sv: ['🇸🇪', 'Svenska'],
-  da: ['🇩🇰', 'Dansk'],
-  no: ['🇳🇴', 'Norsk'],
-  fi: ['🇫🇮', 'Suomi'],
-  de: ['🇩🇪', 'Deutsch'],
-  fr: ['🇫🇷', 'Français'],
-  es: ['🇪🇸', 'Español'],
-  nl: ['🇳🇱', 'Nederlands'],
-  ar: ['🇸🇦', 'العربية'],
-  he: ['🇮🇱', 'עברית'],
-  ja: ['🇯🇵', '日本語'],
-  ko: ['🇰🇷', '한국어'],
-  zh: ['🇨🇳', '中文'],
-} as const;
-
-const LANG_SWITCHER_ARIA: Readonly<Record<Lang, string>> = {
-  en: 'Language', sv: 'Språk', da: 'Sprog', no: 'Språk',
-  fi: 'Kieli', de: 'Sprache', fr: 'Langue', es: 'Idioma',
-  nl: 'Taal', ar: 'اللغة', he: 'שפה', ja: '言語',
-  ko: '언어', zh: '语言',
-} as const;
-
-const BACK_TO_NEWS: Readonly<Record<Lang, string>> = {
-  en: 'Back to News', sv: 'Tillbaka till nyheter',
-  da: 'Tilbage til nyheder', no: 'Tilbake til nyheter',
-  fi: 'Takaisin uutisiin', de: 'Zurück zu Nachrichten',
-  fr: 'Retour aux actualités', es: 'Volver a noticias',
-  nl: 'Terug naar nieuws', ar: 'العودة إلى الأخبار',
-  he: 'חזרה לחדשות', ja: 'ニュースに戻る',
-  ko: '뉴스로 돌아가기', zh: '返回新闻',
-} as const;
+import type { Language } from './types/language.js';
+import { ALL_LANG_CODES, FOOTER_LABELS } from './article-template/constants.js';
+import { getNewsIndexFilename, generateArticleLanguageSwitcher } from './article-template/helpers.js';
 
 // ── Helpers ───────────────────────────────────────────────────────────────
 
-function extractLang(filename: string): Lang | null {
+function extractLang(filename: string): Language | null {
   const name = filename.replace(/\.html$/, '');
-  for (const lang of LANGUAGES) {
+  for (const lang of ALL_LANG_CODES) {
     if (name.endsWith(`-${lang}`)) return lang;
   }
   return null;
@@ -72,89 +36,99 @@ function extractLang(filename: string): Lang | null {
 
 function extractBase(filename: string): string | null {
   const name = filename.replace(/\.html$/, '');
-  for (const lang of LANGUAGES) {
+  for (const lang of ALL_LANG_CODES) {
     if (name.endsWith(`-${lang}`)) return name.slice(0, -(lang.length + 1));
   }
   return null;
 }
 
-function newsIndexFor(lang: Lang): string {
-  return lang === 'en' ? 'index.html' : `index_${lang}.html`;
-}
-
-function generateLanguageSwitcher(baseSlug: string, currentLang: Lang): string {
-  const aria = LANG_SWITCHER_ARIA[currentLang];
-  const lines: string[] = [`  <nav class="language-switcher" role="navigation" aria-label="${aria}">`];
-  for (const lang of LANGUAGES) {
-    const [flag, name] = LANG_DISPLAY[lang];
-    const activeClass = lang === currentLang ? ' active' : '';
-    const ariaCurrent = lang === currentLang ? ' aria-current="page"' : '';
-    lines.push(
-      `    <a href="${baseSlug}-${lang}.html" class="lang-link${activeClass}" hreflang="${lang}"${ariaCurrent}>${flag} ${name}</a>`,
-    );
-  }
-  lines.push('  </nav>');
-  return lines.join('\n');
-}
-
-function generateTopNav(lang: Lang): string {
-  const label = BACK_TO_NEWS[lang];
-  const index = newsIndexFor(lang);
+function generateTopNav(lang: Language): string {
+  const label = FOOTER_LABELS[lang].backToNews;
+  const index = getNewsIndexFilename(lang);
   return `\n<div class="article-top-nav">\n  <a href="${index}" class="back-to-news">\n    ← ${label}\n  </a>\n</div>\n`;
 }
 
 // ── Processing ────────────────────────────────────────────────────────────
 
-interface ProcessResult {
+export interface ProcessResult {
   addedSwitcher: boolean;
   addedTopnav: boolean;
+  fixedTopnav: boolean;
 }
 
-function processArticle(filepath: string, baseSlug: string, lang: Lang, dryRun: boolean): ProcessResult {
-  const original = fs.readFileSync(filepath, 'utf-8');
-  let content = original;
+/**
+ * Transform article HTML string: ensures language-switcher and article-top-nav
+ * with a back-to-news link are present. Idempotent — safe to call multiple times.
+ *
+ * @param content   Original HTML string
+ * @param baseSlug  Article base slug (e.g. "news/2026-01-01-article")
+ * @param lang      Language code for this variant
+ * @returns Updated HTML string and flags indicating what changed
+ */
+export function transformContent(
+  content: string,
+  baseSlug: string,
+  lang: Language,
+): { content: string } & ProcessResult {
+  let result = content;
   let addedSwitcher = false;
   let addedTopnav = false;
+  let fixedTopnav = false;
 
   // ── 1. Language switcher ──────────────────────────────────────────
-  const hasSwitcher = content.includes('language-switcher');
+  const hasSwitcher = result.includes('language-switcher');
   if (!hasSwitcher) {
-    const switcherHtml = generateLanguageSwitcher(baseSlug, lang);
-    content = content.replace(/(<body>)/, `$1\n${switcherHtml}`);
+    const switcherHtml = generateArticleLanguageSwitcher(baseSlug, lang);
+    result = result.replace(/(<body>)/, `$1\n${switcherHtml}`);
     addedSwitcher = true;
   } else {
-    // Update existing switcher to have all 14 languages
-    const newSwitcher = generateLanguageSwitcher(baseSlug, lang);
-    content = content.replace(/<nav class="language-switcher"[^>]*>[\s\S]*?<\/nav>/, newSwitcher);
+    // Update existing switcher to have all 14 languages.
+    // Use [^\S\n]* (spaces/tabs, not newlines) to consume any indentation before <nav>,
+    // so the replacement string's own leading spaces don't accumulate on repeated runs.
+    const newSwitcher = generateArticleLanguageSwitcher(baseSlug, lang);
+    result = result.replace(/[^\S\n]*<nav class="language-switcher"[^>]*>[\s\S]*?<\/nav>/, newSwitcher);
   }
 
   // ── 2. article-top-nav ────────────────────────────────────────────
-  const hasTopnav = content.includes('article-top-nav');
+  const hasTopnav = result.includes('article-top-nav');
+
+  // If top-nav exists but is missing back-to-news link, replace it
+  if (hasTopnav) {
+    const topNavHasBackLink =
+      /<div class="article-top-nav">[\s\S]*?class="back-to-news"[\s\S]*?<\/div>/.test(result);
+    if (!topNavHasBackLink) {
+      result = result.replace(
+        /<div class="article-top-nav">[\s\S]*?<\/div>/,
+        generateTopNav(lang).trim(),
+      );
+      fixedTopnav = true;
+    }
+  }
+
   if (!hasTopnav) {
     const topNavHtml = generateTopNav(lang);
     let inserted = false;
 
     // Pattern A: insert after closing </nav> of language-switcher, before article/div.news-article
-    if (content.includes('</nav>')) {
-      // Capture groups: (1)=full outer match, (2)=</nav>, (3)=whitespace, (4)=article/div opening tag
+    if (result.includes('</nav>')) {
       const navPattern = /((<\/nav>)([\s]*)(<(?:article|div)\s+class="(?:news-article|container)"))/s;
-      const match = navPattern.exec(content);
+      const match = navPattern.exec(result);
       if (match) {
-        const endOfNav = match.index + match[2].length; // position right after </nav>
+        const endOfNav = match.index + match[2].length;
         const whitespace = match[3];
         const articleTag = match[4];
-        const afterFull = content.slice(match.index + match[0].length);
-        content = content.slice(0, endOfNav) + topNavHtml + whitespace + articleTag + afterFull;
+        const afterFull = result.slice(match.index + match[0].length);
+        result = result.slice(0, endOfNav) + topNavHtml + whitespace + articleTag + afterFull;
         inserted = true;
       }
     }
 
-    // Pattern B: insert directly before <article class="news-article"> or <article class="container">
+    // Pattern B: insert directly before <article class="news-article"> or <div class="container">
     if (!inserted) {
       const articlePattern = /(<(?:article|div)\s+class="(?:news-article|container)")/;
-      const match = articlePattern.exec(content);
+      const match = articlePattern.exec(result);
       if (match) {
-        content = content.slice(0, match.index) + topNavHtml + '\n' + content.slice(match.index);
+        result = result.slice(0, match.index) + topNavHtml + '\n' + result.slice(match.index);
         inserted = true;
       }
     }
@@ -162,16 +136,23 @@ function processArticle(filepath: string, baseSlug: string, lang: Lang, dryRun: 
     if (inserted) addedTopnav = true;
   }
 
+  return { content: result, addedSwitcher, addedTopnav, fixedTopnav };
+}
+
+function processArticle(filepath: string, baseSlug: string, lang: Language, dryRun: boolean): ProcessResult {
+  const original = fs.readFileSync(filepath, 'utf-8');
+  const { content, addedSwitcher, addedTopnav, fixedTopnav } = transformContent(original, baseSlug, lang);
+
   // ── Write if changed ──────────────────────────────────────────────
   if (content !== original && !dryRun) {
     fs.writeFileSync(filepath, content, 'utf-8');
   }
 
-  return { addedSwitcher, addedTopnav };
+  return { addedSwitcher, addedTopnav, fixedTopnav };
 }
 
 interface ArticleMap {
-  [baseSlug: string]: Partial<Record<Lang, string>>;
+  [baseSlug: string]: Partial<Record<Language, string>>;
 }
 
 function discoverArticles(newsDir: string): ArticleMap {
@@ -213,16 +194,18 @@ function main(): void {
   let total = 0;
   let switchersAdded = 0;
   let topnavsAdded = 0;
+  let topnavsFixed = 0;
 
   for (const baseSlug of slugs) {
     const langFiles = articles[baseSlug];
-    for (const lang of LANGUAGES) {
+    for (const lang of ALL_LANG_CODES) {
       const filepath = langFiles[lang];
       if (!filepath) continue;
       total++;
-      const { addedSwitcher, addedTopnav } = processArticle(filepath, baseSlug, lang, dryRun);
+      const { addedSwitcher, addedTopnav, fixedTopnav } = processArticle(filepath, baseSlug, lang, dryRun);
       if (addedSwitcher) switchersAdded++;
       if (addedTopnav) topnavsAdded++;
+      if (fixedTopnav) topnavsFixed++;
     }
   }
 
@@ -230,6 +213,7 @@ function main(): void {
   console.log(`Total files processed: ${total}`);
   console.log(`Language switchers added: ${switchersAdded}`);
   console.log(`Top nav (article-top-nav) added: ${topnavsAdded}`);
+  console.log(`Top nav fixed (missing back-to-news link): ${topnavsFixed}`);
   if (dryRun) {
     console.log('\n(Dry run — no files were modified)');
   }
