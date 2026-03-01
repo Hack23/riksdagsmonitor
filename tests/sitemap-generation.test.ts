@@ -111,7 +111,7 @@ describe('Sitemap Generation', () => {
     });
 
     it('should include news articles', () => {
-      const newsUrls: RegExpMatchArray | null = sitemapContent.match(/<loc>https:\/\/riksdagsmonitor\.com\/news\/\d{4}-\d{2}-\d{2}-.+?\.html<\/loc>/g);
+      const newsUrls: RegExpMatchArray | null = sitemapContent.match(/<loc>https:\/\/riksdagsmonitor\.com\/news\/(?:\d{4}\/\d{2}\/)?\d{4}-\d{2}-\d{2}-.+?\.html<\/loc>/g);
       const newsUrlCount: number = (newsUrls || []).length;
       console.log(`  ✓ Found ${newsUrlCount} news article URLs`);
       expect(newsUrlCount).toBeGreaterThan(50);

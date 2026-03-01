@@ -187,7 +187,7 @@ function getNewsArticles(): ArticleGroup[] {
 
   scanDir(NEWS_DIR);
 
-  console.log(`  Found ${articles.size} news articles`);
+  console.log(`  Found ${articles.size} news article groups`);
 
   return Array.from(articles.values());
 }
