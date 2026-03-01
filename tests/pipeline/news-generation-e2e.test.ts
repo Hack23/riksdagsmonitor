@@ -81,9 +81,9 @@ interface BreakingNewsModule {
 
 const { mockClientInstance, MockMCPClient } = vi.hoisted(() => {
   const mockCalendarEvents = [
-    { id: 'ev1', title: 'Budget committee meeting', date: '2026-03-02', type: 'committee', organ: 'FiU' },
-    { id: 'ev2', title: 'Chamber debate on defence', date: '2026-03-03', type: 'chamber', organ: 'Kammaren' },
-    { id: 'ev3', title: 'EU affairs committee', date: '2026-03-04', type: 'committee', organ: 'EUN' },
+    { id: 'ev1', rubrik: 'Budget committee meeting', datum: '2026-03-02', tid: '10:00', type: 'committee', organ: 'FiU' },
+    { id: 'ev2', rubrik: 'Chamber debate on defence', datum: '2026-03-03', tid: '14:00', type: 'chamber', organ: 'Kammaren' },
+    { id: 'ev3', rubrik: 'EU affairs committee', datum: '2026-03-04', tid: '09:00', type: 'committee', organ: 'EUN' },
   ];
 
   const mockCommitteeReports = [
@@ -204,8 +204,8 @@ beforeAll(async () => {
 beforeEach(() => {
   // Re-initialize mock return values since mockReset:true clears implementations
   mockClientInstance.fetchCalendarEvents.mockResolvedValue([
-    { id: 'ev1', title: 'Budget committee meeting', date: '2026-03-02', type: 'committee', organ: 'FiU' },
-    { id: 'ev2', title: 'Chamber debate on defence', date: '2026-03-03', type: 'chamber', organ: 'Kammaren' },
+    { id: 'ev1', rubrik: 'Budget committee meeting', datum: '2026-03-02', tid: '10:00', type: 'committee', organ: 'FiU' },
+    { id: 'ev2', rubrik: 'Chamber debate on defence', datum: '2026-03-03', tid: '14:00', type: 'chamber', organ: 'Kammaren' },
   ]);
   mockClientInstance.fetchCommitteeReports.mockResolvedValue([
     { id: 'bet1', title: 'Defence appropriations 2026', organ: 'FöU', rm: '2025/26', dok_id: 'FöU3' },
