@@ -75,6 +75,7 @@ interface GenerateNewsEnhancedModule {
   readonly VALID_ARTICLE_TYPES: readonly ArticleType[];
   readonly ALL_LANGUAGES: readonly Language[];
   readonly LANGUAGE_PRESETS: LanguagePresets;
+  readonly languages: readonly Language[];
   readonly formatDateForSlug: (date?: Date) => string;
   readonly getWeekAheadDateRange: () => DateRange;
   readonly writeSingleArticle: (html: string, slug: string, lang: string) => Promise<string>;
@@ -235,6 +236,14 @@ describe('Generate News Enhanced - Part 1', () => {
       if (!moduleExports) return;
 
       expect(moduleExports.LANGUAGE_PRESETS.all).toEqual(moduleExports.ALL_LANGUAGES);
+    });
+
+    it('languages should default to ALL_LANGUAGES when no --languages arg is provided', () => {
+      if (!moduleExports) return;
+
+      // The module was imported without a --languages CLI argument (test runner argv has none),
+      // so languages must equal ALL_LANGUAGES (the 'all' preset expands to all 14 codes).
+      expect(moduleExports.languages).toEqual(moduleExports.ALL_LANGUAGES);
     });
   });
 
