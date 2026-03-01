@@ -33,6 +33,7 @@ import {
   addChartKeyboardNav,
   initDashboardSection,
   showDataSourceDisclaimer,
+  renderErrorFallback,
 } from '../shared/index.js';
 
 import { loadCSV, createDataSource } from '../shared/index.js';
@@ -965,18 +966,14 @@ export async function init(): Promise<void> {
   } catch (error) {
     logger.error('❌ Failed to load CIA risk data:', error);
 
-    // Display error message to user
+    // Display error message to user using the shared error boundary fallback
     const alertContainer = document.getElementById('earlyWarningAlerts');
     if (alertContainer) {
-      alertContainer.innerHTML = `
-        <div class="alert alert-danger" role="alert">
-          <h4>⚠️ Data Loading Error</h4>
-          <p>Unable to load risk assessment data from CIA Platform.</p>
-          <p><strong>Error:</strong> ${(error as Error).message}</p>
-          <p>Please check your internet connection and try refreshing the page.</p>
-          <p><small>Data source: view_politician_risk_summary_sample.csv (403 politicians)</small></p>
-        </div>
-      `;
+      renderErrorFallback(
+        alertContainer,
+        'Unable to load risk assessment data from CIA Platform.',
+        () => { void init(); },
+      );
     }
 
     // Cannot proceed without data - exit gracefully

@@ -36,15 +36,24 @@ export async function renderWithFallback(
   renderFn: () => void | Promise<void>,
   fallbackMessage = 'Data temporarily unavailable',
 ): Promise<void> {
-  renderLoadingFallback(container);
+  let inFlight = false;
 
   const attempt = async (): Promise<void> => {
+    if (inFlight) {
+      // Prevent overlapping attempts that could cause race conditions.
+      return;
+    }
+
+    inFlight = true;
     renderLoadingFallback(container);
+
     try {
       await Promise.resolve(renderFn());
     } catch (err) {
       logger.error('[ErrorBoundary] Render failed:', err);
       renderErrorFallback(container, fallbackMessage, attempt);
+    } finally {
+      inFlight = false;
     }
   };
 

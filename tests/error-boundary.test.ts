@@ -2,9 +2,9 @@
  * Tests for error-boundary and fallback-ui modules.
  *
  * Covers:
- *  - renderLoadingFallback: skeleton DOM structure and ARIA attributes
- *  - renderErrorFallback: error card DOM, message text, retry button wiring
- *  - renderWithFallback: success path, failure path, retry re-runs renderFn
+ *  - renderLoadingFallback: skeleton DOM structure and ARIA attributes, custom loadingLabel
+ *  - renderErrorFallback: error card DOM, message text, retry button wiring, custom retryLabel
+ *  - renderWithFallback: success path, failure path, retry re-runs renderFn, inFlight guard
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -52,6 +52,18 @@ describe('renderLoadingFallback', () => {
     renderLoadingFallback(container);
     const wrapper = container.querySelector('.fallback-loading-skeleton');
     expect(wrapper!.getAttribute('aria-live')).toBe('polite');
+  });
+
+  it('uses the default "Loading…" aria-label when no label is supplied', () => {
+    renderLoadingFallback(container);
+    const wrapper = container.querySelector('.fallback-loading-skeleton');
+    expect(wrapper!.getAttribute('aria-label')).toBe('Loading…');
+  });
+
+  it('uses a custom aria-label when loadingLabel is provided', () => {
+    renderLoadingFallback(container, 'Laddar…');
+    const wrapper = container.querySelector('.fallback-loading-skeleton');
+    expect(wrapper!.getAttribute('aria-label')).toBe('Laddar…');
   });
 
   it('renders at least one skeleton bar', () => {
@@ -107,6 +119,18 @@ describe('renderErrorFallback', () => {
     const btn = container.querySelector('.fallback-retry-btn');
     expect(btn).not.toBeNull();
     expect((btn as HTMLButtonElement).type).toBe('button');
+  });
+
+  it('uses the default "Retry" label for the retry button', () => {
+    renderErrorFallback(container, 'msg', vi.fn());
+    const btn = container.querySelector('.fallback-retry-btn') as HTMLButtonElement;
+    expect(btn.textContent).toBe('Retry');
+  });
+
+  it('uses a custom label for the retry button when retryLabel is provided', () => {
+    renderErrorFallback(container, 'msg', vi.fn(), 'Försök igen');
+    const btn = container.querySelector('.fallback-retry-btn') as HTMLButtonElement;
+    expect(btn.textContent).toBe('Försök igen');
   });
 
   it('calls retryFn when the retry button is clicked', () => {
@@ -197,5 +221,33 @@ describe('renderWithFallback', () => {
     await renderWithFallback(container, () => { throw new Error('x'); });
     const msg = container.querySelector('.fallback-message');
     expect(msg!.textContent).toBe('Data temporarily unavailable');
+  });
+
+  it('ignores concurrent retry clicks while an attempt is already in flight', async () => {
+    let resolveSecond!: () => void;
+    let callCount = 0;
+
+    const renderFn = vi.fn(async () => {
+      callCount += 1;
+      if (callCount === 1) throw new Error('fail');
+      // Second attempt is slow — wait until externally resolved
+      await new Promise<void>((r) => { resolveSecond = r; });
+    });
+
+    await renderWithFallback(container, renderFn, 'race msg');
+
+    const btn = container.querySelector('.fallback-retry-btn') as HTMLButtonElement;
+    expect(btn).not.toBeNull();
+
+    // Trigger two rapid clicks before the first retry resolves
+    btn.click();
+    btn.click();
+
+    // Resolve the pending async renderFn
+    resolveSecond();
+    await new Promise((r) => setTimeout(r, 0));
+
+    // Only one extra attempt should have been started (the inFlight guard blocks the second)
+    expect(renderFn).toHaveBeenCalledTimes(2);
   });
 });

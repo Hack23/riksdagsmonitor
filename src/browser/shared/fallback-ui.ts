@@ -1,8 +1,7 @@
 /**
  * @module Shared/FallbackUI
  * @description Centralized fallback UI renderers for dashboard error and loading states.
- * Provides consistent error and loading state presentation with cyberpunk theme styling,
- * retry capability, and WCAG 2.1 AA accessibility compliance.
+ * Provides consistent error and loading state presentation with optional retry capability.
  *
  * @intelligence Intelligence platform resilience layer — standardised fallback states
  * (error cards, loading skeletons) ensure uninterrupted intelligence consumption even when
@@ -19,11 +18,13 @@
 /**
  * Replace the contents of `container` with an accessible error card.
  * An optional `retryFn` receives a retry button the user can click.
+ * An optional `retryLabel` overrides the default "Retry" button text for localised UIs.
  */
 export function renderErrorFallback(
   container: HTMLElement,
   message = 'Data temporarily unavailable',
   retryFn?: () => void,
+  retryLabel = 'Retry',
 ): void {
   container.innerHTML = '';
 
@@ -48,7 +49,7 @@ export function renderErrorFallback(
     const btn = document.createElement('button');
     btn.className = 'fallback-retry-btn';
     btn.type = 'button';
-    btn.textContent = 'Retry';
+    btn.textContent = retryLabel;
     btn.addEventListener('click', retryFn);
     card.appendChild(btn);
   }
@@ -58,15 +59,16 @@ export function renderErrorFallback(
 
 /**
  * Replace the contents of `container` with a CSS-only skeleton loading animation.
+ * The optional `loadingLabel` allows localized ARIA text for screen readers.
  */
-export function renderLoadingFallback(container: HTMLElement): void {
+export function renderLoadingFallback(container: HTMLElement, loadingLabel = 'Loading…'): void {
   container.innerHTML = '';
 
   const wrapper = document.createElement('div');
   wrapper.className = 'fallback-loading-skeleton';
   wrapper.setAttribute('role', 'status');
   wrapper.setAttribute('aria-live', 'polite');
-  wrapper.setAttribute('aria-label', 'Loading…');
+  wrapper.setAttribute('aria-label', loadingLabel);
 
   for (let i = 0; i < 3; i++) {
     const bar = document.createElement('div');

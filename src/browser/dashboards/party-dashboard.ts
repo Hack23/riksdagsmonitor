@@ -51,6 +51,7 @@ import {
   getResponsiveOptions,
   addChartKeyboardNav,
   showDataSourceDisclaimer,
+  renderErrorFallback,
 } from '../shared/index.js';
 
 import { detectLanguage } from '../shared/index.js';
@@ -1227,13 +1228,6 @@ export async function init(): Promise<void> {
     logger.debug('✅ Party dashboard initialized successfully');
   } catch (error) {
     logger.error('Error initializing party dashboard:', error);
-
-    // Show error message
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'dashboard-error';
-    errorDiv.style.cssText =
-      'padding: 2rem; text-align: center; color: var(--danger-color);';
-    errorDiv.textContent = t.errorMessage;
-    dashboardSection.appendChild(errorDiv);
+    renderErrorFallback(dashboardSection, t.errorMessage, () => { void init(); });
   }
 }
