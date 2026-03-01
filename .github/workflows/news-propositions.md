@@ -230,6 +230,29 @@ npx tsx scripts/fix-article-navigation.ts
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
+Run validation and HTMLHint before creating PR:
+```bash
+bash scripts/validate-news-generation.sh
+VALIDATION_EXIT=$?
+if [ "$VALIDATION_EXIT" -ne 0 ]; then
+  echo "❌ News generation validation failed. Fix the reported issues before creating a PR."
+  exit "$VALIDATION_EXIT"
+fi
+
+# HTMLHint validation with auto-fix for common nesting errors
+NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | wc -l)
+if [ "$NEWS_FILES" -gt 0 ]; then
+  if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
+    echo "⚠️ HTML validation errors found, attempting auto-fix..."
+    npx tsx scripts/article-quality-enhancer.ts --fix
+    if ! npx htmlhint "news/*-*.html"; then
+      echo "❌ HTML validation failed after auto-fix. Please resolve remaining HTMLHint errors before creating a PR."
+      exit 1
+    fi
+  fi
+fi
+```
+
 Translate all Swedish content, regenerate indexes, validate, then create PR.
 
 **CRITICAL: Each article MUST contain real analysis, not just a list of translated links.**
