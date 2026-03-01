@@ -426,10 +426,10 @@ export async function batchEnhanceQuality(
 /**
  * Fix common HTML nesting errors in article content.
  *
- * Corrects:
- * - `<p><ul>` → closes `</p>` before `<ul>` (block element inside inline)
- * - `<p><ol>` → closes `</p>` before `<ol>` (block element inside inline)
- * - `<p><div>` → removes enclosing `<p>` (block element inside inline)
+ * Corrects invalid block-level nesting patterns:
+ * - `<p><ul>` → closes `</p>` before `<ul>` so the `<ul>` list is not nested inside a `<p>` paragraph
+ * - `<p><ol>` → closes `</p>` before `<ol>` so the `<ol>` list is not nested inside a `<p>` paragraph
+ * - `<p><div>` → removes the enclosing `<p>` so the block-level `<div>` is not nested inside a `<p>` paragraph
  * - Orphaned `</p>` immediately after `</ul>` → removed
  * - Orphaned `</p>` immediately after `</ol>` → removed
  * - Orphaned `</p>` immediately after `</div>` (when wrapped by `<p>`) → removed

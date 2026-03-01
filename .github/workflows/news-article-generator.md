@@ -1167,10 +1167,10 @@ Before creating the PR, validate the quality of generated articles:
 **HTML Validation:**
 ```bash
 # Validate HTML structure with auto-fix for common nesting errors
-if ! npx htmlhint "news/*-*.html" --config .htmlhintrc 2>/dev/null; then
+if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
   echo "⚠️ HTML validation errors found, attempting auto-fix..."
   npx tsx scripts/article-quality-enhancer.ts --fix
-  if ! npx htmlhint "news/*-*.html" --config .htmlhintrc; then
+  if ! npx htmlhint "news/*-*.html"; then
     echo "❌ HTML validation errors remain after auto-fix. Please fix them before creating a PR."
     exit 1
   fi

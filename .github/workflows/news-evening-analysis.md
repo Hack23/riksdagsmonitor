@@ -1010,10 +1010,10 @@ After running `validate-news-generation.sh`, run HTMLHint with auto-fix for any 
 ```bash
 NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | grep -v 'index' | wc -l)
 if [ "$NEWS_FILES" -gt 0 ]; then
-  if ! npx htmlhint "news/*-*.html" --config .htmlhintrc 2>/dev/null; then
+  if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
     echo "⚠️ HTML validation errors found, attempting auto-fix..."
     npx tsx scripts/article-quality-enhancer.ts --fix
-    if ! npx htmlhint "news/*-*.html" --config .htmlhintrc; then
+    if ! npx htmlhint "news/*-*.html"; then
       echo "❌ HTML validation errors remain after auto-fix. Please fix them before creating a PR."
       exit 1
     fi
