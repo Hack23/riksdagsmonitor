@@ -578,9 +578,14 @@ describe('Pipeline: hreflang tag consistency', () => {
     const html = articleTemplate.generateArticleHTML(makeArticleData('en'));
     // The in-page language switcher must also emit nb (not no) for the Norwegian link
     expect(html).toContain('href="2026-03-01-week-ahead-no.html"');
-    // Verify the switcher link does NOT use hreflang="no" and DOES use hreflang="nb"
-    expect(html).not.toMatch(/href="[^"]*-no\.html"[^>]*hreflang="no"/);
-    expect(html).toContain('hreflang="nb"');
+    // Verify the switcher <a> for -no.html does NOT use hreflang="no" (order-insensitive)
+    expect(html).not.toMatch(
+      /<a[^>]*(?=[^>]*href="[^"]*-no\.html")(?=[^>]*hreflang="no")[^>]*>/,
+    );
+    // And DOES use hreflang="nb" on the same <a> element (order-insensitive)
+    expect(html).toMatch(
+      /<a[^>]*(?=[^>]*href="[^"]*-no\.html")(?=[^>]*hreflang="nb")[^>]*>/,
+    );
   });
 
   it('hreflang links share the same base slug', () => {
