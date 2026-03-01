@@ -107,7 +107,14 @@ describe('Accessibility (WCAG 2.1 AA)', () => {
   });
   
   it('should have skip to content link', () => {
-    cy.get('a[href="#main-content"], a[href="#main"]').should('exist');
+    cy.get('a[href="#main-content"], a[href="#main"], a[href="#main-dashboard"]').should('exist');
+  });
+  
+  it('should have skip link as first focusable element', () => {
+    cy.get('a[href="#main-content"], a[href="#main"], a[href="#main-dashboard"]').first().then(($el) => {
+      const classList = Array.from($el[0].classList);
+      expect(classList.some(c => c.includes('skip'))).to.be.true;
+    });
   });
   
   it('should support reduced motion preference', () => {
