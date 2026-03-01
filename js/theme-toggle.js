@@ -94,12 +94,6 @@
     const btn = document.getElementById('theme-toggle');
     if (btn) {
       btn.addEventListener('click', toggle);
-      btn.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggle();
-        }
-      });
     }
 
     // Follow system changes only when no explicit user preference is set
