@@ -50,8 +50,9 @@ jobs:
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
           egress-policy: block
-          allowed-endpoints: >
+          allowed-endpoints: |
             api.github.com:443
+            codeload.github.com:443
             github.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
@@ -98,8 +99,9 @@ jobs:
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
           egress-policy: block
-          allowed-endpoints: >
+          allowed-endpoints: |
             api.github.com:443
+            codeload.github.com:443
             github.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
@@ -145,9 +147,10 @@ jobs:
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
           egress-policy: block
-          allowed-endpoints: >
+          allowed-endpoints: |
             api.github.com:443
             cdn.cypress.io:443
+            codeload.github.com:443
             github.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
@@ -202,7 +205,7 @@ jobs:
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
           egress-policy: block
-          allowed-endpoints: >
+          allowed-endpoints: |
             api.github.com:443
             github.com:443
       
