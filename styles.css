@@ -10553,7 +10553,7 @@ html[data-theme="light"] a:hover {
 }
 
 html[data-theme="light"] header {
-  border-bottom: revert;
+  border-bottom: 1px solid var(--card-border);
 }
 
 html[data-theme="light"] .card {
@@ -10676,8 +10676,8 @@ header {
     right: 0.5rem;
     padding: 0.3rem 0.6rem;
     font-size: 0.9rem;
-    min-width: 40px;
-    min-height: 40px;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   [dir="rtl"] .theme-toggle-btn {

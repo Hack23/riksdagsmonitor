@@ -104,14 +104,21 @@
 
     // Follow system changes only when no explicit user preference is set
     if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      var mql = window.matchMedia('(prefers-color-scheme: dark)');
+      var handleSchemeChange = function (e) {
         try {
           if (localStorage.getItem(STORAGE_KEY)) return; // explicit choice wins
         } catch (_) {}
-        const sysTheme = e.matches ? DARK : LIGHT;
+        var sysTheme = e.matches ? DARK : LIGHT;
         applyTheme(sysTheme, false);
         updateButton(sysTheme);
-      });
+      };
+      // Use addEventListener where available; fall back to legacy addListener
+      if (typeof mql.addEventListener === 'function') {
+        mql.addEventListener('change', handleSchemeChange);
+      } else if (typeof mql.addListener === 'function') {
+        mql.addListener(handleSchemeChange);
+      }
     }
   });
 
