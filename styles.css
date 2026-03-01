@@ -10920,6 +10920,23 @@ html[data-theme="light"] .installation-step {
   color: var(--link-hover, #ff006e);
 }
 
+/* News index page footer */
+.news-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--text-secondary, #a0a0a0);
+  font-size: 0.9rem;
+}
+
+.news-footer a {
+  color: var(--primary-color, #00d9ff);
+  text-decoration: underline;
+}
+
+.news-footer a:hover {
+  color: var(--link-hover, #ff006e);
+}
+
 /* News page footer disclaimer */
 .news-page .footer-disclaimer {
   font-size: 0.85rem;

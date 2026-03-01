@@ -554,7 +554,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       <p>${escapeHtml(lang.aiNewsroomText)}</p>
     </div>
   </section>
-  <footer class="footer-section">
+  <footer class="news-footer">
     <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence | v${PKG_VERSION}</p>
     <p class="footer-disclaimer">⚠️ ${escapeHtml(lang.disclaimer)} <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">${escapeHtml(lang.disclaimerLink)}</a>.</p>
   </footer>
