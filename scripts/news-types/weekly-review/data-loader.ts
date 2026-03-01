@@ -328,17 +328,3 @@ export function normalizedCIAContext(ctx: CIAContext): CIAContext {
   };
 }
 
-/**
- * Analyse coalition stress from a list of voting records.
- *
- * Groups records by vote-point (bet + punkt), then counts:
- * - Government wins/losses (M/KD/L/SD bloc)
- * - Cross-party votes (opposition voting with government)
- * - Internal defections (government parties split)
- *
- * Also integrates risk scoring via calculateCoalitionRiskIndex and
- * detectAnomalousPatterns from scripts/data-transformers/risk-analysis.ts.
- *
- * @param votingRecords - Raw records from search_voteringar
- * @param ciaContext    - CIA intelligence context for risk scoring
- */
