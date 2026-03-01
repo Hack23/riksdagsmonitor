@@ -56,7 +56,7 @@ interface RssArticle {
 // ---------------------------------------------------------------------------
 
 /**
- * Escape XML special characters.
+ * Escape XML special characters, preserving existing HTML/XML entities.
  */
 function escapeXml(text: string): string {
   return text
@@ -65,6 +65,15 @@ function escapeXml(text: string): string {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
+}
+
+/**
+ * Map file-suffix language codes to proper BCP-47 hreflang codes.
+ * Norwegian files use the suffix "no" but hreflang should be "nb" (Bokmål).
+ */
+function hreflangCode(lang: string): string {
+  if (lang === 'no') return 'nb';
+  return lang;
 }
 
 /**
@@ -218,7 +227,7 @@ function generateRss(): string {
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <pubDate>${lastBuildDate}</pubDate>
     <ttl>60</ttl>
-    <copyright>Copyright ${articles.length > 0 ? new Date(articles[0]!.pubDate).getUTCFullYear() : 2026} Hack23 AB. Licensed under Apache-2.0.</copyright>
+    <copyright>Copyright ${articles.length > 0 ? new Date(articles[0]!.pubDate).getUTCFullYear() : new Date(lastBuildDate).getUTCFullYear()} Hack23 AB. Licensed under Apache-2.0.</copyright>
     <managingEditor>info@hack23.com (Hack23 AB)</managingEditor>
     <webMaster>info@hack23.com (Hack23 AB)</webMaster>
     <generator>Riksdagsmonitor RSS Generator v1.0</generator>
@@ -259,7 +268,7 @@ function generateRss(): string {
     // Add multi-language alternate links
     for (const alt of article.alternateLanguages) {
       xml += `
-      <atom:link href="${escapeXml(alt.href)}" rel="alternate" type="text/html" hreflang="${alt.lang}"/>`;
+      <atom:link href="${escapeXml(alt.href)}" rel="alternate" type="text/html" hreflang="${hreflangCode(alt.lang)}"/>`;
     }
 
     xml += `
