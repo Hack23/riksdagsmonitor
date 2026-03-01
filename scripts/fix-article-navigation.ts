@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env -S npx tsx
 /**
  * Fix Article Navigation: Language Switcher + Back-to-News Top Nav
  *
@@ -228,7 +228,7 @@ function main(): void {
 
   console.log('=== Summary ===');
   console.log(`Total files processed: ${total}`);
-  console.log(`Language switchers added/updated: ${switchersAdded}`);
+  console.log(`Language switchers added: ${switchersAdded}`);
   console.log(`Top nav (article-top-nav) added: ${topnavsAdded}`);
   if (dryRun) {
     console.log('\n(Dry run — no files were modified)');
