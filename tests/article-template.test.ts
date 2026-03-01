@@ -525,10 +525,11 @@ describe('Article Template', () => {
   describe('All 14 hreflang tags', () => {
     it('should include hreflang tags for all 14 languages', () => {
       const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
-      // Norwegian language code
+      // Norwegian maps to BCP-47 'nb' (Bokmål); URL path suffix remains 'no'
       const allLangs: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
       allLangs.forEach((lang: Language) => {
-        expect(html).toContain(`hreflang="${lang}"`);
+        const expectedHreflang = lang === 'no' ? 'nb' : lang;
+        expect(html).toContain(`hreflang="${expectedHreflang}"`);
       });
     });
   });
@@ -694,7 +695,9 @@ describe('Article Template', () => {
       const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
       const langs = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
       for (const lang of langs) {
-        expect(html).toContain(`hreflang="${lang}"`);
+        // Norwegian maps to BCP-47 'nb'; URL path suffix remains 'no'
+        const expectedHreflang = lang === 'no' ? 'nb' : lang;
+        expect(html).toContain(`hreflang="${expectedHreflang}"`);
         expect(html).toContain(`class="lang-link`);
       }
     });
