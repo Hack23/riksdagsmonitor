@@ -24,6 +24,7 @@ import {
   LANG_SWITCHER_ARIA_LABELS,
 } from './constants.js';
 import { PKG_VERSION } from '../shared/version.js';
+import { escapeHtml } from '../html-utils.js';
 
 /**
  * Map a language code to its BCP-47 hreflang value.
@@ -245,7 +246,7 @@ ${ALL_LANG_CODES.map(l => {
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | ${labels.location} | v${PKG_VERSION}</p>
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | ${labels.location} | v${escapeHtml(String(PKG_VERSION))}</p>
     <p class="footer-disclaimer">⚠️ ${labels.disclaimer} <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">${labels.disclaimerLink}</a>.</p>
   </div>
 </footer>`;
