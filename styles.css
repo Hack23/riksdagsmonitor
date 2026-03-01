@@ -10433,7 +10433,9 @@ html[data-theme="dark"] .news-navigation {
   border: 1px solid rgba(0, 204, 102, 0.3);
 }
 
-/* Scan-line effect for dark theme */
+/* Scan-line effect for dark theme.
+   Note: base scan-line styles are also defined under @media (prefers-color-scheme: dark).
+   The [data-theme] selector takes higher specificity and overrides the media-query rule. */
 html[data-theme="dark"] body::after {
   content: "";
   position: fixed;
@@ -10534,7 +10536,7 @@ html[data-theme="light"] {
 /* Disable dark element-level overrides when user forces light */
 html[data-theme="light"] body::after,
 html[data-theme="light"] body::before {
-  display: none !important;
+  display: none;
 }
 
 html[data-theme="light"] h1,

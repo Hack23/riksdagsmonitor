@@ -15,12 +15,12 @@
  * */
 
 import type { Chart as ChartType, ChartConfiguration, ChartTypeRegistry } from 'chart.js';
-import { THEME_COLORS, CHART_PALETTE, BREAKPOINTS } from './theme.js';
+import { THEME_COLORS, CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette } from './theme.js';
 import { showLoadingState, showErrorState, hideStateOverlays } from './dom-utils.js';
 import { logger } from './logger.js';
 
 // Re-export for convenience
-export { THEME_COLORS, CHART_PALETTE, BREAKPOINTS };
+export { THEME_COLORS, CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette };
 
 /**
  * Get the Chart constructor.
@@ -56,9 +56,9 @@ export function getResponsiveOptions(): Record<string, unknown> {
       },
       tooltip: {
         backgroundColor: 'rgba(10, 14, 39, 0.95)',
-        titleColor: THEME_COLORS.cyan,
+        titleColor: getActiveThemeColors().cyan,
         bodyColor: '#e0e0e0',
-        borderColor: THEME_COLORS.cyan,
+        borderColor: getActiveThemeColors().cyan,
         borderWidth: 1,
         padding: isMobile ? 6 : 10,
         titleFont: { size: isMobile ? 11 : 13, weight: 'bold' as const },

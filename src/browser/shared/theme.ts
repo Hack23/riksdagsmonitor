@@ -6,7 +6,7 @@
  * Theme architecture:
  *   – `DARK_THEME_COLORS`  → Ingress-inspired neon palette (matches html[data-theme="dark"])
  *   – `LIGHT_THEME_COLORS` → Professional green palette (matches html[data-theme="light"] / :root)
- *   – `THEME_COLORS`       → Re-exported alias for the active theme (runtime-resolved)
+ *   – `THEME_COLORS`       → Deprecated constant alias of `DARK_THEME_COLORS` (kept for backwards compatibility; not runtime-resolved)
  *
  * WCAG 2.1 AA compliance:
  *   Dark  #001a1a / #f0f0f0 → 18.1:1 ✅   Cyan  #00d9ff / #001a1a → 9.4:1 ✅

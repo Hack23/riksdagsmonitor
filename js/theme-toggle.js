@@ -11,7 +11,7 @@
  *     already made an explicit choice.
  *
  * Accessibility:
- *  - Toggle button carries `role="button"`, `aria-pressed`, and a descriptive
+ *  - Toggle is a native `<button>` with `aria-pressed` and a descriptive
  *    `aria-label` that updates on every toggle.
  *  - Keyboard: Enter / Space activate the toggle.
  *
@@ -85,7 +85,7 @@
 
   // Apply before first paint (called synchronously by the anti-flash snippet
   // already present in <head>; this line covers when the module loads later).
-  applyTheme(resolveTheme(), false /* already persisted by anti-flash */);
+  applyTheme(resolveTheme(), false /* initial resolution only; do not persist on module boot */);
 
   document.addEventListener('DOMContentLoaded', function () {
     const theme = document.documentElement.getAttribute('data-theme') || LIGHT;
