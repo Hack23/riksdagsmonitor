@@ -12,6 +12,12 @@
  * @license Apache-2.0
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+declare const d3: any;
+declare const Chart: any;
+declare const Papa: any;
+
+import type { CommitteeData } from './types.js';
 import { CONFIG, DataManager } from './data.js';
 import { NetworkDiagram, ProductivityHeatMap } from './charts.js';
 import { ChartJSVisualizations } from './table.js';

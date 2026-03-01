@@ -17,7 +17,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare const Chart: any;
 declare const d3: any;
-import type { PartyNode, CoalitionLink, VotingAnomaly } from './types.js';
+import type { PartyNode, CoalitionLink, VotingAnomaly, PartyConfig, DataCache, BehavioralPatterns, AnnualVotes, AnnualVoteEntry } from './types.js';
+
+// These symbols are provided by the enclosing IIFE in coalition-dashboard.ts at runtime
+declare const PARTIES: Record<string, PartyConfig>;
+declare let dataCache: DataCache;
+declare function initDashboard(): Promise<void>;
 
 function renderVotingAnomalyChart(): void {
   const canvas: HTMLCanvasElement | null = document.getElementById('votingAnomalyChart') as HTMLCanvasElement | null;

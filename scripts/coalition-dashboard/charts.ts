@@ -12,7 +12,14 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare const d3: any;
-import type { PartyNode, CoalitionLink, HeatMapDatum } from './types.js';
+import type { PartyNode, CoalitionLink, HeatMapDatum, PartyConfig, CoalitionAlignment, DataCache } from './types.js';
+
+// These symbols are provided by the enclosing IIFE in coalition-dashboard.ts at runtime
+declare const PARTIES: Record<string, PartyConfig>;
+declare let dataCache: DataCache;
+declare function createAccessibleNetworkTable(nodes: PartyNode[], links: CoalitionLink[]): void;
+declare function showTooltip(event: MouseEvent, content: string): void;
+declare function hideTooltip(): void;
 
 function renderCoalitionNetwork(): void {
   const container: HTMLElement | null = document.getElementById('coalitionNetwork');

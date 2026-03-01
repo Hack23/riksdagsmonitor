@@ -55,7 +55,7 @@ export const CONFIG: AppConfig = {
     { code: 'SoU', name: 'Social Affairs Committee', nameLocalized: { sv: 'Socialutskottet', en: 'Social Affairs Committee' }, color: '#c2185b', domain: 'Social Affairs' },
     { code: 'TU', name: 'Transport Committee', nameLocalized: { sv: 'Trafikutskottet', en: 'Transport Committee' }, color: '#0097a7', domain: 'Transportation' },
     { code: 'UbU', name: 'Education Committee', nameLocalized: { sv: 'Utbildningsutskottet', en: 'Education Committee' }, color: '#5e35b1', domain: 'Education' },
-    { code: 'UFöU', name: 'Foreign Defense Committee', nameLocalized: { sv: 'Utrikes- och försvarsutskottet', en: 'Foreign Defense Committee' }, color: '#f57c00', domain: 'Security Policy' },
+    { code: 'SfU', name: 'Social Insurance Committee', nameLocalized: { sv: 'Socialförsäkringsutskottet', en: 'Social Insurance Committee' }, color: '#f57c00', domain: 'Social Insurance' },
     { code: 'UU', name: 'Foreign Affairs Committee', nameLocalized: { sv: 'Utrikesutskottet', en: 'Foreign Affairs Committee' }, color: '#1565c0', domain: 'Foreign Policy' }
   ],
   
