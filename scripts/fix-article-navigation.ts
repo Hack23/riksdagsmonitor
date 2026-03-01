@@ -61,7 +61,7 @@ export interface ProcessResult {
  * with a back-to-news link are present. Idempotent — safe to call multiple times.
  *
  * @param content   Original HTML string
- * @param baseSlug  Article base slug (e.g. "news/2026-01-01-article")
+ * @param baseSlug  Article base slug without directory prefix (e.g. "2026-01-01-article")
  * @param lang      Language code for this variant
  * @returns Updated HTML string and flags indicating what changed
  */

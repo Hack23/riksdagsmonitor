@@ -70,7 +70,7 @@ const SWITCHER_NO_TOPNAV = `<!DOCTYPE html>
 <head><title>Test</title></head>
 <body>
   <nav class="language-switcher" role="navigation" aria-label="Language versions">
-    <a href="news/2026-01-01-test-en.html" class="lang-link active">🇬🇧 English</a>
+    <a href="2026-01-01-test-en.html" class="lang-link active">🇬🇧 English</a>
   </nav>
 <article class="news-article">
   <h1>Headline</h1>
@@ -84,7 +84,7 @@ const TOPNAV_NO_BACKLINK = `<!DOCTYPE html>
 <head><title>Test</title></head>
 <body>
   <nav class="language-switcher" role="navigation" aria-label="Language versions">
-    <a href="news/2026-01-01-test-en.html" class="lang-link active">🇬🇧 English</a>
+    <a href="2026-01-01-test-en.html" class="lang-link active">🇬🇧 English</a>
   </nav>
 <div class="article-top-nav">
   <!-- placeholder, no back-to-news link -->
@@ -110,7 +110,7 @@ const BARE_ARTICLE_NO_NAV = `<!DOCTYPE html>
 // Helper
 // ---------------------------------------------------------------------------
 
-const SLUG = 'news/2026-01-01-test';
+const SLUG = '2026-01-01-test';
 
 // ---------------------------------------------------------------------------
 // Language switcher insertion
@@ -146,8 +146,17 @@ describe('transformContent — language switcher', () => {
   it('marks current language as active with aria-current', () => {
     const { content } = transformContent(BARE_ARTICLE, SLUG, 'sv');
     expect(content).toContain('aria-current="page"');
-    expect(content).toContain(`href="${SLUG}-sv.html" class="lang-link active"`);
-    expect(content).not.toContain(`href="${SLUG}-en.html" class="lang-link active"`);
+    // sv link must have active class and aria-current (order-independent)
+    const svLink = content.match(new RegExp(`<a[^>]*href="${SLUG}-sv\\.html"[^>]*>`))?.[0];
+    expect(svLink).toBeDefined();
+    expect(svLink).toMatch(/\blang-link\b/);
+    expect(svLink).toMatch(/\bactive\b/);
+    expect(svLink).toMatch(/aria-current="page"/);
+    // en link must not be active
+    const enLink = content.match(new RegExp(`<a[^>]*href="${SLUG}-en\\.html"[^>]*>`))?.[0];
+    expect(enLink).toBeDefined();
+    expect(enLink).not.toMatch(/\bactive\b/);
+    expect(enLink).not.toMatch(/aria-current/);
   });
 });
 
