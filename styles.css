@@ -10727,5 +10727,93 @@ html[data-theme="light"] .installation-step {
   [dir="rtl"] .theme-toggle-btn {
     right: auto;
     left: 0.5rem;
+/* ============================================================
+   Fallback UI — error boundary cards and loading skeletons
+   ============================================================ */
+
+/* Error card */
+.fallback-error-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--danger-color);
+  border-radius: var(--border-radius);
+  background: rgba(220, 53, 69, 0.08);
+  text-align: center;
+}
+
+.fallback-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.fallback-message {
+  margin: 0;
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+}
+
+.fallback-retry-btn {
+  margin-top: var(--spacing-sm);
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  background: var(--primary-color);
+  color: #fff;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.fallback-retry-btn:hover {
+  opacity: 0.85;
+}
+
+.fallback-retry-btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Loading skeleton */
+.fallback-loading-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl);
+}
+
+.skeleton-bar {
+  height: 1.25rem;
+  border-radius: var(--border-radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base)  25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-base)  75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-bar:nth-child(1) { width: 100%; }
+.skeleton-bar:nth-child(2) { width: 85%; }
+.skeleton-bar:nth-child(3) { width: 70%; }
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-bar {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+/* Dark-mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .fallback-error-card {
+    border-color: #ef5350;
+    background: rgba(239, 83, 80, 0.1);
   }
 }
