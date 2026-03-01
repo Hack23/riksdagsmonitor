@@ -5,7 +5,7 @@
    the same space, minimising layout shift on font-swap.
    ================================================== */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Inter Fallback';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -17,9 +17,9 @@
 }
 
 @font-face {
-  font-family: 'Orbitron';
+  font-family: 'Orbitron Fallback';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500 700;
   font-display: swap;
   size-adjust: 94%;
   ascent-override: 85%;
@@ -105,9 +105,9 @@
   --accessible-youtube-red: #CC0000; /* White on #CC0000: 5.10:1 - WCAG AA compliant */
   --accessible-aws-orange: #CC7A00; /* White on #CC7A00: 4.54:1 - WCAG AA compliant */
   
-  --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  --font-main: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, sans-serif;
-  --font-accent: "Inter", system-ui, -apple-system, sans-serif;
+  --font-accent: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif;
   --font-mono: "Share Tech Mono", monospace;
   --border-radius: 8px;
   --border-radius-sm: 4px;
@@ -213,7 +213,7 @@
     --confidentiality-color: #bd93f9;
     --integrity-color: #50fa7b;
     --availability-color: #8be9fd;
-    --font-accent: "Orbitron", sans-serif;
+    --font-accent: "Orbitron", "Orbitron Fallback", sans-serif;
 
     /* Dark-mode focus token (high contrast on dark backgrounds) */
     --focus-color: #00d9ff;  /* primary-cyan – 7.8:1 on #001a1a  */
@@ -252,23 +252,23 @@
    ================================================== */
 /* CJK (Chinese, Japanese, Korean) and RTL (Arabic, Hebrew) Language Support */
 :lang(ja) {
-  font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Noto Sans JP', 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :lang(ko) {
-  font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Noto Sans KR', 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :lang(zh) {
-  font-family: 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Noto Sans SC', 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :lang(ar) {
-  font-family: 'Noto Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Noto Sans Arabic', 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :lang(he) {
-  font-family: 'Noto Sans Hebrew', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Noto Sans Hebrew', 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* ==================================================
@@ -677,7 +677,7 @@ h6 {
   h1,
   h2,
   h3 {
-    font-family: "Orbitron", sans-serif;
+    font-family: "Orbitron", "Orbitron Fallback", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(0, 204, 102, 0.5);
@@ -3343,7 +3343,7 @@ footer {
 }
 
 .dashboard-cta-heading {
-  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-family: var(--font-heading, 'Orbitron', 'Orbitron Fallback', sans-serif);
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   color: var(--heading-color, #00d9ff);
   margin: 0 0 0.75rem 0;
@@ -3474,7 +3474,7 @@ footer {
 }
 
 .news-navigation-heading {
-  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-family: var(--font-heading, 'Orbitron', 'Orbitron Fallback', sans-serif);
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   color: var(--heading-color, #ff006e);
   margin: 0 0 0.75rem 0;
@@ -8879,7 +8879,7 @@ button,
 body.news-page {
   background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
   color: #e0e0e0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
   line-height: 1.6;
   padding: 0;
   margin: 0;
@@ -8899,7 +8899,7 @@ body.news-page {
 }
 
 .news-page h1 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', 'Orbitron Fallback', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   margin: 0 0 1rem 0;
   background: linear-gradient(135deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
@@ -8991,7 +8991,7 @@ body.news-page {
   border: 1px solid rgba(0, 217, 255, 0.5);
   border-radius: 4px;
   color: #e0e0e0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
   cursor: pointer;
 }
 
@@ -9122,7 +9122,7 @@ body.news-page {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   color: var(--header-color);
-  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-family: var(--font-heading, 'Orbitron', 'Orbitron Fallback', sans-serif);
 }
 
 #coalition-status .party-stats {
@@ -9789,7 +9789,7 @@ body.news-page {
 
 .chart-empty-state h3 {
   color: var(--light-text, #e0e0e0);
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', 'Orbitron Fallback', sans-serif;
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
   font-weight: 600;
@@ -9831,7 +9831,7 @@ body.news-page {
 
 .chart-error-state h3 {
   color: var(--light-text, #e0e0e0);
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', 'Orbitron Fallback', sans-serif;
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
   font-weight: 600;
@@ -9851,7 +9851,7 @@ body.news-page {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
