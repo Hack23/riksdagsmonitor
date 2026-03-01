@@ -357,16 +357,17 @@ for en_file in news/*-en.html; do
   if [ $LANG_COUNT -lt 14 ]; then
     INCOMPLETE_SLUGS=$((INCOMPLETE_SLUGS + 1))
     echo -e "${YELLOW}⚠️ '$slug' has only $LANG_COUNT/14 languages. Missing:$MISSING_LANGS${NC}"
-    WARNINGS=$((WARNINGS + 1))
   fi
 done
 
 if [ $TOTAL_SLUGS -eq 0 ]; then
   echo -e "${YELLOW}⚠️ No articles found to check language coverage${NC}"
+  WARNINGS=$((WARNINGS + 1))
 elif [ $INCOMPLETE_SLUGS -eq 0 ]; then
   echo -e "${GREEN}✅ All $TOTAL_SLUGS article slugs have complete 14-language coverage${NC}"
 else
   echo -e "${YELLOW}⚠️ $INCOMPLETE_SLUGS/$TOTAL_SLUGS article slugs have incomplete language coverage${NC}"
+  WARNINGS=$((WARNINGS + 1))
 fi
 echo ""
 
