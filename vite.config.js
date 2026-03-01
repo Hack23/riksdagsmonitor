@@ -11,23 +11,32 @@
 import { defineConfig } from 'vite';
 import sri from 'vite-plugin-sri-gen';
 import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 /**
- * Auto-discover news article HTML files from the news/ directory.
+ * Auto-discover news article HTML files from the news/ directory recursively.
+ * Supports date-based subdirectory structure: news/{year}/{month}/article.html
  * This prevents new articles from being excluded from the Vite build
  * (and thus missing from S3 deployment).
  */
 function discoverNewsArticles() {
-  const newsDir = new URL('./news', import.meta.url);
+  const newsDir = fileURLToPath(new URL('./news', import.meta.url));
   const entries = {};
-  if (fs.existsSync(newsDir)) {
-    for (const file of fs.readdirSync(newsDir)) {
-      if (file.endsWith('.html') && !file.startsWith('index')) {
-        const name = file.replace('.html', '');
-        entries[`news/${name}`] = `./news/${file}`;
+
+  function scanDir(dir, relPrefix) {
+    if (!fs.existsSync(dir)) return;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.isDirectory()) {
+        scanDir(path.join(dir, entry.name), relPrefix + entry.name + '/');
+      } else if (entry.name.endsWith('.html') && !entry.name.startsWith('index')) {
+        const name = relPrefix + entry.name.replace('.html', '');
+        entries[`news/${name}`] = `./news/${relPrefix}${entry.name}`;
       }
     }
   }
+
+  scanDir(newsDir, '');
   return entries;
 }
 
