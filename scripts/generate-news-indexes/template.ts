@@ -263,6 +263,15 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
     }
     
+    function safeHref(slug) {
+      var s = String(slug);
+      // Reject any value that looks like an absolute/protocol URL to prevent href-based XSS
+      if (/[:/]/.test(s.split('?')[0].split('#')[0]) || /^[a-zA-Z][a-zA-Z0-9+\-.]*:/.test(s)) {
+        return '#';
+      }
+      return esc(s);
+    }
+    
     // Pagination i18n strings
     const i18nLoadMore = ${JSON.stringify(lang.i18n.loadMore)};
     const i18nShowing = ${lang.i18n.showing};
@@ -300,7 +309,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
           \${langBadge}
         </div>
         <h2 class="article-title">
-          <a href="\${esc(article.slug)}">\${esc(article.title)}</a>
+          <a href="\${safeHref(article.slug)}">\${esc(article.title)}</a>
         </h2>
         <p class="article-excerpt">\${esc(article.excerpt)}</p>
         \${availableDisplay}

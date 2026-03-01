@@ -397,9 +397,11 @@ describe('Generate News Indexes', () => {
       // esc() helper must be present to prevent XSS via innerHTML
       expect(enContent).toContain('function esc(');
       expect(enContent).toContain('.replace(/&/g,');
+      // safeHref() must be present and used for href to prevent javascript: XSS
+      expect(enContent).toContain('function safeHref(');
+      expect(enContent).toContain('safeHref(article.slug)');
       // article fields must be escaped when interpolated
       expect(enContent).toContain('esc(article.title)');
-      expect(enContent).toContain('esc(article.slug)');
       expect(enContent).toContain('esc(article.excerpt)');
       expect(enContent).toContain('esc(tag)');
     });
