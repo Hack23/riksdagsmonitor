@@ -385,37 +385,62 @@ describe('Coalition Dashboard', () => {
       expect(influence).toBeLessThan(15);
       expect(Math.max(5, Math.min(15, influence))).toBeCloseTo(influence);
     });
+
+    it('should treat alignment value of 0 as valid, not fall back to 0.5', () => {
+      // An alignment of 0 means zero alignment — it should NOT be treated as missing
+      const alignment = { 'S': { 'SD': 0 } };
+      const rawStrength = alignment?.['S']?.['SD'];
+      const strength = typeof rawStrength === 'number' ? rawStrength : 0.5;
+      expect(strength).toBe(0); // Must be 0, not 0.5
+    });
+
+    it('should fall back to 0.5 only for missing alignment data', () => {
+      const alignment = { 'S': {} };
+      const rawStrength = alignment?.['S']?.['M'];
+      const strength = typeof rawStrength === 'number' ? rawStrength : 0.5;
+      expect(strength).toBe(0.5);
+    });
   });
 
   describe('Mock Data Quality', () => {
-    it('should generate non-empty mock anomaly data', () => {
-      // Mock anomaly data should provide fallback visualization
-      const parties = ['S', 'M', 'SD', 'V', 'MP', 'C', 'L', 'KD'];
-      const anomalies = [];
-      parties.forEach(party => {
-        const deviation = 0.5 + 2.0; // Simulated fixed deviation for test
-        if (deviation > 1.0) {
-          anomalies.push({ party, date: '2024-06-15', deviation, severity: 'major' });
-        }
-      });
-      expect(anomalies.length).toBeGreaterThan(0);
+    it('should generate deterministic non-empty mock anomaly data for all parties', () => {
+      // Deterministic mock deviations (no Math.random)
+      const deviations = { 'S': 1.85, 'M': 2.10, 'SD': 3.25, 'V': 1.45, 'MP': 2.70, 'C': 1.30, 'L': 1.95, 'KD': 2.50 };
+      const parties = Object.keys(deviations);
+      const anomalies = parties.map(party => ({
+        party, date: '2024-06-15', deviation: deviations[party],
+        severity: deviations[party] > 3 ? 'critical' : deviations[party] > 2 ? 'major' : 'minor'
+      }));
+      // Must always produce exactly 8 entries (one per party)
+      expect(anomalies.length).toBe(8);
       expect(anomalies[0]).toHaveProperty('party');
       expect(anomalies[0]).toHaveProperty('deviation');
+      // Verify deterministic: running again yields same result
+      const anomalies2 = parties.map(party => ({
+        party, date: '2024-06-15', deviation: deviations[party],
+        severity: deviations[party] > 3 ? 'critical' : deviations[party] > 2 ? 'major' : 'minor'
+      }));
+      expect(anomalies).toEqual(anomalies2);
     });
 
-    it('should generate non-empty mock annual votes data', () => {
+    it('should generate deterministic non-empty mock annual votes data', () => {
       const parties = ['S', 'M', 'SD', 'V', 'MP', 'C', 'L', 'KD'];
+      const baseline = 15000;
       const data = {};
       parties.forEach(party => {
         data[party] = [];
         for (let year = 2002; year <= 2025; year++) {
-          data[party].push({ year, votes: Math.round(15000 * 0.9) });
+          const variation = year % 2 === 0 ? 0.9 : 1.1;
+          data[party].push({ year, votes: Math.round(baseline * variation) });
         }
       });
       expect(Object.keys(data).length).toBe(8);
       expect(data['S'].length).toBeGreaterThan(0);
       expect(data['S'][0]).toHaveProperty('year');
       expect(data['S'][0]).toHaveProperty('votes');
+      // Verify deterministic: even years get 0.9x, odd years get 1.1x
+      expect(data['S'][0].votes).toBe(Math.round(baseline * 0.9)); // 2002 is even
+      expect(data['S'][1].votes).toBe(Math.round(baseline * 1.1)); // 2003 is odd
     });
   });
 });

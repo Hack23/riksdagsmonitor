@@ -274,7 +274,8 @@ function renderCoalitionNetwork(): void {
   nodes.forEach((source, i) => {
     nodes.forEach((target, j) => {
       if (i < j) {
-        const strength = alignment && alignment[source.id] && alignment[source.id][target.id] ? alignment[source.id][target.id] : 0.5;
+        const rawStrength = alignment?.[source.id]?.[target.id];
+        const strength = typeof rawStrength === 'number' ? rawStrength : 0.5;
         links.push({ source: source.id, target: target.id, strength });
       }
     });
@@ -348,7 +349,8 @@ function renderAlignmentHeatMap(): void {
   const heatMapData: { party1: string; party2: string; alignment: number }[] = [];
   partyIds.forEach(party1 => {
     partyIds.forEach(party2 => {
-      const alignmentVal = party1 === party2 ? 1.0 : ((dataCache.coalitionAlignment?.[party1]?.[party2]) ? dataCache.coalitionAlignment[party1][party2] : 0.5);
+      const rawAlignment = dataCache.coalitionAlignment?.[party1]?.[party2];
+      const alignmentVal = party1 === party2 ? 1.0 : (typeof rawAlignment === 'number' ? rawAlignment : 0.5);
       heatMapData.push({ party1, party2, alignment: alignmentVal });
     });
   });
@@ -542,25 +544,21 @@ function generateMockBehavioralData(): Record<string, number> {
 function generateMockDecisionData(): any[] { return []; }
 
 function generateMockAnomalyData(): AnomalyEntry[] {
-  // Provide realistic fallback data when CIA anomaly data is unavailable
-  const parties = Object.keys(PARTIES);
-  const anomalies: AnomalyEntry[] = [];
-  parties.forEach(party => {
-    const deviation = 0.5 + Math.random() * 3;
-    if (deviation > 1.0) {
-      anomalies.push({
-        party,
-        date: '2024-06-15',
-        deviation: parseFloat(deviation.toFixed(2)),
-        severity: deviation > 3 ? 'critical' : deviation > 2 ? 'major' : 'minor'
-      });
-    }
-  });
-  return anomalies;
+  // Deterministic fallback data when CIA anomaly data is unavailable
+  const deviations: Record<string, number> = {
+    'S': 1.85, 'M': 2.10, 'SD': 3.25, 'V': 1.45,
+    'MP': 2.70, 'C': 1.30, 'L': 1.95, 'KD': 2.50
+  };
+  return Object.keys(PARTIES).map(party => ({
+    party,
+    date: '2024-06-15',
+    deviation: deviations[party] || 1.50,
+    severity: (deviations[party] || 1.50) > 3 ? 'critical' : (deviations[party] || 1.50) > 2 ? 'major' : 'minor'
+  }));
 }
 
 function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> {
-  // Provide realistic fallback data for annual vote trends
+  // Deterministic fallback data for annual vote trends
   const data: Record<string, AnnualVoteEntry[]> = {};
   const partyBaselines: Record<string, number> = {
     'S': 50000, 'M': 35000, 'SD': 25000, 'V': 12000,
@@ -570,7 +568,8 @@ function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> {
     data[party] = [];
     const baseline = partyBaselines[party] || 15000;
     for (let year = 2002; year <= 2025; year++) {
-      const variation = 0.8 + Math.random() * 0.4;
+      // Deterministic variation: alternates ±10% based on year parity
+      const variation = year % 2 === 0 ? 0.9 : 1.1;
       data[party].push({ year, votes: Math.round(baseline * variation) });
     }
   });
