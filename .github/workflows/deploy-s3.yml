@@ -120,6 +120,16 @@ jobs:
 
           echo "✅ Build artifacts verified: 'dist' directory, 'dist/index.html', 'dist/rss.xml', and 'dist/sitemap.xml' exist."
 
+      - name: Copy documentation to build output
+        run: |
+          if [ -d "docs" ]; then
+            echo "📚 Copying documentation to dist/docs/..."
+            cp -r docs dist/docs
+            echo "✅ Documentation copied to dist/docs/"
+          else
+            echo "ℹ️ No docs directory found, skipping"
+          fi
+
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
         with:
@@ -169,16 +179,21 @@ jobs:
             --cache-control 'public, max-age=86400' \
             --exclude 'screenshots/*' --exclude '.git/*'
 
-          # Everything else (exclude source-only directories)
+          # Everything else (catch files not handled by type-specific syncs above)
           aws s3 sync "$SRC" "$BUCKET" \
             --exclude '.git/*' --exclude 'screenshots/*' \
-            --exclude '.github/*' --exclude 'docs/*' --exclude 'schemas/*' \
+            --exclude '.github/*' --exclude 'schemas/*' \
             --exclude 'scripts/*' --exclude '.devcontainer/*' --exclude 'quicksight/*' \
             --exclude 'src/*' --exclude 'tests/*' --exclude 'cypress/*' \
             --exclude 'node_modules/*' --exclude 'builds/*' \
             --exclude '*.md' --exclude 'package*.json' --exclude '.gitignore' \
             --exclude 'tsconfig*.json' --exclude '*.config.js' --exclude 'jsdoc.json' \
-            --exclude 'typedoc.json' --exclude 'eslint.config.js'
+            --exclude 'typedoc.json' --exclude 'eslint.config.js' \
+            --exclude '*.html' --exclude '*.css' --exclude '*.js' \
+            --exclude '*.webp' --exclude '*.png' --exclude '*.jpg' --exclude '*.jpeg' \
+            --exclude '*.gif' --exclude '*.svg' --exclude '*.ico' \
+            --exclude '*.woff' --exclude '*.woff2' --exclude '*.ttf' --exclude '*.eot' --exclude '*.otf' \
+            --exclude '*.xml' --exclude '*.json' --exclude '*.txt'
 
           echo "✅ Deploy with cache headers completed"
       
