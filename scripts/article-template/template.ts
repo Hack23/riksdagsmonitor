@@ -128,6 +128,9 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
   <!-- Main stylesheet - contains all article styles -->
   <link rel="stylesheet" href="../styles.css">
   
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+  
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">
   {
@@ -250,6 +253,14 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
 </head>
 <body>
 <a href="#main-content" class="skip-link">${getFooterLabel(lang, 'skipToContent')}</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
 
 <div class="article-top-nav">
@@ -304,6 +315,7 @@ ${(sections as TemplateSection[]).length > 0 ? (sections as TemplateSection[]).m
 ${generateSiteFooter(lang)}
 
 <script type="module" src="../scripts/back-to-top.ts"></script>
+<script src="../js/theme-toggle.js"></script>
 </body>
 </html>`;
 }
