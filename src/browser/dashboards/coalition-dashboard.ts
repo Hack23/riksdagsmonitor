@@ -160,8 +160,11 @@ async function fetchCoalitionData(): Promise<void> {
       const alignment: Record<string, Record<string, number>> = {};
       csvData.forEach(row => {
         const party1 = row['party1']; const party2 = row['party2']; const alignmentRate = parseFloat(row['alignment_rate']);
+        if (!PARTIES[party1] || !PARTIES[party2]) return;
         if (!alignment[party1]) alignment[party1] = {};
         alignment[party1][party2] = alignmentRate;
+        if (!alignment[party2]) alignment[party2] = {};
+        alignment[party2][party1] = alignmentRate;
       });
       dataCache.coalitionAlignment = alignment;
       logger.info('Coalition data loaded from CSV');
@@ -264,7 +267,7 @@ function renderCoalitionNetwork(): void {
     const alignment = dataCache.coalitionAlignment;
     if (alignment && alignment[id]) {
       const rates = Object.values(alignment[id]).filter((v): v is number => typeof v === 'number');
-      influence = rates.length > 0 ? (rates.reduce((s, v) => s + v, 0) / rates.length) / 10 + 3 : 5;
+      influence = rates.length > 0 ? (rates.reduce((s, v) => s + v, 0) / rates.length) * 10 + 3 : 5;
     }
     return { id, name: PARTIES[id].name, fullName: PARTIES[id].fullName, color: PARTIES[id].color, influence: Math.max(5, Math.min(15, influence)) };
   });
@@ -274,7 +277,10 @@ function renderCoalitionNetwork(): void {
   nodes.forEach((source, i) => {
     nodes.forEach((target, j) => {
       if (i < j) {
-        const strength = alignment && alignment[source.id] && alignment[source.id][target.id] ? alignment[source.id][target.id] / 100 : 0.5;
+        const rawStrengthForward = alignment?.[source.id]?.[target.id];
+        const rawStrengthBackward = alignment?.[target.id]?.[source.id];
+        const rawStrength = typeof rawStrengthForward === 'number' ? rawStrengthForward : (typeof rawStrengthBackward === 'number' ? rawStrengthBackward : undefined);
+        const strength = typeof rawStrength === 'number' ? rawStrength : 0.5;
         links.push({ source: source.id, target: target.id, strength });
       }
     });
@@ -348,7 +354,10 @@ function renderAlignmentHeatMap(): void {
   const heatMapData: { party1: string; party2: string; alignment: number }[] = [];
   partyIds.forEach(party1 => {
     partyIds.forEach(party2 => {
-      const alignmentVal = party1 === party2 ? 1.0 : ((dataCache.coalitionAlignment?.[party1]?.[party2]) ? dataCache.coalitionAlignment[party1][party2] / 100 : 0.5);
+      const rawAlignmentDirect = dataCache.coalitionAlignment?.[party1]?.[party2];
+      const rawAlignmentReverse = dataCache.coalitionAlignment?.[party2]?.[party1];
+      const alignmentSource = typeof rawAlignmentDirect === 'number' ? rawAlignmentDirect : (typeof rawAlignmentReverse === 'number' ? rawAlignmentReverse : 0.5);
+      const alignmentVal = party1 === party2 ? 1.0 : alignmentSource;
       heatMapData.push({ party1, party2, alignment: alignmentVal });
     });
   });
@@ -540,8 +549,39 @@ function generateMockBehavioralData(): Record<string, number> {
 }
 
 function generateMockDecisionData(): any[] { return []; }
-function generateMockAnomalyData(): AnomalyEntry[] { return []; }
-function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> { return {}; }
+
+export function generateMockAnomalyData(): AnomalyEntry[] {
+  // Deterministic fallback data when CIA anomaly data is unavailable
+  const deviations: Record<string, number> = {
+    'S': 1.85, 'M': 2.10, 'SD': 3.25, 'V': 1.45,
+    'MP': 2.70, 'C': 1.30, 'L': 1.95, 'KD': 2.50
+  };
+  return Object.keys(PARTIES).map(party => ({
+    party,
+    date: '2024-06-15',
+    deviation: deviations[party] || 1.50,
+    severity: (deviations[party] || 1.50) > 3 ? 'critical' : (deviations[party] || 1.50) > 2 ? 'major' : 'minor'
+  }));
+}
+
+export function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> {
+  // Deterministic fallback data for annual vote trends
+  const data: Record<string, AnnualVoteEntry[]> = {};
+  const partyBaselines: Record<string, number> = {
+    'S': 50000, 'M': 35000, 'SD': 25000, 'V': 12000,
+    'MP': 10000, 'C': 12000, 'L': 10000, 'KD': 10000
+  };
+  Object.keys(PARTIES).forEach(party => {
+    data[party] = [];
+    const baseline = partyBaselines[party] || 15000;
+    for (let year = 2002; year <= 2025; year++) {
+      // Deterministic variation: alternates ±10% based on year parity
+      const variation = year % 2 === 0 ? 0.9 : 1.1;
+      data[party].push({ year, votes: Math.round(baseline * variation) });
+    }
+  });
+  return data;
+}
 
 // ============================================================================
 // EXPORTED INIT

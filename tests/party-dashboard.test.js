@@ -12,6 +12,7 @@
  */
 
 import { describe, it, expect, beforeEach } from 'vitest';
+import { alignmentRateToPercent } from '../src/browser/dashboards/party-dashboard.js';
 
 describe('Party Dashboard', () => {
   let container;
@@ -359,6 +360,62 @@ describe('Party Dashboard', () => {
       
       const containers = dashboard.querySelectorAll('#coalitionAlignmentChart');
       expect(containers.length).toBe(1);
+    });
+  });
+
+  describe('Coalition Alignment Rate Processing', () => {
+    it('should convert 0-1 alignment_rate to percentage for display using real helper', () => {
+      // Uses the actual exported alignmentRateToPercent() from party-dashboard.ts
+      expect(alignmentRateToPercent(0.84)).toBe(84);
+      expect(alignmentRateToPercent(0.72)).toBe(72);
+      expect(alignmentRateToPercent(0.53)).toBe(53);
+      expect(alignmentRateToPercent(0.35)).toBe(35);
+    });
+
+    it('should NOT show alignment as 1% when rate is 0.84', () => {
+      // Bug fix: Math.round(0.84) = 1, but alignmentRateToPercent(0.84) = 84
+      const rate = 0.84;
+      const wrongResult = Math.round(rate); // This was the old bug
+      const correctResult = alignmentRateToPercent(rate);
+      
+      expect(wrongResult).toBe(1); // Old buggy result
+      expect(correctResult).toBe(84); // Correct result from real implementation
+    });
+
+    it('should handle various alignment rates correctly via real helper', () => {
+      const testCases = [
+        { rate: 0.84, expected: 84 },
+        { rate: 0.72, expected: 72 },
+        { rate: 0.53, expected: 53 },
+        { rate: 0.35, expected: 35 },
+        { rate: 0, expected: 0 },
+        { rate: 1, expected: 100 },
+      ];
+      testCases.forEach(({ rate, expected }) => {
+        expect(alignmentRateToPercent(rate)).toBe(expected);
+      });
+    });
+
+    it('should handle momentum filter with zero values', () => {
+      // Bug fix: filter should not reject rows where momentum is 0
+      // CSV parsing produces string values, so test with strings to match runtime types
+      const rows = [
+        { party: 'S', momentum: '0.00', year: '2026', quarter: '1' },
+        { party: 'M', momentum: '0.50', year: '2026', quarter: '1' },
+        { party: 'V', momentum: '', year: '2026', quarter: '1' },
+      ];
+      
+      // Old filter: row.momentum (rejects '0.00' falsy? No, '0.00' is truthy as a string)
+      // But numeric 0 from parseFloat would be falsy
+      const numericRows = rows.map(r => ({ ...r, momentumNum: r.momentum !== '' ? parseFloat(r.momentum) : undefined }));
+      
+      // Old filter with numeric: row.momentumNum (rejects 0)
+      const oldFiltered = numericRows.filter(r => r.momentumNum);
+      expect(oldFiltered.length).toBe(1); // Only M (0.50)
+      
+      // New filter: row.momentum !== undefined && row.momentum !== ''
+      const newFiltered = rows.filter(r => r.momentum !== undefined && r.momentum !== '');
+      expect(newFiltered.length).toBe(2); // S ('0.00') and M ('0.50')
     });
   });
 });

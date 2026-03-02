@@ -995,6 +995,14 @@ function createComparisonChart(data: CSVRow[]): void {
 }
 
 /**
+ * Convert a 0–1 alignment rate to a display percentage (0–100).
+ * Exported for testability so unit tests validate the real conversion logic.
+ */
+export function alignmentRateToPercent(rate: number): number {
+  return Math.round(rate * 100);
+}
+
+/**
  * Create Coalition Alignment HTML visualization.
  * Renders the top-6 coalition pairs as progress bars.
  */
@@ -1026,7 +1034,7 @@ function createCoalitionNetwork(data: CSVRow[]): void {
 
       coalitions.push({
         name: `${party1Label} + ${party2Label}`,
-        strength: Math.round(rate),
+        strength: alignmentRateToPercent(rate),
         parties: [row.party1, row.party2],
         likelihood: row.coalition_likelihood ?? 'UNKNOWN',
       });
@@ -1105,7 +1113,7 @@ function createMomentumChart(data: CSVRow[]): void {
   const momentumData: MomentumDataPoint[] = PARTIES.map((party) => {
     // Filter data for this party and get most recent quarter
     const partyRows = data.filter(
-      (row) => row.party === party && row.momentum,
+      (row) => row.party === party && row.momentum !== undefined && row.momentum !== '',
     );
 
     if (partyRows.length > 0) {

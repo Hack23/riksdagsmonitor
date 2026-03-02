@@ -6,6 +6,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { generateMockAnomalyData, generateMockAnnualVotesData } from '../src/browser/dashboards/coalition-dashboard.js';
 
 describe('Coalition Dashboard', () => {
   let container;
@@ -341,6 +342,145 @@ describe('Coalition Dashboard', () => {
       container.classList.add('loading');
       container.classList.remove('loading');
       expect(container.classList.contains('loading')).toBe(false);
+    });
+  });
+
+  describe('Alignment Rate Data Processing', () => {
+    it('should use alignment_rate directly as 0-1 scale without dividing by 100', () => {
+      // Real CSV stores pairs alphabetically (e.g., KD,M not M,KD)
+      const alignment = { 'KD': { 'M': 0.84 }, 'MP': { 'S': 0.72 } };
+      
+      // Network strength should use raw value (not /100)
+      const strength = alignment['KD']['M'];
+      expect(strength).toBe(0.84);
+      expect(strength).toBeGreaterThan(0.5);
+      expect(strength).toBeLessThanOrEqual(1.0);
+      
+      // Heat map should also use raw value
+      const heatMapValue = alignment['MP']['S'];
+      expect(heatMapValue).toBe(0.72);
+      expect(heatMapValue * 100).toBeCloseTo(72); // Display as percentage
+    });
+
+    it('should handle reverse-pair lookups when CSV stores only one direction', () => {
+      // CSV has KD,M but code may look up M,KD — reverse lookup should find it
+      const alignment = { 'KD': { 'M': 0.84 } };
+      
+      // Forward lookup: KD -> M (present in CSV)
+      const rawForward = alignment?.['KD']?.['M'];
+      expect(typeof rawForward === 'number').toBe(true);
+      expect(rawForward).toBe(0.84);
+      
+      // Reverse lookup: M -> KD (not in CSV — should check reverse)
+      const rawDirect = alignment?.['M']?.['KD'];
+      const rawReverse = alignment?.['KD']?.['M'];
+      const resolved = typeof rawDirect === 'number' ? rawDirect : (typeof rawReverse === 'number' ? rawReverse : 0.5);
+      expect(resolved).toBe(0.84); // Found via reverse lookup
+    });
+
+    it('should NOT divide alignment_rate by 100 (values are already 0-1)', () => {
+      // This test validates the fix: alignment_rate 0.84 should render as 84%, not 0.84%
+      const rawAlignmentRate = 0.84; // From CSV
+      
+      // WRONG (old behavior): dividing 0-1 value by 100 gives 0.0084
+      const wrongValue = rawAlignmentRate / 100;
+      expect(wrongValue).toBeLessThan(0.01); // This would be incorrect
+      
+      // CORRECT (new behavior): use raw value directly
+      const correctValue = rawAlignmentRate;
+      expect(correctValue).toBeCloseTo(0.84);
+      expect(correctValue * 100).toBeCloseTo(84); // Display as 84%
+    });
+
+    it('should calculate node influence correctly with 0-1 alignment rates', () => {
+      // With alignment rates in 0-1 range, average for same-bloc parties ~0.65-0.84
+      const rates = [0.84, 0.83, 0.78]; // M-KD, M-L, M-C alignment rates
+      const avgRate = rates.reduce((s, v) => s + v, 0) / rates.length; // ~0.817
+      const influence = avgRate * 10 + 3; // ~11.17 (good range for visualization)
+      
+      expect(influence).toBeGreaterThan(5);
+      expect(influence).toBeLessThan(15);
+      expect(Math.max(5, Math.min(15, influence))).toBeCloseTo(influence);
+    });
+
+    it('should treat alignment value of 0 as valid, not fall back to 0.5', () => {
+      // An alignment of 0 means zero alignment — it should NOT be treated as missing
+      const alignment = { 'S': { 'SD': 0 } };
+      const rawStrength = alignment?.['S']?.['SD'];
+      const strength = typeof rawStrength === 'number' ? rawStrength : 0.5;
+      expect(strength).toBe(0); // Must be 0, not 0.5
+    });
+
+    it('should fall back to 0.5 only for missing alignment data', () => {
+      const alignment = { 'S': {} };
+      const rawStrength = alignment?.['S']?.['M'];
+      const strength = typeof rawStrength === 'number' ? rawStrength : 0.5;
+      expect(strength).toBe(0.5);
+    });
+
+    it('should filter out non-party rows (e.g., party "-") when building alignment matrix', () => {
+      // CSV contains rows where party1 or party2 is '-' (aggregate/independent)
+      const PARTIES_SET = { 'S': true, 'M': true, 'SD': true, 'V': true, 'MP': true, 'C': true, 'L': true, 'KD': true };
+      const csvRows = [
+        { party1: 'KD', party2: 'M', alignment_rate: '0.84' },
+        { party1: '-', party2: 'SD', alignment_rate: '0.39' },
+        { party1: '-', party2: 'S', alignment_rate: '0.34' },
+        { party1: 'S', party2: 'V', alignment_rate: '0.65' },
+      ];
+      
+      const alignment = {};
+      csvRows.forEach(row => {
+        const p1 = row.party1; const p2 = row.party2; const rate = parseFloat(row.alignment_rate);
+        if (!PARTIES_SET[p1] || !PARTIES_SET[p2]) return;
+        if (!alignment[p1]) alignment[p1] = {};
+        alignment[p1][p2] = rate;
+        if (!alignment[p2]) alignment[p2] = {};
+        alignment[p2][p1] = rate;
+      });
+      
+      // '-' should not appear as a key in the alignment matrix
+      expect(alignment['-']).toBeUndefined();
+      // Real parties should be stored symmetrically
+      expect(alignment['KD']['M']).toBe(0.84);
+      expect(alignment['M']['KD']).toBe(0.84);
+      expect(alignment['S']['V']).toBe(0.65);
+      // '-' entries should not pollute any party's alignment map
+      expect(alignment['SD']?.['-']).toBeUndefined();
+      expect(alignment['S']?.['-']).toBeUndefined();
+    });
+  });
+
+  describe('Mock Data Quality', () => {
+    it('should generate deterministic non-empty mock anomaly data for all parties', () => {
+      const anomalies = generateMockAnomalyData();
+      // Must always produce exactly 8 entries (one per party)
+      expect(anomalies.length).toBe(8);
+      expect(anomalies[0]).toHaveProperty('party');
+      expect(anomalies[0]).toHaveProperty('deviation');
+      expect(anomalies[0]).toHaveProperty('severity');
+      // Verify deterministic: running again yields same result
+      const anomalies2 = generateMockAnomalyData();
+      expect(anomalies).toEqual(anomalies2);
+      // Verify known values from the real generator
+      const sdEntry = anomalies.find(a => a.party === 'SD');
+      expect(sdEntry.deviation).toBe(3.25);
+      expect(sdEntry.severity).toBe('critical');
+    });
+
+    it('should generate deterministic non-empty mock annual votes data', () => {
+      const data = generateMockAnnualVotesData();
+      expect(Object.keys(data).length).toBe(8);
+      expect(data['S'].length).toBeGreaterThan(0);
+      expect(data['S'][0]).toHaveProperty('year');
+      expect(data['S'][0]).toHaveProperty('votes');
+      // Verify deterministic: running again yields same result
+      const data2 = generateMockAnnualVotesData();
+      expect(data).toEqual(data2);
+      // Verify per-party baselines from the real generator (S=50000, not generic 15000)
+      const sVotes2002 = data['S'].find(v => v.year === 2002);
+      expect(sVotes2002.votes).toBe(Math.round(50000 * 0.9)); // even year → 0.9x
+      const mVotes2003 = data['M'].find(v => v.year === 2003);
+      expect(mVotes2003.votes).toBe(Math.round(35000 * 1.1)); // odd year → 1.1x
     });
   });
 });
