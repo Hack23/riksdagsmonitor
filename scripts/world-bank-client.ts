@@ -105,6 +105,14 @@ export const INDICATOR_IDS = {
   giniIndex: 'SI.POV.GINI',
   /** Research and development expenditure (% of GDP) */
   rdExpenditure: 'GB.XPD.RSDV.GD.ZS',
+  /** Tax revenue (% of GDP) — relevant to SkU taxation committee */
+  taxRevenue: 'GC.TAX.TOTL.GD.ZS',
+  /** Rule of law estimate — relevant to KU constitution committee */
+  rulOfLaw: 'RL.EST',
+  /** Voice and accountability estimate — relevant to KU constitution committee */
+  voiceAccountability: 'VA.EST',
+  /** Government effectiveness estimate — relevant to KU constitution committee */
+  govEffectiveness: 'GE.EST',
 } as const;
 
 // ---------------------------------------------------------------------------

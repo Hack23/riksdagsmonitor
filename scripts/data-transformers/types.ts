@@ -152,6 +152,15 @@ export interface ArticleContentData {
   speechDebates?: unknown[];
   /** SCB statistical context for economic/demographic enrichment */
   scbContext?: SCBContext;
+  /** Statistical claims detected for fact-checking against World Bank / SCB data */
+  statisticalClaims?: Array<{
+    sourceText: string;
+    topic: string;
+    claimedValue?: number;
+    speaker?: string;
+    party?: string;
+    verificationSource: 'world-bank' | 'scb' | 'both';
+  }>;
 }
 
 // ---------------------------------------------------------------------------
