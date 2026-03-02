@@ -25,6 +25,9 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
         <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml">
           <img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg" alt="Quality Checks">
         </a>
+        <a href="https://www.bestpractices.dev/projects/12069">
+          <img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices">
+        </a>
         <a href="https://github.com/Hack23/riksdagsmonitor/license">
           <img src="https://img.shields.io/github/license/Hack23/riksdagsmonitor" alt="License">
         </a>
@@ -42,6 +45,7 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor)
 [![Quality Checks](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml)
 [![Dependency Review](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/12069/badge)](https://www.bestpractices.dev/projects/12069)
 [![License](https://img.shields.io/github/license/Hack23/riksdagsmonitor)](https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE)
 [![ISMS](https://img.shields.io/badge/Hack23-ISMS-blue)](https://github.com/Hack23/ISMS-PUBLIC)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Hack23/riksdagsmonitor)
