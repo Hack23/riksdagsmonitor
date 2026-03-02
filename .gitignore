@@ -52,6 +52,7 @@ builds/
 # pnpm-lock.yaml
 test-libraries.html
 news-*-screenshot.png
+article-page.png
 
 # News metadata (runtime state, not versioned)
 news/metadata/generation-result.json
