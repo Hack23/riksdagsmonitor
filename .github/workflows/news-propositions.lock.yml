@@ -691,21 +691,6 @@ jobs:
                 "tools": [
                   "*"
                 ]
-              },
-              "world-bank": {
-                "type": "stdio",
-                "container": "node:lts-alpine",
-                "entrypoint": "npx",
-                "entrypointArgs": [
-                  "npx",
-                  "-y",
-                  "@smithery/cli@4.4.0",
-                  "run",
-                  "@anshumax/world_bank_mcp_server"
-                ],
-                "tools": [
-                  "*"
-                ]
               }
             },
             "gateway": {

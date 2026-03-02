@@ -48,9 +48,6 @@ mcp-servers:
     url: https://riksdag-regering-ai.onrender.com/mcp
   scb:
     url: https://scb-mcp.onrender.com/mcp
-  world-bank:
-    command: npx
-    args: ["-y", "@smithery/cli@4.4.0", "run", "@anshumax/world_bank_mcp_server"]
 
 tools:
   github:
@@ -200,12 +197,10 @@ Before generating or translating articles, consult these authoritative reference
 12. **`.github/skills/osint-methodologies/SKILL.md`** — OSINT collection, source evaluation, data verification, ethical intelligence gathering
 13. **`.github/skills/api-integration/SKILL.md`** — REST/GraphQL patterns, rate limiting, error handling, retry logic
 
-### 📊 Economic Data (World Bank MCP)
+### 📊 Economic Data (World Bank Context)
 
-The **world-bank** MCP server provides economic indicators via `get_indicator_for_country` tool.
-Use this to enrich political analysis with economic context (GDP, unemployment, inflation, trade).
-Key Swedish indicators and Nordic comparison data are documented in `scripts/world-bank-context.ts`.
-Reference: https://github.com/anshumax/world_bank_mcp_server
+Economic indicator context for Swedish political analysis (GDP, unemployment, inflation, trade) is documented in `scripts/world-bank-context.ts`.
+Use this file as reference when enriching political analysis with economic context.
 
 **Committee-mapped indicators** (14 indicators → all 15 Riksdag committees):
 | Indicator | World Bank ID | Committees |
