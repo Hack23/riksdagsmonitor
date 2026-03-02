@@ -174,7 +174,8 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `get_propositioner` — fetches latest government propositions
 **Cross-reference:** `search_dokument`, `analyze_g0v_by_department`
-**Statistical enrichment:** SCB MCP — enrich with economic/fiscal data relevant to propositions
+**Statistical enrichment:** SCB MCP — enrich with economic/fiscal data relevant to propositions. Use committee-mapped SCB tables: fiscal→TAB1291/TAB1292 (FiU), taxation→TAB1291 (SkU), trade→TAB5802 (NU). World Bank indicators: GDP Growth, Gov Expenditure, Tax Revenue. See `scripts/scb-context.ts` and `scripts/world-bank-context.ts` for full mappings.
+**Fact-checking:** When propositions reference specific statistics, cross-reference against SCB/World Bank data using `scripts/statistical-claims-detector.ts` patterns.
 
 ```javascript
 get_sync_status({})

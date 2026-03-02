@@ -233,6 +233,18 @@ Use this to enrich political analysis with economic context (GDP, unemployment, 
 Key Swedish indicators and Nordic comparison data are documented in `scripts/world-bank-context.ts`.
 Reference: https://github.com/anshumax/world_bank_mcp_server
 
+**Key committee-mapped indicators**: GDP Growth→FiU, Unemployment→AU, Tax Revenue→SkU, Rule of Law→KU, Military Expenditure→FöU, CO₂→MJU, R&D→UbU, GINI→SoU/AU, Trade→NU/UU (see `scripts/world-bank-context.ts` for complete mapping of 14 indicators to all 15 committees).
+
+### 📈 Swedish Statistics (SCB MCP)
+
+The **scb** MCP server provides official Swedish statistics via `search_tables` and `get_table_data` tools.
+Use SCB data for domestic context: labour market (TAB5765), migration (TAB637), GDP (TAB5802), crime (TAB1172), housing (TAB2052), education (TAB4787), taxation (TAB1291), culture (TAB5195).
+Full domain-to-committee mapping in `scripts/scb-context.ts` (15 domains → all 15 Riksdag committees).
+
+### 🔍 Statistical Claims Fact-Checking
+
+When analysing parliamentary speeches/debates, detect and fact-check politician statistical claims against World Bank and SCB data. Use `scripts/statistical-claims-detector.ts` patterns to identify claims about unemployment, GDP, inflation, migration, crime, defence spending. Cross-reference against official sources and include a "Faktakoll / Fact Check" section rating claims as accurate/mostly-accurate/misleading/inaccurate.
+
 ### 🔐 Workflow & Security Skills
 
 13. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe-outputs tools, PR creation, container isolation fixes

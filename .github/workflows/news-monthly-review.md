@@ -176,7 +176,8 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tools:** `search_dokument`, `get_betankanden` — comprehensive document search
 **Cross-reference:** `get_propositioner`, `get_motioner`, `search_voteringar`, `analyze_g0v_by_department`
-**Statistical enrichment:** SCB MCP — enrich monthly review with key economic indicators (GDP, unemployment, inflation)
+**Statistical enrichment:** SCB MCP + World Bank — enrich monthly review with comprehensive economic context across all active policy areas. Fetch key indicators: GDP growth (TAB5802 + NY.GDP.MKTP.KD.ZG), unemployment (TAB5765 + SL.UEM.TOTL.ZS), inflation (FP.CPI.TOTL.ZG), tax revenue (TAB1291 + GC.TAX.TOTL.GD.ZS). Use committee-to-indicator mappings in `scripts/scb-context.ts` and `scripts/world-bank-context.ts` for comprehensive coverage.
+**Fact-checking:** Monthly reviews should include a dedicated fact-check section. Scan debates/speeches from the month via `search_anforanden` and use `scripts/statistical-claims-detector.ts` to verify politician statistical claims against official data.
 
 ```javascript
 get_sync_status({})

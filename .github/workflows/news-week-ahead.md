@@ -174,6 +174,7 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `get_calendar_events` — fetches upcoming 7-day calendar
 **Cross-reference:** `search_dokument`, `get_fragor`, `get_interpellationer`
+**Statistical enrichment:** SCB/World Bank — for scheduled economic debates, pre-fetch relevant indicators. Use committee-mapped tables from `scripts/scb-context.ts` based on which committees have scheduled meetings (e.g., FiU agenda→fiscal TAB1291 + World Bank GDP/inflation indicators).
 
 ```javascript
 get_sync_status({})
