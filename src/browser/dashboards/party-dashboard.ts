@@ -1026,7 +1026,7 @@ function createCoalitionNetwork(data: CSVRow[]): void {
 
       coalitions.push({
         name: `${party1Label} + ${party2Label}`,
-        strength: Math.round(rate),
+        strength: Math.round(rate * 100),
         parties: [row.party1, row.party2],
         likelihood: row.coalition_likelihood ?? 'UNKNOWN',
       });
@@ -1105,7 +1105,7 @@ function createMomentumChart(data: CSVRow[]): void {
   const momentumData: MomentumDataPoint[] = PARTIES.map((party) => {
     // Filter data for this party and get most recent quarter
     const partyRows = data.filter(
-      (row) => row.party === party && row.momentum,
+      (row) => row.party === party && row.momentum !== undefined && row.momentum !== '',
     );
 
     if (partyRows.length > 0) {

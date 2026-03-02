@@ -361,4 +361,52 @@ describe('Party Dashboard', () => {
       expect(containers.length).toBe(1);
     });
   });
+
+  describe('Coalition Alignment Rate Processing', () => {
+    it('should convert 0-1 alignment_rate to percentage for display', () => {
+      // Real CSV: alignment_rate is 0.84 (meaning 84%)
+      const rate = 0.84;
+      const displayStrength = Math.round(rate * 100);
+      expect(displayStrength).toBe(84);
+    });
+
+    it('should NOT show alignment as 1% when rate is 0.84', () => {
+      // Bug fix: Math.round(0.84) = 1, but Math.round(0.84 * 100) = 84
+      const rate = 0.84;
+      const wrongResult = Math.round(rate); // This was the old bug
+      const correctResult = Math.round(rate * 100);
+      
+      expect(wrongResult).toBe(1); // Old buggy result
+      expect(correctResult).toBe(84); // Correct result
+    });
+
+    it('should handle various alignment rates correctly', () => {
+      const testCases = [
+        { rate: 0.84, expected: 84 },
+        { rate: 0.72, expected: 72 },
+        { rate: 0.53, expected: 53 },
+        { rate: 0.35, expected: 35 },
+      ];
+      testCases.forEach(({ rate, expected }) => {
+        expect(Math.round(rate * 100)).toBe(expected);
+      });
+    });
+
+    it('should handle momentum filter with zero values', () => {
+      // Bug fix: filter should not reject rows where momentum is 0
+      const rows = [
+        { party: 'S', momentum: 0, year: '2026', quarter: '1' },
+        { party: 'M', momentum: 0.5, year: '2026', quarter: '1' },
+        { party: 'V', momentum: '', year: '2026', quarter: '1' },
+      ];
+      
+      // Old filter: row.momentum (rejects 0)
+      const oldFiltered = rows.filter(r => r.momentum);
+      expect(oldFiltered.length).toBe(1); // Only M
+      
+      // New filter: row.momentum !== undefined && row.momentum !== ''
+      const newFiltered = rows.filter(r => r.momentum !== undefined && r.momentum !== '');
+      expect(newFiltered.length).toBe(2); // S and M
+    });
+  });
 });

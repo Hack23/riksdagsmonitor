@@ -264,7 +264,7 @@ function renderCoalitionNetwork(): void {
     const alignment = dataCache.coalitionAlignment;
     if (alignment && alignment[id]) {
       const rates = Object.values(alignment[id]).filter((v): v is number => typeof v === 'number');
-      influence = rates.length > 0 ? (rates.reduce((s, v) => s + v, 0) / rates.length) / 10 + 3 : 5;
+      influence = rates.length > 0 ? (rates.reduce((s, v) => s + v, 0) / rates.length) * 10 + 3 : 5;
     }
     return { id, name: PARTIES[id].name, fullName: PARTIES[id].fullName, color: PARTIES[id].color, influence: Math.max(5, Math.min(15, influence)) };
   });
@@ -274,7 +274,7 @@ function renderCoalitionNetwork(): void {
   nodes.forEach((source, i) => {
     nodes.forEach((target, j) => {
       if (i < j) {
-        const strength = alignment && alignment[source.id] && alignment[source.id][target.id] ? alignment[source.id][target.id] / 100 : 0.5;
+        const strength = alignment && alignment[source.id] && alignment[source.id][target.id] ? alignment[source.id][target.id] : 0.5;
         links.push({ source: source.id, target: target.id, strength });
       }
     });
@@ -348,7 +348,7 @@ function renderAlignmentHeatMap(): void {
   const heatMapData: { party1: string; party2: string; alignment: number }[] = [];
   partyIds.forEach(party1 => {
     partyIds.forEach(party2 => {
-      const alignmentVal = party1 === party2 ? 1.0 : ((dataCache.coalitionAlignment?.[party1]?.[party2]) ? dataCache.coalitionAlignment[party1][party2] / 100 : 0.5);
+      const alignmentVal = party1 === party2 ? 1.0 : ((dataCache.coalitionAlignment?.[party1]?.[party2]) ? dataCache.coalitionAlignment[party1][party2] : 0.5);
       heatMapData.push({ party1, party2, alignment: alignmentVal });
     });
   });
@@ -540,8 +540,42 @@ function generateMockBehavioralData(): Record<string, number> {
 }
 
 function generateMockDecisionData(): any[] { return []; }
-function generateMockAnomalyData(): AnomalyEntry[] { return []; }
-function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> { return {}; }
+
+function generateMockAnomalyData(): AnomalyEntry[] {
+  // Provide realistic fallback data when CIA anomaly data is unavailable
+  const parties = Object.keys(PARTIES);
+  const anomalies: AnomalyEntry[] = [];
+  parties.forEach(party => {
+    const deviation = 0.5 + Math.random() * 3;
+    if (deviation > 1.0) {
+      anomalies.push({
+        party,
+        date: '2024-06-15',
+        deviation: parseFloat(deviation.toFixed(2)),
+        severity: deviation > 3 ? 'critical' : deviation > 2 ? 'major' : 'minor'
+      });
+    }
+  });
+  return anomalies;
+}
+
+function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> {
+  // Provide realistic fallback data for annual vote trends
+  const data: Record<string, AnnualVoteEntry[]> = {};
+  const partyBaselines: Record<string, number> = {
+    'S': 50000, 'M': 35000, 'SD': 25000, 'V': 12000,
+    'MP': 10000, 'C': 12000, 'L': 10000, 'KD': 10000
+  };
+  Object.keys(PARTIES).forEach(party => {
+    data[party] = [];
+    const baseline = partyBaselines[party] || 15000;
+    for (let year = 2002; year <= 2025; year++) {
+      const variation = 0.8 + Math.random() * 0.4;
+      data[party].push({ year, votes: Math.round(baseline * variation) });
+    }
+  });
+  return data;
+}
 
 // ============================================================================
 // EXPORTED INIT
