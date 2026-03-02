@@ -416,6 +416,37 @@ describe('Coalition Dashboard', () => {
       const strength = typeof rawStrength === 'number' ? rawStrength : 0.5;
       expect(strength).toBe(0.5);
     });
+
+    it('should filter out non-party rows (e.g., party "-") when building alignment matrix', () => {
+      // CSV contains rows where party1 or party2 is '-' (aggregate/independent)
+      const PARTIES_SET = { 'S': true, 'M': true, 'SD': true, 'V': true, 'MP': true, 'C': true, 'L': true, 'KD': true };
+      const csvRows = [
+        { party1: 'KD', party2: 'M', alignment_rate: '0.84' },
+        { party1: '-', party2: 'SD', alignment_rate: '0.39' },
+        { party1: '-', party2: 'S', alignment_rate: '0.34' },
+        { party1: 'S', party2: 'V', alignment_rate: '0.65' },
+      ];
+      
+      const alignment = {};
+      csvRows.forEach(row => {
+        const p1 = row.party1; const p2 = row.party2; const rate = parseFloat(row.alignment_rate);
+        if (!PARTIES_SET[p1] || !PARTIES_SET[p2]) return;
+        if (!alignment[p1]) alignment[p1] = {};
+        alignment[p1][p2] = rate;
+        if (!alignment[p2]) alignment[p2] = {};
+        alignment[p2][p1] = rate;
+      });
+      
+      // '-' should not appear as a key in the alignment matrix
+      expect(alignment['-']).toBeUndefined();
+      // Real parties should be stored symmetrically
+      expect(alignment['KD']['M']).toBe(0.84);
+      expect(alignment['M']['KD']).toBe(0.84);
+      expect(alignment['S']['V']).toBe(0.65);
+      // '-' entries should not pollute any party's alignment map
+      expect(alignment['SD']?.['-']).toBeUndefined();
+      expect(alignment['S']?.['-']).toBeUndefined();
+    });
   });
 
   describe('Mock Data Quality', () => {

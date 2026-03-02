@@ -160,6 +160,7 @@ async function fetchCoalitionData(): Promise<void> {
       const alignment: Record<string, Record<string, number>> = {};
       csvData.forEach(row => {
         const party1 = row['party1']; const party2 = row['party2']; const alignmentRate = parseFloat(row['alignment_rate']);
+        if (!PARTIES[party1] || !PARTIES[party2]) return;
         if (!alignment[party1]) alignment[party1] = {};
         alignment[party1][party2] = alignmentRate;
         if (!alignment[party2]) alignment[party2] = {};
