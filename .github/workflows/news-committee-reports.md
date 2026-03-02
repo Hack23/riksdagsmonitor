@@ -180,6 +180,8 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `get_betankanden` — fetches latest committee reports
 **Cross-reference:** `search_voteringar`, `search_anforanden`, `get_propositioner`
+**Statistical enrichment:** SCB MCP + World Bank — enrich with data matching the reporting committee. Use domain-to-committee mappings from `scripts/scb-context.ts` (e.g., FiU reports→fiscal TAB1291, AU→labour TAB5765, JuU→crime TAB1172, MJU→environment TAB5404). World Bank indicators are mapped per committee in `scripts/world-bank-context.ts` (14 indicators covering all 15 committees).
+**Fact-checking:** Use `scripts/statistical-claims-detector.ts` to detect statistical claims in related debates and cross-reference against official SCB/World Bank data.
 
 ```javascript
 get_sync_status({})

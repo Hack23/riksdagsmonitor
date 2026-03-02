@@ -176,6 +176,7 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `get_calendar_events` — 30-day forward calendar
 **Cross-reference:** `get_propositioner`, `search_dokument`, `search_regering`
+**Statistical enrichment:** SCB/World Bank — for major economic milestones (budget debates, economic policy events), pre-fetch trend data from committee-mapped indicators. See `scripts/scb-context.ts` for 15 domain→committee mappings and `scripts/world-bank-context.ts` for 14 WB indicator→committee mappings.
 
 ```javascript
 get_sync_status({})

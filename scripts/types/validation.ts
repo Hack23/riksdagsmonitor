@@ -68,6 +68,8 @@ export interface QualityThresholds {
   recommendInternationalComparison: boolean;
   /** Recommend economic context from World Bank data (non-blocking) */
   recommendEconomicContext?: boolean;
+  /** Recommend Swedish statistical context from SCB (non-blocking) */
+  recommendSCBContext?: boolean;
 }
 
 /** Measured quality metrics for a single article */
@@ -80,6 +82,10 @@ export interface QualityMetrics {
   hasInternationalComparison: boolean;
   /** Whether the article contains economic context (World Bank indicators, GDP, unemployment, etc.) */
   hasEconomicContext?: boolean;
+  /** Whether the article contains Swedish statistical context (SCB official statistics) */
+  hasSCBContext?: boolean;
+  /** Whether the article contains statistical claims that could be fact-checked */
+  hasStatisticalClaims?: boolean;
   /** Whether the article has a language-switcher nav element */
   hasLanguageSwitcher?: boolean;
   /** Whether the article has an article-top-nav div with back-to-news link */

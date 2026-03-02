@@ -174,7 +174,8 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `get_motioner` — fetches latest opposition motions
 **Cross-reference:** `search_dokument_fulltext`, `search_anforanden`
-**Statistical enrichment:** SCB MCP — enrich with statistics relevant to motion policy areas (labour, education, migration, etc.)
+**Statistical enrichment:** SCB MCP — enrich with statistics relevant to motion policy areas. Use domain-to-committee mappings from `scripts/scb-context.ts` to automatically select relevant SCB tables based on which committee the motion is referred to (e.g., AU motions→labour TAB5765, JuU→crime TAB1172, MJU→environment TAB5404). World Bank indicators are mapped per committee in `scripts/world-bank-context.ts`.
+**Fact-checking:** Motions often cite statistics to justify policy proposals. Use `scripts/statistical-claims-detector.ts` to detect claims about unemployment, GDP, migration, crime rates, etc. and cross-reference against official SCB/World Bank data. Include a "Faktakoll" section rating the accuracy of cited statistics.
 
 ```javascript
 get_sync_status({})

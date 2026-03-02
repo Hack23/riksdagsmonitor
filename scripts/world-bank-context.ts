@@ -136,6 +136,38 @@ export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = [
     committees: ['FiU', 'NU'],
     unit: '% of GDP',
   },
+  {
+    indicatorId: INDICATOR_IDS.taxRevenue,
+    name: 'Tax Revenue',
+    description: 'Tax revenue as share of GDP — central to taxation policy debates and fiscal capacity.',
+    policyAreas: ['taxation', 'fiscal policy', 'public finances'],
+    committees: ['SkU', 'FiU'],
+    unit: '% of GDP',
+  },
+  {
+    indicatorId: INDICATOR_IDS.ruleOfLaw,
+    name: 'Rule of Law',
+    description: 'World Governance Indicator for rule of law — reflects judicial independence, property rights, and constitutional order.',
+    policyAreas: ['rule of law', 'constitutional affairs', 'judicial independence'],
+    committees: ['KU', 'JuU'],
+    unit: 'index (-2.5 to 2.5)',
+  },
+  {
+    indicatorId: INDICATOR_IDS.voiceAccountability,
+    name: 'Voice and Accountability',
+    description: 'World Governance Indicator for citizen participation and press freedom — core to democratic governance oversight.',
+    policyAreas: ['democracy', 'press freedom', 'constitutional affairs'],
+    committees: ['KU'],
+    unit: 'index (-2.5 to 2.5)',
+  },
+  {
+    indicatorId: INDICATOR_IDS.govEffectiveness,
+    name: 'Government Effectiveness',
+    description: 'World Governance Indicator for quality of public services and policy implementation.',
+    policyAreas: ['public administration', 'government quality', 'institutional capacity'],
+    committees: ['KU', 'FiU'],
+    unit: 'index (-2.5 to 2.5)',
+  },
 ] as const;
 
 // ---------------------------------------------------------------------------

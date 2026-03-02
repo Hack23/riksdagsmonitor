@@ -176,7 +176,8 @@ Before generating ANY articles, verify MCP connectivity:
 
 **Primary tool:** `search_dokument` — searches documents from past 7 days
 **Cross-reference:** `search_voteringar`, `get_betankanden`, `search_anforanden`
-**Statistical enrichment:** SCB MCP — enrich weekly context with relevant economic indicators
+**Statistical enrichment:** SCB MCP + World Bank — enrich weekly context with relevant economic indicators. Auto-select SCB tables and World Bank indicators based on which committees were active during the week (see `scripts/scb-context.ts` and `scripts/world-bank-context.ts` for committee mappings).
+**Fact-checking:** Review speeches from `search_anforanden` for statistical claims. Use `scripts/statistical-claims-detector.ts` to detect and cross-reference claims against official SCB/World Bank data. Include a "Faktakoll" section for any detected inaccuracies.
 
 ```javascript
 get_sync_status({})

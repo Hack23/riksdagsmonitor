@@ -207,6 +207,66 @@ Use this to enrich political analysis with economic context (GDP, unemployment, 
 Key Swedish indicators and Nordic comparison data are documented in `scripts/world-bank-context.ts`.
 Reference: https://github.com/anshumax/world_bank_mcp_server
 
+**Committee-mapped indicators** (14 indicators → all 15 Riksdag committees):
+| Indicator | World Bank ID | Committees |
+|-----------|---------------|------------|
+| GDP Growth | NY.GDP.MKTP.KD.ZG | FiU |
+| Unemployment | SL.UEM.TOTL.ZS | AU |
+| Inflation | FP.CPI.TOTL.ZG | FiU |
+| Gov. Expenditure | GC.XPN.TOTL.GD.ZS | FiU |
+| Trade Openness | NE.TRD.GNFS.ZS | NU, UU |
+| Military Expenditure | MS.MIL.XPND.GD.ZS | FöU |
+| CO₂ Emissions | EN.ATM.CO2E.PC | MJU |
+| R&D Expenditure | GB.XPD.RSDV.GD.ZS | UbU |
+| GINI Index | SI.POV.GINI | SoU, AU |
+| Current Account | BN.CAB.XOKA.GD.ZS | FiU, NU |
+| Tax Revenue | GC.TAX.TOTL.GD.ZS | SkU, FiU |
+| Rule of Law | RL.EST | KU, JuU |
+| Voice & Accountability | VA.EST | KU |
+| Gov. Effectiveness | GE.EST | KU, FiU |
+
+### 📈 Swedish Statistics (SCB MCP)
+
+The **scb** MCP server provides official Swedish statistics via `search_tables` and `get_table_data` tools.
+Use this to enrich articles with domestic data from Statistics Sweden (Statistiska centralbyrån).
+Key SCB domain-to-committee mappings are documented in `scripts/scb-context.ts`.
+
+**Committee-mapped SCB domains** (15 domains → all 15 Riksdag committees):
+| Domain | Key SCB Tables | Committees |
+|--------|---------------|------------|
+| Fiscal (offentliga finanser) | TAB1291, TAB1292 | FiU |
+| Defence (försvar) | — | FöU |
+| Environment (växthusgaser) | TAB5404, TAB5407 | MJU |
+| Education (utbildning) | TAB4787, TAB4790 | UbU |
+| Healthcare (sjukvård) | — | SoU |
+| Migration (invandring) | TAB637, TAB4230 | SfU |
+| EU/Foreign Trade (utrikeshandel) | TAB2661 | NU, UU |
+| Justice (brottslighet) | TAB1172 | JuU |
+| Labour (arbetslöshet) | TAB5765, TAB5616 | AU |
+| Housing (bostäder) | TAB2052, TAB4709 | CU |
+| Transport (trafik) | — | TU |
+| Trade/GDP (BNP) | TAB5802, TAB5803 | FiU, NU |
+| Taxation (skatter) | TAB1291 | SkU, FiU |
+| Culture (kultur, fritid) | TAB5195 | KrU |
+| Governance (demokrati) | — | KU |
+
+### 🔍 Statistical Claims Fact-Checking
+
+When generating articles about parliamentary debates or speeches, use `scripts/statistical-claims-detector.ts`
+to detect and fact-check politician statistical claims against official World Bank and SCB data.
+
+**How to use:**
+1. When processing speeches/debates from `search_anforanden`, scan for statistical claims
+2. Cross-reference claimed values against World Bank (`get_indicator_for_country`) and SCB (`get_table_data`)
+3. Rate claims: accurate (≤5% deviation), mostly-accurate (5-15%), misleading (15-30%), inaccurate (>30%)
+4. Include a "Faktakoll / Fact Check" section in articles with detected claims
+5. Use localized headings from `scripts/statistical-claims-detector.ts` FACT_CHECK_HEADINGS
+
+**Example patterns detected:**
+- "Arbetslösheten ligger på 7.2 procent" → verify against SCB TAB5765 + World Bank SL.UEM.TOTL.ZS
+- "BNP växer med 2.3 procent" → verify against SCB TAB5802 + World Bank NY.GDP.MKTP.KD.ZG
+- "Försvarsutgifterna uppgår till 2.1 procent av BNP" → verify against World Bank MS.MIL.XPND.GD.ZS
+
 ### 🔐 Security & Workflow Skills
 
 14. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe-outputs MCP server, create_pull_request tool, container isolation workarounds, noop vs failure handling
