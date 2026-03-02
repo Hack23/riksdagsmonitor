@@ -12,6 +12,7 @@
  */
 
 import { describe, it, expect, beforeEach } from 'vitest';
+import { alignmentRateToPercent } from '../src/browser/dashboards/party-dashboard.js';
 
 describe('Party Dashboard', () => {
   let container;
@@ -363,32 +364,35 @@ describe('Party Dashboard', () => {
   });
 
   describe('Coalition Alignment Rate Processing', () => {
-    it('should convert 0-1 alignment_rate to percentage for display', () => {
-      // Real CSV: alignment_rate is 0.84 (meaning 84%)
-      const rate = 0.84;
-      const displayStrength = Math.round(rate * 100);
-      expect(displayStrength).toBe(84);
+    it('should convert 0-1 alignment_rate to percentage for display using real helper', () => {
+      // Uses the actual exported alignmentRateToPercent() from party-dashboard.ts
+      expect(alignmentRateToPercent(0.84)).toBe(84);
+      expect(alignmentRateToPercent(0.72)).toBe(72);
+      expect(alignmentRateToPercent(0.53)).toBe(53);
+      expect(alignmentRateToPercent(0.35)).toBe(35);
     });
 
     it('should NOT show alignment as 1% when rate is 0.84', () => {
-      // Bug fix: Math.round(0.84) = 1, but Math.round(0.84 * 100) = 84
+      // Bug fix: Math.round(0.84) = 1, but alignmentRateToPercent(0.84) = 84
       const rate = 0.84;
       const wrongResult = Math.round(rate); // This was the old bug
-      const correctResult = Math.round(rate * 100);
+      const correctResult = alignmentRateToPercent(rate);
       
       expect(wrongResult).toBe(1); // Old buggy result
-      expect(correctResult).toBe(84); // Correct result
+      expect(correctResult).toBe(84); // Correct result from real implementation
     });
 
-    it('should handle various alignment rates correctly', () => {
+    it('should handle various alignment rates correctly via real helper', () => {
       const testCases = [
         { rate: 0.84, expected: 84 },
         { rate: 0.72, expected: 72 },
         { rate: 0.53, expected: 53 },
         { rate: 0.35, expected: 35 },
+        { rate: 0, expected: 0 },
+        { rate: 1, expected: 100 },
       ];
       testCases.forEach(({ rate, expected }) => {
-        expect(Math.round(rate * 100)).toBe(expected);
+        expect(alignmentRateToPercent(rate)).toBe(expected);
       });
     });
 

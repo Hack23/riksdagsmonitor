@@ -6,6 +6,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { generateMockAnomalyData, generateMockAnnualVotesData } from '../src/browser/dashboards/coalition-dashboard.js';
 
 describe('Coalition Dashboard', () => {
   let container;
@@ -451,43 +452,35 @@ describe('Coalition Dashboard', () => {
 
   describe('Mock Data Quality', () => {
     it('should generate deterministic non-empty mock anomaly data for all parties', () => {
-      // Deterministic mock deviations (no Math.random)
-      const deviations = { 'S': 1.85, 'M': 2.10, 'SD': 3.25, 'V': 1.45, 'MP': 2.70, 'C': 1.30, 'L': 1.95, 'KD': 2.50 };
-      const parties = Object.keys(deviations);
-      const anomalies = parties.map(party => ({
-        party, date: '2024-06-15', deviation: deviations[party],
-        severity: deviations[party] > 3 ? 'critical' : deviations[party] > 2 ? 'major' : 'minor'
-      }));
+      const anomalies = generateMockAnomalyData();
       // Must always produce exactly 8 entries (one per party)
       expect(anomalies.length).toBe(8);
       expect(anomalies[0]).toHaveProperty('party');
       expect(anomalies[0]).toHaveProperty('deviation');
+      expect(anomalies[0]).toHaveProperty('severity');
       // Verify deterministic: running again yields same result
-      const anomalies2 = parties.map(party => ({
-        party, date: '2024-06-15', deviation: deviations[party],
-        severity: deviations[party] > 3 ? 'critical' : deviations[party] > 2 ? 'major' : 'minor'
-      }));
+      const anomalies2 = generateMockAnomalyData();
       expect(anomalies).toEqual(anomalies2);
+      // Verify known values from the real generator
+      const sdEntry = anomalies.find(a => a.party === 'SD');
+      expect(sdEntry.deviation).toBe(3.25);
+      expect(sdEntry.severity).toBe('critical');
     });
 
     it('should generate deterministic non-empty mock annual votes data', () => {
-      const parties = ['S', 'M', 'SD', 'V', 'MP', 'C', 'L', 'KD'];
-      const baseline = 15000;
-      const data = {};
-      parties.forEach(party => {
-        data[party] = [];
-        for (let year = 2002; year <= 2025; year++) {
-          const variation = year % 2 === 0 ? 0.9 : 1.1;
-          data[party].push({ year, votes: Math.round(baseline * variation) });
-        }
-      });
+      const data = generateMockAnnualVotesData();
       expect(Object.keys(data).length).toBe(8);
       expect(data['S'].length).toBeGreaterThan(0);
       expect(data['S'][0]).toHaveProperty('year');
       expect(data['S'][0]).toHaveProperty('votes');
-      // Verify deterministic: even years get 0.9x, odd years get 1.1x
-      expect(data['S'][0].votes).toBe(Math.round(baseline * 0.9)); // 2002 is even
-      expect(data['S'][1].votes).toBe(Math.round(baseline * 1.1)); // 2003 is odd
+      // Verify deterministic: running again yields same result
+      const data2 = generateMockAnnualVotesData();
+      expect(data).toEqual(data2);
+      // Verify per-party baselines from the real generator (S=50000, not generic 15000)
+      const sVotes2002 = data['S'].find(v => v.year === 2002);
+      expect(sVotes2002.votes).toBe(Math.round(50000 * 0.9)); // even year → 0.9x
+      const mVotes2003 = data['M'].find(v => v.year === 2003);
+      expect(mVotes2003.votes).toBe(Math.round(35000 * 1.1)); // odd year → 1.1x
     });
   });
 });

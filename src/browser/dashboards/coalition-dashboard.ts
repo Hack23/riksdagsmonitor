@@ -550,7 +550,7 @@ function generateMockBehavioralData(): Record<string, number> {
 
 function generateMockDecisionData(): any[] { return []; }
 
-function generateMockAnomalyData(): AnomalyEntry[] {
+export function generateMockAnomalyData(): AnomalyEntry[] {
   // Deterministic fallback data when CIA anomaly data is unavailable
   const deviations: Record<string, number> = {
     'S': 1.85, 'M': 2.10, 'SD': 3.25, 'V': 1.45,
@@ -564,7 +564,7 @@ function generateMockAnomalyData(): AnomalyEntry[] {
   }));
 }
 
-function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> {
+export function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> {
   // Deterministic fallback data for annual vote trends
   const data: Record<string, AnnualVoteEntry[]> = {};
   const partyBaselines: Record<string, number> = {
