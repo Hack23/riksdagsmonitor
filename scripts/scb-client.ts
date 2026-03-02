@@ -281,7 +281,9 @@ export class SCBClient {
     try {
       const response = await this.fetchWithRetry(toolName, params);
       return response as T;
-    } catch {
+    } catch (error) {
+      // Log for debugging MCP connection issues; return null as graceful fallback
+      console.warn(`SCB MCP call to ${toolName} failed:`, error instanceof Error ? error.message : error);
       return null;
     } finally {
       clearTimeout(timeoutId);
@@ -328,6 +330,7 @@ export class SCBClient {
         try {
           return JSON.parse(text);
         } catch {
+          console.warn(`SCB MCP response for ${toolName} was not valid JSON; returning raw text`);
           return text;
         }
       }
