@@ -372,7 +372,20 @@
 <a name='L307'></a><a href='#L307'>307</a>
 <a name='L308'></a><a href='#L308'>308</a>
 <a name='L309'></a><a href='#L309'>309</a>
-<a name='L310'></a><a href='#L310'>310</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -447,6 +460,7 @@
 <span class="cline-any cline-yes">649x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">649x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -559,7 +573,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1079x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -681,6 +706,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module article-template/template
  * @description Main article HTML template generator producing complete
@@ -760,6 +786,7 @@ export function generateArticleHTML(data: ArticleData): string {
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"&gt;
   &lt;title&gt;${title}&lt;/title&gt;
   &lt;meta name="description" content="${escapeHtml(subtitle).substring(0, 160)}"&gt;
   &lt;meta name="keywords" content="${keywords.join(', ')}"&gt;
@@ -810,6 +837,9 @@ ${ALL_LANG_CODES.map(l =&gt; `  &lt;link rel="alternate" hreflang="${hreflangCod
   
   &lt;!-- Main stylesheet - contains all article styles --&gt;
   &lt;link rel="stylesheet" href="../styles.css"&gt;
+  
+  &lt;!-- Anti-flash: apply saved theme before first paint --&gt;
+  &lt;script&gt;(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&amp;&amp;t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&amp;&amp;window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());&lt;/script&gt;
   
   &lt;!-- Schema.org NewsArticle structured data --&gt;
   &lt;script type="application/ld+json"&gt;
@@ -933,6 +963,14 @@ ${ALL_LANG_CODES.map(l =&gt; `  &lt;link rel="alternate" hreflang="${hreflangCod
 &lt;/head&gt;
 &lt;body&gt;
 &lt;a href="#main-content" class="skip-link"&gt;${getFooterLabel(lang, 'skipToContent')}&lt;/a&gt;
+&lt;button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme"&gt;
+  &lt;span class="theme-icon" aria-hidden="true"&gt;🌙&lt;/span&gt;
+&lt;/button&gt;
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
 &nbsp;
 &lt;div class="article-top-nav"&gt;
@@ -987,6 +1025,7 @@ ${(sections as TemplateSection[]).length &gt; 0 ? (sections as TemplateSection[]
 ${generateSiteFooter(lang)}
 &nbsp;
 &lt;script type="module" src="../scripts/back-to-top.ts"&gt;&lt;/script&gt;
+&lt;script src="../js/theme-toggle.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;`;
 }
@@ -997,7 +1036,7 @@ ${generateSiteFooter(lang)}
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-01T17:38:59.160Z
+                at 2026-03-02T13:26:53.855Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

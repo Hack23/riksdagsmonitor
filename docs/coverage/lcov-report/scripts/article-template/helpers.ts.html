@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.46% </span>
+                <span class="strong">90.38% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>46/52</span>
+                <span class='fraction'>47/52</span>
             </div>
         
             
@@ -313,7 +313,12 @@
 <a name='L248'></a><a href='#L248'>248</a>
 <a name='L249'></a><a href='#L249'>249</a>
 <a name='L250'></a><a href='#L250'>250</a>
-<a name='L251'></a><a href='#L251'>251</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -365,8 +370,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1974x</span>
-<span class="cline-any cline-yes">1308x</span>
+<span class="cline-any cline-yes">1978x</span>
+<span class="cline-any cline-yes">1310x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -503,18 +508,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">663x</span>
+<span class="cline-any cline-yes">667x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">663x</span>
-<span class="cline-any cline-yes">663x</span>
-<span class="cline-any cline-yes">663x</span>
-<span class="cline-any cline-yes">663x</span>
+<span class="cline-any cline-yes">667x</span>
+<span class="cline-any cline-yes">667x</span>
+<span class="cline-any cline-yes">667x</span>
+<span class="cline-any cline-yes">667x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">663x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">667x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -550,10 +552,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9282x</span>
-<span class="cline-any cline-yes">9282x</span>
-<span class="cline-any cline-yes">9282x</span>
-<span class="cline-any cline-yes">9282x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9338x</span>
+<span class="cline-any cline-yes">9338x</span>
+<span class="cline-any cline-yes">9338x</span>
+<span class="cline-any cline-yes">9338x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -588,6 +594,8 @@ import {
   LANG_ARIA_LABELS,
   LANG_SWITCHER_ARIA_LABELS,
 } from './constants.js';
+import { PKG_VERSION } from '../shared/version.js';
+import { escapeHtml } from '../html-utils.js';
 &nbsp;
 /**
  * Map a language code to its BCP-47 hreflang value.
@@ -697,7 +705,7 @@ export function generateEventCalendar(events: ReadonlyArray&lt;EventGridItem&gt;
   &lt;section class="event-calendar" aria-label="${title}"&gt;
     &lt;h2&gt;${title}${weekLabel ? `: ${weekLabel}` : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>&lt;/h2&gt;
     &lt;div class="calendar-grid"&gt;
-${events.map(event =&gt; `      &lt;div class="calendar-day${event.isToday ? <span class="branch-0 cbranch-no" title="branch not covered" >' today' : '</span>'}" aria-label="${event.dayLabel}"&gt;
+${events.map(event =&gt; `      &lt;div class="calendar-day${event.isToday ? ' today' : ''}" aria-label="${event.dayLabel}"&gt;
         &lt;div class="day-header"&gt;${event.dayName}&lt;/div&gt;
         &lt;span class="day-date"&gt;${event.dayNumber}&lt;/span&gt;
         &lt;ul class="event-list"&gt;
@@ -809,7 +817,8 @@ ${ALL_LANG_CODES.map(l =&gt; {
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="footer-bottom"&gt;
-    &lt;p&gt;&amp;copy; 2008-&lt;time datetime="2026"&gt;2026&lt;/time&gt; &lt;a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer"&gt;Hack23 AB&lt;/a&gt; (Org.nr 5595347807) | ${labels.location}&lt;/p&gt;
+    &lt;p&gt;&amp;copy; 2008-&lt;time datetime="2026"&gt;2026&lt;/time&gt; &lt;a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer"&gt;Hack23 AB&lt;/a&gt; (Org.nr 5595347807) | ${labels.location} | v${escapeHtml(String(PKG_VERSION))}&lt;/p&gt;
+    &lt;p class="footer-disclaimer"&gt;⚠️ ${labels.disclaimer} &lt;a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer"&gt;${labels.disclaimerLink}&lt;/a&gt;.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/footer&gt;`;
 }
@@ -820,7 +829,7 @@ ${ALL_LANG_CODES.map(l =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-01T17:38:59.160Z
+                at 2026-03-02T13:26:53.855Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
