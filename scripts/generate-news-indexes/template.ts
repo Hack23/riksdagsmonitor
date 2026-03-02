@@ -57,6 +57,7 @@ export function generateIndexHTML(
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
   <title>${escapeHtml(lang.title)} - Riksdagsmonitor</title>
   <meta name="description" content="${escapedSubtitle}">
   <meta name="keywords" content="${escapeHtml(lang.keywords)}">
@@ -182,10 +183,21 @@ ${generateHreflangTags()}
   
   <link rel="stylesheet" href="../styles.css">
   ${generateRTLStyles(lang.rtl)}
+  
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
 <body class="news-page">
   <header class="header-section">
     <div class="header-content">
+      <button id="theme-toggle" class="theme-toggle-btn" type="button"
+              aria-pressed="false"
+              aria-label="Switch to dark theme"
+              title="Switch to dark theme"
+              data-label-dark="Switch to light theme"
+              data-label-light="Switch to dark theme">
+        <span class="theme-icon" aria-hidden="true">🌙</span>
+      </button>
       <h1>${escapeHtml(lang.title)}</h1>
       <p class="subtitle">${lang.subtitle}</p>
       <a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}</a>
@@ -558,6 +570,7 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence | v${escapeHtml(String(PKG_VERSION))}</p>
     <p class="footer-disclaimer">⚠️ ${escapeHtml(lang.disclaimer)} <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">${escapeHtml(lang.disclaimerLink)}</a>.</p>
   </footer>
+  <script src="../js/theme-toggle.js"></script>
 </body>
 </html>`;
 

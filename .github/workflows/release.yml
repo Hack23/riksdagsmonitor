@@ -660,10 +660,26 @@ jobs:
             --cache-control 'public, max-age=86400' \
             --exclude 'screenshots/*' --exclude '.git/*'
 
-          # Docs directory - documentation
+          # Docs directory - HTML files with explicit content type
+          aws s3 sync "$SRC/docs" "$BUCKET/docs" --exclude '*' --include '*.html' \
+            --cache-control 'public, max-age=86400' \
+            --content-type 'text/html; charset=utf-8'
+
+          # Docs directory - CSS files with explicit content type
+          aws s3 sync "$SRC/docs" "$BUCKET/docs" --exclude '*' --include '*.css' \
+            --cache-control 'public, max-age=86400' \
+            --content-type 'text/css'
+
+          # Docs directory - JS files with explicit content type
+          aws s3 sync "$SRC/docs" "$BUCKET/docs" --exclude '*' --include '*.js' \
+            --cache-control 'public, max-age=86400' \
+            --content-type 'application/javascript'
+
+          # Docs directory - remaining files (images, fonts, data, etc.)
           aws s3 sync "$SRC/docs" "$BUCKET/docs" \
             --cache-control 'public, max-age=86400' \
-            --exclude 'screenshots/*'
+            --exclude 'screenshots/*' \
+            --exclude '*.html' --exclude '*.css' --exclude '*.js'
 
           echo "✅ S3 deployment completed"
 
