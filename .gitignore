@@ -66,3 +66,4 @@ sitemap.xml
 news/index.html
 news/index_*.html
 data/news-articles.json
+rss.xml
