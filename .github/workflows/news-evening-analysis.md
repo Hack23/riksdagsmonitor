@@ -240,10 +240,11 @@ Committee-mapped indicators and policy area context in `scripts/world-bank-conte
 
 ### 📈 Swedish Statistics (SCB MCP)
 
-The **scb** MCP server provides official Swedish statistics via PxWeb v2 API tools: `search_tables`, `get_table_info`, `fetch_metadata`, `query_table`, `get_code_list`, `list_recent_tables`.
+The **scb** MCP server provides official Swedish statistics via the PxWeb v2 API with these tools (current `@jarib/pxweb-mcp@2.0.0` interface): `search_tables`, `get_table_info`, `fetch_metadata`, `query_table`, `get_code_list`, `list_recent_tables`.
 Use SCB data for domestic context: labour market, migration, GDP, crime, housing, education, taxation, culture.
 Full domain-to-committee mapping in `scripts/scb-context.ts` (15 domains → all 15 Riksdag committees).
 **Note**: Language parameter accepts "en" (English) only. Table IDs from `scripts/scb-context.ts` work directly.
+**Important**: Some older examples may mention deprecated tools `get_table_data` or `get_table_variables`. When you see those names, interpret them as follows and ONLY call the current tools: use `query_table` instead of `get_table_data`, and use `fetch_metadata` or `get_table_info` instead of `get_table_variables`. Do not attempt to call `get_table_data` or `get_table_variables` directly, as they are not available in `@jarib/pxweb-mcp@2.0.0`.
 
 ### 🔍 Statistical Claims Fact-Checking
 
@@ -602,19 +603,19 @@ get_calendar_events({ from: nextMonday, tom: previewEnd, limit: 50 })
 // SCB provides 1,200+ statistical tables covering population, economy, labour,
 // education, and environment via PxWebAPI 2.0.
 //
-// SCB MCP tools: search_tables, get_table_data, get_table_variables, preview_data, find_region_code
+// SCB MCP tools (@jarib/pxweb-mcp@2.0.0): search_tables, get_table_info, fetch_metadata, query_table, get_code_list, list_recent_tables
 //
 // Example: Enrich budget propositions with unemployment data
 // const labourTables = search_tables({ query: "arbetslöshet sysselsättning", limit: 5 })
-// const unemploymentData = get_table_data({
-//   tableId: "TAB5765",
-//   selection: { Tid: ["TOP(4)"], Kon: ["1+2"], ContentsCode: ["000005GI"] }
+// const unemploymentData = query_table({
+//   table_id: "TAB5765",
+//   value_codes: { Tid: "top(4)", Kon: "1+2", ContentsCode: "000005GI" }
 // })
 //
 // Example: Add population context for migration policy
-// const migrationData = get_table_data({
-//   tableId: "TAB4230",
-//   selection: { Tid: ["TOP(4)"], ContentsCode: ["BE0101AK"] }
+// const migrationData = query_table({
+//   table_id: "TAB4230",
+//   value_codes: { Tid: "top(4)", ContentsCode: "BE0101AK" }
 // })
 //
 // ⚠️ SCB data is OPTIONAL enrichment — never block article generation on SCB failures.

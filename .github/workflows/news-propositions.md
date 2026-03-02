@@ -186,7 +186,7 @@ get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
 
 // SCB enrichment (optional — wrap in try/catch, do not block generation on SCB failures):
 // search_tables({ query: "statsbudget offentliga finanser BNP", limit: 5 })
-// get_table_data({ tableId: "<id>", selection: { Tid: ["TOP(4)"] } })
+// query_table({ table_id: "<id>", value_codes: { Tid: "top(4)" } })
 ```
 
 ## Generation Steps

@@ -195,8 +195,8 @@ analyze_g0v_by_department({ dateFrom: lastMonth, dateTo: today })
 
 // SCB enrichment (optional — wrap in try/catch, do not block generation on SCB failures):
 // search_tables({ query: "BNP arbetslöshet KPI", limit: 5 })
-// get_table_data({ tableId: "TAB5802", selection: { Tid: ["TOP(4)"] } })  // GDP
-// get_table_data({ tableId: "TAB5765", selection: { Tid: ["TOP(4)"], Kon: ["1+2"] } })  // Unemployment
+// query_table({ table_id: "TAB5802", value_codes: { Tid: "top(4)" } })  // GDP
+// query_table({ table_id: "TAB5765", value_codes: { Tid: "top(4)", Kon: "1+2" } })  // Unemployment
 ```
 
 ## Generation Steps
