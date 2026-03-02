@@ -97,6 +97,14 @@ describe('SCB MCP Server Configuration', () => {
       const safeOutputsSection = content.split('safe-outputs:')[1]?.split('steps:')[0] ?? '';
       expect(safeOutputsSection).toContain('api.scb.se');
     });
+
+    it(`${workflow} should include api.worldbank.org in safe-outputs`, () => {
+      const filepath = path.join(WORKFLOWS_DIR, workflow);
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      const safeOutputsSection = content.split('safe-outputs:')[1]?.split('steps:')[0] ?? '';
+      expect(safeOutputsSection).toContain('api.worldbank.org');
+    });
   });
 });
 
