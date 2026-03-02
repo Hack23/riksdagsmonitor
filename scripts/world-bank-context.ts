@@ -145,7 +145,7 @@ export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = [
     unit: '% of GDP',
   },
   {
-    indicatorId: INDICATOR_IDS.rulOfLaw,
+    indicatorId: INDICATOR_IDS.ruleOfLaw,
     name: 'Rule of Law',
     description: 'World Governance Indicator for rule of law — reflects judicial independence, property rights, and constitutional order.',
     policyAreas: ['rule of law', 'constitutional affairs', 'judicial independence'],

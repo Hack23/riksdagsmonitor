@@ -275,9 +275,6 @@ export class SCBClient {
   // -----------------------------------------------------------------------
 
   private async callTool<T>(toolName: string, params: Record<string, unknown>): Promise<T | null> {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), this.timeout);
-
     try {
       const response = await this.fetchWithRetry(toolName, params);
       return response as T;
@@ -285,8 +282,6 @@ export class SCBClient {
       // Log for debugging MCP connection issues; return null as graceful fallback
       console.warn(`SCB MCP call to ${toolName} failed:`, error instanceof Error ? error.message : error);
       return null;
-    } finally {
-      clearTimeout(timeoutId);
     }
   }
 
@@ -330,8 +325,8 @@ export class SCBClient {
         try {
           return JSON.parse(text);
         } catch {
-          console.warn(`SCB MCP response for ${toolName} was not valid JSON; returning raw text`);
-          return text;
+          console.warn(`SCB MCP response for ${toolName} was not valid JSON; treating as error`);
+          throw new Error(`SCB MCP response for ${toolName} was not valid JSON`);
         }
       }
       return json.result ?? null;

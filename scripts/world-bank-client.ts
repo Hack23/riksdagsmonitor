@@ -108,7 +108,7 @@ export const INDICATOR_IDS = {
   /** Tax revenue (% of GDP) — relevant to SkU taxation committee */
   taxRevenue: 'GC.TAX.TOTL.GD.ZS',
   /** Rule of law estimate — relevant to KU constitution committee */
-  rulOfLaw: 'RL.EST',
+  ruleOfLaw: 'RL.EST',
   /** Voice and accountability estimate — relevant to KU constitution committee */
   voiceAccountability: 'VA.EST',
   /** Government effectiveness estimate — relevant to KU constitution committee */

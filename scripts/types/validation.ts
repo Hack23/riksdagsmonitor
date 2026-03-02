@@ -68,6 +68,8 @@ export interface QualityThresholds {
   recommendInternationalComparison: boolean;
   /** Recommend economic context from World Bank data (non-blocking) */
   recommendEconomicContext?: boolean;
+  /** Recommend Swedish statistical context from SCB (non-blocking) */
+  recommendSCBContext?: boolean;
 }
 
 /** Measured quality metrics for a single article */

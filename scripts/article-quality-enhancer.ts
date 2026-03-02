@@ -61,6 +61,7 @@ const DEFAULT_THRESHOLDS: QualityThresholds = {
   recommendHistoricalContext: true,
   recommendInternationalComparison: false,
   recommendEconomicContext: true,
+  recommendSCBContext: true,
 };
 
 /**
@@ -384,7 +385,7 @@ export async function enhanceArticleQuality(
     warnings.push('Recommended: Add economic context (World Bank indicators, GDP, unemployment data)');
   }
 
-  if (options.recommendEconomicContext && !metrics.hasSCBContext) {
+  if (options.recommendSCBContext && !metrics.hasSCBContext) {
     warnings.push('Recommended: Add Swedish statistical context (SCB official statistics)');
   }
 

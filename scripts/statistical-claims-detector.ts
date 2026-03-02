@@ -189,8 +189,7 @@ const CLAIM_PATTERNS: readonly ClaimPattern[] = [
   {
     pattern: /(\d+[,.]?\d*)\s*(?:procent|%)\s+(?:av\s+)?(?:BNP|bruttonationalprodukt)/gi,
     topic: 'gdp-share',
-    verificationSource: 'both',
-    worldBankIndicator: 'NY.GDP.MKTP.KD.ZG',
+    verificationSource: 'scb',
   },
 ];
 

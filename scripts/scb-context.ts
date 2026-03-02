@@ -43,7 +43,7 @@ export interface SCBSectionHeadings {
 }
 
 // ---------------------------------------------------------------------------
-// SCB indicator mappings (12 domains → committees)
+// SCB indicator mappings (domains → committees)
 // ---------------------------------------------------------------------------
 
 /**
@@ -335,7 +335,7 @@ export function hasSCBContext(content: string): boolean {
     /\bbefolkningsstatistik/i, // Population statistics
     /\bbostadsbyggande/i, // Housing construction
     /\butrikeshandel/i, // Foreign trade
-    /\bbrå\b/i, // Crime statistics authority
+    /brå/i, // Crime statistics authority (substring match to avoid Unicode \b issues)
     /\bTAB\d{3,5}\b/i, // SCB table IDs
   ];
 
