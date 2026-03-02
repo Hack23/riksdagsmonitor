@@ -77,6 +77,7 @@ export function generateArticleHTML(data: ArticleData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
   <title>${title}</title>
   <meta name="description" content="${escapeHtml(subtitle).substring(0, 160)}">
   <meta name="keywords" content="${keywords.join(', ')}">
