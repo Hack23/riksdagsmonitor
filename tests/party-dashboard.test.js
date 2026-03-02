@@ -394,19 +394,24 @@ describe('Party Dashboard', () => {
 
     it('should handle momentum filter with zero values', () => {
       // Bug fix: filter should not reject rows where momentum is 0
+      // CSV parsing produces string values, so test with strings to match runtime types
       const rows = [
-        { party: 'S', momentum: 0, year: '2026', quarter: '1' },
-        { party: 'M', momentum: 0.5, year: '2026', quarter: '1' },
+        { party: 'S', momentum: '0.00', year: '2026', quarter: '1' },
+        { party: 'M', momentum: '0.50', year: '2026', quarter: '1' },
         { party: 'V', momentum: '', year: '2026', quarter: '1' },
       ];
       
-      // Old filter: row.momentum (rejects 0)
-      const oldFiltered = rows.filter(r => r.momentum);
-      expect(oldFiltered.length).toBe(1); // Only M
+      // Old filter: row.momentum (rejects '0.00' falsy? No, '0.00' is truthy as a string)
+      // But numeric 0 from parseFloat would be falsy
+      const numericRows = rows.map(r => ({ ...r, momentumNum: r.momentum !== '' ? parseFloat(r.momentum) : undefined }));
+      
+      // Old filter with numeric: row.momentumNum (rejects 0)
+      const oldFiltered = numericRows.filter(r => r.momentumNum);
+      expect(oldFiltered.length).toBe(1); // Only M (0.50)
       
       // New filter: row.momentum !== undefined && row.momentum !== ''
       const newFiltered = rows.filter(r => r.momentum !== undefined && r.momentum !== '');
-      expect(newFiltered.length).toBe(2); // S and M
+      expect(newFiltered.length).toBe(2); // S ('0.00') and M ('0.50')
     });
   });
 });

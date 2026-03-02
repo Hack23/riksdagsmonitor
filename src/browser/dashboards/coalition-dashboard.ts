@@ -162,6 +162,8 @@ async function fetchCoalitionData(): Promise<void> {
         const party1 = row['party1']; const party2 = row['party2']; const alignmentRate = parseFloat(row['alignment_rate']);
         if (!alignment[party1]) alignment[party1] = {};
         alignment[party1][party2] = alignmentRate;
+        if (!alignment[party2]) alignment[party2] = {};
+        alignment[party2][party1] = alignmentRate;
       });
       dataCache.coalitionAlignment = alignment;
       logger.info('Coalition data loaded from CSV');
@@ -274,7 +276,9 @@ function renderCoalitionNetwork(): void {
   nodes.forEach((source, i) => {
     nodes.forEach((target, j) => {
       if (i < j) {
-        const rawStrength = alignment?.[source.id]?.[target.id];
+        const rawStrengthForward = alignment?.[source.id]?.[target.id];
+        const rawStrengthBackward = alignment?.[target.id]?.[source.id];
+        const rawStrength = typeof rawStrengthForward === 'number' ? rawStrengthForward : (typeof rawStrengthBackward === 'number' ? rawStrengthBackward : undefined);
         const strength = typeof rawStrength === 'number' ? rawStrength : 0.5;
         links.push({ source: source.id, target: target.id, strength });
       }
@@ -349,8 +353,10 @@ function renderAlignmentHeatMap(): void {
   const heatMapData: { party1: string; party2: string; alignment: number }[] = [];
   partyIds.forEach(party1 => {
     partyIds.forEach(party2 => {
-      const rawAlignment = dataCache.coalitionAlignment?.[party1]?.[party2];
-      const alignmentVal = party1 === party2 ? 1.0 : (typeof rawAlignment === 'number' ? rawAlignment : 0.5);
+      const rawAlignmentDirect = dataCache.coalitionAlignment?.[party1]?.[party2];
+      const rawAlignmentReverse = dataCache.coalitionAlignment?.[party2]?.[party1];
+      const alignmentSource = typeof rawAlignmentDirect === 'number' ? rawAlignmentDirect : (typeof rawAlignmentReverse === 'number' ? rawAlignmentReverse : 0.5);
+      const alignmentVal = party1 === party2 ? 1.0 : alignmentSource;
       heatMapData.push({ party1, party2, alignment: alignmentVal });
     });
   });

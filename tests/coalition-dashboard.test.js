@@ -346,19 +346,35 @@ describe('Coalition Dashboard', () => {
 
   describe('Alignment Rate Data Processing', () => {
     it('should use alignment_rate directly as 0-1 scale without dividing by 100', () => {
-      // Real CSV: alignment_rate is already 0-1 (e.g., 0.84 = 84%)
-      const alignment = { 'M': { 'KD': 0.84 }, 'S': { 'MP': 0.72 } };
+      // Real CSV stores pairs alphabetically (e.g., KD,M not M,KD)
+      const alignment = { 'KD': { 'M': 0.84 }, 'MP': { 'S': 0.72 } };
       
       // Network strength should use raw value (not /100)
-      const strength = alignment['M']['KD'];
+      const strength = alignment['KD']['M'];
       expect(strength).toBe(0.84);
       expect(strength).toBeGreaterThan(0.5);
       expect(strength).toBeLessThanOrEqual(1.0);
       
       // Heat map should also use raw value
-      const heatMapValue = alignment['S']['MP'];
+      const heatMapValue = alignment['MP']['S'];
       expect(heatMapValue).toBe(0.72);
       expect(heatMapValue * 100).toBeCloseTo(72); // Display as percentage
+    });
+
+    it('should handle reverse-pair lookups when CSV stores only one direction', () => {
+      // CSV has KD,M but code may look up M,KD — reverse lookup should find it
+      const alignment = { 'KD': { 'M': 0.84 } };
+      
+      // Forward lookup: KD -> M (present in CSV)
+      const rawForward = alignment?.['KD']?.['M'];
+      expect(typeof rawForward === 'number').toBe(true);
+      expect(rawForward).toBe(0.84);
+      
+      // Reverse lookup: M -> KD (not in CSV — should check reverse)
+      const rawDirect = alignment?.['M']?.['KD'];
+      const rawReverse = alignment?.['KD']?.['M'];
+      const resolved = typeof rawDirect === 'number' ? rawDirect : (typeof rawReverse === 'number' ? rawReverse : 0.5);
+      expect(resolved).toBe(0.84); // Found via reverse lookup
     });
 
     it('should NOT divide alignment_rate by 100 (values are already 0-1)', () => {
