@@ -6,8 +6,15 @@
       "tools": ["*"]
     },
     "scb": {
-      "type": "http",
-      "url": "https://scb-mcp.onrender.com/mcp",
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"],
+      "tools": ["*"]
+    },
+    "world-bank": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "worldbank-mcp@1.0.1"],
       "tools": ["*"]
     },
     "github": {

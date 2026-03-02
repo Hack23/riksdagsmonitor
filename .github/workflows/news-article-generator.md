@@ -34,7 +34,8 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
-    - scb-mcp.onrender.com
+    - api.scb.se
+    - api.worldbank.org
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -47,7 +48,11 @@ mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
   scb:
-    url: https://scb-mcp.onrender.com/mcp
+    command: npx
+    args: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+  world-bank:
+    command: npx
+    args: ["-y", "worldbank-mcp@1.0.1"]
 
 tools:
   github:
@@ -63,7 +68,8 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
-    - scb-mcp.onrender.com
+    - api.scb.se
+    - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -197,10 +203,12 @@ Before generating or translating articles, consult these authoritative reference
 12. **`.github/skills/osint-methodologies/SKILL.md`** — OSINT collection, source evaluation, data verification, ethical intelligence gathering
 13. **`.github/skills/api-integration/SKILL.md`** — REST/GraphQL patterns, rate limiting, error handling, retry logic
 
-### 📊 Economic Data (World Bank Context)
+### 📊 Economic Data (World Bank MCP)
 
-Economic indicator context for Swedish political analysis (GDP, unemployment, inflation, trade) is documented in `scripts/world-bank-context.ts`.
-Use this file as reference when enriching political analysis with economic context.
+The **world-bank** MCP server provides global economic indicators via tools: `get-economic-data`, `get-social-data`, `get-education-data`, `get-health-data`, `search-indicators`, `get-countries`, `get-country-info`.
+Use country code `SE` for Sweden, `DK` for Denmark, `NO` for Norway, `FI` for Finland, `DE` for Germany.
+Key indicators: GDP_GROWTH, UNEMPLOYMENT, INFLATION, HEALTH_EXPENDITURE, EDUCATION_EXPENDITURE.
+Committee-mapped indicators and policy area context in `scripts/world-bank-context.ts`.
 
 **Committee-mapped indicators** (14 indicators → all 15 Riksdag committees):
 | Indicator | World Bank ID | Committees |
@@ -222,9 +230,10 @@ Use this file as reference when enriching political analysis with economic conte
 
 ### 📈 Swedish Statistics (SCB MCP)
 
-The **scb** MCP server provides official Swedish statistics via `search_tables` and `get_table_data` tools.
+The **scb** MCP server provides official Swedish statistics via PxWeb v2 API tools: `search_tables`, `get_table_info`, `fetch_metadata`, `query_table`, `get_code_list`, `list_recent_tables`.
 Use this to enrich articles with domestic data from Statistics Sweden (Statistiska centralbyrån).
 Key SCB domain-to-committee mappings are documented in `scripts/scb-context.ts`.
+**Note**: Language parameter accepts "en" (English) only. Table IDs from `scripts/scb-context.ts` work directly.
 
 **Committee-mapped SCB domains** (15 domains → all 15 Riksdag committees):
 | Domain | Key SCB Tables | Committees |
@@ -252,7 +261,7 @@ to detect and fact-check politician statistical claims against official World Ba
 
 **How to use:**
 1. When processing speeches/debates from `search_anforanden`, scan for statistical claims
-2. Cross-reference claimed values against World Bank (`get_indicator_for_country`) and SCB (`get_table_data`)
+2. Cross-reference claimed values against World Bank (`get-economic-data` with indicator) and SCB (`query_table`)
 3. Rate claims: accurate (≤5% deviation), mostly-accurate (5-15%), misleading (15-30%), inaccurate (>30%)
 4. Include a "Faktakoll / Fact Check" section in articles with detected claims
 5. Use localized headings from `scripts/statistical-claims-detector.ts` FACT_CHECK_HEADINGS
@@ -342,11 +351,17 @@ You have access to the **riksdag-regering-mcp** MCP server configured in the wor
 
 ### How MCP Tool Calls Work in Agentic Workflows
 
-The `mcp-servers` frontmatter declares the riksdag-regering server:
+The `mcp-servers` frontmatter declares the data servers:
 ```yaml
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+  scb:
+    command: npx
+    args: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+  world-bank:
+    command: npx
+    args: ["-y", "worldbank-mcp@1.0.1"]
 ```
 
 At runtime, gh-aw:

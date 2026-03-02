@@ -42,8 +42,19 @@ describe('SCB MCP Server Configuration', () => {
     const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
     expect(config.mcpServers).toHaveProperty('scb');
-    expect(config.mcpServers.scb.type).toBe('http');
-    expect(config.mcpServers.scb.url).toBe('https://scb-mcp.onrender.com/mcp');
+    expect(config.mcpServers.scb.type).toBe('local');
+    expect(config.mcpServers.scb.command).toBe('npx');
+    expect(config.mcpServers.scb.args).toContain('@jarib/pxweb-mcp@2.0.0');
+  });
+
+  it('copilot-mcp.json should include world-bank MCP server', () => {
+    const configPath = path.join(__dirname, '..', '.github', 'copilot-mcp.json');
+    const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+
+    expect(config.mcpServers).toHaveProperty('world-bank');
+    expect(config.mcpServers['world-bank'].type).toBe('local');
+    expect(config.mcpServers['world-bank'].command).toBe('npx');
+    expect(config.mcpServers['world-bank'].args).toContain('worldbank-mcp@1.0.1');
   });
 
   ALL_NEWS_WORKFLOWS.forEach(workflow => {
@@ -53,23 +64,38 @@ describe('SCB MCP Server Configuration', () => {
 
       // Should have scb in mcp-servers section
       expect(content).toContain('scb:');
-      expect(content).toContain('https://scb-mcp.onrender.com/mcp');
+      expect(content).toContain('@jarib/pxweb-mcp@2.0.0');
     });
 
-    it(`${workflow} should allow scb-mcp.onrender.com in network`, () => {
+    it(`${workflow} should configure world-bank MCP server`, () => {
       const filepath = path.join(WORKFLOWS_DIR, workflow);
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      expect(content).toContain('scb-mcp.onrender.com');
+      expect(content).toContain('world-bank:');
+      expect(content).toContain('worldbank-mcp@1.0.1');
     });
 
-    it(`${workflow} should include scb-mcp.onrender.com in safe-outputs`, () => {
+    it(`${workflow} should allow api.scb.se in network`, () => {
       const filepath = path.join(WORKFLOWS_DIR, workflow);
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // The safe-outputs section should list scb-mcp.onrender.com
+      expect(content).toContain('api.scb.se');
+    });
+
+    it(`${workflow} should allow api.worldbank.org in network`, () => {
+      const filepath = path.join(WORKFLOWS_DIR, workflow);
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      expect(content).toContain('api.worldbank.org');
+    });
+
+    it(`${workflow} should include api.scb.se in safe-outputs`, () => {
+      const filepath = path.join(WORKFLOWS_DIR, workflow);
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      // The safe-outputs section should list api.scb.se
       const safeOutputsSection = content.split('safe-outputs:')[1]?.split('steps:')[0] ?? '';
-      expect(safeOutputsSection).toContain('scb-mcp.onrender.com');
+      expect(safeOutputsSection).toContain('api.scb.se');
     });
   });
 });

@@ -706,8 +706,29 @@ jobs:
                 }
               },
               "scb": {
-                "type": "http",
-                "url": "https://scb-mcp.onrender.com/mcp",
+                "type": "stdio",
+                "container": "node:lts-alpine",
+                "entrypoint": "npx",
+                "entrypointArgs": [
+                  "npx",
+                  "-y",
+                  "@jarib/pxweb-mcp@2.0.0",
+                  "--url",
+                  "https://api.scb.se/OV0104/v2beta"
+                ],
+                "tools": [
+                  "*"
+                ]
+              },
+              "world-bank": {
+                "type": "stdio",
+                "container": "node:lts-alpine",
+                "entrypoint": "npx",
+                "entrypointArgs": [
+                  "npx",
+                  "-y",
+                  "worldbank-mcp@1.0.1"
+                ],
                 "tools": [
                   "*"
                 ]
