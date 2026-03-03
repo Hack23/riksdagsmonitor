@@ -90,8 +90,8 @@ export function generateArticleHTML(data: ArticleData): string {
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
   <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="140">
+  <meta property="og:image:height" content="140">
   <meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta property="og:locale" content="${ogLocale}">
   <meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
@@ -165,8 +165,8 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     "image": {
       "@type": "ImageObject",
       "url": "https://hack23.com/cia-icon-140.webp",
-      "width": 1200,
-      "height": 630
+      "width": 140,
+      "height": 140
     },
     "articleSection": "${typeLabel}",
     "articleBody": "${sanitizeArticleBody(escapeHtml(fixedContent))}...",
