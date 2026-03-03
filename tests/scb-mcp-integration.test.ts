@@ -38,19 +38,34 @@ const ALL_NEWS_WORKFLOWS: readonly string[] = [
 
 /**
  * Extract YAML frontmatter from a workflow .md file.
- * Returns the content between the opening `---` and the `steps:` top-level key,
- * which covers all configuration (network, mcp-servers, tools, safe-outputs).
+ * Returns the content between the opening `---` and the closing `---`
+ * marker. If no closing marker is found, falls back to returning content
+ * up to (but not including) the first top-level `steps:` key.
+ * This covers all configuration (network, mcp-servers, tools, safe-outputs).
  */
 function extractFrontmatter(content: string): string {
   const lines = content.split('\n');
   const start = lines.indexOf('---');
   if (start === -1) return '';
-  // Find the end: look for `steps:` at column 0 (top-level YAML key)
-  let end = lines.length;
+
+  // Prefer the canonical YAML frontmatter: between opening and closing `---`
+  let end = -1;
   for (let i = start + 1; i < lines.length; i++) {
-    if (/^steps:/.test(lines[i])) {
+    if (lines[i].trim() === '---') {
       end = i;
       break;
+    }
+  }
+
+  // If no closing marker is found, fall back to the previous behavior:
+  // stop at the first top-level `steps:` key.
+  if (end === -1) {
+    end = lines.length;
+    for (let i = start + 1; i < lines.length; i++) {
+      if (/^steps:/.test(lines[i])) {
+        end = i;
+        break;
+      }
     }
   }
   return lines.slice(start + 1, end).join('\n');
