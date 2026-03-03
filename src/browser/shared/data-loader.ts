@@ -7,7 +7,7 @@
  * - Local-first with remote fallback
  * - localStorage caching with TTL
  * - Retry with exponential backoff
- * - CSV parsing via d3.csvParse
+ * - CSV parsing via PapaParse (CSP-compatible) with simple fallback
  * - JSON and text response handling
 
  *
@@ -128,7 +128,7 @@ export async function loadText(
 
 /**
  * Load and parse CSV data from a data source.
- * Uses d3.csvParse when available, falls back to simple split parsing.
+ * Uses PapaParse (CSP-compatible) with a simple CSV fallback parser.
  */
 export async function loadCSV(
   source: DataSource,
@@ -151,22 +151,23 @@ export async function loadJSON<T = unknown>(
 
 /**
  * Parse CSV text into rows.
- * Uses d3.csvParse if available (imported via Vite), otherwise falls back to simple parsing.
+ * Uses PapaParse if available (CSP-compatible), falls back to a simple CSV parser.
+ * Does NOT use d3.csvParse as it requires unsafe-eval in CSP.
  */
 export function parseCSV(text: string): CSVRow[] {
-  // Use d3.csvParse if available (loaded as global or imported)
-  const d3Global = (globalThis as Record<string, unknown>).d3 as
-    | { csvParse: (text: string) => CSVRow[] }
+  // Use PapaParse if available (CSP-compatible, no unsafe-eval needed)
+  const PapaGlobal = (globalThis as Record<string, unknown>).Papa as
+    | { parse: (text: string, config: Record<string, unknown>) => { data: CSVRow[] } }
     | undefined;
-  if (d3Global?.csvParse) {
-    return d3Global.csvParse(text);
+  if (PapaGlobal?.parse) {
+    return PapaGlobal.parse(text, { header: true, skipEmptyLines: true }).data;
   }
 
-  // Fallback: simple CSV parser
+  // CSP-safe fallback: simple CSV parser
   const lines = text.trim().split('\n');
   if (lines.length < 2) return [];
   const headers = lines[0]!.split(',').map((h) => h.trim().replace(/^"|"$/g, ''));
-  return lines.slice(1).map((line) => {
+  return lines.slice(1).filter((l) => l.trim()).map((line) => {
     const values = line.split(',').map((v) => v.trim().replace(/^"|"$/g, ''));
     const row: CSVRow = {};
     headers.forEach((header, i) => {
