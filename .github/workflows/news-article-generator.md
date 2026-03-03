@@ -206,9 +206,9 @@ Before generating or translating articles, consult these authoritative reference
 ### 📊 Economic Data (World Bank MCP)
 
 The **world-bank** MCP server provides global economic indicators via tools: `get-economic-data`, `get-social-data`, `get-education-data`, `get-health-data`, `search-indicators`, `get-countries`, `get-country-info`.
-Use country code `SE` for Sweden, `DK` for Denmark, `NO` for Norway, `FI` for Finland, `DE` for Germany.
-Key indicators: GDP_GROWTH, UNEMPLOYMENT, INFLATION, HEALTH_EXPENDITURE, EDUCATION_EXPENDITURE.
-Committee-mapped indicators and policy area context in `scripts/world-bank-context.ts`.
+Use ISO alpha-3 country codes: `SWE` for Sweden, `DNK` for Denmark, `NOR` for Norway, `FIN` for Finland, `DEU` for Germany.
+Key indicators (World Bank IDs used by the client): `NY.GDP.MKTP.KD.ZG` (GDP growth), `SL.UEM.TOTL.ZS` (unemployment rate), `FP.CPI.TOTL.ZG` (inflation, CPI), `SH.XPD.CHEX.GD.ZS` (current health expenditure, % of GDP), `SE.XPD.TOTL.GD.ZS` (education expenditure, % of GDP).
+These indicator IDs and committee/policy-area mappings are defined in `scripts/world-bank-client.ts` (`INDICATOR_IDS`) and `scripts/world-bank-context.ts`.
 
 **Committee-mapped indicators** (14 indicators → all 15 Riksdag committees):
 | Indicator | World Bank ID | Committees |

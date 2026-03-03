@@ -232,11 +232,11 @@ You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to 
 ### 📊 Economic Data (World Bank MCP)
 
 The **world-bank** MCP server provides global economic indicators via tools: `get-economic-data`, `get-social-data`, `get-education-data`, `get-health-data`, `search-indicators`, `get-countries`, `get-country-info`.
-Use country code `SE` for Sweden, `DK` for Denmark, `NO` for Norway, `FI` for Finland, `DE` for Germany.
-Key indicators: GDP_GROWTH, UNEMPLOYMENT, INFLATION, HEALTH_EXPENDITURE, EDUCATION_EXPENDITURE.
-Committee-mapped indicators and policy area context in `scripts/world-bank-context.ts`.
+Use ISO alpha-3 country codes consistent with `scripts/world-bank-client.ts`: `SWE` for Sweden, `DNK` for Denmark, `NOR` for Norway, `FIN` for Finland, `DEU` for Germany.
+Key indicators use official World Bank indicator IDs, for example: GDP growth (annual %) `NY.GDP.MKTP.KD.ZG`, unemployment (% of total labor force) `SL.UEM.TOTL.ZS`, inflation (consumer prices, annual %) `FP.CPI.TOTL.ZG`, current health expenditure (% of GDP) `SH.XPD.CHEX.GD.ZS`, government expenditure on education (% of GDP) `SE.XPD.TOTL.GD.ZS`.
+Committee-mapped indicators and policy area context (using these ISO alpha-3 codes and indicator IDs) are defined in `scripts/world-bank-context.ts`.
 
-**Key committee-mapped indicators**: GDP Growth→FiU, Unemployment→AU, Tax Revenue→SkU, Rule of Law→KU, Military Expenditure→FöU, CO₂→MJU, R&D→UbU, GINI→SoU/AU, Trade→NU/UU (see `scripts/world-bank-context.ts` for complete mapping of 14 indicators to all 15 committees).
+**Key committee-mapped indicators** (see `scripts/world-bank-context.ts` for the exact IDs and complete mapping of 14 indicators to all 15 committees): GDP growth→FiU, Unemployment→AU, Tax Revenue→SkU, Rule of Law→KU, Military Expenditure→FöU, CO₂→MJU, R&D→UbU, GINI→SoU/AU, Trade→NU/UU.
 
 ### 📈 Swedish Statistics (SCB MCP)
 
