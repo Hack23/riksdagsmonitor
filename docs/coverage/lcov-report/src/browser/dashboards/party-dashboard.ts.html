@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">2.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/223</span>
+                <span class='fraction'>5/224</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/141</span>
+                <span class='fraction'>0/142</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">2.17% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/45</span>
+                <span class='fraction'>1/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">2.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/205</span>
+                <span class='fraction'>5/206</span>
             </div>
         
             
@@ -1318,7 +1318,15 @@
 <a name='L1253'></a><a href='#L1253'>1253</a>
 <a name='L1254'></a><a href='#L1254'>1254</a>
 <a name='L1255'></a><a href='#L1255'>1255</a>
-<a name='L1256'></a><a href='#L1256'>1256</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1256'></a><a href='#L1256'>1256</a>
+<a name='L1257'></a><a href='#L1257'>1257</a>
+<a name='L1258'></a><a href='#L1258'>1258</a>
+<a name='L1259'></a><a href='#L1259'>1259</a>
+<a name='L1260'></a><a href='#L1260'>1260</a>
+<a name='L1261'></a><a href='#L1261'>1261</a>
+<a name='L1262'></a><a href='#L1262'>1262</a>
+<a name='L1263'></a><a href='#L1263'>1263</a>
+<a name='L1264'></a><a href='#L1264'>1264</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1376,7 +1384,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1485,10 +1493,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1517,7 +1525,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2312,6 +2320,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2631,7 +2647,7 @@ import { detectLanguage } from '../shared/index.js';
 import type { CSVRow } from '../shared/index.js';
 &nbsp;
 // D3 is loaded as a global &lt;script&gt; for DOM manipulation / SVG features
-const d3 = (<span class="cstat-no" title="statement not covered" >globalThis as any).d3;</span>
+const d3 = (globalThis as any).d3;
 &nbsp;
 // ============================================================================
 // INTERFACES
@@ -2740,10 +2756,10 @@ interface MomentumDataPoint {
 // ============================================================================
 &nbsp;
 /** Canonical list of 8 Swedish parties. */
-const PARTIES: readonly string[] = <span class="cstat-no" title="statement not covered" >['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'] as const;</span>
+const PARTIES: readonly string[] = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'] as const;
 &nbsp;
 /** Dashboard configuration. */
-const CONFIG: PartyDashboardConfig = <span class="cstat-no" title="statement not covered" >{</span>
+const CONFIG: PartyDashboardConfig = {
   githubRawBase:
     'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data',
   dataSources: {
@@ -2772,7 +2788,7 @@ const CONFIG: PartyDashboardConfig = <span class="cstat-no" title="statement not
 // TRANSLATIONS (14 languages)
 // ============================================================================
 &nbsp;
-const TRANSLATIONS: TranslationMap = <span class="cstat-no" title="statement not covered" >{</span>
+const TRANSLATIONS: TranslationMap = {
   en: {
     sectionTitle: '🗳️ Party Performance &amp; Effectiveness',
     sectionDescription:
@@ -3570,6 +3586,14 @@ function <span class="fstat-no" title="function not covered" >createComparisonCh
 }
 &nbsp;
 /**
+ * Convert a 0–1 alignment rate to a display percentage (0–100).
+ * Exported for testability so unit tests validate the real conversion logic.
+ */
+export function alignmentRateToPercent(rate: number): number {
+  return Math.round(rate * 100);
+}
+&nbsp;
+/**
  * Create Coalition Alignment HTML visualization.
  * Renders the top-6 coalition pairs as progress bars.
  */
@@ -3601,7 +3625,7 @@ function <span class="fstat-no" title="function not covered" >createCoalitionNet
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      coalitions.push({</span>
         name: `${party1Label} + ${party2Label}`,
-        strength: Math.round(rate),
+        strength: alignmentRateToPercent(rate),
         parties: [row.party1, row.party2],
         likelihood: row.coalition_likelihood ?? 'UNKNOWN',
       });
@@ -3680,7 +3704,7 @@ function <span class="fstat-no" title="function not covered" >createMomentumChar
   const momentumData: MomentumDataPoint[] = <span class="cstat-no" title="statement not covered" >PARTIES.map(<span class="fstat-no" title="function not covered" >(p</span>arty) =&gt; {</span>
     // Filter data for this party and get most recent quarter
     const partyRows = <span class="cstat-no" title="statement not covered" >data.filter(</span>
-<span class="fstat-no" title="function not covered" >      (r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.party === party &amp;&amp; row.momentum,</span>
+<span class="fstat-no" title="function not covered" >      (r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.party === party &amp;&amp; row.momentum !== undefined &amp;&amp; row.momentum !== '',</span>
     );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (partyRows.length &gt; 0) {</span>
@@ -3835,7 +3859,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-02T13:26:53.855Z
+                at 2026-03-03T17:02:47.678Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -384,8 +384,7 @@
 <a name='L319'></a><a href='#L319'>319</a>
 <a name='L320'></a><a href='#L320'>320</a>
 <a name='L321'></a><a href='#L321'>321</a>
-<a name='L322'></a><a href='#L322'>322</a>
-<a name='L323'></a><a href='#L323'>323</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L322'></a><a href='#L322'>322</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -503,7 +502,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9086x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -786,7 +784,7 @@ export function generateArticleHTML(data: ArticleData): string {
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"&gt;
+  &lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'"&gt;
   &lt;title&gt;${title}&lt;/title&gt;
   &lt;meta name="description" content="${escapeHtml(subtitle).substring(0, 160)}"&gt;
   &lt;meta name="keywords" content="${keywords.join(', ')}"&gt;
@@ -799,8 +797,8 @@ export function generateArticleHTML(data: ArticleData): string {
   &lt;meta property="og:type" content="article"&gt;
   &lt;meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}"&gt;
   &lt;meta property="og:image" content="https://hack23.com/cia-icon-140.webp"&gt;
-  &lt;meta property="og:image:width" content="1200"&gt;
-  &lt;meta property="og:image:height" content="630"&gt;
+  &lt;meta property="og:image:width" content="140"&gt;
+  &lt;meta property="og:image:height" content="140"&gt;
   &lt;meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence"&gt;
   &lt;meta property="og:locale" content="${ogLocale}"&gt;
   &lt;meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence"&gt;
@@ -830,7 +828,6 @@ ${ALL_LANG_CODES.map(l =&gt; `  &lt;link rel="alternate" hreflang="${hreflangCod
   &lt;!-- Google Fonts --&gt;
   &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
   &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
-  &lt;link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7.woff2" as="font" type="font/woff2" crossorigin&gt;
   &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;
   &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" media="print" onload="this.media='all'"&gt;
   &lt;noscript&gt;&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&amp;family=Share+Tech+Mono&amp;display=swap"&gt;&lt;/noscript&gt;
@@ -868,15 +865,15 @@ ${ALL_LANG_CODES.map(l =&gt; `  &lt;link rel="alternate" hreflang="${hreflangCod
       "logo": {
         "@type": "ImageObject",
         "url": "https://hack23.com/cia-icon-140.webp",
-        "width": 600,
-        "height": 60
+        "width": 140,
+        "height": 140
       }
     },
     "image": {
       "@type": "ImageObject",
       "url": "https://hack23.com/cia-icon-140.webp",
-      "width": 1200,
-      "height": 630
+      "width": 140,
+      "height": 140
     },
     "articleSection": "${typeLabel}",
     "articleBody": "${sanitizeArticleBody(escapeHtml(fixedContent))}...",
@@ -965,10 +962,10 @@ ${ALL_LANG_CODES.map(l =&gt; `  &lt;link rel="alternate" hreflang="${hreflangCod
 &lt;a href="#main-content" class="skip-link"&gt;${getFooterLabel(lang, 'skipToContent')}&lt;/a&gt;
 &lt;button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
-        aria-label="Switch to dark theme"
-        title="Switch to dark theme"
-        data-label-dark="Switch to light theme"
-        data-label-light="Switch to dark theme"&gt;
+        aria-label="${getFooterLabel(lang, 'themeToDark')}"
+        title="${getFooterLabel(lang, 'themeToDark')}"
+        data-label-dark="${getFooterLabel(lang, 'themeToLight')}"
+        data-label-light="${getFooterLabel(lang, 'themeToDark')}"&gt;
   &lt;span class="theme-icon" aria-hidden="true"&gt;🌙&lt;/span&gt;
 &lt;/button&gt;
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
@@ -1036,7 +1033,7 @@ ${generateSiteFooter(lang)}
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-02T13:26:53.705Z
+                at 2026-03-03T17:02:47.529Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

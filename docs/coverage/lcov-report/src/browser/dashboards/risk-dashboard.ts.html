@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/325</span>
+                <span class='fraction'>0/341</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/107</span>
+                <span class='fraction'>0/113</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/75</span>
+                <span class='fraction'>0/80</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/299</span>
+                <span class='fraction'>0/310</span>
             </div>
         
             
@@ -1074,7 +1074,21 @@
 <a name='L1009'></a><a href='#L1009'>1009</a>
 <a name='L1010'></a><a href='#L1010'>1010</a>
 <a name='L1011'></a><a href='#L1011'>1011</a>
-<a name='L1012'></a><a href='#L1012'>1012</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1012'></a><a href='#L1012'>1012</a>
+<a name='L1013'></a><a href='#L1013'>1013</a>
+<a name='L1014'></a><a href='#L1014'>1014</a>
+<a name='L1015'></a><a href='#L1015'>1015</a>
+<a name='L1016'></a><a href='#L1016'>1016</a>
+<a name='L1017'></a><a href='#L1017'>1017</a>
+<a name='L1018'></a><a href='#L1018'>1018</a>
+<a name='L1019'></a><a href='#L1019'>1019</a>
+<a name='L1020'></a><a href='#L1020'>1020</a>
+<a name='L1021'></a><a href='#L1021'>1021</a>
+<a name='L1022'></a><a href='#L1022'>1022</a>
+<a name='L1023'></a><a href='#L1023'>1023</a>
+<a name='L1024'></a><a href='#L1024'>1024</a>
+<a name='L1025'></a><a href='#L1025'>1025</a>
+<a name='L1026'></a><a href='#L1026'>1026</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1242,6 +1256,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2251,8 +2279,22 @@ function <span class="fstat-no" title="function not covered" >getRiskColor(s</sp
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >parseCSV(t</span>ext: string): CSVRow[] {
-  // Use d3.csvParse to correctly handle RFC 4180 CSV (quoted fields, embedded commas, etc.)
-<span class="cstat-no" title="statement not covered" >  return d3.csvParse(text) as CSVRow[];</span>
+  // Use PapaParse for CSP-compatible CSV parsing (no unsafe-eval needed)
+  const Papa = (<span class="cstat-no" title="statement not covered" >globalThis as any).Papa;</span>
+<span class="cstat-no" title="statement not covered" >  if (Papa) {</span>
+    const parsed = <span class="cstat-no" title="statement not covered" >Papa.parse(text, { header: true, skipEmptyLines: true });</span>
+<span class="cstat-no" title="statement not covered" >    return parsed.data as CSVRow[];</span>
+  }
+  // CSP-safe fallback: simple header-based CSV parser
+  const lines = <span class="cstat-no" title="statement not covered" >text.trim().split('\n');</span>
+<span class="cstat-no" title="statement not covered" >  if (lines.length &lt; 2) <span class="cstat-no" title="statement not covered" >return [];</span></span>
+  const headers = <span class="cstat-no" title="statement not covered" >lines[0]!.split(',').map(<span class="fstat-no" title="function not covered" >(h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim().replace(/^"|"$/g, ''))</span>;</span>
+<span class="cstat-no" title="statement not covered" >  return lines.slice(1).filter(<span class="fstat-no" title="function not covered" >(l</span>) =&gt; <span class="cstat-no" title="statement not covered" >l.trim())</span>.map(<span class="fstat-no" title="function not covered" >(l</span>ine) =&gt; {</span>
+    const values = <span class="cstat-no" title="statement not covered" >line.split(',').map(<span class="fstat-no" title="function not covered" >(v</span>) =&gt; <span class="cstat-no" title="statement not covered" >v.trim().replace(/^"|"$/g, ''))</span>;</span>
+    const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >    headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>eader, i) =&gt; { <span class="cstat-no" title="statement not covered" >row[header] = values[i] ?? ''; }</span>);</span>
+<span class="cstat-no" title="statement not covered" >    return row;</span>
+  });
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >fetchCIAData(u</span>rl: string): Promise&lt;PoliticianRiskRow[] | null&gt; {
@@ -3103,7 +3145,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-02T13:26:53.855Z
+                at 2026-03-03T17:02:47.678Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

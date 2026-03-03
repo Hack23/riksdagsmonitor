@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/373</span>
+                <span class='fraction'>0/367</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/250</span>
+                <span class='fraction'>0/248</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/88</span>
+                <span class='fraction'>0/86</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/254</span>
+                <span class='fraction'>0/246</span>
             </div>
         
             
@@ -661,21 +661,7 @@
 <a name='L596'></a><a href='#L596'>596</a>
 <a name='L597'></a><a href='#L597'>597</a>
 <a name='L598'></a><a href='#L598'>598</a>
-<a name='L599'></a><a href='#L599'>599</a>
-<a name='L600'></a><a href='#L600'>600</a>
-<a name='L601'></a><a href='#L601'>601</a>
-<a name='L602'></a><a href='#L602'>602</a>
-<a name='L603'></a><a href='#L603'>603</a>
-<a name='L604'></a><a href='#L604'>604</a>
-<a name='L605'></a><a href='#L605'>605</a>
-<a name='L606'></a><a href='#L606'>606</a>
-<a name='L607'></a><a href='#L607'>607</a>
-<a name='L608'></a><a href='#L608'>608</a>
-<a name='L609'></a><a href='#L609'>609</a>
-<a name='L610'></a><a href='#L610'>610</a>
-<a name='L611'></a><a href='#L611'>611</a>
-<a name='L612'></a><a href='#L612'>612</a>
-<a name='L613'></a><a href='#L613'>613</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L599'></a><a href='#L599'>599</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -929,23 +915,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1541,32 +1513,18 @@ const TRANSLATIONS: Record&lt;string, SeasonalTranslations&gt; = <span class="cs
       const parsed = <span class="cstat-no" title="statement not covered" >Papa.parse(csvText, { header: true, dynamicTyping: true, skipEmptyLines: true });</span>
 <span class="cstat-no" title="statement not covered" >      return parsed.data as CSVRow[];</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (typeof d3 !== 'undefined' &amp;&amp; typeof d3.csvParse === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        return d3.csvParse(csvText, <span class="fstat-no" title="function not covered" >(d</span>: Record&lt;string, string&gt;) =&gt; {</span>
-          const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >          Object.keys(d).forEach(<span class="fstat-no" title="function not covered" >(k</span>ey) =&gt; {</span>
-            const value = <span class="cstat-no" title="statement not covered" >d[key];</span>
-<span class="cstat-no" title="statement not covered" >            if (typeof value === 'string' &amp;&amp; /^-?\d+(\.\d+)?$/.test(value.trim())) {</span>
-              (<span class="cstat-no" title="statement not covered" >row as any)[key] = parseFloat(value);</span>
-            } else {
-              (<span class="cstat-no" title="statement not covered" >row as any)[key] = value;</span>
-            }
-          });
-<span class="cstat-no" title="statement not covered" >          return row;</span>
-        }) as CSVRow[];
-      } catch { /* fallback below */ }
-    }
-&nbsp;
+    // CSP-safe fallback: simple CSV parser (no d3.csvParse — it requires unsafe-eval)
     const lines = <span class="cstat-no" title="statement not covered" >csvText.trim().split('\n');</span>
+<span class="cstat-no" title="statement not covered" >    if (lines.length &lt; 2) <span class="cstat-no" title="statement not covered" >return [];</span></span>
     const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').map(<span class="fstat-no" title="function not covered" >h =&gt; <span class="cstat-no" title="statement not covered" >h</span>.trim().replace(/^"|"$/g, ''))</span>;</span>
     const data: CSVRow[] = <span class="cstat-no" title="statement not covered" >[];</span>
 <span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >1; i</span> &lt; lines.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!lines[i].trim()) <span class="cstat-no" title="statement not covered" >continue;</span></span>
       const values = <span class="cstat-no" title="statement not covered" >lines[i].split(',').map(<span class="fstat-no" title="function not covered" >v =&gt; <span class="cstat-no" title="statement not covered" >v</span>.trim().replace(/^"|"$/g, ''))</span>;</span>
       const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >      headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>eader, index) =&gt; {</span>
         const value = <span class="cstat-no" title="statement not covered" >values[index];</span>
-<span class="cstat-no" title="statement not covered" >        if (/^-?\d+(\.\d+)?$/.test(value)) { (<span class="cstat-no" title="statement not covered" >row as any)[header] = parseFloat(value); }</span></span>
+<span class="cstat-no" title="statement not covered" >        if (typeof value === 'string' &amp;&amp; /^-?\d+(\.\d+)?$/.test(value.trim())) { (<span class="cstat-no" title="statement not covered" >row as any)[header] = parseFloat(value); }</span></span>
         else { (<span class="cstat-no" title="statement not covered" >row as any)[header] = value; }</span>
       });
 <span class="cstat-no" title="statement not covered" >      data.push(row);</span>
@@ -1906,7 +1864,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-02T13:26:53.705Z
+                at 2026-03-03T17:02:47.529Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
