@@ -252,32 +252,18 @@ class SeasonalPatternsDataManager {
       const parsed = Papa.parse(csvText, { header: true, dynamicTyping: true, skipEmptyLines: true });
       return parsed.data as CSVRow[];
     }
-    if (typeof d3 !== 'undefined' && typeof d3.csvParse === 'function') {
-      try {
-        return d3.csvParse(csvText, (d: Record<string, string>) => {
-          const row: CSVRow = {};
-          Object.keys(d).forEach((key) => {
-            const value = d[key];
-            if (typeof value === 'string' && /^-?\d+(\.\d+)?$/.test(value.trim())) {
-              (row as any)[key] = parseFloat(value);
-            } else {
-              (row as any)[key] = value;
-            }
-          });
-          return row;
-        }) as CSVRow[];
-      } catch { /* fallback below */ }
-    }
-
+    // CSP-safe fallback: simple CSV parser (no d3.csvParse — it requires unsafe-eval)
     const lines = csvText.trim().split('\n');
+    if (lines.length < 2) return [];
     const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
     const data: CSVRow[] = [];
     for (let i = 1; i < lines.length; i++) {
+      if (!lines[i].trim()) continue;
       const values = lines[i].split(',').map(v => v.trim().replace(/^"|"$/g, ''));
       const row: CSVRow = {};
       headers.forEach((header, index) => {
         const value = values[index];
-        if (/^-?\d+(\.\d+)?$/.test(value)) { (row as any)[header] = parseFloat(value); }
+        if (typeof value === 'string' && /^-?\d+(\.\d+)?$/.test(value.trim())) { (row as any)[header] = parseFloat(value); }
         else { (row as any)[header] = value; }
       });
       data.push(row);

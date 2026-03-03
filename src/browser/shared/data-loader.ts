@@ -7,7 +7,7 @@
  * - Local-first with remote fallback
  * - localStorage caching with TTL
  * - Retry with exponential backoff
- * - CSV parsing via d3.csvParse
+ * - CSV parsing via PapaParse (CSP-compatible) with simple fallback
  * - JSON and text response handling
 
  *
@@ -128,7 +128,7 @@ export async function loadText(
 
 /**
  * Load and parse CSV data from a data source.
- * Uses d3.csvParse when available, falls back to simple split parsing.
+ * Uses PapaParse (CSP-compatible) with a simple CSV fallback parser.
  */
 export async function loadCSV(
   source: DataSource,

@@ -19,13 +19,19 @@ Maria Nilsson,SD,8.1`;
 
 describe('parseCSV', () => {
   let savedPapa: unknown;
+  let papaExisted: boolean;
 
   beforeEach(() => {
+    papaExisted = 'Papa' in globalThis;
     savedPapa = (globalThis as any).Papa;
   });
 
   afterEach(() => {
-    (globalThis as any).Papa = savedPapa;
+    if (papaExisted) {
+      (globalThis as any).Papa = savedPapa;
+    } else {
+      delete (globalThis as any).Papa;
+    }
   });
 
   describe('with PapaParse available', () => {
