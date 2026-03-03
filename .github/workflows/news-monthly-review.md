@@ -33,7 +33,8 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
-    - scb-mcp.onrender.com
+    - api.scb.se
+    - api.worldbank.org
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -46,10 +47,11 @@ mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
   scb:
-    url: https://scb-mcp.onrender.com/mcp
+    command: npx
+    args: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
   world-bank:
     command: npx
-    args: ["-y", "@smithery/cli@4.4.0", "run", "@anshumax/world_bank_mcp_server"]
+    args: ["-y", "worldbank-mcp@1.0.1"]
 
 tools:
   github:
@@ -60,7 +62,8 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
-    - scb-mcp.onrender.com
+    - api.scb.se
+    - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -192,8 +195,8 @@ analyze_g0v_by_department({ dateFrom: lastMonth, dateTo: today })
 
 // SCB enrichment (optional — wrap in try/catch, do not block generation on SCB failures):
 // search_tables({ query: "BNP arbetslöshet KPI", limit: 5 })
-// get_table_data({ tableId: "TAB5802", selection: { Tid: ["TOP(4)"] } })  // GDP
-// get_table_data({ tableId: "TAB5765", selection: { Tid: ["TOP(4)"], Kon: ["1+2"] } })  // Unemployment
+// query_table({ table_id: "TAB5802", value_codes: { Tid: "top(4)" } })  // GDP
+// query_table({ table_id: "TAB5765", value_codes: { Tid: "top(4)", Kon: "1+2" } })  // Unemployment
 ```
 
 ## Generation Steps

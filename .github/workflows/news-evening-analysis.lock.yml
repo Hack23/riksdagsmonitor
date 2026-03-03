@@ -23,7 +23,7 @@
 #
 # Generates comprehensive evening analysis articles summarizing parliamentary and government activity with deeper analytical coverage and Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 #
-# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"a3ae5c09607df5ca31b9faeeda80f2c1318b93a5132801ec7a1430948a6ebd23","compiler_version":"v0.52.0"}
+# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"f356ba278d6ca22a1613594dc13646f23f7888b379f692141a4ada609e4197c9","compiler_version":"v0.52.0"}
 
 name: "News Evening Analysis"
 "on":
@@ -80,7 +80,7 @@ jobs:
           GH_AW_INFO_EXPERIMENTAL: "false"
           GH_AW_INFO_SUPPORTS_TOOLS_ALLOWLIST: "true"
           GH_AW_INFO_STAGED: "false"
-          GH_AW_INFO_ALLOWED_DOMAINS: '["node","github.com","api.github.com","riksdag-regering-ai.onrender.com","scb-mcp.onrender.com","data.riksdagen.se","regeringen.se","*.se","*.com","*.org","*.io","default"]'
+          GH_AW_INFO_ALLOWED_DOMAINS: '["node","github.com","api.github.com","riksdag-regering-ai.onrender.com","api.scb.se","api.worldbank.org","data.riksdagen.se","regeringen.se","*.se","*.com","*.org","*.io","default"]'
           GH_AW_INFO_FIREWALL_ENABLED: "true"
           GH_AW_INFO_AWF_VERSION: "v0.23.0"
           GH_AW_INFO_AWMG_VERSION: ""
@@ -699,8 +699,16 @@ jobs:
                 }
               },
               "scb": {
-                "type": "http",
-                "url": "https://scb-mcp.onrender.com/mcp",
+                "type": "stdio",
+                "container": "node:lts-alpine",
+                "entrypoint": "npx",
+                "entrypointArgs": [
+                  "npx",
+                  "-y",
+                  "@jarib/pxweb-mcp@2.0.0",
+                  "--url",
+                  "https://api.scb.se/OV0104/v2beta"
+                ],
                 "tools": [
                   "*"
                 ]
@@ -712,9 +720,7 @@ jobs:
                 "entrypointArgs": [
                   "npx",
                   "-y",
-                  "@smithery/cli@4.4.0",
-                  "run",
-                  "@anshumax/world_bank_mcp_server"
+                  "worldbank-mcp@1.0.1"
                 ],
                 "tools": [
                   "*"
@@ -743,7 +749,7 @@ jobs:
         run: |
           set -o pipefail
           # shellcheck disable=SC1003
-          sudo -E awf --env-all --container-workdir "${GITHUB_WORKSPACE}" --allow-domains "*.com,*.io,*.jsr.io,*.org,*.se,api.business.githubcopilot.com,api.enterprise.githubcopilot.com,api.github.com,api.githubcopilot.com,api.individual.githubcopilot.com,api.npms.io,bun.sh,cdn.jsdelivr.net,data.riksdagen.se,deb.nodesource.com,default,deno.land,esm.sh,get.pnpm.io,github.com,googleapis.deno.dev,googlechromelabs.github.io,host.docker.internal,jsr.io,nodejs.org,npm.pkg.github.com,npmjs.com,npmjs.org,raw.githubusercontent.com,regeringen.se,registry.bower.io,registry.npmjs.com,registry.npmjs.org,registry.yarnpkg.com,repo.yarnpkg.com,riksdag-regering-ai.onrender.com,scb-mcp.onrender.com,skimdb.npmjs.com,storage.googleapis.com,telemetry.enterprise.githubcopilot.com,telemetry.vercel.com,www.npmjs.com,www.npmjs.org,yarnpkg.com" --log-level info --proxy-logs-dir /tmp/gh-aw/sandbox/firewall/logs --enable-host-access --image-tag 0.23.0 --skip-pull --enable-api-proxy \
+          sudo -E awf --env-all --container-workdir "${GITHUB_WORKSPACE}" --allow-domains "*.com,*.io,*.jsr.io,*.org,*.se,api.business.githubcopilot.com,api.enterprise.githubcopilot.com,api.github.com,api.githubcopilot.com,api.individual.githubcopilot.com,api.npms.io,api.scb.se,api.worldbank.org,bun.sh,cdn.jsdelivr.net,data.riksdagen.se,deb.nodesource.com,default,deno.land,esm.sh,get.pnpm.io,github.com,googleapis.deno.dev,googlechromelabs.github.io,host.docker.internal,jsr.io,nodejs.org,npm.pkg.github.com,npmjs.com,npmjs.org,raw.githubusercontent.com,regeringen.se,registry.bower.io,registry.npmjs.com,registry.npmjs.org,registry.yarnpkg.com,repo.yarnpkg.com,riksdag-regering-ai.onrender.com,skimdb.npmjs.com,storage.googleapis.com,telemetry.enterprise.githubcopilot.com,telemetry.vercel.com,www.npmjs.com,www.npmjs.org,yarnpkg.com" --log-level info --proxy-logs-dir /tmp/gh-aw/sandbox/firewall/logs --enable-host-access --image-tag 0.23.0 --skip-pull --enable-api-proxy \
             -- /bin/bash -c '/usr/local/bin/copilot --add-dir /tmp/gh-aw/ --log-level all --log-dir /tmp/gh-aw/sandbox/agent/logs/ --add-dir "${GITHUB_WORKSPACE}" --disable-builtin-mcps --allow-all-tools --allow-all-paths --prompt "$(cat /tmp/gh-aw/aw-prompts/prompt.txt)"' 2>&1 | tee -a /tmp/gh-aw/agent-stdio.log
         env:
           COPILOT_AGENT_RUNNER_TYPE: STANDALONE
@@ -826,7 +832,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_SAFE_OUTPUTS: ${{ env.GH_AW_SAFE_OUTPUTS }}
-          GH_AW_ALLOWED_DOMAINS: "riksdag-regering-ai.onrender.com,scb-mcp.onrender.com,data.riksdagen.se,www.riksdagen.se,www.regeringen.se,github.com"
+          GH_AW_ALLOWED_DOMAINS: "riksdag-regering-ai.onrender.com,api.scb.se,api.worldbank.org,data.riksdagen.se,www.riksdagen.se,www.regeringen.se,github.com"
           GITHUB_SERVER_URL: ${{ github.server_url }}
           GITHUB_API_URL: ${{ github.api_url }}
         with:
@@ -1207,7 +1213,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_ALLOWED_DOMAINS: "riksdag-regering-ai.onrender.com,scb-mcp.onrender.com,data.riksdagen.se,www.riksdagen.se,www.regeringen.se,github.com"
+          GH_AW_ALLOWED_DOMAINS: "riksdag-regering-ai.onrender.com,api.scb.se,api.worldbank.org,data.riksdagen.se,www.riksdagen.se,www.regeringen.se,github.com"
           GITHUB_SERVER_URL: ${{ github.server_url }}
           GITHUB_API_URL: ${{ github.api_url }}
           GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"add_comment\":{\"max\":1},\"create_pull_request\":{\"max\":1,\"max_patch_size\":1024},\"missing_data\":{},\"missing_tool\":{}}"

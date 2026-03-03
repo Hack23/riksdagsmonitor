@@ -39,7 +39,8 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
-    - scb-mcp.onrender.com
+    - api.scb.se
+    - api.worldbank.org
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -52,10 +53,11 @@ mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
   scb:
-    url: https://scb-mcp.onrender.com/mcp
+    command: npx
+    args: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
   world-bank:
     command: npx
-    args: ["-y", "@smithery/cli@4.4.0", "run", "@anshumax/world_bank_mcp_server"]
+    args: ["-y", "worldbank-mcp@1.0.1"]
 
 tools:
   github:
@@ -71,7 +73,8 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
-    - scb-mcp.onrender.com
+    - api.scb.se
+    - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -228,18 +231,20 @@ You are the **Evening Analysis Editor** for Riksdagsmonitor. Your mission is to 
 
 ### 📊 Economic Data (World Bank MCP)
 
-The **world-bank** MCP server provides economic indicators via `get_indicator_for_country` tool.
-Use this to enrich political analysis with economic context (GDP, unemployment, inflation, trade).
-Key Swedish indicators and Nordic comparison data are documented in `scripts/world-bank-context.ts`.
-Reference: https://github.com/anshumax/world_bank_mcp_server
+The **world-bank** MCP server provides global economic indicators via tools: `get-economic-data`, `get-social-data`, `get-education-data`, `get-health-data`, `search-indicators`, `get-countries`, `get-country-info`.
+Use ISO alpha-3 country codes consistent with `scripts/world-bank-client.ts`: `SWE` for Sweden, `DNK` for Denmark, `NOR` for Norway, `FIN` for Finland, `DEU` for Germany.
+Key indicators use official World Bank indicator IDs, for example: GDP growth (annual %) `NY.GDP.MKTP.KD.ZG`, unemployment (% of total labor force) `SL.UEM.TOTL.ZS`, inflation (consumer prices, annual %) `FP.CPI.TOTL.ZG`, current health expenditure (% of GDP) `SH.XPD.CHEX.GD.ZS`, government expenditure on education (% of GDP) `SE.XPD.TOTL.GD.ZS`.
+Committee-mapped indicators and policy area context (using these ISO alpha-3 codes and indicator IDs) are defined in `scripts/world-bank-context.ts`.
 
-**Key committee-mapped indicators**: GDP Growth→FiU, Unemployment→AU, Tax Revenue→SkU, Rule of Law→KU, Military Expenditure→FöU, CO₂→MJU, R&D→UbU, GINI→SoU/AU, Trade→NU/UU (see `scripts/world-bank-context.ts` for complete mapping of 14 indicators to all 15 committees).
+**Key committee-mapped indicators** (see `scripts/world-bank-context.ts` for the exact IDs and complete mapping of 14 indicators to all 15 committees): GDP growth→FiU, Unemployment→AU, Tax Revenue→SkU, Rule of Law→KU, Military Expenditure→FöU, CO₂→MJU, R&D→UbU, GINI→SoU/AU, Trade→NU/UU.
 
 ### 📈 Swedish Statistics (SCB MCP)
 
-The **scb** MCP server provides official Swedish statistics via `search_tables` and `get_table_data` tools.
-Use SCB data for domestic context: labour market (TAB5765), migration (TAB637), GDP (TAB5802), crime (TAB1172), housing (TAB2052), education (TAB4787), taxation (TAB1291), culture (TAB5195).
+The **scb** MCP server provides official Swedish statistics via the PxWeb v2 API with these tools (current `@jarib/pxweb-mcp@2.0.0` interface): `search_tables`, `get_table_info`, `fetch_metadata`, `query_table`, `get_code_list`, `list_recent_tables`.
+Use SCB data for domestic context: labour market, migration, GDP, crime, housing, education, taxation, culture.
 Full domain-to-committee mapping in `scripts/scb-context.ts` (15 domains → all 15 Riksdag committees).
+**Note**: Language parameter accepts "en" (English) only. Table IDs from `scripts/scb-context.ts` work directly.
+**Important**: Some older examples may mention deprecated tools `get_table_data` or `get_table_variables`. When you see those names, interpret them as follows and ONLY call the current tools: use `query_table` instead of `get_table_data`, and use `fetch_metadata` or `get_table_info` instead of `get_table_variables`. Do not attempt to call `get_table_data` or `get_table_variables` directly, as they are not available in `@jarib/pxweb-mcp@2.0.0`.
 
 ### 🔍 Statistical Claims Fact-Checking
 
@@ -565,9 +570,9 @@ get_fragor({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 50 : 20 })
 get_interpellationer({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 20 : 10 })
 // Note: Filter results by inlämnad date >= fromDate in analysis
 
-// === ECONOMIC CONTEXT (World Bank Data — Optional Enrichment) ===
-// Use the World Bank MCP server (world-bank) to add economic depth to analysis.
-// The `get_indicator_for_country` tool fetches indicator data for Sweden (SWE).
+// === ECONOMIC CONTEXT (World Bank Data — Reference Only) ===
+// Economic indicator mappings are documented in scripts/world-bank-context.ts.
+// Use these as reference context when covering economic policy topics.
 //
 // Key indicators for Swedish political intelligence:
 // - GDP growth: NY.GDP.MKTP.KD.ZG (fiscal policy context)
@@ -579,22 +584,7 @@ get_interpellationer({ rm: <calculated riksmöte>, limit: dayOfWeek === 6 ? 20 :
 // - CO2 emissions: EN.ATM.CO2E.PC (climate policy)
 // - R&D expenditure: GB.XPD.RSDV.GD.ZS (innovation policy)
 //
-// Example: Fetch Sweden's GDP growth for policy context
-// get_indicator_for_country({ country_id: "SWE", indicator_id: "NY.GDP.MKTP.KD.ZG" })
-//
-// Nordic comparison (Denmark=DNK, Norway=NOR, Finland=FIN, Germany=DEU):
-// get_indicator_for_country({ country_id: "DNK", indicator_id: "NY.GDP.MKTP.KD.ZG" })
-//
-// When to use economic context:
-// - Budget/fiscal policy discussions → GDP, government expenditure, trade
-// - Labor market debates → unemployment rate
-// - Cost of living motions → inflation data
-// - Defense/NATO policy → military expenditure
-// - Climate legislation → CO2 emissions per capita
-// - Research/innovation policy → R&D expenditure
-//
-// NOTE: World Bank data may lag 1-2 years. Use most recent available year.
-// Always cite "Source: World Bank Open Data" when including economic indicators.
+// When covering economic policy, reference these indicators in analysis.
 // See scripts/world-bank-context.ts for full indicator mappings and committee links.
 
 // === NEXT WEEK PREVIEW (Saturday) / TOMORROW (weekday) ===
@@ -613,19 +603,19 @@ get_calendar_events({ from: nextMonday, tom: previewEnd, limit: 50 })
 // SCB provides 1,200+ statistical tables covering population, economy, labour,
 // education, and environment via PxWebAPI 2.0.
 //
-// SCB MCP tools: search_tables, get_table_data, get_table_variables, preview_data, find_region_code
+// SCB MCP tools (@jarib/pxweb-mcp@2.0.0): search_tables, get_table_info, fetch_metadata, query_table, get_code_list, list_recent_tables
 //
 // Example: Enrich budget propositions with unemployment data
 // const labourTables = search_tables({ query: "arbetslöshet sysselsättning", limit: 5 })
-// const unemploymentData = get_table_data({
-//   tableId: "TAB5765",
-//   selection: { Tid: ["TOP(4)"], Kon: ["1+2"], ContentsCode: ["000005GI"] }
+// const unemploymentData = query_table({
+//   table_id: "TAB5765",
+//   value_codes: { Tid: "top(4)", Kon: "1+2", ContentsCode: "000005GI" }
 // })
 //
 // Example: Add population context for migration policy
-// const migrationData = get_table_data({
-//   tableId: "TAB4230",
-//   selection: { Tid: ["TOP(4)"], ContentsCode: ["BE0101AK"] }
+// const migrationData = query_table({
+//   table_id: "TAB4230",
+//   value_codes: { Tid: "top(4)", ContentsCode: "BE0101AK" }
 // })
 //
 // ⚠️ SCB data is OPTIONAL enrichment — never block article generation on SCB failures.
