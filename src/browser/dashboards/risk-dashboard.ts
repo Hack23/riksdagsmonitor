@@ -170,8 +170,16 @@ function parseCSV(text: string): CSVRow[] {
     const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
     return parsed.data as CSVRow[];
   }
-  // Fallback to d3.csvParse for RFC 4180 CSV (quoted fields, embedded commas, etc.)
-  return d3.csvParse(text) as CSVRow[];
+  // CSP-safe fallback: simple header-based CSV parser
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return [];
+  const headers = lines[0]!.split(',').map((h) => h.trim().replace(/^"|"$/g, ''));
+  return lines.slice(1).filter((l) => l.trim()).map((line) => {
+    const values = line.split(',').map((v) => v.trim().replace(/^"|"$/g, ''));
+    const row: CSVRow = {};
+    headers.forEach((header, i) => { row[header] = values[i] ?? ''; });
+    return row;
+  });
 }
 
 async function fetchCIAData(url: string): Promise<PoliticianRiskRow[] | null> {

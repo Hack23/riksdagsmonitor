@@ -151,7 +151,8 @@ export async function loadJSON<T = unknown>(
 
 /**
  * Parse CSV text into rows.
- * Uses PapaParse if available (CSP-compatible), falls back to d3.csvParse, then simple parsing.
+ * Uses PapaParse if available (CSP-compatible), falls back to a simple CSV parser.
+ * Does NOT use d3.csvParse as it requires unsafe-eval in CSP.
  */
 export function parseCSV(text: string): CSVRow[] {
   // Use PapaParse if available (CSP-compatible, no unsafe-eval needed)
@@ -162,19 +163,11 @@ export function parseCSV(text: string): CSVRow[] {
     return PapaGlobal.parse(text, { header: true, skipEmptyLines: true }).data;
   }
 
-  // Fallback to d3.csvParse if available
-  const d3Global = (globalThis as Record<string, unknown>).d3 as
-    | { csvParse: (text: string) => CSVRow[] }
-    | undefined;
-  if (d3Global?.csvParse) {
-    return d3Global.csvParse(text);
-  }
-
-  // Fallback: simple CSV parser
+  // CSP-safe fallback: simple CSV parser
   const lines = text.trim().split('\n');
   if (lines.length < 2) return [];
   const headers = lines[0]!.split(',').map((h) => h.trim().replace(/^"|"$/g, ''));
-  return lines.slice(1).map((line) => {
+  return lines.slice(1).filter((l) => l.trim()).map((line) => {
     const values = line.split(',').map((v) => v.trim().replace(/^"|"$/g, ''));
     const row: CSVRow = {};
     headers.forEach((header, i) => {
