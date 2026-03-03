@@ -44,13 +44,45 @@ export interface RoleValidationResult {
 
 const CSV_RELATIVE_PATH = 'cia-data/view_riksdagen_goverment_role_member_sample.csv';
 
+/**
+ * Parse a single CSV line respecting quoted fields (RFC 4180).
+ * Handles commas inside double-quoted values (e.g. "Gymnasie-, högskole-…").
+ */
+function parseCSVLine(line: string): string[] {
+  const fields: string[] = [];
+  let current = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"' && line[i + 1] === '"') {
+        current += '"';
+        i++; // skip escaped quote
+      } else if (ch === '"') {
+        inQuotes = false;
+      } else {
+        current += ch;
+      }
+    } else if (ch === '"') {
+      inQuotes = true;
+    } else if (ch === ',') {
+      fields.push(current);
+      current = '';
+    } else {
+      current += ch;
+    }
+  }
+  fields.push(current);
+  return fields;
+}
+
 /** Parse the CSV into GovernmentRoleMember records. */
 function parseCSV(csvText: string): GovernmentRoleMember[] {
   const lines = csvText.split('\n').filter(l => l.trim().length > 0);
   if (lines.length < 2) return [];
   // Skip header
   return lines.slice(1).map(line => {
-    const cols = line.split(',');
+    const cols = parseCSVLine(line);
     return {
       roleId: cols[0] ?? '',
       department: cols[1] ?? '',
@@ -85,9 +117,13 @@ export function loadGovernmentRoleMembers(repoRoot?: string): GovernmentRoleMemb
     const csvText = readFileSync(csvPath, 'utf-8');
     cachedMembers = parseCSV(csvText);
     return cachedMembers;
-  } catch {
-    // Graceful fallback — return empty if file not found
-    console.warn(`[government-role-validator] Could not load ${csvPath}; role validation disabled.`);
+  } catch (err: unknown) {
+    const code = (err as NodeJS.ErrnoException)?.code;
+    if (code === 'ENOENT') {
+      console.warn(`[government-role-validator] CSV not found at ${csvPath}; role validation disabled.`);
+    } else {
+      console.warn(`[government-role-validator] Error loading ${csvPath}: ${err}; role validation disabled.`);
+    }
     cachedMembers = [];
     return cachedMembers;
   }
@@ -169,7 +205,7 @@ export function validateGovernmentRole(
   const roleCodeLower = currentRole.roleCode.toLowerCase();
   const departmentLower = currentRole.department.toLowerCase();
 
-  // Known title mappings for common roles
+  // Known title mappings for Deputy PM across supported languages
   const deputyPMTerms = ['deputy prime minister', 'vice statsminister', 'vice premier',
     'vicepremier', 'viceministerpräsident', 'vice-première ministre', 'viceprimera ministra',
     'varapääministeri', 'visestatsminister', 'vicestatsminister',
@@ -177,16 +213,24 @@ export function validateGovernmentRole(
 
   const isClaimingDeputyPM = deputyPMTerms.some(term => claimedLower.includes(term));
 
-  // If claiming Deputy PM, the role_code should be "Statsminister" or explicitly Vice statsminister
-  if (isClaimingDeputyPM && roleCodeLower !== 'statsminister') {
-    return {
-      valid: false,
-      name: fullName,
-      claimedRole,
-      actualRoles: roles,
-      suggestion: `"${fullName}" is ${currentRole.roleCode} at ${currentRole.department} (${currentRole.party}), NOT Deputy Prime Minister. ` +
-        `Check if the actual Vice statsminister should be cited instead.`,
-    };
+  // Deputy PM (Vice statsminister) is a constitutional designation given to one minister.
+  // The CIA CSV does not have an explicit "Vice statsminister" role_code — the Deputy PM
+  // has their regular ministerial role_code. To validate, we check that the person's
+  // department is Statsrådsberedningen (PM's office) or role_code is Statsminister.
+  // For any other person, claiming Deputy PM is invalid.
+  if (isClaimingDeputyPM) {
+    const isPMRole = roleCodeLower === 'statsminister' ||
+      departmentLower === 'statsrådsberedningen';
+    if (!isPMRole) {
+      return {
+        valid: false,
+        name: fullName,
+        claimedRole,
+        actualRoles: roles,
+        suggestion: `"${fullName}" is ${currentRole.roleCode} at ${currentRole.department} (${currentRole.party}), NOT Deputy Prime Minister. ` +
+          `Check if the actual Vice statsminister should be cited instead.`,
+      };
+    }
   }
 
   // Check if claimed role roughly matches known role

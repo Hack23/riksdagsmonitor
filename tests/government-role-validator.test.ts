@@ -63,11 +63,11 @@ describe('Government Role Validator', () => {
       expect(roles).toEqual([]);
     });
 
-    it('should return results sorted by most recent first', () => {
+    it('should find multiple roles for Lotta Edholm and sort by most recent', () => {
       const roles = findRolesForPerson('Edholm', 'Lotta', REPO_ROOT);
-      if (roles.length > 1) {
-        expect(roles[0].fromDate >= roles[1].fromDate).toBe(true);
-      }
+      expect(roles.length).toBeGreaterThan(1);
+      // Verify sorted by most recent first
+      expect(roles[0].fromDate >= roles[1].fromDate).toBe(true);
     });
   });
 
@@ -76,6 +76,16 @@ describe('Government Role Validator', () => {
       const role = getCurrentRole('Edholm', 'Lotta', REPO_ROOT);
       expect(role).toBeDefined();
       expect(role!.lastName).toBe('Edholm');
+    });
+
+    it('should correctly parse quoted CSV fields with commas in role code', () => {
+      const role = getCurrentRole('Edholm', 'Lotta', REPO_ROOT);
+      expect(role).toBeDefined();
+      // The active role has a comma in the quoted role_code field
+      expect(role!.roleCode).toContain('Gymnasie-');
+      expect(role!.roleCode).toContain('forskningsminister');
+      expect(role!.active).toBe(true);
+      expect(role!.party).toBe('L');
     });
 
     it('should return undefined for unknown politicians', () => {
@@ -114,6 +124,14 @@ describe('Government Role Validator', () => {
       // Arabic
       const ar = validateGovernmentRole('Lotta Edholm', 'نائبة رئيس الوزراء', REPO_ROOT);
       expect(ar.valid).toBe(false);
+    });
+
+    it('should include correct actual role in rejection suggestion', () => {
+      const result = validateGovernmentRole('Lotta Edholm', 'Deputy Prime Minister', REPO_ROOT);
+      expect(result.valid).toBe(false);
+      expect(result.suggestion).toContain('Gymnasie-');
+      expect(result.suggestion).toContain('Utbildningsdepartementet');
+      expect(result.suggestion).toContain('(L)');
     });
   });
 
