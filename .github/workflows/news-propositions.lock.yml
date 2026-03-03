@@ -686,8 +686,15 @@ jobs:
                 }
               },
               "scb": {
-                "type": "http",
-                "url": "https://scb-mcp.onrender.com/mcp",
+                "type": "stdio",
+                "container": "node:lts-alpine",
+                "entrypoint": "npx",
+                "entrypointArgs": [
+                  "-y",
+                  "@jarib/pxweb-mcp@2.0.0",
+                  "--url",
+                  "https://api.scb.se/OV0104/v2beta"
+                ],
                 "tools": [
                   "*"
                 ]
@@ -697,11 +704,8 @@ jobs:
                 "container": "node:lts-alpine",
                 "entrypoint": "npx",
                 "entrypointArgs": [
-                  "npx",
                   "-y",
-                  "@smithery/cli@4.4.0",
-                  "run",
-                  "@anshumax/world_bank_mcp_server"
+                  "worldbank-mcp@1.0.1"
                 ],
                 "tools": [
                   "*"

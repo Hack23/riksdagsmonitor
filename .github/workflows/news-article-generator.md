@@ -34,7 +34,8 @@ network:
     - github.com
     - api.github.com
     - riksdag-regering-ai.onrender.com
-    - scb-mcp.onrender.com
+    - api.scb.se
+    - api.worldbank.org
     - data.riksdagen.se
     - regeringen.se
     - "*.se"
@@ -47,10 +48,11 @@ mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
   scb:
-    url: https://scb-mcp.onrender.com/mcp
+    command: npx
+    args: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
   world-bank:
     command: npx
-    args: ["-y", "@smithery/cli@4.4.0", "run", "@anshumax/world_bank_mcp_server"]
+    args: ["-y", "worldbank-mcp@1.0.1"]
 
 tools:
   github:
@@ -66,7 +68,8 @@ tools:
 safe-outputs:
   allowed-domains:
     - riksdag-regering-ai.onrender.com
-    - scb-mcp.onrender.com
+    - api.scb.se
+    - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
     - www.regeringen.se
@@ -202,10 +205,10 @@ Before generating or translating articles, consult these authoritative reference
 
 ### 📊 Economic Data (World Bank MCP)
 
-The **world-bank** MCP server provides economic indicators via `get_indicator_for_country` tool.
-Use this to enrich political analysis with economic context (GDP, unemployment, inflation, trade).
-Key Swedish indicators and Nordic comparison data are documented in `scripts/world-bank-context.ts`.
-Reference: https://github.com/anshumax/world_bank_mcp_server
+The **world-bank** MCP server provides global economic indicators via tools: `get-economic-data`, `get-social-data`, `get-education-data`, `get-health-data`, `search-indicators`, `get-countries`, `get-country-info`.
+Use ISO alpha-3 country codes: `SWE` for Sweden, `DNK` for Denmark, `NOR` for Norway, `FIN` for Finland, `DEU` for Germany.
+Key indicators (World Bank IDs used by the client): `NY.GDP.MKTP.KD.ZG` (GDP growth), `SL.UEM.TOTL.ZS` (unemployment rate), `FP.CPI.TOTL.ZG` (inflation, CPI), `SH.XPD.CHEX.GD.ZS` (current health expenditure, % of GDP), `SE.XPD.TOTL.GD.ZS` (education expenditure, % of GDP).
+These indicator IDs and committee/policy-area mappings are defined in `scripts/world-bank-client.ts` (`INDICATOR_IDS`) and `scripts/world-bank-context.ts`.
 
 **Committee-mapped indicators** (14 indicators → all 15 Riksdag committees):
 | Indicator | World Bank ID | Committees |
@@ -227,9 +230,10 @@ Reference: https://github.com/anshumax/world_bank_mcp_server
 
 ### 📈 Swedish Statistics (SCB MCP)
 
-The **scb** MCP server provides official Swedish statistics via `search_tables` and `get_table_data` tools.
+The **scb** MCP server provides official Swedish statistics via PxWeb v2 API tools: `search_tables`, `get_table_info`, `fetch_metadata`, `query_table`, `get_code_list`, `list_recent_tables`.
 Use this to enrich articles with domestic data from Statistics Sweden (Statistiska centralbyrån).
 Key SCB domain-to-committee mappings are documented in `scripts/scb-context.ts`.
+**Note**: Language parameter accepts "en" (English) only. Table IDs from `scripts/scb-context.ts` work directly.
 
 **Committee-mapped SCB domains** (15 domains → all 15 Riksdag committees):
 | Domain | Key SCB Tables | Committees |
@@ -257,7 +261,7 @@ to detect and fact-check politician statistical claims against official World Ba
 
 **How to use:**
 1. When processing speeches/debates from `search_anforanden`, scan for statistical claims
-2. Cross-reference claimed values against World Bank (`get_indicator_for_country`) and SCB (`get_table_data`)
+2. Cross-reference claimed values against World Bank (`get-economic-data` with indicator) and SCB (`query_table`)
 3. Rate claims: accurate (≤5% deviation), mostly-accurate (5-15%), misleading (15-30%), inaccurate (>30%)
 4. Include a "Faktakoll / Fact Check" section in articles with detected claims
 5. Use localized headings from `scripts/statistical-claims-detector.ts` FACT_CHECK_HEADINGS
@@ -347,11 +351,17 @@ You have access to the **riksdag-regering-mcp** MCP server configured in the wor
 
 ### How MCP Tool Calls Work in Agentic Workflows
 
-The `mcp-servers` frontmatter declares the riksdag-regering server:
+The `mcp-servers` frontmatter declares the data servers:
 ```yaml
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+  scb:
+    command: npx
+    args: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+  world-bank:
+    command: npx
+    args: ["-y", "worldbank-mcp@1.0.1"]
 ```
 
 At runtime, gh-aw:
