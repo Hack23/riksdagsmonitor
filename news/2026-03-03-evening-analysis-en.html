@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Evening Analysis: Sweden's Surveillance Gambit and Housing Shake-Up</title>
   <meta name="description" content="A day of sweeping government action — from AI-powered police surveillance to mortgage deregulation — reshapes Sweden's policy landscape on multiple fronts.">
   <meta name="keywords" content="Sweden, Riksdag, evening analysis, AI facial recognition, mortgage reform, surveillance, housing, parliament, government propositions">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="Reading time">
   <meta name="twitter:data1" content="8 min read">
   <meta name="twitter:label2" content="Article type">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,9 +107,17 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="Language versions">
-    <a href="2026-03-03-evening-analysis-en.html" class="lang-link active" hreflang="en">🇬🇧 English</a>
+    <a href="2026-03-03-evening-analysis-en.html" class="lang-link active" hreflang="en" aria-current="page">🇬🇧 English</a>
     <a href="2026-03-03-evening-analysis-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="2026-03-03-evening-analysis-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
     <a href="2026-03-03-evening-analysis-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
@@ -124,7 +137,7 @@
     <a href="index.html" class="back-to-news">&larr; Back to News</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>Sweden's Surveillance Gambit and Housing Shake-Up</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">Tuesday in Stockholm delivered a legislative volley that will reverberate through Swedish society for years. The government tabled eight propositions and two government reports, headlined by a landmark bill authorising police use of real-time AI facial recognition and a Finance Committee endorsement of mortgage deregulation. Taken together, the day's output reveals a government simultaneously reaching for stronger security powers and loosening economic controls — a dual strategy that tests the boundaries of the ruling coalition's ideological tent.</p>
 
       <h2>The Day's Main Story: AI Surveillance Enters Swedish Policing</h2>
@@ -201,7 +214,7 @@
           <li><strong>Foreign Policy Questions:</strong> Ministerial responses to interpellations on Syria and Venezuela expected</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">This article was generated using automated tools and data from Sweden's official parliamentary and government sources. Content is continuously improved — <a href="https://github.com/Hack23/riksdagsmonitor/issues">report issues or suggest improvements on GitHub</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

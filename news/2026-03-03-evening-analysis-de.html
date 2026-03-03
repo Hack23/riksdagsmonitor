@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Abendanalyse: Schwedens Überwachungsoffensive und Wohnungsreform</title>
   <meta name="description" content="Ein Tag umfassender Regierungsmaßnahmen — von KI-gestützter Polizeiüberwachung bis zur Hypothekenderegulierung — verändert Schwedens politische Landschaft auf mehreren Ebenen.">
   <meta name="keywords" content="Schweden, Riksdag, Abendanalyse, KI-Gesichtserkennung, Hypothekenreform, Überwachung, Wohnungspolitik, Parlament, Regierungsvorlagen">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor – Schwedische Parlamentsanalyse">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="Lesezeit">
   <meta name="twitter:data1" content="8 Min. Lesezeit">
   <meta name="twitter:label2" content="Artikeltyp">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Zum dunklen Design wechseln"
+        title="Zum dunklen Design wechseln"
+        data-label-dark="Zum hellen Design wechseln"
+        data-label-light="Zum dunklen Design wechseln">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="Sprachversionen">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -109,7 +122,7 @@
     <a href="2026-03-03-evening-analysis-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
     <a href="2026-03-03-evening-analysis-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="2026-03-03-evening-analysis-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
-    <a href="2026-03-03-evening-analysis-de.html" class="lang-link active" hreflang="de">🇩🇪 Deutsch</a>
+    <a href="2026-03-03-evening-analysis-de.html" class="lang-link active" hreflang="de" aria-current="page">🇩🇪 Deutsch</a>
     <a href="2026-03-03-evening-analysis-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
     <a href="2026-03-03-evening-analysis-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
     <a href="2026-03-03-evening-analysis-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
@@ -124,7 +137,7 @@
     <a href="index_de.html" class="back-to-news">&larr; Zurück zu Nachrichten</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>Schwedens Überwachungsoffensive und Wohnungsreform</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">Der Dienstag in Stockholm brachte eine legislative Salve, die die schwedische Gesellschaft noch jahrelang beschäftigen wird. Die Regierung legte acht Propositionen und zwei Regierungsberichte vor, angeführt von einem bahnbrechenden Gesetzentwurf zur Genehmigung des Einsatzes von KI-gestützter Echtzeit-Gesichtserkennung durch die Polizei sowie einer Empfehlung des Finanzausschusses zur Hypothekenderegulierung. Zusammengenommen offenbart das Tageswerk eine Regierung, die gleichzeitig nach stärkeren Sicherheitsbefugnissen greift und wirtschaftliche Kontrollen lockert — eine doppelte Strategie, die die ideologischen Grenzen der Regierungskoalition auf die Probe stellt.</p>
 
       <h2>Die Hauptgeschichte des Tages: KI-Überwachung in der schwedischen Polizeiarbeit</h2>
@@ -201,7 +214,7 @@
           <li><strong>Außenpolitische Fragen:</strong> Ministerielle Antworten auf Interpellationen zu Syrien und Venezuela erwartet</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">Dieser Artikel wurde mit automatisierten Werkzeugen und Daten aus Schwedens offiziellen Parlaments- und Regierungsquellen erstellt. Der Inhalt wird fortlaufend verbessert — <a href="https://github.com/Hack23/riksdagsmonitor/issues">melden Sie Probleme oder schlagen Sie Verbesserungen auf GitHub vor</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

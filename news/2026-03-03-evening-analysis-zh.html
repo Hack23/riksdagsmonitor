@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>晚间分析：瑞典的监控豪赌与住房政策剧变</title>
   <meta name="description" content="从AI驱动的警方监控到住房贷款放松管制，一天之内的大规模政府行动在多个领域重塑了瑞典的政策格局。">
   <meta name="keywords" content="瑞典, 国会, 晚间分析, AI人脸识别, 住房贷款改革, 监控, 住房, 议会, 政府提案">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - 瑞典议会情报">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="阅读时间">
   <meta name="twitter:data1" content="阅读约8分钟">
   <meta name="twitter:label2" content="文章类型">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳转到正文</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="切换到深色主题"
+        title="切换到深色主题"
+        data-label-dark="切换到浅色主题"
+        data-label-light="切换到深色主题">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="语言版本">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -117,14 +130,14 @@
     <a href="2026-03-03-evening-analysis-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
     <a href="2026-03-03-evening-analysis-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
     <a href="2026-03-03-evening-analysis-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
-    <a href="2026-03-03-evening-analysis-zh.html" class="lang-link active" hreflang="zh">🇨🇳 中文</a>
+    <a href="2026-03-03-evening-analysis-zh.html" class="lang-link active" hreflang="zh" aria-current="page">🇨🇳 中文</a>
   </nav>
 
   <div class="article-top-nav">
     <a href="index_zh.html" class="back-to-news">&larr; 返回新闻列表</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>瑞典的监控豪赌与住房政策剧变</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">斯德哥尔摩的周二掀起了一场将在瑞典社会回荡多年的立法攻势。政府提交了八项提案和两份政府报告，其中最引人注目的是一项授权警方使用实时AI人脸识别的里程碑式法案，以及财政委员会对住房贷款放松管制的背书。综合来看，这一天的成果揭示了政府同时追求更强治安权力与放松经济管控的双重战略——这一战略考验着执政联盟意识形态包容度的极限。</p>
 
       <h2>今日头条：AI监控进入瑞典警务</h2>
@@ -201,7 +214,7 @@
           <li><strong>外交政策质询：</strong>预计部长将回应关于叙利亚和委内瑞拉的质询书</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">本文使用自动化工具和来自瑞典官方议会及政府来源的数据生成。内容持续改进中——<a href="https://github.com/Hack23/riksdagsmonitor/issues">在GitHub上报告问题或提出改进建议</a>。</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

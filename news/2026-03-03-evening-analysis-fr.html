@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Analyse du soir : Le pari sécuritaire de la Suède et la réforme du logement</title>
   <meta name="description" content="Une journée d'action gouvernementale massive — de la surveillance policière par IA à la déréglementation hypothécaire — redessine le paysage politique suédois sur plusieurs fronts.">
   <meta name="keywords" content="Suède, Riksdag, analyse du soir, reconnaissance faciale IA, réforme hypothécaire, surveillance, logement, parlement, propositions gouvernementales">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor – Renseignement parlementaire suédois">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="Temps de lecture">
   <meta name="twitter:data1" content="8 min de lecture">
   <meta name="twitter:label2" content="Type d'article">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Passer au thème sombre"
+        title="Passer au thème sombre"
+        data-label-dark="Passer au thème clair"
+        data-label-light="Passer au thème sombre">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="Versions linguistiques">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -110,7 +123,7 @@
     <a href="2026-03-03-evening-analysis-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="2026-03-03-evening-analysis-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
     <a href="2026-03-03-evening-analysis-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
-    <a href="2026-03-03-evening-analysis-fr.html" class="lang-link active" hreflang="fr">🇫🇷 Français</a>
+    <a href="2026-03-03-evening-analysis-fr.html" class="lang-link active" hreflang="fr" aria-current="page">🇫🇷 Français</a>
     <a href="2026-03-03-evening-analysis-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
     <a href="2026-03-03-evening-analysis-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
     <a href="2026-03-03-evening-analysis-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
@@ -124,7 +137,7 @@
     <a href="index_fr.html" class="back-to-news">&larr; Retour aux actualités</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>Le pari sécuritaire de la Suède et la réforme du logement</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">Ce mardi à Stockholm a déclenché un barrage législatif qui se répercutera sur la société suédoise pendant des années. Le gouvernement a déposé huit propositions et deux rapports gouvernementaux, dominés par un projet de loi historique autorisant la police à utiliser la reconnaissance faciale par IA en temps réel et par l'approbation de la déréglementation hypothécaire par la Commission des finances. Pris dans leur ensemble, les travaux de la journée révèlent un gouvernement qui aspire simultanément à des pouvoirs sécuritaires renforcés et à un assouplissement des contrôles économiques — une double stratégie qui met à l'épreuve les limites idéologiques de la coalition au pouvoir.</p>
 
       <h2>L'événement principal : L'IA de surveillance entre dans la police suédoise</h2>
@@ -201,7 +214,7 @@
           <li><strong>Questions de politique étrangère :</strong> Réponses ministérielles aux interpellations sur la Syrie et le Venezuela attendues</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">Cet article a été généré à l'aide d'outils automatisés et de données issues des sources officielles parlementaires et gouvernementales suédoises. Le contenu est continuellement amélioré — <a href="https://github.com/Hack23/riksdagsmonitor/issues">signalez des problèmes ou suggérez des améliorations sur GitHub</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

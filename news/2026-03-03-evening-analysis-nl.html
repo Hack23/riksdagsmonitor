@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Avondanalyse: Zwedens surveillancegok en woningmarkthervorming</title>
   <meta name="description" content="Een dag van ingrijpend overheidsoptreden — van AI-gestuurde politiesurveillance tot hypotheekderegulering — hervormt het Zweedse beleidslandschap op meerdere fronten.">
   <meta name="keywords" content="Zweden, Riksdag, avondanalyse, AI gezichtsherkenning, hypotheekhervorming, surveillance, woningmarkt, parlement, regeringsvoorstellen">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Zweedse parlementaire inlichtingen">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="Leestijd">
   <meta name="twitter:data1" content="8 min lezen">
   <meta name="twitter:label2" content="Artikeltype">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Ga naar hoofdinhoud</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Overschakelen naar donker thema"
+        title="Overschakelen naar donker thema"
+        data-label-dark="Overschakelen naar licht thema"
+        data-label-light="Overschakelen naar donker thema">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="Taalversies">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -112,7 +125,7 @@
     <a href="2026-03-03-evening-analysis-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
     <a href="2026-03-03-evening-analysis-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
     <a href="2026-03-03-evening-analysis-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
-    <a href="2026-03-03-evening-analysis-nl.html" class="lang-link active" hreflang="nl">🇳🇱 Nederlands</a>
+    <a href="2026-03-03-evening-analysis-nl.html" class="lang-link active" hreflang="nl" aria-current="page">🇳🇱 Nederlands</a>
     <a href="2026-03-03-evening-analysis-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
     <a href="2026-03-03-evening-analysis-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
     <a href="2026-03-03-evening-analysis-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
@@ -124,7 +137,7 @@
     <a href="index_nl.html" class="back-to-news">&larr; Terug naar nieuws</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>Zwedens surveillancegok en woningmarkthervorming</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">Dinsdag in Stockholm bracht een wetgevend salvo dat jarenlang door de Zweedse samenleving zal nagalmen. De regering diende acht proposities en twee regeringsrapporten in, met als hoofdpunt een baanbrekend wetsvoorstel dat politiegebruik van real-time AI-gezichtsherkenning autoriseert en een goedkeuring door de Financiële Commissie van hypotheekderegulering. Samen onthullen de resultaten van deze dag een regering die tegelijkertijd naar sterkere veiligheidsbevoegdheden grijpt en economische controles versoepelt — een dubbele strategie die de grenzen van de ideologische tent van de regerende coalitie op de proef stelt.</p>
 
       <h2>Het hoofdverhaal van de dag: AI-surveillance betreedt de Zweedse politiewereld</h2>
@@ -201,7 +214,7 @@
           <li><strong>Buitenlandpolitieke vragen:</strong> Ministeriële antwoorden op interpellaties over Syrië en Venezuela verwacht</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">Dit artikel is gegenereerd met behulp van geautomatiseerde tools en gegevens van officiële Zweedse parlementaire en overheidsbronnen. De inhoud wordt voortdurend verbeterd — <a href="https://github.com/Hack23/riksdagsmonitor/issues">meld problemen of suggereer verbeteringen op GitHub</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

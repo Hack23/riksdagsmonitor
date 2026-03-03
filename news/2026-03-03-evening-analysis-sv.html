@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Kvällsanalys: Sveriges övervakningssatsning och bostadspolitiska omvälvning</title>
   <meta name="description" content="En dag av omfattande regeringsinitiativ — från AI-driven polisövervakning till avreglering av bolånemarknaden — omformar Sveriges politiska landskap på flera fronter.">
   <meta name="keywords" content="Sverige, riksdag, kvällsanalys, AI ansiktsigenkänning, bolånereform, övervakning, bostäder, riksdagen, propositioner">
@@ -29,6 +30,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Svensk parlamentarisk underrättelse">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="Lästid">
   <meta name="twitter:data1" content="8 min">
   <meta name="twitter:label2" content="Artikeltyp">
@@ -58,6 +60,9 @@
 
   <link rel="stylesheet" href="../styles.css">
 
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,10 +82,18 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Hoppa till huvudinnehållet</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Växla till mörkt tema"
+        title="Växla till mörkt tema"
+        data-label-dark="Växla till ljust tema"
+        data-label-light="Växla till mörkt tema">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="Språkversioner">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
-    <a href="2026-03-03-evening-analysis-sv.html" class="lang-link active" hreflang="sv">🇸🇪 Svenska</a>
+    <a href="2026-03-03-evening-analysis-sv.html" class="lang-link active" hreflang="sv" aria-current="page">🇸🇪 Svenska</a>
     <a href="2026-03-03-evening-analysis-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
     <a href="2026-03-03-evening-analysis-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="2026-03-03-evening-analysis-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
@@ -99,7 +112,7 @@
     <a href="index_sv.html" class="back-to-news">&larr; Tillbaka till nyheter</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>Sveriges övervakningssatsning och bostadspolitiska omvälvning</h1>
       <div class="article-meta">
@@ -111,7 +124,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">Tisdagen i Stockholm levererade en lagstiftningssalva som kommer att eka genom det svenska samhället i åratal. Regeringen lade fram åtta propositioner och två skrivelser, med en banbrytande proposition om polisens rätt att använda AI-driven ansiktsigenkänning i realtid och finansutskottets godkännande av en bolåneavreglering som huvudnummer. Sammantaget avslöjar dagens produktion en regering som samtidigt sträcker sig efter starkare säkerhetsbefogenheter och luckrar upp ekonomiska kontroller — en dubbelstrategi som prövar gränserna för den styrande koalitionens ideologiska bredd.</p>
 
       <h2>Dagens huvudnyhet: AI-övervakning når svensk polis</h2>
@@ -164,7 +177,7 @@
           <li><strong>Utrikespolitiska frågor:</strong> Ministersvar om Syrien och Venezuela väntas</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -177,7 +190,7 @@
       </div>
       <p class="footer-disclaimer">Denna artikel genererades med automatiserade verktyg och data från Sveriges officiella parlamentariska och statliga källor. Innehållet förbättras kontinuerligt — <a href="https://github.com/Hack23/riksdagsmonitor/issues">rapportera problem eller föreslå förbättringar på GitHub</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

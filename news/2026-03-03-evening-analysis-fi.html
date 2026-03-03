@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Ilta-analyysi: Ruotsin valvontapanos ja asuntomarkkinoiden mullistus</title>
   <meta name="description" content="Päivä kauaskantoisia hallitustoimia — tekoälypohjaisesta poliisivalvonnasta asuntolainojen sääntelyn purkuun — muokkaa Ruotsin poliittista maisemaa useilla rintamilla.">
   <meta name="keywords" content="Ruotsi, valtiopäivät, ilta-analyysi, tekoäly kasvojentunnistus, asuntolainauudistus, valvonta, asuminen, parlamentti, hallituksen esitykset">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Ruotsin parlamenttitiedustelu">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="Lukuaika">
   <meta name="twitter:data1" content="8 min lukemista">
   <meta name="twitter:label2" content="Artikkelin tyyppi">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,13 +107,21 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Siirry pääsisältöön</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Vaihda tummaan teemaan"
+        title="Vaihda tummaan teemaan"
+        data-label-dark="Vaihda vaaleaan teemaan"
+        data-label-light="Vaihda tummaan teemaan">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="Kieliversiot">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-03-evening-analysis-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
     <a href="2026-03-03-evening-analysis-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
     <a href="2026-03-03-evening-analysis-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
-    <a href="2026-03-03-evening-analysis-fi.html" class="lang-link active" hreflang="fi">🇫🇮 Suomi</a>
+    <a href="2026-03-03-evening-analysis-fi.html" class="lang-link active" hreflang="fi" aria-current="page">🇫🇮 Suomi</a>
     <a href="2026-03-03-evening-analysis-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
     <a href="2026-03-03-evening-analysis-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
     <a href="2026-03-03-evening-analysis-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
@@ -124,7 +137,7 @@
     <a href="index_fi.html" class="back-to-news">&larr; Takaisin uutisiin</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>Ruotsin valvontapanos ja asuntomarkkinoiden mullistus</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">Tiistai Tukholmassa toi mukanaan lainsäädännöllisen ryöpyn, joka kaikuu ruotsalaisessa yhteiskunnassa vuosia. Hallitus jätti kahdeksan esitystä ja kaksi hallituksen selontekoa, joita johtaa uraauurtava lakiesitys, joka valtuuttaa poliisin käyttämään tekoälypohjaista kasvojentunnistusta reaaliajassa, sekä valtiovarainvaliokunnan hyväksyntä asuntolainojen sääntelyn purkamiselle. Yhdessä päivän tuotanto paljastaa hallituksen, joka samanaikaisesti kurottaa vahvempien turvallisuusvaltuuksien perään ja löysää taloudellisia sääntelymekanismeja — kaksoisstrategia, joka koettelee hallituskoalition ideologisen teltan rajoja.</p>
 
       <h2>Päivän pääuutinen: Tekoälyvalvonta astuu ruotsalaiseen poliisitoimintaan</h2>
@@ -201,7 +214,7 @@
           <li><strong>Ulkopolitiikan kysymykset:</strong> Ministeriöiden vastaukset välikysymyksiin Syyriasta ja Venezuelasta odotettavissa</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">Tämä artikkeli on tuotettu automatisoiduilla työkaluilla ja tiedoilla Ruotsin virallisista parlamentti- ja hallituslähteistä. Sisältöä parannetaan jatkuvasti — <a href="https://github.com/Hack23/riksdagsmonitor/issues">ilmoita ongelmista tai ehdota parannuksia GitHubissa</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

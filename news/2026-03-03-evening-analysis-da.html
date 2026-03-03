@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Aftenanalyse: Sveriges overvågningssatsning og boligrystelse</title>
   <meta name="description" content="En dag med vidtrækkende regeringshandlinger — fra AI-drevet politiovervågning til deregulering af boliglån — omformer Sveriges politiske landskab på flere fronter.">
   <meta name="keywords" content="Sverige, Riksdagen, aftenanalyse, AI ansigtsgenkendelse, boliglånsreform, overvågning, bolig, parlament, regeringsforslag">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Svensk parlamentarisk efterretning">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="Læsetid">
   <meta name="twitter:data1" content="8 min læsning">
   <meta name="twitter:label2" content="Artikeltype">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,11 +107,19 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Spring til hovedindhold</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Skift til mørkt tema"
+        title="Skift til mørkt tema"
+        data-label-dark="Skift til lyst tema"
+        data-label-light="Skift til mørkt tema">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="Sprogversioner">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-03-evening-analysis-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
-    <a href="2026-03-03-evening-analysis-da.html" class="lang-link active" hreflang="da">🇩🇰 Dansk</a>
+    <a href="2026-03-03-evening-analysis-da.html" class="lang-link active" hreflang="da" aria-current="page">🇩🇰 Dansk</a>
     <a href="2026-03-03-evening-analysis-no.html" class="lang-link" hreflang="nb">🇳🇴 Norsk</a>
     <a href="2026-03-03-evening-analysis-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
     <a href="2026-03-03-evening-analysis-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
@@ -124,7 +137,7 @@
     <a href="index_da.html" class="back-to-news">&larr; Tilbage til nyheder</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>Sveriges overvågningssatsning og boligrystelse</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">Tirsdag i Stockholm bragte en lovgivningsmæssig salve, der vil give genlyd i det svenske samfund i årevis. Regeringen fremsatte otte propositioner og to regeringsrapporter, anført af et skelsættende lovforslag, der giver politiet tilladelse til at anvende AI-baseret ansigtsgenkendelse i realtid, samt Finansudvalgets godkendelse af deregulering af boliglån. Tilsammen afslører dagens produktion en regering, der samtidig rækker efter stærkere sikkerhedsbeføjelser og løsner de økonomiske kontrolmekanismer — en dobbelt strategi, der udfordrer grænserne for den regerende koalitions ideologiske telt.</p>
 
       <h2>Dagens hovedhistorie: AI-overvågning træder ind i svensk politiarbejde</h2>
@@ -201,7 +214,7 @@
           <li><strong>Udenrigspolitiske spørgsmål:</strong> Ministerielle svar på interpellationer om Syrien og Venezuela forventet</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">Denne artikel er genereret ved hjælp af automatiserede værktøjer og data fra Sveriges officielle parlamentariske og regeringskilder. Indholdet forbedres løbende — <a href="https://github.com/Hack23/riksdagsmonitor/issues">rapportér fejl eller foreslå forbedringer på GitHub</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

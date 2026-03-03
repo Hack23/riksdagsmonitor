@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>夕刊分析：スウェーデンの監視賭け と住宅政策の大転換</title>
   <meta name="description" content="AI搭載の警察監視から住宅ローン規制緩和まで、広範な政府行動がスウェーデンの政策風景を複数の面で一変させた一日。">
   <meta name="keywords" content="スウェーデン, 国会, 夕刊分析, AI顔認識, 住宅ローン改革, 監視, 住宅, 議会, 政府提案">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - スウェーデン議会インテリジェンス">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="読了時間">
   <meta name="twitter:data1" content="8分で読了">
   <meta name="twitter:label2" content="記事種別">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">本文へスキップ</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="ダークテーマに切り替える"
+        title="ダークテーマに切り替える"
+        data-label-dark="ライトテーマに切り替える"
+        data-label-light="ダークテーマに切り替える">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="言語バージョン">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -115,7 +128,7 @@
     <a href="2026-03-03-evening-analysis-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
     <a href="2026-03-03-evening-analysis-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
     <a href="2026-03-03-evening-analysis-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
-    <a href="2026-03-03-evening-analysis-ja.html" class="lang-link active" hreflang="ja">🇯🇵 日本語</a>
+    <a href="2026-03-03-evening-analysis-ja.html" class="lang-link active" hreflang="ja" aria-current="page">🇯🇵 日本語</a>
     <a href="2026-03-03-evening-analysis-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-03-03-evening-analysis-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
@@ -124,7 +137,7 @@
     <a href="index_ja.html" class="back-to-news">&larr; ニュース一覧に戻る</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>スウェーデンの監視賭けと住宅政策の大転換</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">ストックホルムの火曜日は、スウェーデン社会に今後何年も波紋を広げる立法攻勢を繰り出した。政府は8件の提案と2件の政府報告書を提出し、その目玉は警察によるリアルタイムAI顔認識の使用を認める画期的な法案と、住宅ローン規制緩和を支持する財務委員会の勧告である。総合すると、この日の成果は、政府がより強力な治安権限を追求すると同時に経済規制を緩和するという二重戦略を取っていることを明らかにしている——連立政権のイデオロギー的許容範囲の限界を試す戦略だ。</p>
 
       <h2>今日の主要記事：AI監視がスウェーデン警察に導入</h2>
@@ -201,7 +214,7 @@
           <li><strong>外交政策に関する質問：</strong>シリアとベネズエラに関する質問主意書への大臣回答が予想される</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">この記事は自動化ツールとスウェーデンの公式議会・政府ソースからのデータを使用して生成されました。内容は継続的に改善されています——<a href="https://github.com/Hack23/riksdagsmonitor/issues">GitHubで問題を報告するか改善を提案してください</a>。</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>
