@@ -36,6 +36,43 @@ const ALL_NEWS_WORKFLOWS: readonly string[] = [
   'news-weekly-review.md',
 ];
 
+/**
+ * Extract YAML frontmatter from a workflow .md file.
+ * Returns the content between the opening `---` and the `steps:` top-level key,
+ * which covers all configuration (network, mcp-servers, tools, safe-outputs).
+ */
+function extractFrontmatter(content: string): string {
+  const lines = content.split('\n');
+  const start = lines.indexOf('---');
+  if (start === -1) return '';
+  // Find the end: look for `steps:` at column 0 (top-level YAML key)
+  let end = lines.length;
+  for (let i = start + 1; i < lines.length; i++) {
+    if (/^steps:/.test(lines[i])) {
+      end = i;
+      break;
+    }
+  }
+  return lines.slice(start + 1, end).join('\n');
+}
+
+/**
+ * Extract a top-level YAML block (e.g. `network:` or `safe-outputs:`) from frontmatter.
+ * Returns all lines from the block header until the next un-indented (top-level) key.
+ */
+function extractYamlBlock(frontmatter: string, blockKey: string): string {
+  const lines = frontmatter.split('\n');
+  const startIdx = lines.findIndex(l => l.startsWith(blockKey));
+  if (startIdx === -1) return '';
+  const blockLines = [lines[startIdx]];
+  for (let i = startIdx + 1; i < lines.length; i++) {
+    // Stop at next top-level key (non-indented, non-empty, non-comment)
+    if (lines[i].length > 0 && !lines[i].startsWith(' ') && !lines[i].startsWith('#')) break;
+    blockLines.push(lines[i]);
+  }
+  return blockLines.join('\n');
+}
+
 describe('SCB MCP Server Configuration', () => {
   it('copilot-mcp.json should include scb MCP server', () => {
     const configPath = path.join(__dirname, '..', '.github', 'copilot-mcp.json');
@@ -79,22 +116,27 @@ describe('SCB MCP Server Configuration', () => {
       const filepath = path.join(WORKFLOWS_DIR, workflow);
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      expect(content).toContain('api.scb.se');
+      // Extract YAML frontmatter (between first --- and the steps: section)
+      const frontmatter = extractFrontmatter(content);
+      const networkSection = extractYamlBlock(frontmatter, 'network:');
+      expect(networkSection).toContain('api.scb.se');
     });
 
     it(`${workflow} should allow api.worldbank.org in network`, () => {
       const filepath = path.join(WORKFLOWS_DIR, workflow);
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      expect(content).toContain('api.worldbank.org');
+      const frontmatter = extractFrontmatter(content);
+      const networkSection = extractYamlBlock(frontmatter, 'network:');
+      expect(networkSection).toContain('api.worldbank.org');
     });
 
     it(`${workflow} should include api.scb.se in safe-outputs`, () => {
       const filepath = path.join(WORKFLOWS_DIR, workflow);
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // The safe-outputs section should list api.scb.se
-      const safeOutputsSection = content.split('safe-outputs:')[1]?.split('steps:')[0] ?? '';
+      const frontmatter = extractFrontmatter(content);
+      const safeOutputsSection = extractYamlBlock(frontmatter, 'safe-outputs:');
       expect(safeOutputsSection).toContain('api.scb.se');
     });
 
@@ -102,7 +144,8 @@ describe('SCB MCP Server Configuration', () => {
       const filepath = path.join(WORKFLOWS_DIR, workflow);
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      const safeOutputsSection = content.split('safe-outputs:')[1]?.split('steps:')[0] ?? '';
+      const frontmatter = extractFrontmatter(content);
+      const safeOutputsSection = extractYamlBlock(frontmatter, 'safe-outputs:');
       expect(safeOutputsSection).toContain('api.worldbank.org');
     });
   });
