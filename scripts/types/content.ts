@@ -19,6 +19,8 @@ export interface FooterLabelSet {
   analysisToolsValue: string;
   backToNews: string;
   skipToContent: string;
+  themeToDark: string;
+  themeToLight: string;
 }
 
 /** Localized names for a single committee (English + Swedish) */

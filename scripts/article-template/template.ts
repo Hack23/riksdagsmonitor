@@ -90,8 +90,8 @@ export function generateArticleHTML(data: ArticleData): string {
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
   <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="140">
+  <meta property="og:image:height" content="140">
   <meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta property="og:locale" content="${ogLocale}">
   <meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
@@ -158,15 +158,15 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
       "logo": {
         "@type": "ImageObject",
         "url": "https://hack23.com/cia-icon-140.webp",
-        "width": 600,
-        "height": 60
+        "width": 140,
+        "height": 140
       }
     },
     "image": {
       "@type": "ImageObject",
       "url": "https://hack23.com/cia-icon-140.webp",
-      "width": 1200,
-      "height": 630
+      "width": 140,
+      "height": 140
     },
     "articleSection": "${typeLabel}",
     "articleBody": "${sanitizeArticleBody(escapeHtml(fixedContent))}...",
@@ -255,10 +255,10 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
 <a href="#main-content" class="skip-link">${getFooterLabel(lang, 'skipToContent')}</a>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
-        aria-label="Switch to dark theme"
-        title="Switch to dark theme"
-        data-label-dark="Switch to light theme"
-        data-label-light="Switch to dark theme">
+        aria-label="${getFooterLabel(lang, 'themeToDark')}"
+        title="${getFooterLabel(lang, 'themeToDark')}"
+        data-label-dark="${getFooterLabel(lang, 'themeToLight')}"
+        data-label-light="${getFooterLabel(lang, 'themeToDark')}">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
