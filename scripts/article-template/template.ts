@@ -255,10 +255,10 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
 <a href="#main-content" class="skip-link">${getFooterLabel(lang, 'skipToContent')}</a>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
-        aria-label="Switch to dark theme"
-        title="Switch to dark theme"
-        data-label-dark="Switch to light theme"
-        data-label-light="Switch to dark theme">
+        aria-label="${getFooterLabel(lang, 'themeToDark')}"
+        title="${getFooterLabel(lang, 'themeToDark')}"
+        data-label-dark="${getFooterLabel(lang, 'themeToLight')}"
+        data-label-light="${getFooterLabel(lang, 'themeToDark')}">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
 ${generateArticleLanguageSwitcher(baseSlug, lang)}
