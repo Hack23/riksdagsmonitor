@@ -1,6 +1,6 @@
 /**
  * Tests for theme-toggle button functionality
- * Tests the logic from js/theme-toggle.js:
+ * Tests the logic from public/js/theme-toggle.js:
  *   - localStorage precedence over system preference (resolveTheme)
  *   - applyTheme sets data-theme on <html> and persists to localStorage
  *   - updateButton keeps aria-pressed/aria-label/title/icon in sync
