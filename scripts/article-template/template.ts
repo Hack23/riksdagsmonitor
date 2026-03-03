@@ -158,8 +158,8 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
       "logo": {
         "@type": "ImageObject",
         "url": "https://hack23.com/cia-icon-140.webp",
-        "width": 600,
-        "height": 60
+        "width": 140,
+        "height": 140
       }
     },
     "image": {
