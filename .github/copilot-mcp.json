@@ -5,20 +5,16 @@
       "url": "https://riksdag-regering-ai.onrender.com/mcp",
       "tools": ["*"]
     },
+    "scb": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"],
+      "tools": ["*"]
+    },
     "world-bank": {
       "type": "local",
       "command": "npx",
-      "tools": ["*"],
-      "args": [
-        "-y",
-        "@smithery/cli@4.4.0",
-        "run",
-        "@anshumax/world_bank_mcp_server"
-      ]
-    },
-    "scb": {
-      "type": "http",
-      "url": "https://scb-mcp.onrender.com/mcp",
+      "args": ["-y", "worldbank-mcp@1.0.1"],
       "tools": ["*"]
     },
     "github": {
