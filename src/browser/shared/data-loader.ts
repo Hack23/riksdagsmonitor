@@ -151,10 +151,18 @@ export async function loadJSON<T = unknown>(
 
 /**
  * Parse CSV text into rows.
- * Uses d3.csvParse if available (imported via Vite), otherwise falls back to simple parsing.
+ * Uses PapaParse if available (CSP-compatible), falls back to d3.csvParse, then simple parsing.
  */
 export function parseCSV(text: string): CSVRow[] {
-  // Use d3.csvParse if available (loaded as global or imported)
+  // Use PapaParse if available (CSP-compatible, no unsafe-eval needed)
+  const PapaGlobal = (globalThis as Record<string, unknown>).Papa as
+    | { parse: (text: string, config: Record<string, unknown>) => { data: CSVRow[] } }
+    | undefined;
+  if (PapaGlobal?.parse) {
+    return PapaGlobal.parse(text, { header: true, skipEmptyLines: true }).data;
+  }
+
+  // Fallback to d3.csvParse if available
   const d3Global = (globalThis as Record<string, unknown>).d3 as
     | { csvParse: (text: string) => CSVRow[] }
     | undefined;

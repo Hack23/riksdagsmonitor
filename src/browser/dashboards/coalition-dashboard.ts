@@ -130,7 +130,14 @@ let coalitionDataSourceType: DataSourceType = 'live';
 // ============================================================================
 
 function parseCSV(csvText: string): Record<string, string>[] {
-  try { return d3.csvParse(csvText); }
+  try {
+    const Papa = (globalThis as any).Papa;
+    if (Papa) {
+      const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+      return parsed.data;
+    }
+    return d3.csvParse(csvText);
+  }
   catch (error) { logger.error('CSV parsing error:', error); return []; }
 }
 

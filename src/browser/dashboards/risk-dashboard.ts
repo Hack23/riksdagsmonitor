@@ -164,7 +164,13 @@ function getRiskColor(score: number): string {
 }
 
 function parseCSV(text: string): CSVRow[] {
-  // Use d3.csvParse to correctly handle RFC 4180 CSV (quoted fields, embedded commas, etc.)
+  // Use PapaParse for CSP-compatible CSV parsing (no unsafe-eval needed)
+  const Papa = (globalThis as any).Papa;
+  if (Papa) {
+    const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+    return parsed.data as CSVRow[];
+  }
+  // Fallback to d3.csvParse for RFC 4180 CSV (quoted fields, embedded commas, etc.)
   return d3.csvParse(text) as CSVRow[];
 }
 
