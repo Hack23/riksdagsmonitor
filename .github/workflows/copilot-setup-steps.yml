@@ -93,8 +93,11 @@ jobs:
           # Pre-cache @playwright/mcp for faster startup
           npm install -g @playwright/mcp
           
-          # Install riksdag-regering-mcp for Swedish political data
-          npm install -g riksdag-regering-mcp
+          # Install World Bank MCP server for economic data
+          npm install -g worldbank-mcp@1.0.1
+          
+          # Install PxWeb MCP server for SCB (Statistics Sweden) data
+          npm install -g @jarib/pxweb-mcp@2.0.0
           
           echo "✅ Node.js MCP server packages installed globally"
 
@@ -128,11 +131,17 @@ jobs:
           echo "Checking @playwright/mcp..."
           which mcp-server-playwright 2>/dev/null && echo "✅ mcp-server-playwright found" || echo "ℹ️ @playwright/mcp available via npx"
           
-          echo "Checking riksdag-regering-mcp..."
-          which riksdag-regering-mcp && echo "✅ riksdag-regering-mcp found" || echo "❌ riksdag-regering-mcp NOT found"
+          echo "Checking worldbank-mcp..."
+          which worldbank-mcp && echo "✅ worldbank-mcp found" || echo "❌ worldbank-mcp NOT found"
+          
+          echo "Checking @jarib/pxweb-mcp..."
+          which pxweb-mcp && echo "✅ pxweb-mcp (SCB) found" || echo "❌ pxweb-mcp NOT found"
                     
           echo ""
           echo "=== HTTP MCP Servers ==="
           echo "📍 GitHub MCP Server: Using HTTP endpoint (https://api.githubcopilot.com/mcp/insiders)"
           echo "📍 Riksdag-Regering MCP Server: Using HTTP endpoint (https://riksdag-regering-ai.onrender.com/mcp)"
+          echo "=== Local stdio MCP Servers ==="
+          echo "📍 World Bank MCP Server: worldbank-mcp (stdio)"
+          echo "📍 SCB MCP Server: @jarib/pxweb-mcp --url https://api.scb.se/OV0104/v2beta (stdio)"
           echo "✅ MCP server verification complete"
