@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Análisis vespertino: La apuesta de vigilancia de Suecia y la reforma de la vivienda</title>
   <meta name="description" content="Un día de acción gubernamental contundente — desde la vigilancia policial con IA hasta la desregulación hipotecaria — rediseña el panorama político sueco en múltiples frentes.">
   <meta name="keywords" content="Suecia, Riksdag, análisis vespertino, reconocimiento facial IA, reforma hipotecaria, vigilancia, vivienda, parlamento, proposiciones gubernamentales">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor – Inteligencia parlamentaria sueca">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="Tiempo de lectura">
   <meta name="twitter:data1" content="8 min de lectura">
   <meta name="twitter:label2" content="Tipo de artículo">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Ir al contenido principal</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Cambiar al tema oscuro"
+        title="Cambiar al tema oscuro"
+        data-label-dark="Cambiar al tema claro"
+        data-label-light="Cambiar al tema oscuro">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="Versiones en otros idiomas">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -111,7 +124,7 @@
     <a href="2026-03-03-evening-analysis-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
     <a href="2026-03-03-evening-analysis-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
     <a href="2026-03-03-evening-analysis-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
-    <a href="2026-03-03-evening-analysis-es.html" class="lang-link active" hreflang="es">🇪🇸 Español</a>
+    <a href="2026-03-03-evening-analysis-es.html" class="lang-link active" hreflang="es" aria-current="page">🇪🇸 Español</a>
     <a href="2026-03-03-evening-analysis-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
     <a href="2026-03-03-evening-analysis-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
     <a href="2026-03-03-evening-analysis-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
@@ -124,7 +137,7 @@
     <a href="index_es.html" class="back-to-news">&larr; Volver a noticias</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>La apuesta de vigilancia de Suecia y la reforma de la vivienda</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">El martes en Estocolmo desencadenó una andanada legislativa que reverberará en la sociedad sueca durante años. El gobierno presentó ocho proposiciones y dos informes gubernamentales, encabezados por un proyecto de ley histórico que autoriza a la policía a utilizar el reconocimiento facial por IA en tiempo real y por la aprobación de la desregulación hipotecaria por parte de la Comisión de Finanzas. En conjunto, la producción del día revela un gobierno que simultáneamente busca poderes de seguridad más fuertes y flexibiliza los controles económicos — una doble estrategia que pone a prueba los límites ideológicos de la coalición gobernante.</p>
 
       <h2>La historia principal del día: La vigilancia con IA entra en la policía sueca</h2>
@@ -201,7 +214,7 @@
           <li><strong>Cuestiones de política exterior:</strong> Respuestas ministeriales a las interpelaciones sobre Siria y Venezuela previstas</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">Este artículo fue generado utilizando herramientas automatizadas y datos de las fuentes oficiales parlamentarias y gubernamentales de Suecia. El contenido se mejora continuamente — <a href="https://github.com/Hack23/riksdagsmonitor/issues">informe problemas o sugiera mejoras en GitHub</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

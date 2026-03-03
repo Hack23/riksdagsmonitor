@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>ניתוח ערב: ההימור של שוודיה על מעקב ורפורמת הדיור</title>
   <meta name="description" content="יום של פעולות ממשלתיות נרחבות — ממעקב משטרתי מבוסס בינה מלאכותית ועד דה-רגולציה של משכנתאות — מעצב מחדש את הנוף המדיני של שוודיה בחזיתות מרובות.">
   <meta name="keywords" content="שוודיה, ריקסדאג, ניתוח ערב, זיהוי פנים בינה מלאכותית, רפורמת משכנתאות, מעקב, דיור, פרלמנט, הצעות ממשלה">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="ריקסדאגמוניטור - מודיעין פרלמנטרי שוודי">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="זמן קריאה">
   <meta name="twitter:data1" content="8 דקות קריאה">
   <meta name="twitter:label2" content="סוג מאמר">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="עבור לנושא כהה"
+        title="עבור לנושא כהה"
+        data-label-dark="עבור לנושא בהיר"
+        data-label-light="עבור לנושא כהה">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="גרסאות שפה">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -114,7 +127,7 @@
     <a href="2026-03-03-evening-analysis-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
     <a href="2026-03-03-evening-analysis-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
     <a href="2026-03-03-evening-analysis-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
-    <a href="2026-03-03-evening-analysis-he.html" class="lang-link active" hreflang="he">🇮🇱 עברית</a>
+    <a href="2026-03-03-evening-analysis-he.html" class="lang-link active" hreflang="he" aria-current="page">🇮🇱 עברית</a>
     <a href="2026-03-03-evening-analysis-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
     <a href="2026-03-03-evening-analysis-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
     <a href="2026-03-03-evening-analysis-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
@@ -124,7 +137,7 @@
     <a href="index_he.html" class="back-to-news">&larr; חזרה לחדשות</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>ההימור של שוודיה על מעקב ורפורמת הדיור</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">יום שלישי בשטוקהולם הניב מטח חקיקתי שיהדהד בחברה השוודית לשנים. הממשלה הגישה שמונה הצעות חוק ושני דוחות ממשלתיים, בראשם הצעת חוק פורצת דרך המאשרת לשימוש משטרתי בזיהוי פנים בזמן אמת באמצעות בינה מלאכותית, לצד אישור ועדת הכספים לדה-רגולציה של משכנתאות. יחד, תפוקת היום חושפת ממשלה השואפת בו-זמנית לסמכויות ביטחון חזקות יותר ולהרחבת חופש כלכלי — אסטרטגיה כפולה המאתגרת את גבולות האוהל האידיאולוגי של הקואליציה השלטת.</p>
 
       <h2>הסיפור המרכזי של היום: מעקב בינה מלאכותית נכנס למשטרה השוודית</h2>
@@ -201,7 +214,7 @@
           <li><strong>שאלות מדיניות חוץ:</strong> תגובות שריות לאינטרפלציות על סוריה וונצואלה צפויות</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">מאמר זה נוצר באמצעות כלים אוטומטיים ונתונים ממקורות פרלמנטריים וממשלתיים רשמיים של שוודיה. התוכן משופר באופן מתמיד — <a href="https://github.com/Hack23/riksdagsmonitor/issues">דווחו על בעיות או הציעו שיפורים ב-GitHub</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

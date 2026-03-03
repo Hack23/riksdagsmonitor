@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>تحليل مسائي: رهان السويد على المراقبة وإصلاح سوق الإسكان</title>
   <meta name="description" content="يوم من الإجراءات الحكومية الشاملة — من المراقبة الشرطية بالذكاء الاصطناعي إلى تحرير الرهن العقاري — يعيد تشكيل المشهد السياسي السويدي على جبهات متعددة.">
   <meta name="keywords" content="السويد, ريكسداغ, تحليل مسائي, التعرف على الوجه بالذكاء الاصطناعي, إصلاح الرهن العقاري, المراقبة, الإسكان, البرلمان, مقترحات حكومية">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="ريكسداغمونيتور - استخبارات البرلمان السويدي">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="وقت القراءة">
   <meta name="twitter:data1" content="٨ دقائق للقراءة">
   <meta name="twitter:label2" content="نوع المقال">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">انتقل إلى المحتوى الرئيسي</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="التبديل إلى الوضع الداكن"
+        title="التبديل إلى الوضع الداكن"
+        data-label-dark="التبديل إلى الوضع الفاتح"
+        data-label-light="التبديل إلى الوضع الداكن">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="إصدارات اللغة">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -113,7 +126,7 @@
     <a href="2026-03-03-evening-analysis-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
     <a href="2026-03-03-evening-analysis-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
     <a href="2026-03-03-evening-analysis-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
-    <a href="2026-03-03-evening-analysis-ar.html" class="lang-link active" hreflang="ar">🇸🇦 العربية</a>
+    <a href="2026-03-03-evening-analysis-ar.html" class="lang-link active" hreflang="ar" aria-current="page">🇸🇦 العربية</a>
     <a href="2026-03-03-evening-analysis-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
     <a href="2026-03-03-evening-analysis-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
     <a href="2026-03-03-evening-analysis-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
@@ -124,7 +137,7 @@
     <a href="index_ar.html" class="back-to-news">&rarr; العودة إلى الأخبار</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>رهان السويد على المراقبة وإصلاح سوق الإسكان</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">شهد يوم الثلاثاء في ستوكهولم وابلاً تشريعياً سيتردد صداه في المجتمع السويدي لسنوات. قدمت الحكومة ثمانية مقترحات وتقريرين حكوميين، أبرزها مشروع قانون تاريخي يُجيز للشرطة استخدام التعرف على الوجه بالذكاء الاصطناعي في الوقت الفعلي، إلى جانب موافقة اللجنة المالية على تحرير الرهن العقاري. مجتمعةً، تكشف مخرجات هذا اليوم عن حكومة تسعى في آن واحد نحو صلاحيات أمنية أقوى وتخفيف الضوابط الاقتصادية — استراتيجية مزدوجة تختبر حدود الخيمة الأيديولوجية للائتلاف الحاكم.</p>
 
       <h2>القصة الرئيسية لليوم: المراقبة بالذكاء الاصطناعي تدخل الشرطة السويدية</h2>
@@ -201,7 +214,7 @@
           <li><strong>أسئلة السياسة الخارجية:</strong> ردود وزارية على الاستجوابات حول سوريا وفنزويلا متوقعة</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">تم إنشاء هذا المقال باستخدام أدوات آلية وبيانات من المصادر البرلمانية والحكومية الرسمية السويدية. يتم تحسين المحتوى باستمرار — <a href="https://github.com/Hack23/riksdagsmonitor/issues">أبلغ عن مشكلات أو اقترح تحسينات على GitHub</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>석간 분석: 스웨덴의 감시 도박과 주택 정책 대전환</title>
   <meta name="description" content="AI 기반 경찰 감시에서 주택담보대출 규제 완화까지, 광범위한 정부 행동이 스웨덴의 정책 지형을 여러 전선에서 재편한 하루.">
   <meta name="keywords" content="스웨덴, 국회, 석간 분석, AI 안면인식, 주택담보대출 개혁, 감시, 주택, 의회, 정부 제안">
@@ -32,6 +33,7 @@
   <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - 스웨덴 의회 인텔리전스">
   <meta name="twitter:site" content="@riksdagsmonitor">
+  <meta name="twitter:creator" content="@jamessorling">
   <meta name="twitter:label1" content="읽기 시간">
   <meta name="twitter:data1" content="8분 소요">
   <meta name="twitter:label2" content="기사 유형">
@@ -60,6 +62,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 
   <script type="application/ld+json">
   {
@@ -102,6 +107,14 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="다크 테마로 전환"
+        title="다크 테마로 전환"
+        data-label-dark="라이트 테마로 전환"
+        data-label-light="다크 테마로 전환">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
   <nav class="language-switcher" role="navigation" aria-label="언어 버전">
     <a href="2026-03-03-evening-analysis-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
@@ -116,7 +129,7 @@
     <a href="2026-03-03-evening-analysis-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
     <a href="2026-03-03-evening-analysis-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
     <a href="2026-03-03-evening-analysis-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
-    <a href="2026-03-03-evening-analysis-ko.html" class="lang-link active" hreflang="ko">🇰🇷 한국어</a>
+    <a href="2026-03-03-evening-analysis-ko.html" class="lang-link active" hreflang="ko" aria-current="page">🇰🇷 한국어</a>
     <a href="2026-03-03-evening-analysis-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
 
@@ -124,7 +137,7 @@
     <a href="index_ko.html" class="back-to-news">&larr; 뉴스 목록으로 돌아가기</a>
   </div>
 
-  <div class="news-article" id="main-content">
+  <article class="news-article" id="main-content">
     <header class="article-header">
       <h1>스웨덴의 감시 도박과 주택 정책 대전환</h1>
       <div class="article-meta">
@@ -136,7 +149,7 @@
       </div>
     </header>
 
-    <article class="article-content">
+    <div class="article-content">
       <p class="lede">스톡홀름의 화요일은 스웨덴 사회에 수년간 파장을 미칠 입법 공세를 쏟아냈다. 정부는 8건의 제안과 2건의 정부 보고서를 제출했으며, 그 중심에는 경찰의 실시간 AI 안면인식 사용을 허가하는 획기적 법안과 주택담보대출 규제 완화를 지지하는 재정위원회의 권고가 있다. 종합하면, 이날의 결과물은 정부가 더 강력한 치안 권한을 추구하는 동시에 경제 규제를 완화하는 이중 전략을 취하고 있음을 드러낸다 — 연립정권의 이념적 수용 범위의 한계를 시험하는 전략이다.</p>
 
       <h2>오늘의 주요 기사: AI 감시가 스웨덴 경찰에 도입되다</h2>
@@ -201,7 +214,7 @@
           <li><strong>외교 정책 질의:</strong> 시리아 및 베네수엘라에 관한 대정부질문에 대한 장관 답변 예상</li>
         </ul>
       </section>
-    </article>
+    </div>
 
     <footer class="article-footer">
       <div class="article-sources">
@@ -215,7 +228,7 @@
       </div>
       <p class="footer-disclaimer">이 기사는 자동화 도구와 스웨덴의 공식 의회·정부 출처 데이터를 사용하여 생성되었습니다. 콘텐츠는 지속적으로 개선됩니다 — <a href="https://github.com/Hack23/riksdagsmonitor/issues">GitHub에서 문제를 보고하거나 개선을 제안해 주세요</a>.</p>
     </footer>
-  </div>
+  </article>
   <script src="../js/theme-toggle.js" defer></script>
 </body>
 </html>
