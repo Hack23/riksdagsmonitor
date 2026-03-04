@@ -177,6 +177,7 @@ import {
   calculateReadTime,
   generateSources,
   generateContentTitle,
+  filterFreshDocuments,
   type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -253,7 +254,7 @@ export async function generateMotions(options: GenerationOptions = {}): Promise<
     const client = new MCPClient();
     
     console.log('  🔄 Fetching motions from riksdag-regering-mcp...');
-    const motions = await client.fetchMotions(limit) as RawDocument[];
+    const motions = filterFreshDocuments(await client.fetchMotions(limit) as RawDocument[]);
     mcpCalls.push({ tool: 'get_motioner', result: motions });
     console.log(`  📊 Found ${motions.length} motions`);
     

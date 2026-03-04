@@ -176,6 +176,7 @@ import {
   calculateReadTime,
   generateSources,
   generateContentTitle,
+  filterFreshDocuments,
   type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -237,7 +238,7 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
     const client = new MCPClient();
     
     console.log('  🔄 Fetching propositions from riksdag-regering-mcp...');
-    const propositions = await client.fetchPropositions(limit) as RawDocument[];
+    const propositions = filterFreshDocuments(await client.fetchPropositions(limit) as RawDocument[]);
     mcpCalls.push({ tool: 'get_propositioner', result: propositions });
     console.log(`  📊 Found ${propositions.length} propositions`);
     

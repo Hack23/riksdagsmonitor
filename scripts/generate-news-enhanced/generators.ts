@@ -14,6 +14,7 @@ import {
   generateMetadata,
   calculateReadTime,
   generateSources,
+  filterFreshDocuments,
   type RawDocument,
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -156,7 +157,7 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
     const client: MCPClient = await getSharedClient();
 
     console.log('  🔄 Fetching committee reports from riksdag-regering-mcp...');
-    let reports: unknown[] = await client.fetchCommitteeReports(10);
+    let reports: unknown[] = filterFreshDocuments(await client.fetchCommitteeReports(10) as RawDocument[]);
     console.log(`  📊 Found ${reports.length} committee reports`);
 
     if (reports.length === 0) {
@@ -240,7 +241,7 @@ export async function generatePropositions(): Promise<GenerationResult> {
     const client: MCPClient = await getSharedClient();
 
     console.log('  🔄 Fetching propositions from riksdag-regering-mcp...');
-    let propositions: unknown[] = await client.fetchPropositions(10);
+    let propositions: unknown[] = filterFreshDocuments(await client.fetchPropositions(10) as RawDocument[]);
     console.log(`  📊 Found ${propositions.length} propositions`);
 
     if (propositions.length === 0) {
@@ -324,7 +325,7 @@ export async function generateMotions(): Promise<GenerationResult> {
     const client: MCPClient = await getSharedClient();
 
     console.log('  🔄 Fetching motions from riksdag-regering-mcp...');
-    let motions: unknown[] = await client.fetchMotions(10);
+    let motions: unknown[] = filterFreshDocuments(await client.fetchMotions(10) as RawDocument[]);
     console.log(`  📊 Found ${motions.length} motions`);
 
     if (motions.length === 0) {

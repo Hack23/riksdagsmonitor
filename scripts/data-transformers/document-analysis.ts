@@ -22,6 +22,7 @@ import {
   generateEnhancedSummary,
   normalizePartyKey,
   partyMotionSuccessRate,
+  formatDocumentDate,
 } from './helpers.js';
 import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from './policy-analysis.js';
 
@@ -279,11 +280,12 @@ export function renderMotionEntry(motion: RawDocument, lang: Language | string):
 
   const readFullVal = L(lang, 'readFullMotion');
   const whyItMattersVal = L(lang, 'whyItMatters');
+  const dateHtml = formatDocumentDate(motion, lang);
 
   return `
     <div class="motion-entry">
       <h3>${titleHtml}</h3>
-      <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>
+      <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>${dateHtml ? `\n      <p>${dateHtml}</p>` : ''}
       <p>${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(motion, lang, 'mot')}</p>
       <p><a href="${sanitizeUrl(motion.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>

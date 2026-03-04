@@ -19,6 +19,7 @@ import {
   getCommitteeName,
   normalizePartyKey,
   generateEnhancedSummary,
+  formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from '../policy-analysis.js';
 import {
@@ -89,10 +90,11 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
       const propSigVal = L(lang, 'propSignificance');
       const readFullVal = L(lang, 'readFullProp');
       const whyItMattersVal = L(lang, 'whyItMatters');
+      const dateHtml = formatDocumentDate(prop, lang);
 
       content += `
     <div class="proposition-entry">
-      <${headingTag}>${titleHtml}</${headingTag}>
+      <${headingTag}>${titleHtml}</${headingTag}>${dateHtml ? `\n      <p>${dateHtml}</p>` : ''}
       <p>${escapeHtml(String(propSigVal))} ${summaryHtml}${referredLine}</p>
       <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(prop, lang, 'prop')}</p>
       <p><a href="${sanitizeUrl(prop.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
