@@ -39,9 +39,12 @@ describe('generateDeepAnalysisSection', () => {
     const docs = [makeDoc(), makeDoc({ parti: 'M' }), makeDoc({ parti: 'SD' })];
     const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'propositions' });
 
-    // Each 5W subsection heading should appear
     expect(result).toContain('Deep Analysis');
-    expect(result).toContain('<h3>');
+    expect(result).toContain('Key Actors');
+    expect(result).toContain('What Happened');
+    expect(result).toContain('Timeline &amp; Context');
+    expect(result).toContain('Why This Matters');
+    expect(result).toContain('Winners &amp; Losers');
   });
 
   it('renders localized labels in Swedish', () => {
