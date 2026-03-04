@@ -158,7 +158,9 @@ If it fails after 3 retries, call `safeoutputs___noop` with message "MCP server 
 
 ## Step 2: Detect Significant Events
 
-Query for today's activity — use **direct MCP tool calls** (the framework routes them automatically):
+Query for today's activity — use **direct MCP tool calls** (the framework routes them automatically).
+
+Replace `<today>` with today's date in `YYYY-MM-DD` format (from `date +%Y-%m-%d`). Replace `<rm>` with the riksmöte value calculated above.
 
 ```
 get_calendar_events({ from: "<today>", tom: "<today>", limit: 50 })
@@ -191,8 +193,8 @@ safeoutputs___noop({ "message": "No significant parliamentary events. Checked: v
 **🚨 ALWAYS use the TypeScript generation script — it handles MCP queries, HTML templating, all 14 languages, translation, and article quality internally.**
 
 ```bash
-# Parse languages input
-LANGUAGES_INPUT="<value from Workflow Dispatch Parameters>"
+# Use the languages workflow dispatch parameter (defaults to "all")
+LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
 
 case "$LANGUAGES_INPUT" in
@@ -225,13 +227,13 @@ fi
 ```
 
 - If `$NEW_ARTICLES` is non-empty → proceed to Step 4 (validate)
-- If empty AND script detected no significant events → call `safeoutputs___noop`
-- If empty AND script errored → see Fallback below
+- If empty AND `$SCRIPT_EXIT` is 0 (script ran successfully but found no significant events) → call `safeoutputs___noop`
+- If empty AND `$SCRIPT_EXIT` is non-zero (script error) → see Fallback below
 
 ### Fallback: Manual Generation (ONLY if script fails with error AND no articles created)
 
 If the script fails, generate articles manually ONE language at a time:
-1. Check elapsed time — if >= 35 minutes, stop and call noop with summary
+1. Check elapsed time — if >= 38 minutes, stop and call noop with summary
 2. Write HTML to `news/YYYY-MM-DD-{slug}-{lang}.html`
 3. Use `<link rel="stylesheet" href="../styles.css">` — NO embedded `<style>` tags
 4. Include language switcher, article-top-nav, Schema.org NewsArticle, hreflang tags
