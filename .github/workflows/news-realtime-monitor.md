@@ -145,13 +145,17 @@ date +"%Z: %A %Y-%m-%d %H:%M:%S"
 echo "============================"
 ```
 
-Then verify MCP connectivity:
+Then verify MCP connectivity — STEP 1: ALWAYS check data freshness first:
 ```
 get_sync_status({})
 ```
 If it fails after 3 retries, call `safeoutputs___noop` with message "MCP server unavailable". Do NOT fabricate content.
 
-## 📅 Riksmöte Calculation
+If data is stale (> 48 hours), add disclaimer. Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
+
+Tools with date params: `get_calendar_events` (from/tom), `search_dokument` (from_date/to_date), `search_regering` (dateFrom/dateTo). Other tools (`search_voteringar`, `get_betankanden`, `get_motioner`, `get_propositioner`, `search_anforanden`) require post-query filter by datum.
+
+## 📅 Riksmöte (Parliamentary Session) Calculation
 
 - Month ≥ September: `rm = "{year}/{nextYear's last 2 digits}"` (e.g., Oct 2026 → "2026/27")
 - Month < September: `rm = "{prevYear}/{year's last 2 digits}"` (e.g., Feb 2026 → "2025/26")
@@ -167,7 +171,7 @@ get_calendar_events({ from: "<today>", tom: "<today>", limit: 50 })
 search_dokument({ from_date: "<today>", limit: 30 })
 search_voteringar({ rm: "<rm>", limit: 20 })
 search_anforanden({ rm: "<rm>", limit: 20 })
-search_regering({ from_date: "<today>", limit: 30 })
+search_regering({ dateFrom: "<today>", dateTo: "<today>", limit: 30 })
 get_propositioner({ rm: "<rm>", limit: 20 })
 get_betankanden({ rm: "<rm>", limit: 20 })
 ```
@@ -271,7 +275,9 @@ fi
 
 ## Step 5: Commit & Create PR
 
-**IMPORTANT**: Only commit article HTML files (`news/YYYY-MM-DD-*.html`). Do NOT commit index files, metadata, or sitemap — those are generated at build time.
+### HOW SAFE PR CREATION WORKS
+
+⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
 git add news/
@@ -299,6 +305,10 @@ safeoutputs___create_pull_request({
 
 | Scenario | Action |
 |----------|--------|
+| Tool not found | Check MCP connection, retry `get_sync_status()` |
+| Empty results | Try broader rm or date range |
+| Timeout | Reduce limit params, call safe output immediately |
+| Stale data (> 48 hours) | Add disclaimer, still generate with caveat |
 | MCP unavailable after 3 retries | `safeoutputs___noop` with "MCP unavailable" message |
 | No significant events | `safeoutputs___noop` (legitimate — most common outcome) |
 | Script generates articles | Validate → commit → `safeoutputs___create_pull_request` |

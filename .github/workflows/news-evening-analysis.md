@@ -157,18 +157,70 @@ echo "Day of week: $DAY_OF_WEEK (6=Saturday weekly wrap-up)"
 echo "============================"
 ```
 
-### Riksmöte Calculation
+## 📅 Riksmöte (Parliamentary Session) Calculation
 - September or later: `rm = "{currentYear}/{nextYear's last 2 digits}"`
 - Before September: `rm = "{previousYear}/{currentYear's last 2 digits}"`
 - Example: February 2026 → `rm = "2025/26"`
 
 ### MCP Health Gate
 
+STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data.
+
 1. Call `get_sync_status({})` — if successful, proceed
 2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
 3. If ALL 3 attempts fail → `safeoutputs___noop` with "MCP server unavailable after 3 connection attempts."
 
 **ALL article content MUST originate from live MCP data.**
+
+### DATA FRESHNESS CHECK
+
+Parse sync status and compute `hoursSinceSync = (Date.now() - new Date(last_updated).getTime()) / 3600000`. If hoursSinceSync > 48, data is stale — add a disclaimer note in analysis and mention "stale data (> 48 hours old)". Example:
+```js
+const hoursSinceSync = (Date.now() - new Date(syncResult.last_updated).getTime()) / 3600000;
+if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
+```
+
+### IMPORTANT: Date Filtering in Analysis
+
+Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
+
+**Tools with native date params** (supports from/tom or dateFrom/dateTo):
+- `get_calendar_events` — supports `from`/`tom` parameters
+- `search_regering` — supports `dateFrom`/`dateTo` parameters
+- `analyze_g0v_by_department` — supports `dateFrom`/`dateTo` parameters
+
+**Tools requiring post-query filter by datum/publicerad/inlämnad:**
+- `search_voteringar` — filter by `datum` field
+- `get_betankanden` — filter by `publicerad` date
+- `get_motioner` — filter by `inlämnad` date
+- `get_propositioner` — filter by `publicerad` date
+- `search_anforanden` — filter by `datum` field
+
+Post-query filtering pattern:
+```js
+const fromDate = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+results.filter(d => new Date(d.datum) >= new Date(fromDate))
+```
+
+### Cross-Referencing Strategy
+
+Example 1: Committee Report Deep Dive
+```
+// 1. Fetch recent betänkanden
+// 2. Cross-reference with search_voteringar for the same beteckning
+```
+
+Example 2: Government Activity Analysis
+```
+// 1. Query search_regering for today's propositions
+// 2. Check get_propositioner for detailed data
+```
+
+Example 3: Party Behavior Analysis
+```
+// 1. Get voteringar grouped by party
+// 2. Compare with recent search_anforanden
+```
 
 ### Saturday vs Weekday Mode
 
@@ -303,7 +355,9 @@ fi
 
 ## Step 5: Commit & Create PR
 
-**IMPORTANT**: Only commit article HTML files. Do NOT commit index files, metadata, or sitemap.
+### HOW SAFE PR CREATION WORKS
+
+⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
 git add news/
@@ -323,7 +377,12 @@ safeoutputs___create_pull_request({
 
 | Scenario | Action |
 |----------|--------|
+| Tool not found | Check MCP connection, retry `get_sync_status()` |
+| Empty results | Try broader rm or date range |
+| Timeout | Reduce limit params, call safe output immediately |
+| Stale data (> 48 hours) | Add disclaimer, still generate with caveat |
 | MCP unavailable after 3 retries | `safeoutputs___noop` with "MCP unavailable" message |
+| Too broad results | Narrow date range or add filter criteria |
 | No significant parliamentary activity | `safeoutputs___noop` (legitimate) |
 | Articles generated | Validate → commit → `safeoutputs___create_pull_request` |
 | PR creation fails after articles committed | Let workflow FAIL (never use noop for PR failures) |

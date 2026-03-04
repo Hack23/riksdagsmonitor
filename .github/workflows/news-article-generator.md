@@ -155,18 +155,26 @@ date +"%Z: %A %Y-%m-%d %H:%M:%S"
 echo "============================"
 ```
 
-### Riksmöte Calculation
+## 📅 Riksmöte (Parliamentary Session) Calculation
 - September or later: `rm = "{currentYear}/{nextYear's last 2 digits}"`
 - Before September: `rm = "{previousYear}/{currentYear's last 2 digits}"`
 - Example: February 2026 → `rm = "2025/26"`
 
 ### MCP Health Gate
 
+STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data.
+
 1. Call `get_sync_status({})` — if successful, proceed
 2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
 3. If ALL 3 attempts fail → `safeoutputs___noop` with "MCP server unavailable after 3 connection attempts."
 
 **ALL article content MUST originate from live MCP data.** Never fabricate, recycle, or generate from cached data.
+
+### Data Freshness & Date Filtering
+
+Parse sync status: if data is stale (> 48 hours since last sync), add disclaimer. Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
+
+Tools with date params: `get_calendar_events` (from/tom), `search_dokument` (from_date/to_date), `search_regering` (dateFrom/dateTo). Other tools (`search_voteringar`, `get_betankanden`, `get_motioner`, `get_propositioner`, `search_anforanden`) require post-query filter by datum.
 
 ## Step 2: Determine Article Types & Languages
 
@@ -310,7 +318,9 @@ fi
 
 ## Step 5: Commit & Create PR
 
-**IMPORTANT**: Only commit article HTML files. Do NOT commit index files, metadata, or sitemap — those are generated at build time.
+### HOW SAFE PR CREATION WORKS
+
+⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
 git add news/
@@ -330,6 +340,10 @@ safeoutputs___create_pull_request({
 
 | Scenario | Action |
 |----------|--------|
+| Tool not found | Check MCP connection, retry `get_sync_status()` |
+| Empty results | Try broader rm or date range |
+| Timeout | Reduce limit params, call safe output immediately |
+| Stale data (> 48 hours) | Add disclaimer, still generate with caveat |
 | MCP unavailable after 3 retries | `safeoutputs___noop` with "MCP unavailable" message |
 | No data for requested types | `safeoutputs___noop` (legitimate — common on weekends) |
 | Script generates articles | Validate → commit → `safeoutputs___create_pull_request` |

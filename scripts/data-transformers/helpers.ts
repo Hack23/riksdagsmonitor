@@ -357,7 +357,8 @@ export function partyMotionSuccessRate(party: string | undefined, cia: CIAContex
 
 /**
  * Format a document publication date for display.
- * Returns an HTML string like `<span class="doc-date">Published: 2026-03-04</span>`
+ * Returns an HTML string like
+ * `<span class="doc-date"><strong>Published:</strong> <time datetime="2026-03-04">2026-03-04</time></span>`
  * using the localized "Published" label, or empty string if datum is missing.
  */
 export function formatDocumentDate(doc: RawDocument, lang: Language | string): string {
@@ -376,11 +377,18 @@ export function formatDocumentDate(doc: RawDocument, lang: Language | string): s
  * @returns Filtered array containing only fresh documents
  */
 export function filterFreshDocuments(docs: RawDocument[], maxAgeDays = 30): RawDocument[] {
-  const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - maxAgeDays);
-  const cutoffStr = cutoff.toISOString().slice(0, 10);
+  const cutoffMs = Date.now() - maxAgeDays * 24 * 60 * 60 * 1000;
   return docs.filter(doc => {
-    if (!doc.datum) return true; // keep documents without dates
-    return doc.datum >= cutoffStr;
+    if (!doc.datum) {
+      // keep documents without dates (benefit of the doubt)
+      return true;
+    }
+    // Interpret datum (YYYY-MM-DD) as midnight UTC for deterministic comparison
+    const docTime = Date.parse(`${doc.datum}T00:00:00Z`);
+    if (Number.isNaN(docTime)) {
+      // If the date cannot be parsed, keep the document rather than dropping it
+      return true;
+    }
+    return docTime >= cutoffMs;
   });
 }
