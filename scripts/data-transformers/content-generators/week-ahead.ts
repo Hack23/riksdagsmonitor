@@ -17,6 +17,7 @@ import {
   sanitizeUrl,
   isHighPriority,
   formatDayName,
+  formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance } from '../policy-analysis.js';
 import { findRelatedDocuments, findRelatedQuestions, extractMinister, generateDeepAnalysisSection } from './shared.js';
@@ -152,6 +153,11 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
 
       content += `\n    <div class="document-entry">\n`;
       content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+      const datumVal = rec['datum'];
+      if (datumVal) {
+        const publishedLabel = L(lang, 'published');
+        content += `      <p><span class="doc-date"><strong>${escapeHtml(String(publishedLabel))}:</strong> <time datetime="${escapeHtml(datumVal)}">${escapeHtml(datumVal)}</time></span></p>\n`;
+      }
       if (significance) {
         content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
       }

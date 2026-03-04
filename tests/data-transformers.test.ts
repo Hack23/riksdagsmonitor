@@ -48,6 +48,7 @@ interface MockArticlePayload {
     organ?: string;
     dokumentnamn?: string;
     dok_id?: string;
+    datum?: string;
   }>;
   propositions?: Array<{
     titel?: string;
@@ -56,6 +57,7 @@ interface MockArticlePayload {
     organ?: string;
     dokumentnamn?: string;
     dok_id?: string;
+    datum?: string;
   }>;
 
   motions?: Array<{
@@ -70,6 +72,7 @@ interface MockArticlePayload {
     notis?: string;
     summary?: string;
     undertitel?: string;
+    datum?: string;
   }>;
   documents?: Array<{
     titel?: string;

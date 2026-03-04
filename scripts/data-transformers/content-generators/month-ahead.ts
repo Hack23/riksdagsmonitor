@@ -11,10 +11,12 @@ import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
 import type { ArticleContentData, WeekAheadData, RawDocument } from '../types.js';
 import {
+  L,
   svSpan,
   sanitizeUrl,
   getCommitteeName,
   normalizePartyKey,
+  formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance } from '../policy-analysis.js';
 import { generateWeekAheadContent } from './week-ahead.js';
@@ -83,6 +85,11 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
       const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : '';
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+      const datumVal = rec['datum'];
+      if (datumVal) {
+        const publishedLabel = L(lang, 'published');
+        content += `      <p><span class="doc-date"><strong>${escapeHtml(String(publishedLabel))}:</strong> <time datetime="${escapeHtml(datumVal)}">${escapeHtml(datumVal)}</time></span></p>\n`;
+      }
       if (significance) {
         content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
       }
@@ -130,6 +137,11 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
         const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : '';
         content += `    <div class="document-entry">\n`;
         content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+        const datumVal2 = rec['datum'];
+        if (datumVal2) {
+          const publishedLabel = L(lang, 'published');
+          content += `      <p><span class="doc-date"><strong>${escapeHtml(String(publishedLabel))}:</strong> <time datetime="${escapeHtml(datumVal2)}">${escapeHtml(datumVal2)}</time></span></p>\n`;
+        }
         content += `    </div>\n`;
       });
     });
