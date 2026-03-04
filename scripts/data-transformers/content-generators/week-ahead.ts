@@ -9,7 +9,7 @@
 
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
-import type { ArticleContentData, WeekAheadData } from '../types.js';
+import type { WeekAheadData } from '../types.js';
 import { getPillarTransition } from '../../editorial-pillars.js';
 import {
   L,
@@ -19,12 +19,11 @@ import {
   formatDayName,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance } from '../policy-analysis.js';
-import { findRelatedDocuments, findRelatedQuestions, extractMinister } from './shared.js';
+import { findRelatedDocuments, findRelatedQuestions, extractMinister, generateDeepAnalysisSection } from './shared.js';
 
 export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
-  // Cast to ArticleContentData to access documents field (passed via switch cast)
-  const documents = (data as unknown as ArticleContentData).documents ?? [];
+  const documents = data.documents ?? [];
   const questions = data.questions ?? [];
   const interpellations = data.interpellations ?? [];
 
@@ -258,6 +257,16 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
   const hasInterpData = interpellations.length > 0;
 
   if (hasEventData || hasDocData || hasQData || hasInterpData) {
+    // Deep Analysis section (5W framework) — synthesize all documents
+    const allWeekDocs = [...documents, ...questions, ...interpellations];
+    const weekCia = data.ciaContext;
+    content += generateDeepAnalysisSection({
+      documents: allWeekDocs,
+      lang,
+      cia: weekCia,
+      articleType: 'week-ahead',
+    });
+
     content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
     content += `    <div class="context-box">\n      <ul>\n`;
 

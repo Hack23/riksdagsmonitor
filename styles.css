@@ -9384,6 +9384,39 @@ body.news-page {
   margin: 0.5rem 0;
 }
 
+/* Deep Analysis Section (5W Framework) */
+.news-article .deep-analysis {
+  background: var(--badge-bg, #f0f4f8);
+  border: 2px solid var(--primary-color, #006633);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .deep-analysis h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  color: var(--primary-color, #006633);
+  border-bottom: 2px solid var(--primary-color, #006633);
+  padding-bottom: 0.75rem;
+}
+
+.news-article .deep-analysis h3 {
+  font-size: 1.15rem;
+  margin: 1.5rem 0 0.75rem 0;
+  color: var(--primary-dark, #004d26);
+}
+
+.news-article .deep-analysis p {
+  margin: 0.5rem 0;
+  line-height: 1.7;
+}
+
+[dir="rtl"] .news-article .deep-analysis {
+  direction: rtl;
+  text-align: right;
+}
+
 /* Watch Section */
 .news-article .watch-section {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);

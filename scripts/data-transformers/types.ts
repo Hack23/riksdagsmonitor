@@ -80,6 +80,8 @@ export interface WeekAheadData {
   questions?: RawDocument[];
   /** Parliamentary interpellations (interpellationer) for the coming period */
   interpellations?: RawDocument[];
+  /** CIA intelligence context for enriched analysis */
+  ciaContext?: CIAContext;
 }
 
 /**

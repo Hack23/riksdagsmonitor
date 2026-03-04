@@ -27,7 +27,7 @@ import {
   generateDocumentIntelligenceAnalysis,
   PROP_TITLE_SUFFIX_REGEX,
 } from '../document-analysis.js';
-import { TITLE_SUFFIX_TEMPLATES } from './shared.js';
+import { generateDeepAnalysisSection } from './shared.js';
 
 export function generateCommitteeContent(data: ArticleContentData, lang: Language | string): string {
   const reports = data.reports || [];
@@ -112,6 +112,14 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
   if (pulseTransition) {
     content += `    <p class="pillar-transition">${escapeHtml(pulseTransition)}</p>\n`;
   }
+
+  // Deep Analysis section (5W framework)
+  content += generateDeepAnalysisSection({
+    documents: reports,
+    lang,
+    cia: data.ciaContext,
+    articleType: 'committee-reports',
+  });
 
   // Key takeaways section
   content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;

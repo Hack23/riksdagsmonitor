@@ -7,6 +7,7 @@
  * @license Apache-2.0
  */
 
+import { generateDeepAnalysisSection } from './shared.js';
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
 import type { ArticleContentData, RawDocument } from '../types.js';
@@ -126,6 +127,14 @@ export function generateMotionsContent(data: ArticleContentData, lang: Language 
       thematicMotions.forEach(motion => { content += renderMotionEntry(motion, lang); });
     }
   }
+
+  // Deep Analysis section (5W framework)
+  content += generateDeepAnalysisSection({
+    documents: motions,
+    lang,
+    cia: data.ciaContext,
+    articleType: 'motions',
+  });
 
   // Party activity breakdown
   if (partyCount > 0) {

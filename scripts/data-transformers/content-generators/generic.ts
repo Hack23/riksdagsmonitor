@@ -26,7 +26,7 @@ import {
   renderMotionEntry,
   generateDocumentIntelligenceAnalysis,
 } from '../document-analysis.js';
-import { TITLE_SUFFIX_TEMPLATES } from './shared.js';
+import { TITLE_SUFFIX_TEMPLATES, generateDeepAnalysisSection } from './shared.js';
 
 export function generateGenericContent(data: ArticleContentData, lang: Language | string): string {
   const docs = data.documents || [];
@@ -236,6 +236,14 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   if (oppositionTransition) {
     content += `    <p class="pillar-transition">${escapeHtml(oppositionTransition)}</p>\n`;
   }
+
+  // Deep Analysis section (5W framework)
+  content += generateDeepAnalysisSection({
+    documents: docs,
+    lang,
+    cia,
+    articleType: 'generic',
+  });
 
   // ── Key takeaways ────────────────────────────────────────────────────────
   content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
