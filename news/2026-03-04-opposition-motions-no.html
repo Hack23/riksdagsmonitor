@@ -110,10 +110,10 @@
   </script>
   
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https:">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   
   <!-- Anti-flash theme snippet -->
-  <script>try{const t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.add('light-theme')}catch(e){}</script>
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Hopp til hovedinnhold</a>
@@ -134,7 +134,7 @@
     <a href="2026-03-04-opposition-motions-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
   </nav>
 <div class="article-top-nav">
-  <a href="index.html" class="back-to-news">
+  <a href="index_no.html" class="back-to-news">
     ← Tilbake til nyheter
   </a>
 </div>
@@ -332,10 +332,10 @@
     <h2>Partiaktivitetsoversikt</h2>
     <div class="context-box">
       <ul>
-        <li>Social Democrats (S): 7 motions</li>
-        <li>Green Party (MP): 5 motions</li>
-        <li>Centre Party (C): 4 motions</li>
-        <li>Left Party (V): 4 motions</li>
+        <li>Socialdemokraterna (S): 7 forslag</li>
+        <li>Miljöpartiet de gröna (MP): 5 forslag</li>
+        <li>Centerpartiet (C): 4 forslag</li>
+        <li>Vänsterpartiet (V): 4 forslag</li>
       </ul>
     </div>
 
@@ -355,14 +355,21 @@
     </div>
     
     <div class="article-nav">
-      <a href="index.html" class="back-to-news">
+      <a href="index_no.html" class="back-to-news">
         ← Tilbake til nyheter
       </a>
     </div>
   </footer>
 </article>
 
-<button id="theme-toggle" aria-label="Bytt til mørkt tema" title="Bytt til mørkt tema" data-label-dark="Bytt til mørkt tema" data-label-light="Bytt til lyst tema">🌙</button>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Bytt til mørkt tema"
+        title="Bytt til mørkt tema"
+        data-label-dark="Bytt til lyst tema"
+        data-label-light="Bytt til mørkt tema">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <script src="../js/theme-toggle.js"></script>
 </body>
 </html>
