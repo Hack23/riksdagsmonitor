@@ -260,6 +260,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
   if (hasEventData || hasDocData || hasQData || hasInterpData) {
     // Deep Analysis section (5W framework) — synthesize all documents
     const allWeekDocs = [...documents, ...questions, ...interpellations];
+    // WeekAheadData is cast from ArticleContentData in the pipeline (see line 27)
     const weekCia = (data as unknown as ArticleContentData).ciaContext;
     content += generateDeepAnalysisSection({
       documents: allWeekDocs,

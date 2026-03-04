@@ -190,7 +190,7 @@ function oppPressureText(lang: Language | string, opp: number): string {
     en: `The opposition is applying significant pressure with ${opp} motions, signalling broad dissatisfaction with government policy.`,
     sv: `Oppositionen utövar betydande tryck med ${opp} motioner, vilket signalerar brett missnöje med regeringens politik.`,
   };
-  return templates[lang as string] ?? templates.en ?? `The opposition is applying significant pressure with ${opp} motions.`;
+  return templates[lang as string] ?? templates.en;
 }
 
 function balancedText(lang: Language | string): string {
@@ -228,7 +228,9 @@ function neutralText(lang: Language | string): string {
 export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
   const { documents, lang, cia, articleType, whyContext } = opts;
 
-  // Require at least 2 documents to generate a meaningful deep analysis
+  // Deep analysis requires at least 2 documents to produce meaningful
+  // cross-document insights (actor patterns, domain aggregation, etc.).
+  // Single-document analysis is already handled by per-entry "Why It Matters".
   if (!documents || documents.length < 2) return '';
 
   const lbl = (key: string): string => {
