@@ -377,7 +377,9 @@ export function formatDocumentDate(doc: RawDocument, lang: Language | string): s
  * @returns Filtered array containing only fresh documents
  */
 export function filterFreshDocuments(docs: RawDocument[], maxAgeDays = 30): RawDocument[] {
-  const cutoffMs = Date.now() - maxAgeDays * 24 * 60 * 60 * 1000;
+  // Normalize cutoff to midnight UTC so day-based threshold is consistent
+  const now = new Date();
+  const cutoffMs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - maxAgeDays * 24 * 60 * 60 * 1000;
   return docs.filter(doc => {
     if (!doc.datum) {
       // keep documents without dates (benefit of the doubt)
