@@ -354,3 +354,43 @@ export function partyMotionSuccessRate(party: string | undefined, cia: CIAContex
   const p = cia.partyPerformance.find(x => x.id === party || x.partyName.toLowerCase().startsWith(party.toLowerCase()));
   return p ? p.metrics.successRate : null;
 }
+
+/**
+ * Format a document publication date for display.
+ * Returns an HTML string like
+ * `<span class="doc-date"><strong>Published:</strong> <time datetime="2026-03-04">2026-03-04</time></span>`
+ * using the localized "Published" label, or empty string if datum is missing.
+ */
+export function formatDocumentDate(doc: RawDocument, lang: Language | string): string {
+  const datum = doc.datum;
+  if (!datum) return '';
+  const publishedLabel = L(lang, 'published');
+  return `<span class="doc-date"><strong>${escapeHtml(String(publishedLabel))}:</strong> <time datetime="${escapeHtml(datum)}">${escapeHtml(datum)}</time></span>`;
+}
+
+/**
+ * Filter documents to only include those published within a given number of days.
+ * Documents without a `datum` field are kept (benefit of the doubt).
+ *
+ * @param docs - Array of raw documents
+ * @param maxAgeDays - Maximum age in days (default 30)
+ * @returns Filtered array containing only fresh documents
+ */
+export function filterFreshDocuments(docs: RawDocument[], maxAgeDays = 30): RawDocument[] {
+  // Normalize cutoff to midnight UTC so day-based threshold is consistent
+  const now = new Date();
+  const cutoffMs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - maxAgeDays * 24 * 60 * 60 * 1000;
+  return docs.filter(doc => {
+    if (!doc.datum) {
+      // keep documents without dates (benefit of the doubt)
+      return true;
+    }
+    // Interpret datum (YYYY-MM-DD) as midnight UTC for deterministic comparison
+    const docTime = Date.parse(`${doc.datum}T00:00:00Z`);
+    if (Number.isNaN(docTime)) {
+      // If the date cannot be parsed, keep the document rather than dropping it
+      return true;
+    }
+    return docTime >= cutoffMs;
+  });
+}

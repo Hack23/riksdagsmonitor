@@ -45,6 +45,10 @@ export interface RawDocument {
   intressent_namn?: string;
   author?: string;
   parti?: string;
+  /** Publication date from the MCP API (ISO format YYYY-MM-DD) */
+  datum?: string;
+  /** Riksmöte (parliamentary session, e.g. "2025/26") */
+  rm?: string;
   /** Full document text loaded via get_dokument_innehall */
   fullText?: string;
   /** Full document HTML content from API */

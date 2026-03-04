@@ -15,6 +15,7 @@ import {
   sanitizeUrl,
   getCommitteeName,
   normalizePartyKey,
+  formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance } from '../policy-analysis.js';
 import { generateWeekAheadContent } from './week-ahead.js';
@@ -83,6 +84,8 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
       const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : '';
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+      const propDateHtml = formatDocumentDate(prop as RawDocument, lang);
+      if (propDateHtml) content += `      <p>${propDateHtml}</p>\n`;
       if (significance) {
         content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
       }
@@ -130,6 +133,8 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
         const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : '';
         content += `    <div class="document-entry">\n`;
         content += `      <h4>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">` : ''}${titleHtml}${safeUrl ? '</a>' : ''}</h4>\n`;
+        const reportDateHtml = formatDocumentDate(report as RawDocument, lang);
+        if (reportDateHtml) content += `      <p>${reportDateHtml}</p>\n`;
         content += `    </div>\n`;
       });
     });

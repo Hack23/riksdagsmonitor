@@ -176,6 +176,7 @@ import {
   calculateReadTime,
   generateSources,
   generateContentTitle,
+  filterFreshDocuments,
   type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -242,7 +243,7 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
     const client = new MCPClient();
     
     console.log('  🔄 Fetching committee reports from riksdag-regering-mcp...');
-    const reports = await client.fetchCommitteeReports(limit) as RawDocument[];
+    const reports = filterFreshDocuments(await client.fetchCommitteeReports(limit) as RawDocument[]);
     mcpCalls.push({ tool: 'get_betankanden', result: reports });
     console.log(`  📊 Found ${reports.length} committee reports`);
     

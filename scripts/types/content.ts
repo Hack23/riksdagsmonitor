@@ -80,6 +80,8 @@ export interface ContentLabelSet {
   readFullMotion: string;
   policyContext: string;
   filedBy: string;
+  /** Label for document publication date (e.g. "Published", "Publicerad") */
+  published: string;
   // Analytical section labels
   politicalContext: string;
   policyImplications: string;

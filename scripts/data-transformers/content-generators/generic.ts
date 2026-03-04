@@ -17,6 +17,7 @@ import {
   sanitizeUrl,
   getCommitteeName,
   normalizePartyKey,
+  formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from '../policy-analysis.js';
 import {
@@ -136,9 +137,11 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
         : escapedTitle;
 
       const analysis = generateDocumentIntelligenceAnalysis(doc, docType, cia, lang);
+      const dateHtml = formatDocumentDate(doc, lang);
 
       content += `    <div class="document-entry">\n`;
       content += `      <h4>${titleHtml}</h4>\n`;
+      if (dateHtml) content += `      <p>${dateHtml}</p>\n`;
       content += `      <p>${analysis}</p>\n`;
       if (doc.url) {
         content += `      <p><a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}</a></p>\n`;

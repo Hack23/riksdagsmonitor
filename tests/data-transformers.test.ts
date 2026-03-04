@@ -16,7 +16,9 @@ import {
   groupMotionsByProposition,
   groupPropositionsByCommittee,
   CONTENT_LABELS,
-  L
+  L,
+  formatDocumentDate,
+  filterFreshDocuments
 } from '../scripts/data-transformers.js';
 import type { Language } from '../scripts/types/language.js';
 import type { EventGridItem, WatchPoint, ArticleMetadata } from '../scripts/types/article.js';
@@ -46,6 +48,7 @@ interface MockArticlePayload {
     organ?: string;
     dokumentnamn?: string;
     dok_id?: string;
+    datum?: string;
   }>;
   propositions?: Array<{
     titel?: string;
@@ -54,6 +57,7 @@ interface MockArticlePayload {
     organ?: string;
     dokumentnamn?: string;
     dok_id?: string;
+    datum?: string;
   }>;
 
   motions?: Array<{
@@ -68,6 +72,7 @@ interface MockArticlePayload {
     notis?: string;
     summary?: string;
     undertitel?: string;
+    datum?: string;
   }>;
   documents?: Array<{
     titel?: string;
@@ -2490,5 +2495,134 @@ describe('groupMotionsByProposition (#462)', () => {
     expect(content).not.toContain('Independent Motions');
     expect(content).toContain('M1');
     expect(content).toContain('M2');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// formatDocumentDate
+// ---------------------------------------------------------------------------
+describe('formatDocumentDate', () => {
+  it('returns empty string when datum is missing', () => {
+    const result = formatDocumentDate({ titel: 'Test' }, 'en');
+    expect(result).toBe('');
+  });
+
+  it('returns HTML span with date when datum is present', () => {
+    const result = formatDocumentDate({ titel: 'Test', datum: '2026-03-01' }, 'en');
+    expect(result).toContain('Published');
+    expect(result).toContain('2026-03-01');
+    expect(result).toContain('<time datetime="2026-03-01">');
+    expect(result).toContain('class="doc-date"');
+  });
+
+  it('uses localized label for Swedish', () => {
+    const result = formatDocumentDate({ datum: '2026-03-01' }, 'sv');
+    expect(result).toContain('Publicerad');
+  });
+
+  it('escapes HTML in datum field', () => {
+    const result = formatDocumentDate({ datum: '<script>alert(1)</script>' }, 'en');
+    expect(result).not.toContain('<script>');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// filterFreshDocuments
+// ---------------------------------------------------------------------------
+describe('filterFreshDocuments', () => {
+  it('keeps documents without a datum field', () => {
+    const docs = [{ titel: 'No date' }];
+    const result = filterFreshDocuments(docs);
+    expect(result).toHaveLength(1);
+  });
+
+  it('keeps recent documents within the threshold', () => {
+    const today = new Date().toISOString().slice(0, 10);
+    const docs = [{ titel: 'Today', datum: today }];
+    const result = filterFreshDocuments(docs, 30);
+    expect(result).toHaveLength(1);
+  });
+
+  it('removes old documents beyond the threshold', () => {
+    const docs = [{ titel: 'Old', datum: '2020-01-01' }];
+    const result = filterFreshDocuments(docs, 30);
+    expect(result).toHaveLength(0);
+  });
+
+  it('handles mixed fresh and stale documents', () => {
+    const today = new Date().toISOString().slice(0, 10);
+    const docs = [
+      { titel: 'Fresh', datum: today },
+      { titel: 'Stale', datum: '2020-01-01' },
+      { titel: 'No date' },
+    ];
+    const result = filterFreshDocuments(docs, 30);
+    expect(result).toHaveLength(2);
+    expect(result.map(d => d.titel)).toContain('Fresh');
+    expect(result.map(d => d.titel)).toContain('No date');
+  });
+
+  it('uses custom maxAgeDays parameter', () => {
+    const recent = new Date();
+    recent.setDate(recent.getDate() - 5);
+    const docs = [{ titel: '5 days old', datum: recent.toISOString().slice(0, 10) }];
+    expect(filterFreshDocuments(docs, 3)).toHaveLength(0);
+    expect(filterFreshDocuments(docs, 7)).toHaveLength(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Content generators include publication dates
+// ---------------------------------------------------------------------------
+describe('content generators include publication dates', () => {
+  it('committee-reports content includes publication date when datum is present', () => {
+    const content = generateArticleContent({
+      reports: [{
+        titel: 'Test Report',
+        organ: 'FiU',
+        datum: '2026-03-01',
+        url: 'https://example.com',
+      }],
+    } as MockArticlePayload, 'committee-reports', 'en') as string;
+    expect(content).toContain('Published');
+    expect(content).toContain('2026-03-01');
+    expect(content).toContain('class="doc-date"');
+  });
+
+  it('propositions content includes publication date when datum is present', () => {
+    const content = generateArticleContent({
+      propositions: [{
+        titel: 'Test Prop',
+        organ: 'FiU',
+        datum: '2026-02-28',
+        url: 'https://example.com',
+      }],
+    } as MockArticlePayload, 'propositions', 'en') as string;
+    expect(content).toContain('Published');
+    expect(content).toContain('2026-02-28');
+  });
+
+  it('motions content includes publication date when datum is present', () => {
+    const content = generateArticleContent({
+      motions: [{
+        titel: 'Test Motion',
+        parti: 'S',
+        datum: '2026-02-25',
+        url: 'https://example.com',
+      }],
+    } as MockArticlePayload, 'motions', 'en') as string;
+    expect(content).toContain('Published');
+    expect(content).toContain('2026-02-25');
+  });
+
+  it('committee-reports content omits date line when datum is absent', () => {
+    const content = generateArticleContent({
+      reports: [{
+        titel: 'Test Report',
+        organ: 'FiU',
+        url: 'https://example.com',
+      }],
+    } as MockArticlePayload, 'committee-reports', 'en') as string;
+    expect(content).not.toContain('class="doc-date"');
   });
 });

@@ -18,6 +18,7 @@ import {
   sanitizeUrl,
   getCommitteeName,
   generateEnhancedSummary,
+  formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from '../policy-analysis.js';
 import {
@@ -94,11 +95,12 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
       const reportSigVal = L(lang, 'reportSignificance');
       const readFullVal = L(lang, 'readFullReport');
       const whatThisMeansVal = L(lang, 'whatThisMeans');
+      const dateHtml = formatDocumentDate(report, lang);
 
       content += `
     <div class="report-entry">
       <h4>${titleHtml}</h4>
-      <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>
+      <p><strong>${L(lang, 'committee')}:</strong> ${escapeHtml(committeeName)}</p>${dateHtml ? `\n      <p>${dateHtml}</p>` : ''}
       <p>${escapeHtml(String(reportSigVal))} ${summaryHtml}</p>
       <p><strong>${escapeHtml(String(whatThisMeansVal))}:</strong> ${generateDeepPolicyAnalysis(report, lang, 'bet')}</p>
       <p><a href="${sanitizeUrl(report.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>

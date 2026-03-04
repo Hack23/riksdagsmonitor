@@ -32,7 +32,7 @@ export type {
 export { CONTENT_LABELS } from './constants.js';
 
 // ── Re-export helpers ──────────────────────────────────────────────────────
-export { L, isPersonProfileText } from './helpers.js';
+export { L, isPersonProfileText, formatDocumentDate, filterFreshDocuments } from './helpers.js';
 
 // ── Re-export calendar ─────────────────────────────────────────────────────
 export { transformCalendarToEventGrid, extractTopics, extractWatchPoints } from './calendar.js';

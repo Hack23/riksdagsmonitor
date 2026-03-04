@@ -37,6 +37,8 @@ export {
   // Helpers
   L,
   isPersonProfileText,
+  formatDocumentDate,
+  filterFreshDocuments,
 
   // Calendar
   transformCalendarToEventGrid,
