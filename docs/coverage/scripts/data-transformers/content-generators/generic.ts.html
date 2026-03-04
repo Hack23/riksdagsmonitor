@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.66% </span>
+                <span class="strong">84.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>138/163</span>
+                <span class='fraction'>141/167</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.72% </span>
+                <span class="strong">59.63% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>129/216</span>
+                <span class='fraction'>130/218</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.66% </span>
+                <span class="strong">83.97% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>128/153</span>
+                <span class='fraction'>131/156</span>
             </div>
         
             
@@ -378,7 +378,19 @@
 <a name='L313'></a><a href='#L313'>313</a>
 <a name='L314'></a><a href='#L314'>314</a>
 <a name='L315'></a><a href='#L315'>315</a>
-<a name='L316'></a><a href='#L316'>316</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -516,7 +528,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">134x</span>
+<span class="cline-any cline-yes">134x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">134x</span>
 <span class="cline-any cline-yes">134x</span>
 <span class="cline-any cline-yes">134x</span>
 <span class="cline-any cline-yes">134x</span>
@@ -619,6 +633,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -712,6 +734,7 @@ import {
   sanitizeUrl,
   getCommitteeName,
   normalizePartyKey,
+  formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from '../policy-analysis.js';
 import {
@@ -721,7 +744,7 @@ import {
   renderMotionEntry,
   generateDocumentIntelligenceAnalysis,
 } from '../document-analysis.js';
-import { TITLE_SUFFIX_TEMPLATES } from './shared.js';
+import { TITLE_SUFFIX_TEMPLATES, generateDeepAnalysisSection } from './shared.js';
 &nbsp;
 export function generateGenericContent(data: ArticleContentData, lang: Language | string): string {
   const docs = data.documents || [];
@@ -831,9 +854,11 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
         : escapedTitle;
 &nbsp;
       const analysis = generateDocumentIntelligenceAnalysis(doc, docType, cia, lang);
+      const dateHtml = formatDocumentDate(doc, lang);
 &nbsp;
       content += `    &lt;div class="document-entry"&gt;\n`;
       content += `      &lt;h4&gt;${titleHtml}&lt;/h4&gt;\n`;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (dateHtml) <span class="cstat-no" title="statement not covered" >content += `      &lt;p&gt;${dateHtml}&lt;/p&gt;\n`;</span>
       content += `      &lt;p&gt;${analysis}&lt;/p&gt;\n`;
       if (doc.url) {
         content += `      &lt;p&gt;&lt;a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer"&gt;${escapeHtml(doc.dokumentnamn || doc.dok_id || titleText)}&lt;/a&gt;&lt;/p&gt;\n`;
@@ -932,6 +957,14 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
     content += `    &lt;p class="pillar-transition"&gt;${escapeHtml(oppositionTransition)}&lt;/p&gt;\n`;
   }
 &nbsp;
+  // Deep Analysis section (5W framework)
+  content += generateDeepAnalysisSection({
+    documents: docs,
+    lang,
+    cia,
+    articleType: 'generic',
+  });
+&nbsp;
   // ── Key takeaways ────────────────────────────────────────────────────────
   content += `\n    &lt;h2&gt;${L(lang, 'keyTakeaways')}&lt;/h2&gt;\n`;
   content += `    &lt;div class="context-box"&gt;\n      &lt;ul&gt;\n`;
@@ -1015,7 +1048,7 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-03T17:02:47.529Z
+                at 2026-03-04T21:20:36.807Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

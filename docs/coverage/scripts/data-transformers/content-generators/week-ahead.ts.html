@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">83.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>151/181</span>
+                <span class='fraction'>156/187</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.92% </span>
+                <span class="strong">64.81% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>174/268</span>
+                <span class='fraction'>175/270</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.75% </span>
+                <span class="strong">83.24% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>144/174</span>
+                <span class='fraction'>149/179</span>
             </div>
         
             
@@ -411,7 +411,20 @@
 <a name='L346'></a><a href='#L346'>346</a>
 <a name='L347'></a><a href='#L347'>347</a>
 <a name='L348'></a><a href='#L348'>348</a>
-<a name='L349'></a><a href='#L349'>349</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -436,7 +449,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">209x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">209x</span>
 <span class="cline-any cline-yes">209x</span>
 <span class="cline-any cline-yes">209x</span>
@@ -568,6 +580,8 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -671,6 +685,16 @@
 <span class="cline-any cline-yes">209x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">209x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -770,7 +794,7 @@
 &nbsp;
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
-import type { ArticleContentData, WeekAheadData } from '../types.js';
+import type { WeekAheadData } from '../types.js';
 import { getPillarTransition } from '../../editorial-pillars.js';
 import {
   L,
@@ -778,14 +802,14 @@ import {
   sanitizeUrl,
   isHighPriority,
   formatDayName,
+  formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance } from '../policy-analysis.js';
-import { findRelatedDocuments, findRelatedQuestions, extractMinister } from './shared.js';
+import { findRelatedDocuments, findRelatedQuestions, extractMinister, generateDeepAnalysisSection } from './shared.js';
 &nbsp;
 export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
-  // Cast to ArticleContentData to access documents field (passed via switch cast)
-  const documents = (data as unknown as ArticleContentData).documents ?? [];
+  const documents = data.documents ?? [];
   const questions = data.questions ?? [];
   const interpellations = data.interpellations ?? [];
 &nbsp;
@@ -914,6 +938,8 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
 &nbsp;
       content += `\n    &lt;div class="document-entry"&gt;\n`;
       content += `      &lt;h4&gt;${safeUrl ? `&lt;a href="${safeUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>${titleHtml}${safeUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>&lt;/h4&gt;\n`;
+      const dateHtml = formatDocumentDate(doc as import('../types.js').RawDocument, lang);
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (dateHtml) <span class="cstat-no" title="statement not covered" >content += `      &lt;p&gt;${dateHtml}&lt;/p&gt;\n`;</span>
       <span class="missing-if-branch" title="else path not taken" >E</span>if (significance) {
         content += `      &lt;p class="policy-significance"&gt;${escapeHtml(significance)}&lt;/p&gt;\n`;
       }
@@ -1019,6 +1045,16 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
   const hasInterpData = interpellations.length &gt; 0;
 &nbsp;
   if (hasEventData || hasDocData || hasQData || hasInterpData) {
+    // Deep Analysis section (5W framework) — synthesize all documents
+    const allWeekDocs = [...documents, ...questions, ...interpellations];
+    const weekCia = data.ciaContext;
+    content += generateDeepAnalysisSection({
+      documents: allWeekDocs,
+      lang,
+      cia: weekCia,
+      articleType: 'week-ahead',
+    });
+&nbsp;
     content += `\n    &lt;h2&gt;${L(lang, 'keyTakeaways')}&lt;/h2&gt;\n`;
     content += `    &lt;div class="context-box"&gt;\n      &lt;ul&gt;\n`;
 &nbsp;
@@ -1114,7 +1150,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-03T17:02:47.529Z
+                at 2026-03-04T21:20:36.807Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
