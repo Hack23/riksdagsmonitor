@@ -27,7 +27,7 @@ import {
   generateDocumentIntelligenceAnalysis,
   PROP_TITLE_SUFFIX_REGEX,
 } from '../document-analysis.js';
-import { TITLE_SUFFIX_TEMPLATES, generateDeepAnalysisSection } from './shared.js';
+import { generateDeepAnalysisSection } from './shared.js';
 
 export function generateCommitteeContent(data: ArticleContentData, lang: Language | string): string {
   const reports = data.reports || [];

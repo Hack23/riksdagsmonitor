@@ -9,7 +9,7 @@
 
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
-import type { ArticleContentData, WeekAheadData } from '../types.js';
+import type { WeekAheadData } from '../types.js';
 import { getPillarTransition } from '../../editorial-pillars.js';
 import {
   L,
@@ -23,8 +23,7 @@ import { findRelatedDocuments, findRelatedQuestions, extractMinister, generateDe
 
 export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
-  // Cast to ArticleContentData to access documents field (passed via switch cast)
-  const documents = (data as unknown as ArticleContentData).documents ?? [];
+  const documents = data.documents ?? [];
   const questions = data.questions ?? [];
   const interpellations = data.interpellations ?? [];
 
@@ -260,8 +259,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
   if (hasEventData || hasDocData || hasQData || hasInterpData) {
     // Deep Analysis section (5W framework) — synthesize all documents
     const allWeekDocs = [...documents, ...questions, ...interpellations];
-    // WeekAheadData is cast from ArticleContentData in the pipeline (see line 27)
-    const weekCia = (data as unknown as ArticleContentData).ciaContext;
+    const weekCia = data.ciaContext;
     content += generateDeepAnalysisSection({
       documents: allWeekDocs,
       lang,

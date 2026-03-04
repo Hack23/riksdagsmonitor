@@ -370,7 +370,7 @@ function generateWhyAnalysis(docs: RawDocument[], lang: Language | string, cia: 
   }
 
   if (extraContext) {
-    parts.push(extraContext);
+    parts.push(escapeHtml(extraContext));
   }
 
   if (parts.length === 0) {
