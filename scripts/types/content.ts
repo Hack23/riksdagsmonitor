@@ -114,4 +114,15 @@ export interface ContentLabelSet {
   twitterLabel2: string;
   jobTitle: string;
   siteDescription: string;
+  // Deep Analysis section labels (5W framework)
+  deepAnalysis: string;
+  deepAnalysisWho: string;
+  deepAnalysisWhat: string;
+  deepAnalysisWhen: string;
+  deepAnalysisWhy: string;
+  deepAnalysisWinners: string;
+  deepAnalysisImpact: string;
+  deepAnalysisConsequences: string;
+  deepAnalysisCritical: string;
+  deepAnalysisPerspectives: string;
 }

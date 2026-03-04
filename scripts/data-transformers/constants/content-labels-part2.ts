@@ -87,7 +87,17 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     twitterLabel1: 'Tiempo de lectura',
     twitterLabel2: 'Tipo de artículo',
     jobTitle: 'Analista de inteligencia política',
-    siteDescription: 'Plataforma del Parlamento sueco – monitorear la actividad política con transparencia sistemática'
+    siteDescription: 'Plataforma del Parlamento sueco – monitorear la actividad política con transparencia sistemática',
+    deepAnalysis: 'Análisis profundo',
+    deepAnalysisWho: 'Actores clave',
+    deepAnalysisWhat: 'Qué ocurrió',
+    deepAnalysisWhen: 'Cronología y contexto',
+    deepAnalysisWhy: 'Por qué importa',
+    deepAnalysisWinners: 'Ganadores y perdedores',
+    deepAnalysisImpact: 'Impacto político',
+    deepAnalysisConsequences: 'Acciones y consecuencias',
+    deepAnalysisCritical: 'Evaluación crítica',
+    deepAnalysisPerspectives: 'Múltiples perspectivas'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -166,7 +176,17 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     twitterLabel1: 'Leestijd',
     twitterLabel2: 'Artikeltype',
     jobTitle: 'Politiek inlichtingenanalist',
-    siteDescription: 'Zweeds Parlementsplatform – politieke activiteit volgen met systematische transparantie'
+    siteDescription: 'Zweeds Parlementsplatform – politieke activiteit volgen met systematische transparantie',
+    deepAnalysis: 'Diepteanalyse',
+    deepAnalysisWho: 'Belangrijke actoren',
+    deepAnalysisWhat: 'Wat er gebeurde',
+    deepAnalysisWhen: 'Tijdlijn & context',
+    deepAnalysisWhy: 'Waarom het ertoe doet',
+    deepAnalysisWinners: 'Winnaars & verliezers',
+    deepAnalysisImpact: 'Politieke impact',
+    deepAnalysisConsequences: 'Acties & gevolgen',
+    deepAnalysisCritical: 'Kritische beoordeling',
+    deepAnalysisPerspectives: 'Meerdere perspectieven'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -245,7 +265,17 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     twitterLabel1: 'وقت القراءة',
     twitterLabel2: 'نوع المقال',
     jobTitle: 'محلل الاستخبارات السياسية',
-    siteDescription: 'منصة البرلمان السويدي – رصد النشاط السياسي بشفافية منهجية'
+    siteDescription: 'منصة البرلمان السويدي – رصد النشاط السياسي بشفافية منهجية',
+    deepAnalysis: 'تحليل معمّق',
+    deepAnalysisWho: 'الفاعلون الرئيسيون',
+    deepAnalysisWhat: 'ماذا حدث',
+    deepAnalysisWhen: 'الجدول الزمني والسياق',
+    deepAnalysisWhy: 'لماذا هذا مهم',
+    deepAnalysisWinners: 'الرابحون والخاسرون',
+    deepAnalysisImpact: 'الأثر السياسي',
+    deepAnalysisConsequences: 'الإجراءات والعواقب',
+    deepAnalysisCritical: 'تقييم نقدي',
+    deepAnalysisPerspectives: 'وجهات نظر متعددة'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -324,7 +354,17 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     twitterLabel1: 'זמן קריאה',
     twitterLabel2: 'סוג כתבה',
     jobTitle: 'אנליסט מודיעין פוליטי',
-    siteDescription: 'פלטפורמת הפרלמנט השבדי – מעקב אחר פעילות פוליטית בשקיפות שיטתית'
+    siteDescription: 'פלטפורמת הפרלמנט השבדי – מעקב אחר פעילות פוליטית בשקיפות שיטתית',
+    deepAnalysis: 'ניתוח מעמיק',
+    deepAnalysisWho: 'שחקנים מרכזיים',
+    deepAnalysisWhat: 'מה קרה',
+    deepAnalysisWhen: 'ציר זמן והקשר',
+    deepAnalysisWhy: 'למה זה חשוב',
+    deepAnalysisWinners: 'מנצחים ומפסידים',
+    deepAnalysisImpact: 'השפעה פוליטית',
+    deepAnalysisConsequences: 'פעולות והשלכות',
+    deepAnalysisCritical: 'הערכה ביקורתית',
+    deepAnalysisPerspectives: 'נקודות מבט מרובות'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -403,7 +443,17 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     twitterLabel1: '読了時間',
     twitterLabel2: '記事タイプ',
     jobTitle: '政治インテリジェンスアナリスト',
-    siteDescription: 'スウェーデン議会プラットフォーム – 体系的な透明性で政治活動を監視'
+    siteDescription: 'スウェーデン議会プラットフォーム – 体系的な透明性で政治活動を監視',
+    deepAnalysis: '深層分析',
+    deepAnalysisWho: '主要アクター',
+    deepAnalysisWhat: '何が起きたか',
+    deepAnalysisWhen: 'タイムライン＆コンテキスト',
+    deepAnalysisWhy: 'なぜ重要か',
+    deepAnalysisWinners: '勝者と敗者',
+    deepAnalysisImpact: '政治的影響',
+    deepAnalysisConsequences: '行動と結果',
+    deepAnalysisCritical: '批判的評価',
+    deepAnalysisPerspectives: '多角的視点'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -482,7 +532,17 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     twitterLabel1: '읽기 시간',
     twitterLabel2: '기사 유형',
     jobTitle: '정치 인텔리전스 분석가',
-    siteDescription: '스웨덴 의회 플랫폼 – 체계적인 투명성으로 정치 활동 모니터링'
+    siteDescription: '스웨덴 의회 플랫폼 – 체계적인 투명성으로 정치 활동 모니터링',
+    deepAnalysis: '심층 분석',
+    deepAnalysisWho: '핵심 행위자',
+    deepAnalysisWhat: '무슨 일이 있었나',
+    deepAnalysisWhen: '타임라인 & 맥락',
+    deepAnalysisWhy: '왜 중요한가',
+    deepAnalysisWinners: '승자와 패자',
+    deepAnalysisImpact: '정치적 영향',
+    deepAnalysisConsequences: '행동과 결과',
+    deepAnalysisCritical: '비판적 평가',
+    deepAnalysisPerspectives: '다양한 관점'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -561,6 +621,16 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     twitterLabel1: '阅读时间',
     twitterLabel2: '文章类型',
     jobTitle: '政治情报分析师',
-    siteDescription: '瑞典议会平台 – 以系统透明度监测政治活动'
+    siteDescription: '瑞典议会平台 – 以系统透明度监测政治活动',
+    deepAnalysis: '深度分析',
+    deepAnalysisWho: '关键行为者',
+    deepAnalysisWhat: '发生了什么',
+    deepAnalysisWhen: '时间线与背景',
+    deepAnalysisWhy: '为什么重要',
+    deepAnalysisWinners: '赢家与输家',
+    deepAnalysisImpact: '政治影响',
+    deepAnalysisConsequences: '行动与后果',
+    deepAnalysisCritical: '批判性评估',
+    deepAnalysisPerspectives: '多元视角'
   }
 };

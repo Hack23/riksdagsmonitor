@@ -22,3 +22,5 @@ export { generateMotionsContent } from './motions.js';
 export { generateGenericContent } from './generic.js';
 export { generateMonthlyReviewContent } from './monthly-review.js';
 export { generateMonthAheadContent } from './month-ahead.js';
+export { generateDeepAnalysisSection } from './shared.js';
+export type { DeepAnalysisOptions } from './shared.js';

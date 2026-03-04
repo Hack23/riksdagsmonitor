@@ -19,7 +19,7 @@ import {
   formatDayName,
 } from '../helpers.js';
 import { detectPolicyDomains, generatePolicySignificance } from '../policy-analysis.js';
-import { findRelatedDocuments, findRelatedQuestions, extractMinister } from './shared.js';
+import { findRelatedDocuments, findRelatedQuestions, extractMinister, generateDeepAnalysisSection } from './shared.js';
 
 export function generateWeekAheadContent(data: WeekAheadData, lang: Language | string): string {
   const { events, highlights, context } = data;
@@ -258,6 +258,16 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
   const hasInterpData = interpellations.length > 0;
 
   if (hasEventData || hasDocData || hasQData || hasInterpData) {
+    // Deep Analysis section (5W framework) — synthesize all documents
+    const allWeekDocs = [...documents, ...questions, ...interpellations];
+    const weekCia = (data as unknown as ArticleContentData).ciaContext;
+    content += generateDeepAnalysisSection({
+      documents: allWeekDocs,
+      lang,
+      cia: weekCia,
+      articleType: 'week-ahead',
+    });
+
     content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
     content += `    <div class="context-box">\n      <ul>\n`;
 

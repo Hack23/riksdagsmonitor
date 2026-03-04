@@ -29,7 +29,7 @@ import {
   generateDocumentIntelligenceAnalysis,
   PROP_TITLE_SUFFIX_REGEX,
 } from '../document-analysis.js';
-import { TITLE_SUFFIX_TEMPLATES } from './shared.js';
+import { TITLE_SUFFIX_TEMPLATES, generateDeepAnalysisSection } from './shared.js';
 
 export function generatePropositionsContent(data: ArticleContentData, lang: Language | string): string {
   const propositions = data.propositions || [];
@@ -159,6 +159,14 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
   if (propTransition) {
     content += `    <p class="pillar-transition">${escapeHtml(propTransition)}</p>\n`;
   }
+
+  // Deep Analysis section (5W framework)
+  content += generateDeepAnalysisSection({
+    documents: propositions,
+    lang,
+    cia: data.ciaContext,
+    articleType: 'propositions',
+  });
 
   // ── Key takeaways: synthesize propositions batch ──────────────────────────
   content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
