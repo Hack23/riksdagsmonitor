@@ -218,7 +218,7 @@ get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 
 ### Saturday — Use Generation Script
 
-On Saturday, use the `weekly-review` article type which IS supported by the script:
+On Saturday, use the `weekly-review` article type which IS supported by the script (defined in `scripts/generate-news-enhanced/config.ts:VALID_ARTICLE_TYPES`):
 
 ```bash
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
@@ -241,7 +241,7 @@ SCRIPT_EXIT=$?
 
 ### Weekday — Manual Evening Analysis
 
-The `evening-analysis` article type is NOT in the script's valid types. Generate articles manually using MCP data gathered in Step 2.
+The `evening-analysis` article type is NOT in the script's `VALID_ARTICLE_TYPES` (see `scripts/generate-news-enhanced/config.ts`). Evening analysis requires **analytical synthesis** across multiple data sources which the template-based script cannot provide. Generate articles manually using MCP data gathered in Step 2.
 
 **Process ONE language at a time** (en first, then sv, then remaining):
 

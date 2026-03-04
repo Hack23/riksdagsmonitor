@@ -200,7 +200,7 @@ esac
 echo "📰 Types: $ARTICLE_TYPES | Languages: $LANG_ARG"
 ```
 
-Valid article types: `week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`, `committee-reports`, `propositions`, `motions`, `breaking`.
+Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_ARTICLE_TYPES`): `week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`, `committee-reports`, `propositions`, `motions`, `breaking`. Note: `evening-analysis` is NOT a valid script type — evening analysis requires manual synthesis (see `news-evening-analysis.md`).
 
 ## Step 3: Generate Articles (Script-First)
 
