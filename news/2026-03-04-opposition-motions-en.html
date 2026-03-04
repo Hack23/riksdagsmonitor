@@ -88,7 +88,7 @@
     },
     "image": { "@type": "ImageObject", "url": "https://hack23.com/cia-icon-140.webp", "width": 140, "height": 140 },
     "articleSection": "Analysis",
-    "wordCount": 2500,
+    "wordCount": 1640,
     "inLanguage": "en",
     "keywords": "motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden",
     "isAccessibleForFree": true,
@@ -110,10 +110,10 @@
   </script>
   
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https:">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   
   <!-- Anti-flash theme snippet -->
-  <script>try{const t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.add('light-theme')}catch(e){}</script>
+  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -362,7 +362,14 @@
   </footer>
 </article>
 
-<button id="theme-toggle" aria-label="Switch to dark theme" title="Switch to dark theme" data-label-dark="Switch to dark theme" data-label-light="Switch to light theme">🌙</button>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <script src="../js/theme-toggle.js"></script>
 </body>
 </html>
