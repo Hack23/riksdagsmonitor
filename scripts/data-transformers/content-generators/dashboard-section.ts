@@ -69,7 +69,8 @@ function serialiseChartConfig(chart: DashboardChartConfig): string {
     },
   };
 
-  return JSON.stringify(config);
+  // Escape </script> sequences to prevent breaking out of the inline <script> block
+  return JSON.stringify(config).replace(/<\/(script)/gi, '<\\/$1');
 }
 
 function buildAnnotations(
