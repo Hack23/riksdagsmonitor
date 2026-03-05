@@ -157,10 +157,10 @@
 
     <h2>Opposition strategia</h2>
     <div class="context-box">
-      <p>The <strong>Social Democrats (S)</strong> lead with 7 motions spanning justice, environment, energy, finance, housing and waste — projecting a governing-in-waiting posture across all major policy domains. Their twin filings on weapons law and police reform signal a law-and-order offensive designed to neutralise the government's traditional advantage.</p>
-      <p>The <strong>Green Party (MP)</strong> files 6 motions combining environmental ambition (climate framework, agricultural transition, waste reform) with civil-liberties challenges on weapons regulation and renewables licensing. Their breadth reveals a party positioning for coalition relevance.</p>
-      <p>The <strong>Centre Party (C)</strong> contributes 4 motions with a distinctive rural-economy lens: defending hunting rifles, promoting market-based agricultural transition, and demanding regulatory clarity on renewable energy permits.</p>
-      <p>The <strong>Left Party (V)</strong> files 2 targeted motions — rejecting child detention outright and demanding concrete agricultural climate plans — prioritising principle over volume.</p>
+      <p><strong>Sosiaalidemokraatit (S)</strong> johtavat seitsemällä aloitteella, jotka kattavat oikeuden, ympäristön, energian, talouden, asumisen ja jätepolitiikan — viesti on selvä: puolue esiintyy hallitusvastuuseen valmiina kaikilla keskeisillä politiikkasektoreilla. Kaksoisaloitteet aselaista ja poliisireformista merkitsevät lain ja järjestyksen linjan vahvistamista, jonka tavoitteena on murtaa hallituksen perinteinen etumatka tällä alueella.</p>
+      <p><strong>Vihreä liitto (MP)</strong> jättää kuusi aloitetta, joissa yhdistyvät kunnianhimoiset ilmasto- ja ympäristötavoitteet (ilmastokehys, maatalouden vihreä siirtymä, jäteuudistus) sekä kansalaisvapauksia koskevat haasteet aselainsäädäntöön ja uusiutuvan energian lupamenettelyihin. Aloitteiden laajuus paljastaa puolueen hakevan asemaa tulevissa hallituskoalitioissa.</p>
+      <p><strong>Keskusta (C)</strong> tuo pöytään neljä aloitetta selvästi maaseutu- ja reuna-alueiden näkökulmasta: se puolustaa metsästyskiväärejä, edistää markkinaehtoista maatalouden vihreää siirtymää ja vaatii selkeyttä uusiutuvan energian lupasääntelyyn.</p>
+      <p><strong>Vasemmistopuolue (V)</strong> keskittyy kahteen tarkasti rajattuun aloitteeseen — se hylkää lapsivankeuden kategorisesti ja vaatii konkreettisia ilmastosuunnitelmia maataloudelle — korostaen periaatteellista linjaa määrän sijaan.</p>
     </div>
 
     <h2>Uusi aselaki — Kolmen puolueen kapina</h2>
@@ -266,6 +266,60 @@
         data-label-light="Vaihda tummaan teemaan">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
-<script src="../js/theme-toggle.js"></script>
+<script>
+  (function () {
+    var STORAGE_KEY = 'theme';
+    var DARK = 'dark';
+    var LIGHT = 'light';
+
+    var button = document.getElementById('theme-toggle');
+    if (!button || !document.body) {
+      return;
+    }
+
+    function applyTheme(theme) {
+      var isDark = theme === DARK;
+      document.body.classList.toggle('dark-theme', isDark);
+
+      button.setAttribute('aria-pressed', String(isDark));
+      var label = isDark
+        ? button.getAttribute('data-label-dark')
+        : button.getAttribute('data-label-light');
+      if (label) {
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
+      }
+    }
+
+    function getInitialTheme() {
+      try {
+        var stored = window.localStorage.getItem(STORAGE_KEY);
+        if (stored === DARK || stored === LIGHT) {
+          return stored;
+        }
+      } catch (e) {
+        // Ignore storage errors and fall back to prefers-color-scheme
+      }
+      if (window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return DARK;
+      }
+      return LIGHT;
+    }
+
+    var currentTheme = getInitialTheme();
+    applyTheme(currentTheme);
+
+    button.addEventListener('click', function () {
+      currentTheme = currentTheme === DARK ? LIGHT : DARK;
+      applyTheme(currentTheme);
+      try {
+        window.localStorage.setItem(STORAGE_KEY, currentTheme);
+      } catch (e) {
+        // Ignore storage errors
+      }
+    });
+  })();
+</script>
 </body>
 </html>
