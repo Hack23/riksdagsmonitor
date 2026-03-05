@@ -326,7 +326,9 @@ describe('Pipeline: generateArticleHTML — all 14 language variants', () => {
   it('sets correct lang attribute for each language', () => {
     ALL_14_LANGS.forEach(lang => {
       const html = articleTemplate.generateArticleHTML(makeArticleData(lang));
-      expect(html, `lang="${lang}" missing`).toContain(`<html lang="${lang}"`);
+      // Norwegian Bokmål is stored as 'no' internally but rendered as 'nb' per BCP-47
+      const expectedLangTag = lang === 'no' ? 'nb' : lang;
+      expect(html, `lang="${expectedLangTag}" missing`).toContain(`<html lang="${expectedLangTag}"`);
     });
   });
 
@@ -551,7 +553,9 @@ describe('Pipeline: Schema.org JSON-LD validation', () => {
       const newsArticle = blocks.find(
         b => typeof b === 'object' && b !== null && (b as Record<string, unknown>)['@type'] === 'NewsArticle',
       ) as Record<string, unknown> | undefined;
-      expect(newsArticle?.['inLanguage'], `${lang} inLanguage mismatch`).toBe(lang);
+      // Norwegian Bokmål is stored as 'no' internally but rendered as 'nb' per BCP-47
+      const expectedLang = lang === 'no' ? 'nb' : lang;
+      expect(newsArticle?.['inLanguage'], `${lang} inLanguage mismatch`).toBe(expectedLang);
     });
   });
 });
