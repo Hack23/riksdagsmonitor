@@ -98,7 +98,18 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Impacto político',
     deepAnalysisConsequences: 'Acciones y consecuencias',
     deepAnalysisCritical: 'Evaluación crítica',
-    deepAnalysisPerspectives: 'Múltiples perspectivas'
+    deepAnalysisPerspectives: 'Múltiples perspectivas',
+    swotAnalysis: 'Análisis DAFO',
+    swotStrengths: 'Fortalezas',
+    swotWeaknesses: 'Debilidades',
+    swotOpportunities: 'Oportunidades',
+    swotThreats: 'Amenazas',
+    swotContext: 'Contexto',
+    swotImpactHigh: 'Alto',
+    swotImpactMedium: 'Medio',
+    swotImpactLow: 'Bajo',
+    dashboardTitle: 'Panel de control',
+    dashboardSummary: 'Resumen'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -188,7 +199,18 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Politieke impact',
     deepAnalysisConsequences: 'Acties & gevolgen',
     deepAnalysisCritical: 'Kritische beoordeling',
-    deepAnalysisPerspectives: 'Meerdere perspectieven'
+    deepAnalysisPerspectives: 'Meerdere perspectieven',
+    swotAnalysis: 'SWOT-analyse',
+    swotStrengths: 'Sterktes',
+    swotWeaknesses: 'Zwaktes',
+    swotOpportunities: 'Kansen',
+    swotThreats: 'Bedreigingen',
+    swotContext: 'Context',
+    swotImpactHigh: 'Hoog',
+    swotImpactMedium: 'Gemiddeld',
+    swotImpactLow: 'Laag',
+    dashboardTitle: 'Dashboard',
+    dashboardSummary: 'Samenvatting'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -278,7 +300,18 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'الأثر السياسي',
     deepAnalysisConsequences: 'الإجراءات والعواقب',
     deepAnalysisCritical: 'تقييم نقدي',
-    deepAnalysisPerspectives: 'وجهات نظر متعددة'
+    deepAnalysisPerspectives: 'وجهات نظر متعددة',
+    swotAnalysis: 'تحليل SWOT',
+    swotStrengths: 'نقاط القوة',
+    swotWeaknesses: 'نقاط الضعف',
+    swotOpportunities: 'الفرص',
+    swotThreats: 'التهديدات',
+    swotContext: 'السياق',
+    swotImpactHigh: 'مرتفع',
+    swotImpactMedium: 'متوسط',
+    swotImpactLow: 'منخفض',
+    dashboardTitle: 'لوحة المعلومات',
+    dashboardSummary: 'ملخص'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -368,7 +401,18 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'השפעה פוליטית',
     deepAnalysisConsequences: 'פעולות והשלכות',
     deepAnalysisCritical: 'הערכה ביקורתית',
-    deepAnalysisPerspectives: 'נקודות מבט מרובות'
+    deepAnalysisPerspectives: 'נקודות מבט מרובות',
+    swotAnalysis: 'ניתוח SWOT',
+    swotStrengths: 'חוזקות',
+    swotWeaknesses: 'חולשות',
+    swotOpportunities: 'הזדמנויות',
+    swotThreats: 'איומים',
+    swotContext: 'הקשר',
+    swotImpactHigh: 'גבוה',
+    swotImpactMedium: 'בינוני',
+    swotImpactLow: 'נמוך',
+    dashboardTitle: 'לוח מחוונים',
+    dashboardSummary: 'סיכום'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -458,7 +502,18 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: '政治的影響',
     deepAnalysisConsequences: '行動と結果',
     deepAnalysisCritical: '批判的評価',
-    deepAnalysisPerspectives: '多角的視点'
+    deepAnalysisPerspectives: '多角的視点',
+    swotAnalysis: 'SWOT分析',
+    swotStrengths: '強み',
+    swotWeaknesses: '弱み',
+    swotOpportunities: '機会',
+    swotThreats: '脅威',
+    swotContext: 'コンテキスト',
+    swotImpactHigh: '高',
+    swotImpactMedium: '中',
+    swotImpactLow: '低',
+    dashboardTitle: 'ダッシュボード',
+    dashboardSummary: '概要'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -548,7 +603,18 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: '정치적 영향',
     deepAnalysisConsequences: '행동과 결과',
     deepAnalysisCritical: '비판적 평가',
-    deepAnalysisPerspectives: '다양한 관점'
+    deepAnalysisPerspectives: '다양한 관점',
+    swotAnalysis: 'SWOT 분석',
+    swotStrengths: '강점',
+    swotWeaknesses: '약점',
+    swotOpportunities: '기회',
+    swotThreats: '위협',
+    swotContext: '맥락',
+    swotImpactHigh: '높음',
+    swotImpactMedium: '보통',
+    swotImpactLow: '낮음',
+    dashboardTitle: '대시보드',
+    dashboardSummary: '요약'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -638,6 +704,17 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: '政治影响',
     deepAnalysisConsequences: '行动与后果',
     deepAnalysisCritical: '批判性评估',
-    deepAnalysisPerspectives: '多元视角'
+    deepAnalysisPerspectives: '多元视角',
+    swotAnalysis: 'SWOT分析',
+    swotStrengths: '优势',
+    swotWeaknesses: '劣势',
+    swotOpportunities: '机会',
+    swotThreats: '威胁',
+    swotContext: '背景',
+    swotImpactHigh: '高',
+    swotImpactMedium: '中',
+    swotImpactLow: '低',
+    dashboardTitle: '仪表板',
+    dashboardSummary: '摘要'
   }
 };

@@ -98,7 +98,18 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Political Impact',
     deepAnalysisConsequences: 'Actions & Consequences',
     deepAnalysisCritical: 'Critical Assessment',
-    deepAnalysisPerspectives: 'Multiple Perspectives'
+    deepAnalysisPerspectives: 'Multiple Perspectives',
+    swotAnalysis: 'SWOT Analysis',
+    swotStrengths: 'Strengths',
+    swotWeaknesses: 'Weaknesses',
+    swotOpportunities: 'Opportunities',
+    swotThreats: 'Threats',
+    swotContext: 'Context',
+    swotImpactHigh: 'High',
+    swotImpactMedium: 'Medium',
+    swotImpactLow: 'Low',
+    dashboardTitle: 'Dashboard',
+    dashboardSummary: 'Summary'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -188,7 +199,18 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Politisk påverkan',
     deepAnalysisConsequences: 'Handlingar & konsekvenser',
     deepAnalysisCritical: 'Kritisk bedömning',
-    deepAnalysisPerspectives: 'Flera perspektiv'
+    deepAnalysisPerspectives: 'Flera perspektiv',
+    swotAnalysis: 'SWOT-analys',
+    swotStrengths: 'Styrkor',
+    swotWeaknesses: 'Svagheter',
+    swotOpportunities: 'Möjligheter',
+    swotThreats: 'Hot',
+    swotContext: 'Kontext',
+    swotImpactHigh: 'Hög',
+    swotImpactMedium: 'Medel',
+    swotImpactLow: 'Låg',
+    dashboardTitle: 'Instrumentpanel',
+    dashboardSummary: 'Sammanfattning'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -278,7 +300,18 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Politisk indvirkning',
     deepAnalysisConsequences: 'Handlinger & konsekvenser',
     deepAnalysisCritical: 'Kritisk vurdering',
-    deepAnalysisPerspectives: 'Flere perspektiver'
+    deepAnalysisPerspectives: 'Flere perspektiver',
+    swotAnalysis: 'SWOT-analyse',
+    swotStrengths: 'Styrker',
+    swotWeaknesses: 'Svagheder',
+    swotOpportunities: 'Muligheder',
+    swotThreats: 'Trusler',
+    swotContext: 'Kontekst',
+    swotImpactHigh: 'Høj',
+    swotImpactMedium: 'Middel',
+    swotImpactLow: 'Lav',
+    dashboardTitle: 'Dashboard',
+    dashboardSummary: 'Sammenfatning'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -368,7 +401,18 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Politisk innvirkning',
     deepAnalysisConsequences: 'Handlinger & konsekvenser',
     deepAnalysisCritical: 'Kritisk vurdering',
-    deepAnalysisPerspectives: 'Flere perspektiver'
+    deepAnalysisPerspectives: 'Flere perspektiver',
+    swotAnalysis: 'SWOT-analyse',
+    swotStrengths: 'Styrker',
+    swotWeaknesses: 'Svakheter',
+    swotOpportunities: 'Muligheter',
+    swotThreats: 'Trusler',
+    swotContext: 'Kontekst',
+    swotImpactHigh: 'Høy',
+    swotImpactMedium: 'Middels',
+    swotImpactLow: 'Lav',
+    dashboardTitle: 'Dashbord',
+    dashboardSummary: 'Sammendrag'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -458,7 +502,18 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Poliittinen vaikutus',
     deepAnalysisConsequences: 'Toimet & seuraukset',
     deepAnalysisCritical: 'Kriittinen arvio',
-    deepAnalysisPerspectives: 'Useat näkökulmat'
+    deepAnalysisPerspectives: 'Useat näkökulmat',
+    swotAnalysis: 'SWOT-analyysi',
+    swotStrengths: 'Vahvuudet',
+    swotWeaknesses: 'Heikkoudet',
+    swotOpportunities: 'Mahdollisuudet',
+    swotThreats: 'Uhat',
+    swotContext: 'Konteksti',
+    swotImpactHigh: 'Korkea',
+    swotImpactMedium: 'Keskitaso',
+    swotImpactLow: 'Matala',
+    dashboardTitle: 'Kojelauta',
+    dashboardSummary: 'Yhteenveto'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -548,7 +603,18 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Politische Auswirkung',
     deepAnalysisConsequences: 'Handlungen & Konsequenzen',
     deepAnalysisCritical: 'Kritische Bewertung',
-    deepAnalysisPerspectives: 'Mehrere Perspektiven'
+    deepAnalysisPerspectives: 'Mehrere Perspektiven',
+    swotAnalysis: 'SWOT-Analyse',
+    swotStrengths: 'Stärken',
+    swotWeaknesses: 'Schwächen',
+    swotOpportunities: 'Chancen',
+    swotThreats: 'Risiken',
+    swotContext: 'Kontext',
+    swotImpactHigh: 'Hoch',
+    swotImpactMedium: 'Mittel',
+    swotImpactLow: 'Niedrig',
+    dashboardTitle: 'Dashboard',
+    dashboardSummary: 'Zusammenfassung'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -638,6 +704,17 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     deepAnalysisImpact: 'Impact politique',
     deepAnalysisConsequences: 'Actions & conséquences',
     deepAnalysisCritical: 'Évaluation critique',
-    deepAnalysisPerspectives: 'Perspectives multiples'
+    deepAnalysisPerspectives: 'Perspectives multiples',
+    swotAnalysis: 'Analyse SWOT',
+    swotStrengths: 'Forces',
+    swotWeaknesses: 'Faiblesses',
+    swotOpportunities: 'Opportunités',
+    swotThreats: 'Menaces',
+    swotContext: 'Contexte',
+    swotImpactHigh: 'Élevé',
+    swotImpactMedium: 'Moyen',
+    swotImpactLow: 'Faible',
+    dashboardTitle: 'Tableau de bord',
+    dashboardSummary: 'Résumé'
   },
 };

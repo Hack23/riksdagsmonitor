@@ -19,4 +19,11 @@ export {
   generateGenericContent,
   generateMonthlyReviewContent,
   generateMonthAheadContent,
+  generateSwotSection,
+  generateDashboardSection,
+} from './content-generators/index.js';
+
+export type {
+  SwotSectionOptions,
+  DashboardSectionOptions,
 } from './content-generators/index.js';

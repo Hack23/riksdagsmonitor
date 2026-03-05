@@ -10,6 +10,8 @@
  * - **generic** — generateGenericContent
  * - **monthly-review** — generateMonthlyReviewContent
  * - **month-ahead** — generateMonthAheadContent
+ * - **swot-section** — generateSwotSection  (embeddable SWOT analysis)
+ * - **dashboard-section** — generateDashboardSection  (embeddable Chart.js dashboard)
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -24,3 +26,7 @@ export { generateMonthlyReviewContent } from './monthly-review.js';
 export { generateMonthAheadContent } from './month-ahead.js';
 export { generateDeepAnalysisSection } from './shared.js';
 export type { DeepAnalysisOptions } from './shared.js';
+export { generateSwotSection } from './swot-section.js';
+export type { SwotSectionOptions } from './swot-section.js';
+export { generateDashboardSection } from './dashboard-section.js';
+export type { DashboardSectionOptions } from './dashboard-section.js';
