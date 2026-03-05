@@ -402,11 +402,11 @@ assign_copilot_to_issue({
 ```
 
 ### 14. News Journalist (`news-journalist`) ✨ **NEW**
-**Expertise**: Political journalism, editorial standards, The Economist-style coverage, Swedish and global politics
+**Expertise**: Political journalism, editorial standards, OSINT/INTOP data-driven AI-generated political intelligence, Swedish and global politics
 
 **Use for**:
 - Political news article generation (Riksdagen, Regeringen, Myndigheter)
-- Editorial quality control (AP/Reuters/The Economist style)
+- Editorial quality control (OSINT/INTOP-driven editorial standards)
 - Multi-language news coverage (14 languages)
 - Fact-checking and source verification
 - Intelligence-driven narrative reporting

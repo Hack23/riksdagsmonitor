@@ -116,7 +116,7 @@ This focused approach ensures:
 Before generating articles, consult these skills:
 1. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
 2. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
-3. **`.github/skills/editorial-standards/SKILL.md`** — The Economist-style standards
+3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 

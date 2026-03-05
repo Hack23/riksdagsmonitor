@@ -402,7 +402,7 @@ Ten agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with 
 
 **Source:** Markdown workflow definition compiled to `news-article-generator.lock.yml`
 **Model:** Claude Opus 4.6
-**Style:** The Economist editorial standards
+**Style:** OSINT/INTOP political intelligence editorial standards
 
 Generates daily political news articles from Swedish Riksdag/Government data via riksdag-regering-mcp tools.
 
@@ -650,7 +650,7 @@ source: news-article-generator.md
 compiled: news-article-generator.lock.yml
 model: Claude Opus 4.6
 tools: riksdag-regering-mcp (32 tools)
-style: The Economist editorial standards
+style: OSINT/INTOP political intelligence editorial standards
 ```
 
 ---

@@ -18,7 +18,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   en: {
     name: 'English', code: 'en', locale: 'en_US',
     title: 'News',
-    subtitle: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
+    subtitle: 'Latest news and analysis from Sweden\'s Riksdag. AI-generated political intelligence based on OSINT/INTOP data covering parliament, government, and agencies.',
     keywords: 'riksdag news, swedish parliament, government bills, committee reports, propositions, motions, parliamentary votes, political analysis, Sweden Democrats, Social Democrats, Moderaterna, coalition politics, transparency, democracy',
     breadcrumbs: { home: 'Home', news: 'News' },
     backLink: 'Back to Main',
@@ -38,7 +38,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   sv: {
     name: 'Svenska', code: 'sv', locale: 'sv_SE',
     title: 'Nyheter',
-    subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. Politisk journalistik i The Economist-stil som täcker riksdag, regering och myndigheter med systematisk transparens.',
+    subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. AI-genererad politisk intelligens baserad på OSINT/INTOP-data om riksdag, regering och myndigheter.',
     keywords: 'riksdag nyheter, svenska riksdagen, propositioner, betänkanden, motioner, utskott, voteringar, politisk analys, Socialdemokraterna, Moderaterna, Sverigedemokraterna, koalitionspolitik, öppenhet, demokrati',
     breadcrumbs: { home: 'Hem', news: 'Nyheter' },
     backLink: 'Tillbaka till huvudsidan',
@@ -58,7 +58,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   da: {
     name: 'Dansk', code: 'da', locale: 'da_DK',
     title: 'Nyheder',
-    subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. Politisk journalistik i The Economist-stil.',
+    subtitle: 'Seneste nyheder og analyser fra Sveriges Rigsdag. AI-genereret politisk efterretningsjournalistik baseret på OSINT/INTOP-data.',
     keywords: 'riksdag nyheder, svensk parlament, regeringsforslag, udvalgsbetænkninger, afstemninger, politisk analyse, svenske partier, gennemsigtighed, demokrati',
     breadcrumbs: { home: 'Hjem', news: 'Nyheder' },
     backLink: 'Tilbage til hovedsiden',
@@ -78,7 +78,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   no: {
     name: 'Norsk', code: 'no', locale: 'no_NO',
     title: 'Nyheter',
-    subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. Politisk journalistikk i The Economist-stil.',
+    subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. AI-generert politisk etterretningsjournalistikk basert på OSINT/INTOP-data.',
     keywords: 'riksdag nyheter, svensk parlament, regjeringsforslag, komitéinnstillinger, voteringer, politisk analyse, svenske partier, åpenhet, demokrati',
     breadcrumbs: { home: 'Hjem', news: 'Nyheter' },
     backLink: 'Tilbake til hovedsiden',
@@ -98,7 +98,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   fi: {
     name: 'Suomi', code: 'fi', locale: 'fi_FI',
     title: 'Uutiset',
-    subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. The Economist -tyylistä poliittista journalismia.',
+    subtitle: 'Viimeisimmät uutiset ja analyysit Ruotsin valtiopäivistä. Tekoälyn tuottamaa poliittista tiedustelujournalismia OSINT/INTOP-dataan perustuen.',
     keywords: 'riksdag uutiset, ruotsin parlamentti, hallituksen esitykset, valiokunnan mietinnöt, äänestykset, poliittinen analyysi, ruotsin puolueet, avoimuus, demokratia',
     breadcrumbs: { home: 'Etusivu', news: 'Uutiset' },
     backLink: 'Takaisin etusivulle',
@@ -118,7 +118,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   de: {
     name: 'Deutsch', code: 'de', locale: 'de_DE',
     title: 'Nachrichten',
-    subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. Politischer Journalismus im Stil des Economist.',
+    subtitle: 'Neueste Nachrichten und Analysen aus dem schwedischen Reichstag. KI-generierter politischer Nachrichtendienst-Journalismus basierend auf OSINT/INTOP-Daten.',
     keywords: 'riksdag nachrichten, schwedisches parlament, regierungsvorlagen, ausschussberichte, abstimmungen, politische analyse, schwedische parteien, transparenz, demokratie',
     breadcrumbs: { home: 'Startseite', news: 'Nachrichten' },
     backLink: 'Zurück zur Hauptseite',
@@ -138,7 +138,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   fr: {
     name: 'Français', code: 'fr', locale: 'fr_FR',
     title: 'Actualités',
-    subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique dans le style de The Economist.',
+    subtitle: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme de renseignement politique généré par IA basé sur des données OSINT/INTOP.',
     keywords: 'riksdag actualités, parlement suédois, projets de loi, rapports de commission, motions parlementaires, votes, analyse politique, partis suédois, transparence, démocratie',
     breadcrumbs: { home: 'Accueil', news: 'Actualités' },
     backLink: 'Retour à l\'accueil',
@@ -158,7 +158,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   es: {
     name: 'Español', code: 'es', locale: 'es_ES',
     title: 'Noticias',
-    subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo político al estilo de The Economist.',
+    subtitle: 'Últimas noticias y análisis del Parlamento sueco. Periodismo de inteligencia política generado por IA basado en datos OSINT/INTOP.',
     keywords: 'riksdag noticias, parlamento sueco, proyectos de ley, informes de comité, mociones parlamentarias, votaciones, análisis político, partidos suecos, transparencia, democracia',
     breadcrumbs: { home: 'Inicio', news: 'Noticias' },
     backLink: 'Volver a la página principal',
@@ -178,7 +178,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   nl: {
     name: 'Nederlands', code: 'nl', locale: 'nl_NL',
     title: 'Nieuws',
-    subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. Politieke journalistiek in de stijl van The Economist.',
+    subtitle: 'Laatste nieuws en analyses uit het Zweedse Parlement. AI-gegenereerde politieke inlichtingenjournalistiek gebaseerd op OSINT/INTOP-data.',
     keywords: 'riksdag nieuws, zweeds parlement, wetsvoorstellen, commissieverslagen, parlementaire moties, stemmingen, politieke analyse, zweedse partijen, transparantie, democratie',
     breadcrumbs: { home: 'Home', news: 'Nieuws' },
     backLink: 'Terug naar hoofdpagina',
@@ -198,7 +198,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   ar: {
     name: 'العربية', code: 'ar', locale: 'ar_SA', rtl: true,
     title: 'أخبار',
-    subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية على طراز ذا إيكونوميست.',
+    subtitle: 'آخر الأخبار والتحليلات من البرلمان السويدي. صحافة استخبارات سياسية مولّدة بالذكاء الاصطناعي مبنية على بيانات OSINT/INTOP.',
     keywords: 'أخبار البرلمان, البرلمان السويدي, مشاريع القوانين, تقارير اللجان, التصويت, تحليل سياسي, الأحزاب السويدية, شفافية, ديمقراطية',
     breadcrumbs: { home: 'الرئيسية', news: 'أخبار' },
     backLink: 'العودة إلى الصفحة الرئيسية',
@@ -218,7 +218,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   he: {
     name: 'עברית', code: 'he', locale: 'he_IL', rtl: true,
     title: 'חדשות',
-    subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות פוליטית בסגנון דה אקונומיסט.',
+    subtitle: 'חדשות ואנליזות אחרונות מהפרלמנט השוודי. עיתונות מודיעין פוליטי מבוססת AI ונתוני OSINT/INTOP.',
     keywords: 'חדשות הפרלמנט, הפרלמנט השוודי, הצעות חוק, דוחות ועדות, הצבעות, ניתוח פוליטי, מפלגות שוודיות, שקיפות, דמוקרטיה',
     breadcrumbs: { home: 'בית', news: 'חדשות' },
     backLink: 'חזרה לדף הבית',
@@ -238,7 +238,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   ja: {
     name: '日本語', code: 'ja', locale: 'ja_JP',
     title: 'ニュース',
-    subtitle: 'スウェーデン国会からの最新ニュースと分析。エコノミスト・スタイルの政治ジャーナリズム。',
+    subtitle: 'スウェーデン国会からの最新ニュースと分析。OSINT/INTOPデータに基づくAI生成の政治インテリジェンスジャーナリズム。',
     keywords: '国会ニュース, スウェーデン議会, 政府法案, 委員会報告, 採決, 政治分析, スウェーデン政党, 透明性, 民主主義',
     breadcrumbs: { home: 'ホーム', news: 'ニュース' },
     backLink: 'ホームページに戻る',
@@ -258,7 +258,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   ko: {
     name: '한국어', code: 'ko', locale: 'ko_KR',
     title: '뉴스',
-    subtitle: '스웨덴 의회의 최신 뉴스 및 분석. 이코노미스트 스타일의 정치 저널리즘.',
+    subtitle: '스웨덴 의회의 최신 뉴스 및 분석. OSINT/INTOP 데이터 기반 AI 생성 정치 인텔리전스 저널리즘.',
     keywords: '의회 뉴스, 스웨덴 의회, 정부 법안, 위원회 보고서, 표결, 정치 분석, 스웨덴 정당, 투명성, 민주주의',
     breadcrumbs: { home: '홈', news: '뉴스' },
     backLink: '홈페이지로 돌아가기',
@@ -278,7 +278,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   zh: {
     name: '中文', code: 'zh', locale: 'zh_CN',
     title: '新闻',
-    subtitle: '来自瑞典议会的最新新闻和分析。经济学人风格的政治新闻报道。',
+    subtitle: '来自瑞典议会的最新新闻和分析。基于OSINT/INTOP数据的AI生成政治情报新闻。',
     keywords: '议会新闻, 瑞典议会, 政府法案, 委员会报告, 表决, 政治分析, 瑞典政党, 透明度, 民主',
     breadcrumbs: { home: '主页', news: '新闻' },
     backLink: '返回主页',

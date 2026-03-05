@@ -770,7 +770,7 @@ graph LR
 
 #### 5 Editorial Pillars Structure
 
-The evening analysis follows a structured 5-pillar editorial format inspired by The Economist's analytical journalism:
+The evening analysis follows a structured 5-pillar editorial format using OSINT/INTOP-driven political intelligence analysis:
 
 ```mermaid
 graph TD
