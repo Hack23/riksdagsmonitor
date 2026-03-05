@@ -234,7 +234,7 @@ export interface DashboardDataset {
 
 /** Annotation overlay for a Chart.js chart */
 export interface DashboardAnnotation {
-  type: 'line' | 'box' | 'label';
+  type: 'line' | 'label';
   /** Value on the scale where the annotation is placed */
   value?: number;
   label?: string;

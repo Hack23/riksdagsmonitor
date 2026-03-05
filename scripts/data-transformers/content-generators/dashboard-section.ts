@@ -12,8 +12,10 @@
  * - Chart config embedded as `data-chart-config` attributes (no inline scripts)
  * - Optional data tables for accessibility (screen-reader fallback)
  *
- * Client-side chart initialisation is handled by the shared `chart-factory.ts`
- * module or any loader that reads `data-chart-config` from canvas elements.
+ * Client-side chart initialisation is NOT performed automatically by this
+ * module. Embedding pages MUST load Chart.js and run an initializer (for
+ * example, a shared `chart-factory.ts` or any loader that scans canvases for
+ * `data-chart-config` and calls `createChart()` or equivalent).
  *
  * **Dependencies** (loaded by the Vite build from `package.json`):
  * - chart.js ^4.5.1
@@ -62,10 +64,7 @@ function serialiseChartConfig(chart: DashboardChartConfig): string {
       datasets,
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: true,
       plugins: {
-        legend: { position: 'top' as const },
         title: { display: true, text: chart.title },
         ...(annotationPluginBlock ? { annotation: annotationPluginBlock } : {}),
       },
@@ -170,8 +169,9 @@ export interface DashboardSectionOptions {
  * Returns a `TemplateSection` that can be appended to `ArticleData.sections`.
  * Each chart is rendered as a `<canvas>` element with its Chart.js config
  * stored in a `data-chart-config` attribute, consistent with the codebase's
- * "no inline scripts" pattern. Client-side initialisation is handled by the
- * shared chart-factory module or any loader that reads `data-chart-config`.
+ * "no inline scripts" pattern. Client-side initialisation is NOT automatic —
+ * embedding pages must load Chart.js and run an initializer that reads
+ * `data-chart-config` (e.g. the shared chart-factory module).
  *
  * @example
  * ```ts

@@ -120,13 +120,15 @@ describe('generateDashboardSection', () => {
   it('skips unsupported annotation types', () => {
     const chart = makeChart({
       annotations: [
-        { type: 'box' as 'line', value: 10 },
+        // Use an unknown type to verify the switch default branch
+        { type: 'ellipse' as 'line', value: 10 },
       ],
     });
     const data = makeDashboard({ charts: [chart] });
     const section = generateDashboardSection({ data, lang: 'en' });
     // Should not contain annotation block for unsupported types
     expect(section.html).toContain('data-chart-config="');
+    expect(section.html).not.toMatch(/annotation0/);
   });
 
   it('renders data tables when provided', () => {
