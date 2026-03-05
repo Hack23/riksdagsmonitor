@@ -74,8 +74,8 @@ function replaceEconomistReferences(html: string): string {
   // Process line by line to preserve external links
   const lines = result.split('\n');
   const processedLines = lines.map(line => {
-    // Skip lines with economist.com URLs
-    if (line.includes('economist.com')) return line;
+    // Skip lines with economist.com URLs (legitimate external reference links)
+    if (/href=["'][^"']*economist\.com/.test(line)) return line;
 
     // Replace "The Economist" patterns not already handled
     // Various editorial standards patterns
@@ -271,7 +271,7 @@ for (const file of files) {
   // Split into lines and check each
   const lines = content.split('\n');
   for (let i = 0; i < lines.length; i++) {
-    if (lines[i].includes('Economist') && !lines[i].includes('economist.com')) {
+    if (lines[i].includes('Economist') && !/href=["'][^"']*economist\.com/.test(lines[i])) {
       remaining++;
       if (remaining <= 20) {
         console.log(`  ⚠️ ${file}:${i + 1}: ${lines[i].trim().substring(0, 120)}`);
