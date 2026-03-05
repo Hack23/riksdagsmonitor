@@ -474,7 +474,7 @@ describe('Evening Analysis Structure Validation', () => {
     expect(html).toContain('href="../styles.css"');
   });
 
-  it('should follow Economist-style journalism standards', () => {
+  it('should follow political intelligence journalism standards', () => {
     const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
@@ -487,7 +487,8 @@ describe('Evening Analysis Structure Validation', () => {
     
     // Check for meta description that matches the style guide
     const hasProperDescription = html.includes('Latest news and analysis') || 
-                                  html.includes('Economist-style') ||
+                                  html.includes('OSINT') ||
+                                  html.includes('political intelligence') ||
                                   html.includes('Swedish Parliament') ||
                                   html.includes('Riksdag');
     

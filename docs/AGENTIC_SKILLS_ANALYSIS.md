@@ -33,7 +33,7 @@ Critical skills for understanding and using GitHub Agentic Workflows infrastruct
 
 Core journalism and political analysis skills for high-quality news coverage:
 
-1. **editorial-standards** - The Economist-style journalism, fact-checking, AP/Reuters guidelines
+1. **editorial-standards** - OSINT/INTOP-driven political intelligence journalism, fact-checking, editorial guidelines
 2. **swedish-political-system** - Parliamentary terminology, committee structures, document types
 3. **political-science-analysis** - Comparative politics, institutional analysis, democratic theory
 4. **investigative-journalism** - In-depth reporting, source verification, FOI requests
@@ -134,7 +134,7 @@ Infrastructure automation and documentation standards:
 - Security: gh-aw-safe-outputs, gh-aw-workflow-authoring, gdpr-compliance
 
 **Impact:**
-- Agents have clear guidance for The Economist-style writing
+- Agents have clear guidance for OSINT/INTOP political intelligence writing
 - Political analysis frameworks available for deeper insights
 - OSINT source verification methodologies documented
 - Safe-outputs PR creation patterns explained
@@ -222,11 +222,11 @@ All workflows now follow this consistent pattern:
 
 ### editorial-standards
 
-**Why Critical:** Ensures journalism quality meets The Economist standards
+**Why Critical:** Ensures journalism quality meets political intelligence editorial standards
 
 **Key Content:**
 - Fact-checking protocols (verify with multiple sources)
-- AP/Reuters/The Economist style guides
+- OSINT/INTOP political intelligence editorial standards
 - Editorial ethics (conflicts of interest, corrections)
 - Source attribution requirements
 - Headline writing standards

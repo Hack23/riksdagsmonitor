@@ -1,6 +1,6 @@
 ---
 name: editorial-standards
-description: Journalism quality standards, fact-checking protocols, AP/Reuters/The Economist style guides, editorial ethics
+description: Journalism quality standards, fact-checking protocols, OSINT/INTOP political intelligence editorial standards, editorial ethics
 license: Apache-2.0
 ---
 
@@ -8,7 +8,7 @@ license: Apache-2.0
 
 ## Purpose
 
-Provides expertise in maintaining the highest editorial quality standards for political journalism. Covers fact-checking protocols, style guides (AP, Reuters, The Economist), editorial ethics, and quality assurance processes for professional news production.
+Provides expertise in maintaining the highest editorial quality standards for political journalism. Covers fact-checking protocols, OSINT/INTOP political intelligence editorial standards, editorial ethics, and quality assurance processes for professional news production.
 
 ## Core Principles
 
@@ -21,14 +21,14 @@ Provides expertise in maintaining the highest editorial quality standards for po
 ## This Skill Enforces
 
 - **Fact-checking protocols** - Two-source rule, primary source verification
-- **The Economist style** - Analytical, elegant, concise, contextual
+- **OSINT/INTOP intelligence style** - Analytical, data-driven, concise, contextual
 - **AP/Reuters standards** - Accuracy, fairness, transparency
 - **Copy editing** - Grammar, spelling, punctuation, syntax
 - **Editorial review** - Multi-stage quality checks before publication
 - **Error correction** - Transparent, prompt, prominent corrections
 - **Legal compliance** - Defamation avoidance, privacy protection
 
-## The Economist Style Guide Essentials
+## Political Intelligence Editorial Standards
 
 ### Writing Principles
 - **Clarity** - Short sentences, simple words, active voice
@@ -111,7 +111,7 @@ Provides expertise in maintaining the highest editorial quality standards for po
 
 ## Style Guide Quick Reference
 
-### The Economist Conventions
+### Editorial Conventions
 
 **Dates**: February 6th 2026 (not Feb 6, 2026)
 **Numbers**: Spell one to nine, use numerals 10+
@@ -190,7 +190,7 @@ Provides expertise in maintaining the highest editorial quality standards for po
 
 - **Accuracy is non-negotiable** - No compromise for speed
 - **Style serves clarity** - Rules aid understanding, not hinder
-- **The Economist standard** - Analytical, elegant, precise
+- **Political intelligence standard** - Analytical, data-driven, precise
 - **Multiple checks** - Four-level review process mandatory
 - **Transparent corrections** - Acknowledge errors promptly, prominently
 - **Legal awareness** - Defamation, privacy, GDPR compliance
@@ -201,7 +201,7 @@ Provides expertise in maintaining the highest editorial quality standards for po
 
 ## References
 
-- [The Economist Style Guide (11th Edition)](https://cdn.static-economist.com/sites/default/files/pdfs/style_guide_12.pdf)
+- [OSINT Framework](https://osintframework.com/) - Open Source Intelligence Tools
 - [AP Stylebook Online](https://www.apstylebook.com/)
 - [Reuters Handbook of Journalism](https://www.trust.org/contentAsset/raw-data/652966ab-c90b-4252-b4a5-db8ed1d438ce/file)
 - [Poynter Institute - Fact-Checking Standards](https://www.poynter.org/)
