@@ -58,7 +58,7 @@ function serialiseChartConfig(chart: DashboardChartConfig): string {
   const config = {
     type: chart.type,
     data: {
-      labels: chart.labels,
+      ...(chart.labels ? { labels: chart.labels } : {}),
       datasets,
     },
     options: {

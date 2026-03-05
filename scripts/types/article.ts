@@ -250,8 +250,8 @@ export interface DashboardChartConfig {
   type: DashboardChartType;
   /** Chart title rendered above the canvas */
   title: string;
-  /** Category labels (x-axis for bar/line) */
-  labels: string[];
+  /** Category labels (x-axis for bar/line), optional for scatter charts */
+  labels?: string[];
   /** One or more data series */
   datasets: DashboardDataset[];
   /** Optional annotation overlays (chartjs-plugin-annotation) */

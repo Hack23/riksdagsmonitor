@@ -9554,11 +9554,13 @@ body.news-page {
   margin: 1rem 0;
   max-width: 100%;
   position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 .news-article .dashboard-chart-wrapper canvas {
-  max-width: 100%;
-  height: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .news-article .dashboard-table {

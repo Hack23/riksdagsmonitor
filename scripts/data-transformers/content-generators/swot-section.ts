@@ -42,7 +42,7 @@ function renderQuadrant(heading: string, entries: SwotEntry[], cssClass: string)
     .map(e => `      <li>${escapeHtml(e.text)}${impactBadge(e.impact)}</li>`)
     .join('\n');
   return `    <div class="swot-quadrant ${cssClass}">
-      <h4>${escapeHtml(heading)}</h4>
+      <h3>${escapeHtml(heading)}</h3>
       <ul>
 ${items}
       </ul>
