@@ -1,6 +1,6 @@
 /**
  * @module data-transformers/content-generators/dashboard-section
- * @description Generates an embeddable Chart.js / D3 dashboard section that can
+ * @description Generates an embeddable Chart.js dashboard section that can
  * be injected into any article type via the `TemplateSection` extensibility pattern.
  *
  * Agentic workflows call `generateDashboardSection()` with chart configurations
@@ -20,8 +20,6 @@
  * **Dependencies** (loaded by the Vite build from `package.json`):
  * - chart.js ^4.5.1
  * - chartjs-plugin-annotation ^3.1.0
- * - d3 ^7.9.0  (available for network diagrams — not used in the default section)
- * - papaparse ^5.5.3  (available for CSV data ingestion)
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -141,7 +139,7 @@ function renderTable(table: DashboardTableConfig): string {
     )
     .join('\n');
 
-  return `  <table class="dashboard-table" role="table">
+  return `  <table class="dashboard-table">
 ${caption}    <thead><tr>${headerCells}</tr></thead>
     <tbody>
 ${bodyRows}
