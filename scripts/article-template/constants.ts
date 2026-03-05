@@ -63,20 +63,20 @@ export const FOOTER_LABELS: Record<Language, FooterLabelSet> = {
  * Site tagline translations for all 14 languages
  */
 export const SITE_TAGLINE: Record<Language, string> = {
-  en: 'Latest news and analysis from Sweden\'s Riksdag. The Economist-style political journalism covering parliament, government, and agencies with systematic transparency.',
-  sv: 'Senaste nyheter och analyser från Sveriges riksdag. Politisk journalistik i The Economist-stil som bevakar riksdagen, regeringen och myndigheter med systematisk transparens.',
-  da: 'Seneste nyheder og analyser fra Sveriges Riksdag. Politisk journalistik i The Economist-stil, der dækker parlament, regering og myndigheder med systematisk gennemsigtighed.',
-  no: 'Siste nyheter og analyser fra Sveriges riksdag. Politisk journalistikk i The Economist-stil som dekker parlament, regjering og myndigheter med systematisk åpenhet.',
-  fi: 'Uusimmat uutiset ja analyysit Ruotsin valtiopäiviltä. The Economist -tyylinen poliittinen journalismi, joka kattaa eduskunnan, hallituksen ja viranomaiset järjestelmällisellä läpinäkyvyydellä.',
-  de: 'Aktuelle Nachrichten und Analysen aus dem schwedischen Riksdag. Politischer Journalismus im Economist-Stil über Parlament, Regierung und Behörden mit systematischer Transparenz.',
-  fr: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme politique de style The Economist couvrant le parlement, le gouvernement et les agences avec une transparence systématique.',
-  es: 'Últimas noticias y análisis del Riksdag sueco. Periodismo político al estilo The Economist que cubre el parlamento, el gobierno y las agencias con transparencia sistemática.',
-  nl: 'Laatste nieuws en analyses van de Zweedse Riksdag. Politieke journalistiek in Economist-stijl over parlement, regering en instanties met systematische transparantie.',
-  ar: 'أحدث الأخبار والتحليلات من البرلمان السويدي. صحافة سياسية بأسلوب ذا إيكونوميست تغطي البرلمان والحكومة والوكالات بشفافية منهجية.',
-  he: 'חדשות ניתוחים אחרונים מהריקסדאג השוודי. עיתונות פוליטית בסגנון האקונומיסט המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.',
-  ja: 'スウェーデン議会リクスダーグの最新ニュースと分析。議会、政府、機関を体系的な透明性で報道するエコノミスト・スタイルの政治ジャーナリズム。',
-  ko: '스웨덴 의회 릭스다그의 최신 뉴스와 분석. 체계적인 투명성으로 의회, 정부, 기관을 다루는 이코노미스트 스타일의 정치 저널리즘.',
-  zh: '来自瑞典议会的最新新闻和分析。以经济学人风格的政治新闻，以系统性透明度报道议会、政府和机构。'
+  en: 'Latest news and analysis from Sweden\'s Riksdag. AI-generated political intelligence based on OSINT/INTOP data covering parliament, government, and agencies with systematic transparency.',
+  sv: 'Senaste nyheter och analyser från Sveriges riksdag. AI-genererad politisk underrättelsejournalistik baserad på OSINT/INTOP-data som bevakar riksdagen, regeringen och myndigheter med systematisk transparens.',
+  da: 'Seneste nyheder og analyser fra Sveriges Riksdag. AI-genereret politisk efterretningsjournalistik baseret på OSINT/INTOP-data, der dækker parlament, regering og myndigheder med systematisk gennemsigtighed.',
+  no: 'Siste nyheter og analyser fra Sveriges riksdag. AI-generert politisk etterretningsjournalistikk basert på OSINT/INTOP-data som dekker parlament, regjering og myndigheter med systematisk åpenhet.',
+  fi: 'Uusimmat uutiset ja analyysit Ruotsin valtiopäiviltä. Tekoälyn tuottama poliittinen tiedustelujournalismi OSINT/INTOP-dataan perustuen, joka kattaa eduskunnan, hallituksen ja viranomaiset järjestelmällisellä läpinäkyvyydellä.',
+  de: 'Aktuelle Nachrichten und Analysen aus dem schwedischen Riksdag. KI-generierter politischer Nachrichtendienst-Journalismus basierend auf OSINT/INTOP-Daten über Parlament, Regierung und Behörden mit systematischer Transparenz.',
+  fr: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme de renseignement politique généré par IA basé sur des données OSINT/INTOP couvrant le parlement, le gouvernement et les agences avec une transparence systématique.',
+  es: 'Últimas noticias y análisis del Riksdag sueco. Periodismo de inteligencia política generado por IA basado en datos OSINT/INTOP que cubre el parlamento, el gobierno y las agencias con transparencia sistemática.',
+  nl: 'Laatste nieuws en analyses van de Zweedse Riksdag. AI-gegenereerde politieke inlichtingenjournalistiek gebaseerd op OSINT/INTOP-data over parlement, regering en instanties met systematische transparantie.',
+  ar: 'أحدث الأخبار والتحليلات من البرلمان السويدي. صحافة استخبارات سياسية مولّدة بالذكاء الاصطناعي مبنية على بيانات OSINT/INTOP تغطي البرلمان والحكومة والوكالات بشفافية منهجية.',
+  he: 'חדשות ניתוחים אחרונים מהריקסדאג השוודי. עיתונות מודיעין פוליטי מבוססת AI ונתוני OSINT/INTOP המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.',
+  ja: 'スウェーデン議会リクスダーグの最新ニュースと分析。OSINT/INTOPデータに基づくAI生成の政治インテリジェンスジャーナリズムで、議会、政府、機関を体系的な透明性で報道。',
+  ko: '스웨덴 의회 릭스다그의 최신 뉴스와 분석. OSINT/INTOP 데이터 기반 AI 생성 정치 인텔리전스 저널리즘으로 의회, 정부, 기관을 체계적인 투명성으로 보도.',
+  zh: '来自瑞典议会的最新新闻和分析。基于OSINT/INTOP数据的AI生成政治情报新闻，以系统性透明度报道议会、政府和机构。'
 };
 
 /**
