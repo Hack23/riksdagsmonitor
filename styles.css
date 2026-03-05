@@ -9417,6 +9417,186 @@ body.news-page {
   text-align: right;
 }
 
+/* SWOT Analysis Section */
+.news-article .swot-analysis {
+  background: var(--badge-bg, #f0f4f8);
+  border: 2px solid var(--primary-color, #006633);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .swot-analysis h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary-color, #006633);
+  border-bottom: 2px solid var(--primary-color, #006633);
+  padding-bottom: 0.75rem;
+}
+
+.news-article .swot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+@media (max-width: 600px) {
+  .news-article .swot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.news-article .swot-quadrant {
+  padding: 1rem;
+  border-radius: var(--border-radius, 8px);
+  border: 1px solid var(--border-color, #ddd);
+}
+
+.news-article .swot-quadrant h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.news-article .swot-quadrant ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.news-article .swot-quadrant li {
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.news-article .swot-strengths {
+  background: rgba(39, 174, 96, 0.08);
+  border-color: #27ae60;
+}
+
+.news-article .swot-strengths h4 { color: #1e8449; }
+
+.news-article .swot-weaknesses {
+  background: rgba(231, 76, 60, 0.08);
+  border-color: #e74c3c;
+}
+
+.news-article .swot-weaknesses h4 { color: #c0392b; }
+
+.news-article .swot-opportunities {
+  background: rgba(52, 152, 219, 0.08);
+  border-color: #3498db;
+}
+
+.news-article .swot-opportunities h4 { color: #2471a3; }
+
+.news-article .swot-threats {
+  background: rgba(243, 156, 18, 0.08);
+  border-color: #f39c12;
+}
+
+.news-article .swot-threats h4 { color: #d68910; }
+
+.news-article .swot-subject {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.news-article .swot-context {
+  margin-top: 1rem;
+  color: var(--text-secondary, #555);
+}
+
+.news-article .swot-impact {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .news-article .swot-analysis {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .swot-quadrant ul {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+/* Dashboard Section */
+.news-article .article-dashboard {
+  background: var(--badge-bg, #f0f4f8);
+  border: 2px solid var(--primary-color, #006633);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .article-dashboard h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary-color, #006633);
+  border-bottom: 2px solid var(--primary-color, #006633);
+  padding-bottom: 0.75rem;
+}
+
+.news-article .dashboard-summary {
+  margin: 0 0 1rem 0;
+  line-height: 1.7;
+}
+
+.news-article .dashboard-chart-wrapper {
+  margin: 1rem 0;
+  max-width: 100%;
+  position: relative;
+}
+
+.news-article .dashboard-chart-wrapper canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.news-article .dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.news-article .dashboard-table th,
+.news-article .dashboard-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color, #ddd);
+}
+
+.news-article .dashboard-table th {
+  background: var(--primary-color, #006633);
+  color: white;
+  font-weight: 600;
+}
+
+.news-article .dashboard-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+[dir="rtl"] .news-article .article-dashboard {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .dashboard-table th,
+[dir="rtl"] .news-article .dashboard-table td {
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .dashboard-table caption {
+  text-align: right;
+}
+
 /* Watch Section */
 .news-article .watch-section {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);

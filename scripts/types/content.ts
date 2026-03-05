@@ -127,4 +127,14 @@ export interface ContentLabelSet {
   deepAnalysisConsequences: string;
   deepAnalysisCritical: string;
   deepAnalysisPerspectives: string;
+  // SWOT analysis section labels
+  swotAnalysis: string;
+  swotStrengths: string;
+  swotWeaknesses: string;
+  swotOpportunities: string;
+  swotThreats: string;
+  swotContext: string;
+  // Dashboard section labels
+  dashboardTitle: string;
+  dashboardSummary: string;
 }

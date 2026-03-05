@@ -184,3 +184,96 @@ export interface BreakingNewsValidation {
   hasImpactAnalysis: boolean;
   passed: boolean;
 }
+
+// ---------------------------------------------------------------------------
+// SWOT analysis types
+// ---------------------------------------------------------------------------
+
+/** Impact level for a SWOT entry */
+export type SwotImpact = 'high' | 'medium' | 'low';
+
+/** A single item in one of the four SWOT quadrants */
+export interface SwotEntry {
+  /** Description text for this factor */
+  text: string;
+  /** Relative impact or significance */
+  impact?: SwotImpact;
+}
+
+/** Data for generating an embeddable SWOT analysis section */
+export interface SwotData {
+  /** Internal factors: capabilities and advantages */
+  strengths: SwotEntry[];
+  /** Internal factors: limitations and gaps */
+  weaknesses: SwotEntry[];
+  /** External factors: favourable conditions */
+  opportunities: SwotEntry[];
+  /** External factors: risks and challenges */
+  threats: SwotEntry[];
+  /** Subject being analysed (party, policy, institution, …) */
+  subject?: string;
+  /** Additional contextual note rendered below the matrix */
+  context?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Dashboard / chart types for article embedding
+// ---------------------------------------------------------------------------
+
+/** Chart type supported by Chart.js */
+export type DashboardChartType = 'bar' | 'line' | 'pie' | 'doughnut' | 'radar' | 'scatter';
+
+/** A single dataset within a chart */
+export interface DashboardDataset {
+  label: string;
+  data: number[];
+  backgroundColor?: string | string[];
+  borderColor?: string | string[];
+  borderWidth?: number;
+}
+
+/** Annotation overlay for a Chart.js chart */
+export interface DashboardAnnotation {
+  type: 'line' | 'box' | 'label';
+  /** Value on the scale where the annotation is placed */
+  value?: number;
+  label?: string;
+  borderColor?: string;
+  backgroundColor?: string;
+}
+
+/** Configuration for a single chart in the dashboard */
+export interface DashboardChartConfig {
+  /** Unique id used as the canvas element id */
+  id: string;
+  /** Chart.js chart type */
+  type: DashboardChartType;
+  /** Chart title rendered above the canvas */
+  title: string;
+  /** Category labels (x-axis for bar/line) */
+  labels: string[];
+  /** One or more data series */
+  datasets: DashboardDataset[];
+  /** Optional annotation overlays (chartjs-plugin-annotation) */
+  annotations?: DashboardAnnotation[];
+}
+
+/** A simple data table rendered alongside charts */
+export interface DashboardTableConfig {
+  /** Optional caption/title for the table */
+  caption?: string;
+  headers: string[];
+  rows: string[][];
+}
+
+/** Data for generating an embeddable dashboard section */
+export interface DashboardData {
+  /** Dashboard section title */
+  title: string;
+  /** One or more Chart.js chart configurations */
+  charts: DashboardChartConfig[];
+  /** Optional data tables */
+  tables?: DashboardTableConfig[];
+  /** Optional narrative summary displayed above the charts */
+  summary?: string;
+}
