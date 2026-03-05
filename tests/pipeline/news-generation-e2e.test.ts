@@ -17,6 +17,7 @@
  */
 
 import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vitest';
+import { hreflangCode } from '../../scripts/article-template/helpers.js';
 import type { Language } from '../../scripts/types/language.js';
 import type {
   ArticleData,
@@ -327,7 +328,7 @@ describe('Pipeline: generateArticleHTML — all 14 language variants', () => {
     ALL_14_LANGS.forEach(lang => {
       const html = articleTemplate.generateArticleHTML(makeArticleData(lang));
       // Norwegian Bokmål is stored as 'no' internally but rendered as 'nb' per BCP-47
-      const expectedLangTag = lang === 'no' ? 'nb' : lang;
+      const expectedLangTag = hreflangCode(lang);
       expect(html, `lang="${expectedLangTag}" missing`).toContain(`<html lang="${expectedLangTag}"`);
     });
   });
@@ -554,7 +555,7 @@ describe('Pipeline: Schema.org JSON-LD validation', () => {
         b => typeof b === 'object' && b !== null && (b as Record<string, unknown>)['@type'] === 'NewsArticle',
       ) as Record<string, unknown> | undefined;
       // Norwegian Bokmål is stored as 'no' internally but rendered as 'nb' per BCP-47
-      const expectedLang = lang === 'no' ? 'nb' : lang;
+      const expectedLang = hreflangCode(lang);
       expect(newsArticle?.['inLanguage'], `${lang} inLanguage mismatch`).toBe(expectedLang);
     });
   });
@@ -574,7 +575,7 @@ describe('Pipeline: hreflang tag consistency', () => {
   it('contains hreflang tags for all 14 language codes', () => {
     const html = articleTemplate.generateArticleHTML(makeArticleData('en'));
     ALL_14_LANGS.forEach(lang => {
-      const expectedHreflang = lang === 'no' ? 'nb' : lang;
+      const expectedHreflang = hreflangCode(lang);
       expect(html, `hreflang="${expectedHreflang}" missing`).toContain(`hreflang="${expectedHreflang}"`);
     });
   });
