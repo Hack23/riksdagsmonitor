@@ -97,10 +97,9 @@ export function generateSwotSection(opts: SwotSectionOptions): TemplateSection {
   };
 
   const titleText = lbl('swotAnalysis');
-  const subjectText = data.subject ?? '';
-  const trimmedSubject = subjectText.trim();
+  const trimmedSubject = (data.subject ?? '').trim();
   const subjectLine = trimmedSubject
-    ? `    <p class="swot-subject"><strong>${escapeHtml(subjectText)}</strong></p>\n`
+    ? `    <p class="swot-subject"><strong>${escapeHtml(trimmedSubject)}</strong></p>\n`
     : '';
 
   const grid = [
