@@ -73,7 +73,7 @@ export function generateArticleHTML(data: ArticleData): string {
   const altSlug: string = slug.replace(`-${lang}.html`, `-${altLang}.html`);
 
   return `<!DOCTYPE html>
-<html lang="${lang}"${dirAttr}>
+<html lang="${hreflangCode(lang)}"${dirAttr}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -171,7 +171,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     "articleSection": "${typeLabel}",
     "articleBody": "${sanitizeArticleBody(escapeHtml(fixedContent))}...",
     "wordCount": ${Math.ceil(fixedContent.length / 5)},
-    "inLanguage": "${lang}",
+    "inLanguage": "${hreflangCode(lang)}",
     "keywords": "${keywords.join(', ')}",
     "about": {
       "@type": "Thing",
@@ -315,61 +315,7 @@ ${(sections as TemplateSection[]).length > 0 ? (sections as TemplateSection[]).m
 ${generateSiteFooter(lang)}
 
 <script type="module" src="../scripts/back-to-top.ts"></script>
-<script>
-  (function () {
-    var STORAGE_KEY = 'theme';
-    var DARK = 'dark';
-    var LIGHT = 'light';
-
-    var button = document.getElementById('theme-toggle');
-    if (!button || !document.body) {
-      return;
-    }
-
-    function applyTheme(theme) {
-      var isDark = theme === DARK;
-      document.body.classList.toggle('dark-theme', isDark);
-
-      button.setAttribute('aria-pressed', String(isDark));
-      var label = isDark
-        ? button.getAttribute('data-label-dark')
-        : button.getAttribute('data-label-light');
-      if (label) {
-        button.setAttribute('aria-label', label);
-        button.setAttribute('title', label);
-      }
-    }
-
-    function getInitialTheme() {
-      try {
-        var stored = window.localStorage.getItem(STORAGE_KEY);
-        if (stored === DARK || stored === LIGHT) {
-          return stored;
-        }
-      } catch (e) {
-        // Ignore storage errors and fall back to prefers-color-scheme
-      }
-      if (window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return DARK;
-      }
-      return LIGHT;
-    }
-
-    var currentTheme = getInitialTheme();
-    applyTheme(currentTheme);
-
-    button.addEventListener('click', function () {
-      currentTheme = currentTheme === DARK ? LIGHT : DARK;
-      applyTheme(currentTheme);
-      try {
-        window.localStorage.setItem(STORAGE_KEY, currentTheme);
-      } catch (e) {
-        // Ignore storage errors
-      }
-    });
-  })();
-</script>
+<script src="../js/theme-toggle.js"></script>
 </body>
 </html>`;
 }
