@@ -134,6 +134,9 @@ export interface ContentLabelSet {
   swotOpportunities: string;
   swotThreats: string;
   swotContext: string;
+  swotImpactHigh: string;
+  swotImpactMedium: string;
+  swotImpactLow: string;
   // Dashboard section labels
   dashboardTitle: string;
   dashboardSummary: string;

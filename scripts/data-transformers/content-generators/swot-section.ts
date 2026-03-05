@@ -26,20 +26,28 @@ const IMPACT_CLASSES: Readonly<Record<SwotImpact, string>> = {
   low: 'swot-impact--low',
 };
 
-function impactBadge(impact: SwotImpact | undefined): string {
+const IMPACT_LABEL_KEYS: Readonly<Record<SwotImpact, string>> = {
+  high: 'swotImpactHigh',
+  medium: 'swotImpactMedium',
+  low: 'swotImpactLow',
+};
+
+function impactBadge(impact: SwotImpact | undefined, lbl: (key: string) => string): string {
   if (!impact) return '';
   const impactClass = IMPACT_CLASSES[impact] ?? IMPACT_CLASSES.medium;
-  return ` <span class="swot-impact ${impactClass}">[${escapeHtml(impact)}]</span>`;
+  const labelKey = IMPACT_LABEL_KEYS[impact] ?? IMPACT_LABEL_KEYS.medium;
+  const label = lbl(labelKey);
+  return ` <span class="swot-impact ${impactClass}">[${escapeHtml(label)}]</span>`;
 }
 
 // ---------------------------------------------------------------------------
 // Quadrant renderer
 // ---------------------------------------------------------------------------
 
-function renderQuadrant(heading: string, entries: SwotEntry[], cssClass: string): string {
+function renderQuadrant(heading: string, entries: SwotEntry[], cssClass: string, lbl: (key: string) => string): string {
   if (!entries || entries.length === 0) return '';
   const items = entries
-    .map(e => `      <li>${escapeHtml(e.text)}${impactBadge(e.impact)}</li>`)
+    .map(e => `      <li>${escapeHtml(e.text)}${impactBadge(e.impact, lbl)}</li>`)
     .join('\n');
   return `    <div class="swot-quadrant ${cssClass}">
       <h3>${escapeHtml(heading)}</h3>
@@ -103,10 +111,10 @@ export function generateSwotSection(opts: SwotSectionOptions): TemplateSection {
     : '';
 
   const grid = [
-    renderQuadrant(lbl('swotStrengths'), data.strengths, 'swot-strengths'),
-    renderQuadrant(lbl('swotWeaknesses'), data.weaknesses, 'swot-weaknesses'),
-    renderQuadrant(lbl('swotOpportunities'), data.opportunities, 'swot-opportunities'),
-    renderQuadrant(lbl('swotThreats'), data.threats, 'swot-threats'),
+    renderQuadrant(lbl('swotStrengths'), data.strengths, 'swot-strengths', lbl),
+    renderQuadrant(lbl('swotWeaknesses'), data.weaknesses, 'swot-weaknesses', lbl),
+    renderQuadrant(lbl('swotOpportunities'), data.opportunities, 'swot-opportunities', lbl),
+    renderQuadrant(lbl('swotThreats'), data.threats, 'swot-threats', lbl),
   ].filter(Boolean).join('\n');
 
   const rawContext = data.context?.trim();

@@ -105,6 +105,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Oportunidades',
     swotThreats: 'Amenazas',
     swotContext: 'Contexto',
+    swotImpactHigh: 'Alto',
+    swotImpactMedium: 'Medio',
+    swotImpactLow: 'Bajo',
     dashboardTitle: 'Panel de control',
     dashboardSummary: 'Resumen'
   },
@@ -203,6 +206,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Kansen',
     swotThreats: 'Bedreigingen',
     swotContext: 'Context',
+    swotImpactHigh: 'Hoog',
+    swotImpactMedium: 'Gemiddeld',
+    swotImpactLow: 'Laag',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Samenvatting'
   },
@@ -301,6 +307,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'الفرص',
     swotThreats: 'التهديدات',
     swotContext: 'السياق',
+    swotImpactHigh: 'مرتفع',
+    swotImpactMedium: 'متوسط',
+    swotImpactLow: 'منخفض',
     dashboardTitle: 'لوحة المعلومات',
     dashboardSummary: 'ملخص'
   },
@@ -399,6 +408,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'הזדמנויות',
     swotThreats: 'איומים',
     swotContext: 'הקשר',
+    swotImpactHigh: 'גבוה',
+    swotImpactMedium: 'בינוני',
+    swotImpactLow: 'נמוך',
     dashboardTitle: 'לוח מחוונים',
     dashboardSummary: 'סיכום'
   },
@@ -497,6 +509,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: '機会',
     swotThreats: '脅威',
     swotContext: 'コンテキスト',
+    swotImpactHigh: '高',
+    swotImpactMedium: '中',
+    swotImpactLow: '低',
     dashboardTitle: 'ダッシュボード',
     dashboardSummary: '概要'
   },
@@ -595,6 +610,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: '기회',
     swotThreats: '위협',
     swotContext: '맥락',
+    swotImpactHigh: '높음',
+    swotImpactMedium: '보통',
+    swotImpactLow: '낮음',
     dashboardTitle: '대시보드',
     dashboardSummary: '요약'
   },
@@ -693,6 +711,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: '机会',
     swotThreats: '威胁',
     swotContext: '背景',
+    swotImpactHigh: '高',
+    swotImpactMedium: '中',
+    swotImpactLow: '低',
     dashboardTitle: '仪表板',
     dashboardSummary: '摘要'
   }

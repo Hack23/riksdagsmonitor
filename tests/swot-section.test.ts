@@ -70,14 +70,21 @@ describe('generateSwotSection', () => {
 
   it('renders impact badges with CSS classes instead of inline styles', () => {
     const section = generateSwotSection({ data: makeSwot(), lang: 'en' });
-    expect(section.html).toContain('[high]');
-    expect(section.html).toContain('[medium]');
-    expect(section.html).toContain('[low]');
+    expect(section.html).toContain('[High]');
+    expect(section.html).toContain('[Medium]');
+    expect(section.html).toContain('[Low]');
     expect(section.html).toContain('class="swot-impact swot-impact--high"');
     expect(section.html).toContain('class="swot-impact swot-impact--medium"');
     expect(section.html).toContain('class="swot-impact swot-impact--low"');
     // No inline styles for impact colors
     expect(section.html).not.toContain('style="color:');
+  });
+
+  it('localises impact badge labels for non-English languages', () => {
+    const section = generateSwotSection({ data: makeSwot(), lang: 'sv' });
+    expect(section.html).toContain('[Hög]');
+    expect(section.html).toContain('[Medel]');
+    expect(section.html).toContain('[Låg]');
   });
 
   it('renders subject line when provided', () => {

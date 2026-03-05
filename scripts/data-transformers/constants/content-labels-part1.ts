@@ -105,6 +105,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Opportunities',
     swotThreats: 'Threats',
     swotContext: 'Context',
+    swotImpactHigh: 'High',
+    swotImpactMedium: 'Medium',
+    swotImpactLow: 'Low',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Summary'
   },
@@ -203,6 +206,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Möjligheter',
     swotThreats: 'Hot',
     swotContext: 'Kontext',
+    swotImpactHigh: 'Hög',
+    swotImpactMedium: 'Medel',
+    swotImpactLow: 'Låg',
     dashboardTitle: 'Instrumentpanel',
     dashboardSummary: 'Sammanfattning'
   },
@@ -301,6 +307,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Muligheder',
     swotThreats: 'Trusler',
     swotContext: 'Kontekst',
+    swotImpactHigh: 'Høj',
+    swotImpactMedium: 'Middel',
+    swotImpactLow: 'Lav',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Sammenfatning'
   },
@@ -399,6 +408,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Muligheter',
     swotThreats: 'Trusler',
     swotContext: 'Kontekst',
+    swotImpactHigh: 'Høy',
+    swotImpactMedium: 'Middels',
+    swotImpactLow: 'Lav',
     dashboardTitle: 'Dashbord',
     dashboardSummary: 'Sammendrag'
   },
@@ -497,6 +509,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Mahdollisuudet',
     swotThreats: 'Uhat',
     swotContext: 'Konteksti',
+    swotImpactHigh: 'Korkea',
+    swotImpactMedium: 'Keskitaso',
+    swotImpactLow: 'Matala',
     dashboardTitle: 'Kojelauta',
     dashboardSummary: 'Yhteenveto'
   },
@@ -595,6 +610,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Chancen',
     swotThreats: 'Risiken',
     swotContext: 'Kontext',
+    swotImpactHigh: 'Hoch',
+    swotImpactMedium: 'Mittel',
+    swotImpactLow: 'Niedrig',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Zusammenfassung'
   },
@@ -693,6 +711,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotOpportunities: 'Opportunités',
     swotThreats: 'Menaces',
     swotContext: 'Contexte',
+    swotImpactHigh: 'Élevé',
+    swotImpactMedium: 'Moyen',
+    swotImpactLow: 'Faible',
     dashboardTitle: 'Tableau de bord',
     dashboardSummary: 'Résumé'
   },
