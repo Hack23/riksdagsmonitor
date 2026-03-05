@@ -9441,7 +9441,7 @@ body.news-page {
   margin: 1rem 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .news-article .swot-grid {
     grid-template-columns: 1fr;
   }

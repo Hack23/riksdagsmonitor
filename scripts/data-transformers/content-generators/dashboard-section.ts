@@ -202,9 +202,11 @@ export function generateDashboardSection(opts: DashboardSectionOptions): Templat
     return typeof val === 'string' ? val : key;
   };
 
-  const titleText = data.title || lbl('dashboardTitle');
-  const summaryBlock = data.summary
-    ? `    <p class="dashboard-summary">${escapeHtml(data.summary)}</p>\n`
+  const rawTitle = typeof data.title === 'string' ? data.title.trim() : '';
+  const titleText = rawTitle || lbl('dashboardTitle');
+  const trimmedSummary = data.summary?.trim();
+  const summaryBlock = trimmedSummary
+    ? `    <p class="dashboard-summary">${escapeHtml(trimmedSummary)}</p>\n`
     : '';
 
   // Sanitise chart IDs once — ensure non-empty and unique for valid DOM ids

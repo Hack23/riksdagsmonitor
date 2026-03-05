@@ -97,8 +97,10 @@ export function generateSwotSection(opts: SwotSectionOptions): TemplateSection {
   };
 
   const titleText = lbl('swotAnalysis');
-  const subjectLine = data.subject
-    ? `    <p class="swot-subject"><strong>${escapeHtml(data.subject)}</strong></p>\n`
+  const subjectText = data.subject ?? '';
+  const trimmedSubject = subjectText.trim();
+  const subjectLine = trimmedSubject
+    ? `    <p class="swot-subject"><strong>${escapeHtml(subjectText)}</strong></p>\n`
     : '';
 
   const grid = [
@@ -108,8 +110,9 @@ export function generateSwotSection(opts: SwotSectionOptions): TemplateSection {
     renderQuadrant(lbl('swotThreats'), data.threats, 'swot-threats'),
   ].filter(Boolean).join('\n');
 
-  const contextBlock = data.context
-    ? `\n    <p class="swot-context"><em>${escapeHtml(lbl('swotContext'))}:</em> ${escapeHtml(data.context)}</p>`
+  const rawContext = data.context?.trim();
+  const contextBlock = rawContext
+    ? `\n    <p class="swot-context"><em>${escapeHtml(lbl('swotContext'))}:</em> ${escapeHtml(rawContext)}</p>`
     : '';
 
   const html = `<section class="swot-analysis" aria-label="${escapeHtml(titleText)}">

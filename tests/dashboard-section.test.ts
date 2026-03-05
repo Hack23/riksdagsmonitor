@@ -121,7 +121,7 @@ describe('generateDashboardSection', () => {
     const chart = makeChart({
       annotations: [
         // Use an unknown type to verify the switch default branch
-        { type: 'ellipse' as 'line', value: 10 },
+        { type: 'ellipse' as unknown as 'line', value: 10 },
       ],
     });
     const data = makeDashboard({ charts: [chart] });
