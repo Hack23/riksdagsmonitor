@@ -73,7 +73,7 @@ export function generateArticleHTML(data: ArticleData): string {
   const altSlug: string = slug.replace(`-${lang}.html`, `-${altLang}.html`);
 
   return `<!DOCTYPE html>
-<html lang="${lang}"${dirAttr}>
+<html lang="${hreflangCode(lang)}"${dirAttr}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -171,7 +171,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     "articleSection": "${typeLabel}",
     "articleBody": "${sanitizeArticleBody(escapeHtml(fixedContent))}...",
     "wordCount": ${Math.ceil(fixedContent.length / 5)},
-    "inLanguage": "${lang}",
+    "inLanguage": "${hreflangCode(lang)}",
     "keywords": "${keywords.join(', ')}",
     "about": {
       "@type": "Thing",
