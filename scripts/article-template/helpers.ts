@@ -213,10 +213,10 @@ export function generateSiteFooter(lang: Language | string): string {
     <div class="footer-section">
       <h3>${labels.quickLinks}</h3>
       <ul>
-        <li><a href="${homePath}">Home</a></li>
-        <li><a href="${newsPath}">News</a></li>
+        <li><a href="${homePath}">${labels.home}</a></li>
+        <li><a href="${newsPath}">${labels.news}</a></li>
         <li><a href="${dashboardPath}">${labels.dashboard}</a></li>
-        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA Platform</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">${labels.ciaplatform}</a></li>
         <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
         <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
       </ul>
@@ -226,11 +226,11 @@ export function generateSiteFooter(lang: Language | string): string {
       <p>${labels.builtByText}</p>
       <ul>
         <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
-        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Company LinkedIn</a></li>
-        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Public ISMS</a></li>
-        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Security Policy</a></li>
-        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
-        <li><a href="mailto:info@hack23.com">Contact Us</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">${labels.companyLinkedin}</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">${labels.publicIsms}</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">${labels.securityPolicy}</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">${labels.privacyPolicy}</a></li>
+        <li><a href="mailto:info@hack23.com">${labels.contactUs}</a></li>
       </ul>
     </div>
     <div class="footer-section">
