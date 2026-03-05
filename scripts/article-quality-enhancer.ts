@@ -3,11 +3,11 @@
 /**
  * @module Intelligence/ContentQuality
  * @category Intelligence Operations / Supporting Infrastructure
- * @name Article Quality Enhancer - Economist-Style Content Validation Framework (TypeScript)
+ * @name Article Quality Enhancer - Political Intelligence Content Validation Framework (TypeScript)
  *
  * @description
- * Comprehensive content quality assurance system implementing The Economist-style editorial standards
- * for political journalism. This utility validates article structure, analytical depth, source attribution,
+ * Comprehensive content quality assurance system implementing OSINT/INTOP-driven editorial standards
+ * for political intelligence journalism. This utility validates article structure, analytical depth, source attribution,
  * and perspective diversity to ensure intelligence reporting meets rigorous transparency requirements.
  *
  * @author Hack23 AB (Content Intelligence Team)
@@ -49,7 +49,7 @@ const DOCUMENT_ID_PATTERNS: readonly RegExp[] = [
 ];
 
 /**
- * Default quality thresholds based on The Economist standards
+ * Default quality thresholds based on political intelligence editorial standards
  */
 const DEFAULT_THRESHOLDS: QualityThresholds = {
   minQualityScore: 0.80,

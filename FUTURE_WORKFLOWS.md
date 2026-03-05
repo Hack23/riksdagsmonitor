@@ -457,7 +457,7 @@ jobs:
     needs: editorial-review
     steps:
       - Aggregate scores from all perspectives
-      - Apply editorial standards (The Economist style)
+      - Apply OSINT/INTOP political intelligence editorial standards
       - Auto-approve if consensus score ≥ 85%
       - Route to human editor if score < 85%
       - Generate editorial metrics report

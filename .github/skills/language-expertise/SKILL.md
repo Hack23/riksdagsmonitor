@@ -568,7 +568,7 @@ grep 'dir="rtl"' index_ar.html index_he.html
 
 ---
 
-## Political Journalism Style (The Economist-Inspired)
+## Political Intelligence Journalism Style (OSINT/INTOP-Driven)
 
 ### Formal Register Requirements
 
@@ -586,7 +586,7 @@ All political news articles use **formal register** across all languages. This i
 
 **Note**: Most political articles use third-person perspective and avoid direct address, but when necessary, always use formal register.
 
-### The Economist Style Adaptation
+### Political Intelligence Style Adaptation
 
 **English (Master Style)**:
 - Crisp, analytical prose
@@ -690,10 +690,10 @@ For each translated article, verify:
 - [ ] No machine translation artifacts
 - [ ] Natural flow in target language
 - [ ] Cultural references adapted or explained
-- [ ] The Economist tone preserved (analytical, crisp, data-driven)
+- [ ] Political intelligence tone preserved (analytical, crisp, data-driven)
 
 ---
 
 **Data Source**: Analysis of 81 translated news articles (Feb 2026)  
-**Style Guide**: The Economist Style Guide (adapted for 14 languages)  
+**Style Guide**: OSINT/INTOP political intelligence editorial standards (adapted for 14 languages)  
 **Last Updated**: 2026-02-15

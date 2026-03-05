@@ -9274,7 +9274,7 @@ body.news-page {
    NEWS ARTICLE STYLES
    For generated news articles (evening analysis, etc.)
    Latest news and analysis from Sweden's Riksdag.
-   The Economist-style political journalism covering
+   AI-generated political intelligence journalism based on OSINT/INTOP data covering
    parliament, government, and agencies with systematic transparency.
    ============================================= */
 
@@ -9301,7 +9301,7 @@ body.news-page {
   font-weight: 700;
 }
 
-/* Economist-style subtitle tagline */
+/* Intelligence-style subtitle tagline */
 .news-article .article-tagline {
   font-size: 0.95rem;
   color: var(--text-secondary, #4a4a4a);

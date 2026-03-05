@@ -474,7 +474,7 @@ describe('Evening Analysis Structure Validation', () => {
     expect(html).toContain('href="../styles.css"');
   });
 
-  it('should follow Economist-style journalism standards', () => {
+  it('should follow political intelligence journalism standards', () => {
     const testFile = path.join(NEWS_DIR, '2026-02-13-evening-analysis-en.html');
     
     if (!fs.existsSync(testFile)) {
@@ -485,14 +485,14 @@ describe('Evening Analysis Structure Validation', () => {
     const article = parseArticle(testFile)!;
     const html = article.content;
     
-    // Check for meta description that matches the style guide
-    const hasProperDescription = html.includes('Latest news and analysis') || 
-                                  html.includes('Economist-style') ||
-                                  html.includes('Swedish Parliament') ||
-                                  html.includes('Riksdag');
+    // Extract and validate the meta description tag exists and has meaningful content
+    // Use backreference so only the same quote that opened the content attribute terminates it
+    const metaDescMatch = html.match(/<meta\s+name=["']description["']\s+content=(["'])(.*?)\1/i);
+    expect(metaDescMatch).not.toBeNull();
     
-    // At minimum should mention Swedish Parliament/Riksdag
-    expect(hasProperDescription).toBe(true);
+    const metaDescription = metaDescMatch![2];
+    // Meta description should be non-trivial (at least 50 chars for a proper summary)
+    expect(metaDescription.length).toBeGreaterThanOrEqual(50);
   });
 
   it('should have RTL direction for Arabic articles', () => {
