@@ -486,10 +486,11 @@ describe('Evening Analysis Structure Validation', () => {
     const html = article.content;
     
     // Extract and validate the meta description tag exists and has meaningful content
-    const metaDescMatch = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i);
+    // Use backreference so only the same quote that opened the content attribute terminates it
+    const metaDescMatch = html.match(/<meta\s+name=["']description["']\s+content=(["'])(.*?)\1/i);
     expect(metaDescMatch).not.toBeNull();
     
-    const metaDescription = metaDescMatch![1];
+    const metaDescription = metaDescMatch![2];
     // Meta description should be non-trivial (at least 50 chars for a proper summary)
     expect(metaDescription.length).toBeGreaterThanOrEqual(50);
   });
