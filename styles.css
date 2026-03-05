@@ -9511,7 +9511,12 @@ body.news-page {
 .news-article .swot-impact {
   font-size: 0.8em;
   text-transform: uppercase;
+  font-weight: 600;
 }
+
+.news-article .swot-impact--high { color: #e74c3c; }
+.news-article .swot-impact--medium { color: #f39c12; }
+.news-article .swot-impact--low { color: #27ae60; }
 
 [dir="rtl"] .news-article .swot-analysis {
   direction: rtl;

@@ -9,8 +9,11 @@
  *
  * The generated HTML includes:
  * - One `<canvas>` element per chart (for Chart.js rendering)
+ * - Chart config embedded as `data-chart-config` attributes (no inline scripts)
  * - Optional data tables for accessibility (screen-reader fallback)
- * - An inline `<script>` block that initialises Chart.js charts when the page loads
+ *
+ * Client-side chart initialisation is handled by the shared `chart-factory.ts`
+ * module or any loader that reads `data-chart-config` from canvas elements.
  *
  * **Dependencies** (loaded by the Vite build from `package.json`):
  * - chart.js ^4.5.1
@@ -34,7 +37,7 @@ import type {
 import { L } from '../helpers.js';
 
 // ---------------------------------------------------------------------------
-// Chart.js configuration serialiser (inline JSON for the script block)
+// Chart.js configuration serialiser (JSON for data-chart-config attribute)
 // ---------------------------------------------------------------------------
 
 /**
@@ -69,8 +72,7 @@ function serialiseChartConfig(chart: DashboardChartConfig): string {
     },
   };
 
-  // Escape </script> sequences to prevent breaking out of the inline <script> block
-  return JSON.stringify(config).replace(/<\/(script)/gi, '<\\/$1');
+  return JSON.stringify(config);
 }
 
 function buildAnnotations(
@@ -80,15 +82,46 @@ function buildAnnotations(
   const result: Record<string, unknown> = {};
   annotations.forEach((a, i) => {
     const key = `annotation${i}`;
-    result[key] = {
-      type: a.type,
-      ...(a.value != null ? { yMin: a.value, yMax: a.value } : {}),
-      ...(a.borderColor ? { borderColor: a.borderColor } : {}),
-      ...(a.backgroundColor ? { backgroundColor: a.backgroundColor } : {}),
-      ...(a.label ? { label: { display: true, content: a.label } } : {}),
-    };
+
+    let config: Record<string, unknown> | undefined;
+
+    switch (a.type) {
+      case 'line': {
+        config = {
+          type: 'line',
+          ...(a.value != null ? { yMin: a.value, yMax: a.value } : {}),
+          ...(a.borderColor ? { borderColor: a.borderColor } : {}),
+          ...(a.backgroundColor ? { backgroundColor: a.backgroundColor } : {}),
+          ...(a.label ? { label: { display: true, content: a.label } } : {}),
+        };
+        break;
+      }
+      case 'label': {
+        if (a.label == null && a.value == null) break;
+        const content =
+          a.label != null
+            ? a.label
+            : a.value != null
+              ? String(a.value)
+              : '';
+        config = {
+          type: 'label',
+          content,
+          ...(a.value != null ? { yValue: a.value } : {}),
+          ...(a.borderColor ? { borderColor: a.borderColor } : {}),
+          ...(a.backgroundColor ? { backgroundColor: a.backgroundColor } : {}),
+        };
+        break;
+      }
+      default:
+        break;
+    }
+
+    if (config) {
+      result[key] = config;
+    }
   });
-  return { annotations: result };
+  return Object.keys(result).length > 0 ? { annotations: result } : undefined;
 }
 
 // ---------------------------------------------------------------------------
@@ -135,8 +168,10 @@ export interface DashboardSectionOptions {
  * Generate an embeddable dashboard section with Chart.js charts.
  *
  * Returns a `TemplateSection` that can be appended to `ArticleData.sections`.
- * Each chart is rendered as a `<canvas>` element and initialised via an inline
- * script that calls `new Chart(…)`.
+ * Each chart is rendered as a `<canvas>` element with its Chart.js config
+ * stored in a `data-chart-config` attribute, consistent with the codebase's
+ * "no inline scripts" pattern. Client-side initialisation is handled by the
+ * shared chart-factory module or any loader that reads `data-chart-config`.
  *
  * @example
  * ```ts
@@ -177,45 +212,37 @@ export function generateDashboardSection(opts: DashboardSectionOptions): Templat
     ? `    <p class="dashboard-summary">${escapeHtml(data.summary)}</p>\n`
     : '';
 
-  // Sanitise chart IDs once — used consistently in both HTML id and script getElementById
-  const sanitisedCharts = data.charts.map(chart => ({
-    ...chart,
-    safeId: chart.id.replace(/[^a-zA-Z0-9_-]/g, ''),
-  }));
+  // Sanitise chart IDs once — ensure non-empty and unique for valid DOM ids
+  const usedIds = new Set<string>();
+  const sanitisedCharts = data.charts.map((chart, index) => {
+    let baseId = chart.id.replace(/[^a-zA-Z0-9_-]/g, '');
+    if (!baseId) {
+      baseId = `chart-${index}`;
+    }
+    let safeId = baseId;
+    let counter = 1;
+    while (usedIds.has(safeId)) {
+      safeId = `${baseId}-${counter++}`;
+    }
+    usedIds.add(safeId);
+    return { ...chart, safeId };
+  });
 
-  // Chart canvases
+  // Chart canvases with config in data attribute (no inline scripts)
   const chartBlocks = sanitisedCharts.map(chart => {
+    const config = serialiseChartConfig(chart);
     return `    <div class="dashboard-chart-wrapper">
-      <canvas id="${escapeHtml(chart.safeId)}" role="img" aria-label="${escapeHtml(chart.title)}"></canvas>
+      <canvas id="${escapeHtml(chart.safeId)}" role="img" aria-label="${escapeHtml(chart.title)}" data-chart-config="${escapeHtml(config)}"></canvas>
     </div>`;
   }).join('\n');
 
   // Tables (optional)
   const tableBlocks = (data.tables ?? []).map(t => renderTable(t)).join('\n');
 
-  // Inline Chart.js init script
-  const chartInits = sanitisedCharts.map(chart => {
-    const config = serialiseChartConfig(chart);
-    return `      (function() {
-        var canvas = document.getElementById('${chart.safeId}');
-        if (canvas && typeof Chart !== 'undefined') {
-          new Chart(canvas.getContext('2d'), ${config});
-        }
-      })();`;
-  }).join('\n');
-
-  const scriptBlock = data.charts.length > 0
-    ? `\n    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-${chartInits}
-    });
-    </script>`
-    : '';
-
   const html = `<section class="article-dashboard" aria-label="${escapeHtml(titleText)}">
     <h2>${escapeHtml(titleText)}</h2>
 ${summaryBlock}${chartBlocks}
-${tableBlocks}${scriptBlock}
+${tableBlocks}
   </section>`;
 
   return {

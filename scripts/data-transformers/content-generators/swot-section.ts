@@ -20,16 +20,16 @@ import { L } from '../helpers.js';
 // Impact badge helper
 // ---------------------------------------------------------------------------
 
-const IMPACT_COLORS: Readonly<Record<SwotImpact, string>> = {
-  high: '#e74c3c',
-  medium: '#f39c12',
-  low: '#27ae60',
+const IMPACT_CLASSES: Readonly<Record<SwotImpact, string>> = {
+  high: 'swot-impact--high',
+  medium: 'swot-impact--medium',
+  low: 'swot-impact--low',
 };
 
 function impactBadge(impact: SwotImpact | undefined): string {
   if (!impact) return '';
-  const color = IMPACT_COLORS[impact] ?? IMPACT_COLORS.medium;
-  return ` <span class="swot-impact" style="color:${color};font-weight:600;">[${escapeHtml(impact)}]</span>`;
+  const impactClass = IMPACT_CLASSES[impact] ?? IMPACT_CLASSES.medium;
+  return ` <span class="swot-impact ${impactClass}">[${escapeHtml(impact)}]</span>`;
 }
 
 // ---------------------------------------------------------------------------

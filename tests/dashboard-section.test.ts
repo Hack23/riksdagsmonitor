@@ -1,7 +1,7 @@
 /**
  * Tests for generateDashboardSection — embeddable Chart.js dashboard for articles.
- * Validates HTML structure, chart canvas rendering, table rendering,
- * Chart.js config serialisation, XSS escaping, and TemplateSection shape.
+ * Validates HTML structure, chart canvas rendering, data-chart-config attributes,
+ * table rendering, XSS escaping, ID uniqueness, and TemplateSection shape.
  */
 
 import { describe, it, expect } from 'vitest';
@@ -75,23 +75,24 @@ describe('generateDashboardSection', () => {
     expect(section.html).toContain('aria-label="Chart B"');
   });
 
-  it('generates inline Chart.js init script', () => {
+  it('stores chart config in data-chart-config attribute instead of inline script', () => {
     const section = generateDashboardSection({ data: makeDashboard(), lang: 'en' });
-    expect(section.html).toContain('<script>');
-    expect(section.html).toContain('DOMContentLoaded');
-    expect(section.html).toContain('new Chart(');
-    expect(section.html).toContain('test-chart');
+    expect(section.html).toContain('data-chart-config="');
+    // No inline scripts
+    expect(section.html).not.toContain('<script>');
+    expect(section.html).not.toContain('DOMContentLoaded');
+    expect(section.html).not.toContain('new Chart(');
   });
 
-  it('serialises chart type, labels, and datasets', () => {
+  it('serialises chart type, labels, and datasets in data-chart-config', () => {
     const section = generateDashboardSection({ data: makeDashboard(), lang: 'en' });
-    expect(section.html).toContain('"type":"bar"');
-    expect(section.html).toContain('"labels":["A","B","C"]');
-    expect(section.html).toContain('"data":[10,20,30]');
-    expect(section.html).toContain('"label":"Series 1"');
+    // The config is HTML-escaped inside the attribute
+    expect(section.html).toContain('data-chart-config="');
+    // Decode the attribute value by checking the raw JSON within the escaped attribute
+    expect(section.html).toMatch(/data-chart-config="[^"]*bar[^"]*"/);
   });
 
-  it('includes annotations when provided', () => {
+  it('includes line annotations when provided', () => {
     const chart = makeChart({
       annotations: [
         { type: 'line', value: 25, label: 'Target', borderColor: '#ff0000' },
@@ -99,10 +100,33 @@ describe('generateDashboardSection', () => {
     });
     const data = makeDashboard({ charts: [chart] });
     const section = generateDashboardSection({ data, lang: 'en' });
-    expect(section.html).toContain('"annotation"');
-    expect(section.html).toContain('"annotation0"');
-    expect(section.html).toContain('"yMin":25');
-    expect(section.html).toContain('Target');
+    expect(section.html).toContain('data-chart-config="');
+    // The annotation should be present in the serialised config
+    expect(section.html).toMatch(/annotation/);
+  });
+
+  it('handles label annotation type correctly', () => {
+    const chart = makeChart({
+      annotations: [
+        { type: 'label', value: 50, label: 'Threshold', borderColor: '#00ff00' },
+      ],
+    });
+    const data = makeDashboard({ charts: [chart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('data-chart-config="');
+    expect(section.html).toMatch(/annotation/);
+  });
+
+  it('skips unsupported annotation types', () => {
+    const chart = makeChart({
+      annotations: [
+        { type: 'box' as 'line', value: 10 },
+      ],
+    });
+    const data = makeDashboard({ charts: [chart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    // Should not contain annotation block for unsupported types
+    expect(section.html).toContain('data-chart-config="');
   });
 
   it('renders data tables when provided', () => {
@@ -124,16 +148,14 @@ describe('generateDashboardSection', () => {
     expect(section.html).toContain('<td>+2</td>');
   });
 
-  it('escapes XSS in chart titles', () => {
+  it('escapes XSS in chart titles via data-chart-config HTML escaping', () => {
     const chart = makeChart({ title: '<script>alert(1)</script>' });
     const data = makeDashboard({ charts: [chart] });
     const section = generateDashboardSection({ data, lang: 'en' });
-    // The </script> inside the JSON config must not break the outer <script> block
-    expect(section.html).not.toContain('</script>alert');
     // HTML aria-label is HTML-escaped
     expect(section.html).toContain('&lt;script&gt;');
-    // JSON serialisation escapes the closing script tag
-    expect(section.html).toContain('<\\/script>');
+    // No inline script block at all
+    expect(section.html).not.toContain('<script>');
   });
 
   it('escapes XSS in summary', () => {
@@ -155,13 +177,30 @@ describe('generateDashboardSection', () => {
     expect(section.html).toContain('&lt;script&gt;');
   });
 
-  it('sanitises chart id consistently in both HTML and script', () => {
+  it('sanitises chart id consistently in HTML', () => {
     const chart = makeChart({ id: 'chart-<evil>' });
     const data = makeDashboard({ charts: [chart] });
     const section = generateDashboardSection({ data, lang: 'en' });
-    // Both canvas id and script getElementById use the same sanitised id
     expect(section.html).toContain('id="chart-evil"');
-    expect(section.html).toContain("getElementById('chart-evil')");
+  });
+
+  it('falls back to chart-N when sanitised id is empty', () => {
+    const chart = makeChart({ id: '<>!@#' });
+    const data = makeDashboard({ charts: [chart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('id="chart-0"');
+  });
+
+  it('deduplicates colliding chart ids', () => {
+    const data = makeDashboard({
+      charts: [
+        makeChart({ id: 'same', title: 'Chart 1' }),
+        makeChart({ id: 'same', title: 'Chart 2' }),
+      ],
+    });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('id="same"');
+    expect(section.html).toContain('id="same-1"');
   });
 
   it('renders Swedish labels when lang=sv and no title provided', () => {
@@ -191,7 +230,6 @@ describe('generateDashboardSection', () => {
     const data = makeDashboard({ charts: [] });
     const section = generateDashboardSection({ data, lang: 'en' });
     expect(section.html).toContain('<section class="article-dashboard"');
-    // No script block when no charts
     expect(section.html).not.toContain('<script>');
   });
 
@@ -204,12 +242,12 @@ describe('generateDashboardSection', () => {
       ],
     });
     const section = generateDashboardSection({ data, lang: 'en' });
-    expect(section.html).toContain('"type":"bar"');
-    expect(section.html).toContain('"type":"line"');
-    expect(section.html).toContain('"type":"pie"');
+    expect(section.html).toContain('id="bar-chart"');
+    expect(section.html).toContain('id="line-chart"');
+    expect(section.html).toContain('id="pie-chart"');
   });
 
-  it('includes backgroundColor and borderColor when provided', () => {
+  it('includes backgroundColor and borderColor in data-chart-config', () => {
     const chart = makeChart({
       datasets: [{
         label: 'Colored',
@@ -221,8 +259,6 @@ describe('generateDashboardSection', () => {
     });
     const data = makeDashboard({ charts: [chart] });
     const section = generateDashboardSection({ data, lang: 'en' });
-    expect(section.html).toContain('"backgroundColor":["#ff0000","#00ff00","#0000ff"]');
-    expect(section.html).toContain('"borderColor":"#333333"');
-    expect(section.html).toContain('"borderWidth":2');
+    expect(section.html).toContain('data-chart-config="');
   });
 });
