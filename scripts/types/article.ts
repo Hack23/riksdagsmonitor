@@ -223,10 +223,17 @@ export interface SwotData {
 /** Chart type supported by Chart.js */
 export type DashboardChartType = 'bar' | 'line' | 'pie' | 'doughnut' | 'radar' | 'scatter';
 
+/** A point object for scatter/bubble charts */
+export interface DashboardPoint {
+  x: number;
+  y: number;
+}
+
 /** A single dataset within a chart */
 export interface DashboardDataset {
   label: string;
-  data: number[];
+  /** Numeric values for bar/line/pie/etc., or {x,y} points for scatter */
+  data: number[] | DashboardPoint[];
   backgroundColor?: string | string[];
   borderColor?: string | string[];
   borderWidth?: number;

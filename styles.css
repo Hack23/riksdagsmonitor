@@ -9453,7 +9453,7 @@ body.news-page {
   border: 1px solid var(--border-color, #ddd);
 }
 
-.news-article .swot-quadrant h4 {
+.news-article .swot-quadrant h3 {
   margin: 0 0 0.75rem 0;
   font-size: 1rem;
   font-weight: 600;
@@ -9475,28 +9475,28 @@ body.news-page {
   border-color: #27ae60;
 }
 
-.news-article .swot-strengths h4 { color: #1e8449; }
+.news-article .swot-strengths h3 { color: #1e8449; }
 
 .news-article .swot-weaknesses {
   background: rgba(231, 76, 60, 0.08);
   border-color: #e74c3c;
 }
 
-.news-article .swot-weaknesses h4 { color: #c0392b; }
+.news-article .swot-weaknesses h3 { color: #c0392b; }
 
 .news-article .swot-opportunities {
   background: rgba(52, 152, 219, 0.08);
   border-color: #3498db;
 }
 
-.news-article .swot-opportunities h4 { color: #2471a3; }
+.news-article .swot-opportunities h3 { color: #2471a3; }
 
 .news-article .swot-threats {
   background: rgba(243, 156, 18, 0.08);
   border-color: #f39c12;
 }
 
-.news-article .swot-threats h4 { color: #d68910; }
+.news-article .swot-threats h3 { color: #d68910; }
 
 .news-article .swot-subject {
   font-size: 1.1rem;
