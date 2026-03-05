@@ -1,0 +1,958 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for scripts/fix-old-articles-branding.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">scripts</a> fix-old-articles-branding.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/127</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/36</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/124</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Script to replace "The Economist" branding references in old news articles
+ * with OSINT/INTOP political intelligence branding across all 14 languages.
+ *
+ * Usage: npx tsx scripts/fix-old-articles-branding.ts [--dry-run]
+ *
+ * Replaces:
+ * - site-tagline div content (language-specific from SITE_TAGLINE constants)
+ * - "style: The Economist" in HTML comment frontmatter
+ * - "The Economist" references in article body/disclaimers
+ * - "Journalism Standards" footer text
+ *
+ * Preserves:
+ * - External links to economist.com (legitimate references)
+ */
+&nbsp;
+import * as fs from 'fs';
+import * as path from 'path';
+&nbsp;
+// New taglines from scripts/article-template/constants.ts
+const SITE_TAGLINE: Record&lt;string, string&gt; = <span class="cstat-no" title="statement not covered" >{</span>
+  en: "Latest news and analysis from Sweden's Riksdag. AI-generated political intelligence based on OSINT/INTOP data covering parliament, government, and agencies with systematic transparency.",
+  sv: 'Senaste nyheter och analyser från Sveriges riksdag. AI-genererad politisk underrättelsejournalistik baserad på OSINT/INTOP-data som bevakar riksdagen, regeringen och myndigheter med systematisk transparens.',
+  da: 'Seneste nyheder og analyser fra Sveriges Riksdag. AI-genereret politisk efterretningsjournalistik baseret på OSINT/INTOP-data, der dækker parlament, regering og myndigheder med systematisk gennemsigtighed.',
+  no: 'Siste nyheter og analyser fra Sveriges riksdag. AI-generert politisk etterretningsjournalistikk basert på OSINT/INTOP-data som dekker parlament, regjering og myndigheter med systematisk åpenhet.',
+  fi: 'Uusimmat uutiset ja analyysit Ruotsin valtiopäiviltä. Tekoälyn tuottama poliittinen tiedustelujournalismi OSINT/INTOP-dataan perustuen, joka kattaa eduskunnan, hallituksen ja viranomaiset järjestelmällisellä läpinäkyvyydellä.',
+  de: 'Aktuelle Nachrichten und Analysen aus dem schwedischen Riksdag. KI-generierter politischer Nachrichtendienst-Journalismus basierend auf OSINT/INTOP-Daten über Parlament, Regierung und Behörden mit systematischer Transparenz.',
+  fr: 'Dernières nouvelles et analyses du Riksdag suédois. Journalisme de renseignement politique généré par IA basé sur des données OSINT/INTOP couvrant le parlement, le gouvernement et les agences avec une transparence systématique.',
+  es: 'Últimas noticias y análisis del Riksdag sueco. Periodismo de inteligencia política generado por IA basado en datos OSINT/INTOP que cubre el parlamento, el gobierno y las agencias con transparencia sistemática.',
+  nl: 'Laatste nieuws en analyses van de Zweedse Riksdag. AI-gegenereerde politieke inlichtingenjournalistiek gebaseerd op OSINT/INTOP-data over parlement, regering en instanties met systematische transparantie.',
+  ar: 'أحدث الأخبار والتحليلات من البرلمان السويدي. صحافة استخبارات سياسية مولّدة بالذكاء الاصطناعي مبنية على بيانات OSINT/INTOP تغطي البرلمان والحكومة والوكالات بشفافية منهجية.',
+  he: 'חדשות ניתוחים אחרונים מהריקסדאג השוודי. עיתונות מודיעין פוליטי מבוססת AI ונתוני OSINT/INTOP המכסה פרלמנט, ממשלה וסוכנויות עם שקיפות שיטתית.',
+  ja: 'スウェーデン議会リクスダーグの最新ニュースと分析。OSINT/INTOPデータに基づくAI生成の政治インテリジェンスジャーナリズムで、議会、政府、機関を体系的な透明性で報道。',
+  ko: '스웨덴 의회 릭스다그의 최신 뉴스와 분석. OSINT/INTOP 데이터 기반 AI 생성 정치 인텔리전스 저널리즘으로 의회, 정부, 기관을 체계적인 투명성으로 보도.',
+  zh: '来自瑞典议会的最新新闻和分析。基于OSINT/INTOP数据的AI生成政治情报新闻，以系统性透明度报道议会、政府和机构。',
+};
+&nbsp;
+const NEWS_DIR = <span class="cstat-no" title="statement not covered" >path.join(process.cwd(), 'news');</span>
+const dryRun = <span class="cstat-no" title="statement not covered" >process.argv.includes('--dry-run');</span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getLanguageFromFilename(f</span>ilename: string): string | null {
+  const match = <span class="cstat-no" title="statement not covered" >filename.match(/-([a-z]{2})\.html$/);</span>
+<span class="cstat-no" title="statement not covered" >  return match ? match[1] : null;</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >replaceTagline(h</span>tml: string, lang: string): string {
+  const tagline = <span class="cstat-no" title="statement not covered" >SITE_TAGLINE[lang];</span>
+<span class="cstat-no" title="statement not covered" >  if (!tagline) <span class="cstat-no" title="statement not covered" >return html;</span></span>
+&nbsp;
+  // Replace site-tagline div content
+<span class="cstat-no" title="statement not covered" >  return html.replace(</span>
+    /(&lt;div class="site-tagline"&gt;)([^&lt;]*?)(&lt;\/div&gt;)/g,
+    `$1${tagline}$3`
+  );
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >replaceEconomistReferences(h</span>tml: string): string {
+  let result = <span class="cstat-no" title="statement not covered" >html;</span>
+&nbsp;
+  // 1. Replace "style: The Economist" in HTML comment frontmatter
+<span class="cstat-no" title="statement not covered" >  result = result.replace(/style: The Economist\b/g, 'style: OSINT/INTOP');</span>
+&nbsp;
+  // 2. Replace "Journalism Standards" footer patterns (en + sv)
+<span class="cstat-no" title="statement not covered" >  result = result.replace(</span>
+    /Journalism Standards&lt;\/strong&gt;: The Economist style/g,
+    'Journalism Standards&lt;/strong&gt;: OSINT/INTOP data-driven AI-generated political intelligence'
+  );
+<span class="cstat-no" title="statement not covered" >  result = result.replace(</span>
+    /Journalistiska standarder&lt;\/strong&gt;: The Economist-stil/g,
+    'Journalistiska standarder&lt;/strong&gt;: OSINT/INTOP-datadriven AI-genererad politisk underrättelsejournalistik'
+  );
+&nbsp;
+  // 3. Skip lines containing economist.com URLs (legitimate external references)
+  // Process line by line to preserve external links
+  const lines = <span class="cstat-no" title="statement not covered" >result.split('\n');</span>
+  const processedLines = <span class="cstat-no" title="statement not covered" >lines.map(<span class="fstat-no" title="function not covered" >line =&gt; {</span></span>
+    // Skip lines with economist.com URLs (legitimate external reference links)
+<span class="cstat-no" title="statement not covered" >    if (/href=["'][^"']*economist\.com/.test(line)) <span class="cstat-no" title="statement not covered" >return line;</span></span>
+&nbsp;
+    // Replace "The Economist" patterns not already handled
+    // Various editorial standards patterns
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/following The Economist editorial standards/g, 'following OSINT/INTOP editorial standards');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/enligt The Economist-standarder/g, 'enligt OSINT/INTOP-standarder');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/enligt The Economists redaktionella standard/g, 'enligt OSINT/INTOP redaktionella standard');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/i enlighet med The Economists redaktionella standard/g, 'i enlighet med OSINT/INTOP redaktionella standard');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/in The Economist style/g, 'in OSINT/INTOP style');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/i The Economist-stil/g, 'i OSINT/INTOP-stil');</span>
+&nbsp;
+    // English patterns
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-style analysis/g, 'OSINT/INTOP data-driven analysis');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-style political journalism emphasizing/g, 'OSINT/INTOP data-driven AI-generated political intelligence emphasizing');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-style political journalism/g, 'OSINT/INTOP data-driven political journalism');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-style/g, 'OSINT/INTOP data-driven');</span>
+&nbsp;
+    // Generic "The Economist" that references the brand, not external links
+    // Replace remaining "The Economist" in article contexts (not in &lt;a&gt; tags)
+    // Use negative lookahead to avoid replacing inside link text to economist.com
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist noted in its/g, 'As noted in a');</span>
+&nbsp;
+    // Swedish patterns
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-inspirerad/g, 'OSINT/INTOP-baserad');</span>
+&nbsp;
+    // Danish patterns
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-inspireret/g, 'OSINT/INTOP-baseret');</span>
+&nbsp;
+    // Norwegian patterns
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-inspirert/g, 'OSINT/INTOP-basert');</span>
+&nbsp;
+    // Generic suffix patterns across Scandinavian languages
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-stil\b/g, 'OSINT/INTOP-stil');</span>
+&nbsp;
+    // Dutch
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-stijl\b/g, 'OSINT/INTOP-stijl');</span>
+&nbsp;
+    // German (with and without "The ")
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-Stil\b/g, 'OSINT/INTOP-Stil');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/im Economist-Stil\b/g, 'im OSINT/INTOP-Stil');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/Economist-Stil\b/g, 'OSINT/INTOP-Stil');</span>
+&nbsp;
+    // Dutch (without "The " prefix)
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/in Economist-stijl\b/g, 'in OSINT/INTOP-stijl');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/Economist-stijl\b/g, 'OSINT/INTOP-stijl');</span>
+&nbsp;
+    // Finnish (note the space before the hyphen)
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist -tyylinen/g, 'OSINT/INTOP -tyylinen');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist -tyyliin/g, 'OSINT/INTOP -tyyliin');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-tyylinen/g, 'OSINT/INTOP-tyylinen');</span>
+&nbsp;
+    // French
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/style The Economist\b/g, 'style OSINT/INTOP');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist couvrant/g, 'OSINT/INTOP couvrant');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist avec/g, 'OSINT/INTOP avec');</span>
+&nbsp;
+    // Spanish
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/estilo The Economist\b/g, 'estilo OSINT/INTOP');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist que cubre/g, 'OSINT/INTOP que cubre');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist cubriendo/g, 'OSINT/INTOP cubriendo');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist sobre/g, 'OSINT/INTOP sobre');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist con/g, 'OSINT/INTOP con');</span>
+&nbsp;
+    // Dutch additional
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist over/g, 'OSINT/INTOP over');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist met/g, 'OSINT/INTOP met');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist politieke/g, 'OSINT/INTOP politieke');</span>
+&nbsp;
+    // German additional
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist mit/g, 'OSINT/INTOP mit');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist zu /g, 'OSINT/INTOP zu ');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist über/g, 'OSINT/INTOP über');</span>
+&nbsp;
+    // Hebrew
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist המכסה/g, 'OSINT/INTOP המכסה');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist עם/g, 'OSINT/INTOP עם');</span>
+&nbsp;
+    // Arabic
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist تغطي/g, 'OSINT/INTOP تغطي');</span>
+&nbsp;
+    // Japanese
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist スタイル/g, 'OSINT/INTOP スタイル');</span>
+&nbsp;
+    // Chinese
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist 风格/g, 'OSINT/INTOP 风格');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist风格/g, 'OSINT/INTOP風格');</span>
+&nbsp;
+    // Korean
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist 스타일/g, 'OSINT/INTOP 스타일');</span>
+&nbsp;
+    // Catch remaining "The Economist." and "The Economist," sentence endings
+    // But not "The Economist:" (which is a reference title)
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist\./g, 'OSINT/INTOP.');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist,/g, 'OSINT/INTOP,');</span>
+&nbsp;
+    // HTML entity versions
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-stil som t&amp;#228;cker/g, 'OSINT/INTOP-stil som täcker');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-stil som dekker riksdag, regjering og myndigheter med systematisk &amp;#229;penhet/g,</span>
+      'OSINT/INTOP-stil som dekker riksdag, regjering og myndigheter med systematisk åpenhet');
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist-stil der d&amp;#230;kker/g, 'OSINT/INTOP-stil der dækker');</span>
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist couvrant le parlement, le gouvernement et les agences avec une transparence syst&amp;#233;matique/g,</span>
+      'OSINT/INTOP couvrant le parlement, le gouvernement et les agences avec une transparence systématique');
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist cubriendo parlamento, gobierno y agencias con transparencia sistem&amp;#225;tica/g,</span>
+      'OSINT/INTOP cubriendo parlamento, gobierno y agencias con transparencia sistemática');
+<span class="cstat-no" title="statement not covered" >    line = line.replace(/The Economist -tyylin poliittista journalismia, joka kattaa parlamentin, hallituksen ja virastot systemaattisella l&amp;#228;pin&amp;#228;kyvyydell&amp;#228;/g,</span>
+      'OSINT/INTOP -tyylin poliittista journalismia, joka kattaa parlamentin, hallituksen ja virastot systemaattisella läpinäkyvyydellä');
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return line;</span>
+  });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return processedLines.join('\n');</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >processFile(f</span>ilepath: string): boolean {
+  const filename = <span class="cstat-no" title="statement not covered" >path.basename(filepath);</span>
+  const lang = <span class="cstat-no" title="statement not covered" >getLanguageFromFilename(filename);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!lang) {</span>
+<span class="cstat-no" title="statement not covered" >    console.warn(`  ⚠️ Could not determine language for: ${filename}`);</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  }
+&nbsp;
+  const original = <span class="cstat-no" title="statement not covered" >fs.readFileSync(filepath, 'utf-8');</span>
+&nbsp;
+  // Check if file contains any Economist references
+<span class="cstat-no" title="statement not covered" >  if (!original.includes('Economist')) {</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  }
+&nbsp;
+  let modified = <span class="cstat-no" title="statement not covered" >original;</span>
+&nbsp;
+  // Replace site-tagline
+<span class="cstat-no" title="statement not covered" >  modified = replaceTagline(modified, lang);</span>
+&nbsp;
+  // Replace other Economist references
+<span class="cstat-no" title="statement not covered" >  modified = replaceEconomistReferences(modified);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (modified === original) {</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!dryRun) {</span>
+<span class="cstat-no" title="statement not covered" >    fs.writeFileSync(filepath, modified, 'utf-8');</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return true;</span>
+}
+&nbsp;
+// Main execution
+<span class="cstat-no" title="statement not covered" >console.log(`🔄 Fixing old articles branding (${dryRun ? 'DRY RUN' : 'LIVE'})...\n`);</span>
+&nbsp;
+const files = <span class="cstat-no" title="statement not covered" >fs.readdirSync(NEWS_DIR)</span>
+  .filter(<span class="fstat-no" title="function not covered" >f =&gt; <span class="cstat-no" title="statement not covered" >f</span>.endsWith('.html'))</span>
+  .sort();
+&nbsp;
+let modified = <span class="cstat-no" title="statement not covered" >0;</span>
+let skipped = <span class="cstat-no" title="statement not covered" >0;</span>
+const langStats: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >for (const file of files) {</span>
+  const filepath = <span class="cstat-no" title="statement not covered" >path.join(NEWS_DIR, file);</span>
+  const lang = <span class="cstat-no" title="statement not covered" >getLanguageFromFilename(file);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (processFile(filepath)) {</span>
+<span class="cstat-no" title="statement not covered" >    modified++;</span>
+<span class="cstat-no" title="statement not covered" >    if (lang) {</span>
+<span class="cstat-no" title="statement not covered" >      langStats[lang] = (langStats[lang] || 0) + 1;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (dryRun) {</span>
+<span class="cstat-no" title="statement not covered" >      console.log(`  📝 Would modify: ${file}`);</span>
+    }
+  } else {
+<span class="cstat-no" title="statement not covered" >    skipped++;</span>
+  }
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >console.log(`\n✅ Done!`);</span>
+<span class="cstat-no" title="statement not covered" >console.log(`  Modified: ${modified} files`);</span>
+<span class="cstat-no" title="statement not covered" >console.log(`  Skipped: ${skipped} files (no changes needed)`);</span>
+<span class="cstat-no" title="statement not covered" >console.log(`\n📊 Changes by language:`);</span>
+<span class="cstat-no" title="statement not covered" >for (const [lang, count] of Object.entries(langStats).sort()) {</span>
+<span class="cstat-no" title="statement not covered" >  console.log(`  ${lang}: ${count} files`);</span>
+}
+&nbsp;
+// Verify no remaining Economist references (except legitimate external links)
+<span class="cstat-no" title="statement not covered" >console.log(`\n🔍 Checking for remaining "Economist" references...`);</span>
+let remaining = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >for (const file of files) {</span>
+  const filepath = <span class="cstat-no" title="statement not covered" >path.join(NEWS_DIR, file);</span>
+  const content = <span class="cstat-no" title="statement not covered" >dryRun</span>
+    ? fs.readFileSync(filepath, 'utf-8')
+    : fs.readFileSync(filepath, 'utf-8');
+&nbsp;
+  // Split into lines and check each
+  const lines = <span class="cstat-no" title="statement not covered" >content.split('\n');</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >0; i</span> &lt; lines.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (lines[i].includes('Economist') &amp;&amp; !/href=["'][^"']*economist\.com/.test(lines[i])) {</span>
+<span class="cstat-no" title="statement not covered" >      remaining++;</span>
+<span class="cstat-no" title="statement not covered" >      if (remaining &lt;= 20) {</span>
+<span class="cstat-no" title="statement not covered" >        console.log(`  ⚠️ ${file}:${i + 1}: ${lines[i].trim().substring(0, 120)}`);</span>
+      }
+    }
+  }
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >if (remaining &gt; 20) {</span>
+<span class="cstat-no" title="statement not covered" >  console.log(`  ... and ${remaining - 20} more`);</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >if (remaining === 0) {</span>
+<span class="cstat-no" title="statement not covered" >  console.log('  ✅ No remaining references (except legitimate external links)');</span>
+} else {
+<span class="cstat-no" title="statement not covered" >  console.log(`\n  ⚠️ ${remaining} remaining references found`);</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-03-05T17:29:41.244Z
+            </div>
+        <script src="../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
+    </body>
+</html>
+    

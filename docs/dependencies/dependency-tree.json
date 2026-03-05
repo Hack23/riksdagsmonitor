@@ -1,5 +1,5 @@
 {
-  "version": "0.7.4",
+  "version": "0.7.5",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2566,8 +2566,8 @@
       }
     },
     "htmlhint": {
-      "version": "1.9.1",
-      "resolved": "https://registry.npmjs.org/htmlhint/-/htmlhint-1.9.1.tgz",
+      "version": "1.9.2",
+      "resolved": "https://registry.npmjs.org/htmlhint/-/htmlhint-1.9.2.tgz",
       "overridden": false,
       "dependencies": {
         "async": {
@@ -2617,8 +2617,8 @@
           "version": "4.0.3"
         },
         "node-sarif-builder": {
-          "version": "3.4.0",
-          "resolved": "https://registry.npmjs.org/node-sarif-builder/-/node-sarif-builder-3.4.0.tgz",
+          "version": "3.2.0",
+          "resolved": "https://registry.npmjs.org/node-sarif-builder/-/node-sarif-builder-3.2.0.tgz",
           "overridden": false,
           "dependencies": {
             "@types/sarif": {
@@ -2627,8 +2627,8 @@
               "overridden": false
             },
             "fs-extra": {
-              "version": "11.3.3",
-              "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-11.3.3.tgz",
+              "version": "11.3.4",
+              "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-11.3.4.tgz",
               "overridden": false,
               "dependencies": {
                 "graceful-fs": {
