@@ -48,6 +48,10 @@ export { assessConfidenceLevel, detectNarrativeFrames } from './policy-analysis.
 export type { RiskLevel, CoalitionRiskIndex, CoalitionRiskComponents, AnomalyFlag, TrendDirection, TrendDataPoint, TrendComparison } from './risk-analysis.js';
 export { calculateCoalitionRiskIndex, detectAnomalousPatterns, generateTrendComparison } from './risk-analysis.js';
 
+// ── Re-export SWOT & Dashboard section generators ─────────────────────────
+export { generateSwotSection, generateDashboardSection } from './content-generators.js';
+export type { SwotSectionOptions, DashboardSectionOptions } from './content-generators.js';
+
 // ── Re-export metadata ─────────────────────────────────────────────────────
 export {
   generateMetadata,
