@@ -263,4 +263,13 @@ describe('generateDashboardSection', () => {
     const section = generateDashboardSection({ data, lang: 'en' });
     expect(section.html).toContain('data-chart-config="');
   });
+
+  it('falls back to safeId for aria-label when chart title is empty', () => {
+    const chart = makeChart({ id: 'my-chart', title: '' });
+    const data = makeDashboard({ charts: [chart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('aria-label="my-chart"');
+    // plugins.title.display should be false when title is empty (HTML-escaped in data attribute)
+    expect(section.html).toContain('&quot;display&quot;:false');
+  });
 });

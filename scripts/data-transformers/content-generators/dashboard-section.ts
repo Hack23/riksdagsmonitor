@@ -55,6 +55,8 @@ function serialiseChartConfig(chart: DashboardChartConfig): string {
 
   const annotationPluginBlock = buildAnnotations(chart.annotations);
 
+  const hasTitle = chart.title != null && chart.title.trim() !== '';
+
   const config = {
     type: chart.type,
     data: {
@@ -63,7 +65,7 @@ function serialiseChartConfig(chart: DashboardChartConfig): string {
     },
     options: {
       plugins: {
-        title: { display: true, text: chart.title },
+        title: { display: hasTitle, text: chart.title },
         ...(annotationPluginBlock ? { annotation: annotationPluginBlock } : {}),
       },
     },
@@ -86,7 +88,8 @@ function buildAnnotations(
       case 'line': {
         config = {
           type: 'line',
-          ...(a.value != null ? { yMin: a.value, yMax: a.value } : {}),
+          yMin: a.value,
+          yMax: a.value,
           ...(a.borderColor ? { borderColor: a.borderColor } : {}),
           ...(a.backgroundColor ? { backgroundColor: a.backgroundColor } : {}),
           ...(a.label ? { label: { display: true, content: a.label } } : {}),
@@ -94,17 +97,11 @@ function buildAnnotations(
         break;
       }
       case 'label': {
-        if (a.label == null && a.value == null) break;
-        const content =
-          a.label != null
-            ? a.label
-            : a.value != null
-              ? String(a.value)
-              : '';
+        const content = a.label != null ? a.label : String(a.value);
         config = {
           type: 'label',
           content,
-          ...(a.value != null ? { yValue: a.value } : {}),
+          yValue: a.value,
           ...(a.borderColor ? { borderColor: a.borderColor } : {}),
           ...(a.backgroundColor ? { backgroundColor: a.backgroundColor } : {}),
         };
@@ -229,8 +226,9 @@ export function generateDashboardSection(opts: DashboardSectionOptions): Templat
   // Chart canvases with config in data attribute (no inline scripts)
   const chartBlocks = sanitisedCharts.map(chart => {
     const config = serialiseChartConfig(chart);
+    const ariaLabel = chart.title && chart.title.trim() ? chart.title : chart.safeId;
     return `    <div class="dashboard-chart-wrapper">
-      <canvas id="${escapeHtml(chart.safeId)}" role="img" aria-label="${escapeHtml(chart.title)}" data-chart-config="${escapeHtml(config)}"></canvas>
+      <canvas id="${escapeHtml(chart.safeId)}" role="img" aria-label="${escapeHtml(ariaLabel)}" data-chart-config="${escapeHtml(config)}"></canvas>
     </div>`;
   }).join('\n');
 
