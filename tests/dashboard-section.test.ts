@@ -155,13 +155,12 @@ describe('generateDashboardSection', () => {
     expect(section.html).toContain('&lt;script&gt;');
   });
 
-  it('sanitises chart id to alphanumeric in script block', () => {
+  it('sanitises chart id consistently in both HTML and script', () => {
     const chart = makeChart({ id: 'chart-<evil>' });
     const data = makeDashboard({ charts: [chart] });
     const section = generateDashboardSection({ data, lang: 'en' });
-    // The canvas id is HTML-escaped
-    expect(section.html).toContain('id="chart-&lt;evil&gt;"');
-    // The script uses sanitised id
+    // Both canvas id and script getElementById use the same sanitised id
+    expect(section.html).toContain('id="chart-evil"');
     expect(section.html).toContain("getElementById('chart-evil')");
   });
 

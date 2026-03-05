@@ -177,11 +177,16 @@ export function generateDashboardSection(opts: DashboardSectionOptions): Templat
     ? `    <p class="dashboard-summary">${escapeHtml(data.summary)}</p>\n`
     : '';
 
+  // Sanitise chart IDs once — used consistently in both HTML id and script getElementById
+  const sanitisedCharts = data.charts.map(chart => ({
+    ...chart,
+    safeId: chart.id.replace(/[^a-zA-Z0-9_-]/g, ''),
+  }));
+
   // Chart canvases
-  const chartBlocks = data.charts.map(chart => {
-    const safeId = escapeHtml(chart.id);
+  const chartBlocks = sanitisedCharts.map(chart => {
     return `    <div class="dashboard-chart-wrapper">
-      <canvas id="${safeId}" role="img" aria-label="${escapeHtml(chart.title)}"></canvas>
+      <canvas id="${escapeHtml(chart.safeId)}" role="img" aria-label="${escapeHtml(chart.title)}"></canvas>
     </div>`;
   }).join('\n');
 
@@ -189,11 +194,10 @@ export function generateDashboardSection(opts: DashboardSectionOptions): Templat
   const tableBlocks = (data.tables ?? []).map(t => renderTable(t)).join('\n');
 
   // Inline Chart.js init script
-  const chartInits = data.charts.map(chart => {
+  const chartInits = sanitisedCharts.map(chart => {
     const config = serialiseChartConfig(chart);
-    const safeId = chart.id.replace(/[^a-zA-Z0-9_-]/g, '');
     return `      (function() {
-        var canvas = document.getElementById('${safeId}');
+        var canvas = document.getElementById('${chart.safeId}');
         if (canvas && typeof Chart !== 'undefined') {
           new Chart(canvas.getContext('2d'), ${config});
         }
