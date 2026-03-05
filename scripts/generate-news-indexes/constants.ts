@@ -18,7 +18,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   en: {
     name: 'English', code: 'en', locale: 'en_US',
     title: 'News',
-    subtitle: 'Latest news and analysis from Sweden\'s Riksdag. AI-generated political intelligence based on OSINT/INTOP data covering parliament, government, and agencies with systematic transparency.',
+    subtitle: 'Latest news and analysis from Sweden\'s Riksdag. AI-generated political intelligence based on OSINT/INTOP data covering parliament, government, and agencies.',
     keywords: 'riksdag news, swedish parliament, government bills, committee reports, propositions, motions, parliamentary votes, political analysis, Sweden Democrats, Social Democrats, Moderaterna, coalition politics, transparency, democracy',
     breadcrumbs: { home: 'Home', news: 'News' },
     backLink: 'Back to Main',
@@ -38,7 +38,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
   sv: {
     name: 'Svenska', code: 'sv', locale: 'sv_SE',
     title: 'Nyheter',
-    subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. AI-genererad politisk underrättelsejournalistik baserad på OSINT/INTOP-data som täcker riksdag, regering och myndigheter med systematisk transparens.',
+    subtitle: 'Senaste nyheterna och analyser från Sveriges Riksdag. AI-genererad politisk intelligens baserad på OSINT/INTOP-data om riksdag, regering och myndigheter.',
     keywords: 'riksdag nyheter, svenska riksdagen, propositioner, betänkanden, motioner, utskott, voteringar, politisk analys, Socialdemokraterna, Moderaterna, Sverigedemokraterna, koalitionspolitik, öppenhet, demokrati',
     breadcrumbs: { home: 'Hem', news: 'Nyheter' },
     backLink: 'Tillbaka till huvudsidan',
