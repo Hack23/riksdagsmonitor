@@ -45,7 +45,7 @@
       if (stored === DARK || stored === LIGHT) {
         return stored;
       }
-    } catch (e) {
+    } catch (_e) {
       // Ignore storage errors and fall back to the attribute set by the anti-flash snippet
     }
     return null;
@@ -70,7 +70,7 @@
     applyTheme(currentTheme, button);
     try {
       window.localStorage.setItem(STORAGE_KEY, currentTheme);
-    } catch (e) {
+    } catch (_e) {
       // Ignore storage errors
     }
   });
