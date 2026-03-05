@@ -485,15 +485,13 @@ describe('Evening Analysis Structure Validation', () => {
     const article = parseArticle(testFile)!;
     const html = article.content;
     
-    // Check for meta description that matches the style guide
-    const hasProperDescription = html.includes('Latest news and analysis') || 
-                                  html.includes('OSINT') ||
-                                  html.includes('political intelligence') ||
-                                  html.includes('Swedish Parliament') ||
-                                  html.includes('Riksdag');
+    // Extract and validate the meta description tag exists and has meaningful content
+    const metaDescMatch = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i);
+    expect(metaDescMatch).not.toBeNull();
     
-    // At minimum should mention Swedish Parliament/Riksdag
-    expect(hasProperDescription).toBe(true);
+    const metaDescription = metaDescMatch![1];
+    // Meta description should be non-trivial (at least 50 chars for a proper summary)
+    expect(metaDescription.length).toBeGreaterThanOrEqual(50);
   });
 
   it('should have RTL direction for Arabic articles', () => {
