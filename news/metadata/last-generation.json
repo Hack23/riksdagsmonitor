@@ -56,5 +56,5 @@
     "2026-03-05-government-propositions-zh.html"
   ],
   "status": "enhanced",
-  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
+  "note": "Government propositions analysis generated from live MCP data (20 propositions from riksmöte 2025/26)"
 }
