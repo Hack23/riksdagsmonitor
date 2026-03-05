@@ -116,6 +116,14 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">跳转到主要内容</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="切换到深色主题"
+        title="切换到深色主题"
+        data-label-dark="切换到浅色主题"
+        data-label-light="切换到深色主题">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <nav class="language-switcher" role="navigation" aria-label="语言">
     <a href="2026-03-05-opposition-motions-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-05-opposition-motions-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -151,7 +159,7 @@
     </div>
   </header>
 
-  <div class="article-content">
+  <div class="article-content prose">
 
     <p class="lede">瑞典新武器法在议会引发了三党叛乱。3月4日，社会民主党、中央党和绿党分别提交了反对2025/26:141号法案的单独动议，该法案将禁止猎人和农民使用的某些半自动步枪。与此同时，左派党对政府对儿童和青少年罪犯实施监禁刑罚的计划发起正面攻击。一天之内提交六项动议——全部提交司法委员会（JuU）——春季会期中政治争议最激烈的委员会争斗正在成形。结合反对派在农业气候政策和可再生能源许可问题上的持续压力，五个委员会中最新的20项动议揭示了一个正在为2026年选举磨刀霍霍的反对派阵营。</p>
 
@@ -258,14 +266,68 @@
   </footer>
 </article>
 
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="切换到深色主题"
-        title="切换到深色主题"
-        data-label-dark="切换到浅色主题"
-        data-label-light="切换到深色主题">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>关于Riksdagsmonitor</h3>
+      <p>利用CIA OSINT能力监测瑞典议会的平台。</p>
+      <ul class="footer-stats">
+        <li>已追踪 <strong>349 名议员</strong></li>
+        <li>已启用 <strong>45 条风险规则</strong></li>
+        <li>支持 <strong>14 种语言</strong></li>
+        <li>覆盖 <strong>50+ 年</strong>历史数据</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>快速链接</h3>
+      <ul>
+        <li><a href="../index_zh.html">首页</a></li>
+        <li><a href="index_zh.html">新闻</a></li>
+        <li><a href="../dashboard/index_zh.html">仪表板</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA 平台</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Hack23 AB 构建</h3>
+      <p>专注于政治透明度的瑞典网络安全咨询公司。</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">公司 LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">公开 ISMS</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">安全政策</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">隐私政策</a></li>
+        <li><a href="mailto:info@hack23.com">联系我们</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>语言</h3>
+      <div class="language-grid">
+        <a href="../index.html" title="English" aria-label="Switch to English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="../index_sv.html" title="Svenska" aria-label="Byt till Svenska"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="../index_da.html" title="Dansk" aria-label="Skift til Dansk"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="../index_no.html" title="Norsk" aria-label="Bytt til Norsk"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="../index_fi.html" title="Suomi" aria-label="Vaihda Suomeksi"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="../index_de.html" title="Deutsch" aria-label="Wechseln zu Deutsch"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="../index_fr.html" title="Français" aria-label="Passer au Français"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="../index_es.html" title="Español" aria-label="Cambiar a Español"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="../index_nl.html" title="Nederlands" aria-label="Schakel naar Nederlands"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="../index_ar.html" title="العربية" aria-label="التبديل إلى العربية"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="../index_he.html" title="עברית" aria-label="עבור לעברית"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="../index_ja.html" title="日本語" aria-label="日本語に切り替え"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="../index_ko.html" title="한국어" aria-label="한국어로 전환"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="../index_zh.html" title="中文" aria-label="切换到中文"><span aria-hidden="true">🇨🇳</span> ZH</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | 瑞典哥德堡 | v0.7.4</p>
+    <p class="footer-disclaimer">⚠️ 持续改进中——请 <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">在 GitHub 上报告任何问题</a>.</p>
+  </div>
+</footer>
+
+<script type="module" src="../scripts/back-to-top.js"></script>
 <script src="../js/theme-toggle.js"></script>
 </body>
 </html>

@@ -116,6 +116,14 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Zum dunklen Thema wechseln"
+        title="Zum dunklen Thema wechseln"
+        data-label-dark="Zum hellen Thema wechseln"
+        data-label-light="Zum dunklen Thema wechseln">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <nav class="language-switcher" role="navigation" aria-label="Sprache">
     <a href="2026-03-05-opposition-motions-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
     <a href="2026-03-05-opposition-motions-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
@@ -151,7 +159,7 @@
     </div>
   </header>
 
-  <div class="article-content">
+  <div class="article-content prose">
 
     <p class="lede">Schwedens neues Waffengesetz hat im Riksdag einen Drei-Parteien-Aufstand ausgelöst. Am 4. März reichten die Sozialdemokraten, die Zentrumspartei und die Grünen jeweils eigene Anträge gegen Prop. 2025/26:141 ein, das bestimmte halbautomatische Gewehre, die von Jägern und Landwirten genutzt werden, verbieten würde. Gleichzeitig startete die Linkspartei einen Frontalangriff auf den Regierungsplan, Freiheitsstrafen für Kinder und junge Straftäter einzuführen. Mit sechs Anträgen an einem einzigen Tag — allesamt an den Rechtsausschuss (JuU) verwiesen — nehmen die politisch aufgeladensten Ausschussschlachten der Frühjahrssitzung Gestalt an. Zusammen mit dem anhaltenden Oppositionsdruck auf die Agrarklimapolitik und die Lizenzierung erneuerbarer Energien offenbaren die 20 neuesten Anträge in fünf Ausschüssen einen Oppositionsblock, der seine Messer für die Wahl 2026 wetzt.</p>
 
@@ -258,14 +266,68 @@
   </footer>
 </article>
 
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Zum dunklen Thema wechseln"
-        title="Zum dunklen Thema wechseln"
-        data-label-dark="Zum hellen Thema wechseln"
-        data-label-light="Zum dunklen Thema wechseln">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
+<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Über Riksdagsmonitor</h3>
+      <p>Plattform zur Überwachung des schwedischen Parlaments mit CIA OSINT-Fähigkeiten.</p>
+      <ul class="footer-stats">
+        <li><strong>349 Abgeordnete</strong> überwacht</li>
+        <li><strong>45 Risikoregeln</strong> aktiv</li>
+        <li><strong>14 Sprachen</strong> unterstützt</li>
+        <li><strong>50+ Jahre</strong> historische Daten</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Schnelllinks</h3>
+      <ul>
+        <li><a href="../index_de.html">Startseite</a></li>
+        <li><a href="index_de.html">Nachrichten</a></li>
+        <li><a href="../dashboard/index_de.html">Dashboard</a></li>
+        <li><a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA-Plattform</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Sveriges Riksdag</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Erstellt von Hack23 AB</h3>
+      <p>Schwedische Cybersicherheitsberatung für politische Transparenz.</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Unternehmens-LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Öffentliches ISMS</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Sicherheitsrichtlinie</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Datenschutzrichtlinie</a></li>
+        <li><a href="mailto:info@hack23.com">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Sprachen</h3>
+      <div class="language-grid">
+        <a href="../index.html" title="English" aria-label="Switch to English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="../index_sv.html" title="Svenska" aria-label="Byt till Svenska"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="../index_da.html" title="Dansk" aria-label="Skift til Dansk"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="../index_no.html" title="Norsk" aria-label="Bytt til Norsk"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="../index_fi.html" title="Suomi" aria-label="Vaihda Suomeksi"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="../index_de.html" title="Deutsch" aria-label="Wechseln zu Deutsch"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="../index_fr.html" title="Français" aria-label="Passer au Français"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="../index_es.html" title="Español" aria-label="Cambiar a Español"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="../index_nl.html" title="Nederlands" aria-label="Schakel naar Nederlands"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="../index_ar.html" title="العربية" aria-label="التبديل إلى العربية"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="../index_he.html" title="עברית" aria-label="עבור לעברית"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="../index_ja.html" title="日本語" aria-label="日本語に切り替え"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="../index_ko.html" title="한국어" aria-label="한국어로 전환"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="../index_zh.html" title="中文" aria-label="切换到中文"><span aria-hidden="true">🇨🇳</span> ZH</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Göteborg, Schweden | v0.7.4</p>
+    <p class="footer-disclaimer">⚠️ Laufende Verbesserungen — bitte <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">melden Sie Probleme auf GitHub</a>.</p>
+  </div>
+</footer>
+
+<script type="module" src="../scripts/back-to-top.js"></script>
 <script src="../js/theme-toggle.js"></script>
 </body>
 </html>
