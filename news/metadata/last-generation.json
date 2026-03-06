@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-05T05:30:06.107Z",
+  "timestamp": "2026-03-06T07:18:16.253Z",
   "types": [
-    "propositions"
+    "week-ahead"
   ],
   "languagesGenerated": [
     "en",
@@ -36,25 +36,10 @@
     "zh"
   ],
   "batchSize": "all",
-  "skipExisting": true,
-  "generated": 14,
-  "errors": 0,
-  "articles": [
-    "2026-03-05-government-propositions-en.html",
-    "2026-03-05-government-propositions-sv.html",
-    "2026-03-05-government-propositions-da.html",
-    "2026-03-05-government-propositions-no.html",
-    "2026-03-05-government-propositions-fi.html",
-    "2026-03-05-government-propositions-de.html",
-    "2026-03-05-government-propositions-fr.html",
-    "2026-03-05-government-propositions-es.html",
-    "2026-03-05-government-propositions-nl.html",
-    "2026-03-05-government-propositions-ar.html",
-    "2026-03-05-government-propositions-he.html",
-    "2026-03-05-government-propositions-ja.html",
-    "2026-03-05-government-propositions-ko.html",
-    "2026-03-05-government-propositions-zh.html"
-  ],
+  "skipExisting": false,
+  "generated": 0,
+  "errors": 1,
+  "articles": [],
   "status": "enhanced",
-  "note": "Government propositions analysis generated from live MCP data (20 propositions from riksmöte 2025/26)"
+  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
