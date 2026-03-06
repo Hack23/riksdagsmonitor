@@ -34,9 +34,9 @@
 <meta property="og:site_name" content="Riksdagsmonitor">
 <meta property="og:title" content="Riksdagsmonitor | Plataforma de inteligencia de las elecciones suecas 2026">
 <meta property="og:description" content="Monitoreo en tiempo real de 349 diputados en 8 partidos. Predicciones de coalición, 45 reglas de riesgo, pronóstico electoral y más de 50 años de datos parlamentarios. Gratis y de código abierto.">
-<meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
-<meta property="og:image:width" content="140">
-<meta property="og:image:height" content="140">
+<meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Riksdagsmonitor - Plataforma de inteligencia del parlamento sueco">
 <meta property="og:locale" content="es_ES">
 <meta property="og:locale:alternate" content="ar_SA">
@@ -57,7 +57,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Riksdagsmonitor | Plataforma de inteligencia de las elecciones suecas 2026">
 <meta name="twitter:description" content="Monitoreo en tiempo real de 349 diputados en 8 partidos. Predicciones de coalición, 45 reglas de riesgo, pronóstico electoral y más de 50 años de datos parlamentarios. Gratis y de código abierto.">
-<meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+<meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
 <meta name="twitter:image:alt" content="Riksdagsmonitor - Plataforma de inteligencia del parlamento sueco">
 <meta name="twitter:site" content="@riksdagsmonitor">
 <meta name="twitter:creator" content="@jamessorling">
@@ -77,6 +77,12 @@
 
 <meta name="application-name" content="Riksdagsmonitor">
 <meta name="theme-color" content="#0a0e27">
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 
 <!-- Schema.org structured data -->
 <script type="application/ld+json">
@@ -91,9 +97,9 @@
       "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
-        "width": 250,
-        "height": 250
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
       },
       "description": "Plataforma de monitoreo del parlamento sueco que ofrece inteligencia en tiempo real, pronóstico electoral y transparencia política mediante análisis OSINT de la CIA.",
       "foundingDate": "2008",
@@ -148,7 +154,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
         "width": 1200,
         "height": 630
       },
@@ -190,7 +196,7 @@
       "description": "Las elecciones parlamentarias suecas están programadas para el 13 de septiembre de 2026. Plataforma de inteligencia en vivo que monitorea 349 diputados en 8 partidos con capacidades OSINT de la CIA, predicciones de coalición y evaluación integral de riesgos. Siga patrones de votación, actividad de comisiones y transparencia política en tiempo real. Base de datos histórica: 2494 políticos rastreados desde 1971.",
       "image": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
         "width": 1200,
         "height": 630
       },
@@ -342,6 +348,58 @@ Elecciones suecas 2026
 </ol>
 </nav>
 
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Cambiar al tema oscuro"
+        title="Cambiar al tema oscuro"
+        data-label-dark="Cambiar al tema claro"
+        data-label-light="Cambiar al tema oscuro">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_es.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">Plataforma de inteligencia de las elecciones suecas 2026</span></h1>
+    <p class="tagline">Monitoreo parlamentario en tiempo real · Predicciones de coalición · 45 reglas de riesgo · Más de 50 años de datos</p>
+  </div>
+</div>
+
+
+<div class="election-countdown">
+<h2>Elección en: <span id="countdown">13 de septiembre de 2026</span></h2>
+<p>13 de septiembre de 2026 (segundo domingo de septiembre)</p>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">2,494</span>
+<span class="label">Políticos rastreados</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">6M+</span>
+<span class="label">Votaciones parlamentarias</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">500K+</span>
+<span class="label">Documentos procesados</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">10K+</span>
+<span class="label">Proyectos del gobierno</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">20K+</span>
+<span class="label">Decisiones de comisiones</span>
+</div>
+</div>
+</header>
+
 <!-- Navegación de noticias -->
 <nav class="news-navigation" aria-label="Noticias">
 <p class="news-navigation-heading"><span aria-hidden="true">📰</span> Periodismo político impulsado por IA</p>
@@ -359,47 +417,6 @@ Elecciones suecas 2026
 <span>Leer noticias</span>
 </a>
 </nav>
-
-<header>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Cambiar al tema oscuro"
-        title="Cambiar al tema oscuro"
-        data-label-dark="Cambiar al tema claro"
-        data-label-light="Cambiar al tema oscuro">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
-<h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">Plataforma de inteligencia de las elecciones suecas 2026</span></h1>
-<p class="tagline">Monitoreo parlamentario en tiempo real · Predicciones de coalición · 45 reglas de riesgo · Más de 50 años de datos</p>
-
-<div class="election-countdown">
-<h2>Elección en: <span id="countdown">13 de septiembre de 2026</span></h2>
-<p>13 de septiembre de 2026 (segundo domingo de septiembre)</p>
-</div>
-
-<div class="hero-stats">
-<div class="stat">
-<span class="number" data-stat-id="stat-historical-persons">—</span>
-<span class="label">Políticos rastreados</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-against-proposals">—</span>
-<span class="label">Votaciones parlamentarias</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-total-documents">—</span>
-<span class="label">Documentos procesados</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-government-proposals">—</span>
-<span class="label">Proyectos del gobierno</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-committee-decisions">—</span>
-<span class="label">Decisiones de comisiones</span>
-</div>
-</div>
-</header>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="Panel de inteligencia">
@@ -1041,11 +1058,11 @@ Niveles de rendimiento (ntile_party_tier: 1-4)
 <div class="scanner-effect"></div>
 <h3>🔍 Monitoreo en tiempo real</h3>
 <ul>
-<li>349 diputados rastreados automáticamente (<span data-stat-id="stat-historical-persons">—</span> históricos)</li>
+<li>349 diputados rastreados automáticamente (<span data-stat-id="stat-historical-persons">2,494</span> históricos)</li>
 <li><span data-stat-id="stat-total-votes">—</span> registros de votación individuales analizados</li>
-<li><span data-stat-id="stat-total-documents">—</span> documentos procesados</li>
+<li><span data-stat-id="stat-total-documents">500K+</span> documentos procesados</li>
 <li><span data-stat-id="stat-member-proposals">—</span> propuestas de diputados rastreadas</li>
-<li><span data-stat-id="stat-government-proposals">—</span> propuestas del gobierno monitorizadas</li>
+<li><span data-stat-id="stat-government-proposals">10K+</span> propuestas del gobierno monitorizadas</li>
 <li>Trabajo de comisiones cuantificado (<span data-stat-id="stat-committee-documents">—</span> documentos)</li>
 </ul>
 </div>
@@ -1186,6 +1203,9 @@ Niveles de rendimiento (ntile_party_tier: 1-4)
 <footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-section">
+      <a href="index_es.html" aria-label="Riksdagsmonitor Home">
+        <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+      </a>
       <h3>Acerca de Riksdagsmonitor</h3>
       <p>Plataforma de inteligencia en vivo para monitoreo del parlamento sueco usando capacidades OSINT de la CIA.</p>
       <ul class="footer-stats">

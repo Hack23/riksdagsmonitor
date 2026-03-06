@@ -34,9 +34,9 @@
 <meta property="og:site_name" content="Riksdagsmonitor">
 <meta property="og:title" content="Riksdagsmonitor | Zweeds verkiezingsintelligentieplatform 2026">
 <meta property="og:description" content="Realtime monitoring van 349 parlementsleden in 8 partijen. Coalitievoorspellingen, 45 risicoregels, verkiezingsvoorspellingen en 50+ jaar parlementaire data. Gratis en open source.">
-<meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
-<meta property="og:image:width" content="140">
-<meta property="og:image:height" content="140">
+<meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Riksdagsmonitor - Intelligentieplatform voor het Zweedse parlement">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:locale:alternate" content="ar_SA">
@@ -57,7 +57,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Riksdagsmonitor | Zweeds verkiezingsintelligentieplatform 2026">
 <meta name="twitter:description" content="Realtime monitoring van 349 parlementsleden in 8 partijen. Coalitievoorspellingen, 45 risicoregels, verkiezingsvoorspellingen en 50+ jaar parlementaire data. Gratis en open source.">
-<meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+<meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
 <meta name="twitter:image:alt" content="Riksdagsmonitor - Intelligentieplatform voor het Zweedse parlement">
 <meta name="twitter:site" content="@riksdagsmonitor">
 <meta name="twitter:creator" content="@jamessorling">
@@ -77,6 +77,12 @@
 
 <meta name="application-name" content="Riksdagsmonitor">
 <meta name="theme-color" content="#0a0e27">
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 
 <!-- Gestructureerde data van Schema.org -->
 <script type="application/ld+json">
@@ -91,9 +97,9 @@
       "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
-        "width": 250,
-        "height": 250
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
       },
       "description": "Monitoringsplatform voor het Zweedse parlement dat realtime intelligence, verkiezingsvoorspelling en politieke transparantie biedt via CIA OSINT-analyse.",
       "foundingDate": "2008",
@@ -148,7 +154,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
         "width": 1200,
         "height": 630
       },
@@ -190,7 +196,7 @@
       "description": "Zweedse parlementsverkiezing gepland op 13 september 2026. Live intelligenceplatform dat 349 parlementsleden in 8 partijen monitort met CIA OSINT-capaciteiten, coalitievoorspellingen en uitgebreide risicobeoordeling. Volg stempatronen, commissieactiviteiten en politieke transparantie in realtime. Historische database: 2494 politici gevolgd sinds 1971.",
       "image": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
         "width": 1200,
         "height": 630
       },
@@ -342,6 +348,58 @@ Zweedse verkiezingen 2026
 </ol>
 </nav>
 
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Schakel naar donker thema"
+        title="Schakel naar donker thema"
+        data-label-dark="Schakel naar licht thema"
+        data-label-light="Schakel naar donker thema">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_nl.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">Zweeds verkiezingsintelligentieplatform 2026</span></h1>
+    <p class="tagline">Realtime parlementaire monitoring · Coalitievoorspellingen · 45 risicoregels · 50+ jaar data</p>
+  </div>
+</div>
+
+
+<div class="election-countdown">
+<h2>Verkiezing over: <span id="countdown">13 september 2026</span></h2>
+<p>13 september 2026 (tweede zondag van september)</p>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">2,494</span>
+<span class="label">Gevolgde politici</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">6M+</span>
+<span class="label">Parlementaire stemmingen</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">500K+</span>
+<span class="label">Verwerkte documenten</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">10K+</span>
+<span class="label">Regeringsvoorstellen</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">20K+</span>
+<span class="label">Commissiebesluiten</span>
+</div>
+</div>
+</header>
+
 <!-- Nieuwsnavigatie -->
 <nav class="news-navigation" aria-label="Nieuws">
 <p class="news-navigation-heading"><span aria-hidden="true">📰</span> Door AI vernieuwde politieke journalistiek</p>
@@ -359,47 +417,6 @@ Zweedse verkiezingen 2026
 <span>Lees het nieuws</span>
 </a>
 </nav>
-
-<header>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Schakel naar donker thema"
-        title="Schakel naar donker thema"
-        data-label-dark="Schakel naar licht thema"
-        data-label-light="Schakel naar donker thema">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
-<h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">Zweeds verkiezingsintelligentieplatform 2026</span></h1>
-<p class="tagline">Realtime parlementaire monitoring · Coalitievoorspellingen · 45 risicoregels · 50+ jaar data</p>
-
-<div class="election-countdown">
-<h2>Verkiezing over: <span id="countdown">13 september 2026</span></h2>
-<p>13 september 2026 (tweede zondag van september)</p>
-</div>
-
-<div class="hero-stats">
-<div class="stat">
-<span class="number" data-stat-id="stat-historical-persons">—</span>
-<span class="label">Gevolgde politici</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-against-proposals">—</span>
-<span class="label">Parlementaire stemmingen</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-total-documents">—</span>
-<span class="label">Verwerkte documenten</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-government-proposals">—</span>
-<span class="label">Regeringsvoorstellen</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-committee-decisions">—</span>
-<span class="label">Commissiebesluiten</span>
-</div>
-</div>
-</header>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="Inlichtingendashboard">
@@ -1041,11 +1058,11 @@ Prestatieniveaus (ntile_party_tier: 1-4)
 <div class="scanner-effect"></div>
 <h3>🔍 Realtime monitoring</h3>
 <ul>
-<li>349 parlementariërs automatisch gevolgd (<span data-stat-id="stat-historical-persons">—</span> historisch)</li>
+<li>349 parlementariërs automatisch gevolgd (<span data-stat-id="stat-historical-persons">2,494</span> historisch)</li>
 <li><span data-stat-id="stat-total-votes">—</span> individuele stemregistraties geanalyseerd</li>
-<li><span data-stat-id="stat-total-documents">—</span> documenten verwerkt</li>
+<li><span data-stat-id="stat-total-documents">500K+</span> documenten verwerkt</li>
 <li><span data-stat-id="stat-member-proposals">—</span> voorstellen van leden gevolgd</li>
-<li><span data-stat-id="stat-government-proposals">—</span> regeringsvoorstellen gemonitord</li>
+<li><span data-stat-id="stat-government-proposals">10K+</span> regeringsvoorstellen gemonitord</li>
 <li>Commissiewerk gekwantificeerd (<span data-stat-id="stat-committee-documents">—</span> documenten)</li>
 </ul>
 </div>
@@ -1186,6 +1203,9 @@ Prestatieniveaus (ntile_party_tier: 1-4)
 <footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-section">
+      <a href="index_nl.html" aria-label="Riksdagsmonitor Home">
+        <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+      </a>
       <h3>Over Riksdagsmonitor</h3>
       <p>Live intelligenceplatform voor monitoring van het Zweedse parlement met CIA OSINT-capaciteiten.</p>
       <ul class="footer-stats">

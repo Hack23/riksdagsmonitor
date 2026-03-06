@@ -89,9 +89,9 @@ export function generateArticleHTML(data: ArticleData): string {
   <meta property="og:description" content="${escapeHtml(subtitle).substring(0, 200)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
-  <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
-  <meta property="og:image:width" content="140">
-  <meta property="og:image:height" content="140">
+  <meta property="og:image" content="https://riksdagsmonitor.com/images/og-image-news.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta property="og:locale" content="${ogLocale}">
   <meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
@@ -105,7 +105,7 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(subtitle).substring(0, 200)}">
-  <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+  <meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image-news.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta name="twitter:site" content="@riksdagsmonitor">
   <meta name="twitter:creator" content="@jamessorling">
@@ -117,6 +117,15 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <!-- Hreflang for language alternatives -->
 ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
   <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/news/${baseSlug}-en.html">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e27">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -157,16 +166,16 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
       "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
-        "width": 140,
-        "height": 140
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
       }
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://hack23.com/cia-icon-140.webp",
-      "width": 140,
-      "height": 140
+      "url": "https://riksdagsmonitor.com/images/og-image-news.webp",
+      "width": 1200,
+      "height": 630
     },
     "articleSection": "${typeLabel}",
     "articleBody": "${sanitizeArticleBody(escapeHtml(fixedContent))}...",
@@ -232,7 +241,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     "@type": "Organization",
     "name": "Riksdagsmonitor",
     "url": "https://riksdagsmonitor.com",
-    "logo": "https://hack23.com/cia-icon-140.webp",
+    "logo": "https://riksdagsmonitor.com/images/android-chrome-512x512.png",
     "description": "${CONTENT_LABELS[lang]?.siteDescription ?? CONTENT_LABELS.en.siteDescription}",
     "foundingDate": "2020",
     "founder": {
@@ -271,6 +280,9 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
 
 <article id="main-content" class="news-article">
   <header class="article-header">
+    <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" aria-label="Riksdagsmonitor News">
+      <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="100" height="100" loading="eager">
+    </a>
     <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
     <h1>${title}</h1>
     <div class="article-meta">
