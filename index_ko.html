@@ -348,24 +348,6 @@
 </ol>
 </nav>
 
-<!-- 뉴스 내비게이션 -->
-<nav class="news-navigation" aria-label="뉴스">
-<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI 기반 정치 저널리즘</p>
-<p class="news-navigation-description">OSINT/INTOP 데이터 기반 AI 생성 정치 인텔리전스 보도를 Citizen Intelligence Agency OSINT 데이터를 사용하여 AI 에이전트가 매일 생성합니다. 정부 법안, 위원회 보고서, 야당 동의안, 의회 질문, 저녁 심층 분석 자동 분석 — 14개 언어로 제공.</p>
-<ul class="news-navigation-features" aria-label="뉴스 보도 유형">
-<li>📋 위원회 보고서</li>
-<li>📜 정부 법안</li>
-<li>✊ 야당 동의안</li>
-<li>❓ 의회 질문</li>
-<li>🌙 저녁 분석</li>
-<li>🌍 14개 언어</li>
-</ul>
-<a href="news/index_ko.html" class="news-navigation-link" aria-label="최신 뉴스 읽기">
-<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
-<span>뉴스 읽기</span>
-</a>
-</nav>
-
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
@@ -375,11 +357,19 @@
         data-label-light="다크 테마로 전환">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
-<a href="index_ko.html" aria-label="Riksdagsmonitor Home">
-  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="120" height="120" loading="eager">
-</a>
-<h1> Riksdagsmonitor<br><span class="h1-subtitle">2026 스웨덴 총선 인텔리전스 플랫폼</span></h1>
-<p class="tagline">실시간 의회 모니터링 · 연정 예측 · 45개 위험 규칙 · 50년+ 데이터</p>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_ko.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">2026 스웨덴 총선 인텔리전스 플랫폼</span></h1>
+    <p class="tagline">실시간 의회 모니터링 · 연정 예측 · 45개 위험 규칙 · 50년+ 데이터</p>
+  </div>
+</div>
+
 
 <div class="election-countdown">
 <h2>선거까지: <span id="countdown">2026년 9월 13일</span></h2>
@@ -409,6 +399,24 @@
 </div>
 </div>
 </header>
+
+<!-- 뉴스 내비게이션 -->
+<nav class="news-navigation" aria-label="뉴스">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI 기반 정치 저널리즘</p>
+<p class="news-navigation-description">OSINT/INTOP 데이터 기반 AI 생성 정치 인텔리전스 보도를 Citizen Intelligence Agency OSINT 데이터를 사용하여 AI 에이전트가 매일 생성합니다. 정부 법안, 위원회 보고서, 야당 동의안, 의회 질문, 저녁 심층 분석 자동 분석 — 14개 언어로 제공.</p>
+<ul class="news-navigation-features" aria-label="뉴스 보도 유형">
+<li>📋 위원회 보고서</li>
+<li>📜 정부 법안</li>
+<li>✊ 야당 동의안</li>
+<li>❓ 의회 질문</li>
+<li>🌙 저녁 분석</li>
+<li>🌍 14개 언어</li>
+</ul>
+<a href="news/index_ko.html" class="news-navigation-link" aria-label="최신 뉴스 읽기">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>뉴스 읽기</span>
+</a>
+</nav>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="정보 대시보드">

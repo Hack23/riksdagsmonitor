@@ -348,24 +348,6 @@
 </ol>
 </nav>
 
-<!-- ניווט חדשות -->
-<nav class="news-navigation" aria-label="חדשות">
-<p class="news-navigation-heading"><span aria-hidden="true">📰</span> עיתונות פוליטית מונעת בינה מלאכותית</p>
-<p class="news-navigation-description">סיקור מודיעין פוליטי מבוסס AI של הריקסדאג השוודי, מופק מדי יום על ידי סוכני AI באמצעות נתוני OSINT של סוכנות מודיעין האזרח. ניתוח אוטומטי של הצעות ממשלה, דוחות ועדות, הצעות אופוזיציה, שאילתות פרלמנטריות וניתוחי ערב — ב-14 שפות.</p>
-<ul class="news-navigation-features" aria-label="סוגי כיסוי חדשותי">
-<li>📋 דוחות ועדות</li>
-<li>📜 הצעות ממשלה</li>
-<li>✊ הצעות אופוזיציה</li>
-<li>❓ שאילתות פרלמנטריות</li>
-<li>🌙 ניתוח ערב</li>
-<li>🌍 14 שפות</li>
-</ul>
-<a href="news/index_he.html" class="news-navigation-link" aria-label="קרא את החדשות האחרונות">
-<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
-<span>קרא חדשות</span>
-</a>
-</nav>
-
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
@@ -375,11 +357,19 @@
         data-label-light="עבור לנושא כהה">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
-<a href="index_he.html" aria-label="Riksdagsmonitor Home">
-  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="120" height="120" loading="eager">
-</a>
-<h1> Riksdagsmonitor<br><span class="h1-subtitle">פלטפורמת מודיעין לבחירות שוודיה 2026</span></h1>
-<p class="tagline">ניטור פרלמנטרי בזמן אמת · תחזיות קואליציה · 45 כללי סיכון · יותר מ-50 שנות נתונים</p>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_he.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">פלטפורמת מודיעין לבחירות שוודיה 2026</span></h1>
+    <p class="tagline">ניטור פרלמנטרי בזמן אמת · תחזיות קואליציה · 45 כללי סיכון · יותר מ-50 שנות נתונים</p>
+  </div>
+</div>
+
 
 <div class="election-countdown">
 <h2>הבחירות בעוד: <span id="countdown">13 בספטמבר 2026</span></h2>
@@ -409,6 +399,24 @@
 </div>
 </div>
 </header>
+
+<!-- ניווט חדשות -->
+<nav class="news-navigation" aria-label="חדשות">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> עיתונות פוליטית מונעת בינה מלאכותית</p>
+<p class="news-navigation-description">סיקור מודיעין פוליטי מבוסס AI של הריקסדאג השוודי, מופק מדי יום על ידי סוכני AI באמצעות נתוני OSINT של סוכנות מודיעין האזרח. ניתוח אוטומטי של הצעות ממשלה, דוחות ועדות, הצעות אופוזיציה, שאילתות פרלמנטריות וניתוחי ערב — ב-14 שפות.</p>
+<ul class="news-navigation-features" aria-label="סוגי כיסוי חדשותי">
+<li>📋 דוחות ועדות</li>
+<li>📜 הצעות ממשלה</li>
+<li>✊ הצעות אופוזיציה</li>
+<li>❓ שאילתות פרלמנטריות</li>
+<li>🌙 ניתוח ערב</li>
+<li>🌍 14 שפות</li>
+</ul>
+<a href="news/index_he.html" class="news-navigation-link" aria-label="קרא את החדשות האחרונות">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>קרא חדשות</span>
+</a>
+</nav>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="לוח מודיעין">

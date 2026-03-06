@@ -348,24 +348,6 @@
 </ol>
 </nav>
 
-<!-- Navigation actualités -->
-<nav class="news-navigation" aria-label="Actualités">
-<p class="news-navigation-heading"><span aria-hidden="true">📰</span> Journalisme politique transformé par l’IA</p>
-<p class="news-navigation-description">Couverture de renseignement politique du Riksdag suédois générée par IA, produite quotidiennement par des agents IA via les données OSINT de Citizen Intelligence Agency. Analyse automatisée des propositions gouvernementales, rapports de commissions, motions de l’opposition, questions parlementaires et analyses du soir — en 14 langues.</p>
-<ul class="news-navigation-features" aria-label="Types de couverture">
-<li>📋 Rapports de commissions</li>
-<li>📜 Propositions gouvernementales</li>
-<li>✊ Motions de l’opposition</li>
-<li>❓ Questions parlementaires</li>
-<li>🌙 Analyse du soir</li>
-<li>🌍 14 langues</li>
-</ul>
-<a href="news/index_fr.html" class="news-navigation-link" aria-label="Lire les dernières actualités">
-<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
-<span>Lire les actualités</span>
-</a>
-</nav>
-
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
@@ -375,11 +357,19 @@
         data-label-light="Passer au thème sombre">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
-<a href="index_fr.html" aria-label="Riksdagsmonitor Home">
-  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="120" height="120" loading="eager">
-</a>
-<h1> Riksdagsmonitor<br><span class="h1-subtitle">Plateforme d’intelligence électorale suédoise 2026</span></h1>
-<p class="tagline">Suivi parlementaire en temps réel · Prévisions de coalition · 45 règles de risque · Plus de 50 ans de données</p>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_fr.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">Plateforme d’intelligence électorale suédoise 2026</span></h1>
+    <p class="tagline">Suivi parlementaire en temps réel · Prévisions de coalition · 45 règles de risque · Plus de 50 ans de données</p>
+  </div>
+</div>
+
 
 <div class="election-countdown">
 <h2>Élection dans : <span id="countdown">13 septembre 2026</span></h2>
@@ -409,6 +399,24 @@
 </div>
 </div>
 </header>
+
+<!-- Navigation actualités -->
+<nav class="news-navigation" aria-label="Actualités">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> Journalisme politique transformé par l’IA</p>
+<p class="news-navigation-description">Couverture de renseignement politique du Riksdag suédois générée par IA, produite quotidiennement par des agents IA via les données OSINT de Citizen Intelligence Agency. Analyse automatisée des propositions gouvernementales, rapports de commissions, motions de l’opposition, questions parlementaires et analyses du soir — en 14 langues.</p>
+<ul class="news-navigation-features" aria-label="Types de couverture">
+<li>📋 Rapports de commissions</li>
+<li>📜 Propositions gouvernementales</li>
+<li>✊ Motions de l’opposition</li>
+<li>❓ Questions parlementaires</li>
+<li>🌙 Analyse du soir</li>
+<li>🌍 14 langues</li>
+</ul>
+<a href="news/index_fr.html" class="news-navigation-link" aria-label="Lire les dernières actualités">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>Lire les actualités</span>
+</a>
+</nav>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="Tableau de bord de renseignement">

@@ -348,24 +348,6 @@
 </ol>
 </nav>
 
-<!-- 新闻导航 -->
-<nav class="news-navigation" aria-label="新闻">
-<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI驱动的政治新闻</p>
-<p class="news-navigation-description">以AI生成的政治情报报道瑞典议会，由AI代理每日使用公民情报局OSINT数据生成。自动分析政府法案、委员会报告、反对党动议、议会质询和晚间深度分析——以14种语言发布。</p>
-<ul class="news-navigation-features" aria-label="新闻报道类型">
-<li>📋 委员会报告</li>
-<li>📜 政府法案</li>
-<li>✊ 反对党动议</li>
-<li>❓ 议会质询</li>
-<li>🌙 晚间分析</li>
-<li>🌍 14种语言</li>
-</ul>
-<a href="news/index_zh.html" class="news-navigation-link" aria-label="阅读最新新闻">
-<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
-<span>阅读新闻</span>
-</a>
-</nav>
-
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
@@ -375,11 +357,19 @@
         data-label-light="切换到深色主题">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
-<a href="index_zh.html" aria-label="Riksdagsmonitor Home">
-  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="120" height="120" loading="eager">
-</a>
-<h1> Riksdagsmonitor<br><span class="h1-subtitle">2026年瑞典大选情报平台</span></h1>
-<p class="tagline">实时议会监测 · 联盟预测 · 45条风险规则 · 50多年数据</p>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_zh.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">2026年瑞典大选情报平台</span></h1>
+    <p class="tagline">实时议会监测 · 联盟预测 · 45条风险规则 · 50多年数据</p>
+  </div>
+</div>
+
 
 <div class="election-countdown">
 <h2>距离选举: <span id="countdown">2026年9月13日</span></h2>
@@ -409,6 +399,24 @@
 </div>
 </div>
 </header>
+
+<!-- 新闻导航 -->
+<nav class="news-navigation" aria-label="新闻">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI驱动的政治新闻</p>
+<p class="news-navigation-description">以AI生成的政治情报报道瑞典议会，由AI代理每日使用公民情报局OSINT数据生成。自动分析政府法案、委员会报告、反对党动议、议会质询和晚间深度分析——以14种语言发布。</p>
+<ul class="news-navigation-features" aria-label="新闻报道类型">
+<li>📋 委员会报告</li>
+<li>📜 政府法案</li>
+<li>✊ 反对党动议</li>
+<li>❓ 议会质询</li>
+<li>🌙 晚间分析</li>
+<li>🌍 14种语言</li>
+</ul>
+<a href="news/index_zh.html" class="news-navigation-link" aria-label="阅读最新新闻">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>阅读新闻</span>
+</a>
+</nav>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="情报仪表板">

@@ -348,24 +348,6 @@ Svensk valg 2026
 </ol>
 </nav>
 
-<!-- Nyhedsnavigation -->
-<nav class="news-navigation" aria-label="Nyheder">
-<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI-drevet politisk journalistik</p>
-<p class="news-navigation-description">AI-genereret politisk efterretningsdækning af Sveriges Riksdag, produceret dagligt af AI-agenter via Citizen Intelligence Agency OSINT-data. Automatiseret analyse af regeringsforslag, udvalgsrapporter, oppositionsforslag, parlamentsspørgsmål og aftendybdegående analyser — på 14 sprog.</p>
-<ul class="news-navigation-features" aria-label="Typer af nyhedsdækning">
-<li>📋 Udvalgsrapporter</li>
-<li>📜 Regeringsforslag</li>
-<li>✊ Oppositionsforslag</li>
-<li>❓ Parlamentsspørgsmål</li>
-<li>🌙 Aftenanalyse</li>
-<li>🌍 14 sprog</li>
-</ul>
-<a href="news/index_da.html" class="news-navigation-link" aria-label="Læs de seneste nyheder">
-<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
-<span>Læs seneste nyheder</span>
-</a>
-</nav>
-
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
@@ -375,11 +357,19 @@ Svensk valg 2026
         data-label-light="Skift til mørkt tema">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
-<a href="index_da.html" aria-label="Riksdagsmonitor Home">
-  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="120" height="120" loading="eager">
-</a>
-<h1> Riksdagsmonitor<br><span class="h1-subtitle">Svensk valefterretningsplatform 2026</span></h1>
-<p class="tagline">Parlamentsovervågning i realtid · Koalitionsforudsigelser · 45 risikoregler · 50+ års data</p>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_da.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">Svensk valefterretningsplatform 2026</span></h1>
+    <p class="tagline">Parlamentsovervågning i realtid · Koalitionsforudsigelser · 45 risikoregler · 50+ års data</p>
+  </div>
+</div>
+
 
 <div class="election-countdown">
 <h2>Valg om: <span id="countdown">13. september 2026</span></h2>
@@ -409,6 +399,24 @@ Svensk valg 2026
 </div>
 </div>
 </header>
+
+<!-- Nyhedsnavigation -->
+<nav class="news-navigation" aria-label="Nyheder">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI-drevet politisk journalistik</p>
+<p class="news-navigation-description">AI-genereret politisk efterretningsdækning af Sveriges Riksdag, produceret dagligt af AI-agenter via Citizen Intelligence Agency OSINT-data. Automatiseret analyse af regeringsforslag, udvalgsrapporter, oppositionsforslag, parlamentsspørgsmål og aftendybdegående analyser — på 14 sprog.</p>
+<ul class="news-navigation-features" aria-label="Typer af nyhedsdækning">
+<li>📋 Udvalgsrapporter</li>
+<li>📜 Regeringsforslag</li>
+<li>✊ Oppositionsforslag</li>
+<li>❓ Parlamentsspørgsmål</li>
+<li>🌙 Aftenanalyse</li>
+<li>🌍 14 sprog</li>
+</ul>
+<a href="news/index_da.html" class="news-navigation-link" aria-label="Læs de seneste nyheder">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>Læs seneste nyheder</span>
+</a>
+</nav>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="Efterretningspanel">

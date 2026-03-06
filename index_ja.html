@@ -348,24 +348,6 @@
 </ol>
 </nav>
 
-<!-- ニュースナビゲーション -->
-<nav class="news-navigation" aria-label="ニュース">
-<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI活用の政治ジャーナリズム</p>
-<p class="news-navigation-description">OSINT/INTOPデータに基づくAI生成の政治インテリジェンス報道を、Citizen Intelligence AgencyのOSINTデータを使用してAIエージェントが毎日生成。政府法案、委員会報告、野党動議、議会質問、夕方の深掘り分析を自動分析 — 14言語で配信。</p>
-<ul class="news-navigation-features" aria-label="ニュース報道の種類">
-<li>📋 委員会報告</li>
-<li>📜 政府法案</li>
-<li>✊ 野党動議</li>
-<li>❓ 議会質問</li>
-<li>🌙 夕方分析</li>
-<li>🌍 14言語</li>
-</ul>
-<a href="news/index_ja.html" class="news-navigation-link" aria-label="最新ニュースを読む">
-<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
-<span>ニュースを読む</span>
-</a>
-</nav>
-
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
@@ -375,11 +357,19 @@
         data-label-light="ダークテーマに切り替え">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
-<a href="index_ja.html" aria-label="Riksdagsmonitor Home">
-  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="120" height="120" loading="eager">
-</a>
-<h1> Riksdagsmonitor<br><span class="h1-subtitle">スウェーデン総選挙2026インテリジェンス・プラットフォーム</span></h1>
-<p class="tagline">リアルタイム議会監視 · 連立予測 · 45のリスクルール · 50年以上のデータ</p>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_ja.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">スウェーデン総選挙2026インテリジェンス・プラットフォーム</span></h1>
+    <p class="tagline">リアルタイム議会監視 · 連立予測 · 45のリスクルール · 50年以上のデータ</p>
+  </div>
+</div>
+
 
 <div class="election-countdown">
 <h2>選挙まで: <span id="countdown">2026年9月13日</span></h2>
@@ -409,6 +399,24 @@
 </div>
 </div>
 </header>
+
+<!-- ニュースナビゲーション -->
+<nav class="news-navigation" aria-label="ニュース">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI活用の政治ジャーナリズム</p>
+<p class="news-navigation-description">OSINT/INTOPデータに基づくAI生成の政治インテリジェンス報道を、Citizen Intelligence AgencyのOSINTデータを使用してAIエージェントが毎日生成。政府法案、委員会報告、野党動議、議会質問、夕方の深掘り分析を自動分析 — 14言語で配信。</p>
+<ul class="news-navigation-features" aria-label="ニュース報道の種類">
+<li>📋 委員会報告</li>
+<li>📜 政府法案</li>
+<li>✊ 野党動議</li>
+<li>❓ 議会質問</li>
+<li>🌙 夕方分析</li>
+<li>🌍 14言語</li>
+</ul>
+<a href="news/index_ja.html" class="news-navigation-link" aria-label="最新ニュースを読む">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>ニュースを読む</span>
+</a>
+</nav>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="インテリジェンスダッシュボード">

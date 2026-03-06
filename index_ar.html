@@ -348,24 +348,6 @@
 </ol>
 </nav>
 
-<!-- تنقل الأخبار -->
-<nav class="news-navigation" aria-label="الأخبار">
-<p class="news-navigation-heading"><span aria-hidden="true">📰</span> صحافة سياسية مدعومة بالذكاء الاصطناعي</p>
-<p class="news-navigation-description">تغطية استخبارات سياسية مولّدة بالذكاء الاصطناعي للريكسداغ السويدي، يتم إنشاؤها يوميًا بواسطة وكلاء الذكاء الاصطناعي باستخدام بيانات OSINT من وكالة استخبارات المواطن. تحليل آلي لمقترحات الحكومة وتقارير اللجان ومقترحات المعارضة والأسئلة البرلمانية والتحليلات المسائية — بـ 14 لغة.</p>
-<ul class="news-navigation-features" aria-label="أنواع التغطية الإخبارية">
-<li>📋 تقارير اللجان</li>
-<li>📜 مقترحات الحكومة</li>
-<li>✊ مقترحات المعارضة</li>
-<li>❓ أسئلة برلمانية</li>
-<li>🌙 تحليل مسائي</li>
-<li>🌍 14 لغة</li>
-</ul>
-<a href="news/index_ar.html" class="news-navigation-link" aria-label="اقرأ آخر الأخبار">
-<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
-<span>اقرأ الأخبار</span>
-</a>
-</nav>
-
 <header>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
@@ -375,11 +357,19 @@
         data-label-light="التبديل إلى السمة الداكنة">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
-<a href="index_ar.html" aria-label="Riksdagsmonitor Home">
-  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="120" height="120" loading="eager">
-</a>
-<h1> Riksdagsmonitor<br><span class="h1-subtitle">منصة استخبارات الانتخابات السويدية 2026</span></h1>
-<p class="tagline">مراقبة برلمانية فورية · توقعات ائتلافية · 45 قاعدة مخاطر · أكثر من 50 عاماً من البيانات</p>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_ar.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">منصة استخبارات الانتخابات السويدية 2026</span></h1>
+    <p class="tagline">مراقبة برلمانية فورية · توقعات ائتلافية · 45 قاعدة مخاطر · أكثر من 50 عاماً من البيانات</p>
+  </div>
+</div>
+
 
 <div class="election-countdown">
 <h2>موعد الانتخابات بعد: <span id="countdown">13 سبتمبر 2026</span></h2>
@@ -409,6 +399,24 @@
 </div>
 </div>
 </header>
+
+<!-- تنقل الأخبار -->
+<nav class="news-navigation" aria-label="الأخبار">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> صحافة سياسية مدعومة بالذكاء الاصطناعي</p>
+<p class="news-navigation-description">تغطية استخبارات سياسية مولّدة بالذكاء الاصطناعي للريكسداغ السويدي، يتم إنشاؤها يوميًا بواسطة وكلاء الذكاء الاصطناعي باستخدام بيانات OSINT من وكالة استخبارات المواطن. تحليل آلي لمقترحات الحكومة وتقارير اللجان ومقترحات المعارضة والأسئلة البرلمانية والتحليلات المسائية — بـ 14 لغة.</p>
+<ul class="news-navigation-features" aria-label="أنواع التغطية الإخبارية">
+<li>📋 تقارير اللجان</li>
+<li>📜 مقترحات الحكومة</li>
+<li>✊ مقترحات المعارضة</li>
+<li>❓ أسئلة برلمانية</li>
+<li>🌙 تحليل مسائي</li>
+<li>🌍 14 لغة</li>
+</ul>
+<a href="news/index_ar.html" class="news-navigation-link" aria-label="اقرأ آخر الأخبار">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>اقرأ الأخبار</span>
+</a>
+</nav>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="لوحة الاستخبارات">
