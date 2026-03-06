@@ -1,5 +1,5 @@
 {
-  "version": "0.7.5",
+  "version": "0.7.7",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -233,8 +233,8 @@
       }
     },
     "@types/node": {
-      "version": "25.3.3",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.3.3.tgz",
+      "version": "25.3.5",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.3.5.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -250,7 +250,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.3"
+          "version": "25.3.5"
         }
       }
     },
@@ -1351,7 +1351,7 @@
               "overridden": false,
               "dependencies": {
                 "@types/node": {
-                  "version": "25.3.3"
+                  "version": "25.3.5"
                 }
               }
             },
@@ -2527,7 +2527,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.3"
+          "version": "25.3.5"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2540,7 +2540,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "25.3.3"
+              "version": "25.3.5"
             }
           }
         },
@@ -2770,7 +2770,7 @@
           }
         },
         "@types/node": {
-          "version": "25.3.3"
+          "version": "25.3.5"
         },
         "fast-glob": {
           "version": "3.3.3",
@@ -3612,7 +3612,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.3.3"
+          "version": "25.3.5"
         },
         "esbuild": {
           "version": "0.27.3"
@@ -3722,7 +3722,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "25.3.3"
+          "version": "25.3.5"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
