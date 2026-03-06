@@ -372,4 +372,14 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 ## Error Handling
 
+### 🐛 If You Get Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| Tool not found | Wrong tool name | Use exact names from the tool list |
+| Empty results | No data in timeframe | Widen date range or check `get_sync_status()` |
+| Stale data | Last sync >48h ago | Note in articles with disclaimer, use available data |
+| Timeout | Cold start (30-60s) | Framework retries automatically — just wait |
+| Too broad results | No date filtering | Add from_date/to_date params OR filter results by date |
+
 🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, determine article types, generate with the script, validate, and call a safe output tool.**

@@ -409,4 +409,14 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 ## Error Handling
 
+### 🐛 If You Get Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| Tool not found | Wrong tool name | Use exact names: `get_calendar_events`, `search_voteringar` |
+| Empty results | No data in timeframe | Check `get_sync_status`, widen date range, verify rm parameter |
+| Stale data | Last sync >48h ago | Note in analysis, use available data with disclaimer |
+| Timeout | Cold start (30-60s) | Wait — framework retries automatically |
+| Too broad results | No date filtering | Add from_date/to_date params OR filter results by date in code |
+
 🎯 **Now begin: Check date/day-of-week, warm up MCP with `get_sync_status()`, gather parliamentary data, generate analysis articles, and call a safe output tool.**
