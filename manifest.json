@@ -62,7 +62,8 @@
       "src": "/images/og-image.webp",
       "sizes": "1200x630",
       "type": "image/webp",
-      "label": "Dashboard preview"
+      "label": "Dashboard preview",
+      "form_factor": "wide"
     }
   ],
   "related_applications": [],
