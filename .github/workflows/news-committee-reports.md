@@ -327,7 +327,36 @@ Then create PR:
 safeoutputs___create_pull_request
 ```
 
-## Translation Rules
+## 🌐 MANDATORY Translation Quality Rules
+
+### Non-Negotiable Requirements for Non-EN/SV Articles:
+1. **ALL section headings** (h1, h2, h3) MUST be in the target language
+2. **ALL body paragraphs** MUST be written in the target language
+3. **Meta keywords** MUST be translated to the target language
+4. **No English fallback**: If you cannot translate a phrase, use the target language equivalent or omit
+5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
+
+### Per-Language Requirements:
+- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
+- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
+- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
+- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
+
+### Localized Section Headings (use CONTENT_LABELS):
+Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
+- "Why This Week Matters" → Use `CONTENT_LABELS[lang].whyMatters`
+- "Key Events This Week" → Use `CONTENT_LABELS[lang].keyEvents`
+- "What to Watch" → Use `CONTENT_LABELS[lang].whatToWatch`
+- "Latest Committee Reports" → Use `CONTENT_LABELS[lang].latestReports`
+
+### Post-Generation Validation:
+After generating all articles, run:
+```bash
+npx tsx scripts/validate-news-translations.ts
+```
+Fix any files flagged before committing. Articles with >3 English phrases in non-EN versions must be regenerated.
+
+### Additional Rules:
 - Swedish API titles MUST be translated to target language
 - Committee abbreviations (FiU, SoU) kept as-is in document references
 - Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
