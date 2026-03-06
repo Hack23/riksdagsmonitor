@@ -201,6 +201,9 @@ export function generateSiteFooter(lang: Language | string): string {
   return `<footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-section">
+      <a href="${homePath}" aria-label="Riksdagsmonitor Home">
+        <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="180" height="180" loading="lazy">
+      </a>
       <h3>${labels.about}</h3>
       <p>${labels.aboutText}</p>
       <ul class="footer-stats">

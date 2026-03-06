@@ -827,6 +827,9 @@ ${hreflangTags}
     
     <div class="sitemap-container">
         <header class="sitemap-header">
+            <a href="${meta.langCode === 'en' ? '/index.html' : `/index_${meta.langCode}.html`}" aria-label="Riksdagsmonitor Home">
+              <img src="/images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" style="display:block;max-width:200px;height:auto;margin:0 auto 1rem" width="200" height="200" loading="eager">
+            </a>
             <h1>${escapeHtml(t.siteMap)}</h1>
             <p>${escapeHtml(t.completeNavigation)}</p>
         </header>

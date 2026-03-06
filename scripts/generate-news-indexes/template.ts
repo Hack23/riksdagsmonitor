@@ -208,6 +208,9 @@ ${generateHreflangTags()}
               data-label-light="Switch to dark theme">
         <span class="theme-icon" aria-hidden="true">🌙</span>
       </button>
+      <a href="../${mainIndex}" aria-label="Riksdagsmonitor News">
+        <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="280" height="280" loading="eager">
+      </a>
       <h1>${escapeHtml(lang.title)}</h1>
       <p class="subtitle">${lang.subtitle}</p>
       <a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}</a>
@@ -577,6 +580,9 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
   </section>
   </main>
   <footer class="news-footer">
+    <a href="../${mainIndex}" aria-label="Riksdagsmonitor Home">
+      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="180" height="180" loading="lazy">
+    </a>
     <p>&copy; 2026 Riksdagsmonitor - Swedish Parliament Intelligence | v${escapeHtml(String(PKG_VERSION))}</p>
     <p class="footer-disclaimer">⚠️ ${escapeHtml(lang.disclaimer)} <a href="https://github.com/Hack23/riksdagsmonitor/issues" target="_blank" rel="noopener noreferrer">${escapeHtml(lang.disclaimerLink)}</a>.</p>
   </footer>
