@@ -1,6 +1,6 @@
 {
   "complete": true,
-  "completedLanguages": [
+  "allDone": [
     "en",
     "sv",
     "da",
@@ -16,22 +16,5 @@
     "ko",
     "zh"
   ],
-  "remainingLanguages": [],
-  "allRequestedLanguages": [
-    "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
-  ],
-  "timestamp": "2026-03-05T05:30:08.150Z"
+  "timestamp": "2026-03-06T10:14:54.121Z"
 }
