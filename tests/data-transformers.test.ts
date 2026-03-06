@@ -761,8 +761,9 @@ describe('Data Transformers', () => {
         'committee-reports',
         'en'
       ) as string;
-      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
-      expect(content).not.toContain('data-translate="true"');
+      // Swedish content is always marked with data-translate="true" for post-processing
+      // by translateSwedishContent() which will translate and remove the marker.
+      expect(content).toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Bättre förutsättningar');
     });
@@ -783,8 +784,9 @@ describe('Data Transformers', () => {
         'propositions',
         'en'
       ) as string;
-      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
-      expect(content).not.toContain('data-translate="true"');
+      // Swedish content is always marked with data-translate="true" for post-processing
+      // by translateSwedishContent() which will translate and remove the marker.
+      expect(content).toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Ändringsbudget för 2026');
     });
@@ -805,8 +807,9 @@ describe('Data Transformers', () => {
         'motions',
         'en'
       ) as string;
-      // Non-Swedish articles use lang="sv" for accessibility but no data-translate marker
-      expect(content).not.toContain('data-translate="true"');
+      // Swedish content is always marked with data-translate="true" for post-processing
+      // by translateSwedishContent() which will translate and remove the marker.
+      expect(content).toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Djurskydd');
     });
@@ -837,8 +840,9 @@ describe('Data Transformers', () => {
         'committee-reports',
         'en'
       ) as string;
-      // Non-Swedish: lang="sv" spans but no data-translate markers
-      expect(content).not.toContain('data-translate="true"');
+      // Swedish content is always marked with data-translate="true" for post-processing
+      // by translateSwedishContent() which will translate and remove the marker.
+      expect(content).toContain('data-translate="true"');
       const langMatches = content.match(/lang="sv"/g);
       expect(langMatches).not.toBeNull();
       expect(langMatches!.length).toBe(2); // title + summary
@@ -852,8 +856,9 @@ describe('Data Transformers', () => {
         'committee-reports',
         'de'
       ) as string;
-      // Non-Swedish: lang="sv" span for title but no data-translate markers
-      expect(contentWithOrgan).not.toContain('data-translate="true"');
+      // Swedish content is always marked with data-translate="true" for post-processing
+      // by translateSwedishContent() which will translate and remove the marker.
+      expect(contentWithOrgan).toContain('data-translate="true"');
       const langMatchesWithOrgan = contentWithOrgan.match(/lang="sv"/g);
       expect(langMatchesWithOrgan).not.toBeNull();
       expect(langMatchesWithOrgan!.length).toBe(1); // only title
@@ -867,8 +872,9 @@ describe('Data Transformers', () => {
         'committee-reports',
         'de'
       ) as string;
-      // Non-Swedish: lang="sv" span for title only, no data-translate markers
-      expect(contentWithoutMetadata).not.toContain('data-translate="true"');
+      // Swedish content is always marked with data-translate="true" for post-processing
+      // by translateSwedishContent() which will translate and remove the marker.
+      expect(contentWithoutMetadata).toContain('data-translate="true"');
       const langMatchesWithoutMetadata = contentWithoutMetadata.match(/lang="sv"/g);
       expect(langMatchesWithoutMetadata).not.toBeNull();
       expect(langMatchesWithoutMetadata!.length).toBe(1); // only title
@@ -885,8 +891,9 @@ describe('Data Transformers', () => {
         'week-ahead',
         'en'
       ) as string;
-      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
-      expect(content).not.toContain('data-translate="true"');
+      // Swedish content is always marked with data-translate="true" for post-processing
+      // by translateSwedishContent() which will translate and remove the marker.
+      expect(content).toContain('data-translate="true"');
       expect(content).toContain('lang="sv"');
       expect(content).toContain('Öppen utfrågning om AI');
     });
@@ -1004,8 +1011,9 @@ describe('Data Transformers', () => {
       
       expect(watchPoints.length).toBeGreaterThan(0);
       const wp = watchPoints[0]!;
-      // Non-Swedish: lang="sv" for accessibility but no data-translate marker
-      expect(wp.title).not.toContain('data-translate="true"');
+      // Swedish content is always marked with data-translate="true" for post-processing
+      // by translateSwedishContent() which will translate and remove the marker.
+      expect(wp.title).toContain('data-translate="true"');
       expect(wp.title).toContain('lang="sv"');
       expect(wp.title).toContain('Öppen utfrågning');
     });

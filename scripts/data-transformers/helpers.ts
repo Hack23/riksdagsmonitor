@@ -31,27 +31,25 @@ export function sanitizeUrl(url: string | undefined | null): string {
 }
 
 /**
- * Emit a Swedish-language span.
+ * Emit a Swedish-language span marked for post-processing by
+ * `translateSwedishContent()`.
  *
- * For Swedish articles (`lang === 'sv'`) the span carries both the
- * `lang="sv"` accessibility attribute AND `data-translate="true"` so
- * quality-validation tooling can verify that Swedish articles contain the
- * original text.
- *
- * For **all other** languages the span carries only `lang="sv"` (screen
- * readers still know the text is Swedish) but the `data-translate` marker is
- * intentionally omitted — it signals "this text should be translated" but no
- * client-side translation mechanism exists, so the marker only causes false
- * validation failures in non-Swedish articles.
+ * Both `data-translate="true"` (translation marker) and `lang="sv"`
+ * (accessibility) are always emitted for **every** language, including
+ * non-Swedish targets.  The `translateSwedishContent()` call in
+ * `writeSingleArticle` will attempt a dictionary lookup, emit the
+ * translation (or retain the original Swedish text when no match exists),
+ * and strip the `data-translate` attribute before the article is written to
+ * disk — so the final HTML file is always marker-free.
  *
  * @param escapedText - Already HTML-escaped text content
- * @param lang        - Target article language (e.g. `'sv'`, `'en'`)
+ * @param lang        - Target article language (kept for call-site
+ *                      compatibility; translation is handled downstream by
+ *                      `translateSwedishContent()`)
  */
 export function svSpan(escapedText: string, lang: Language | string): string {
-  if (lang === 'sv') {
-    return `<span data-translate="true" lang="sv">${escapedText}</span>`;
-  }
-  return `<span lang="sv">${escapedText}</span>`;
+  void lang; // translation handled by translateSwedishContent() post-processing
+  return `<span data-translate="true" lang="sv">${escapedText}</span>`;
 }
 
 /**
