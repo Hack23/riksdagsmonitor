@@ -346,4 +346,16 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 ## Error Handling
 
+| Scenario | Action |
+|----------|--------|
+| Tool not found | Check MCP connection, retry `get_sync_status()` |
+| Empty results | Try broader rm or date range |
+| Timeout | Reduce limit params, call safe output immediately |
+| Stale data (> 48 hours) | Add disclaimer, still generate with caveat |
+| MCP unavailable after 3 retries | `safeoutputs___noop` with "MCP unavailable" message |
+| No significant events | `safeoutputs___noop` (legitimate — most common outcome) |
+| Script generates articles | Validate → commit → `safeoutputs___create_pull_request` |
+| PR creation fails after articles | Let workflow FAIL (never use noop for PR failures) |
+| Elapsed >= 43 min | STOP, call safe output immediately |
+
 🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, detect events, generate articles with the script, and call a safe output tool.**
