@@ -69,7 +69,9 @@ export function generateIndexHTML(
   <meta property="og:description" content="${escapedSubtitle}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${filename}">
-  <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
+  <meta property="og:image" content="https://riksdagsmonitor.com/images/og-image-news.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Riksdagsmonitor">
   <meta property="og:locale" content="${lang.locale}">
   
@@ -77,7 +79,7 @@ export function generateIndexHTML(
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="${escapeHtml(lang.title)} - Riksdagsmonitor">
   <meta name="twitter:description" content="${escapedSubtitle}">
-  <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+  <meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image-news.webp">
   
   <!-- Hreflang -->
 ${generateHreflangTags()}
@@ -110,7 +112,7 @@ ${generateHreflangTags()}
             "name": "Hack23 AB",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://hack23.com/cia-icon-140.webp"
+              "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png"
             }
           },
           "articleSection": "${escapeHtml(lang.breadcrumbs.news)}",
@@ -162,7 +164,7 @@ ${generateHreflangTags()}
       "name": "Hack23 AB",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp"
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png"
       }
     },
     "potentialAction": {
@@ -179,6 +181,15 @@ ${generateHreflangTags()}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap"></noscript>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e27">
   
   <link rel="stylesheet" href="../styles.css">
   ${generateRTLStyles(lang.rtl)}

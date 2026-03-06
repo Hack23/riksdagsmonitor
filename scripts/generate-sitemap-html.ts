@@ -608,7 +608,9 @@ function generateSitemapHtml(lang: Language, articlesByLang: Map<Language, Artic
     <meta property="og:description" content="${escapeHtml(t.completeNavigation)}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="${BASE_URL}/${sitemapFile}">
-    <meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
+    <meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Riksdagsmonitor ${escapeHtml(t.siteMap)}">
     <meta property="og:locale" content="${meta.locale}">
     <meta property="og:site_name" content="Riksdagsmonitor">
@@ -617,13 +619,19 @@ function generateSitemapHtml(lang: Language, articlesByLang: Map<Language, Artic
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="${escapeHtml(t.siteMap)} | Riksdagsmonitor">
     <meta name="twitter:description" content="${escapeHtml(t.completeNavigation)}">
-    <meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+    <meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
     <meta name="twitter:site" content="@riksdagsmonitor">
     
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#0a0e27">
     <meta name="color-scheme" content="dark light">
-    <link rel="icon" type="image/png" href="https://hack23.com/cia-icon-140.webp">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="manifest" href="/site.webmanifest">
     
     <!-- Hreflang tags for all language versions -->
 ${hreflangTags}
