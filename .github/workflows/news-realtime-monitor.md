@@ -337,4 +337,11 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 ## Error Handling
 
+| Scenario | Cause | Fix |
+|----------|-------|-----|
+| Tool not found | MCP server not initialized | Re-run `source scripts/mcp-setup.sh` and retry |
+| Empty results | No significant events detected in monitoring window | Skip generation with `safeoutputs___noop` |
+| Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |
+| Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
+
 🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, detect events, generate articles with the script, and call a safe output tool.**
