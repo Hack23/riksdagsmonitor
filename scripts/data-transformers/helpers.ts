@@ -42,13 +42,14 @@ export function sanitizeUrl(url: string | undefined | null): string {
  * and strip the `data-translate` attribute before the article is written to
  * disk — so the final HTML file is always marker-free.
  *
+ * The `_lang` parameter is retained so that existing call sites need not
+ * be updated; translation is handled downstream by `translateSwedishContent()`
+ * and no longer depends on the article language at span-creation time.
+ *
  * @param escapedText - Already HTML-escaped text content
- * @param lang        - Target article language (kept for call-site
- *                      compatibility; translation is handled downstream by
- *                      `translateSwedishContent()`)
+ * @param _lang       - Unused; retained for call-site compatibility
  */
-export function svSpan(escapedText: string, lang: Language | string): string {
-  void lang; // translation handled by translateSwedishContent() post-processing
+export function svSpan(escapedText: string, _lang: Language | string): string {
   return `<span data-translate="true" lang="sv">${escapedText}</span>`;
 }
 
