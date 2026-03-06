@@ -56,5 +56,5 @@
     "2026-03-06-week-ahead-zh.html"
   ],
   "status": "enhanced",
-  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
+  "note": "Week-ahead batch for 2026-03-06 generated 14 articles across all requested languages (batchSize=all, status=enhanced)"
 }
