@@ -281,7 +281,7 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
 <article id="main-content" class="news-article">
   <header class="article-header">
     <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" aria-label="Riksdagsmonitor News">
-      <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="280" height="280" loading="eager">
+      <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="100" height="100" loading="eager">
     </a>
     <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
     <h1>${title}</h1>

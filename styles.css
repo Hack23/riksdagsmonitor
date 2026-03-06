@@ -696,9 +696,9 @@ h1 {
 h2 {
   font-size: var(--h2-size);
   font-weight: 600; /* Semi-bold for secondary headings */
-  margin-bottom: var(--spacing-lg);
-  margin-top: var(--spacing-3xl); /* Clear section separation */
-  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
   border-bottom: 2px solid var(--section-border);
   letter-spacing: -0.02em; /* Tighter tracking for large text */
   max-width: 40ch; /* Optimal line length for headings */
@@ -707,8 +707,8 @@ h2 {
 h3 {
   font-size: var(--h3-size);
   font-weight: 500; /* Medium weight for tertiary headings */
-  margin-bottom: var(--spacing-md);
-  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
   max-width: 40ch; /* Optimal line length for headings */
 }
 
@@ -716,8 +716,8 @@ h4 {
   font-size: var(--h4-size);
   font-weight: 500; /* Medium weight for quaternary headings */
   color: var(--text-color);
-  margin-bottom: var(--spacing-md);
-  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-md);
   max-width: 40ch; /* Optimal line length for headings */
 }
 
@@ -1293,17 +1293,15 @@ a:hover {
 header {
   position: relative;
   text-align: center;
-  margin-bottom: var(--spacing-2xl);
-  padding: var(--spacing-2xl) var(--spacing-lg);
-  padding-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
   border-bottom: 2px solid var(--section-border);
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(135deg, rgba(0, 71, 171, 0.02), rgba(0, 102, 204, 0.01));
   border-radius: var(--border-radius-lg);
-  /* Reserve minimum space for header content to reduce Cumulative Layout Shift (CLS) */
-  min-height: 400px;
   /* Optimize layout performance by creating a new containing block */
   contain: layout;
 }
@@ -1346,9 +1344,9 @@ header {
 /* Site Logo in Header */
 .site-logo {
   display: block;
-  max-width: clamp(200px, 40vw, 360px);
+  max-width: clamp(80px, 15vw, 120px);
   height: auto;
-  margin: 0 auto var(--spacing-md);
+  margin: 0 auto var(--spacing-sm);
   border-radius: var(--border-radius-lg);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               filter 0.3s ease;
@@ -1380,7 +1378,7 @@ html[data-theme="dark"] .site-logo:hover {
 /* Footer Logo */
 .footer-logo {
   display: block;
-  max-width: 180px;
+  max-width: 80px;
   height: auto;
   margin: 0 auto var(--spacing-sm);
   opacity: 0.85;
@@ -1394,7 +1392,7 @@ html[data-theme="dark"] .site-logo:hover {
 /* News Article Site Logo */
 .article-site-logo {
   display: block;
-  max-width: clamp(160px, 30vw, 280px);
+  max-width: clamp(60px, 12vw, 100px);
   height: auto;
   margin: 0 auto var(--spacing-sm);
   border-radius: var(--border-radius-md);
@@ -1978,7 +1976,7 @@ ul li a {
 
 /* Section Styling - Premium with Enhanced Spacing & Visual Grouping */
 section {
-  padding: var(--spacing-2xl) var(--spacing-xl);
+  padding: var(--spacing-lg) var(--spacing-xl);
   background: rgba(255, 255, 255, 0.5);
   border-radius: var(--border-radius-lg);
   border: 1px solid transparent;
@@ -1988,8 +1986,8 @@ section {
 /* Add subtle visual separation for sections */
 section:not(:first-of-type) {
   border-top: 1px solid var(--section-border);
-  padding-top: var(--spacing-3xl);
-  margin-top: var(--spacing-4xl); /* 96px between major sections */
+  padding-top: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
 }
 
 section:hover {
@@ -3371,11 +3369,11 @@ footer {
    ================================================== */
 
 .dashboard-cta {
-  background: linear-gradient(135deg, rgba(0, 217, 255, 0.12) 0%, rgba(255, 0, 110, 0.08) 100%);
-  border: 2px solid rgba(0, 217, 255, 0.4);
+  background: linear-gradient(135deg, rgba(0, 102, 51, 0.06) 0%, rgba(0, 119, 68, 0.04) 100%);
+  border: 2px solid var(--primary-color);
   border-radius: var(--border-radius);
-  padding: var(--spacing-lg) var(--spacing-xl);
-  margin: 0 var(--spacing-md) var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -3411,18 +3409,18 @@ footer {
 }
 
 .dashboard-cta-heading {
-  font-family: var(--font-heading, 'Orbitron', 'Orbitron Fallback', sans-serif);
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  color: var(--heading-color, #00d9ff);
-  margin: 0 0 0.75rem 0;
+  font-family: var(--font-accent);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--header-color);
+  margin: 0 0 0.5rem 0;
   letter-spacing: 0.02em;
 }
 
 .dashboard-cta-description {
-  color: var(--text-secondary, #c0c0c0);
-  font-size: var(--font-size-base, 1rem);
-  line-height: 1.6;
-  margin: 0 0 1.25rem 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
   max-width: 72ch;
   margin-inline: auto;
 }
@@ -3430,46 +3428,46 @@ footer {
 .dashboard-cta-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   list-style: none;
   padding: 0;
 }
 
 .dashboard-cta-features li {
-  background: rgba(0, 217, 255, 0.1);
-  border: 1px solid rgba(0, 217, 255, 0.25);
+  background: rgba(0, 102, 51, 0.08);
+  border: 1px solid var(--border-color);
   border-radius: 2rem;
-  padding: 0.35rem 0.9rem;
+  padding: 0.25rem 0.75rem;
   font-size: var(--font-size-sm, 0.875rem);
-  color: var(--text-color, #e0e0e0);
+  color: var(--text-color);
   white-space: nowrap;
 }
 
 .dashboard-cta-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  color: #0a0e27;
-  background: linear-gradient(135deg, #00d9ff, #00b8d9);
+  gap: 0.5rem;
+  color: var(--button-text);
+  background: var(--button-bg);
   text-decoration: none;
   font-weight: 700;
-  font-size: var(--font-size-lg, 1.125rem);
-  padding: 0.75rem 2rem;
-  border-radius: var(--border-radius, 8px);
+  font-size: var(--font-size-base);
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--border-radius);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 102, 51, 0.2);
 }
 
 .dashboard-cta-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 217, 255, 0.5);
-  background: linear-gradient(135deg, #33e1ff, #00d9ff);
+  box-shadow: 0 4px 16px rgba(0, 102, 51, 0.3);
+  background: var(--primary-dark);
 }
 
 .dashboard-cta-link:focus-visible {
-  outline: 3px solid #ff006e;
+  outline: 3px solid var(--primary-color);
   outline-offset: 4px;
   border-radius: var(--border-radius-sm, 4px);
 }
@@ -3508,11 +3506,11 @@ footer {
    ================================================== */
 
 .news-navigation {
-  background: linear-gradient(135deg, rgba(255, 0, 110, 0.08) 0%, rgba(255, 190, 11, 0.06) 100%);
-  border: 2px solid rgba(255, 0, 110, 0.35);
+  background: linear-gradient(135deg, rgba(0, 102, 51, 0.04) 0%, rgba(0, 119, 68, 0.06) 100%);
+  border: 2px solid var(--primary-light);
   border-radius: var(--border-radius);
-  padding: var(--spacing-lg) var(--spacing-xl);
-  margin: 0 var(--spacing-md) var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -3542,18 +3540,18 @@ footer {
 }
 
 .news-navigation-heading {
-  font-family: var(--font-heading, 'Orbitron', 'Orbitron Fallback', sans-serif);
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  color: var(--heading-color, #ff006e);
-  margin: 0 0 0.75rem 0;
+  font-family: var(--font-accent);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--header-color);
+  margin: 0 0 0.5rem 0;
   letter-spacing: 0.02em;
 }
 
 .news-navigation-description {
-  color: var(--text-secondary, #c0c0c0);
-  font-size: var(--font-size-base, 1rem);
-  line-height: 1.6;
-  margin: 0 0 1.25rem 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
   max-width: 72ch;
   margin-inline: auto;
 }
@@ -3561,46 +3559,46 @@ footer {
 .news-navigation-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   list-style: none;
   padding: 0;
 }
 
 .news-navigation-features li {
-  background: rgba(255, 0, 110, 0.1);
-  border: 1px solid rgba(255, 0, 110, 0.25);
+  background: rgba(0, 102, 51, 0.08);
+  border: 1px solid var(--border-color);
   border-radius: 2rem;
-  padding: 0.35rem 0.9rem;
-  font-size: var(--font-size-sm, 0.875rem);
-  color: var(--text-color, #e0e0e0);
+  padding: 0.25rem 0.75rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
   white-space: nowrap;
 }
 
 .news-navigation-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  color: #0a0e27;
-  background: linear-gradient(135deg, #ff006e, #cc0058);
+  gap: 0.5rem;
+  color: var(--button-text);
+  background: var(--button-bg);
   text-decoration: none;
   font-weight: 700;
-  font-size: var(--font-size-lg, 1.125rem);
-  padding: 0.75rem 2rem;
-  border-radius: var(--border-radius, 8px);
+  font-size: var(--font-size-base);
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--border-radius);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-  box-shadow: 0 2px 8px rgba(255, 0, 110, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 102, 51, 0.2);
 }
 
 .news-navigation-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(255, 0, 110, 0.5);
-  background: linear-gradient(135deg, #ff3389, #ff006e);
+  box-shadow: 0 4px 16px rgba(0, 102, 51, 0.3);
+  background: var(--primary-dark);
 }
 
 .news-navigation-link:focus-visible {
-  outline: 3px solid #00d9ff;
+  outline: 3px solid var(--primary-color);
   outline-offset: 4px;
   border-radius: var(--border-radius-sm, 4px);
 }
@@ -4024,8 +4022,8 @@ footer {
 
 /* Election Countdown */
 .election-countdown {
-  margin: var(--spacing-xl) 0;
-  padding: var(--spacing-lg);
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md);
   background: var(--card-bg);
   border: 2px solid var(--primary-color);
   border-radius: var(--border-radius-lg);
@@ -4033,9 +4031,9 @@ footer {
 }
 
 .election-countdown h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 }
 
 .election-countdown #countdown {
@@ -4047,14 +4045,14 @@ footer {
 /* Hero Stats Grid */
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--spacing-lg);
-  margin: var(--spacing-xl) 0;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
 }
 
 .hero-stats .stat {
   text-align: center;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -4062,12 +4060,12 @@ footer {
 
 .hero-stats .stat .number {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--primary-color);
   font-family: var(--font-mono);
   line-height: 1;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 }
 
 .hero-stats .stat .label {
