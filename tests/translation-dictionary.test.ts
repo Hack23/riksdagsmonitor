@@ -73,10 +73,10 @@ describe('translatePhrase', () => {
     expect(translatePhrase('finansutskottet', 'en')).toBe('Committee on Finance');
   });
 
-  it('returns original text when no match found', () => {
+  it('returns null when no match found', () => {
     const phrase = 'En ny vapenlag';
-    // Not in dictionary – should return as-is
-    expect(translatePhrase(phrase, 'de')).toBe(phrase);
+    // Not in dictionary – should return null (caller must keep the marker)
+    expect(translatePhrase(phrase, 'de')).toBeNull();
   });
 
   it('handles "regeringens proposition" prefix', () => {
@@ -208,18 +208,19 @@ describe('translateSwedishContent', () => {
     expect(result).toContain('스웨덴 의회');
   });
 
-  it('keeps untranslated Swedish text (no match) but still removes data-translate marker', () => {
+  it('keeps data-translate marker and Swedish text when no translation exists', () => {
     const phrase = 'En ny vapenlag';
     const html = `<p>${swSpan(phrase)}</p>`;
     const result = translateSwedishContent(html, 'de');
-    expect(result).not.toContain('data-translate');
+    // No dictionary match → original span preserved, marker NOT removed
+    expect(result).toContain('data-translate="true"');
     expect(result).toContain(phrase);
   });
 
   it('handles spans inside anchor tags', () => {
-    const html = `<a href="https://example.com">${swSpan('motion')}</a>`;
+    const html = `<a href="https://example.com">${swSpan('utskott')}</a>`;
     const result = translateSwedishContent(html, 'fr');
-    expect(result).toContain('motion');
+    expect(result).toContain('comité');
     expect(result).not.toContain('data-translate');
   });
 

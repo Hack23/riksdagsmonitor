@@ -899,13 +899,15 @@ export function translateTerm(text: string, targetLang: Language): string {
  *
  * @param text - Swedish phrase
  * @param targetLang - target language
- * @returns Best available translation or original text
+ * @returns Translated string, or `null` when no dictionary match exists.
+ *   Returns the original text (not null) when `targetLang === 'sv'` since no
+ *   translation is required for the source language.
  */
-export function translatePhrase(text: string, targetLang: Language): string {
+export function translatePhrase(text: string, targetLang: Language): string | null {
   if (targetLang === 'sv') return text;
 
   const dict = DICTIONARIES[targetLang];
-  if (!dict) return text;
+  if (!dict) return null;
 
   const lower = text.toLowerCase().trim();
 
@@ -928,8 +930,9 @@ export function translatePhrase(text: string, targetLang: Language): string {
     return bestTranslation + remainder;
   }
 
-  // 3. No match – return original (still Swedish, but without data-translate marker)
-  return text;
+  // 3. No match – signal that no translation was found so the caller can
+  //    keep the data-translate marker rather than silently dropping it.
+  return null;
 }
 
 /**
@@ -937,15 +940,20 @@ export function translatePhrase(text: string, targetLang: Language): string {
  * remaining in an article BEFORE writing it to disk.
  *
  * - For `sv` articles: retains the original Swedish text, removes marker.
- * - For other languages: attempts dictionary lookup via translatePhrase();
- *   if no match, keeps the Swedish text unchanged but still removes the marker.
+ * - For other languages: attempts dictionary lookup via translatePhrase().
+ *   If a translation is found the marker is removed and the translated text
+ *   is used.  If **no match** exists the original span (including the
+ *   `data-translate` marker) is left **unchanged** so it remains visible in
+ *   the output HTML and validation tooling can flag it as still requiring
+ *   translation.
  *
  * Upstream invariant: span content has already been HTML-escaped via
  * escapeHtml(). The spans therefore never contain nested tags.
  *
  * @param html       - Full article HTML
  * @param targetLang - Target language (e.g. 'de', 'sv')
- * @returns HTML with all data-translate spans processed
+ * @returns HTML with translated data-translate spans processed; untranslatable
+ *          spans are left intact.
  */
 /**
  * Matches `<span>` elements that have both `data-translate="true"` and `lang="sv"` attributes
@@ -965,19 +973,30 @@ const TRANSLATABLE_SV_SPAN_REGEX =
 export function translateSwedishContent(html: string, targetLang: Language): string {
   // String.prototype.replace resets lastIndex on a global regex before each call,
   // so TRANSLATABLE_SV_SPAN_REGEX can be used directly without cloning.
-  return html.replace(TRANSLATABLE_SV_SPAN_REGEX, (_match: string, attrs: string, inner: string): string => {
-    // Remove data-translate marker but preserve all other attributes (e.g. lang="sv" for accessibility)
-    const cleanedAttrs = attrs.replace(/\s*data-translate=(?:"true"|'true')/, '').trim();
-
-    const translatedInner =
-      targetLang === 'sv'
-        ? inner
-        : translatePhrase(inner, targetLang);
-
-    if (cleanedAttrs.length > 0) {
-      return `<span ${cleanedAttrs}>${translatedInner}</span>`;
+  return html.replace(TRANSLATABLE_SV_SPAN_REGEX, (match: string, attrs: string, inner: string): string => {
+    if (targetLang === 'sv') {
+      // Swedish source: strip marker, keep original text and remaining attrs.
+      const cleanedAttrs = attrs.replace(/\s*data-translate=(?:"true"|'true')/, '').trim();
+      if (cleanedAttrs.length > 0) {
+        return `<span ${cleanedAttrs}>${inner}</span>`;
+      }
+      return `<span>${inner}</span>`;
     }
-    return `<span>${translatedInner}</span>`;
+
+    const translated = translatePhrase(inner, targetLang);
+
+    if (translated === null) {
+      // No dictionary match — leave the span completely unchanged so validation
+      // tooling can detect it as still requiring translation.
+      return match;
+    }
+
+    // Translation found: strip the marker, preserve remaining attrs (e.g. lang="sv").
+    const cleanedAttrs = attrs.replace(/\s*data-translate=(?:"true"|'true')/, '').trim();
+    if (cleanedAttrs.length > 0) {
+      return `<span ${cleanedAttrs}>${translated}</span>`;
+    }
+    return `<span>${translated}</span>`;
   });
 }
 
