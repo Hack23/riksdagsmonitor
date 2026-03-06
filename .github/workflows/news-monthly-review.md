@@ -285,10 +285,24 @@ Monthly review articles should include:
 8. **Month's Most Consequential**: Deep analysis of the month's defining development
 9. **Looking Ahead**: Preview of next month's parliamentary calendar
 
-## Translation Rules
-- Swedish API titles MUST be translated
-- Party abbreviations NEVER translated
-- ZERO TOLERANCE for language mixing
+## 🌐 MANDATORY Translation Quality Rules
 
-## Article Naming Convention
-Files: `YYYY-MM-DD-monthly-review-{lang}.html`
+### Non-Negotiable Requirements for Non-EN/SV Articles:
+1. **ALL section headings** (h1, h2, h3) MUST be in the target language
+2. **ALL body paragraphs** MUST be written in the target language
+3. **Meta keywords** MUST be translated to the target language
+4. **No English fallback**: If you cannot translate a phrase, use the target language equivalent or omit
+5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
+
+### Per-Language Requirements:
+- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
+- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
+- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
+- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
+
+### Localized Section Headings (use CONTENT_LABELS):
+Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
+- "Key Takeaways" → Use `CONTENT_LABELS[lang].keyTakeaways`
+- "Thematic Analysis" → Use `CONTENT_LABELS[lang].thematicAnalysis`
+- "Coalition Dynamics" → Use `CONTENT_LABELS[lang].coalitionDynamics`
+- "Political Context" → Use `CONTENT_LABELS[lang].politicalContext`

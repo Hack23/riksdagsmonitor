@@ -301,18 +301,40 @@ safeoutputs___create_pull_request({
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 
-## Error Handling
+## 🌐 MANDATORY Translation Quality Rules
 
-| Scenario | Action |
-|----------|--------|
-| Tool not found | Check MCP connection, retry `get_sync_status()` |
-| Empty results | Try broader rm or date range |
-| Timeout | Reduce limit params, call safe output immediately |
-| Stale data (> 48 hours) | Add disclaimer, still generate with caveat |
-| MCP unavailable after 3 retries | `safeoutputs___noop` with "MCP unavailable" message |
-| No significant events | `safeoutputs___noop` (legitimate — most common outcome) |
-| Script generates articles | Validate → commit → `safeoutputs___create_pull_request` |
-| PR creation fails after articles | Let workflow FAIL (never use noop for PR failures) |
-| Elapsed >= 43 min | STOP, call safe output immediately |
+### Non-Negotiable Requirements for Non-EN/SV Articles:
+1. **ALL section headings** (h1, h2, h3) MUST be in the target language
+2. **ALL body paragraphs** MUST be written in the target language
+3. **Meta keywords** MUST be translated to the target language
+4. **No English fallback**: If you cannot translate a phrase, use the target language equivalent or omit
+5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
+
+### Per-Language Requirements:
+- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
+- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
+- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
+- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
+
+### Localized Section Headings (use CONTENT_LABELS):
+Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
+- "Why It Matters" → Use `CONTENT_LABELS[lang].whyItMatters`
+- "What to Watch" → Use `CONTENT_LABELS[lang].whatToWatch`
+- "Key Takeaways" → Use `CONTENT_LABELS[lang].keyTakeaways`
+- "Political Context" → Use `CONTENT_LABELS[lang].politicalContext`
+
+### Post-Generation Validation:
+After generating all articles, run:
+```bash
+npx tsx scripts/validate-news-translations.ts
+```
+Fix any files flagged before committing. Articles with >3 English phrases in non-EN versions must be regenerated.
+
+### Additional Rules:
+- Swedish API titles MUST be translated to target language
+- Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
+- ZERO TOLERANCE for language mixing
+
+## Error Handling
 
 🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, detect events, generate articles with the script, and call a safe output tool.**

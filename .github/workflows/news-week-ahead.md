@@ -268,7 +268,36 @@ If the generated article lacks analysis, manually add contextual commentary befo
 
 **Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files. Run `npm run prebuild` (or `npm run build`) locally if you need to validate or preview the generated index, metadata, or sitemap outputs on a fresh checkout where these files will not exist.
 
-## Translation Rules
+## 🌐 MANDATORY Translation Quality Rules
+
+### Non-Negotiable Requirements for Non-EN/SV Articles:
+1. **ALL section headings** (h1, h2, h3) MUST be in the target language
+2. **ALL body paragraphs** MUST be written in the target language
+3. **Meta keywords** MUST be translated to the target language
+4. **No English fallback**: If you cannot translate a phrase, use the target language equivalent or omit
+5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
+
+### Per-Language Requirements:
+- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
+- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
+- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
+- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
+
+### Localized Section Headings (use CONTENT_LABELS):
+Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
+- "Why This Week Matters" → Use `CONTENT_LABELS[lang].whyMatters`
+- "Key Events This Week" → Use `CONTENT_LABELS[lang].keyEvents`
+- "What to Watch" → Use `CONTENT_LABELS[lang].whatToWatch`
+- "Week Ahead" → Use `CONTENT_LABELS[lang].weekAhead`
+
+### Post-Generation Validation:
+After generating all articles, run:
+```bash
+npx tsx scripts/validate-news-translations.ts
+```
+Fix any files flagged before committing. Articles with >3 English phrases in non-EN versions must be regenerated.
+
+### Additional Rules:
 - Swedish API titles MUST be translated
 - Party abbreviations NEVER translated
 - ZERO TOLERANCE for language mixing
