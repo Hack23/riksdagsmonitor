@@ -4,20 +4,66 @@
   "description": "Live intelligence platform monitoring Swedish Parliament, tracking 349 MPs, coalition predictions, and election forecasting for Swedish Election 2026",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f8f9fa",
-  "theme_color": "#006633",
+  "background_color": "#0a0e27",
+  "theme_color": "#0a0e27",
   "orientation": "portrait-primary",
-  "icons": [],
+  "icons": [
+    {
+      "src": "/images/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/favicon-192x192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/favicon-512x512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ],
   "categories": ["politics", "news", "government"],
   "lang": "en",
   "dir": "ltr",
   "scope": "/",
   "screenshots": [
     {
-      "src": "english-article-preview.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "label": "Dashboard preview"
+      "src": "/images/og-image.webp",
+      "sizes": "1200x630",
+      "type": "image/webp",
+      "label": "Dashboard preview",
+      "form_factor": "wide"
     }
   ],
   "related_applications": [],
@@ -27,7 +73,15 @@
       "name": "Dashboard",
       "short_name": "Dashboard",
       "description": "View main intelligence dashboard",
-      "url": "/index.html"
+      "url": "/index.html",
+      "icons": [{"src": "/images/favicon-96x96.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "News",
+      "short_name": "News",
+      "description": "Latest political intelligence news",
+      "url": "/news/index.html",
+      "icons": [{"src": "/images/news-icon-192x192.png", "sizes": "192x192"}]
     }
   ]
 }

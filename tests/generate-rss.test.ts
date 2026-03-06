@@ -207,7 +207,7 @@ describe('RSS Feed Generation', () => {
 
     it('should have channel image', () => {
       expect(rssContent).toContain('<image>');
-      expect(rssContent).toContain('<url>https://hack23.com/cia-icon-140.webp</url>');
+      expect(rssContent).toContain('<url>https://riksdagsmonitor.com/images/android-chrome-512x512.png</url>');
     });
 
     it('should have items', () => {

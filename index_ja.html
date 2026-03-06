@@ -34,9 +34,9 @@
 <meta property="og:site_name" content="Riksdagsmonitor">
 <meta property="og:title" content="Riksdagsmonitor | スウェーデン総選挙2026インテリジェンス・プラットフォーム">
 <meta property="og:description" content="8政党・349人の国会議員をリアルタイム監視。連立予測、45のリスクルール、選挙予測、50年以上の議会データを提供。無料のオープンソースです。">
-<meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
-<meta property="og:image:width" content="140">
-<meta property="og:image:height" content="140">
+<meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Riksdagsmonitor - スウェーデン議会インテリジェンス・プラットフォーム">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:locale:alternate" content="ar_SA">
@@ -57,7 +57,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Riksdagsmonitor | スウェーデン総選挙2026インテリジェンス・プラットフォーム">
 <meta name="twitter:description" content="8政党・349人の国会議員をリアルタイム監視。連立予測、45のリスクルール、選挙予測、50年以上の議会データを提供。無料のオープンソースです。">
-<meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+<meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
 <meta name="twitter:image:alt" content="Riksdagsmonitor - スウェーデン議会インテリジェンス・プラットフォーム">
 <meta name="twitter:site" content="@riksdagsmonitor">
 <meta name="twitter:creator" content="@jamessorling">
@@ -77,6 +77,12 @@
 
 <meta name="application-name" content="Riksdagsmonitor">
 <meta name="theme-color" content="#0a0e27">
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 
 <!-- Schema.org structured data -->
 <script type="application/ld+json">
@@ -91,9 +97,9 @@
       "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
-        "width": 250,
-        "height": 250
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
       },
       "description": "CIA OSINT分析を通じて、リアルタイム情報、選挙予測、政治的透明性を提供するスウェーデン議会監視プラットフォーム。",
       "foundingDate": "2008",
@@ -148,7 +154,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
         "width": 1200,
         "height": 630
       },
@@ -190,7 +196,7 @@
       "description": "スウェーデン議会選挙は 2026 年 9 月 13 日に予定されています。CIA OSINT 機能、連合予測、および包括的なリスク評価を使用して、8 政党にわたる 349 人の国会議員を監視するライブ インテリジェンス プラットフォーム。投票パターン、委員会の活動、政治の透明性をリアルタイムで追跡します。歴史データベース: 1971 年以降、2494 人の政治家を追跡。",
       "image": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
         "width": 1200,
         "height": 630
       },
@@ -342,6 +348,58 @@
 </ol>
 </nav>
 
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="ダークテーマに切り替え"
+        title="ダークテーマに切り替え"
+        data-label-dark="ライトテーマに切り替え"
+        data-label-light="ダークテーマに切り替え">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_ja.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">スウェーデン総選挙2026インテリジェンス・プラットフォーム</span></h1>
+    <p class="tagline">リアルタイム議会監視 · 連立予測 · 45のリスクルール · 50年以上のデータ</p>
+  </div>
+</div>
+
+
+<div class="election-countdown">
+<h2>選挙まで: <span id="countdown">2026年9月13日</span></h2>
+<p>2026年9月13日（9月第2日曜日）</p>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">2,494</span>
+<span class="label">追跡中の政治家</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">6M+</span>
+<span class="label">議会投票</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">500K+</span>
+<span class="label">処理済み文書</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">10K+</span>
+<span class="label">政府法案</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">20K+</span>
+<span class="label">委員会決定</span>
+</div>
+</div>
+</header>
+
 <!-- ニュースナビゲーション -->
 <nav class="news-navigation" aria-label="ニュース">
 <p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI活用の政治ジャーナリズム</p>
@@ -359,47 +417,6 @@
 <span>ニュースを読む</span>
 </a>
 </nav>
-
-<header>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="ダークテーマに切り替え"
-        title="ダークテーマに切り替え"
-        data-label-dark="ライトテーマに切り替え"
-        data-label-light="ダークテーマに切り替え">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
-<h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">スウェーデン総選挙2026インテリジェンス・プラットフォーム</span></h1>
-<p class="tagline">リアルタイム議会監視 · 連立予測 · 45のリスクルール · 50年以上のデータ</p>
-
-<div class="election-countdown">
-<h2>選挙まで: <span id="countdown">2026年9月13日</span></h2>
-<p>2026年9月13日（9月第2日曜日）</p>
-</div>
-
-<div class="hero-stats">
-<div class="stat">
-<span class="number" data-stat-id="stat-historical-persons">—</span>
-<span class="label">追跡中の政治家</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-against-proposals">—</span>
-<span class="label">議会投票</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-total-documents">—</span>
-<span class="label">処理済み文書</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-government-proposals">—</span>
-<span class="label">政府法案</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-committee-decisions">—</span>
-<span class="label">委員会決定</span>
-</div>
-</div>
-</header>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="インテリジェンスダッシュボード">
@@ -1041,11 +1058,11 @@
 <div class="scanner-effect"></div>
 <h3>🔍 リアルタイム監視</h3>
 <ul>
-<li>349名の議員を自動追跡（履歴データ <span data-stat-id="stat-historical-persons">—</span> 名）</li>
+<li>349名の議員を自動追跡（履歴データ <span data-stat-id="stat-historical-persons">2,494</span> 名）</li>
 <li>個別投票記録 <span data-stat-id="stat-total-votes">—</span> 件を分析</li>
-<li>文書 <span data-stat-id="stat-total-documents">—</span> 件を処理</li>
+<li>文書 <span data-stat-id="stat-total-documents">500K+</span> 件を処理</li>
 <li>議員提案 <span data-stat-id="stat-member-proposals">—</span> 件を追跡</li>
-<li>政府提案 <span data-stat-id="stat-government-proposals">—</span> 件を監視</li>
+<li>政府提案 <span data-stat-id="stat-government-proposals">10K+</span> 件を監視</li>
 <li>委員会業務を定量化（文書 <span data-stat-id="stat-committee-documents">—</span> 件）</li>
 </ul>
 </div>
@@ -1186,6 +1203,9 @@
 <footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-section">
+      <a href="index_ja.html" aria-label="Riksdagsmonitor Home">
+        <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+      </a>
       <h3>Riksdagsmonitorについて</h3>
       <p>CIA OSINT 機能を使用したスウェーデン議会監視用のライブ インテリジェンス プラットフォーム。</p>
       <ul class="footer-stats">

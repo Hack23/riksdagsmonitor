@@ -233,11 +233,11 @@ function generateRss(): string {
     <generator>Riksdagsmonitor RSS Generator v1.0</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <image>
-      <url>https://hack23.com/cia-icon-140.webp</url>
+      <url>https://riksdagsmonitor.com/images/android-chrome-512x512.png</url>
       <title>Riksdagsmonitor</title>
       <link>${BASE_URL}</link>
-      <width>140</width>
-      <height>140</height>
+      <width>144</width>
+      <height>144</height>
       <description>Riksdagsmonitor - Swedish Parliament Intelligence Platform</description>
     </image>
     <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml"/>`;

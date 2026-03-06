@@ -34,9 +34,9 @@
 <meta property="og:site_name" content="Riksdagsmonitor">
 <meta property="og:title" content="Riksdagsmonitor | Svensk valefterretningsplatform 2026">
 <meta property="og:description" content="Realtidsovervågning af 349 parlamentsmedlemmer i 8 partier. Koalitionsforudsigelser, 45 risikoregler, valgprognoser og 50+ års parlamentariske data. Gratis og open source.">
-<meta property="og:image" content="https://hack23.com/cia-icon-140.webp">
-<meta property="og:image:width" content="140">
-<meta property="og:image:height" content="140">
+<meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Riksdagsmonitor - Svensk parlamentsefterretningsplatform">
 <meta property="og:locale" content="da_DK">
 <meta property="og:locale:alternate" content="en_US">
@@ -57,7 +57,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Riksdagsmonitor | Svensk valefterretningsplatform 2026">
 <meta name="twitter:description" content="Realtidsovervågning af 349 parlamentsmedlemmer i 8 partier. Koalitionsforudsigelser, 45 risikoregler, valgprognoser og 50+ års parlamentariske data. Gratis og open source.">
-<meta name="twitter:image" content="https://hack23.com/cia-icon-140.webp">
+<meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
 <meta name="twitter:image:alt" content="Riksdagsmonitor - Svensk parlamentsefterretningsplatform">
 <meta name="twitter:site" content="@riksdagsmonitor">
 <meta name="twitter:creator" content="@jamessorling">
@@ -77,6 +77,12 @@
 
 <meta name="application-name" content="Riksdagsmonitor">
 <meta name="theme-color" content="#0a0e27">
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 
 <!-- Schema.org strukturerede data -->
 <script type="application/ld+json">
@@ -91,9 +97,9 @@
       "url": "https://riksdagsmonitor.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
-        "width": 250,
-        "height": 250
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
       },
       "description": "Svensk parlamentsovervågningsplatform, der leverer efterretninger i realtid, valgprognoser og politisk gennemsigtighed gennem CIA OSINT-analyse.",
       "foundingDate": "2008",
@@ -148,7 +154,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
         "width": 1200,
         "height": 630
       },
@@ -190,7 +196,7 @@
       "description": "Svensk parlamentsvalg planlagt til den 13. september 2026. Efterretningsplatform i realtid, der overvåger 349 parlamentsmedlemmer i 8 partier med CIA OSINT-kapaciteter, koalitionsforudsigelser og omfattende risikovurdering. Følg afstemnings­mønstre, udvalgsarbejde og politisk gennemsigtighed i realtid. Historisk database: 2494 politikere sporet siden 1971.",
       "image": {
         "@type": "ImageObject",
-        "url": "https://hack23.com/cia-icon-140.webp",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
         "width": 1200,
         "height": 630
       },
@@ -342,6 +348,58 @@ Svensk valg 2026
 </ol>
 </nav>
 
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Skift til mørkt tema"
+        title="Skift til mørkt tema"
+        data-label-dark="Skift til lyst tema"
+        data-label-light="Skift til mørkt tema">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+  <div class="hero-banner-overlay">
+    <a href="index_da.html" aria-label="Riksdagsmonitor Home">
+      <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="140" height="140" loading="eager">
+    </a>
+    <h1> Riksdagsmonitor<br><span class="h1-subtitle">Svensk valefterretningsplatform 2026</span></h1>
+    <p class="tagline">Parlamentsovervågning i realtid · Koalitionsforudsigelser · 45 risikoregler · 50+ års data</p>
+  </div>
+</div>
+
+
+<div class="election-countdown">
+<h2>Valg om: <span id="countdown">13. september 2026</span></h2>
+<p>13. september 2026 (Anden søndag i september)</p>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">2,494</span>
+<span class="label">Politikere overvåget</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">6M+</span>
+<span class="label">Parlamentsafstemninger</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">500K+</span>
+<span class="label">Dokumenter behandlet</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">10K+</span>
+<span class="label">Regeringsforslag</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">20K+</span>
+<span class="label">Udvalgsbeslutninger</span>
+</div>
+</div>
+</header>
+
 <!-- Nyhedsnavigation -->
 <nav class="news-navigation" aria-label="Nyheder">
 <p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI-drevet politisk journalistik</p>
@@ -359,47 +417,6 @@ Svensk valg 2026
 <span>Læs seneste nyheder</span>
 </a>
 </nav>
-
-<header>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Skift til mørkt tema"
-        title="Skift til mørkt tema"
-        data-label-dark="Skift til lyst tema"
-        data-label-light="Skift til mørkt tema">
-  <span class="theme-icon" aria-hidden="true">🌙</span>
-</button>
-<h1><span aria-hidden="true">🗳️</span> Riksdagsmonitor<br><span class="h1-subtitle">Svensk valefterretningsplatform 2026</span></h1>
-<p class="tagline">Parlamentsovervågning i realtid · Koalitionsforudsigelser · 45 risikoregler · 50+ års data</p>
-
-<div class="election-countdown">
-<h2>Valg om: <span id="countdown">13. september 2026</span></h2>
-<p>13. september 2026 (Anden søndag i september)</p>
-</div>
-
-<div class="hero-stats">
-<div class="stat">
-<span class="number" data-stat-id="stat-historical-persons">—</span>
-<span class="label">Politikere overvåget</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-against-proposals">—</span>
-<span class="label">Parlamentsafstemninger</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-total-documents">—</span>
-<span class="label">Dokumenter behandlet</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-government-proposals">—</span>
-<span class="label">Regeringsforslag</span>
-</div>
-<div class="stat">
-<span class="number" data-stat-id="stat-committee-decisions">—</span>
-<span class="label">Udvalgsbeslutninger</span>
-</div>
-</div>
-</header>
 
 <!-- Intelligence Dashboard CTA -->
 <nav class="dashboard-cta" aria-label="Efterretningspanel">
@@ -1041,11 +1058,11 @@ Ydelsesniveauer (ntile_party_tier: 1-4)
 <div class="scanner-effect"></div>
 <h3>🔍 Overvågning i realtid</h3>
 <ul>
-<li>349 medlemmer overvåget (<span data-stat-id="stat-historical-persons">—</span> historiske) automatisk</li>
+<li>349 medlemmer overvåget (<span data-stat-id="stat-historical-persons">2,494</span> historiske) automatisk</li>
 <li><span data-stat-id="stat-total-votes">—</span> individuelle afstemningsprotokoller analyseret</li>
-<li><span data-stat-id="stat-total-documents">—</span> dokumenter behandlet</li>
+<li><span data-stat-id="stat-total-documents">500K+</span> dokumenter behandlet</li>
 <li><span data-stat-id="stat-member-proposals">—</span> medlemsforslag fulgt</li>
-<li><span data-stat-id="stat-government-proposals">—</span> regeringsforslag overvåget</li>
+<li><span data-stat-id="stat-government-proposals">10K+</span> regeringsforslag overvåget</li>
 <li>Udvalgsarbejde kvantificeret (<span data-stat-id="stat-committee-documents">—</span> dokumenter)</li>
 </ul>
 </div>
@@ -1186,6 +1203,9 @@ Ydelsesniveauer (ntile_party_tier: 1-4)
 <footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-section">
+      <a href="index_da.html" aria-label="Riksdagsmonitor Home">
+        <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+      </a>
       <h3>Om Riksdagsmonitor</h3>
       <p>Efterretningsplatform i realtid for overvågning af Sveriges riksdag med CIA OSINT-kapaciteter.</p>
       <ul class="footer-stats">
