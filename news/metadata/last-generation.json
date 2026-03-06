@@ -37,9 +37,24 @@
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 0,
-  "errors": 1,
-  "articles": [],
+  "generated": 14,
+  "errors": 0,
+  "articles": [
+    "news/2026-03-06-week-ahead-en.html",
+    "news/2026-03-06-week-ahead-sv.html",
+    "news/2026-03-06-week-ahead-da.html",
+    "news/2026-03-06-week-ahead-no.html",
+    "news/2026-03-06-week-ahead-fi.html",
+    "news/2026-03-06-week-ahead-de.html",
+    "news/2026-03-06-week-ahead-fr.html",
+    "news/2026-03-06-week-ahead-es.html",
+    "news/2026-03-06-week-ahead-nl.html",
+    "news/2026-03-06-week-ahead-ar.html",
+    "news/2026-03-06-week-ahead-he.html",
+    "news/2026-03-06-week-ahead-ja.html",
+    "news/2026-03-06-week-ahead-ko.html",
+    "news/2026-03-06-week-ahead-zh.html"
+  ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
