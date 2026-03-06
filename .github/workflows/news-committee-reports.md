@@ -299,6 +299,34 @@ grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-committee-reports-en.html"
 **Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files. Run `npm run prebuild` (or `npm run build`) locally if you need to preview the generated indexes, metadata, or sitemap.
 
 ### Step 6: Validate & Create PR
+**MANDATORY LLM Translation Pass — ALL generated articles:**
+
+The generation script handles known parliamentary terms via static dictionary lookup. YOU (Copilot) must translate ALL remaining `data-translate="true"` spans in EVERY generated non-Swedish article using your own translation capabilities — not just the ones the dictionary resolved.
+
+```bash
+# Identify ALL non-Swedish articles with remaining untranslated spans
+for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
+  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
+    echo "NEEDS LLM TRANSLATION: $article"
+    grep -o '<span data-translate="true" lang="sv">[^<]*</span>' "$article" | head -5
+  fi
+done
+```
+
+For EACH file listed above, read the file and translate every `<span data-translate="true" lang="sv">SWEDISH TEXT</span>` by:
+1. Translating SWEDISH TEXT into the article's target language using your translation knowledge
+2. Replacing the entire span (including wrapper tags) with just the translated text
+3. Writing the updated file back to disk
+
+**Translation rules (MANDATORY for ALL languages):**
+- ALL Swedish text → target language (no exceptions — includes document titles, committee names, subject lines)
+- Party abbreviations (S, M, SD, V, MP, C, L, KD) → keep untranslated
+- Politician names → keep untranslated
+- Document reference numbers (e.g., 2025/26:118) → keep untranslated
+- Arabic (ar) and Hebrew (he) → correct RTL Unicode encoding
+- CJK languages (ja, ko, zh) → native script only, no romanization
+- ZERO `data-translate="true"` spans allowed in ANY committed non-Swedish article
+
 Run validation and HTMLHint before creating PR:
 ```bash
 bash scripts/validate-news-generation.sh

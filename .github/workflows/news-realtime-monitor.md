@@ -245,24 +245,33 @@ If the script fails, generate articles manually ONE language at a time:
 
 ## Step 4: Validate & Translate
 
+**MANDATORY LLM Translation Pass — ALL generated articles:**
+
+The generation script handles known parliamentary terms via static dictionary lookup. YOU (Copilot) must translate ALL remaining `data-translate="true"` spans in EVERY generated non-Swedish article using your own translation capabilities — not just the ones the dictionary resolved.
+
 ```bash
-# Check for untranslated Swedish content
-UNTRANSLATED=0
+# Identify ALL non-Swedish articles with remaining untranslated spans
 for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
   if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
-    echo "NEEDS TRANSLATION: $article"
-    UNTRANSLATED=$((UNTRANSLATED + 1))
+    echo "NEEDS LLM TRANSLATION: $article"
+    grep -o '<span data-translate="true" lang="sv">[^<]*</span>' "$article" | head -5
   fi
 done
-
-if [ $UNTRANSLATED -gt 0 ]; then
-  echo "WARNING: $UNTRANSLATED articles need translation — translate before committing"
-fi
 ```
 
-If untranslated content found, translate each `<span data-translate="true" lang="sv">text</span>` to the target language and remove the wrapper.
+For EACH file listed above, read the file and translate every `<span data-translate="true" lang="sv">SWEDISH TEXT</span>` by:
+1. Translating SWEDISH TEXT into the article's target language using your translation knowledge
+2. Replacing the entire span (including wrapper tags) with just the translated text
+3. Writing the updated file back to disk
 
-**Translation rules:** Translate all Swedish text. Keep party names (S, M, SD, V, MP, C, L, KD) and personal names untranslated. Zero language mixing.
+**Translation rules (MANDATORY for ALL languages):**
+- ALL Swedish text → target language (no exceptions — includes document titles, committee names, subject lines)
+- Party abbreviations (S, M, SD, V, MP, C, L, KD) → keep untranslated
+- Politician names → keep untranslated
+- Document reference numbers (e.g., 2025/26:118) → keep untranslated
+- Arabic (ar) and Hebrew (he) → correct RTL Unicode encoding
+- CJK languages (ja, ko, zh) → native script only, no romanization
+- ZERO `data-translate="true"` spans allowed in ANY committed non-Swedish article
 
 Then run validation:
 ```bash
