@@ -119,7 +119,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
 3. If **force_generation** is `true`, generate even if recent articles exist.
 4. If **languages** is empty/blank, default to `all` (14 languages).
 5. If **article_types** includes `deep-inspection`, use **document_ids**, **document_urls**, and **focus_topic** for targeted deep analysis.
-6. For `deep-inspection` type: pass `--document-ids` and `--focus-topic` flags to the generation script.
+6. For `deep-inspection` type: pass `--document-ids=<value>`, `--document-urls=<value>`, and `--focus-topic=<value>` flags to the generation script.
 
 ## ⚠️ NON-NEGOTIABLE RULES
 

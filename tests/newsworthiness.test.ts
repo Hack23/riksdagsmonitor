@@ -141,13 +141,27 @@ describe('scoreNewsworthiness', () => {
       makeDoc({ parti: 'SD', titel: 'Migration policy reform' }),
       makeDoc({ parti: 'V', titel: 'Climate policy opposition' }),
     ], makeUnstableCIA());
-    // This should score high due to strategic keywords, doc type, multi-party, instability
-    expect(score.overall).toBeGreaterThan(0);
-    // If high enough, should warrant deep inspection
-    if (score.overall >= 65) {
-      expect(score.warrantsDeepInspection).toBe(true);
-      expect(score.suggestedType).toBe('deep-inspection');
-    }
+    // Strategic keywords + propositions + multi-party + instability → deep inspection
+    expect(score.overall).toBeGreaterThanOrEqual(65);
+    expect(score.warrantsDeepInspection).toBe(true);
+    expect(score.suggestedType).toBe('deep-inspection');
+  });
+
+  it('applies deep inspection threshold around 65 points', () => {
+    const lowScore = scoreNewsworthiness([makeLowDoc()]);
+    expect(lowScore.overall).toBeLessThan(65);
+    expect(lowScore.warrantsDeepInspection).toBe(false);
+
+    // Multiple strategic docs + multi-party + coalition instability → above threshold
+    const highScore = scoreNewsworthiness([
+      makeStrategicDoc(),
+      makeDoc({ parti: 'M', titel: 'NATO defence budget reform', doktyp: 'prop', organ: 'FöU' }),
+      makeDoc({ parti: 'SD', titel: 'Migration policy reform' }),
+      makeDoc({ parti: 'V', titel: 'Climate policy opposition' }),
+    ], makeUnstableCIA());
+    expect(highScore.overall).toBeGreaterThanOrEqual(65);
+    expect(highScore.warrantsDeepInspection).toBe(true);
+    expect(highScore.suggestedType).toBe('deep-inspection');
   });
 
   it('extracts strategic topics from content', () => {

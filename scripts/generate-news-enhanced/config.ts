@@ -29,9 +29,11 @@ export function toISODate(d: Date): string {
 
 const args: string[] = process.argv.slice(2);
 
-/** Extract the value after '=' from a CLI argument, or empty string if absent. */
+/** Extract the value after the first '=' from a CLI argument, or empty string if absent. */
 function parseArgValue(arg: string | undefined): string {
-  return arg ? (arg.split('=')[1] ?? '').trim() : '';
+  if (!arg) return '';
+  const idx = arg.indexOf('=');
+  return idx >= 0 ? arg.slice(idx + 1).trim() : '';
 }
 
 const typesArg: string | undefined = args.find(arg => arg.startsWith('--types='));

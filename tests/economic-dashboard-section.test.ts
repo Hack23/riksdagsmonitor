@@ -123,6 +123,27 @@ describe('buildEconomicTables', () => {
     expect(tables[0].caption).toContain('2023');
     expect(tables[0].caption).toContain('GDP');
   });
+
+  it('uses English headers by default', () => {
+    const indicators = findIndicatorsForDomains(['fiscal policy']);
+    const tables = buildEconomicTables(indicators, makeDataPoints());
+    expect(tables[0].headers[0]).toBe('Country');
+    expect(tables[0].headers[2]).toBe('Unit');
+  });
+
+  it('localizes headers for Swedish', () => {
+    const indicators = findIndicatorsForDomains(['fiscal policy']);
+    const tables = buildEconomicTables(indicators, makeDataPoints(), 'sv');
+    expect(tables[0].headers[0]).toBe('Land');
+    expect(tables[0].headers[2]).toBe('Enhet');
+  });
+
+  it('localizes headers for Japanese', () => {
+    const indicators = findIndicatorsForDomains(['fiscal policy']);
+    const tables = buildEconomicTables(indicators, makeDataPoints(), 'ja');
+    expect(tables[0].headers[0]).toBe('国');
+    expect(tables[0].headers[2]).toBe('単位');
+  });
 });
 
 describe('generateEconomicDashboardSection', () => {

@@ -181,12 +181,16 @@ export function buildEconomicCharts(
 
 /**
  * Build data tables from economic data points for accessibility fallback.
+ * Table headers are localized based on the target language.
  */
 export function buildEconomicTables(
   indicators: EconomicIndicatorContext[],
   dataPoints: EconomicDataPoint[],
+  lang: Language | string = 'en',
 ): DashboardTableConfig[] {
   const tables: DashboardTableConfig[] = [];
+  const countryHeader = getEconomicHeading(lang, 'country');
+  const unitHeader = getEconomicHeading(lang, 'unit');
 
   for (const indicator of indicators) {
     const points = dataPoints.filter(p => p.indicatorId === indicator.indicatorId);
@@ -198,7 +202,7 @@ export function buildEconomicTables(
     if (latestPoints.length > 0) {
       tables.push({
         caption: `${indicator.name} (${latestYear}) — ${indicator.unit}`,
-        headers: ['Country', indicator.name, 'Unit'],
+        headers: [countryHeader, indicator.name, unitHeader],
         rows: latestPoints.map(p => [
           NORDIC_COMPARISON.countryNames[p.countryCode] ?? p.countryName,
           p.value.toFixed(2),
@@ -250,7 +254,7 @@ export function generateEconomicDashboardSection(opts: EconomicDashboardOptions)
   // If we have actual data points, build charts
   if (dataPoints && dataPoints.length > 0) {
     const charts = buildEconomicCharts(indicators, dataPoints);
-    const tables = buildEconomicTables(indicators, dataPoints);
+    const tables = buildEconomicTables(indicators, dataPoints, lang);
 
     if (charts.length === 0 && tables.length === 0) return null;
 
