@@ -28,6 +28,12 @@ export function toISODate(d: Date): string {
 // ---------------------------------------------------------------------------
 
 const args: string[] = process.argv.slice(2);
+
+/** Extract the value after '=' from a CLI argument, or empty string if absent. */
+function parseArgValue(arg: string | undefined): string {
+  return arg ? (arg.split('=')[1] ?? '').trim() : '';
+}
+
 const typesArg: string | undefined = args.find(arg => arg.startsWith('--types='));
 const languagesArg: string | undefined = args.find(arg => arg.startsWith('--languages='));
 export const dryRunArg: boolean = args.includes('--dry-run');
@@ -42,19 +48,17 @@ const documentUrlsArg: string | undefined = args.find(arg => arg.startsWith('--d
 const focusTopicArg: string | undefined = args.find(arg => arg.startsWith('--focus-topic='));
 
 /** Comma-separated Riksdag document IDs for deep-inspection (e.g. H901FiU1,H901JuU25) */
-export const documentIds: string[] = documentIdsArg
-  ? (documentIdsArg.split('=')[1] ?? '').split(',').map(id => id.trim()).filter(Boolean)
+export const documentIds: string[] = parseArgValue(documentIdsArg)
+  ? parseArgValue(documentIdsArg).split(',').map(id => id.trim()).filter(Boolean)
   : [];
 
 /** Comma-separated URLs for deep-inspection analysis */
-export const documentUrls: string[] = documentUrlsArg
-  ? (documentUrlsArg.split('=')[1] ?? '').split(',').map(u => u.trim()).filter(Boolean)
+export const documentUrls: string[] = parseArgValue(documentUrlsArg)
+  ? parseArgValue(documentUrlsArg).split(',').map(u => u.trim()).filter(Boolean)
   : [];
 
 /** Specific policy topic to focus deep-inspection analysis on */
-export const focusTopic: string = focusTopicArg
-  ? (focusTopicArg.split('=')[1] ?? '').trim()
-  : '';
+export const focusTopic: string = parseArgValue(focusTopicArg);
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
 if (qualityThresholdArg) {

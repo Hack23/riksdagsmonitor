@@ -154,7 +154,11 @@ describe('scoreNewsworthiness', () => {
     const score = scoreNewsworthiness([makeStrategicDoc()]);
     expect(score.topics.length).toBeGreaterThan(0);
     // Budget proposition should contain budget-related topics
-    expect(score.topics.some(t => t.toLowerCase().includes('budget') || t.toLowerCase().includes('nato') || t.toLowerCase().includes('försvar'))).toBe(true);
+    const hasBudgetTopics = score.topics.some(t => {
+      const lower = t.toLowerCase();
+      return lower.includes('budget') || lower.includes('nato') || lower.includes('försvar');
+    });
+    expect(hasBudgetTopics).toBe(true);
   });
 
   it('returns brief suggestion for low-scoring content', () => {

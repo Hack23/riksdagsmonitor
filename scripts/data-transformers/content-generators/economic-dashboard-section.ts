@@ -60,8 +60,13 @@ export interface EconomicDashboardOptions {
 }
 
 // ---------------------------------------------------------------------------
-// Chart colour palette (cyberpunk theme)
+// Helpers
 // ---------------------------------------------------------------------------
+
+/** Sanitize an indicator ID into a safe HTML element id */
+function sanitizeChartId(indicatorId: string): string {
+  return indicatorId.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+}
 
 const COUNTRY_COLORS: Readonly<Record<string, string>> = {
   SWE: '#00d9ff',  // Cyan (primary)
@@ -117,9 +122,8 @@ export function buildEconomicCharts(
     // Group by country for comparison chart
     const byCountry = new Map<string, EconomicDataPoint[]>();
     for (const p of points) {
-      const existing = byCountry.get(p.countryCode) ?? [];
-      existing.push(p);
-      byCountry.set(p.countryCode, existing);
+      if (!byCountry.has(p.countryCode)) byCountry.set(p.countryCode, []);
+      byCountry.get(p.countryCode)!.push(p);
     }
 
     // Get latest year's data for comparison bar chart
@@ -134,7 +138,7 @@ export function buildEconomicCharts(
       const bgColors = latestPoints.map(p => COUNTRY_COLORS[p.countryCode] ?? '#888');
       const borderColors = latestPoints.map(p => COUNTRY_BORDER_COLORS[p.countryCode] ?? '#666');
 
-      const idBase = indicator.indicatorId.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+      const idBase = sanitizeChartId(indicator.indicatorId);
       charts.push({
         id: `econ-${idBase}`,
         type: 'bar',
@@ -155,7 +159,7 @@ export function buildEconomicCharts(
     if (swedenPoints.length >= 3) {
       const trendLabels = swedenPoints.map(p => p.date);
       const trendData = swedenPoints.map(p => p.value);
-      const idBase = indicator.indicatorId.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+      const idBase = sanitizeChartId(indicator.indicatorId);
       charts.push({
         id: `econ-trend-${idBase}`,
         type: 'line',
