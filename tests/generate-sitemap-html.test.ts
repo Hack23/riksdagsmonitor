@@ -193,6 +193,32 @@ describe('Sitemap HTML Generation', () => {
       expect(html).toContain('"@type": "WebSite"');
       expect(html).toContain('"@type": "SiteNavigationElement"');
     });
+
+    it('should use /index.html for English home link', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      const html = module.generateSitemapHtml('en', articlesByLang);
+      expect(html).toContain('href="/index.html"');
+      expect(html).not.toContain('href="/index_en.html"');
+    });
+
+    it('should use language-specific home link for non-English languages', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      const svHtml = module.generateSitemapHtml('sv', articlesByLang);
+      expect(svHtml).toContain('href="/index_sv.html"');
+
+      const arHtml = module.generateSitemapHtml('ar', articlesByLang);
+      expect(arHtml).toContain('href="/index_ar.html"');
+
+      const jaHtml = module.generateSitemapHtml('ja', articlesByLang);
+      expect(jaHtml).toContain('href="/index_ja.html"');
+    });
+
+    it('should include logo image in header', () => {
+      const articlesByLang = module.getArticlesByLanguage();
+      const html = module.generateSitemapHtml('en', articlesByLang);
+      expect(html).toContain('riksdagsmonitor-logo.webp');
+      expect(html).toContain('aria-label="Riksdagsmonitor Home"');
+    });
   });
 
   describe('Generated Files Validation', () => {
