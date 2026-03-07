@@ -45,7 +45,7 @@ name: "News: Article Generator (Manual)"
         description: Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)
         required: false
       document_urls:
-        description: Comma-separated URLs to specific documents, press releases, or events for deep analysis
+        description: Comma-separated URLs to specific Riksdag documents for deep analysis
         required: false
       focus_topic:
         description: Specific topic or policy area to focus deep-inspection analysis on (e.g. defence, migration, budget)
