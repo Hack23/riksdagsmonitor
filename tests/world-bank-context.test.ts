@@ -88,8 +88,8 @@ describe('world-bank-context', () => {
       expect(actualLanguages.sort()).toEqual(expectedLanguages.sort());
     });
 
-    it('should have all 3 section headings per language', () => {
-      const expectedSections = ['economicContext', 'nordicComparison', 'policyImplications'];
+    it('should have all 5 section headings per language', () => {
+      const expectedSections = ['country', 'economicContext', 'nordicComparison', 'policyImplications', 'unit'];
       Object.entries(ECONOMIC_SECTION_HEADINGS).forEach(([, headings]) => {
         const actualSections = Object.keys(headings);
         expect(actualSections.sort()).toEqual(expectedSections.sort());
@@ -110,6 +110,8 @@ describe('world-bank-context', () => {
         economicContext: 'Economic Context',
         nordicComparison: 'Nordic Comparison',
         policyImplications: 'Policy Implications',
+        country: 'Country',
+        unit: 'Unit',
       });
     });
 
@@ -118,6 +120,8 @@ describe('world-bank-context', () => {
         economicContext: 'Ekonomisk kontext',
         nordicComparison: 'Nordisk jämförelse',
         policyImplications: 'Policyimplikationer',
+        country: 'Land',
+        unit: 'Enhet',
       });
     });
   });

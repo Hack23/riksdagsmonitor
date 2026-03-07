@@ -42,6 +42,7 @@ import {
   generateCommitteeReports,
   generatePropositions,
   generateMotions,
+  generateDeepInspection,
 } from './generators.js';
 import { generateMonthAhead } from '../news-types/month-ahead.js';
 import { generateWeeklyReview } from '../news-types/weekly-review.js';
@@ -65,6 +66,7 @@ export {
   generateCommitteeReports,
   generatePropositions,
   generateMotions,
+  generateDeepInspection,
   translateSwedishContent,
 };
 
@@ -160,6 +162,9 @@ export async function generateNews(): Promise<typeof stats> {
         break;
       case 'monthly-review':
         await generateMonthlyReview({ languages, writeArticle });
+        break;
+      case 'deep-inspection':
+        await generateDeepInspection();
         break;
       default:
         console.warn(`⚠️ Unknown article type: ${type}`);

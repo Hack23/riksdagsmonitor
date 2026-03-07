@@ -28,17 +28,45 @@ export function toISODate(d: Date): string {
 // ---------------------------------------------------------------------------
 
 const args: string[] = process.argv.slice(2);
+
+/** Extract the value after the first '=' from a CLI argument, or empty string if absent. */
+function parseArgValue(arg: string | undefined): string {
+  if (!arg) return '';
+  const idx = arg.indexOf('=');
+  return idx >= 0 ? arg.slice(idx + 1).trim() : '';
+}
+
 const typesArg: string | undefined = args.find(arg => arg.startsWith('--types='));
 const languagesArg: string | undefined = args.find(arg => arg.startsWith('--languages='));
 export const dryRunArg: boolean = args.includes('--dry-run');
 const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batch-size='));
 export const skipExistingArg: boolean = args.includes('--skip-existing');
-export const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
+export const batchSize: number = batchSizeArg ? parseInt(parseArgValue(batchSizeArg) || '0', 10) : 0;
 const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
+
+// Deep-inspection arguments: document IDs, URLs, and focus topic for targeted analysis
+const documentIdsArg: string | undefined = args.find(arg => arg.startsWith('--document-ids='));
+const documentUrlsArg: string | undefined = args.find(arg => arg.startsWith('--document-urls='));
+const focusTopicArg: string | undefined = args.find(arg => arg.startsWith('--focus-topic='));
+
+/** Comma-separated Riksdag document IDs for deep-inspection (e.g. H901FiU1,H901JuU25) */
+const rawDocumentIds: string = parseArgValue(documentIdsArg);
+export const documentIds: string[] = rawDocumentIds
+  ? rawDocumentIds.split(',').map(id => id.trim()).filter(Boolean)
+  : [];
+
+/** Comma-separated URLs for deep-inspection analysis */
+const rawDocumentUrls: string = parseArgValue(documentUrlsArg);
+export const documentUrls: string[] = rawDocumentUrls
+  ? rawDocumentUrls.split(',').map(u => u.trim()).filter(Boolean)
+  : [];
+
+/** Specific policy topic to focus deep-inspection analysis on */
+export const focusTopic: string = parseArgValue(focusTopicArg);
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
 if (qualityThresholdArg) {
-  const rawValue: string = qualityThresholdArg.split('=')[1] ?? '';
+  const rawValue: string = parseArgValue(qualityThresholdArg);
   const numericValue: number = rawValue === '' ? NaN : Number(rawValue);
   if (Number.isFinite(numericValue)) {
     parsedQualityThreshold = Math.min(100, Math.max(0, numericValue));
@@ -51,16 +79,28 @@ export const QUALITY_THRESHOLD: number = parsedQualityThreshold;
 // --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
 // Set --require-mcp=false for local development/testing without a live MCP server.
 const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
-export const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
+export const requireMcp: boolean = parseArgValue(requireMcpArg ?? '') !== 'false';
 
 // ---------------------------------------------------------------------------
 // Valid article types
 // ---------------------------------------------------------------------------
 
-export const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking'];
+export const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking', 'deep-inspection'];
 
-export const articleTypes: string[] = typesArg
-  ? (typesArg.split('=')[1] ?? '').split(',').map(t => t.trim())
+const rawArticleTypes: string[] = typesArg
+  ? parseArgValue(typesArg).split(',').map(t => t.trim()).filter(Boolean)
+  : [];
+
+const filteredArticleTypes: string[] = rawArticleTypes.filter(t => VALID_ARTICLE_TYPES.includes(t));
+
+if (rawArticleTypes.length > 0 && filteredArticleTypes.length === 0) {
+  throw new Error(
+    `No valid article types specified via --types. Valid types are: ${VALID_ARTICLE_TYPES.join(', ')}`
+  );
+}
+
+export const articleTypes: string[] = filteredArticleTypes.length > 0
+  ? filteredArticleTypes
   : ['week-ahead'];
 
 // ---------------------------------------------------------------------------
@@ -75,7 +115,7 @@ export const LANGUAGE_PRESETS: Readonly<Record<string, Language[]>> = {
   'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl']
 };
 
-let languagesInput: string = languagesArg ? (languagesArg.split('=')[1] ?? '').trim().toLowerCase() : 'all';
+let languagesInput: string = languagesArg ? parseArgValue(languagesArg).trim().toLowerCase() : 'all';
 
 // Expand presets (after trimming and normalizing)
 const presetLanguages: Language[] | undefined = LANGUAGE_PRESETS[languagesInput];
@@ -93,10 +133,10 @@ if (languages.length === 0) {
   process.exit(1);
 }
 
-// Validate article types
-const invalidTypes: string[] = articleTypes.filter(t => !VALID_ARTICLE_TYPES.includes(t.trim()));
-if (invalidTypes.length > 0) {
-  console.warn(`⚠️ Unknown article types ignored: ${invalidTypes.join(', ')}`);
+// Log filtered article types (invalid types were removed during parsing above)
+const filteredTypes: string[] = rawArticleTypes.filter(t => !VALID_ARTICLE_TYPES.includes(t));
+if (filteredTypes.length > 0) {
+  console.warn(`⚠️ Unknown article types filtered out: ${filteredTypes.join(', ')}. Valid types: ${VALID_ARTICLE_TYPES.join(', ')}`);
 }
 
 // ---------------------------------------------------------------------------

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       article_types:
-        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking). Leave empty for day-of-week schedule.
+        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking,deep-inspection). Leave empty for day-of-week schedule.
         required: false
       force_generation:
         description: Force generation even if recent articles exist
@@ -17,6 +17,15 @@ on:
         description: 'Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)'
         required: false
         default: all
+      document_ids:
+        description: 'Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)'
+        required: false
+      document_urls:
+        description: 'Comma-separated URLs to specific Riksdag documents for deep analysis'
+        required: false
+      focus_topic:
+        description: 'Specific topic or policy area to focus deep-inspection analysis on (e.g. defence, migration, budget)'
+        required: false
 
 permissions:
   contents: read
@@ -100,12 +109,17 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
 - **article_types** = `${{ github.event.inputs.article_types }}`
 - **force_generation** = `${{ github.event.inputs.force_generation }}`
 - **languages** = `${{ github.event.inputs.languages }}`
+- **document_ids** = `${{ github.event.inputs.document_ids }}`
+- **document_urls** = `${{ github.event.inputs.document_urls }}`
+- **focus_topic** = `${{ github.event.inputs.focus_topic }}`
 
 **Rules:**
 1. If **article_types** is non-empty, generate ONLY those types. Do NOT fall back to day-of-week schedule.
 2. If **article_types** is empty/blank, use day-of-week schedule (see Step 2).
 3. If **force_generation** is `true`, generate even if recent articles exist.
 4. If **languages** is empty/blank, default to `all` (14 languages).
+5. If **article_types** includes `deep-inspection`, use **document_ids**, **document_urls**, and **focus_topic** for targeted deep analysis.
+6. For `deep-inspection` type: pass `--document-ids=<value>`, `--document-urls=<value>`, and `--focus-topic=<value>` flags to the generation script.
 
 ## ⚠️ NON-NEGOTIABLE RULES
 
@@ -208,7 +222,7 @@ esac
 echo "📰 Types: $ARTICLE_TYPES | Languages: $LANG_ARG"
 ```
 
-Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_ARTICLE_TYPES`): `week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`, `committee-reports`, `propositions`, `motions`, `breaking`. Note: `evening-analysis` is NOT a valid script type — evening analysis requires manual synthesis (see `news-evening-analysis.md`).
+Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_ARTICLE_TYPES`): `week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`, `committee-reports`, `propositions`, `motions`, `breaking`, `deep-inspection`. Note: `evening-analysis` is NOT a valid script type — evening analysis requires manual synthesis (see `news-evening-analysis.md`).
 
 ## Step 3: Generate Articles (Script-First)
 
