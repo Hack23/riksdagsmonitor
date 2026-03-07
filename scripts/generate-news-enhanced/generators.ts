@@ -436,7 +436,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
     if (targetDocs.length === 0 && focusTopic) {
       console.log(`  🔄 Searching documents for topic: ${focusTopic}`);
       const rawDocs = await client.searchDocuments({ titel: focusTopic, limit: 10 })
-        .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
+        .catch((e: unknown) => { if (requireMcp) throw e; return [] as RawDocument[]; });
       targetDocs.push(...(Array.isArray(rawDocs) ? rawDocs as RawDocument[] : []));
     }
 
@@ -466,9 +466,9 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
       const contentData = { reports: enrichedDocs as Parameters<typeof generateArticleContent>[0]['reports'] };
-      const content: string = generateArticleContent(contentData, 'committee-reports', lang);
+      const content: string = generateArticleContent(contentData, 'deep-inspection', lang);
       const watchPoints = extractWatchPoints(contentData, lang);
-      const metadata = generateMetadata(contentData, 'committee-reports', lang);
+      const metadata = generateMetadata(contentData, 'deep-inspection', lang);
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_dokument', 'get_dokument_innehall', 'search_dokument']);
 
