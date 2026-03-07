@@ -364,6 +364,17 @@ describe('Generate News Indexes', () => {
       expect(enContent).toMatch(/addEventListener\s*\(\s*['"]click['"]\s*,\s*loadMore\s*\)/);
     });
 
+    it('should include hero metadata and language coverage summary in generated indexes', () => {
+      module.generateAllIndexes();
+
+      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      expect(enContent).toContain('class="news-hero-meta"');
+      expect(enContent).toContain('class="news-hero-languages"');
+      expect(enContent).toContain('class="news-hero-stat"');
+      expect(enContent).toMatch(/class="news-hero-meta"[\s\S]*?<time[^>]+datetime="/);
+      expect(enContent).toMatch(/class="news-hero-languages"[\s\S]*?class="language-badge"/);
+    });
+
     it('should include PAGE_SIZE and pagination logic', () => {
       module.generateAllIndexes();
 
