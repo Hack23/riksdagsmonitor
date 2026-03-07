@@ -1306,11 +1306,11 @@ header {
   overflow: hidden;
 }
 
-/* Hero Banner - Clean image display (no text overlay) */
+/* Hero Banner - Full-width branding display */
 .hero-banner {
   position: relative;
   width: 100%;
-  height: clamp(180px, 28vw, 300px);
+  height: clamp(220px, 32vw, 380px);
   overflow: hidden;
 }
 
@@ -1322,15 +1322,6 @@ header {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-}
-
-/* Logo above banner */
-.hero-logo-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-md) 0 var(--spacing-sm);
-  line-height: 0;
 }
 
 /* Title and tagline below banner */
@@ -1358,7 +1349,7 @@ header {
 
 @media (max-width: 768px) {
   .hero-banner {
-    height: clamp(140px, 30vw, 220px);
+    height: clamp(160px, 35vw, 260px);
   }
   .hero-header-text {
     padding: var(--spacing-sm) var(--spacing-sm) 0;
@@ -1367,7 +1358,7 @@ header {
 
 @media (max-width: 480px) {
   .hero-banner {
-    height: clamp(120px, 35vw, 180px);
+    height: clamp(130px, 40vw, 200px);
   }
   .hero-header-text h1 {
     font-size: clamp(1.2rem, 5vw, 1.6rem);
