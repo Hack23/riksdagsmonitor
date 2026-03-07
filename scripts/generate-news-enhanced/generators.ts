@@ -440,12 +440,18 @@ export function extractDocIdFromUrl(url: string): string | null {
 
 /**
  * Strip HTML tags from a user-supplied string to prevent XSS.
- * Uses defense-in-depth: first strips common tag patterns, then HTML-escapes
- * any remaining special characters via escapeHtml(). Even if the tag-stripping
- * regex misses malformed HTML, escapeHtml() neutralizes any residual `<` / `>`.
+ * Uses defense-in-depth: first strips tag patterns in a loop to handle nested
+ * reconstruction (e.g. `<scr<script>ipt>`), then HTML-escapes any remaining
+ * special characters via escapeHtml() as a safety net.
  */
 export function sanitizePlainText(text: string): string {
-  return escapeHtml(text.replace(/<[^>]*>/g, ''));
+  let cleaned = text;
+  let prev: string;
+  do {
+    prev = cleaned;
+    cleaned = cleaned.replace(/<[^>]*>/g, '');
+  } while (cleaned !== prev);
+  return escapeHtml(cleaned);
 }
 
 /**

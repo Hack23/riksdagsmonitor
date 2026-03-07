@@ -114,4 +114,10 @@ describe('sanitizePlainText', () => {
   it('handles Swedish characters', () => {
     expect(sanitizePlainText('Försvarsbudget & Säkerhetspolitik')).toBe('Försvarsbudget &amp; Säkerhetspolitik');
   });
+
+  it('handles nested tag reconstruction attempts', () => {
+    const result = sanitizePlainText('<scr<script>ipt>alert(1)</script>');
+    expect(result).not.toContain('<script');
+    expect(result).not.toContain('<');
+  });
 });
