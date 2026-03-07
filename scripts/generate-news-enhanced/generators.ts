@@ -428,7 +428,7 @@ export function extractDocIdFromUrl(url: string): string | null {
     if (hostname === 'data.riksdagen.se') {
       const dokIdx = segments.indexOf('dokument');
       if (dokIdx >= 0 && segments.length > dokIdx + 1) {
-        return segments[dokIdx + 1].replace(/\.\w+$/, ''); // strip file extension
+        return segments[dokIdx + 1].replace(/\.(json|xml|html|pdf)$/i, ''); // strip known file extensions
       }
     }
 
@@ -440,9 +440,11 @@ export function extractDocIdFromUrl(url: string): string | null {
 
 /**
  * Strip HTML tags from a user-supplied string to prevent XSS.
- * Additionally HTML-escapes any remaining special characters.
+ * Uses defense-in-depth: first strips common tag patterns, then HTML-escapes
+ * any remaining special characters via escapeHtml(). Even if the tag-stripping
+ * regex misses malformed HTML, escapeHtml() neutralizes any residual `<` / `>`.
  */
-function sanitizePlainText(text: string): string {
+export function sanitizePlainText(text: string): string {
   return escapeHtml(text.replace(/<[^>]*>/g, ''));
 }
 

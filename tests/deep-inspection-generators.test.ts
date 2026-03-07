@@ -1,11 +1,11 @@
 /**
  * Tests for deep-inspection generator utilities:
  * - extractDocIdFromUrl: URL-to-dok_id resolution
- * - sanitizePlainText (via topicLabel sanitization): XSS prevention
+ * - sanitizePlainText: XSS prevention for user-controlled strings
  */
 
 import { describe, it, expect } from 'vitest';
-import { extractDocIdFromUrl } from '../scripts/generate-news-enhanced/generators.js';
+import { extractDocIdFromUrl, sanitizePlainText } from '../scripts/generate-news-enhanced/generators.js';
 
 describe('extractDocIdFromUrl', () => {
   it('extracts dok_id from riksdagen.se document URL', () => {
@@ -44,6 +44,12 @@ describe('extractDocIdFromUrl', () => {
     )).toBe('GZ10349');
   });
 
+  it('preserves dok_id with unknown extensions', () => {
+    expect(extractDocIdFromUrl(
+      'https://data.riksdagen.se/dokument/H901FiU1_draft'
+    )).toBe('H901FiU1_draft');
+  });
+
   it('returns null for unrecognized hostname', () => {
     expect(extractDocIdFromUrl('https://example.com/dokument/H901FiU1')).toBeNull();
   });
@@ -64,5 +70,48 @@ describe('extractDocIdFromUrl', () => {
     expect(extractDocIdFromUrl(
       'https://riksdagen.se/sv/dokument-och-lagar/dokument/motion/H901FiU1?highlight=budget'
     )).toBe('H901FiU1');
+  });
+});
+
+describe('sanitizePlainText', () => {
+  it('strips script tags', () => {
+    expect(sanitizePlainText('<script>alert(1)</script>')).toBe('alert(1)');
+  });
+
+  it('strips HTML tags', () => {
+    expect(sanitizePlainText('<b>bold</b> text')).toBe('bold text');
+  });
+
+  it('escapes remaining special characters', () => {
+    expect(sanitizePlainText('Tom & Jerry < Friends')).toBe('Tom &amp; Jerry &lt; Friends');
+  });
+
+  it('handles double-encoded-safe output', () => {
+    const result = sanitizePlainText('<img src=x onerror=alert(1)>');
+    expect(result).not.toContain('<');
+    expect(result).not.toContain('>');
+  });
+
+  it('handles incomplete/malformed tags via escapeHtml defense-in-depth', () => {
+    const result = sanitizePlainText('text < with unclosed bracket');
+    expect(result).not.toContain('<');
+    expect(result).toContain('&lt;');
+  });
+
+  it('handles nested quotes in tags', () => {
+    const result = sanitizePlainText('<a href="javascript:alert(1)">click</a>');
+    expect(result).toBe('click');
+  });
+
+  it('returns empty string for empty input', () => {
+    expect(sanitizePlainText('')).toBe('');
+  });
+
+  it('passes through plain text unchanged', () => {
+    expect(sanitizePlainText('Budget Analysis 2026')).toBe('Budget Analysis 2026');
+  });
+
+  it('handles Swedish characters', () => {
+    expect(sanitizePlainText('Försvarsbudget & Säkerhetspolitik')).toBe('Försvarsbudget &amp; Säkerhetspolitik');
   });
 });
