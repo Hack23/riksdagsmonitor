@@ -173,8 +173,8 @@ describe('generateEconomicDashboardSection', () => {
       lang: 'en',
     });
     expect(section).not.toBeNull();
-    // When data is provided, it delegates to generateDashboardSection
-    expect(section!.id).toBe('article-dashboard');
+    // Both placeholder and data modes now return consistent id/className
+    expect(section!.id).toBe('economic-dashboard');
     expect(section!.html).toContain('data-chart-config');
   });
 

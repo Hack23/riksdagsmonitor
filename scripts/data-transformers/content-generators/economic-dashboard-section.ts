@@ -276,7 +276,7 @@ export function generateEconomicDashboardSection(opts: EconomicDashboardOptions)
 
     if (charts.length === 0 && tables.length === 0) return null;
 
-    return generateDashboardSection({
+    const section = generateDashboardSection({
       data: {
         title: headingText,
         summary: opts.summary?.trim() || undefined,
@@ -285,6 +285,14 @@ export function generateEconomicDashboardSection(opts: EconomicDashboardOptions)
       },
       lang,
     });
+
+    // Normalize id/className so both placeholder and data paths return
+    // consistent metadata (avoids DOM id collisions with generic dashboard).
+    return {
+      ...section,
+      id: 'economic-dashboard',
+      className: 'economic-dashboard-section',
+    };
   }
 
   // No data points: generate a placeholder section describing relevant indicators
