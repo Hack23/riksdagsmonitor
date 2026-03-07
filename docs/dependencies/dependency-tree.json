@@ -1,5 +1,5 @@
 {
-  "version": "0.7.7",
+  "version": "0.7.8",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -8,7 +8,7 @@
       "overridden": false,
       "dependencies": {
         "eslint": {
-          "version": "10.0.2"
+          "version": "10.0.3"
         }
       }
     },
@@ -2072,8 +2072,8 @@
       }
     },
     "eslint": {
-      "version": "10.0.2",
-      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.0.2.tgz",
+      "version": "10.0.3",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.0.3.tgz",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -2087,7 +2087,7 @@
               "overridden": false
             },
             "eslint": {
-              "version": "10.0.2"
+              "version": "10.0.3"
             }
           }
         },
@@ -2097,20 +2097,27 @@
           "overridden": false
         },
         "@eslint/config-array": {
-          "version": "0.23.2",
-          "resolved": "https://registry.npmjs.org/@eslint/config-array/-/config-array-0.23.2.tgz",
+          "version": "0.23.3",
+          "resolved": "https://registry.npmjs.org/@eslint/config-array/-/config-array-0.23.3.tgz",
           "overridden": false,
           "dependencies": {
             "@eslint/object-schema": {
-              "version": "3.0.2",
-              "resolved": "https://registry.npmjs.org/@eslint/object-schema/-/object-schema-3.0.2.tgz",
+              "version": "3.0.3",
+              "resolved": "https://registry.npmjs.org/@eslint/object-schema/-/object-schema-3.0.3.tgz",
               "overridden": false
             },
             "debug": {
               "version": "4.4.3"
             },
             "minimatch": {
-              "version": "10.2.1"
+              "version": "10.2.4",
+              "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.4.tgz",
+              "overridden": false,
+              "dependencies": {
+                "brace-expansion": {
+                  "version": "5.0.2"
+                }
+              }
             }
           }
         },
@@ -2120,13 +2127,13 @@
           "overridden": false,
           "dependencies": {
             "@eslint/core": {
-              "version": "1.1.0"
+              "version": "1.1.1"
             }
           }
         },
         "@eslint/core": {
-          "version": "1.1.0",
-          "resolved": "https://registry.npmjs.org/@eslint/core/-/core-1.1.0.tgz",
+          "version": "1.1.1",
+          "resolved": "https://registry.npmjs.org/@eslint/core/-/core-1.1.1.tgz",
           "overridden": false,
           "dependencies": {
             "@types/json-schema": {
@@ -2135,12 +2142,12 @@
           }
         },
         "@eslint/plugin-kit": {
-          "version": "0.6.0",
-          "resolved": "https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.6.0.tgz",
+          "version": "0.6.1",
+          "resolved": "https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.6.1.tgz",
           "overridden": false,
           "dependencies": {
             "@eslint/core": {
-              "version": "1.1.0"
+              "version": "1.1.1"
             },
             "levn": {
               "version": "0.4.1",
@@ -2264,8 +2271,8 @@
           "overridden": false
         },
         "eslint-scope": {
-          "version": "9.1.1",
-          "resolved": "https://registry.npmjs.org/eslint-scope/-/eslint-scope-9.1.1.tgz",
+          "version": "9.1.2",
+          "resolved": "https://registry.npmjs.org/eslint-scope/-/eslint-scope-9.1.2.tgz",
           "overridden": false,
           "dependencies": {
             "@types/esrecurse": {
@@ -2451,8 +2458,8 @@
           "overridden": false
         },
         "minimatch": {
-          "version": "10.2.1",
-          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.1.tgz",
+          "version": "10.2.4",
+          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.4.tgz",
           "overridden": false,
           "dependencies": {
             "brace-expansion": {
@@ -2589,7 +2596,14 @@
           "overridden": false,
           "dependencies": {
             "minimatch": {
-              "version": "10.2.1"
+              "version": "10.2.1",
+              "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.1.tgz",
+              "overridden": false,
+              "dependencies": {
+                "brace-expansion": {
+                  "version": "5.0.2"
+                }
+              }
             },
             "minipass": {
               "version": "7.1.2",
@@ -2724,8 +2738,8 @@
       }
     },
     "knip": {
-      "version": "5.85.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-5.85.0.tgz",
+      "version": "5.86.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-5.86.0.tgz",
       "overridden": false,
       "dependencies": {
         "@nodelib/fs.walk": {
@@ -2862,15 +2876,12 @@
         "jiti": {
           "version": "2.6.1"
         },
-        "js-yaml": {
-          "version": "4.1.1"
-        },
         "minimist": {
           "version": "1.2.8"
         },
         "oxc-resolver": {
-          "version": "11.18.0",
-          "resolved": "https://registry.npmjs.org/oxc-resolver/-/oxc-resolver-11.18.0.tgz",
+          "version": "11.19.1",
+          "resolved": "https://registry.npmjs.org/oxc-resolver/-/oxc-resolver-11.19.1.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-resolver/binding-android-arm-eabi": {},
@@ -2887,13 +2898,13 @@
             "@oxc-resolver/binding-linux-riscv64-musl": {},
             "@oxc-resolver/binding-linux-s390x-gnu": {},
             "@oxc-resolver/binding-linux-x64-gnu": {
-              "version": "11.18.0",
-              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-gnu/-/binding-linux-x64-gnu-11.18.0.tgz",
+              "version": "11.19.1",
+              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-gnu/-/binding-linux-x64-gnu-11.19.1.tgz",
               "overridden": false
             },
             "@oxc-resolver/binding-linux-x64-musl": {
-              "version": "11.18.0",
-              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-musl/-/binding-linux-x64-musl-11.18.0.tgz",
+              "version": "11.19.1",
+              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-musl/-/binding-linux-x64-musl-11.19.1.tgz",
               "overridden": false
             },
             "@oxc-resolver/binding-openharmony-arm64": {},
@@ -2925,6 +2936,16 @@
         },
         "typescript": {
           "version": "5.9.3"
+        },
+        "unbash": {
+          "version": "2.2.0",
+          "resolved": "https://registry.npmjs.org/unbash/-/unbash-2.2.0.tgz",
+          "overridden": false
+        },
+        "yaml": {
+          "version": "2.8.2",
+          "resolved": "https://registry.npmjs.org/yaml/-/yaml-2.8.2.tgz",
+          "overridden": false
         },
         "zod": {
           "version": "4.3.6",
@@ -3342,9 +3363,7 @@
           "version": "5.9.3"
         },
         "yaml": {
-          "version": "2.8.2",
-          "resolved": "https://registry.npmjs.org/yaml/-/yaml-2.8.2.tgz",
-          "overridden": false
+          "version": "2.8.2"
         }
       }
     },
@@ -3395,7 +3414,7 @@
                   "version": "4.4.3"
                 },
                 "eslint": {
-                  "version": "10.0.2"
+                  "version": "10.0.3"
                 },
                 "ts-api-utils": {
                   "version": "2.4.0"
@@ -3422,7 +3441,7 @@
               }
             },
             "eslint": {
-              "version": "10.0.2"
+              "version": "10.0.3"
             },
             "ignore": {
               "version": "7.0.5",
@@ -3470,7 +3489,7 @@
               "version": "4.4.3"
             },
             "eslint": {
-              "version": "10.0.2"
+              "version": "10.0.3"
             },
             "typescript": {
               "version": "5.9.3"
@@ -3564,7 +3583,7 @@
               "version": "8.56.1"
             },
             "eslint": {
-              "version": "10.0.2"
+              "version": "10.0.3"
             },
             "typescript": {
               "version": "5.9.3"
@@ -3572,7 +3591,7 @@
           }
         },
         "eslint": {
-          "version": "10.0.2"
+          "version": "10.0.3"
         },
         "typescript": {
           "version": "5.9.3"
