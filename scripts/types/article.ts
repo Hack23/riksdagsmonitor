@@ -17,7 +17,8 @@ export type ArticleType =
   | 'committee-reports'
   | 'propositions'
   | 'motions'
-  | 'breaking';
+  | 'breaking'
+  | 'deep-inspection';
 
 /** A single calendar event in the event grid */
 export interface EventGridItem {

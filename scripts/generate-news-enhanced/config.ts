@@ -35,6 +35,26 @@ const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batc
 export const skipExistingArg: boolean = args.includes('--skip-existing');
 export const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
 const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
+
+// Deep-inspection arguments: document IDs, URLs, and focus topic for targeted analysis
+const documentIdsArg: string | undefined = args.find(arg => arg.startsWith('--document-ids='));
+const documentUrlsArg: string | undefined = args.find(arg => arg.startsWith('--document-urls='));
+const focusTopicArg: string | undefined = args.find(arg => arg.startsWith('--focus-topic='));
+
+/** Comma-separated Riksdag document IDs for deep-inspection (e.g. H901FiU1,H901JuU25) */
+export const documentIds: string[] = documentIdsArg
+  ? (documentIdsArg.split('=')[1] ?? '').split(',').map(id => id.trim()).filter(Boolean)
+  : [];
+
+/** Comma-separated URLs for deep-inspection analysis */
+export const documentUrls: string[] = documentUrlsArg
+  ? (documentUrlsArg.split('=')[1] ?? '').split(',').map(u => u.trim()).filter(Boolean)
+  : [];
+
+/** Specific policy topic to focus deep-inspection analysis on */
+export const focusTopic: string = focusTopicArg
+  ? (focusTopicArg.split('=')[1] ?? '').trim()
+  : '';
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
 if (qualityThresholdArg) {
@@ -57,7 +77,7 @@ export const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
 // Valid article types
 // ---------------------------------------------------------------------------
 
-export const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking'];
+export const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking', 'deep-inspection'];
 
 export const articleTypes: string[] = typesArg
   ? (typesArg.split('=')[1] ?? '').split(',').map(t => t.trim())

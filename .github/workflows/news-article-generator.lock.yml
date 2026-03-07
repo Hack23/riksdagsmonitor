@@ -30,7 +30,7 @@ name: "News: Article Generator (Manual)"
   workflow_dispatch:
     inputs:
       article_types:
-        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking). Leave empty for day-of-week schedule.
+        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking,deep-inspection). Leave empty for day-of-week schedule.
         required: false
       force_generation:
         default: false
@@ -40,6 +40,15 @@ name: "News: Article Generator (Manual)"
       languages:
         default: all
         description: Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)
+        required: false
+      document_ids:
+        description: Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)
+        required: false
+      document_urls:
+        description: Comma-separated URLs to specific documents, press releases, or events for deep analysis
+        required: false
+      focus_topic:
+        description: Specific topic or policy area to focus deep-inspection analysis on (e.g. defence, migration, budget)
         required: false
 
 permissions: {}

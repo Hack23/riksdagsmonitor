@@ -244,6 +244,7 @@ export function classifyArticleType(content: string, fileName: string): ArticleT
   ];
 
   if (fileName.includes('committee-reports') || fileName.includes('propositions') || fileName.includes('motions') ||
+      fileName.includes('deep-inspection') ||
       analysisKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
     return 'analysis';
   }
