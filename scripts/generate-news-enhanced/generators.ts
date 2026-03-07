@@ -527,9 +527,30 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
     console.log(`  ✅ Enriched ${enrichedCount}/${enrichedDocs.length} documents with content`);
 
     const today: Date = new Date();
-    const topicSlug: string = focusTopic
-      ? focusTopic.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').slice(0, 40)
-      : documentIds[0] ? documentIds[0].toLowerCase().replace(/[^a-z0-9-]/g, '') : 'analysis';
+
+    const sanitizeSlugSegment = (value: string): string =>
+      value
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .slice(0, 40)
+        .replace(/^-+|-+$/g, '');
+
+    const focusSlug: string = focusTopic ? sanitizeSlugSegment(focusTopic) : '';
+
+    let topicSlug: string;
+    if (focusSlug) {
+      topicSlug = focusSlug;
+    } else {
+      const primaryDocId: string =
+        allDocIds[0]
+        ?? ((enrichedDocs.length > 0 && (enrichedDocs[0] as Record<string, unknown>).dok_id)
+          ? String((enrichedDocs[0] as Record<string, unknown>).dok_id)
+          : 'analysis');
+      const fallbackSlug: string = sanitizeSlugSegment(primaryDocId);
+      topicSlug = fallbackSlug || 'analysis';
+    }
+
     const slug: string = `${formatDateForSlug(today)}-deep-inspection-${topicSlug}`;
 
     for (const lang of languages) {
