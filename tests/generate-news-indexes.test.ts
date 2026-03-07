@@ -371,8 +371,8 @@ describe('Generate News Indexes', () => {
       expect(enContent).toContain('class="news-hero-meta"');
       expect(enContent).toContain('class="news-hero-languages"');
       expect(enContent).toContain('class="news-hero-stat"');
-      expect(enContent).toContain('Showing');
-      expect(enContent).toContain('Available in:');
+      expect(enContent).toMatch(/class="news-hero-meta"[\s\S]*?<time[^>]+datetime="/);
+      expect(enContent).toMatch(/class="news-hero-languages"[\s\S]*?class="language-badge"/);
     });
 
     it('should include PAGE_SIZE and pagination logic', () => {

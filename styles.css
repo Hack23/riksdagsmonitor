@@ -1358,7 +1358,9 @@ header {
 .hero-banner-overlay::before {
   content: "";
   position: absolute;
-  inset: auto auto 2rem;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
   width: min(92%, 760px);
   min-height: clamp(190px, 42%, 270px);
   border-radius: var(--border-radius-lg);
@@ -1454,7 +1456,9 @@ html[data-theme="dark"] .hero-banner-overlay .tagline {
   }
 
   .hero-banner-overlay::before {
-    inset: auto auto 1rem;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
     width: min(94%, 680px);
     min-height: clamp(170px, 62%, 240px);
   }

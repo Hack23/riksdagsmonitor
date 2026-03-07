@@ -23,30 +23,24 @@ import {
 } from './helpers.js';
 import { PKG_VERSION } from '../shared/version.js';
 
-function formatShowingSummary(
-  showingConfig: LanguageConfig['i18n']['showing'],
-  shown: number,
-  total: number,
-): string {
-  let template: string;
+function formatDisplayDate(date: string, locale: string): string {
+  const [yearStr, monthStr, dayStr] = date.split('-');
+  const year: number = Number(yearStr);
+  const month: number = Number(monthStr);
+  const day: number = Number(dayStr);
 
-  if (typeof showingConfig === 'object') {
-    template = shown === 1 && 'one' in showingConfig ? showingConfig.one : showingConfig.other;
-  } else {
-    template = showingConfig;
+  if (!Number.isFinite(year) || !Number.isFinite(month) || !Number.isFinite(day)) {
+    return date;
   }
 
-  return template
-    .replace('{shown}', String(shown))
-    .replace('{total}', String(total));
-}
+  const utcDate: Date = new Date(Date.UTC(year, month - 1, day));
 
-function formatDisplayDate(date: string, locale: string): string {
-  return new Date(date).toLocaleDateString(locale, {
+  return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  });
+    timeZone: 'UTC',
+  }).format(utcDate);
 }
 
 export function generateIndexHTML(
@@ -78,7 +72,7 @@ export function generateIndexHTML(
     tags: a.tags,
   }));
   const latestDate: string | null = displayArticles[0]?.date ?? null;
-  const articleSummary: string = formatShowingSummary(lang.i18n.showing, displayArticles.length, displayArticles.length);
+  const totalArticlesSummary: string = lang.i18n.totalArticles.replace('{total}', String(displayArticles.length));
   const allLanguagesSummary: string = generateAvailableLanguages(Object.keys(LANGUAGES), langKey);
 
   const html = `<!DOCTYPE html>
@@ -244,7 +238,7 @@ ${generateHreflangTags()}
       <p class="subtitle">${lang.subtitle}</p>
       <a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}</a>
       <div class="news-hero-meta">
-        <p class="news-hero-stat">${escapeHtml(articleSummary)}</p>
+        <p class="news-hero-stat">${escapeHtml(totalArticlesSummary)}</p>
         ${latestDate ? `<p class="news-hero-stat"><span aria-hidden="true">\u{1F5D3}\uFE0F</span> <time datetime="${escapeHtml(latestDate)}">${escapeHtml(formatDisplayDate(latestDate, lang.code))}</time></p>` : ''}
       </div>
       <div class="news-hero-languages">
