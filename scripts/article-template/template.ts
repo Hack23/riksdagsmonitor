@@ -280,11 +280,13 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
 
 <article id="main-content" class="news-article">
   <header class="article-header">
-    <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" aria-label="Riksdagsmonitor News">
-      <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="100" height="100" loading="eager">
-    </a>
-    <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
-    <h1>${title}</h1>
+    <div class="hero-banner">
+      <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+    </div>
+    <div class="hero-header-text">
+      <h1>${title}</h1>
+      <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
+    </div>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>
       <span class="separator">•</span>

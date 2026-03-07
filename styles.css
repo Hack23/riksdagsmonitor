@@ -1310,7 +1310,8 @@ header {
 .hero-banner {
   position: relative;
   width: 100%;
-  height: clamp(220px, 32vw, 380px);
+  /* Single smooth clamp avoids layout jumps at breakpoints */
+  height: clamp(130px, 28vw, 380px);
   overflow: hidden;
 }
 
@@ -1348,18 +1349,12 @@ header {
 }
 
 @media (max-width: 768px) {
-  .hero-banner {
-    height: clamp(160px, 35vw, 260px);
-  }
   .hero-header-text {
     padding: var(--spacing-sm) var(--spacing-sm) 0;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-banner {
-    height: clamp(130px, 40vw, 200px);
-  }
   .hero-header-text h1 {
     font-size: clamp(1.2rem, 5vw, 1.6rem);
   }
