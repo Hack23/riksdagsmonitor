@@ -50,13 +50,15 @@ const documentUrlsArg: string | undefined = args.find(arg => arg.startsWith('--d
 const focusTopicArg: string | undefined = args.find(arg => arg.startsWith('--focus-topic='));
 
 /** Comma-separated Riksdag document IDs for deep-inspection (e.g. H901FiU1,H901JuU25) */
-export const documentIds: string[] = parseArgValue(documentIdsArg)
-  ? parseArgValue(documentIdsArg).split(',').map(id => id.trim()).filter(Boolean)
+const rawDocumentIds: string = parseArgValue(documentIdsArg);
+export const documentIds: string[] = rawDocumentIds
+  ? rawDocumentIds.split(',').map(id => id.trim()).filter(Boolean)
   : [];
 
 /** Comma-separated URLs for deep-inspection analysis */
-export const documentUrls: string[] = parseArgValue(documentUrlsArg)
-  ? parseArgValue(documentUrlsArg).split(',').map(u => u.trim()).filter(Boolean)
+const rawDocumentUrls: string = parseArgValue(documentUrlsArg);
+export const documentUrls: string[] = rawDocumentUrls
+  ? rawDocumentUrls.split(',').map(u => u.trim()).filter(Boolean)
   : [];
 
 /** Specific policy topic to focus deep-inspection analysis on */

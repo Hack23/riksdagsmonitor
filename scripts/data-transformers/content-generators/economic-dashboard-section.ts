@@ -89,6 +89,22 @@ const COUNTRY_BORDER_COLORS: Readonly<Record<string, string>> = {
 // ---------------------------------------------------------------------------
 
 /**
+ * Sort data points into a stable order based on NORDIC_COMPARISON.countries,
+ * falling back to alphabetical country name for any unknown codes.
+ */
+function sortByNordicOrder(pts: EconomicDataPoint[]): EconomicDataPoint[] {
+  const order = NORDIC_COMPARISON.countries;
+  return [...pts].sort((a, b) => {
+    const idxA = order.indexOf(a.countryCode);
+    const idxB = order.indexOf(b.countryCode);
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+    if (idxA !== -1) return -1;
+    if (idxB !== -1) return 1;
+    return a.countryName.localeCompare(b.countryName);
+  });
+}
+
+/**
  * Find relevant World Bank indicators for a set of policy domains.
  */
 export function findIndicatorsForDomains(domains: string[]): EconomicIndicatorContext[] {
@@ -131,12 +147,13 @@ export function buildEconomicCharts(
     const latestPoints = points.filter(p => p.date === latestYear);
 
     if (latestPoints.length > 0) {
-      const labels = latestPoints.map(p =>
+      const sorted = sortByNordicOrder(latestPoints);
+      const labels = sorted.map(p =>
         NORDIC_COMPARISON.countryNames[p.countryCode] ?? p.countryName
       );
-      const data = latestPoints.map(p => p.value);
-      const bgColors = latestPoints.map(p => COUNTRY_COLORS[p.countryCode] ?? '#888');
-      const borderColors = latestPoints.map(p => COUNTRY_BORDER_COLORS[p.countryCode] ?? '#666');
+      const data = sorted.map(p => p.value);
+      const bgColors = sorted.map(p => COUNTRY_COLORS[p.countryCode] ?? '#888');
+      const borderColors = sorted.map(p => COUNTRY_BORDER_COLORS[p.countryCode] ?? '#666');
 
       const idBase = sanitizeChartId(indicator.indicatorId);
       charts.push({
@@ -200,10 +217,11 @@ export function buildEconomicTables(
     const latestPoints = points.filter(p => p.date === latestYear);
 
     if (latestPoints.length > 0) {
+      const sorted = sortByNordicOrder(latestPoints);
       tables.push({
         caption: `${indicator.name} (${latestYear}) — ${indicator.unit}`,
         headers: [countryHeader, indicator.name, unitHeader],
-        rows: latestPoints.map(p => [
+        rows: sorted.map(p => [
           NORDIC_COMPARISON.countryNames[p.countryCode] ?? p.countryName,
           p.value.toFixed(2),
           indicator.unit,
@@ -277,7 +295,7 @@ export function generateEconomicDashboardSection(opts: EconomicDashboardOptions)
   const policyLabel = getEconomicHeading(lang, 'policyImplications');
   const html = `<section class="economic-dashboard-placeholder" aria-label="${escapeHtml(headingText)}">
     <h2>${escapeHtml(headingText)}</h2>
-    <p>${escapeHtml(policyLabel)}</p>
+    <h3>${escapeHtml(policyLabel)}</h3>
     <ul class="economic-indicators-list">
 ${indicatorItems}
     </ul>
