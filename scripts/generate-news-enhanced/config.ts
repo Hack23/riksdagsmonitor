@@ -91,8 +91,16 @@ const rawArticleTypes: string[] = typesArg
   ? parseArgValue(typesArg).split(',').map(t => t.trim()).filter(Boolean)
   : [];
 
-export const articleTypes: string[] = rawArticleTypes.length > 0
-  ? rawArticleTypes.filter(t => VALID_ARTICLE_TYPES.includes(t))
+const filteredArticleTypes: string[] = rawArticleTypes.filter(t => VALID_ARTICLE_TYPES.includes(t));
+
+if (rawArticleTypes.length > 0 && filteredArticleTypes.length === 0) {
+  throw new Error(
+    `No valid article types specified via --types. Valid types are: ${VALID_ARTICLE_TYPES.join(', ')}`
+  );
+}
+
+export const articleTypes: string[] = filteredArticleTypes.length > 0
+  ? filteredArticleTypes
   : ['week-ahead'];
 
 // ---------------------------------------------------------------------------
