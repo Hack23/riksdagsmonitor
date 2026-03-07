@@ -1334,24 +1334,24 @@ header {
   align-items: center;
   justify-content: center;
   padding: var(--spacing-sm) var(--spacing-lg);
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0.45) 40%,
-    rgba(255, 255, 255, 0.65) 100%
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.55) 40%,
+    rgba(255, 255, 255, 0.72) 100%
   );
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 @media (prefers-color-scheme: dark) {
   .hero-banner-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(10, 14, 39, 0.4) 0%,
-      rgba(10, 14, 39, 0.55) 40%,
-      rgba(10, 14, 39, 0.75) 100%
+      rgba(10, 14, 39, 0.55) 0%,
+      rgba(10, 14, 39, 0.65) 40%,
+      rgba(10, 14, 39, 0.82) 100%
     );
   }
 }
@@ -1359,9 +1359,9 @@ header {
 html[data-theme="dark"] .hero-banner-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(10, 14, 39, 0.4) 0%,
-    rgba(10, 14, 39, 0.55) 40%,
-    rgba(10, 14, 39, 0.75) 100%
+    rgba(10, 14, 39, 0.55) 0%,
+    rgba(10, 14, 39, 0.65) 40%,
+    rgba(10, 14, 39, 0.82) 100%
   );
 }
 
@@ -1374,9 +1374,9 @@ html[data-theme="dark"] .hero-banner-overlay {
 
 .hero-banner-overlay h1 {
   margin: 0;
-  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   line-height: 1.2;
-  text-shadow: 0 1px 4px rgba(255,255,255,0.5);
+  text-shadow: 0 1px 6px rgba(255,255,255,0.6);
 }
 
 .hero-banner-overlay .h1-subtitle {
@@ -1385,42 +1385,58 @@ html[data-theme="dark"] .hero-banner-overlay {
 
 @media (prefers-color-scheme: dark) {
   .hero-banner-overlay h1 {
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
   }
 }
 
 html[data-theme="dark"] .hero-banner-overlay h1 {
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero-banner-overlay .tagline {
   margin: 0;
-  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
-  text-shadow: 0 1px 3px rgba(255,255,255,0.4);
+  max-width: 56ch;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  text-shadow: 0 1px 4px rgba(255,255,255,0.5);
 }
 
 @media (prefers-color-scheme: dark) {
   .hero-banner-overlay .tagline {
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   }
 }
 
 html[data-theme="dark"] .hero-banner-overlay .tagline {
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Light theme: preserve hero banner text shadows that are needed over banner image */
+html[data-theme="light"] .hero-banner-overlay h1 {
+  text-shadow: 0 1px 6px rgba(255,255,255,0.6);
+}
+
+html[data-theme="light"] .hero-banner-overlay .tagline {
+  text-shadow: 0 1px 4px rgba(255,255,255,0.5);
 }
 
 @media (max-width: 768px) {
   .hero-banner {
-    height: clamp(200px, 50vw, 300px);
+    height: clamp(220px, 50vw, 300px);
   }
   .hero-banner-overlay {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
 }
 
 @media (max-width: 480px) {
   .hero-banner {
-    height: clamp(180px, 55vw, 260px);
+    height: clamp(200px, 55vw, 260px);
+  }
+  .hero-banner-overlay h1 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
+  .hero-banner-overlay .tagline {
+    font-size: clamp(0.7rem, 2.5vw, 0.85rem);
   }
 }
 
@@ -1462,8 +1478,8 @@ html[data-theme="dark"] .hero-banner-overlay .tagline {
 /* Site Logo in Header */
 .site-logo {
   display: block;
-  max-width: clamp(80px, 15vw, 140px);
-  max-height: 140px;
+  max-width: clamp(100px, 18vw, 160px);
+  max-height: 160px;
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -1492,6 +1508,20 @@ html[data-theme="dark"] .site-logo:hover {
   }
   .site-logo:hover {
     filter: drop-shadow(0 0 30px rgba(0, 204, 102, 0.6));
+  }
+}
+
+/* Responsive site logo sizing */
+@media (max-width: 768px) {
+  .site-logo {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-logo {
+    max-height: 80px;
+    max-width: clamp(54px, 14vw, 80px);
   }
 }
 
