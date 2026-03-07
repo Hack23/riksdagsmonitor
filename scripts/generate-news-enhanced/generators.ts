@@ -18,6 +18,7 @@ import {
   type RawDocument,
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
+import { escapeHtml } from '../html-utils.js';
 import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationResult, DateRange, ArticleCategory } from '../types/article.js';
@@ -400,6 +401,52 @@ export async function generateMotions(): Promise<GenerationResult> {
 }
 
 /**
+ * Extract a Riksdag document ID (dok_id) from a known URL pattern.
+ * Supports:
+ *   - https://riksdagen.se/sv/dokument-och-lagar/dokument/{type}/{dok_id}/
+ *   - https://data.riksdagen.se/dokument/{dok_id}
+ *   - https://data.riksdagen.se/dokument/{dok_id}.json
+ *
+ * @returns The extracted dok_id, or null if the URL doesn't match a known pattern.
+ */
+export function extractDocIdFromUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.toLowerCase();
+    const segments = parsed.pathname.split('/').filter(Boolean);
+
+    // https://riksdagen.se/sv/dokument-och-lagar/dokument/{type}/{dok_id}
+    if (hostname === 'riksdagen.se' || hostname === 'www.riksdagen.se') {
+      // Path: /sv/dokument-och-lagar/dokument/{type}/{dok_id}
+      const dokIdx = segments.indexOf('dokument');
+      if (dokIdx >= 0 && segments.length > dokIdx + 2) {
+        return segments[dokIdx + 2];
+      }
+    }
+
+    // https://data.riksdagen.se/dokument/{dok_id}[.json|.xml|.html]
+    if (hostname === 'data.riksdagen.se') {
+      const dokIdx = segments.indexOf('dokument');
+      if (dokIdx >= 0 && segments.length > dokIdx + 1) {
+        return segments[dokIdx + 1].replace(/\.\w+$/, ''); // strip file extension
+      }
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Strip HTML tags from a user-supplied string to prevent XSS.
+ * Additionally HTML-escapes any remaining special characters.
+ */
+function sanitizePlainText(text: string): string {
+  return escapeHtml(text.replace(/<[^>]*>/g, ''));
+}
+
+/**
  * Generate Deep-Inspection article targeting specific documents or policy topics.
  * Uses documentIds, documentUrls, and focusTopic from CLI config to fetch
  * targeted Riksdag documents and generate in-depth analysis articles.
@@ -420,9 +467,24 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
   try {
     const client: MCPClient = await getSharedClient();
 
+    // Resolve document IDs from URLs
+    const urlDerivedIds: string[] = [];
+    for (const url of documentUrls) {
+      const docId = extractDocIdFromUrl(url);
+      if (docId) {
+        console.log(`  🔗 Resolved URL → dok_id: ${docId}`);
+        urlDerivedIds.push(docId);
+      } else {
+        console.warn(`  ⚠️ Could not extract dok_id from URL: ${url}`);
+      }
+    }
+
+    // Combine explicit IDs + URL-derived IDs (deduplicated)
+    const allDocIds: string[] = [...new Set([...documentIds, ...urlDerivedIds])];
+
     // Fetch targeted documents by ID
     const targetDocs: RawDocument[] = [];
-    for (const docId of documentIds) {
+    for (const docId of allDocIds) {
       try {
         console.log(`  🔄 Fetching document ${docId}...`);
         const doc = await client.request('get_dokument', { dok_id: docId });
@@ -432,7 +494,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       }
     }
 
-    // Fetch documents by focus topic if no IDs provided
+    // Fetch documents by focus topic if no IDs resolved
     if (targetDocs.length === 0 && focusTopic) {
       console.log(`  🔄 Searching documents for topic: ${focusTopic}`);
       const rawDocs = await client.searchDocuments({ titel: focusTopic, limit: 10 })
@@ -472,7 +534,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_dokument', 'get_dokument_innehall', 'search_dokument']);
 
-      const topicLabel: string = focusTopic || 'Policy Analysis';
+      const topicLabel: string = focusTopic ? sanitizePlainText(focusTopic) : 'Policy Analysis';
       const titles: Record<Language, TitleSet> = {
         en: { title: `Deep Inspection: ${topicLabel}`, subtitle: `In-depth analysis of ${enrichedDocs.length} parliamentary documents` },
         sv: { title: `Djupanalys: ${topicLabel}`, subtitle: `Fördjupad analys av ${enrichedDocs.length} riksdagsdokument` },
