@@ -33,7 +33,6 @@ export interface I18nStrings {
   searchPlaceholder: string;
   loadMore: string;
   showing: string | { one: string; other: string };
-  totalArticles: string;
 }
 
 export interface BreadcrumbLabels {
