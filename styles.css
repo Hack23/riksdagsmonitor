@@ -1306,11 +1306,11 @@ header {
   overflow: hidden;
 }
 
-/* Hero Banner */
+/* Hero Banner - Clean image display (no text overlay) */
 .hero-banner {
   position: relative;
   width: 100%;
-  height: clamp(260px, 40vw, 380px);
+  height: clamp(180px, 28vw, 300px);
   overflow: hidden;
 }
 
@@ -1322,120 +1322,57 @@ header {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  z-index: 0;
 }
 
-.hero-banner-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+/* Logo above banner */
+.hero-logo-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  gap: var(--spacing-sm);
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.45) 0%,
-    rgba(255, 255, 255, 0.55) 40%,
-    rgba(255, 255, 255, 0.72) 100%
-  );
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-@media (prefers-color-scheme: dark) {
-  .hero-banner-overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(10, 14, 39, 0.55) 0%,
-      rgba(10, 14, 39, 0.65) 40%,
-      rgba(10, 14, 39, 0.82) 100%
-    );
-  }
-}
-
-html[data-theme="dark"] .hero-banner-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 14, 39, 0.55) 0%,
-    rgba(10, 14, 39, 0.65) 40%,
-    rgba(10, 14, 39, 0.82) 100%
-  );
-}
-
-.hero-banner-overlay a {
+  padding: var(--spacing-md) 0 var(--spacing-sm);
   line-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.hero-banner-overlay h1 {
+/* Title and tagline below banner */
+.hero-header-text {
+  padding: var(--spacing-md) var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.hero-header-text h1 {
   margin: 0;
   font-size: clamp(1.5rem, 4vw, 2.4rem);
   line-height: 1.2;
-  text-shadow: 0 1px 6px rgba(255,255,255,0.6);
 }
 
-.hero-banner-overlay .h1-subtitle {
+.hero-header-text .h1-subtitle {
   font-size: clamp(0.85rem, 2vw, 1.1rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  .hero-banner-overlay h1 {
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
-  }
-}
-
-html[data-theme="dark"] .hero-banner-overlay h1 {
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
-}
-
-.hero-banner-overlay .tagline {
-  margin: 0;
+.hero-header-text .tagline {
+  margin: var(--spacing-xs) auto 0;
   max-width: 56ch;
   font-size: clamp(0.8rem, 1.8vw, 1rem);
-  text-shadow: 0 1px 4px rgba(255,255,255,0.5);
-}
-
-@media (prefers-color-scheme: dark) {
-  .hero-banner-overlay .tagline {
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
-  }
-}
-
-html[data-theme="dark"] .hero-banner-overlay .tagline {
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
-}
-
-/* Light theme: preserve hero banner text shadows that are needed over banner image */
-html[data-theme="light"] .hero-banner-overlay h1 {
-  text-shadow: 0 1px 6px rgba(255,255,255,0.6);
-}
-
-html[data-theme="light"] .hero-banner-overlay .tagline {
-  text-shadow: 0 1px 4px rgba(255,255,255,0.5);
+  color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {
   .hero-banner {
-    height: clamp(220px, 50vw, 300px);
+    height: clamp(140px, 30vw, 220px);
   }
-  .hero-banner-overlay {
-    padding: var(--spacing-xs) var(--spacing-sm);
+  .hero-header-text {
+    padding: var(--spacing-sm) var(--spacing-sm) 0;
   }
 }
 
 @media (max-width: 480px) {
   .hero-banner {
-    height: clamp(200px, 55vw, 260px);
+    height: clamp(120px, 35vw, 180px);
   }
-  .hero-banner-overlay h1 {
+  .hero-header-text h1 {
     font-size: clamp(1.2rem, 5vw, 1.6rem);
   }
-  .hero-banner-overlay .tagline {
+  .hero-header-text .tagline {
     font-size: clamp(0.7rem, 2.5vw, 0.85rem);
   }
 }
@@ -1478,8 +1415,8 @@ html[data-theme="light"] .hero-banner-overlay .tagline {
 /* Site Logo in Header */
 .site-logo {
   display: block;
-  max-width: clamp(100px, 18vw, 160px);
-  max-height: 160px;
+  max-width: clamp(80px, 12vw, 120px);
+  max-height: 120px;
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -1514,14 +1451,14 @@ html[data-theme="dark"] .site-logo:hover {
 /* Responsive site logo sizing */
 @media (max-width: 768px) {
   .site-logo {
-    max-height: 100px;
+    max-height: 90px;
   }
 }
 
 @media (max-width: 480px) {
   .site-logo {
-    max-height: 80px;
-    max-width: clamp(54px, 14vw, 80px);
+    max-height: 70px;
+    max-width: clamp(48px, 12vw, 70px);
   }
 }
 
