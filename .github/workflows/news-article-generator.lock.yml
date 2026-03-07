@@ -30,7 +30,7 @@ name: "News: Article Generator (Manual)"
   workflow_dispatch:
     inputs:
       article_types:
-        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking). Leave empty for day-of-week schedule.
+        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking,deep-inspection). Leave empty for day-of-week schedule.
         required: false
       force_generation:
         default: false
@@ -40,6 +40,15 @@ name: "News: Article Generator (Manual)"
       languages:
         default: all
         description: Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)
+        required: false
+      document_ids:
+        description: Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)
+        required: false
+      document_urls:
+        description: Comma-separated URLs to specific Riksdag documents for deep analysis
+        required: false
+      focus_topic:
+        description: Specific topic or policy area to focus deep-inspection analysis on (e.g. defence, migration, budget)
         required: false
 
 permissions: {}
@@ -121,6 +130,9 @@ jobs:
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION: ${{ github.event.inputs.force_generation }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
+          GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_IDS: ${{ github.event.inputs.document_ids }}
+          GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_URLS: ${{ github.event.inputs.document_urls }}
+          GH_AW_GITHUB_EVENT_INPUTS_FOCUS_TOPIC: ${{ github.event.inputs.focus_topic }}
           GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
           GH_AW_GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
           GH_AW_GITHUB_REPOSITORY: ${{ github.repository }}
@@ -186,6 +198,9 @@ jobs:
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION: ${{ github.event.inputs.force_generation }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
+          GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_IDS: ${{ github.event.inputs.document_ids }}
+          GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_URLS: ${{ github.event.inputs.document_urls }}
+          GH_AW_GITHUB_EVENT_INPUTS_FOCUS_TOPIC: ${{ github.event.inputs.focus_topic }}
         with:
           script: |
             const { setupGlobals } = require('/opt/gh-aw/actions/setup_globals.cjs');
@@ -202,6 +217,9 @@ jobs:
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION: ${{ github.event.inputs.force_generation }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
+          GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_IDS: ${{ github.event.inputs.document_ids }}
+          GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_URLS: ${{ github.event.inputs.document_urls }}
+          GH_AW_GITHUB_EVENT_INPUTS_FOCUS_TOPIC: ${{ github.event.inputs.focus_topic }}
           GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
           GH_AW_GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
           GH_AW_GITHUB_REPOSITORY: ${{ github.repository }}
@@ -224,6 +242,9 @@ jobs:
                 GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: process.env.GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES,
                 GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION: process.env.GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION,
                 GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: process.env.GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES,
+                GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_IDS: process.env.GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_IDS,
+                GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_URLS: process.env.GH_AW_GITHUB_EVENT_INPUTS_DOCUMENT_URLS,
+                GH_AW_GITHUB_EVENT_INPUTS_FOCUS_TOPIC: process.env.GH_AW_GITHUB_EVENT_INPUTS_FOCUS_TOPIC,
                 GH_AW_GITHUB_EVENT_ISSUE_NUMBER: process.env.GH_AW_GITHUB_EVENT_ISSUE_NUMBER,
                 GH_AW_GITHUB_EVENT_PULL_REQUEST_NUMBER: process.env.GH_AW_GITHUB_EVENT_PULL_REQUEST_NUMBER,
                 GH_AW_GITHUB_REPOSITORY: process.env.GH_AW_GITHUB_REPOSITORY,

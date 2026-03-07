@@ -78,7 +78,7 @@ export function generateArticleHTML(data: ArticleData): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
-  <title>${title}</title>
+  <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(subtitle).substring(0, 160)}">
   <meta name="keywords" content="${keywords.join(', ')}">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
@@ -287,6 +287,11 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
       <h1>${title}</h1>
       <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
     </div>
+    <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" aria-label="Riksdagsmonitor News">
+      <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="100" height="100" loading="eager">
+    </a>
+    <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
+    <h1>${escapeHtml(title)}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>
       <span class="separator">•</span>
@@ -300,7 +305,7 @@ ${events.length > 0 ? generateEventCalendar(events as ReadonlyArray<EventGridIte
 
   <div class="article-content prose">
     <p class="lede">
-      ${subtitle}
+      ${escapeHtml(subtitle)}
     </p>
 
 ${fixedContent}

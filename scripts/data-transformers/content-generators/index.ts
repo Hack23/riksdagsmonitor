@@ -12,6 +12,9 @@
  * - **month-ahead** — generateMonthAheadContent
  * - **swot-section** — generateSwotSection  (embeddable SWOT analysis)
  * - **dashboard-section** — generateDashboardSection  (embeddable Chart.js dashboard)
+ * - **stakeholder-swot-section** — generateStakeholderSwotSection  (multi-stakeholder SWOT)
+ * - **economic-dashboard-section** — generateEconomicDashboardSection  (World Bank dashboards)
+ * - **newsworthiness** — scoreNewsworthiness  (strategic content detection)
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -30,3 +33,9 @@ export { generateSwotSection } from './swot-section.js';
 export type { SwotSectionOptions } from './swot-section.js';
 export { generateDashboardSection } from './dashboard-section.js';
 export type { DashboardSectionOptions } from './dashboard-section.js';
+export { generateStakeholderSwotSection } from './stakeholder-swot-section.js';
+export type { StakeholderSwotSectionOptions, StakeholderSwot } from './stakeholder-swot-section.js';
+export { generateEconomicDashboardSection, findIndicatorsForDomains, buildEconomicCharts, buildEconomicTables } from './economic-dashboard-section.js';
+export type { EconomicDashboardOptions, EconomicDataPoint } from './economic-dashboard-section.js';
+export { scoreNewsworthiness } from './newsworthiness.js';
+export type { NewsworthinessScore, NewsworthinessDimension } from './newsworthiness.js';

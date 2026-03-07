@@ -45,6 +45,8 @@ export interface EconomicSectionHeadings {
   readonly economicContext: string;
   readonly nordicComparison: string;
   readonly policyImplications: string;
+  readonly country: string;
+  readonly unit: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -205,71 +207,99 @@ export const ECONOMIC_SECTION_HEADINGS: Readonly<Record<Language, EconomicSectio
     economicContext: 'Economic Context',
     nordicComparison: 'Nordic Comparison',
     policyImplications: 'Policy Implications',
+    country: 'Country',
+    unit: 'Unit',
   },
   sv: {
     economicContext: 'Ekonomisk kontext',
     nordicComparison: 'Nordisk jämförelse',
     policyImplications: 'Policyimplikationer',
+    country: 'Land',
+    unit: 'Enhet',
   },
   da: {
     economicContext: 'Økonomisk kontekst',
     nordicComparison: 'Nordisk sammenligning',
     policyImplications: 'Politiske implikationer',
+    country: 'Land',
+    unit: 'Enhed',
   },
   no: {
     economicContext: 'Økonomisk kontekst',
     nordicComparison: 'Nordisk sammenligning',
     policyImplications: 'Politiske implikasjoner',
+    country: 'Land',
+    unit: 'Enhet',
   },
   fi: {
     economicContext: 'Taloudellinen konteksti',
     nordicComparison: 'Pohjoismainen vertailu',
     policyImplications: 'Politiikan vaikutukset',
+    country: 'Maa',
+    unit: 'Yksikkö',
   },
   de: {
     economicContext: 'Wirtschaftlicher Kontext',
     nordicComparison: 'Nordischer Vergleich',
     policyImplications: 'Politische Auswirkungen',
+    country: 'Land',
+    unit: 'Einheit',
   },
   fr: {
     economicContext: 'Contexte économique',
     nordicComparison: 'Comparaison nordique',
     policyImplications: 'Implications politiques',
+    country: 'Pays',
+    unit: 'Unité',
   },
   es: {
     economicContext: 'Contexto económico',
     nordicComparison: 'Comparación nórdica',
     policyImplications: 'Implicaciones políticas',
+    country: 'País',
+    unit: 'Unidad',
   },
   nl: {
     economicContext: 'Economische context',
     nordicComparison: 'Noordse vergelijking',
     policyImplications: 'Beleidsimplicaties',
+    country: 'Land',
+    unit: 'Eenheid',
   },
   ar: {
     economicContext: 'السياق الاقتصادي',
     nordicComparison: 'المقارنة الاسكندنافية',
     policyImplications: 'تداعيات السياسات',
+    country: 'الدولة',
+    unit: 'الوحدة',
   },
   he: {
     economicContext: 'הקשר כלכלי',
     nordicComparison: 'השוואה סקנדינבית',
     policyImplications: 'השלכות מדיניות',
+    country: 'מדינה',
+    unit: 'יחידה',
   },
   ja: {
     economicContext: '経済的背景',
     nordicComparison: '北欧比較',
     policyImplications: '政策的含意',
+    country: '国',
+    unit: '単位',
   },
   ko: {
     economicContext: '경제적 맥락',
     nordicComparison: '북유럽 비교',
     policyImplications: '정책적 시사점',
+    country: '국가',
+    unit: '단위',
   },
   zh: {
     economicContext: '经济背景',
     nordicComparison: '北欧比较',
     policyImplications: '政策影响',
+    country: '国家',
+    unit: '单位',
   },
 } as const;
 
