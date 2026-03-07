@@ -18,7 +18,6 @@ import {
   type RawDocument,
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
-import { escapeHtml } from '../html-utils.js';
 import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationResult, DateRange, ArticleCategory } from '../types/article.js';
@@ -440,9 +439,9 @@ export function extractDocIdFromUrl(url: string): string | null {
 
 /**
  * Strip HTML tags from a user-supplied string to prevent XSS.
- * Uses defense-in-depth: first strips tag patterns in a loop to handle nested
- * reconstruction (e.g. `<scr<script>ipt>`), then HTML-escapes any remaining
- * special characters via escapeHtml() as a safety net.
+ * Uses a multi-pass loop to handle nested tag reconstruction attempts
+ * (e.g. `<scr<script>ipt>`).  Returns **plain text** — callers must
+ * apply `escapeHtml()` at their render sites so escaping happens exactly once.
  */
 export function sanitizePlainText(text: string): string {
   let cleaned = text;
@@ -451,7 +450,7 @@ export function sanitizePlainText(text: string): string {
     prev = cleaned;
     cleaned = cleaned.replace(/<[^>]*>/g, '');
   } while (cleaned !== prev);
-  return escapeHtml(cleaned);
+  return cleaned;
 }
 
 /**
@@ -589,7 +588,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      const contentData = { reports: enrichedDocs as Parameters<typeof generateArticleContent>[0]['reports'] };
+      const contentData = { documents: enrichedDocs as Parameters<typeof generateArticleContent>[0]['documents'] };
       const content: string = generateArticleContent(contentData, 'deep-inspection', lang);
       const watchPoints = extractWatchPoints(contentData, lang);
       const metadata = generateMetadata(contentData, 'deep-inspection', lang);

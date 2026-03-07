@@ -49,8 +49,26 @@ export type { RiskLevel, CoalitionRiskIndex, CoalitionRiskComponents, AnomalyFla
 export { calculateCoalitionRiskIndex, detectAnomalousPatterns, generateTrendComparison } from './risk-analysis.js';
 
 // ── Re-export SWOT & Dashboard section generators ─────────────────────────
-export { generateSwotSection, generateDashboardSection } from './content-generators.js';
-export type { SwotSectionOptions, DashboardSectionOptions } from './content-generators.js';
+export {
+  generateSwotSection,
+  generateDashboardSection,
+  generateStakeholderSwotSection,
+  generateEconomicDashboardSection,
+  findIndicatorsForDomains,
+  buildEconomicCharts,
+  buildEconomicTables,
+  scoreNewsworthiness,
+} from './content-generators.js';
+export type {
+  SwotSectionOptions,
+  DashboardSectionOptions,
+  StakeholderSwotSectionOptions,
+  StakeholderSwot,
+  EconomicDashboardOptions,
+  EconomicDataPoint,
+  NewsworthinessScore,
+  NewsworthinessDimension,
+} from './content-generators.js';
 
 // ── Re-export metadata ─────────────────────────────────────────────────────
 export {

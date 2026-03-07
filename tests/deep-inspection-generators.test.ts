@@ -82,20 +82,18 @@ describe('sanitizePlainText', () => {
     expect(sanitizePlainText('<b>bold</b> text')).toBe('bold text');
   });
 
-  it('escapes remaining special characters', () => {
-    expect(sanitizePlainText('Tom & Jerry < Friends')).toBe('Tom &amp; Jerry &lt; Friends');
+  it('preserves special characters without escaping (escaping deferred to render sites)', () => {
+    expect(sanitizePlainText('Tom & Jerry < Friends')).toBe('Tom & Jerry < Friends');
   });
 
-  it('handles double-encoded-safe output', () => {
+  it('strips complete tags including event handler attributes', () => {
     const result = sanitizePlainText('<img src=x onerror=alert(1)>');
-    expect(result).not.toContain('<');
-    expect(result).not.toContain('>');
+    expect(result).toBe('');
   });
 
-  it('handles incomplete/malformed tags via escapeHtml defense-in-depth', () => {
+  it('handles incomplete/malformed tags by preserving remaining text', () => {
     const result = sanitizePlainText('text < with unclosed bracket');
-    expect(result).not.toContain('<');
-    expect(result).toContain('&lt;');
+    expect(result).toBe('text < with unclosed bracket');
   });
 
   it('handles nested quotes in tags', () => {
@@ -111,13 +109,13 @@ describe('sanitizePlainText', () => {
     expect(sanitizePlainText('Budget Analysis 2026')).toBe('Budget Analysis 2026');
   });
 
-  it('handles Swedish characters', () => {
-    expect(sanitizePlainText('Försvarsbudget & Säkerhetspolitik')).toBe('Försvarsbudget &amp; Säkerhetspolitik');
+  it('handles Swedish characters without escaping ampersand', () => {
+    expect(sanitizePlainText('Försvarsbudget & Säkerhetspolitik')).toBe('Försvarsbudget & Säkerhetspolitik');
   });
 
   it('handles nested tag reconstruction attempts', () => {
     const result = sanitizePlainText('<scr<script>ipt>alert(1)</script>');
     expect(result).not.toContain('<script');
-    expect(result).not.toContain('<');
+    expect(result).toBe('ipt>alert(1)');
   });
 });

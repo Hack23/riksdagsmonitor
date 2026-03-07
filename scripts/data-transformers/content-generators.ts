@@ -21,9 +21,21 @@ export {
   generateMonthAheadContent,
   generateSwotSection,
   generateDashboardSection,
+  generateStakeholderSwotSection,
+  generateEconomicDashboardSection,
+  findIndicatorsForDomains,
+  buildEconomicCharts,
+  buildEconomicTables,
+  scoreNewsworthiness,
 } from './content-generators/index.js';
 
 export type {
   SwotSectionOptions,
   DashboardSectionOptions,
+  StakeholderSwotSectionOptions,
+  StakeholderSwot,
+  EconomicDashboardOptions,
+  EconomicDataPoint,
+  NewsworthinessScore,
+  NewsworthinessDimension,
 } from './content-generators/index.js';
