@@ -41,7 +41,7 @@ function formatShowingSummary(
     .replace('{total}', String(total));
 }
 
-function formatStaticDate(date: string, locale: string): string {
+function formatDisplayDate(date: string, locale: string): string {
   return new Date(date).toLocaleDateString(locale, {
     year: 'numeric',
     month: 'long',
@@ -245,7 +245,7 @@ ${generateHreflangTags()}
       <a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}</a>
       <div class="news-hero-meta">
         <p class="news-hero-stat">${escapeHtml(articleSummary)}</p>
-        ${latestDate ? `<p class="news-hero-stat"><span aria-hidden="true">\u{1F5D3}\uFE0F</span> <time datetime="${escapeHtml(latestDate)}">${escapeHtml(formatStaticDate(latestDate, lang.code))}</time></p>` : ''}
+        ${latestDate ? `<p class="news-hero-stat"><span aria-hidden="true">\u{1F5D3}\uFE0F</span> <time datetime="${escapeHtml(latestDate)}">${escapeHtml(formatDisplayDate(latestDate, lang.code))}</time></p>` : ''}
       </div>
       <div class="news-hero-languages">
         ${allLanguagesSummary}

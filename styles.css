@@ -9324,6 +9324,7 @@ body.news-page {
   flex-wrap: wrap;
   gap: 1rem;
   position: sticky;
+  /* Keep filters above flowing cards but below overlays like modals/tooltips. */
   top: 1rem;
   z-index: 15;
   margin-bottom: 1rem;
@@ -9421,7 +9422,7 @@ body.news-page {
 /* Articles grid */
 .news-page .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 1.5rem;
   margin-top: 0;
 }
