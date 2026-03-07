@@ -69,7 +69,7 @@ const STRATEGIC_KEYWORDS: readonly string[] = [
   'reform', 'omstrukturering', 'restructuring', 'privatisering', 'privatization',
   'centralisering', 'decentralisation',
   // Election
-  'val', 'election', 'valkampanj', 'campaign', 'väljarundersökning', 'opinion poll',
+  'riksdagsval', 'allmänna val', 'election', 'valkampanj', 'campaign', 'väljarundersökning', 'opinion poll',
   // Government formation
   'regeringsbildning', 'government formation', 'misstroendevotum', 'vote of no confidence',
   'ministerskifte', 'cabinet reshuffle',
