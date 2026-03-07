@@ -88,7 +88,7 @@ export const requireMcp: boolean = parseArgValue(requireMcpArg ?? '') !== 'false
 export const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking', 'deep-inspection'];
 
 export const articleTypes: string[] = typesArg
-  ? parseArgValue(typesArg).split(',').map(t => t.trim())
+  ? parseArgValue(typesArg).split(',').map(t => t.trim()).filter(Boolean).filter(t => VALID_ARTICLE_TYPES.includes(t))
   : ['week-ahead'];
 
 // ---------------------------------------------------------------------------
@@ -121,10 +121,13 @@ if (languages.length === 0) {
   process.exit(1);
 }
 
-// Validate article types
-const invalidTypes: string[] = articleTypes.filter(t => !VALID_ARTICLE_TYPES.includes(t.trim()));
-if (invalidTypes.length > 0) {
-  console.warn(`⚠️ Unknown article types ignored: ${invalidTypes.join(', ')}`);
+// Log filtered article types (invalid types were removed during parsing above)
+const rawTypes: string[] = typesArg
+  ? parseArgValue(typesArg).split(',').map(t => t.trim()).filter(Boolean)
+  : [];
+const filteredTypes: string[] = rawTypes.filter(t => !VALID_ARTICLE_TYPES.includes(t));
+if (filteredTypes.length > 0) {
+  console.warn(`⚠️ Unknown article types filtered out: ${filteredTypes.join(', ')}. Valid types: ${VALID_ARTICLE_TYPES.join(', ')}`);
 }
 
 // ---------------------------------------------------------------------------

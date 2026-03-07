@@ -22,7 +22,7 @@ import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationResult, DateRange, ArticleCategory } from '../types/article.js';
 import type { TitleSet } from './types.js';
-import { languages, stats, getSharedClient, requireMcp, toISODate } from './config.js';
+import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic } from './config.js';
 import {
   getWeekAheadDateRange,
   formatDateForSlug,
@@ -394,6 +394,128 @@ export async function generateMotions(): Promise<GenerationResult> {
 
   } catch (error: unknown) {
     console.error('❌ Error generating Motions:', (error as Error).message);
+    stats.errors++;
+    return { success: false, error: (error as Error).message };
+  }
+}
+
+/**
+ * Generate Deep-Inspection article targeting specific documents or policy topics.
+ * Uses documentIds, documentUrls, and focusTopic from CLI config to fetch
+ * targeted Riksdag documents and generate in-depth analysis articles.
+ */
+export async function generateDeepInspection(): Promise<GenerationResult> {
+  console.log('🔍 Generating Deep-Inspection article...');
+
+  if (documentIds.length === 0 && documentUrls.length === 0 && !focusTopic) {
+    console.log('  ⚠️ No targeting parameters provided (--document-ids, --document-urls, or --focus-topic)');
+    console.log('  ℹ️ Deep-inspection requires at least one targeting parameter — skipping');
+    return { success: true, files: 0 };
+  }
+
+  console.log(`  📋 Document IDs: ${documentIds.length > 0 ? documentIds.join(', ') : '(none)'}`);
+  console.log(`  🔗 Document URLs: ${documentUrls.length > 0 ? documentUrls.join(', ') : '(none)'}`);
+  console.log(`  🎯 Focus topic: ${focusTopic || '(none)'}`);
+
+  try {
+    const client: MCPClient = await getSharedClient();
+
+    // Fetch targeted documents by ID
+    const targetDocs: RawDocument[] = [];
+    for (const docId of documentIds) {
+      try {
+        console.log(`  🔄 Fetching document ${docId}...`);
+        const doc = await client.request('get_dokument', { dok_id: docId });
+        if (doc) targetDocs.push(doc as RawDocument);
+      } catch (err: unknown) {
+        console.warn(`  ⚠️ Could not fetch document ${docId}: ${(err as Error).message}`);
+      }
+    }
+
+    // Fetch documents by focus topic if no IDs provided
+    if (targetDocs.length === 0 && focusTopic) {
+      console.log(`  🔄 Searching documents for topic: ${focusTopic}`);
+      const rawDocs = await client.searchDocuments({ titel: focusTopic, limit: 10 })
+        .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
+      targetDocs.push(...(Array.isArray(rawDocs) ? rawDocs as RawDocument[] : []));
+    }
+
+    if (targetDocs.length === 0) {
+      console.log('  ℹ️ No target documents found for deep inspection — skipping');
+      return { success: true, files: 0 };
+    }
+
+    console.log(`  📊 Found ${targetDocs.length} target documents for deep inspection`);
+
+    // Enrich documents with content
+    console.log('  🔍 Enriching documents with detailed content...');
+    const enriched = await client.enrichDocumentsWithContent(
+      targetDocs as Parameters<MCPClient['enrichDocumentsWithContent']>[0], 3
+    );
+    const enrichedDocs = enriched as RawDocument[];
+    const enrichedCount: number = (enrichedDocs as Array<Record<string, unknown>>).filter(d => d['contentFetched']).length;
+    console.log(`  ✅ Enriched ${enrichedCount}/${enrichedDocs.length} documents with content`);
+
+    const today: Date = new Date();
+    const topicSlug: string = focusTopic
+      ? focusTopic.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').slice(0, 40)
+      : documentIds[0] ? documentIds[0].toLowerCase().replace(/[^a-z0-9-]/g, '') : 'analysis';
+    const slug: string = `${formatDateForSlug(today)}-deep-inspection-${topicSlug}`;
+
+    for (const lang of languages) {
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+
+      const contentData = { reports: enrichedDocs as Parameters<typeof generateArticleContent>[0]['reports'] };
+      const content: string = generateArticleContent(contentData, 'committee-reports', lang);
+      const watchPoints = extractWatchPoints(contentData, lang);
+      const metadata = generateMetadata(contentData, 'committee-reports', lang);
+      const readTime: string = calculateReadTime(content);
+      const sources: string[] = generateSources(['get_dokument', 'get_dokument_innehall', 'search_dokument']);
+
+      const topicLabel: string = focusTopic || 'Policy Analysis';
+      const titles: Record<Language, TitleSet> = {
+        en: { title: `Deep Inspection: ${topicLabel}`, subtitle: `In-depth analysis of ${enrichedDocs.length} parliamentary documents` },
+        sv: { title: `Djupanalys: ${topicLabel}`, subtitle: `Fördjupad analys av ${enrichedDocs.length} riksdagsdokument` },
+        da: { title: `Dybdeanalyse: ${topicLabel}`, subtitle: `Dybdegående analyse af ${enrichedDocs.length} parlamentariske dokumenter` },
+        no: { title: `Dybdeanalyse: ${topicLabel}`, subtitle: `Inngående analyse av ${enrichedDocs.length} parlamentariske dokumenter` },
+        fi: { title: `Syväanalyysi: ${topicLabel}`, subtitle: `Syvällinen analyysi ${enrichedDocs.length} parlamentaarisesta asiakirjasta` },
+        de: { title: `Tiefenanalyse: ${topicLabel}`, subtitle: `Eingehende Analyse von ${enrichedDocs.length} parlamentarischen Dokumenten` },
+        fr: { title: `Analyse approfondie: ${topicLabel}`, subtitle: `Analyse en profondeur de ${enrichedDocs.length} documents parlementaires` },
+        es: { title: `Análisis en profundidad: ${topicLabel}`, subtitle: `Análisis detallado de ${enrichedDocs.length} documentos parlamentarios` },
+        nl: { title: `Diepteanalyse: ${topicLabel}`, subtitle: `Diepgaande analyse van ${enrichedDocs.length} parlementaire documenten` },
+        ar: { title: `تحليل معمّق: ${topicLabel}`, subtitle: `تحليل متعمق لـ ${enrichedDocs.length} وثائق برلمانية` },
+        he: { title: `ניתוח מעמיק: ${topicLabel}`, subtitle: `ניתוח מעמיק של ${enrichedDocs.length} מסמכים פרלמנטריים` },
+        ja: { title: `詳細分析：${topicLabel}`, subtitle: `${enrichedDocs.length}件の議会文書の詳細分析` },
+        ko: { title: `심층 분석: ${topicLabel}`, subtitle: `${enrichedDocs.length}개 의회 문서 심층 분석` },
+        zh: { title: `深度分析：${topicLabel}`, subtitle: `${enrichedDocs.length}份议会文件深度分析` },
+      };
+
+      const langTitles: TitleSet = titles[lang] || titles.en;
+
+      const html: string = generateArticleHTML({
+        slug: `${slug}-${lang}.html`,
+        title: langTitles.title,
+        subtitle: langTitles.subtitle,
+        date: toISODate(today),
+        type: 'analysis' as ArticleCategory,
+        readTime,
+        lang,
+        content,
+        watchPoints,
+        sources,
+        keywords: metadata.keywords,
+        topics: metadata.topics,
+        tags: metadata.tags,
+      });
+
+      await writeSingleArticle(html, slug, lang, 'deep-inspection');
+    }
+
+    console.log('  ✅ Deep-Inspection article generated successfully in all requested languages');
+    return { success: true, files: languages.length, slug };
+
+  } catch (error: unknown) {
+    console.error('❌ Error generating Deep-Inspection:', (error as Error).message);
     stats.errors++;
     return { success: false, error: (error as Error).message };
   }
