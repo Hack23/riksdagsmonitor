@@ -23,6 +23,32 @@ import {
 } from './helpers.js';
 import { PKG_VERSION } from '../shared/version.js';
 
+function formatShowingSummary(
+  showingConfig: LanguageConfig['i18n']['showing'],
+  shown: number,
+  total: number,
+): string {
+  let template: string;
+
+  if (typeof showingConfig === 'object') {
+    template = shown === 1 && 'one' in showingConfig ? showingConfig.one : showingConfig.other;
+  } else {
+    template = showingConfig;
+  }
+
+  return template
+    .replace('{shown}', String(shown))
+    .replace('{total}', String(total));
+}
+
+function formatStaticDate(date: string, locale: string): string {
+  return new Date(date).toLocaleDateString(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
 export function generateIndexHTML(
   langKey: string,
   languageArticles: NewsArticleMetadata[],
@@ -51,6 +77,9 @@ export function generateIndexHTML(
     topics: a.topics,
     tags: a.tags,
   }));
+  const latestDate: string | null = displayArticles[0]?.date ?? null;
+  const articleSummary: string = formatShowingSummary(lang.i18n.showing, displayArticles.length, displayArticles.length);
+  const allLanguagesSummary: string = generateAvailableLanguages(Object.keys(LANGUAGES), langKey);
 
   const html = `<!DOCTYPE html>
 <html lang="${lang.code}"${lang.rtl ? ' dir="rtl"' : ''}>
@@ -214,6 +243,13 @@ ${generateHreflangTags()}
       <h1>${escapeHtml(lang.title)}</h1>
       <p class="subtitle">${lang.subtitle}</p>
       <a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}</a>
+      <div class="news-hero-meta">
+        <p class="news-hero-stat">${escapeHtml(articleSummary)}</p>
+        ${latestDate ? `<p class="news-hero-stat"><span aria-hidden="true">\u{1F5D3}\uFE0F</span> <time datetime="${escapeHtml(latestDate)}">${escapeHtml(formatStaticDate(latestDate, lang.code))}</time></p>` : ''}
+      </div>
+      <div class="news-hero-languages">
+        ${allLanguagesSummary}
+      </div>
     </div>
   </header>
   ${generateLanguageSwitcherNav(langKey)}
@@ -263,6 +299,8 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
       </div>
     </div>
     
+    <p id="article-counter" class="article-counter" aria-live="polite" aria-atomic="true"></p>
+
     <!-- Articles Grid -->
     <div class="articles-grid" id="articles-grid"></div>
     
@@ -276,7 +314,6 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
     
     <!-- Pagination controls -->
     <div class="pagination-controls" role="navigation" aria-label="${escapeHtml(lang.i18n.loadMore)}">
-      <p id="article-counter" class="article-counter" aria-live="polite" aria-atomic="true"></p>
       <button id="load-more-btn" class="load-more-btn btn" hidden aria-label="${escapeHtml(lang.i18n.loadMore)}">${escapeHtml(lang.i18n.loadMore)}</button>
     </div>
   </div>
