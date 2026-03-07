@@ -544,9 +544,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
     } else {
       const primaryDocId: string =
         allDocIds[0]
-        ?? ((enrichedDocs.length > 0 && (enrichedDocs[0] as Record<string, unknown>).dok_id)
-          ? String((enrichedDocs[0] as Record<string, unknown>).dok_id)
-          : 'analysis');
+        ?? enrichedDocs[0]?.dok_id
+        ?? 'analysis';
       const fallbackSlug: string = sanitizeSlugSegment(primaryDocId);
       topicSlug = fallbackSlug || 'analysis';
     }
