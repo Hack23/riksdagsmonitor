@@ -69,3 +69,6 @@ data/news-articles.json
 rss.xml
 sitemap*
 homepage-full.png
+before-*.png
+after-*.png
+news-article-check.png

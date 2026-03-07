@@ -208,11 +208,15 @@ ${generateHreflangTags()}
               data-label-light="Switch to dark theme">
         <span class="theme-icon" aria-hidden="true">🌙</span>
       </button>
-      <a href="../${mainIndex}" aria-label="Riksdagsmonitor News">
-        <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="100" height="100" loading="eager">
-      </a>
-      <h1>${escapeHtml(lang.title)}</h1>
-      <p class="subtitle">${lang.subtitle}</p>
+      <!-- Hero Banner -->
+      <div class="hero-banner">
+        <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+      </div>
+      <!-- Hero Title -->
+      <div class="hero-header-text">
+        <h1>${escapeHtml(lang.title)}</h1>
+        <p class="subtitle">${lang.subtitle}</p>
+      </div>
       <a href="../${mainIndex}" class="back-link">\u2190 ${escapeHtml(lang.backLink)}</a>
     </div>
   </header>
