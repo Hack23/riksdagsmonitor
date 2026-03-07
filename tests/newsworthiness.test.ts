@@ -207,4 +207,29 @@ describe('scoreNewsworthiness', () => {
       expect(dim.reason.length).toBeGreaterThan(0);
     }
   });
+
+  it('scores document type and committee using best across all docs (order-independent)', () => {
+    const propFirst = scoreNewsworthiness([
+      makeDoc({ doktyp: 'prop', organ: 'FiU' }),
+      makeDoc({ doktyp: 'fr', organ: '' }),
+    ]);
+    const propSecond = scoreNewsworthiness([
+      makeDoc({ doktyp: 'fr', organ: '' }),
+      makeDoc({ doktyp: 'prop', organ: 'FiU' }),
+    ]);
+    // Same docs in different order should produce the same overall score
+    expect(propFirst.overall).toBe(propSecond.overall);
+
+    // Document Type dimension should pick the best (prop = 80)
+    const dtFirst = propFirst.dimensions.find(d => d.name === 'Document Type');
+    const dtSecond = propSecond.dimensions.find(d => d.name === 'Document Type');
+    expect(dtFirst?.score).toBe(80);
+    expect(dtSecond?.score).toBe(80);
+
+    // Committee Importance should pick the best (FiU = 75)
+    const ciFirst = propFirst.dimensions.find(d => d.name === 'Committee Importance');
+    const ciSecond = propSecond.dimensions.find(d => d.name === 'Committee Importance');
+    expect(ciFirst?.score).toBe(75);
+    expect(ciSecond?.score).toBe(75);
+  });
 });

@@ -41,7 +41,7 @@ const languagesArg: string | undefined = args.find(arg => arg.startsWith('--lang
 export const dryRunArg: boolean = args.includes('--dry-run');
 const batchSizeArg: string | undefined = args.find(arg => arg.startsWith('--batch-size='));
 export const skipExistingArg: boolean = args.includes('--skip-existing');
-export const batchSize: number = batchSizeArg ? parseInt(batchSizeArg.split('=')[1] ?? '0', 10) : 0;
+export const batchSize: number = batchSizeArg ? parseInt(parseArgValue(batchSizeArg) || '0', 10) : 0;
 const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
 
 // Deep-inspection arguments: document IDs, URLs, and focus topic for targeted analysis
@@ -64,7 +64,7 @@ export const focusTopic: string = parseArgValue(focusTopicArg);
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
 if (qualityThresholdArg) {
-  const rawValue: string = qualityThresholdArg.split('=')[1] ?? '';
+  const rawValue: string = parseArgValue(qualityThresholdArg);
   const numericValue: number = rawValue === '' ? NaN : Number(rawValue);
   if (Number.isFinite(numericValue)) {
     parsedQualityThreshold = Math.min(100, Math.max(0, numericValue));
@@ -77,7 +77,7 @@ export const QUALITY_THRESHOLD: number = parsedQualityThreshold;
 // --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
 // Set --require-mcp=false for local development/testing without a live MCP server.
 const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
-export const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
+export const requireMcp: boolean = parseArgValue(requireMcpArg ?? '') !== 'false';
 
 // ---------------------------------------------------------------------------
 // Valid article types
@@ -86,7 +86,7 @@ export const requireMcp: boolean = requireMcpArg?.split('=')[1] !== 'false';
 export const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking', 'deep-inspection'];
 
 export const articleTypes: string[] = typesArg
-  ? (typesArg.split('=')[1] ?? '').split(',').map(t => t.trim())
+  ? parseArgValue(typesArg).split(',').map(t => t.trim())
   : ['week-ahead'];
 
 // ---------------------------------------------------------------------------
@@ -101,7 +101,7 @@ export const LANGUAGE_PRESETS: Readonly<Record<string, Language[]>> = {
   'eu-core': ['en', 'sv', 'de', 'fr', 'es', 'nl']
 };
 
-let languagesInput: string = languagesArg ? (languagesArg.split('=')[1] ?? '').trim().toLowerCase() : 'all';
+let languagesInput: string = languagesArg ? parseArgValue(languagesArg).trim().toLowerCase() : 'all';
 
 // Expand presets (after trimming and normalizing)
 const presetLanguages: Language[] | undefined = LANGUAGE_PRESETS[languagesInput];

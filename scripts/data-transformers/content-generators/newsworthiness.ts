@@ -264,11 +264,18 @@ export function scoreNewsworthiness(docs: RawDocument[], cia?: CIAContext): News
     [d.titel, d.title, d.summary, d.notis, d.fullText, d.fullContent].filter(Boolean).join(' ')
   ).join(' ');
 
-  // Score each dimension
+  // Score each dimension — use the best score across all docs for type/committee
+  // so the result is order-independent and reflects the most significant document.
+  const docTypeScores = docs.map(d => scoreDocumentType(d));
+  const bestDocType = docTypeScores.reduce((best, cur) => cur.score > best.score ? cur : best, docTypeScores[0]);
+
+  const committeeScores = docs.map(d => scoreCommitteeImportance(d));
+  const bestCommittee = committeeScores.reduce((best, cur) => cur.score > best.score ? cur : best, committeeScores[0]);
+
   const dimensions: NewsworthinessDimension[] = [
     scoreStrategicKeywords(allText),
-    scoreDocumentType(docs[0]),
-    scoreCommitteeImportance(docs[0]),
+    bestDocType,
+    bestCommittee,
     scoreMultiPartyInvolvement(docs),
     scoreCoalitionContext(cia),
     scoreContentRichness(docs),
