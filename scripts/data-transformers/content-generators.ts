@@ -27,6 +27,9 @@ export {
   buildEconomicCharts,
   buildEconomicTables,
   scoreNewsworthiness,
+  generateMindmapSection,
+  generateSankeySection,
+  generateCiaOverviewSection,
 } from './content-generators/index.js';
 
 export type {
@@ -38,4 +41,12 @@ export type {
   EconomicDataPoint,
   NewsworthinessScore,
   NewsworthinessDimension,
+  MindmapSectionOptions,
+  MindmapBranch,
+  MindmapBranchColor,
+  SankeySectionOptions,
+  SankeyNode,
+  SankeyFlow,
+  SankeyNodeColor,
+  CiaOverviewSectionOptions,
 } from './content-generators/index.js';

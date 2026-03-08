@@ -219,8 +219,7 @@ case "$LANGUAGES_INPUT" in
   *) LANG_ARG="$LANGUAGES_INPUT" ;;
 esac
 
-source scripts/mcp-setup.sh
-npx tsx scripts/generate-news-enhanced.ts \
+source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
   --types=weekly-review \
   --languages="$LANG_ARG" \
   --skip-existing

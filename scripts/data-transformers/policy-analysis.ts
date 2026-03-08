@@ -541,14 +541,14 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
  * @param impliedDoktyp - document type inferred from the calling context
  *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
  */
-export function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
+export function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, impliedDoktyp?: string, maxPassageChars = 300): string {
   const effectiveDoktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
   const rawText = doc.fullText || doc.fullContent || '';
   if (rawText && !isPersonProfileText(rawText)) {
     const cleanedText = (effectiveDoktyp === 'mot' && rawText.includes('Motion till riksdagen'))
       ? cleanMotionText(rawText)
       : rawText;
-    const passage = extractKeyPassage(cleanedText, 300);
+    const passage = extractKeyPassage(cleanedText, maxPassageChars);
     if (passage) {
       const isSwedishSource = !!(doc.titel && !doc.title);
       const passageHtml = isSwedishSource

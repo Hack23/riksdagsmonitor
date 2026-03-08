@@ -35,6 +35,7 @@ import {
 } from './weekly-review.js';
 import { getCurrentRiksmote } from './motions.js';
 import { generateArticleHTML } from '../article-template.js';
+import { generateCiaOverviewSection } from '../data-transformers/content-generators/cia-overview-section.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
 
@@ -300,6 +301,8 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
 
       const titles: TitleSet = getTitles(lang, documents.length);
 
+      const ciaSection = generateCiaOverviewSection({ cia: ciaContext, lang });
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: titles.title,
@@ -314,6 +317,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        sections: [ciaSection],
       });
 
       articles.push({

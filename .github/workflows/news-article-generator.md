@@ -118,8 +118,20 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
 2. If **article_types** is empty/blank, use day-of-week schedule (see Step 2).
 3. If **force_generation** is `true`, generate even if recent articles exist.
 4. If **languages** is empty/blank, default to `all` (14 languages).
-5. If **article_types** includes `deep-inspection`, use **document_ids**, **document_urls**, and **focus_topic** for targeted deep analysis.
-6. For `deep-inspection` type: pass `--document-ids=<value>`, `--document-urls=<value>`, and `--focus-topic=<value>` flags to the generation script.
+5. If **article_types** includes `deep-inspection`, use **document_ids**, **document_urls**, and **focus_topic** for targeted deep analysis. **`document_ids` must be actual Riksdag dok_id values** (e.g. `H901FöU1,GZ01KU1`) — NOT search queries or wildcards. Use the riksdag-regering MCP tools first to find the correct IDs, then pass them.
+6. For `deep-inspection` type: pass `--document-ids=<value>`, `--document-urls=<value>`, and `--focus-topic=<value>` flags to the generation script. **The script generates the following sections — these are ONLY available via the script, never via manual fallback:**
+   - **Multi-stakeholder SWOT analysis** (Government, Parliament, Civil Society perspectives)
+   - **Document Intelligence Dashboard** — Chart.js bar chart of document-type distribution
+   - **Sankey flow chart** (SVG, no JS) — initiating actors → document types (only when ≥ 2 document types detected)
+   - **Color-coded CSS Mindmap** — topic → detected policy domains → stakeholders → data sources
+   - **World Bank Economic Dashboard** — auto-selected Nordic comparison charts based on detected policy domains (fiscal, labour, defence, healthcare, etc.)
+   - **5W Deep-Analysis section** — Who/What/When/Why/Winners–Losers narrative
+
+   Data sources automatically integrated into deep-inspection articles:
+   - **Riksdag MCP** — propositions, committee reports, motions, laws (SFS), EU position papers
+   - **World Bank MCP** (`api.worldbank.org`) — economic indicators for matching policy domains
+   - **SCB MCP** (`api.scb.se`) — Swedish statistics context for matching policy domains
+   - **CIA-data** (JSON exports) — when loaded via `--document-urls` pointing to CIA exports
 
 ## ⚠️ NON-NEGOTIABLE RULES
 
@@ -228,17 +240,33 @@ Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_
 
 **PRIMARY APPROACH — use the batch generation script:**
 
+> ⚠️ **CRITICAL — MCP env vars and script MUST run in the same shell session.**
+> Never pipe `source scripts/mcp-setup.sh` to `tail` or run it in a separate bash invocation.
+> Use `source scripts/mcp-setup.sh && npx tsx ...` on a **single command line**.
+
 ```bash
-source scripts/mcp-setup.sh
+# Build deep-inspection flags using bash array (preserves spaces in values — NOT a string)
+DEEP_ARGS=()
+if echo "$ARTICLE_TYPES" | grep -q "deep-inspection"; then
+  DOCUMENT_IDS="${{ github.event.inputs.document_ids }}"
+  DOCUMENT_URLS="${{ github.event.inputs.document_urls }}"
+  FOCUS_TOPIC="${{ github.event.inputs.focus_topic }}"
+  [ -n "$DOCUMENT_IDS" ]   && DEEP_ARGS+=("--document-ids=${DOCUMENT_IDS}")
+  [ -n "$DOCUMENT_URLS" ]  && DEEP_ARGS+=("--document-urls=${DOCUMENT_URLS}")
+  [ -n "$FOCUS_TOPIC" ]    && DEEP_ARGS+=("--focus-topic=${FOCUS_TOPIC}")
+  echo "📋 Deep-inspection args: ${DEEP_ARGS[*]}"
+fi
 
 BATCH_NUM=1
 while true; do
   echo "🔄 Running batch $BATCH_NUM..."
-  npx tsx scripts/generate-news-enhanced.ts \
+  # source + npx on ONE line so MCP_SERVER_URL is in scope for the script process
+  source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
     --types="$ARTICLE_TYPES" \
     --languages="$LANG_ARG" \
     --batch-size=5 \
-    --skip-existing
+    --skip-existing \
+    "${DEEP_ARGS[@]}"
   EXIT_CODE=$?
 
   if [ $EXIT_CODE -ne 0 ]; then
@@ -285,9 +313,18 @@ fi
 - If empty AND `$EXIT_CODE` is 0 (no data available) → call `safeoutputs___noop`
 - If empty AND `$EXIT_CODE` is non-zero → see Fallback below
 
-### Fallback: Manual Generation (ONLY if script fails AND no articles created)
+### Fallback: Manual Generation (ONLY for non-deep-inspection types if script fails AND no articles created)
 
-If the script fails, generate articles manually ONE language at a time:
+> ⚠️ **`deep-inspection` NEVER uses manual fallback.** The script generates multi-stakeholder SWOT analysis, Chart.js document-intelligence dashboard, inline SVG Sankey flow chart, color-coded CSS mindmap, World Bank economic dashboard, and 5W deep-analysis sections that **cannot be replicated manually**. If the script fails for deep-inspection, diagnose and fix the MCP connection, then retry. If MCP is genuinely unavailable, call `safeoutputs___noop` with a clear error message.
+>
+> **Before declaring script failure, verify MCP is live in the same shell:**
+> ```bash
+> source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"
+> ```
+> Expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering`  
+> If the value is blank or "unset", `mcp-setup.sh` failed to read the gateway key — check `GH_AW_MCP_CONFIG`. If set correctly, retry the full script command.
+
+For **non-deep-inspection** article types only, if the script fails, generate articles manually ONE language at a time:
 1. Check elapsed time — if >= 38 minutes, stop and call noop with summary
 2. Write HTML to `news/YYYY-MM-DD-{slug}-{lang}.html`
 3. Use `<link rel="stylesheet" href="../styles.css">` — NO embedded `<style>` tags
@@ -388,7 +425,7 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 | Scenario | Cause | Fix |
 |----------|-------|-----|
-| Tool not found | MCP server not initialized | Re-run `source scripts/mcp-setup.sh` and retry |
+| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and script MUST be chained with `&&` on one line; never pipe source to tail |
 | Empty results | No new documents for the queried article type | Skip generation with `safeoutputs___noop` |
 | Timeout | MCP server response exceeds `timeout-minutes` | Reduce article types or increase timeout |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
