@@ -196,7 +196,7 @@ function renderCoalitionPanel(cia: CIAContext, lang: Language | string): string 
     <span class="cia-score-number" style="color:${escapeHtml(scoreColor)}">${escapeHtml(String(s.stabilityScore))}/100</span>
     <span class="cia-risk-badge" style="background:${escapeHtml(riskColor)}20;border:1px solid ${escapeHtml(riskColor)};color:${escapeHtml(riskColor)}">${escapeHtml(s.riskLevel.toUpperCase())}</span>
   </div>
-  <div class="cia-stability-bar-wrapper" role="progressbar" aria-valuenow="${escapeHtml(String(s.stabilityScore))}" aria-valuemin="0" aria-valuemax="100" aria-label="${escapeHtml(coLabel)} ${escapeHtml(String(s.stabilityScore))}/100">
+  <div class="cia-stability-bar-wrapper" role="progressbar" aria-valuenow="${Math.min(100, Math.max(0, s.stabilityScore))}" aria-valuemin="0" aria-valuemax="100" aria-label="${escapeHtml(coLabel)} ${escapeHtml(String(s.stabilityScore))}/100">
     <div class="cia-stability-bar" style="width:${Math.min(100, Math.max(0, s.stabilityScore))}%;background:${escapeHtml(scoreColor)}"></div>
   </div>
   <dl class="cia-stat-list">
