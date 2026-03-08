@@ -1326,26 +1326,30 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         if (content) {
           // Extract title from file path — e.g. "Information_Security_Strategy.md" → "Information Security Strategy"
           const urlPath = new URL(ghUrl).pathname;
+          // After split('/').filter(Boolean), segments = ['owner', 'repo', 'blob', 'branch', ...pathParts]
           const segments = urlPath.split('/').filter(Boolean);
           const filename = segments[segments.length - 1] ?? 'external-document';
           const titleFromFilename = filename
             .replace(/\.(md|txt|rst|adoc|html)$/i, '')
             .replace(/[-_]/g, ' ');
 
-          // Identify the repository context for the title
+          // Identify the repository context (owner/repo) for the title
           const repoContext = segments.length >= 2 ? `${segments[0]}/${segments[1]}` : '';
           const fullTitle = repoContext ? `${titleFromFilename} (${repoContext})` : titleFromFilename;
 
-          // Use a URL-path-based hash suffix for uniqueness
+          // Use full URL path hash to avoid dok_id collisions across repositories
           const hashSuffix = urlPath.split('').reduce((a, c) => ((a << 5) - a + c.charCodeAt(0)) | 0, 0)
             .toString(36).replace(/^-/, 'n');
+          // Include repo context in dok_id for cross-repository uniqueness
+          const repoSlug = repoContext ? repoContext.replace('/', '-').slice(0, 20) : '';
+          const fileSlug = filename.slice(0, 30).replace(/\.(md|txt)$/i, '');
           const ghDoc: RawDocument = {
             doktyp: 'ext',
             documentType: 'ext',
             titel: fullTitle,
             title: fullTitle,
             url: ghUrl,
-            dok_id: `gh-${filename.slice(0, 30).replace(/\.(md|txt)$/i, '')}-${hashSuffix}`,
+            dok_id: `gh-${repoSlug}-${fileSlug}-${hashSuffix}`,
             fullText: content,
             fullContent: content,
             contentFetched: true,

@@ -32,6 +32,8 @@ const DEFAULT_MCP_SERVER_URL: string =
   process.env['MCP_SERVER_URL'] ?? 'https://riksdag-regering-ai.onrender.com/mcp';
 const DEFAULT_MAX_RETRIES = 3;
 const RETRY_DELAY = 2000;
+/** Timeout in milliseconds for fetching external URLs (GitHub, etc.) */
+const EXTERNAL_URL_FETCH_TIMEOUT_MS = 15_000;
 
 function getDefaultTimeout(): number {
   const envVal = process.env['MCP_CLIENT_TIMEOUT_MS'];
@@ -604,7 +606,7 @@ export class MCPClient {
   async fetchExternalUrlContent(rawUrl: string): Promise<string | null> {
     try {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 15_000);
+      const timeout = setTimeout(() => controller.abort(), EXTERNAL_URL_FETCH_TIMEOUT_MS);
       const response = await fetch(rawUrl, {
         signal: controller.signal,
         headers: { 'Accept': 'text/plain, text/markdown, text/html, */*' },
