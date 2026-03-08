@@ -231,6 +231,18 @@ Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_
 ```bash
 source scripts/mcp-setup.sh
 
+# Build deep-inspection flags when applicable
+DEEP_ARGS=""
+if echo "$ARTICLE_TYPES" | grep -q "deep-inspection"; then
+  DOCUMENT_IDS="${{ github.event.inputs.document_ids }}"
+  DOCUMENT_URLS="${{ github.event.inputs.document_urls }}"
+  FOCUS_TOPIC="${{ github.event.inputs.focus_topic }}"
+  [ -n "$DOCUMENT_IDS" ]   && DEEP_ARGS="$DEEP_ARGS --document-ids=\"${DOCUMENT_IDS}\""
+  [ -n "$DOCUMENT_URLS" ]  && DEEP_ARGS="$DEEP_ARGS --document-urls=\"${DOCUMENT_URLS}\""
+  [ -n "$FOCUS_TOPIC" ]    && DEEP_ARGS="$DEEP_ARGS --focus-topic=\"${FOCUS_TOPIC}\""
+  echo "📋 Deep-inspection args:$DEEP_ARGS"
+fi
+
 BATCH_NUM=1
 while true; do
   echo "🔄 Running batch $BATCH_NUM..."
@@ -238,7 +250,8 @@ while true; do
     --types="$ARTICLE_TYPES" \
     --languages="$LANG_ARG" \
     --batch-size=5 \
-    --skip-existing
+    --skip-existing \
+    $DEEP_ARGS
   EXIT_CODE=$?
 
   if [ $EXIT_CODE -ne 0 ]; then
