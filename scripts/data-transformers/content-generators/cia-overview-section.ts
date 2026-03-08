@@ -66,6 +66,12 @@ const MAJORITY_LABELS: Readonly<Record<string, string>> = {
   ar: 'هامش الأغلبية', he: 'מרווח הרוב', ja: '過半数マージン', ko: '과반수 마진', zh: '多数票优势',
 };
 
+const SEATS_UNIT_LABELS: Readonly<Record<string, string>> = {
+  en: 'seats', sv: 'mandat', da: 'mandater', no: 'mandater', fi: 'paikkaa',
+  de: 'Sitze', fr: 'sièges', es: 'escaños', nl: 'zetels',
+  ar: 'مقعد', he: 'מושבים', ja: '議席', ko: '의석', zh: '席',
+};
+
 const PARTY_TABLE_LABELS: Readonly<Record<string, { party: string; seats: string; success: string; cohesion: string; trend: string }>> = {
   en: { party: 'Party', seats: 'Seats', success: 'Success%', cohesion: 'Cohesion', trend: 'Trend' },
   sv: { party: 'Parti', seats: 'Mandat', success: 'Framgång%', cohesion: 'Sammanhållning', trend: 'Trend' },
@@ -181,6 +187,7 @@ function renderCoalitionPanel(cia: CIAContext, lang: Language | string): string 
   const riLabel    = RISK_LABELS[lang as string]      ?? RISK_LABELS.en!;
   const defLabel   = DEFECTION_LABELS[lang as string] ?? DEFECTION_LABELS.en!;
   const majLabel   = MAJORITY_LABELS[lang as string]  ?? MAJORITY_LABELS.en!;
+  const seatsUnit  = SEATS_UNIT_LABELS[lang as string] ?? SEATS_UNIT_LABELS.en!;
 
   return `
 <div class="cia-coalition-panel">
@@ -195,7 +202,7 @@ function renderCoalitionPanel(cia: CIAContext, lang: Language | string): string 
   <dl class="cia-stat-list">
     <dt>${escapeHtml(riLabel)}</dt><dd style="color:${escapeHtml(riskColor)}">${escapeHtml(s.riskLevel)}</dd>
     <dt>${escapeHtml(defLabel)}</dt><dd>${escapeHtml(String(s.defectionProbability))}%</dd>
-    <dt>${escapeHtml(majLabel)}</dt><dd>${escapeHtml(String(s.majorityMargin))} seats</dd>
+    <dt>${escapeHtml(majLabel)}</dt><dd>${escapeHtml(String(s.majorityMargin))} ${escapeHtml(seatsUnit)}</dd>
   </dl>
 </div>`.trim();
 }

@@ -92,7 +92,7 @@ describe('generateCiaOverviewSection', () => {
 
   it('renders majority margin', () => {
     const section = generateCiaOverviewSection({ cia: makeContext(), lang: 'en' });
-    expect(section.html).toContain('3 seats');
+    expect(section.html).toContain('3 seats'); // English locale
   });
 
   it('renders party table rows for all parties', () => {
@@ -257,7 +257,7 @@ describe('generateCiaOverviewSection', () => {
     expect(section.html).toContain('width:0%');
   });
 
-  it('renders low stability with green color', () => {
+  it('renders high stability with green color', () => {
     const cia = makeContext();
     cia.coalitionStability.stabilityScore = 80;
     const section = generateCiaOverviewSection({ cia, lang: 'en' });

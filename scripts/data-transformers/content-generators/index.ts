@@ -16,6 +16,8 @@
  * - **economic-dashboard-section** — generateEconomicDashboardSection  (World Bank dashboards)
  * - **sankey-section** — generateSankeySection  (inline SVG Sankey flow charts)
  * - **mindmap-section** — generateMindmapSection  (color-coded CSS mindmaps)
+ * - **newsworthiness** — scoreNewsworthiness  (multi-dimensional news value scoring)
+ * - **cia-overview-section** — generateCiaOverviewSection  (CIA parliamentary intelligence overview)
  *
  * @author Hack23 AB
  * @license Apache-2.0

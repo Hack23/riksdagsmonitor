@@ -15,7 +15,6 @@ import {
   calculateReadTime,
   generateSources,
   filterFreshDocuments,
-  L,
   type RawDocument,
 } from '../data-transformers.js';
 import {
@@ -652,7 +651,7 @@ function buildTopicContextParagraph(docs: RawDocument[], topic: string | null, l
     ar: `يحلل هذا الفحص المعمق ${docCount} وثيقة برلمانية مستهدفة${topic ? ` مع التركيز الحصري على <strong>${esc(topic)}</strong>` : ''}. ${domainList ? `مجالات السياسة المشمولة: ${domainList}.` : ''}`,
     he: `ניתוח מעמיק זה בוחן ${docCount} מסמכים פרלמנטריים ממוקדים${topic ? ` עם מיקוד בלעדי על <strong>${esc(topic)}</strong>` : ''}. ${domainList ? `תחומי מדיניות: ${domainList}.` : ''}`,
     ja: `この詳細分析は${docCount}件のターゲット議会文書を調査します${topic ? `、<strong>${esc(topic)}</strong>に専ら焦点を当てています` : ''}。${domainList ? `政策分野: ${domainList}。` : ''}`,
-    ko: `이 심층 분석은 ${docCount}건의 대상 의회 문서를 분석합니다${topic ? `、<strong>${esc(topic)}</strong>에 전적으로 집중합니다` : ''}。${domainList ? `정책 분야: ${domainList}.` : ''}`,
+    ko: `이 심층 분석은 ${docCount}건의 대상 의회 문서를 분석합니다${topic ? `, <strong>${esc(topic)}</strong>에 전적으로 집중합니다` : ''}. ${domainList ? `정책 분야: ${domainList}.` : ''}`,
     zh: `本次深度分析对${docCount}份目标议会文件进行分析${topic ? `，专注于<strong>${esc(topic)}</strong>` : ''}。${domainList ? `涵盖政策领域：${domainList}。` : ''}`,
   };
   return `<p>${templates[lang] ?? templates.en}</p>`;
@@ -1032,7 +1031,6 @@ function buildDeepInspectionSections(
 
   // Document type branch
   if (chartLabels.length > 0) {
-    const doctypeColors = ['cyan', 'orange', 'purple', 'blue', 'yellow'] as const;
     mindmapBranches.push({
       label: 'Document Types',
       color: 'cyan',

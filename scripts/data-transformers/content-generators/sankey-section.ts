@@ -133,20 +133,6 @@ interface LayoutNode extends SankeyNode {
   tgtOffset: number;
 }
 
-interface LayoutFlow {
-  source: string;
-  target: string;
-  value: number;
-  label?: string;
-  scaledHeight: number;
-  srcNode: LayoutNode;
-  tgtNode: LayoutNode;
-  pathD: string;
-  flowColor: string;
-  midX: number;
-  midY: number;
-}
-
 /** Scale a bezier cubic SVG path between two columns */
 function buildBezierPath(
   x1: number, y1: number,
@@ -164,10 +150,7 @@ function buildBezierPath(
 }
 
 /** Convert colour key to semi-transparent fill (for flow paths) */
-function flowFill(color: SankeyNodeColor): string {
-  const c = NODE_COLORS[color];
-  return c.stroke + '55'; // ~33% opacity via alpha in hex
-}
+// (used inline as srcPalette.stroke + '44' in flow path rendering)
 
 /**
  * Compute SVG layout for the Sankey diagram.
@@ -240,11 +223,14 @@ function layoutSankey(
   // Render nodes first (behind flows)
   for (const ln of allLayout) {
     const palette = NODE_COLORS[ln.color] ?? NODE_COLORS.cyan;
-    const xPos = leftLayout.some(l => l.id === ln.id) ? COL_LEFT : COL_RIGHT;
+    const isLeft = leftLayout.some(l => l.id === ln.id);
+    const xPos = isLeft ? COL_LEFT : COL_RIGHT;
+    const labelX = isLeft ? xPos + NODE_WIDTH + 6 : xPos - 6;
+    const textAnchor = isLeft ? 'start' : 'end';
     svgElements.push(
       `<rect x="${xPos}" y="${ln.y}" width="${NODE_WIDTH}" height="${ln.height}"
          fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2" rx="3"/>`,
-      `<text x="${xPos + NODE_WIDTH + 6}" y="${ln.y + ln.height / 2}" dominant-baseline="middle"
+      `<text x="${labelX}" y="${ln.y + ln.height / 2}" text-anchor="${textAnchor}" dominant-baseline="middle"
          font-size="11" fill="${palette.text}" font-family="monospace">${escapeHtml(ln.label)}</text>`,
     );
   }
