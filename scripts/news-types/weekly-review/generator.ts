@@ -30,6 +30,7 @@ import {
   generateCoalitionDynamicsSection,
   generateWeeklyActivitySection,
 } from './analysis.js';
+import { generateCiaOverviewSection } from '../../data-transformers/content-generators/cia-overview-section.js';
 
 export async function generateWeeklyReview(options: GenerationOptions = {}): Promise<GenerationResult> {
   const { languages = ['en', 'sv'], lookbackDays = 7, writeArticle = null } = options;
@@ -195,6 +196,8 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
 
       const titles: TitleSet = getTitles(lang, documents.length);
 
+      const ciaSection = generateCiaOverviewSection({ cia: ciaContext, lang });
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: titles.title,
@@ -208,7 +211,8 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
+        sections: [ciaSection],
       });
 
       articles.push({

@@ -44,3 +44,5 @@ export { generateMindmapSection } from './mindmap-section.js';
 export type { MindmapSectionOptions, MindmapBranch, MindmapBranchColor } from './mindmap-section.js';
 export { generateSankeySection } from './sankey-section.js';
 export type { SankeySectionOptions, SankeyNode, SankeyFlow, SankeyNodeColor } from './sankey-section.js';
+export { generateCiaOverviewSection } from './cia-overview-section.js';
+export type { CiaOverviewSectionOptions } from './cia-overview-section.js';

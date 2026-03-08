@@ -60,6 +60,7 @@ export {
   scoreNewsworthiness,
   generateMindmapSection,
   generateSankeySection,
+  generateCiaOverviewSection,
 } from './content-generators.js';
 export type {
   SwotSectionOptions,
@@ -77,6 +78,7 @@ export type {
   SankeyNode,
   SankeyFlow,
   SankeyNodeColor,
+  CiaOverviewSectionOptions,
 } from './content-generators.js';
 
 // ── Re-export metadata ─────────────────────────────────────────────────────

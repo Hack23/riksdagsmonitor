@@ -29,6 +29,7 @@ export {
   scoreNewsworthiness,
   generateMindmapSection,
   generateSankeySection,
+  generateCiaOverviewSection,
 } from './content-generators/index.js';
 
 export type {
@@ -47,4 +48,5 @@ export type {
   SankeyNode,
   SankeyFlow,
   SankeyNodeColor,
+  CiaOverviewSectionOptions,
 } from './content-generators/index.js';

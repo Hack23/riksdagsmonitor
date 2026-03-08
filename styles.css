@@ -10019,6 +10019,264 @@ body.news-page {
   text-align: right;
 }
 
+/* CIA Overview Section */
+.news-article .cia-overview-section-wrapper,
+.cia-overview-section-wrapper {
+  margin: 2rem 0;
+}
+
+.news-article .cia-overview-section {
+  background: #0a0e27;
+  border: 2px solid #00d9ff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .cia-overview-section h2 {
+  font-size: 1.4rem;
+  color: #00d9ff;
+  border-bottom: 2px solid #00d9ff;
+  padding-bottom: 0.75rem;
+  margin: 0 0 1rem 0;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+}
+
+.news-article .cia-section-summary {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.news-article .cia-panels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Coalition panel */
+.news-article .cia-coalition-panel,
+.news-article .cia-party-panel,
+.news-article .cia-voting-panel {
+  background: rgba(0, 217, 255, 0.04);
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.news-article .cia-panel-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  color: #00d9ff;
+}
+
+.news-article .cia-coalition-score-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.news-article .cia-score-number {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  line-height: 1;
+}
+
+.news-article .cia-risk-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.news-article .cia-stability-bar-wrapper {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.news-article .cia-stability-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.news-article .cia-stat-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.75rem;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.news-article .cia-stat-list dt {
+  color: #a0a0a0;
+  font-weight: 400;
+}
+
+.news-article .cia-stat-list dd {
+  margin: 0;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+/* Party performance table */
+.news-article .cia-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.news-article .cia-party-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.news-article .cia-party-table th {
+  background: rgba(0, 217, 255, 0.1);
+  color: #00d9ff;
+  font-weight: 700;
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.news-article .cia-party-table td {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
+}
+
+.news-article .cia-party-table tr:hover td {
+  background: rgba(0, 217, 255, 0.05);
+}
+
+.news-article .cia-party-table td.cia-party-id {
+  font-weight: 700;
+  color: #00d9ff;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: 0.75rem;
+}
+
+.news-article .cia-stat-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.news-article .cia-trend {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.news-article .cia-trend.rising,
+.news-article .cia-trend.increasing {
+  color: #83cf39;
+}
+
+.news-article .cia-trend.declining {
+  color: #ff006e;
+}
+
+.news-article .cia-trend.stable {
+  color: #ffbe0b;
+}
+
+/* Voting alignment bars */
+.news-article .cia-alignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.news-article .cia-alignment-topic {
+  display: block;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: #e0e0e0;
+  margin-bottom: 0.25rem;
+}
+
+.news-article .cia-alignment-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.news-article .cia-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+}
+
+.news-article .cia-bar-label {
+  flex: 0 0 5.5rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.news-article .cia-coalition-label { color: #00d9ff; }
+.news-article .cia-opposition-label { color: #ff006e; }
+
+.news-article .cia-bar-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.news-article .cia-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.news-article .cia-coalition-fill { background: #00d9ff; }
+.news-article .cia-opposition-fill { background: #ff006e; }
+
+.news-article .cia-bar-pct {
+  flex: 0 0 2.5rem;
+  text-align: right;
+  color: #a0a0a0;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Data source note */
+.news-article .cia-data-source-note {
+  color: #666;
+  font-size: 0.75rem;
+  margin: 1.5rem 0 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .news-article .cia-panels-grid {
+    grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.5fr) minmax(220px, 1fr);
+  }
+}
+
+[dir="rtl"] .news-article .cia-overview-section {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .cia-bar-label {
+  text-align: right;
+}
+
 /* Watch Section */
 .news-article .watch-section {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
