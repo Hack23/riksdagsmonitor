@@ -1209,19 +1209,24 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         console.log(`  🏛️ Fetching government document: ${govUrl}`);
         const content = await client.fetchGovernmentDocumentContent(govUrl);
         if (content) {
-          // Extract a title from the URL path (last meaningful segment)
+          // Extract a human-readable title from the URL path's last segment.
+          // e.g. "/pressmeddelanden/2026/03/91-atgarder-ska-starka-..." → "91 atgarder ska starka ..."
           const urlPath = new URL(govUrl).pathname;
           const segments = urlPath.split('/').filter(Boolean);
           const titleSlug = segments[segments.length - 1] ?? 'government-document';
-          const titleFromSlug = titleSlug.replace(/-/g, ' ').replace(/^\d+\s*/, '');
+          const titleFromSlug = titleSlug.replace(/-/g, ' ');
 
+          // Use a URL-path-based hash suffix to avoid dok_id collisions between
+          // government documents that share the same first 30 chars of their slug.
+          const hashSuffix = urlPath.split('').reduce((a, c) => ((a << 5) - a + c.charCodeAt(0)) | 0, 0)
+            .toString(36).replace(/^-/, 'n');
           const govDoc: RawDocument = {
             doktyp: 'pressm',
             documentType: 'pressm',
             titel: titleFromSlug,
             title: titleFromSlug,
             url: govUrl,
-            dok_id: `gov-${titleSlug.slice(0, 30)}`,
+            dok_id: `gov-${titleSlug.slice(0, 30)}-${hashSuffix}`,
             fullText: content,
             fullContent: content,
             contentFetched: true,

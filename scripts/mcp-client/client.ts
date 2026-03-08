@@ -569,6 +569,12 @@ export class MCPClient {
   /**
    * Fetch government document content from regeringen.se via g0v.se.
    * Uses the get_g0v_document_content MCP tool to retrieve Markdown content.
+   *
+   * The g0v MCP tool response typically contains:
+   *   - `content` (primary): Markdown content of the document
+   *   - `markdown` (fallback): Alias used by some g0v API versions
+   *   - `text` (fallback): Plain text content when Markdown is unavailable
+   *
    * @param regeringenUrl - Full URL to a document on regeringen.se
    * @returns Markdown content of the document, or null if unavailable
    */
@@ -579,6 +585,7 @@ export class MCPClient {
       const response = await this.request('get_g0v_document_content', {
         regeringenUrl,
       });
+      // g0v API returns content in 'content' field; 'markdown'/'text' are fallbacks
       return (response['content'] ?? response['markdown'] ?? response['text'] ?? null) as string | null;
     } catch (error: unknown) {
       console.warn(`⚠️ Could not fetch government document content for ${regeringenUrl}: ${(error as Error).message}`);
