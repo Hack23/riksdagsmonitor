@@ -4,11 +4,12 @@
  * - isGovernmentUrl: Detection of regeringen.se URLs
  * - isGitHubUrl: Detection of github.com / raw.githubusercontent.com URLs
  * - toGitHubRawUrl: Conversion of GitHub blob URLs to raw URLs
+ * - hashPathSuffix: Deterministic path-based hash for dok_id collision avoidance
  * - sanitizePlainText: XSS prevention for user-controlled strings
  */
 
 import { describe, it, expect } from 'vitest';
-import { extractDocIdFromUrl, isGovernmentUrl, isGitHubUrl, toGitHubRawUrl, sanitizePlainText } from '../scripts/generate-news-enhanced/generators.js';
+import { extractDocIdFromUrl, isGovernmentUrl, isGitHubUrl, toGitHubRawUrl, hashPathSuffix, sanitizePlainText } from '../scripts/generate-news-enhanced/generators.js';
 
 describe('extractDocIdFromUrl', () => {
   it('extracts dok_id from riksdagen.se document URL', () => {
@@ -247,5 +248,32 @@ describe('sanitizePlainText', () => {
     const result = sanitizePlainText('<scr<script>ipt>alert(1)</script>');
     expect(result).not.toContain('<script');
     expect(result).toBe('ipt>alert(1)');
+  });
+});
+
+describe('hashPathSuffix', () => {
+  it('returns a deterministic base-36 string for a given path', () => {
+    const result = hashPathSuffix('/pressmeddelanden/2026/03/example-doc');
+    expect(typeof result).toBe('string');
+    // Same input always yields same output
+    expect(hashPathSuffix('/pressmeddelanden/2026/03/example-doc')).toBe(result);
+  });
+
+  it('returns different hashes for different paths', () => {
+    const a = hashPathSuffix('/path/a');
+    const b = hashPathSuffix('/path/b');
+    expect(a).not.toBe(b);
+  });
+
+  it('replaces leading minus with "n"', () => {
+    // The function should never return a string starting with '-'
+    const result = hashPathSuffix('/some/path');
+    expect(result).not.toMatch(/^-/);
+  });
+
+  it('handles empty string', () => {
+    const result = hashPathSuffix('');
+    expect(typeof result).toBe('string');
+    expect(result.length).toBeGreaterThan(0);
   });
 });

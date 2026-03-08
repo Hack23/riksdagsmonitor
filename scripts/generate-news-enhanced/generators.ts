@@ -520,6 +520,22 @@ export function toGitHubRawUrl(url: string): string | null {
 }
 
 /**
+ * Compute a short, deterministic hash suffix from a URL path string.
+ * Used to generate collision-resistant `dok_id` values for documents
+ * fetched from government or GitHub URLs.
+ *
+ * The hash is a simple DJB2-style left-shift-and-add over each character,
+ * rendered in base-36.  A leading `-` (from negative ints) is replaced with `n`.
+ */
+export function hashPathSuffix(path: string): string {
+  return path
+    .split('')
+    .reduce((a, c) => ((a << 5) - a + c.charCodeAt(0)) | 0, 0)
+    .toString(36)
+    .replace(/^-/, 'n');
+}
+
+/**
  * Strip HTML tags from a user-supplied string to prevent XSS.
  * Uses a multi-pass loop to handle nested tag reconstruction attempts
  * (e.g. `<scr<script>ipt>`).  Returns **plain text** — callers must
@@ -1288,8 +1304,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
           // Use a URL-path-based hash suffix to avoid dok_id collisions between
           // government documents that share the same first 30 chars of their slug.
-          const hashSuffix = urlPath.split('').reduce((a, c) => ((a << 5) - a + c.charCodeAt(0)) | 0, 0)
-            .toString(36).replace(/^-/, 'n');
+          const hashSuffix = hashPathSuffix(urlPath);
           const govDoc: RawDocument = {
             doktyp: 'pressm',
             documentType: 'pressm',
@@ -1338,11 +1353,10 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
           const fullTitle = repoContext ? `${titleFromFilename} (${repoContext})` : titleFromFilename;
 
           // Use full URL path hash to avoid dok_id collisions across repositories
-          const hashSuffix = urlPath.split('').reduce((a, c) => ((a << 5) - a + c.charCodeAt(0)) | 0, 0)
-            .toString(36).replace(/^-/, 'n');
+          const hashSuffix = hashPathSuffix(urlPath);
           // Include repo context in dok_id for cross-repository uniqueness
           const repoSlug = repoContext ? repoContext.replace('/', '-').slice(0, 20) : '';
-          const fileSlug = filename.slice(0, 30).replace(/\.(md|txt)$/i, '');
+          const fileSlug = filename.slice(0, 30).replace(/\.(md|txt|rst|adoc|html)$/i, '');
           const ghDoc: RawDocument = {
             doktyp: 'ext',
             documentType: 'ext',
