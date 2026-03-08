@@ -149,9 +149,6 @@ function buildBezierPath(
   ].join(' ');
 }
 
-/** Convert colour key to semi-transparent fill (for flow paths) */
-// (used inline as srcPalette.stroke + '44' in flow path rendering)
-
 /**
  * Compute SVG layout for the Sankey diagram.
  * Returns an array of SVG element strings.
@@ -190,7 +187,7 @@ function layoutSankey(
   const rightNodes = [...tgtOnlyNodes];
 
   /** Place a set of nodes vertically, returning LayoutNode array */
-  function placeNodes(nds: SankeyNode[], xPos: number): LayoutNode[] {
+  function placeNodes(nds: SankeyNode[]): LayoutNode[] {
     const result: LayoutNode[] = [];
     let yOffset = 20;
     for (const n of nds) {
@@ -212,8 +209,8 @@ function layoutSankey(
     return result;
   }
 
-  const leftLayout  = placeNodes(leftNodes, COL_LEFT);
-  const rightLayout = placeNodes(rightNodes, COL_RIGHT);
+  const leftLayout  = placeNodes(leftNodes);
+  const rightLayout = placeNodes(rightNodes);
   const allLayout   = [...leftLayout, ...rightLayout];
   const layoutMap   = new Map<string, LayoutNode>(allLayout.map(n => [n.id, n]));
 

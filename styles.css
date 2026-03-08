@@ -10002,17 +10002,6 @@ body.news-page {
 }
 
 /* Accessible fallback table — hidden visually, available to screen readers */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 
 [dir="rtl"] .news-article .sankey-section {
   direction: rtl;
