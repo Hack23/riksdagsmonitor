@@ -42,22 +42,38 @@ function getDefaultTimeout(): number {
 
 /**
  * Resolve the default MCP auth token.
- * Priority: MCP_AUTH_TOKEN env → MCP_GATEWAY_API_KEY env → gateway.apiKey from MCP config file.
+ * Priority:
+ *   1. MCP_AUTH_TOKEN env var (used as-is)
+ *   2. MCP_GATEWAY_API_KEY env var (prepend "Bearer ")
+ *   3. gateway.apiKey from MCP config file (legacy — prepend "Bearer ")
+ *   4. mcpServers['riksdag-regering'].headers.Authorization from MCP config file
+ *      (already includes "Bearer " prefix — used as-is)
+ *
  * When running inside the gh-aw sandbox the gateway requires a Bearer token but
- * the key is only stored in the MCP config JSON — not passed as an env var to the agent container.
+ * the key may be stored in either the legacy gateway section or the mcpServers
+ * section of the MCP config JSON.
  */
 function getDefaultAuthToken(): string {
   if (process.env['MCP_AUTH_TOKEN']) return process.env['MCP_AUTH_TOKEN'];
   if (process.env['MCP_GATEWAY_API_KEY']) return `Bearer ${process.env['MCP_GATEWAY_API_KEY']}`;
 
-  // Try reading the gateway API key from the MCP config file
+  // Try reading from MCP config file
   const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
   try {
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8')) as Record<string, unknown>;
+
+      // Priority 3: legacy gateway.apiKey
       const gateway = raw['gateway'] as Record<string, unknown> | undefined;
       const apiKey = gateway?.['apiKey'] as string | undefined;
       if (apiKey) return `Bearer ${apiKey}`;
+
+      // Priority 4: mcpServers['riksdag-regering'].headers.Authorization
+      const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;
+      const rrServer = mcpServers?.['riksdag-regering'] as Record<string, unknown> | undefined;
+      const headers = rrServer?.['headers'] as Record<string, unknown> | undefined;
+      const authHeader = headers?.['Authorization'] as string | undefined;
+      if (authHeader) return authHeader; // Already includes "Bearer " prefix
     }
   } catch {
     // Config file read is best-effort — fall through to empty token
