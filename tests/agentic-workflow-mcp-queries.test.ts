@@ -515,6 +515,11 @@ describe('MCP Anti-Pattern Guards', () => {
       !l.trim().startsWith('#') && l.includes('python3 -c')
     );
     expect(execLines).toEqual([]);
+    // Should try both gateway.apiKey and mcpServers headers paths
+    expect(content).toContain('gateway');
+    expect(content).toContain('mcpServers');
+    expect(content).toContain('riksdag-regering');
+    expect(content).toContain('Authorization');
   });
 
   it('scripts/mcp-query-cli.ts should exist', () => {

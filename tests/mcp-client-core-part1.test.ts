@@ -203,7 +203,7 @@ describe('MCPClient', () => {
       }
     });
 
-    it('should return empty auth token when config file is missing gateway field', async () => {
+    it('should return empty auth token when config file is missing gateway field and mcpServers has no riksdag-regering', async () => {
       const origAuth = process.env['MCP_AUTH_TOKEN'];
       const origGw = process.env['MCP_GATEWAY_API_KEY'];
       const origConfig = process.env['GH_AW_MCP_CONFIG'];
@@ -223,6 +223,88 @@ describe('MCPClient', () => {
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
         const client = getDefaultClient();
         expect(client.authToken).toBe('');
+      } finally {
+        if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
+        else delete process.env['MCP_AUTH_TOKEN'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
+      }
+    });
+
+    it('should read auth from mcpServers riksdag-regering headers when gateway.apiKey is absent', async () => {
+      const origAuth = process.env['MCP_AUTH_TOKEN'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+
+      delete process.env['MCP_AUTH_TOKEN'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+
+      const tmpDir = '/tmp/mcp-test-mcpservers-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const configPath = `${tmpDir}/mcp-config.json`;
+      fs.writeFileSync(configPath, JSON.stringify({
+        mcpServers: {
+          'riksdag-regering': {
+            type: 'http',
+            url: 'https://riksdag-regering-ai.onrender.com/mcp',
+            headers: {
+              Authorization: 'Bearer mcpserver-token-abc'
+            }
+          }
+        }
+      }));
+      process.env['GH_AW_MCP_CONFIG'] = configPath;
+
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        const client = getDefaultClient();
+        expect(client.authToken).toBe('Bearer mcpserver-token-abc');
+      } finally {
+        if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
+        else delete process.env['MCP_AUTH_TOKEN'];
+        if (origGw !== undefined) process.env['MCP_GATEWAY_API_KEY'] = origGw;
+        else delete process.env['MCP_GATEWAY_API_KEY'];
+        if (origConfig !== undefined) process.env['GH_AW_MCP_CONFIG'] = origConfig;
+        else delete process.env['GH_AW_MCP_CONFIG'];
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        await vi.resetModules();
+      }
+    });
+
+    it('should prefer gateway.apiKey over mcpServers when both are present', async () => {
+      const origAuth = process.env['MCP_AUTH_TOKEN'];
+      const origGw = process.env['MCP_GATEWAY_API_KEY'];
+      const origConfig = process.env['GH_AW_MCP_CONFIG'];
+
+      delete process.env['MCP_AUTH_TOKEN'];
+      delete process.env['MCP_GATEWAY_API_KEY'];
+
+      const tmpDir = '/tmp/mcp-test-priority-' + Date.now();
+      const fs = await import('fs');
+      fs.mkdirSync(tmpDir, { recursive: true });
+      const configPath = `${tmpDir}/mcp-config.json`;
+      fs.writeFileSync(configPath, JSON.stringify({
+        gateway: { apiKey: 'gateway-key-wins' },
+        mcpServers: {
+          'riksdag-regering': {
+            headers: { Authorization: 'Bearer server-key-loses' }
+          }
+        }
+      }));
+      process.env['GH_AW_MCP_CONFIG'] = configPath;
+
+      try {
+        await vi.resetModules();
+        const { getDefaultClient } = await import('../scripts/mcp-client.js');
+        const client = getDefaultClient();
+        // gateway.apiKey takes priority — gets "Bearer " prepended
+        expect(client.authToken).toBe('Bearer gateway-key-wins');
       } finally {
         if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
         else delete process.env['MCP_AUTH_TOKEN'];

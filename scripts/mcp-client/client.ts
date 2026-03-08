@@ -32,6 +32,8 @@ const DEFAULT_MCP_SERVER_URL: string =
   process.env['MCP_SERVER_URL'] ?? 'https://riksdag-regering-ai.onrender.com/mcp';
 const DEFAULT_MAX_RETRIES = 3;
 const RETRY_DELAY = 2000;
+/** Timeout in milliseconds for fetching external URLs (GitHub, etc.) */
+const EXTERNAL_URL_FETCH_TIMEOUT_MS = 15_000;
 
 function getDefaultTimeout(): number {
   const envVal = process.env['MCP_CLIENT_TIMEOUT_MS'];
@@ -40,22 +42,38 @@ function getDefaultTimeout(): number {
 
 /**
  * Resolve the default MCP auth token.
- * Priority: MCP_AUTH_TOKEN env → MCP_GATEWAY_API_KEY env → gateway.apiKey from MCP config file.
+ * Priority:
+ *   1. MCP_AUTH_TOKEN env var (used as-is)
+ *   2. MCP_GATEWAY_API_KEY env var (prepend "Bearer ")
+ *   3. gateway.apiKey from MCP config file (legacy — prepend "Bearer ")
+ *   4. mcpServers['riksdag-regering'].headers.Authorization from MCP config file
+ *      (already includes "Bearer " prefix — used as-is)
+ *
  * When running inside the gh-aw sandbox the gateway requires a Bearer token but
- * the key is only stored in the MCP config JSON — not passed as an env var to the agent container.
+ * the key may be stored in either the legacy gateway section or the mcpServers
+ * section of the MCP config JSON.
  */
 function getDefaultAuthToken(): string {
   if (process.env['MCP_AUTH_TOKEN']) return process.env['MCP_AUTH_TOKEN'];
   if (process.env['MCP_GATEWAY_API_KEY']) return `Bearer ${process.env['MCP_GATEWAY_API_KEY']}`;
 
-  // Try reading the gateway API key from the MCP config file
+  // Try reading from MCP config file
   const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
   try {
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8')) as Record<string, unknown>;
+
+      // Priority 3: legacy gateway.apiKey
       const gateway = raw['gateway'] as Record<string, unknown> | undefined;
       const apiKey = gateway?.['apiKey'] as string | undefined;
       if (apiKey) return `Bearer ${apiKey}`;
+
+      // Priority 4: mcpServers['riksdag-regering'].headers.Authorization
+      const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;
+      const rrServer = mcpServers?.['riksdag-regering'] as Record<string, unknown> | undefined;
+      const headers = rrServer?.['headers'] as Record<string, unknown> | undefined;
+      const authHeader = headers?.['Authorization'] as string | undefined;
+      if (authHeader) return authHeader; // Already includes "Bearer " prefix
     }
   } catch {
     // Config file read is best-effort — fall through to empty token
@@ -564,6 +582,61 @@ export class MCPClient {
     }
 
     return enriched;
+  }
+
+  /**
+   * Fetch government document content from regeringen.se via g0v.se.
+   * Uses the get_g0v_document_content MCP tool to retrieve Markdown content.
+   *
+   * The g0v MCP tool response typically contains:
+   *   - `content` (primary): Markdown content of the document
+   *   - `markdown` (fallback): Alias used by some g0v API versions
+   *   - `text` (fallback): Plain text content when Markdown is unavailable
+   *
+   * @param regeringenUrl - Full URL to a document on regeringen.se
+   * @returns Markdown content of the document, or null if unavailable
+   */
+  async fetchGovernmentDocumentContent(
+    regeringenUrl: string,
+  ): Promise<string | null> {
+    try {
+      const response = await this.request('get_g0v_document_content', {
+        regeringenUrl,
+      });
+      // g0v API returns content in 'content' field; 'markdown'/'text' are fallbacks
+      return (response['content'] ?? response['markdown'] ?? response['text'] ?? null) as string | null;
+    } catch (error: unknown) {
+      console.warn(`⚠️ Could not fetch government document content for ${regeringenUrl}: ${(error as Error).message}`);
+      return null;
+    }
+  }
+
+  /**
+   * Fetch raw text content from an external URL (e.g. GitHub raw, other public URLs).
+   * Performs a simple HTTP GET and returns the response body as text.
+   * Uses a 15-second timeout to avoid hanging on slow external resources.
+   *
+   * @param rawUrl - Full URL to fetch (must be publicly accessible)
+   * @returns Text content of the resource, or null if unavailable
+   */
+  async fetchExternalUrlContent(rawUrl: string): Promise<string | null> {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), EXTERNAL_URL_FETCH_TIMEOUT_MS);
+      const response = await fetch(rawUrl, {
+        signal: controller.signal,
+        headers: { 'Accept': 'text/plain, text/markdown, text/html, */*' },
+      });
+      clearTimeout(timeout);
+      if (!response.ok) {
+        console.warn(`⚠️ HTTP ${response.status} fetching external URL: ${rawUrl}`);
+        return null;
+      }
+      return await response.text();
+    } catch (error: unknown) {
+      console.warn(`⚠️ Could not fetch external URL ${rawUrl}: ${(error as Error).message}`);
+      return null;
+    }
   }
 
   // -----------------------------------------------------------------------

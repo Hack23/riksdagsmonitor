@@ -452,6 +452,90 @@ export function extractDocIdFromUrl(url: string): string | null {
 }
 
 /**
+ * Determine whether a URL points to a government (regeringen.se) resource
+ * that can be fetched via the get_g0v_document_content MCP tool.
+ */
+export function isGovernmentUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.toLowerCase();
+    return hostname === 'regeringen.se' || hostname === 'www.regeringen.se';
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Determine whether a URL points to a GitHub repository resource
+ * (github.com or raw.githubusercontent.com) that can be fetched as raw content.
+ */
+export function isGitHubUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.toLowerCase();
+    return hostname === 'github.com'
+      || hostname === 'www.github.com'
+      || hostname === 'raw.githubusercontent.com';
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Convert a GitHub blob/tree URL to a raw.githubusercontent.com URL.
+ * Handles patterns like:
+ *   - https://github.com/{owner}/{repo}/blob/{branch}/{path}
+ *   - https://github.com/{owner}/{repo}/raw/{branch}/{path}
+ *   - https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path} (returned as-is)
+ *
+ * @returns The raw URL, or null if the URL cannot be converted.
+ */
+export function toGitHubRawUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.toLowerCase();
+
+    // Already a raw URL — return as-is
+    if (hostname === 'raw.githubusercontent.com') {
+      return url;
+    }
+
+    if (hostname !== 'github.com' && hostname !== 'www.github.com') {
+      return null;
+    }
+
+    // Path: /{owner}/{repo}/blob/{branch}/{...path}
+    // or:   /{owner}/{repo}/raw/{branch}/{...path}
+    const segments = parsed.pathname.split('/').filter(Boolean);
+    if (segments.length < 4) return null;
+
+    const [owner, repo, refType, ...rest] = segments;
+    if (refType !== 'blob' && refType !== 'raw') return null;
+
+    // rest = [branch, ...pathParts]
+    return `https://raw.githubusercontent.com/${owner}/${repo}/${rest.join('/')}`;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Compute a short, deterministic hash suffix from a URL path string.
+ * Used to generate collision-resistant `dok_id` values for documents
+ * fetched from government or GitHub URLs.
+ *
+ * The hash is a simple DJB2-style left-shift-and-add over each character,
+ * rendered in base-36.  A leading `-` (from negative ints) is replaced with `n`.
+ */
+export function hashPathSuffix(path: string): string {
+  return path
+    .split('')
+    .reduce((a, c) => ((a << 5) - a + c.charCodeAt(0)) | 0, 0)
+    .toString(36)
+    .replace(/^-/, 'n');
+}
+
+/**
  * Strip HTML tags from a user-supplied string to prevent XSS.
  * Uses a multi-pass loop to handle nested tag reconstruction attempts
  * (e.g. `<scr<script>ipt>`).  Returns **plain text** — callers must
@@ -485,6 +569,7 @@ const DEEP_DOC_TYPE_LABELS: Readonly<Record<string, Partial<Record<Language, str
   sfs:  { en: 'Law/Statute', sv: 'Lag/Förordning', da: 'Lov', no: 'Lov', fi: 'Laki', de: 'Gesetz', fr: 'Loi', es: 'Ley', nl: 'Wet', ar: 'قانون', he: 'חוק', ja: '法律', ko: '법률', zh: '法律' },
   fpm:  { en: 'EU Position Paper', sv: 'Faktapromemoria (EU)', da: 'EU-faktaark', no: 'EU-posisjonsnotat', fi: 'EU-faktamuistio', de: 'EU-Positionspapier', fr: 'Note de position UE', es: 'Documento de posición UE', nl: 'EU-positiepapier', ar: 'ورقة موقف الاتحاد الأوروبي', he: 'מסמך עמדה לאיחוד האירופי', ja: 'EU立場文書', ko: 'EU 입장 문서', zh: 'EU立场文件' },
   pressm: { en: 'Press Release', sv: 'Pressmeddelande', da: 'Pressemeddelelse', no: 'Pressemelding', fi: 'Lehdistötiedote', de: 'Pressemitteilung', fr: 'Communiqué de presse', es: 'Comunicado de prensa', nl: 'Persbericht', ar: 'بيان صحفي', he: 'הודעה לעיתונות', ja: 'プレスリリース', ko: '보도자료', zh: '新闻稿' },
+  ext: { en: 'External Reference', sv: 'Extern referens', da: 'Ekstern reference', no: 'Ekstern referanse', fi: 'Ulkoinen viite', de: 'Externe Referenz', fr: 'Référence externe', es: 'Referencia externa', nl: 'Externe referentie', ar: 'مرجع خارجي', he: 'הפניה חיצונית', ja: '外部参照', ko: '외부 참조', zh: '外部参考' },
 };
 
 /** Per-language headings for sections of the deep-inspection article. */
@@ -863,15 +948,17 @@ function buildDeepInspectionSections(
   const sfsDocs  = docs.filter(d =>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
   const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
+  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
+  const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
   const otherDocs = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm'].includes((d.doktyp || d.documentType) || ''));
+    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
 
   // ── Government / Policy Administration ────────────────────────────────────
   const govStrengths: SwotEntry[] = [
     ...propDocs.slice(0, 3).map(d => toEntry(d, 'high')),
     ...sfsDocs.slice(0, 2).map(d => toEntry(d, 'high')),
     ...skrDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-    ...otherDocs.filter(d => (d.doktyp || d.documentType) === 'pressm').slice(0, 1).map(d => toEntry(d, 'high')),
+    ...pressmDocs.slice(0, 2).map(d => toEntry(d, 'high')),
   ];
   const govWeaknesses: SwotEntry[] = [
     ...betDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
@@ -909,6 +996,7 @@ function buildDeepInspectionSections(
   const privateStrengths: SwotEntry[] = [
     { text: swotDefault('privateStrength', topic, lang), impact: 'high' },
     ...sfsDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
+    ...extDocs.slice(0, 2).map(d => toEntry(d, 'high')),
   ];
   const privateWeaknesses: SwotEntry[] = [
     { text: swotDefault('privateWeakness1', topic, lang), impact: 'medium' },
@@ -1107,6 +1195,14 @@ function buildDeepInspectionSections(
     sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
     sankeyFlows.push({ source: 'pvt', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
   }
+  if (pressmDocs.length > 0) {
+    sankeyNodes.push({ id: 'pressm', label: 'Press Releases', color: 'orange' });
+    sankeyFlows.push({ source: 'gov', target: 'pressm', value: pressmDocs.length, label: `${pressmDocs.length}` });
+  }
+  if (extDocs.length > 0) {
+    sankeyNodes.push({ id: 'ext', label: 'External / Reference', color: 'purple' });
+    sankeyFlows.push({ source: 'pvt', target: 'ext', value: extDocs.length, label: `${extDocs.length}` });
+  }
   if (otherDocs.length > 0) {
     sankeyNodes.push({ id: 'other', label: 'Other Docs', color: 'purple' });
     sankeyFlows.push({ source: 'pvt', target: 'other', value: otherDocs.length, label: `${otherDocs.length}` });
@@ -1158,15 +1254,23 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
   try {
     const client: MCPClient = await getSharedClient();
 
-    // Resolve document IDs from URLs
+    // Resolve document IDs from URLs and collect government/GitHub URLs separately
     const urlDerivedIds: string[] = [];
+    const governmentUrls: string[] = [];
+    const gitHubUrls: string[] = [];
     for (const url of documentUrls) {
       const docId = extractDocIdFromUrl(url);
       if (docId) {
         console.log(`  🔗 Resolved URL → dok_id: ${docId}`);
         urlDerivedIds.push(docId);
+      } else if (isGovernmentUrl(url)) {
+        console.log(`  🏛️ Government URL detected (will fetch via g0v): ${url}`);
+        governmentUrls.push(url);
+      } else if (isGitHubUrl(url)) {
+        console.log(`  📦 GitHub URL detected (will fetch raw content): ${url}`);
+        gitHubUrls.push(url);
       } else {
-        console.warn(`  ⚠️ Could not extract dok_id from URL: ${url}`);
+        console.warn(`  ⚠️ Unsupported URL type (riksdagen.se, regeringen.se, github.com supported): ${url}`);
       }
     }
 
@@ -1182,6 +1286,97 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         if (doc) targetDocs.push(doc as RawDocument);
       } catch (err: unknown) {
         console.warn(`  ⚠️ Could not fetch document ${docId}: ${(err as Error).message}`);
+      }
+    }
+
+    // Fetch government document content for regeringen.se URLs via g0v
+    for (const govUrl of governmentUrls) {
+      try {
+        console.log(`  🏛️ Fetching government document: ${govUrl}`);
+        const content = await client.fetchGovernmentDocumentContent(govUrl);
+        if (content) {
+          // Extract a human-readable title from the URL path's last segment.
+          // e.g. "/pressmeddelanden/2026/03/91-atgarder-ska-starka-..." → "91 atgarder ska starka ..."
+          const urlPath = new URL(govUrl).pathname;
+          const segments = urlPath.split('/').filter(Boolean);
+          const titleSlug = segments[segments.length - 1] ?? 'government-document';
+          const titleFromSlug = titleSlug.replace(/-/g, ' ');
+
+          // Use a URL-path-based hash suffix to avoid dok_id collisions between
+          // government documents that share the same first 30 chars of their slug.
+          const hashSuffix = hashPathSuffix(urlPath);
+          const govDoc: RawDocument = {
+            doktyp: 'pressm',
+            documentType: 'pressm',
+            titel: titleFromSlug,
+            title: titleFromSlug,
+            url: govUrl,
+            dok_id: `gov-${titleSlug.slice(0, 30)}-${hashSuffix}`,
+            fullText: content,
+            fullContent: content,
+            contentFetched: true,
+            summary: content.slice(0, 500),
+            datum: new Date().toISOString().split('T')[0],
+          };
+          targetDocs.push(govDoc);
+          console.log(`  ✅ Government document fetched: ${titleFromSlug}`);
+        } else {
+          console.warn(`  ⚠️ No content returned for government URL: ${govUrl}`);
+        }
+      } catch (err: unknown) {
+        console.warn(`  ⚠️ Failed to fetch government document ${govUrl}: ${(err as Error).message}`);
+      }
+    }
+
+    // Fetch GitHub raw content for github.com URLs (e.g. strategy documents, reference docs)
+    for (const ghUrl of gitHubUrls) {
+      try {
+        const rawUrl = toGitHubRawUrl(ghUrl);
+        if (!rawUrl) {
+          console.warn(`  ⚠️ Cannot convert GitHub URL to raw format: ${ghUrl}`);
+          continue;
+        }
+        console.log(`  📦 Fetching GitHub content: ${rawUrl}`);
+        const content = await client.fetchExternalUrlContent(rawUrl);
+        if (content) {
+          // Extract title from file path — e.g. "Information_Security_Strategy.md" → "Information Security Strategy"
+          const urlPath = new URL(ghUrl).pathname;
+          // After split('/').filter(Boolean), segments = ['owner', 'repo', 'blob', 'branch', ...pathParts]
+          const segments = urlPath.split('/').filter(Boolean);
+          const filename = segments[segments.length - 1] ?? 'external-document';
+          const titleFromFilename = filename
+            .replace(/\.(md|txt|rst|adoc|html)$/i, '')
+            .replace(/[-_]/g, ' ');
+
+          // Identify the repository context (owner/repo) for the title
+          const repoContext = segments.length >= 2 ? `${segments[0]}/${segments[1]}` : '';
+          const fullTitle = repoContext ? `${titleFromFilename} (${repoContext})` : titleFromFilename;
+
+          // Use full URL path hash to avoid dok_id collisions across repositories
+          const hashSuffix = hashPathSuffix(urlPath);
+          // Include repo context in dok_id for cross-repository uniqueness
+          const repoSlug = repoContext ? repoContext.replace('/', '-').slice(0, 20) : '';
+          const fileSlug = filename.slice(0, 30).replace(/\.(md|txt|rst|adoc|html)$/i, '');
+          const ghDoc: RawDocument = {
+            doktyp: 'ext',
+            documentType: 'ext',
+            titel: fullTitle,
+            title: fullTitle,
+            url: ghUrl,
+            dok_id: `gh-${repoSlug}-${fileSlug}-${hashSuffix}`,
+            fullText: content,
+            fullContent: content,
+            contentFetched: true,
+            summary: content.slice(0, 500),
+            datum: new Date().toISOString().split('T')[0],
+          };
+          targetDocs.push(ghDoc);
+          console.log(`  ✅ GitHub document fetched: ${fullTitle}`);
+        } else {
+          console.warn(`  ⚠️ No content returned for GitHub URL: ${ghUrl}`);
+        }
+      } catch (err: unknown) {
+        console.warn(`  ⚠️ Failed to fetch GitHub document ${ghUrl}: ${(err as Error).message}`);
       }
     }
 
@@ -1280,7 +1475,10 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const watchPoints = extractWatchPoints(contentData, lang);
       const metadata = generateMetadata(contentData, 'deep-inspection', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_dokument', 'get_dokument_innehall', 'search_dokument']);
+      const sourceMethods = ['get_dokument', 'get_dokument_innehall', 'search_dokument'];
+      if (governmentUrls.length > 0) sourceMethods.push('get_g0v_document_content');
+      if (gitHubUrls.length > 0) sourceMethods.push('GitHub raw content');
+      const sources: string[] = generateSources(sourceMethods);
 
       // SWOT + dashboard sections — topic-focused, document-derived
       const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);
