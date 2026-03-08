@@ -2,11 +2,13 @@
  * Tests for deep-inspection generator utilities:
  * - extractDocIdFromUrl: URL-to-dok_id resolution
  * - isGovernmentUrl: Detection of regeringen.se URLs
+ * - isGitHubUrl: Detection of github.com / raw.githubusercontent.com URLs
+ * - toGitHubRawUrl: Conversion of GitHub blob URLs to raw URLs
  * - sanitizePlainText: XSS prevention for user-controlled strings
  */
 
 import { describe, it, expect } from 'vitest';
-import { extractDocIdFromUrl, isGovernmentUrl, sanitizePlainText } from '../scripts/generate-news-enhanced/generators.js';
+import { extractDocIdFromUrl, isGovernmentUrl, isGitHubUrl, toGitHubRawUrl, sanitizePlainText } from '../scripts/generate-news-enhanced/generators.js';
 
 describe('extractDocIdFromUrl', () => {
   it('extracts dok_id from riksdagen.se document URL', () => {
@@ -109,6 +111,95 @@ describe('isGovernmentUrl', () => {
 
   it('returns false for empty string', () => {
     expect(isGovernmentUrl('')).toBe(false);
+  });
+});
+
+describe('isGitHubUrl', () => {
+  it('returns true for github.com URL', () => {
+    expect(isGitHubUrl(
+      'https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Strategy.md'
+    )).toBe(true);
+  });
+
+  it('returns true for www.github.com URL', () => {
+    expect(isGitHubUrl('https://www.github.com/Hack23/cia/blob/master/README.md')).toBe(true);
+  });
+
+  it('returns true for raw.githubusercontent.com URL', () => {
+    expect(isGitHubUrl(
+      'https://raw.githubusercontent.com/Hack23/ISMS-PUBLIC/main/Information_Security_Strategy.md'
+    )).toBe(true);
+  });
+
+  it('returns false for riksdagen.se URL', () => {
+    expect(isGitHubUrl('https://www.riksdagen.se/sv/')).toBe(false);
+  });
+
+  it('returns false for regeringen.se URL', () => {
+    expect(isGitHubUrl('https://www.regeringen.se/pressmeddelanden/')).toBe(false);
+  });
+
+  it('returns false for other URLs', () => {
+    expect(isGitHubUrl('https://example.com/some-page')).toBe(false);
+  });
+
+  it('returns false for invalid URL', () => {
+    expect(isGitHubUrl('not-a-url')).toBe(false);
+  });
+
+  it('returns false for empty string', () => {
+    expect(isGitHubUrl('')).toBe(false);
+  });
+});
+
+describe('toGitHubRawUrl', () => {
+  it('converts github.com/blob/ URL to raw.githubusercontent.com', () => {
+    expect(toGitHubRawUrl(
+      'https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Strategy.md'
+    )).toBe(
+      'https://raw.githubusercontent.com/Hack23/ISMS-PUBLIC/main/Information_Security_Strategy.md'
+    );
+  });
+
+  it('converts github.com/raw/ URL to raw.githubusercontent.com', () => {
+    expect(toGitHubRawUrl(
+      'https://github.com/Hack23/cia/raw/master/README.md'
+    )).toBe(
+      'https://raw.githubusercontent.com/Hack23/cia/master/README.md'
+    );
+  });
+
+  it('returns raw.githubusercontent.com URL as-is', () => {
+    const rawUrl = 'https://raw.githubusercontent.com/Hack23/ISMS-PUBLIC/main/Information_Security_Strategy.md';
+    expect(toGitHubRawUrl(rawUrl)).toBe(rawUrl);
+  });
+
+  it('handles deep nested paths in blob URLs', () => {
+    expect(toGitHubRawUrl(
+      'https://github.com/Hack23/cia/blob/master/service.data.impl/sample-data/file.csv'
+    )).toBe(
+      'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/file.csv'
+    );
+  });
+
+  it('returns null for github.com URL without blob/raw path', () => {
+    expect(toGitHubRawUrl('https://github.com/Hack23/ISMS-PUBLIC')).toBeNull();
+  });
+
+  it('returns null for github.com URL with insufficient path segments', () => {
+    expect(toGitHubRawUrl('https://github.com/Hack23')).toBeNull();
+  });
+
+  it('returns null for non-GitHub URL', () => {
+    expect(toGitHubRawUrl('https://example.com/path')).toBeNull();
+  });
+
+  it('returns null for invalid URL', () => {
+    expect(toGitHubRawUrl('not-a-url')).toBeNull();
+  });
+
+  it('returns null for empty string', () => {
+    expect(toGitHubRawUrl('')).toBeNull();
   });
 });
 

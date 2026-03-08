@@ -593,6 +593,34 @@ export class MCPClient {
     }
   }
 
+  /**
+   * Fetch raw text content from an external URL (e.g. GitHub raw, other public URLs).
+   * Performs a simple HTTP GET and returns the response body as text.
+   * Uses a 15-second timeout to avoid hanging on slow external resources.
+   *
+   * @param rawUrl - Full URL to fetch (must be publicly accessible)
+   * @returns Text content of the resource, or null if unavailable
+   */
+  async fetchExternalUrlContent(rawUrl: string): Promise<string | null> {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15_000);
+      const response = await fetch(rawUrl, {
+        signal: controller.signal,
+        headers: { 'Accept': 'text/plain, text/markdown, text/html, */*' },
+      });
+      clearTimeout(timeout);
+      if (!response.ok) {
+        console.warn(`⚠️ HTTP ${response.status} fetching external URL: ${rawUrl}`);
+        return null;
+      }
+      return await response.text();
+    } catch (error: unknown) {
+      console.warn(`⚠️ Could not fetch external URL ${rawUrl}: ${(error as Error).message}`);
+      return null;
+    }
+  }
+
   // -----------------------------------------------------------------------
   // Statistics
   // -----------------------------------------------------------------------

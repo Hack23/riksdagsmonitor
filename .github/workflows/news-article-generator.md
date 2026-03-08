@@ -21,10 +21,10 @@ on:
         description: 'Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)'
         required: false
       document_urls:
-        description: 'Comma-separated URLs to specific documents for deep analysis. Supports riksdagen.se (auto-resolves dok_id), data.riksdagen.se, and regeringen.se URLs (fetched via g0v for content analysis)'
+        description: 'Comma-separated URLs to specific documents for deep analysis. Supports riksdagen.se (auto-resolves dok_id), data.riksdagen.se, regeringen.se URLs (fetched via g0v for content analysis), and github.com URLs (fetched as raw content for comparison/reference analysis)'
         required: false
       focus_topic:
-        description: 'Specific topic or policy area to focus deep-inspection analysis on (e.g. defence, migration, budget)'
+        description: 'Specific topic or policy area to focus deep-inspection analysis on (e.g. "cyber security, cyberthreats, ai security, ai future", defence, migration, budget). Multiple related keywords can be comma-separated for richer analysis.'
         required: false
 
 permissions:
@@ -129,12 +129,22 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
 
    **URL handling for `document_urls`:**
    - **riksdagen.se / data.riksdagen.se URLs** → auto-resolved to dok_id, fetched via `get_dokument`
-   - **regeringen.se URLs** (e.g. press releases, propositions) → fetched via `get_g0v_document_content` MCP tool. The content is included as a government-source document in the analysis. **This is the primary mechanism for analyzing government press releases, SOUs, and other regeringen.se content.**
+   - **regeringen.se URLs** (e.g. press releases, SOUs, government decisions) → fetched via `get_g0v_document_content` MCP tool. The content is included as a government-source document in the analysis. **This is the primary mechanism for analyzing government press releases, SOUs, and other regeringen.se content.**
+   - **github.com / raw.githubusercontent.com URLs** → converted to raw URL, fetched as text content. Used for **comparison/reference analysis** (e.g. linking Hack23 ISMS strategy, security policies, or other reference documents for comparison against government policy). The `blob/` path is automatically converted to raw content URL.
    - **Other URLs** → logged as warnings (not currently supported)
+
+   **Example deep-inspection dispatch for cybersecurity strategy comparison:**
+   ```
+   article_types: deep-inspection
+   document_urls: https://www.regeringen.se/pressmeddelanden/2026/03/91-atgarder-ska-starka-sveriges-motstandskraft-mot-cyberhot/,https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Strategy.md
+   focus_topic: cyber security, cyberthreats, threatlandscape, cyber security strategy, ai future, ai security, hack23
+   ```
+   This will: (1) fetch the 91-measure plan via g0v, (2) fetch Hack23 ISMS strategy from GitHub, (3) generate SWOT comparing government strategy with private-sector reference, (4) focus all analysis through the cybersecurity + AI lens.
 
    Data sources automatically integrated into deep-inspection articles:
    - **Riksdag MCP** — propositions, committee reports, motions, laws (SFS), EU position papers
    - **Government MCP (g0v)** — regeringen.se press releases, SOUs, government decisions (via `get_g0v_document_content`)
+   - **GitHub raw content** — external reference documents (strategy docs, ISMS policies, compliance frameworks) for comparison analysis
    - **World Bank MCP** (`api.worldbank.org`) — economic indicators for matching policy domains
    - **SCB MCP** (`api.scb.se`) — Swedish statistics context for matching policy domains
    - **CIA-data** (JSON exports) — when loaded via `--document-urls` pointing to CIA exports
