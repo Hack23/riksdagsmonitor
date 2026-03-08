@@ -119,7 +119,19 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
 3. If **force_generation** is `true`, generate even if recent articles exist.
 4. If **languages** is empty/blank, default to `all` (14 languages).
 5. If **article_types** includes `deep-inspection`, use **document_ids**, **document_urls**, and **focus_topic** for targeted deep analysis. **`document_ids` must be actual Riksdag dok_id values** (e.g. `H901FöU1,GZ01KU1`) — NOT search queries or wildcards. Use the riksdag-regering MCP tools first to find the correct IDs, then pass them.
-6. For `deep-inspection` type: pass `--document-ids=<value>`, `--document-urls=<value>`, and `--focus-topic=<value>` flags to the generation script. **The script generates SWOT analysis, Chart.js dashboard, and 5W deep-analysis sections — these are ONLY available via the script, never via manual fallback.**
+6. For `deep-inspection` type: pass `--document-ids=<value>`, `--document-urls=<value>`, and `--focus-topic=<value>` flags to the generation script. **The script generates the following sections — these are ONLY available via the script, never via manual fallback:**
+   - **Multi-stakeholder SWOT analysis** (Government, Parliament, Civil Society perspectives)
+   - **Document Intelligence Dashboard** — Chart.js bar chart of document-type distribution
+   - **Sankey flow chart** (SVG, no JS) — initiating actors → document types (only when ≥ 2 document types detected)
+   - **Color-coded CSS Mindmap** — topic → detected policy domains → stakeholders → data sources
+   - **World Bank Economic Dashboard** — auto-selected Nordic comparison charts based on detected policy domains (fiscal, labour, defence, healthcare, etc.)
+   - **5W Deep-Analysis section** — Who/What/When/Why/Winners–Losers narrative
+
+   Data sources automatically integrated into deep-inspection articles:
+   - **Riksdag MCP** — propositions, committee reports, motions, laws (SFS), EU position papers
+   - **World Bank MCP** (`api.worldbank.org`) — economic indicators for matching policy domains
+   - **SCB MCP** (`api.scb.se`) — Swedish statistics context for matching policy domains
+   - **CIA-data** (JSON exports) — when loaded via `--document-urls` pointing to CIA exports
 
 ## ⚠️ NON-NEGOTIABLE RULES
 
@@ -303,7 +315,7 @@ fi
 
 ### Fallback: Manual Generation (ONLY for non-deep-inspection types if script fails AND no articles created)
 
-> ⚠️ **`deep-inspection` NEVER uses manual fallback.** The script generates SWOT analysis (multi-stakeholder), Chart.js document-intelligence dashboard, and 5W deep-analysis sections that **cannot be replicated manually**. If the script fails for deep-inspection, diagnose and fix the MCP connection, then retry. If MCP is genuinely unavailable, call `safeoutputs___noop` with a clear error message.
+> ⚠️ **`deep-inspection` NEVER uses manual fallback.** The script generates multi-stakeholder SWOT analysis, Chart.js document-intelligence dashboard, inline SVG Sankey flow chart, color-coded CSS mindmap, World Bank economic dashboard, and 5W deep-analysis sections that **cannot be replicated manually**. If the script fails for deep-inspection, diagnose and fix the MCP connection, then retry. If MCP is genuinely unavailable, call `safeoutputs___noop` with a clear error message.
 >
 > **Before declaring script failure, verify MCP is live in the same shell:**
 > ```bash

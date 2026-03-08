@@ -14,7 +14,8 @@
  * - **dashboard-section** — generateDashboardSection  (embeddable Chart.js dashboard)
  * - **stakeholder-swot-section** — generateStakeholderSwotSection  (multi-stakeholder SWOT)
  * - **economic-dashboard-section** — generateEconomicDashboardSection  (World Bank dashboards)
- * - **newsworthiness** — scoreNewsworthiness  (strategic content detection)
+ * - **sankey-section** — generateSankeySection  (inline SVG Sankey flow charts)
+ * - **mindmap-section** — generateMindmapSection  (color-coded CSS mindmaps)
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -39,3 +40,7 @@ export { generateEconomicDashboardSection, findIndicatorsForDomains, buildEconom
 export type { EconomicDashboardOptions, EconomicDataPoint } from './economic-dashboard-section.js';
 export { scoreNewsworthiness } from './newsworthiness.js';
 export type { NewsworthinessScore, NewsworthinessDimension } from './newsworthiness.js';
+export { generateMindmapSection } from './mindmap-section.js';
+export type { MindmapSectionOptions, MindmapBranch, MindmapBranchColor } from './mindmap-section.js';
+export { generateSankeySection } from './sankey-section.js';
+export type { SankeySectionOptions, SankeyNode, SankeyFlow, SankeyNodeColor } from './sankey-section.js';

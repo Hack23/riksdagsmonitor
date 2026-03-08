@@ -58,6 +58,8 @@ export {
   buildEconomicCharts,
   buildEconomicTables,
   scoreNewsworthiness,
+  generateMindmapSection,
+  generateSankeySection,
 } from './content-generators.js';
 export type {
   SwotSectionOptions,
@@ -68,6 +70,13 @@ export type {
   EconomicDataPoint,
   NewsworthinessScore,
   NewsworthinessDimension,
+  MindmapSectionOptions,
+  MindmapBranch,
+  MindmapBranchColor,
+  SankeySectionOptions,
+  SankeyNode,
+  SankeyFlow,
+  SankeyNodeColor,
 } from './content-generators.js';
 
 // ── Re-export metadata ─────────────────────────────────────────────────────
