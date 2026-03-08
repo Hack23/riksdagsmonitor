@@ -625,7 +625,12 @@ function buildTopicContextParagraph(docs: RawDocument[], topic: string | null, l
   const esc = escapeHtml;
   const docCount = docs.length;
   const allDomains = new Set<string>();
-  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
+  // When a focus topic is provided, suppress generic detected domains entirely — they can
+  // include tangential policy areas that bleed into "other areas" beyond the stated focus.
+  // The topic itself IS the scope; detected domains would only add noise.
+  if (!topic) {
+    docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
+  }
   const domainList = [...allDomains].slice(0, 5).map(d => esc(d)).join(', ');
 
   const templates: Partial<Record<Language, string>> = {
@@ -672,7 +677,7 @@ function buildDocumentEntry(
   if (doc.dok_id) metaParts.push(`<code>${esc(doc.dok_id)}</code>`);
   if (date) metaParts.push(`<time datetime="${date}">${date}</time>`);
   if (organ) metaParts.push(`<span class="doc-organ">${esc(organ)}</span>`);
-  if (domains.length > 0) metaParts.push(`<em>${domains.map(d => esc(d)).join(', ')}</em>`);
+  if (domains.length > 0 && !topic) metaParts.push(`<em>${domains.map(d => esc(d)).join(', ')}</em>`);
   if (metaParts.length > 0) {
     entry += `    <p class="doc-meta">${metaParts.join(' · ')}</p>\n`;
   }
@@ -699,7 +704,8 @@ function buildDocumentEntry(
   }
 
   // Deep policy analysis (uses full text if enriched, otherwise significance)
-  const deepAnalysis = generateDeepPolicyAnalysis(doc, lang, doktyp || undefined);
+  // Pass 600-char limit — deep inspection requires substantive per-document analysis.
+  const deepAnalysis = generateDeepPolicyAnalysis(doc, lang, doktyp || undefined, 600);
   if (deepAnalysis) {
     entry += `    <div class="doc-analysis">${deepAnalysis}</div>\n`;
   }

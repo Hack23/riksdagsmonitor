@@ -208,11 +208,8 @@ case "$LANGUAGES_INPUT" in
   *) LANG_ARG="$LANGUAGES_INPUT" ;;
 esac
 
-# Set up MCP connection for script
-source scripts/mcp-setup.sh
-
-# Generate breaking news articles for all requested languages
-npx tsx scripts/generate-news-enhanced.ts \
+# Set up MCP connection and generate (source && npx must run on ONE line to preserve MCP_SERVER_URL)
+source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
   --types=breaking \
   --languages="$LANG_ARG" \
   --skip-existing
@@ -339,7 +336,7 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 | Scenario | Cause | Fix |
 |----------|-------|-----|
-| Tool not found | MCP server not initialized | Re-run `source scripts/mcp-setup.sh` and retry |
+| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
 | Empty results | No significant events detected in monitoring window | Skip generation with `safeoutputs___noop` |
 | Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
