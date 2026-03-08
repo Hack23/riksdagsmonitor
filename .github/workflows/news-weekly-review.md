@@ -25,7 +25,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 30
+timeout-minutes: 45
 
 network:
   allowed:
@@ -102,12 +102,12 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 
 This is a **retrospective** article analyzing the past 7 days of parliamentary activity — votes completed, committee decisions made, government announcements issued, and legislative developments during the week.
 
-## ⏱️ Time Budget (30 minutes)
+## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–10**: Query documents and votes from past 7 days
-- **Minutes 10–22**: Generate articles for all 14 languages
-- **Minutes 22–27**: Validate and commit
-- **Minutes 27–30**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 10–32**: Generate articles for all 14 languages
+- **Minutes 32–40**: Validate and commit
+- **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
 
 ## Required Skills
 
