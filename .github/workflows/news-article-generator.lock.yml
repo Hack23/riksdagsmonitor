@@ -23,7 +23,7 @@
 #
 # Manual-only multi-type article generator. For automated per-type generation, use the dedicated news-committee-reports, news-propositions, news-motions, news-week-ahead, news-month-ahead, news-weekly-review, news-monthly-review workflows instead.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"dcf651455282d6b07fe8685c0f413a26e7f85d140cafa83b403dc44e41fc89b2","compiler_version":"v0.56.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"10c877f6cb7a9dcb3f38732dfd4c184cb684beaa6967aef2c53e5e761d8e3ed0","compiler_version":"v0.56.0"}
 
 name: "News: Article Generator (Manual)"
 "on":
@@ -36,7 +36,7 @@ name: "News: Article Generator (Manual)"
         description: Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)
         required: false
       document_urls:
-        description: Comma-separated URLs to specific Riksdag documents for deep analysis
+        description: Comma-separated URLs to specific documents for deep analysis. Supports riksdagen.se (auto-resolves dok_id), data.riksdagen.se, and regeringen.se URLs (fetched via g0v for content analysis)
         required: false
       focus_topic:
         description: Specific topic or policy area to focus deep-inspection analysis on (e.g. defence, migration, budget)

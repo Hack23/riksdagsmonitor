@@ -566,6 +566,26 @@ export class MCPClient {
     return enriched;
   }
 
+  /**
+   * Fetch government document content from regeringen.se via g0v.se.
+   * Uses the get_g0v_document_content MCP tool to retrieve Markdown content.
+   * @param regeringenUrl - Full URL to a document on regeringen.se
+   * @returns Markdown content of the document, or null if unavailable
+   */
+  async fetchGovernmentDocumentContent(
+    regeringenUrl: string,
+  ): Promise<string | null> {
+    try {
+      const response = await this.request('get_g0v_document_content', {
+        regeringenUrl,
+      });
+      return (response['content'] ?? response['markdown'] ?? response['text'] ?? null) as string | null;
+    } catch (error: unknown) {
+      console.warn(`⚠️ Could not fetch government document content for ${regeringenUrl}: ${(error as Error).message}`);
+      return null;
+    }
+  }
+
   // -----------------------------------------------------------------------
   // Statistics
   // -----------------------------------------------------------------------

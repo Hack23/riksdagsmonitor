@@ -452,6 +452,20 @@ export function extractDocIdFromUrl(url: string): string | null {
 }
 
 /**
+ * Determine whether a URL points to a government (regeringen.se) resource
+ * that can be fetched via the get_g0v_document_content MCP tool.
+ */
+export function isGovernmentUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.toLowerCase();
+    return hostname === 'regeringen.se' || hostname === 'www.regeringen.se';
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Strip HTML tags from a user-supplied string to prevent XSS.
  * Uses a multi-pass loop to handle nested tag reconstruction attempts
  * (e.g. `<scr<script>ipt>`).  Returns **plain text** — callers must
@@ -1158,13 +1172,17 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
   try {
     const client: MCPClient = await getSharedClient();
 
-    // Resolve document IDs from URLs
+    // Resolve document IDs from URLs and collect government URLs separately
     const urlDerivedIds: string[] = [];
+    const governmentUrls: string[] = [];
     for (const url of documentUrls) {
       const docId = extractDocIdFromUrl(url);
       if (docId) {
         console.log(`  🔗 Resolved URL → dok_id: ${docId}`);
         urlDerivedIds.push(docId);
+      } else if (isGovernmentUrl(url)) {
+        console.log(`  🏛️ Government URL detected (will fetch via g0v): ${url}`);
+        governmentUrls.push(url);
       } else {
         console.warn(`  ⚠️ Could not extract dok_id from URL: ${url}`);
       }
@@ -1182,6 +1200,41 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         if (doc) targetDocs.push(doc as RawDocument);
       } catch (err: unknown) {
         console.warn(`  ⚠️ Could not fetch document ${docId}: ${(err as Error).message}`);
+      }
+    }
+
+    // Fetch government document content for regeringen.se URLs via g0v
+    for (const govUrl of governmentUrls) {
+      try {
+        console.log(`  🏛️ Fetching government document: ${govUrl}`);
+        const content = await client.fetchGovernmentDocumentContent(govUrl);
+        if (content) {
+          // Extract a title from the URL path (last meaningful segment)
+          const urlPath = new URL(govUrl).pathname;
+          const segments = urlPath.split('/').filter(Boolean);
+          const titleSlug = segments[segments.length - 1] ?? 'government-document';
+          const titleFromSlug = titleSlug.replace(/-/g, ' ').replace(/^\d+\s*/, '');
+
+          const govDoc: RawDocument = {
+            doktyp: 'pressm',
+            documentType: 'pressm',
+            titel: titleFromSlug,
+            title: titleFromSlug,
+            url: govUrl,
+            dok_id: `gov-${titleSlug.slice(0, 30)}`,
+            fullText: content,
+            fullContent: content,
+            contentFetched: true,
+            summary: content.slice(0, 500),
+            datum: new Date().toISOString().split('T')[0],
+          };
+          targetDocs.push(govDoc);
+          console.log(`  ✅ Government document fetched: ${titleFromSlug}`);
+        } else {
+          console.warn(`  ⚠️ No content returned for government URL: ${govUrl}`);
+        }
+      } catch (err: unknown) {
+        console.warn(`  ⚠️ Failed to fetch government document ${govUrl}: ${(err as Error).message}`);
       }
     }
 
@@ -1280,7 +1333,9 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const watchPoints = extractWatchPoints(contentData, lang);
       const metadata = generateMetadata(contentData, 'deep-inspection', lang);
       const readTime: string = calculateReadTime(content);
-      const sources: string[] = generateSources(['get_dokument', 'get_dokument_innehall', 'search_dokument']);
+      const sourceMethods = ['get_dokument', 'get_dokument_innehall', 'search_dokument'];
+      if (governmentUrls.length > 0) sourceMethods.push('get_g0v_document_content');
+      const sources: string[] = generateSources(sourceMethods);
 
       // SWOT + dashboard sections — topic-focused, document-derived
       const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);

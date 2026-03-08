@@ -21,7 +21,7 @@ on:
         description: 'Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)'
         required: false
       document_urls:
-        description: 'Comma-separated URLs to specific Riksdag documents for deep analysis'
+        description: 'Comma-separated URLs to specific documents for deep analysis. Supports riksdagen.se (auto-resolves dok_id), data.riksdagen.se, and regeringen.se URLs (fetched via g0v for content analysis)'
         required: false
       focus_topic:
         description: 'Specific topic or policy area to focus deep-inspection analysis on (e.g. defence, migration, budget)'
@@ -127,8 +127,14 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
    - **World Bank Economic Dashboard** — auto-selected Nordic comparison charts based on detected policy domains (fiscal, labour, defence, healthcare, etc.)
    - **5W Deep-Analysis section** — Who/What/When/Why/Winners–Losers narrative
 
+   **URL handling for `document_urls`:**
+   - **riksdagen.se / data.riksdagen.se URLs** → auto-resolved to dok_id, fetched via `get_dokument`
+   - **regeringen.se URLs** (e.g. press releases, propositions) → fetched via `get_g0v_document_content` MCP tool. The content is included as a government-source document in the analysis. **This is the primary mechanism for analyzing government press releases, SOUs, and other regeringen.se content.**
+   - **Other URLs** → logged as warnings (not currently supported)
+
    Data sources automatically integrated into deep-inspection articles:
    - **Riksdag MCP** — propositions, committee reports, motions, laws (SFS), EU position papers
+   - **Government MCP (g0v)** — regeringen.se press releases, SOUs, government decisions (via `get_g0v_document_content`)
    - **World Bank MCP** (`api.worldbank.org`) — economic indicators for matching policy domains
    - **SCB MCP** (`api.scb.se`) — Swedish statistics context for matching policy domains
    - **CIA-data** (JSON exports) — when loaded via `--document-urls` pointing to CIA exports

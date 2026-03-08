@@ -1,11 +1,12 @@
 /**
  * Tests for deep-inspection generator utilities:
  * - extractDocIdFromUrl: URL-to-dok_id resolution
+ * - isGovernmentUrl: Detection of regeringen.se URLs
  * - sanitizePlainText: XSS prevention for user-controlled strings
  */
 
 import { describe, it, expect } from 'vitest';
-import { extractDocIdFromUrl, sanitizePlainText } from '../scripts/generate-news-enhanced/generators.js';
+import { extractDocIdFromUrl, isGovernmentUrl, sanitizePlainText } from '../scripts/generate-news-enhanced/generators.js';
 
 describe('extractDocIdFromUrl', () => {
   it('extracts dok_id from riksdagen.se document URL', () => {
@@ -66,10 +67,48 @@ describe('extractDocIdFromUrl', () => {
     expect(extractDocIdFromUrl('')).toBeNull();
   });
 
+  it('returns null for regeringen.se URLs (handled separately via g0v)', () => {
+    expect(extractDocIdFromUrl(
+      'https://www.regeringen.se/pressmeddelanden/2026/03/91-atgarder-ska-starka-sveriges-motstandskraft-mot-cyberhot/'
+    )).toBeNull();
+  });
+
   it('handles URLs with query strings', () => {
     expect(extractDocIdFromUrl(
       'https://riksdagen.se/sv/dokument-och-lagar/dokument/motion/H901FiU1?highlight=budget'
     )).toBe('H901FiU1');
+  });
+});
+
+describe('isGovernmentUrl', () => {
+  it('returns true for www.regeringen.se URL', () => {
+    expect(isGovernmentUrl(
+      'https://www.regeringen.se/pressmeddelanden/2026/03/91-atgarder-ska-starka-sveriges-motstandskraft-mot-cyberhot/'
+    )).toBe(true);
+  });
+
+  it('returns true for regeringen.se URL without www', () => {
+    expect(isGovernmentUrl('https://regeringen.se/sou/2026/01/sou-2026-1/')).toBe(true);
+  });
+
+  it('returns false for riksdagen.se URL', () => {
+    expect(isGovernmentUrl('https://www.riksdagen.se/sv/dokument-och-lagar/')).toBe(false);
+  });
+
+  it('returns false for data.riksdagen.se URL', () => {
+    expect(isGovernmentUrl('https://data.riksdagen.se/dokument/H901FiU1')).toBe(false);
+  });
+
+  it('returns false for other URLs', () => {
+    expect(isGovernmentUrl('https://example.com/some-page')).toBe(false);
+  });
+
+  it('returns false for invalid URL', () => {
+    expect(isGovernmentUrl('not-a-url')).toBe(false);
+  });
+
+  it('returns false for empty string', () => {
+    expect(isGovernmentUrl('')).toBe(false);
   });
 });
 
