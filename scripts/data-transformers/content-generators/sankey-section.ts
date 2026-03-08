@@ -244,8 +244,10 @@ function layoutSankey(
       (flow.value / Math.max(tgtVal, valuePer[srcNode.id] ?? 1)) * (srcNode.height + tgtNode.height) / 2,
     ));
 
-    const x1 = COL_LEFT + NODE_WIDTH;
-    const x2 = COL_RIGHT;
+    const srcIsLeft = leftLayout.some(l => l.id === srcNode.id);
+    const tgtIsLeft = leftLayout.some(l => l.id === tgtNode.id);
+    const x1 = srcIsLeft ? COL_LEFT + NODE_WIDTH : COL_RIGHT;
+    const x2 = tgtIsLeft ? COL_LEFT : COL_RIGHT + NODE_WIDTH;
     const y1 = srcNode.y + srcNode.srcOffset;
     const y2 = tgtNode.y + tgtNode.tgtOffset;
 
