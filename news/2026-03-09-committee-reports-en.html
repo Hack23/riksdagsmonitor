@@ -46,7 +46,7 @@
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-en.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-da.html">
-  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-no.html">
+  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-no.html">
   <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-fi.html">
   <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-de.html">
   <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-fr.html">
@@ -66,6 +66,9 @@
   
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="../styles.css">
+  
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script src="../js/theme-init.js"></script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">
@@ -152,21 +155,29 @@
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-<nav class="language-switcher" role="navigation" aria-label="Language">
-    <a href="2026-03-09-committee-reports-en.html" class="lang-link active" aria-current="page" hreflang="en">🇬🇧 English</a>
-    <a href="2026-03-09-committee-reports-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
-    <a href="2026-03-09-committee-reports-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="2026-03-09-committee-reports-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
-    <a href="2026-03-09-committee-reports-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
-    <a href="2026-03-09-committee-reports-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
-    <a href="2026-03-09-committee-reports-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
-    <a href="2026-03-09-committee-reports-es.html" class="lang-link" hreflang="es">🇪🇸 Español</a>
-    <a href="2026-03-09-committee-reports-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
-    <a href="2026-03-09-committee-reports-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
-    <a href="2026-03-09-committee-reports-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
-    <a href="2026-03-09-committee-reports-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
-    <a href="2026-03-09-committee-reports-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
-    <a href="2026-03-09-committee-reports-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+  <nav class="language-switcher" role="navigation" aria-label="Language versions">
+    <a href="2026-03-09-committee-reports-en.html" class="lang-link active" aria-current="page" hreflang="en" aria-label="English"><span aria-hidden="true">🇬🇧</span> English</a>
+    <a href="2026-03-09-committee-reports-sv.html" class="lang-link" hreflang="sv" aria-label="Svenska"><span aria-hidden="true">🇸🇪</span> Svenska</a>
+    <a href="2026-03-09-committee-reports-da.html" class="lang-link" hreflang="da" aria-label="Dansk"><span aria-hidden="true">🇩🇰</span> Dansk</a>
+    <a href="2026-03-09-committee-reports-no.html" class="lang-link" hreflang="nb" aria-label="Norsk"><span aria-hidden="true">🇳🇴</span> Norsk</a>
+    <a href="2026-03-09-committee-reports-fi.html" class="lang-link" hreflang="fi" aria-label="Suomi"><span aria-hidden="true">🇫🇮</span> Suomi</a>
+    <a href="2026-03-09-committee-reports-de.html" class="lang-link" hreflang="de" aria-label="Deutsch"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+    <a href="2026-03-09-committee-reports-fr.html" class="lang-link" hreflang="fr" aria-label="Français"><span aria-hidden="true">🇫🇷</span> Français</a>
+    <a href="2026-03-09-committee-reports-es.html" class="lang-link" hreflang="es" aria-label="Español"><span aria-hidden="true">🇪🇸</span> Español</a>
+    <a href="2026-03-09-committee-reports-nl.html" class="lang-link" hreflang="nl" aria-label="Nederlands"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
+    <a href="2026-03-09-committee-reports-ar.html" class="lang-link" hreflang="ar" aria-label="العربية"><span aria-hidden="true">🇸🇦</span> العربية</a>
+    <a href="2026-03-09-committee-reports-he.html" class="lang-link" hreflang="he" aria-label="עברית"><span aria-hidden="true">🇮🇱</span> עברית</a>
+    <a href="2026-03-09-committee-reports-ja.html" class="lang-link" hreflang="ja" aria-label="日本語"><span aria-hidden="true">🇯🇵</span> 日本語</a>
+    <a href="2026-03-09-committee-reports-ko.html" class="lang-link" hreflang="ko" aria-label="한국어"><span aria-hidden="true">🇰🇷</span> 한국어</a>
+    <a href="2026-03-09-committee-reports-zh.html" class="lang-link" hreflang="zh" aria-label="中文"><span aria-hidden="true">🇨🇳</span> 中文</a>
   </nav>
 <div class="article-top-nav">
   <a href="index.html" class="back-to-news">
@@ -355,5 +366,6 @@
 </article>
 
 <script type="module" src="../scripts/back-to-top.ts"></script>
+<script src="../js/theme-toggle.js"></script>
 </body>
 </html>

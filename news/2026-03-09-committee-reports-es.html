@@ -46,7 +46,7 @@
   <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-en.html">
   <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-sv.html">
   <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-da.html">
-  <link rel="alternate" hreflang="no" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-no.html">
+  <link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-no.html">
   <link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-fi.html">
   <link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-de.html">
   <link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/news/2026-03-09-committee-reports-fr.html">
@@ -66,6 +66,9 @@
   
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="../styles.css">
+  
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script src="../js/theme-init.js"></script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">
@@ -152,24 +155,32 @@
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-<nav class="language-switcher" role="navigation" aria-label="Language">
-    <a href="2026-03-09-committee-reports-en.html" class="lang-link" hreflang="en">🇬🇧 English</a>
-    <a href="2026-03-09-committee-reports-sv.html" class="lang-link" hreflang="sv">🇸🇪 Svenska</a>
-    <a href="2026-03-09-committee-reports-da.html" class="lang-link" hreflang="da">🇩🇰 Dansk</a>
-    <a href="2026-03-09-committee-reports-no.html" class="lang-link" hreflang="no">🇳🇴 Norsk</a>
-    <a href="2026-03-09-committee-reports-fi.html" class="lang-link" hreflang="fi">🇫🇮 Suomi</a>
-    <a href="2026-03-09-committee-reports-de.html" class="lang-link" hreflang="de">🇩🇪 Deutsch</a>
-    <a href="2026-03-09-committee-reports-fr.html" class="lang-link" hreflang="fr">🇫🇷 Français</a>
-    <a href="2026-03-09-committee-reports-es.html" class="lang-link active" aria-current="page" hreflang="es">🇪🇸 Español</a>
-    <a href="2026-03-09-committee-reports-nl.html" class="lang-link" hreflang="nl">🇳🇱 Nederlands</a>
-    <a href="2026-03-09-committee-reports-ar.html" class="lang-link" hreflang="ar">🇸🇦 العربية</a>
-    <a href="2026-03-09-committee-reports-he.html" class="lang-link" hreflang="he">🇮🇱 עברית</a>
-    <a href="2026-03-09-committee-reports-ja.html" class="lang-link" hreflang="ja">🇯🇵 日本語</a>
-    <a href="2026-03-09-committee-reports-ko.html" class="lang-link" hreflang="ko">🇰🇷 한국어</a>
-    <a href="2026-03-09-committee-reports-zh.html" class="lang-link" hreflang="zh">🇨🇳 中文</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Cambiar a tema oscuro"
+        title="Cambiar a tema oscuro"
+        data-label-dark="Cambiar a tema claro"
+        data-label-light="Cambiar a tema oscuro">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+  <nav class="language-switcher" role="navigation" aria-label="Versiones de idioma">
+    <a href="2026-03-09-committee-reports-en.html" class="lang-link" hreflang="en" aria-label="English"><span aria-hidden="true">🇬🇧</span> English</a>
+    <a href="2026-03-09-committee-reports-sv.html" class="lang-link" hreflang="sv" aria-label="Svenska"><span aria-hidden="true">🇸🇪</span> Svenska</a>
+    <a href="2026-03-09-committee-reports-da.html" class="lang-link" hreflang="da" aria-label="Dansk"><span aria-hidden="true">🇩🇰</span> Dansk</a>
+    <a href="2026-03-09-committee-reports-no.html" class="lang-link" hreflang="nb" aria-label="Norsk"><span aria-hidden="true">🇳🇴</span> Norsk</a>
+    <a href="2026-03-09-committee-reports-fi.html" class="lang-link" hreflang="fi" aria-label="Suomi"><span aria-hidden="true">🇫🇮</span> Suomi</a>
+    <a href="2026-03-09-committee-reports-de.html" class="lang-link" hreflang="de" aria-label="Deutsch"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+    <a href="2026-03-09-committee-reports-fr.html" class="lang-link" hreflang="fr" aria-label="Français"><span aria-hidden="true">🇫🇷</span> Français</a>
+    <a href="2026-03-09-committee-reports-es.html" class="lang-link active" aria-current="page" hreflang="es" aria-label="Español"><span aria-hidden="true">🇪🇸</span> Español</a>
+    <a href="2026-03-09-committee-reports-nl.html" class="lang-link" hreflang="nl" aria-label="Nederlands"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
+    <a href="2026-03-09-committee-reports-ar.html" class="lang-link" hreflang="ar" aria-label="العربية"><span aria-hidden="true">🇸🇦</span> العربية</a>
+    <a href="2026-03-09-committee-reports-he.html" class="lang-link" hreflang="he" aria-label="עברית"><span aria-hidden="true">🇮🇱</span> עברית</a>
+    <a href="2026-03-09-committee-reports-ja.html" class="lang-link" hreflang="ja" aria-label="日本語"><span aria-hidden="true">🇯🇵</span> 日本語</a>
+    <a href="2026-03-09-committee-reports-ko.html" class="lang-link" hreflang="ko" aria-label="한국어"><span aria-hidden="true">🇰🇷</span> 한국어</a>
+    <a href="2026-03-09-committee-reports-zh.html" class="lang-link" hreflang="zh" aria-label="中文"><span aria-hidden="true">🇨🇳</span> 中文</a>
   </nav>
 <div class="article-top-nav">
-  <a href="index.html" class="back-to-news">
+  <a href="index_es.html" class="back-to-news">
     ← Volver a Noticias
   </a>
 </div>
@@ -193,75 +204,75 @@
   </header>
 
   <div class="article-content">
-    <p class="lede">Twenty committee reports released in a single week mark the most intensive legislative output of the 2025/26 parliamentary session. The Finance Committee leads with two landmark decisions—emergency Ukraine military aid and the most significant mortgage deregulation in a decade—while the Justice Committee scrutinizes the state's covert surveillance apparatus and the Constitutional Affairs Committee defends the status quo on fundamental rights against dozens of reform proposals.</p>
+    <p class="lede">Veinte informes de comisión publicados en una sola semana marcan la producción legislativa más intensa de la sesión parlamentaria 2025/26. La Comisión de Finanzas lidera con dos decisiones históricas —ayuda militar de emergencia a Ucrania y la desregulación hipotecaria más significativa en una década—, mientras la Comisión de Justicia escrutina el aparato de vigilancia encubierta del Estado y la Comisión de Asuntos Constitucionales defiende el statu quo de los derechos fundamentales frente a decenas de propuestas de reforma.</p>
 
     <section>
       <h2>Finanzas y economía</h2>
-      <p>The Finance Committee delivered two consequential reports this week. The supplementary budget (FiU46) allocates grenade launchers and ammunition donations to Ukraine, a loan guarantee of 2.5 billion SEK via the IBRD, and vaccine preparedness funding—reducing 2026 expenditures by 5.3 billion SEK while shifting costs to 2027–2028. The macro-prudential reform (FiU36) raises the mortgage ceiling from 85% to 90% for new home purchases and eliminates the stricter amortization requirement, effective April 1, 2026. This represents Sweden's most significant housing finance liberalization since the post-2008 tightening.</p>
+      <p>La Comisión de Finanzas entregó dos informes relevantes esta semana. El presupuesto suplementario (FiU46) asigna donaciones de lanzagranadas y munición a Ucrania, una garantía de préstamo de 2,5 mil millones SEK a través del BIRF, y financiación para la preparación de vacunas, reduciendo los gastos de 2026 en 5,3 mil millones SEK mientras traslada costos a 2027–2028. La reforma macroprudencial (FiU36) eleva el límite hipotecario del 85% al 90% para nuevas compras de viviendas y elimina el requisito de amortización más estricto, con vigencia desde el 1 de abril de 2026. Esto representa la liberalización del financiamiento de viviendas más significativa de Suecia desde el endurecimiento posterior a 2008.</p>
 
       <h3>Comisión de Finanzas — FiU46: Extra ändringsbudget för 2026 – Stöd till Ukraina och vaccinberedskap</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01FiU46.html" class="document-link" rel="noopener noreferrer">HD01FiU46</a></p>
-      <p>Sweden to donate grenade launchers to Ukraine. Loan guarantee for IBRD Ukraine loan. Vaccine preparedness for influenza pandemic. Net budget decrease of 5.3B SEK.</p>
+      <p>Suecia dona lanzagranadas a Ucrania. Garantía de préstamo para préstamo del BIRF a Ucrania. Preparación de vacunas para pandemia de influenza. Reducción neta del presupuesto de 5,3 mil millones SEK.</p>
 
       <h3>Comisión de Finanzas — FiU36: Utveckling av makrotillsynsområdet</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01FiU36.html" class="document-link" rel="noopener noreferrer">HD01FiU36</a></p>
-      <p>Mortgage ceiling raised from 85% to 90% for new homes. Stricter amortization requirement removed. New law replaces Finansinspektionen rules. Effective April 1, 2026.</p>
+      <p>Límite hipotecario elevado del 85% al 90% para nuevas viviendas. Requisito de amortización más estricto eliminado. Nueva ley reemplaza las reglas de la Finansinspektionen. Con vigencia desde el 1 de abril de 2026.</p>
     </section>
 
     <section>
       <h2>Justicia y seguridad</h2>
-      <p>The Justice Committee published its annual review of covert surveillance use in 2024, covering wiretapping, metadata surveillance, hidden cameras, room bugging, and data interception by police, customs, and SÄPO. The committee endorsed the government's assessment that these tools provide genuine investigative value. Separately, the committee reviewed the application of the special foreigners control law, reporting six government decisions in the July 2024–June 2025 period aimed at combating terrorism and security threats.</p>
+      <p>La Comisión de Justicia publicó su revisión anual sobre el uso de la vigilancia encubierta en 2024, abarcando escuchas telefónicas, vigilancia de metadatos, cámaras ocultas, micrófonos ambientales e interceptación de datos por parte de la policía, aduanas y la SÄPO. La comisión respaldó la evaluación del gobierno de que estas herramientas proporcionan un valor investigativo genuino. Por separado, la comisión revisó la aplicación de la ley especial de control de extranjeros, informando sobre seis decisiones gubernamentales en el período julio 2024–junio 2025 para combatir el terrorismo y las amenazas a la seguridad.</p>
 
       <h3>Comisión de Justicia — JuU25: Redovisning av användningen av hemliga tvångsmedel under 2024</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01JuU25.html" class="document-link" rel="noopener noreferrer">HD01JuU25</a></p>
-      <p>Annual report on covert surveillance 2024. Covers: wiretapping, metadata surveillance, camera, room bugging, data interception by police, customs, SÄPO.</p>
+      <p>Informe anual sobre vigilancia encubierta 2024. Cubre: escuchas telefónicas, vigilancia de metadatos, cámara, micrófonos ambientales, interceptación de datos por policía, aduanas, SÄPO.</p>
 
       <h3>Comisión de Justicia — JuU24: 2025 års redogörelse för tillämpningen av lagen om särskild kontroll av vissa utlänningar</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01JuU24.html" class="document-link" rel="noopener noreferrer">HD01JuU24</a></p>
-      <p>Application of special control law for foreigners 2024-2025. Six government decisions. Covers terrorism and security threats.</p>
+      <p>Aplicación de la ley especial de control de extranjeros 2024–2025. Seis decisiones gubernamentales. Cubre terrorismo y amenazas a la seguridad.</p>
     </section>
 
     <section>
       <h2>Derechos constitucionales y democracia</h2>
-      <p>The Constitutional Affairs Committee issued three reports rejecting a combined 117 motions on democratic reform. On rights and freedoms (KU28), the committee declined proposals addressing threats against religious communities and elected officials, property rights protection, banning racist organizations, and safeguarding academic freedom. The electoral reform report (KU27) rejected 42 motions on voting system changes, lowering the voting age, and improving accessibility for disabled voters. The transparency report (KU26) dismissed 15 motions on inter-agency data sharing and public access to tax-funded activities.</p>
+      <p>La Comisión de Asuntos Constitucionales emitió tres informes que rechazaron un total de 117 mociones sobre reforma democrática. En materia de derechos y libertades (KU28), la comisión rechazó propuestas sobre amenazas a comunidades religiosas y funcionarios electos, protección de derechos de propiedad, prohibición de organizaciones racistas y salvaguarda de la libertad académica. El informe de reforma electoral (KU27) rechazó 42 mociones sobre cambios al sistema de votación, reducción de la edad para votar y mejora de la accesibilidad para votantes con discapacidad. El informe de transparencia (KU26) desestimó 15 mociones sobre intercambio de datos entre agencias y acceso público a actividades financiadas con fondos públicos.</p>
 
       <h3>Comisión de Asuntos Constitucionales — KU28: Fri- och rättigheter m.m.</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01KU28.html" class="document-link" rel="noopener noreferrer">HD01KU28</a></p>
-      <p>Committee rejects ~60 motions on rights and freedoms. Topics: threats to faith, officials, property rights, racist orgs ban, academic freedom.</p>
+      <p>La comisión rechaza unas 60 mociones sobre derechos y libertades. Temas: amenazas a comunidades religiosas, funcionarios, derechos de propiedad, prohibición de organizaciones racistas, libertad académica.</p>
 
       <h3>Comisión de Asuntos Constitucionales — KU27: Valfrågor</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01KU27.html" class="document-link" rel="noopener noreferrer">HD01KU27</a></p>
-      <p>42 motions on electoral issues rejected. Topics: voting system, turnout, voting age, constituency names, separate election days, disabled voters.</p>
+      <p>42 mociones sobre asuntos electorales rechazadas. Temas: sistema de votación, participación, edad para votar, nombres de circunscripciones, días de elección separados, votantes con discapacidad.</p>
 
       <h3>Comisión de Asuntos Constitucionales — KU26: Offentlighet, sekretess och integritet</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01KU26.html" class="document-link" rel="noopener noreferrer">HD01KU26</a></p>
-      <p>15 motions rejected on transparency, secrecy, privacy. Topics: inter-agency data sharing, sensitive data protection, public access to tax-funded activities.</p>
+      <p>15 mociones rechazadas sobre transparencia, secreto y privacidad. Temas: intercambio de datos entre agencias, protección de datos sensibles, acceso público a actividades financiadas con fondos públicos.</p>
     </section>
 
     <section>
       <h2>Derecho civil y protección al consumidor</h2>
-      <p>The Civil Affairs Committee advanced consumer protection legislation (CU11) implementing EU directives on distance contracts, banning dark patterns in websites and apps, introducing financial service explanation requirements, and strengthening withdrawal rights—effective June 19, 2026. The committee rejected motions on rental law reform (CU14) and corporate law changes (CU16), maintaining the status quo on rent regulation and share capital requirements.</p>
+      <p>La Comisión de Asuntos Civiles avanzó en la legislación de protección al consumidor (CU11) que implementa directivas de la UE sobre contratos a distancia, prohíbe los patrones oscuros en sitios web y aplicaciones, introduce requisitos de explicación para servicios financieros y fortalece los derechos de desistimiento, con vigencia desde el 19 de junio de 2026. La comisión rechazó mociones sobre reforma del derecho de arrendamiento (CU14) y cambios en el derecho de sociedades (CU16), manteniendo el statu quo sobre regulación del alquiler y requisitos de capital social.</p>
 
       <h3>Comisión de Asuntos Civiles — CU11: Ett stärkt konsumentskydd vid distansavtal</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01CU11.html" class="document-link" rel="noopener noreferrer">HD01CU11</a></p>
-      <p>Strengthened consumer protection for distance contracts. Right of withdrawal, dark pattern ban, financial service explanations. EU directive implementation. Effective June 19, 2026.</p>
+      <p>Protección al consumidor fortalecida para contratos a distancia. Derecho de desistimiento, prohibición de patrones oscuros, explicaciones de servicios financieros. Implementación de directiva UE. Con vigencia desde el 19 de junio de 2026.</p>
 
       <h3>Comisión de Asuntos Civiles — CU14: Hyresrätt m.m.</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01CU14.html" class="document-link" rel="noopener noreferrer">HD01CU14</a></p>
-      <p>Motions on rental rights, condo rights, cooperative housing rejected. Topics: rent regulation, condo law changes, rent-to-own models.</p>
+      <p>Mociones sobre derechos de arrendamiento, derechos de condominios y viviendas cooperativas rechazadas. Temas: regulación del alquiler, cambios en la ley de condominios, modelos de arrendamiento con opción a compra.</p>
 
       <h3>Comisión de Asuntos Civiles — CU16: Associationsrätt</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01CU16.html" class="document-link" rel="noopener noreferrer">HD01CU16</a></p>
-      <p>22 motions on corporate law rejected. Topics: bookkeeping act, foundation act, share capital, business bans, sustainability reporting.</p>
+      <p>22 mociones sobre derecho de sociedades rechazadas. Temas: ley de contabilidad, ley de fundaciones, capital social, prohibiciones empresariales, informes de sostenibilidad.</p>
     </section>
 
     <section>
       <h2>Educación e investigación</h2>
-      <p>The Education Committee rejected 125 motions on teachers and students (UbU9), covering school staffing, student health, and students with varying needs. Research policy (UbU13) and preschool education (UbU6) were also addressed, with the committee referencing ongoing reforms and existing measures.</p>
+      <p>La Comisión de Educación rechazó 125 mociones sobre maestros y estudiantes (UbU9), que abarcaban personal escolar, salud de los estudiantes y estudiantes con necesidades variadas. La política de investigación (UbU13) y la educación preescolar (UbU6) también fueron abordadas, con la comisión haciendo referencia a reformas en curso y medidas existentes.</p>
 
       <h3>Comisión de Educación — UbU9: Lärare och elever</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01UbU9.html" class="document-link" rel="noopener noreferrer">HD01UbU9</a></p>
-      <p>125 motions on teachers and students rejected. Topics: school staff, student health, students with varying needs. References existing measures.</p>
+      <p>125 mociones sobre maestros y estudiantes rechazadas. Temas: personal escolar, salud de los estudiantes, estudiantes con necesidades variadas. Referencias a medidas existentes.</p>
 
       <h3>Comisión de Educación — UbU13: Forskning</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01UbU13.html" class="document-link" rel="noopener noreferrer">HD01UbU13</a></p>
@@ -272,11 +283,11 @@
 
     <section>
       <h2>Política exterior</h2>
-      <p>The Foreign Affairs Committee rejected 18 motions calling for expanded Swedish UN engagement, including initiatives on women, peace, and security (UU16). A separate report addressed international law and human rights (UU14). The committee assessed that Sweden is already actively pursuing these policy areas.</p>
+      <p>La Comisión de Asuntos Exteriores rechazó 18 mociones que pedían una mayor participación sueca en la ONU, incluyendo iniciativas sobre mujeres, paz y seguridad (UU16). Un informe separado abordó el derecho internacional y los derechos humanos (UU14). La comisión evaluó que Suecia ya persigue activamente estas áreas de política.</p>
 
       <h3>Comisión de Asuntos Exteriores — UU16: FN i svensk utrikespolitik</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01UU16.html" class="document-link" rel="noopener noreferrer">HD01UU16</a></p>
-      <p>18 motions on UN in Swedish foreign policy rejected. Topics: Swedish UN initiatives, women/peace/security. Sweden already active in these areas.</p>
+      <p>18 mociones sobre la ONU en la política exterior sueca rechazadas. Temas: iniciativas suecas en la ONU, mujeres/paz/seguridad. Suecia ya es activa en estas áreas.</p>
 
       <h3>Comisión de Asuntos Exteriores — UU14: Folkrätt, inklusive mänskliga rättigheter</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01UU14.html" class="document-link" rel="noopener noreferrer">HD01UU14</a></p>
@@ -284,29 +295,29 @@
 
     <section>
       <h2>Medio ambiente</h2>
-      <p>The Environment Committee rejected 230 motions on circular and toxic-free economy (MJU12), spanning recycling, waste management, plastics, and chemical policy, citing ongoing regulatory work.</p>
+      <p>La Comisión de Medio Ambiente rechazó 230 mociones sobre economía circular y libre de tóxicos (MJU12), que abarcaban reciclaje, gestión de residuos, plásticos y política química, citando trabajos regulatorios en curso.</p>
 
       <h3>Comisión de Medio Ambiente y Agricultura — MJU12: Cirkulär och giftfri ekonomi</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01MJU12.html" class="document-link" rel="noopener noreferrer">HD01MJU12</a></p>
-      <p>230 motions on circular and toxic-free economy rejected. Topics: reuse, recycling, waste, plastics, chemical policy.</p>
+      <p>230 mociones sobre economía circular y libre de tóxicos rechazadas. Temas: reutilización, reciclaje, residuos, plásticos, política química.</p>
     </section>
 
     <section>
       <h2>Política fiscal</h2>
-      <p>The Tax Committee reviewed a National Audit Office report on the Tax Agency's actions against undeclared work (SkU33) and rejected 75 motions on business, capital, and property taxation (SkU15).</p>
+      <p>La Comisión Fiscal revisó un informe de la Oficina Nacional de Auditoría sobre las acciones de la Agencia Tributaria contra el trabajo no declarado (SkU33) y rechazó 75 mociones sobre tributación de empresas, capital e inmuebles (SkU15).</p>
 
       <h3>Comisión de Impuestos — SkU33: Riksrevisionens rapport om Skatteverkets åtgärder mot svartarbete</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01SkU33.html" class="document-link" rel="noopener noreferrer">HD01SkU33</a></p>
-      <p>Committee review of National Audit Office report on Tax Agency actions against undeclared work.</p>
+      <p>Revisión por la comisión del informe de la Oficina Nacional de Auditoría sobre las acciones de la Agencia Tributaria contra el trabajo no declarado.</p>
 
       <h3>Comisión de Impuestos — SkU15: Företag, kapital och fastighet</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01SkU15.html" class="document-link" rel="noopener noreferrer">HD01SkU15</a></p>
-      <p>75 motions on business, capital and property taxation rejected. References prior positions and ongoing studies.</p>
+      <p>75 mociones sobre tributación de empresas, capital e inmuebles rechazadas. Referencias a posiciones anteriores y estudios en curso.</p>
     </section>
 
     <section>
       <h2>Transporte e industria</h2>
-      <p>Maritime affairs (TU10) and business policy (NU14) rounded out the week's committee output.</p>
+      <p>Los asuntos marítimos (TU10) y la política empresarial (NU14) completaron la producción de las comisiones de la semana.</p>
 
       <h3>Comisión de Transporte — TU10: Sjöfartsfrågor</h3>
       <p><a href="https://data.riksdagen.se/dokument/HD01TU10.html" class="document-link" rel="noopener noreferrer">HD01TU10</a></p>
@@ -318,20 +329,20 @@
     <section>
       <h2>Conclusiones clave</h2>
       <ul class="watch-list">
-        <li><strong>1.</strong> Ukraine support and defense spending enjoy broad parliamentary consensus—the supplementary budget passed the Finance Committee without fundamental opposition.</li>
-        <li><strong>2.</strong> Mortgage deregulation signals the government's pivot toward housing market stimulation ahead of the 2026 election, potentially benefiting first-time buyers but raising household debt concerns.</li>
-        <li><strong>3.</strong> The mass rejection of 500+ opposition motions across multiple committees underscores the government coalition's legislative dominance and the opposition's limited tactical leverage.</li>
-        <li><strong>4.</strong> Covert surveillance tools continue to expand with minimal political friction—the annual review mechanism provides transparency but rarely triggers substantive reform.</li>
-        <li><strong>5.</strong> Consumer protection via EU directive implementation provides the government a technocratic legislative win that avoids partisan controversy.</li>
+        <li><strong>1.</strong> El apoyo a Ucrania y el gasto en defensa gozan de amplio consenso parlamentario: el presupuesto suplementario pasó por la Comisión de Finanzas sin oposición fundamental.</li>
+        <li><strong>2.</strong> La desregulación hipotecaria señala el giro del gobierno hacia la estimulación del mercado inmobiliario antes de las elecciones de 2026, beneficiando potencialmente a los compradores primerizos pero generando preocupaciones sobre el endeudamiento de los hogares.</li>
+        <li><strong>3.</strong> El rechazo masivo de más de 500 mociones de oposición en múltiples comisiones subraya el dominio legislativo de la coalición gubernamental y el limitado margen táctico de la oposición.</li>
+        <li><strong>4.</strong> Las herramientas de vigilancia encubierta continúan expandiéndose con mínima fricción política: el mecanismo de revisión anual proporciona transparencia pero rara vez desencadena una reforma sustancial.</li>
+        <li><strong>5.</strong> La protección al consumidor mediante la implementación de directivas de la UE proporciona al gobierno un triunfo legislativo tecnocrático que evita la controversia partidista.</li>
       </ul>
     </section>
 
     <section>
       <h2>Qué observar</h2>
       <ul class="watch-list">
-        <li>How the April 1 mortgage reform affects housing prices and first-time buyer demand in Stockholm and Gothenburg.</li>
-        <li>Whether opposition parties use the Ukraine supplementary budget as leverage for domestic spending amendments.</li>
-        <li>The Riksdag chamber debate on covert surveillance—specifically whether any party challenges the scope of data interception powers.</li>
+        <li>Cómo la reforma hipotecaria del 1 de abril afecta los precios de la vivienda y la demanda de compradores primerizos en Estocolmo y Gotemburgo.</li>
+        <li>Si los partidos de oposición utilizan el presupuesto suplementario de Ucrania como palanca para enmiendas al gasto doméstico.</li>
+        <li>El debate en la cámara del Riksdag sobre vigilancia encubierta, específicamente si algún partido cuestiona el alcance de los poderes de interceptación de datos.</li>
       </ul>
     </section>
 
@@ -339,15 +350,15 @@
 
   <footer class="article-footer">
     <div class="article-sources">
-      <h3>Sources and Data</h3>
-      <p><strong>Primary Sources:</strong> Riksdag Committee Reports HD01FiU46, HD01FiU36, HD01KU28, HD01KU27, HD01KU26, HD01JuU25, HD01JuU24, HD01CU11, HD01CU14, HD01CU16, HD01UU16, HD01UU14, HD01UbU13, HD01UbU9, HD01UbU6, HD01MJU12, HD01SkU33, HD01SkU15, HD01TU10, HD01NU14</p>
-      <p><strong>Data Sources:</strong> riksdag-regering-mcp (Riksdag Open Data API), committee document repository</p>
-      <p><strong>Analysis Tools:</strong> AI-assisted journalism with human editorial oversight and political science framework analysis</p>
-      <p><strong>Methodology:</strong> Comprehensive document analysis, political context assessment, coalition dynamics evaluation, and legislative timeline tracking based on official Riksdag documentation</p>
+      <h3>Fuentes y datos</h3>
+      <p><strong>Fuentes primarias:</strong> Informes de comisiones del Riksdag HD01FiU46, HD01FiU36, HD01KU28, HD01KU27, HD01KU26, HD01JuU25, HD01JuU24, HD01CU11, HD01CU14, HD01CU16, HD01UU16, HD01UU14, HD01UbU13, HD01UbU9, HD01UbU6, HD01MJU12, HD01SkU33, HD01SkU15, HD01TU10, HD01NU14</p>
+      <p><strong>Fuentes de datos:</strong> riksdag-regering-mcp (API de datos abiertos del Riksdag), repositorio de documentos de comisiones</p>
+      <p><strong>Herramientas de análisis:</strong> Periodismo asistido por IA con supervisión editorial humana y análisis del marco de ciencias políticas</p>
+      <p><strong>Metodología:</strong> Análisis documental exhaustivo, evaluación del contexto político, evaluación de la dinámica de coalición y seguimiento del calendario legislativo basado en documentación oficial del Riksdag</p>
     </div>
     
     <div class="article-nav">
-      <a href="index.html" class="back-to-news">
+      <a href="index_es.html" class="back-to-news">
         ← Volver a Noticias
       </a>
     </div>
@@ -355,5 +366,6 @@
 </article>
 
 <script type="module" src="../scripts/back-to-top.ts"></script>
+<script src="../js/theme-toggle.js"></script>
 </body>
 </html>
