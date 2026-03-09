@@ -1005,6 +1005,14 @@ jobs:
         run: |
           mkdir -p /tmp/gh-aw/threat-detection
           touch /tmp/gh-aw/threat-detection/detection.log
+      - name: Clean up AWF containers from previous execution
+        if: always() && steps.detection_guard.outputs.run_detection == 'true'
+        continue-on-error: true
+        run: |
+          echo "Cleaning up leftover AWF Docker containers..."
+          docker rm -f awf-api-proxy awf-squid awf-agent 2>/dev/null || true
+          docker network rm awf-network 2>/dev/null || true
+          echo "AWF container cleanup complete"
       - name: Execute GitHub Copilot CLI
         if: always() && steps.detection_guard.outputs.run_detection == 'true'
         id: detection_agentic_execution
