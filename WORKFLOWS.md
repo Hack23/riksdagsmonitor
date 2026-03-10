@@ -16,8 +16,8 @@
 [![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=typescript)](https://riksdagsmonitor.com/docs/api/)
 [![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest)](https://riksdagsmonitor.com/docs/coverage/)
 
-**Document Version:** 5.1
-**Last Updated:** 2026-02-24
+**Document Version:** 6.0
+**Last Updated:** 2026-03-10
 **Classification:** Public
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -25,9 +25,9 @@
 
 This document describes the Continuous Integration and Continuous Deployment (CI/CD) workflows for Riksdagsmonitor. All workflows are implemented using GitHub Actions and follow Hack23 AB's [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md).
 
-The project has been migrated from JavaScript to **TypeScript** (27 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 24's native type-stripping for scripts.
+The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 24's native type-stripping for scripts.
 
-**Total Workflows: 44** (24 standard YAML + 10 agentic markdown sources + 10 compiled lock files)
+**Total Workflows: 43** (23 standard YAML + 10 agentic markdown sources + 10 compiled lock files)
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 **ISMS Compliance:** ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1
 
@@ -38,10 +38,10 @@ The project has been migrated from JavaScript to **TypeScript** (27 modules in `
 | Node.js | 24 | Runtime (native TypeScript strip-types) |
 | TypeScript | 5.9.3 | Type system |
 | Vite | 7.3.1 | Build toolchain (esbuild) |
-| Vitest | 4.0.18 | Unit testing (1200 tests) |
+| Vitest | 4.0.18 | Unit testing (2890 tests) |
 | Cypress | 14 | E2E testing |
 | TypeDoc | 0.28.17 | API documentation |
-| ESLint | 9.x | Linting (flat config) |
+| ESLint | 10.x | Linting (flat config) |
 
 ### Compliance Frameworks
 - **ISO 27001:2022:** A.8.31 (Separation of dev/test/prod), A.8.32 (Change management), A.5.37 (Documented operating procedures)
@@ -79,7 +79,7 @@ graph TD
     T --> News[News E2E]
     
     TSTest --> TSC[tsc --noEmit]
-    TSTest --> VT[Vitest 1200 Tests]
+    TSTest --> VT[Vitest 2890 Tests]
     TSTest --> CY[Cypress E2E]
     
     R --> Build[Vite Build]
@@ -108,7 +108,7 @@ graph TD
     style M fill:#607d8b
 ```
 
-## Complete Workflow Inventory (44 Files)
+## Complete Workflow Inventory (43 Files)
 
 ### 🔐 Security & Compliance (5 workflows)
 
@@ -125,7 +125,7 @@ graph TD
 | # | Workflow | File | Trigger | Coverage |
 |---|----------|------|---------|----------|
 | 2.1 | TypeScript & JavaScript Testing | `javascript-testing.yml` | Push/PR (`**/*.ts`, `**/*.js`, `src/browser/**`) | TSC type-check + Vitest + Cypress |
-| 2.2 | TypeDoc Validation | `jsdoc-validation.yml` | Push/PR (`src/browser/**`, `scripts/**`) | TypeDoc generation + coverage |
+| 2.2 | TypeDoc Validation | `jsdoc-validation.yml` | Manual dispatch | TypeDoc generation + coverage |
 | 2.3 | Quality Checks | `quality-checks.yml` | Push/PR to main | ESLint + HTMLHint + linkinator |
 | 2.4 | Translation Validation | `translation-validation.yml` | Push/PR (`index*.html`, `news/*.html`) | 14-language + RTL + hreflang |
 | 2.5 | Test Dashboard | `test-dashboard.yml` | Push/PR (`src/browser/**`, `dashboard/**`) | Dashboard Cypress E2E |
@@ -146,7 +146,7 @@ graph TD
 
 | # | Workflow | File | Trigger | Targets |
 |---|----------|------|---------|---------|
-| 4.1 | Release with Attestations | `release.yml` | Push to main, manual | SLSA + dual deploy |
+| 4.1 | Release with Attestations | `release.yml` | Push tags (v*), manual | SLSA + dual deploy |
 | 4.2 | Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
 | 4.3 | Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 
@@ -248,7 +248,7 @@ steps:
 ```
 
 **TypeScript Compilation Strategy:**
-- `tsconfig.browser.json` — validates `src/browser/**/*.ts` (27 modules)
+- `tsconfig.browser.json` — validates `src/browser/**/*.ts` (31 modules)
 - `tsconfig.scripts.json` — validates `scripts/**/*.ts` + `tests/**/*.ts`
 - Both use `noEmit: true` (Vite/esbuild handles actual compilation)
 
@@ -264,7 +264,7 @@ steps:
 ```
 
 **Test Coverage:**
-- 1200 unit tests (Vitest)
+- 2890 unit tests (Vitest)
 - Happy-DOM environment for browser module testing
 - V8 coverage provider with `src/browser/**/*.ts` in include paths
 
@@ -539,7 +539,7 @@ All workflows implement defense-in-depth:
 ```yaml
 # Standard pattern across all workflows
 - name: Harden Runner
-  uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e  # v2.14.2
+  uses: step-security/harden-runner@58077d3c7e43986b6b15fba718e8ea69e387dfcc  # v2.15.1
   with:
     egress-policy: audit
     allowed-endpoints: >
@@ -783,7 +783,7 @@ git commit -m "chore: recompile agentic workflow lock files"
 
 | Metric | Target | Actual |
 |--------|--------|--------|
-| Test Count | > 1000 | **1200** ✅ |
+| Test Count | > 1000 | **2890** ✅ |
 | Test Pass Rate | 100% | **100%** ✅ |
 | TypeScript Errors | 0 | **0** ✅ |
 | ESLint Errors | 0 | **0** ✅ |
@@ -828,7 +828,7 @@ git commit -m "chore: recompile agentic workflow lock files"
 
 ---
 
-**Document Version:** 5.1
-**Last Updated:** 2026-02-24
+**Document Version:** 6.0
+**Last Updated:** 2026-03-10
 **Classification:** Public
 **Owner:** Hack23 AB
