@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.61% </span>
+                <span class="strong">85.4% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>119/139</span>
+                <span class='fraction'>117/137</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.17% </span>
+                <span class="strong">76.92% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>142/184</span>
+                <span class='fraction'>140/182</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">85.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>108/126</span>
+                <span class='fraction'>106/124</span>
             </div>
         
             
@@ -459,7 +459,10 @@
 <a name='L394'></a><a href='#L394'>394</a>
 <a name='L395'></a><a href='#L395'>395</a>
 <a name='L396'></a><a href='#L396'>396</a>
-<a name='L397'></a><a href='#L397'>397</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -509,10 +512,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">274x</span>
-<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">252x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">274x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -890,25 +896,28 @@ export function sanitizeUrl(url: string | undefined | null): string {
 /**
  * Emit a Swedish-language span.
  *
- * For Swedish articles (`lang === 'sv'`) the span carries both the
- * `lang="sv"` accessibility attribute AND `data-translate="true"` so
- * quality-validation tooling can verify that Swedish articles contain the
- * original text.
+ * The span always carries both the `lang="sv"` accessibility attribute AND
+ * `data-translate="true"` so that `translateSwedishContent()` (in
+ * `translation-dictionary.ts`) can locate every Swedish phrase, look it up
+ * in the per-language dictionary, and replace or clean the marker before the
+ * article is written to disk.
  *
- * For **all other** languages the span carries only `lang="sv"` (screen
- * readers still know the text is Swedish) but the `data-translate` marker is
- * intentionally omitted — it signals "this text should be translated" but no
- * client-side translation mechanism exists, so the marker only causes false
- * validation failures in non-Swedish articles.
+ * - **SV articles**: the marker lets validation tooling verify original text
+ *   is present; `translateSwedishContent()` strips the marker but keeps the
+ *   Swedish text unchanged.
+ * - **Non-SV articles**: `translateSwedishContent()` attempts dictionary
+ *   translation via `translatePhrase()` and removes the marker regardless
+ *   of whether a match was found, so no `data-translate` attributes remain
+ *   in the final HTML.
  *
  * @param escapedText - Already HTML-escaped text content
- * @param lang        - Target article language (e.g. `'sv'`, `'en'`)
+ * @param _lang       - Target article language (kept only for backward
+ *                      compatibility; currently not used by this function)
  */
-export function svSpan(escapedText: string, lang: Language | string): string {
-  if (lang === 'sv') {
-    return `&lt;span data-translate="true" lang="sv"&gt;${escapedText}&lt;/span&gt;`;
-  }
-  return `&lt;span lang="sv"&gt;${escapedText}&lt;/span&gt;`;
+export function svSpan(escapedText: string, _lang: Language | string): string {
+  // NOTE: `_lang` is intentionally unused and retained solely so existing
+  // call sites do not need to be updated; all spans are marked as Swedish.
+  return `&lt;span data-translate="true" lang="sv"&gt;${escapedText}&lt;/span&gt;`;
 }
 &nbsp;
 /**
@@ -1258,7 +1267,7 @@ export function filterFreshDocuments(docs: RawDocument[], maxAgeDays = 30): RawD
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-10T01:24:27.641Z
+                at 2026-03-10T23:52:12.495Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
