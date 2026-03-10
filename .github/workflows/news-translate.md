@@ -228,7 +228,44 @@ Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
 
 ## Step 3: Generate Translations
 
-Use the existing TypeScript generation scripts. The script generates language-specific articles using MCP data, ensuring consistent content across all languages.
+**CRITICAL**: The goal is to produce translations that match the **same analytical depth, structure, and narrative quality** as the source EN article. The TypeScript generation script produces a structural baseline; you MUST then enhance each translation so its content faithfully mirrors the EN source.
+
+### 3a. Read the Source Article
+
+Before generating anything, **read the source EN article** to understand its full structure, headings, analysis paragraphs, and editorial quality:
+
+```bash
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
+
+# If a specific type is given, find the EN source; otherwise list all EN articles for the date
+if [ -n "$ARTICLE_TYPE" ]; then
+  EN_SOURCES=$(ls news/${ARTICLE_DATE}-*${ARTICLE_TYPE}*-en.html 2>/dev/null | head -1)
+else
+  EN_SOURCES=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null)
+fi
+
+if [ -n "$EN_SOURCES" ]; then
+  for EN_SOURCE in $EN_SOURCES; do
+    [ -f "$EN_SOURCE" ] || continue
+    echo "📖 Source article: $EN_SOURCE ($(wc -l < "$EN_SOURCE") lines)"
+    echo "--- EN article headings ---"
+    grep -oP '<h[1-6][^>]*>.*?</h[1-6]>' "$EN_SOURCE" | head -20
+    echo "--- EN article lede ---"
+    grep -oP '<p class="lede">.*?</p>' "$EN_SOURCE" | head -3
+  done
+fi
+```
+
+Read the full EN source article content with the `view` or `bash cat` tool. Understand its:
+- **Headline** and **subtitle** (the translated versions must convey the same meaning)
+- **Lede paragraph** (the editorial summary — MUST be faithfully translated, not replaced with a generic template)
+- **Section structure** (h2/h3 headings, context-box divs, motion-entry divs)
+- **Analytical depth** ("Why It Matters", "Policy Context", "Coalition Dynamics", "Stakeholder Impact")
+- **Statistical data** and specific policy references
+
+### 3b. Generate Baseline with TypeScript Script
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -258,6 +295,53 @@ source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
   --languages="$LANG_ARG" \
   --skip-existing
 ```
+
+### 3c. Enhance Translations to Match EN Source Quality
+
+After the script generates baseline files, **compare each generated translation with the EN source**.
+For each target language file:
+
+1. **Check line count parity**: The translated article should be roughly similar in size to the EN source (±20%). If the generated file is much larger (template list) or much smaller, it needs rewriting.
+2. **Check headings match**: The translated article must have the SAME section headings (translated) as the EN source — not a different structure.
+3. **Check for untranslated Swedish**: Search for `<span lang="sv">` tags. These contain Swedish API text that should have been translated. The `data-translate="true"` marker enables dictionary-based translation, but full titles/summaries may need manual translation in the target language.
+4. **Check lede quality**: The EN article's lede is a rich editorial summary. If the translated version just says "Analysis of N motions" — it needs to be replaced with a proper translation of the EN lede.
+5. **Check "Why It Matters" sections**: The EN article contains detailed policy context. If translated versions have generic template text instead, replace with translated versions of the EN content.
+
+```bash
+# Re-derive variables (each code block runs in its own shell session)
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all-extra"
+
+case "$LANGUAGES_INPUT" in
+  "nordic-extra") LANG_ARG="da,no,fi" ;;
+  "eu-extra") LANG_ARG="de,fr,es,nl" ;;
+  "cjk") LANG_ARG="ja,ko,zh" ;;
+  "rtl") LANG_ARG="ar,he" ;;
+  "all-extra") LANG_ARG="da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
+  *) LANG_ARG="$LANGUAGES_INPUT" ;;
+esac
+
+# Quick parity check — iterate over each EN source in case multiple types exist
+for EN_FILE in $(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null); do
+  [ -f "$EN_FILE" ] || continue
+  EN_LINES=$(wc -l < "$EN_FILE")
+  # Derive article slug from EN filename (strip the -en.html suffix)
+  SLUG="${EN_FILE%-en.html}"
+  echo "📊 Parity check for $EN_FILE ($EN_LINES lines)"
+  for lang in $(echo "$LANG_ARG" | tr ',' ' '); do
+    TRANSLATED="${SLUG}-${lang}.html"
+    if [ -f "$TRANSLATED" ]; then
+      TR_LINES=$(wc -l < "$TRANSLATED")
+      SV_SPANS=$(grep -c '<span lang="sv">' "$TRANSLATED" || true)
+      echo "  $lang: $TR_LINES lines (EN: $EN_LINES), Swedish spans: $SV_SPANS"
+    fi
+  done
+done
+```
+
+If a translation file has significantly more lines than EN (indicating a template-based list instead of an editorial article) or has many `<span lang="sv">` untranslated spans, **rewrite the article** using the EN source as the template. Use `edit` tool to replace the article body content with a proper translation that preserves the EN structure.
 
 **Article Navigation Verification**: The `generate-news-enhanced.ts` script automatically includes all required navigation elements:
 - **Language switcher** (`<nav class="language-switcher">`) after `<body>` with all 14 languages

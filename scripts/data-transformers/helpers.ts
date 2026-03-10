@@ -33,25 +33,28 @@ export function sanitizeUrl(url: string | undefined | null): string {
 /**
  * Emit a Swedish-language span.
  *
- * For Swedish articles (`lang === 'sv'`) the span carries both the
- * `lang="sv"` accessibility attribute AND `data-translate="true"` so
- * quality-validation tooling can verify that Swedish articles contain the
- * original text.
+ * The span always carries both the `lang="sv"` accessibility attribute AND
+ * `data-translate="true"` so that `translateSwedishContent()` (in
+ * `translation-dictionary.ts`) can locate every Swedish phrase, look it up
+ * in the per-language dictionary, and replace or clean the marker before the
+ * article is written to disk.
  *
- * For **all other** languages the span carries only `lang="sv"` (screen
- * readers still know the text is Swedish) but the `data-translate` marker is
- * intentionally omitted — it signals "this text should be translated" but no
- * client-side translation mechanism exists, so the marker only causes false
- * validation failures in non-Swedish articles.
+ * - **SV articles**: the marker lets validation tooling verify original text
+ *   is present; `translateSwedishContent()` strips the marker but keeps the
+ *   Swedish text unchanged.
+ * - **Non-SV articles**: `translateSwedishContent()` attempts dictionary
+ *   translation via `translatePhrase()` and removes the marker regardless
+ *   of whether a match was found, so no `data-translate` attributes remain
+ *   in the final HTML.
  *
  * @param escapedText - Already HTML-escaped text content
- * @param lang        - Target article language (e.g. `'sv'`, `'en'`)
+ * @param _lang       - Target article language (kept only for backward
+ *                      compatibility; currently not used by this function)
  */
-export function svSpan(escapedText: string, lang: Language | string): string {
-  if (lang === 'sv') {
-    return `<span data-translate="true" lang="sv">${escapedText}</span>`;
-  }
-  return `<span lang="sv">${escapedText}</span>`;
+export function svSpan(escapedText: string, _lang: Language | string): string {
+  // NOTE: `_lang` is intentionally unused and retained solely so existing
+  // call sites do not need to be updated; all spans are marked as Swedish.
+  return `<span data-translate="true" lang="sv">${escapedText}</span>`;
 }
 
 /**

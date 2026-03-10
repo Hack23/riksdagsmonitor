@@ -78,6 +78,17 @@ export {
 export async function generateNews(): Promise<typeof stats> {
   console.log('🚀 Starting enhanced news generation...\n');
 
+  // Wrapper around writeArticle that applies translateSwedishContent before
+  // writing to disk. News-type generators (breaking-news, month-ahead,
+  // weekly-review, monthly-review) receive this instead of the raw
+  // writeArticle so that data-translate="true" markers are stripped.
+  const translatingWriteArticle = async (html: string, filename: string): Promise<boolean> => {
+    const langMatch: RegExpMatchArray | null = filename.match(/-([a-z]{2})\.html$/);
+    const lang: Language = (langMatch ? langMatch[1] : 'en') as Language;
+    const translatedHtml: string = translateSwedishContent(html, lang);
+    return writeArticle(translatedHtml, filename);
+  };
+
   for (const type of articleTypes) {
     switch (type.trim()) {
       case 'week-ahead':
@@ -147,7 +158,7 @@ export async function generateNews(): Promise<typeof stats> {
               topic: topTitle.slice(0, 80),
               voteId: voteId || undefined,
             },
-            writeArticle,
+            writeArticle: translatingWriteArticle,
           });
         } catch (err: unknown) {
           console.error('❌ Error generating breaking news:', (err as Error).message);
@@ -155,13 +166,13 @@ export async function generateNews(): Promise<typeof stats> {
         break;
       }
       case 'month-ahead':
-        await generateMonthAhead({ languages, writeArticle });
+        await generateMonthAhead({ languages, writeArticle: translatingWriteArticle });
         break;
       case 'weekly-review':
-        await generateWeeklyReview({ languages, writeArticle });
+        await generateWeeklyReview({ languages, writeArticle: translatingWriteArticle });
         break;
       case 'monthly-review':
-        await generateMonthlyReview({ languages, writeArticle });
+        await generateMonthlyReview({ languages, writeArticle: translatingWriteArticle });
         break;
       case 'deep-inspection':
         await generateDeepInspection();
