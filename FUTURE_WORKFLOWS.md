@@ -1,19 +1,19 @@
 # 🔮 Riksdagsmonitor — Future Workflows Vision
 
-**Document Version:** 2.0
-**Last Updated:** 2026-02-24
+**Document Version:** 2.1
+**Last Updated:** 2026-03-10
 **Classification:** Public
 **Owner:** Hack23 AB (Org.nr 5595347807)
 **Horizon:** 2026–2037
 
 ## Executive Summary
 
-This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026-2037). Building on the current foundation of 44 workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
+This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026-2037). Building on the current foundation of 43 workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
 
 ### Current State (2026 Q1)
-- 44 workflows (24 YAML + 10 agentic sources + 10 compiled locks)
-- TypeScript migration complete (27 modules)
-- 1200 unit tests, dual deployment (S3/CloudFront + GitHub Pages)
+- 43 workflows (23 YAML + 10 agentic sources + 10 compiled locks)
+- TypeScript migration complete (31 modules)
+- 2890 unit tests, dual deployment (S3/CloudFront + GitHub Pages)
 - 10 agentic news generation workflows (Claude Opus 4.6)
 
 ### Target State (2029-2037)
@@ -653,7 +653,7 @@ gantt
     + Prediction Pipeline :2027-Q3, 2028-Q1
 
     section Agentic
-    Current (7)          :done, 2026-Q1, 2026-Q1
+    Current (10)         :done, 2026-Q1, 2026-Q1
     + Fact-Checking       :2027-Q1, 2027-Q2
     + Editorial Board     :2028-Q1, 2028-Q2
     + Multi-Platform      :2028-Q2, 2028-Q3
@@ -667,7 +667,7 @@ gantt
 
 | Year | Projected Total | New Capabilities |
 |------|----------------|------------------|
-| 2026 Q1 | **44** | TypeScript foundation, 10 agentic workflows ✅ |
+| 2026 Q1 | **43** | TypeScript foundation, 10 agentic workflows ✅ |
 | 2026 Q4 | **50** | CIA pipeline v2, preview deploys, visual regression |
 | 2027 Q4 | **55** | OSINT pipeline, ML predictions, real-time streams |
 | 2028 Q4 | **65** | Self-healing, canary deploy, AI editorial board |
@@ -759,7 +759,7 @@ gantt
 
 | Year | Total Workflows | AI Model | Key Capability |
 |------|----------------|----------|----------------|
-| 2026 | 44-50 | Opus 4.6-4.9 | Agentic news generation |
+| 2026 | 43-50 | Opus 4.6-4.9 | Agentic news generation |
 | 2027 | 50-55 | Opus 5.x | Predictive analytics |
 | 2028 | 55-65 | Opus 6.x | Multi-modal content |
 | 2029 | 65-75 | Opus 7.x | Autonomous pipeline |
@@ -827,7 +827,7 @@ gantt
 
 ---
 
-**Document Version:** 2.0
-**Last Updated:** 2026-02-24
+**Document Version:** 2.1
+**Last Updated:** 2026-03-10
 **Classification:** Public
 **Owner:** Hack23 AB
