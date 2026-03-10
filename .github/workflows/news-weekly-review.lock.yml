@@ -21,9 +21,9 @@
 #
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
-# Generates weekly review retrospective articles for all 14 languages. Runs Saturdays to review the past week.
+# Generates weekly review retrospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Saturdays to review the past week.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"974f6629aa8d514b36a41c23c519445b48088da3b4ec5515e948bdcc278853ca","compiler_version":"v0.57.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"fd2c99338b6e1188d73dbb909fe76002668769e9fa0386cff3be227ffe5d9316","compiler_version":"v0.57.0"}
 
 name: "News: Weekly Review"
 "on":
@@ -37,8 +37,8 @@ name: "News: Weekly Review"
         required: false
         type: boolean
       languages:
-        default: all
-        description: Languages to generate (en,sv | nordic | eu-core | all)
+        default: en,sv
+        description: Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.
         required: false
 
 permissions: {}
@@ -137,7 +137,7 @@ jobs:
           cat "/opt/gh-aw/prompts/safe_outputs_prompt.md"
           cat << 'GH_AW_PROMPT_EOF'
           <safe-output-tools>
-          Tools: add_comment, create_pull_request, missing_tool, missing_data, noop
+          Tools: add_comment, create_pull_request, dispatch_workflow, missing_tool, missing_data, noop
           GH_AW_PROMPT_EOF
           cat "/opt/gh-aw/prompts/safe_outputs_create_pull_request.md"
           cat << 'GH_AW_PROMPT_EOF'
@@ -343,7 +343,7 @@ jobs:
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
           cat > /opt/gh-aw/safeoutputs/config.json << 'GH_AW_SAFE_OUTPUTS_CONFIG_EOF'
-          {"add_comment":{"max":1},"create_pull_request":{"max":1},"missing_data":{},"missing_tool":{},"noop":{"max":1}}
+          {"add_comment":{"max":1},"create_pull_request":{"max":1},"dispatch_workflow":{"max":1,"workflow_files":{"news-translate":".lock.yml"},"workflows":["news-translate"]},"missing_data":{},"missing_tool":{},"noop":{"max":1}}
           GH_AW_SAFE_OUTPUTS_CONFIG_EOF
           cat > /opt/gh-aw/safeoutputs/tools.json << 'GH_AW_SAFE_OUTPUTS_TOOLS_EOF'
           [
@@ -525,6 +525,35 @@ jobs:
                 "type": "object"
               },
               "name": "missing_data"
+            },
+            {
+              "_workflow_name": "news-translate",
+              "description": "Dispatch the 'news-translate' workflow with workflow_dispatch trigger. This workflow must support workflow_dispatch and be in .github/workflows/ directory in the same repository.",
+              "inputSchema": {
+                "additionalProperties": false,
+                "properties": {
+                  "article_date": {
+                    "description": "Article date (YYYY-MM-DD). Defaults to today.",
+                    "type": "string"
+                  },
+                  "article_type": {
+                    "description": "Article type to translate (propositions, motions, committee-reports, week-ahead, month-ahead, weekly-review, monthly-review, breaking, evening-analysis, deep-inspection). Leave empty to scan for all untranslated articles.",
+                    "type": "string"
+                  },
+                  "languages": {
+                    "default": "all-extra",
+                    "description": "Target languages (da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh | nordic-extra | eu-extra | cjk | rtl | all-extra). Default: all-extra (all except en,sv)",
+                    "type": "string"
+                  },
+                  "source_language": {
+                    "default": "en",
+                    "description": "Source language to translate from (default: en)",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "news_translate"
             }
           ]
           GH_AW_SAFE_OUTPUTS_TOOLS_EOF
@@ -992,7 +1021,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           WORKFLOW_NAME: "News: Weekly Review"
-          WORKFLOW_DESCRIPTION: "Generates weekly review retrospective articles for all 14 languages. Runs Saturdays to review the past week."
+          WORKFLOW_DESCRIPTION: "Generates weekly review retrospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Saturdays to review the past week."
           HAS_PATCH: ${{ steps.collect_output.outputs.has_patch }}
         with:
           script: |
@@ -1085,6 +1114,7 @@ jobs:
     if: (always()) && (needs.agent.result != 'skipped')
     runs-on: ubuntu-slim
     permissions:
+      actions: write
       contents: write
       discussions: write
       issues: write
@@ -1203,6 +1233,7 @@ jobs:
     if: ((!cancelled()) && (needs.agent.result != 'skipped')) && (needs.agent.outputs.detection_success == 'true')
     runs-on: ubuntu-slim
     permissions:
+      actions: write
       contents: write
       discussions: write
       issues: write
@@ -1279,7 +1310,7 @@ jobs:
           GH_AW_ALLOWED_DOMAINS: "riksdag-regering-ai.onrender.com,api.scb.se,api.worldbank.org,data.riksdagen.se,www.riksdagen.se,www.regeringen.se,github.com"
           GITHUB_SERVER_URL: ${{ github.server_url }}
           GITHUB_API_URL: ${{ github.api_url }}
-          GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"add_comment\":{\"max\":1},\"create_pull_request\":{\"max\":1,\"max_patch_size\":1024,\"protected_files\":[\"package.json\",\"bun.lockb\",\"bunfig.toml\",\"deno.json\",\"deno.jsonc\",\"deno.lock\",\"global.json\",\"NuGet.Config\",\"Directory.Packages.props\",\"mix.exs\",\"mix.lock\",\"go.mod\",\"go.sum\",\"stack.yaml\",\"stack.yaml.lock\",\"pom.xml\",\"build.gradle\",\"build.gradle.kts\",\"settings.gradle\",\"settings.gradle.kts\",\"gradle.properties\",\"package-lock.json\",\"yarn.lock\",\"pnpm-lock.yaml\",\"npm-shrinkwrap.json\",\"requirements.txt\",\"Pipfile\",\"Pipfile.lock\",\"pyproject.toml\",\"setup.py\",\"setup.cfg\",\"Gemfile\",\"Gemfile.lock\",\"uv.lock\",\"AGENTS.md\"],\"protected_path_prefixes\":[\".github/\",\".agents/\"]},\"missing_data\":{},\"missing_tool\":{}}"
+          GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"add_comment\":{\"max\":1},\"create_pull_request\":{\"max\":1,\"max_patch_size\":1024,\"protected_files\":[\"package.json\",\"bun.lockb\",\"bunfig.toml\",\"deno.json\",\"deno.jsonc\",\"deno.lock\",\"global.json\",\"NuGet.Config\",\"Directory.Packages.props\",\"mix.exs\",\"mix.lock\",\"go.mod\",\"go.sum\",\"stack.yaml\",\"stack.yaml.lock\",\"pom.xml\",\"build.gradle\",\"build.gradle.kts\",\"settings.gradle\",\"settings.gradle.kts\",\"gradle.properties\",\"package-lock.json\",\"yarn.lock\",\"pnpm-lock.yaml\",\"npm-shrinkwrap.json\",\"requirements.txt\",\"Pipfile\",\"Pipfile.lock\",\"pyproject.toml\",\"setup.py\",\"setup.cfg\",\"Gemfile\",\"Gemfile.lock\",\"uv.lock\",\"AGENTS.md\"],\"protected_path_prefixes\":[\".github/\",\".agents/\"]},\"dispatch_workflow\":{\"max\":1,\"workflow_files\":{\"news-translate\":\".lock.yml\"},\"workflows\":[\"news-translate\"]},\"missing_data\":{},\"missing_tool\":{}}"
           GH_AW_CI_TRIGGER_TOKEN: ${{ secrets.GH_AW_CI_TRIGGER_TOKEN }}
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}

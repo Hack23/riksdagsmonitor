@@ -21,28 +21,31 @@
 #
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
-# Generates comprehensive evening analysis articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
+# Dedicated translation workflow for news articles. Generates high-quality translations for all non-core languages. Dispatched by content workflows or run manually/on schedule to translate untranslated articles.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"6dc11196cb6c0f996b63031af5ada000c7083338501190fd67b58f1cc7fc3212","compiler_version":"v0.57.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"f39bff35ac01ecb18a99511099bf59d505dad7cf1be77d71369b46e8bc44850e","compiler_version":"v0.57.0"}
 
-name: "News Evening Analysis"
+name: "News: Translate Articles"
 "on":
   schedule:
-  - cron: "0 18 * * 1-5"
-  - cron: "0 16 * * 6"
+  - cron: "0 11 * * 1-5"
+  - cron: "0 17 * * 1-5"
+  - cron: "0 14 * * 0,6"
   workflow_dispatch:
     inputs:
-      coverage_depth:
-        default: standard
-        description: "Coverage depth: standard, deep, comprehensive"
+      article_date:
+        description: Article date (YYYY-MM-DD). Defaults to today.
+        required: false
+      article_type:
+        description: Article type to translate (propositions, motions, committee-reports, week-ahead, month-ahead, weekly-review, monthly-review, breaking, evening-analysis, deep-inspection). Leave empty to scan for all untranslated articles.
         required: false
       languages:
-        default: en,sv
-        description: Core content languages (en,sv | nordic | eu-core | all). Translations handled by news-translate workflow.
+        default: all-extra
+        description: "Target languages (da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh | nordic-extra | eu-extra | cjk | rtl | all-extra). Default: all-extra (all except en,sv)"
         required: false
-      lookback_hours:
-        default: "12"
-        description: "Hours to look back for activity (default: 12)"
+      source_language:
+        default: en
+        description: "Source language to translate from (default: en)"
         required: false
 
 permissions: {}
@@ -50,7 +53,7 @@ permissions: {}
 concurrency:
   group: "gh-aw-${{ github.workflow }}"
 
-run-name: "News Evening Analysis"
+run-name: "News: Translate Articles"
 
 jobs:
   activation:
@@ -76,7 +79,7 @@ jobs:
           GH_AW_INFO_VERSION: ""
           GH_AW_INFO_AGENT_VERSION: "latest"
           GH_AW_INFO_CLI_VERSION: "v0.57.0"
-          GH_AW_INFO_WORKFLOW_NAME: "News Evening Analysis"
+          GH_AW_INFO_WORKFLOW_NAME: "News: Translate Articles"
           GH_AW_INFO_EXPERIMENTAL: "false"
           GH_AW_INFO_SUPPORTS_TOOLS_ALLOWLIST: "true"
           GH_AW_INFO_STAGED: "false"
@@ -108,7 +111,7 @@ jobs:
       - name: Check workflow file timestamps
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
-          GH_AW_WORKFLOW_FILE: "news-evening-analysis.lock.yml"
+          GH_AW_WORKFLOW_FILE: "news-translate.lock.yml"
         with:
           script: |
             const { setupGlobals } = require('/opt/gh-aw/actions/setup_globals.cjs');
@@ -122,9 +125,10 @@ jobs:
           GH_AW_GITHUB_ACTOR: ${{ github.actor }}
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
-          GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH: ${{ github.event.inputs.coverage_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPE: ${{ github.event.inputs.article_type }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
-          GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS: ${{ github.event.inputs.lookback_hours }}
+          GH_AW_GITHUB_EVENT_INPUTS_SOURCE_LANGUAGE: ${{ github.event.inputs.source_language }}
           GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
           GH_AW_GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
           GH_AW_GITHUB_REPOSITORY: ${{ github.repository }}
@@ -142,7 +146,7 @@ jobs:
           cat "/opt/gh-aw/prompts/safe_outputs_prompt.md"
           cat << 'GH_AW_PROMPT_EOF'
           <safe-output-tools>
-          Tools: add_comment, create_pull_request, dispatch_workflow, missing_tool, missing_data, noop
+          Tools: add_comment, create_pull_request, missing_tool, missing_data, noop
           GH_AW_PROMPT_EOF
           cat "/opt/gh-aw/prompts/safe_outputs_create_pull_request.md"
           cat << 'GH_AW_PROMPT_EOF'
@@ -180,16 +184,17 @@ jobs:
           </system>
           GH_AW_PROMPT_EOF
           cat << 'GH_AW_PROMPT_EOF'
-          {{#runtime-import .github/workflows/news-evening-analysis.md}}
+          {{#runtime-import .github/workflows/news-translate.md}}
           GH_AW_PROMPT_EOF
           } > "$GH_AW_PROMPT"
       - name: Interpolate variables and render templates
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
-          GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH: ${{ github.event.inputs.coverage_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPE: ${{ github.event.inputs.article_type }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
-          GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS: ${{ github.event.inputs.lookback_hours }}
+          GH_AW_GITHUB_EVENT_INPUTS_SOURCE_LANGUAGE: ${{ github.event.inputs.source_language }}
         with:
           script: |
             const { setupGlobals } = require('/opt/gh-aw/actions/setup_globals.cjs');
@@ -203,9 +208,10 @@ jobs:
           GH_AW_GITHUB_ACTOR: ${{ github.actor }}
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
-          GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH: ${{ github.event.inputs.coverage_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPE: ${{ github.event.inputs.article_type }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
-          GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS: ${{ github.event.inputs.lookback_hours }}
+          GH_AW_GITHUB_EVENT_INPUTS_SOURCE_LANGUAGE: ${{ github.event.inputs.source_language }}
           GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
           GH_AW_GITHUB_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
           GH_AW_GITHUB_REPOSITORY: ${{ github.repository }}
@@ -225,9 +231,10 @@ jobs:
                 GH_AW_GITHUB_ACTOR: process.env.GH_AW_GITHUB_ACTOR,
                 GH_AW_GITHUB_EVENT_COMMENT_ID: process.env.GH_AW_GITHUB_EVENT_COMMENT_ID,
                 GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: process.env.GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER,
-                GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH: process.env.GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH,
+                GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: process.env.GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE,
+                GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPE: process.env.GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPE,
                 GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: process.env.GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES,
-                GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS: process.env.GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS,
+                GH_AW_GITHUB_EVENT_INPUTS_SOURCE_LANGUAGE: process.env.GH_AW_GITHUB_EVENT_INPUTS_SOURCE_LANGUAGE,
                 GH_AW_GITHUB_EVENT_ISSUE_NUMBER: process.env.GH_AW_GITHUB_EVENT_ISSUE_NUMBER,
                 GH_AW_GITHUB_EVENT_PULL_REQUEST_NUMBER: process.env.GH_AW_GITHUB_EVENT_PULL_REQUEST_NUMBER,
                 GH_AW_GITHUB_REPOSITORY: process.env.GH_AW_GITHUB_REPOSITORY,
@@ -264,7 +271,7 @@ jobs:
       pull-requests: read
       security-events: read
     concurrency:
-      group: "gh-aw-copilot-${{ github.workflow }}"
+      group: "gh-aw-copilot-${{ github.workflow }}-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}"
     env:
       DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
       GH_AW_ASSETS_ALLOWED_EXTS: ""
@@ -274,7 +281,7 @@ jobs:
       GH_AW_SAFE_OUTPUTS: /opt/gh-aw/safeoutputs/outputs.jsonl
       GH_AW_SAFE_OUTPUTS_CONFIG_PATH: /opt/gh-aw/safeoutputs/config.json
       GH_AW_SAFE_OUTPUTS_TOOLS_PATH: /opt/gh-aw/safeoutputs/tools.json
-      GH_AW_WORKFLOW_ID_SANITIZED: newseveninganalysis
+      GH_AW_WORKFLOW_ID_SANITIZED: newstranslate
     outputs:
       checkout_pr_success: ${{ steps.checkout-pr.outputs.checkout_pr_success || 'true' }}
       detection_conclusion: ${{ steps.detection_conclusion.outputs.conclusion }}
@@ -351,7 +358,7 @@ jobs:
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
           cat > /opt/gh-aw/safeoutputs/config.json << 'GH_AW_SAFE_OUTPUTS_CONFIG_EOF'
-          {"add_comment":{"max":1},"create_pull_request":{"max":1},"dispatch_workflow":{"max":1,"workflow_files":{"news-translate":".lock.yml"},"workflows":["news-translate"]},"missing_data":{},"missing_tool":{},"noop":{"max":1}}
+          {"add_comment":{"max":1},"create_pull_request":{"max":1},"missing_data":{},"missing_tool":{},"noop":{"max":1}}
           GH_AW_SAFE_OUTPUTS_CONFIG_EOF
           cat > /opt/gh-aw/safeoutputs/tools.json << 'GH_AW_SAFE_OUTPUTS_TOOLS_EOF'
           [
@@ -533,35 +540,6 @@ jobs:
                 "type": "object"
               },
               "name": "missing_data"
-            },
-            {
-              "_workflow_name": "news-translate",
-              "description": "Dispatch the 'news-translate' workflow with workflow_dispatch trigger. This workflow must support workflow_dispatch and be in .github/workflows/ directory in the same repository.",
-              "inputSchema": {
-                "additionalProperties": false,
-                "properties": {
-                  "article_date": {
-                    "description": "Article date (YYYY-MM-DD). Defaults to today.",
-                    "type": "string"
-                  },
-                  "article_type": {
-                    "description": "Article type to translate (propositions, motions, committee-reports, week-ahead, month-ahead, weekly-review, monthly-review, breaking, evening-analysis, deep-inspection). Leave empty to scan for all untranslated articles.",
-                    "type": "string"
-                  },
-                  "languages": {
-                    "default": "all-extra",
-                    "description": "Target languages (da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh | nordic-extra | eu-extra | cjk | rtl | all-extra). Default: all-extra (all except en,sv)",
-                    "type": "string"
-                  },
-                  "source_language": {
-                    "default": "en",
-                    "description": "Source language to translate from (default: en)",
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              },
-              "name": "news_translate"
             }
           ]
           GH_AW_SAFE_OUTPUTS_TOOLS_EOF
@@ -756,23 +734,6 @@ jobs:
                   "GITHUB_PERSONAL_ACCESS_TOKEN": "\${GITHUB_MCP_SERVER_TOKEN}",
                   "GITHUB_READ_ONLY": "1",
                   "GITHUB_TOOLSETS": "all"
-                }
-              },
-              "microsoft/playwright": {
-                "type": "stdio",
-                "container": "node:lts-alpine",
-                "entrypoint": "npx",
-                "entrypointArgs": [
-                  "npx",
-                  "-y",
-                  "@playwright/mcp@0.0.68",
-                  "--headless"
-                ],
-                "tools": [
-                  "*"
-                ],
-                "env": {
-                  "DISPLAY": ":99"
                 }
               },
               "riksdag-regering": {
@@ -1045,8 +1006,8 @@ jobs:
         if: always() && steps.detection_guard.outputs.run_detection == 'true'
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
-          WORKFLOW_NAME: "News Evening Analysis"
-          WORKFLOW_DESCRIPTION: "Generates comprehensive evening analysis articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week."
+          WORKFLOW_NAME: "News: Translate Articles"
+          WORKFLOW_DESCRIPTION: "Dedicated translation workflow for news articles. Generates high-quality translations for all non-core languages. Dispatched by content workflows or run manually/on schedule to translate untranslated articles."
           HAS_PATCH: ${{ steps.collect_output.outputs.has_patch }}
         with:
           script: |
@@ -1139,13 +1100,12 @@ jobs:
     if: (always()) && (needs.agent.result != 'skipped')
     runs-on: ubuntu-slim
     permissions:
-      actions: write
       contents: write
       discussions: write
       issues: write
       pull-requests: write
     concurrency:
-      group: "gh-aw-conclusion-news-evening-analysis"
+      group: "gh-aw-conclusion-news-translate"
       cancel-in-progress: false
     outputs:
       noop_message: ${{ steps.noop.outputs.noop_message }}
@@ -1175,7 +1135,7 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
           GH_AW_NOOP_MAX: "1"
-          GH_AW_WORKFLOW_NAME: "News Evening Analysis"
+          GH_AW_WORKFLOW_NAME: "News: Translate Articles"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -1188,7 +1148,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "News Evening Analysis"
+          GH_AW_WORKFLOW_NAME: "News: Translate Articles"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -1201,10 +1161,10 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "News Evening Analysis"
+          GH_AW_WORKFLOW_NAME: "News: Translate Articles"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
-          GH_AW_WORKFLOW_ID: "news-evening-analysis"
+          GH_AW_WORKFLOW_ID: "news-translate"
           GH_AW_SECRET_VERIFICATION_RESULT: ${{ needs.activation.outputs.secret_verification_result }}
           GH_AW_CHECKOUT_PR_SUCCESS: ${{ needs.agent.outputs.checkout_pr_success }}
           GH_AW_INFERENCE_ACCESS_ERROR: ${{ needs.agent.outputs.inference_access_error }}
@@ -1224,7 +1184,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "News Evening Analysis"
+          GH_AW_WORKFLOW_NAME: "News: Translate Articles"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
           GH_AW_NOOP_MESSAGE: ${{ steps.noop.outputs.noop_message }}
@@ -1241,7 +1201,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "News Evening Analysis"
+          GH_AW_WORKFLOW_NAME: "News: Translate Articles"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -1258,18 +1218,17 @@ jobs:
     if: ((!cancelled()) && (needs.agent.result != 'skipped')) && (needs.agent.outputs.detection_success == 'true')
     runs-on: ubuntu-slim
     permissions:
-      actions: write
       contents: write
       discussions: write
       issues: write
       pull-requests: write
     timeout-minutes: 15
     env:
-      GH_AW_CALLER_WORKFLOW_ID: "${{ github.repository }}/news-evening-analysis"
+      GH_AW_CALLER_WORKFLOW_ID: "${{ github.repository }}/news-translate"
       GH_AW_ENGINE_ID: "copilot"
       GH_AW_ENGINE_MODEL: "claude-opus-4.6"
-      GH_AW_WORKFLOW_ID: "news-evening-analysis"
-      GH_AW_WORKFLOW_NAME: "News Evening Analysis"
+      GH_AW_WORKFLOW_ID: "news-translate"
+      GH_AW_WORKFLOW_NAME: "News: Translate Articles"
     outputs:
       code_push_failure_count: ${{ steps.process_safe_outputs.outputs.code_push_failure_count }}
       code_push_failure_errors: ${{ steps.process_safe_outputs.outputs.code_push_failure_errors }}
@@ -1335,7 +1294,7 @@ jobs:
           GH_AW_ALLOWED_DOMAINS: "riksdag-regering-ai.onrender.com,api.scb.se,api.worldbank.org,data.riksdagen.se,www.riksdagen.se,www.regeringen.se,github.com"
           GITHUB_SERVER_URL: ${{ github.server_url }}
           GITHUB_API_URL: ${{ github.api_url }}
-          GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"add_comment\":{\"max\":1},\"create_pull_request\":{\"max\":1,\"max_patch_size\":1024,\"protected_files\":[\"package.json\",\"bun.lockb\",\"bunfig.toml\",\"deno.json\",\"deno.jsonc\",\"deno.lock\",\"global.json\",\"NuGet.Config\",\"Directory.Packages.props\",\"mix.exs\",\"mix.lock\",\"go.mod\",\"go.sum\",\"stack.yaml\",\"stack.yaml.lock\",\"pom.xml\",\"build.gradle\",\"build.gradle.kts\",\"settings.gradle\",\"settings.gradle.kts\",\"gradle.properties\",\"package-lock.json\",\"yarn.lock\",\"pnpm-lock.yaml\",\"npm-shrinkwrap.json\",\"requirements.txt\",\"Pipfile\",\"Pipfile.lock\",\"pyproject.toml\",\"setup.py\",\"setup.cfg\",\"Gemfile\",\"Gemfile.lock\",\"uv.lock\",\"AGENTS.md\"],\"protected_path_prefixes\":[\".github/\",\".agents/\"]},\"dispatch_workflow\":{\"max\":1,\"workflow_files\":{\"news-translate\":\".lock.yml\"},\"workflows\":[\"news-translate\"]},\"missing_data\":{},\"missing_tool\":{}}"
+          GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"add_comment\":{\"max\":1},\"create_pull_request\":{\"max\":1,\"max_patch_size\":1024,\"protected_files\":[\"package.json\",\"bun.lockb\",\"bunfig.toml\",\"deno.json\",\"deno.jsonc\",\"deno.lock\",\"global.json\",\"NuGet.Config\",\"Directory.Packages.props\",\"mix.exs\",\"mix.lock\",\"go.mod\",\"go.sum\",\"stack.yaml\",\"stack.yaml.lock\",\"pom.xml\",\"build.gradle\",\"build.gradle.kts\",\"settings.gradle\",\"settings.gradle.kts\",\"gradle.properties\",\"package-lock.json\",\"yarn.lock\",\"pnpm-lock.yaml\",\"npm-shrinkwrap.json\",\"requirements.txt\",\"Pipfile\",\"Pipfile.lock\",\"pyproject.toml\",\"setup.py\",\"setup.cfg\",\"Gemfile\",\"Gemfile.lock\",\"uv.lock\",\"AGENTS.md\"],\"protected_path_prefixes\":[\".github/\",\".agents/\"]},\"missing_data\":{},\"missing_tool\":{}}"
           GH_AW_CI_TRIGGER_TOKEN: ${{ secrets.GH_AW_CI_TRIGGER_TOKEN }}
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
