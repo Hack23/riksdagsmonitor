@@ -308,6 +308,21 @@ For each target language file:
 5. **Check "Why It Matters" sections**: The EN article contains detailed policy context. If translated versions have generic template text instead, replace with translated versions of the EN content.
 
 ```bash
+# Re-derive variables (each code block runs in its own shell session)
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all-extra"
+
+case "$LANGUAGES_INPUT" in
+  "nordic-extra") LANG_ARG="da,no,fi" ;;
+  "eu-extra") LANG_ARG="de,fr,es,nl" ;;
+  "cjk") LANG_ARG="ja,ko,zh" ;;
+  "rtl") LANG_ARG="ar,he" ;;
+  "all-extra") LANG_ARG="da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
+  *) LANG_ARG="$LANGUAGES_INPUT" ;;
+esac
+
 # Quick parity check — iterate over each EN source in case multiple types exist
 for EN_FILE in $(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null); do
   [ -f "$EN_FILE" ] || continue
