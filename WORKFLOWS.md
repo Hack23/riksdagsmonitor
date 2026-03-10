@@ -146,7 +146,7 @@ graph TD
 
 | # | Workflow | File | Trigger | Targets |
 |---|----------|------|---------|---------|
-| 4.1 | Release with Attestations | `release.yml` | Push to main, manual | SLSA + dual deploy |
+| 4.1 | Release with Attestations | `release.yml` | Push tags (v*), manual | SLSA + dual deploy |
 | 4.2 | Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
 | 4.3 | Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 

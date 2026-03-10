@@ -92,7 +92,7 @@ The following Hack23 AB projects demonstrate completed CRA assessments:
 - **🧠 System Overview:** [MINDMAP.md](MINDMAP.md) — Conceptual system relationships
 - **🎯 Strategic Analysis:** [SWOT.md](SWOT.md) — Strategic assessment
 - **🎯 Threat Analysis:** [THREAT_MODEL.md](THREAT_MODEL.md) — STRIDE and MITRE ATT&CK mapping
-- **🔧 CI/CD Pipelines:** [WORKFLOWS.md](WORKFLOWS.md) — 44 workflow automation documentation
+- **🔧 CI/CD Pipelines:** [WORKFLOWS.md](WORKFLOWS.md) — 43 workflow automation documentation
 
 **📊 Project Status & Quality Badges:**
 
@@ -198,7 +198,7 @@ Reference: [📊 Risk Assessment Methodology](https://github.com/Hack23/ISMS-PUB
 | **🏷️ § 2.1 - Personal Data Protection** | [x] | No personal data collection — GDPR compliant by design. Public political data only. [Data Model](DATA_MODEL.md) documents data handling |
 | **🔍 § 2.2 - Vulnerability Disclosure** | [x] | [SECURITY.md](SECURITY.md) with GitHub Security Advisories, coordinated disclosure, 48h acknowledgment. [Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) |
 | **📦 § 2.3 - Software Bill of Materials** | [x] | [package.json](package.json) + [package-lock.json](package-lock.json) provide complete dependency inventory. Dependabot provides continuous SCA |
-| **🔐 § 2.4 - Secure Updates** | [x] | Automated CI/CD pipeline with CodeQL, dependency review, SHA-pinned actions. [WORKFLOWS.md](WORKFLOWS.md) documents 44 workflows |
+| **🔐 § 2.4 - Secure Updates** | [x] | Automated CI/CD pipeline with CodeQL, dependency review, SHA-pinned actions. [WORKFLOWS.md](WORKFLOWS.md) documents 43 workflows |
 | **📊 § 2.5 - Security Monitoring** | [x] | GitHub Security Dashboard (code scanning, secret scanning, Dependabot), Lighthouse CI, uptime monitoring. [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) |
 | **📚 § 2.6 - Security Documentation** | [x] | Complete architecture documentation portfolio: [ARCHITECTURE.md](ARCHITECTURE.md), [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md), [THREAT_MODEL.md](THREAT_MODEL.md), [DATA_MODEL.md](DATA_MODEL.md) + 6 future-state documents |
 

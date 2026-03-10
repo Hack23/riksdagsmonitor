@@ -318,7 +318,7 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 - **Frontend:** Static HTML/CSS with JavaScript dashboards
 - **Build System:** Vite 7 (ES modules, code splitting)
 - **Visualization:** Chart.js 4 + D3.js 7 hosted locally on CloudFront
-- **Testing:** Vitest (unit), Cypress (E2E) - 49 tests passing
+- **Testing:** Vitest (unit), Cypress (E2E) - 2890 tests passing
 - **Styling:** Custom CSS with cyberpunk theme, responsive design
 - **Hosting:** GitHub Pages with CloudFront CDN
 - **CI/CD:** GitHub Actions for automated testing and deployment
@@ -489,7 +489,7 @@ npm run htmlhint && npm test && npm run build
 **Automated Checks:**
 - HTML validation (HTMLHint)
 - Link checking (linkinator)
-- JavaScript testing (Vitest unit tests - 49 tests)
+- JavaScript testing (Vitest unit tests - 2890 tests)
 - E2E testing (Cypress)
 - Build validation (Vite)
 - Dependency review (Dependabot)
@@ -503,7 +503,7 @@ npm run htmlhint && npm test && npm run build
 - `.github/workflows/release.yml` - Release with attestations and documentation-as-code
 
 **Test Results**:
-- ✅ 49/49 unit tests passing (Vitest)
+- ✅ 2890/2890 unit tests passing (Vitest)
 - ✅ 100% test pass rate
 - ✅ Coverage: 70% lines, 70% functions, 60% branches
 
@@ -768,7 +768,7 @@ timeline
 graph LR
     subgraph SGCompleted["✅ Completed"]
         style SGCompleted fill:#006400,stroke:#00d9ff,color:#e0e0e0
-        A[TypeScript Migration<br/>27 modules] --> B[Agentic News Gen<br/>10 workflows]
+        A[TypeScript Migration<br/>31 modules] --> B[Agentic News Gen<br/>10 workflows]
         B --> C[14 Languages<br/>RTL support]
         C --> D[Dual Deploy<br/>S3 + GitHub Pages]
     end
@@ -787,7 +787,7 @@ graph LR
 
 | Capability | Status | Details |
 |:-----------|:------:|:--------|
-| TypeScript migration | ✅ Done | 27 modules, 49 Vitest tests |
+| TypeScript migration | ✅ Done | 31 modules, 2890 Vitest tests |
 | Agentic news generation | ✅ Live | 10 workflows (9 scheduled + 1 on-demand), 14 languages |
 | 14-language support | ✅ Live | Including Arabic/Hebrew RTL |
 | CIA data integration | 🔄 Active | 19 visualization products |
