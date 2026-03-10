@@ -197,6 +197,115 @@ describe('Workflow Architecture', () => {
   });
 });
 
+describe('Translation Workflow Architecture', () => {
+  const TRANSLATE_WORKFLOW = 'news-translate.md';
+
+  it('should have a dedicated translation workflow', () => {
+    const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
+    expect(
+      fs.existsSync(filepath),
+      'Missing dedicated translation workflow: news-translate.md'
+    ).toBe(true);
+  });
+
+  it('translation workflow should have workflow_dispatch trigger', () => {
+    const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
+    if (!fs.existsSync(filepath)) return;
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('workflow_dispatch');
+  });
+
+  it('translation workflow should have schedule trigger for catch-up', () => {
+    const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
+    if (!fs.existsSync(filepath)) return;
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('cron:');
+  });
+
+  it('translation workflow should have concurrency.job-discriminator', () => {
+    const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
+    if (!fs.existsSync(filepath)) return;
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('job-discriminator');
+  });
+
+  it('translation workflow should support article_date and article_type inputs', () => {
+    const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
+    if (!fs.existsSync(filepath)) return;
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('article_date');
+    expect(content).toContain('article_type');
+  });
+
+  it('translation workflow should contain canonical translation quality rules', () => {
+    const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
+    if (!fs.existsSync(filepath)) return;
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('MANDATORY Translation Quality Rules');
+    expect(content).toContain('RTL languages');
+    expect(content).toContain('CJK languages');
+    expect(content).toContain('CONTENT_LABELS');
+  });
+
+  it('translation workflow should have safe-outputs with create-pull-request', () => {
+    const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
+    if (!fs.existsSync(filepath)) return;
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('safe-outputs');
+    expect(content).toContain('create-pull-request');
+  });
+
+  it('translation workflow should have contents: read permission', () => {
+    const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
+    if (!fs.existsSync(filepath)) return;
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('contents: read');
+  });
+
+  it('content workflows should default to core languages (en,sv)', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md'
+    ];
+
+    for (const workflowFile of contentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('default: en,sv'),
+        `Workflow ${workflowFile} should default to en,sv for core content generation`
+      ).toBe(true);
+    }
+  });
+
+  it('content workflows should have dispatch-workflow safe-output for news-translate', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-article-generator.md',
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md'
+    ];
+
+    for (const workflowFile of contentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('dispatch-workflow'),
+        `Workflow ${workflowFile} should have dispatch-workflow safe-output`
+      ).toBe(true);
+      expect(
+        content.includes('news-translate'),
+        `Workflow ${workflowFile} should reference news-translate in dispatch-workflow`
+      ).toBe(true);
+    }
+  });
+});
+
 describe('Schedule Staggering', () => {
   it('should stagger weekday workflows across different hours', () => {
     const weekdaySchedules: Array<{ file: string; hour: number }> = [];

@@ -1,6 +1,6 @@
 ---
 name: News Realtime Monitor
-description: Monitors Riksdag and Government for real-time updates and generates breaking news articles with Playwright validation. Runs twice daily on weekdays, once on weekends for government press releases and crisis communications.
+description: Monitors Riksdag and Government for real-time updates and generates breaking news articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. Runs twice daily on weekdays, once on weekends.
 strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule:
@@ -18,9 +18,9 @@ on:
         required: false
         default: all
       languages:
-        description: 'Languages to generate (en,sv | nordic | eu-core | all)'
+        description: 'Core content languages (en,sv | nordic | eu-core | all). Translations handled by news-translate workflow.'
         required: false
-        default: all
+        default: en,sv
 
 permissions:
   contents: read
@@ -80,6 +80,9 @@ safe-outputs:
     - github.com
   create-pull-request: {}
   add-comment: {}
+  dispatch-workflow:
+    workflows: [news-translate]
+    max: 1
 
 steps:
   - name: Setup Node.js
