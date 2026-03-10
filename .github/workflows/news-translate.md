@@ -334,7 +334,7 @@ for EN_FILE in $(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null); do
     TRANSLATED="${SLUG}-${lang}.html"
     if [ -f "$TRANSLATED" ]; then
       TR_LINES=$(wc -l < "$TRANSLATED")
-      SV_SPANS=$(grep -c '<span lang="sv">' "$TRANSLATED" 2>/dev/null || echo 0)
+      SV_SPANS=$(grep -c '<span lang="sv">' "$TRANSLATED" || true)
       echo "  $lang: $TR_LINES lines (EN: $EN_LINES), Swedish spans: $SV_SPANS"
     fi
   done
