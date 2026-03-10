@@ -1,6 +1,6 @@
 ---
 name: "News: Article Generator (Manual)"
-description: Manual-only multi-type article generator. For automated per-type generation, use the dedicated news-committee-reports, news-propositions, news-motions, news-week-ahead, news-month-ahead, news-weekly-review, news-monthly-review workflows instead.
+description: Manual-only multi-type article generator. For automated per-type generation, use the dedicated news-committee-reports, news-propositions, news-motions, news-week-ahead, news-month-ahead, news-weekly-review, news-monthly-review workflows. For translations, use news-translate workflow.
 strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   workflow_dispatch:
@@ -14,9 +14,9 @@ on:
         required: false
         default: false
       languages:
-        description: 'Languages to generate (en,sv | nordic | eu-core | all | custom comma-separated)'
+        description: 'Core content languages (en,sv | nordic | eu-core | all | custom). Use news-translate workflow for remaining languages, or pass all for single-run generation.'
         required: false
-        default: all
+        default: en,sv
       document_ids:
         description: 'Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)'
         required: false
@@ -85,6 +85,9 @@ safe-outputs:
     - github.com
   create-pull-request: {}
   add-comment: {}
+  dispatch-workflow:
+    workflows: [news-translate]
+    max: 1
 
 steps:
   - name: Setup Node.js
@@ -405,37 +408,28 @@ safeoutputs___create_pull_request({
 
 ## 🌐 MANDATORY Translation Quality Rules
 
-### Non-Negotiable Requirements for Non-EN/SV Articles:
-1. **ALL section headings** (h1, h2, h3) MUST be in the target language
-2. **ALL body paragraphs** MUST be written in the target language
-3. **Meta keywords** MUST be translated to the target language
-4. **No English fallback**: If you cannot translate a phrase, use the target language equivalent or omit
-5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
+> **📋 Canonical translation rules are maintained in `news-translate.md`.**
 
-### Per-Language Requirements:
-- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
-- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
-- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
-- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
+When generating articles for non-EN/SV languages in this manual workflow:
+1. **ALL section headings** and body content MUST be in the target language
+2. **Meta keywords** MUST be translated to the target language
+3. **data-translate markers**: ZERO `data-translate="true"` spans in final output
+4. Swedish API titles MUST be translated to target language
+5. Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
 
-### Localized Section Headings (use CONTENT_LABELS):
-Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
-- "Why This Week Matters" → Use `CONTENT_LABELS[lang].whyMatters`
-- "Key Events This Week" → Use `CONTENT_LABELS[lang].keyEvents`
-- "What to Watch" → Use `CONTENT_LABELS[lang].whatToWatch`
-- "Latest Committee Reports" → Use `CONTENT_LABELS[lang].latestReports`
+For comprehensive per-language rules (RTL, CJK, Nordic, European), localized CONTENT_LABELS, and validation commands, see `news-translate.md`.
 
-### Post-Generation Validation:
-After generating all articles, run:
-```bash
-npx tsx scripts/validate-news-translations.ts
+**Recommended workflow**: Generate EN/SV content first with deep analysis, then dispatch `news-translate` for remaining languages:
 ```
-Fix any files flagged before committing. Articles with >3 English phrases in non-EN versions must be regenerated.
-
-### Additional Rules:
-- Swedish API titles MUST be translated to target language
-- Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
-- ZERO TOLERANCE for language mixing
+safeoutputs___dispatch_workflow({
+  "workflow_name": "news-translate",
+  "inputs": {
+    "article_date": "<YYYY-MM-DD>",
+    "article_type": "<article-type>",
+    "languages": "all-extra"
+  }
+})
+```
 
 ## Error Handling
 

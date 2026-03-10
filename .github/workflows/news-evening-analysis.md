@@ -1,6 +1,6 @@
 ---
 name: News Evening Analysis
-description: Generates comprehensive evening analysis articles summarizing parliamentary and government activity with deeper analytical coverage and Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
+description: Generates comprehensive evening analysis articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule:
@@ -15,9 +15,9 @@ on:
         required: false
         default: standard
       languages:
-        description: 'Languages to generate (en,sv | nordic | eu-core | all)'
+        description: 'Core content languages (en,sv | nordic | eu-core | all). Translations handled by news-translate workflow.'
         required: false
-        default: all
+        default: en,sv
       lookback_hours:
         description: 'Hours to look back for activity (default: 12)'
         required: false
@@ -81,6 +81,9 @@ safe-outputs:
     - github.com
   create-pull-request: {}
   add-comment: {}
+  dispatch-workflow:
+    workflows: [news-translate]
+    max: 1
 
 steps:
   - name: Setup Node.js
