@@ -133,7 +133,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 **Technology Stack:**
 - **Frontend:** Static HTML5/CSS3, JavaScript (Chart.js 4.4.1, D3.js 7, Papa Parse 5.5.3)
 - **Build System:** Vite 7 (ES modules, code splitting)
-- **Testing:** Vitest (49 unit tests), Cypress (E2E)
+- **Testing:** Vitest (2890 unit tests), Cypress (E2E)
 - **Hosting:** AWS CloudFront (primary CDN) + S3 (origin)
 - **Data Sources:** CIA platform, riksdag-regering-mcp (32 tools), Swedish open data APIs
 - **Languages:** 14 languages (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
