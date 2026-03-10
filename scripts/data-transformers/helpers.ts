@@ -48,11 +48,12 @@ export function sanitizeUrl(url: string | undefined | null): string {
  *   in the final HTML.
  *
  * @param escapedText - Already HTML-escaped text content
- * @param lang        - Target article language (e.g. `'sv'`, `'en'`)
+ * @param _lang       - Target article language (kept only for backward
+ *                      compatibility; currently not used by this function)
  */
-export function svSpan(escapedText: string, lang: Language | string): string {
-  // Always include data-translate="true" so translateSwedishContent() can
-  // find and process every Swedish span for all target languages.
+export function svSpan(escapedText: string, _lang: Language | string): string {
+  // NOTE: `_lang` is intentionally unused and retained solely so existing
+  // call sites do not need to be updated; all spans are marked as Swedish.
   return `<span data-translate="true" lang="sv">${escapedText}</span>`;
 }
 

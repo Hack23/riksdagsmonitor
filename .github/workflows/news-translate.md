@@ -239,19 +239,22 @@ ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
-# If a specific type is given, find the EN source
+# If a specific type is given, find the EN source; otherwise list all EN articles for the date
 if [ -n "$ARTICLE_TYPE" ]; then
-  EN_SOURCE=$(ls news/${ARTICLE_DATE}-*${ARTICLE_TYPE}*-en.html 2>/dev/null | head -1)
+  EN_SOURCES=$(ls news/${ARTICLE_DATE}-*${ARTICLE_TYPE}*-en.html 2>/dev/null | head -1)
 else
   EN_SOURCES=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null)
 fi
 
-if [ -n "$EN_SOURCE" ] && [ -f "$EN_SOURCE" ]; then
-  echo "📖 Source article: $EN_SOURCE ($(wc -l < "$EN_SOURCE") lines)"
-  echo "--- EN article headings ---"
-  grep -oP '<h[1-6][^>]*>.*?</h[1-6]>' "$EN_SOURCE" | head -20
-  echo "--- EN article lede ---"
-  grep -oP '<p class="lede">.*?</p>' "$EN_SOURCE" | head -3
+if [ -n "$EN_SOURCES" ]; then
+  for EN_SOURCE in $EN_SOURCES; do
+    [ -f "$EN_SOURCE" ] || continue
+    echo "📖 Source article: $EN_SOURCE ($(wc -l < "$EN_SOURCE") lines)"
+    echo "--- EN article headings ---"
+    grep -oP '<h[1-6][^>]*>.*?</h[1-6]>' "$EN_SOURCE" | head -20
+    echo "--- EN article lede ---"
+    grep -oP '<p class="lede">.*?</p>' "$EN_SOURCE" | head -3
+  done
 fi
 ```
 
@@ -305,15 +308,21 @@ For each target language file:
 5. **Check "Why It Matters" sections**: The EN article contains detailed policy context. If translated versions have generic template text instead, replace with translated versions of the EN content.
 
 ```bash
-# Quick parity check
-EN_LINES=$(wc -l < news/${ARTICLE_DATE}-*-en.html 2>/dev/null | head -1)
-for lang in $(echo "$LANG_ARG" | tr ',' ' '); do
-  TRANSLATED=$(ls news/${ARTICLE_DATE}-*-${lang}.html 2>/dev/null | head -1)
-  if [ -f "$TRANSLATED" ]; then
-    TR_LINES=$(wc -l < "$TRANSLATED")
-    SV_SPANS=$(grep -c '<span lang="sv">' "$TRANSLATED" 2>/dev/null || echo 0)
-    echo "  $lang: $TR_LINES lines (EN: $EN_LINES), Swedish spans: $SV_SPANS"
-  fi
+# Quick parity check — iterate over each EN source in case multiple types exist
+for EN_FILE in $(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null); do
+  [ -f "$EN_FILE" ] || continue
+  EN_LINES=$(wc -l < "$EN_FILE")
+  # Derive article slug from EN filename (strip the -en.html suffix)
+  SLUG="${EN_FILE%-en.html}"
+  echo "📊 Parity check for $EN_FILE ($EN_LINES lines)"
+  for lang in $(echo "$LANG_ARG" | tr ',' ' '); do
+    TRANSLATED="${SLUG}-${lang}.html"
+    if [ -f "$TRANSLATED" ]; then
+      TR_LINES=$(wc -l < "$TRANSLATED")
+      SV_SPANS=$(grep -c '<span lang="sv">' "$TRANSLATED" 2>/dev/null || echo 0)
+      echo "  $lang: $TR_LINES lines (EN: $EN_LINES), Swedish spans: $SV_SPANS"
+    fi
+  done
 done
 ```
 
