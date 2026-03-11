@@ -13,7 +13,7 @@ import {
   COUNTRY_CODES,
   INDICATOR_IDS,
 } from '../scripts/world-bank-client.js';
-import type { WorldBankDataPoint, WorldBankClientConfig } from '../scripts/world-bank-client.js';
+import type { WorldBankDataPoint } from '../scripts/world-bank-client.js';
 
 describe('WorldBankClient', () => {
   let client: WorldBankClient;

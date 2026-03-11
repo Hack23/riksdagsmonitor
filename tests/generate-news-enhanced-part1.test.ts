@@ -10,7 +10,6 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
 import fs from 'fs';
-import path from 'path';
 import type { Language } from '../scripts/types/language.js';
 import type { ArticleType } from '../scripts/types/article.js';
 import type { GenerationResult, DateRange } from '../scripts/types/article.js';

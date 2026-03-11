@@ -35,13 +35,6 @@ export interface WorldBankIndicator {
   readonly unit: string;
 }
 
-/** Response from the World Bank API (paginated JSON) */
-interface WorldBankApiResponse {
-  readonly page: number;
-  readonly pages: number;
-  readonly per_page: string;
-  readonly total: number;
-}
 
 /** Raw indicator value from the API */
 interface RawIndicatorValue {

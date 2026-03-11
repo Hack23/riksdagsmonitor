@@ -12,7 +12,7 @@ import {
   buildEconomicTables,
 } from '../scripts/data-transformers/content-generators/economic-dashboard-section.js';
 import type { EconomicDataPoint } from '../scripts/data-transformers/content-generators/economic-dashboard-section.js';
-import { INDICATOR_IDS, COUNTRY_CODES } from '../scripts/world-bank-client.js';
+import { INDICATOR_IDS } from '../scripts/world-bank-client.js';
 
 /** Create mock World Bank data points for Nordic comparison */
 function makeDataPoints(): EconomicDataPoint[] {

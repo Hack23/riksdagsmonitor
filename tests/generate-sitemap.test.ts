@@ -5,7 +5,6 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
-import path from 'path';
 
 // The module uses an import.meta.url guard so it won't auto-execute main() on import,
 // but we still mock process.exit and fs.writeFileSync as a defensive backstop.

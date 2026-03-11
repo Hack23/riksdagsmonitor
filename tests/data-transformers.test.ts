@@ -13,8 +13,6 @@ import {
   calculateReadTime,
   generateSources,
   generateContentTitle,
-  groupMotionsByProposition,
-  groupPropositionsByCommittee,
   CONTENT_LABELS,
   L,
   formatDocumentDate,
@@ -22,7 +20,6 @@ import {
 } from '../scripts/data-transformers.js';
 import type { Language } from '../scripts/types/language.js';
 import type { EventGridItem, WatchPoint, ArticleMetadata } from '../scripts/types/article.js';
-import type { ContentLabelSet } from '../scripts/types/content.js';
 
 /** Mock calendar event shape from Swedish parliament API */
 interface MockCalendarEvent {

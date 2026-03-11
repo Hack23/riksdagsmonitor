@@ -269,7 +269,7 @@ class ElectionCycleCharts {
   private charts: Record<string, any> = {};
 
   constructor(
-    private dataManager: ElectionCycleDataManager,
+    _dataManager: ElectionCycleDataManager,
     private translations: ElectionTranslations
   ) {}
 

@@ -7,8 +7,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { WorkflowStateCoordinator, MCP_CACHE_TTL_SECONDS, SIMILARITY_THRESHOLD } from '../scripts/workflow-state-coordinator.js';
-import type { WorkflowState, MCPCacheEntry, RecentArticleEntry, DuplicateCheckResult } from '../scripts/types/workflow.js';
+import { WorkflowStateCoordinator, SIMILARITY_THRESHOLD } from '../scripts/workflow-state-coordinator.js';
+import type { RecentArticleEntry, DuplicateCheckResult } from '../scripts/types/workflow.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

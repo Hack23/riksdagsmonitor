@@ -6,7 +6,6 @@
 
 import { describe, it, expect } from 'vitest';
 import { scoreNewsworthiness } from '../scripts/data-transformers/content-generators/newsworthiness.js';
-import type { NewsworthinessScore } from '../scripts/data-transformers/content-generators/newsworthiness.js';
 import type { RawDocument, CIAContext } from '../scripts/data-transformers/types.js';
 
 /** Minimal document for tests */

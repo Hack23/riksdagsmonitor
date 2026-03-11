@@ -23,15 +23,15 @@ describe('editorial-pillars', () => {
     it('should have all 4 pillar headings for each language', () => {
       const expectedPillars: string[] = ['parliamentaryPulse', 'governmentWatch', 'oppositionDynamics', 'lookingAhead'];
       
-      (Object.entries(EDITORIAL_PILLAR_HEADINGS) as Array<[Language, PillarHeadings]>).forEach(([lang, headings]) => {
+      (Object.entries(EDITORIAL_PILLAR_HEADINGS) as Array<[Language, PillarHeadings]>).forEach(([_lang, headings]) => {
         const actualPillars: string[] = Object.keys(headings);
         expect(actualPillars.sort()).toEqual(expectedPillars.sort());
       });
     });
 
     it('should have non-empty strings for all headings', () => {
-      (Object.entries(EDITORIAL_PILLAR_HEADINGS) as Array<[Language, PillarHeadings]>).forEach(([lang, headings]) => {
-        (Object.entries(headings) as Array<[EditorialPillar, string]>).forEach(([pillar, heading]) => {
+      (Object.entries(EDITORIAL_PILLAR_HEADINGS) as Array<[Language, PillarHeadings]>).forEach(([_lang, headings]) => {
+        (Object.entries(headings) as Array<[EditorialPillar, string]>).forEach(([_pillar, heading]) => {
           expect(typeof heading).toBe('string');
           expect(heading.length).toBeGreaterThan(0);
         });
@@ -39,7 +39,7 @@ describe('editorial-pillars', () => {
     });
 
     it('should have unique headings per language (no duplicates)', () => {
-      (Object.entries(EDITORIAL_PILLAR_HEADINGS) as Array<[Language, PillarHeadings]>).forEach(([lang, headings]) => {
+      (Object.entries(EDITORIAL_PILLAR_HEADINGS) as Array<[Language, PillarHeadings]>).forEach(([_lang, headings]) => {
         const headingValues: string[] = Object.values(headings);
         const uniqueHeadings: string[] = [...new Set(headingValues)];
         expect(headingValues.length).toBe(uniqueHeadings.length);
