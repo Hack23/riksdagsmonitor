@@ -511,7 +511,7 @@ RUN rm -rf /var/cache/apk/* \
 
 ```dockerfile
 # Use distroless images for maximum security and minimal size
-FROM gcr.io/distroless/nodejs20-debian12
+FROM gcr.io/distroless/nodejs24-debian12
 
 # Copy application
 COPY --from=builder /app /app
