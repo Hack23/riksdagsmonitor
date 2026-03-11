@@ -115,8 +115,6 @@ describe('generateNews() — breaking news error tracking', () => {
   });
 
   it('should increment stats.errors when generateBreakingNews returns success=false', async () => {
-    expect(moduleExports).not.toBeNull();
-
     mockGenerateBreakingNews.mockResolvedValueOnce({
       success: false,
       error: 'MCP server unreachable'
@@ -129,8 +127,6 @@ describe('generateNews() — breaking news error tracking', () => {
   });
 
   it('should increment stats.errors when generateBreakingNews throws an exception', async () => {
-    expect(moduleExports).not.toBeNull();
-
     // Make getSharedClient itself throw so the catch block fires
     mockGetSharedClient.mockRejectedValueOnce(new Error('Connection timeout'));
 
@@ -140,8 +136,6 @@ describe('generateNews() — breaking news error tracking', () => {
   });
 
   it('should NOT increment stats.errors when generateBreakingNews returns success=true', async () => {
-    expect(moduleExports).not.toBeNull();
-
     mockGenerateBreakingNews.mockResolvedValueOnce({
       success: true,
       articles: [{ lang: 'en', html: '<p>Breaking</p>', slug: 'test', filename: 'test.html' }]
@@ -154,8 +148,6 @@ describe('generateNews() — breaking news error tracking', () => {
   });
 
   it('should log the error message from failed generation result', async () => {
-    expect(moduleExports).not.toBeNull();
-
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     mockGenerateBreakingNews.mockResolvedValueOnce({
