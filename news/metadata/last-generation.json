@@ -2,22 +2,13 @@
   "timestamp": "2026-03-11T04:49:19.518Z",
   "types": [
     "committee-reports"
+  "timestamp": "2026-03-11T05:24:31.182Z",
+  "types": [
+    "propositions"
   ],
   "languagesGenerated": [
     "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "sv"
   ],
   "allRequestedLanguages": [
     "en",
@@ -57,4 +48,12 @@
   ],
   "status": "enhanced",
   "note": "Generated 14 committee-reports articles on 2026-03-11 (enhanced script with MCP integration, multi-language support, and batch mode)"
+  "generated": 2,
+  "errors": 0,
+  "articles": [
+    "2026-03-11-government-propositions-en.html",
+    "2026-03-11-government-propositions-sv.html"
+  ],
+  "status": "enhanced",
+  "note": "Propositions run 2026-03-11: generated=2 (en,sv), skipExisting=true; remaining 12 languages queued for news-translate workflow"
 }
