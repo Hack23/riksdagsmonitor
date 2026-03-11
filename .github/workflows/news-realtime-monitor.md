@@ -135,6 +135,13 @@ START_TIME=$(date +%s)
 
 **Hard cutoffs** — check elapsed time before EVERY phase:
 ```bash
+# Restore START_TIME if available so this snippet is safe to run standalone
+if [ -f /tmp/gh-aw/agent/timing.env ]; then
+  . /tmp/gh-aw/agent/timing.env
+fi
+# Fallback: if START_TIME is still unset, initialize it to "now" to avoid huge elapsed times
+: "${START_TIME:=$(date +%s)}"
+
 ELAPSED=$(( $(date +%s) - START_TIME ))
 echo "⏱️ Elapsed: $((ELAPSED / 60))m $((ELAPSED % 60))s"
 ```
@@ -215,19 +222,20 @@ case "$LANGUAGES_INPUT" in
   "all") LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
   *) LANG_ARG="$LANGUAGES_INPUT" ;;
 esac
+export LANG_ARG
 
 # Check elapsed time before starting generation
 source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
-ELAPSED=$(( $(date +%s) - ${START_TIME:-$(date +%s)} ))
+: "${START_TIME:=$(date +%s)}"
+ELAPSED=$(( $(date +%s) - START_TIME ))
 if [ "$ELAPSED" -ge 2100 ]; then
   echo "⏱️ Time budget exceeded (${ELAPSED}s >= 35min) — skipping generation"
   SCRIPT_EXIT=0
   NEW_ARTICLES=""
 else
   # Set up MCP connection and generate with 20-minute timeout
-  # (source && npx must run on ONE line to preserve MCP_SERVER_URL)
-  GENERATE_CMD="source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types=breaking --languages=${LANG_ARG} --skip-existing"
-  timeout 1200 bash -c "$GENERATE_CMD"
+  # LANG_ARG is exported so the subshell inherits it safely (no command-string interpolation)
+  timeout 1200 bash -lc 'source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types=breaking --languages="$LANG_ARG" --skip-existing'
   SCRIPT_EXIT=$?
   if [ "$SCRIPT_EXIT" -eq 124 ]; then
     echo "⚠️ Script timed out after 20 minutes — proceeding with whatever was generated"
@@ -284,7 +292,8 @@ Then run validation:
 ```bash
 # Check elapsed time before validation
 source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
-ELAPSED=$(( $(date +%s) - ${START_TIME:-$(date +%s)} ))
+: "${START_TIME:=$(date +%s)}"
+ELAPSED=$(( $(date +%s) - START_TIME ))
 if [ "$ELAPSED" -ge 2100 ]; then
   echo "⏱️ Time budget exceeded (${ELAPSED}s >= 35min) — skipping validation"
   VALIDATION_EXIT=0
