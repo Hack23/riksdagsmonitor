@@ -257,11 +257,11 @@ export async function generateNews(): Promise<typeof stats> {
 }
 
 // ---------------------------------------------------------------------------
-// Auto-execution
+// CLI entry point — shared by both this file and the barrel re-export
 // ---------------------------------------------------------------------------
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  generateNews()
+export function runCli(): Promise<void> {
+  return generateNews()
     .then(result => {
       if (result.errors > 0) {
         process.exit(1);
@@ -278,4 +278,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       console.error('❌ Fatal error:', error);
       process.exit(1);
     });
+}
+
+// ---------------------------------------------------------------------------
+// Auto-execution
+// ---------------------------------------------------------------------------
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runCli();
 }
