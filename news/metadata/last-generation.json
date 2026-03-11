@@ -13,9 +13,12 @@
   ],
   "batchSize": "all",
   "skipExisting": true,
-  "generated": 0,
-  "errors": 1,
-  "articles": [],
+  "generated": 2,
+  "errors": 0,
+  "articles": [
+    "news/2026-03-11-government-propositions-en.html",
+    "news/2026-03-11-government-propositions-sv.html"
+  ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }

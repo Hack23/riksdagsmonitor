@@ -1,10 +1,10 @@
 {
-  "complete": false,
-  "completedLanguages": [],
-  "remainingLanguages": [
+  "complete": true,
+  "completedLanguages": [
     "en",
     "sv"
   ],
+  "remainingLanguages": [],
   "allRequestedLanguages": [
     "en",
     "sv"
