@@ -1,6 +1,8 @@
 {
   "complete": true,
   "completedLanguages": [
+    "en",
+    "sv",
     "da",
     "no",
     "fi",
@@ -16,6 +18,8 @@
   ],
   "remainingLanguages": [],
   "allRequestedLanguages": [
+    "en",
+    "sv",
     "da",
     "no",
     "fi",
