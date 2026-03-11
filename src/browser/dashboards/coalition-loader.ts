@@ -31,19 +31,8 @@
  * */
 
 import {
-  createChart,
-  initDashboardSection,
-  loadCSV,
-  createDataSource,
   logger,
-  formatNumber,
-  formatPercent,
-  getResponsiveOptions,
-  addChartKeyboardNav,
   detectLanguage,
-  showLoadingState,
-  showErrorState,
-  hideStateOverlays,
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';

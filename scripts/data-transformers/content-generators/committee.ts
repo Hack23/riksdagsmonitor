@@ -20,14 +20,7 @@ import {
   generateEnhancedSummary,
   formatDocumentDate,
 } from '../helpers.js';
-import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from '../policy-analysis.js';
-import {
-  groupPropositionsByCommittee,
-  generateOppositionStrategySection,
-  renderMotionEntry,
-  generateDocumentIntelligenceAnalysis,
-  PROP_TITLE_SUFFIX_REGEX,
-} from '../document-analysis.js';
+import { detectPolicyDomains, generateDeepPolicyAnalysis } from '../policy-analysis.js';
 import { generateDeepAnalysisSection } from './shared.js';
 
 export function generateCommitteeContent(data: ArticleContentData, lang: Language | string): string {

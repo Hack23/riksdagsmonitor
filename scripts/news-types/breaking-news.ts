@@ -162,7 +162,6 @@ import type {
   MCPCallRecord,
   BreakingNewsValidation,
   BreakingNewsOptions,
-  BreakingEventData
 } from '../types/article.js';
 
 /**

@@ -11,24 +11,17 @@ import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
 import type { ArticleContentData } from '../types.js';
 import { getPillarTransition } from '../../editorial-pillars.js';
-import type { RawDocument } from '../types.js';
 import {
   L,
   svSpan,
   sanitizeUrl,
   getCommitteeName,
-  normalizePartyKey,
   generateEnhancedSummary,
   formatDocumentDate,
 } from '../helpers.js';
-import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from '../policy-analysis.js';
+import { detectPolicyDomains, generateDeepPolicyAnalysis } from '../policy-analysis.js';
 import {
-  groupMotionsByProposition,
   groupPropositionsByCommittee,
-  generateOppositionStrategySection,
-  renderMotionEntry,
-  generateDocumentIntelligenceAnalysis,
-  PROP_TITLE_SUFFIX_REGEX,
 } from '../document-analysis.js';
 import { generateDeepAnalysisSection } from './shared.js';
 

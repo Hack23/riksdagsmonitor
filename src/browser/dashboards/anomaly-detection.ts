@@ -344,11 +344,6 @@ function generateFallbackData(): CSVRow[] {
 class AnomalyDetectionDataManager {
   data: CSVRow[] | null = null;
   dataSourceType: DataSourceType = 'live';
-  private readonly language: string;
-
-  constructor() {
-    this.language = detectLanguage();
-  }
 
   getTranslations(): AnomalyTranslationsFull {
     return getTranslations();
@@ -365,7 +360,6 @@ class AnomalyDetectionDataManager {
 
     logger.debug('Fetching fresh anomaly data from CIA...');
     let response: Response | null = null;
-    let lastError: Error | null = null;
 
     for (const url of CONFIG.dataUrls) {
       try {
@@ -376,12 +370,10 @@ class AnomalyDetectionDataManager {
           break;
         } else {
           logger.warn(`⚠ Failed to fetch from ${url}: HTTP ${response.status}`);
-          lastError = new Error(`HTTP ${response.status}: ${response.statusText}`);
           response = null;
         }
       } catch (error) {
         logger.warn(`⚠ Error fetching from ${url}:`, (error as Error).message);
-        lastError = error as Error;
         response = null;
       }
     }
@@ -538,12 +530,8 @@ class AnomalyDetectionDataManager {
 // ============================================================================
 
 class AnomalyAlertSystem {
-  private readonly dataManager: AnomalyDetectionDataManager;
-  private readonly translations: AnomalyTranslationsFull;
 
-  constructor(dataManager: AnomalyDetectionDataManager) {
-    this.dataManager = dataManager;
-    this.translations = dataManager.getTranslations();
+  constructor(_dataManager: AnomalyDetectionDataManager) {
   }
 
   checkAndDisplayAlert(anomaly: CSVRow): void {
@@ -612,12 +600,10 @@ class AnomalyAlertSystem {
 
 class AnomalyDetectionCharts {
   private readonly dataManager: AnomalyDetectionDataManager;
-  private readonly translations: AnomalyTranslationsFull;
   private chartInstances: Record<string, any> = {};
 
   constructor(dataManager: AnomalyDetectionDataManager) {
     this.dataManager = dataManager;
-    this.translations = dataManager.getTranslations();
   }
 
   async renderAll(): Promise<void> {

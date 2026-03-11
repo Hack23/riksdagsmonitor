@@ -27,16 +27,11 @@
 
 import {
   createChart,
-  getResponsiveOptions,
-  addChartKeyboardNav,
-  initDashboardSection,
   showDataSourceDisclaimer,
   renderErrorFallback,
 } from '../shared/index.js';
 
-import { loadCSV, createDataSource } from '../shared/index.js';
 import { logger } from '../shared/index.js';
-import { formatNumber, formatPercent } from '../shared/index.js';
 import type { CSVRow } from '../shared/index.js';
 
 // D3 is loaded as a global <script> for its DOM manipulation / SVG features
@@ -406,7 +401,7 @@ function createHeatMap(data: RiskScore[]): void {
         d3.select(this).dispatch('click', { detail: { d, element: this } });
       }
     })
-    .on('mouseover', function (this: any, event: MouseEvent, d: RiskScore) {
+    .on('mouseover', function (this: any, _event: MouseEvent, d: RiskScore) {
       tooltip
         .style('visibility', 'visible')
         .html(

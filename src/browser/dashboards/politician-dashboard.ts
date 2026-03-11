@@ -34,7 +34,6 @@
 
 import {
   logger,
-  detectLanguage,
   showDataSourceDisclaimer,
 } from '../shared/index.js';
 

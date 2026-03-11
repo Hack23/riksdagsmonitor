@@ -24,7 +24,6 @@ import {
 } from '../scripts/statistical-claims-detector.js';
 import type {
   StatisticalClaim,
-  ClaimVerdict,
 } from '../scripts/statistical-claims-detector.js';
 
 // ---------------------------------------------------------------------------
