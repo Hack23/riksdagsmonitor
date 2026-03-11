@@ -485,7 +485,6 @@ function generateSitemapHtml(lang: Language, articlesByLang: Map<Language, Artic
   const isEnglish = lang === 'en';
   const sitemapFile = isEnglish ? 'sitemap.html' : `sitemap_${lang}.html`;
   const indexFile = isEnglish ? 'index.html' : `index_${lang}.html`;
-  const dashboardFile = isEnglish ? 'dashboard/index.html' : `dashboard/index_${lang}.html`;
   const newsIndexFile = isEnglish ? 'news/index.html' : `news/index_${lang}.html`;
 
   const articles = articlesByLang.get(lang) || [];

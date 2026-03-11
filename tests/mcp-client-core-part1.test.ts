@@ -6,18 +6,8 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { 
   MCPClient,
-  getDefaultClient,
-  fetchCalendarEvents,
-  fetchCommitteeReports,
-  fetchPropositions,
-  fetchMotions,
-  searchDocuments,
-  searchSpeeches,
-  fetchMPs,
-  fetchVotingRecords,
-  fetchGovernmentDocuments
 } from '../scripts/mcp-client.js';
-import type { MCPClientConfig, MCPStats } from '../scripts/types/mcp.js';
+import type { MCPStats } from '../scripts/types/mcp.js';
 
 interface JsonRpcBody {
   jsonrpc: string;

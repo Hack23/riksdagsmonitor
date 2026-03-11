@@ -162,10 +162,8 @@ const CONFIG: CommitteeConfig = {
 /* ------------------------------------------------------------------ */
 
 class DataManager {
-  private cache: Map<string, any>;
 
   constructor() {
-    this.cache = new Map();
   }
 
   /** Fetch CSV data with caching & fallback URLs. */
@@ -454,7 +452,7 @@ class NetworkDiagram {
   }
 
   /** SVG legend for the network diagram. */
-  private addLegend(width: number, height: number): void {
+  private addLegend(_width: number, height: number): void {
     const legend = this.svg
       .append('g')
       .attr('class', 'legend')

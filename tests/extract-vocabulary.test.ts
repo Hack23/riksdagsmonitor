@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect, beforeEach, afterAll } from 'vitest';
-import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'fs';
+import { writeFileSync, mkdirSync, rmSync } from 'fs';
 import { execSync } from 'child_process';
 
 describe('extract-vocabulary.ts', () => {

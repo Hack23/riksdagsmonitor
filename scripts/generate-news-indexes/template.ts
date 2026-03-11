@@ -19,7 +19,6 @@ import type {
 import { LANGUAGES, AVAILABLE_IN_TRANSLATIONS, LANGUAGE_FLAGS } from './constants.js';
 import {
   generateLanguageSwitcherNav,
-  generateAvailableLanguages,
 } from './helpers.js';
 import { PKG_VERSION } from '../shared/version.js';
 

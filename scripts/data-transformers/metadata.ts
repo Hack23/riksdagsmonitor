@@ -8,7 +8,6 @@
  * @license Apache-2.0
  */
 
-import { escapeHtml } from '../html-utils.js';
 import type { Language } from '../types/language.js';
 import type { ArticleMetadata, ArticleType } from '../types/article.js';
 import type { ArticleContentData, RawDocument } from './types.js';

@@ -15,15 +15,13 @@ import { getPillarTransition } from '../../editorial-pillars.js';
 import {
   L,
   svSpan,
-  sanitizeUrl,
   normalizePartyKey,
 } from '../helpers.js';
-import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from '../policy-analysis.js';
+import { detectPolicyDomains } from '../policy-analysis.js';
 import {
   groupMotionsByProposition,
   generateOppositionStrategySection,
   renderMotionEntry,
-  generateDocumentIntelligenceAnalysis,
   PROP_TITLE_SUFFIX_REGEX,
 } from '../document-analysis.js';
 

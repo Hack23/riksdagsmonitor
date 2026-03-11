@@ -479,7 +479,7 @@ function genericImpactText(lang: Language | string): string {
   return t[lang as string] ?? t.en;
 }
 
-function generateConsequencesAnalysis(docs: RawDocument[], lang: Language | string, articleType: string): string {
+function generateConsequencesAnalysis(docs: RawDocument[], lang: Language | string, _articleType: string): string {
   const propCount = docs.filter(d => d.doktyp === 'prop').length;
   const motCount = docs.filter(d => d.doktyp === 'mot').length;
   const parts: string[] = [];

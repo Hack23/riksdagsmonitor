@@ -260,7 +260,7 @@ describe('Generate News Indexes', () => {
     });
 
     it('should generate index files for all 14 languages', () => {
-      const result = module.generateAllIndexes();
+      module.generateAllIndexes();
 
       // Check that index files exist
       expect(fs.existsSync(path.join(NEWS_DIR, 'index.html'))).toBe(true);
