@@ -92,7 +92,6 @@ const LAZY_DASHBOARDS: LazyDashboard[] = [
 // Module-level reference prevents the IntersectionObserver from being
 // garbage-collected after initAll() returns.
 let _lazyObserver: IntersectionObserver | undefined;
-void _lazyObserver;
 
 async function initAll(): Promise<void> {
   logger.info('Riksdagsmonitor initializing...');

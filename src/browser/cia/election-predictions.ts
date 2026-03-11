@@ -28,6 +28,8 @@ import type { ElectionAnalysis } from './data-loader.js';
 /*  Global library reference (loaded via <script> tag)                */
 /* ------------------------------------------------------------------ */
 
+const Chart = (globalThis as any).Chart;
+
 /* ------------------------------------------------------------------ */
 /*  Interfaces                                                        */
 /* ------------------------------------------------------------------ */
