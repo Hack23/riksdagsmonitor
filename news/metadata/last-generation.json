@@ -5,6 +5,8 @@
     "motions"
   ],
   "languagesGenerated": [
+    "en",
+    "sv",
     "da",
     "no",
     "fi",
@@ -19,6 +21,8 @@
     "zh"
   ],
   "allRequestedLanguages": [
+    "en",
+    "sv",
     "da",
     "no",
     "fi",
@@ -34,9 +38,13 @@
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 24,
+  "generated": 28,
   "errors": 0,
   "articles": [
+    "2026-03-11-government-propositions-en.html",
+    "2026-03-11-government-propositions-sv.html",
+    "2026-03-11-opposition-motions-en.html",
+    "2026-03-11-opposition-motions-sv.html",
     "2026-03-11-government-propositions-da.html",
     "2026-03-11-government-propositions-no.html",
     "2026-03-11-government-propositions-fi.html",
