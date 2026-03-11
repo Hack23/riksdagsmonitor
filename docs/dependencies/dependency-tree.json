@@ -1,5 +1,5 @@
 {
-  "version": "0.7.12",
+  "version": "0.7.13",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2110,14 +2110,7 @@
               "version": "4.4.3"
             },
             "minimatch": {
-              "version": "10.2.4",
-              "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.4.tgz",
-              "overridden": false,
-              "dependencies": {
-                "brace-expansion": {
-                  "version": "5.0.2"
-                }
-              }
+              "version": "10.2.4"
             }
           }
         },
@@ -2596,14 +2589,7 @@
           "overridden": false,
           "dependencies": {
             "minimatch": {
-              "version": "10.2.1",
-              "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.1.tgz",
-              "overridden": false,
-              "dependencies": {
-                "brace-expansion": {
-                  "version": "5.0.2"
-                }
-              }
+              "version": "10.2.4"
             },
             "minipass": {
               "version": "7.1.2",
@@ -3341,8 +3327,8 @@
           }
         },
         "minimatch": {
-          "version": "9.0.5",
-          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz",
+          "version": "9.0.9",
+          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.9.tgz",
           "overridden": false,
           "dependencies": {
             "brace-expansion": {
@@ -3540,14 +3526,7 @@
               "version": "4.4.3"
             },
             "minimatch": {
-              "version": "10.2.4",
-              "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.4.tgz",
-              "overridden": false,
-              "dependencies": {
-                "brace-expansion": {
-                  "version": "5.0.2"
-                }
-              }
+              "version": "10.2.4"
             },
             "semver": {
               "version": "7.7.4",
@@ -3952,7 +3931,7 @@
               "overridden": false,
               "dependencies": {
                 "hono": {
-                  "version": "4.12.5"
+                  "version": "4.12.7"
                 }
               }
             },
@@ -4389,8 +4368,8 @@
               }
             },
             "hono": {
-              "version": "4.12.5",
-              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.5.tgz",
+              "version": "4.12.7",
+              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.7.tgz",
               "overridden": false
             },
             "jose": {

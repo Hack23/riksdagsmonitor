@@ -1,4 +1,4 @@
-riksdagsmonitor@0.7.12 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.7.13 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.0.3 deduped
 ├─┬ @types/d3@7.4.3
@@ -424,8 +424,7 @@ riksdagsmonitor@0.7.12 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ @eslint/config-array@0.23.3
 │ │ ├── @eslint/object-schema@3.0.3
 │ │ ├── debug@4.4.3 deduped
-│ │ └─┬ minimatch@10.2.4
-│ │   └── brace-expansion@5.0.2 deduped
+│ │ └── minimatch@10.2.4 deduped
 │ ├─┬ @eslint/config-helpers@0.5.2
 │ │ └── @eslint/core@1.1.1 deduped
 │ ├─┬ @eslint/core@1.1.1
@@ -518,8 +517,7 @@ riksdagsmonitor@0.7.12 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── chalk@4.1.2 deduped
 │ ├── commander@11.1.0
 │ ├─┬ glob@13.0.5
-│ │ ├─┬ minimatch@10.2.1
-│ │ │ └── brace-expansion@5.0.2 deduped
+│ │ ├── minimatch@10.2.4 deduped
 │ │ ├── minipass@7.1.2
 │ │ └─┬ path-scurry@2.0.1
 │ │   ├── lru-cache@11.2.6
@@ -703,7 +701,7 @@ riksdagsmonitor@0.7.12 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── mdurl@2.0.0
 │ │ ├── punycode.js@2.3.1
 │ │ └── uc.micro@2.1.0
-│ ├─┬ minimatch@9.0.5
+│ ├─┬ minimatch@9.0.9
 │ │ └─┬ brace-expansion@2.0.2
 │ │   └── balanced-match@1.0.2
 │ ├── typescript@5.9.3 deduped
@@ -752,8 +750,7 @@ riksdagsmonitor@0.7.12 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── @typescript-eslint/types@8.57.0 deduped
 │ │ ├── @typescript-eslint/visitor-keys@8.57.0 deduped
 │ │ ├── debug@4.4.3 deduped
-│ │ ├─┬ minimatch@10.2.4
-│ │ │ └── brace-expansion@5.0.2 deduped
+│ │ ├── minimatch@10.2.4 deduped
 │ │ ├── semver@7.7.4
 │ │ ├── tinyglobby@0.2.15 deduped
 │ │ ├── ts-api-utils@2.4.0 deduped
@@ -878,7 +875,7 @@ riksdagsmonitor@0.7.12 /home/runner/work/riksdagsmonitor/riksdagsmonitor
   ├─┬ @modelcontextprotocol/sdk@1.27.1
   │ ├── UNMET OPTIONAL DEPENDENCY @cfworker/json-schema@^4.1.1
   │ ├─┬ @hono/node-server@1.19.10
-  │ │ └── hono@4.12.5 deduped
+  │ │ └── hono@4.12.7 deduped
   │ ├── ajv-formats@3.0.1 deduped
   │ ├── ajv@8.18.0 deduped
   │ ├── content-type@1.0.5
@@ -975,7 +972,7 @@ riksdagsmonitor@0.7.12 /home/runner/work/riksdagsmonitor/riksdagsmonitor
   │ │ │ └─┬ mime-types@3.0.2
   │ │ │   └── mime-db@1.54.0
   │ │ └── vary@1.1.2 deduped
-  │ ├── hono@4.12.5
+  │ ├── hono@4.12.7
   │ ├── jose@6.1.3
   │ ├── json-schema-typed@8.0.2
   │ ├── pkce-challenge@5.0.1
