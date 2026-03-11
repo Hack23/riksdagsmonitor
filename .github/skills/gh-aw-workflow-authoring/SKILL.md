@@ -649,7 +649,7 @@ timeout-minutes: 5  # Cancel if exceeds 5 minutes
 ```yaml
 ---
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: '24'
   DEBUG: 'true'
 ---
 ```

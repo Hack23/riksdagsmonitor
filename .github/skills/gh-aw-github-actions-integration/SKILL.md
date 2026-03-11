@@ -903,11 +903,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: ['18', '20']
-        exclude:
-          # Exclude Windows with Node 18
-          - os: windows-latest
-            node-version: '18'
+        node-version: ['24']
       fail-fast: false
       
     steps:
