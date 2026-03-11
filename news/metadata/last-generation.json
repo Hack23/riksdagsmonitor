@@ -39,6 +39,9 @@
   "batchSize": "all",
   "skipExisting": false,
   "generated": 28,
+  "translations": 24,
+  "sourceLanguagePages": 4,
+  "generatedBreakdown": "4 source-language pages (en+sv for propositions and motions) + 24 translations (12 languages × 2 article types)",
   "errors": 0,
   "articles": [
     "2026-03-11-government-propositions-en.html",
