@@ -276,4 +276,56 @@ describe('Breaking News Article Generation', () => {
       expect(svArticle!.html).toContain('Senaste nytt');
     });
   });
+
+  describe('Error Handling', () => {
+    it('should return success=false with error message when event data is null', async () => {
+      const result = await breakingNewsModule.generateBreakingNews({
+        languages: ['en'],
+        eventData: null
+      });
+
+      expect(result.success).toBe(false);
+      expect(result.error).toBeDefined();
+    });
+
+    it('should return success=false with error message when event data is undefined', async () => {
+      const result = await breakingNewsModule.generateBreakingNews({
+        languages: ['en']
+      });
+
+      expect(result.success).toBe(false);
+      expect(result.error).toBeDefined();
+      expect(result.error).toContain('requires event context');
+    });
+
+    it('should include mcpCalls even on early failure', async () => {
+      const result = await breakingNewsModule.generateBreakingNews({
+        languages: ['en']
+      });
+
+      expect(result.mcpCalls).toBeDefined();
+      expect(Array.isArray(result.mcpCalls)).toBe(true);
+    });
+
+    it('should handle MCP tool failures gracefully without throwing', async () => {
+      mockClientInstance.fetchVotingRecords.mockRejectedValueOnce(new Error('MCP timeout'));
+      mockClientInstance.fetchVotingGroup.mockRejectedValueOnce(new Error('MCP timeout'));
+      mockClientInstance.searchSpeeches.mockRejectedValueOnce(new Error('MCP timeout'));
+      mockClientInstance.fetchMPs.mockRejectedValueOnce(new Error('MCP timeout'));
+
+      const eventData: BreakingEventData = {
+        slug: 'test',
+        topic: 'test'
+      };
+
+      const result = await breakingNewsModule.generateBreakingNews({
+        languages: ['en'],
+        eventData
+      });
+
+      // Should still succeed with empty data rather than throwing
+      expect(result.success).toBe(true);
+      expect(result.mcpCalls).toBeDefined();
+    });
+  });
 });
