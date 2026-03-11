@@ -40,8 +40,11 @@ export {
   getWeekAheadDateRange,
   requireMcp,
   translateSwedishContent,
-  runCli,
 } from './generate-news-enhanced/index.js';
+
+// Internal-only import — runCli is not part of the public API since it
+// calls process.exit() and is only used for CLI auto-execution.
+import { runCli } from './generate-news-enhanced/index.js';
 
 // ---------------------------------------------------------------------------
 // Auto-execution — delegate CLI handling to the main module when this
@@ -50,10 +53,5 @@ export {
 // `./generate-news-enhanced/index.ts` entry point.
 // ---------------------------------------------------------------------------
 if (import.meta.url === `file://${process.argv[1]}`) {
-  import('./generate-news-enhanced/index.js')
-    .then(({ runCli }) => runCli())
-    .catch((error: unknown) => {
-      console.error('❌ Fatal error:', error);
-      process.exit(1);
-    });
+  runCli();
 }
