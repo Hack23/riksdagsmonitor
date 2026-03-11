@@ -1,19 +1,42 @@
 {
-  "timestamp": "2026-03-11T15:11:08.901Z",
+  "timestamp": "2026-03-11T05:24:31.182Z",
   "types": [
-    "breaking"
+    "propositions"
   ],
   "languagesGenerated": [
-    "en"
+    "en",
+    "sv"
   ],
   "allRequestedLanguages": [
-    "en"
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "batchSize": "all",
-  "skipExisting": false,
-  "generated": 0,
-  "errors": 1,
-  "articles": [],
+  "skipExisting": true,
+  "generated": 2,
+  "errors": 0,
+  "articles": [
+    "2026-03-11-government-propositions-en.html",
+    "2026-03-11-government-propositions-sv.html"
+  ],
   "status": "enhanced",
-  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
+  "note": "Propositions run 2026-03-11: generated=2 (en,sv), skipExisting=true; remaining 12 languages queued for news-translate workflow",
+  "previousRun": {
+    "timestamp": "2026-03-11T04:49:19.518Z",
+    "types": ["committee-reports"],
+    "generated": 14,
+    "note": "Generated 14 committee-reports articles on 2026-03-11 (enhanced script with MCP integration, multi-language support, and batch mode)"
+  }
 }
