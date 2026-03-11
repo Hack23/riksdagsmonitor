@@ -52,6 +52,9 @@
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="../styles.css">
   
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script src="../js/theme-init.js"></script>
+  
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">
   {
@@ -178,6 +181,14 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Hoppa till huvudinneh&#229;ll</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Byt till m&#246;rkt tema"
+        title="Byt till m&#246;rkt tema"
+        data-label-dark="Byt till ljust tema"
+        data-label-light="Byt till m&#246;rkt tema">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 <nav class="language-switcher" role="navigation" aria-label="Spr&#229;k">
     <a href="2026-03-11-opposition-motions-en.html" class="lang-link" hreflang="en"><span aria-hidden="true">&#127468;&#127463;</span> English</a>
     <a href="2026-03-11-opposition-motions-sv.html" class="lang-link active" aria-current="page" hreflang="sv"><span aria-hidden="true">&#127480;&#127466;</span> Svenska</a>
@@ -348,5 +359,6 @@
 </article>
 
 <script src="../js/back-to-top.js"></script>
+<script src="../js/theme-toggle.js"></script>
 </body>
 </html>
