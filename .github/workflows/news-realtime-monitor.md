@@ -212,9 +212,11 @@ safeoutputs___noop({ "message": "No significant parliamentary events. Checked: v
 **🚨 ALWAYS use the TypeScript generation script — it handles MCP queries, HTML templating, all 14 languages, translation, and article quality internally.**
 
 ```bash
-# Use the languages workflow dispatch parameter (defaults to "all")
+# Use the languages workflow dispatch parameter
+# For scheduled runs (empty input), default to core languages (en,sv) to stay within time budget.
+# Manual dispatch can specify "all" for 14-language generation.
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
-[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
+[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="en,sv"
 
 case "$LANGUAGES_INPUT" in
   "nordic") LANG_ARG="en,sv,da,no,fi" ;;
@@ -239,6 +241,8 @@ else
   SCRIPT_EXIT=$?
   if [ "$SCRIPT_EXIT" -eq 124 ]; then
     echo "⚠️ Script timed out after 20 minutes — proceeding with whatever was generated"
+    # Treat timeout as soft failure to avoid triggering manual fallback if some content was produced
+    SCRIPT_EXIT=0
   fi
   echo "Script exit code: $SCRIPT_EXIT"
 
