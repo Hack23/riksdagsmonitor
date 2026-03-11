@@ -129,7 +129,7 @@ START_TIME=$(date +%s)
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
 | Detect | 3–8 | Query MCP tools for today's activity |
-| Generate | 8–30 | Run `generate-news-enhanced.ts` script (handles all 14 languages) |
+| Generate | 8–30 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
 | Validate | 30–35 | Run `validate-news-generation.sh` |
 | Commit+PR | 35–40 | `git add && git commit`, then `safeoutputs___create_pull_request` |
 
@@ -239,10 +239,10 @@ else
   # LANG_ARG is exported so the subshell inherits it safely (no command-string interpolation)
   timeout 1200 bash -lc 'source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types=breaking --languages="$LANG_ARG" --skip-existing'
   SCRIPT_EXIT=$?
+  TIMED_OUT=false
   if [ "$SCRIPT_EXIT" -eq 124 ]; then
     echo "⚠️ Script timed out after 20 minutes — proceeding with whatever was generated"
-    # Treat timeout as soft failure to avoid triggering manual fallback if some content was produced
-    SCRIPT_EXIT=0
+    TIMED_OUT=true
   fi
   echo "Script exit code: $SCRIPT_EXIT"
 
@@ -254,6 +254,10 @@ else
   else
     echo "Newly generated articles:"
     printf '%s\n' "$NEW_ARTICLES"
+    # Treat timeout as soft failure when content was produced
+    if [ "$TIMED_OUT" = true ]; then
+      SCRIPT_EXIT=0
+    fi
   fi
 fi
 ```

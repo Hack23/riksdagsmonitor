@@ -165,7 +165,10 @@ export async function generateNews(): Promise<typeof stats> {
             stats.errors++;
           }
         } catch (err: unknown) {
-          console.error('❌ Error generating breaking news:', (err as Error).message);
+          console.error(
+            '❌ Error generating breaking news:',
+            err instanceof Error ? err.message : String(err),
+          );
           stats.errors++;
         }
         break;

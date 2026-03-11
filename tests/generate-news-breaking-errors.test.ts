@@ -88,15 +88,10 @@ interface GenerateNewsModule {
   readonly generateNews: () => Promise<GenerationStats>;
 }
 
-let moduleExports: GenerateNewsModule | null = null;
+let moduleExports: GenerateNewsModule;
 
 beforeAll(async () => {
-  try {
-    moduleExports = await import('../scripts/generate-news-enhanced/index.js') as unknown as GenerateNewsModule;
-  } catch (e: unknown) {
-    console.error('Import failed:', e instanceof Error ? e.message : String(e));
-    moduleExports = null;
-  }
+  moduleExports = await import('../scripts/generate-news-enhanced/index.js') as unknown as GenerateNewsModule;
 });
 
 afterAll(() => {
@@ -120,7 +115,7 @@ describe('generateNews() — breaking news error tracking', () => {
   });
 
   it('should increment stats.errors when generateBreakingNews returns success=false', async () => {
-    if (!moduleExports) return;
+    expect(moduleExports).not.toBeNull();
 
     mockGenerateBreakingNews.mockResolvedValueOnce({
       success: false,
@@ -134,7 +129,7 @@ describe('generateNews() — breaking news error tracking', () => {
   });
 
   it('should increment stats.errors when generateBreakingNews throws an exception', async () => {
-    if (!moduleExports) return;
+    expect(moduleExports).not.toBeNull();
 
     // Make getSharedClient itself throw so the catch block fires
     mockGetSharedClient.mockRejectedValueOnce(new Error('Connection timeout'));
@@ -145,7 +140,7 @@ describe('generateNews() — breaking news error tracking', () => {
   });
 
   it('should NOT increment stats.errors when generateBreakingNews returns success=true', async () => {
-    if (!moduleExports) return;
+    expect(moduleExports).not.toBeNull();
 
     mockGenerateBreakingNews.mockResolvedValueOnce({
       success: true,
@@ -159,7 +154,7 @@ describe('generateNews() — breaking news error tracking', () => {
   });
 
   it('should log the error message from failed generation result', async () => {
-    if (!moduleExports) return;
+    expect(moduleExports).not.toBeNull();
 
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
