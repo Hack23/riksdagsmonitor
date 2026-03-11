@@ -41,3 +41,17 @@ export {
   requireMcp,
   translateSwedishContent,
 } from './generate-news-enhanced/index.js';
+
+// Internal-only import — runCli is not part of the public API since it
+// calls process.exit() and is only used for CLI auto-execution.
+import { runCli } from './generate-news-enhanced/index.js';
+
+// ---------------------------------------------------------------------------
+// Auto-execution — delegate CLI handling to the main module when this
+// barrel file is invoked directly (e.g. `npx tsx scripts/generate-news-enhanced.ts`).
+// This avoids duplicating the CLI/exit-code logic implemented in the main
+// `./generate-news-enhanced/index.ts` entry point.
+// ---------------------------------------------------------------------------
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runCli();
+}
