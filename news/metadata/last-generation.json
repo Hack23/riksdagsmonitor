@@ -1,15 +1,23 @@
 {
-  "timestamp": "2026-03-11T05:24:31.182Z",
+  "timestamp": "2026-03-11T14:28:18.900Z",
   "types": [
-    "propositions"
+    "motions"
   ],
   "languagesGenerated": [
-    "en",
-    "sv"
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "allRequestedLanguages": [
-    "en",
-    "sv",
     "da",
     "no",
     "fi",
@@ -24,19 +32,23 @@
     "zh"
   ],
   "batchSize": "all",
-  "skipExisting": true,
-  "generated": 2,
+  "skipExisting": false,
+  "generated": 12,
   "errors": 0,
   "articles": [
-    "2026-03-11-government-propositions-en.html",
-    "2026-03-11-government-propositions-sv.html"
+    "2026-03-11-opposition-motions-da.html",
+    "2026-03-11-opposition-motions-no.html",
+    "2026-03-11-opposition-motions-fi.html",
+    "2026-03-11-opposition-motions-de.html",
+    "2026-03-11-opposition-motions-fr.html",
+    "2026-03-11-opposition-motions-es.html",
+    "2026-03-11-opposition-motions-nl.html",
+    "2026-03-11-opposition-motions-ar.html",
+    "2026-03-11-opposition-motions-he.html",
+    "2026-03-11-opposition-motions-ja.html",
+    "2026-03-11-opposition-motions-ko.html",
+    "2026-03-11-opposition-motions-zh.html"
   ],
   "status": "enhanced",
-  "note": "Propositions run 2026-03-11: generated=2 (en,sv), skipExisting=true; remaining 12 languages queued for news-translate workflow",
-  "previousRun": {
-    "timestamp": "2026-03-11T04:49:19.518Z",
-    "types": ["committee-reports"],
-    "generated": 14,
-    "note": "Generated 14 committee-reports articles on 2026-03-11 (enhanced script with MCP integration, multi-language support, and batch mode)"
-  }
+  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
