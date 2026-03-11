@@ -150,7 +150,7 @@ export async function generateNews(): Promise<typeof stats> {
 
           console.log(`  📰 Lead story: "${topTitle}"`);
 
-          await generateBreakingNews({
+          const breakingResult = await generateBreakingNews({
             languages,
             eventContext: topTitle,
             eventData: {
@@ -160,8 +160,16 @@ export async function generateNews(): Promise<typeof stats> {
             },
             writeArticle: translatingWriteArticle,
           });
+          if (!breakingResult.success) {
+            console.error('❌ Breaking news generation failed:', breakingResult.error ?? 'unknown error');
+            stats.errors++;
+          }
         } catch (err: unknown) {
-          console.error('❌ Error generating breaking news:', (err as Error).message);
+          console.error(
+            '❌ Error generating breaking news:',
+            err instanceof Error ? err.message : String(err),
+          );
+          stats.errors++;
         }
         break;
       }
