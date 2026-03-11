@@ -226,10 +226,8 @@ if [ "$ELAPSED" -ge 2100 ]; then
 else
   # Set up MCP connection and generate with 20-minute timeout
   # (source && npx must run on ONE line to preserve MCP_SERVER_URL)
-  timeout 1200 bash -c 'source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
-    --types=breaking \
-    --languages="'"$LANG_ARG"'" \
-    --skip-existing'
+  GENERATE_CMD="source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types=breaking --languages=${LANG_ARG} --skip-existing"
+  timeout 1200 bash -c "$GENERATE_CMD"
   SCRIPT_EXIT=$?
   if [ "$SCRIPT_EXIT" -eq 124 ]; then
     echo "⚠️ Script timed out after 20 minutes — proceeding with whatever was generated"
