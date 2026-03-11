@@ -345,10 +345,6 @@ class AnomalyDetectionDataManager {
   data: CSVRow[] | null = null;
   dataSourceType: DataSourceType = 'live';
 
-  constructor() {
-    detectLanguage();
-  }
-
   getTranslations(): AnomalyTranslationsFull {
     return getTranslations();
   }
