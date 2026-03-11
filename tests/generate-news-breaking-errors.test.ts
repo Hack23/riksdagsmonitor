@@ -118,7 +118,7 @@ describe('generateNews() — breaking news error tracking', () => {
     const result = await moduleExports.generateNews();
 
     expect(mockGenerateBreakingNews).toHaveBeenCalled();
-    expect(result.errors).toBeGreaterThanOrEqual(1);
+    expect(result.errors).toBe(1);
   });
 
   it('should increment stats.errors when generateBreakingNews throws an exception', async () => {
@@ -129,7 +129,7 @@ describe('generateNews() — breaking news error tracking', () => {
 
     const result = await moduleExports.generateNews();
 
-    expect(result.errors).toBeGreaterThanOrEqual(1);
+    expect(result.errors).toBe(1);
   });
 
   it('should NOT increment stats.errors when generateBreakingNews returns success=true', async () => {
