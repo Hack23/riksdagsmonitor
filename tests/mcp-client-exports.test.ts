@@ -18,14 +18,6 @@ import {
   fetchGovernmentDocuments
 } from '../scripts/mcp-client.js';
 
-interface MockResponse {
-  ok: boolean;
-  json?: () => Promise<Record<string, unknown>>;
-  status?: number;
-  statusText?: string;
-  text?: () => Promise<string>;
-}
-
 describe('Module convenience exports', () => {
   let originalFetch: typeof global.fetch;
 

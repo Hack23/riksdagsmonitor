@@ -39,19 +39,8 @@
  * */
 
 import {
-  createChart,
-  initDashboardSection,
-  loadCSV,
-  createDataSource,
   logger,
-  formatNumber,
-  formatPercent,
-  getResponsiveOptions,
-  addChartKeyboardNav,
   detectLanguage,
-  showLoadingState,
-  showErrorState,
-  hideStateOverlays,
   showDataSourceDisclaimer,
 } from '../shared/index.js';
 
@@ -1009,7 +998,7 @@ function renderRiskHeatMap(
     .attr('role', 'button')
     .attr('aria-label', (d: RiskEntry, i: number) => `${ministries[i]}: Risk score ${d.riskScore}`)
     .style('cursor', 'pointer')
-    .on('mouseover', (event: MouseEvent, d: RiskEntry) => {
+    .on('mouseover', (_event: MouseEvent, d: RiskEntry) => {
       const riskLevel = parseFloat(d.riskScore);
       let level = 'Low';
       if (riskLevel >= 8.0) level = 'Critical';

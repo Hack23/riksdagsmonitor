@@ -10,11 +10,6 @@
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
 import type { ArticleContentData, MonthlyMetrics } from '../types.js';
-import { getPillarTransition } from '../../editorial-pillars.js';
-import {
-  svSpan,
-  normalizePartyKey,
-} from '../helpers.js';
 import { generateGenericContent } from './generic.js';
 
 /**

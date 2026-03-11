@@ -33,8 +33,11 @@ export default [
     },
   },
   {
-    // TypeScript file configuration
+    // TypeScript file configuration with type-safety rules
     files: ['**/*.ts'],
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+    },
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
@@ -51,6 +54,8 @@ export default [
       'no-undef': 'off', // TypeScript compiler handles this
       'no-redeclare': 'off', // TypeScript handles this
       'no-console': 'off',
+      // Type-safety rules — warn to flag existing usage, enforce in new code
+      '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
   {

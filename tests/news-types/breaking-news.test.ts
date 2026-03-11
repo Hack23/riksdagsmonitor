@@ -4,7 +4,7 @@
 
 import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vitest';
 import type { Mock } from 'vitest';
-import type { GeneratedArticle, GenerationResult, MCPCallRecord, BreakingEventData } from '../../scripts/types/article.js';
+import type { GeneratedArticle, GenerationResult, BreakingEventData } from '../../scripts/types/article.js';
 import type { Language } from '../../scripts/types/language.js';
 
 /** Mock MCP client shape for breaking news */

@@ -1,6 +1,6 @@
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { PARTY_VARIANTS, extractPartyMentions } from '../scripts/party-variants.js';
-import type { PartyCode, PartyVariantMap } from '../scripts/types/party.js';
+import type { PartyCode } from '../scripts/types/party.js';
 
 describe('party-variants', () => {
   afterEach(() => {
@@ -57,7 +57,7 @@ describe('party-variants', () => {
     });
 
     it('should have unique variants within each party', () => {
-      (Object.entries(PARTY_VARIANTS) as Array<[PartyCode, readonly string[]]>).forEach(([code, variants]) => {
+      (Object.entries(PARTY_VARIANTS) as Array<[PartyCode, readonly string[]]>).forEach(([_code, variants]) => {
         const uniqueVariants: readonly string[] = [...new Set(variants)];
         expect(variants.length).toBe(uniqueVariants.length);
       });

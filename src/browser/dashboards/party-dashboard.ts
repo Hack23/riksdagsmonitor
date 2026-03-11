@@ -39,14 +39,7 @@
  * */
 
 import {
-  createChart,
-  initDashboardSection,
-  loadCSV,
-  createDataSource,
   logger,
-  formatNumber,
-  formatPercent,
-  getResponsiveOptions,
   addChartKeyboardNav,
   showDataSourceDisclaimer,
   renderErrorFallback,
@@ -54,9 +47,6 @@ import {
 
 import { detectLanguage } from '../shared/index.js';
 import type { CSVRow } from '../shared/index.js';
-
-// D3 is loaded as a global <script> for DOM manipulation / SVG features
-const d3 = (globalThis as any).d3;
 
 // ============================================================================
 // INTERFACES
@@ -107,36 +97,6 @@ interface LocaleTranslations {
 /** All supported locale translations keyed by language code. */
 interface TranslationMap {
   readonly [lang: string]: LocaleTranslations;
-}
-
-/** Parsed effectiveness row from CSV. */
-interface EffectivenessRow extends CSVRow {
-  party: string;
-  year: string;
-  avg_win_rate: string;
-}
-
-/** Parsed performance row from CSV. */
-interface PerformanceRow extends CSVRow {
-  party: string;
-  docs_per_member: string;
-}
-
-/** Parsed coalition alignment row from CSV. */
-interface CoalitionRow {
-  party1: string;
-  party2: string;
-  alignment_rate: string;
-  coalition_likelihood?: string;
-  [key: string]: string | undefined;
-}
-
-/** Parsed momentum row from CSV. */
-interface MomentumRow extends CSVRow {
-  party: string;
-  year: string;
-  quarter: string;
-  momentum: string;
 }
 
 /** Prepared bar chart data point. */

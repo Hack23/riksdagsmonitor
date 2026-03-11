@@ -19,12 +19,9 @@ import {
   normalizePartyKey,
   formatDocumentDate,
 } from '../helpers.js';
-import { detectPolicyDomains, generatePolicySignificance, generateDeepPolicyAnalysis } from '../policy-analysis.js';
+import { detectPolicyDomains } from '../policy-analysis.js';
 import {
-  groupMotionsByProposition,
-  groupPropositionsByCommittee,
   generateOppositionStrategySection,
-  renderMotionEntry,
   generateDocumentIntelligenceAnalysis,
 } from '../document-analysis.js';
 import { TITLE_SUFFIX_TEMPLATES, generateDeepAnalysisSection } from './shared.js';

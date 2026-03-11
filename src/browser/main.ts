@@ -104,6 +104,9 @@ async function initAll(): Promise<void> {
   // before initStats()'s async I/O so containers already in/near the viewport
   // on initial render are not missed.
   _lazyObserver = initLazyDashboards(LAZY_DASHBOARDS);
+  // Read the module-level variable to satisfy noUnusedLocals — the observer
+  // must stay referenced at module scope to avoid garbage collection.
+  void _lazyObserver;
 
   // Eager: stats loader populates hero metrics — no chart libraries needed
   try {

@@ -69,8 +69,6 @@ export function generateArticleHTML(data: ArticleData): string {
   const isRTL: boolean = lang === 'ar' || lang === 'he';
   const dirAttr: string = isRTL ? ' dir="rtl"' : '';
   const baseSlug: string = slug.replace(`-${lang}.html`, '');
-  const altLang: Language = lang === 'en' ? 'sv' : 'en';
-  const altSlug: string = slug.replace(`-${lang}.html`, `-${altLang}.html`);
 
   return `<!DOCTYPE html>
 <html lang="${hreflangCode(lang)}"${dirAttr}>
