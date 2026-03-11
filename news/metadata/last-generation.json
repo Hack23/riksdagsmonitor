@@ -1,23 +1,11 @@
 {
-  "timestamp": "2026-03-06T07:18:16.253Z",
+  "timestamp": "2026-03-11T05:24:31.182Z",
   "types": [
-    "week-ahead"
+    "propositions"
   ],
   "languagesGenerated": [
     "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "sv"
   ],
   "allRequestedLanguages": [
     "en",
@@ -36,25 +24,13 @@
     "zh"
   ],
   "batchSize": "all",
-  "skipExisting": false,
-  "generated": 14,
+  "skipExisting": true,
+  "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-03-06-week-ahead-en.html",
-    "2026-03-06-week-ahead-sv.html",
-    "2026-03-06-week-ahead-da.html",
-    "2026-03-06-week-ahead-no.html",
-    "2026-03-06-week-ahead-fi.html",
-    "2026-03-06-week-ahead-de.html",
-    "2026-03-06-week-ahead-fr.html",
-    "2026-03-06-week-ahead-es.html",
-    "2026-03-06-week-ahead-nl.html",
-    "2026-03-06-week-ahead-ar.html",
-    "2026-03-06-week-ahead-he.html",
-    "2026-03-06-week-ahead-ja.html",
-    "2026-03-06-week-ahead-ko.html",
-    "2026-03-06-week-ahead-zh.html"
+    "2026-03-11-government-propositions-en.html",
+    "2026-03-11-government-propositions-sv.html"
   ],
   "status": "enhanced",
-  "note": "Week-ahead batch for 2026-03-06 generated 14 articles across all requested languages (batchSize=all, status=enhanced)"
+  "note": "Propositions run 2026-03-11: generated=2 (en,sv), skipExisting=true; remaining 12 languages queued for news-translate workflow"
 }
