@@ -1,21 +1,60 @@
 {
-  "timestamp": "2026-03-11T06:34:11.417Z",
+  "timestamp": "2026-03-06T07:18:16.253Z",
   "types": [
-    "propositions"
+    "week-ahead"
   ],
   "languagesGenerated": [
-    "da"
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "allRequestedLanguages": [
-    "da"
+    "en",
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "batchSize": "all",
-  "skipExisting": true,
-  "generated": 1,
+  "skipExisting": false,
+  "generated": 14,
   "errors": 0,
   "articles": [
-    "2026-03-11-government-propositions-da.html"
+    "2026-03-06-week-ahead-en.html",
+    "2026-03-06-week-ahead-sv.html",
+    "2026-03-06-week-ahead-da.html",
+    "2026-03-06-week-ahead-no.html",
+    "2026-03-06-week-ahead-fi.html",
+    "2026-03-06-week-ahead-de.html",
+    "2026-03-06-week-ahead-fr.html",
+    "2026-03-06-week-ahead-es.html",
+    "2026-03-06-week-ahead-nl.html",
+    "2026-03-06-week-ahead-ar.html",
+    "2026-03-06-week-ahead-he.html",
+    "2026-03-06-week-ahead-ja.html",
+    "2026-03-06-week-ahead-ko.html",
+    "2026-03-06-week-ahead-zh.html"
   ],
   "status": "enhanced",
-  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
+  "note": "Week-ahead batch for 2026-03-06 generated 14 articles across all requested languages (batchSize=all, status=enhanced)"
 }

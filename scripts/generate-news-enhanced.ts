@@ -41,3 +41,28 @@ export {
   requireMcp,
   translateSwedishContent,
 } from './generate-news-enhanced/index.js';
+
+// ---------------------------------------------------------------------------
+// Auto-execution — run generateNews() when this barrel file is invoked
+// directly (e.g. `npx tsx scripts/generate-news-enhanced.ts`).
+// The auto-execution guard in index.ts only fires when index.ts itself is
+// the entry point, so we replicate it here for backward compatibility.
+// ---------------------------------------------------------------------------
+if (import.meta.url === `file://${process.argv[1]}`) {
+  import('./generate-news-enhanced/index.js').then(({ generateNews: run, QUALITY_THRESHOLD: QT }) => {
+    return run().then(result => {
+      if (result.errors > 0) {
+        process.exit(1);
+      }
+      const qualityScores = result.qualityScores;
+      if (qualityScores.length > 0 && qualityScores.every(q => !q.passed)) {
+        console.warn(`⚠️  Exiting with code 2: all ${qualityScores.length} articles scored below quality threshold ${QT}`);
+        process.exit(2);
+      }
+      process.exit(0);
+    });
+  }).catch((error: unknown) => {
+    console.error('❌ Fatal error:', error);
+    process.exit(1);
+  });
+}
