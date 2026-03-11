@@ -1,7 +1,4 @@
 {
-  "timestamp": "2026-03-11T04:49:19.518Z",
-  "types": [
-    "committee-reports"
   "timestamp": "2026-03-11T05:24:31.182Z",
   "types": [
     "propositions"
@@ -28,26 +25,6 @@
   ],
   "batchSize": "all",
   "skipExisting": true,
-  "generated": 14,
-  "errors": 0,
-  "articles": [
-    "2026-03-11-committee-reports-en.html",
-    "2026-03-11-committee-reports-sv.html",
-    "2026-03-11-committee-reports-da.html",
-    "2026-03-11-committee-reports-no.html",
-    "2026-03-11-committee-reports-fi.html",
-    "2026-03-11-committee-reports-de.html",
-    "2026-03-11-committee-reports-fr.html",
-    "2026-03-11-committee-reports-es.html",
-    "2026-03-11-committee-reports-nl.html",
-    "2026-03-11-committee-reports-ar.html",
-    "2026-03-11-committee-reports-he.html",
-    "2026-03-11-committee-reports-ja.html",
-    "2026-03-11-committee-reports-ko.html",
-    "2026-03-11-committee-reports-zh.html"
-  ],
-  "status": "enhanced",
-  "note": "Generated 14 committee-reports articles on 2026-03-11 (enhanced script with MCP integration, multi-language support, and batch mode)"
   "generated": 2,
   "errors": 0,
   "articles": [
@@ -55,5 +32,11 @@
     "2026-03-11-government-propositions-sv.html"
   ],
   "status": "enhanced",
-  "note": "Propositions run 2026-03-11: generated=2 (en,sv), skipExisting=true; remaining 12 languages queued for news-translate workflow"
+  "note": "Propositions run 2026-03-11: generated=2 (en,sv), skipExisting=true; remaining 12 languages queued for news-translate workflow",
+  "previousRun": {
+    "timestamp": "2026-03-11T04:49:19.518Z",
+    "types": ["committee-reports"],
+    "generated": 14,
+    "note": "Generated 14 committee-reports articles on 2026-03-11 (enhanced script with MCP integration, multi-language support, and batch mode)"
+  }
 }
