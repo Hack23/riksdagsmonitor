@@ -56,5 +56,5 @@
     "2026-03-11-committee-reports-zh.html"
   ],
   "status": "enhanced",
-  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
+  "note": "2026-03-11 committee-reports batch: generated 14 articles in 14 languages (0 errors), batchSize=all, skipExisting=true, status=enhanced"
 }
