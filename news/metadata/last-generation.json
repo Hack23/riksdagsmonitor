@@ -1,6 +1,7 @@
 {
   "timestamp": "2026-03-11T14:28:18.900Z",
   "types": [
+    "propositions",
     "motions"
   ],
   "languagesGenerated": [
@@ -33,9 +34,21 @@
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 12,
+  "generated": 24,
   "errors": 0,
   "articles": [
+    "2026-03-11-government-propositions-da.html",
+    "2026-03-11-government-propositions-no.html",
+    "2026-03-11-government-propositions-fi.html",
+    "2026-03-11-government-propositions-de.html",
+    "2026-03-11-government-propositions-fr.html",
+    "2026-03-11-government-propositions-es.html",
+    "2026-03-11-government-propositions-nl.html",
+    "2026-03-11-government-propositions-ar.html",
+    "2026-03-11-government-propositions-he.html",
+    "2026-03-11-government-propositions-ja.html",
+    "2026-03-11-government-propositions-ko.html",
+    "2026-03-11-government-propositions-zh.html",
     "2026-03-11-opposition-motions-da.html",
     "2026-03-11-opposition-motions-no.html",
     "2026-03-11-opposition-motions-fi.html",
