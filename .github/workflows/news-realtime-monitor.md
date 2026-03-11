@@ -129,13 +129,18 @@ START_TIME=$(date +%s)
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
 | Detect | 3–8 | Query MCP tools for today's activity |
-| Generate | 8–35 | Run `generate-news-enhanced.ts` script (handles all 14 languages) |
-| Validate | 35–38 | Run `validate-news-generation.sh` |
-| Commit+PR | 38–43 | `git add && git commit`, then `safeoutputs___create_pull_request` |
+| Generate | 8–30 | Run `generate-news-enhanced.ts` script (handles all 14 languages) |
+| Validate | 30–35 | Run `validate-news-generation.sh` |
+| Commit+PR | 35–40 | `git add && git commit`, then `safeoutputs___create_pull_request` |
 
-**Hard cutoffs** — check elapsed time before each phase:
-- `>= 38 min` → Stop generating, commit what you have, create PR immediately
-- `>= 43 min` → STOP ALL WORK, call safe output immediately
+**Hard cutoffs** — check elapsed time before EVERY phase:
+```bash
+ELAPSED=$(( $(date +%s) - START_TIME ))
+echo "⏱️ Elapsed: $((ELAPSED / 60))m $((ELAPSED % 60))s"
+```
+- `>= 35 min` → Stop generating, commit what you have, create PR immediately
+- `>= 40 min` → STOP ALL WORK, call safe output tool (`safeoutputs___noop` or `safeoutputs___create_pull_request`) IMMEDIATELY — do NOT run any more bash commands
+- **CRITICAL**: If you have not called a safe output tool and time is running out, call `safeoutputs___noop` immediately. Failing to call a safe output tool causes a workflow failure.
 
 ## Step 1: Date Validation & MCP Health Check
 
@@ -211,22 +216,35 @@ case "$LANGUAGES_INPUT" in
   *) LANG_ARG="$LANGUAGES_INPUT" ;;
 esac
 
-# Set up MCP connection and generate (source && npx must run on ONE line to preserve MCP_SERVER_URL)
-source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
-  --types=breaking \
-  --languages="$LANG_ARG" \
-  --skip-existing
-SCRIPT_EXIT=$?
-echo "Script exit code: $SCRIPT_EXIT"
-
-# Check for newly generated files
-TODAY="$(date +%Y-%m-%d)"
-NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
-if [ -z "$NEW_ARTICLES" ]; then
-  echo "No new breaking news articles were created."
+# Check elapsed time before starting generation
+source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
+ELAPSED=$(( $(date +%s) - ${START_TIME:-$(date +%s)} ))
+if [ "$ELAPSED" -ge 2100 ]; then
+  echo "⏱️ Time budget exceeded (${ELAPSED}s >= 35min) — skipping generation"
+  SCRIPT_EXIT=0
+  NEW_ARTICLES=""
 else
-  echo "Newly generated articles:"
-  printf '%s\n' "$NEW_ARTICLES"
+  # Set up MCP connection and generate with 20-minute timeout
+  # (source && npx must run on ONE line to preserve MCP_SERVER_URL)
+  timeout 1200 bash -c 'source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
+    --types=breaking \
+    --languages="'"$LANG_ARG"'" \
+    --skip-existing'
+  SCRIPT_EXIT=$?
+  if [ "$SCRIPT_EXIT" -eq 124 ]; then
+    echo "⚠️ Script timed out after 20 minutes — proceeding with whatever was generated"
+  fi
+  echo "Script exit code: $SCRIPT_EXIT"
+
+  # Check for newly generated files
+  TODAY="$(date +%Y-%m-%d)"
+  NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
+  if [ -z "$NEW_ARTICLES" ]; then
+    echo "No new breaking news articles were created."
+  else
+    echo "Newly generated articles:"
+    printf '%s\n' "$NEW_ARTICLES"
+  fi
 fi
 ```
 
@@ -266,10 +284,22 @@ If untranslated content found, translate each `<span data-translate="true" lang=
 
 Then run validation:
 ```bash
-bash scripts/validate-news-generation.sh
-VALIDATION_EXIT=$?
-if [ "$VALIDATION_EXIT" -ne 0 ]; then
-  echo "Validation issues found — fix what you can, proceed if time allows"
+# Check elapsed time before validation
+source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
+ELAPSED=$(( $(date +%s) - ${START_TIME:-$(date +%s)} ))
+if [ "$ELAPSED" -ge 2100 ]; then
+  echo "⏱️ Time budget exceeded (${ELAPSED}s >= 35min) — skipping validation"
+  VALIDATION_EXIT=0
+else
+  timeout 300 bash scripts/validate-news-generation.sh
+  VALIDATION_EXIT=$?
+  if [ "$VALIDATION_EXIT" -eq 124 ]; then
+    echo "⚠️ Validation timed out after 5 minutes — proceeding anyway"
+    VALIDATION_EXIT=0
+  fi
+  if [ "$VALIDATION_EXIT" -ne 0 ]; then
+    echo "Validation issues found — fix what you can, proceed if time allows"
+  fi
 fi
 ```
 
@@ -342,6 +372,10 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 | Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
 | Empty results | No significant events detected in monitoring window | Skip generation with `safeoutputs___noop` |
 | Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |
+| Script timeout | Generation script exceeds 20-minute limit | Proceed with whatever was generated; the `timeout 1200` wrapper kills the script |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
+| Time running out | Elapsed >= 35 minutes | IMMEDIATELY call `safeoutputs___noop` or `safeoutputs___create_pull_request` — do NOT start new work |
+
+⚠️ **CRITICAL SAFETY NET**: Before EVERY bash block and EVERY tool call, mentally check: "Am I running out of time?" If more than 35 minutes have elapsed since workflow start, stop all work and call a safe output tool IMMEDIATELY.
 
 🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, detect events, generate articles with the script, and call a safe output tool.**

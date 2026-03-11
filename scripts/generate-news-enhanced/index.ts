@@ -162,6 +162,7 @@ export async function generateNews(): Promise<typeof stats> {
           });
         } catch (err: unknown) {
           console.error('❌ Error generating breaking news:', (err as Error).message);
+          stats.errors++;
         }
         break;
       }
