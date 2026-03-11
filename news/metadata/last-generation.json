@@ -9,7 +9,19 @@
   ],
   "allRequestedLanguages": [
     "en",
-    "sv"
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "batchSize": "all",
   "skipExisting": true,
@@ -20,5 +32,5 @@
     "2026-03-11-government-propositions-sv.html"
   ],
   "status": "enhanced",
-  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
+  "note": "Propositions run 2026-03-11: generated=2 (en,sv), skipExisting=true; remaining 12 languages queued for news-translate workflow"
 }
