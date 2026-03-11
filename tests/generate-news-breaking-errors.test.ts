@@ -8,7 +8,6 @@
  */
 
 import { describe, it, expect, vi, beforeAll, beforeEach, afterAll } from 'vitest';
-import fs from 'fs';
 import type { GenerationStats, GenerationResult } from '../scripts/types/article.js';
 
 // ---------------------------------------------------------------------------
@@ -29,6 +28,25 @@ const { mockGenerateBreakingNews, mockStats, mockGetSharedClient } = vi.hoisted(
     searchDocuments: vi.fn().mockResolvedValue([{ doktyp: 'prop', titel: 'Test Prop' }])
   });
   return { mockGenerateBreakingNews, mockStats, mockGetSharedClient };
+});
+
+// Mock fs module at the module level (hoisted before imports) to prevent file writes
+vi.mock('fs', async (importOriginal) => {
+  const original = await importOriginal<typeof import('fs')>();
+  return {
+    ...original,
+    default: {
+      ...original,
+      writeFileSync: vi.fn(),
+      mkdirSync: vi.fn(),
+      existsSync: vi.fn().mockReturnValue(false),
+      readdirSync: vi.fn().mockReturnValue([]),
+    },
+    writeFileSync: vi.fn(),
+    mkdirSync: vi.fn(),
+    existsSync: vi.fn().mockReturnValue(false),
+    readdirSync: vi.fn().mockReturnValue([]),
+  };
 });
 
 // Mock the breaking-news module
@@ -73,12 +91,6 @@ interface GenerateNewsModule {
 let moduleExports: GenerateNewsModule | null = null;
 
 beforeAll(async () => {
-  // Prevent actual file writes
-  vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {});
-  vi.spyOn(fs, 'mkdirSync').mockImplementation(() => undefined as unknown as string);
-  vi.spyOn(fs, 'existsSync').mockReturnValue(false);
-  vi.spyOn(fs, 'readdirSync').mockReturnValue([]);
-
   try {
     moduleExports = await import('../scripts/generate-news-enhanced/index.js') as unknown as GenerateNewsModule;
   } catch (e: unknown) {
