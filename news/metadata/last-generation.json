@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-12T11:11:00.357Z",
+  "timestamp": "2026-03-12T14:20:12.386Z",
   "types": [
-    "deep-inspection"
+    "breaking"
   ],
   "languagesGenerated": [
     "en",
@@ -13,12 +13,9 @@
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 2,
+  "generated": 0,
   "errors": 0,
-  "articles": [
-    "2026-03-12-deep-inspection-gov-presstraff-om-forslag-om-betal-nxwv0-en.html",
-    "2026-03-12-deep-inspection-gov-presstraff-om-forslag-om-betal-nxwv0-sv.html"
-  ],
+  "articles": [],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
