@@ -874,10 +874,10 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
   if (isPressOrExternal) {
     // Non-legislative documents (press releases, external) — differentiate messaging
     const typeDesc = pressmCount > 0 ? `${pressmCount} government press release${pressmCount !== 1 ? 's' : ''}` : `${extCount} external reference${extCount !== 1 ? 's' : ''}`;
-    const signalPhraseEn = pressmCount > 0
+    const signalText = pressmCount > 0
       ? 'Government press communications signal policy priorities and upcoming legislative action.'
       : 'These external references illuminate the policy landscape and highlight areas of potential legislative interest.';
-    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: This deep inspection examines ${typeDesc}${domainPhrase ? ` spanning ${domainPhrase}` : ''}. ${signalPhraseEn} Stakeholders should track whether formal propositions or committee referrals follow, which would confirm the transition from policy signalling to legislative commitment.`;
+    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: This deep inspection examines ${typeDesc}${domainPhrase ? ` spanning ${domainPhrase}` : ''}. ${signalText} Stakeholders should track whether formal propositions or committee referrals follow, which would confirm the transition from policy signalling to legislative commitment.`;
   } else if (isLegislativeFocused) {
     const signalText = propCount > betCount ? 'active government agenda-setting' : betCount > propCount ? 'strong parliamentary scrutiny' : 'balanced legislative activity';
     enText = `Based on analysis of ${docs.length} parliamentary document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: The legislative pipeline shows ${propCount} government proposition${propCount !== 1 ? 's' : ''}, ${betCount} committee report${betCount !== 1 ? 's' : ''}, and ${motCount} opposition motion${motCount !== 1 ? 's' : ''}. This distribution signals ${signalText}${domainPhrase ? ` in ${domainPhrase}` : ' in this policy area'}. Stakeholders should monitor committee deliberations and chamber voting patterns as the most reliable indicators of policy trajectory.`;
@@ -888,10 +888,10 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
   let svText: string;
   if (isPressOrExternal) {
     const typeDescSv = pressmCount > 0 ? `${pressmCount} pressmeddelande${pressmCount !== 1 ? 'n' : ''}` : `${extCount} extern${extCount !== 1 ? 'a' : ''} referens${extCount !== 1 ? 'er' : ''}`;
-    const signalPhraseSv = pressmCount > 0
+    const signalTextSv = pressmCount > 0
       ? 'Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder.'
-      : 'Dessa externa referenser belyser regeringens politiska prioriteringar och möjliga kommande lagstiftningsåtgärder.';
-    svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalPhraseSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
+      : 'Dessa externa referenser belyser det politiska landskapet och belyser områden av potentiellt lagstiftningsintresse.';
+    svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalTextSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
   } else {
     svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;
   }
