@@ -1,23 +1,59 @@
 {
-  "timestamp": "2026-03-12T11:11:00.357Z",
+  "timestamp": "2026-03-12T14:20:12.386Z",
   "types": [
-    "deep-inspection"
+    "week-ahead"
   ],
   "languagesGenerated": [
     "en",
-    "sv"
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "allRequestedLanguages": [
     "en",
-    "sv"
+    "sv",
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 2,
+  "generated": 14,
   "errors": 0,
   "articles": [
-    "2026-03-12-deep-inspection-gov-presstraff-om-forslag-om-betal-nxwv0-en.html",
-    "2026-03-12-deep-inspection-gov-presstraff-om-forslag-om-betal-nxwv0-sv.html"
+    "2026-03-12-week-ahead-en.html",
+    "2026-03-12-week-ahead-sv.html",
+    "2026-03-12-week-ahead-da.html",
+    "2026-03-12-week-ahead-no.html",
+    "2026-03-12-week-ahead-fi.html",
+    "2026-03-12-week-ahead-de.html",
+    "2026-03-12-week-ahead-fr.html",
+    "2026-03-12-week-ahead-es.html",
+    "2026-03-12-week-ahead-nl.html",
+    "2026-03-12-week-ahead-ar.html",
+    "2026-03-12-week-ahead-he.html",
+    "2026-03-12-week-ahead-ja.html",
+    "2026-03-12-week-ahead-ko.html",
+    "2026-03-12-week-ahead-zh.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
