@@ -37,8 +37,8 @@ if [ -f "$_MCP_CONFIG_PATH" ]; then
   if [ -z "$GW_KEY" ]; then
     echo "⚠️  WARNING: MCP config file exists but MCP auth token is missing or invalid"
   else
-    # Use the key as-is — the MCP gateway expects the raw API key
-    export MCP_AUTH_TOKEN="$GW_KEY"
+    # Strip legacy "Bearer " prefix (case-insensitive) — gateway expects raw API key
+    export MCP_AUTH_TOKEN="$(printf '%s' "$GW_KEY" | sed 's/^[Bb][Ee][Aa][Rr][Ee][Rr][[:space:]]*//')"
   fi
 fi
 
