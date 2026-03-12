@@ -141,11 +141,16 @@ export default defineConfig({
       },
       output: {
         // Manual chunk splitting for optimal loading
-        manualChunks: {
-          // Core visualization libraries
-          'chart': ['chart.js', 'chartjs-plugin-annotation'],
-          'd3': ['d3'],
-          'papa': ['papaparse']
+        manualChunks(id) {
+          if (id.includes('chart.js') || id.includes('chartjs-plugin-annotation')) {
+            return 'chart';
+          }
+          if (id.includes('/node_modules/d3') || id.includes('/node_modules/d3-')) {
+            return 'd3';
+          }
+          if (id.includes('papaparse')) {
+            return 'papa';
+          }
         },
         
         // Asset file naming
