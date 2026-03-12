@@ -19,9 +19,24 @@ function makeDoc(overrides: Partial<RawDocument> = {}): RawDocument {
 }
 
 describe('generateDeepAnalysisSection', () => {
-  it('returns empty string when fewer than 2 documents are provided', () => {
+  it('returns empty string when fewer than 2 documents are provided for non-deep-inspection', () => {
     expect(generateDeepAnalysisSection({ documents: [], lang: 'en', articleType: 'committee' })).toBe('');
     expect(generateDeepAnalysisSection({ documents: [makeDoc()], lang: 'en', articleType: 'committee' })).toBe('');
+  });
+
+  it('returns a non-empty section when 1 document is provided for deep-inspection', () => {
+    const result = generateDeepAnalysisSection({
+      documents: [makeDoc()],
+      lang: 'en',
+      articleType: 'deep-inspection',
+    });
+    expect(result).not.toBe('');
+    expect(result).toContain('<section class="deep-analysis"');
+    expect(result).toContain('</section>');
+  });
+
+  it('still returns empty for deep-inspection with 0 documents', () => {
+    expect(generateDeepAnalysisSection({ documents: [], lang: 'en', articleType: 'deep-inspection' })).toBe('');
   });
 
   it('returns a non-empty section when 2+ documents are provided', () => {

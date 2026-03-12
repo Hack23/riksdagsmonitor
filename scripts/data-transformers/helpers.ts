@@ -329,7 +329,13 @@ export function getCommitteeName(code: string | undefined, lang: Language | stri
 export function extractKeyPassage(fullText: string | undefined, maxChars = 600): string {
   if (!fullText) return '';
   // Strip HTML tags if present
-  const plain = fullText.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  let plain = fullText.replace(/<[^>]+>/g, ' ');
+  // Strip markdown links — keep link text, remove URL: [text](url) → text
+  plain = plain.replace(/\[([^\]]*)\]\([^)]+\)/g, '$1');
+  // Strip bare URLs (http/https)
+  plain = plain.replace(/https?:\/\/[^\s)]+/g, '');
+  // Collapse whitespace
+  plain = plain.replace(/\s+/g, ' ').trim();
   if (plain.length <= maxChars) return plain;
   // Find a sentence boundary near maxChars
   const cut = plain.lastIndexOf('.', maxChars);
