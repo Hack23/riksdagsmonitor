@@ -638,6 +638,42 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     ko: '주제 맥락 및 중요성',
     zh: '主题背景与意义',
   },
+  documentsByType: {
+    en: 'Documents by Type', sv: 'Dokument efter typ', da: 'Dokumenter efter type', no: 'Dokumenter etter type',
+    fi: 'Asiakirjat tyypin mukaan', de: 'Dokumente nach Typ', fr: 'Documents par type', es: 'Documentos por tipo',
+    nl: 'Documenten per type', ar: 'الوثائق حسب النوع', he: 'מסמכים לפי סוג',
+    ja: '種類別文書', ko: '유형별 문서', zh: '按类型分类的文件',
+  },
+  documents: {
+    en: 'Documents', sv: 'Dokument', da: 'Dokumenter', no: 'Dokumenter',
+    fi: 'Asiakirjat', de: 'Dokumente', fr: 'Documents', es: 'Documentos',
+    nl: 'Documenten', ar: 'وثائق', he: 'מסמכים',
+    ja: '文書', ko: '문서', zh: '文件',
+  },
+  documentsAnalysed: {
+    en: 'parliamentary documents analysed', sv: 'riksdagsdokument analyserade', da: 'parlamentsdokumenter analyseret', no: 'parlamentsdokumenter analysert',
+    fi: 'asiakirjaa analysoitu', de: 'parlamentarische Dokumente analysiert', fr: 'documents parlementaires analysés', es: 'documentos parlamentarios analizados',
+    nl: 'parlementaire documenten geanalyseerd', ar: 'وثيقة برلمانية تم تحليلها', he: 'מסמכים פרלמנטריים שנותחו',
+    ja: '件の議会文書を分析', ko: '의회 문서 분석됨', zh: '份议会文件已分析',
+  },
+  documentTypes: {
+    en: 'Document Types', sv: 'Dokumenttyper', da: 'Dokumenttyper', no: 'Dokumenttyper',
+    fi: 'Asiakirjatyypit', de: 'Dokumenttypen', fr: 'Types de documents', es: 'Tipos de documentos',
+    nl: 'Documenttypen', ar: 'أنواع الوثائق', he: 'סוגי מסמכים',
+    ja: '文書種類', ko: '문서 유형', zh: '文件类型',
+  },
+  policyDomains: {
+    en: 'Policy Domains', sv: 'Politikområden', da: 'Politikområder', no: 'Politikkområder',
+    fi: 'Politiikka-alueet', de: 'Politikbereiche', fr: 'Domaines politiques', es: 'Áreas de política',
+    nl: 'Beleidsdomeinen', ar: 'مجالات السياسة', he: 'תחומי מדיניות',
+    ja: '政策分野', ko: '정책 영역', zh: '政策领域',
+  },
+  stakeholders: {
+    en: 'Stakeholders', sv: 'Intressenter', da: 'Interessenter', no: 'Interessenter',
+    fi: 'Sidosryhmät', de: 'Stakeholder', fr: 'Parties prenantes', es: 'Partes interesadas',
+    nl: 'Belanghebbenden', ar: 'أصحاب المصلحة', he: 'בעלי עניין',
+    ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
+  },
 };
 
 function deepLabel(key: string, lang: Language): string {
@@ -836,9 +872,12 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
 
   let enText: string;
   if (isPressOrExternal) {
-    // Non-legislative documents (press releases, external) — policy-signalling focus
+    // Non-legislative documents (press releases, external) — differentiate messaging
     const typeDesc = pressmCount > 0 ? `${pressmCount} government press release${pressmCount !== 1 ? 's' : ''}` : `${extCount} external reference${extCount !== 1 ? 's' : ''}`;
-    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: This deep inspection examines ${typeDesc}${domainPhrase ? ` spanning ${domainPhrase}` : ''}. Government press communications signal policy priorities and upcoming legislative action. Stakeholders should track whether formal propositions or committee referrals follow, which would confirm the transition from policy signalling to legislative commitment.`;
+    const signalPhraseEn = pressmCount > 0
+      ? 'Government press communications signal policy priorities and upcoming legislative action.'
+      : 'These external references illuminate the policy landscape and highlight areas of potential legislative interest.';
+    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: This deep inspection examines ${typeDesc}${domainPhrase ? ` spanning ${domainPhrase}` : ''}. ${signalPhraseEn} Stakeholders should track whether formal propositions or committee referrals follow, which would confirm the transition from policy signalling to legislative commitment.`;
   } else if (isLegislativeFocused) {
     const signalText = propCount > betCount ? 'active government agenda-setting' : betCount > propCount ? 'strong parliamentary scrutiny' : 'balanced legislative activity';
     enText = `Based on analysis of ${docs.length} parliamentary document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: The legislative pipeline shows ${propCount} government proposition${propCount !== 1 ? 's' : ''}, ${betCount} committee report${betCount !== 1 ? 's' : ''}, and ${motCount} opposition motion${motCount !== 1 ? 's' : ''}. This distribution signals ${signalText}${domainPhrase ? ` in ${domainPhrase}` : ' in this policy area'}. Stakeholders should monitor committee deliberations and chamber voting patterns as the most reliable indicators of policy trajectory.`;
@@ -849,7 +888,10 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
   let svText: string;
   if (isPressOrExternal) {
     const typeDescSv = pressmCount > 0 ? `${pressmCount} pressmeddelande${pressmCount !== 1 ? 'n' : ''}` : `${extCount} extern${extCount !== 1 ? 'a' : ''} referens${extCount !== 1 ? 'er' : ''}`;
-    svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder. Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
+    const signalPhraseSv = pressmCount > 0
+      ? 'Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder.'
+      : 'Dessa externa referenser belyser regeringens politiska prioriteringar och möjliga kommande lagstiftningsåtgärder.';
+    svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalPhraseSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
   } else {
     svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;
   }
@@ -1144,16 +1186,16 @@ function buildDeepInspectionSections(
   const dashboardSection = generateDashboardSection({
     data: {
       title: topic
-        ? `Document Intelligence Dashboard — ${topic}`
-        : 'Document Intelligence Dashboard',
-      summary: `${docs.length} parliamentary documents analysed`,
+        ? `${deepLabel('documentIntelligence', lang)} — ${topic}`
+        : deepLabel('documentIntelligence', lang),
+      summary: `${docs.length} ${deepLabel('documentsAnalysed', lang)}`,
       charts: [{
         id: 'deep-inspection-doc-types',
         type: 'bar',
-        title: 'Documents by Type',
+        title: deepLabel('documentsByType', lang),
         labels: chartLabels,
         datasets: [{
-          label: 'Documents',
+          label: deepLabel('documents', lang),
           data: chartValues,
           backgroundColor: rawTypeKeys.map((_, i) => DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length]),
         }],
@@ -1172,7 +1214,7 @@ function buildDeepInspectionSections(
   // Document type branch — use localized names
   if (rawTypeKeys.length > 0) {
     mindmapBranches.push({
-      label: 'Document Types',
+      label: deepLabel('documentTypes', lang),
       color: 'cyan',
       icon: '📄',
       items: rawTypeKeys.map((t, i) => `${docTypeLabel(t, lang)} (${chartValues[i] ?? 0})`),
@@ -1182,7 +1224,7 @@ function buildDeepInspectionSections(
   // Policy domain branch
   if (detectedDomainList.length > 0) {
     mindmapBranches.push({
-      label: 'Policy Domains',
+      label: deepLabel('policyDomains', lang),
       color: 'green',
       icon: '🏛️',
       items: detectedDomainList,
@@ -1191,7 +1233,7 @@ function buildDeepInspectionSections(
 
   // Stakeholder branch
   mindmapBranches.push({
-    label: 'Stakeholders',
+    label: deepLabel('stakeholders', lang),
     color: 'yellow',
     icon: '👥',
     items: [
