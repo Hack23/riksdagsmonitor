@@ -80,6 +80,7 @@ safe-outputs:
     - www.riksdagen.se
     - www.regeringen.se
     - github.com
+  max-patch-size: 2048
   create-pull-request: {}
   add-comment: {}
 
