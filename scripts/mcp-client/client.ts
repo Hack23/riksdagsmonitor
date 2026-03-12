@@ -43,7 +43,7 @@ function getDefaultTimeout(): number {
 /**
  * Resolve the default MCP auth token.
  * Priority:
- *   1. MCP_AUTH_TOKEN env var (used as-is)
+ *   1. MCP_AUTH_TOKEN env var (strips "Bearer " prefix if present)
  *   2. MCP_GATEWAY_API_KEY env var (raw API key)
  *   3. gateway.apiKey from MCP config file (legacy — raw API key)
  *   4. mcpServers['riksdag-regering'].headers.Authorization from MCP config file
@@ -54,7 +54,7 @@ function getDefaultTimeout(): number {
  * automatically.
  */
 function getDefaultAuthToken(): string {
-  if (process.env['MCP_AUTH_TOKEN']) return process.env['MCP_AUTH_TOKEN'];
+  if (process.env['MCP_AUTH_TOKEN']) return process.env['MCP_AUTH_TOKEN'].replace(/^Bearer\s+/i, '');
   if (process.env['MCP_GATEWAY_API_KEY']) return process.env['MCP_GATEWAY_API_KEY'];
 
   // Try reading from MCP config file
