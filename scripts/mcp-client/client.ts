@@ -44,10 +44,10 @@ function getDefaultTimeout(): number {
  * Resolve the default MCP auth token.
  * Priority:
  *   1. MCP_AUTH_TOKEN env var (used as-is)
- *   2. MCP_GATEWAY_API_KEY env var (prepend "Bearer ")
- *   3. gateway.apiKey from MCP config file (legacy — prepend "Bearer ")
+ *   2. MCP_GATEWAY_API_KEY env var (raw API key)
+ *   3. gateway.apiKey from MCP config file (legacy — raw API key)
  *   4. mcpServers['riksdag-regering'].headers.Authorization from MCP config file
- *      (already includes "Bearer " prefix — used as-is)
+ *      (raw API key — used as-is)
  *
  * When running inside the gh-aw sandbox the gateway requires a Bearer token but
  * the key may be stored in either the legacy gateway section or the mcpServers
@@ -55,7 +55,7 @@ function getDefaultTimeout(): number {
  */
 function getDefaultAuthToken(): string {
   if (process.env['MCP_AUTH_TOKEN']) return process.env['MCP_AUTH_TOKEN'];
-  if (process.env['MCP_GATEWAY_API_KEY']) return `Bearer ${process.env['MCP_GATEWAY_API_KEY']}`;
+  if (process.env['MCP_GATEWAY_API_KEY']) return process.env['MCP_GATEWAY_API_KEY'];
 
   // Try reading from MCP config file
   const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
@@ -66,7 +66,7 @@ function getDefaultAuthToken(): string {
       // Priority 3: legacy gateway.apiKey
       const gateway = raw['gateway'] as Record<string, unknown> | undefined;
       const apiKey = gateway?.['apiKey'] as string | undefined;
-      if (apiKey) return `Bearer ${apiKey}`;
+      if (apiKey) return apiKey;
 
       // Priority 4: mcpServers['riksdag-regering'].headers.Authorization
       const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;

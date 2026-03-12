@@ -10,8 +10,8 @@
 # Sets: MCP_SERVER_URL, MCP_AUTH_TOKEN, MCP_CLIENT_TIMEOUT_MS
 #
 # Token extraction priority:
-#   1. gateway.apiKey (legacy — prepend "Bearer " if needed)
-#   2. mcpServers['riksdag-regering'].headers.Authorization (already includes "Bearer ")
+#   1. gateway.apiKey (legacy)
+#   2. mcpServers['riksdag-regering'].headers.Authorization (raw API key)
 #
 # @author Hack23 AB
 # @license Apache-2.0
@@ -37,11 +37,8 @@ if [ -f "$_MCP_CONFIG_PATH" ]; then
   if [ -z "$GW_KEY" ]; then
     echo "⚠️  WARNING: MCP config file exists but MCP auth token is missing or invalid"
   else
-    # If value already contains "Bearer ", use as-is; otherwise prepend
-    case "$GW_KEY" in
-      Bearer\ *) export MCP_AUTH_TOKEN="$GW_KEY" ;;
-      *)         export MCP_AUTH_TOKEN="Bearer $GW_KEY" ;;
-    esac
+    # Use the key as-is — the MCP gateway expects the raw API key
+    export MCP_AUTH_TOKEN="$GW_KEY"
   fi
 fi
 
