@@ -122,9 +122,10 @@ const DOC_TYPE_DISPLAY: Readonly<Record<string, DocTypeLocalization>> = {
 function localizeDocType(code: string, lang: Language | string, count?: number): string {
   const entry = DOC_TYPE_DISPLAY[code];
   if (!entry) return code;
-  const useSingular = count === 1;
-  const form = useSingular ? entry.singular : entry.plural;
-  return form[lang as Language] ?? form.en ?? (useSingular ? entry.plural.en : entry.singular.en) ?? code;
+  const usePlural = count !== 1;
+  const primary = usePlural ? entry.plural : entry.singular;
+  const fallback = usePlural ? entry.singular : entry.plural;
+  return primary[lang as Language] ?? primary.en ?? fallback[lang as Language] ?? fallback.en ?? code;
 }
 
 /** Per-language title-suffix templates for inverted-pyramid lede construction. */
