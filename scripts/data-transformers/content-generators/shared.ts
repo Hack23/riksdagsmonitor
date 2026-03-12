@@ -14,21 +14,117 @@ import type { RawDocument, RawCalendarEvent, CIAContext } from '../types.js';
 import { L, normalizePartyKey } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
 
-/** Localise raw Riksdag document type codes for display. */
-const DOC_TYPE_DISPLAY: Readonly<Record<string, Partial<Record<Language, string>>>> = {
-  prop: { en: 'Propositions', sv: 'Propositioner' },
-  bet:  { en: 'Committee Reports', sv: 'Betänkanden' },
-  mot:  { en: 'Motions', sv: 'Motioner' },
-  skr:  { en: 'Government Communications', sv: 'Skrivelser' },
-  sfs:  { en: 'Laws/Statutes', sv: 'Lagar/Förordningar' },
-  fpm:  { en: 'EU Position Papers', sv: 'Faktapromemorior' },
-  pressm: { en: 'Press Releases', sv: 'Pressmeddelanden' },
-  ext:  { en: 'External References', sv: 'Externa referenser' },
+/** Localise raw Riksdag document type codes for display (singular/plural-aware, multi-language). */
+type DocTypeLocalization = {
+  singular: Partial<Record<Language, string>>;
+  plural: Partial<Record<Language, string>>;
 };
 
-function localizeDocType(code: string, lang: Language | string): string {
-  const map = DOC_TYPE_DISPLAY[code];
-  return (map?.[lang as Language]) ?? (map?.en ?? code);
+const DOC_TYPE_DISPLAY: Readonly<Record<string, DocTypeLocalization>> = {
+  prop: {
+    singular: {
+      en: 'Proposition', sv: 'Proposition', da: 'Proposition', no: 'Proposisjon',
+      fi: 'Hallituksen esitys', de: 'Regierungsvorlage', fr: 'Projet de loi', es: 'Proposición',
+      nl: 'Wetsvoorstel', ar: 'مقترح قانون', he: 'הצעת חוק', ja: '法案', ko: '정부 제출 법안', zh: '政府法案',
+    },
+    plural: {
+      en: 'Propositions', sv: 'Propositioner', da: 'Propositioner', no: 'Proposisjoner',
+      fi: 'Hallituksen esitykset', de: 'Regierungsvorlagen', fr: 'Projets de loi', es: 'Proposiciones',
+      nl: 'Wetsvoorstellen', ar: 'مقترحات قوانين', he: 'הצעות חוק', ja: '法案', ko: '정부 제출 법안', zh: '政府法案',
+    },
+  },
+  bet: {
+    singular: {
+      en: 'Committee Report', sv: 'Betänkande', da: 'Udvalgsbetænkning', no: 'Komitéinnstilling',
+      fi: 'Valiokunnan mietintö', de: 'Ausschussbericht', fr: 'Rapport de commission', es: 'Informe de comisión',
+      nl: 'Commissieverslag', ar: 'تقرير لجنة', he: 'דוח ועדה', ja: '委員会報告書', ko: '위원회 보고서', zh: '委员会报告',
+    },
+    plural: {
+      en: 'Committee Reports', sv: 'Betänkanden', da: 'Udvalgsbetænkninger', no: 'Komitéinnstillinger',
+      fi: 'Valiokunnan mietinnöt', de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comisión',
+      nl: 'Commissieverslagen', ar: 'تقارير لجان', he: 'דוחות ועדה', ja: '委員会報告書', ko: '위원회 보고서', zh: '委员会报告',
+    },
+  },
+  mot: {
+    singular: {
+      en: 'Motion', sv: 'Motion', da: 'Forslag', no: 'Forslag',
+      fi: 'Aloite', de: 'Antrag', fr: 'Motion', es: 'Moción',
+      nl: 'Motie', ar: 'مقترح', he: 'הצעה', ja: '動議', ko: '동의안', zh: '动议',
+    },
+    plural: {
+      en: 'Motions', sv: 'Motioner', da: 'Forslag', no: 'Forslag',
+      fi: 'Aloitteet', de: 'Anträge', fr: 'Motions', es: 'Mociones',
+      nl: 'Moties', ar: 'مقترحات', he: 'הצעות', ja: '動議', ko: '동의안', zh: '动议',
+    },
+  },
+  skr: {
+    singular: {
+      en: 'Government Communication', sv: 'Skrivelse', da: 'Regeringsskrivelse', no: 'Regjeringsskriv',
+      fi: 'Valtioneuvoston kirjelmä', de: 'Regierungsschreiben', fr: 'Communication du gouvernement', es: 'Comunicación del gobierno',
+      nl: 'Regeringsmededeling', ar: 'مذكرة حكومية', he: 'מכתב ממשלתי', ja: '政府通信文書', ko: '정부 통신문', zh: '政府公文',
+    },
+    plural: {
+      en: 'Government Communications', sv: 'Skrivelser', da: 'Regeringsskrivelser', no: 'Regjeringsskriv',
+      fi: 'Valtioneuvoston kirjelmät', de: 'Regierungsschreiben', fr: 'Communications du gouvernement', es: 'Comunicaciones del gobierno',
+      nl: 'Regeringsmededelingen', ar: 'مذكرات حكومية', he: 'מכתבים ממשלתיים', ja: '政府通信文書', ko: '정부 통신문', zh: '政府公文',
+    },
+  },
+  sfs: {
+    singular: {
+      en: 'Law/Statute', sv: 'Lag/förordning', da: 'Lov/forordning', no: 'Lov/forordning',
+      fi: 'Laki/asetus', de: 'Gesetz/Verordnung', fr: 'Loi/Règlement', es: 'Ley/Reglamento',
+      nl: 'Wet/Verordening', ar: 'قانون / لائحة', he: 'חוק/תקנה', ja: '法律／条例', ko: '법률/법규', zh: '法律/法规',
+    },
+    plural: {
+      en: 'Laws/Statutes', sv: 'Lagar/förordningar', da: 'Love/forordninger', no: 'Lover/forordninger',
+      fi: 'Lait/asetukset', de: 'Gesetze/Verordnungen', fr: 'Lois/Règlements', es: 'Leyes/Reglamentos',
+      nl: 'Wetten/Verordeningen', ar: 'قوانين / لوائح', he: 'חוקים/תקנות', ja: '法律／条例', ko: '법률/법규', zh: '法律/法规',
+    },
+  },
+  fpm: {
+    singular: {
+      en: 'EU Position Paper', sv: 'Faktapromemoria', da: 'EU-faktanota', no: 'EU-faktanotat',
+      fi: 'EU-tietomuistio', de: 'EU-Positionspapier', fr: 'Note de position UE', es: 'Documento de posición de la UE',
+      nl: 'EU-positiepaper', ar: 'ورقة موقف للاتحاد الأوروبي', he: 'מסמך עמדה של האיחוד האירופי', ja: 'EUポジションペーパー', ko: 'EU 입장 문서', zh: '欧盟立场文件',
+    },
+    plural: {
+      en: 'EU Position Papers', sv: 'Faktapromemorior', da: 'EU-faktanotaer', no: 'EU-faktanotater',
+      fi: 'EU-tietomuistiot', de: 'EU-Positionspapiere', fr: 'Notes de position UE', es: 'Documentos de posición de la UE',
+      nl: 'EU-positiepapers', ar: 'أوراق موقف للاتحاد الأوروبي', he: 'מסמכי עמדה של האיחוד האירופי', ja: 'EUポジションペーパー', ko: 'EU 입장 문서', zh: '欧盟立场文件',
+    },
+  },
+  pressm: {
+    singular: {
+      en: 'Press Release', sv: 'Pressmeddelande', da: 'Pressemeddelelse', no: 'Pressemelding',
+      fi: 'Lehdistötiedote', de: 'Pressemitteilung', fr: 'Communiqué de presse', es: 'Comunicado de prensa',
+      nl: 'Persbericht', ar: 'بيان صحفي', he: 'הודעה לעיתונות', ja: 'プレスリリース', ko: '보도자료', zh: '新闻稿',
+    },
+    plural: {
+      en: 'Press Releases', sv: 'Pressmeddelanden', da: 'Pressemeddelelser', no: 'Pressemeldinger',
+      fi: 'Lehdistötiedotteet', de: 'Pressemitteilungen', fr: 'Communiqués de presse', es: 'Comunicados de prensa',
+      nl: 'Persberichten', ar: 'بيانات صحفية', he: 'הודעות לעיתונות', ja: 'プレスリリース', ko: '보도자료', zh: '新闻稿',
+    },
+  },
+  ext: {
+    singular: {
+      en: 'External Reference', sv: 'Extern referens', da: 'Ekstern reference', no: 'Ekstern referanse',
+      fi: 'Ulkoinen viite', de: 'Externe Referenz', fr: 'Référence externe', es: 'Referencia externa',
+      nl: 'Externe referentie', ar: 'مرجع خارجي', he: 'הפניה חיצונית', ja: '外部参照', ko: '외부 참조', zh: '外部参考',
+    },
+    plural: {
+      en: 'External References', sv: 'Externa referenser', da: 'Eksterne referencer', no: 'Eksterne referanser',
+      fi: 'Ulkoiset viitteet', de: 'Externe Referenzen', fr: 'Références externes', es: 'Referencias externas',
+      nl: 'Externe referenties', ar: 'مراجع خارجية', he: 'הפניות חיצוניות', ja: '外部参照', ko: '외부 참조', zh: '外部参考',
+    },
+  },
+};
+
+function localizeDocType(code: string, lang: Language | string, count?: number): string {
+  const entry = DOC_TYPE_DISPLAY[code];
+  if (!entry) return code;
+  const useSingular = count === 1;
+  const form = useSingular ? entry.singular : entry.plural;
+  return form[lang as Language] ?? form.en ?? (useSingular ? entry.plural.en : entry.singular.en) ?? code;
 }
 
 /** Per-language title-suffix templates for inverted-pyramid lede construction. */
@@ -291,7 +387,7 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
     }
     const typeList = [...docTypes.entries()]
       .sort((a, b) => b[1] - a[1])
-      .map(([t, c]) => `${escapeHtml(localizeDocType(t, lang))}: ${c}`)
+      .map(([t, c]) => `${escapeHtml(localizeDocType(t, lang, c))}: ${c}`)
       .join(', ');
     parts.push(`    <p>${domainItems}</p>`);
     parts.push(`    <p><em>${typeList}</em></p>`);

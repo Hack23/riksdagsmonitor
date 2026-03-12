@@ -656,6 +656,12 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     nl: 'parlementaire documenten geanalyseerd', ar: 'وثيقة برلمانية تم تحليلها', he: 'מסמכים פרלמנטריים שנותחו',
     ja: '件の議会文書を分析', ko: '의회 문서 분석됨', zh: '份议会文件已分析',
   },
+  documentAnalysed: {
+    en: 'parliamentary document analysed', sv: 'riksdagsdokument analyserat', da: 'parlamentsdokument analyseret', no: 'parlamentsdokument analysert',
+    fi: 'asiakirja analysoitu', de: 'parlamentarisches Dokument analysiert', fr: 'document parlementaire analysé', es: 'documento parlamentario analizado',
+    nl: 'parlementair document geanalyseerd', ar: 'وثيقة برلمانية تم تحليلها', he: 'מסמך פרלמנטרי שנותח',
+    ja: '件の議会文書を分析', ko: '의회 문서 분석됨', zh: '份议会文件已分析',
+  },
   documentTypes: {
     en: 'Document Types', sv: 'Dokumenttyper', da: 'Dokumenttyper', no: 'Dokumenttyper',
     fi: 'Asiakirjatyypit', de: 'Dokumenttypen', fr: 'Types de documents', es: 'Tipos de documentos',
@@ -892,8 +898,10 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
       ? 'Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder.'
       : 'Dessa externa referenser belyser det politiska landskapet och belyser områden av potentiellt lagstiftningsintresse.';
     svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalTextSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
-  } else {
+  } else if (isLegislativeFocused && legislativeCount > 0) {
     svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;
+  } else {
+    svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inom ${domainPhrase}` : ''}: Analysen ger en ögonblicksbild av den aktuella politiska inriktningen och dess betydelse för centrala intressenter.`;
   }
 
   const templates: Partial<Record<Language, string>> = {
@@ -1188,7 +1196,7 @@ function buildDeepInspectionSections(
       title: topic
         ? `${deepLabel('documentIntelligence', lang)} — ${topic}`
         : deepLabel('documentIntelligence', lang),
-      summary: `${docs.length} ${deepLabel('documentsAnalysed', lang)}`,
+      summary: `${docs.length} ${deepLabel(docs.length === 1 ? 'documentAnalysed' : 'documentsAnalysed', lang)}`,
       charts: [{
         id: 'deep-inspection-doc-types',
         type: 'bar',
