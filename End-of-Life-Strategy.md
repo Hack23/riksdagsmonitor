@@ -46,9 +46,19 @@ This strategy should be read alongside the [Business Continuity Plan](BCPPlan.md
 
 ## 🔄 Node.js Release Schedule Evolution
 
+### Why the Schedule Is Changing
+
+The [current Node.js release schedule](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule) is 10 years old, created during the io.js merger. A decade of usage data now shows:
+
+- **Odd-numbered releases see minimal adoption** — most users wait for Long-Term Support
+- **The odd/even distinction confuses newcomers** and many organisations skip odd releases entirely
+- **Volunteer sustainability** — Node.js is maintained primarily by volunteers; managing security releases across four or five active release lines has become difficult to sustain, as each additional line increases backporting complexity
+
+By reducing concurrent release lines, the project can focus on better supporting the releases people actually use while making the schedule more predictable for enterprises.
+
 ### New Node.js Release Model (Effective October 2026)
 
-Starting with **Node.js 27.x**, the Node.js project is [moving from two major releases per year to one](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule). Key changes:
+Starting with **Node.js 27.x**, the Node.js project is [moving from two major releases per year to one](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule) (see [nodejs/Release#1113](https://github.com/nodejs/Release/issues/1113) for full background). Key changes:
 
 | Aspect | Old Model (≤26.x) | New Model (≥27.x) |
 |--------|-------------------|-------------------|
@@ -57,23 +67,39 @@ Starting with **Node.js 27.x**, the Node.js project is [moving from two major re
 | **Odd/even distinction** | Odd = Current-only, Even = LTS | **No distinction — all releases get LTS** |
 | **Version numbering** | Sequential | **Aligned to calendar year** (27 in 2027, 28 in 2028) |
 | **Alpha channel** | N/A | **6-month alpha phase** (Oct–Mar) with semver-major changes |
-| **Total support window** | ~36 months (LTS only) | **36 months** from Current release to EOL |
+| **Alpha versioning** | N/A | **Semver prerelease format** (e.g., `27.0.0-alpha.1`) |
+| **Total support window** | ~36 months (LTS only) | **36 months** from first Current release to EOL |
 
 ### New Release Lifecycle Phases
 
 | Phase | Duration | Description |
 |-------|----------|-------------|
-| **Alpha** | 6 months (Oct → Mar) | Early testing, semver-major changes allowed |
+| **Alpha** | 6 months (Oct → Mar) | Early testing, semver-major changes allowed. Versioning: `X.0.0-alpha.N` |
 | **Current** | 6 months (Apr → Oct) | Stabilisation, bug fixes |
 | **LTS** | 30 months (Oct → Apr+30mo) | Long-term support with security fixes |
 | **EOL** | — | No further support |
+
+> **For users who already only upgrade to LTS versions**, little changes beyond version numbering. LTS support windows remain similar, and now every release becomes LTS.
 
 ### Impact on Riksdagsmonitor
 
 - **Simplified upgrade planning**: Every Node.js release becomes LTS, eliminating the need to skip odd-numbered versions
 - **Annual upgrade cadence**: Plan one major Node.js upgrade per year (April release, adopt after October LTS promotion)
-- **Alpha testing**: Integrate Node.js alpha releases into CI to catch compatibility issues early
-- **Library author responsibility**: Test against alpha versions to report bugs before LTS promotion
+- **Alpha testing in CI**: Integrate Node.js alpha releases into the CI matrix to catch compatibility issues early — this is critical since alpha is the only window to report bugs before they affect LTS users
+- **Reduced concurrent support lines**: Fewer active Node.js versions means clearer migration targets and less upgrade pressure
+- **Library author responsibility**: As a consumer of npm packages, we benefit when library authors test against alpha versions; we should also test our own build tooling compatibility early
+
+### CI Alpha Testing Strategy
+
+To proactively catch Node.js compatibility issues, Riksdagsmonitor will adopt the following alpha testing approach:
+
+| CI Matrix | Trigger | Failure Policy |
+|-----------|---------|----------------|
+| **Node.js LTS (current)** | Every push, PR | ❌ Blocking — must pass |
+| **Node.js Current** | Every push, PR | ❌ Blocking — must pass |
+| **Node.js Alpha (next)** | Weekly scheduled | ⚠️ Non-blocking — issues logged, not gating |
+
+This allows early detection of breaking changes in Node.js alpha while keeping production deployments stable on LTS.
 
 ---
 
@@ -83,7 +109,7 @@ Starting with **Node.js 27.x**, the Node.js project is [moving from two major re
 
 | Category | Technology | Current Version | EOL Date | Replacement Path |
 |----------|-----------|----------------|----------|-----------------|
-| **Runtime** | [Node.js 24 LTS](https://nodejs.org/) | 24.14.0 | **April 2027** (end of Active LTS) / **Sep 2027** (Maintenance EOL) | Node.js 26 LTS → Node.js 27 LTS |
+| **Runtime** | [Node.js 24 LTS](https://nodejs.org/) | 24.14.0 | **October 2026** (end of Active LTS) / **April 2028** (Maintenance EOL) | Node.js 26 LTS → Node.js 27 LTS |
 | **Package Manager** | [npm](https://www.npmjs.com/) | Bundled with Node.js | Follows Node.js | Follows Node.js upgrades |
 | **Language** | [TypeScript](https://www.typescriptlang.org/) | 5.9.3 | Active (monthly releases) | Track latest stable |
 | **Build Tool** | [Vite](https://vite.dev/) | 7.3.1 | Active | Track latest major |
@@ -129,8 +155,8 @@ Starting with **Node.js 27.x**, the Node.js project is [moving from two major re
 |-----------|------|--------|
 | Node.js 24 Current Release | April 2025 | ✅ Adopted |
 | Node.js 24 LTS Promotion | October 2025 | ✅ Production deployment |
-| Node.js 24 Active LTS End | **April 2027** | Begin migration to next LTS |
-| Node.js 24 Maintenance End | **September 2027** | Must be off Node.js 24 |
+| Node.js 24 Active LTS End | **October 2026** | Begin migration to Node.js 26 LTS |
+| Node.js 24 Maintenance End | **April 2028** | Must be off Node.js 24 |
 
 ### Next: Node.js 26 LTS (Old Schedule)
 
@@ -141,7 +167,8 @@ Node.js 26 is the **last release under the old two-per-year schedule**.
 | Node.js 26 Current Release | April 2026 | Evaluate in CI |
 | Node.js 26 LTS Promotion | October 2026 | Plan migration |
 | Migration Window | Oct 2026 – Mar 2027 | Upgrade riksdagsmonitor to Node.js 26 |
-| Node.js 26 Maintenance End | ~September 2028 | Plan next migration |
+| Node.js 26 Active LTS End | **October 2027** | Begin evaluating Node.js 27 |
+| Node.js 26 Maintenance End | **April 2029** | Must be off Node.js 26 |
 
 ### Future: Node.js 27 LTS (New Schedule)
 
@@ -163,23 +190,23 @@ gantt
     dateFormat YYYY-MM
     axisFormat %Y-%m
 
-    section Node.js 24
-    Active LTS           :active, n24lts, 2025-10, 2027-04
-    Maintenance           :n24maint, 2027-04, 2027-09
-    Migration Off 24      :crit, m24, 2027-01, 2027-06
+    section Node.js 24 (old model)
+    Active LTS           :active, n24lts, 2025-10, 2026-10
+    Maintenance           :n24maint, 2026-10, 2028-04
+    Migration Off 24      :crit, m24, 2026-10, 2027-03
 
-    section Node.js 26
+    section Node.js 26 (last old-model)
     Current               :n26curr, 2026-04, 2026-10
-    LTS (last old-model)  :n26lts, 2026-10, 2028-04
-    Maintenance           :n26maint, 2028-04, 2028-09
+    Active LTS            :n26lts, 2026-10, 2027-10
+    Maintenance           :n26maint, 2027-10, 2029-04
 
-    section Node.js 27 (new model)
-    Alpha                 :n27alpha, 2026-10, 2027-04
+    section Node.js 27 (new model — first annual LTS)
+    Alpha (27.0.0-alpha.x):n27alpha, 2026-10, 2027-04
     Current               :n27curr, 2027-04, 2027-10
     LTS                   :n27lts, 2027-10, 2030-04
 
     section Node.js 28 (new model)
-    Alpha                 :n28alpha, 2027-10, 2028-04
+    Alpha (28.0.0-alpha.x):n28alpha, 2027-10, 2028-04
     Current               :n28curr, 2028-04, 2028-10
     LTS                   :n28lts, 2028-10, 2031-04
 ```
@@ -235,7 +262,7 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|-----------|--------|------------|
-| Node.js 24 reaches EOL before migration | Low | High | Migration planned 6 months before Maintenance EOL |
+| Node.js 24 reaches EOL before migration | Low | High | Migration planned 12+ months before Maintenance EOL (April 2028) |
 | Vite major breaking changes | Medium | Medium | Pin to major version, test upgrades in branch |
 | Chart.js/D3.js API deprecation | Low | Medium | Abstraction layer isolates visualisation logic |
 | Cypress major breaking changes | Medium | Low | E2E tests are supplementary; can temporarily skip |
