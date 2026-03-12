@@ -66,7 +66,7 @@ function getDefaultAuthToken(): string {
       // Priority 3: legacy gateway.apiKey
       const gateway = raw['gateway'] as Record<string, unknown> | undefined;
       const apiKey = gateway?.['apiKey'] as string | undefined;
-      if (apiKey) return apiKey;
+      if (apiKey) return apiKey.replace(/^Bearer\s+/i, '');
 
       // Priority 4: mcpServers['riksdag-regering'].headers.Authorization
       // Strip legacy "Bearer " prefix if present — gateway expects raw API key
