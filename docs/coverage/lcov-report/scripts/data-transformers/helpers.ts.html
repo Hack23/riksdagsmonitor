@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.4% </span>
+                <span class="strong">87.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>117/137</span>
+                <span class='fraction'>122/140</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>140/182</span>
+                <span class='fraction'>143/182</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.48% </span>
+                <span class="strong">87.4% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>106/124</span>
+                <span class='fraction'>111/127</span>
             </div>
         
             
@@ -462,7 +462,13 @@
 <a name='L397'></a><a href='#L397'>397</a>
 <a name='L398'></a><a href='#L398'>398</a>
 <a name='L399'></a><a href='#L399'>399</a>
-<a name='L400'></a><a href='#L400'>400</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -525,9 +531,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10356x</span>
-<span class="cline-any cline-yes">10356x</span>
-<span class="cline-any cline-yes">10356x</span>
+<span class="cline-any cline-yes">10366x</span>
+<span class="cline-any cline-yes">10366x</span>
+<span class="cline-any cline-yes">10366x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -791,25 +797,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">134x</span>
+<span class="cline-any cline-yes">144x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">47x</span>
-<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-yes">55x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">55x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">55x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">979x</span>
-<span class="cline-any cline-yes">979x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">981x</span>
+<span class="cline-any cline-yes">981x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1192,11 +1204,17 @@ export function getCommitteeName(code: string | undefined, lang: Language | stri
 export function extractKeyPassage(fullText: string | undefined, maxChars = 600): string {
   if (!fullText) return '';
   // Strip HTML tags if present
-  const plain = fullText.replace(/&lt;[^&gt;]+&gt;/g, ' ').replace(/\s+/g, ' ').trim();
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (plain.length &lt;= maxChars) return plain;
+  let plain = fullText.replace(/&lt;[^&gt;]+&gt;/g, ' ');
+  // Strip markdown links — keep link text, remove URL: [text](url) → text
+  plain = plain.replace(/\[([^\]]*)\]\([^)]+\)/g, '$1');
+  // Strip bare URLs (http/https)
+  plain = plain.replace(/https?:\/\/[^\s)]+/g, '');
+  // Collapse whitespace
+  plain = plain.replace(/\s+/g, ' ').trim();
+  if (plain.length &lt;= maxChars) return plain;
   // Find a sentence boundary near maxChars
-  const cut = <span class="cstat-no" title="statement not covered" >plain.lastIndexOf('.', maxChars);</span>
-<span class="cstat-no" title="statement not covered" >  return cut &gt; 100 ? plain.slice(0, cut + 1) : plain.slice(0, maxChars) + '…';</span>
+  const cut = plain.lastIndexOf('.', maxChars);
+  return cut &gt; 100 ? plain.slice(0, cut + 1) : plain.slice(0, maxChars) + '…';
 }
 &nbsp;
 /**
@@ -1267,7 +1285,7 @@ export function filterFreshDocuments(docs: RawDocument[], maxAgeDays = 30): RawD
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-11T20:09:04.416Z
+                at 2026-03-12T17:16:17.052Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

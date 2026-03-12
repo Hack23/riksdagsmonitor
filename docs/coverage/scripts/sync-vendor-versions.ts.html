@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/44</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/42</span>
+                <span class='fraction'>0/46</span>
             </div>
         
             
@@ -180,10 +180,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -284,14 +284,14 @@
  * @module scripts/sync-vendor-versions
  */
 &nbsp;
-import { readFileSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
+import { readFileSync, existsSync } from <span class="cstat-no" title="statement not covered" >'fs';</span>
+import { join, dirname } from <span class="cstat-no" title="statement not covered" >'path';</span>
+import { fileURLToPath } from <span class="cstat-no" title="statement not covered" >'url';</span>
+import { execSync } from <span class="cstat-no" title="statement not covered" >'child_process';</span>
 &nbsp;
-const <span class="cstat-no" title="statement not covered" >__filename = fileURLToPath(import.meta.url);</span>
-const <span class="cstat-no" title="statement not covered" >__dirname = dirname(__filename);</span>
-const <span class="cstat-no" title="statement not covered" >ROOT = join(__dirname, '..');</span>
+const __filename = <span class="cstat-no" title="statement not covered" >fileURLToPath(import.meta.url);</span>
+const __dirname = <span class="cstat-no" title="statement not covered" >dirname(__filename);</span>
+const ROOT = <span class="cstat-no" title="statement not covered" >join(__dirname, '..');</span>
 &nbsp;
 interface PackageJson {
   dependencies?: Record&lt;string, string&gt;;
@@ -313,7 +313,7 @@ const TRACKED_PACKAGES = <span class="cstat-no" title="statement not covered" >[
 &nbsp;
 function <span class="fstat-no" title="function not covered" >getInstalledVersion(p</span>kg: string): string {
 <span class="cstat-no" title="statement not covered" >  try {</span>
-    const <span class="cstat-no" title="statement not covered" >pkgJsonPath = join(ROOT, 'node_modules', pkg, 'package.json');</span>
+    const pkgJsonPath = <span class="cstat-no" title="statement not covered" >join(ROOT, 'node_modules', pkg, 'package.json');</span>
 <span class="cstat-no" title="statement not covered" >    if (!existsSync(pkgJsonPath)) <span class="cstat-no" title="statement not covered" >return 'not installed';</span></span>
     const pkgJson = <span class="cstat-no" title="statement not covered" >JSON.parse(readFileSync(pkgJsonPath, 'utf-8')) as PackageJson &amp; { version?: string };</span>
 <span class="cstat-no" title="statement not covered" >    return pkgJson.version ?? 'unknown';</span>
@@ -324,7 +324,7 @@ function <span class="fstat-no" title="function not covered" >getInstalledVersio
 &nbsp;
 function <span class="fstat-no" title="function not covered" >getLatestVersion(p</span>kg: string): string {
 <span class="cstat-no" title="statement not covered" >  try {</span>
-    const <span class="cstat-no" title="statement not covered" >result = execSync(`npm view ${pkg} version 2&gt;/dev/null`, { encoding: 'utf-8' });</span>
+    const result = <span class="cstat-no" title="statement not covered" >execSync(`npm view ${pkg} version 2&gt;/dev/null`, { encoding: 'utf-8' });</span>
 <span class="cstat-no" title="statement not covered" >    return result.trim();</span>
   } catch {
 <span class="cstat-no" title="statement not covered" >    return 'unknown';</span>
@@ -356,7 +356,7 @@ function <span class="fstat-no" title="function not covered" >checkVersions(): v
   }
 &nbsp;
   // Check for stale vendor copies in js/lib/
-  const <span class="cstat-no" title="statement not covered" >libDir = join(ROOT, 'js', 'lib');</span>
+  const libDir = <span class="cstat-no" title="statement not covered" >join(ROOT, 'js', 'lib');</span>
 <span class="cstat-no" title="statement not covered" >  if (existsSync(libDir)) {</span>
 <span class="cstat-no" title="statement not covered" >    console.log('\n⚠️  WARNING: js/lib/ directory still exists.');</span>
 <span class="cstat-no" title="statement not covered" >    console.log('   Vendor libraries should be imported from npm via src/browser/main.ts');</span>
@@ -382,7 +382,7 @@ function <span class="fstat-no" title="function not covered" >checkVersions(): v
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-11T20:09:04.253Z
+                at 2026-03-12T17:16:16.886Z
             </div>
         <script src="../prettify.js"></script>
         <script>
