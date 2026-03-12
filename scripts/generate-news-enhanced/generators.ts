@@ -28,7 +28,7 @@ import {
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
-import { generateDeepAnalysisSection } from '../data-transformers/content-generators/index.js';
+import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -560,18 +560,6 @@ const DEEP_CHART_PALETTE: readonly string[] = [
   '#00d9ff', '#ff006e', '#ffbe0b', '#00ff88', '#ff8800', '#aa00ff',
 ];
 
-/** Per-language document type display names used in deep-inspection article headers. */
-const DEEP_DOC_TYPE_LABELS: Readonly<Record<string, Partial<Record<Language, string>>>> = {
-  prop: { en: 'Government Proposition', sv: 'Proposition', da: 'Lovforslag', no: 'Proposisjon', fi: 'Hallituksen esitys', de: 'Regierungsvorlage', fr: 'Proposition du gouvernement', es: 'Proposición del gobierno', nl: 'Regeringsvoorstel', ar: 'اقتراح حكومي', he: 'הצעת חוק ממשלתית', ja: '政府提案', ko: '정부 제안', zh: '政府提案' },
-  bet:  { en: 'Committee Report', sv: 'Betänkande', da: 'Betænkning', no: 'Innstilling', fi: 'Mietintö', de: 'Ausschussbericht', fr: 'Rapport de commission', es: 'Informe de comité', nl: 'Commissierapport', ar: 'تقرير لجنة', he: 'דוח ועדה', ja: '委員会報告', ko: '위원회 보고서', zh: '委员会报告' },
-  mot:  { en: 'Motion', sv: 'Motion', da: 'Forslag', no: 'Forslag', fi: 'Aloite', de: 'Antrag', fr: 'Motion', es: 'Moción', nl: 'Motie', ar: 'اقتراح', he: 'הצעה', ja: '動議', ko: '동의', zh: '动议' },
-  skr:  { en: 'Government Communication', sv: 'Skrivelse', da: 'Regeringsmeddelelse', no: 'Regjeringsmelding', fi: 'Hallituksen kirje', de: 'Regierungsschreiben', fr: 'Communication gouvernementale', es: 'Comunicación gubernamental', nl: 'Regeringsmededeling', ar: 'مراسلة حكومية', he: 'תקשורת ממשלתית', ja: '政府通知', ko: '정부 서한', zh: '政府通知' },
-  sfs:  { en: 'Law/Statute', sv: 'Lag/Förordning', da: 'Lov', no: 'Lov', fi: 'Laki', de: 'Gesetz', fr: 'Loi', es: 'Ley', nl: 'Wet', ar: 'قانون', he: 'חוק', ja: '法律', ko: '법률', zh: '法律' },
-  fpm:  { en: 'EU Position Paper', sv: 'Faktapromemoria (EU)', da: 'EU-faktaark', no: 'EU-posisjonsnotat', fi: 'EU-faktamuistio', de: 'EU-Positionspapier', fr: 'Note de position UE', es: 'Documento de posición UE', nl: 'EU-positiepapier', ar: 'ورقة موقف الاتحاد الأوروبي', he: 'מסמך עמדה לאיחוד האירופי', ja: 'EU立場文書', ko: 'EU 입장 문서', zh: 'EU立场文件' },
-  pressm: { en: 'Press Release', sv: 'Pressmeddelande', da: 'Pressemeddelelse', no: 'Pressemelding', fi: 'Lehdistötiedote', de: 'Pressemitteilung', fr: 'Communiqué de presse', es: 'Comunicado de prensa', nl: 'Persbericht', ar: 'بيان صحفي', he: 'הודעה לעיתונות', ja: 'プレスリリース', ko: '보도자료', zh: '新闻稿' },
-  ext: { en: 'External Reference', sv: 'Extern referens', da: 'Ekstern reference', no: 'Ekstern referanse', fi: 'Ulkoinen viite', de: 'Externe Referenz', fr: 'Référence externe', es: 'Referencia externa', nl: 'Externe referentie', ar: 'مرجع خارجي', he: 'הפניה חיצונית', ja: '外部参照', ko: '외부 참조', zh: '外部参考' },
-};
-
 /** Per-language headings for sections of the deep-inspection article. */
 const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, string>>>> = {
   documentIntelligence: {
@@ -688,8 +676,7 @@ function deepLabel(key: string, lang: Language): string {
 }
 
 function docTypeLabel(doktyp: string, lang: Language): string {
-  const map = DEEP_DOC_TYPE_LABELS[doktyp];
-  return (map?.[lang]) ?? (map?.en ?? doktyp.toUpperCase());
+  return localizeDocType(doktyp, lang);
 }
 
 /**
@@ -891,17 +878,18 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
     enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? `, covering ${domainPhrase}` : ''}: This analysis provides a snapshot of current policy direction. Stakeholders should monitor subsequent legislative developments for concrete implementation signals.`;
   }
 
+  const enrichedPhraseSv = `${enrichedCount} ${enrichedCount === 1 ? 'berikat' : 'berikade'} med fulltext`;
   let svText: string;
   if (isPressOrExternal) {
     const typeDescSv = pressmCount > 0 ? `${pressmCount} pressmeddelande${pressmCount !== 1 ? 'n' : ''}` : `${extCount} extern${extCount !== 1 ? 'a' : ''} referens${extCount !== 1 ? 'er' : ''}`;
     const signalTextSv = pressmCount > 0
       ? 'Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder.'
       : 'Dessa externa referenser belyser det politiska landskapet och belyser områden av potentiellt lagstiftningsintresse.';
-    svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalTextSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
+    svText = `Baserat på analys av ${docs.length} dokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalTextSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
   } else if (isLegislativeFocused && legislativeCount > 0) {
-    svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;
+    svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;
   } else {
-    svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inom ${domainPhrase}` : ''}: Analysen ger en ögonblicksbild av den aktuella politiska inriktningen och dess betydelse för centrala intressenter.`;
+    svText = `Baserat på analys av ${docs.length} dokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inom ${domainPhrase}` : ''}: Analysen ger en ögonblicksbild av den aktuella politiska inriktningen och dess betydelse för centrala intressenter.`;
   }
 
   const templates: Partial<Record<Language, string>> = {
@@ -977,7 +965,7 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const enriched = docs.filter(d => d.contentFetched).length;
   if (enriched > 0) {
     items.push(lang === 'sv'
-      ? `<strong>${enriched} av ${docs.length} dokument</strong> berikade med fulltext för djupanalys`
+      ? `<strong>${enriched} av ${docs.length} dokument</strong> ${enriched === 1 ? 'berikat' : 'berikade'} med fulltext för djupanalys`
       : `<strong>${enriched} of ${docs.length} document${docs.length !== 1 ? 's' : ''}</strong> enriched with full text for deep analysis`);
   }
 

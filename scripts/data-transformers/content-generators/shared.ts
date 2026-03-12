@@ -15,12 +15,12 @@ import { L, normalizePartyKey } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
 
 /** Localise raw Riksdag document type codes for display (singular/plural-aware, multi-language). */
-type DocTypeLocalization = {
+export type DocTypeLocalization = {
   singular: Partial<Record<Language, string>>;
   plural: Partial<Record<Language, string>>;
 };
 
-const DOC_TYPE_DISPLAY: Readonly<Record<string, DocTypeLocalization>> = {
+export const DOC_TYPE_DISPLAY: Readonly<Record<string, DocTypeLocalization>> = {
   prop: {
     singular: {
       en: 'Proposition', sv: 'Proposition', da: 'Proposition', no: 'Proposisjon',
@@ -119,7 +119,7 @@ const DOC_TYPE_DISPLAY: Readonly<Record<string, DocTypeLocalization>> = {
   },
 };
 
-function localizeDocType(code: string, lang: Language | string, count?: number): string {
+export function localizeDocType(code: string, lang: Language | string, count?: number): string {
   const entry = DOC_TYPE_DISPLAY[code];
   if (!entry) return code;
   const usePlural = count !== 1;
